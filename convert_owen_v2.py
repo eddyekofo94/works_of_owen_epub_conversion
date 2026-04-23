@@ -375,6 +375,11 @@ def extract_text_with_fonts(pdf_path):
 
                                 for char in line:
                                     if isinstance(char, LTChar):
+                                        # Skip unmapped CID references (e.g., (cid:210))
+                                        char_text = char.get_text()
+                                        if char_text.startswith('(cid:'):
+                                            continue
+
                                         font_name = char.fontname or 'Unknown'
                                         font_size = char.height
 
@@ -404,13 +409,11 @@ def extract_text_with_fonts(pdf_path):
                                                         current_size,
                                                         style
                                                     ))
-                                            current_run_text = [char.get_text()]
+                                            current_run_text = [char_text]
                                             current_font = font_name
                                             current_size = font_size
                                         else:
-                                            current_run_text.append(
-                                                char.get_text()
-                                            )
+                                            current_run_text.append(char_text)
                                     elif isinstance(char, LTAnno):
                                         current_run_text.append(char.get_text())
 
@@ -837,6 +840,9 @@ class ThMLBuilder:
         # Post-process: merge broken paragraphs (PDF page boundary artifacts)
         self._merge_broken_paragraphs()
 
+        # Post-process: drop orphaned Greek fragments left by CID removal
+        self._strip_cid_orphan_paragraphs()
+
         # Post-process: merge tiny consecutive chapters that are really
         # multi-line title blocks (e.g., "CHRISTOLOGIA" / "OR" / "A DECLARATION...")
         # Must run BEFORE _remove_empty_chapters so fragments aren't deleted
@@ -906,6 +912,36 @@ class ThMLBuilder:
                     merged.append(para)
 
             ch['paragraphs'] = merged
+
+    def _strip_cid_orphan_paragraphs(self):
+        """Remove tiny Greek-only paragraphs that are CID removal artifacts.
+
+        When pdfminer encounters unmapped CID glyphs (e.g., Greek quotation
+        marks), we skip them during extraction. This can leave behind orphaned
+        fragments — a word or two of Greek text that was adjacent to the CID
+        character and got its own paragraph. These are not real content.
+
+        Criteria for removal:
+        - Paragraph is very short (under 20 chars of actual text)
+        - Consists entirely of Greek-tagged runs (possibly with diacritics)
+        - Contains no English/body text
+        """
+        for ch in self.chapters:
+            if not ch['paragraphs']:
+                continue
+            filtered = []
+            for para in ch['paragraphs']:
+                text = ''.join(t for _, t in para).strip()
+                # Strip diacritics and punctuation for length check
+                clean = text.replace('|', '').replace('~', '').strip()
+                if len(clean) < 20:
+                    # Check if all runs are Greek (no body text)
+                    run_types = set(rtype for rtype, rtext in para if rtext.strip())
+                    if run_types and run_types <= {'greek'}:
+                        # This is a CID orphan — drop it
+                        continue
+                filtered.append(para)
+            ch['paragraphs'] = filtered
 
     @staticmethod
     def _is_title_page_body(chapter):
