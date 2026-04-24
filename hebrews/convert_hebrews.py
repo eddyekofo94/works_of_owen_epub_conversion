@@ -260,6 +260,7 @@ def generate_ncx_old(vol_title, chapters_map):
     play_order = 1
     in_part1 = False
     in_part2 = False
+    in_part3 = False
     
     for anchor_id, fname in all_items:
         display = EXACT_TITLE.get(anchor_id, anchor_id)
@@ -280,6 +281,8 @@ def generate_ncx_old(vol_title, chapters_map):
             ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
             play_order += 1
             in_part1 = True
+            in_part2 = False
+            in_part3 = False
             continue
         
         # Exercises under PART I (nested)
@@ -300,10 +303,32 @@ def generate_ncx_old(vol_title, chapters_map):
             play_order += 1
             in_part1 = False
             in_part2 = True
+            in_part3 = False
             continue
         
         # Exercises under PART II (nested)
         if in_part2 and anchor_id.startswith('e'):
+            ncx += f'      <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'        <navLabel><text>{escape(display)}</text></navLabel>\n'
+            ncx += f'        <content src="{fname}#{anchor_id}"/>\n'
+            ncx += f'      </navPoint>\n'
+            play_order += 1
+            continue
+        
+        # PART III header - close PART II first
+        if (in_part2 or in_part1) and anchor_id == 'p3':
+            ncx += f'    </navPoint>\n'  # Close parent
+            ncx += f'    <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'      <navLabel><text>{escape(display)}</text></navLabel>\n'
+            ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
+            play_order += 1
+            in_part1 = False
+            in_part2 = False
+            in_part3 = True
+            continue
+        
+        # Exercises under PART III (nested)
+        if in_part3 and anchor_id.startswith('e'):
             ncx += f'      <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
             ncx += f'        <navLabel><text>{escape(display)}</text></navLabel>\n'
             ncx += f'        <content src="{fname}#{anchor_id}"/>\n'
