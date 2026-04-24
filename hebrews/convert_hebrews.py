@@ -134,7 +134,7 @@ def extract_chapter_title(html_content, default_title):
 
 
 def extract_toc_anchors(epub_path):
-    """Extract ALL TOC anchors from the EPUB including special markers."""
+    """Extract ALL TOC anchors - find headings first, then find anchor before each."""
     all_anchors = []
     seen_anchors = set()
     anchor_skip = {'calibre_pb', 'calibre_link'}
@@ -146,41 +146,41 @@ def extract_toc_anchors(epub_path):
             if 'split' in fname and (fname.endswith('.html') or fname.endswith('.xhtml')):
                 content = zf.read(fname).decode('utf-8')
                 
-                # Find anchors: <a id="xxx"> or <a ...id="xxx"> (with or without closing tag)
-                for match in re.finditer(r'<a[^>]*\bid="([^"#]+)"[^>]*>', content):
-                    anchor_id = match.group(1)
+                # Strategy: Find all h1-h4 headings, then look backwards for anchor IDs
+                for h_match in re.finditer(r'<h[1-4][^>]*>(.*?)</h[1-4]>', content, re.DOTALL):
+                    heading_text = h_match.group(1).strip()
+                    
+                    if len(heading_text) < 3:
+                        continue
+                    
+                    # Clean up any HTML in heading text itself
+                    heading_text = re.sub(r'<[^>]+>', '', heading_text)
+                    heading_text = re.sub(r'</?a>\s*', '', heading_text)
+                    heading_text = re.sub(r'&[a-z]+;', '', heading_text)
+                    heading_text = re.sub(r'\s+', ' ', heading_text).strip()
+                    
+                    if len(heading_text) < 3:
+                        continue
+                    
+                    # Look backwards from heading to find anchor ID
+                    search_start = max(0, h_match.start() - 500)
+                    search_text = content[search_start:h_match.start()]
+                    
+                    # Find last anchor ID before heading
+                    anchor_match = re.search(r'<a[^>]*\bid="([^"#]+)"[^>]*>', search_text)
+                    if anchor_match:
+                        anchor_id = anchor_match.group(1)
+                    else:
+                        # No anchor found - skip this heading as it's not a TOC entry
+                        continue
                     
                     if anchor_id in anchor_skip or anchor_id in seen_anchors:
                         continue
                     
                     seen_anchors.add(anchor_id)
                     
-                    anchor_pos = match.end()
-                    after_text = content[anchor_pos:anchor_pos+800]
-                    
-                    h_tags = list(re.finditer(r'<h[1-4][^>]*>(.*?)</h[1-4]>', after_text, re.DOTALL))
-                    
-                    if len(h_tags) >= 2:
-                        # Prefer the 2nd heading if first is short (like "EXERCITATION XXV")
-                        first_text = h_tags[0].group(1).strip()
-                        second_text = h_tags[1].group(1).strip()
-                        if len(first_text) < 25 and len(second_text) > len(first_text):
-                            anchor_text = second_text
-                        else:
-                            anchor_text = first_text
-                    elif h_tags:
-                        anchor_text = h_tags[0].group(1).strip()
-                    else:
-                        text_only = re.search(r'([^<]{3,200})', after_text)
-                        anchor_text = text_only.group(1).strip() if text_only else ''
-                    
-                    anchor_text = re.sub(r'\s+', ' ', anchor_text).strip()
-                    
-                    if len(anchor_text) < 3:
-                        continue
-                    
-                    if anchor_text and len(anchor_text) > 2:
-                        all_anchors.append((fname, anchor_id, anchor_text))
+                    if heading_text and len(heading_text) > 2:
+                        all_anchors.append((fname, anchor_id, heading_text))
     
     return all_anchors
 
