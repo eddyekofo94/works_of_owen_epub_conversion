@@ -300,25 +300,15 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
         book.set_cover('cover.jpeg', cover_data, create_page=False)
         print(f"  Cover: {os.path.basename(cover_path)}")
     
-    title = metadata['title']
-    vol_subtitle = f"Vol. {vol_num}"
-    
+    # Create titlepage showing cover image (like old EPUB)
     titlepage = epub.EpubHtml(title='Cover', file_name='titlepage.xhtml', lang='en')
-    title_body = (
-        f'<div class="title-page">'
-        f'<h1>{escape(title)}</h1>'
-        f'<h2>{vol_subtitle}</h2>'
-        f'<p>by {escape(metadata.get("creator", "John Owen"))}</p>'
-        f'<p>Monergism Books</p>'
-        f'</div>'
-    )
-    titlepage.set_content(
-        f'<?xml version="1.0" encoding="utf-8"?>'
-        f'<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
-        f'<head><link rel="stylesheet" href="stylesheet.css"/></head>'
-        f'<body>{title_body}</body></html>'.encode('utf-8')
-    )
-    titlepage.add_item(style)
+    titlepage.set_content(b'''<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><title>Cover</title></head>
+<body>
+<div><img src="cover.jpeg" alt="Cover"/></div>
+</body>
+</html>''')
     book.add_item(titlepage)
     
     epub_chapters = []
