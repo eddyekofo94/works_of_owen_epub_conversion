@@ -255,15 +255,15 @@ def generate_ncx_old(vol_title, chapters_map):
                 fname = 'hebrews_v1_split_000.html'
             else:
                 fname = f'hebrews_v1_split_{ch_num-1:03d}.html'
-            all_items.append((anchor_id, fname))
+            all_items.append((anchor_id, fname, anchor_text))
     
     play_order = 1
     in_part1 = False
     in_part2 = False
     in_part3 = False
     
-    for anchor_id, fname in all_items:
-        display = EXACT_TITLE.get(anchor_id, anchor_id)
+    for anchor_id, fname, anchor_text in all_items:
+        display = EXACT_TITLE.get(anchor_id, anchor_text)
         
         # Handle preface items (no nesting)
         if anchor_id in ['pre', 'note', 'pref']:
