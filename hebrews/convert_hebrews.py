@@ -322,17 +322,43 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <title>Title</title>
-<link rel="stylesheet" href="stylesheet.css"/>
 <style>
-.title-text {{ text-align: center; margin-top: 30%; }}
-.title-text h1 {{ font-size: 1.8em; font-weight: bold; margin-bottom: 0.5em; }}
-.title-text .author {{ font-size: 1.2em; font-style: italic; margin-top: 1em; }}
+* {{ box-sizing: border-box; margin: 0; padding: 0; }}
+body {{
+    font-family: Georgia, "Times New Roman", serif;
+    color: #1a1a1a;
+    text-align: center;
+    padding: 2em;
+}}
+.title-container {{
+    margin-top: 25%;
+    padding: 2em;
+}}
+.title-text {{
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1.5em;
+}}
+.author-text {{
+    font-size: 1.1em;
+    font-style: italic;
+    color: #333;
+}}
+.publisher {{
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}}
 </style>
 </head>
 <body>
-<div class="title-text">
-<h1>{escape(title_text)}</h1>
-<p class="author">{escape(author_text)}</p>
+<div class="title-container">
+<div class="title-text">{escape(title_text)}</div>
+<div class="author-text">{escape(author_text)}</div>
+<div class="publisher">Monergism Books</div>
 </div>
 </body>
 </html>'''.encode('utf-8'))
