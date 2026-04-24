@@ -146,8 +146,8 @@ def extract_toc_anchors(epub_path):
             if 'split' in fname and (fname.endswith('.html') or fname.endswith('.xhtml')):
                 content = zf.read(fname).decode('utf-8')
                 
-                # Find all anchors in <a id="..."></a> format
-                for match in re.finditer(r'<a[^>]*\bid="([^"#]+)"[^>]*></a>', content):
+                # Find anchors: <a id="xxx"> or <a ...id="xxx"> (with or without closing tag)
+                for match in re.finditer(r'<a[^>]*\bid="([^"#]+)"[^>]*>', content):
                     anchor_id = match.group(1)
                     
                     if anchor_id in anchor_skip or anchor_id in seen_anchors:
@@ -160,12 +160,16 @@ def extract_toc_anchors(epub_path):
                     
                     h_tags = list(re.finditer(r'<h[1-4][^>]*>(.*?)</h[1-4]>', after_text, re.DOTALL))
                     
-                    if h_tags:
+                    if len(h_tags) >= 2:
+                        # Prefer the 2nd heading if first is short (like "EXERCITATION XXV")
+                        first_text = h_tags[0].group(1).strip()
+                        second_text = h_tags[1].group(1).strip()
+                        if len(first_text) < 25 and len(second_text) > len(first_text):
+                            anchor_text = second_text
+                        else:
+                            anchor_text = first_text
+                    elif h_tags:
                         anchor_text = h_tags[0].group(1).strip()
-                        if len(h_tags) > 1:
-                            second_text = h_tags[1].group(1).strip()
-                            if len(second_text) > len(anchor_text):
-                                anchor_text = second_text
                     else:
                         text_only = re.search(r'([^<]{3,200})', after_text)
                         anchor_text = text_only.group(1).strip() if text_only else ''
@@ -347,6 +351,8 @@ def generate_ncx_old(vol_title, chapters_map):
     if in_part1:
         ncx += f'    </navPoint>\n'
     if in_part2:
+        ncx += f'    </navPoint>\n'
+    if in_part3:
         ncx += f'    </navPoint>\n'
     
     ncx += '''  </navMap>
