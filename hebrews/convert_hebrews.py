@@ -223,6 +223,14 @@ def generate_ncx_old(vol_title, chapters_map):
         'e15': 'XV. —Computation of Daniel\'s weeks',
         'e16': 'XVI. —The exposition of the Psalm',
         'e17': 'XVII. —The doctrinal part of the Epistle',
+        'e18': 'XVIII. —The sundry types and shadows',
+        'e19': 'XIX. —The nature of Gospel obedience',
+        'e20': 'XX. —The witness of the Spirit',
+        'e21': 'XXI. —The saintsâ€™ communion with Christ',
+        'e22': 'XXII. —The way of salvation opened',
+        'e23': 'XXIII. —The gospel method of salvation',
+        'e24': 'XXIV. —The conclusion of the whole',
+        'p3': 'PART III: CONCERNING THE OFFICE OF THE MESSIAH',
     }
     
     ncx = '''<?xml version="1.0" encoding="UTF-8"?>
@@ -447,7 +455,7 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
 
 
 def post_process_epub_simple(epub_path):
-    """Fix up the EPUB: ensure spine has toc='ncx' and generate nav.xhtml."""
+    """Fix up the EPUB: ensure spine has toc='ncx'."""
     tmp_dir = tempfile.mkdtemp()
     extract_dir = os.path.join(tmp_dir, 'epub_extracted')
     
@@ -466,33 +474,6 @@ def post_process_epub_simple(epub_path):
             
             with open(opf_path, 'w', encoding='utf-8') as f:
                 f.write(opf_content)
-        
-        nav_xhtml = '''<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en" xml:lang="en">
-<head>
-<meta charset="utf-8"/>
-<title>Table of Contents</title>
-<style>
-body { font-family: Georgia, serif; margin: 1em; text-align: left; }
-nav { text-align: left; }
-ol { padding-left: 1.5em; margin: 0; }
-li { margin: 0.3em 0; text-align: left; }
-a { text-decoration: none; color: #000; }
-</style>
-</head>
-<body>
-<nav epub:type="toc" id="toc">
-<h1>Table of Contents</h1>
-<ol>
-<li><a href="text_title.xhtml">Title</a></li>
-</ol>
-</nav>
-</body>
-</html>'''
-        
-        nav_path = os.path.join(extract_dir, 'nav.xhtml')
-        with open(nav_path, 'w', encoding='utf-8') as f:
-            f.write(nav_xhtml)
         
         temp_zip = epub_path.replace('.epub', '_fixed.zip')
         
