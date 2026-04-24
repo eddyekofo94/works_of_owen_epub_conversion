@@ -197,10 +197,10 @@ def group_anchors_by_chapter(anchors):
 
 
 def generate_ncx_old(vol_title, chapters_map):
-    """Generate NCX with old EPUB structure - EXACT titles matching original."""
+    """Generate NCX with proper nesting for left-aligned hierarchy."""
     
-    # Exact title mappings to match old EPUB
-    EXACT_TITLES = {
+    # Title mappings
+    EXACT_TITLE = {
         'pre': 'GENERAL PREFACE BY THE EDITOR',
         'note': 'The Epistle Dedicatory',
         'pref': 'Prefatory Notices',
@@ -221,8 +221,6 @@ def generate_ncx_old(vol_title, chapters_map):
         'e13': 'XIII. —Other testimonies proving the Messiah to be come',
         'e14': 'XIV. —Daniel\'s prophecy vindicated',
         'e15': 'XV. —Computation of Daniel\'s weeks',
-        'e16': 'XVI. —The exposition of the Psalm',
-        'e17': 'XVII. —The doctrinal part of the Epistle',
     }
     
     ncx = '''<?xml version="1.0" encoding="UTF-8"?>
@@ -239,22 +237,82 @@ def generate_ncx_old(vol_title, chapters_map):
   <navMap>
 '''.format(escape(vol_title))
     
+    # Collect all items with their file references
+    all_items = []
     for ch_num in sorted(chapters_map.keys()):
-        sections = chapters_map[ch_num]
-        
-        for anchor_id, anchor_text in sections:
+        for anchor_id, anchor_text in chapters_map[ch_num]:
             if ch_num == 1 and anchor_id in ['pre', 'note', 'pref']:
                 fname = 'hebrews_v1_split_000.html'
             else:
                 fname = f'hebrews_v1_split_{ch_num-1:03d}.html'
-            
-            # Use EXACT title if we have it, otherwise use extracted text
-            display_text = EXACT_TITLES.get(anchor_id, anchor_text)
-            
-            ncx += f'    <navPoint id="nav_{anchor_id}">\n'
-            ncx += f'      <navLabel><text>{escape(display_text)}</text></navLabel>\n'
+            all_items.append((anchor_id, fname))
+    
+    play_order = 1
+    in_part1 = False
+    in_part2 = False
+    
+    for anchor_id, fname in all_items:
+        display = EXACT_TITLE.get(anchor_id, anchor_id)
+        
+        # Handle preface items (no nesting)
+        if anchor_id in ['pre', 'note', 'pref']:
+            ncx += f'    <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'      <navLabel><text>{escape(display)}</text></navLabel>\n'
             ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
             ncx += f'    </navPoint>\n'
+            play_order += 1
+            continue
+        
+        # PART I header
+        if anchor_id == 'p1':
+            ncx += f'    <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'      <navLabel><text>{escape(display)}</text></navLabel>\n'
+            ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
+            play_order += 1
+            in_part1 = True
+            continue
+        
+        # Exercises under PART I (nested)
+        if in_part1 and anchor_id.startswith('e') and not anchor_id.startswith('e1') or in_part1 and anchor_id in ['canon']:
+            ncx += f'      <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'        <navLabel><text>{escape(display)}</text></navLabel>\n'
+            ncx += f'        <content src="{fname}#{anchor_id}"/>\n'
+            ncx += f'      </navPoint>\n'
+            play_order += 1
+            continue
+        
+        # PART II header - close PART I first
+        if in_part1 and anchor_id == 'p2':
+            ncx += f'    </navPoint>\n'  # Close PART I parent
+            ncx += f'    <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'      <navLabel><text>{escape(display)}</text></navLabel>\n'
+            ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
+            play_order += 1
+            in_part1 = False
+            in_part2 = True
+            continue
+        
+        # Exercises under PART II (nested)
+        if in_part2 and anchor_id.startswith('e'):
+            ncx += f'      <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+            ncx += f'        <navLabel><text>{escape(display)}</text></navLabel>\n'
+            ncx += f'        <content src="{fname}#{anchor_id}"/>\n'
+            ncx += f'      </navPoint>\n'
+            play_order += 1
+            continue
+        
+        # Default - top level
+        ncx += f'    <navPoint id="nav_{anchor_id}" playOrder="{play_order}">\n'
+        ncx += f'      <navLabel><text>{escape(display)}</text></navLabel>\n'
+        ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
+        ncx += f'    </navPoint>\n'
+        play_order += 1
+    
+    # Close any open tags
+    if in_part1:
+        ncx += f'    </navPoint>\n'
+    if in_part2:
+        ncx += f'    </navPoint>\n'
     
     ncx += '''  </navMap>
 </ncx>
@@ -314,52 +372,16 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
 </html>''')
     book.add_item(titlepage)
     
-    # Create elegant text title page
+    # Create elegant text title page (old EPUB simple style)
     title_text = f"An Exposition of the Epistle to the Hebrews, Vol. {vol_num}"
     author_text = "by John Owen"
     text_title = epub.EpubHtml(title='Title', file_name='text_title.xhtml', lang='en')
     text_title.set_content(f'''<?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-<title>Title</title>
-<style>
-* {{ box-sizing: border-box; margin: 0; padding: 0; }}
-body {{
-    font-family: Georgia, "Times New Roman", serif;
-    color: #1a1a1a;
-    text-align: center;
-    padding: 2em;
-}}
-.title-container {{
-    margin-top: 25%;
-    padding: 2em;
-}}
-.title-text {{
-    font-size: 1.6em;
-    font-weight: bold;
-    line-height: 1.4;
-    margin-bottom: 1.5em;
-}}
-.author-text {{
-    font-size: 1.1em;
-    font-style: italic;
-    color: #333;
-}}
-.publisher {{
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 2em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}}
-</style>
-</head>
+<head><title>Title</title></head>
 <body>
-<div class="title-container">
-<div class="title-text">{escape(title_text)}</div>
-<div class="author-text">{escape(author_text)}</div>
-<div class="publisher">Monergism Books</div>
-</div>
+<h2>{escape(title_text)}</h2>
+<h3>{escape(author_text)}</h3>
 </body>
 </html>'''.encode('utf-8'))
     book.add_item(text_title)
