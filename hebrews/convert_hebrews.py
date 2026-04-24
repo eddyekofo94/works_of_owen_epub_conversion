@@ -107,6 +107,9 @@ def clean_html(html_content):
     clean = re.sub(r'<head>.*?</head>', '', html_content, flags=re.DOTALL)
     clean = re.sub(r'class="calibre\d+"', '', clean)
     clean = re.sub(r'<html[^>]*>|<body[^>]*>|</body>|</html>', '', clean)
+    # Remove old decorative header image reference (not needed - we have proper cover)
+    clean = re.sub(r'<img[^>]*hebrews800\.jpg[^>]*>', '', clean, flags=re.IGNORECASE)
+    clean = re.sub(r'src="hebrews800\.jpg"', '', clean, flags=re.IGNORECASE)
     return clean
 
 
@@ -311,6 +314,30 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
 </html>''')
     book.add_item(titlepage)
     
+    # Create elegant text title page
+    title_text = f"An Exposition of the Epistle to the Hebrews, Vol. {vol_num}"
+    author_text = "by John Owen"
+    text_title = epub.EpubHtml(title='Title', file_name='text_title.xhtml', lang='en')
+    text_title.set_content(f'''<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Title</title>
+<link rel="stylesheet" href="stylesheet.css"/>
+<style>
+.title-text {{ text-align: center; margin-top: 30%; }}
+.title-text h1 {{ font-size: 1.8em; font-weight: bold; margin-bottom: 0.5em; }}
+.title-text .author {{ font-size: 1.2em; font-style: italic; margin-top: 1em; }}
+</style>
+</head>
+<body>
+<div class="title-text">
+<h1>{escape(title_text)}</h1>
+<p class="author">{escape(author_text)}</p>
+</div>
+</body>
+</html>'''.encode('utf-8'))
+    book.add_item(text_title)
+    
     epub_chapters = []
     
     for i, (fname, content) in enumerate(chapters_data):
@@ -353,7 +380,7 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
     )
     book.add_item(toc_item)
     
-    book.spine = [titlepage] + [ch[0] for ch in epub_chapters]
+    book.spine = [titlepage, text_title] + [ch[0] for ch in epub_chapters]
     
     temp_epub = output_path.replace('.epub', '_temp.epub')
     epub.write_epub(temp_epub, book, {})
