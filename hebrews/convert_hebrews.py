@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Convert John Owen Hebrew Commentary EPUBs to EPUB 3.0 with full hierarchical TOC.
+Convert John Owen Hebrew Commentary EPUBs to EPUB 3.0 with OLD structure.
+- Keep original file names: hebrews_v1_split_000.html, titlepage.xhtml
+- Use toc.ncx only (no nav.xhtml)
+- Match old EPUB structure exactly
 """
 
 import os
@@ -10,7 +13,6 @@ import uuid
 import zipfile
 import tempfile
 import shutil
-from xml.etree import ElementTree as ET
 from html import escape
 
 try:
@@ -32,15 +34,10 @@ h2 { font-size: 1.3em; font-weight: bold; text-align: center; margin: 1.5em 0 0.
 h3 { font-size: 1.1em; font-weight: bold; text-align: center; margin: 1.25em 0 0.5em; font-style: italic; }
 p, div { margin: 0.5em 0; text-indent: 1.25em; }
 section p:first-of-type { text-indent: 0; }
-a { text-decoration: none; color: #0000EE; }
 .title-page { text-align: center; margin-top: 25%; page-break-after: always; }
 .title-page h1 { font-size: 1.8em; margin-bottom: 0.5em; }
 .title-page h2 { font-size: 1.2em; font-style: italic; font-weight: normal; margin: 1em 0 2em; }
 .title-page p { text-indent: 0; margin: 0.5em 0; }
-nav h2 { display: none; }
-nav ol { padding-left: 1em; list-style: none; }
-nav li { margin: 0.5em 0; }
-nav a { text-decoration: none; color: #0000EE; }
 """
 
 
@@ -48,19 +45,15 @@ def extract_epub_metadata(epub_path):
     with zipfile.ZipFile(epub_path, 'r') as zf:
         content_opf = zf.read('content.opf').decode('utf-8')
     
+    import xml.etree.ElementTree as ET
     tree = ET.fromstring(content_opf)
     result = {'title': None, 'creator': None, 'language': 'en', 'publisher': None}
     
-    for elem in tree.iter():
+    ns = {'opf': 'http://www.idpf.org/2007/opf', 'dc': 'http://purl.org/dc/elements/1.1/'}
+    for elem in tree.findall('.//dc:*', ns):
         tag = elem.tag.split('}')[-1]
-        if tag == 'title':
-            result['title'] = elem.text
-        elif tag == 'creator':
-            result['creator'] = elem.text
-        elif tag == 'language':
-            result['language'] = elem.text
-        elif tag == 'publisher':
-            result['publisher'] = elem.text
+        if tag in result:
+            result[tag] = elem.text
     
     return {
         'title': result['title'] or 'An Exposition of the Epistle to the Hebrews',
@@ -74,16 +67,14 @@ def extract_html_chapters(epub_path):
     chapters = []
     with zipfile.ZipFile(epub_path, 'r') as zf:
         names = zf.namelist()
-        html_files = sorted([n for n in names if n.endswith('.html') or n.endswith('.xhtml')])
+        html_files = sorted([n for n in names if 'split' in n and (n.endswith('.html') or n.endswith('.xhtml'))])
         for fname in html_files:
-            if 'split' in fname:
-                content = zf.read(fname).decode('utf-8')
-                chapters.append((fname, content))
+            content = zf.read(fname).decode('utf-8')
+            chapters.append((fname, content))
     return chapters
 
 
 def titlecase_text(text):
-    """Convert ALL CAPS to Title Case."""
     if not text or len(text) < 3:
         return text
     if text.isupper():
@@ -99,20 +90,7 @@ def titlecase_text(text):
     return text
 
 
-def find_portraits(work_dir):
-    """Find portrait images in portraits folder."""
-    portraits_dir = os.path.join(work_dir, '..', 'portraits')
-    if not os.path.isdir(portraits_dir):
-        return []
-    portraits = []
-    for f in sorted(os.listdir(portraits_dir)):
-        if f.lower().endswith(('.jpeg', '.jpg', '.png')):
-            portraits.append(os.path.join(portraits_dir, f))
-    return portraits
-
-
 def find_cover_for_volume(work_dir, vol_num):
-    """Find the cover image for a volume."""
     covers_dir = os.path.join(work_dir, 'covers')
     if not os.path.isdir(covers_dir):
         return None
@@ -132,6 +110,14 @@ def clean_html(html_content):
     return clean
 
 
+def preserve_anchors(html_content, anchor_ids):
+    for anchor_id in anchor_ids:
+        pattern = r'(<h[1-4][^>]*>)'
+        replacement = rf'\1<a id="{anchor_id}"></a>'
+        html_content = re.sub(pattern, replacement, html_content, count=1)
+    return html_content
+
+
 def extract_chapter_title(html_content, default_title):
     title = default_title
     heading_match = re.search(r'<h[1-4][^>]*>(.*?)</h[1-4]>', html_content, re.DOTALL)
@@ -145,12 +131,10 @@ def extract_chapter_title(html_content, default_title):
 
 
 def extract_toc_anchors(epub_path):
-    """Extract ALL TOC anchors from the EPUB with their locations."""
+    """Extract ALL TOC anchors from the EPUB including special markers."""
     all_anchors = []
+    seen_anchors = set()
     anchor_skip = {'calibre_pb', 'calibre_link'}
-    special_titles = {'pre': 'GENERAL PREFACE BY THE EDITOR', 
-                     'note': 'The Epistle Dedicatory',
-                     'pref': 'Prefatory Notices'}
     
     with zipfile.ZipFile(epub_path, 'r') as zf:
         names = zf.namelist()
@@ -159,11 +143,14 @@ def extract_toc_anchors(epub_path):
             if 'split' in fname and (fname.endswith('.html') or fname.endswith('.xhtml')):
                 content = zf.read(fname).decode('utf-8')
                 
+                # Find all anchors in <a id="..."></a> format
                 for match in re.finditer(r'<a[^>]*\bid="([^"#]+)"[^>]*></a>', content):
                     anchor_id = match.group(1)
                     
-                    if anchor_id in anchor_skip:
+                    if anchor_id in anchor_skip or anchor_id in seen_anchors:
                         continue
+                    
+                    seen_anchors.add(anchor_id)
                     
                     anchor_pos = match.end()
                     after_text = content[anchor_pos:anchor_pos+800]
@@ -182,13 +169,8 @@ def extract_toc_anchors(epub_path):
                     
                     anchor_text = re.sub(r'\s+', ' ', anchor_text).strip()
                     
-                    anchor_text = titlecase_text(anchor_text)
-                    
                     if len(anchor_text) < 3:
                         continue
-                    
-                    if anchor_id in special_titles:
-                        anchor_text = special_titles[anchor_id]
                     
                     if anchor_text and len(anchor_text) > 2:
                         all_anchors.append((fname, anchor_id, anchor_text))
@@ -197,7 +179,6 @@ def extract_toc_anchors(epub_path):
 
 
 def group_anchors_by_chapter(anchors):
-    """Group anchors by chapter file."""
     chapters_map = {}
     num_pattern = re.compile(r'_(\d+)\.')
     
@@ -212,15 +193,33 @@ def group_anchors_by_chapter(anchors):
     return chapters_map
 
 
-def generate_ncx(vol_title, epub_chapters, chapters_map):
-    """Generate NCX XML with hierarchical TOC."""
-    special_titles = {
-        'pre': 'GENERAL PREFACE BY THE EDITOR', 
+def generate_ncx_old(vol_title, chapters_map):
+    """Generate NCX with old EPUB structure - EXACT titles matching original."""
+    
+    # Exact title mappings to match old EPUB
+    EXACT_TITLES = {
+        'pre': 'GENERAL PREFACE BY THE EDITOR',
         'note': 'The Epistle Dedicatory',
         'pref': 'Prefatory Notices',
+        'p1': 'PART I: CONCERNING THE EPISTLE TO THE HEBREWS',
         'canon': 'I. —The canonical authority of the Epistle to the Hebrews',
         'e2': 'II. —Of the penman of the Epistle to the Hebrews',
-        'p1': 'PART I: CONCERNING THE EPISTLE TO THE HEBREWS',
+        'e3': 'III. —The time [and occasion] of the writing of the Epistle to the Hebrews',
+        'e4': 'IV. —The language wherein the Epistle to the Hebrews was originally written',
+        'e5': 'V. —Testimonies cited by the apostle out of the Old Testament',
+        'e6': 'VI. —Oneness of the church',
+        'e7': 'VII. —Of the Judaical distribution of the Old Testament',
+        'p2': 'PART II: CONCERNING THE MESSIAH',
+        'e8': 'VIII. —The first dissertation concerning the Messiah, proving him to be promised of old',
+        'e9': 'IX. —Promises of the Messiah vindicated',
+        'ex': 'X. —Appearances of the Son of God under the old Testament',
+        'e11': 'XI. —Faith of the ancient church of the Jews concerning the Messiah',
+        'e12': 'XII. —[Second dissertation]—The promised Messiah long since come',
+        'e13': 'XIII. —Other testimonies proving the Messiah to be come',
+        'e14': 'XIV. —Daniel\'s prophecy vindicated',
+        'e15': 'XV. —Computation of Daniel\'s weeks',
+        'e16': 'XVI. —The exposition of the Psalm',
+        'e17': 'XVII. —The doctrinal part of the Epistle',
     }
     
     ncx = '''<?xml version="1.0" encoding="UTF-8"?>
@@ -237,45 +236,22 @@ def generate_ncx(vol_title, epub_chapters, chapters_map):
   <navMap>
 '''.format(escape(vol_title))
     
-    ncx += '    <navPoint id="chapter_title">\n'
-    ncx += '      <navLabel><text>Title Page</text></navLabel>\n'
-    ncx += '      <content src="title.xhtml"/>\n'
-    ncx += '    </navPoint>\n'
-    
-    first_ch_fname = None
-    if epub_chapters:
-        first_ch_fname = epub_chapters[0][3]
+    for ch_num in sorted(chapters_map.keys()):
+        sections = chapters_map[ch_num]
         
-        for aid in ['pre', 'note', 'pref']:
-            for anchor_id, anchor_text in chapters_map.get(1, []):
-                if anchor_id == aid:
-                    ncx += f'    <navPoint id="nav_{aid}">\n'
-                    ncx += f'      <navLabel><text>{escape(special_titles.get(aid, anchor_text))}</text></navLabel>\n'
-                    ncx += f'      <content src="{first_ch_fname}#{aid}"/>\n'
-                    ncx += f'    </navPoint>\n'
-                    break
-    
-    prefice_anchor_ids = {'pre', 'note', 'pref'}
-    
-    nav_counter = 1
-    for ch_obj, ch_title, ch_num, ch_fname in epub_chapters:
-        ncx += f'    <navPoint id="chapter_{nav_counter}">\n'
-        ncx += f'      <navLabel><text>{escape(ch_title)}</text></navLabel>\n'
-        ncx += f'      <content src="{ch_fname}"/>\n'
-        
-        section_list = chapters_map.get(ch_num, [])
-        for anchor_id, anchor_text in section_list:
-            if anchor_id in prefice_anchor_ids:
-                continue
-            display_text = special_titles.get(anchor_id, anchor_text)
-            nav_counter += 1
-            ncx += f'      <navPoint id="chapter_{nav_counter}">\n'
-            ncx += f'        <navLabel><text>{escape(display_text)}</text></navLabel>\n'
-            ncx += f'        <content src="{ch_fname}#{escape(anchor_id)}"/>\n'
-            ncx += f'      </navPoint>\n'
-        
-        nav_counter += 1
-        ncx += f'    </navPoint>\n'
+        for anchor_id, anchor_text in sections:
+            if ch_num == 1 and anchor_id in ['pre', 'note', 'pref']:
+                fname = 'hebrews_v1_split_000.html'
+            else:
+                fname = f'hebrews_v1_split_{ch_num-1:03d}.html'
+            
+            # Use EXACT title if we have it, otherwise use extracted text
+            display_text = EXACT_TITLES.get(anchor_id, anchor_text)
+            
+            ncx += f'    <navPoint id="nav_{anchor_id}">\n'
+            ncx += f'      <navLabel><text>{escape(display_text)}</text></navLabel>\n'
+            ncx += f'      <content src="{fname}#{anchor_id}"/>\n'
+            ncx += f'    </navPoint>\n'
     
     ncx += '''  </navMap>
 </ncx>
@@ -284,126 +260,8 @@ def generate_ncx(vol_title, epub_chapters, chapters_map):
     return ncx
 
 
-def generate_nav_xhtml(vol_title, epub_chapters, chapters_map, has_portrait=False):
-    """Generate nav.xhtml with hierarchical TOC for EPUB3."""
-    special_titles = {
-        'pre': 'GENERAL PREFACE BY THE EDITOR', 
-        'note': 'The Epistle Dedicatory',
-        'pref': 'Prefatory Notices',
-        'canon': 'I. —The canonical authority of the Epistle to the Hebrews',
-        'e2': 'II. —Of the penman of the Epistle to the Hebrews',
-        'p1': 'PART I: CONCERNING THE EPISTLE TO THE HEBREWS',
-    }
-    
-    html = f'''<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en" xml:lang="en">
-  <head>
-    <title>{escape(vol_title)}</title>
-    <link href="style/main.css" rel="stylesheet" type="text/css"/>
-  </head>
-  <body>
-    <nav epub:type="toc" id="id" role="doc-toc">
-      <h2>{escape(vol_title)}</h2>
-      <ol>
-        <li><a href="title.xhtml">Title Page</a></li>
-'''
-    
-    if has_portrait:
-        html += '        <li><a href="portrait.xhtml">Portrait</a></li>\n'
-    
-    preface_anchor_ids = {'pre', 'note', 'pref'}
-    
-    first_ch_fname = None
-    if epub_chapters:
-        first_ch_fname = epub_chapters[0][3]
-        
-        for aid in ['pre', 'note', 'pref']:
-            for anchor_id, anchor_text in chapters_map.get(1, []):
-                if anchor_id == aid:
-                    display_text = special_titles.get(aid, anchor_text)
-                    html += f'        <li><a href="{first_ch_fname}#{aid}">{escape(display_text)}</a></li>\n'
-                    break
-    
-    for ch_obj, ch_title, ch_num, ch_fname in epub_chapters:
-        html += f'        <li><a href="{ch_fname}">{escape(ch_title)}</a>\n'
-        
-        section_list = chapters_map.get(ch_num, [])
-        if section_list:
-            html += '          <ol>\n'
-            for anchor_id, anchor_text in section_list:
-                if anchor_id in preface_anchor_ids:
-                    continue
-                display_text = special_titles.get(anchor_id, anchor_text)
-                html += f'            <li><a href="{ch_fname}#{escape(anchor_id)}">{escape(display_text)}</a></li>\n'
-            html += '          </ol>\n'
-        
-        html += '        </li>\n'
-    
-    html += '''      </ol>
-    </nav>
-  </body>
-</html>
-'''
-    
-    return html
-
-
-def post_process_epub(epub_path, vol_title, epub_chapters, chapters_map, has_portrait=False):
-    """Post-process EPUB to add hierarchical TOC (nav.xhtml only for EPUB3)."""
-    tmp_dir = tempfile.mkdtemp()
-    extract_dir = os.path.join(tmp_dir, 'epub_extracted')
-    
-    try:
-        os.makedirs(extract_dir, exist_ok=True)
-        
-        with zipfile.ZipFile(epub_path, 'r') as zf:
-            zf.extractall(extract_dir)
-        
-        nav_content = generate_nav_xhtml(vol_title, epub_chapters, chapters_map, has_portrait=has_portrait)
-        with open(os.path.join(extract_dir, 'EPUB', 'nav.xhtml'), 'w', encoding='utf-8') as f:
-            f.write(nav_content)
-        
-        # Generate toc.ncx for Apple Books backward compatibility
-        ncx_content = generate_ncx(vol_title, epub_chapters, chapters_map)
-        with open(os.path.join(extract_dir, 'EPUB', 'toc.ncx'), 'w', encoding='utf-8') as f:
-            f.write(ncx_content)
-        
-        # Add toc.ncx to content.opf manifest and add properties="nav" to nav.xhtml
-        opf_path = os.path.join(extract_dir, 'EPUB', 'content.opf')
-        if os.path.exists(opf_path):
-            with open(opf_path, 'r', encoding='utf-8') as f:
-                opf_content = f.read()
-            # Add toc.ncx item and properties="nav" to nav.xhtml entry
-            if 'href="nav.xhtml"' in opf_content and 'id="ncx"' not in opf_content:
-                opf_content = opf_content.replace(
-                    '<item href="nav.xhtml"',
-                    '<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>\n    <item href="nav.xhtml"'
-                )
-                opf_content = opf_content.replace(
-                    'media-type="application/xhtml+xml"/>',
-                    'media-type="application/xhtml+xml" properties="nav"/>'
-                )
-            with open(opf_path, 'w', encoding='utf-8') as f:
-                f.write(opf_content)
-        
-        temp_zip = epub_path.replace('.epub', '_fixed.zip')
-        
-        with zipfile.ZipFile(temp_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
-            for root, dirs, files in os.walk(extract_dir):
-                for file in files:
-                    file_path = os.path.join(root, file)
-                    arcname = os.path.relpath(file_path, extract_dir)
-                    zf.write(file_path, arcname)
-        
-        os.remove(epub_path)
-        os.rename(temp_zip, epub_path)
-    
-    finally:
-        shutil.rmtree(tmp_dir)
-
-
 def convert_epub(input_path, output_path, work_dir, vol_num):
-    """Convert one EPUB to EPUB 3.0 with full hierarchical TOC."""
+    """Convert EPUB with OLD structure."""
     print(f"Converting Volume {vol_num}...")
     
     metadata = extract_epub_metadata(input_path)
@@ -429,7 +287,7 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
     
     style = epub.EpubItem(
         uid='main-css',
-        file_name='style/main.css',
+        file_name='stylesheet.css',
         media_type='text/css',
         content=MODERN_CSS.encode('utf-8')
     )
@@ -439,72 +297,34 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
     if cover_path and os.path.exists(cover_path):
         with open(cover_path, 'rb') as f:
             cover_data = f.read()
-        ext = os.path.splitext(cover_path)[1].lower()
-        if ext == '.jpeg':
-            ext = '.jpg'
-        book.set_cover(f'images/cover{ext}', cover_data, create_page=False)
+        book.set_cover('cover.jpeg', cover_data, create_page=False)
         print(f"  Cover: {os.path.basename(cover_path)}")
     
     title = metadata['title']
+    vol_subtitle = f"Vol. {vol_num}"
+    
+    titlepage = epub.EpubHtml(title='Cover', file_name='titlepage.xhtml', lang='en')
     title_body = (
         f'<div class="title-page">'
         f'<h1>{escape(title)}</h1>'
+        f'<h2>{vol_subtitle}</h2>'
         f'<p>by {escape(metadata.get("creator", "John Owen"))}</p>'
         f'<p>Monergism Books</p>'
         f'</div>'
     )
-    
-    title_page = epub.EpubHtml(title='Title Page', file_name='title.xhtml', lang='en')
-    title_page.set_content(
+    titlepage.set_content(
         f'<?xml version="1.0" encoding="utf-8"?>'
         f'<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
-        f'<head><link rel="stylesheet" href="style/main.css"/></head>'
+        f'<head><link rel="stylesheet" href="stylesheet.css"/></head>'
         f'<body>{title_body}</body></html>'.encode('utf-8')
     )
-    title_page.add_item(style)
-    book.add_item(title_page)
-    
-    portraits = find_portraits(work_dir)
-    portrait_page = None
-    if portraits:
-        print(f"  Portraits: {len(portraits)} found")
-        portrait_items = []
-        for i, portrait_path in enumerate(portraits):
-            with open(portrait_path, 'rb') as f:
-                img_data = f.read()
-            img_ext = os.path.splitext(portrait_path)[1].lower()
-            img_name = f'portrait_{i+1}.jpeg'
-            
-            portrait_item = epub.EpubItem(
-                uid=f'portrait-{i+1}',
-                file_name=f'images/{img_name}',
-                media_type='image/jpeg',
-                content=img_data
-            )
-            book.add_item(portrait_item)
-            portrait_items.append((img_name, os.path.basename(portrait_path)))
-        
-        if portrait_items:
-            portrait_html = '<div class="portrait-page">'
-            for img_name, orig_name in portrait_items:
-                portrait_html += f'<p><img src="images/{img_name}" alt="Portrait" style="max-width:100%;height:auto;"/></p>'
-            portrait_html += '</div>'
-            
-            portrait_page = epub.EpubHtml(title='Portrait', file_name='portrait.xhtml', lang='en')
-            portrait_page.set_content(
-                f'<?xml version="1.0" encoding="utf-8"?>'
-                f'<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
-                f'<head><link rel="stylesheet" href="style/main.css"/></head>'
-                f'<body>{portrait_html}</body></html>'.encode('utf-8')
-            )
-            portrait_page.add_item(style)
-            book.add_item(portrait_page)
-            print(f"  Portrait page added")
+    titlepage.add_item(style)
+    book.add_item(titlepage)
     
     epub_chapters = []
     
     for i, (fname, content) in enumerate(chapters_data):
-        ch_id = f'chapter_{i+1:03d}'
+        old_fname = os.path.basename(fname)
         
         body_match = re.search(r'<body[^>]*>(.*?)</body>', content, re.DOTALL)
         body_content = body_match.group(1) if body_match else content
@@ -515,46 +335,40 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
         
         clean_content = clean_html(body_content)
         
+        chapter_anchor_ids = [a[0] for a in chapters_map.get(i+1, [])]
+        if chapter_anchor_ids:
+            clean_content = preserve_anchors(clean_content, chapter_anchor_ids)
+        
         full_html = (
             f'<?xml version="1.0" encoding="utf-8"?>'
             f'<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
-            f'<head><link rel="stylesheet" href="../style/main.css"/></head>'
-            f'<body><section>{clean_content}</section></body></html>'
+            f'<head><link rel="stylesheet" href="stylesheet.css"/></head>'
+            f'<body>{clean_content}</body></html>'
         )
         
-        ch = epub.EpubHtml(title=ch_title[:200], file_name=f'{ch_id}.xhtml', lang='en')
+        ch = epub.EpubHtml(title=ch_title[:200], file_name=old_fname, lang='en')
         ch.set_content(full_html.encode('utf-8'))
         ch.add_item(style)
         book.add_item(ch)
         
-        epub_chapters.append((ch, ch_title, i+1, f'{ch_id}.xhtml'))
-        print(f"    Chapter {i+1}/{len(chapters_data)}")
+        epub_chapters.append((ch, ch_title, i+1, old_fname))
+        print(f"    Chapter {i+1}/{len(chapters_data)}: {old_fname}")
     
-    # nav.xhtml with thorough TOC is generated in post_process_epub()
-    # EPUB3 only needs nav.xhtml - no need for book.toc (causes duplicate)
+    toc_ncx = generate_ncx_old(metadata['title'], chapters_map)
+    toc_item = epub.EpubItem(
+        uid='ncx',
+        file_name='toc.ncx',
+        media_type='application/x-dtbncx+xml',
+        content=toc_ncx.encode('utf-8')
+    )
+    book.add_item(toc_item)
     
-    # EPUB3 uses thorough nav.xhtml added in post_process
-    # Create minimal nav for spine; content replaced by post_process_epub
-    nav = epub.EpubHtml(title='Table of Contents', file_name='nav.xhtml', lang='en')
-    nav.set_content(b'''<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en">
-<head><link rel="stylesheet" href="style/main.css"/></head>
-<body><nav epub:type="toc" id="toc"><ol></ol></nav></body></html>''')
-    nav.add_item(style)
-    book.add_item(nav)
-    
-    if portrait_page:
-        spine_items = ['nav', title_page, portrait_page] + [ch[0] for ch in epub_chapters]
-    else:
-        spine_items = ['nav', title_page] + [ch[0] for ch in epub_chapters]
-    book.spine = spine_items
-    
-    has_portrait = portrait_page is not None
+    book.spine = [titlepage] + [ch[0] for ch in epub_chapters]
     
     temp_epub = output_path.replace('.epub', '_temp.epub')
     epub.write_epub(temp_epub, book, {})
     
-    post_process_epub(temp_epub, metadata['title'], epub_chapters, chapters_map, has_portrait)
+    post_process_epub_simple(temp_epub)
     
     if os.path.exists(output_path):
         os.remove(output_path)
@@ -563,6 +377,43 @@ def convert_epub(input_path, output_path, work_dir, vol_num):
     size = os.path.getsize(output_path)
     print(f"  Saved: {os.path.basename(output_path)} ({size/1024:.0f} KB)")
     return True
+
+
+def post_process_epub_simple(epub_path):
+    """Fix up the EPUB: ensure spine has toc='ncx'."""
+    tmp_dir = tempfile.mkdtemp()
+    extract_dir = os.path.join(tmp_dir, 'epub_extracted')
+    
+    try:
+        os.makedirs(extract_dir, exist_ok=True)
+        
+        with zipfile.ZipFile(epub_path, 'r') as zf:
+            zf.extractall(extract_dir)
+        
+        opf_path = os.path.join(extract_dir, 'content.opf')
+        if os.path.exists(opf_path):
+            with open(opf_path, 'r', encoding='utf-8') as f:
+                opf_content = f.read()
+            
+            opf_content = opf_content.replace('<spine>', '<spine toc="ncx">')
+            
+            with open(opf_path, 'w', encoding='utf-8') as f:
+                f.write(opf_content)
+        
+        temp_zip = epub_path.replace('.epub', '_fixed.zip')
+        
+        with zipfile.ZipFile(temp_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
+            for root, dirs, files in os.walk(extract_dir):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    arcname = os.path.relpath(file_path, extract_dir)
+                    zf.write(file_path, arcname)
+        
+        os.remove(epub_path)
+        os.rename(temp_zip, epub_path)
+    
+    finally:
+        shutil.rmtree(tmp_dir)
 
 
 def discover_epubs(work_dir):
