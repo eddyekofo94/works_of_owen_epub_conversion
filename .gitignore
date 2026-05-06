@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# macOS
+.DS_Store
+
+# Generated files
+volumes/v*/output/*.epub
+volumes/v*/intermediate/*.thml.xml
+
+# IDE
+.vscode/
+.idea/
+
+# Archives (kept in reference/)
+canva-covers.zip
