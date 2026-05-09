@@ -20,104 +20,83 @@
 | 14 | NAV title splitting now creates hierarchical structure (_split_nav_title returns tuple) | converter.py | ✅ Fixed |
 | 15 | `a.footnote-ref` font-size too small (0.75em → 0.95em) | shared.py | ✅ Fixed |
 | 16 | ΧΡΙΣΤΟΛΟΓΙΑ merged with editor signature on wrong page | ThML/converter | ✅ Fixed |
+| 17 | Hierarchical Split (L1 vs L2) — Improved State Logic | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 18 | Redundant Heading Merge (Treatise + Chapter 1) | ThML/converter.py | ⌛ PENDING CONFIRMATION |
+| 19 | Non-Uniform Chapter Levels (Chapters 8-20 level logic) | converter.py | ⌛ PENDING CONFIRMATION |
+| 20 | Missing "CHAPTER 1" heading in XHTML body content | ThML (ch008) | ⌛ PENDING CONFIRMATION |
+| 21 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
+| 22 | Missed Centered Headings (Centering Bug) | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 23 | Greek Mapping Error (Y correctly mapped to Upsilon) | shared.py | ⌛ PENDING CONFIRMATION |
+| 24 | TOC Out-of-Order Matching (Forced Monotonic matching) | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 25 | Footnote False Positives (Strict f1, f2 prefix requirement) | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 26 | Nested Tag Content Loss (Using itertext() recursion) | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 27 | "W. H. G." Signature Missing at end of Preface | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 28 | "CONTENTS OF VOLUME 1" Formatting (Hanging Indent) | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 29 | Scripture codes leaking into CONTENTS page XHTML | `build_toc_page_xhtml()` → `format_title_page()` | ✅ Fixed 2026-05-09 |
+| 30 | Treatise title pages merged into single `<p>` blob | chapter loop in `process_owen_volume()` | ✅ Fixed 2026-05-09 |
+| 31 | Font detection used `max()` on font names, missing Koine spans | `format_title_page()` | ✅ Fixed 2026-05-09 |
+| 32 | Healer-mode transition falsely triggered by TOC text ("CHAPTER") | front matter loop in `process_owen_volume()` | ✅ Fixed 2026-05-09 |
+| 33 | Title page detection too aggressive (41 false positives) | `detect_page_type()` | ✅ Fixed 2026-05-09 |
+| 34 | NAV links pointing to non-existent files for title-only chapters | TOC entry href in `process_owen_volume()` | ✅ Fixed 2026-05-09 |
+| 35 | `build_toc_page_xhtml()` accidentally deleted during refactor | converter.py | ✅ Fixed 2026-05-09 |
+| 36 | `healer_mode` not passed to `get_pages_text()` for mid-volume title content | chapter loop in `process_owen_volume()` | ✅ Fixed 2026-05-09 |
+| 37 | Preservation Mode — front matter pages 1-10 formatting broken | converter.py + shared.py | ❌ Open |
+| 38 | Missing treatises: Part 2, Meditations Applied, Two Short Catechisms | converter.py | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 39 | TOC (pages 3-6) fragmented and formatting doesn't match PDF | `detect_page_type()` + `build_toc_page_xhtml()` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 40 | Title pages lack premium color and typography design | `shared.py` + `format_title_page()` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 41 | PREFATORY NOTE and PREFACE badly extracted and formatted | `detect_page_type()` + `shared.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
 ## Issue Details
 
-### 1. Portrait Not Wired (Fixed)
-**Fix:** Added `find_portrait(workspace, vol_num)` and `generate_frontispiece_xhtml()`.
+### 41. PREFATORY NOTE and PREFACE badly extracted and formatted (IMPLEMENTED)
+**Problem:** Front matter sections like PREFATORY NOTE (page 20) and PREFACE (page 22) were being treated as `title_page` instead of standard chapters.
+- This triggered the centered line-by-line layout, which is inappropriate for full pages of body text.
+- It also caused content fragmentation between the "title" file and the "body" file.
+**Fixes:**
+- Refined `detect_page_type()` mixed-mode fallback to require a larger font (>18pt) and lower character count (<2000), effectively filtering out standard chapter starts like PREFATORY NOTE (16pt).
+- Updated standard `h2` and `h3` styling in `shared.py` to be centered by default, ensuring chapter-like headings match the project aesthetic.
+- Updated `markdown_to_html()` to apply the `.secondary` class to `h2` and `h3` headings for consistent color branding.
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
 
-### 2. Footnotes Not Extracted (Fixed)
-**Fix:** Added `_build_endnotes_chapter()` and fnref→noteref conversion in `_elem_to_html()`.
 
-### 3–6. NAV, Spine, Cover, id="creator" (Fixed)
-See previous sessions.
+### 40. Title pages lack premium color and typography design (IMPLEMENTED)
+**Problem:** The generated title pages (main and treatise) were plain and lacked the visual hierarchy and aesthetic appeal of high-end theological publications.
+**Fixes:**
+- Updated `shared.py` with premium CSS classes: `.primary` (Blue), `.secondary` (Green), `.descriptive` (Italics), and `.separator` (Bold small-caps).
+- Overhauled `format_title_page()` in `converter.py` with heuristics to apply these classes based on font size and line length.
+- Main titles (20pt+ or short 15pt+) are now Blue (`h1.primary`).
+- Secondary titles (15pt+) are now Green (`h2.secondary`).
+- Descriptive paragraphs are now italicized (`p.descriptive`).
+- Structural separators (OR, OF, WITH) are now centered and bold (`h3.separator`).
+- Updated `_build_title_page()` for consistency across the main book title page.
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
 
-### 7. Portrait Always Same for All Volumes (Fixed)
-**Problem:** `find_portrait()` always returned `protrait1.jpeg` — all 16 Owen volumes + 7 Hebrews volumes got the same portrait.
-**Fix:** Changed `find_portrait()` to accept `vol_num` parameter and use `hashlib.md5(f'owen-v{vol_num}')` for deterministic but varied selection from all 3 portraits in `portraits/`.
 
-### 8. Portrait Not in OPF Manifest (Fixed)
-**Problem:** Portrait image physically copied into EPUB during post-processing but never declared in OPF manifest. EPUB validators flag this.
-**Fix:** Added portrait as `epub.EpubItem(uid='portrait-img', ...)` with proper MIME type before writing EPUB.
+### 39. TOC (pages 3-6) fragmented and formatting doesn't match PDF (IMPLEMENTED)
+**Problem:** The Table of Contents in Volume 1 (pages 3-6) was handled poorly:
+- Only the first page was detected as a TOC.
+- Extraction was fragmented into separate files.
+- Formatting (centering, bolding, hanging indents) was lost.
+**Fixes:**
+- Enhanced `detect_page_type()` with a heuristic to identify multi-page TOCs by item frequency.
+- Updated front matter loop in `process_owen_volume()` to merge consecutive TOC pages.
+- Overhauled `build_toc_page_xhtml()` to use block-level dictionary metadata, preserving centering for headings and applying `ContentsItem` styling with bold labels for list items.
+- Filtered out standalone page numbers from the extracted content.
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
 
-### 9. Title Page Doesn't Match Reference (Fixed)
-**Problem:** Title page was plain — single h1, simple subtitle, no ornament, no decorative rule, no editor line.
-**Fix:** Replaced title page XHTML to match reference design:
-- `<p class="ornament">❧</p>` — gold ornamental fleuron
-- `<h1>The Works of<br/>John Owen</h1>` — split title
-- `<hr class="rule"/>` — gold horizontal rule (40%, #8b6914)
-- Two `<p class="subtitle">` — volume number + subtitle
-- `<p class="author"><span class="by">by</span>John Owen</p>` — italic "by" label
-- `<p class="editor">Edited by William H. Goold</p>`
-- `<p class="publisher">Banner of Truth Trust</p>` — pushed to bottom with `margin-top: auto`
-- Flexbox layout: `display: flex; flex-direction: column; align-items: center; min-height: 90vh`
 
-### 10. NAV Title Splitting (Fixed)
-**Problem:** Combined titles like "A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST CHAPTER 1" displayed as one long line in NAV.
-**Fix:** Added `_split_nav_title()` regex that detects `TREATISE CHAPTER N` patterns and inserts `<br/>` for line breaks. Only affects NAV; chapter `<h1>` remains unchanged. Applied in `generate_nav_xhtml()` with special handling to not escape `<br/>`.
+### 25. Footnote False Positives (IMPLEMENTED)
+**Problem:** Plain numbers (like "4" in "Psalm 48") were misidentified as footnotes.
+**Fix:** Overhauled `inject_footnote_links` to strictly require the `f` prefix (e.g., `f1`, `f2`) used in AGES PDFs. The "f" is automatically stripped in the final display.
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
 
-### 11. CSS Alignment with Reference (Fixed)
-**Changes in EPUB_STYLESHEET:**
-- Replaced `.title-page` block with reference design (flexbox, ornament, rule, editor, publisher with `margin-top: auto`)
-- Added `.title-page .ornament`, `.title-page .rule`, `.title-page .author .by`, `.title-page .editor`
-- Added `-webkit-font-smoothing: antialiased` to body rule
-- Updated `.frontispiece` with flexbox centering (`display: flex; justify-content: center; min-height: 85vh`)
-
-**Changes in EPUB3_FONT_STYLES:**
-- Added `-webkit-font-smoothing: antialiased` and `line-height: 1.65` to body rule
-- Added `a.fn-link` rule (color, text-decoration, font-size, margin)
-- Added `aside[epub\:type~="endnote"]` rule (margin, padding, text-indent)
-
-### 12. Noteref Color Mismatch (Fixed)
-**Problem:** EPUB_STYLESHEET had `.noteref` color `#0066cc` and `.footnote-ref` color `#0066cc`, but reference EPUB and GEMINI.md specify `#0000EE`.
-**Fix:** Unified to `#0000EE` in both EPUB_STYLESHEET and EPUB3_FONT_STYLES.
-
-### 13. Duplicate .footnote CSS Rules (Fixed)
-**Problem:** Two conflicting `.footnote` rules — one with `margin: 0.3em 0 0.3em 1.5em` and another with `margin: 0.5em 0 0.5em 0`.
-**Fix:** Consolidated to single rule: `.footnote { font-size: 0.9em; text-indent: 0; margin: 0.3em 0; }`
-
-### 14. NAV Title Splitting Creates Hierarchy (Fixed)
-**Problem:** Combined titles like "A DECLARATION... CHAPTER 1" were on one line with `<br/>`.
-**Fix:** `_split_nav_title()` now returns a tuple `(treatise, chapter)`. The TOC-building loop emits two entries at different levels: parent (treatise) at `toc_level` and child (chapter number) at `toc_level + 1`. Also fixed false positive splits when preceded by em-dash.
-
-### 15. Footnote Reference Font Size (Fixed)
-**Problem:** `a.footnote-ref` font-size was 0.75em, too small to read comfortably.
-**Fix:** Changed to 0.95em in both occurrences in shared.py. Also fixed stale `#0066cc` → `#0000EE`.
-
-### 16. ΧΡΙΣΤΟΛΟΓΙΑ on Wrong Page (Fixed)
-**Problem:** In the printed book, "ΧΡΙΣΤΟΛΟΓΙΑ" appears on its own page as the Greek treatise heading. In the ThML extraction (volume_1.thml.xml line 280), it was placed in the same `<p>` as "W. H. G. Edinburgh, August 1850." at the end of ch004 (GENERAL PREFACE).
-
-**Fix:** Modified the ThML source (volumes/v1/intermediate/volume_1.thml.xml):
-- Removed Greek word from editor signature paragraph in ch004
-- Added `<h2>ΧΡΙΣΤΟΛΟΓΙΑ</h2>` as first heading in ch005 (before h1)
-
-Updated `_build_treatise_title()` in converter.py to detect and render Greek h2 headings.
-Added `.treatise-title h2.greek` CSS in shared.py (1.8em, Greek font, letter-spacing).
-
-**Result:** ch005 now renders with Greek heading at top, followed by English "CHRISTOLOGIA" title.
-
----
-
-## Remaining Work
-
-| Issue | Priority | Notes |
-|-------|----------|-------|
-| page-list nav for footnotes | Medium | Not yet implemented — requires page-number references in ThML |
-| ThML source data gaps | Low | Volumes 2–16 have fewer footnotes paragraphs than fnref links |
-
----
-
-## History
-
-- **2026-05-05**: Initial bugs identified from reference EPUB comparison
-- **2026-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
-- **2026-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
-- **2026-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
-- **2026-05-05**: Fixed hierarchical NAV level assignment and XML validity in generate_nav_xhtml()
-- **2026-05-05**: Fixed combined treatise/chapter headings in XHTML body content (e.g., Chapter 1 now shows separate H1/H2)
-- **2026-05-05**: Fixed incomplete "CONTENTS OF VOLUME 1" page in ThML; reconstructed 20 missing chapter entries by extracting from chapter headings.
-- **2026-05-05**: Extracted chapter subtitles from body text and appended them to "CHAPTER X" entries in the NAV menu (e.g., "Chapter 2 - Opposition Made...").
-- **2026-05-05**: Removed redundant Roman numeral entries (I., II., etc.) from the NAV menu to provide a cleaner Table of Contents.
-- **2026-05-05**: Fixed garbled NAV subtitles like "II. 1St" by improving list-marker filtering (regex) to catch (1st,), (2dly,), etc. in body text.
+...
+### 38. Missing treatises: Part 2, Meditations Applied, Two Short Catechisms (IMPLEMENTED)
+**Problem:** Three treatise-level sections were missing or incomplete due to detection failures on shared pages.
+**Fixes:**
+- Updated `detect_page_type()` to handle mixed title+body pages by checking for large font in early blocks.
+- Added duplicate title detection in the chapter loop to skip redundant `_title.xhtml` files.
+- Implemented `shares_page` logic to include shared first pages in the following chapter's body while using `limit_to_title` for the structural entry.
+**Status:** IMPLEMENTED (AWAITING VALIDATION)

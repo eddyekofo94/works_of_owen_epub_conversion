@@ -1,20 +1,55 @@
-“A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST" 
+1. Level 1: Treatise title
+2. Level 2: Chapter 1, Chapter 2, ..., Chapter 20 (uniform siblings)
+3. Level 3: Roman numerals (I., II., etc.) under their parent chapter
 
-"CHAPTER 1” l2
-"CHAPTER 2” l2
+Level 1: CHRISTOLOGIA — A DECLARATION OF THE GLORIOUS MYSTERY — THE PERSON OF CHRIST — GOD AND MAN (ch005)
+  Level 2: PREFATORY NOTE (ch006)
+  Level 2: PREFACE (ch007)
+Level 1: A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST (ch008)
+  Level 2: Chapter 1 - ... (ch008) ← Same file as parent!
+  Level 2: Chapter 2 - ... (ch009)
+  ...
+  Level 2: Chapter 7 - ... (ch014)
+    Level 3: I. (ch015)
+    Level 3: II. (ch016)
+  Level 2: Chapter 8 - ... (ch017)
+  ...
+
+  “CHAPTER 1 - PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION
+
+        PETER’S CONFESSION;
+        MATTHEW 16:16 — CONCEITS OF
+        THE PAPISTS THEREON — THE SUBSTANCE AND
+        EXCELLENCY OF THAT CONFESSION”
 
 Excerpt From
 The Works of John Owen, Vol. 1 — The Glory of Christ
 John Owen
 This material may be protected by copyright.
 
+“CHAPTER 2
 
-“W. H. G. Edinburgh, August 1850. ΧΡΙΣΤΟΛΟΓΙΑ”
+        OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE
+        PERSON OF CHRIST”
 
 Excerpt From
 The Works of John Owen, Vol. 1 — The Glory of Christ
 John Owen
 This material may be protected by copyright.
 
+““A DECLARATION OF THE GLORIOUS MYSTERY OF THE
+PERSON OF CHRIST”
+A DECLARATION OF THE GLORIOUS MYSTERY OF THE
+PERSON OF CHRIST”
 
-A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST 
+Excerpt From
+The Works of John Owen, Volume 1: The Glory of Christ
+John Owen
+This material may be protected by copyright.
+
+“Meditations and Discourses — the Glory of Christ”
+
+Excerpt From
+The Works of John Owen, Volume 1: The Glory of Christ
+John Owen
+This material may be protected by copyright.

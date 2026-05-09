@@ -1,2307 +1,1662 @@
 #!/usr/bin/env python3
 """
-John Owen Works — Unified EPUB3 Converter
-Merges PDF→ThML (Stage 1), ThML→EPUB3 (Stage 2), and Hebrews EPUB2→3.
-Produces GEMINI.md-compliant EPUB3 with font injection, language tagging,
-3-level NAV, landmarks, and Apple Books display-options.
-
-Usage:
-    python3 converter.py                  # Process all Owen Works volumes
-    python3 converter.py 3                 # Process volume 3 only
-    python3 converter.py --hebrews        # Process all Hebrews volumes
-    python3 converter.py --hebrews 4      # Process Hebrews volume 4 only
+John Owen Works — PyMuPDF EPUB3 Converter
+Replaces legacy pdftohtml pipeline with PyMuPDF + PyMuPDF4LLM.
 """
 
-import sys
-import os
-import re
-import uuid
-import shutil
-import zipfile
-import tempfile
-import xml.etree.ElementTree as ET
+import sys, os, re, uuid, shutil, zipfile, tempfile, hashlib, json, subprocess
 from datetime import datetime
 from html import escape as _html_escape
 from pathlib import Path
+from dataclasses import dataclass, field
+from typing import Optional
 
 _SCRIPT_DIR = Path(__file__).parent.resolve()
-_WORKSPACE = _SCRIPT_DIR
-_Parent = _SCRIPT_DIR.parent
-if str(_Parent) not in sys.path:
-    sys.path.insert(0, str(_Parent))
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
 
 from shared import (
-    VOLUME_CONFIG, VOLUME_SUBTITLES, HEBREWS_VOLUME_CONFIG,
-    FONT_POOLS, SBL_SUPPLEMENTS, EZRA_SIL_FILES,
-    EPUB_STYLESHEET, EPUB3_FONT_STYLES, generate_font_styles,
-    select_primary_font,
-    convert_greek_word, convert_gideon_hebrew,
-    GREEK_LOWER, GREEK_UPPER, GIDEON_CHAR_MAP, GIDEON_CID_MAP,
-    DIACRITIC_CHARS, DIACRITIC_MAP,
-    SMOOTH, ROUGH, ACUTE, GRAVE, CIRCUMFLEX, IOTASUB,
+    VOLUME_CONFIG, VOLUME_SUBTITLES,
+    EPUB_STYLESHEET, generate_font_styles,
+    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES,
+    convert_greek_word, convert_gideon_hebrew
 )
 
 try:
+    import fitz
+except ImportError:
+    sys.exit("Error: PyMuPDF (fitz) not installed. Run: pip install pymupdf4llm")
+try:
+    import pymupdf4llm
+except ImportError:
+    sys.exit("Error: PyMuPDF4LLM not installed. Run: pip install pymupdf4llm")
+try:
     from ebooklib import epub
 except ImportError:
-    sys.exit("Error: ebooklib not installed. Run: pip install ebooklib")
+    sys.exit("Error: ebooklib not installed.")
 
-try:
-    from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTChar, LTAnno
-    from pdfminer.pdfpage import PDFPage
-    from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-    from pdfminer.converter import PDFPageAggregator
-except ImportError:
-    PDFPageAggregator = None
+FONT_BASE = os.path.join(_SCRIPT_DIR, 'fonts')
 
-FONT_BASE = os.path.join(_WORKSPACE, 'fonts')
+# ─── Coordinate Constants ─────────────────────────────────────
+TOP_MARGIN = 65        # Redact text blocks above this y (pts)
+BOTTOM_MARGIN = 50     # Redact text blocks below page_height - this
+PAGE_W = 410           # Standard page width for Owen PDFs
+PAGE_H = 626           # Standard page height for Owen PDFs
 
+# ─── Font Detection ────────────────────────────────────────────
+GREEK_FONTS = {'Koine-Medium', 'ENLFEN+Koine-Medium'}
+HEBREW_FONTS = {'Gideon-Medium', 'MOLFEN+Gideon-Medium'}
+FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
+FT_MARKER_RE = re.compile(r'^FT(\d+)\s*')
 
-# ============================================================================
-# UTILITY: Language detection for Hebrews EPUB2 processing
-# ============================================================================
+# ================================================================
+# STAGE 1: Coordinate-Based Redaction
+# ================================================================
 
-_GREEK_RANGES = re.compile(r'[\u0370-\u03FF\u1F00-\u1FFF]')
-_HEBREW_RANGES = re.compile(r'[\u0590-\u05FF]')
-
-
-def tag_unicode_ranges(html_text):
-    """Wrap untagged Greek/Hebrew Unicode runs in appropriate spans.
-    
-    Scans text nodes inside HTML, wrapping consecutive Greek or Hebrew
-    characters in <span lang="el" xml:lang="el"> or
-    <span lang="he" xml:lang="he" dir="rtl">.
-    Skips text already inside lang-attributed spans.
+def coordinate_redactor(blocks, page_height=PAGE_H, top_margin=TOP_MARGIN, bottom_margin=BOTTOM_MARGIN):
     """
-    def _process_text(text):
-        segments = []
-        i = 0
-        n = len(text)
-        while i < n:
-            ch = text[i]
-            if _GREEK_RANGES.match(ch):
-                j = i
-                while j < n and _GREEK_RANGES.match(text[j]):
-                    j += 1
-                segments.append(('el', text[i:j]))
-                i = j
-            elif _HEBREW_RANGES.match(ch):
-                j = i
-                while j < n and _HEBREW_RANGES.match(text[j]):
-                    j += 1
-                segments.append(('he', text[i:j]))
-                i = j
-            else:
-                j = i
-                while j < n and not _GREEK_RANGES.match(text[j]) and not _HEBREW_RANGES.match(text[j]):
-                    j += 1
-                segments.append((None, text[i:j]))
-                i = j
-        parts = []
-        for lang, txt in segments:
-            if lang == 'el':
-                parts.append(f'<span lang="el" xml:lang="el">{txt}</span>')
-            elif lang == 'he':
-                parts.append(f'<span lang="he" xml:lang="he" dir="rtl">{txt}</span>')
-            else:
-                parts.append(txt)
-        return ''.join(parts)
+    Filter out text blocks that overlap the top `top_margin` pts
+    or bottom `bottom_margin` pts of the page.
 
-    outside_tags = re.split(r'(<[^>]+>)', html_text)
-    result = []
-    in_lang_span = False
-    for segment in outside_tags:
-        if segment.startswith('<'):
-            if re.match(r'<span[^>]*\blang="(?:el|he)"', segment):
-                in_lang_span = True
-            elif segment == '</span>' and in_lang_span:
-                in_lang_span = False
-            result.append(segment)
-        else:
-            if in_lang_span:
-                result.append(segment)
-            else:
-                result.append(_process_text(segment))
-    return ''.join(result)
+    Uses LINE-level filtering within blocks: only keeps lines whose
+    vertical midpoint is inside the safe reading zone [top_margin, page_h - bottom_margin].
+    This preserves content like 'CONTENTS OF VOLUME 1' (y≈62) while removing
+    page numbers (y≈30) and AGES header blocks (y≈26-75).
+    """
+    keep = []
+    for b in blocks:
+        if b.get('type') != 0:
+            continue
+        keep_lines = []
+        for line in b['lines']:
+            y_center = (line['bbox'][1] + line['bbox'][3]) / 2
+            if top_margin <= y_center <= page_height - bottom_margin:
+                keep_lines.append(line)
+        if keep_lines:
+            # Rebuild block with only kept lines
+            new_block = dict(b)
+            new_block['lines'] = keep_lines
+            # Recalculate bbox from kept lines
+            if keep_lines:
+                x0 = min(l['bbox'][0] for l in keep_lines)
+                y0 = min(l['bbox'][1] for l in keep_lines)
+                x1 = max(l['bbox'][2] for l in keep_lines)
+                y1 = max(l['bbox'][3] for l in keep_lines)
+                new_block['bbox'] = (x0, y0, x1, y1)
+            keep.append(new_block)
+    return keep
 
 
-# ============================================================================
-# STAGE 1: PDF → ThML (from pdf_to_thml.py)
-# ============================================================================
+# ================================================================
+# STAGE 2: AGES Navigation Extraction
+# ================================================================
 
-class FontRun:
-    def __init__(self, text, font_name, font_size, style_type):
-        self.text = text
-        self.font_name = font_name
-        self.font_size = font_size
-        self.style_type = style_type
+def extract_ages_nav(doc):
+    """
+    Extract navigation hierarchy from the PDF's internal outline/bookmarks.
+    Returns list of (level, title, page_num_0indexed).
+    
+    Falls back to parsing the visual 'CONTENTS OF VOLUME' page if outline is empty.
+    """
+    toc = doc.get_toc()
+    if toc:
+        nav = []
+        for item in toc:
+            level, title, page = item
+            if page < 1:
+                continue  # skip entries with no page (-1)
+            nav.append((level, title.strip(), page - 1))  # convert to 0-indexed
+        if nav:
+            return nav
 
-    def __repr__(self):
-        return f"FontRun({self.style_type}, {self.font_size}, {self.text[:20]!r})"
-
-
-def classify_font(font_name, font_size):
-    if not font_name:
-        return 'body', False
-    clean_font = font_name.split('+')[-1] if '+' in font_name else font_name
-    is_greek = 'Koine' in clean_font
-    is_hebrew = 'Gideon' in clean_font
-    is_bold = 'Bold' in font_name
-    is_italic = 'Italic' in font_name
-    if is_greek:
-        return 'greek', True
-    if is_hebrew:
-        return 'hebrew', True
-    if font_size < 9:
-        return 'skip', False
-    if font_size >= 20:
-        return 'h1', False
-    if 14 <= font_size < 20:
-        return 'h2', False
-    if font_size < 10.5 and not is_bold:
-        return 'small_caps', False
-    if is_bold and is_italic:
-        return 'bold_italic', False
-    elif is_bold:
-        return 'bold', False
-    elif is_italic:
-        return 'italic', False
-    else:
-        return 'body', False
+    # Fallback: parse the visual TOC from the CONTENTS page
+    for pg in range(len(doc)):
+        page = doc[pg]
+        text = page.get_text()
+        if 'CONTENTS OF VOLUME' in text:
+            return _parse_visual_toc(doc, pg)
+    return []
 
 
-def extract_text_with_fonts(pdf_path):
-    if PDFPageAggregator is None:
-        print("  Error: pdfminer.six not installed")
-        return []
-    runs = []
-    try:
-        with open(pdf_path, 'rb') as fp:
-            rsrcmgr = PDFResourceManager()
-            laparams = LAParams()
-            device = PDFPageAggregator(rsrcmgr, laparams=laparams)
-            interpreter = PDFPageInterpreter(rsrcmgr, device)
-            for page_num, page in enumerate(PDFPage.get_pages(fp)):
-                interpreter.process_page(page)
-                layout = device.get_result()
-                for element in layout:
-                    if isinstance(element, LTTextBox):
-                        if runs and runs[-1].style_type != 'para_break':
-                            runs.append(FontRun('', '', 0, 'para_break'))
-                        for line in element:
-                            if isinstance(line, LTTextLine):
-                                current_run_text = []
-                                current_font = None
-                                current_size = None
-                                for char in line:
-                                    if isinstance(char, LTChar):
-                                        font_name = char.fontname or 'Unknown'
-                                        font_size = char.height
-                                        if (current_font is None or
-                                            current_font != font_name or
-                                            abs((current_size or 0) - font_size) > 0.5):
-                                            if current_run_text:
-                                                text = ''.join(current_run_text)
-                                                style = classify_font(current_font, current_size)[0]
-                                                if style != 'skip':
-                                                    runs.append(FontRun(text, current_font, current_size, style))
-                                            current_run_text = [char.get_text()]
-                                            current_font = font_name
-                                            current_size = font_size
-                                        else:
-                                            current_run_text.append(char.get_text())
-                                    elif isinstance(char, LTAnno):
-                                        current_run_text.append(char.get_text())
-                                if current_run_text:
-                                    text = ''.join(current_run_text)
-                                    if text and not text.endswith((' ', '\n', '-')):
-                                        text += ' '
-                                    style = classify_font(current_font, current_size)[0]
-                                    if style != 'skip':
-                                        runs.append(FontRun(text, current_font, current_size, style))
-    except Exception as e:
-        print(f"  Error extracting text: {e}")
-        return []
-    return runs
+def _parse_visual_toc(doc, toc_page_num):
+    """
+    Parse the visual 'CONTENTS OF VOLUME' page to extract chapter titles
+    and map them to PDF page numbers.
+    """
+    from collections import OrderedDict
+    nav = []
+    page = doc[toc_page_num]
+    blocks = page.get_text('dict')['blocks']
+    
+    lines = []
+    for b in blocks:
+        if b['type'] != 0:
+            continue
+        for line in b['lines']:
+            text = ''.join(s['text'] for s in line['spans']).strip()
+            if text:
+                lines.append(text)
+    
+    # Try to find page numbers for each chapter by scanning through pages
+    toc_entries = []
+    current_treatise = None
+    
+    for text in lines:
+        text_upper = text.upper()
+        if 'CONTENTS OF VOLUME' in text_upper:
+            continue
+        # Match chapter patterns
+        ch_match = re.match(r'^(CHAPTER\s+\d+)\.?\s*(.*)', text, re.I)
+        if ch_match:
+            toc_entries.append((2, ch_match.group(1).strip(), ''))
+            continue
+        # Roman numeral subsections
+        roman_match = re.match(r'^([IVXLCDM]+)\.\s+(.*)', text)
+        if roman_match:
+            toc_entries.append((3, text.strip(), ''))
+            continue
+        # Treatise titles (all caps, short)
+        if text_upper == text and len(text) > 5 and len(text) < 60:
+            if any(kw in text_upper for kw in ('CHRISTOLOGIA', 'MEDITATIONS', 'CATECHISMS')):
+                toc_entries.append((1, text.strip(), ''))
+                current_treatise = text
+                continue
+        
+        # Prefatory notes, prefaces
+        if text_upper in ('PREFATORY NOTE', 'PREFACE', 'ORIGINAL PREFACE') or 'PREFATORY' in text_upper:
+            toc_entries.append((2, text.strip(), ''))
+            continue
+    
+    # Map entries to pages by scanning document
+    for i, entry in enumerate(toc_entries):
+        level, title, _ = entry
+        # Find the page this title appears on
+        search_title = re.sub(r'[—–:]', '', title).strip()
+        for pg in range(len(doc)):
+            pg_text = doc[pg].get_text()
+            if search_title.upper() in pg_text.upper():
+                nav.append((level, title, pg))
+                break
+    
+    return nav
 
 
-def clean_text(text):
-    text = ''.join(ch for ch in text if not (0xE000 <= ord(ch) <= 0xF8FF))
-    text = re.sub(r'\+(?=[a-zA-Z])', '', text)
-    text = re.sub(r'<[\dA-Z]{5,8}>', '', text)
-    text = re.sub(r'\(\s+', '(', text)
-    text = re.sub(r' {2,}', ' ', text)
-    text = text.replace('\n', ' ')
-    text = text.lstrip()
+# ================================================================
+# STAGE 3: Font-Aware Text Extraction + Greek/Hebrew Conversion
+# ================================================================
+
+def page_has_special_fonts(page):
+    """Check if a PyMuPDF page contains Greek or Hebrew font spans."""
+    blocks = page.get_text('dict')['blocks']
+    for b in blocks:
+        if b['type'] != 0:
+            continue
+        for line in b['lines']:
+            for span in line['spans']:
+                font = span.get('font', '')
+                if any(gf in font for gf in GREEK_FONTS):
+                    return 'greek'
+                if any(hf in font for hf in HEBREW_FONTS):
+                    return 'hebrew'
+    return None
+
+
+def convert_span_text(text, font):
+    """Convert text based on font encoding."""
+    font_upper = font.upper()
+    if any(gf.upper() in font_upper for gf in GREEK_FONTS):
+        return convert_greek_word(text)
+    if any(hf.upper() in font_upper for hf in HEBREW_FONTS):
+        return convert_gideon_hebrew(text)
     return text
 
 
-class ThMLBuilder:
-    FRONT_MATTER_RE = re.compile(
-        r'(?:AGES\s*[DI]\s*[GI]\s*[TI]|B\s*o\s*o\s*k\s*s\s*F\s*o\s*r|'
-        r'T\s*HE\s*AGES|AGES\s*Software|AGES\s*Library|'
-        r'Albany,?\s*OR|www\.ageslibrary|'
-        r'OHN\s*WEN\s*OLLECTION|IGITAL\s*IBRARY)',
-        re.IGNORECASE
-    )
+def extract_page_text_with_fonts(page, page_height=PAGE_H):
+    """
+    Extract text from a page using raw PyMuPDF, filtering by coordinates
+    and converting Greek/Hebrew font spans.
+    """
+    blocks = page.get_text('dict')['blocks']
+    blocks = coordinate_redactor(blocks, page_height)
+    
+    lines = []
+    for b in blocks:
+        for line in b['lines']:
+            spans_text = []
+            for span in line['spans']:
+                text = span['text']
+                font = span.get('font', '')
+                converted = convert_span_text(text, font)
+                spans_text.append(converted)
+            line_text = ''.join(spans_text).strip()
+            if line_text:
+                lines.append(line_text)
+    
+    return '\n'.join(lines)
 
-    def __init__(self, title, author, volume_num):
-        self.title = title
-        self.author = author
-        self.volume_num = volume_num
-        self.chapters = []
-        self.current_chapter = None
-        self.current_paragraph = []
-        self.in_heading = False
-        self._past_front_matter = False
 
-    def _is_front_matter(self, text):
-        if self._past_front_matter:
-            return False
-        if self.FRONT_MATTER_RE.search(text):
-            return True
-        stripped = re.sub(r'\s+', '', text)
-        if len(stripped) < 3:
-            return True
-        words = text.strip().split()
-        if words and all(len(w) <= 2 for w in words) and len(words) > 3:
-            return True
-        return False
+def extract_page_markdown(pages_md, page_idx):
+    """Get PyMuPDF4LLM Markdown for a page, with coordinate redaction applied."""
+    if page_idx >= len(pages_md):
+        return ''
+    text = pages_md[page_idx]['text']
+    # Post-process the Markdown to remove leftover header lines
+    lines = text.split('\n')
+    cleaned = []
+    for line in lines:
+        stripped = line.strip()
+        # Remove AGES headers and page numbers
+        if any(h in stripped for h in ['THE AGES DIGITAL LIBRARY', 'JOHN OWEN COLLECTION',
+                                         'B o o k s F o r T h e A g e s', 'AGES Software',
+                                         'Version 1.0', 'Books For The Ages']):
+            continue
+        if stripped.isdigit() and len(stripped) <= 4:
+            continue
+        cleaned.append(line)
+    return '\n'.join(cleaned)
 
-    def add_run(self, run):
-        if run.style_type == 'para_break':
-            if self.current_paragraph:
-                self._flush_paragraph()
-            return
-        if run.style_type in ('h1', 'h2', 'h3'):
-            if self.current_paragraph:
-                self._flush_paragraph()
-            text = clean_text(run.text)
-            if not text:
-                return
-            if self._is_front_matter(text):
-                return
-            if self.in_heading and self.current_chapter and not self.current_chapter['paragraphs']:
-                self.current_chapter['title'] += ' ' + text
-                level_order = {'h1': 0, 'h2': 1, 'h3': 2}
-                if level_order.get(run.style_type, 9) < level_order.get(self.current_chapter['level'], 9):
-                    self.current_chapter['level'] = run.style_type
-            else:
-                if self.current_chapter and self.current_chapter['paragraphs']:
-                    self.chapters.append(self.current_chapter)
-                self.current_chapter = {'title': text, 'level': run.style_type, 'paragraphs': []}
-            self.in_heading = True
-        else:
-            self.in_heading = False
-            text = clean_text(run.text)
-            if not text:
-                return
-            if self._is_front_matter(text):
-                return
-            if not self._past_front_matter and len(text.strip()) > 50:
-                self._past_front_matter = True
-            if run.style_type == 'bold' and re.match(
-                r'^(?:CHAPTER|SERMON|DISCOURSE|EXERCITATION|PREFACE|'
-                r'PREFATORY NOTE|DEDICATION|APPENDIX)\b',
-                text.strip()
-            ):
-                if self.current_paragraph:
-                    self._flush_paragraph()
-                if self.current_chapter and self.current_chapter['paragraphs']:
-                    self.chapters.append(self.current_chapter)
-                self.current_chapter = {'title': text.strip(), 'level': 'h3', 'paragraphs': []}
-                return
-            if (run.style_type == 'small_caps' and
-                    self.current_paragraph and
-                    len(self.current_paragraph) >= 1):
-                prev_type, prev_text = self.current_paragraph[-1]
-                if (prev_type in ('body', 'bold') and
-                        len(prev_text.strip()) == 1 and
-                        prev_text.strip().isupper()):
-                    self.current_paragraph.pop()
-                    text = prev_text.strip() + text
-                    self.current_paragraph.append(('small_caps', text))
-                    return
-            if run.style_type == 'greek':
-                words = re.split(r'(\s+)', text)
-                converted = []
-                for w in words:
-                    if w.strip():
-                        converted.append(convert_greek_word(w))
-                    else:
-                        converted.append(w)
-                text = ''.join(converted)
-                self.current_paragraph.append(('greek', text))
-            elif run.style_type == 'hebrew':
-                text = convert_gideon_hebrew(text)
-                self.current_paragraph.append(('hebrew', text))
-            elif run.style_type == 'italic':
-                self.current_paragraph.append(('italic', text))
-            elif run.style_type == 'bold':
-                self.current_paragraph.append(('bold', text))
-            elif run.style_type == 'bold_italic':
-                self.current_paragraph.append(('bold_italic', text))
-            elif run.style_type == 'small_caps':
-                if text.strip().isdigit():
-                    return
-                self.current_paragraph.append(('small_caps', text))
-            else:
-                self.current_paragraph.append(('body', text))
 
-    def _flush_paragraph(self):
-        if not self.current_paragraph:
-            return
-        if not self.current_chapter:
-            self.current_chapter = {'title': 'Untitled', 'level': 'h1', 'paragraphs': []}
-        self.current_chapter['paragraphs'].append(self.current_paragraph)
-        self.current_paragraph = []
+def get_merged_page_text(doc, pages_md, page_idx):
+    """
+    Get text for a page:
+    - For regular pages: use PyMuPDF4LLM Markdown (cleaned)
+    - For Greek/Hebrew pages: use font-aware extraction to convert Beta Code/Gideon,
+      but preserve [fN] footnote markers from the Markdown.
+    """
+    page = doc[page_idx]
+    font_type = page_has_special_fonts(page)
+    md_text = extract_page_markdown(pages_md, page_idx)
+    
+    if font_type:
+        raw_text = extract_page_text_with_fonts(page)
+        # Preserve [fN] markers from Markdown that might be lost in raw text
+        fn_markers = FOOTNOTE_MARKER_RE.findall(md_text)
+        # Also check for standalone [fN] markers on their own lines
+        for fn in fn_markers:
+            marker = f'[f{fn}]'
+            if marker not in raw_text:
+                raw_text += f' [f{fn}]'
+        return raw_text
+    else:
+        return md_text
 
-    def finalize(self):
-        self._flush_paragraph()
-        if self.current_chapter and self.current_chapter['paragraphs']:
-            self.chapters.append(self.current_chapter)
-        self._merge_broken_paragraphs()
-        self._remove_empty_chapters()
-        self._merge_title_fragments()
-        self._clean_titles()
-        self._remove_empty_chapters()
 
-    def _merge_broken_paragraphs(self):
-        SENTENCE_ENDERS = set('.?!:;"\u201c\u201d')
-        for ch in self.chapters:
-            if len(ch['paragraphs']) < 2:
+# ================================================================
+# STAGE 4: Footnote Stitching
+# ================================================================
+
+@dataclass
+class Footnote:
+    fnum: int
+    text: str
+    source: str = 'pdf'       # 'pdf' or 'thml'
+    pages: list = field(default_factory=list)  # PDF pages where referenced
+
+def extract_footnotes_from_pdf(doc):
+    """
+    Extract footnotes from the FOOTNOTES section of the PDF.
+    Each footnote has an FT{N} marker followed by text.
+    """
+    footnotes = {}
+    in_footnotes = False
+    current_fn = None
+    current_text = []
+    
+    for pg in range(len(doc)):
+        page = doc[pg]
+        text = page.get_text()
+        
+        if 'FOOTNOTES' in text and not in_footnotes:
+            in_footnotes = True
+        
+        if not in_footnotes:
+            continue
+        
+        blocks = page.get_text('dict')['blocks']
+        for b in blocks:
+            if b['type'] != 0:
                 continue
-            merged = [ch['paragraphs'][0]]
-            for para in ch['paragraphs'][1:]:
-                prev = merged[-1]
-                prev_text = ''
-                for _, t in reversed(prev):
-                    prev_text = t.rstrip()
-                    if prev_text:
-                        break
-                curr_text = ''
-                for _, t in para:
-                    curr_text = t.lstrip()
-                    if curr_text:
-                        break
-                should_merge = False
-                if (prev_text and curr_text and
-                        prev_text[-1] not in SENTENCE_ENDERS and
-                        len(prev_text) > 10 and curr_text[0].islower()):
-                    should_merge = True
-                if prev_text and prev_text.endswith('-') and curr_text:
-                    should_merge = True
-                if should_merge:
-                    if prev_text and not prev_text.endswith((' ', '-')):
-                        merged[-1] = list(merged[-1])
-                        merged[-1].append(('body', ' '))
-                    merged[-1] = list(merged[-1]) + list(para)
-                else:
-                    merged.append(para)
-            ch['paragraphs'] = merged
-
-    def _merge_title_fragments(self):
-        if len(self.chapters) < 2:
-            return
-        merged = [self.chapters[0]]
-        for ch in self.chapters[1:]:
-            prev = merged[-1]
-            prev_content_size = sum(len(t) for para in prev['paragraphs'] for _, t in para)
-            if prev_content_size < 100 and len(prev['paragraphs']) <= 3:
-                ch['title'] = prev['title'] + ' — ' + ch['title']
-                ch['paragraphs'] = prev['paragraphs'] + ch['paragraphs']
-                level_order = {'h1': 0, 'h2': 1, 'h3': 2}
-                if level_order.get(prev['level'], 9) < level_order.get(ch['level'], 9):
-                    ch['level'] = prev['level']
-                merged[-1] = ch
-            else:
-                merged.append(ch)
-        self.chapters = merged
-
-    def _remove_empty_chapters(self):
-        if not self.chapters:
-            return
-        real_start = 0
-        for i, ch in enumerate(self.chapters):
-            total = sum(len(t) for para in ch['paragraphs'] for _, t in para)
-            if total > 2000:
-                real_start = i
-                break
-        cleaned = []
-        for i, ch in enumerate(self.chapters):
-            total_text = sum(len(t) for para in ch['paragraphs'] for _, t in para)
-            if self.FRONT_MATTER_RE.search(ch['title']):
-                continue
-            title_stripped = re.sub(r'\s+', '', ch['title'])
-            if len(title_stripped) < 5 and total_text < 100:
-                continue
-            if i < real_start and total_text < 500:
-                continue
-            cleaned.append(ch)
-        self.chapters = cleaned
-
-    def _clean_titles(self):
-        for ch in self.chapters:
-            ch['title'] = re.sub(r'\s{2,}', ' ', ch['title']).strip()
-            ch['title'] = ch['title'].strip(' —-:')
-            ch['title'] = re.sub(r'\s*—\s*—\s*', ' — ', ch['title'])
-
-    def to_xml(self):
-        from xml.dom import minidom
-        root = ET.Element('ThML')
-        head = ET.SubElement(root, 'ThML.head')
-        einfo = ET.SubElement(head, 'electronicEdInfo')
-        dc = ET.SubElement(einfo, 'DC')
-        title_elem = ET.SubElement(dc, 'DC.Title')
-        title_elem.text = self.title
-        creator = ET.SubElement(dc, 'DC.Creator')
-        creator.set('sub', 'Author')
-        creator.text = self.author
-        date_elem = ET.SubElement(dc, 'DC.Date')
-        date_elem.text = datetime.now().isoformat()
-        body = ET.SubElement(root, 'ThML.body')
-        for ch_idx, chapter in enumerate(self.chapters):
-            div = ET.SubElement(body, 'div1')
-            div.set('title', chapter['title'])
-            div.set('id', f"ch{ch_idx + 1:03d}")
-            h_tag = chapter['level']
-            h_elem = ET.SubElement(div, h_tag)
-            h_elem.text = chapter['title']
-            for para_runs in chapter['paragraphs']:
-                p_elem = ET.SubElement(div, 'p')
-                p_elem.set('class', 'Body')
-                for run_type, run_text in para_runs:
-                    if run_type == 'body':
-                        if len(p_elem):
-                            p_elem[-1].tail = (p_elem[-1].tail or '') + run_text
-                        else:
-                            p_elem.text = (p_elem.text or '') + run_text
-                    elif run_type == 'greek':
-                        span = ET.SubElement(p_elem, 'span')
-                        span.set('lang', 'EL')
-                        span.set('class', 'Greek')
-                        span.text = run_text
-                    elif run_type == 'hebrew':
-                        span = ET.SubElement(p_elem, 'span')
-                        span.set('lang', 'HE')
-                        span.set('class', 'Hebrew')
-                        span.text = run_text
-                    elif run_type == 'italic':
-                        i_elem = ET.SubElement(p_elem, 'i')
-                        i_elem.text = run_text
-                    elif run_type == 'bold':
-                        b_elem = ET.SubElement(p_elem, 'b')
-                        b_elem.text = run_text
-                    elif run_type == 'bold_italic':
-                        b_elem = ET.SubElement(p_elem, 'b')
-                        i_elem = ET.SubElement(b_elem, 'i')
-                        i_elem.text = run_text
-                    elif run_type == 'small_caps':
-                        span = ET.SubElement(p_elem, 'span')
-                        span.set('style', 'font-variant:small-caps')
-                        span.text = run_text
-                    else:
-                        if len(p_elem):
-                            p_elem[-1].tail = (p_elem[-1].tail or '') + run_text
-                        else:
-                            p_elem.text = (p_elem.text or '') + run_text
-        return root
-
-    def to_xml_string(self):
-        from xml.dom import minidom
-        root = self.to_xml()
-        rough = ET.tostring(root, encoding='unicode')
-        reparsed = minidom.parseString(rough)
-        return reparsed.toprettyxml(indent='  ')
+            for line in b['lines']:
+                line_text = ''.join(s['text'] for s in line['spans'])
+                line_text = line_text.strip()
+                
+                if not line_text:
+                    continue
+                
+                # Check for FT marker
+                ft_match = FT_MARKER_RE.match(line_text)
+                if ft_match:
+                    # Save previous footnote
+                    if current_fn is not None and current_text:
+                        combined = ' '.join(current_text).strip()
+                        combined = combined.strip()
+                        if combined:
+                            text_clean = combined
+                            # Convert any Greek in footnote text
+                            for span in line['spans']:
+                                font = span.get('font', '')
+                                if any(gf in font for gf in GREEK_FONTS):
+                                    text_clean = convert_greek_word(text_clean)
+                            footnotes[current_fn] = text_clean
+                    
+                    current_fn = int(ft_match.group(1))
+                    rest = line_text[ft_match.end():].strip()
+                    current_text = [rest] if rest else []
+                elif current_fn is not None:
+                    current_text.append(line_text)
+        
+        # End of footnotes - check if we've moved past
+        if in_footnotes:
+            # Check if this is the last page of footnotes
+            if pg == len(doc) - 1 or 'FOOTNOTES' not in doc[pg + 1].get_text():
+                pass  # continue to next page within footnotes
+    
+    # Save last footnote
+    if current_fn is not None and current_text:
+        combined = ' '.join(current_text).strip()
+        if combined:
+            footnotes[current_fn] = combined
+    
+    return footnotes
 
 
-def pdf_to_thml(pdf_path, output_xml_path, volume_num):
-    """Stage 1: Convert AGES PDF to ThML XML."""
-    print(f"  Extracting text from PDF...")
-    runs = extract_text_with_fonts(pdf_path)
-    if not runs:
-        print(f"  Warning: No text extracted from PDF")
-        return False
-    print(f"  Building ThML document ({len(runs)} runs)...")
-    subtitle = VOLUME_SUBTITLES.get(volume_num, "")
-    title = f"The Works of John Owen, Vol. {volume_num}"
-    if subtitle:
-        title += f" — {subtitle}"
-    builder = ThMLBuilder(title, "John Owen", volume_num)
-    for run in runs:
-        builder.add_run(run)
-    builder.finalize()
-    print(f"  Writing ThML XML...")
-    xml_str = builder.to_xml_string()
+def parse_thml_footnotes(thml_path):
+    """Parse existing ThML XML FOOTNOTES section for enriched footnote text."""
+    import xml.etree.ElementTree as ET
+    footnotes = {}
+    
+    if not os.path.exists(thml_path):
+        return footnotes
+    
     try:
-        with open(output_xml_path, 'w', encoding='utf-8') as f:
-            f.write(xml_str)
-        size = os.path.getsize(output_xml_path)
-        print(f"  Saved ThML: {output_xml_path} ({size / 1024:.0f} KB)")
-        return True
+        tree = ET.parse(thml_path)
+        root = tree.getroot()
+        
+        # Find the footnotes div
+        for div1 in root.findall('.//div1'):
+            title = (div1.get('title') or '').upper()
+            if title == 'FOOTNOTES':
+                fn_num = None
+                fn_parts = []
+                
+                for elem in div1.iter():
+                    if elem.tag == 'a' and elem.get('class') == 'fnmarker':
+                        # Save previous footnote
+                        if fn_num is not None and fn_parts:
+                            text = ''.join(fn_parts).strip()
+                            if text:
+                                footnotes[fn_num] = text
+                        
+                        fn_num = int(elem.get('data-fn', '0'))
+                        fn_parts = []
+                    elif fn_num is not None and elem.text:
+                        fn_parts.append(elem.text)
+                    elif fn_num is not None and elem.tail:
+                        fn_parts.append(elem.tail)
+                
+                # Save last footnote
+                if fn_num is not None and fn_parts:
+                    text = ''.join(fn_parts).strip()
+                    if text:
+                        footnotes[fn_num] = text
+                break
     except Exception as e:
-        print(f"  Error writing ThML: {e}")
-        return False
+        print(f"  Warning: Could not parse ThML footnotes: {e}")
+    
+    return footnotes
 
 
-# ============================================================================
-# STAGE 2: ThML → EPUB3 (from thml_to_epub.py, enhanced)
-# ============================================================================
+def merge_footnotes(pdf_footnotes, thml_footnotes):
+    """
+    Merge footnotes from PDF and ThML, preferring ThML for quality.
+    """
+    all_nums = set(pdf_footnotes.keys()) | set(thml_footnotes.keys())
+    merged = {}
+    for num in sorted(all_nums):
+        text = thml_footnotes.get(num) or pdf_footnotes.get(num) or ''
+        merged[num] = Footnote(
+            fnum=num,
+            text=text,
+            source='thml' if num in thml_footnotes else 'pdf'
+        )
+    return merged
 
-def _find_parent(container, target):
-    """Walk *container* and return the element whose direct child is *target*."""
-    for child in container:
-        if child is target:
-            return container
-        result = _find_parent(child, target)
-        if result is not None:
-            return result
-    return None
+
+def find_footnote_refs_in_text(text):
+    """
+    Find [fN] footnote markers in text and return (cleaned_text, list of fn_numbers).
+    """
+    markers = FOOTNOTE_MARKER_RE.findall(text)
+    fn_nums = [int(m) for m in markers]
+    cleaned = FOOTNOTE_MARKER_RE.sub('', text)
+    return cleaned, fn_nums
 
 
-def _next_sibling(elem, parent):
-    """Return the next sibling element after *elem* under *parent*, or None."""
-    found = False
-    for child in parent:
-        if found:
-            return child
-        if child is elem:
-            found = True
-    return None
+# ================================================================
+# STAGE 5: Chapter Building from TOC
+# ================================================================
+
+@dataclass
+class Chapter:
+    cid: str
+    title: str
+    level: int          # 1=treatise, 2=chapter, 3=subsection
+    body_html: str = ''
+    page_start: int = 0
+    page_end: int = 0
+    is_treatise: bool = False
+    is_endnotes: bool = False
+    footnote_refs: list = field(default_factory=list)
+
+
+def title_case(text):
+    """Convert text to Title Case, preserving Roman numerals and small words."""
+    if not text:
+        return ""
+    small_words = {'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for',
+                   'if', 'in', 'of', 'on', 'or', 'the', 'to', 'v', 'via', 'vs'}
+    words = text.split()
+    res = []
+    for i, w in enumerate(words):
+        clean_w = w.strip('.,:;()[]"').upper()
+        if re.match(r'^[IVXLCDM]+$', clean_w):
+            res.append(w.upper())
+        elif i > 0 and w.lower() in small_words:
+            res.append(w.lower())
+        else:
+            res.append(w.capitalize())
+    return " ".join(res)
+
+
+def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
+    """
+    Build chapters by grouping pages based on PDF TOC entries.
+    Merges consecutive same-level entries and handles hierarchy.
+    """
+    if not nav_entries:
+        # Fallback: treat each page as a chapter
+        return _build_flat_chapters(doc, pages_md, footnote_map)
+    
+    chapters = []
+    seen_titles = set()
+    cid_counter = 0
+    
+    # Filter out metadata entries (book-level entries, contents pages)
+    # Also skip all children of filtered-out entries (tree-aware)
+    filtered_nav = []
+    skip_level = None  # level of the currently skipped metadata entry
+    metadata_patterns = re.compile(
+        r'^(Owen Librarian|The Works of John Owen|Contents)$|'
+        r'^The Works of John Owen\s*[-–]', re.I
+    )
+    for level, title, page in nav_entries:
+        title_stripped = title.strip()
+        is_meta = bool(metadata_patterns.match(title_stripped))
+        
+        if is_meta:
+            skip_level = level
+            continue
+        
+        if skip_level is not None:
+            if level <= skip_level:
+                skip_level = None  # back to sibling level, stop skipping
+            else:
+                continue  # still a child of a skipped entry
+        
+        filtered_nav.append((level, title_stripped, page))
+    
+    nav_entries = filtered_nav
+    
+    if not nav_entries:
+        return _build_flat_chapters(doc, pages_md, footnote_map)
+    
+    # Process TOC entries
+    for i, (level, title, page_0idx) in enumerate(nav_entries):
+        # Determine if this is a treatise title page
+        title_upper = title.upper()
+        is_treatise = any(kw in title_upper for kw in [
+            'CHRISTOLOGIA', 'MEDITATIONS AND DISCOURSES', 'TWO SHORT CATECHISMS',
+            'DECLARATION OF THE GLORIOUS', 'A DECLARATION', 'A VINDICATION'
+        ])
+        
+        # Determine end page (next entry's page - 1, or end of doc)
+        if i + 1 < len(nav_entries):
+            end_page = nav_entries[i + 1][2] - 1
+        else:
+            end_page = len(doc) - 1
+        
+        if end_page < page_0idx:
+            end_page = page_0idx
+        
+        # Skip if bookends/empty
+        raw_text = get_pages_text(doc, pages_md, page_0idx, end_page)
+        if not raw_text.strip():
+            continue
+        
+        cid_counter += 1
+        cid = f'ch{cid_counter:03d}'
+        
+        chap = Chapter(
+            cid=cid,
+            title=title_case(title) if not is_treatise else title,
+            level=level,
+            page_start=page_0idx,
+            page_end=end_page,
+            is_treatise=is_treatise,
+        )
+        chapters.append(chap)
+    
+    return chapters
+
+
+def clean_text(text):
+    """Sanitize extracted text before paragraph reconstruction."""
+    if not text:
+        return ''
+    # 1. Remove CCEL/AGES scripture reference codes: <450503>
+    text = re.sub(r'<\d[A-Za-z0-9]{5}>', '', text)
+    # 2. Remove AGES running headers (whole-line removal)
+    text = re.sub(
+        r'^.*(?:THE AGES DIGITAL LIBRARY|THE WORKS OF JOHN OWEN|'
+        r'BOOKS FOR THE AGES|AGES SOFTWARE|VERSION \d\.\d|'
+        r'VOLUME \d+|JOHN OWEN COLLECTION|Books For The Ages).*$',
+        '', text, flags=re.MULTILINE | re.IGNORECASE
+    )
+    # 3. Collapse multiple spaces → single space
+    text = re.sub(r' {2,}', ' ', text)
+    # 4. Strip leading/trailing whitespace per line
+    text = '\n'.join(line.strip() for line in text.split('\n'))
+    return text.strip()
+
+
+def reconstruct_paragraphs(text):
+    """Heal broken lines into proper, reflowable paragraphs."""
+    if not text:
+        return []
+    
+    lines = text.split('\n')
+    paragraphs = []
+    current = []
+    
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if not stripped:
+            if current:
+                paragraphs.append(' '.join(current))
+                current = []
+            continue
+        
+        # Preserve heading markers as standalone paragraphs
+        if stripped.startswith('#'):
+            if current:
+                paragraphs.append(' '.join(current))
+                current = []
+            paragraphs.append(stripped)
+            continue
+        
+        # De-hyphenation: strip trailing hyphen, merge with no space
+        if current and current[-1].endswith('-'):
+            current[-1] = current[-1][:-1] + stripped
+            continue
+        
+        if current:
+            prev = current[-1]
+            ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
+            starts_lower = bool(re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', stripped))
+            
+            if not ends_terminal:
+                # Line does not end with terminal punctuation → join
+                current.append(stripped)
+            elif starts_lower:
+                # Starts lowercase after terminal (e.g. middle of quotation) → join
+                current.append(stripped)
+            else:
+                # Terminal punctuation + uppercase start → new paragraph
+                paragraphs.append(' '.join(current))
+                current = [stripped]
+        else:
+            current = [stripped]
+    
+    if current:
+        paragraphs.append(' '.join(current))
+    
+    return paragraphs
+
+
+def deduplicate_junction(prev_text, next_text, threshold=0.85):
+    """Lookback buffer: remove duplicate text at page junctions."""
+    if not prev_text or not next_text:
+        return next_text
+    
+    overlap_len = min(60, len(prev_text), len(next_text))
+    if overlap_len < 15:
+        return next_text
+    
+    prev_tail = prev_text[-overlap_len:].lower().strip()
+    next_head = next_text[:overlap_len].lower().strip()
+    
+    matches = sum(1 for a, b in zip(prev_tail, next_head) if a == b)
+    ratio = matches / max(len(prev_tail), len(next_head))
+    
+    if ratio >= threshold:
+        cut = overlap_len
+        while cut < len(next_text) and cut < overlap_len + 40:
+            if next_text[:cut].lower().strip() == prev_tail:
+                return next_text[cut:]
+            cut += 1
+        return next_text[overlap_len:].lstrip()
+    
+    return next_text
+
+
+def get_pages_text(doc, pages_md, start_page, end_page, healer_mode=True):
+    """Get merged text for a range of pages with optional paragraph healing.
+
+    When healer_mode=False, returns clean raw text without paragraph
+    reconstruction (used for layout-preserved front matter pages).
+    """
+    all_paragraphs = []
+    prev_page_last = ''
+    
+    for pg in range(start_page, min(end_page + 1, len(doc))):
+        raw = get_merged_page_text(doc, pages_md, pg)
+        if not raw.strip():
+            continue
+        
+        # Clean: strip scripture codes, headers, normalize whitespace
+        cleaned = clean_text(raw)
+        if not cleaned:
+            continue
+        
+        if healer_mode:
+            # Reconstruct: heal broken lines into paragraphs
+            page_paras = reconstruct_paragraphs(cleaned)
+            if not page_paras:
+                continue
+            # Deduplicate at page junction
+            if prev_page_last:
+                page_paras[0] = deduplicate_junction(prev_page_last, page_paras[0])
+                if not page_paras[0].strip():
+                    page_paras.pop(0)
+            prev_page_last = page_paras[-1]
+        else:
+            page_paras = [cleaned]
+        
+        all_paragraphs.extend(page_paras)
+    
+    return '\n\n'.join(all_paragraphs)
+
+
+def _build_flat_chapters(doc, pages_md, footnote_map):
+    """Fallback: create one chapter per PDF page."""
+    chapters = []
+    for pg in range(len(doc)):
+        text = get_merged_page_text(doc, pages_md, pg)
+        if not text.strip():
+            continue
+        page_num = pg + 1
+        chapters.append(Chapter(
+            cid=f'page{page_num:04d}',
+            title=f'Page {page_num}',
+            level=2,
+            body_html=f'<p>{_html_escape(text.strip())}</p>',
+            page_start=pg,
+            page_end=pg,
+        ))
+    return chapters
+
+
+# ================================================================
+# STAGE 6: EPUB3 Assembly
+# ================================================================
+
+def tag_unicode_ranges(text):
+    """Wrap untagged Greek and Hebrew Unicode runs in spans."""
+    if not text:
+        return ""
+    text = re.sub(
+        r'([\u0370-\u03FF\u1F00-\u1FFF]{2,})',
+        lambda m: f'<span lang="el" xml:lang="el">{m.group(1)}</span>'
+        if any(c.strip() for c in m.group(1)) else m.group(1),
+        text
+    )
+    text = re.sub(
+        r'([\u0590-\u05FF]{2,})',
+        lambda m: f'<span lang="he" xml:lang="he" dir="rtl">{m.group(1)}</span>'
+        if any(c.strip() for c in m.group(1)) else m.group(1),
+        text
+    )
+    text = text.replace('</span><span lang="el" xml:lang="el">', '')
+    text = text.replace('</span><span lang="he" xml:lang="he" dir="rtl">', '')
+    return text
 
 
 def _escape_xml(text):
+    if text is None:
+        return ""
     return (text.replace('&', '&amp;').replace('<', '&lt;')
-                 .replace('>', '&gt;').replace('"', '&quot;'))
+                .replace('>', '&gt;').replace('"', '&quot;'))
 
 
-def _make_xhtml(title, body_html, css_href='style/main.css',
-                font_styles=None):
+def _make_xhtml(title, body_html, css_href='style/main.css', font_styles=None):
     safe_title = _escape_xml(title)
-    style_block = ''
-    if font_styles:
-        style_block = f'\n<style type="text/css">{font_styles}</style>\n'
+    style_block = f'\n<style type="text/css">{font_styles}</style>\n' if font_styles else ''
     return (
-        '<?xml version="1.0" encoding="utf-8"?>'
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<!DOCTYPE html>\n'
         '<html xmlns="http://www.w3.org/1999/xhtml" '
-        'xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">'
-        '<head>'
-        '<meta charset="utf-8"/>'
-        f'<title>{safe_title}</title>'
-        f'<link rel="stylesheet" type="text/css" href="{css_href}"/>'
-        f'{style_block}'
-        '</head>'
-        f'<body>{body_html}</body>'
+        'xmlns:epub="http://www.idpf.org/2007/ops" '
+        f'lang="en" xml:lang="en">\n'
+        '<head>\n'
+        '  <meta charset="utf-8"/>\n'
+        f'  <title>{safe_title}</title>\n'
+        f'  <link rel="stylesheet" type="text/css" href="{css_href}"/>\n'
+        f'  {style_block}\n'
+        '</head>\n'
+        f'<body>{body_html}</body>\n'
         '</html>'
     )
 
 
-def _elem_to_html(elem, endnotes_file='ch120.xhtml'):
-    html_parts = []
-    if elem.text:
-        html_parts.append(_escape_xml(elem.text))
-    for child in elem:
-        if child.tag == 'span':
-            lang = child.get('lang', '')
-            cls = child.get('class', '')
-            style = child.get('style', '')
-            attrs = ''
-            if lang:
-                normalized = lang.lower()
-                if normalized == 'el':
-                    attrs += f' lang="el" xml:lang="el"'
-                elif normalized == 'he':
-                    attrs += f' lang="he" xml:lang="he" dir="rtl"'
-                else:
-                    attrs += f' lang="{lang}"'
-            if cls:
-                attrs += f' class="{cls}"'
-            if style:
-                attrs += f' style="{style}"'
-            inner = _elem_to_html(child, endnotes_file)
-            html_parts.append(f'<span{attrs}>{inner}</span>')
-        elif child.tag == 'a':
-            cls = child.get('class', '')
-            href = child.get('href', '')
-            if cls == 'fnref' and href.startswith('#fn'):
-                fn_id = href[1:].strip()
-                num = (child.text or '').strip()
-                html_parts.append(
-                    f'<a epub:type="noteref" role="doc-noteref" '
-                    f'href="{endnotes_file}#{fn_id}" class="footnote-ref">'
-                    f'<sup>{_escape_xml(num)}</sup></a>'
-                )
-            else:
-                inner = _elem_to_html(child, endnotes_file)
-                a_attrs = f' href="{_escape_xml(href)}"' if href else ''
-                if cls:
-                    a_attrs += f' class="{_escape_xml(cls)}"'
-                html_parts.append(f'<a{a_attrs}>{inner}</a>')
-            if child.tail:
-                html_parts.append(_escape_xml(child.tail))
-            continue
-        elif child.tag in ('i', 'b', 'em', 'strong'):
-            inner = _elem_to_html(child, endnotes_file)
-            html_parts.append(f'<{child.tag}>{inner}</{child.tag}>')
-        else:
-            inner = _elem_to_html(child, endnotes_file)
-            html_parts.append(inner)
-        if child.tail:
-            html_parts.append(_escape_xml(child.tail))
-    return ''.join(html_parts)
-
-
-def _is_treatise_title_page(div1):
-    paras = div1.findall('p')
-    if not paras:
-        return False
-    connector_re = re.compile(
-        r'^(?:OR,?|OF,?|ON,?|IN,?|WITH,?|AS\s+ALSO,?|AND,?|ALSO,?|'
-        r'WHEREIN,?|BEING,?)\s*$',
-        re.IGNORECASE
-    )
-    connectors = 0
-    total_body_text = 0
-    leading_connectors = 0
-    leading_done = False
-    for p in paras:
-        text = _elem_to_html(p).strip()
-        plain = re.sub(r'<[^>]+>', '', text).strip()
-        total_body_text += len(plain)
-        is_connector = False
-        if re.match(r'^<b>[^<]{1,20}</b>$', text):
-            bold_text = re.sub(r'</?b>', '', text).strip()
-            if connector_re.match(bold_text):
-                connectors += 1
-                is_connector = True
-        elif connector_re.match(plain) and len(plain) < 15:
-            connectors += 1
-            is_connector = True
-        if not leading_done:
-            if is_connector:
-                leading_connectors += 1
-            else:
-                leading_done = True
-    if connectors >= 2 and total_body_text < 2000:
-        return True
-    if leading_connectors >= 2:
-        return True
-    return False
-
-
-def _build_treatise_title(div1):
-    connector_re = re.compile(
-        r'^(?:OR,?|OF,?|ON,?|IN,?|WITH,?|AS\s+ALSO,?|AND,?|ALSO,?|'
-        r'WHEREIN,?|BEING,?)\s*$',
-        re.IGNORECASE
-    )
-    parts = ['<div class="treatise-title">']
-
-    greek_heading = ''
-    if div1.find('h2') is not None:
-        greek_elem = div1.find('h2')
-        greek_text = _elem_to_html(greek_elem).strip()
-        if re.match(r'^[Α-Ω]+$', greek_text.replace(' ', '')):
-            greek_heading = greek_text
-            parts.append(f'<h2 class="greek">{_escape_xml(greek_heading)}</h2>')
-
-    heading_text = ''
-    heading_tag = 'h1'
-    for h_tag in ('h1', 'h2', 'h3'):
-        h_elem = div1.find(h_tag)
-        if h_elem is not None:
-            heading_text = _elem_to_html(h_elem).strip()
-            heading_tag = h_tag
-            break
-
-    # Split combined headings (e.g., TREATISE CHAPTER 1)
-    split = _split_nav_title(heading_text)
-    if split:
-        treatise, unit = split
-        parts.append(f'<h1>{_escape_xml(treatise)}</h1>')
-        parts.append(f'<h2>{_escape_xml(unit)}</h2>')
-    else:
-        heading_lines = [h.strip() for h in heading_text.split(' — ') if h.strip()]
-        body_paras = []
-        connectors_list = []
-        for p_elem in div1.findall('p'):
-            html = _elem_to_html(p_elem)
-            trimmed = html.strip()
-            if not trimmed:
-                continue
-            plain = re.sub(r'<[^>]+>', '', trimmed).strip()
-            is_conn = False
-            if re.match(r'^<b>[^<]{1,20}</b>$', trimmed):
-                bold_text = re.sub(r'</?b>', '', trimmed).strip()
-                if connector_re.match(bold_text):
-                    connectors_list.append(bold_text)
-                    body_paras.append(('connector', bold_text))
-                    is_conn = True
-            elif connector_re.match(plain) and len(plain) < 15:
-                connectors_list.append(plain)
-                body_paras.append(('connector', plain))
-                is_conn = True
-            if not is_conn:
-                body_paras.append(('other', trimmed, plain))
-        if len(heading_lines) > 1 and connectors_list:
-            parts.append(f'<h1>{_escape_xml(heading_lines[0])}</h1>')
-            conn_idx = 0
-            for i, line in enumerate(heading_lines[1:]):
-                if conn_idx < len(connectors_list):
-                    parts.append(f'<p class="connector">{_escape_xml(connectors_list[conn_idx])}</p>')
-                    conn_idx += 1
-                parts.append(f'<h2>{_escape_xml(line)}</h2>')
-            used_connectors = conn_idx
-        else:
-            parts.append(f'<{heading_tag}>{heading_text}</{heading_tag}>')
-            used_connectors = 0
-    connector_skip = 0
-    for item in body_paras:
-        if item[0] == 'connector':
-            if connector_skip < used_connectors:
-                connector_skip += 1
-                continue
-            bold_text = item[1]
-            parts.append(f'<p class="connector">{_escape_xml(bold_text)}</p>')
-            continue
-        trimmed = item[1]
-        plain = item[2]
-        if trimmed.startswith('<i>'):
-            parts.append(f'<p class="desc">{trimmed}</p>')
-            continue
-        if plain.startswith(('"', '\u201c', "'", '\u2018')):
-            parts.append(f'<p class="epigraph">{trimmed}</p>')
-            continue
-        parts.append(f'<p>{trimmed}</p>')
-    parts.append('</div>')
-    return ''.join(parts)
-
-
-def _build_normal_chapter(div1, endnotes_file='ch120.xhtml'):
-    body_parts = ['<section>']
+def markdown_to_html(md_text):
+    """
+    Convert paragraph-healed text to clean XHTML.
+    Input is paragraphs separated by double newlines.
+    Handles headings, bold, italic, and footnote refs.
+    """
+    if not md_text:
+        return ''
     
-    heading_text = ''
-    heading_tag = ''
-    for h_tag in ('h1', 'h2', 'h3'):
-        h_elem = div1.find(h_tag)
-        if h_elem is not None:
-            heading_text = _elem_to_html(h_elem, endnotes_file).strip()
-            heading_tag = h_tag
-            break
-            
-    if heading_tag:
-        # Split combined headings (e.g., TREATISE CHAPTER 1)
-        split = _split_nav_title(heading_text)
-        if split:
-            treatise, unit = split
-            body_parts.append(f'<h1>{_escape_xml(treatise)}</h1>')
-            body_parts.append(f'<h2>{_escape_xml(unit)}</h2>')
-        else:
-            body_parts.append(f'<{heading_tag}>{heading_text}</{heading_tag}>')
-
-    para_count = 0
-    for p_elem in div1.findall('p'):
-        p_html = _elem_to_html(p_elem, endnotes_file)
-        if not p_html.strip():
+    html_parts = []
+    paragraphs = md_text.split('\n\n')
+    
+    for para in paragraphs:
+        stripped = para.strip()
+        if not stripped:
             continue
-        css_class = ' class="first"' if para_count == 0 else ''
-        body_parts.append(f'<p{css_class}>{p_html}</p>')
-        para_count += 1
-    body_parts.append('</section>')
-    return ''.join(body_parts)
-
-
-def _build_endnotes_chapter(root, vol_num, endnotes_file=None):
-    """Extract footnotes from the FOOTNOTES div1 and build endnotes XHTML.
-
-    Two strategies depending on ThML structure:
-
-    * Volume 1 uses ``<a class="fnmarker" data-fn="N"/>`` self-closing
-      anchors to mark where each footnote starts.  We walk the tree and
-      collect text following each marker.
-
-    * Other volumes have plain ``<p>`` elements — one paragraph per
-      footnote, in sequential order matching fn1, fn2, ….
-    """
-    div1s = root.findall('.//div1')
-    if not div1s:
-        return None
-
-    footnotes_div = None
-    footnotes_div_idx = None
-    for idx, div1 in enumerate(div1s):
-        if (div1.get('title') or '').upper() == 'FOOTNOTES':
-            footnotes_div = div1
-            footnotes_div_idx = idx
-            break
-
-    if footnotes_div is None:
-        return None
-
-    if endnotes_file is None:
-        for div1 in div1s:
-            if (div1.get('title') or '').upper() == 'FOOTNOTES':
-                endnotes_file = div1.get('id', 'ch120') + '.xhtml'
-                break
+        
+        # Detect heading level from leading #
+        h_match = re.match(r'^(#{1,6})\s+(.+)$', stripped)
+        
+        if h_match:
+            level = len(h_match.group(1))
+            content = h_match.group(2)
+            h_tag = 'h1' if level <= 2 else ('h2' if level <= 4 else 'h3')
         else:
-            endnotes_file = 'ch120.xhtml'
-
-    fnmarker_elems = footnotes_div.findall('.//a[@class="fnmarker"]')
-    footnotes = {}
-
-    if fnmarker_elems:
-        # Volume-1 style: fnmarker elements mark footnote boundaries
-        for marker in fnmarker_elems:
-            fn_num = marker.get('data-fn', '').strip()
-            if not fn_num:
-                continue
-            text_parts = []
-            if marker.tail:
-                t = marker.tail.strip()
-                if t:
-                    text_parts.append(t)
-            parent = _find_parent(footnotes_div, marker)
-            if parent is not None:
-                collecting = False
-                for child in parent:
-                    if child is marker:
-                        collecting = True
-                        continue
-                    if collecting:
-                        if child.tag == 'a' and child.get('class') == 'fnmarker':
-                            break
-                        inner = _elem_to_html(child, endnotes_file).strip()
-                        if inner:
-                            text_parts.append(inner)
-                        if child.tail:
-                            t = child.tail.strip()
-                            if t:
-                                text_parts.append(t)
-            note_text = ' '.join(text_parts).strip()
-            if note_text:
-                footnotes[fn_num] = note_text
-    else:
-        # Other volumes: plain <p> elements — sequential footnotes
-        para_idx = 0
-        for child in footnotes_div:
-            if child.tag == 'h1':
-                continue
-            if child.tag == 'p':
-                para_idx += 1
-                fn_num = str(para_idx)
-                inner = _elem_to_html(child, endnotes_file).strip()
-                if inner:
-                    footnotes[fn_num] = inner
-
-    if not footnotes:
-        return None
-
-    aside_parts = [
-        '<section epub:type="endnotes" role="doc-endnotes">',
-        '<h1>FOOTNOTES</h1>',
-    ]
-    for fn_num in sorted(footnotes.keys(), key=lambda x: int(x)):
-        fn_id = f'fn{fn_num}'
-        text = footnotes[fn_num]
-        aside_parts.append(
-            f'<aside epub:type="endnote" role="doc-endnote" id="{fn_id}">'
-            f'<p class="footnote">'
-            f'<a epub:type="noteref" href="#{fn_id}" class="fn-link">'
-            f'<sup>{fn_num}</sup></a> {text}</p>'
-            f'</aside>'
-        )
-    aside_parts.append('</section>')
-    return '\n'.join(aside_parts)
-
-
-# ============================================================================
-# FONT INJECTION
-# ============================================================================
-
-def inject_fonts_into_epub(epub_dir, volume_name, is_hebrews=False):
-    """Copy font files and create Fonts/ directory in the EPUB structure."""
-    fonts_dir = os.path.join(epub_dir, 'Fonts')
-    os.makedirs(fonts_dir, exist_ok=True)
-
-    primary = select_primary_font(volume_name)
-    all_font_files = {}
-
-    for rel_path, font_file in primary['files'].items():
-        src = os.path.join(FONT_BASE, font_file)
-        if os.path.exists(src):
-            shutil.copy2(src, os.path.join(fonts_dir, os.path.basename(font_file)))
-            all_font_files[rel_path] = font_file
+            content = stripped
+            h_tag = None
+        
+        # Process footnote markers [fN]
+        ref_nums = FOOTNOTE_MARKER_RE.findall(content)
+        content_no_refs = FOOTNOTE_MARKER_RE.sub('', content).strip()
+        
+        # Convert **bold** → <b>, _italic_ → <i>
+        text_html = content_no_refs
+        text_html = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text_html)
+        text_html = re.sub(r'(?<!\*)_(.+?)_(?!\*)', r'<i>\1</i>', text_html)
+        
+        # Tag Unicode Greek/Hebrew ranges
+        text_html = tag_unicode_ranges(text_html)
+        
+        # Add footnote noteref links
+        fn_links = ''
+        for rn in ref_nums:
+            fn_links += f'<a epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fn{rn}"><sup>{rn}</sup></a>'
+        
+        if h_tag:
+            cls = ' class="secondary"' if h_tag in ('h2', 'h3') else ''
+            html_parts.append(f'<{h_tag}{cls}>{text_html}{fn_links}</{h_tag}>')
+        elif text_html.startswith('---') or text_html.startswith('***'):
+            html_parts.append('<hr/>')
         else:
-            print(f"    Warning: Font not found: {src}")
-
-    for fname, fpath in SBL_SUPPLEMENTS.items():
-        src = os.path.join(FONT_BASE, fpath)
-        if os.path.exists(src):
-            shutil.copy2(src, os.path.join(fonts_dir, fname))
-        else:
-            print(f"    Warning: Font not found: {src}")
-
-    if is_hebrews or True:
-        for fname, fpath in EZRA_SIL_FILES.items():
-            src = os.path.join(FONT_BASE, fpath)
-            if os.path.exists(src):
-                shutil.copy2(src, os.path.join(fonts_dir, fname))
-
-    return primary, all_font_files
+            html_parts.append(f'<p>{text_html}{fn_links}</p>')
+    
+    return '\n'.join(html_parts)
 
 
-def get_font_manifest_entries(fonts_dir):
-    """Get font file entries for OPF manifest."""
-    entries = []
-    if os.path.isdir(fonts_dir):
-        for fname in sorted(os.listdir(fonts_dir)):
-            fpath = os.path.join(fonts_dir, fname)
-            if os.path.isfile(fpath) and fname.endswith(('.ttf', '.otf')):
-                mime = 'application/font-sfnt' if fname.endswith('.ttf') else 'application/vnd.ms-opentype'
-                entries.append({
-                    'id': f'font_{os.path.splitext(fname)[0]}',
-                    'href': f'Fonts/{fname}',
-                    'mime': mime,
-                })
-    return entries
-
-
-def find_portrait(workspace, vol_num=None):
-    """Find a portrait image for John Owen, deterministically selected per volume.
-
-    When vol_num is provided, uses a hash-based selection from all available
-    portraits so each volume gets a different (but reproducible) portrait.
-    When vol_num is None, returns the first portrait found (legacy behavior).
-    """
-    portraits_dir = os.path.join(workspace, 'portraits')
-    if not os.path.isdir(portraits_dir):
-        return None
-
-    all_portraits = []
-    for ext in ('.jpeg', '.jpg', '.png', '.webp'):
-        for fname in sorted(os.listdir(portraits_dir)):
-            if fname.lower().endswith(ext):
-                all_portraits.append(os.path.join(portraits_dir, fname))
-
-    if not all_portraits:
-        return None
-
-    if vol_num is not None:
-        import hashlib
-        idx = int(hashlib.md5(f'owen-v{vol_num}'.encode()).hexdigest(), 16) % len(all_portraits)
-        return all_portraits[idx]
-    return all_portraits[0]
-
-
-def generate_frontispiece_xhtml(portrait_filename='portrait.jpeg'):
-    """Generate frontispiece.xhtml matching reference format."""
-    return (
-        '<?xml version="1.0" encoding="utf-8"?>\n'
-        '<!DOCTYPE html>\n'
-        '<html xmlns="http://www.w3.org/1999/xhtml"'
-        ' xmlns:epub="http://www.idpf.org/2007/ops"'
-        ' epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/#"'
-        ' lang="en" xml:lang="en">\n'
-        '  <head>\n'
-        '    <title>Frontispiece</title>\n'
-        '    <link href="style/main.css" rel="stylesheet" type="text/css"/>\n'
-        '  </head>\n'
-        '  <body>\n'
-        '    <div class="frontispiece">\n'
-        f'      <img src="images/{portrait_filename}" alt="Portrait of John Owen"/>\n'
-        '      <p class="caption">John Owen (1616–1683)</p>\n'
-        '    </div>\n'
-        '  </body>\n'
-        '</html>'
-    )
-
-
-def fix_cover_xhtml(oebps):
-    """Fix cover.xhtml to match reference format (simple <img> without CSS link)."""
-    cover_path = os.path.join(oebps, 'cover.xhtml')
-    if not os.path.exists(cover_path):
-        return
-
-    with open(cover_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-
-    # Extract image src
-    img_match = re.search(r'<img[^>]+src="([^"]+)"', content)
-    if not img_match:
-        return
-
-    img_src = img_match.group(1)
-    alt_match = re.search(r'alt="([^"]*)"', content)
-    alt_text = alt_match.group(1) if alt_match else 'Cover'
-
-    # Rewrite to match reference format
-    new_content = (
-        '<?xml version="1.0" encoding="utf-8"?>\n'
-        '<!DOCTYPE html>\n'
-        '<html xmlns="http://www.w3.org/1999/xhtml"'
-        ' xmlns:epub="http://www.idpf.org/2007/ops"'
-        ' epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/#"'
-        ' lang="en" xml:lang="en">\n'
-        '  <head>\n'
-        '    <title>Cover</title>\n'
-        '  </head>\n'
-        '  <body>\n'
-        f'    <img src="{img_src}" alt="{alt_text}"/>\n'
-        '  </body>\n'
-        '</html>'
-    )
-
-    with open(cover_path, 'w', encoding='utf-8') as f:
-        f.write(new_content)
-
-
-def inject_font_css(oebps, primary_font_name, primary_font_files):
-    """Append @font-face and language override CSS to the main stylesheet."""
-    font_css = generate_font_styles(primary_font_name, primary_font_files)
-
-    css_path = os.path.join(oebps, 'style', 'main.css')
-    if not os.path.exists(css_path):
-        for root, dirs, files in os.walk(oebps):
-            for f in files:
-                if f.endswith('.css'):
-                    css_path = os.path.join(root, f)
-                    break
-
-    if os.path.exists(css_path):
-        with open(css_path, 'a', encoding='utf-8') as f:
-            f.write('\n' + font_css)
-        return True
-    return False
-
-
-def write_ncx_file(oebps, title, uid, toc_entries):
-    """Write the toc.ncx file for EPUB2 fallback compatibility."""
-    ncx_content = generate_ncx(title, uid, toc_entries)
-    ncx_path = os.path.join(oebps, 'toc.ncx')
-    with open(ncx_path, 'w', encoding='utf-8') as f:
-        f.write(ncx_content)
-    return ncx_path
-
-
-# ============================================================================
-# NAV GENERATION (3-level hierarchical + landmarks)
-# ============================================================================
-
-def _extract_chapter_subtitle(div1):
-    """Extract the subtitle from the first <b> tags within the first 5 <p> tags."""
-    subtitle_parts = []
-    for p in div1.findall('.//p')[:5]:
-        for b in p.findall('b'):
-            text = (b.text or '').strip()
-            # Skip if it's just a number, Roman numeral, or bracketed/parenthesized marker
-            if re.match(r'^[\(\[]?\d+[a-z]{0,2}[\.\),\]]?$|^[IVXLCDM]+\.?$|^\(\d+\.\)$|^\[\d+\.\]$', text, re.IGNORECASE):
-                continue
-            if text:
-                subtitle_parts.append(text)
-        if subtitle_parts and not p.findall('b'):
-            break
-    if subtitle_parts:
-        subtitle = ' '.join(subtitle_parts)
-        words = subtitle.split()
-        small_words = {'and', 'or', 'of', 'in', 'to', 'for', 'with', 'on', 'at', 'from', 'by', 'the', 'a', 'an', 'as', 'unto'}
-        result = []
-        for i, w in enumerate(words):
-            lw = w.lower()
-            if lw in small_words and i > 0 and i < len(words) - 1:
-                result.append(lw)
-            else:
-                match = re.search(r'[a-zA-Z]', lw)
-                if match:
-                    idx = match.start()
-                    cw = lw[:idx] + lw[idx].upper() + lw[idx+1:]
-                    result.append(cw)
-                else:
-                    result.append(lw)
-        return ' '.join(result)
-    return ''
-
-def _split_nav_title(title):
-    """Split combined titles like 'TREATISE CHAPTER 1' into (treatise, chapter).
-
-    Detects patterns where a treatise/section name is followed by a unit indicator
-    (CHAPTER, BOOK, PART, SECTION + number). Returns a (treatise, chapter) tuple
-    when a split is detected, or None when no split is needed.
-
-    Does NOT split when an em-dash precedes the unit indicator (e.g., "— CHAPTER 1"),
-    as that indicates a continuation of the title rather than a structural split.
-    """
-    m = re.match(r'^(.+?)\s+((?:CHAPTER|BOOK|PART|SECTION)\s+\d+\.?)$', title.strip(), re.IGNORECASE)
-    if m:
-        before_unit = m.group(1).rstrip()
-        if before_unit.endswith('—') or before_unit.endswith('—'):
-            return None
-        treatise = before_unit.rstrip('.—:— ')
-        unit = m.group(2).strip().rstrip('.')
-        return (treatise, unit)
+def find_cover(vol_num):
+    """Find cover image for a volume."""
+    covers_dir = os.path.join(_SCRIPT_DIR, 'covers')
+    for ext in ('.jpeg', '.jpg', '.png'):
+        path = os.path.join(covers_dir, f'v{vol_num}{ext}')
+        if os.path.exists(path):
+            return path
     return None
 
 
-def generate_nav_xhtml(toc_entries, landmarks=None, volume_title=None):
-    """Generate an EPUB3 nav.xhtml with 3-level TOC and landmarks.
+def find_portrait(vol_num=None):
+    """Find a portrait image."""
+    p_dir = os.path.join(_SCRIPT_DIR, 'portraits')
+    if not os.path.isdir(p_dir):
+        return None
+    files = sorted([f for f in os.listdir(p_dir) if f.lower().endswith(('.jpeg', '.jpg', '.png'))])
+    if not files:
+        return None
+    idx = int(hashlib.md5(f'owen-v{vol_num}'.encode()).hexdigest(), 16) % len(files)
+    return os.path.join(p_dir, files[idx])
 
-    toc_entries: list of (level, text, href) tuples where level starts at 1.
-    Produces properly nested <ol>/<li> structure per EPUB3 spec.
-    """
-    if not toc_entries:
-        return '<nav epub:type="toc" id="id" role="doc-toc"><h2>Table of Contents</h2><ol></ol></nav>'
 
-    display_title = volume_title or 'Table of Contents'
+def _build_title_page(vol_num, title, subtitle):
+    return f'''<div class="title-page">
+<p class="ornament">❧</p>
+<h1 class="primary">The Works of<br/>John Owen</h1>
+<hr class="rule"/>
+<h2 class="secondary">Volume {vol_num}</h2>
+<h2 class="secondary">{_escape_xml(subtitle)}</h2>
+<p class="author"><span class="by">by</span>John Owen</p>
+<p class="editor">Edited by William H. Goold</p>
+<p class="publisher">Banner of Truth Trust</p>
+</div>'''
+
+
+def generate_frontispiece_xhtml(portrait_filename):
+    return f'''<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><title>Frontispiece</title>
+<link href="style/main.css" rel="stylesheet" type="text/css"/></head>
+<body><div class="frontispiece">
+<img src="images/{portrait_filename}" alt="Portrait"/>
+<p class="caption">John Owen (1616–1683)</p>
+</div></body></html>'''
+
+
+def generate_nav_xhtml(toc_entries, volume_title=None):
+    """Generate 3-level NAV XHTML."""
+    display_title = _html_escape(volume_title or 'Table of Contents')
     lines = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<!DOCTYPE html>',
-        '<html xmlns="http://www.w3.org/1999/xhtml"'
-        ' xmlns:epub="http://www.idpf.org/2007/ops"'
-        ' epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/#"'
-        ' lang="en" xml:lang="en">',
+        '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en" xml:lang="en">',
         '<head>',
-        f'  <title>{_html_escape(display_title)}</title>',
+        f'  <title>{display_title}</title>',
         '  <link href="style/main.css" rel="stylesheet" type="text/css"/>',
         '</head>',
         '<body>',
-        f'<nav epub:type="toc" id="id" role="doc-toc">',
-        f'<h2>{_html_escape(display_title)}</h2>',
+        f'<nav epub:type="toc" id="toc" role="doc-toc">',
+        f'<h2>{display_title}</h2>',
     ]
-
-    depth = 0
-
+    
+    current_level = 0
+    stack = []
     for level, text, href in toc_entries:
-        if level > depth:
-            while level > depth:
+        level = max(1, min(level, 3))
+        if level > current_level + 1:
+            level = current_level + 1
+        if level > current_level:
+            for _ in range(level - current_level):
                 lines.append('<ol>')
-                depth += 1
-        elif level < depth:
-            while level < depth:
-                lines.append('</li>')
-                lines.append('</ol>')
-                depth -= 1
+                stack.append('ol')
+        elif level < current_level:
             lines.append('</li>')
-        else:
+            stack.pop()
+            for _ in range(current_level - level):
+                lines.extend(['</ol>', '</li>'])
+                stack.pop()
+                stack.pop()
+        elif current_level > 0:
             lines.append('</li>')
-
+            stack.pop()
+        
         lines.append(f'<li><a href="{_html_escape(href)}">{_html_escape(text)}</a>')
-
-    for _ in range(depth):
-        lines.append('</li>')
-        lines.append('</ol>')
-
-    lines.append('</nav>')
-
-    if landmarks is None:
-        landmarks = [
-            ('toc', 'Table of Contents', 'nav.xhtml'),
-        ]
-
-    if toc_entries:
-        first_href = toc_entries[0][2]
-        landmarks.append(('bodymatter', 'Start of Content', first_href))
-
-    lines.append('<nav epub:type="landmarks" id="landmarks">')
-    lines.append('<h1>Guide</h1>')
-    lines.append('<ol>')
-    for epub_type, text, href in landmarks:
-        lines.append(f'<li><a epub:type="{epub_type}" href="{_html_escape(href)}">'
-                     f'{_html_escape(text)}</a></li>')
-    lines.append('</ol>')
-    lines.append('</nav>')
-    lines.append('</body>')
-    lines.append('</html>')
+        stack.append('li')
+        current_level = level
+    
+    while stack:
+        lines.append(f'</{stack.pop()}>')
+    
+    lines.extend(['</nav>', '</body>', '</html>'])
     return '\n'.join(lines)
 
 
 def generate_ncx(title, uid, toc_entries):
-    """Generate toc.ncx (EPUB2 fallback) from flat or hierarchical entries."""
+    """Generate NCX for backward compatibility."""
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">',
-        '  <head>',
-        f'    <meta content="{_html_escape(uid)}" name="dtb:uid"/>',
-        '    <meta content="3" name="dtb:depth"/>',
-        '    <meta content="0" name="dtb:totalPageCount"/>',
-        '    <meta content="0" name="dtb:maxPageNumber"/>',
-        '  </head>',
-        '  <docTitle>',
-        f'    <text>{_html_escape(title)}</text>',
-        '  </docTitle>',
+        '<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">',
+        f'  <head><meta content="{_html_escape(uid)}" name="dtb:uid"/></head>',
+        f'  <docTitle><text>{_html_escape(title)}</text></docTitle>',
         '  <navMap>',
     ]
-
-    order = [0]
-    for level, text, href in toc_entries:
-        order[0] += 1
-        depth_class = {1: 1, 2: 2, 3: 3}.get(level, 1)
-        safe_id = re.sub(r'[^a-zA-Z0-9_-]', '_', href or f'item_{order[0]}')
-        indent = '  ' * (depth_class + 1)
-        lines.append(f'{indent}<navPoint id="nav_{safe_id}" playOrder="{order[0]}">')
-        lines.append(f'{indent}  <navLabel><text>{_html_escape(text)}</text></navLabel>')
-        lines.append(f'{indent}  <content src="{_html_escape(href)}"/>')
-        lines.append(f'{indent}</navPoint>')
-
-    lines.append('  </navMap>')
-    lines.append('</ncx>')
+    for i, (level, text, href) in enumerate(toc_entries):
+        lines.append(
+            f'    <navPoint id="nav_{i}" playOrder="{i+1}">'
+            f'<navLabel><text>{_html_escape(text)}</text></navLabel>'
+            f'<content src="{_html_escape(href)}"/>'
+            f'</navPoint>'
+        )
+    lines.extend(['  </navMap>', '</ncx>'])
     return '\n'.join(lines)
 
 
-# ============================================================================
-# OPF UPDATE (EPUB3 compliance)
-# ============================================================================
-
-def update_opf_for_epub3(opf_path, nav_rel, font_entries=None,
-                          volume_title=None, volume_authors=None):
-    """Update OPF to EPUB3: version, nav, fonts, metadata."""
-    ET.register_namespace('', "http://www.idpf.org/2007/opf")
-    tree = ET.parse(opf_path)
-    root = tree.getroot()
-    root.set('version', '3.0')
-
-    ns = {'opf': 'http://www.idpf.org/2007/opf'}
-    mf = root.find('{http://www.idpf.org/2007/opf}manifest')
-
-    if mf is not None:
-        for item in list(mf):
-            href = item.get('href', '')
-            if '.html' in href:
-                item.set('href', href.replace('.html', '.xhtml'))
-            if item.get('properties') == 'nav' or '.ncx' in href:
-                mf.remove(item)
-
-        ET.SubElement(mf, 'item', id='nav', href=nav_rel,
-                      properties='nav', **{'media-type': 'application/xhtml+xml'})
-
-        if font_entries:
-            for fe in font_entries:
-                ET.SubElement(mf, 'item',
-                              id=fe['id'], href=fe['href'],
-                              **{'media-type': fe['mime']})
-
-    meta = root.find('{http://www.idpf.org/2007/opf}metadata')
-    ns_dc = 'http://purl.org/dc/elements/1.1/'
-    if meta is not None:
-        if volume_title:
-            for t in list(meta.findall(f'{{{ns_dc}}}title')):
-                meta.remove(t)
-            new_title = ET.SubElement(meta, f'{{{ns_dc}}}title')
-            new_title.text = volume_title
-
-        if volume_authors:
-            for c in list(meta.findall(f'{{{ns_dc}}}creator')):
-                meta.remove(c)
-            insert_after = meta.find(f'{{{ns_dc}}}title')
-            if insert_after is None:
-                insert_after = meta.find(f'{{{ns_dc}}}identifier')
-            all_children = list(meta)
-            if insert_after is not None:
-                insert_idx = all_children.index(insert_after) + 1
-            else:
-                insert_idx = 0
-            for i, author in enumerate(volume_authors):
-                creator = ET.SubElement(meta, f'{{{ns_dc}}}creator')
-                creator.set('id', 'creator')
-                creator.text = author
-                meta.remove(creator)
-                meta.insert(insert_idx + i, creator)
-
-    tree.write(opf_path, encoding='utf-8', xml_declaration=True)
+def repackage_canonical(epub_path, src_dir):
+    """Repackage as canonical EPUB3 (mimetype first, no compression)."""
+    if os.path.exists(epub_path):
+        os.remove(epub_path)
+    with open(os.path.join(src_dir, 'mimetype'), 'wb') as f:
+        f.write(b'application/epub+zip')
+    subprocess.run(['zip', '-0Xq', epub_path, 'mimetype'],
+                   cwd=src_dir, check=True)
+    subprocess.run(['zip', '-r9q', epub_path, '.', '-x',
+                    'mimetype', '-x', '*.DS_Store'],
+                   cwd=src_dir, check=True)
 
 
-# ============================================================================
-# APPLE BOOKS DISPLAY OPTIONS
-# ============================================================================
+# ================================================================
+# MAIN PIPELINE
+# ================================================================
 
-def add_apple_display_options(epub_dir):
-    """Create META-INF/com.apple.ibooks.display-options.xml."""
-    meta_inf = os.path.join(epub_dir, 'META-INF')
-    os.makedirs(meta_inf, exist_ok=True)
-    path = os.path.join(meta_inf, 'com.apple.ibooks.display-options.xml')
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(
-            '<?xml version="1.0" encoding="UTF-8"?>'
-            '<display-options xmlns="http://www.apple.com/itunes/vbook/display-options">'
-            '<platform name="*">'
-            '<option name="specified-fonts">true</option>'
-            '</platform>'
-            '</display-options>'
-        )
-
-
-# ============================================================================
-# XMLNS:EPUB INJECTION
-# ============================================================================
-
-def ensure_xmlns_epub(xhtml_path):
-    """Ensure xmlns:epub namespace declaration in XHTML files."""
-    with open(xhtml_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    if 'xmlns:epub' not in content:
-        content = re.sub(
-            r'<html\b([^>]*?)>',
-            r'<html\1 xmlns:epub="http://www.idpf.org/2007/ops">',
-            content, count=1, flags=re.I
-        )
-        with open(xhtml_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-
-
-# ============================================================================
-# EPUB POST-PROCESSING (EPUB3 compliance)
-# ============================================================================
-
-def post_process_epub3(epub_path):
-    """Rewrite the EPUB ZIP for EPUB3 compliance:
-    - mimetype first and uncompressed
-    - version="3.0"
-    - toc="ncx" in spine
-    - nav.xhtml has properties="nav"
+def build_endnotes_chapter(footnotes, style_item=None, font_styles=None):
     """
-    tmp_dir = tempfile.mkdtemp()
-    extract_dir = os.path.join(tmp_dir, 'epub')
-    try:
-        os.makedirs(extract_dir, exist_ok=True)
-        with zipfile.ZipFile(epub_path, 'r') as zf:
-            zf.extractall(extract_dir)
-
-        opf_path = None
-        for root, _, files in os.walk(extract_dir):
-            for f in files:
-                if f.endswith('.opf'):
-                    opf_path = os.path.join(root, f)
-                    break
-
-        if opf_path:
-            with open(opf_path, 'r', encoding='utf-8') as f:
-                opf = f.read()
-            opf = re.sub(r'version="2\.0"', 'version="3.0"', opf)
-            if '<spine' in opf and 'toc="ncx"' not in opf:
-                opf = opf.replace('<spine', '<spine toc="ncx"')
-            opf = re.sub(
-                r'(<item[^>]*href="nav\.xhtml"[^>]*)/>',
-                r'\1 properties="nav"/>',
-                opf,
-            )
-            opf = re.sub(r'properties="nav"\s+properties="nav"',
-                         'properties="nav"', opf)
-            with open(opf_path, 'w', encoding='utf-8') as f:
-                f.write(opf)
-
-        temp_zip = epub_path + '.tmp'
-        with zipfile.ZipFile(temp_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
-            mt_path = os.path.join(extract_dir, 'mimetype')
-            if os.path.exists(mt_path):
-                zf.write(mt_path, 'mimetype', compress_type=zipfile.ZIP_STORED)
-            for dirpath, _, filenames in os.walk(extract_dir):
-                for fn in sorted(filenames):
-                    if fn == 'mimetype':
-                        continue
-                    full = os.path.join(dirpath, fn)
-                    arcname = os.path.relpath(full, extract_dir)
-                    zf.write(full, arcname)
-
-        if os.path.exists(epub_path):
-            os.remove(epub_path)
-        os.rename(temp_zip, epub_path)
-    finally:
-        shutil.rmtree(tmp_dir, ignore_errors=True)
+    Build the endnotes XHTML chapter from merged footnotes.
+    """
+    fn_map = {f.fnum: f for f in footnotes.values()}
+    
+    parts = ['<section epub:type="endnotes" role="doc-endnotes">',
+             '<h1>Footnotes</h1>']
+    for fnum in sorted(fn_map.keys()):
+        fn = fn_map[fnum]
+        fn_text = tag_unicode_ranges(fn.text)
+        parts.append(
+            f'<aside epub:type="endnote" role="doc-endnote" id="fn{fnum}">'
+            f'<p class="footnote">'
+            f'<a href="#fn{fnum}" class="fn-link">{fnum}</a> '
+            f'{_escape_xml(fn_text)}'
+            f'</p></aside>'
+        )
+    parts.append('</section>')
+    
+    html = ''.join(parts)
+    return _make_xhtml('Footnotes', html, font_styles=font_styles)
 
 
-# ============================================================================
-# REPACKAGE EPUB
-# ============================================================================
+# ================================================================
+# FRONT MATTER HANDLING
+# ================================================================
 
-def repackage_epub(extract_dir, output_path):
-    """Create EPUB ZIP from extracted directory."""
-    temp_zip = output_path + '.tmp'
-    with zipfile.ZipFile(temp_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
-        mt_path = os.path.join(extract_dir, 'mimetype')
-        if os.path.exists(mt_path):
-            zf.write(mt_path, 'mimetype', compress_type=zipfile.ZIP_STORED)
-        for dirpath, _, filenames in os.walk(extract_dir):
-            for fn in sorted(filenames):
-                if fn == 'mimetype' and dirpath == extract_dir:
+_AGES_HEADERS = {'THE AGES DIGITAL LIBRARY', 'JOHN OWEN COLLECTION',
+                 'Books For The Ages', 'AGES Software', 'Version 1.0',
+                 'B o o k s F o r T h e A g e s'}
+
+
+def detect_page_type(page, page_num=None):
+    text_upper = page.get_text().upper()
+    blocks = page.get_text('dict')['blocks']
+    text_blocks = [b for b in blocks if b.get('type') == 0]
+    n_blocks = len(text_blocks)
+
+    # TOC detection: any CONTENTS page OR pages with many numbered/chapter items
+    if 'CONTENTS' in text_upper and n_blocks > 5:
+        return 'toc_page'
+    
+    # Heuristic for multi-page TOC (pages with high count of "CHAPTER X" or numbered items)
+    if n_blocks > 10:
+        items_count = 0
+        for b in text_blocks:
+            b_text = "".join(s['text'] for line in b['lines'] for s in line['spans']).strip()
+            # Match "CHAPTER 1", "1. ", "I. ", etc.
+            if re.match(r'^(CHAPTER\s+\d+|[IVXLC]+\.|\d+[\.\-])', b_text, re.I):
+                items_count += 1
+        if items_count > 8:
+            return 'toc_page'
+
+    # For first 10 pages: structural detection (sparse blocks + large font)
+    if page_num is not None and page_num <= 10:
+        if n_blocks < 15:
+            max_font = 0
+            total_chars = 0
+            for b in text_blocks:
+                for line in b['lines']:
+                    for s in line['spans']:
+                        max_font = max(max_font, s['size'])
+                        total_chars += len(s['text'])
+            if max_font > 14 and total_chars < 800:
+                return 'title_page'
+        # Body text: too many chars or many blocks → not a structural page
+        total_chars = 0
+        for b in text_blocks:
+            for line in b['lines']:
+                for s in line['spans']:
+                    total_chars += len(s['text'])
+        if total_chars > 800 or n_blocks >= 10:
+            return 'body_page'
+        return 'preserve_page'
+
+    # Beyond page 10: char-count based title page detection (mid-volume)
+    total_chars = 0
+    large_chars = 0
+    for b in text_blocks:
+        for line in b['lines']:
+            for s in line['spans']:
+                c = len(s['text'])
+                total_chars += c
+                if s['size'] > 14:
+                    large_chars += c
+    if total_chars < 1200 and large_chars >= 40:
+        return 'title_page'
+
+    # Fallback for mixed title+body pages (e.g. Part titles starting mid-page)
+    # ONLY if the total characters are relatively low and font is very large (PART/BOOK)
+    if total_chars < 2000:
+        for b in text_blocks:
+            b_text = "".join(s['text'] for line in b['lines'] for s in line['spans']).strip()
+            # Skip page numbers and running headers
+            if b_text.isdigit() and len(b_text) <= 4: continue
+            if any(h in b_text for h in _AGES_HEADERS): continue
+            
+            b_max = max(s['size'] for line in b['lines'] for s in line['spans'])
+            # Only trigger if we find a very large-font line (e.g. PART X, BOOK X)
+            if b_max > 18 and len(b_text) < 40 and not b_text.upper().startswith('CHAPTER'):
+                return 'title_page'
+            # If we hit a normal block first, it's a body page
+            break
+
+    return 'body_page'
+
+
+def format_title_page(page, section_class="title-page", epub_type="titlepage", limit_to_title=False):
+    """Build Goold-style centered title page XHTML from PDF blocks with premium styling.
+
+    Preserves PDF line breaks with <br/>, maps font-size hierarchy to h1/h2/h3.
+    Applies colors and italics based on content heuristics.
+    """
+    blocks = page.get_text('dict')['blocks']
+    lines_data = []
+    for b in blocks:
+        if b.get('type') != 0:
+            continue
+        for line in b['lines']:
+            spans = line['spans']
+            max_size = max(s['size'] for s in spans)
+            font_names = [s['font'] for s in spans]
+            text = ''.join(s['text'] for s in spans).strip()
+            text = re.sub(r'<\d{6}>', '', text).strip()
+            if not text or text.isdigit():
+                continue
+            if any(h in text for h in _AGES_HEADERS):
+                continue
+            
+            # Stop if we hit a chapter marker and limit_to_title is active
+            if limit_to_title and text.upper().startswith('CHAPTER'):
+                break
+                
+            has_koine = any('Koine' in f for f in font_names)
+            has_italic = any('Italic' in f for f in font_names)
+            has_bold = any('Bold' in f for f in font_names)
+            lines_data.append((max_size, has_koine, has_italic, has_bold, text))
+        else:
+            continue
+        break 
+
+    if not lines_data:
+        return ''
+
+    # Absolute font thresholds
+    h1_threshold = 20.0
+    h2_threshold = 15.0
+
+    groups = []
+    for size, has_koine, has_italic, has_bold, text in lines_data:
+        safe = _html_escape(text)
+        if has_koine:
+            safe = f'<span lang="el" xml:lang="el">{safe}</span>'
+
+        # Class heuristics
+        cls = ""
+        if size >= h1_threshold or (size >= h2_threshold and len(text) < 20):
+            lvl = 'h1'
+            cls = ' class="primary"'
+        elif size >= h2_threshold:
+            lvl = 'h2'
+            cls = ' class="secondary"'
+        elif text.upper() in {'OR', 'OF', 'WITH', 'AS ALSO,'}:
+            lvl = 'h3'
+            cls = ' class="separator"'
+        elif len(text) > 40 or has_italic:
+            lvl = 'p'
+            cls = ' class="descriptive"'
+        elif has_bold:
+            lvl = 'h3'
+        else:
+            lvl = 'p'
+
+        if groups and groups[-1][0] == lvl and groups[-1][1] == cls:
+            groups[-1][2].append(safe)
+        else:
+            groups.append((lvl, cls, [safe]))
+
+    parts = [f'<section class="{section_class}" epub:type="{epub_type}">']
+    # Add ornament at top
+    parts.append('<p class="ornament">❧</p>')
+    
+    for lvl, cls, texts in groups:
+        content = '<br/>'.join(texts)
+        parts.append(f'<{lvl}{cls}>{content}</{lvl}>')
+    parts.append('</section>')
+    return '\n'.join(parts)
+
+
+def build_toc_page_xhtml(pages):
+    """Build a formatted CONTENTS page from one or more PDF pages.
+    
+    Uses block metadata to identify headings vs items and apply styling.
+    """
+    if not isinstance(pages, list):
+        pages = [pages]
+        
+    parts = ['<section epub:type="toc">']
+    
+    for page in pages:
+        blocks = page.get_text('dict')['blocks']
+        text_blocks = [b for b in blocks if b.get('type') == 0]
+        
+        for b in text_blocks:
+            lines_data = []
+            max_size = 0
+            has_bold = False
+            has_color = False
+            
+            for line in b['lines']:
+                spans = line['spans']
+                l_size = max(s['size'] for s in spans)
+                max_size = max(max_size, l_size)
+                if any(s['flags'] & 2 for s in spans): # 2 is bold
+                    has_bold = True
+                
+                # Check for colors (non-black)
+                for s in spans:
+                    if s['color'] != 0:
+                        has_color = True
+                
+                l_text = "".join(s['text'] for s in spans).strip()
+                l_text = re.sub(r'<\d{6}>', '', l_text).strip()
+                # Skip standalone page numbers
+                if l_text.isdigit() and len(l_text) <= 4:
                     continue
-                full = os.path.join(dirpath, fn)
-                arcname = os.path.relpath(full, extract_dir)
-                zf.write(full, arcname)
-    if os.path.exists(output_path):
-        os.remove(output_path)
-    os.rename(temp_zip, output_path)
+                if l_text:
+                    lines_data.append(l_text)
+            
+            if not lines_data:
+                continue
+                
+            full_text = " ".join(lines_data)
+            safe_text = "<br/>".join(_html_escape(l) for l in lines_data)
+            
+            # Heuristics based on John Owen Volume 1 layout
+            # 1. Main Titles (Large, usually bold/colored)
+            if max_size > 13 or (full_text.isupper() and len(full_text) < 60 and not "CHAPTER" in full_text.upper()):
+                parts.append(f'<h2 style="text-align: center;">{safe_text}</h2>')
+            # 2. Section Headers (PREFATORY NOTE, PREFACE, etc.)
+            elif full_text.isupper() and len(full_text) < 40:
+                parts.append(f'<h3 style="text-align: center;">{safe_text}</h3>')
+            # 3. TOC Items (CHAPTER 1, 1. -, etc.)
+            else:
+                # Use .ContentsItem for hanging indent
+                # We want to bold the label part if possible
+                # Refined regex for labels like "1. —" or "CHAPTER 1."
+                match = re.match(r'^((?:CHAPTER\s+\d+|[IVXLC]+\.|[0-9]+[\.\-\s]*[—\-]?)\s*)(.*)', full_text, re.I | re.S)
+                if match:
+                    label, desc = match.groups()
+                    desc_safe = _html_escape(desc.strip())
+                    parts.append(f'<p class="ContentsItem"><b>{_html_escape(label)}</b> {desc_safe}</p>')
+                else:
+                    parts.append(f'<p class="ContentsItem">{safe_text}</p>')
+                    
+    parts.append('</section>')
+    return '\n'.join(parts)
 
-
-# ============================================================================
-# MAIN PIPELINE: Owen Works (PDF/CCEL → EPUB3)
-# ============================================================================
 
 def process_owen_volume(vol_num):
-    """Process a single Owen Works volume: PDF → ThML → EPUB3."""
+    """Process a single Owen volume from PDF to EPUB3."""
     config = VOLUME_CONFIG.get(vol_num)
     if not config:
-        print(f"  Error: No config for volume {vol_num}")
+        print(f"Error: Unknown volume {vol_num}")
         return False
-
-    source_type = config['source_type']
-    title = config['title']
-    authors = config['authors']
-    publisher = config['publisher']
-
-    vol_dir = os.path.join(_WORKSPACE, 'volumes', f'v{vol_num}')
-    input_dir = os.path.join(vol_dir, 'input')
-    intermediate_dir = os.path.join(vol_dir, 'intermediate')
+    
+    vol_dir = os.path.join(_SCRIPT_DIR, 'volumes', f'v{vol_num}')
+    pdf_path = os.path.join(vol_dir, 'input', f'owen-v{vol_num}.pdf')
     output_dir = os.path.join(vol_dir, 'output')
-    os.makedirs(intermediate_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
-
+    intermediate_dir = os.path.join(vol_dir, 'intermediate')
     thml_path = os.path.join(intermediate_dir, f'volume_{vol_num}.thml.xml')
+    os.makedirs(output_dir, exist_ok=True)
+    
     epub_path = os.path.join(output_dir, f'volume_{vol_num}.epub')
-
-    if os.path.exists(epub_path):
-        print(f"  Skipping (EPUB exists): {epub_path}")
-        return True
-
-    if source_type == 'ages_pdf':
-        pdf_links = os.path.join(input_dir, f'owen-v{vol_num}.pdf')
-        if not os.path.exists(pdf_links):
-            for ext in ('.pdf',):
-                alt = os.path.join(_WORKSPACE, 'pdfs', f'owen-v{vol_num}.pdf')
-                if os.path.exists(alt):
-                    pdf_links = alt
-                    break
-
-        if not os.path.exists(pdf_links):
-            print(f"  Error: Source PDF not found for volume {vol_num}")
-            return False
-
-        if not os.path.exists(thml_path):
-            print(f"  Stage 1: PDF → ThML...")
-            if not pdf_to_thml(pdf_links, thml_path, vol_num):
-                return False
-        else:
-            print(f"  Stage 1: Using existing ThML: {thml_path}")
-
-        source_path = thml_path
-    elif source_type == 'ccel_xml':
-        ccel_file = config.get('ccel_file', '')
-        source_path = os.path.join(_WORKSPACE, ccel_file)
-        if not os.path.exists(source_path):
-            print(f"  Error: CCEL source not found: {source_path}")
-            return False
-        print(f"  Using CCEL XML source: {source_path}")
-    else:
-        print(f"  Error: Unknown source type: {source_type}")
+    
+    print(f"\n{'='*60}")
+    print(f"Volume {vol_num}: {config['title']}")
+    print(f"{'='*60}")
+    
+    if not os.path.exists(pdf_path):
+        print(f"  Error: PDF not found at {pdf_path}")
         return False
-
-    print(f"  Stage 2: Converting to EPUB3...")
-
-    try:
-        tree = ET.parse(source_path)
-        root = tree.getroot()
-    except Exception as e:
-        print(f"  Error parsing source: {e}")
-        return False
-
-    dc_title = root.find('.//DC.Title')
-    dc_creator = root.find('.//DC.Creator')
-    if dc_title is not None and dc_title.text:
-        parsed_title = dc_title.text
-    else:
-        parsed_title = title
-    if dc_creator is not None and dc_creator.text:
-        parsed_author = dc_creator.text
-    else:
-        parsed_author = authors[0]
-
-    subtitle = VOLUME_SUBTITLES.get(vol_num, "")
-
+    
+    # ── Open PDF ──
+    doc = fitz.open(pdf_path)
+    print(f"  Pages: {len(doc)}")
+    
+    # ── Stage 1-2: Dual Extraction ──
+    print(f"  Extracting Markdown skeleton via PyMuPDF4LLM...")
+    pages_md = pymupdf4llm.to_markdown(
+        pdf_path,
+        page_chunks=True,
+        show_progress=False
+    )
+    print(f"  Extracted {len(pages_md)} pages")
+    
+    # ── Stage 2: AGES Navigation ──
+    print(f"  Extracting navigation from PDF outline...")
+    nav = extract_ages_nav(doc)
+    print(f"  Found {len(nav)} TOC entries")
+    
+    # ── Stage 4: Footnotes ──
+    print(f"  Extracting footnotes...")
+    pdf_footnotes = extract_footnotes_from_pdf(doc)
+    thml_footnotes = parse_thml_footnotes(thml_path)
+    footnotes = merge_footnotes(pdf_footnotes, thml_footnotes)
+    print(f"  Footnotes: {len(pdf_footnotes)} PDF + {len(thml_footnotes)} ThML = {len(footnotes)} total")
+    
+    # ── Stage 5: Build Chapters ──
+    print(f"  Building chapters...")
+    chapters = build_chapters_from_toc(doc, pages_md, nav, footnotes)
+    print(f"  Created {len(chapters)} chapters")
+    
+    # ── Stage 6: EPUB3 Assembly ──
+    print(f"  Assembling EPUB3...")
+    
+    vol_name = f'owen-v{vol_num}'
+    primary = select_primary_font(vol_name)
+    font_styles = generate_font_styles(primary['name'], primary['files'])
+    
     book = epub.EpubBook()
-    vol_uuid = uuid.uuid5(uuid.NAMESPACE_DNS, f'john-owen-works-bot-vol-{vol_num}')
+    vol_uuid = uuid.uuid5(uuid.NAMESPACE_DNS, f'john-owen-pymupdf-v{vol_num}')
     book.set_identifier(f'urn:uuid:{vol_uuid}')
-    book.set_title(title)
+    book.set_title(config['title'])
     book.set_language('en')
-    for author in authors:
+    for author in config['authors']:
         book.add_author(author)
-    book.add_metadata('DC', 'publisher', publisher)
-    book.add_metadata('DC', 'subject', 'Theology')
-    book.add_metadata('DC', 'subject', 'Puritanism')
-    book.add_metadata('DC', 'description',
-                      f'Volume {vol_num} of The Works of John Owen, '
-                      f'edited by William H. Goold.')
-
+    
+    # CSS
     style_item = epub.EpubItem(
-        uid='main-css', file_name='style/main.css',
-        media_type='text/css', content=EPUB_STYLESHEET.encode('utf-8')
+        uid="css",
+        file_name="style/main.css",
+        media_type="text/css",
+        content=EPUB_STYLESHEET.encode('utf-8')
     )
     book.add_item(style_item)
-
-    # Select font
-    primary = select_primary_font(f'owen-v{vol_num}')
-    primary_font_name = {'SBL_BLit': 'SBL BibLit', 'Cardo': 'Cardo',
-                          'Libertinus': 'Libertinus Serif'}.get(primary['name'], primary['name'])
-    primary_font_files = primary['files']
-    font_styles = generate_font_styles(primary_font_name, primary_font_files)
-
+    
+    # Fonts — track by filename to avoid duplicates
+    font_fnames = set()
+    for f_file in primary['files'].values():
+        fname = os.path.basename(f_file)
+        if fname in font_fnames:
+            continue
+        src = os.path.join(FONT_BASE, f_file)
+        if os.path.exists(src):
+            uid = f'f_{fname.replace(".","_")}'
+            book.add_item(epub.EpubItem(
+                uid=uid,
+                file_name=f'Fonts/{fname}',
+                media_type='application/font-sfnt',
+                content=open(src, 'rb').read()
+            ))
+            font_fnames.add(fname)
+    
+    for fname, fpath in SBL_SUPPLEMENTS.items():
+        fbase = os.path.basename(fpath)
+        if fbase in font_fnames:
+            continue
+        src = os.path.join(FONT_BASE, fpath)
+        if os.path.exists(src):
+            uid = f'f_{fbase.replace(".","_")}'
+            book.add_item(epub.EpubItem(
+                uid=uid,
+                file_name=f'Fonts/{fbase}',
+                media_type='application/font-sfnt',
+                content=open(src, 'rb').read()
+            ))
+            font_fnames.add(fbase)
+    
     # Cover
-    covers_dir = os.path.join(_WORKSPACE, 'covers')
-    cover_file = None
-    if os.path.isdir(covers_dir):
-        for ext in ('.png', '.jpg', '.jpeg', '.webp'):
-            candidate = os.path.join(covers_dir, f'v{vol_num}{ext}')
-            if os.path.exists(candidate):
-                cover_file = candidate
-                break
-
+    cover_file = find_cover(vol_num)
     if cover_file:
-        try:
-            with open(cover_file, 'rb') as f:
-                cover_data = f.read()
-            ext = os.path.splitext(cover_file)[1].lower()
-            book.set_cover(f'images/cover{ext}', cover_data)
-            print(f"  Added cover image")
-        except Exception as e:
-            print(f"  Warning: Could not add cover: {e}")
-
-    # Frontispiece (portrait)
-    portrait_file = find_portrait(_WORKSPACE, vol_num=vol_num)
+        book.set_cover("images/cover.png", open(cover_file, 'rb').read())
+    
+    # Portrait
+    portrait_file = find_portrait(vol_num)
     frontispiece_item = None
     if portrait_file:
-        try:
-            portrait_ext = os.path.splitext(portrait_file)[1].lstrip('.')
-            portrait_filename = f'portrait.{portrait_ext}'
-            # Add portrait image to OPF manifest
-            with open(portrait_file, 'rb') as pf:
-                portrait_data = pf.read()
-            portrait_mime = 'image/jpeg' if portrait_ext in ('jpeg', 'jpg') else 'image/png'
-            portrait_image_item = epub.EpubItem(
-                uid='portrait-img',
-                file_name=f'images/{portrait_filename}',
-                media_type=portrait_mime,
-                content=portrait_data,
-            )
-            book.add_item(portrait_image_item)
-            frontispiece_html = generate_frontispiece_xhtml(portrait_filename)
-            frontispiece_item = epub.EpubHtml(
-                title='Frontispiece', file_name='frontispiece.xhtml', lang='en'
-            )
-            frontispiece_item.set_content(frontispiece_html.encode('utf-8'))
-            frontispiece_item.add_item(style_item)
-            book.add_item(frontispiece_item)
-            print(f"  Added frontispiece with portrait ({os.path.basename(portrait_file)})")
-        except Exception as e:
-            print(f"  Warning: Could not add frontispiece: {e}")
-
-    # Title page — matching reference EPUB design
-    title_body = (
-        '<div class="title-page">'
-        '<p class="ornament">\u2767</p>'
-        f'<h1>The Works of<br/>{_escape_xml(parsed_author)}</h1>'
-        '<hr class="rule"/>'
-        f'<p class="subtitle">Volume {vol_num}</p>'
-        f'<p class="subtitle">{_escape_xml(subtitle)}</p>'
-        f'<p class="author"><span class="by">by</span>{_escape_xml(parsed_author)}</p>'
-        f'<p class="editor">Edited by William H. Goold</p>'
-        f'<p class="publisher">{_escape_xml(publisher)}</p>'
-        '</div>'
-    )
-    title_page = epub.EpubHtml(
-        title='Title Page', file_name='title.xhtml', lang='en'
-    )
-    title_page.set_content(
-        _make_xhtml('Title Page', title_body, font_styles=font_styles).encode('utf-8')
-    )
-    title_page.add_item(style_item)
-    book.add_item(title_page)
-
-    # Determine endnotes file name from FOOTNOTES div1
-    div1_elements = root.findall('.//div1')
-    endnotes_file = None
-    for div1 in div1_elements:
-        if (div1.get('title') or '').upper() == 'FOOTNOTES':
-            endnotes_id = div1.get('id', 'ch120')
-            endnotes_file = f'{endnotes_id}.xhtml'
-            break
-
-    # Chapters
-    print(f"  Converting chapters...")
-    epub_chapters = []
-
-    toc_entries = []
-
-    for div_idx, div1 in enumerate(div1_elements):
-        chapter_title = div1.get('title', f'Chapter {div_idx + 1}')
-        chapter_id = div1.get('id', f'ch{div_idx + 1:03d}')
-
-        if (div1.get('title') or '').upper() == 'FOOTNOTES':
+        p_fn = f"portrait{os.path.splitext(portrait_file)[1]}"
+        book.add_item(epub.EpubItem(
+            uid="portrait-img",
+            file_name=f"images/{p_fn}",
+            media_type="image/jpeg",
+            content=open(portrait_file, 'rb').read()
+        ))
+        frontispiece_item = epub.EpubHtml(title="Frontispiece", file_name="frontispiece.xhtml", lang="en")
+        frontispiece_item.set_content(
+            _make_xhtml("Frontispiece", generate_frontispiece_xhtml(p_fn),
+                        font_styles=font_styles).encode('utf-8')
+        )
+        frontispiece_item.add_item(style_item)
+        book.add_item(frontispiece_item)
+    
+    # ── Front Matter: Detect title/TOC pages from PDF ──
+    print(f"  Detecting front matter pages...")
+    front_matter_items = []
+    healer_page = None
+    scan_limit = min(15, len(doc))
+    
+    # Build set of page indices covered by any chapter (for dedup)
+    chapter_pages = set()
+    for ch in chapters:
+        for p in range(ch.page_start, ch.page_end + 1):
+            chapter_pages.add(p)
+    
+    pg = 0
+    while pg < scan_limit:
+        if pg in chapter_pages:
+            pg += 1
             continue
-
-        is_treatise = _is_treatise_title_page(div1)
-
-        if is_treatise:
-            body_html = _build_treatise_title(div1)
-        else:
-            body_html = _build_normal_chapter(div1, endnotes_file=endnotes_file or 'ch120.xhtml')
-
-        level_map = {'h1': 1, 'h2': 2, 'h3': 3}
-        h_tag_found = None
-        for ht in ('h1', 'h2', 'h3'):
-            if div1.find(ht) is not None:
-                h_tag_found = ht
-                break
-
-        if chapter_id == 'ch017':
-            print(f"DEBUG: ch017 h_tag_found={h_tag_found}")
-
-        toc_level = level_map.get(h_tag_found, 2) if h_tag_found else 2
+            
+        page = doc[pg]
+        ptype = detect_page_type(page, pg + 1)
+        text_upper = page.get_text().upper()
+        blocks = page.get_text('dict')['blocks']
+        text_blocks = [b for b in blocks if b.get('type') == 0]
+        n_blocks = len(text_blocks)
         
-        subtitle = _extract_chapter_subtitle(div1)
-        
-        split = _split_nav_title(chapter_title)
-        if split:
-            treatise, unit = split
-            # Treatise at its natural level, unit at +1
-            toc_entries.append((toc_level, treatise, f'{chapter_id}.xhtml'))
-            unit = unit.rstrip('.').title()
-            if subtitle:
-                unit = f"{unit} - {subtitle}"
-            toc_entries.append((toc_level + 1, unit, f'{chapter_id}.xhtml'))
-        else:
-            # Normal entry at its natural level
-            if re.match(r'^(?:CHAPTER|BOOK|PART|SECTION)\s+\d+\.?$', chapter_title.strip(), re.IGNORECASE):
-                display_title = chapter_title.strip().rstrip('.').title()
-                if subtitle:
-                    display_title = f"{display_title} - {subtitle}"
-                toc_entries.append((toc_level, display_title, f'{chapter_id}.xhtml'))
-            elif re.match(r'^[IVXLCDM]+\.?$', chapter_title.strip(), re.IGNORECASE):
-                # Roman numeral sub-sections go at a deeper level
-                display_title = chapter_title.strip()
-                if subtitle:
-                    display_title = f"{display_title} {subtitle}"
-                toc_entries.append((toc_level + 1, display_title, f'{chapter_id}.xhtml'))
-            else:
-                toc_entries.append((toc_level, chapter_title, f'{chapter_id}.xhtml'))
-
-        ch_item = epub.EpubHtml(
-            title=chapter_title[:200],
-            file_name=f'{chapter_id}.xhtml',
-            lang='en'
-        )
-        ch_item.set_content(
-            _make_xhtml(chapter_title, body_html, font_styles=font_styles).encode('utf-8')
-        )
-        ch_item.add_item(style_item)
-        book.add_item(ch_item)
-        epub_chapters.append(ch_item)
-
-    if toc_entries:
-        normalized = []
-        has_parent = False
-        for lvl, txt, hr in toc_entries:
-            if lvl == 1:
-                normalized.append((1, txt, hr))
-                has_parent = True
-                print(f"DEBUG: TOC L1: {txt} (hr={hr}) -> has_parent=True")
-            elif lvl == 2:
-                if has_parent:
-                    normalized.append((2, txt, hr))
-                    print(f"DEBUG: TOC L2 stays L2: {txt}")
+        if ptype == 'title_page':
+            html_body = format_title_page(page)
+            if html_body:
+                # Try to extract a more specific title from the first h1 or h2
+                title_match = re.search(r'<h[12]>(.*?)</h[12]>', html_body, re.S)
+                if title_match:
+                    fm_title = title_match.group(1).replace('<br/>', ' ').strip()
+                    # Clean up title
+                    fm_title = re.sub(r'\s+', ' ', fm_title)
+                    if len(fm_title) > 50:
+                        fm_title = fm_title[:47] + "..."
                 else:
-                    normalized.append((1, txt, hr))
-                    print(f"DEBUG: TOC L2 -> L1: {txt}")
-            else:
-                normalized.append((lvl, txt, hr))
-        toc_entries = normalized
-
-    print(f"  {len(epub_chapters)} chapters created")
-
-    # Build endnotes chapter from ThML footnotes
-    endnotes_html = _build_endnotes_chapter(root, vol_num, endnotes_file=endnotes_file)
-    if endnotes_html:
-        if endnotes_file is None:
-            endnotes_file = 'ch120.xhtml'
-        endnotes_item = epub.EpubHtml(
-            title='Footnotes', file_name=endnotes_file, lang='en'
-        )
-        endnotes_item.set_content(
-            _make_xhtml('Footnotes', endnotes_html, font_styles=font_styles).encode('utf-8')
-        )
-        endnotes_item.add_item(style_item)
-        book.add_item(endnotes_item)
-        epub_chapters.append(endnotes_item)
-        toc_entries.append((1, 'Footnotes', endnotes_file))
-        print(f"  Added footnotes chapter (ch120.xhtml)")
-
-    # Generate NAV with volume title from VOLUME_SUBTITLES (contains subtitle only)
-    subtitle = VOLUME_SUBTITLES.get(vol_num, "")
-    full_title = f'The Works of John Owen, Vol. {vol_num} — {subtitle}'
-    nav_html = generate_nav_xhtml(toc_entries, volume_title=full_title)
-
-    # Also fix OPF title to match reference format
-    opf_title = full_title
-    nav_item = epub.EpubHtml(
-        title='Table of Contents', file_name='nav.xhtml', lang='en'
-    )
-    nav_item.set_content(nav_html.encode('utf-8'))
-    nav_item.add_item(style_item)
-    book.add_item(nav_item)
-
-    # NCX fallback
-    ncx_xml = generate_ncx(full_title, f'urn:uuid:{vol_uuid}', toc_entries)
-    ncx_item = epub.EpubItem(
-        uid='ncx', file_name='toc.ncx',
-        media_type='application/x-dtbncx+xml',
-        content=ncx_xml.encode('utf-8'),
-    )
-    book.add_item(ncx_item)
-
-    # TOC for ebooklib
-    toc_list = [title_page]
-    if frontispiece_item:
-        toc_list.append(frontispiece_item)
-    book.toc = toc_list + epub_chapters
-
-    # Spine: nav → frontispiece → title → chapters
-    spine_list = ['nav']
-    if frontispiece_item:
-        spine_list.append(frontispiece_item)
-    spine_list.append(title_page)
-    spine_list.extend(epub_chapters)
-    book.spine = spine_list
-
-    # Write initial EPUB
-    print(f"  Writing EPUB file...")
-    temp_epub = epub_path + '.tmp'
-    epub.write_epub(temp_epub, book, {})
-
-    # Post-process: inject fonts, fix OPF, add Apple Books
-    print(f"  Post-processing for EPUB3 compliance...")
-    tmp_dir = tempfile.mkdtemp()
-    try:
-        with zipfile.ZipFile(temp_epub, 'r') as zf:
-            zf.extractall(tmp_dir)
-
-        # Find OEBPS/content dir
-        oebps = None
-        for root, dirs, files in os.walk(tmp_dir):
-            if any(f.endswith('.opf') for f in files):
-                oebps = root
-                break
-        if not oebps:
-            oebps = tmp_dir
-
-        # Inject fonts
-        primary, font_file_map = inject_fonts_into_epub(oebps, f'owen-v{vol_num}')
-        font_manifest = get_font_manifest_entries(os.path.join(oebps, 'Fonts'))
-
-        # Copy portrait to images dir
-        if portrait_file:
-            images_dir = os.path.join(oebps, 'images')
-            os.makedirs(images_dir, exist_ok=True)
-            portrait_ext = os.path.splitext(portrait_file)[1]
-            shutil.copy2(portrait_file, os.path.join(images_dir, f'portrait{portrait_ext}'))
-
-        # Fix cover.xhtml to match reference format (simple <img> without CSS)
-        fix_cover_xhtml(oebps)
-
-        # Inject @font-face CSS into stylesheet
-        inject_font_css(oebps, primary_font_name, primary_font_files)
-
-        # Write NCX fallback
-        ncx_path = write_ncx_file(oebps, full_title, f'urn:uuid:{vol_uuid}', toc_entries)
-
-        # Find OPF
-        opf_path = None
-        for root, _, files in os.walk(tmp_dir):
-            for f in files:
-                if f.endswith('.opf'):
-                    opf_path = os.path.join(root, f)
+                    fm_title = "Title Page"
+                    
+                fm = epub.EpubHtml(title=fm_title, file_name=f"title_{pg}.xhtml", lang='en')
+                fm.set_content(_make_xhtml(fm_title, html_body, font_styles=font_styles).encode('utf-8'))
+                fm.add_item(style_item)
+                book.add_item(fm)
+                front_matter_items.append(fm)
+        
+        elif ptype == 'toc_page':
+            # Collect all consecutive toc_pages
+            toc_pages = [page]
+            next_pg = pg + 1
+            while next_pg < scan_limit and next_pg not in chapter_pages:
+                if detect_page_type(doc[next_pg], next_pg + 1) == 'toc_page':
+                    toc_pages.append(doc[next_pg])
+                    next_pg += 1
+                else:
                     break
-
-        if opf_path:
-            nav_rel = os.path.relpath(os.path.join(oebps, 'nav.xhtml'), os.path.dirname(opf_path))
-            update_opf_for_epub3(opf_path, nav_rel, font_manifest,
-                                  volume_title=opf_title, volume_authors=authors)
-
-        # Ensure xmlns:epub in all XHTML files
-        for root, _, files in os.walk(tmp_dir):
-            for f in files:
-                if f.endswith(('.xhtml', '.html')):
-                    ensure_xmlns_epub(os.path.join(root, f))
-
-        add_apple_display_options(tmp_dir)
-
-        repackage_epub(tmp_dir, epub_path)
-    finally:
-        shutil.rmtree(tmp_dir, ignore_errors=True)
-        if os.path.exists(temp_epub):
-            os.remove(temp_epub)
-
-    file_size = os.path.getsize(epub_path)
-    print(f"  Saved EPUB: {epub_path} ({file_size / 1024:.0f} KB)")
-    return True
-
-
-# ============================================================================
-# HEBREWS PIPELINE: EPUB2 → EPUB3
-# ============================================================================
-
-def read_source_ncx(epub_path):
-    """Parse the source NCX and return flat list of (label, href)."""
-    with zipfile.ZipFile(epub_path, 'r') as zf:
-        ncx_files = [n for n in zf.namelist() if n.endswith('.ncx')]
-        if not ncx_files:
-            return []
-        ncx_xml = zf.read(ncx_files[0]).decode('utf-8')
-
-    ns = {'ncx': 'http://www.daisy.org/z3986/2005/ncx/'}
-    root = ET.fromstring(ncx_xml)
-    nav_map = root.find('ncx:navMap', ns)
-    if nav_map is None:
-        return []
-
-    entries = []
-
-    def walk(parent):
-        for np in parent.findall('ncx:navPoint', ns):
-            label_el = np.find('ncx:navLabel/ncx:text', ns)
-            content_el = np.find('ncx:content', ns)
-            label = label_el.text.strip() if label_el is not None and label_el.text else ''
-            href = content_el.get('src', '') if content_el is not None else ''
-            if label:
-                entries.append((label, href))
-            walk(np)
-
-    walk(nav_map)
-    return entries
-
-
-def _is_parent_entry(label):
-    stripped = label.strip()
-    if re.match(r'^PART\s+[IVXLC]+', stripped, re.IGNORECASE):
-        return True
-    if re.match(r'^CHAPTER\s+\d+', stripped, re.IGNORECASE):
-        return True
-    return False
-
-
-def _is_front_matter(label):
-    low = label.strip().lower()
-    return any(low.startswith(k) for k in (
-        'general preface', 'preface', 'the epistle dedicatory',
-        'epistle dedicatory', 'prefatory', 'editor',
-    ))
-
-
-def build_toc_hierarchy(flat_entries):
-    """Convert flat list of (label, href) into nested list of (level, label, href)."""
-    result = []
-    current_parent = None
-    children = []
-
-    def flush():
-        nonlocal current_parent, children
-        if current_parent is not None:
-            result.append((1, current_parent[0], current_parent[1]))
-            for cl, ch in children:
-                result.append((2, cl, ch))
-        current_parent = None
-        children = []
-
-    for label, href in flat_entries:
-        if _is_parent_entry(label):
-            flush()
-            current_parent = (label, href)
-            children = []
-        elif _is_front_matter(label):
-            flush()
-            result.append((1, label, href))
+                    
+            html_body = build_toc_page_xhtml(toc_pages)
+            if html_body:
+                fm = epub.EpubHtml(title="Contents", file_name=f"contents_{pg}.xhtml", lang='en')
+                fm.set_content(_make_xhtml("Contents", html_body, font_styles=font_styles).encode('utf-8'))
+                fm.add_item(style_item)
+                book.add_item(fm)
+                front_matter_items.append(fm)
+            pg = next_pg
+            continue
+        
+        elif ptype == 'preserve_page':
+            # Use same logic as format_title_page to preserve structure, but different class
+            html_body = format_title_page(page, section_class="preserved-layout", epub_type="frontmatter")
+            if html_body:
+                fm = epub.EpubHtml(title=f"Page {pg+1}", file_name=f"front_{pg}.xhtml", lang='en')
+                fm.set_content(_make_xhtml(f"Page {pg+1}", html_body, font_styles=font_styles).encode('utf-8'))
+                fm.add_item(style_item)
+                book.add_item(fm)
+                front_matter_items.append(fm)
+        
         else:
-            if current_parent is not None:
-                children.append((label, href))
-            else:
-                result.append((1, label, href))
-    flush()
-    return result
-
-
-def extract_html_chapters(epub_path):
-    """Return list of (filename, html_content) for split chapter files."""
-    chapters = []
-    with zipfile.ZipFile(epub_path, 'r') as zf:
-        html_files = sorted(
-            n for n in zf.namelist()
-            if 'split' in n and (n.endswith('.html') or n.endswith('.xhtml'))
-        )
-        for fname in html_files:
-            content = zf.read(fname).decode('utf-8')
-            chapters.append((fname, content))
-    return chapters
-
-
-def extract_epub_metadata(epub_path):
-    """Read DC metadata from source EPUB."""
-    with zipfile.ZipFile(epub_path, 'r') as zf:
-        opf_candidates = [n for n in zf.namelist() if n.endswith('.opf')]
-        if not opf_candidates:
-            return {'title': 'Hebrews', 'creator': 'John Owen',
-                    'language': 'en', 'publisher': 'Banner of Truth Trust'}
-        content_opf = zf.read(opf_candidates[0]).decode('utf-8')
-
-    root = ET.fromstring(content_opf)
-    result = {'title': None, 'creator': None, 'language': 'en', 'publisher': None}
-    ns = {'dc': 'http://purl.org/dc/elements/1.1/'}
-    for elem in root.findall('.//dc:*', ns):
-        tag = elem.tag.split('}')[-1]
-        if tag in result:
-            result[tag] = elem.text
-
-    return {
-        'title': result['title'] or 'An Exposition of the Epistle to the Hebrews',
-        'creator': result['creator'] or 'John Owen',
-        'language': result['language'],
-        'publisher': result['publisher'] or 'Banner of Truth Trust',
-    }
-
-
-def fix_broken_toc_hrefs(flat_entries, chapters_data):
-    """Fix TOC hrefs pointing to near-empty anchors at tail of files."""
-    filenames = [os.path.basename(fn) for fn, _ in chapters_data]
-    content_by_name = {}
-    for fn, html in chapters_data:
-        content_by_name[os.path.basename(fn)] = html
-
-    fixed = []
-    num_fixed = 0
-    for label, href in flat_entries:
-        if '#' in href:
-            fname, anchor = href.split('#', 1)
-            html = content_by_name.get(fname, '')
-            if html:
-                anchor_pattern = f'id="{re.escape(anchor)}"'
-                m = re.search(anchor_pattern, html)
-                if m:
-                    after = html[m.end():]
-                    text_after = re.sub(r'<[^>]+>', '', after).strip()
-                    if len(text_after) < 150:
-                        try:
-                            idx = filenames.index(fname)
-                            if idx + 1 < len(filenames):
-                                new_href = filenames[idx + 1]
-                                fixed.append((label, new_href))
-                                num_fixed += 1
-                                continue
-                        except ValueError:
-                            pass
-        fixed.append((label, href))
-    if num_fixed:
-        print(f"  Fixed {num_fixed} broken TOC link(s)")
-    return fixed
-
-
-def clean_html(html_content):
-    """Strip calibre artifacts and old headers."""
-    clean = re.sub(r'<head>.*?</head>', '', html_content, flags=re.DOTALL)
-    clean = re.sub(r'class="calibre\d+"', '', clean)
-    clean = re.sub(r'<html[^>]*>|<body[^>]*>|</body>|</html>', '', clean)
-    clean = re.sub(r'<img[^>]*src="hebrews[^"]*\.jpg"[^>]*/?\s*>', '',
-                   clean, flags=re.IGNORECASE)
-    clean = re.sub(
-        r'(<h[1-6])([^>]*)>\s*<a\s[^>]*id="([^"]+)"[^>]*/?\s*>\s*(?:</a>)?\s*',
-        r'\1\2 id="\3">',
-        clean,
-    )
-    return clean
-
-
-def extract_chapter_title(html_content, default_title):
-    m = re.search(r'<h[1-4][^>]*>(.*?)</h[1-4]>', html_content, re.DOTALL)
-    if m:
-        raw = re.sub(r'<[^>]+>', '', m.group(1))
-        raw = re.sub(r'\s+', ' ', raw).strip()
-        if 3 < len(raw) < 150:
-            return raw
-    return default_title
-
-
-def process_hebrews_volume(vol_num):
-    """Process a single Hebrews EPUB2 → EPUB3 volume."""
-    config = HEBREWS_VOLUME_CONFIG.get(vol_num)
-    if not config:
-        print(f"  Error: No config for Hebrews volume {vol_num}")
-        return False
-
-    title = config['title']
-    authors = config['authors']
-    publisher = config['publisher']
-
-    hebrews_dir = os.path.join(_WORKSPACE, 'hebrews', 'volumes', f'hb{vol_num}')
-    input_dir = os.path.join(hebrews_dir, 'input')
-    output_dir = os.path.join(hebrews_dir, 'output')
-    os.makedirs(input_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
-
-    # Find source EPUB
-    source_path = None
-    for fname in os.listdir(input_dir):
-        if fname.lower().endswith('.epub'):
-            source_path = os.path.join(input_dir, fname)
-            break
-
-    if not source_path:
-        print(f"  Error: No EPUB found in {input_dir}")
-        return False
-
-    epub_path = os.path.join(output_dir, f'hebrews_v{vol_num}.epub')
-    if os.path.exists(epub_path):
-        print(f"  Skipping (EPUB exists): {epub_path}")
-        return True
-
-    print(f"  Converting Hebrews Volume {vol_num}...")
-    metadata = extract_epub_metadata(source_path)
-    print(f"  Title: {metadata['title']}")
-
-    chapters_data = extract_html_chapters(source_path)
-    flat_toc = read_source_ncx(source_path)
-
-    if flat_toc and flat_toc[0][0].lower().startswith('an exposition'):
-        flat_toc = flat_toc[1:]
-    flat_toc = fix_broken_toc_hrefs(flat_toc, chapters_data)
-    toc_entries = build_toc_hierarchy(flat_toc)
-    print(f"  TOC entries: {len(flat_toc)}")
-
-    # Setup book
-    book = epub.EpubBook()
-    book_uid = f'urn:uuid:{uuid.uuid5(uuid.NAMESPACE_DNS, f"john-owen-hebrews-v{vol_num}")}'
-    book.set_identifier(book_uid)
-    book.set_title(title)
-    book.set_language('en')
-    for author in authors:
-        book.add_author(author)
-    book.add_metadata('DC', 'publisher', publisher)
-    book.add_metadata('DC', 'subject', 'Theology')
-    book.add_metadata('DC', 'subject', 'Puritanism')
-    book.add_metadata('DC', 'subject', 'Hebrews')
-    book.add_metadata('DC', 'description',
-                      f"John Owen's Commentary on the Epistle to the Hebrews, Volume {vol_num}")
-
-    # CSS
-    primary = select_primary_font(f'hebrews-v{vol_num}')
-    primary_font_name = {'SBL_BLit': 'SBL BibLit', 'Cardo': 'Cardo',
-                          'Libertinus': 'Libertinus Serif'}.get(primary['name'], primary['name'])
-    full_css = EPUB_STYLESHEET + '\n' + generate_font_styles(primary_font_name, primary['files'])
-
-    style_item = epub.EpubItem(
-        uid='main-css', file_name='style/main.css',
-        media_type='text/css', content=full_css.encode('utf-8')
-    )
-    book.add_item(style_item)
-
-    # Cover
-    covers_dir = os.path.join(_WORKSPACE, 'hebrews', 'covers')
-    cover_file = None
-    if os.path.isdir(covers_dir):
-        for ext in ('png', 'jpeg', 'jpg'):
-            for prefix in (f'hb{vol_num}', f'Hb{vol_num}'):
-                candidate = os.path.join(covers_dir, f'{prefix}.{ext}')
-                if os.path.exists(candidate):
-                    cover_file = candidate
+            # body_page — check for healer-mode transition
+            # Require common section markers AND reasonable text density
+            has_indicator = any(kw in text_upper for kw in ['PREFACE', 'CHAPTER', 'TREATISE', 'CATECHISM', 'DISCOURSE'])
+            if has_indicator and n_blocks > 10:
+                if healer_page is None:
+                    healer_page = pg
                     break
-            if cover_file:
-                break
-
-    if cover_file:
-        try:
-            with open(cover_file, 'rb') as f:
-                cover_data = f.read()
-            ext = os.path.splitext(cover_file)[1].lstrip('.')
-            book.set_cover(f'images/cover.{ext}', cover_data)
-            print(f"  Added cover: {os.path.basename(cover_file)}")
-        except Exception as e:
-            print(f"  Warning: Could not add cover: {e}")
-
-    # Content chapters
-    epub_chapters = []
-    chapter_toc = []
-    for i, (fname, content) in enumerate(chapters_data):
-        old_fname = os.path.basename(fname)
-        body_match = re.search(r'<body[^>]*>(.*?)</body>', content, re.DOTALL)
-        body_content = body_match.group(1) if body_match else content
-        ch_title = extract_chapter_title(body_content, f'Section {i + 1}')
-        clean_content = clean_html(body_content)
-
-        # Tag Greek/Hebrew Unicode runs
-        clean_content = tag_unicode_ranges(clean_content)
-
-        full_html = (
-            '<?xml version="1.0" encoding="utf-8"?>'
-            '<html xmlns="http://www.w3.org/1999/xhtml"'
-            ' xmlns:epub="http://www.idpf.org/2007/ops" lang="en" xml:lang="en">'
-            '<head><meta charset="utf-8"/>'
-            f'<title>{_escape_xml(ch_title)}</title>'
-            '<link rel="stylesheet" href="style/main.css" type="text/css"/>'
-            '</head>'
-            f'<body>{clean_content}</body>'
-            '</html>'
-        )
-
-        ch = epub.EpubHtml(
-            title=ch_title[:200], file_name=old_fname, lang='en'
-        )
-        ch.set_content(full_html.encode('utf-8'))
-        ch.add_item(style_item)
-        book.add_item(ch)
-        epub_chapters.append(ch)
-        chapter_toc.append((2, ch_title, old_fname))
-
-    print(f"  {len(epub_chapters)} chapters processed")
-
-    # NAV with volume title
-    nav_html = generate_nav_xhtml(toc_entries + chapter_toc, volume_title=title)
-    nav_item = epub.EpubHtml(
-        title='Table of Contents', file_name='nav.xhtml', lang='en'
+        pg += 1
+    
+    if healer_page is None:
+        healer_page = scan_limit
+    
+    # Template-based title page (clean fallback)
+    subtitle_val = VOLUME_SUBTITLES.get(vol_num, "")
+    tp_item = epub.EpubHtml(title="Title Page", file_name="title.xhtml", lang="en")
+    tp_item.set_content(
+        _make_xhtml("Title Page", _build_title_page(vol_num, config['title'], subtitle_val),
+                    font_styles=font_styles).encode('utf-8')
     )
+    tp_item.add_item(style_item)
+    book.add_item(tp_item)
+    
+    # Chapters
+    toc_entries = []
+    epub_chapters = []
+    last_l1_text = None
+    guide_landmarks = []
+    
+    for i, chap in enumerate(chapters):
+        if chap.is_endnotes or chap.title.strip().lower() == 'footnotes':
+            continue
+        
+        healer_active = chap.page_start >= healer_page
+        
+        # Detect mid-volume title pages (book/treatise titles)
+        first_page = doc[chap.page_start]
+        
+        # Skip title detection if this chapter starts on the same page as the previous one
+        # (prevents duplicate title pages when a title and chapter start together)
+        if i > 0 and chapters[i].page_start == chapters[i-1].page_start:
+            ptype = 'body_page'
+        else:
+            ptype = detect_page_type(first_page, chap.page_start + 1)
+        
+        if ptype == 'title_page':
+            # If the next chapter starts on this same page, then this is a structural
+            # entry (e.g. PART 2). We limit title extraction and skip separate body.
+            shares_page = (i + 1 < len(chapters) and chapters[i+1].page_start == chap.page_start)
+            title_html = format_title_page(first_page, limit_to_title=shares_page)
+            
+            xhtml_title = chap.title
+            tp_fn = f'{chap.cid}_title.xhtml'
+            tp_ch = epub.EpubHtml(title=xhtml_title, file_name=tp_fn, lang='en')
+            tp_ch.set_content(_make_xhtml(xhtml_title, title_html, font_styles=font_styles).encode('utf-8'))
+            tp_ch.add_item(style_item)
+            book.add_item(tp_ch)
+            epub_chapters.append(tp_ch)
+            guide_landmarks.append((xhtml_title, tp_fn))
+            
+            if shares_page:
+                has_content = False
+            else:
+                body_start_page = chap.page_start + 1
+                has_content = chap.page_end >= body_start_page
+                if has_content:
+                    md_text = get_pages_text(doc, pages_md, body_start_page, chap.page_end, healer_mode=healer_active)
+                    body_html = markdown_to_html(md_text)
+                    has_content = bool(body_html.strip())
+                    if has_content:
+                        body = f'<section>{body_html}</section>'
+                        ch = epub.EpubHtml(title=xhtml_title, file_name=f'{chap.cid}.xhtml', lang='en')
+                        ch.set_content(_make_xhtml(xhtml_title, body, font_styles=font_styles).encode('utf-8'))
+                        ch.add_item(style_item)
+                        book.add_item(ch)
+                        epub_chapters.append(ch)
+            
+            # TOC href: title page if no body content, content file otherwise
+            toc_href = tp_fn if not has_content else f'{chap.cid}.xhtml'
+        else:
+            md_text = get_pages_text(doc, pages_md, chap.page_start, chap.page_end, healer_mode=healer_active)
+            body_html = markdown_to_html(md_text)
+            if not body_html.strip():
+                continue
+            xhtml_title = chap.title
+            body = f'<section>{body_html}</section>'
+            ch = epub.EpubHtml(title=xhtml_title, file_name=f'{chap.cid}.xhtml', lang='en')
+            ch.set_content(_make_xhtml(xhtml_title, body, font_styles=font_styles).encode('utf-8'))
+            ch.add_item(style_item)
+            book.add_item(ch)
+            epub_chapters.append(ch)
+            toc_href = f'{chap.cid}.xhtml'
+        
+        clean_t = chap.title
+        epub_level = chap.level
+        if epub_level <= 2:
+            epub_level = 1
+        elif epub_level == 3:
+            epub_level = 2
+        else:
+            epub_level = 3
+        
+        if epub_level == 1:
+            if clean_t != last_l1_text:
+                toc_entries.append((1, title_case(clean_t), toc_href))
+                last_l1_text = clean_t
+        elif epub_level == 2:
+            lvl = 2 if last_l1_text else 1
+            toc_entries.append((lvl, title_case(clean_t), toc_href))
+        else:
+            toc_entries.append((3, clean_t, toc_href))
+    
+    # Endnotes chapter
+    if footnotes:
+        endnotes_html = build_endnotes_chapter(footnotes, style_item, font_styles)
+        en = epub.EpubHtml(title="Footnotes", file_name="endnotes.xhtml", lang='en')
+        en.set_content(endnotes_html.encode('utf-8'))
+        en.add_item(style_item)
+        book.add_item(en)
+        epub_chapters.append(en)
+        toc_entries.append((1, "Footnotes", "endnotes.xhtml"))
+    
+    # Front matter NAV entries (skip generic "Page N" preserve entries and deduplicate)
+    fm_entries = []
+    seen_titles = set()
+    for fm in front_matter_items:
+        fm_title = getattr(fm, 'title', 'Front Matter') or 'Front Matter'
+        fm_fn = getattr(fm, 'file_name', '')
+        if fm_fn and not fm_title.startswith('Page ') and fm_title not in seen_titles:
+            fm_entries.append((1, fm_title, fm_fn))
+            seen_titles.add(fm_title)
+    
+    toc_entries = fm_entries + toc_entries
+    
+    # NAV
+    full_t = f"The Works of John Owen, Vol. {vol_num} — {VOLUME_SUBTITLES.get(vol_num, '')}"
+    nav_html = generate_nav_xhtml(toc_entries, full_t)
+    nav_item = epub.EpubHtml(title='Table of Contents', file_name='nav.xhtml', lang='en')
     nav_item.set_content(nav_html.encode('utf-8'))
+    nav_item.properties = ['nav']
     nav_item.add_item(style_item)
     book.add_item(nav_item)
-
-    # NCX
-    ncx_xml = generate_ncx(title, book_uid, toc_entries)
-    ncx_item = epub.EpubItem(
-        uid='ncx', file_name='toc.ncx',
-        media_type='application/x-dtbncx+xml',
-        content=ncx_xml.encode('utf-8'),
-    )
-    book.add_item(ncx_item)
-
-    # Build TOC
-    book.toc = epub_chapters
-
-    # Spine: nav → title → chapters (no frontispiece for Hebrews)
-    book.spine = ['nav'] + epub_chapters
-
-    # Write
-    print(f"  Writing EPUB file...")
+    
+    # Spine
+    book.spine = ['nav', tp_item]
+    if frontispiece_item:
+        book.spine.insert(1, frontispiece_item)
+    book.spine.extend(front_matter_items)
+    book.spine.extend(epub_chapters)
+    
+    # Write EPUB
     temp_epub = epub_path + '.tmp'
     epub.write_epub(temp_epub, book, {})
-
-    # Post-process
-    print(f"  Post-processing for EPUB3 compliance...")
-    tmp_dir = tempfile.mkdtemp()
-    try:
-        with zipfile.ZipFile(temp_epub, 'r') as zf:
-            zf.extractall(tmp_dir)
-
-        oebps = None
-        for root, _, files in os.walk(tmp_dir):
-            if any(f.endswith('.opf') for f in files):
-                oebps = root
-                break
-        if not oebps:
-            oebps = tmp_dir
-
-        inject_fonts_into_epub(oebps, f'hebrews-v{vol_num}', is_hebrews=True)
-        font_manifest = get_font_manifest_entries(os.path.join(oebps, 'Fonts'))
-
-        # Fix cover.xhtml to match reference format
-        fix_cover_xhtml(oebps)
-
-        # Inject @font-face CSS into stylesheet
-        primary = select_primary_font(f'hebrews-v{vol_num}')
-        primary_font_name_heb = {'SBL_BLit': 'SBL BibLit', 'Cardo': 'Cardo',
-                                  'Libertinus': 'Libertinus Serif'}.get(primary['name'], primary['name'])
-        inject_font_css(oebps, primary_font_name_heb, primary['files'])
-
-        # Write NCX fallback
-        write_ncx_file(oebps, title, book_uid, toc_entries)
-
-        # Ensure xmlns:epub in all XHTML files
-        for root, _, files in os.walk(tmp_dir):
-            for f in files:
-                if f.endswith(('.xhtml', '.html')):
-                    fpath = os.path.join(root, f)
-                    ensure_xmlns_epub(fpath)
-
-        opf_path = None
-        for root, _, files in os.walk(tmp_dir):
-            for f in files:
-                if f.endswith('.opf'):
-                    opf_path = os.path.join(root, f)
-                    break
-
-        if opf_path:
-            nav_rel = os.path.relpath(os.path.join(oebps, 'nav.xhtml'), os.path.dirname(opf_path))
-            update_opf_for_epub3(opf_path, nav_rel, font_manifest,
-                                  volume_title=title, volume_authors=authors)
-
-        add_apple_display_options(tmp_dir)
-        repackage_epub(tmp_dir, epub_path)
-    finally:
-        shutil.rmtree(tmp_dir, ignore_errors=True)
-        if os.path.exists(temp_epub):
-            os.remove(temp_epub)
-
-    size_kb = os.path.getsize(epub_path) / 1024
-    print(f"  Saved: {os.path.basename(epub_path)} ({size_kb:.0f} KB)")
+    
+    # Repackage with proper EPUB3 structure
+    tmp = tempfile.mkdtemp()
+    with zipfile.ZipFile(temp_epub, 'r') as zf:
+        zf.extractall(tmp)
+    
+    # Find OEBPS directory
+    oebps = None
+    for root, dirs, files in os.walk(tmp):
+        if any(f.endswith('.opf') for f in files):
+            oebps = root
+            break
+    
+    if oebps:
+        # Fix NAV
+        with open(os.path.join(oebps, 'nav.xhtml'), 'w') as f:
+            f.write(nav_html)
+        
+        # NCX
+        with open(os.path.join(oebps, 'toc.ncx'), 'w') as f:
+            f.write(generate_ncx(full_t, str(vol_uuid), toc_entries))
+        
+        # Fix OPF
+        opf_path = os.path.join(oebps, 'content.opf')
+        if os.path.exists(opf_path):
+            with open(opf_path, 'r') as f:
+                opf = f.read()
+            opf = opf.replace('version="2.0"', 'version="3.0"')
+            opf = opf.replace('.html"', '.xhtml"')
+            opf = re.sub(r'\s+properties="nav"', '', opf)
+            opf = re.sub(r'(href="nav\.xhtml"[^>]*?)/?>', r'\1 properties="nav"/>', opf)
+            if 'href="toc.ncx"' not in opf:
+                opf = opf.replace(
+                    '</manifest>',
+                    '  <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>\n  </manifest>'
+                )
+            if '<spine' in opf and 'toc="ncx"' not in opf:
+                opf = opf.replace('<spine', '<spine toc="ncx"')
+            if guide_landmarks:
+                guide_entries = '\n'.join(
+                    f'    <reference type="title-page" title="{_escape_xml(t)}" href="{h}"/>'
+                    for t, h in guide_landmarks
+                )
+                guide_block = f'\n  <guide>\n{guide_entries}\n  </guide>'
+                if '<guide>' not in opf:
+                    opf = opf.replace('</package>', guide_block + '\n</package>')
+            with open(opf_path, 'w') as f:
+                f.write(opf)
+    
+    repackage_canonical(epub_path, tmp)
+    shutil.rmtree(tmp)
+    if os.path.exists(temp_epub):
+        os.remove(temp_epub)
+    
+    doc.close()
+    print(f"  ✓ EPUB saved: {epub_path}")
     return True
 
 
-# ============================================================================
-# COMMAND-LINE INTERFACE
-# ============================================================================
+def process_all_volumes():
+    """Process all 16 Owen volumes."""
+    for vol_num in range(1, 17):
+        process_owen_volume(vol_num)
 
-def main():
-    args = sys.argv[1:]
-    hebrews_mode = '--hebrews' in args
-    if hebrews_mode:
-        args.remove('--hebrews')
 
-    specific_vol = None
-    if args:
-        try:
-            specific_vol = int(args[0])
-        except ValueError:
-            print(f"Usage: python3 converter.py [volume_number] [--hebrews]")
-            print(f"  python3 converter.py              # Process all Owen Works volumes")
-            print(f"  python3 converter.py 3             # Process volume 3 only")
-            print(f"  python3 converter.py --hebrews     # Process all Hebrews volumes")
-            print(f"  python3 converter.py --hebrews 4   # Process Hebrews volume 4 only")
-            sys.exit(1)
-
-    if hebrews_mode:
-        print("=" * 60)
-        print("John Owen Hebrews Commentary — EPUB2 → EPUB3 Converter")
-        print("=" * 60)
-        volumes = [specific_vol] if specific_vol else list(HEBREWS_VOLUME_CONFIG.keys())
-        results = []
-        for vol_num in volumes:
-            print(f"\n{'─' * 60}")
-            print(f"Hebrews Volume {vol_num}")
-            success = process_hebrews_volume(vol_num)
-            results.append((vol_num, success))
-    else:
-        print("=" * 60)
-        print("John Owen Works — PDF/CCEL → EPUB3 Converter")
-        print("=" * 60)
-        volumes = [specific_vol] if specific_vol else list(VOLUME_CONFIG.keys())
-        results = []
-        for vol_num in volumes:
-            print(f"\n{'─' * 60}")
-            print(f"Volume {vol_num}: {VOLUME_CONFIG[vol_num]['title']}")
-            success = process_owen_volume(vol_num)
-            results.append((vol_num, success))
-
-    print(f"\n{'=' * 60}")
-    print("SUMMARY\n")
-    succeeded = [r for r in results if r[1]]
-    failed = [r for r in results if not r[1]]
-    print(f"Succeeded: {len(succeeded)}/{len(results)}")
-    for vol_num, _ in succeeded:
-        print(f"  Vol {vol_num}")
-    if failed:
-        print(f"\nFailed: {len(failed)}/{len(results)}")
-        for vol_num, _ in failed:
-            print(f"  Vol {vol_num}")
-    print(f"\n{'=' * 60}")
-
+# ================================================================
+# ENTRY POINT
+# ================================================================
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Owen Works PyMuPDF EPUB3 Converter')
+    parser.add_argument('volumes', nargs='*', type=int,
+                       help='Volume numbers to process (default: all 16)')
+    parser.add_argument('--hebrews', action='store_true',
+                       help='Process Hebrews commentary volumes')
+    parser.add_argument('--test', action='store_true',
+                       help='Test mode: process volume 1 only')
+    
+    args = parser.parse_args()
+    
+    if args.test:
+        process_owen_volume(1)
+    elif args.hebrews:
+        print("Hebrews pipeline not yet implemented")
+    elif args.volumes:
+        for v in args.volumes:
+            process_owen_volume(v)
+    else:
+        process_all_volumes()

@@ -17,6 +17,8 @@
 | 11 | CSS not aligned with reference EPUB (title page, footnotes, font-smoothing) | shared.py | ✅ Fixed |
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
+| 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
+
 
 ---
 
@@ -76,6 +78,17 @@ See previous sessions.
 **Fix:** Consolidated to single rule: `.footnote { font-size: 0.9em; text-indent: 0; margin: 0.3em 0; }`
 
 ---
+
+
+---
+
+### 14. Structural Misalignment (Open)
+**Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
+**Evidence (v2):** 
+- ThML splits Part 2 Chapter 1 and Chapter 2 into four `div1` units: `ch010` (Chap 1), `ch011` (I.), `ch012` (Chap 2), `ch013` (II.).
+- PDF Comparison: "I." is a subheading within Chapter 1 (PDF p. 55), and "II." is the opening subheading of Chapter 2 (PDF p. 64).
+- Fragmented heads identified: `ch011`, `ch013`, `ch015`, `ch016`, `ch017`, `ch019`, `ch020`, `ch022`, `ch023`, `ch024`, `ch027`, `ch028`, `ch030`, `ch032`, `ch034`.
+**Status:** Pending surgical consolidation and merging of fragmented heads back into parent chapters.
 
 ## Remaining Work
 

@@ -17,6 +17,8 @@
 | 11 | CSS not aligned with reference EPUB (title page, footnotes, font-smoothing) | shared.py | ✅ Fixed |
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
+| 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
+
 
 ---
 
@@ -76,6 +78,16 @@ See previous sessions.
 **Fix:** Consolidated to single rule: `.footnote { font-size: 0.9em; text-indent: 0; margin: 0.3em 0; }`
 
 ---
+
+
+---
+
+### 14. Structural Misalignment (Open)
+**Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
+**Evidence (v4):**
+- ThML splits "The Reason of Faith" Chapter 2 into five units: `ch008` (Chap 2) contains only the introductory sentence, while the outline points `ch009` (I.), `ch010` (II.), `ch011` (III.), and `ch012` (IV.) are promoted to standalone chapters.
+- Fragmented heads identified: `ch009`, `ch010`, `ch011`, `ch012`, `ch019`, `ch020`, `ch023`, `ch024`, `ch027`, `ch028`, `ch029`, `ch030`, `ch031`, `ch032`, `ch033`, `ch040`, `ch041`, `ch046`, `ch047`, `ch062`, `ch063`, `ch064`, `ch067`, `ch076`, `ch084`, `ch085`.
+**Status:** Pending surgical consolidation and merging of fragmented heads back into parent chapters.
 
 ## Remaining Work
 

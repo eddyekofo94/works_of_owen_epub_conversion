@@ -190,14 +190,15 @@ GREEK_LOWER = {
     'z': 'ζ', 'h': 'η', 'q': 'θ', 'i': 'ι', 'k': 'κ',
     'l': 'λ', 'm': 'μ', 'n': 'ν', 'x': 'ξ', 'o': 'ο',
     'p': 'π', 'r': 'ρ', 's': 'σ', 't': 'τ',
-    'u': 'υ', 'f': 'φ', 'c': 'χ', 'y': 'ψ', 'w': 'ω',
+    'u': 'υ', 'f': 'φ', 'c': 'χ', 'y': 'υ', 'v': 'ψ', 'w': 'ω',
 }
+
 GREEK_UPPER = {
     'A': 'Α', 'B': 'Β', 'G': 'Γ', 'D': 'Δ', 'E': 'Ε',
     'Z': 'Ζ', 'H': 'Η', 'Q': 'Θ', 'I': 'Ι', 'K': 'Κ',
     'L': 'Λ', 'M': 'Μ', 'N': 'Ν', 'X': 'Ξ', 'O': 'Ο',
     'P': 'Π', 'R': 'Ρ', 'S': 'Σ', 'T': 'Τ',
-    'U': 'Υ', 'F': 'Φ', 'C': 'Χ', 'Y': 'Ψ', 'W': 'Ω',
+    'U': 'Υ', 'F': 'Φ', 'C': 'Χ', 'Y': 'Υ', 'V': 'Ψ', 'W': 'Ω',
 }
 ALL_GREEK = {**GREEK_LOWER, **GREEK_UPPER}
 
@@ -208,7 +209,7 @@ GRAVE = '\u0300'
 CIRCUMFLEX = '\u0342'
 IOTASUB = '\u0345'
 
-DIACRITIC_CHARS = set('><=~]J[j}|{=')
+DIACRITIC_CHARS = set('><=~]J[j}|{=+')
 DIACRITIC_MAP = {
     'j': (SMOOTH,),
     'J': (ROUGH,),
@@ -216,10 +217,11 @@ DIACRITIC_MAP = {
     '<': (GRAVE,),
     '~': (CIRCUMFLEX,),
     '=': (CIRCUMFLEX,),
+    '+': (CIRCUMFLEX,),
     ']': (SMOOTH, ACUTE),
-    '}': (SMOOTH, ACUTE),
+    '}': (SMOOTH, CIRCUMFLEX),
     '[': (ROUGH, ACUTE),
-    '{': (ROUGH, ACUTE),
+    '{': (ROUGH, CIRCUMFLEX),
     '|': (IOTASUB,),
 }
 
@@ -451,6 +453,7 @@ h2 {
 }
 
 h3 {
+    text-align: center;
     font-size: 1.05em;
     font-weight: bold;
     margin: 1.2em 0 0.4em;
@@ -513,73 +516,6 @@ a.fn-link {
 }
 
 /* Title page — Banner of Truth reference design */
-.title-page {
-    text-align: center;
-    margin: 0;
-    padding: 8% 8% 5%;
-    page-break-after: always;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 90vh;
-}
-.title-page .ornament {
-    font-size: 1.6em;
-    letter-spacing: 0.4em;
-    margin-bottom: 2em;
-    color: #8b6914;
-}
-.title-page h1 {
-    font-size: 1.6em;
-    margin: 0 0 0.2em;
-    text-align: center;
-    letter-spacing: 0.03em;
-    line-height: 1.3;
-}
-.title-page .rule {
-    display: block;
-    width: 40%;
-    max-width: 8em;
-    height: 1px;
-    background: #8b6914;
-    border: none;
-    margin: 1.2em auto;
-}
-.title-page .subtitle {
-    font-size: 1.15em;
-    font-style: italic;
-    margin: 0.4em 0 0;
-    text-align: center;
-    letter-spacing: 0.02em;
-}
-.title-page .author {
-    font-size: 1.05em;
-    margin-top: 1.2em;
-    text-align: center;
-    letter-spacing: 0.05em;
-}
-.title-page .author .by {
-    font-size: 0.85em;
-    font-style: italic;
-    display: block;
-    margin-bottom: 0.3em;
-    letter-spacing: 0;
-}
-.title-page .editor {
-    font-size: 0.85em;
-    font-style: italic;
-    margin-top: 1em;
-    text-align: center;
-}
-.title-page .publisher {
-    margin-top: auto;
-    padding-top: 2em;
-    font-size: 0.8em;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
 /* Treatise title pages */
 .treatise-title {
     text-align: center;
@@ -692,6 +628,163 @@ aside[epub\:type~="endnote"] {
 .cover-page img {
     max-width: 100%;
     max-height: 100vh;
+}
+
+/* Contents Page — PDF-like aligned layout */
+.ContentsItem {
+    margin: 0.8em 0 0.2em;
+    padding-left: 6.5em;
+    text-indent: -6.5em;
+    text-align: left;
+    color: #000;
+}
+
+.ContentsDescWrap {
+    margin: 0 0 0.2em 6.5em;
+    text-indent: 0;
+    text-align: left;
+    font-size: 0.95em;
+    display: block;
+}
+
+.ContentsTitle {
+    text-align: center;
+    margin: 1.5em 1em 0.5em;
+    text-indent: 0;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Goold-style title page — centered flex layout for book/treatise title pages */
+.titlepage {
+    text-align: center;
+    padding: 10% 5%;
+    page-break-after: always;
+}
+.titlepage h1 {
+    font-variant: small-caps;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+.titlepage h2 {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+/* Title page — Premium Banner of Truth reference design */
+.title-page {
+    text-align: center;
+    margin: 0;
+    padding: 10% 5% 5%;
+    page-break-after: always;
+}
+.title-page .ornament {
+    font-size: 1.6em;
+    letter-spacing: 0.4em;
+    margin-bottom: 2em;
+    color: #8b6914;
+}
+.title-page h1 {
+    font-size: 1.6em;
+    margin: 0.8em 0 0.2em;
+    text-align: center;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+}
+.title-page h2 {
+    font-size: 1.3em;
+    margin: 0.6em 0 0.2em;
+    text-align: center;
+}
+.title-page h3 {
+    font-size: 1.1em;
+    margin: 0.5em 0 0.2em;
+    text-align: center;
+    font-variant: small-caps;
+}
+.title-page p {
+    text-indent: 0;
+    text-align: center;
+    margin: 0.4em 0;
+}
+.title-page .primary {
+    color: #00008B; /* Dark Blue */
+}
+.title-page .secondary {
+    color: #006400; /* Dark Green */
+}
+.title-page .descriptive {
+    font-style: italic;
+    font-size: 0.95em;
+    line-height: 1.4;
+    margin: 1.2em 10%;
+}
+.title-page .separator {
+    font-size: 0.85em;
+    font-weight: bold;
+    margin: 1.5em 0;
+}
+.title-page .rule {
+    display: block;
+    width: 40%;
+    max-width: 8em;
+    height: 1px;
+    background: #8b6914;
+    border: none;
+    margin: 1.2em auto;
+}
+.title-page .subtitle {
+    font-size: 1.15em;
+    font-style: italic;
+    margin: 0.4em 0 0;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+.title-page .author {
+    font-size: 1.05em;
+    margin-top: 1.2em;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+.title-page .author .by {
+    font-size: 0.85em;
+    font-style: italic;
+    display: block;
+    margin-bottom: 0.3em;
+    letter-spacing: 0;
+}
+.title-page .editor {
+    font-size: 0.85em;
+    font-style: italic;
+    margin-top: 1em;
+    text-align: center;
+}
+.title-page .publisher {
+    margin-top: 3em;
+    padding-top: 2em;
+    font-size: 0.8em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Hidden scripture reference codes on CONTENTS page */
+.ref-code {
+    display: none;
+}
+
+/* Preservation mode: raw layout from front matter pages 1-10 */
+.preserved-layout {
+    margin: 1em;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+.preserved-layout p {
+    text-indent: 0;
+    text-align: left;
+    margin: 0.8em 0;
 }
 """
 
