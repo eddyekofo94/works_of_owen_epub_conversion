@@ -549,6 +549,27 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
     return chapters
 
 
+def _remove_adjacent_duplicates(text):
+    """Remove ghost-layer duplicates — identical lines only (fast)."""
+    if not text or len(text) < 40:
+        return text
+    lines = text.split('\n')
+    # Single pass: remove any line that's identical to one of the
+    # next 5 lines (ghost layers in pymupdf4llm are usually within
+    # a few lines of each other, separated by blanks).
+    out = []
+    skip = set()
+    for i, line in enumerate(lines):
+        if i in skip:
+            continue
+        if len(line) >= 20:
+            for j in range(i + 1, min(i + 6, len(lines))):
+                if lines[j] == line:
+                    skip.add(j)
+        out.append(line)
+    return '\n'.join(out)
+
+
 def clean_text(text):
     """Sanitize extracted text before paragraph reconstruction."""
     if not text:
@@ -566,6 +587,8 @@ def clean_text(text):
     text = re.sub(r' {2,}', ' ', text)
     # 4. Strip leading/trailing whitespace per line
     text = '\n'.join(line.strip() for line in text.split('\n'))
+    # 5. Remove adjacent ghost-layer duplicates
+    text = _remove_adjacent_duplicates(text)
     return text.strip()
 
 
@@ -738,9 +761,8 @@ def _escape_xml(text):
                 .replace('>', '&gt;').replace('"', '&quot;'))
 
 
-def _make_xhtml(title, body_html, css_href='style/main.css', font_styles=None):
+def _make_xhtml(title, body_html, css_href='style/main.css'):
     safe_title = _escape_xml(title)
-    style_block = f'\n<style type="text/css">{font_styles}</style>\n' if font_styles else ''
     return (
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<!DOCTYPE html>\n'
@@ -751,7 +773,6 @@ def _make_xhtml(title, body_html, css_href='style/main.css', font_styles=None):
         '  <meta charset="utf-8"/>\n'
         f'  <title>{safe_title}</title>\n'
         f'  <link rel="stylesheet" type="text/css" href="{css_href}"/>\n'
-        f'  {style_block}\n'
         '</head>\n'
         f'<body>{body_html}</body>\n'
         '</html>'
@@ -850,19 +871,11 @@ def _build_title_page(vol_num, title, subtitle):
 
 
 def generate_frontispiece_xhtml(portrait_filename):
-    return f'''<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head><title>Frontispiece</title>
-<link href="style/main.css" rel="stylesheet" type="text/css"/></head>
-<body><div class="frontispiece">
-<img src="images/{portrait_filename}" alt="Portrait"/>
-<p class="caption">John Owen (1616–1683)</p>
-</div></body></html>'''
+    return f'<div class="frontispiece"><img src="images/{portrait_filename}" alt="Portrait of John Owen"/><p class="caption">John Owen (1616&#x2013;1683)</p></div>'
 
 
-def generate_nav_xhtml(toc_entries, volume_title=None):
-    """Generate 3-level NAV XHTML."""
+def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_frontispiece=False, first_content_href=None):
+    """Generate 3-level NAV XHTML with EPUB3 landmarks."""
     display_title = _html_escape(volume_title or 'Table of Contents')
     lines = [
         '<?xml version="1.0" encoding="utf-8"?>',
@@ -905,7 +918,19 @@ def generate_nav_xhtml(toc_entries, volume_title=None):
     while stack:
         lines.append(f'</{stack.pop()}>')
     
-    lines.extend(['</nav>', '</body>', '</html>'])
+    lines.append('</nav>')
+    
+    # Landmarks
+    lines.append('<nav epub:type="landmarks">\n<h2>Guide</h2>\n<ol>')
+    if has_cover:
+        lines.append('  <li><a epub:type="cover" href="cover.xhtml">Cover</a></li>')
+    lines.append('  <li><a epub:type="toc" href="nav.xhtml">Table of Contents</a></li>')
+    if has_frontispiece:
+        lines.append('  <li><a epub:type="frontispiece" href="frontispiece.xhtml">Frontispiece</a></li>')
+    if first_content_href:
+        lines.append(f'  <li><a epub:type="bodymatter" href="{first_content_href}">Start of Content</a></li>')
+    lines.extend(['</ol>', '</nav>', '</body>', '</html>'])
+    
     return '\n'.join(lines)
 
 
@@ -942,16 +967,34 @@ def repackage_canonical(epub_path, src_dir):
                    cwd=src_dir, check=True)
 
 
+def _inject_apple_books_options(epub_path):
+    """Post-process EPUB to enable Apple Books specified-fonts option."""
+    tmp = epub_path + '.tmp'
+    with zipfile.ZipFile(epub_path, 'r') as zin:
+        with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as zout:
+            for item in zin.infolist():
+                data = zin.read(item.filename)
+                if item.filename.endswith('.opf'):
+                    text = data.decode('utf-8')
+                    opts = (
+                        '\n<display-options xmlns="http://www.apple.com/itunes/vbook/display-options">\n'
+                        '  <platform name="*">\n'
+                        '    <option name="specified-fonts">true</option>\n'
+                        '  </platform>\n'
+                        '</display-options>\n'
+                    )
+                    text = text.replace('</metadata>', '</metadata>' + opts)
+                    data = text.encode('utf-8')
+                zout.writestr(item, data)
+    shutil.move(tmp, epub_path)
+
+
 # ================================================================
 # MAIN PIPELINE
 # ================================================================
 
-def build_endnotes_chapter(footnotes, style_item=None, font_styles=None):
-    """
-    Build the endnotes XHTML chapter from merged footnotes.
-    """
+def build_endnotes_chapter(footnotes, style_item=None):
     fn_map = {f.fnum: f for f in footnotes.values()}
-    
     parts = ['<section epub:type="endnotes" role="doc-endnotes">',
              '<h1>Footnotes</h1>']
     for fnum in sorted(fn_map.keys()):
@@ -965,9 +1008,8 @@ def build_endnotes_chapter(footnotes, style_item=None, font_styles=None):
             f'</p></aside>'
         )
     parts.append('</section>')
-    
     html = ''.join(parts)
-    return _make_xhtml('Footnotes', html, font_styles=font_styles)
+    return _make_xhtml('Footnotes', html)
 
 
 # ================================================================
@@ -1275,12 +1317,13 @@ def process_owen_volume(vol_num):
     for author in config['authors']:
         book.add_author(author)
     
-    # CSS
+    # CSS — merge @font-face into main.css (ebooklib strips inline <style>)
+    combined_css = EPUB_STYLESHEET.rstrip('\n') + '\n' + font_styles.lstrip('\n')
     style_item = epub.EpubItem(
         uid="css",
         file_name="style/main.css",
         media_type="text/css",
-        content=EPUB_STYLESHEET.encode('utf-8')
+        content=combined_css.encode('utf-8')
     )
     book.add_item(style_item)
     
@@ -1318,8 +1361,28 @@ def process_owen_volume(vol_num):
     
     # Cover
     cover_file = find_cover(vol_num)
+    cover_item = None
     if cover_file:
-        book.set_cover("images/cover.png", open(cover_file, 'rb').read())
+        ext = os.path.splitext(cover_file)[1].lower()
+        cover_fname = f'images/cover{ext}'
+        mime = 'image/png' if ext == '.png' else 'image/jpeg'
+        with open(cover_file, 'rb') as fh:
+            book.add_item(epub.EpubItem(
+                uid="cover-img",
+                file_name=cover_fname,
+                media_type=mime,
+                content=fh.read()
+            ))
+        cover_item = epub.EpubHtml(title="Cover", file_name="cover.xhtml", lang='en')
+        cover_item.set_content(
+            _make_xhtml("Cover",
+                f'<div style="text-align:center; margin:0; padding:0;">'
+                f'<img src="{cover_fname}" alt="Cover" style="max-width:100%; max-height:100%;"/>'
+                f'</div>'
+            ).encode('utf-8')
+        )
+        cover_item.add_item(style_item)
+        book.add_item(cover_item)
     
     # Portrait
     portrait_file = find_portrait(vol_num)
@@ -1334,8 +1397,7 @@ def process_owen_volume(vol_num):
         ))
         frontispiece_item = epub.EpubHtml(title="Frontispiece", file_name="frontispiece.xhtml", lang="en")
         frontispiece_item.set_content(
-            _make_xhtml("Frontispiece", generate_frontispiece_xhtml(p_fn),
-                        font_styles=font_styles).encode('utf-8')
+            _make_xhtml("Frontispiece", generate_frontispiece_xhtml(p_fn)).encode('utf-8')
         )
         frontispiece_item.add_item(style_item)
         book.add_item(frontispiece_item)
@@ -1380,7 +1442,7 @@ def process_owen_volume(vol_num):
                     fm_title = "Title Page"
                     
                 fm = epub.EpubHtml(title=fm_title, file_name=f"title_{pg}.xhtml", lang='en')
-                fm.set_content(_make_xhtml(fm_title, html_body, font_styles=font_styles).encode('utf-8'))
+                fm.set_content(_make_xhtml(fm_title, html_body).encode('utf-8'))
                 fm.add_item(style_item)
                 book.add_item(fm)
                 front_matter_items.append(fm)
@@ -1399,7 +1461,7 @@ def process_owen_volume(vol_num):
             html_body = build_toc_page_xhtml(toc_pages)
             if html_body:
                 fm = epub.EpubHtml(title="Contents", file_name=f"contents_{pg}.xhtml", lang='en')
-                fm.set_content(_make_xhtml("Contents", html_body, font_styles=font_styles).encode('utf-8'))
+                fm.set_content(_make_xhtml("Contents", html_body).encode('utf-8'))
                 fm.add_item(style_item)
                 book.add_item(fm)
                 front_matter_items.append(fm)
@@ -1411,7 +1473,7 @@ def process_owen_volume(vol_num):
             html_body = format_title_page(page, section_class="preserved-layout", epub_type="frontmatter")
             if html_body:
                 fm = epub.EpubHtml(title=f"Page {pg+1}", file_name=f"front_{pg}.xhtml", lang='en')
-                fm.set_content(_make_xhtml(f"Page {pg+1}", html_body, font_styles=font_styles).encode('utf-8'))
+                fm.set_content(_make_xhtml(f"Page {pg+1}", html_body).encode('utf-8'))
                 fm.add_item(style_item)
                 book.add_item(fm)
                 front_matter_items.append(fm)
@@ -1433,8 +1495,7 @@ def process_owen_volume(vol_num):
     subtitle_val = VOLUME_SUBTITLES.get(vol_num, "")
     tp_item = epub.EpubHtml(title="Title Page", file_name="title.xhtml", lang="en")
     tp_item.set_content(
-        _make_xhtml("Title Page", _build_title_page(vol_num, config['title'], subtitle_val),
-                    font_styles=font_styles).encode('utf-8')
+        _make_xhtml("Title Page", _build_title_page(vol_num, config['title'], subtitle_val)).encode('utf-8')
     )
     tp_item.add_item(style_item)
     book.add_item(tp_item)
@@ -1470,7 +1531,7 @@ def process_owen_volume(vol_num):
             xhtml_title = chap.title
             tp_fn = f'{chap.cid}_title.xhtml'
             tp_ch = epub.EpubHtml(title=xhtml_title, file_name=tp_fn, lang='en')
-            tp_ch.set_content(_make_xhtml(xhtml_title, title_html, font_styles=font_styles).encode('utf-8'))
+            tp_ch.set_content(_make_xhtml(xhtml_title, title_html).encode('utf-8'))
             tp_ch.add_item(style_item)
             book.add_item(tp_ch)
             epub_chapters.append(tp_ch)
@@ -1488,7 +1549,7 @@ def process_owen_volume(vol_num):
                     if has_content:
                         body = f'<section>{body_html}</section>'
                         ch = epub.EpubHtml(title=xhtml_title, file_name=f'{chap.cid}.xhtml', lang='en')
-                        ch.set_content(_make_xhtml(xhtml_title, body, font_styles=font_styles).encode('utf-8'))
+                        ch.set_content(_make_xhtml(xhtml_title, body).encode('utf-8'))
                         ch.add_item(style_item)
                         book.add_item(ch)
                         epub_chapters.append(ch)
@@ -1503,7 +1564,7 @@ def process_owen_volume(vol_num):
             xhtml_title = chap.title
             body = f'<section>{body_html}</section>'
             ch = epub.EpubHtml(title=xhtml_title, file_name=f'{chap.cid}.xhtml', lang='en')
-            ch.set_content(_make_xhtml(xhtml_title, body, font_styles=font_styles).encode('utf-8'))
+            ch.set_content(_make_xhtml(xhtml_title, body).encode('utf-8'))
             ch.add_item(style_item)
             book.add_item(ch)
             epub_chapters.append(ch)
@@ -1530,7 +1591,7 @@ def process_owen_volume(vol_num):
     
     # Endnotes chapter
     if footnotes:
-        endnotes_html = build_endnotes_chapter(footnotes, style_item, font_styles)
+        endnotes_html = build_endnotes_chapter(footnotes, style_item)
         en = epub.EpubHtml(title="Footnotes", file_name="endnotes.xhtml", lang='en')
         en.set_content(endnotes_html.encode('utf-8'))
         en.add_item(style_item)
@@ -1552,19 +1613,31 @@ def process_owen_volume(vol_num):
     
     # NAV
     full_t = f"The Works of John Owen, Vol. {vol_num} — {VOLUME_SUBTITLES.get(vol_num, '')}"
-    nav_html = generate_nav_xhtml(toc_entries, full_t)
+    first_href = toc_entries[len(fm_entries)][2] if len(toc_entries) > len(fm_entries) else None
+    nav_html = generate_nav_xhtml(
+        toc_entries, full_t,
+        has_cover=cover_file is not None,
+        has_frontispiece=portrait_file is not None,
+        first_content_href=first_href
+    )
     nav_item = epub.EpubHtml(title='Table of Contents', file_name='nav.xhtml', lang='en')
+    nav_item.id = 'nav'
     nav_item.set_content(nav_html.encode('utf-8'))
     nav_item.properties = ['nav']
     nav_item.add_item(style_item)
     book.add_item(nav_item)
     
-    # Spine
-    book.spine = ['nav', tp_item]
+    # Spine: cover → frontispiece → nav → title → front matter → chapters
+    spine_items = []
+    if cover_item:
+        spine_items.append(cover_item)
     if frontispiece_item:
-        book.spine.insert(1, frontispiece_item)
-    book.spine.extend(front_matter_items)
-    book.spine.extend(epub_chapters)
+        spine_items.append(frontispiece_item)
+    spine_items.append(nav_item)
+    spine_items.append(tp_item)
+    spine_items.extend(front_matter_items)
+    spine_items.extend(epub_chapters)
+    book.spine = spine_items
     
     # Write EPUB
     temp_epub = epub_path + '.tmp'
@@ -1600,6 +1673,9 @@ def process_owen_volume(vol_num):
             opf = opf.replace('.html"', '.xhtml"')
             opf = re.sub(r'\s+properties="nav"', '', opf)
             opf = re.sub(r'(href="nav\.xhtml"[^>]*?)/?>', r'\1 properties="nav"/>', opf)
+            # Cover meta
+            if cover_file and '<meta name="cover"' not in opf:
+                opf = opf.replace('</metadata>', '  <meta name="cover" content="cover-img"/>\n  </metadata>')
             if 'href="toc.ncx"' not in opf:
                 opf = opf.replace(
                     '</manifest>',
@@ -1622,6 +1698,8 @@ def process_owen_volume(vol_num):
     shutil.rmtree(tmp)
     if os.path.exists(temp_epub):
         os.remove(temp_epub)
+    
+    _inject_apple_books_options(epub_path)
     
     doc.close()
     print(f"  ✓ EPUB saved: {epub_path}")

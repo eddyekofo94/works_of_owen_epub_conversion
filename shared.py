@@ -435,6 +435,30 @@ body {
     hyphens: auto;
 }
 
+/* Title Page Majesty */
+.titlepage {
+    text-align: center;
+    padding: 15% 5%;
+}
+.titlepage h1 {
+    font-variant: small-caps;
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    color: #00008B; /* Dark Blue */
+    page-break-before: avoid;
+}
+.titlepage h2 {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.3em;
+    line-height: 1.4;
+    color: #006400; /* Dark Green */
+}
+.titlepage .subtitle {
+    font-size: 1.1em;
+    margin-top: 1em;
+}
+
 h1 {
     text-align: center;
     font-size: 1.6em;
@@ -459,9 +483,10 @@ h3 {
     margin: 1.2em 0 0.4em;
 }
 
+/* Body Flow */
 p {
     text-indent: 1.5em;
-    margin: 0.3em 0;
+    margin: 0;
     text-align: justify;
     orphans: 2;
     widows: 2;
@@ -474,6 +499,31 @@ p.first, p.noindent {
 blockquote {
     margin: 0.8em 2em;
     font-size: 0.95em;
+}
+
+/* Frontispiece / Portrait */
+.frontispiece {
+    text-align: center;
+    margin-top: 15%;
+    page-break-after: always;
+}
+.frontispiece img {
+    max-width: 65%;
+    height: auto;
+}
+.frontispiece .caption {
+    text-indent: 0;
+    text-align: center;
+    margin-top: 1em;
+    font-style: italic;
+}
+
+.verse {
+    text-align: center;
+    font-style: italic;
+    color: #000080; /* Navy Blue matching PDF */
+    margin: 1.2em 0;
+    text-indent: 0 !important;
 }
 
 .greek {
@@ -515,70 +565,30 @@ a.fn-link {
     margin-right: 0.3em;
 }
 
-/* Title page — Banner of Truth reference design */
-/* Treatise title pages */
-.treatise-title {
-    text-align: center;
-    margin: 2em 1em;
-    page-break-after: always;
+/* Proper TOC Alignment */
+.toc-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3em;
+    padding-left: 2em;
+    text-indent: -2em;
 }
-.treatise-title h1, .treatise-title h2 {
-    text-align: center;
-    margin-bottom: 1em;
+.toc-line .toc-title {
+    flex-grow: 1;
+    text-align: left;
 }
-.treatise-title h2.greek {
-    font-size: 1.8em;
-    letter-spacing: 0.2em;
-    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif;
-    margin-bottom: 0.5em;
-}
-.treatise-title p {
-    text-indent: 0;
-    text-align: center;
-    margin: 0.3em 0;
-}
-.treatise-title .connector {
-    font-weight: bold;
-    font-size: 0.85em;
-    letter-spacing: 0.1em;
-    margin: 1em 0;
-    text-indent: 0;
-    text-align: center;
-}
-.treatise-title .desc {
-    font-style: italic;
-    font-size: 0.95em;
-    margin: 0.4em 2em;
-    text-indent: 0;
-    text-align: center;
-}
-.treatise-title .epigraph {
-    font-size: 0.9em;
-    margin: 2em 2em 1em;
-    text-indent: 0;
-    text-align: center;
+.toc-line .toc-page {
+    margin-left: 1em;
+    text-align: right;
+    white-space: nowrap;
 }
 
-/* EPUB3 footnote styles (GEMINI.md Section 4.4) */
+/* EPUB3 footnote styles */
 .noteref {
     color: #0000EE;
     text-decoration: none;
     vertical-align: super;
     font-size: 0.85rem;
-}
-
-a.footnote-ref {
-    text-decoration: none;
-    color: #0000EE;
-    vertical-align: super;
-    font-size: 0.95em;
-}
-
-a.fn-link {
-    color: #0000EE;
-    text-decoration: none;
-    font-size: 0.85em;
-    margin-right: 0.3em;
 }
 
 aside[epub\:type~="footnote"] {
@@ -591,46 +601,7 @@ aside[epub\:type~="endnote"] {
     text-indent: -1.8em;
 }
 
-/* Frontispiece (portrait page) */
-.frontispiece {
-    text-align: center;
-    margin: 0;
-    padding: 10% 10% 5%;
-    page-break-after: always;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 85vh;
-}
-.frontispiece img {
-    max-width: 80%;
-    max-height: 70vh;
-    height: auto;
-    border: 1px solid #999;
-}
-.frontispiece .caption {
-    font-size: 0.8em;
-    font-style: italic;
-    margin-top: 1em;
-    letter-spacing: 0.03em;
-    text-indent: 0;
-    text-align: center;
-}
-
-/* Cover page */
-.cover-page {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-
-.cover-page img {
-    max-width: 100%;
-    max-height: 100vh;
-}
-
-/* Contents Page — PDF-like aligned layout */
+/* Contents Item */
 .ContentsItem {
     margin: 0.8em 0 0.2em;
     padding-left: 6.5em;
@@ -645,146 +616,6 @@ aside[epub\:type~="endnote"] {
     text-align: left;
     font-size: 0.95em;
     display: block;
-}
-
-.ContentsTitle {
-    text-align: center;
-    margin: 1.5em 1em 0.5em;
-    text-indent: 0;
-    font-weight: bold;
-    color: #000;
-}
-
-/* Goold-style title page — centered flex layout for book/treatise title pages */
-.titlepage {
-    text-align: center;
-    padding: 10% 5%;
-    page-break-after: always;
-}
-.titlepage h1 {
-    font-variant: small-caps;
-    font-size: 2em;
-    margin-bottom: 0.5em;
-}
-.titlepage h2 {
-    font-style: italic;
-    font-weight: normal;
-    font-size: 1.2em;
-    line-height: 1.4;
-}
-
-/* Title page — Premium Banner of Truth reference design */
-.title-page {
-    text-align: center;
-    margin: 0;
-    padding: 10% 5% 5%;
-    page-break-after: always;
-}
-.title-page .ornament {
-    font-size: 1.6em;
-    letter-spacing: 0.4em;
-    margin-bottom: 2em;
-    color: #8b6914;
-}
-.title-page h1 {
-    font-size: 1.6em;
-    margin: 0.8em 0 0.2em;
-    text-align: center;
-    letter-spacing: 0.03em;
-    line-height: 1.3;
-}
-.title-page h2 {
-    font-size: 1.3em;
-    margin: 0.6em 0 0.2em;
-    text-align: center;
-}
-.title-page h3 {
-    font-size: 1.1em;
-    margin: 0.5em 0 0.2em;
-    text-align: center;
-    font-variant: small-caps;
-}
-.title-page p {
-    text-indent: 0;
-    text-align: center;
-    margin: 0.4em 0;
-}
-.title-page .primary {
-    color: #00008B; /* Dark Blue */
-}
-.title-page .secondary {
-    color: #006400; /* Dark Green */
-}
-.title-page .descriptive {
-    font-style: italic;
-    font-size: 0.95em;
-    line-height: 1.4;
-    margin: 1.2em 10%;
-}
-.title-page .separator {
-    font-size: 0.85em;
-    font-weight: bold;
-    margin: 1.5em 0;
-}
-.title-page .rule {
-    display: block;
-    width: 40%;
-    max-width: 8em;
-    height: 1px;
-    background: #8b6914;
-    border: none;
-    margin: 1.2em auto;
-}
-.title-page .subtitle {
-    font-size: 1.15em;
-    font-style: italic;
-    margin: 0.4em 0 0;
-    text-align: center;
-    letter-spacing: 0.02em;
-}
-.title-page .author {
-    font-size: 1.05em;
-    margin-top: 1.2em;
-    text-align: center;
-    letter-spacing: 0.05em;
-}
-.title-page .author .by {
-    font-size: 0.85em;
-    font-style: italic;
-    display: block;
-    margin-bottom: 0.3em;
-    letter-spacing: 0;
-}
-.title-page .editor {
-    font-size: 0.85em;
-    font-style: italic;
-    margin-top: 1em;
-    text-align: center;
-}
-.title-page .publisher {
-    margin-top: 3em;
-    padding-top: 2em;
-    font-size: 0.8em;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-/* Hidden scripture reference codes on CONTENTS page */
-.ref-code {
-    display: none;
-}
-
-/* Preservation mode: raw layout from front matter pages 1-10 */
-.preserved-layout {
-    margin: 1em;
-    line-height: 1.6;
-    font-size: 0.95em;
-}
-.preserved-layout p {
-    text-indent: 0;
-    text-align: left;
-    margin: 0.8em 0;
 }
 """
 
