@@ -8,16 +8,16 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 100
-- Manifest items: 92
+- Files: 101
+- Manifest items: 93
 - Spine items: 83
 - XHTML files: 85
-- Embedded fonts: 3
+- Embedded fonts: 4
 - NAV links: 83
 
 ## Content Checks
 
-- Greek chars: 3942
+- Greek chars: 3953
 - Untagged Greek chars: 55
 - Hebrew chars: 154
 - Untagged Hebrew chars: 0

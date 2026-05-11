@@ -114,3 +114,35 @@ For documentation changes:
 1. Keep root docs short and current.
 2. Move historical notes to `docs/archive/` instead of deleting them.
 3. Avoid duplicating the same roadmap in multiple files.
+
+## Slash Commands
+
+When the user uses slash commands, execute them as follows:
+
+### `#report`
+
+Generate a comprehensive EPUB technical report for the specified volume (defaults to Volume 1).
+
+**What it generates:**
+- Basic file info (size, EPUB version)
+- Full Dublin Core metadata
+- Structure overview (manifest, spine, chapter counts)
+- Reading order (spine sequence)
+- Embedded fonts inventory
+- Complete CSS styling analysis (including `.noteref` sizes)
+- Full manifest listing
+- Chapter content samples
+- Complete CSS dump
+
+**Location:** `volumes/vN/bugs_fixes/VOLUME_N_REPORT.md`
+
+**How to run:**
+```bash
+# Default: Volume 1
+.venv/bin/python3 generate_v1_report.py
+
+# For any volume, pass the volume number
+.venv/bin/python3 generate_v1_report.py 3
+```
+
+**Important:** Always regenerate the EPUB first with `.venv/bin/python3 converter.py N` before running the report, to ensure the report reflects the latest changes.

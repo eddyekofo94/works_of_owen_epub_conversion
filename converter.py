@@ -55,7 +55,7 @@ FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
 FT_MARKER_RE = re.compile(r'^FT(\d+)\s*')
 STRUCTURAL_START_RE = re.compile(
     r'^(?:'
-    r'\d+\.\s+|'                         # 5. Mankind...
+    r'(?!\d{4}\.)\d{1,3}\.\s+|'                         # 5. Mankind...
     r'\((?!\d{4}\))\d+\.?\)\s+|'                    # (1.) There... / (1) There...
     r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)\s+|'  # (1st,) Such...
     r'\[\d+\.?\]\s+|'                    # [1.] There...
@@ -69,7 +69,7 @@ STRUCTURAL_START_RE = re.compile(
 )
 STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'^(?P<marker>'
-    r'\d+\.|'
+    r'(?!\d{4}\.)\d{1,3}\.|'
     r'\((?!\d{4}\))\d+\.?\)|'
     r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)|'
     r'\[\d+\.?\]|'
@@ -94,7 +94,7 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'\*\*\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)\*\*\s*[,.;]?|'
     r'\*\*[IVXLCDM]+\.\*\*|'
     r'[IVXLCDM]+\.|'
-    r'(?<![:\d-])\d+\.|'
+    r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
     r')(?P<trail>\s+)'
@@ -118,9 +118,26 @@ CITATION_AUTHOR_TRAIL_RE = re.compile(
 )
 ROMAN_LIST_TOKEN = '@@ROMAN_LIST@@'
 MARKDOWN_STRUCTURAL_START_RE = re.compile(
-    r'^\*\*(?:\d+\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
+    r'^\*\*(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
     r'\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\*\*\s*[,.;]?\s+'
 )
+
+
+def _repair_owen_ocr_errors(text: str) -> str:
+    """
+    Repair known OCR character misreads specific to Owen/AGES extraction.
+    Separate from _repair_known_source_losses() which handles source loss patterns.
+    """
+    corrections = {
+        'Charneck': 'Charnock',
+        'storage': 'strange',
+        'whoso': 'whose',
+        # Add more as they are discovered
+    }
+    result = text
+    for wrong, right in corrections.items():
+        result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
+    return result
 SCRIPTURE_BOOK_RE = (
     r'(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|'
     r'Samuel|Kings|Chronicles|Ezra|Nehemiah|Esther|Job|Psalm|Psalms|'
@@ -767,6 +784,10 @@ def clean_text(text):
     """Sanitize extracted text before paragraph reconstruction."""
     if not text:
         return ''
+    
+    # 0. Owen-specific OCR repairs (Issue 75)
+    text = _repair_owen_ocr_errors(text)
+    
     # 1. Remove CCEL/AGES scripture reference codes: <450503>
     text = re.sub(r'<\d[A-Za-z0-9]{5}>', '', text)
     # 2. Remove AGES running headers (whole-line removal)
@@ -825,7 +846,7 @@ def reconstruct_paragraphs(text):
             if current:
                 prev = current[-1]
                 hard_structural = re.match(
-                    r'^(?:\d+\.|\(\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
+                    r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
                     r'\d+(?:st|nd|rd|th)\b[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)',
                     stripped,
                 )
@@ -847,11 +868,21 @@ def reconstruct_paragraphs(text):
             ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
             starts_lower = bool(re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', stripped))
             
+            # Issue 76: Multiline block quote preservation
+            all_current_text = ' '.join(current)
+            is_inside_quote = (
+                (all_current_text.count('\u201c') > all_current_text.count('\u201d')) or
+                (all_current_text.count('"') % 2 != 0)
+            )
+            
             if not ends_terminal:
                 # Line does not end with terminal punctuation → join
                 current.append(stripped)
             elif starts_lower:
                 # Starts lowercase after terminal (e.g. middle of quotation) → join
+                current.append(stripped)
+            elif is_inside_quote:
+                # Inside an unclosed quote → join
                 current.append(stripped)
             else:
                 # Terminal punctuation + uppercase start → new paragraph
@@ -969,10 +1000,29 @@ def _paragraph_needs_text_continuation(prev, current):
         return False
     if current.startswith('#'):
         return False
-    hard_structural = re.match(r'^(?:\d+\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|\d+(?:st|nd|rd|th)\b\s*[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)', current)
+    
+    # Check for continuation contexts FIRST (Issues 71, 72)
+    # Book + reference (e.g. "1 Corinthians" + "1. Wherefore...")
+    if re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', prev, re.I) and \
+       re.match(r'^\d{1,3}[,.;]?\s+', current):
+        return True
+    
+    # Chapter range continuation (e.g. "Chapter 9 to" + "15. It is followed...")
+    if re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', prev, re.I) and \
+       re.match(r'^\d{1,3}[,.;]?\s+', current):
+        return True
+
+
+    hard_structural = re.match(r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|\d+(?:st|nd|rd|th)\b\s*[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)', current)
     if hard_structural or MARKDOWN_STRUCTURAL_START_RE.match(current):
         return False
+
+    # Issue 76: Quote continuation
+    if (prev.count('\u201c') > prev.count('\u201d')) or (prev.count('"') % 2 != 0):
+        return True
+
     if not re.search(r'[.!?]"?\s*$', prev.strip()):
+
         return True
     if re.search(r'\b(?:verse|verses|chap|chapter)[.,]?\s*$', prev, re.I):
         return True
@@ -1013,6 +1063,10 @@ def _split_inline_structural_markers(para):
             (
                 SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
                 or CITATION_ABBREV_TRAIL_RE.search(before[-80:])
+                or re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', before, re.I)
+                or re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
+                or (para[:match.start()].count('"') % 2 != 0)
+                or (para[:match.start()].count('\u201c') > para[:match.start()].count('\u201d'))
             )
             and not marker_is_wrapped
             and not has_list_intro_before_reference
@@ -1031,15 +1085,18 @@ def _split_inline_structural_markers(para):
         marker_clean = re.sub(r'[\*\[\]\(\),;.\s]', '', marker).lower()
         marker_is_bare_decimal = bool(re.match(r'^(?:\*\*)?\d+\.(?:\*\*)?$', marker.strip()))
         marker_is_bare_roman = bool(re.match(r'^(?:\*\*)?[IVXLCDM]+\.(?:\*\*)?$', marker.strip(), re.I))
+        marker_is_bare_ordinal = bool(re.match(r'^(?:\*\*)?\d+(?:st|nd|rd|th)\b,?\s*(?:\*\*)?$', marker.strip(), re.I))
         after_preview = para[match.end():match.end() + 80].lstrip()
         after_starts_like_heading = bool(re.match(r'[A-Z“"‘]', after_preview))
         strong_source_like_marker = (
-            (marker_is_bare_decimal or marker_is_bare_roman)
+            (marker_is_bare_decimal or marker_is_bare_roman or marker_is_bare_ordinal)
             and len(before) >= 35
             and after_starts_like_heading
             and not SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
             and not CITATION_ABBREV_TRAIL_RE.search(before[-80:])
             and not re.search(r'\b(?:verse|verses|chap|chapter)[.,]?\s*$', before, re.I)
+            and not re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', before, re.I)
+            and not re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
             and marker_clean not in {'i', 'v', 'x', 'l', 'c', 'd', 'm'}
         )
         if not (re.search(r'[.,;:—-]\s*$', before) or before_ends_terminal or before_ends_lead_word):
@@ -2280,6 +2337,8 @@ def format_title_page(page, section_class="title-page", epub_type="titlepage", l
 
     groups = []
     for size, has_koine, has_italic, has_bold, text in lines_data:
+        if has_koine:
+            text = convert_greek_word(text)
         safe = _html_escape(text)
         if has_koine:
             safe = f'<span lang="el" xml:lang="el">{safe}</span>'
@@ -2511,6 +2570,21 @@ def process_owen_volume(vol_num):
             font_fnames.add(fname)
     
     for fname, fpath in SBL_SUPPLEMENTS.items():
+        fbase = os.path.basename(fpath)
+        if fbase in font_fnames:
+            continue
+        src = os.path.join(FONT_BASE, fpath)
+        if os.path.exists(src):
+            uid = f'f_{fbase.replace(".","_")}'
+            book.add_item(epub.EpubItem(
+                uid=uid,
+                file_name=f'Fonts/{fbase}',
+                media_type='application/font-sfnt',
+                content=open(src, 'rb').read()
+            ))
+            font_fnames.add(fbase)
+    
+    for fname, fpath in EZRA_SIL_FILES.items():
         fbase = os.path.basename(fpath)
         if fbase in font_fnames:
             continue

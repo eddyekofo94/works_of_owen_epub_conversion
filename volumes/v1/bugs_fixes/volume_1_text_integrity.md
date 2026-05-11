@@ -1,20 +1,20 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 7
+- Warnings: 8
 - PDF pages: 644
 - EPUB text files: 84
-- EPUB paragraphs/headings: 2906
+- EPUB paragraphs/headings: 2860
 
 ## Coverage
 
 - PDF content tokens: 208263
-- EPUB content tokens: 206457
+- EPUB content tokens: 206473
 - Approximate PDF-to-EPUB coverage ratio: 0.9908
 - Pages checked: 633
 - Weak page matches: 12
-- Dense source windows checked: 24551
-- Missing dense source-window pages: 111
+- Dense source windows checked: 24587
+- Missing dense source-window pages: 110
 - Top-of-page body windows checked: 597
 - Top-of-page windows skipped as unstable: 21
 - Missing top-of-page body windows: 1
@@ -24,15 +24,15 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2482
+- Body paragraphs checked: 2436
 - Possible faulty paragraph splits: 13
-- Structural starts excluded from split warnings: 164
+- Structural starts excluded from split warnings: 152
 - Short fragments: 35
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 0
+- Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 4
+- Suspicious large-number starts: 1
 - Roman heading candidates: 0
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
@@ -49,6 +49,7 @@
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 
@@ -56,14 +57,14 @@
 
 - page: 9; sample: depths of exploring the secretes of the heart his view of spiritual mindedness draws
 - page: 10; sample: most of the impression his work which bears the title qeologoymena pantodaiia etc originally
-- page: 11; sample: whoso name towers into just pre eminence among all his venerable compeers in puritan
+- page: 11; sample: in and the five volumes of his collected works were issued from to charneck
+- page: 19; sample: cristologia christologia or declaration of the glorious mystery of the person of christ god
 - page: 20; sample: prefatory note to object of dr owen in this treatise is to illustrate the
 - page: 21; sample: events ensued which justified these apprehensions of own prolonged controversy on the subject of
 - page: 49; sample: being nothing but the ajnakefalaiwsiv mentioned by the apostle ephesians and he here affirms
 - page: 55; sample: savior consider in the answer returned unto his inquiry the faith of peter in
 - page: 72; sample: that divine treasure wherewith the scripture of truth is enriched make no pretense of
 - page: 90; sample: place no small portion of divine blessedness self existence in its own immense being
-- page: 101; sample: glory and the firmament always showed his handy work the invisible things of his
 
 ## Missing Top-Of-Page Body Windows
 
@@ -95,11 +96,12 @@
 - file: EPUB/ch024.xhtml; previous: (4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,; next: (5thly,) Round about them were the tribes in their order.
 - file: EPUB/ch027.xhtml; previous: is, they shall never attain true rest or satisfaction in their own minds. He it is alone in whom the race of mankind may boast and glory, on whom all its felicities do depend. For,; next: He it is in whom our nature, which was debased as low as hell by apostasy from God, is exalted above the whole creation. Our nature, in she original constitution of it, in the pers
 
+## Inline Structural Marker Candidates
+
+- file: EPUB/ch019.xhtml; text: Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and ...
+
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch003.xhtml; text: 15. It is followed in Chapters 16 and 17 with an inquire into the divine wisdom as manifested in the person of Christ. The hypostatical union is explained, Chapter 18. Two more Chapters, 19 and 20, close the work, with a
-- file: EPUB/ch010.xhtml; text: 15. So is it with all other truths whatever.
-- file: EPUB/ch012.xhtml; text: 53. Nevertheless their conceptions concerning them were dark and obscure. It was his person that their faith principally regarded. Thence were they filled with desires and expectations of his coming, or his exhibition an
 - file: EPUB/ch024.xhtml; text: 24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in them; so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy
 
 ## Short Fragments

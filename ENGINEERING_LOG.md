@@ -4,6 +4,425 @@ This log captures detailed technical analysis and architectural decisions for co
 
 ---
 
+## [Issues 71-76] Paragraph Boundary Detection Failures: Analysis & Implementation Roadmap
+
+**Date:** 2026-05-11
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. Executive Summary
+
+Six related paragraph boundary issues were identified from user examples. They shared a common theme: the converter's `hard_structural` check was too aggressive and short-circuited important continuation logic before it could run. These have been implemented and verified.
+
+### 2. Issue Inventory
+
+| Issue | Pattern | Example | Root Cause |
+|-------|---------|---------|------------|
+| 71 | Scripture book + chapter | `1 Corinthians` → `1. Wherefore...` | `hard_structural` short-circuits book+reference check |
+| 72 | Chapter range continuation | `Chapter 9 to` → `15. It is followed...` | `hard_structural` short-circuits chapter+number check |
+| 73 | 4-digit year false positive | `1696. Charneck`, `1724. It may seem...` | Bare `\d+\.` lacks year threshold protection |
+| 74 | Bare ordinals not promoted | `1st, That the Lord Christ...` | `marker_is_bare_ordinal` missing from promotion logic |
+| 75 | OCR typo | `Charneck` → `Charnock` | No dedicated Owen OCR repair function |
+| 76 | Multiline quotes split mid-quote | Greek/Latin block quotations | No quote-boundary tracking in healer |
+
+### 3. Deep Dive: The `hard_structural` Short-Circuit Problem
+
+#### 3.1 The Critical Code Location
+
+**File:** `converter.py`  
+**Function:** `reconstruct_paragraphs()`  
+**Line:** 972 (approximately)
+
+```python
+# CURRENT CODE - Problematic
+hard_structural = bool(re.search(r'^\d+\.\s', next_line))
+if hard_structural:
+    continue  # <-- THIS SHORT-CIRCUITS EVERYTHING
+
+# These checks are NEVER reached if hard_structural is True:
+if line_ends_with_book_like(prev_normalized) and next_line_starts_with_reference(next_normalized):
+    ...
+if line_ends_with_chapter_like(prev_normalized) and next_line_starts_with_number(next_normalized):
+    ...
+```
+
+#### 3.2 Why This Fails for Issue 71 (Scripture Book)
+
+**User example:**
+- Previous: `1 Corinthians`
+- Next: `1. Wherefore...`
+- Expected: Joined as `1 Corinthians 1. Wherefore...`
+
+**What happens:**
+1. `prev_normalized` = `1 Corinthians`
+2. `line_ends_with_book_like()` → `True` (recognizes "1 Corinthians" as scripture book)
+3. `next_line` = `1. Wherefore...`
+4. `hard_structural = re.search(r'^\d+\.\s', '1. Wherefore...')` → `True`
+5. `if hard_structural: continue` → Paragraph split!
+6. The book+reference join logic NEVER runs
+
+#### 3.3 Why This Fails for Issue 72 (Chapter Range)
+
+**User example:**
+- Previous: `Chapter 9 to`
+- Next: `15. It is followed...`
+- Expected: Joined as `Chapter 9 to 15. It is followed...`
+
+**What happens:**
+1. `prev_normalized` = `Chapter 9 to`
+2. `line_ends_with_chapter_like()` → `True` (recognizes chapter context)
+3. `next_line` = `15. It is followed...`
+4. `hard_structural = re.search(r'^\d+\.\s', '15. It is followed...')` → `True`
+5. `if hard_structural: continue` → Paragraph split!
+6. The chapter+number join logic NEVER runs
+
+#### 3.4 Why This Fails for Issue 73 (4-digit Years)
+
+**User examples:**
+- `1696. Charneck` (year reference, not list item)
+- `1724. It may seem...` (year reference, not list item)
+
+**The contrast with parenthesized patterns:**
+
+Parenthesized patterns ALREADY have year protection:
+```python
+# In _split_inline_structural_markers()
+r'\((?!\d{4}\))(?:' + ROMAN_PATTERN + r'|' + DECIMAL_PATTERN + r')\)\s'
+```
+
+The `(?!\d{4}\))` is a negative lookahead that excludes 4-digit years.
+
+**But bare `\d+\.` patterns have NO such protection:**
+```python
+# In reconstruct_paragraphs() line 972
+hard_structural = bool(re.search(r'^\d+\.\s', next_line))
+```
+
+This matches `1696.` and `1724.` as valid structural patterns.
+
+### 4. Implementation Roadmap
+
+#### 4.1 Phase 1: Fix the `hard_structural` Short-Circuit (Issues 71, 72, 73)
+
+**Goal:** Ensure continuation checks run before `hard_structural` forces a break.
+
+**Recommended code reorganization:**
+
+```python
+def reconstruct_paragraphs(...):
+    ...
+    for i in range(len(lines) - 1):
+        prev_line = lines[i]
+        next_line = lines[i + 1]
+        
+        # NORMALIZE FIRST
+        prev_normalized = normalize_heuristic_text(prev_line)
+        next_normalized = normalize_heuristic_text(next_line)
+        
+        # CHECK CONTINUATION CONTEXTS FIRST (before hard_structural)
+        is_book_plus_ref = (line_ends_with_book_like(prev_normalized) and 
+                           next_line_starts_with_reference(next_normalized))
+        is_chapter_plus_num = (line_ends_with_chapter_like(prev_normalized) and 
+                             next_line_starts_with_number(next_normalized))
+        
+        # CHECK HARD STRUCTURAL WITH YEAR THRESHOLD (Issue 73)
+        # Structural numbers = 1-999; Years = 1000+
+        # Pattern: ^(?!\d{4}\.)\d{1,3}\.\s
+        # This matches "1.", "15.", "999." but NOT "1696.", "1724."
+        hard_structural = bool(re.search(r'^(?!\d{4}\.)\d{1,3}\.\s', next_line))
+        
+        # ONLY apply hard_structural if NOT in a continuation context
+        if hard_structural and not (is_book_plus_ref or is_chapter_plus_num):
+            lines_to_join[i] = False
+            continue
+        
+        # NOW proceed with existing checks...
+        # (the rest of the function remains largely the same)
+```
+
+**Key changes:**
+1. Move normalization BEFORE the `hard_structural` check
+2. Check `is_book_plus_ref` and `is_chapter_plus_num` FIRST
+3. Add year threshold to `hard_structural` regex: `^(?!\d{4}\.)\d{1,3}\.\s`
+4. Only `continue` (skip healing) if `hard_structural` AND NOT in a continuation context
+
+#### 4.2 Phase 2: Fix Bare Ordinal Promotion (Issue 74)
+
+**Goal:** Ensure `1st,`, `2nd,`, etc. are recognized as structural markers.
+
+**Code location:** `converter.py`, function `_split_inline_structural_markers()`, around line 3759
+
+**First, verify what exists:**
+
+The user mentioned `marker_is_bare_ordinal` detection exists. Check:
+1. Is `BARE_ORDINAL_PATTERN` defined?
+2. Is `marker_is_bare_ordinal` actually used in the promotion logic?
+
+**Recommended fix if detection exists but isn't integrated:**
+
+```python
+# In the strong promotion logic section of _split_inline_structural_markers()
+
+# Currently checks for:
+# - markdown_bold_marker
+# - roman_marker
+# - decimal_marker
+# - parenthesized_marker
+
+# ADD: bare_ordinal_marker check
+bare_ordinal_pattern = re.compile(r'^(?:1st|2nd|3rd|[4-9]th|1[0-9]th|2[0-9]th|3[0-1]st|3[0-1]nd|3[0-1]rd)\b,?\s*$', re.IGNORECASE)
+
+if bare_ordinal_pattern.match(marker_normalized):
+    marker_is_bare_ordinal = True
+else:
+    marker_is_bare_ordinal = False
+
+# Then in the promotion decision:
+strong_promotion_cue = (
+    markdown_bold_marker or
+    roman_marker or
+    decimal_marker or
+    parenthesized_marker or
+    marker_is_bare_ordinal  # <-- ADD THIS
+)
+```
+
+#### 4.3 Phase 3: Create Dedicated OCR Repair Function (Issue 75)
+
+**Goal:** Fix "Charneck" → "Charnock" and similar Owen-specific OCR typos.
+
+**Important:** User specified:
+- Create a NEW dedicated function for OCR typos
+- Do NOT confuse with existing `_repair_known_ocr_errors()` in `audit_text_integrity.py`
+- The audit's function handles source loss patterns (repeating words, misread punctuation)
+- This NEW function handles true OCR character misreads
+
+**Recommended implementation:**
+
+```python
+# In converter.py, add near the top with other utility functions
+
+def _repair_owen_ocr_errors(text: str) -> str:
+    """
+    Repair known OCR character misreads specific to Owen/AGES extraction.
+    
+    This is SEPARATE from _repair_known_ocr_errors() in audit_text_integrity.py
+    which handles source-loss patterns (repeating words, misread punctuation).
+    
+    This function handles true OCR typos where characters were misread.
+    
+    Known Owen-specific corrections:
+    - Charneck → Charnock (Stephen Charnock, Puritan divine)
+    """
+    corrections = {
+        'Charneck': 'Charnock',
+        # Add more as they are discovered
+    }
+    
+    result = text
+    for wrong, right in corrections.items():
+        # Replace whole word only (using word boundaries)
+        result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
+    
+    return result
+```
+
+**Where to call it:**
+- Early in the pipeline, after extraction but before paragraph healing
+- Consider in `extract_page_text_with_fonts()` or `get_pages_text()`
+- Or add a dedicated post-extraction pre-processing step
+
+**Audit enhancement:**
+- Add a check in `audit_text_integrity.py` to verify these corrections are applied
+- Report any remaining `Charneck` or other known misspellings as errors
+
+#### 4.4 Phase 4: Multiline Block Quote Preservation (Issue 76)
+
+**Goal:** Ensure Greek/Latin block quotes are not split mid-quote.
+
+**User example pattern:**
+```
+"Universam significabat ecclesiam, quae in hoc seculo diversis tentationibus,
+velut imbribus, fluminibus, tempestatibusque quatitur, et non cadit; ...
+...quod est Jesus Christus"."
+```
+
+**This requires investigation first:**
+
+1. **Quote delimiter preservation:**
+   - Does the PDF/extraction preserve smart quotes?
+   - Are double quotes consistent?
+   - What about nested quotes (single within double)?
+
+2. **Implementation approach options:**
+
+   **Option A: Quote state tracking during paragraph reconstruction**
+   ```python
+   # Track quote depth across paragraph boundaries
+   quote_depth = 0  # 0 = outside, 1 = inside one level, etc.
+   
+   for each line in lines:
+       # Count opening and closing quotes
+       opens = line.count('"') + line.count('"')  # smart quotes
+       closes = line.count('"') + line.count('"')
+       quote_depth += (opens - closes)
+       
+       # If quote_depth > 0 at line end, next line should be joined
+       if quote_depth > 0:
+           force_join_with_next = True
+   ```
+
+   **Option B: Post-processing quote healing**
+   - After initial paragraph reconstruction
+   - Scan for paragraphs that start mid-quote (no opening quote but inside quote context)
+   - Merge with previous paragraph
+
+   **Option C: Visual + quote hybrid**
+   - Block quotes often have visual cues (indentation, different font)
+   - Combine quote character detection with layout analysis
+
+3. **Special cases to handle:**
+   - Quotes spanning page boundaries
+   - Nested quotes (scripture quotes within patristic quotes)
+   - Greek/Greek script vs. Latin script (may need different handling)
+   - Scripture citations vs. actual block quotes
+
+**Recommended investigation steps BEFORE implementation:**
+1. Sample 5-10 block quotes from Volume 1 PDF
+2. Check how PyMuPDF extracts them (quote characters preserved?)
+3. Check existing ThML/XML sources (if available) for quote markup
+4. Determine which quote detection approach is most reliable
+
+### 5. Audit Enhancements
+
+#### 5.1 For Year Threshold (Issue 73)
+
+The audit already reports `suspicious_large_number_starts` (currently 4 warnings). Enhance it to:
+1. Specifically flag paragraphs starting with `\d{4}\.` (4-digit years)
+2. Report the file and line number
+3. Suggest human review
+
+#### 5.2 For OCR Typos (Issue 75)
+
+Add a new check:
+```python
+def ocr_typo_audit(epub_path: str) -> AuditResult:
+    """Check for known Owen OCR typos that should have been repaired."""
+    known_typos = {
+        'Charneck': 'Charnock',
+        # Add more as discovered
+    }
+    
+    errors = []
+    for typo, correction in known_typos.items():
+        # Search all XHTML files
+        for xhtml_file in xhtml_files:
+            if typo in xhtml_content:
+                errors.append(f"OCR typo '{typo}' found (should be '{correction}') in {xhtml_file}")
+    
+    return AuditResult(...)
+```
+
+#### 5.3 For Quote Preservation (Issue 76)
+
+Add quote balance check:
+```python
+def quote_balance_audit(paragraphs: List[str]) -> AuditResult:
+    """Check for suspicious quote imbalance that may indicate mid-quote splits."""
+    for i, para in enumerate(paragraphs):
+        # Count quote characters
+        double_quotes = para.count('"') + para.count('"') + para.count('"')
+        
+        # If odd number of quotes, flag for review
+        if double_quotes % 2 != 0:
+            warnings.append(f"Paragraph {i} has odd quote count, may be mid-quote split")
+    
+    return AuditResult(...)
+```
+
+### 6. Validation Plan
+
+After implementing each phase, run these validation checks:
+
+#### Phase 1 Validation (Issues 71, 72, 73)
+1. Regenerate Volume 1: `.venv/bin/python3 converter.py 1`
+2. Verify user examples:
+   - Search for `1 Corinthians 1. Wherefore` (should be joined)
+   - Search for `Chapter 9 to 15.` (should be joined)
+   - Search for `1696. Charnock` (year should NOT cause break)
+3. Run text integrity audit: `.venv/bin/python3 scripts/audit_text_integrity.py 1`
+   - Verify `suspicious_large_number_starts` decreases
+   - Verify no regressions in other metrics
+
+#### Phase 2 Validation (Issue 74)
+1. Regenerate Volume 1
+2. Search for `1st, That the Lord Christ` patterns
+3. Verify they are styled as structural markers (bold or list items)
+4. Run audit: check `inline_structural_marker_candidates` should be 0 or flagged correctly
+
+#### Phase 3 Validation (Issue 75)
+1. Regenerate Volume 1
+2. Search for `Charneck` - should NOT find any
+3. Search for `Charnock` - should find the corrected instances
+4. Run new OCR typo audit - should report 0 errors
+
+#### Phase 4 Validation (Issue 76)
+1. After implementing quote detection
+2. Find the Greek block quote example from user report
+3. Verify it's a single paragraph in the EPUB
+4. Run quote balance audit - should report 0 or minimal warnings
+
+### 7. Risk Assessment
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| Year threshold too aggressive (breaks real structural numbers like 1000+) | Low | Medium | Use 3-digit threshold (1-999); most Owen lists use smaller numbers |
+| Book+reference join creates false joins | Medium | High | Keep existing scripture/citation tail suppression; audit flags all |
+| Quote detection false positives | Medium | Medium | Use conservative heuristic; flag for human review via audit |
+| OCR repair creates incorrect changes | Low | Low | Use explicit correction mapping; audit verifies |
+
+### 8. Priority Recommendation
+
+**Highest Priority (Phase 1):** Issues 71, 72, 73 - The `hard_structural` short-circuit is a fundamental architectural flaw that prevents existing continuation logic from working. This affects potentially many paragraph joins.
+
+**High Priority (Phase 2):** Issue 74 - Bare ordinal promotion is likely missing from existing logic and may affect outline structure.
+
+**Medium Priority (Phase 3):** Issue 75 - OCR typo repair is straightforward but requires a dedicated function per user instruction.
+
+**Lower Priority (Phase 4):** Issue 76 - Quote preservation requires investigation first; may be more complex to implement reliably.
+
+### 9. User-Specified Constraints to Remember
+
+1. **3-digit threshold for year exclusion:** Numbers 1000+ treated as years, not structural markers
+2. **Always flag structural starts after non-terminal punctuation:** List ALL potential candidates for review
+3. **Create dedicated OCR error repair function:** Separate from existing source loss repair
+4. **Document analysis only (for now):** No implementation requested yet - just documentation
+
+---
+
+## [Issue 77-79] EPUB Package Integrity: CSS, Fonts, and Title Page Extraction
+
+**Date:** 2026-05-11
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Volume 1 extraction and packaging revealed three technical debt issues:
+- **CSS Duplication:** Global styles were being injected into every XHTML file via the font-style block, causing redundant rules for `.noteref`, `.footnote`, and `aside`.
+- **Font Omission:** The Hebrew fallback font `SILEOT.ttf` (Ezra SIL) was referenced in CSS but missing from the EPUB manifest.
+- **Title Page Extraction:** Legacy Greek text on the title page (e.g., `CRISTOLOGIA`) was not being converted to Unicode, resulting in Latin characters tagged as Greek.
+
+### 2. Fixes
+- **shared.py:** Removed redundant CSS from `EPUB3_FONT_STYLES` since it is already defined in `EPUB_STYLESHEET`.
+- **converter.py:** Added an iteration loop for `EZRA_SIL_FILES` during the font embedding phase.
+- **converter.py:** Updated `format_title_page()` to invoke `convert_greek_word()` for spans with Koine fonts.
+
+### 3. Validation
+Regenerated Volume 1. Confirmed:
+- `EPUB/Fonts/SILEOT.ttf` is present in the manifest (4 fonts total).
+- `EPUB/ch002_title.xhtml` contains `ΧΡΙΣΤΟΛΟΓΙΑ`.
+- `EPUB/style/main.css` is free of duplicate `.noteref` declarations.
+
+---
+
 ## [Issue 70] Source-Aware Structural Boundary Promotion and Citation Continuation
 
 **Date:** 2026-05-11

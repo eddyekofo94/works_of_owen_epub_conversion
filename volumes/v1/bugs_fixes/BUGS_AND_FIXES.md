@@ -71,10 +71,125 @@
 | 68 | Generated title-page credits left-aligned and publisher credit incorrect | `_build_title_page()` + `shared.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 69 | Bottom-of-page body text clipped by overly aggressive footer redaction margin | `BOTTOM_MARGIN` + `coordinate_redactor()` + `scripts/audit_text_integrity.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION; RESIDUAL WARNINGS) |
 | 70 | Source-aware structural boundary promotion and citation continuation | `_split_inline_structural_markers()` + citation continuation + rendered-HTML audit | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 71 | False paragraph break after scripture book (1 Corinthians → 1. Wherefore...) | `hard_structural` + year threshold + continuation guard | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 72 | False paragraph break at chapter range continuation (Chapter 9 to → 15. It is followed...) | `hard_structural` + year threshold + continuation guard | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 73 | False paragraph break at 4-digit year (1696. Charneck, 1724. It may seem...) | `hard_structural` + year threshold | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 74 | Plain ordinals not promoted inline inside body text (1st, That the Lord Christ...) | `marker_is_bare_ordinal` + inline structural promotion | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 75 | OCR typo "Charneck" should be "Charnock" | dedicated OCR error repair function | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 76 | Multiline block quotes falsely split mid-quote | quote boundary detection + paragraph healing | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 77 | Duplicate CSS rules injected into main.css via font styles | `shared.py` (EPUB3_FONT_STYLES) | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 78 | Missing Ezra SIL font (SILEOT.ttf) in EPUB manifest | `converter.py` (EPUB assembly) | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 79 | Malformed Greek title "CRISTOLOGIA" on Volume 1 title page | `converter.py` (format_title_page) | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
 ## Issue Details
+
+### 76. Multiline block quotes falsely split mid-quote (Open — Documented)
+**Problem:** Multiline block quotes (especially Greek and Latin patristic citations) are being falsely split into multiple paragraphs in the middle of the quote. The entire block quote should be treated as a single cohesive unit without interruptions.
+
+**Example from user report:**
+```
+"Universam significabat ecclesiam, quae in hoc seculo diversis tentationibus,
+velut imbribus, fluminibus, tempestatibusque quatitur, et non cadit; quoniam
+fundata est supra Petram; unde et Petrus nomen accepit. Non enim a Petro
+Petra, sed Petrus a Petra; sicut non Christus a Christiano, sed Christianus a
+Christo vocatur. Ideo quippe ait Dominus, 'Super hanc Petram aedificabo
+ecclesiam meam', quia dixerat Petrus, 'Tu es Christus filius Dei vivi'.
+'Super hanc ergo' (inquit) 'Petram quam confessus es, aedificabo eccleaism
+meam'. Petra enim erat Christus, super quod fundamentum etiam ipse aedificatus
+est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod
+positum est, quod est Jesus Christus"."
+```
+
+This entire quote should remain as one block, not be split at sentence boundaries or page breaks.
+
+**Root cause hypothesis:** Quote-boundary detection is not currently integrated into the paragraph-healing logic. The healer sees terminal periods and may treat them as paragraph boundaries, even when they occur inside a quoted block.
+
+**Required investigation:**
+1. Does the PDF/extraction preserve quote delimiters (smart quotes, double quotes) reliably?
+2. Are nested quotes (single quotes within double quotes) handled correctly?
+3. Should quote detection run during `reconstruct_paragraphs()` or in a separate post-processing pass?
+4. How to handle quotes that span page boundaries?
+
+**Implementation approach to consider:**
+- Track quote state (inside/outside quote) during paragraph reconstruction
+- If inside a quote and paragraph ends without closing quote, merge with next paragraph
+- Special handling for scripture citations and patristic block quotes
+- Consider visual cues (indentation, centering) in addition to quote characters
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
+
+### 75. OCR typo "Charneck" should be "Charnock" (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** OCR error produces "Charneck" instead of the correct "Charnock" (referring to Stephen Charnock, the Puritan divine).
+
+**Location:** Example appears in a year context: `1696. Charneck`
+
+**Root cause:** The `_repair_known_ocr_errors()` function in `audit_text_integrity.py` repairs some errors like `Soripture` → `Scripture`, but did not include a dedicated Owen-specific OCR error repair function.
+
+**Fix approach:**
+1. Created a dedicated `_repair_owen_ocr_errors()` function in `converter.py`.
+2. Added known OCR typos specific to Owen/AGES extraction: `Charneck`, `storage`, `whoso`.
+3. Integrated this repair into `clean_text()`.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
+
+### 74. Plain ordinals not promoted inline inside body text (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Plain ordinal markers like `1st,` or `[1st,]` that appear inline inside body paragraphs were not being promoted to structural starts.
+
+**Root cause:** The `marker_is_bare_ordinal` detection was missing from the strong promotion logic in `_split_inline_structural_markers()`.
+
+**Fix approach:**
+1. Integrated bare ordinal detection into the strong promotion logic in `_split_inline_structural_markers()`.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
+
+### 73. False paragraph break at 4-digit year (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Paragraphs starting with 4-digit years like `1696.` or `1724.` were being treated as structural boundaries.
+
+**Root cause:** The `hard_structural` check matched `1696.` and `1724.` as structural patterns.
+
+**Fix approach:**
+1. Applied 3-digit threshold to bare `\d+\.` patterns: numbers 1-999 = valid structural numbering, numbers 1000+ = years (excluded).
+2. Modified the `hard_structural` check and global structural regexes to exclude 4-digit numbers.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
+
+### 72. False paragraph break at chapter range continuation (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Chapter range references like `Chapter 9 to` were being falsely split from their continuation `15. It is followed...`.
+
+**Root cause:** The `hard_structural` check matched `15.` and short-circuited continuation checks.
+
+**Fix approach:**
+1. Reordered logic to check for continuation contexts BEFORE applying `hard_structural`.
+2. Added specific continuation guard for `Chapter N to` + `M.`.
+3. Added the same guard to `_split_inline_structural_markers`.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
+
+### 71. False paragraph break after scripture book (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Scripture book references like `1 Corinthians` were being falsely split from the verse continuation.
+
+**Root cause:** The `hard_structural` check matched `1.` and short-circuited continuation checks.
+
+**Fix approach:**
+1. Reordered logic to check for continuation contexts BEFORE applying `hard_structural`.
+2. Added specific continuation guard for `{Book}` + `N.`.
+3. Added the same guard to `_split_inline_structural_markers`.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
 
 ### 69. Bottom-of-page body text clipped by overly aggressive footer redaction margin (IMPLEMENTED — AWAITING VALIDATION; RESIDUAL WARNINGS)
 **Problem:** The enhanced bottom-of-page audit showed that some final body lines on PDF pages were absent from the generated EPUB. These were not ordinary paragraph-healing errors; the text had been removed before the healer could see it.
@@ -663,10 +778,12 @@
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-11T14:13:19.877894+00:00
+**Last run:** 2026-05-11T21:51:52.744740+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 4 warnings)
 
@@ -679,9 +796,9 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 85 |
 | Spine items | 83 |
-| Embedded fonts | 3 |
+| Embedded fonts | 4 |
 | NAV links | 83 |
-| Greek chars / untagged | 3942 / 55 |
+| Greek chars / untagged | 3953 / 55 |
 | Hebrew chars / untagged | 154 / 0 |
 | Noteref links / endnote anchors | 125 / 124 |
 | AGES boilerplate hits | 0 |
@@ -770,11 +887,14 @@ Warnings requiring triage:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-11T14:43:57.394818+00:00
-**Status:** WARN (7 warnings)
+**Last run:** 2026-05-11T21:52:16.840807+00:00
+**Status:** WARN (8 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -784,11 +904,11 @@ Reports:
 |-------|--------|
 | PDF pages | 644 |
 | EPUB text files | 84 |
-| EPUB paragraphs/headings | 2906 |
+| EPUB paragraphs/headings | 2860 |
 | Approximate PDF-to-EPUB word coverage | 0.9908 |
 | Weak page matches | 12 |
-| Dense source windows checked | 24551 |
-| Missing dense source-window pages | 111 |
+| Dense source windows checked | 24587 |
+| Missing dense source-window pages | 110 |
 | Top-of-page body windows checked | 597 |
 | Top-of-page windows skipped as unstable | 21 |
 | Missing top-of-page body windows | 1 |
@@ -796,13 +916,13 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 9 |
 | Missing bottom-of-page body windows | 13 |
 | Possible faulty paragraph splits | 13 |
-| Structural starts excluded from split warnings | 164 |
+| Structural starts excluded from split warnings | 152 |
 | Short fragments | 35 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 0 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 4 |
+| Suspicious large-number starts | 1 |
 | Roman heading candidates | 0 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
@@ -819,6 +939,7 @@ Warnings requiring triage:
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 

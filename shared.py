@@ -679,12 +679,12 @@ a.fn-link {
     color: #0000EE;
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     display: inline-block;
     line-height: 1;
     margin-left: 0.25em;
     margin-right: 0.08em;
-    padding: 0 0.14em;
+    padding: 0 0.25em;
     text-indent: 0;
 }
 
@@ -787,48 +787,6 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {{
 [lang="he"], [lang="he"] p,
 [lang="he"], [lang="he"] div {{
     text-align: left;
-}}
-.noteref {{
-    color: #0000EE;
-    text-decoration: none;
-    vertical-align: super;
-    font-size: 0.85rem;
-    display: inline-block;
-    line-height: 1;
-    margin-left: 0.25em;
-    margin-right: 0.08em;
-    padding: 0 0.14em;
-    text-indent: 0;
-}}
-.noteref + .noteref {{
-    margin-left: 0.35em;
-}}
-.noteref sup {{
-    line-height: 1;
-}}
-.doxology {{
-    text-align: center;
-    text-indent: 0;
-    margin: 2em 0 1.2em;
-}}
-.footnote {{
-    font-size: 0.9em;
-    text-indent: 0;
-    margin: 0.3em 0;
-}}
-a.fn-link {{
-    color: #0000EE;
-    text-decoration: none;
-    font-size: 0.85em;
-    margin-right: 0.3em;
-}}
-aside[epub\:type~="footnote"] {{
-    display: block;
-}}
-aside[epub\:type~="endnote"] {{
-    margin-bottom: 0.8em;
-    padding-left: 1.8em;
-    text-indent: -1.8em;
 }}
 """
 

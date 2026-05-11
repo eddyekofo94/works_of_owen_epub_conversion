@@ -5,11 +5,11 @@
   },
   "epub": {
     "spine_text_files": 84,
-    "paragraph_count": 2906
+    "paragraph_count": 2860
   },
-  "generated_at": "2026-05-11T14:43:57.394818+00:00",
+  "generated_at": "2026-05-11T21:52:16.840807+00:00",
   "status": "warn",
-  "warning_count": 7,
+  "warning_count": 8,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -32,6 +32,10 @@
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     },
     {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
       "code": "suspicious_large_number_starts",
       "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
     },
@@ -42,7 +46,7 @@
   ],
   "word_coverage": {
     "pdf_content_tokens": 208263,
-    "epub_content_tokens": 206457,
+    "epub_content_tokens": 206473,
     "coverage_ratio": 0.9908,
     "missing_word_samples": [
       {
@@ -240,8 +244,8 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 24551,
-    "missing_dense_window_pages": 111,
+    "dense_windows_checked": 24587,
+    "missing_dense_window_pages": 110,
     "missing_dense_windows": [
       {
         "page": 9,
@@ -253,7 +257,11 @@
       },
       {
         "page": 11,
-        "sample": "whoso name towers into just pre eminence among all his venerable compeers in puritan"
+        "sample": "in and the five volumes of his collected works were issued from to charneck"
+      },
+      {
+        "page": 19,
+        "sample": "cristologia christologia or declaration of the glorious mystery of the person of christ god"
       },
       {
         "page": 20,
@@ -290,10 +298,6 @@
       {
         "page": 135,
         "sample": "as the prophet of the church but hereon they will never have experience of"
-      },
-      {
-        "page": 151,
-        "sample": "the four living creatures said amen and the four and twenty elders fell down"
       },
       {
         "page": 156,
@@ -676,7 +680,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2482,
+    "paragraphs_checked": 2436,
     "split_candidate_count": 13,
     "split_candidates": [
       {
@@ -745,7 +749,7 @@
         "next": "Q. 3. What is the Scripture? Isaiah 8:20; John 5:39."
       }
     ],
-    "structural_start_exclusions": 164,
+    "structural_start_exclusions": 152,
     "short_fragment_count": 35,
     "short_fragments": [
       {
@@ -891,26 +895,19 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 0,
-    "inline_structural_candidates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and grace, gloriously to im"
+      }
+    ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 4,
+    "suspicious_large_number_start_count": 1,
     "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch003.xhtml",
-        "text": "15. It is followed in Chapters 16 and 17 with an inquire into the divine wisdom as manifested in the person of Christ. The hypostatical union is explained, Chapter 18. Two more Chapters, 19 and 20, close the work, with a"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "text": "15. So is it with all other truths whatever."
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "text": "53. Nevertheless their conceptions concerning them were dark and obscure. It was his person that their faith principally regarded. Thence were they filled with desires and expectations of his coming, or his exhibition an"
-      },
       {
         "file": "EPUB/ch024.xhtml",
         "text": "24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in them; so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy"

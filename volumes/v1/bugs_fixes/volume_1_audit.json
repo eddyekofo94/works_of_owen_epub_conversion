@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-11T14:13:19.877894+00:00",
+  "generated_at": "2026-05-11T21:51:52.744740+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 4,
@@ -27,8 +27,8 @@
     }
   ],
   "info": {
-    "file_count": 100,
-    "epub_size_bytes": 2383837,
+    "file_count": 101,
+    "epub_size_bytes": 2444187,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -37,15 +37,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 92,
+    "manifest_count": 93,
     "spine_count": 83,
     "xhtml_count": 85,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 3,
+    "font_count": 4,
     "language": {
-      "greek_chars": 3942,
+      "greek_chars": 3953,
       "greek_untagged_chars": 55,
       "hebrew_chars": 154,
       "hebrew_untagged_chars": 0,
