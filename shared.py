@@ -436,27 +436,85 @@ body {
 }
 
 /* Title Page Majesty */
-.titlepage {
+.titlepage,
+.title-page {
     text-align: center;
-    padding: 15% 5%;
+    padding: 12% 6% 10%;
+    max-width: 36em;
+    margin: 0 auto;
+    page-break-before: always;
+    -webkit-column-break-before: always;
 }
-.titlepage h1 {
+.titlepage .ornament,
+.title-page .ornament {
+    display: block;
+    text-align: center;
+    font-size: 1.15em;
+    line-height: 1;
+    margin: 0 auto 1.5em;
+    color: #b08d2d;
+    text-indent: 0;
+}
+.titlepage h1,
+.title-page h1 {
     font-variant: small-caps;
-    font-size: 2.2em;
-    margin-bottom: 0.5em;
-    color: #00008B; /* Dark Blue */
+    font-size: 1.9em;
+    line-height: 1.18;
+    margin: 0 0 1.35em;
+    color: #1a1a1a;
     page-break-before: avoid;
 }
-.titlepage h2 {
-    font-style: italic;
-    font-weight: normal;
-    font-size: 1.3em;
-    line-height: 1.4;
-    color: #006400; /* Dark Green */
+.titlepage h2,
+.title-page h2 {
+    font-weight: bold;
+    font-size: 1.25em;
+    line-height: 1.35;
+    color: #1a1a1a;
+    margin: 1.2em 0;
+    page-break-before: avoid;
+    -webkit-column-break-before: avoid;
 }
-.titlepage .subtitle {
+.titlepage h3,
+.title-page h3 {
+    text-align: center;
+    font-size: 1.05em;
+    line-height: 1.35;
+    margin: 1.15em 0;
+    page-break-before: avoid;
+    -webkit-column-break-before: avoid;
+}
+.titlepage .subtitle,
+.title-page .subtitle {
     font-size: 1.1em;
     margin-top: 1em;
+}
+.titlepage .descriptive,
+.title-page .descriptive {
+    text-align: center;
+    font-style: italic;
+    line-height: 1.45;
+    margin: 1.8em auto 0;
+    max-width: 31em;
+    text-indent: 0;
+}
+.titlepage .author,
+.titlepage .editor,
+.titlepage .publisher,
+.title-page .author,
+.title-page .editor,
+.title-page .publisher {
+    text-align: center;
+    text-indent: 0;
+    margin: 0.2em auto;
+}
+.titlepage .author,
+.title-page .author {
+    margin-top: 2em;
+}
+.titlepage .by,
+.title-page .by {
+    font-style: italic;
+    margin-right: 0.25em;
 }
 
 h1 {
@@ -481,6 +539,39 @@ h3 {
     font-size: 1.05em;
     font-weight: bold;
     margin: 1.2em 0 0.4em;
+}
+
+.chapter-subtitle {
+    text-align: center;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    margin: 0.4em 0 1em;
+    text-indent: 0;
+}
+
+.roman-subheading {
+    text-align: center;
+    font-weight: bold;
+    text-indent: 0;
+    margin: 1.2em 0 0.8em;
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.roman-list-item {
+    text-align: center;
+    text-indent: 0;
+    margin: 1.1em 0;
+}
+
+.roman-list-item b {
+    display: block;
+    margin-bottom: 0.35em;
 }
 
 /* Body Flow */
@@ -589,6 +680,26 @@ a.fn-link {
     text-decoration: none;
     vertical-align: super;
     font-size: 0.85rem;
+    display: inline-block;
+    line-height: 1;
+    margin-left: 0.25em;
+    margin-right: 0.08em;
+    padding: 0 0.14em;
+    text-indent: 0;
+}
+
+.noteref + .noteref {
+    margin-left: 0.35em;
+}
+
+.noteref sup {
+    line-height: 1;
+}
+
+.doxology {
+    text-align: center;
+    text-indent: 0;
+    margin: 2em 0 1.2em;
 }
 
 aside[epub\:type~="footnote"] {
@@ -608,6 +719,8 @@ aside[epub\:type~="endnote"] {
     text-indent: -6.5em;
     text-align: left;
     color: #000;
+    font-size: 0.95em;
+    line-height: 1.45;
 }
 
 .ContentsDescWrap {
@@ -680,6 +793,23 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {{
     text-decoration: none;
     vertical-align: super;
     font-size: 0.85rem;
+    display: inline-block;
+    line-height: 1;
+    margin-left: 0.25em;
+    margin-right: 0.08em;
+    padding: 0 0.14em;
+    text-indent: 0;
+}}
+.noteref + .noteref {{
+    margin-left: 0.35em;
+}}
+.noteref sup {{
+    line-height: 1;
+}}
+.doxology {{
+    text-align: center;
+    text-indent: 0;
+    margin: 2em 0 1.2em;
 }}
 .footnote {{
     font-size: 0.9em;

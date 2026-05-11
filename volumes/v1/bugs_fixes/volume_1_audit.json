@@ -1,0 +1,163 @@
+{
+  "epub": "volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-05-11T14:13:19.877894+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 4,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "untagged_greek",
+      "message": "Greek characters appear outside lang='el' context",
+      "chars": 55
+    },
+    {
+      "code": "possible_beta_code_residue",
+      "message": "Possible Beta Code residue detected",
+      "files": 2
+    },
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 6
+    },
+    {
+      "code": "missing_apple_options",
+      "message": "Missing Apple Books display-options file"
+    }
+  ],
+  "info": {
+    "file_count": 100,
+    "epub_size_bytes": 2383837,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 1: The Glory of Christ"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 92,
+    "spine_count": 83,
+    "xhtml_count": 85,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 3,
+    "language": {
+      "greek_chars": 3942,
+      "greek_untagged_chars": 55,
+      "hebrew_chars": 154,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 5,
+      "files_with_untagged_hebrew": 0
+    },
+    "footnotes": {
+      "noteref_count": 125,
+      "unique_noteref_targets": 124,
+      "endnote_anchor_count": 124,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": []
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 2,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 6,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [
+          {
+            "file": "EPUB/ch036.xhtml",
+            "text": "]y"
+          },
+          {
+            "file": "EPUB/ch045.xhtml",
+            "text": "]y"
+          }
+        ],
+        "escaped_lang_tag": [],
+        "untagged_greek": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "Chap. I. The foundation of the whole is laid in the indication of those words of our blessed Savior, wherein he declares himself to be the rock whereon the church is built: (Matthew 16:18:) “And I say also unto thee, Tha"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "ὀ͂"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "But because there neither was nor can be any composition, properly so called, of the divine and human natures, and because the Son of God was a perfect person before his incarnation, wherein he remained what he was, and "
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", ὁ"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", ὁ"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", ὁ"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "ὁ"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "ἡ"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", κ.τ.λ. (cap. 6)"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "ὁ"
+          }
+        ],
+        "untagged_hebrew": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "chapter 14 motives unto the love of christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "meditations and discourses on the glory of christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "the greater catechism chapter 1 of the scripture",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 8 of the state of corrupted nature",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 10 of the person of jesus christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 14 of the two-fold estate of christ",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "noteref_without_class": []
+      }
+    },
+    "nav_link_count": 83
+  }
+}

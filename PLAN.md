@@ -8,6 +8,8 @@ Stabilize and validate the 16-volume Owen Works EPUB3 pipeline. Hebrews is parke
 
 The active converter is `converter.py`, a PyMuPDF/PyMuPDF4LLM pipeline that extracts AGES PDFs, repairs text, converts Greek/Hebrew legacy encodings, merges footnotes, and packages EPUB3 files.
 
+Operational rule: work on one volume at a time. Do not run batch conversion or batch audits unless the user explicitly asks for them.
+
 ## Current State
 
 - All 16 Owen volumes have generated EPUB outputs in `volumes/vN/output/`.
@@ -59,6 +61,10 @@ Historical planning notes belong in `docs/archive/`.
 
 Goal: create a small, durable page set that represents the hard cases in each volume.
 
+- [x] Add initial `qa/golden_pages.json` seed for volume 1.
+- [ ] Expand golden page entries to all 16 volumes.
+- [ ] Add automated checks that map golden source pages to generated XHTML.
+
 For each volume, choose 5-10 PDF pages covering:
 
 - cover/title/front matter
@@ -97,6 +103,11 @@ Suggested schema:
 
 Goal: inspect generated EPUBs automatically after conversion.
 
+- [x] Add `scripts/audit_epub.py`.
+- [x] Generate initial volume 1 reports in `qa/reports/`.
+- [ ] Triage volume 1 warnings and decide which should become converter fixes.
+- [ ] Run audits on other volumes only when the user names a specific volume or explicitly requests a batch run.
+
 Suggested command:
 
 ```bash
@@ -117,11 +128,12 @@ Checks to implement:
 - NAV links resolve to existing XHTML files.
 - All spine items exist and are readable.
 
-Suggested output:
+Default output for volume-specific audits:
 
 ```text
-qa/reports/volume_1_audit.json
-qa/reports/volume_1_audit.md
+volumes/v1/bugs_fixes/volume_1_audit.json
+volumes/v1/bugs_fixes/volume_1_audit.md
+volumes/v1/bugs_fixes/BUGS_AND_FIXES.md
 ```
 
 ### Phase 4 — Alternate Extractor Comparison
@@ -150,6 +162,29 @@ Suggested artifact:
 ```text
 qa/reports/extractor_compare_v1.json
 ```
+
+### Phase 4A — Textual Integrity Audit
+
+Goal: make text fidelity measurable before manual proofreading.
+
+- [x] Add `scripts/audit_text_integrity.py`.
+- [x] Write volume-specific reports to `volumes/vN/bugs_fixes/`.
+- [x] Update `BUGS_AND_FIXES.md` with an automated textual-integrity section.
+- [x] Regenerate and audit Volume 1.
+- [x] Enforce holistic paragraph healing in `get_pages_text()`.
+- [x] Ensure normal chapter body text always uses the paragraph healer.
+- [ ] Triage the remaining Volume 1 split candidates around footnote/page-number residue.
+- [ ] Run textual-integrity audits on other volumes only when the user names a specific volume or explicitly requests a batch run.
+
+Volume 1 baseline after this pass:
+
+| Metric | Result |
+|--------|--------|
+| Approximate PDF-to-EPUB content-word coverage | 0.9854 |
+| Possible faulty paragraph splits | 3 |
+| Adjacent duplicate paragraphs | 0 |
+| Repeated word windows | 2 |
+| Detected chapter subtitles | 59 |
 
 ### Phase 5 — Per-Volume Validation Pass
 

@@ -2,6 +2,12 @@
 
 This repository is currently focused on the 16-volume Owen Works conversion. The Hebrews commentary is intentionally out of scope until the Owen volumes are stable and validated.
 
+## Execution Scope
+
+Work on one Owen volume at a time. Do not run all 16 volumes, batch audits, or batch conversions unless the user explicitly asks for a batch run.
+
+The PDFs share the same general AGES structure, so a fix proven on one volume is expected to transfer to the others with only small volume-specific adjustments. Prefer Volume 1 as the default test volume unless the user names another volume.
+
 ## Active Converter
 
 `converter.py` is the active EPUB3 pipeline.
@@ -23,6 +29,8 @@ Current outputs:
 - Intermediates: `volumes/vN/intermediate/volume_N.thml.xml`
 
 The `--hebrews` CLI flag exists, but the Hebrews pipeline is not implemented in the current checkout.
+
+Do not use the all-volumes command during normal work unless explicitly requested.
 
 ## Mandatory Protocols
 

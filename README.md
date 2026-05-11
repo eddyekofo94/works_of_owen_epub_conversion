@@ -4,6 +4,8 @@ This project converts the 16-volume Works of John Owen from AGES PDFs into polis
 
 The active goal is to stabilize the Owen Works pipeline. The Hebrews commentary is not part of the current work.
 
+Default workflow is one volume at a time. Do not run batch conversion or batch audits unless explicitly requested.
+
 ## Quick Start
 
 ```bash
@@ -16,6 +18,8 @@ The active goal is to stabilize the Owen Works pipeline. The Hebrews commentary 
 # Smoke test volume 1
 .venv/bin/python3 converter.py --test
 ```
+
+Use the all-volumes command only when a batch run has been explicitly requested.
 
 Generated EPUBs are written to:
 

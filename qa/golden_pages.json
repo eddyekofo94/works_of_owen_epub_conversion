@@ -1,0 +1,28 @@
+{
+  "1": [
+    {
+      "page": 1,
+      "kind": "front_matter",
+      "reason": "Title/front matter extraction and AGES boilerplate removal",
+      "checks": ["no_header", "title_layout"]
+    },
+    {
+      "page": 3,
+      "kind": "toc",
+      "reason": "Contents page layout and navigation source",
+      "checks": ["no_header", "toc_format"]
+    },
+    {
+      "page": 7,
+      "kind": "page_boundary",
+      "reason": "Known paragraph continuation across pages 7-8",
+      "checks": ["no_header", "paragraph_join"]
+    },
+    {
+      "page": 29,
+      "kind": "ghost_layer",
+      "reason": "Known risk page for repeated scripture-reference fragments",
+      "checks": ["no_duplicate_phrase"]
+    }
+  ]
+}

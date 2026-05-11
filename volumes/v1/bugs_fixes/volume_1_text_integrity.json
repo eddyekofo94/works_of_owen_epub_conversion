@@ -1,0 +1,1041 @@
+{
+  "volume": 1,
+  "pdf": {
+    "page_count": 644
+  },
+  "epub": {
+    "spine_text_files": 84,
+    "paragraph_count": 2906
+  },
+  "generated_at": "2026-05-11T14:43:57.394818+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    }
+  ],
+  "word_coverage": {
+    "pdf_content_tokens": 208263,
+    "epub_content_tokens": 206457,
+    "coverage_ratio": 0.9908,
+    "missing_word_samples": [
+      {
+        "word": "ft",
+        "pdf": 124,
+        "epub": 0
+      },
+      {
+        "word": "kai",
+        "pdf": 40,
+        "epub": 0
+      },
+      {
+        "word": "tou",
+        "pdf": 33,
+        "epub": 0
+      },
+      {
+        "word": "th",
+        "pdf": 38,
+        "epub": 9
+      },
+      {
+        "word": "oj",
+        "pdf": 23,
+        "epub": 0
+      },
+      {
+        "word": "ou",
+        "pdf": 17,
+        "epub": 0
+      },
+      {
+        "word": "lo",
+        "pdf": 26,
+        "epub": 10
+      },
+      {
+        "word": "ejn",
+        "pdf": 14,
+        "epub": 0
+      },
+      {
+        "word": "qeo",
+        "pdf": 14,
+        "epub": 0
+      },
+      {
+        "word": "tw",
+        "pdf": 13,
+        "epub": 0
+      },
+      {
+        "word": "hj",
+        "pdf": 13,
+        "epub": 0
+      },
+      {
+        "word": "kata",
+        "pdf": 11,
+        "epub": 0
+      },
+      {
+        "word": "qeou",
+        "pdf": 11,
+        "epub": 0
+      },
+      {
+        "word": "gov",
+        "pdf": 11,
+        "epub": 0
+      },
+      {
+        "word": "ajnqrw",
+        "pdf": 9,
+        "epub": 0
+      },
+      {
+        "word": "te",
+        "pdf": 12,
+        "epub": 4
+      },
+      {
+        "word": "nh",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "aujto",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "ei",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "pe",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "mi",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "su",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "pro",
+        "pdf": 9,
+        "epub": 4
+      },
+      {
+        "word": "dia",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "gou",
+        "pdf": 5,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": []
+  },
+  "page_coverage": {
+    "pages_checked": 633,
+    "weak_page_count": 12,
+    "weak_pages": [
+      {
+        "page": 37,
+        "hit_ratio": 0.333,
+        "sample": "composition they called nwsin fusikh because it was of diverse natures and nwsin kata su nqesin union by composition but because there neither was"
+      },
+      {
+        "page": 619,
+        "hit_ratio": 0.333,
+        "sample": "no essentially they are but one differing only in some outward administrations ephesians corinthians galatians hebrews can this church be wholly overthrown on the"
+      },
+      {
+        "page": 631,
+        "hit_ratio": 0.333,
+        "sample": "chapter of the communion of saints the fifth privilege of believers what is the communion of saints an holy conjunction between all god's people"
+      },
+      {
+        "page": 635,
+        "hit_ratio": 0.0,
+        "sample": "ft katoptri zw does not admit of the signification here ascribed to it by dr owen it denotes looking into mirror not through telescope"
+      },
+      {
+        "page": 636,
+        "hit_ratio": 0.333,
+        "sample": "ft the expression quoted by dr owen is founded upon the phrase in the original language dielhluqo ta tou oujrano uv having passed through"
+      },
+      {
+        "page": 637,
+        "hit_ratio": 0.333,
+        "sample": "ft popish traditions are false lights leading from god ft the authority of the scripture dependeth not on the authority of the church as"
+      },
+      {
+        "page": 638,
+        "hit_ratio": 0.333,
+        "sample": "ft this is that mysterious ark that must not be pried into nor the least little spoken about it wherein plain scripture goeth not"
+      },
+      {
+        "page": 639,
+        "hit_ratio": 0.333,
+        "sample": "ft though we have all lost our right unto the promise of the fist covenant yet all not restored by christ are under the"
+      },
+      {
+        "page": 641,
+        "hit_ratio": 0.333,
+        "sample": "secondly his own voluntary undergoing it thirdly by relaxation of the law in regard of the subject punished fourthly beneficial to us because united"
+      },
+      {
+        "page": 642,
+        "hit_ratio": 0.333,
+        "sample": "ft the only way to heaven is by the cross ft christ giveth life to all that world for whom he gave his life"
+      },
+      {
+        "page": 643,
+        "hit_ratio": 0.333,
+        "sample": "as having done nothing amiss in the other as having all amiss pardoned ft repentance includeth first alteration of the mind into hatred of"
+      },
+      {
+        "page": 644,
+        "hit_ratio": 0.0,
+        "sample": "ft this is one of the greatest mysteries of the roman magic and juggling that corporeal elements should have power to forgive sins and"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 24551,
+    "missing_dense_window_pages": 111,
+    "missing_dense_windows": [
+      {
+        "page": 9,
+        "sample": "depths of exploring the secretes of the heart his view of spiritual mindedness draws"
+      },
+      {
+        "page": 10,
+        "sample": "most of the impression his work which bears the title qeologoymena pantodaiia etc originally"
+      },
+      {
+        "page": 11,
+        "sample": "whoso name towers into just pre eminence among all his venerable compeers in puritan"
+      },
+      {
+        "page": 20,
+        "sample": "prefatory note to object of dr owen in this treatise is to illustrate the"
+      },
+      {
+        "page": 21,
+        "sample": "events ensued which justified these apprehensions of own prolonged controversy on the subject of"
+      },
+      {
+        "page": 49,
+        "sample": "being nothing but the ajnakefalaiwsiv mentioned by the apostle ephesians and he here affirms"
+      },
+      {
+        "page": 55,
+        "sample": "savior consider in the answer returned unto his inquiry the faith of peter in"
+      },
+      {
+        "page": 72,
+        "sample": "that divine treasure wherewith the scripture of truth is enriched make no pretense of"
+      },
+      {
+        "page": 90,
+        "sample": "place no small portion of divine blessedness self existence in its own immense being"
+      },
+      {
+        "page": 101,
+        "sample": "glory and the firmament always showed his handy work the invisible things of his"
+      },
+      {
+        "page": 106,
+        "sample": "unto his divine person as the son of the father the only begotten the"
+      },
+      {
+        "page": 135,
+        "sample": "as the prophet of the church but hereon they will never have experience of"
+      },
+      {
+        "page": 151,
+        "sample": "the four living creatures said amen and the four and twenty elders fell down"
+      },
+      {
+        "page": 156,
+        "sample": "proposed as full of tender compassion as he alone who is able to relieve"
+      },
+      {
+        "page": 157,
+        "sample": "hebrews so is he also as he alone who is able to succor to"
+      },
+      {
+        "page": 179,
+        "sample": "faith wherein it rests but god through him through him have we access by"
+      },
+      {
+        "page": 194,
+        "sample": "the spirit as he is the only begotten of the father he is the"
+      },
+      {
+        "page": 198,
+        "sample": "minister for the heirs of salvation hebrews were they not acted herein by their"
+      },
+      {
+        "page": 199,
+        "sample": "excite love unto him and desires after him hence is he called ywogh ajk"
+      },
+      {
+        "page": 203,
+        "sample": "divine goodness how great is his goodness how great is his beauty zechariah nothing"
+      },
+      {
+        "page": 211,
+        "sample": "the other the title of the th psalm is tdo ydiy ryvi song of"
+      },
+      {
+        "page": 212,
+        "sample": "wisdom and goodness continually represented unto them this is he who is the joy"
+      },
+      {
+        "page": 216,
+        "sample": "is but nextly and immediately for what he did what he did for us"
+      },
+      {
+        "page": 223,
+        "sample": "one whose benignity is ready to exercise loving kindness on all occasions which is"
+      },
+      {
+        "page": 239,
+        "sample": "own glory in and by their own immediate proper ends proverbs revelation power which"
+      },
+      {
+        "page": 269,
+        "sample": "and obedience absolute and universal into condition of self sufficiency of domination and rule"
+      },
+      {
+        "page": 284,
+        "sample": "is the original fountain and spring ejx ou from whom from whose original authority"
+      },
+      {
+        "page": 285,
+        "sample": "there is one lord even jesus christ distinct person from the father di ou"
+      },
+      {
+        "page": 289,
+        "sample": "things he might have the pre eminence colossians and shall herein wholly avoid the"
+      },
+      {
+        "page": 291,
+        "sample": "is clearly expressed and to take it to be his own his own nature"
+      },
+      {
+        "page": 295,
+        "sample": "same being or nature the father in the son the son in the father"
+      },
+      {
+        "page": 300,
+        "sample": "our human nature to be his own his own nature wherein he was made"
+      },
+      {
+        "page": 302,
+        "sample": "some things are spoken of the person of christ wherein the enunciation is verified"
+      },
+      {
+        "page": 318,
+        "sample": "on high ephesians that is heaven he went into heaven acts and the heaven"
+      },
+      {
+        "page": 319,
+        "sample": "there on the throne of god revelation on the right hand of the majesty"
+      },
+      {
+        "page": 320,
+        "sample": "the th to the th inclusively whose titles are twol mh yreycoi songs of"
+      },
+      {
+        "page": 322,
+        "sample": "gentile converts and the church when ymi ybeydig the voluntaries of the people those"
+      },
+      {
+        "page": 325,
+        "sample": "so is it represented revelation it is said of the whole number of the"
+      },
+      {
+        "page": 331,
+        "sample": "of the glory of these things is it that we can apprehend in this"
+      },
+      {
+        "page": 334,
+        "sample": "necessary unto the effectual discharge of it hence it is said of him that"
+      }
+    ]
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 641,
+    "top_windows_usable": 597,
+    "skipped_top_window_count": 21,
+    "skipped_top_windows": [
+      {
+        "page": 37,
+        "window": "composition they called nwsin fusikh because it was of diverse natures and nwsin kata",
+        "sample": "composition they called \"e]nwsin fusikh<n\", because it was of diverse natures, and \"e[nwsin kata< su>nqesin\", a union by composition.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 41,
+        "window": "adhort ad gentes men ga tou qeou eijkw oj lo gov aujtou kai uijo",
+        "sample": "Adhort. ad Gentes: \"H men ga<r tou~ Qeou~ eijkw<n oJ lo>gov aujtou~, kai< uiJo<v tou~ nou~ gnh>siov, oJ qei~ov lo>gov fwto<v ajrce>tupon fw~v, eijkw<n",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 45,
+        "window": "as there is one faith in christ and one baptism of truth although we",
+        "sample": "as there is one faith in Christ, and one baptism of truth, although we are baptized and believe in the Father, Son, and Spirit, \"kata< to<n aujto<n,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 51,
+        "window": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit",
+        "sample": "\"Imago, [id est, Verbum Dei, ] ad eum qui est d imaginem, [hoc est, hominem, ] venit, et quaerit imago eum qui est ad similitudinem sui,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 67,
+        "window": "minds of men with endless imaginations some denied him to have any real human",
+        "sample": "minds of men with endless imaginations. Some denied him to have any real human nature, but [alleged him] to have been a phantasm,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 109,
+        "window": "ejn prosw pw tou christou for in him that glory is represented unto us",
+        "sample": "\"ejn prosw>pw| tou~ Christou~\"; for in him that glory is represented unto us.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 113,
+        "window": "that manifestation which is made in christ they say of it as the israelites",
+        "sample": "that [manifestation] which is made in Christ, they say of it, as the Israelites did of manna, that came down from heaven, \"What is it?\" we",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 148,
+        "window": "with the same honor that is divine sacred religious and supreme to honor the",
+        "sample": "[1.] With the same honor; that is, divine, sacred, religious, and supreme. To honor the Father with other honor, is to dishonor him. When men design to",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 150,
+        "window": "it given in charge unto the angels above for when he brought the first",
+        "sample": "it given in charge unto the angels above. For when he brought the First- begotten into the world, he said, \"Proskunhsa>twsan aujtw~| pa>ntev",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 294,
+        "window": "ejpidhmi kai parousi hj oijkonomi to the same purpose hj dia sarko ojmili his",
+        "sample": "ejpidhmi>a, kai< parousi>a, hJ oijkonomi>a\", to the same purpose; \"hJ dia< sarko<v oJmili>a\", \"his conversation in or by the flesh;\" \"hJ dia<",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 299,
+        "window": "he allowed it to be kat ajxi an by way of dignity and honor",
+        "sample": "[3.] He allowed it to be \"kat ajxi>an\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 322,
+        "window": "gentile converts and the church when ymi ybeydig the voluntaries of the people those",
+        "sample": "Gentile converts and the church; when \"µyMi[1 ybeydig]\", the \"voluntaries of the people,\" (those made willing in the day of his power,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 559,
+        "window": "preserved in us by them are we made partakers of this divine nature peter",
+        "sample": "preserved in us; by them are we made partakers of this divine nature, Peter 1:4; and through them is it continued in us. Now [as to] promises of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 635,
+        "window": "ft katoptri zw does not admit of the signification here ascribed to it by",
+        "sample": "FT5 Katoptri>zw does not admit of the signification here ascribed to it by Dr Owen. It denotes looking into a mirror, not through a telescope:",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 636,
+        "window": "ft the expression quoted by dr owen is founded upon the phrase in the",
+        "sample": "FT10 The expression quoted by Dr Owen is founded upon the phrase in the original language, dielhluqo>ta tou<v oujrano>uv \"having passed",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 637,
+        "window": "ft popish traditions are false lights leading from god ft the authority of the",
+        "sample": "FT21 Popish traditions are false lights, leading from God. FT22 The authority of the Scripture dependeth not on the authority of the",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 638,
+        "window": "ft this is that mysterious ark that must not be pried into nor the",
+        "sample": "FT34 This is that mysterious ark that must not be pried into, nor the least little spoken about it, wherein plain Scripture goeth not before.",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 639,
+        "window": "ft though we have all lost our right unto the promise of the fist",
+        "sample": "FT49 Though we have all lost our right unto the promise of the fist covenant, yet all not restored by Christ are under the commination and",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 640,
+        "window": "ft the end of this is jesus christ to all that fly for refuge",
+        "sample": "FT60 The end of this is Jesus Christ, to all that fly for refuge to the hope set before them.",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 642,
+        "window": "ft the only way to heaven is by the cross ft christ giveth life",
+        "sample": "FT82 The only way to heaven is by the cross. FT83 Christ giveth life to all that world for whom he gave his life.",
+        "reason": "source footnote block"
+      },
+      {
+        "page": 644,
+        "window": "ft this is one of the greatest mysteries of the roman magic and juggling",
+        "sample": "FT112 This is one of the greatest mysteries of the Roman magic and juggling, that corporeal elements should have a power to forgive sins, and confer",
+        "reason": "source footnote block"
+      }
+    ],
+    "missing_top_window_count": 1,
+    "missing_top_windows": [
+      {
+        "page": 641,
+        "window": "secondly his own voluntary undergoing it thirdly by relaxation of the law in regard",
+        "sample": "secondly, his own voluntary undergoing it; thirdly, by a relaxation of the law in regard of the subject punished; fourthly, beneficial to us,"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 586,
+    "bottom_windows_usable": 552,
+    "skipped_bottom_window_count": 9,
+    "skipped_bottom_windows": [
+      {
+        "page": 19,
+        "window": "have suffered the loss of all things and do count them but dung that",
+        "sample": "of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them [but] dung, that I",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 26,
+        "window": "oijkodomh sw mou th ejhkklhsi an kai pu lai dou ouj katiscu sousin aujth",
+        "sample": "oijkodomh>sw mou th<n ejhkklhsi>an, kai< pu>lai a[|dou ouj katiscu>sousin aujth~v\".",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 45,
+        "window": "does not follow that we may make request in our prayers unto one person",
+        "sample": "tria<v ejn eJni< ojno>mati ajriqmoume>nh\", Epiphan. Ancorat., 8 22,) it does not follow that we may make a request in our prayers unto one person,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 50,
+        "window": "as god and ambrose in psalm octonar decim of the authorized english version psalm",
+        "sample": "man may become\" (as) \"God.\" And Ambrose, in Psalm 118 Octonar. decim.: [of the authorized English version, Psalm 119 73:]",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 192,
+        "window": "the sober sedate actings of the rational faculties of our souls for whereas all",
+        "sample": "[3.] As it is described by those who applaud it, it is not suited unto the sober, sedate actings of the rational faculties of our souls. For whereas all",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 196,
+        "window": "love of the body is derived unto it from the love unto the head",
+        "sample": "ejxoch>n\"; as in all things he was to have the preeminence, 1:18. The love of the body is derived unto it from the love unto the Head;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 284,
+        "window": "authority love goodness and power are all these things that expression from him peculiarly",
+        "sample": "ou=\", from whom — [from] whose original authority, love, goodness, and power — are all these things. That expression, \"from him,\" peculiarly",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 293,
+        "window": "god such are ejnsa rkwsiv incarnation ejnswma twsiv embodying ejnanqrw phsiv inhumanation hj despotikh",
+        "sample": "of God. Such are \"ejnsa>rkwsiv\", \"incarnation;\" \"ejnswma>twsiv\", \"embodying,\" \"ejnanqrw>phsiv\", \"inhumanation;\" \"hJ despotikh<",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 635,
+        "window": "opposition to nwsiv union deposed by the third general council of ephesus and died",
+        "sample": "(junction), or ejnoi>khsiv (indwelling), in opposition to e[nwsiv (union) deposed by the Third General Council of Ephesus, A.D.431, and died",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_bottom_window_count": 13,
+    "missing_bottom_windows": [
+      {
+        "page": 87,
+        "window": "zechariah or the originally between jehovah and the branch",
+        "sample": "Zechariah 6:13,) or the originally between Jehovah and the Branch, ("
+      },
+      {
+        "page": 99,
+        "window": "exodus moses had moses beseech thee show me thy glory",
+        "sample": "Exodus 33:18. Moses had Moses: \"I beseech thee, show me thy glory:\""
+      },
+      {
+        "page": 105,
+        "window": "john the word was god in with god and the word was god",
+        "sample": "John 1:1. \"The Word was God,\" in with God, and the Word was God:\""
+      },
+      {
+        "page": 156,
+        "window": "and knows how to have compassion on them that are out of the way",
+        "sample": "suffered, being tempted, he is touched with a feeling of our infirmities, and knows how to have compassion on them that are out of the way,"
+      },
+      {
+        "page": 195,
+        "window": "matthew lo voice from heaven saying heaven afterwards",
+        "sample": "Matthew 3:17, \"Lo, a voice from heaven, saying, heaven afterwards,"
+      },
+      {
+        "page": 318,
+        "window": "chap not these aspectable heavens which we behold for in his ascension he passed",
+        "sample": "1:11, — and the \"heaven must receive him,\" chap. 3:21; not these aspectable heavens which we behold, — for in his ascension \"he passed"
+      },
+      {
+        "page": 325,
+        "window": "it represented the whole number of the saints above that have passed through the",
+        "sample": "solemn worship. So is it represented, the whole number of the saints above that have passed through the"
+      },
+      {
+        "page": 380,
+        "window": "corinthians not to see the wisdom apostle declares at large",
+        "sample": "1 Corinthians 1:21-25. Not to see the wisdom apostle declares at large,"
+      },
+      {
+        "page": 385,
+        "window": "corinthians may have with open face though yet as in glass",
+        "sample": "2 Corinthians 3:18. may have with open face, though yet \"as in a glass!\""
+      },
+      {
+        "page": 488,
+        "window": "john who can declare what appear what we ourselves shall be",
+        "sample": "1 John 3:2. Who can declare what a appear what we ourselves shall be,"
+      },
+      {
+        "page": 530,
+        "window": "john one that is born of the spirit",
+        "sample": "John 3:8. one that is born of the Spirit,\""
+      },
+      {
+        "page": 545,
+        "window": "proverbs you come to hear the word of the wisdom of god",
+        "sample": "Proverbs 6:9-11. You come to hear the word, of the Wisdom of God,"
+      },
+      {
+        "page": 582,
+        "window": "psalm they looked unto him and this direction is given us",
+        "sample": "Psalm 34:5, \"They looked unto him, and 1. This direction is given us,"
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2482,
+    "split_candidate_count": 13,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "But —",
+        "next": "There was yet more required thereunto, or to render his offices effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "And he discharged this office four ways: —",
+        "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
+        "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "nce, or a readiness thereunto. Hence is that expression, \"He bowed down his head and worshipped,\" [ Genesis 24:26;] see [also] Psalm 95:6. And these external signs are of two sorts",
+        "next": "(1st,) Such as are natural and occasional;"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "ofession of the gospel, are another season rendering this peculiar invocation of Christ both comely and necessary. Two things will befall the minds of believers in such a season; —",
+        "next": "[1st,] that their thoughts will be neatly exercised about him, and conversant with him. They cannot but continually think and meditate on him for whom they suffer. None ever suffer"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "There can be but two senses of these words",
+        "next": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh",
+        "next": "(2ndly,) That continuing to be what it was, it was made to be also what before it was not."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "nsidered as the act of this or that nature in him alone, but it is the act and work of the whole person, — of him that is both God and man in one person. And this gives occasion, —",
+        "next": "Unto that variety of enunciations which is used in the Scripture concerning him; which I shall name only, and conclude."
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "(4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,",
+        "next": "(5thly,) Round about them were the tribes in their order."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "is, they shall never attain true rest or satisfaction in their own minds. He it is alone in whom the race of mankind may boast and glory, on whom all its felicities do depend. For,",
+        "next": "He it is in whom our nature, which was debased as low as hell by apostasy from God, is exalted above the whole creation. Our nature, in she original constitution of it, in the pers"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "the person of Christ. And this must needs make thoughts of him full of refreshment unto their souls. Let us take care of our persons, — the glory of our nature is safe in him. For,",
+        "next": "In him the relation of our nature unto God is eternally secured. We were created in a covenant relation unto God. Our nature was related unto him in a way of friendship, of likenes"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": " minds of men, — Christ is called, and is, the \"light of men,\" the \"light of the world;\" because in and by him alone this darkness is dispelled, as he is the \"Sun of Righteousness\"",
+        "next": "This darkness in the minds of men, this ignorance of God, his nature and his will, was the original of all evil unto the world, and yet continues so to be. For,"
+      },
+      {
+        "file": "EPUB/ch051.xhtml",
+        "previous": "A. From the holy 21 Scripture only. —",
+        "next": "Q. 3. What is the Scripture? Isaiah 8:20; John 5:39."
+      }
+    ],
+    "structural_start_exclusions": 164,
+    "short_fragment_count": 35,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "For,"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "As,"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "Wherefore —"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "And —"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "All this himself instructs us in."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "This must be declared."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "For —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "For —"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "2ndly, Invocation."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "Or —"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "And I shall briefly show"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "Wherefore, —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "As, —"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "And I shall inquire, —"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "For, -"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Wherefore,"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "Therefore, —"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "As,"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "END."
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "To The Reader."
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "- Chapter 20."
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "- Chapter 21."
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "Glory be to God on high!"
+      },
+      {
+        "file": "EPUB/ch051.xhtml",
+        "text": "What is Christian religion?"
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "text": "6, 9, 11, 24."
+      },
+      {
+        "file": "EPUB/ch055.xhtml",
+        "text": "13."
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Galatians 3."
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "6, 9, 10."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "10-12."
+      },
+      {
+        "file": "EPUB/ch067.xhtml",
+        "text": "OF FAITH."
+      },
+      {
+        "file": "EPUB/ch069.xhtml",
+        "text": "5."
+      },
+      {
+        "file": "EPUB/ch071.xhtml",
+        "text": "13, 22, 25."
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "text": "37."
+      },
+      {
+        "file": "EPUB/ch074.xhtml",
+        "text": "29."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 4,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "15. It is followed in Chapters 16 and 17 with an inquire into the divine wisdom as manifested in the person of Christ. The hypostatical union is explained, Chapter 18. Two more Chapters, 19 and 20, close the work, with a"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "15. So is it with all other truths whatever."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "53. Nevertheless their conceptions concerning them were dark and obscure. It was his person that their faith principally regarded. Thence were they filled with desires and expectations of his coming, or his exhibition an"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in them; so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy"
+      }
+    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 313,
+    "epub_marker_count": 313,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 0,
+    "excess_markers": [],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the glory of god in the face of jesus christ",
+      "count": 12
+    },
+    {
+      "phrase": "between our beholding the glory of christ by faith in",
+      "count": 6
+    },
+    {
+      "phrase": "our beholding the glory of christ by faith in this",
+      "count": 6
+    },
+    {
+      "phrase": "beholding the glory of christ by faith in this world",
+      "count": 6
+    },
+    {
+      "phrase": "the glory of christ by faith in this world and",
+      "count": 6
+    },
+    {
+      "phrase": "glory of christ by faith in this world and by",
+      "count": 6
+    },
+    {
+      "phrase": "of christ by faith in this world and by sight",
+      "count": 6
+    },
+    {
+      "phrase": "christ by faith in this world and by sight in",
+      "count": 6
+    },
+    {
+      "phrase": "by faith in this world and by sight in heaven",
+      "count": 6
+    },
+    {
+      "phrase": "unto us child is born unto us son is given",
+      "count": 6
+    },
+    {
+      "phrase": "of the glory of god in the face of jesus",
+      "count": 6
+    },
+    {
+      "phrase": "us child is born unto us son is given and",
+      "count": 5
+    },
+    {
+      "phrase": "the brightness of his glory and the express image of",
+      "count": 5
+    },
+    {
+      "phrase": "brightness of his glory and the express image of his",
+      "count": 5
+    },
+    {
+      "phrase": "of his glory and the express image of his person",
+      "count": 5
+    },
+    {
+      "phrase": "are changed into the same image from glory to glory",
+      "count": 5
+    },
+    {
+      "phrase": "both which are in heaven and which are on earth",
+      "count": 5
+    },
+    {
+      "phrase": "the only-begotten son who is in the bosom of the",
+      "count": 5
+    },
+    {
+      "phrase": "only-begotten son who is in the bosom of the father",
+      "count": 5
+    },
+    {
+      "phrase": "down at the right hand of the majesty on high",
+      "count": 5
+    },
+    {
+      "phrase": "the knowledge of the glory of god in the face",
+      "count": 5
+    },
+    {
+      "phrase": "knowledge of the glory of god in the face of",
+      "count": 5
+    },
+    {
+      "phrase": "of the only-begotten of the father full of grace and",
+      "count": 5
+    },
+    {
+      "phrase": "the only-begotten of the father full of grace and truth",
+      "count": 5
+    },
+    {
+      "phrase": "of the glory of christ in this world by faith",
+      "count": 5
+    }
+  ],
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}
