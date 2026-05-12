@@ -1,0 +1,51 @@
+{
+  "description": "Regression budgets derived from known Volume 1 bug classes. Lower these counts, or add absent_samples, whenever a bug implementation removes a warning class or specific sample.",
+  "default": {
+    "text_integrity": {
+      "allowed_warning_codes": [
+        "weak_page_coverage",
+        "dense_source_window_loss",
+        "front_matter_toc_loss",
+        "top_of_page_text_loss",
+        "bottom_of_page_text_loss",
+        "paragraph_split_candidates",
+        "inline_structural_markers",
+        "suspicious_large_number_starts",
+        "overlong_heading_candidates",
+        "missing_enumerator_markers",
+        "enumerator_sequence_candidates",
+        "repeated_windows"
+      ],
+      "max_split_candidate_count": 61,
+      "max_inline_structural_candidate_count": 1,
+        "max_repeated_window_count": 25,
+        "max_front_toc_missing_pages": 0,
+        "max_reference_continuation_split_count": 0,
+      "max_citation_continuation_split_count": 0,
+      "max_adjacent_duplicate_count": 0,
+      "max_missing_marker_count": 0
+    },
+    "epub": {
+      "allowed_warning_codes": [
+        "untagged_greek",
+        "possible_beta_code_residue",
+        "repeated_phrases",
+        "missing_apple_options",
+        "orphan_endnotes"
+      ],
+      "max_error_count": 0,
+      "max_greek_untagged_chars": 55,
+      "max_hebrew_untagged_chars": 0,
+      "max_repeated_phrase_count": 7,
+      "max_beta_code_files": 2,
+      "max_escaped_lang_tag_files": 0,
+      "max_literal_footnote_marker_files": 0,
+      "max_empty_bracket_noise_files": 0,
+      "max_noteref_without_class": 0
+    },
+    "absent_samples": []
+  },
+  "volumes": {
+    "1": {}
+  }
+}

@@ -1,0 +1,5 @@
+"I want to refactor the font selection in shared.py and converter.py to allow a per-volume body font while keeping SBL Greek and Hebrew fixed.
+	1.	Update VOLUME_CONFIG in shared.py: Add a 'body_font' key to each volume entry (e.g., 1: { 'body_font': 'Cardo', ... }).
+	2.	Modify select_primary_font: Instead of a hardcoded list, have it take the 'body_font' string from the config and look for all associated files (Regular, Bold, Italic) for that specific family in the fonts/ folder.
+	3.	Lock Scholarly Fonts: Ensure SBL_Greek and SBL_Hebrew are always injected as supplemental fonts regardless of the body font chosen.
+	4.	Update CSS Generation: In generate_font_styles, map the chosen body font to the body and p selectors, but ensure .greek and .hebrew classes remain strictly mapped to the SBL files."

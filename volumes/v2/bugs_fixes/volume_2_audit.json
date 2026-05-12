@@ -1,0 +1,81 @@
+{
+  "epub": "volumes/v2/output/volume_2.epub",
+  "generated_at": "2026-05-12T20:26:22.105750+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 1
+    },
+    {
+      "code": "missing_apple_options",
+      "message": "Missing Apple Books display-options file"
+    }
+  ],
+  "info": {
+    "file_count": 82,
+    "epub_size_bytes": 6336876,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 2: Communion with God"
+    ],
+    "creators": [
+      "John Owen",
+      "William H. Goold"
+    ],
+    "manifest_count": 74,
+    "spine_count": 50,
+    "xhtml_count": 52,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 18,
+    "language": {
+      "greek_chars": 3541,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 564,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0
+    },
+    "footnotes": {
+      "noteref_count": 26,
+      "unique_noteref_targets": 26,
+      "endnote_anchor_count": 26,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": []
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 1,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "part 3 of communion with the holy ghost",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": []
+      }
+    },
+    "nav_link_count": 50
+  }
+}

@@ -364,6 +364,59 @@ def dense_source_window_integrity(pdf_pages: list[str], epub_text: str) -> dict[
     }
 
 
+def looks_like_front_toc_continuation(text: str) -> bool:
+    upper = text.upper()
+    if re.match(r"^\d*\s*(?:GENERAL PREFACE|PREFACE|PREFATORY NOTE|TO THE READER)\b", upper):
+        return False
+    chapter_hits = len(re.findall(r"\bCHAPTER\s+\d+", upper))
+    part_hits = len(re.findall(r"\bPART\s+\d+", upper))
+    numbered_hits = len(re.findall(r"(?:^|\s)(?:[IVXLCDM]+\.|\d+\.)\s+[—A-Z]", text, re.I))
+    return (chapter_hits + part_hits + numbered_hits) >= 1
+
+
+def front_matter_toc_integrity(pdf_pages: list[str], epub_text: str) -> dict[str, Any]:
+    """Strictly check early CONTENTS pages; global coverage hides these losses."""
+    epub_norm = normalized_word_string(epub_text)
+    toc_pages = []
+    in_toc = False
+    for page_no, page_text in enumerate(pdf_pages[:8], start=1):
+        upper = page_text.upper()
+        if "CONTENTS" in upper:
+            in_toc = True
+            toc_pages.append((page_no, page_text))
+            continue
+        if in_toc and looks_like_front_toc_continuation(page_text):
+            toc_pages.append((page_no, page_text))
+            continue
+        if in_toc:
+            break
+
+    missing = []
+    checked_windows = 0
+    for page_no, page_text in toc_pages:
+        words = content_words(page_text, include_common=True)
+        if len(words) < 30:
+            continue
+        starts = sorted({0, max(0, len(words) // 3), max(0, (len(words) * 2) // 3), max(0, len(words) - 12)})
+        windows = [words[start:start + 12] for start in starts if len(words[start:start + 12]) >= 10]
+        checked_windows += len(windows)
+        hits = sum(1 for window in windows if " ".join(window) in epub_norm)
+        ratio = hits / len(windows) if windows else 1.0
+        if ratio < 0.75:
+            missing.append({
+                "page": page_no,
+                "hit_ratio": round(ratio, 3),
+                "sample": " ".join(words[:28]),
+            })
+
+    return {
+        "front_toc_pages_checked": len(toc_pages),
+        "front_toc_windows_checked": checked_windows,
+        "missing_front_toc_pages": len(missing),
+        "missing_front_toc_samples": missing,
+    }
+
+
 def is_running_header_or_page_number(text: str) -> bool:
     stripped = clean_text(text)
     if not stripped:
@@ -664,8 +717,16 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
             marker_start = match.start("marker")
             if marker_start <= 2:
                 continue
+            marker = match.group("marker").strip()
+            after_marker = text[match.end("marker"):match.end("marker") + 40]
+            if re.fullmatch(r"[IVXLCDM]+\.", marker, re.I) and re.match(r"\s*[—-]\s*[IVXLCDM]+\.", after_marker, re.I):
+                continue
             context = text[max(0, marker_start - 90):marker_start]
             if context_is_reference_or_citation(context) and not re.match(r"\s*(?:\([0-9]+\.?\)|\[[0-9]+\.?\])", match.group("marker")):
+                continue
+            # Skip markers inside quoted passages
+            before_marker = text[:marker_start]
+            if before_marker.count('"') % 2 != 0 or before_marker.count('\u201c') > before_marker.count('\u201d'):
                 continue
             return True
 
@@ -807,7 +868,14 @@ def enumerator_integrity(pdf_pages: list[str], paragraphs: list[Paragraph]) -> d
     for para in paragraphs:
         epub_markers.extend(iter_enumerators(para.text, f"{para.file}#p{para.index}"))
 
-    comparable_pdf = [m for m in pdf_markers if m.family != "bare_ordinal"]
+    def is_front_matter_toc_marker(marker: Enumerator) -> bool:
+        match = re.match(r"pdf:p(\d+)$", marker.location)
+        return bool(match and int(match.group(1)) <= 6)
+
+    comparable_pdf = [
+        m for m in pdf_markers
+        if m.family != "bare_ordinal" and not is_front_matter_toc_marker(m)
+    ]
     comparable_epub = [m for m in epub_markers if m.family != "bare_ordinal"]
     pdf_counts = Counter(m.marker for m in comparable_pdf)
     epub_counts = Counter(m.marker for m in comparable_epub)
@@ -933,6 +1001,7 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     word_coverage = compare_word_coverage(pdf_text, epub_text)
     page_scan = page_coverage(pdf_pages, epub_text)
     dense_scan = dense_source_window_integrity(pdf_pages, epub_text)
+    front_toc_scan = front_matter_toc_integrity(pdf_pages, epub_text)
     top_scan = top_of_page_integrity(pdf_path, epub_text)
     bottom_scan = bottom_of_page_integrity(pdf_path, epub_text)
     para_scan = paragraph_integrity(paragraphs)
@@ -954,6 +1023,11 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
         warnings.append({
             "code": "dense_source_window_loss",
             "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+        })
+    if front_toc_scan["missing_front_toc_pages"]:
+        warnings.append({
+            "code": "front_matter_toc_loss",
+            "message": "Some early CONTENTS pages have no strong text-window match in the EPUB",
         })
     if top_scan["missing_top_window_count"]:
         warnings.append({
@@ -1039,6 +1113,7 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
         "word_coverage": word_coverage,
         "page_coverage": page_scan,
         "dense_source_window_integrity": dense_scan,
+        "front_matter_toc_integrity": front_toc_scan,
         "top_of_page_integrity": top_scan,
         "bottom_of_page_integrity": bottom_scan,
         "paragraph_integrity": para_scan,
@@ -1063,6 +1138,7 @@ def render_markdown(result: dict[str, Any]) -> str:
     wc = result["word_coverage"]
     pc = result["page_coverage"]
     ds = result["dense_source_window_integrity"]
+    ft = result["front_matter_toc_integrity"]
     tp = result["top_of_page_integrity"]
     bp = result["bottom_of_page_integrity"]
     pi = result["paragraph_integrity"]
@@ -1085,6 +1161,8 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Weak page matches: {pc['weak_page_count']}",
         f"- Dense source windows checked: {ds['dense_windows_checked']}",
         f"- Missing dense source-window pages: {ds['missing_dense_window_pages']}",
+        f"- Front CONTENTS pages checked: {ft['front_toc_pages_checked']}",
+        f"- Missing front CONTENTS pages: {ft['missing_front_toc_pages']}",
         f"- Top-of-page body windows checked: {tp['top_windows_usable']}",
         f"- Top-of-page windows skipped as unstable: {tp['skipped_top_window_count']}",
         f"- Missing top-of-page body windows: {tp['missing_top_window_count']}",
@@ -1121,6 +1199,7 @@ def render_markdown(result: dict[str, Any]) -> str:
         lines.append("")
 
     add_sample_section(lines, "Missing Dense Source Windows", ds["missing_dense_windows"], ["page", "sample"])
+    add_sample_section(lines, "Missing Front CONTENTS Pages", ft["missing_front_toc_samples"], ["page", "hit_ratio", "sample"])
     add_sample_section(lines, "Missing Top-Of-Page Body Windows", tp["missing_top_windows"], ["page", "sample"])
     add_sample_section(lines, "Missing Bottom-Of-Page Body Windows", bp["missing_bottom_windows"], ["page", "sample"])
     add_sample_section(lines, "Possible Paragraph Splits", pi["split_candidates"], ["file", "previous", "next"])
@@ -1173,6 +1252,7 @@ def render_bug_log_section(result: dict[str, Any], json_path: Path, md_path: Pat
     wc = result["word_coverage"]
     pc = result["page_coverage"]
     ds = result["dense_source_window_integrity"]
+    ft = result["front_matter_toc_integrity"]
     tp = result["top_of_page_integrity"]
     bp = result["bottom_of_page_integrity"]
     pi = result["paragraph_integrity"]
@@ -1197,6 +1277,8 @@ def render_bug_log_section(result: dict[str, Any], json_path: Path, md_path: Pat
         f"| Weak page matches | {pc['weak_page_count']} |",
         f"| Dense source windows checked | {ds['dense_windows_checked']} |",
         f"| Missing dense source-window pages | {ds['missing_dense_window_pages']} |",
+        f"| Front CONTENTS pages checked | {ft['front_toc_pages_checked']} |",
+        f"| Missing front CONTENTS pages | {ft['missing_front_toc_pages']} |",
         f"| Top-of-page body windows checked | {tp['top_windows_usable']} |",
         f"| Top-of-page windows skipped as unstable | {tp['skipped_top_window_count']} |",
         f"| Missing top-of-page body windows | {tp['missing_top_window_count']} |",

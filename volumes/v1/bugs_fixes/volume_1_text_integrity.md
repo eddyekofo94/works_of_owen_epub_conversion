@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 8
+- Warnings: 7
 - PDF pages: 644
 - EPUB text files: 84
 - EPUB paragraphs/headings: 2860
@@ -9,36 +9,36 @@
 ## Coverage
 
 - PDF content tokens: 208263
-- EPUB content tokens: 206473
-- Approximate PDF-to-EPUB coverage ratio: 0.9908
+- EPUB content tokens: 203650
+- Approximate PDF-to-EPUB coverage ratio: 0.977
 - Pages checked: 633
-- Weak page matches: 12
-- Dense source windows checked: 24587
-- Missing dense source-window pages: 110
+- Weak page matches: 85
+- Dense source windows checked: 4783
+- Missing dense source-window pages: 564
 - Top-of-page body windows checked: 597
 - Top-of-page windows skipped as unstable: 21
-- Missing top-of-page body windows: 1
+- Missing top-of-page body windows: 10
 - Bottom-of-page body windows checked: 552
 - Bottom-of-page windows skipped as unstable: 9
-- Missing bottom-of-page body windows: 13
+- Missing bottom-of-page body windows: 22
 
 ## Paragraphs
 
 - Body paragraphs checked: 2436
-- Possible faulty paragraph splits: 13
-- Structural starts excluded from split warnings: 152
-- Short fragments: 35
+- Possible faulty paragraph splits: 61
+- Structural starts excluded from split warnings: 127
+- Short fragments: 37
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 1
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 1
+- Suspicious large-number starts: 2
 - Roman heading candidates: 0
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 313
-- EPUB enumerator markers: 313
+- EPUB enumerator markers: 296
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 0
 
@@ -49,60 +49,65 @@
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 
 ## Missing Dense Source Windows
 
-- page: 9; sample: depths of exploring the secretes of the heart his view of spiritual mindedness draws
+- page: 7; sample: general preface it would be presumption to enter upon any commendation of john owen
+- page: 8; sample: of locke immortal among the political authors of great britain and there is truth
+- page: 9; sample: embraces the most comprehensive view of this vitally-important subject his exposition of psalm exhibits
 - page: 10; sample: most of the impression his work which bears the title qeologoymena pantodaiia etc originally
-- page: 11; sample: in and the five volumes of his collected works were issued from to charneck
-- page: 19; sample: cristologia christologia or declaration of the glorious mystery of the person of christ god
-- page: 20; sample: prefatory note to object of dr owen in this treatise is to illustrate the
-- page: 21; sample: events ensued which justified these apprehensions of own prolonged controversy on the subject of
-- page: 49; sample: being nothing but the ajnakefalaiwsiv mentioned by the apostle ephesians and he here affirms
-- page: 55; sample: savior consider in the answer returned unto his inquiry the faith of peter in
-- page: 72; sample: that divine treasure wherewith the scripture of truth is enriched make no pretense of
-- page: 90; sample: place no small portion of divine blessedness self existence in its own immense being
+- page: 11; sample: to persevere in their undertaking the scheme however proved abortive nothing appeared in addition
+- page: 12; sample: to publish them in respectable form it deserved well of the christian public and
+- page: 13; sample: he appends humorous note to his treatise entitled salus electorum sauguis iesu or the
+- page: 14; sample: deemed incapable in the more important treatises we have endeavored to make judicious and
+- page: 15; sample: for all the meaning that could be expiscated from them and the riddle they
+- page: 16; sample: sometimes at loss to judge of the treatise of an old author whether it
 
 ## Missing Top-Of-Page Body Windows
 
-- page: 641; sample: secondly, his own voluntary undergoing it; thirdly, by a relaxation of the law in regard of the subject punished; fourthly, beneficial to us,
+- page: 43; sample: factores autem sermonum ejus facti, communionem habeamus cum ipso".
+- page: 46; sample: and then immediately repeat it unto another; for it would thence follow, that the person unto whom we make that request in the second place, was
+- page: 54; sample: whilst he was present, is somewhat uncouth; and whilst they live, they shall never make the pope president where Christ is present. The truth is,
+- page: 176; sample: 1. That each person is equally the object of our faith, because equally participant of that nature which is the formal reason and object of it.
+- page: 200; sample: lovest thou me? Feed my lambs," John 21:15-17. Three times did he
+- page: 243; sample: was to be done in a way of obedience; — "Do this and live," was that rule of it which the nature of God and man, with their mutual relation unto one
+- page: 363; sample: life have either no body, as angels; or no souls but what perish with them, as all brute creatures below.
+- page: 444; sample: to reside in it; — it is not made omniscient, omnipresent, omnipotent; but it is exalted in a fullness of all Divine perfection ineffably above the glory
+- page: 460; sample: Ephesians 2:6. There was, therefore, no such mystical conjunction between him and the church as to render it meet and equal that he should
+- page: 522; sample: God is in itself the greatest penal evil; but to be there for ever, without the intermission of misery or determination of time, is that which renders it
 
 ## Missing Bottom-Of-Page Body Windows
 
+- page: 38; sample: rich, he was made poor, that he might make us rich. He did not take the form of God when he was in the form of a servant; but being in the form of
+- page: 39; sample: of admiration: (Lib. de Eleemosyn.:) "Christus hominis filius fieri voluit, ut nos Dei filios faceret; humiliavit se, ut popolum qui prius
+- page: 51; sample: condemned in the apostatical root, that if no one were thence delivered, yet no man could rightly complain of the justice of God; and that those who
 - page: 87; sample: Zechariah 6:13,) or the originally between Jehovah and the Branch, (
 - page: 99; sample: Exodus 33:18. Moses had Moses: "I beseech thee, show me thy glory:"
 - page: 105; sample: John 1:1. "The Word was God," in with God, and the Word was God:"
 - page: 156; sample: suffered, being tempted, he is touched with a feeling of our infirmities, and knows how to have compassion on them that are out of the way,
+- page: 169; sample: promise of life and grace. And the enemies of the person and mediation of Christ do contend that men are justified by their faith and obedience with
+- page: 170; sample: revealed and proposed from the foundation of the world, but only by Jesus Christ, as declared in the first promise.
 - page: 195; sample: Matthew 3:17, "Lo, a voice from heaven, saying, heaven afterwards,
-- page: 318; sample: 1:11, — and the "heaven must receive him," chap. 3:21; not these aspectable heavens which we behold, — for in his ascension "he passed
-- page: 325; sample: solemn worship. So is it represented, the whole number of the saints above that have passed through the
-- page: 380; sample: 1 Corinthians 1:21-25. Not to see the wisdom apostle declares at large,
-- page: 385; sample: 2 Corinthians 3:18. may have with open face, though yet "as in a glass!"
-- page: 488; sample: 1 John 3:2. Who can declare what a appear what we ourselves shall be,
 
 ## Possible Paragraph Splits
 
+- file: EPUB/ch005.xhtml; previous: of the great mystery contained in the attestation given by our Savior unto the confession of Peter, and the promise whereunto annexed, may be comprised in the ensuing assertions: —; next: .ַ The person of Christ, the Son of the living God, as vested with his offices, whereunto he was called and anointed, is the foundation of the church, the rock whereon it is built.
+- file: EPUB/ch006.xhtml; previous: s of this opposition, because they are now, after a revolution of so many ages, lifting up themselves again, though under new vizards and pretenses. And they were of three sorts: —; next: .ַ That which introduced other doctrines and notions of divine things, absolutely exclusive of the person and mediation of Christ. Such was that of the Gnostic, begun as it is supp
+- file: EPUB/ch006.xhtml; previous: For,; next: .ַ It is known with what subtlety and urgency his divine nature and person are opposed by the Socinians. What an accession is made daily unto their incredulity, what inclination of
+- file: EPUB/ch006.xhtml; previous: As,; next: .ַ The instances which I shall give concerning the use and consideration of the person of Christ in Christian religion, or of him as he is the foundation whereon the church is buil
 - file: EPUB/ch011.xhtml; previous: But —; next: There was yet more required thereunto, or to render his offices effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no
-- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
-- file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
-- file: EPUB/ch013.xhtml; previous: nce, or a readiness thereunto. Hence is that expression, "He bowed down his head and worshipped," [ Genesis 24:26;] see [also] Psalm 95:6. And these external signs are of two sorts; next: (1st,) Such as are natural and occasional;
-- file: EPUB/ch013.xhtml; previous: ofession of the gospel, are another season rendering this peculiar invocation of Christ both comely and necessary. Two things will befall the minds of believers in such a season; —; next: [1st,] that their thoughts will be neatly exercised about him, and conversant with him. They cannot but continually think and meditate on him for whom they suffer. None ever suffer
-- file: EPUB/ch022.xhtml; previous: There can be but two senses of these words; next: (1st,) That the Word ceased to be what it was, and was substantially turned into flesh
-- file: EPUB/ch022.xhtml; previous: (1st,) That the Word ceased to be what it was, and was substantially turned into flesh; next: (2ndly,) That continuing to be what it was, it was made to be also what before it was not.
-- file: EPUB/ch022.xhtml; previous: nsidered as the act of this or that nature in him alone, but it is the act and work of the whole person, — of him that is both God and man in one person. And this gives occasion, —; next: Unto that variety of enunciations which is used in the Scripture concerning him; which I shall name only, and conclude.
-- file: EPUB/ch024.xhtml; previous: (4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,; next: (5thly,) Round about them were the tribes in their order.
-- file: EPUB/ch027.xhtml; previous: is, they shall never attain true rest or satisfaction in their own minds. He it is alone in whom the race of mankind may boast and glory, on whom all its felicities do depend. For,; next: He it is in whom our nature, which was debased as low as hell by apostasy from God, is exalted above the whole creation. Our nature, in she original constitution of it, in the pers
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch019.xhtml; text: Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and ...
+- file: EPUB/ch011.xhtml; previous: For —; next: תsַ , I take it for granted that, from the beginning, from the giving of the first promise, the Son of God did, in an especial manner, undertake the care of the church — as unto al
+- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future נָתִֹאנראסנִ and under those appearances instructing the churc
+- file: EPUB/ch011.xhtml; previous: ls was subordinate unto מָהִ and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
+- file: EPUB/ch011.xhtml; previous: rtainty of all sacred truth, and the full assurance of things invisible and eternal. Three things are necessary, that we may have the benefit and comfort of divine light or truth —; next: תsַ , The fullness of its נָתִֹאלשֵׁרֵ
+- file: EPUB/ch013.xhtml; previous: nce, or a readiness thereunto. Hence is that expression, "He bowed down his head and worshipped," [ Genesis 24:26;] see sְֹלאע Psalm 95:6. And these external signs are of two sorts; next: (1st,) Such as are natural and לָאנsִֹאססֹ
 
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch024.xhtml; text: 24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in them; so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy
+- file: EPUB/ch024.xhtml; text: 24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in מָהֵת so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy
+- file: EPUB/ch038.xhtml; text: 10. This, then, is that which the apostle declares in these words, "To gather together in one all things which are in heaven, and which are on earth, even in him." And so he again expresseth it, Colossians 1:20, "To reco
 
 ## Short Fragments
 
@@ -119,7 +124,6 @@
 
 ## Repeated Windows
 
-- phrase: the glory of god in the face of jesus christ; count: 12
 - phrase: between our beholding the glory of christ by faith in; count: 6
 - phrase: our beholding the glory of christ by faith in this; count: 6
 - phrase: beholding the glory of christ by faith in this world; count: 6
@@ -128,20 +132,27 @@
 - phrase: of christ by faith in this world and by sight; count: 6
 - phrase: christ by faith in this world and by sight in; count: 6
 - phrase: by faith in this world and by sight in heaven; count: 6
-- phrase: unto us child is born unto us son is given; count: 6
+- phrase: the brightness of his glory and the express image of; count: 5
+- phrase: brightness of his glory and the express image of his; count: 5
 
 ## Missing Word Samples
 
+- word: jesus; pdf: 259; epub: 57
+- word: object; pdf: 171; epub: 24
 - word: ft; pdf: 124; epub: 0
+- word: enjoyment; pdf: 71; epub: 9
+- word: subject; pdf: 56; epub: 8
+- word: just; pdf: 53; epub: 6
+- word: conjunction; pdf: 47; epub: 6
 - word: kai; pdf: 40; epub: 0
-- word: tou; pdf: 33; epub: 0
-- word: th; pdf: 38; epub: 9
-- word: oj; pdf: 23; epub: 0
-- word: ou; pdf: 17; epub: 0
-- word: lo; pdf: 26; epub: 10
-- word: ejn; pdf: 14; epub: 0
-- word: qeo; pdf: 14; epub: 0
-- word: tw; pdf: 13; epub: 0
+- word: joy; pdf: 68; epub: 31
+- word: enjoy; pdf: 43; epub: 6
+
+## Excess Word Samples
+
+- word: su; pdf: 6; epub: 18
+- word: ss; pdf: 0; epub: 10
+- word: sp; pdf: 0; epub: 7
 
 ## Limits
 

@@ -34,100 +34,148 @@ VOLUME_CONFIG = {
     1: {
         'title': 'The Works of John Owen, Volume 1: The Glory of Christ',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Adobe-garamond-pro-2',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'front_matter_skip': 3,
     },
     2: {
         'title': 'The Works of John Owen, Volume 2: Communion with God',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Libertinus',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     3: {
         'title': 'The Works of John Owen, Volume 3: The Holy Spirit',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Minion_pro',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     4: {
         'title': 'The Works of John Owen, Volume 4: The Work of the Spirit',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Adobe-garamond-pro-2',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     5: {
         'title': 'The Works of John Owen, Volume 5: Faith and Its Evidences',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Brill_font',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ccel_xml',
         'ccel_file': 'special_sources/owen-v5-justification.xml',
     },
     6: {
         'title': 'The Works of John Owen, Volume 6: Temptation and Sin',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Baskervville/static',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     7: {
         'title': 'The Works of John Owen, Volume 7: Sin and Grace',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'sabon-next-lt',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     8: {
         'title': 'The Works of John Owen, Volume 8: Sermons to the Nation',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Gentium-plus',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     9: {
         'title': 'The Works of John Owen, Volume 9: Sermons to the Church',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Libertinus',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     10: {
         'title': 'The Works of John Owen, Volume 10: The Death of Christ',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Brill_font',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ccel_xml',
         'ccel_file': 'special_sources/owen-10-deathofdeath.xml',
     },
     11: {
         'title': 'The Works of John Owen, Volume 11: Continuing in the Faith',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Minion_pro',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     12: {
         'title': 'The Works of John Owen, Volume 12: The Gospel Defended',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Adobe-garamond-pro-2',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     13: {
         'title': 'The Works of John Owen, Volume 13: Ministry and Fellowship',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Baskervville/static',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     14: {
         'title': 'The Works of John Owen, Volume 14: True and False Religion',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Brill_font',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     15: {
         'title': 'The Works of John Owen, Volume 15: Church Purity and Unity',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'sabon-next-lt',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
     16: {
         'title': 'The Works of John Owen, Volume 16: The Church and the Bible',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Gentium-plus',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
     },
 }
@@ -140,43 +188,64 @@ HEBREWS_VOLUME_CONFIG = {
     1: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 1',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Adobe-garamond-pro-2',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
     2: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 2',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Gentium-plus',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
     3: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 3',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Adobe-garamond-pro-2',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
     4: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 4',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Libertinus',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
     5: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 5',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Minion_pro',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
     6: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 6',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'Baskervville/static',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
     7: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 7',
         'authors': ['John Owen'],
-        'publisher': 'Banner of Truth Trust',
+        'editors': ['William H. Goold'],
+        'secondary_languages': ['el', 'he'],
+        'body_font': 'sabon-next-lt',
+        'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
     },
 }
@@ -209,12 +278,13 @@ GRAVE = '\u0300'
 CIRCUMFLEX = '\u0342'
 IOTASUB = '\u0345'
 
-DIACRITIC_CHARS = set('><=~]J[j}|{=+')
+DIACRITIC_CHARS = set('><=~]J[j}|{=+\'')
 DIACRITIC_MAP = {
     'j': (SMOOTH,),
     'J': (ROUGH,),
     '>': (ACUTE,),
     '<': (GRAVE,),
+    '\'': (ACUTE,),
     '~': (CIRCUMFLEX,),
     '=': (CIRCUMFLEX,),
     '+': (CIRCUMFLEX,),
@@ -287,6 +357,7 @@ GIDEON_CHAR_MAP = {
     ';': '\u05B8',   '}': '\u05B2',   ']': '\u05B0',
     '1': '\u05B7',   'e': '\u05B5',   'i': '\u05B4',
     'o': '\u05B9',   'O': '\u05B9',
+    'æ': '\u05B7',
     ',': ',', ' ': ' ',
 }
 
@@ -370,31 +441,34 @@ def convert_gideon_hebrew(encoded):
 # FONT POOLS
 # ============================================================================
 
-FONT_POOLS = {
-    'owen_primary': [
-        {
-            'name': 'SBL_BLit',
-            'files': {'SBL_BLit.ttf': 'SBL_BLit/SBL_BLit.ttf'},
-        },
-        {
-            'name': 'Cardo',
-            'files': {
-                'Cardo-Regular.ttf': 'Cardo/Cardo-Regular.ttf',
-                'Cardo-Bold.ttf': 'Cardo/Cardo-Bold.ttf',
-                'Cardo-Italic.ttf': 'Cardo/Cardo-Italic.ttf',
-            },
-        },
-        {
-            'name': 'Libertinus',
-            'files': {
-                'LibertinusSerif-Regular.otf': 'Libertinus/LibertinusSerif-Regular.otf',
-                'LibertinusSerif-Bold.otf': 'Libertinus/LibertinusSerif-Bold.otf',
-                'LibertinusSerif-Italic.otf': 'Libertinus/LibertinusSerif-Italic.otf',
-                'LibertinusSerif-BoldItalic.otf': 'Libertinus/LibertinusSerif-BoldItalic.otf',
-            },
-        },
-    ],
-}
+def select_primary_font(body_font_name):
+    """Select a primary font by name and scan its directory for associated files.
+    
+    Looks in fonts/<body_font_name>/ for .ttf and .otf files.
+    Returns a dict: {'name': body_font_name, 'files': {basename: relative_path}}.
+    """
+    import os
+    
+    # Base directory for fonts (shared.py is in project root)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    font_dir = os.path.join(base_dir, 'fonts', body_font_name)
+    
+    # Fallback to SBL_BLit if directory doesn't exist
+    if not os.path.isdir(font_dir):
+        body_font_name = 'SBL_BLit'
+        font_dir = os.path.join(base_dir, 'fonts', body_font_name)
+    
+    files = {}
+    if os.path.isdir(font_dir):
+        for f in os.listdir(font_dir):
+            if f.lower().endswith(('.ttf', '.otf')):
+                files[f] = f"{body_font_name}/{f}"
+                
+    return {
+        'name': body_font_name,
+        'files': files
+    }
+
 
 SBL_SUPPLEMENTS = {
     'SBL_BLit.ttf': 'SBL_BLit/SBL_BLit.ttf',
@@ -407,26 +481,15 @@ EZRA_SIL_FILES = {
 }
 
 
-def select_primary_font(vol_name, pool_key='owen_primary'):
-    """Select a primary font deterministically based on volume name.
-    
-    Uses hashlib.md5 for deterministic selection (Python's built-in hash()
-    is salted per-process in Python 3.3+ and not deterministic).
-    """
-    import hashlib
-    pool = FONT_POOLS.get(pool_key, FONT_POOLS['owen_primary'])
-    idx = int(hashlib.md5(vol_name.encode()).hexdigest(), 16) % len(pool)
-    return pool[idx]
-
-
 # ============================================================================
 # EPUB STYLESHEET (GEMINI.md compliant)
 # ============================================================================
 
 EPUB_STYLESHEET = r"""
-/* Banner of Truth style — clean serif, elegant hierarchy */
+/* Eduardus Ekofius style — clean serif, elegant hierarchy */
 body {
     font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1em;
     line-height: 1.65;
     color: #1a1a1a;
     margin: 1em 1.2em;
@@ -637,7 +700,7 @@ sup {
 }
 
 .footnote {
-    font-size: 0.9em;
+    font-size: 0.95em;
     text-indent: 0;
     margin: 0.3em 0;
 }
@@ -646,13 +709,13 @@ a.footnote-ref {
     text-decoration: none;
     color: #0000EE;
     vertical-align: super;
-    font-size: 0.95em;
+    font-size: 1em;
 }
 
 a.fn-link {
     color: #0000EE;
     text-decoration: none;
-    font-size: 0.85em;
+    font-size: 0.9em;
     margin-right: 0.3em;
 }
 
@@ -679,7 +742,7 @@ a.fn-link {
     color: #0000EE;
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     display: inline-block;
     line-height: 1;
     margin-left: 0.25em;
@@ -693,6 +756,7 @@ a.fn-link {
 }
 
 .noteref sup {
+    font-size: 1em;
     line-height: 1;
 }
 
@@ -773,14 +837,14 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {{
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }}
-[lang="el"], [lang="el"] * {{
-    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
+[lang="el"], [lang="el"] *, .greek, .greek * {{
+    font-family: "SBL Greek", "SBL BibLit", serif !important;
     font-size: 1.15em;
 }}
-[lang="he"], [lang="he"] * {{
+[lang="he"], [lang="he"] *, .hebrew, .hebrew * {{
     direction: rtl;
     unicode-bidi: embed;
-    font-family: "SBL Hebrew", "Ezra SIL", "SBL BibLit", "Cardo", serif !important;
+    font-family: "SBL Hebrew", "Ezra SIL", "SBL BibLit", serif !important;
     font-size: 1.5em;
     line-height: 1.24;
 }}
@@ -795,25 +859,40 @@ def generate_font_styles(primary_font_name, primary_font_files):
     """Generate per-XHTML inline <style> block with @font-face declarations.
     
     Font files are stored flat in Fonts/ (no subdirectories), so we use
-    os.path.basename() to flatten paths like 'Cardo/Cardo-Regular.ttf' → 'Cardo-Regular.ttf'.
+    os.path.basename() to flatten paths like 'Brill/Brill-Roman.ttf' → 'Brill-Roman.ttf'.
     
     Returns the complete <style> element content as a string.
     """
     import os as _os
     
-    # Find primary font file (basename only — files stored flat in Fonts/)
-    primary_file = _os.path.basename(list(primary_font_files.values())[0])
+    # 1. Identify primary, bold, italic, and bold-italic files using robust heuristics
+    primary_file = None
     bold_file = None
     italic_file = None
     bold_italic_file = None
     
-    for rel_path, font_file in primary_font_files.items():
-        if 'Bold' in font_file and 'Italic' in font_file and 'Semi' not in font_file:
-            bold_italic_file = _os.path.basename(font_file)
-        elif 'Bold' in font_file and 'Semi' not in font_file:
-            bold_file = _os.path.basename(font_file)
-        elif 'Italic' in font_file and 'Semi' not in font_file:
-            italic_file = _os.path.basename(font_file)
+    # Sort files to ensure deterministic results (prefer shorter names or 'Regular')
+    sorted_files = sorted(primary_font_files.values(), key=lambda x: (len(x), x))
+    
+    for font_file in sorted_files:
+        fname = _os.path.basename(font_file).lower()
+        
+        is_bold = 'bold' in fname or '-b.' in fname or '_b.' in fname
+        is_italic = 'italic' in fname or 'ital' in fname or '-i.' in fname or '_i.' in fname
+        is_regular = 'regular' in fname or 'roman' in fname or '-r.' in fname or '_r.' in fname or (not is_bold and not is_italic)
+        
+        if is_bold and is_italic:
+            if not bold_italic_file: bold_italic_file = _os.path.basename(font_file)
+        elif is_bold:
+            if not bold_file: bold_file = _os.path.basename(font_file)
+        elif is_italic:
+            if not italic_file: italic_file = _os.path.basename(font_file)
+        elif is_regular:
+            if not primary_file: primary_file = _os.path.basename(font_file)
+
+    # Fallback for primary_file if no "Regular" found
+    if not primary_file and primary_font_files:
+        primary_file = _os.path.basename(list(primary_font_files.values())[0])
     
     bold_face = ''
     if bold_file:

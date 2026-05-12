@@ -46,13 +46,35 @@ PAGE_H = 626           # Standard page height for Owen PDFs
 # ─── Font Detection ────────────────────────────────────────────
 GREEK_FONTS = {'Koine-Medium', 'ENLFEN+Koine-Medium'}
 HEBREW_FONTS = {'Gideon-Medium', 'MOLFEN+Gideon-Medium'}
+
+# Regex for detecting Beta Code words that missed font tagging.
+# Keep this conservative: the fallback runs after ordinary prose has been
+# escaped, so broad markers like apostrophe or leading j/J corrupt English
+# words such as "author's", "Jesus", "John", and "justification".
+BETA_CODE_RE = re.compile(
+    r"(?<!\S)(?![^æ;]*[æ;])(?:"
+    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+[><=~|{}\[\]+]+"
+    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW><=~|{}\[\]jJ+']*|"
+    r"[><=~|{}\[\]+]+[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+"
+    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW><=~|{}\[\]jJ+']*|"
+    r"pneu'ma"
+    r")\.?(?!\S)"
+)
+
+# Regex for detecting Gideon Hebrew words that missed font tagging.
+# Matches words containing unambiguous Gideon-only marks. Plain semicolon,
+# bracket, and digit 1 are ordinary English/list punctuation and caused major
+# false positives ("grace;" and "vol. 1" became Hebrew).
+GIDEON_HEBREW_RE = re.compile(r'(?<!\S)[a-zA-Z\[\];1]*(?:[æ}])[a-zA-Zæ}\];1\[]*\.?(?!\S)')
+
 FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
 LOOSE_FOOTNOTE_MARKER_RE = re.compile(
     r'\[\s*f\s*(\d{1,3})\s*\]|(?<![A-Za-z])f\s*(\d{1,3})\b',
     re.I,
 )
 FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
-FT_MARKER_RE = re.compile(r'^FT(\d+)\s*')
+FT_MARKER_RE = re.compile(r'^ft(\d+)\s*', re.I)
+EMPTY_BRACKET_RE = re.compile(r'\[\s*\]')
 STRUCTURAL_START_RE = re.compile(
     r'^(?:'
     r'(?!\d{4}\.)\d{1,3}\.\s+|'                         # 5. Mankind...
@@ -132,11 +154,22 @@ def _repair_owen_ocr_errors(text: str) -> str:
         'Charneck': 'Charnock',
         'storage': 'strange',
         'whoso': 'whose',
+        'se largely': 'so largely',
+        'prevailing task': 'prevailing taste',
+        'whoso name': 'whose name',
+        'whoso human': 'whose human',
+        'secretes': 'secrets',
+        'on]y': 'only',
+        'name]y': 'namely',
+        r'(\w+)]y\b': r'\1ly',
         # Add more as they are discovered
     }
     result = text
     for wrong, right in corrections.items():
-        result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
+        if wrong.startswith('(') or wrong.endswith('\\b'):
+             result = re.sub(wrong, right, result)
+        else:
+             result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
     return result
 SCRIPTURE_BOOK_RE = (
     r'(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|'
@@ -433,26 +466,67 @@ class Footnote:
     source: str = 'pdf'       # 'pdf' or 'thml'
     pages: list = field(default_factory=list)  # PDF pages where referenced
 
+def _converted_pdf_line(line):
+    converted_parts = []
+    for span in line['spans']:
+        span_text = span['text']
+        font = span.get('font', '')
+        if any(gf in font for gf in GREEK_FONTS):
+            span_text = convert_greek_word(span_text)
+        elif any(hf in font for hf in HEBREW_FONTS):
+            span_text = convert_gideon_hebrew(span_text)
+        converted_parts.append(span_text)
+    return ''.join(converted_parts).strip()
+
+
+def _page_has_ages_footnote_marker(page):
+    for block in page.get_text('dict').get('blocks', []):
+        if block.get('type') != 0:
+            continue
+        for line in block.get('lines', []):
+            line_text = ''.join(s['text'] for s in line.get('spans', [])).strip()
+            if FT_MARKER_RE.match(line_text):
+                return True
+    return False
+
+
+def _find_ages_footnote_start_page(doc):
+    """Find the AGES back-matter footnote section, with a marker fallback."""
+    heading_pages = [
+        pg for pg in range(len(doc))
+        if 'FOOTNOTES' in doc[pg].get_text().upper()
+    ]
+    if heading_pages:
+        return heading_pages[0]
+
+    # Some AGES PDFs omit or garble the heading but still use ftN markers in
+    # the back matter. Limit the fallback to the tail of the book so inline
+    # prose cannot be mistaken for note text.
+    tail_start = max(0, len(doc) - 20)
+    for pg in range(tail_start, len(doc)):
+        if _page_has_ages_footnote_marker(doc[pg]):
+            return pg
+    return None
+
+
 def extract_footnotes_from_pdf(doc):
     """
-    Extract footnotes from the FOOTNOTES section of the PDF.
-    Each footnote has an FT{N} marker followed by text.
+    Extract AGES footnotes from the PDF back matter.
+
+    The normal AGES scheme is a FOOTNOTES section whose notes begin with
+    ftN/FTN markers. A fallback also recognizes those markers in the final
+    pages when the section heading is missing or damaged.
     """
     footnotes = {}
-    in_footnotes = False
     current_fn = None
     current_text = []
+    start_page = _find_ages_footnote_start_page(doc)
     
-    for pg in range(len(doc)):
+    if start_page is None:
+        return footnotes
+
+    for pg in range(start_page, len(doc)):
         page = doc[pg]
-        text = page.get_text()
-        
-        if 'FOOTNOTES' in text and not in_footnotes:
-            in_footnotes = True
-        
-        if not in_footnotes:
-            continue
-        
         blocks = page.get_text('dict')['blocks']
         for b in blocks:
             if b['type'] != 0:
@@ -464,33 +538,25 @@ def extract_footnotes_from_pdf(doc):
                 if not line_text:
                     continue
                 
-                # Check for FT marker
-                ft_match = FT_MARKER_RE.match(line_text)
+                line_text_converted = _converted_pdf_line(line)
+                if not line_text_converted:
+                    continue
+                
+                # Check for FT marker in raw text (before conversion might mess it up)
+                line_text_raw = ''.join(s['text'] for s in line['spans']).strip()
+                ft_match = FT_MARKER_RE.match(line_text_raw)
+                
                 if ft_match:
                     # Save previous footnote
                     if current_fn is not None and current_text:
-                        combined = ' '.join(current_text).strip()
-                        combined = combined.strip()
-                        if combined:
-                            text_clean = combined
-                            # Convert any Greek in footnote text
-                            for span in line['spans']:
-                                font = span.get('font', '')
-                                if any(gf in font for gf in GREEK_FONTS):
-                                    text_clean = convert_greek_word(text_clean)
-                            footnotes[current_fn] = text_clean
+                        footnotes[current_fn] = ' '.join(current_text).strip()
                     
                     current_fn = int(ft_match.group(1))
-                    rest = line_text[ft_match.end():].strip()
+                    # Use converted text for the content part
+                    rest = line_text_converted[ft_match.end():].strip()
                     current_text = [rest] if rest else []
                 elif current_fn is not None:
-                    current_text.append(line_text)
-        
-        # End of footnotes - check if we've moved past
-        if in_footnotes:
-            # Check if this is the last page of footnotes
-            if pg == len(doc) - 1 or 'FOOTNOTES' not in doc[pg + 1].get_text():
-                pass  # continue to next page within footnotes
+                    current_text.append(line_text_converted)
     
     # Save last footnote
     if current_fn is not None and current_text:
@@ -505,42 +571,122 @@ def parse_thml_footnotes(thml_path):
     """Parse existing ThML XML FOOTNOTES section for enriched footnote text."""
     from lxml import etree
     footnotes = {}
-    
+
     if not os.path.exists(thml_path):
         return footnotes
-    
+
     try:
         parser = etree.XMLParser(resolve_entities=False, no_network=True, recover=True)
         root = etree.parse(thml_path, parser).getroot()
-        
-        # Find the footnotes div
-        for div1 in root.xpath('.//div1'):
-            title = (div1.get('title') or '').upper()
-            if title == 'FOOTNOTES':
-                markers = div1.xpath('.//a[@class="fnmarker"]')
-                for marker in markers:
-                    fn_num = int(marker.get('data-fn', '0') or 0)
-                    if not fn_num:
-                        continue
-                    parts = []
-                    if marker.tail:
-                        parts.append(marker.tail)
-                    for elem in marker.itersiblings():
-                        if elem.tag == 'a' and elem.get('class') == 'fnmarker':
+
+        # Find all fnmarkers anywhere in the document
+        markers = root.xpath('.//a[@class="fnmarker"]')
+        for i, marker in enumerate(markers):
+            fn_num = int(marker.get('data-fn', '0') or 0)
+            if not fn_num:
+                continue
+
+            parts = []
+            # Use a stateful approach: collect everything until the next marker
+            # We look for all text nodes and other elements between this marker and the next
+            # We'll use the markers list to define boundaries
+
+            # Start collecting from this marker's position
+            next_marker = markers[i+1] if i + 1 < len(markers) else None
+
+            def get_all_text_between(start_node, end_node):
+                collected = []
+
+                # 1. Start with start_node's tail
+                if start_node.tail:
+                    collected.append(start_node.tail)
+
+                # 2. Iterate through siblings and their descendants
+                curr = start_node
+                while curr is not None:
+                    # Move to next sibling
+                    sibling = curr.getnext()
+                    if sibling is None:
+                        # Go up to parent's next sibling
+                        curr = curr.getparent()
+                        if curr is None or curr == root:
                             break
-                        parts.append(''.join(elem.itertext()))
-                        if elem.tail:
-                            parts.append(elem.tail)
-                    text = re.sub(r'\s+', ' ', ''.join(parts)).strip()
-                    if text:
-                        footnotes[fn_num] = text
-                break
+                        # When moving to a new paragraph/div, add a newline
+                        if curr.tag in ('p', 'div', 'div1', 'div2'):
+                            collected.append('\n\n')
+                        continue
+
+                    if sibling == end_node:
+                        break
+
+                    # Does this sibling contain the end_node?
+                    if end_node is not None and end_node in sibling.xpath('.//*'):
+                        # Need to recurse into this sibling to find exact boundary
+                        # But simpler: just get text until end_node
+                        for sub_node in sibling.xpath('.//text() | .//*'):
+                             if sub_node == end_node:
+                                 break
+                             # (This is getting complex, let's use a simpler approach)
+                             pass
+                        break
+
+                    # Add all text from this sibling
+                    collected.append(''.join(sibling.itertext()))
+                    if sibling.tail:
+                        collected.append(sibling.tail)
+                    curr = sibling
+
+                return ''.join(collected)
+
+            # Simpler approach: use xpath to get all following text/elements
+            # and stop when we see the next marker.
+            # Actually, let's use a very simple paragraph-based heuristic again
+            # but fix the "sibling" vs "descendant" issue.
+
+            parts = []
+            if marker.tail:
+                parts.append(marker.tail)
+
+            # Collect following siblings in same parent
+            curr = marker.getnext()
+            found_next = False
+            while curr is not None:
+                if curr.tag == 'a' and curr.get('class') == 'fnmarker':
+                    found_next = True
+                    break
+                parts.append(''.join(curr.itertext()))
+                if curr.tail:
+                    parts.append(curr.tail)
+                curr = curr.getnext()
+
+            # If we didn't hit a marker in the same paragraph, check following paragraphs
+            if not found_next:
+                p = marker.getparent()
+                while p is not None:
+                    next_p = p.getnext()
+                    if next_p is None:
+                        break
+                    # If this paragraph has a marker, stop.
+                    # IMPORTANT: it might have multiple markers, we stop at the first one.
+                    m_in_next = next_p.xpath('.//a[@class="fnmarker"]')
+                    if m_in_next:
+                        # Add text BEFORE the first marker in this paragraph
+                        first_m = m_in_next[0]
+                        # This part is tricky. Let's just take the whole paragraph if
+                        # the marker is at the very end, or if it's the marker we want?
+                        # No, if it has ANY marker, it belongs to the next footnote.
+                        break
+
+                    parts.append('\n\n' + ''.join(next_p.itertext()))
+                    p = next_p
+
+            text = re.sub(r'[ \t]+', ' ', ''.join(parts)).strip()
+            if text:
+                footnotes[fn_num] = text
     except Exception as e:
         print(f"  Warning: Could not parse ThML footnotes: {e}")
-    
+
     return footnotes
-
-
 def merge_footnotes(pdf_footnotes, thml_footnotes):
     """
     Merge footnotes from PDF and ThML, preferring ThML for quality.
@@ -684,14 +830,33 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
         return _build_flat_chapters(doc, pages_md, footnote_map)
     
     # Process TOC entries
+    current_treatise = ""
     for i, (level, title, page_0idx) in enumerate(nav_entries):
         # Determine if this is a treatise title page
         title_upper = title.upper()
         is_treatise = any(kw in title_upper for kw in [
             'CHRISTOLOGIA', 'MEDITATIONS AND DISCOURSES', 'TWO SHORT CATECHISMS',
-            'DECLARATION OF THE GLORIOUS', 'A DECLARATION', 'A VINDICATION'
+            'DECLARATION OF THE GLORIOUS', 'A DECLARATION', 'A VINDICATION',
+            'COMMUNION WITH GOD', 'THE DOCTRINE OF THE TRINITY'
         ])
         
+        if is_treatise:
+            # Clean up the treatise name for parenthetical use
+            if 'BRIEF DECLARATION' in title_upper or 'DOCTRINE OF THE TRINITY' in title_upper:
+                current_treatise = 'Doctrine of the Trinity'
+            elif 'VINDICATION' in title_upper:
+                current_treatise = 'Vindication'
+            elif 'COMMUNION' in title_upper:
+                current_treatise = 'Communion with God'
+            elif 'CHRISTOLOGIA' in title_upper:
+                current_treatise = 'Christologia'
+            elif 'GLORY OF CHRIST' in title_upper:
+                current_treatise = 'Glory of Christ'
+            elif 'CATECHISMS' in title_upper:
+                current_treatise = 'Catechisms'
+            else:
+                current_treatise = title_case(title)
+
         # Determine end page (next entry's page - 1, or end of doc)
         if i + 1 < len(nav_entries):
             end_page = nav_entries[i + 1][2] - 1
@@ -709,9 +874,24 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
         cid_counter += 1
         cid = f'ch{cid_counter:03d}'
         
+        display_title = title_case(title) if not is_treatise else title
+        if not is_treatise and current_treatise:
+            # Differentiate Prefatory Notes and Prefaces
+            # Match titles like "Prefatory Note", "Preface", "The Preface", "To the Reader"
+            normalized_title = title.strip().rstrip('.').upper()
+            if any(kw in normalized_title for kw in {
+                'PREFATORY NOTE', 'PREFACE', 'TO THE READER'
+            }):
+                # Keep it concise: "Prefatory Note (Treatise Name)"
+                # Extract the base name (e.g. "THE PREFACE" -> "Preface")
+                base = "Prefatory Note" if "PREFATORY" in normalized_title else \
+                       "Preface" if "PREFACE" in normalized_title else \
+                       "To the Reader"
+                display_title = f"{base} ({current_treatise})"
+
         chap = Chapter(
             cid=cid,
-            title=title_case(title) if not is_treatise else title,
+            title=display_title,
             level=level,
             page_start=page_0idx,
             page_end=end_page,
@@ -790,6 +970,7 @@ def clean_text(text):
     
     # 1. Remove CCEL/AGES scripture reference codes: <450503>
     text = re.sub(r'<\d[A-Za-z0-9]{5}>', '', text)
+    text = EMPTY_BRACKET_RE.sub('', text)
     # 2. Remove AGES running headers (whole-line removal)
     text = re.sub(
         r'^.*(?:THE AGES DIGITAL LIBRARY|THE WORKS OF JOHN OWEN|'
@@ -1059,6 +1240,12 @@ def _split_inline_structural_markers(para):
             before,
             re.I,
         ))
+        # Skip roman numeral ranges like "III. — VI."
+        if (
+            re.match(r'^[IVXLCDM]+\.$', marker, re.I)
+            and re.match(r'\s*[—–-]\s*[IVXLCDM]+\.', para[match.end():])
+        ):
+            continue
         if (
             (
                 SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
@@ -1080,7 +1267,8 @@ def _split_inline_structural_markers(para):
             before,
             re.I,
         ))
-        if len(before) < 12 and not (before_ends_structural or before_ends_lead_word):
+        before_ends_objection = bool(re.search(r'\b(?:Objection|Obj)\b\.?\s*$', before, re.I))
+        if len(before) < 12 and not (before_ends_structural or before_ends_lead_word or before_ends_objection):
             continue
         marker_clean = re.sub(r'[\*\[\]\(\),;.\s]', '', marker).lower()
         marker_is_bare_decimal = bool(re.match(r'^(?:\*\*)?\d+\.(?:\*\*)?$', marker.strip()))
@@ -1099,7 +1287,7 @@ def _split_inline_structural_markers(para):
             and not re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
             and marker_clean not in {'i', 'v', 'x', 'l', 'c', 'd', 'm'}
         )
-        if not (re.search(r'[.,;:—-]\s*$', before) or before_ends_terminal or before_ends_lead_word):
+        if not (re.search(r'[.,;:—-]\s*$', before) or before_ends_terminal or before_ends_lead_word or before_ends_objection):
             if not (marker_is_wrapped or strong_source_like_marker):
                 continue
 
@@ -1476,22 +1664,70 @@ def _build_flat_chapters(doc, pages_md, footnote_map):
 # STAGE 6: EPUB3 Assembly
 # ================================================================
 
+def force_polyglot_mapping(text):
+    """
+    Aggressive regex fallback to convert Beta Code and Gideon Hebrew that
+    missed font detection. Splits by tags to avoid corrupting HTML.
+    """
+    if not text:
+        return ""
+    
+    # Pass 1: Hebrew Gideon (Higher priority due to unique characters)
+    parts = re.split(r'(<[^>]+>)', text)
+    temp_parts = []
+    for part in parts:
+        if part.startswith('<'):
+            temp_parts.append(part)
+        else:
+            temp_parts.append(GIDEON_HEBREW_RE.sub(
+                lambda m: f'<span class="hebrew" lang="he" xml:lang="he" dir="rtl">{convert_gideon_hebrew(m.group(0))}</span>',
+                part
+            ))
+    text = ''.join(temp_parts)
+
+    # Pass 2: Greek Beta Code
+    parts = re.split(r'(<[^>]+>)', text)
+    temp_parts = []
+    for part in parts:
+        if part.startswith('<'):
+            temp_parts.append(part)
+        else:
+            temp_parts.append(BETA_CODE_RE.sub(
+                lambda m: f'<span class="greek" lang="el" xml:lang="el">{convert_greek_word(m.group(0))}</span>',
+                part
+            ))
+    text = ''.join(temp_parts)
+        
+    return text
+
+
 def tag_unicode_ranges(text):
     """Wrap untagged Greek and Hebrew Unicode runs in spans."""
     if not text:
         return ""
-    text = re.sub(
-        r'([\u0370-\u03FF\u1F00-\u1FFF]{2,})',
-        lambda m: f'<span lang="el" xml:lang="el">{m.group(1)}</span>'
-        if any(c.strip() for c in m.group(1)) else m.group(1),
-        text
-    )
-    text = re.sub(
-        r'([\u0590-\u05FF]{2,})',
-        lambda m: f'<span lang="he" xml:lang="he" dir="rtl">{m.group(1)}</span>'
-        if any(c.strip() for c in m.group(1)) else m.group(1),
-        text
-    )
+    
+    # 1. Force mapping of any raw Beta Code or Gideon residue
+    text = force_polyglot_mapping(text)
+    
+    # 2. Tag any existing Unicode that wasn't wrapped
+    def tag_greek(m):
+        content = m.group(1)
+        before = text[:m.start()]
+        if '<span' in before and before.rfind('<span') > before.rfind('</span>'):
+            return content
+        return f'<span lang="el" xml:lang="el">{content}</span>'
+
+    text = re.sub(r'([\u0370-\u03FF\u1F00-\u1FFF]+)', tag_greek, text)
+
+    def tag_hebrew(m):
+        content = m.group(1)
+        before = text[:m.start()]
+        if '<span' in before and before.rfind('<span') > before.rfind('</span>'):
+            return content
+        return f'<span lang="he" xml:lang="he" dir="rtl">{content}</span>'
+
+    text = re.sub(r'([\u0590-\u05FF]+)', tag_hebrew, text)
+
     text = text.replace('</span><span lang="el" xml:lang="el">', '')
     text = text.replace('</span><span lang="he" xml:lang="he" dir="rtl">', '')
     return text
@@ -1502,6 +1738,49 @@ def emphasize_structural_prefix(text):
     if not text or text.startswith('<b>'):
         return text
     return STRUCTURAL_PREFIX_HTML_RE.sub(r'<b>\g<marker></b>\g<space>', text, count=1)
+
+
+RENDERED_INLINE_STRUCTURAL_RE = re.compile(
+    r'(?P<marker><b>(?:'
+    r'(?!\d{4}\.)\d{1,3}\.|'
+    r'\[(?:\d+\.?|\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\]|'
+    r'\((?:\d+\.?|\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\)|'
+    r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
+    r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
+    r')</b>\s+)'
+)
+PLAIN_INLINE_STRUCTURAL_HTML_RE = re.compile(
+    r'(?P<marker>(?<![:\d-])(?!\d{4}\.)\d{1,3}\.\s+)'
+)
+
+
+def _split_rendered_inline_structural_html(text_html):
+    """Split paragraphs where a rendered bold list marker remains inline."""
+    pieces = []
+    pos = 0
+    matches = sorted(
+        list(RENDERED_INLINE_STRUCTURAL_RE.finditer(text_html))
+        + list(PLAIN_INLINE_STRUCTURAL_HTML_RE.finditer(text_html)),
+        key=lambda item: item.start(),
+    )
+    for match in matches:
+        if match.start() < pos:
+            continue
+        before_html = text_html[pos:match.start()].strip()
+        before_text = re.sub(r'<[^>]+>', ' ', before_html)
+        before_text = re.sub(r'\s+', ' ', before_text).strip()
+        if not before_text or len(before_text) < 35:
+            continue
+        if re.search(r'\b(?:verse|verses|chap|chapter|john|romans|corinthians|timothy|peter)\.?\s*$', before_text, re.I):
+            continue
+        if not re.search(r'[.!?:;—-]\s*$', before_text):
+            continue
+        pieces.append(before_html)
+        pos = match.start()
+    if not pieces:
+        return [text_html]
+    pieces.append(text_html[pos:].strip())
+    return [piece for piece in pieces if piece]
 
 
 def _escape_xml(text):
@@ -1825,7 +2104,7 @@ def markdown_to_html(md_text):
         frontmatter_inline = None
         if h_tag:
             frontmatter_inline = re.match(
-                r'^(PREFACE|PREFATORY NOTE|ORIGINAL PREFACE)(\.?)\s+(.{40,})$',
+                r'^(?:THE\s+)?(PREFACE|PREFATORY NOTE|ORIGINAL PREFACE)(\.?)\s+(.{40,})$',
                 content,
                 re.S,
             )
@@ -1897,6 +2176,29 @@ def markdown_to_html(md_text):
                     h_tag = None
                     pending_chapter_subtitle = False
 
+        if h_tag:
+            # Generic all-caps heading absorption split:
+            # e.g. "THE DOCTRINE...VINDICATED The doctrine of..."
+            ac_match = re.match(
+                r'^([A-Z][A-Z\s,;:\u2013\u2014\-\(\)\']{18,}?)'
+                r'\s+([A-Z][a-z].{40,})$',
+                content_no_refs.strip(),
+                re.S,
+            )
+            if ac_match:
+                h_text = ac_match.group(1).strip().rstrip('.')
+                b_text = ac_match.group(2).strip()
+                letters = [c for c in h_text if c.isalpha()]
+                upper_ratio = (
+                    sum(1 for c in letters if c.isupper()) / len(letters)
+                    if letters else 0
+                )
+                if upper_ratio >= 0.72 and len(re.findall(r'\w+', h_text)) >= 4:
+                    cls = ' class="secondary"' if h_tag in ('h2', 'h3') else ''
+                    html_parts.append(f'<{h_tag}{cls}>{h_text}</{h_tag}>')
+                    content_no_refs = b_text
+                    h_tag = None
+
         if not h_tag:
             chapter_match = PLAIN_CHAPTER_RE.match(content_no_refs)
             if chapter_match:
@@ -1913,7 +2215,42 @@ def markdown_to_html(md_text):
                     recent_plain = recent_plain[-5:]
                 continue
 
+            # PART/BOOK/SECTION headings → premium title-page style
+            part_book_match = re.match(
+                r'^(PART|BOOK|SECTION)\s+([IVXLCDM\d]+)(?:\s*[.—–-]\s*(.*))?$',
+                content_no_refs.strip(),
+                re.I,
+            )
+            if part_book_match:
+                part_label = part_book_match.group(0).strip()
+                html_parts.append(
+                    f'<h1 class="primary" style="text-align:center;margin:2em 0 1.5em;">'
+                    f'{part_label}</h1>'
+                )
+                recent_plain.append(_strip_footnote_placeholders(content_no_refs))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
+
         if pending_chapter_subtitle and not h_tag:
+            # Detect italic chapter subtitles (Volume 2 pattern)
+            italic_subtitle = re.match(
+                r'^_(.+)_\s*$', content_no_refs.strip(), re.S
+            )
+            if italic_subtitle:
+                sub_text = italic_subtitle.group(1).strip()
+                sub_text = re.sub(r'\s+', ' ', sub_text)
+                if len(sub_text) >= 18 and len(re.findall(r'\w+', sub_text)) <= 40:
+                    html_parts.append(
+                        f'<h4 class="chapter-subtitle">'
+                        f'{tag_unicode_ranges(_html_escape(sub_text))}'
+                        f'</h4>'
+                    )
+                    pending_chapter_subtitle = False
+                    recent_plain.append(_strip_footnote_placeholders(content_no_refs))
+                    if len(recent_plain) > 5:
+                        recent_plain = recent_plain[-5:]
+                    continue
             plain_letters = [c for c in content_no_refs if c.isalpha()]
             upper_ratio = (
                 sum(1 for c in plain_letters if c.isupper()) / len(plain_letters)
@@ -2025,7 +2362,8 @@ def markdown_to_html(md_text):
             }:
                 html_parts.append(f'<p class="doxology">{text_html}</p>')
             else:
-                html_parts.append(f'<p>{text_html}</p>')
+                for paragraph_html in _split_rendered_inline_structural_html(text_html):
+                    html_parts.append(f'<p>{paragraph_html}</p>')
 
         recent_plain.append(_strip_footnote_placeholders(content_no_refs))
         if len(recent_plain) > 5:
@@ -2065,7 +2403,7 @@ def _build_title_page(vol_num, title, subtitle):
 <h2 class="secondary">{_escape_xml(subtitle)}</h2>
 <p class="author"><span class="by">by</span>John Owen</p>
 <p class="editor">Edited by William H. Goold</p>
-<p class="publisher">Eduadus Ekofius</p>
+<p class="publisher">Eduardus Ekofius</p>
 </div>'''
 
 
@@ -2123,6 +2461,7 @@ def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_fron
     lines.append('<nav epub:type="landmarks">\n<h2>Guide</h2>\n<ol>')
     if has_cover:
         lines.append('  <li><a epub:type="cover" href="cover.xhtml">Cover</a></li>')
+    lines.append('  <li><a epub:type="titlepage" href="title.xhtml">Title Page</a></li>')
     lines.append('  <li><a epub:type="toc" href="nav.xhtml">Table of Contents</a></li>')
     if has_frontispiece:
         lines.append('  <li><a epub:type="frontispiece" href="frontispiece.xhtml">Frontispiece</a></li>')
@@ -2292,6 +2631,23 @@ def detect_page_type(page, page_num=None):
             break
 
     return 'body_page'
+
+
+def is_toc_continuation_page(page, page_num=None):
+    """Detect sparse continuation pages after a visual CONTENTS page."""
+    if page_num is not None and page_num > 8:
+        return False
+    text = page.get_text()
+    clean = re.sub(r'\s+', ' ', text).strip()
+    if not clean:
+        return False
+    upper = clean.upper()
+    if re.match(r'^\d*\s*(?:GENERAL PREFACE|PREFACE|PREFATORY NOTE|TO THE READER)\b', upper):
+        return False
+    chapter_hits = len(re.findall(r'\bCHAPTER\s+\d+', upper))
+    part_hits = len(re.findall(r'\bPART\s+\d+', upper))
+    numbered_hits = len(re.findall(r'(?:^|\s)(?:[IVXLCDM]+\.|\d+\.)\s+[—A-Z]', clean, re.I))
+    return (chapter_hits + part_hits + numbered_hits) >= 1
 
 
 def format_title_page(page, section_class="title-page", epub_type="titlepage", limit_to_title=False):
@@ -2530,8 +2886,8 @@ def process_owen_volume(vol_num):
     # ── Stage 6: EPUB3 Assembly ──
     print(f"  Assembling EPUB3...")
     
-    vol_name = f'owen-v{vol_num}'
-    primary = select_primary_font(vol_name)
+    body_font = config.get('body_font', 'SBL_BLit')
+    primary = select_primary_font(body_font)
     font_styles = generate_font_styles(primary['name'], primary['files'])
     
     book = epub.EpubBook()
@@ -2539,8 +2895,23 @@ def process_owen_volume(vol_num):
     book.set_identifier(f'urn:uuid:{vol_uuid}')
     book.set_title(config['title'])
     book.set_language('en')
-    for author in config['authors']:
-        book.add_author(author)
+    book.set_direction('ltr')
+    
+    # Primary Author
+    for i, author in enumerate(config.get('authors', [])):
+        uid = 'creator' if i == 0 else f'aut_{i}'
+        book.add_author(author, role='aut', uid=uid)
+        
+    # Editor as Contributor
+    for i, editor in enumerate(config.get('editors', [])):
+        book.add_author(editor, role='edt', uid=f'edt_{i}')
+
+        
+    # Secondary Languages
+    for lang in config.get('secondary_languages', []):
+        book.add_metadata('DC', 'language', lang)
+    
+    book.add_metadata('DC', 'publisher', config.get('publisher', 'Eduardus Ekofius'))
     
     # CSS — merge @font-face into main.css (ebooklib strips inline <style>)
     combined_css = EPUB_STYLESHEET.rstrip('\n') + '\n' + font_styles.lstrip('\n')
@@ -2656,12 +3027,13 @@ def process_owen_volume(vol_num):
     
     pg = 0
     while pg < scan_limit:
-        if pg in chapter_pages:
-            pg += 1
-            continue
-            
         page = doc[pg]
         ptype = detect_page_type(page, pg + 1)
+        toc_like = ptype == 'toc_page' or is_toc_continuation_page(page, pg + 1)
+        if pg in chapter_pages and not toc_like:
+            pg += 1
+            continue
+
         text_upper = page.get_text().upper()
         blocks = page.get_text('dict')['blocks']
         text_blocks = [b for b in blocks if b.get('type') == 0]
@@ -2691,8 +3063,11 @@ def process_owen_volume(vol_num):
             # Collect all consecutive toc_pages
             toc_pages = [page]
             next_pg = pg + 1
-            while next_pg < scan_limit and next_pg not in chapter_pages:
-                if detect_page_type(doc[next_pg], next_pg + 1) == 'toc_page':
+            while next_pg < scan_limit:
+                if (
+                    detect_page_type(doc[next_pg], next_pg + 1) == 'toc_page'
+                    or is_toc_continuation_page(doc[next_pg], next_pg + 1)
+                ):
                     toc_pages.append(doc[next_pg])
                     next_pg += 1
                 else:
@@ -2744,7 +3119,8 @@ def process_owen_volume(vol_num):
     toc_entries = []
     epub_chapters = []
     last_l1_text = None
-    guide_landmarks = []
+    guide_landmarks = [("Title Page", "title.xhtml")]
+    chapter_subtitles = {}  # cid -> subtitle text for NAV enrichment
     
     for i, chap in enumerate(chapters):
         if chap.is_endnotes or chap.title.strip().lower() == 'footnotes':
@@ -2801,11 +3177,22 @@ def process_owen_volume(vol_num):
                         ch.add_item(style_item)
                         book.add_item(ch)
                         epub_chapters.append(ch)
+                        subtitle_m = re.search(
+                            r'<h4 class="chapter-subtitle">([^<]+)</h4>',
+                            body_html,
+                        )
+                        if subtitle_m:
+                            chapter_subtitles[chap.cid] = subtitle_m.group(1).strip()
             
             # TOC href: title page if no body content, content file otherwise
             toc_href = tp_fn if not has_content else f'{chap.cid}.xhtml'
         else:
-            md_text = get_pages_text(doc, pages_md, chap.page_start, chap.page_end, healer_mode=healer_active)
+            body_end = chap.page_end
+            if i + 1 < len(chapters):
+                next_start = chapters[i+1].page_start
+                if next_start > chap.page_start and next_start <= body_end:
+                    body_end = next_start - 1
+            md_text = get_pages_text(doc, pages_md, chap.page_start, body_end, healer_mode=healer_active)
             body_html = markdown_to_html(md_text)
             if not body_html.strip():
                 continue
@@ -2817,8 +3204,19 @@ def process_owen_volume(vol_num):
             book.add_item(ch)
             epub_chapters.append(ch)
             toc_href = f'{chap.cid}.xhtml'
+            subtitle_m = re.search(
+                r'<h4 class="chapter-subtitle">([^<]+)</h4>',
+                body_html,
+            )
+            if subtitle_m:
+                chapter_subtitles[chap.cid] = subtitle_m.group(1).strip()
         
         clean_t = chap.title
+        # Enrich NAV display title with chapter subtitle
+        sub_text = chapter_subtitles.get(chap.cid, '')
+        if sub_text and clean_t.upper().startswith('CHAPTER'):
+            subtitle_display = _clean_heading_text(sub_text)
+            clean_t = f'{clean_t} — {subtitle_display}'
         epub_level = chap.level
         if epub_level <= 2:
             epub_level = 1

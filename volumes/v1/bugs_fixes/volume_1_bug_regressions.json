@@ -1,0 +1,256 @@
+{
+  "volume": 1,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": [
+      "orphan_endnotes"
+    ]
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 13,
+      "budget": 13,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "But —",
+          "next": "There was yet more required thereunto, or to render his offices effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "And he discharged this office four ways: —",
+          "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
+          "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "previous": "nce, or a readiness thereunto. Hence is that expression, \"He bowed down his head and worshipped,\" [ Genesis 24:26;] see [also] Psalm 95:6. And these external signs are of two sorts",
+          "next": "(1st,) Such as are natural and occasional;"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "previous": "ofession of the gospel, are another season rendering this peculiar invocation of Christ both comely and necessary. Two things will befall the minds of believers in such a season; —",
+          "next": "[1st,] that their thoughts will be neatly exercised about him, and conversant with him. They cannot but continually think and meditate on him for whom they suffer. None ever suffer"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "previous": "There can be but two senses of these words",
+          "next": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "previous": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh",
+          "next": "(2ndly,) That continuing to be what it was, it was made to be also what before it was not."
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "previous": "nsidered as the act of this or that nature in him alone, but it is the act and work of the whole person, — of him that is both God and man in one person. And this gives occasion, —",
+          "next": "Unto that variety of enunciations which is used in the Scripture concerning him; which I shall name only, and conclude."
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "previous": "(4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,",
+          "next": "(5thly,) Round about them were the tribes in their order."
+        },
+        {
+          "file": "EPUB/ch027.xhtml",
+          "previous": "is, they shall never attain true rest or satisfaction in their own minds. He it is alone in whom the race of mankind may boast and glory, on whom all its felicities do depend. For,",
+          "next": "He it is in whom our nature, which was debased as low as hell by apostasy from God, is exalted above the whole creation. Our nature, in she original constitution of it, in the pers"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 1,
+      "budget": 1,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": "Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and grace, gloriously to im"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "the glory of god in the face of jesus christ",
+          "count": 12
+        },
+        {
+          "phrase": "between our beholding the glory of christ by faith in",
+          "count": 6
+        },
+        {
+          "phrase": "our beholding the glory of christ by faith in this",
+          "count": 6
+        },
+        {
+          "phrase": "beholding the glory of christ by faith in this world",
+          "count": 6
+        },
+        {
+          "phrase": "the glory of christ by faith in this world and",
+          "count": 6
+        },
+        {
+          "phrase": "glory of christ by faith in this world and by",
+          "count": 6
+        },
+        {
+          "phrase": "of christ by faith in this world and by sight",
+          "count": 6
+        },
+        {
+          "phrase": "christ by faith in this world and by sight in",
+          "count": 6
+        },
+        {
+          "phrase": "by faith in this world and by sight in heaven",
+          "count": 6
+        },
+        {
+          "phrase": "unto us child is born unto us son is given",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 7,
+      "budget": 6,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "chapter 14 motives unto the love of christ",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "meditations and discourses on the glory of christ",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "the greater catechism chapter 1 of the scripture",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 8 of the state of corrupted nature",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 14 of the two-fold estate of christ",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "to person of christ the foundation of all",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "the nature operations and causes of divine love",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

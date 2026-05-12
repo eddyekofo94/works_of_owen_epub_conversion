@@ -1,0 +1,1458 @@
+{
+  "volume": 3,
+  "pdf": {
+    "page_count": 820
+  },
+  "epub": {
+    "spine_text_files": 45,
+    "paragraph_count": 2623
+  },
+  "generated_at": "2026-05-12T12:18:48.054219+00:00",
+  "status": "warn",
+  "warning_count": 10,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "missing_enumerator_markers",
+      "message": "Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    }
+  ],
+  "word_coverage": {
+    "pdf_content_tokens": 288667,
+    "epub_content_tokens": 285566,
+    "coverage_ratio": 0.9878,
+    "missing_word_samples": [
+      {
+        "word": "ft",
+        "pdf": 141,
+        "epub": 0
+      },
+      {
+        "word": "pneu",
+        "pdf": 94,
+        "epub": 0
+      },
+      {
+        "word": "kai",
+        "pdf": 93,
+        "epub": 0
+      },
+      {
+        "word": "ma",
+        "pdf": 75,
+        "epub": 0
+      },
+      {
+        "word": "th",
+        "pdf": 73,
+        "epub": 4
+      },
+      {
+        "word": "tou",
+        "pdf": 66,
+        "epub": 0
+      },
+      {
+        "word": "ta",
+        "pdf": 41,
+        "epub": 0
+      },
+      {
+        "word": "wr",
+        "pdf": 33,
+        "epub": 0
+      },
+      {
+        "word": "tw",
+        "pdf": 32,
+        "epub": 0
+      },
+      {
+        "word": "ou",
+        "pdf": 31,
+        "epub": 0
+      },
+      {
+        "word": "qeou",
+        "pdf": 30,
+        "epub": 0
+      },
+      {
+        "word": "matov",
+        "pdf": 29,
+        "epub": 0
+      },
+      {
+        "word": "oj",
+        "pdf": 26,
+        "epub": 0
+      },
+      {
+        "word": "ei",
+        "pdf": 29,
+        "epub": 7
+      },
+      {
+        "word": "ga",
+        "pdf": 20,
+        "epub": 0
+      },
+      {
+        "word": "pa",
+        "pdf": 20,
+        "epub": 0
+      },
+      {
+        "word": "av",
+        "pdf": 18,
+        "epub": 0
+      },
+      {
+        "word": "dia",
+        "pdf": 17,
+        "epub": 0
+      },
+      {
+        "word": "ejn",
+        "pdf": 17,
+        "epub": 0
+      },
+      {
+        "word": "ti",
+        "pdf": 17,
+        "epub": 0
+      },
+      {
+        "word": "eijv",
+        "pdf": 16,
+        "epub": 0
+      },
+      {
+        "word": "aujtou",
+        "pdf": 16,
+        "epub": 0
+      },
+      {
+        "word": "ejk",
+        "pdf": 15,
+        "epub": 0
+      },
+      {
+        "word": "toi",
+        "pdf": 15,
+        "epub": 0
+      },
+      {
+        "word": "hj",
+        "pdf": 14,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": []
+  },
+  "page_coverage": {
+    "pages_checked": 818,
+    "weak_page_count": 14,
+    "weak_pages": [
+      {
+        "page": 10,
+        "hit_ratio": 0.333,
+        "sample": "pneumatologia or discourse concerning the holy spirit wherein an account is given of his name nature personality dispensation operations and effects his whole work"
+      },
+      {
+        "page": 83,
+        "hit_ratio": 0.333,
+        "sample": "and our father john and he is thus termed ujpostatikw upon the account of the order and nature of personal subsistence and distinction in"
+      },
+      {
+        "page": 218,
+        "hit_ratio": 0.333,
+        "sample": "be said ejkba llein to drive him is not so easy to be apprehended but the word in luke is geto which denotes guiding"
+      },
+      {
+        "page": 318,
+        "hit_ratio": 0.333,
+        "sample": "the subject spoken of is yuciko nqrwpov animalis homo the natural man he who is natural man this epithet is in the scripture opposed"
+      },
+      {
+        "page": 408,
+        "hit_ratio": 0.333,
+        "sample": "think that all the depravation of our nature consists in that of the sensitive part of the soul or our affections the vanity and"
+      },
+      {
+        "page": 657,
+        "hit_ratio": 0.333,
+        "sample": "work and what the apostle here calls ta pra xeiv tou sw matov the deeds of the body he therein expresseth the effect for"
+      },
+      {
+        "page": 790,
+        "hit_ratio": 0.333,
+        "sample": "footnotes ft pneumatika ta shmei kalw ti tau ta rga tou pneu matov mo nou oujde ajnqrwpi nhv ejepeisferou shv spoudh eijv to ta"
+      },
+      {
+        "page": 793,
+        "hit_ratio": 0.333,
+        "sample": "sollicita in adversariorum sententiam statim pertrahuntur didym de spir sanc lib ft appellation spiritus sancti et ea quae monstratur ex ipsa appellatione substantia penitus"
+      },
+      {
+        "page": 797,
+        "hit_ratio": 0.333,
+        "sample": "ft ei per pneu ma qeou oijkei ejn ujmi de pneu ma qeou eij de tiv pneu ma cristou oujk cei kai me ejcrh"
+      },
+      {
+        "page": 798,
+        "hit_ratio": 0.333,
+        "sample": "mi an ejne rgeian ojrw men patro kai uijou kai ajgi ou pneu matov basil homil in sanctum baptisma wn aij aujtai ejne rgeiai"
+      },
+      {
+        "page": 799,
+        "hit_ratio": 0.333,
+        "sample": "simonis and others rendering the clause by his spirit the heavens are beauty ed ft hic spiritus sanctus ab ipso mundi initio aquis legitur"
+      },
+      {
+        "page": 800,
+        "hit_ratio": 0.333,
+        "sample": "ft etenim si de loco procedit spiritus et ad locum transit et ipse pater in loco invenietur et filius si de loco exit quem"
+      },
+      {
+        "page": 801,
+        "hit_ratio": 0.0,
+        "sample": "pepeisme nouv ejf son de cwrou men dia th qewri av ejautou ejkei nw suna ptontav justin martyr expositio fidei de rect confess ft"
+      },
+      {
+        "page": 807,
+        "hit_ratio": 0.333,
+        "sample": "ft denique quomodo respondeat advertite et videte latebras ambiguitatis falsitati praeparare refugia ita ut etiam nos cum primum ea legimus recta vel correcta propemodum"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 30948,
+    "missing_dense_window_pages": 113,
+    "missing_dense_windows": [
+      {
+        "page": 12,
+        "sample": "books embraced in this volume to all of them the general designation pneumatologia is"
+      },
+      {
+        "page": 15,
+        "sample": "reference to the father as giving sending him etc and in reference to his"
+      },
+      {
+        "page": 16,
+        "sample": "imparts no supernatural strength is not all we pray for when we pray for"
+      },
+      {
+        "page": 30,
+        "sample": "things themselves of the gospel in their own nature it is enmity against them"
+      },
+      {
+        "page": 41,
+        "sample": "far were they transported with vain-glory and desire of self advancement as that they"
+      },
+      {
+        "page": 48,
+        "sample": "of reasons of the importance use and necessity of the doctrine proposed to be"
+      },
+      {
+        "page": 50,
+        "sample": "unknown unto other men they in the meantime really finding themselves acted by power"
+      },
+      {
+        "page": 59,
+        "sample": "present undertaking is the open and horrible opposition that is made unto the spirit"
+      },
+      {
+        "page": 61,
+        "sample": "it is therefore the things themselves and not the pretences pretended that are the"
+      },
+      {
+        "page": 66,
+        "sample": "was preached concerning them was looked on as cunningly devised and artificially-framed fables to"
+      },
+      {
+        "page": 82,
+        "sample": "the spirit of the lord so in the first mention of him genesis yhiloa"
+      },
+      {
+        "page": 88,
+        "sample": "him with testimonies of them vindicated and explained we shall now proceed to the"
+      },
+      {
+        "page": 92,
+        "sample": "that we inquire who and what that one and self same spirit is seeing"
+      },
+      {
+        "page": 105,
+        "sample": "infinite understanding as it is said of god wojn wbj li rq je yae"
+      },
+      {
+        "page": 108,
+        "sample": "is said to be able to save our souls james and acts the word"
+      },
+      {
+        "page": 109,
+        "sample": "he gave it but this is too much confidence the words are yniyej yd"
+      },
+      {
+        "page": 115,
+        "sample": "whether in that which is indifferent to try as god is said to tempt"
+      },
+      {
+        "page": 127,
+        "sample": "the material principle of life and being unto all creatures tp yhiloa jwrw yim"
+      },
+      {
+        "page": 128,
+        "sample": "young for their safety protection and growth wyp crop yi jer as an eagle"
+      },
+      {
+        "page": 131,
+        "sample": "man quickening principle for thirdly the effect hereof is that man became jy vp"
+      },
+      {
+        "page": 134,
+        "sample": "the like kind might be given thus when the church was to have blessed"
+      },
+      {
+        "page": 139,
+        "sample": "spiritual habit permanent and abiding in the soul but in neither of these senses"
+      },
+      {
+        "page": 142,
+        "sample": "of them who receive this gift privilege and advantage are intimated they receive gift"
+      },
+      {
+        "page": 152,
+        "sample": "is given and sent isaiah and the spirit of the lord shall rest upon"
+      },
+      {
+        "page": 165,
+        "sample": "things proceeding from divine revelation but the hebrew ak whence are aybin prophet and"
+      },
+      {
+        "page": 171,
+        "sample": "obnoxious to delusion first god sometimes made use of an articulate voice speaking out"
+      },
+      {
+        "page": 178,
+        "sample": "end gives him up as cursed sorcerer and he is expressly called sewoqih the"
+      },
+      {
+        "page": 185,
+        "sample": "of their call declares verses and they were yrif vo inferior officers before such"
+      },
+      {
+        "page": 191,
+        "sample": "to come as to put an end unto that whole church state wherein his"
+      },
+      {
+        "page": 194,
+        "sample": "what we should pray for as we ought romans but our heavenly father knows"
+      },
+      {
+        "page": 202,
+        "sample": "immediate actings of the holy ghost are not spoken of him absolutely nor ascribed"
+      },
+      {
+        "page": 214,
+        "sample": "spirit unto him as it is said isaiah the spirit rested upon him as"
+      },
+      {
+        "page": 225,
+        "sample": "it died saw corruption acts this pure and holy substance was preserved in its"
+      },
+      {
+        "page": 233,
+        "sample": "of holiness because in him there was an all fullness of the graces of"
+      },
+      {
+        "page": 239,
+        "sample": "do but deceive their own souls and others here lay the foundation of the"
+      },
+      {
+        "page": 240,
+        "sample": "for by our lord jesus christ there is no church state amongst them nor"
+      },
+      {
+        "page": 258,
+        "sample": "the natural body of christ so he was to prepare his mystical body also"
+      },
+      {
+        "page": 263,
+        "sample": "them in parables and dark sayings aynimi twodyji psalm in types shadows and ceremonies"
+      },
+      {
+        "page": 265,
+        "sample": "walk in darkness and have no light isaiah they are children of light luke"
+      },
+      {
+        "page": 271,
+        "sample": "infallibly produce the reformation of life intended in some it doth it more completely"
+      }
+    ]
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 818,
+    "top_windows_usable": 796,
+    "skipped_top_window_count": 37,
+    "skipped_top_windows": [
+      {
+        "page": 71,
+        "window": "ajpagge llwn eijv ajnqrw pouv to cristo aujtou and declareth unto men his christ",
+        "sample": "ajpagge>llwn eijv ajnqrw>pouv to<n Cristo<n aujtou~, — \"And declareth unto men his Christ,\" or his Anointed, or his Messiah; for they took",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 83,
+        "window": "john and he is thus termed ujpostatikw upon and our father",
+        "sample": "John 20:17. And he is thus termed uJpostatikw~v, upon and our Father,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 105,
+        "window": "infinite understanding as it is said of god wojn wbj li rq je yae",
+        "sample": "infinite understanding; as it is said of God, wOjn;Wbj]li rq,je ˆyae , Isaiah",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 107,
+        "window": "metaphor be plain and obvious so when our savior says of the wind that",
+        "sample": "metaphor be plain and obvious. So when our Savior says of the wind that it bloweth o[pou Qe>lei, \"as it willeth,\" or listeth,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 130,
+        "window": "for the matter he was made of it is said he was formed hm",
+        "sample": "For the matter he was made of, it is said he was formed hm;d;a}jæAˆmi rp;[;, [of] \"dust of the ground,\" or dust gathered together on a heap from and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 145,
+        "window": "the spirit corhge is to give sufficiency of any thing and corhgi and corh",
+        "sample": "the Spirit.\" Corhge>w is \"to give a sufficiency of any thing;\" and corhgi>a and corh>ghma are dimensum, \"a sufficiency of provision.\" An addition",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 173,
+        "window": "qualiacumque voles judaei somia vendant juv thirdly god revealed himself in and by visions",
+        "sample": "\"Qualiacumque voles Judaei somia vendant.\" — [Juv., 6. 546.] Thirdly, God revealed himself in and by visions or representations of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 180,
+        "window": "inclinations so is this case well resolved by augustine and as for the old",
+        "sample": "inclinations. So is this case well resolved by Augustine. f65 And [as] for the old prophet at Bethel,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 218,
+        "window": "be said ejkba llein to drive him is not so easy to be apprehended",
+        "sample": "be said ejkba>llein, to \"drive him,\" is not so easy to be apprehended. But the word in Luke is h]geto, which denotes a guiding and rational",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 228,
+        "window": "tenthly it was the holy spirit that glorified the human nature of christ and",
+        "sample": "Tenthly, It was the Holy Spirit that glorified the human nature [of Christ], and made it every way meet for its eternal residence at the right hand of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 243,
+        "window": "de physic et crass impletione accipiunt quam tamen talis plh rwsiv seu impletio locorum",
+        "sample": "de physicâ et crassâ impletione accipiunt; quam tamen talis plh>rwsiv seu impletio locorum in mundo omnium quae vel",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 248,
+        "window": "they are actually communicated unto us by the holy spirit therefore said he shall",
+        "sample": "[3.] They are actually communicated unto us by the Holy Spirit: \"Therefore said I, he shall take of mine and shall show it unto you.\" He",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 310,
+        "window": "there is oj nou the mind this is the to hjgemoniko the leading and",
+        "sample": "1. There is oJ nou~v, the \"mind.\" This is the to< hJgemoniko>n, the leading and ruling faculty of the soul. It is that in us which looketh out after",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 315,
+        "window": "in the due and constant improvement of that gracious principle by constant watchfulness against",
+        "sample": "(2.) In the due and constant improvement of that gracious principle, — [1.] By constant watchfulness against the mind's acting itself in vain,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "the subject spoken of is yuciko nqrwpov animalis homo the natural man he who",
+        "sample": "(1.) The subject spoken of is yuciko<v a]nqrwpov, \"animalis homo,\" the \"natural man,\" he who is a natural man. This epithet is in the Scripture",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 321,
+        "window": "by ouj du natai gnw nai he cannot know them in this double assertion",
+        "sample": "[2.] By ouj du>natai gnw~nai, — \"He cannot know them.\" In this double assertion, —",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 324,
+        "window": "there is or may be power in the mind to discern spiritual things whereby",
+        "sample": "[2.] There is, or may be, a power in the mind to discern spiritual things, whereby it is so able to do it as that it can immediately exercise that",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 326,
+        "window": "the principal mysteries of the gospel or the spiritual things intended are by many",
+        "sample": "[2.] The principal mysteries of the gospel, or the spiritual things intended, are by many looked on and rejected as foolish, because false and untrue;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 329,
+        "window": "because it is the work of the spirit of god to endow the minds",
+        "sample": "[1.] Because it is the work of the Spirit of God to endow the minds of men with that ability, which there were no need of in case men had it of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 330,
+        "window": "consistent with what was before declared concerning the natural power of the mind to",
+        "sample": "consistent with what was before declared [concerning] the natural power of the mind to receive spiritual things: for that power respects the natural",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 340,
+        "window": "the mind from the darkness that is in it apprehends that spiritual things the",
+        "sample": "[1.] The mind, from the darkness that is in it, apprehends that spiritual things, the things of the gospel, as they are proposed, have an utter",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 439,
+        "window": "where these things are the duty of person so convinced is st to inquire",
+        "sample": "[7.] Where these things are, the duty of a person so convinced. is, — 1st, To inquire after and to receive the revelation of Jesus Christ, and the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 469,
+        "window": "when we have especial regard thereunto with respect unto especial temptations and particular duties",
+        "sample": "[4.] When we have especial regard thereunto with respect unto especial temptations and particular duties. When on all such occasions we satisfy",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 513,
+        "window": "hereby are they disposed and prepared unto blessed resurrection at the last day which",
+        "sample": "[2.] Hereby are they disposed and prepared unto a blessed resurrection at the last day; which shall be wrought by the Spirit of Christ, which dwelt",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 556,
+        "window": "that being satisfied with its truth and that this is the only way of",
+        "sample": "that, being satisfied with its truth, and that this is the only way of cleansing [from] sin, appointed and blessed by God himself, their minds",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 617,
+        "window": "he is so because the rule and measure of holiness unto us the instrument",
+        "sample": "[3.] He is so, because the rule and measure of holiness unto us, the instrument of working it in us, is his word and doctrine, which he taught",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 657,
+        "window": "work and what the apostle here calls ta pra xeiv tou sw matov the",
+        "sample": "work.\" And what the apostle here calls ta<v pra>xeiv tou~ sw>matov, \"the deeds of the body,\" he therein expresseth the effect for the cause",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 725,
+        "window": "persuasion of their own election never any who complained when they had received it",
+        "sample": "persuasion of their own election; never any who [complained,] when they had received it in a due way and manner, that it proved a snare unto them,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 754,
+        "window": "there is an actual assistance of effectual grace required hereunto we are not put",
+        "sample": "[2.] There is an actual assistance of effectual grace required hereunto. We are not put into such condition by the covenant as that we should be able",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 767,
+        "window": "it is extensive there is nothing in any kind pleasing to god conformable to",
+        "sample": "[2.] It is extensive. There is nothing in any kind pleasing to God, conformable to his mind, or compliant with his will, but he requires it;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 790,
+        "window": "footnotes ft pneumatika ta shmei kalw ti tau ta rga tou pneu matov",
+        "sample": "FOOTNOTES ft1 Pneumatika< ta< shmei~a kalw~n o[ti tau~ta e]rga tou~ pneu>matov",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 797,
+        "window": "ft ei per pneu ma qeou oijkei ejn ujmi de pneu ma qeou eij",
+        "sample": "ft31 Ei]per pneu~ma Qeou~ oijkei~ ejn uJmi>n i]de pneu~ma Qeou~ Eij de< tiv pneu~ma Cristou~ oujk e]cei kai< me<n ejcrh~n eijpei~n eij de> tiv",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 798,
+        "window": "mi an ejne rgeian ojrw men patro kai uijou kai ajgi ou pneu matov",
+        "sample": "Mi>an ejne>rgeian oJrw~men patro<v kai< uiJou~ kai< aJgi>ou pneu>matov. Basil. Homil. 17, in Sanctum Baptisma. Wn aiJ aujtai",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 799,
+        "window": "simonis and others rendering the clause by his spirit the heavens are beauty ed",
+        "sample": "Simonis and others rendering the clause, \"By his Spirit the heavens [are] beauty.\" — ED.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 801,
+        "window": "pepeisme nouv ejf son de cwrou men dia th qewri av ejautou ejkei nw",
+        "sample": "pepeisme>nouv ejf o[son de< cwrou~men dia< th~v qewri>av eJautou<v ejkei>nw| suna>ptontav. — Justin. Martyr. Expositio Fidei de rectâ",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 802,
+        "window": "aujtw ajpobolh ejsh mainen euseb demonst evangel lib prooem",
+        "sample": "aujtw~n ajpobolh<n ejsh>mainen— Euseb. Demonst. Evangel. lib. 6. Prooem.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 805,
+        "window": "ft dh lo ejstin ti kai th tou panto te louv ran wjv me",
+        "sample": "ft68 Dh~lo>n ejstin o[ti kai< th<n tou~ panto<v te>louv w{ran wJv me<n lo>gov ginw>skei wJv de< a]nqrwpov ajgnoei~ Anqrw>pou ga<rr i]dion to<",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 6,
+    "missing_top_windows": [
+      {
+        "page": 139,
+        "window": "spiritual habit permanent and abiding in the soul but in neither of these senses",
+        "sample": "spiritual habit, permanent and abiding in the soul. But in neither of these senses can we be said to receive the Spirit of God, nor God to give him, if"
+      },
+      {
+        "page": 335,
+        "window": "not yet this darkness is no less effectual to bind them in state of",
+        "sample": "not; yet this darkness is no less effectual to bind them in a state of sin, without the powerful illumination of the Holy Ghost, than it is in the"
+      },
+      {
+        "page": 408,
+        "window": "think that all the depravation of our nature consists in that of the sensitive",
+        "sample": "think that all the depravation of our nature consists in that of the sensitive part of the soul, or our affections; the vanity and folly of which opinion"
+      },
+      {
+        "page": 429,
+        "window": "it is with most an immediate product of the power of their own lust",
+        "sample": "(1.) It is with most an immediate product of the power of their own lust. Especially is it so with them who together with their convictions receive"
+      },
+      {
+        "page": 504,
+        "window": "if there were any other way or means whereby men might be sanctified or",
+        "sample": "If there were any other way or means whereby men might be sanctified or made holy, he would not have confined it unto the \"faith that is in him;\" at"
+      },
+      {
+        "page": 779,
+        "window": "stormy and troubled and they are all evil only evil continually genesis herein doth",
+        "sample": "stormy and troubled; and they are all evil, \"only evil continually,\" Genesis 6:5. Herein doth it \"cast up mire and dirt.\" And those who"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 795,
+    "bottom_windows_usable": 775,
+    "skipped_bottom_window_count": 36,
+    "skipped_bottom_windows": [
+      {
+        "page": 30,
+        "window": "of us in the way of obedience but only by ungrounded clamors hath not",
+        "sample": "suited thereunto, which is the alone perfect rule of all that God requires of us in the way of obedience, but only [by] ungrounded clamors, hath not",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 35,
+        "window": "his name and memory be blotted out the same with jesus anathema and this",
+        "sample": "Wvye, the initial letters of wOrk]ziw] wOmv] jMæyi, — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\" And this",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 70,
+        "window": "text wojyciahm dygm and declareth unto man what is his thought they render kai",
+        "sample": "mountains.\" And the next words in the text, wOjyCiAhmæ µd;a;l] dyGmæW, f19 — \"And declareth unto man what is his thought,\" they render, Kai<",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 72,
+        "window": "the occasion of it pro montibus qui hebraic dicuntur yirh soli lxx bronth id",
+        "sample": "declares the mistake of the LXX. and the occasion of it: — \"Pro montibus qui Hebraicè dicuntur µyirh; soli LXX bronth>n, id",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 77,
+        "window": "creation it is said of adam that god yyij tm ni wyp jp yi",
+        "sample": "disciples by breathing on them: our first creation it is said of Adam that God µyYijæ tmæv]ni wyp;aæB] jPæyi,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 104,
+        "window": "of his will counsel and grace and is therefore divine person that hath an",
+        "sample": "tou~ Qeou~,the deep things of God,\" — that is, the mysteries of his will, counsel, and grace; — and is, therefore, a divine person that hath an",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 117,
+        "window": "sw tw qew thou hast lied unto god the nature of his sin being",
+        "sample": "wherein he presides of that which is false. This is explained, verse 4, by ejyeu>sw tw~| Qew~|, \"thou hast lied unto God;\" the nature of his sin being",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 124,
+        "window": "and the especial uses and ends for which it was made in both these",
+        "sample": "2. The rational or intelligent part of it, with the law of its obedience unto God, [and] the especial uses and ends for which it was made. In both these",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 144,
+        "window": "tou pneu matov ihsou cristou he that giveth you continual or abundant supplies of",
+        "sample": "ministereth to you the Spirit.\" O ou=n ejpicorhgi>av tou~ Pneu>matov Ihsou~ Cristou~ — \"He that giveth you continual or abundant supplies of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 175,
+        "window": "dispensation into trance or ecstasy wherein their outward senses were suspended in their operation",
+        "sample": "the visions of God.\" Falling, by divine dispensation, into a trance or ecstasy, wherein their outward senses were suspended [in] their operation,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 206,
+        "window": "in that expression du namis uyi stou ejpiskia sei soi the power of the",
+        "sample": "operation of the Holy Ghost, it seems purposely to be hid from us in that expression, Du>namis Uyi>stou ejpiskia>sei soi, — \"The power of the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 231,
+        "window": "or wilderness and if men would go forth thither there they would see him",
+        "sample": "found in; for, first, some would say he was ejn th~| ejrh>mw|, \"in the desert\" or wilderness, and if men would go forth thither, there they would see him",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 242,
+        "window": "sua omnibus in mundo locis adesset loca omnia implendo et hi verbum plhrw sh",
+        "sample": "universum hoc, exponuntque ut omnipraesentia sua omnibus in mundo locis adesset, loca omnia implendo: et hi verbum plhrw>sh",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 309,
+        "window": "principle of all our moral and spiritual operations and are all affected with the",
+        "sample": "3. Th<n kardi>an, the \"heart.\" And all these are one entire principle of all our moral and spiritual operations, and are all affected with the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "peter yucikou natural men but rather logs zw fusika",
+        "sample": "2 Peter 2:12, yucikou>v, \"natural men,\" but rather a]logs zw~a fusika>,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 320,
+        "window": "spiritual things is doubly expressed by ouj de cetai he receiveth them not",
+        "sample": "spiritual things is doubly expressed: — [1.] By ouj de>cetai, — \"He receiveth them not;\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 322,
+        "window": "of man there is natural power consisting in the suitableness and",
+        "sample": "of a man: — [1.] There is a natural power, consisting in the suitableness and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 397,
+        "window": "the subject spoken of in these promises is the heart and the heart in",
+        "sample": "consideration of the place will manifest; whereof observe, — [1.] The subject spoken of in these promises is the heart. And the heart in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 410,
+        "window": "nor broken in pieces by thee my god yet will rather let me confess",
+        "sample": "\"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] confess",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 468,
+        "window": "expectation on the promise for supplies of grace enabling us unto holy obedience and",
+        "sample": "[3.] When we act faith in prayer and expectation on the promise for supplies of grace enabling us unto holy obedience. And,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 490,
+        "window": "by his spirit doth so turn the streams of it and so renew and",
+        "sample": "[3.] God, who in infinite wisdom manageth the new creature or whole life of grace by his Spirit, doth so turn the streams of it, and so renew and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 506,
+        "window": "holy must say the contrary it is expressly denied in the gospel and especial",
+        "sample": "indeed, and in the sight of God, and therefore are also sanctified and holy, I must say the contrary[; it] is expressly denied in the gospel, and especial",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 534,
+        "window": "spirit what it favors and inclines unto it is not any distinct or separate",
+        "sample": "knoweth\" ti> to< fro>nhma tou~ Pneu>matov, \"what is the meaning of the Spirit,\" what it favors and inclines unto. It is not any distinct or separate",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 604,
+        "window": "unreadiness do ofttimes partially influence the minds of believers themselves unto great indispositions unto",
+        "sample": "[2.] These principles of sloth and unreadiness do ofttimes partially influence the minds of believers themselves unto great indispositions unto",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 632,
+        "window": "that is grace and supplies of holiness from him for saith he cwri ejmou",
+        "sample": "Christ, and thereby continually deriving spiritual nourishment, — that is, grace and supplies of holiness, — from him; \"for,\" saith he, cwri<v ejmou~,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 682,
+        "window": "so the diseased woman in the gospel touched but the hem of his garment",
+        "sample": "[1st.] By faith. The way to derive virtue from Christ is by touching of him. So the diseased woman in the gospel touched but the hem of his garment,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 706,
+        "window": "luke like or equal glory that therein we shall be ijsa ggeloi",
+        "sample": "Luke 20:36, like or \"equal glory, that therein we shall be ijsa>ggeloi,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 738,
+        "window": "this world or unto eternity that there is no especial communion that we can",
+        "sample": "[1.] That God hath no design for his own glory in us or by us, in this world or unto eternity, — that there is no especial communion that we can",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 752,
+        "window": "souls of believers whereby they are constantly inclined and disposed unto all fruits of",
+        "sample": "[1.] That which is habitually resident in the hearts and souls of believers, whereby they are constantly inclined and disposed unto all fruits of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 796,
+        "window": "pe aujtw pepoihme na ek qeou de oujde le getai ei mh ejk th",
+        "sample": "tou~ Qeou~ kai< a]llo to< ejk Qeou~ me<n ga<r oujrano<v kai< gh~ wJv pe<r aujtw~| pepoihme>na Ek Qeou~ de< oujde<n le>getai ei< mh< o{ ejk th~v",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 797,
+        "window": "kai ta pa nta ejx ejno qeou ejsti athanas epistol ad serapionem",
+        "sample": "kai< ta< pa>nta ejx eJno<v Qeou~ ejsti.-Athanas. Epistol. [1:31] ad Serapionem.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 798,
+        "window": "ezra that in the former word is redundant eminent critics demur to this conclusion",
+        "sample": "Owen must have adopted the opinion of Aben Ezra, that B] in the former word is redundant. Eminent critics demur to this conclusion;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 799,
+        "window": "to pneu ma to gion oijkonomikw ejnergei de aujtexousi wv basil hom de fide",
+        "sample": "ft43 'Aposte>lletai me<n to< pneu~ma to< a[gion oijkonomikw~v ejnergei~ de< aujtexousi>wv— Basil. Hom. 15. de Fide.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 800,
+        "window": "tron to meriqe ejka stw para tou kuriou th gnw sewv th ejxe tasin",
+        "sample": "to<n tou~ Bi>ou katanali>skein cro>non kata< de< to< me>tron to< meriqe<n ejka>stw| para< tou~ kuriou th~v gnw>sewv th<n ejxe>tasin",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 801,
+        "window": "eijko kai ajfani sai aujtou th grafh eij ejk tou profanou th ejsca thn",
+        "sample": "qespizo>mena kat aujtw~n skuqrwpa> Dij a[per eijko<v h+n kai< ajfani>sai aujtou~v th<n grafh<n eij ejk tou~ profanou~v th<n ejsca>thn",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 803,
+        "window": "ei nai kai ejn ajmartwlw yuch origen commentar in johan tom",
+        "sample": "ei=nai kai< ejn ajmartwlw~| yuch~|— Origen. Commentar. in Johan. tom. 30.",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_bottom_window_count": 16,
+    "missing_bottom_windows": [
+      {
+        "page": 101,
+        "window": "leviticus they shouted and fell on their faces",
+        "sample": "Leviticus 9:24. they shouted, and fell on their faces,\""
+      },
+      {
+        "page": 134,
+        "window": "had permission and encouragement from cyrus for their work yet immediately upon his death",
+        "sample": "oppression they were; for although they had permission and encouragement from Cyrus for their work, yet immediately upon his death"
+      },
+      {
+        "page": 163,
+        "window": "epist knowing this first testimony of the apostle peter",
+        "sample": "2 Epist. 1:20, 21, \"Knowing this first, testimony of the apostle Peter:"
+      },
+      {
+        "page": 173,
+        "window": "genesis angels thus three men appeared unto abraham",
+        "sample": "Genesis 18:1, 2; angels. Thus three men appeared unto Abraham,"
+      },
+      {
+        "page": 194,
+        "window": "john but he gives particular you my peace give unto you",
+        "sample": "John 14:27. But he gives particular you, my peace I give unto you,\""
+      },
+      {
+        "page": 327,
+        "window": "isaiah suppose man of good reputation for rejected by them",
+        "sample": "Isaiah 53:1-3. Suppose a man of good reputation for rejected by them,"
+      },
+      {
+        "page": 392,
+        "window": "thessalonians but it is peculiar to the or all have not faith",
+        "sample": "2 Thessalonians 3:2, but it is peculiar to the or \"all have not faith,\""
+      },
+      {
+        "page": 406,
+        "window": "corinthians neither can any purpose of god the apostle",
+        "sample": "1 Corinthians 4:7. Neither can any purpose of God the apostle,"
+      },
+      {
+        "page": 407,
+        "window": "speaks the flesh with the affections and lusts thereof some men are inclined to",
+        "sample": "sins of the flesh,\" as the apostle speaks, the flesh, with the affections and lusts\" thereof. Some men are inclined to"
+      },
+      {
+        "page": 408,
+        "window": "word of god which liveth and abideth for ever john",
+        "sample": "word of God, which liveth and abideth for ever.\" John 1:13,"
+      },
+      {
+        "page": 415,
+        "window": "timothy flee youthful lusts such lusts respects in his charge",
+        "sample": "2 Timothy 2:22, \"Flee youthful lusts;\" such lusts respects in his charge,"
+      },
+      {
+        "page": 503,
+        "window": "and an inheritance among them that are sanctified by faith that is in me",
+        "sample": "\"That they may receive forgiveness of sins, and an inheritance among them that are sanctified by faith that is in me.\""
+      },
+      {
+        "page": 537,
+        "window": "zechariah and he who fountain opened for sin and uncleanness",
+        "sample": "Zechariah 13:1. And he who fountain opened for sin and uncleanness,\""
+      },
+      {
+        "page": 598,
+        "window": "ephesians whereby we can do all things spirit in the inner man",
+        "sample": "Ephesians 3:16; whereby \"we can do all things Spirit in the inner man,\""
+      },
+      {
+        "page": 756,
+        "window": "micah there is grievous much less perverse useless or evil",
+        "sample": "Micah 6:6-8. There is grievous, much less perverse, useless, or evil,"
+      },
+      {
+        "page": 778,
+        "window": "the heart is in continual motion is no peace chapter",
+        "sample": "57:20, 21. The heart is in continual motion, is \"no peace,\" chapter"
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2368,
+    "split_candidate_count": 19,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "uncians in homines Christum suum;\" which Hierom rectified into \"Formans montes, et creans ventum, et annuntians homini eloquium suum,\" discovering in his comment the mistake of the",
+        "next": "But it is certain that, from the ambiguity of the word רוּ æח in this place, with the corrupt translations making mention of Christ in the next words, some who of old denied the de"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "s, because in the communication of internal grace unto us, we contribute nothing to the procurement of it, but are merely capable recipient subjects. And this grace is a quality or",
+        "next": "Now, this giving of the Spirit, as it is the act of him by whom he is given, denotes authority, freedom, and bounty; and, on the part of them that receive him, privilege and advant"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "ned in the gospel as have their foundation in the law and light of nature. Such are all the moral duties which are taught therein. And two things may be observed concerning them: —",
+        "next": "(1st.) That they are in some measure known unto men aliunde from other principles. The inbred concreated light of nature doth, though obscurely, teach and confirm them. So the apos"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "In this estate the gospel superadds two things unto the minds of men: —",
+        "next": "(1st.) It directs us unto a right performance of these things, from a right principle, by a right rule, and to a right end and purpose; so that they, and we in them, may obtain acc"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "a person so convinced. is, — 1st, To inquire after and to receive the revelation of Jesus Christ, and the righteousness of God in him, John 1:12. And in order hereunto, he ought, —",
+        "next": "(1st.) To own the sentence of the law under which he suffereth, justifying God in his righteousness and the law in its holiness, whatever be the issue of this dispensation towards "
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "2 dly . It is the duty of persons in such a condition to beware of entangling temptations; as, —",
+        "next": "(1st.) That they have not attained such a degree of sorrow for sin and humiliation as is necessary unto them that are called to believe in Jesus Christ. There was, indeed, more rea"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": ", then, in general premised, I shall comprise what I have farther to offer in the declaration and vindication of gospel sanctification and holiness in the two ensuing assertions: —",
+        "next": "There is wrought and preserved in the minds and souls of all believers, by the Spirit of God, a supernatural principle or habit of grace and holiness, whereby they are made meet fo"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "l ordinance unto the increase of holiness in us, so his holy obedience, as proposed unto us, hath a peculiar efficacy unto that purpose beyond all other instituted examples; for, —",
+        "next": "(1st.) We are often called to behold Christ, and to look upon him, or it is promised that we shall do so, Isaiah 45:22; Zechariah 12:10."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "1, may through faith in him be justified from all our sins, and saved from the wrath to come. But this we intend not; for, 1 Peter 2:24, and \"receiving the atonement\" made thereby,",
+        "next": "(2dly.) He is of God proposed unto us in the gospel as the great pattern and exemplar of holiness, so as that, by God's appointment, our beholding and looking on him, in the way me"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": " efficacy, by the way of motive, in the example of Christ, to incline us unto the imitation of him, that is not to be found in any other example, on any occasion whatever; because,",
+        "next": "(1st.) Whatever is proposed unto us, in what he was or what he did, as our pattern and example, he was it, and did it, not for his own sake, but out of free and mere love unto us. "
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": " a conformity unto him therein, to be as he was, to do as he did, John 17:19; seeing he was what he was, and did what he did, merely out of love unto us, and for no other end! And,",
+        "next": "(2dly.) Everything which we are to imitate in Christ is other ways also beneficial unto us; for we are, in its place and way, even saved thereby. By his obedience we are made right"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "But, in particular, what there is of this nature in the mediation of Christ, in his being the middle person between God and us, may be declared in the ensuing assertions: —",
+        "next": "(1st.) God himself is the absolute infinite fountain, the supreme efficient cause, of all grace and holiness; for he alone is originally and essentially holy, as he only is good, a"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "previous": "And these fruits are of two sorts: —",
+        "next": "(1st.) Internal, in the figments and imaginations of the heart; which is the first way whereby the lusts of the old man do act themselves. And, therefore, of those that are under t"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "previous": " and motive unto it, as it is to be performed in ourselves by the way of duty; both these, as to this matter of mortifications, do center in this inhabitation of the Spirit. For, —",
+        "next": "(1st.) It is he who mortifies and subdues our corruptions, who quickens us unto life, holiness, and obedience, as he \"dwelleth in us,\" that he may make and prepare a habitation mee"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "previous": " mortifies and subdues our corruptions, who quickens us unto life, holiness, and obedience, as he \"dwelleth in us,\" that he may make and prepare a habitation meet for himself. And,",
+        "next": "(2dly.) The principal reason and motive which we have to attend unto it with all care and diligence as a duty is, that we may thereby preserve his dwelling-place so as becometh his"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "previous": "this sin in us, and they are accompanied with their defilements, how can it be supposed that the Holy Ghost will dwell in us, or in anyone that is not perfectly holy? \" I answer, —",
+        "next": "(1st.) That the great matter which the Spirit of God considereth in his opposition unto sin, and that of sin to his work, is dominion and rule. This the apostle makes evident, Roma"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "previous": "Now, this the Holy Ghost doth, —",
+        "next": "(1st.) By implanting in our minds and all their faculties a contrary habit and principle, with contrary inclinations, dispositions, and actings, — namely, a principle of spiritual "
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "previous": "And I answer, we do it two ways: —",
+        "next": "[1st.] By faith. The way to derive virtue from Christ is by touching of him."
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "previous": "y of it unto us and to press us thereunto, especially from the decree of election, which in an especial manner is by some traduced as no friend to this design. I say, then, that, —",
+        "next": "It is the eternal and immutable purpose of God, that all who are his in a peculiar manner, all whom he designs to bring unto blessedness in the everlasting enjoyment of himself, sh"
+      }
+    ],
+    "structural_start_exclusions": 423,
+    "short_fragment_count": 20,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Thus,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Therefore,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "And,"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "For,"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "Hence it follows: —"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "And sorrow always accompanieth it."
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "30."
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "1."
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "And in this place, —"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "Yea, —"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "And,"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "3, 4;"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "Hence, —"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "text": "Now, this the Holy Ghost doth, —"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "text": "And I answer, we do it two ways: —"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "But,"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch039.xhtml",
+        "text": "Μόνῳ Θεῷ σωτῆρι δόξα !"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 18,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "3. — Divine Nature And Personality Of The Holy Spirit Proved And Vindicated. — Ends of our consideration of the dispensation of the Spirit — Principles premised thereunto — The nature of God the foundation of all religion — Divine revelation gives the rule and"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "2. By internal purification — Holiness peculiar to the gospel and its truth — Not discernible to the eye of carnal reason — Hardly understood by believers themselves — It passeth over into eternity — Hath in it a present glory — Is all that God requireth of us"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "2. Power; the nature thereof; or what power is required in believers unto holy obedience; with its properties and effects in readiness and facility — Objections thereunto answered, and an inquiry on these principles after true holiness in ourselves directed — "
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "1. Those of nature; 2. Those of grace; — or the works of the old and new creation. And we must inquire what are the especial operations of the Holy Spirit in and about these works, which shall be distinctly explained."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "And thus was it also in the earth. God first out of nothing created the earth, which comprised the whole inferior globe, which afterward divided itself into seas and dry land, as the heavens contain in that expression of their creation all that is above and ov"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Now, this giving of the Spirit, as it is the act of him by whom he is given, denotes authority, freedom, and bounty; and, on the part of them that receive him, privilege and advantage. 1. Authority. He that gives anything hath authority to dispose of it. None "
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "1. Voices; 2. Dreams; 3. Visions. And the accidental adjuncts of it are two: —"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "1. Symbolical actions; 2. Local mutations. The schoolmen, after Aquinas,"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "1. By our external senses; 2. By impressions on the fantasy or imagination;"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Christ the head of the new creation — Things premised in general unto the remaining work of the Spirit — Things presupposed unto the work of the Spirit towards the church — The love and grace of Father and Son — The whole work of the building of the church com"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "1. Of sanctifying grace; 2. Of especial gifts;"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "1. Illumination; 2. Conviction; 3. Reformation. The first of these respects the mind only; the second, the mind, conscience, and affections; and the third, the life and conversation: —"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "1st . That they are equal; 2dly . That they are easy, or not grievous."
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "[7.] Where these things are, the duty of a person so convinced. is, — 1st, To inquire after and to receive the revelation of Jesus Christ, and the righteousness of God in him, John 1:12. And in order hereunto, he ought, —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "1. Spiritual dispositions unto suitable acts; how expressed in the Scripture; with their effects — Contrary dispositions unto sin and holiness how consistent — 2. Power; the nature thereof; or what power is required in believers unto holy obedience; with its p"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "By reason of her circumstances in the world, she had an unreadiness for that converse and communion with Christ which she was called unto. And it is so not unfrequently with the best of men in this world. A spiritual unreadiness unto holy duties, arising from "
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "[2.] These present ends of it under the gospel are such as that God doth no less indispensably require it of us now than he did when our justification was proposed as the end of it. They are such, in brief, as God upon the account of them judgeth meet to comma"
+      },
+      {
+        "file": "EPUB/ch039.xhtml",
+        "text": "1. The life which he led; 2. The doctrine which he taught; and,"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 6,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "14. But why, then, is he not called the \"Spirit of God\" also on this reason, because the prophets that spake by him treated wholly of God, the things and the will of God? This they will not say, for they acknowledge him "
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "342. Whatever trouble befalls the minds of men upon the account of a sense of the guilt of sin; whatever darkness and disconsolation they may undergo through the displeasure of God, and his withdrawing of the wonted infl"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "22. q. 174, a. 1, do commonly reduce the means of revelation unto three heads. For whereas there are three ways whereby we come to know anything, —"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "344. 89 I confess these are the words of one who seems not much to consider what he says, so as that it may serve his present turn in reviling and reproaching other men; for he considers not that, by this description of "
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "10. Those who were thus converted unto God in the primitive times of the church were, upon their confession or profession hereof, admitted into church-society and to a participation of all the mysteries thereof. And this"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": "11. And a supposition hereof lies at the bottom of that blessed exhortation of our apostle, Colossians 3:12, 13, \"Put on therefore, as the elect of God, holy and beloved, bowels of mercies, kindness, humbleness of mind, "
+      }
+    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 626,
+    "epub_marker_count": 559,
+    "missing_marker_count": 2,
+    "missing_markers": [
+      {
+        "marker": "[1st.]",
+        "pdf": 6,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "pdf:p439",
+            "context": "hings which will present themselves in such a case as means of relief are of two sorts: — [1st.] Such as the fears and superstitions of men have suggested or will suggest. That which hath raised all the false religion which is in the world is nothing but a contrivance for the"
+          },
+          {
+            "location": "pdf:p673",
+            "context": "ore, if we would be found in a successful discharge of this duty, it is required of us, — [1st.] That we endeavor diligently, in the whole course of our lives, after these continual supplies of grace, — that is, that we wait for them in all those ways and means whereby they a"
+          },
+          {
+            "location": "pdf:p673",
+            "context": "sin. Unto the right use of those duties (for such there are), two things are required: — [1st.] That we know them aright in their nature and use, as also that they are appointed of God unto this end; and then, [2dly.] That we perform them in a due manner. And both these we m"
+          }
+        ]
+      },
+      {
+        "marker": "[2dly.]",
+        "pdf": 7,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "pdf:p439",
+            "context": "stition consists in endeavors to quiet and charm the consciences of men convinced of sin. [2dly.] That which is pressed with most vehemency and plausibility, being suggested by the law itself, in a way of escape from the danger of its sentence, as the sense of what it speaks,"
+          },
+          {
+            "location": "pdf:p621",
+            "context": "God, and is by his Spirit made effectual. And these ends are two: — [lst.] Justification; [2dly.] Salvation, or deliverance from sin and punishment. \"Look unto me,\" saith he, \"and be ye saved.\" This was he on the cross, and is still so in the preaching of the gospel, wherein h"
+          },
+          {
+            "location": "pdf:p673",
+            "context": "ances of divine worship, we have no ground to expect any great supplies to this end. And, [2dly.] That we live and abound in the actual exercise of all those graces which are most directly opposite unto those peculiar lusts or corruptions that we are most exercised withal or o"
+          }
+        ]
+      }
+    ],
+    "excess_marker_count": 0,
+    "excess_markers": [],
+    "orphan_candidate_count": 1,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[18]",
+        "family": "bracket_decimal",
+        "context": "before them, — namely, the old scoffing heathens; for so doth Lucian, in his Philopatris [18], speak in imitation of a Christian by way of scorn, Λέγε παρὰ τοῦ Πνεύματος δύναμιν τοῦ λόγου λαβών — \"Speak out now, receiving power or ability of speaking from the Spirit,\" or \""
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "both to will and to do of his good pleasure",
+      "count": 7
+    },
+    {
+      "phrase": "the name of the father and of the son and",
+      "count": 6
+    },
+    {
+      "phrase": "in us both to will and to do of his",
+      "count": 6
+    },
+    {
+      "phrase": "us both to will and to do of his good",
+      "count": 6
+    },
+    {
+      "phrase": "work of the spirit of god in the new creation",
+      "count": 5
+    },
+    {
+      "phrase": "name of the father and of the son and of",
+      "count": 5
+    },
+    {
+      "phrase": "of the father and of the son and of the",
+      "count": 5
+    },
+    {
+      "phrase": "the father and of the son and of the holy",
+      "count": 5
+    },
+    {
+      "phrase": "father and of the son and of the holy ghost",
+      "count": 5
+    },
+    {
+      "phrase": "the new man which after god is created in righteousness",
+      "count": 5
+    },
+    {
+      "phrase": "new man which after god is created in righteousness and",
+      "count": 5
+    },
+    {
+      "phrase": "within you and cause you to walk in my statutes",
+      "count": 5
+    },
+    {
+      "phrase": "you and cause you to walk in my statutes and",
+      "count": 5
+    },
+    {
+      "phrase": "the flesh lusteth against the spirit and the spirit against",
+      "count": 5
+    },
+    {
+      "phrase": "flesh lusteth against the spirit and the spirit against the",
+      "count": 5
+    },
+    {
+      "phrase": "lusteth against the spirit and the spirit against the flesh",
+      "count": 5
+    },
+    {
+      "phrase": "the work of the spirit of god in the new",
+      "count": 4
+    },
+    {
+      "phrase": "he shall take of mine and shall show it unto",
+      "count": 4
+    },
+    {
+      "phrase": "shall take of mine and shall show it unto you",
+      "count": 4
+    },
+    {
+      "phrase": "if any man have not the spirit of christ he",
+      "count": 4
+    },
+    {
+      "phrase": "any man have not the spirit of christ he is",
+      "count": 4
+    },
+    {
+      "phrase": "man have not the spirit of christ he is none",
+      "count": 4
+    },
+    {
+      "phrase": "have not the spirit of christ he is none of",
+      "count": 4
+    },
+    {
+      "phrase": "not the spirit of christ he is none of his",
+      "count": 4
+    },
+    {
+      "phrase": "in the name of the father and of the son",
+      "count": 4
+    }
+  ],
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

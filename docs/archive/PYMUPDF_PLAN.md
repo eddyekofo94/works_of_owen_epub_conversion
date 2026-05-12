@@ -369,7 +369,7 @@ def generate_nav_xhtml(toc_entries, volume_title):
     <dc:title>The Works of John Owen, Vol. {N} — {subtitle}</dc:title>
     <dc:creator id="creator">John Owen</dc:creator>
     <dc:language>en</dc:language>
-    <dc:publisher>Banner of Truth Trust</dc:publisher>
+    <dc:publisher>Eduardus Ekofius</dc:publisher>
     <meta property="dcterms:modified">{iso_date}</meta>
   </metadata>
   <manifest>
@@ -397,7 +397,7 @@ def generate_nav_xhtml(toc_entries, volume_title):
   <p class="subtitle">{subtitle}</p>
   <p class="author"><span class="by">by</span>John Owen</p>
   <p class="editor">Edited by William H. Goold</p>
-  <p class="publisher">Banner of Truth Trust</p>
+  <p class="publisher">Eduardus Ekofius</p>
 </div>
 ```
 

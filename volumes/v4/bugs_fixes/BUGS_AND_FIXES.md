@@ -50,7 +50,7 @@ See previous sessions.
 - Two `<p class="subtitle">` — volume number + subtitle
 - `<p class="author"><span class="by">by</span>John Owen</p>` — italic "by" label
 - `<p class="editor">Edited by William H. Goold</p>`
-- `<p class="publisher">Banner of Truth Trust</p>` — pushed to bottom with `margin-top: auto`
+- `<p class="publisher">Eduardus Ekofius</p>` — pushed to bottom with `margin-top: auto`
 - Flexbox layout: `display: flex; flex-direction: column; align-items: center; min-height: 90vh`
 
 ### 10. NAV Title Splitting (Fixed)
@@ -104,3 +104,112 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+
+---
+
+### 15. Volume 4 AGES Footnotes, Empty Bracket Noise, and Front CONTENTS Overlap — IMPLEMENTED (AWAITING VALIDATION)
+
+**Problem:** Volume 4 had body noteref links without a working generated endnotes chapter, and rendered scripture citations exposed empty bracket residue such as `[] Ephesians 4:30`. The front-matter audit also found one missing CONTENTS continuation page.
+
+**Fix:** Added a generic AGES back-matter footnote detector that finds the `FOOTNOTES` section or final-page `ftN` markers, removes empty bracket residue after scripture-code cleanup, teaches the EPUB audit/regression gate to fail on visible `[]`, and lets early TOC-like pages be preserved even when the PDF outline also references them.
+
+**Validation status:** IMPLEMENTED (AWAITING VALIDATION). Regenerated Volume 4 only. Current v4 EPUB audit reports 23 noteref links / 23 endnote anchors, 0 empty bracket noise files, and 0 untagged Greek/Hebrew chars. Current v4 text-integrity audit reports 4 front CONTENTS pages checked and 0 missing.
+
+---
+
+
+<!-- AUTO_AUDIT_START -->
+## Automated EPUB Audit
+
+**Last run:** 2026-05-12T20:22:41.686272+00:00
+**EPUB:** `volumes/v4/output/volume_4.epub`
+**Status:** WARN (0 errors, 2 warnings)
+
+Reports:
+- `volume_4_audit.json`
+- `volume_4_audit.md`
+
+| Check | Result |
+|-------|--------|
+| OPF version | 3.0 |
+| XHTML files | 73 |
+| Spine items | 71 |
+| Embedded fonts | 8 |
+| NAV links | 71 |
+| Greek chars / untagged | 4550 / 0 |
+| Hebrew chars / untagged | 600 / 0 |
+| Noteref links / endnote anchors | 23 / 23 |
+| AGES boilerplate hits | 0 |
+| Possible Beta Code files | 0 |
+| Escaped language-tag files | 0 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 10 |
+
+Warnings requiring triage:
+
+- `repeated_phrases`: Potential repeated phrases detected
+- `missing_apple_options`: Missing Apple Books display-options file
+
+**Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
+<!-- AUTO_AUDIT_END -->
+
+---
+
+
+<!-- TEXT_INTEGRITY_START -->
+## Automated Textual Integrity Audit
+
+**Last run:** 2026-05-12T20:23:11.773256+00:00
+**Status:** WARN (8 warnings)
+
+Reports:
+- `volume_4_text_integrity.json`
+- `volume_4_text_integrity.md`
+
+| Check | Result |
+|-------|--------|
+| PDF pages | 653 |
+| EPUB text files | 72 |
+| EPUB paragraphs/headings | 2317 |
+| Approximate PDF-to-EPUB word coverage | 0.9942 |
+| Weak page matches | 3 |
+| Dense source windows checked | 24832 |
+| Missing dense source-window pages | 64 |
+| Front CONTENTS pages checked | 4 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 624 |
+| Top-of-page windows skipped as unstable | 29 |
+| Missing top-of-page body windows | 0 |
+| Bottom-of-page body windows checked | 607 |
+| Bottom-of-page windows skipped as unstable | 22 |
+| Missing bottom-of-page body windows | 0 |
+| Possible faulty paragraph splits | 30 |
+| Structural starts excluded from split warnings | 326 |
+| Short fragments | 26 |
+| Adjacent duplicate paragraphs | 0 |
+| Inline structural marker candidates | 9 |
+| Reference continuation splits | 0 |
+| Citation continuation splits | 0 |
+| Suspicious large-number starts | 3 |
+| Roman heading candidates | 1 |
+| Overlong heading candidates | 0 |
+| Front-matter heading/body candidates | 0 |
+| Repeated word windows | 25 |
+| PDF enumerator markers | 416 |
+| EPUB enumerator markers | 375 |
+| Missing enumerator marker forms | 3 |
+| Enumerator sequence candidates | 0 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+**Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
+<!-- TEXT_INTEGRITY_END -->

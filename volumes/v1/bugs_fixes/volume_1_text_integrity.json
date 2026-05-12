@@ -7,9 +7,9 @@
     "spine_text_files": 84,
     "paragraph_count": 2860
   },
-  "generated_at": "2026-05-11T21:52:16.840807+00:00",
+  "generated_at": "2026-05-12T16:23:36.600537+00:00",
   "status": "warn",
-  "warning_count": 8,
+  "warning_count": 7,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -32,10 +32,6 @@
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     },
     {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
       "code": "suspicious_large_number_starts",
       "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
     },
@@ -46,13 +42,43 @@
   ],
   "word_coverage": {
     "pdf_content_tokens": 208263,
-    "epub_content_tokens": 206473,
-    "coverage_ratio": 0.9908,
+    "epub_content_tokens": 203650,
+    "coverage_ratio": 0.977,
     "missing_word_samples": [
+      {
+        "word": "jesus",
+        "pdf": 259,
+        "epub": 57
+      },
+      {
+        "word": "object",
+        "pdf": 171,
+        "epub": 24
+      },
       {
         "word": "ft",
         "pdf": 124,
         "epub": 0
+      },
+      {
+        "word": "enjoyment",
+        "pdf": 71,
+        "epub": 9
+      },
+      {
+        "word": "subject",
+        "pdf": 56,
+        "epub": 8
+      },
+      {
+        "word": "just",
+        "pdf": 53,
+        "epub": 6
+      },
+      {
+        "word": "conjunction",
+        "pdf": 47,
+        "epub": 6
       },
       {
         "word": "kai",
@@ -60,9 +86,24 @@
         "epub": 0
       },
       {
+        "word": "joy",
+        "pdf": 68,
+        "epub": 31
+      },
+      {
+        "word": "enjoy",
+        "pdf": 43,
+        "epub": 6
+      },
+      {
         "word": "tou",
         "pdf": 33,
         "epub": 0
+      },
+      {
+        "word": "judge",
+        "pdf": 34,
+        "epub": 3
       },
       {
         "word": "th",
@@ -70,12 +111,42 @@
         "epub": 9
       },
       {
+        "word": "justice",
+        "pdf": 40,
+        "epub": 13
+      },
+      {
         "word": "oj",
         "pdf": 23,
         "epub": 0
       },
       {
+        "word": "judgment",
+        "pdf": 29,
+        "epub": 7
+      },
+      {
+        "word": "jews",
+        "pdf": 33,
+        "epub": 14
+      },
+      {
+        "word": "st",
+        "pdf": 32,
+        "epub": 15
+      },
+      {
+        "word": "rejected",
+        "pdf": 24,
+        "epub": 7
+      },
+      {
         "word": "ou",
+        "pdf": 17,
+        "epub": 0
+      },
+      {
+        "word": "subjection",
         "pdf": 17,
         "epub": 0
       },
@@ -85,171 +156,210 @@
         "epub": 10
       },
       {
-        "word": "ejn",
-        "pdf": 14,
-        "epub": 0
+        "word": "objects",
+        "pdf": 20,
+        "epub": 5
       },
       {
-        "word": "qeo",
-        "pdf": 14,
-        "epub": 0
+        "word": "reject",
+        "pdf": 17,
+        "epub": 2
       },
       {
-        "word": "tw",
-        "pdf": 13,
-        "epub": 0
-      },
-      {
-        "word": "hj",
-        "pdf": 13,
-        "epub": 0
-      },
-      {
-        "word": "kata",
-        "pdf": 11,
-        "epub": 0
-      },
-      {
-        "word": "qeou",
-        "pdf": 11,
-        "epub": 0
-      },
-      {
-        "word": "gov",
-        "pdf": 11,
-        "epub": 0
-      },
-      {
-        "word": "ajnqrw",
-        "pdf": 9,
-        "epub": 0
-      },
-      {
-        "word": "te",
-        "pdf": 12,
-        "epub": 4
-      },
-      {
-        "word": "nh",
-        "pdf": 7,
-        "epub": 0
-      },
-      {
-        "word": "aujto",
-        "pdf": 7,
-        "epub": 0
-      },
-      {
-        "word": "ei",
-        "pdf": 7,
-        "epub": 0
-      },
-      {
-        "word": "pe",
-        "pdf": 7,
-        "epub": 0
-      },
-      {
-        "word": "mi",
-        "pdf": 6,
-        "epub": 0
-      },
+        "word": "job",
+        "pdf": 26,
+        "epub": 12
+      }
+    ],
+    "excess_word_samples": [
       {
         "word": "su",
         "pdf": 6,
-        "epub": 0
+        "epub": 18
       },
       {
-        "word": "pro",
-        "pdf": 9,
-        "epub": 4
+        "word": "ss",
+        "pdf": 0,
+        "epub": 10
       },
       {
-        "word": "dia",
-        "pdf": 5,
-        "epub": 0
-      },
-      {
-        "word": "gou",
-        "pdf": 5,
-        "epub": 0
+        "word": "sp",
+        "pdf": 0,
+        "epub": 7
       }
-    ],
-    "excess_word_samples": []
+    ]
   },
   "page_coverage": {
     "pages_checked": 633,
-    "weak_page_count": 12,
+    "weak_page_count": 85,
     "weak_pages": [
+      {
+        "page": 16,
+        "hit_ratio": 0.333,
+        "sample": "sometimes at loss to judge of the treatise of an old author whether it he worthy of his attention or likely to interest him"
+      },
+      {
+        "page": 35,
+        "hit_ratio": 0.333,
+        "sample": "superna mysteria licet scire quod ntus sit non licet discutere quomodu ntus sit illud negare mihi non licet hoc quaerere metus est nam si"
+      },
       {
         "page": 37,
         "hit_ratio": 0.333,
         "sample": "composition they called nwsin fusikh because it was of diverse natures and nwsin kata su nqesin union by composition but because there neither was"
       },
       {
-        "page": 619,
+        "page": 39,
         "hit_ratio": 0.333,
-        "sample": "no essentially they are but one differing only in some outward administrations ephesians corinthians galatians hebrews can this church be wholly overthrown on the"
+        "sample": "god he took on him the form of servant in like meaner he was not made the word when he was flesh but being"
       },
       {
-        "page": 631,
+        "page": 44,
         "hit_ratio": 0.333,
-        "sample": "chapter of the communion of saints the fifth privilege of believers what is the communion of saints an holy conjunction between all god's people"
+        "sample": "that the person of christ as god-man is the proper object of all divine honor and worship on the account of his divine nature"
       },
       {
-        "page": 635,
+        "page": 49,
         "hit_ratio": 0.0,
-        "sample": "ft katoptri zw does not admit of the signification here ascribed to it by dr owen it denotes looking into mirror not through telescope"
+        "sample": "being nothing but the ajnakefalaiwsiv mentioned by the apostle ephesians and he here affirms that unto this end the lord was made flesh secundum"
       },
       {
-        "page": 636,
+        "page": 51,
         "hit_ratio": 0.333,
-        "sample": "ft the expression quoted by dr owen is founded upon the phrase in the original language dielhluqo ta tou oujrano uv having passed through"
+        "sample": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit et quaerit imago eum qui est ad similitudinem sui ut"
       },
       {
-        "page": 637,
+        "page": 55,
         "hit_ratio": 0.333,
-        "sample": "ft popish traditions are false lights leading from god ft the authority of the scripture dependeth not on the authority of the church as"
+        "sample": "thereof whatever it be whereby men cease to hold the head how small soever it seem that alone is pernicious colossians this confession therefore"
       },
       {
-        "page": 638,
+        "page": 106,
         "hit_ratio": 0.333,
-        "sample": "ft this is that mysterious ark that must not be pried into nor the least little spoken about it wherein plain scripture goeth not"
+        "sample": "the unity of the divine essence and the word was with god in its distinct personal subsistence the word that is the person of"
       },
       {
-        "page": 639,
+        "page": 116,
         "hit_ratio": 0.333,
-        "sample": "ft though we have all lost our right unto the promise of the fist covenant yet all not restored by christ are under the"
+        "sample": "chapter the person of christ the great repository of sacred truth its relation thereunto divine supernatural truth is called by the apostle the truth"
       },
       {
-        "page": 641,
+        "page": 117,
         "hit_ratio": 0.333,
-        "sample": "secondly his own voluntary undergoing it thirdly by relaxation of the law in regard of the subject punished fourthly beneficial to us because united"
+        "sample": "deuteronomy he is so efficiently as by him alone it is fully and effectually declared for no man has seen god at any time"
       },
       {
-        "page": 642,
+        "page": 131,
         "hit_ratio": 0.333,
-        "sample": "ft the only way to heaven is by the cross ft christ giveth life to all that world for whom he gave his life"
+        "sample": "the only-begotten son who is in the bosom of the father not only as being his eternal delight and love but also as one"
       },
       {
-        "page": 643,
-        "hit_ratio": 0.333,
-        "sample": "as having done nothing amiss in the other as having all amiss pardoned ft repentance includeth first alteration of the mind into hatred of"
-      },
-      {
-        "page": 644,
+        "page": 155,
         "hit_ratio": 0.0,
-        "sample": "ft this is one of the greatest mysteries of the roman magic and juggling that corporeal elements should have power to forgive sins and"
+        "sample": "christ himself the socinians grant generally that it is lawful for us to call on christ but they deny that it is our duty"
+      },
+      {
+        "page": 156,
+        "hit_ratio": 0.333,
+        "sample": "is expressed chap for this cause bow my knees unto the father of our lord jesus christ of whom the whole family in heaven"
+      },
+      {
+        "page": 157,
+        "hit_ratio": 0.333,
+        "sample": "hebrews so is he also as he alone who is able to succor to relieve and to deliver them he is able to succor"
+      },
+      {
+        "page": 174,
+        "hit_ratio": 0.333,
+        "sample": "for such supplies of grace for such an exercise of the acts of divine power as whereby we may be supported and delivered and"
+      },
+      {
+        "page": 193,
+        "hit_ratio": 0.333,
+        "sample": "that god requireth of us is that we love him with all our souls and all our minds these men cry up divine love"
+      },
+      {
+        "page": 215,
+        "hit_ratio": 0.333,
+        "sample": "power of god do evidently shine forth in him wherefore it must be said that notwithstanding that open plain representation that is made of"
+      },
+      {
+        "page": 230,
+        "hit_ratio": 0.333,
+        "sample": "wherefore it was an infinite condescension of divine wisdom and grace gloriously to implant that image of him which we are to endeavor conformity"
+      },
+      {
+        "page": 236,
+        "hit_ratio": 0.333,
+        "sample": "st declaration that all these things are wrought in and communicated unto believers according to their various natures by an emanation of grace and"
+      },
+      {
+        "page": 258,
+        "hit_ratio": 0.333,
+        "sample": "justly for its transgression but that god might be gloried in its accomplishment if this be not done it is impossible that men should"
+      },
+      {
+        "page": 298,
+        "hit_ratio": 0.333,
+        "sample": "declare wherein he placed the conjunction or union of the two natures of christ whereby he constituted two distinct persons of the son of"
+      },
+      {
+        "page": 299,
+        "hit_ratio": 0.0,
+        "sample": "he allowed it to be kat ajxi an by way of dignity and honor for this conjunction is such as that whatever honor is"
+      },
+      {
+        "page": 310,
+        "hit_ratio": 0.333,
+        "sample": "are finite in the same person one towards the other is of difficult apprehension who knows how directive power and efficacy proceeds from the"
+      },
+      {
+        "page": 319,
+        "hit_ratio": 0.333,
+        "sample": "through them hebrews and is made higher than they chap but into the place of the residence of god in glory and majesty chap"
+      },
+      {
+        "page": 320,
+        "hit_ratio": 0.333,
+        "sample": "his ascension may be considered as gracious as the ascent of high priest and herein the things before mentioned are of distinct consideration as"
+      },
+      {
+        "page": 331,
+        "hit_ratio": 0.333,
+        "sample": "open unto the saints above we are in the dust the blood the noise of the battle they are victoriously at peace and have"
+      },
+      {
+        "page": 343,
+        "hit_ratio": 0.333,
+        "sample": "enjoy here yet still to depart hence and to be with christ shall be far better philippians for st although service here below shall"
+      },
+      {
+        "page": 350,
+        "hit_ratio": 0.333,
+        "sample": "prefatory note the following treatise may be regarded as series of discourses on john the subject is the glory of christ as the representative"
+      },
+      {
+        "page": 356,
+        "hit_ratio": 0.333,
+        "sample": "death itself but the glory hereof shall speak unto distinctly in its proper place which follows and therefore shall here pass it by iv"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 24587,
-    "missing_dense_window_pages": 110,
+    "dense_windows_checked": 4783,
+    "missing_dense_window_pages": 564,
     "missing_dense_windows": [
       {
+        "page": 7,
+        "sample": "general preface it would be presumption to enter upon any commendation of john owen"
+      },
+      {
+        "page": 8,
+        "sample": "of locke immortal among the political authors of great britain and there is truth"
+      },
+      {
         "page": 9,
-        "sample": "depths of exploring the secretes of the heart his view of spiritual mindedness draws"
+        "sample": "embraces the most comprehensive view of this vitally-important subject his exposition of psalm exhibits"
       },
       {
         "page": 10,
@@ -257,7 +367,35 @@
       },
       {
         "page": 11,
-        "sample": "in and the five volumes of his collected works were issued from to charneck"
+        "sample": "to persevere in their undertaking the scheme however proved abortive nothing appeared in addition"
+      },
+      {
+        "page": 12,
+        "sample": "to publish them in respectable form it deserved well of the christian public and"
+      },
+      {
+        "page": 13,
+        "sample": "he appends humorous note to his treatise entitled salus electorum sauguis iesu or the"
+      },
+      {
+        "page": 14,
+        "sample": "deemed incapable in the more important treatises we have endeavored to make judicious and"
+      },
+      {
+        "page": 15,
+        "sample": "for all the meaning that could be expiscated from them and the riddle they"
+      },
+      {
+        "page": 16,
+        "sample": "sometimes at loss to judge of the treatise of an old author whether it"
+      },
+      {
+        "page": 17,
+        "sample": "these statements and explanations the public must be left to judge of the merits"
+      },
+      {
+        "page": 18,
+        "sample": "misspent the labor has even already been its own reward nor was it mean"
       },
       {
         "page": 19,
@@ -269,143 +407,107 @@
       },
       {
         "page": 21,
-        "sample": "events ensued which justified these apprehensions of own prolonged controversy on the subject of"
+        "sample": "assaults of satan had been directed and with sagacious foresight he anticipated the rise"
+      },
+      {
+        "page": 22,
+        "sample": "for rock of offense to both the houses of israel for gin and for"
+      },
+      {
+        "page": 23,
+        "sample": "consist the soul life power beauty and efficacy of the christian religion without which"
+      },
+      {
+        "page": 24,
+        "sample": "about them do rather increase than abate unto this very day the dismal fruits"
+      },
+      {
+        "page": 25,
+        "sample": "ancient writes of the first ages of the church but omitted that cause as"
+      },
+      {
+        "page": 28,
+        "sample": "from petra the rock as christ is not so called from christian but christian"
+      },
+      {
+        "page": 29,
+        "sample": "according unto commandment given unto them john john all true believers in their several"
+      },
+      {
+        "page": 33,
+        "sample": "those primitive councils and the scandalous contests of many of the members of them"
+      },
+      {
+        "page": 34,
+        "sample": "manner of it not to be inquired into scrutator majestatis absorbetur gloria was their"
+      },
+      {
+        "page": 35,
+        "sample": "superna mysteria licet scire quod ntus sit non licet discutere quomodu ntus sit illud"
+      },
+      {
+        "page": 38,
+        "sample": "non ut ille habitator et illa esset habitaculum sed ut naturae alteri sic misceretur"
+      },
+      {
+        "page": 39,
+        "sample": "servant in like meaner he was not made the word when he was flesh"
+      },
+      {
+        "page": 43,
+        "sample": "factores autem sermonum ejus facti communionem habeamus cum ipso we could not otherwise have"
+      },
+      {
+        "page": 46,
+        "sample": "and then immediately repeat it unto another for it would thence follow that the"
+      },
+      {
+        "page": 48,
+        "sample": "way defective in righteousness set himself against the apostasy justly also redeeming from him"
       },
       {
         "page": 49,
         "sample": "being nothing but the ajnakefalaiwsiv mentioned by the apostle ephesians and he here affirms"
       },
       {
+        "page": 51,
+        "sample": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit"
+      },
+      {
+        "page": 52,
+        "sample": "might be manifest what the whole mass had deserved and whither the judgment of"
+      },
+      {
+        "page": 53,
+        "sample": "declaration of the glorious mystery of the person of christ chapter peter's confession matthew"
+      },
+      {
+        "page": 54,
+        "sample": "whilst he was present is somewhat uncouth and whilst they live they shall never"
+      },
+      {
         "page": 55,
-        "sample": "savior consider in the answer returned unto his inquiry the faith of peter in"
+        "sample": "whole church that should live in the same faith and confession verses and jesus"
       },
       {
-        "page": 72,
-        "sample": "that divine treasure wherewith the scripture of truth is enriched make no pretense of"
+        "page": 56,
+        "sample": "only blessed thing to believe and know jesus christ as it is called life"
       },
       {
-        "page": 90,
-        "sample": "place no small portion of divine blessedness self existence in its own immense being"
+        "page": 58,
+        "sample": "be this rock but that he and his successors the bishops of rome are"
       },
       {
-        "page": 101,
-        "sample": "glory and the firmament always showed his handy work the invisible things of his"
+        "page": 59,
+        "sample": "his sufferings wherein alone the foundation of the gospel church was to be laid"
       },
       {
-        "page": 106,
-        "sample": "unto his divine person as the son of the father the only begotten the"
+        "page": 60,
+        "sample": "real doctrinal and in both ways christ alone is the foundation the real foundation"
       },
       {
-        "page": 135,
-        "sample": "as the prophet of the church but hereon they will never have experience of"
-      },
-      {
-        "page": 156,
-        "sample": "proposed as full of tender compassion as he alone who is able to relieve"
-      },
-      {
-        "page": 157,
-        "sample": "hebrews so is he also as he alone who is able to succor to"
-      },
-      {
-        "page": 179,
-        "sample": "faith wherein it rests but god through him through him have we access by"
-      },
-      {
-        "page": 194,
-        "sample": "the spirit as he is the only begotten of the father he is the"
-      },
-      {
-        "page": 198,
-        "sample": "minister for the heirs of salvation hebrews were they not acted herein by their"
-      },
-      {
-        "page": 199,
-        "sample": "excite love unto him and desires after him hence is he called ywogh ajk"
-      },
-      {
-        "page": 203,
-        "sample": "divine goodness how great is his goodness how great is his beauty zechariah nothing"
-      },
-      {
-        "page": 211,
-        "sample": "the other the title of the th psalm is tdo ydiy ryvi song of"
-      },
-      {
-        "page": 212,
-        "sample": "wisdom and goodness continually represented unto them this is he who is the joy"
-      },
-      {
-        "page": 216,
-        "sample": "is but nextly and immediately for what he did what he did for us"
-      },
-      {
-        "page": 223,
-        "sample": "one whose benignity is ready to exercise loving kindness on all occasions which is"
-      },
-      {
-        "page": 239,
-        "sample": "own glory in and by their own immediate proper ends proverbs revelation power which"
-      },
-      {
-        "page": 269,
-        "sample": "and obedience absolute and universal into condition of self sufficiency of domination and rule"
-      },
-      {
-        "page": 284,
-        "sample": "is the original fountain and spring ejx ou from whom from whose original authority"
-      },
-      {
-        "page": 285,
-        "sample": "there is one lord even jesus christ distinct person from the father di ou"
-      },
-      {
-        "page": 289,
-        "sample": "things he might have the pre eminence colossians and shall herein wholly avoid the"
-      },
-      {
-        "page": 291,
-        "sample": "is clearly expressed and to take it to be his own his own nature"
-      },
-      {
-        "page": 295,
-        "sample": "same being or nature the father in the son the son in the father"
-      },
-      {
-        "page": 300,
-        "sample": "our human nature to be his own his own nature wherein he was made"
-      },
-      {
-        "page": 302,
-        "sample": "some things are spoken of the person of christ wherein the enunciation is verified"
-      },
-      {
-        "page": 318,
-        "sample": "on high ephesians that is heaven he went into heaven acts and the heaven"
-      },
-      {
-        "page": 319,
-        "sample": "there on the throne of god revelation on the right hand of the majesty"
-      },
-      {
-        "page": 320,
-        "sample": "the th to the th inclusively whose titles are twol mh yreycoi songs of"
-      },
-      {
-        "page": 322,
-        "sample": "gentile converts and the church when ymi ybeydig the voluntaries of the people those"
-      },
-      {
-        "page": 325,
-        "sample": "so is it represented revelation it is said of the whole number of the"
-      },
-      {
-        "page": 331,
-        "sample": "of the glory of these things is it that we can apprehend in this"
-      },
-      {
-        "page": 334,
-        "sample": "necessary unto the effectual discharge of it hence it is said of him that"
+        "page": 62,
+        "sample": "concerneth matter of fact whereof therefore must give brief account and then we shall"
       }
     ]
   },
@@ -541,12 +643,57 @@
         "reason": "source footnote block"
       }
     ],
-    "missing_top_window_count": 1,
+    "missing_top_window_count": 10,
     "missing_top_windows": [
       {
-        "page": 641,
-        "window": "secondly his own voluntary undergoing it thirdly by relaxation of the law in regard",
-        "sample": "secondly, his own voluntary undergoing it; thirdly, by a relaxation of the law in regard of the subject punished; fourthly, beneficial to us,"
+        "page": 43,
+        "window": "factores autem sermonum ejus facti communionem habeamus cum ipso",
+        "sample": "factores autem sermonum ejus facti, communionem habeamus cum ipso\"."
+      },
+      {
+        "page": 46,
+        "window": "and then immediately repeat it unto another for it would thence follow that the",
+        "sample": "and then immediately repeat it unto another; for it would thence follow, that the person unto whom we make that request in the second place, was"
+      },
+      {
+        "page": 54,
+        "window": "whilst he was present is somewhat uncouth and whilst they live they shall never",
+        "sample": "whilst he was present, is somewhat uncouth; and whilst they live, they shall never make the pope president where Christ is present. The truth is,"
+      },
+      {
+        "page": 176,
+        "window": "that each person is equally the object of our faith because equally participant of",
+        "sample": "1. That each person is equally the object of our faith, because equally participant of that nature which is the formal reason and object of it."
+      },
+      {
+        "page": 200,
+        "window": "lovest thou me feed my lambs john three times did he",
+        "sample": "lovest thou me? Feed my lambs,\" John 21:15-17. Three times did he"
+      },
+      {
+        "page": 243,
+        "window": "was to be done in way of obedience do this and live was that",
+        "sample": "was to be done in a way of obedience; — \"Do this and live,\" was that rule of it which the nature of God and man, with their mutual relation unto one"
+      },
+      {
+        "page": 363,
+        "window": "life have either no body as angels or no souls but what perish with",
+        "sample": "life have either no body, as angels; or no souls but what perish with them, as all brute creatures below."
+      },
+      {
+        "page": 444,
+        "window": "to reside in it it is not made omniscient omnipresent omnipotent but it is",
+        "sample": "to reside in it; — it is not made omniscient, omnipresent, omnipotent; but it is exalted in a fullness of all Divine perfection ineffably above the glory"
+      },
+      {
+        "page": 460,
+        "window": "ephesians there was therefore no such mystical conjunction between him and the church as",
+        "sample": "Ephesians 2:6. There was, therefore, no such mystical conjunction between him and the church as to render it meet and equal that he should"
+      },
+      {
+        "page": 522,
+        "window": "god is in itself the greatest penal evil but to be there for ever",
+        "sample": "God is in itself the greatest penal evil; but to be there for ever, without the intermission of misery or determination of time, is that which renders it"
       }
     ]
   },
@@ -610,8 +757,23 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_bottom_window_count": 13,
+    "missing_bottom_window_count": 22,
     "missing_bottom_windows": [
+      {
+        "page": 38,
+        "window": "when he was in the form of servant but being in the form of",
+        "sample": "rich, he was made poor, that he might make us rich. He did not take the form of God when he was in the form of a servant; but being in the form of"
+      },
+      {
+        "page": 39,
+        "window": "filius fieri voluit ut nos dei filios faceret humiliavit se ut popolum qui prius",
+        "sample": "of admiration: (Lib. de Eleemosyn.:) \"Christus hominis filius fieri voluit, ut nos Dei filios faceret; humiliavit se, ut popolum qui prius"
+      },
+      {
+        "page": 51,
+        "window": "no man could rightly complain of the justice of god and that those who",
+        "sample": "condemned in the apostatical root, that if no one were thence delivered, yet no man could rightly complain of the justice of God; and that those who"
+      },
       {
         "page": 87,
         "window": "zechariah or the originally between jehovah and the branch",
@@ -633,9 +795,24 @@
         "sample": "suffered, being tempted, he is touched with a feeling of our infirmities, and knows how to have compassion on them that are out of the way,"
       },
       {
+        "page": 169,
+        "window": "of christ do contend that men are justified by their faith and obedience with",
+        "sample": "promise of life and grace. And the enemies of the person and mediation of Christ do contend that men are justified by their faith and obedience with"
+      },
+      {
+        "page": 170,
+        "window": "of the world but only by jesus christ as declared in the first promise",
+        "sample": "revealed and proposed from the foundation of the world, but only by Jesus Christ, as declared in the first promise."
+      },
+      {
         "page": 195,
         "window": "matthew lo voice from heaven saying heaven afterwards",
         "sample": "Matthew 3:17, \"Lo, a voice from heaven, saying, heaven afterwards,"
+      },
+      {
+        "page": 311,
+        "window": "contain or the declarations of the new as it is the most satisfactory blessed",
+        "sample": "performed in them, all that the promises of the Old Testament did contain, or the declarations of the New; — as it is the most satisfactory, blessed,"
       },
       {
         "page": 318,
@@ -658,9 +835,19 @@
         "sample": "2 Corinthians 3:18. may have with open face, though yet \"as in a glass!\""
       },
       {
+        "page": 483,
+        "window": "by vision who are above the object of them both being adequately the same",
+        "sample": "that which they enjoy by vision who are above; — the object of them both being adequately the same."
+      },
+      {
         "page": 488,
         "window": "john who can declare what appear what we ourselves shall be",
         "sample": "1 John 3:2. Who can declare what a appear what we ourselves shall be,"
+      },
+      {
+        "page": 511,
+        "window": "them that do believe is utterly overthrown reducing all religion to an outward show",
+        "sample": "real intercourse between the person of Christ and the souls of them that do believe is utterly overthrown; — reducing all religion to an outward show,"
       },
       {
         "page": 530,
@@ -676,13 +863,38 @@
         "page": 582,
         "window": "psalm they looked unto him and this direction is given us",
         "sample": "Psalm 34:5, \"They looked unto him, and 1. This direction is given us,"
+      },
+      {
+        "page": 597,
+        "window": "into these secrets as they are internally god but in respect of the outward",
+        "sample": "A. Neither we nor yet the angels of heaven are at all able to dive into these secrets, as they are internally God; but in respect of the outward"
       }
     ]
   },
   "paragraph_integrity": {
     "paragraphs_checked": 2436,
-    "split_candidate_count": 13,
+    "split_candidate_count": 61,
     "split_candidates": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "of the great mystery contained in the attestation given by our Savior unto the confession of Peter, and the promise whereunto annexed, may be comprised in the ensuing assertions: —",
+        "next": ".ַ The person of Christ, the Son of the living God, as vested with his offices, whereunto he was called and anointed, is the foundation of the church, the rock whereon it is built."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "s of this opposition, because they are now, after a revolution of so many ages, lifting up themselves again, though under new vizards and pretenses. And they were of three sorts: —",
+        "next": ".ַ That which introduced other doctrines and notions of divine things, absolutely exclusive of the person and mediation of Christ. Such was that of the Gnostic, begun as it is supp"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "For,",
+        "next": ".ַ It is known with what subtlety and urgency his divine nature and person are opposed by the Socinians. What an accession is made daily unto their incredulity, what inclination of"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "As,",
+        "next": ".ַ The instances which I shall give concerning the use and consideration of the person of Christ in Christian religion, or of him as he is the foundation whereon the church is buil"
+      },
       {
         "file": "EPUB/ch011.xhtml",
         "previous": "But —",
@@ -690,23 +902,83 @@
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "previous": "And he discharged this office four ways: —",
-        "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
+        "previous": "For —",
+        "next": "תsַ , I take it for granted that, from the beginning, from the giving of the first promise, the Son of God did, in an especial manner, undertake the care of the church — as unto al"
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
+        "previous": "And he discharged this office four ways: —",
+        "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future נָתִֹאנראסנִ and under those appearances instructing the churc"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ls was subordinate unto מָהִ and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
         "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
       },
       {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "nce, or a readiness thereunto. Hence is that expression, \"He bowed down his head and worshipped,\" [ Genesis 24:26;] see [also] Psalm 95:6. And these external signs are of two sorts",
-        "next": "(1st,) Such as are natural and occasional;"
+        "file": "EPUB/ch011.xhtml",
+        "previous": "rtainty of all sacred truth, and the full assurance of things invisible and eternal. Three things are necessary, that we may have the benefit and comfort of divine light or truth —",
+        "next": "תsַ , The fullness of its נָתִֹאלשֵׁרֵ"
       },
       {
         "file": "EPUB/ch013.xhtml",
-        "previous": "ofession of the gospel, are another season rendering this peculiar invocation of Christ both comely and necessary. Two things will befall the minds of believers in such a season; —",
+        "previous": "nce, or a readiness thereunto. Hence is that expression, \"He bowed down his head and worshipped,\" [ Genesis 24:26;] see sְֹלאע Psalm 95:6. And these external signs are of two sorts",
+        "next": "(1st,) Such as are natural and לָאנsִֹאססֹ"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "(1st,) Such as are natural and לָאנsִֹאססֹ",
+        "next": "(2ndly,) Such as are solemn, stated, or instituted."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "The οβ̓εχτ of it is Christ, not separately, but distinctly from the Father, and jοιντλυ with him. And he is proposed,",
+        "next": "תsַ , As having fulfilled the work of his mediation in his incarnation and oblation — as a Lamb slain."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "ofession of the gospel, are another season rendering this peculiar invocation of Christ both comely and necessary. Two things will befall the minds of believers in such a נָsֹאsֵ —",
         "next": "[1st,] that their thoughts will be neatly exercised about him, and conversant with him. They cannot but continually think and meditate on him for whom they suffer. None ever suffer"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "But I must at present contract myself, in compliance with my design. Two things only I shall demonstrate",
+        "next": ".ַ That the person of Christ is the οβ̓εχτ of divine שֵָׁלֹ"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "ich are always visibly present unto us, ַ Jοην 4:20. Howbeit, this divine love has a more fixed station and prevalence in the minds of men than any other kind of love whatever. For",
+        "next": ".ַ The principal end why God endued our natures with that great and ruling affection, that has the most eminent and peculiar power and interest in our souls, was, in the first plac"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": " have I briefly premised, concerning the nature of divine love, that we may the better apprehend what we understand by it, in the application of it unto the person of Christ. For —",
+        "next": ".ַ The formal οβ̓εχτ of this love is the essential properties of the divine nature — its infinite goodness in particular. Wherever these are, there is the οβ̓εχτ and reason of this"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": " as we are able, the meditation on them and improvement of them, are among the principal duties of our whole lives. What I shall offer is the reduction of them unto these two heads",
+        "next": ".ַ The acts of Christ, which is the substance of מָהֵת and,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "hrist, was the use of it unto believers, in the whole of their relation unto God and duty towards him. And the things belonging thereunto may be reduced unto these general heads: —",
+        "next": ".ַ Their sanctification, which consisteth in these four things:"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "What should have been spoken with reference unto these things belongs unto these three heads: —",
+        "next": "תsַ , A declaration that all these things are wrought in and communicated unto believers, according to their various natures, by an emanation of grace and power from the person of "
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "previous": "y we may obtain light, and an insight into the glory of that wisdom whereby it was contrived and effected. And the things following, among others, may be observed under that end: —",
+        "next": ".ַ It was required that there should be an obedience yielded unto God, bringing more glory unto him than dishonor did arise and accrue from the disobedience of man This was due unt"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": " kind or nature. And the dissimilitudes that are between them are more, and of greater importance, than those things are wherein there seems to be an agreement between them. For, —",
+        "next": "תsַ , The soul and body are so united as to constitute one entire nature. The soul is not human nature, nor is the body, but it is the consequent of their union. Soul and body are "
       },
       {
         "file": "EPUB/ch022.xhtml",
@@ -720,13 +992,48 @@
       },
       {
         "file": "EPUB/ch022.xhtml",
+        "previous": "Concurrent with, and in part consequent unto, this union, is the communion of the distinct natures of Christ hypostatically united. And herein we may consider, —",
+        "next": ".ַ What is peculiar unto the Divine רֵָuתאנ"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
         "previous": "nsidered as the act of this or that nature in him alone, but it is the act and work of the whole person, — of him that is both God and man in one person. And this gives occasion, —",
-        "next": "Unto that variety of enunciations which is used in the Scripture concerning him; which I shall name only, and conclude."
+        "next": "Unto that variety of enunciations which is used in the Scripture concerning מָהִ which I shall name only, and conclude."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "previous": "[3.] The end for which he thus triumphantly ascended into heaven, is twofold: —",
+        "next": "תsַ , The overturning and destruction of all his enemies in all their remaining powers. He rules them \"with a rod of iron,\" and in his due time will \"dash them in pieces as a potte"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "As, —",
+        "next": "תsַ , That there is nothing carnal in it, or such things as are suited unto the fancies and imaginations of men. In the thoughts of heaven, most persons are apt to frame images in "
       },
       {
         "file": "EPUB/ch024.xhtml",
         "previous": "(4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,",
         "next": "(5thly,) Round about them were the tribes in their order."
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "What remaineth yet to be spoken on this συβ̓εχτ has respect unto these two ensuing propositions: —",
+        "next": ".ַ All the effects of the offices of Christ, internal, spiritual, and eternal, in grace and glory, — all external fruits of their dispensation in providence towards the church or i"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "hese privileges, without an abundant recompense and advantage. Whatever we εν̓ου here, yet still to depart hence and to be with Christ shall be far better, Philippians 1:23. For, —",
+        "next": "תsַ , although service here below shall cease, and be given over unto other hands who are to have their share נָרִֵהֵ yet, on the continuance of this state of things in heaven, the"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "of the state of the church suffering the same things which they did themselves? And, to put it out of question, they are minded of it in the next verse by Christ himself, verse .ַַ",
+        "next": "But that which at present I alone intend, is the jοιντ communion of the whole church in the worship of God in Christ. Were all that die in the Lord immediately received into that s"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": " with respect unto the church here below, and the enemies of it. But there are some things which belong unto the essence of this state which shall continue unto all יָתנִרתֵֵ as, —",
+        "next": "תsַ , I do believe that the person of Christ, in and by his human nature, shall be for ever the immediate head of the whole glorified creation. God having gathered all things unto "
       },
       {
         "file": "EPUB/ch027.xhtml",
@@ -739,18 +1046,38 @@
         "next": "In him the relation of our nature unto God is eternally secured. We were created in a covenant relation unto God. Our nature was related unto him in a way of friendship, of likenes"
       },
       {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "relief. This is the stronghold which such prisoners of hope are to turn themselves unto. In this contemplation of the glory of Christ they will find rest unto their own souls. For,",
+        "next": ".ַ It will herein, and in the discharge of this duty, be made evident how slight and inconsiderable all these things are from whence our troubles and distresses do arise. For they "
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "previous": "And we may inquire, what was this glory of Christ which they so saw, and by what means they obtained a prospect of it. For, —",
+        "next": ".ַ It was not the glory of his outward condition, as we behold the glory and grandeur of the kings and potentates of the הָתראֵ for he made himself of no reputation, but being in t"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "previous": "And I shall inquire, —",
+        "next": ".ַ What is that glory of Christ which we do or may behold by faith?"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "The person of Christ may be considered two ways: —",
+        "next": ".ַ Absolutely in itself."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "For, -",
+        "next": ".ַ They had no certain guide, rule, nor light, which, being attended unto, might lead them infallibly into the knowledge of the divine nature. All they had of this kind was their o"
+      },
+      {
         "file": "EPUB/ch029.xhtml",
         "previous": " minds of men, — Christ is called, and is, the \"light of men,\" the \"light of the world;\" because in and by him alone this darkness is dispelled, as he is the \"Sun of Righteousness\"",
         "next": "This darkness in the minds of men, this ignorance of God, his nature and his will, was the original of all evil unto the world, and yet continues so to be. For,"
-      },
-      {
-        "file": "EPUB/ch051.xhtml",
-        "previous": "A. From the holy 21 Scripture only. —",
-        "next": "Q. 3. What is the Scripture? Isaiah 8:20; John 5:39."
       }
     ],
-    "structural_start_exclusions": 152,
-    "short_fragment_count": 35,
+    "structural_start_exclusions": 127,
+    "short_fragment_count": 37,
     "short_fragments": [
       {
         "file": "EPUB/ch006.xhtml",
@@ -810,11 +1137,19 @@
       },
       {
         "file": "EPUB/ch029.xhtml",
+        "text": ".ַ Absolutely in itself."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
         "text": "For, -"
       },
       {
         "file": "EPUB/ch031.xhtml",
         "text": "Wherefore,"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": ".ַ Especial נָתִֹאלרֵ"
       },
       {
         "file": "EPUB/ch037.xhtml",
@@ -895,22 +1230,21 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 1,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and grace, gloriously to im"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 1,
+    "suspicious_large_number_start_count": 2,
     "suspicious_large_number_starts": [
       {
         "file": "EPUB/ch024.xhtml",
-        "text": "24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in them; so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy"
+        "text": "24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in מָהֵת so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "10. This, then, is that which the apostle declares in these words, \"To gather together in one all things which are in heaven, and which are on earth, even in him.\" And so he again expresseth it, Colossians 1:20, \"To reco"
       }
     ],
     "roman_heading_candidate_count": 0,
@@ -922,7 +1256,7 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 313,
-    "epub_marker_count": 313,
+    "epub_marker_count": 296,
     "missing_marker_count": 0,
     "missing_markers": [],
     "excess_marker_count": 0,
@@ -931,10 +1265,6 @@
     "orphan_candidates": []
   },
   "repeated_windows": [
-    {
-      "phrase": "the glory of god in the face of jesus christ",
-      "count": 12
-    },
     {
       "phrase": "between our beholding the glory of christ by faith in",
       "count": 6
@@ -968,18 +1298,6 @@
       "count": 6
     },
     {
-      "phrase": "unto us child is born unto us son is given",
-      "count": 6
-    },
-    {
-      "phrase": "of the glory of god in the face of jesus",
-      "count": 6
-    },
-    {
-      "phrase": "us child is born unto us son is given and",
-      "count": 5
-    },
-    {
       "phrase": "the brightness of his glory and the express image of",
       "count": 5
     },
@@ -996,19 +1314,7 @@
       "count": 5
     },
     {
-      "phrase": "both which are in heaven and which are on earth",
-      "count": 5
-    },
-    {
       "phrase": "the only-begotten son who is in the bosom of the",
-      "count": 5
-    },
-    {
-      "phrase": "only-begotten son who is in the bosom of the father",
-      "count": 5
-    },
-    {
-      "phrase": "down at the right hand of the majesty on high",
       "count": 5
     },
     {
@@ -1028,8 +1334,36 @@
       "count": 5
     },
     {
-      "phrase": "of the glory of christ in this world by faith",
+      "phrase": "of the glory of god in the face of christ",
       "count": 5
+    },
+    {
+      "phrase": "declaration of the glorious mystery of the person of christ",
+      "count": 4
+    },
+    {
+      "phrase": "difference between our beholding the glory of christ by faith",
+      "count": 4
+    },
+    {
+      "phrase": "thou art the christ the son of the living god",
+      "count": 4
+    },
+    {
+      "phrase": "the mighty god the everlasting father the prince of peace",
+      "count": 4
+    },
+    {
+      "phrase": "glory which he had with the father before the world",
+      "count": 4
+    },
+    {
+      "phrase": "which he had with the father before the world was",
+      "count": 4
+    },
+    {
+      "phrase": "only-begotten son who is in the bosom of the father",
+      "count": 4
     }
   ],
   "limits": {

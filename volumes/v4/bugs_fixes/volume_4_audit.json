@@ -1,0 +1,126 @@
+{
+  "epub": "volumes/v4/output/volume_4.epub",
+  "generated_at": "2026-05-12T20:22:41.686272+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 10
+    },
+    {
+      "code": "missing_apple_options",
+      "message": "Missing Apple Books display-options file"
+    }
+  ],
+  "info": {
+    "file_count": 93,
+    "epub_size_bytes": 2482461,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 4: The Work of the Spirit"
+    ],
+    "creators": [
+      "John Owen",
+      "William H. Goold"
+    ],
+    "manifest_count": 85,
+    "spine_count": 71,
+    "xhtml_count": 73,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 8,
+    "language": {
+      "greek_chars": 4550,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 600,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0
+    },
+    "footnotes": {
+      "noteref_count": 23,
+      "unique_noteref_targets": 23,
+      "endnote_anchor_count": 23,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": []
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 10,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "chapter 5 divine revelation itself the only foundation",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 2 zechariah 12 10 opened and vindicated",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 3 galatians 4 6 opened and vindicated",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 5 the work of the holy spirit",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 7 the nature of prayer in general",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 9 duties inferred from the preceding discourse",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 6 the spirit a seal and how",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 7 the spirit an earnest and how",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 6 of ordinary gifts of the spirit",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 7 of spiritual gifts enabling the ministry",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": []
+      }
+    },
+    "nav_link_count": 71
+  }
+}

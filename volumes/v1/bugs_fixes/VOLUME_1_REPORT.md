@@ -1,6 +1,6 @@
 # John Owen Works — Volume 1 Comprehensive Report
 
-Generated: 2026-05-11T23:47:54.597835
+Generated: 2026-05-12T10:49:44.259964
 
 ---
 
@@ -9,13 +9,17 @@ Generated: 2026-05-11T23:47:54.597835
 | Attribute | Value |
 |-----------|-------|
 | Filename | `volume_1.epub` |
-| File Size | 2.27 MB (2,383,554 bytes) |
+| File Size | 2.57 MB (2,697,048 bytes) |
 | EPUB Version | 3.0 |
 | Unique Identifier | id |
 
 ## 2. Metadata (Dublin Core)
 
-- **meta:** 2026-05-11T23:40:25Z
+- **meta:** 2026-05-12T02:03:01Z
+
+- **meta:** aut
+
+- **meta:** edt
 
 - **identifier:** urn:uuid:d8acc008-bf1f-54d7-9b03-1672466109cd
 
@@ -23,7 +27,15 @@ Generated: 2026-05-11T23:47:54.597835
 
 - **language:** en
 
+- **language:** el
+
+- **language:** he
+
 - **creator:** John Owen
+
+- **creator:** William H. Goold
+
+- **publisher:** Eduardus Ekofius
 
 ### Additional Meta Properties
 
@@ -36,11 +48,11 @@ Generated: 2026-05-11T23:47:54.597835
 
 | Component | Count |
 |-----------|-------|
-| Manifest Items | 92 |
+| Manifest Items | 97 |
 | Spine Items | 83 |
-| Guide Items | 5 |
+| Guide Items | 6 |
 | CSS Files | 1 |
-| Font Files | 3 |
+| Font Files | 8 |
 
 ### Chapter Breakdown
 
@@ -54,7 +66,7 @@ Generated: 2026-05-11T23:47:54.597835
 | Nav | 1 |
 | Toc | 2 |
 | Images | 2 |
-| Fonts | 3 |
+| Fonts | 8 |
 | Css | 1 |
 | Other | 3 |
 
@@ -150,24 +162,29 @@ The following is the order of content as the reader will experience it:
 ---
 ## 5. Embedded Fonts
 
-Total font size: 2.89 MB
+Total font size: 3.39 MB
 
 
 | Font Filename | Size | Path |
 |---------------|------|------|
 | `SBL_Hbrw.ttf` | 307.71 KB | `EPUB/Fonts/SBL_Hbrw.ttf` |
+| `AGaramondPro-BoldItalic.otf` | 74.66 KB | `EPUB/Fonts/AGaramondPro-BoldItalic.otf` |
+| `AGaramondPro-Regular.otf` | 116.15 KB | `EPUB/Fonts/AGaramondPro-Regular.otf` |
 | `SBL_BLit.ttf` | 1.52 MB | `EPUB/Fonts/SBL_BLit.ttf` |
 | `SBL_grk.ttf` | 1.07 MB | `EPUB/Fonts/SBL_grk.ttf` |
+| `AGaramondPro-Bold.otf` | 75.26 KB | `EPUB/Fonts/AGaramondPro-Bold.otf` |
+| `AGaramondPro-Italic.otf` | 89.76 KB | `EPUB/Fonts/AGaramondPro-Italic.otf` |
+| `SILEOT.ttf` | 151.94 KB | `EPUB/Fonts/SILEOT.ttf` |
 
 ---
 ## 6. CSS Styling
 
 ### `EPUB/style/main.css`
 
-- Estimated total rules: ~55
-- @font-face rules: 5
-- .noteref rules: 4
-- .footnote rules: 2
+- Estimated total rules: ~51
+- @font-face rules: 8
+- .noteref rules: 2
+- .footnote rules: 1
 - Heading rules: 7
 - Language-specific rules: 0
 
@@ -178,28 +195,7 @@ Total font size: 2.89 MB
     color: #0000EE;
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.95rem;
-    display: inline-block;
-    line-height: 1;
-    margin-left: 0.25em;
-    margin-right: 0.08em;
-    padding: 0 0.25em;
-    text-indent: 0;
-}
-```
-
-```css
-.noteref {
-    margin-left: 0.35em;
-}
-```
-
-```css
-.noteref {
-    color: #0000EE;
-    text-decoration: none;
-    vertical-align: super;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     display: inline-block;
     line-height: 1;
     margin-left: 0.25em;
@@ -221,12 +217,43 @@ Total font size: 2.89 MB
 
 ```css
 @font-face {
-    font-family: "SBL_BLit";
-    src: url("Fonts/SBL_BLit.ttf");
+    font-family: "Adobe-garamond-pro-2";
+    src: url("Fonts/AGaramondPro-Regular.otf");
 }
 ```
 
 **Font 2:**
+
+```css
+@font-face {
+    font-family: "Adobe-garamond-pro-2";
+    font-weight: bold;
+    src: url("Fonts/AGaramondPro-Bold.otf");
+}
+```
+
+**Font 3:**
+
+```css
+@font-face {
+    font-family: "Adobe-garamond-pro-2";
+    font-style: italic;
+    src: url("Fonts/AGaramondPro-Italic.otf");
+}
+```
+
+**Font 4:**
+
+```css
+@font-face {
+    font-family: "Adobe-garamond-pro-2";
+    font-weight: bold;
+    font-style: italic;
+    src: url("Fonts/AGaramondPro-BoldItalic.otf");
+}
+```
+
+**Font 5:**
 
 ```css
 @font-face {
@@ -235,7 +262,7 @@ Total font size: 2.89 MB
 }
 ```
 
-**Font 3:**
+**Font 6:**
 
 ```css
 @font-face {
@@ -244,7 +271,7 @@ Total font size: 2.89 MB
 }
 ```
 
-**Font 4:**
+**Font 7:**
 
 ```css
 @font-face {
@@ -253,7 +280,7 @@ Total font size: 2.89 MB
 }
 ```
 
-**Font 5:**
+**Font 8:**
 
 ```css
 @font-face {
@@ -268,9 +295,14 @@ Total font size: 2.89 MB
 | ID | Path | Media Type | Properties |
 |----|------|------------|------------|
 | `css` | `style/main.css` | `text/css` | `(none)` |
+| `f_AGaramondPro-BoldItalic_otf` | `Fonts/AGaramondPro-BoldItalic.otf` | `application/font-sfnt` | `(none)` |
+| `f_AGaramondPro-Regular_otf` | `Fonts/AGaramondPro-Regular.otf` | `application/font-sfnt` | `(none)` |
+| `f_AGaramondPro-Bold_otf` | `Fonts/AGaramondPro-Bold.otf` | `application/font-sfnt` | `(none)` |
+| `f_AGaramondPro-Italic_otf` | `Fonts/AGaramondPro-Italic.otf` | `application/font-sfnt` | `(none)` |
 | `f_SBL_BLit_ttf` | `Fonts/SBL_BLit.ttf` | `application/font-sfnt` | `(none)` |
 | `f_SBL_grk_ttf` | `Fonts/SBL_grk.ttf` | `application/font-sfnt` | `(none)` |
 | `f_SBL_Hbrw_ttf` | `Fonts/SBL_Hbrw.ttf` | `application/font-sfnt` | `(none)` |
+| `f_SILEOT_ttf` | `Fonts/SILEOT.ttf` | `application/font-sfnt` | `(none)` |
 | `cover-img` | `images/cover.png` | `image/png` | `(none)` |
 | `chapter_0` | `cover.xhtml` | `application/xhtml+xml` | `(none)` |
 | `portrait-img` | `images/portrait.jpeg` | `image/jpeg` | `(none)` |
@@ -380,7 +412,7 @@ Total font size: 2.89 MB
 
     <section class="title-page" epub:type="titlepage">
 <p class="ornament">❧</p>
-<h1 class="primary"><span lang="el" xml:lang="el">CRISTOLOGIA:</span><br/>CHRISTOLOGIA</h1>
+<h1 class="primary"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span><br/>CHRISTOLOGIA</h1>
 <h3 class="separator">OR</h3>
 <h2 class="secondary">A DECLARATION OF THE GLORIOUS MYSTERY</h2>
 <h3 class="separator">OF</h3>
@@ -416,9 +448,10 @@ Total font size: 2.89 MB
 
 ```css
 
-/* Banner of Truth style — clean serif, elegant hierarchy */
+/* Eduardus Ekofius style — clean serif, elegant hierarchy */
 body {
     font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1em;
     line-height: 1.65;
     color: #1a1a1a;
     margin: 1em 1.2em;
@@ -629,7 +662,7 @@ sup {
 }
 
 .footnote {
-    font-size: 0.9em;
+    font-size: 0.95em;
     text-indent: 0;
     margin: 0.3em 0;
 }
@@ -638,13 +671,13 @@ a.footnote-ref {
     text-decoration: none;
     color: #0000EE;
     vertical-align: super;
-    font-size: 0.95em;
+    font-size: 1em;
 }
 
 a.fn-link {
     color: #0000EE;
     text-decoration: none;
-    font-size: 0.85em;
+    font-size: 0.9em;
     margin-right: 0.3em;
 }
 
@@ -671,7 +704,7 @@ a.fn-link {
     color: #0000EE;
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     display: inline-block;
     line-height: 1;
     margin-left: 0.25em;
@@ -685,6 +718,7 @@ a.fn-link {
 }
 
 .noteref sup {
+    font-size: 1em;
     line-height: 1;
 }
 
@@ -723,14 +757,27 @@ aside[epub\:type~="endnote"] {
     display: block;
 }
 /* Injected font-face declarations and language-specific overrides */
-/* Primary font: SBL_BLit */
+/* Primary font: Adobe-garamond-pro-2 */
 @font-face {
-    font-family: "SBL_BLit";
-    src: url("Fonts/SBL_BLit.ttf");
+    font-family: "Adobe-garamond-pro-2";
+    src: url("Fonts/AGaramondPro-Regular.otf");
 }
-
-
-
+@font-face {
+    font-family: "Adobe-garamond-pro-2";
+    font-weight: bold;
+    src: url("Fonts/AGaramondPro-Bold.otf");
+}
+@font-face {
+    font-family: "Adobe-garamond-pro-2";
+    font-style: italic;
+    src: url("Fonts/AGaramondPro-Italic.otf");
+}
+@font-face {
+    font-family: "Adobe-garamond-pro-2";
+    font-weight: bold;
+    font-style: italic;
+    src: url("Fonts/AGaramondPro-BoldItalic.otf");
+}
 /* SBL BibLit — universal biblical fallback */
 @font-face {
     font-family: "SBL BibLit";
@@ -753,66 +800,24 @@ aside[epub\:type~="endnote"] {
 }
 /* Language overrides (GEMINI.md Section 4.2) */
 body, div, p, span, h1, h2, h3, h4, h5, h6 {
-    font-family: "SBL_BLit", "SBL BibLit", "Gentium Plus", serif !important;
+    font-family: "Adobe-garamond-pro-2", "SBL BibLit", "Gentium Plus", serif !important;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
-[lang="el"], [lang="el"] * {
-    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
+[lang="el"], [lang="el"] *, .greek, .greek * {
+    font-family: "SBL Greek", "SBL BibLit", serif !important;
     font-size: 1.15em;
 }
-[lang="he"], [lang="he"] * {
+[lang="he"], [lang="he"] *, .hebrew, .hebrew * {
     direction: rtl;
     unicode-bidi: embed;
-    font-family: "SBL Hebrew", "Ezra SIL", "SBL BibLit", "Cardo", serif !important;
+    font-family: "SBL Hebrew", "Ezra SIL", "SBL BibLit", serif !important;
     font-size: 1.5em;
     line-height: 1.24;
 }
 [lang="he"], [lang="he"] p,
 [lang="he"], [lang="he"] div {
     text-align: left;
-}
-.noteref {
-    color: #0000EE;
-    text-decoration: none;
-    vertical-align: super;
-    font-size: 0.95rem;
-    display: inline-block;
-    line-height: 1;
-    margin-left: 0.25em;
-    margin-right: 0.08em;
-    padding: 0 0.25em;
-    text-indent: 0;
-}
-.noteref + .noteref {
-    margin-left: 0.35em;
-}
-.noteref sup {
-    line-height: 1;
-}
-.doxology {
-    text-align: center;
-    text-indent: 0;
-    margin: 2em 0 1.2em;
-}
-.footnote {
-    font-size: 0.9em;
-    text-indent: 0;
-    margin: 0.3em 0;
-}
-a.fn-link {
-    color: #0000EE;
-    text-decoration: none;
-    font-size: 0.85em;
-    margin-right: 0.3em;
-}
-aside[epub\:type~="footnote"] {
-    display: block;
-}
-aside[epub\:type~="endnote"] {
-    margin-bottom: 0.8em;
-    padding-left: 1.8em;
-    text-indent: -1.8em;
 }
 
 ```

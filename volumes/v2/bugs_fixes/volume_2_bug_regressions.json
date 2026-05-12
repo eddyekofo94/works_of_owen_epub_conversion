@@ -1,0 +1,233 @@
+{
+  "volume": 2,
+  "status": "pass",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/bugs_fixes/volume_2_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/bugs_fixes/volume_2_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/bugs_fixes/volume_2_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/bugs_fixes/volume_2_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 61,
+      "budget": 61,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "OF",
+          "next": "\"Tell me, O thou whom my soul loveth, where they feedest.' — Song of Solomon l:7."
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "art I. - The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,",
+          "next": "Communion with the FATHER is described,"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "Communion with the FATHER is described,",
+          "next": "and practical inferences deduced from it, IV."
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "art I. - The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,",
+          "next": "Communion with the FATHER is described,"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "Communion with the FATHER is described,",
+          "next": "and practical inferences deduced from it, IV."
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "Part II . — The reality of communion with CHRIST is proved, CHAP. I.; and the nature of it is subsequently considered,",
+          "next": "It is shown to consist in grace; and then the grace of Christ is exhibited under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, "
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": " under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; — purchased grace ,",
+          "next": "— X.; in which the mediatorial work of Christ is fully considered, in reference to our acceptance with God, VII., VIII.; sanctification, IX.; and the privileges of the covenant, X."
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "(1st.) The love of the Father unto us is an antecedent love, and that in two respects: —",
+          "next": "[1st.] It is antecedent in respect of our love, 1 John 4:10, \"Herein is love, not that we loved God, but that he loved us.\" His love goes before ours. The father loves the child, w"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "(2ndly.) Our love is consequential in both these regards: —",
+          "next": "[1st.] In respect of the love of God. Never did creature turn his affections towards God, if the heart of God were not first set upon him."
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "ng; that cannot be heightened by any act of ours, that cannot be lessened by any thing in us. I say, in itself it is thus; otherwise, in a twofold regard, it may admit of change: —",
+          "next": "[1st.] In respect of its fruits. It is, as I said, a fruitful love, a love of bounty. In reference unto those fruits, it may sometimes be greater, sometimes less; its communication"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 0,
+      "budget": 1,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "bare our sins in his own body on the tree",
+          "count": 7
+        },
+        {
+          "phrase": "is with the father and with his son jesus christ",
+          "count": 6
+        },
+        {
+          "phrase": "pleased the father that in him should all fullness dwell",
+          "count": 6
+        },
+        {
+          "phrase": "the father that in him should all fullness dwell colossians",
+          "count": 6
+        },
+        {
+          "phrase": "there are diversities of operations but it is the same",
+          "count": 5
+        },
+        {
+          "phrase": "are diversities of operations but it is the same god",
+          "count": 5
+        },
+        {
+          "phrase": "our fellowship is with the father and with his son",
+          "count": 5
+        },
+        {
+          "phrase": "fellowship is with the father and with his son jesus",
+          "count": 5
+        },
+        {
+          "phrase": "lord jesus christ and the love of god and the",
+          "count": 5
+        },
+        {
+          "phrase": "it pleased the father that in him should all fullness",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 1,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "part 3 of communion with the holy ghost",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

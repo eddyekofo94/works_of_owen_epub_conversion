@@ -1,0 +1,195 @@
+{
+  "epub": "volumes/v3/output/volume_3.epub",
+  "generated_at": "2026-05-12T12:18:06.571691+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 5,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "untagged_greek",
+      "message": "Greek characters appear outside lang='el' context",
+      "chars": 59
+    },
+    {
+      "code": "untagged_hebrew",
+      "message": "Hebrew characters appear outside lang='he' context",
+      "chars": 93
+    },
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 4
+    },
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn133"
+      ]
+    },
+    {
+      "code": "missing_apple_options",
+      "message": "Missing Apple Books display-options file"
+    }
+  ],
+  "info": {
+    "file_count": 72,
+    "epub_size_bytes": 4326316,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 3: The Holy Spirit"
+    ],
+    "creators": [
+      "John Owen",
+      "William H. Goold"
+    ],
+    "manifest_count": 64,
+    "spine_count": 44,
+    "xhtml_count": 46,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 14,
+    "language": {
+      "greek_chars": 10343,
+      "greek_untagged_chars": 59,
+      "hebrew_chars": 1455,
+      "hebrew_untagged_chars": 93,
+      "files_with_untagged_greek": 10,
+      "files_with_untagged_hebrew": 12
+    },
+    "footnotes": {
+      "noteref_count": 140,
+      "unique_noteref_targets": 140,
+      "endnote_anchor_count": 141,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn133"
+      ]
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 4,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "BEFORE we engage into the consideration of the things themselves concerning which we are to treat, it will be necessary to speak something unto the name whereby the third person in the Trinity is commonly known and pecul"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "κ.τ.λ, — “The wind bloweth where it listeth, and thou hearest the sound thereof, but canst not tell whence it cometh, nor whither it goeth;” which is a proper description of this first signification of the word. It is an"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "ὁ"
+          },
+          {
+            "file": "EPUB/ch009.xhtml",
+            "text": "ὁ"
+          },
+          {
+            "file": "EPUB/ch009.xhtml",
+            "text": "ἡ"
+          },
+          {
+            "file": "EPUB/ch011.xhtml",
+            "text": "Thirdly, God is said to minister the Spirit: Galatians 3:5, “He that ministereth to you the Spirit.” Ο"
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "τ̓"
+          },
+          {
+            "file": "EPUB/ch016.xhtml",
+            "text": "ὁ"
+          },
+          {
+            "file": "EPUB/ch016.xhtml",
+            "text": ", therefore, in Mark, no more is intended but the sending of him forth by a high and strong impression of the Holy Spirit on his mind. Hence the same word is used with respect unto the sending of others, by the powerful "
+          },
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "There is ὁ"
+          }
+        ],
+        "untagged_hebrew": [
+          {
+            "file": "EPUB/ch001.xhtml",
+            "text": "æח and"
+          },
+          {
+            "file": "EPUB/ch001.xhtml",
+            "text": "æח for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom —"
+          },
+          {
+            "file": "EPUB/ch001.xhtml",
+            "text": "æח metaphorically for vanity, metonymically for the part or quarter of anything; for our vital breath, the rational soul, the affections, angels good and bad — Ambiguity from the use of the word, how to be removed — Rule"
+          },
+          {
+            "file": "EPUB/ch007.xhtml",
+            "text": "æע, they write and call him"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "æח and"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "æח for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "æח and"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "æח and"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "æח: Genesis 8:1,"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "æח æ"
+          }
+        ],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "chapter 2 general dispensation of the holy spirit",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 2 works of the holy spirit preparatory",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "book 4 chapter 1 the nature of sanctification",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 3 believers the only object of sanctification",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "noteref_without_class": []
+      }
+    },
+    "nav_link_count": 45
+  }
+}

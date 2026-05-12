@@ -36,6 +36,7 @@ HEBREW_RE = re.compile(r"[\u0590-\u05ff]")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 WHITESPACE_RE = re.compile(r"\s+")
 WORD_RE = re.compile(r"\b[\w\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff'-]+\b", re.UNICODE)
+EMPTY_BRACKET_RE = re.compile(r"\[\s*\]")
 
 BOILERPLATE_PATTERNS = [
     "THE AGES DIGITAL LIBRARY",
@@ -225,6 +226,7 @@ class Audit:
             "untagged_hebrew": [],
             "repeated_phrase": [],
             "literal_footnote_marker": [],
+            "empty_bracket_noise": [],
             "noteref_without_class": [],
         }
         noteref_targets: list[str] = []
@@ -257,6 +259,10 @@ class Audit:
             if literal_fn_hits:
                 add_sample(samples["literal_footnote_marker"], path, literal_fn_hits[0])
                 totals["literal_footnote_marker_files"] += 1
+
+            if EMPTY_BRACKET_RE.search(text):
+                add_sample(samples["empty_bracket_noise"], path, text)
+                totals["empty_bracket_noise_files"] += 1
 
             escaped_lang_hits = re.findall(r"&lt;span\s+lang=&quot;(?:el|he)&quot;.*?&gt;", raw)
             if not escaped_lang_hits:
@@ -318,6 +324,7 @@ class Audit:
             "beta_code_files": totals["beta_code_files"],
             "escaped_lang_tag_files": totals["escaped_lang_tag_files"],
             "literal_footnote_marker_files": totals["literal_footnote_marker_files"],
+            "empty_bracket_noise_files": totals["empty_bracket_noise_files"],
             "noteref_without_class": totals["noteref_without_class"],
             "repeated_phrase_count": totals["repeated_phrase_count"],
             "samples": samples,
@@ -335,6 +342,8 @@ class Audit:
             self.warn("escaped_lang_tags", "Escaped language span markup appears in XHTML text", files=totals["escaped_lang_tag_files"])
         if totals["literal_footnote_marker_files"]:
             self.error("literal_footnote_markers", "Literal fN footnote markers appear in rendered text", files=totals["literal_footnote_marker_files"])
+        if totals["empty_bracket_noise_files"]:
+            self.error("empty_bracket_noise", "Empty bracket residue appears in rendered text", files=totals["empty_bracket_noise_files"])
         if totals["noteref_without_class"]:
             self.error("noteref_without_spacing_class", "Some noteref links lack the spacing class", count=totals["noteref_without_class"])
         if repeated:
@@ -550,6 +559,7 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Boilerplate hits: {scan.get('boilerplate_hits', 0)}",
         f"- Possible Beta Code files: {scan.get('beta_code_files', 0)}",
         f"- Escaped language-tag files: {scan.get('escaped_lang_tag_files', 0)}",
+        f"- Empty bracket noise files: {scan.get('empty_bracket_noise_files', 0)}",
         f"- Repeated phrase hits: {scan.get('repeated_phrase_count', 0)}",
         "",
     ])
@@ -614,6 +624,7 @@ def render_bug_log_section(result: dict[str, Any], json_path: Path, md_path: Pat
         f"| AGES boilerplate hits | {scan.get('boilerplate_hits', 0)} |",
         f"| Possible Beta Code files | {scan.get('beta_code_files', 0)} |",
         f"| Escaped language-tag files | {scan.get('escaped_lang_tag_files', 0)} |",
+        f"| Empty bracket noise files | {scan.get('empty_bracket_noise_files', 0)} |",
         f"| Repeated phrase hits | {scan.get('repeated_phrase_count', 0)} |",
         "",
     ]

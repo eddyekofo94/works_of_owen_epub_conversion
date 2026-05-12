@@ -8,6 +8,8 @@ Work on one Owen volume at a time. Do not run all 16 volumes, batch audits, or b
 
 The PDFs share the same general AGES structure, so a fix proven on one volume is expected to transfer to the others with only small volume-specific adjustments. Prefer Volume 1 as the default test volume unless the user names another volume.
 
+Do not regenerate or audit additional volumes merely to prove transferability. If a converter fix works for the named/default test volume and is structurally generic, assume it applies to the remaining Owen volumes and report that expectation. Ask before running any extra volume, even a subset of affected volumes.
+
 ## Active Converter
 
 `converter.py` is the active EPUB3 pipeline.
@@ -109,6 +111,41 @@ For converter changes:
 5. Update `BUGS_AND_FIXES.md` only with validation-safe status language.
 6. Add an `ENGINEERING_LOG.md` entry for complex architectural changes.
 
+### Regression Tests From Bug Reports
+
+Known bug classes must be guarded by pytest once they are flagged and an implementation is added. The current v1-derived regression gate lives in:
+
+- `tests/test_bug_regressions.py`
+- `scripts/audit_bug_regressions.py`
+- `qa/bug_regression_baselines.json`
+
+This gate checks the bug classes most likely to recur across Owen volumes, especially:
+
+- Possible faulty paragraph splits
+- Inline structural marker candidates
+- Untagged Greek and Hebrew
+- Repeated word windows
+
+When a bug implementation reduces or eliminates one of these classes, lower the matching budget in `qa/bug_regression_baselines.json`. When a bug has a concrete sample string, add it to `absent_samples` so pytest fails if that sample reappears. Default test scope is Volume 1:
+
+```bash
+.venv/bin/python3 -m pytest tests/test_bug_regressions.py
+```
+
+To check additional already-generated volumes without running a batch conversion:
+
+```bash
+OWEN_REGRESSION_VOLUMES="1 2 3" .venv/bin/python3 -m pytest tests/test_bug_regressions.py
+```
+
+For the report-driven `#test` workflow, use the bug-regression report after the standard audits:
+
+```bash
+.venv/bin/python3 scripts/audit_bug_regressions.py 2
+```
+
+This writes `volumes/v2/bugs_fixes/volume_2_bug_regressions.md` and `.json`, making recurring bug classes visible without replacing the normal EPUB and text-integrity reports.
+
 For documentation changes:
 
 1. Keep root docs short and current.
@@ -119,30 +156,38 @@ For documentation changes:
 
 When the user uses slash commands, execute them as follows:
 
-### `#report`
+### `#test audit [n]`
 
-Generate a comprehensive EPUB technical report for the specified volume (defaults to Volume 1).
+Executes comprehensive audits for the specified volume(s).
 
-**What it generates:**
-- Basic file info (size, EPUB version)
-- Full Dublin Core metadata
-- Structure overview (manifest, spine, chapter counts)
-- Reading order (spine sequence)
-- Embedded fonts inventory
-- Complete CSS styling analysis (including `.noteref` sizes)
-- Full manifest listing
-- Chapter content samples
-- Complete CSS dump
+**Command Syntax:**
+- `#test audit 1`: Run audits for volume 1.
+- `#test audit 1 2 5`: Run audits for multiple volumes.
+- `#test audit all`: Run audits for all 16 volumes.
 
-**Location:** `volumes/vN/bugs_fixes/VOLUME_N_REPORT.md`
+**What it does:**
+- Regenerates the EPUB for the volume.
+- Runs `scripts/audit_epub.py` to check structural and metadata health.
+- Runs `scripts/audit_text_integrity.py` to check text faithfulness and extraction quality.
+- Summarizes the key results (Errors, Warnings, Word Coverage, Footnote Counts).
 
-**How to run:**
-```bash
-# Default: Volume 1
-.venv/bin/python3 generate_v1_report.py
+**Location of detailed reports:**
+- `volumes/vN/bugs_fixes/volume_N_audit.md`
+- `volumes/vN/bugs_fixes/volume_N_text_integrity.md`
 
-# For any volume, pass the volume number
-.venv/bin/python3 generate_v1_report.py 3
-```
+### `#test bug [n]`
 
-**Important:** Always regenerate the EPUB first with `.venv/bin/python3 converter.py N` before running the report, to ensure the report reflects the latest changes.
+Executes the known-bug regression report for the specified volume(s), using the latest audit JSON reports.
+
+**Command Syntax:**
+- `#test bug 1`: Run the bug-regression report for volume 1.
+- `#test bug 1 2 5`: Run the bug-regression report for multiple volumes.
+- `#test bug all`: Run the bug-regression report for all 16 volumes.
+
+**What it does:**
+- Runs `scripts/audit_bug_regressions.py` to summarize known recurring bug classes against the latest audit reports.
+- Checks the regression budget in `qa/bug_regression_baselines.json`.
+- Highlights recurring repair queues, especially paragraph splits, inline structural markers, untagged Greek/Hebrew, repeated word windows, missing enumerators, and related audit classes.
+
+**Location of detailed reports:**
+- `volumes/vN/bugs_fixes/volume_N_bug_regressions.md`

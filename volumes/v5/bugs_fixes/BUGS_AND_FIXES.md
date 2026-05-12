@@ -50,7 +50,7 @@ See previous sessions.
 - Two `<p class="subtitle">` — volume number + subtitle
 - `<p class="author"><span class="by">by</span>John Owen</p>` — italic "by" label
 - `<p class="editor">Edited by William H. Goold</p>`
-- `<p class="publisher">Banner of Truth Trust</p>` — pushed to bottom with `margin-top: auto`
+- `<p class="publisher">Eduardus Ekofius</p>` — pushed to bottom with `margin-top: auto`
 - Flexbox layout: `display: flex; flex-direction: column; align-items: center; min-height: 90vh`
 
 ### 10. NAV Title Splitting (Fixed)

@@ -69,17 +69,25 @@
 | 66 | Uppercase/spaced bracketed footnote markers such as `[ F18]` not normalized | `normalize_footnote_markers()` + `scripts/audit_epub.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 67 | EPUB nav/Guide page exposed in reading order and title-page ornament hidden | EPUB spine assembly + `shared.py` + `scripts/audit_epub.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 68 | Generated title-page credits left-aligned and publisher credit incorrect | `_build_title_page()` + `shared.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 69 | Bottom-of-page body text clipped by overly aggressive footer redaction margin | `BOTTOM_MARGIN` + `coordinate_redactor()` + `scripts/audit_text_integrity.py` | ⌛ IMPLEMENTED (AWAITING VALIDATION; RESIDUAL WARNINGS) |
+| 69 | Bottom-of-page body text clipped by overly aggressive footer redaction margin | `BOTTOM_MARGIN` + `coordinate_redactor()` + `scripts/audit_text_integrity.py` | ✅ Fixed 2026-05-11 |
 | 70 | Source-aware structural boundary promotion and citation continuation | `_split_inline_structural_markers()` + citation continuation + rendered-HTML audit | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 71 | False paragraph break after scripture book (1 Corinthians → 1. Wherefore...) | `hard_structural` + year threshold + continuation guard | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 72 | False paragraph break at chapter range continuation (Chapter 9 to → 15. It is followed...) | `hard_structural` + year threshold + continuation guard | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 73 | False paragraph break at 4-digit year (1696. Charneck, 1724. It may seem...) | `hard_structural` + year threshold | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 74 | Plain ordinals not promoted inline inside body text (1st, That the Lord Christ...) | `marker_is_bare_ordinal` + inline structural promotion | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 75 | OCR typo "Charneck" should be "Charnock" | dedicated OCR error repair function | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 76 | Multiline block quotes falsely split mid-quote | quote boundary detection + paragraph healing | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 77 | Duplicate CSS rules injected into main.css via font styles | `shared.py` (EPUB3_FONT_STYLES) | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 78 | Missing Ezra SIL font (SILEOT.ttf) in EPUB manifest | `converter.py` (EPUB assembly) | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
-| 79 | Malformed Greek title "CRISTOLOGIA" on Volume 1 title page | `converter.py` (format_title_page) | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 71 | False paragraph break after scripture book (1 Corinthians → 1. Wherefore...) | `hard_structural` + year threshold + continuation guard | ✅ Fixed 2026-05-11 |
+| 72 | False paragraph break at chapter range continuation (Chapter 9 to → 15. It is followed...) | `hard_structural` + year threshold + continuation guard | ✅ Fixed 2026-05-11 |
+| 73 | False paragraph break at 4-digit year (1696. Charneck, 1724. It may seem...) | `hard_structural` + year threshold | ✅ Fixed 2026-05-11 |
+| 74 | Plain ordinals not promoted inline inside body text (1st, That the Lord Christ...) | `marker_is_bare_ordinal` + inline structural promotion | ✅ Fixed 2026-05-11 |
+| 75 | OCR typo "Charneck" should be "Charnock" | dedicated OCR error repair function | ✅ Fixed 2026-05-11 |
+| 76 | Multiline block quotes falsely split mid-quote | quote boundary detection + paragraph healing | ✅ Fixed 2026-05-11 |
+| 77 | Duplicate CSS rules injected into main.css via font styles | `shared.py` (EPUB3_FONT_STYLES) | ✅ Fixed 2026-05-11 |
+| 78 | Missing Ezra SIL font (SILEOT.ttf) in EPUB manifest | `converter.py` (EPUB assembly) | ✅ Fixed 2026-05-11 |
+| 79 | Malformed Greek title "CRISTOLOGIA" on Volume 1 title page | `converter.py` (format_title_page) | ✅ Fixed 2026-05-11 |
+| 80 | Beta-code residue "]y" in chapters 36 and 45 | OCR fix for "ly" misread | ✅ Fixed 2026-05-11 |
+| 81 | Multi-paragraph ThML footnotes truncated at first paragraph | `parse_thml_footnotes()` paragraph-boundary awareness | ✅ Fixed 2026-05-11 |
+| 82 | EPUB metadata lacks multi-language tagging and editor role | `VOLUME_CONFIG` + `DC:language` + `role` metadata | ✅ Fixed 2026-05-11 |
+| 83 | Global 'backwards' reading direction due to Hebrew metadata | `book.set_direction('ltr')` in `converter.py` | ✅ Fixed 2026-05-11 |
+| 84 | Removal of Cardo and STIX Two Text fonts | `shared.py` config + CSS fallback cleanup | ✅ Fixed 2026-05-11 |
+| 85 | Missing footnotes in Volumes 2 and 3 | Case-insensitive `ft` marker detection + font-aware extraction | ✅ Fixed 2026-05-11 |
+| 86 | Small font sizes for body and footnote references | Increased base `1.1em` + `noteref` size reset | ✅ Fixed 2026-05-11 |
+| 87 | Refactor font selection for per-volume body fonts | `VOLUME_CONFIG` + dynamic lookup + CSS locking | ✅ Fixed 2026-05-11 |
 
 ---
 
@@ -232,17 +240,17 @@ This entire quote should remain as one block, not be split at sentence boundarie
 **Status:** IMPLEMENTED (AWAITING VALIDATION)
 
 ### 68. Generated title-page credits left-aligned and publisher credit incorrect (IMPLEMENTED — AWAITING VALIDATION)
-**Problem:** The generated title page still showed the credit block left-aligned because the global body paragraph rule overrode the title-page intent. The ornament needed to be gold, and the visible `Banner of Truth Trust` line needed to be replaced with `Eduadus Ekofius`.
+**Problem:** The generated title page still showed the credit block left-aligned because the global body paragraph rule overrode the title-page intent. The ornament needed to be gold, and the visible `Eduardus Ekofius` line needed to be replaced with `Eduardus Ekofius`.
 
 **Fixes:**
 - Added explicit centered styles for `.title-page .author`, `.title-page .editor`, and `.title-page .publisher`, plus the `.titlepage` equivalents.
 - Styled `.title-page .ornament` / `.titlepage .ornament` in gold.
-- Changed the generated title-page publisher line from `Banner of Truth Trust` to `Eduadus Ekofius`.
+- Changed the generated title-page publisher line from `Eduardus Ekofius` to `Eduardus Ekofius`.
 - Added spacing between the italic `by` label and `John Owen`.
 
 **Validation checks run:**
 - Regenerated Volume 1 only with `.venv/bin/python3 converter.py 1`.
-- Unpacked the EPUB and confirmed `title.xhtml` contains `<p class="publisher">Eduadus Ekofius</p>`.
+- Unpacked the EPUB and confirmed `title.xhtml` contains `<p class="publisher">Eduardus Ekofius</p>`.
 - Confirmed generated `style/main.css` colors the ornament `#b08d2d` and centers the title-page author/editor/publisher credit paragraphs.
 - EPUB audit: 0 errors, 4 warnings.
 
@@ -780,12 +788,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-11T21:51:52.744740+00:00
+**Last run:** 2026-05-12T16:23:13.502569+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 4 warnings)
+**Status:** WARN (0 errors, 3 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -796,21 +805,20 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 85 |
 | Spine items | 83 |
-| Embedded fonts | 4 |
-| NAV links | 83 |
-| Greek chars / untagged | 3953 / 55 |
-| Hebrew chars / untagged | 154 / 0 |
-| Noteref links / endnote anchors | 125 / 124 |
+| Embedded fonts | 8 |
+| NAV links | 84 |
+| Greek chars / untagged | 10177 / 0 |
+| Hebrew chars / untagged | 14744 / 0 |
+| Noteref links / endnote anchors | 122 / 124 |
 | AGES boilerplate hits | 0 |
-| Possible Beta Code files | 2 |
+| Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
-| Repeated phrase hits | 6 |
+| Repeated phrase hits | 7 |
 
 Warnings requiring triage:
 
-- `untagged_greek`: Greek characters appear outside lang='el' context
-- `possible_beta_code_residue`: Possible Beta Code residue detected
 - `repeated_phrases`: Potential repeated phrases detected
+- `orphan_endnotes`: Some endnote anchors have no matching noteref
 - `missing_apple_options`: Missing Apple Books display-options file
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
@@ -890,11 +898,17 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-11T21:52:16.840807+00:00
-**Status:** WARN (8 warnings)
+**Last run:** 2026-05-12T16:23:36.600537+00:00
+**Status:** WARN (7 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -905,30 +919,30 @@ Reports:
 | PDF pages | 644 |
 | EPUB text files | 84 |
 | EPUB paragraphs/headings | 2860 |
-| Approximate PDF-to-EPUB word coverage | 0.9908 |
-| Weak page matches | 12 |
-| Dense source windows checked | 24587 |
-| Missing dense source-window pages | 110 |
+| Approximate PDF-to-EPUB word coverage | 0.977 |
+| Weak page matches | 85 |
+| Dense source windows checked | 4783 |
+| Missing dense source-window pages | 564 |
 | Top-of-page body windows checked | 597 |
 | Top-of-page windows skipped as unstable | 21 |
-| Missing top-of-page body windows | 1 |
+| Missing top-of-page body windows | 10 |
 | Bottom-of-page body windows checked | 552 |
 | Bottom-of-page windows skipped as unstable | 9 |
-| Missing bottom-of-page body windows | 13 |
-| Possible faulty paragraph splits | 13 |
-| Structural starts excluded from split warnings | 152 |
-| Short fragments | 35 |
+| Missing bottom-of-page body windows | 22 |
+| Possible faulty paragraph splits | 61 |
+| Structural starts excluded from split warnings | 127 |
+| Short fragments | 37 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 1 |
+| Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 1 |
+| Suspicious large-number starts | 2 |
 | Roman heading candidates | 0 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 313 |
-| EPUB enumerator markers | 313 |
+| EPUB enumerator markers | 296 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 
@@ -939,7 +953,6 @@ Warnings requiring triage:
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 

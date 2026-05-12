@@ -1,25 +1,24 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-11T21:51:52.744740+00:00",
+  "generated_at": "2026-05-12T16:23:13.502569+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 4,
+  "warning_count": 3,
   "errors": [],
   "warnings": [
     {
-      "code": "untagged_greek",
-      "message": "Greek characters appear outside lang='el' context",
-      "chars": 55
-    },
-    {
-      "code": "possible_beta_code_residue",
-      "message": "Possible Beta Code residue detected",
-      "files": 2
-    },
-    {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 6
+      "count": 7
+    },
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn1",
+        "EPUB/endnotes.xhtml#fn11",
+        "EPUB/endnotes.xhtml#fn111"
+      ]
     },
     {
       "code": "missing_apple_options",
@@ -27,100 +26,55 @@
     }
   ],
   "info": {
-    "file_count": 101,
-    "epub_size_bytes": 2444187,
+    "file_count": 105,
+    "epub_size_bytes": 2734792,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
       "The Works of John Owen, Volume 1: The Glory of Christ"
     ],
     "creators": [
-      "John Owen"
+      "John Owen",
+      "William H. Goold"
     ],
-    "manifest_count": 93,
+    "manifest_count": 97,
     "spine_count": 83,
     "xhtml_count": 85,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 4,
+    "font_count": 8,
     "language": {
-      "greek_chars": 3953,
-      "greek_untagged_chars": 55,
-      "hebrew_chars": 154,
+      "greek_chars": 10177,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 14744,
       "hebrew_untagged_chars": 0,
-      "files_with_untagged_greek": 5,
+      "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0
     },
     "footnotes": {
-      "noteref_count": 125,
-      "unique_noteref_targets": 124,
+      "noteref_count": 122,
+      "unique_noteref_targets": 121,
       "endnote_anchor_count": 124,
       "missing_endnote_targets": [],
-      "orphan_endnotes": []
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn1",
+        "EPUB/endnotes.xhtml#fn11",
+        "EPUB/endnotes.xhtml#fn111"
+      ]
     },
     "content_scan": {
       "boilerplate_hits": 0,
-      "beta_code_files": 2,
+      "beta_code_files": 0,
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 6,
+      "repeated_phrase_count": 7,
       "samples": {
         "boilerplate": [],
-        "beta_code": [
-          {
-            "file": "EPUB/ch036.xhtml",
-            "text": "]y"
-          },
-          {
-            "file": "EPUB/ch045.xhtml",
-            "text": "]y"
-          }
-        ],
+        "beta_code": [],
         "escaped_lang_tag": [],
-        "untagged_greek": [
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "Chap. I. The foundation of the whole is laid in the indication of those words of our blessed Savior, wherein he declares himself to be the rock whereon the church is built: (Matthew 16:18:) “And I say also unto thee, Tha"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "ὀ͂"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "But because there neither was nor can be any composition, properly so called, of the divine and human natures, and because the Son of God was a perfect person before his incarnation, wherein he remained what he was, and "
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": ", ὁ"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": ", ὁ"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": ", ὁ"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "ὁ"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "ἡ"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": ", κ.τ.λ. (cap. 6)"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "ὁ"
-          }
-        ],
+        "untagged_greek": [],
         "untagged_hebrew": [],
         "repeated_phrase": [
           {
@@ -145,12 +99,17 @@
           },
           {
             "file": "combined_text",
-            "text": "chapter 10 of the person of jesus christ",
+            "text": "chapter 14 of the two-fold estate of christ",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 14 of the two-fold estate of christ",
+            "text": "to person of christ the foundation of all",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "the nature operations and causes of divine love",
             "count": 1
           }
         ],
@@ -158,6 +117,6 @@
         "noteref_without_class": []
       }
     },
-    "nav_link_count": 83
+    "nav_link_count": 84
   }
 }
