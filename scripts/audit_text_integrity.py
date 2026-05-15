@@ -516,7 +516,7 @@ def extract_bottom_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], d
                 for line in block.get("lines", []):
                     y_center = (line["bbox"][1] + line["bbox"][3]) / 2
                     # Bottom zone: above typical footer but below main body midpoint
-                    if y_center < page_height - 145 or y_center > page_height - 40:
+                    if y_center < page_height - 145 or y_center > page_height - 30:
                         continue
                     text = "".join(span.get("text", "") for span in line.get("spans", [])).strip()
                     if is_running_header_or_page_number(text):
@@ -1102,8 +1102,8 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
 
     return {
         "volume": volume,
-        "pdf": str(pdf_path),
-        "epub": str(epub_path),
+        "pdf_path": str(pdf_path),
+        "epub_path": str(epub_path),
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "status": "warn" if warnings else "pass",
         "warning_count": len(warnings),

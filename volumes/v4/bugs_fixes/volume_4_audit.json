@@ -1,10 +1,36 @@
 {
   "epub": "volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-12T20:22:41.686272+00:00",
-  "status": "warn",
-  "error_count": 0,
+  "generated_at": "2026-05-14T16:39:43.642548+00:00",
+  "status": "fail",
+  "error_count": 5,
   "warning_count": 2,
-  "errors": [],
+  "errors": [
+    {
+      "code": "fragmented_greek_span_runs",
+      "message": "Three or more adjacent Greek words are split into separate spans",
+      "files": 22
+    },
+    {
+      "code": "inline_scholastic_labels",
+      "message": "Scholastic labels appear mid-paragraph instead of as anchors",
+      "files": 1
+    },
+    {
+      "code": "nav_overlong_entries",
+      "message": "Navigation entries are too long and appear to contain paragraph text",
+      "files": 1
+    },
+    {
+      "code": "spaced_caps_ocr",
+      "message": "OCR-spaced all-caps words remain in XHTML",
+      "files": 2
+    },
+    {
+      "code": "greek_diacritic_residue",
+      "message": "Standalone Greek diacritic residues (j, J, etc.) found near Greek text",
+      "files": 5
+    }
+  ],
   "warnings": [
     {
       "code": "repeated_phrases",
@@ -38,8 +64,10 @@
     "language": {
       "greek_chars": 4550,
       "greek_untagged_chars": 0,
+      "greek_integrity_failures": 0,
       "hebrew_chars": 600,
       "hebrew_untagged_chars": 0,
+      "hebrew_integrity_failures": 0,
       "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0
     },
@@ -56,7 +84,34 @@
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 0,
+      "overlong_heading_body_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "unstyled_signature_files": 0,
+      "fragmented_greek_span_run_files": 22,
+      "blockquote_count": 0,
       "noteref_without_class": 0,
+      "scripture_blockquote_files": 0,
+      "orphan_scripture_bracket_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 0,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 1,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "cross_chapter_continuation_files": 0,
+      "nav_overlong_entry_files": 1,
+      "nav_duplicate_text_files": 0,
+      "spaced_caps_files": 2,
+      "lowercase_paragraph_start_files": 0,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "greek_diacritic_residue_files": 5,
+      "quote_prose_join_files": 0,
+      "i_will_mangle_files": 0,
       "repeated_phrase_count": 10,
       "samples": {
         "boilerplate": [],
@@ -64,61 +119,174 @@
         "escaped_lang_tag": [],
         "untagged_greek": [],
         "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "greek_integrity": [],
+        "markdown_residue": [],
+        "unclosed_paren": [],
+        "verse_typo": [],
         "repeated_phrase": [
           {
             "file": "combined_text",
-            "text": "chapter 5 divine revelation itself the only foundation",
+            "text": "chapter 7 inferences from the whole",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 2 zechariah 12 10 opened and vindicated",
+            "text": "chapter 4 the nature of prayer",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 3 galatians 4 6 opened and vindicated",
+            "text": "chapter 4 inhabitation of the spirit",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 5 the work of the holy spirit",
+            "text": "divine revelation itself the only foundation",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 7 the nature of prayer in general",
+            "text": "zechariah 12 10 opened and vindicated",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 9 duties inferred from the preceding discourse",
+            "text": "galatians 4 6 opened and vindicated",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 6 the spirit a seal and how",
+            "text": "the work of the holy spirit",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 7 the spirit an earnest and how",
+            "text": "the nature of prayer in general",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 6 of ordinary gifts of the spirit",
+            "text": "duties inferred from the preceding discourse",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 7 of spiritual gifts enabling the ministry",
+            "text": "the spirit a seal and how",
             "count": 1
           }
         ],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
-        "noteref_without_class": []
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [],
+        "overlong_heading_body": [],
+        "missing_chapter_initialization": [],
+        "unstyled_signature": [],
+        "fragmented_greek_span_run": [
+          {
+            "file": "EPUB/ch009.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch011.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch020.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch022.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch025.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch033.xhtml",
+            "text": "three or more adjacent Greek spans"
+          },
+          {
+            "file": "EPUB/ch036.xhtml",
+            "text": "three or more adjacent Greek spans"
+          }
+        ],
+        "noteref_without_class": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "scholastic label appears mid-paragraph"
+          }
+        ],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [
+          {
+            "file": "EPUB/nav.xhtml",
+            "text": "Chapter 6 - the Nature of Divine Revelations — the Nature of Divine Revelations — Their Self- Evidencing Power Considered, Particularly That of the Scriptures as the Word of God.",
+            "href": "ch011.xhtml"
+          }
+        ],
+        "nav_duplicate_text": [],
+        "spaced_caps": [
+          {
+            "file": "EPUB/ch007.xhtml",
+            "text": "M Y"
+          },
+          {
+            "file": "EPUB/ch036.xhtml",
+            "text": "J J"
+          }
+        ],
+        "lowercase_paragraph_start": [],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "greek_diacritic_residue": [
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "δ j ε"
+          },
+          {
+            "file": "EPUB/ch033.xhtml",
+            "text": "ν J Ε"
+          },
+          {
+            "file": "EPUB/ch036.xhtml",
+            "text": "ῦ j Ι"
+          },
+          {
+            "file": "EPUB/ch040.xhtml",
+            "text": "ρ j α"
+          },
+          {
+            "file": "EPUB/ch054.xhtml",
+            "text": "ν j Ο"
+          }
+        ],
+        "quote_prose_join": [],
+        "i_will_mangle": []
       }
     },
     "nav_link_count": 71

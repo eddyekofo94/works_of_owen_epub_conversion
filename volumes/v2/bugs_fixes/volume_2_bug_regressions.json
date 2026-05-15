@@ -12,59 +12,59 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 61,
-      "budget": 61,
+      "observed": 59,
+      "budget": 68,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "OF",
-          "next": "\"Tell me, O thou whom my soul loveth, where they feedest.' — Song of Solomon l:7."
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "art I. - The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,",
-          "next": "Communion with the FATHER is described,"
-        },
-        {
           "file": "EPUB/ch004.xhtml",
           "previous": "Communion with the FATHER is described,",
           "next": "and practical inferences deduced from it, IV."
         },
         {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "art I. - The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,",
-          "next": "Communion with the FATHER is described,"
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "Communion with the FATHER is described,",
-          "next": "and practical inferences deduced from it, IV."
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
+          "file": "EPUB/ch004.xhtml",
           "previous": "Part II . — The reality of communion with CHRIST is proved, CHAP. I.; and the nature of it is subsequently considered,",
           "next": "It is shown to consist in grace; and then the grace of Christ is exhibited under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, "
         },
         {
-          "file": "EPUB/ch005.xhtml",
+          "file": "EPUB/ch004.xhtml",
           "previous": " under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; — purchased grace ,",
           "next": "— X.; in which the mediatorial work of Christ is fully considered, in reference to our acceptance with God, VII., VIII.; sanctification, IX.; and the privileges of the covenant, X."
         },
         {
-          "file": "EPUB/ch009.xhtml",
+          "file": "EPUB/ch008.xhtml",
           "previous": "(1st.) The love of the Father unto us is an antecedent love, and that in two respects: —",
           "next": "[1st.] It is antecedent in respect of our love, 1 John 4:10, \"Herein is love, not that we loved God, but that he loved us.\" His love goes before ours. The father loves the child, w"
         },
         {
-          "file": "EPUB/ch009.xhtml",
+          "file": "EPUB/ch008.xhtml",
           "previous": "(2ndly.) Our love is consequential in both these regards: —",
           "next": "[1st.] In respect of the love of God. Never did creature turn his affections towards God, if the heart of God were not first set upon him."
         },
         {
-          "file": "EPUB/ch009.xhtml",
+          "file": "EPUB/ch008.xhtml",
           "previous": "ng; that cannot be heightened by any act of ours, that cannot be lessened by any thing in us. I say, in itself it is thus; otherwise, in a twofold regard, it may admit of change: —",
           "next": "[1st.] In respect of its fruits. It is, as I said, a fruitful love, a love of bounty. In reference unto those fruits, it may sometimes be greater, sometimes less; its communication"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "made of a woman, made under the law, to redeem them that were under the law, that we might receive the adoption of sons,\" Galatians 4:4,5. And herein I shall do these two things: —",
+          "next": "Show wherein that fellowship or communion does consist: —"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "Show wherein that fellowship or communion does consist: —",
+          "next": "For the first, I shall only produce some few places of Scripture to confirm it, that it is so: — 1 Corinthians 1:9, \"God is faithful, by whom ye were called unto the fellowship of "
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "previous": "There are three things in general wherein this personal excellency and grace of the Lord Christ does consist: —",
+          "next": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof"
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "previous": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof",
+          "next": "(2ndly.) His fullness to save, from the grace of communion; or the free consequences of the grace of union."
         }
       ]
     },
@@ -82,19 +82,23 @@
       "status": "ok",
       "samples": [
         {
+          "phrase": "pleased the father that in him should all fullness dwell",
+          "count": 8
+        },
+        {
+          "phrase": "the father that in him should all fullness dwell colossians",
+          "count": 8
+        },
+        {
           "phrase": "bare our sins in his own body on the tree",
-          "count": 7
+          "count": 8
         },
         {
           "phrase": "is with the father and with his son jesus christ",
           "count": 6
         },
         {
-          "phrase": "pleased the father that in him should all fullness dwell",
-          "count": 6
-        },
-        {
-          "phrase": "the father that in him should all fullness dwell colossians",
+          "phrase": "our sins in his own body on the tree peter",
           "count": 6
         },
         {
@@ -115,10 +119,6 @@
         },
         {
           "phrase": "lord jesus christ and the love of god and the",
-          "count": 5
-        },
-        {
-          "phrase": "it pleased the father that in him should all fullness",
           "count": 5
         }
       ]
@@ -154,6 +154,27 @@
     {
       "label": "Missing enumerator markers",
       "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -169,10 +190,15 @@
     },
     {
       "label": "Untagged Greek characters",
-      "observed": 0,
+      "observed": 3,
       "budget": 55,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch026.xhtml",
+          "text": "It is God has given the earnest of the Spirit in our hearts: an expression directly answering that of Galatians 4:6, “God has sent forth the Spirit of his Son into your hearts;” that is, the person of the Spirit; for not"
+        }
+      ]
     },
     {
       "label": "Untagged Hebrew characters",
@@ -182,17 +208,18 @@
       "samples": []
     },
     {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
       "label": "Repeated phrase hits",
-      "observed": 1,
+      "observed": 0,
       "budget": 7,
       "status": "ok",
-      "samples": [
-        {
-          "file": "combined_text",
-          "text": "part 3 of communion with the holy ghost",
-          "count": 1
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Possible Beta Code residue files",
@@ -223,7 +250,239 @@
       "samples": []
     },
     {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 2,
+      "budget": 2,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch034.xhtml",
+          "text": "The second section of this chapter i"
+        },
+        {
+          "file": "EPUB/ch039.xhtml",
+          "text": "Chapter 3"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 2,
+      "budget": 2,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "<span class=\"greek\" lang=\"el\" xml:lang=\"el\">[ας</span> <span class=\"greek\" lang=\"el\" xml:lang=\"el\">"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "<span class=\"greek\" lang=\"el\" xml:lang=\"el\">[Ιν</span> <span class=\"greek\" lang=\"el\" xml:lang=\"el\">"
+        }
+      ]
+    },
+    {
       "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 1,
+      "budget": 1,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch020.xhtml",
+          "text": "Objection 1. For our absolution by and upon the death of Christ, it may be said, that “if the elect have their absolution, reconciliation, and freedom by the de"
+        }
+      ]
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 14,
+      "budget": 14,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch003_title.xhtml",
+          "text": "d"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "a"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "w"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "i"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "a"
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "a"
+        },
+        {
+          "file": "EPUB/ch015.xhtml",
+          "text": "t"
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "text": "t"
+        },
+        {
+          "file": "EPUB/ch020.xhtml",
+          "text": "i"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
       "observed": 0,
       "budget": 0,
       "status": "ok",

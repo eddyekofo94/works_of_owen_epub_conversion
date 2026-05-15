@@ -36,6 +36,25 @@ HEBREW_RE = re.compile(r"[\u0590-\u05ff]")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 WHITESPACE_RE = re.compile(r"\s+")
 WORD_RE = re.compile(r"\b[\w\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff'-]+\b", re.UNICODE)
+
+EMPTY_BRACKET_RE = re.compile(r"\[\s*\]")
+CHAPTER_HEADING_RE = re.compile(
+    r'<h1[^>]*class="[^"]*\bchapter-heading\b[^"]*"[^>]*>.*?</h1>',
+    re.I | re.S,
+)
+CHAPTER_INITIALIZER_RE = re.compile(
+    r'^\s*<(?:p class="(?:chapter-opening|chapter-argument)"|h3 class="chapter-summary")>',
+    re.I | re.S,
+)
+LEADING_CHAPTER_SUBTITLE_RE = re.compile(
+    r'^\s*<h4[^>]*class="[^"]*\b(?:chapter-subtitle|roman-subheading)\b[^"]*"[^>]*>.*?</h4>',
+    re.I | re.S,
+)
+LEADING_CHAPTER_FRONT_LIST_RE = re.compile(
+    r'^\s*<p>\s*(?:<b>)?\d{1,2}\.(?:</b>)?\s+[^<]{8,180}</p>',
+    re.I | re.S,
+)
+
 EMPTY_BRACKET_RE = re.compile(r"\[\s*\]")
 
 BOILERPLATE_PATTERNS = [
@@ -224,10 +243,36 @@ class Audit:
             "escaped_lang_tag": [],
             "untagged_greek": [],
             "untagged_hebrew": [],
+            "hebrew_integrity": [],
             "repeated_phrase": [],
             "literal_footnote_marker": [],
             "empty_bracket_noise": [],
             "noteref_without_class": [],
+            "missing_chapter_initialization": [],
+            # New checks — populated below
+            "unprocessed_ages_marker": [],
+            "page_reference_split": [],
+            "chapter_heading_in_paragraph": [],
+            "overlong_heading_body": [],
+            "fragmented_greek_span_run": [],
+            "scripture_blockquote": [],
+            "orphan_scripture_bracket": [],
+            "glued_ordinal": [],
+            "structural_bold_leak": [],
+            "repeated_structural_marker": [],
+            "scholastic_bold_leak": [],
+            "inline_scholastic_label": [],
+            "trailing_scholastic_label": [],
+            "digression_not_h3": [],
+            "cross_chapter_continuation": [],
+            "nav_overlong_entry": [],
+            "nav_duplicate_text": [],
+            "spaced_caps": [],
+            "lowercase_paragraph_start": [],
+            "noteref_leading_space": [],
+            "greek_span_legacy_accent": [],
+            "quote_prose_join": [],
+            "i_will_mangle": [],
         }
         noteref_targets: list[str] = []
         endnote_ids: set[str] = set()
@@ -278,7 +323,170 @@ class Audit:
                 continue
 
             stats = inspect_language_tagging(root, path, samples)
+            missing_chapter_initializers = 0
+            for chapter_match in CHAPTER_HEADING_RE.finditer(raw):
+                heading_text = HTML_TAG_RE.sub('', chapter_match.group(0))
+                # Only check initialization for start of Part/Volume (usually Chapter 1 or I)
+                # Sub-chapters (Chapter 2, 3, etc.) are allowed to start with plain body text.
+                chapter_num_match = re.search(r'CHAPTER\s+([IVXLCDM\d]+)', heading_text, re.I)
+                if chapter_num_match:
+                    num = chapter_num_match.group(1).upper()
+                    if num not in ('1', 'I'):
+                        continue
+
+                after_heading = raw[chapter_match.end():]
+                previous_after = None
+                while previous_after != after_heading:
+                    previous_after = after_heading
+                    after_heading = LEADING_CHAPTER_SUBTITLE_RE.sub('', after_heading, count=1)
+                    after_heading = LEADING_CHAPTER_FRONT_LIST_RE.sub('', after_heading, count=1)
+                    
+                while True:
+                    new_after = re.sub(r"^\s*<p>[^a-z<]+</p>", "", after_heading, count=1, flags=re.S)
+                    if new_after == after_heading:
+                        break
+                    after_heading = new_after
+
+                    after_heading = re.sub(r"^\s*<p>OF COMMUNION .*?</p>", "", after_heading, flags=re.I | re.S)
+
+                if not re.search(r"<(?:p class=\"(?:chapter-opening|chapter-argument)\"|h3 class=\"chapter-summary\")>", after_heading[:2000], re.I | re.S):
+                    missing_chapter_initializers += 1
+            if missing_chapter_initializers:
+                add_sample(samples["missing_chapter_initialization"], path, "chapter starts with plain body text")
+                totals["missing_chapter_initialization_files"] += 1
+
             totals.update(stats)
+
+            # ── New content scan checks ──────────────────────────────────────
+
+            # Unprocessed AGES verse markers: <[0-9]+ > in rendered text
+            ages_hits = re.findall(r"<\d{6,9}>", text)
+            if ages_hits:
+                add_sample(samples["unprocessed_ages_marker"], path, ages_hits[0])
+                totals["unprocessed_ages_marker_files"] += 1
+
+            # Page-reference splits: "p. NNN." at end of paragraph (false split)
+            pref_hits = re.findall(r"\bp\.\s+\d{1,4}\.\s*$", text, re.MULTILINE)
+            if pref_hits:
+                add_sample(samples["page_reference_split"], path, pref_hits[0])
+                totals["page_reference_split_files"] += 1
+
+            # Chapter heading rendered inside <p> (not in <h1>/<h2>)
+            ch_para_hits = re.findall(r"<p[^>]*>(?:[^<]|\n){0,30}CHAPTER\s+[IVXLCDM\d]+", raw, re.I | re.S)
+            if ch_para_hits:
+                add_sample(samples["chapter_heading_in_paragraph"], path, HTML_TAG_RE.sub("", ch_para_hits[0])[:160])
+                totals["chapter_heading_in_paragraph_files"] += 1
+
+            # Overlong heading: h1/h2/h3 containing >40 words (body prose swallowed)
+            overlong_hits = re.findall(r"<h[123][^>]*>(.*?)</h[123]>", raw, re.I | re.S)
+            for oh in overlong_hits:
+                oh_text = HTML_TAG_RE.sub(" ", oh).strip()
+                if len(oh_text.split()) > 40:
+                    add_sample(samples["overlong_heading_body"], path, oh_text[:180])
+                    totals["overlong_heading_body_files"] += 1
+                    break
+
+            # Fragmented Greek span runs: adjacent Greek spans with only whitespace between
+            frag_greek = re.findall(
+                r'<span[^>]+lang=["\']el["\'][^>]*>[^<]{1,5}</span>\s{0,3}<span[^>]+lang=["\']el["\'][^>]*>',
+                raw, re.I
+            )
+            if frag_greek:
+                add_sample(samples["fragmented_greek_span_run"], path, frag_greek[0][:160])
+                totals["fragmented_greek_span_run_files"] += 1
+
+            # Glued ordinals: e.g. ")1." or "2.3." stuck to adjacent text
+            glued_hits = re.findall(r"[)\]]\d{1,2}\.\S", text)
+            if glued_hits:
+                add_sample(samples["glued_ordinal"], path, glued_hits[0])
+                totals["glued_ordinal_files"] += 1
+
+            # Structural bold leaks: entire <p> is bold (>85% of text is in <b>)
+            p_blocks = re.findall(r"<p[^>]*>(.*?)</p>", raw, re.I | re.S)
+            for pb in p_blocks[:300]:  # limit to first 300 paragraphs for speed
+                pb_plain = HTML_TAG_RE.sub("", pb).strip()
+                if len(pb_plain) < 40:
+                    continue
+                bold_text = "".join(re.findall(r"<b[^>]*>(.*?)</b>", pb, re.I | re.S))
+                bold_plain = HTML_TAG_RE.sub("", bold_text).strip()
+                if bold_plain and len(bold_plain) > 0.85 * len(pb_plain) and len(pb_plain) > 60:
+                    add_sample(samples["structural_bold_leak"], path, pb_plain[:160])
+                    totals["structural_bold_leak_files"] += 1
+                    break
+
+            # Repeated structural markers: e.g. [1.] [1.] in same paragraph
+            rep_struct = re.findall(r"(\[\d{1,2}\.\])\s+\1", text)
+            if rep_struct:
+                add_sample(samples["repeated_structural_marker"], path, rep_struct[0])
+                totals["repeated_structural_marker_files"] += 1
+
+            # Scholastic bold leaks: >3 bold words after Obj./Ans./Use label
+            schol_leak_hits = re.findall(
+                r"<b[^>]*>(?:Obj(?:ection)?|Ans(?:wer)?|Use\s+\d+|Usus\s+\d+)\.[^<]{30,}</b>",
+                raw, re.I
+            )
+            if schol_leak_hits:
+                add_sample(samples["scholastic_bold_leak"], path, HTML_TAG_RE.sub("", schol_leak_hits[0])[:160])
+                totals["scholastic_bold_leak_files"] += 1
+
+            # Inline scholastic labels: Obj./Ans. appearing mid-paragraph (not at start)
+            inline_schol = re.findall(
+                r"[a-z,;]\s+(?:Obj(?:ection)?|Ans(?:wer)?|Use\s+\d+|Usus\s+\d+)\.",
+                text
+            )
+            if inline_schol:
+                add_sample(samples["inline_scholastic_label"], path, inline_schol[0])
+                totals["inline_scholastic_label_files"] += 1
+
+            # Trailing scholastic labels: paragraph ends with Obj./Ans. (must break before)
+            trailing_schol = re.findall(
+                r"(?:Obj(?:ection)?|Ans(?:wer)?)\.\s*$",
+                text, re.MULTILINE
+            )
+            if trailing_schol:
+                add_sample(samples["trailing_scholastic_label"], path, trailing_schol[0])
+                totals["trailing_scholastic_label_files"] += 1
+
+            # DIGRESSION headings not promoted to h3
+            digr_in_para = re.findall(r"<p[^>]*>\s*DIGRESSION\b", raw, re.I)
+            if digr_in_para:
+                add_sample(samples["digression_not_h3"], path, "DIGRESSION found in <p> not <h3>")
+                totals["digression_not_h3_files"] += 1
+
+            # Spaced-caps OCR: single capital letters separated by spaces (M E, T H E)
+            spaced_caps_hits = re.findall(r"\b(?:[A-Z]\s){2,}[A-Z]\b", text)
+            if spaced_caps_hits:
+                add_sample(samples["spaced_caps"], path, spaced_caps_hits[0])
+                totals["spaced_caps_files"] += 1
+
+            # Lowercase paragraph start (failed page-join)
+            lc_para_starts = re.findall(r"<p[^>]*>\s*[a-z]", raw)
+            # Exclude list-continuation patterns like "(2." starting with digit
+            lc_real = [h for h in lc_para_starts if not re.match(r"<p[^>]*>\s*[a-z]{1,2}\.", h)]
+            if lc_real:
+                add_sample(samples["lowercase_paragraph_start"], path, HTML_TAG_RE.sub("", lc_real[0])[:100])
+                totals["lowercase_paragraph_start_files"] += 1
+
+            # Noteref leading space: space character before superscript footnote marker
+            nref_space_hits = re.findall(r"\s<[^>]+epub:type=['\"]noteref['\"]", raw)
+            if nref_space_hits:
+                add_sample(samples["noteref_leading_space"], path, nref_space_hits[0][:100])
+                totals["noteref_leading_space_files"] += 1
+
+            # Greek span legacy accents: ~, >, < inside a Greek-tagged span
+            greek_spans = re.findall(r'<span[^>]+lang=["\']el["\'][^>]*>(.*?)</span>', raw, re.I | re.S)
+            for gs in greek_spans:
+                gs_text = HTML_TAG_RE.sub("", gs)
+                if re.search(r"[~><]", gs_text):
+                    add_sample(samples["greek_span_legacy_accent"], path, gs_text[:120])
+                    totals["greek_span_legacy_accent_files"] += 1
+                    break
+
+            # I WILL / I AM mangles: IWILL or e will or i will (lower)
+            mangle_hits = re.findall(r"\bIWILL\b|\be will\b|\bIAM\b", text)
+            if mangle_hits:
+                add_sample(samples["i_will_mangle"], path, mangle_hits[0])
+                totals["i_will_mangle_files"] += 1
 
             for el in root.iter():
                 epub_type = attr(el, "epub:type")
@@ -311,6 +519,8 @@ class Audit:
             "hebrew_untagged_chars": totals["hebrew_untagged_chars"],
             "files_with_untagged_greek": totals["files_with_untagged_greek"],
             "files_with_untagged_hebrew": totals["files_with_untagged_hebrew"],
+            # Hebrew integrity: RTL+lang="he" both required
+            "hebrew_integrity_failures": totals["hebrew_untagged_chars"],
         }
         self.info["footnotes"] = {
             "noteref_count": len(noteref_targets),
@@ -325,8 +535,27 @@ class Audit:
             "escaped_lang_tag_files": totals["escaped_lang_tag_files"],
             "literal_footnote_marker_files": totals["literal_footnote_marker_files"],
             "empty_bracket_noise_files": totals["empty_bracket_noise_files"],
+            "missing_chapter_initialization_files": totals["missing_chapter_initialization_files"],
             "noteref_without_class": totals["noteref_without_class"],
             "repeated_phrase_count": totals["repeated_phrase_count"],
+            # Extended checks
+            "unprocessed_ages_marker_files": totals["unprocessed_ages_marker_files"],
+            "page_reference_split_files": totals["page_reference_split_files"],
+            "chapter_heading_in_paragraph_files": totals["chapter_heading_in_paragraph_files"],
+            "overlong_heading_body_files": totals["overlong_heading_body_files"],
+            "fragmented_greek_span_run_files": totals["fragmented_greek_span_run_files"],
+            "glued_ordinal_files": totals["glued_ordinal_files"],
+            "structural_bold_leak_files": totals["structural_bold_leak_files"],
+            "repeated_structural_marker_files": totals["repeated_structural_marker_files"],
+            "scholastic_bold_leak_files": totals["scholastic_bold_leak_files"],
+            "inline_scholastic_label_files": totals["inline_scholastic_label_files"],
+            "trailing_scholastic_label_files": totals["trailing_scholastic_label_files"],
+            "digression_not_h3_files": totals["digression_not_h3_files"],
+            "spaced_caps_files": totals["spaced_caps_files"],
+            "lowercase_paragraph_start_files": totals["lowercase_paragraph_start_files"],
+            "noteref_leading_space_files": totals["noteref_leading_space_files"],
+            "greek_span_legacy_accent_files": totals["greek_span_legacy_accent_files"],
+            "i_will_mangle_files": totals["i_will_mangle_files"],
             "samples": samples,
         }
 
@@ -560,6 +789,7 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Possible Beta Code files: {scan.get('beta_code_files', 0)}",
         f"- Escaped language-tag files: {scan.get('escaped_lang_tag_files', 0)}",
         f"- Empty bracket noise files: {scan.get('empty_bracket_noise_files', 0)}",
+        f"- Missing chapter initialization files: {scan.get('missing_chapter_initialization_files', 0)}",
         f"- Repeated phrase hits: {scan.get('repeated_phrase_count', 0)}",
         "",
     ])

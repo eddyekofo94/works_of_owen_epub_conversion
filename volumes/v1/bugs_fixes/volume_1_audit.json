@@ -1,33 +1,56 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-12T16:23:13.502569+00:00",
+  "generated_at": "2026-05-15T17:47:03.870629+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 3,
   "errors": [],
   "warnings": [
     {
+      "code": "untagged_greek",
+      "message": "Greek characters appear outside lang='el' context",
+      "chars": 10
+    },
+    {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 7
+      "count": 8
     },
     {
       "code": "orphan_endnotes",
       "message": "Some endnote anchors have no matching noteref",
       "examples": [
-        "EPUB/endnotes.xhtml#fn1",
-        "EPUB/endnotes.xhtml#fn11",
-        "EPUB/endnotes.xhtml#fn111"
+        "EPUB/endnotes.xhtml#fn100",
+        "EPUB/endnotes.xhtml#fn106",
+        "EPUB/endnotes.xhtml#fn108",
+        "EPUB/endnotes.xhtml#fn109",
+        "EPUB/endnotes.xhtml#fn112",
+        "EPUB/endnotes.xhtml#fn113",
+        "EPUB/endnotes.xhtml#fn115",
+        "EPUB/endnotes.xhtml#fn118",
+        "EPUB/endnotes.xhtml#fn120",
+        "EPUB/endnotes.xhtml#fn121",
+        "EPUB/endnotes.xhtml#fn124",
+        "EPUB/endnotes.xhtml#fn25",
+        "EPUB/endnotes.xhtml#fn29",
+        "EPUB/endnotes.xhtml#fn30",
+        "EPUB/endnotes.xhtml#fn34",
+        "EPUB/endnotes.xhtml#fn37",
+        "EPUB/endnotes.xhtml#fn39",
+        "EPUB/endnotes.xhtml#fn42",
+        "EPUB/endnotes.xhtml#fn45",
+        "EPUB/endnotes.xhtml#fn46",
+        "EPUB/endnotes.xhtml#fn48",
+        "EPUB/endnotes.xhtml#fn49",
+        "EPUB/endnotes.xhtml#fn50",
+        "EPUB/endnotes.xhtml#fn53",
+        "EPUB/endnotes.xhtml#fn54"
       ]
-    },
-    {
-      "code": "missing_apple_options",
-      "message": "Missing Apple Books display-options file"
     }
   ],
   "info": {
-    "file_count": 105,
-    "epub_size_bytes": 2734792,
+    "file_count": 106,
+    "epub_size_bytes": 2701830,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -45,22 +68,45 @@
     ],
     "font_count": 8,
     "language": {
-      "greek_chars": 10177,
-      "greek_untagged_chars": 0,
-      "hebrew_chars": 14744,
+      "greek_chars": 4049,
+      "greek_untagged_chars": 10,
+      "hebrew_chars": 158,
       "hebrew_untagged_chars": 0,
-      "files_with_untagged_greek": 0,
-      "files_with_untagged_hebrew": 0
+      "files_with_untagged_greek": 3,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 122,
-      "unique_noteref_targets": 121,
+      "noteref_count": 82,
+      "unique_noteref_targets": 81,
       "endnote_anchor_count": 124,
       "missing_endnote_targets": [],
       "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn1",
-        "EPUB/endnotes.xhtml#fn11",
-        "EPUB/endnotes.xhtml#fn111"
+        "EPUB/endnotes.xhtml#fn100",
+        "EPUB/endnotes.xhtml#fn106",
+        "EPUB/endnotes.xhtml#fn108",
+        "EPUB/endnotes.xhtml#fn109",
+        "EPUB/endnotes.xhtml#fn112",
+        "EPUB/endnotes.xhtml#fn113",
+        "EPUB/endnotes.xhtml#fn115",
+        "EPUB/endnotes.xhtml#fn118",
+        "EPUB/endnotes.xhtml#fn120",
+        "EPUB/endnotes.xhtml#fn121",
+        "EPUB/endnotes.xhtml#fn124",
+        "EPUB/endnotes.xhtml#fn25",
+        "EPUB/endnotes.xhtml#fn29",
+        "EPUB/endnotes.xhtml#fn30",
+        "EPUB/endnotes.xhtml#fn34",
+        "EPUB/endnotes.xhtml#fn37",
+        "EPUB/endnotes.xhtml#fn39",
+        "EPUB/endnotes.xhtml#fn42",
+        "EPUB/endnotes.xhtml#fn45",
+        "EPUB/endnotes.xhtml#fn46",
+        "EPUB/endnotes.xhtml#fn48",
+        "EPUB/endnotes.xhtml#fn49",
+        "EPUB/endnotes.xhtml#fn50",
+        "EPUB/endnotes.xhtml#fn53",
+        "EPUB/endnotes.xhtml#fn54"
       ]
     },
     "content_scan": {
@@ -68,14 +114,51 @@
       "beta_code_files": 0,
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 7,
+      "repeated_phrase_count": 8,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 3,
+      "overlong_heading_body_files": 0,
+      "fragmented_greek_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 0,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 38,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
       "samples": {
         "boilerplate": [],
         "beta_code": [],
         "escaped_lang_tag": [],
-        "untagged_greek": [],
+        "untagged_greek": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", ηε etc, saith Ignatius: Epist. ad Philadelph. — “He” (that is, Christ) “is the way leading unto the Father, the rock, the key, the shepherd” — wherein he has respect unto this testimony. And Origin expressly denies the"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", κ.τ.λ. (cap. 6)"
+          },
+          {
+            "file": "EPUB/ch005.xhtml",
+            "text": ", κ.τ.λ.” — “Thou art a rock, and on thee will I build.” At least the gender had not been altered, but he would have said, “"
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": ".τ. λ., 2 Corinthians 3:182 Corinthians 3:18. We behold his glory “in a glass,” which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented un"
+          }
+        ],
         "untagged_hebrew": [],
+        "hebrew_integrity": [],
         "repeated_phrase": [
           {
             "file": "combined_text",
@@ -89,12 +172,12 @@
           },
           {
             "file": "combined_text",
-            "text": "the greater catechism chapter 1 of the scripture",
+            "text": "chapter 8 of the state of corrupted nature",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 8 of the state of corrupted nature",
+            "text": "chapter 10 of the person of jesus christ",
             "count": 1
           },
           {
@@ -111,12 +194,97 @@
             "file": "combined_text",
             "text": "the nature operations and causes of divine love",
             "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "meditations and discourses concerning the glory of christ",
+            "count": 1
           }
         ],
         "literal_footnote_marker": [],
-        "noteref_without_class": []
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/ch005.xhtml",
+            "text": "**CHAPTER 1"
+          },
+          {
+            "file": "EPUB/ch028.xhtml",
+            "text": "**CHAPTER 1"
+          },
+          {
+            "file": "EPUB/ch049.xhtml",
+            "text": "governeth all things. — Chapter 6"
+          }
+        ],
+        "overlong_heading_body": [],
+        "fragmented_greek_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch002_title.xhtml",
+            "text": "m"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch015.xhtml",
+            "text": "p"
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": "r"
+          },
+          {
+            "file": "EPUB/ch024.xhtml",
+            "text": "o"
+          },
+          {
+            "file": "EPUB/ch030.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch033.xhtml",
+            "text": "d"
+          },
+          {
+            "file": "EPUB/ch040.xhtml",
+            "text": "g"
+          },
+          {
+            "file": "EPUB/ch041.xhtml",
+            "text": "g"
+          },
+          {
+            "file": "EPUB/ch049.xhtml",
+            "text": "d"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
       }
     },
-    "nav_link_count": 84
+    "nav_link_count": 84,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

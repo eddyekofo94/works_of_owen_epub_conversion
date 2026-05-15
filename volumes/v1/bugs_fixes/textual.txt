@@ -1,0 +1,50 @@
+# #  TODO: (2026-05-15 23:28) 
+
+## 1
+“Super me aedificabo te, non me super te:” De Verbis Dom., Serm.
+13. — “Upon this rock which thou hast confessed — upon myself, the God of the living God”
+
+fix: 
+“Super me aedificabo te, non me super te:” De Verbis Dom., Serm. 13." this is a false positive, Serm. should be added to the list of quotation references
+
+## 2
+“ouncil of Nice: Epist.
+78. The like”
+
+Fix:
+“ouncil of Nice: Epist. 78. The like” this is a false positive, Epist. should be added to the list of quotation references
+
+## 3
+“De Spirit. Sanct., lib. 1 cap.
+14.”
+
+Fix:
+“De Spirit. Sanct., lib. 1 cap. 14.” this is a false positive, cap. should be added to the list of quotation references
+
+## 4
+“angel., lib. 4 cap. 1-4, etc.; Cyril. Alexand., lib. 5 cap. 6, lib.
+1. De Fide ”
+
+Fix:
+“angel., lib. 4 cap. 1-4, etc.; Cyril. Alexand., lib. 5 cap. 6, lib. 1. De Fide” this is a false positive, cap. should be added to the list of quotation references
+
+## 5
+[χηαραχτερς̓́ 
+[φρομ̓́
+
+Fix:
+Greek words that aren't within quotes or brakets are.t rendering properly, can you do a thorough debug and add an audit that checks for this? I think the issue is that the Greek characters are being misinterpreted as something else, maybe a different encoding. We need to make sure that the text is being read and processed with the correct encoding to preserve the Greek characters.
+
+## 6
+“that the Father has are his, (chap.
+John 16:1516:15,) ”
+
+1 John 5:205:20
+
+Fix:
+Something is clearly wrong with the way the chapter and verse are being parsed here, it should be "John 16:15-16" instead of "chap. John 16:1516:15". We need to review the parsing logic for biblical references to ensure that it correctly identifies and formats chapter and verse numbers.
+
+## 7
+“revealed and declared. And in its proper use, and unto its proper end, it is perfect and most sufficient. It is “λόγοψ τοῦ Θεοῦ” — “the word of God;” howbeit it is not “λόγοψ οὐσιώδηψ”, the internal, essential Word of God — but “λόγοψ προφορικὸψ”,”
+
+The Greek words are not rendering properly here, we need to ensure that the encoding is correct and that the Greek characters are being processed correctly. This may involve checking the source text for any encoding issues and making sure that our text processing pipeline is set up to handle Greek characters properly.

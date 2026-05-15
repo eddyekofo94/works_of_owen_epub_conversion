@@ -6,6 +6,7 @@ and EPUB3 stylesheets.
 """
 
 import unicodedata
+import re
 
 # ============================================================================
 # VOLUME METADATA — Owen Works (16 volumes)
@@ -296,25 +297,49 @@ DIACRITIC_MAP = {
 }
 
 
+def clean_greek_text(text):
+    """
+    User-mandated Greek cleaning:
+    1. Strip "j" artifact prepended to Greek characters (handling optional spaces).
+    2. Normalize to NFC.
+    """
+    if not text:
+        return ""
+    # 1. Strip the "j" artifact prepended to Greek characters.
+    # Handle both "jΕ" and "j Ε" patterns found in PDF extraction.
+    text = re.sub(r'\b[jJ]\s*([\u0370-\u03FF\u1F00-\u1FFF])', r'\1', text)
+    # 2. Normalize to NFC
+    text = unicodedata.normalize('NFC', text)
+    return text
+
+
 def convert_greek_word(word):
-    """Convert a Beta Code word to Unicode Greek.
-    
-    Handles sigma form: 'v' maps to ς (final sigma) at word end,
-    σ (medial sigma) elsewhere.
+    """Convert a Beta Code / AGES-Koine word to Unicode Greek.
+
+    Sigma rules (AGES encoding for Owen volumes):
+      - 's' at the very end of a word → final sigma ς
+      - 's' elsewhere → medial sigma σ
+      - 'v' → psi ψ  (AGES uses 'v' for ψ, not for final sigma)
+
+    Note: GREEK_LOWER maps 'y' and 'u' both to upsilon (υ); this matches
+    the AGES encoding where 'y' is an alternate upsilon key.
     """
     result = []
     i = 0
-    in_word = True
     while i < len(word):
         ch = word[i]
+        # Determine the next non-diacritic character for sigma-end detection
         if ch in GREEK_LOWER:
-            if i == len(word) - 1 and ch == 's':
-                result.append('ς')
-            else:
-                if ch == 'v':
+            # Check for final sigma: 's' is final only when it is the last
+            # alphabetic character in the word (all remaining chars are diacritics).
+            if ch == 's':
+                rest_alpha = [c for c in word[i + 1:] if c not in DIACRITIC_CHARS]
+                if not rest_alpha:
                     result.append('ς')
                 else:
-                    result.append(GREEK_LOWER[ch])
+                    result.append('σ')
+            else:
+                result.append(GREEK_LOWER[ch])
             i += 1
             while i < len(word) and word[i] in DIACRITIC_CHARS:
                 d = word[i]
@@ -340,25 +365,84 @@ def convert_greek_word(word):
     return unicodedata.normalize('NFC', ''.join(result))
 
 
+# Legacy accent characters that should not appear inside a Unicode Greek span.
+_GREEK_LEGACY_ACCENT_RE = re.compile(r'[~><jJ\[\]{}\|\'=+]+')
+
+
+def polytonic_sweep(text: str) -> str:
+    """Remove any surviving legacy Beta Code accent/breathing characters from text.
+
+    This is a safety net — after convert_greek_word() has run, no span of Greek
+    text should contain '~', '>', '<', 'j', 'J', etc.  We strip them here so
+    they never reach the EPUB.
+    """
+    return _GREEK_LEGACY_ACCENT_RE.sub('', text)
+
+
 # ============================================================================
 # HEBREW GIDEON FONT CONVERTER
 # ============================================================================
 
 GIDEON_CHAR_MAP = {
-    'a': '\u05D0', 'b': '\u05D1', 'c': '\u05E1', 'd': '\u05D3',
-    'f': '\u05D8', 'g': '\u05D2', 'h': '\u05D4', 'j': '\u05D7',
-    'k': '\u05DB', 'l': '\u05DC', 'm': '\u05DE', 'n': '\u05E0',
-    'q': '\u05E7', 'r': '\u05E8', 't': '\u05EA', 'v': '\u05E9\u05C1',
-    'w': '\u05D5', 'x': '\u05E6', 'y': '\u05D9', '[': '\u05E2',
-    'A': '\u05D0',       'B': '\u05D1\u05BC', 'D': '\u05D3\u05BC',
-    'G': '\u05D2\u05BC', 'K': '\u05DB\u05BC', 'M': '\u05DD',
-    'N': '\u05DF',       'P': '\u05E3',       'Q': '\u05E7\u05BC',
-    'T': '\u05EA\u05BC', 'W': '\u05D5\u05BC',
-    ';': '\u05B8',   '}': '\u05B2',   ']': '\u05B0',
-    '1': '\u05B7',   'e': '\u05B5',   'i': '\u05B4',
-    'o': '\u05B9',   'O': '\u05B9',
-    'æ': '\u05B7',
-    ',': ',', ' ': ' ',
+    # ── Consonants (Gideon AGES legacy encoding) ──────────────────────────
+    'a': '\u05D0',  # א Alef
+    'b': '\u05D1',  # ב Bet
+    'c': '\u05E1',  # ס Samekh (AGES maps 'c' to Samekh)
+    'd': '\u05D3',  # ד Dalet
+    'f': '\u05D8',  # ט Tet
+    'g': '\u05D2',  # ג Gimel
+    'h': '\u05D4',  # ה He
+    'j': '\u05D7',  # ח Het
+    'k': '\u05DB',  # כ Kaf
+    'l': '\u05DC',  # ל Lamed
+    'm': '\u05DE',  # מ Mem
+    'n': '\u05E0',  # נ Nun
+    'p': '\u05E4',  # פ Pe
+    'q': '\u05E7',  # ק Qof
+    'r': '\u05E8',  # ר Resh
+    's': '\u05E1',  # ס Samekh (alternate; same as 'c')
+    't': '\u05EA',  # ת Tav
+    'v': '\u05E9\u05C1',  # שׁ Shin (Shin + Shin dot)
+    'w': '\u05D5',  # ו Vav
+    'x': '\u05E6',  # צ Tsadi
+    'y': '\u05D9',  # י Yod
+    'z': '\u05D6',  # ז Zayin
+    '[': '\u05E2',  # ע Ayin
+    'i': '\u05E2',  # ע Ayin (alternate)
+    # ── Final forms ────────────────────────────────────────────────────────
+    'A': '\u05D0',        # א Alef (uppercase alternate)
+    'B': '\u05D1\u05BC',  # בּ Bet + Dagesh
+    'D': '\u05D3\u05BC',  # דּ Dalet + Dagesh
+    'G': '\u05D2\u05BC',  # גּ Gimel + Dagesh
+    'K': '\u05DB\u05BC',  # כּ Kaf + Dagesh
+    'M': '\u05DD',        # ם Mem Final
+    'N': '\u05DF',        # ן Nun Final
+    'P': '\u05E3',        # ף Pe Final
+    'Q': '\u05E7\u05BC',  # קּ Qof + Dagesh
+    'T': '\u05EA\u05BC',  # תּ Tav + Dagesh
+    'W': '\u05D5\u05BC',  # וּ Vav + Dagesh (Shureq)
+    'X': '\u05E5',        # ץ Tsadi Final
+    'Y': '\u05D9',        # י Yod (uppercase alternate, common in Vol 2)
+    '\u00B5': '\u05DD',   # µ (U+00B5 micro sign) → ם Mem Final (Vol 2 failure)
+    '\u00E7': '\u05E6',   # ç → צ Tsadi (Vol 2 font artifact)
+    '\u02DA': '\u05BC',   # ˚ → ּ Dagesh (Vol 2 font artifact)
+    '\u02C6': '\u05B4',   # ˆ → ִ Hiriq (Vol 2 font artifact)
+    '\u00DA': '\u05D5',   # Ú → ו Vav (Vol 2 font artifact)
+    '\u2019': '\u05BE',   # ' → ־ Maqef (Vol 1 font artifact — curly apostrophe)
+    '\u2248': '\u05C1',   # ≈ → ׁ Shin dot (Vol 1 font artifact)
+    # ── Vowel points / diacritics ──────────────────────────────────────────
+    ';': '\u05B8',   # ָ Qamats
+    '}': '\u05B2',   # ֲ Hataf Patah
+    ']': '\u05B0',   # ְ Sheva
+    '1': '\u05B7',   # ַ Patah
+    'e': '\u05B5',   # ֵ Tsere
+    'o': '\u05B9',   # ֹ Holam
+    'O': '\u05B9',   # ֹ Holam (alternate)
+    # ── Alternate vowel mappings ───────────────────────────────────────────
+    'æ': '\u05B7',   # ַ Patah (Latin ae ligature used as AGES artifact)
+    # ── Punctuation / spacing ──────────────────────────────────────────────
+    ',': ',',
+    ' ': ' ',
 }
 
 GIDEON_CID_MAP = {
@@ -378,11 +462,18 @@ def is_hebrew_vowel(ch):
 
 def convert_gideon_hebrew(encoded):
     """Convert Gideon font-encoded text to Unicode Hebrew.
-    
+
     Text is stored in visual L→R order; reverses per word and reverses
     word order to produce logical R→L Hebrew.
+
+    Unknown Gideon characters are logged to stderr (once per character per
+    session) so gaps in GIDEON_CHAR_MAP can be identified and filled.
     """
     import re
+    import sys
+    _warned_chars: set = getattr(convert_gideon_hebrew, '_warned_chars', set())
+    convert_gideon_hebrew._warned_chars = _warned_chars
+
     text = re.sub(
         r'\(cid:(\d+)\)',
         lambda m: GIDEON_CID_MAP.get(int(m.group(1)), ''),
@@ -393,7 +484,12 @@ def convert_gideon_hebrew(encoded):
         if ch in GIDEON_CHAR_MAP:
             mapped_chars.append(GIDEON_CHAR_MAP[ch])
         elif ch == '\u00AF':
-            mapped_chars.append('\u05BE')
+            mapped_chars.append('\u05BE')  # Maqef
+        elif ord(ch) > 127 and ch not in _warned_chars:
+            # Non-ASCII character not in map — log once
+            _warned_chars.add(ch)
+            print(f"[GIDEON WARNING] Unmapped character U+{ord(ch):04X} ({repr(ch)}) — add to GIDEON_CHAR_MAP", file=sys.stderr)
+            mapped_chars.append(ch)
         else:
             mapped_chars.append(ch)
     flat = ''.join(mapped_chars)
@@ -434,7 +530,7 @@ def convert_gideon_hebrew(encoded):
     result = []
     for word in words:
         result.extend(word)
-    return ''.join(result)
+    return unicodedata.normalize('NFC', ''.join(result))
 
 
 # ============================================================================
@@ -590,11 +686,28 @@ h1 {
     -webkit-column-break-before: always;
 }
 
+h1.primary {
+    color: #0000D4; /* AGES Blue */
+    font-size: 1.7em;
+    text-align: center;
+    border-bottom: 1px solid #0000D4;
+    padding-bottom: 0.2em;
+}
+
 h2 {
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;
     margin: 1.5em 0 0.5em;
+}
+
+h2.secondary, h3.secondary, h1.secondary {
+    color: #006411; /* AGES Green */
+    font-size: 1.35em;
+    text-align: center;
+    margin: 1.5em 0 0.5em;
+    border: none;
+    padding: 0;
 }
 
 h3 {
@@ -604,7 +717,28 @@ h3 {
     margin: 1.2em 0 0.4em;
 }
 
-.chapter-subtitle {
+p.chapter-summary {
+    font-style: italic;
+    font-size: 0.95em;
+    text-align: center;
+    margin: 1.2em 12% 2.2em;
+    color: #333;
+    text-indent: 0;
+    line-height: 1.45;
+}
+
+p.chapter-opening:first-letter {
+    float: left;
+    font-size: 3.6rem;
+    line-height: 0.85;
+    margin-top: 0.08em;
+    margin-right: 0.12em;
+    margin-bottom: -0.1em;
+    color: #0000D4;
+    font-weight: bold;
+}
+
+h4.chapter-subtitle {
     text-align: center;
     font-size: 1.05em;
     font-weight: bold;
@@ -613,6 +747,15 @@ h3 {
     line-height: 1.35;
     margin: 0.4em 0 1em;
     text-indent: 0;
+}
+
+.digression-heading {
+    text-align: center;
+    font-size: 1.3em;
+    color: #000;
+    margin: 2em 0 0.5em;
+    font-weight: bold;
+    page-break-before: always;
 }
 
 .roman-subheading {
@@ -635,6 +778,61 @@ h3 {
 .roman-list-item b {
     display: block;
     margin-bottom: 0.35em;
+}
+
+/* Front Matter Styling (Issue 107 / Issue 89) */
+
+/* Decorative blurb title — used for 1-3 line ornamental headings on
+   title-adjacent pages (e.g. "PREFACE" as a standalone centered line
+   in blurb style). */
+.front-matter-title {
+    color: #006411; /* AGES Green */
+    font-size: 1.35em;
+    text-align: center;
+    margin: 2em 0 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Section heading for prose-heavy front matter (General Preface,
+   Prefatory Notes, Prefaces, Analyses). h2-level, AGES green,
+   uppercase, centered — same visual weight as front-matter-title
+   but semantically a heading element. */
+.front-matter-heading {
+    color: #006411; /* AGES Green */
+    font-size: 1.45em;
+    text-align: center;
+    margin: 2em 0 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-indent: 0;
+}
+
+/* Decorative blurb body — for 2-5 line centered ornamental paragraphs
+   on title-adjacent pages (author name, dedications, publisher info). */
+.front-matter-body {
+    text-align: center;
+    font-style: italic;
+    margin: 1.2em 10%;
+    line-height: 1.6;
+    text-indent: 0;
+}
+
+/* Running prose body — for editorial prefaces, prefatory notes,
+   analyses. Identical to normal chapter body paragraphs so long
+   prose reads naturally. */
+.front-matter-prose {
+    text-align: justify;
+    text-indent: 1.5em;
+    margin: 0;
+    font-style: normal;
+    line-height: 1.6;
+    orphans: 2;
+    widows: 2;
+}
+
+.front-matter-prose.first {
+    text-indent: 0;
 }
 
 /* Body Flow */
@@ -700,7 +898,7 @@ sup {
 }
 
 .footnote {
-    font-size: 0.95em;
+    font-size: 0.9em;
     text-indent: 0;
     margin: 0.3em 0;
 }
@@ -742,17 +940,19 @@ a.fn-link {
     color: #0000EE;
     text-decoration: none;
     vertical-align: super;
-    font-size: 1.1rem;
+    font-size: 0.95em;
     display: inline-block;
     line-height: 1;
-    margin-left: 0.25em;
-    margin-right: 0.08em;
-    padding: 0 0.25em;
+    margin-left: 0.18em;
+    margin-right: 0.15em;
+    padding: 0;
     text-indent: 0;
 }
 
+/* Consecutive noterefs: keep them visually separated */
 .noteref + .noteref {
-    margin-left: 0.35em;
+    margin-left: 0;
+    margin-right: 0.15em;
 }
 
 .noteref sup {
@@ -764,6 +964,25 @@ a.fn-link {
     text-align: center;
     text-indent: 0;
     margin: 2em 0 1.2em;
+}
+
+/* Scholastic anchor: Obj. / Ans. / Use N. — each on its own paragraph */
+p.scholastic-anchor {
+    margin-top: 1.5em;
+    text-indent: 0;
+}
+p.scholastic-anchor b,
+b.scholastic-label {
+    font-weight: bold;
+}
+
+/* Author signatures: "= John Owen" at end of prefaces */
+p.signature {
+    text-align: right;
+    font-style: italic;
+    text-indent: 0;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 aside[epub\:type~="footnote"] {

@@ -26,6 +26,8 @@
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
+- Empty bracket noise files: 0
+- Missing chapter initialization files: 0
 - Repeated phrase hits: 0
 
 ## Errors

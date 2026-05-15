@@ -88,10 +88,48 @@
 | 85 | Missing footnotes in Volumes 2 and 3 | Case-insensitive `ft` marker detection + font-aware extraction | ✅ Fixed 2026-05-11 |
 | 86 | Small font sizes for body and footnote references | Increased base `1.1em` + `noteref` size reset | ✅ Fixed 2026-05-11 |
 | 87 | Refactor font selection for per-volume body fonts | `VOLUME_CONFIG` + dynamic lookup + CSS locking | ✅ Fixed 2026-05-11 |
+| 88 | Scripture references rendered twice — `Isaiah 9:6Isaiah 9:6` | `translate_ages_verse_markers()` + `_collapse_adjacent_duplicate_refs()` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 89 | Front matter prose (General Preface, Prefatory Notes, Prefaces) rendered centered-italic instead of left-aligned body text | `markdown_to_html()` `front_matter_style` param + `.front-matter-prose` / `.front-matter-heading` CSS | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 90 | Psalms hex-chapter AGES codes (`<19B822>` etc.) not translated — survive as raw `<19B822>` in EPUB text | `_translate_ages_marker()` + `_AGES_MARKER_RE` / `_AGES_MARKER_CONTEXT_RE` extended for hex-letter variant | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
 ## Issue Details
+
+### 88. Scripture references rendered twice — `Isaiah 9:6Isaiah 9:6` (IMPLEMENTED — AWAITING VALIDATION)
+
+**Problem:** Scripture references appeared doubled with no separator throughout the EPUB — e.g. `Isaiah 9:6Isaiah 9:6`, `1 Corinthians 1:30 1 Corinthians 1:30`, `Song of Solomon 5:2Song of Solomon 5:2`. Volume 1 contained 1,301 such instances.
+
+**Root cause:** AGES PDFs encode verse references in two simultaneous layers: a numeric code `<NNNNNN>` and the already-decoded human-readable text immediately following it in the same PDF text stream. `translate_ages_verse_markers()` translated the numeric code without detecting the adjacent human-readable copy, so both were emitted back-to-back. A second manifestation occurred when a multiword book name (`Song of Solomon`) wrapped a PDF line break — the partial text `Song of` appeared on the same line as the code, causing the join after translation to produce `Song of Solomon 5:2Song of Solomon 5:2`.
+
+**Fix — two-part:**
+1. `translate_ages_verse_markers()` upgraded to use `_AGES_MARKER_CONTEXT_RE`, a context-aware pattern that captures the AGES code *and* any immediately-following book+chapter:verse text. When the following text starts with the same reference as the translated code (case-insensitive, space-normalised), the code translation is suppressed and only the already-present text is kept. If the existing text is richer (e.g. `1 Peter 2:6-8` vs bare `1 Peter 2:6`), that richer form is preserved.
+2. `_collapse_adjacent_duplicate_refs()` added and called at the top of `post_process_paragraphs()`. Catches any remaining directly-concatenated duplicates that survive to paragraph assembly (e.g. from cross-line-break book name joins). The longer form is kept when the two copies differ in verse range.
+
+**Result:** 1,301 doubled references in Volume 1 → 0 after fix. Verified across all XHTML files in the EPUB.
+
+---
+
+### 89. Front matter prose rendered centered-italic instead of body text (IMPLEMENTED — AWAITING VALIDATION)
+
+**Problem:** Prose-heavy front matter sections — General Preface (Goold, 27 paragraphs), Christologia Preface (Owen, 72 paragraphs), Prefatory Notes, Analyses, and equivalent sections across all volumes — were rendered as `class="front-matter-body"` (centered, italic, 10% side margins). This CSS was designed for 2-3 line decorative blurbs on title-adjacent pages, not multi-page running prose. The section titles appeared as bold centered `<p>` elements with raw `**...**` markdown markers rather than proper headings.
+
+**Root cause:** `markdown_to_html()` had a single `FRONT_MATTER` mode that applied centered-italic styling to all content — both decorative title-page blurbs and multi-paragraph prose sections. The state machine's only escape was via a `PART`/`BOOK`/treatise-title trigger. Chapters titled "Preface" or "Prefatory Note" explicitly reset `conv_mode = "FRONT_MATTER"` in the outer loop, trapping their entire prose content in the wrong style. The Zone A immunity block also emitted raw `**...**` markdown instead of rendered `<b>` tags.
+
+**Fix — four-part:**
+1. **New CSS** (`shared.py`): `.front-matter-heading` (`h2`, AGES green `#006411`, uppercase, centered) for section titles; `.front-matter-prose` and `.front-matter-prose.first` (justified, normal weight, `text-indent: 1.5em`, identical to body paragraphs) for running prose.
+2. **`front_matter_style` parameter** added to `markdown_to_html()`. `"prose"` mode renders section titles as `<h2 class="front-matter-heading">` and paragraphs as `<p class="front-matter-prose">`. `"blurb"` mode retains the existing centered-italic `<p class="front-matter-body">` for decorative content.
+3. **Outer chapter loop** (`process_owen_volume()`): chapters whose title contains PREFACE, PREFATORY NOTE, ANALYSIS, CONTENTS etc. now set `conv_front_matter_style = "prose"` alongside `conv_mode = "FRONT_MATTER"`. Explicitly numbered body chapters (CHAPTER N, SERMON N) clear any lingering `FRONT_MATTER` state. Both `markdown_to_html()` call sites pass `front_matter_style=conv_front_matter_style`.
+4. **Zone A immunity block**: structural tokens carrying recognized section-title text (PREFACE TO THE READER, ORIGINAL PREFACE, etc.) emit `<h2 class="front-matter-heading">` in prose mode; salutation-level tokens emit `<h3 class="secondary">`; blurb mode emits `<b>` inside a `<p class="front-matter-body">` (fixing the raw `**` markdown bug).
+
+**Result (Volume 1):**
+- 9 front matter sections correctly identified and styled
+- 154 prose paragraphs using `.front-matter-prose`; 7 section headings using `.front-matter-heading`
+- 0 `.front-matter-body` or `.front-matter-title` in final output
+- 0 raw `**` markdown markers anywhere in the EPUB
+- Body chapters unaffected; doubled-reference fix (Issue 88) preserved
+
+---
 
 ### 76. Multiline block quotes falsely split mid-quote (Open — Documented)
 **Problem:** Multiline block quotes (especially Greek and Latin patristic citations) are being falsely split into multiple paragraphs in the middle of the quote. The entire block quote should be treated as a single cohesive unit without interruptions.
@@ -789,12 +827,16 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-12T16:23:13.502569+00:00
+**Last run:** 2026-05-15T15:58:39.192522+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 3 warnings)
+**Status:** FAIL (1 errors, 2 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -807,19 +849,23 @@ Reports:
 | Spine items | 83 |
 | Embedded fonts | 8 |
 | NAV links | 84 |
-| Greek chars / untagged | 10177 / 0 |
-| Hebrew chars / untagged | 14744 / 0 |
-| Noteref links / endnote anchors | 122 / 124 |
+| Greek chars / untagged | 4063 / 0 |
+| Hebrew chars / untagged | 155 / 0 |
+| Noteref links / endnote anchors | 78 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
-| Repeated phrase hits | 7 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 8 |
 
 Warnings requiring triage:
 
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
-- `missing_apple_options`: Missing Apple Books display-options file
+
+Errors requiring correction:
+
+- `literal_footnote_markers`: Literal fN footnote markers appear in rendered text
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->

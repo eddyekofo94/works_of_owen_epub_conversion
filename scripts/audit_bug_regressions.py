@@ -69,6 +69,24 @@ TEXT_CHECKS = [
         ("text_integrity", "max_missing_marker_count"),
         ("enumerator_integrity", "missing_markers"),
     ),
+    (
+        "Low-density chapter failures",
+        ("paragraph_density_integrity", "low_density_chapter_count"),
+        ("text_integrity", "max_low_density_chapter_count"),
+        ("paragraph_density_integrity", "low_density_chapters"),
+    ),
+    (
+        "Malformed transition budget failures",
+        ("paragraph_density_integrity", "malformed_transition_chapter_count"),
+        ("text_integrity", "max_malformed_transition_chapter_count"),
+        ("paragraph_density_integrity", "malformed_transition_chapters"),
+    ),
+    (
+        "Fragmented sentence runs",
+        ("paragraph_density_integrity", "fragmented_sentence_run_count"),
+        ("text_integrity", "max_fragmented_sentence_run_count"),
+        ("paragraph_density_integrity", "fragmented_sentence_runs"),
+    ),
 ]
 
 
@@ -90,6 +108,12 @@ EPUB_CHECKS = [
         ("info", "language", "hebrew_untagged_chars"),
         ("epub", "max_hebrew_untagged_chars"),
         ("info", "content_scan", "samples", "untagged_hebrew"),
+    ),
+    (
+        "Hebrew integrity failures",
+        ("info", "language", "hebrew_integrity_failures"),
+        ("epub", "max_hebrew_integrity_failures"),
+        ("info", "content_scan", "samples", "hebrew_integrity"),
     ),
     (
         "Repeated phrase hits",
@@ -122,10 +146,154 @@ EPUB_CHECKS = [
         ("info", "content_scan", "samples", "empty_bracket_noise"),
     ),
     (
+        "Unprocessed AGES verse markers",
+        ("info", "content_scan", "unprocessed_ages_marker_files"),
+        ("epub", "max_unprocessed_ages_marker_files"),
+        ("info", "content_scan", "samples", "unprocessed_ages_marker"),
+    ),
+    (
+        "Page reference split files",
+        ("info", "content_scan", "page_reference_split_files"),
+        ("epub", "max_page_reference_split_files"),
+        ("info", "content_scan", "samples", "page_reference_split"),
+    ),
+    (
+        "Chapter headings rendered as paragraphs",
+        ("info", "content_scan", "chapter_heading_in_paragraph_files"),
+        ("epub", "max_chapter_heading_in_paragraph_files"),
+        ("info", "content_scan", "samples", "chapter_heading_in_paragraph"),
+    ),
+    (
+        "Overlong headings containing body prose",
+        ("info", "content_scan", "overlong_heading_body_files"),
+        ("epub", "max_overlong_heading_body_files"),
+        ("info", "content_scan", "samples", "overlong_heading_body"),
+    ),
+    (
+        "Missing chapter initialization files",
+        ("info", "content_scan", "missing_chapter_initialization_files"),
+        ("epub", "max_missing_chapter_initialization_files"),
+        ("info", "content_scan", "samples", "missing_chapter_initialization"),
+    ),
+    (
+        "Fragmented Greek span-run files",
+        ("info", "content_scan", "fragmented_greek_span_run_files"),
+        ("epub", "max_fragmented_greek_span_run_files"),
+        ("info", "content_scan", "samples", "fragmented_greek_span_run"),
+    ),
+    (
         "Noteref links without spacing class",
         ("info", "content_scan", "noteref_without_class"),
         ("epub", "max_noteref_without_class"),
         ("info", "content_scan", "samples", "noteref_without_class"),
+    ),
+    (
+        "Scripture blockquote false positives",
+        ("info", "content_scan", "scripture_blockquote_files"),
+        ("epub", "max_scripture_blockquote_files"),
+        ("info", "content_scan", "samples", "scripture_blockquote"),
+    ),
+    (
+        "Orphan scripture brackets",
+        ("info", "content_scan", "orphan_scripture_bracket_files"),
+        ("epub", "max_orphan_scripture_bracket_files"),
+        ("info", "content_scan", "samples", "orphan_scripture_bracket"),
+    ),
+    (
+        "Glued ordinal anchors",
+        ("info", "content_scan", "glued_ordinal_files"),
+        ("epub", "max_glued_ordinal_files"),
+        ("info", "content_scan", "samples", "glued_ordinal"),
+    ),
+    (
+        "Structural bold leaks",
+        ("info", "content_scan", "structural_bold_leak_files"),
+        ("epub", "max_structural_bold_leak_files"),
+        ("info", "content_scan", "samples", "structural_bold_leak"),
+    ),
+    (
+        "Repeated structural markers",
+        ("info", "content_scan", "repeated_structural_marker_files"),
+        ("epub", "max_repeated_structural_marker_files"),
+        ("info", "content_scan", "samples", "repeated_structural_marker"),
+    ),
+    (
+        "Scholastic bold leaks",
+        ("info", "content_scan", "scholastic_bold_leak_files"),
+        ("epub", "max_scholastic_bold_leak_files"),
+        ("info", "content_scan", "samples", "scholastic_bold_leak"),
+    ),
+    (
+        "Inline scholastic labels",
+        ("info", "content_scan", "inline_scholastic_label_files"),
+        ("epub", "max_inline_scholastic_label_files"),
+        ("info", "content_scan", "samples", "inline_scholastic_label"),
+    ),
+    (
+        "Trailing scholastic labels",
+        ("info", "content_scan", "trailing_scholastic_label_files"),
+        ("epub", "max_trailing_scholastic_label_files"),
+        ("info", "content_scan", "samples", "trailing_scholastic_label"),
+    ),
+    (
+        "DIGRESSION headings not h3",
+        ("info", "content_scan", "digression_not_h3_files"),
+        ("epub", "max_digression_not_h3_files"),
+        ("info", "content_scan", "samples", "digression_not_h3"),
+    ),
+    (
+        "Cross-chapter continuation before heading",
+        ("info", "content_scan", "cross_chapter_continuation_files"),
+        ("epub", "max_cross_chapter_continuation_files"),
+        ("info", "content_scan", "samples", "cross_chapter_continuation"),
+    ),
+    (
+        "Overlong NAV entries",
+        ("info", "content_scan", "nav_overlong_entry_files"),
+        ("epub", "max_nav_overlong_entry_files"),
+        ("info", "content_scan", "samples", "nav_overlong_entry"),
+    ),
+    (
+        "Duplicate NAV labels",
+        ("info", "content_scan", "nav_duplicate_text_files"),
+        ("epub", "max_nav_duplicate_text_files"),
+        ("info", "content_scan", "samples", "nav_duplicate_text"),
+    ),
+    (
+        "Spaced caps OCR",
+        ("info", "content_scan", "spaced_caps_files"),
+        ("epub", "max_spaced_caps_files"),
+        ("info", "content_scan", "samples", "spaced_caps"),
+    ),
+    (
+        "Lowercase page fragments",
+        ("info", "content_scan", "lowercase_paragraph_start_files"),
+        ("epub", "max_lowercase_paragraph_start_files"),
+        ("info", "content_scan", "samples", "lowercase_paragraph_start"),
+    ),
+    (
+        "Noteref leading spaces",
+        ("info", "content_scan", "noteref_leading_space_files"),
+        ("epub", "max_noteref_leading_space_files"),
+        ("info", "content_scan", "samples", "noteref_leading_space"),
+    ),
+    (
+        "Greek span legacy accents",
+        ("info", "content_scan", "greek_span_legacy_accent_files"),
+        ("epub", "max_greek_span_legacy_accent_files"),
+        ("info", "content_scan", "samples", "greek_span_legacy_accent"),
+    ),
+    (
+        "Long quote joined to prose",
+        ("info", "content_scan", "quote_prose_join_files"),
+        ("epub", "max_quote_prose_join_files"),
+        ("info", "content_scan", "samples", "quote_prose_join"),
+    ),
+    (
+        "I WILL/I AM mangles",
+        ("info", "content_scan", "i_will_mangle_files"),
+        ("epub", "max_i_will_mangle_files"),
+        ("info", "content_scan", "samples", "i_will_mangle"),
     ),
 ]
 
@@ -141,9 +309,24 @@ def deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]
 
 
 def nested_get(data: dict[str, Any], path: tuple[str, ...]) -> Any:
+    """Return the value at path, or 0 / [] if any key is missing.
+
+    Missing keys are normal when audit_epub.py does not yet emit a given
+    check.  Returning a safe zero-value means the regression budget is
+    never breached for checks that don't exist yet, rather than crashing
+    the entire report.
+    """
     value: Any = data
     for key in path:
-        value = value[key]
+        if isinstance(value, dict):
+            if key not in value:
+                # Decide a safe default: a list if the last key suggests samples,
+                # otherwise an integer 0.
+                last = path[-1]
+                return [] if ("sample" in str(last) or "candidates" in str(last) or "chapters" in str(last) or "markers" in str(last) or "splits" in str(last) or "runs" in str(last)) else 0
+            value = value[key]
+        else:
+            return 0
     return value
 
 

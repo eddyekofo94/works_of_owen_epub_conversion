@@ -10,27 +10,52 @@ The PDFs share the same general AGES structure, so a fix proven on one volume is
 
 Do not regenerate or audit additional volumes merely to prove transferability. If a converter fix works for the named/default test volume and is structurally generic, assume it applies to the remaining Owen volumes and report that expectation. Ask before running any extra volume, even a subset of affected volumes.
 
-## Active Converter
+## Active Converter — Two-Stage Modular Pipeline (Issue 91)
 
-`converter.py` is the active EPUB3 pipeline.
+The pipeline was refactored into three focused modules. `converter.py` is kept as a
+legacy orchestrator that imports from the new modules and is still functional.
+
+### Preferred: Per-volume scripts (new)
 
 ```bash
-# Process a single Owen volume
+# Full pipeline for volume 1 (extract PDF + render EPUB)
+.venv/bin/python3 volumes/v1/convert.py
+
+# Stage 2 only — fast re-render from cached JSON (no PDF I/O, ~3 seconds)
+.venv/bin/python3 volumes/v1/convert.py --render-only
+
+# Stage 1 only — re-extract when extraction logic changes
+.venv/bin/python3 volumes/v1/convert.py --extract-only
+```
+
+Per-volume scripts exist for v1. When working on a new volume, create
+`volumes/vN/convert.py` from the v1 template and populate `OVERRIDES`.
+
+### Stage entry points (direct)
+
+```bash
+# Stage 1: PDF → JSON intermediate
+.venv/bin/python3 extract.py 1
+
+# Stage 2: JSON → EPUB3
+.venv/bin/python3 render.py 1
+```
+
+### Legacy orchestrator (still works)
+
+```bash
+# Process a single Owen volume (legacy path, used until all vN/convert.py exist)
 .venv/bin/python3 converter.py 3
 
 # Process all 16 Owen volumes
 .venv/bin/python3 converter.py
-
-# Quick smoke run on volume 1
-.venv/bin/python3 converter.py --test
 ```
 
-Current outputs:
+### Current outputs
 
 - Owen Works: `volumes/vN/output/volume_N.epub`
-- Intermediates: `volumes/vN/intermediate/volume_N.thml.xml`
-
-The `--hebrews` CLI flag exists, but the Hebrews pipeline is not implemented in the current checkout.
+- JSON intermediate: `volumes/vN/intermediate/volume_N.json`  ← NEW (Stage 1 output)
+- ThML intermediate: `volumes/vN/intermediate/volume_N.thml.xml`  ← legacy (footnote source)
 
 Do not use the all-volumes command during normal work unless explicitly requested.
 
@@ -52,7 +77,9 @@ Owen/
 ├── GEMINI.md                    # Non-negotiable project mandates
 ├── PLAN.md                      # Active roadmap and QA plan
 ├── ENGINEERING_LOG.md           # Technical post-mortems
-├── converter.py                 # Active PyMuPDF/PyMuPDF4LLM EPUB3 converter
+├── extract.py                   # Stage 1: PDF → JSON intermediate (Issue 91)
+├── render.py                    # Stage 2: JSON → EPUB3 (Issue 91)
+├── converter.py                 # Legacy orchestrator (imports extract.py + render.py)
 ├── shared.py                    # Metadata, CSS, fonts, Greek/Hebrew converters
 ├── docs/archive/                # Historical plans and session summaries
 ├── covers/                      # v1.png-v16.png
@@ -61,8 +88,9 @@ Owen/
 ├── portraits/                   # Frontispiece images
 ├── special_sources/             # CCEL XML references for volumes 5 and 10
 └── volumes/v1-v16/
+    ├── convert.py               # Per-volume script (v1 exists; others to be created)
     ├── input/                   # PDF symlink
-    ├── intermediate/            # ThML XML
+    ├── intermediate/            # volume_N.json (Stage 1 output) + volume_N.thml.xml
     ├── output/                  # Generated EPUB
     └── bugs_fixes/              # Per-volume issue log
 ```

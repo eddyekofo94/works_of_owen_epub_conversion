@@ -1,23 +1,41 @@
 {
   "volume": 1,
-  "status": "warn",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
   "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
-    "epub": [
-      "orphan_endnotes"
-    ]
+    "epub": []
   },
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 13,
-      "budget": 13,
+      "observed": 116,
+      "budget": 116,
       "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "**GENERAL PREFACE.**",
+          "next": "IT would be presumption to enter upon any commendation of John Owen as an author and divine. His works will continue to gather round them the respect and admiration of the Church o"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "**A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST**",
+          "next": "**CHAPTER 1**"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "**CHAPTER 1**",
+          "next": "**PETER'S CONFESSION; Matthew 16:16MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION**"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "**PETER'S CONFESSION; Matthew 16:16MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION**",
+          "next": "Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio"
+        },
         {
           "file": "EPUB/ch011.xhtml",
           "previous": "But —",
@@ -35,7 +53,7 @@
         },
         {
           "file": "EPUB/ch013.xhtml",
-          "previous": "nce, or a readiness thereunto. Hence is that expression, \"He bowed down his head and worshipped,\" [ Genesis 24:26;] see [also] Psalm 95:6. And these external signs are of two sorts",
+          "previous": "eunto. Hence is that expression, \"He bowed down his head and worshipped,\" [ Genesis 24:26Genesis 24:26;] see [ αλσὄ Psalms 95:6Psalm 95:6. And these external signs are of two sorts",
           "next": "(1st,) Such as are natural and occasional;"
         },
         {
@@ -47,26 +65,6 @@
           "file": "EPUB/ch022.xhtml",
           "previous": "There can be but two senses of these words",
           "next": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "previous": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh",
-          "next": "(2ndly,) That continuing to be what it was, it was made to be also what before it was not."
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "previous": "nsidered as the act of this or that nature in him alone, but it is the act and work of the whole person, — of him that is both God and man in one person. And this gives occasion, —",
-          "next": "Unto that variety of enunciations which is used in the Scripture concerning him; which I shall name only, and conclude."
-        },
-        {
-          "file": "EPUB/ch024.xhtml",
-          "previous": "(4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,",
-          "next": "(5thly,) Round about them were the tribes in their order."
-        },
-        {
-          "file": "EPUB/ch027.xhtml",
-          "previous": "is, they shall never attain true rest or satisfaction in their own minds. He it is alone in whom the race of mankind may boast and glory, on whom all its felicities do depend. For,",
-          "next": "He it is in whom our nature, which was debased as low as hell by apostasy from God, is exalted above the whole creation. Our nature, in she original constitution of it, in the pers"
         }
       ]
     },
@@ -131,6 +129,13 @@
       ]
     },
     {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
       "label": "Reference continuation splits",
       "observed": 0,
       "budget": 0,
@@ -157,6 +162,27 @@
       "budget": 0,
       "status": "ok",
       "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
     }
   ],
   "epub_checks": [
@@ -169,10 +195,27 @@
     },
     {
       "label": "Untagged Greek characters",
-      "observed": 0,
+      "observed": 10,
       "budget": 55,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": ", ηε etc, saith Ignatius: Epist. ad Philadelph. — “He” (that is, Christ) “is the way leading unto the Father, the rock, the key, the shepherd” — wherein he has respect unto this testimony. And Origin expressly denies the"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": ", κ.τ.λ. (cap. 6)"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "text": ", κ.τ.λ.” — “Thou art a rock, and on thee will I build.” At least the gender had not been altered, but he would have said, “"
+        },
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": ".τ. λ., 2 Corinthians 3:182 Corinthians 3:18. We behold his glory “in a glass,” which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented un"
+        }
+      ]
     },
     {
       "label": "Untagged Hebrew characters",
@@ -182,10 +225,17 @@
       "samples": []
     },
     {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
       "label": "Repeated phrase hits",
-      "observed": 7,
-      "budget": 6,
-      "status": "regression",
+      "observed": 8,
+      "budget": 8,
+      "status": "ok",
       "samples": [
         {
           "file": "combined_text",
@@ -199,12 +249,12 @@
         },
         {
           "file": "combined_text",
-          "text": "the greater catechism chapter 1 of the scripture",
+          "text": "chapter 8 of the state of corrupted nature",
           "count": 1
         },
         {
           "file": "combined_text",
-          "text": "chapter 8 of the state of corrupted nature",
+          "text": "chapter 10 of the person of jesus christ",
           "count": 1
         },
         {
@@ -220,6 +270,11 @@
         {
           "file": "combined_text",
           "text": "the nature operations and causes of divine love",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "meditations and discourses concerning the glory of christ",
           "count": 1
         }
       ]
@@ -246,7 +301,236 @@
       "samples": []
     },
     {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 3,
+      "budget": 3,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch005.xhtml",
+          "text": "**CHAPTER 1"
+        },
+        {
+          "file": "EPUB/ch028.xhtml",
+          "text": "**CHAPTER 1"
+        },
+        {
+          "file": "EPUB/ch049.xhtml",
+          "text": "governeth all things. — Chapter 6"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
       "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 38,
+      "budget": 38,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch002_title.xhtml",
+          "text": "m"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "text": "a"
+        },
+        {
+          "file": "EPUB/ch015.xhtml",
+          "text": "p"
+        },
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": "r"
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "text": "o"
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "a"
+        },
+        {
+          "file": "EPUB/ch033.xhtml",
+          "text": "d"
+        },
+        {
+          "file": "EPUB/ch040.xhtml",
+          "text": "g"
+        },
+        {
+          "file": "EPUB/ch041.xhtml",
+          "text": "g"
+        },
+        {
+          "file": "EPUB/ch049.xhtml",
+          "text": "d"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
       "observed": 0,
       "budget": 0,
       "status": "ok",

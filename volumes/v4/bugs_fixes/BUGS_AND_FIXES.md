@@ -118,12 +118,13 @@ See previous sessions.
 ---
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-12T20:22:41.686272+00:00
+**Last run:** 2026-05-14T16:39:43.642548+00:00
 **EPUB:** `volumes/v4/output/volume_4.epub`
-**Status:** WARN (0 errors, 2 warnings)
+**Status:** FAIL (5 errors, 2 warnings)
 
 Reports:
 - `volume_4_audit.json`
@@ -143,12 +144,26 @@ Reports:
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
+| Page reference split files | 0 |
+| Chapter headings in paragraphs | 0 |
+| Missing chapter initialization files | 0 |
+| Greek diacritic residue files | 5 |
+| Fragmented Greek span-run files | 22 |
+| Blockquotes | 0 |
 | Repeated phrase hits | 10 |
 
 Warnings requiring triage:
 
 - `repeated_phrases`: Potential repeated phrases detected
 - `missing_apple_options`: Missing Apple Books display-options file
+
+Errors requiring correction:
+
+- `fragmented_greek_span_runs`: Three or more adjacent Greek words are split into separate spans
+- `inline_scholastic_labels`: Scholastic labels appear mid-paragraph instead of as anchors
+- `nav_overlong_entries`: Navigation entries are too long and appear to contain paragraph text
+- `spaced_caps_ocr`: OCR-spaced all-caps words remain in XHTML
+- `greek_diacritic_residue`: Standalone Greek diacritic residues (j, J, etc.) found near Greek text
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->

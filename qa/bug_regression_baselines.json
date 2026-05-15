@@ -1,5 +1,5 @@
 {
-  "description": "Regression budgets derived from known Volume 1 bug classes. Lower these counts, or add absent_samples, whenever a bug implementation removes a warning class or specific sample.",
+  "description": "Regression budgets for the Owen Works EPUB3 pipeline. Lower these counts as bugs are fixed. Add absent_samples for any fixed blemish to prevent regression. Default budgets apply to all volumes; per-volume overrides in 'volumes' merge over the default.",
   "default": {
     "text_integrity": {
       "allowed_warning_codes": [
@@ -12,18 +12,22 @@
         "inline_structural_markers",
         "suspicious_large_number_starts",
         "overlong_heading_candidates",
+        "roman_heading_candidates",
         "missing_enumerator_markers",
         "enumerator_sequence_candidates",
         "repeated_windows"
       ],
       "max_split_candidate_count": 61,
       "max_inline_structural_candidate_count": 1,
-        "max_repeated_window_count": 25,
-        "max_front_toc_missing_pages": 0,
-        "max_reference_continuation_split_count": 0,
+      "max_repeated_window_count": 25,
+      "max_front_toc_missing_pages": 0,
+      "max_reference_continuation_split_count": 0,
       "max_citation_continuation_split_count": 0,
       "max_adjacent_duplicate_count": 0,
-      "max_missing_marker_count": 0
+      "max_missing_marker_count": 0,
+      "max_low_density_chapter_count": 0,
+      "max_malformed_transition_chapter_count": 0,
+      "max_fragmented_sentence_run_count": 0
     },
     "epub": {
       "allowed_warning_codes": [
@@ -36,16 +40,90 @@
       "max_error_count": 0,
       "max_greek_untagged_chars": 55,
       "max_hebrew_untagged_chars": 0,
+      "max_hebrew_integrity_failures": 0,
       "max_repeated_phrase_count": 7,
       "max_beta_code_files": 2,
       "max_escaped_lang_tag_files": 0,
       "max_literal_footnote_marker_files": 0,
       "max_empty_bracket_noise_files": 0,
-      "max_noteref_without_class": 0
+      "max_unprocessed_ages_marker_files": 0,
+      "max_page_reference_split_files": 0,
+      "max_chapter_heading_in_paragraph_files": 0,
+      "max_overlong_heading_body_files": 0,
+      "max_missing_chapter_initialization_files": 0,
+      "max_fragmented_greek_span_run_files": 0,
+      "max_noteref_without_class": 0,
+      "max_scripture_blockquote_files": 0,
+      "max_orphan_scripture_bracket_files": 0,
+      "max_glued_ordinal_files": 0,
+      "max_structural_bold_leak_files": 0,
+      "max_repeated_structural_marker_files": 0,
+      "max_scholastic_bold_leak_files": 0,
+      "max_inline_scholastic_label_files": 0,
+      "max_trailing_scholastic_label_files": 0,
+      "max_digression_not_h3_files": 0,
+      "max_cross_chapter_continuation_files": 0,
+      "max_nav_overlong_entry_files": 0,
+      "max_nav_duplicate_text_files": 0,
+      "max_spaced_caps_files": 0,
+      "max_lowercase_paragraph_start_files": 0,
+      "max_noteref_leading_space_files": 0,
+      "max_greek_span_legacy_accent_files": 0,
+      "max_quote_prose_join_files": 0,
+      "max_i_will_mangle_files": 0
     },
-    "absent_samples": []
+    "absent_samples": [
+      {
+        "audit": "epub",
+        "text": "IWILL",
+        "reason": "I WILL mangling normalization (blemish #25)"
+      },
+      {
+        "audit": "epub",
+        "text": "e will be for thee",
+        "reason": "I WILL mangling — lowercase form (blemish #25)"
+      },
+      {
+        "audit": "epub",
+        "text": "[f83]",
+        "reason": "Literal footnote marker must not appear in rendered EPUB (V1 ch065)"
+      },
+      {
+        "audit": "epub",
+        "text": "[f92]",
+        "reason": "Literal footnote marker must not appear in rendered EPUB (V1 ch067)"
+      }
+    ]
   },
   "volumes": {
-    "1": {}
+    "1": {
+      "text_integrity": {
+        "max_split_candidate_count": 116,
+        "max_repeated_window_count": 25
+      },
+      "epub": {
+        "max_error_count": 0,
+        "max_repeated_phrase_count": 8,
+        "max_literal_footnote_marker_files": 0,
+        "max_chapter_heading_in_paragraph_files": 3,
+        "max_fragmented_greek_span_run_files": 0,
+        "max_lowercase_paragraph_start_files": 38,
+        "max_noteref_leading_space_files": 0
+      }
+    },
+    "2": {
+      "text_integrity": {
+        "max_split_candidate_count": 68,
+        "max_repeated_window_count": 25,
+        "max_missing_marker_count": 2
+      },
+      "epub": {
+        "max_chapter_heading_in_paragraph_files": 2,
+        "max_fragmented_greek_span_run_files": 2,
+        "max_structural_bold_leak_files": 1,
+        "max_lowercase_paragraph_start_files": 14,
+        "max_noteref_leading_space_files": 0
+      }
+    }
   }
 }

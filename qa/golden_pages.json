@@ -24,5 +24,49 @@
       "reason": "Known risk page for repeated scripture-reference fragments",
       "checks": ["no_duplicate_phrase"]
     }
+  ],
+  "2": [
+    {
+      "page": 13,
+      "kind": "chapter_start",
+      "reason": "Start of ch001 — drop-cap and chapter-opening typography must be present; all-caps lead word THAT should be detected",
+      "checks": ["chapter_opening", "no_header"]
+    },
+    {
+      "page": 26,
+      "kind": "ghost_layer",
+      "reason": "Known '[3.] To the SPIRIT' duplication — must appear exactly once",
+      "checks": ["no_duplicate_phrase"]
+    },
+    {
+      "page": 27,
+      "kind": "page_boundary",
+      "reason": "Page 26/27 boundary — [3.] To the SPIRIT continuation must not be duplicated",
+      "checks": ["no_duplicate_phrase", "paragraph_join"]
+    },
+    {
+      "page": 78,
+      "kind": "page_boundary",
+      "reason": "Mid-sentence break across pages 78-79 — must heal into one paragraph",
+      "checks": ["paragraph_join"]
+    },
+    {
+      "page": 79,
+      "kind": "page_boundary",
+      "reason": "Continuation of pages 78-79 mid-sentence split",
+      "checks": ["paragraph_join"]
+    },
+    {
+      "page": 235,
+      "kind": "greek_rendering",
+      "reason": "Known Greek rendering failure: [Ελεος — accents must be full Unicode, no legacy ~ > < chars",
+      "checks": ["no_legacy_greek_accents", "greek_tagged"]
+    },
+    {
+      "page": 343,
+      "kind": "body_swallow",
+      "reason": "A Vindication section — body text must not be swallowed by title page detection",
+      "checks": ["body_not_empty", "no_header"]
+    }
   ]
 }

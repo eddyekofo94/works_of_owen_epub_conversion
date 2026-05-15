@@ -1,7 +1,7 @@
 # EPUB Audit: volume_3.epub
 
-- Status: **WARN**
-- Errors: 0
+- Status: **FAIL**
+- Errors: 5
 - Warnings: 5
 
 ## Summary
@@ -26,7 +26,21 @@
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
-- Repeated phrase hits: 4
+- Empty bracket noise files: 1
+- Page reference split files: 0
+- Chapter headings in paragraphs: 0
+- Missing chapter initialization files: 0
+- Fragmented Greek span-run files: 18
+- Blockquotes: 0
+- Repeated phrase hits: 2
+
+## Errors
+
+- `empty_bracket_noise`: Empty bracket residue appears in rendered text
+- `unprocessed_ages_markers`: AGES verse markers remain unprocessed in XHTML
+- `fragmented_greek_span_runs`: Three or more adjacent Greek words are split into separate spans
+- `orphan_scripture_brackets`: Orphan AGES brackets remain before scripture references
+- `inline_scholastic_labels`: Scholastic labels appear mid-paragraph instead of as anchors
 
 ## Warnings
 
@@ -56,7 +70,34 @@
 
 ### repeated_phrase
 
-- `combined_text`: chapter 2 general dispensation of the holy spirit
-- `combined_text`: chapter 2 works of the holy spirit preparatory
-- `combined_text`: book 4 chapter 1 the nature of sanctification
-- `combined_text`: chapter 3 believers the only object of sanctification
+- `combined_text`: chapter 2 sanctification a progressive work
+- `combined_text`: chapter 4 the defilement of sin
+
+### empty_bracket_noise
+
+- `EPUB/ch001.xhtml`: The Works of John Owen Vol. 3 ΠΝΕΥΜΑΤΟΛΟΓΙΑ A DISCOURSE CONCERNING THE HOLY SPIRIT, PREFATORY NOTE BY THE EDITOR, TO THE READERS, Book 1. 1. — GENERAL PRINCIPLES CONCERNING THE HOLY SPIRIT AND HIS WORK. 1 Corinthians; 1
+
+### unprocessed_ages_marker
+
+- `EPUB/ch007.xhtml`: &lt;4611605&gt;
+- `EPUB/endnotes.xhtml`: &lt;460211&gt;
+
+### fragmented_greek_span_run
+
+- `EPUB/ch007.xhtml`: three or more adjacent Greek spans
+- `EPUB/ch008.xhtml`: three or more adjacent Greek spans
+- `EPUB/ch009.xhtml`: three or more adjacent Greek spans
+- `EPUB/ch011.xhtml`: three or more adjacent Greek spans
+- `EPUB/ch013.xhtml`: three or more adjacent Greek spans
+
+### orphan_scripture_bracket
+
+- `EPUB/ch008.xhtml`: [ Psalm 76:12]
+- `EPUB/ch014.xhtml`: [John 14:15-17.]
+- `EPUB/ch016.xhtml`: [Mark 13:32]
+- `EPUB/ch023.xhtml`: [John 5:40.]
+
+### inline_scholastic_label
+
+- `EPUB/ch015.xhtml`: scholastic label appears mid-paragraph
+- `EPUB/ch023.xhtml`: scholastic label appears mid-paragraph

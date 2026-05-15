@@ -1,13 +1,8 @@
 {
   "volume": 2,
-  "pdf": {
-    "page_count": 558
-  },
-  "epub": {
-    "spine_text_files": 51,
-    "paragraph_count": 2061
-  },
-  "generated_at": "2026-05-12T20:26:50.833523+00:00",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/input/owen-v2.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
+  "generated_at": "2026-05-15T21:59:04.966047+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [
@@ -48,9 +43,16 @@
       "message": "Repeated word windows may indicate ghost-layer duplication"
     }
   ],
+  "pdf": {
+    "page_count": 558
+  },
+  "epub": {
+    "spine_text_files": 50,
+    "paragraph_count": 2038
+  },
   "word_coverage": {
     "pdf_content_tokens": 187844,
-    "epub_content_tokens": 187059,
+    "epub_content_tokens": 187238,
     "coverage_ratio": 0.9933,
     "missing_word_samples": [
       {
@@ -64,14 +66,14 @@
         "epub": 0
       },
       {
+        "word": "th",
+        "pdf": 24,
+        "epub": 7
+      },
+      {
         "word": "tou",
         "pdf": 17,
         "epub": 0
-      },
-      {
-        "word": "th",
-        "pdf": 24,
-        "epub": 8
       },
       {
         "word": "pa",
@@ -213,8 +215,8 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 20562,
-    "missing_dense_window_pages": 80,
+    "dense_windows_checked": 19991,
+    "missing_dense_window_pages": 101,
     "missing_dense_windows": [
       {
         "page": 9,
@@ -245,6 +247,10 @@
         "sample": "up by an induction of instances to manifest what it is and wherein the"
       },
       {
+        "page": 36,
+        "sample": "again this is in faith the ground of all acceptable obedience deuteronomy exodus deuteronomy"
+      },
+      {
         "page": 42,
         "sample": "what is in and of the world whose whole portion lies in evil ndly"
       },
@@ -255,6 +261,10 @@
       {
         "page": 49,
         "sample": "in the blood of jesus and this will be exceeding effectual to endear thy"
+      },
+      {
+        "page": 53,
+        "sample": "keepeth not his commandments is liar and the truth is not in him chap"
       },
       {
         "page": 57,
@@ -269,12 +279,20 @@
         "sample": "is beyond comparison more beautiful and gracious than any here below ypiy the word"
       },
       {
+        "page": 71,
+        "sample": "seek him together with her chap whither is thy beloved turned aside that we"
+      },
+      {
         "page": 73,
-        "sample": "the part of christ on the part of the saints the next thing that"
+        "sample": "maker and her redeemer is her husband and isaiah chap setting out the mutual"
       },
       {
         "page": 74,
-        "sample": "shall find on him two things eminently upon this account honor it is the"
+        "sample": "inviteth others to behold him in this his glory song of solomon it go"
+      },
+      {
+        "page": 75,
+        "sample": "undergo the hard task required thereunto psalm hebrews yea he was pained as woman"
       },
       {
         "page": 76,
@@ -282,15 +300,15 @@
       },
       {
         "page": 78,
-        "sample": "beloved wisdom and learning beloved righteousness beloved duties are all loss compared with christ"
+        "sample": "the knowledge of christ jesus my lord so also does the church hosea reject"
+      },
+      {
+        "page": 79,
+        "sample": "hearts unto him his description song of solomon opened to strengthen our hearts in"
       },
       {
         "page": 82,
         "sample": "what can be treasured up in mere man should rejoice if my portion might"
-      },
-      {
-        "page": 87,
-        "sample": "mouth peter that he fulfilled all righteousness matthew his father being always well pleased"
       },
       {
         "page": 88,
@@ -303,6 +321,14 @@
       {
         "page": 91,
         "sample": "and lo he lives for ever and ever and has the keys of hell"
+      },
+      {
+        "page": 92,
+        "sample": "canticles to this very end and purpose cant my beloved is white and ruddy"
+      },
+      {
+        "page": 94,
+        "sample": "everlasting kingdom daniel kingdom that shall never be destroyed chap for he must reign"
       },
       {
         "page": 95,
@@ -321,12 +347,24 @@
         "sample": "will it avail us to hear him proclaim himself the lord the lord god"
       },
       {
+        "page": 120,
+        "sample": "reference to judgement to come they need not go farther than themselves romans but"
+      },
+      {
+        "page": 124,
+        "sample": "to the conscience hebrews as the apostle proves chap and thence the lord rejects"
+      },
+      {
         "page": 126,
         "sample": "until it be utterly abolished the opening of this treasury mystery you have romans"
       },
       {
         "page": 128,
         "sample": "will follow its direction is the law the law has many fair pleas to"
+      },
+      {
+        "page": 130,
+        "sample": "he tells us what issue they have in this business chap being ignorant of"
       },
       {
         "page": 135,
@@ -339,42 +377,6 @@
       {
         "page": 150,
         "sample": "be referred to these two heads himself his kingdom himself john he that loveth"
-      },
-      {
-        "page": 151,
-        "sample": "maketh intercession for the saints according to the will of god all endeavors all"
-      },
-      {
-        "page": 154,
-        "sample": "christ have great refreshment by them the more they saints speak the more they"
-      },
-      {
-        "page": 155,
-        "sample": "two things are required that we may pray for the things in the promise"
-      },
-      {
-        "page": 158,
-        "sample": "love to it that it were more that it were more that were as"
-      },
-      {
-        "page": 162,
-        "sample": "heart is couched in the redoubling of the expression sought him sought him setting"
-      },
-      {
-        "page": 170,
-        "sample": "him and inquiry after him they say of him in their hearts continual as"
-      },
-      {
-        "page": 175,
-        "sample": "if he sees poor weak lamb he does not thrust him on but takes"
-      },
-      {
-        "page": 185,
-        "sample": "in handling our communion with the holy ghost in keeping this institutions or matter"
-      },
-      {
-        "page": 187,
-        "sample": "toward us in all wisdom and prudence ephesians hence is that invitation song of"
       }
     ]
   },
@@ -591,8 +593,8 @@
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 530,
-    "bottom_windows_usable": 510,
-    "skipped_bottom_window_count": 29,
+    "bottom_windows_usable": 507,
+    "skipped_bottom_window_count": 24,
     "skipped_bottom_windows": [
       {
         "page": 14,
@@ -602,8 +604,8 @@
       },
       {
         "page": 37,
-        "window": "of it ajgallia seems to be formed of it it is to exult in",
-        "sample": "The latter word denotes not the inward affection, but the outwards demonstration of it: ajgallia|~n seems to be formed of it. It is to exult in",
+        "window": "it is to exult in outward demonstration of internal delight and joy tripudiare to",
+        "sample": "demonstration of it: ajgallia|~n seems to be formed of it. It is to exult in outward demonstration of internal delight and joy; — \"Tripudiare,\" to",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -614,38 +616,32 @@
       },
       {
         "page": 75,
-        "window": "conjugal affections there is mutual resignation or making over of their persons one to",
-        "sample": "[2.] Mutual, consequential, conjugal affections. [1.] There is a mutual resignation, or making over of their persons one to",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 85,
-        "window": "bring clean thing out of an unclean that which is born of the flesh",
-        "sample": "[2.] There is the derivation of a polluted, corrupted nature from him: \"Who can bring a clean thing out of an unclean?\" \"That which is born of the flesh",
+        "window": "another this is the first act of communion as to the personal grace of",
+        "sample": "[1.] There is a mutual resignation, or making over of their persons one to another. This is the first act of communion, as to the personal grace of",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 121,
-        "window": "and all our iniquities did meet on him and he will not spare him",
-        "sample": "assumption of it was (for he said to his Father, \"Lo, I come to do thy will,\" and all our iniquities did meet on him), [and] he will not spare him",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 132,
-        "window": "john of what concernment this is to us to word in that place",
-        "sample": "John 16:8.] Of what concernment this is to us to word in that place, [",
+        "window": "the due desert of it is it not most clear from hence even from",
+        "sample": "will,\" and all our iniquities did meet on him), [and] he will not spare him any thing of the due desert of it; is it not most clear from hence, even from",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 165,
-        "window": "of abraham he had no such esteem of angels whether you take ejpilamza nesqai",
-        "sample": "not on him the nature of angels, but he took on him the seed of Abraham;\" he had no such esteem of angels. Whether you take ejpilamza>nesqai,",
+        "window": "properly to take or to take hold of as our translators and so supply",
+        "sample": "he had no such esteem of angels. Whether you take ejpilamza>nesqai, properly to \"take,\" or to \"take hold of,\" as our translators, and so supply",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 166,
-        "window": "form of servant is expounded in the next words ejn ojmoiw mati ajnqrw pwn",
-        "sample": "out his blood and died. Morfh<n dou>lou lazw<n, (he \"took the form of a servant\"), is expounded in the next words, ejn oJmoiw>mati ajnqrw>pwn",
+        "window": "romans geno menov an expression used to set out his incarnation",
+        "sample": "Romans geno>menov, — an expression used to set out his incarnation,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 174,
+        "window": "original word it is sumapaqh sai to suffer together we have saith the apostle",
+        "sample": "\"touched\" comes exceedingly short of expressing the original word; it is sumapaqh~sai, — to \"suffer together.\" \"We have,\" saith the apostle,",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -661,33 +657,27 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 197,
-        "window": "by his union and habitual grace so that if the obedience christ performed be",
-        "sample": "types, and was every way iJkano>v (fit to be made an offering for sin), by his union and habitual grace. So that if the obedience Christ performed be",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 200,
-        "window": "was active the dikai wma is opposed paraptw mati the righteousness to the fault",
-        "sample": "First, It is opposed to the disobedience of Adam, which was active. The dikai>wma is opposed paraptw>mati, — the righteousness to the fault.",
+        "window": "the fault the fault was an active transgression of the law and the obedience",
+        "sample": "dikai>wma is opposed paraptw>mati, — the righteousness to the fault. The fault was an active transgression of the law, and the obedience",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 219,
-        "window": "again they being given unto him he undertaking for them to do and suffer",
-        "sample": "need to take it up here again. [4.] They being given unto him, he undertaking for them to do and suffer",
+        "window": "what was on their part required he received on their behalf and for them",
+        "sample": "[4.] They being given unto him, he undertaking for them to do and suffer what was on their part required, he received, on their behalf and for them,",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 226,
-        "window": "matthew let your light so st it is the glory of the father",
-        "sample": "Matthew 5:16, \"Let your light so [1st.] It is the glory of the Father.",
+        "window": "father shine before men that they may see your good works and glorify your",
+        "sample": "[1st.] It is the glory of the Father. shine before men, that they may see your good works, and glorify your",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 228,
-        "window": "st it serves to the conviction and stopping the mouths of some of the",
-        "sample": "(3rdly.) The end of it in respect of others in the world is manifold: — [1st.] It serves to the conviction and stopping the mouths of some of the",
+        "window": "stopping the mouths of some of the enemies of god both here and hereafter",
+        "sample": "[1st.] It serves to the conviction and stopping the mouths of some of the enemies of God, both here and hereafter: —",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -698,26 +688,14 @@
       },
       {
         "page": 237,
-        "window": "is honored by his saints all the world over and indeed if they do",
-        "sample": "peace and favor with God. [3.] He is honored by his saints all the world over; and indeed, if they do",
+        "window": "who should if they honor him not as they honor the father they are",
+        "sample": "[3.] He is honored by his saints all the world over; and indeed, if they do not, who should? If they honor him not as they honor the Father, they are,",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 239,
-        "window": "hereupon they lay down their sins at the cross of christ upon his shoulders",
-        "sample": "that God shall be glorified, and thy soul delivered.\" Hereupon, — [3.] They lay down their sins at the cross of Christ, upon his shoulders.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 258,
-        "window": "sons of god and so of the family whereinto the adopted person is to",
-        "sample": "[1.] Angels. It is declared unto them; they are the sons of God. They are the sons of God, and so of the family whereinto the adopted person is to",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 278,
-        "window": "para klhtov whether it be better rendered here an advocate or comforter may be",
-        "sample": "\"comforter;\" in the first sense our Savior is called para>klhtov, 2:1. Whether it be better rendered here an advocate or a comforter may be",
+        "window": "his shoulders this is faith's great and bold venture upon the grace faithfulness and",
+        "sample": "[3.] They lay down their sins at the cross of Christ, upon his shoulders. This is faith's great and bold venture upon the grace, faithfulness, and",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -734,8 +712,8 @@
       },
       {
         "page": 329,
-        "window": "to pneu ma the spirit it is the holy ghost himself that is here",
-        "sample": "up in our hearts,\" say others; but where is that called absolutely To< Pneu~ma, — \"The Spirit?\" It is the Holy Ghost himself that is here",
+        "window": "here intended not immediately in respect of his person in which regard he is",
+        "sample": "Pneu~ma, — \"The Spirit?\" It is the Holy Ghost himself that is here intended, not immediately, in respect of his person (in which regard he is",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -745,21 +723,15 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 391,
-        "window": "the mouths of some of the enemies of god both here and hereafter here",
-        "sample": "\" [1st.] It serves to the conviction and stopping the mouths of some of the enemies of God, both here and hereafter: — 1. Here.",
+        "page": 401,
+        "window": "of the church unto that purpose and as for his exceptions they are such",
+        "sample": "far short of what is taught and delivered by many ancient writers of the church unto that purpose; and [as] for his exceptions, they are such a",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
         "page": 528,
-        "window": "sin it had the end of proper sacrifice it made expiation of sin",
-        "sample": "sin. [2.] It had the end of a proper sacrifice; it made expiation of sin,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 540,
-        "window": "old are here follows transcribed hebrew hd wod pi psalm",
-        "sample": "Old are, (here follows transcribed Hebrew:) hd;p; ˆwOd]Pi [ Psalm 49:9],",
+        "window": "expiation of sin propitiation and atonement for sin with reconciliation with god and so",
+        "sample": "[2.] It had the end of a proper sacrifice; it made expiation of sin, propitiation and atonement for sin, with reconciliation with God; and so",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -769,8 +741,13 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_bottom_window_count": 13,
+    "missing_bottom_window_count": 16,
     "missing_bottom_windows": [
+      {
+        "page": 39,
+        "window": "john though the love of the might receive and grace for grace",
+        "sample": "John 1:16. Though the love of the might receive, and grace for grace,\""
+      },
       {
         "page": 57,
         "window": "ephesians so from the graces wherewith the blood of his atonement",
@@ -782,9 +759,14 @@
         "sample": "Isaiah 32:2. From the power of corruptions, rock in a weary land,\""
       },
       {
-        "page": 79,
-        "window": "jeremiah in the thereof he is jehovah our righteousness",
-        "sample": "Jeremiah 23:6. In the thereof. He is \"Jehovah our Righteousness,\""
+        "page": 104,
+        "window": "romans revealed from heaven his wrath against apostle tells us",
+        "sample": "Romans 1:18, \"revealed from heaven his wrath against apostle tells us,"
+      },
+      {
+        "page": 128,
+        "window": "romans they have this issue the apostle witnesseth",
+        "sample": "Romans 9:31,32, they have this issue, the apostle witnesseth,"
       },
       {
         "page": 144,
@@ -803,13 +785,13 @@
       },
       {
         "page": 194,
-        "window": "elect only john there were not worse in the world really and evidently than",
-        "sample": "Luke 23:34; — some things as mediator; so he prayed for his elect only, John 17:9. There were not worse in the world, really and evidently, than"
+        "window": "many of them that crucified him yet as man subject to the law he",
+        "sample": "John 17:9. There were not worse in the world, really and evidently, than many of them that crucified him; yet, as a man, subject to the law, he"
       },
       {
         "page": 218,
-        "window": "isaiah and leader be given for covenant of the people",
-        "sample": "Isaiah 42:6; and a \"leader,\" be given \"for a covenant of the people,\""
+        "window": "corinthians to all ends and he was the second adam",
+        "sample": "1 Corinthians 15:45,47, to all ends and 55:4. He was the second Adam,"
       },
       {
         "page": 268,
@@ -832,6 +814,11 @@
         "sample": "difference or distinction as to a distinct interest in the divine nature (that is, as we shall see, personality) with the other divine persons."
       },
       {
+        "page": 540,
+        "window": "and rp ko this last word we render satisfaction numbers",
+        "sample": "and rp,Ko. This last word we render \"satisfaction,\" Numbers 35:32,33,"
+      },
+      {
         "page": 554,
         "window": "isaiah which words the lxx render him the iniquity of us all",
         "sample": "Isaiah 53:6; which words the LXX render, him; the iniquity of us all,\""
@@ -839,319 +826,323 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1909,
-    "split_candidate_count": 61,
+    "paragraphs_checked": 1868,
+    "split_candidate_count": 59,
     "split_candidates": [
       {
-        "file": "EPUB/ch003.xhtml",
-        "previous": "OF",
-        "next": "\"Tell me, O thou whom my soul loveth, where they feedest.' — Song of Solomon l:7."
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "art I. - The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,",
-        "next": "Communion with the FATHER is described,"
-      },
-      {
         "file": "EPUB/ch004.xhtml",
         "previous": "Communion with the FATHER is described,",
         "next": "and practical inferences deduced from it, IV."
       },
       {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "art I. - The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,",
-        "next": "Communion with the FATHER is described,"
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "Communion with the FATHER is described,",
-        "next": "and practical inferences deduced from it, IV."
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
+        "file": "EPUB/ch004.xhtml",
         "previous": "Part II . — The reality of communion with CHRIST is proved, CHAP. I.; and the nature of it is subsequently considered,",
         "next": "It is shown to consist in grace; and then the grace of Christ is exhibited under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, "
       },
       {
-        "file": "EPUB/ch005.xhtml",
+        "file": "EPUB/ch004.xhtml",
         "previous": " under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; — purchased grace ,",
         "next": "— X.; in which the mediatorial work of Christ is fully considered, in reference to our acceptance with God, VII., VIII.; sanctification, IX.; and the privileges of the covenant, X."
       },
       {
-        "file": "EPUB/ch009.xhtml",
+        "file": "EPUB/ch008.xhtml",
         "previous": "(1st.) The love of the Father unto us is an antecedent love, and that in two respects: —",
         "next": "[1st.] It is antecedent in respect of our love, 1 John 4:10, \"Herein is love, not that we loved God, but that he loved us.\" His love goes before ours. The father loves the child, w"
       },
       {
-        "file": "EPUB/ch009.xhtml",
+        "file": "EPUB/ch008.xhtml",
         "previous": "(2ndly.) Our love is consequential in both these regards: —",
         "next": "[1st.] In respect of the love of God. Never did creature turn his affections towards God, if the heart of God were not first set upon him."
       },
       {
-        "file": "EPUB/ch009.xhtml",
+        "file": "EPUB/ch008.xhtml",
         "previous": "ng; that cannot be heightened by any act of ours, that cannot be lessened by any thing in us. I say, in itself it is thus; otherwise, in a twofold regard, it may admit of change: —",
         "next": "[1st.] In respect of its fruits. It is, as I said, a fruitful love, a love of bounty. In reference unto those fruits, it may sometimes be greater, sometimes less; its communication"
       },
       {
-        "file": "EPUB/ch012.xhtml",
+        "file": "EPUB/ch011.xhtml",
+        "previous": "made of a woman, made under the law, to redeem them that were under the law, that we might receive the adoption of sons,\" Galatians 4:4,5. And herein I shall do these two things: —",
+        "next": "Show wherein that fellowship or communion does consist: —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
         "previous": "Show wherein that fellowship or communion does consist: —",
         "next": "For the first, I shall only produce some few places of Scripture to confirm it, that it is so: — 1 Corinthians 1:9, \"God is faithful, by whom ye were called unto the fellowship of "
       },
       {
-        "file": "EPUB/ch013.xhtml",
+        "file": "EPUB/ch012.xhtml",
         "previous": "There are three things in general wherein this personal excellency and grace of the Lord Christ does consist: —",
         "next": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof"
       },
       {
-        "file": "EPUB/ch013.xhtml",
+        "file": "EPUB/ch012.xhtml",
         "previous": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof",
         "next": "(2ndly.) His fullness to save, from the grace of communion; or the free consequences of the grace of union."
       },
       {
-        "file": "EPUB/ch013.xhtml",
+        "file": "EPUB/ch012.xhtml",
         "previous": "(3rdly.) His excellency to endear, from his complete suitableness to all the wants of the souls of men: —",
         "next": "(1st.) His fitness to save, — his being \"hikanos\", a fit Savior, suited to the work; and this, I say, is from his grace of union. The uniting of the natures of God and man in one p"
       },
       {
-        "file": "EPUB/ch014.xhtml",
+        "file": "EPUB/ch013.xhtml",
         "previous": "There are two things that complete this self-resignation of the soul: —",
         "next": "(1st.) The liking of Christ, for his excellency, grace, and suitableness, far above all other beloveds whatever, preferring him in the judgement and mind above them all. In the pla"
       },
       {
-        "file": "EPUB/ch019.xhtml",
+        "file": "EPUB/ch013.xhtml",
+        "previous": "sents to take Christ on his own terms, to save him in his own way, and says, \"Lord, I would have had thee and salvation in my way, that it might have been partly of mine endeavors,",
+        "next": "and as it were by the works of the law; I am now willing to receive thee and to be saved in thy way, — merely by grace: and though I would have walked according is my own mind, yet"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "e saints they love Christ, they \"love the Lord Jesus Christ in sincerity,\" Ephesians 6:24. Now the love of Christ, wherewith he follows his saints, consists in these four things: —",
+        "next": "Valuation."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
         "previous": "Hereof, then, are two parts: —",
         "next": "(1st.) That whatever was required of us by virtue of any law, — that he did and fulfilled. Whatever was required of us by the law of nature, in our state of innocence; whatever kin"
       },
       {
-        "file": "EPUB/ch019.xhtml",
+        "file": "EPUB/ch018.xhtml",
         "previous": "1st. For his habitual righteousness, I shall only propose it under these two considerations: —",
         "next": "(1st.) That upon this supposition, that it was needful that we should have a mediator that was God and man in one person, as it could not otherwise be, so it must needs be that he "
       },
       {
-        "file": "EPUB/ch019.xhtml",
+        "file": "EPUB/ch018.xhtml",
         "previous": "s the intendment of the apostle, Hebrews 7:26. Such a one \"became us;\" it was needful he should be such a one, that he might do what he had to do. And the reasons hereof are two: —",
         "next": "[1st.] Had he not been completely furnished with habitual grace, he could never have actually fulfilled the righteousness which was required at his hands. It was therein that he wa"
       },
       {
-        "file": "EPUB/ch019.xhtml",
+        "file": "EPUB/ch018.xhtml",
         "previous": "3rdly. About his actual fulfilling of the law, or doing all things that of us are required, there is some doubt and question; and about it there are three several opinions: —",
         "next": "(1st.) That this active obedience of Christ has no farther influence into our justification and acceptation with God, but as it was preparatory to his blood-shedding and oblation; "
       },
       {
-        "file": "EPUB/ch019.xhtml",
+        "file": "EPUB/ch018.xhtml",
         "previous": "(2ndly.) That it may be considered two ways: —",
         "next": "[1st.] As it is purely obedience; and so it has no other state but that before mentioned."
       },
       {
-        "file": "EPUB/ch019.xhtml",
+        "file": "EPUB/ch018.xhtml",
         "previous": "troversy, but to give such an understanding of the whole as may speedily be reduced to the practice of godliness and consolation; and this I shall do in the ensuing observations: —",
         "next": "[1st.] That the obedience that Christ yielded to the law in general, is not only to the peculiar law of the mediator, though he yielded it as mediator."
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "rofit, and advantage of this ground of our obedience might at large be insisted on; and, were there no more, this might suffice alone, — if it be the will of God, it is our duty: —",
         "next": "(1st.) The Father has ordained or appointed it. It is the will of the Father, Ephesians 2:10. The Father is spoken of personally, Christ being mentioned as mediator."
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "(2ndly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, —",
         "next": "(3rdly.) The holy Ghost appoints and ordains believers to works of obedience and holiness, and to work holiness in others. So, in particular, Acts 13:2, he appoints and designs men"
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "Spirit, in the business of exalting the glory of God in our salvation, — of the electing love of the Father, the purchasing love of the Son, and the operative love of the Spirit: —",
         "next": "(1st.) It is a peculiar end of the electing love of the Father, Ephesians 1:4, \"He has chosen us, that we should be holy and without blame.\" So Isaiah 4:3,4. His aim and design in "
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "3rdly . It is necessary in respect of the end thereof; and that whether you consider God, ourselves, or the world: —",
         "next": "(1st.) The end of our obedience, in respect of God, is, his glory and honor, Malachi 1:6. This is God's honor, — all that we give him. It is true, he will take his honor from the s"
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "nor from the stoutest and proudest rebel in the world; but all we give him is in our obedience. The glorifying of God by our obedience is all that we are or can be. Particularly, —",
         "next": "[1st.] It is the glory of the Father. Matthew 5:16, \"Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.\" By our walk"
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "ur walking in the light of faith does glory arise to the Father. The fruits of his love, of his grace, of his kindness, are seen upon us; and God is glorified in our behalf. And, —",
         "next": "[2ndly.] The Son is gloried thereby. It is the will of God that as all men honor the Father, so should they honor the Son, John 5:23. And how is this done? By believing in him, Joh"
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "(2ndly.) The end in respect of ourselves immediately is threefold: —",
         "next": "[1st.] Honor."
       },
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "previous": "(3rdly.) The end of it in respect of others in the world is manifold: —",
         "next": "[1st.] It serves to the conviction and stopping the mouths of some of the enemies of God, both here and hereafter: —"
       },
       {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "nd wherein it consists — This purchased by Christ; bestowed by him — Of actual grace — How the saints hold communion with Christ in these things; manifested in sundry particulars._",
-        "next": "Our communion with the Lord Jesus as to that grace of sanctification and purification whereof we have made mention, in the several distinctions and degrees thereof, formerly, is ne"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
+        "file": "EPUB/ch021.xhtml",
         "previous": "condly. The Lord Christ does actually communicate this grace unto his saints, and bestows it on them: \"Of his fullness have all we received, and grace for grace,\" John 1:16. For, —",
         "next": "(1st.) The Father actually invests him with all the grace whereof, by compact and agreement, he has made a purchase (as he received the promise of the Spirit); which is all that is"
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "ssue of law and sin. The moral, unchangeable law of God, and sin, being in conjunction, meeting with reference to any persons, has, and has had, a twofold issue: — Galatians 4:6,7,",
         "next": "(1st.) An economical institution of a new law of ordinances, keeping in bondage those to whom it was given, Colossians 2:14."
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "(2ndly.) A natural (if I may so call it) pressing of those persons with its power and efficacy against sin; whereof there are these parts: —",
         "next": "[1st.] Its rigor and terror in commanding."
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "2ndly . That which is pretended, is the power of any whatever over the conscience, when once made free by Christ: —",
         "next": "(1st.) Believers are freed from the instituted law of ordinances, which, upon the testimony of the apostles, was a yoke which neither we nor our fathers (in the faith) could bear, "
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "(2ndly.) In reference so the moral law: —",
         "next": "[1st.] The first thing we have liberty from, is its rigor and terror in commanding. Hebrews 12:18-22, \"We are not come to the mount that might be touched, and that burned with fire"
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "are life and love; — the one respecting the matter of their obedience, giving them power; the other respecting the manner of their obedience, giving them joy and sweetness in it: —",
         "next": "(1st.) It is from life; that gives them power as to the matter of obedience."
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "John 8:32,33,36; Hence you may see the difference between the liberty that slaves assume, and the liberty which is due to children: —",
         "next": "[1st.] Slaves take liberty from duty; children have liberty in duty. There is not a greater mistake in the world, than that the liberty of sons in the house of God consists in this"
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "[1.] The first, also, or the title, as adopted sons, unto spirituals, is, in respect of the object of it, twofold: —",
         "next": "(1st.) Unto a present place, name, and room, in the house of God, and all the privileges and administrations thereof"
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "(1st.) Unto a present place, name, and room, in the house of God, and all the privileges and administrations thereof",
         "next": "(2ndly.) To a future fullness of the great inheritance of glory, — of a kingdom purchased for that whole family whereof they are by Jesus Christ: —"
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "previous": "the children's bread and cast it unto the dogs?\" We shall see that none but children have any right or title to the privileges and advantages of the house of God, if we consider, —",
         "next": "(1st.) The nature of that house. It is made up of such persons as it is impossible that any but adopted children should have right unto a place in it. It is composed of \"living sto"
-      }
-    ],
-    "structural_start_exclusions": 240,
-    "short_fragment_count": 27,
-    "short_fragments": [
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "TO THE READER."
-      },
-      {
-        "file": "EPUB/ch003.xhtml",
-        "text": "OF"
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "text": "Hebrews 1:3; of which before."
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "text": "Wherefore, —"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "text": "Afflictions."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "Hereof, then, are two parts: —"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "To his wrath are men obnoxious,"
-      },
-      {
-        "file": "EPUB/ch020.xhtml",
-        "text": "Of which in the ensuing chapters."
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "Therefore, —"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "[2ndly.] Peace."
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "[3rdly.] Usefulness."
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "[2ndly.] The conversion of others."
       },
       {
         "file": "EPUB/ch022.xhtml",
+        "previous": "There are three things that in this regard the children of God are said to be heirs unto: —",
+        "next": "(1st.) The promise; as in that place of **( Galatians 3:29 and Hebrews 6:17. God shows to \"the heirs of the promise the immutability of his counsel;\" as Abraham, Isaac, and Jacob, "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "nded that righteousness which we are here actually made partakers of, but also the end and accomplishment of that righteousness in glory; which is also assured in the next place, —",
+        "next": "(3rdly.) They are \"heirs of salvation,\" **( \" Hebrews 1:14, and \"heirs according to the hope of eternal life,\" Titus 3:7; which Peter calls an \"inheritance incorruptible,\" 1 Peter "
+      }
+    ],
+    "structural_start_exclusions": 241,
+    "short_fragment_count": 28,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "Hebrews 1:3; of which before."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "Wherefore, —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Valuation."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Pity, or compassion."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Bounty."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Afflictions."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Hereof, then, are two parts: —"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "To his wrath are men obnoxious,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Of which in the ensuing chapters."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Therefore, —"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "[2ndly.] Peace."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "[3rdly.] Usefulness."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "[2ndly.] The conversion of others."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
         "text": "For, —"
       },
       {
-        "file": "EPUB/ch025.xhtml",
+        "file": "EPUB/ch024.xhtml",
         "text": "4thly. His abiding with us;"
       },
       {
-        "file": "EPUB/ch025.xhtml",
+        "file": "EPUB/ch024.xhtml",
         "text": "5thly. His acting in us;"
       },
       {
-        "file": "EPUB/ch027.xhtml",
+        "file": "EPUB/ch026.xhtml",
         "text": "2ndly. Voluntarily;"
       },
       {
-        "file": "EPUB/ch027.xhtml",
+        "file": "EPUB/ch026.xhtml",
         "text": "3rdly. Freely."
       },
       {
-        "file": "EPUB/ch032.xhtml",
+        "file": "EPUB/ch031.xhtml",
         "text": "END"
       },
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "The first is that of p. 131."
       },
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "END"
       },
       {
-        "file": "EPUB/ch037.xhtml",
+        "file": "EPUB/ch036.xhtml",
         "text": "EDITOR"
       },
       {
-        "file": "EPUB/ch040.xhtml",
+        "file": "EPUB/ch039.xhtml",
         "text": "Hebrews 1 throughout."
       },
       {
-        "file": "EPUB/ch042.xhtml",
+        "file": "EPUB/ch041.xhtml",
         "text": "Answer:"
       },
       {
-        "file": "EPUB/ch042.xhtml",
+        "file": "EPUB/ch041.xhtml",
         "text": "Answer:"
       },
       {
-        "file": "EPUB/ch042.xhtml",
+        "file": "EPUB/ch041.xhtml",
         "text": "Answer:"
       },
       {
-        "file": "EPUB/ch042.xhtml",
+        "file": "EPUB/ch041.xhtml",
         "text": "Answer:"
       },
       {
-        "file": "EPUB/ch042.xhtml",
+        "file": "EPUB/ch041.xhtml",
         "text": "What, then, are they?"
       }
     ],
@@ -1166,44 +1157,34 @@
     "suspicious_large_number_start_count": 5,
     "suspicious_large_number_starts": [
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "43. What this farther acquaintance with the person of Christ should mean, I do not well understand: it may be, any more acquaintance with respect unto some that is necessary; — it may be, without any more ado as to an ac"
       },
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "74. He quotes my words, \"That 'the soul consents to take Christ on his own terms, to save him in his own way; and saith, Lord, I would have had thee and salvation in my way, that it might have been partly of mine endeavo"
       },
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "203. \"That I distinguish the graces of Christ's person as mediator from the graces of his person as God and man.\" Neither could any man have run into such an imagination who had competently understood the things which he"
       },
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "280. \"As for example,\" saith he, \"Christ is called a husband, the church his spouse; and now all the invitations of the gospel are Christ's wooing and making love to his spouse; — and what other men call believing the go"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "text": "10. 846. \"Hast thou, O son, fallen under the enemies' hand in my stead? Am I saved by thy wounds? Do I live by thy death?\" And the word תָּחַת , used by David, does signify, when applied unto persons, either a succession"
+        "file": "EPUB/ch042.xhtml",
+        "text": "10. 846. \"Hast thou, O son, fallen under the enemies' hand in my stead? Am I saved by thy wounds? Do I live by thy death?\" And the word תָּחַת , used by David, does signify, when applied unto persons, either a succession"
       }
     ],
     "roman_heading_candidate_count": 0,
     "roman_heading_candidates": [],
-    "overlong_heading_candidate_count": 3,
+    "overlong_heading_candidate_count": 1,
     "overlong_heading_candidates": [
       {
-        "file": "EPUB/ch024.xhtml",
-        "tag": "h4",
-        "text": "The foundation of our communion with the Holy ghost (John 16:1-7) opened at large — Παράκλητος , a Comforter; who he is — The Holy Ghost; his own will in his coming to us; sent also by Christ — The Spirit sent as a sanctifier and as a comforter — The adjuncts "
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "tag": "h4",
-        "text": "The foundation of our communion with the Holy ghost (John 16:1-7) opened at large — Παράκλητος , a Comforter; who he is — The Holy Ghost; his own will in his coming to us; sent also by Christ — The Spirit sent as a sanctifier and as a comforter — The adjuncts "
-      },
-      {
-        "file": "EPUB/ch027.xhtml",
-        "tag": "h4",
-        "text": "Of the things wherein we have communion with the Holy Ghost — He brings to remembrance the things spoken by Christ, John 14:26 — The manner how he does it — The Spirit glorifies Christ in the hearts of believers, John 16:14, sheds abroad the love of God in the"
+        "file": "EPUB/ch004.xhtml",
+        "tag": "h1",
+        "text": "Part I. — The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity,"
       }
     ],
     "frontmatter_heading_body_candidate_count": 0,
@@ -1211,7 +1192,7 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 478,
-    "epub_marker_count": 484,
+    "epub_marker_count": 483,
     "missing_marker_count": 0,
     "missing_markers": [],
     "excess_marker_count": 6,
@@ -1230,7 +1211,7 @@
             "context": "ath. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of belie"
           },
           {
-            "location": "EPUB/ch008.xhtml#p115",
+            "location": "EPUB/ch007.xhtml#p116",
             "context": "(1.) When the same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them."
           }
         ]
@@ -1249,7 +1230,7 @@
             "context": "elievers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conjugal affection — On the part of Chri"
           },
           {
-            "location": "EPUB/ch008.xhtml#p118",
+            "location": "EPUB/ch007.xhtml#p119",
             "context": "(2.) When the same thing is attributed severally and singly unto each person. There is, indeed, no gracious influence from above, no illapse of light, life, love, or grace upon our hea"
           }
         ]
@@ -1260,16 +1241,16 @@
         "epub": 4,
         "examples": [
           {
-            "location": "EPUB/ch035.xhtml#p1585",
+            "location": "EPUB/ch034.xhtml#p1573",
             "context": "\"(2dly.) The Son has ordained and appointed it as mediator."
           },
           {
-            "location": "EPUB/ch035.xhtml#p1588",
+            "location": "EPUB/ch034.xhtml#p1576",
             "context": "\"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1588",
-            "context": "ople, zealous of good works.\" This was his aim, his design, in giving himself for us; as \"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Ephesians 5:25-27, \"Christ loved the church, and gave himse"
+            "location": "EPUB/ch034.xhtml#p1576",
+            "context": "ople, zealous of good works.\" This was his aim, his design, in giving himself for us; as \"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
           }
         ]
       },
@@ -1287,7 +1268,7 @@
             "context": "st: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conjugal affection — On the part of Christ, pity or compassion — Whe"
           },
           {
-            "location": "EPUB/ch010.xhtml#p220",
+            "location": "EPUB/ch009.xhtml#p223",
             "context": "(3.) Let it have its proper fruit and efficacy upon thy heart, in return of love to him again. So shall we walk in the light of God's countenance, and hold holy communion with our Fath"
           }
         ]
@@ -1302,11 +1283,11 @@
             "context": "on; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own liv"
           },
           {
-            "location": "EPUB/ch012.xhtml#p272",
+            "location": "EPUB/ch011.xhtml#p273",
             "context": "(4.) Comfort."
           },
           {
-            "location": "EPUB/ch012.xhtml#p279",
+            "location": "EPUB/ch011.xhtml#p280",
             "context": "(4.) Supportment and consolation, verse 6, \"His left hand is under my head, and his right hand does embrace me.\" Christ here has the posture of a most tender friend towards any one in"
           }
         ]
@@ -1317,15 +1298,15 @@
         "epub": 18,
         "examples": [
           {
-            "location": "EPUB/ch008.xhtml#p123",
+            "location": "EPUB/ch007.xhtml#p124",
             "context": "[3.] To the SPIRIT."
           },
           {
-            "location": "EPUB/ch008.xhtml#p124",
+            "location": "EPUB/ch007.xhtml#p125",
             "context": "[3.] To the SPIRIT. John 14:26, \"The Comforter, he shall teach you all things.\" \"But the anointing which ye have received,\" saith the apostle, \"abideth in you, and ye need not that any"
           },
           {
-            "location": "EPUB/ch016.xhtml#p467",
+            "location": "EPUB/ch015.xhtml#p471",
             "context": "[3.] His wisdom, in managing things for his own glory;"
           }
         ]
@@ -1334,7 +1315,7 @@
     "orphan_candidate_count": 1,
     "orphan_candidates": [
       {
-        "file": "EPUB/ch014.xhtml",
+        "file": "EPUB/ch013.xhtml",
         "marker": "(2.)",
         "family": "paren_decimal",
         "context": "(2.) The next thing that comes under consideration is, the way whereby we hold communion with the Lord Christ, in respect of that personal grace whereof we have spoken. Now, this the S"
@@ -1343,19 +1324,23 @@
   },
   "repeated_windows": [
     {
+      "phrase": "pleased the father that in him should all fullness dwell",
+      "count": 8
+    },
+    {
+      "phrase": "the father that in him should all fullness dwell colossians",
+      "count": 8
+    },
+    {
       "phrase": "bare our sins in his own body on the tree",
-      "count": 7
+      "count": 8
     },
     {
       "phrase": "is with the father and with his son jesus christ",
       "count": 6
     },
     {
-      "phrase": "pleased the father that in him should all fullness dwell",
-      "count": 6
-    },
-    {
-      "phrase": "the father that in him should all fullness dwell colossians",
+      "phrase": "our sins in his own body on the tree peter",
       "count": 6
     },
     {
@@ -1436,10 +1421,6 @@
     },
     {
       "phrase": "that the righteousness of the law might be fulfilled in",
-      "count": 5
-    },
-    {
-      "phrase": "the righteousness of the law might be fulfilled in us",
       "count": 5
     }
   ],
