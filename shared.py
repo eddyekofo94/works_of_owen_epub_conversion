@@ -41,6 +41,35 @@ VOLUME_CONFIG = {
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'front_matter_skip': 3,
+        'treatises': [
+            'Xristologia: Or, A Declaration of the Glorious Person of Christ, God and Man',
+            'Meditations and Discourses on the Glory of Christ',
+            'Meditations and Discourses on the Glory of Christ Applied to Sinners and Saints',
+            'Two Short Catechisms'
+        ],
+        'text_replacements': {
+            'Charneck': 'Charnock',
+            'storage': 'strange',
+            'whoso': 'whose',
+            'se largely': 'so largely',
+            'prevailing task': 'prevailing taste',
+            'whoso name': 'whose name',
+            'whoso human': 'whose human',
+            'secretes': 'secrets',
+            'on]y': 'only',
+            'name]y': 'namely',
+            'To object of Dr. Owen in this treatise': 'The object of Dr. Owen in this treatise',
+            'simple vague and defective': 'simply vague and defective',
+            'these apprehensions of Own.': 'these apprehensions of Owen.',
+            'The Christology of Owens has always been highly valued': 'The Christology of Owen has always been highly valued',
+            'They were among the firsts as the other treatises': 'They were among the first, as the other treatises',
+            'publish all the treatises of ushered under their auspices into public notice': 'publish all the treatises of Owen in volumes corresponding in size and appearance with the one ushered under their auspices into public notice',
+            'This being the [f8] [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
+            'This being the [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
+        },
+        'regex_replacements': {
+            r'(\w+)]y\b': r'\1ly',
+        }
     },
     2: {
         'title': 'The Works of John Owen, Volume 2: Communion with God',
@@ -50,6 +79,10 @@ VOLUME_CONFIG = {
         'body_font': 'Libertinus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Of Communion with God the Father, Son, and Holy Ghost, Each Person Distinctly, in Love, Grace, and Consolation',
+            'A Brief Declaration and Vindication of the Doctrine of the Trinity'
+        ]
     },
     3: {
         'title': 'The Works of John Owen, Volume 3: The Holy Spirit',
@@ -59,6 +92,9 @@ VOLUME_CONFIG = {
         'body_font': 'Minion_pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Pneumatologia: Or, A Discourse Concerning the Holy Spirit (Books I–V)'
+        ]
     },
     4: {
         'title': 'The Works of John Owen, Volume 4: The Work of the Spirit',
@@ -68,6 +104,12 @@ VOLUME_CONFIG = {
         'body_font': 'Adobe-garamond-pro-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'The Reason of Faith',
+            'Causes, Ways, and Means, of Understanding the Mind of God',
+            'A Discourse Concerning the Work of the Holy Spirit in Prayer',
+            'A Discourse Concerning the Holy Spirit and His Spiritual Gifts'
+        ]
     },
     5: {
         'title': 'The Works of John Owen, Volume 5: Faith and Its Evidences',
@@ -78,6 +120,10 @@ VOLUME_CONFIG = {
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ccel_xml',
         'ccel_file': 'special_sources/owen-v5-justification.xml',
+        'treatises': [
+            'The Doctrine of Justification by Faith',
+            'Evidences of the Faith of God’s Elect'
+        ]
     },
     6: {
         'title': 'The Works of John Owen, Volume 6: Temptation and Sin',
@@ -87,6 +133,12 @@ VOLUME_CONFIG = {
         'body_font': 'Baskervville/static',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Of the Mortification of Sin in Believers',
+            'Of Temptation: The Nature and Power of It',
+            'The Nature, Power, Deceit, and Prevalency of the Remainders of Indwelling Sin in Believers',
+            'A Practical Exposition upon Psalm 130'
+        ]
     },
     7: {
         'title': 'The Works of John Owen, Volume 7: Sin and Grace',
@@ -96,6 +148,11 @@ VOLUME_CONFIG = {
         'body_font': 'sabon-next-lt',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'The Nature and Causes of Apostasy from the Profession of the Gospel',
+            'The Grace and Duty of Being Spiritually-Minded',
+            'A Treatise of the Dominion of Sin and Grace'
+        ]
     },
     8: {
         'title': 'The Works of John Owen, Volume 8: Sermons to the Nation',
@@ -105,6 +162,9 @@ VOLUME_CONFIG = {
         'body_font': 'Gentium-plus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Sermons to the Nation (Sermons before the Long Parliament, Oliver Cromwell, and the Commonwealth)'
+        ]
     },
     9: {
         'title': 'The Works of John Owen, Volume 9: Sermons to the Church',
@@ -114,6 +174,11 @@ VOLUME_CONFIG = {
         'body_font': 'Libertinus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Posthumous Sermons (83 Pastoral Sermons)',
+            'Discourses Resolving Practical Cases of Conscience',
+            'Discourses Intended as Preparation for the Lord’s Table'
+        ]
     },
     10: {
         'title': 'The Works of John Owen, Volume 10: The Death of Christ',
@@ -124,6 +189,12 @@ VOLUME_CONFIG = {
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ccel_xml',
         'ccel_file': 'special_sources/owen-10-deathofdeath.xml',
+        'treatises': [
+            'A Display of Arminianism',
+            'Salus Electorum, Sanguis Jesu: Or, The Death of Death in the Death of Christ',
+            'Of the Death of Christ (A Reply to Richard Baxter)',
+            'A Dissertation on Divine Justice'
+        ]
     },
     11: {
         'title': 'The Works of John Owen, Volume 11: Continuing in the Faith',
@@ -133,6 +204,9 @@ VOLUME_CONFIG = {
         'body_font': 'Minion_pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'The Doctrine of the Saints’ Perseverance Explained and Confirmed'
+        ]
     },
     12: {
         'title': 'The Works of John Owen, Volume 12: The Gospel Defended',
@@ -142,6 +216,11 @@ VOLUME_CONFIG = {
         'body_font': 'Adobe-garamond-pro-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Vindiciae Evangelicae: Or, The Mystery of the Gospel Vindicated and Socinianism Examined',
+            'Of the Death of Christ, and of Justification',
+            'A Review of the Annotations of Hugo Grotius'
+        ]
     },
     13: {
         'title': 'The Works of John Owen, Volume 13: Ministry and Fellowship',
@@ -151,6 +230,13 @@ VOLUME_CONFIG = {
         'body_font': 'Baskervville/static',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'The Duty of Pastors and People Distinguished',
+            'Eshcol: A Cluster of the Fruit of Canaan (Rules for Church Fellowship)',
+            'Of Schism: The True Nature of It Stated',
+            'A Review of the True Nature of Schism',
+            'An Answer to a Late Treatise About Schism'
+        ]
     },
     14: {
         'title': 'The Works of John Owen, Volume 14: True and False Religion',
@@ -160,6 +246,10 @@ VOLUME_CONFIG = {
         'body_font': 'Brill_font',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'Animadversions on a Treatise Entitled "Fiat Lux"',
+            'Fiat Lux Examined'
+        ]
     },
     15: {
         'title': 'The Works of John Owen, Volume 15: Church Purity and Unity',
@@ -169,6 +259,11 @@ VOLUME_CONFIG = {
         'body_font': 'sabon-next-lt',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'A Discourse Concerning Liturgies, and Their Imposition',
+            'A Brief Instruction in the Worship of God (The Independents\' Catechism)',
+            'An Inquiry into the Original, Nature, Institution, Power, Order, and Communion of Evangelical Churches'
+        ]
     },
     16: {
         'title': 'The Works of John Owen, Volume 16: The Church and the Bible',
@@ -178,6 +273,13 @@ VOLUME_CONFIG = {
         'body_font': 'Gentium-plus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'treatises': [
+            'The True Nature of a Gospel Church and Its Government',
+            'Tracts on Excommunication and Church Censures',
+            'Of Infant Baptism and Of Dipping',
+            'Of the Divine Original, Authority, Self-Evidencing Light, and Power of the Scriptures',
+            'Integrity and Purity of the Hebrew and Greek Text of the Scripture'
+        ]
     },
 }
 
