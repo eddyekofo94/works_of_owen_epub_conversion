@@ -79,7 +79,7 @@ VOLUMES = requested_volumes()
 def test_polyglot_fallback_does_not_convert_english_prose():
     text = (
         "The author's design concerns justification, Jesus Christ, John 3:36, "
-        "grace; Christ; us; vol. 1, and [1.] markers."
+        "grace; Christ; us; vol. 1, and [1.] markers, including [characters] and [from]."
     )
 
     mapped = force_polyglot_mapping(text)

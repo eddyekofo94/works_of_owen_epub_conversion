@@ -2,6 +2,13 @@
 
 This repository is currently focused on the 16-volume Owen Works conversion. The Hebrews commentary is intentionally out of scope until the Owen volumes are stable and validated.
 
+## Volume Structure Reference
+
+The complete 16-volume structure (division, volumes, and contents) is documented in `works_of_john_owen.md`. This table of contents serves as the canonical reference for:
+- Volume organization (Divisions 1-3)
+- Individual volume contents and treatises
+- Mapping between PDF sources and logical book structure
+
 ## Execution Scope
 
 Work on one Owen volume at a time. Do not run all 16 volumes, batch audits, or batch conversions unless the user explicitly asks for a batch run.

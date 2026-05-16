@@ -48,3 +48,173 @@ Something is clearly wrong with the way the chapter and verse are being parsed h
 “revealed and declared. And in its proper use, and unto its proper end, it is perfect and most sufficient. It is “λόγοψ τοῦ Θεοῦ” — “the word of God;” howbeit it is not “λόγοψ οὐσιώδηψ”, the internal, essential Word of God — but “λόγοψ προφορικὸψ”,”
 
 The Greek words are not rendering properly here, we need to ensure that the encoding is correct and that the Greek characters are being processed correctly. This may involve checking the source text for any encoding issues and making sure that our text processing pipeline is set up to handle Greek characters properly.
+
+## 8
+“φωτισμὸν τῆψ γνώσεωψ τῆψ δόξηψ τοῦ Θεοῦ”
+
+# #  TODO: (2026-05-16 02:01)
+## 9
+“as the apostle declares, Romans 1:1Romans”
+
+CLeaned up
+
+## 10
+“as are his, (chap.
+John 16:1516:15,) because their nature is one and the same.”
+
+Fix:
+False break, also it should just be "Father has are his, (chap. 16:15,) because their.." as on the pdf
+
+## 11
+“W. H. G. Edinburgh, August 1850.
+ΧΡΙΣΤΟΛΟΓΙΑ:”
+
+Fix:
+
+W. H. G.
+Edinburgh, August 1850.
+
+All signatures should be likw this, and the greek work shoulldn't be there, it is for the next page
+
+# #  TODO: (2026-05-16 02:41)
+
+## 12
+“II. His Love, as the sole impelling and leading cause thereof,
+Galatians 2:20; 1 John 3:16; Revelation 1:5. Herein is he glorious, in a way and manner incomprehensible; for in the glory of divine love the chief brightness of glory does consist. There is nothing of dread or terror accompanying it, — nothing but what is amiable and infinitely refreshing. Now, that we may take a view”
+
+This is badly extracted this is how it is on the pdf:way:
+
+II. His Love, as the sole impelling and leading cause thereof, Galatians 2:20; 1 John 3:16; Revelation 1:5.
+
+Herein is he glorious, in a way and manner incomprehensible; for in the
+glory of divine love the chief brightness of glory does consist. There is
+nothing of dread or terror accompanying it, — nothing but what is amiable
+and infinitely refreshing. Now, that we may take a view of the glory of
+Christ herein by faith, the nature of it must be inquired into.
+
+## 13
+“is decrees to be
+considered?”
+
+Fix:
+is decrees to be considered?” this is a false break, it should be "is decrees to be considered?" as on the pdf
+
+## 14
+“purpose of God, whereby in Jesus
+Christ he chooseth unto himself ”
+
+Fix:
+purpose of God, whereby in Jesus Christ he chooseth unto himself” this is a false break, it should be "purpose of God, whereby in Jesus Christ he chooseth unto himself
+
+There's plenty of these false break especial on the catechism can you run a fix? where there is no punctuation at the end of the line, and the next line starts with a lowercase letter, we can assume it's a false break and merge the lines together. This should help clean up a lot of these issues in the text.
+
+# #  TODO: (2026-05-16 10:09)
+
+## 15
+
+“John 6:29,44; Ephesians 2:8, 9; Philippians 1:29; [[SUMMARY]] 2 Thessalonians 1:11.”
+
+Fix:
+[[SUMMARY]] I am still seeing these [[SUMMARY]] tags in the text, which should have been removed during the cleaning process. We need to review the cleaning logic to ensure that all instances of [[SUMMARY]] are properly removed from the final text output. This is likely a bug in the cleaning script that needs to be addressed.
+
+## 16
+“Q. 1. What do the Scriptures teach concerning the works of God?
+A. That they are of two sorts; first, internal,38 in his counsel, decrees, and
+purposes, towards his creatures; secondly, external, in his works over and about them, to the praise of his own glory. Acts 15:18; Proverbs 16:4.
+
+Q. 2. What are the decrees of God?
+A. Eternal, unchangeable purposes394041 of his will, concerning the being
+and well-being of his creatures. Micah 5:2; Ephesians 3:9-11; Acts 15:18. Isaiah 14:24, 46:10; Romans 9:11; 2 Timothy 2:19.
+
+Q. 3. Concerning which of his creatures chiefly are his decrees to be
+considered?
+
+A. Angels and men, for whom other things were ordained.”
+
+Fix:
+“Q. 1. What do the Scriptures teach concerning the works of God?
+A. That they are of two sorts; first, internal,38 in his counsel, decrees, and
+purposes, towards his creatures; secondly, external, in his works over and about them, to the praise of his own glory. Acts 15:18; Proverbs 16:4.
+<break>
+Q. 2. What are the decrees of God?
+A. Eternal, unchangeable purposes394041 of his will, concerning the being
+and well-being of his creatures. Micah 5:2; Ephesians 3:9-11; Acts 15:18. Isaiah 14:24, 46:10; Romans 9:11; 2 Timothy 2:19.
+<break>
+Q. 3. Concerning which of his creatures chiefly are his decrees to be
+considered?
+A. Angels and men, for whom other things were ordained.”
+
+Note: there should only be a single line break between each question and answer, and no line breaks within the questions or answers themselves. This will help to clean up the formatting and make it easier to read.
+
+## 17
+“See Aquin. 22
+q. 81,
+a. 3, ad prim., and
+q. 84,
+a. 1, ad tertium; Alexand. Alens. p. 3,
+q. 30,
+m. 1,
+a. 3.
+But yet, although we may call on God in and by the name of any divine person, or enumerate at once each person”
+
+Fix:
+“See Aquin. 22 q. 81, a. 3, ad prim and q. 84, a. 1, ad tertium; Alexand. Alens. p. 3, q. 30, m. 1, a. 3. But yet, although we may call on God in and by the name of any divine person, or enumerate at once each person” this is a false break, it should be "See Aquin. 22 q. 81, a. 3, ad prim and q. 84, a. 1, ad tertium; Alexand. Alens. p. 3, q. 30, m. 1, a. 3. But yet, although we may call on God in and by the name of any divine person, or enumerate at once each person" as on the pdf, this is a false Q & A, as on the catechism
+
+## 18
+“Q. 1. What do the Scriptures teach concerning the works of God?
+A. That they are of two sorts; first, internal,38 in his counsel, decrees, and purposes, towards his creatures; secondly, external, in his works over and about them, to the praise of his own glory.
+Q. 2. ?
+A. Eternal, unchangeable purposes394041 of his will, concerning the being and well-being of his creatures.”
+
+Fix:
+Q2 is missing the question text, we need to review the source text to ensure that we are correctly extracting both the questions and answers for each Q&A pair in the catechism. This may involve checking for any formatting issues in the source text that could be causing the question text to be missed during extraction.
+Just from that snippet compared to the pdf, there's alot of verses missing. Can we do a clean and re-extract of the catechism section to ensure that we are capturing all the text correctly? It seems like there may have been some issues with the initial extraction that led to missing text and formatting problems. A thorough review and re-extraction should help to clean up these issues and ensure that we have a complete and accurate text for the catechism.?
+
+## 19
+“CONFORMITY UNTO CHRIST,
+AND FOLLOWING HIS EXAMPLE
+III. The third thing proposed to declare the use of the person of Christ in
+religion, is that conformity which is required of us unto him. This is the great design and projection of all believers. Every one”
+
+Fix:
+The extraction of this section is quite poor, it should be:
+"CONFORMITY UNTO CHRIST, AND FOLLOWING HIS EXAMPLE" as the heading, and then the text should be:
+"III. The third thing proposed to declare the use of the person of Christ in religion, is that conformity which is required of us unto him. This is the great design and projection of all believers. Every one" as the body text. We need to review the extraction logic for headings and
+
+“CHAPTER 16
+AN HUMBLE INQUIRY INTO, AND PROSPECT OF, THE INFINITE
+WISDOM OF GOD, IN THE CONSTITUTION OF THE PERSON OF CHRIST, AND THE WAY OF SALVATION THEREBY From the consideration of the things before insisted on, we may”
+
+Fix:
+The heading should be "CHAPTER 16" and then the subheading should be "AN HUMBLE INQUIRY INTO, AND PROSPECT OF, THE INFINITE WISDOM OF GOD, IN THE CONSTITUTION OF THE PERSON OF CHRIST, AND THE WAY OF SALVATION THEREBY" and then the body text should start with "From the consideration of the things before insisted..." We need to review the extraction logic for chapter headings and subheadings to ensure that they are correctly identified and formatted in the final text output. This will help to improve the readability and organization of the text.
+
+I see the same issue with the chapter headings throughout the text, we need to ensure that our extraction logic is correctly identifying and formatting all chapter headings and subheadings to maintain the structure of the text as it appears in the original source. This may involve checking for specific formatting cues in the source text that indicate chapter headings and subheadings, and ensuring that these are properly captured during extraction.
+
+#  TODO: (2026-05-16 13:17)
+
+## 20
+“( Matthew 4:1Matthew 4,) but quickly found that that way he could male no approach unto h”
+
+Fix:
+The verses here look off, can we do a conclusive clean up of verses and add audits to check this?
+
+## 21
+“reduced unto three heads: —
+I. The glorification of his human nature; what it hath in common with, and wherein it differs in kind from, the glory of all saints whatever.
+II. His mediatory exaltation; or the especial glory of his person as mediator.
+III. The exercise and discharge of his once in the state of things: which is what at present I shall principally inquire into.
+I shall not speak at all of the nature of glorified bodies, nor of anything that is common unto the human nature of Christ and”
+
+Fix:
+This is a list and not sections, this should not fotmatted as sections, it should be: just a list with the items without the Roman numerals being centered and bolded. We need to review the formatting logic for lists to ensure that they are correctly identified and formatted as lists, rather than being mistaken for section headings. This will help to maintain the intended structure and formatting of the text as it appears in the original source.
+
+## 22
+1. It was not the glory of his outward condition, as we behold the glory and grandeur of the kings and potentates of the earth; for he made himself of no reputation, but being in the form of a servant, he walked in the condition of a man of low degree. The secular grandeur of his pretended Vicar makes no representation of that glory of his which his disciples saw. He kept no court, nor house of entertainment, nor (though he made all things) had of his own where to lay his head. Nor,
+2. Was it with respect to the outward form of the flesh which he was made, wherein he took our nature on him, as we see the glory of a comely or beautiful person; — for he had therein neither form nor comeliness that he should be desired, “his visage was so marred more than any man, and his form more than the sons of men,” Isaiah 52:14; 53:2, 3.
+All things appeared in him as became “a man of sorrows.” Nor, —
+3. Was it absolutely the eternal essential glory of his divine nature that is intended; for this no man can see in[…]”
+4. It was his glory, as he was “full of grace and truth.” They saw the glory of his person and his office in the administration of grace and truth. And how or by what means did they see this glory of Christ? It was by faith, and no otherwise; for this privilege was granted unto them only who “received him,” and believed on his name, John 1:12.
+This was that glory which the Baptist saw, when, upon his coming unto him he said unto all that were presents “Behold the Lamb of God, which taketh away the sin of the world!” verses 29-33.”
+
+Fix:
+All of this is indeneted on the pdf, though I would like for this to be the case but other lists are not so indented and I don't want to break others. 

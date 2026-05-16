@@ -108,7 +108,7 @@ _AGES_MARKER_RE = re.compile(r'<(\d{2}[0-9A-Fa-f]\d{3,6})>')
 # human-readable form right after the numeric code (both layers present).
 # Group 1 = code (may include a hex letter), Group 2 = optional following ref text.
 _AGES_MARKER_CONTEXT_RE = re.compile(
-    r'<(\d{2}[0-9A-Fa-f]\d{3,6})>([1-3]?\s*[A-Z][a-zA-Z ]{1,30}?\s+\d+:\d+(?:[-,]\s*\d+)*)?'
+    r'<(\d{2}[0-9A-Fa-f]\d{3,6})>(\s*(?:[1-3]?\s*[A-Z][a-zA-Z ]{1,30}?\s+)?\d+:\d+(?:[-,]\s*\d+)*)?'
 )
 
 # Hex-letter → century value for the Psalms chapter encoding.
@@ -215,13 +215,38 @@ def translate_ages_verse_markers(text: str) -> str:
         code = m.group(1)
         following = m.group(2) or ''
         translated = _translate_ages_marker(code)
+        
+        # Check if 'chap.' or 'chapter' precedes the match in the full text
+        # by looking at the characters before m.start()
+        start_idx = m.start()
+        preceding = text[max(0, start_idx-20):start_idx].lower()
+        has_chap_prefix = bool(re.search(r'\b(?:chap|chapter)\.?\s*$', preceding))
+        
         if following:
-            if _norm_for_cmp(following).startswith(_norm_for_cmp(translated)):
-                # The existing text already carries the reference (and may be
-                # richer, e.g. with an extended verse range). Suppress the code
-                # and keep only the already-present text.
-                return following
+            norm_following = _norm_for_cmp(following)
+            norm_translated = _norm_for_cmp(translated)
+            
+            # Match the first reference coordinate in the following text
+            match = re.match(r'((?:[1-3]?\s*[a-z][a-z ]{1,30}?)\s+)?(\d+:\d+|\d+)', norm_following)
+            if match:
+                base_following = match.group(0).strip()
+                if norm_translated.startswith(base_following) or norm_translated.endswith(base_following):
+                    # It's a duplicate. We keep the `following` text.
+                    # If the following text didn't have a book name, prepend the book name from the translation
+                    # ONLY IF 'chap.' wasn't already there.
+                    if not match.group(1) and not has_chap_prefix:
+                        book_match = re.match(r'([1-3]?\s*[A-Za-z][A-Za-z ]{1,30}?)\s+\d', translated)
+                        if book_match:
+                            return book_match.group(1).strip() + ' ' + following
+                    return following
         # No following ref text, or it doesn't match — emit normal translation.
+        # But skip book name if chap prefix is present.
+        if has_chap_prefix:
+            # Extract just the chapter:verse from translated
+            coord_match = re.search(r'\d+:\d+(?:[-,]\s*\d+)*', translated)
+            if coord_match:
+                return coord_match.group(0) + following
+
         return translated + following
 
     return _AGES_MARKER_CONTEXT_RE.sub(_repl, text)
@@ -440,7 +465,7 @@ def extract_structural_page(page, page_height=PAGE_H):
         nonlocal current_kind, current_text_parts
         if not current_text_parts:
             return
-        joined = ' '.join(current_text_parts).strip()
+        joined = '\n'.join(current_text_parts).strip() # Use \n to allow reflow logic to decide
         if not joined:
             return
         if current_kind and current_kind != 'PLAIN':
@@ -477,6 +502,7 @@ def extract_structural_page(page, page_height=PAGE_H):
                     line_is_chapter = True
                 elif (color == COLOR_GREEN or color == 0) and 13.5 <= size <= 14.5:
                     # Specific pattern for Roman heads to avoid catching body lines
+                    # ONLY match standalone Roman numerals as headings (Issue 12/19)
                     if re.match(r'^[IVXLCDM]+\.?$', text.strip()):
                         line_is_roman_head = True
                 elif color == COLOR_RED and size > 15:
@@ -487,6 +513,14 @@ def extract_structural_page(page, page_height=PAGE_H):
             line_text = ''.join(spans_text).strip()
             if not line_text:
                 continue
+            
+            # Subtitle detection: whole line must be uppercase (Issue 102/103)
+            if line_is_subtitle and not line_text.isupper():
+                line_is_subtitle = False
+                
+            # Roman head detection: must be a standalone Roman numeral (Issue 12/19)
+            if line_is_roman_head and not re.match(r'^[IVXLCDM]+\.?$', line_text):
+                line_is_roman_head = False
                 
             line_is_summary = False
             first_span_italic = line['spans'][0].get('flags', 0) & 2
@@ -520,8 +554,27 @@ def extract_structural_page(page, page_height=PAGE_H):
                 if not first_span_italic and len(line_text) > 25:
                     in_heading_section = False
             
+            if kind != 'PLAIN':
+                # Structural lines should almost always be standalone
+                # EXCEPT if the kind is the SAME as previous, we might join (e.g. multi-line summary)
+                # UNLESS it's a major header kind.
+                if kind != current_kind or kind in ('PART', 'CHAPTER', 'ROMAN_HEAD', 'SUBTITLE', 'DIGRESSION'):
+                    if current_text_parts:
+                        flush()
+                    current_kind = kind
+                
+                current_text_parts.append(line_text)
+                # If it's a major kind, flush immediately to ensure it's standalone
+                if kind in ('PART', 'CHAPTER', 'ROMAN_HEAD', 'SUBTITLE', 'DIGRESSION'):
+                    flush()
+                    current_kind = None
+                continue
+            
             if kind != current_kind:
-                flush()
+                # Always flush on kind change in structural pages to preserve 
+                # explicit formatting intent.
+                if current_text_parts:
+                    flush()
                 current_kind = kind
             current_text_parts.append(line_text)
                 
@@ -587,10 +640,19 @@ def get_merged_page_text(doc, pages_md, page_idx):
     """
     Get text for a page:
     - For structural pages (Part/Chapter starts): use specialized extraction.
+    - For inner treatise title pages: use specialized formatting.
     - For Greek/Hebrew pages: use font-aware extraction.
     - For regular pages: use PyMuPDF4LLM Markdown.
     """
+    from render import (
+        detect_page_type, format_treatise_title_page,
+    )
     page = doc[page_idx]
+    ptype = detect_page_type(page, page_idx + 1)
+    
+    if ptype == 'treatise_title_page':
+        return format_treatise_title_page(page)
+
     is_struct = page_is_structural(page)
     font_type = page_has_special_fonts(page)
     md_text = extract_page_markdown(pages_md, page_idx)
@@ -989,21 +1051,22 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
                 # This entry and the next one share the SAME START PAGE.
                 # We must truncate THIS entry before the next one's heading.
                 # Usually happens for Treatise title pages that are followed immediately by Chapter 1.
-                next_title = nav_entries[i + 1][1]
-                # Look for the next marker. If this is a Treatise, look for [[CHAPTER]].
-                next_marker_type = "CHAPTER" if not any(kw in next_title.upper() for kw in ['PART', 'BOOK', 'DIGRESSION']) else "PART"
-                marker = re.search(rf'\[\[{next_marker_type}\]\]', raw_text)
+                marker = re.search(r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]', raw_text)
                 if marker:
                     raw_text = raw_text[:marker.start()].strip()
             elif end_page == next_start_page - 1:
                 # We need to check the actual start page of the next entry.
                 # If it has content before the heading, it belongs here.
                 next_page_raw = get_merged_page_text(doc, pages_md, next_start_page)
-                marker = re.search(r'\[\[(?:PART|CHAPTER|DIGRESSION)\]\]', next_page_raw)
+                marker = re.search(r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]', next_page_raw)
                 if marker:
                     pre_heading = next_page_raw[:marker.start()].strip()
                     if pre_heading:
-                        raw_text = raw_text + "\n\n" + pre_heading
+                        # Only join if it doesn't look like a standalone title (Issue 99/11)
+                        # and if the current text didn't end with a signature
+                        if (len(pre_heading) > 40 or not pre_heading.isupper()) and \
+                           not re.search(r'_\*\*J\.O\.\*\*|_August_ 18\d{2}', raw_text):
+                            raw_text = raw_text + "\n\n" + pre_heading
         
         if not raw_text.strip():
             continue
@@ -1140,15 +1203,22 @@ def clean_text(text):
     return clean_greek_text(text.strip())
 
 
+DANGLING_CONNECTOR_RE = re.compile(
+    r'\b(?:and|the|of|for|with|in|to|a|is|was|were|be|been|being|has|have|had|'
+    r'by|from|as|at|or|which|who|whom|this|that|these|those)\s*$',
+    re.I
+)
+
+
 def reconstruct_paragraphs(text):
     """Heal broken lines into proper, reflowable paragraphs."""
     if not text:
         return []
-    
+
     lines = text.split('\n')
     paragraphs = []
     current = []
-    
+
     for i, line in enumerate(lines):
         stripped = line.strip()
         if not stripped:
@@ -1159,7 +1229,7 @@ def reconstruct_paragraphs(text):
                     paragraphs.append(' '.join(current))
                     current = []
             continue
-        
+
         # Preserve heading markers and structural tokens as standalone paragraphs
         is_structural_token = stripped.startswith('[[') and ']]' in stripped
         if stripped.startswith('#') or is_structural_token:
@@ -1169,45 +1239,49 @@ def reconstruct_paragraphs(text):
             paragraphs.append(stripped)
             continue
 
-        # Preserve numbered/list-like starts as real paragraph breaks. Owen's
-        # PDFs use bold "5." and "(1.)" heads at paragraph starts; these are
-        # not faulty extraction splits even if the preceding line lacks final
-        # punctuation.
+        # Preserve numbered/list-like starts as real paragraph breaks.
         if STRUCTURAL_START_RE.match(stripped):
             if current:
                 prev = current[-1]
+                # Hard structural: markers that are nearly always paragraph starts
                 hard_structural = re.match(
                     r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
+                    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
                     r'\d+(?:st|nd|rd|th)\b[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)',
                     stripped,
+                    re.I
                 )
-                if not re.search(r'[.!?]"?\s*$', prev) and not hard_structural:
+                ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
+                is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
+
+                if (not ends_terminal or is_dangling) and not hard_structural:
                     current.append(stripped)
                     continue
             if current:
                 paragraphs.append(' '.join(current))
             current = [stripped]
             continue
-        
+
         # De-hyphenation: strip trailing hyphen, merge with no space
         if current and current[-1].endswith('-'):
             current[-1] = current[-1][:-1] + stripped
             continue
-        
+
         if current:
             prev = current[-1]
             ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
             starts_lower = bool(re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', stripped))
-            
+            is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
+
             # Issue 76: Multiline block quote preservation
             all_current_text = ' '.join(current)
             is_inside_quote = (
                 (all_current_text.count('\u201c') > all_current_text.count('\u201d')) or
                 (all_current_text.count('"') % 2 != 0)
             )
-            
-            if not ends_terminal:
-                # Line does not end with terminal punctuation → join
+
+            if not ends_terminal or is_dangling:
+                # Line does not end with terminal punctuation or ends with a connector → join
                 current.append(stripped)
             elif starts_lower:
                 # Starts lowercase after terminal (e.g. middle of quotation) → join
@@ -1221,10 +1295,10 @@ def reconstruct_paragraphs(text):
                 current = [stripped]
         else:
             current = [stripped]
-    
+
     if current:
         paragraphs.append(' '.join(current))
-    
+
     return post_process_paragraphs(paragraphs)
 
 

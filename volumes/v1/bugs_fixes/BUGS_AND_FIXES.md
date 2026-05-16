@@ -91,6 +91,22 @@
 | 88 | Scripture references rendered twice — `Isaiah 9:6Isaiah 9:6` | `translate_ages_verse_markers()` + `_collapse_adjacent_duplicate_refs()` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 89 | Front matter prose (General Preface, Prefatory Notes, Prefaces) rendered centered-italic instead of left-aligned body text | `markdown_to_html()` `front_matter_style` param + `.front-matter-prose` / `.front-matter-heading` CSS | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 90 | Psalms hex-chapter AGES codes (`<19B822>` etc.) not translated — survive as raw `<19B822>` in EPUB text | `_translate_ages_marker()` + `_AGES_MARKER_RE` / `_AGES_MARKER_CONTEXT_RE` extended for hex-letter variant | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 91 | False paragraph breaks after citations (Serm., Epist., cap., lib.) | `_split_rendered_inline_structural_html()` checks `CITATION_ABBREV_TRAIL_RE` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 92 | English words in brackets falsely converted to Beta Code Greek | Removed `\[\]` from mandatory diacritics in `BETA_CODE_RE` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 93 | Scripture references duplicated without book name (`16:1516:15`) | Updated `_AGES_MARKER_CONTEXT_RE` to capture partial trailing references | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 94 | Greek final sigma `ς` incorrectly rendered as `ψ` (`λόγοψ`) | Corrected mapping in `GREEK_LOWER` and `GREEK_UPPER` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 95 | Cover and Portrait images missing or broken in EPUB | Fixed `find_cover`/`find_portrait` paths and added manual `cover.xhtml` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 96 | Drop caps removed as per user request | Replaced `chapter-opening` with `first` and removed CSS | ✅ Fixed 2026-05-16 |
+| 97 | Navigation (NAV) became flat (1-level) | Normalized level depth in `generate_nav_xhtml` to restore 3-level nesting | ✅ Fixed 2026-05-16 |
+| 98 | Redundant "The Works of John Owen" titles | Removed template title page and visual NAV title; deduped front matter | ✅ Fixed 2026-05-16 |
+| 99 | Signature formatting and scripture context issues | Fixed Goold's 2-line signatures and 'chap.' context deduplication | ✅ Fixed 2026-05-16 |
+| 100 | Non-standard colors (blue, green) removed | Reset all CSS colors to strictly black (#000) for a premium monochrome feel | ✅ Fixed 2026-05-16 |
+| 101 | Footnote references lost blue color | Restored `#0000EE` to `.noteref` and related links for usability | ✅ Fixed 2026-05-16 |
+| 102 | Larger Catechism Q&A and font formatting | Improved Q/A splitting, proofs layout, and joined footnote detection | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 103 | Catechism indentation and leaking tokens | Stripped `[[SUMMARY]]` and set `text-indent: 0` for Q&A items | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 104 | Chained footnote numbers look like a single string | Added `padding-right: 0.25em` to `.noteref` for better separation | ✅ Fixed 2026-05-16 |
+| 105 | Ornaments lost gold color | Restored `#b08d2d` to title-page ornaments for an elegant feel | ✅ Fixed 2026-05-16 |
+| 106 | Inner treatise title pages (e.g. Christologia) poorly formatted | Specialized `treatise-title-page` CSS and extraction logic | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
@@ -1004,3 +1020,134 @@ Warnings requiring triage:
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
+
+
+### 91. False paragraph breaks after citations (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Citations like `Serm. 13.`, `Epist. 78.`, `cap. 14.`, and `lib. 1.` triggered false paragraph breaks because the trailing number matched structural list markers.
+**Root cause:** `_split_rendered_inline_structural_html()` in `render.py` did not check `CITATION_ABBREV_TRAIL_RE` before splitting.
+**Fix:** Added a check for `CITATION_ABBREV_TRAIL_RE` to ensure paragraphs don't break after citation abbreviations.
+
+### 92. English words in brackets falsely converted to Beta Code Greek (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Bracketed English words like `[characters]` and `[from]` were mistakenly converted into Greek characters (e.g., `[χηαραχτερς̓́`).
+**Root cause:** `BETA_CODE_RE` considered `[` and `]` as sufficient diacritics to trigger Beta Code fallback conversion, capturing English words.
+**Fix:** Removed `\[` and `\]` from the mandatory diacritics list in `BETA_CODE_RE`. Added a test in `test_bug_regressions.py` to audit this.
+
+### 93. Scripture references duplicated without book name (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Scripture references were duplicated when the book name was omitted in the text, resulting in malformed references like `John 16:1516:15` and `1 John 5:205:20`.
+**Root cause:** `_AGES_MARKER_CONTEXT_RE` required a book name to match following text. If only a verse reference followed the marker, it wasn't deduplicated.
+**Fix:** Updated `_AGES_MARKER_CONTEXT_RE` to capture partial trailing references, and added logic to prepend the missing book name from the translated code.
+
+### 94. Greek final sigma incorrectly rendered as psi (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Greek words ending in final sigma (ς) were incorrectly rendered ending in psi (ψ), e.g., `λόγοψ`.
+**Root cause:** `GREEK_LOWER` and `GREEK_UPPER` mappings mistakenly mapped `v` to `ψ` and `y` to `υ`, violating the Graeca/WinGreek layout used by AGES.
+**Fix:** Corrected mapping in `shared.py` (`v` to `ς`, `y` to `ψ`).
+
+### 95. Cover and Portrait images missing or broken in EPUB (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Cover images were not appearing in the EPUB, and portrait images had broken links in the frontispiece.
+**Root cause:** 
+1. The cover image was added to the manifest but no cover.xhtml was created or added to the spine.
+2. The frontispiece XHTML used the original local filename (e.g., protrait1.jpeg) instead of the manifest-internal filename (portrait.jpeg).
+3. find_cover and find_portrait needed to ensure they correctly resolved paths relative to the root project directory.
+**Fix:**
+1. Created a manual cover.xhtml and inserted it at the beginning of the spine.
+2. Marked the cover image with uid="cover-image" and added the corresponding meta name="cover" in the OPF metadata.
+3. Updated render_volume to use the manifest-internal filenames for image src attributes.
+4. Verified that _RENDER_DIR correctly resolves to the project root for discovering covers/ and portraits/.
+
+### 96. Drop caps removed as per user request (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Drop caps were described as "ugly" by the user and requested to be fixed or removed.
+**Root cause:** The CSS implementation for `p.chapter-opening:first-letter` used a large blue float that might not have aligned perfectly or suited the user's aesthetic preference.
+**Fix:** 
+1. Removed the `p.chapter-opening:first-letter` rule from `shared.py`.
+2. Updated `markdown_to_html()` in `render.py` to use `class=\"first\"` instead of `class=\"chapter-opening\"`.
+3. The `.first` class retains the `text-indent: 0` property, ensuring a clean, modern start to chapters without the decorative drop cap.
+
+### 97. Navigation (NAV) became flat (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The Table of Contents (NAV) in the EPUB became a flat 1-level list, losing the hierarchical structure of Treatises, Chapters, and Sub-sections.
+**Root cause:** `generate_nav_xhtml()` in `render.py` used absolute level numbers (e.g., 2, 3, 4) from the PDF TOC instead of relative depth. It also had rigid logic that prevented correct nesting when levels shifted by more than one point.
+**Fix:**
+1. Updated `generate_nav_xhtml()` to calculate relative depth based on the minimum level present in the TOC entries (e.g., [2, 3, 4] maps to relative levels [1, 2, 3]).
+2. Simplified the stack logic to handle multi-level jumps and correctly open/close `<ol>` tags for nested items.
+3. Verified with a test script that hierarchical nesting is correctly preserved in the generated XHTML.
+
+### 98. Redundant "The Works of John Owen" titles (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The full book title appeared redundantly across several pages (Cover, NAV, Title Page, Front Matter).
+**Root cause:** 
+1. `generate_nav_xhtml()` was using the full volume title as its main heading.
+2. `render_volume()` was generating a template title page even when superior PDF-extracted title pages were available in the front matter.
+3. Multiple identical "Title Page" items were sometimes extracted from the PDF.
+**Fix:**
+1. Changed the visual NAV heading to a generic "Table of Contents".
+2. Removed the template title page (`tp_item`) generation.
+3. Added deduplication logic to `render_volume()` to skip consecutive front-matter items with the same title.
+4. Cleaned up navigation landmarks to remove the deleted `title.xhtml`.
+
+### 99. Signature formatting and scripture context issues (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** 
+1. Goold's signatures (e.g., "W. H. G.") were formatted on a single line, and sometimes trailed by treatise titles from the next page.
+2. Scripture references following "chap." or "chapter" were doubled with the book name (e.g., "chap. John 16:15").
+3. False paragraph breaks occurred after references like "Romans 1:1".
+**Root cause:** 
+1. Signature detection didn't recognize the "W. H. G." pattern and lacked logic to insert line breaks.
+2. `translate_ages_verse_markers()` didn't check the preceding context for "chap." before prepending the book name.
+3. `_split_rendered_inline_structural_html()` didn't explicitly guard against splitting after a full scripture reference.
+**Fix:**
+1. Added specialized detection for "W. H. G." style signatures and implemented a two-line formatting rule (Name <br/> Location/Date).
+2. Updated `translate_ages_verse_markers()` to suppress the book name if "chap." or "chapter" is found immediately before the code.
+3. Added a guard to `_split_rendered_inline_structural_html()` to prevent splitting paragraphs immediately after a scripture book and reference.
+
+### 100. Non-standard colors (blue, green) removed (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The use of blue and green colors for headings and verse blocks was described as "ugly" and not "premium" by the user.
+**Root cause:** The CSS used #0000D4 (AGES Blue) and #006411 (AGES Green) as legacy cues from the source PDFs.
+**Fix:** 
+1. Reset all non-black colors in `shared.py` to strictly black (`#000`).
+2. Removed color properties for title page ornaments and greyed-out chapter summaries.
+3. Reset link and noteref colors to black to maintain a clean, monochrome aesthetic.
+4. Re-rendered Volume 1 to apply the updated stylesheet.
+
+### 101. Footnote references lost blue color (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** In the transition to a monochrome layout, footnote references (`.noteref`) became black, which made them difficult to distinguish from body text and decreased usability.
+**Root cause:** I aggressively removed all non-black colors from `shared.py`, including those for links and references.
+**Fix:** Restored the `color: #0000EE` property to `.noteref`, `a.footnote-ref`, and `a.fn-link` in `shared.py`. This maintains the monochrome feel for the book's structural elements while preserving the interactive and visual cues for citations.
+
+### 103. Catechism indentation and leaking structural tokens (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** 
+1. Catechism Q&A items had paragraph indentation, which the user found messy.
+2. Structural tokens like `[[SUMMARY]]` and `[[CHAPTER]]` were sometimes visible in the final EPUB.
+**Root cause:** 
+1. Catechism Q&A items used standard `<p>` tags which have a default text-indent in the CSS.
+2. Structural tokens sometimes leaked into paragraphs during extraction and weren't stripped during rendering.
+**Fix:**
+1. Introduced a `catechism-item` class in `render.py` for Q&A paragraphs.
+2. Added CSS in `shared.py` to set `text-indent: 0 !important` for `.catechism-item`.
+3. Created `_strip_inline_structural_tokens()` in `render.py` to aggressively remove any leftover structural markers from the text before final rendering.
+
+### 104. Chained footnote numbers look like a single string (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Multiple footnote references appearing together (e.g., [1][2]) were too close, making them look like a single multi-digit number.
+**Root cause:** The CSS spacing for `.noteref` was insufficient for chained superscripts.
+**Fix:** Added `padding-right: 0.25em` to `.noteref` in `shared.py`. This ensures a clear visual gap between consecutive footnote markers, improving legibility in the Catechism and other text-heavy sections.
+
+### 102. Larger Catechism Q&A and font formatting (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The Greater Catechism had Questions and Answers merged on the same lines, and some footnote markers were malformed (e.g. "testimonyf25").
+**Root cause:** 
+1. The extraction merged Q and A lines into single paragraphs, and the previous splitting logic was too narrow (only matching "Q.").
+2. Footnote markers joined to lowercase words were missed by the "loose" regex.
+**Fix:**
+1. Expanded `_split_inline_catechism_questions()` to handle "Ques.", "Ans.", and "A." variants.
+2. Introduced `_split_catechism_proofs()` to move scripture reference runs to their own paragraphs.
+3. Updated `LOOSE_FOOTNOTE_MARKER_RE` to catch markers joined to lowercase letters.
+4. Verified that Greek and Hebrew mappings correctly handle the special font characters often found in Catechism proofs.
+
+### 105. Ornaments lost gold color (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** In the transition to a monochrome layout, title-page ornaments became black, losing their elegant look.
+**Root cause:** I removed the color property from `.ornament` in `shared.py` as part of the "remove all colors" directive.
+**Fix:** Restored `color: #b08d2d` to the `.ornament` class in `shared.py`. This restores the sophisticated gold accent to title pages while keeping the rest of the book's structural elements monochrome.
+
+### 106. Inner treatise title pages poorly formatted (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Inner title pages that appear at the start of each work within a volume (e.g., "Christologia" in Vol 1) were extracted as messy plain text or misidentified as standard body text, losing their visual hierarchy.
+**Root cause:** The converter lacked a specialized "treatise_title_page" type. Standard extraction didn't account for the top-left Greek text, big centered titles, and bottom quote blocks characteristic of these inner work starts.
+**Fix:**
+1.  **Detection:** Updated `detect_page_type()` in `render.py` to identify mid-volume title pages as `treatise_title_page`.
+2.  **Specialized Extraction:** Implemented `format_treatise_title_page()` to use PDF coordinates and font metadata to correctly group elements into top-left Greek markers, centered headings, and bottom quote blocks.
+3.  **Premium Styling:** Added comprehensive CSS for `.treatise-title-page` in `shared.py`, ensuring proper centering, font-weight hierarchy, and elegant spacing.
+4.  **Markdown Safeguard:** Updated `markdown_to_html()` to detect and pass-through these pre-rendered HTML sections without corruption.

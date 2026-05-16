@@ -55,9 +55,9 @@ HEBREW_FONTS = {'Gideon-Medium', 'MOLFEN+Gideon-Medium'}
 # words such as "author's", "Jesus", "John", and "justification".
 BETA_CODE_RE = re.compile(
     r"(?<!\S)(?![^æ;]*[æ;])(?:"
-    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+[><=~|{}\[\]+]+"
+    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+[><=~|{}+]+"
     r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW><=~|{}\[\]jJ+']*|"
-    r"[><=~|{}\[\]+]+[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+"
+    r"[><=~|{}+]+[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+"
     r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW><=~|{}\[\]jJ+']*|"
     r"pneu'ma"
     r")\.?(?!\S)"
@@ -71,7 +71,7 @@ GIDEON_HEBREW_RE = re.compile(r'(?<!\S)[a-zA-Z\[\];1]*(?:[æ}])[a-zA-Zæ}\];1\[]
 
 FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
 LOOSE_FOOTNOTE_MARKER_RE = re.compile(
-    r'\[\s*f\s*(\d{1,3})\s*\]|(?<![A-Za-z])f\s*(\d{1,3})\b',
+    r'\[\s*f\s*(\d{1,3})\s*\]|(?<=[a-z])f\s*(\d{1,3})\b|(?<![A-Za-z])f\s*(\d{1,3})\b',
     re.I,
 )
 FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
@@ -85,11 +85,12 @@ STRUCTURAL_START_RE = re.compile(
     r'\[\d+\.?\]\s+|'                    # [1.] There...
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\s+|'  # [1st,] There...
     r'[IVXLCDM]+\.\s+|'                  # I. / II.
-    r'[A-Z]\.\s+|'                       # Q. / A. catechism lines
+    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?\s+|'                       # Q. / A. catechism lines
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?\s+|'  # 2ndly, 3rdly
     r'(?:First|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Lastly|Again|But)\b[,.]?\s+'
-    r')'
+    r')',
+    re.I
 )
 STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'^(?P<marker>'
@@ -99,9 +100,11 @@ STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'\[\d+\.?\]|'
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]|'
     r'[IVXLCDM]+\.|'
+    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
-    r')(?P<space>\s+)'
+    r')(?P<space>\s+)',
+    re.I
 )
 INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'(?<!^)(?P<lead>\s+)'
@@ -119,9 +122,11 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'\*\*[IVXLCDM]+\.\*\*|'
     r'[IVXLCDM]+\.|'
     r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
+    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
-    r')(?P<trail>\s+)'
+    r')(?P<trail>\s+)',
+    re.I
 )
 ROMAN_HEADING_RE = re.compile(r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+(?P<rest>.+)$')
 ROMAN_ONLY_RE = re.compile(r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?$')
@@ -284,7 +289,7 @@ SCRIPTURE_CONTINUATION_TRAIL_RE = re.compile(
 def normalize_footnote_markers(text):
     """Normalize AGES inline footnote markers like f2 or [ f2] to [f2]."""
     def repl(match):
-        return f'[f{match.group(1) or match.group(2)}]'
+        return f'[f{match.group(1) or match.group(2) or match.group(3)}]'
 
     return LOOSE_FOOTNOTE_MARKER_RE.sub(repl, text)
 
@@ -622,6 +627,11 @@ def _split_rendered_inline_structural_html(text_html):
             continue
         if re.search(r'\b(?:verse|verses|chap|chapter|john|romans|corinthians|timothy|peter)\.?\s*$', before_text, re.I):
             continue
+        if CITATION_ABBREV_TRAIL_RE.search(before_text):
+            continue
+        # Issue 9: Prevent splitting after a book name + reference (e.g. Romans 1:1)
+        if SCRIPTURE_REF_RE.search(before_text) and re.search(rf'\b{SCRIPTURE_BOOK_RE}\s+\d+:\d+(?:[-,]\s*\d+)*\s*$', before_text, re.I):
+            continue
         if not re.search(r'[.!?:;—-]\s*$', before_text):
             continue
         pieces.append(before_html)
@@ -748,7 +758,12 @@ def _coalesce_roman_list_paragraphs(paragraphs):
 
 def _split_inline_catechism_questions(paragraphs):
     out = []
-    pattern = re.compile(r'(?<!^)\s+(?=(?:\*\*)?Q\.\s*\d+\.(?:\*\*)?\s+)')
+    # Split on space followed by Q./Ques. or A./Ans. markers
+    # Supports optional bold ** markers.
+    # NOTE: Case-sensitive to avoid catching scholarly citations like 'q. 81' (Issue 17)
+    pattern = re.compile(
+        r'(?<!^)\s+(?=(?:\*\*)?(?:Q\.|Ques\.|A\.|Ans\.)\s*(?:\d+\.)?\s*(?:\*\*)?)'
+    )
     for para in paragraphs:
         parts = [part.strip() for part in pattern.split(para) if part.strip()]
         out.extend(parts or [para])
@@ -807,55 +822,53 @@ def _clean_catechism_footnote_spill(paragraphs):
 
 
 def _remove_catechism_lookahead_ghosts(paragraphs):
-    """Remove answer text that was pulled forward from the following answer."""
+    """Remove text that was pulled forward from following paragraphs (AGES ghosting)."""
     cleaned = list(paragraphs)
     for idx, para in enumerate(cleaned[:-1]):
-        if not re.match(r'^(?:\*\*)?A\.', para.strip(), re.I):
-            continue
-        next_answer = ''
-        for following in cleaned[idx + 1:idx + 4]:
-            if re.match(r'^(?:\*\*)?A\.', following.strip(), re.I):
-                next_answer = following
-                break
-        if not next_answer:
-            continue
+        # Look ahead up to 6 paragraphs for ghosting
+        for offset in range(1, min(7, len(cleaned) - idx)):
+            next_para = cleaned[idx + offset].strip()
+            if not next_para:
+                continue
 
-        curr_words = [
-            (m.group(0).lower(), m.start(), m.end())
-            for m in re.finditer(r"[A-Za-z0-9:]+", para)
-        ]
-        next_words = [m.group(0).lower() for m in re.finditer(r"[A-Za-z0-9:]+", next_answer)]
-        if len(curr_words) < 10 or len(next_words) < 8:
-            continue
+            curr_words = [
+                (m.group(0).lower(), m.start(), m.end())
+                for m in re.finditer(r"[A-Za-z0-9:]+", para)
+            ]
+            next_words = [m.group(0).lower() for m in re.finditer(r"[A-Za-z0-9:]+", next_para)]
+            if len(curr_words) < 8 or len(next_words) < 6:
+                continue
 
-        best = None
-        max_size = min(18, len(curr_words), len(next_words))
-        for size in range(max_size, 6, -1):
-            next_runs = {tuple(next_words[j:j + size]) for j in range(len(next_words) - size + 1)}
-            for i in range(1, len(curr_words) - size + 1):
-                run = tuple(w for w, _, _ in curr_words[i:i + size])
-                if run in next_runs:
-                    best = (curr_words[i][1], curr_words[i + size - 1][2])
+            best = None
+            max_size = min(18, len(curr_words), len(next_words))
+            for size in range(max_size, 5, -1):
+                next_runs = {tuple(next_words[j:j + size]) for j in range(len(next_words) - size + 1)}
+                for i in range(1, len(curr_words) - size + 1):
+                    run = tuple(w for w, _, _ in curr_words[i:i + size])
+                    if run in next_runs:
+                        best = (curr_words[i][1], curr_words[i + size - 1][2])
+                        break
+                if best:
                     break
-            if best:
-                break
 
-        if best:
-            start, end = best
-            while start > 0 and para[start - 1] in ' \t,;:':
-                start -= 1
-            while end < len(para) and para[end] in ' \t,;:.':
-                end += 1
-            cleaned[idx] = re.sub(r'\s{2,}', ' ', (para[:start] + ' ' + para[end:]).strip())
+            if best:
+                start, end = best
+                while start > 0 and para[start - 1] in ' \t,;:':
+                    start -= 1
+                while end < len(para) and para[end] in ' \t,;:.':
+                    end += 1
+                para = re.sub(r'\s{2,}', ' ', (para[:start] + ' ' + para[end:]).strip())
+                cleaned[idx] = para
     return cleaned
 
 
 def _remove_duplicate_catechism_answer_opening(text):
     """Collapse ghosted catechism answer openings inside one paragraph."""
+    # Pattern: A. Body text. A. Body text.
     pattern = re.compile(
-        r'^(?P<label>(?:\*\*)?A\.(?:\*\*)?\s+)'
+        r'^(?P<label>(?:\*\*)?(?:A\.|Ans\.|Q\.|Ques\.)(?:\*\*)?\s*(?:\d+\.)?\s*)'
         r'(?P<body>.{6,180}?[.!?;])\s+'
-        r'(?:\*\*)?A\.(?:\*\*)?\s+(?P=body)',
+        r'(?:\*\*)?(?:A\.|Ans\.|Q\.|Ques\.)(?:\*\*)?\s*(?:\d+\.)?\s*(?P=body)',
         re.I,
     )
     previous = None
@@ -905,6 +918,29 @@ def _repair_known_source_losses(text):
         'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
     )
     return text
+def _coalesce_catechism_paragraphs(paragraphs):
+    """Merge scripture reference paragraphs into the preceding Catechism answer."""
+    if not paragraphs:
+        return []
+    out = []
+    for para in paragraphs:
+        stripped = para.strip()
+        # If this paragraph looks like a bare scripture proof list and the 
+        # previous paragraph was an Answer, merge them.
+        is_proof = re.match(rf'^(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', stripped, re.I)
+        if is_proof and out and re.match(r'^(?:\*\*)?(?:A\.|Ans\.)', out[-1].strip(), re.I):
+            # Join with a space (Issue 16)
+            out[-1] = out[-1].rstrip() + " " + stripped
+        else:
+            out.append(para)
+    return out
+
+
+def _strip_inline_structural_tokens(text):
+    """Remove any structural tokens that leaked into paragraphs (e.g. [[SUMMARY]])."""
+    return re.sub(r'\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION)\]\]\s*', '', text)
+
+
 def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                      front_matter_style="blurb"):
     """
@@ -922,7 +958,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     
     html_parts = []
     normalized_paragraphs = [normalize_footnote_markers(para) for para in md_text.split('\n\n')]
-    paragraphs = _clean_catechism_footnote_spill(
+    paragraphs = _coalesce_catechism_paragraphs(
         _split_inline_catechism_questions(
             _coalesce_roman_list_paragraphs(normalized_paragraphs)
         )
@@ -931,7 +967,6 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     for para in paragraphs:
         expanded_paragraphs.extend(_split_inline_structural_markers(para))
     paragraphs = expanded_paragraphs
-    paragraphs = _remove_catechism_lookahead_ghosts(paragraphs)
     paragraphs = [_repair_known_catechism_ghosts(para) for para in paragraphs]
     recent_plain = []
     roman_list_expected = None
@@ -945,6 +980,16 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         stripped = para.strip()
         if not stripped:
             continue
+            
+        # Detect pre-rendered HTML sections (Issue 106)
+        if stripped.startswith('<section class="treatise-title-page"'):
+            html_parts.append(stripped)
+            continue
+
+        h_tag = None
+        subtitle_md = None
+        roman_heading = None
+        is_centered_roman_list = False
 
         # State Transitions (Issue 107 Refinement)
         # We strip structural tokens for trigger detection
@@ -1060,7 +1105,9 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         return ''
                     seen_footnote_refs.add(fn_num)
                     return f'FNREFTOKEN{fn_num}TOKEN'
-                with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, raw_content)
+                
+                content_clean = _strip_inline_structural_tokens(raw_content)
+                with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, content_clean)
                 escaped = _html_escape(with_placeholders)
                 with_links = _restore_footnote_placeholders(escaped)
                 return tag_unicode_ranges(with_links)
@@ -1071,28 +1118,56 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                 if is_major_trigger:
                     pending_drop_cap = True
                     current_mode = "BODY_START"
+                recent_plain.append(_strip_footnote_placeholders(content))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
             elif kind == 'CHAPTER':
                 html_parts.append(f'<h1 class="secondary">{_render_heading_content(content)}</h1>')
                 # CHAPTER does not trigger or reset pending_drop_cap (Issue 107)
+                recent_plain.append(_strip_footnote_placeholders(content))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
             elif kind == 'ROMAN_HEAD':
                 html_parts.append(f'<h4 class="roman-subheading">{_render_heading_content(content)}</h4>')
                 pending_drop_cap = False
+                recent_plain.append(_strip_footnote_placeholders(content))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
             elif kind == 'SUBTITLE':
-                html_parts.append(f'<h4 class="chapter-subtitle">{_render_heading_content(content)}</h4>')
+                # Catechism protection: don't render Q./A. as subtitles (Issue 102)
+                if re.match(r'^(?:\*\*)?(?:Q\.|Ques\.|A\.|Ans\.)\s*(?:\d+\.)?\s*(?:\*\*)?', content, re.I):
+                    stripped = content
+                    # Fall through to normal paragraph rendering
+                else:
+                    html_parts.append(f'<h4 class="chapter-subtitle">{_render_heading_content(content)}</h4>')
+                    recent_plain.append(_strip_footnote_placeholders(content))
+                    if len(recent_plain) > 5:
+                        recent_plain = recent_plain[-5:]
+                    continue
             elif kind == 'SUMMARY':
                 html_parts.append(f'<p class="chapter-summary">{_render_heading_content(content)}</p>')
                 # SUMMARY does not trigger or reset pending_drop_cap (Issue 107)
+                recent_plain.append(_strip_footnote_placeholders(content))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
             elif kind == 'DIGRESSION':
                 # Generate unique ID for Digressions
                 num_match = re.search(r'\d+', content)
                 d_id = f"digression-{num_match.group(0)}" if num_match else "digression-sub"
                 html_parts.append(f'<h3 id="{d_id}" class="digression-heading">{_render_heading_content(content.upper().rstrip("."))}</h3>')
                 pending_drop_cap = False
+                recent_plain.append(_strip_footnote_placeholders(content))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
 
-            recent_plain.append(_strip_footnote_placeholders(content))
-            if len(recent_plain) > 5:
-                recent_plain = recent_plain[-5:]
-            continue
+            # Fall through for non-structural content or protected Q/A
+            # (continue not called above)
+            pass
         
         # Detect heading level from leading #
         h_match = re.match(r'^(#{1,6})\s+(.+)$', stripped)
@@ -1144,6 +1219,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             return f'FNREFTOKEN{fn_num}TOKEN'
 
         content_no_refs = FOOTNOTE_MARKER_RE.sub(footnote_marker_repl, content).strip()
+        content_no_refs = _strip_inline_structural_tokens(content_no_refs)
         content_no_refs = re.sub(r'\s{2,}', ' ', content_no_refs)
         content_no_refs = _remove_duplicate_catechism_answer_opening(content_no_refs)
         content_no_refs = _repair_known_front_matter_text(content_no_refs)
@@ -1288,12 +1364,13 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             )
             if len(content_no_refs) >= 18 and upper_ratio >= 0.72:
                 subtitle = _clean_heading_text(content_no_refs)
-                html_parts.append(f'<h4 class="chapter-subtitle">{tag_unicode_ranges(_html_escape(subtitle))}</h4>')
-                pending_chapter_subtitle = False
-                recent_plain.append(_strip_footnote_placeholders(content_no_refs))
-                if len(recent_plain) > 5:
-                    recent_plain = recent_plain[-5:]
-                continue
+                if subtitle:
+                    html_parts.append(f'<h4 class="chapter-subtitle">{tag_unicode_ranges(_html_escape(subtitle))}</h4>')
+                    pending_chapter_subtitle = False
+                    recent_plain.append(_strip_footnote_placeholders(content_no_refs))
+                    if len(recent_plain) > 5:
+                        recent_plain = recent_plain[-5:]
+                    continue
             pending_chapter_subtitle = False
 
         if not h_tag:
@@ -1312,11 +1389,9 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         recent_plain = recent_plain[-5:]
                     continue
 
-        subtitle_md = None
         if not h_tag:
             subtitle_md, content_no_refs = _split_leading_chapter_subtitle(content_no_refs)
 
-        roman_heading = None
         if not h_tag and not subtitle_md:
             roman_match = ROMAN_HEADING_RE.match(content_no_refs)
             if roman_match:
@@ -1378,12 +1453,15 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             if subtitle_md:
                 subtitle_html = _clean_heading_text(subtitle_md)
                 subtitle_html = tag_unicode_ranges(subtitle_html)
-                roman_match = re.match(r'^(?P<title>.+?)\s+(?P<roman>[IVXLCDM]+\.?)$', subtitle_html)
-                if roman_match and len(roman_match.group('title')) >= 18:
-                    html_parts.append(f'<h4 class="chapter-subtitle">{roman_match.group("title")}</h4>')
-                    html_parts.append(f'<h4 class="chapter-subtitle roman-subheading">{roman_match.group("roman")}</h4>')
+                if not subtitle_html:
+                    pass
                 else:
-                    html_parts.append(f'<h4 class="chapter-subtitle">{subtitle_html}</h4>')
+                    roman_match = re.match(r'^(?P<title>.+?)\s+(?P<roman>[IVXLCDM]+\.?)$', subtitle_html)
+                    if roman_match and len(roman_match.group('title')) >= 18:
+                        html_parts.append(f'<h4 class="chapter-subtitle">{roman_match.group("title")}</h4>')
+                        html_parts.append(f'<h4 class="chapter-subtitle roman-subheading">{roman_match.group("roman")}</h4>')
+                    else:
+                        html_parts.append(f'<h4 class="chapter-subtitle">{subtitle_html}</h4>')
             if roman_heading:
                 html_parts.append(f'<h4 class="roman-subheading">{roman_heading}</h4>')
             if plain_for_class in {
@@ -1404,10 +1482,20 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         r'^[=—–-]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3}\.?\s*$',
                         _sig_plain,
                     ))
+                    # Specialized Goold/Edinburgh signature detection (Issue 99)
+                    if not _is_signature:
+                         _is_signature = bool(re.match(
+                             r'^(?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*\s+(?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*\s*$',
+                             paragraph_html,
+                         ))
 
                     # Rule 1: FRONT_MATTER rules
                     if current_mode == "FRONT_MATTER":
                         if _is_signature:
+                            # Split Goold signature into two lines (Issue 99)
+                            m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
+                            if m_sig:
+                                paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
                             html_parts.append(f'<p class="signature">{paragraph_html}</p>')
                         elif front_matter_style == "prose":
                             # Running editorial prose: justify like normal body text.
@@ -1435,14 +1523,25 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                             starts_with_letter = re.match(r'^(?:<b>)?[A-Z]', paragraph_html, re.I)
                             
                             if not is_subpoint and starts_with_letter:
-                                p_class = ' class="chapter-opening"'
+                                p_class = ' class="first"'
                                 pending_drop_cap = False
                                 current_mode = "BODY_TEXT" # Transition to State 3
                             # If is_subpoint or doesn't start with letter, we stay in BODY_START/pending_drop_cap=True
                         
                         if _is_signature:
+                            # Split Goold signature into two lines (Issue 99)
+                            m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
+                            if m_sig:
+                                paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
                             html_parts.append(f'<p class="signature">{paragraph_html}</p>')
                         else:
+                            # Catechism styling (Issue 102/103)
+                            # Matches Q. A. Ques. Ans. and also proof lines starting with a book name
+                            is_qa = re.match(r'^(?:<b>)?(?:Q\.|Ques\.|A\.|Ans\.)', paragraph_html, re.I)
+                            is_proof = re.match(rf'^(?:<b>)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', paragraph_html, re.I)
+                            if is_qa or is_proof:
+                                p_class = ' class="catechism-item"'
+                                
                             html_parts.append(f'<p{p_class}>{paragraph_html}</p>')
 
 
@@ -1498,20 +1597,24 @@ def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_fron
         '<!DOCTYPE html>',
         '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en" xml:lang="en">',
         '<head>',
-        f'  <title>{display_title}</title>',
+        '  <title>Table of Contents</title>',
         '  <link href="style/main.css" rel="stylesheet" type="text/css"/>',
         '</head>',
         '<body>',
-        f'<nav epub:type="toc" id="toc" role="doc-toc">',
-        f'<h2>{display_title}</h2>',
+        '<nav epub:type="toc" id="toc" role="doc-toc">',
+        '<h2>Table of Contents</h2>',
     ]
     
     current_level = 0
     stack = []
     for level, text, href in toc_entries:
+        # Normalize level to 1-3 range based on relative depth
+        # Volume 1 often has [2, 3, 4] as levels.
+        # Find the minimum level in toc_entries to use as base
+        min_level = min(e[0] for e in toc_entries)
+        level = (level - min_level) + 1
         level = max(1, min(level, 3))
-        if level > current_level + 1:
-            level = current_level + 1
+        
         if level > current_level:
             for _ in range(level - current_level):
                 lines.append('<ol>')
@@ -1540,7 +1643,6 @@ def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_fron
     lines.append('<nav epub:type="landmarks">\n<h2>Guide</h2>\n<ol>')
     if has_cover:
         lines.append('  <li><a epub:type="cover" href="cover.xhtml">Cover</a></li>')
-    lines.append('  <li><a epub:type="titlepage" href="title.xhtml">Title Page</a></li>')
     lines.append('  <li><a epub:type="toc" href="nav.xhtml">Table of Contents</a></li>')
     if has_frontispiece:
         lines.append('  <li><a epub:type="frontispiece" href="frontispiece.xhtml">Frontispiece</a></li>')
@@ -1549,6 +1651,47 @@ def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_fron
     lines.extend(['</ol>', '</nav>', '</body>', '</html>'])
     
     return '\n'.join(lines)
+
+
+def build_hierarchical_toc(toc_entries):
+    """Convert flat (level, title, href) entries into nested ebooklib structure."""
+    if not toc_entries:
+        return []
+        
+    min_level = min(e[0] for e in toc_entries)
+    
+    def _nest(entries, base_level):
+        result = []
+        i = 0
+        while i < len(entries):
+            level, title, href = entries[i]
+            # Normalize level
+            rel_level = (level - min_level) + 1
+            
+            if rel_level == base_level:
+                # Look ahead for children
+                children_entries = []
+                j = i + 1
+                while j < len(entries):
+                    next_level = (entries[j][0] - min_level) + 1
+                    if next_level > base_level:
+                        children_entries.append(entries[j])
+                        j += 1
+                    else:
+                        break
+                
+                link = epub.Link(href, title, href.replace('.xhtml', ''))
+                if children_entries:
+                    result.append((link, _nest(children_entries, base_level + 1)))
+                else:
+                    result.append(link)
+                i = j
+            else:
+                # Should not happen with well-formed TOC, but skip if it does
+                i += 1
+        return result
+
+    return _nest(toc_entries, 1)
 
 
 def generate_ncx(title, uid, toc_entries):
@@ -1679,11 +1822,11 @@ def detect_page_type(page, page_num=None):
                     
     # Strict structural criteria (sparse blocks + large font)
     if max_font > 14 and total_chars < 800 and n_blocks < 15:
-        return 'title_page'
+        return 'title_page' if (page_num or 0) <= 10 else 'treatise_title_page'
 
     # Beyond very sparse: char-count based title page detection (mid-volume)
     if total_chars < 1200 and large_chars >= 40:
-        return 'title_page'
+        return 'title_page' if (page_num or 0) <= 10 else 'treatise_title_page'
 
     # Fallback for mixed title+body pages (e.g. Part titles starting mid-page)
     if total_chars < 2000:
@@ -1701,7 +1844,7 @@ def detect_page_type(page, page_num=None):
                     
             # Only trigger if we find a very large-font line (e.g. PART X, BOOK X)
             if b_max > 18 and len(b_text) < 40 and not b_text.upper().startswith('CHAPTER'):
-                return 'title_page'
+                return 'title_page' if (page_num or 0) <= 10 else 'treatise_title_page'
             # If we hit a normal block first, it's a body page
             break
 
@@ -1723,6 +1866,111 @@ def is_toc_continuation_page(page, page_num=None):
     part_hits = len(re.findall(r'\bPART\s+\d+', upper))
     numbered_hits = len(re.findall(r'(?:^|\s)(?:[IVXLCDM]+\.|\d+\.)\s+[—A-Z]', clean, re.I))
     return (chapter_hits + part_hits + numbered_hits) >= 1
+
+
+def format_treatise_title_page(page):
+    """Build specialized inner treatise title page (e.g. Christologia) with PDF-accurate layout.
+    
+    Handles:
+      - Centered Greek markers
+      - Big centered main title
+      - Grouped centered sub-elements
+      - Grouped italic descriptive blocks
+      - Quote block at the bottom
+    """
+    blocks = page.get_text('dict')['blocks']
+    lines_data = []
+    
+    # 1. Gather lines with metadata
+    for b in blocks:
+        if b.get('type') != 0: continue
+        for line in b['lines']:
+            spans = line['spans']
+            max_size = max(s['size'] for s in spans)
+            text = "".join(s['text'] for s in spans).strip()
+            text = re.sub(r'<\d{6}>', '', text).strip()
+            if not text or text.isdigit(): continue
+            if any(h in text for h in _AGES_HEADERS): continue
+            
+            has_koine = any('Koine' in s['font'] for s in spans)
+            has_italic = any('Italic' in s['font'] for s in spans)
+            has_bold = any('Bold' in s['font'] for s in spans)
+            
+            lines_data.append({
+                'text': text,
+                'size': max_size,
+                'has_koine': has_koine,
+                'has_italic': has_italic,
+                'has_bold': has_bold,
+                'bbox': line['bbox']
+            })
+
+    if not lines_data: return ""
+
+    parts = ['<section class="treatise-title-page" epub:type="titlepage">']
+    
+    # 2. Process groups with lookahead for merging
+    i = 0
+    while i < len(lines_data):
+        line = lines_data[i]
+        text = line['text']
+        y_pos = line['bbox'][1]
+        
+        # Detect Quote block at bottom (usually y > 500 on 792pt page)
+        if (text.startswith(('“', '"')) or y_pos > 500) and i >= len(lines_data) - 6:
+            quote_lines = []
+            while i < len(lines_data):
+                l_text = lines_data[i]['text']
+                if lines_data[i]['has_koine']:
+                    l_text = convert_greek_word(l_text)
+                quote_lines.append(_html_escape(l_text))
+                i += 1
+            full_quote = " ".join(quote_lines)
+            parts.append(f'<div class="quote-block">{tag_unicode_ranges(full_quote)}</div>')
+            break
+
+        # Greek Markers (often used as titles, e.g. ΧΡΙΣΤΟΛΟΓΙΑ)
+        if line['has_koine']:
+            greek_text = convert_greek_word(text)
+            parts.append(f'<h2 class="greek-title"><span lang="el" xml:lang="el">{_html_escape(greek_text)}</span></h2>')
+            i += 1
+            continue
+
+        # Main Title (Big text)
+        if line['size'] > 15 or line['has_bold']:
+            lvl = 'h1' if line['size'] > 18 else 'h2'
+            parts.append(f'<{lvl}>{_html_escape(text)}</{lvl}>')
+            i += 1
+            continue
+            
+        # Separators (OR, WITH, OF)
+        if text.upper() in {'OR', 'OF', 'WITH', 'AS ALSO,'}:
+            parts.append(f'<p class="separator"><b>{_html_escape(text)}</b></p>')
+            i += 1
+            continue
+
+        # Descriptive/Italic - MERGE CONSECUTIVE LINES
+        if line['has_italic']:
+            italic_parts = [_html_escape(text)]
+            j = i + 1
+            while j < len(lines_data):
+                next_line = lines_data[j]
+                if next_line['has_italic'] and not next_line['has_bold'] and next_line['size'] < 15:
+                    italic_parts.append(_html_escape(next_line['text']))
+                    j += 1
+                else:
+                    break
+            joined_italic = " ".join(italic_parts)
+            parts.append(f'<p class="descriptive">{joined_italic}</p>')
+            i = j
+            continue
+
+        # Standard descriptive
+        parts.append(f'<p class="descriptive">{_html_escape(text)}</p>')
+        i += 1
+
+    parts.append('</section>')
+    return "\n".join(parts)
 
 
 def format_title_page(page, section_class="title-page", epub_type="titlepage", limit_to_title=False):
@@ -2023,16 +2271,24 @@ def render_volume(vol_num: int, overrides: dict = None,
 
     # ── Cover ────────────────────────────────────────────────────
     cover_path = find_cover(vol_num)
+    cover_page = None
     cover_item = None
     if cover_path and os.path.exists(cover_path):
         ext = os.path.splitext(cover_path)[1].lower()
         mt = 'image/jpeg' if ext in ('.jpg', '.jpeg') else 'image/png'
         with open(cover_path, 'rb') as f:
             cover_item = epub.EpubItem(
-                file_name=f'images/cover{ext}', media_type=mt, content=f.read(),
+                uid='cover-image', file_name=f'images/cover{ext}', 
+                media_type=mt, content=f.read(),
             )
         book.add_item(cover_item)
-        # Don't call set_cover — it duplicates the item already added above
+        book.add_metadata(None, 'meta', '', {'name': 'cover', 'content': 'cover-image'})
+        
+        # Create manual cover page for spine control
+        cover_page = epub.EpubHtml(title='Cover', file_name='cover.xhtml', lang='en')
+        cover_html = f'<div class="cover"><img src="images/cover{ext}" alt="Cover"/></div>'
+        cover_page.set_content(_make_xhtml('Cover', cover_html).encode('utf-8'))
+        book.add_item(cover_page)
 
     # ── Frontispiece ─────────────────────────────────────────────
     portrait_path = find_portrait(vol_num)
@@ -2044,7 +2300,9 @@ def render_volume(vol_num: int, overrides: dict = None,
         with open(portrait_path, 'rb') as f:
             port_item = epub.EpubItem(file_name=port_fn, media_type=mt, content=f.read())
         book.add_item(port_item)
-        fi_html = generate_frontispiece_xhtml(os.path.basename(portrait_path))
+        
+        # Use the relative path in the EPUB (images/portrait.ext)
+        fi_html = generate_frontispiece_xhtml(os.path.basename(port_fn))
         frontispiece_item = epub.EpubHtml(
             title='Frontispiece', file_name='frontispiece.xhtml', lang='en',
         )
@@ -2054,20 +2312,14 @@ def render_volume(vol_num: int, overrides: dict = None,
         frontispiece_item.add_item(style_item)
         book.add_item(frontispiece_item)
 
-    # ── Template title page ──────────────────────────────────────
-    subtitle_val = VOLUME_SUBTITLES.get(vol_num, '')
-    tp_item = epub.EpubHtml(title='Title Page', file_name='title.xhtml', lang='en')
-    tp_item.set_content(
-        _make_xhtml('Title Page',
-                    _build_title_page(vol_num, intermediate['title'], subtitle_val)
-                    ).encode('utf-8')
-    )
-    tp_item.add_item(style_item)
-    book.add_item(tp_item)
-
     # ── PDF-extracted front matter (title pages, TOC) ────────────
     front_matter_epub_items = []
+    _last_fm_title = None
     for fm in intermediate.get('front_matter_items', []):
+        if fm['title'] == _last_fm_title:
+            continue
+        _last_fm_title = fm['title']
+        
         fm_item = epub.EpubHtml(
             title=fm['title'], file_name=fm['file_name'], lang='en',
         )
@@ -2081,7 +2333,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     # ── Chapters ─────────────────────────────────────────────────
     toc_entries = []
     epub_chapters = []
-    guide_landmarks = [('Title Page', 'title.xhtml')]
+    guide_landmarks = [] # was [('Title Page', 'title.xhtml')]
 
     conv_mode = 'FRONT_MATTER'
     conv_drop_cap = False
@@ -2171,15 +2423,19 @@ def render_volume(vol_num: int, overrides: dict = None,
     nav_item.set_content(_make_xhtml('Table of Contents', nav_html).encode('utf-8'))
     nav_item.add_item(style_item)
     book.add_item(nav_item)
-    book.toc = tuple(
-        epub.Link(href, title, '') for _, title, href in nav_entries
-    )
+    
+    # Set hierarchical TOC for ebooklib (affects NCX and device menus)
+    book.toc = build_hierarchical_toc(nav_entries)
 
     ncx_uid = uid
     ncx = epub.EpubNcx()
     book.add_item(ncx)
 
-    spine = ['nav', tp_item] + front_matter_epub_items
+    spine = []
+    if cover_page:
+        spine.append(cover_page)
+    spine.append('nav')
+    spine.extend(front_matter_epub_items)
     if frontispiece_item:
         spine.append(frontispiece_item)
     spine += epub_chapters

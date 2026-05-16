@@ -260,7 +260,7 @@ GREEK_LOWER = {
     'z': 'ζ', 'h': 'η', 'q': 'θ', 'i': 'ι', 'k': 'κ',
     'l': 'λ', 'm': 'μ', 'n': 'ν', 'x': 'ξ', 'o': 'ο',
     'p': 'π', 'r': 'ρ', 's': 'σ', 't': 'τ',
-    'u': 'υ', 'f': 'φ', 'c': 'χ', 'y': 'υ', 'v': 'ψ', 'w': 'ω',
+    'u': 'υ', 'f': 'φ', 'c': 'χ', 'y': 'ψ', 'v': 'ς', 'w': 'ω',
 }
 
 GREEK_UPPER = {
@@ -268,7 +268,7 @@ GREEK_UPPER = {
     'Z': 'Ζ', 'H': 'Η', 'Q': 'Θ', 'I': 'Ι', 'K': 'Κ',
     'L': 'Λ', 'M': 'Μ', 'N': 'Ν', 'X': 'Ξ', 'O': 'Ο',
     'P': 'Π', 'R': 'Ρ', 'S': 'Σ', 'T': 'Τ',
-    'U': 'Υ', 'F': 'Φ', 'C': 'Χ', 'Y': 'Υ', 'V': 'Ψ', 'W': 'Ω',
+    'U': 'Υ', 'F': 'Φ', 'C': 'Χ', 'Y': 'Ψ', 'V': 'Σ', 'W': 'Ω',
 }
 ALL_GREEK = {**GREEK_LOWER, **GREEK_UPPER}
 
@@ -319,10 +319,10 @@ def convert_greek_word(word):
     Sigma rules (AGES encoding for Owen volumes):
       - 's' at the very end of a word → final sigma ς
       - 's' elsewhere → medial sigma σ
-      - 'v' → psi ψ  (AGES uses 'v' for ψ, not for final sigma)
+      - 'v' → final sigma ς (explicitly typed by AGES/Graeca)
+      - 'y' → psi ψ
 
-    Note: GREEK_LOWER maps 'y' and 'u' both to upsilon (υ); this matches
-    the AGES encoding where 'y' is an alternate upsilon key.
+    Note: The previous assumption that 'v' was psi was incorrect. AGES uses Graeca/WinGreek layout where 'v' = ς and 'y' = ψ.
     """
     result = []
     i = 0
@@ -587,7 +587,7 @@ body {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.1em;
     line-height: 1.65;
-    color: #1a1a1a;
+    color: #000;
     margin: 1em 1.2em;
     -webkit-font-smoothing: antialiased;
     -webkit-hyphens: auto;
@@ -620,7 +620,6 @@ body {
     font-size: 1.9em;
     line-height: 1.18;
     margin: 0 0 1.35em;
-    color: #1a1a1a;
     page-break-before: avoid;
 }
 .titlepage h2,
@@ -628,7 +627,6 @@ body {
     font-weight: bold;
     font-size: 1.25em;
     line-height: 1.35;
-    color: #1a1a1a;
     margin: 1.2em 0;
     page-break-before: avoid;
     -webkit-column-break-before: avoid;
@@ -687,10 +685,9 @@ h1 {
 }
 
 h1.primary {
-    color: #0000D4; /* AGES Blue */
     font-size: 1.7em;
     text-align: center;
-    border-bottom: 1px solid #0000D4;
+    border-bottom: 1px solid #000;
     padding-bottom: 0.2em;
 }
 
@@ -702,7 +699,6 @@ h2 {
 }
 
 h2.secondary, h3.secondary, h1.secondary {
-    color: #006411; /* AGES Green */
     font-size: 1.35em;
     text-align: center;
     margin: 1.5em 0 0.5em;
@@ -722,20 +718,8 @@ p.chapter-summary {
     font-size: 0.95em;
     text-align: center;
     margin: 1.2em 12% 2.2em;
-    color: #333;
     text-indent: 0;
     line-height: 1.45;
-}
-
-p.chapter-opening:first-letter {
-    float: left;
-    font-size: 3.6rem;
-    line-height: 0.85;
-    margin-top: 0.08em;
-    margin-right: 0.12em;
-    margin-bottom: -0.1em;
-    color: #0000D4;
-    font-weight: bold;
 }
 
 h4.chapter-subtitle {
@@ -786,7 +770,6 @@ h4.chapter-subtitle {
    title-adjacent pages (e.g. "PREFACE" as a standalone centered line
    in blurb style). */
 .front-matter-title {
-    color: #006411; /* AGES Green */
     font-size: 1.35em;
     text-align: center;
     margin: 2em 0 1em;
@@ -795,11 +778,9 @@ h4.chapter-subtitle {
 }
 
 /* Section heading for prose-heavy front matter (General Preface,
-   Prefatory Notes, Prefaces, Analyses). h2-level, AGES green,
-   uppercase, centered — same visual weight as front-matter-title
+   Prefatory Notes, Prefaces, Analyses). h2-level, uppercase, centered — same visual weight as front-matter-title
    but semantically a heading element. */
 .front-matter-heading {
-    color: #006411; /* AGES Green */
     font-size: 1.45em;
     text-align: center;
     margin: 2em 0 1.2em;
@@ -873,7 +854,6 @@ blockquote {
 .verse {
     text-align: center;
     font-style: italic;
-    color: #000080; /* Navy Blue matching PDF */
     margin: 1.2em 0;
     text-indent: 0 !important;
 }
@@ -944,15 +924,13 @@ a.fn-link {
     display: inline-block;
     line-height: 1;
     margin-left: 0.18em;
-    margin-right: 0.15em;
-    padding: 0;
+    padding-right: 0.25em;
     text-indent: 0;
 }
 
 /* Consecutive noterefs: keep them visually separated */
 .noteref + .noteref {
     margin-left: 0;
-    margin-right: 0.15em;
 }
 
 .noteref sup {
@@ -983,6 +961,70 @@ p.signature {
     text-indent: 0;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
+}
+
+/* Catechism formatting */
+.catechism-item {
+    text-indent: 0 !important;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+/* Inner Treatise Title Pages (e.g. Christologia) */
+.treatise-title-page {
+    text-align: center;
+    padding: 5% 5% 8%;
+    max-width: 38em;
+    margin: 0 auto;
+    page-break-before: always;
+}
+.treatise-title-page .greek-title {
+    text-align: center;
+    font-size: 1.25em;
+    margin-bottom: 2.5em;
+    text-indent: 0;
+    font-weight: bold;
+}
+.treatise-title-page h1 {
+    font-size: 2.2em;
+    margin: 1.2em 0 0.8em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    font-weight: bold;
+}
+.treatise-title-page h2 {
+    font-size: 1.45em;
+    margin: 0.8em 0;
+    line-height: 1.3;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.treatise-title-page p {
+    text-align: center;
+    text-indent: 0;
+    margin: 0.6em 0;
+    line-height: 1.4;
+}
+.treatise-title-page .separator {
+    margin: 1.2em 0;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+.treatise-title-page .descriptive {
+    font-style: italic;
+    font-size: 1.1em;
+    margin: 1.5em auto;
+    max-width: 32em;
+}
+.treatise-title-page .quote-block {
+    text-align: left;
+    margin: 5em 8% 2em;
+    font-size: 1em;
+    line-height: 1.55;
+    text-indent: 0;
+    font-style: italic;
+    border-top: 1px solid #ccc;
+    padding-top: 1.5em;
 }
 
 aside[epub\:type~="footnote"] {
