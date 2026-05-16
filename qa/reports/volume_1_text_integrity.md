@@ -4,16 +4,16 @@
 - Warnings: 9
 - PDF pages: 644
 - EPUB text files: 83
-- EPUB paragraphs/headings: 2978
+- EPUB paragraphs/headings: 3198
 
 ## Coverage
 
 - PDF content tokens: 210900
-- EPUB content tokens: 214038
+- EPUB content tokens: 214365
 - Approximate PDF-to-EPUB coverage ratio: 0.9982
 - Pages checked: 635
 - Weak page matches: 5
-- Dense source windows checked: 25735
+- Dense source windows checked: 25737
 - Missing dense source-window pages: 169
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
@@ -22,20 +22,20 @@
 - Missing top-of-page body windows: 2
 - Bottom-of-page body windows checked: 555
 - Bottom-of-page windows skipped as unstable: 6
-- Missing bottom-of-page body windows: 21
+- Missing bottom-of-page body windows: 22
 
 ## Paragraphs
 
-- Body paragraphs checked: 2635
-- Possible faulty paragraph splits: 38
-- Structural starts excluded from split warnings: 165
-- Short fragments: 48
+- Body paragraphs checked: 2862
+- Possible faulty paragraph splits: 76
+- Structural starts excluded from split warnings: 174
+- Short fragments: 103
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 2
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 2
-- Roman heading candidates: 1
+- Suspicious large-number starts: 1
+- Roman heading candidates: 33
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
@@ -89,16 +89,16 @@
 
 ## Possible Paragraph Splits
 
+- file: EPUB/ch004.xhtml; previous: heir personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q.,, 81,; next: a. 3, ad prim., and q.,, 84,
+- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q.,, 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
+- file: EPUB/ch004.xhtml; previous: a. 1, ad tertium; Alexand. Alens. p. 3,; next: q. 30,
+- file: EPUB/ch004.xhtml; previous: m. 1,; next: a. 3.
 - file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
 - file: EPUB/ch006.xhtml; previous: OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
 - file: EPUB/ch007.xhtml; previous: THE PERSON OF CHRIST THE MOST INEFFABLE EFFECT OF DIVINE WISDOM AND GOODNESS — THENCE THE NEXT CAUSE OF ALL TRUE RELIGION — IN WHAT SENSE IT IS SO; next: The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The
 - file: EPUB/ch008.xhtml; previous: TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD; next: Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which
 - file: EPUB/ch009.xhtml; previous: THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL; next: What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o
 - file: EPUB/ch011.xhtml; previous: POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON; next: It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat
-- file: EPUB/ch011.xhtml; previous: But —; next: There was yet more required thereunto, or to render his offices effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no
-- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
-- file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
-- file: EPUB/ch012.xhtml; previous: THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST; next: A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our
 
 ## Inline Structural Marker Candidates
 
@@ -107,12 +107,20 @@
 
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch024.xhtml; text: 24. Wherefore, as we have not yet a perfection of light to understand the depth of the mysteries contained in them; so themselves also were not absolutely fulfilled until the Lord Christ discharged his office in the holy
 - file: EPUB/ch070.xhtml; text: 12. Matthew 5:20;, 8:1Romans,, 8:1,2; Ephesians 4:22, 23; Titus 2:12.
 
 ## Roman Heading Candidates
 
-- file: EPUB/ch020.xhtml; text: ill. For what he so does is due in and for itself; and to suppose that satisfaction will be made for a former fault by that whose omission would have been another, had the former never been committed, is madness. An old
+- file: EPUB/ch011.xhtml; text: I. The first of these is, that he should have a nature provided for him, which originally was not his own. For in his divine nature, singly considered, he had no such relation unto them for whom he was to discharge his o
+- file: EPUB/ch013.xhtml; text: IV. The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory.
+- file: EPUB/ch013.xhtml; text: I. The person of Christ is the object of divine honor and worship. The formal object and reason hereof is the divine nature, and its essential infinite excellencies. For they are nothing but that respect unto the Divine
+- file: EPUB/ch019.xhtml; text: IV. The last thing proposed concerning the person of Christ, was the use of it unto believers, in the whole of their relation unto God and duty towards him. And the things belonging thereunto may be reduced unto these ge
+- file: EPUB/ch022.xhtml; text: II. The union of the two natures in that single person which is consequential thereon.
+- file: EPUB/ch022.xhtml; text: III. The mutual communication of those distinct natures, the divine and human, by virtue of that union.
+- file: EPUB/ch022.xhtml; text: IV. The enunciations or predications concerning the person of Christ, which follow on that union and communion.
+- file: EPUB/ch022.xhtml; text: I. The first thing in the divine constitution of the person of Christ as God and man, is assumption. That ineffable divine act I intend whereby the person of the Son of God assumed our nature, or took it into a personal
+- file: EPUB/ch022.xhtml; text: II. That which followeth hereon, is the union of the two natures in the same person, or the hypostatical union. This is included and asserted in a multitude of divine testimonies.
+- file: EPUB/ch022.xhtml; text: III. Concurrent with, and in part consequent unto, this union, is the communion of the distinct natures of Christ hypostatically united. And herein we may consider, —
 
 ## Short Fragments
 

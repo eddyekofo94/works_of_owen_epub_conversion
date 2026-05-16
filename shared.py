@@ -31,6 +31,9 @@ VOLUME_SUBTITLES = {
     16: "The Church and the Bible",
 }
 
+# Global Volume Configuration
+# NOTE: Volume-specific OCR fixes or layout hooks MUST be kept in 
+# volumes/vN/convert.py via the OVERRIDES dictionary to keep this file clean.
 VOLUME_CONFIG = {
     1: {
         'title': 'The Works of John Owen, Volume 1: The Glory of Christ',
@@ -48,27 +51,12 @@ VOLUME_CONFIG = {
             'Two Short Catechisms'
         ],
         'text_replacements': {
-            'Charneck': 'Charnock',
-            'storage': 'strange',
-            'whoso': 'whose',
-            'se largely': 'so largely',
-            'prevailing task': 'prevailing taste',
-            'whoso name': 'whose name',
-            'whoso human': 'whose human',
-            'secretes': 'secrets',
-            'on]y': 'only',
-            'name]y': 'namely',
-            'To object of Dr. Owen in this treatise': 'The object of Dr. Owen in this treatise',
-            'simple vague and defective': 'simply vague and defective',
-            'these apprehensions of Own.': 'these apprehensions of Owen.',
-            'The Christology of Owens has always been highly valued': 'The Christology of Owen has always been highly valued',
-            'They were among the firsts as the other treatises': 'They were among the first, as the other treatises',
-            'publish all the treatises of ushered under their auspices into public notice': 'publish all the treatises of Owen in volumes corresponding in size and appearance with the one ushered under their auspices into public notice',
-            'This being the [f8] [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
-            'This being the [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
+            # Moved to volumes/v1/convert.py (Issue 26 cleanup)
         },
         'regex_replacements': {
             r'(\w+)]y\b': r'\1ly',
+            r'\]earne': r'learne',
+            r'\]earnt': r'learnt',
         }
     },
     2: {
@@ -296,6 +284,11 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'Adobe-garamond-pro-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': [
+            'Concerning the Epistle to the Hebrews (Exercitations Part 1)',
+            'Concerning the Messiah',
+            'Concerning the Jewish Church'
+        ]
     },
     2: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 2',
@@ -305,6 +298,11 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'Gentium-plus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': [
+            'The Sacerdotal Office of Christ (Exercitations Part 2)',
+            'A Day of Sacred Rest (Treatise on the Sabbath)',
+            'Summary of Observations on Hebrews'
+        ]
     },
     3: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 3',
@@ -314,6 +312,7 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'Adobe-garamond-pro-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': ['Exposition of Hebrews, 1:1 - 3:6']
     },
     4: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 4',
@@ -323,6 +322,7 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'Libertinus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': ['Exposition of Hebrews, 3:7 - 5:14']
     },
     5: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 5',
@@ -332,6 +332,7 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'Minion_pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': ['Exposition of Hebrews, 6:1 - 7:28']
     },
     6: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 6',
@@ -341,6 +342,7 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'Baskervville/static',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': ['Exposition of Hebrews, 8:1 - 10:39']
     },
     7: {
         'title': 'An Exposition of the Epistle to the Hebrews, Volume 7',
@@ -350,8 +352,64 @@ HEBREWS_VOLUME_CONFIG = {
         'body_font': 'sabon-next-lt',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
+        'treatises': ['Exposition of Hebrews, 11:1 - 13:25']
     },
 }
+
+# ============================================================================
+# CHARACTER NORMALIZATION — Gideon/AGES Legacy Artifacts
+# ============================================================================
+
+GIDEON_CHAR_MAP = {
+    # === Punctuation & Smart Quotes (The U+2018 Group) ===
+    '\u2018': "'",      # Left single quotation mark
+    '\u2019': "'",      # Right single quotation mark / Typographic Apostrophe
+    '\u201C': '"',      # Left double quotation mark
+    '\u201D': '"',      # Right double quotation mark
+    '\u2014': '—',      # Em-dash (Crucial for Owen's long, nested parenthetical clauses)
+    '\u2013': '-',      # En-dash
+    '\u2026': '...',    # Ellipsis points
+    '\u00A0': ' ',      # Non-breaking space (often inserted around punctuation marks)
+
+    # === Latin Extended-A / Diacritics (The U+00CB & U+00E3 Group) ===
+    '\u00CB': 'Ë',      # Capital E with diaeresis
+    '\u00EB': 'ë',      # Lowercase e with diaeresis (Commonly used in early English spellings)
+    '\u00E3': 'ã',      # Lowercase a with tilde
+    '\u00C3': 'Ã',      # Capital a with tilde
+    '\u00E9': 'é',      # Lowercase e with acute accent (Used in French-derived loan words)
+    '\u00E8': 'è',      # Lowercase e with grave accent
+    '\u00E2': 'â',      # Lowercase a with circumflex
+    '\u00F4': 'ô',      # Lowercase o with circumflex
+    '\u00EF': 'ï',      # Lowercase i with diaeresis
+
+    # === Historical Orthography & Ligatures (Legacy Text Layers) ===
+    '\u00E6': 'ae',     # Lowercase ae ligature (æ) - e.g., "praedestination"
+    '\u00C6': 'AE',     # Capital AE ligature (Æ)
+    '\u0153': 'oe',     # Lowercase oe ligature (œ) - e.g., "foederis"
+    '\u0152': 'OE',     # Capital OE ligature (Œ)
+    '\u017F': 's',      # Historical Long 's' (ſ) - standardizes to modern lowercase 's'
+    
+    # === Mathematical & Logical Symbols (Used in Owen's Dialectical Schemes) ===
+    '\u2234': '∴',      # Therefore symbol (Commonly used to flag a logical "Ratio" or "Usus")
+    '\u2235': '∵',      # Because symbol
+    '\u2020': '†',      # Dagger (Primary footnote anchor marker)
+    '\u2021': '‡',      # Double dagger (Secondary footnote anchor marker)
+    '\u00A7': '§'       # Section marker (Used heavily in multi-layered legal/theological outlines)
+}
+
+
+def normalize_characters(text: str) -> str:
+    """
+    Apply GIDEON_CHAR_MAP to normalize legacy AGES artifacts, smart punctuation,
+    and historical ligatures to modern Unicode equivalents.
+    """
+    if not text:
+        return ""
+    
+    # Use a translation table for efficiency
+    trans_table = str.maketrans(GIDEON_CHAR_MAP)
+    return text.translate(trans_table)
+
 
 # ============================================================================
 # GREEK BETA CODE CONVERTER
@@ -432,14 +490,14 @@ def convert_greek_word(word):
         ch = word[i]
         # Determine the next non-diacritic character for sigma-end detection
         if ch in GREEK_LOWER:
-            # Check for final sigma: 's' is final only when it is the last
+            # Check for final sigma: 's' or 'y' is final only when it is the last
             # alphabetic character in the word (all remaining chars are diacritics).
-            if ch == 's':
+            if ch == 's' or ch == 'y':
                 rest_alpha = [c for c in word[i + 1:] if c not in DIACRITIC_CHARS]
                 if not rest_alpha:
                     result.append('ς')
                 else:
-                    result.append('σ')
+                    result.append('σ' if ch == 's' else 'ψ')
             else:
                 result.append(GREEK_LOWER[ch])
             i += 1
@@ -485,7 +543,7 @@ def polytonic_sweep(text: str) -> str:
 # HEBREW GIDEON FONT CONVERTER
 # ============================================================================
 
-GIDEON_CHAR_MAP = {
+HEBREW_GIDEON_MAP = {
     # ── Consonants (Gideon AGES legacy encoding) ──────────────────────────
     'a': '\u05D0',  # א Alef
     'b': '\u05D1',  # ב Bet
@@ -569,7 +627,7 @@ def convert_gideon_hebrew(encoded):
     word order to produce logical R→L Hebrew.
 
     Unknown Gideon characters are logged to stderr (once per character per
-    session) so gaps in GIDEON_CHAR_MAP can be identified and filled.
+    session) so gaps in HEBREW_GIDEON_MAP can be identified and filled.
     """
     import re
     import sys
@@ -583,14 +641,14 @@ def convert_gideon_hebrew(encoded):
     )
     mapped_chars = []
     for ch in text:
-        if ch in GIDEON_CHAR_MAP:
-            mapped_chars.append(GIDEON_CHAR_MAP[ch])
+        if ch in HEBREW_GIDEON_MAP:
+            mapped_chars.append(HEBREW_GIDEON_MAP[ch])
         elif ch == '\u00AF':
             mapped_chars.append('\u05BE')  # Maqef
         elif ord(ch) > 127 and ch not in _warned_chars:
             # Non-ASCII character not in map — log once
             _warned_chars.add(ch)
-            print(f"[GIDEON WARNING] Unmapped character U+{ord(ch):04X} ({repr(ch)}) — add to GIDEON_CHAR_MAP", file=sys.stderr)
+            print(f"[GIDEON WARNING] Unmapped character U+{ord(ch):04X} ({repr(ch)}) — add to HEBREW_GIDEON_MAP", file=sys.stderr)
             mapped_chars.append(ch)
         else:
             mapped_chars.append(ch)
@@ -778,7 +836,7 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: bold;
     letter-spacing: 0.03em;
     margin: 1.8em 0 0.6em;
@@ -787,7 +845,7 @@ h1 {
 }
 
 h1.primary {
-    font-size: 1.7em;
+    font-size: 1.35em;
     text-align: center;
     border-bottom: 1px solid #000;
     padding-bottom: 0.2em;
@@ -795,13 +853,13 @@ h1.primary {
 
 h2 {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.15em;
     font-weight: bold;
     margin: 1.5em 0 0.5em;
 }
 
 h2.secondary, h3.secondary, h1.secondary {
-    font-size: 1.35em;
+    font-size: 1.15em;
     text-align: center;
     margin: 1.5em 0 0.5em;
     border: none;
@@ -822,6 +880,11 @@ p.chapter-summary {
     margin: 1.2em 12% 2.2em;
     text-indent: 0;
     line-height: 1.45;
+}
+
+p.list-item {
+    text-indent: 0;
+    margin-left: 1.5em;
 }
 
 h4.chapter-subtitle {

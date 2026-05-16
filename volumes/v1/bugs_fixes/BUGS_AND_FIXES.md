@@ -847,12 +847,26 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-15T15:58:39.192522+00:00
+**Last run:** 2026-05-16T16:54:34.005620+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** FAIL (1 errors, 2 warnings)
+**Status:** WARN (0 errors, 2 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -861,27 +875,23 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 85 |
+| XHTML files | 84 |
 | Spine items | 83 |
 | Embedded fonts | 8 |
-| NAV links | 84 |
-| Greek chars / untagged | 4063 / 0 |
-| Hebrew chars / untagged | 155 / 0 |
-| Noteref links / endnote anchors | 78 / 124 |
+| NAV links | 83 |
+| Greek chars / untagged | 4085 / 0 |
+| Hebrew chars / untagged | 160 / 0 |
+| Noteref links / endnote anchors | 123 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 8 |
+| Repeated phrase hits | 5 |
 
 Warnings requiring triage:
 
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
-
-Errors requiring correction:
-
-- `literal_footnote_markers`: Literal fN footnote markers appear in rendered text
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -966,11 +976,24 @@ Errors requiring correction:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-12T16:23:36.600537+00:00
-**Status:** WARN (7 warnings)
+**Last run:** 2026-05-16T16:55:10.388365+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -979,32 +1002,34 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 644 |
-| EPUB text files | 84 |
-| EPUB paragraphs/headings | 2860 |
-| Approximate PDF-to-EPUB word coverage | 0.977 |
-| Weak page matches | 85 |
-| Dense source windows checked | 4783 |
-| Missing dense source-window pages | 564 |
-| Top-of-page body windows checked | 597 |
+| EPUB text files | 83 |
+| EPUB paragraphs/headings | 2978 |
+| Approximate PDF-to-EPUB word coverage | 0.9982 |
+| Weak page matches | 5 |
+| Dense source windows checked | 25735 |
+| Missing dense source-window pages | 169 |
+| Front CONTENTS pages checked | 4 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 602 |
 | Top-of-page windows skipped as unstable | 21 |
-| Missing top-of-page body windows | 10 |
-| Bottom-of-page body windows checked | 552 |
-| Bottom-of-page windows skipped as unstable | 9 |
-| Missing bottom-of-page body windows | 22 |
-| Possible faulty paragraph splits | 61 |
-| Structural starts excluded from split warnings | 127 |
-| Short fragments | 37 |
+| Missing top-of-page body windows | 2 |
+| Bottom-of-page body windows checked | 555 |
+| Bottom-of-page windows skipped as unstable | 6 |
+| Missing bottom-of-page body windows | 21 |
+| Possible faulty paragraph splits | 38 |
+| Structural starts excluded from split warnings | 165 |
+| Short fragments | 48 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 0 |
+| Inline structural marker candidates | 2 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 2 |
-| Roman heading candidates | 0 |
+| Roman heading candidates | 1 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 313 |
-| EPUB enumerator markers | 296 |
+| EPUB enumerator markers | 317 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 
@@ -1015,7 +1040,9 @@ Warnings requiring triage:
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.

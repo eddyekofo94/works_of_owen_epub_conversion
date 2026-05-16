@@ -1,4 +1,4 @@
-# EPUB Audit: 1
+# EPUB Audit: 6
 
 - Status: **FAIL**
 - Errors: 1

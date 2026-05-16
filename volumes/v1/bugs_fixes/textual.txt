@@ -1,5 +1,3 @@
-# #  TODO: (2026-05-15 23:28) 
-
 ## 1
 “Super me aedificabo te, non me super te:” De Verbis Dom., Serm.
 13. — “Upon this rock which thou hast confessed — upon myself, the God of the living God”
@@ -52,7 +50,6 @@ The Greek words are not rendering properly here, we need to ensure that the enco
 ## 8
 “φωτισμὸν τῆψ γνώσεωψ τῆψ δόξηψ τοῦ Θεοῦ”
 
-# #  TODO: (2026-05-16 02:01)
 ## 9
 “as the apostle declares, Romans 1:1Romans”
 
@@ -76,7 +73,6 @@ Edinburgh, August 1850.
 
 All signatures should be likw this, and the greek work shoulldn't be there, it is for the next page
 
-# #  TODO: (2026-05-16 02:41)
 
 ## 12
 “II. His Love, as the sole impelling and leading cause thereof,
@@ -108,7 +104,6 @@ purpose of God, whereby in Jesus Christ he chooseth unto himself” this is a fa
 
 There's plenty of these false break especial on the catechism can you run a fix? where there is no punctuation at the end of the line, and the next line starts with a lowercase letter, we can assume it's a false break and merge the lines together. This should help clean up a lot of these issues in the text.
 
-# #  TODO: (2026-05-16 10:09)
 
 ## 15
 
@@ -190,8 +185,6 @@ The heading should be "CHAPTER 16" and then the subheading should be "AN HUMBLE 
 
 I see the same issue with the chapter headings throughout the text, we need to ensure that our extraction logic is correctly identifying and formatting all chapter headings and subheadings to maintain the structure of the text as it appears in the original source. This may involve checking for specific formatting cues in the source text that indicate chapter headings and subheadings, and ensuring that these are properly captured during extraction.
 
-#  TODO: (2026-05-16 13:17)
-
 ## 20
 “( Matthew 4:1Matthew 4,) but quickly found that that way he could male no approach unto h”
 
@@ -209,6 +202,35 @@ Fix:
 This is a list and not sections, this should not fotmatted as sections, it should be: just a list with the items without the Roman numerals being centered and bolded. We need to review the formatting logic for lists to ensure that they are correctly identified and formatted as lists, rather than being mistaken for section headings. This will help to maintain the intended structure and formatting of the text as it appears in the original source.
 
 ## 22
+“CHAPTER 7
+POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE
+OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM
+HIS PERSON
+It is by the exercise and discharge of the office of Christ — as”
+
+Fix:
+The heading should be "CHAPTER 7" and then the subheading should be "POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON"
+
+The subheading looks fragmented, it should just be one, this is the case for all volumes I can see
+All the <h2> are being badly extracted from looking at their json files example:
+<h2>WHEREIN THE</h2> <h2>PRINCIPLES OF THE DOCTRINE OF CHRIST,</h2> <h2>ARE</h2> <h2>UNFOLDED AND EXPLAINED.</h2>
+should be:
+<h2>WHEREIN THE PRINCIPLES OF THE DOCTRINE OF CHRIST, ARE UNFOLDED AND EXPLAINED.<h2>
+
+Fix how <h2> titles are extracted
+
+example:
+The subheading looks fragmented, it should just be one, this is the case for all volumes I can see
+All the <h2> are being badly extracted from looking at their json files example:
+<h2>WHEREIN THE</h2> <h2>PRINCIPLES OF THE DOCTRINE OF CHRIST,</h2> <h2>ARE</h2> <h2>UNFOLDED AND EXPLAINED.</h2>
+
+should be:
+<h2>WHEREIN THE PRINCIPLES OF THE DOCTRINE OF CHRIST, ARE UNFOLDED AND EXPLAINED.<h2>
+or how they are rendered, also the styling for them is too large. make them smaller
+
+can you find the root cause and identify a fix for this issue with the <h2> tags being fragmented and styled incorrectly? It seems like there may be an issue with the way the text is being parsed and formatted during extraction, which is causing the subheadings to be split into multiple lines and styled in a way that doesn't match the original source. We need to review the extraction logic for subheadings to ensure that they are correctly identified and formatted as single lines of text, and that the styling matches the original source as closely as possible. This may involve checking for specific formatting cues in the source text that indicate subheadings, and ensuring that these are properly captured during extraction.
+
+## 23
 1. It was not the glory of his outward condition, as we behold the glory and grandeur of the kings and potentates of the earth; for he made himself of no reputation, but being in the form of a servant, he walked in the condition of a man of low degree. The secular grandeur of his pretended Vicar makes no representation of that glory of his which his disciples saw. He kept no court, nor house of entertainment, nor (though he made all things) had of his own where to lay his head. Nor,
 2. Was it with respect to the outward form of the flesh which he was made, wherein he took our nature on him, as we see the glory of a comely or beautiful person; — for he had therein neither form nor comeliness that he should be desired, “his visage was so marred more than any man, and his form more than the sons of men,” Isaiah 52:14; 53:2, 3.
 All things appeared in him as became “a man of sorrows.” Nor, —
@@ -218,3 +240,54 @@ This was that glory which the Baptist saw, when, upon his coming unto him he sai
 
 Fix:
 All of this is indeneted on the pdf, though I would like for this to be the case but other lists are not so indented and I don't want to break others. 
+
+## 24
+“for we shall be “ἰσάγγελοι”like unto angels, or equal to them. ”
+
+Fix:
+“for we shall be “ἰσάγγελοι” like unto angels, or equal to them. ” is there a way to catch these?
+
+“(namely, unto all that believe, as it is expounded, 1 Peter 2:7 ( 8); ”
+
+Fix:
+“(namely, unto all that believe, as it is expounded, 1 Peter 2:7, 8); ”
+
+“or as it may be thence ]earned. ”
+
+Fix:
+“or as it may be thence learned. ” is there a way to catch these? It seems like the closing bracket is being misinterpreted as part of the text, we need to ensure that any brackets in the source text are properly handled during extraction to avoid this issue.
+
+## 25
+[[SUBTITLE]] PETER’S CONFESSION;\n\n[[SUMMARY]] MATTHEW 16:16 — CONCEITS OF\n\n[[SUBTITLE]] THE PAPISTS THEREON — THE SUBSTANCE AND\n\n[[SUBTITLE]] EXCELLENCY OF THAT CONFESSION
+
+Fix:
+in most chapter, Chapter 1,2 etc.. under them is normally a [[SUMMARY]]
+
+All of this:
+“PETER’S CONFESSION; MATTHEW 16:16 — CONCEITS OF
+THE PAPISTS THEREON — THE SUBSTANCE AND
+EXCELLENCY OF THAT CONFESSION”
+
+is a summary.
+
+Chapter 2:
+All of this is
+“OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE
+PERSON OF CHRIST” all of this is a summary, and the same for all the chapters, the text that is in all caps after the chapter heading should be considered a summary and not a subtitle. We need to review the extraction logic for chapter summaries to ensure that they are correctly identified and formatted as summaries, rather than being mistaken for subtitles. This will help to maintain the intended structure and formatting of the text as it appears in the original source.
+
+is there a way to extracr this accordingly? We can look for text that is in all caps and immediately follows a chapter heading, and then classify that text as a summary rather than a subtitle. This will help to ensure that the formatting of the text accurately reflects the structure of the original source. We may need to implement some additional logic to handle cases where there are multiple lines of all caps text following a chapter heading, to ensure that we capture the entire summary correctly.
+but the extracter needs to be smart enough to know this
+
+On the Catechism or sermon etc, this might not be the case, as they might have different formatting, we need to ensure that our extraction logic is flexible enough to handle different types of documents and their unique formatting styles, while still accurately capturing the intended structure and content of the text. This may involve implementing different extraction rules for different types of documents, or using machine learning techniques to identify and classify different sections of the text based on their formatting and content.
+
+#  TODO: (2026-05-16 19:57) 
+
+## 26
+“Q.,, 8.** What are the parts of this holiness?
+A. Internal, in the quickening of all graces, purging act frequent prayers, alms, and all manner of righteousness. Hebrews 9:14 Ephesians 3:16, 17; Romans 2:29, 6:12. Matthew 5:20;
+12. Matthew 5:20;, 8:1Romans,, 8:1,2; Ephesians 4:22, 23; Titus 2:12.”
+
+Fix:
+“Q. 8.** What are the parts of this holiness?" "**" is shouldn't be rendered
+also a false break “Hebrews 9:14 Ephesians 3:16, 17; Romans 2:29, 6:12. Matthew 5:20; 12."" it should all be on the same line
+

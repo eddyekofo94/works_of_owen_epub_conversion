@@ -101,3 +101,104 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+
+---
+
+
+<!-- AUTO_AUDIT_START -->
+## Automated EPUB Audit
+
+**Last run:** 2026-05-16T21:58:47.370641+00:00
+**EPUB:** `volumes/v6/output/volume_6.epub`
+**Status:** WARN (0 errors, 2 warnings)
+
+Reports:
+- `volume_6_audit.json`
+- `volume_6_audit.md`
+
+| Check | Result |
+|-------|--------|
+| OPF version | 3.0 |
+| XHTML files | 114 |
+| Spine items | 112 |
+| Embedded fonts | 12 |
+| NAV links | 112 |
+| Greek chars / untagged | 1608 / 0 |
+| Hebrew chars / untagged | 827 / 0 |
+| Noteref links / endnote anchors | 14 / 14 |
+| AGES boilerplate hits | 0 |
+| Possible Beta Code files | 3 |
+| Escaped language-tag files | 0 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 3 |
+
+Warnings requiring triage:
+
+- `possible_beta_code_residue`: Possible Beta Code residue detected
+- `repeated_phrases`: Potential repeated phrases detected
+
+**Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
+<!-- AUTO_AUDIT_END -->
+
+---
+
+
+<!-- TEXT_INTEGRITY_START -->
+## Automated Textual Integrity Audit
+
+**Last run:** 2026-05-16T21:59:26.393922+00:00
+**Status:** WARN (10 warnings)
+
+Reports:
+- `volume_6_text_integrity.json`
+- `volume_6_text_integrity.md`
+
+| Check | Result |
+|-------|--------|
+| PDF pages | 788 |
+| EPUB text files | 113 |
+| EPUB paragraphs/headings | 3267 |
+| Approximate PDF-to-EPUB word coverage | 0.9975 |
+| Weak page matches | 9 |
+| Dense source windows checked | 33112 |
+| Missing dense source-window pages | 215 |
+| Front CONTENTS pages checked | 6 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 776 |
+| Top-of-page windows skipped as unstable | 19 |
+| Missing top-of-page body windows | 2 |
+| Bottom-of-page body windows checked | 735 |
+| Bottom-of-page windows skipped as unstable | 8 |
+| Missing bottom-of-page body windows | 17 |
+| Possible faulty paragraph splits | 36 |
+| Structural starts excluded from split warnings | 423 |
+| Short fragments | 17 |
+| Adjacent duplicate paragraphs | 0 |
+| Inline structural marker candidates | 2 |
+| Reference continuation splits | 0 |
+| Citation continuation splits | 0 |
+| Suspicious large-number starts | 0 |
+| Roman heading candidates | 27 |
+| Overlong heading candidates | 8 |
+| Front-matter heading/body candidates | 0 |
+| Repeated word windows | 25 |
+| PDF enumerator markers | 629 |
+| EPUB enumerator markers | 633 |
+| Missing enumerator marker forms | 0 |
+| Enumerator sequence candidates | 4 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
+- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+**Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
+<!-- TEXT_INTEGRITY_END -->

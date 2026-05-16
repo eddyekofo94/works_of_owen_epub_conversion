@@ -1,50 +1,20 @@
 {
   "epub": "volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-14T16:39:43.642548+00:00",
-  "status": "fail",
-  "error_count": 5,
-  "warning_count": 2,
-  "errors": [
-    {
-      "code": "fragmented_greek_span_runs",
-      "message": "Three or more adjacent Greek words are split into separate spans",
-      "files": 22
-    },
-    {
-      "code": "inline_scholastic_labels",
-      "message": "Scholastic labels appear mid-paragraph instead of as anchors",
-      "files": 1
-    },
-    {
-      "code": "nav_overlong_entries",
-      "message": "Navigation entries are too long and appear to contain paragraph text",
-      "files": 1
-    },
-    {
-      "code": "spaced_caps_ocr",
-      "message": "OCR-spaced all-caps words remain in XHTML",
-      "files": 2
-    },
-    {
-      "code": "greek_diacritic_residue",
-      "message": "Standalone Greek diacritic residues (j, J, etc.) found near Greek text",
-      "files": 5
-    }
-  ],
+  "generated_at": "2026-05-16T17:28:25.715388+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 1,
+  "errors": [],
   "warnings": [
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
       "count": 10
-    },
-    {
-      "code": "missing_apple_options",
-      "message": "Missing Apple Books display-options file"
     }
   ],
   "info": {
     "file_count": 93,
-    "epub_size_bytes": 2482461,
+    "epub_size_bytes": 2479266,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -54,25 +24,24 @@
       "John Owen",
       "William H. Goold"
     ],
-    "manifest_count": 85,
-    "spine_count": 71,
-    "xhtml_count": 73,
+    "manifest_count": 84,
+    "spine_count": 70,
+    "xhtml_count": 72,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
     "font_count": 8,
     "language": {
-      "greek_chars": 4550,
+      "greek_chars": 4420,
       "greek_untagged_chars": 0,
-      "greek_integrity_failures": 0,
-      "hebrew_chars": 600,
+      "hebrew_chars": 687,
       "hebrew_untagged_chars": 0,
-      "hebrew_integrity_failures": 0,
       "files_with_untagged_greek": 0,
-      "files_with_untagged_hebrew": 0
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 23,
+      "noteref_count": 24,
       "unique_noteref_targets": 23,
       "endnote_anchor_count": 23,
       "missing_endnote_targets": [],
@@ -84,35 +53,26 @@
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 10,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
       "overlong_heading_body_files": 0,
-      "missing_chapter_initialization_files": 0,
-      "unstyled_signature_files": 0,
-      "fragmented_greek_span_run_files": 22,
-      "blockquote_count": 0,
-      "noteref_without_class": 0,
-      "scripture_blockquote_files": 0,
-      "orphan_scripture_bracket_files": 0,
+      "fragmented_greek_span_run_files": 0,
       "glued_ordinal_files": 0,
-      "structural_bold_leak_files": 0,
+      "structural_bold_leak_files": 1,
       "repeated_structural_marker_files": 0,
       "scholastic_bold_leak_files": 0,
-      "inline_scholastic_label_files": 1,
+      "inline_scholastic_label_files": 0,
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
-      "cross_chapter_continuation_files": 0,
-      "nav_overlong_entry_files": 1,
-      "nav_duplicate_text_files": 0,
-      "spaced_caps_files": 2,
-      "lowercase_paragraph_start_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 6,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
-      "greek_diacritic_residue_files": 5,
-      "quote_prose_join_files": 0,
       "i_will_mangle_files": 0,
-      "repeated_phrase_count": 10,
       "samples": {
         "boilerplate": [],
         "beta_code": [],
@@ -120,175 +80,118 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "greek_integrity": [],
-        "markdown_residue": [],
-        "unclosed_paren": [],
-        "verse_typo": [],
         "repeated_phrase": [
           {
             "file": "combined_text",
-            "text": "chapter 7 inferences from the whole",
+            "text": "chapter 5 divine revelation itself the only foundation",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 4 the nature of prayer",
+            "text": "chapter 2 zechariah 12 10 opened and vindicated",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 4 inhabitation of the spirit",
+            "text": "chapter 3 galatians 4 6 opened and vindicated",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "divine revelation itself the only foundation",
+            "text": "chapter 5 the work of the holy spirit",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "zechariah 12 10 opened and vindicated",
+            "text": "chapter 7 the nature of prayer in general",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "galatians 4 6 opened and vindicated",
+            "text": "chapter 9 duties inferred from the preceding discourse",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "the work of the holy spirit",
+            "text": "chapter 6 the spirit a seal and how",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "the nature of prayer in general",
+            "text": "chapter 7 the spirit an earnest and how",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "duties inferred from the preceding discourse",
+            "text": "chapter 6 of ordinary gifts of the spirit",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "the spirit a seal and how",
+            "text": "chapter 7 of spiritual gifts enabling the ministry",
             "count": 1
           }
         ],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
         "unprocessed_ages_marker": [],
         "page_reference_split": [],
         "chapter_heading_in_paragraph": [],
         "overlong_heading_body": [],
-        "missing_chapter_initialization": [],
-        "unstyled_signature": [],
-        "fragmented_greek_span_run": [
-          {
-            "file": "EPUB/ch009.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch011.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch013.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch019.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch020.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch021.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch022.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch025.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch033.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch036.xhtml",
-            "text": "three or more adjacent Greek spans"
-          }
-        ],
-        "noteref_without_class": [],
+        "fragmented_greek_span_run": [],
         "scripture_blockquote": [],
         "orphan_scripture_bracket": [],
         "glued_ordinal": [],
-        "structural_bold_leak": [],
-        "repeated_structural_marker": [],
-        "scholastic_bold_leak": [],
-        "inline_scholastic_label": [
+        "structural_bold_leak": [
           {
-            "file": "EPUB/ch013.xhtml",
-            "text": "scholastic label appears mid-paragraph"
+            "file": "EPUB/ch001.xhtml",
+            "text": "ΠΗΕΨΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
           }
         ],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
         "trailing_scholastic_label": [],
         "digression_not_h3": [],
         "cross_chapter_continuation": [],
-        "nav_overlong_entry": [
-          {
-            "file": "EPUB/nav.xhtml",
-            "text": "Chapter 6 - the Nature of Divine Revelations — the Nature of Divine Revelations — Their Self- Evidencing Power Considered, Particularly That of the Scriptures as the Word of God.",
-            "href": "ch011.xhtml"
-          }
-        ],
+        "nav_overlong_entry": [],
         "nav_duplicate_text": [],
-        "spaced_caps": [
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch007.xhtml",
-            "text": "M Y"
+            "file": "EPUB/ch016.xhtml",
+            "text": "p"
           },
           {
-            "file": "EPUB/ch036.xhtml",
-            "text": "J J"
+            "file": "EPUB/ch043.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch044.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch055.xhtml",
+            "text": "s"
+          },
+          {
+            "file": "EPUB/contents_2.xhtml",
+            "text": "q"
+          },
+          {
+            "file": "EPUB/title_0.xhtml",
+            "text": "b"
           }
         ],
-        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
-        "greek_diacritic_residue": [
-          {
-            "file": "EPUB/ch013.xhtml",
-            "text": "δ j ε"
-          },
-          {
-            "file": "EPUB/ch033.xhtml",
-            "text": "ν J Ε"
-          },
-          {
-            "file": "EPUB/ch036.xhtml",
-            "text": "ῦ j Ι"
-          },
-          {
-            "file": "EPUB/ch040.xhtml",
-            "text": "ρ j α"
-          },
-          {
-            "file": "EPUB/ch054.xhtml",
-            "text": "ν j Ο"
-          }
-        ],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 71
+    "nav_link_count": 70,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

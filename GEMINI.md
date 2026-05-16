@@ -10,3 +10,4 @@
 2.  **Chapter Processing:** Chapters spanning multiple PDF pages must be merged in their raw state before cleaning or healing to ensure seamless sentence reconstruction.
 3.  **Layout Preservation:** Healer logic must protect list items (using `list_item_re`) and avoid joining lines that follow terminal punctuation unless they start with a lowercase character.
 4.  **Premium Aesthetics:** Adhere strictly to the Blue/Green/Italic hierarchy defined in `shared.py` for all front matter and headings.
+5.  **Architectural Separation (Overrides):** Volume-specific data (OCR `text_replacements`, custom paragraph hooks, or local formatting logic) MUST reside within each volume's designated converter (e.g., `volumes/v1/convert.py`) using the `OVERRIDES` dictionary. Base scripts (`shared.py`, `extract.py`, `render.py`) must remain generic to avoid bloat and maintain a clean collection-wide pipeline.

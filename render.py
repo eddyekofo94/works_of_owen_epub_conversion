@@ -29,8 +29,8 @@ from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     EPUB_STYLESHEET, generate_font_styles,
     select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES,
-    convert_greek_word,
-    clean_greek_text, convert_gideon_hebrew, polytonic_sweep,
+    convert_greek_word, clean_greek_text, convert_gideon_hebrew,
+    normalize_characters, polytonic_sweep,
 )
 
 try:
@@ -128,12 +128,16 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r')(?P<trail>\s+)',
     re.I
 )
-ROMAN_HEADING_RE = re.compile(r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+(?P<rest>.+)$')
+# ROMAN_HEADING_RE: Only match if the following text is short or All-Caps (Issue 21)
+ROMAN_HEADING_RE = re.compile(
+    r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+'
+    r'(?P<rest>[^a-z]{1,150}|[A-Z][a-z ]{1,45}|[A-Z][a-z ]{1,45}\.)$'
+)
 ROMAN_ONLY_RE = re.compile(r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?$')
 PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
 CITATION_ABBREV_TRAIL_RE = re.compile(
     r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
-    r'enchirid|distinct|q|a|p)\.?\s*$'
+    r'enchirid|distinct|q|a|p|ad|m)\.?\s*$'
     r'|'
     # Page references: "p. 43" or "pp. 43" — should not be sentence ends
     r'\bp+\.\s+\d{1,4}\s*$'
@@ -144,12 +148,12 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     re.I,
 )
 CITATION_ABBREV_START_RE = re.compile(
-    r'^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Homil|Haer|Dial)\.\s+',
+    r'^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Homil|Haer|Dial|Quest|Art|Dist|Part|Vol)\.?\s+',
     re.I,
 )
 CITATION_AUTHOR_TRAIL_RE = re.compile(
     r'\b(?:See\s+)?(?:August|Austin|Athan|Chrysost|Clem|Iren|Tertull|Jerome|'
-    r'Basil|Nazianz|Cyprian|Ambros|Hilary|Epiphan)\.?\s*$',
+    r'Basil|Nazianz|Cyprian|Ambros|Hilary|Epiphan|Aquin|Alexand|Alens)\.?\s*$',
     re.I,
 )
 ROMAN_LIST_TOKEN = '@@ROMAN_LIST@@'
@@ -239,31 +243,26 @@ def _normalize_i_will(text: str) -> str:
     return text
 
 
-def _repair_owen_ocr_errors(text: str) -> str:
+def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     """
-    Repair known OCR character misreads specific to Owen/AGES extraction.
-    Separate from _repair_known_source_losses() which handles source loss patterns.
+    Repair known OCR character misreads using volume-specific configuration.
     """
-    corrections = {
-        'Charneck': 'Charnock',
-        'storage': 'strange',
-        'whoso': 'whose',
-        'se largely': 'so largely',
-        'prevailing task': 'prevailing taste',
-        'whoso name': 'whose name',
-        'whoso human': 'whose human',
-        'secretes': 'secrets',
-        'on]y': 'only',
-        'name]y': 'namely',
-        r'(\w+)]y\b': r'\1ly',
-        # Add more as they are discovered
-    }
+    if not config:
+        return text
+        
+    corrections = config.get('text_replacements', {})
+    regex_corrections = config.get('regex_replacements', {})
+    
     result = text
     for wrong, right in corrections.items():
         if wrong.startswith('(') or wrong.endswith('\\b'):
              result = re.sub(wrong, right, result)
         else:
              result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
+             
+    for pattern, repl in regex_corrections.items():
+        result = re.sub(pattern, repl, result)
+        
     return result
 SCRIPTURE_BOOK_RE = (
     r'(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|'
@@ -476,7 +475,12 @@ def _trim_duplicate_reference_prefix(prev, current):
     """Drop a leading scripture-reference run when the same refs just appeared."""
     if not prev or not current:
         return current
-    pos = 0
+    
+    # Skip leading digits/item markers that might be OCR artifacts (Issue 26)
+    prefix_match = re.match(r'^(\d{1,3}\.?\s+)', current)
+    content_start = prefix_match.end() if prefix_match else 0
+    
+    pos = content_start
     refs = []
     while pos < len(current):
         while pos < len(current) and current[pos].isspace():
@@ -495,6 +499,7 @@ def _trim_duplicate_reference_prefix(prev, current):
     prev_refs = set(_scripture_ref_tokens(prev))
     normalized_refs = {re.sub(r'^(?:[1-3]\s+)?', '', ref) for ref in refs}
     if normalized_refs and normalized_refs <= prev_refs:
+        # If we trimmed something, we also drop the leading artifact prefix
         return current[pos:].lstrip()
     return current
 def force_polyglot_mapping(text):
@@ -927,7 +932,8 @@ def _coalesce_catechism_paragraphs(paragraphs):
         stripped = para.strip()
         # If this paragraph looks like a bare scripture proof list and the 
         # previous paragraph was an Answer, merge them.
-        is_proof = re.match(rf'^(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', stripped, re.I)
+        # Allow leading digits/item markers (Issue 26)
+        is_proof = re.match(rf'^(?:\d{{1,3}}\.?\s+)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', stripped, re.I)
         if is_proof and out and re.match(r'^(?:\*\*)?(?:A\.|Ans\.)', out[-1].strip(), re.I):
             # Join with a space (Issue 16)
             out[-1] = out[-1].rstrip() + " " + stripped
@@ -942,7 +948,7 @@ def _strip_inline_structural_tokens(text):
 
 
 def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
-                     front_matter_style="blurb"):
+                     front_matter_style="blurb", config=None):
     """
     Convert paragraph-healed text to clean XHTML.
     Input is paragraphs separated by double newlines.
@@ -957,12 +963,28 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         return '', current_mode, pending_drop_cap
     
     html_parts = []
+    
+    # 0. Character normalization (Issue: Gideon/AGES legacy encoding)
+    md_text = normalize_characters(md_text)
+
+    # Apply replacements (Issue 108)
+    md_text = _repair_owen_ocr_errors(md_text, config=config)
+    
     normalized_paragraphs = [normalize_footnote_markers(para) for para in md_text.split('\n\n')]
-    paragraphs = _coalesce_catechism_paragraphs(
-        _split_inline_catechism_questions(
+    
+    # Apply volume-specific coalesce hook if provided (Issue 26)
+    coalesce_hook = config.get('paragraph_coalesce_hook') if config else None
+    if coalesce_hook:
+        paragraphs = coalesce_hook(
+            _split_inline_catechism_questions(
+                _coalesce_roman_list_paragraphs(normalized_paragraphs)
+            )
+        )
+    else:
+        paragraphs = _split_inline_catechism_questions(
             _coalesce_roman_list_paragraphs(normalized_paragraphs)
         )
-    )
+        
     expanded_paragraphs = []
     for para in paragraphs:
         expanded_paragraphs.extend(_split_inline_structural_markers(para))
@@ -1419,6 +1441,11 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         
         # Convert **bold** → <b>, _italic_ → <i>
         text_html = content_no_refs
+        
+        # Cleanup unbalanced bold markers (Issue 26)
+        if text_html.count('**') % 2 != 0:
+            text_html = text_html.replace('**', '')
+            
         text_html = re.sub(r'(?<!\*)\b(\d+\.)\*\*(?=\s+)', r'**\1**', text_html)
         text_html = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text_html)
         text_html = re.sub(r'(?<!\*)_(.+?)_(?!\*)', r'<i>\1</i>', text_html)
@@ -1477,17 +1504,30 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         continue
                     
                     # Signature detection: "= John Owen" or "— John Owen" etc.
+                    # Lenient with trailing text like Greek titles (Issue 26)
                     _sig_plain = re.sub(r'<[^>]+>', '', paragraph_html).strip()
                     _is_signature = bool(re.match(
-                        r'^[=—–-]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3}\.?\s*$',
+                        r'^[=—–-]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3}\.?',
                         _sig_plain,
                     ))
-                    # Specialized Goold/Edinburgh signature detection (Issue 99)
+                    # Specialized Goold/Edinburgh signature detection (Issue 99/26)
                     if not _is_signature:
                          _is_signature = bool(re.match(
-                             r'^(?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*\s+(?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*\s*$',
+                             r'^(?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*\s+(?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?',
                              paragraph_html,
                          ))
+                    
+                    if _is_signature:
+                        # Strip trailing Greek residue if it was pulled in (Issue 26)
+                        paragraph_html = re.sub(r'\s*[\u0370-\u03FF\u1F00-\u1FFF].*$', '', paragraph_html)
+                        
+                        # Split Goold signature into two lines (Issue 99)
+                        m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
+                        if m_sig:
+                            paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
+                        html_parts.append(f'<p class="signature">{paragraph_html}</p>')
+                        pending_drop_cap = False
+                        continue
 
                     # Rule 1: FRONT_MATTER rules
                     if current_mode == "FRONT_MATTER":
@@ -1528,20 +1568,18 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                                 current_mode = "BODY_TEXT" # Transition to State 3
                             # If is_subpoint or doesn't start with letter, we stay in BODY_START/pending_drop_cap=True
                         
-                        if _is_signature:
-                            # Split Goold signature into two lines (Issue 99)
-                            m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
-                            if m_sig:
-                                paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
-                            html_parts.append(f'<p class="signature">{paragraph_html}</p>')
-                        else:
-                            # Catechism styling (Issue 102/103)
-                            # Matches Q. A. Ques. Ans. and also proof lines starting with a book name
+                        # Catechism or List styling
+                        if not p_class:
                             is_qa = re.match(r'^(?:<b>)?(?:Q\.|Ques\.|A\.|Ans\.)', paragraph_html, re.I)
                             is_proof = re.match(rf'^(?:<b>)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', paragraph_html, re.I)
                             if is_qa or is_proof:
                                 p_class = ' class="catechism-item"'
+                            elif STRUCTURAL_START_RE.match(plain_for_class):
+                                 # Numbered/lettered lists (Issue 23/26)
+                                 p_class = ' class="list-item"'
                                 
+                            html_parts.append(f'<p{p_class}>{paragraph_html}</p>')
+                        else:
                             html_parts.append(f'<p{p_class}>{paragraph_html}</p>')
 
 
@@ -2377,6 +2415,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             current_mode=conv_mode,
             pending_drop_cap=conv_drop_cap,
             front_matter_style=conv_fm_style,
+            config=config
         )
         body_html = apply_scholastic_anchor_protocol(body_html)
         if not body_html.strip():

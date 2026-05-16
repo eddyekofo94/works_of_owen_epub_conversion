@@ -28,6 +28,7 @@ if str(_EXTRACT_DIR) not in sys.path:
 from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
+    normalize_characters,
 )
 
 # Re-import rendering constants that extraction code also uses
@@ -43,7 +44,6 @@ from render import (
     _split_inline_structural_markers, _repair_known_catechism_ghosts,
     _trim_duplicate_reference_prefix, _norm_for_dedupe,
     _normalize_spaced_caps, _normalize_i_will, _repair_owen_ocr_errors,
-    _repair_known_source_losses,
     title_case, nav_display_title,
 )
 
@@ -57,8 +57,8 @@ except ImportError:
     sys.exit("Error: PyMuPDF4LLM not installed. Run: pip install pymupdf4llm")
 
 # ─── Extraction-stage constants ──────────────────────────────────
-TOP_MARGIN = 40
-BOTTOM_MARGIN = 25
+TOP_MARGIN = 35
+BOTTOM_MARGIN = 20
 PAGE_W = 410
 PAGE_H = 626
 
@@ -219,33 +219,72 @@ def translate_ages_verse_markers(text: str) -> str:
         # Check if 'chap.' or 'chapter' precedes the match in the full text
         # by looking at the characters before m.start()
         start_idx = m.start()
-        preceding = text[max(0, start_idx-20):start_idx].lower()
-        has_chap_prefix = bool(re.search(r'\b(?:chap|chapter)\.?\s*$', preceding))
+        # Look back for book name to avoid doubling (Issue 108/Audit)
+        preceding_full = text[max(0, start_idx-60):start_idx].lower()
+        has_chap_prefix = bool(re.search(r'\b(?:chap|chapter)\.?\s*$', preceding_full))
         
+        # Extract book name from translation for comparison
+        book_match = re.match(r'([1-3]?\s*[A-Z][a-zA-Z ]{1,30}?)[\s,;.]+\d', translated)
+        book_name = book_match.group(1).strip() if book_match else ''
+        book_norm = _norm_for_cmp(book_name) if book_name else ''
+        
+        # If the book name already appears right before the marker, don't prepend it
+        # Handle cases like "Romans 8:29 <450829>" (Issue 108/Audit)
+        already_has_book = book_norm and (book_norm in preceding_full)
+
         if following:
             norm_following = _norm_for_cmp(following)
-            norm_translated = _norm_for_cmp(translated)
-            
+
+            # If following already starts with the book name, it's a duplicate (Issue 108/Audit)
+            if book_norm and book_norm in norm_following:
+                return following
+
+            norm_translated = _norm_for_cmp(translated)            
             # Match the first reference coordinate in the following text
-            match = re.match(r'((?:[1-3]?\s*[a-z][a-z ]{1,30}?)\s+)?(\d+:\d+|\d+)', norm_following)
+            # Allow optional punctuation after book name (Issue 108/Audit)
+            match = re.match(r'((?:[1-3]?\s*[a-z][a-z ]{1,30}?)[,;.]?\s+)?(\d+:\d+|\d+)', norm_following)
             if match:
                 base_following = match.group(0).strip()
+                
+                # Check for internal repetition in the following layer (Issue 26)
+                # e.g. "16:1516:15" or "John 16:15John 16:15"
+                if len(norm_following) >= 10:
+                    half = len(norm_following) // 2
+                    if norm_following[:half] == norm_following[half:]:
+                        following = following[:half]
+                        norm_following = norm_following[:half]
+                        match = re.match(r'((?:[1-3]?\s*[a-z][a-z ]{1,30}?)[,;.]?\s+)?(\d+:\d+|\d+)', norm_following)
+                        if match:
+                             base_following = match.group(0).strip()
+
                 if norm_translated.startswith(base_following) or norm_translated.endswith(base_following):
                     # It's a duplicate. We keep the `following` text.
                     # If the following text didn't have a book name, prepend the book name from the translation
                     # ONLY IF 'chap.' wasn't already there.
-                    if not match.group(1) and not has_chap_prefix:
-                        book_match = re.match(r'([1-3]?\s*[A-Za-z][A-Za-z ]{1,30}?)\s+\d', translated)
-                        if book_match:
-                            return book_match.group(1).strip() + ' ' + following
+                    if not match.group(1) and not has_chap_prefix and not already_has_book:
+                        if book_name:
+                            return book_name + ' ' + following
                     return following
-        # No following ref text, or it doesn't match — emit normal translation.
-        # But skip book name if chap prefix is present.
-        if has_chap_prefix:
+        # If the book name already appears right before the marker, don't prepend it
+        if already_has_book:
             # Extract just the chapter:verse from translated
-            coord_match = re.search(r'\d+:\d+(?:[-,]\s*\d+)*', translated)
+            coord_match = re.search(r'\d+:\d+', translated)
             if coord_match:
+                coord = coord_match.group(0)
+                # If following already starts with the coordinate, it's a duplicate (Issue 108/Audit)
+                # e.g. "Romans 8:29 <450829>8:29, 30" -> "Romans 8:29, 30"
+                follow_strip = following.lstrip()
+                if follow_strip.startswith(coord):
+                    return follow_strip[len(coord):]
+                if follow_strip.startswith(',' + coord):
+                    return follow_strip[len(coord)+1:]
+                if follow_strip.startswith(';' + coord):
+                    return follow_strip[len(coord)+1:]
+                
+                # Return only the coordinate if book name is already present
                 return coord_match.group(0) + following
+            # If no coordinate match, but book is already there, return following as is
+            return following
 
         return translated + following
 
@@ -283,14 +322,14 @@ def coordinate_redactor(blocks, page_height=PAGE_H, top_margin=TOP_MARGIN, botto
                 )
             )
             
-            # Bottom safety: Owen's footnotes or low body lines often sit at y=580-595
-            if y_center > page_height - 65 and not is_header_footer and len(line_text) > 15:
+            # Bottom safety: Owen's footnotes or low body lines often sit at y=580-605
+            if y_center > page_height - 70 and not is_header_footer and len(line_text) > 10:
                 keep_lines.append(line)
                 continue
 
             if y_center < top_margin and not is_header_footer:
                 # Top safety: don't clip lines that might be part of a chapter head
-                if y_center > 30 and len(line_text) > 30:
+                if y_center > 25 and len(line_text) > 20:
                     keep_lines.append(line)
                     continue
                 continue
@@ -315,7 +354,7 @@ def coordinate_redactor(blocks, page_height=PAGE_H, top_margin=TOP_MARGIN, botto
     return keep
 
 
-def extract_ages_nav(doc):
+def extract_ages_nav(doc, config=None):
     """
     Extract navigation hierarchy from the PDF's internal outline/bookmarks.
     Returns list of (level, title, page_num_0indexed).
@@ -338,11 +377,11 @@ def extract_ages_nav(doc):
         page = doc[pg]
         text = page.get_text()
         if 'CONTENTS OF VOLUME' in text:
-            return _parse_visual_toc(doc, pg)
+            return _parse_visual_toc(doc, pg, config=config)
     return []
 
 
-def _parse_visual_toc(doc, toc_page_num):
+def _parse_visual_toc(doc, toc_page_num, config=None):
     """
     Parse the visual 'CONTENTS OF VOLUME' page to extract chapter titles
     and map them to PDF page numbers.
@@ -364,6 +403,7 @@ def _parse_visual_toc(doc, toc_page_num):
     # Try to find page numbers for each chapter by scanning through pages
     toc_entries = []
     current_treatise = None
+    configured_treatises = (config or {}).get('treatises', [])
     
     for text in lines:
         text_upper = text.upper()
@@ -379,12 +419,18 @@ def _parse_visual_toc(doc, toc_page_num):
         if roman_match:
             toc_entries.append((3, text.strip(), ''))
             continue
-        # Treatise titles (all caps, short)
-        if text_upper == text and len(text) > 5 and len(text) < 60:
-            if any(kw in text_upper for kw in ('CHRISTOLOGIA', 'MEDITATIONS', 'CATECHISMS')):
-                toc_entries.append((1, text.strip(), ''))
-                current_treatise = text
-                continue
+        
+        # Match against configured treatises (Issue 108)
+        matched_treatise = None
+        for t in configured_treatises:
+            if t.upper() in text_upper or text_upper in t.upper():
+                matched_treatise = t
+                break
+        
+        if matched_treatise or (text_upper == text and len(text) > 5 and len(text) < 60):
+            toc_entries.append((1, text.strip(), ''))
+            current_treatise = text
+            continue
         
         # Prefatory notes, prefaces
         if text_upper in ('PREFATORY NOTE', 'PREFACE', 'ORIGINAL PREFACE') or 'PREFATORY' in text_upper:
@@ -460,12 +506,19 @@ def extract_structural_page(page, page_height=PAGE_H):
     current_kind = None
     current_text_parts = []
     in_heading_section = True
+    waiting_for_summary = False  # Track if we just hit a CHAPTER (Issue 108/Audit)
 
     def flush():
         nonlocal current_kind, current_text_parts
         if not current_text_parts:
             return
-        joined = '\n'.join(current_text_parts).strip() # Use \n to allow reflow logic to decide
+            
+        # Join major structural elements with space to keep them unified (Issue 108/Audit)
+        if current_kind in ('PART', 'CHAPTER', 'SUMMARY', 'SUBTITLE', 'DIGRESSION'):
+            joined = ' '.join(current_text_parts).strip()
+        else:
+            joined = '\n'.join(current_text_parts).strip()
+            
         if not joined:
             return
         if current_kind and current_kind != 'PLAIN':
@@ -482,6 +535,10 @@ def extract_structural_page(page, page_height=PAGE_H):
             line_is_volume = False
             line_is_roman_head = False
             line_is_subtitle = False
+            
+            first_span = line['spans'][0]
+            first_flags = first_span.get('flags', 0)
+            first_size = first_span.get('size', 0)
             
             all_italic = True
             for span in line['spans']:
@@ -507,15 +564,34 @@ def extract_structural_page(page, page_height=PAGE_H):
                         line_is_roman_head = True
                 elif color == COLOR_RED and size > 15:
                     line_is_volume = True
-                elif size == 12 and (flags & 16) and text.strip().isupper():
-                    line_is_subtitle = True
 
             line_text = ''.join(spans_text).strip()
             if not line_text:
                 continue
+
+            # Summary Criteria (Issue 108/25):
+            # 1. Direct follow-up to CHAPTER: any All-Caps block is a summary.
+            # We prioritize SUMMARY over SUBTITLE when waiting_for_summary.
+            line_is_summary = False
+            if waiting_for_summary:
+                if line_text.isupper() and len(line_text) > 4:
+                    line_is_summary = True
+                elif line_text:
+                     # If we hit non-all-caps text, summary section is over.
+                     waiting_for_summary = False
+
+            # Subtitle: All-caps bold, or specific Title Case keywords (even if not bold) (Issue 108)
+            # Use line_text for keyword check to avoid span-split issues
+            is_reader = any(kw in line_text for kw in ['To The Reader', 'Christian Reader', 'To the Reader'])
+            if (11.5 <= first_size <= 12.5) and not line_is_summary:
+                is_bold = bool(first_flags & 16)
+                is_all_caps = line_text.isupper()
+                if (is_bold and is_all_caps) or is_reader:
+                    line_is_subtitle = True
             
             # Subtitle detection: whole line must be uppercase (Issue 102/103)
-            if line_is_subtitle and not line_text.isupper():
+            # EXCEPT for specific keywords like 'To The Reader'
+            if line_is_subtitle and not line_text.isupper() and not is_reader:
                 line_is_subtitle = False
                 
             # Roman head detection: must be a standalone Roman numeral (Issue 12/19)
@@ -523,12 +599,13 @@ def extract_structural_page(page, page_height=PAGE_H):
                 line_is_roman_head = False
                 
             line_is_summary = False
-            first_span_italic = line['spans'][0].get('flags', 0) & 2
-            first_span_size = line['spans'][0].get('size', 0)
             if in_heading_section:
-                # Lenient: if it's mainly italic, or small text (verse ref)
-                # But don't catch lines that are clearly body text
-                if (first_span_italic or first_span_size < 10) and first_span_size <= 13.5:
+                # Summary Criteria (Issue 108):
+                # 1. Direct follow-up to CHAPTER: any All-Caps block is a summary.
+                if waiting_for_summary and line_text.isupper() and len(line_text) > 4:
+                    line_is_summary = True
+                # 2. Traditional italic/small text summaries.
+                elif (first_flags & 2 or first_size < 10) and first_size <= 13.5:
                     if len(line_text) < 300: # Summaries aren't usually huge paragraphs
                         line_is_summary = True
 
@@ -536,38 +613,49 @@ def extract_structural_page(page, page_height=PAGE_H):
             if line_is_part or line_is_volume: 
                 kind = 'PART'
                 in_heading_section = True
-            elif line_text.startswith('DIGRESSION') and 11 <= line['spans'][0].get('size', 0) <= 13:
+                waiting_for_summary = False
+            elif line_text.startswith('DIGRESSION') and 11 <= first_size <= 13:
                 kind = 'DIGRESSION'
                 in_heading_section = True
+                waiting_for_summary = False
             elif line_is_chapter: 
                 kind = 'CHAPTER'
                 in_heading_section = True
+                waiting_for_summary = True # Now we wait for the all-caps summary
             elif line_is_roman_head: 
                 kind = 'ROMAN_HEAD'
                 # A Roman head ends the heading/summary block
                 in_heading_section = False
-            elif line_is_subtitle: kind = 'SUBTITLE'
-            elif line_is_summary: kind = 'SUMMARY'
+                waiting_for_summary = False
+            elif line_is_summary: 
+                # Group multi-line all-caps summaries (Issue 108/Audit)
+                if current_kind != 'SUMMARY':
+                    if current_text_parts:
+                        flush()
+                    current_kind = 'SUMMARY'
+                current_text_parts.append(line_text)
+                continue
+            elif line_is_subtitle: 
+                kind = 'SUBTITLE'
+                waiting_for_summary = False
             
             if kind == 'PLAIN' and in_heading_section:
                 # We hit substantial body text that isn't italic, stop looking for headers/summaries
-                if not first_span_italic and len(line_text) > 25:
+                if not (first_flags & 2) and len(line_text) > 25:
                     in_heading_section = False
+                    waiting_for_summary = False
             
             if kind != 'PLAIN':
-                # Structural lines should almost always be standalone
-                # EXCEPT if the kind is the SAME as previous, we might join (e.g. multi-line summary)
-                # UNLESS it's a major header kind.
-                if kind != current_kind or kind in ('PART', 'CHAPTER', 'ROMAN_HEAD', 'SUBTITLE', 'DIGRESSION'):
+                # Structural lines should be joined if they are the SAME kind and adjacent
+                # (Issue 26: avoid fragmented <h2> for multi-line subtitles)
+                if kind != current_kind:
                     if current_text_parts:
                         flush()
                     current_kind = kind
                 
                 current_text_parts.append(line_text)
-                # If it's a major kind, flush immediately to ensure it's standalone
-                if kind in ('PART', 'CHAPTER', 'ROMAN_HEAD', 'SUBTITLE', 'DIGRESSION'):
-                    flush()
-                    current_kind = None
+                # We no longer flush immediately for major kinds to allow multi-line headers
+                # but we will flush if we hit a different kind or plain text.
                 continue
             
             if kind != current_kind:
@@ -946,7 +1034,7 @@ class Chapter:
     footnote_refs: list = field(default_factory=list)
 
 
-def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
+def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=None):
     """
     Build chapters by grouping pages based on PDF TOC entries.
     Merges consecutive same-level entries and handles hierarchy.
@@ -990,30 +1078,25 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
     
     # Process TOC entries
     current_treatise = ""
+    configured_treatises = (config or {}).get('treatises', [])
+    
     for i, (level, title, page_0idx) in enumerate(nav_entries):
         # Determine if this is a treatise title page
         title_upper = title.upper()
-        is_treatise = any(kw in title_upper for kw in [
-            'PART', 'BOOK', 'CHRISTOLOGIA', 'MEDITATIONS AND DISCOURSES',
-            'TWO SHORT CATECHISMS', 'DECLARATION OF THE GLORIOUS',
-            'A DECLARATION', 'A VINDICATION', 'COMMUNION WITH GOD',
-            'COMMUNION WITH THE HOLY GHOST', 'THE DOCTRINE OF THE TRINITY'
-        ])
+        
+        # Use relative matching against configured treatises (Issue 108)
+        # We check if the TOC title contains any of our configured treatise titles
+        matched_treatise = None
+        for t in configured_treatises:
+            if t.upper() in title_upper or title_upper in t.upper():
+                matched_treatise = t
+                break
+                
+        is_treatise = bool(matched_treatise) or any(kw in title_upper for kw in ['PART', 'BOOK'])
         
         if is_treatise:
-            # Clean up the treatise name for parenthetical use
-            if 'BRIEF DECLARATION' in title_upper or 'DOCTRINE OF THE TRINITY' in title_upper:
-                current_treatise = 'Doctrine of the Trinity'
-            elif 'VINDICATION' in title_upper:
-                current_treatise = 'Vindication'
-            elif 'COMMUNION' in title_upper:
-                current_treatise = 'Communion with God'
-            elif 'CHRISTOLOGIA' in title_upper:
-                current_treatise = 'Christologia'
-            elif 'GLORY OF CHRIST' in title_upper:
-                current_treatise = 'Glory of Christ'
-            elif 'CATECHISMS' in title_upper:
-                current_treatise = 'Catechisms'
+            if matched_treatise:
+                current_treatise = matched_treatise
             else:
                 current_treatise = title_case(title)
 
@@ -1027,7 +1110,7 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
             end_page = page_0idx
         
         # Skip if bookends/empty
-        raw_text = get_pages_text(doc, pages_md, page_0idx, end_page, title=title)
+        raw_text = get_pages_text(doc, pages_md, page_0idx, end_page, title=title, config=config)
         
         # Handle shared start page: if this chapter starts on a page shared with previous,
         # extract only from the heading onwards.
@@ -1051,9 +1134,19 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map):
                 # This entry and the next one share the SAME START PAGE.
                 # We must truncate THIS entry before the next one's heading.
                 # Usually happens for Treatise title pages that are followed immediately by Chapter 1.
-                marker = re.search(r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]', raw_text)
-                if marker:
-                    raw_text = raw_text[:marker.start()].strip()
+                
+                # Find all markers
+                markers = list(re.finditer(r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]', raw_text))
+                if len(markers) > 1:
+                    # Find the first 'major' marker after the initial one to truncate at.
+                    # If current is PART/TREATISE, we stop at the next CHAPTER or PART.
+                    truncate_at = len(raw_text)
+                    for m in markers[1:]:
+                        kind = m.group(0)[2:-2]
+                        if kind in ('PART', 'CHAPTER', 'DIGRESSION'):
+                            truncate_at = m.start()
+                            break
+                    raw_text = raw_text[:truncate_at].strip()
             elif end_page == next_start_page - 1:
                 # We need to check the actual start page of the next entry.
                 # If it has content before the heading, it belongs here.
@@ -1160,17 +1253,24 @@ def _remove_adjacent_line_overlaps(text):
     return '\n'.join(out)
 
 
-def clean_text(text):
+def clean_text(text, config=None):
     """Sanitize extracted text before paragraph reconstruction."""
     if not text:
         return ''
 
-    # 0. Owen-specific OCR repairs (Issue 75)
-    text = _repair_owen_ocr_errors(text)
+    # 0. Character normalization (Issue: Gideon/AGES legacy encoding)
+    text = normalize_characters(text)
+
+    # 0a. Owen-specific OCR repairs (Issue 75/108)
+    text = _repair_owen_ocr_errors(text, config=config)
 
     # 0b. Normalize spaced-caps OCR and I WILL / I AM mangles
     text = _normalize_spaced_caps(text)
     text = _normalize_i_will(text)
+    
+    # 0c. Scripture range OCR repairs (Issue 108)
+    # Handles "7 ( 8)" -> "7, 8" misreads
+    text = re.sub(r'(\d)\s+\(\s*(\d+)\s*\)', r'\1, \2', text)
 
     # 1. Translate AGES scripture reference codes to readable citations.
     #    <430316> → John 3:16. Must run BEFORE EMPTY_BRACKET_RE so we don't
@@ -1192,6 +1292,12 @@ def clean_text(text):
     # 4. Strip leading/trailing whitespace per line
     text = '\n'.join(line.strip() for line in text.split('\n'))
     
+    # 4a. Ensure space between Greek/Hebrew and English (Issue 108/Audit)
+    # Handles cases like “ἰσάγγελοι”like -> “ἰσάγγελοι” like
+    # Includes common trailing punctuation/quotes in the junction check
+    text = re.sub(r'([\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF][”"’)]?)([A-Za-z])', r'\1 \2', text)
+    text = re.sub(r'([A-Za-z])([“"‘(]?[\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF])', r'\1 \2', text)
+
     # 4b. Aggressive remove leading Latin artifact noise before Greek (Issue: j jEgw)
     # Standalone 'j' or 'J' followed by space or before Greek is noise.
     text = re.sub(r'(?i)\b[jJ]\s+', '', text)
@@ -1244,13 +1350,21 @@ def reconstruct_paragraphs(text):
             if current:
                 prev = current[-1]
                 # Hard structural: markers that are nearly always paragraph starts
+                # Q./A./Ques./Ans. must be UPPERCASE to avoid scholastic citations (Issue 17/26)
                 hard_structural = re.match(
                     r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
                     r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
                     r'\d+(?:st|nd|rd|th)\b[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)',
-                    stripped,
-                    re.I
+                    stripped
                 )
+                if not hard_structural:
+                     # Fallback for case-insensitive Roman numerals but NOT Q/A
+                     hard_structural = re.match(
+                        r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
+                        r'\d+(?:st|nd|rd|th)\b[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)',
+                        stripped,
+                        re.I
+                    )
                 ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
                 is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
 
@@ -1415,16 +1529,37 @@ def _paragraph_needs_text_continuation(prev, current):
 
 
 def _is_probable_duplicate_fragment(prev, current):
-    """Drop short ghost fragments whose words already occur in the previous paragraph."""
-    if not prev or not current or len(current) > 260:
+    """Drop ghost fragments whose words already occur in the previous paragraph."""
+    if not prev or not current:
         return False
-    prev_words = set(re.findall(r"[a-z0-9:]+", _norm_for_dedupe(prev)))
-    current_words = re.findall(r"[a-z0-9:]+", _norm_for_dedupe(current))
+    
+    # Increase threshold for Owen volumes (Issue 108/Audit)
+    if len(current) > 1200: 
+        return False
+        
+    prev_norm = _norm_for_dedupe(prev)
+    current_norm = _norm_for_dedupe(current)
+    
+    # 1. Prefix match (Issue 108/Audit ch032): 
+    # If the current paragraph is a prefix of the previous one, it is a ghost.
+    if prev_norm.startswith(current_norm) and len(current_norm) > 30:
+        return True
+
+    # 2. Word overlap match
+    prev_words = set(re.findall(r"[a-z0-9:]+", prev_norm))
+    current_words = re.findall(r"[a-z0-9:]+", current_norm)
+    
     useful = [w for w in current_words if len(w) > 2]
     if len(useful) < 8:
         return False
+        
     overlap = sum(1 for w in useful if w in prev_words)
-    return overlap / len(useful) >= 0.82
+    ratio = overlap / len(useful)
+    
+    # High confidence for short runs, very high for longer ones
+    if len(useful) < 25:
+        return ratio >= 0.85
+    return ratio >= 0.95
 
 
 def _remove_repeated_opening_clause(text):
@@ -1438,30 +1573,24 @@ def _remove_repeated_opening_clause(text):
 
 
 def _collapse_adjacent_duplicate_refs(text):
-    """Collapse directly-concatenated duplicate scripture references.
-
-    Handles the case where a AGES numeric code and the already-decoded
-    human-readable text both end up in the same paragraph, producing patterns
-    like "Isaiah 9:6Isaiah 9:6" or "Song of Solomon 5:2Song of Solomon 5:2".
-    This catches any remaining cases after the context-aware code translation,
-    including multiword book names whose reference wraps a PDF line break.
-
-    The second occurrence is removed; if it carries extra verse modifiers
-    (e.g. "Romans 8:3-5" after "Romans 8:3"), the longer form is kept instead.
-    """
+    """Collapse directly-concatenated duplicate scripture references."""
     def _dedup_repl(m):
         first = m.group(1)
         second = m.group(2)
-        # Keep whichever is longer (second may have extra verse range)
-        return second if len(second) > len(first) else first
+        # Normalize for comparison (Issue 108/Audit)
+        f_norm = re.sub(r'[^a-z0-9:]', '', first.lower())
+        s_norm = re.sub(r'[^a-z0-9:]', '', second.lower())
+        
+        if f_norm == s_norm or f_norm.endswith(s_norm) or s_norm.endswith(f_norm):
+             return first if len(first) >= len(second) else second
+        return m.group(0)
 
-    # Pattern: a scripture ref (book + chapter:verse[range]) immediately followed
-    # by the same book name again — no separator between them.
-    # Note: no \b on the second group — the first group's match ends exactly where
-    # the second starts (digit→letter), so the boundary is implicit.
+    # Pattern: Book Ch:v followed by optional punctuation and potentially a repeat.
+    # Allow zero or more punctuation/spaces between them (Issue 108/Audit)
     _ADJ_DUP_RE = re.compile(
-        r'(\b(?:[1-3]\s+)?[A-Z][a-zA-Z]+(?: of [A-Za-z]+)?(?: of [A-Za-z]+)?\s+\d+:\d+(?:[-,]\s*\d+)*)'
-        r'((?:[1-3]\s+)?[A-Z][a-zA-Z]+(?: of [A-Za-z]+)?(?: of [A-Za-z]+)?\s+\d+:\d+(?:[-,]\s*\d+)*)',
+        r'(\b(?:[1-3]\s+)?[A-Z][a-zA-Z ]{1,30}?\s+\d+:\d+(?:[-,]\s*\d+)*)'
+        r'[\s,;.]*'
+        r'((?:(?:[1-3]\s+)?[A-Z][a-zA-Z, ]{1,30}?\s+)?\d+:\d+(?:[-,]\s*\d+)*)',
     )
     previous = None
     while previous != text:
@@ -1593,11 +1722,21 @@ def post_process_paragraphs(paragraphs):
     for para in paragraphs:
         para = _remove_repeated_opening_clause(para.strip())
         para = _collapse_adjacent_duplicate_refs(para)
+        
+        # Aggressive book doubling fix (Issue 108/Audit)
+        # Handles "Romans 8:29Romans" or "Hebrews 9:14Hebrews"
+        para = re.sub(r'(\b(?:[1-3]\s+)?[A-Z][a-z]{3,}\s+\d+:\d+(?:[-,]\s*\d+)*)\s*([A-Z][a-z]{3,})\b', 
+                      lambda m: m.group(1) if m.group(1).startswith(m.group(2)) else m.group(0), para)
+        
+        # Aggressive coordinate doubling fix (Issue 108/Audit)
+        # Handles "Romans 8:29, 8:29" or "Romans 8:29 8:29"
+        para = re.sub(r'(\b(?:[1-3]\s+)?[A-Z][a-z]{3,}\s+\d+:\d+(?:[-,]\s*\d+)*)[\s,;.]+(\d+:\d+(?:[-,]\s*\d+)*)\b',
+                      lambda m: m.group(1) if m.group(1).endswith(m.group(2)) else m.group(0), para)
+        
         para = _remove_interrupted_duplicate_clause(para)
         para = _remove_duplicate_scripture_tail(para)
         para = _remove_adjacent_repeated_word_runs(para)
         para = _repair_known_catechism_ghosts(para)
-        para = _repair_known_source_losses(para)
         if not para:
             continue
 
@@ -1651,15 +1790,17 @@ def post_process_paragraphs(paragraphs):
     return _remove_global_ngram_duplicates(cleaned)
 
 
-def _remove_global_ngram_duplicates(paragraphs, size=12):
+def _remove_global_ngram_duplicates(paragraphs, size=14):
     """
     Remove non-consecutive paragraph-level duplicates using n-gram anchors.
     This catches 'interrupted' ghost layers that sequential de-duplication misses.
     """
-    seen_ngrams = set()
+    seen_anchor_pairs = set()
     cleaned = []
     for para in paragraphs:
-        words = [w.lower() for w in re.findall(r"[A-Za-z0-9]+", para)]
+        # Normalize for dedupe to avoid minor spacing/punctuation differences
+        para_norm = _norm_for_dedupe(para)
+        words = [w for w in re.findall(r"[a-z0-9:]+", para_norm)]
         if len(words) < size:
             cleaned.append(para)
             continue
@@ -1667,22 +1808,13 @@ def _remove_global_ngram_duplicates(paragraphs, size=12):
         # Check first and last n-gram of the paragraph
         first_anchor = tuple(words[:size])
         last_anchor = tuple(words[-size:])
+        anchor_pair = (first_anchor, last_anchor)
 
-        # If it's a long paragraph, also check a middle anchor
-        middle_anchor = None
-        if len(words) > size * 3:
-            mid = len(words) // 2
-            middle_anchor = tuple(words[mid:mid + size])
-
-        if first_anchor in seen_ngrams or last_anchor in seen_ngrams:
-            # Ghost layers are almost always exact paragraph repeats
-            # We limit the check to size 12+ to avoid common short phrases
+        # Require BOTH anchors as a pair to match to be considered a ghost-layer duplicate (Issue 108/Audit)
+        if anchor_pair in seen_anchor_pairs:
             continue
 
-        seen_ngrams.add(first_anchor)
-        seen_ngrams.add(last_anchor)
-        if middle_anchor:
-            seen_ngrams.add(middle_anchor)
+        seen_anchor_pairs.add(anchor_pair)
         cleaned.append(para)
     return cleaned
 
@@ -1713,7 +1845,7 @@ def deduplicate_junction(prev_text, next_text, threshold=0.85):
     return next_text
 
 
-def get_pages_text(doc, pages_md, start_page, end_page, healer_mode=True, title="", chapter_id=""):
+def get_pages_text(doc, pages_md, start_page, end_page, healer_mode=True, title="", chapter_id="", config=None):
     """Get merged text for a range of pages with optional paragraph healing.
 
     Paragraph healing must be holistic across the full page range. Running
@@ -1735,12 +1867,9 @@ def get_pages_text(doc, pages_md, start_page, end_page, healer_mode=True, title=
 
     # Clean and heal the whole chapter/range at once so sentences that cross
     # PDF page boundaries stay inside the same EPUB paragraph.
-    cleaned = clean_text('\n'.join(raw_parts))
+    cleaned = clean_text('\n'.join(raw_parts), config=config)
     if not cleaned:
         return ''
-
-    if not healer_mode:
-        return cleaned
 
     return '\n\n'.join(reconstruct_paragraphs(cleaned))
 
@@ -1800,8 +1929,8 @@ def extract_volume(vol_num: int, overrides: dict = None) -> dict:
     footnote_map = merge_footnotes(pdf_footnotes, thml_footnotes)
 
     # Chapter structure from TOC
-    nav_entries = extract_ages_nav(doc)
-    chapters = build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map)
+    nav_entries = extract_ages_nav(doc, config=config)
+    chapters = build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=config)
 
     # Determine front-matter prose style per chapter
     _FM_PROSE_KEYWORDS = [

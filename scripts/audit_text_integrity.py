@@ -24,6 +24,14 @@ from urllib.parse import unquote
 import fitz
 from lxml import etree
 
+# Set up path to import shared logic
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    from shared import convert_greek_word, convert_gideon_hebrew, clean_greek_text
+except ImportError:
+    convert_greek_word = lambda x: x
+    convert_gideon_hebrew = lambda x: x
+    clean_greek_text = lambda x: x
 
 NS = {
     "container": "urn:oasis:names:tc:opendocument:xmlns:container",
@@ -31,7 +39,7 @@ NS = {
     "xhtml": "http://www.w3.org/1999/xhtml",
 }
 
-WORD_RE = re.compile(r"[A-Za-z][A-Za-z'’-]*")
+WORD_RE = re.compile(r"[\w\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff'’-]+", re.UNICODE)
 SPACE_RE = re.compile(r"\s+")
 TAG_RE = re.compile(r"<[^>]+>")
 HEADER_RE = re.compile(
@@ -82,14 +90,14 @@ SCRIPTURE_TRAIL_RE = re.compile(
 VERSE_TRAIL_RE = re.compile(r"\b(?:verse|verses|chap|chapter)\.?\s+\d+(?:[-,;]\s*\d+)*,\s*$", re.I)
 REFERENCE_STEM_RE = re.compile(r"\b(?:verse|verses|chap|chapter)[.,]?\s*$", re.I)
 REFERENCE_CONTINUATION_START_RE = re.compile(r"^\d{1,3}(?::\d+)?(?:[-,;]\s*\d+)*[,:;]?\b")
-CITATION_TRAIL_RE = re.compile(r"\b(?:cap|lib)\.?\s+\d+(?:[-,;]\s*\d+)*,\s*$", re.I)
+CITATION_TRAIL_RE = re.compile(r"\b(?:cap|lib|sect|dist|part|vol|p|q|a|m|ad)\.?\s+\d+(?:[-,;]\s*\d+)*,\s*$", re.I)
 CITATION_AUTHOR_TRAIL_RE = re.compile(
     r"\b(?:See\s+)?(?:August|Austin|Athan|Chrysost|Clem|Iren|Tertull|Jerome|"
-    r"Basil|Nazianz|Cyprian|Ambros|Hilary|Epiphan)\.?\s*$",
+    r"Basil|Nazianz|Cyprian|Ambros|Hilary|Epiphan|Aquin|Alexand|Alens)\.?\s*$",
     re.I,
 )
 CITATION_ABBREV_START_RE = re.compile(
-    r"^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Homil|Haer|Dial)\.\s+",
+    r"^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Homil|Haer|Dial|Quest|Art|Dist|Part|Vol)\.?\s+",
     re.I,
 )
 ROMAN_PROSE_START_RE = re.compile(r"^[IVXLCDM]+\.\s+\S+", re.I)
@@ -263,10 +271,28 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
 
 def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
     pages: list[str] = []
+    GREEK_FONTS = {"Koine-Medium", "ENLFEN+Koine-Medium"}
+    HEBREW_FONTS = {"Gideon-Medium", "MOLFEN+Gideon-Medium"}
+
     with fitz.open(pdf_path) as doc:
         for page in doc:
-            text = clean_text(page.get_text("text"))
-            pages.append(text)
+            blocks = page.get_text("dict")["blocks"]
+            page_content = []
+            for b in blocks:
+                if b["type"] != 0:
+                    continue
+                for line in b["lines"]:
+                    line_text = []
+                    for span in line["spans"]:
+                        text = span["text"]
+                        font = span.get("font", "")
+                        if any(gf in font for gf in GREEK_FONTS):
+                            text = clean_greek_text(convert_greek_word(text))
+                        elif any(hf in font for hf in HEBREW_FONTS):
+                            text = convert_gideon_hebrew(text)
+                        line_text.append(text)
+                    page_content.append(" ".join(line_text))
+            pages.append(clean_text("\n".join(page_content)))
     return pages, {"page_count": len(pages)}
 
 
@@ -657,25 +683,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
                 "next": next_text[:180],
             })
 
-    previous_number_start: tuple[str, int] | None = None
     for para in body_paras:
         text = para.text.strip()
-        number_start = re.match(r"^(\d{1,3})\.?\s+\S+", text)
-        if number_start:
-            number = int(number_start.group(1))
-            continues_numbered_run = (
-                previous_number_start is not None
-                and previous_number_start[0] == para.file
-                and previous_number_start[1] == number - 1
-            )
-            if number >= 10 and not continues_numbered_run:
-                suspicious_large_number_starts.append({
-                    "file": para.file,
-                    "text": text[:220],
-                })
-            previous_number_start = (para.file, number)
-        else:
-            previous_number_start = None
         if len(text) >= 35:
             continue
         if LIST_OR_LABEL_RE.match(text):
@@ -684,16 +693,34 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
             continue
         short_fragments.append({"file": para.file, "text": text})
 
-    large_start_locations = []
+    # Suspicious large-number starts: catch "Psalm 42" being split into "Psalm" and "42."
+    all_numbered_starts = []
     for idx, para in enumerate(body_paras):
-        match = re.match(r"^(\d{2,3})\.?\s+\S+", para.text.strip())
+        match = re.match(r"^(\d{1,3})\.?\s+\S+", para.text.strip())
         if match:
-            large_start_locations.append((idx, para.file, int(match.group(1)), para.text.strip()))
+            all_numbered_starts.append((idx, para.file, int(match.group(1)), para.text.strip()))
+
     suspicious_large_number_starts = []
-    for idx, file_name, number, text in large_start_locations:
-        nearby = large_start_locations[max(0, large_start_locations.index((idx, file_name, number, text)) - 4):]
+    for i, (idx, file_name, number, text) in enumerate(all_numbered_starts):
+        if number < 10:
+            continue
+
+        # 1. Punctuation check: if previous para in same file didn't end in punctuation,
+        # it's a split/continuation (already caught by split_candidates), not a suspicious start.
+        if idx > 0:
+            prev_p = body_paras[idx - 1]
+            if prev_p.file == file_name and not TERMINAL_RE.search(prev_p.text.strip()):
+                continue
+
+        # 2. Sequence check: if it's part of a numbered list (has neighbor N-1 or N+1 nearby),
+        # it is a valid intentional start.
+        # Look wider (10 paras) for points in long discourses.
+        nearby = all_numbered_starts[max(0, i - 10):i + 11]
         has_neighbor = any(
-            other_file == file_name and abs(other_number - number) == 1 and abs(other_idx - idx) <= 4
+            other_idx != idx
+            and other_file == file_name
+            and abs(other_number - number) == 1
+            and abs(other_idx - idx) <= 10
             for other_idx, other_file, other_number, _ in nearby
         )
         if not has_neighbor:
@@ -781,19 +808,25 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         if "roman-list-item" in para.classes.split():
             continue
         if ROMAN_PROSE_START_RE.match(text):
-            allowed, next_expected = is_allowed_roman_list_item(
-                text,
-                previous_body_text,
-                expected_roman_list_number,
-            )
-            if allowed:
-                expected_roman_list_number = next_expected
+            # To reduce false positives (like "ill." being part of "will" after a break),
+            # only flag if previous paragraph was empty or ended with punctuation.
+            if previous_body_text and not TERMINAL_RE.search(previous_body_text):
+                # Probably a continuation, ignore Roman marker
+                pass
             else:
-                expected_roman_list_number = None
-                roman_heading_candidates.append({
-                    "file": para.file,
-                    "text": text[:220],
-                })
+                allowed, next_expected = is_allowed_roman_list_item(
+                    text,
+                    previous_body_text,
+                    expected_roman_list_number,
+                )
+                if allowed:
+                    expected_roman_list_number = next_expected
+                else:
+                    expected_roman_list_number = None
+                    roman_heading_candidates.append({
+                        "file": para.file,
+                        "text": text[:220],
+                    })
         elif text:
             expected_roman_list_number = expected_roman_list_number
         if has_inline_structural_marker(text, para.html):
