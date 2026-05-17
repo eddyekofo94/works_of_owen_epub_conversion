@@ -138,6 +138,11 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
     r'enchirid|distinct|q|a|p|ad|m)\.?\s*$'
     r'|'
+    # Scholarly citation tails: "cap. 8," / "q. 81,"
+    r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+    r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+    r'\.?\s+\d+(?:[-,;]\s*\d+)*,?\s*$'
+    r'|'
     # Page references: "p. 43" or "pp. 43" — should not be sentence ends
     r'\bp+\.\s+\d{1,4}\s*$'
     r'|'
@@ -167,7 +172,7 @@ MARKDOWN_STRUCTURAL_START_RE = re.compile(
 _SCHOLASTIC_LABEL_RE = re.compile(
     r'(?<![A-Z])'           # Not mid-word all-caps
     r'(?P<label>'
-    r'(?:Obj(?:ection)?|Ans(?:wer)?|Sol(?:ution)?|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?)\.'
+    r'(?:Obj(?:ection)?\.|Ans(?:wer)?\.(?:\s+\d+\.)?|Sol(?:ution)?\.|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?)'
     r')'
     r'(?P<rest>\s)',
     re.I,
@@ -176,7 +181,7 @@ _SCHOLASTIC_LABEL_RE = re.compile(
 _SCHOLASTIC_ANCHOR_SPLIT_RE = re.compile(
     r'([.!?"\u201d])\s+'           # closing punctuation / quote
     r'(?P<label>'
-    r'(?:Obj(?:ection)?|Ans(?:wer)?|Sol(?:ution)?|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?)\.'
+    r'(?:Obj(?:ection)?\.|Ans(?:wer)?\.(?:\s+\d+\.)?|Sol(?:ution)?\.|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?)'
     r')\s',
     re.I,
 )
@@ -210,7 +215,7 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
     # 3. Ensure labels at paragraph start are bold
     html = re.sub(
         r'(<p(?:\s[^>]*)?>)\s*'
-        r'(?P<label>(?:Obj(?:ection)?|Ans(?:wer)?|Sol(?:ution)?|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?)\.)\s',
+        r'(?P<label>(?:Obj(?:ection)?\.|Ans(?:wer)?\.(?:\s+\d+\.)?|Sol(?:ution)?\.|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?))\s',
         lambda m: f'{m.group(1)}<b class="scholastic-label">{m.group("label")}</b> ',
         html,
         flags=re.I,
@@ -242,10 +247,32 @@ def _normalize_i_will(text: str) -> str:
     return text
 
 
+def _normalize_scholarly_citation_artifacts(text: str) -> str:
+    """Repair OCR punctuation that would split scholarly citation chains."""
+    if not text:
+        return text
+    text = re.sub(
+        r'\b(?P<label>cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|'
+        r'dial|enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\s*\.\s*,\s*(?=\d)',
+        lambda m: f'{m.group("label")}. ',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\b(?P<label>chapter|chap)\s*(?:\.\s*)?,\s*(?=\d)',
+        lambda m: f'{m.group("label")} ' if m.group("label").lower() == 'chapter' else f'{m.group("label")}. ',
+        text,
+        flags=re.I,
+    )
+    return text
+
+
 def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     """
     Repair known OCR character misreads using volume-specific configuration.
     """
+    text = _normalize_scholarly_citation_artifacts(text)
     if not config:
         return text
         
@@ -379,6 +406,8 @@ def _split_inline_structural_markers(para):
         after_start = match.start('marker')
 
         marker_is_wrapped = marker.startswith(('(', '[', '**(', '**['))
+        if marker in {'q.', 'a.', 'm.', 'p.'} and re.match(r'\s*\d', para[match.end():]):
+            continue
         has_list_intro_before_reference = bool(re.search(
             r'\b(?:here\s+is|here\s+are|as\s+follows|following)\b.{0,320}$',
             before,
@@ -2012,7 +2041,7 @@ def is_toc_continuation_page(page, page_num=None):
     return (chapter_hits + part_hits + numbered_hits) >= 1
 
 
-def format_treatise_title_page(page):
+def format_treatise_title_page(page, limit_to_title=False):
     """Build specialized inner treatise title page (e.g. Christologia) with PDF-accurate layout.
     
     Handles:
@@ -2053,12 +2082,23 @@ def format_treatise_title_page(page):
 
     parts = ['<section class="treatise-title-page" epub:type="titlepage">']
     
+    def starts_body_or_chapter(line_text):
+        normalized = re.sub(r'\s+', ' ', line_text).strip()
+        return bool(re.match(
+            r'^(?:CHAPTER\s+\d+\.?|Ques\.?\s+\d+\.|Q\.\s*\d+\.|Ans\.?\s+\d+\.|A\.\s*\d+\.)\b',
+            normalized,
+            re.I,
+        ))
+
     # 2. Process groups with lookahead for merging
     i = 0
     while i < len(lines_data):
         line = lines_data[i]
         text = line['text']
         y_pos = line['bbox'][1]
+
+        if limit_to_title and starts_body_or_chapter(text):
+            break
         
         # Detect Quote block at bottom (usually y > 500 on 792pt page)
         if (text.startswith(('“', '"')) or y_pos > 500) and i >= len(lines_data) - 6:

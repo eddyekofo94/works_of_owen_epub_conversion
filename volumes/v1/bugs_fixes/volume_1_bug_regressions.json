@@ -12,30 +12,10 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 76,
+      "observed": 72,
       "budget": 116,
       "status": "ok",
       "samples": [
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,",
-          "next": "a. 3, ad prim., and q., 84,"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "a. 3, ad prim., and q., 84,",
-          "next": "a. 1, ad tertium; Alexand. Alens. p. 3,"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "a. 1, ad tertium; Alexand. Alens. p. 3,",
-          "next": "q. 30,"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "m. 1,",
-          "next": "a. 3."
-        },
         {
           "file": "EPUB/ch005.xhtml",
           "previous": "PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION",
@@ -65,6 +45,26 @@
           "file": "EPUB/ch011.xhtml",
           "previous": "POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON",
           "next": "It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "And he discharged this office four ways: —",
+          "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
+          "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "previous": "THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST",
+          "next": "A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "previous": "HONOR DUE TO THE PERSON OF CHRIST — THE NATURE AND CAUSES OF IT",
+          "next": "Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re"
         }
       ]
     },
@@ -123,7 +123,7 @@
           "count": 6
         },
         {
-          "phrase": "of the glory of god in the face of jesus",
+          "phrase": "unto us child is born unto us son is given",
           "count": 6
         }
       ]
@@ -419,6 +419,13 @@
       "samples": []
     },
     {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
       "label": "Noteref links without spacing class",
       "observed": 0,
       "budget": 0,
@@ -518,33 +525,17 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 13,
+      "observed": 8,
       "budget": 38,
       "status": "ok",
       "samples": [
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "text": "a"
-        },
         {
           "file": "EPUB/ch020.xhtml",
           "text": "i"
         },
         {
-          "file": "EPUB/ch024.xhtml",
-          "text": "w"
-        },
-        {
           "file": "EPUB/ch030.xhtml",
           "text": "a"
-        },
-        {
-          "file": "EPUB/ch040.xhtml",
-          "text": "g"
         },
         {
           "file": "EPUB/ch043.xhtml",
@@ -561,6 +552,14 @@
         {
           "file": "EPUB/ch051.xhtml",
           "text": "i"
+        },
+        {
+          "file": "EPUB/ch078.xhtml",
+          "text": "t"
+        },
+        {
+          "file": "EPUB/title_0.xhtml",
+          "text": "b"
         }
       ]
     },

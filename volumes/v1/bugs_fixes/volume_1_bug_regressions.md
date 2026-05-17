@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 76 | 116 | OK |
+| Possible faulty paragraph splits | 72 | 116 | OK |
 | Inline structural marker candidates | 1 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -38,6 +38,7 @@
 | Overlong headings containing body prose | 0 | 0 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
+| Fragmented Hebrew span-run files | 0 | 0 | OK |
 | Noteref links without spacing class | 0 | 0 | OK |
 | Scripture blockquote false positives | 0 | 0 | OK |
 | Orphan scripture brackets | 0 | 0 | OK |
@@ -52,7 +53,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 13 | 38 | OK |
+| Lowercase page fragments | 8 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -62,11 +63,11 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch004.xhtml; previous: their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,; next: a. 3, ad prim., and q., 84,
-- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q., 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
-- file: EPUB/ch004.xhtml; previous: a. 1, ad tertium; Alexand. Alens. p. 3,; next: q. 30,
-- file: EPUB/ch004.xhtml; previous: m. 1,; next: a. 3.
 - file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
+- file: EPUB/ch006.xhtml; previous: OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
+- file: EPUB/ch007.xhtml; previous: THE PERSON OF CHRIST THE MOST INEFFABLE EFFECT OF DIVINE WISDOM AND GOODNESS — THENCE THE NEXT CAUSE OF ALL TRUE RELIGION — IN WHAT SENSE IT IS SO; next: The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The 
+- file: EPUB/ch008.xhtml; previous: TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD; next: Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which 
+- file: EPUB/ch009.xhtml; previous: THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL; next: What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o
 
 ### Inline structural marker candidates
 
@@ -109,8 +110,8 @@
 
 ### Lowercase page fragments
 
-- file: EPUB/ch004.xhtml; text: a
-- file: EPUB/ch008.xhtml; text: a
 - file: EPUB/ch020.xhtml; text: i
-- file: EPUB/ch024.xhtml; text: w
 - file: EPUB/ch030.xhtml; text: a
+- file: EPUB/ch043.xhtml; text: i
+- file: EPUB/ch044.xhtml; text: i
+- file: EPUB/ch050.xhtml; text: i

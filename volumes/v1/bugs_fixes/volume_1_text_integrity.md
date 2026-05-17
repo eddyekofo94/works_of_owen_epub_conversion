@@ -1,46 +1,46 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 10
+- Warnings: 9
 - PDF pages: 644
 - EPUB text files: 83
-- EPUB paragraphs/headings: 3203
+- EPUB paragraphs/headings: 3060
 
 ## Coverage
 
 - PDF content tokens: 210900
-- EPUB content tokens: 214406
+- EPUB content tokens: 213786
 - Approximate PDF-to-EPUB coverage ratio: 0.9983
 - Pages checked: 635
-- Weak page matches: 5
-- Dense source windows checked: 25887
-- Missing dense source-window pages: 164
+- Weak page matches: 3
+- Dense source windows checked: 26620
+- Missing dense source-window pages: 135
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 602
 - Top-of-page windows skipped as unstable: 21
-- Missing top-of-page body windows: 2
+- Missing top-of-page body windows: 3
 - Bottom-of-page body windows checked: 555
 - Bottom-of-page windows skipped as unstable: 6
-- Missing bottom-of-page body windows: 22
+- Missing bottom-of-page body windows: 18
 
 ## Paragraphs
 
-- Body paragraphs checked: 2867
-- Possible faulty paragraph splits: 76
-- Structural starts excluded from split warnings: 174
-- Short fragments: 103
+- Body paragraphs checked: 2754
+- Possible faulty paragraph splits: 30
+- Structural starts excluded from split warnings: 169
+- Short fragments: 48
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 1
+- Suspicious large-number starts: 0
 - Roman heading candidates: 33
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 313
-- EPUB enumerator markers: 317
+- EPUB enumerator markers: 316
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 0
 
@@ -65,7 +65,6 @@
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
@@ -86,6 +85,7 @@
 ## Missing Top-Of-Page Body Windows
 
 - page: 157; sample: Hebrews 2:18; 4:15; 5:2. So is he also, as he alone who is able to succor, to relieve, and to deliver them. "He is able to succor them that are
+- page: 613; sample: A. In that for us he underwent the punishment due to our sin. Isaiah
 - page: 619; sample: A. No; essentially they are but one,f91 differing only in some outward administrations.
 
 ## Missing Bottom-Of-Page Body Windows
@@ -98,29 +98,25 @@
 - page: 156; sample: suffered, being tempted, he is touched with a feeling of our infirmities, and knows how to have compassion on them that are out of the way,
 - page: 195; sample: Matthew 3:17, "Lo, a voice from heaven, saying, heaven afterwards,
 - page: 241; sample: Ecclesiastes 7:29; unto. Wherein it did consist, see
-- page: 302; sample: Hebrews 1:3. These things are all spoken of the person of Christ, but belong unto it on account of his divine nature. So is it said of him, "Unto
-- page: 318; sample: 1:11, — and the "heaven must receive him," chap. 3:21; not these aspectable heavens which we behold, — for in his ascension "he passed
+- page: 380; sample: 1 Corinthians 1:21-25. Not to see the wisdom apostle declares at large,
+- page: 397; sample: Colossians 3:10. the saving knowledge of him does,
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch004.xhtml; previous: their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,; next: a. 3, ad prim., and q., 84,
-- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q., 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
-- file: EPUB/ch004.xhtml; previous: a. 1, ad tertium; Alexand. Alens. p. 3,; next: q. 30,
-- file: EPUB/ch004.xhtml; previous: m. 1,; next: a. 3.
 - file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
 - file: EPUB/ch006.xhtml; previous: OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
 - file: EPUB/ch007.xhtml; previous: THE PERSON OF CHRIST THE MOST INEFFABLE EFFECT OF DIVINE WISDOM AND GOODNESS — THENCE THE NEXT CAUSE OF ALL TRUE RELIGION — IN WHAT SENSE IT IS SO; next: The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The
 - file: EPUB/ch008.xhtml; previous: TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD; next: Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which
 - file: EPUB/ch009.xhtml; previous: THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL; next: What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o
 - file: EPUB/ch011.xhtml; previous: POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON; next: It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat
+- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
+- file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
+- file: EPUB/ch012.xhtml; previous: THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST; next: A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our
+- file: EPUB/ch013.xhtml; previous: HONOR DUE TO THE PERSON OF CHRIST — THE NATURE AND CAUSES OF IT; next: Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re
 
 ## Inline Structural Marker Candidates
 
 - file: EPUB/ch078.xhtml; text: A.M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the st...
-
-## Suspicious Large-Number Starts
-
-- file: EPUB/ch070.xhtml; text: 12. Matthew 5:20;, 8:1Romans, 8:1,2; Ephesians 4:22, 23; Titus 2:12.
 
 ## Roman Heading Candidates
 
@@ -159,7 +155,7 @@
 - phrase: of christ by faith in this world and by sight; count: 6
 - phrase: christ by faith in this world and by sight in; count: 6
 - phrase: by faith in this world and by sight in heaven; count: 6
-- phrase: of the glory of god in the face of jesus; count: 6
+- phrase: unto us child is born unto us son is given; count: 6
 
 ## Missing Word Samples
 
@@ -172,7 +168,6 @@
 
 ## Excess Word Samples
 
-- word: psalms; pdf: 2; epub: 16
 - word: faithfulness; pdf: 5; epub: 12
 
 ## Missing Greek Clauses

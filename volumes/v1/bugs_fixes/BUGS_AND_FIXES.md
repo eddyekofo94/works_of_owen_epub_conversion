@@ -872,10 +872,14 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-17T18:14:19.758543+00:00
+**Last run:** 2026-05-17T19:36:04.645622+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 4 warnings)
 
@@ -892,7 +896,7 @@ Reports:
 | NAV links | 82 |
 | Greek chars / untagged | 4282 / 8 |
 | Hebrew chars / untagged | 155 / 0 |
-| Noteref links / endnote anchors | 130 / 124 |
+| Noteref links / endnote anchors | 123 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -1006,11 +1010,15 @@ Warnings requiring triage:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-17T18:10:41.714579+00:00
-**Status:** WARN (10 warnings)
+**Last run:** 2026-05-17T19:35:54.698286+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1020,33 +1028,33 @@ Reports:
 |-------|--------|
 | PDF pages | 644 |
 | EPUB text files | 83 |
-| EPUB paragraphs/headings | 3203 |
+| EPUB paragraphs/headings | 3060 |
 | Approximate PDF-to-EPUB word coverage | 0.9983 |
-| Weak page matches | 5 |
-| Dense source windows checked | 25887 |
-| Missing dense source-window pages | 164 |
+| Weak page matches | 3 |
+| Dense source windows checked | 26620 |
+| Missing dense source-window pages | 135 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 602 |
 | Top-of-page windows skipped as unstable | 21 |
-| Missing top-of-page body windows | 2 |
+| Missing top-of-page body windows | 3 |
 | Bottom-of-page body windows checked | 555 |
 | Bottom-of-page windows skipped as unstable | 6 |
-| Missing bottom-of-page body windows | 22 |
-| Possible faulty paragraph splits | 76 |
-| Structural starts excluded from split warnings | 174 |
-| Short fragments | 103 |
+| Missing bottom-of-page body windows | 18 |
+| Possible faulty paragraph splits | 30 |
+| Structural starts excluded from split warnings | 169 |
+| Short fragments | 48 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 1 |
+| Suspicious large-number starts | 0 |
 | Roman heading candidates | 33 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 313 |
-| EPUB enumerator markers | 317 |
+| EPUB enumerator markers | 316 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 824 / 835 |
@@ -1064,7 +1072,6 @@ Warnings requiring triage:
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
@@ -1202,3 +1209,43 @@ Warnings requiring triage:
 2.  **Specialized Extraction:** Implemented `format_treatise_title_page()` to use PDF coordinates and font metadata to correctly group elements into top-left Greek markers, centered headings, and bottom quote blocks.
 3.  **Premium Styling:** Added comprehensive CSS for `.treatise-title-page` in `shared.py`, ensuring proper centering, font-weight hierarchy, and elegant spacing.
 4.  **Markdown Safeguard:** Updated `markdown_to_html()` to detect and pass-through these pre-rendered HTML sections without corruption.
+
+### 107. Scholarly citation false breaks (Issue 29) (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Patristic and scholastic references could split into separate paragraphs or gain bad comma punctuation, e.g. `De Trinitate, lib. 5 cap., 8,` followed by bold `9. Athanasius`, or `See Aquin. 22 q., 81,` followed by separate `a. 3` / `q. 84` fragments.
+**Root cause:**
+1. OCR cleanup allowed comma artifacts after scholarly abbreviations (`cap., 8`, `q., 81`).
+2. The inline structural splitter treated lowercase scholarly labels such as `q.` and `a.` as generic single-letter structural markers.
+3. The Volume 1 override `'( 8)' -> ', 8'` was interpreted as a regex and accidentally changed normal ` 8` citation text back into `, 8`.
+**Fix:**
+1. Added scholarly citation normalization in both extraction and rendering paths for `cap.`, `chap.`, `lib.`, `q.`, `a.`, `m.`, `p.`, and related abbreviations.
+2. Expanded citation-tail guards so numbered citation continuations are not promoted to new paragraphs.
+3. Prevented lowercase scholarly labels (`q.`, `a.`, `m.`, `p.`) followed by digits from being treated as structural markers.
+4. Narrowed the Volume 1 scripture-repair override to the literal parenthesized OCR artifact `r'\(\s*8\)'`.
+5. Added regression tests for the raw Issue 29 samples and for rendered EPUB recurrence.
+
+### 108. Repeated AGES reference cluster on PDF page 384 (Issue 32) (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The paragraph beginning `The church then knew him...` was corrupted around the scripture references, producing text like `1 Kings 8:121Kings`, `2 Chronicles 6:12 Chronicles him`, and a stray `Kings, 8:12; 4. Hitherto darkness`.
+**Root cause:** PyMuPDF4LLM produced a duplicated AGES verse-marker cluster on PDF page 384. The font-aware raw extraction for the same page was correct, but the normal-page path preferred the Markdown layer and therefore baked the duplicate marker text into the JSON intermediate.
+**Fix:**
+1. Added `_has_repeated_ages_marker_cluster()` in `extract.py` to detect nearby repeated AGES verse-marker runs.
+2. Updated `get_merged_page_text()` to fall back to font-aware raw extraction when a normal Markdown page contains this repeated-marker pattern, preserving any Markdown footnote markers.
+3. Added a pipeline-level regression test for PDF page 384 that runs through `get_pages_text()` and checks the exact intended reference sequence.
+4. Added an EPUB regression test that requires the corrected rendered passage and rejects the known corrupted strings.
+5. Rebuilt Volume 1 so `volume_1.json` and `volume_1.epub` contain the corrected text.
+
+### 109. Shared treatise starter pages swallowing first chapters (Issue 33) (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Treatise starter pages that share a PDF page with `CHAPTER 1` were rendered as full title pages, causing entries such as `PART 2 MEDITATIONS AND DISCOURSES CONCERNING THE GLORY OF CHRIST` and `THE GREATER CATECHISM` to swallow the first chapter heading and body text.
+**Root cause:** `get_merged_page_text()` immediately returned `format_treatise_title_page()` for detected mid-volume title pages. On mixed title/body pages this bypassed the structural extractor, so the TOC splitter could not find `[[CHAPTER]]` markers and both the title entry and chapter entry inherited title-page XHTML.
+**Fix:**
+1. Added an `allow_treatise_title_page` extraction switch so shared chapter entries can bypass title-page formatting and use structural extraction.
+2. Updated `format_treatise_title_page()` to stop title-page output at the first chapter or catechism Q/A transition.
+3. Treated standalone `Greater/Lesser Catechism` headings as treatise starters so their title entry is separated from the following catechism chapter.
+4. Rebuilt Volume 1 so the Part 2 and Greater Catechism entries are title-only and the following chapter entries render as normal chapter/catechism content.
+5. Added regression tests for both the intermediate JSON boundaries and final EPUB styling.
+
+### 110. Numbered `Ans. 1.` scholastic/catechism anchors (Issue 34) (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** OCR could produce `Ans . 1.` and the renderer did not consistently treat numbered answer anchors as a single structural label.
+**Root cause:** Cleaning normalized the stray space before the period, but the scholastic post-processor only bolded `Ans.` as the label, leaving numbered anchors partially formatted.
+**Fix:**
+1. Extended the scholastic anchor regexes to recognize `Ans. 1.` as one label.
+2. Added a focused regression test that normalizes `Ans . 1. There is no precedent nor example` and verifies the complete numbered label is bolded.

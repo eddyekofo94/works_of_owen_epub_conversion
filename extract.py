@@ -724,7 +724,40 @@ def extract_page_markdown(pages_md, page_idx):
     return '\n'.join(cleaned)
 
 
-def get_merged_page_text(doc, pages_md, page_idx):
+def _has_repeated_ages_marker_cluster(text):
+    """Return True when PyMuPDF4LLM duplicated nearby AGES verse-marker runs."""
+    if not text:
+        return False
+    markers = [(m.group(1), m.start()) for m in _AGES_MARKER_RE.finditer(text)]
+    if len(markers) < 4:
+        return False
+
+    positions_by_code = {}
+    for code, pos in markers:
+        positions_by_code.setdefault(code, []).append(pos)
+
+    repeated_pairs = []
+    for code, positions in positions_by_code.items():
+        if len(positions) < 2:
+            continue
+        for i, first in enumerate(positions[:-1]):
+            for second in positions[i + 1:]:
+                if 0 < second - first <= 900:
+                    repeated_pairs.append((first, second, code))
+                    break
+
+    if len(repeated_pairs) < 2:
+        return False
+
+    repeated_pairs.sort()
+    for idx, (first_a, second_a, _) in enumerate(repeated_pairs[:-1]):
+        for first_b, second_b, _ in repeated_pairs[idx + 1:]:
+            if abs(first_b - first_a) <= 300 or abs(second_b - second_a) <= 300:
+                return True
+    return False
+
+
+def get_merged_page_text(doc, pages_md, page_idx, allow_treatise_title_page=True):
     """
     Get text for a page:
     - For structural pages (Part/Chapter starts): use specialized extraction.
@@ -738,8 +771,8 @@ def get_merged_page_text(doc, pages_md, page_idx):
     page = doc[page_idx]
     ptype = detect_page_type(page, page_idx + 1)
     
-    if ptype == 'treatise_title_page':
-        return format_treatise_title_page(page)
+    if ptype == 'treatise_title_page' and allow_treatise_title_page:
+        return format_treatise_title_page(page, limit_to_title=True)
 
     is_struct = page_is_structural(page)
     font_type = page_has_special_fonts(page)
@@ -753,6 +786,14 @@ def get_merged_page_text(doc, pages_md, page_idx):
         # Preserve [fN] markers from Markdown that might be lost in raw text
         fn_markers = FOOTNOTE_MARKER_RE.findall(md_text)
         # Also check for standalone [fN] markers on their own lines
+        for fn in fn_markers:
+            marker = f'[f{fn}]'
+            if marker not in raw_text:
+                raw_text += f' {marker}'
+        return raw_text
+    elif _has_repeated_ages_marker_cluster(md_text):
+        raw_text = extract_page_text_with_fonts(page)
+        fn_markers = FOOTNOTE_MARKER_RE.findall(md_text)
         for fn in fn_markers:
             marker = f'[f{fn}]'
             if marker not in raw_text:
@@ -1092,7 +1133,15 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
                 matched_treatise = t
                 break
                 
-        is_treatise = bool(matched_treatise) or any(kw in title_upper for kw in ['PART', 'BOOK'])
+        standalone_catechism_title = bool(re.match(
+            r'^(?:THE\s+)?(?:GREATER|LESSER)\s+CATECHISM\.?$',
+            title_upper,
+        ))
+        is_treatise = (
+            bool(matched_treatise)
+            or any(kw in title_upper for kw in ['PART', 'BOOK'])
+            or standalone_catechism_title
+        )
         
         if is_treatise:
             if matched_treatise:
@@ -1110,7 +1159,17 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
             end_page = page_0idx
         
         # Skip if bookends/empty
-        raw_text = get_pages_text(doc, pages_md, page_0idx, end_page, title=title, config=config)
+        shares_previous_start = bool(chapters and chapters[-1].page_end == page_0idx)
+        allow_treatise_title_page = not (shares_previous_start and not is_treatise)
+        raw_text = get_pages_text(
+            doc,
+            pages_md,
+            page_0idx,
+            end_page,
+            title=title,
+            config=config,
+            allow_treatise_title_page=allow_treatise_title_page,
+        )
         
         # Handle shared start page: if this chapter starts on a page shared with previous,
         # extract only from the heading onwards.
@@ -1271,6 +1330,7 @@ def clean_text(text, config=None):
     # 0c. Scripture range OCR repairs (Issue 108)
     # Handles "7 ( 8)" -> "7, 8" misreads
     text = re.sub(r'(\d)\s+\(\s*(\d+)\s*\)', r'\1, \2', text)
+    text = _normalize_scholarly_citation_artifacts(text)
 
     # 1. Translate AGES scripture reference codes to readable citations.
     #    <430316> → John 3:16. Must run BEFORE EMPTY_BRACKET_RE so we don't
@@ -1311,6 +1371,38 @@ def clean_text(text, config=None):
     text = _remove_adjacent_duplicates(text)
     text = _remove_adjacent_line_overlaps(text)
     return clean_greek_text(text.strip())
+
+
+def _normalize_scholarly_citation_artifacts(text):
+    """Repair OCR punctuation that breaks patristic/scholastic citations.
+
+    AGES extraction sometimes turns citation abbreviations into forms like
+    "cap., 8" or splits "Chapter, 8." across lines. Those commas make the
+    paragraph healer treat the following number as a list item instead of a
+    citation continuation.
+    """
+    if not text:
+        return text
+
+    # "cap., 8" / "q. , 81" -> "cap. 8" / "q. 81"
+    text = re.sub(
+        r'\b(?P<label>cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|'
+        r'dial|enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\s*\.\s*,\s*(?=\d)',
+        lambda m: f'{m.group("label")}. ',
+        text,
+        flags=re.I,
+    )
+
+    # "Chapter,\n8." / "Chap., 8." -> "Chapter 8." / "Chap. 8."
+    text = re.sub(
+        r'\b(?P<label>chapter|chap)\s*(?:\.\s*)?,\s*(?=\d)',
+        lambda m: f'{m.group("label")} ' if m.group("label").lower() == 'chapter' else f'{m.group("label")}. ',
+        text,
+        flags=re.I,
+    )
+
+    return text
 
 
 DANGLING_CONNECTOR_RE = re.compile(
@@ -1443,6 +1535,8 @@ def _paragraph_needs_numeric_continuation(prev, current):
         return True
     if re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+:\d+(?:[-,]\s*\d+)*,\s*$', prev_clean, re.I):
         return True
+    if _is_scholarly_citation_tail(prev_clean):
+        return True
     return False
 
 
@@ -1480,6 +1574,58 @@ def _is_citation_abbrev_continuation(prev, current):
     if re.search(r'\b(?:see|apud|contra|adv|ad)\s*$', prev_clean, re.I):
         return True
     return False
+
+
+def _is_scholarly_citation_tail(text):
+    """Return True when text ends inside a scholarly citation number chain."""
+    if not text:
+        return False
+    return bool(re.search(
+        r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+        r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\.?\s+\d+(?:[-,;]\s*\d+)*,?\s*$',
+        text.strip(),
+        re.I,
+    ))
+
+
+def _is_scholarly_citation_fragment(text):
+    """Return True for short paragraphs that are only citation tail fragments."""
+    if not text:
+        return False
+    clean = text.strip()
+    if len(clean) > 140:
+        return False
+    return bool(re.fullmatch(
+        r'(?:'
+        r'(?:and\s+)?(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+        r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\.?\s+\d+(?:[-,;]\s*\d+)*|'
+        r'ad\s+(?:prim|tert|secund)\.?'
+        r')'
+        r'(?:[,;]\s*(?:and\s+)?(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+        r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\.?\s+\d+(?:[-,;]\s*\d+)*|[,;]\s*ad\s+(?:prim|tert|secund)\.?)*'
+        r'\.?',
+        clean,
+        re.I,
+    ))
+
+
+def _ends_with_scholarly_citation_sentence(text):
+    """Return True when a paragraph ends with a scholarly citation sentence."""
+    if not text:
+        return False
+    clean = text.strip()
+    if len(clean) > 500:
+        clean = clean[-500:]
+    return bool(re.search(
+        r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+        r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\.?\s+\d+(?:[-,;]\s*\d+)*\.\s*$',
+        clean,
+        re.I,
+    ))
 
 
 def _trim_overlapping_prefix(prev, current):
@@ -1773,6 +1919,17 @@ def post_process_paragraphs(paragraphs):
                     cleaned[-1] = f"{cleaned[-1]} {trimmed}".strip()
                     continue
 
+            if (
+                cleaned
+                and (
+                    _is_scholarly_citation_fragment(cleaned[-1])
+                    or _ends_with_scholarly_citation_sentence(cleaned[-1])
+                )
+                and re.match(r'^(?:But|And|For|Yea|Yet|So|Herein|Wherefore)\b', part)
+            ):
+                cleaned[-1] = f"{cleaned[-1]} {part}".strip()
+                continue
+
             if cleaned and _is_probable_duplicate_fragment(cleaned[-1], part):
                 continue
 
@@ -1849,7 +2006,17 @@ def deduplicate_junction(prev_text, next_text, threshold=0.85):
     return next_text
 
 
-def get_pages_text(doc, pages_md, start_page, end_page, healer_mode=True, title="", chapter_id="", config=None):
+def get_pages_text(
+    doc,
+    pages_md,
+    start_page,
+    end_page,
+    healer_mode=True,
+    title="",
+    chapter_id="",
+    config=None,
+    allow_treatise_title_page=True,
+):
     """Get merged text for a range of pages with optional paragraph healing.
 
     Paragraph healing must be holistic across the full page range. Running
@@ -1861,7 +2028,12 @@ def get_pages_text(doc, pages_md, start_page, end_page, healer_mode=True, title=
     raw_parts = []
     
     for pg in range(start_page, min(end_page + 1, len(doc))):
-        raw = get_merged_page_text(doc, pages_md, pg)
+        raw = get_merged_page_text(
+            doc,
+            pages_md,
+            pg,
+            allow_treatise_title_page=allow_treatise_title_page,
+        )
         if not raw.strip():
             continue
         raw_parts.append(raw)

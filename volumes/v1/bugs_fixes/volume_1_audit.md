@@ -21,7 +21,7 @@
 - Untagged Greek chars: 8
 - Hebrew chars: 155
 - Untagged Hebrew chars: 0
-- Noteref links: 130
+- Noteref links: 123
 - Endnote anchors: 124
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
@@ -60,8 +60,7 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch004.xhtml`: a
-- `EPUB/ch008.xhtml`: a
 - `EPUB/ch020.xhtml`: i
-- `EPUB/ch024.xhtml`: w
 - `EPUB/ch030.xhtml`: a
+- `EPUB/ch078.xhtml`: t
+- `EPUB/title_0.xhtml`: b

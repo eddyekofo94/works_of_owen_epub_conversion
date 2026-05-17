@@ -356,3 +356,27 @@ Excerpt From
 The Works of John Owen, Volume 1: The Glory of Christ
 John Owen
 This material may be protected by copyright.
+
+## 32
+“The church then knew him; yet so as that they had an apprehension that he dwelt in "thick darkness," where they could not have any clear views of him, Exodus 21; Deuteronomy 5:22; 1 Kings, 8:121 Kings, 8:12; 2 Chronicles 6:12 Chronicles him, Exodus 21; 2 Chronicles 6:1. And the reason why God so represented himself in darkness unto them, was, to instruct them in their imperfect state, wherein they could not comprehend that glory which should afterward be revealed. For as he is now made known in Christ, we see that "he is light, and in him there is no darkness at all."
+Kings, 8:12; 4. Hitherto darkness”
+
+Fix:
+Look at pdf 384 and compare the text, there's something off, can you do checks that the text is being extracted correctly and that there are no missing or jumbled words? It seems like there may be an issue with the way the text is being parsed, which is leading to some confusion in the final output. We need to ensure that the extraction process is accurately capturing all of the text from the source document without introducing any errors or omissions. This may involve implementing additional checks or rules to verify the integrity of the extracted text and ensure that it matches the original source as closely as possible.
+
+#  TODO: (2026-05-17 21:23)
+## 33
+“PART 2 MEDITATIONS AND DISCOURSES CONCERNING THE GLORY OF CHRIST.”
+THE GREATER CATECHISM
+
+Fix:
+These two are badly extracted or formatted but these are treatise starter pages and they're broken, can you have a way that extracts these pages proper, or at least extract them as others?
+
+## 34
+“Ans . 1. There i”
+
+Fix:
+“Ans. 1. There is no precedent nor example”
+
+can you add this to the scholastic anchors like Objection, Answer, etc.. so that it can be properly formatted and not have these false breaks? We need to ensure that our parsing logic recognizes these scholastic anchors and formats them correctly to maintain the intended structure and readability of the text. This may involve adding specific rules for identifying and formatting these anchors during the parsing process.
+Add it to audits, and improve how it is extracted.

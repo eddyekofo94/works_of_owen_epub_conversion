@@ -2,9 +2,9 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-17T18:10:41.714579+00:00",
+  "generated_at": "2026-05-17T19:35:54.698286+00:00",
   "status": "warn",
-  "warning_count": 10,
+  "warning_count": 9,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -31,10 +31,6 @@
       "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     },
     {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
       "code": "roman_heading_candidates",
       "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
     },
@@ -52,11 +48,11 @@
   },
   "epub": {
     "spine_text_files": 83,
-    "paragraph_count": 3203
+    "paragraph_count": 3060
   },
   "word_coverage": {
     "pdf_content_tokens": 210900,
-    "epub_content_tokens": 214406,
+    "epub_content_tokens": 213786,
     "coverage_ratio": 0.9983,
     "missing_word_samples": [
       {
@@ -92,11 +88,6 @@
     ],
     "excess_word_samples": [
       {
-        "word": "psalms",
-        "pdf": 2,
-        "epub": 16
-      },
-      {
         "word": "faithfulness",
         "pdf": 5,
         "epub": 12
@@ -105,13 +96,8 @@
   },
   "page_coverage": {
     "pages_checked": 635,
-    "weak_page_count": 5,
+    "weak_page_count": 3,
     "weak_pages": [
-      {
-        "page": 596,
-        "hit_ratio": 0.333,
-        "sample": "psalm 139 1-4 8-10 exodus 14 genesis 17 psalm 135 4-6 job 11 7-9 romans 11 33-36 malachi james 17 judges 19 samuel 25"
-      },
       {
         "page": 603,
         "hit_ratio": 0.333,
@@ -124,19 +110,14 @@
       },
       {
         "page": 614,
-        "hit_ratio": 0.0,
-        "sample": "by being accompanied with f74 his death for that as all other testaments was to be ratified by the death of the testator genesis"
-      },
-      {
-        "page": 619,
         "hit_ratio": 0.333,
-        "sample": "no essentially they are but one f91 differing only in some outward administrations ephesians 11-16 corinthians 10 galatians 26 27 hebrews 11 16 26"
+        "sample": "by being accompanied with f74 his death for that as all other testaments was to be ratified by the death of the testator genesis"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 25887,
-    "missing_dense_window_pages": 164,
+    "dense_windows_checked": 26620,
+    "missing_dense_window_pages": 135,
     "missing_dense_windows": [
       {
         "page": 3,
@@ -183,10 +164,6 @@
         "sample": "events ensued which justified these apprehensions of own prolonged controversy on the subject of"
       },
       {
-        "page": 22,
-        "sample": "and be broken and be snared and be taken isaiah 14 15 according unto"
-      },
-      {
         "page": 26,
         "sample": "be spoken of peter in matthew 16 tract quod si super unum illum petrum"
       },
@@ -199,8 +176,8 @@
         "sample": "him must be lively stones also as this apostle assures us epist they must"
       },
       {
-        "page": 72,
-        "sample": "of that divine treasure wherewith the scripture of truth is enriched make no pretense"
+        "page": 76,
+        "sample": "glory of the same mystery is elsewhere testified unto hebrews god has spoken unto"
       },
       {
         "page": 78,
@@ -209,10 +186,6 @@
       {
         "page": 83,
         "sample": "peculiarly of his person by whom they are performed john if any man sin"
-      },
-      {
-        "page": 85,
-        "sample": "up from everlasting from the beginning or ever the earth was proverbs 22 23"
       },
       {
         "page": 88,
@@ -225,14 +198,6 @@
       {
         "page": 91,
         "sample": "us as the apostle declares it at large philippians 6-8 it is the nature"
-      },
-      {
-        "page": 93,
-        "sample": "on god in the way of moral obedience genesis 26 28 psalm 6-8 man"
-      },
-      {
-        "page": 94,
-        "sample": "groan and will do so to the end genesis 17 18 romans 20 21"
       },
       {
         "page": 95,
@@ -264,7 +229,7 @@
       },
       {
         "page": 135,
-        "sample": "9-12 now this internal illumination of the minds of men unto the acknowledgment of"
+        "sample": "as the prophet of the church but hereon they will never have experience of"
       },
       {
         "page": 136,
@@ -284,7 +249,7 @@
       },
       {
         "page": 156,
-        "sample": "of the spirit of grace and supplication romans 26 27 so that prayer is"
+        "sample": "proposed as full of tender compassion as he alone who is able to relieve"
       },
       {
         "page": 157,
@@ -295,8 +260,24 @@
         "sample": "patience in sufferings which the apostle unto this purpose insists upon philippians 5-8 now"
       },
       {
-        "page": 170,
-        "sample": "their own hearts lust and they walked in their own counsels psalm 81 12"
+        "page": 179,
+        "sample": "object of our faith wherein it rests but god through him through him have"
+      },
+      {
+        "page": 188,
+        "sample": "the people shall say amen deut 27 26 and on the other hand he"
+      },
+      {
+        "page": 194,
+        "sample": "the spirit as he is the only begotten of the father he is the"
+      },
+      {
+        "page": 203,
+        "sample": "divine goodness how great is his goodness how great is his beauty zechariah 17"
+      },
+      {
+        "page": 204,
+        "sample": "reward infinite goodness exerting itself in all that mercy grace faithfullness and bounty which"
       }
     ]
   },
@@ -438,12 +419,17 @@
         "reason": "source footnote block"
       }
     ],
-    "missing_top_window_count": 2,
+    "missing_top_window_count": 3,
     "missing_top_windows": [
       {
         "page": 157,
         "window": "hebrews 18 15 so is he also as he alone who is able to",
         "sample": "Hebrews 2:18; 4:15; 5:2. So is he also, as he alone who is able to succor, to relieve, and to deliver them. \"He is able to succor them that are"
+      },
+      {
+        "page": 613,
+        "window": "in that for us he underwent the punishment due to our sin isaiah",
+        "sample": "A. In that for us he underwent the punishment due to our sin. Isaiah"
       },
       {
         "page": 619,
@@ -494,7 +480,7 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_bottom_window_count": 22,
+    "missing_bottom_window_count": 18,
     "missing_bottom_windows": [
       {
         "page": 25,
@@ -537,21 +523,6 @@
         "sample": "Ecclesiastes 7:29; unto. Wherein it did consist, see"
       },
       {
-        "page": 302,
-        "window": "it on account of his divine nature so is it said of him unto",
-        "sample": "Hebrews 1:3. These things are all spoken of the person of Christ, but belong unto it on account of his divine nature. So is it said of him, \"Unto"
-      },
-      {
-        "page": 318,
-        "window": "21 not these aspectable heavens which we behold for in his ascension he passed",
-        "sample": "1:11, — and the \"heaven must receive him,\" chap. 3:21; not these aspectable heavens which we behold, — for in his ascension \"he passed"
-      },
-      {
-        "page": 325,
-        "window": "it represented the whole number of the saints above that have passed through the",
-        "sample": "solemn worship. So is it represented, the whole number of the saints above that have passed through the"
-      },
-      {
         "page": 380,
         "window": "corinthians 21-25 not to see the wisdom apostle declares at large",
         "sample": "1 Corinthians 1:21-25. Not to see the wisdom apostle declares at large,"
@@ -582,11 +553,6 @@
         "sample": "John 3:8. one that is born of the Spirit,\""
       },
       {
-        "page": 534,
-        "window": "their minds unto closure with him as he is tendered in the gospels as",
-        "sample": "considerations which may prepare, incline, and dispose their minds unto a closure with him as he is tendered in the Gospels As, —"
-      },
-      {
         "page": 540,
         "window": "hebrews 13 take the advice of the apostle",
         "sample": "Hebrews 3:7, 8, 13, 1. Take the advice of the apostle,"
@@ -609,29 +575,9 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2867,
-    "split_candidate_count": 76,
+    "paragraphs_checked": 2754,
+    "split_candidate_count": 30,
     "split_candidates": [
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,",
-        "next": "a. 3, ad prim., and q., 84,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "a. 3, ad prim., and q., 84,",
-        "next": "a. 1, ad tertium; Alexand. Alens. p. 3,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "a. 1, ad tertium; Alexand. Alens. p. 3,",
-        "next": "q. 30,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "m. 1,",
-        "next": "a. 3."
-      },
       {
         "file": "EPUB/ch005.xhtml",
         "previous": "PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION",
@@ -738,83 +684,53 @@
         "next": "(5thly,) Round about them were the tribes in their order."
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "That which remains is, to make some application of the glorious truth",
-        "next": "insisted on unto the souls of them that are concerned; and what I have to"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "FT1 The Christian Ministry, p. 42-44, by the Rev. Charles Bridges,",
+        "next": "A.M. FT2 See his interesting History of the British Churches in the Netherlands. FT3 Mr. Ryland of Northampton entertained a strong opinion in regard to"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "insisted on unto the souls of them that are concerned; and what I have to",
-        "next": "offer unto that end I shall distribute under two heads. The first shall be"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "A.M. FT2 See his interesting History of the British Churches in the Netherlands. FT3 Mr. Ryland of Northampton entertained a strong opinion in regard to",
+        "next": "the value of the same work. In a tract entitled, \"A Select Library for the Student of Divinity,\" he gives an estimate of its merits with an amusing intensity of expression. \"This b"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "offer unto that end I shall distribute under two heads. The first shall be",
-        "next": "with respect unto them who are yet strangers from this holy and glorious"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "ivinity, with their pompous bindings armed us monuments of human folly, in our book cases and libraries. See Dr. Cotton Mather's \"Student and Preacher,\" republished by John Ryland,",
+        "next": "A.M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio "
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "with respect unto them who are yet strangers from this holy and glorious",
-        "next": "One, — who are not yet made partakers of him, nor have any especial"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "vinity, and held in high repute during mediaeval times. It appeared in 1172. ED. FT7 The first four of these terms were adopted by the Fourth OEcumenical Council, held a Chalcedon,",
+        "next": "A.D. 451. ED. FT8 Eutyches was a prsbyter and abbot at Constantinople, and distinguished himself by his opposition to the Nestorians,"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "One, — who are not yet made partakers of him, nor have any especial",
-        "next": "interest in him. And the second shall be directed unto believers, as a guide"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "A.D. 451. ED. FT8 Eutyches was a prsbyter and abbot at Constantinople, and distinguished himself by his opposition to the Nestorians,",
+        "next": "A.D. 448, asserting that in Christ there is but one nature, and was condemned by the General Council at Chalcedon,"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "interest in him. And the second shall be directed unto believers, as a guide",
-        "next": "and assistance unto their recovery from spiritual decays, and the revival of"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "A.D. 448, asserting that in Christ there is but one nature, and was condemned by the General Council at Chalcedon,",
+        "next": "A.D. 451. In the preface to this work, p. 11, he is called \"The Archimandrite.\" Mandrite is a Syriac word for \"monk.\" Archimandrite corresponds with the term \"abbot\" in Europe. ED."
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "and assistance unto their recovery from spiritual decays, and the revival of",
-        "next": "a spring of vigorous grace, holiness, and obedience in them."
+        "file": "EPUB/ch078.xhtml",
+        "previous": "\" Archimandrite corresponds with the term \"abbot\" in Europe. ED. FT9 Born at Germanicia, in the north or Syria ordained a presbyter at Antioch appointed patriarch of Constantinople",
+        "next": "A.D.428 objected to the epithet Θεοτόκος , as applied to the Virgin Mary, because \"that God should be born of a human being is impossible\" charged in consequence with maintaining t"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "For the first of these, although it seems not directly to lie in our way, yet",
-        "next": "is it suited unto the method of the Gospel, that wherever there is a"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "f Christ, insisting on a connection between them by συνάφεια (junction), or ἐνοίκησις (indwelling), in opposition to ἕνωσις (union) deposed by the Third General Council of Ephesus,",
+        "next": "A.D.431, and died probably before"
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "is it suited unto the method of the Gospel, that wherever there is a",
-        "next": "declaration of the excellencies of Christ, in his person, grace, or office, it"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "declaration of the excellencies of Christ, in his person, grace, or office, it",
-        "next": "should be accompanied with an invitation and exhortation unto sinners to"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "should be accompanied with an invitation and exhortation unto sinners to",
-        "next": "come unto him. This method he himself first made use of,"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "come unto him. This method he himself first made use of,",
-        "next": "Matthew"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "Matthew",
-        "next": "11:27-30;"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "John 7:37, 38, and consecrated it unto our use also. Besides, it",
-        "next": "is necessary from the nature of the things themselves; for who can dwell"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "is necessary from the nature of the things themselves; for who can dwell",
-        "next": "on the consideration of the glory of Christ, being called therewith to the"
+        "file": "EPUB/ch078.xhtml",
+        "previous": "A.D.431, and died probably before",
+        "next": "A.D. 450. ED. FT10 The expression quoted by Dr Owen is founded upon the phrase in the original language, διεληλυθότα τοὺς οὐρανόυς \"having passed through,\" not \"into the heavens,\" "
       }
     ],
-    "structural_start_exclusions": 174,
-    "short_fragment_count": 103,
+    "structural_start_exclusions": 169,
+    "short_fragment_count": 48,
     "short_fragments": [
       {
         "file": "EPUB/ch006.xhtml",
@@ -917,22 +833,6 @@
         "text": "END."
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "text": "Matthew"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "text": "11:27-30;"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "text": "Matthew"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "text": "11:27-30;"
-      },
-      {
         "file": "EPUB/ch049.xhtml",
         "text": "- Chapter 20."
       },
@@ -945,36 +845,52 @@
         "text": "Glory be to God on high!"
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "John 14:5, 6, 17:3;"
+        "file": "EPUB/ch051.xhtml",
+        "text": "OF THE SCRIPTURE."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "Acts 4:12."
+        "file": "EPUB/ch052.xhtml",
+        "text": "OF GOD."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "Colossians 1:10;"
+        "file": "EPUB/ch053.xhtml",
+        "text": "OF THE HOLY TRINITY."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "2 Corinthians"
+        "file": "EPUB/ch056.xhtml",
+        "text": "OF GOD'S ACTUAL PROVIDENCE."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "5:15;"
+        "file": "EPUB/ch057.xhtml",
+        "text": "OF THE LAW OF GOD."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "Galatians 2:19, 20."
+        "file": "EPUB/ch058.xhtml",
+        "text": "OF THE STATE OF CORRUPTED NATURE."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "Isaiah, 8:20;"
+        "file": "EPUB/ch059.xhtml",
+        "text": "OF THE INCARNATION OF CHRIST."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "John 5:39."
+        "file": "EPUB/ch060.xhtml",
+        "text": "OF THE PERSON OF JESUS CHRIST."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "OF CHRIST'S PRIESTLY OFFICE."
+      },
+      {
+        "file": "EPUB/ch063.xhtml",
+        "text": "OF CHRIST'S PROPHETICAL OFFICE."
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "OF THE TWO-FOLD ESTATE OF CHRIST."
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "OF THE CHURCH."
       }
     ],
     "adjacent_duplicate_count": 0,
@@ -990,13 +906,8 @@
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 1,
-    "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch070.xhtml",
-        "text": "12. Matthew 5:20;, 8:1Romans, 8:1,2; Ephesians 4:22, 23; Titus 2:12."
-      }
-    ],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
     "roman_heading_candidate_count": 33,
     "roman_heading_candidates": [
       {
@@ -1139,7 +1050,7 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 313,
-    "epub_marker_count": 317,
+    "epub_marker_count": 316,
     "missing_marker_count": 0,
     "missing_markers": [],
     "excess_marker_count": 3,
@@ -1150,15 +1061,15 @@
         "epub": 77,
         "examples": [
           {
-            "location": "EPUB/ch005.xhtml#p240",
+            "location": "EPUB/ch005.xhtml#p230",
             "context": "(1.) From its effect;"
           },
           {
-            "location": "EPUB/ch005.xhtml#p242",
+            "location": "EPUB/ch005.xhtml#p232",
             "context": "(1.) Its effect was, that it made him blessed in whom it was. For it is not only a blessed thing to believe and know Jesus Christ, as it is called life eternal; (John 17:3;) but it is"
           },
           {
-            "location": "EPUB/ch005.xhtml#p260",
+            "location": "EPUB/ch005.xhtml#p250",
             "context": "(1.) Real;"
           }
         ]
@@ -1169,15 +1080,15 @@
         "epub": 77,
         "examples": [
           {
-            "location": "EPUB/ch005.xhtml#p241",
+            "location": "EPUB/ch005.xhtml#p231",
             "context": "(2.) From its cause."
           },
           {
-            "location": "EPUB/ch005.xhtml#p243",
+            "location": "EPUB/ch005.xhtml#p233",
             "context": "(2.) The immediate cause of this faith is divine revelation. It is not the effect or product of our own abilities, the best of which are but flesh and blood. That faith which renders t"
           },
           {
-            "location": "EPUB/ch005.xhtml#p261",
+            "location": "EPUB/ch005.xhtml#p251",
             "context": "(2.) Doctrinal."
           }
         ]
@@ -1185,18 +1096,18 @@
       {
         "marker": "(3.)",
         "pdf": 36,
-        "epub": 38,
+        "epub": 37,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p280",
+            "location": "EPUB/ch006.xhtml#p269",
             "context": "(3.) By some his human nature was opposed — for no stone did Satan leave unturned in the pursuit of his great design. And that which in all these things he aimed at, was the substituti"
           },
           {
-            "location": "EPUB/ch006.xhtml#p297",
+            "location": "EPUB/ch006.xhtml#p286",
             "context": "(3.) Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
           },
           {
-            "location": "EPUB/ch011.xhtml#p552",
+            "location": "EPUB/ch011.xhtml#p540",
             "context": "(3.) The same may be said concerning his sacerdotal office, and all the acts of it. It was in and by the human nature that he offered himself a sacrifice for us. He had somewhat of his"
           }
         ]
@@ -1243,15 +1154,15 @@
       "count": 6
     },
     {
+      "phrase": "unto us child is born unto us son is given",
+      "count": 6
+    },
+    {
       "phrase": "of the glory of god in the face of jesus",
       "count": 6
     },
     {
       "phrase": "declaration of the glorious mystery of the person of christ",
-      "count": 5
-    },
-    {
-      "phrase": "unto us child is born unto us son is given",
       "count": 5
     },
     {
