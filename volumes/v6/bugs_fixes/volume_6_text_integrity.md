@@ -4,7 +4,7 @@
 - Warnings: 10
 - PDF pages: 788
 - EPUB text files: 113
-- EPUB paragraphs/headings: 3267
+- EPUB paragraphs/headings: 3268
 
 ## Coverage
 
@@ -26,12 +26,12 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 3021
+- Body paragraphs checked: 3022
 - Possible faulty paragraph splits: 36
-- Structural starts excluded from split warnings: 423
+- Structural starts excluded from split warnings: 422
 - Short fragments: 17
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 2
+- Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
@@ -103,8 +103,7 @@
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch033.xhtml; text: The law of God was at first inbred and natural unto man; it was concreated with his faculties, and was their rectitude, both in being and operation, in reference to his end of living unto God and glorifying of him. Hence it had an especi...
-- file: EPUB/ch044.xhtml; text: 4thly . Do we see sometimes the flood-gates of men's lusts and rage set open against the church and interest of it, and doth prevalency attend them, and power is for a season on their side? Let not the saints of God despond. He hath unsp...
+- file: EPUB/ch021.xhtml; text: Before I descend to other particulars, having now entered hereon, I shall show in general, — 1st. How or by what means commonly any temptation attains its hour;
 
 ## Roman Heading Candidates
 

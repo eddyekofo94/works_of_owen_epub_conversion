@@ -4,17 +4,17 @@
 - Warnings: 9
 - PDF pages: 644
 - EPUB text files: 83
-- EPUB paragraphs/headings: 3198
+- EPUB paragraphs/headings: 3170
 
 ## Coverage
 
 - PDF content tokens: 210900
-- EPUB content tokens: 214365
-- Approximate PDF-to-EPUB coverage ratio: 0.9982
+- EPUB content tokens: 214356
+- Approximate PDF-to-EPUB coverage ratio: 0.9981
 - Pages checked: 635
-- Weak page matches: 5
-- Dense source windows checked: 25737
-- Missing dense source-window pages: 169
+- Weak page matches: 6
+- Dense source windows checked: 25724
+- Missing dense source-window pages: 170
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 602
@@ -26,10 +26,10 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2862
-- Possible faulty paragraph splits: 76
-- Structural starts excluded from split warnings: 174
-- Short fragments: 103
+- Body paragraphs checked: 2863
+- Possible faulty paragraph splits: 81
+- Structural starts excluded from split warnings: 176
+- Short fragments: 100
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 1
 - Reference continuation splits: 0
@@ -66,7 +66,7 @@
 - page: 10; sample: learned puritan we are informed by dr steven f2 that his exposition of the
 - page: 11; sample: whose literary industry the church of christ had been se largely indebted it would
 - page: 12; sample: russell dissenting minister in the neighborhood of london as the first attempt f4 to
-- page: 19; sample: worship faith love and obedience due unto him in and from the church yea
+- page: 19; sample: χριστολογια christologia or declaration of the glorious mystery of the person of christ god
 - page: 20; sample: prefatory note to object of dr owen in this treatise is to illustrate the
 
 ## Missing Top-Of-Page Body Windows
@@ -90,8 +90,7 @@
 ## Possible Paragraph Splits
 
 - file: EPUB/ch004.xhtml; previous: their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,; next: a. 3, ad prim., and q., 84,
-- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q., 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
-- file: EPUB/ch004.xhtml; previous: a. 1, ad tertium; Alexand. Alens. p. 3,; next: q. 30,
+- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q., 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3, q. 30,
 - file: EPUB/ch004.xhtml; previous: m. 1,; next: a. 3.
 - file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
 - file: EPUB/ch006.xhtml; previous: OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
@@ -99,10 +98,11 @@
 - file: EPUB/ch008.xhtml; previous: TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD; next: Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which
 - file: EPUB/ch009.xhtml; previous: THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL; next: What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o
 - file: EPUB/ch011.xhtml; previous: POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON; next: It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat
+- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch078.xhtml; text: A.M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the st...
+- file: EPUB/ch078.xhtml; text: A. M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the s...
 
 ## Suspicious Large-Number Starts
 

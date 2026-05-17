@@ -1224,7 +1224,7 @@ def _remove_adjacent_line_overlaps(text):
     def words_with_spans(value):
         return [
             (m.group(0).lower(), m.start(), m.end())
-            for m in re.finditer(r"[A-Za-z0-9:;,'’-]+", value)
+            for m in re.finditer(r"[A-Za-z0-9:;,''\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", value)
         ]
 
     lines = text.split('\n')
@@ -1484,8 +1484,8 @@ def _is_citation_abbrev_continuation(prev, current):
 
 def _trim_overlapping_prefix(prev, current):
     """Return current with a duplicated prefix removed when it repeats prev's tail."""
-    prev_words = [(m.group(0).lower(), m.start(), m.end()) for m in re.finditer(r"[A-Za-z0-9:]+", prev)]
-    curr_words = [(m.group(0).lower(), m.start(), m.end()) for m in re.finditer(r"[A-Za-z0-9:]+", current)]
+    prev_words = [(m.group(0).lower(), m.start(), m.end()) for m in re.finditer(r"[A-Za-z0-9:\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", prev)]
+    curr_words = [(m.group(0).lower(), m.start(), m.end()) for m in re.finditer(r"[A-Za-z0-9:\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", current)]
     max_overlap = min(10, len(prev_words), len(curr_words))
     for size in range(max_overlap, 1, -1):
         if [w for w, _, _ in prev_words[-size:]] == [w for w, _, _ in curr_words[:size]]:
@@ -1550,8 +1550,8 @@ def _is_probable_duplicate_fragment(prev, current):
         return True
 
     # 2. Word overlap match
-    prev_words = set(re.findall(r"[a-z0-9:]+", prev_norm))
-    current_words = re.findall(r"[a-z0-9:]+", current_norm)
+    prev_words = set(re.findall(r"[a-z0-9:\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", prev_norm))
+    current_words = re.findall(r"[a-z0-9:\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", current_norm)
     
     useful = [w for w in current_words if len(w) > 2]
     if len(useful) < 8:
@@ -1656,8 +1656,8 @@ def _remove_duplicate_scripture_tail(text):
 def _remove_interrupted_duplicate_clause(text):
     """Remove reference-list ghosts that interrupt and restart the same clause."""
     words = [
-        (re.sub(r'[^a-z0-9]+', '', m.group(0).lower()), m.start(), m.end())
-        for m in re.finditer(r"[A-Za-z0-9'’-]+", text)
+        (re.sub(r'[^a-z0-9\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+', '', m.group(0).lower()), m.start(), m.end())
+        for m in re.finditer(r"[A-Za-z0-9'\u2019\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF-]+", text)
     ]
     words = [item for item in words if item[0]]
     size = 6
@@ -1685,7 +1685,7 @@ def _remove_adjacent_repeated_word_runs(text):
     def tokens(value):
         return [
             (m.group(0).lower(), m.start(), m.end())
-            for m in re.finditer(r"[A-Za-z0-9:]+", value)
+            for m in re.finditer(r"[A-Za-z0-9:\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", value)
         ]
 
     previous = None
@@ -1804,7 +1804,7 @@ def _remove_global_ngram_duplicates(paragraphs, size=14):
     for para in paragraphs:
         # Normalize for dedupe to avoid minor spacing/punctuation differences
         para_norm = _norm_for_dedupe(para)
-        words = [w for w in re.findall(r"[a-z0-9:]+", para_norm)]
+        words = [w for w in re.findall(r"[a-z0-9:\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", para_norm)]
         if len(words) < size:
             cleaned.append(para)
             continue

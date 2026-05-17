@@ -53,6 +53,6 @@
 
 - `EPUB/ch008.xhtml`: m
 - `EPUB/ch010.xhtml`: a
+- `EPUB/ch023.xhtml`: d
 - `EPUB/ch037.xhtml`: w
 - `EPUB/ch041.xhtml`: a
-- `EPUB/ch044.xhtml`: b

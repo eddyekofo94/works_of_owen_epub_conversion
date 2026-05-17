@@ -313,6 +313,12 @@ Fix:
 De Trinitate, lib. 5 cap. 8, 9. Athanasius” this is a false break, it should be "De Trinitate, lib. 5 cap. 8, 9. Athanasius" as on the pdf, we need to review the parsing logic for references to ensure that it correctly identifies and formats these references without introducing false breaks.
 I am strting to see these again? I thought I had a robust check for this already?
 
+“ Chapter,
+8. Then follows”
+
+Fix:
+“ Chapter 8. Then follows” this is a false break, it should be "Chapter 8. Then follows" as on the pdf, can you do a thorough catch on this? I thought I did already? I shouldn't be seeing these false breaks anymore, we need to ensure that our parsing logic is robust enough to catch all instances of these false breaks and prevent them from appearing in the final text output. This may involve implementing additional checks or rules to identify and correct these issues during the parsing process.
+
 “blessed for ever. See Aquin. 22 q. , 81,
 a. 3, ad prim. , and
 q. , 84,
@@ -324,3 +330,29 @@ But yet, although we may call on God in”
 
 Fix:
 “blessed for ever. See Aquin. 22 q. 81, a. 3, ad prim. and q. 84, a. 1, ad tertium Alexand. Alens. p. 3, q. 30, m. 1, a. 3. But yet, although we may call on God in” this is a false break, it should be "blessed for ever. See Aquin. 22 q. 81, a. 3, ad prim. and q. 84, a. 1, ad tertium; Alexand. Alens. p. 3, q. 30, m. 1, a. 3. But yet, although we may call on God in" as on the pdf, we need to review the parsing logic for references to ensure that it correctly identifies and formats these references without introducing false breaks.
+
+“See Aquin. 22 q., 81, a. 3, ad prim., and q., 84, a. 1, ad tertium; Alexand. Alens. p. 3, q. 30, m. 1,
+a. 3.
+But yet, although we may call on God in and by the name of”
+
+## 30
+“A truth this is, of that importance, that ”
+
+“A brief view of the faith of the church under the Ol”
+
+Fix:
+"A" in these instances is bold here when it should not be, this comes from the Catechism "fix" which is bleeding to other portions of the book, why can't there be a fix that understands that the bolding of "A" is only for the catechism and should not be applied to other sections of the text? We need to implement a more context-aware formatting logic that can differentiate between different sections of the text and apply formatting rules accordingly, rather than applying the same formatting across all sections indiscriminately. This will help to preserve the intended formatting and structure of the text as it appears in the original source.
+
+## 31
+“J.O. From my Study, September the last, [1645].”
+
+Fix:
+This is a signature, it should be formatted as:
+<br>J.O. From my Study, September the last, [1645].<br>
+
+“W. H. G.Edinburgh, August 1850.”
+
+Excerpt From
+The Works of John Owen, Volume 1: The Glory of Christ
+John Owen
+This material may be protected by copyright.

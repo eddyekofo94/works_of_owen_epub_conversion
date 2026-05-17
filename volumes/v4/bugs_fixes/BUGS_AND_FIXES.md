@@ -120,12 +120,14 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-16T17:28:25.715388+00:00
+**Last run:** 2026-05-17T14:44:53.022920+00:00
 **EPUB:** `volumes/v4/output/volume_4.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** WARN (0 errors, 3 warnings)
 
 Reports:
 - `volume_4_audit.json`
@@ -138,8 +140,8 @@ Reports:
 | Spine items | 70 |
 | Embedded fonts | 8 |
 | NAV links | 70 |
-| Greek chars / untagged | 4420 / 0 |
-| Hebrew chars / untagged | 687 / 0 |
+| Greek chars / untagged | 4420 / 23 |
+| Hebrew chars / untagged | 687 / 19 |
 | Noteref links / endnote anchors | 24 / 23 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
@@ -149,6 +151,8 @@ Reports:
 
 Warnings requiring triage:
 
+- `untagged_greek`: Greek characters appear outside lang='el' context
+- `untagged_hebrew`: Hebrew characters appear outside lang='he' context
 - `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
@@ -158,11 +162,13 @@ Warnings requiring triage:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-16T17:29:26.369583+00:00
-**Status:** WARN (10 warnings)
+**Last run:** 2026-05-17T14:45:30.367719+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_4_text_integrity.json`
@@ -172,28 +178,28 @@ Reports:
 |-------|--------|
 | PDF pages | 653 |
 | EPUB text files | 71 |
-| EPUB paragraphs/headings | 2342 |
-| Approximate PDF-to-EPUB word coverage | 0.9982 |
-| Weak page matches | 3 |
-| Dense source windows checked | 24388 |
-| Missing dense source-window pages | 232 |
+| EPUB paragraphs/headings | 2410 |
+| Approximate PDF-to-EPUB word coverage | 0.9977 |
+| Weak page matches | 4 |
+| Dense source windows checked | 24411 |
+| Missing dense source-window pages | 231 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 624 |
 | Top-of-page windows skipped as unstable | 29 |
-| Missing top-of-page body windows | 1 |
+| Missing top-of-page body windows | 2 |
 | Bottom-of-page body windows checked | 607 |
 | Bottom-of-page windows skipped as unstable | 17 |
-| Missing bottom-of-page body windows | 2 |
-| Possible faulty paragraph splits | 34 |
-| Structural starts excluded from split warnings | 386 |
-| Short fragments | 25 |
+| Missing bottom-of-page body windows | 3 |
+| Possible faulty paragraph splits | 22 |
+| Structural starts excluded from split warnings | 408 |
+| Short fragments | 24 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 8 |
+| Inline structural marker candidates | 2 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 26 |
-| Roman heading candidates | 9 |
+| Suspicious large-number starts | 0 |
+| Roman heading candidates | 30 |
 | Overlong heading candidates | 1 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
@@ -210,7 +216,6 @@ Warnings requiring triage:
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication

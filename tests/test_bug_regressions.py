@@ -158,12 +158,44 @@ def test_known_text_integrity_bug_classes_do_not_regress(volume):
         ),
     }
 
+    gh = result["greek_hebrew_word_coverage"]
+    ghf = result["greek_hebrew_clause_fidelity"]
+    if gh["pdf_greek_word_count"] >= 20:
+        checks["greek word coverage"] = (
+            gh["greek_word_coverage_ratio"],
+            budget["min_greek_word_coverage_ratio"],
+            gh["missing_greek_word_samples"][:5],
+        )
+    if gh["pdf_hebrew_word_count"] >= 10:
+        checks["hebrew word coverage"] = (
+            gh["hebrew_word_coverage_ratio"],
+            budget["min_hebrew_word_coverage_ratio"],
+            gh["missing_hebrew_word_samples"][:5],
+        )
+    checks["missing greek clauses"] = (
+        ghf["missing_greek_clause_count"],
+        budget["max_missing_greek_clauses"],
+        ghf["missing_greek_clauses"][:5],
+    )
+    checks["missing hebrew clauses"] = (
+        ghf["missing_hebrew_clause_count"],
+        budget["max_missing_hebrew_clauses"],
+        ghf["missing_hebrew_clauses"][:5],
+    )
+
     failures = [
         f"{name}: observed {observed}, budget {limit}, samples {samples}"
         for name, (observed, limit, samples) in checks.items()
-        if observed > limit
+        if "coverage" not in name and observed > limit
+    ]
+    # Coverage ratios: lower is worse
+    ratio_failures = [
+        f"{name}: observed {observed}, budget {limit}, samples {samples}"
+        for name, (observed, limit, samples) in checks.items()
+        if "coverage" in name and observed < limit
     ]
     assert not failures, "\n".join(failures)
+    assert not ratio_failures, "\n".join(ratio_failures)
 
 
 @pytest.mark.parametrize("volume", VOLUMES)

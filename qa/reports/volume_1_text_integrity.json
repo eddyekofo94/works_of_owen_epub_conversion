@@ -2,7 +2,7 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-17T08:00:56.141604+00:00",
+  "generated_at": "2026-05-17T09:30:40.948441+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [
@@ -48,12 +48,12 @@
   },
   "epub": {
     "spine_text_files": 83,
-    "paragraph_count": 3198
+    "paragraph_count": 3170
   },
   "word_coverage": {
     "pdf_content_tokens": 210900,
-    "epub_content_tokens": 214365,
-    "coverage_ratio": 0.9982,
+    "epub_content_tokens": 214356,
+    "coverage_ratio": 0.9981,
     "missing_word_samples": [
       {
         "word": "faithfullness",
@@ -101,8 +101,13 @@
   },
   "page_coverage": {
     "pages_checked": 635,
-    "weak_page_count": 5,
+    "weak_page_count": 6,
     "weak_pages": [
+      {
+        "page": 19,
+        "hit_ratio": 0.0,
+        "sample": "χριστολογια christologia or declaration of the glorious mystery of the person of christ god and man with the infinite wisdom love and power of"
+      },
       {
         "page": 596,
         "hit_ratio": 0.333,
@@ -131,8 +136,8 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 25737,
-    "missing_dense_window_pages": 169,
+    "dense_windows_checked": 25724,
+    "missing_dense_window_pages": 170,
     "missing_dense_windows": [
       {
         "page": 3,
@@ -168,7 +173,7 @@
       },
       {
         "page": 19,
-        "sample": "worship faith love and obedience due unto him in and from the church yea"
+        "sample": "χριστολογια christologia or declaration of the glorious mystery of the person of christ god"
       },
       {
         "page": 20,
@@ -189,6 +194,10 @@
       {
         "page": 29,
         "sample": "secondly an eminent instance of his power and faithfullness in the appointment and conquest"
+      },
+      {
+        "page": 30,
+        "sample": "in their signification or if they did wherein that difference lay athanasiu6 at first"
       },
       {
         "page": 37,
@@ -289,10 +298,6 @@
       {
         "page": 146,
         "sample": "thought it not robbery to be equal with god philippians he can no more"
-      },
-      {
-        "page": 148,
-        "sample": "has not the son of god has not life chap 11 12 if we"
       }
     ]
   },
@@ -605,8 +610,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2862,
-    "split_candidate_count": 76,
+    "paragraphs_checked": 2863,
+    "split_candidate_count": 81,
     "split_candidates": [
       {
         "file": "EPUB/ch004.xhtml",
@@ -616,12 +621,7 @@
       {
         "file": "EPUB/ch004.xhtml",
         "previous": "a. 3, ad prim., and q., 84,",
-        "next": "a. 1, ad tertium; Alexand. Alens. p. 3,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "a. 1, ad tertium; Alexand. Alens. p. 3,",
-        "next": "q. 30,"
+        "next": "a. 1, ad tertium; Alexand. Alens. p. 3, q. 30,"
       },
       {
         "file": "EPUB/ch004.xhtml",
@@ -807,10 +807,15 @@
         "file": "EPUB/ch043.xhtml",
         "previous": "is necessary from the nature of the things themselves; for who can dwell",
         "next": "on the consideration of the glory of Christ, being called therewith to the"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "previous": "on the consideration of the glory of Christ, being called therewith to the",
+        "next": "declaration of it, but his own mind will engage him to invite lost sinners"
       }
     ],
-    "structural_start_exclusions": 174,
-    "short_fragment_count": 103,
+    "structural_start_exclusions": 176,
+    "short_fragment_count": 100,
     "short_fragments": [
       {
         "file": "EPUB/ch006.xhtml",
@@ -979,7 +984,7 @@
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch078.xhtml",
-        "text": "A.M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the statement is true; but th"
+        "text": "A. M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the statement is true; but t"
       }
     ],
     "reference_continuation_split_count": 0,
@@ -1146,15 +1151,15 @@
         "epub": 77,
         "examples": [
           {
-            "location": "EPUB/ch005.xhtml#p235",
+            "location": "EPUB/ch005.xhtml#p229",
             "context": "(1.) From its effect;"
           },
           {
-            "location": "EPUB/ch005.xhtml#p237",
+            "location": "EPUB/ch005.xhtml#p231",
             "context": "(1.) Its effect was, that it made him blessed in whom it was. For it is not only a blessed thing to believe and know Jesus Christ, as it is called life eternal; (John 17:3;) but it is"
           },
           {
-            "location": "EPUB/ch005.xhtml#p255",
+            "location": "EPUB/ch005.xhtml#p249",
             "context": "(1.) Real;"
           }
         ]
@@ -1165,15 +1170,15 @@
         "epub": 77,
         "examples": [
           {
-            "location": "EPUB/ch005.xhtml#p236",
+            "location": "EPUB/ch005.xhtml#p230",
             "context": "(2.) From its cause."
           },
           {
-            "location": "EPUB/ch005.xhtml#p238",
+            "location": "EPUB/ch005.xhtml#p232",
             "context": "(2.) The immediate cause of this faith is divine revelation. It is not the effect or product of our own abilities, the best of which are but flesh and blood. That faith which renders t"
           },
           {
-            "location": "EPUB/ch005.xhtml#p256",
+            "location": "EPUB/ch005.xhtml#p250",
             "context": "(2.) Doctrinal."
           }
         ]
@@ -1184,15 +1189,15 @@
         "epub": 38,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p275",
+            "location": "EPUB/ch006.xhtml#p269",
             "context": "(3.) By some his human nature was opposed — for no stone did Satan leave unturned in the pursuit of his great design. And that which in all these things he aimed at, was the substituti"
           },
           {
-            "location": "EPUB/ch006.xhtml#p292",
+            "location": "EPUB/ch006.xhtml#p286",
             "context": "(3.) Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
           },
           {
-            "location": "EPUB/ch011.xhtml#p547",
+            "location": "EPUB/ch011.xhtml#p541",
             "context": "(3.) The same may be said concerning his sacerdotal office, and all the acts of it. It was in and by the human nature that he offered himself a sacrifice for us. He had somewhat of his"
           }
         ]
@@ -1241,10 +1246,6 @@
     {
       "phrase": "of the glory of god in the face of jesus",
       "count": 6
-    },
-    {
-      "phrase": "declaration of the glorious mystery of the person of christ",
-      "count": 5
     },
     {
       "phrase": "unto us child is born unto us son is given",
@@ -1300,6 +1301,10 @@
     },
     {
       "phrase": "the only-begotten of the father full of grace and truth",
+      "count": 5
+    },
+    {
+      "phrase": "of the glory of christ in this world by faith",
       "count": 5
     }
   ],

@@ -1551,15 +1551,43 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     # Lenient with trailing text like Greek titles (Issue 26)
                     _sig_plain = re.sub(r'<[^>]+>', '', paragraph_html).strip()
                     _is_signature = bool(re.match(
-                        r'^[=—–-]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3}\.?',
+                        r'^[=—–-]\s*[A-Z][a-z]+\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}\.?',
                         _sig_plain,
                     ))
+                    # Exclude false positives from first pattern (references, chapter markers)
+                    if _is_signature:
+                        _is_signature = not re.search(r'(?:Chapter|Vol\.|vol\.|p\.|pp\.|END|Aen)', _sig_plain, re.I)
                     # Specialized Goold/Edinburgh signature detection (Issue 99/26)
                     if not _is_signature:
                          _is_signature = bool(re.match(
                              r'^(?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*\s+(?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?',
                              paragraph_html,
                          ))
+                    # Date-only signatures: "May 11, 1677", "September the last, [1645]"
+                    if not _is_signature:
+                        _is_signature = bool(re.match(
+                            r'^(?:<i>|<b>)*(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s*(?:the\s+last)?\s*\[?\d{4}\]?\s*(?:</i>|</b>)*\.?$',
+                            paragraph_html,
+                        ))
+                    # Initials + "From my study" + date: "J.O. From my study, May the 30th, 1677"
+                    if not _is_signature:
+                        _is_signature = bool(re.match(
+                            r'^(?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)?\s+From\s+my\s+study',
+                            _sig_plain,
+                            re.I,
+                        ))
+                    # Name-only signatures: "DANIEL BURGESS", "JOHN OWEN" (2-4 all-caps words)
+                    # Only match if short enough to be a signature, not a heading
+                    if not _is_signature:
+                        words = _sig_plain.split()
+                        _is_signature = (
+                            2 <= len(words) <= 4
+                            and len(_sig_plain) < 60
+                            and bool(re.match(r'^[A-Z][A-Z\s]+\.?$', _sig_plain))
+                            and all(w[0].isupper() for w in words if len(w) > 1)
+                            # Exclude common non-signature patterns
+                            and not re.search(r'\b(?:Chapter|Vol|vol|p\.|pp\.|END)\b', _sig_plain, re.I)
+                        )
                     
                     if _is_signature:
                         # Strip trailing Greek residue if it was pulled in (Issue 26)
@@ -1569,6 +1597,12 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
                         if m_sig:
                             paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
+                        
+                        # Split J.O. study signature: "J.O. From my study, ..."
+                        m_study = re.match(r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
+                        if m_study:
+                            paragraph_html = f'{m_study.group(1)}<br/>{m_study.group(2)}'
+                        
                         html_parts.append(f'<p class="signature">{paragraph_html}</p>')
                         pending_drop_cap = False
                         continue
@@ -1576,12 +1610,40 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     # Rule 1: FRONT_MATTER rules
                     if current_mode == "FRONT_MATTER":
                         if _is_signature:
-                            # Split Goold signature into two lines (Issue 99)
+                            # Strip trailing Greek residue
+                            paragraph_html = re.sub(r'\s*[\u0370-\u03FF\u1F00-\u1FFF].*$', '', paragraph_html)
+                            
+                            # Split Goold signature
                             m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
                             if m_sig:
                                 paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
+                            
+                            # Split J.O. study signature
+                            m_study = re.match(r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
+                            if m_study:
+                                paragraph_html = f'{m_study.group(1)}<br/>{m_study.group(2)}'
+                            
                             html_parts.append(f'<p class="signature">{paragraph_html}</p>')
                         elif front_matter_style == "prose":
+                            # Check for embedded signature at end of paragraph (e.g., "...DANIEL BURGESS</b></i>")
+                            _emb_sig = re.search(
+                                r'(,\s*|\.\s*)(<i><b>|<b><i>|<i>|<b>)([A-Z][A-Z\s]+)(</b></i>|</i></b>|</i>|</b>)\s*\.?\s*(<a[^>]*noteref[^>]*>.*?</a>)?\s*$',
+                                paragraph_html,
+                            )
+                            if _emb_sig:
+                                sig_name = _emb_sig.group(3).strip()
+                                sig_words = sig_name.split()
+                                # Only treat as signature if 2-4 all-caps words (name)
+                                if 2 <= len(sig_words) <= 4:
+                                    prefix = paragraph_html[:_emb_sig.start()]
+                                    # Remove trailing comma/space from prefix
+                                    prefix = re.sub(r'[,.\s]+$', '', prefix)
+                                    if prefix:
+                                        html_parts.append(f'<p class="front-matter-prose">{prefix}</p>')
+                                    html_parts.append(f'<p class="signature">{sig_name}</p>')
+                                    pending_drop_cap = False
+                                    continue
+                            
                             # Running editorial prose: justify like normal body text.
                             if not _fm_prose_started:
                                 p_cls = "front-matter-prose first"
@@ -2503,6 +2565,7 @@ def render_volume(vol_num: int, overrides: dict = None,
         title='Table of Contents', file_name='nav.xhtml',
         media_type='application/xhtml+xml', lang='en',
     )
+    nav_item.properties = ['nav']
     nav_item.set_content(_make_xhtml('Table of Contents', nav_html).encode('utf-8'))
     nav_item.add_item(style_item)
     book.add_item(nav_item)
@@ -2517,7 +2580,6 @@ def render_volume(vol_num: int, overrides: dict = None,
     spine = []
     if cover_page:
         spine.append(cover_page)
-    spine.append('nav')
     spine.extend(front_matter_epub_items)
     if frontispiece_item:
         spine.append(frontispiece_item)

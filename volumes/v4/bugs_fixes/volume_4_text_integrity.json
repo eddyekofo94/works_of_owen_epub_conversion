@@ -2,9 +2,9 @@
   "volume": 4,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/input/owen-v4.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-16T17:29:26.369583+00:00",
+  "generated_at": "2026-05-17T14:45:30.367719+00:00",
   "status": "warn",
-  "warning_count": 10,
+  "warning_count": 9,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -31,10 +31,6 @@
       "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     },
     {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
       "code": "roman_heading_candidates",
       "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
     },
@@ -52,12 +48,12 @@
   },
   "epub": {
     "spine_text_files": 71,
-    "paragraph_count": 2342
+    "paragraph_count": 2410
   },
   "word_coverage": {
     "pdf_content_tokens": 221791,
-    "epub_content_tokens": 223108,
-    "coverage_ratio": 0.9982,
+    "epub_content_tokens": 222839,
+    "coverage_ratio": 0.9977,
     "missing_word_samples": [
       {
         "word": "ord",
@@ -140,8 +136,13 @@
   },
   "page_coverage": {
     "pages_checked": 644,
-    "weak_page_count": 3,
+    "weak_page_count": 4,
     "weak_pages": [
+      {
+        "page": 16,
+        "hit_ratio": 0.333,
+        "sample": "first supernatural revelation is the only objective cause and means of supernatural illumination these things are commensurate there is natural knowledge of supernatural things"
+      },
       {
         "page": 39,
         "hit_ratio": 0.333,
@@ -160,8 +161,8 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 24388,
-    "missing_dense_window_pages": 232,
+    "dense_windows_checked": 24411,
+    "missing_dense_window_pages": 231,
     "missing_dense_windows": [
       {
         "page": 3,
@@ -181,7 +182,7 @@
       },
       {
         "page": 16,
-        "sample": "warning and instruction of others jude 14 15 and to noah who became thereby"
+        "sample": "first supernatural revelation is the only objective cause and means of supernatural illumination these"
       },
       {
         "page": 17,
@@ -309,7 +310,7 @@
       },
       {
         "page": 100,
-        "sample": "the apostles and prophets as was said ephesians 20 that is our faith rests"
+        "sample": "and confirm faith in the disciples luke 24 25-27 that great testimony to this"
       },
       {
         "page": 102,
@@ -511,8 +512,13 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 1,
+    "missing_top_window_count": 2,
     "missing_top_windows": [
+      {
+        "page": 16,
+        "window": "first supernatural revelation is the only objective cause and means of supernatural illumination these",
+        "sample": "First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a"
+      },
       {
         "page": 35,
         "window": "wisdom before all the world deuteronomy 6-8 now we shall not need to consider",
@@ -628,8 +634,13 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_bottom_window_count": 2,
+    "missing_bottom_window_count": 3,
     "missing_bottom_windows": [
+      {
+        "page": 15,
+        "window": "unto distinct discourse by itself also unto the former some things may be premised",
+        "sample": "declaration we at present design, reserving the latter unto a distinct discourse by itself also. Unto the former some things may be premised: —"
+      },
       {
         "page": 44,
         "window": "to be so far influenced by self interest as to be of little validity",
@@ -643,58 +654,73 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2062,
-    "split_candidate_count": 34,
+    "paragraphs_checked": 2177,
+    "split_candidate_count": 22,
     "split_candidates": [
       {
-        "file": "EPUB/ch007.xhtml",
-        "previous": "MY design requires that I should confine my discourse unto as narrow bounds as possible, and I shall so do, showing, —",
-        "next": "What it is in general infallibly to believe the Scripture to be the word of God, and what is the ground and reason of our so doing; or, what it is to believe the Scripture to be th"
+        "file": "EPUB/ch006.xhtml",
+        "previous": "THE principal design of that discourse whereof the ensuing treatise is a",
+        "next": "part, is to declare the work of the Holy Ghost in the illumination of the"
       },
       {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "As to the first part of the design, the things that follow are proposed: —",
-        "next": "Unto the inquiry, on what grounds, or for what reason, we believe the Scripture to be the word of God, many things supposed, as on all hands agreed upon, whose demonstration or pro"
+        "file": "EPUB/ch006.xhtml",
+        "previous": "part, is to declare the work of the Holy Ghost in the illumination of the",
+        "next": "minds of men, — for this work is particularly and eminently ascribed unto"
       },
       {
-        "file": "EPUB/ch016.xhtml",
-        "previous": "ed; the question considered is declared to relate to the method by which we attain to a right perception of the mind of God in Scripture, and this method is described as twofold: —",
-        "next": "Through a principal efficient cause; and,"
+        "file": "EPUB/ch006.xhtml",
+        "previous": "minds of men, — for this work is particularly and eminently ascribed unto",
+        "next": "him, — or the efficacy of the grace of God by him dispensed, Ephesians"
       },
       {
-        "file": "EPUB/ch016.xhtml",
-        "previous": "The Holy, Spirit is represented as the EFFICIENT CAUSE, and an inquiry follows: —",
-        "next": "Into the evidence of the work of the Spirit in the communication of spiritual understanding; — various testimonies from Scripture are adduced, involving a minute discussion of [Psa"
+        "file": "EPUB/ch006.xhtml",
+        "previous": "him, — or the efficacy of the grace of God by him dispensed, Ephesians",
+        "next": "1:17,18; Hebrews 6:4; Luke 2:32; Acts 13:47, 16:14, 26:18; 2"
       },
       {
-        "file": "EPUB/ch016.xhtml",
-        "previous": "l scriptural expressions descriptive of it, such as \"opening the eyes,\" \"translating out of darkness into light,\" \"giving understanding,\" \"teaching,\" and \"shining into our hearts,\"",
-        "next": "As preparatory to what follows in explanation of the Spirit's work in enlightening the mind, a digression is introduced on the causes of spiritual ignorance, which are classified i"
+        "file": "EPUB/ch006.xhtml",
+        "previous": "1:17,18; Hebrews 6:4; Luke 2:32; Acts 13:47, 16:14, 26:18; 2",
+        "next": "Corinthians 4:4; 1 Peter 2:9. The objective cause and outward means of"
       },
       {
-        "file": "EPUB/ch016.xhtml",
-        "previous": "removal of all those causes of spiritual ignorance, by communicating spiritual light, purging from corrupt affections, and implanting spiritual habits and principles, is explained,",
-        "next": "His work for the production of the same effect by means of Scripture itself next comes under review; and under this head three points in regard,"
+        "file": "EPUB/ch006.xhtml",
+        "previous": "Corinthians 4:4; 1 Peter 2:9. The objective cause and outward means of",
+        "next": "it are the subjects at present designed unto consideration; and it will issue"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "it are the subjects at present designed unto consideration; and it will issue",
+        "next": "in these two inquiries: —"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "in these two inquiries: —",
+        "next": "the word of God with faith divine and supernatural, as it is required of us"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "the word of God with faith divine and supernatural, as it is required of us",
+        "next": "in a way of duty?"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "God in the Scripture, or the revelations that are made unto us of his mind",
+        "next": "and will therein?"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "For by illumination in general, as it denotes an effect wrought in the minds",
+        "next": "of men, I understand that supernatural knowledge that any man hath or"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "of men, I understand that supernatural knowledge that any man hath or",
+        "next": "Secondly, This divine external revelation was originally, by various ways (which we have elsewhere declared), given unto sundry persons immediately, partly for their own instructio"
       },
       {
         "file": "EPUB/ch016.xhtml",
         "previous": "(3.) Ecclesiastical, under which the deference due to catholic tradition, the consent of the fathers, and pious authorship, is estimated,",
         "next": "— ED."
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "d apprehend his mind and will as revealed in the Scripture, and without which we cannot so do. The substance, therefore, of the ensuing discourse may be reduced unto these heads: —",
-        "next": "That we stand not in need of any new divine afflations, or immediate prophetical inspirations, to enable us to understand the Scripture, or the mind and will of God as revealed the"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "Wherefore, principally, it is asserted, —",
-        "next": "That there is an especial work of the Holy Spirit, in the supernatural illumination of our minds, needful unto the end proposed, — namely, that we may aright, and according unto ou"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "reby any man may answer the mind and will of God, or comply with his own duty in all that he may be called to do or suffer in this world in his especial circumstances. Wherefore, —",
-        "next": "The certainty and assurance that we may have and ought to have of our right understanding the mind of God in the Scripture, either in general or as to any especial doctrine, doth n"
       },
       {
         "file": "EPUB/ch021.xhtml",
@@ -709,7 +735,7 @@
       {
         "file": "EPUB/ch021.xhtml",
         "previous": "2dly. A teaching suited unto that ability is promised or asserted. Three ways of this teaching are pleaded: —",
-        "next": "(1st.) That it consists in a ζεοπνευστία, an immediate infallible inspiration and afflatus, of the same nature with that of the prophets and apostles of old. But, [1 st .] This tak"
+        "next": "(1st.) That it consists in a ζεοπνευστία , an immediate infallible inspiration and afflatus, of the same nature with that of the prophets and apostles of old. But, [1 st .] This ta"
       },
       {
         "file": "EPUB/ch021.xhtml",
@@ -727,98 +753,23 @@
         "next": "Besides his own consideration of what was proposed unto him, which includes the due and diligent use of all outward means, it was moreover necessary that God should give him unders"
       },
       {
-        "file": "EPUB/ch028.xhtml",
-        "previous": "The object of the discourse is explained. The two main divisions of it are: —",
-        "next": "The evidence of an especial work of the Spirit in prayer and praise; and,"
-      },
-      {
-        "file": "EPUB/ch028.xhtml",
-        "previous": "Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,",
-        "next": "The work of the Spirit in the matter of prayer is reviewed in greater detail: — as enlightening us into a perception of our spiritual wants; acquainting us with the promises of gra"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "The object of the discourse is explained. The two main divisions of it are: —",
-        "next": "The evidence of an especial work of the Spirit in prayer and praise; and,"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,",
-        "next": "The work of the Spirit in the matter of prayer is reviewed in greater detail: — as enlightening us into a perception of our spiritual wants; acquainting us with the promises of gra"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,",
-        "next": "His work as to the manner of prayer is described: — as disposing us to obey God in this duty; implanting holy and gracious desires after the objects sought; giving us delight in Go"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,",
-        "next": "The manner of prayer is farther considered with special reference to [Ephesians 6:18]"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "The manner of prayer is farther considered with special reference to [Ephesians 6:18]",
-        "next": "In the course of an argument on the duty of external prayer, the promise of the Spirit is exhibited as superseding the necessity of recourse to external forms, on the following gro"
-      },
-      {
         "file": "EPUB/ch043.xhtml",
-        "previous": "and",
-        "next": "The discourse on Spiritual Gifts, though comparatively short, is the second part of the main.body of the whole work on the Spirit; and, from various allusions to it in other works "
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "His discharge of it; and,",
+        "previous": "II. His discharge of it; and,",
         "next": "The effects of it towards believers."
       },
       {
         "file": "EPUB/ch044.xhtml",
-        "previous": "and",
-        "next": "The discourse on Spiritual Gifts, though comparatively short, is the second part of the main.body of the whole work on the Spirit; and, from various allusions to it in other works "
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "His discharge of it; and,",
+        "previous": "II. His discharge of it; and,",
         "next": "The effects of it towards believers."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,",
-        "next": "And some of his operations in them as such, and of the benefits which they in consequence enjoy, are specified. His operations in them generally are unfolded under the head of the "
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "(7.) They differ, finally and chiefly, in their subjects, operations, and effects,",
-        "next": "Gifts are distributed into, —"
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "(1.) Extraordinary gifts constituted extraordinary officers — apostles, evangelists, and prophets,",
-        "next": "The gifts themselves, in virtue of which they exercised these extraordinary offices, are, first, powers exceeding the natural faculties of their minds; and, secondly, the special e"
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "ction, from its original acquisition, from the immediate cause of its actual communication, from its own nature, from the variety of offices in it, and from the end designed by it,",
-        "next": "The reality of the spiritual gifts requisite for the discharge of the ministerial office is proved, from the promise of Christ, [Matthew 28:20] the presence of Christ by the Spirit"
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": " the Spirit is promised, administered, and continued; the plain assertions of Scripture; the indispensable necessity for them; and from the actual enjoyment and experience of them,",
-        "next": "These gifts are enumerated: first, as respects doctrine, — wisdom, skill in the division of the word, and utterance; secondly, as respects the worship of God; and, thirdly, as resp"
       },
       {
         "file": "EPUB/ch045.xhtml",
         "previous": "d to supersede the necessity of any full consideration of them. A brief inquiry ensues into the manner in which may come to participate in these gifts, ministerial or more private,",
         "next": "— ED."
-      },
-      {
-        "file": "EPUB/ch057.xhtml",
-        "previous": "The particular nature of them; and,",
-        "next": "Their use in the church of God."
       }
     ],
-    "structural_start_exclusions": 386,
-    "short_fragment_count": 25,
+    "structural_start_exclusions": 408,
+    "short_fragment_count": 24,
     "short_fragments": [
       {
         "file": "EPUB/ch001.xhtml",
@@ -827,6 +778,18 @@
       {
         "file": "EPUB/ch005.xhtml",
         "text": "May 11, 1677."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "in these two inquiries: —"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "in a way of duty?"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "and will therein?"
       },
       {
         "file": "EPUB/ch013.xhtml",
@@ -838,15 +801,23 @@
       },
       {
         "file": "EPUB/ch018.xhtml",
-        "text": "ΣΨΝΕΣΙΣ ΠΝΕΨΜΑΤΙΚΗ."
+        "text": "ΣΨΝΕΣΙΣ ΠΝΕΨΜΑΤΙΚΗ ."
       },
       {
         "file": "EPUB/ch034.xhtml",
         "text": "For, —"
       },
       {
+        "file": "EPUB/ch035.xhtml",
+        "text": "I answer, —"
+      },
+      {
         "file": "EPUB/ch037.xhtml",
         "text": "I say, therefore, —"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "And,"
       },
       {
         "file": "EPUB/ch039.xhtml",
@@ -855,26 +826,6 @@
       {
         "file": "EPUB/ch039.xhtml",
         "text": "Again,"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "text": "and"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "text": "His discharge of it; and,"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "text": "and"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "text": "His discharge of it; and,"
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "text": "Gifts are distributed into, —"
       },
       {
         "file": "EPUB/ch045.xhtml",
@@ -905,10 +856,6 @@
         "text": "THE SPIRIT AN EARNEST, AND HOW."
       },
       {
-        "file": "EPUB/ch057.xhtml",
-        "text": "Their use in the church of God."
-      },
-      {
         "file": "EPUB/ch058.xhtml",
         "text": "And, —"
       },
@@ -923,24 +870,8 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 8,
+    "inline_structural_candidate_count": 2,
     "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "8. - The duty of external prayer by virtue of a spiritual gift explained and vindicated 9. - Duties inferred from the preceding discourse."
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "2. - General adjuncts or properties of the office of a comforter, as exercised by the Holy Spirit 3. - Unto whom the Holy Spirit is promised and given as a comforter, or the object of his acting in this office."
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "1. - Spiritual gifts, their names and signification 2. - Differences between spiritual gifts and saying grace."
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "text": "Into the evidence of the work of the Spirit in the communication of spiritual understanding; — various testimonies from Scripture are adduced, involving a minute discussion of [Psalms 119:18] Psalm 119:18, 2 Corinthians 3:13-18, Isaiah 25:7, Luke 24:44,45, Eph"
-      },
       {
         "file": "EPUB/ch024.xhtml",
         "text": "1. Spiritual; 2. Disciplinary; 3. Ecclesiastical. Some instances on each head will farther clear what I intend."
@@ -948,164 +879,135 @@
       {
         "file": "EPUB/ch034.xhtml",
         "text": "1. We know not our own wants; 2. We know not the plies of them that are expressed in the promises of God; and, 3. We know not the end whereunto what we pray for is to be directed, which I add unto the former. Without the knowledge and understanding of all thes"
-      },
-      {
-        "file": "EPUB/ch053.xhtml",
-        "text": "2. It is for the safe-keeping or preservation of that which a seal is set upon. So things precious and highly valuable are sealed up, that they may be kept safe and inviolable. So, on the other hand, when Job expressed his apprehension that God would keep an e"
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "text": "[1.] The evil which we are hereby delivered from is, the danger of being perniciously and destructively deceived by false doctrines, errors, and heresies; which then began, and have ever since, in all ages, continued to infest the churches of God. These the ap"
       }
     ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 26,
-    "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch007.xhtml",
-        "text": "23. But if, moreover, we are asked a reason of our faith or hope, or why we believe the things we do profess, as God to be one in three persons, Jesus Christ to be the Son of God, we do not answer, \"Because so it is, for"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "text": "21. On this account, and no other, did they themselves receive the Scripture, as also believe and yield obedience unto the things contained in it. Neither would they admit that their testimony was received if the whole w"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "text": "18. This gave them, indeed, sufficient assurance; but whereinto shall they resolve their faith who heard not this testimony?"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "text": "25. An invasion may be made on the outward duties that conscience disposeth unto, but none can be so upon its internal actings. No power under heaven can cause conscience to think, act, or judge otherwise than it doth by"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "27. Speaking unto these very persons, that is, the leaders of them, he saith, \"I have kept back nothing that was profitable unto you, but declared unto you all the counsel of God,\" — namely, \"what is the hope of his call"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "23. And with respect hereunto doth the apostle give that advice unto us as our duty, \"Let no man deceive himself. If any man among you seemeth to be wise in this world, let him become a fool, that he may be wise,\" 1 Cori"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "40. It proved no otherwise, and that to their eternal ruin. Yet do I not judge all them to be practically blind who do not doctrinally own the receiving of this wisdom and light from above; for although we make not ourse"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "18. And the expression, though in part metaphorical, is eminently instructive in the nature of this work; for suppose the nearest and best-disposed proposition of any object unto our bodily eyes, with an external light p"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "11. Hence they so frequently and fervently prayed for understanding, as we have seen in the instance of David. Wherefore,"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "text": "16. And our Savior assures us that heavenly things are much more above our comprehension than earthly, John 3:12. Such as these are, the Trinity, or the subsistence of one single divine nature in three persons; the incar"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "text": "10. And when sinners take a view in their minds of God as he is in himself, and as he will be unto all out of Christ, it ingenerates nothing but dread and terror in them, with foolish contrivances to avoid him or his dis"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "text": "17. All these places and others testify that when sinners do engage into serious thoughts and conceptions of the nature of God, and what entertainment they shall meet with from him, all their apprehensions issue in dread"
-      },
-      {
-        "file": "EPUB/ch039.xhtml",
-        "text": "11. Wherefore, the exercise of this and of the like gifts tends unto their improvement on a double account; for, 1 st . Whereas they reside in the mind after the manner and nature of a habit or a faculty, it is natural t"
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "text": "39. The disciples had hitherto looked for all immediately from Christ in the flesh, the dispensation of the Spirit being hid from them. But now this also was to be manifested unto them. Hence the apostle affirms, that \"t"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "16. It doth not seem to be an essential property of the nature of God only that the apostle doth intend, for it is proposed unto us as a motive unto mutual love among ourselves, and this consists not simply in the habit "
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "text": "18. He maketh use, indeed, of the outward means of instruction by the word, and teacheth nothing but what is revealed therein; but he gives us \"an understanding that we may know him that is true,\" and openeth our eyes th"
-      },
-      {
-        "file": "EPUB/ch055.xhtml",
-        "text": "28. But this is not all. He becomes at length a professed enemy unto such obstinate sinners: [Isaiah 63:10] \"They rebelled, and vexed his holy Spirit; therefore he was turned to be their enemy, and he fought against them"
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "text": "11. But whereas our Savior, in that commission by virtue whereof they were to act after his resurrection, had extended their office and power expressly to \"all nations,\" [Matthew 28:19] or to \"every creature in all the w"
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "text": "11. He gave not any completely to be apostles until then. He had before appointed the office, designed the persons, given them their commission, with the visible pledge of the power they should afterward receive; but the"
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "text": "13. And, in like manner, there is no question but that the rest of the evangelists had the power or gift of miraculous operations, to be exercised as occasion did require, and as they were guided by the Holy Ghost."
-      },
-      {
-        "file": "EPUB/ch060.xhtml",
-        "text": "15. Some do contend for the continuance of this ceremony, or the anointing of them that are sick by the elders of the church, but without ground or warrant: for although it be their duty to pray in a particular manner fo"
-      },
-      {
-        "file": "EPUB/ch060.xhtml",
-        "text": "29. Not that I think this gift did constitute them officers in the church, enabling them to exercise power in gospel administrations therein; only they were brethren of the church, made eminent by a participation of this"
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "text": "11. And it was appointed by him to be the ministry of that peace between God and man which was made therein and thereby, Ephesians 2:14,16,17; for when he had made this peace by the blood of the cross, he preached it in "
-      },
-      {
-        "file": "EPUB/ch064.xhtml",
-        "text": "17. And it is lamentable to consider what shameful work is made for want hereof in the preaching of some men; yea, how the whole gift is lost, as to its power, use, and benefit."
-      },
-      {
-        "file": "EPUB/ch064.xhtml",
-        "text": "17. I dispute not now of what sort this ministry is, nor whether the rule belong unto one sort alone. It is enough unto my present design that it is committed by Christ unto the ministers of the church, which are its gui"
-      },
-      {
-        "file": "EPUB/ch064.xhtml",
-        "text": "13. And as he is the administrator of all supernatural gifts, he furnisheth the whole body and all its members with spiritual abilities unto its edification, [Ephesians 4:15] 16; Colossians 2:19. And without them, in som"
-      }
-    ],
-    "roman_heading_candidate_count": 9,
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 30,
     "roman_heading_candidates": [
       {
-        "file": "EPUB/ch011.xhtml",
-        "text": "did. It is, therefore, folly to pretend that things so made known of God are not infallibly true and certain, because they are not obvious unto the first conceptions of natural light, without the due exercise of reason, "
+        "file": "EPUB/ch007.xhtml",
+        "text": "II. That there are external arguments of the divine original of the Scripture, which are effectual motives to persuade us to give an unfeigned assent thereunto:"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "III. That yet, moreover, God requires of us that we believe them to be his word with faith divine, supernatural, and infallible:"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "IV. Evidence the grounds and reasons whereon we do so believe, and ought so to do."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "II. This being the substance of what is declared and pleaded for in the preceding treatise, to prevent the obloquy of some and confirm the judgment of others, I shall add the suffrage of ancient and modern writers given "
       },
       {
         "file": "EPUB/ch016.xhtml",
-        "text": "II. As to the MEANS for the understanding of Scripture, two kinds are specified: —"
+        "text": "I. The Holy, Spirit is represented as the EFFICIENT CAUSE, and an inquiry follows: —"
       },
       {
         "file": "EPUB/ch018.xhtml",
-        "text": "mill. Whatever we know, be it of what sort it will, we know it in and by the use of our reason; and what we conceive, we do it by our own understanding: only the inquiry is, whether there be not an especial work of the H"
+        "text": "II. That as to the right understanding of the mind of God in the Scripture, or our coming unto the riches of the full assurance of understanding in the acknowledgment of the mystery of God, we do not, nor need to depend "
       },
       {
-        "file": "EPUB/ch019.xhtml",
-        "text": "did. And we find that the apostle reneweth his prayer for them again unto the same purpose with great fervency, [Ephesians 3:14] -19. All the difference ariseth from hence, that the apostle judgeth that over and above th"
+        "file": "EPUB/ch018.xhtml",
+        "text": "III. That in the mere exercise of our own natural reason and understanding, with the help of external means, we cannot attain that knowledge of the mind and wfil of God in the Scripture, of the sense and meaning of the H"
       },
       {
-        "file": "EPUB/ch019.xhtml",
-        "text": "did. Whoever, therefore, hath this ability to know the mysteries of the gospel, he hath it by free gift or donation from God. He hath received it, and may not boast as if it were from himself, and that he had not receive"
+        "file": "EPUB/ch018.xhtml",
+        "text": "V. That hereby alone is that full assurance of understanding in the knowledge of the mystery of God, his truth and grace, to be obtained, whereby any man may answer the mind and will of God, or comply with his own duty i"
       },
       {
-        "file": "EPUB/ch020.xhtml",
-        "text": "mill. The Scripture we own as the only rule of our faith, as the only treasury of all sacred truths. The knowledge we aim at is, the \"full assurance of understanding\" in the mind and will of God, revealed therein. The so"
+        "file": "EPUB/ch018.xhtml",
+        "text": "VII. That whereas the means of the right interpretation of the Scripture, and understanding of the mind of God therein, are of two sorts, — first, such as are prescribed unto us in a way of duty, as prayer, meditation on"
       },
       {
-        "file": "EPUB/ch021.xhtml",
-        "text": "did. Wherefore, although there be in the gospel and the doctrine of it an illustrious representation of the glory of God in Christ, yet are we not able of ourselves to discern it, until the Holy Spirit by an act of his a"
+        "file": "EPUB/ch024.xhtml",
+        "text": "II. The means designed for the improvement hereof, or our profitable use of it, are of three sorts: —"
       },
       {
-        "file": "EPUB/ch041.xhtml",
-        "text": "did. In the meantime, I do yet judge that the use of them is in itself obstructive of all the principal ends of prayer and sacred worship. Where they are alone used, they are opposite to the edification of the church; an"
+        "file": "EPUB/ch028.xhtml",
+        "text": "I. The evidence of its reality consists in a minute explanation of two passages in Scripture, Zechariah 12:10, and Galatians 4:6, 2, 3."
       },
       {
-        "file": "EPUB/ch059.xhtml",
-        "text": "did. But whereas their ministry was subordinate unto that of the apostles, they were by them guided as to the particular places wherein they were to exercise their power and discharge their office for a season. This is e"
+        "file": "EPUB/ch028.xhtml",
+        "text": "II. Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "I. The evidence of its reality consists in a minute explanation of two passages in Scripture, Zechariah 12:10, and Galatians 4:6, 2, 3."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "II. Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "II. and"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "II. His discharge of it; and,"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "I. In his office, there are implied an especial trust, mission, name, and work, chap. I."
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "II. The general properties of this office, as discharged by the Holy Spirit, are unfolded: —"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "II. and"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "II. His discharge of it; and,"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "I. In his office, there are implied an especial trust, mission, name, and work, chap. I."
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "II. The general properties of this office, as discharged by the Holy Spirit, are unfolded: —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "III. In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "II. What is in that office, or wherein the discharge of it doth consist."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "II. What is in that office, or wherein the discharge of it doth consist."
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "II. Their nature in general, and therein how they agree with and differ from saving graces;"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "III. Their distinction;"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "IV. The particular nature of them; and,"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "I. In our inquiry after the first, or what are the gifts whereby men are fitted and enabled for the ministry, we wholly set aside the consideration of all those gracious qualifications of faith, love, zeal, compassion, c"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "II. It remains only that we inquire how men may come unto or attain a participation of these gifts, whether ministerial or more private. And unto this end we may observe, —"
       }
     ],
     "overlong_heading_candidate_count": 1,

@@ -105,10 +105,12 @@ See previous sessions.
 ---
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-16T21:58:47.370641+00:00
+**Last run:** 2026-05-17T14:45:45.433473+00:00
 **EPUB:** `volumes/v6/output/volume_6.epub`
 **Status:** WARN (0 errors, 2 warnings)
 
@@ -143,10 +145,12 @@ Warnings requiring triage:
 ---
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-16T21:59:26.393922+00:00
+**Last run:** 2026-05-17T14:46:27.018620+00:00
 **Status:** WARN (10 warnings)
 
 Reports:
@@ -157,7 +161,7 @@ Reports:
 |-------|--------|
 | PDF pages | 788 |
 | EPUB text files | 113 |
-| EPUB paragraphs/headings | 3267 |
+| EPUB paragraphs/headings | 3268 |
 | Approximate PDF-to-EPUB word coverage | 0.9975 |
 | Weak page matches | 9 |
 | Dense source windows checked | 33112 |
@@ -171,10 +175,10 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 8 |
 | Missing bottom-of-page body windows | 17 |
 | Possible faulty paragraph splits | 36 |
-| Structural starts excluded from split warnings | 423 |
+| Structural starts excluded from split warnings | 422 |
 | Short fragments | 17 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 2 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |

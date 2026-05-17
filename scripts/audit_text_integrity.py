@@ -1015,6 +1015,190 @@ def repeated_windows(text: str, size: int = 10) -> list[dict[str, Any]]:
     return hits[:25]
 
 
+GREEK_WORD_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]+")
+HEBREW_WORD_RE = re.compile(r"[\u0590-\u05ff]+")
+GREEK_HEBREW_WORD_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff]+")
+
+
+def greek_hebrew_word_coverage(pdf_pages: list[str], paragraphs: list[Paragraph]) -> dict[str, Any]:
+    """Compare Greek and Hebrew word counts between PDF and EPUB.
+
+    Uses font-aware PDF extraction (already done in extract_pdf_pages)
+    and EPUB text (stripped of HTML tags).
+    """
+    pdf_text = "\n".join(pdf_pages)
+    epub_text = "\n".join(p.text for p in paragraphs)
+
+    pdf_greek = GREEK_WORD_RE.findall(pdf_text)
+    epub_greek = GREEK_WORD_RE.findall(epub_text)
+    pdf_hebrew = HEBREW_WORD_RE.findall(pdf_text)
+    epub_hebrew = HEBREW_WORD_RE.findall(epub_text)
+
+    # Build word frequency maps for more nuanced comparison
+    pdf_greek_counts = Counter(w.lower() for w in pdf_greek if len(w) >= 2)
+    epub_greek_counts = Counter(w.lower() for w in epub_greek if len(w) >= 2)
+    pdf_hebrew_counts = Counter(w for w in pdf_hebrew if len(w) >= 2)
+    epub_hebrew_counts = Counter(w for w in epub_hebrew if len(w) >= 2)
+
+    # Greek coverage
+    greek_total = sum(pdf_greek_counts.values())
+    greek_overlap = sum(min(c, epub_greek_counts.get(w, 0)) for w, c in pdf_greek_counts.items())
+    greek_coverage = greek_overlap / greek_total if greek_total else 1.0
+
+    # Hebrew coverage
+    hebrew_total = sum(pdf_hebrew_counts.values())
+    hebrew_overlap = sum(min(c, epub_hebrew_counts.get(w, 0)) for w, c in pdf_hebrew_counts.items())
+    hebrew_coverage = hebrew_overlap / hebrew_total if hebrew_total else 1.0
+
+    # Find significantly missing Greek words (present ≥3 times in PDF, <50% in EPUB)
+    missing_greek = []
+    for word, count in pdf_greek_counts.items():
+        if count >= 3 and epub_greek_counts.get(word, 0) < count * 0.5:
+            missing_greek.append({
+                "word": word,
+                "pdf": count,
+                "epub": epub_greek_counts.get(word, 0),
+            })
+    missing_greek.sort(key=lambda x: x["pdf"] - x["epub"], reverse=True)
+
+    # Find significantly missing Hebrew words
+    missing_hebrew = []
+    for word, count in pdf_hebrew_counts.items():
+        if count >= 2 and epub_hebrew_counts.get(word, 0) < count * 0.5:
+            missing_hebrew.append({
+                "word": word,
+                "pdf": count,
+                "epub": epub_hebrew_counts.get(word, 0),
+            })
+    missing_hebrew.sort(key=lambda x: x["pdf"] - x["epub"], reverse=True)
+
+    return {
+        "pdf_greek_word_count": len(pdf_greek),
+        "epub_greek_word_count": len(epub_greek),
+        "pdf_greek_unique_words": len(pdf_greek_counts),
+        "epub_greek_unique_words": len(epub_greek_counts),
+        "greek_word_coverage_ratio": round(greek_coverage, 4),
+        "pdf_hebrew_word_count": len(pdf_hebrew),
+        "epub_hebrew_word_count": len(epub_hebrew),
+        "pdf_hebrew_unique_words": len(pdf_hebrew_counts),
+        "epub_hebrew_unique_words": len(epub_hebrew_counts),
+        "hebrew_word_coverage_ratio": round(hebrew_coverage, 4),
+        "missing_greek_word_samples": missing_greek[:25],
+        "missing_hebrew_word_samples": missing_hebrew[:25],
+    }
+
+
+def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[str, Any]:
+    """Verify dense Greek/Hebrew passages from PDF are preserved in EPUB.
+
+    A 'dense passage' is a sequence of ≥ 5 consecutive Greek or Hebrew words
+    on a single PDF page. These are checked as normalized word strings
+    against the EPUB text.
+    """
+    epub_norm = normalized_word_string(epub_text)
+    missing_greek_clauses = []
+    missing_hebrew_clauses = []
+    checked_greek = 0
+    checked_hebrew = 0
+
+    for page_no, page_text in enumerate(pdf_pages, start=1):
+        # Find Greek word sequences
+        greek_words = GREEK_WORD_RE.findall(page_text)
+        if len(greek_words) >= 5:
+            # Extract contiguous Greek sequences (≥5 words)
+            current_seq = []
+            for word in greek_words:
+                if len(word) >= 2:
+                    current_seq.append(word.lower())
+                else:
+                    if len(current_seq) >= 5:
+                        checked_greek += 1
+                        phrase = " ".join(current_seq)
+                        if phrase not in epub_norm:
+                            # Try shorter windows (80% match)
+                            window_size = max(5, int(len(current_seq) * 0.8))
+                            found = any(
+                                " ".join(current_seq[i:i + window_size]) in epub_norm
+                                for i in range(len(current_seq) - window_size + 1)
+                            )
+                            if not found:
+                                missing_greek_clauses.append({
+                                    "page": page_no,
+                                    "word_count": len(current_seq),
+                                    "sample": " ".join(current_seq[:12]),
+                                })
+                        current_seq = []
+                    else:
+                        current_seq = []
+            # Handle trailing sequence
+            if len(current_seq) >= 5:
+                checked_greek += 1
+                phrase = " ".join(current_seq)
+                if phrase not in epub_norm:
+                    window_size = max(5, int(len(current_seq) * 0.8))
+                    found = any(
+                        " ".join(current_seq[i:i + window_size]) in epub_norm
+                        for i in range(len(current_seq) - window_size + 1)
+                    )
+                    if not found:
+                        missing_greek_clauses.append({
+                            "page": page_no,
+                            "word_count": len(current_seq),
+                            "sample": " ".join(current_seq[:12]),
+                        })
+
+        # Find Hebrew word sequences
+        hebrew_words = HEBREW_WORD_RE.findall(page_text)
+        if len(hebrew_words) >= 3:
+            current_seq = []
+            for word in hebrew_words:
+                if len(word) >= 2:
+                    current_seq.append(word)
+                else:
+                    if len(current_seq) >= 3:
+                        checked_hebrew += 1
+                        phrase = " ".join(current_seq)
+                        if phrase not in epub_norm:
+                            window_size = max(3, int(len(current_seq) * 0.8))
+                            found = any(
+                                " ".join(current_seq[i:i + window_size]) in epub_norm
+                                for i in range(len(current_seq) - window_size + 1)
+                            )
+                            if not found:
+                                missing_hebrew_clauses.append({
+                                    "page": page_no,
+                                    "word_count": len(current_seq),
+                                    "sample": " ".join(current_seq[:10]),
+                                })
+                        current_seq = []
+                    else:
+                        current_seq = []
+            if len(current_seq) >= 3:
+                checked_hebrew += 1
+                phrase = " ".join(current_seq)
+                if phrase not in epub_norm:
+                    window_size = max(3, int(len(current_seq) * 0.8))
+                    found = any(
+                        " ".join(current_seq[i:i + window_size]) in epub_norm
+                        for i in range(len(current_seq) - window_size + 1)
+                    )
+                    if not found:
+                        missing_hebrew_clauses.append({
+                            "page": page_no,
+                            "word_count": len(current_seq),
+                            "sample": " ".join(current_seq[:10]),
+                        })
+
+    return {
+        "greek_clauses_checked": checked_greek,
+        "missing_greek_clause_count": len(missing_greek_clauses),
+        "missing_greek_clauses": missing_greek_clauses[:30],
+        "hebrew_clauses_checked": checked_hebrew,
+        "missing_hebrew_clause_count": len(missing_hebrew_clauses),
+        "missing_hebrew_clauses": missing_hebrew_clauses[:30],
+    }
+
+
 def infer_paths(volume: int, root: Path) -> tuple[Path, Path, Path]:
     vol_dir = root / "volumes" / f"v{volume}"
     return (
@@ -1040,6 +1224,8 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     para_scan = paragraph_integrity(paragraphs)
     enum_scan = enumerator_integrity(pdf_pages, paragraphs)
     repeats = repeated_windows(epub_text)
+    gh_word_cov = greek_hebrew_word_coverage(pdf_pages, paragraphs)
+    gh_clause_fid = greek_hebrew_clause_fidelity(pdf_pages, epub_text)
 
     warnings = []
     if word_coverage["coverage_ratio"] < 0.86:
@@ -1132,6 +1318,26 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
             "code": "repeated_windows",
             "message": "Repeated word windows may indicate ghost-layer duplication",
         })
+    if gh_word_cov["pdf_greek_word_count"] >= 20 and gh_word_cov["greek_word_coverage_ratio"] < 0.80:
+        warnings.append({
+            "code": "low_greek_word_coverage",
+            "message": "EPUB Greek word coverage against PDF extraction is lower than expected",
+        })
+    if gh_word_cov["pdf_hebrew_word_count"] >= 10 and gh_word_cov["hebrew_word_coverage_ratio"] < 0.80:
+        warnings.append({
+            "code": "low_hebrew_word_coverage",
+            "message": "EPUB Hebrew word coverage against PDF extraction is lower than expected",
+        })
+    if gh_clause_fid["missing_greek_clause_count"]:
+        warnings.append({
+            "code": "missing_greek_clauses",
+            "message": "Some dense Greek passages from the PDF are missing from the EPUB",
+        })
+    if gh_clause_fid["missing_hebrew_clause_count"]:
+        warnings.append({
+            "code": "missing_hebrew_clauses",
+            "message": "Some dense Hebrew passages from the PDF are missing from the EPUB",
+        })
 
     return {
         "volume": volume,
@@ -1152,6 +1358,8 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
         "paragraph_integrity": para_scan,
         "enumerator_integrity": enum_scan,
         "repeated_windows": repeats,
+        "greek_hebrew_word_coverage": gh_word_cov,
+        "greek_hebrew_clause_fidelity": gh_clause_fid,
         "limits": {
             "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review.",
         },
@@ -1176,6 +1384,8 @@ def render_markdown(result: dict[str, Any]) -> str:
     bp = result["bottom_of_page_integrity"]
     pi = result["paragraph_integrity"]
     ei = result["enumerator_integrity"]
+    gh = result["greek_hebrew_word_coverage"]
+    ghf = result["greek_hebrew_clause_fidelity"]
     lines = [
         f"# Text Integrity Audit: Volume {result['volume']}",
         "",
@@ -1223,6 +1433,19 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Missing enumerator marker forms: {ei['missing_marker_count']}",
         f"- Enumerator sequence candidates: {ei['orphan_candidate_count']}",
         "",
+        "## Greek / Hebrew",
+        "",
+        f"- PDF Greek words: {gh['pdf_greek_word_count']}",
+        f"- EPUB Greek words: {gh['epub_greek_word_count']}",
+        f"- Greek word coverage ratio: {gh['greek_word_coverage_ratio']}",
+        f"- PDF Hebrew words: {gh['pdf_hebrew_word_count']}",
+        f"- EPUB Hebrew words: {gh['epub_hebrew_word_count']}",
+        f"- Hebrew word coverage ratio: {gh['hebrew_word_coverage_ratio']}",
+        f"- Greek clauses checked: {ghf['greek_clauses_checked']}",
+        f"- Missing Greek clauses: {ghf['missing_greek_clause_count']}",
+        f"- Hebrew clauses checked: {ghf['hebrew_clauses_checked']}",
+        f"- Missing Hebrew clauses: {ghf['missing_hebrew_clause_count']}",
+        "",
     ]
 
     if result["warnings"]:
@@ -1250,6 +1473,10 @@ def render_markdown(result: dict[str, Any]) -> str:
     add_sample_section(lines, "Repeated Windows", result["repeated_windows"], ["phrase", "count"])
     add_sample_section(lines, "Missing Word Samples", wc["missing_word_samples"], ["word", "pdf", "epub"])
     add_sample_section(lines, "Excess Word Samples", wc["excess_word_samples"], ["word", "pdf", "epub"])
+    add_sample_section(lines, "Missing Greek Word Samples", gh["missing_greek_word_samples"], ["word", "pdf", "epub"])
+    add_sample_section(lines, "Missing Hebrew Word Samples", gh["missing_hebrew_word_samples"], ["word", "pdf", "epub"])
+    add_sample_section(lines, "Missing Greek Clauses", ghf["missing_greek_clauses"], ["page", "word_count", "sample"])
+    add_sample_section(lines, "Missing Hebrew Clauses", ghf["missing_hebrew_clauses"], ["page", "word_count", "sample"])
 
     lines.extend([
         "## Limits",
@@ -1290,6 +1517,8 @@ def render_bug_log_section(result: dict[str, Any], json_path: Path, md_path: Pat
     bp = result["bottom_of_page_integrity"]
     pi = result["paragraph_integrity"]
     ei = result["enumerator_integrity"]
+    gh = result["greek_hebrew_word_coverage"]
+    ghf = result["greek_hebrew_clause_fidelity"]
     lines = [
         "<!-- TEXT_INTEGRITY_START -->",
         "## Automated Textual Integrity Audit",
@@ -1334,6 +1563,12 @@ def render_bug_log_section(result: dict[str, Any], json_path: Path, md_path: Pat
         f"| EPUB enumerator markers | {ei['epub_marker_count']} |",
         f"| Missing enumerator marker forms | {ei['missing_marker_count']} |",
         f"| Enumerator sequence candidates | {ei['orphan_candidate_count']} |",
+        f"| PDF Greek words / EPUB Greek words | {gh['pdf_greek_word_count']} / {gh['epub_greek_word_count']} |",
+        f"| Greek word coverage ratio | {gh['greek_word_coverage_ratio']} |",
+        f"| PDF Hebrew words / EPUB Hebrew words | {gh['pdf_hebrew_word_count']} / {gh['epub_hebrew_word_count']} |",
+        f"| Hebrew word coverage ratio | {gh['hebrew_word_coverage_ratio']} |",
+        f"| Missing Greek clauses | {ghf['missing_greek_clause_count']} |",
+        f"| Missing Hebrew clauses | {ghf['missing_hebrew_clause_count']} |",
         "",
     ]
 

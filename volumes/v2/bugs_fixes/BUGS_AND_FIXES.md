@@ -1025,12 +1025,14 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-15T21:58:36.758722+00:00
+**Last run:** 2026-05-17T15:20:05.328363+00:00
 **EPUB:** `volumes/v2/output/volume_2.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** FAIL (1 errors, 3 warnings)
 
 Reports:
 - `volume_2_audit.json`
@@ -1043,11 +1045,11 @@ Reports:
 | Spine items | 49 |
 | Embedded fonts | 18 |
 | NAV links | 49 |
-| Greek chars / untagged | 3531 / 3 |
+| Greek chars / untagged | 3398 / 3 |
 | Hebrew chars / untagged | 615 / 0 |
-| Noteref links / endnote anchors | 26 / 26 |
+| Noteref links / endnote anchors | 25 / 26 |
 | AGES boilerplate hits | 0 |
-| Possible Beta Code files | 0 |
+| Possible Beta Code files | 4 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 0 |
@@ -1055,6 +1057,12 @@ Reports:
 Warnings requiring triage:
 
 - `untagged_greek`: Greek characters appear outside lang='el' context
+- `possible_beta_code_residue`: Possible Beta Code residue detected
+- `orphan_endnotes`: Some endnote anchors have no matching noteref
+
+Errors requiring correction:
+
+- `literal_footnote_markers`: Literal fN footnote markers appear in rendered text
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->

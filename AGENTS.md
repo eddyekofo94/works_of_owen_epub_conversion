@@ -19,10 +19,10 @@ Do not regenerate or audit additional volumes merely to prove transferability. I
 
 ## Active Converter — Two-Stage Modular Pipeline (Issue 91)
 
-The pipeline was refactored into three focused modules. `converter.py` is kept as a
-legacy orchestrator that imports from the new modules and is still functional.
+The pipeline uses three focused modules. `converter.py` is a legacy orchestrator that
+imports from the new modules and is still functional but **not the preferred path**.
 
-### Preferred: Per-volume scripts (new)
+### Preferred: Per-volume scripts (current standard)
 
 ```bash
 # Full pipeline for volume 1 (extract PDF + render EPUB)
@@ -38,6 +38,11 @@ legacy orchestrator that imports from the new modules and is still functional.
 Per-volume scripts exist for v1. When working on a new volume, create
 `volumes/vN/convert.py` from the v1 template and populate `OVERRIDES`.
 
+**IMPORTANT:** Always use `volumes/vN/convert.py` for testing and rebuilding.
+The legacy `converter.py` does not pass volume-specific `OVERRIDES` (OCR fixes,
+paragraph hooks) to the render pipeline, so EPUBs built with it will miss
+volume-specific corrections.
+
 ### Stage entry points (direct)
 
 ```bash
@@ -48,10 +53,10 @@ Per-volume scripts exist for v1. When working on a new volume, create
 .venv/bin/python3 render.py 1
 ```
 
-### Legacy orchestrator (still works)
+### Legacy orchestrator (avoid for normal work)
 
 ```bash
-# Process a single Owen volume (legacy path, used until all vN/convert.py exist)
+# Process a single Owen volume (legacy path — missing OVERRIDES)
 .venv/bin/python3 converter.py 3
 
 # Process all 16 Owen volumes
@@ -86,7 +91,7 @@ Owen/
 ├── ENGINEERING_LOG.md           # Technical post-mortems
 ├── extract.py                   # Stage 1: PDF → JSON intermediate (Issue 91)
 ├── render.py                    # Stage 2: JSON → EPUB3 (Issue 91)
-├── converter.py                 # Legacy orchestrator (imports extract.py + render.py)
+├── converter.py                 # Legacy wrapper around extract.py + render.py
 ├── shared.py                    # Metadata, CSS, fonts, Greek/Hebrew converters
 ├── docs/archive/                # Historical plans and session summaries
 ├── covers/                      # v1.png-v16.png
@@ -113,9 +118,24 @@ The converter uses a hybrid extraction strategy:
 5. Footnotes are extracted from PDF and enriched from existing ThML intermediates.
 6. EPUB3 output is assembled with embedded fonts, cover, frontispiece, NAV, NCX, landmarks, endnotes, and Apple Books display options.
 
+### Known Fixes Applied (Stage 1 — extract.py)
+
+- **Greek text preservation**: `_remove_adjacent_line_overlaps` and related dedup functions now include Greek/Hebrew Unicode ranges in their word-matching regexes, preventing false overlap detection on Greek text.
+- **Greek letter mapping**: `GREEK_UPPER['Y']` corrected from Psi (Ψ) to Upsilon (Υ) for AGES Koine encoding. `GREEK_LOWER` and `GREEK_UPPER` use AGES Koine conventions (c=chi, x=xi).
+- **`_remove_adjacent_line_overlaps`**: Fixed regex to include Greek/Hebrew characters: `r"[A-Za-z0-9:;,''\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+"`
+
+### Volume-Specific OCR Fixes (volumes/vN/convert.py)
+
+Volume 1 `OVERRIDES` includes `text_replacements` for known OCR artifacts:
+- `on]y` → `only`, `name]y` → `namely`
+- `Charneck` → `Charnock`, `whoso` → `whose`, etc.
+- Scripture reference deduplication fixes
+
+These are applied during Stage 2 rendering via `_repair_owen_ocr_errors()`.
+
 ## Source Rules
 
-Volumes 1-16 currently use the AGES PDF path in `converter.py`. `shared.py` records CCEL XML sources for volumes 5 and 10, but the current live `process_owen_volume()` still opens `volumes/vN/input/owen-vN.pdf` for every volume.
+Volumes 1-16 currently use the AGES PDF path through the live `extract.py`/`render.py` pipeline. `shared.py` records CCEL XML sources for volumes 5 and 10, but the current live conversion still opens `volumes/vN/input/owen-vN.pdf` for every volume.
 
 Do not remove the CCEL XML files; they remain useful comparison sources and may become preferred source text later.
 

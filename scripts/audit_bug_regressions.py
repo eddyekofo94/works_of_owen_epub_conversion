@@ -87,6 +87,30 @@ TEXT_CHECKS = [
         ("text_integrity", "max_fragmented_sentence_run_count"),
         ("paragraph_density_integrity", "fragmented_sentence_runs"),
     ),
+    (
+        "Low Greek word coverage",
+        ("greek_hebrew_word_coverage", "greek_word_coverage_ratio"),
+        ("text_integrity", "min_greek_word_coverage_ratio"),
+        ("greek_hebrew_word_coverage", "missing_greek_word_samples"),
+    ),
+    (
+        "Low Hebrew word coverage",
+        ("greek_hebrew_word_coverage", "hebrew_word_coverage_ratio"),
+        ("text_integrity", "min_hebrew_word_coverage_ratio"),
+        ("greek_hebrew_word_coverage", "missing_hebrew_word_samples"),
+    ),
+    (
+        "Missing Greek clauses",
+        ("greek_hebrew_clause_fidelity", "missing_greek_clause_count"),
+        ("text_integrity", "max_missing_greek_clauses"),
+        ("greek_hebrew_clause_fidelity", "missing_greek_clauses"),
+    ),
+    (
+        "Missing Hebrew clauses",
+        ("greek_hebrew_clause_fidelity", "missing_hebrew_clause_count"),
+        ("text_integrity", "max_missing_hebrew_clauses"),
+        ("greek_hebrew_clause_fidelity", "missing_hebrew_clauses"),
+    ),
 ]
 
 
@@ -180,6 +204,12 @@ EPUB_CHECKS = [
         ("info", "content_scan", "fragmented_greek_span_run_files"),
         ("epub", "max_fragmented_greek_span_run_files"),
         ("info", "content_scan", "samples", "fragmented_greek_span_run"),
+    ),
+    (
+        "Fragmented Hebrew span-run files",
+        ("info", "content_scan", "fragmented_hebrew_span_run_files"),
+        ("epub", "max_fragmented_hebrew_span_run_files"),
+        ("info", "content_scan", "samples", "fragmented_hebrew_span_run"),
     ),
     (
         "Noteref links without spacing class",
@@ -372,11 +402,17 @@ def build_check_rows(
         observed = observed_value(result, observed_path)
         limit = observed_value(budget, budget_path)
         samples = nested_get(result, sample_path)
+        # Coverage ratios: lower is worse (observed < limit = regression)
+        is_ratio_check = "coverage_ratio" in str(observed_path)
+        if is_ratio_check:
+            status = "regression" if observed < limit else "ok"
+        else:
+            status = "regression" if observed > limit else "ok"
         rows.append({
             "label": label,
             "observed": observed,
             "budget": limit,
-            "status": "regression" if observed > limit else "ok",
+            "status": status,
             "samples": samples[:10] if isinstance(samples, list) else [],
         })
     return rows

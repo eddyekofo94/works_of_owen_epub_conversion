@@ -2,7 +2,7 @@
 
 - Status: **WARN**
 - Errors: 0
-- Warnings: 1
+- Warnings: 3
 
 ## Summary
 
@@ -18,9 +18,9 @@
 ## Content Checks
 
 - Greek chars: 4420
-- Untagged Greek chars: 0
+- Untagged Greek chars: 23
 - Hebrew chars: 687
-- Untagged Hebrew chars: 0
+- Untagged Hebrew chars: 19
 - Noteref links: 24
 - Endnote anchors: 23
 - Boilerplate hits: 0
@@ -32,9 +32,20 @@
 
 ## Warnings
 
+- `untagged_greek`: Greek characters appear outside lang='el' context
+- `untagged_hebrew`: Hebrew characters appear outside lang='he' context
 - `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
+
+### untagged_greek
+
+- `EPUB/ch006.xhtml`: First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a natural knowledge of supernatural things, and that both theoretical and practic
+- `EPUB/ch054.xhtml`: and nylons, the Spirit, is of the neuter. Some would have it to refer unto Christ, verse 12. But as it is not unusual in Scripture that the subjunctive article and relative should agree in gender with the following subst
+
+### untagged_hebrew
+
+- `EPUB/ch006.xhtml`: First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a natural knowledge of supernatural things, and that both theoretical and practic
 
 ### repeated_phrase
 
@@ -50,8 +61,8 @@
 
 ### lowercase_paragraph_start
 
+- `EPUB/ch006.xhtml`: p
+- `EPUB/ch011.xhtml`: d
 - `EPUB/ch016.xhtml`: p
-- `EPUB/ch043.xhtml`: a
-- `EPUB/ch044.xhtml`: a
-- `EPUB/ch055.xhtml`: s
-- `EPUB/contents_2.xhtml`: q
+- `EPUB/ch018.xhtml`: m
+- `EPUB/ch019.xhtml`: d

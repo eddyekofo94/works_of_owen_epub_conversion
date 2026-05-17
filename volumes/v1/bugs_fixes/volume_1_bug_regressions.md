@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 116 | 116 | OK |
+| Possible faulty paragraph splits | 76 | 116 | OK |
 | Inline structural marker candidates | 1 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -19,18 +19,22 @@
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
+| Low Greek word coverage | 0 | 0 | OK |
+| Low Hebrew word coverage | 1 | 0 | OK |
+| Missing Greek clauses | 16 | 16 | OK |
+| Missing Hebrew clauses | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
-| Untagged Greek characters | 10 | 55 | OK |
+| Untagged Greek characters | 8 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 8 | 8 | OK |
+| Repeated phrase hits | 5 | 8 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
-| Chapter headings rendered as paragraphs | 3 | 3 | OK |
+| Chapter headings rendered as paragraphs | 2 | 3 | OK |
 | Overlong headings containing body prose | 0 | 0 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
@@ -48,7 +52,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 38 | 38 | OK |
+| Lowercase page fragments | 13 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -58,15 +62,15 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch001.xhtml; previous: **GENERAL PREFACE.**; next: IT would be presumption to enter upon any commendation of John Owen as an author and divine. His works will continue to gather round them the respect and admiration of the Church o
-- file: EPUB/ch005.xhtml; previous: **A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST**; next: **CHAPTER 1**
-- file: EPUB/ch005.xhtml; previous: **CHAPTER 1**; next: **PETER'S CONFESSION; Matthew 16:16MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION**
-- file: EPUB/ch005.xhtml; previous: **PETER'S CONFESSION; Matthew 16:16MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION**; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
-- file: EPUB/ch011.xhtml; previous: But —; next: There was yet more required thereunto, or to render his offices effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no
+- file: EPUB/ch004.xhtml; previous: their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,; next: a. 3, ad prim., and q., 84,
+- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q., 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
+- file: EPUB/ch004.xhtml; previous: a. 1, ad tertium; Alexand. Alens. p. 3,; next: q. 30,
+- file: EPUB/ch004.xhtml; previous: m. 1,; next: a. 3.
+- file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch019.xhtml; text: Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of d
+- file: EPUB/ch078.xhtml; text: A.M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sens
 
 ### Repeated word windows
 
@@ -76,12 +80,19 @@
 - phrase: beholding the glory of christ by faith in this world
 - phrase: the glory of christ by faith in this world and
 
+### Missing Greek clauses
+
+- page: 26; sample: υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
+- page: 31; sample: πρόσωπον ὁμοιούσιος ἑτερούσιος ἐξ οὐκ
+- page: 32; sample: ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου
+- page: 37; sample: ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν
+- page: 37; sample: υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ
+
 ### Untagged Greek characters
 
-- file: EPUB/ch004.xhtml; text: , ηε etc, saith Ignatius: Epist. ad Philadelph. — “He” (that is, Christ) “is the way leading unto the Father, the rock, the key, the shepherd” — wherein he has respect unto this testimony. And Origin expressly denies the
 - file: EPUB/ch004.xhtml; text: , κ.τ.λ. (cap. 6)
-- file: EPUB/ch005.xhtml; text: , κ.τ.λ.” — “Thou art a rock, and on thee will I build.” At least the gender had not been altered, but he would have said, “
-- file: EPUB/ch019.xhtml; text: .τ. λ., 2 Corinthians 3:182 Corinthians 3:18. We behold his glory “in a glass,” which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented un
+- file: EPUB/ch005.xhtml; text: , κ.τ.λ." — "Thou art a rock, and on thee will I build." At least the gender had not been altered, but he would have said, "
+- file: EPUB/ch019.xhtml; text: .τ. λ., 2 Corinthians 3:18. We behold his glory "in a glass," which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t
 
 ### Repeated phrase hits
 
@@ -93,14 +104,13 @@
 
 ### Chapter headings rendered as paragraphs
 
-- file: EPUB/ch005.xhtml; text: **CHAPTER 1
-- file: EPUB/ch028.xhtml; text: **CHAPTER 1
-- file: EPUB/ch049.xhtml; text: governeth all things. — Chapter 6
+- file: EPUB/ch003.xhtml; text: Chapter 1
+- file: EPUB/ch049.xhtml; text: A. Only by Jesus Christ. — Chapter 9
 
 ### Lowercase page fragments
 
-- file: EPUB/ch002_title.xhtml; text: m
+- file: EPUB/ch004.xhtml; text: a
 - file: EPUB/ch008.xhtml; text: a
-- file: EPUB/ch015.xhtml; text: p
-- file: EPUB/ch019.xhtml; text: r
-- file: EPUB/ch024.xhtml; text: o
+- file: EPUB/ch020.xhtml; text: i
+- file: EPUB/ch024.xhtml; text: w
+- file: EPUB/ch030.xhtml; text: a

@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v6/output/volume_6.epub",
-  "generated_at": "2026-05-16T21:58:47.370641+00:00",
+  "generated_at": "2026-05-17T14:45:45.433473+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 2,
@@ -19,7 +19,7 @@
   ],
   "info": {
     "file_count": 139,
-    "epub_size_bytes": 2974494,
+    "epub_size_bytes": 2974403,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -147,6 +147,10 @@
             "text": "a"
           },
           {
+            "file": "EPUB/ch023.xhtml",
+            "text": "d"
+          },
+          {
             "file": "EPUB/ch037.xhtml",
             "text": "w"
           },
@@ -173,10 +177,6 @@
           {
             "file": "EPUB/ch059.xhtml",
             "text": "v"
-          },
-          {
-            "file": "EPUB/ch062.xhtml",
-            "text": "s"
           }
         ],
         "noteref_leading_space": [],

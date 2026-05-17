@@ -15,7 +15,11 @@
         "roman_heading_candidates",
         "missing_enumerator_markers",
         "enumerator_sequence_candidates",
-        "repeated_windows"
+        "repeated_windows",
+        "low_greek_word_coverage",
+        "low_hebrew_word_coverage",
+        "missing_greek_clauses",
+        "missing_hebrew_clauses"
       ],
       "max_split_candidate_count": 61,
       "max_inline_structural_candidate_count": 1,
@@ -27,7 +31,11 @@
       "max_missing_marker_count": 0,
       "max_low_density_chapter_count": 0,
       "max_malformed_transition_chapter_count": 0,
-      "max_fragmented_sentence_run_count": 0
+      "max_fragmented_sentence_run_count": 0,
+      "min_greek_word_coverage_ratio": 0.80,
+      "min_hebrew_word_coverage_ratio": 0.80,
+      "max_missing_greek_clauses": 16,
+      "max_missing_hebrew_clauses": 0
     },
     "epub": {
       "allowed_warning_codes": [
@@ -35,7 +43,8 @@
         "possible_beta_code_residue",
         "repeated_phrases",
         "missing_apple_options",
-        "orphan_endnotes"
+        "orphan_endnotes",
+        "missing_cover_manifest_hint"
       ],
       "max_error_count": 0,
       "max_greek_untagged_chars": 55,
@@ -81,7 +90,7 @@
       {
         "audit": "epub",
         "text": "e will be for thee",
-        "reason": "I WILL mangling — lowercase form (blemish #25)"
+        "reason": "I WILL mangling \u2014 lowercase form (blemish #25)"
       },
       {
         "audit": "epub",
@@ -106,7 +115,8 @@
         "max_repeated_phrase_count": 8,
         "max_literal_footnote_marker_files": 0,
         "max_chapter_heading_in_paragraph_files": 3,
-        "max_fragmented_greek_span_run_files": 0,
+      "max_fragmented_greek_span_run_files": 0,
+      "max_fragmented_hebrew_span_run_files": 0,
         "max_lowercase_paragraph_start_files": 38,
         "max_noteref_leading_space_files": 0
       }

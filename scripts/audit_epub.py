@@ -255,6 +255,7 @@ class Audit:
             "chapter_heading_in_paragraph": [],
             "overlong_heading_body": [],
             "fragmented_greek_span_run": [],
+            "fragmented_hebrew_span_run": [],
             "scripture_blockquote": [],
             "orphan_scripture_bracket": [],
             "glued_ordinal": [],
@@ -394,6 +395,15 @@ class Audit:
             if frag_greek:
                 add_sample(samples["fragmented_greek_span_run"], path, frag_greek[0][:160])
                 totals["fragmented_greek_span_run_files"] += 1
+
+            # Fragmented Hebrew span runs: adjacent Hebrew spans with only whitespace between
+            frag_hebrew = re.findall(
+                r'<span[^>]+lang=["\']he["\'][^>]*>[^<]{1,5}</span>\s{0,3}<span[^>]+lang=["\']he["\'][^>]*>',
+                raw, re.I
+            )
+            if frag_hebrew:
+                add_sample(samples["fragmented_hebrew_span_run"], path, frag_hebrew[0][:160])
+                totals["fragmented_hebrew_span_run_files"] += 1
 
             # Glued ordinals: e.g. ")1." or "2.3." stuck to adjacent text
             glued_hits = re.findall(r"[)\]]\d{1,2}\.\S", text)
@@ -544,6 +554,7 @@ class Audit:
             "chapter_heading_in_paragraph_files": totals["chapter_heading_in_paragraph_files"],
             "overlong_heading_body_files": totals["overlong_heading_body_files"],
             "fragmented_greek_span_run_files": totals["fragmented_greek_span_run_files"],
+            "fragmented_hebrew_span_run_files": totals["fragmented_hebrew_span_run_files"],
             "glued_ordinal_files": totals["glued_ordinal_files"],
             "structural_bold_leak_files": totals["structural_bold_leak_files"],
             "repeated_structural_marker_files": totals["repeated_structural_marker_files"],

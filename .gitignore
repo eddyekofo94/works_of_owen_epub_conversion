@@ -10,6 +10,8 @@ __pycache__/
 # Generated files
 volumes/v*/output/*.epub
 volumes/v*/intermediate/*.thml.xml
+tmp_epub/
+.pytest_cache/
 
 # IDE
 .vscode/

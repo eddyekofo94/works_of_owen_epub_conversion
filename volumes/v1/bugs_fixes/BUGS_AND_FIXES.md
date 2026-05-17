@@ -861,12 +861,23 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-16T16:54:34.005620+00:00
+**Last run:** 2026-05-17T18:14:19.758543+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 2 warnings)
+**Status:** WARN (0 errors, 4 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -878,10 +889,10 @@ Reports:
 | XHTML files | 84 |
 | Spine items | 83 |
 | Embedded fonts | 8 |
-| NAV links | 83 |
-| Greek chars / untagged | 4085 / 0 |
-| Hebrew chars / untagged | 160 / 0 |
-| Noteref links / endnote anchors | 123 / 124 |
+| NAV links | 82 |
+| Greek chars / untagged | 4282 / 8 |
+| Hebrew chars / untagged | 155 / 0 |
+| Noteref links / endnote anchors | 130 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -890,6 +901,8 @@ Reports:
 
 Warnings requiring triage:
 
+- `missing_cover_manifest_hint`: No obvious cover image manifest hint found
+- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
 
@@ -989,11 +1002,15 @@ Warnings requiring triage:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-16T16:55:10.388365+00:00
-**Status:** WARN (9 warnings)
+**Last run:** 2026-05-17T18:10:41.714579+00:00
+**Status:** WARN (10 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1003,11 +1020,11 @@ Reports:
 |-------|--------|
 | PDF pages | 644 |
 | EPUB text files | 83 |
-| EPUB paragraphs/headings | 2978 |
-| Approximate PDF-to-EPUB word coverage | 0.9982 |
+| EPUB paragraphs/headings | 3203 |
+| Approximate PDF-to-EPUB word coverage | 0.9983 |
 | Weak page matches | 5 |
-| Dense source windows checked | 25735 |
-| Missing dense source-window pages | 169 |
+| Dense source windows checked | 25887 |
+| Missing dense source-window pages | 164 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 602 |
@@ -1015,16 +1032,16 @@ Reports:
 | Missing top-of-page body windows | 2 |
 | Bottom-of-page body windows checked | 555 |
 | Bottom-of-page windows skipped as unstable | 6 |
-| Missing bottom-of-page body windows | 21 |
-| Possible faulty paragraph splits | 38 |
-| Structural starts excluded from split warnings | 165 |
-| Short fragments | 48 |
+| Missing bottom-of-page body windows | 22 |
+| Possible faulty paragraph splits | 76 |
+| Structural starts excluded from split warnings | 174 |
+| Short fragments | 103 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 2 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 2 |
-| Roman heading candidates | 1 |
+| Suspicious large-number starts | 1 |
+| Roman heading candidates | 33 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
@@ -1032,6 +1049,12 @@ Reports:
 | EPUB enumerator markers | 317 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
+| PDF Greek words / EPUB Greek words | 824 / 835 |
+| Greek word coverage ratio | 0.9987 |
+| PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 16 |
+| Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
@@ -1044,6 +1067,7 @@ Warnings requiring triage:
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

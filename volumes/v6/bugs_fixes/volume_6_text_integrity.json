@@ -2,7 +2,7 @@
   "volume": 6,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/input/owen-v6.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/output/volume_6.epub",
-  "generated_at": "2026-05-16T21:59:26.393922+00:00",
+  "generated_at": "2026-05-17T14:46:27.018620+00:00",
   "status": "warn",
   "warning_count": 10,
   "warnings": [
@@ -52,7 +52,7 @@
   },
   "epub": {
     "spine_text_files": 113,
-    "paragraph_count": 3267
+    "paragraph_count": 3268
   },
   "word_coverage": {
     "pdf_content_tokens": 274245,
@@ -664,7 +664,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3021,
+    "paragraphs_checked": 3022,
     "split_candidate_count": 36,
     "split_candidates": [
       {
@@ -825,7 +825,7 @@
       {
         "file": "EPUB/ch052.xhtml",
         "previous": "And in this my application unto thee, the greatness and urgency of my",
-        "next": "Verse 4.** - But, O Lord, this is not absolutely and universally the state of things between thy Majesty and poor sinners; thou art in thy nature infinitely good and gracious, read"
+        "next": "Verse 4. - But, O Lord, this is not absolutely and universally the state of things between thy Majesty and poor sinners; thou art in thy nature infinitely good and gracious, ready "
       },
       {
         "file": "EPUB/ch059.xhtml",
@@ -848,7 +848,7 @@
         "next": "(1st.) That we would not judge the state and condition of any men in the world, — no farther than we are called thereunto in a way of duty; and we are so called only with reference"
       }
     ],
-    "structural_start_exclusions": 423,
+    "structural_start_exclusions": 422,
     "short_fragment_count": 17,
     "short_fragments": [
       {
@@ -922,15 +922,11 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 2,
+    "inline_structural_candidate_count": 1,
     "inline_structural_candidates": [
       {
-        "file": "EPUB/ch033.xhtml",
-        "text": "The law of God was at first inbred and natural unto man; it was concreated with his faculties, and was their rectitude, both in being and operation, in reference to his end of living unto God and glorifying of him. Hence it had an especial power in the whole s"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "text": "4thly . Do we see sometimes the flood-gates of men's lusts and rage set open against the church and interest of it, and doth prevalency attend them, and power is for a season on their side? Let not the saints of God despond. He hath unspeakably various and eff"
+        "file": "EPUB/ch021.xhtml",
+        "text": "Before I descend to other particulars, having now entered hereon, I shall show in general, — 1st. How or by what means commonly any temptation attains its hour;"
       }
     ],
     "reference_continuation_split_count": 0,

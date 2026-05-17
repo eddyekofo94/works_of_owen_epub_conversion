@@ -6,7 +6,14 @@ Last updated: 2026-05-11
 
 Stabilize and validate the 16-volume Owen Works EPUB3 pipeline. Hebrews is parked until the Owen volumes are done.
 
-The active converter is `converter.py`, a PyMuPDF/PyMuPDF4LLM pipeline that extracts AGES PDFs, repairs text, converts Greek/Hebrew legacy encodings, merges footnotes, and packages EPUB3 files.
+The active converter is the two-stage modular pipeline:
+
+- `extract.py`: PDF to JSON intermediate
+- `render.py`: JSON intermediate to EPUB3
+- `volumes/vN/convert.py`: preferred per-volume entry point for passing `OVERRIDES`
+
+`converter.py` is retained only as a legacy-compatible wrapper around the two
+stage modules.
 
 Operational rule: work on one volume at a time. Do not run batch conversion or batch audits unless the user explicitly asks for them.
 

@@ -9,17 +9,20 @@ Default workflow is one volume at a time. Do not run batch conversion or batch a
 ## Quick Start
 
 ```bash
-# Process one volume
-.venv/bin/python3 converter.py 1
+# Preferred full pipeline for volume 1
+.venv/bin/python3 volumes/v1/convert.py
 
-# Process all 16 volumes
-.venv/bin/python3 converter.py
+# Fast re-render from cached JSON
+.venv/bin/python3 volumes/v1/convert.py --render-only
 
-# Smoke test volume 1
-.venv/bin/python3 converter.py --test
+# Generic stage entry points
+.venv/bin/python3 extract.py 1
+.venv/bin/python3 render.py 1
 ```
 
-Use the all-volumes command only when a batch run has been explicitly requested.
+`converter.py` remains as a legacy-compatible wrapper around `extract.py` and
+`render.py`, but per-volume scripts are preferred because they can pass
+volume-specific `OVERRIDES`.
 
 Generated EPUBs are written to:
 
@@ -29,7 +32,8 @@ volumes/vN/output/volume_N.epub
 
 ## What the Converter Does
 
-`converter.py` uses PyMuPDF and PyMuPDF4LLM to extract source PDFs, then builds EPUB3 output with:
+The active converter uses `extract.py` and `render.py` to extract source PDFs,
+repair text, then build EPUB3 output with:
 
 - AGES header/footer removal
 - paragraph healing across page boundaries
@@ -49,6 +53,8 @@ Shared metadata, CSS, font configuration, and Greek/Hebrew maps live in `shared.
 ```text
 Owen/
 ├── converter.py
+├── extract.py
+├── render.py
 ├── shared.py
 ├── pdfs/
 ├── covers/

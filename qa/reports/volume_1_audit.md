@@ -1,7 +1,7 @@
 # EPUB Audit: volume_1.epub
 
-- Status: **FAIL**
-- Errors: 2
+- Status: **WARN**
+- Errors: 0
 - Warnings: 4
 
 ## Summary
@@ -10,10 +10,10 @@
 - OPF version: 3.0
 - Files: 105
 - Manifest items: 96
-- Spine items: 84
+- Spine items: 83
 - XHTML files: 84
 - Embedded fonts: 8
-- NAV links: 0
+- NAV links: 82
 
 ## Content Checks
 
@@ -29,11 +29,6 @@
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 5
-
-## Errors
-
-- `spine_idref_missing`: Spine idref is not present in manifest
-- `missing_nav_property`: No manifest item has properties='nav'
 
 ## Warnings
 

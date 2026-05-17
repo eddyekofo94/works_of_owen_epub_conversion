@@ -416,19 +416,59 @@ def normalize_characters(text: str) -> str:
 # ============================================================================
 
 GREEK_LOWER = {
-    'a': 'α', 'b': 'β', 'g': 'γ', 'd': 'δ', 'e': 'ε',
-    'z': 'ζ', 'h': 'η', 'q': 'θ', 'i': 'ι', 'k': 'κ',
-    'l': 'λ', 'm': 'μ', 'n': 'ν', 'x': 'ξ', 'o': 'ο',
-    'p': 'π', 'r': 'ρ', 's': 'σ', 't': 'τ',
-    'u': 'υ', 'f': 'φ', 'c': 'χ', 'y': 'ψ', 'v': 'ς', 'w': 'ω',
+    'a': '\u03b1',  # alpha (α)
+    'b': '\u03b2',  # beta (β)
+    'g': '\u03b3',  # gamma (γ)
+    'd': '\u03b4',  # delta (δ)
+    'e': '\u03b5',  # epsilon (ε)
+    'z': '\u03b6',  # zeta (ζ)
+    'h': '\u03b7',  # eta (η)
+    'q': '\u03b8',  # theta (θ)
+    'i': '\u03b9',  # iota (ι)
+    'k': '\u03ba',  # kappa (κ)
+    'l': '\u03bb',  # lambda (λ)
+    'm': '\u03bc',  # mu (μ)
+    'n': '\u03bd',  # nu (ν)
+    'c': '\u03c7',  # chi (χ) — AGES Koine uses 'c' for chi
+    'o': '\u03bf',  # omicron (ο)
+    'p': '\u03c0',  # pi (π)
+    'r': '\u03c1',  # rho (ρ)
+    's': '\u03c3',  # sigma (σ - medial, context → ς final)
+    't': '\u03c4',  # tau (τ)
+    'u': '\u03c5',  # upsilon (υ)
+    'f': '\u03c6',  # phi (φ)
+    'x': '\u03be',  # xi (ξ) — AGES Koine uses 'x' for xi
+    'y': '\u03c8',  # psi (ψ)
+    'w': '\u03c9',  # omega (ω)
+    'v': '\u03c2',  # final sigma (ς) — explicit AGES marker
 }
 
 GREEK_UPPER = {
-    'A': 'Α', 'B': 'Β', 'G': 'Γ', 'D': 'Δ', 'E': 'Ε',
-    'Z': 'Ζ', 'H': 'Η', 'Q': 'Θ', 'I': 'Ι', 'K': 'Κ',
-    'L': 'Λ', 'M': 'Μ', 'N': 'Ν', 'X': 'Ξ', 'O': 'Ο',
-    'P': 'Π', 'R': 'Ρ', 'S': 'Σ', 'T': 'Τ',
-    'U': 'Υ', 'F': 'Φ', 'C': 'Χ', 'Y': 'Ψ', 'V': 'Σ', 'W': 'Ω',
+    'A': '\u0391',  # Alpha (Α)
+    'B': '\u0392',  # Beta (Β)
+    'G': '\u0393',  # Gamma (Γ)
+    'D': '\u0394',  # Delta (Δ)
+    'E': '\u0395',  # Epsilon (Ε)
+    'Z': '\u0396',  # Zeta (Ζ)
+    'H': '\u0397',  # Eta (Η)
+    'Q': '\u0398',  # Theta (Θ)
+    'I': '\u0399',  # Iota (Ι)
+    'K': '\u039a',  # Kappa (Κ)
+    'L': '\u039b',  # Lambda (Λ)
+    'M': '\u039c',  # Mu (Μ)
+    'N': '\u039d',  # Nu (Ν)
+    'C': '\u03a7',  # Chi (Χ) — AGES Koine uses 'C' for chi
+    'O': '\u039f',  # Omicron (Ο)
+    'P': '\u03a0',  # Pi (Π)
+    'R': '\u03a1',  # Rho (Ρ)
+    'S': '\u03a3',  # Sigma (Σ)
+    'T': '\u03a4',  # Tau (Τ)
+    'U': '\u03a5',  # Upsilon (Υ)
+    'F': '\u03a6',  # Phi (Φ)
+    'X': '\u039e',  # Xi (Ξ) — AGES Koine uses 'X' for xi
+    'Y': '\u03a5',  # Upsilon (Υ) — AGES Koine uses 'Y' for uppercase upsilon
+    'W': '\u03a9',  # Omega (Ω)
+    'V': '\u03a3',  # Final sigma (uppercase, rare)
 }
 ALL_GREEK = {**GREEK_LOWER, **GREEK_UPPER}
 
@@ -480,9 +520,7 @@ def convert_greek_word(word):
       - 's' at the very end of a word → final sigma ς
       - 's' elsewhere → medial sigma σ
       - 'v' → final sigma ς (explicitly typed by AGES/Graeca)
-      - 'y' → psi ψ
-
-    Note: The previous assumption that 'v' was psi was incorrect. AGES uses Graeca/WinGreek layout where 'v' = ς and 'y' = ψ.
+      - 'y' → final sigma ς (Issue 26/7: frequent in AGES)
     """
     result = []
     i = 0
@@ -491,16 +529,24 @@ def convert_greek_word(word):
         # Determine the next non-diacritic character for sigma-end detection
         if ch in GREEK_LOWER:
             # Check for final sigma: 's' or 'y' is final only when it is the last
-            # alphabetic character in the word (all remaining chars are diacritics).
+            # alphabetic character in the current WORD (stops at space).
             if ch == 's' or ch == 'y':
-                rest_alpha = [c for c in word[i + 1:] if c not in DIACRITIC_CHARS]
+                # Look ahead for any more Greek letters before the next space or word end
+                rest_alpha = []
+                for j in range(i + 1, len(word)):
+                    if word[j] == ' ': break
+                    if word[j].lower() in GREEK_LOWER:
+                        rest_alpha.append(word[j])
+                
                 if not rest_alpha:
                     result.append('ς')
                 else:
+                    # 'y' is 'psi' if not final; 's' is 'sigma'
                     result.append('σ' if ch == 's' else 'ψ')
             else:
                 result.append(GREEK_LOWER[ch])
             i += 1
+            # Process following diacritics for this character
             while i < len(word) and word[i] in DIACRITIC_CHARS:
                 d = word[i]
                 if d in DIACRITIC_MAP:
@@ -545,62 +591,65 @@ def polytonic_sweep(text: str) -> str:
 
 HEBREW_GIDEON_MAP = {
     # ── Consonants (Gideon AGES legacy encoding) ──────────────────────────
-    'a': '\u05D0',  # א Alef
-    'b': '\u05D1',  # ב Bet
-    'c': '\u05E1',  # ס Samekh (AGES maps 'c' to Samekh)
-    'd': '\u05D3',  # ד Dalet
-    'f': '\u05D8',  # ט Tet
-    'g': '\u05D2',  # ג Gimel
-    'h': '\u05D4',  # ה He
-    'j': '\u05D7',  # ח Het
-    'k': '\u05DB',  # כ Kaf
-    'l': '\u05DC',  # ל Lamed
-    'm': '\u05DE',  # מ Mem
-    'n': '\u05E0',  # נ Nun
-    'p': '\u05E4',  # פ Pe
-    'q': '\u05E7',  # ק Qof
-    'r': '\u05E8',  # ר Resh
-    's': '\u05E1',  # ס Samekh (alternate; same as 'c')
-    't': '\u05EA',  # ת Tav
-    'v': '\u05E9\u05C1',  # שׁ Shin (Shin + Shin dot)
-    'w': '\u05D5',  # ו Vav
-    'x': '\u05E6',  # צ Tsadi
-    'y': '\u05D9',  # י Yod
-    'z': '\u05D6',  # ז Zayin
-    '[': '\u05E2',  # ע Ayin
-    'i': '\u05E2',  # ע Ayin (alternate)
-    # ── Final forms ────────────────────────────────────────────────────────
-    'A': '\u05D0',        # א Alef (uppercase alternate)
-    'B': '\u05D1\u05BC',  # בּ Bet + Dagesh
-    'D': '\u05D3\u05BC',  # דּ Dalet + Dagesh
-    'G': '\u05D2\u05BC',  # גּ Gimel + Dagesh
-    'K': '\u05DB\u05BC',  # כּ Kaf + Dagesh
-    'M': '\u05DD',        # ם Mem Final
-    'N': '\u05DF',        # ן Nun Final
-    'P': '\u05E3',        # ף Pe Final
-    'Q': '\u05E7\u05BC',  # קּ Qof + Dagesh
-    'T': '\u05EA\u05BC',  # תּ Tav + Dagesh
-    'W': '\u05D5\u05BC',  # וּ Vav + Dagesh (Shureq)
-    'X': '\u05E5',        # ץ Tsadi Final
-    'Y': '\u05D9',        # י Yod (uppercase alternate, common in Vol 2)
-    '\u00B5': '\u05DD',   # µ (U+00B5 micro sign) → ם Mem Final (Vol 2 failure)
-    '\u00E7': '\u05E6',   # ç → צ Tsadi (Vol 2 font artifact)
-    '\u02DA': '\u05BC',   # ˚ → ּ Dagesh (Vol 2 font artifact)
-    '\u02C6': '\u05B4',   # ˆ → ִ Hiriq (Vol 2 font artifact)
-    '\u00DA': '\u05D5',   # Ú → ו Vav (Vol 2 font artifact)
-    '\u2019': '\u05BE',   # ' → ־ Maqef (Vol 1 font artifact — curly apostrophe)
-    '\u2248': '\u05C1',   # ≈ → ׁ Shin dot (Vol 1 font artifact)
-    # ── Vowel points / diacritics ──────────────────────────────────────────
-    ';': '\u05B8',   # ָ Qamats
-    '}': '\u05B2',   # ֲ Hataf Patah
-    ']': '\u05B0',   # ְ Sheva
-    '1': '\u05B7',   # ַ Patah
-    'e': '\u05B5',   # ֵ Tsere
-    'o': '\u05B9',   # ֹ Holam
-    'O': '\u05B9',   # ֹ Holam (alternate)
-    # ── Alternate vowel mappings ───────────────────────────────────────────
-    'æ': '\u05B7',   # ַ Patah (Latin ae ligature used as AGES artifact)
-    # ── Punctuation / spacing ──────────────────────────────────────────────
+    'a': '\u05d0',  # Aleph (א)
+    'b': '\u05d1',  # Beth (ב)
+    'g': '\u05d2',  # Gimel (ג)
+    'd': '\u05d3',  # Dalet (ד)
+    'h': '\u05d4',  # He (ה)
+    'w': '\u05d5',  # Waw (ו)
+    'z': '\u05d6',  # Zayin (ז)
+    'x': '\u05d7',  # Heth (ח)
+    't': '\u05d8',  # Teth (ט) — NOTE: also 't' = Taw below; context disambiguates
+    'y': '\u05d9',  # Yodh (י)
+    'k': '\u05da',  # Kaph (ך - final)
+    'K': '\u05db',  # Kaph (כ - medial)
+    'l': '\u05dc',  # Lamedh (ל)
+    'm': '\u05dd',  # Mem (ם - final)
+    'M': '\u05de',  # Mem (מ - medial)
+    'n': '\u05df',  # Nun (ן - final)
+    'N': '\u05e0',  # Nun (נ - medial)
+    's': '\u05e1',  # Samekh (ס)
+    'e': '\u05e2',  # Ayin (ע)
+    'p': '\u05e3',  # Pe (ף - final)
+    'P': '\u05e4',  # Pe (פ - medial)
+    'c': '\u05e5',  # Tsadi (ץ - final)
+    'C': '\u05e6',  # Tsadi (צ - medial)
+    'q': '\u05e7',  # Qoph (ק)
+    'r': '\u05e8',  # Resh (ר)
+    '#': '\u05e9',  # Shin/Sin (ש)
+    'T': '\u05ea',  # Taw (ת)
+    # ── Alternate consonant mappings (AGES variants) ──────────────────────
+    'f': '\u05d8',  # Tet (alternate)
+    'j': '\u05d7',  # Het (alternate)
+    'i': '\u05e2',  # Ayin (alternate)
+    '[': '\u05e2',  # Ayin (alternate)
+    'v': '\u05e9\u05c1',  # Shin (שׁ - Shin + Shin dot)
+    # ── Final forms (uppercase with dagesh) ───────────────────────────────
+    'A': '\u05d0',        # Alef (uppercase alternate)
+    'B': '\u05d1\u05bc',  # Bet + Dagesh
+    'D': '\u05d3\u05bc',  # Dalet + Dagesh
+    'G': '\u05d2\u05bc',  # Gimel + Dagesh
+    'Q': '\u05e7\u05bc',  # Qof + Dagesh
+    'W': '\u05d5\u05bc',  # Vav + Dagesh (Shureq)
+    'X': '\u05e5',        # Tsadi Final
+    'Y': '\u05d9',        # Yod (uppercase alternate)
+    # ── Font artifact mappings (volume-specific) ──────────────────────────
+    '\u00B5': '\u05dd',   # µ → Mem Final
+    '\u00E7': '\u05e6',   # ç → Tsadi
+    '\u02DA': '\u05bc',   # ˚ → Dagesh
+    '\u02C6': '\u05b4',   # ˆ → Hiriq
+    '\u00DA': '\u05d5',   # Ú → Vav
+    '\u2019': '\u05be',   # ' → Maqef
+    '\u2248': '\u05c1',   # ≈ → Shin dot
+    # ── Vowel points / diacritics ─────────────────────────────────────────
+    ';': '\u05b8',   # Qamats
+    '}': '\u05b2',   # Hataf Patah
+    ']': '\u05b0',   # Sheva
+    '1': '\u05b7',   # Patah
+    'o': '\u05b9',   # Holam
+    'O': '\u05b9',   # Holam (alternate)
+    'æ': '\u05b7',   # Patah (Latin ae ligature artifact)
+    # ── Punctuation / spacing ─────────────────────────────────────────────
     ',': ',',
     ' ': ' ',
 }
@@ -754,65 +803,100 @@ body {
     hyphens: auto;
 }
 
-/* Title Page Majesty */
+/* Title Page Majesty (Puritan / Vintage Style) */
 .titlepage,
-.title-page {
+.title-page,
+.treatise-title-page {
     text-align: center;
-    padding: 12% 6% 10%;
+    padding: 10% 6% 10%;
     max-width: 36em;
     margin: 0 auto;
     page-break-before: always;
     -webkit-column-break-before: always;
+    font-family: "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif;
 }
 .titlepage .ornament,
-.title-page .ornament {
+.title-page .ornament,
+.treatise-title-page .ornament {
     display: block;
     text-align: center;
-    font-size: 1.15em;
+    font-size: 1.2em;
     line-height: 1;
     margin: 0 auto 1.5em;
     color: #b08d2d;
     text-indent: 0;
 }
 .titlepage h1,
-.title-page h1 {
+.title-page h1,
+.treatise-title-page h1 {
     font-variant: small-caps;
-    font-size: 1.9em;
-    line-height: 1.18;
-    margin: 0 0 1.35em;
-    page-break-before: avoid;
+    font-size: 2.1em;
+    line-height: 1.15;
+    margin: 0 0 1.2em;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    text-align: center;
 }
 .titlepage h2,
-.title-page h2 {
+.title-page h2,
+.treatise-title-page h2 {
     font-weight: bold;
-    font-size: 1.25em;
+    font-size: 1.3em;
     line-height: 1.35;
-    margin: 1.2em 0;
-    page-break-before: avoid;
-    -webkit-column-break-before: avoid;
+    margin: 1.1em 0;
+    letter-spacing: 0.01em;
+    text-align: center;
 }
 .titlepage h3,
-.title-page h3 {
+.title-page h3,
+.treatise-title-page h3 {
     text-align: center;
-    font-size: 1.05em;
+    font-size: 1.1em;
     line-height: 1.35;
-    margin: 1.15em 0;
-    page-break-before: avoid;
-    -webkit-column-break-before: avoid;
+    margin: 1em 0;
+    font-weight: bold;
+}
+.titlepage h4,
+.title-page h4,
+.treatise-title-page h4 {
+    font-size: 0.9em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 1.2em 0;
+    text-align: center;
+}
+.titlepage h5,
+.title-page h5,
+.treatise-title-page h5 {
+    font-size: 0.15em; /* Extremely small as requested */
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.6em;
+    margin: 1.5em auto;
+    opacity: 0.6;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100%;
+    clear: both;
 }
 .titlepage .subtitle,
 .title-page .subtitle {
-    font-size: 1.1em;
-    margin-top: 1em;
+    font-size: 1.15em;
+    margin-top: 1.1em;
+    text-align: center;
 }
 .titlepage .descriptive,
-.title-page .descriptive {
+.title-page .descriptive,
+.treatise-title-page .descriptive {
     text-align: center;
     font-style: italic;
-    line-height: 1.45;
+    line-height: 1.5;
     margin: 1.8em auto 0;
     max-width: 31em;
     text-indent: 0;
+    font-size: 0.95em;
 }
 .titlepage .author,
 .titlepage .editor,

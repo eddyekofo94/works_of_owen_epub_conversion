@@ -1,0 +1,94 @@
+/* Title Page Majesty (Puritan / Vintage Style) */
+.titlepage,
+.title-page,
+.treatise-title-page {
+    text-align: center;
+    padding: 10% 6% 10%;
+    max-width: 36em;
+    margin: 0 auto;
+    page-break-before: always;
+    -webkit-column-break-before: always;
+    font-family: "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif;
+}
+.titlepage .ornament,
+.title-page .ornament,
+.treatise-title-page .ornament {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1;
+    margin: 0 auto 1.5em;
+    color: #b08d2d;
+    text-indent: 0;
+}
+.titlepage h1,
+.title-page h1,
+.treatise-title-page h1 {
+    font-variant: small-caps;
+    font-size: 2.1em;
+    line-height: 1.15;
+    margin: 0 0 1.2em;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    text-align: center;
+}
+.titlepage h2,
+.title-page h2,
+.treatise-title-page h2 {
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.35;
+    margin: 1.1em 0;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.titlepage h3,
+.title-page h3,
+.treatise-title-page h3 {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.35;
+    margin: 1em 0;
+    font-weight: bold;
+}
+.titlepage h4,
+.title-page h4,
+.treatise-title-page h4 {
+    font-size: 0.9em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 1.2em 0;
+    text-align: center;
+}
+.titlepage h5,
+.title-page h5,
+.treatise-title-page h5 {
+    font-size: 0.18em; /* Extremely small as requested */
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    margin: 1.5em auto;
+    opacity: 0.6;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+.titlepage .subtitle,
+.title-page .subtitle {
+    font-size: 1.15em;
+    margin-top: 1.1em;
+    text-align: center;
+}
+.titlepage .descriptive,
+.title-page .descriptive,
+.treatise-title-page .descriptive {
+    text-align: center;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 1.8em auto 0;
+    max-width: 31em;
+    text-indent: 0;
+    font-size: 0.95em;
+}
