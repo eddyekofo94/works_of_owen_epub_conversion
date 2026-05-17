@@ -1311,7 +1311,7 @@ EPUB3_FONT_STYLES = r"""
 /* Primary font: {primary_font} */
 @font-face {{
     font-family: "{primary_font}";
-    src: url("Fonts/{primary_file}");
+    src: url("../Fonts/{primary_file}");
 }}
 {bold_face}
 {italic_face}
@@ -1319,26 +1319,26 @@ EPUB3_FONT_STYLES = r"""
 /* SBL BibLit — universal biblical fallback */
 @font-face {{
     font-family: "SBL BibLit";
-    src: url("Fonts/SBL_BLit.ttf");
+    src: url("../Fonts/SBL_BLit.ttf");
 }}
 /* SBL Greek — polytonic Greek */
 @font-face {{
     font-family: "SBL Greek";
-    src: url("Fonts/SBL_grk.ttf");
+    src: url("../Fonts/SBL_grk.ttf");
 }}
 /* SBL Hebrew — fully pointed Hebrew */
 @font-face {{
     font-family: "SBL Hebrew";
-    src: url("Fonts/SBL_Hbrw.ttf");
+    src: url("../Fonts/SBL_Hbrw.ttf");
 }}
 /* Ezra SIL — BHS-style Hebrew fallback */
 @font-face {{
     font-family: "Ezra SIL";
-    src: url("Fonts/SILEOT.ttf");
+    src: url("../Fonts/SILEOT.ttf");
 }}
 /* Language overrides (GEMINI.md Section 4.2) */
 body, div, p, span, h1, h2, h3, h4, h5, h6 {{
-    font-family: "{primary_font}", "SBL BibLit", "Gentium Plus", serif !important;
+    font-family: "{primary_font}", "SBL BibLit", serif !important;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }}
@@ -1401,15 +1401,15 @@ def generate_font_styles(primary_font_name, primary_font_files):
     
     bold_face = ''
     if bold_file:
-        bold_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    src: url("Fonts/{bold_file}");\n}}'
+        bold_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    src: url("../Fonts/{bold_file}");\n}}'
     
     italic_face = ''
     if italic_file:
-        italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-style: italic;\n    src: url("Fonts/{italic_file}");\n}}'
+        italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-style: italic;\n    src: url("../Fonts/{italic_file}");\n}}'
     
     bold_italic_face = ''
     if bold_italic_file:
-        bold_italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    font-style: italic;\n    src: url("Fonts/{bold_italic_file}");\n}}'
+        bold_italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    font-style: italic;\n    src: url("../Fonts/{bold_italic_file}");\n}}'
     
     return EPUB3_FONT_STYLES.format(
         primary_font=primary_font_name,

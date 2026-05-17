@@ -2,7 +2,7 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-17T19:35:54.698286+00:00",
+  "generated_at": "2026-05-17T22:24:07.091558+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [
@@ -1220,7 +1220,7 @@
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 824,
-    "epub_greek_word_count": 835,
+    "epub_greek_word_count": 836,
     "pdf_greek_unique_words": 473,
     "epub_greek_unique_words": 473,
     "greek_word_coverage_ratio": 0.9987,

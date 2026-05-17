@@ -47,7 +47,7 @@
 ## Greek / Hebrew
 
 - PDF Greek words: 824
-- EPUB Greek words: 835
+- EPUB Greek words: 836
 - Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20

@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 72 | 116 | OK |
+| Possible faulty paragraph splits | 30 | 116 | OK |
 | Inline structural marker candidates | 1 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -24,7 +24,7 @@
 | Missing Greek clauses | 16 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
-| Untagged Greek characters | 8 | 55 | OK |
+| Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
 | Repeated phrase hits | 5 | 8 | OK |
@@ -53,7 +53,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 8 | 38 | OK |
+| Lowercase page fragments | 4 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -89,12 +89,6 @@
 - page: 37; sample: ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν
 - page: 37; sample: υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ
 
-### Untagged Greek characters
-
-- file: EPUB/ch004.xhtml; text: , κ.τ.λ. (cap. 6)
-- file: EPUB/ch005.xhtml; text: , κ.τ.λ." — "Thou art a rock, and on thee will I build." At least the gender had not been altered, but he would have said, "
-- file: EPUB/ch019.xhtml; text: .τ. λ., 2 Corinthians 3:18. We behold his glory "in a glass," which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t
-
 ### Repeated phrase hits
 
 - file: combined_text; text: chapter 14 motives unto the love of christ
@@ -112,6 +106,5 @@
 
 - file: EPUB/ch020.xhtml; text: i
 - file: EPUB/ch030.xhtml; text: a
-- file: EPUB/ch043.xhtml; text: i
-- file: EPUB/ch044.xhtml; text: i
-- file: EPUB/ch050.xhtml; text: i
+- file: EPUB/ch078.xhtml; text: t
+- file: EPUB/title_0.xhtml; text: b

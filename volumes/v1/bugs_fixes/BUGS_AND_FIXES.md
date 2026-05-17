@@ -876,12 +876,20 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-17T19:36:04.645622+00:00
+**Last run:** 2026-05-17T22:23:38.861699+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 4 warnings)
+**Status:** WARN (0 errors, 3 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -894,7 +902,7 @@ Reports:
 | Spine items | 83 |
 | Embedded fonts | 8 |
 | NAV links | 82 |
-| Greek chars / untagged | 4282 / 8 |
+| Greek chars / untagged | 4283 / 0 |
 | Hebrew chars / untagged | 155 / 0 |
 | Noteref links / endnote anchors | 123 / 124 |
 | AGES boilerplate hits | 0 |
@@ -906,7 +914,6 @@ Reports:
 Warnings requiring triage:
 
 - `missing_cover_manifest_hint`: No obvious cover image manifest hint found
-- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
 
@@ -1014,10 +1021,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-17T19:35:54.698286+00:00
+**Last run:** 2026-05-17T22:24:07.091558+00:00
 **Status:** WARN (9 warnings)
 
 Reports:
@@ -1057,7 +1065,7 @@ Reports:
 | EPUB enumerator markers | 316 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 824 / 835 |
+| PDF Greek words / EPUB Greek words | 824 / 836 |
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |

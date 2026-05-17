@@ -1,0 +1,138 @@
+{
+  "epub": "volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-05-17T22:19:24.590020+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 24,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "orphan_class",
+      "message": "Class '.ContentsDescWrap' defined in CSS but never used in XHTML",
+      "class": "ContentsDescWrap"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.author' defined in CSS but never used in XHTML",
+      "class": "author"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.by' defined in CSS but never used in XHTML",
+      "class": "by"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.digression-heading' defined in CSS but never used in XHTML",
+      "class": "digression-heading"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.editor' defined in CSS but never used in XHTML",
+      "class": "editor"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.footnote-ref' defined in CSS but never used in XHTML",
+      "class": "footnote-ref"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.front-matter-body' defined in CSS but never used in XHTML",
+      "class": "front-matter-body"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.front-matter-title' defined in CSS but never used in XHTML",
+      "class": "front-matter-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.g' defined in CSS but never used in XHTML",
+      "class": "g"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.greek' defined in CSS but never used in XHTML",
+      "class": "greek"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.hebrew' defined in CSS but never used in XHTML",
+      "class": "hebrew"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.md' defined in CSS but never used in XHTML",
+      "class": "md"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.noindent' defined in CSS but never used in XHTML",
+      "class": "noindent"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.publisher' defined in CSS but never used in XHTML",
+      "class": "publisher"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scholastic-anchor' defined in CSS but never used in XHTML",
+      "class": "scholastic-anchor"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scholastic-label' defined in CSS but never used in XHTML",
+      "class": "scholastic-label"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.separator' defined in CSS but never used in XHTML",
+      "class": "separator"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.small-caps' defined in CSS but never used in XHTML",
+      "class": "small-caps"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.subtitle' defined in CSS but never used in XHTML",
+      "class": "subtitle"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.titlepage' defined in CSS but never used in XHTML",
+      "class": "titlepage"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.toc-line' defined in CSS but never used in XHTML",
+      "class": "toc-line"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.toc-page' defined in CSS but never used in XHTML",
+      "class": "toc-page"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.toc-title' defined in CSS but never used in XHTML",
+      "class": "toc-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.verse' defined in CSS but never used in XHTML",
+      "class": "verse"
+    }
+  ],
+  "info": {
+    "css_file_count": 1,
+    "css_classes_defined": 48,
+    "xhtml_classes_used": 24,
+    "xhtml_files_scanned": 84,
+    "font_face_count": 8,
+    "embedded_font_count": 8
+  }
+}

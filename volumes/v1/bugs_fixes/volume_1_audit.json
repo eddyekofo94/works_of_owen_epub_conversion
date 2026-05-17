@@ -1,19 +1,14 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-17T19:36:04.645622+00:00",
+  "generated_at": "2026-05-17T22:23:38.861699+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 4,
+  "warning_count": 3,
   "errors": [],
   "warnings": [
     {
       "code": "missing_cover_manifest_hint",
       "message": "No obvious cover image manifest hint found"
-    },
-    {
-      "code": "untagged_greek",
-      "message": "Greek characters appear outside lang='el' context",
-      "chars": 8
     },
     {
       "code": "repeated_phrases",
@@ -30,7 +25,7 @@
   ],
   "info": {
     "file_count": 105,
-    "epub_size_bytes": 2705590,
+    "epub_size_bytes": 2704278,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -47,11 +42,11 @@
     ],
     "font_count": 8,
     "language": {
-      "greek_chars": 4282,
-      "greek_untagged_chars": 8,
+      "greek_chars": 4283,
+      "greek_untagged_chars": 0,
       "hebrew_chars": 155,
       "hebrew_untagged_chars": 0,
-      "files_with_untagged_greek": 3,
+      "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
@@ -95,20 +90,7 @@
         "boilerplate": [],
         "beta_code": [],
         "escaped_lang_tag": [],
-        "untagged_greek": [
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": ", κ.τ.λ. (cap. 6)"
-          },
-          {
-            "file": "EPUB/ch005.xhtml",
-            "text": ", κ.τ.λ.\" — \"Thou art a rock, and on thee will I build.\" At least the gender had not been altered, but he would have said, \""
-          },
-          {
-            "file": "EPUB/ch019.xhtml",
-            "text": ".τ. λ., 2 Corinthians 3:18. We behold his glory \"in a glass,\" which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t"
-          }
-        ],
+        "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [

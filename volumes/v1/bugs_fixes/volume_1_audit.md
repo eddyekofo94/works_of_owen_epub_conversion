@@ -2,7 +2,7 @@
 
 - Status: **WARN**
 - Errors: 0
-- Warnings: 4
+- Warnings: 3
 
 ## Summary
 
@@ -17,8 +17,8 @@
 
 ## Content Checks
 
-- Greek chars: 4282
-- Untagged Greek chars: 8
+- Greek chars: 4283
+- Untagged Greek chars: 0
 - Hebrew chars: 155
 - Untagged Hebrew chars: 0
 - Noteref links: 123
@@ -33,17 +33,10 @@
 ## Warnings
 
 - `missing_cover_manifest_hint`: No obvious cover image manifest hint found
-- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
 
 ## Samples
-
-### untagged_greek
-
-- `EPUB/ch004.xhtml`: , κ.τ.λ. (cap. 6)
-- `EPUB/ch005.xhtml`: , κ.τ.λ." — "Thou art a rock, and on thee will I build." At least the gender had not been altered, but he would have said, "
-- `EPUB/ch019.xhtml`: .τ. λ., 2 Corinthians 3:18. We behold his glory "in a glass," which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t
 
 ### repeated_phrase
 

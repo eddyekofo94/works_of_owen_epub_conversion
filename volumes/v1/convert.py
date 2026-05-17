@@ -66,13 +66,13 @@ OVERRIDES = {
         'learnt': 'learnt',
         'learning': 'learning',
         'faithfullness': 'faithfulness',
-        '( ': '(',
+        r'\(\s+': '(',
         r'\(\s*8\)': ', 8',
         'John 16:1516:15': 'John 16:15',
         '1 John 5:205:20': '1 John 5:20',
         'Romans 1:1Romans': 'Romans 1:1',
         'Matthew 4:1Matthew 4': 'Matthew 4:1',
-        'considered?”': 'considered?',
+        'considered?"': 'considered?',
         'Objection .': 'Objection.',
         'Ans .': 'Ans.',
         'Q .': 'Q.',
@@ -87,6 +87,14 @@ OVERRIDES = {
     },
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
+    # Volume 1: Tag Greek abbreviations that fall below the 3-codepoint minimum
+    # in tag_unicode_ranges(). Also repairs damaged OCR form ".τ. λ." → "κ.τ.λ.".
+    # Order matters: normal case first, damaged case second (so its inserted
+    # κ.τ.λ. won't be re-matched).
+    'inline_html_replacements': {
+        'κ.τ.λ.': '<span lang="el" xml:lang="el">κ.τ.λ.</span>',
+        '</span>.τ. λ.': '</span><span lang="el" xml:lang="el">κ.τ.λ.</span>',
+    },
 }
 
 
