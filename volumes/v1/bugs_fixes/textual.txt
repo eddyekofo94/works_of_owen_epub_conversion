@@ -239,7 +239,7 @@ All things appeared in him as became “a man of sorrows.” Nor, —
 This was that glory which the Baptist saw, when, upon his coming unto him he said unto all that were presents “Behold the Lamb of God, which taketh away the sin of the world!” verses 29-33.”
 
 Fix:
-All of this is indeneted on the pdf, though I would like for this to be the case but other lists are not so indented and I don't want to break others. 
+All of this is indeneted on the pdf, though I would like for this to be the case but other lists are not so indented and I don't want to break others. (Reverted: The list-item indentation was removed as an extra polish that is not yet ready for production.)
 
 ## 24
 “for we shall be “ἰσάγγελοι”like unto angels, or equal to them. ”
@@ -291,3 +291,36 @@ Fix:
 “Q. 8.** What are the parts of this holiness?" "**" is shouldn't be rendered
 also a false break “Hebrews 9:14 Ephesians 3:16, 17; Romans 2:29, 6:12. Matthew 5:20; 12."" it should all be on the same line
 
+## 27
+
+“A. DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIS”
+
+How come this is now broken?
+
+## 28
+“<h2>IN HIS PERSON, OFFICE, AND GRACE:WITHTHE DIFFERENCES BETWEEN FAITH AND SIGHT;APPLIED UNTO THE USE OF THEM THATBELIEVE.<h2>”
+
+Excerpt From
+The Works of John Owen, Volume 1: The Glory of Christ
+John Owen
+This material may be protected by copyright.
+
+## 29
+“gives an account of the same difference: De Trinitate, lib. 5 cap. , 8,
+9. Athanasius”
+
+Fix:
+De Trinitate, lib. 5 cap. 8, 9. Athanasius” this is a false break, it should be "De Trinitate, lib. 5 cap. 8, 9. Athanasius" as on the pdf, we need to review the parsing logic for references to ensure that it correctly identifies and formats these references without introducing false breaks.
+I am strting to see these again? I thought I had a robust check for this already?
+
+“blessed for ever. See Aquin. 22 q. , 81,
+a. 3, ad prim. , and
+q. , 84,
+a. 1, ad tertium; Alexand. Alens. p. 3,
+q. 30,
+m. 1,
+a. 3.
+But yet, although we may call on God in”
+
+Fix:
+“blessed for ever. See Aquin. 22 q. 81, a. 3, ad prim. and q. 84, a. 1, ad tertium Alexand. Alens. p. 3, q. 30, m. 1, a. 3. But yet, although we may call on God in” this is a false break, it should be "blessed for ever. See Aquin. 22 q. 81, a. 3, ad prim. and q. 84, a. 1, ad tertium; Alexand. Alens. p. 3, q. 30, m. 1, a. 3. But yet, although we may call on God in" as on the pdf, we need to review the parsing logic for references to ensure that it correctly identifies and formats these references without introducing false breaks.

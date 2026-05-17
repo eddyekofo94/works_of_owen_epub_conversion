@@ -31,7 +31,7 @@
 - Structural starts excluded from split warnings: 174
 - Short fragments: 103
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 2
+- Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 1
@@ -89,8 +89,8 @@
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch004.xhtml; previous: heir personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q.,, 81,; next: a. 3, ad prim., and q.,, 84,
-- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q.,, 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
+- file: EPUB/ch004.xhtml; previous: their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,; next: a. 3, ad prim., and q., 84,
+- file: EPUB/ch004.xhtml; previous: a. 3, ad prim., and q., 84,; next: a. 1, ad tertium; Alexand. Alens. p. 3,
 - file: EPUB/ch004.xhtml; previous: a. 1, ad tertium; Alexand. Alens. p. 3,; next: q. 30,
 - file: EPUB/ch004.xhtml; previous: m. 1,; next: a. 3.
 - file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
@@ -102,12 +102,11 @@
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch019.xhtml; text: Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and ...
 - file: EPUB/ch078.xhtml; text: A.M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the st...
 
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch070.xhtml; text: 12. Matthew 5:20;, 8:1Romans,, 8:1,2; Ephesians 4:22, 23; Titus 2:12.
+- file: EPUB/ch070.xhtml; text: 12. Matthew 5:20;, 8:1Romans, 8:1,2; Ephesians 4:22, 23; Titus 2:12.
 
 ## Roman Heading Candidates
 

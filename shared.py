@@ -882,11 +882,6 @@ p.chapter-summary {
     line-height: 1.45;
 }
 
-p.list-item {
-    text-indent: 0;
-    margin-left: 1.5em;
-}
-
 h4.chapter-subtitle {
     text-align: center;
     font-size: 1.05em;
@@ -1158,7 +1153,7 @@ p.signature {
     font-weight: bold;
 }
 .treatise-title-page h2 {
-    font-size: 1.45em;
+    font-size: 1.15em;
     margin: 0.8em 0;
     line-height: 1.3;
     font-weight: bold;

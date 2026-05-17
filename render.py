@@ -78,19 +78,19 @@ FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
 FT_MARKER_RE = re.compile(r'^ft(\d+)\s*', re.I)
 EMPTY_BRACKET_RE = re.compile(r'\[\s*\]')
 STRUCTURAL_START_RE = re.compile(
-    r'^(?:'
+    r'^(?:(?:\*\*|__)?)'
+    r'(?:'
     r'(?!\d{4}\.)\d{1,3}\.\s+|'                         # 5. Mankind...
     r'\((?!\d{4}\))\d+\.?\)\s+|'                    # (1.) There... / (1) There...
     r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)\s+|'  # (1st,) Such...
     r'\[\d+\.?\]\s+|'                    # [1.] There...
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\s+|'  # [1st,] There...
     r'[IVXLCDM]+\.\s+|'                  # I. / II.
-    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?\s+|'                       # Q. / A. catechism lines
+    r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)\s+|'                       # Q. / Ques. / Ans. / A. 1.
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?\s+|'  # 2ndly, 3rdly
     r'(?:First|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Lastly|Again|But)\b[,.]?\s+'
-    r')',
-    re.I
+    r')'
 )
 STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'^(?P<marker>'
@@ -100,11 +100,10 @@ STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'\[\d+\.?\]|'
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]|'
     r'[IVXLCDM]+\.|'
-    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
+    r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
-    r')(?P<space>\s+)',
-    re.I
+    r')(?P<space>\s+)'
 )
 INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'(?<!^)(?P<lead>\s+)'
@@ -1439,9 +1438,31 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             else:
                 roman_list_expected = None
         
-        # Convert **bold** → <b>, _italic_ → <i>
+        # Clean up Catechism artifacts (Issue 26)
         text_html = content_no_refs
         
+        # 1. Standardize Q/A labels: "Q. , , 8 ." -> "Q. 8."
+        # CASE-SENSITIVE and strictly anchored to start of paragraph (Issue 26)
+        text_html = re.sub(r'^([QA])\.\s*[, ]+\s*(\d+)\s*\.', r'\1. \2.', text_html)
+        text_html = re.sub(r'^(Q)\s*[, ]+\s*(\d+)\s*\.', r'\1. \2.', text_html)
+        # Handle "Q., 8." (Issue 26)
+        text_html = re.sub(r'^(Q)\.,\s*(\d+)\.', r'\1. \2.', text_html)
+        
+        # 2. Cleanup leading/trailing bold artifacts
+        text_html = re.sub(r'^\*\*(?:\*\*)?', '', text_html)
+        text_html = re.sub(r'\*\*(?:\*\*)?$', '', text_html)
+        # Specifically remove surviving .** artifact
+        text_html = text_html.replace('.**', '.')
+        
+        # Standardize Q/A labels for bolding (CASE-SENSITIVE, anchored)
+        # Only allow A if followed by period or Ans/Ques (Issue 26)
+        text_html = re.sub(r'^(Q\.|Ans\.|Ques\.|A\.\s*\d+\.)\s+', r'**\1** ', text_html)
+        # For Q. N. form
+        text_html = re.sub(r'^(Q\.\s*\d+\.|A\.\s*\d+\.|Ques\.\s*\d+\.|Ans\.\s*\d+\.)\s+', r'**\1** ', text_html)
+
+        # Apply replacements again on the standard markers (Issue 108)
+        text_html = _repair_owen_ocr_errors(text_html, config=config)
+
         # Cleanup unbalanced bold markers (Issue 26)
         if text_html.count('**') % 2 != 0:
             text_html = text_html.replace('**', '')
@@ -1450,7 +1471,20 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         text_html = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text_html)
         text_html = re.sub(r'(?<!\*)_(.+?)_(?!\*)', r'<i>\1</i>', text_html)
         text_html = re.sub(rf'\s*\*\*\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', ' ', text_html, flags=re.I)
+        
+        # Clean up bolding on Q/A numbers
         text_html = re.sub(r'<b>(Q\.\s*)</b>(\d+\.)\*\*', r'<b>\1\2</b>', text_html)
+        text_html = re.sub(r'<b>(A\.\s*)</b>(\d+\.)\*\*', r'<b>\1\2</b>', text_html)
+        text_html = re.sub(r'<b>(Q\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
+        text_html = re.sub(r'<b>(A\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
+        text_html = re.sub(r'<b>(Ques\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
+        text_html = re.sub(r'<b>(Ans\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
+        text_html = re.sub(r'<b>(Ans\.)</b>\s+', r'<b>\1</b> ', text_html)
+        text_html = re.sub(r'<b>(Ques\.)</b>\s+', r'<b>\1</b> ', text_html)
+        
+        # Specific comma artifact cleanup (Issue 26)
+        text_html = re.sub(r'<b>([QA])\.</b>\s*,\s*', r'<b>\1.</b> ', text_html)
+
         text_html = re.sub(
             r'^(<b>A\.</b>\s+)([^<]{6,180}?[.!?;])\s+<b>A\.</b>\s+\2',
             r'\1\2',
@@ -1465,6 +1499,16 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         # Tag Unicode Greek/Hebrew ranges
         text_html = tag_unicode_ranges(text_html)
         text_html = _restore_footnote_placeholders(text_html)
+        
+        # Final punctuation normalization (Issue 26)
+        text_html = re.sub(r',[\s,]+,', ',', text_html)
+        text_html = re.sub(r',+', ',', text_html)
+        text_html = re.sub(r'\.+', '.', text_html)
+        text_html = re.sub(r', \.', r'.', text_html)
+        
+        # Ensure Q/A bolding includes the number
+        text_html = re.sub(r'<b>([QA])\.</b>\s+(\d+)\.', r'<b>\1. \2.</b>', text_html)
+        text_html = re.sub(r'<b>(Ques|Ans)\.</b>\s+(\d+)\.', r'<b>\1. \2.</b>', text_html)
 
         plain_for_class = re.sub(r'<[^>]+>', '', text_html)
         plain_for_class = re.sub(r'\s+', ' ', plain_for_class).strip()

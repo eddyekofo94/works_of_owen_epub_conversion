@@ -2,7 +2,7 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-16T21:55:25.613692+00:00",
+  "generated_at": "2026-05-17T08:00:56.141604+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [
@@ -610,12 +610,12 @@
     "split_candidates": [
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "heir personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q.,, 81,",
-        "next": "a. 3, ad prim., and q.,, 84,"
+        "previous": "their personality, are the formal object and term of divine worship; but in the worship of one, they are all worshipped as one God over all, blessed for ever. See Aquin. 22 q., 81,",
+        "next": "a. 3, ad prim., and q., 84,"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "a. 3, ad prim., and q.,, 84,",
+        "previous": "a. 3, ad prim., and q., 84,",
         "next": "a. 1, ad tertium; Alexand. Alens. p. 3,"
       },
       {
@@ -966,7 +966,7 @@
       },
       {
         "file": "EPUB/ch050.xhtml",
-        "text": "Isaiah,, 8:20;"
+        "text": "Isaiah, 8:20;"
       },
       {
         "file": "EPUB/ch050.xhtml",
@@ -975,12 +975,8 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 2,
+    "inline_structural_candidate_count": 1,
     "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "Whatever men may fancy to the contrary, it is the design of the apostle, in sundry places of his writings, to prove that they did so, especially Romans 1; 1 Corinthians 1. Wherefore, it was an infinite condescension of divine wisdom and grace, gloriously to im"
-      },
       {
         "file": "EPUB/ch078.xhtml",
         "text": "A.M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the statement is true; but th"
@@ -994,7 +990,7 @@
     "suspicious_large_number_starts": [
       {
         "file": "EPUB/ch070.xhtml",
-        "text": "12. Matthew 5:20;, 8:1Romans,, 8:1,2; Ephesians 4:22, 23; Titus 2:12."
+        "text": "12. Matthew 5:20;, 8:1Romans, 8:1,2; Ephesians 4:22, 23; Titus 2:12."
       }
     ],
     "roman_heading_candidate_count": 33,

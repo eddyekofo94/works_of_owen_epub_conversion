@@ -1286,8 +1286,12 @@ def clean_text(text, config=None):
     )
     # 3. Collapse multiple spaces → single space
     text = re.sub(r' {2,}', ' ', text)
-    # Normalize answer labels that are split by PDF spacing.
+    # Normalize Q/A labels that are clearly structural (Issue 26)
+    # Strictly case-sensitive and anchored to start of line to avoid corrupting prose
     text = re.sub(r'\bAns\s+\.\s+(\d+)\b\.?', r'Ans. \1.', text)
+    text = re.sub(r'(?m)^([QA])\s*[\., ]+\s*(\d+)\s*\.?', r'\1. \2.', text)
+    text = re.sub(r'(?m)^(Q)\s*[\., ]+\s*', r'\1. ', text)
+    text = re.sub(r'(?m)^(A)\s*\.\s*,\s*', r'\1. ', text) # A. , -> A.
     text = re.sub(r'\b(\d+(?:st|nd|rd|th))\s+([,.;])', r'\1\2', text)
     # 4. Strip leading/trailing whitespace per line
     text = '\n'.join(line.strip() for line in text.split('\n'))

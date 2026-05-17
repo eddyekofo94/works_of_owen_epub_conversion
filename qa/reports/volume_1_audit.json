@@ -1,0 +1,234 @@
+{
+  "epub": "volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-05-17T08:00:25.142208+00:00",
+  "status": "fail",
+  "error_count": 2,
+  "warning_count": 4,
+  "errors": [
+    {
+      "code": "spine_idref_missing",
+      "message": "Spine idref is not present in manifest",
+      "idref": "nav"
+    },
+    {
+      "code": "missing_nav_property",
+      "message": "No manifest item has properties='nav'"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "missing_cover_manifest_hint",
+      "message": "No obvious cover image manifest hint found"
+    },
+    {
+      "code": "untagged_greek",
+      "message": "Greek characters appear outside lang='el' context",
+      "chars": 10
+    },
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 5
+    },
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn53"
+      ]
+    }
+  ],
+  "info": {
+    "file_count": 105,
+    "epub_size_bytes": 2707688,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 1: The Glory of Christ"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 96,
+    "spine_count": 84,
+    "xhtml_count": 84,
+    "nav_files": [],
+    "font_count": 8,
+    "language": {
+      "greek_chars": 4085,
+      "greek_untagged_chars": 10,
+      "hebrew_chars": 160,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 3,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
+    },
+    "footnotes": {
+      "noteref_count": 130,
+      "unique_noteref_targets": 123,
+      "endnote_anchor_count": 124,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn53"
+      ]
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 5,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 2,
+      "overlong_heading_body_files": 0,
+      "fragmented_greek_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 0,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 13,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", ηε etc, saith Ignatius: Epist. ad Philadelph. — \"He\" (that is, Christ) \"is the way leading unto the Father, the rock, the key, the shepherd\" — wherein he has respect unto this testimony. And Origin expressly denies the"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", κ.τ.λ. (cap. 6)"
+          },
+          {
+            "file": "EPUB/ch005.xhtml",
+            "text": ", κ.τ.λ.\" — \"Thou art a rock, and on thee will I build.\" At least the gender had not been altered, but he would have said, \""
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": ".τ. λ., 2 Corinthians 3:18. We behold his glory \"in a glass,\" which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t"
+          }
+        ],
+        "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "chapter 14 motives unto the love of christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "meditations and discourses on the glory of christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 8 of the state of corrupted nature",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 10 of the person of jesus christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 14 of the two-fold estate of christ",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/ch003.xhtml",
+            "text": "Chapter 1"
+          },
+          {
+            "file": "EPUB/ch049.xhtml",
+            "text": "A. Only by Jesus Christ. — Chapter 9"
+          }
+        ],
+        "overlong_heading_body": [],
+        "fragmented_greek_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch020.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch024.xhtml",
+            "text": "w"
+          },
+          {
+            "file": "EPUB/ch030.xhtml",
+            "text": "a"
+          },
+          {
+            "file": "EPUB/ch040.xhtml",
+            "text": "g"
+          },
+          {
+            "file": "EPUB/ch043.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch044.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch050.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch051.xhtml",
+            "text": "i"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
+      }
+    },
+    "nav_link_count": 0,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
+  }
+}
