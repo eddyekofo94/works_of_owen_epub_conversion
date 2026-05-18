@@ -176,6 +176,7 @@ def strip_greek_diacritics(text: str) -> str:
     # 2. Filter out combining marks in the common Greek ranges
     # 0300-036F is Combining Diacritical Marks
     # 1DC0-1DFF is Combining Diacritical Marks Supplement
+    # Also include the ancient Greek block marks (1F00-1FFF) if they are decomposed
     filtered = "".join(
         c for c in nfd 
         if not (unicodedata.category(c) == "Mn" and (0x0300 <= ord(c) <= 0x036F or 0x1DC0 <= ord(c) <= 0x1DFF))
@@ -199,6 +200,9 @@ def content_words(text: str, include_common: bool = False) -> list[str]:
 
 
 def normalized_word_string(text: str) -> str:
+    """A very robust normalization for fuzzy phrase matching."""
+    # First strip diacritics to make Greek/Hebrew matching robust
+    text = strip_greek_diacritics(text)
     return " ".join(content_words(text, include_common=True))
 
 
@@ -573,7 +577,8 @@ def extract_bottom_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], d
             lines.sort(key=lambda item: item[0], reverse=True)
             # Take the last 2 lines of the body block
             sample = clean_text(" ".join(text for _, text in reversed(lines[:2])))
-            words = content_words(sample, include_common=True)
+            norm_sample = normalized_word_string(sample)
+            words = norm_sample.split()
             if len(words) < 8:
                 continue
             windows.append({
@@ -593,11 +598,6 @@ def bottom_of_page_integrity(pdf_path: Path, epub_text: str) -> dict[str, Any]:
     skipped = []
 
     for item in windows:
-        sample = item["sample"]
-        if re.search(r"[<>\]~|}]", sample):
-            skipped.append({**item, "reason": "font-encoded Greek/Hebrew window"})
-            continue
-
         words = item["window"].split()
         if len(words) < 8:
             skipped.append({**item, "reason": "too few stable words"})
@@ -1121,7 +1121,11 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
 
     for page_no, page_text in enumerate(pdf_pages, start=1):
         # Find Greek word sequences
-        greek_words = GREEK_WORD_RE.findall(page_text)
+        # Strip diacritics before finding sequences to make it robust
+        page_text_stripped = strip_greek_diacritics(page_text)
+        # Strip 'j'/'J' artifacts common in AGES Greek extraction
+        page_text_stripped = re.sub(r'\b[jJ](?=[\u0370-\u03FF\u1F00-\u1FFF])', '', page_text_stripped)
+        greek_words = GREEK_WORD_RE.findall(page_text_stripped)
         if len(greek_words) >= 5:
             # Extract contiguous Greek sequences (≥5 words)
             current_seq = []

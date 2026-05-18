@@ -170,6 +170,9 @@ def _coalesce_v1_catechism_paragraphs(paragraphs):
 
 OVERRIDES = {
     'text_replacements': {
+        'Origin': 'Origen',
+        'εηκκλησίαν': 'ἐκκλησίαν',
+        'eccleaism': 'ecclesiam',
         'Charneck': 'Charnock',
         'storage': 'strange',
         'whoso': 'whose',
