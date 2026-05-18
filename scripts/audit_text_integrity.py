@@ -13,6 +13,7 @@ import json
 import posixpath
 import re
 import sys
+import unicodedata
 import zipfile
 from collections import Counter
 from dataclasses import dataclass
@@ -168,8 +169,25 @@ def clean_text(text: str) -> str:
     return SPACE_RE.sub(" ", text).strip()
 
 
+def strip_greek_diacritics(text: str) -> str:
+    """Remove polytonic diacritics for easier comparison."""
+    # 1. Normalize to NFD to separate base chars from combining marks
+    nfd = unicodedata.normalize("NFD", text)
+    # 2. Filter out combining marks in the common Greek ranges
+    # 0300-036F is Combining Diacritical Marks
+    # 1DC0-1DFF is Combining Diacritical Marks Supplement
+    filtered = "".join(
+        c for c in nfd 
+        if not (unicodedata.category(c) == "Mn" and (0x0300 <= ord(c) <= 0x036F or 0x1DC0 <= ord(c) <= 0x1DFF))
+    )
+    # 3. Normalize back to NFC
+    return unicodedata.normalize("NFC", filtered)
+
+
 def content_words(text: str, include_common: bool = False) -> list[str]:
     words = []
+    # Normalize Greek diacritics for more robust comparison
+    text = strip_greek_diacritics(text)
     for raw in WORD_RE.findall(clean_text(text).lower()):
         word = raw.strip("'’-")
         if len(word) < MIN_WORD_LEN:
@@ -291,8 +309,8 @@ def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
                         elif any(hf in font for hf in HEBREW_FONTS):
                             text = convert_gideon_hebrew(text)
                         line_text.append(text)
-                    page_content.append(" ".join(line_text))
-            pages.append(clean_text("\n".join(page_content)))
+                    page_content.append("".join(line_text))
+            pages.append(" ".join(page_content))
     return pages, {"page_count": len(pages)}
 
 
