@@ -2670,7 +2670,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     """
     # Import here to avoid circular import at module level
     from shared import (
-        VOLUME_CONFIG, VOLUME_SUBTITLES,
+        merge_volume_config,
         EPUB_STYLESHEET, generate_font_styles, select_primary_font,
         SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS,
     )
@@ -2679,8 +2679,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     except ImportError:
         import sys; sys.exit("Error: ebooklib not installed.")
 
-    overrides = overrides or {}
-    config = {**VOLUME_CONFIG.get(vol_num, {}), **overrides}
+    config = merge_volume_config(vol_num, overrides)
 
     vol_dir = _RENDER_DIR / 'volumes' / f'v{vol_num}'
     json_path = vol_dir / 'intermediate' / f'volume_{vol_num}.json'

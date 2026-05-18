@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 125 | 125 | OK |
+| Possible faulty paragraph splits | 106 | 125 | OK |
 | Inline structural marker candidates | 0 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -24,7 +24,7 @@
 | Missing Greek clauses | 14 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
-| Untagged Greek characters | 8 | 55 | OK |
+| Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
 | Repeated phrase hits | 6 | 8 | OK |
@@ -53,7 +53,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 8 | 38 | OK |
+| Lowercase page fragments | 9 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -64,10 +64,10 @@
 ### Possible faulty paragraph splits
 
 - file: EPUB/ch004.xhtml; previous: on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things." And Ennodius has, as it were, turned this passage of Jerome into verse: —; next: Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the
-- file: EPUB/ch007.xhtml; previous:  abilities are weak and contemptible, in the eye of that wisdom which is of this world, than in those of the highest natural sagacity, enjoying the best improvements of reason. For; next: However they may be poor, and, as another apostle speaketh, "foolish, weak, base, and despised;" ( 1 Corinthians 1:27, 28;) yet that faith which enables them to assent unto and emb
 - file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
 - file: EPUB/ch009.xhtml; previous: he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they; next: Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S
 - file: EPUB/ch009.xhtml; previous: This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw; next: The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:
+- file: EPUB/ch010.xhtml; previous:  wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,; next: And they are called "treasures" on a twofold account, both mentioned together by the Psalmist. "How precious are thy thoughts unto me, O Lord; how great is the sum of them!" They a
 
 ### Repeated word windows
 
@@ -85,12 +85,6 @@
 - page: 37; sample: υιος θεου υιος ανθρωπου γινεται ουτω δε φωτος ηλιου μια και
 - page: 42; sample: παιδαγωγος θεος εν ανθρωπου σχηματι αχραντος πατρικω θεληματι διακονος λογος θεος
 
-### Untagged Greek characters
-
-- file: EPUB/ch004.xhtml; text: , κ.τ.λ. (cap. 6)
-- file: EPUB/ch005.xhtml; text: , κ.τ.λ." — "Thou art a rock, and on thee will I build." At least the gender had not been altered, but he would have said, "
-- file: EPUB/ch019.xhtml; text: .τ. λ., 2 Corinthians 3:18. We behold his glory "in a glass," which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t
-
 ### Repeated phrase hits
 
 - file: combined_text; text: chapter 14 motives unto the love of christ
@@ -106,7 +100,7 @@
 ### Lowercase page fragments
 
 - file: EPUB/ch004.xhtml; text: f
+- file: EPUB/ch008.xhtml; text: a
 - file: EPUB/ch011.xhtml; text: m
 - file: EPUB/ch016.xhtml; text: a
 - file: EPUB/ch021.xhtml; text: a
-- file: EPUB/ch022.xhtml; text: a

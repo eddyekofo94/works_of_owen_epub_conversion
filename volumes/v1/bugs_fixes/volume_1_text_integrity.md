@@ -4,15 +4,15 @@
 - Warnings: 9
 - PDF pages: 633
 - EPUB text files: 81
-- EPUB paragraphs/headings: 3007
+- EPUB paragraphs/headings: 2802
 
 ## Coverage
 
 - PDF content tokens: 208222
-- EPUB content tokens: 207241
+- EPUB content tokens: 207242
 - Approximate PDF-to-EPUB coverage ratio: 0.9945
 - Pages checked: 624
-- Weak page matches: 23
+- Weak page matches: 24
 - Dense source windows checked: 783
 - Missing dense source-window pages: 609
 - Front CONTENTS pages checked: 4
@@ -26,10 +26,10 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2536
-- Possible faulty paragraph splits: 124
-- Structural starts excluded from split warnings: 162
-- Short fragments: 29
+- Body paragraphs checked: 2349
+- Possible faulty paragraph splits: 106
+- Structural starts excluded from split warnings: 163
+- Short fragments: 19
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
@@ -47,7 +47,7 @@
 ## Greek / Hebrew
 
 - PDF Greek words: 812
-- EPUB Greek words: 811
+- EPUB Greek words: 812
 - Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
@@ -104,15 +104,15 @@
 ## Possible Paragraph Splits
 
 - file: EPUB/ch004.xhtml; previous: on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things." And Ennodius has, as it were, turned this passage of Jerome into verse: —; next: Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the
-- file: EPUB/ch007.xhtml; previous: abilities are weak and contemptible, in the eye of that wisdom which is of this world, than in those of the highest natural sagacity, enjoying the best improvements of reason. For; next: However they may be poor, and, as another apostle speaketh, "foolish, weak, base, and despised;" ( 1 Corinthians 1:27, 28;) yet that faith which enables them to assent unto and emb
 - file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
 - file: EPUB/ch009.xhtml; previous: he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they; next: Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S
 - file: EPUB/ch009.xhtml; previous: This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw; next: The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:
-- file: EPUB/ch010.xhtml; previous: John 14:6. He is so essentially — as he is one with the Father, the God of truth: Deuteronomy 32:4. He is so efficiently — as by him alone it is fully and effectually declared; for; next: He is so substantially — in opposition unto the types and shadows of the Old Testament; for in him dwelt "the fullness of the godhead bodily:" Colossians 2:9. "The body is of Chris
 - file: EPUB/ch010.xhtml; previous: wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,; next: And they are called "treasures" on a twofold account, both mentioned together by the Psalmist. "How precious are thy thoughts unto me, O Lord; how great is the sum of them!" They a
 - file: EPUB/ch011.xhtml; previous: is power and care for the church, that is so expressed. These were from the beginning the first foundation of the church, in answer unto his everlasting counsels, Zechariah 2:8, 9,; next: He who is sent calleth himself "The Lord of hosts," and affirms that he will destroy the nations by the shaking of his hand; who can be no other but God himself. That is, it was th
-- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
+- file: EPUB/ch011.xhtml; previous: tion, so it is not only intended. He was so before Abraham, as that the care of the church was then and always from the beginning on him. And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
 - file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
+- file: EPUB/ch011.xhtml; previous: hed unto those that were disobedient in the days of Noah, who are now in prison for their disobedience, 1 Peter 3:19, 20. For he was so to prophet of the church always as to tender; next: John 1:9, by one way or other communicating to them some notices of God and his will; for his light shineth in, or irradiates darkness itself — that darkness which is come on the m
+- file: EPUB/ch011.xhtml; previous: not only received divine truth by parcel, but comprehended not the depths of the revelations made unto them, 1 Peter 1:11, 12. To this purpose is that divine testimony, John 1:18,; next: It is of all the prophets concerning whom it is affirmed, that no man has seen God at any time. So is it evident in the antithesis between Moses the principal of them, and the Lord
 
 ## Roman Heading Candidates
 
@@ -135,14 +135,14 @@
 
 - file: EPUB/ch006.xhtml; text: For,
 - file: EPUB/ch006.xhtml; text: As,
-- file: EPUB/ch009.xhtml; text: Wherefore —
-- file: EPUB/ch009.xhtml; text: And —
 - file: EPUB/ch009.xhtml; text: All this himself instructs us in.
 - file: EPUB/ch011.xhtml; text: This must be declared.
-- file: EPUB/ch011.xhtml; text: He says that
 - file: EPUB/ch013.xhtml; text: 2ndly, Invocation.
-- file: EPUB/ch016.xhtml; text: So he prays for all his disciples,
-- file: EPUB/ch019.xhtml; text: He has
+- file: EPUB/ch022.xhtml; text: And herein we may consider, —
+- file: EPUB/ch022.xhtml; text: Wherefore, —
+- file: EPUB/ch024.xhtml; text: As, —
+- file: EPUB/ch026.xhtml; text: - Teron and Aspasio, vol. 3 p. 75.
+- file: EPUB/ch029.xhtml; text: For, -
 
 ## Repeated Windows
 

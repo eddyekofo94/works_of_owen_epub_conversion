@@ -23,8 +23,7 @@ _ROOT = os.path.join(_HERE, '..', '..')
 if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
-from extract import extract_volume
-from render import render_volume
+from shared import run_volume_cli
 
 import re
 
@@ -290,32 +289,7 @@ OVERRIDES = {
 
 
 def main():
-    import argparse
-    parser = argparse.ArgumentParser(
-        description=f'Convert Owen Works Volume {VOL}',
-    )
-    parser.add_argument(
-        '--extract-only', action='store_true',
-        help='Run Stage 1 only (PDF → JSON intermediate)',
-    )
-    parser.add_argument(
-        '--render-only', action='store_true',
-        help='Run Stage 2 only (JSON → EPUB, requires existing intermediate)',
-    )
-    args = parser.parse_args()
-
-    if args.render_only and args.extract_only:
-        parser.error('Cannot use both --extract-only and --render-only')
-
-    if not args.render_only:
-        print(f'=== Volume {VOL}: Stage 1 — Extract ===')
-        extract_volume(VOL, overrides=OVERRIDES)
-
-    if not args.extract_only:
-        print(f'=== Volume {VOL}: Stage 2 — Render ===')
-        render_volume(VOL, overrides=OVERRIDES)
-
-    print(f'=== Volume {VOL}: Done ===')
+    run_volume_cli(VOL, overrides=OVERRIDES)
 
 
 if __name__ == '__main__':

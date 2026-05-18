@@ -554,9 +554,53 @@ def _paragraph_expects_scripture_reference_tail(text):
     return bool(re.search(r'[?!.][”"\']?\s*$', stripped) and re.search(r'[”"]\s*$', stripped))
 
 
+CONNECTOR_STARTERS_RE = re.compile(
+    r'^(But|And|Wherefore|Therefore|For|Nevertheless|However|Moreover|Yea|Yet|'
+    r'Also|Further|Again|Now|So|Thus|Hence|Consequently)\s+[,;:\-—]?\s*',
+    re.I
+)
+
+SCRIPTURE_TAIL_RE = re.compile(
+    r'[1-3]?\s*(?:GenesisExodusLeviticusNumbersDeuteronomyJoshuaJudgesRuth'
+    r'|SamuelKingsChroniclesEzraNehemiahEstherJobPsalms?ProverbsEcclesiastes'
+    r'|Song(?: of Solomon)?|IsaiahJeremiahLamentationsEzekielDanielHosea'
+    r'|JoelAmosObadiahJonahMicahNahumHabakkukZephaniahHaggaiZechariahMalachi'
+    r'|MatthewMarkLukeJohnActsRomans?1?2?Corinthians?Galatians?Ephesians?'
+    r'|PhilippiansColossians?1?2?Thessalonians?1?2?TimothyTitusPhilemon'
+    r'|HebrewsJames?1?2?Peter?1?2?3?JohnJudeRevelation)'
+    r'\s*\d+:\d+(?:-\d+)?(?:,\s*\d+(?::\d+(?:-\d+)?)?)*\.?\s*$',
+    re.I
+)
+
+
 def _merge_adjacent_blockquote_paragraphs(paragraphs):
     merged = []
     for paragraph in paragraphs:
+        # Merge: paragraph ending with connector word + next starting with [[BLOCKQUOTE]]
+        if (
+            merged
+            and paragraph.startswith('[[BLOCKQUOTE]]')
+            and DANGLING_CONNECTOR_RE.search(merged[-1])
+        ):
+            merged[-1] = merged[-1].rstrip() + ' ' + paragraph
+            continue
+        # Merge: paragraph ends with dangling connector + next starts with connector word
+        if (
+            merged
+            and DANGLING_CONNECTOR_RE.search(merged[-1])
+            and CONNECTOR_STARTERS_RE.match(paragraph)
+        ):
+            merged[-1] = merged[-1].rstrip() + ' ' + paragraph
+            continue
+        # Merge: paragraph ends with scripture reference + next starts with uppercase
+        if (
+            merged
+            and SCRIPTURE_TAIL_RE.search(merged[-1])
+            and paragraph[0].isupper()
+            and not paragraph.startswith('[[')
+        ):
+            merged[-1] = merged[-1].rstrip() + ' ' + paragraph
+            continue
         if (
             merged
             and merged[-1].startswith('[[BLOCKQUOTE]]')
@@ -1821,7 +1865,17 @@ def reconstruct_paragraphs(text):
             if current:
                 prev = current[-1]
                 ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
-                if ends_terminal:
+                # Look ahead: if next non-empty line starts with connector, don't break
+                next_nonempty = None
+                for j in range(i + 1, len(lines)):
+                    if lines[j].strip():
+                        next_nonempty = lines[j].strip()
+                        break
+                starts_with_connector = (
+                    next_nonempty is not None and
+                    bool(CONNECTOR_STARTERS_RE.match(next_nonempty))
+                )
+                if ends_terminal and not starts_with_connector:
                     paragraphs.append(' '.join(current))
                     current = []
             continue
@@ -1883,6 +1937,7 @@ def reconstruct_paragraphs(text):
             starts_lower = bool(re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', stripped))
             is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
             is_semantic_connector = bool(SEMANTIC_CONNECTOR_RE.match(stripped))
+            starts_with_connector = bool(CONNECTOR_STARTERS_RE.match(stripped))
 
             # Issue 76: Multiline block quote preservation
             all_current_text = ' '.join(current)
@@ -1892,7 +1947,7 @@ def reconstruct_paragraphs(text):
             )
 
             if not ends_terminal or is_dangling or is_semantic_connector:
-                # Line does not end with terminal punctuation or ends with a connector 
+                # Line does not end with terminal punctuation or ends with a connector
                 # OR the current line is a semantic connector ("For,", "As,") → join
                 current.append(stripped)
             elif starts_lower:
@@ -1900,6 +1955,9 @@ def reconstruct_paragraphs(text):
                 current.append(stripped)
             elif is_inside_quote:
                 # Inside an unclosed quote → join
+                current.append(stripped)
+            elif starts_with_connector:
+                # Next starts with connector word ("Wherefore", "But", "And", etc.) → join
                 current.append(stripped)
             else:
                 # Terminal punctuation + uppercase start → new paragraph
@@ -2504,14 +2562,13 @@ def extract_volume(vol_num: int, overrides: dict = None) -> dict:
     overrides: optional per-volume config additions (see volumes/vN/convert.py).
     """
     import pymupdf4llm
-    from shared import VOLUME_CONFIG, VOLUME_SUBTITLES
+    from shared import merge_volume_config
     from render import (
         detect_page_type, is_toc_continuation_page,
         format_title_page, build_toc_page_xhtml,
     )
 
-    overrides = overrides or {}
-    config = {**VOLUME_CONFIG.get(vol_num, {}), **overrides}
+    config = merge_volume_config(vol_num, overrides)
     vol_dir = _EXTRACT_DIR / 'volumes' / f'v{vol_num}'
     pdf_path = vol_dir / 'input' / f'owen-v{vol_num}.pdf'
     thml_path = vol_dir / 'intermediate' / f'volume_{vol_num}.thml.xml'

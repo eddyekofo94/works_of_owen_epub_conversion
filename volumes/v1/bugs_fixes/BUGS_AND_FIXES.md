@@ -916,10 +916,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T21:53:33.802445+00:00
+**Last run:** 2026-05-18T22:30:56.586636+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -1081,10 +1083,14 @@ Warnings requiring triage:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T21:54:06.119155+00:00
+**Last run:** 2026-05-18T22:31:38.448089+00:00
 **Status:** WARN (9 warnings)
 
 Reports:
@@ -1095,7 +1101,7 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 81 |
-| EPUB paragraphs/headings | 3007 |
+| EPUB paragraphs/headings | 2802 |
 | Approximate PDF-to-EPUB word coverage | 0.9945 |
 | Weak page matches | 24 |
 | Dense source windows checked | 783 |
@@ -1108,9 +1114,9 @@ Reports:
 | Bottom-of-page body windows checked | 544 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 20 |
-| Possible faulty paragraph splits | 124 |
-| Structural starts excluded from split warnings | 162 |
-| Short fragments | 29 |
+| Possible faulty paragraph splits | 106 |
+| Structural starts excluded from split warnings | 163 |
+| Short fragments | 19 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |

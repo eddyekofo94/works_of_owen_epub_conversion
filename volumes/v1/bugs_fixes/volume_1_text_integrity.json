@@ -2,7 +2,7 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T21:00:06.541535+00:00",
+  "generated_at": "2026-05-18T22:31:38.448089+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [
@@ -48,11 +48,11 @@
   },
   "epub": {
     "spine_text_files": 81,
-    "paragraph_count": 3007
+    "paragraph_count": 2802
   },
   "word_coverage": {
     "pdf_content_tokens": 208222,
-    "epub_content_tokens": 207241,
+    "epub_content_tokens": 207242,
     "coverage_ratio": 0.9945,
     "missing_word_samples": [
       {
@@ -86,7 +86,7 @@
   },
   "page_coverage": {
     "pages_checked": 624,
-    "weak_page_count": 23,
+    "weak_page_count": 24,
     "weak_pages": [
       {
         "page": 19,
@@ -162,6 +162,11 @@
         "page": 586,
         "hit_ratio": 0.333,
         "sample": "586 two short catechisms wherein the principles of the doctrine of christ are unfolded and explained proper for all persons to learn before they"
+      },
+      {
+        "page": 603,
+        "hit_ratio": 0.333,
+        "sample": "603 chapter of god's actual providence what is god's actual providence the effectual working of his f51 f52 power and almighty act of his"
       },
       {
         "page": 607,
@@ -590,18 +595,13 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2536,
-    "split_candidate_count": 124,
+    "paragraphs_checked": 2349,
+    "split_candidate_count": 106,
     "split_candidates": [
       {
         "file": "EPUB/ch004.xhtml",
         "previous": "on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things.\" And Ennodius has, as it were, turned this passage of Jerome into verse: —",
         "next": "Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": " abilities are weak and contemptible, in the eye of that wisdom which is of this world, than in those of the highest natural sagacity, enjoying the best improvements of reason. For",
-        "next": "However they may be poor, and, as another apostle speaketh, \"foolish, weak, base, and despised;\" ( 1 Corinthians 1:27, 28;) yet that faith which enables them to assent unto and emb"
       },
       {
         "file": "EPUB/ch009.xhtml",
@@ -620,11 +620,6 @@
       },
       {
         "file": "EPUB/ch010.xhtml",
-        "previous": "John 14:6. He is so essentially — as he is one with the Father, the God of truth: Deuteronomy 32:4. He is so efficiently — as by him alone it is fully and effectually declared; for",
-        "next": "He is so substantially — in opposition unto the types and shadows of the Old Testament; for in him dwelt \"the fullness of the godhead bodily:\" Colossians 2:9. \"The body is of Chris"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
         "previous": " wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,",
         "next": "And they are called \"treasures\" on a twofold account, both mentioned together by the Psalmist. \"How precious are thy thoughts unto me, O Lord; how great is the sum of them!\" They a"
       },
@@ -635,7 +630,7 @@
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "previous": "And he discharged this office four ways: —",
+        "previous": "tion, so it is not only intended. He was so before Abraham, as that the care of the church was then and always from the beginning on him. And he discharged this office four ways: —",
         "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
       },
       {
@@ -655,28 +650,8 @@
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "previous": "He says that",
-        "next": "This some of old impiously applied unto the prophets of the Old Testament; whereas he intended it only of those false prophets who pretended of themselves that they, any of them, w"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
         "previous": "t is also accompanied with virtue, force, or almighty power, to act, order, and dispose of it at his pleasure. So is it described by the apostle from the Psalmist, Hebrews 1:10-12,",
         "next": "That power is required unto his kingly office whereby he created all things in the beginning, and shall change them all, as a man folds up a vesture, in the end. Omnipotence, accom"
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "faithful servant in the house of God, was but a \"testimony of those things which were to be spoken after,\" Hebrews 3:5. Howbeit the apostle tells us that all those things had but a",
-        "next": "And although they are now to us full of light and instruction, evidently expressing the principal works of Christ's mediation, yet were they not so unto them. For the veil is now t"
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "previous": " which give an account of their apprehensions concerning him. The faith of Daniel was, that God would show mercy, for the Lord's sake, Daniel 9:17; and of all the prophets that the",
-        "next": "Of the same nature were all his personal appearances under the Old Testament, especially that most illustrious representation made of him unto the prophet Isaiah, chap. 6, and the "
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "o the prophet Isaiah, chap. 6, and the glorious revelation of his name, chap. 9:6. It is true that both these and other prophets had revelations concerning his sufferings also. For",
-        "next": "— an illustrious testimony whereunto we have given us Psalm 22, and Isaiah 53. Nevertheless their conceptions concerning them were dark and obscure. It was his person that their fa"
       },
       {
         "file": "EPUB/ch013.xhtml",
@@ -745,7 +720,7 @@
       },
       {
         "file": "EPUB/ch016.xhtml",
-        "previous": "So he prays for all his disciples,",
+        "previous": "through him is communicated unto the church. Whatever it receives in grace and glory, it is but the streams of this fountain — love unto himself. So he prays for all his disciples,",
         "next": "They can be partakers of no other love, neither in itself nor in its fruits, but that alone wherewith the Father first loved him. He loveth him for us all, and us no otherwise but "
       },
       {
@@ -780,22 +755,52 @@
       },
       {
         "file": "EPUB/ch019.xhtml",
-        "previous": "he flesh, wherein he fulfilled all righteousness, \"did no sin, neither was guile found in his mouth,\" 1 Peter 2:22. And it was so unto the discharge of the office he undertook; for",
-        "next": "Howbeit, the infinite wisdom of God had this farther design in it also, — namely, that he might be the pattern and example of the renovation of the image of God in us, and of the g"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "He has",
-        "next": "In the collation of all grace on Christ, God designed to make him \"the first born of many brethren;\" that is, not only to give him the power and authority of the firstborn, with th"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
         "previous": "that the effect of this predestination to conformity unto the image of the Son is the communication of all effectual, saving grace, with the glory that ensues thereon, Romans 8:30,",
         "next": "The great design of God in his grace is, that as we have born the \"image of the first Adam\" in the depravation of our natures, so we should bear the \"image of the second\" in their "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "as it is in Jesus, as to be \"renewed in the spirit of our mind,\" and to \"put on the new man, which after God is created in righteousness and true holiness,\" Ephesians 4:20, 23, 24,",
+        "next": "- that is, \"renewed after the image of him who created him,\" Colossians 3:10."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": " — would take up more room and time than what is allotted unto the whole of that whereof it is here the least part. I shall leave the whole under the shade of that blessed promise,",
+        "next": "And the things belonging thereunto may be reduced unto these general heads: —"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "previous": "is work he so expresseth as to intimate a peculiar effect of divine wisdom in it, whereby it was distinguished from all other external works of creation whatever, Genesis 1:26, 27,",
+        "next": "Nowhere is there such an emphasis of expression concerning any work of God. And sundry things are represented as peculiar therein."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "ce absolutely in him. For the promise, which is the court-roll of heaven — the only external mean and record of its conveyance — was originally made unto Christ only. God said not,",
+        "next": "And we become again heirs of God only as we are joint heirs with Christ, Romans 8:17; that is by being taken into a participation of that inheritance which is vested in him alone. "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "ivine nature acting in the person of the Son, the nature assuming; sometimes passively, with respect unto the human nature, the nature assumed. The first it does, Hebrews 2:14, 16,",
+        "next": "and in sundry other places. The assumption, the taking of our human nature to be his own, by an ineffable act of his power and grace, is clearly expressed. And to take it to be his"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "This is included and asserted in a multitude of divine testimonies. Isaiah 7:14,",
+        "next": "as Matthew 1:23. He who was conceived and born of the virgin was Emmanuel, or God with us; that is, God manifest in the flesh, by the union of his two natures in the same person. I"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": " 1:23. He who was conceived and born of the virgin was Emmanuel, or God with us; that is, God manifest in the flesh, by the union of his two natures in the same person. Isaiah 9:6,",
+        "next": "That the same person should be \"the mighty God\" and a \"child born,\" is neither conceivable nor possible, nor can be true, but by the union of the divine and human natures in the sa"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "There can be but two senses of these words",
+        "next": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh"
       }
     ],
-    "structural_start_exclusions": 162,
-    "short_fragment_count": 29,
+    "structural_start_exclusions": 163,
+    "short_fragment_count": 19,
     "short_fragments": [
       {
         "file": "EPUB/ch006.xhtml",
@@ -807,14 +812,6 @@
       },
       {
         "file": "EPUB/ch009.xhtml",
-        "text": "Wherefore —"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "text": "And —"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
         "text": "All this himself instructs us in."
       },
       {
@@ -822,28 +819,8 @@
         "text": "This must be declared."
       },
       {
-        "file": "EPUB/ch011.xhtml",
-        "text": "He says that"
-      },
-      {
         "file": "EPUB/ch013.xhtml",
         "text": "2ndly, Invocation."
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "text": "So he prays for all his disciples,"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "He has"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "And I shall briefly show"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "Hence godliness has the"
       },
       {
         "file": "EPUB/ch022.xhtml",
@@ -860,10 +837,6 @@
       {
         "file": "EPUB/ch026.xhtml",
         "text": "- Teron and Aspasio, vol. 3 p. 75."
-      },
-      {
-        "file": "EPUB/ch028.xhtml",
-        "text": "And I shall inquire, —"
       },
       {
         "file": "EPUB/ch029.xhtml",
@@ -886,10 +859,6 @@
         "text": "The sum is,"
       },
       {
-        "file": "EPUB/ch036.xhtml",
-        "text": "So the church affirms,"
-      },
-      {
         "file": "EPUB/ch037.xhtml",
         "text": "And, —"
       },
@@ -900,10 +869,6 @@
       {
         "file": "EPUB/ch038.xhtml",
         "text": "As, -"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "text": "— that he is"
       },
       {
         "file": "EPUB/ch041.xhtml",
@@ -1101,7 +1066,7 @@
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 812,
-    "epub_greek_word_count": 811,
+    "epub_greek_word_count": 812,
     "pdf_greek_unique_words": 461,
     "epub_greek_unique_words": 461,
     "greek_word_coverage_ratio": 0.9987,

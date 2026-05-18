@@ -7,6 +7,7 @@ and EPUB3 stylesheets.
 
 import unicodedata
 import re
+from copy import deepcopy
 
 # ============================================================================
 # VOLUME METADATA — Owen Works (16 volumes)
@@ -270,6 +271,60 @@ VOLUME_CONFIG = {
         ]
     },
 }
+
+
+def _deep_merge_config(base, override):
+    """Return a recursive copy of base updated with override values."""
+    result = deepcopy(base or {})
+    for key, value in (override or {}).items():
+        if isinstance(value, dict) and isinstance(result.get(key), dict):
+            result[key] = _deep_merge_config(result[key], value)
+        else:
+            result[key] = deepcopy(value)
+    return result
+
+
+def merge_volume_config(vol_num, overrides=None):
+    """Merge shared volume metadata with per-volume overrides.
+
+    Per-volume scripts should pass their OVERRIDES through this helper rather
+    than using a shallow dict spread. Nested maps such as text/regex
+    replacements and title overrides then compose predictably.
+    """
+    return _deep_merge_config(VOLUME_CONFIG.get(vol_num, {}), overrides or {})
+
+
+def run_volume_cli(vol_num, overrides=None, description=None):
+    """Shared CLI for volumes/vN/convert.py entrypoints."""
+    import argparse
+    from extract import extract_volume
+    from render import render_volume
+
+    parser = argparse.ArgumentParser(
+        description=description or f'Convert Owen Works Volume {vol_num}',
+    )
+    parser.add_argument(
+        '--extract-only', action='store_true',
+        help='Run Stage 1 only (PDF → JSON intermediate)',
+    )
+    parser.add_argument(
+        '--render-only', action='store_true',
+        help='Run Stage 2 only (JSON → EPUB, requires existing intermediate)',
+    )
+    args = parser.parse_args()
+
+    if args.render_only and args.extract_only:
+        parser.error('Cannot use both --extract-only and --render-only')
+
+    if not args.render_only:
+        print(f'=== Volume {vol_num}: Stage 1 — Extract ===')
+        extract_volume(vol_num, overrides=overrides)
+
+    if not args.extract_only:
+        print(f'=== Volume {vol_num}: Stage 2 — Render ===')
+        render_volume(vol_num, overrides=overrides)
+
+    print(f'=== Volume {vol_num}: Done ===')
 
 # ============================================================================
 # VOLUME METADATA — Hebrews Commentary (7 volumes)

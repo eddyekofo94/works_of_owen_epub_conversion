@@ -2098,6 +2098,36 @@ The loose AGES footnote marker regex handled `hisf50` and bare `f50`, but requir
 
 ---
 
+## [Issue 119] V2 Readiness Code Hardening
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Before moving from Volume 1 to Volume 2, the shared pipeline needed a brittleness review. The main risk was not a single extraction bug but the possibility that small per-volume overrides could silently replace shared nested configuration or that future volume scripts would copy V1-only boilerplate.
+
+### 2. Root Cause
+Stage 1 and Stage 2 both used shallow dict spreading to combine `VOLUME_CONFIG` with `OVERRIDES`. That means any nested override map, such as `regex_replacements`, replaced the entire shared nested map. The V1 converter also owned generic CLI stage-selection boilerplate that every future per-volume script would otherwise copy.
+
+### 3. Fixes
+- Added `merge_volume_config()` in `shared.py` for recursive config merging without mutating shared defaults.
+- Routed `extract_volume()` and `render_volume()` through the shared merge helper.
+- Added `run_volume_cli()` in `shared.py` and simplified `volumes/v1/convert.py` to use it.
+- Added a clean `volumes/v2/convert.py` entrypoint with empty `OVERRIDES`, avoiding V1-only logic.
+- Added `tests/test_config_hardening.py` for nested config merge and non-mutation behavior.
+- Wrote `volumes/v2/bugs_fixes/V2_CODE_HARDENING_REPORT.md`.
+
+### 4. Validation
+- `py_compile` passed for shared/extract/render and V1/V2 convert scripts.
+- Focused config and footnote tests: `3 passed`.
+- Regression set: `29 passed`.
+- V1 render-only rebuild completed.
+- V1 EPUB audit: 0 errors, 1 existing warning.
+- V1 bug regression audit: PASS.
+- V1 text-integrity audit: 0.9945 coverage, 106 split candidates, 0 inline structural marker candidates, 0 missing enumerator markers.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives
