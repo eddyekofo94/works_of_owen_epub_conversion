@@ -107,7 +107,7 @@
   "volumes": {
     "1": {
       "text_integrity": {
-        "max_split_candidate_count": 116,
+        "max_split_candidate_count": 125,
         "max_repeated_window_count": 25
       },
       "epub": {

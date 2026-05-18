@@ -2,9 +2,9 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T14:16:42.184817+00:00",
+  "generated_at": "2026-05-18T21:00:06.541535+00:00",
   "status": "warn",
-  "warning_count": 8,
+  "warning_count": 9,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -27,6 +27,10 @@
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     },
     {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
       "code": "overlong_heading_candidates",
       "message": "Some chapter headings are long enough to suggest swallowed body text"
     },
@@ -44,12 +48,12 @@
   },
   "epub": {
     "spine_text_files": 81,
-    "paragraph_count": 2828
+    "paragraph_count": 3007
   },
   "word_coverage": {
     "pdf_content_tokens": 208222,
-    "epub_content_tokens": 207337,
-    "coverage_ratio": 0.9947,
+    "epub_content_tokens": 207241,
+    "coverage_ratio": 0.9945,
     "missing_word_samples": [
       {
         "word": "faithfullness",
@@ -86,7 +90,7 @@
     "weak_pages": [
       {
         "page": 19,
-        "hit_ratio": 0.333,
+        "hit_ratio": 0.0,
         "sample": "19 χριστολογια christologia or declaration of the glorious mystery of the person of christ god and man with the infinite wisdom love and power"
       },
       {
@@ -586,73 +590,48 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2643,
-    "split_candidate_count": 47,
+    "paragraphs_checked": 2536,
+    "split_candidate_count": 124,
     "split_candidates": [
       {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "CHRISTOLOGIA",
-        "next": "OR"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "OR",
-        "next": "A DECLARATION OF THE GLORIOUS MYSTERY"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "A DECLARATION OF THE GLORIOUS MYSTERY",
-        "next": "OF"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "OF",
-        "next": "THE PERSON OF CHRIST — GOD AND MAN:"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "WITH",
-        "next": "The Infinite Wisdom, Love, And Power Of God In The Contrivance And Constitution Thereof;"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "AS ALSO,",
-        "next": "Of The Grounds And Reasons Of His Incarnation; The Nature Of His Ministry In Heaven; The Present State Of The Church Above Thereon; And The Use Of His Person In Religion:"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "WITH",
-        "next": "An Account And Vindication Of The Honor, Worship, Faith, Love, And Obedience Due Unto Him, In And From The Church."
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "Peter's Confession; Matthew 16:16 — Conceits of the Papists Thereon — The Substance and Excellency of That Confession",
-        "next": "Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio"
-      },
-      {
-        "file": "EPUB/ch006.xhtml",
-        "previous": "Opposition Made unto the Church as Built Upon the Person of Christ",
-        "next": "There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there"
+        "file": "EPUB/ch004.xhtml",
+        "previous": "on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things.\" And Ennodius has, as it were, turned this passage of Jerome into verse: —",
+        "next": "Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the"
       },
       {
         "file": "EPUB/ch007.xhtml",
-        "previous": "The Person of Christ the Most Ineffable Effect of Divine Wisdom and Goodness — Thence the Next Cause of All True Religion — In What Sense It Is So",
-        "next": "The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The "
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "To Person of Christ the Foundation of All the Counsels of God",
-        "next": "Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which "
+        "previous": " abilities are weak and contemptible, in the eye of that wisdom which is of this world, than in those of the highest natural sagacity, enjoying the best improvements of reason. For",
+        "next": "However they may be poor, and, as another apostle speaketh, \"foolish, weak, base, and despised;\" ( 1 Corinthians 1:27, 28;) yet that faith which enables them to assent unto and emb"
       },
       {
         "file": "EPUB/ch009.xhtml",
-        "previous": "The Person of Christ the Great Representative of God and His Will",
-        "next": "What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o"
+        "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,",
+        "next": "This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they",
+        "next": "Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw",
+        "next": "The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "John 14:6. He is so essentially — as he is one with the Father, the God of truth: Deuteronomy 32:4. He is so efficiently — as by him alone it is fully and effectually declared; for",
+        "next": "He is so substantially — in opposition unto the types and shadows of the Old Testament; for in him dwelt \"the fullness of the godhead bodily:\" Colossians 2:9. \"The body is of Chris"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,",
+        "next": "And they are called \"treasures\" on a twofold account, both mentioned together by the Psalmist. \"How precious are thy thoughts unto me, O Lord; how great is the sum of them!\" They a"
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "previous": "Power and Efficacy Communicated unto the Office of Christ, for the Salvation of the Church, from His Person",
-        "next": "It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat"
+        "previous": "is power and care for the church, that is so expressed. These were from the beginning the first foundation of the church, in answer unto his everlasting counsels, Zechariah 2:8, 9,",
+        "next": "He who is sent calleth himself \"The Lord of hosts,\" and affirms that he will destroy the nations by the shaking of his hand; who can be no other but God himself. That is, it was th"
       },
       {
         "file": "EPUB/ch011.xhtml",
@@ -665,14 +644,44 @@
         "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
       },
       {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "hed unto those that were disobedient in the days of Noah, who are now in prison for their disobedience, 1 Peter 3:19, 20. For he was so to prophet of the church always as to tender",
+        "next": "John 1:9, by one way or other communicating to them some notices of God and his will; for his light shineth in, or irradiates darkness itself — that darkness which is come on the m"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": " not only received divine truth by parcel, but comprehended not the depths of the revelations made unto them, 1 Peter 1:11, 12. To this purpose is that divine testimony, John 1:18,",
+        "next": "It is of all the prophets concerning whom it is affirmed, that no man has seen God at any time. So is it evident in the antithesis between Moses the principal of them, and the Lord"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "He says that",
+        "next": "This some of old impiously applied unto the prophets of the Old Testament; whereas he intended it only of those false prophets who pretended of themselves that they, any of them, w"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "t is also accompanied with virtue, force, or almighty power, to act, order, and dispose of it at his pleasure. So is it described by the apostle from the Psalmist, Hebrews 1:10-12,",
+        "next": "That power is required unto his kingly office whereby he created all things in the beginning, and shall change them all, as a man folds up a vesture, in the end. Omnipotence, accom"
+      },
+      {
         "file": "EPUB/ch012.xhtml",
-        "previous": "The Faith of the Church Under the Old Testament in and Concerning the Person of Christ",
-        "next": "A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our"
+        "previous": "faithful servant in the house of God, was but a \"testimony of those things which were to be spoken after,\" Hebrews 3:5. Howbeit the apostle tells us that all those things had but a",
+        "next": "And although they are now to us full of light and instruction, evidently expressing the principal works of Christ's mediation, yet were they not so unto them. For the veil is now t"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": " which give an account of their apprehensions concerning him. The faith of Daniel was, that God would show mercy, for the Lord's sake, Daniel 9:17; and of all the prophets that the",
+        "next": "Of the same nature were all his personal appearances under the Old Testament, especially that most illustrious representation made of him unto the prophet Isaiah, chap. 6, and the "
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "o the prophet Isaiah, chap. 6, and the glorious revelation of his name, chap. 9:6. It is true that both these and other prophets had revelations concerning his sufferings also. For",
+        "next": "— an illustrious testimony whereunto we have given us Psalm 22, and Isaiah 53. Nevertheless their conceptions concerning them were dark and obscure. It was his person that their fa"
       },
       {
         "file": "EPUB/ch013.xhtml",
-        "previous": "Honor Due to the Person of Christ — The Nature and Causes of It",
-        "next": "Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re"
+        "previous": "wards him; without diligent attendance whereunto, we do but in vain bear the name of Christians. And the substance of what is designed may be included in the following assertion: —",
+        "next": "In the confirmation hereof it will appear what judgment ought to be passed on that inquiry — which, after the uninterrupted profession of the catholic church for so many ages of a "
       },
       {
         "file": "EPUB/ch013.xhtml",
@@ -681,146 +690,113 @@
       },
       {
         "file": "EPUB/ch013.xhtml",
+        "previous": "nt when he acted in and towards the church as the great angel of the covenant, God instructed the people unto all religious observance of him, and obedience unto him, Exodus 23:21,",
+        "next": "Because the name of God was in him — that is, the divine nature, with sovereign authority to punish or pardon sin — therefore was all religious obedience due unto him. And no motiv"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "ve; did we more meditate on Christ and his glory; — we should more frequently enjoy these constraining visits of his love than now we do. So himself expresseth it, Revelation 3:20,",
+        "next": "He makes intimation of his love and kindness unto us. But ofttimes we neither hear his voice when he speaks, nor do open our hearts unto him. So do we lose that gracious, refreshin"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
         "previous": "ofession of the gospel, are another season rendering this peculiar invocation of Christ both comely and necessary. Two things will befall the minds of believers in such a season; —",
         "next": "[1st,] that their thoughts will be neatly exercised about him, and conversant with him. They cannot but continually think and meditate on him for whom they suffer. None ever suffer"
       },
       {
         "file": "EPUB/ch014.xhtml",
-        "previous": "The Principle of the Assignation of Divine Honor unto the Person of Christ, in Both the Branches of It; with Is Faith in Him",
-        "next": "The principle and spring of this assignation of divine honor unto Christ, in both the branches of it, is faith in him. And this has been the foundation of all acceptable religion i"
+        "previous": "eved the Lord and Moses,\" Exodus 14:31; that is, that he was sent of God, was no deceiver — that it was the word and will of God which he revealed unto them. So 2 Chronicles 20:20,",
+        "next": "It was not the persons of the prophets, but their message, that was the object of the faith required. It was to believe what they said, as from God — not to believe in them as if t"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "tly in, and terminated on, the person of Christ — and that with respect unto supplies of grace and mercy from him in a way of divine power. So he speaks unto Martha, John 11:25-27,",
+        "next": "Whereunto she answers \"Yea, Lord; I believe that thou art the Christ, the Son of God.\" His person was the object of her faith; and her belief in him comprised a trust for all spiri"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "ised a trust for all spiritual and eternal mercies. I Shall add one more, wherein not only the thing itself, but the especial ground and reason of it, is declared, Galatians 2:20 —",
+        "next": "That faith he asserts which is the cause of our spiritual life — that life unto God which we lead in the flesh, or whilst we are in the body, not yet admitted unto sight and enjoym"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "Secondly, Faith is acted on Christ under the formal notion of mediator between God and man. So it is expressed, 1 Peter 1:21,",
+        "next": "And this acting of faith towards Christ is not contrary unto that before described, nor inconsistent with it, though it be distinct from it. To deny the person of Christ to fall un"
       },
       {
         "file": "EPUB/ch015.xhtml",
-        "previous": "Obedience unto Christ — The Nature and Causes of It",
-        "next": "His great injunction unto his disciples is, \"That they keep his commandments\" — without which, none are so."
+        "previous": " 2:12-15. But as unto them that are called unto the faith of the Gospel, the authority of Christ does immediately affect their minds and consciences. \"He feeds\" or rules his people",
+        "next": "All the authority and majesty of God is in him and with him; — so of old, as the great Angel of God's presence, he was in the church in the wilderness with a delegated power, Exodu"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": " in all our obedience, unto whom we must give our account concerning it, and by whom we are and must be finally judged upon it. To this purpose speaks the apostle, Romans 14:10-12,",
+        "next": "He proveth that we shall all stand before the judgment-seat of Christ, or be judged by him, by a testimony of Scripture that we shall be also judged by God himself, and give an acc"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "him, Psalm 18:44, \" בְּנֵי נֵכָר יְכחֲשׁו־לְי \" — feignedly submit, or yield feigned obedience unto him. So is it with them who profess love unto him, yet are enemies of his cross,",
+        "next": "All that are called Christians in the world, do, by owning that denomination, profess a love unto Jesus Christ; but greater enemies, greater haters of him, he has not among the chi"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "the love of the Father in those acts of it which are \"ad extra\", or are towards anything without himself. So he declares himself in the prospect of his future incarnation and work,",
+        "next": "The delight of the soul of God, his rest and complacency — which are the great effects of love — are in the Lord Christ, as his elect and servant in the work of mediation. And the "
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "So he prays for all his disciples,",
+        "next": "They can be partakers of no other love, neither in itself nor in its fruits, but that alone wherewith the Father first loved him. He loveth him for us all, and us no otherwise but "
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "1:6; and they did it with joy, exultation, and praises — all effects of love and delight — Luke 2:13, 14. And as they continue about the throne of God, they say, with a loud voice,",
+        "next": "Their continual ascription of glory and praise unto him is an effect of reverential love and delight; and from thence also is their concernment in his gospel and grace, Ephesians 3"
       },
       {
         "file": "EPUB/ch017.xhtml",
-        "previous": "The Nature, Operations, and Causes of Divine Love, as It Respects the Person of Christ",
-        "next": "That we may the better understand that love unto the person of Christ which we plead for, some things must be premised concerning the nature of divine love in general; and thereon "
+        "previous": "st embraces, and is restless until it comes unto perfect fruition. It sees in God the fountain of life, and would drink of the \"river of his pleasures,\" Psalm 36:8, 9 — that in his",
+        "next": "It longs and pants to drink of that fountain — to bathe itself in that river of pleasures; and wherein it comes short of present enjoyment, it lives in hopes that when we \"awake, i"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "m, commands them, or requires obedience from them; but as unto his secret — his design and purpose, his counsel and love — they know nothing of it. But saith he unto his disciples,",
+        "next": "He proves them to be rightly called his friends, because of the communication of the secret of his mind unto them."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "nverse with, and especial residence that is between God and believers. God dwelleth in them, and they dwell in God; for God is love, 1 John 4:16. \"If a man,\" saith the Lord Christ,",
+        "next": "These are not empty sound of words; — there is substance under them, there is truth in them. Those whose hearts are duly exercised in and unto the love of God have experience of th"
       },
       {
         "file": "EPUB/ch018.xhtml",
-        "previous": "Motives unto the Love of Christ",
-        "next": "The motives unto this love of Christ is the last thing, on this head of our religious respect unto him, that I shall speak unto."
+        "previous": "ion and opinion, and not from faith, if it engage not our souls into the love of him. The frame of heart which ensues on the real faith of these things is expressed, Psalm 103:1-5,",
+        "next": "Let men pretend what they will, there needs no greater, no other evidence, to prove that any one does not really believe the things that are reported in the gospel, concerning the "
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "o any return unto him, it does so unto that of love in the first place. For no suitable return can be made for love but love, at least not without it. As love cannot be purchased —",
+        "next": "— so if a man would give all the world for a requital of love, without love it would be despised. To fancy that all the love of Christ unto us consists in the precepts and promises"
       },
       {
         "file": "EPUB/ch019.xhtml",
-        "previous": "Conformity unto Christ, and Following His Example",
-        "next": "This is the great design and projection of all believers. Every one of them has the idea or image of Christ in his mind, in the eye of faith, as it is represented unto him in the g"
+        "previous": "he flesh, wherein he fulfilled all righteousness, \"did no sin, neither was guile found in his mouth,\" 1 Peter 2:22. And it was so unto the discharge of the office he undertook; for",
+        "next": "Howbeit, the infinite wisdom of God had this farther design in it also, — namely, that he might be the pattern and example of the renovation of the image of God in us, and of the g"
       },
       {
-        "file": "EPUB/ch020.xhtml",
-        "previous": "An Humble Inquiry into, and Prospect of, the Infinite Wisdom of God, in the Constitution of the Person of Christ, and the Way of Salvation Thereby",
-        "next": "From the consideration of the things before insisted on, we may endeavor, according unto our measure, to take a view of, and humbly adore, the infinite wisdom of God, in the holy c"
+        "file": "EPUB/ch019.xhtml",
+        "previous": "He has",
+        "next": "In the collation of all grace on Christ, God designed to make him \"the first born of many brethren;\" that is, not only to give him the power and authority of the firstborn, with th"
       },
       {
-        "file": "EPUB/ch020.xhtml",
-        "previous": "We are unprofitable servants; we have done what was our duty.\" Wherefore, it is impossible that, by anything a man can do well, he should make satisfaction for anything he has done",
-        "next": "An old debt cannot be discharged with ready money for new commodities; nor can past injuries be compensated by present duties, which we are anew obliged unto."
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "Other Evidences of Divine Wisdom in the Contrivance of the Work of Redemption in and by the Person of Christ, in Effects Evidencing a Condecency Thereunto",
-        "next": "That which remains of our present inquiry, is concerning those evidences of divine condecency, or suitableness unto infinite wisdom and goodness, which we may gather from the natur"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "The Nature of the Person of Christ, and the Hypostatical Union of His Natures Declared",
-        "next": "The nature or constitution of the person of Christ hath been commonly spoken unto and treated of in the writings both of the ancient and modern divines. It is not my purpose, in th"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "There can be but two senses of these words",
-        "next": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh",
-        "next": "(2ndly,) That continuing to be what it was, it was made to be also what before it was not."
-      },
-      {
-        "file": "EPUB/ch024.xhtml",
-        "previous": "The Exercise of the Mediatory Office of Christ in Heaven",
-        "next": "All Christians acknowledge that his present state is a state of the highest glory, — of exaltation above the whole creation of God, above every name that is or can be named; and he"
-      },
-      {
-        "file": "EPUB/ch024.xhtml",
-        "previous": "(4thly,) The Levites, who attended on the priest, did represent the ministry of angels attending on Christ in the charge of his office. And,",
-        "next": "(5thly,) Round about them were the tribes in their order."
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "MEDITATIONS AND DISCOURSES",
-        "next": "ON"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "ON",
-        "next": "THE GLORY OF CHRIST,"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "THE GLORY OF CHRIST,",
-        "next": "IN"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "IN",
-        "next": "HIS PERSON, OFFICE, AND GRACE:"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "WITH",
-        "next": "THE DIFFERENCES BETWEEN FAITH AND SIGHT;"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "APPLIED UNTO THE USE OF THEM THAT",
-        "next": "BELIEVE."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": " minds of men, — Christ is called, and is, the \"light of men,\" the \"light of the world;\" because in and by him alone this darkness is dispelled, as he is the \"Sun of Righteousness\"",
-        "next": "For, -"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "Meditations and Discourses",
-        "next": "Concerning"
+        "file": "EPUB/ch019.xhtml",
+        "previous": "that the effect of this predestination to conformity unto the image of the Son is the communication of all effectual, saving grace, with the glory that ensues thereon, Romans 8:30,",
+        "next": "The great design of God in his grace is, that as we have born the \"image of the first Adam\" in the depravation of our natures, so we should bear the \"image of the second\" in their "
       }
     ],
-    "structural_start_exclusions": 159,
-    "short_fragment_count": 73,
+    "structural_start_exclusions": 162,
+    "short_fragment_count": 29,
     "short_fragments": [
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "ΧΡΙΣΤΟΛΟΓΙΑ:"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "CHRISTOLOGIA"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "OR"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "OF"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "WITH"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "AS ALSO,"
-      },
-      {
-        "file": "EPUB/ch002.xhtml",
-        "text": "WITH"
-      },
       {
         "file": "EPUB/ch006.xhtml",
         "text": "For,"
@@ -847,27 +823,27 @@
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "text": "For —"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "text": "For —"
+        "text": "He says that"
       },
       {
         "file": "EPUB/ch013.xhtml",
         "text": "2ndly, Invocation."
       },
       {
-        "file": "EPUB/ch014.xhtml",
-        "text": "Or —"
+        "file": "EPUB/ch016.xhtml",
+        "text": "So he prays for all his disciples,"
       },
       {
-        "file": "EPUB/ch018.xhtml",
-        "text": "Motives unto the Love of Christ"
+        "file": "EPUB/ch019.xhtml",
+        "text": "He has"
       },
       {
         "file": "EPUB/ch019.xhtml",
         "text": "And I shall briefly show"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "Hence godliness has the"
       },
       {
         "file": "EPUB/ch022.xhtml",
@@ -882,44 +858,8 @@
         "text": "As, —"
       },
       {
-        "file": "EPUB/ch025.xhtml",
-        "text": "MEDITATIONS AND DISCOURSES"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "ON"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "THE GLORY OF CHRIST,"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "IN"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "HIS PERSON, OFFICE, AND GRACE:"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "WITH"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "APPLIED UNTO THE USE OF THEM THAT"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "text": "BELIEVE."
-      },
-      {
         "file": "EPUB/ch026.xhtml",
         "text": "- Teron and Aspasio, vol. 3 p. 75."
-      },
-      {
-        "file": "EPUB/ch028.xhtml",
-        "text": "The Explication of the Text."
       },
       {
         "file": "EPUB/ch028.xhtml",
@@ -935,11 +875,19 @@
       },
       {
         "file": "EPUB/ch031.xhtml",
-        "text": "Wherefore,"
+        "text": "There is not"
       },
       {
-        "file": "EPUB/ch032.xhtml",
-        "text": "The Glory of Christ in This Love."
+        "file": "EPUB/ch031.xhtml",
+        "text": "Wherefore, -"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "The sum is,"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": "So the church affirms,"
       },
       {
         "file": "EPUB/ch037.xhtml",
@@ -951,7 +899,19 @@
       },
       {
         "file": "EPUB/ch038.xhtml",
-        "text": "As,"
+        "text": "As, -"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "— that he is"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "END."
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "Glory be to God on high!"
       }
     ],
     "adjacent_duplicate_count": 0,
@@ -964,19 +924,19 @@
     "citation_continuation_splits": [],
     "suspicious_large_number_start_count": 0,
     "suspicious_large_number_starts": [],
-    "roman_heading_candidate_count": 0,
-    "roman_heading_candidates": [],
-    "overlong_heading_candidate_count": 11,
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch033.xhtml",
+        "text": "I. 1. What he did, what obedience he yielded unto the law of God in the discharge of his office (with respect whereunto he said, \"Lo, I come to do thy will, O God; yea, thy law is in my heart\"), it was all on his own fre"
+      }
+    ],
+    "overlong_heading_candidate_count": 10,
     "overlong_heading_candidates": [
       {
         "file": "EPUB/ch019.xhtml",
         "tag": "h4",
         "text": "IV. The last thing proposed concerning the person of Christ, was the use of it unto believers, in the whole of their relation unto God and duty towards him."
-      },
-      {
-        "file": "EPUB/ch020.xhtml",
-        "tag": "h4",
-        "text": "ill. For what he so does is due in and for itself; and to suppose that satisfaction will be made for a former fault by that whose omission would have been another, had the former never been committed, is madness."
       },
       {
         "file": "EPUB/ch024.xhtml",

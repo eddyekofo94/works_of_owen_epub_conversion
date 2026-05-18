@@ -355,6 +355,287 @@ def coordinate_redactor(blocks, page_height=PAGE_H, top_margin=TOP_MARGIN, botto
     return keep
 
 
+BLOCKQUOTE_INSET_THRESHOLD = 14
+BLOCKQUOTE_RIGHT_INSET_THRESHOLD = 8
+
+
+def _line_text_from_spans(line):
+    return ''.join(convert_span_text(span['text'], span.get('font', '')) for span in line.get('spans', [])).strip()
+
+
+def _compute_page_text_bounds(blocks):
+    """Return robust body left/right baselines for substantive lines on a page."""
+    from collections import Counter
+
+    left_counts = Counter()
+    right_counts = Counter()
+    for b in blocks:
+        if b.get('type') != 0:
+            continue
+        for line in b.get('lines', []):
+            text = _line_text_from_spans(line)
+            if len(text) <= 10:
+                continue
+            if re.fullmatch(r'\d{1,4}', text):
+                continue
+            left_counts[round(line['bbox'][0])] += 1
+            right_counts[round(line['bbox'][2])] += 1
+
+    if not left_counts:
+        return 26, None
+
+    # The lowest repeated x0 is the safest body baseline. A pure modal baseline
+    # fails on pages mostly occupied by a blockquote, where the quote indent wins.
+    repeated_lefts = [x for x, count in left_counts.items() if count >= 2]
+    body_left = min(repeated_lefts or left_counts.keys())
+    body_right = max(right_counts.keys()) if right_counts else None
+    return body_left, body_right
+
+
+def _line_is_blockquote_candidate(line, text, body_left, body_right=None):
+    if not text or len(text) < 8:
+        return False
+    if re.match(r'^\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION|BLOCKQUOTE)\]\]', text):
+        return False
+    if STRUCTURAL_START_RE.match(text):
+        return False
+    if re.match(r'^(?:CHAPTER|PART|BOOK|DIGRESSION)\b', text, re.I):
+        return False
+
+    x0 = line['bbox'][0]
+    x1 = line['bbox'][2]
+    if x0 < body_left + BLOCKQUOTE_INSET_THRESHOLD:
+        return False
+    if body_right is not None and x1 > body_right - BLOCKQUOTE_RIGHT_INSET_THRESHOLD:
+        return False
+    return True
+
+
+def _text_block_lines(block):
+    lines = []
+    if block.get('type') != 0:
+        return lines
+    for line in block.get('lines', []):
+        text = _line_text_from_spans(line)
+        if text:
+            lines.append((line, text))
+    return lines
+
+
+def _text_block_is_blockquote(block, body_left, body_right=None, allow_continuation=False):
+    """Classify blockquotes by the first substantive line, not wrapped continuations."""
+    lines = _text_block_lines(block)
+    if not lines:
+        return False
+
+    if allow_continuation and _text_block_is_reference_tail(block):
+        return True
+
+    first_line, first_text = lines[0]
+    if not _line_is_blockquote_candidate(first_line, first_text, body_left, body_right):
+        return False
+
+    # Avoid promoting ordinary right-shifted fragments unless the whole block
+    # has the inset profile or begins with an explicit quotation.
+    if re.match(r'^[“"\']', first_text):
+        return True
+    if not allow_continuation:
+        return False
+
+    inset_lines = sum(
+        1 for line, text in lines
+        if _line_is_blockquote_continuation_candidate(line, text, body_left, body_right)
+    )
+    return inset_lines == len(lines)
+
+
+def _line_is_blockquote_continuation_candidate(line, text, body_left, body_right=None):
+    if _line_is_blockquote_candidate(line, text, body_left, body_right):
+        return True
+    if not text:
+        return False
+    x0 = line['bbox'][0]
+    if x0 < body_left + BLOCKQUOTE_INSET_THRESHOLD:
+        return False
+    # Short closing lines such as "us,”" are real quote continuations, but
+    # they are too short for the normal candidate heuristic.
+    return bool(re.search(r',?\s*[”"]\s*$', text))
+
+
+def _text_block_is_fully_inset(block, body_left, body_right=None):
+    lines = _text_block_lines(block)
+    if not lines:
+        return False
+    inset_lines = sum(
+        1 for line, text in lines
+        if _line_is_blockquote_continuation_candidate(line, text, body_left, body_right)
+    )
+    return inset_lines == len(lines)
+
+
+def _clean_reference_tail_text(text):
+    text = re.sub(r'<\d[A-Za-z0-9]{5}>', '', text)
+    return text.strip()
+
+
+def _is_blockquote_reference_tail_text(text):
+    clean = _clean_reference_tail_text(text)
+    return bool(re.fullmatch(
+        rf'(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+:\d+(?:[-,;]\s*\d+)*\.?',
+        clean,
+        re.I,
+    ))
+
+
+def _text_block_is_reference_tail(block):
+    lines = _text_block_lines(block)
+    if not lines:
+        return False
+    text = _join_blockquote_lines([line_text for _, line_text in lines])
+    return _is_blockquote_reference_tail_text(text)
+
+
+def _page_starts_with_blockquote_continuation(blocks, body_left, body_right=None):
+    text_blocks = [b for b in blocks if _text_block_lines(b)]
+    if not text_blocks:
+        return False
+    first_text = _join_blockquote_lines([text for _, text in _text_block_lines(text_blocks[0])])
+    if _text_block_is_fully_inset(text_blocks[0], body_left, body_right) and re.search(r'[”"]', first_text):
+        return True
+    if len(text_blocks) < 2:
+        return False
+    return (
+        _text_block_is_fully_inset(text_blocks[0], body_left, body_right) and
+        (
+            _text_block_is_fully_inset(text_blocks[1], body_left, body_right) or
+            _text_block_is_reference_tail(text_blocks[1])
+        )
+    )
+
+
+def _quote_run_is_open(text):
+    return (
+        text.count('“') > text.count('”') or
+        text.count('"') % 2 != 0
+    )
+
+
+def _quote_run_expects_reference_tail(text):
+    return bool(re.search(r'[”"]\s*$', text)) and not _is_blockquote_reference_tail_text(text)
+
+
+def _blockquote_content(text):
+    return re.sub(r'^\[\[BLOCKQUOTE\]\]\s*', '', text).strip()
+
+
+def _blockquote_has_sentence_terminal(text):
+    content = _blockquote_content(text)
+    return bool(re.search(r'[.!?][”"\')\]]?\s*$', content))
+
+
+def _split_leading_scripture_reference_tail(text):
+    """Split a leading scripture reference tail from following prose."""
+    match = re.match(
+        rf'^(?P<tail>(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+:\d+'
+        r'(?:[-,]\s*\d+)*(?:[;,.]\s*\)?)?)'
+        r'(?:\s+(?P<rest>.+))?$',
+        (text or '').strip(),
+        re.I,
+    )
+    if not match:
+        return None, None
+    return match.group('tail').strip(), (match.group('rest') or '').strip()
+
+
+def _paragraph_expects_scripture_reference_tail(text):
+    stripped = (text or '').strip()
+    if not stripped or stripped.startswith('[[BLOCKQUOTE]]'):
+        return False
+    return bool(re.search(r'[?!.][”"\']?\s*$', stripped) and re.search(r'[”"]\s*$', stripped))
+
+
+def _merge_adjacent_blockquote_paragraphs(paragraphs):
+    merged = []
+    for paragraph in paragraphs:
+        if (
+            merged
+            and merged[-1].startswith('[[BLOCKQUOTE]]')
+            and paragraph.startswith('[[BLOCKQUOTE]]')
+            and not _blockquote_has_sentence_terminal(merged[-1])
+        ):
+            merged[-1] = merged[-1].rstrip() + ' ' + _blockquote_content(paragraph)
+        elif merged and merged[-1].startswith('[[BLOCKQUOTE]]'):
+            tail, rest = _split_leading_scripture_reference_tail(paragraph)
+            if tail and re.search(r'\(\s*$', _blockquote_content(merged[-1])):
+                merged[-1] = merged[-1].rstrip() + ' ' + tail
+                if rest:
+                    merged.append(rest)
+            else:
+                merged.append(paragraph)
+        elif merged and _paragraph_expects_scripture_reference_tail(merged[-1]):
+            tail, rest = _split_leading_scripture_reference_tail(paragraph)
+            if tail and rest:
+                merged[-1] = merged[-1].rstrip() + ' ' + tail + ' ' + rest
+            else:
+                merged.append(paragraph)
+        else:
+            merged.append(paragraph)
+    return merged
+
+
+def _flush_blockquote_lines(output_lines, pending_bq):
+    if pending_bq:
+        joined = _join_blockquote_lines(pending_bq)
+        if joined and (len(pending_bq) >= 2 or re.match(r'^[“"\']', pending_bq[0])):
+            output_lines.append('[[BLOCKQUOTE]] ' + joined)
+        else:
+            output_lines.extend(pending_bq)
+    return []
+
+
+def _append_blockquote_aware(output_lines, pending_bq, text, is_bq):
+    """Group consecutive inset lines and emit them as a single BLOCKQUOTE token."""
+    if is_bq:
+        pending_bq.append(text)
+        return pending_bq
+
+    pending_bq = _flush_blockquote_lines(output_lines, pending_bq)
+    if text:
+        output_lines.append(text)
+    return pending_bq
+
+
+def _join_blockquote_lines(lines):
+    joined = ''
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if joined.endswith('-'):
+            candidate = joined + stripped
+            if any(term.lower() == candidate.lower() for term in OWEN_HARD_HYPHENS):
+                joined += ' ' + stripped
+            else:
+                joined = joined[:-1] + stripped
+        else:
+            joined = (joined + ' ' + stripped).strip()
+    return joined.strip()
+
+
+def page_has_blockquote_geometry(page, page_height=PAGE_H):
+    """Detect consecutive inset text lines before choosing the raw extraction path."""
+    blocks = coordinate_redactor(page.get_text('dict')['blocks'], page_height)
+    body_left, body_right = _compute_page_text_bounds(blocks)
+    continuation_allowed = _page_starts_with_blockquote_continuation(blocks, body_left, body_right)
+    for b in blocks:
+        if _text_block_is_blockquote(b, body_left, body_right, continuation_allowed):
+            return True
+        lines = _text_block_lines(b)
+        if lines:
+            continuation_allowed = False
+    return False
+
+
 def extract_ages_nav(doc, config=None):
     """
     Extract navigation hierarchy from the PDF's internal outline/bookmarks.
@@ -506,10 +787,12 @@ def extract_structural_page(page, page_height=PAGE_H):
     """
     blocks = page.get_text('dict')['blocks']
     blocks = coordinate_redactor(blocks, page_height)
+    body_left, body_right = _compute_page_text_bounds(blocks)
     
     output_lines = []
     current_kind = None
     current_text_parts = []
+    pending_blockquote_lines = []
     in_heading_section = True
     waiting_for_summary = False  # Track if we just hit a CHAPTER (Issue 108/Audit)
 
@@ -532,7 +815,20 @@ def extract_structural_page(page, page_height=PAGE_H):
             output_lines.append(joined)
         current_text_parts = []
 
+    def flush_blockquote():
+        nonlocal pending_blockquote_lines
+        pending_blockquote_lines = _flush_blockquote_lines(output_lines, pending_blockquote_lines)
+
+    blockquote_continuation_allowed = _page_starts_with_blockquote_continuation(blocks, body_left, body_right)
+    blockquote_quote_buffer = ''
     for b in blocks:
+        block_lines = _text_block_lines(b)
+        block_is_blockquote = _text_block_is_blockquote(
+            b,
+            body_left,
+            body_right,
+            blockquote_continuation_allowed,
+        )
         for line in b['lines']:
             spans_text = []
             line_is_part = False
@@ -655,6 +951,7 @@ def extract_structural_page(page, page_height=PAGE_H):
                     continue
             
             if kind != 'PLAIN':
+                flush_blockquote()
                 # Structural lines should be joined if they are the SAME kind and adjacent
                 # (Issue 26: avoid fragmented <h2> for multi-line subtitles)
                 if kind != current_kind:
@@ -666,6 +963,15 @@ def extract_structural_page(page, page_height=PAGE_H):
                 # We no longer flush immediately for major kinds to allow multi-line headers
                 # but we will flush if we hit a different kind or plain text.
                 continue
+
+            is_blockquote = block_is_blockquote and kind == 'PLAIN'
+            if is_blockquote:
+                if current_text_parts:
+                    flush()
+                pending_blockquote_lines.append(line_text)
+                continue
+
+            flush_blockquote()
             
             if kind != current_kind:
                 # Always flush on kind change in structural pages to preserve 
@@ -674,7 +980,27 @@ def extract_structural_page(page, page_height=PAGE_H):
                     flush()
                 current_kind = kind
             current_text_parts.append(line_text)
+        if block_is_blockquote:
+            joined_block = _join_blockquote_lines([text for _, text in block_lines])
+            if blockquote_continuation_allowed:
+                blockquote_quote_buffer = (blockquote_quote_buffer + ' ' + joined_block).strip()
+            else:
+                blockquote_quote_buffer = joined_block
+            if blockquote_continuation_allowed and not re.search(r'[“”"]', joined_block):
+                blockquote_continuation_allowed = True
+            else:
+                blockquote_continuation_allowed = (
+                    _quote_run_is_open(blockquote_quote_buffer) or
+                    _quote_run_expects_reference_tail(blockquote_quote_buffer)
+                )
+            if not blockquote_continuation_allowed:
+                flush_blockquote()
+        elif block_lines:
+            flush_blockquote()
+            blockquote_continuation_allowed = False
+            blockquote_quote_buffer = ''
                 
+    flush_blockquote()
     flush()
     return '\n'.join(output_lines)
 
@@ -695,19 +1021,52 @@ def extract_page_text_with_fonts(page, page_height=PAGE_H):
     """
     blocks = page.get_text('dict')['blocks']
     blocks = coordinate_redactor(blocks, page_height)
+    body_left, body_right = _compute_page_text_bounds(blocks)
     
     lines = []
+    pending_blockquote_lines = []
+    blockquote_continuation_allowed = _page_starts_with_blockquote_continuation(blocks, body_left, body_right)
+    blockquote_quote_buffer = ''
     for b in blocks:
+        block_lines = _text_block_lines(b)
+        block_is_blockquote = _text_block_is_blockquote(
+            b,
+            body_left,
+            body_right,
+            blockquote_continuation_allowed,
+        )
         for line in b['lines']:
-            spans_text = []
-            for span in line['spans']:
-                text = span['text']
-                font = span.get('font', '')
-                converted = convert_span_text(text, font)
-                spans_text.append(converted)
-            line_text = ''.join(spans_text).strip()
+            line_text = _line_text_from_spans(line)
             if line_text:
-                lines.append(line_text)
+                is_blockquote = block_is_blockquote
+                pending_blockquote_lines = _append_blockquote_aware(
+                    lines,
+                    pending_blockquote_lines,
+                    line_text,
+                    is_blockquote,
+                )
+        if block_is_blockquote:
+            joined_block = _join_blockquote_lines([text for _, text in block_lines])
+            if blockquote_continuation_allowed:
+                blockquote_quote_buffer = (blockquote_quote_buffer + ' ' + joined_block).strip()
+            else:
+                blockquote_quote_buffer = joined_block
+            if blockquote_continuation_allowed and not re.search(r'[“”"]', joined_block):
+                blockquote_continuation_allowed = True
+            else:
+                blockquote_continuation_allowed = (
+                    _quote_run_is_open(blockquote_quote_buffer) or
+                    _quote_run_expects_reference_tail(blockquote_quote_buffer)
+                )
+            if not blockquote_continuation_allowed:
+                pending_blockquote_lines = _append_blockquote_aware(lines, pending_blockquote_lines, '', False)
+        elif block_lines:
+            pending_blockquote_lines = _append_blockquote_aware(lines, pending_blockquote_lines, '', False)
+            blockquote_continuation_allowed = False
+            blockquote_quote_buffer = ''
+
+    if pending_blockquote_lines:
+        _append_blockquote_aware(lines, pending_blockquote_lines, '', False)
     
     return '\n'.join(lines)
 
@@ -790,6 +1149,8 @@ def get_merged_page_text(doc, pages_md, page_idx, allow_treatise_title_page=True
     if is_struct:
         return extract_structural_page(page)
     
+    has_blockquotes = page_has_blockquote_geometry(page)
+
     if font_type:
         raw_text = extract_page_text_with_fonts(page)
         # Preserve [fN] markers from Markdown that might be lost in raw text
@@ -800,7 +1161,7 @@ def get_merged_page_text(doc, pages_md, page_idx, allow_treatise_title_page=True
             if marker not in raw_text:
                 raw_text += f' {marker}'
         return raw_text
-    elif _has_repeated_ages_marker_cluster(md_text):
+    elif has_blockquotes or _has_repeated_ages_marker_cluster(md_text):
         raw_text = extract_page_text_with_fonts(page)
         fn_markers = FOOTNOTE_MARKER_RE.findall(md_text)
         for fn in fn_markers:
@@ -1420,6 +1781,12 @@ DANGLING_CONNECTOR_RE = re.compile(
     re.I
 )
 
+# Short introductory connectors that should be merged with previous text (Issue 1)
+SEMANTIC_CONNECTOR_RE = re.compile(
+    r'^(?:For|As|Wherefore|And|Or|Yea|Yet|So|Thus|Hence|Moreover)\s*[,;—\-]\s*$',
+    re.I
+)
+
 # Terms where a hyphen at EOL should be preserved (Issue 1)
 OWEN_HARD_HYPHENS = {
     'Spiritual-mindedness', 'spiritually-minded', 'heavenly-mindedness',
@@ -1504,6 +1871,7 @@ def reconstruct_paragraphs(text):
             ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
             starts_lower = bool(re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', stripped))
             is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
+            is_semantic_connector = bool(SEMANTIC_CONNECTOR_RE.match(stripped))
 
             # Issue 76: Multiline block quote preservation
             all_current_text = ' '.join(current)
@@ -1512,8 +1880,9 @@ def reconstruct_paragraphs(text):
                 (all_current_text.count('"') % 2 != 0)
             )
 
-            if not ends_terminal or is_dangling:
-                # Line does not end with terminal punctuation or ends with a connector → join
+            if not ends_terminal or is_dangling or is_semantic_connector:
+                # Line does not end with terminal punctuation or ends with a connector 
+                # OR the current line is a semantic connector ("For,", "As,") → join
                 current.append(stripped)
             elif starts_lower:
                 # Starts lowercase after terminal (e.g. middle of quotation) → join
@@ -1531,6 +1900,7 @@ def reconstruct_paragraphs(text):
     if current:
         paragraphs.append(' '.join(current))
 
+    paragraphs = _merge_adjacent_blockquote_paragraphs(paragraphs)
     return post_process_paragraphs(paragraphs)
 
 

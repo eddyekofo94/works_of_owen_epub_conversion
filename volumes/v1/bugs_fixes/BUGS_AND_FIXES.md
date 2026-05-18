@@ -898,10 +898,15 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T14:14:30.474199+00:00
+**Last run:** 2026-05-18T20:59:36.192522+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 4 warnings)
 
@@ -1059,11 +1064,16 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T14:16:42.184817+00:00
-**Status:** WARN (8 warnings)
+**Last run:** 2026-05-18T21:00:06.541535+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1073,8 +1083,8 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 81 |
-| EPUB paragraphs/headings | 2828 |
-| Approximate PDF-to-EPUB word coverage | 0.9947 |
+| EPUB paragraphs/headings | 3007 |
+| Approximate PDF-to-EPUB word coverage | 0.9945 |
 | Weak page matches | 23 |
 | Dense source windows checked | 783 |
 | Missing dense source-window pages | 609 |
@@ -1086,16 +1096,16 @@ Reports:
 | Bottom-of-page body windows checked | 544 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 20 |
-| Possible faulty paragraph splits | 47 |
-| Structural starts excluded from split warnings | 159 |
-| Short fragments | 73 |
+| Possible faulty paragraph splits | 124 |
+| Structural starts excluded from split warnings | 162 |
+| Short fragments | 29 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
-| Roman heading candidates | 0 |
-| Overlong heading candidates | 11 |
+| Roman heading candidates | 1 |
+| Overlong heading candidates | 10 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 310 |
@@ -1116,6 +1126,7 @@ Warnings requiring triage:
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
@@ -1347,3 +1358,27 @@ Warnings requiring triage:
 4. Excluded hidden/generated endnotes and source PDF footnote back matter from audit body-text checks.
 5. Added shared CSS for front-matter heading rules, a refined volume title page, and cleaner `Contents of Volume N` formatting.
 6. Expanded EPUB regression coverage for Part 2 title-page insertion, V1 summary capitalization, hidden footnotes, volume title styling, contents-page classes, and front-matter separator styling.
+
+### 116. Geometry-backed blockquote extraction (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The AGES PDFs contain visually indented quotation blocks, but the live V1 pipeline rendered them as ordinary paragraphs. A previous broad blockquote attempt was reverted because it promoted normal wrapped prose and structural lists into false blockquotes.
+**Root cause:** The PDF uses body paragraphs with a flush first line and indented continuation lines, so line-level `x0` indentation is not enough. Blockquote detection also needs to survive pages that begin in the middle of a quote, while avoiding list markers and ordinary prose fragments.
+**Fix:**
+1. Added dynamic per-page body left/right bounds in `extract.py` instead of hard-coded coordinates from the analysis note.
+2. Added a block-level quote classifier that only starts blockquotes from visibly inset quote-opening blocks, then allows fully inset continuation blocks while the quote run remains open.
+3. Kept page-leading continuation lines and scripture-reference tails inside the quote until sentence/reference punctuation closes the citation.
+4. Merged adjacent `[[BLOCKQUOTE]]` paragraphs when the first quote block has not reached a sentence terminator.
+5. Added `[[BLOCKQUOTE]]` as a structural token through extraction, paragraph reconstruction, and rendering.
+6. Added Markdown `>` blockquote fallback rendering for any future source path that preserves that marker.
+7. Rendered semantic `<blockquote epub:type="z3998:quotation">` output with footnote references preserved and empty blockquotes suppressed.
+8. Updated the text-integrity audit to avoid counting semantic blockquote and title-page boundaries as prose split candidates.
+9. Added regression tests for quote rendering, Markdown fallback, body-wrap false positives, the Peter's Confession false-positive trap, the Revelation 1:5/Romans 8:17/Hebrews 1:10-12 false-termination cases, and empty-blockquote prevention.
+
+### 117. Textual TODO 37-40 polish (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The last `textual.txt` TODO set still had four V1 blemishes: lowercase `ill.` was split as if it were a Roman marker, a blockquote dropped the leading `Isaiah 42:1;)` reference tail, `I. 1.` was separated from its prose, and `Luke 24:26.` was separated from its preceding quotation. The Revelation 3:20 phrase also rendered as `I WILL come` instead of `I will come`.
+**Root cause:** Roman fallback detection and inline structural splitting still accepted lowercase Roman-like tokens. Scripture-reference tail healing only handled whole reference paragraphs, not leading reference tails followed by prose. Combined Roman-decimal outlines were not treated as one marker.
+**Fix:**
+1. Made fallback Roman detection and inline Roman structural splitting case-sensitive.
+2. Added combined `I. 1.` marker handling so the marker stays inline and bolded.
+3. Added leading scripture-reference tail splitting/merging for blockquote tails and quoted prose reference tails.
+4. Added a V1-specific OCR replacement for `open the door, I will come...`.
+5. Added regression coverage for textual TODO issues 37-40 and rebuilt Volume 1.

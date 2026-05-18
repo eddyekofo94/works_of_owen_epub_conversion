@@ -386,3 +386,44 @@ Add it to audits, and improve how it is extracted.
 
 Fix:
 Acts 2:38,39. "“440238>" should not be rendered, something is either wrong with the extraction or the cleaning process that is allowing this to appear in the final text output. We need to review both the extraction and cleaning logic to identify where this issue is originating from and implement a fix to ensure that such artifacts are not included in the final text. This may involve adding additional checks or rules to filter out any extraneous characters or strings that do not belong in the text.
+
+## 36
+“Unto him that loved us, and washed us from our sins in his own blood, and has made us kings and priests unto God and his Father;
+to him be glory and dominion for ever and ever, Amen." Revelation 1:5, 6. ”
+
+This one should've finished after the verse refference
+
+# TODO
+
+## 37
+“anything he has done
+ill. For what he so does is due in and for itself; and to suppose that satisfaction will be”
+
+Badly being considered as Romans numerals, this is a false break, it should be "anything he has done ill. For what he so does is due in and for itself; and to suppose that satisfaction will be" as on the pdf, we need to review the parsing logic for identifying and handling Roman numerals to ensure that it does not mistakenly introduce false breaks in the text when it encounters these numerals. This may involve implementing additional rules or checks to differentiate between actual Roman numeral usage and instances where the text is being misinterpreted as such.
+
+“so testifieth of him:
+"Behold my servant, whom I uphold; mine elect, in whom my soul delighteth;" (
+Isaiah 42:1;) as he also pro”
+33
+This block quote reference is partially inside the block quote, the open bracket is inside and the rest is outside. you should add the closing bracket to the end of the block quote, add this clause
+
+## 38
+“d open the door, I WILL come in to him, and will sup with him, ”
+
+Fix:
+"open the door, I will come in to him, and will sup with him", why is "will" in uppercase here? This is likely a formatting issue that occurred during extraction or cleaning. We need to review the logic for handling capitalization in the text to ensure that it accurately reflects the original source without introducing unintended formatting changes. This may involve implementing additional rules for capitalization, particularly in cases where certain words are meant to be emphasized or are part of a direct quote.
+
+## 39
+“I. 1.
+What he did, what obedience he yielded unto the law of God”
+
+Fix:
+This should be all alligned in one line, it is a false break, it should be "I. 1. What he did, what obedience he yielded unto the law of God in the discharge of his office (with respect whereunto he said" as on the pdf, we need to review the parsing logic for identifying and handling these types of numbered sections to ensure that they are correctly formatted without introducing false breaks. This may involve implementing additional rules or checks to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+## 40
+“enter into his glory?"
+Luke 24:26. The one is frequently expressed elsewhere, Romans 14:9; Philippians 14:5 2:5-9.”
+
+Fix:
+"enter into his glory?" Luke 24:26. The one is frequently expressed elsewhere"
+There shouldn't be a break after the verse

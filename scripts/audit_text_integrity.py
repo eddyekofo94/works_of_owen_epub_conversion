@@ -274,12 +274,21 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
                 text = clean_text(" ".join(el.itertext()))
                 if not text:
                     continue
+                ancestor_classes = " ".join(
+                    ancestor.get("class", "")
+                    for ancestor in el.xpath("ancestor::*[@class]")
+                )
+                semantic_context = []
+                if el.xpath("ancestor::xhtml:blockquote", namespaces=NS):
+                    semantic_context.append("blockquote")
+                if ancestor_classes:
+                    semantic_context.append(ancestor_classes)
                 paragraphs.append(Paragraph(
                     file=href,
                     text=text,
                     tag=etree.QName(el).localname,
                     index=idx,
-                    classes=el.get("class", ""),
+                    classes=" ".join(part for part in [el.get("class", ""), *semantic_context] if part),
                     html=etree.tostring(el, encoding="unicode", method="xml"),
                 ))
                 idx += 1
@@ -637,7 +646,16 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
     frontmatter_heading_body_candidates = []
     structural_start_exclusions = 0
 
-    body_paras = [p for p in paragraphs if p.tag == "p" and re.search(r"/ch\d+\.xhtml$", p.file)]
+    split_excluded_class_re = re.compile(
+        r"\b(?:blockquote|treatise-title-page|volume-title-page|contents-page|"
+        r"title-line|title-connector|descriptive|greek-title|quote-block|chapter-summary)\b"
+    )
+    body_paras = [
+        p for p in paragraphs
+        if p.tag == "p"
+        and re.search(r"/ch\d+\.xhtml$", p.file)
+        and not split_excluded_class_re.search(p.classes)
+    ]
     frontmatter_heading_re = re.compile(r"^(PREFACE|PREFATORY NOTE|ORIGINAL PREFACE)\.?\b", re.I)
 
     for para in paragraphs:

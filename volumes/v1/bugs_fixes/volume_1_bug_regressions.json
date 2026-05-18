@@ -1,6 +1,6 @@
 {
   "volume": 1,
-  "status": "warn",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
@@ -12,44 +12,49 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 42,
-      "budget": 116,
+      "observed": 125,
+      "budget": 125,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION",
-          "next": "Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST",
-          "next": "There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there"
+          "file": "EPUB/ch004.xhtml",
+          "previous": "on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things.\" And Ennodius has, as it were, turned this passage of Jerome into verse: —",
+          "next": "Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the"
         },
         {
           "file": "EPUB/ch007.xhtml",
-          "previous": "THE PERSON OF CHRIST THE MOST INEFFABLE EFFECT OF DIVINE WISDOM AND GOODNESS — THENCE THE NEXT CAUSE OF ALL TRUE RELIGION — IN WHAT SENSE IT IS SO",
-          "next": "The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The "
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD",
-          "next": "Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which "
+          "previous": " abilities are weak and contemptible, in the eye of that wisdom which is of this world, than in those of the highest natural sagacity, enjoying the best improvements of reason. For",
+          "next": "However they may be poor, and, as another apostle speaketh, \"foolish, weak, base, and despised;\" ( 1 Corinthians 1:27, 28;) yet that faith which enables them to assent unto and emb"
         },
         {
           "file": "EPUB/ch009.xhtml",
-          "previous": "THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL",
-          "next": "What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o"
+          "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,",
+          "next": "This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they",
+          "next": "Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw",
+          "next": "The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "previous": "John 14:6. He is so essentially — as he is one with the Father, the God of truth: Deuteronomy 32:4. He is so efficiently — as by him alone it is fully and effectually declared; for",
+          "next": "He is so substantially — in opposition unto the types and shadows of the Old Testament; for in him dwelt \"the fullness of the godhead bodily:\" Colossians 2:9. \"The body is of Chris"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "previous": " wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,",
+          "next": "And they are called \"treasures\" on a twofold account, both mentioned together by the Psalmist. \"How precious are thy thoughts unto me, O Lord; how great is the sum of them!\" They a"
         },
         {
           "file": "EPUB/ch011.xhtml",
-          "previous": "POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON",
-          "next": "It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "But —",
-          "next": "effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no nature but ours. This I shall particularly demonstrate, conside"
+          "previous": "is power and care for the church, that is so expressed. These were from the beginning the first foundation of the church, in answer unto his everlasting counsels, Zechariah 2:8, 9,",
+          "next": "He who is sent calleth himself \"The Lord of hosts,\" and affirms that he will destroy the nations by the shaking of his hand; who can be no other but God himself. That is, it was th"
         },
         {
           "file": "EPUB/ch011.xhtml",
@@ -60,25 +65,15 @@
           "file": "EPUB/ch011.xhtml",
           "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
           "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
-        },
-        {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST",
-          "next": "A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 1,
+      "observed": 0,
       "budget": 1,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch078.xhtml",
-          "text": "A.M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the statement is true; but th"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -200,59 +195,59 @@
     },
     {
       "label": "Missing Greek clauses",
-      "observed": 44,
+      "observed": 14,
       "budget": 16,
-      "status": "regression",
+      "status": "ok",
       "samples": [
         {
           "page": 26,
           "word_count": 54,
-          "sample": "υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις"
-        },
-        {
-          "page": 27,
-          "word_count": 11,
-          "sample": "επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν"
-        },
-        {
-          "page": 31,
-          "word_count": 5,
-          "sample": "πρόσωπον ὁμοιούσιος ἑτερούσιος ἐξ οὐκ"
+          "sample": "ουτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις"
         },
         {
           "page": 32,
           "word_count": 13,
-          "sample": "ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου"
-        },
-        {
-          "page": 36,
-          "word_count": 31,
-          "sample": "τὸν θεοῦ μεσίτην καὶ ἀνθρώπων κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε"
+          "sample": "υποστατις φυσις μιαν φυσιν οτι κατ αληθειαν εστι μια φυσις του λογου"
         },
         {
           "page": 37,
           "word_count": 5,
-          "sample": "ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν"
+          "sample": "ενωσιν φυσικην ενωσιν κατα συνθεσιν"
         },
         {
           "page": 37,
           "word_count": 11,
-          "sample": "υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ"
+          "sample": "υιος θεου υιος ανθρωπου γινεται ουτω δε φωτος ηλιου μια και"
         },
         {
-          "page": 37,
-          "word_count": 22,
-          "sample": "αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα φωτίζει δὲ"
+          "page": 42,
+          "word_count": 11,
+          "sample": "παιδαγωγος θεος εν ανθρωπου σχηματι αχραντος πατρικω θεληματι διακονος λογος θεος"
         },
         {
-          "page": 37,
-          "word_count": 37,
-          "sample": "εἰ γοῦν ὥς ἐν ὑποθέσει λόγου καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος"
+          "page": 57,
+          "word_count": 14,
+          "sample": "συ ει πετρος και επι ταυτη τη πετρα συ ει πετρος και"
         },
         {
-          "page": 40,
-          "word_count": 13,
-          "sample": "χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς ῆν γὰρ ἐν θεῷ καὶ τοῦ"
+          "page": 105,
+          "word_count": 6,
+          "sample": "εν πατρι προς τον πατερα θεον"
+        },
+        {
+          "page": 109,
+          "word_count": 11,
+          "sample": "εν προσωπω του χηριστου λογος του θεου λογος ουσιωδης λογος προφορικος"
+        },
+        {
+          "page": 293,
+          "word_count": 8,
+          "sample": "ατρεπτως αδιαιρετως ασυγχυτως αχωριστως ουσιωδως ενσαρκωσις ενσωματωσις ενανθρωπησις"
+        },
+        {
+          "page": 299,
+          "word_count": 6,
+          "sample": "κατ αξιαν κατα ταυτοβουλιαν καθ ομωνυμιαν"
         }
       ]
     },
@@ -308,7 +303,7 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 5,
+      "observed": 6,
       "budget": 8,
       "status": "ok",
       "samples": [
@@ -320,6 +315,11 @@
         {
           "file": "combined_text",
           "text": "meditations and discourses on the glory of christ",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "meditations and discourses concerning the glory of christ",
           "count": 1
         },
         {
@@ -383,17 +383,13 @@
     },
     {
       "label": "Chapter headings rendered as paragraphs",
-      "observed": 2,
+      "observed": 1,
       "budget": 3,
       "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch003.xhtml",
           "text": "Chapter 1"
-        },
-        {
-          "file": "EPUB/ch049.xhtml",
-          "text": "A. Only by Jesus Christ. — Chapter 9"
         }
       ]
     },
@@ -525,49 +521,41 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 17,
+      "observed": 8,
       "budget": 38,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch011.xhtml",
-          "text": "w"
-        },
-        {
-          "file": "EPUB/ch013.xhtml",
+          "file": "EPUB/ch004.xhtml",
           "text": "f"
         },
         {
-          "file": "EPUB/ch015.xhtml",
-          "text": "p"
+          "file": "EPUB/ch011.xhtml",
+          "text": "m"
         },
         {
-          "file": "EPUB/ch019.xhtml",
-          "text": "r"
+          "file": "EPUB/ch016.xhtml",
+          "text": "a"
         },
         {
-          "file": "EPUB/ch020.xhtml",
-          "text": "i"
+          "file": "EPUB/ch021.xhtml",
+          "text": "a"
         },
         {
           "file": "EPUB/ch022.xhtml",
-          "text": "c"
-        },
-        {
-          "file": "EPUB/ch023.xhtml",
           "text": "a"
         },
         {
-          "file": "EPUB/ch024.xhtml",
-          "text": "o"
-        },
-        {
-          "file": "EPUB/ch027.xhtml",
+          "file": "EPUB/ch030.xhtml",
           "text": "a"
         },
         {
-          "file": "EPUB/ch029.xhtml",
-          "text": "p"
+          "file": "EPUB/ch039.xhtml",
+          "text": "w"
+        },
+        {
+          "file": "EPUB/ch040.xhtml",
+          "text": "a"
         }
       ]
     },

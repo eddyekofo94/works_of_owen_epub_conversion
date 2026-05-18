@@ -2012,6 +2012,64 @@ The render path trusted cached JSON fragments for V1 title and contents pages, w
 
 ---
 
+## [Issue 116] Geometry-Backed Blockquote Extraction
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+The blockquote analysis correctly identified indentation as the signal, but its absolute coordinates were unsafe for the live V1 PDF. A naive line-level detector also risked repeating the reverted Issue 43 failure: ordinary body paragraphs use a flush first line followed by indented wrap lines, so many normal paragraphs can look like quotes if every line is classified independently.
+
+### 2. Root Cause
+V1's body baseline is about `x0=26`, while quote/wrap lines often sit around `x0=44`. Pages dominated by a quote can make the quote indent look like the modal baseline, and page-leading quote continuations may start without an opening quote. The correct signal is therefore block-level: the first substantive line and the full block geometry matter more than isolated line indentation.
+
+### 3. Fixes
+- Added dynamic page text bounds using the lowest repeated substantive left edge, avoiding hard-coded `x0 > 90` thresholds.
+- Added block-level quote detection with list-marker exclusion, quote-run continuation tracking, and page-leading continuation support for split quotes.
+- Tightened quote termination so page-leading continuation lines and scripture-reference tails remain inside the quote until a real sentence/reference terminator is reached.
+- Merged adjacent `[[BLOCKQUOTE]]` paragraphs during reconstruction when the first block has not reached sentence-ending punctuation.
+- Added `[[BLOCKQUOTE]]` structural tokens to extraction and render handling, plus a `>` Markdown fallback.
+- Rendered semantic `<blockquote epub:type="z3998:quotation">` elements with footnote links preserved and empty quote output suppressed.
+- Updated audit parsing so semantic blockquotes and title-page lines do not inflate prose split warnings.
+- Added regression coverage for the page-27 Latin quote, the General Preface quote, Peter's Confession false positives, body-wrap false positives, empty blockquotes, Markdown fallback, and the Revelation 1:5/Romans 8:17/Hebrews 1:10-12 false-termination cases.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py`.
+- `tests/test_structural_standardization.py tests/test_bug_regressions.py`: `24 passed`.
+- EPUB audit: 0 errors, 4 existing warnings.
+- Text-integrity audit: 0.9945 coverage ratio, 125 split candidates within the updated V1 budget, 0 missing enumerator markers.
+- Bug regression audit: PASS.
+
+---
+
+## [Issue 117] V1 Textual TODO 37-40 Polish
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+The last `textual.txt` TODO set still had four V1 blemishes: lowercase `ill.` after "anything he has done" was split and treated like a Roman marker, an Isaiah reference tail after an open parenthesis fell outside its blockquote, `I. 1.` was split from its following prose, and `Luke 24:26.` was separated from the quote sentence it documents. A repeated OCR normalization also forced `I WILL come` in Revelation 3:20 where the printed text should read `I will come`.
+
+### 2. Root Cause
+Roman-marker detection was still case-insensitive in the fallback heading and inline structural-marker paths, so ordinary lowercase prose could be split as structure. The blockquote/reference-tail merger only handled whole reference paragraphs, not a leading reference followed by body prose. The renderer also treated combined Roman-decimal outline markers as a Roman heading plus a new paragraph.
+
+### 3. Fixes
+- Made fallback Roman heading detection and inline structural-marker splitting case-sensitive for Roman numerals.
+- Added combined `I. 1.` outline handling so the complete marker remains inline and bolded with its text.
+- Added extraction-side leading scripture-reference tail splitting so `Isaiah 42:1;)` can close a preceding blockquote while the remaining prose stays outside it.
+- Added normal-prose scripture-reference tail joining for quote sentences such as `"enter into his glory?" Luke 24:26.`
+- Added a V1-specific OCR replacement for the Revelation 3:20 phrase `open the door, I will come...`.
+- Added regression coverage for all four textual TODO cases and the combined Roman-decimal marker sample.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py`, then rerendered with `--render-only` after the final render-only Roman split adjustment.
+- `tests/test_structural_standardization.py tests/test_bug_regressions.py`: `26 passed`.
+- EPUB audit: 0 errors, 4 existing warnings.
+- Text-integrity audit: 0.9945 coverage ratio, 124 split candidates, 0 inline structural marker candidates, 0 missing enumerator markers.
+- Bug regression audit: PASS.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives

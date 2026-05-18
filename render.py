@@ -128,8 +128,7 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
-    r')(?P<trail>\s+)',
-    re.I
+    r')(?P<trail>\s+)'
 )
 # ROMAN_HEADING_RE: Only match if the following text is short or All-Caps (Issue 21)
 ROMAN_HEADING_RE = re.compile(
@@ -759,7 +758,14 @@ def _roman_head_match(text):
     return re.match(
         r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?(?:\s+(?P<rest>.*))?$',
         (text or '').strip(),
-        re.I,
+    )
+
+
+def _roman_decimal_marker_match(text):
+    """Match combined outline markers such as "I. 1." without splitting them."""
+    return re.match(
+        r'^(?P<marker>(?:\*\*)?[IVXLCDM]+\.(?:\*\*)?\s+\d+\.)(?:\s+(?P<rest>.+))?$',
+        (text or '').strip(),
     )
 
 
@@ -1038,7 +1044,7 @@ def _coalesce_catechism_paragraphs(paragraphs):
 
 def _strip_inline_structural_tokens(text):
     """Remove any structural tokens that leaked into paragraphs (e.g. [[SUMMARY]])."""
-    return re.sub(r'\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION)\]\]\s*', '', text)
+    return re.sub(r'\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION|BLOCKQUOTE)\]\]\s*', '', text)
 
 
 def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
@@ -1110,6 +1116,10 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             html_parts.append(_polish_treatise_title_page_html(stripped))
             continue
 
+        if stripped.startswith('>'):
+            quote_content = re.sub(r'(?:^|\n)\s*>\s?', ' ', stripped).strip()
+            stripped = f'[[BLOCKQUOTE]] {quote_content}'
+
         h_tag = None
         subtitle_md = None
         roman_heading = None
@@ -1117,7 +1127,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
 
         # State Transitions (Issue 107 Refinement)
         # We strip structural tokens for trigger detection
-        clean_upper = re.sub(r'^\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION)\]\]\s*', '', stripped.upper()).strip()
+        clean_upper = re.sub(r'^\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION|BLOCKQUOTE)\]\]\s*', '', stripped.upper()).strip()
         
         # Rule 1: Reset to FRONT_MATTER upon editorial keywords (Issue 107)
         # Match standalone keywords or those with optional trailing dot
@@ -1182,10 +1192,35 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                 continue
 
         # Detect explicit structural tokens from robust extractor
-        token_match = re.match(r'^\[\[(PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION)\]\]\s*(.*)$', stripped, re.S)
+        token_match = re.match(r'^\[\[(PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION|BLOCKQUOTE)\]\]\s*(.*)$', stripped, re.S)
         if token_match:
             kind = token_match.group(1)
             content = token_match.group(2).strip()
+
+            def _render_blockquote_content(raw_content: str) -> str:
+                def _fn_repl(m):
+                    fn_num = m.group(1)
+                    if fn_num in seen_footnote_refs:
+                        return ''
+                    seen_footnote_refs.add(fn_num)
+                    return f'FNREFTOKEN{fn_num}TOKEN'
+
+                content_clean = _strip_inline_structural_tokens(raw_content)
+                with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, content_clean)
+                escaped = _html_escape(with_placeholders)
+                with_links = _restore_footnote_placeholders(escaped)
+                return tag_unicode_ranges(with_links)
+
+            if kind == 'BLOCKQUOTE':
+                if not content.strip():
+                    continue
+                html_parts.append(f'<blockquote epub:type="z3998:quotation"><p>{_render_blockquote_content(content)}</p></blockquote>')
+                pending_drop_cap = False
+                roman_list_expected = None
+                recent_plain.append(_strip_footnote_placeholders(content))
+                if len(recent_plain) > 5:
+                    recent_plain = recent_plain[-5:]
+                continue
             
             # Zone A (Front Matter) Immunity: Treat all structural components as
             # simple items until we hit the Body transition.
@@ -1540,46 +1575,51 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             subtitle_md, content_no_refs = _split_leading_chapter_subtitle(content_no_refs)
 
         if not h_tag and not subtitle_md:
-            roman_match = ROMAN_HEADING_RE.match(content_no_refs)
-            if roman_match:
-                roman_number = _roman_to_int(roman_match.group('roman'))
-                rest_after_roman = roman_match.group('rest').strip()
-                previous_text = recent_plain[-1] if recent_plain else ''
-                starts_roman_list = (
-                    roman_number in (1, 2)
-                    and (
-                        re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
-                        or re.search(r'(?:[—-]|,)\s*$', previous_text)
-                    )
-                )
-                continues_roman_list = roman_list_expected == roman_number
-                if (starts_roman_list or continues_roman_list) and _is_roman_list_item(rest_after_roman):
-                    content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
-                    is_centered_roman_list = True
-                    roman_list_expected = roman_number + 1
-                else:
-                    roman_heading = _render_simple_roman_heading_content(roman_match.group('roman'))
-                    content_no_refs = rest_after_roman
-                    roman_list_expected = None
+            roman_decimal = _roman_decimal_marker_match(content_no_refs)
+            if roman_decimal and roman_decimal.group('rest'):
+                content_no_refs = f'**{_clean_heading_text(roman_decimal.group("marker"))}** {roman_decimal.group("rest").strip()}'
+                roman_list_expected = None
             else:
-                roman_section = None
-                roman_head_start = _roman_head_match(content_no_refs)
-                if roman_head_start:
-                    roman_number = _roman_to_int(roman_head_start.group('roman'))
-                    rest_after_roman = (roman_head_start.group('rest') or '').strip()
+                roman_match = ROMAN_HEADING_RE.match(content_no_refs)
+                if roman_match:
+                    roman_number = _roman_to_int(roman_match.group('roman'))
+                    rest_after_roman = roman_match.group('rest').strip()
                     previous_text = recent_plain[-1] if recent_plain else ''
-                    if _starts_roman_outline(previous_text, roman_number) or roman_list_expected == roman_number:
-                        content_no_refs = f'**{roman_head_start.group("roman")}** {rest_after_roman}'
+                    starts_roman_list = (
+                        roman_number in (1, 2)
+                        and (
+                            re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
+                            or re.search(r'(?:[—-]|,)\s*$', previous_text)
+                        )
+                    )
+                    continues_roman_list = roman_list_expected == roman_number
+                    if (starts_roman_list or continues_roman_list) and _is_roman_list_item(rest_after_roman):
+                        content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
                         is_centered_roman_list = True
                         roman_list_expected = roman_number + 1
                     else:
-                        roman_section = _split_roman_section_opening(content_no_refs)
-                if roman_section:
-                    roman_heading = _render_simple_roman_heading_content(roman_section[0])
-                    content_no_refs = roman_section[1]
-                    roman_list_expected = None
-                elif not roman_head_start:
-                    roman_list_expected = None
+                        roman_heading = _render_simple_roman_heading_content(roman_match.group('roman'))
+                        content_no_refs = rest_after_roman
+                        roman_list_expected = None
+                else:
+                    roman_section = None
+                    roman_head_start = _roman_head_match(content_no_refs)
+                    if roman_head_start:
+                        roman_number = _roman_to_int(roman_head_start.group('roman'))
+                        rest_after_roman = (roman_head_start.group('rest') or '').strip()
+                        previous_text = recent_plain[-1] if recent_plain else ''
+                        if _starts_roman_outline(previous_text, roman_number) or roman_list_expected == roman_number:
+                            content_no_refs = f'**{roman_head_start.group("roman")}** {rest_after_roman}'
+                            is_centered_roman_list = True
+                            roman_list_expected = roman_number + 1
+                        else:
+                            roman_section = _split_roman_section_opening(content_no_refs)
+                    if roman_section:
+                        roman_heading = _render_simple_roman_heading_content(roman_section[0])
+                        content_no_refs = roman_section[1]
+                        roman_list_expected = None
+                    elif not roman_head_start:
+                        roman_list_expected = None
         
         # Clean up Catechism artifacts (Issue 26)
         text_html = content_no_refs
@@ -1624,6 +1664,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         text_html = re.sub(r'<b>(Ans\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
         text_html = re.sub(r'<b>(Ans\.)</b>\s+', r'<b>\1</b> ', text_html)
         text_html = re.sub(r'<b>(Ques\.)</b>\s+', r'<b>\1</b> ', text_html)
+        text_html = re.sub(r'^<b>([IVXLCDM]+\.)</b>\s+(\d+\.)\s+', r'<b>\1 \2</b> ', text_html)
         
         # Specific comma artifact cleanup (Issue 26)
         text_html = re.sub(r'<b>([QA])\.</b>\s*,\s*', r'<b>\1.</b> ', text_html)
@@ -1635,6 +1676,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             flags=re.I,
         )
         text_html = emphasize_structural_prefix(text_html)
+        text_html = re.sub(r'^<b>([IVXLCDM]+\.)</b>\s+(?:<b>)?(\d+\.)(?:</b>)?\s+', r'<b>\1 \2</b> ', text_html)
         text_html = re.sub(r'(\b(?:verse|verses|chap|chapter)\.?\s*)<b>(\d+[.;]?)</b>', r'\1\2', text_html, flags=re.I)
         text_html = re.sub(r'(\b\d+:\d+(?:[-,]\s*\d+)*,\s*)<b>(\d+[.;]?)</b>', r'\1\2', text_html)
         text_html = re.sub(r'<b>(\d+(?:st|nd|rd|th))</b>(\s+(?:Psalm|Psalms)\b)', r'\1\2', text_html)
@@ -1828,8 +1870,9 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                             )
                             is_proof = re.match(rf'^(?:<b>)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', paragraph_html, re.I)
                             roman_plain_match = _roman_head_match(plain_for_class)
+                            is_combined_roman_decimal = bool(_roman_decimal_marker_match(plain_for_class))
                             is_continued_roman_outline = False
-                            if roman_plain_match:
+                            if roman_plain_match and not is_combined_roman_decimal:
                                 roman_number = _roman_to_int(roman_plain_match.group('roman'))
                                 rest_after_roman = (roman_plain_match.group('rest') or '').strip()
                                 is_continued_roman_outline = (
@@ -1846,6 +1889,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                                     continue
                             if is_qa or is_proof:
                                 p_class = ' class="catechism-item"'
+                            elif is_combined_roman_decimal:
+                                p_class = ' class="list-item"'
                             elif is_continued_roman_outline:
                                 p_class = ' class="roman-list-item"'
                                 roman_list_expected = roman_number + 1
@@ -1908,6 +1953,14 @@ def _polish_treatise_title_page_html(html: str) -> str:
     """Normalize pre-rendered treatise title pages into one elegant title sheet."""
     if not re.search(r'<section\b[^>]*class="[^"]*\btreatise-title-page\b', html):
         return html
+
+    html = re.sub(r'class="title-line\s+-(major|medium)"', r'class="title-line title-line-\1"', html)
+    html = re.sub(
+        r'<p class="title-line title-line-medium">\s*(' + '|'.join(re.escape(item) for item in sorted(_TITLE_CONNECTORS, key=len, reverse=True)) + r')\s*</p>',
+        lambda m: f'<p class="title-connector">{m.group(1)}</p>',
+        html,
+        flags=re.I,
+    )
 
     def _connector_repl(match):
         attrs = match.group(1)

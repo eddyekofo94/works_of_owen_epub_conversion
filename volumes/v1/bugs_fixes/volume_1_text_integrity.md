@@ -1,16 +1,16 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 8
+- Warnings: 9
 - PDF pages: 633
 - EPUB text files: 81
-- EPUB paragraphs/headings: 2828
+- EPUB paragraphs/headings: 3007
 
 ## Coverage
 
 - PDF content tokens: 208222
-- EPUB content tokens: 207337
-- Approximate PDF-to-EPUB coverage ratio: 0.9947
+- EPUB content tokens: 207241
+- Approximate PDF-to-EPUB coverage ratio: 0.9945
 - Pages checked: 624
 - Weak page matches: 23
 - Dense source windows checked: 783
@@ -26,17 +26,17 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2643
-- Possible faulty paragraph splits: 47
-- Structural starts excluded from split warnings: 159
-- Short fragments: 73
+- Body paragraphs checked: 2536
+- Possible faulty paragraph splits: 124
+- Structural starts excluded from split warnings: 162
+- Short fragments: 29
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
-- Roman heading candidates: 0
-- Overlong heading candidates: 11
+- Roman heading candidates: 1
+- Overlong heading candidates: 10
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 310
@@ -64,6 +64,7 @@
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
@@ -102,21 +103,24 @@
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch002.xhtml; previous: CHRISTOLOGIA; next: OR
-- file: EPUB/ch002.xhtml; previous: OR; next: A DECLARATION OF THE GLORIOUS MYSTERY
-- file: EPUB/ch002.xhtml; previous: A DECLARATION OF THE GLORIOUS MYSTERY; next: OF
-- file: EPUB/ch002.xhtml; previous: OF; next: THE PERSON OF CHRIST — GOD AND MAN:
-- file: EPUB/ch002.xhtml; previous: WITH; next: The Infinite Wisdom, Love, And Power Of God In The Contrivance And Constitution Thereof;
-- file: EPUB/ch002.xhtml; previous: AS ALSO,; next: Of The Grounds And Reasons Of His Incarnation; The Nature Of His Ministry In Heaven; The Present State Of The Church Above Thereon; And The Use Of His Person In Religion:
-- file: EPUB/ch002.xhtml; previous: WITH; next: An Account And Vindication Of The Honor, Worship, Faith, Love, And Obedience Due Unto Him, In And From The Church.
-- file: EPUB/ch005.xhtml; previous: Peter's Confession; Matthew 16:16 — Conceits of the Papists Thereon — The Substance and Excellency of That Confession; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
-- file: EPUB/ch006.xhtml; previous: Opposition Made unto the Church as Built Upon the Person of Christ; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
-- file: EPUB/ch007.xhtml; previous: The Person of Christ the Most Ineffable Effect of Divine Wisdom and Goodness — Thence the Next Cause of All True Religion — In What Sense It Is So; next: The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The
+- file: EPUB/ch004.xhtml; previous: on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things." And Ennodius has, as it were, turned this passage of Jerome into verse: —; next: Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the
+- file: EPUB/ch007.xhtml; previous: abilities are weak and contemptible, in the eye of that wisdom which is of this world, than in those of the highest natural sagacity, enjoying the best improvements of reason. For; next: However they may be poor, and, as another apostle speaketh, "foolish, weak, base, and despised;" ( 1 Corinthians 1:27, 28;) yet that faith which enables them to assent unto and emb
+- file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
+- file: EPUB/ch009.xhtml; previous: he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they; next: Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S
+- file: EPUB/ch009.xhtml; previous: This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw; next: The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:
+- file: EPUB/ch010.xhtml; previous: John 14:6. He is so essentially — as he is one with the Father, the God of truth: Deuteronomy 32:4. He is so efficiently — as by him alone it is fully and effectually declared; for; next: He is so substantially — in opposition unto the types and shadows of the Old Testament; for in him dwelt "the fullness of the godhead bodily:" Colossians 2:9. "The body is of Chris
+- file: EPUB/ch010.xhtml; previous: wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,; next: And they are called "treasures" on a twofold account, both mentioned together by the Psalmist. "How precious are thy thoughts unto me, O Lord; how great is the sum of them!" They a
+- file: EPUB/ch011.xhtml; previous: is power and care for the church, that is so expressed. These were from the beginning the first foundation of the church, in answer unto his everlasting counsels, Zechariah 2:8, 9,; next: He who is sent calleth himself "The Lord of hosts," and affirms that he will destroy the nations by the shaking of his hand; who can be no other but God himself. That is, it was th
+- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
+- file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
+
+## Roman Heading Candidates
+
+- file: EPUB/ch033.xhtml; text: I. 1. What he did, what obedience he yielded unto the law of God in the discharge of his office (with respect whereunto he said, "Lo, I come to do thy will, O God; yea, thy law is in my heart"), it was all on his own fre
 
 ## Overlong Heading Candidates
 
 - file: EPUB/ch019.xhtml; tag: h4; text: IV. The last thing proposed concerning the person of Christ, was the use of it unto believers, in the whole of their relation unto God and duty towards him.
-- file: EPUB/ch020.xhtml; tag: h4; text: ill. For what he so does is due in and for itself; and to suppose that satisfaction will be made for a former fault by that whose omission would have been another, had the former never been committed, is madness.
 - file: EPUB/ch024.xhtml; tag: h4; text: III. The third and last thing which we proposed unto consideration, in our inquiry into the present state and condition of the person of Christ in heaven, is the exercise and discharge of his mediatory once in behalf of the church; espec...
 - file: EPUB/ch027.xhtml; tag: h4; text: IV. He it is who in himself has given us a pledge of the capacity of our nature to inhabit those blessed regions of light, which are far above these aspectable heavens.
 - file: EPUB/ch029.xhtml; tag: h4; text: I. Since men fell from God by sin, it is no small part of their misery and punishment, that they are covered with thick darkness and ignorance of the nature of God.
@@ -125,19 +129,20 @@
 - file: EPUB/ch041.xhtml; tag: h4; text: I. In the view which we have here of the glory of Christ by faith, we gather things, as it were, one by one, in several parts and parcels out of the Scripture; and comparing them together in our minds, they become the object of our prese...
 - file: EPUB/ch045.xhtml; tag: h4; text: II. The second thing proposed is, that notwithstanding all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great perplexities,...
 - file: EPUB/ch045.xhtml; tag: h4; text: III. But I come to that which was proposed in the third place, — namely, to show that this at present is the state of many professors of religion, that they are fallen under those spiritual decays, and do not enjoy the effects of the pro...
+- file: EPUB/ch045.xhtml; tag: h4; text: IV. I proceed unto that which was proposed in the fourth or last place, — namely, the way and means whereby believers may be delivered from these decays, and come to thrive and flourish in the inward principle and outward fruits of spiri...
 
 ## Short Fragments
 
-- file: EPUB/ch002.xhtml; text: ΧΡΙΣΤΟΛΟΓΙΑ:
-- file: EPUB/ch002.xhtml; text: CHRISTOLOGIA
-- file: EPUB/ch002.xhtml; text: OR
-- file: EPUB/ch002.xhtml; text: OF
-- file: EPUB/ch002.xhtml; text: WITH
-- file: EPUB/ch002.xhtml; text: AS ALSO,
-- file: EPUB/ch002.xhtml; text: WITH
 - file: EPUB/ch006.xhtml; text: For,
 - file: EPUB/ch006.xhtml; text: As,
 - file: EPUB/ch009.xhtml; text: Wherefore —
+- file: EPUB/ch009.xhtml; text: And —
+- file: EPUB/ch009.xhtml; text: All this himself instructs us in.
+- file: EPUB/ch011.xhtml; text: This must be declared.
+- file: EPUB/ch011.xhtml; text: He says that
+- file: EPUB/ch013.xhtml; text: 2ndly, Invocation.
+- file: EPUB/ch016.xhtml; text: So he prays for all his disciples,
+- file: EPUB/ch019.xhtml; text: He has
 
 ## Repeated Windows
 

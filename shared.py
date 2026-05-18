@@ -1185,6 +1185,11 @@ blockquote {
     font-size: 0.95em;
 }
 
+blockquote p {
+    text-indent: 0;
+    margin: 0.45em 0;
+}
+
 /* Frontispiece / Portrait */
 .frontispiece {
     text-align: center;

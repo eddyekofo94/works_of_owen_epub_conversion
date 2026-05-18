@@ -264,6 +264,7 @@ OVERRIDES = {
         'publish all the treatises of ushered under their auspices into public notice': 'publish all the treatises of Owen in volumes corresponding in size and appearance with the one ushered under their auspices into public notice',
         'This being the [f8] [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
         'This being the [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
+        'open the door, I WILL come in to him, and will sup with him': 'open the door, I will come in to him, and will sup with him',
     },
     'regex_replacements': {
         r'\bknow\.\?': 'know?',

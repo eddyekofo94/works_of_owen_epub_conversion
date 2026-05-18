@@ -11,7 +11,7 @@ import pytest
 from scripts.audit_epub import Audit
 from scripts.audit_text_integrity import run_audit
 from converter import clean_text, force_polyglot_mapping, get_pages_text, reconstruct_paragraphs
-from render import apply_scholastic_anchor_protocol
+from render import apply_scholastic_anchor_protocol, markdown_to_html
 from volumes.v1.convert import OVERRIDES as V1_OVERRIDES
 
 
@@ -93,6 +93,19 @@ def text_integrity_result(volume):
     return run_audit(volume, pdf_path, epub_path)
 
 
+@lru_cache(maxsize=None)
+def epub_xhtml_text(volume):
+    _, epub_path = paths_for(volume)
+    if not epub_path.exists():
+        pytest.skip(f"EPUB for volume {volume} not found at {epub_path}")
+    with zipfile.ZipFile(epub_path) as zf:
+        return "\n".join(
+            zf.read(name).decode("utf-8")
+            for name in sorted(zf.namelist())
+            if name.startswith("EPUB/ch") and name.endswith(".xhtml")
+        )
+
+
 VOLUMES = requested_volumes()
 
 
@@ -150,6 +163,30 @@ Chapter,
     assert "q.," not in joined
     assert "cap.," not in joined
     assert not re.search(r'De Trinitate, lib\. 5 cap\. 8,\s*\n\s*9\.', joined)
+
+
+def test_issues_37_to_40_textual_todo_regressions_are_guarded():
+    html = epub_xhtml_text(1)
+
+    assert "anything he has done ill. For what he so does" in html
+    assert '<b>ill.</b> For what he so does' not in html
+    assert (
+        '<blockquote epub:type="z3998:quotation"><p>"Behold my servant, whom I uphold; '
+        'mine elect, in whom my soul delighteth;" ( Isaiah 42:1;)</p></blockquote>'
+    ) in html
+    assert "</blockquote>\n<p>as he also proclaims the same delight" in html
+    assert "open the door, I WILL come in to him, and will sup with him" not in html
+    assert "open the door, I will come in to him, and will sup with him" in html
+    assert "I. 1. What he did, what obedience he yielded" in re.sub(r"</?b>", "", html)
+    assert 'enter into his glory?" Luke 24:26. The one is frequently expressed elsewhere' in html
+
+
+def test_issue_39_combined_roman_decimal_marker_stays_inline():
+    html, _, _ = markdown_to_html(
+        "I. 1. What he did preparatory unto his death, which was the first thing proposed unto consideration."
+    )
+
+    assert '<p class="list-item"><b>I. 1.</b> What he did preparatory' in html
 
 
 def test_issue_32_pdf_page_384_reference_run_is_not_jumbled():
@@ -398,6 +435,61 @@ def test_v1_catechism_questions_and_answers_are_grouped_and_bolded(volume):
         assert sample in combined
         assert f'<p class="catechism-item"><b>A.</b> {sample[2:]}' not in combined
         assert f'<p class="catechism-item">A. {sample[2:]}' not in combined
+
+
+@pytest.mark.parametrize("volume", VOLUMES)
+def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume):
+    if volume != 1:
+        pytest.skip("Blockquote geometry samples are volume 1-specific")
+    _, epub_path = paths_for(volume)
+    if not epub_path.exists():
+        pytest.skip(f"EPUB for volume {volume} not found at {epub_path}")
+
+    files = {}
+    with zipfile.ZipFile(epub_path) as zf:
+        for name in zf.namelist():
+            if name.endswith(".xhtml"):
+                files[name] = zf.read(name).decode("utf-8", "replace")
+
+    general_preface = next(
+        html for html in files.values()
+        if re.search(r"<title>General Preface\.?</title>", html)
+    )
+    peters_confession = next(
+        html for html in files.values()
+        if "<title>Chapter 1 - Peter's Confession</title>" in html
+    )
+    latin_quote_chapter = next(
+        html for html in files.values()
+        if "Universam significabat ecclesiam" in html
+    )
+    power_chapter = next(
+        html for html in files.values()
+        if "<title>Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ</title>" in html
+    )
+    honor_chapter = next(
+        html for html in files.values()
+        if "<title>Chapter 9 - Honor Due to the Person of Christ</title>" in html
+    )
+    conformity_chapter = next(
+        html for html in files.values()
+        if "<title>Chapter 15 - Conformity Unto Christ</title>" in html
+    )
+    combined = "\n".join(files.values())
+
+    assert '<blockquote epub:type="z3998:quotation"><p>"The divines of the Puritan school' in general_preface
+    assert "Universam significabat ecclesiam" in latin_quote_chapter
+    assert '<blockquote epub:type="z3998:quotation"><p>"And Simon Peter answered' in peters_confession
+    quote_blocks = re.findall(r"<blockquote[^>]*>.*?</blockquote>", peters_confession, re.S)
+    assert not any("Baronius" in block for block in quote_blocks)
+    assert '<p class="list-item"><b>1.</b> The faith of Peter in this confession' in peters_confession
+    assert not any("1. The faith of Peter" in block for block in quote_blocks)
+    assert re.search(r'<blockquote[^>]*><p>"Thou, Lord,.*?a vesture shalt thou fold them up.*?not fail\."</p></blockquote>', power_chapter, re.S)
+    assert re.search(r'<blockquote[^>]*><p>"Unto him that loved us,.*?Amen\." Revelation 1:5, 6\.</p></blockquote>', honor_chapter, re.S)
+    assert '<p>This, therefore, is another season that calls for this duty.</p>' in honor_chapter
+    assert re.search(r'<blockquote[^>]*><p>"If so be that we suffer with him,.*?Romans 8:17, 18\.</p></blockquote>', conformity_chapter, re.S)
+    assert re.search(r"<blockquote[^>]*><p\s*/>", combined) is None
+    assert re.search(r"<blockquote[^>]*><p>\s*</p>", combined) is None
 
 
 @pytest.mark.parametrize("volume", VOLUMES)

@@ -59,4 +59,8 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch030.xhtml`: a
+- `EPUB/ch004.xhtml`: f
+- `EPUB/ch008.xhtml`: a
+- `EPUB/ch011.xhtml`: m
+- `EPUB/ch016.xhtml`: a
+- `EPUB/ch021.xhtml`: a
