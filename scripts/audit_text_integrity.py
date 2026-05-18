@@ -28,11 +28,16 @@ from lxml import etree
 # Set up path to import shared logic
 sys.path.insert(0, str(Path(__file__).parent.parent))
 try:
-    from shared import convert_greek_word, convert_gideon_hebrew, clean_greek_text
+    from shared import (
+        convert_greek_word, convert_gideon_hebrew, clean_greek_text,
+        is_greek_font, is_hebrew_font,
+    )
 except ImportError:
     convert_greek_word = lambda x: x
     convert_gideon_hebrew = lambda x: x
     clean_greek_text = lambda x: x
+    is_greek_font = lambda x: False
+    is_hebrew_font = lambda x: False
 
 NS = {
     "container": "urn:oasis:names:tc:opendocument:xmlns:container",
@@ -211,6 +216,40 @@ def normalized_word_string(text: str) -> str:
     return " ".join(content_words(text, include_common=True))
 
 
+def contiguous_script_runs(text: str, word_re: re.Pattern, min_words: int = 5) -> list[list[str]]:
+    """Return contiguous Greek/Hebrew word runs without crossing prose gaps."""
+    matches = list(word_re.finditer(text))
+    runs: list[list[str]] = []
+    current: list[str] = []
+    previous_end = None
+
+    for match in matches:
+        word = match.group(0).lower()
+        if len(word) < 2:
+            if len(current) >= min_words:
+                runs.append(current)
+            current = []
+            previous_end = match.end()
+            continue
+
+        if previous_end is not None:
+            gap = text[previous_end:match.start()]
+            # Punctuation and whitespace can separate words in the same Greek
+            # quotation. Latin letters/digits mean prose intervened, so this is
+            # a new run rather than one long synthetic clause.
+            if re.search(r"[A-Za-z0-9]", gap):
+                if len(current) >= min_words:
+                    runs.append(current)
+                current = []
+
+        current.append(word)
+        previous_end = match.end()
+
+    if len(current) >= min_words:
+        runs.append(current)
+    return runs
+
+
 def parse_xml(data: bytes) -> etree._Element:
     parser = etree.XMLParser(resolve_entities=False, no_network=True, recover=False)
     return etree.fromstring(data, parser=parser)
@@ -299,8 +338,6 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
 
 def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
     pages: list[str] = []
-    GREEK_FONTS = {"Koine-Medium", "ENLFEN+Koine-Medium"}
-    HEBREW_FONTS = {"Gideon-Medium", "MOLFEN+Gideon-Medium"}
 
     with fitz.open(pdf_path) as doc:
         for page in doc:
@@ -314,9 +351,9 @@ def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
                     for span in line["spans"]:
                         text = span["text"]
                         font = span.get("font", "")
-                        if any(gf in font for gf in GREEK_FONTS):
+                        if is_greek_font(font):
                             text = clean_greek_text(convert_greek_word(text))
-                        elif any(hf in font for hf in HEBREW_FONTS):
+                        elif is_hebrew_font(font):
                             text = convert_gideon_hebrew(text)
                         line_text.append(text)
                     page_content.append("".join(line_text))
@@ -1147,91 +1184,37 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
         page_text_stripped = strip_greek_diacritics(page_text)
         # Strip 'j'/'J' artifacts common in AGES Greek extraction
         page_text_stripped = re.sub(r'\b[jJ](?=[\u0370-\u03FF\u1F00-\u1FFF])', '', page_text_stripped)
-        greek_words = GREEK_WORD_RE.findall(page_text_stripped)
-        if len(greek_words) >= 5:
-            # Extract contiguous Greek sequences (≥5 words)
-            current_seq = []
-            for word in greek_words:
-                if len(word) >= 2:
-                    current_seq.append(word.lower())
-                else:
-                    if len(current_seq) >= 5:
-                        checked_greek += 1
-                        phrase = " ".join(current_seq)
-                        if phrase not in epub_norm:
-                            # Try shorter windows (80% match)
-                            window_size = max(5, int(len(current_seq) * 0.8))
-                            found = any(
-                                " ".join(current_seq[i:i + window_size]) in epub_norm
-                                for i in range(len(current_seq) - window_size + 1)
-                            )
-                            if not found:
-                                missing_greek_clauses.append({
-                                    "page": page_no,
-                                    "word_count": len(current_seq),
-                                    "sample": " ".join(current_seq[:12]),
-                                })
-                        current_seq = []
-                    else:
-                        current_seq = []
-            # Handle trailing sequence
-            if len(current_seq) >= 5:
-                checked_greek += 1
-                phrase = " ".join(current_seq)
-                if phrase not in epub_norm:
-                    window_size = max(5, int(len(current_seq) * 0.8))
-                    found = any(
-                        " ".join(current_seq[i:i + window_size]) in epub_norm
-                        for i in range(len(current_seq) - window_size + 1)
-                    )
-                    if not found:
-                        missing_greek_clauses.append({
-                            "page": page_no,
-                            "word_count": len(current_seq),
-                            "sample": " ".join(current_seq[:12]),
-                        })
+        for current_seq in contiguous_script_runs(page_text_stripped, GREEK_WORD_RE):
+            checked_greek += 1
+            phrase = " ".join(current_seq)
+            if phrase not in epub_norm:
+                window_size = max(5, int(len(current_seq) * 0.8))
+                found = any(
+                    " ".join(current_seq[i:i + window_size]) in epub_norm
+                    for i in range(len(current_seq) - window_size + 1)
+                )
+                if not found:
+                    missing_greek_clauses.append({
+                        "page": page_no,
+                        "word_count": len(current_seq),
+                        "sample": " ".join(current_seq[:12]),
+                    })
 
-        # Find Hebrew word sequences
-        hebrew_words = HEBREW_WORD_RE.findall(page_text)
-        if len(hebrew_words) >= 3:
-            current_seq = []
-            for word in hebrew_words:
-                if len(word) >= 2:
-                    current_seq.append(word)
-                else:
-                    if len(current_seq) >= 3:
-                        checked_hebrew += 1
-                        phrase = " ".join(current_seq)
-                        if phrase not in epub_norm:
-                            window_size = max(3, int(len(current_seq) * 0.8))
-                            found = any(
-                                " ".join(current_seq[i:i + window_size]) in epub_norm
-                                for i in range(len(current_seq) - window_size + 1)
-                            )
-                            if not found:
-                                missing_hebrew_clauses.append({
-                                    "page": page_no,
-                                    "word_count": len(current_seq),
-                                    "sample": " ".join(current_seq[:10]),
-                                })
-                        current_seq = []
-                    else:
-                        current_seq = []
-            if len(current_seq) >= 3:
-                checked_hebrew += 1
-                phrase = " ".join(current_seq)
-                if phrase not in epub_norm:
-                    window_size = max(3, int(len(current_seq) * 0.8))
-                    found = any(
-                        " ".join(current_seq[i:i + window_size]) in epub_norm
-                        for i in range(len(current_seq) - window_size + 1)
-                    )
-                    if not found:
-                        missing_hebrew_clauses.append({
-                            "page": page_no,
-                            "word_count": len(current_seq),
-                            "sample": " ".join(current_seq[:10]),
-                        })
+        for current_seq in contiguous_script_runs(page_text, HEBREW_WORD_RE, min_words=3):
+            checked_hebrew += 1
+            phrase = " ".join(current_seq)
+            if phrase not in epub_norm:
+                window_size = max(3, int(len(current_seq) * 0.8))
+                found = any(
+                    " ".join(current_seq[i:i + window_size]) in epub_norm
+                    for i in range(len(current_seq) - window_size + 1)
+                )
+                if not found:
+                    missing_hebrew_clauses.append({
+                        "page": page_no,
+                        "word_count": len(current_seq),
+                        "sample": " ".join(current_seq[:10]),
+                    })
 
     return {
         "greek_clauses_checked": checked_greek,

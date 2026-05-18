@@ -2128,6 +2128,35 @@ Stage 1 and Stage 2 both used shallow dict spreading to combine `VOLUME_CONFIG` 
 
 ---
 
+## [Issue 120] Greek Extraction and Clause-Audit Hardening
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+The V1 text-integrity audit reported 14 missing Greek clauses. Initial suspicion was that these passages were dropped during extraction because only two exact Koine font names were checked before falling back to Markdown extraction.
+
+### 2. Root Cause
+The extraction risk was real but not the main cause of the V1 warning. V1's reported sample pages contained `Koine-Medium` spans and the Greek passages were present in the intermediate JSON/EPUB. The audit was also constructing false dense clauses by collecting every Greek word on a PDF page and joining them together even when English prose separated the snippets. That produced impossible synthetic clauses, especially on patristic discussion pages containing many short Greek terms.
+
+### 3. Fixes
+- Added shared font helpers in `shared.py`: `is_greek_font()`, `is_hebrew_font()`, `contains_greek()`, and `contains_hebrew()`.
+- Broadened extraction routing in `extract.py` so pages with any Koine/Gideon font variant or existing Unicode Greek/Hebrew spans use the font-aware path.
+- Routed span conversion through the shared font helpers instead of duplicate exact-name sets.
+- Updated `scripts/audit_text_integrity.py` to use the same shared font helpers.
+- Rewrote Greek/Hebrew clause fidelity to check contiguous script runs only, without crossing Latin prose gaps.
+- Lowered the V1 regression budget for missing Greek clauses to `0`.
+- Added `tests/test_greek_extraction_hardening.py` for subset-font conversion, Unicode-Greek page routing, and contiguous-clause audit behavior.
+
+### 4. Validation
+- Full V1 rebuild completed with `.venv/bin/python3 volumes/v1/convert.py`.
+- `tests/test_greek_extraction_hardening.py tests/test_config_hardening.py tests/test_structural_standardization.py tests/test_bug_regressions.py`: `32 passed`.
+- EPUB audit: 0 errors, 1 existing warning (`repeated_phrases`), 0 untagged Greek, 0 untagged Hebrew.
+- Text-integrity audit: Greek words `812 / 812`, Greek coverage `0.9987`, Greek clauses checked `38`, missing Greek clauses `0`.
+- Bug regression audit: PASS.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives

@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 9
+- Warnings: 8
 - PDF pages: 633
 - EPUB text files: 81
 - EPUB paragraphs/headings: 2802
@@ -52,8 +52,8 @@
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
 - Hebrew word coverage ratio: 1.0
-- Greek clauses checked: 42
-- Missing Greek clauses: 14
+- Greek clauses checked: 38
+- Missing Greek clauses: 0
 - Hebrew clauses checked: 1
 - Missing Hebrew clauses: 0
 
@@ -67,7 +67,6 @@
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
@@ -167,19 +166,6 @@
 ## Excess Word Samples
 
 - word: faithfulness; pdf: 5; epub: 12
-
-## Missing Greek Clauses
-
-- page: 26; word_count: 54; sample: ουτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
-- page: 32; word_count: 13; sample: υποστατις φυσις μιαν φυσιν οτι κατ αληθειαν εστι μια φυσις του λογου
-- page: 37; word_count: 5; sample: ενωσιν φυσικην ενωσιν κατα συνθεσιν
-- page: 37; word_count: 11; sample: υιος θεου υιος ανθρωπου γινεται ουτω δε φωτος ηλιου μια και
-- page: 42; word_count: 11; sample: παιδαγωγος θεος εν ανθρωπου σχηματι αχραντος πατρικω θεληματι διακονος λογος θεος
-- page: 57; word_count: 14; sample: συ ει πετρος και επι ταυτη τη πετρα συ ει πετρος και
-- page: 105; word_count: 6; sample: εν πατρι προς τον πατερα θεον
-- page: 109; word_count: 11; sample: εν προσωπω του χηριστου λογος του θεου λογος ουσιωδης λογος προφορικος
-- page: 293; word_count: 8; sample: ατρεπτως αδιαιρετως ασυγχυτως αχωριστως ουσιωδως ενσαρκωσις ενσωματωσις ενανθρωπησις
-- page: 299; word_count: 6; sample: κατ αξιαν κατα ταυτοβουλιαν καθ ομωνυμιαν
 
 ## Limits
 

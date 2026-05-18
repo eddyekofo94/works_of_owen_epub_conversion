@@ -918,10 +918,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T22:30:56.586636+00:00
+**Last run:** 2026-05-18T22:43:46.919173+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -1087,11 +1088,13 @@ Warnings requiring triage:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T22:31:38.448089+00:00
-**Status:** WARN (9 warnings)
+**Last run:** 2026-05-18T22:44:55.806376+00:00
+**Status:** WARN (8 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1134,7 +1137,7 @@ Reports:
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 14 |
+| Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -1147,7 +1150,6 @@ Warnings requiring triage:
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
@@ -1409,3 +1411,13 @@ Warnings requiring triage:
 2. Added spacing after normalized markers when a word follows, so `f53and` becomes `[f53] and`.
 3. Applied the normalization in `extract.clean_text()` and kept the render-time safety net for cached content.
 4. Added a regression test for the fused-marker case and rebuilt Volume 1.
+
+### 120. Greek extraction and clause-audit hardening (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The V1 text-integrity audit reported 14 missing Greek clauses, raising concern that Greek text was being lost before it reached the intermediate JSON.
+**Root cause:** V1's sampled Greek passages were present in the JSON/EPUB, but the audit was stitching every Greek word on a PDF page into one synthetic clause even when English prose separated the Greek snippets. There was also a real future-volume risk because font detection depended on two exact Koine/Gideon font names.
+**Fix:**
+1. Added shared Greek/Hebrew font and Unicode detection helpers.
+2. Broadened extraction routing so Koine/Gideon font variants and Unicode Greek/Hebrew spans use font-aware extraction.
+3. Updated the audit to use the same font helpers as extraction/rendering.
+4. Changed Greek/Hebrew clause fidelity to check only contiguous script runs.
+5. Lowered V1's missing-Greek-clause regression budget to `0` and added focused regression tests.

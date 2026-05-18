@@ -108,7 +108,8 @@
     "1": {
       "text_integrity": {
         "max_split_candidate_count": 125,
-        "max_repeated_window_count": 25
+        "max_repeated_window_count": 25,
+        "max_missing_greek_clauses": 0
       },
       "epub": {
         "max_error_count": 0,

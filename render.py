@@ -45,10 +45,6 @@ FONT_BASE = os.path.join(_RENDER_DIR, 'fonts')
 # SHARED CONSTANTS (also used by extract.py)
 # ================================================================
 
-# ─── Font Detection ────────────────────────────────────────────
-GREEK_FONTS = {'Koine-Medium', 'ENLFEN+Koine-Medium'}
-HEBREW_FONTS = {'Gideon-Medium', 'MOLFEN+Gideon-Medium'}
-
 # Regex for detecting Beta Code words that missed font tagging.
 # Keep this conservative: the fallback runs after ordinary prose has been
 # escaped, so broad markers like apostrophe or leading j/J corrupt English

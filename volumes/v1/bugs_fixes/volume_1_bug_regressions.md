@@ -21,7 +21,7 @@
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
-| Missing Greek clauses | 14 | 16 | OK |
+| Missing Greek clauses | 0 | 0 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
@@ -76,14 +76,6 @@
 - phrase: our beholding the glory of christ by faith in this
 - phrase: beholding the glory of christ by faith in this world
 - phrase: the glory of christ by faith in this world and
-
-### Missing Greek clauses
-
-- page: 26; sample: ουτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
-- page: 32; sample: υποστατις φυσις μιαν φυσιν οτι κατ αληθειαν εστι μια φυσις του λογου
-- page: 37; sample: ενωσιν φυσικην ενωσιν κατα συνθεσιν
-- page: 37; sample: υιος θεου υιος ανθρωπου γινεται ουτω δε φωτος ηλιου μια και
-- page: 42; sample: παιδαγωγος θεος εν ανθρωπου σχηματι αχραντος πατρικω θεληματι διακονος λογος θεος
 
 ### Repeated phrase hits
 

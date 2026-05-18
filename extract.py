@@ -29,6 +29,7 @@ from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters,
+    is_greek_font, is_hebrew_font, contains_greek, contains_hebrew,
 )
 
 # Re-import rendering constants that extraction code also uses
@@ -65,9 +66,6 @@ PAGE_H = 626
 COLOR_BLUE = 212
 COLOR_GREEN = 25617
 COLOR_RED = 8388608
-
-GREEK_FONTS = {'Koine-Medium', 'ENLFEN+Koine-Medium'}
-HEBREW_FONTS = {'Gideon-Medium', 'MOLFEN+Gideon-Medium'}
 
 # ================================================================
 # AGES VERSE MARKER TRANSLATION
@@ -782,7 +780,7 @@ def _parse_visual_toc(doc, toc_page_num, config=None):
 # ================================================================
 
 def page_has_special_fonts(page):
-    """Check if a PyMuPDF page contains Greek or Hebrew font spans."""
+    """Check if a PyMuPDF page contains Greek/Hebrew font or Unicode spans."""
     blocks = page.get_text('dict')['blocks']
     for b in blocks:
         if b['type'] != 0:
@@ -790,9 +788,10 @@ def page_has_special_fonts(page):
         for line in b['lines']:
             for span in line['spans']:
                 font = span.get('font', '')
-                if any(gf in font for gf in GREEK_FONTS):
+                text = span.get('text', '')
+                if is_greek_font(font) or contains_greek(text):
                     return 'greek'
-                if any(hf in font for hf in HEBREW_FONTS):
+                if is_hebrew_font(font) or contains_hebrew(text):
                     return 'hebrew'
     return None
 
@@ -1050,10 +1049,9 @@ def extract_structural_page(page, page_height=PAGE_H):
 
 def convert_span_text(text, font):
     """Convert text based on font encoding."""
-    font_upper = font.upper()
-    if any(gf.upper() in font_upper for gf in GREEK_FONTS):
+    if is_greek_font(font):
         return convert_greek_word(text)
-    if any(hf.upper() in font_upper for hf in HEBREW_FONTS):
+    if is_hebrew_font(font):
         return convert_gideon_hebrew(text)
     return text
 
@@ -1228,9 +1226,9 @@ def _converted_pdf_line(line):
     for span in line['spans']:
         span_text = span['text']
         font = span.get('font', '')
-        if any(gf in font for gf in GREEK_FONTS):
+        if is_greek_font(font):
             span_text = convert_greek_word(span_text)
-        elif any(hf in font for hf in HEBREW_FONTS):
+        elif is_hebrew_font(font):
             span_text = convert_gideon_hebrew(span_text)
         converted_parts.append(span_text)
     return ''.join(converted_parts).strip()

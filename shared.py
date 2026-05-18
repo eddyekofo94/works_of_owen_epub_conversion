@@ -9,6 +9,31 @@ import unicodedata
 import re
 from copy import deepcopy
 
+GREEK_FONT_MARKERS = ('Koine',)
+HEBREW_FONT_MARKERS = ('Gideon',)
+GREEK_UNICODE_RE = re.compile(r'[\u0370-\u03FF\u1F00-\u1FFF]')
+HEBREW_UNICODE_RE = re.compile(r'[\u0590-\u05FF]')
+
+
+def is_greek_font(font_name):
+    """Return True for AGES Koine font names, including subset prefixes."""
+    font = font_name or ''
+    return any(marker.lower() in font.lower() for marker in GREEK_FONT_MARKERS)
+
+
+def is_hebrew_font(font_name):
+    """Return True for AGES Gideon font names, including subset prefixes."""
+    font = font_name or ''
+    return any(marker.lower() in font.lower() for marker in HEBREW_FONT_MARKERS)
+
+
+def contains_greek(text):
+    return bool(GREEK_UNICODE_RE.search(text or ''))
+
+
+def contains_hebrew(text):
+    return bool(HEBREW_UNICODE_RE.search(text or ''))
+
 # ============================================================================
 # VOLUME METADATA — Owen Works (16 volumes)
 # ============================================================================
