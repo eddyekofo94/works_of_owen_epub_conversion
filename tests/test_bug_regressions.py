@@ -136,6 +136,13 @@ def test_empty_scripture_code_brackets_are_removed():
     assert "Ephesians 4:30" in cleaned
 
 
+def test_fused_footnote_marker_before_word_is_isolated():
+    cleaned = clean_text("In three things; — first, in causing f53and things to work together.")
+
+    assert "causing [f53] and things" in cleaned
+    assert "f53and" not in cleaned
+
+
 def test_issue_29_scholarly_citation_breaks_are_healed():
     raw = """Augustine gives an account of the same difference: De Trinitate, lib. 5 cap. , 8,
 9. Athanasius endeavored the composing of this difference.

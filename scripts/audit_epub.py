@@ -232,7 +232,7 @@ class Audit:
             self.warn("missing_ncx", "No NCX file found in manifest")
         if not any(item["href"].lower().endswith((".ttf", ".otf")) for item in self.manifest.values()):
             self.error("missing_fonts", "No embedded font files found in manifest")
-        if not any("cover" in item["properties"].split() or item_id == "cover-img" for item_id, item in self.manifest.items()):
+        if not any("cover" in item["properties"] or item_id == "cover-img" for item_id, item in self.manifest.items()):
             self.warn("missing_cover_manifest_hint", "No obvious cover image manifest hint found")
 
     def check_xhtml(self, zf: zipfile.ZipFile) -> None:

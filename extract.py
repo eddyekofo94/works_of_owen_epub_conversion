@@ -1682,6 +1682,16 @@ def _remove_adjacent_line_overlaps(text):
     return '\n'.join(out)
 
 
+def _normalize_extracted_footnote_markers(text):
+    """Normalize AGES inline markers before paragraph healing can merge words."""
+    def repl(match):
+        fn = next(group for group in match.groups() if group)
+        return f'[f{fn}]'
+
+    text = LOOSE_FOOTNOTE_MARKER_RE.sub(repl, text)
+    return re.sub(r'(\[f\d+\])(?=[A-Za-z])', r'\1 ', text)
+
+
 def clean_text(text, config=None):
     """Sanitize extracted text before paragraph reconstruction."""
     if not text:
@@ -1692,6 +1702,7 @@ def clean_text(text, config=None):
 
     # 0a. Owen-specific OCR repairs (Issue 75/108)
     text = _repair_owen_ocr_errors(text, config=config)
+    text = _normalize_extracted_footnote_markers(text)
 
     # 0b. Normalize spaced-caps OCR and I WILL / I AM mangles
     text = _normalize_spaced_caps(text)

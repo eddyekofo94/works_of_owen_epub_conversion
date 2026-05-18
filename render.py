@@ -75,7 +75,11 @@ GIDEON_HEBREW_RE = re.compile(
 
 FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
 LOOSE_FOOTNOTE_MARKER_RE = re.compile(
-    r'\[\s*f\s*(\d{1,3})\s*\]|(?<=[a-z])f\s*(\d{1,3})\b|(?<![A-Za-z])f\s*(\d{1,3})\b',
+    r'\[\s*f\s*(\d{1,3})\s*\]|'
+    r'(?<=[a-z])f\s*(\d{1,3})(?=[a-z])|'
+    r'(?<![A-Za-z])f\s*(\d{1,3})(?=[a-z])|'
+    r'(?<=[a-z])f\s*(\d{1,3})\b|'
+    r'(?<![A-Za-z])f\s*(\d{1,3})\b',
     re.I,
 )
 FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
@@ -317,9 +321,11 @@ SCRIPTURE_CONTINUATION_TRAIL_RE = re.compile(
 def normalize_footnote_markers(text):
     """Normalize AGES inline footnote markers like f2 or [ f2] to [f2]."""
     def repl(match):
-        return f'[f{match.group(1) or match.group(2) or match.group(3)}]'
+        fn = next(group for group in match.groups() if group)
+        return f'[f{fn}]'
 
-    return LOOSE_FOOTNOTE_MARKER_RE.sub(repl, text)
+    text = LOOSE_FOOTNOTE_MARKER_RE.sub(repl, text)
+    return re.sub(r'(\[f\d+\])(?=[A-Za-z])', r'\1 ', text)
 
 
 def _noteref_link(fn_num):
@@ -2188,6 +2194,26 @@ def repackage_canonical(epub_path, src_dir):
                    cwd=src_dir, check=True)
 
 
+def _add_cover_manifest_properties(tmp_dir):
+    """Add properties='cover-image' to the cover manifest item in OPF."""
+    import lxml.etree as et
+    opf_path = os.path.join(tmp_dir, 'EPUB', 'content.opf')
+    if not os.path.exists(opf_path):
+        return
+    tree = et.parse(opf_path)
+    ns = {'opf': 'http://www.idpf.org/2007/opf'}
+    manifest = tree.find('.//opf:manifest', ns)
+    if manifest is None:
+        return
+    for item in manifest.findall('opf:item', ns):
+        uid = item.get('id', '')
+        if uid == 'cover-image':
+            props = item.get('properties', '')
+            if 'cover-image' not in props:
+                item.set('properties', props + ' cover-image' if props else 'cover-image')
+    tree.write(opf_path, xml_declaration=True, encoding='UTF-8')
+
+
 def _inject_apple_books_options(epub_path):
     """Post-process EPUB to add the Apple Books display-options file in META-INF."""
     tmp = epub_path + '.tmp'
@@ -2219,7 +2245,7 @@ def _inject_apple_books_options(epub_path):
 # MAIN PIPELINE
 # ================================================================
 
-def build_endnotes_chapter(footnotes, style_item=None):
+def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None):
     fn_map = {f.fnum: f for f in footnotes.values()}
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
     for fnum in sorted(fn_map.keys()):
@@ -2756,7 +2782,7 @@ def render_volume(vol_num: int, overrides: dict = None,
         mt = 'image/jpeg' if ext in ('.jpg', '.jpeg') else 'image/png'
         with open(cover_path, 'rb') as f:
             cover_item = epub.EpubItem(
-                uid='cover-image', file_name=f'images/cover{ext}', 
+                uid='cover-image', file_name=f'images/cover{ext}',
                 media_type=mt, content=f.read(),
             )
         book.add_item(cover_item)
@@ -2876,6 +2902,10 @@ def render_volume(vol_num: int, overrides: dict = None,
         if html_postprocess_hook:
             ch_context = {**ch_dict, 'is_catechism_context': in_catechism_context}
             body_html = html_postprocess_hook(body_html, ch_context)
+        inline_replacements = config.get('inline_html_replacements', {})
+        if inline_replacements:
+            for old, new in inline_replacements.items():
+                body_html = body_html.replace(old, new)
         if not body_html.strip():
             continue
 
@@ -2940,14 +2970,15 @@ def render_volume(vol_num: int, overrides: dict = None,
 
     # ── Write and repackage ──────────────────────────────────────
     import tempfile as _tempfile
+    import zipfile as _zf
     # ebooklib writes a valid EPUB but not in canonical form (mimetype must be
     # first and uncompressed). Write to a temp path, extract, repackage.
     temp_epub = epub_path + '.tmp_build'
     epub.write_epub(temp_epub, book)
     with _tempfile.TemporaryDirectory() as tmp:
-        import zipfile as _zf
         with _zf.ZipFile(temp_epub, 'r') as z:
             z.extractall(tmp)
+        _add_cover_manifest_properties(tmp)
         repackage_canonical(epub_path, tmp)
     if os.path.exists(temp_epub):
         os.remove(temp_epub)

@@ -2070,6 +2070,34 @@ Roman-marker detection was still case-insensitive in the fallback heading and in
 
 ---
 
+## [Issue 118] Fused AGES Footnote Marker Isolation
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Chapter 6 of the Lesser Catechism (`of God's Actual Providence`) rendered the footnote reference as literal text: `causing f53and things to work together`, leaving endnote 53 without a matching noteref.
+
+### 2. Root Cause
+The loose AGES footnote marker regex handled `hisf50` and bare `f50`, but required a word boundary after the marker number. The OCR form `f53and` has a lowercase word immediately after the number, so it survived extraction as ordinary text. Because the renderer only converts normalized `[fN]` markers, the final EPUB exposed `f53and` and the audit reported an orphan endnote.
+
+### 3. Fixes
+- Extended loose footnote marker parsing to detect `fNN` before an immediate lowercase word.
+- Added a post-normalization spacer so `f53and` becomes `[f53] and` instead of `[f53]and`.
+- Applied the same normalization in `extract.clean_text()` so the JSON intermediate is corrected, with the renderer retaining a cached-text safety net.
+- Added a regression test for the fused-marker case.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py`.
+- Verified `volume_1.json` now contains `causing [f53] and things`.
+- Verified `ch056.xhtml` links to `endnotes.xhtml#fn53`.
+- `tests/test_structural_standardization.py tests/test_bug_regressions.py`: `27 passed`.
+- EPUB audit: 0 errors, noteref links 124, endnote anchors 124, orphan-endnote warning removed.
+- Text-integrity audit: 0.9945 coverage ratio, 0 inline structural marker candidates, 0 missing enumerator markers.
+- Bug regression audit: PASS.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives

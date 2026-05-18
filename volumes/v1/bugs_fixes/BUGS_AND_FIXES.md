@@ -903,12 +903,25 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T20:59:36.192522+00:00
+**Last run:** 2026-05-18T21:53:33.802445+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 4 warnings)
+**Status:** WARN (0 errors, 1 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -921,9 +934,9 @@ Reports:
 | Spine items | 81 |
 | Embedded fonts | 11 |
 | NAV links | 81 |
-| Greek chars / untagged | 4080 / 8 |
+| Greek chars / untagged | 4081 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
-| Noteref links / endnote anchors | 123 / 124 |
+| Noteref links / endnote anchors | 124 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -932,10 +945,7 @@ Reports:
 
 Warnings requiring triage:
 
-- `missing_cover_manifest_hint`: No obvious cover image manifest hint found
-- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
-- `orphan_endnotes`: Some endnote anchors have no matching noteref
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -1069,10 +1079,12 @@ Warnings requiring triage:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T21:00:06.541535+00:00
+**Last run:** 2026-05-18T21:54:06.119155+00:00
 **Status:** WARN (9 warnings)
 
 Reports:
@@ -1085,7 +1097,7 @@ Reports:
 | EPUB text files | 81 |
 | EPUB paragraphs/headings | 3007 |
 | Approximate PDF-to-EPUB word coverage | 0.9945 |
-| Weak page matches | 23 |
+| Weak page matches | 24 |
 | Dense source windows checked | 783 |
 | Missing dense source-window pages | 609 |
 | Front CONTENTS pages checked | 4 |
@@ -1112,7 +1124,7 @@ Reports:
 | EPUB enumerator markers | 310 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 812 / 811 |
+| PDF Greek words / EPUB Greek words | 812 / 812 |
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
@@ -1382,3 +1394,12 @@ Warnings requiring triage:
 3. Added leading scripture-reference tail splitting/merging for blockquote tails and quoted prose reference tails.
 4. Added a V1-specific OCR replacement for `open the door, I will come...`.
 5. Added regression coverage for textual TODO issues 37-40 and rebuilt Volume 1.
+
+### 118. Fused AGES footnote marker before a word (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Chapter 6 of the Lesser Catechism rendered `causing f53and things to work together`, exposing the AGES footnote marker as body text and leaving endnote 53 without a matching noteref.
+**Root cause:** The loose marker parser normalized `hisf50` and bare `f50`, but missed `f53and` because the marker number was immediately followed by a lowercase word and therefore had no word boundary.
+**Fix:**
+1. Extended loose footnote marker parsing to isolate `fNN` before an immediate lowercase word.
+2. Added spacing after normalized markers when a word follows, so `f53and` becomes `[f53] and`.
+3. Applied the normalization in `extract.clean_text()` and kept the render-time safety net for cached content.
+4. Added a regression test for the fused-marker case and rebuilt Volume 1.
