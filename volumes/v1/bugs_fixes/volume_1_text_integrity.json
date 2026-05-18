@@ -2,9 +2,9 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T08:22:06.945245+00:00",
+  "generated_at": "2026-05-18T10:45:48.757349+00:00",
   "status": "warn",
-  "warning_count": 9,
+  "warning_count": 8,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -27,10 +27,6 @@
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     },
     {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
       "code": "overlong_heading_candidates",
       "message": "Some chapter headings are long enough to suggest swallowed body text"
     },
@@ -48,7 +44,7 @@
   },
   "epub": {
     "spine_text_files": 83,
-    "paragraph_count": 3083
+    "paragraph_count": 3076
   },
   "word_coverage": {
     "pdf_content_tokens": 211474,
@@ -531,51 +527,19 @@
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 586,
     "bottom_windows_usable": 555,
-    "skipped_bottom_window_count": 6,
-    "skipped_bottom_windows": [
-      {
-        "page": 26,
-        "window": "oijkodomh sw mou th ejhkklhsi an kai pu lai dou ouj katiscu sousin aujth",
-        "sample": "oijkodomh>sw mou th<n ejhkklhsi>an, kai< pu>lai a[|dou ouj katiscu>sousin aujth~v\".",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 45,
-        "window": "does not follow that we may make request in our prayers unto one person",
-        "sample": "tria<v ejn eJni< ojno>mati ajriqmoume>nh\", Epiphan. Ancorat., 8 22,) it does not follow that we may make a request in our prayers unto one person,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 50,
-        "window": "ambrose in psalm 118 octonar decim of the authorized english version psalm 119 73",
-        "sample": "man may become\" (as) \"God.\" And Ambrose, in Psalm 118 Octonar. decim.: [of the authorized English version, Psalm 119 73:]",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 192,
-        "window": "the sober sedate actings of the rational faculties of our souls for whereas all",
-        "sample": "[3.] As it is described by those who applaud it, it is not suited unto the sober, sedate actings of the rational faculties of our souls. For whereas all",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 196,
-        "window": "love of the body is derived unto it from the love unto the head",
-        "sample": "ejxoch>n\"; as in all things he was to have the preeminence, 1:18. The love of the body is derived unto it from the love unto the Head;",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 293,
-        "window": "god such are ejnsa rkwsiv incarnation ejnswma twsiv embodying ejnanqrw phsiv inhumanation hj despotikh",
-        "sample": "of God. Such are \"ejnsa>rkwsiv\", \"incarnation;\" \"ejnswma>twsiv\", \"embodying,\" \"ejnanqrw>phsiv\", \"inhumanation;\" \"hJ despotikh<",
-        "reason": "font-encoded Greek/Hebrew window"
-      }
-    ],
-    "missing_bottom_window_count": 18,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 20,
     "missing_bottom_windows": [
       {
         "page": 25,
         "window": "matthew 16 18 whereon the church is built",
         "sample": "Matthew 16:18:) whereon the church is built: ("
+      },
+      {
+        "page": 26,
+        "window": "oijkodomh sw mou th ejhkklhsi an kai pu lai dou ouj katiscu sousin aujth",
+        "sample": "oijkodomh>sw mou th<n ejhkklhsi>an, kai< pu>lai a[|dou ouj katiscu>sousin aujth~v\"."
       },
       {
         "page": 87,
@@ -611,6 +575,11 @@
         "page": 241,
         "window": "ecclesiastes 29 unto wherein it did consist see",
         "sample": "Ecclesiastes 7:29; unto. Wherein it did consist, see"
+      },
+      {
+        "page": 293,
+        "window": "god such are ejnsa rkwsiv incarnation ejnswma twsiv embodying ejnanqrw phsiv inhumanation hj despotikh",
+        "sample": "of God. Such are \"ejnsa>rkwsiv\", \"incarnation;\" \"ejnswma>twsiv\", \"embodying,\" \"ejnanqrw>phsiv\", \"inhumanation;\" \"hJ despotikh<"
       },
       {
         "page": 380,
@@ -665,8 +634,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2750,
-    "split_candidate_count": 35,
+    "paragraphs_checked": 2743,
+    "split_candidate_count": 27,
     "split_candidates": [
       {
         "file": "EPUB/ch005.xhtml",
@@ -800,52 +769,12 @@
       },
       {
         "file": "EPUB/ch078.xhtml",
-        "previous": "FT1 The Christian Ministry, p. 42-44, by the Rev. Charles Bridges,",
-        "next": "A.M. FT2 See his interesting History of the British Churches in the Netherlands. FT3 Mr. Ryland of Northampton entertained a strong opinion in regard to"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "A.M. FT2 See his interesting History of the British Churches in the Netherlands. FT3 Mr. Ryland of Northampton entertained a strong opinion in regard to",
+        "previous": "y the Rev. Charles Bridges, A.M. FT2 See his interesting History of the British Churches in the Netherlands. FT3 Mr. Ryland of Northampton entertained a strong opinion in regard to",
         "next": "the value of the same work. In a tract entitled, \"A Select Library for the Student of Divinity,\" he gives an estimate of its merits with an amusing intensity of expression. \"This b"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "ivinity, with their pompous bindings armed us monuments of human folly, in our book cases and libraries. See Dr. Cotton Mather's \"Student and Preacher,\" republished by John Ryland,",
-        "next": "A.M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio "
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "vinity, and held in high repute during mediaeval times. It appeared in 1172. ED. FT7 The first four of these terms were adopted by the Fourth OEcumenical Council, held a Chalcedon,",
-        "next": "A.D. 451. ED. FT8 Eutyches was a prsbyter and abbot at Constantinople, and distinguished himself by his opposition to the Nestorians,"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "A.D. 451. ED. FT8 Eutyches was a prsbyter and abbot at Constantinople, and distinguished himself by his opposition to the Nestorians,",
-        "next": "A.D. 448, asserting that in Christ there is but one nature, and was condemned by the General Council at Chalcedon,"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "A.D. 448, asserting that in Christ there is but one nature, and was condemned by the General Council at Chalcedon,",
-        "next": "A.D. 451. In the preface to this work, p. 11, he is called \"The Archimandrite.\" Mandrite is a Syriac word for \"monk.\" Archimandrite corresponds with the term \"abbot\" in Europe. ED."
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "\" Archimandrite corresponds with the term \"abbot\" in Europe. ED. FT9 Born at Germanicia, in the north or Syria ordained a presbyter at Antioch appointed patriarch of Constantinople",
-        "next": "A.D.428 objected to the epithet Θεοτόκος , as applied to the Virgin Mary, because \"that God should be born of a human being is impossible\" charged in consequence with maintaining t"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "f Christ, insisting on a connection between them by συνάφεια (junction), or ἐνοίκησις (indwelling), in opposition to ἕνωσις (union) deposed by the Third General Council of Ephesus,",
-        "next": "A.D.431, and died probably before"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "A.D.431, and died probably before",
-        "next": "A.D. 450. ED. FT10 The expression quoted by Dr Owen is founded upon the phrase in the original language, διεληλυθότα τοὺς οὐρανόυς \"having passed through,\" not \"into the heavens,\" "
       }
     ],
     "structural_start_exclusions": 164,
-    "short_fragment_count": 49,
+    "short_fragment_count": 46,
     "short_fragments": [
       {
         "file": "EPUB/ch006.xhtml",
@@ -953,14 +882,6 @@
       },
       {
         "file": "EPUB/ch049.xhtml",
-        "text": "- Chapter 20."
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "- Chapter 21."
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
         "text": "Glory be to God on high!"
       },
       {
@@ -1006,17 +927,20 @@
       {
         "file": "EPUB/ch064.xhtml",
         "text": "OF THE TWO-FOLD ESTATE OF CHRIST."
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "OF THE CHURCH."
+      },
+      {
+        "file": "EPUB/ch067.xhtml",
+        "text": "OF FAITH."
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 1,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch078.xhtml",
-        "text": "A.M. of Northampton, 1781. FT4 A statement occurs in the \"Encyclopaedia Britannica\" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the statement is true; but th"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -1271,158 +1195,83 @@
     "missing_hebrew_word_samples": []
   },
   "greek_hebrew_clause_fidelity": {
-    "greek_clauses_checked": 44,
-    "missing_greek_clause_count": 44,
+    "greek_clauses_checked": 43,
+    "missing_greek_clause_count": 15,
     "missing_greek_clauses": [
       {
         "page": 26,
         "word_count": 54,
-        "sample": "υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις"
-      },
-      {
-        "page": 27,
-        "word_count": 11,
-        "sample": "επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν"
-      },
-      {
-        "page": 31,
-        "word_count": 5,
-        "sample": "πρόσωπον ὁμοιούσιος ἑτερούσιος ἐξ οὐκ"
+        "sample": "ουτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις"
       },
       {
         "page": 32,
         "word_count": 13,
-        "sample": "ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου"
-      },
-      {
-        "page": 36,
-        "word_count": 31,
-        "sample": "τὸν θεοῦ μεσίτην καὶ ἀνθρώπων κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε"
+        "sample": "υποστατις φυσις μιαν φυσιν οτι κατ αληθειαν εστι μια φυσις του λογου"
       },
       {
         "page": 37,
         "word_count": 5,
-        "sample": "ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν"
+        "sample": "ενωσιν φυσικην ενωσιν κατα συνθεσιν"
       },
       {
         "page": 37,
         "word_count": 11,
-        "sample": "υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ"
-      },
-      {
-        "page": 37,
-        "word_count": 22,
-        "sample": "αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα φωτίζει δὲ"
-      },
-      {
-        "page": 37,
-        "word_count": 37,
-        "sample": "εἰ γοῦν ὥς ἐν ὑποθέσει λόγου καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος"
-      },
-      {
-        "page": 40,
-        "word_count": 13,
-        "sample": "χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς ῆν γὰρ ἐν θεῷ καὶ τοῦ"
-      },
-      {
-        "page": 40,
-        "word_count": 8,
-        "sample": "ιναι ἄιτιος νῦν δὲ ἐπεφάνη ἀνθρώποις ἀυτὸς οῦτος"
-      },
-      {
-        "page": 40,
-        "word_count": 10,
-        "sample": "μόνος ἄμφω θεός τε καὶ ἄνθρωπος ἁπάντων ἡμῖν αἴτιος ἀγαθων"
-      },
-      {
-        "page": 41,
-        "word_count": 5,
-        "sample": "μεν γὰρ τοῦ θεοῦ εἰκὼν"
-      },
-      {
-        "page": 41,
-        "word_count": 7,
-        "sample": "λόγος αὐτοῦ καὶ υἱὸς τοῦ νοῦ γνήσιος"
-      },
-      {
-        "page": 41,
-        "word_count": 9,
-        "sample": "θεῖος λόγος φωτὸς ἀρχέτυπον φῶς εἰκὼν δὲ τοῦ λόγου"
-      },
-      {
-        "page": 41,
-        "word_count": 40,
-        "sample": "θεὸς καὶ γνωρίζεται οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν"
+        "sample": "υιος θεου υιος ανθρωπου γινεται ουτω δε φωτος ηλιου μια και"
       },
       {
         "page": 42,
         "word_count": 11,
-        "sample": "παιδαγωγὸς θεὸς ἐν ἀνθρώπου σχήματι ἄχραντος πατρικῷ θελήματι διάκονος λόγος θεὸς"
+        "sample": "παιδαγωγος θεος εν ανθρωπου σχηματι αχραντος πατρικω θεληματι διακονος λογος θεος"
       },
       {
-        "page": 42,
-        "word_count": 12,
-        "sample": "ἐκ δεξιῶν τοῦ πατρὸς σὺν καὶ τῷ σχήματι θεοῦ οῦτος ἡμῖν εἰκῶν"
+        "page": 57,
+        "word_count": 14,
+        "sample": "συ ει πετρος και επι ταυτη τη πετρα συ ει πετρος και"
       },
       {
-        "page": 42,
+        "page": 105,
+        "word_count": 6,
+        "sample": "εν πατρι προς τον πατερα θεον"
+      },
+      {
+        "page": 109,
+        "word_count": 11,
+        "sample": "εν προσωπω του χηριστου λογος του θεου λογος ουσιωδης λογος προφορικος"
+      },
+      {
+        "page": 293,
         "word_count": 8,
-        "sample": "ἀκηλίδωτος τούτῳ πάντι σθένει πειρατέον ἐξομοιοῦν τὴν ψυχήν"
+        "sample": "ατρεπτως αδιαιρετως ασυγχυτως αχωριστως ουσιωδως ενσαρκωσις ενσωματωσις ενανθρωπησις"
       },
       {
-        "page": 42,
-        "word_count": 8,
-        "sample": "μὲν οῦν θεὸς ἀναπόδεικτος ὤν οὐκ ἔστιν ἐπιστημονικός"
+        "page": 299,
+        "word_count": 6,
+        "sample": "κατ αξιαν κατα ταυτοβουλιαν καθ ομωνυμιαν"
       },
       {
-        "page": 42,
-        "word_count": 15,
-        "sample": "δὲ υἱος σοφία τε ἐστι καὶ ἐπιστ μῃ καὶ ἀλήθεια καὶ ὅσα"
-      },
-      {
-        "page": 44,
-        "word_count": 49,
-        "sample": "πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς καὶ τοῦ υἱοῦ καὶ τοῦ ἁγίου"
-      },
-      {
-        "page": 45,
-        "word_count": 9,
-        "sample": "κατὰ τὸν αὐτὸν οῖμαι τρόπον καὶ λόγον μία προσκύνεσις"
-      },
-      {
-        "page": 45,
+        "page": 303,
         "word_count": 7,
-        "sample": "πατρὸς καὶ ἐνανθρωπήσαντος υἱοῦ καὶ ἁγίου πνεύματος"
+        "sample": "εναλλαγη αλλοιωσις κοινοτης τροπος αντιδοσεως κοινωνια ιδιωματων"
       },
       {
-        "page": 45,
-        "word_count": 8,
-        "sample": "τριὰς ἁγία ἀριθμουμένη τριὰς ἐν ἑνὶ ὀνόματι ἀριθμουμένη"
+        "page": 317,
+        "word_count": 7,
+        "sample": "ανεληφθη εν δοξη εισελθειν εις την δοξαν"
       },
       {
-        "page": 47,
-        "word_count": 21,
-        "sample": "ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ θεῷ εἰ γὰρ μὴ ἄνθρωπος"
-      },
-      {
-        "page": 47,
-        "word_count": 5,
-        "sample": "ἐχθρὸς πάλιν τε εἰ μὴ"
-      },
-      {
-        "page": 47,
+        "page": 379,
         "word_count": 13,
-        "sample": "θεὸς ἐδωρήσατο τὴν σωτηρίαν οὺκ ἆν βεβαίως ἔχοιμεν αὐτὴν καὶ ἐι μὴ"
+        "sample": "την δοξαν την εμην φωτισμον της γνωσεως της δοξης του θεου εν"
       },
       {
-        "page": 47,
-        "word_count": 31,
-        "sample": "ἄνθρωπος τῷ θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας εδει γὰρ τὸν"
+        "page": 382,
+        "word_count": 9,
+        "sample": "φασκοντες ειναι σοφοι λογισμοι συζητηται του αιωνος τουτου ψηλαφαν"
       },
       {
-        "page": 50,
-        "word_count": 17,
-        "sample": "τοῦ θεοῦ ἄνθρωπος γενομένος ἵνα δὲ καὶ σὺ παρὰ ἀνθρώπου μάθῃς πῆ"
+        "page": 635,
+        "word_count": 9,
+        "sample": "κατοπτριζω κατοπτρον εικων κατοπτριζει εντετυπωμενη θεοτοκος συναφεια ενοικησις ενωσις"
       }
     ],
     "hebrew_clauses_checked": 1,

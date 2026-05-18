@@ -892,10 +892,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T09:39:09.804556+00:00
+**Last run:** 2026-05-18T10:43:20.026079+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 4 warnings)
 
@@ -911,7 +913,7 @@ Reports:
 | Embedded fonts | 8 |
 | NAV links | 82 |
 | Greek chars / untagged | 4282 / 8 |
-| Hebrew chars / untagged | 155 / 0 |
+| Hebrew chars / untagged | 157 / 0 |
 | Noteref links / endnote anchors | 123 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
@@ -1046,11 +1048,15 @@ Warnings requiring triage:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T08:22:06.945245+00:00
-**Status:** WARN (9 warnings)
+**Last run:** 2026-05-18T10:45:48.757349+00:00
+**Status:** WARN (8 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1060,7 +1066,7 @@ Reports:
 |-------|--------|
 | PDF pages | 644 |
 | EPUB text files | 83 |
-| EPUB paragraphs/headings | 3083 |
+| EPUB paragraphs/headings | 3076 |
 | Approximate PDF-to-EPUB word coverage | 0.9963 |
 | Weak page matches | 23 |
 | Dense source windows checked | 794 |
@@ -1071,13 +1077,13 @@ Reports:
 | Top-of-page windows skipped as unstable | 21 |
 | Missing top-of-page body windows | 3 |
 | Bottom-of-page body windows checked | 555 |
-| Bottom-of-page windows skipped as unstable | 6 |
-| Missing bottom-of-page body windows | 18 |
-| Possible faulty paragraph splits | 35 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 20 |
+| Possible faulty paragraph splits | 27 |
 | Structural starts excluded from split warnings | 164 |
-| Short fragments | 49 |
+| Short fragments | 46 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 1 |
+| Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -1093,7 +1099,7 @@ Reports:
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 44 |
+| Missing Greek clauses | 15 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -1103,7 +1109,6 @@ Warnings requiring triage:
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB

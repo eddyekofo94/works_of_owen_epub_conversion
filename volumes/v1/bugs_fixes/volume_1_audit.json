@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T09:39:09.804556+00:00",
+  "generated_at": "2026-05-18T10:43:20.026079+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 4,
@@ -30,7 +30,7 @@
   ],
   "info": {
     "file_count": 105,
-    "epub_size_bytes": 2706833,
+    "epub_size_bytes": 2706843,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -49,7 +49,7 @@
     "language": {
       "greek_chars": 4282,
       "greek_untagged_chars": 8,
-      "hebrew_chars": 155,
+      "hebrew_chars": 157,
       "hebrew_untagged_chars": 0,
       "files_with_untagged_greek": 3,
       "files_with_untagged_hebrew": 0,

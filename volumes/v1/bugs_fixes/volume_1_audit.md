@@ -19,7 +19,7 @@
 
 - Greek chars: 4282
 - Untagged Greek chars: 8
-- Hebrew chars: 155
+- Hebrew chars: 157
 - Untagged Hebrew chars: 0
 - Noteref links: 123
 - Endnote anchors: 124

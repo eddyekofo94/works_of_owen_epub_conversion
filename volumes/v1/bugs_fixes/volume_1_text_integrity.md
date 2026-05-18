@@ -1,10 +1,10 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 9
+- Warnings: 8
 - PDF pages: 644
 - EPUB text files: 83
-- EPUB paragraphs/headings: 3083
+- EPUB paragraphs/headings: 3076
 
 ## Coverage
 
@@ -21,17 +21,17 @@
 - Top-of-page windows skipped as unstable: 21
 - Missing top-of-page body windows: 3
 - Bottom-of-page body windows checked: 555
-- Bottom-of-page windows skipped as unstable: 6
-- Missing bottom-of-page body windows: 18
+- Bottom-of-page windows skipped as unstable: 0
+- Missing bottom-of-page body windows: 20
 
 ## Paragraphs
 
-- Body paragraphs checked: 2750
-- Possible faulty paragraph splits: 35
+- Body paragraphs checked: 2743
+- Possible faulty paragraph splits: 27
 - Structural starts excluded from split warnings: 164
-- Short fragments: 49
+- Short fragments: 46
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 1
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
@@ -52,8 +52,8 @@
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
 - Hebrew word coverage ratio: 1.0
-- Greek clauses checked: 44
-- Missing Greek clauses: 44
+- Greek clauses checked: 43
+- Missing Greek clauses: 15
 - Hebrew clauses checked: 1
 - Missing Hebrew clauses: 0
 
@@ -64,7 +64,6 @@
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
@@ -91,6 +90,7 @@
 ## Missing Bottom-Of-Page Body Windows
 
 - page: 25; sample: Matthew 16:18:) whereon the church is built: (
+- page: 26; sample: oijkodomh>sw mou th<n ejhkklhsi>an, kai< pu>lai a[|dou ouj katiscu>sousin aujth~v".
 - page: 87; sample: Zechariah 6:13,) or the originally between Jehovah and the Branch, (
 - page: 98; sample: John 1:18; the Father, he has declared him:"
 - page: 99; sample: Exodus 33:18. Moses had Moses: "I beseech thee, show me thy glory:"
@@ -98,8 +98,7 @@
 - page: 156; sample: suffered, being tempted, he is touched with a feeling of our infirmities, and knows how to have compassion on them that are out of the way,
 - page: 195; sample: Matthew 3:17, "Lo, a voice from heaven, saying, heaven afterwards,
 - page: 241; sample: Ecclesiastes 7:29; unto. Wherein it did consist, see
-- page: 380; sample: 1 Corinthians 1:21-25. Not to see the wisdom apostle declares at large,
-- page: 397; sample: Colossians 3:10. the saving knowledge of him does,
+- page: 293; sample: of God. Such are "ejnsa>rkwsiv", "incarnation;" "ejnswma>twsiv", "embodying," "ejnanqrw>phsiv", "inhumanation;" "hJ despotikh<
 
 ## Possible Paragraph Splits
 
@@ -113,10 +112,6 @@
 - file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
 - file: EPUB/ch012.xhtml; previous: THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST; next: A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our
 - file: EPUB/ch013.xhtml; previous: HONOR DUE TO THE PERSON OF CHRIST — THE NATURE AND CAUSES OF IT; next: Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch078.xhtml; text: A.M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the st...
 
 ## Overlong Heading Candidates
 
@@ -170,16 +165,16 @@
 
 ## Missing Greek Clauses
 
-- page: 26; word_count: 54; sample: υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
-- page: 27; word_count: 11; sample: επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν
-- page: 31; word_count: 5; sample: πρόσωπον ὁμοιούσιος ἑτερούσιος ἐξ οὐκ
-- page: 32; word_count: 13; sample: ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου
-- page: 36; word_count: 31; sample: τὸν θεοῦ μεσίτην καὶ ἀνθρώπων κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε
-- page: 37; word_count: 5; sample: ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν
-- page: 37; word_count: 11; sample: υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ
-- page: 37; word_count: 22; sample: αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα φωτίζει δὲ
-- page: 37; word_count: 37; sample: εἰ γοῦν ὥς ἐν ὑποθέσει λόγου καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος
-- page: 40; word_count: 13; sample: χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς ῆν γὰρ ἐν θεῷ καὶ τοῦ
+- page: 26; word_count: 54; sample: ουτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
+- page: 32; word_count: 13; sample: υποστατις φυσις μιαν φυσιν οτι κατ αληθειαν εστι μια φυσις του λογου
+- page: 37; word_count: 5; sample: ενωσιν φυσικην ενωσιν κατα συνθεσιν
+- page: 37; word_count: 11; sample: υιος θεου υιος ανθρωπου γινεται ουτω δε φωτος ηλιου μια και
+- page: 42; word_count: 11; sample: παιδαγωγος θεος εν ανθρωπου σχηματι αχραντος πατρικω θεληματι διακονος λογος θεος
+- page: 57; word_count: 14; sample: συ ει πετρος και επι ταυτη τη πετρα συ ει πετρος και
+- page: 105; word_count: 6; sample: εν πατρι προς τον πατερα θεον
+- page: 109; word_count: 11; sample: εν προσωπω του χηριστου λογος του θεου λογος ουσιωδης λογος προφορικος
+- page: 293; word_count: 8; sample: ατρεπτως αδιαιρετως ασυγχυτως αχωριστως ουσιωδως ενσαρκωσις ενσωματωσις ενανθρωπησις
+- page: 299; word_count: 6; sample: κατ αξιαν κατα ταυτοβουλιαν καθ ομωνυμιαν
 
 ## Limits
 
