@@ -101,3 +101,109 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+
+---
+
+<!-- AUTO_AUDIT_START -->
+## Automated EPUB Audit
+
+**Last run:** 2026-05-18T00:19:59.596958+00:00
+**EPUB:** `volumes/v5/output/volume_5.epub`
+**Status:** WARN (0 errors, 2 warnings)
+
+Reports:
+- `volume_5_audit.json`
+- `volume_5_audit.md`
+
+| Check | Result |
+|-------|--------|
+| OPF version | 3.0 |
+| XHTML files | 39 |
+| Spine items | 38 |
+| Embedded fonts | 8 |
+| NAV links | 38 |
+| Greek chars / untagged | 6228 / 4 |
+| Hebrew chars / untagged | 947 / 0 |
+| Noteref links / endnote anchors | 0 / 0 |
+| AGES boilerplate hits | 0 |
+| Possible Beta Code files | 0 |
+| Escaped language-tag files | 0 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 3 |
+
+Warnings requiring triage:
+
+- `untagged_greek`: Greek characters appear outside lang='el' context
+- `repeated_phrases`: Potential repeated phrases detected
+
+**Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
+<!-- AUTO_AUDIT_END -->
+
+---
+
+<!-- TEXT_INTEGRITY_START -->
+## Automated Textual Integrity Audit
+
+**Last run:** 2026-05-18T00:20:26.332222+00:00
+**Status:** WARN (11 warnings)
+
+Reports:
+- `volume_5_text_integrity.json`
+- `volume_5_text_integrity.md`
+
+| Check | Result |
+|-------|--------|
+| PDF pages | 576 |
+| EPUB text files | 38 |
+| EPUB paragraphs/headings | 2295 |
+| Approximate PDF-to-EPUB word coverage | 0.9889 |
+| Weak page matches | 16 |
+| Dense source windows checked | 952 |
+| Missing dense source-window pages | 562 |
+| Front CONTENTS pages checked | 6 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 564 |
+| Top-of-page windows skipped as unstable | 24 |
+| Missing top-of-page body windows | 7 |
+| Bottom-of-page body windows checked | 536 |
+| Bottom-of-page windows skipped as unstable | 24 |
+| Missing bottom-of-page body windows | 14 |
+| Possible faulty paragraph splits | 100 |
+| Structural starts excluded from split warnings | 269 |
+| Short fragments | 40 |
+| Adjacent duplicate paragraphs | 0 |
+| Inline structural marker candidates | 1 |
+| Reference continuation splits | 0 |
+| Citation continuation splits | 0 |
+| Suspicious large-number starts | 0 |
+| Roman heading candidates | 10 |
+| Overlong heading candidates | 0 |
+| Front-matter heading/body candidates | 0 |
+| Repeated word windows | 25 |
+| PDF enumerator markers | 436 |
+| EPUB enumerator markers | 436 |
+| Missing enumerator marker forms | 0 |
+| Enumerator sequence candidates | 0 |
+| PDF Greek words / EPUB Greek words | 1161 / 1135 |
+| Greek word coverage ratio | 0.9752 |
+| PDF Hebrew words / EPUB Hebrew words | 149 / 149 |
+| Hebrew word coverage ratio | 0.4823 |
+| Missing Greek clauses | 64 |
+| Missing Hebrew clauses | 19 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_hebrew_word_coverage`: EPUB Hebrew word coverage against PDF extraction is lower than expected
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
+
+**Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
+<!-- TEXT_INTEGRITY_END -->

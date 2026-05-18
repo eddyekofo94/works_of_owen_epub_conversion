@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 1
 
-- Status: **PASS**
+- Status: **WARN**
 - EPUB audit: `volume_1_audit.json`
 - Text integrity audit: `volume_1_text_integrity.json`
 
@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 30 | 116 | OK |
+| Possible faulty paragraph splits | 42 | 116 | OK |
 | Inline structural marker candidates | 1 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -21,10 +21,10 @@
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
-| Missing Greek clauses | 16 | 16 | OK |
+| Missing Greek clauses | 44 | 16 | REGRESSION |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
-| Untagged Greek characters | 0 | 55 | OK |
+| Untagged Greek characters | 8 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
 | Repeated phrase hits | 5 | 8 | OK |
@@ -53,7 +53,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 4 | 38 | OK |
+| Lowercase page fragments | 17 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -84,10 +84,16 @@
 ### Missing Greek clauses
 
 - page: 26; sample: υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
+- page: 27; sample: επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν
 - page: 31; sample: πρόσωπον ὁμοιούσιος ἑτερούσιος ἐξ οὐκ
 - page: 32; sample: ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου
-- page: 37; sample: ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν
-- page: 37; sample: υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ
+- page: 36; sample: τὸν θεοῦ μεσίτην καὶ ἀνθρώπων κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε
+
+### Untagged Greek characters
+
+- file: EPUB/ch004.xhtml; text: , κ.τ.λ. (cap. 6)
+- file: EPUB/ch005.xhtml; text: , κ.τ.λ." — "Thou art a rock, and on thee will I build." At least the gender had not been altered, but he would have said, "
+- file: EPUB/ch019.xhtml; text: .τ. λ., 2 Corinthians 3:18. We behold his glory "in a glass," which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t
 
 ### Repeated phrase hits
 
@@ -104,7 +110,8 @@
 
 ### Lowercase page fragments
 
+- file: EPUB/ch011.xhtml; text: w
+- file: EPUB/ch013.xhtml; text: f
+- file: EPUB/ch015.xhtml; text: p
+- file: EPUB/ch019.xhtml; text: r
 - file: EPUB/ch020.xhtml; text: i
-- file: EPUB/ch030.xhtml; text: a
-- file: EPUB/ch078.xhtml; text: t
-- file: EPUB/title_0.xhtml; text: b

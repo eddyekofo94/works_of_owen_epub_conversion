@@ -1,0 +1,1629 @@
+{
+  "volume": 5,
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/input/owen-v5.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
+  "generated_at": "2026-05-18T00:20:26.332222+00:00",
+  "status": "warn",
+  "warning_count": 11,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_hebrew_word_coverage",
+      "message": "EPUB Hebrew word coverage against PDF extraction is lower than expected"
+    },
+    {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "missing_hebrew_clauses",
+      "message": "Some dense Hebrew passages from the PDF are missing from the EPUB"
+    }
+  ],
+  "pdf": {
+    "page_count": 576
+  },
+  "epub": {
+    "spine_text_files": 38,
+    "paragraph_count": 2295
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 199515,
+    "epub_content_tokens": 197605,
+    "coverage_ratio": 0.9889,
+    "missing_word_samples": [
+      {
+        "word": "חַfָאט",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "חַfָעאים",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "תוֹרָה",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "δικαιοσυνη",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "selves",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "חַ",
+        "pdf": 0,
+        "epub": 8
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 571,
+    "weak_page_count": 16,
+    "weak_pages": [
+      {
+        "page": 9,
+        "hit_ratio": 0.0,
+        "sample": "romans l2-21 boasting excluded in ourselves asserted in god the design and sum of the apostle's argument objection of socinus removed comparison between the"
+      },
+      {
+        "page": 10,
+        "hit_ratio": 0.0,
+        "sample": "10 the exception removed righteousness before conversion not intended by the apostle chapter 19 objections against the doctrine of justification by the imputation of"
+      },
+      {
+        "page": 11,
+        "hit_ratio": 0.0,
+        "sample": "11 counted unto him for righteousness when he offered his son on the altar works the same and of the same kind in both"
+      },
+      {
+        "page": 61,
+        "hit_ratio": 0.333,
+        "sample": "61 own but the righteousness of god not in ourselves but in him as he was sin not his own but ours not in"
+      },
+      {
+        "page": 168,
+        "hit_ratio": 0.333,
+        "sample": "168 partibus ut ita dicam filiationis veri filii vicem obtinentem naturalis et legitimi filii loco sedentem wherefore as by adoption there is no internal"
+      },
+      {
+        "page": 169,
+        "hit_ratio": 0.333,
+        "sample": "169 almost in all places this sense is absolutely unquestionable nor is there any more than one which will admit of any debate and"
+      },
+      {
+        "page": 180,
+        "hit_ratio": 0.333,
+        "sample": "180 and condemnation so is it isaiah 50 proverbs 17 15 romans 16 18 33 34 and in sundry other places as may be"
+      },
+      {
+        "page": 198,
+        "hit_ratio": 0.333,
+        "sample": "198 it is no part of our inquiry what god requires of them that are justified there is no grace no duty for the"
+      },
+      {
+        "page": 200,
+        "hit_ratio": 0.333,
+        "sample": "200 same for the substance of it is the judgment of some of them who affirm the continuation of our justification to depend on"
+      },
+      {
+        "page": 418,
+        "hit_ratio": 0.333,
+        "sample": "418 particular the gift by grace abounded unto many above the efficacy of the fall to condemn he declares afterwards and that whereby we"
+      },
+      {
+        "page": 429,
+        "hit_ratio": 0.333,
+        "sample": "429 which principally we are to consider in our justification the glory of them being the end of god therein he made us accepted"
+      },
+      {
+        "page": 506,
+        "hit_ratio": 0.333,
+        "sample": "506 gospel grounds and evidences of the faith of god's elect showing the nature of true saving faith in securing of the spiritual comfort"
+      },
+      {
+        "page": 519,
+        "hit_ratio": 0.333,
+        "sample": "519 how does saving faith approve of this way on what accounts and unto what ends first it approves of it as that which"
+      },
+      {
+        "page": 532,
+        "hit_ratio": 0.333,
+        "sample": "532 ii the second evidence of the faith of god's elect the second way whereby true faith does evidence itself in the souls and"
+      },
+      {
+        "page": 550,
+        "hit_ratio": 0.333,
+        "sample": "550 iii the third evidence of the faith of god's elect thirdly faith will evidence itself by diligent constant endeavor to keep itself and"
+      },
+      {
+        "page": 558,
+        "hit_ratio": 0.333,
+        "sample": "558 iv the fourth evidence of the faith of god's elect come in the next place to instance in peculiar way whereby true faith"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 952,
+    "missing_dense_window_pages": 562,
+    "missing_dense_windows": [
+      {
+        "page": 5,
+        "sample": "by it from jus and justum justus filius who the hebrew עהחְעדּיק use and"
+      },
+      {
+        "page": 9,
+        "sample": "romans l2-21 boasting excluded in ourselves asserted in god the design and sum of"
+      },
+      {
+        "page": 10,
+        "sample": "10 the exception removed righteousness before conversion not intended by the apostle chapter 19"
+      },
+      {
+        "page": 11,
+        "sample": "11 counted unto him for righteousness when he offered his son on the altar"
+      },
+      {
+        "page": 13,
+        "sample": "13 prefatory note there is pregnant and striking passage in one of the charges"
+      },
+      {
+        "page": 14,
+        "sample": "14 aut cadentis ecclesiae it had to encounter accordingly strong opposition from all who"
+      },
+      {
+        "page": 15,
+        "sample": "15 made transition from the ground of justification by faith to views clearly opposed"
+      },
+      {
+        "page": 16,
+        "sample": "16 should be carefully examined before they were embraced his work therefore is not"
+      },
+      {
+        "page": 17,
+        "sample": "17 first under an inquiry into the meaning of the different terms commonly employed"
+      },
+      {
+        "page": 18,
+        "sample": "18 here the three objections of socinius that such an imputation of christ's obedience"
+      },
+      {
+        "page": 19,
+        "sample": "19 to the reader shall not need to detain the reader with an account"
+      },
+      {
+        "page": 20,
+        "sample": "20 in the beginning of our discourse although it were necessary to spend some"
+      },
+      {
+        "page": 21,
+        "sample": "21 revealed in the scripture and as evidencing themselves in their power and efficacy"
+      },
+      {
+        "page": 22,
+        "sample": "22 continues still to be managed by them but suppose wise and impartial men"
+      },
+      {
+        "page": 23,
+        "sample": "23 christ and although the way and means of its efficacy and influence into"
+      },
+      {
+        "page": 25,
+        "sample": "25 general considerations previously necessary unto the explanation of the doctrine of justification that"
+      },
+      {
+        "page": 26,
+        "sample": "26 thoughts of men under their convictions but whoever is the subject of the"
+      },
+      {
+        "page": 27,
+        "sample": "27 declared does necessarily issue in this whether it be any thing in ourselves"
+      },
+      {
+        "page": 28,
+        "sample": "28 scripture against all contradiction and it is the fundamental principle of the gospel"
+      },
+      {
+        "page": 29,
+        "sample": "29 therein is utterly lost and buried in the rubbish of senseless and unprofitable"
+      },
+      {
+        "page": 30,
+        "sample": "30 wrangling does principally consist diligent attendance unto the revelation made hereof in the"
+      },
+      {
+        "page": 31,
+        "sample": "31 compliance wherewithal so pighius himself complained of them controv dissimulate non possumus hanc"
+      },
+      {
+        "page": 32,
+        "sample": "32 we manage our disputes about justification without continual regard unto him by whom"
+      },
+      {
+        "page": 33,
+        "sample": "33 nor is it thus only with some peculiar sort of sinners the same"
+      },
+      {
+        "page": 34,
+        "sample": "34 unclean lips chap nor was he relieved but by an evidence of the"
+      },
+      {
+        "page": 35,
+        "sample": "35 then job answered the lords and said behold am vile what shall answer"
+      },
+      {
+        "page": 36,
+        "sample": "36 mortem domini nostri jesus christi obtendo inter te et mala merita mea ipsiusque"
+      },
+      {
+        "page": 37,
+        "sample": "37 fol 17 tu hinc rosea martyrum turba offer pro me nunc et in"
+      },
+      {
+        "page": 38,
+        "sample": "38 meditations and devotional writings wherein they had immediate thoughts of god with whom"
+      },
+      {
+        "page": 39,
+        "sample": "39 observaris domine domine quis sustinebit quae autem est spes quoniam apud te propitiatio"
+      },
+      {
+        "page": 40,
+        "sample": "40 ourselves retired meditations the conduct of the spirit in humble supplications deathbed preparations"
+      },
+      {
+        "page": 41,
+        "sample": "41 of the law thereon justification is notion to be dealt withal pleasantly or"
+      },
+      {
+        "page": 42,
+        "sample": "42 rejected as empty notions or fables no wonder if such persons look upon"
+      },
+      {
+        "page": 43,
+        "sample": "43 they will with an assured confidence resect and condemn what is offered about"
+      },
+      {
+        "page": 44,
+        "sample": "44 unto the heart for sin and cry out what shall we do to"
+      },
+      {
+        "page": 45,
+        "sample": "45 the hebrews may be added but in that unto the romans it is"
+      },
+      {
+        "page": 46,
+        "sample": "46 communication unto us from faith to faith the faith of god in the"
+      },
+      {
+        "page": 47,
+        "sample": "47 he proves the same against all sorts of persons whether jews or gentiles"
+      },
+      {
+        "page": 48,
+        "sample": "48 redemption that is in him chap 22-24 and not content here with this"
+      },
+      {
+        "page": 49,
+        "sample": "49 abraham believed in the lord and he counted it to him for righteousness"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 6,
+    "front_toc_windows_checked": 24,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 573,
+    "top_windows_usable": 564,
+    "skipped_top_window_count": 24,
+    "skipped_top_windows": [
+      {
+        "page": 109,
+        "window": "the state of adam and god's dealing with him therein is the best representation",
+        "sample": "[4.] The state of Adam, and God's dealing with him therein, is the best representation of the order and method of these things. As he was after the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 115,
+        "window": "on these concessions we yet say two things that the whole nature of justifying",
+        "sample": "(3.) On these concessions we yet say two things: — [1.] That the whole nature of justifying faith does not consist merely in an",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 127,
+        "window": "all those wherein god is said to set forth and to make him be",
+        "sample": "[2.] All those wherein God is said to set forth and to make him be for us and unto us, what he is so, unto the justification of life.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 149,
+        "window": "that man is justified by faith so dia pi stewv verse 22 jek pi",
+        "sample": "that a man is justified by faith.\" So, Dia< pi>stewv, verse 22; jEk pi>stewv, Romans 1:17;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 172,
+        "window": "dikaio is the word used to the same purpose in the new testament and",
+        "sample": "Dikaio>w is the word used to the same purpose in the New Testament, and that alone. Neither is this word used in any good author whatever to",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 173,
+        "window": "quite of another or nature than what alone is signified by that word matthew",
+        "sample": "quite of another or nature than what alone is signified by that word. Matthew 11:19, jEdikaiw>qh hJ Zofi>a, — \"Wisdom is justified of her",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 181,
+        "window": "19 and sundry other expressions of an alike importance the apostle declaring it by",
+        "sample": "7:19; and sundry other expressions of an alike importance. The apostle declaring it by its effects, says, Di>kaioi katastaqh>sontai oiJ polloi>?",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 226,
+        "window": "µymiy hæalk ul ytiaf will sin or be sinner before thee always be guilty",
+        "sample": "µymiY;hæAlK; Úl] ytiaf;j;w], — \"I will sin,\" or \"be a sinner before thee always,\" — be guilty, and, as we say, bear the blame. So he expresses",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 234,
+        "window": "because he took of our sins to himself communicated our sins to himself making",
+        "sample": "\"Because he took of our sins to himself;\" communicated our sins to himself, making them his own: for so he adds, {Oti ta<v hJme>terav",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 238,
+        "window": "as the pattern and exemplary cause of our predestination for we are predestinated to",
+        "sample": "[1.] As the pattern and exemplary cause of our predestination; for we are \"predestinated to be conformed unto the image of the Son of God, that he",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 240,
+        "window": "wnb ykinoa will be surety for him of my hand shalt thou require him",
+        "sample": "WNb;r][,a, ykinOa;, — \"I will be surety for him; of my hand shalt thou require him.\" In undertaking to be surety for him, as unto his safety and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 262,
+        "window": "in order unto this end he made him under the law or gave the",
+        "sample": "[2.] In order unto this end, he made him under the law, or gave the law power over him, to demand of him and inflict on him the penalty which",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 347,
+        "window": "sugge neian not exclusively unto all obedience whereof mention is made in other places",
+        "sample": "sugge>neian, — not exclusively unto all obedience, whereof mention is made in other places, but as that whereunto it is inseparably conjoined.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 351,
+        "window": "in this place romans ujpakoh verse 19 and dikai wma verse 18 are the",
+        "sample": "(2.) In this place, (Romans 5) uJpakoh>, verse 19, and dikai>wma, verse 18, are the same, — obedience and righteousness. \"By the righteousness of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 382,
+        "window": "spiritual strength is from him alone and will make mention ud bæl ut xi",
+        "sample": "spiritual strength is from him alone); \"and I will make mention\" ÚD,bæl] Út]q;d]xi,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 399,
+        "window": "partakers of that righteousness of god whereon we are justified is by faith dia",
+        "sample": "partakers of, that righteousness of God whereon we are justified, is by faith: Dia< th~v pi>stewv ejn aujtou~ ai[mati, — that is, \"By faith alone,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 417,
+        "window": "the opposition is between para ptwma on the one hand and ca risma on",
+        "sample": "The opposition is between para>ptwma on the one hand, and ca>risma on the other, — between which a dissimilitude is asserted, not as unto",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 419,
+        "window": "dikai wma or dikai swiv zwh justification of life but yet though the apostle",
+        "sample": "(3.) Dikai>wma, or dikai>swiv zwh~v, \"justification of life.\" But yet though the apostle does thus distinguish these things, to illustrate his",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 423,
+        "window": "came upon all men unto justification of life so we read the words by",
+        "sample": "came upon all men unto justification of life.\" So we. read the words. \"By the offense of one:\" the Greek copies vary here. Some read, Tw~| eJni<",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 424,
+        "window": "whereas in the original the words are not kata krima eijv pa ntav ajnqrw",
+        "sample": "whereas in the original the words are not kata>krima eijv pa>ntav ajnqrw>pouv, but eijv pa>ntav ajnqrw>pouv eijv kata>krima, and so in the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 463,
+        "window": "on the part of christ whom he would exalt he mentions not only the",
+        "sample": "(1.) On the part of Christ, whom he would exalt, he mentions not only the knowledge of him, but to< uJpere>con th~v gnw>sewv, — \"the excellency of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 515,
+        "window": "service of their lusts and regard it not unto whom may be applied that",
+        "sample": "service of their lusts, and regard it not; unto whom may be applied that [saying] of the prophet, \"Hear, ye despisers, and wonder, and perish.\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 555,
+        "window": "cautions us against hebrews 12 13 and is that which god detests",
+        "sample": "cautions us against, Hebrews 4:12, 13, and [is that] which God detests,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 565,
+        "window": "constant clear view and judgment of their uncertainty emptiness and disability to give any",
+        "sample": "[1.] A constant, clear view and judgment of their uncertainty, emptiness, and disability to give any rest or satisfaction. Uncertain riches, uncertain",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 7,
+    "missing_top_windows": [
+      {
+        "page": 9,
+        "window": "romans l2-21 boasting excluded in ourselves asserted in god the design and sum of",
+        "sample": "Romans 5:l2-21 — Boasting excluded in ourselves, asserted in God — The design and sum of the apostle's argument — Objection of Socinus removed —"
+      },
+      {
+        "page": 10,
+        "window": "the exception removed righteousness before conversion not intended by the apostle",
+        "sample": "The exception removed — Righteousness before conversion, not intended by the apostle"
+      },
+      {
+        "page": 430,
+        "window": "was not mere preparation or qualification of his person for his suffering yet its",
+        "sample": "was not a mere preparation or qualification of his person for his suffering, yet its efficacy unto our justification did depend on his suffering that was"
+      },
+      {
+        "page": 520,
+        "window": "in particular faith herein rejoices in the manifestation of the infinite wisdom of god",
+        "sample": "In particular, faith herein rejoices in the manifestation of the infinite wisdom of God. A view of the wisdom of God acting itself by his power"
+      },
+      {
+        "page": 533,
+        "window": "forbidden in the law and it passes an acquitting or condemning judgment and sentence",
+        "sample": "forbidden in the law, and it passes an acquitting or condemning judgment and sentence, according to what men have done."
+      },
+      {
+        "page": 551,
+        "window": "without self-abasement on the performance of them will hardly find any other clear evidence",
+        "sample": "without self-abasement on the performance of them, will hardly find any other clear evidence of saving faith in himself."
+      },
+      {
+        "page": 559,
+        "window": "the diligent performance of several duties and this is that which is here intended",
+        "sample": "the diligent performance of several duties. And this is that which is here intended, — namely, a peculiar, constant, prevalent exercise of the grace"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 550,
+    "bottom_windows_usable": 536,
+    "skipped_bottom_window_count": 24,
+    "skipped_bottom_windows": [
+      {
+        "page": 110,
+        "window": "that state wherein convinced sinner finds himself upon his conviction is unavoidable unto him",
+        "sample": "[3.] A desire of deliverance from that state wherein a convinced sinner finds himself upon his conviction is unavoidable unto him.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 148,
+        "window": "romans 28 therefore we conclude dikaiou sqai nqrwpon",
+        "sample": "Romans 3:28; — \"Therefore we conclude dikaiou~sqai a]nqrwpon,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 169,
+        "window": "same antithesis occurs qydixæ æyvir mæw qydix mæ he that justifieth the wicked and",
+        "sample": "righteousness into him. The same antithesis occurs, qyDixæ [æyvir]mæW [v;r; qyDix]mæ, — \"He that justifieth the wicked, and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 189,
+        "window": "romans 30 23 hereon eternal life does follow",
+        "sample": "Romans 8:30; 6:23. [8.] Hereon eternal life does follow,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 233,
+        "window": "his sufferings he says thus jepeida ta hjmete rav koinopoiei eijv ejauto ajmarti av",
+        "sample": "and applying them unto our Savior in his sufferings, he says thus, jEpeida<n ta<v hJmete>rav koinopoiei~ eijv eJauto<n aJmarti>av? —",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 313,
+        "window": "yield all that perfect obedience unto god that the law requires could not thereby",
+        "sample": "[2.] It is true, that he who is once a sinner, if he should afterwards yield all that perfect obedience unto God that the law requires, could not thereby",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 315,
+        "window": "them the dikai wma tou qeou herein is not to be abolished but established",
+        "sample": "answered, undergone, and suffered, by them or for them. The dikai>wma tou~ Qeou~ herein is not to be abolished, but established.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 333,
+        "window": "18 if he has wronged thee dealt unrighteously or injuriously with thee or oweth",
+        "sample": "ojfei>lei, tou~to ejmoi< ejllo>gei, ejgw< ajpoti>sw, verse 18, — \"'If he has wronged thee, ' dealt unrighteously or injuriously with thee, 'or oweth",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 346,
+        "window": "the penalty of the law was indispensably to be undergone it is so kata",
+        "sample": "without which no imputation of obedience could have justified us; for the penalty of the law was indispensably to be undergone. 2. It is so kata<",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 349,
+        "window": "nhn is by obedience unto all god's commands and institutions as is evident in",
+        "sample": "pa~san dikaiosu>nhn, is, by obedience unto all God's commands and institutions, as is evident in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 387,
+        "window": "is really judge and profess that we are dou loi ajcrei oi unprofitable servants",
+        "sample": "of pleading it unto our justification, we should say (that is, really judge and profess) that we are dou~loi ajcrei~oi, —\" unprofitable servants,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 397,
+        "window": "that which overthrows it namely that it is added unto dwrea freely which were",
+        "sample": "justification, is intended; for they have nothing to prove it but that which overthrows it, namely, that it is added unto dwrea>n, \"freely;\" which were",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 399,
+        "window": "kau cmha in those that were justified and it is known that the jews",
+        "sample": "about justification, was, whether it did admit of any kau>chsiv or kau>cmha in those that were justified. And it is known that the Jews",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 412,
+        "window": "it is taken away and comparison it is ejk tou ejnanti ou of things",
+        "sample": "whom sin was brought into the world, and the second Adam, by whom it is taken away. And a comparison it is ejk tou~ ejnanti>ou, — of things",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 415,
+        "window": "should be so by one righteousness entered into the world and life by righteousness",
+        "sample": "death by sin;\" so the ajpo>dosiv, or reddition, should be, \"so by one righteousness entered into the world, and life by righteousness.\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 418,
+        "window": "of god dw rhma the gift of grace itself or the righteousness of christ",
+        "sample": "(1.) Ca>risma, the free donation of God; (2.) Dw>rhma, the gift of grace itself, or the righteousness of Christ;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 430,
+        "window": "apprehensions of men he introduces it with that prefatory interrogation ti ou ejrou men",
+        "sample": "somewhat strange, and unsuited unto the common apprehensions of men, he introduces it with that prefatory interrogation, Ti> ou+n ejrou~men;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 441,
+        "window": "by christ he describes him by that paraphrases to mh gno nta ajmarti an",
+        "sample": "To set out the greatness of the grace of God in our reconciliation by Christ, he describes him by that paraphrases, to<n mh< gno>nta aJmarti>an,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 461,
+        "window": "is scarce greater pa qov or vehemency of speech in all his writings which",
+        "sample": "4. Placing the instance in himself, he declares emphatically (so as there is scarce a greater pa>qov, or vehemency of speech, in all his writings) which",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 466,
+        "window": "he could not more plainly express the heightening of what he had affirmed by",
+        "sample": "(1.) There is a plain au[chsiv in these words, j jAlla< menou~nge kai<. He could not more plainly express the heightening of what he had affirmed by",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 471,
+        "window": "of this righteousness by faith which is the substance of what we plead for",
+        "sample": "[3.] That we be made partakers of this righteousness by faith; which is the substance of what we plead for.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 522,
+        "window": "whereby we receive the record of god concerning these things and do ascribe the",
+        "sample": "3. That saving faith is that act, duty, and work of the soul, whereby we receive the record of God concerning these things, [and] do ascribe the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 526,
+        "window": "despondencies many in their temptations darknesses fears surprisals by sin although they fall not",
+        "sample": "2. It will preserve the soul from heartless despondencies. Many in their temptations, darknesses, fears, surprisals by sin, although they fall [not]",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 563,
+        "window": "of retirement from usefulness unless under great decay of outward strength are but temptations",
+        "sample": "of retirement from usefulness, unless [under] a great decay of outward strength, are but temptations.",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_bottom_window_count": 14,
+    "missing_bottom_windows": [
+      {
+        "page": 9,
+        "window": "only required by the law an impious imagination works wrought before faith only rejected",
+        "sample": "with respect unto the law and gospel — External righteousness only required by the law, an impious imagination — Works wrought before faith only rejected —"
+      },
+      {
+        "page": 10,
+        "window": "on how the scripture was fulfilled that abraham believed in god and it was",
+        "sample": "and causes; the other, as unto its signs and evidence — Proved by the instances insisted on — How the Scripture was fulfilled, that Abraham believed in God, and it was"
+      },
+      {
+        "page": 108,
+        "window": "acts 16 30 31 believe for his deliverance",
+        "sample": "Acts 16:30,31. believe for his deliverance,"
+      },
+      {
+        "page": 127,
+        "window": "isaiah 53 so he was raised for therein laid all our sins upon him",
+        "sample": "Isaiah 53:6. So he was \"raised for therein \"laid all our sins upon him,\""
+      },
+      {
+        "page": 151,
+        "window": "galatians 14 the 26 18 the promise of the spirit",
+        "sample": "Galatians 3:14; — the 26:18; — the \"promise of the Spirit,\""
+      },
+      {
+        "page": 170,
+        "window": "kings 31 32 expressed in the former antithesis",
+        "sample": "1 Kings 8:31,32, expressed in the former antithesis."
+      },
+      {
+        "page": 193,
+        "window": "romans 33 34 not be so in them see",
+        "sample": "Romans 8:1,33,34. not be so in them. See"
+      },
+      {
+        "page": 198,
+        "window": "justification as that which is by the same means only 10 38 39",
+        "sample": "justification, as that which is by the same means only, 10:38,39,"
+      },
+      {
+        "page": 200,
+        "window": "hebrews 12 15 wherefore there is accomplishment of the promises",
+        "sample": "Hebrews 6:12,15. Wherefore, there is accomplishment of the promises,"
+      },
+      {
+        "page": 429,
+        "window": "passed on them for the sin of adam so although the obedience of christ",
+        "sample": "actual obedience would justify sinners from the condemnation that was passed on them for the sin of Adam; so, although the obedience of Christ"
+      },
+      {
+        "page": 519,
+        "window": "to god which is its peculiar work and excellency it rests and refreshes itself",
+        "sample": "to God, which is its peculiar work and excellency, it rests and refreshes itself."
+      },
+      {
+        "page": 532,
+        "window": "the powers of it it discerns that good and evil which is commanded and",
+        "sample": "This is a most exact description of a natural conscience, in both the powers of it; it discerns that good and evil which is commanded and"
+      },
+      {
+        "page": 550,
+        "window": "such duties without sensible endeavor for the real exercise of grace in them and",
+        "sample": "them away as a defiled garment. He that can pass through such duties without a sensible endeavor for the real exercise of grace in them, and"
+      },
+      {
+        "page": 558,
+        "window": "and various circumstances in them call for the peculiar exercise of several graces and",
+        "sample": "him pray. Is any merry? Let him sing psalms.\" Several states, and various circumstances in them, call for the peculiar exercise of several graces, and"
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2180,
+    "split_candidate_count": 100,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "PREVIOUSLY NECESSARY UNTO THE EXPLANATION OF THE DOCTRINE OF JUSTIFICATION",
+        "next": "That we may treat of the doctrine of justification usefully unto its proper ends, which are the glory of God in Christ, with the peace and furtherance of the obedience of believers"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "JUSTIFYING FAITH; THE CAUSES AND OBJECT OF IT DECLARED",
+        "next": "The means of justification on our part is faith. That we are justified by faith, is so frequently and so expressly affirmed in the Scripture, as that it cannot directly and in term"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "THE NATURE OF JUSTIFYING FAITH",
+        "next": "That which we shall now inquire into, is the nature of justifying faith; or of faith in that act and exercise of it whereby we are justified, or whereon justification, according un"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "THE USE OF FAITH IN JUSTIFICATION; ITS ESPECIAL OBJECT FARTHER CLEARED",
+        "next": "The description before given of justifying faith does sufficiently manifest of what use it is in justification; nor shall I in general add much unto what may be thence observed unt"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "OF JUSTIFICATION; THE NOTION AND SIGNIFICATION OF THE WORD IN SCRIPTURE",
+        "next": "Unto the right understanding of the nature of justification, the proper sense and signification of these words themselves, justification and to justify, is to be inquired into; for"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "THE DISTINCTION OF A FIRST AND SECOND JUSTIFICATION EXAMINED — THE CONTINUATION OF JUSTIFICATION: — WHEREON IT DOES DEPEND",
+        "next": "Before we inquire immediately into the nature and causes of justification, there are some things yet previously to be considered, that we may prevent all ambiguity and misunderstan"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "at this grace and the works of it need no farther respect unto the righteousness of Christ, to deserve our second justification and life eternal, as does Vasquez expressly, in 1,2,",
+        "next": "q. 114, disp. 222, cap. 3; yet many of them affirm that it is still from the consideration of the merit of Christ that they are so meritorious. And the same, for the substance of i"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "EVANGELICAL PERSONAL RIGHTEOUSNESS, THE NATURE AND USE OF IT — FINAL JUDGMENT, AND ITS RESPECT UNTO JUSTIFICATION",
+        "next": "The things which we have discoursed concerning the first and second justification, and concerning the continuation of justification, have no other design but only to clear the prin"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "IMPUTATION, AND THE NATURE OF IT; WITH THE IMPUTATION OF THE RIGHTEOUSNESS OF CHRIST IN PARTICULAR",
+        "next": "The first express record of the justification of any sinner is of Abraham."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": " OF THE SINS OF THE CHURCH UNTO CHRIST — GROUNDS OF IT — THE NATURE OF HIS SURETISHIP — CAUSES OF THE NEW COVENANT — CHRIST AND THE CHURCH ONE MYSTICAL PERSON — CONSEQUENTS THEREOF",
+        "next": "Those who believe the imputation of the righteousness of Christ unto believers, for the justification of life, do also unanimously profess that the sins of all believers were imput"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "THE FORMAL CAUSE OF JUSTIFICATION, OR THE RIGHTEOUSNESS ON THE ACCOUNT WHEREOF BELIEVERS ARE JUSTIFIED BEFORE GOD — OBJECTIONS ANSWERED",
+        "next": "To principal differences about the doctrine of justification are reducible unto three heads: —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": "THE NATURE OF THE OBEDIENCE THAT GOD REQUIRES OF US - THE ETERNAL OBLIGATION OF THE LAW THEREUNTO",
+        "next": "Our second argument shall be taken from the nature of that obedience or righteousness which God requires of us that we may be accepted of him, and approved by him. This being a lar"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "THE IMPUTATION OF THE OBEDIENCE OF CHRIST UNTO THE LAW DECLARED AND INDICATED",
+        "next": "From the foregoing general argument another does issue in parcular, with respect unto the imputation of the active obedience or righteousness of Christ unto us, as an essential par"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "THE NATURE OF JUSTIFICATION PROVED FROM THE DIFFERENCE OF THE COVENANTS",
+        "next": "That which we plead in the third place unto our purpose is, the difference between the two covenants. And herein it may be observed, —"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "THE EXCLUSION OF ALL SORTS OF WORKS FROM AN INTEREST IN JUSTIFICATION — WHAT IS INTENDED BY \"THE LAW,\" AND THE \"WORKS\" OF IT, IN THE EPISTLES OF PAUL",
+        "next": "We shall take our fourth argument from the express exclusion of all works, of what sort soever, from our justification before God. For this alone is that which we plead, — namely, "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "FAITH ALONE",
+        "next": "The truth which we plead has two parts: —"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "previous": "THE TRUTH PLEADED FARTHER CONFIRMED BY TESTIMONIES OF SCRIPTURE. — JEREMIAH 23:6",
+        "next": "That which we now proceed unto, is the consideration of those express testimonies of Scripture which are given unto the truth pleaded for, and especially of those places where the "
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "TESTIMONIES OUT OF THE EVANGELISTS CONSIDERED",
+        "next": "The reasons why the doctrine of justification by the imputation of the righteousness of Christ is more fully and clearly delivered in the following writings of the New Testament th"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "previous": "OBJECTIONS AGAINST THE DOCTRINE OF JUSTIFICATION BY THE IMPUTATION OF THE RIGHTEOUSNESS OF CHRIST — PERSONAL HOLINESS AND OBEDIENCE NOT OBSTRUCTED, BUT FURTHERED BY IT",
+        "next": "That which remains to put an issue to this discourse is the consideration of some things that in general are laid in objection against the truth pleaded for. Many things of that na"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "THE DOCTRINE OF THE APOSTLE JAMES CONCERNING FAITH AND WORKS — ITS AGREEMENT WITH THAT OF ST. PAUL",
+        "next": "The seeming difference that is between the apostles Paul and James in what they teach concerning faith, works, and justification, requires our consideration of it; for many do take"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "believers, unto their supportment and comfort, under all their conflicts with sin, in all",
+        "next": "their trials and temptations."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "First, It approves of it, as that which every way becomes God to find out,",
+        "next": "to grant, and propose: so speaks the apostle,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "to grant, and propose: so speaks the apostle,",
+        "next": "Hebrews 2:10,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "Hebrews 2:10,",
+        "next": "\"It became him, in bringing many sons unto glory, to make the"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "\"It became him, in bringing many sons unto glory, to make the",
+        "next": "Captain of their salvation perfect through sufferings.\""
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "That becomes God, is worthy of him, is to be owned concerning him,",
+        "next": "which answers unto his infinite wisdom, goodness, grace, holiness, and"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "which answers unto his infinite wisdom, goodness, grace, holiness, and",
+        "next": "righteousness, and nothing else. This faith discerns, judges, and determines"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "righteousness, and nothing else. This faith discerns, judges, and determines",
+        "next": "concerning this way, — namely, that it is every way worthy of God, and"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "concerning this way, — namely, that it is every way worthy of God, and",
+        "next": "answers all the holy properties of his nature. This is called"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "answers all the holy properties of his nature. This is called",
+        "next": "\"The light of the knowledge of the glory of God in the face of"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "\"The light of the knowledge of the glory of God in the face of",
+        "next": "Jesus Christ,\""
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "Jesus Christ,\"",
+        "next": "2 Corinthians 4:6."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "This discovery of the glory of God in this way is made unto faith alone,",
+        "next": "and by it alone it is embraced. The not discerning of it, and thereon the"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "and by it alone it is embraced. The not discerning of it, and thereon the",
+        "next": "want of an acquiescence in it, is that unbelief which ruins the souls of men."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "The reason why men do not embrace the way of salvation tendered in the",
+        "next": "gospel, is because they do not see nor understand how full it is of divine"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "gospel, is because they do not see nor understand how full it is of divine",
+        "next": "glory, how it becomes God, is worthy of him, and answers all the"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "glory, how it becomes God, is worthy of him, and answers all the",
+        "next": "perfections of his nature. Their minds are blinded, that the light of the"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "perfections of his nature. Their minds are blinded, that the light of the",
+        "next": "glorious gospel of Christ, who is the image of God, does not shine unto"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "glorious gospel of Christ, who is the image of God, does not shine unto",
+        "next": "them,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "them,",
+        "next": "2 Corinthians 4:4. And so they deal with this way of God as if it"
+      }
+    ],
+    "structural_start_exclusions": 269,
+    "short_fragment_count": 40,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "As, —"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Hebrews 6:18, \"Fled for refuge.\""
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "THE NATURE OF JUSTIFYING FAITH"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Luke 7:29, ΕδικαίΩσαν τὸν Θεόν ?"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Ans. But, —"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Wherefore, —"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Wherefore, —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "Wherefore, —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "But,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "FAITH ALONE"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "For as to the first, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "Unto the second, I say, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "Unto the third, I say, —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "Ans."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "their trials and temptations."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "of repentance."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Isaac Chauncey"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "Hebrews 2:10,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "Jesus Christ,\""
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "2 Corinthians 4:6."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "them,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "were weakness and folly."
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "acting of our souls."
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "the law,"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "Romans 2:14, 15:"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "We may a little explain it: —"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "private and public."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "herein: —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Isaiah"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "neglects thereby."
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "spoken unto, —"
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "power and sincerity."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "This is observed also by the apostle in the New Testament; for twice, expressing the sin-offering by this word, he uses that phrase περὶ ἁμαρτίας , Romans 8:3, Hebrews 10:6; but nowhere uses ἁμαρτία to that purpose. If it be, therefore, of that signification i"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 10,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "II. Answer the most important general objections against it."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "III. Prove the truth of it by arguments and testimonies of the holy Scripture."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "I. As to the first of these, or what is necessary unto the explanation of this assertion, it has been sufficiently spoken unto in our foregoing discourses. The heads of some things only shall at present be called over."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "II. These things being premised, I proceed unto the consideration of the general objections that are urged against the imputation we plead for: and I shall insist only on some of the principal of them, and whereinto all "
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "II. It is pretended to be useless from hence, because all \"our sins of omission and commission being pardoned in our justification on the account of the death and satisfaction of Christ, we are thereby made completely ri"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "III. Pernicious also they say it is, as that which takes away \"the necessity of our own personal obedience, introducing antinomianism, libertinism, and all manner of evils.\""
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "I. The first part of this charge, concerning the impossibility of the imputation of the obedience of Christ unto us, is insisted on by Socinus de Servat., part 3 cap. 5. And there has been nothing since pleaded unto the "
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "II. The second part of the objection or charge against the imputation of the obedience of Christ unto us is, \"That it is useless unto the persons that are to be justified; for whereas they have in their justification the"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "I. How does saving faith approve of this way? on what accounts, and unto what ends?"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "II. How it does evidence and manifest itself hereby unto the comfort of believers."
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 436,
+    "epub_marker_count": 436,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 0,
+    "excess_markers": [],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "of justification by the imputation of the righteousness of christ",
+      "count": 12
+    },
+    {
+      "phrase": "doctrine of justification by the imputation of the righteousness of",
+      "count": 11
+    },
+    {
+      "phrase": "the doctrine of justification by the imputation of the righteousness",
+      "count": 10
+    },
+    {
+      "phrase": "set forth to be propitiation through faith in his blood",
+      "count": 10
+    },
+    {
+      "phrase": "freely by his grace through the redemption that is in",
+      "count": 9
+    },
+    {
+      "phrase": "justified freely by his grace through the redemption that is",
+      "count": 8
+    },
+    {
+      "phrase": "by his grace through the redemption that is in christ",
+      "count": 8
+    },
+    {
+      "phrase": "his grace through the redemption that is in christ jesus",
+      "count": 8
+    },
+    {
+      "phrase": "whom god has set forth to be propitiation through faith",
+      "count": 8
+    },
+    {
+      "phrase": "god has set forth to be propitiation through faith in",
+      "count": 8
+    },
+    {
+      "phrase": "has set forth to be propitiation through faith in his",
+      "count": 8
+    },
+    {
+      "phrase": "through the redemption that is in christ jesus whom god",
+      "count": 7
+    },
+    {
+      "phrase": "the redemption that is in christ jesus whom god has",
+      "count": 7
+    },
+    {
+      "phrase": "redemption that is in christ jesus whom god has set",
+      "count": 7
+    },
+    {
+      "phrase": "that is in christ jesus whom god has set forth",
+      "count": 7
+    },
+    {
+      "phrase": "is in christ jesus whom god has set forth to",
+      "count": 7
+    },
+    {
+      "phrase": "in christ jesus whom god has set forth to be",
+      "count": 7
+    },
+    {
+      "phrase": "christ jesus whom god has set forth to be propitiation",
+      "count": 7
+    },
+    {
+      "phrase": "jesus whom god has set forth to be propitiation through",
+      "count": 7
+    },
+    {
+      "phrase": "that we might be made the righteousness of god in",
+      "count": 7
+    },
+    {
+      "phrase": "we might be made the righteousness of god in him",
+      "count": 7
+    },
+    {
+      "phrase": "that whosoever believeth in him should not perish but have",
+      "count": 6
+    },
+    {
+      "phrase": "being justified freely by his grace through the redemption that",
+      "count": 6
+    },
+    {
+      "phrase": "grace through the redemption that is in christ jesus whom",
+      "count": 6
+    },
+    {
+      "phrase": "that the righteousness of the law might be fulfilled in",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 1161,
+    "epub_greek_word_count": 1135,
+    "pdf_greek_unique_words": 553,
+    "epub_greek_unique_words": 544,
+    "greek_word_coverage_ratio": 0.9752,
+    "pdf_hebrew_word_count": 149,
+    "epub_hebrew_word_count": 149,
+    "pdf_hebrew_unique_words": 109,
+    "epub_hebrew_unique_words": 109,
+    "hebrew_word_coverage_ratio": 0.4823,
+    "missing_greek_word_samples": [
+      {
+        "word": "δικαιοσύνη",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "missing_hebrew_word_samples": [
+      {
+        "word": "ָאט",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "תוֹרָה",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "וַעֲוֹןֹטָם",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "חָדַק",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "עחחְעדּיק",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "חַעדּיק",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "רט",
+        "pdf": 2,
+        "epub": 0
+      }
+    ]
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 64,
+    "missing_greek_clause_count": 64,
+    "missing_greek_clauses": [
+      {
+        "page": 25,
+        "word_count": 12,
+        "sample": "ἀσεζής ὑπόδικος τῷ θεῷ τῷ δικαιώματι τοῦ θεοῦ κατάραν ἀναπολόγητος συγκεκλεισμένος ἁμαρτίαν"
+      },
+      {
+        "page": 28,
+        "word_count": 5,
+        "sample": "τολὺς νόμος ἔνθα καὶ ἔνθα"
+      },
+      {
+        "page": 60,
+        "word_count": 40,
+        "sample": "αὑτὸς τὸν ἴδιον υἱὸν ἀπέδοτο λύτρον ὑπέρ ἡμῶν τὸν ἅγιον ὑπὲρ ἀνόμων"
+      },
+      {
+        "page": 60,
+        "word_count": 11,
+        "sample": "ἐκείνου δικαιοσύνης ἐν τίνι δικαιωθῆναι δυνατὸν τοὺς ἀνόμους ἡμᾶς καὶ ἀσεζεῖς"
+      },
+      {
+        "page": 60,
+        "word_count": 6,
+        "sample": "ἐν μόνῳ τῷ υἱῷ τοῦ θεοῦ"
+      },
+      {
+        "page": 60,
+        "word_count": 26,
+        "sample": "τῶν ἀπροσδοκήτων εὺεργεσιῶν ἵνα ἀνομία μὲν πολλῶν ἐν δικαίῳ ἑνὶ κρυζῇ δικαιοσύνη"
+      },
+      {
+        "page": 61,
+        "word_count": 28,
+        "sample": "τῆς γλυκείας ἀνταλλαγῆς ποῖος ταῦτα λόγος ποῖος ταῦτα παραστῆσαι δυνήσεται νοῦς τὸν"
+      },
+      {
+        "page": 61,
+        "word_count": 63,
+        "sample": "πολλῷ μεῖζον ῆν οὐ γὰρ ἕξιν ἔθηκεν ἀλλ αὐτὴν τὴν ποιότηατ οὐ"
+      },
+      {
+        "page": 148,
+        "word_count": 6,
+        "sample": "πίστει λογιζόμεθα οῦν τίστει δικαιοῦσθαι ἄνθρωπον"
+      },
+      {
+        "page": 149,
+        "word_count": 32,
+        "sample": "διὰ πίστεως εκ πίστεως διὰ τῆς πίστεως εκ πίστεως καὶ διὰ τῆς"
+      },
+      {
+        "page": 150,
+        "word_count": 5,
+        "sample": "ἐκ πίστεως διὰ τῆς πίστεως"
+      },
+      {
+        "page": 151,
+        "word_count": 22,
+        "sample": "δικαιούμενοι δωρεὰν τῇ αὐτοῦ χάριτι διὰ τῆς πίστεως ἐν τῷ αὐτοῦ αἵματι"
+      },
+      {
+        "page": 154,
+        "word_count": 9,
+        "sample": "κατάστασις τύχη ἀξία αἰτία συνθήκη κατάστασις ἀξία αἰτία συνθήκη"
+      },
+      {
+        "page": 168,
+        "word_count": 7,
+        "sample": "δίκαιον ἀποφαίνω δίκαιος ἀναφαίνομαι δίκαιον κρίνω δικαιόω"
+      },
+      {
+        "page": 172,
+        "word_count": 23,
+        "sample": "δικαιόω δικαιοῦν δυὸ δηλοῖ τὸ τε κολάζειν καὶ τὸ δίκαιον νομίζειν δικαιῶσαι"
+      },
+      {
+        "page": 173,
+        "word_count": 15,
+        "sample": "ζοφία εκ τῶν λόγων σου δικαιωθήσῃ καὶ ἐκ τῶν λόγων σου καταδικασθήσῃ"
+      },
+      {
+        "page": 173,
+        "word_count": 25,
+        "sample": "δὲ ζέλων δικαιοῦν ἑαυτόν υμεῖς ἐστε οἱ δικαιοῦντες ἑαυτοὺς ἐνώπιον τῶν ἀνθρώπων"
+      },
+      {
+        "page": 179,
+        "word_count": 10,
+        "sample": "δίκαιος δικαιωθήτω ἔτι δικαιοσύνην ποιησάτω ἔτι δικαιωθήτω ἁγιασθήτω δικαιοσύνην ποιεῖν"
+      },
+      {
+        "page": 179,
+        "word_count": 5,
+        "sample": "ποιῶν δικαιοσύνην δίκαιός ἔστι δίκιοι"
+      },
+      {
+        "page": 181,
+        "word_count": 8,
+        "sample": "δίκαιοι κατασταθήσονται οἱ πολλοί δίκαιος ὐπόδικος τῷ θεῷ"
+      },
+      {
+        "page": 225,
+        "word_count": 8,
+        "sample": "τοῦτο ἐμοι ἐλλόγει εἰ δέ τι ἡδίκησέ σε"
+      },
+      {
+        "page": 233,
+        "word_count": 14,
+        "sample": "κύριος ἀλλὰ ἡμεῖς ἐν ἐκείνῳ πάσχοντες ῆμεν επειδὰν τὰς ἡμετέρας κοινοποιεῖ εἰς"
+      },
+      {
+        "page": 234,
+        "word_count": 18,
+        "sample": "οτι τὰς ἡμέτερας ἁμαρτίας ἐξοικειούμενος πῶς δὲ τὰς ἡμετέρας ἁμαρτίας ἐξοικειοῦται καὶ"
+      },
+      {
+        "page": 234,
+        "word_count": 18,
+        "sample": "σῶμα αὐτοῦ εῖναι λεγόμεθα κατὰ τὸν ἀπόστολον φήσαντα ὑμεῖς ἐστὲ σῶμα χριστοῦ"
+      },
+      {
+        "page": 234,
+        "word_count": 65,
+        "sample": "πάσχοντος ἑνὸς μέλους σομπάσχει πάντα τὰ μέλη οὕτω τῶν πολλῶν μελῶν πασχόντων"
+      },
+      {
+        "page": 234,
+        "word_count": 62,
+        "sample": "αμνὸς τοῦ θεοῦ ἀλλὰ καὶ ὑπὲρ ἡμῶν κολασθεὶς καὶ τιμωρίαν ὑποσχών ἥν"
+      },
+      {
+        "page": 234,
+        "word_count": 34,
+        "sample": "ἀντίψυχος διό φησιν ἐξ ἡμετέρου προσώπου τὸ λόγιον ὥστε εἰκότως ἑςῶν ἑαυτὸν"
+      },
+      {
+        "page": 239,
+        "word_count": 12,
+        "sample": "τῶν ἅπαξ λεγομένων ἔγγυος γύαλον ἔγγυος εἰς τὸ γύαλον εγγυητής ἐγγυάω διεγγυάω"
+      },
+      {
+        "page": 258,
+        "word_count": 5,
+        "sample": "δίκη ζῇν οὐκ εἴασεν ὀφείλω"
+      },
+      {
+        "page": 261,
+        "word_count": 6,
+        "sample": "ὑπόδικος τῷ θεῷ ὑπόδικος τῷ θεῷ"
+      }
+    ],
+    "hebrew_clauses_checked": 20,
+    "missing_hebrew_clause_count": 19,
+    "missing_hebrew_clauses": [
+      {
+        "page": 58,
+        "word_count": 7,
+        "sample": "וְןָטַ אֹטָם עַלאראֹשׁ הַצָעעיר חַ ָאט אָשָׁם"
+      },
+      {
+        "page": 66,
+        "word_count": 3,
+        "sample": "וַעֲוֹןֹטָם הוּא עיסְבֹּל"
+      },
+      {
+        "page": 168,
+        "word_count": 8,
+        "sample": "חָדַק עכיאאֲעןי אחְדָּק עהענהאןָא עָרַכְעתי עםשְׁףָט יָדַעְעתי עחחְטַדָּק"
+      },
+      {
+        "page": 169,
+        "word_count": 11,
+        "sample": "וְעהחְדַּקְעתיו וְעהחְעדּיקוּ אטאחַחַעדּיק וְעהרְעשׁיעוּ אטאהָרָשָׁע עהרְעשׁיעַ עחחְעדּיק םַחְעדּיק רָשָׁע וּםַרְעשׁיעַ"
+      },
+      {
+        "page": 171,
+        "word_count": 19,
+        "sample": "לְהַרְעשׁיעַ רָשָׁע וּלְחַחְעדּיק חַעדּיק עָעןי וָרָשׁ הַחְדּיקוּ לֹאאאַחְעדּיק רָשָׁע חָעלילָה"
+      },
+      {
+        "page": 219,
+        "word_count": 5,
+        "sample": "חָצַב עלחְדָקָה וַעתחָ צב לוֹ"
+      },
+      {
+        "page": 221,
+        "word_count": 3,
+        "sample": "עָוִֹ אַלאיַחֲשָׁבאעלי אַדֹעןי"
+      },
+      {
+        "page": 226,
+        "word_count": 5,
+        "sample": "וְחָטָאעטי לְו כָלאהַיָעםים חַ ָעאים"
+      },
+      {
+        "page": 239,
+        "word_count": 3,
+        "sample": "עָרַב עָרַב עָרַב"
+      },
+      {
+        "page": 240,
+        "word_count": 5,
+        "sample": "ערְבָנוּ עהטְעָ רב ןָא עערָבוִֹ"
+      },
+      {
+        "page": 258,
+        "word_count": 5,
+        "sample": "אָשָׁם דָּם לוֹ עםדָּעםים אָשָׁם"
+      },
+      {
+        "page": 267,
+        "word_count": 8,
+        "sample": "ָןוּ וַעֲוֹןֹטָם הוּא עיסְבֹּל עָוִֹ עֲוִֹ חַ ָאעטי"
+      },
+      {
+        "page": 366,
+        "word_count": 3,
+        "sample": "קּים עםשְׁפָעטים עֲ"
+      },
+      {
+        "page": 366,
+        "word_count": 4,
+        "sample": "רט הדְּבָערים תוֹרָה תוֹרָה"
+      },
+      {
+        "page": 381,
+        "word_count": 7,
+        "sample": "כָלאעחדְקֹעטיןוּ יְהֹוָה עחדְעקןוּ אַ בַּיהוָֹה עלי חְדָקוֹט"
+      },
+      {
+        "page": 382,
+        "word_count": 3,
+        "sample": "לְבַ דּו עחדְקָטְו"
+      },
+      {
+        "page": 418,
+        "word_count": 5,
+        "sample": "עםשְׁפָט עםשְׁפַטאםָ וט לָעאישׁ הַ"
+      },
+      {
+        "page": 442,
+        "word_count": 3,
+        "sample": "חַ ָאט אָשָׁם"
+      },
+      {
+        "page": 443,
+        "word_count": 5,
+        "sample": "חָטָא חַ ָאט חַ ָאט"
+      }
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

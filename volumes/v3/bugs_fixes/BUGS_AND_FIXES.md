@@ -791,12 +791,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-14T16:39:35.415685+00:00
+**Last run:** 2026-05-18T00:18:44.185698+00:00
 **EPUB:** `volumes/v3/output/volume_3.epub`
-**Status:** FAIL (5 errors, 5 warnings)
+**Status:** FAIL (1 errors, 5 warnings)
 
 Reports:
 - `volume_3_audit.json`
@@ -816,13 +817,7 @@ Reports:
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 1 |
-| Page reference split files | 0 |
-| Chapter headings in paragraphs | 0 |
-| Missing chapter initialization files | 0 |
-| Greek diacritic residue files | 0 |
-| Fragmented Greek span-run files | 18 |
-| Blockquotes | 0 |
-| Repeated phrase hits | 2 |
+| Repeated phrase hits | 4 |
 
 Warnings requiring triage:
 
@@ -835,10 +830,6 @@ Warnings requiring triage:
 Errors requiring correction:
 
 - `empty_bracket_noise`: Empty bracket residue appears in rendered text
-- `unprocessed_ages_markers`: AGES verse markers remain unprocessed in XHTML
-- `fragmented_greek_span_runs`: Three or more adjacent Greek words are split into separate spans
-- `orphan_scripture_brackets`: Orphan AGES brackets remain before scripture references
-- `inline_scholastic_labels`: Scholastic labels appear mid-paragraph instead of as anchors
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->

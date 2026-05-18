@@ -1,15 +1,15 @@
 {
-  "epub": "volumes/v6/output/volume_6.epub",
-  "generated_at": "2026-05-18T00:20:27.035924+00:00",
+  "epub": "volumes/v5/output/volume_5.epub",
+  "generated_at": "2026-05-18T00:19:59.596958+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 2,
   "errors": [],
   "warnings": [
     {
-      "code": "possible_beta_code_residue",
-      "message": "Possible Beta Code residue detected",
-      "files": 3
+      "code": "untagged_greek",
+      "message": "Greek characters appear outside lang='el' context",
+      "chars": 4
     },
     {
       "code": "repeated_phrases",
@@ -18,43 +18,43 @@
     }
   ],
   "info": {
-    "file_count": 139,
-    "epub_size_bytes": 2974403,
+    "file_count": 60,
+    "epub_size_bytes": 4220745,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
-      "The Works of John Owen, Volume 6: Temptation and Sin"
+      "The Works of John Owen, Volume 5: Faith and Its Evidences"
     ],
     "creators": [
       "John Owen",
       "William H. Goold"
     ],
-    "manifest_count": 130,
-    "spine_count": 112,
-    "xhtml_count": 114,
+    "manifest_count": 51,
+    "spine_count": 38,
+    "xhtml_count": 39,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 12,
+    "font_count": 8,
     "language": {
-      "greek_chars": 1608,
-      "greek_untagged_chars": 0,
-      "hebrew_chars": 827,
+      "greek_chars": 6228,
+      "greek_untagged_chars": 4,
+      "hebrew_chars": 947,
       "hebrew_untagged_chars": 0,
-      "files_with_untagged_greek": 0,
+      "files_with_untagged_greek": 1,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 14,
-      "unique_noteref_targets": 14,
-      "endnote_anchor_count": 14,
+      "noteref_count": 0,
+      "unique_noteref_targets": 0,
+      "endnote_anchor_count": 0,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
-      "beta_code_files": 3,
+      "beta_code_files": 0,
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
@@ -63,7 +63,7 @@
       "repeated_phrase_count": 3,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 0,
+      "chapter_heading_in_paragraph_files": 2,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -75,44 +75,40 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 40,
+      "lowercase_paragraph_start_files": 13,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
       "samples": {
         "boilerplate": [],
-        "beta_code": [
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [
           {
-            "file": "EPUB/ch040.xhtml",
-            "text": "]y"
+            "file": "EPUB/ch022.xhtml",
+            "text": ", the note of a syllogistical inference, declares what is here asserted to be the substance of the truth pleaded for. And the comparison is continued, ὠς, — these things have themselves after the same manner."
           },
           {
-            "file": "EPUB/ch076.xhtml",
-            "text": "]y"
-          },
-          {
-            "file": "EPUB/ch082.xhtml",
-            "text": "]y"
+            "file": "EPUB/ch022.xhtml",
+            "text": ", — \"sin,\" for a \"sinner,\" (that is, passively, not actively; not by inhesion, but imputation); for this the phrase of speech and force of the antithesis seem to require. Speaking of another sense, Estius himself on the "
           }
         ],
-        "escaped_lang_tag": [],
-        "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [
           {
             "file": "combined_text",
-            "text": "and without it it will not be done",
+            "text": "chapter 3 the use of faith in justification",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "2 towards the elect not yet effectually called",
+            "text": "chapter 17 testimonies out of the evangelists considered",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "institution of religious worship an evidence of forgiveness",
+            "text": "chapter 19 objections against the doctrine of justification",
             "count": 1
           }
         ],
@@ -122,7 +118,16 @@
         "missing_chapter_initialization": [],
         "unprocessed_ages_marker": [],
         "page_reference_split": [],
-        "chapter_heading_in_paragraph": [],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/ch002.xhtml",
+            "text": "Lastly, the concluding chapter i"
+          },
+          {
+            "file": "EPUB/ch005.xhtml",
+            "text": "So chapter 9"
+          }
+        ],
         "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
         "fragmented_hebrew_span_run": [],
@@ -141,44 +146,44 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch008.xhtml",
-            "text": "m"
-          },
-          {
-            "file": "EPUB/ch010.xhtml",
-            "text": "a"
-          },
-          {
-            "file": "EPUB/ch023.xhtml",
-            "text": "d"
-          },
-          {
-            "file": "EPUB/ch037.xhtml",
-            "text": "w"
-          },
-          {
-            "file": "EPUB/ch041.xhtml",
-            "text": "a"
-          },
-          {
-            "file": "EPUB/ch044.xhtml",
-            "text": "b"
-          },
-          {
-            "file": "EPUB/ch052.xhtml",
-            "text": "s"
-          },
-          {
-            "file": "EPUB/ch053.xhtml",
+            "file": "EPUB/ch006.xhtml",
             "text": "e"
           },
           {
-            "file": "EPUB/ch056.xhtml",
+            "file": "EPUB/ch009.xhtml",
+            "text": "q"
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "f"
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
             "text": "c"
           },
           {
-            "file": "EPUB/ch059.xhtml",
-            "text": "v"
+            "file": "EPUB/ch021.xhtml",
+            "text": "d"
+          },
+          {
+            "file": "EPUB/ch025.xhtml",
+            "text": "l"
+          },
+          {
+            "file": "EPUB/ch028.xhtml",
+            "text": "g"
+          },
+          {
+            "file": "EPUB/ch029.xhtml",
+            "text": "t"
+          },
+          {
+            "file": "EPUB/ch030.xhtml",
+            "text": "c"
+          },
+          {
+            "file": "EPUB/ch031.xhtml",
+            "text": "i"
           }
         ],
         "noteref_leading_space": [],
@@ -187,7 +192,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 112,
+    "nav_link_count": 38,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

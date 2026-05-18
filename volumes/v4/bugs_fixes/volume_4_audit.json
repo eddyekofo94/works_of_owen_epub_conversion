@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-17T14:44:53.022920+00:00",
+  "generated_at": "2026-05-18T00:19:28.408272+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 3,
@@ -71,6 +71,7 @@
       "chapter_heading_in_paragraph_files": 0,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
       "structural_bold_leak_files": 1,
       "repeated_structural_marker_files": 0,
@@ -165,6 +166,7 @@
         "chapter_heading_in_paragraph": [],
         "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
         "scripture_blockquote": [],
         "orphan_scripture_bracket": [],
         "glued_ordinal": [],

@@ -107,10 +107,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-17T14:45:45.433473+00:00
+**Last run:** 2026-05-18T00:20:27.035924+00:00
 **EPUB:** `volumes/v6/output/volume_6.epub`
 **Status:** WARN (0 errors, 2 warnings)
 

@@ -1,20 +1,20 @@
 # Text Integrity Audit: Volume 4
 
 - Status: **WARN**
-- Warnings: 9
+- Warnings: 13
 - PDF pages: 653
 - EPUB text files: 71
 - EPUB paragraphs/headings: 2410
 
 ## Coverage
 
-- PDF content tokens: 221791
-- EPUB content tokens: 222839
-- Approximate PDF-to-EPUB coverage ratio: 0.9977
+- PDF content tokens: 222359
+- EPUB content tokens: 222838
+- Approximate PDF-to-EPUB coverage ratio: 0.9951
 - Pages checked: 644
-- Weak page matches: 4
-- Dense source windows checked: 24411
-- Missing dense source-window pages: 231
+- Weak page matches: 34
+- Dense source windows checked: 777
+- Missing dense source-window pages: 627
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 624
@@ -39,10 +39,23 @@
 - Overlong heading candidates: 1
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
-- PDF enumerator markers: 370
+- PDF enumerator markers: 416
 - EPUB enumerator markers: 375
-- Missing enumerator marker forms: 0
+- Missing enumerator marker forms: 3
 - Enumerator sequence candidates: 0
+
+## Greek / Hebrew
+
+- PDF Greek words: 786
+- EPUB Greek words: 779
+- Greek word coverage ratio: 0.9817
+- PDF Hebrew words: 111
+- EPUB Hebrew words: 109
+- Hebrew word coverage ratio: 0.3303
+- Greek clauses checked: 42
+- Missing Greek clauses: 42
+- Hebrew clauses checked: 17
+- Missing Hebrew clauses: 17
 
 ## Warnings
 
@@ -54,20 +67,24 @@
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
+- `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_hebrew_word_coverage`: EPUB Hebrew word coverage against PDF extraction is lower than expected
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
-- page: 3; sample: continued book vi part the reason of faith refatory ote by the ditor preface
-- page: 9; sample: prefatory note he subject of this treatise belongs to the office of the holy
-- page: 12; sample: preface aving added brief account of the design order and method of the ensuing
-- page: 15; sample: of god with faith divine and supernaural chapter the subject stated preliminary remarks he
-- page: 16; sample: first supernatural revelation is the only objective cause and means of supernatural illumination these
-- page: 17; sample: being and power this they do undeniably and infallibly psalm 19 romans 19-21 yet
-- page: 19; sample: devil of the ways means and degrees whereof have discoursed elsewhere f1 hereon god
-- page: 20; sample: and testimony with threatening of curse unto the contrary malachi 4-6 so the writings
-- page: 21; sample: is the only repository of all divine supernatural revelation psalm 19 isaiah 20 timothy
-- page: 22; sample: the word see matthew 14 15 corinthians 18-20 ephesians 11-15 timothy 15 the church
+- page: 3; sample: contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason
+- page: 10; sample: 10 fanatical excesses which they sought to rebuke they stated the question in such
+- page: 11; sample: 11 itself substantiates such claim in his behalf it is the first recognition of
+- page: 12; sample: 12 preface having added brief account of the design order and method of the
+- page: 13; sample: 13 the consciences of men immediately and the way whereby they may come to
+- page: 15; sample: 15 the reason of faith or the grounds whereon the scripture is believed to
+- page: 16; sample: 16 first supernatural revelation is the only objective cause and means of supernatural illumination
+- page: 17; sample: 17 that it did sufficiently evidence itself to be from god unto the minds
+- page: 18; sample: 18 of his will πολυμερως by sundry parts and degrees yet so that every
+- page: 19; sample: 19 before the call of moses during which time all things went into darkness
 
 ## Missing Top-Of-Page Body Windows
 
@@ -128,6 +145,12 @@
 - file: EPUB/ch034.xhtml; text: For, —
 - file: EPUB/ch035.xhtml; text: I answer, —
 
+## Missing Enumerator Markers
+
+- marker: [1st.]; pdf: 2; epub: 0; examples: [{'location': 'pdf:p212', 'context': 's of their minds, which hinder them from receiving instruction." But ff it be so, then, — [1st.] It is supposed that man also in their teachings can give us an understanding as well as the Son of God...
+- marker: [2dly.]; pdf: 1; epub: 0; examples: [{'location': 'pdf:p212', 'context': 'learn, and have no darling lusts or vicious habits of mind to hinder them from learning. [2dly.] Seeing he hath taken this work on himself, and designs its accomplishment, cannot the Son of God by hi...
+- marker: [3dly.]; pdf: 1; epub: 0; examples: [{'location': 'pdf:p214', 'context': 'and condition with the conceptions of every one that will pretend unto this inspiration. [3dly.] The pretense visibly confutes itself in the manifold mutual contradictions of them that pretend unto i...
+
 ## Repeated Windows
 
 - phrase: we believe the scripture to be the word of god; count: 21
@@ -143,23 +166,58 @@
 
 ## Missing Word Samples
 
-- word: ord; pdf: 67; epub: 0
+- word: 1st; pdf: 27; epub: 9
+- word: 2dly; pdf: 27; epub: 10
+- word: עןףְלָאוֹט; pdf: 5; epub: 0
 - word: self; pdf: 7; epub: 3
-- word: econdly; pdf: 4; epub: 0
-- word: hat; pdf: 4; epub: 0
 - word: 14-17; pdf: 4; epub: 0
-- word: od; pdf: 5; epub: 2
-- word: irst; pdf: 3; epub: 0
-- word: hirdly; pdf: 3; epub: 0
+- word: חָ־ןִ; pdf: 3; epub: 0
+- word: ־טחֲןוּעןים; pdf: 3; epub: 0
 - word: 10-12; pdf: 3; epub: 1
+- word: ; pdf: 3; epub: 1
 - word: 16-18; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
 - word: psalms; pdf: 7; epub: 37
-- word: ed; pdf: 1; epub: 16
-- word: note; pdf: 8; epub: 15
-- word: prefatory; pdf: 7; epub: 14
+- word: dly; pdf: 0; epub: 23
+- word: st; pdf: 2; epub: 20
+
+## Missing Hebrew Word Samples
+
+- word: עןףְלָאוֹט; pdf: 5; epub: 0
+- word: חָ־ןִ; pdf: 3; epub: 0
+- word: ־טחֲןוּעןים; pdf: 3; epub: 0
+- word: ־נלאעעי־ןי; pdf: 2; epub: 0
+- word: תוֹרָה; pdf: 2; epub: 0
+- word: עחִ; pdf: 2; epub: 0
+- word: ־םתָןוֹט; pdf: 2; epub: 0
+
+## Missing Greek Clauses
+
+- page: 107; word_count: 8; sample: τὸ γνωστὸν τοῦ θεοῦ φανερόν ἐστιν ἐν αὐτοῖς
+- page: 141; word_count: 26; sample: εχομεν γὰρ τὴν ἀρχὴν τῆς διδασκαλίας τὸν κύριον διά τε τῶν προφητῶν
+- page: 141; word_count: 9; sample: εἴτις ἐτέρου δεῖσθαι ὑπολάζοι οὐκέτ ἄν ὄντως ἀρχὴ φυλαχθείη
+- page: 141; word_count: 46; sample: μὲν οῦν ἐξ ἑαυτοῦ πιστὸς τῇ κυριακῇ γραφῇ τε καὶ φωνῇ ἀξιόπιστος
+- page: 142; word_count: 41; sample: εἰκότως τοίνυν πίστει περιλαζόντες ἀναπόδεικτον τὴν ἀρχὴν ἐκ περιουσίας καὶ τὰς ἀποδείξεις
+- page: 142; word_count: 26; sample: οὐκ ἀρκεῖ μόνον ἁπλῶς εἰπεῖν τὸ δόξαν ἀλλὰ πιστώσασθαι δεῖ τὸ λεχθὲν
+- page: 142; word_count: 20; sample: μόνη ἀπόδειξις οῦσα τυγχάνει οὕτως οῦν καὶ ἡμεῖς ἀπ αὐτῶν περὶ αὐτῶν
+- page: 143; word_count: 11; sample: ὑπὲρ τὰς λογικὰς μεθάδους τὴν ψυχὴν εἰς συγκατάθεσιν ἕλκουσα πίστις οὐκ
+- page: 143; word_count: 5; sample: ταῖς τοῦ πνεύματος ἐνεργείαις ἐγγινομένη
+- page: 143; word_count: 13; sample: τῶν ζείων λογίων διδασκαλία τὸ πιστὸν ἀφ ἑαυτῆς ἔχουσα διὰ τὸ ζεόπνευστον
+
+## Missing Hebrew Clauses
+
+- page: 16; word_count: 3; sample: ־נלאעעי־ןי באףא גליטא
+- page: 23; word_count: 3; sample: עפ־טחאדְּבָ ריו יָעאיר
+- page: 28; word_count: 5; sample: ־האֲעםיןוּ ־בּיהוָֹה ־אלֹעהי ךם וְעטאָעםןוּ
+- page: 166; word_count: 9; sample: ־נלאעעי־ןי וְ־אבּיטָה עןףְלָאוֹט עםתוֹרָ טו תוֹרָה כְטוּעבים תוֹרָה ןְעבעאים
+- page: 167; word_count: 7; sample: עןףְלָאוֹט פָלָא עןףְלָאוֹט עךי עיפָעלא עםמְו דָבָר
+- page: 167; word_count: 6; sample: לא רעבּו תוֹרָעטי כְםוֹ זָר עןףְלָאוֹט
+- page: 171; word_count: 7; sample: ־ה וֹט ־ה וֹט וְ־ה־מע ךָה ־הנְסוּךָה
+- page: 265; word_count: 4; sample: דְּבְערי ־א םט ךָטוּב
+- page: 269; word_count: 3; sample: עס ףר יְהֹוָה
+- page: 325; word_count: 4; sample: רוּ־ח עח עחִ חָ־ןִ
 
 ## Limits
 

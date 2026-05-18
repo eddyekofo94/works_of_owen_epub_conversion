@@ -242,10 +242,13 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
         pytest.skip(f"EPUB for volume {volume} not found at {epub_path}")
 
     files = {}
+    css = ""
     with zipfile.ZipFile(epub_path) as zf:
         for name in zf.namelist():
             if name.endswith(".xhtml"):
                 files[name] = zf.read(name).decode("utf-8", "replace")
+            elif name.endswith("style/main.css"):
+                css = zf.read(name).decode("utf-8", "replace")
 
     part_2_title = next(
         html for html in files.values()
@@ -271,6 +274,109 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     assert 'class="catechism-item"' in greater_chapter
     assert "<b>Ques. 1.</b> What is Christian religion?" in greater_chapter
     assert "<b>Ans.</b> The only way" in greater_chapter
+
+
+@pytest.mark.parametrize("volume", VOLUMES)
+def test_v1_catechism_questions_and_answers_are_grouped_and_bolded(volume):
+    if volume != 1:
+        pytest.skip("Catechism visual polish is a Volume 1-specific override")
+    _, epub_path = paths_for(volume)
+    if not epub_path.exists():
+        pytest.skip(f"EPUB for volume {volume} not found at {epub_path}")
+
+    files = {}
+    css = ""
+    with zipfile.ZipFile(epub_path) as zf:
+        for name in zf.namelist():
+            if name.endswith(".xhtml"):
+                files[name] = zf.read(name).decode("utf-8", "replace")
+            elif name.endswith("style/main.css"):
+                css = zf.read(name).decode("utf-8", "replace")
+
+    lesser = next(
+        html for html in files.values()
+        if "<title>The Lesser Catechism</title>" in html
+    )
+    greater_chapter_1 = next(
+        html for html in files.values()
+        if "<title>Chapter 1 - of the Scripture.</title>" in html
+    )
+
+    assert ".v1-catechism-pair" in css
+    assert "front-matter-prose" not in lesser
+    assert '<div class="v1-catechism-pair">\n<p class="catechism-item"><b>Ques.</b> Whence is all truth' in lesser
+    assert '<p class="catechism-item"><b>Ans.</b> From the holy Scripture' in lesser
+    assert '<p class="catechism-item"><b>A.</b> An eternal, infinite' in lesser
+    assert '<p class="catechism-item"><b>Q. 2.</b> What is repentance?</p>' in lesser
+    assert '<p class="catechism-item"><b>A.</b> A forsaking of all sin, with godly sorrow for what we have committed. — Chapter 20.</p>' in lesser
+    assert '<p>- Chapter 20.</p>' not in lesser
+    assert '<p>- Chapter 21.</p>' not in lesser
+    assert "know.?" not in lesser
+
+    assert '<div class="v1-catechism-pair">\n<p class="catechism-item"><b>Ques. 1.</b> What is Christian religion?</p>' in greater_chapter_1
+    assert '<p class="catechism-item"><b>A.</b> From the holy' in greater_chapter_1
+
+    combined = "\n".join(files.values())
+    false_answer_samples = [
+        "A prefatory note has commonly been given to the different treatises.",
+        "A complete index will be given in the last volume",
+        "A glorious representation hereof",
+    ]
+    for sample in false_answer_samples:
+        assert sample in combined
+        assert f'<p class="catechism-item"><b>A.</b> {sample[2:]}' not in combined
+        assert f'<p class="catechism-item">A. {sample[2:]}' not in combined
+
+
+@pytest.mark.parametrize("volume", VOLUMES)
+def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
+    if volume != 1:
+        pytest.skip("Roman heading samples are volume 1-specific")
+    _, epub_path = paths_for(volume)
+    if not epub_path.exists():
+        pytest.skip(f"EPUB for volume {volume} not found at {epub_path}")
+
+    files = {}
+    css = ""
+    with zipfile.ZipFile(epub_path) as zf:
+        for name in zf.namelist():
+            if name.endswith(".xhtml"):
+                files[name] = zf.read(name).decode("utf-8", "replace")
+            elif name.endswith("style/main.css"):
+                css = zf.read(name).decode("utf-8", "replace")
+
+    roman_html = "\n".join(
+        html for html in files.values()
+        if "roman-subheading" in html or "roman-list-item" in html
+    )
+    assert "[[MARKER]]" not in roman_html
+    assert "[[/MARKER]]" not in roman_html
+    assert "&lt;b&gt;" not in roman_html
+    assert "&lt;/b&gt;" not in roman_html
+    assert re.search(r"\.roman-subheading\s*\{[^}]*text-align:\s*left;", css, re.S)
+    assert re.search(r"\.roman-subheading\s*\{[^}]*font-weight:\s*normal;", css, re.S)
+    assert re.search(r"\.roman-list-item\s*\{[^}]*text-align:\s*left;", css, re.S)
+    assert re.search(r"\.roman-list-item b\s*\{[^}]*display:\s*inline;", css, re.S)
+
+    chapter_9 = next(
+        html for html in files.values()
+        if "<title>Chapter 9 - Honor Due to the Person of Christ</title>" in html
+    )
+    assert '<p class="roman-list-item"><b>I.</b> Honor.</p>' in chapter_9
+    assert '<p class="roman-list-item"><b>II.</b> Obedience.</p>' in chapter_9
+    assert '<p class="roman-list-item"><b>III.</b> Conformity.</p>' in chapter_9
+    assert (
+        '<p class="roman-list-item"><b>IV.</b> The use we make of him, for the attaining '
+        'and receiving of all Gospel privileges'
+    ) in chapter_9
+    assert '<h4 class="roman-subheading"><b>I.</b> Honor.</h4>' not in chapter_9
+    assert '<b>I.</b> The person of Christ is the object of divine honor and worship.' in chapter_9
+
+    chapter_7 = next(
+        html for html in files.values()
+        if "<title>Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ</title>" in html
+    )
+    assert '<b>I.</b> The first of these is, that he should have a nature provided for him,' in chapter_7
 
 
 @pytest.mark.parametrize("volume", VOLUMES)

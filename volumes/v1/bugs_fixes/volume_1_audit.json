@@ -1,14 +1,19 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-17T22:23:38.861699+00:00",
+  "generated_at": "2026-05-18T09:39:09.804556+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 3,
+  "warning_count": 4,
   "errors": [],
   "warnings": [
     {
       "code": "missing_cover_manifest_hint",
       "message": "No obvious cover image manifest hint found"
+    },
+    {
+      "code": "untagged_greek",
+      "message": "Greek characters appear outside lang='el' context",
+      "chars": 8
     },
     {
       "code": "repeated_phrases",
@@ -25,7 +30,7 @@
   ],
   "info": {
     "file_count": 105,
-    "epub_size_bytes": 2704278,
+    "epub_size_bytes": 2706833,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -42,11 +47,11 @@
     ],
     "font_count": 8,
     "language": {
-      "greek_chars": 4283,
-      "greek_untagged_chars": 0,
+      "greek_chars": 4282,
+      "greek_untagged_chars": 8,
       "hebrew_chars": 155,
       "hebrew_untagged_chars": 0,
-      "files_with_untagged_greek": 0,
+      "files_with_untagged_greek": 3,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
@@ -70,7 +75,7 @@
       "repeated_phrase_count": 5,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 2,
+      "chapter_heading_in_paragraph_files": 1,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -82,7 +87,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 4,
+      "lowercase_paragraph_start_files": 3,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -90,7 +95,20 @@
         "boilerplate": [],
         "beta_code": [],
         "escaped_lang_tag": [],
-        "untagged_greek": [],
+        "untagged_greek": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": ", κ.τ.λ. (cap. 6)"
+          },
+          {
+            "file": "EPUB/ch005.xhtml",
+            "text": ", κ.τ.λ.\" — \"Thou art a rock, and on thee will I build.\" At least the gender had not been altered, but he would have said, \""
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": ".τ. λ., 2 Corinthians 3:18. We behold his glory \"in a glass,\" which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t"
+          }
+        ],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [
@@ -130,10 +148,6 @@
           {
             "file": "EPUB/ch003.xhtml",
             "text": "Chapter 1"
-          },
-          {
-            "file": "EPUB/ch049.xhtml",
-            "text": "A. Only by Jesus Christ. — Chapter 9"
           }
         ],
         "overlong_heading_body": [],
@@ -153,10 +167,6 @@
         "nav_duplicate_text": [],
         "spaced_caps": [],
         "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/ch020.xhtml",
-            "text": "i"
-          },
           {
             "file": "EPUB/ch030.xhtml",
             "text": "a"

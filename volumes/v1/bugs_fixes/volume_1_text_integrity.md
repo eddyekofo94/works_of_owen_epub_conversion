@@ -4,17 +4,17 @@
 - Warnings: 9
 - PDF pages: 644
 - EPUB text files: 83
-- EPUB paragraphs/headings: 3060
+- EPUB paragraphs/headings: 3083
 
 ## Coverage
 
-- PDF content tokens: 210900
-- EPUB content tokens: 213786
-- Approximate PDF-to-EPUB coverage ratio: 0.9983
+- PDF content tokens: 211474
+- EPUB content tokens: 213785
+- Approximate PDF-to-EPUB coverage ratio: 0.9963
 - Pages checked: 635
-- Weak page matches: 3
-- Dense source windows checked: 26620
-- Missing dense source-window pages: 135
+- Weak page matches: 23
+- Dense source windows checked: 794
+- Missing dense source-window pages: 620
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 602
@@ -26,17 +26,17 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2754
-- Possible faulty paragraph splits: 30
-- Structural starts excluded from split warnings: 169
-- Short fragments: 48
+- Body paragraphs checked: 2750
+- Possible faulty paragraph splits: 35
+- Structural starts excluded from split warnings: 164
+- Short fragments: 49
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
-- Roman heading candidates: 33
-- Overlong heading candidates: 0
+- Roman heading candidates: 0
+- Overlong heading candidates: 11
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 313
@@ -47,13 +47,13 @@
 ## Greek / Hebrew
 
 - PDF Greek words: 824
-- EPUB Greek words: 836
+- EPUB Greek words: 835
 - Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
 - Hebrew word coverage ratio: 1.0
 - Greek clauses checked: 44
-- Missing Greek clauses: 16
+- Missing Greek clauses: 44
 - Hebrew clauses checked: 1
 - Missing Hebrew clauses: 0
 
@@ -65,22 +65,22 @@
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
 - page: 3; sample: contents of χριστολογια or declaration of the glorious mystery of the person of christ
-- page: 4; sample: and discourses on the glory of christ refatory ote he ditor reface he eader
-- page: 5; sample: heaven meditations and discourses concerning the glory of christ applied etc riginal reface application
-- page: 7; sample: general preface would be presumption to enter upon any commendation of john owen as
 - page: 9; sample: embraces the most comprehensive view of this vitally-important subject his exposition of psalm 130
-- page: 10; sample: learned puritan we are informed by dr steven f2 that his exposition of the
-- page: 11; sample: whose literary industry the church of christ had been se largely indebted it would
-- page: 12; sample: russell dissenting minister in the neighborhood of london as the first attempt f4 to
-- page: 19; sample: worship faith love and obedience due unto him in and from the church yea
-- page: 20; sample: prefatory note to object of dr owen in this treatise is to illustrate the
+- page: 10; sample: 10 dutch divines the most favorable mention is made of the various treatises of
+- page: 11; sample: 11 ushered under their auspices into public notice there was large body of subscribers
+- page: 12; sample: 12 the edition was comprised in twenty-one octavo volumes the first however consisting of
+- page: 13; sample: 13 that the theologoumena had been much disfigured with errors nobis praelo capite ad
+- page: 14; sample: 14 the punctuation has undergone thorough revisal passages which from negligence in this respect
+- page: 15; sample: 15 were printed when he was himself alive here abound in errors to degree
+- page: 16; sample: 16 sometimes at loss to judge of the treatise of an old author whether
+- page: 17; sample: 17 which belongs to the library of the college and from which the portrait
 
 ## Missing Top-Of-Page Body Windows
 
@@ -118,18 +118,18 @@
 
 - file: EPUB/ch078.xhtml; text: A.M. of Northampton, 1781. FT4 A statement occurs in the "Encyclopaedia Britannica" that Owen's works are printed in seven folio volumes. If it be meant that there are seven folio volumes of Owen's works, there is a sense in which the st...
 
-## Roman Heading Candidates
+## Overlong Heading Candidates
 
-- file: EPUB/ch011.xhtml; text: I. The first of these is, that he should have a nature provided for him, which originally was not his own. For in his divine nature, singly considered, he had no such relation unto them for whom he was to discharge his o
-- file: EPUB/ch013.xhtml; text: IV. The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory.
-- file: EPUB/ch013.xhtml; text: I. The person of Christ is the object of divine honor and worship. The formal object and reason hereof is the divine nature, and its essential infinite excellencies. For they are nothing but that respect unto the Divine
-- file: EPUB/ch019.xhtml; text: IV. The last thing proposed concerning the person of Christ, was the use of it unto believers, in the whole of their relation unto God and duty towards him. And the things belonging thereunto may be reduced unto these ge
-- file: EPUB/ch022.xhtml; text: II. The union of the two natures in that single person which is consequential thereon.
-- file: EPUB/ch022.xhtml; text: III. The mutual communication of those distinct natures, the divine and human, by virtue of that union.
-- file: EPUB/ch022.xhtml; text: IV. The enunciations or predications concerning the person of Christ, which follow on that union and communion.
-- file: EPUB/ch022.xhtml; text: I. The first thing in the divine constitution of the person of Christ as God and man, is assumption. That ineffable divine act I intend whereby the person of the Son of God assumed our nature, or took it into a personal
-- file: EPUB/ch022.xhtml; text: II. That which followeth hereon, is the union of the two natures in the same person, or the hypostatical union. This is included and asserted in a multitude of divine testimonies.
-- file: EPUB/ch022.xhtml; text: III. Concurrent with, and in part consequent unto, this union, is the communion of the distinct natures of Christ hypostatically united. And herein we may consider, —
+- file: EPUB/ch019.xhtml; tag: h4; text: IV. The last thing proposed concerning the person of Christ, was the use of it unto believers, in the whole of their relation unto God and duty towards him.
+- file: EPUB/ch020.xhtml; tag: h4; text: ill. For what he so does is due in and for itself; and to suppose that satisfaction will be made for a former fault by that whose omission would have been another, had the former never been committed, is madness.
+- file: EPUB/ch024.xhtml; tag: h4; text: III. The third and last thing which we proposed unto consideration, in our inquiry into the present state and condition of the person of Christ in heaven, is the exercise and discharge of his mediatory once in behalf of the church; espec...
+- file: EPUB/ch027.xhtml; tag: h4; text: IV. He it is who in himself has given us a pledge of the capacity of our nature to inhabit those blessed regions of light, which are far above these aspectable heavens.
+- file: EPUB/ch029.xhtml; tag: h4; text: I. Since men fell from God by sin, it is no small part of their misery and punishment, that they are covered with thick darkness and ignorance of the nature of God.
+- file: EPUB/ch029.xhtml; tag: h4; text: II. This darkness in the minds of men, this ignorance of God, his nature and his will, was the original of all evil unto the world, and yet continues so to be.
+- file: EPUB/ch036.xhtml; tag: h4; text: III. There is a greater, a more intimate conjunction, a nearer relation, a higher mutual interest, between Christ and the church, than ever was or can be between any other persons or relations in the world, whereon it became just and equ...
+- file: EPUB/ch041.xhtml; tag: h4; text: I. In the view which we have here of the glory of Christ by faith, we gather things, as it were, one by one, in several parts and parcels out of the Scripture; and comparing them together in our minds, they become the object of our prese...
+- file: EPUB/ch045.xhtml; tag: h4; text: II. The second thing proposed is, that notwithstanding all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great perplexities,...
+- file: EPUB/ch045.xhtml; tag: h4; text: III. But I come to that which was proposed in the third place, — namely, to show that this at present is the state of many professors of religion, that they are fallen under those spiritual decays, and do not enjoy the effects of the pro...
 
 ## Short Fragments
 
@@ -162,8 +162,6 @@
 - word: faithfullness; pdf: 7; epub: 0
 - word: pre; pdf: 6; epub: 2
 - word: eminence; pdf: 5; epub: 1
-- word: ote; pdf: 3; epub: 0
-- word: reface; pdf: 3; epub: 0
 - word: mindedness; pdf: 3; epub: 0
 
 ## Excess Word Samples
@@ -173,15 +171,15 @@
 ## Missing Greek Clauses
 
 - page: 26; word_count: 54; sample: υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις
+- page: 27; word_count: 11; sample: επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν
 - page: 31; word_count: 5; sample: πρόσωπον ὁμοιούσιος ἑτερούσιος ἐξ οὐκ
 - page: 32; word_count: 13; sample: ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου
+- page: 36; word_count: 31; sample: τὸν θεοῦ μεσίτην καὶ ἀνθρώπων κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε
 - page: 37; word_count: 5; sample: ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν
 - page: 37; word_count: 11; sample: υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ
-- page: 42; word_count: 11; sample: παιδαγωγὸς θεὸς ἐν ἀνθρώπου σχήματι ἄχραντος πατρικῷ θελήματι διάκονος λόγος θεὸς
-- page: 57; word_count: 14; sample: σὺ εῖ πέτρος καὶ ἐπὶ ταύτῃ τῇ πέτρᾳ σὺ εῖ πέτρος καὶ
-- page: 105; word_count: 6; sample: ἐν πατρὶ πρὸς τὸν πατέρα θεὸν
-- page: 109; word_count: 11; sample: ἐν προσώπῳ τοῦ χηριστοῦ λόγος τοῦ θεοῦ λόγος οὐσιώδης λόγος προφορικὸς
-- page: 293; word_count: 8; sample: ἀτρέπτως ἀδιαιρέτως ἀσυγχύτως ἀχωρίστως οὐσιωδῶς ἐνσάρκωσις ἐνσωμάτωσις ἐνανθρώπησις
+- page: 37; word_count: 22; sample: αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα φωτίζει δὲ
+- page: 37; word_count: 37; sample: εἰ γοῦν ὥς ἐν ὑποθέσει λόγου καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος
+- page: 40; word_count: 13; sample: χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς ῆν γὰρ ἐν θεῷ καὶ τοῦ
 
 ## Limits
 

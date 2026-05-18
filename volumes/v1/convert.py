@@ -32,6 +32,121 @@ from render import SCRIPTURE_BOOK_RE
 
 VOL = 1
 
+_V1_CATECHISM_DENSE_RE = re.compile(
+    r'<p[^>]*>\s*(?:<b>)?(?:Ques|Ans|Q|A)\.?\b',
+    re.I,
+)
+
+_V1_CATECHISM_P_RE = re.compile(
+    r'<p(?P<attrs>[^>]*)>(?P<body>.*?)</p>',
+    re.S,
+)
+
+_V1_CATECHISM_BOLD_LABEL_RE = re.compile(
+    r'^\s*<b>(?P<label>Ques|Ans|Q|A)\.?(?:\s*(?P<num>\d+)\s*\.?)?</b>\s*',
+    re.I | re.S,
+)
+
+_V1_CATECHISM_PLAIN_LABEL_RE = re.compile(
+    r'^\s*(?P<label>Ques|Ans|Q|A)\.?(?:\s*(?P<num>\d+)\s*\.?)?(?=\s+)\s+',
+    re.I | re.S,
+)
+
+
+def _format_v1_catechism_label(label, num=None):
+    canonical = {'q': 'Q', 'ques': 'Ques', 'a': 'A', 'ans': 'Ans'}[label.lower()]
+    formatted = f'{canonical}.'
+    if num:
+        formatted += f' {num}.'
+    return formatted
+
+
+def _normalize_v1_catechism_paragraph(match):
+    """V1-only rendered cleanup for Catechism Q/A anchors."""
+    body = match.group('body').strip()
+
+    label_match = _V1_CATECHISM_BOLD_LABEL_RE.match(body)
+    if label_match:
+        rest = body[label_match.end():].strip()
+        # Handles OCR/render split forms such as <b>Q.</b> 2 . What...
+        trailing_num = re.match(r'^(?P<num>\d+)\s*\.\s+', rest)
+        label_num = label_match.group('num')
+        if trailing_num and not label_num:
+            label_num = trailing_num.group('num')
+            rest = rest[trailing_num.end():].strip()
+    else:
+        label_match = _V1_CATECHISM_PLAIN_LABEL_RE.match(body)
+        if not label_match:
+            return match.group(0)
+        rest = body[label_match.end():].strip()
+        label_num = label_match.group('num')
+
+    if not rest:
+        return match.group(0)
+
+    label = _format_v1_catechism_label(label_match.group('label'), label_num)
+    return f'<p class="catechism-item"><b>{label}</b> {rest}</p>'
+
+
+def _group_v1_catechism_pairs(html):
+    qa_pair_re = re.compile(
+        r'(?P<q><p class="catechism-item"><b>(?:Ques|Q)\.(?:\s+\d+\.)?</b>.*?</p>)\s*\n\s*'
+        r'(?P<a><p class="catechism-item"><b>(?:Ans|A)\.(?:\s+\d+\.)?</b>.*?</p>)',
+        re.S,
+    )
+    return qa_pair_re.sub(
+        lambda m: (
+            '<div class="v1-catechism-pair">\n'
+            f'{m.group("q")}\n'
+            f'{m.group("a")}\n'
+            '</div>'
+        ),
+        html,
+    )
+
+
+def _postprocess_v1_catechism_html(html, chapter):
+    """Polish V1 Lesser/Greater Catechism Q&A rendering after generic HTML output."""
+    if not chapter.get('is_catechism_context'):
+        return html
+
+    # These chapters have dense Q/A runs. The guard avoids touching ordinary prose
+    # paragraphs elsewhere in Volume 1 that happen to start with "A."
+    if len(_V1_CATECHISM_DENSE_RE.findall(html)) < 2:
+        return html
+
+    html = _V1_CATECHISM_P_RE.sub(_normalize_v1_catechism_paragraph, html)
+    return _group_v1_catechism_pairs(html)
+
+
+_V1_CATECHISM_CSS = """
+/* Volume 1-only Catechism polish */
+.v1-catechism-pair {
+    margin: 1em 0 1.25em;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.v1-catechism-pair .catechism-item {
+    margin: 0.12em 0 0.2em;
+    text-align: left;
+    text-indent: 0 !important;
+}
+
+.v1-catechism-pair .catechism-item + .catechism-item {
+    margin-top: 0.28em;
+}
+
+p.catechism-item {
+    text-align: left;
+    text-indent: 0 !important;
+}
+
+.catechism-item b {
+    font-weight: 700;
+}
+"""
+
 def _coalesce_v1_catechism_paragraphs(paragraphs):
     """V1-specific: Merge scripture reference paragraphs into the preceding Catechism answer."""
     if not paragraphs:
@@ -43,7 +158,10 @@ def _coalesce_v1_catechism_paragraphs(paragraphs):
         # previous paragraph was an Answer, merge them.
         # Allow leading digits/item markers (Issue 26)
         is_proof = re.match(rf'^(?:\d{{1,3}}\.?\s+)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', stripped, re.I)
-        if is_proof and out and re.match(r'^(?:\*\*)?(?:A\.|Ans\.)', out[-1].strip(), re.I):
+        is_catechism_chapter_ref = re.match(r'^[—-]\s*Chap(?:ter)?\.?\s+\d+\b', stripped, re.I)
+        if (is_proof or is_catechism_chapter_ref) and out and re.match(r'^(?:\*\*)?(?:A\.|Ans\.)', out[-1].strip(), re.I):
+            if is_catechism_chapter_ref:
+                stripped = re.sub(r'^[—-]\s*', '— ', stripped)
             # Join with a space (Issue 16)
             out[-1] = out[-1].rstrip() + " " + stripped
         else:
@@ -85,8 +203,13 @@ OVERRIDES = {
         'This being the [f8] [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
         'This being the [f9] declare wherein he placed': 'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
     },
+    'regex_replacements': {
+        r'\bknow\.\?': 'know?',
+    },
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
+    'html_postprocess_hook': _postprocess_v1_catechism_html,
+    'extra_css': _V1_CATECHISM_CSS,
     # Volume 1: Tag Greek abbreviations that fall below the 3-codepoint minimum
     # in tag_unicode_ranges(). Also repairs damaged OCR form ".τ. λ." → "κ.τ.λ.".
     # Order matters: normal case first, damaged case second (so its inserted

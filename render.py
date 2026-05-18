@@ -67,7 +67,11 @@ BETA_CODE_RE = re.compile(
 # Matches words containing unambiguous Gideon-only marks. Plain semicolon,
 # bracket, and digit 1 are ordinary English/list punctuation and caused major
 # false positives ("grace;" and "vol. 1" became Hebrew).
-GIDEON_HEBREW_RE = re.compile(r'(?<!\S)[a-zA-Z\[\];1]*(?:[æ}])[a-zA-Zæ}\];1\[]*\.?(?!\S)')
+GIDEON_HEBREW_RE = re.compile(
+    r"(?<!\S)[a-zA-Z0-9\[\];,`=/\'‘’µËÚãæçˆ˚≈}]*"
+    r"(?:[µËÚãæçˆ˚≈}])"
+    r"[a-zA-Z0-9\[\];,`=/\'‘’µËÚãæçˆ˚≈}]*\.?(?!\S)"
+)
 
 FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
 LOOSE_FOOTNOTE_MARKER_RE = re.compile(
@@ -396,7 +400,7 @@ def _scripture_ref_tokens(text):
         token = re.sub(r'^(?:[1-3]\s+)?', '', token)
         tokens.append(token)
     return tokens
-def _split_inline_structural_markers(para):
+def _split_inline_structural_markers(para, allow_bare_a=False):
     """Promote inline Owen list markers to paragraph starts."""
     pieces = []
     pos = 0
@@ -405,6 +409,8 @@ def _split_inline_structural_markers(para):
         marker = match.group('marker')
         after_start = match.start('marker')
 
+        if not allow_bare_a and re.match(r'^(?:\*\*)?A\.', marker, re.I):
+            continue
         marker_is_wrapped = marker.startswith(('(', '[', '**(', '**['))
         if marker in {'q.', 'a.', 'm.', 'p.'} and re.match(r'\s*\d', para[match.end():]):
             continue
@@ -749,6 +755,65 @@ def _is_roman_list_item(text):
     return bool(re.search(r'[.!?:;]"?\s*$', stripped))
 
 
+def _roman_head_match(text):
+    return re.match(
+        r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?(?:\s+(?P<rest>.*))?$',
+        (text or '').strip(),
+        re.I,
+    )
+
+
+def _starts_roman_outline(previous_text, roman_number):
+    if roman_number not in (1, 2):
+        return False
+    return bool(
+        re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
+        or re.search(r'(?:[—-]|,)\s*$', previous_text)
+    )
+
+
+def _is_roman_outline_entry(roman_text, previous_text, expected_roman_number):
+    match = _roman_head_match(roman_text)
+    if not match:
+        return False, None
+    roman_number = _roman_to_int(match.group('roman'))
+    rest = (match.group('rest') or '').strip()
+    if not rest:
+        return False, None
+    if (
+        (_starts_roman_outline(previous_text, roman_number) or expected_roman_number == roman_number)
+        and _is_roman_list_item(rest)
+    ):
+        return True, roman_number + 1
+    return False, None
+
+
+def _render_simple_roman_heading_content(raw_content):
+    match = _roman_head_match(raw_content)
+    if not match:
+        return tag_unicode_ranges(_html_escape(_clean_heading_text(raw_content)))
+    roman_html = f'<b>{_html_escape(match.group("roman"))}</b>'
+    rest = _clean_heading_text(match.group('rest') or '')
+    if not rest:
+        return roman_html
+    return f'{roman_html} {tag_unicode_ranges(_html_escape(rest))}'
+
+
+def _split_roman_section_opening(text):
+    match = _roman_head_match(text)
+    if not match:
+        return None
+    rest = (match.group('rest') or '').strip()
+    if len(re.findall(r'\w+', rest)) < 12:
+        return None
+    sentence = re.match(r'^(.+?[.!?])\s+([A-Z].+)$', rest)
+    if not sentence:
+        return None
+    heading = f'{match.group("roman")} {sentence.group(1).strip()}'
+    body = sentence.group(2).strip()
+    return heading, body
+
+
 def _strip_markdown_heading_marker(text):
     return re.sub(r'^\s*#{1,6}\s+', '', text.strip())
 
@@ -789,13 +854,14 @@ def _coalesce_roman_list_paragraphs(paragraphs):
     return out
 
 
-def _split_inline_catechism_questions(paragraphs):
+def _split_inline_catechism_questions(paragraphs, allow_bare_a=False):
     out = []
     # Split on space followed by Q./Ques. or A./Ans. markers
     # Supports optional bold ** markers.
     # NOTE: Case-sensitive to avoid catching scholarly citations like 'q. 81' (Issue 17)
+    answer_marker = r'A\.|' if allow_bare_a else ''
     pattern = re.compile(
-        r'(?<!^)\s+(?=(?:\*\*)?(?:Q\.|Ques\.|A\.|Ans\.)\s*(?:\d+\.)?\s*(?:\*\*)?)'
+        rf'(?<!^)\s+(?=(?:\*\*)?(?:Q\.|Ques\.|{answer_marker}Ans\.)\s*(?:\d+\.)?\s*(?:\*\*)?)'
     )
     for para in paragraphs:
         parts = [part.strip() for part in pattern.split(para) if part.strip()]
@@ -1002,20 +1068,28 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     
     # Apply volume-specific coalesce hook if provided (Issue 26)
     coalesce_hook = config.get('paragraph_coalesce_hook') if config else None
+    is_catechism_context = bool(config.get('is_catechism_context')) if config else False
     if coalesce_hook:
         paragraphs = coalesce_hook(
             _split_inline_catechism_questions(
-                _coalesce_roman_list_paragraphs(normalized_paragraphs)
+                _coalesce_roman_list_paragraphs(normalized_paragraphs),
+                allow_bare_a=is_catechism_context,
             )
         )
     else:
         paragraphs = _split_inline_catechism_questions(
-            _coalesce_roman_list_paragraphs(normalized_paragraphs)
+            _coalesce_roman_list_paragraphs(normalized_paragraphs),
+            allow_bare_a=is_catechism_context,
         )
         
     expanded_paragraphs = []
     for para in paragraphs:
-        expanded_paragraphs.extend(_split_inline_structural_markers(para))
+        expanded_paragraphs.extend(
+            _split_inline_structural_markers(
+                para,
+                allow_bare_a=is_catechism_context,
+            )
+        )
     paragraphs = expanded_paragraphs
     paragraphs = [_repair_known_catechism_ghosts(para) for para in paragraphs]
     recent_plain = []
@@ -1162,6 +1236,18 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                 with_links = _restore_footnote_placeholders(escaped)
                 return tag_unicode_ranges(with_links)
 
+            def _render_roman_heading_content(raw_content: str) -> str:
+                """Render a Roman heading with only the numeral bolded."""
+                content_clean = _strip_inline_structural_tokens(raw_content)
+                match = _roman_head_match(content_clean)
+                if not match:
+                    return _render_heading_content(content_clean)
+                roman_html = f'<b>{_html_escape(match.group("roman"))}</b>'
+                rest = (match.group('rest') or '').strip()
+                if not rest:
+                    return roman_html
+                return f'{roman_html} {_render_heading_content(rest)}'
+
             if kind == 'PART':
                 html_parts.append(f'<h1 class="primary" style="text-align:center;margin:2em 0 1.5em;">{_render_heading_content(content)}</h1>')
                 # Only trigger BODY_START/drop cap if it matches the pattern (Issue 107 Refinement)
@@ -1180,7 +1266,18 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     recent_plain = recent_plain[-5:]
                 continue
             elif kind == 'ROMAN_HEAD':
-                html_parts.append(f'<h4 class="roman-subheading">{_render_heading_content(content)}</h4>')
+                previous_text = recent_plain[-1] if recent_plain else ''
+                is_roman_list, next_roman = _is_roman_outline_entry(
+                    content,
+                    previous_text,
+                    roman_list_expected,
+                )
+                if is_roman_list:
+                    html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
+                    roman_list_expected = next_roman
+                else:
+                    html_parts.append(f'<h4 class="roman-subheading">{_render_roman_heading_content(content)}</h4>')
+                    roman_list_expected = None
                 pending_drop_cap = False
                 recent_plain.append(_strip_footnote_placeholders(content))
                 if len(recent_plain) > 5:
@@ -1461,11 +1558,28 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     is_centered_roman_list = True
                     roman_list_expected = roman_number + 1
                 else:
-                    roman_heading = roman_match.group('roman')
+                    roman_heading = _render_simple_roman_heading_content(roman_match.group('roman'))
                     content_no_refs = rest_after_roman
                     roman_list_expected = None
             else:
-                roman_list_expected = None
+                roman_section = None
+                roman_head_start = _roman_head_match(content_no_refs)
+                if roman_head_start:
+                    roman_number = _roman_to_int(roman_head_start.group('roman'))
+                    rest_after_roman = (roman_head_start.group('rest') or '').strip()
+                    previous_text = recent_plain[-1] if recent_plain else ''
+                    if _starts_roman_outline(previous_text, roman_number) or roman_list_expected == roman_number:
+                        content_no_refs = f'**{roman_head_start.group("roman")}** {rest_after_roman}'
+                        is_centered_roman_list = True
+                        roman_list_expected = roman_number + 1
+                    else:
+                        roman_section = _split_roman_section_opening(content_no_refs)
+                if roman_section:
+                    roman_heading = _render_simple_roman_heading_content(roman_section[0])
+                    content_no_refs = roman_section[1]
+                    roman_list_expected = None
+                elif not roman_head_start:
+                    roman_list_expected = None
         
         # Clean up Catechism artifacts (Issue 26)
         text_html = content_no_refs
@@ -1705,10 +1819,36 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         
                         # Catechism or List styling
                         if not p_class:
-                            is_qa = re.match(r'^(?:<b>)?(?:Q\.|Ques\.|A\.|Ans\.)', paragraph_html, re.I)
+                            is_qa = (
+                                re.match(r'^(?:<b>)?(?:Q\.|Ques\.|Ans\.)', paragraph_html, re.I)
+                                or (
+                                    is_catechism_context
+                                    and re.match(r'^(?:<b>)?A\.', paragraph_html, re.I)
+                                )
+                            )
                             is_proof = re.match(rf'^(?:<b>)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', paragraph_html, re.I)
+                            roman_plain_match = _roman_head_match(plain_for_class)
+                            is_continued_roman_outline = False
+                            if roman_plain_match:
+                                roman_number = _roman_to_int(roman_plain_match.group('roman'))
+                                rest_after_roman = (roman_plain_match.group('rest') or '').strip()
+                                is_continued_roman_outline = (
+                                    roman_list_expected == roman_number
+                                    and _is_roman_list_item(rest_after_roman)
+                                )
+                                is_long_roman_section = (
+                                    not is_continued_roman_outline
+                                    and len(re.findall(r'\w+', rest_after_roman)) >= 12
+                                )
+                                if is_long_roman_section:
+                                    html_parts.append(f'<h4 class="roman-subheading">{paragraph_html}</h4>')
+                                    pending_drop_cap = False
+                                    continue
                             if is_qa or is_proof:
                                 p_class = ' class="catechism-item"'
+                            elif is_continued_roman_outline:
+                                p_class = ' class="roman-list-item"'
+                                roman_list_expected = roman_number + 1
                             elif STRUCTURAL_START_RE.match(plain_for_class):
                                  # Numbered/lettered lists (Issue 23/26)
                                  p_class = ' class="list-item"'
@@ -2410,7 +2550,10 @@ def render_volume(vol_num: int, overrides: dict = None,
     body_font_name = config.get('body_font', 'SBL_BLit')
     primary_font = select_primary_font(body_font_name)
     font_css = generate_font_styles(primary_font['name'], primary_font['files'])
+    extra_css = config.get('extra_css', '')
     full_css = EPUB_STYLESHEET + '\n' + font_css
+    if extra_css:
+        full_css += '\n' + extra_css
     style_item = epub.EpubItem(
         uid='style', file_name='style/main.css',
         media_type='text/css', content=full_css.encode('utf-8'),
@@ -2528,12 +2671,18 @@ def render_volume(vol_num: int, overrides: dict = None,
         'TO THE READER', 'ADVERTISEMENT', 'GENERAL PREFACE',
     ]
 
+    in_catechism_context = False
+
     for ch_dict in intermediate['chapters']:
         if ch_dict.get('is_endnotes'):
             continue
 
         title_upper = ch_dict['title'].upper()
         fm_style = ch_dict.get('front_matter_style')
+        if 'THE GREATER CATECHISM' in title_upper or 'THE LESSER CATECHISM' in title_upper:
+            in_catechism_context = True
+        if ch_dict.get('is_endnotes') or title_upper == 'FOOTNOTES':
+            in_catechism_context = False
 
         if any(kw in title_upper for kw in ['ANALYSIS', 'PREFATORY NOTE', 'PREFACE', 'CONTENTS']):
             conv_mode = 'FRONT_MATTER'
@@ -2556,14 +2705,19 @@ def render_volume(vol_num: int, overrides: dict = None,
         if not raw_text:
             continue
 
+        chapter_config = {**config, 'is_catechism_context': in_catechism_context}
         body_html, conv_mode, conv_drop_cap = markdown_to_html(
             raw_text,
             current_mode=conv_mode,
             pending_drop_cap=conv_drop_cap,
             front_matter_style=conv_fm_style,
-            config=config
+            config=chapter_config
         )
         body_html = apply_scholastic_anchor_protocol(body_html)
+        html_postprocess_hook = config.get('html_postprocess_hook')
+        if html_postprocess_hook:
+            ch_context = {**ch_dict, 'is_catechism_context': in_catechism_context}
+            body_html = html_postprocess_hook(body_html, ch_context)
         if not body_html.strip():
             continue
 

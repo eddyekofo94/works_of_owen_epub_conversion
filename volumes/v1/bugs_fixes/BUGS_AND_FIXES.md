@@ -884,12 +884,20 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-17T22:23:38.861699+00:00
+**Last run:** 2026-05-18T09:39:09.804556+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 3 warnings)
+**Status:** WARN (0 errors, 4 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -902,7 +910,7 @@ Reports:
 | Spine items | 83 |
 | Embedded fonts | 8 |
 | NAV links | 82 |
-| Greek chars / untagged | 4283 / 0 |
+| Greek chars / untagged | 4282 / 8 |
 | Hebrew chars / untagged | 155 / 0 |
 | Noteref links / endnote anchors | 123 / 124 |
 | AGES boilerplate hits | 0 |
@@ -914,6 +922,7 @@ Reports:
 Warnings requiring triage:
 
 - `missing_cover_manifest_hint`: No obvious cover image manifest hint found
+- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
 
@@ -1022,10 +1031,25 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-17T22:24:07.091558+00:00
+**Last run:** 2026-05-18T08:22:06.945245+00:00
 **Status:** WARN (9 warnings)
 
 Reports:
@@ -1036,11 +1060,11 @@ Reports:
 |-------|--------|
 | PDF pages | 644 |
 | EPUB text files | 83 |
-| EPUB paragraphs/headings | 3060 |
-| Approximate PDF-to-EPUB word coverage | 0.9983 |
-| Weak page matches | 3 |
-| Dense source windows checked | 26620 |
-| Missing dense source-window pages | 135 |
+| EPUB paragraphs/headings | 3083 |
+| Approximate PDF-to-EPUB word coverage | 0.9963 |
+| Weak page matches | 23 |
+| Dense source windows checked | 794 |
+| Missing dense source-window pages | 620 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 602 |
@@ -1049,27 +1073,27 @@ Reports:
 | Bottom-of-page body windows checked | 555 |
 | Bottom-of-page windows skipped as unstable | 6 |
 | Missing bottom-of-page body windows | 18 |
-| Possible faulty paragraph splits | 30 |
-| Structural starts excluded from split warnings | 169 |
-| Short fragments | 48 |
+| Possible faulty paragraph splits | 35 |
+| Structural starts excluded from split warnings | 164 |
+| Short fragments | 49 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
-| Roman heading candidates | 33 |
-| Overlong heading candidates | 0 |
+| Roman heading candidates | 0 |
+| Overlong heading candidates | 11 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 313 |
 | EPUB enumerator markers | 316 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 824 / 836 |
+| PDF Greek words / EPUB Greek words | 824 / 835 |
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 16 |
+| Missing Greek clauses | 44 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -1080,7 +1104,7 @@ Warnings requiring triage:
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 
@@ -1257,3 +1281,35 @@ Warnings requiring triage:
 **Fix:**
 1. Extended the scholastic anchor regexes to recognize `Ans. 1.` as one label.
 2. Added a focused regression test that normalizes `Ans . 1. There is no precedent nor example` and verifies the complete numbered label is bolded.
+
+### 111. Roman heading/list classification and marker escaping (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Roman numerals served both as centered section headings and short outline/list items. Some rendered output leaked literal marker placeholders such as `[[MARKER]]I.[[/MARKER]]`, while short outline items like `I. Honor.` could be styled as centered headings.
+**Root cause:** The renderer treated explicit `[[ROMAN_HEAD]]` tokens as headings without checking outline context, and markdown-bold Roman markers (`**I.**`) were not recognized by the Roman classification helper. Multi-line Roman headings also split after the first PDF line when the first line ended with non-terminal punctuation.
+**Fix:**
+1. Added Roman outline helpers that recognize both plain and markdown-bold Roman markers.
+2. Rendered Roman heading numerals as real `<b>...</b>` after escaping the surrounding text, avoiding escaped-bold and marker-placeholder leakage.
+3. Classified Roman sequences after `heads:`, `ways:`, `parts:`, `sorts:`, `things:`, dash, or comma introductions as `roman-list-item`.
+4. Promoted longer Roman section openers to centered `.roman-subheading` elements.
+5. Extended structural extraction so multi-line Roman headings continue until terminal punctuation instead of leaving lowercase heading continuations as body text.
+6. Revised the visual fallback after review: both `.roman-list-item` and `.roman-subheading` are now left-aligned, with the Roman numeral bold and inline, so classifier uncertainty no longer creates centered pseudo-title blocks.
+7. Added an EPUB regression that rejects marker leakage and verifies the Chapter 9 Roman outline/list, following Roman section heading text, and left-aligned Roman CSS.
+
+### 112. Lesser/Greater Catechism Q&A visual grouping and label formatting (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The Lesser Catechism rendered with front-matter paragraph styling in its opening Q&A, bare `A.` labels were not bold, numbered labels could appear as split forms such as `Q. 2 .`, and short chapter-reference tails could become orphan paragraphs instead of staying with their answers. The same label treatment needed to apply to the Greater Catechism while remaining Volume 1-specific. A follow-up check found false positives where ordinary prose beginning `A ...` / OCR-shaped `A.` was treated as an answer anchor.
+**Root cause:** The generic renderer only assigned `catechism-item` classes to some Q/A paragraphs and did not have a per-volume post-render polish hook. Volume 1’s existing catechism coalescer merged scripture-proof tails, but not catechism chapter-reference tails. The first pass allowed bare `A.` answer handling outside actual catechism chapters.
+**Fix:**
+1. Added small generic render plumbing for per-volume `extra_css` and `html_postprocess_hook`.
+2. Added a Volume 1-only catechism postprocessor in `volumes/v1/convert.py` that normalizes `Q.`, `Ques.`, `A.`, and `Ans.` labels, including numbered forms.
+3. Wrapped each Q/A unit in `div.v1-catechism-pair` and appended Volume 1-only CSS for left alignment, bold labels, and a visual gap before the next question.
+4. Extended the Volume 1 catechism coalescer to merge `— Chapter N` / `- Chapter N` tails back into the preceding answer.
+5. Restricted bare `A.` answer handling to the actual Volume 1 catechism chapter run.
+6. Added an EPUB regression covering Lesser and Greater Catechism Q/A grouping, label bolding, front-matter-class removal, split-number repair, orphan chapter-tail prevention, and non-catechism `A...` false positives.
+
+### 113. Corpus-backed Gideon/AGES Hebrew legacy mapping (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Later Owen volumes still exposed Gideon/AGES legacy Hebrew noise even though Volume 1 looked mostly covered. The existing table did not cover every character emitted by Gideon-Medium spans across the 16-volume PDF corpus.
+**Root cause:** The Gideon table was built from observed Volume 1 failures and a partial set of artifacts. A full scan showed Gideon-Medium spans in all 16 volumes and 73 unique extracted characters, including high-byte/final-form variants such as `Ë`, `Ú`, `ã`, `ˆ`, `˚`, `ç`, `≈`, and punctuation-like vowel keys.
+**Fix:**
+1. Expanded `HEBREW_GIDEON_MAP` in `shared.py` using the public Gideon-Medium character map plus a 16-volume Gideon span inventory.
+2. Corrected high-impact mappings for vowels, final forms, Tsadi/Shin variants, Ayin, Hiriq/Tsere/Segol/Qubuts, Maqef, final Nun/Kaph, and Vav-Holam forms.
+3. Broadened the rendered fallback detector for unambiguous Gideon residue without making plain English punctuation a trigger.
+4. Added `tests/test_gideon_mapping.py` so all observed Gideon span characters must be mapped and representative AGES samples convert to Unicode Hebrew with no legacy residue.

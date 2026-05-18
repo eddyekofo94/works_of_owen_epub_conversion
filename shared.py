@@ -480,20 +480,21 @@ CIRCUMFLEX = '\u0342'
 IOTASUB = '\u0345'
 
 DIACRITIC_CHARS = set('><=~]J[j}|{=+\'')
+# DIACRITIC_MAP: Maps AGES/Beta Code marks to Unicode combining diacritics.
 DIACRITIC_MAP = {
-    'j': (SMOOTH,),
-    'J': (ROUGH,),
-    '>': (ACUTE,),
-    '<': (GRAVE,),
-    '\'': (ACUTE,),
-    '~': (CIRCUMFLEX,),
-    '=': (CIRCUMFLEX,),
-    '+': (CIRCUMFLEX,),
-    ']': (SMOOTH, ACUTE),
-    '}': (SMOOTH, CIRCUMFLEX),
-    '[': (ROUGH, ACUTE),
-    '{': (ROUGH, CIRCUMFLEX),
-    '|': (IOTASUB,),
+    'j': ('\u0313',),        # SMOOTH breathing
+    'J': ('\u0314',),        # ROUGH breathing
+    '>': ('\u0301',),        # ACUTE accent
+    '<': ('\u0300',),        # GRAVE accent
+    '\'': ('\u0301',),       # ACUTE accent
+    '~': ('\u0342',),        # CIRCUMFLEX
+    '=': ('\u0342',),        # CIRCUMFLEX
+    '+': ('\u0342',),        # CIRCUMFLEX
+    ']': ('\u0313', '\u0301'), # SMOOTH + ACUTE
+    '}': ('\u0313', '\u0342'), # SMOOTH + CIRCUMFLEX
+    '[': ('\u0314', '\u0301'), # ROUGH + ACUTE
+    '{': ('\u0314', '\u0342'), # ROUGH + CIRCUMFLEX
+    '|': ('\u0345',),        # IOTA subscript
 }
 
 
@@ -522,6 +523,31 @@ def convert_greek_word(word):
       - 'v' → final sigma ς (explicitly typed by AGES/Graeca)
       - 'y' → final sigma ς (Issue 26/7: frequent in AGES)
     """
+    if not word:
+        return ""
+
+    # AGES-specific: handle 'h' as rough breathing marker.
+    # In some AGES fonts, 'h' is a prefix for rough breathing.
+    # Note: 'h' in standard Beta Code is Eta (handled in GREEK_LOWER).
+    # We only treat 'h' as breathing if it is followed by a vowel AND not
+    # preceded by another letter (i.e. start of word).
+    VOWELS_PLAIN = set('aeiouwAEIOUW')
+    temp_word = []
+    w_chars = list(word)
+    idx = 0
+    while idx < len(w_chars):
+        c = w_chars[idx]
+        if c == 'h' and idx == 0 and idx + 1 < len(w_chars) and w_chars[idx+1] in VOWELS_PLAIN:
+            # Prefix 'h' at start of word -> move breathing marker AFTER the vowel
+            vowel = w_chars[idx+1]
+            temp_word.append(vowel)
+            temp_word.append('J') # J is ROUGH breathing in our map
+            idx += 2
+            continue
+        temp_word.append(c)
+        idx += 1
+    word = "".join(temp_word)
+
     result = []
     i = 0
     while i < len(word):
@@ -547,7 +573,7 @@ def convert_greek_word(word):
                 result.append(GREEK_LOWER[ch])
             i += 1
             # Process following diacritics for this character
-            while i < len(word) and word[i] in DIACRITIC_CHARS:
+            while i < len(word) and (word[i] in DIACRITIC_CHARS or word[i] == 'J'):
                 d = word[i]
                 if d in DIACRITIC_MAP:
                     for c in DIACRITIC_MAP[d]:
@@ -559,7 +585,7 @@ def convert_greek_word(word):
             else:
                 result.append(GREEK_UPPER[ch])
             i += 1
-            while i < len(word) and word[i] in DIACRITIC_CHARS:
+            while i < len(word) and (word[i] in DIACRITIC_CHARS or word[i] == 'J'):
                 d = word[i]
                 if d in DIACRITIC_MAP:
                     for c in DIACRITIC_MAP[d]:
@@ -590,67 +616,87 @@ def polytonic_sweep(text: str) -> str:
 # ============================================================================
 
 HEBREW_GIDEON_MAP = {
-    # ── Consonants (Gideon AGES legacy encoding) ──────────────────────────
+    # ── Consonants (Gideon / AGES legacy encoding) ────────────────────────
+    # Backed by the public Gideon-Medium character map and by a 16-volume
+    # scan of actual Gideon-Medium PDF spans. Keep this table explicit:
+    # unknown characters in Gideon spans are extraction bugs, not prose.
     'a': '\u05d0',  # Aleph (א)
     'b': '\u05d1',  # Beth (ב)
     'g': '\u05d2',  # Gimel (ג)
     'd': '\u05d3',  # Dalet (ד)
     'h': '\u05d4',  # He (ה)
+    'H': '\u05d4',  # He (ה) uppercase variant
     'w': '\u05d5',  # Waw (ו)
     'z': '\u05d6',  # Zayin (ז)
-    'x': '\u05d7',  # Heth (ח)
-    't': '\u05d8',  # Teth (ט) — NOTE: also 't' = Taw below; context disambiguates
+    'Z': '\u05d6',  # Zayin (ז) uppercase variant
+    'j': '\u05d7',  # Het (ח)
+    'J': '\u05d7',  # Het (ח) uppercase/scan variant
+    'f': '\u05d8',  # Tet (ט)
+    'F': '\u05d8',  # Tet (ט) uppercase variant
     'y': '\u05d9',  # Yodh (י)
-    'k': '\u05da',  # Kaph (ך - final)
-    'K': '\u05db',  # Kaph (כ - medial)
+    'Y': '\u05d9',  # Yodh (י) uppercase variant
+    'k': '\u05db',  # Kaph (כ)
+    'K': '\u05db\u05bc',  # Kaph + Dagesh (כּ)
     'l': '\u05dc',  # Lamedh (ל)
-    'm': '\u05dd',  # Mem (ם - final)
-    'M': '\u05de',  # Mem (מ - medial)
-    'n': '\u05df',  # Nun (ן - final)
-    'N': '\u05e0',  # Nun (נ - medial)
+    'L': '\u05dc',  # Lamedh (ל) uppercase variant
+    'm': '\u05de',  # Mem (מ)
+    'M': '\u05de',  # Mem (מ) uppercase variant
+    'n': '\u05e0',  # Nun (נ)
+    'N': '\u05e0',  # Nun (נ) uppercase variant
     's': '\u05e1',  # Samekh (ס)
-    'e': '\u05e2',  # Ayin (ע)
-    'p': '\u05e3',  # Pe (ף - final)
-    'P': '\u05e4',  # Pe (פ - medial)
-    'c': '\u05e5',  # Tsadi (ץ - final)
-    'C': '\u05e6',  # Tsadi (צ - medial)
+    'S': '\u05e1\u05bc',  # Samekh + Dagesh (סּ)
+    '[': '\u05e2',  # Ayin (ע)
+    'p': '\u05e4',  # Pe (פ)
+    'P': '\u05e4',  # Pe (פ) uppercase variant
+    'c': '\u05e6',  # Tsadi (צ)
+    'C': '\u05e6',  # Tsadi (צ) uppercase variant
+    'x': '\u05e6',  # Tsadi (צ) AGES variant
+    'X': '\u05e5',  # Tsadi final (ץ)
+    '\u2248': '\u05e5',  # ≈ → Tsadi final (ץ)
     'q': '\u05e7',  # Qoph (ק)
+    'Q': '\u05e7\u05bc',  # Qoph + Dagesh (קּ)
     'r': '\u05e8',  # Resh (ר)
-    '#': '\u05e9',  # Shin/Sin (ש)
+    'R': '\u05e8',  # Resh (ר) uppercase variant
+    'v': '\u05e9\u05c1',  # Shin (שׁ)
+    'V': '\u05e9\u05c1',  # Shin (שׁ) uppercase variant
+    '\u00E7': '\u05e9\u05c1',  # ç → Shin (שׁ), e.g. ajyçm = משיחא
+    't': '\u05ea',  # Taw (ת)
     'T': '\u05ea',  # Taw (ת)
-    # ── Alternate consonant mappings (AGES variants) ──────────────────────
-    'f': '\u05d8',  # Tet (alternate)
-    'j': '\u05d7',  # Het (alternate)
-    'i': '\u05e2',  # Ayin (alternate)
-    '[': '\u05e2',  # Ayin (alternate)
-    'v': '\u05e9\u05c1',  # Shin (שׁ - Shin + Shin dot)
+    # ── Final forms / AGES high-byte variants ─────────────────────────────
+    '\u00B5': '\u05dd',   # µ → Mem Final (ם)
+    '\u02C6': '\u05df',   # ˆ → Nun Final (ן)
+    '\u00E3': '\u05df',   # ã → Nun Final (ן)
+    '\u00CB': '\u05da',   # Ë → Kaph Final (ך)
+    '\u00DA': '\u05da',   # Ú → Kaph Final (ך)
+    '\u02DA': '\u05da',   # ˚ → Kaph Final (ך)
     # ── Final forms (uppercase with dagesh) ───────────────────────────────
-    'A': '\u05d0',        # Alef (uppercase alternate)
+    'A': '\u05be',        # Maqef (־), often in compounds such as כָּל־
     'B': '\u05d1\u05bc',  # Bet + Dagesh
     'D': '\u05d3\u05bc',  # Dalet + Dagesh
     'G': '\u05d2\u05bc',  # Gimel + Dagesh
-    'Q': '\u05e7\u05bc',  # Qof + Dagesh
     'W': '\u05d5\u05bc',  # Vav + Dagesh (Shureq)
-    'X': '\u05e5',        # Tsadi Final
-    'Y': '\u05d9',        # Yod (uppercase alternate)
-    # ── Font artifact mappings (volume-specific) ──────────────────────────
-    '\u00B5': '\u05dd',   # µ → Mem Final
-    '\u00E7': '\u05e6',   # ç → Tsadi
-    '\u02DA': '\u05bc',   # ˚ → Dagesh
-    '\u02C6': '\u05b4',   # ˆ → Hiriq
-    '\u00DA': '\u05d5',   # Ú → Vav
-    '\u2019': '\u05be',   # ' → Maqef
-    '\u2248': '\u05c1',   # ≈ → Shin dot
     # ── Vowel points / diacritics ─────────────────────────────────────────
     ';': '\u05b8',   # Qamats
     '}': '\u05b2',   # Hataf Patah
     ']': '\u05b0',   # Sheva
     '1': '\u05b7',   # Patah
+    '\u00E6': '\u05b7',   # æ → Patah (Latin ae ligature artifact)
+    ',': '\u05b6',   # Segol
+    'e': '\u05b5',   # Tsere
+    'E': '\u05b5',   # Tsere
+    'i': '\u05b4',   # Hiriq
+    'I': '\u05b4',   # Hiriq
     'o': '\u05b9',   # Holam
     'O': '\u05b9',   # Holam (alternate)
-    'æ': '\u05b7',   # Patah (Latin ae ligature artifact)
+    'u': '\u05bb',   # Qubuts
+    'U': '\u05bb',   # Qubuts
+    '`': '\u05b0',   # Sheva (alternate)
+    '=': '\u05bc',   # Dagesh / Mappiq
+    '/': '\u05d5\u05b9',  # Vav + Holam, observed in מות-like forms
     # ── Punctuation / spacing ─────────────────────────────────────────────
-    ',': ',',
+    "'": '\u05be',        # Maqef / hyphen artifact
+    '\u2018': '\u05be',   # ‘ → Maqef
+    '\u2019': '\u05be',   # ’ → Maqef
     ' ': ' ',
 }
 
@@ -702,6 +748,9 @@ def convert_gideon_hebrew(encoded):
         else:
             mapped_chars.append(ch)
     flat = ''.join(mapped_chars)
+    # Multiple extraction paths can emit adjacent maqef artifacts for the same
+    # visual hyphen; collapse them before reversing logical Hebrew order.
+    flat = re.sub('\u05be+', '\u05be', flat)
 
     tokens = []
     current = ''
@@ -987,10 +1036,10 @@ h4.chapter-subtitle {
 }
 
 .roman-subheading {
-    text-align: center;
-    font-weight: bold;
+    text-align: left;
+    font-weight: normal;
     text-indent: 0;
-    margin: 1.2em 0 0.8em;
+    margin: 1em 0 0.65em;
     break-after: avoid;
     page-break-after: avoid;
     break-inside: avoid;
@@ -998,14 +1047,14 @@ h4.chapter-subtitle {
 }
 
 .roman-list-item {
-    text-align: center;
+    text-align: left;
     text-indent: 0;
-    margin: 1.1em 0;
+    margin: 0.65em 0;
 }
 
 .roman-list-item b {
-    display: block;
-    margin-bottom: 0.35em;
+    display: inline;
+    margin-bottom: 0;
 }
 
 /* Front Matter Styling (Issue 107 / Issue 89) */

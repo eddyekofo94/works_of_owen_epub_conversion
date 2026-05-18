@@ -122,10 +122,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-17T14:44:53.022920+00:00
+**Last run:** 2026-05-18T00:19:28.408272+00:00
 **EPUB:** `volumes/v4/output/volume_4.epub`
 **Status:** WARN (0 errors, 3 warnings)
 
@@ -164,11 +165,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-17T14:45:30.367719+00:00
-**Status:** WARN (9 warnings)
+**Last run:** 2026-05-18T00:19:59.030541+00:00
+**Status:** WARN (13 warnings)
 
 Reports:
 - `volume_4_text_integrity.json`
@@ -179,10 +181,10 @@ Reports:
 | PDF pages | 653 |
 | EPUB text files | 71 |
 | EPUB paragraphs/headings | 2410 |
-| Approximate PDF-to-EPUB word coverage | 0.9977 |
-| Weak page matches | 4 |
-| Dense source windows checked | 24411 |
-| Missing dense source-window pages | 231 |
+| Approximate PDF-to-EPUB word coverage | 0.9951 |
+| Weak page matches | 34 |
+| Dense source windows checked | 777 |
+| Missing dense source-window pages | 627 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 624 |
@@ -203,10 +205,16 @@ Reports:
 | Overlong heading candidates | 1 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
-| PDF enumerator markers | 370 |
+| PDF enumerator markers | 416 |
 | EPUB enumerator markers | 375 |
-| Missing enumerator marker forms | 0 |
+| Missing enumerator marker forms | 3 |
 | Enumerator sequence candidates | 0 |
+| PDF Greek words / EPUB Greek words | 786 / 779 |
+| Greek word coverage ratio | 0.9817 |
+| PDF Hebrew words / EPUB Hebrew words | 111 / 109 |
+| Hebrew word coverage ratio | 0.3303 |
+| Missing Greek clauses | 42 |
+| Missing Hebrew clauses | 17 |
 
 Warnings requiring triage:
 
@@ -218,7 +226,11 @@ Warnings requiring triage:
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
+- `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_hebrew_word_coverage`: EPUB Hebrew word coverage against PDF extraction is lower than expected
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

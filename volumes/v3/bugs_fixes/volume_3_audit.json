@@ -1,34 +1,14 @@
 {
   "epub": "volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-05-14T16:39:35.415685+00:00",
+  "generated_at": "2026-05-18T00:18:44.185698+00:00",
   "status": "fail",
-  "error_count": 5,
+  "error_count": 1,
   "warning_count": 5,
   "errors": [
     {
       "code": "empty_bracket_noise",
       "message": "Empty bracket residue appears in rendered text",
       "files": 1
-    },
-    {
-      "code": "unprocessed_ages_markers",
-      "message": "AGES verse markers remain unprocessed in XHTML",
-      "files": 2
-    },
-    {
-      "code": "fragmented_greek_span_runs",
-      "message": "Three or more adjacent Greek words are split into separate spans",
-      "files": 18
-    },
-    {
-      "code": "orphan_scripture_brackets",
-      "message": "Orphan AGES brackets remain before scripture references",
-      "files": 4
-    },
-    {
-      "code": "inline_scholastic_labels",
-      "message": "Scholastic labels appear mid-paragraph instead of as anchors",
-      "files": 2
     }
   ],
   "warnings": [
@@ -45,7 +25,7 @@
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 2
+      "count": 4
     },
     {
       "code": "orphan_endnotes",
@@ -81,12 +61,11 @@
     "language": {
       "greek_chars": 10343,
       "greek_untagged_chars": 59,
-      "greek_integrity_failures": 0,
       "hebrew_chars": 1455,
       "hebrew_untagged_chars": 93,
-      "hebrew_integrity_failures": 0,
       "files_with_untagged_greek": 10,
-      "files_with_untagged_hebrew": 12
+      "files_with_untagged_hebrew": 12,
+      "hebrew_integrity_failures": 93
     },
     "footnotes": {
       "noteref_count": 140,
@@ -103,35 +82,27 @@
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 1,
-      "unprocessed_ages_marker_files": 2,
-      "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 0,
-      "overlong_heading_body_files": 0,
       "missing_chapter_initialization_files": 0,
-      "unstyled_signature_files": 0,
-      "fragmented_greek_span_run_files": 18,
-      "blockquote_count": 0,
       "noteref_without_class": 0,
-      "scripture_blockquote_files": 0,
-      "orphan_scripture_bracket_files": 4,
+      "repeated_phrase_count": 4,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 1,
+      "overlong_heading_body_files": 0,
+      "fragmented_greek_span_run_files": 22,
+      "fragmented_hebrew_span_run_files": 8,
       "glued_ordinal_files": 0,
       "structural_bold_leak_files": 0,
       "repeated_structural_marker_files": 0,
       "scholastic_bold_leak_files": 0,
-      "inline_scholastic_label_files": 2,
+      "inline_scholastic_label_files": 0,
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
-      "cross_chapter_continuation_files": 0,
-      "nav_overlong_entry_files": 0,
-      "nav_duplicate_text_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
-      "noteref_leading_space_files": 0,
+      "lowercase_paragraph_start_files": 11,
+      "noteref_leading_space_files": 22,
       "greek_span_legacy_accent_files": 0,
-      "greek_diacritic_residue_files": 0,
-      "quote_prose_join_files": 0,
       "i_will_mangle_files": 0,
-      "repeated_phrase_count": 2,
       "samples": {
         "boilerplate": [],
         "beta_code": [],
@@ -221,19 +192,25 @@
           }
         ],
         "hebrew_integrity": [],
-        "greek_integrity": [],
-        "markdown_residue": [],
-        "unclosed_paren": [],
-        "verse_typo": [],
         "repeated_phrase": [
           {
             "file": "combined_text",
-            "text": "chapter 2 sanctification a progressive work",
+            "text": "chapter 2 general dispensation of the holy spirit",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 4 the defilement of sin",
+            "text": "chapter 2 works of the holy spirit preparatory",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "book 4 chapter 1 the nature of sanctification",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 3 believers the only object of sanctification",
             "count": 1
           }
         ],
@@ -244,107 +221,191 @@
             "text": "The Works of John Owen Vol. 3 ΠΝΕΥΜΑΤΟΛΟΓΙΑ A DISCOURSE CONCERNING THE HOLY SPIRIT, PREFATORY NOTE BY THE EDITOR, TO THE READERS, Book 1. 1. — GENERAL PRINCIPLES CONCERNING THE HOLY SPIRIT AND HIS WORK. 1 Corinthians; 1"
           }
         ],
-        "unprocessed_ages_marker": [
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [
           {
-            "file": "EPUB/ch007.xhtml",
-            "text": "&lt;4611605&gt;"
-          },
-          {
-            "file": "EPUB/endnotes.xhtml",
-            "text": "&lt;460211&gt;"
+            "file": "EPUB/ch011.xhtml",
+            "text": "Chapter 44"
           }
         ],
-        "page_reference_split": [],
-        "chapter_heading_in_paragraph": [],
         "overlong_heading_body": [],
-        "missing_chapter_initialization": [],
-        "unstyled_signature": [],
         "fragmented_greek_span_run": [
           {
             "file": "EPUB/ch007.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">Περὶ</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch008.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">τὸ</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch009.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">εἰς</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch011.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">οῦν</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch013.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">ἔχει</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch015.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">εἰ</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch016.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">Ου</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch017.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">Ινα</span> <span lang=\"el\" xml:lang=\"el\">"
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": "<span lang=\"el\" xml:lang=\"el\">θεία</span> <span lang=\"el\" xml:lang=\"el\">"
           },
           {
             "file": "EPUB/ch021.xhtml",
-            "text": "three or more adjacent Greek spans"
-          },
-          {
-            "file": "EPUB/ch023.xhtml",
-            "text": "three or more adjacent Greek spans"
+            "text": "<span lang=\"el\" xml:lang=\"el\">τὸν</span> <span lang=\"el\" xml:lang=\"el\">"
           }
         ],
-        "noteref_without_class": [],
-        "scripture_blockquote": [],
-        "orphan_scripture_bracket": [
+        "fragmented_hebrew_span_run": [
+          {
+            "file": "EPUB/ch007.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">םח</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
+          },
           {
             "file": "EPUB/ch008.xhtml",
-            "text": "[ Psalm 76:12]"
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מגּיד</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
           },
           {
-            "file": "EPUB/ch014.xhtml",
-            "text": "[John 14:15-17.]"
+            "file": "EPUB/ch009.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">רחת</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
           },
           {
-            "file": "EPUB/ch016.xhtml",
-            "text": "[Mark 13:32]"
+            "file": "EPUB/ch010.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">ְרֹס</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
           },
           {
-            "file": "EPUB/ch023.xhtml",
-            "text": "[John 5:40.]"
+            "file": "EPUB/ch011.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">עָרָה</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">שׁר</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
+          },
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">שׁר</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
+          },
+          {
+            "file": "EPUB/ch035.xhtml",
+            "text": "<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">וּת</span> <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">"
           }
         ],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
         "glued_ordinal": [],
         "structural_bold_leak": [],
         "repeated_structural_marker": [],
         "scholastic_bold_leak": [],
-        "inline_scholastic_label": [
-          {
-            "file": "EPUB/ch015.xhtml",
-            "text": "scholastic label appears mid-paragraph"
-          },
-          {
-            "file": "EPUB/ch023.xhtml",
-            "text": "scholastic label appears mid-paragraph"
-          }
-        ],
+        "inline_scholastic_label": [],
         "trailing_scholastic_label": [],
         "digression_not_h3": [],
         "cross_chapter_continuation": [],
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
-        "noteref_leading_space": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "c"
+          },
+          {
+            "file": "EPUB/ch010.xhtml",
+            "text": "e"
+          },
+          {
+            "file": "EPUB/ch011.xhtml",
+            "text": "g"
+          },
+          {
+            "file": "EPUB/ch022.xhtml",
+            "text": "t"
+          },
+          {
+            "file": "EPUB/ch023.xhtml",
+            "text": "w"
+          },
+          {
+            "file": "EPUB/ch024.xhtml",
+            "text": "t"
+          },
+          {
+            "file": "EPUB/ch027.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch028.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch029.xhtml",
+            "text": "f"
+          },
+          {
+            "file": "EPUB/ch031.xhtml",
+            "text": "o"
+          }
+        ],
+        "noteref_leading_space": [
+          {
+            "file": "EPUB/ch007.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch009.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch010.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch011.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch014.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch015.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch016.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          },
+          {
+            "file": "EPUB/ch017.xhtml",
+            "text": "<a class=\"noteref\" epub:type=\"noteref\""
+          }
+        ],
         "greek_span_legacy_accent": [],
-        "greek_diacritic_residue": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }

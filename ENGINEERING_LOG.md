@@ -1844,3 +1844,115 @@ Despite the previous attempt to establish a text-density budget (Issue 106), Vol
 - Inspected `ch035.xhtml` (A Vindication): The introductory text on the title page is now correctly reconstructed as paragraphs.
 - Verified `ch035_title.xhtml` only contains the centered treatise title.
 - Volume 2 EPUB audit: 0 errors, 1 warning.
+
+---
+
+## [Issue 109] Shared Treatise Starter Page Extraction Boundaries
+
+**Date:** 2026-05-17
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Volume 1 mixed starter pages, especially `PART 2 MEDITATIONS AND DISCOURSES CONCERNING THE GLORY OF CHRIST` and `THE GREATER CATECHISM`, were repeatedly breaking because the visual title-page formatter consumed the following `CHAPTER 1` heading and body content. The title entry became too large, and the actual first chapter rendered with title-page styling instead of normal chapter or catechism structure.
+
+### 2. Root Cause
+`get_merged_page_text()` returned `format_treatise_title_page()` as soon as `detect_page_type()` reported `treatise_title_page`. That early return removed the structural tokens that `build_chapters_from_toc()` depends on (`[[PART]]`, `[[CHAPTER]]`, `[[SUMMARY]]`). When two TOC entries shared the same PDF page, the chapter-splitting code had no marker to trim against and duplicated the title-page XHTML into both entries.
+
+### 3. Fixes
+- Added `allow_treatise_title_page` to `get_merged_page_text()` and `get_pages_text()` so chapter entries that share a start page with a title entry can force structural extraction.
+- Updated `format_treatise_title_page(..., limit_to_title=True)` to stop at chapter starts and catechism Q/A starts, preventing title pages from swallowing body text.
+- Classified standalone Greater/Lesser Catechism headings as treatise starters, so their title entry is isolated from their first catechism chapter.
+- Extended scholastic anchor formatting so numbered answer labels such as `Ans. 1.` are normalized and bolded as one label.
+- Added regression coverage for the JSON boundaries and the final EPUB rendering of the issue #33 pages, plus a focused #34 numbered-answer anchor test.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py`.
+- Focused regressions: `3 passed`.
+- Full bug-regression suite: `13 passed`.
+- Volume 1 EPUB audit: 0 errors, 4 warnings.
+- Volume 1 text-integrity audit: WARN, 9 existing warning classes.
+- Volume 1 bug-regression report: PASS.
+
+---
+
+## [Issue 111] Roman Heading/List Classification
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Volume 1 used Roman numerals for two different structures: centered section heads and compact outline/list entries. The renderer sometimes emitted literal marker placeholders in Roman headings, and short outline entries could be promoted to centered headings.
+
+### 2. Root Cause
+The Roman rendering path lacked one shared classifier for explicit `[[ROMAN_HEAD]]` tokens, plain Roman starts, and markdown-bold Roman starts. As a result, `**I.**` paragraphs were treated differently from `I.` paragraphs, outline context was lost across adjacent entries, and heading bold tags were injected in a way that could survive as literal placeholder text in generated XHTML.
+
+### 3. Fixes
+- Added helpers for Roman marker parsing, Roman outline starts, outline continuation, and section-opening splits.
+- Rendered Roman heading numerals after escaping text, producing `<h4 class="roman-subheading"><b>I.</b> ...</h4>` without marker leakage.
+- Kept short Roman outline sequences as `<p class="roman-list-item"><b>I.</b> ...</p>`.
+- Promoted long Roman section starts to `.roman-subheading` when they are not part of an outline sequence.
+- Changed the visual fallback so both Roman list items and Roman subheadings are left-aligned, with only the Roman marker bolded inline. This prevents imperfect classification from producing visibly centered pseudo-title blocks.
+- Updated structural extraction so multi-line Roman headings continue through lowercase PDF line continuations until terminal punctuation.
+- Added regression coverage for marker leakage, escaped bold leakage, Chapter 9 outline items, a following real Roman section heading text, and the left-aligned Roman CSS.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py`.
+- Focused Roman regression: `1 passed`.
+- EPUB audit: 0 errors, 4 warnings.
+- Generated CSS now has `.roman-subheading` and `.roman-list-item` left-aligned, with `.roman-list-item b` inline.
+- Full bug-regression suite still has one non-Roman failure: missing Greek clauses `44` vs budget `16`.
+
+---
+
+## [Issue 112] Volume 1 Catechism Q&A Formatting
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+The Lesser Catechism still looked mechanically extracted rather than intentionally formatted: its opening Q&A paragraphs inherited front-matter prose styling, bare `A.` labels were not bold, numbered labels could split as `Q. 2 .`, and chapter-reference tails such as `- Chapter 20.` could stand alone after the answer. The Greater Catechism had the same bare-answer label problem.
+
+### 2. Root Cause
+The generic renderer could detect catechism paragraphs but had no per-volume post-render polish hook, so Volume 1 could not fix its local catechism presentation without changing global catechism behavior. The existing Volume 1 coalescer merged scripture-proof tails into answers but did not recognize catechism chapter-reference tails.
+
+### 3. Fixes
+- Added generic render plumbing for `extra_css` and `html_postprocess_hook`, leaving the actual behavior in `volumes/v1/convert.py`.
+- Added a Volume 1-only postprocessor that normalizes and bolds `Q.`, `Ques.`, `A.`, and `Ans.` labels, including numbered labels.
+- Grouped each question/answer unit in `div.v1-catechism-pair` and appended Volume 1-only CSS for left alignment, label weight, pair spacing, and page-break avoidance.
+- Extended the Volume 1 catechism coalescer so `— Chapter N` / `- Chapter N` fragments remain inside the preceding answer.
+- Restricted bare `A.` answer handling to the actual catechism chapter run so ordinary prose such as `A prefatory note...`, `A complete index...`, and `A glorious representation...` is not styled as an answer.
+- Added a focused EPUB regression for Lesser and Greater Catechism formatting.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py --render-only`.
+- Focused catechism regression: `1 passed`.
+- Nearby treatise/catechism regression: `1 passed`.
+- EPUB audit with `scripts/audit_epub.py volumes/v1/output/volume_1.epub`: 0 errors, 4 existing warnings.
+- Follow-up false-positive regression for ordinary `A...` prose: `1 passed`.
+
+---
+
+## [Issue 113] Corpus-Backed Gideon/AGES Hebrew Map
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Volume 1 no longer showed obvious Hebrew conversion noise, but later volumes still risked leaking Gideon/AGES legacy characters when source PDFs used Hebrew spans not represented in the partial table.
+
+### 2. Root Cause
+The previous `HEBREW_GIDEON_MAP` was mostly Volume 1-derived. A scan of source PDF spans whose font is `Gideon-Medium` / `MOLFEN+Gideon-Medium` found Gideon usage in all 16 volumes and 73 distinct extracted characters, including punctuation-like vowel keys and high-byte final-form artifacts that were not mapped.
+
+### 3. Fixes
+- Expanded `HEBREW_GIDEON_MAP` from the public Gideon-Medium character map and the actual 16-volume Gideon span inventory.
+- Corrected common semantic failures: `i/I` as Hiriq, `[` as Ayin, `x/c/C` as Tsadi, `≈/X` as final Tsadi, `ˆ/ã` as final Nun, `Ë/Ú/˚` as final Kaph, `,` as Segol, `u/U` as Qubuts, `/` as Vav-Holam, and `ç` as Shin.
+- Collapsed repeated Maqef artifacts after mapping.
+- Broadened the render fallback regex for unambiguous Gideon residue while keeping ordinary English punctuation out of scope.
+- Added `tests/test_gideon_mapping.py` to require every observed Gideon span character to be mapped and to verify representative AGES samples.
+
+### 4. Validation
+- Cross-volume Gideon span inventory: 16 volumes scanned, 73 unique characters, `unmapped []`.
+- Gideon mapping tests: `4 passed`.
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py --render-only`.
+- Existing catechism regression: `1 passed`.
+- Volume 1 EPUB audit: 0 errors, 4 existing warnings.

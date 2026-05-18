@@ -1,6 +1,6 @@
 {
   "volume": 1,
-  "status": "pass",
+  "status": "warn",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
@@ -12,7 +12,7 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 30,
+      "observed": 42,
       "budget": 116,
       "status": "ok",
       "samples": [
@@ -48,6 +48,11 @@
         },
         {
           "file": "EPUB/ch011.xhtml",
+          "previous": "But —",
+          "next": "effectual unto their proper ends. Not one of them could have been so, had he been no more than a man — had he had no nature but ours. This I shall particularly demonstrate, conside"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
           "previous": "And he discharged this office four ways: —",
           "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
         },
@@ -60,11 +65,6 @@
           "file": "EPUB/ch012.xhtml",
           "previous": "THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST",
           "next": "A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our"
-        },
-        {
-          "file": "EPUB/ch013.xhtml",
-          "previous": "HONOR DUE TO THE PERSON OF CHRIST — THE NATURE AND CAUSES OF IT",
-          "next": "Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re"
         }
       ]
     },
@@ -200,14 +200,19 @@
     },
     {
       "label": "Missing Greek clauses",
-      "observed": 16,
+      "observed": 44,
       "budget": 16,
-      "status": "ok",
+      "status": "regression",
       "samples": [
         {
           "page": 26,
           "word_count": 54,
           "sample": "υτος εστιν ηε προς τον πατερα αγουσα ηοσος ηε πετρα ηε κλεις"
+        },
+        {
+          "page": 27,
+          "word_count": 11,
+          "sample": "επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν"
         },
         {
           "page": 31,
@@ -220,6 +225,11 @@
           "sample": "ὑπόστατις φύσις μίαν φύσιν ὅτι κατ ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου"
         },
         {
+          "page": 36,
+          "word_count": 31,
+          "sample": "τὸν θεοῦ μεσίτην καὶ ἀνθρώπων κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε"
+        },
+        {
           "page": 37,
           "word_count": 5,
           "sample": "ἔνωσιν φυσικὴν ἕνωσιν κατὰ σύνθεσιν"
@@ -230,29 +240,19 @@
           "sample": "υἱὸς θεοῦ ὑιὸς ἀνθρώπου γίνεται οὕτω δὲ φωτὸς ἡλίου μία καὶ"
         },
         {
-          "page": 42,
-          "word_count": 11,
-          "sample": "παιδαγωγὸς θεὸς ἐν ἀνθρώπου σχήματι ἄχραντος πατρικῷ θελήματι διάκονος λόγος θεὸς"
+          "page": 37,
+          "word_count": 22,
+          "sample": "αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα φωτίζει δὲ"
         },
         {
-          "page": 57,
-          "word_count": 14,
-          "sample": "σὺ εῖ πέτρος καὶ ἐπὶ ταύτῃ τῇ πέτρᾳ σὺ εῖ πέτρος καὶ"
+          "page": 37,
+          "word_count": 37,
+          "sample": "εἰ γοῦν ὥς ἐν ὑποθέσει λόγου καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος"
         },
         {
-          "page": 105,
-          "word_count": 6,
-          "sample": "ἐν πατρὶ πρὸς τὸν πατέρα θεὸν"
-        },
-        {
-          "page": 109,
-          "word_count": 11,
-          "sample": "ἐν προσώπῳ τοῦ χηριστοῦ λόγος τοῦ θεοῦ λόγος οὐσιώδης λόγος προφορικὸς"
-        },
-        {
-          "page": 293,
-          "word_count": 8,
-          "sample": "ἀτρέπτως ἀδιαιρέτως ἀσυγχύτως ἀχωρίστως οὐσιωδῶς ἐνσάρκωσις ἐνσωμάτωσις ἐνανθρώπησις"
+          "page": 40,
+          "word_count": 13,
+          "sample": "χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς ῆν γὰρ ἐν θεῷ καὶ τοῦ"
         }
       ]
     },
@@ -274,10 +274,23 @@
     },
     {
       "label": "Untagged Greek characters",
-      "observed": 0,
+      "observed": 8,
       "budget": 55,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": ", κ.τ.λ. (cap. 6)"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "text": ", κ.τ.λ.\" — \"Thou art a rock, and on thee will I build.\" At least the gender had not been altered, but he would have said, \""
+        },
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": ".τ. λ., 2 Corinthians 3:18. We behold his glory \"in a glass,\" which implants the image of it on our minds. And hereby the mind is transformed into the same image, made like unto Christ so represented unto us — which is t"
+        }
+      ]
     },
     {
       "label": "Untagged Hebrew characters",
@@ -512,25 +525,49 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 4,
+      "observed": 17,
       "budget": 38,
       "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "w"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "f"
+        },
+        {
+          "file": "EPUB/ch015.xhtml",
+          "text": "p"
+        },
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": "r"
+        },
         {
           "file": "EPUB/ch020.xhtml",
           "text": "i"
         },
         {
-          "file": "EPUB/ch030.xhtml",
+          "file": "EPUB/ch022.xhtml",
+          "text": "c"
+        },
+        {
+          "file": "EPUB/ch023.xhtml",
           "text": "a"
         },
         {
-          "file": "EPUB/ch078.xhtml",
-          "text": "t"
+          "file": "EPUB/ch024.xhtml",
+          "text": "o"
         },
         {
-          "file": "EPUB/title_0.xhtml",
-          "text": "b"
+          "file": "EPUB/ch027.xhtml",
+          "text": "a"
+        },
+        {
+          "file": "EPUB/ch029.xhtml",
+          "text": "p"
         }
       ]
     },

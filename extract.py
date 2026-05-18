@@ -323,7 +323,8 @@ def coordinate_redactor(blocks, page_height=PAGE_H, top_margin=TOP_MARGIN, botto
             )
             
             # Bottom safety: Owen's footnotes or low body lines often sit at y=580-605
-            if y_center > page_height - 70 and not is_header_footer and len(line_text) > 10:
+            # We use a 70pt window from the bottom. If the text looks substantial, keep it.
+            if y_center > page_height - 70 and not is_header_footer and len(line_text) >= 4:
                 keep_lines.append(line)
                 continue
 
@@ -491,6 +492,10 @@ def page_is_structural(page):
                 # Digressions (Bold black starting with DIGRESSION)
                 if color == 0 and size == 12 and (flags & 16) and line_text.startswith('DIGRESSION'):
                     return True
+            
+            # Roman Heads (Issue 1)
+            if ROMAN_HEADING_RE.match(line_text) or ROMAN_ONLY_RE.match(line_text):
+                return True
     return False
 
 
@@ -514,7 +519,7 @@ def extract_structural_page(page, page_height=PAGE_H):
             return
             
         # Join major structural elements with space to keep them unified (Issue 108/Audit)
-        if current_kind in ('PART', 'CHAPTER', 'SUMMARY', 'SUBTITLE', 'DIGRESSION'):
+        if current_kind in ('PART', 'CHAPTER', 'SUMMARY', 'SUBTITLE', 'DIGRESSION', 'ROMAN_HEAD'):
             joined = ' '.join(current_text_parts).strip()
         else:
             joined = '\n'.join(current_text_parts).strip()
@@ -557,17 +562,17 @@ def extract_structural_page(page, page_height=PAGE_H):
                     line_is_part = True
                 elif color == COLOR_GREEN and size > 15:
                     line_is_chapter = True
-                elif (color == COLOR_GREEN or color == 0) and 13.5 <= size <= 14.5:
-                    # Specific pattern for Roman heads to avoid catching body lines
-                    # ONLY match standalone Roman numerals as headings (Issue 12/19)
-                    if re.match(r'^[IVXLCDM]+\.?$', text.strip()):
-                        line_is_roman_head = True
                 elif color == COLOR_RED and size > 15:
                     line_is_volume = True
 
             line_text = ''.join(spans_text).strip()
             if not line_text:
                 continue
+
+            # Roman head detection (Issue 1)
+            # Catch standalone Roman numerals OR those followed by text
+            if ROMAN_HEADING_RE.match(line_text) or ROMAN_ONLY_RE.match(line_text):
+                line_is_roman_head = True
 
             # Summary Criteria (Issue 108/25):
             # 1. Direct follow-up to CHAPTER: any All-Caps block is a summary.
@@ -594,10 +599,6 @@ def extract_structural_page(page, page_height=PAGE_H):
             if line_is_subtitle and not line_text.isupper() and not is_reader:
                 line_is_subtitle = False
                 
-            # Roman head detection: must be a standalone Roman numeral (Issue 12/19)
-            if line_is_roman_head and not re.match(r'^[IVXLCDM]+\.?$', line_text):
-                line_is_roman_head = False
-                
             line_is_summary = False
             if in_heading_section:
                 # Summary Criteria (Issue 108):
@@ -622,7 +623,7 @@ def extract_structural_page(page, page_height=PAGE_H):
                 kind = 'CHAPTER'
                 in_heading_section = True
                 waiting_for_summary = True # Now we wait for the all-caps summary
-            elif line_is_roman_head: 
+            elif ROMAN_HEADING_RE.match(line_text) or line_is_roman_head:
                 kind = 'ROMAN_HEAD'
                 # A Roman head ends the heading/summary block
                 in_heading_section = False
@@ -644,6 +645,14 @@ def extract_structural_page(page, page_height=PAGE_H):
                 if not (first_flags & 2) and len(line_text) > 25:
                     in_heading_section = False
                     waiting_for_summary = False
+
+            if kind == 'PLAIN' and current_kind == 'ROMAN_HEAD' and current_text_parts:
+                current_heading = ' '.join(current_text_parts).strip()
+                heading_is_open = not re.search(r'[.!?;:]"?\s*$', current_heading)
+                continues_heading = bool(re.match(r'^[a-z]', line_text))
+                if heading_is_open and continues_heading:
+                    current_text_parts.append(line_text)
+                    continue
             
             if kind != 'PLAIN':
                 # Structural lines should be joined if they are the SAME kind and adjacent
@@ -1411,6 +1420,13 @@ DANGLING_CONNECTOR_RE = re.compile(
     re.I
 )
 
+# Terms where a hyphen at EOL should be preserved (Issue 1)
+OWEN_HARD_HYPHENS = {
+    'Spiritual-mindedness', 'spiritually-minded', 'heavenly-mindedness',
+    'self-denial', 'faith-fulness', 'church-state', 'fellow-creature',
+    'well-pleased', 'good-will', 'soul-satisfying'
+}
+
 
 def reconstruct_paragraphs(text):
     """Heal broken lines into proper, reflowable paragraphs."""
@@ -1474,7 +1490,13 @@ def reconstruct_paragraphs(text):
 
         # De-hyphenation: strip trailing hyphen, merge with no space
         if current and current[-1].endswith('-'):
-            current[-1] = current[-1][:-1] + stripped
+            prev_tail = current[-1]
+            candidate = prev_tail + stripped
+            # If the resulting word is a known hard-hyphenated term, keep the hyphen (Issue 1)
+            if any(term.lower() == candidate.lower() for term in OWEN_HARD_HYPHENS):
+                current[-1] = prev_tail + " " + stripped
+            else:
+                current[-1] = prev_tail[:-1] + stripped
             continue
 
         if current:
@@ -1868,6 +1890,17 @@ def _remove_adjacent_repeated_word_runs(text):
 
 def post_process_paragraphs(paragraphs):
     """Clean paragraph-level artifacts after line healing."""
+    # 1. Primary cleanup of OCR artifacts and noise
+    pre_cleaned = []
+    for para in paragraphs:
+        stripped = para.strip()
+        # Sweep 'stray letter' paragraphs (Issue 1)
+        # standalone lowercase letters (often from Christ -> i, or headers)
+        if re.match(r'^[a-z]\s*$', stripped):
+            continue
+        pre_cleaned.append(para)
+    paragraphs = pre_cleaned
+
     cleaned = []
     for para in paragraphs:
         para = _remove_repeated_opening_clause(para.strip())
@@ -1944,6 +1977,14 @@ def post_process_paragraphs(paragraphs):
                     overlap = sum(1 for ref in para_refs if ref in prev_refs)
                     if overlap / len(para_refs) >= 0.6:
                         continue
+                cleaned[-1] = f"{cleaned[-1]} {part}".strip()
+                continue
+
+            # Owen-specific: Join short transitional paragraphs with the next one (Issue 1)
+            # Match "But —", "For —", "And —", "Or —", etc.
+            # Don't join if the next part is structural (Issue 1 Refinement)
+            is_structural = part.startswith('[[')
+            if cleaned and not is_structural and re.match(r'^(?:But|For|And|Or|Yea|Yet|So|Wherefore)\s*[—\-]\s*$', cleaned[-1].strip()):
                 cleaned[-1] = f"{cleaned[-1]} {part}".strip()
                 continue
 

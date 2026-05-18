@@ -2,9 +2,9 @@
   "volume": 4,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/input/owen-v4.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-17T14:45:30.367719+00:00",
+  "generated_at": "2026-05-18T00:19:59.030541+00:00",
   "status": "warn",
-  "warning_count": 9,
+  "warning_count": 13,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -39,8 +39,24 @@
       "message": "Some chapter headings are long enough to suggest swallowed body text"
     },
     {
+      "code": "missing_enumerator_markers",
+      "message": "Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB"
+    },
+    {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_hebrew_word_coverage",
+      "message": "EPUB Hebrew word coverage against PDF extraction is lower than expected"
+    },
+    {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "missing_hebrew_clauses",
+      "message": "Some dense Hebrew passages from the PDF are missing from the EPUB"
     }
   ],
   "pdf": {
@@ -51,13 +67,23 @@
     "paragraph_count": 2410
   },
   "word_coverage": {
-    "pdf_content_tokens": 221791,
-    "epub_content_tokens": 222839,
-    "coverage_ratio": 0.9977,
+    "pdf_content_tokens": 222359,
+    "epub_content_tokens": 222838,
+    "coverage_ratio": 0.9951,
     "missing_word_samples": [
       {
-        "word": "ord",
-        "pdf": 67,
+        "word": "1st",
+        "pdf": 27,
+        "epub": 9
+      },
+      {
+        "word": "2dly",
+        "pdf": 27,
+        "epub": 10
+      },
+      {
+        "word": "עןףְלָאוֹט",
+        "pdf": 5,
         "epub": 0
       },
       {
@@ -66,37 +92,27 @@
         "epub": 3
       },
       {
-        "word": "econdly",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
-        "word": "hat",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
         "word": "14-17",
         "pdf": 4,
         "epub": 0
       },
       {
-        "word": "od",
-        "pdf": 5,
-        "epub": 2
-      },
-      {
-        "word": "irst",
+        "word": "חָ־ןִ",
         "pdf": 3,
         "epub": 0
       },
       {
-        "word": "hirdly",
+        "word": "־טחֲןוּעןים",
         "pdf": 3,
         "epub": 0
       },
       {
         "word": "10-12",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "144",
         "pdf": 3,
         "epub": 1
       },
@@ -118,211 +134,336 @@
         "epub": 37
       },
       {
-        "word": "ed",
-        "pdf": 1,
-        "epub": 16
+        "word": "dly",
+        "pdf": 0,
+        "epub": 23
       },
       {
-        "word": "note",
-        "pdf": 8,
-        "epub": 15
-      },
-      {
-        "word": "prefatory",
-        "pdf": 7,
-        "epub": 14
+        "word": "st",
+        "pdf": 2,
+        "epub": 20
       }
     ]
   },
   "page_coverage": {
     "pages_checked": 644,
-    "weak_page_count": 4,
+    "weak_page_count": 34,
     "weak_pages": [
+      {
+        "page": 15,
+        "hit_ratio": 0.333,
+        "sample": "15 the reason of faith or the grounds whereon the scripture is believed to be the word of god with faith divine and supernaural"
+      },
       {
         "page": 16,
         "hit_ratio": 0.333,
-        "sample": "first supernatural revelation is the only objective cause and means of supernatural illumination these things are commensurate there is natural knowledge of supernatural things"
+        "sample": "16 first supernatural revelation is the only objective cause and means of supernatural illumination these things are commensurate there is natural knowledge of supernatural"
+      },
+      {
+        "page": 26,
+        "hit_ratio": 0.333,
+        "sample": "26 the first is the material object of our faith namely the things which we do believe the latter the formal object of it"
       },
       {
         "page": 39,
+        "hit_ratio": 0.0,
+        "sample": "39 notions and apprehensions of him according to the utmost capacity of our finite limited understanding neither do we urge his authority in this"
+      },
+      {
+        "page": 44,
         "hit_ratio": 0.333,
-        "sample": "notions and apprehensions of him according to the utmost capacity of our finite limited understanding neither do we urge his authority in this case"
+        "sample": "44 matter is that duty of the church whereby it proposeth and declareth the scripture to be the word of god and that as"
+      },
+      {
+        "page": 51,
+        "hit_ratio": 0.333,
+        "sample": "51 argument is the principal design of the apostle in the whole llth chapter of the epistle to the hebrews for having declared the"
       },
       {
         "page": 64,
-        "hit_ratio": 0.0,
-        "sample": "chapter moral certainty the result of external arguments insufficient ivine revelation is the proper object of divine faith with such faith we can believe"
+        "hit_ratio": 0.333,
+        "sample": "64 chapter moral certainty the result of external arguments insufficient divine revelation is the proper object of divine faith with such faith we can"
       },
       {
-        "page": 653,
+        "page": 102,
         "hit_ratio": 0.333,
-        "sample": "χριστοῦ φῶς εἰς τὴν ψυχὴν εἰσάγειν chrys hom 67 de prec ft19 nathaniel mather was the son of richard mather an eminent puritan divine"
+        "sample": "102 acquiesce in isaiah 20 malachi setting out its power and excellency for all the ends of faith and obedience psalm 19 7-9 119"
+      },
+      {
+        "page": 150,
+        "hit_ratio": 0.333,
+        "sample": "150 συηεσις πνευματικη or the causes ways and means of understanding the mind of god as revealed in his word with assurance therein and"
+      },
+      {
+        "page": 156,
+        "hit_ratio": 0.333,
+        "sample": "156 provided for the assurance and security of all men in things of their eternal concernment and what are those acts of his wisdom"
+      },
+      {
+        "page": 167,
+        "hit_ratio": 0.333,
+        "sample": "167 understands all the books that were then given unto the church by revelation for the rule of its faith and obedience and that"
+      },
+      {
+        "page": 171,
+        "hit_ratio": 0.333,
+        "sample": "171 blindness that is on men by nature the former veil is taken away by the doctrine of the gospel this latter is to"
+      },
+      {
+        "page": 172,
+        "hit_ratio": 0.333,
+        "sample": "172 but the meaning of the psalmist will the better appear if we consider the communication of the grace which he prayed for unto"
+      },
+      {
+        "page": 179,
+        "hit_ratio": 0.333,
+        "sample": "179 not how this prayer can be suited unto the principles of any who deny the necessity of this internal spiritual aid for they"
+      },
+      {
+        "page": 180,
+        "hit_ratio": 0.333,
+        "sample": "180 that the god of our lord jesus christ the father of glory would give unto you god is called the king of glory"
+      },
+      {
+        "page": 219,
+        "hit_ratio": 0.333,
+        "sample": "219 the power of this darkness that is while their minds are deeply affected with their natural ignorance they cannot perceive spiritual things corinthians"
+      },
+      {
+        "page": 277,
+        "hit_ratio": 0.333,
+        "sample": "277 god hath hereby given an account of the beginning progress trials faith obedience and whole proceedings of the church in the pursuit of"
+      },
+      {
+        "page": 326,
+        "hit_ratio": 0.333,
+        "sample": "326 because he is the author of all grace in and unto them on whom he is poured out so god is called the"
+      },
+      {
+        "page": 327,
+        "hit_ratio": 0.333,
+        "sample": "327 and they called them ικετηριους ζαλλους branches of supplication or prayer and they constantly called those prayers which they made solemnly unto their"
+      },
+      {
+        "page": 367,
+        "hit_ratio": 0.333,
+        "sample": "367 outward occasions or other motives do excite them or stir them up so our savior in his agony prayed more earnestly than usual"
+      },
+      {
+        "page": 399,
+        "hit_ratio": 0.333,
+        "sample": "399 spirit on the church under the new testament than under the old to deny it is to take away the principal difference between"
+      },
+      {
+        "page": 409,
+        "hit_ratio": 0.333,
+        "sample": "409 2dly although the exercise of the gift itself ought to be nothing but the way of those graces acting themselves towards god in"
+      },
+      {
+        "page": 447,
+        "hit_ratio": 0.333,
+        "sample": "447 condemning of this generation whose vitiated and ill-affected eyes could not bear so great light set up and shining on candlestick and which"
+      },
+      {
+        "page": 462,
+        "hit_ratio": 0.333,
+        "sample": "462 the personal righteousness of christ and the righteousness of his office are intended for concerning both these the church hath contest with the"
+      },
+      {
+        "page": 489,
+        "hit_ratio": 0.333,
+        "sample": "489 may be that indeed that cannot be which they cannot comprehend and that some evil consequences may ensue upon the admittance of it"
+      },
+      {
+        "page": 508,
+        "hit_ratio": 0.333,
+        "sample": "508 this also belonged unto his sealing for therein there was such an express representation of divine power communicated unto him as evidently manifested"
+      },
+      {
+        "page": 556,
+        "hit_ratio": 0.333,
+        "sample": "556 paul an apostle not of men neither by man but by jesus christ and god the father who raised him from the dead"
+      },
+      {
+        "page": 564,
+        "hit_ratio": 0.333,
+        "sample": "564 nor is there in the scripture the least mention of the call or appointment of any one to be an ecclesiastical officer in"
+      },
+      {
+        "page": 589,
+        "hit_ratio": 0.333,
+        "sample": "589 principally committed went up and down the world laying hold on all occasions to preach it unto jews and gentiles as yet unconverted"
+      },
+      {
+        "page": 592,
+        "hit_ratio": 0.333,
+        "sample": "592 doctrinally unto it might certainly and infallibly be tried judged and determined on and this was the rule of the written word according"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 24411,
-    "missing_dense_window_pages": 231,
+    "dense_windows_checked": 777,
+    "missing_dense_window_pages": 627,
     "missing_dense_windows": [
       {
         "page": 3,
-        "sample": "continued book vi part the reason of faith refatory ote by the ditor preface"
+        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason"
       },
       {
-        "page": 9,
-        "sample": "prefatory note he subject of this treatise belongs to the office of the holy"
+        "page": 10,
+        "sample": "10 fanatical excesses which they sought to rebuke they stated the question in such"
+      },
+      {
+        "page": 11,
+        "sample": "11 itself substantiates such claim in his behalf it is the first recognition of"
       },
       {
         "page": 12,
-        "sample": "preface aving added brief account of the design order and method of the ensuing"
+        "sample": "12 preface having added brief account of the design order and method of the"
+      },
+      {
+        "page": 13,
+        "sample": "13 the consciences of men immediately and the way whereby they may come to"
       },
       {
         "page": 15,
-        "sample": "of god with faith divine and supernaural chapter the subject stated preliminary remarks he"
+        "sample": "15 the reason of faith or the grounds whereon the scripture is believed to"
       },
       {
         "page": 16,
-        "sample": "first supernatural revelation is the only objective cause and means of supernatural illumination these"
+        "sample": "16 first supernatural revelation is the only objective cause and means of supernatural illumination"
       },
       {
         "page": 17,
-        "sample": "being and power this they do undeniably and infallibly psalm 19 romans 19-21 yet"
+        "sample": "17 that it did sufficiently evidence itself to be from god unto the minds"
+      },
+      {
+        "page": 18,
+        "sample": "18 of his will πολυμερως by sundry parts and degrees yet so that every"
       },
       {
         "page": 19,
-        "sample": "devil of the ways means and degrees whereof have discoursed elsewhere f1 hereon god"
+        "sample": "19 before the call of moses during which time all things went into darkness"
       },
       {
         "page": 20,
-        "sample": "and testimony with threatening of curse unto the contrary malachi 4-6 so the writings"
+        "sample": "20 when god first committed the law to writing with all those things which"
       },
       {
         "page": 21,
-        "sample": "is the only repository of all divine supernatural revelation psalm 19 isaiah 20 timothy"
+        "sample": "21 fourthly the scripture is now become the only external means of divine supernatural"
       },
       {
         "page": 22,
-        "sample": "the word see matthew 14 15 corinthians 18-20 ephesians 11-15 timothy 15 the church"
+        "sample": "22 meditating on the scripture do take an effectual course to keep them in"
       },
       {
         "page": 24,
-        "sample": "the spirit of god herein will be our first inquiry econdly whereas we see"
+        "sample": "24 namely that we truly believe the scripture to be the word of god"
       },
       {
         "page": 25,
-        "sample": "scripture to be the word of god affirmed design requires that should confine my"
+        "sample": "25 chapter what it is infallibly to believe the scripture to be the word"
       },
       {
         "page": 26,
-        "sample": "them is because they are declared in the scriptures see acts 28-38 sometimes indeed"
+        "sample": "26 the first is the material object of our faith namely the things which"
       },
       {
         "page": 27,
-        "sample": "unlike that of the samaritans john 40-42 as shall be afterwards declared when we"
+        "sample": "27 answer unto this question contains the formal reason and object of our faith"
       },
       {
         "page": 28,
-        "sample": "the prophet ־האֲעמינוּ ־בּיהוָֹה ־אלֹהֵי כם וְתֵאָמֵנוּ chronicles 20 20 believe in the ord"
+        "sample": "28 that which is false or which may be false with divine faith for"
       },
       {
         "page": 29,
-        "sample": "god but whereas this faith is required of us in way of obedience and"
+        "sample": "29 afterwards or to speak distinctly our faith is supernatural with respect unto the"
       },
       {
         "page": 30,
-        "sample": "ord is true absolutely but thus saith the ord and the ord hath spoken"
+        "sample": "30 lord is true absolutely but thus saith the lord and the lord hath"
       },
       {
         "page": 32,
-        "sample": "chapter sundry convincing external arguments for divine revelation here are sundry cogent arguments which"
+        "sample": "32 chapter sundry convincing external arguments for divine revelation there are sundry cogent arguments"
       },
       {
         "page": 33,
-        "sample": "use of this plea against idols isaiah 43 10-12 ye are my witnesses saith"
+        "sample": "33 original and authority of the scriptures which the mind ought to give upon"
+      },
+      {
+        "page": 34,
+        "sample": "34 writing pretended to be given unto the same end whatever therefore ensued with"
       },
       {
         "page": 35,
-        "sample": "wisdom before all the world deuteronomy 6-8 now we shall not need to consider"
+        "sample": "35 wisdom before all the world deuteronomy 6-8 now we shall not need to"
+      },
+      {
+        "page": 36,
+        "sample": "36 pretends to be there had been nothing more suitable to the nature of"
+      },
+      {
+        "page": 37,
+        "sample": "37 power it was to have it corrupted as it was of the apostate"
+      },
+      {
+        "page": 38,
+        "sample": "38 practices absolutely inconsistent with it but also built all their present and future"
       },
       {
         "page": 39,
-        "sample": "ignorance the apostle declares at large romans from the 18th verse to the end"
+        "sample": "39 notions and apprehensions of him according to the utmost capacity of our finite"
+      },
+      {
+        "page": 40,
+        "sample": "40 dark place peter 19 it gives unto all men at once perfect clear"
+      },
+      {
+        "page": 41,
+        "sample": "41 make it or that there is any way to free them from it"
+      },
+      {
+        "page": 42,
+        "sample": "42 themselves in endless questions to no purpose arose from their ignorance of what"
+      },
+      {
+        "page": 43,
+        "sample": "43 original others will retain sacred veneration of it as of the offspring of"
+      },
+      {
+        "page": 44,
+        "sample": "44 matter is that duty of the church whereby it proposeth and declareth the"
       },
       {
         "page": 45,
-        "sample": "is pleaded by the apostle peter in the name of them all peter 16-21"
+        "sample": "45 the testimony therefore which intend is that of multitudes of persons of unspotted"
       },
       {
         "page": 46,
-        "sample": "of its truth unto these two considerations st of their persons and dly of"
+        "sample": "46 particular john beareth witness unto his revelation chap 19 22 these are the"
       },
       {
         "page": 47,
-        "sample": "at large elsewhere insisted on this consideration f4 and have also in the same"
+        "sample": "47 violently engaged and have put an immediate issue unto all that difference and"
+      },
+      {
+        "page": 48,
+        "sample": "48 unto the testimony of the divine writers themselves we must add that of"
       },
       {
         "page": 49,
-        "sample": "thereunto are said to belie the ord and say it is not he jeremiah"
+        "sample": "49 what it was they gave testimony unto is duly to be considered and"
+      },
+      {
+        "page": 50,
+        "sample": "50 1st many of them especially in some seasons gave it in with sundry"
       },
       {
         "page": 51,
-        "sample": "of witnesses wherewith we are compassed about chap 12 giving testimony unto what we"
-      },
-      {
-        "page": 54,
-        "sample": "and rose again according to the scriptures chap 15 and this they did by"
-      },
-      {
-        "page": 56,
-        "sample": "when they apprehended it would bring in decay of their trade acts 19 23-41"
-      },
-      {
-        "page": 64,
-        "sample": "chapter moral certainty the result of external arguments insufficient ivine revelation is the proper"
-      },
-      {
-        "page": 65,
-        "sample": "power in and by his word is appealed unto corinthians 13 14 36 37"
-      },
-      {
-        "page": 76,
-        "sample": "things out of the law psalm 119 18 that he would make him understand"
-      },
-      {
-        "page": 84,
-        "sample": "be blessed was reduced unto that anxious inquiry lord od what wilt thou give"
-      },
-      {
-        "page": 90,
-        "sample": "chapter divine revelation itself the only foundation and reason of faith hat which we"
-      },
-      {
-        "page": 95,
-        "sample": "that sole preface of divine revelations thus saith the ord and therefore they are"
-      },
-      {
-        "page": 96,
-        "sample": "word faithfully what is the chaff to the wheat saith the ord is not"
-      },
-      {
-        "page": 97,
-        "sample": "but is it of this authority and efficacy in itself see luke 16 27-31"
-      },
-      {
-        "page": 100,
-        "sample": "and confirm faith in the disciples luke 24 25-27 that great testimony to this"
-      },
-      {
-        "page": 102,
-        "sample": "power and excellency for all the ends of faith and obedience psalm 19 7-9"
-      },
-      {
-        "page": 105,
-        "sample": "evidencing power considered particularly that of the scriptures as the word of god may"
-      },
-      {
-        "page": 108,
-        "sample": "there is no speech nor language where their voice is not heard psalm 19"
+        "sample": "51 argument is the principal design of the apostle in the whole llth chapter"
       }
     ]
   },
@@ -1022,10 +1163,48 @@
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
-    "pdf_marker_count": 370,
+    "pdf_marker_count": 416,
     "epub_marker_count": 375,
-    "missing_marker_count": 0,
-    "missing_markers": [],
+    "missing_marker_count": 3,
+    "missing_markers": [
+      {
+        "marker": "[1st.]",
+        "pdf": 2,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p212",
+            "context": "s of their minds, which hinder them from receiving instruction.\" But ff it be so, then, — [1st.] It is supposed that man also in their teachings can give us an understanding as well as the Son of God; for they may teach men the knowledge of the gospel if they are willing to l"
+          },
+          {
+            "location": "pdf:p214",
+            "context": "214 [1st.] This takes away the distinction between the extraordinary and ordinary gifts of the Spirit, so fully asserted in the Scripture, as we shall elsewhere declare; and if it were so, G"
+          }
+        ]
+      },
+      {
+        "marker": "[2dly.]",
+        "pdf": 1,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p212",
+            "context": "learn, and have no darling lusts or vicious habits of mind to hinder them from learning. [2dly.] Seeing he hath taken this work on himself, and designs its accomplishment, cannot the Son of God by his grace remove those vicious habits of the minds of men, that they may have a"
+          }
+        ]
+      },
+      {
+        "marker": "[3dly.]",
+        "pdf": 1,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p214",
+            "context": "and condition with the conceptions of every one that will pretend unto this inspiration. [3dly.] The pretense visibly confutes itself in the manifold mutual contradictions of them that pretend unto it; and would, [4thly.] thereon be a principle, first of confusion, then of in"
+          }
+        ]
+      }
+    ],
     "excess_marker_count": 0,
     "excess_markers": [],
     "orphan_candidate_count": 0,
@@ -1133,6 +1312,301 @@
       "count": 4
     }
   ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 786,
+    "epub_greek_word_count": 779,
+    "pdf_greek_unique_words": 470,
+    "epub_greek_unique_words": 468,
+    "greek_word_coverage_ratio": 0.9817,
+    "pdf_hebrew_word_count": 111,
+    "epub_hebrew_word_count": 109,
+    "pdf_hebrew_unique_words": 93,
+    "epub_hebrew_unique_words": 92,
+    "hebrew_word_coverage_ratio": 0.3303,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": [
+      {
+        "word": "עןףְלָאוֹט",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "חָ־ןִ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "־טחֲןוּעןים",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "־נלאעעי־ןי",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "תוֹרָה",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "עחִ",
+        "pdf": 2,
+        "epub": 0
+      },
+      {
+        "word": "־םתָןוֹט",
+        "pdf": 2,
+        "epub": 0
+      }
+    ]
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 42,
+    "missing_greek_clause_count": 42,
+    "missing_greek_clauses": [
+      {
+        "page": 107,
+        "word_count": 8,
+        "sample": "τὸ γνωστὸν τοῦ θεοῦ φανερόν ἐστιν ἐν αὐτοῖς"
+      },
+      {
+        "page": 141,
+        "word_count": 26,
+        "sample": "εχομεν γὰρ τὴν ἀρχὴν τῆς διδασκαλίας τὸν κύριον διά τε τῶν προφητῶν"
+      },
+      {
+        "page": 141,
+        "word_count": 9,
+        "sample": "εἴτις ἐτέρου δεῖσθαι ὑπολάζοι οὐκέτ ἄν ὄντως ἀρχὴ φυλαχθείη"
+      },
+      {
+        "page": 141,
+        "word_count": 46,
+        "sample": "μὲν οῦν ἐξ ἑαυτοῦ πιστὸς τῇ κυριακῇ γραφῇ τε καὶ φωνῇ ἀξιόπιστος"
+      },
+      {
+        "page": 142,
+        "word_count": 41,
+        "sample": "εἰκότως τοίνυν πίστει περιλαζόντες ἀναπόδεικτον τὴν ἀρχὴν ἐκ περιουσίας καὶ τὰς ἀποδείξεις"
+      },
+      {
+        "page": 142,
+        "word_count": 26,
+        "sample": "οὐκ ἀρκεῖ μόνον ἁπλῶς εἰπεῖν τὸ δόξαν ἀλλὰ πιστώσασθαι δεῖ τὸ λεχθὲν"
+      },
+      {
+        "page": 142,
+        "word_count": 20,
+        "sample": "μόνη ἀπόδειξις οῦσα τυγχάνει οὕτως οῦν καὶ ἡμεῖς ἀπ αὐτῶν περὶ αὐτῶν"
+      },
+      {
+        "page": 143,
+        "word_count": 11,
+        "sample": "ὑπὲρ τὰς λογικὰς μεθάδους τὴν ψυχὴν εἰς συγκατάθεσιν ἕλκουσα πίστις οὐκ"
+      },
+      {
+        "page": 143,
+        "word_count": 5,
+        "sample": "ταῖς τοῦ πνεύματος ἐνεργείαις ἐγγινομένη"
+      },
+      {
+        "page": 143,
+        "word_count": 13,
+        "sample": "τῶν ζείων λογίων διδασκαλία τὸ πιστὸν ἀφ ἑαυτῆς ἔχουσα διὰ τὸ ζεόπνευστον"
+      },
+      {
+        "page": 175,
+        "word_count": 10,
+        "sample": "πλοῦτος τῆς δόξης ἀνεξιχνίαστος ὑπερζάλλον μέγεθος εἰς τὸ εἰδέναι ὑμᾶς"
+      },
+      {
+        "page": 184,
+        "word_count": 5,
+        "sample": "ἕως τῆς συντελείας τοῦ αἰῶνος"
+      },
+      {
+        "page": 185,
+        "word_count": 7,
+        "sample": "ὁδηγήσει ὑμᾶς ἐὰν μή τις ὁδηγήσῃ με"
+      },
+      {
+        "page": 196,
+        "word_count": 5,
+        "sample": "διδακτοὶ τοῦ θεοῦ ζεοδίδακτοι αὐτοδίδακτος"
+      },
+      {
+        "page": 201,
+        "word_count": 12,
+        "sample": "πάντα πλοῦτον τῆς πληροφοφίας τῆς συνέσεως εἰς ἐπίγνωσιν τοῦ μυστηρίου τοῦ θεοῦ"
+      },
+      {
+        "page": 247,
+        "word_count": 6,
+        "sample": "τινὰ δυσνόητα τινὰ δυσερμήνευτα τινὰ δυσνόητα"
+      },
+      {
+        "page": 269,
+        "word_count": 13,
+        "sample": "γραφὴ ζεόπνευστος ὑπὲρ λόγον ὐπὲρ νοῦν καὶ ὑπὲρ πᾶσαν κατάληψιν εως ἅς"
+      },
+      {
+        "page": 269,
+        "word_count": 8,
+        "sample": "μία κεραία οὐ μὴ παρέλθῃ ἀπὸ τοῦ νόμου"
+      },
+      {
+        "page": 273,
+        "word_count": 5,
+        "sample": "εμοῦ ζανόντος γαῖα μιχθήτω πυρί"
+      },
+      {
+        "page": 337,
+        "word_count": 5,
+        "sample": "πνεῦμα δυνάμεως χάριν ἔχω τῷ"
+      },
+      {
+        "page": 339,
+        "word_count": 15,
+        "sample": "πατήρ πατήρ βουλόμενος δεῖξαι γνησιότηατ καὶ τῇ τῶν εζραίων ἐχρήσατο γλώσσῃ οὐ"
+      },
+      {
+        "page": 339,
+        "word_count": 11,
+        "sample": "πατὴρ ὅπερ τῶν παίδων μάλιστά ἐστι τῶν γνησίων πρὸς πατέρα ῥῆμα"
+      },
+      {
+        "page": 340,
+        "word_count": 12,
+        "sample": "χράζον φωνῇ μεγάλῃ τὸ πνεῦμα τοῦ υἱοῦ κράζον τὸ πνεῦρμα υἱοθεσίας ἐν"
+      },
+      {
+        "page": 364,
+        "word_count": 13,
+        "sample": "ὑπερεντυγχάνει συναντιλαμζάνεται ὑπερεντυγχάνει ως ἐντυγχάνει τῷ θεῷ κατὰ τοῦ ισραήλ στεναγμοῖς ἀλαλήτοις"
+      },
+      {
+        "page": 366,
+        "word_count": 8,
+        "sample": "ὑπερεντυγχάνειν ἀσθένεια συναντιλαμζάνεται ταῖς ἀσθενει αις ἡμῶν ἀπροσδιόνυσα"
+      },
+      {
+        "page": 376,
+        "word_count": 13,
+        "sample": "ἐν παντὶ καιρῷ διὰ πάσης προσευχῆς καὶ δεήσεως ἐν πάσῃ προσευχῇ καὶ"
+      },
+      {
+        "page": 392,
+        "word_count": 12,
+        "sample": "λόγος παῤῥησία ἐν τῷ ἀποφθέγγεσθαι λόγος ἐν ἀνοίζει τοῦ στόματος ἐν παῤῥησίᾳ"
+      },
+      {
+        "page": 413,
+        "word_count": 23,
+        "sample": "οὐ γάρ τι ἐκινεῖτο παρ αὐτῷ οὐ ζυμὸς οὐκ ἐπιθυμία ἄλλου παρῆν"
+      },
+      {
+        "page": 413,
+        "word_count": 10,
+        "sample": "ὅλως αὐτὸς εἰ δεῖ καὶ τοῦτο λέγειν ἀλλ ὧσπερ ἁρπασθεὶς"
+      },
+      {
+        "page": 413,
+        "word_count": 13,
+        "sample": "ἐνθουσιάσας ἡσυχῆ ἐν ἐρήμῳ καταστάσει γεγένηται ἀτρεμεῖ τῇ αὐτοῦ οὐσίᾳ οὐδαμοῦ ἀποκλίνων"
+      }
+    ],
+    "hebrew_clauses_checked": 17,
+    "missing_hebrew_clause_count": 17,
+    "missing_hebrew_clauses": [
+      {
+        "page": 16,
+        "word_count": 3,
+        "sample": "־נלאעעי־ןי באףא גליטא"
+      },
+      {
+        "page": 23,
+        "word_count": 3,
+        "sample": "עפ־טחאדְּבָ ריו יָעאיר"
+      },
+      {
+        "page": 28,
+        "word_count": 5,
+        "sample": "־האֲעםיןוּ ־בּיהוָֹה ־אלֹעהי ךם וְעטאָעםןוּ"
+      },
+      {
+        "page": 166,
+        "word_count": 9,
+        "sample": "־נלאעעי־ןי וְ־אבּיטָה עןףְלָאוֹט עםתוֹרָ טו תוֹרָה כְטוּעבים תוֹרָה ןְעבעאים"
+      },
+      {
+        "page": 167,
+        "word_count": 7,
+        "sample": "עןףְלָאוֹט פָלָא עןףְלָאוֹט עךי עיפָעלא עםמְו דָבָר"
+      },
+      {
+        "page": 167,
+        "word_count": 6,
+        "sample": "לא רעבּו תוֹרָעטי כְםוֹ זָר עןףְלָאוֹט"
+      },
+      {
+        "page": 171,
+        "word_count": 7,
+        "sample": "־ה וֹט ־ה וֹט וְ־ה־מע ךָה ־הנְסוּךָה"
+      },
+      {
+        "page": 265,
+        "word_count": 4,
+        "sample": "דְּבְערי ־א םט ךָטוּב"
+      },
+      {
+        "page": 269,
+        "word_count": 3,
+        "sample": "עס ףר יְהֹוָה"
+      },
+      {
+        "page": 325,
+        "word_count": 4,
+        "sample": "רוּ־ח עח עחִ חָ־ןִ"
+      },
+      {
+        "page": 326,
+        "word_count": 3,
+        "sample": "עחִ ־טחֲןוּעןים חָ־ןִ"
+      },
+      {
+        "page": 327,
+        "word_count": 3,
+        "sample": "־טחֲןוּעןים חָ־ןִ ־טחֲןוּעןים"
+      },
+      {
+        "page": 339,
+        "word_count": 16,
+        "sample": "איִ קוריִ אוטם לא אבא ףלוןי וןי ולא אםא ףלוןיט"
+      },
+      {
+        "page": 494,
+        "word_count": 4,
+        "sample": "קָדָשׁים עלםְֹץ־ח קֹ דשׁ"
+      },
+      {
+        "page": 518,
+        "word_count": 3,
+        "sample": "עראעשׁיט עבּכוּערים תְרוּםָה"
+      },
+      {
+        "page": 520,
+        "word_count": 6,
+        "sample": "וְעהמָה םָרוּ וְעעץְבוּ אטארוּ־ח קָדְשׁוֹ עָ־חב"
+      },
+      {
+        "page": 612,
+        "word_count": 4,
+        "sample": "לָ־קחְתָ ־םתָןוֹט בָּאָדָם לָ־קט"
+      }
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }
