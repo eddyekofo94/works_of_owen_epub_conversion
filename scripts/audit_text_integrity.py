@@ -118,6 +118,11 @@ LIST_OR_LABEL_RE = re.compile(
     r")",
     re.I,
 )
+
+
+def is_source_footnotes_page(text: str) -> bool:
+    """True when the source PDF page is the back-matter footnote section."""
+    return bool(re.match(r"^\s*(?:\d+\s+)?FOOTNOTES\b", clean_text(text), re.I))
 ENUMERATOR_RE = re.compile(
     r"(?<!\w)(?P<marker>"
     r"\[(?P<bracket_num>[0-9]{1,2})(?P<bracket_suffix>st|nd|rd|th|dly|ly)?[,.]?\]|"
@@ -256,14 +261,6 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
             if href.endswith((".xhtml", ".html")):
                 spine_files.append(href)
 
-        for item in manifest.values():
-            href = item["href"]
-            if (
-                href.endswith(("/endnotes.xhtml", "endnotes.xhtml"))
-                and href not in spine_files
-            ):
-                spine_files.append(href)
-
         meta["spine_text_files"] = len(spine_files)
         idx = 0
         for href in spine_files:
@@ -314,7 +311,10 @@ def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
                             text = convert_gideon_hebrew(text)
                         line_text.append(text)
                     page_content.append("".join(line_text))
-            pages.append(" ".join(page_content))
+            page_text = " ".join(page_content)
+            if is_source_footnotes_page(page_text):
+                break
+            pages.append(page_text)
     return pages, {"page_count": len(pages)}
 
 
@@ -481,6 +481,8 @@ def extract_top_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], dict
 
     with fitz.open(pdf_path) as doc:
         for page_no, page in enumerate(doc, start=1):
+            if is_source_footnotes_page(page.get_text("text")):
+                break
             lines: list[tuple[float, str]] = []
             for block in page.get_text("dict").get("blocks", []):
                 if block.get("type") != 0:
@@ -556,6 +558,8 @@ def extract_bottom_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], d
 
     with fitz.open(pdf_path) as doc:
         for page_no, page in enumerate(doc, start=1):
+            if is_source_footnotes_page(page.get_text("text")):
+                break
             page_height = page.rect.height
             lines: list[tuple[float, str]] = []
             for block in page.get_text("dict").get("blocks", []):

@@ -15,6 +15,7 @@ volume-specific issue is discovered.
 
 import sys
 import os
+import html as html_lib
 
 # Ensure the project root is on the path regardless of where this is invoked from
 _HERE = os.path.dirname(os.path.abspath(__file__))
@@ -147,6 +148,64 @@ p.catechism-item {
 }
 """
 
+_V1_PART_2_TITLE_PAGE = '''<section class="treatise-title-page v1-applied-glory-title" epub:type="titlepage">
+<p class="title-line title-line-medium">Meditations and Discourses</p>
+<p class="title-connector">Concerning</p>
+<p class="title-line title-line-major">The Glory of Christ;</p>
+<p class="title-connector">Applied Unto</p>
+<p class="title-line title-line-medium">Unconverted Sinners</p>
+<p class="title-connector">And</p>
+<p class="title-line title-line-medium">Saints Under Spiritual Decays.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<p class="title-source">In Two Chapters, from John XVII. 24.</p>
+</section>'''
+
+
+_V1_TITLE_SMALL_WORDS = {
+    'a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'from', 'in', 'into',
+    'nor', 'of', 'on', 'or', 'the', 'to', 'unto', 'with', 'within',
+}
+
+
+def _v1_heading_caps_text(text):
+    letter_text = ''.join(re.findall(r'[A-Za-z]', text))
+    if not letter_text or letter_text != letter_text.upper():
+        return text
+    tokens = re.split(r'(\s+|—|–|-|:|;|,|\.)', text.lower())
+    result = []
+    word_index = 0
+    force_next_cap = True
+    for token in tokens:
+        if not token:
+            continue
+        if re.fullmatch(r'\s+|—|–|-|:|;|,|\.', token):
+            result.append(token)
+            if token in {'—', '–', '-', ':'}:
+                force_next_cap = True
+            continue
+        if re.search(r'[a-z]', token):
+            if token in _V1_TITLE_SMALL_WORDS and word_index > 0 and not force_next_cap:
+                result.append(token)
+            else:
+                result.append(token[:1].upper() + token[1:])
+            word_index += 1
+            force_next_cap = False
+        else:
+            result.append(token)
+    return ''.join(result)
+
+
+def _postprocess_v1_chapter_summaries(html):
+    def repl(match):
+        summary = match.group(1).strip()
+        if '<' in summary:
+            return match.group(0)
+        polished = _v1_heading_caps_text(html_lib.unescape(summary))
+        return f'<p class="chapter-summary">{html_lib.escape(polished, quote=False)}</p>'
+
+    return re.sub(r'<p class="chapter-summary">\s*(.*?)\s*</p>', repl, html, flags=re.S)
+
+
 def _coalesce_v1_catechism_paragraphs(paragraphs):
     """V1-specific: Merge scripture reference paragraphs into the preceding Catechism answer."""
     if not paragraphs:
@@ -211,8 +270,13 @@ OVERRIDES = {
     },
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
-    'html_postprocess_hook': _postprocess_v1_catechism_html,
+    'html_postprocess_hook': lambda html, chapter: _postprocess_v1_chapter_summaries(
+        _postprocess_v1_catechism_html(html, chapter)
+    ),
     'extra_css': _V1_CATECHISM_CSS,
+    'treatise_title_overrides': {
+        'Part 2 - Meditations and Discourses Concerning The Glory of Christ': _V1_PART_2_TITLE_PAGE,
+    },
     # Volume 1: Tag Greek abbreviations that fall below the 3-codepoint minimum
     # in tag_unicode_ranges(). Also repairs damaged OCR form ".τ. λ." → "κ.τ.λ.".
     # Order matters: normal case first, damaged case second (so its inserted

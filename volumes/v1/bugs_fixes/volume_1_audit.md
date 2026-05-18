@@ -8,16 +8,16 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 105
-- Manifest items: 96
-- Spine items: 83
-- XHTML files: 84
-- Embedded fonts: 8
-- NAV links: 82
+- Files: 107
+- Manifest items: 98
+- Spine items: 81
+- XHTML files: 83
+- Embedded fonts: 11
+- NAV links: 81
 
 ## Content Checks
 
-- Greek chars: 4282
+- Greek chars: 4080
 - Untagged Greek chars: 8
 - Hebrew chars: 157
 - Untagged Hebrew chars: 0
@@ -28,7 +28,7 @@
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 5
+- Repeated phrase hits: 6
 
 ## Warnings
 
@@ -49,9 +49,9 @@
 
 - `combined_text`: chapter 14 motives unto the love of christ
 - `combined_text`: meditations and discourses on the glory of christ
+- `combined_text`: meditations and discourses concerning the glory of christ
 - `combined_text`: chapter 8 of the state of corrupted nature
 - `combined_text`: chapter 10 of the person of jesus christ
-- `combined_text`: chapter 14 of the two-fold estate of christ
 
 ### chapter_heading_in_paragraph
 
@@ -60,5 +60,3 @@
 ### lowercase_paragraph_start
 
 - `EPUB/ch030.xhtml`: a
-- `EPUB/ch078.xhtml`: t
-- `EPUB/title_0.xhtml`: b

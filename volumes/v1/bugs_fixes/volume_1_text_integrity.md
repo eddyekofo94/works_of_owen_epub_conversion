@@ -2,34 +2,34 @@
 
 - Status: **WARN**
 - Warnings: 8
-- PDF pages: 644
-- EPUB text files: 83
-- EPUB paragraphs/headings: 3076
+- PDF pages: 633
+- EPUB text files: 81
+- EPUB paragraphs/headings: 2828
 
 ## Coverage
 
-- PDF content tokens: 211474
-- EPUB content tokens: 213785
-- Approximate PDF-to-EPUB coverage ratio: 0.9963
-- Pages checked: 635
+- PDF content tokens: 208222
+- EPUB content tokens: 207337
+- Approximate PDF-to-EPUB coverage ratio: 0.9947
+- Pages checked: 624
 - Weak page matches: 23
-- Dense source windows checked: 794
-- Missing dense source-window pages: 620
+- Dense source windows checked: 783
+- Missing dense source-window pages: 609
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
-- Top-of-page body windows checked: 602
-- Top-of-page windows skipped as unstable: 21
+- Top-of-page body windows checked: 591
+- Top-of-page windows skipped as unstable: 13
 - Missing top-of-page body windows: 3
-- Bottom-of-page body windows checked: 555
+- Bottom-of-page body windows checked: 544
 - Bottom-of-page windows skipped as unstable: 0
 - Missing bottom-of-page body windows: 20
 
 ## Paragraphs
 
-- Body paragraphs checked: 2743
-- Possible faulty paragraph splits: 27
-- Structural starts excluded from split warnings: 164
-- Short fragments: 46
+- Body paragraphs checked: 2643
+- Possible faulty paragraph splits: 47
+- Structural starts excluded from split warnings: 159
+- Short fragments: 73
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
@@ -39,21 +39,21 @@
 - Overlong heading candidates: 11
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
-- PDF enumerator markers: 313
-- EPUB enumerator markers: 316
+- PDF enumerator markers: 310
+- EPUB enumerator markers: 310
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 0
 
 ## Greek / Hebrew
 
-- PDF Greek words: 824
-- EPUB Greek words: 835
+- PDF Greek words: 812
+- EPUB Greek words: 811
 - Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
 - Hebrew word coverage ratio: 1.0
-- Greek clauses checked: 43
-- Missing Greek clauses: 15
+- Greek clauses checked: 42
+- Missing Greek clauses: 14
 - Hebrew clauses checked: 1
 - Missing Hebrew clauses: 0
 
@@ -102,16 +102,16 @@
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch005.xhtml; previous: PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
-- file: EPUB/ch006.xhtml; previous: OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
-- file: EPUB/ch007.xhtml; previous: THE PERSON OF CHRIST THE MOST INEFFABLE EFFECT OF DIVINE WISDOM AND GOODNESS — THENCE THE NEXT CAUSE OF ALL TRUE RELIGION — IN WHAT SENSE IT IS SO; next: The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The
-- file: EPUB/ch008.xhtml; previous: TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD; next: Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which
-- file: EPUB/ch009.xhtml; previous: THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL; next: What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o
-- file: EPUB/ch011.xhtml; previous: POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON; next: It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat
-- file: EPUB/ch011.xhtml; previous: And he discharged this office four ways: —; next: (1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc
-- file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
-- file: EPUB/ch012.xhtml; previous: THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST; next: A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our
-- file: EPUB/ch013.xhtml; previous: HONOR DUE TO THE PERSON OF CHRIST — THE NATURE AND CAUSES OF IT; next: Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re
+- file: EPUB/ch002.xhtml; previous: CHRISTOLOGIA; next: OR
+- file: EPUB/ch002.xhtml; previous: OR; next: A DECLARATION OF THE GLORIOUS MYSTERY
+- file: EPUB/ch002.xhtml; previous: A DECLARATION OF THE GLORIOUS MYSTERY; next: OF
+- file: EPUB/ch002.xhtml; previous: OF; next: THE PERSON OF CHRIST — GOD AND MAN:
+- file: EPUB/ch002.xhtml; previous: WITH; next: The Infinite Wisdom, Love, And Power Of God In The Contrivance And Constitution Thereof;
+- file: EPUB/ch002.xhtml; previous: AS ALSO,; next: Of The Grounds And Reasons Of His Incarnation; The Nature Of His Ministry In Heaven; The Present State Of The Church Above Thereon; And The Use Of His Person In Religion:
+- file: EPUB/ch002.xhtml; previous: WITH; next: An Account And Vindication Of The Honor, Worship, Faith, Love, And Obedience Due Unto Him, In And From The Church.
+- file: EPUB/ch005.xhtml; previous: Peter's Confession; Matthew 16:16 — Conceits of the Papists Thereon — The Substance and Excellency of That Confession; next: Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio
+- file: EPUB/ch006.xhtml; previous: Opposition Made unto the Church as Built Upon the Person of Christ; next: There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there
+- file: EPUB/ch007.xhtml; previous: The Person of Christ the Most Ineffable Effect of Divine Wisdom and Goodness — Thence the Next Cause of All True Religion — In What Sense It Is So; next: The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The
 
 ## Overlong Heading Candidates
 
@@ -128,16 +128,16 @@
 
 ## Short Fragments
 
+- file: EPUB/ch002.xhtml; text: ΧΡΙΣΤΟΛΟΓΙΑ:
+- file: EPUB/ch002.xhtml; text: CHRISTOLOGIA
+- file: EPUB/ch002.xhtml; text: OR
+- file: EPUB/ch002.xhtml; text: OF
+- file: EPUB/ch002.xhtml; text: WITH
+- file: EPUB/ch002.xhtml; text: AS ALSO,
+- file: EPUB/ch002.xhtml; text: WITH
 - file: EPUB/ch006.xhtml; text: For,
 - file: EPUB/ch006.xhtml; text: As,
 - file: EPUB/ch009.xhtml; text: Wherefore —
-- file: EPUB/ch009.xhtml; text: And —
-- file: EPUB/ch009.xhtml; text: All this himself instructs us in.
-- file: EPUB/ch011.xhtml; text: This must be declared.
-- file: EPUB/ch011.xhtml; text: For —
-- file: EPUB/ch011.xhtml; text: For —
-- file: EPUB/ch013.xhtml; text: 2ndly, Invocation.
-- file: EPUB/ch014.xhtml; text: Or —
 
 ## Repeated Windows
 

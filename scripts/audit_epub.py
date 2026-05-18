@@ -323,6 +323,17 @@ class Audit:
                 self.error("xhtml_xml_invalid", "XHTML is not valid XML", file=path, detail=str(exc))
                 continue
 
+            is_endnotes_file = path.endswith("/endnotes.xhtml") or path.endswith("endnotes.xhtml")
+            if is_endnotes_file:
+                for el in root.iter():
+                    epub_type = attr(el, "epub:type")
+                    el_id = el.get("id")
+                    if el_id and el_id.startswith("fn"):
+                        role = el.get("role", "")
+                        if "doc-endnote" in role or "endnote" in (epub_type or ""):
+                            endnote_ids.add(resolve_href(path, f"#{el_id}"))
+                continue
+
             stats = inspect_language_tagging(root, path, samples)
             missing_chapter_initializers = 0
             for chapter_match in CHAPTER_HEADING_RE.finditer(raw):

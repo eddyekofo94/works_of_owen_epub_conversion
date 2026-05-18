@@ -894,10 +894,14 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T10:43:20.026079+00:00
+**Last run:** 2026-05-18T14:14:30.474199+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 4 warnings)
 
@@ -908,18 +912,18 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 84 |
-| Spine items | 83 |
-| Embedded fonts | 8 |
-| NAV links | 82 |
-| Greek chars / untagged | 4282 / 8 |
+| XHTML files | 83 |
+| Spine items | 81 |
+| Embedded fonts | 11 |
+| NAV links | 81 |
+| Greek chars / untagged | 4080 / 8 |
 | Hebrew chars / untagged | 157 / 0 |
 | Noteref links / endnote anchors | 123 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 5 |
+| Repeated phrase hits | 6 |
 
 Warnings requiring triage:
 
@@ -1052,10 +1056,13 @@ Warnings requiring triage:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T10:45:48.757349+00:00
+**Last run:** 2026-05-18T14:16:42.184817+00:00
 **Status:** WARN (8 warnings)
 
 Reports:
@@ -1064,24 +1071,24 @@ Reports:
 
 | Check | Result |
 |-------|--------|
-| PDF pages | 644 |
-| EPUB text files | 83 |
-| EPUB paragraphs/headings | 3076 |
-| Approximate PDF-to-EPUB word coverage | 0.9963 |
+| PDF pages | 633 |
+| EPUB text files | 81 |
+| EPUB paragraphs/headings | 2828 |
+| Approximate PDF-to-EPUB word coverage | 0.9947 |
 | Weak page matches | 23 |
-| Dense source windows checked | 794 |
-| Missing dense source-window pages | 620 |
+| Dense source windows checked | 783 |
+| Missing dense source-window pages | 609 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
-| Top-of-page body windows checked | 602 |
-| Top-of-page windows skipped as unstable | 21 |
+| Top-of-page body windows checked | 591 |
+| Top-of-page windows skipped as unstable | 13 |
 | Missing top-of-page body windows | 3 |
-| Bottom-of-page body windows checked | 555 |
+| Bottom-of-page body windows checked | 544 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 20 |
-| Possible faulty paragraph splits | 27 |
-| Structural starts excluded from split warnings | 164 |
-| Short fragments | 46 |
+| Possible faulty paragraph splits | 47 |
+| Structural starts excluded from split warnings | 159 |
+| Short fragments | 73 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
@@ -1091,15 +1098,15 @@ Reports:
 | Overlong heading candidates | 11 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
-| PDF enumerator markers | 313 |
-| EPUB enumerator markers | 316 |
+| PDF enumerator markers | 310 |
+| EPUB enumerator markers | 310 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 824 / 835 |
+| PDF Greek words / EPUB Greek words | 812 / 811 |
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 15 |
+| Missing Greek clauses | 14 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -1318,3 +1325,25 @@ Warnings requiring triage:
 2. Corrected high-impact mappings for vowels, final forms, Tsadi/Shin variants, Ayin, Hiriq/Tsere/Segol/Qubuts, Maqef, final Nun/Kaph, and Vav-Holam forms.
 3. Broadened the rendered fallback detector for unambiguous Gideon residue without making plain English punctuation a trigger.
 4. Added `tests/test_gideon_mapping.py` so all observed Gideon span characters must be mapped and representative AGES samples convert to Unicode Hebrew with no legacy residue.
+
+### 114. Consistent responsive treatise title pages and volume title metadata (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Inner treatise title pages such as Christologia were rendered as a stack of heading tags, with connector words like `OR`, `OF`, and `WITH` promoted to `<h2>` elements. The page lacked the physical-copy hierarchy where connector words are smaller and the full title reads as one elegant title sheet. Volume title pages also needed visible editor, publisher, and year metadata.
+**Root cause:** `format_treatise_title_page()` emitted size-based `h1`/`h2` tags, and cached intermediate title-page fragments preserved those tags during render-only rebuilds. Extracted front-matter title pages were passed through as-is, so missing edition metadata stayed missing unless the PDF extraction supplied it.
+**Fix:**
+1. Added generic title-page polishing in `render.py` so cached treatise title fragments are normalized during Stage 2.
+2. Changed future treatise extraction to emit semantic title classes: `.greek-title`, `.title-line-major`, `.title-line-medium`, and `.title-connector`.
+3. Updated shared CSS so treatise title pages are centered, responsive, page-contained title sheets, with small connector words and no connector `<h2>` output.
+4. Added render-time volume title-page metadata injection for editor, publisher, and `2026`.
+5. Embedded the existing Baskervville title font as `Owen Title` so title sheets are consistent across readers instead of relying on system fonts.
+6. Added regression coverage for Christologia connector semantics, responsive CSS, embedded title fonts, and title-page metadata.
+
+### 115. V1 title/front-matter polish and popup-only footnotes (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Volume 1 still missed the physical title plate before Part 2's `ORIGINAL PREFACE`; chapter summaries were all caps instead of heading capitals; the extracted `FOOTNOTES` chapter remained visible at the end despite popup endnotes; front-matter headings lacked the printed separator rule; and the volume title and contents pages needed a cleaner, consistent visual hierarchy.
+**Root cause:** The render pipeline reused cached V1 fragments for title pages and contents pages without a polishing pass for the newer visual rules. The text-integrity audit also counted the source PDF's back-matter footnote pages even after EPUB rendering moved footnotes to popup endnotes only.
+**Fix:**
+1. Added a V1-only Part 2 treatise title override matching the physical page: `Meditations and Discourses... The Glory of Christ; Applied Unto Unconverted Sinners and Saints Under Spiritual Decays`.
+2. Added a V1-only summary postprocessor that converts all-caps chapter summaries to heading capitals.
+3. Suppressed the visible extracted `FOOTNOTES` chapter and kept the generated hidden `endnotes.xhtml` for popup footnote targets.
+4. Excluded hidden/generated endnotes and source PDF footnote back matter from audit body-text checks.
+5. Added shared CSS for front-matter heading rules, a refined volume title page, and cleaner `Contents of Volume N` formatting.
+6. Expanded EPUB regression coverage for Part 2 title-page insertion, V1 summary capitalization, hidden footnotes, volume title styling, contents-page classes, and front-matter separator styling.

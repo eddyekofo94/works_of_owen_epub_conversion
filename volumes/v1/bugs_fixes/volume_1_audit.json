@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T10:43:20.026079+00:00",
+  "generated_at": "2026-05-18T14:14:30.474199+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 4,
@@ -18,7 +18,7 @@
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 5
+      "count": 6
     },
     {
       "code": "orphan_endnotes",
@@ -29,8 +29,8 @@
     }
   ],
   "info": {
-    "file_count": 105,
-    "epub_size_bytes": 2706843,
+    "file_count": 107,
+    "epub_size_bytes": 2819820,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -39,15 +39,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 96,
-    "spine_count": 83,
-    "xhtml_count": 84,
+    "manifest_count": 98,
+    "spine_count": 81,
+    "xhtml_count": 83,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 8,
+    "font_count": 11,
     "language": {
-      "greek_chars": 4282,
+      "greek_chars": 4080,
       "greek_untagged_chars": 8,
       "hebrew_chars": 157,
       "hebrew_untagged_chars": 0,
@@ -72,7 +72,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 5,
+      "repeated_phrase_count": 6,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 1,
@@ -87,7 +87,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 3,
+      "lowercase_paragraph_start_files": 1,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -120,6 +120,11 @@
           {
             "file": "combined_text",
             "text": "meditations and discourses on the glory of christ",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "meditations and discourses concerning the glory of christ",
             "count": 1
           },
           {
@@ -170,14 +175,6 @@
           {
             "file": "EPUB/ch030.xhtml",
             "text": "a"
-          },
-          {
-            "file": "EPUB/ch078.xhtml",
-            "text": "t"
-          },
-          {
-            "file": "EPUB/title_0.xhtml",
-            "text": "b"
           }
         ],
         "noteref_leading_space": [],
@@ -186,7 +183,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 82,
+    "nav_link_count": 81,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

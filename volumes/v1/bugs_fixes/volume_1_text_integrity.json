@@ -2,7 +2,7 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T10:45:48.757349+00:00",
+  "generated_at": "2026-05-18T14:16:42.184817+00:00",
   "status": "warn",
   "warning_count": 8,
   "warnings": [
@@ -40,16 +40,16 @@
     }
   ],
   "pdf": {
-    "page_count": 644
+    "page_count": 633
   },
   "epub": {
-    "spine_text_files": 83,
-    "paragraph_count": 3076
+    "spine_text_files": 81,
+    "paragraph_count": 2828
   },
   "word_coverage": {
-    "pdf_content_tokens": 211474,
-    "epub_content_tokens": 213785,
-    "coverage_ratio": 0.9963,
+    "pdf_content_tokens": 208222,
+    "epub_content_tokens": 207337,
+    "coverage_ratio": 0.9947,
     "missing_word_samples": [
       {
         "word": "faithfullness",
@@ -81,7 +81,7 @@
     ]
   },
   "page_coverage": {
-    "pages_checked": 635,
+    "pages_checked": 624,
     "weak_page_count": 23,
     "weak_pages": [
       {
@@ -202,8 +202,8 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 794,
-    "missing_dense_window_pages": 620,
+    "dense_windows_checked": 783,
+    "missing_dense_window_pages": 609,
     "missing_dense_windows": [
       {
         "page": 3,
@@ -374,9 +374,9 @@
     "missing_front_toc_samples": []
   },
   "top_of_page_integrity": {
-    "top_windows_checked": 641,
-    "top_windows_usable": 602,
-    "skipped_top_window_count": 21,
+    "top_windows_checked": 630,
+    "top_windows_usable": 591,
+    "skipped_top_window_count": 13,
     "skipped_top_windows": [
       {
         "page": 37,
@@ -455,54 +455,6 @@
         "window": "preserved in us by them are we made partakers of this divine nature peter",
         "sample": "preserved in us; by them are we made partakers of this divine nature, Peter 1:4; and through them is it continued in us. Now [as to] promises of",
         "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 635,
-        "window": "ft5 katoptri zw does not admit of the signification here ascribed to it by",
-        "sample": "FT5 Katoptri>zw does not admit of the signification here ascribed to it by Dr Owen. It denotes looking into a mirror, not through a telescope:",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 636,
-        "window": "ft10 the expression quoted by dr owen is founded upon the phrase in the",
-        "sample": "FT10 The expression quoted by Dr Owen is founded upon the phrase in the original language, dielhluqo>ta tou<v oujrano>uv \"having passed",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 637,
-        "window": "ft21 popish traditions are false lights leading from god ft22 the authority of the",
-        "sample": "FT21 Popish traditions are false lights, leading from God. FT22 The authority of the Scripture dependeth not on the authority of the",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 638,
-        "window": "ft34 this is that mysterious ark that must not be pried into nor the",
-        "sample": "FT34 This is that mysterious ark that must not be pried into, nor the least little spoken about it, wherein plain Scripture goeth not before.",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 639,
-        "window": "ft49 though we have all lost our right unto the promise of the fist",
-        "sample": "FT49 Though we have all lost our right unto the promise of the fist covenant, yet all not restored by Christ are under the commination and",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 640,
-        "window": "ft60 the end of this is jesus christ to all that fly for refuge",
-        "sample": "FT60 The end of this is Jesus Christ, to all that fly for refuge to the hope set before them.",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 642,
-        "window": "ft82 the only way to heaven is by the cross ft83 christ giveth life",
-        "sample": "FT82 The only way to heaven is by the cross. FT83 Christ giveth life to all that world for whom he gave his life.",
-        "reason": "source footnote block"
-      },
-      {
-        "page": 644,
-        "window": "ft112 this is one of the greatest mysteries of the roman magic and juggling",
-        "sample": "FT112 This is one of the greatest mysteries of the Roman magic and juggling, that corporeal elements should have a power to forgive sins, and confer",
-        "reason": "source footnote block"
       }
     ],
     "missing_top_window_count": 3,
@@ -525,8 +477,8 @@
     ]
   },
   "bottom_of_page_integrity": {
-    "bottom_windows_checked": 586,
-    "bottom_windows_usable": 555,
+    "bottom_windows_checked": 575,
+    "bottom_windows_usable": 544,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
     "missing_bottom_window_count": 20,
@@ -634,37 +586,72 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2743,
-    "split_candidate_count": 27,
+    "paragraphs_checked": 2643,
+    "split_candidate_count": 47,
     "split_candidates": [
       {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "CHRISTOLOGIA",
+        "next": "OR"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "OR",
+        "next": "A DECLARATION OF THE GLORIOUS MYSTERY"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "A DECLARATION OF THE GLORIOUS MYSTERY",
+        "next": "OF"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "OF",
+        "next": "THE PERSON OF CHRIST — GOD AND MAN:"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "WITH",
+        "next": "The Infinite Wisdom, Love, And Power Of God In The Contrivance And Constitution Thereof;"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "AS ALSO,",
+        "next": "Of The Grounds And Reasons Of His Incarnation; The Nature Of His Ministry In Heaven; The Present State Of The Church Above Thereon; And The Use Of His Person In Religion:"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "WITH",
+        "next": "An Account And Vindication Of The Honor, Worship, Faith, Love, And Obedience Due Unto Him, In And From The Church."
+      },
+      {
         "file": "EPUB/ch005.xhtml",
-        "previous": "PETER'S CONFESSION; MATTHEW 16:16 — CONCEITS OF THE PAPISTS THEREON — THE SUBSTANCE AND EXCELLENCY OF THAT CONFESSION",
+        "previous": "Peter's Confession; Matthew 16:16 — Conceits of the Papists Thereon — The Substance and Excellency of That Confession",
         "next": "Our blessed Savior, inquiring of his disciples their apprehensions concerning his person, and their faith in him, Simon Peter — as he was usually the forwardest on all such occasio"
       },
       {
         "file": "EPUB/ch006.xhtml",
-        "previous": "OPPOSITION MADE UNTO THE CHURCH AS BUILT UPON THE PERSON OF CHRIST",
+        "previous": "Opposition Made unto the Church as Built Upon the Person of Christ",
         "next": "There are in the words of our Savior unto Peter concerning the foundation of the church, a promise of its preservation, and a prediction of the opposition that should be made there"
       },
       {
         "file": "EPUB/ch007.xhtml",
-        "previous": "THE PERSON OF CHRIST THE MOST INEFFABLE EFFECT OF DIVINE WISDOM AND GOODNESS — THENCE THE NEXT CAUSE OF ALL TRUE RELIGION — IN WHAT SENSE IT IS SO",
+        "previous": "The Person of Christ the Most Ineffable Effect of Divine Wisdom and Goodness — Thence the Next Cause of All True Religion — In What Sense It Is So",
         "next": "The person of Christ is the most glorious and ineffable effect of divine wisdom, grace, and power; and therefore is the next foundation of all acceptable religion and worship. The "
       },
       {
         "file": "EPUB/ch008.xhtml",
-        "previous": "TO PERSON OF CHRIST THE FOUNDATION OF ALL THE COUNSELS OF GOD",
+        "previous": "To Person of Christ the Foundation of All the Counsels of God",
         "next": "Secondly, The person of Christ is the foundation of all the counsels of God, as unto his own eternal glory in the vocation, sanctification, and salvation of the church. That which "
       },
       {
         "file": "EPUB/ch009.xhtml",
-        "previous": "THE PERSON OF CHRIST THE GREAT REPRESENTATIVE OF GOD AND HIS WILL",
+        "previous": "The Person of Christ the Great Representative of God and His Will",
         "next": "What may be known of God, is, — his nature and existence, with the holy counsels of his will. A representation of them unto us is the foundation of all religion, and the means of o"
       },
       {
         "file": "EPUB/ch011.xhtml",
-        "previous": "POWER AND EFFICACY COMMUNICATED UNTO THE OFFICE OF CHRIST, FOR THE SALVATION OF THE CHURCH, FROM HIS PERSON",
+        "previous": "Power and Efficacy Communicated unto the Office of Christ, for the Salvation of the Church, from His Person",
         "next": "It is by the exercise and discharge of the office of Christ — as the king, priest, and prophet of the church — that we are redeemed, sanctified, and saved. Thereby does he immediat"
       },
       {
@@ -679,12 +666,12 @@
       },
       {
         "file": "EPUB/ch012.xhtml",
-        "previous": "THE FAITH OF THE CHURCH UNDER THE OLD TESTAMENT IN AND CONCERNING THE PERSON OF CHRIST",
+        "previous": "The Faith of the Church Under the Old Testament in and Concerning the Person of Christ",
         "next": "A brief view of the faith of the church under the Old Testament concerning the divine person of Christ, shall close these discourses, and make way for those that ensue, wherein our"
       },
       {
         "file": "EPUB/ch013.xhtml",
-        "previous": "HONOR DUE TO THE PERSON OF CHRIST — THE NATURE AND CAUSES OF IT",
+        "previous": "Honor Due to the Person of Christ — The Nature and Causes of It",
         "next": "Many other considerations of the same nature with those foregoing, relating unto the glory and honor of the person of Christ, may be taken from all the fundamental principles of re"
       },
       {
@@ -699,32 +686,32 @@
       },
       {
         "file": "EPUB/ch014.xhtml",
-        "previous": "THE PRINCIPLE OF THE ASSIGNATION OF DIVINE HONOR UNTO THE PERSON OF CHRIST, IN BOTH THE BRANCHES OF IT; WITH IS FAITH IN HIM",
+        "previous": "The Principle of the Assignation of Divine Honor unto the Person of Christ, in Both the Branches of It; with Is Faith in Him",
         "next": "The principle and spring of this assignation of divine honor unto Christ, in both the branches of it, is faith in him. And this has been the foundation of all acceptable religion i"
       },
       {
         "file": "EPUB/ch015.xhtml",
-        "previous": "OBEDIENCE UNTO CHRIST — THE NATURE AND CAUSES OF IT",
+        "previous": "Obedience unto Christ — The Nature and Causes of It",
         "next": "His great injunction unto his disciples is, \"That they keep his commandments\" — without which, none are so."
       },
       {
         "file": "EPUB/ch017.xhtml",
-        "previous": "THE NATURE, OPERATIONS, AND CAUSES OF DIVINE LOVE, AS IT RESPECTS THE PERSON OF CHRIST",
+        "previous": "The Nature, Operations, and Causes of Divine Love, as It Respects the Person of Christ",
         "next": "That we may the better understand that love unto the person of Christ which we plead for, some things must be premised concerning the nature of divine love in general; and thereon "
       },
       {
         "file": "EPUB/ch018.xhtml",
-        "previous": "MOTIVES UNTO THE LOVE OF CHRIST",
+        "previous": "Motives unto the Love of Christ",
         "next": "The motives unto this love of Christ is the last thing, on this head of our religious respect unto him, that I shall speak unto."
       },
       {
         "file": "EPUB/ch019.xhtml",
-        "previous": "CONFORMITY UNTO CHRIST, AND FOLLOWING HIS EXAMPLE",
+        "previous": "Conformity unto Christ, and Following His Example",
         "next": "This is the great design and projection of all believers. Every one of them has the idea or image of Christ in his mind, in the eye of faith, as it is represented unto him in the g"
       },
       {
         "file": "EPUB/ch020.xhtml",
-        "previous": "AN HUMBLE INQUIRY INTO, AND PROSPECT OF, THE INFINITE WISDOM OF GOD, IN THE CONSTITUTION OF THE PERSON OF CHRIST, AND THE WAY OF SALVATION THEREBY",
+        "previous": "An Humble Inquiry into, and Prospect of, the Infinite Wisdom of God, in the Constitution of the Person of Christ, and the Way of Salvation Thereby",
         "next": "From the consideration of the things before insisted on, we may endeavor, according unto our measure, to take a view of, and humbly adore, the infinite wisdom of God, in the holy c"
       },
       {
@@ -734,12 +721,12 @@
       },
       {
         "file": "EPUB/ch021.xhtml",
-        "previous": "OTHER EVIDENCES OF DIVINE WISDOM IN THE CONTRIVANCE OF THE WORK OF REDEMPTION IN AND BY THE PERSON OF CHRIST, IN EFFECTS EVIDENCING A CONDECENCY THEREUNTO",
+        "previous": "Other Evidences of Divine Wisdom in the Contrivance of the Work of Redemption in and by the Person of Christ, in Effects Evidencing a Condecency Thereunto",
         "next": "That which remains of our present inquiry, is concerning those evidences of divine condecency, or suitableness unto infinite wisdom and goodness, which we may gather from the natur"
       },
       {
         "file": "EPUB/ch022.xhtml",
-        "previous": "THE NATURE OF THE PERSON OF CHRIST, AND THE HYPOSTATICAL UNION OF HIS NATURES DECLARED",
+        "previous": "The Nature of the Person of Christ, and the Hypostatical Union of His Natures Declared",
         "next": "The nature or constitution of the person of Christ hath been commonly spoken unto and treated of in the writings both of the ancient and modern divines. It is not my purpose, in th"
       },
       {
@@ -754,7 +741,7 @@
       },
       {
         "file": "EPUB/ch024.xhtml",
-        "previous": "THE EXERCISE OF THE MEDIATORY OFFICE OF CHRIST IN HEAVEN",
+        "previous": "The Exercise of the Mediatory Office of Christ in Heaven",
         "next": "All Christians acknowledge that his present state is a state of the highest glory, — of exaltation above the whole creation of God, above every name that is or can be named; and he"
       },
       {
@@ -763,19 +750,77 @@
         "next": "(5thly,) Round about them were the tribes in their order."
       },
       {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "MEDITATIONS AND DISCOURSES",
+        "next": "ON"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "ON",
+        "next": "THE GLORY OF CHRIST,"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "THE GLORY OF CHRIST,",
+        "next": "IN"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "IN",
+        "next": "HIS PERSON, OFFICE, AND GRACE:"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "WITH",
+        "next": "THE DIFFERENCES BETWEEN FAITH AND SIGHT;"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "APPLIED UNTO THE USE OF THEM THAT",
+        "next": "BELIEVE."
+      },
+      {
         "file": "EPUB/ch029.xhtml",
         "previous": " minds of men, — Christ is called, and is, the \"light of men,\" the \"light of the world;\" because in and by him alone this darkness is dispelled, as he is the \"Sun of Righteousness\"",
         "next": "For, -"
       },
       {
-        "file": "EPUB/ch078.xhtml",
-        "previous": "y the Rev. Charles Bridges, A.M. FT2 See his interesting History of the British Churches in the Netherlands. FT3 Mr. Ryland of Northampton entertained a strong opinion in regard to",
-        "next": "the value of the same work. In a tract entitled, \"A Select Library for the Student of Divinity,\" he gives an estimate of its merits with an amusing intensity of expression. \"This b"
+        "file": "EPUB/ch043.xhtml",
+        "previous": "Meditations and Discourses",
+        "next": "Concerning"
       }
     ],
-    "structural_start_exclusions": 164,
-    "short_fragment_count": 46,
+    "structural_start_exclusions": 159,
+    "short_fragment_count": 73,
     "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "ΧΡΙΣΤΟΛΟΓΙΑ:"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "CHRISTOLOGIA"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "OR"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "OF"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "WITH"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "AS ALSO,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "WITH"
+      },
       {
         "file": "EPUB/ch006.xhtml",
         "text": "For,"
@@ -818,7 +863,7 @@
       },
       {
         "file": "EPUB/ch018.xhtml",
-        "text": "MOTIVES UNTO THE LOVE OF CHRIST"
+        "text": "Motives unto the Love of Christ"
       },
       {
         "file": "EPUB/ch019.xhtml",
@@ -837,12 +882,44 @@
         "text": "As, —"
       },
       {
+        "file": "EPUB/ch025.xhtml",
+        "text": "MEDITATIONS AND DISCOURSES"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "ON"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "THE GLORY OF CHRIST,"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "IN"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "HIS PERSON, OFFICE, AND GRACE:"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "WITH"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "APPLIED UNTO THE USE OF THEM THAT"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "BELIEVE."
+      },
+      {
         "file": "EPUB/ch026.xhtml",
         "text": "- Teron and Aspasio, vol. 3 p. 75."
       },
       {
         "file": "EPUB/ch028.xhtml",
-        "text": "THE EXPLICATION OF THE TEXT."
+        "text": "The Explication of the Text."
       },
       {
         "file": "EPUB/ch028.xhtml",
@@ -862,7 +939,7 @@
       },
       {
         "file": "EPUB/ch032.xhtml",
-        "text": "THE GLORY OF CHRIST IN THIS LOVE."
+        "text": "The Glory of Christ in This Love."
       },
       {
         "file": "EPUB/ch037.xhtml",
@@ -875,66 +952,6 @@
       {
         "file": "EPUB/ch038.xhtml",
         "text": "As,"
-      },
-      {
-        "file": "EPUB/ch041.xhtml",
-        "text": "END."
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "Glory be to God on high!"
-      },
-      {
-        "file": "EPUB/ch051.xhtml",
-        "text": "OF THE SCRIPTURE."
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "text": "OF GOD."
-      },
-      {
-        "file": "EPUB/ch053.xhtml",
-        "text": "OF THE HOLY TRINITY."
-      },
-      {
-        "file": "EPUB/ch056.xhtml",
-        "text": "OF GOD'S ACTUAL PROVIDENCE."
-      },
-      {
-        "file": "EPUB/ch057.xhtml",
-        "text": "OF THE LAW OF GOD."
-      },
-      {
-        "file": "EPUB/ch058.xhtml",
-        "text": "OF THE STATE OF CORRUPTED NATURE."
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "text": "OF THE INCARNATION OF CHRIST."
-      },
-      {
-        "file": "EPUB/ch060.xhtml",
-        "text": "OF THE PERSON OF JESUS CHRIST."
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "text": "OF CHRIST'S PRIESTLY OFFICE."
-      },
-      {
-        "file": "EPUB/ch063.xhtml",
-        "text": "OF CHRIST'S PROPHETICAL OFFICE."
-      },
-      {
-        "file": "EPUB/ch064.xhtml",
-        "text": "OF THE TWO-FOLD ESTATE OF CHRIST."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "OF THE CHURCH."
-      },
-      {
-        "file": "EPUB/ch067.xhtml",
-        "text": "OF FAITH."
       }
     ],
     "adjacent_duplicate_count": 0,
@@ -1011,70 +1028,12 @@
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
-    "pdf_marker_count": 313,
-    "epub_marker_count": 316,
+    "pdf_marker_count": 310,
+    "epub_marker_count": 310,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 3,
-    "excess_markers": [
-      {
-        "marker": "(1.)",
-        "pdf": 76,
-        "epub": 77,
-        "examples": [
-          {
-            "location": "EPUB/ch005.xhtml#p230",
-            "context": "(1.) From its effect;"
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p232",
-            "context": "(1.) Its effect was, that it made him blessed in whom it was. For it is not only a blessed thing to believe and know Jesus Christ, as it is called life eternal; (John 17:3;) but it is"
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p250",
-            "context": "(1.) Real;"
-          }
-        ]
-      },
-      {
-        "marker": "(2.)",
-        "pdf": 76,
-        "epub": 77,
-        "examples": [
-          {
-            "location": "EPUB/ch005.xhtml#p231",
-            "context": "(2.) From its cause."
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p233",
-            "context": "(2.) The immediate cause of this faith is divine revelation. It is not the effect or product of our own abilities, the best of which are but flesh and blood. That faith which renders t"
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p251",
-            "context": "(2.) Doctrinal."
-          }
-        ]
-      },
-      {
-        "marker": "(3.)",
-        "pdf": 36,
-        "epub": 37,
-        "examples": [
-          {
-            "location": "EPUB/ch006.xhtml#p269",
-            "context": "(3.) By some his human nature was opposed — for no stone did Satan leave unturned in the pursuit of his great design. And that which in all these things he aimed at, was the substituti"
-          },
-          {
-            "location": "EPUB/ch006.xhtml#p286",
-            "context": "(3.) Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
-          },
-          {
-            "location": "EPUB/ch011.xhtml#p541",
-            "context": "(3.) The same may be said concerning his sacerdotal office, and all the acts of it. It was in and by the human nature that he offered himself a sacrifice for us. He had somewhat of his"
-          }
-        ]
-      }
-    ],
+    "excess_marker_count": 0,
+    "excess_markers": [],
     "orphan_candidate_count": 0,
     "orphan_candidates": []
   },
@@ -1122,10 +1081,6 @@
     {
       "phrase": "of the glory of god in the face of jesus",
       "count": 6
-    },
-    {
-      "phrase": "declaration of the glorious mystery of the person of christ",
-      "count": 5
     },
     {
       "phrase": "us child is born unto us son is given and",
@@ -1178,13 +1133,17 @@
     {
       "phrase": "the only-begotten of the father full of grace and truth",
       "count": 5
+    },
+    {
+      "phrase": "of the glory of christ in this world by faith",
+      "count": 5
     }
   ],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 824,
-    "epub_greek_word_count": 835,
-    "pdf_greek_unique_words": 473,
-    "epub_greek_unique_words": 473,
+    "pdf_greek_word_count": 812,
+    "epub_greek_word_count": 811,
+    "pdf_greek_unique_words": 461,
+    "epub_greek_unique_words": 461,
     "greek_word_coverage_ratio": 0.9987,
     "pdf_hebrew_word_count": 20,
     "epub_hebrew_word_count": 20,
@@ -1195,8 +1154,8 @@
     "missing_hebrew_word_samples": []
   },
   "greek_hebrew_clause_fidelity": {
-    "greek_clauses_checked": 43,
-    "missing_greek_clause_count": 15,
+    "greek_clauses_checked": 42,
+    "missing_greek_clause_count": 14,
     "missing_greek_clauses": [
       {
         "page": 26,
@@ -1267,11 +1226,6 @@
         "page": 382,
         "word_count": 9,
         "sample": "φασκοντες ειναι σοφοι λογισμοι συζητηται του αιωνος τουτου ψηλαφαν"
-      },
-      {
-        "page": 635,
-        "word_count": 9,
-        "sample": "κατοπτριζω κατοπτρον εικων κατοπτριζει εντετυπωμενη θεοτοκος συναφεια ενοικησις ενωσις"
       }
     ],
     "hebrew_clauses_checked": 1,

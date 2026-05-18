@@ -1959,6 +1959,59 @@ The previous `HEBREW_GIDEON_MAP` was mostly Volume 1-derived. A scan of source P
 
 ---
 
+## [Issue 114] Responsive Treatise Title Pages
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Treatise title pages, especially Christologia, had the right text but not the right typographic hierarchy. Small connector words from the physical title page (`OR`, `OF`, `WITH`, `AS ALSO`) were rendered as `<h2>` headings, making the page feel mechanical and causing poor scaling on small screens. The volume title page also needed visible editor, publisher, and year metadata.
+
+### 2. Root Cause
+The title-page formatter used font-size thresholds to emit heading tags. Render-only rebuilds preserved cached pre-rendered title-page HTML from the JSON intermediate, so CSS alone could not repair the semantics. Extracted volume title pages were also passed through without checking that the edition metadata was present.
+
+### 3. Fixes
+- Added a render-time treatise title-page polishing pass so cached fragments are normalized without re-extracting PDFs.
+- Updated future `format_treatise_title_page()` output to use semantic title classes instead of connector headings.
+- Styled `.treatise-title-page` as a centered responsive title sheet with `min-height`, flex centering, smaller connector words, major/medium title lines, constrained descriptive text, and a compact quote block.
+- Added volume title-page metadata injection for `Edited by William H. Goold`, the configured publisher, and `2026` when those lines are absent.
+- Embedded the existing Baskervville title fonts as `Owen Title` and added EPUB regression coverage for Christologia connector semantics, title-sheet CSS, packaged title fonts, and volume title metadata.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py --render-only`.
+- Focused treatise/title regression: `1 passed`.
+- EPUB audit: 0 errors, 4 existing warnings.
+- Inspected generated XHTML: Christologia now uses `.greek-title`, `.title-line-*`, and `.title-connector`; `title_0.xhtml` includes editor, publisher, and `2026`.
+
+---
+
+## [Issue 115] V1 Title, Contents, Summary, and Popup Footnote Polish
+
+**Date:** 2026-05-18
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+### 1. The Problem
+Volume 1 still had several visual breaks after the title-page pass: Part 2 lacked the physical title plate before `ORIGINAL PREFACE`, chapter summaries remained in all caps, the extracted `FOOTNOTES` chapter was visible at the end, front-matter headings needed the printed separator rule, and `Contents of Volume 1` still carried raw extracted heading markup.
+
+### 2. Root Cause
+The render path trusted cached JSON fragments for V1 title and contents pages, while the endnote model had two representations: a generated hidden popup target file and an extracted visible `FOOTNOTES` chapter. The text-integrity audit also continued to treat the PDF footnote back matter as body text after the EPUB no longer exposed it in reading order.
+
+### 3. Fixes
+- Added a V1-only title-page override for Part 2, matching the physical-page hierarchy and wording.
+- Added V1-only chapter-summary title-casing for `chapter-summary` paragraphs.
+- Removed the visible extracted `FOOTNOTES` chapter from the EPUB reading order while retaining hidden popup endnotes.
+- Excluded hidden endnotes and PDF footnote back matter from audit body-text checks.
+- Added shared styling for volume title pages, contents pages, and front-matter heading separator rules.
+- Expanded regression coverage for Part 2 title insertion, summaries, popup-only footnotes, title page, contents page, and front-matter CSS.
+
+### 4. Validation
+- Rebuilt Volume 1 with `.venv/bin/python3 volumes/v1/convert.py --render-only`.
+- Full bug regression gate: `15 passed`.
+- EPUB audit: 0 errors, 4 existing warnings.
+- Text-integrity audit: missing enumerator forms reduced to 0 after excluding source footnote back matter.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives

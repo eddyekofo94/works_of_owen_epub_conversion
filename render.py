@@ -28,7 +28,7 @@ if str(_RENDER_DIR) not in sys.path:
 from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     EPUB_STYLESHEET, generate_font_styles,
-    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES,
+    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters, polytonic_sweep,
 )
@@ -1106,8 +1106,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             continue
             
         # Detect pre-rendered HTML sections (Issue 106)
-        if stripped.startswith('<section class="treatise-title-page"'):
-            html_parts.append(stripped)
+        if re.match(r'<section\b[^>]*class="[^"]*\btreatise-title-page\b', stripped):
+            html_parts.append(_polish_treatise_title_page_html(stripped))
             continue
 
         h_tag = None
@@ -1898,6 +1898,101 @@ def _build_title_page(vol_num, title, subtitle):
 </div>'''
 
 
+_TITLE_CONNECTORS = {
+    'OR', 'OF', 'ON', 'IN', 'WITH', 'ALSO', 'AS ALSO,', 'AND', 'WHEREIN',
+    'ARE', 'BY',
+}
+
+
+def _polish_treatise_title_page_html(html: str) -> str:
+    """Normalize pre-rendered treatise title pages into one elegant title sheet."""
+    if not re.search(r'<section\b[^>]*class="[^"]*\btreatise-title-page\b', html):
+        return html
+
+    def _connector_repl(match):
+        attrs = match.group(1)
+        if 'greek-title' in attrs:
+            return f'<p class="greek-title">{match.group(2).strip()}</p>'
+        text = re.sub(r'<[^>]+>', '', match.group(2)).strip()
+        if text.upper() not in _TITLE_CONNECTORS:
+            return match.group(0)
+        return f'<p class="title-connector">{match.group(2).strip()}</p>'
+
+    html = re.sub(r'<h2([^>]*)>\s*(.*?)\s*</h2>', _connector_repl, html, flags=re.I | re.S)
+    html = re.sub(
+        r'<h2([^>]*)>\s*(.*?)\s*</h2>',
+        lambda m: f'<p class="title-line title-line-medium">{m.group(2).strip()}</p>',
+        html,
+        flags=re.I | re.S,
+    )
+    html = re.sub(
+        r'<h1([^>]*)>\s*(.*?)\s*</h1>',
+        lambda m: f'<p class="title-line title-line-major">{m.group(2).strip()}</p>',
+        html,
+        flags=re.I | re.S,
+    )
+    return html
+
+
+def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str:
+    """Ensure generated/extracted volume title pages carry edition metadata."""
+    if 'class="title-page"' not in html:
+        return html
+    publisher = _escape_xml(config.get('publisher') or 'Eduardus Ekofius')
+    editors = config.get('editors') or ['William H. Goold']
+    editor = _escape_xml(editors[0])
+    subtitle = _escape_xml(VOLUME_SUBTITLES.get(vol_num, ''))
+    if re.search(r'THE\s+WORKS\s+OF(?:<br\s*/?>|\s)+JOHN\s+OWEN', html, re.I):
+        subtitle_html = f'<p class="title-volume-subtitle">{subtitle}</p>' if subtitle else ''
+        return f'''<section class="title-page volume-title-page" epub:type="titlepage">
+<p class="ornament">❧</p>
+<p class="title-work-top">The Works of</p>
+<h1 class="title-author-main">John Owen</h1>
+<p class="title-volume-number">Volume {vol_num}</p>
+{subtitle_html}
+<div class="title-meta"><p class="editor">Edited by {editor}</p><p class="publisher">{publisher}</p><p class="edition-year">2026</p></div>
+</section>'''
+    meta_bits = []
+    if 'Edited by' not in html and 'EDITED BY' not in html:
+        meta_bits.append(f'<p class="editor">Edited by {editor}</p>')
+    if publisher not in html:
+        meta_bits.append(f'<p class="publisher">{publisher}</p>')
+    if '2026' not in html:
+        meta_bits.append('<p class="edition-year">2026</p>')
+    if not meta_bits:
+        return html
+    meta = '<div class="title-meta">' + ''.join(meta_bits) + '</div>'
+    return re.sub(r'</section>\s*$', meta + '</section>', html, flags=re.S)
+
+
+def _polish_contents_page_html(html: str) -> str:
+    """Normalize extracted contents pages into a consistent, reader-friendly TOC."""
+    if 'epub:type="toc"' not in html:
+        return html
+
+    html = re.sub(r'<section([^>]*)epub:type="toc"([^>]*)>', '<section class="contents-page" epub:type="toc">', html, count=1)
+    seen_volume_title = False
+
+    def _heading_repl(match):
+        nonlocal seen_volume_title
+        text_html = match.group(1).strip()
+        plain = re.sub(r'<br\s*/?>', ' ', text_html, flags=re.I)
+        plain = re.sub(r'<[^>]+>', '', plain).strip()
+        plain_upper = plain.upper()
+        if plain_upper.startswith('CONTENTS OF VOLUME'):
+            seen_volume_title = True
+            return f'<h1 class="contents-volume-title">{text_html}</h1>'
+        if re.fullmatch(r'(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER))?(?:\s+(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER))?)*', plain_upper):
+            return f'<p class="contents-frontmatter-line">{text_html}</p>'
+        cls = 'contents-treatise-title' if seen_volume_title else 'contents-section-title'
+        return f'<h2 class="{cls}">{text_html}</h2>'
+
+    html = re.sub(r'<h[23][^>]*>\s*(.*?)\s*</h[23]>', _heading_repl, html, flags=re.I | re.S)
+    html = re.sub(r'<p class="ContentsItem">', '<p class="contents-item">', html)
+    html = re.sub(r'<span class="ContentsDescWrap">', '<span class="contents-desc-wrap">', html)
+    return html
+
+
 def generate_frontispiece_xhtml(portrait_filename):
     return f'<div class="frontispiece"><img src="images/{portrait_filename}" alt="Portrait of John Owen"/><p class="caption">John Owen (1616&#x2013;1683)</p></div>'
 
@@ -2262,14 +2357,14 @@ def format_treatise_title_page(page, limit_to_title=False):
 
         # Main Title (Big text)
         if line['size'] > 15 or line['has_bold']:
-            lvl = 'h1' if line['size'] > 18 else 'h2'
-            parts.append(f'<{lvl}>{_html_escape(text)}</{lvl}>')
+            cls = 'title-line-major' if line['size'] > 18 else 'title-line-medium'
+            parts.append(f'<p class="title-line {cls}">{_html_escape(text)}</p>')
             i += 1
             continue
             
         # Separators (OR, WITH, OF)
-        if text.upper() in {'OR', 'OF', 'WITH', 'AS ALSO,'}:
-            parts.append(f'<p class="separator"><b>{_html_escape(text)}</b></p>')
+        if text.upper() in _TITLE_CONNECTORS:
+            parts.append(f'<p class="title-connector">{_html_escape(text)}</p>')
             i += 1
             continue
 
@@ -2354,9 +2449,9 @@ def format_title_page(page, section_class="title-page", epub_type="titlepage", l
         elif size >= h2_threshold:
             lvl = 'h2'
             cls = ' class="secondary"'
-        elif text.upper() in {'OR', 'OF', 'WITH', 'AS ALSO,'}:
-            lvl = 'h3'
-            cls = ' class="separator"'
+        elif text.upper() in _TITLE_CONNECTORS:
+            lvl = 'p'
+            cls = ' class="title-connector"'
         elif len(text) > 40 or has_italic:
             lvl = 'p'
             cls = ' class="descriptive"'
@@ -2406,7 +2501,7 @@ def build_toc_page_xhtml(pages):
     if not isinstance(pages, list):
         pages = [pages]
         
-    parts = ['<section epub:type="toc">']
+    parts = ['<section class="contents-page" epub:type="toc">']
     
     for page in pages:
         blocks = page.get_text('dict')['blocks']
@@ -2447,10 +2542,13 @@ def build_toc_page_xhtml(pages):
             # Heuristics based on John Owen Volume 1 layout
             # 1. Main Titles (Large, usually bold/colored)
             if max_size > 13 or (full_text.isupper() and len(full_text) < 60 and not "CHAPTER" in full_text.upper()):
-                parts.append(f'<h2 style="text-align: center;">{safe_text}</h2>')
+                if full_text.upper().startswith('CONTENTS OF VOLUME'):
+                    parts.append(f'<h1 class="contents-volume-title">{safe_text}</h1>')
+                else:
+                    parts.append(f'<h2 class="contents-treatise-title">{safe_text}</h2>')
             # 2. Section Headers (PREFATORY NOTE, PREFACE, etc.)
             elif full_text.isupper() and len(full_text) < 40:
-                parts.append(f'<h3 style="text-align: center;">{safe_text}</h3>')
+                parts.append(f'<p class="contents-frontmatter-line">{safe_text}</p>')
             # 3. TOC Items (CHAPTER 1, 1. -, etc.)
             else:
                 # Use .ContentsItem for hanging indent
@@ -2460,17 +2558,17 @@ def build_toc_page_xhtml(pages):
                 if match:
                     label, desc = match.groups()
                     desc_safe = _html_escape(desc.strip())
-                    parts.append(f'<p class="ContentsItem"><b>{_html_escape(label)}</b> {desc_safe}</p>')
+                    parts.append(f'<p class="contents-item"><b>{_html_escape(label)}</b> {desc_safe}</p>')
                 else:
                     continuation = _html_escape(re.sub(r'\s+', ' ', full_text).strip())
                     if (
                         parts
-                        and 'class="ContentsItem"' in parts[-1]
+                        and 'class="contents-item"' in parts[-1]
                         and re.search(r'[;—-]\s*</p>$', parts[-1])
                     ):
                         parts[-1] = parts[-1].replace('</p>', f' {continuation}</p>')
                     else:
-                        parts.append(f'<p class="ContentsItem">{safe_text}</p>')
+                        parts.append(f'<p class="contents-item">{safe_text}</p>')
                     
     parts.append('</section>')
     return '\n'.join(parts)
@@ -2495,7 +2593,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     from shared import (
         VOLUME_CONFIG, VOLUME_SUBTITLES,
         EPUB_STYLESHEET, generate_font_styles, select_primary_font,
-        SBL_SUPPLEMENTS, EZRA_SIL_FILES,
+        SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS,
     )
     try:
         from ebooklib import epub
@@ -2580,8 +2678,8 @@ def render_volume(vol_num: int, overrides: dict = None,
             ))
             font_fnames.add(_fbase)
 
-    # SBL supplement fonts and Ezra SIL
-    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES):
+    # Supplemental biblical fonts and the embedded title display face
+    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS):
         for _fname, _fpath in _font_dict.items():
             _fbase = os.path.basename(_fpath)
             if _fbase in font_fnames:
@@ -2650,8 +2748,15 @@ def render_volume(vol_num: int, overrides: dict = None,
         fm_item = epub.EpubHtml(
             title=fm['title'], file_name=fm['file_name'], lang='en',
         )
+        fm_html = fm['html']
+        if fm.get('type') == 'title_page':
+            fm_html = _polish_volume_title_page_html(fm_html, vol_num, config)
+        elif fm.get('type') == 'treatise_title_page':
+            fm_html = _polish_treatise_title_page_html(fm_html)
+        elif fm.get('type') == 'toc':
+            fm_html = _polish_contents_page_html(fm_html)
         fm_item.set_content(
-            _make_xhtml(fm['title'], fm['html']).encode('utf-8')
+            _make_xhtml(fm['title'], fm_html).encode('utf-8')
         )
         fm_item.add_item(style_item)
         book.add_item(fm_item)
@@ -2674,15 +2779,14 @@ def render_volume(vol_num: int, overrides: dict = None,
     in_catechism_context = False
 
     for ch_dict in intermediate['chapters']:
-        if ch_dict.get('is_endnotes'):
+        title_upper = ch_dict['title'].upper()
+        if ch_dict.get('is_endnotes') or title_upper == 'FOOTNOTES':
+            in_catechism_context = False
             continue
 
-        title_upper = ch_dict['title'].upper()
         fm_style = ch_dict.get('front_matter_style')
         if 'THE GREATER CATECHISM' in title_upper or 'THE LESSER CATECHISM' in title_upper:
             in_catechism_context = True
-        if ch_dict.get('is_endnotes') or title_upper == 'FOOTNOTES':
-            in_catechism_context = False
 
         if any(kw in title_upper for kw in ['ANALYSIS', 'PREFATORY NOTE', 'PREFACE', 'CONTENTS']):
             conv_mode = 'FRONT_MATTER'
@@ -2702,6 +2806,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             conv_fm_style = 'blurb'
 
         raw_text = ch_dict.get('raw_text', '')
+        raw_text = config.get('treatise_title_overrides', {}).get(ch_dict['title'], raw_text)
         if not raw_text:
             continue
 
@@ -2778,8 +2883,6 @@ def render_volume(vol_num: int, overrides: dict = None,
     if frontispiece_item:
         spine.append(frontispiece_item)
     spine += epub_chapters
-    if endnotes_item:
-        spine.append(endnotes_item)
     book.spine = spine
 
     # ── Write and repackage ──────────────────────────────────────

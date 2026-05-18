@@ -834,6 +834,12 @@ EZRA_SIL_FILES = {
     'SILEOT.ttf': 'EzraSIL2.51/SILEOT.ttf',
 }
 
+TITLE_PAGE_FONTS = {
+    'Baskervville-Regular.ttf': 'Baskervville/static/Baskervville-Regular.ttf',
+    'Baskervville-Bold.ttf': 'Baskervville/static/Baskervville-Bold.ttf',
+    'Baskervville-Italic.ttf': 'Baskervville/static/Baskervville-Italic.ttf',
+}
+
 
 # ============================================================================
 # EPUB STYLESHEET (GEMINI.md compliant)
@@ -856,13 +862,15 @@ body {
 .titlepage,
 .title-page,
 .treatise-title-page {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
-    padding: 10% 6% 10%;
+    padding: 8% 6% 8%;
     max-width: 36em;
     margin: 0 auto;
     page-break-before: always;
     -webkit-column-break-before: always;
-    font-family: "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif;
+    box-sizing: border-box;
+    min-height: 90vh;
 }
 .titlepage .ornament,
 .title-page .ornament,
@@ -950,9 +958,11 @@ body {
 .titlepage .author,
 .titlepage .editor,
 .titlepage .publisher,
+.titlepage .edition-year,
 .title-page .author,
 .title-page .editor,
-.title-page .publisher {
+.title-page .publisher,
+.title-page .edition-year {
     text-align: center;
     text-indent: 0;
     margin: 0.2em auto;
@@ -965,6 +975,51 @@ body {
 .title-page .by {
     font-style: italic;
     margin-right: 0.25em;
+}
+.titlepage .title-meta,
+.title-page .title-meta {
+    margin-top: 2em;
+}
+.volume-title-page {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 34em;
+}
+.volume-title-page .title-work-top {
+    text-align: center;
+    text-indent: 0;
+    margin: 0 0 0.15em;
+    font-size: 1.12em;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+.volume-title-page .title-author-main {
+    text-align: center;
+    text-indent: 0;
+    margin: 0 0 0.5em;
+    font-size: 2.55em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 0;
+    padding: 0;
+}
+.volume-title-page .title-volume-number {
+    text-align: center;
+    text-indent: 0;
+    margin: 1.4em 0 0.35em;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+.volume-title-page .title-volume-subtitle {
+    text-align: center;
+    text-indent: 0;
+    margin: 0;
+    font-size: 1.18em;
+    font-style: italic;
 }
 
 h1 {
@@ -1076,10 +1131,13 @@ h4.chapter-subtitle {
 .front-matter-heading {
     font-size: 1.45em;
     text-align: center;
-    margin: 2em 0 1.2em;
+    margin: 2em auto 1.35em;
     font-weight: bold;
     text-transform: uppercase;
     text-indent: 0;
+    max-width: 18em;
+    padding-bottom: 0.45em;
+    border-bottom: 1px solid #777;
 }
 
 /* Decorative blurb body — for 2-5 line centered ornamental paragraphs
@@ -1266,58 +1324,106 @@ p.signature {
 /* Inner Treatise Title Pages (e.g. Christologia) */
 .treatise-title-page {
     text-align: center;
-    padding: 5% 5% 8%;
-    max-width: 38em;
+    padding: 4% 5% 5%;
+    max-width: 42em;
     margin: 0 auto;
     page-break-before: always;
+    min-height: 92vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
 }
 .treatise-title-page .greek-title {
     text-align: center;
     font-size: 1.25em;
-    margin-bottom: 2.5em;
+    margin: 0 0 1.25em;
     text-indent: 0;
     font-weight: bold;
+    letter-spacing: 0.08em;
 }
-.treatise-title-page h1 {
+.treatise-title-page h1,
+.treatise-title-page .title-line-major {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     font-size: 2.2em;
-    margin: 1.2em 0 0.8em;
+    margin: 0.45em 0 0.35em;
     text-transform: uppercase;
     line-height: 1.15;
     font-weight: bold;
+    letter-spacing: 0.12em;
+    font-style: normal;
+    text-align: center;
+    text-indent: 0;
 }
-.treatise-title-page h2 {
+.treatise-title-page h2,
+.treatise-title-page .title-line-medium {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     font-size: 1.15em;
-    margin: 0.8em 0;
+    margin: 0.38em 0;
     line-height: 1.3;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-style: normal;
+    text-align: center;
+    text-indent: 0;
 }
 .treatise-title-page p {
     text-align: center;
     text-indent: 0;
-    margin: 0.6em 0;
+    margin: 0.42em 0;
     line-height: 1.4;
 }
-.treatise-title-page .separator {
-    margin: 1.2em 0;
+.treatise-title-page .separator,
+.treatise-title-page .title-connector {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
+    margin: 0.55em 0 0.35em;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 0.68em;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.18em;
 }
 .treatise-title-page .descriptive {
-    font-style: italic;
-    font-size: 1.1em;
-    margin: 1.5em auto;
-    max-width: 32em;
+    font-style: normal;
+    font-size: 0.96em;
+    margin: 0.85em auto;
+    max-width: 34em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
 }
 .treatise-title-page .quote-block {
     text-align: left;
-    margin: 5em 8% 2em;
-    font-size: 1em;
+    margin: 2em 8% 0;
+    font-size: 0.92em;
     line-height: 1.55;
     text-indent: 0;
     font-style: italic;
-    border-top: 1px solid #ccc;
-    padding-top: 1.5em;
+    border-top: 1px solid #777;
+    padding-top: 1em;
+}
+.treatise-title-page .title-rule {
+    width: 4em;
+    height: 1px;
+    background: #777;
+    margin: 1.35em auto 1em;
+    padding: 0;
+    line-height: 1;
+}
+.treatise-title-page .title-source {
+    text-align: center;
+    text-indent: 0;
+    margin: 0;
+    font-size: 0.92em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: bold;
+}
+.v1-applied-glory-title .title-line-major {
+    font-size: 2em;
 }
 
 aside[epub\:type~="footnote"] {
@@ -1330,7 +1436,42 @@ aside[epub\:type~="endnote"] {
     text-indent: -1.8em;
 }
 
-/* Contents Item */
+/* Contents page */
+.contents-page {
+    max-width: 42em;
+    margin: 0 auto;
+    padding: 4% 2%;
+}
+.contents-volume-title {
+    text-align: center;
+    text-indent: 0;
+    font-size: 1.45em;
+    margin: 0 0 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 0;
+    padding: 0 0 0.5em;
+    border-bottom: 1px solid #777;
+}
+.contents-treatise-title {
+    text-align: center;
+    text-indent: 0;
+    font-size: 1.02em;
+    line-height: 1.35;
+    margin: 1.8em auto 0.45em;
+    max-width: 30em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.contents-frontmatter-line {
+    text-align: center;
+    text-indent: 0;
+    margin: 0.4em auto 0.85em;
+    font-size: 0.86em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.contents-item,
 .ContentsItem {
     margin: 0.8em 0 0.2em;
     padding-left: 6.5em;
@@ -1341,6 +1482,7 @@ aside[epub\:type~="endnote"] {
     line-height: 1.45;
 }
 
+.contents-desc-wrap,
 .ContentsDescWrap {
     margin: 0 0 0.2em 6.5em;
     text-indent: 0;
@@ -1384,6 +1526,21 @@ EPUB3_FONT_STYLES = r"""
 @font-face {{
     font-family: "Ezra SIL";
     src: url("../Fonts/SILEOT.ttf");
+}}
+/* Owen Title - embedded Baskervville title display face */
+@font-face {{
+    font-family: "Owen Title";
+    src: url("../Fonts/Baskervville-Regular.ttf");
+}}
+@font-face {{
+    font-family: "Owen Title";
+    font-weight: bold;
+    src: url("../Fonts/Baskervville-Bold.ttf");
+}}
+@font-face {{
+    font-family: "Owen Title";
+    font-style: italic;
+    src: url("../Fonts/Baskervville-Italic.ttf");
 }}
 /* Language overrides (GEMINI.md Section 4.2) */
 body, div, p, span, h1, h2, h3, h4, h5, h6 {{

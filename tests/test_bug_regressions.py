@@ -243,18 +243,39 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
 
     files = {}
     css = ""
+    nav = ""
+    opf = ""
     with zipfile.ZipFile(epub_path) as zf:
+        names = set(zf.namelist())
         for name in zf.namelist():
+            if name.endswith("nav.xhtml"):
+                nav = zf.read(name).decode("utf-8", "replace")
+                continue
             if name.endswith(".xhtml"):
                 files[name] = zf.read(name).decode("utf-8", "replace")
             elif name.endswith("style/main.css"):
                 css = zf.read(name).decode("utf-8", "replace")
+            elif name.endswith("content.opf"):
+                opf = zf.read(name).decode("utf-8", "replace")
+
+    title_pages = [
+        html for name, html in files.items()
+        if name.rsplit("/", 1)[-1].startswith("title_")
+    ]
+    assert any("Edited by William H. Goold" in html for html in title_pages)
+    assert any("Eduardus Ekofius" in html for html in title_pages)
+    assert any("2026" in html for html in title_pages)
 
     part_2_title = next(
         html for html in files.values()
         if "<title>Part 2 - Meditations and Discourses Concerning The Glory of Christ</title>" in html
     )
-    assert '<section class="treatise-title-page"' in part_2_title
+    assert 'class="treatise-title-page' in part_2_title
+    assert '<section class="treatise-title-page v1-applied-glory-title"' in part_2_title
+    assert "Unconverted Sinners" in part_2_title
+    assert "Saints Under Spiritual Decays" in part_2_title
+    assert "In Two Chapters, from John XVII. 24." in part_2_title
+    assert "<p>\n        <section" not in part_2_title
     assert "CHAPTER 1" not in part_2_title
     assert "That which remains" not in part_2_title
 
@@ -263,7 +284,7 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
         if "<title>Chapter 1 - Meditations and Discourses Concerning the Glory of Christ</title>" in html
     )
     assert '<section class="treatise-title-page"' not in part_2_chapter
-    assert "APPLICATION OF THE FOREGOING MEDITATIONS" in part_2_chapter
+    assert "Application of the Foregoing Meditations" in part_2_chapter
     assert "That which remains is, to make some application" in part_2_chapter
 
     greater_chapter = next(
@@ -274,6 +295,57 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     assert 'class="catechism-item"' in greater_chapter
     assert "<b>Ques. 1.</b> What is Christian religion?" in greater_chapter
     assert "<b>Ans.</b> The only way" in greater_chapter
+
+    christologia_title = next(
+        html for html in files.values()
+        if "<title>Christologia - a Declaration of the Glorious Mystery</title>" in html
+    )
+    assert '<p class="greek-title"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span></p>' in christologia_title
+    assert '<p class="title-line title-line-major">CHRISTOLOGIA</p>' in christologia_title
+    assert '<p class="title-connector">OR</p>' in christologia_title
+    assert '<p class="title-connector">OF</p>' in christologia_title
+    assert '<p class="title-connector">WITH</p>' in christologia_title
+    assert "<h2>OR</h2>" not in christologia_title
+    assert "<h2>OF</h2>" not in christologia_title
+    assert "<h2>WITH</h2>" not in christologia_title
+
+    first_title_page = next(html for name, html in files.items() if name.endswith("title_0.xhtml"))
+    assert '<section class="title-page volume-title-page"' in first_title_page
+    assert '<p class="title-work-top">The Works of</p>' in first_title_page
+    assert '<h1 class="title-author-main">John Owen</h1>' in first_title_page
+    assert '<p class="title-volume-number">Volume 1</p>' in first_title_page
+
+    contents = next(html for name, html in files.items() if name.endswith("contents_2.xhtml"))
+    assert '<section class="contents-page" epub:type="toc">' in contents
+    assert '<h1 class="contents-volume-title">CONTENTS OF VOLUME 1.</h1>' in contents
+    assert '<p class="contents-frontmatter-line">ORIGINAL PREFACE</p>' in contents
+    assert 'class="ContentsItem"' not in contents
+
+    chapter_1 = next(html for html in files.values() if "<title>Chapter 1 - Peter's Confession</title>" in html)
+    assert "Peter's Confession; Matthew 16:16" in chapter_1
+    assert "PETER'S CONFESSION; MATTHEW 16:16" not in chapter_1
+
+    greater_chapter_15 = next(
+        html for html in files.values()
+        if "<title>Chapter 15 - of the Persons to Whom the Benefits of Christ's Offices Do Belong.</title>" in html
+    )
+    assert "Of the Persons to Whom the Benefits of Christ's Offices Do Belong." in greater_chapter_15
+    assert "OF THE PERSONS TO WHOM THE BENEFITS OF CHRIST'S OFFICES DO BELONG." not in greater_chapter_15
+
+    assert "EPUB/ch078.xhtml" not in names
+    assert ">Footnotes<" not in nav
+    assert "href=\"ch078.xhtml\"" not in nav
+    assert "href=\"ch078.xhtml\"" not in opf
+    assert re.search(r"\.treatise-title-page\s*\{[^}]*min-height:\s*92vh;", css, re.S)
+    assert re.search(r"\.treatise-title-page\s*\{[^}]*display:\s*flex;", css, re.S)
+    assert 'font-family: "Owen Title"' in css
+    assert re.search(r"\.front-matter-heading\s*\{[^}]*border-bottom:\s*1px solid #777;", css, re.S)
+    assert ".contents-page" in css
+    assert ".volume-title-page .title-author-main" in css
+    assert "EPUB/Fonts/Baskervville-Regular.ttf" in names
+    assert "EPUB/Fonts/Baskervville-Bold.ttf" in names
+    assert "EPUB/Fonts/Baskervville-Italic.ttf" in names
+    assert re.search(r"\.treatise-title-page \.title-connector\s*\{[^}]*font-size:\s*0\.68em;", css, re.S)
 
 
 @pytest.mark.parametrize("volume", VOLUMES)
