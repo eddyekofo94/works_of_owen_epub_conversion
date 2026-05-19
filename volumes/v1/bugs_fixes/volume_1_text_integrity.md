@@ -4,29 +4,29 @@
 - Warnings: 8
 - PDF pages: 633
 - EPUB text files: 81
-- EPUB paragraphs/headings: 2802
+- EPUB paragraphs/headings: 2762
 
 ## Coverage
 
 - PDF content tokens: 208222
-- EPUB content tokens: 207242
-- Approximate PDF-to-EPUB coverage ratio: 0.9945
+- EPUB content tokens: 207195
+- Approximate PDF-to-EPUB coverage ratio: 0.9944
 - Pages checked: 624
-- Weak page matches: 24
+- Weak page matches: 22
 - Dense source windows checked: 783
 - Missing dense source-window pages: 609
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 591
 - Top-of-page windows skipped as unstable: 13
-- Missing top-of-page body windows: 3
+- Missing top-of-page body windows: 7
 - Bottom-of-page body windows checked: 544
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 20
+- Missing bottom-of-page body windows: 19
 
 ## Paragraphs
 
-- Body paragraphs checked: 2349
+- Body paragraphs checked: 2344
 - Possible faulty paragraph splits: 106
 - Structural starts excluded from split warnings: 163
 - Short fragments: 19
@@ -47,7 +47,7 @@
 ## Greek / Hebrew
 
 - PDF Greek words: 812
-- EPUB Greek words: 812
+- EPUB Greek words: 811
 - Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
@@ -84,7 +84,11 @@
 ## Missing Top-Of-Page Body Windows
 
 - page: 157; sample: Hebrews 2:18; 4:15; 5:2. So is he also, as he alone who is able to succor, to relieve, and to deliver them. "He is able to succor them that are
+- page: 399; sample: CHAPTER 3. THE GLORY OF CHRIST IN THE MYSTERIOUS
+- page: 429; sample: CHAPTER 5. THE GLORY OF CHRIST IN THIS LOVE.
+- page: 608; sample: CHAPTER 10 OF THE PERSON OF JESUS CHRIST.
 - page: 613; sample: A. In that for us he underwent the punishment due to our sin. Isaiah
+- page: 616; sample: CHAPTER 14 OF THE TWO-FOLD ESTATE OF CHRIST.
 - page: 619; sample: A. No; essentially they are but one,f91 differing only in some outward administrations.
 
 ## Missing Bottom-Of-Page Body Windows
@@ -103,7 +107,7 @@
 ## Possible Paragraph Splits
 
 - file: EPUB/ch004.xhtml; previous: on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things." And Ennodius has, as it were, turned this passage of Jerome into verse: —; next: Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the
-- file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
+- file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I will do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
 - file: EPUB/ch009.xhtml; previous: he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they; next: Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S
 - file: EPUB/ch009.xhtml; previous: This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw; next: The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:
 - file: EPUB/ch010.xhtml; previous: wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,; next: And they are called "treasures" on a twofold account, both mentioned together by the Psalmist. "How precious are thy thoughts unto me, O Lord; how great is the sum of them!" They a

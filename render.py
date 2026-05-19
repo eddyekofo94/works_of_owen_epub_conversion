@@ -698,6 +698,27 @@ def _strip_inline_structural_tokens(text):
     return re.sub(r'\[\[(?:PART|CHAPTER|ROMAN_HEAD|SUBTITLE|SUMMARY|DIGRESSION|BLOCKQUOTE)\]\]\s*', '', text)
 
 
+_SCHOLASTIC_QUOTED_OBJECTION_RE = re.compile(
+    r'(?P<intro>\b(?:Obj(?:ection)?\.?\s*\d+\.?)\s+But\s+some\s+may\s+say,)\s*'
+    r'(?P<quote>["“][^\n]+?)\n\n'
+    r'\[\[BLOCKQUOTE\]\]\s*(?P<rest>.*?["”])',
+    re.I | re.S,
+)
+
+
+def _repair_scholastic_blockquote_boundaries(text):
+    """Move blockquote markers back over quoted Objection/Obj. openings."""
+    if not text:
+        return text
+
+    def repl(match):
+        quote = match.group("quote").strip()
+        rest = re.sub(r'\s+', ' ', match.group("rest").strip())
+        return f'{match.group("intro")}\n\n[[BLOCKQUOTE]] {quote} {rest}'
+
+    return _SCHOLASTIC_QUOTED_OBJECTION_RE.sub(repl, text)
+
+
 def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                      front_matter_style="blurb", config=None):
     """
@@ -720,6 +741,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
 
     # Apply replacements (Issue 108)
     md_text = _repair_owen_ocr_errors(md_text, config=config)
+    md_text = _repair_scholastic_blockquote_boundaries(md_text)
     
     normalized_paragraphs = [normalize_footnote_markers(para) for para in md_text.split('\n\n')]
     
@@ -1288,7 +1310,11 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     and len(re.findall(r'\w+', (_roman_head_match(plain_summary_candidate).group('rest') or ''))) >= 8
                 )
                 if starts_summary_list_item and not starts_body_roman_section:
-                    html_parts.append(f'<p class="chapter-summary">{_render_summary_content(content_no_refs)}</p>')
+                    summary_piece = _render_summary_content(content_no_refs)
+                    if html_parts and html_parts[-1].startswith('<p class="chapter-summary">'):
+                        html_parts[-1] = html_parts[-1][:-4] + f' {summary_piece}</p>'
+                    else:
+                        html_parts.append(f'<p class="chapter-summary">{summary_piece}</p>')
                     recent_plain.append(_strip_footnote_placeholders(plain_summary_candidate))
                     if len(recent_plain) > 5:
                         recent_plain = recent_plain[-5:]

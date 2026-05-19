@@ -1,4 +1,3 @@
-#  TODO: (2026-05-19 11:50)
 ## 1
 ANALYSIS extracted into Prefatory Note
 
@@ -109,3 +108,24 @@ Note: false break, the reference should be integrated into the sentence without 
 Fix:
 Liv., Hist. viii. 9. His son,
 Note: false break, the reference should be integrated into the sentence without a break, and the
+
+#  TODO: (2026-05-20 00:14)
+## 12
+“ "Alas! how shall I hold communion with the Father in love? I know not at all whether he loves me or no;
+and shall I venture to cast myself upon it? How if I”
+
+Fix:
+All of this should be in the block quote, it is currently split up and the formatting is inconsistent. The entire passage should be formatted as a single block quote to maintain consistency and improve readability. The formatting of the text should be reviewed to ensure that there are no unnecessary breaks or inconsistencies in the presentation of information, which can disrupt the flow and readability of the document. Proper formatting is essential to maintain a professional appearance and to effectively communicate the content to the reader.
+
+## 13
+“to quicken them, (John 6:63, to cause them that are”
+
+Fix:
+The open parenthesis is not closed, can we check for such a thing? that open parenthesis should be closed. This seems near a verse so maybe the way they're being extracted or rendered.
+
+## 14
+“pronounces those censures, Romans 1:1 1; 1 Corinthians 1:11 Corinthians 1.”
+
+Fix:
+pronounces those censures, Romans 1; 1 Corinthians 1.
+Note: The reference "Romans 1:1 1" is likely a formatting error and should be corrected to "Romans 1". Additionally, "1 Corinthians 1:11 Corinthians 1" is also likely a formatting error and should be corrected to "1 Corinthians 1". The formatting of the references should be reviewed to ensure that they are accurate and consistent throughout the document, which will improve readability and comprehension for the reader. Proper formatting of references is essential to maintain a professional appearance and to effectively communicate the content to the reader.

@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-19T17:39:21.042581+00:00",
+  "generated_at": "2026-05-19T22:29:37.838946+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -14,7 +14,7 @@
   ],
   "info": {
     "file_count": 83,
-    "epub_size_bytes": 6458904,
+    "epub_size_bytes": 6458906,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 15,
+      "lowercase_paragraph_start_files": 14,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -125,10 +125,6 @@
             "text": "a"
           },
           {
-            "file": "EPUB/ch010.xhtml",
-            "text": "a"
-          },
-          {
             "file": "EPUB/ch014.xhtml",
             "text": "a"
           },
@@ -159,6 +155,10 @@
           {
             "file": "EPUB/ch028.xhtml",
             "text": "i"
+          },
+          {
+            "file": "EPUB/ch035.xhtml",
+            "text": "w"
           }
         ],
         "noteref_leading_space": [],

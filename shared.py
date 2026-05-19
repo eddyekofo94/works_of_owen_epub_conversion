@@ -1057,9 +1057,53 @@ def _normalize_scholarly_citation_artifacts(text: str) -> str:
     return text
 
 
+_QUOTE_WRAPPED_STRUCTURAL_RE = re.compile(
+    r'(?P<prefix>^|[\s([{—–-])["“]\s*'
+    r'(?='
+    r'(?:'
+    r'\((?!\d{4}\))\d+\.?\)|'
+    r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)|'
+    r'\[\d+\.?\]\.?|'
+    r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?|'
+    r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
+    r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
+    r')'
+    r')'
+)
+
+
+def _unwrap_quote_wrapped_structural_markers(text: str) -> str:
+    """Remove OCR quote marks that wrap list/outline anchors, not quotations."""
+    if not text:
+        return text
+    return _QUOTE_WRAPPED_STRUCTURAL_RE.sub(lambda m: m.group("prefix"), text)
+
+
+def _repair_scripture_reference_artifacts(text: str) -> str:
+    """Repair recurring OCR/reference punctuation artifacts from AGES PDFs."""
+    if not text:
+        return text
+    # A single in-parenthesis reference can lose its closing parenthesis when
+    # the following prose continues after a comma: "(John 6:63, to cause".
+    text = re.sub(
+        rf'\(\s*((?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+:\d+(?:[-,]\s*\d+)*)'
+        r',\s+(?=(?:to|and|or|that|which|who|where|whereby|for|in)\b)',
+        r'(\1), ',
+        text,
+        flags=re.I,
+    )
+    # Page/line OCR occasionally duplicates a chapter reference as if it were
+    # chapter:verse plus the same chapter again.
+    text = re.sub(r'\bRomans\s+(\d+):1\s+\1\b', r'Romans \1', text)
+    text = re.sub(r'\b1\s+Corinthians\s+(\d+):1\s*1\s+Corinthians\s+\1\b', r'1 Corinthians \1', text)
+    return text
+
+
 def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     """Repair known OCR character misreads using volume-specific configuration."""
     text = _normalize_scholarly_citation_artifacts(text)
+    text = _unwrap_quote_wrapped_structural_markers(text)
+    text = _repair_scripture_reference_artifacts(text)
     text = re.sub(r'\b([A-Za-z]{2,})]y\b', r'\1ly', text)
     text = re.sub(r'\b([A-Za-z]{2,})]e\b', r'\1le', text)
     text = re.sub(r'(?<!\w)](?=earn|earning|earned|earnt|edge)', 'l', text, flags=re.I)

@@ -687,6 +687,10 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         r"\b(?:blockquote|treatise-title-page|volume-title-page|contents-page|"
         r"title-line|title-connector|descriptive|greek-title|quote-block|chapter-summary)\b"
     )
+    scholastic_quote_intro_re = re.compile(
+        r'^(?:Obj(?:ection)?\.?\s*\d+\.?)\s+But\s+some\s+may\s+say,\s*$',
+        re.I,
+    )
     body_paras = [
         p for p in paragraphs
         if p.tag == "p"
@@ -746,6 +750,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         if not prev_terminal:
             if HARD_STRUCTURAL_START_RE.match(next_text):
                 structural_start_exclusions += 1
+            elif scholastic_quote_intro_re.match(prev_text):
+                structural_start_exclusions += 1
             else:
                 split_candidates.append({
                     "file": prev.file,
@@ -765,6 +771,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         if len(text) >= 35:
             continue
         if LIST_OR_LABEL_RE.match(text):
+            continue
+        if scholastic_quote_intro_re.match(text):
             continue
         if re.fullmatch(r"[-–—*\s]+", text):
             continue

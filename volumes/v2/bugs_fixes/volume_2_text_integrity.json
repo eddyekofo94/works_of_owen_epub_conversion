@@ -2,7 +2,7 @@
   "volume": 2,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/input/owen-v2.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-19T17:39:52.748395+00:00",
+  "generated_at": "2026-05-19T22:31:11.027937+00:00",
   "status": "warn",
   "warning_count": 8,
   "warnings": [
@@ -44,11 +44,11 @@
   },
   "epub": {
     "spine_text_files": 47,
-    "paragraph_count": 2288
+    "paragraph_count": 2281
   },
   "word_coverage": {
     "pdf_content_tokens": 189781,
-    "epub_content_tokens": 189176,
+    "epub_content_tokens": 189174,
     "coverage_ratio": 0.9959,
     "missing_word_samples": [
       {
@@ -546,7 +546,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1951,
+    "paragraphs_checked": 1958,
     "split_candidate_count": 209,
     "split_candidates": [
       {
@@ -750,7 +750,7 @@
         "next": "and as it were by the works of the law; I am now willing to receive thee and to be saved in thy way, — merely by grace: and though I would have walked according is my own mind, yet"
       }
     ],
-    "structural_start_exclusions": 248,
+    "structural_start_exclusions": 250,
     "short_fragment_count": 40,
     "short_fragments": [
       {
@@ -815,7 +815,7 @@
       },
       {
         "file": "EPUB/ch035.xhtml",
-        "text": "Particularly, — \""
+        "text": "Particularly, —"
       },
       {
         "file": "EPUB/ch035.xhtml",
@@ -1008,16 +1008,16 @@
         "epub": 4,
         "examples": [
           {
-            "location": "EPUB/ch035.xhtml#p1738",
-            "context": "\"(2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, — \"(3dly.) T"
+            "location": "EPUB/ch035.xhtml#p1726",
+            "context": "(2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, —"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1741",
-            "context": "\"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
+            "location": "EPUB/ch035.xhtml#p1731",
+            "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1741",
-            "context": "ople, zealous of good works.\" This was his aim, his design, in giving himself for us; as \"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
+            "location": "EPUB/ch035.xhtml#p1732",
+            "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
           }
         ]
       },
@@ -1066,7 +1066,7 @@
         "file": "EPUB/ch014.xhtml",
         "marker": "(2.)",
         "family": "paren_decimal",
-        "context": "(2.) The next thing that comes under consideration is, the way whereby we hold communion with the Lord Christ, in respect of that personal grace whereof we have spoken. Now, this the S"
+        "context": "ion, Hosea 3:3; Song of Solomon 1:15 — On the part of Christ — On the part of the saints. (2.) The next thing that comes under consideration is, the way whereby we hold communion with the Lord Christ, in respect of that personal grace whereof we have spoken. Now, this the S"
       }
     ]
   },

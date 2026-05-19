@@ -2,7 +2,7 @@
   "volume": 1,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-18T22:44:55.806376+00:00",
+  "generated_at": "2026-05-19T21:10:38.315857+00:00",
   "status": "warn",
   "warning_count": 8,
   "warnings": [
@@ -44,12 +44,12 @@
   },
   "epub": {
     "spine_text_files": 81,
-    "paragraph_count": 2802
+    "paragraph_count": 2762
   },
   "word_coverage": {
     "pdf_content_tokens": 208222,
-    "epub_content_tokens": 207242,
-    "coverage_ratio": 0.9945,
+    "epub_content_tokens": 207195,
+    "coverage_ratio": 0.9944,
     "missing_word_samples": [
       {
         "word": "faithfullness",
@@ -82,13 +82,8 @@
   },
   "page_coverage": {
     "pages_checked": 624,
-    "weak_page_count": 24,
+    "weak_page_count": 22,
     "weak_pages": [
-      {
-        "page": 19,
-        "hit_ratio": 0.0,
-        "sample": "19 χριστολογια christologia or declaration of the glorious mystery of the person of christ god and man with the infinite wisdom love and power"
-      },
       {
         "page": 26,
         "hit_ratio": 0.333,
@@ -155,11 +150,6 @@
         "sample": "556 iv on the confirmation of these things our inquiry will be how such persons may be delivered from such decays and by what"
       },
       {
-        "page": 586,
-        "hit_ratio": 0.333,
-        "sample": "586 two short catechisms wherein the principles of the doctrine of christ are unfolded and explained proper for all persons to learn before they"
-      },
-      {
         "page": 603,
         "hit_ratio": 0.333,
         "sample": "603 chapter of god's actual providence what is god's actual providence the effectual working of his f51 f52 power and almighty act of his"
@@ -181,7 +171,7 @@
       },
       {
         "page": 614,
-        "hit_ratio": 0.333,
+        "hit_ratio": 0.0,
         "sample": "614 by being accompanied with his death for that as all other testaments was to be ratified by the death of the testator genesis"
       },
       {
@@ -462,7 +452,7 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 3,
+    "missing_top_window_count": 7,
     "missing_top_windows": [
       {
         "page": 157,
@@ -470,9 +460,29 @@
         "sample": "Hebrews 2:18; 4:15; 5:2. So is he also, as he alone who is able to succor, to relieve, and to deliver them. \"He is able to succor them that are"
       },
       {
+        "page": 399,
+        "window": "chapter the glory of christ in the mysterious",
+        "sample": "CHAPTER 3. THE GLORY OF CHRIST IN THE MYSTERIOUS"
+      },
+      {
+        "page": 429,
+        "window": "chapter the glory of christ in this love",
+        "sample": "CHAPTER 5. THE GLORY OF CHRIST IN THIS LOVE."
+      },
+      {
+        "page": 608,
+        "window": "chapter 10 of the person of jesus christ",
+        "sample": "CHAPTER 10 OF THE PERSON OF JESUS CHRIST."
+      },
+      {
         "page": 613,
         "window": "in that for us he underwent the punishment due to our sin isaiah",
         "sample": "A. In that for us he underwent the punishment due to our sin. Isaiah"
+      },
+      {
+        "page": 616,
+        "window": "chapter 14 of the two-fold estate of christ",
+        "sample": "CHAPTER 14 OF THE TWO-FOLD ESTATE OF CHRIST."
       },
       {
         "page": 619,
@@ -486,7 +496,7 @@
     "bottom_windows_usable": 544,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 20,
+    "missing_bottom_window_count": 19,
     "missing_bottom_windows": [
       {
         "page": 25,
@@ -579,11 +589,6 @@
         "sample": "Psalm 38:1-10, gives us an account of himself,"
       },
       {
-        "page": 586,
-        "window": "hearken to me will teach you the fear of the lord psalm 34 11",
-        "sample": "\"Come, ye children, hearken to me; I will teach you the fear of the Lord,\" Psalm 34:11"
-      },
-      {
         "page": 621,
         "window": "matthew 22 14 none effectually but the elect",
         "sample": "Matthew 22:14; none effectually but the elect."
@@ -591,7 +596,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2349,
+    "paragraphs_checked": 2344,
     "split_candidate_count": 106,
     "split_candidates": [
       {
@@ -601,7 +606,7 @@
       },
       {
         "file": "EPUB/ch009.xhtml",
-        "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,",
+        "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I will do, saith God,",
         "next": "This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba"
       },
       {
@@ -1062,7 +1067,7 @@
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 812,
-    "epub_greek_word_count": 812,
+    "epub_greek_word_count": 811,
     "pdf_greek_unique_words": 461,
     "epub_greek_unique_words": 461,
     "greek_word_coverage_ratio": 0.9987,

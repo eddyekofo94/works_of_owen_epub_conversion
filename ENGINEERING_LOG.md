@@ -2301,7 +2301,7 @@ The inner title-page formatter correctly returned a pre-rendered `<section class
 
 ### 1. The Problem
 
-Chapter 5 had two related rendering defects. The chapter summary continued through several numbered outline lines before the body section `II.`, but those lines were rendered as body list items. Later in the chapter, `**(2.)**` was malformed into `(2.)<b>...`, and `**[1].**` remained inline after an em dash instead of starting a new list item.
+Chapter 5 had two related rendering defects. The chapter summary continued through several numbered outline lines before the body section `II.`, but those lines were rendered as body list items and then, after the first repair, as multiple separate summary paragraphs. Later in the chapter, `**(2.)**` was malformed into `(2.)<b>...`, and `**[1].**` remained inline after an em dash instead of starting a new list item.
 
 ### 2. Root Cause
 
@@ -2310,20 +2310,53 @@ Chapter 5 had two related rendering defects. The chapter summary continued throu
 ### 3. Fix
 
 - Added `summary_continuation_active` handling in `markdown_to_html()`.
-- Structural paragraphs immediately following `[[SUMMARY]]` now render as `chapter-summary` until a long Roman body heading begins.
+- Structural paragraphs immediately following `[[SUMMARY]]` now append into the same `chapter-summary` paragraph until a long Roman body heading begins.
 - Added summary-specific rendering that strips marker bold rather than promoting summary outline markers to body list items.
 - Preserved structural markdown bold on valid markers before converting `**...**` to `<b>`.
 - Extended render and audit regexes to treat `[1].` as a structural marker form.
-- Added focused regression tests for both the Chapter 5 summary pattern and the `(2.)` / `[1].` body-list sequence.
+- Added focused regression tests requiring the Chapter 5 summary pattern to stay one paragraph, plus coverage for the `(2.)` / `[1].` body-list sequence.
 
 ### 4. Validation
 
 - Volume 2 render-only rebuild completed with `.venv/bin/python3 volumes/v2/convert.py --render-only`.
-- Manual XHTML inspection confirmed Chapter 5 summary continuation paragraphs use `chapter-summary`, `(2.)` is cleanly bolded, and `[1].` / `[2.]` start their own list items.
+- Manual XHTML inspection confirmed Chapter 5 has exactly one `chapter-summary` paragraph before `II.`, `(2.)` is cleanly bolded, and `[1].` / `[2.]` start their own list items.
 - EPUB audit: WARN, 0 errors, 1 repeated-phrase warning.
 - Text-integrity audit: WARN; inline structural marker candidates `0`, adjacent duplicate paragraphs `0`, reference continuation splits `0`, citation continuation splits `0`, suspicious large-number starts `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
 - Bug-regression report: PASS.
-- Regression tests: default gate `31 passed, 1 skipped`; Volume 2 gate `26 passed, 6 skipped`.
+- Regression tests: Volume 2 gate `25 passed, 7 skipped`. The full default gate was not clean because the existing generated Volume 1 EPUB fails unrelated V1-specific assertions; Volume 1 was not rebuilt for this V2-only change.
+
+---
+
+## [Issue 126] Volume 2 Quote-Wrapped Structural Markers and Textual TODO 12-14
+
+**Date:** 2026-05-20
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+Volume 2 showed repeated open quote artifacts immediately before structural anchors in `A Vindication`, such as `"2dly.`, `"(1st.)`, and `" [1st.]`. The same review batch also identified three concrete blemishes: the `Alas!` objection quote started outside its blockquote, `(John 6:63, to cause...)` lost the closing parenthesis, and a duplicated reference rendered as `Romans 1:1 1; 1 Corinthians 1:11 Corinthians 1`.
+
+### 2. Root Cause
+
+The extraction layer was preserving OCR quote marks that actually belonged to PDF line/opening-quote noise around outline anchors. Because the renderer treats these markers as text, the extra quote prevented consistent structural parsing and made list anchors look like quoted prose. Separately, the geometry-backed blockquote detector marked the indented continuation of the objection quote but not the leading quoted sentence attached to `Objection 1. But some may say,`. The reference defects were recurring AGES/OCR punctuation failures: one missing close parenthesis after a single Scripture reference, and one duplicated chapter label after a false `:1` verse.
+
+### 3. Fix
+
+- Added `_unwrap_quote_wrapped_structural_markers()` in `shared.py`, called from `_repair_owen_ocr_errors()`, to remove quote marks only when the following token is a recognized structural/list marker.
+- Added `_repair_scripture_reference_artifacts()` in `shared.py` for the `John 6:63` close-parenthesis repair and duplicated `Romans 1` / `1 Corinthians 1` chapter-reference collapse.
+- Added `_repair_scholastic_blockquote_boundaries()` in `render.py` so `Objection/Obj. ... But some may say, "..."` pulls the opening quoted sentence into the following `[[BLOCKQUOTE]]` block.
+- Updated `scripts/audit_text_integrity.py` to treat the resulting short scholastic quote intro as an intentional lead-in rather than a split candidate.
+- Added focused tests for quote-wrapped structural markers, the scholastic blockquote boundary, the open parenthesized Scripture reference, and the duplicated chapter-reference noise.
+
+### 4. Validation
+
+- Volume 2 render-only rebuild completed with `.venv/bin/python3 volumes/v2/convert.py --render-only`.
+- Manual XHTML inspection confirmed the `Alas!` passage is one blockquote, `(John 6:63), to cause` is closed correctly, `Romans 1; 1 Corinthians 1` is rendered without duplicate chapter noise, and the highlighted `A Vindication` anchors now render as bold list markers without leading quote marks.
+- EPUB audit: WARN, 0 errors, 1 repeated-phrase warning.
+- Text-integrity audit: WARN; inline structural marker candidates `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS.
+- Regression tests: Volume 2 gate `29 passed, 7 skipped`.
 
 ---
 

@@ -53,7 +53,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 15 | 15 | OK |
+| Lowercase page fragments | 14 | 15 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -89,7 +89,7 @@
 ### Lowercase page fragments
 
 - file: EPUB/ch008.xhtml; text: a
-- file: EPUB/ch010.xhtml; text: a
 - file: EPUB/ch014.xhtml; text: a
 - file: EPUB/ch016.xhtml; text: i
 - file: EPUB/ch017.xhtml; text: a
+- file: EPUB/ch019.xhtml; text: b

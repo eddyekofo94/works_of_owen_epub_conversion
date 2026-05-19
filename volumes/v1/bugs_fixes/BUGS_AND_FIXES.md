@@ -919,10 +919,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T22:43:46.919173+00:00
+**Last run:** 2026-05-19T21:10:06.730188+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -937,14 +938,14 @@ Reports:
 | Spine items | 81 |
 | Embedded fonts | 11 |
 | NAV links | 81 |
-| Greek chars / untagged | 4081 / 0 |
+| Greek chars / untagged | 4080 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
 | Noteref links / endnote anchors | 124 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 6 |
+| Repeated phrase hits | 1 |
 
 Warnings requiring triage:
 
@@ -1090,10 +1091,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T22:44:55.806376+00:00
+**Last run:** 2026-05-19T21:10:38.315857+00:00
 **Status:** WARN (8 warnings)
 
 Reports:
@@ -1104,19 +1106,19 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 81 |
-| EPUB paragraphs/headings | 2802 |
-| Approximate PDF-to-EPUB word coverage | 0.9945 |
-| Weak page matches | 24 |
+| EPUB paragraphs/headings | 2762 |
+| Approximate PDF-to-EPUB word coverage | 0.9944 |
+| Weak page matches | 22 |
 | Dense source windows checked | 783 |
 | Missing dense source-window pages | 609 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 591 |
 | Top-of-page windows skipped as unstable | 13 |
-| Missing top-of-page body windows | 3 |
+| Missing top-of-page body windows | 7 |
 | Bottom-of-page body windows checked | 544 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 20 |
+| Missing bottom-of-page body windows | 19 |
 | Possible faulty paragraph splits | 106 |
 | Structural starts excluded from split warnings | 163 |
 | Short fragments | 19 |
@@ -1133,7 +1135,7 @@ Reports:
 | EPUB enumerator markers | 310 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 812 / 812 |
+| PDF Greek words / EPUB Greek words | 812 / 811 |
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |

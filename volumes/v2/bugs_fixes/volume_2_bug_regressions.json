@@ -436,16 +436,12 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 15,
+      "observed": 14,
       "budget": 15,
       "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch008.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
           "text": "a"
         },
         {
@@ -479,6 +475,10 @@
         {
           "file": "EPUB/ch028.xhtml",
           "text": "i"
+        },
+        {
+          "file": "EPUB/ch035.xhtml",
+          "text": "w"
         }
       ]
     },

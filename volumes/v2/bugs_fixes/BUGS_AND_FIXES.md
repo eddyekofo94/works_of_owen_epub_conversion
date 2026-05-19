@@ -1040,10 +1040,14 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-19T17:39:21.042581+00:00
+**Last run:** 2026-05-19T22:29:37.838946+00:00
 **EPUB:** `volumes/v2/output/volume_2.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -1208,10 +1212,13 @@ Warnings requiring triage:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-19T17:39:52.748395+00:00
+**Last run:** 2026-05-19T22:31:11.027937+00:00
 **Status:** WARN (8 warnings)
 
 Reports:
@@ -1222,7 +1229,7 @@ Reports:
 |-------|--------|
 | PDF pages | 555 |
 | EPUB text files | 47 |
-| EPUB paragraphs/headings | 2288 |
+| EPUB paragraphs/headings | 2281 |
 | Approximate PDF-to-EPUB word coverage | 0.9959 |
 | Weak page matches | 7 |
 | Dense source windows checked | 835 |
@@ -1236,7 +1243,7 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 14 |
 | Possible faulty paragraph splits | 209 |
-| Structural starts excluded from split warnings | 248 |
+| Structural starts excluded from split warnings | 250 |
 | Short fragments | 40 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
@@ -1351,13 +1358,28 @@ Warnings requiring triage:
 
 **Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
 
-**Problem:** In Chapter 5, the extended summary before the Roman numeral `II.` was being rendered as body list items, producing bold scholastic/list anchors under the chapter heading. Later in the same chapter, `**(2.)**` lost one side of its markdown bolding and rendered as `(2.)<b> ...</b>`, while `**[1].**` stayed inline instead of starting its own list line.
+**Problem:** In Chapter 5, the extended summary before the Roman numeral `II.` was being rendered as body list items, producing bold scholastic/list anchors and then, after the first repair, as separate summary paragraphs. Later in the same chapter, `**(2.)**` lost one side of its markdown bolding and rendered as `(2.)<b> ...</b>`, while `**[1].**` stayed inline instead of starting its own list line.
 
 **Implementation notes:**
-- Added summary-continuation handling in `render.py`: after a `[[SUMMARY]]` token, structural summary lines remain `chapter-summary` until a true body Roman section begins.
+- Added summary-continuation handling in `render.py`: after a `[[SUMMARY]]` token, structural summary lines are appended into the same `chapter-summary` paragraph until a true body Roman section begins.
 - Summary continuation rendering strips markdown marker bold so summary outlines do not receive body list styling.
 - Tightened marker regexes so bracketed forms with an outside period (`[1].`) are recognized in both rendering and audit checks.
 - Preserved body-list behavior for the later theological outline: `(2.)`, `[1].`, and `[2.]` now each render as clean list items.
-- Added regression tests for Chapter 5-style summary continuation and the `(2.)` / `[1].` marker sequence.
+- Added regression tests requiring Chapter 5-style summary continuation to stay one paragraph, plus coverage for the `(2.)` / `[1].` marker sequence.
 
-**Validation run:** Rebuilt Volume 2 render-only with `.venv/bin/python3 volumes/v2/convert.py --render-only`. Manual XHTML checks confirm the Chapter 5 summary lines use `chapter-summary`, `(2.)` is bolded correctly, and `[1].` / `[2.]` start their own list items. EPUB audit reports WARN with 0 errors and one repeated-phrase warning. Text-integrity remains WARN for broad triage queues, but inline structural marker candidates `0`, adjacent duplicate paragraphs `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, and missing Hebrew clauses `0`. Bug-regression report PASS. Regression tests: default gate `31 passed, 1 skipped`; V2 gate `26 passed, 6 skipped`.
+**Validation run:** Rebuilt Volume 2 render-only with `.venv/bin/python3 volumes/v2/convert.py --render-only`. Manual XHTML checks confirm Chapter 5 has exactly one `chapter-summary` paragraph before `II.`, no summary list-item leaks, `(2.)` is bolded correctly, and `[1].` / `[2.]` start their own list items. EPUB audit reports WARN with 0 errors and one repeated-phrase warning. Text-integrity remains WARN for broad triage queues, but inline structural marker candidates `0`, adjacent duplicate paragraphs `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, and missing Hebrew clauses `0`. Bug-regression report PASS. V2 regression gate: `25 passed, 7 skipped`. The full default gate was not clean because the existing generated V1 EPUB fails unrelated V1-specific assertions; V1 was not rebuilt for this V2-only change.
+
+### 113. Volume 2 open quote markers and textual TODO 12-14
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+**Problem:** Open quote OCR artifacts were leaking before structural markers in `A Vindication` (`"2dly.`, `"(1st.)`, `" [1st.]`), making list anchors look like quotations. The remaining textual TODO items 12-14 also showed a blockquote boundary starting one paragraph too late, an unclosed parenthesized Scripture reference at `John 6:63`, and duplicated chapter-reference noise (`Romans 1:1 1; 1 Corinthians 1:11 Corinthians 1`).
+
+**Implementation notes:**
+- Added shared cleanup for quote-wrapped structural markers so OCR quote marks are removed only when the following token is a list/outline anchor.
+- Added shared Scripture-reference repairs for the `John 6:63` missing-close-parenthesis pattern and the duplicated `Romans 1` / `1 Corinthians 1` chapter-reference pattern.
+- Added a render-stage scholastic blockquote boundary repair so `Objection 1. But some may say, "Alas! ..."` keeps the whole quoted objection inside one blockquote.
+- Taught the text-integrity audit that the short `Objection 1. But some may say,` intro is a deliberate quote lead-in, not a faulty paragraph split.
+- Added regression tests for quote-wrapped markers, the shifted blockquote boundary, the open Scripture parenthesis, and the duplicated chapter-reference collapse.
+
+**Validation run:** Rebuilt Volume 2 render-only with `.venv/bin/python3 volumes/v2/convert.py --render-only`. Manual XHTML checks confirm the `Alas!` passage is one blockquote, `(John 6:63), to cause` is closed correctly, `Romans 1; 1 Corinthians 1` is rendered without the duplicate noise, and the highlighted quote-wrapped list anchors in `A Vindication` now render as bold structural markers. EPUB audit reports WARN with 0 errors and one repeated-phrase warning. Text-integrity remains WARN for broad triage queues, but inline structural marker candidates `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, and missing Hebrew clauses `0`. Bug-regression report PASS. V2 regression gate: `29 passed, 7 skipped`.

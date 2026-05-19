@@ -4,12 +4,12 @@
 - Warnings: 8
 - PDF pages: 555
 - EPUB text files: 47
-- EPUB paragraphs/headings: 2288
+- EPUB paragraphs/headings: 2281
 
 ## Coverage
 
 - PDF content tokens: 189781
-- EPUB content tokens: 189176
+- EPUB content tokens: 189174
 - Approximate PDF-to-EPUB coverage ratio: 0.9959
 - Pages checked: 550
 - Weak page matches: 7
@@ -26,9 +26,9 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 1951
+- Body paragraphs checked: 1958
 - Possible faulty paragraph splits: 209
-- Structural starts excluded from split warnings: 248
+- Structural starts excluded from split warnings: 250
 - Short fragments: 40
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
@@ -135,7 +135,7 @@
 
 ## Enumerator Sequence Candidates
 
-- file: EPUB/ch014.xhtml; marker: (2.); family: paren_decimal; context: (2.) The next thing that comes under consideration is, the way whereby we hold communion with the Lord Christ, in respect of that personal grace whereof we have spoken. Now, this the S
+- file: EPUB/ch014.xhtml; marker: (2.); family: paren_decimal; context: ion, Hosea 3:3; Song of Solomon 1:15 — On the part of Christ — On the part of the saints. (2.) The next thing that comes under consideration is, the way whereby we hold communion with the Lord Christ, in respect of that personal grace wh...
 
 ## Repeated Windows
 

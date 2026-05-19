@@ -17,7 +17,7 @@
 
 ## Content Checks
 
-- Greek chars: 4081
+- Greek chars: 4080
 - Untagged Greek chars: 0
 - Hebrew chars: 157
 - Untagged Hebrew chars: 0
@@ -28,7 +28,7 @@
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 6
+- Repeated phrase hits: 1
 
 ## Warnings
 
@@ -38,11 +38,7 @@
 
 ### repeated_phrase
 
-- `combined_text`: chapter 14 motives unto the love of christ
 - `combined_text`: meditations and discourses on the glory of christ
-- `combined_text`: meditations and discourses concerning the glory of christ
-- `combined_text`: chapter 8 of the state of corrupted nature
-- `combined_text`: chapter 10 of the person of jesus christ
 
 ### chapter_heading_in_paragraph
 

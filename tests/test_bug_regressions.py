@@ -258,7 +258,7 @@ def test_same_page_treatise_title_keeps_only_title_section():
     assert "This belongs to the next chapter" not in trimmed
 
 
-def test_summary_continuation_is_not_rendered_as_body_list_items():
+def test_summary_continuation_is_rendered_as_one_summary_paragraph():
     html, _, _ = markdown_to_html(
         "[[CHAPTER]] CHAPTER 5\n\n"
         "[[SUMMARY]] Other consequential affections: — 1 On the part of Christ — "
@@ -271,9 +271,13 @@ def test_summary_continuation_is_not_rendered_as_body_list_items():
         "(which is the second branch of that conjugal affection he bears towards them)."
     )
 
-    assert '<p class="chapter-summary">(1.) His incarnation;</p>' in html
-    assert '<p class="chapter-summary">(2.) Exinanition, 2 Corinthians 8:9;</p>' in html
-    assert '<p class="chapter-summary">2. Believers&#x27; estimation of Christ: —</p>' in html
+    summary_paragraphs = re.findall(r'<p class="chapter-summary">.*?</p>', html, re.S)
+    assert len(summary_paragraphs) == 1
+    summary = summary_paragraphs[0]
+    assert "(1.) His incarnation;" in summary
+    assert "(2.) Exinanition, 2 Corinthians 8:9;" in summary
+    assert "2. Believers&#x27; estimation of Christ: —" in summary
+    assert "</p> <p" not in summary
     assert '<p class="list-item"><b>(1.)</b> His incarnation' not in html
     assert '<h4 class="roman-subheading"><b>II.</b> Christ values his saints' in html
 
@@ -292,6 +296,60 @@ def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
     assert '<p class="list-item"><b>[1].</b> In respect of sanctification;</p>' in html
     assert '<p class="list-item"><b>[2.]</b> In respect of consolation: —</p>' in html
     assert '(2.)<b> For their consolation' not in html
+
+
+def test_quote_wrapped_structural_markers_are_unwrapped_and_bolded():
+    html, _, _ = markdown_to_html(
+        '"2dly. Our holiness, our obedience, work of righteousness, is one end.\n\n'
+        'Particularly, — " [1st.] It is the glory of the Father. And, — " [2dly.] '
+        'The Son is gloried thereby.'
+    )
+
+    assert '"2dly' not in html
+    assert '" [1st' not in html
+    assert '" [2dly' not in html
+    assert '<p class="list-item"><b>2dly.</b> Our holiness' in html
+    assert '<b>[1st.]</b> It is the glory of the Father' in html
+    assert '<b>[2dly.]</b> The Son is gloried thereby' in html
+
+
+def test_scholastic_quoted_objection_opener_moves_inside_blockquote():
+    html, _, _ = markdown_to_html(
+        'Objection 1. But some may say, "Alas! how shall I hold communion with '
+        'the Father in love? I know not at all whether he loves me or no;\n\n'
+        '[[BLOCKQUOTE]] and shall I venture to cast myself upon it? How if I '
+        'should not be accepted?"'
+    )
+
+    assert '<p class="list-item"><b>Objection 1.</b> But some may say,</p>' in html
+    assert (
+        '<blockquote epub:type="z3998:quotation"><p>&quot;Alas! how shall I hold '
+        'communion with the Father in love? I know not at all whether he loves '
+        'me or no; and shall I venture to cast myself upon it? How if I should '
+        'not be accepted?&quot;</p></blockquote>'
+    ) in html
+    assert 'But some may say, &quot;Alas!' not in html
+
+
+def test_open_parenthesis_scripture_reference_is_closed_before_following_prose():
+    cleaned = clean_text(
+        '(2.) He sends them his Holy Spirit, to quicken them, '
+        '(John 6:63, to cause them that are dead to hear his voice.'
+    )
+
+    assert '(John 6:63), to cause them' in cleaned
+    assert '(John 6:63, to cause' not in cleaned
+
+
+def test_duplicated_chapter_reference_noise_is_collapsed():
+    cleaned = clean_text(
+        'pronounces those censures, Romans 1:1 1; '
+        '1 Corinthians 1:11 Corinthians 1.'
+    )
+
+    assert 'pronounces those censures, Romans 1; 1 Corinthians 1.' in cleaned
+    assert 'Romans 1:1 1' not in cleaned
+    assert '1 Corinthians 1:11 Corinthians 1' not in cleaned
 
 
 def test_issue_29_scholarly_citation_breaks_are_healed():
@@ -324,6 +382,8 @@ Chapter,
 
 
 def test_issues_37_to_40_textual_todo_regressions_are_guarded():
+    if 1 not in VOLUMES:
+        pytest.skip("Issues 37-40 samples are volume 1-specific")
     html = epub_xhtml_text(1)
 
     assert "anything he has done ill. For what he so does" in html
