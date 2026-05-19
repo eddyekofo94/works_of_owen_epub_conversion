@@ -2,9 +2,9 @@
   "volume": 2,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/input/owen-v2.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-19T09:41:54.928022+00:00",
+  "generated_at": "2026-05-19T17:39:52.748395+00:00",
   "status": "warn",
-  "warning_count": 9,
+  "warning_count": 8,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -27,10 +27,6 @@
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     },
     {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
       "code": "overlong_heading_candidates",
       "message": "Some chapter headings are long enough to suggest swallowed body text"
     },
@@ -48,12 +44,12 @@
   },
   "epub": {
     "spine_text_files": 47,
-    "paragraph_count": 2365
+    "paragraph_count": 2288
   },
   "word_coverage": {
     "pdf_content_tokens": 189781,
-    "epub_content_tokens": 189073,
-    "coverage_ratio": 0.9953,
+    "epub_content_tokens": 189176,
+    "coverage_ratio": 0.9959,
     "missing_word_samples": [
       {
         "word": "cant",
@@ -65,13 +61,8 @@
   },
   "page_coverage": {
     "pages_checked": 550,
-    "weak_page_count": 9,
+    "weak_page_count": 7,
     "weak_pages": [
-      {
-        "page": 10,
-        "hit_ratio": 0.0,
-        "sample": "10 of communion with god the father son and holy ghost each person distinctly in love grace and consolation or the saints fellowship with"
-      },
       {
         "page": 14,
         "hit_ratio": 0.333,
@@ -96,11 +87,6 @@
         "page": 214,
         "hit_ratio": 0.333,
         "sample": "214 chapter how the saints hold communion with christ as to their acceptation with god what is required on the part of christ hereunto"
-      },
-      {
-        "page": 343,
-        "hit_ratio": 0.333,
-        "sample": "343 vindication of some passages in discourse concerning communion with god it is now near twenty years since wrote and published discourse concerning communion"
       },
       {
         "page": 456,
@@ -466,7 +452,7 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 3,
+    "missing_top_window_count": 2,
     "missing_top_windows": [
       {
         "page": 25,
@@ -477,11 +463,6 @@
         "page": 155,
         "window": "two things are required that we may pray for the things in the promise",
         "sample": "Two things are required, that we may pray for the things in the promise, as they are in the promise: —"
-      },
-      {
-        "page": 344,
-        "window": "are not themselves altogether insensible among the things which this sort of men sought",
-        "sample": "are not themselves altogether insensible. Among the things which this sort of men sought to make an advantage of against me, I found that two or"
       }
     ]
   },
@@ -490,7 +471,7 @@
     "bottom_windows_usable": 507,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 15,
+    "missing_bottom_window_count": 14,
     "missing_bottom_windows": [
       {
         "page": 2,
@@ -543,11 +524,6 @@
         "sample": "Acts 13:2; he furnisheth them work, and they are separated unto him,"
       },
       {
-        "page": 343,
-        "window": "with all sorts of persons pretending unto the least sobriety or modesty suppose they",
-        "sample": "how openly their endeavors are sunk into contempt with all sorts of persons pretending unto the least sobriety or modesty, — I suppose they"
-      },
-      {
         "page": 477,
         "window": "john 17 glorify thou me with beginning or ever the earth was",
         "sample": "John 17:5, \"Glorify thou me with beginning, or ever the earth was.\""
@@ -570,8 +546,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2023,
-    "split_candidate_count": 201,
+    "paragraphs_checked": 1951,
+    "split_candidate_count": 209,
     "split_candidates": [
       {
         "file": "EPUB/ch002.xhtml",
@@ -640,7 +616,7 @@
       },
       {
         "file": "EPUB/ch009.xhtml",
-        "previous": "John 16:26,27, saith our Savior,",
+        "previous": "3. John 16:26,27, saith our Savior,",
         "next": "But how is this, that our Savior saith, \"I say not that I will pray the Father for you,\" when he saith plainly, chapter 14:16, \"I will pray the Father for you?\" The disciples, with"
       },
       {
@@ -774,8 +750,8 @@
         "next": "and as it were by the works of the law; I am now willing to receive thee and to be saved in thy way, — merely by grace: and though I would have walked according is my own mind, yet"
       }
     ],
-    "structural_start_exclusions": 251,
-    "short_fragment_count": 36,
+    "structural_start_exclusions": 248,
+    "short_fragment_count": 40,
     "short_fragments": [
       {
         "file": "EPUB/ch002.xhtml",
@@ -784,14 +760,6 @@
       {
         "file": "EPUB/ch008.xhtml",
         "text": "— of which place afterward."
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "text": "John 16:26,27, saith our Savior,"
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "text": "Hebrews 1:3; of which before."
       },
       {
         "file": "EPUB/ch016.xhtml",
@@ -863,7 +831,31 @@
       },
       {
         "file": "EPUB/ch040.xhtml",
-        "text": "Applied unto the Son, John 12:41."
+        "text": "1 Corinthians 10:9,"
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "Revelation 1:8,"
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "1 Corinthians 3:16,"
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "Matthew 28:19,"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "Matthew 1:20-23,"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "Romans 1:32,"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "1 John 4:9,"
       },
       {
         "file": "EPUB/ch042.xhtml",
@@ -930,17 +922,8 @@
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 2,
-    "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch035.xhtml",
-        "text": "280. \"As for example,\" saith he, \"Christ is called a husband, the church his spouse; and now all the invitations of the gospel are Christ's wooing and making love to his spouse; — and what other men call believing the go"
-      },
-      {
-        "file": "EPUB/ch035.xhtml",
-        "text": "14. And it is strange to apprehend how he came to imagine that I said he did it not as our mediator, but as a private man. That which, possibly, might cast his thoughts into this disorder was, that he knew not that Chris"
-      }
-    ],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
     "roman_heading_candidate_count": 0,
     "roman_heading_candidates": [],
     "overlong_heading_candidate_count": 5,
@@ -995,7 +978,7 @@
             "context": "ath. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of belie"
           },
           {
-            "location": "EPUB/ch008.xhtml#p134",
+            "location": "EPUB/ch008.xhtml#p130",
             "context": "(1.) When the same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them. So are grace and peace, Revelation"
           }
         ]
@@ -1014,7 +997,7 @@
             "context": "elievers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conjugal affection — On the part of Chri"
           },
           {
-            "location": "EPUB/ch008.xhtml#p137",
+            "location": "EPUB/ch008.xhtml#p133",
             "context": "(2.) When the same thing is attributed severally and singly unto each person. There is, indeed, no gracious influence from above, no illapse of light, life, love, or grace upon our hea"
           }
         ]
@@ -1025,15 +1008,15 @@
         "epub": 4,
         "examples": [
           {
-            "location": "EPUB/ch035.xhtml#p1786",
-            "context": "\"(2dly.) The Son has ordained and appointed it as mediator."
+            "location": "EPUB/ch035.xhtml#p1738",
+            "context": "\"(2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, — \"(3dly.) T"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1790",
+            "location": "EPUB/ch035.xhtml#p1741",
             "context": "\"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1790",
+            "location": "EPUB/ch035.xhtml#p1741",
             "context": "ople, zealous of good works.\" This was his aim, his design, in giving himself for us; as \"(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
           }
         ]
@@ -1052,7 +1035,7 @@
             "context": "st: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conjugal affection — On the part of Christ, pity or compassion — Whe"
           },
           {
-            "location": "EPUB/ch010.xhtml#p254",
+            "location": "EPUB/ch010.xhtml#p249",
             "context": "(3.) Let it have its proper fruit and efficacy upon thy heart, in return of love to him again. So shall we walk in the light of God's countenance, and hold holy communion with our Fath"
           }
         ]
@@ -1067,11 +1050,11 @@
             "context": "on; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own liv"
           },
           {
-            "location": "EPUB/ch012.xhtml#p312",
+            "location": "EPUB/ch012.xhtml#p306",
             "context": "(4.) Comfort."
           },
           {
-            "location": "EPUB/ch012.xhtml#p319",
+            "location": "EPUB/ch012.xhtml#p313",
             "context": "(4.) Supportment and consolation, verse 6, \"His left hand is under my head, and his right hand does embrace me.\" Christ here has the posture of a most tender friend towards any one in"
           }
         ]
@@ -1107,6 +1090,14 @@
     {
       "phrase": "father that in him should all fullness dwell colossians 19",
       "count": 6
+    },
+    {
+      "phrase": "there are diversities of operations but it is the same",
+      "count": 5
+    },
+    {
+      "phrase": "are diversities of operations but it is the same god",
+      "count": 5
     },
     {
       "phrase": "our fellowship is with the father and with his son",
@@ -1179,14 +1170,6 @@
     {
       "phrase": "the righteousness of the law might be fulfilled in us",
       "count": 5
-    },
-    {
-      "phrase": "our sins in his own body on the tree peter",
-      "count": 5
-    },
-    {
-      "phrase": "vindication of some passages in discourse concerning communion with god",
-      "count": 4
     }
   ],
   "greek_hebrew_word_coverage": {

@@ -2187,10 +2187,143 @@ The failures were spread across both stages. Stage 1 still trusted AGES marker t
 ### 4. Validation
 
 - Full Volume 2 rebuild completed with `.venv/bin/python3 volumes/v2/convert.py`.
-- EPUB audit: PASS, 0 errors, 0 warnings; unprocessed AGES markers `0`, literal footnote markers `0`, untagged Greek `0`, untagged Hebrew `0`.
-- Text-integrity audit: WARN with remaining broad triage classes, but Greek clauses missing `0`, Hebrew clauses missing `0`, front CONTENTS missing pages `0`, reference continuation splits `0`, citation continuation splits `0`, and missing enumerator forms `0`.
+- EPUB audit: WARN, 0 errors, 1 warning for a repeated phrase sample; unprocessed AGES markers `0`, literal footnote markers `0`, untagged Greek `0`, untagged Hebrew `0`.
+- Text-integrity audit: WARN with remaining broad triage classes, but Greek clauses missing `0`, Hebrew clauses missing `0`, front CONTENTS missing pages `0`, reference continuation splits `0`, citation continuation splits `0`, suspicious large-number starts `0`, and missing enumerator forms `0`.
 - Bug-regression report: PASS. Concrete recurring samples for `Proverbs ... Song of Solomon`, `I WILL/I AM`, raw AGES markers, and scholastic leaks are now guarded.
-- Pytest suite for the touched hardening areas: `38 passed`.
+- Pytest suite for the touched hardening areas: `28 passed`.
+
+---
+
+## [Issue 122] Volume 2 Textual Blemish Analysis Follow-Up
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+The follow-up analysis in `volumes/v2/bugs_fixes/Blemishes/textual.md` identified several defects that were either not fully handled by the previous shared cleanup or were handled too narrowly: `Himsel[f2]` should not become a noteref, ordinal spacing such as `1st .` and `2ndly .` needed normalizing, Analysis needed outline styling rather than long headings, same-page treatise titles needed to release body prose, and scholarly references such as `p. 280`, `sec. 14`, `Aen. 10. 846`, and `Liv., Hist. viii. 9` were still vulnerable to structural splitting.
+
+### 2. Root Cause
+
+The extraction and render stages were each doing part of the repair, so a fix in only one layer could still fail later. Stage 1 could heal `p. 280` into one paragraph, but Stage 2 could then split `280.` back out as a numbered list marker. Similarly, the treatise-title extractor could find the centered title, but without a body-remainder path the prose following the title page stayed trapped inside the title section.
+
+### 3. Fixes
+
+- Reclassified the `Himsel[f2]` overlap as corrupted `Himself`, not a footnote marker.
+- Added global OCR repair for `I a will` -> `I will`.
+- Normalized plain and bold ordinal spacing for `1st.`, `2ndly.`, and related forms.
+- Added blank-line and structural-marker guards for Scripture references, page references, section references, and classical citations.
+- Extended render-side citation guards so `sec. 14`, `Aen. 10. 846`, and `Liv., Hist. viii. 9` stay in their sentence instead of becoming list items.
+- Split pre-rendered treatise title sections from same-page body prose, preserving the title page while passing the following prose through normal paragraph rendering.
+- Added a shared Analysis preprocessor and `analysis-part` styling so Analysis pages render as outline paragraphs instead of overlong headings.
+- Removed the V2-specific structural post-extract hook and moved the durable behavior into shared extraction/render code.
+
+### 4. Validation
+
+- Volume 2 render-only rebuild completed after the full Stage 1 rebuild.
+- Manual XHTML checks confirmed: no `Himsel[f2]`, no `f2` noteref at the `Himself` list, no `( John`, no `p.`/`sec.` paragraph split samples, no split `Aen. 10. 846`, no split `Liv., Hist. viii. 9`, and `A Vindication` now has a title section followed by normal prose paragraphs.
+- EPUB audit: WARN, 0 errors, 1 repeated-phrase warning; concrete blemish classes are clear.
+- Text-integrity audit: WARN, coverage `0.9963`; reference continuation splits `0`, citation continuation splits `0`, suspicious large-number starts `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS after ratcheting the V2 split budget to the current mechanical triage count.
+- Focused regression tests: `28 passed`.
+
+---
+
+## [Issue 123] Volume 2 Same-Page Analysis Boundary
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+The `Analysis` section appeared twice: once under `Prefatory Note` and once as its own chapter. In the source PDF, the end of `Prefatory Note` and the start of `Analysis` share page 10, so the overlap was easy to miss in page-range based extraction.
+
+### 2. Root Cause
+
+The same-page TOC boundary logic only cut a previous chapter at later major markers (`PART`, `CHAPTER`, `DIGRESSION`). The `Analysis` opener is marked as `[[SUBTITLE]] ANALYSIS`, so it was not treated as the next chapter boundary even though the next TOC title was `Analysis.`
+
+### 3. Fix
+
+- Extended same-page boundary trimming in `build_chapters_from_toc()` to capture marker text.
+- Kept the existing major-marker behavior, but added a text match against the next TOC title so `[[SUBTITLE]] ANALYSIS` and similar markers can terminate the previous chapter when they own the next entry.
+- Avoided a V2-specific override; the rule is structural and should help later volumes with same-page front-matter or title transitions.
+
+### 4. Validation
+
+- Full Volume 2 rebuild completed with `.venv/bin/python3 volumes/v2/convert.py`.
+- Manual JSON/XHTML inspection confirmed `Prefatory Note` has `ANALYSIS=0`, while the following `Analysis` chapter still contains the heading and outline.
+- EPUB audit: WARN, 0 errors, 1 repeated-phrase warning.
+- Text-integrity audit: WARN; reference continuation splits `0`, citation continuation splits `0`, suspicious large-number starts `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS.
+- Pytest regression suite: `28 passed`.
+
+---
+
+## [Issue 124] Volume 2 Same-Page Part/Chapter Ownership
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+Screenshots showed `CHAPTER 1` twice at the openings of Part 1 and Part 2. The same chapter heading and body appeared once under the Part title page and again under the real Chapter 1 entry.
+
+### 2. Root Cause
+
+The inner title-page formatter correctly returned a pre-rendered `<section class="treatise-title-page">`, but for sparse Part pages it also returned the same-page body remainder. That behavior is useful when the TOC entry itself owns the page, but it is wrong when the next TOC entry starts on the same page. In that case, the Part entry owns only the title-page section and the next Chapter entry owns the body.
+
+### 3. Fix
+
+- Added `_keep_only_prerendered_treatise_title_page()` in `extract.py`.
+- In same-start-page TOC boundary handling, treatise/part entries now strip any trailing body text after the pre-rendered title section before normal marker trimming.
+- Kept the existing body-remainder behavior for title pages that do not share their start page with the next TOC entry.
+- Added regression tests for the helper and the concrete Volume 2 `Part 1` / `Part 2` chapter-duplication samples.
+
+### 4. Validation
+
+- Full Volume 2 rebuild completed with `.venv/bin/python3 volumes/v2/convert.py`.
+- Manual JSON/XHTML inspection confirmed `Part 1` and `Part 2` contain no `CHAPTER 1` or chapter prose; the following Chapter 1 files contain their heading and body once.
+- EPUB audit: WARN, 0 errors, 1 repeated-phrase warning. Noteref links and endnote anchors now both report `26`.
+- Text-integrity audit: WARN; adjacent duplicate paragraphs `0`, reference continuation splits `0`, citation continuation splits `0`, suspicious large-number starts `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS.
+- Regression tests: default gate `29 passed, 1 skipped`; Volume 2 gate `24 passed, 6 skipped`.
+
+---
+
+## [Issue 125] Volume 2 Summary Continuations and Bracketed Enumerators
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+Chapter 5 had two related rendering defects. The chapter summary continued through several numbered outline lines before the body section `II.`, but those lines were rendered as body list items. Later in the chapter, `**(2.)**` was malformed into `(2.)<b>...`, and `**[1].**` remained inline after an em dash instead of starting a new list item.
+
+### 2. Root Cause
+
+`[[SUMMARY]]` only applied to the first paragraph after the structural token. Subsequent summary outline paragraphs were sent through the normal body list renderer. Separately, a broad cleanup for stray markdown bold markers stripped the opening `**` from already-correct structural markers, and the inline-marker regexes did not include bracketed markers with punctuation outside the bracket (`[1].`).
+
+### 3. Fix
+
+- Added `summary_continuation_active` handling in `markdown_to_html()`.
+- Structural paragraphs immediately following `[[SUMMARY]]` now render as `chapter-summary` until a long Roman body heading begins.
+- Added summary-specific rendering that strips marker bold rather than promoting summary outline markers to body list items.
+- Preserved structural markdown bold on valid markers before converting `**...**` to `<b>`.
+- Extended render and audit regexes to treat `[1].` as a structural marker form.
+- Added focused regression tests for both the Chapter 5 summary pattern and the `(2.)` / `[1].` body-list sequence.
+
+### 4. Validation
+
+- Volume 2 render-only rebuild completed with `.venv/bin/python3 volumes/v2/convert.py --render-only`.
+- Manual XHTML inspection confirmed Chapter 5 summary continuation paragraphs use `chapter-summary`, `(2.)` is cleanly bolded, and `[1].` / `[2.]` start their own list items.
+- EPUB audit: WARN, 0 errors, 1 repeated-phrase warning.
+- Text-integrity audit: WARN; inline structural marker candidates `0`, adjacent duplicate paragraphs `0`, reference continuation splits `0`, citation continuation splits `0`, suspicious large-number starts `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS.
+- Regression tests: default gate `31 passed, 1 skipped`; Volume 2 gate `26 passed, 6 skipped`.
 
 ---
 

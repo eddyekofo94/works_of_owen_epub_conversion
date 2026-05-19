@@ -143,6 +143,23 @@ def test_fused_footnote_marker_before_word_is_isolated():
     assert "f53and" not in cleaned
 
 
+def test_false_himself_footnote_overlap_becomes_second_list_item():
+    paragraphs = reconstruct_paragraphs(
+        clean_text(
+            "Now, the things may be referred to these two heads: —\n\n"
+            "1. Himsel[f2]. His kingdom.\n\n"
+            "1. Himself.\n\n"
+            "2. His kingdom."
+        )
+    )
+
+    joined = "\n".join(paragraphs)
+    assert "1. Himself" in joined
+    assert "2. His kingdom" in joined
+    assert "[f2]" not in joined
+    assert "Himsel[" not in joined
+
+
 def test_ages_song_of_solomon_marker_does_not_keep_stale_proverbs_book():
     cleaned = clean_text(
         "opened, Proverbs 4:16<220416>; also Proverbs 2:1<220201>-7. "
@@ -171,19 +188,106 @@ def test_footnote_merge_translates_ages_verse_markers():
 
 
 def test_i_will_and_i_am_are_not_forced_to_all_caps():
-    cleaned = clean_text("If he open the door, I WILL come in; for I AM ready.")
+    cleaned = clean_text("If he open the door, I WILL come in; for I AM ready. 'I a will arise;'")
 
     assert "I will come in" in cleaned
     assert "I am ready" in cleaned
+    assert "I will arise" in cleaned
     assert "I WILL come in" not in cleaned
     assert "I AM ready" not in cleaned
+    assert "I a will" not in cleaned
 
 
 def test_parenthesized_scripture_refs_do_not_keep_opening_space():
-    cleaned = clean_text('the dead hear his voice and live." ( Matthew 3:17; John 5:25.)')
+    cleaned = clean_text('the dead hear his voice and live." ( Matthew 3:17; John 5:25.) ** Strong text')
 
     assert "(Matthew 3:17; John 5:25.)" in cleaned
     assert "( Matthew" not in cleaned
+    assert "** Strong text" in cleaned
+
+
+def test_ordinal_spacing_handles_bold_and_adverbial_forms():
+    cleaned = clean_text("**1st** . Resolution.\n\n2ndly . Diligence.\n\n**3rdly** , Another.")
+
+    assert "**1st**. Resolution" in cleaned
+    assert "2ndly. Diligence" in cleaned
+    assert "**3rdly**," in cleaned
+
+
+def test_reference_and_scripture_false_breaks_are_healed():
+    raw = (
+        "He considers what is the state of the world in reference to them.\n\n"
+        "Zechariah 1:11, \"We have walked to and fro.\"\n\n"
+        "which he treats of, p.\n\n"
+        "280. \"As for example,\" saith he.\n\n"
+        "obedience, p. 181,' sec.\n\n"
+        "14. And it is strange.\n\n"
+        '"Morte tua vivens?" — Aen.\n\n'
+        "10. 846.\n\n"
+        "Liv., Hist. viii.\n\n"
+        "9. His son,"
+    )
+
+    joined = "\n".join(reconstruct_paragraphs(clean_text(raw)))
+    assert "them. Zechariah 1:11" in joined
+    assert 'p. 280. "As for example' in joined
+    assert "sec. 14. And it is strange" in joined
+    assert "Aen. 10. 846." in joined
+    assert "Liv., Hist. viii. 9. His son" in joined
+
+
+def test_same_page_treatise_title_keeps_only_title_section():
+    from extract import _keep_only_prerendered_treatise_title_page
+
+    raw = (
+        '<section class="treatise-title-page" epub:type="titlepage">'
+        '<p class="title-line -major">PART 2</p></section> '
+        'CHAPTER 1\n\nThis belongs to the next chapter.'
+    )
+
+    trimmed = _keep_only_prerendered_treatise_title_page(raw)
+    assert trimmed == (
+        '<section class="treatise-title-page" epub:type="titlepage">'
+        '<p class="title-line -major">PART 2</p></section>'
+    )
+    assert "CHAPTER 1" not in trimmed
+    assert "This belongs to the next chapter" not in trimmed
+
+
+def test_summary_continuation_is_not_rendered_as_body_list_items():
+    html, _, _ = markdown_to_html(
+        "[[CHAPTER]] CHAPTER 5\n\n"
+        "[[SUMMARY]] Other consequential affections: — 1 On the part of Christ — "
+        "He values his saints — Evidences of that valuation: —\n\n"
+        "**(1.)** His incarnation; **(2.)** Exinanition, 2 Corinthians 8:9;\n\n"
+        "**(3.)** Obedience as a servant;\n\n"
+        "2. Believers' estimation of Christ: —\n\n"
+        "**(1.)** They value him above all other things and persons;\n\n"
+        "II. Christ values his saints, values believers "
+        "(which is the second branch of that conjugal affection he bears towards them)."
+    )
+
+    assert '<p class="chapter-summary">(1.) His incarnation;</p>' in html
+    assert '<p class="chapter-summary">(2.) Exinanition, 2 Corinthians 8:9;</p>' in html
+    assert '<p class="chapter-summary">2. Believers&#x27; estimation of Christ: —</p>' in html
+    assert '<p class="list-item"><b>(1.)</b> His incarnation' not in html
+    assert '<h4 class="roman-subheading"><b>II.</b> Christ values his saints' in html
+
+
+def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
+    html, _, _ = markdown_to_html(
+        "**(1.)** For their sanctification;\n\n"
+        "**(2.)** For their consolation: to which two all the particular acts of "
+        "purging, teaching, anointing, and the rest that are ascribed to him, may "
+        "be referred. So there be two ways whereby we may grieve him: — "
+        "**[1].** In respect of sanctification;\n\n"
+        "**[2.]** In respect of consolation: —"
+    )
+
+    assert '<p class="list-item"><b>(2.)</b> For their consolation:' in html
+    assert '<p class="list-item"><b>[1].</b> In respect of sanctification;</p>' in html
+    assert '<p class="list-item"><b>[2.]</b> In respect of consolation: —</p>' in html
+    assert '(2.)<b> For their consolation' not in html
 
 
 def test_issue_29_scholarly_citation_breaks_are_healed():
@@ -340,6 +444,38 @@ def test_issue_33_shared_treatise_starter_pages_are_split_in_intermediate(volume
     assert '<section class="treatise-title-page"' not in greater_chapter_raw
     assert "Ques. 1. What is Christian religion?" in greater_chapter_raw
     assert "Ans. The only way" in greater_chapter_raw
+
+
+@pytest.mark.parametrize("volume", VOLUMES)
+def test_v2_same_page_part_entries_do_not_duplicate_chapter_one(volume):
+    if volume != 2:
+        pytest.skip("V2 same-page Part/Chapter samples are volume 2-specific")
+
+    part_1 = chapter_matching(volume, r"^Part 1\.$")
+    assert '<section class="treatise-title-page"' in part_1["raw_text"]
+    assert "PART 1" in part_1["raw_text"]
+    assert "CHAPTER 1" not in part_1["raw_text"]
+    assert "That the saints have communion with God" not in part_1["raw_text"]
+
+    part_1_chapter = chapter_matching(volume, r"^Chapter 1\.$")
+    assert part_1_chapter["raw_text"].startswith("[[CHAPTER]] CHAPTER 1")
+    assert "That the saints have communion with God" in part_1_chapter["raw_text"]
+    assert '<section class="treatise-title-page"' not in part_1_chapter["raw_text"]
+
+    part_2 = chapter_matching(volume, r"^Part 2 - Of Communion With the Son Jesus Christ$")
+    assert '<section class="treatise-title-page"' in part_2["raw_text"]
+    assert "PART 2" in part_2["raw_text"]
+    assert "CHAPTER 1" not in part_2["raw_text"]
+    assert "Of the fellowship which the saints have with Jesus Christ" not in part_2["raw_text"]
+
+    matching_chapters = [
+        chapter for chapter in volume_intermediate(volume)["chapters"]
+        if chapter["title"] == "Chapter 1"
+        and "Of the fellowship which the saints have with Jesus Christ" in chapter["raw_text"]
+    ]
+    assert len(matching_chapters) == 1
+    assert matching_chapters[0]["raw_text"].startswith("[[CHAPTER]] CHAPTER 1")
+    assert '<section class="treatise-title-page"' not in matching_chapters[0]["raw_text"]
 
 
 @pytest.mark.parametrize("volume", VOLUMES)
@@ -645,6 +781,8 @@ def test_issue_29_scholarly_citation_splits_do_not_recur_in_epub(volume):
 
 @pytest.mark.parametrize("volume", VOLUMES)
 def test_issue_32_page_384_reference_run_does_not_recur_in_epub(volume):
+    if volume != 1:
+        pytest.skip("Issue 32 page 384 sample is volume 1-specific")
     _, epub_path = paths_for(volume)
     if not epub_path.exists():
         pytest.skip(f"EPUB for volume {volume} not found at {epub_path}")

@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 201 | 201 | OK |
+| Possible faulty paragraph splits | 209 | 209 | OK |
 | Inline structural marker candidates | 0 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -27,7 +27,7 @@
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 0 | 7 | OK |
+| Repeated phrase hits | 1 | 7 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
@@ -76,6 +76,10 @@
 - phrase: pleased the father that in him should all fullness dwell
 - phrase: the father that in him should all fullness dwell colossians
 - phrase: father that in him should all fullness dwell colossians 19
+
+### Repeated phrase hits
+
+- file: combined_text; text: part 3 of communion with the holy ghost
 
 ### Chapter headings rendered as paragraphs
 

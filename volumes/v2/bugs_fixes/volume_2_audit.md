@@ -1,8 +1,8 @@
 # EPUB Audit: volume_2.epub
 
-- Status: **PASS**
+- Status: **WARN**
 - Errors: 0
-- Warnings: 0
+- Warnings: 1
 
 ## Summary
 
@@ -21,16 +21,24 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 633
 - Untagged Hebrew chars: 0
-- Noteref links: 27
+- Noteref links: 26
 - Endnote anchors: 26
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 0
+- Repeated phrase hits: 1
+
+## Warnings
+
+- `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
+
+### repeated_phrase
+
+- `combined_text`: part 3 of communion with the holy ghost
 
 ### chapter_heading_in_paragraph
 

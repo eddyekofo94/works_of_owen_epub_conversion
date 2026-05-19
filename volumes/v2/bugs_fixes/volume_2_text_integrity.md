@@ -1,40 +1,40 @@
 # Text Integrity Audit: Volume 2
 
 - Status: **WARN**
-- Warnings: 9
+- Warnings: 8
 - PDF pages: 555
 - EPUB text files: 47
-- EPUB paragraphs/headings: 2365
+- EPUB paragraphs/headings: 2288
 
 ## Coverage
 
 - PDF content tokens: 189781
-- EPUB content tokens: 189073
-- Approximate PDF-to-EPUB coverage ratio: 0.9953
+- EPUB content tokens: 189176
+- Approximate PDF-to-EPUB coverage ratio: 0.9959
 - Pages checked: 550
-- Weak page matches: 9
+- Weak page matches: 7
 - Dense source windows checked: 835
 - Missing dense source-window pages: 539
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 542
 - Top-of-page windows skipped as unstable: 29
-- Missing top-of-page body windows: 3
+- Missing top-of-page body windows: 2
 - Bottom-of-page body windows checked: 507
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 15
+- Missing bottom-of-page body windows: 14
 
 ## Paragraphs
 
-- Body paragraphs checked: 2023
-- Possible faulty paragraph splits: 201
-- Structural starts excluded from split warnings: 251
-- Short fragments: 36
+- Body paragraphs checked: 1951
+- Possible faulty paragraph splits: 209
+- Structural starts excluded from split warnings: 248
+- Short fragments: 40
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 2
+- Suspicious large-number starts: 0
 - Roman heading candidates: 0
 - Overlong heading candidates: 5
 - Front-matter heading/body candidates: 0
@@ -64,7 +64,6 @@
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
@@ -86,7 +85,6 @@
 
 - page: 25; sample: wherein the saints have communion with God. f19 As all the spiritual ascendings of their souls are assigned unto them respectively, so all their
 - page: 155; sample: Two things are required, that we may pray for the things in the promise, as they are in the promise: —
-- page: 344; sample: are not themselves altogether insensible. Among the things which this sort of men sought to make an advantage of against me, I found that two or
 
 ## Missing Bottom-Of-Page Body Windows
 
@@ -114,11 +112,6 @@
 - file: EPUB/ch008.xhtml; previous: Which yet is set forth with more glory, chapter 5:8,; next: and verses 13,14, "Every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and hon
 - file: EPUB/ch008.xhtml; previous: And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,; next: And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew
 
-## Suspicious Large-Number Starts
-
-- file: EPUB/ch035.xhtml; text: 280. "As for example," saith he, "Christ is called a husband, the church his spouse; and now all the invitations of the gospel are Christ's wooing and making love to his spouse; — and what other men call believing the go
-- file: EPUB/ch035.xhtml; text: 14. And it is strange to apprehend how he came to imagine that I said he did it not as our mediator, but as a private man. That which, possibly, might cast his thoughts into this disorder was, that he knew not that Chris
-
 ## Overlong Heading Candidates
 
 - file: EPUB/ch013.xhtml; tag: h4; text: II. Having manifested that the saints hold peculiar fellowship with the Lord Jesus, it neatly follows that we show wherein it is that they have this peculiar communion with him.
@@ -131,14 +124,14 @@
 
 - file: EPUB/ch002.xhtml; text: DANIEL BURGESS
 - file: EPUB/ch008.xhtml; text: — of which place afterward.
-- file: EPUB/ch009.xhtml; text: John 16:26,27, saith our Savior,
-- file: EPUB/ch016.xhtml; text: Hebrews 1:3; of which before.
 - file: EPUB/ch016.xhtml; text: Wherefore, —
 - file: EPUB/ch018.xhtml; text: Afflictions.
 - file: EPUB/ch019.xhtml; text: Hereof, then, are two parts: —
 - file: EPUB/ch020.xhtml; text: Of which in the ensuing chapters.
 - file: EPUB/ch021.xhtml; text: Therefore, —
 - file: EPUB/ch021.xhtml; text: [2ndly.] Peace.
+- file: EPUB/ch021.xhtml; text: [3rdly.] Usefulness.
+- file: EPUB/ch022.xhtml; text: For, —
 
 ## Enumerator Sequence Candidates
 
@@ -151,11 +144,11 @@
 - phrase: pleased the father that in him should all fullness dwell; count: 6
 - phrase: the father that in him should all fullness dwell colossians; count: 6
 - phrase: father that in him should all fullness dwell colossians 19; count: 6
+- phrase: there are diversities of operations but it is the same; count: 5
+- phrase: are diversities of operations but it is the same god; count: 5
 - phrase: our fellowship is with the father and with his son; count: 5
 - phrase: fellowship is with the father and with his son jesus; count: 5
 - phrase: it pleased the father that in him should all fullness; count: 5
-- phrase: to be propitiation through faith in his blood to declare; count: 5
-- phrase: be propitiation through faith in his blood to declare his; count: 5
 
 ## Missing Word Samples
 

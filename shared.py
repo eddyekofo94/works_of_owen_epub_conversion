@@ -7,7 +7,11 @@ and EPUB3 stylesheets.
 
 import unicodedata
 import re
+import os
+import sys
+import json
 from copy import deepcopy
+from pathlib import Path
 
 GREEK_FONT_MARKERS = ('Koine',)
 HEBREW_FONT_MARKERS = ('Gideon',)
@@ -58,8 +62,17 @@ VOLUME_SUBTITLES = {
 }
 
 # Global Volume Configuration
-# NOTE: Volume-specific OCR fixes or layout hooks MUST be kept in 
+# NOTE: Volume-specific OCR fixes or layout hooks MUST be kept in
 # volumes/vN/convert.py via the OVERRIDES dictionary to keep this file clean.
+#
+# Supported OVERRIDES keys (in addition to any VOLUME_CONFIG key):
+#   page_height (int)  — PDF page height in pts; default 626. Override when a
+#                        volume's PDF has non-standard dimensions so that
+#                        coordinate_redactor clips the correct margin zones.
+#   top_margin (int)   — top margin strip in pts; default 35.
+#   bottom_margin (int)— bottom margin strip in pts; default 20.
+#   post_extract_hook  — callable(intermediate_dict) → intermediate_dict for
+#                        structural re-tagging after Stage 1 extraction.
 VOLUME_CONFIG = {
     1: {
         'title': 'The Works of John Owen, Volume 1: The Glory of Christ',
@@ -344,7 +357,19 @@ def run_volume_cli(vol_num, overrides=None, description=None):
 
     if not args.render_only:
         print(f'=== Volume {vol_num}: Stage 1 — Extract ===')
-        extract_volume(vol_num, overrides=overrides)
+        intermediate = extract_volume(vol_num, overrides=overrides)
+        
+        # Issue: Blemish fixes often require post-processing the whole intermediate JSON
+        # (e.g. merging chapters, structural re-tagging) before rendering.
+        post_extract_hook = (overrides or {}).get('post_extract_hook')
+        if post_extract_hook:
+            print(f'[shared] Running post_extract_hook for Volume {vol_num}')
+            intermediate = post_extract_hook(intermediate)
+            # Write back the modified intermediate
+            vol_dir = Path(__file__).parent / 'volumes' / f'v{vol_num}'
+            out_json = vol_dir / 'intermediate' / f'volume_{vol_num}.json'
+            with open(out_json, 'w', encoding='utf-8') as f:
+                json.dump(intermediate, f, indent=2, ensure_ascii=False)
 
     if not args.extract_only:
         print(f'=== Volume {vol_num}: Stage 2 — Render ===')
@@ -805,8 +830,6 @@ def convert_gideon_hebrew(encoded):
     Unknown Gideon characters are logged to stderr (once per character per
     session) so gaps in HEBREW_GIDEON_MAP can be identified and filled.
     """
-    import re
-    import sys
     _warned_chars: set = getattr(convert_gideon_hebrew, '_warned_chars', set())
     convert_gideon_hebrew._warned_chars = _warned_chars
 
@@ -873,35 +896,435 @@ def convert_gideon_hebrew(encoded):
 
 
 # ============================================================================
+# PIPELINE CONSTANTS — shared between extract.py and render.py
+# Moving these here eliminates the extract → render import dependency.
+# ============================================================================
+
+FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
+LOOSE_FOOTNOTE_MARKER_RE = re.compile(
+    r'\[\s*f\s*(\d{1,3})\s*\]|'
+    r'(?<=[a-z])f\s*(\d{1,3})(?=[a-z])|'
+    r'(?<![A-Za-z])f\s*(\d{1,3})(?=[a-z])|'
+    r'(?<=[a-z])f\s*(\d{1,3})\b|'
+    r'(?<![A-Za-z])f\s*(\d{1,3})\b',
+    re.I,
+)
+FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
+FT_MARKER_RE = re.compile(r'^ft(\d+)\s*', re.I)
+EMPTY_BRACKET_RE = re.compile(r'\[\s*\]')
+
+STRUCTURAL_START_RE = re.compile(
+    r'^(?:(?:\*\*|__)?)'
+    r'(?:'
+    r'(?!\d{4}\.)\d{1,3}\.\s+|'                         # 5. Mankind...
+    r'\((?!\d{4}\))\d+\.?\)\s+|'                    # (1.) There... / (1) There...
+    r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)\s+|'  # (1st,) Such...
+    r'\[\d+\.?\]\.?\s+|'                    # [1.] There... / [1]. There...
+    r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?\s+|'  # [1st,] There...
+    r'[IVXLCDM]+\.\s+|'                  # I. / II.
+    r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)\s+|'                       # Q. / Ques. / Ans. / A. 1.
+    r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.?)\s+|'
+    r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
+    r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?\s+|'  # 2ndly, 3rdly
+    r'(?:First|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Lastly|Again|But)\b[,.]?\s+'
+    r')'
+)
+INLINE_STRUCTURAL_MARKER_RE = re.compile(
+    r'(?<!^)(?P<lead>\s+)'
+    r'(?P<marker>'
+    r'\((?!\d{4}\))\d+\.?\)|'
+    r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)|'
+    r'\[\d+\.?\]|'
+    r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]|'
+    r'\*\*\d+\.\*\*|'
+    r'\*\*\((?!\d{4}\))\d+\.?\)\*\*|'
+    r'\*\*\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)\*\*|'
+    r'\*\*\[\d+\.?\]\.?\*\*|'
+    r'\*\*\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?\*\*|'
+    r'\*\*\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)\*\*\s*[,.;]?|'
+    r'\*\*[IVXLCDM]+\.\*\*|'
+    r'[IVXLCDM]+\.|'
+    r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
+    r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
+    r'(?:Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?)\s*(?:\d+\.)?|'
+    r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
+    r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
+    r')(?P<trail>\s+)'
+)
+# ROMAN_HEADING_RE: Only match if the following text is short or All-Caps (Issue 21)
+ROMAN_HEADING_RE = re.compile(
+    r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+'
+    r'(?P<rest>[^a-z]{1,150}|[A-Z][a-z ]{1,45}|[A-Z][a-z ]{1,45}\.)$'
+)
+ROMAN_ONLY_RE = re.compile(r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?$')
+PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
+CITATION_ABBREV_TRAIL_RE = re.compile(
+    r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
+    r'enchirid|distinct|q|a|p|pp|sec|ad|m|aen|liv|hist)\.?\s*$'
+    r'|'
+    # Scholarly citation tails: "cap. 8," / "q. 81,"
+    r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+    r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|pp|sec|ad|aen|liv|hist)'
+    r'\.?\s+\d+(?:[-,;]\s*\d+)*,?\s*$'
+    r'|'
+    # Page references: "p. 43" or "pp. 43" — should not be sentence ends
+    r'\bp+\.\s+\d{1,4}\s*$'
+    r'|'
+    # Classical references: "Aen. 10." / "Liv., Hist. viii."
+    r'\b(?:Aen|Liv|Hist)\.?,?(?:\s+Hist\.?)?(?:\s+[ivxlcdm]+|\s+\d+)?\.\s*$'
+    r'|'
+    # Scripture book abbreviations before chapter:verse — e.g. "Cant. 5:10"
+    r'\b(?:Cant|Prov|Eccl|Sol|Isa|Jer|Lam|Ezek|Dan|Hos|Zeph|Zech|Mal|'
+    r'Matt|Mk|Lk|Jn|Gal|Eph|Phil|Col|Thess|Tim|Tit|Phlm|Heb|Jas|Rev)\.\s*$',
+    re.I,
+)
+CITATION_ABBREV_START_RE = re.compile(
+    r'^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Homil|Haer|Dial|Quest|Art|Dist|Part|Vol)\.?\s+',
+    re.I,
+)
+CITATION_AUTHOR_TRAIL_RE = re.compile(
+    r'\b(?:See\s+)?(?:August|Austin|Athan|Chrysost|Clem|Iren|Tertull|Jerome|'
+    r'Basil|Nazianz|Cyprian|Ambros|Hilary|Epiphan|Aquin|Alexand|Alens)\.?\s*$',
+    re.I,
+)
+ROMAN_LIST_TOKEN = '@@ROMAN_LIST@@'
+MARKDOWN_STRUCTURAL_START_RE = re.compile(
+    r'^\*\*(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
+    r'\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\*\*\s*[,.;]?\s+'
+)
+
+SCRIPTURE_BOOK_RE = (
+    r'(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|'
+    r'Samuel|Kings|Chronicles|Ezra|Nehemiah|Esther|Job|Psalm|Psalms|'
+    r'Proverbs|Ecclesiastes|Song(?:\s+of\s+Solomon)?|Isaiah|Jeremiah|Lamentations|Ezekiel|'
+    r'Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|'
+    r'Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|'
+    r'Romans|Corinthians|Galatians|Ephesians|Philippians|Colossians|'
+    r'Thessalonians|Timothy|Titus|Philemon|Hebrews|James|Peter|Jude|'
+    r'Revelation)'
+)
+SCRIPTURE_REF_RE = re.compile(
+    rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+:\d+(?:[-,]\s*\d+)*|\b\d+:\d+(?:[-,]\s*\d+)*',
+    re.I,
+)
+SCRIPTURE_CONTINUATION_TRAIL_RE = re.compile(
+    rf'(?:\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+)?\d+:\d+(?:[-,;]\s*\d+)*[,:;]?\s*$|'
+    rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+(?:[-,;]\s*\d+)*,\s*$|'
+    r'\b(?:verse|verses|chap|chapter)\.?\s+\d+(?:[-,;]\s*\d+)*,\s*$|'
+    r'\b(?:cap|lib)\.?\s+\d+(?:[-,;]\s*\d+)*,\s*$',
+    re.I,
+)
+
+# ── Text-processing helpers ──────────────────────────────────────────────────
+
+_SPACED_CAPS_RE = re.compile(r'\b([A-Z](?:\s[A-Z]){2,})\b')
+_I_WILL_RE = re.compile(r'\bI\s*WILL\b|\bIWILL\b', re.I)
+_I_AM_RE = re.compile(r'\bI\s*AM\b|\bIAM\b', re.I)
+
+
+def _normalize_spaced_caps(text: str) -> str:
+    """Collapse M E → ME, T H E → THE for all-caps spaced sequences."""
+    def _join(m: re.Match) -> str:
+        return m.group(1).replace(' ', '')
+    return _SPACED_CAPS_RE.sub(_join, text)
+
+
+def _normalize_i_will(text: str) -> str:
+    """Normalize OCR forms like IWILL/I WILL without preserving false capitals."""
+    text = _I_WILL_RE.sub('I will', text)
+    text = _I_AM_RE.sub('I am', text)
+    return text
+
+
+def _normalize_scholarly_citation_artifacts(text: str) -> str:
+    """Repair OCR punctuation that would split scholarly citation chains."""
+    if not text:
+        return text
+    text = re.sub(
+        r'\b(?P<label>cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|'
+        r'dial|enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|ad)'
+        r'\s*\.\s*,\s*(?=\d)',
+        lambda m: f'{m.group("label")}. ',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\b(?P<label>chapter|chap)\s*(?:\.\s*)?,\s*(?=\d)',
+        lambda m: f'{m.group("label")} ' if m.group("label").lower() == 'chapter' else f'{m.group("label")}. ',
+        text,
+        flags=re.I,
+    )
+    return text
+
+
+def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
+    """Repair known OCR character misreads using volume-specific configuration."""
+    text = _normalize_scholarly_citation_artifacts(text)
+    text = re.sub(r'\b([A-Za-z]{2,})]y\b', r'\1ly', text)
+    text = re.sub(r'\b([A-Za-z]{2,})]e\b', r'\1le', text)
+    text = re.sub(r'(?<!\w)](?=earn|earning|earned|earnt|edge)', 'l', text, flags=re.I)
+    text = re.sub(r'\bI\s+a\s+will\b', 'I will', text)
+    if not config:
+        return text
+
+    corrections = config.get('text_replacements', {})
+    regex_corrections = config.get('regex_replacements', {})
+
+    result = text
+    for wrong, right in corrections.items():
+        if wrong.startswith('(') or wrong.endswith('\\b'):
+            result = re.sub(wrong, right, result)
+        else:
+            result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
+
+    for pattern, repl in regex_corrections.items():
+        result = re.sub(pattern, repl, result)
+
+    return result
+
+
+def title_case(text):
+    """Convert text to Title Case, preserving Roman numerals and small words."""
+    if not text:
+        return ""
+    small_words = {'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for',
+                   'if', 'in', 'of', 'on', 'or', 'the', 'to', 'v', 'via', 'vs'}
+    words = text.split()
+    res = []
+    for i, w in enumerate(words):
+        clean_w = w.strip('.,:;()[]"').upper()
+        if re.match(r'^[IVXLCDM]+$', clean_w):
+            res.append(w.upper())
+        elif i > 0 and w.lower() in small_words:
+            res.append(w.lower())
+        else:
+            res.append(w.capitalize())
+    return " ".join(res)
+
+
+def nav_display_title(text):
+    """Display front-matter labels in NAV as they appear in the PDF."""
+    stripped = (text or '').strip()
+    normalized = stripped.rstrip('.').upper()
+    if normalized in {
+        'GENERAL PREFACE',
+        'PREFATORY NOTE',
+        'PREFACE',
+        'PREFACE TO THE READER',
+        'ORIGINAL PREFACE',
+    }:
+        return normalized + ('.' if stripped.endswith('.') else '')
+    return title_case(stripped)
+
+
+def _norm_for_dedupe(text):
+    text = re.sub(r'<[^>]+>', ' ', text)
+    text = re.sub(r'\[f\d+\]', ' ', text)
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9:]+', ' ', text)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def _is_scripture_ref_fragment(text):
+    """Return True when a paragraph is almost entirely a scripture reference list."""
+    clean = re.sub(r'\[f\d+\]', '', text).strip()
+    if len(clean) > 220:
+        return False
+    if not SCRIPTURE_REF_RE.search(clean):
+        return False
+    leftovers = SCRIPTURE_REF_RE.sub('', clean)
+    leftovers = re.sub(r'[;:,.()\-\s]', '', leftovers)
+    return len(leftovers) <= 12
+
+
+def _scripture_ref_tokens(text):
+    """Return a normalised list of all scripture reference strings in text."""
+    tokens = []
+    for m in SCRIPTURE_REF_RE.finditer(text):
+        token = re.sub(r'\s+', ' ', m.group(0).lower())
+        token = re.sub(r'^(?:[1-3]\s+)?', '', token)
+        tokens.append(token)
+    return tokens
+
+
+def _split_inline_structural_markers(para, allow_bare_a=False):
+    """Promote inline Owen list markers to paragraph starts."""
+    pieces = []
+    pos = 0
+    for match in INLINE_STRUCTURAL_MARKER_RE.finditer(para):
+        before = para[pos:match.start()].strip()
+        marker = match.group('marker')
+        after_start = match.start('marker')
+
+        if not allow_bare_a and re.match(r'^(?:\*\*)?A\.', marker, re.I):
+            continue
+        marker_is_wrapped = marker.startswith(('(', '[', '**(', '**['))
+        if marker in {'q.', 'a.', 'm.', 'p.'} and re.match(r'\s*\d', para[match.end():]):
+            continue
+        has_list_intro_before_reference = bool(re.search(
+            r'\b(?:here\s+is|here\s+are|as\s+follows|following)\b.{0,320}$',
+            before,
+            re.I,
+        ))
+        # Skip roman numeral ranges like "III. — VI."
+        if (
+            re.match(r'^[IVXLCDM]+\.$', marker, re.I)
+            and re.match(r'\s*[—–-]\s*[IVXLCDM]+\.', para[match.end():])
+        ):
+            continue
+        if (
+            (
+                SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
+                or CITATION_ABBREV_TRAIL_RE.search(before[-80:])
+                or re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', before, re.I)
+                or re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
+                or (para[:match.start()].count('"') % 2 != 0)
+                or (para[:match.start()].count('“') > para[:match.start()].count('”'))
+            )
+            and not marker_is_wrapped
+            and not has_list_intro_before_reference
+        ):
+            continue
+
+        before_ends_structural = bool(re.search(r'[,;:—-]\s*$', before))
+        before_ends_terminal = bool(re.search(r"""[.!?][""')\]]?\s*$""", before))
+        before_ends_lead_word = bool(re.search(
+            r'\b(?:wherefore|therefore|for|but|and|or|as)\s*$',
+            before,
+            re.I,
+        ))
+        before_ends_objection = bool(re.search(r'\b(?:Objection|Obj)\b\.?\s*$', before, re.I))
+        if before_ends_objection and re.match(r'^(?:\*\*)?\d+\.(?:\*\*)?$', marker.strip()):
+            continue
+        if len(before) < 12 and not (before_ends_structural or before_ends_lead_word or before_ends_objection):
+            continue
+        marker_clean = re.sub(r'[\*\[\]\(\),;.\s]', '', marker).lower()
+        marker_is_bare_decimal = bool(re.match(r'^(?:\*\*)?\d+\.(?:\*\*)?$', marker.strip()))
+        marker_is_bare_roman = bool(re.match(r'^(?:\*\*)?[IVXLCDM]+\.(?:\*\*)?$', marker.strip(), re.I))
+        marker_is_bare_ordinal = bool(re.match(r'^(?:\*\*)?\d+(?:st|nd|rd|th)\b,?\s*(?:\*\*)?$', marker.strip(), re.I))
+        after_preview = para[match.end():match.end() + 80].lstrip()
+        after_starts_like_heading = bool(re.match(r"""[A-Z""']""", after_preview))
+        strong_source_like_marker = (
+            (marker_is_bare_decimal or marker_is_bare_roman or marker_is_bare_ordinal)
+            and len(before) >= 35
+            and after_starts_like_heading
+            and not SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
+            and not CITATION_ABBREV_TRAIL_RE.search(before[-80:])
+            and not re.search(r'\b(?:verse|verses|chap|chapter)[.,]?\s*$', before, re.I)
+            and not re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', before, re.I)
+            and not re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
+            and marker_clean not in {'i', 'v', 'x', 'l', 'c', 'd', 'm'}
+        )
+        if not (re.search(r'[.,;:—-]\s*$', before) or before_ends_terminal or before_ends_lead_word or before_ends_objection):
+            if not (marker_is_wrapped or strong_source_like_marker):
+                continue
+
+        if before:
+            pieces.append(before)
+        pos = after_start
+
+    if not pieces:
+        return [para]
+
+    tail = para[pos:].strip()
+    if tail:
+        pieces.append(tail)
+    return pieces
+
+
+def _repair_known_catechism_ghosts(text):
+    """Repair source-confirmed catechism phrases damaged by AGES footnote columns."""
+    text = re.sub(
+        rf'\s*\*\*\s*\]\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)',
+        ' ',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\bby the mighty, effectual working of his preaching of the Word\b',
+        'by the mighty, effectual working of his Spirit in the preaching of the Word',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\bNothing at all, being merely(?P<fn>\s+\[f\d+\])?\s+in ourselves\b',
+        lambda match: (
+            'Nothing at all, being merely wrought upon by the free grace '
+            f'and Spirit of God, when in ourselves{match.group("fn") or ""}'
+        ),
+        text,
+        flags=re.I,
+    )
+    return text
+
+
+def _trim_duplicate_reference_prefix(prev, current):
+    """Drop a leading scripture-reference run when the same refs just appeared."""
+    if not prev or not current:
+        return current
+
+    # Skip leading digits/item markers that might be OCR artifacts (Issue 26)
+    prefix_match = re.match(r'^(\d{1,3}\.?\s+)', current)
+    content_start = prefix_match.end() if prefix_match else 0
+
+    pos = content_start
+    refs = []
+    while pos < len(current):
+        while pos < len(current) and current[pos].isspace():
+            pos += 1
+        match = SCRIPTURE_REF_RE.match(current, pos)
+        if not match:
+            break
+        refs.append(re.sub(r'\s+', ' ', match.group(0).lower()))
+        pos = match.end()
+        while pos < len(current) and current[pos] in ' ;,.:':
+            pos += 1
+
+    if not refs:
+        return current
+
+    prev_refs = set(_scripture_ref_tokens(prev))
+    normalized_refs = {re.sub(r'^(?:[1-3]\s+)?', '', ref) for ref in refs}
+    if normalized_refs and normalized_refs <= prev_refs:
+        # If we trimmed something, drop the leading artifact prefix too
+        return current[pos:].lstrip()
+    return current
+
+
+# ============================================================================
 # FONT POOLS
 # ============================================================================
 
 def select_primary_font(body_font_name):
     """Select a primary font by name and scan its directory for associated files.
-    
+
     Looks in fonts/<body_font_name>/ for .ttf and .otf files.
     Returns a dict: {'name': body_font_name, 'files': {basename: relative_path}}.
+    Falls back to SBL_BLit with a printed warning if the directory is missing —
+    a missing font dir is almost always a typo in body_font or a missing font folder.
     """
-    import os
-    
     # Base directory for fonts (shared.py is in project root)
     base_dir = os.path.dirname(os.path.abspath(__file__))
     font_dir = os.path.join(base_dir, 'fonts', body_font_name)
-    
-    # Fallback to SBL_BLit if directory doesn't exist
+
     if not os.path.isdir(font_dir):
+        print(
+            f"[WARN] Font directory not found for '{body_font_name}' "
+            f"(looked in fonts/{body_font_name}/). Falling back to SBL_BLit.",
+            file=sys.stderr,
+        )
         body_font_name = 'SBL_BLit'
         font_dir = os.path.join(base_dir, 'fonts', body_font_name)
-    
+
     files = {}
     if os.path.isdir(font_dir):
         for f in os.listdir(font_dir):
             if f.lower().endswith(('.ttf', '.otf')):
                 files[f] = f"{body_font_name}/{f}"
-                
+
     return {
         'name': body_font_name,
-        'files': files
+        'files': files,
     }
 
 
@@ -1191,6 +1614,12 @@ h4.chapter-subtitle {
 .roman-list-item b {
     display: inline;
     margin-bottom: 0;
+}
+
+.analysis-part {
+    text-align: left;
+    text-indent: 0;
+    margin: 1.4em 0 0.55em;
 }
 
 /* Front Matter Styling (Issue 107 / Issue 89) */
@@ -1660,8 +2089,6 @@ def generate_font_styles(primary_font_name, primary_font_files):
     
     Returns the complete <style> element content as a string.
     """
-    import os as _os
-    
     # 1. Identify primary, bold, italic, and bold-italic files using robust heuristics
     primary_file = None
     bold_file = None
@@ -1672,24 +2099,24 @@ def generate_font_styles(primary_font_name, primary_font_files):
     sorted_files = sorted(primary_font_files.values(), key=lambda x: (len(x), x))
     
     for font_file in sorted_files:
-        fname = _os.path.basename(font_file).lower()
+        fname = os.path.basename(font_file).lower()
         
         is_bold = 'bold' in fname or '-b.' in fname or '_b.' in fname
         is_italic = 'italic' in fname or 'ital' in fname or '-i.' in fname or '_i.' in fname
         is_regular = 'regular' in fname or 'roman' in fname or '-r.' in fname or '_r.' in fname or (not is_bold and not is_italic)
         
         if is_bold and is_italic:
-            if not bold_italic_file: bold_italic_file = _os.path.basename(font_file)
+            if not bold_italic_file: bold_italic_file = os.path.basename(font_file)
         elif is_bold:
-            if not bold_file: bold_file = _os.path.basename(font_file)
+            if not bold_file: bold_file = os.path.basename(font_file)
         elif is_italic:
-            if not italic_file: italic_file = _os.path.basename(font_file)
+            if not italic_file: italic_file = os.path.basename(font_file)
         elif is_regular:
-            if not primary_file: primary_file = _os.path.basename(font_file)
+            if not primary_file: primary_file = os.path.basename(font_file)
 
     # Fallback for primary_file if no "Regular" found
     if not primary_file and primary_font_files:
-        primary_file = _os.path.basename(list(primary_font_files.values())[0])
+        primary_file = os.path.basename(list(primary_font_files.values())[0])
     
     bold_face = ''
     if bold_file:

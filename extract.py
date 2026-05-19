@@ -30,10 +30,7 @@ from shared import (
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters,
     is_greek_font, is_hebrew_font, contains_greek, contains_hebrew,
-)
-
-# Re-import rendering constants that extraction code also uses
-from render import (
+    # Pipeline constants (previously required importing render — now in shared)
     SCRIPTURE_BOOK_RE, SCRIPTURE_REF_RE, SCRIPTURE_CONTINUATION_TRAIL_RE,
     FOOTNOTE_MARKER_RE, LOOSE_FOOTNOTE_MARKER_RE, FOOTNOTE_PLACEHOLDER_RE,
     FT_MARKER_RE, EMPTY_BRACKET_RE,
@@ -159,16 +156,12 @@ def _translate_ages_marker(code_str: str) -> str:
         return f'[{code_str}]'
 
     try:
-        # 7+ digit split: BBB CC VV  (or BB CCC VV for large chapters)
-        if len(code_str) >= 7:
-            book_n = int(code_str[:-4])
-            ch_n = int(code_str[-4:-2])
-            v_n = int(code_str[-2:])
-        else:
-            # 6-digit split: BB CC VV
-            book_n = int(code_str[:-4])
-            ch_n = int(code_str[-4:-2])
-            v_n = int(code_str[-2:])
+        # All-decimal format: BBCCVV (6 digits) or BBBCCVV (7+ digits).
+        # Both forms share the same slice arithmetic: last 2 digits = verse,
+        # next 2 = chapter, remainder = book.
+        book_n = int(code_str[:-4])
+        ch_n = int(code_str[-4:-2])
+        v_n = int(code_str[-2:])
     except ValueError:
         return f'[{code_str}]'
 
@@ -1229,14 +1222,18 @@ def _has_repeated_ages_marker_cluster(text):
     return False
 
 
-def get_merged_page_text(doc, pages_md, page_idx, allow_treatise_title_page=True):
+def get_merged_page_text(doc, pages_md, page_idx, allow_treatise_title_page=True, page_height=None):
     """
     Get text for a page:
     - For structural pages (Part/Chapter starts): use specialized extraction.
     - For inner treatise title pages: use specialized formatting.
     - For Greek/Hebrew pages: use font-aware extraction.
     - For regular pages: use PyMuPDF4LLM Markdown.
+
+    page_height: override the module-level PAGE_H constant (useful when a volume's
+    PDF has non-standard page dimensions, set via OVERRIDES['page_height']).
     """
+    _page_h = page_height or PAGE_H
     from render import (
         detect_page_type, format_treatise_title_page,
     )
@@ -1251,12 +1248,12 @@ def get_merged_page_text(doc, pages_md, page_idx, allow_treatise_title_page=True
     md_text = extract_page_markdown(pages_md, page_idx)
     
     if is_struct:
-        return extract_structural_page(page)
-    
-    has_blockquotes = page_has_blockquote_geometry(page)
+        return extract_structural_page(page, page_height=_page_h)
+
+    has_blockquotes = page_has_blockquote_geometry(page, page_height=_page_h)
 
     if font_type:
-        raw_text = extract_page_text_with_fonts(page)
+        raw_text = extract_page_text_with_fonts(page, page_height=_page_h)
         # Preserve [fN] markers from Markdown that might be lost in raw text
         fn_markers = FOOTNOTE_MARKER_RE.findall(md_text)
         # Also check for standalone [fN] markers on their own lines
@@ -1585,6 +1582,20 @@ def _trim_to_matching_structural_marker(raw_text: str, title: str) -> str:
     return raw_text
 
 
+def _keep_only_prerendered_treatise_title_page(raw_text: str) -> str:
+    """Keep a pre-rendered title section without same-page body spillover."""
+    if not raw_text:
+        return raw_text
+    match = re.match(
+        r'(?P<section>\s*<section\b[^>]*class="[^"]*\btreatise-title-page\b.*?</section>)',
+        raw_text,
+        re.I | re.S,
+    )
+    if not match:
+        return raw_text
+    return match.group('section').strip()
+
+
 def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=None):
     """
     Build chapters by grouping pages based on PDF TOC entries.
@@ -1706,16 +1717,25 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
                 # This entry and the next one share the SAME START PAGE.
                 # We must truncate THIS entry before the next one's heading.
                 # Usually happens for Treatise title pages that are followed immediately by Chapter 1.
+                if is_treatise:
+                    raw_text = _keep_only_prerendered_treatise_title_page(raw_text)
                 
                 # Find all markers
-                markers = list(re.finditer(r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]', raw_text))
+                markers = list(re.finditer(r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]\s*([^\n]*)', raw_text))
                 if len(markers) > 1:
                     # Find the first 'major' marker after the initial one to truncate at.
                     # If current is PART/TREATISE, we stop at the next CHAPTER or PART.
                     truncate_at = len(raw_text)
+                    next_title_norm = re.sub(r'[^A-Z0-9]+', ' ', nav_entries[i + 1][1].upper()).strip()
                     for m in markers[1:]:
-                        kind = m.group(0)[2:-2]
-                        if kind in ('PART', 'CHAPTER', 'DIGRESSION'):
+                        marker_token = re.match(r'\[\[([A-Z_]+)\]\]', m.group(0)).group(1)
+                        marker_text_norm = re.sub(r'[^A-Z0-9]+', ' ', (m.group(1) or '').upper()).strip()
+                        matches_next_title = bool(
+                            marker_text_norm
+                            and next_title_norm
+                            and (next_title_norm in marker_text_norm or marker_text_norm in next_title_norm)
+                        )
+                        if marker_token in ('PART', 'CHAPTER', 'DIGRESSION') or matches_next_title:
                             truncate_at = m.start()
                             break
                     raw_text = raw_text[:truncate_at].strip()
@@ -1832,7 +1852,26 @@ def _normalize_extracted_footnote_markers(text):
         return f'[f{fn}]'
 
     text = LOOSE_FOOTNOTE_MARKER_RE.sub(repl, text)
-    return re.sub(r'(\[f\d+\])(?=[A-Za-z])', r'\1 ', text)
+    # A recurring AGES overlap can read "Himself. His kingdom." as
+    # "Himsel[f2]. His kingdom." The "f" belongs to the word, and the 2 is the
+    # next enumerator, not a footnote marker.
+    text = re.sub(
+        r'\bHimsel\s*\[f2\]\.\s+His kingdom\.\s+1\.\s+Himself\b\.?',
+        'Himself.',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\bHimsel\s*\[f2\]\.\s+His kingdom\b',
+        'Himself',
+        text,
+        flags=re.I,
+    )
+    # Insert space between word character and footnote marker: word[fN] -> word [fN]
+    text = re.sub(r'([A-Za-z])(\[f\d+\])', r'\1 \2', text)
+    # Insert space after footnote marker when followed by letter: [fN]word -> [fN] word
+    text = re.sub(r'(\[f\d+\])(?=[A-Za-z])', r'\1 ', text)
+    return text
 
 
 def clean_text(text, config=None):
@@ -1862,6 +1901,8 @@ def clean_text(text, config=None):
     text = translate_ages_verse_markers(text)
     text = _repair_glued_scripture_book_references(text)
     text = re.sub(rf'\(\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', '(', text, flags=re.I)
+    # General enough for "( John" while avoiding global "** Text" corruption.
+    text = re.sub(r'\(\s+([A-Z])', r'(\1', text)
     text = EMPTY_BRACKET_RE.sub('', text)
     # 2. Remove AGES running headers (whole-line removal)
     text = re.sub(
@@ -1876,9 +1917,17 @@ def clean_text(text, config=None):
     # Strictly case-sensitive and anchored to start of line to avoid corrupting prose
     text = re.sub(r'\bAns\s+\.\s+(\d+)\b\.?', r'Ans. \1.', text)
     text = re.sub(r'(?m)^([QA])\s*[\., ]+\s*(\d+)\s*\.?', r'\1. \2.', text)
-    text = re.sub(r'(?m)^(Q)\s*[\., ]+\s*', r'\1. ', text)
+    text = re.sub(r'(?m)^([QA])\s*[\., ]+\s*', r'\1. ', text)
     text = re.sub(r'(?m)^(A)\s*\.\s*,\s*', r'\1. ', text) # A. , -> A.
-    text = re.sub(r'\b(\d+(?:st|nd|rd|th))\s+([,.;])', r'\1\2', text)
+    
+    # Fix ordinal spacing: "1st ." -> "1st.", "**1st** ." -> "**1st**.", "2ndly ," -> "2ndly,"
+    # Handles both plain and bold-wrapped ordinals, including adverbial forms
+    text = re.sub(
+        r'(\*\*)?(\d+(?:(?:st|nd|rd|th)ly|dly|ly|st|nd|rd|th))(\*\*)?\s+([,.;])',
+        r'\1\2\3\4',
+        text
+    )
+    
     # 4. Strip leading/trailing whitespace per line
     text = '\n'.join(line.strip() for line in text.split('\n'))
     
@@ -1972,11 +2021,31 @@ def reconstruct_paragraphs(text):
                     if lines[j].strip():
                         next_nonempty = lines[j].strip()
                         break
+                
                 starts_with_connector = (
                     next_nonempty is not None and
                     bool(CONNECTOR_STARTERS_RE.match(next_nonempty))
                 )
+                starts_with_scripture = (
+                    next_nonempty is not None and
+                    bool(re.match(rf'^(?:[1-3]\s+)?(?:{SCRIPTURE_BOOK_RE})\b', next_nonempty, re.I))
+                )
+                starts_with_bare_ref = (
+                    next_nonempty is not None and
+                    bool(re.match(r'^\d+:\d+', next_nonempty))
+                )
+                
+                # Issue 108/Blemish 8: Reference continuation awareness across blank lines
+                ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
+                prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
+                next_starts_with_ref_number = next_nonempty and bool(re.match(r'^\d{1,4}\b', next_nonempty))
+                
                 if ends_terminal and not starts_with_connector:
+                    if starts_with_scripture or starts_with_bare_ref:
+                        continue
+                    if prev_is_ref_abbrev and next_starts_with_ref_number:
+                        # Reference continuation (p.\n\n280) -> join
+                        continue
                     paragraphs.append(' '.join(current))
                     current = []
             continue
@@ -1994,6 +2063,13 @@ def reconstruct_paragraphs(text):
         if STRUCTURAL_START_RE.match(stripped):
             if current:
                 prev = current[-1]
+                ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
+                prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
+                starts_with_ref_number = bool(re.match(r'^\d{1,4}\.\s+', stripped))
+                if prev_is_ref_abbrev and starts_with_ref_number:
+                    current.append(stripped)
+                    continue
+
                 # Hard structural: markers that are nearly always paragraph starts
                 # Q./A./Ques./Ans. must be UPPERCASE to avoid scholastic citations (Issue 17/26)
                 hard_structural = re.match(
@@ -2010,6 +2086,17 @@ def reconstruct_paragraphs(text):
                         stripped,
                         re.I
                     )
+                
+                # Blemish 11: Classical/Scholarly reference tail detection: "Liv. viii." -> "9."
+                prev_is_classical_ref = bool(re.search(
+                    r'\b(?:liv|aen|hist|tac|plut|cic|sen|aug)\.?\s+(?:hist\.?\s+)?[ivxlcdm]+\.\s*$',
+                    prev, re.I
+                ))
+                is_bare_decimal = bool(re.match(r'^\d{1,2}\.\s+[A-Z]', stripped))
+                if prev_is_classical_ref and is_bare_decimal:
+                    current.append(stripped)
+                    continue
+
                 ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
                 is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
 
@@ -2040,6 +2127,15 @@ def reconstruct_paragraphs(text):
             is_semantic_connector = bool(SEMANTIC_CONNECTOR_RE.match(stripped))
             starts_with_connector = bool(CONNECTOR_STARTERS_RE.match(stripped))
 
+            # Blemish 5, 8, 10: Reference and Scripture continuation awareness
+            starts_with_scripture = bool(re.match(rf'^(?:[1-3]\s+)?(?:{SCRIPTURE_BOOK_RE})\b', stripped, re.I))
+            starts_with_bare_ref = bool(re.match(r'^\d+:\d+', stripped))
+            
+            ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
+            prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
+            starts_with_ref_number = bool(re.match(r'^\d{1,4}\b', stripped))
+            prev_ends_with_number_period = bool(re.search(r'\d+\.\s*$', prev))
+
             # Issue 76: Multiline block quote preservation
             all_current_text = ' '.join(current)
             is_inside_quote = (
@@ -2059,6 +2155,12 @@ def reconstruct_paragraphs(text):
                 current.append(stripped)
             elif starts_with_connector:
                 # Next starts with connector word ("Wherefore", "But", "And", etc.) → join
+                current.append(stripped)
+            elif starts_with_scripture or starts_with_bare_ref:
+                # Blemish 5: Scripture continuation → join
+                current.append(stripped)
+            elif prev_is_ref_abbrev and (starts_with_ref_number or prev_ends_with_number_period):
+                # Blemish 8/10: Reference number continuation (p. 280, Aen. 10.) → join
                 current.append(stripped)
             else:
                 # Terminal punctuation + uppercase start → new paragraph
@@ -2089,6 +2191,16 @@ def _paragraph_needs_numeric_continuation(prev, current):
         return False
 
     prev_clean = prev.strip()
+    if re.search(
+        r'\b(?:p|pp|sec|chap|vol|cf|see|ibid|id|op|cit|fol|col|liv|aen|hist)\.?\s*$',
+        prev_clean,
+        re.I,
+    ):
+        return True
+    if re.search(r'\b(?:Aen|Liv|Hist)\.?\s+\d+\.\s*$', prev_clean, re.I):
+        return True
+    if re.search(r'\b(?:Liv|Tac|Plut|Cic|Sen|Aug)\.?,?\s+Hist\.?\s+[ivxlcdm]+\.\s*$', prev_clean, re.I):
+        return True
     if re.search(r'\b(?:verse|verses|chap|chapter)[.,]?\s*$', prev_clean, re.I):
         return True
     if re.search(r'\b\d+:\d+(?:[-,]\s*\d+)*,\s*$', prev_clean):
@@ -2616,14 +2728,16 @@ def get_pages_text(
     When healer_mode=False, returns clean raw text without paragraph
     reconstruction (used for layout-preserved front matter pages).
     """
+    _page_h = (config or {}).get('page_height', None)
     raw_parts = []
-    
+
     for pg in range(start_page, min(end_page + 1, len(doc))):
         raw = get_merged_page_text(
             doc,
             pages_md,
             pg,
             allow_treatise_title_page=allow_treatise_title_page,
+            page_height=_page_h,
         )
         if not raw.strip():
             continue

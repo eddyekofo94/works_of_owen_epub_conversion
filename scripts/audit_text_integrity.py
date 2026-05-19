@@ -55,20 +55,20 @@ HEADER_RE = re.compile(
 )
 TERMINAL_RE = re.compile(r"""[.!?:;]["')\]]?$""")
 HARD_STRUCTURAL_START_RE = re.compile(
-    r"^(?:[0-9]+\.\s+|\([0-9]+\.?\)\s+|\[[0-9]+\.?\]\s+|[IVXLCDM]+\.\s+|"
+    r"^(?:[0-9]+\.\s+|\([0-9]+\.?\)\s+|\[[0-9]+\.?\]\.?\s+|[IVXLCDM]+\.\s+|"
     r"[0-9]+(?:st|nd|rd|th)\b\s*[,.;]\s+|[0-9]+(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?\s+)",
     re.I,
 )
 INLINE_STRUCTURAL_RE = re.compile(
     r".{8,}?[,:;—-]\s+(?P<marker>"
-    r"(?<![:\d-])[0-9]+\.\s+|\([0-9]+\.?\)\s+|\[[0-9]+\.?\]\s+|[IVXLCDM]+\.\s+|"
+    r"(?<![:\d-])[0-9]+\.\s+|\([0-9]+\.?\)\s+|\[[0-9]+\.?\]\.?\s+|[IVXLCDM]+\.\s+|"
     r"[0-9]+(?:st|nd|rd|th)\b\s*[,.;]\s+|[0-9]+(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?\s+)"
 )
 INLINE_RENDERED_STRUCTURAL_RE = re.compile(
     r"<b>\s*(?P<marker>"
     r"[0-9]{1,2}\.|"
     r"\([0-9]{1,2}\.?\)|"
-    r"\[[0-9]{1,2}(?:st|nd|rd|th|dly|ly)?[,.]?\]|"
+    r"\[[0-9]{1,2}(?:st|nd|rd|th|dly|ly)?[,.]?\]\.?|"
     r"[IVXLCDM]{2,}\.|"
     r"[0-9]{1,2}(?:st|nd|rd|th)\b\s*[,.;]|"
     r"[0-9]{1,2}(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?"
@@ -113,8 +113,8 @@ LIST_OR_LABEL_RE = re.compile(
     r"[0-9]+\.\s+|"                         # 5. Mankind...
     r"\([0-9]+\.?\)\s+|"                    # (1.) There... / (1) There...
     r"\([0-9]+(?:st|nd|rd|th|dly|ly)[,.;]?\)\s+|"  # (1st,) Such...
-    r"\[[0-9]+\.?\]\s+|"                    # [1.] There...
-    r"\[[0-9]+(?:st|nd|rd|th|dly|ly)[,.;]?\]\s+|"  # [1st,] There...
+    r"\[[0-9]+\.?\]\.?\s+|"                    # [1.] There... / [1]. There...
+    r"\[[0-9]+(?:st|nd|rd|th|dly|ly)[,.;]?\]\.?\s+|"  # [1st,] There...
     r"[IVXLCDM]+\.\s+|"                     # I. / II.
     r"[A-Z]\.\s+|"                          # Q. / A. catechism answers
     r"[0-9]+(?:st|nd|rd|th|dly|ly)\b[,.]?\s*|"  # 1st, 2ndly, 3rdly
