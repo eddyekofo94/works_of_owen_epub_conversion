@@ -4,7 +4,7 @@
 - Warnings: 8
 - PDF pages: 555
 - EPUB text files: 47
-- EPUB paragraphs/headings: 2281
+- EPUB paragraphs/headings: 2299
 
 ## Coverage
 
@@ -13,8 +13,8 @@
 - Approximate PDF-to-EPUB coverage ratio: 0.9959
 - Pages checked: 550
 - Weak page matches: 7
-- Dense source windows checked: 835
-- Missing dense source-window pages: 539
+- Dense source windows checked: 829
+- Missing dense source-window pages: 540
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 542
@@ -70,6 +70,7 @@
 
 ## Missing Dense Source Windows
 
+- page: 6; sample: particular directions for communion with the holy ghost vindication of some passages in discourse
 - page: 8; sample: the doctrine of distinct communion with the divine persons to be new fangled one
 - page: 10; sample: 10 of communion with god the father son and holy ghost each person distinctly
 - page: 11; sample: 11 prefatory note the reader may be referred to the life of dr owen
@@ -79,7 +80,6 @@
 - page: 15; sample: 15 access with confidence to god ephesians 12 this boldness and access with confidence
 - page: 16; sample: 16 they had communion in that cruel act of revenge and murder our communion
 - page: 17; sample: 17 perfect and complete in the full fruition of his glory and total giving
-- page: 18; sample: 18 chapter that the saints have this communion distinctly with the father son and
 
 ## Missing Top-Of-Page Body Windows
 

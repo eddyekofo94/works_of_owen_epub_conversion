@@ -2045,6 +2045,17 @@ aside[epub\:type~="endnote"] {
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
+.contents-part-title {
+    text-align: left;
+    text-indent: 0;
+    font-size: 1.18em;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 1.65em 0 0.7em;
+    padding-bottom: 0.18em;
+    border-bottom: 1px solid #777;
+    letter-spacing: 0.02em;
+}
 .contents-item,
 .ContentsItem {
     margin: 0.8em 0 0.2em;
@@ -2054,6 +2065,10 @@ aside[epub\:type~="endnote"] {
     color: #000;
     font-size: 0.95em;
     line-height: 1.45;
+}
+.contents-label {
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .contents-desc-wrap,

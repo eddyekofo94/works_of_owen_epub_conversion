@@ -16,7 +16,7 @@ Issue 91: Extracted from converter.py as part of the two-stage modular refactor.
 
 import sys, os, re, uuid, shutil, zipfile, tempfile, hashlib, json, subprocess
 from datetime import datetime
-from html import escape as _html_escape
+from html import escape as _html_escape, unescape as _html_unescape
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Optional
@@ -1811,10 +1811,10 @@ def _polish_contents_page_html(html: str) -> str:
         plain = re.sub(r'<br\s*/?>', ' ', text_html, flags=re.I)
         plain = re.sub(r'<[^>]+>', '', plain).strip()
         plain_upper = plain.upper()
-        if plain_upper.startswith('CONTENTS OF VOLUME'):
+        if re.match(r'^CONTENTS\s+OF\s+VOL(?:UME)?\.?\s*\d+', plain_upper):
             seen_volume_title = True
             return f'<h1 class="contents-volume-title">{text_html}</h1>'
-        if re.fullmatch(r'(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER))?(?:\s+(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER))?)*', plain_upper):
+        if re.fullmatch(r'(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|NOTE TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER|BY D\.?\s+BURGESS))?(?:\s+(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|NOTE TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER|BY D\.?\s+BURGESS))?)*', plain_upper):
             return f'<p class="contents-frontmatter-line">{text_html}</p>'
         cls = 'contents-treatise-title' if seen_volume_title else 'contents-section-title'
         return f'<h2 class="{cls}">{text_html}</h2>'
@@ -1822,7 +1822,104 @@ def _polish_contents_page_html(html: str) -> str:
     html = re.sub(r'<h[23][^>]*>\s*(.*?)\s*</h[23]>', _heading_repl, html, flags=re.I | re.S)
     html = re.sub(r'<p class="ContentsItem">', '<p class="contents-item">', html)
     html = re.sub(r'<span class="ContentsDescWrap">', '<span class="contents-desc-wrap">', html)
-    return html
+
+    item_re = re.compile(r'<p class="contents-item">\s*(.*?)\s*</p>', re.I | re.S)
+    rebuilt = []
+    cursor = 0
+    pending_item = None
+
+    def _plain_contents(inner: str) -> str:
+        inner = re.sub(r'<br\s*/?>', ' ', inner, flags=re.I)
+        inner = re.sub(r'<[^>]+>', '', inner)
+        inner = _html_unescape(inner)
+        inner = re.sub(r'\s+', ' ', inner).strip()
+        inner = re.sub(r'\b(Chapter|Part|Digression)\s+([0-9IVXLCDM]+)\s+\.', r'\1 \2.', inner, flags=re.I)
+        inner = re.sub(r'\b(Chapter|Part|Digression)\s+([0-9IVXLCDM]+)(?=\s+[A-Z])', r'\1 \2.', inner, flags=re.I)
+        inner = re.sub(r'\b(\d+)\.\s*—\s*', r'\1. — ', inner)
+        inner = re.sub(r'\s+([,.;:])', r'\1', inner)
+        return inner
+
+    def _entry_starts(text: str):
+        return list(re.finditer(r'(?<!\w)(?:Part|Chapter|Digression)\s+[0-9IVXLCDM]+\.?', text, re.I))
+
+    def _split_entries(text: str) -> list[str]:
+        starts = _entry_starts(text)
+        if not starts:
+            return [text] if text else []
+        entries = []
+        if starts[0].start() > 0 and text[:starts[0].start()].strip():
+            entries.append(text[:starts[0].start()].strip())
+        for idx, start in enumerate(starts):
+            end = starts[idx + 1].start() if idx + 1 < len(starts) else len(text)
+            entries.append(text[start.start():end].strip())
+        return [entry for entry in entries if entry]
+
+    def _render_contents_entry(text: str) -> str:
+        part = re.fullmatch(r'(Part\s+[0-9IVXLCDM]+\.?)', text, re.I)
+        if part:
+            label = re.sub(r'\s+\.', '.', part.group(1))
+            return f'<h2 class="contents-part-title">{_html_escape(label)}</h2>'
+
+        match = re.match(
+            r'(?P<label>(?:Chapter|Digression)\s+[0-9IVXLCDM]+\.?|[0-9]+\.?\s*—)\s*(?P<desc>.*)$',
+            text,
+            re.I | re.S,
+        )
+        if match:
+            label = re.sub(r'\s+\.', '.', match.group('label').strip())
+            label = re.sub(r'\s*—\s*$', ' —', label)
+            desc = match.group('desc').strip()
+            if desc.startswith('—'):
+                desc = desc[1:].strip()
+            desc = re.sub(r'\s+', ' ', desc)
+            return (
+                f'<p class="contents-item"><span class="contents-label">'
+                f'{_html_escape(label)}</span>'
+                f'{(" " + _html_escape(desc)) if desc else ""}</p>'
+            )
+
+        if text.upper() == text and len(re.findall(r'[A-Z]', text)) >= 12:
+            return f'<h2 class="contents-treatise-title">{_html_escape(text)}</h2>'
+
+        return f'<p class="contents-item">{_html_escape(text)}</p>'
+
+    def _flush_pending():
+        nonlocal pending_item
+        if pending_item is None:
+            return ''
+        rendered = _render_contents_entry(pending_item)
+        pending_item = None
+        return rendered
+
+    for match in item_re.finditer(html):
+        rebuilt.append(html[cursor:match.start()])
+        text = _plain_contents(match.group(1))
+        entries = _split_entries(text)
+        if not entries:
+            cursor = match.end()
+            continue
+
+        rendered_here = []
+        for entry in entries:
+            if re.fullmatch(r'Part\s+[0-9IVXLCDM]+\.?', entry, re.I):
+                rendered_here.append(_flush_pending())
+                rendered_here.append(_render_contents_entry(entry))
+                continue
+            if _entry_starts(entry):
+                rendered_here.append(_flush_pending())
+                pending_item = entry
+                continue
+            if pending_item is not None and re.match(r'^[a-z(]', entry):
+                pending_item = pending_item.rstrip() + ' ' + entry
+                continue
+            rendered_here.append(_flush_pending())
+            pending_item = entry
+        rebuilt.append(''.join(part for part in rendered_here if part))
+        cursor = match.end()
+
+    rebuilt.append(_flush_pending())
+    rebuilt.append(html[cursor:])
+    return ''.join(rebuilt)
 
 
 def _polish_analysis_html(html: str) -> str:

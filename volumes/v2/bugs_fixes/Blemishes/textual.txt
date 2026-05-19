@@ -129,3 +129,11 @@ The open parenthesis is not closed, can we check for such a thing? that open par
 Fix:
 pronounces those censures, Romans 1; 1 Corinthians 1.
 Note: The reference "Romans 1:1 1" is likely a formatting error and should be corrected to "Romans 1". Additionally, "1 Corinthians 1:11 Corinthians 1" is also likely a formatting error and should be corrected to "1 Corinthians 1". The formatting of the references should be reviewed to ensure that they are accurate and consistent throughout the document, which will improve readability and comprehension for the reader. Proper formatting of references is essential to maintain a professional appearance and to effectively communicate the content to the reader.
+
+## 15
+“management of it [God's צֲֵנתִֵאפ has been such as that it has”
+
+Fix:
+Why is the hebrew here abnormally big? is there a formatting issue with the Hebrew text that is causing it to appear larger than the surrounding text? The formatting of the Hebrew text should be reviewed and adjusted to ensure that it is consistent with the rest of the document, which will improve readability and maintain a professional appearance. Proper formatting of all text, including Hebrew, is essential to effectively communicate the content to the reader and to maintain the overall quality of the document.
+
+

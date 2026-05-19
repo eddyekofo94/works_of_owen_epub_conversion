@@ -11,7 +11,7 @@ import pytest
 from scripts.audit_epub import Audit
 from scripts.audit_text_integrity import run_audit
 from converter import clean_text, force_polyglot_mapping, get_pages_text, reconstruct_paragraphs
-from render import apply_scholastic_anchor_protocol, markdown_to_html
+from render import apply_scholastic_anchor_protocol, markdown_to_html, _polish_contents_page_html
 from volumes.v1.convert import OVERRIDES as V1_OVERRIDES
 
 
@@ -350,6 +350,30 @@ def test_duplicated_chapter_reference_noise_is_collapsed():
     assert 'pronounces those censures, Romans 1; 1 Corinthians 1.' in cleaned
     assert 'Romans 1:1 1' not in cleaned
     assert '1 Corinthians 1:11 Corinthians 1' not in cleaned
+
+
+def test_contents_pages_split_parts_and_chapters_with_clean_labels():
+    html = _polish_contents_page_html(
+        '<section epub:type="toc">'
+        '<h2>CONTENTS OF VOL. 2.</h2>'
+        '<h2>NOTE TO THE READER BY D. BURGESS</h2>'
+        '<p class="contents-item">Part 2.</p>'
+        '<p class="contents-item"><b>Chapter 1</b> . First chapter. Chapter 2 . Second chapter, from</p>'
+        '<p class="contents-item">the grace of union — continuation. Digression 1. A useful aside.</p>'
+        '<p class="contents-item">A VINDICATION OF SOME PASSAGES IN A DISCOURSE</p>'
+        '</section>'
+    )
+
+    assert '<h1 class="contents-volume-title">CONTENTS OF VOL. 2.</h1>' in html
+    assert '<p class="contents-frontmatter-line">NOTE TO THE READER BY D. BURGESS</p>' in html
+    assert '<h2 class="contents-part-title">Part 2.</h2>' in html
+    assert '<span class="contents-label">Chapter 1.</span> First chapter.' in html
+    assert '<span class="contents-label">Chapter 2.</span> Second chapter, from the grace of union' in html
+    assert '<span class="contents-label">Digression 1.</span> A useful aside.' in html
+    assert '<h2 class="contents-treatise-title">A VINDICATION OF SOME PASSAGES IN A DISCOURSE</h2>' in html
+    assert 'Chapter 1</b> .' not in html
+    assert 'Chapter 2 .' not in html
+    assert 'class="ContentsItem"' not in html
 
 
 def test_issue_29_scholarly_citation_breaks_are_healed():

@@ -436,7 +436,7 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 14,
+      "observed": 13,
       "budget": 15,
       "status": "ok",
       "samples": [

@@ -1044,10 +1044,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-19T22:29:37.838946+00:00
+**Last run:** 2026-05-19T23:04:19.263811+00:00
 **EPUB:** `volumes/v2/output/volume_2.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -1215,10 +1216,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-19T22:31:11.027937+00:00
+**Last run:** 2026-05-19T23:04:49.080272+00:00
 **Status:** WARN (8 warnings)
 
 Reports:
@@ -1229,11 +1231,11 @@ Reports:
 |-------|--------|
 | PDF pages | 555 |
 | EPUB text files | 47 |
-| EPUB paragraphs/headings | 2281 |
+| EPUB paragraphs/headings | 2299 |
 | Approximate PDF-to-EPUB word coverage | 0.9959 |
 | Weak page matches | 7 |
-| Dense source windows checked | 835 |
-| Missing dense source-window pages | 539 |
+| Dense source windows checked | 829 |
+| Missing dense source-window pages | 540 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 542 |
@@ -1383,3 +1385,18 @@ Warnings requiring triage:
 - Added regression tests for quote-wrapped markers, the shifted blockquote boundary, the open Scripture parenthesis, and the duplicated chapter-reference collapse.
 
 **Validation run:** Rebuilt Volume 2 render-only with `.venv/bin/python3 volumes/v2/convert.py --render-only`. Manual XHTML checks confirm the `Alas!` passage is one blockquote, `(John 6:63), to cause` is closed correctly, `Romans 1; 1 Corinthians 1` is rendered without the duplicate noise, and the highlighted quote-wrapped list anchors in `A Vindication` now render as bold structural markers. EPUB audit reports WARN with 0 errors and one repeated-phrase warning. Text-integrity remains WARN for broad triage queues, but inline structural marker candidates `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, and missing Hebrew clauses `0`. Bug-regression report PASS. V2 regression gate: `29 passed, 7 skipped`.
+
+### 114. Shared Contents page polish
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+**Problem:** `Contents of Vol. 2` still looked visually raw. Part markers were rendered as ordinary contents rows, `Chapter 1 .` retained a stray space before the period, and flattened PDF extraction caused multiple chapter entries to remain in the same paragraph instead of becoming clean TOC rows.
+
+**Implementation notes:**
+- Updated the shared contents-page post-processor so both `CONTENTS OF VOLUME n` and `CONTENTS OF VOL. n` become the same volume-title heading.
+- Promoted `Part n.` rows into `contents-part-title` headings with stronger CSS.
+- Normalized `Chapter 1 .` / `Chapter 1` labels into `Chapter 1.` and rendered labels through a reusable `contents-label` span.
+- Split flattened contents paragraphs at `Chapter n.`, `Digression n.`, and `Part n.` markers while joining lowercase continuation rows back to the preceding item.
+- Added regression coverage using a synthetic contents page so the behavior is not tied to only Volume 2 wording.
+
+**Validation run:** Rebuilt Volume 2 render-only with `.venv/bin/python3 volumes/v2/convert.py --render-only`. Manual XHTML inspection confirms `Part 1.`, `Part 2.`, and `Part 3.` are rendered as `contents-part-title`, chapter labels are bold/clean as `Chapter n.`, and the flattened Part 2 chapter run is split into separate rows. EPUB audit reports WARN with 0 errors and one repeated-phrase warning. Text-integrity remains WARN for broad triage queues, but front CONTENTS pages missing `0`, inline structural marker candidates `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, and missing Hebrew clauses `0`. Bug-regression report PASS. V2 regression gate: `30 passed, 7 skipped`.

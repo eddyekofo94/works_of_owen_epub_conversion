@@ -2,7 +2,7 @@
   "volume": 2,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/input/owen-v2.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-19T22:31:11.027937+00:00",
+  "generated_at": "2026-05-19T23:04:49.080272+00:00",
   "status": "warn",
   "warning_count": 8,
   "warnings": [
@@ -44,7 +44,7 @@
   },
   "epub": {
     "spine_text_files": 47,
-    "paragraph_count": 2281
+    "paragraph_count": 2299
   },
   "word_coverage": {
     "pdf_content_tokens": 189781,
@@ -101,9 +101,13 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 835,
-    "missing_dense_window_pages": 539,
+    "dense_windows_checked": 829,
+    "missing_dense_window_pages": 540,
     "missing_dense_windows": [
+      {
+        "page": 6,
+        "sample": "particular directions for communion with the holy ghost vindication of some passages in discourse"
+      },
       {
         "page": 8,
         "sample": "the doctrine of distinct communion with the divine persons to be new fangled one"
@@ -259,10 +263,6 @@
       {
         "page": 48,
         "sample": "48 unkindly with him and return him slighting for his goodwill let there not"
-      },
-      {
-        "page": 49,
-        "sample": "49 honor he aims at and is exceeding acceptable unto him he often sets"
       }
     ]
   },
@@ -970,15 +970,15 @@
         "epub": 81,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "tions: — 1. On the part of Christ — He values his saints — Evidences of that valuation: — (1.) His incarnation; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believe"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "ath. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of belie"
           },
           {
-            "location": "EPUB/ch008.xhtml#p130",
+            "location": "EPUB/ch008.xhtml#p148",
             "context": "(1.) When the same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them. So are grace and peace, Revelation"
           }
         ]
@@ -989,15 +989,15 @@
         "epub": 82,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "t of Christ — He values his saints — Evidences of that valuation: — (1.) His incarnation; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Chri"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "elievers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conjugal affection — On the part of Chri"
           },
           {
-            "location": "EPUB/ch008.xhtml#p133",
+            "location": "EPUB/ch008.xhtml#p151",
             "context": "(2.) When the same thing is attributed severally and singly unto each person. There is, indeed, no gracious influence from above, no illapse of light, life, love, or grace upon our hea"
           }
         ]
@@ -1008,15 +1008,15 @@
         "epub": 4,
         "examples": [
           {
-            "location": "EPUB/ch035.xhtml#p1726",
+            "location": "EPUB/ch035.xhtml#p1744",
             "context": "(2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, —"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1731",
+            "location": "EPUB/ch035.xhtml#p1749",
             "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1732",
+            "location": "EPUB/ch035.xhtml#p1750",
             "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
           }
         ]
@@ -1027,15 +1027,15 @@
         "epub": 34,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "luation: — (1.) His incarnation; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and pers"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "st: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conjugal affection — On the part of Christ, pity or compassion — Whe"
           },
           {
-            "location": "EPUB/ch010.xhtml#p249",
+            "location": "EPUB/ch010.xhtml#p267",
             "context": "(3.) Let it have its proper fruit and efficacy upon thy heart, in return of love to him again. So shall we walk in the light of God's countenance, and hold holy communion with our Fath"
           }
         ]
@@ -1046,15 +1046,15 @@
         "epub": 16,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p15",
+            "location": "EPUB/contents_2.xhtml#p23",
             "context": "on; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own liv"
           },
           {
-            "location": "EPUB/ch012.xhtml#p306",
+            "location": "EPUB/ch012.xhtml#p324",
             "context": "(4.) Comfort."
           },
           {
-            "location": "EPUB/ch012.xhtml#p313",
+            "location": "EPUB/ch012.xhtml#p331",
             "context": "(4.) Supportment and consolation, verse 6, \"His left hand is under my head, and his right hand does embrace me.\" Christ here has the posture of a most tender friend towards any one in"
           }
         ]

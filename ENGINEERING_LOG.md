@@ -2360,6 +2360,41 @@ The extraction layer was preserving OCR quote marks that actually belonged to PD
 
 ---
 
+## [Issue 127] Shared Contents Page Polish
+
+**Date:** 2026-05-20
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+The Volume 2 contents page still looked mechanically extracted rather than typeset. `CONTENTS OF VOL. 2.` was not using the same volume-title treatment as `CONTENTS OF VOLUME n`, `Part n.` rows were ordinary paragraphs, labels such as `Chapter 1 .` retained a stray space before the period, and long extracted blocks could contain many chapter entries inside one paragraph.
+
+### 2. Root Cause
+
+The contents-page post-processor normalized only a narrow heading shape and mostly preserved the PDF block boundaries. That worked for some V1 content, but V2 showed that AGES contents pages vary: headings can say `VOL.`, part rows can arrive as normal paragraphs, and chapter/digression markers may be flattened into long prose runs or split across continuation blocks.
+
+### 3. Fix
+
+- Expanded `_polish_contents_page_html()` to recognize `CONTENTS OF VOL. n` and `CONTENTS OF VOLUME n`.
+- Added a contents-entry splitter that creates separate rows for `Part n.`, `Chapter n.`, and `Digression n.` markers even when they arrive in one PDF paragraph.
+- Joins lowercase continuation rows back to the preceding contents item before rendering.
+- Normalizes `Chapter 1 .` / `Chapter 1` to `Chapter 1.` and renders labels with `<span class="contents-label">`.
+- Promotes `Part n.` to `contents-part-title` and all-caps non-marker contents rows to treatise-title headings.
+- Added CSS for `contents-part-title` and `contents-label`.
+- Added regression coverage using a synthetic contents page instead of a single volume-specific string.
+
+### 4. Validation
+
+- Volume 2 render-only rebuild completed with `.venv/bin/python3 volumes/v2/convert.py --render-only`.
+- Manual XHTML inspection confirmed Part 1/2/3 are separate `contents-part-title` headings, `Chapter n.` labels are bold and normalized, the `Chapter 1 .` form no longer appears, and the flattened Part 2 run is split into separate chapter/digression rows.
+- EPUB audit: WARN, 0 errors, 1 repeated-phrase warning.
+- Text-integrity audit: WARN; front CONTENTS missing pages `0`, inline structural marker candidates `0`, reference continuation splits `0`, citation continuation splits `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS.
+- Regression tests: Volume 2 gate `30 passed, 7 skipped`.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives
