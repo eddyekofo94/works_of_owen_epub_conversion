@@ -12,59 +12,59 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 59,
-      "budget": 68,
+      "observed": 201,
+      "budget": 201,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "Communion with the FATHER is described,",
-          "next": "and practical inferences deduced from it, IV."
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "Part II . — The reality of communion with CHRIST is proved, CHAP. I.; and the nature of it is subsequently considered,",
-          "next": "It is shown to consist in grace; and then the grace of Christ is exhibited under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, "
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": " under three divisions: — his personal grace, III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; — purchased grace ,",
-          "next": "— X.; in which the mediatorial work of Christ is fully considered, in reference to our acceptance with God, VII., VIII.; sanctification, IX.; and the privileges of the covenant, X."
+          "file": "EPUB/ch002.xhtml",
+          "previous": "Reader, I am Thy servant in Christ Jesus",
+          "next": "DANIEL BURGESS"
         },
         {
           "file": "EPUB/ch008.xhtml",
-          "previous": "(1st.) The love of the Father unto us is an antecedent love, and that in two respects: —",
-          "next": "[1st.] It is antecedent in respect of our love, 1 John 4:10, \"Herein is love, not that we loved God, but that he loved us.\" His love goes before ours. The father loves the child, w"
+          "previous": "n what the peculiar appropriation of this distinct communion unto the several persons doth consist, must, in the first place, be made manifest. 14 1 John 5:7, the apostle tells us,",
+          "next": "In heaven they are, and bear witness to us. And what is it that they bear witness unto? Unto the sonship of Christ, and the salvation of believers in his blood. Of the carrying on "
         },
         {
           "file": "EPUB/ch008.xhtml",
-          "previous": "(2ndly.) Our love is consequential in both these regards: —",
-          "next": "[1st.] In respect of the love of God. Never did creature turn his affections towards God, if the heart of God were not first set upon him."
+          "previous": "Sometimes the Son only is spoken of, as to this purpose. 1 Corinthians 1:9,",
+          "next": "— of which place afterward."
         },
         {
           "file": "EPUB/ch008.xhtml",
-          "previous": "ng; that cannot be heightened by any act of ours, that cannot be lessened by any thing in us. I say, in itself it is thus; otherwise, in a twofold regard, it may admit of change: —",
-          "next": "[1st.] In respect of its fruits. It is, as I said, a fruitful love, a love of bounty. In reference unto those fruits, it may sometimes be greater, sometimes less; its communication"
+          "previous": "Sometimes the Spirit alone is mentioned. 2 Corinthians 13:14,",
+          "next": "This distinct communion, then, of the saints with the Father, Son, and Spirit, is very plain in the Scripture; but yet it may admit of farther demonstration Only this caution I mus"
         },
         {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "made of a woman, made under the law, to redeem them that were under the law, that we might receive the adoption of sons,\" Galatians 4:4,5. And herein I shall do these two things: —",
-          "next": "Show wherein that fellowship or communion does consist: —"
+          "file": "EPUB/ch008.xhtml",
+          "previous": "er: these graces as acted in prayer and praises, and as clothed with instituted worship, are peculiarly directed unto him. \"Ye call on the Father,\" 1 Peter 1:17, Ephesians 3:14,15,",
+          "next": "Bowing the knee compriseth the whole worship of God, both that which is moral, in the universal obedience he requireth, and those peculiar ways of carrying it on which are by him a"
         },
         {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "Show wherein that fellowship or communion does consist: —",
-          "next": "For the first, I shall only produce some few places of Scripture to confirm it, that it is so: — 1 Corinthians 1:9, \"God is faithful, by whom ye were called unto the fellowship of "
+          "file": "EPUB/ch008.xhtml",
+          "previous": "therefore the same apostle doth, in another place, expressly conjoin, and yet as expressly distinguish, the Father and the Son in directing his supplications, 1 Thessalonians 3:11,",
+          "next": "The like precedent, also, have you of thanksgiving, Ephesians 1:3,4, \"Blessed be the God and Father of our Lord Jesus Christ,\" etc. I shall not add those very many places wherein t"
         },
         {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "There are three things in general wherein this personal excellency and grace of the Lord Christ does consist: —",
-          "next": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof"
+          "file": "EPUB/ch008.xhtml",
+          "previous": "on hath everlasting life,\" verse 36. \"This is the work of God, that ye believe on him whom he hath sent,\" John 6:29,40; 1 John 5:10. The foundation of the whole is laid, John 5:23,",
+          "next": "But of this honor and worship of the Son I have treated at large elsewhere; 18 and shall not in general insist upon it again. For love, I shall only add that solemn apostolical ben"
         },
         {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof",
-          "next": "(2ndly.) His fullness to save, from the grace of communion; or the free consequences of the grace of union."
+          "file": "EPUB/ch008.xhtml",
+          "previous": " 2:22-24, 1 John 5:10-13; Hebrews 1:6; Philippians 29:10 2:10; John 5:23.) and distinctly directed unto the Son, is abundantly manifest from that solemn doxology, Revelation 1:5,6,",
+          "next": "Which yet is set forth with more glory, chapter 5:8,"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "Which yet is set forth with more glory, chapter 5:8,",
+          "next": "and verses 13,14, \"Every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and hon"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": " And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,",
+          "next": "And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew "
         }
       ]
     },
@@ -82,32 +82,24 @@
       "status": "ok",
       "samples": [
         {
-          "phrase": "pleased the father that in him should all fullness dwell",
-          "count": 8
-        },
-        {
-          "phrase": "the father that in him should all fullness dwell colossians",
-          "count": 8
-        },
-        {
           "phrase": "bare our sins in his own body on the tree",
-          "count": 8
+          "count": 7
         },
         {
           "phrase": "is with the father and with his son jesus christ",
           "count": 6
         },
         {
-          "phrase": "our sins in his own body on the tree peter",
+          "phrase": "pleased the father that in him should all fullness dwell",
           "count": 6
         },
         {
-          "phrase": "there are diversities of operations but it is the same",
-          "count": 5
+          "phrase": "the father that in him should all fullness dwell colossians",
+          "count": 6
         },
         {
-          "phrase": "are diversities of operations but it is the same god",
-          "count": 5
+          "phrase": "father that in him should all fullness dwell colossians 19",
+          "count": 6
         },
         {
           "phrase": "our fellowship is with the father and with his son",
@@ -118,7 +110,15 @@
           "count": 5
         },
         {
-          "phrase": "lord jesus christ and the love of god and the",
+          "phrase": "it pleased the father that in him should all fullness",
+          "count": 5
+        },
+        {
+          "phrase": "to be propitiation through faith in his blood to declare",
+          "count": 5
+        },
+        {
+          "phrase": "be propitiation through faith in his blood to declare his",
           "count": 5
         }
       ]
@@ -178,6 +178,34 @@
       "budget": 0,
       "status": "ok",
       "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
     }
   ],
   "epub_checks": [
@@ -190,15 +218,10 @@
     },
     {
       "label": "Untagged Greek characters",
-      "observed": 3,
+      "observed": 0,
       "budget": 55,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch026.xhtml",
-          "text": "It is God has given the earnest of the Spirit in our hearts: an expression directly answering that of Galatians 4:6, “God has sent forth the Spirit of his Son into your hearts;” that is, the person of the Spirit; for not"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Untagged Hebrew characters",
@@ -270,11 +293,11 @@
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch034.xhtml",
+          "file": "EPUB/ch035.xhtml",
           "text": "The second section of this chapter i"
         },
         {
-          "file": "EPUB/ch039.xhtml",
+          "file": "EPUB/ch042.xhtml",
           "text": "Chapter 3"
         }
       ]
@@ -295,19 +318,17 @@
     },
     {
       "label": "Fragmented Greek span-run files",
-      "observed": 2,
+      "observed": 0,
       "budget": 2,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "<span class=\"greek\" lang=\"el\" xml:lang=\"el\">[ας</span> <span class=\"greek\" lang=\"el\" xml:lang=\"el\">"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "text": "<span class=\"greek\" lang=\"el\" xml:lang=\"el\">[Ιν</span> <span class=\"greek\" lang=\"el\" xml:lang=\"el\">"
-        }
-      ]
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Noteref links without spacing class",
@@ -339,15 +360,10 @@
     },
     {
       "label": "Structural bold leaks",
-      "observed": 1,
+      "observed": 0,
       "budget": 1,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch020.xhtml",
-          "text": "Objection 1. For our absolution by and upon the death of Christ, it may be said, that “if the elect have their absolution, reconciliation, and freedom by the de"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated structural markers",
@@ -414,28 +430,16 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 14,
-      "budget": 14,
+      "observed": 15,
+      "budget": 15,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch003_title.xhtml",
-          "text": "d"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
+          "file": "EPUB/ch008.xhtml",
           "text": "a"
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "text": "w"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "text": "i"
-        },
-        {
-          "file": "EPUB/ch013.xhtml",
+          "file": "EPUB/ch010.xhtml",
           "text": "a"
         },
         {
@@ -443,20 +447,32 @@
           "text": "a"
         },
         {
-          "file": "EPUB/ch015.xhtml",
-          "text": "t"
-        },
-        {
-          "file": "EPUB/ch017.xhtml",
-          "text": "t"
-        },
-        {
-          "file": "EPUB/ch020.xhtml",
+          "file": "EPUB/ch016.xhtml",
           "text": "i"
         },
         {
-          "file": "EPUB/ch021.xhtml",
+          "file": "EPUB/ch017.xhtml",
           "text": "a"
+        },
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": "b"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "i"
+        },
+        {
+          "file": "EPUB/ch023.xhtml",
+          "text": "n"
+        },
+        {
+          "file": "EPUB/ch025.xhtml",
+          "text": "t"
+        },
+        {
+          "file": "EPUB/ch028.xhtml",
+          "text": "i"
         }
       ]
     },

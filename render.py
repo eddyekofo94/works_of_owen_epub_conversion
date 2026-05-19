@@ -91,6 +91,7 @@ STRUCTURAL_START_RE = re.compile(
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\s+|'  # [1st,] There...
     r'[IVXLCDM]+\.\s+|'                  # I. / II.
     r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)\s+|'                       # Q. / Ques. / Ans. / A. 1.
+    r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.?)\s+|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?\s+|'  # 2ndly, 3rdly
     r'(?:First|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Lastly|Again|But)\b[,.]?\s+'
@@ -105,6 +106,7 @@ STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]|'
     r'[IVXLCDM]+\.|'
     r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)|'
+    r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.)|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
     r')(?P<space>\s+)'
@@ -126,6 +128,7 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'[IVXLCDM]+\.|'
     r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
     r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
+    r'(?:Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?)\s*(?:\d+\.)?|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
     r')(?P<trail>\s+)'
@@ -181,10 +184,16 @@ _SCHOLASTIC_LABEL_RE = re.compile(
     re.I,
 )
 
+_SCHOLASTIC_LABEL_RE = (
+    r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|'
+    r'Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.?|Usus\.?\s*\d+\.?|'
+    r'Application\.?\s*\d+\.?)'
+)
+
 _SCHOLASTIC_ANCHOR_SPLIT_RE = re.compile(
     r'([.!?"\u201d])\s+'           # closing punctuation / quote
     r'(?P<label>'
-    r'(?:Obj(?:ection)?\.|Ans(?:wer)?\.(?:\s+\d+\.)?|Sol(?:ution)?\.|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?)'
+    + _SCHOLASTIC_LABEL_RE +
     r')\s',
     re.I,
 )
@@ -216,10 +225,16 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
     html = _SCHOLASTIC_ANCHOR_SPLIT_RE.sub(_split_before_label, html)
 
     # 3. Ensure labels at paragraph start are bold
+    def _clean_scholastic_label(label: str) -> str:
+        label = re.sub(r'\s+', ' ', label).strip()
+        label = re.sub(r'\s+\.', '.', label)
+        label = re.sub(r'\.(?=\d)', '. ', label)
+        return label
+
     html = re.sub(
         r'(<p(?:\s[^>]*)?>)\s*'
-        r'(?P<label>(?:Obj(?:ection)?\.|Ans(?:wer)?\.(?:\s+\d+\.)?|Sol(?:ution)?\.|Use\s+\d+\.?|Usus\s+\d+\.?|Application\s+\d+\.?))\s',
-        lambda m: f'{m.group(1)}<b class="scholastic-label">{m.group("label")}</b> ',
+        r'(?P<label>' + _SCHOLASTIC_LABEL_RE + r')\s',
+        lambda m: f'{m.group(1)}<b class="scholastic-label">{_clean_scholastic_label(m.group("label"))}</b> ',
         html,
         flags=re.I,
     )
@@ -244,9 +259,9 @@ def _normalize_spaced_caps(text: str) -> str:
 
 
 def _normalize_i_will(text: str) -> str:
-    """Normalize IWILL → I WILL, i am → I AM etc."""
-    text = _I_WILL_RE.sub('I WILL', text)
-    text = _I_AM_RE.sub('I AM', text)
+    """Normalize OCR forms like IWILL/I WILL without preserving false capitals."""
+    text = _I_WILL_RE.sub('I will', text)
+    text = _I_AM_RE.sub('I am', text)
     return text
 
 
@@ -276,6 +291,9 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     Repair known OCR character misreads using volume-specific configuration.
     """
     text = _normalize_scholarly_citation_artifacts(text)
+    text = re.sub(r'\b([A-Za-z]{2,})]y\b', r'\1ly', text)
+    text = re.sub(r'\b([A-Za-z]{2,})]e\b', r'\1le', text)
+    text = re.sub(r'(?<!\w)](?=earn|earning|earned|earnt|edge)', 'l', text, flags=re.I)
     if not config:
         return text
         
@@ -296,7 +314,7 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
 SCRIPTURE_BOOK_RE = (
     r'(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|'
     r'Samuel|Kings|Chronicles|Ezra|Nehemiah|Esther|Job|Psalm|Psalms|'
-    r'Proverbs|Ecclesiastes|Song|Isaiah|Jeremiah|Lamentations|Ezekiel|'
+    r'Proverbs|Ecclesiastes|Song(?:\s+of\s+Solomon)?|Isaiah|Jeremiah|Lamentations|Ezekiel|'
     r'Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|'
     r'Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|'
     r'Romans|Corinthians|Galatians|Ephesians|Philippians|Colossians|'
@@ -448,6 +466,8 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
             re.I,
         ))
         before_ends_objection = bool(re.search(r'\b(?:Objection|Obj)\b\.?\s*$', before, re.I))
+        if before_ends_objection and re.match(r'^(?:\*\*)?\d+\.(?:\*\*)?$', marker.strip()):
+            continue
         if len(before) < 12 and not (before_ends_structural or before_ends_lead_word or before_ends_objection):
             continue
         marker_clean = re.sub(r'[\*\[\]\(\),;.\s]', '', marker).lower()
@@ -578,8 +598,9 @@ def tag_unicode_ranges(text):
     """Wrap untagged Greek and Hebrew Unicode runs in language-tagged spans.
 
     Guards:
-    - Minimum 3 Greek codepoints before tagging (prevents English false positives
-      like single letters from erroneously becoming Greek spans).
+    - Tag every Unicode Greek run, including one-letter grammatical notes such
+      as "ὅ", because these are already Unicode Greek and are not Beta-Code
+      guesses.
     - Applies polytonic_sweep() inside every Greek span to remove any surviving
       legacy Beta Code accent characters (~, >, <, j, J, etc.).
     - Adjacent Greek / Hebrew spans with only whitespace between them are merged
@@ -592,20 +613,16 @@ def tag_unicode_ranges(text):
     text = force_polyglot_mapping(text)
     text = clean_greek_text(text)
 
-    # 2. Tag Greek runs — minimum 3 codepoints to avoid false positives
+    # 2. Tag Greek Unicode runs, including single-letter grammatical notes.
     def tag_greek(m):
         content = m.group(1)
-        # Guard: skip very short runs (1-2 chars) that are likely OCR noise
-        greek_chars = re.findall(r'[\u0370-\u03FF\u1F00-\u1FFF]', content)
-        if len(greek_chars) < 3:
-            return content
         # Apply polytonic sweep to remove legacy accent artifacts
         clean = polytonic_sweep(content)
         if not clean.strip():
             return content
         return f'<span lang="el" xml:lang="el">{clean}</span>'
 
-    text = re.sub(r'([\u0370-\u03FF\u1F00-\u1FFF][\u0370-\u03FF\u1F00-\u1FFF\u0300-\u036F\u0020]*[\u0370-\u03FF\u1F00-\u1FFF][\u0370-\u03FF\u1F00-\u1FFF\u0300-\u036F]*)', tag_greek, text)
+    text = re.sub(r'([\u0370-\u03FF\u1F00-\u1FFF][\u0370-\u03FF\u1F00-\u1FFF\u0300-\u036F]*)', tag_greek, text)
 
     # 3. Tag Hebrew runs (all lengths — Hebrew words are identifiable even at 1-2 chars)
     def tag_hebrew(m):
@@ -1309,7 +1326,10 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     previous_text,
                     roman_list_expected,
                 )
-                if is_roman_list:
+                if current_mode == "FRONT_MATTER":
+                    html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
+                    roman_list_expected = next_roman if is_roman_list else None
+                elif is_roman_list:
                     html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
                     roman_list_expected = next_roman
                 else:
@@ -1512,15 +1532,20 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                 re.I,
             )
             if part_book_match:
-                part_label = part_book_match.group(0).strip()
-                html_parts.append(
-                    f'<h1 class="primary" style="text-align:center;margin:2em 0 1.5em;">'
-                    f'{part_label}</h1>'
-                )
-                recent_plain.append(_strip_footnote_placeholders(content_no_refs))
-                if len(recent_plain) > 5:
-                    recent_plain = recent_plain[-5:]
-                continue
+                marker = f'{part_book_match.group(1).title()} {part_book_match.group(2).upper()}.'
+                rest = (part_book_match.group(3) or '').strip()
+                if rest and len(rest) > 18:
+                    content_no_refs = f'**{marker}** {rest}'
+                else:
+                    part_label = part_book_match.group(0).strip()
+                    html_parts.append(
+                        f'<h1 class="primary" style="text-align:center;margin:2em 0 1.5em;">'
+                        f'{part_label}</h1>'
+                    )
+                    recent_plain.append(_strip_footnote_placeholders(content_no_refs))
+                    if len(recent_plain) > 5:
+                        recent_plain = recent_plain[-5:]
+                    continue
 
         if pending_chapter_subtitle and not h_tag:
             # Detect italic chapter subtitles (Volume 2 pattern)
@@ -1599,6 +1624,10 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
                         is_centered_roman_list = True
                         roman_list_expected = roman_number + 1
+                    elif current_mode == "FRONT_MATTER":
+                        content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
+                        is_centered_roman_list = True
+                        roman_list_expected = None
                     else:
                         roman_heading = _render_simple_roman_heading_content(roman_match.group('roman'))
                         content_no_refs = rest_after_roman
@@ -1882,6 +1911,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                                     and _is_roman_list_item(rest_after_roman)
                                 )
                                 is_long_roman_section = (
+                                    current_mode != "FRONT_MATTER"
+                                    and
                                     not is_continued_roman_outline
                                     and len(re.findall(r'\w+', rest_after_roman)) >= 12
                                 )
@@ -1898,6 +1929,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                                 roman_list_expected = roman_number + 1
                             elif STRUCTURAL_START_RE.match(plain_for_class):
                                  # Numbered/lettered lists (Issue 23/26)
+                                 p_class = ' class="list-item"'
+                            elif re.match(r'^(?:<b>)?Part\s+[IVXLCDM]+\.', paragraph_html, re.I):
                                  p_class = ' class="list-item"'
                                 
                             html_parts.append(f'<p{p_class}>{paragraph_html}</p>')
@@ -2046,6 +2079,18 @@ def _polish_contents_page_html(html: str) -> str:
     html = re.sub(r'<p class="ContentsItem">', '<p class="contents-item">', html)
     html = re.sub(r'<span class="ContentsDescWrap">', '<span class="contents-desc-wrap">', html)
     return html
+
+
+def _polish_analysis_html(html: str) -> str:
+    """Keep front-matter analysis outlines compact instead of heading-heavy."""
+    if not html:
+        return html
+    return re.sub(
+        r'<h4 class="roman-subheading">(.*?)</h4>',
+        r'<p class="roman-list-item">\1</p>',
+        html,
+        flags=re.I | re.S,
+    )
 
 
 def generate_frontispiece_xhtml(portrait_filename):
@@ -2271,6 +2316,7 @@ _AGES_HEADERS = {'THE AGES DIGITAL LIBRARY', 'JOHN OWEN COLLECTION',
 def detect_page_type(page, page_num=None):
     """Detect if a page is TOC, Title, or Body text based on visual structure."""
     text_upper = page.get_text().upper()
+    is_volume_title = bool(re.search(r'THE\s+WORKS\s+OF\s+JOHN\s+OWEN', text_upper))
     blocks = page.get_text('dict')['blocks']
     text_blocks = [b for b in blocks if b.get('type') == 0]
     n_blocks = len(text_blocks)
@@ -2305,11 +2351,11 @@ def detect_page_type(page, page_num=None):
                     
     # Strict structural criteria (sparse blocks + large font)
     if max_font > 14 and total_chars < 800 and n_blocks < 15:
-        return 'title_page' if (page_num or 0) <= 10 else 'treatise_title_page'
+        return 'title_page' if is_volume_title else 'treatise_title_page'
 
     # Beyond very sparse: char-count based title page detection (mid-volume)
     if total_chars < 1200 and large_chars >= 40:
-        return 'title_page' if (page_num or 0) <= 10 else 'treatise_title_page'
+        return 'title_page' if is_volume_title else 'treatise_title_page'
 
     # Fallback for mixed title+body pages (e.g. Part titles starting mid-page)
     if total_chars < 2000:
@@ -2327,7 +2373,7 @@ def detect_page_type(page, page_num=None):
                     
             # Only trigger if we find a very large-font line (e.g. PART X, BOOK X)
             if b_max > 18 and len(b_text) < 40 and not b_text.upper().startswith('CHAPTER'):
-                return 'title_page' if (page_num or 0) <= 10 else 'treatise_title_page'
+                return 'title_page' if is_volume_title else 'treatise_title_page'
             # If we hit a normal block first, it's a body page
             break
 
@@ -2892,6 +2938,8 @@ def render_volume(vol_num: int, overrides: dict = None,
             front_matter_style=conv_fm_style,
             config=chapter_config
         )
+        if 'ANALYSIS' in title_upper:
+            body_html = _polish_analysis_html(body_html)
         body_html = apply_scholastic_anchor_protocol(body_html)
         html_postprocess_hook = config.get('html_postprocess_hook')
         if html_postprocess_hook:

@@ -2157,6 +2157,43 @@ The extraction risk was real but not the main cause of the V1 warning. V1's repo
 
 ---
 
+## [Issue 121] Volume 2 Shared Extraction and Rendering Cleanup
+
+**Date:** 2026-05-19
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volume tested:** 2
+
+### 1. The Problem
+
+After Volume 1 was brought into a stable state, Volume 2 exposed several recurring classes that should have been shared fixes rather than per-volume hand edits: weak treatise-title detection, a malformed Analysis section, visible AGES verse markers in footnotes, `I WILL`/`I AM` false all-caps, parenthesized Scripture spacing, missed scholastic anchors such as `Objection 1.` and `Use. 1.`, glued Proverbs/Song of Solomon references, and page-break joins around short Scripture-reference tails.
+
+### 2. Root Cause
+
+The failures were spread across both stages. Stage 1 still trusted AGES marker translations too eagerly when a printed Scripture book followed the marker, which produced stale adjacent book names such as `Proverbs ... Song of Solomon ...`. Chapter extraction also allowed overlapping TOC ranges and page carry-over to leak previous headings into the next section. Stage 2 had several V1-era repairs, but some were too narrow: footnote text did not receive the same marker cleanup as body text, scholastic label matching missed common Owen forms, and title-page detection treated early sparse pages too generically.
+
+### 3. Fixes
+
+- Added generic cleanup for glued AGES Scripture references, including the recurring Proverbs/Song of Solomon collision and chapter-only tails.
+- Applied AGES marker translation and scripture-glue cleanup to merged footnote text, not only body paragraphs.
+- Tightened sparse-page classification so real treatise starter pages use the shared `treatise-title-page` structure and CSS.
+- Trimmed chapter extraction to the matching structural marker when a TOC range carries over previous-page content.
+- Treated front-matter Analysis roman outline entries as list items instead of body-swallowing headings.
+- Extended scholastic anchor detection and bolding for `Objection`, `Obj.`, `Answer`, `Ans.`, `Solution`, `Sol.`, and `Use`.
+- Normalized false `I WILL` / `I AM` OCR casing to sentence case in generated prose.
+- Removed stray spaces after opening parentheses before Scripture references.
+- Tagged single-character Unicode Greek runs so audit checks do not miss short Greek notes.
+- Added focused regression tests and concrete absent-sample guards for the Proverbs/Song of Solomon collisions, visible AGES markers in footnotes, false all-caps, parenthesized references, scholastic labels, and question-plus-Scripture-tail paragraph joins.
+
+### 4. Validation
+
+- Full Volume 2 rebuild completed with `.venv/bin/python3 volumes/v2/convert.py`.
+- EPUB audit: PASS, 0 errors, 0 warnings; unprocessed AGES markers `0`, literal footnote markers `0`, untagged Greek `0`, untagged Hebrew `0`.
+- Text-integrity audit: WARN with remaining broad triage classes, but Greek clauses missing `0`, Hebrew clauses missing `0`, front CONTENTS missing pages `0`, reference continuation splits `0`, citation continuation splits `0`, and missing enumerator forms `0`.
+- Bug-regression report: PASS. Concrete recurring samples for `Proverbs ... Song of Solomon`, `I WILL/I AM`, raw AGES markers, and scholastic leaks are now guarded.
+- Pytest suite for the touched hardening areas: `38 passed`.
+
+---
+
 ## [Session: 2026-05-18] — Volume 1 Audit Refinement & Pipeline Hardening
 
 ### Issue: Greek Clause & Bottom-Clipping False Positives

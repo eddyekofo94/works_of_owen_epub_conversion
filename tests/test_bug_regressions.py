@@ -143,6 +143,49 @@ def test_fused_footnote_marker_before_word_is_isolated():
     assert "f53and" not in cleaned
 
 
+def test_ages_song_of_solomon_marker_does_not_keep_stale_proverbs_book():
+    cleaned = clean_text(
+        "opened, Proverbs 4:16<220416>; also Proverbs 2:1<220201>-7. "
+        "His description, Proverbs 5:1Song of Solomon 5, opened."
+    )
+
+    assert "Song of Solomon 4:16" in cleaned
+    assert "Song of Solomon 2:1-7" in cleaned
+    assert "Song of Solomon 5, opened" in cleaned
+    assert "Proverbs 4:16Song of Solomon" not in cleaned
+    assert "Proverbs 2:1Song of Solomon" not in cleaned
+    assert "Proverbs 5:1Song of Solomon" not in cleaned
+
+
+def test_footnote_merge_translates_ages_verse_markers():
+    from extract import merge_footnotes
+
+    footnotes = merge_footnotes(
+        {},
+        {5: "<460408>1 Corinthians 4:8-13; <450835>Romans 8:35,36."},
+    )
+
+    assert "1 Corinthians 4:8" in footnotes[5].text
+    assert "Romans 8:35" in footnotes[5].text
+    assert "<460408>" not in footnotes[5].text
+
+
+def test_i_will_and_i_am_are_not_forced_to_all_caps():
+    cleaned = clean_text("If he open the door, I WILL come in; for I AM ready.")
+
+    assert "I will come in" in cleaned
+    assert "I am ready" in cleaned
+    assert "I WILL come in" not in cleaned
+    assert "I AM ready" not in cleaned
+
+
+def test_parenthesized_scripture_refs_do_not_keep_opening_space():
+    cleaned = clean_text('the dead hear his voice and live." ( Matthew 3:17; John 5:25.)')
+
+    assert "(Matthew 3:17; John 5:25.)" in cleaned
+    assert "( Matthew" not in cleaned
+
+
 def test_issue_29_scholarly_citation_breaks_are_healed():
     raw = """Augustine gives an account of the same difference: De Trinitate, lib. 5 cap. , 8,
 9. Athanasius endeavored the composing of this difference.
@@ -235,6 +278,28 @@ def test_issue_34_numbered_answer_anchor_is_normalized_and_bolded():
 
     assert cleaned == "Ans. 1. There is no precedent nor example"
     assert '<b class="scholastic-label">Ans. 1.</b> There is no precedent nor example' in html
+
+
+def test_objection_and_use_labels_are_bolded_as_scholastic_anchors():
+    html = apply_scholastic_anchor_protocol(
+        "<p>Objection 1. But some may say, Alas!</p>\n"
+        "<p>Use. 1. You that are yet in the flower of your days.</p>"
+    )
+
+    assert '<b class="scholastic-label">Objection 1.</b> But some may say' in html
+    assert '<b class="scholastic-label">Use. 1.</b> You that are yet' in html
+
+
+def test_question_followed_by_scripture_tail_stays_in_same_paragraph():
+    paragraphs = reconstruct_paragraphs(
+        clean_text(
+            "What fruit of this consideration had Adam in the garden?\n\n"
+            "Genesis 3. What sweetness, what encouragement, is there in knowing"
+        )
+    )
+
+    joined = "\n".join(paragraphs)
+    assert "garden? Genesis 3. What sweetness" in joined
 
 
 @pytest.mark.parametrize("volume", VOLUMES)

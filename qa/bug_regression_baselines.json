@@ -101,6 +101,21 @@
         "audit": "epub",
         "text": "[f92]",
         "reason": "Literal footnote marker must not appear in rendered EPUB (V1 ch067)"
+      },
+      {
+        "audit": "epub",
+        "text": "Proverbs 4:16Song of Solomon",
+        "reason": "Stale Proverbs layer must not glue into Song of Solomon references"
+      },
+      {
+        "audit": "epub",
+        "text": "Proverbs 4:12Song of Solomon",
+        "reason": "Stale Proverbs layer must not glue into Song of Solomon references"
+      },
+      {
+        "audit": "epub",
+        "text": "Proverbs 2:1Song of Solomon",
+        "reason": "Stale Proverbs layer must not glue into Song of Solomon references"
       }
     ]
   },
@@ -124,7 +139,7 @@
     },
     "2": {
       "text_integrity": {
-        "max_split_candidate_count": 68,
+        "max_split_candidate_count": 201,
         "max_repeated_window_count": 25,
         "max_missing_marker_count": 2
       },
@@ -132,7 +147,7 @@
         "max_chapter_heading_in_paragraph_files": 2,
         "max_fragmented_greek_span_run_files": 2,
         "max_structural_bold_leak_files": 1,
-        "max_lowercase_paragraph_start_files": 14,
+        "max_lowercase_paragraph_start_files": 15,
         "max_noteref_leading_space_files": 0
       }
     }

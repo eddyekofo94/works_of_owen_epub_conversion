@@ -541,6 +541,13 @@ def _split_leading_scripture_reference_tail(text):
         re.I,
     )
     if not match:
+        match = re.match(
+            rf'^(?P<tail>(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s+\d+\.?)'
+            r'(?:\s+(?P<rest>.+))?$',
+            (text or '').strip(),
+            re.I,
+        )
+    if not match:
         return None, None
     return match.group('tail').strip(), (match.group('rest') or '').strip()
 
@@ -549,7 +556,13 @@ def _paragraph_expects_scripture_reference_tail(text):
     stripped = (text or '').strip()
     if not stripped or stripped.startswith('[[BLOCKQUOTE]]'):
         return False
-    return bool(re.search(r'[?!.][”"\']?\s*$', stripped) and re.search(r'[”"]\s*$', stripped))
+    return bool(
+        re.search(r'[?!.][”"\']?\s*$', stripped)
+        and (
+            re.search(r'[”"]\s*$', stripped)
+            or re.search(r'\?\s*$', stripped)
+        )
+    )
 
 
 CONNECTOR_STARTERS_RE = re.compile(
@@ -623,6 +636,55 @@ def _merge_adjacent_blockquote_paragraphs(paragraphs):
         else:
             merged.append(paragraph)
     return merged
+
+
+_GLUED_SCRIPTURE_REF_RE = re.compile(
+    rf'\b(?P<wrong>(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE})\s+'
+    r'(?P<coord>\d+:\d+)'
+    rf'(?P<right>(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE})\s+'
+    r'(?P=coord)(?P<tail>(?:[-,]\s*\d+)*)',
+    re.I,
+)
+
+
+def _repair_glued_scripture_book_references(text: str) -> str:
+    """Remove stale adjacent book names left by overlapping AGES marker layers."""
+    if not text:
+        return text
+
+    def repl(match: re.Match) -> str:
+        wrong = re.sub(r'\s+', ' ', match.group('wrong')).strip().lower()
+        right = re.sub(r'\s+', ' ', match.group('right')).strip().lower()
+        if wrong == right:
+            return match.group(0)
+        return f'{match.group("right")} {match.group("coord")}{match.group("tail")}'
+
+    text = _GLUED_SCRIPTURE_REF_RE.sub(repl, text)
+    text = re.sub(
+        r'\bProverbs\s+(\d+):(\d+)Song\s+of\s+Solomon\s+\1\b(?!:)',
+        r'Song of Solomon \1',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\bProverbs\s+(\d+):(\d+)Song\s+of\s+Solomon\b',
+        r'Song of Solomon \1:\2',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\bProverbs\s+(\d+):(\d+)Song\s+of\b.{0,180}?\bSong\s+of\s+Solomon\s+\1:\2\b',
+        r'Song of Solomon \1:\2',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\bSong\s+of\s+Solomon\s+3:1\s+it,\s*"Go forth',
+        'Song of Solomon 3:11, "Go forth',
+        text,
+        flags=re.I,
+    )
+    return text
 
 
 def _flush_blockquote_lines(output_lines, pending_bq):
@@ -1450,6 +1512,13 @@ def merge_footnotes(pdf_footnotes, thml_footnotes):
     merged = {}
     for num in sorted(all_nums):
         text = thml_footnotes.get(num) or pdf_footnotes.get(num) or ''
+        text = normalize_characters(text)
+        text = _normalize_spaced_caps(text)
+        text = _normalize_i_will(text)
+        text = translate_ages_verse_markers(text)
+        text = _repair_glued_scripture_book_references(text)
+        text = EMPTY_BRACKET_RE.sub('', text)
+        text = re.sub(r'\s+', ' ', text).strip()
         merged[num] = Footnote(
             fnum=num,
             text=text,
@@ -1485,6 +1554,35 @@ class Chapter:
     is_treatise: bool = False
     is_endnotes: bool = False
     footnote_refs: list = field(default_factory=list)
+
+
+def _trim_to_matching_structural_marker(raw_text: str, title: str) -> str:
+    """Drop carried-over page text before the marker for the current TOC entry."""
+    if not raw_text or not title:
+        return raw_text
+
+    def norm(value: str) -> str:
+        value = re.sub(r'\[\[[A-Z_]+\]\]', ' ', value)
+        value = re.sub(r'[^A-Z0-9]+', ' ', value.upper())
+        return re.sub(r'\s+', ' ', value).strip()
+
+    title_norm = norm(title)
+    if not title_norm:
+        return raw_text
+    markers = list(re.finditer(
+        r'\[\[(?:PART|CHAPTER|DIGRESSION|ROMAN_HEAD|SUBTITLE|SUMMARY)\]\]\s*([^\n]*)',
+        raw_text,
+        re.I,
+    ))
+    if not markers:
+        return raw_text
+    for marker in markers:
+        if marker.start() == 0:
+            continue
+        marker_text = norm(marker.group(1))
+        if marker_text and (title_norm in marker_text or marker_text in title_norm):
+            return raw_text[marker.start():].strip()
+    return raw_text
 
 
 def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=None):
@@ -1534,6 +1632,8 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
     configured_treatises = (config or {}).get('treatises', [])
     
     for i, (level, title, page_0idx) in enumerate(nav_entries):
+        if re.fullmatch(r'\s*FOOTNOTES\.?\s*', title, re.I):
+            continue
         # Determine if this is a treatise title page
         title_upper = title.upper()
         
@@ -1582,6 +1682,7 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
             config=config,
             allow_treatise_title_page=allow_treatise_title_page,
         )
+        raw_text = _trim_to_matching_structural_marker(raw_text, title)
         
         # Handle shared start page: if this chapter starts on a page shared with previous,
         # extract only from the heading onwards.
@@ -1759,6 +1860,8 @@ def clean_text(text, config=None):
     #    <430316> → John 3:16. Must run BEFORE EMPTY_BRACKET_RE so we don't
     #    clobber the translated output.
     text = translate_ages_verse_markers(text)
+    text = _repair_glued_scripture_book_references(text)
+    text = re.sub(rf'\(\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', '(', text, flags=re.I)
     text = EMPTY_BRACKET_RE.sub('', text)
     # 2. Remove AGES running headers (whole-line removal)
     text = re.sub(
@@ -2354,6 +2457,7 @@ def post_process_paragraphs(paragraphs):
                       lambda m: m.group(1) if m.group(1).endswith(m.group(2)) else m.group(0), para)
         
         para = _remove_interrupted_duplicate_clause(para)
+        para = _repair_glued_scripture_book_references(para)
         para = _remove_duplicate_scripture_tail(para)
         para = _remove_adjacent_repeated_word_runs(para)
         para = _repair_known_catechism_ghosts(para)
@@ -2362,6 +2466,15 @@ def post_process_paragraphs(paragraphs):
 
         for part in _split_inline_structural_markers(para):
             if not part:
+                continue
+
+            if (
+                cleaned
+                and re.fullmatch(r'(?:Objection|Obj\.?|Answer|Ans\.?|Solution|Sol\.?)', cleaned[-1].strip(), re.I)
+                and re.match(r'^\d+\.?\s+', part)
+            ):
+                label = cleaned[-1].strip()
+                cleaned[-1] = f"{label} {part}".strip()
                 continue
 
             if cleaned and _paragraph_needs_numeric_continuation(cleaned[-1], part):

@@ -1,88 +1,60 @@
 {
   "epub": "volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-17T15:20:05.328363+00:00",
-  "status": "fail",
-  "error_count": 1,
-  "warning_count": 3,
-  "errors": [
-    {
-      "code": "literal_footnote_markers",
-      "message": "Literal fN footnote markers appear in rendered text",
-      "files": 2
-    }
-  ],
-  "warnings": [
-    {
-      "code": "untagged_greek",
-      "message": "Greek characters appear outside lang='el' context",
-      "chars": 3
-    },
-    {
-      "code": "possible_beta_code_residue",
-      "message": "Possible Beta Code residue detected",
-      "files": 4
-    },
-    {
-      "code": "orphan_endnotes",
-      "message": "Some endnote anchors have no matching noteref",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn2",
-        "EPUB/endnotes.xhtml#fn3"
-      ]
-    }
-  ],
+  "generated_at": "2026-05-19T09:42:41.382916+00:00",
+  "status": "pass",
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
   "info": {
-    "file_count": 82,
-    "epub_size_bytes": 6337476,
+    "file_count": 83,
+    "epub_size_bytes": 6459426,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
       "The Works of John Owen, Volume 2: Communion with God"
     ],
     "creators": [
-      "John Owen",
-      "William H. Goold"
+      "John Owen"
     ],
-    "manifest_count": 73,
-    "spine_count": 49,
-    "xhtml_count": 51,
+    "manifest_count": 74,
+    "spine_count": 47,
+    "xhtml_count": 49,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 18,
+    "font_count": 21,
     "language": {
-      "greek_chars": 3398,
-      "greek_untagged_chars": 3,
-      "hebrew_chars": 615,
+      "greek_chars": 2627,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 633,
       "hebrew_untagged_chars": 0,
-      "files_with_untagged_greek": 1,
+      "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 25,
-      "unique_noteref_targets": 24,
+      "noteref_count": 27,
+      "unique_noteref_targets": 26,
       "endnote_anchor_count": 26,
       "missing_endnote_targets": [],
-      "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn2",
-        "EPUB/endnotes.xhtml#fn3"
-      ]
+      "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
-      "beta_code_files": 4,
+      "beta_code_files": 0,
       "escaped_lang_tag_files": 0,
-      "literal_footnote_marker_files": 2,
+      "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
       "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 3,
+      "chapter_heading_in_paragraph_files": 2,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
       "structural_bold_leak_files": 0,
       "repeated_structural_marker_files": 0,
@@ -91,50 +63,19 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 19,
+      "lowercase_paragraph_start_files": 15,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
       "samples": {
         "boilerplate": [],
-        "beta_code": [
-          {
-            "file": "EPUB/ch018.xhtml",
-            "text": "]y"
-          },
-          {
-            "file": "EPUB/ch023.xhtml",
-            "text": "]e"
-          },
-          {
-            "file": "EPUB/ch027.xhtml",
-            "text": "]y"
-          },
-          {
-            "file": "EPUB/ch035.xhtml",
-            "text": "]y"
-          }
-        ],
+        "beta_code": [],
         "escaped_lang_tag": [],
-        "untagged_greek": [
-          {
-            "file": "EPUB/ch027.xhtml",
-            "text": "It is God has given the earnest of the Spirit in our hearts: an expression directly answering that of Galatians 4:6, \"God has sent forth the Spirit of his Son into your hearts;\" that is, the person of the Spirit; for not"
-          }
-        ],
+        "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [],
-        "literal_footnote_marker": [
-          {
-            "file": "EPUB/ch006.xhtml",
-            "text": "[f2]"
-          },
-          {
-            "file": "EPUB/ch007.xhtml",
-            "text": "[f2]"
-          }
-        ],
+        "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],
         "missing_chapter_initialization": [],
@@ -146,16 +87,13 @@
             "text": "The second section of this chapter i"
           },
           {
-            "file": "EPUB/ch040.xhtml",
-            "text": "Chapter 3"
-          },
-          {
             "file": "EPUB/ch042.xhtml",
             "text": "Chapter 3"
           }
         ],
         "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
         "scripture_blockquote": [],
         "orphan_scripture_bracket": [],
         "glued_ordinal": [],
@@ -171,43 +109,43 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch003_title.xhtml",
-            "text": "d"
-          },
-          {
-            "file": "EPUB/ch006.xhtml",
-            "text": "w"
-          },
-          {
-            "file": "EPUB/ch007.xhtml",
-            "text": "w"
-          },
-          {
             "file": "EPUB/ch008.xhtml",
-            "text": "w"
+            "text": "a"
           },
           {
             "file": "EPUB/ch010.xhtml",
-            "text": "i"
-          },
-          {
-            "file": "EPUB/ch011.xhtml",
-            "text": "w"
-          },
-          {
-            "file": "EPUB/ch012.xhtml",
-            "text": "w"
+            "text": "a"
           },
           {
             "file": "EPUB/ch014.xhtml",
             "text": "a"
           },
           {
-            "file": "EPUB/ch015.xhtml",
+            "file": "EPUB/ch016.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch017.xhtml",
             "text": "a"
           },
           {
-            "file": "EPUB/ch016.xhtml",
+            "file": "EPUB/ch019.xhtml",
+            "text": "b"
+          },
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "i"
+          },
+          {
+            "file": "EPUB/ch023.xhtml",
+            "text": "n"
+          },
+          {
+            "file": "EPUB/ch025.xhtml",
+            "text": "t"
+          },
+          {
+            "file": "EPUB/ch028.xhtml",
             "text": "i"
           }
         ],
@@ -217,7 +155,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 49,
+    "nav_link_count": 47,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

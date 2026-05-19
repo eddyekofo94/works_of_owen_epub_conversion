@@ -95,6 +95,7 @@ VOLUME_CONFIG = {
         'source_type': 'ages_pdf',
         'treatises': [
             'Of Communion with God the Father, Son, and Holy Ghost, Each Person Distinctly, in Love, Grace, and Consolation',
+            'A Vindication of Some Passages in a Discourse Concerning Communion with God',
             'A Brief Declaration and Vindication of the Doctrine of the Trinity'
         ]
     },

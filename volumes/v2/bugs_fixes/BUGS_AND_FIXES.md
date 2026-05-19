@@ -102,6 +102,7 @@
 | 105 | Legacy Hebrew robustness: Gideon glyph mapping, NFC normalization, RTL wrapping, and audit failure for residue | `shared.py` + `scripts/audit_epub.py` + regression tests | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 106 | Text-density guard for semantic disintegration / atomized paragraph layout | `shared.py` + `scripts/audit_text_integrity.py` + regression tests | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 107 | Volume 2, Page 343 ("A Vindication") body text swallowed by title page | `format_title_page()` + chapter loop integration + integrity budget | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 108 | Volume 2 recurring shared-pipeline defects: treatise pages, Analysis, AGES footnotes, scholastic anchors, false all-caps, and Proverbs/Song of Solomon glue | `extract.py` + `render.py` + `shared.py` + regression tests | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
@@ -1027,12 +1028,16 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-17T15:20:05.328363+00:00
+**Last run:** 2026-05-19T09:42:41.382916+00:00
 **EPUB:** `volumes/v2/output/volume_2.epub`
-**Status:** FAIL (1 errors, 3 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_2_audit.json`
@@ -1041,28 +1046,18 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 51 |
-| Spine items | 49 |
-| Embedded fonts | 18 |
-| NAV links | 49 |
-| Greek chars / untagged | 3398 / 3 |
-| Hebrew chars / untagged | 615 / 0 |
-| Noteref links / endnote anchors | 25 / 26 |
+| XHTML files | 49 |
+| Spine items | 47 |
+| Embedded fonts | 21 |
+| NAV links | 47 |
+| Greek chars / untagged | 2627 / 0 |
+| Hebrew chars / untagged | 633 / 0 |
+| Noteref links / endnote anchors | 27 / 26 |
 | AGES boilerplate hits | 0 |
-| Possible Beta Code files | 4 |
+| Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 0 |
-
-Warnings requiring triage:
-
-- `untagged_greek`: Greek characters appear outside lang='el' context
-- `possible_beta_code_residue`: Possible Beta Code residue detected
-- `orphan_endnotes`: Some endnote anchors have no matching noteref
-
-Errors requiring correction:
-
-- `literal_footnote_markers`: Literal fN footnote markers appear in rendered text
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -1189,10 +1184,16 @@ Errors requiring correction:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-15T21:59:04.966047+00:00
+**Last run:** 2026-05-19T09:41:54.928022+00:00
 **Status:** WARN (9 warnings)
 
 Reports:
@@ -1201,37 +1202,43 @@ Reports:
 
 | Check | Result |
 |-------|--------|
-| PDF pages | 558 |
-| EPUB text files | 50 |
-| EPUB paragraphs/headings | 2038 |
-| Approximate PDF-to-EPUB word coverage | 0.9933 |
-| Weak page matches | 5 |
-| Dense source windows checked | 19991 |
-| Missing dense source-window pages | 101 |
+| PDF pages | 555 |
+| EPUB text files | 47 |
+| EPUB paragraphs/headings | 2365 |
+| Approximate PDF-to-EPUB word coverage | 0.9953 |
+| Weak page matches | 9 |
+| Dense source windows checked | 835 |
+| Missing dense source-window pages | 539 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
-| Top-of-page body windows checked | 544 |
-| Top-of-page windows skipped as unstable | 30 |
+| Top-of-page body windows checked | 542 |
+| Top-of-page windows skipped as unstable | 29 |
 | Missing top-of-page body windows | 3 |
 | Bottom-of-page body windows checked | 507 |
-| Bottom-of-page windows skipped as unstable | 24 |
-| Missing bottom-of-page body windows | 16 |
-| Possible faulty paragraph splits | 59 |
-| Structural starts excluded from split warnings | 241 |
-| Short fragments | 28 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 15 |
+| Possible faulty paragraph splits | 201 |
+| Structural starts excluded from split warnings | 251 |
+| Short fragments | 36 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 5 |
+| Suspicious large-number starts | 2 |
 | Roman heading candidates | 0 |
-| Overlong heading candidates | 1 |
+| Overlong heading candidates | 5 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 478 |
-| EPUB enumerator markers | 483 |
+| EPUB enumerator markers | 478 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 1 |
+| PDF Greek words / EPUB Greek words | 450 / 449 |
+| Greek word coverage ratio | 0.9977 |
+| PDF Hebrew words / EPUB Hebrew words | 88 / 89 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
@@ -1262,3 +1269,19 @@ Warnings requiring triage:
 - Improved `reconstruct_paragraphs()` and the integrity budget rules to handle Owen-specific edge cases, such as dangling connectors (and, the, of) and transitions into structural list items.
 
 **Validation run:** Regenerated Volume 2 with `.venv/bin/python3 converter.py 2`. The build now enforces the integrity budget. Inspected `ch035.xhtml` (A Vindication): the introductory text on the title page is now perfectly reconstructed as paragraphs. `ch035_title.xhtml` is clean and only contains the centered title.
+
+### 108. Volume 2 recurring shared-pipeline defects
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+**Problem:** Moving from V1 to V2 exposed several defects that should be solved in the shared pipeline, not patched volume by volume: weak treatise-title recognition, malformed Analysis formatting, AGES verse markers leaking in footnotes, `I WILL` / `I AM` false all-caps, parenthesized Scripture spacing, missed `Objection` / `Obj.` / `Use` anchors, Proverbs/Song of Solomon glued references, and short Scripture-reference tails split from the paragraph they belong to.
+
+**Implementation notes:**
+- Added shared Scripture-reference cleanup for stale AGES marker/book collisions, including `Proverbs ... Song of Solomon`.
+- Applied marker and reference cleanup to merged footnote text.
+- Tightened chapter-range trimming and treatise-page detection so title pages use the shared title structure and the Analysis page no longer carries previous front-matter text.
+- Extended scholastic label recognition and bolding for `Objection`, `Obj.`, `Answer`, `Ans.`, `Solution`, `Sol.`, and `Use`.
+- Normalized false `I WILL` / `I AM` casing, removed stray spaces after opening parentheses before Scripture references, and made short Unicode Greek runs auditable.
+- Added regression tests and absent-sample guards for the concrete recurring samples reported in this issue.
+
+**Validation run:** Regenerated Volume 2 with `.venv/bin/python3 volumes/v2/convert.py`. EPUB audit reports PASS with 0 errors and 0 warnings. Bug-regression report reports PASS. Text-integrity remains WARN for broad triage queues, but reports Greek clauses missing `0`, Hebrew clauses missing `0`, front CONTENTS missing pages `0`, reference continuation splits `0`, citation continuation splits `0`, and missing enumerator forms `0`. Focused hardening tests report `38 passed`.
