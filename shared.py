@@ -1102,8 +1102,17 @@ def title_case(text):
     return " ".join(res)
 
 
+_NAV_TITLE_MAX_CHARS = 100  # Apple Books truncates sidebar entries beyond this
+
+
 def nav_display_title(text):
-    """Display front-matter labels in NAV as they appear in the PDF."""
+    """Return a title-cased label suitable for the EPUB nav sidebar.
+
+    Front-matter labels are normalised to their canonical upper-case form.
+    All other titles are title-cased.  Any result longer than
+    _NAV_TITLE_MAX_CHARS is truncated with an ellipsis so that Apple Books
+    does not silently cut mid-word.
+    """
     stripped = (text or '').strip()
     normalized = stripped.rstrip('.').upper()
     if normalized in {
@@ -1113,8 +1122,14 @@ def nav_display_title(text):
         'PREFACE TO THE READER',
         'ORIGINAL PREFACE',
     }:
-        return normalized + ('.' if stripped.endswith('.') else '')
-    return title_case(stripped)
+        result = normalized + ('.' if stripped.endswith('.') else '')
+    else:
+        result = title_case(stripped)
+
+    if len(result) > _NAV_TITLE_MAX_CHARS:
+        result = result[: _NAV_TITLE_MAX_CHARS - 1].rstrip() + '…'  # …
+
+    return result
 
 
 def _norm_for_dedupe(text):

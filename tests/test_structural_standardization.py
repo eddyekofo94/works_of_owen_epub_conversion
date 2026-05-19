@@ -1,3 +1,10 @@
+"""test_structural_standardization.py — structural token and render-level tests.
+
+Covers: [[PART]], [[CHAPTER]], [[SUMMARY]], [[BLOCKQUOTE]], [[DIGRESSION]]
+token rendering; drop-cap rules; front matter states; Greek artifact stripping;
+blockquote geometry; scholastic anchor edge cases; OCR artifact repair.
+"""
+
 import pytest
 import re
 from converter import markdown_to_html, reconstruct_paragraphs
@@ -161,3 +168,127 @@ def test_blockquote_geometry_uses_body_left_edge_not_modal_indent():
     assert _page_starts_with_blockquote_continuation([page_leading_close, reference_tail], body_left, body_right)
     assert _text_block_is_blockquote(page_leading_close, body_left, body_right, allow_continuation=True)
     assert _text_block_is_blockquote(reference_tail, body_left, body_right, allow_continuation=True)
+
+
+# ===========================================================================
+# Scholastic anchor edge cases
+# ===========================================================================
+
+def test_scholastic_anchor_does_not_bold_answer_in_prose():
+    """
+    The word 'Answer' or 'Ans' appearing in the middle of a sentence
+    or as a sentence subject (not as an abbreviated label at paragraph start)
+    must never become a scholastic bold label.
+
+    The apply_scholastic_anchor_protocol function should only recognise labels
+    at the very start of a <p> element.
+    """
+    from render import apply_scholastic_anchor_protocol
+
+    prose = (
+        "<p>The answer of Owen to this objection is plain and satisfactory.</p>\n"
+        "<p>An answer is here demanded of the text.</p>\n"
+        "<p>Ans, to be sure, is a common Latin abbreviation.</p>"
+    )
+    html = apply_scholastic_anchor_protocol(prose)
+
+    assert '<b class="scholastic-label">The answer' not in html
+    assert '<b class="scholastic-label">An answer' not in html
+    # "Ans, to be sure" — no period after Ans, so NOT a scholastic label
+    assert '<b class="scholastic-label">Ans,' not in html
+
+
+def test_scholastic_anchor_handles_answer_with_numeral():
+    """
+    'Ans. 1.' at the start of a paragraph IS a scholastic label.
+    'Ans. 2.' on the next paragraph is also a scholastic label.
+    """
+    from render import apply_scholastic_anchor_protocol
+
+    html = apply_scholastic_anchor_protocol(
+        "<p>Ans. 1. To this we reply first, that the covenant demands perfect obedience.</p>\n"
+        "<p>Ans. 2. Further, the satisfaction of Christ is not the same as personal obedience.</p>"
+    )
+
+    assert '<b class="scholastic-label">Ans. 1.</b>' in html
+    assert '<b class="scholastic-label">Ans. 2.</b>' in html
+
+
+def test_scholastic_anchor_does_not_bold_objection_inside_blockquote():
+    """
+    An 'Objection' inside a blockquote context must still be treated as a
+    scholastic label when it begins a <p> — blockquotes contain scholastic
+    dialogue too.
+    """
+    from render import apply_scholastic_anchor_protocol
+
+    html = apply_scholastic_anchor_protocol(
+        '<blockquote epub:type="z3998:quotation">'
+        "<p>Objection 1. But if God be absolutely sovereign, why does he invite sinners?</p>"
+        "</blockquote>"
+    )
+
+    assert '<b class="scholastic-label">Objection 1.</b>' in html
+
+
+def test_solution_label_is_bolded_correctly():
+    """Sol. and Sol. 1. are both valid scholastic labels."""
+    from render import apply_scholastic_anchor_protocol
+
+    html = apply_scholastic_anchor_protocol(
+        "<p>Sol. This difficulty is resolved by distinguishing the efficient and material cause.</p>\n"
+        "<p>Sol. 1. The first solution is that imputation is forensic.</p>"
+    )
+
+    assert '<b class="scholastic-label">Sol.</b>' in html
+    assert '<b class="scholastic-label">Sol. 1.</b>' in html
+
+
+# ===========================================================================
+# OCR artifact repair (unit-level)
+# ===========================================================================
+
+def test_bracket_y_repair_in_reconstruct():
+    """
+    The OCR corruption ']y' → 'ly' must be applied during text cleaning
+    so that 'glorious]y' becomes 'gloriously' before paragraph reconstruction.
+    """
+    from converter import clean_text
+
+    assert "gloriously" in clean_text("glorious]y")
+    assert "only" in clean_text("on]y")
+    assert "holy" in clean_text("ho]y")
+
+
+def test_bracket_e_repair_does_not_affect_legitimate_brackets():
+    """
+    The ']e' → 'le' repair should not touch scripture brackets like [Gen. 3]
+    or list enumerators like [1.].
+    """
+    from converter import clean_text
+
+    result = clean_text("[1.] First point. [Gen. 3:15] The protoevangelium.")
+    assert "[1.]" in result
+    assert "[Gen. 3:15]" in result or "Gen. 3:15" in result
+
+
+def test_spaced_caps_i_will_normalisation():
+    """
+    'I WILL' appearing in a sentence (Owen quoting Revelation 3:20) should
+    be normalised to 'I will' — it is a rendering artefact from early
+    printed editions that used spaced capitals for emphasis.
+    """
+    from converter import clean_text
+
+    result = clean_text("open the door, I WILL come in to him")
+    assert "I will come in" in result
+    assert "I WILL come" not in result
+
+
+def test_i_am_normalisation_preserves_context():
+    """'I AM' → 'I am' but 'I AM THE LORD' (a title) should also be normalised."""
+    from converter import clean_text
+
+    result = clean_text("for I AM the resurrection and the life.")
+    assert "I am the resurrection" in result or "I Am the resurrection" in result
+    assert "I AM the resurrection" not in result

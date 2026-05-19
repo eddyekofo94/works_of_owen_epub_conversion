@@ -1,7 +1,4 @@
-
-###### GENERAL PREFACE.
-
-
+[[CHAPTER]] GENERAL PREFACE.
 IT would be presumption to enter upon any commendation of John Owen
 as an author and divine. His works will continue to gather round them the
 respect and admiration of the Church of Christ, so long as reverence is
@@ -10,7 +7,7 @@ to disguise. His style in general is deficient in grace and vivacity. His mode
 of discussing a subject is often tedious and prolix. Whatever amount of
 imaginative power his mind possessed, it seems to have been little
 cultivated and developed; and his chief excellence as an author, it must be
-admitted, consists _“non in flosculis verborum, — sed in pondere rerum”_
+admitted, consists “non in flosculis verborum, — sed in pondere rerum”
 In the department of Biblical criticism, he himself disclaimed any
 pretentious to extensive learning. That science had made slender progress
 in his day, and the necessity for careful revision of the text of Scripture, as
@@ -22,8 +19,6 @@ asserted in the Prolegomena and Appendix to Walton’s Polyglot, when it
 is remembered that, after the lapse of half a century, and with all his
 eminent scholarship and erudition, Whitby, on the criticism of the sacred
 text, was not a step in advance of the Puritan divine.
-
-
 With all this abatement on the praise which is due to Owen, his signal
 merits as an author have shed luster on his name. He was great in the
 higher attributes of erudition; for he excelled, if not in the learning that is
@@ -37,5 +32,3 @@ workings of the human heart, and the details of Christian experience. His
 controversial writings, apart from their intrinsic merits, have a relative
 value that is perhaps too much overlooked, and renders them indispensable
 in any good collection of British literature. His writings on toleration are an
-
-

@@ -1,0 +1,26 @@
+<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line title-line-major">A VINDICATION</p>
+<p class="title-line title-line-medium">OF SOME PASSAGES</p>
+<p class="title-line title-line-medium">IN A</p>
+<p class="title-line title-line-medium">DISCOURSE CONCERNING</p>
+<p class="title-line title-line-medium">COMMUNION WITH GOD</p>
+<p class="descriptive">It is now near twenty years since I wrote and published a Discourse</p>
+<p class="descriptive">concerning Communion with God. Of what use and advantage it has been</p>
+<p class="descriptive">to any, as to their furtherance in the design aimed at therein, is left unto</p>
+<p class="descriptive">them to judge by whom it has been perused with any candid diligence; and</p>
+<p class="descriptive">I do know that multitudes of persons fearing God, and desiring to walk</p>
+<p class="descriptive">before him in sincerity, are ready, if occasion require, to give testimony</p>
+<p class="descriptive">unto the benefit which they have received thereby; — as I can also at any</p>
+<p class="descriptive">time produce the testimonies of [as] learned and holy persons, it may be,</p>
+<p class="descriptive">as any I know living, both in England and out of it, who, owning the truth</p>
+<p class="descriptive">contained in it, have highly avowed its usefulness, and are ready yet so to</p>
+<p class="descriptive">do. With all other persons, so far as ever I heard, it passed at the rate of a</p>
+<p class="descriptive">tolerable acceptation with discourses of the same kind and nature. And</p>
+<p class="descriptive">however any thing or passage in it might not, possibly, suit the</p>
+<p class="descriptive">apprehensions of some, yet, being wholly practical, designed for popular</p>
+<p class="descriptive">edification, without any direct engagement into things controversial, I</p>
+<p class="descriptive">looked for no opposition unto it or exception against it; but that it would</p>
+<p class="descriptive">at least be suffered to pass at that rate of allowance which is universally</p>
+<p class="descriptive">granted unto that sort of writings, both of ancient and modern authors.</p>
+<div class="quote-block">Accordingly it so fell out, and continued for many years; until some persons began to judge it their interest, and to make it their business, to cavil at my writings, and to load my person with reproaches. With what little success, as to their avowed designs, they have labored therein, — how openly their endeavors are sunk into contempt with all sorts of persons pretending unto the least sobriety or modesty, — I suppose they</div>
+</section>

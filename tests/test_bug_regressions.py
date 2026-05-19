@@ -121,11 +121,15 @@ def test_polyglot_fallback_does_not_convert_english_prose():
 
 
 def test_polyglot_fallback_converts_unambiguous_residue_only():
-    mapped = force_polyglot_mapping("pneu'ma ytb;h}aæB]")
+    # pneu=ma uses a genuine Beta Code accent character (=) so BETA_CODE_RE matches it.
+    # pneu'ma (plain apostrophe, no accent) is intentionally NOT converted — it is
+    # ambiguous with English transliterations and the "does not convert prose" test
+    # covers that boundary.  ytb;h}aæB] is a real Gideon-encoded Hebrew string.
+    mapped = force_polyglot_mapping("pneu=ma ytb;h}aæB]")
 
     assert 'lang="el"' in mapped
     assert 'lang="he"' in mapped
-    assert "pneu'ma" not in mapped
+    assert "pneu=ma" not in mapped
     assert "ytb;h}aæB]" not in mapped
 
 
