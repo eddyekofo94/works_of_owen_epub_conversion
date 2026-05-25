@@ -6,20 +6,23 @@ The active pipeline lives in:
     extract.py  - Stage 1: PDF -> JSON intermediate
     render.py   - Stage 2: JSON intermediate -> EPUB3
 
-Prefer per-volume scripts such as volumes/v1/convert.py when volume-specific
-OVERRIDES are needed. This wrapper intentionally remains generic so older
-commands keep working without carrying a second copy of converter logic.
+Per-volume OVERRIDES from volumes/vN/convert.py are loaded automatically,
+so this wrapper now respects the same volume-specific corrections as the
+per-volume scripts.
 """
 
 from __future__ import annotations
 
 import argparse
+import importlib
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from cli_utils import cyan, green
 
 from extract import (
     clean_text,
@@ -48,6 +51,15 @@ __all__ = [
 OWEN_VOLUME_RANGE = range(1, 17)
 
 
+def _load_volume_overrides(vol_num: int) -> dict | None:
+    """Import OVERRIDES from volumes/v{vol_num}/convert.py if it exists."""
+    try:
+        mod = importlib.import_module(f"volumes.v{vol_num}.convert")
+        return getattr(mod, "OVERRIDES", None)
+    except (ImportError, AttributeError):
+        return None
+
+
 def process_owen_volume(
     vol_num: int,
     *,
@@ -61,15 +73,17 @@ def process_owen_volume(
     if extract_only and render_only:
         raise ValueError("Cannot use both extract_only and render_only")
 
+    overrides = _load_volume_overrides(vol_num)
+
     if not render_only:
-        print(f"=== Volume {vol_num}: Stage 1 - Extract ===")
-        extract_volume(vol_num)
+        print(cyan(f"=== Volume {vol_num}: Stage 1 - Extract ==="))
+        extract_volume(vol_num, overrides=overrides)
 
     if not extract_only:
-        print(f"=== Volume {vol_num}: Stage 2 - Render ===")
-        render_volume(vol_num)
+        print(cyan(f"=== Volume {vol_num}: Stage 2 - Render ==="))
+        render_volume(vol_num, overrides=overrides)
 
-    print(f"=== Volume {vol_num}: Done ===")
+    print(green(f"=== Volume {vol_num}: Done ==="))
     return True
 
 

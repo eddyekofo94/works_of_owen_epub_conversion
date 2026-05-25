@@ -11,9 +11,27 @@ BASE_DIR = Path(__file__).parent.parent
 GOLDEN_PAGES_JSON = BASE_DIR / "qa" / "golden_pages.json"
 BASELINES_DIR = BASE_DIR / "tests" / "baselines"
 
+
+def _requested_volumes() -> list[int] | None:
+    """Return the subset of volumes requested via OWEN_REGRESSION_VOLUMES.
+
+    Returns None to signal "all volumes" (the default when the env var is unset
+    or set to 'all'), matching the convention used elsewhere in the test suite.
+    """
+    raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "all").strip()
+    if raw.lower() == "all":
+        return None
+    parts = raw.replace(",", " ").split()
+    return [int(p) for p in parts if p.strip().isdigit()]
+
+
 def load_golden_pages():
     with open(GOLDEN_PAGES_JSON, "r") as f:
-        return json.load(f)
+        data = json.load(f)
+    vols = _requested_volumes()
+    if vols is not None:
+        data = {k: v for k, v in data.items() if int(k) in vols}
+    return data
 
 @pytest.mark.parametrize("vol_num,pages", load_golden_pages().items())
 def test_golden_pages(vol_num, pages):
@@ -75,6 +93,9 @@ def test_page_continuation_healing():
     across the page boundary and the paragraph must be joined.  The default
     healer_mode=True behaviour is tested here.
     """
+    vols = _requested_volumes()
+    if vols is not None and 1 not in vols:
+        pytest.skip("Volume 1 not in OWEN_REGRESSION_VOLUMES")
     vol_num = "1"
     vol_dir = BASE_DIR / "volumes" / f"v{vol_num}"
     pdf_path = vol_dir / "input" / f"owen-v{vol_num}.pdf"

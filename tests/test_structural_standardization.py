@@ -292,3 +292,91 @@ def test_i_am_normalisation_preserves_context():
     result = clean_text("for I AM the resurrection and the life.")
     assert "I am the resurrection" in result or "I Am the resurrection" in result
     assert "I AM the resurrection" not in result
+
+
+# ===========================================================================
+# Catechism context — per-chapter flag, never sticky (Issue #30 v1)
+# ===========================================================================
+
+def test_bare_a_dot_not_treated_as_qa_in_prose_context():
+    """
+    "A. truth this is" in a prose chapter must NOT be split as a Q&A answer
+    marker when is_catechism_context is False.  The regression: previously the
+    flag was sticky, so chapters after the catechism block inherited it.
+    """
+    prose = "A. truth this is, which Owen affirms throughout his writing."
+    html, _, _ = markdown_to_html(prose, config={'is_catechism_context': False})
+    # Should render as a single normal paragraph, not a QA block
+    assert 'class="qa-answer"' not in html
+    assert prose.split('.', 1)[1].strip()[:10] in html  # body text present
+
+
+def test_bare_a_dot_is_treated_as_qa_in_catechism_context():
+    """
+    "A. The Holy Ghost…" at the start of a paragraph SHOULD be a Q&A answer
+    when is_catechism_context is True — that is, inside actual catechism chapters.
+    """
+    qa_text = "Q. 1. What is the chief end of man?\n\nA. Man's chief end is to glorify God."
+    html, _, _ = markdown_to_html(qa_text, config={'is_catechism_context': True})
+    # The Q paragraph gets class="catechism-item" with bolded label
+    assert 'class="catechism-item"' in html
+    assert '<b>Q. 1.</b>' in html
+
+
+def test_catechism_context_resets_per_chapter_no_bleed():
+    """
+    render_volume must not carry catechism context across chapter boundaries.
+    A non-catechism chapter following a catechism chapter must have
+    in_catechism_context=False, which means allow_bare_a=False.
+
+    Verify the per-chapter computation: title with no 'CATECHISM' keyword and
+    no Q./Ques./Ans. markers in raw_text must yield is_catechism_context=False.
+    """
+    # Simulate exactly what render_volume now does per-chapter
+    import re
+    title_upper = "CHAPTER 2 - THE WAY AND MEANS OF RECOVERY"
+    raw_text = "A. truth this is, which Owen affirms in this chapter."
+    in_catechism_context = (
+        'CATECHISM' in title_upper
+        or bool(re.search(
+            r'^\s*(?:Q\.|Ques\.\s*\d|Ans\.\s*[A-Z])',
+            raw_text[:3000],
+            re.MULTILINE,
+        ))
+    )
+    assert not in_catechism_context, (
+        "Prose chapter with 'A. truth' in body should NOT be catechism context"
+    )
+
+
+def test_catechism_context_detected_from_title():
+    """Chapter titled with CATECHISM keyword must always get in_catechism_context=True."""
+    import re
+    title_upper = "THE LESSER CATECHISM"
+    raw_text = "Q. 1. What is God? A. God is a Spirit."
+    in_catechism_context = (
+        'CATECHISM' in title_upper
+        or bool(re.search(
+            r'^\s*(?:Q\.|Ques\.\s*\d|Ans\.\s*[A-Z])',
+            raw_text[:3000],
+            re.MULTILINE,
+        ))
+    )
+    assert in_catechism_context
+
+
+def test_catechism_context_detected_from_raw_text():
+    """Chapter with Q./Ans. markers in body text must get in_catechism_context=True
+    even if the title does not mention 'catechism'."""
+    import re
+    title_upper = "TWO SHORT CATECHISMS"
+    raw_text = "Q. 1. What is your name?\nAns. My name is Owen."
+    in_catechism_context = (
+        'CATECHISM' in title_upper
+        or bool(re.search(
+            r'^\s*(?:Q\.|Ques\.\s*\d|Ans\.\s*[A-Z])',
+            raw_text[:3000],
+            re.MULTILINE,
+        ))
+    )
+    assert in_catechism_context

@@ -56,12 +56,16 @@ HEADER_RE = re.compile(
 TERMINAL_RE = re.compile(r"""[.!?:;]["')\]]?$""")
 HARD_STRUCTURAL_START_RE = re.compile(
     r"^(?:[0-9]+\.\s+|\([0-9]+\.?\)\s+|\[[0-9]+\.?\]\.?\s+|[IVXLCDM]+\.\s+|"
+    r"\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|"
+    r"SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?\s+|"
     r"[0-9]+(?:st|nd|rd|th)\b\s*[,.;]\s+|[0-9]+(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?\s+)",
     re.I,
 )
 INLINE_STRUCTURAL_RE = re.compile(
     r".{8,}?[,:;—-]\s+(?P<marker>"
     r"(?<![:\d-])[0-9]+\.\s+|\([0-9]+\.?\)\s+|\[[0-9]+\.?\]\.?\s+|[IVXLCDM]+\.\s+|"
+    r"\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|"
+    r"SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?\s+|"
     r"[0-9]+(?:st|nd|rd|th)\b\s*[,.;]\s+|[0-9]+(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?\s+)"
 )
 INLINE_RENDERED_STRUCTURAL_RE = re.compile(
@@ -69,6 +73,8 @@ INLINE_RENDERED_STRUCTURAL_RE = re.compile(
     r"[0-9]{1,2}\.|"
     r"\([0-9]{1,2}\.?\)|"
     r"\[[0-9]{1,2}(?:st|nd|rd|th|dly|ly)?[,.]?\]\.?|"
+    r"\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|"
+    r"SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?|"
     r"[IVXLCDM]{2,}\.|"
     r"[0-9]{1,2}(?:st|nd|rd|th)\b\s*[,.;]|"
     r"[0-9]{1,2}(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?"
@@ -199,6 +205,8 @@ def content_words(text: str, include_common: bool = False) -> list[str]:
     words = []
     # Normalize Greek diacritics for more robust comparison
     text = strip_greek_diacritics(text)
+    # Remove leading 'f' from digits (OCR artifact for footnote numbers like f19 -> 19)
+    text = re.sub(r'\bf(?=\d+)', '', text)
     for raw in WORD_RE.findall(clean_text(text).lower()):
         word = raw.strip("'’-")
         if len(word) < MIN_WORD_LEN:
@@ -211,8 +219,6 @@ def content_words(text: str, include_common: bool = False) -> list[str]:
 
 def normalized_word_string(text: str) -> str:
     """A very robust normalization for fuzzy phrase matching."""
-    # First strip diacritics to make Greek/Hebrew matching robust
-    text = strip_greek_diacritics(text)
     return " ".join(content_words(text, include_common=True))
 
 
@@ -529,7 +535,7 @@ def extract_top_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], dict
         for page_no, page in enumerate(doc, start=1):
             if is_source_footnotes_page(page.get_text("text")):
                 break
-            lines: list[tuple[float, str]] = []
+            lines: list[tuple[float, float, str]] = []
             for block in page.get_text("dict").get("blocks", []):
                 if block.get("type") != 0:
                     continue
@@ -540,13 +546,13 @@ def extract_top_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], dict
                     text = "".join(span.get("text", "") for span in line.get("spans", [])).strip()
                     if is_running_header_or_page_number(text):
                         continue
-                    lines.append((line["bbox"][1], text))
+                    lines.append((line["bbox"][1], line["bbox"][0], text))
 
             if not lines:
                 continue
             checked += 1
-            lines.sort(key=lambda item: item[0])
-            sample = clean_text(" ".join(text for _, text in lines[:2]))
+            lines.sort(key=lambda item: (item[0], item[1]))
+            sample = clean_text(" ".join(text for _, _, text in lines[:2]))
             words = content_words(sample, include_common=True)
             if len(words) < 8:
                 continue
@@ -607,7 +613,7 @@ def extract_bottom_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], d
             if is_source_footnotes_page(page.get_text("text")):
                 break
             page_height = page.rect.height
-            lines: list[tuple[float, str]] = []
+            lines: list[tuple[float, float, str]] = []
             for block in page.get_text("dict").get("blocks", []):
                 if block.get("type") != 0:
                     continue
@@ -619,14 +625,15 @@ def extract_bottom_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], d
                     text = "".join(span.get("text", "") for span in line.get("spans", [])).strip()
                     if is_running_header_or_page_number(text):
                         continue
-                    lines.append((line["bbox"][1], text))
+                    lines.append((line["bbox"][1], line["bbox"][0], text))
 
             if not lines:
                 continue
             checked += 1
-            lines.sort(key=lambda item: item[0], reverse=True)
+            # Sort by Y-coordinate, then X-coordinate for reading order
+            lines.sort(key=lambda item: (item[0], item[1]))
             # Take the last 2 lines of the body block
-            sample = clean_text(" ".join(text for _, text in reversed(lines[:2])))
+            sample = clean_text(" ".join(text for _, _, text in lines[-2:]))
             norm_sample = normalized_word_string(sample)
             words = norm_sample.split()
             if len(words) < 8:
@@ -1234,6 +1241,142 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
     }
 
 
+# ──────────────────────────────────────────────────────────────────────────────
+# Blemish audits: new checks added 2026-05-20 based on visual inspection report
+# ──────────────────────────────────────────────────────────────────────────────
+
+# AGES verse codes are 6-7 decimal digits wrapped in angle brackets: <430316>.
+# When translation fails the code is preserved as [NNNNNN] or [19B9105]
+# (square brackets). These are never valid as normal text tokens, so any long
+# alphanumeric square-bracket sequence with a digit is a residual AGES artifact.
+# 4-5 digit sequences are excluded to avoid false positives from section numbers
+# or marginal dates-in-brackets; plain word markers such as [SECONDLY] are
+# excluded because a digit is required.
+_AGES_RESIDUAL_RE = re.compile(r'\[(?=[0-9A-Z]{6,8}\])(?=[0-9A-Z]*\d)[0-9A-Z]{6,8}\]', re.I)
+
+# For ANALYSIS chapter quality: an outline is healthy when it contains at least
+# this many distinct structural lines (Roman numerals, numbered items, etc.).
+_ANALYSIS_MIN_STRUCTURAL_LINES = 3
+_ANALYSIS_STRUCTURAL_LINE_RE = re.compile(
+    r'^\s*(?:[IVXLCDM]{1,6}\.|(?!\d{4}\.)\d{1,3}\.|'
+    r'\[\d+\]|\(\d+\)|Part\s+[IVXLCDM]+)',
+    re.I | re.M,
+)
+
+
+def ages_artifact_check(paragraphs: list) -> dict[str, Any]:
+    """Detect residual AGES verse-code artifacts left as [NNNNNN] in the EPUB.
+
+    A failed AGES translation emits [4611605] instead of e.g. "John 16:5".
+    These are long alphanumeric source ids in square brackets that have no
+    legitimate meaning in Owen's prose.
+    """
+    hits: list[dict[str, Any]] = []
+    for para in paragraphs:
+        for m in _AGES_RESIDUAL_RE.finditer(para.text):
+            hits.append({
+                "file": para.file,
+                "paragraph_index": para.index,
+                "artifact": m.group(0),
+                "context": para.text[max(0, m.start() - 40): m.end() + 40].strip(),
+            })
+    return {
+        "ages_artifact_count": len(hits),
+        "ages_artifacts": hits[:50],  # cap for report size
+    }
+
+
+def analysis_extraction_check(paragraphs: list) -> dict[str, Any]:
+    """Check that ANALYSIS front-matter chapters have been properly parsed.
+
+    An ANALYSIS chapter whose body is a flat undivided blob (no roman numerals,
+    no numbered items, no Part headings) indicates the extraction stage failed to
+    recognise the outline structure.  Flag it so the pipeline can be re-run or
+    manually reviewed.
+    """
+    # Collect paragraphs by XHTML file
+    from collections import defaultdict
+    by_file: dict[str, list] = defaultdict(list)
+    for para in paragraphs:
+        by_file[para.file].append(para)
+
+    flat_analyses: list[dict[str, Any]] = []
+    for fname, paras in by_file.items():
+        # Identify ANALYSIS chapters by filename or heading text
+        is_analysis = (
+            'analysis' in fname.lower()
+            or any('analysis' in (p.text or '').lower()[:80] for p in paras[:3])
+        )
+        if not is_analysis:
+            continue
+        full_text = '\n'.join(p.text for p in paras)
+        structural_count = len(_ANALYSIS_STRUCTURAL_LINE_RE.findall(full_text))
+        if structural_count < _ANALYSIS_MIN_STRUCTURAL_LINES:
+            flat_analyses.append({
+                "file": fname,
+                "paragraph_count": len(paras),
+                "structural_line_count": structural_count,
+                "note": (
+                    "ANALYSIS chapter appears flat — fewer structural outline lines "
+                    "than expected.  Check extraction quality."
+                ),
+            })
+    return {
+        "flat_analysis_count": len(flat_analyses),
+        "flat_analyses": flat_analyses,
+    }
+
+
+def font_config_check(volume: int, root: Path) -> dict[str, Any]:
+    """Verify the configured body font directory exists for this volume.
+
+    When fonts/<body_font>/ is missing, select_primary_font() silently falls
+    back to SBL_BLit — so the rendered EPUB uses a fallback font rather than
+    the intended one (e.g. Minion Pro, Brill).  This check surfaces that
+    condition explicitly so it can be corrected before distributing the EPUB.
+    """
+    issues: list[dict[str, Any]] = []
+    try:
+        sys.path.insert(0, str(root))
+        import shared as _shared  # type: ignore
+        cfg = _shared.VOLUME_CONFIG.get(volume, {})
+        body_font = cfg.get('body_font', '')
+        if body_font:
+            font_dir = root / 'fonts' / body_font
+            if not font_dir.is_dir():
+                issues.append({
+                    "volume": volume,
+                    "configured_font": body_font,
+                    "expected_path": str(font_dir),
+                    "note": (
+                        f"Font directory '{body_font}' not found at fonts/{body_font}/. "
+                        "The EPUB will use the SBL_BLit fallback font instead. "
+                        "Place the font .otf/.ttf files in the expected directory to fix this."
+                    ),
+                })
+            else:
+                font_files = [
+                    f for f in font_dir.iterdir()
+                    if f.suffix.lower() in ('.otf', '.ttf')
+                ]
+                if not font_files:
+                    issues.append({
+                        "volume": volume,
+                        "configured_font": body_font,
+                        "expected_path": str(font_dir),
+                        "note": (
+                            f"Font directory fonts/{body_font}/ exists but contains "
+                            "no .otf or .ttf files.  Add the font files to fix this."
+                        ),
+                    })
+    except Exception as exc:
+        issues.append({"error": f"Could not load volume config: {exc}"})
+    return {
+        "font_issue_count": len(issues),
+        "font_issues": issues,
+    }
+
+
 def infer_paths(volume: int, root: Path) -> tuple[Path, Path, Path]:
     vol_dir = root / "volumes" / f"v{volume}"
     return (
@@ -1244,6 +1387,7 @@ def infer_paths(volume: int, root: Path) -> tuple[Path, Path, Path]:
 
 
 def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
+    root = pdf_path.parents[3]  # volumes/vN/input/owen-vN.pdf → project root
     pdf_pages, pdf_meta = extract_pdf_pages(pdf_path)
     paragraphs, epub_meta = extract_epub_paragraphs(epub_path)
 
@@ -1259,6 +1403,9 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     para_scan = paragraph_integrity(paragraphs)
     enum_scan = enumerator_integrity(pdf_pages, paragraphs)
     repeats = repeated_windows(epub_text)
+    ages_artifacts = ages_artifact_check(paragraphs)
+    analysis_quality = analysis_extraction_check(paragraphs)
+    font_check = font_config_check(volume, root)
     gh_word_cov = greek_hebrew_word_coverage(pdf_pages, paragraphs)
     gh_clause_fid = greek_hebrew_clause_fidelity(pdf_pages, epub_text)
 
@@ -1373,6 +1520,36 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
             "code": "missing_hebrew_clauses",
             "message": "Some dense Hebrew passages from the PDF are missing from the EPUB",
         })
+    # ── Blemish checks (2026-05-20) ───────────────────────────────────────────
+    if ages_artifacts["ages_artifact_count"]:
+        warnings.append({
+            "code": "ages_residual_artifacts",
+            "message": (
+                f"{ages_artifacts['ages_artifact_count']} residual AGES verse-code artifact(s) "
+                "found in EPUB text as [NNNNNN] — failed verse-marker translation. "
+                "Re-run extraction to fix."
+            ),
+            "sample": ages_artifacts["ages_artifacts"][:5],
+        })
+    if analysis_quality["flat_analysis_count"]:
+        warnings.append({
+            "code": "flat_analysis_chapters",
+            "message": (
+                f"{analysis_quality['flat_analysis_count']} ANALYSIS chapter(s) appear "
+                "under-structured — fewer outline markers than expected. "
+                "Check extraction quality for these chapters."
+            ),
+            "sample": analysis_quality["flat_analyses"],
+        })
+    if font_check["font_issue_count"]:
+        warnings.append({
+            "code": "font_config_missing",
+            "message": (
+                f"{font_check['font_issue_count']} font configuration issue(s) detected. "
+                "The EPUB may render with a fallback font instead of the intended one."
+            ),
+            "sample": font_check["font_issues"],
+        })
 
     return {
         "volume": volume,
@@ -1395,6 +1572,9 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
         "repeated_windows": repeats,
         "greek_hebrew_word_coverage": gh_word_cov,
         "greek_hebrew_clause_fidelity": gh_clause_fid,
+        "ages_artifact_check": ages_artifacts,
+        "analysis_extraction_check": analysis_quality,
+        "font_config_check": font_check,
         "limits": {
             "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review.",
         },
@@ -1512,6 +1692,50 @@ def render_markdown(result: dict[str, Any]) -> str:
     add_sample_section(lines, "Missing Hebrew Word Samples", gh["missing_hebrew_word_samples"], ["word", "pdf", "epub"])
     add_sample_section(lines, "Missing Greek Clauses", ghf["missing_greek_clauses"], ["page", "word_count", "sample"])
     add_sample_section(lines, "Missing Hebrew Clauses", ghf["missing_hebrew_clauses"], ["page", "word_count", "sample"])
+
+    # ── Blemish checks ────────────────────────────────────────────────────────
+    ages_chk = result.get("ages_artifact_check", {})
+    if ages_chk.get("ages_artifact_count"):
+        lines.extend(["## AGES Residual Artifacts", ""])
+        lines.append(
+            f"**{ages_chk['ages_artifact_count']} residual AGES verse-code artifact(s)** "
+            "detected in EPUB text as `[NNNNNN]` (failed verse-marker translation)."
+        )
+        lines.append("")
+        add_sample_section(
+            lines, "AGES Artifact Samples",
+            ages_chk.get("ages_artifacts", []),
+            ["artifact", "file", "context"],
+        )
+
+    analysis_chk = result.get("analysis_extraction_check", {})
+    if analysis_chk.get("flat_analysis_count"):
+        lines.extend(["## Flat ANALYSIS Chapters", ""])
+        lines.append(
+            f"**{analysis_chk['flat_analysis_count']} ANALYSIS chapter(s)** appear "
+            "under-structured — fewer outline markers than expected.  "
+            "Extraction may have failed to parse the outline."
+        )
+        lines.append("")
+        add_sample_section(
+            lines, "Flat Analysis Details",
+            analysis_chk.get("flat_analyses", []),
+            ["file", "paragraph_count", "structural_line_count", "note"],
+        )
+
+    font_chk = result.get("font_config_check", {})
+    if font_chk.get("font_issue_count"):
+        lines.extend(["## Font Configuration Issues", ""])
+        lines.append(
+            f"**{font_chk['font_issue_count']} font issue(s)** detected.  "
+            "The EPUB may render with a fallback font instead of the configured one."
+        )
+        lines.append("")
+        add_sample_section(
+            lines, "Font Issue Details",
+            font_chk.get("font_issues", []),
+            ["volume", "configured_font", "expected_path", "note"],
+        )
 
     lines.extend([
         "## Limits",

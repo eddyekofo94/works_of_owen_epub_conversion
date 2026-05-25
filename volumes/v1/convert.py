@@ -147,6 +147,44 @@ p.catechism-item {
 }
 """
 
+_V1_CHRISTOLOGIA_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="greek-title"><span lang="el" xml:lang="el">Χριστολογία</span></p>
+<p class="title-line-major">Christologia</p>
+<p class="title-connector">Or,</p>
+<p class="title-line-medium">A Declaration of the Glorious Mystery</p>
+<p class="title-connector">of</p>
+<p class="title-line-medium">The Person of Christ — God and Man:</p>
+<p class="title-connector">with</p>
+<p class="descriptive">The Infinite Wisdom, Love, and Power of God in the Contrivance and Constitution Thereof; as also, of the Grounds and Reasons of His Incarnation; the Nature of His Ministry in Heaven; the Present State of the Church Above Thereon; and the Use of His Person in Religion.</p>
+<p class="title-connector">with</p>
+<p class="descriptive">An Account and Vindication of the Honor, Worship, Faith, Love, and Obedience Due Unto Him, in and from the Church.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<div class="quote-block"><p>"Yea doubtless, and I count all things but loss for the excellency of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them but dung, that I may win Christ." — Philippians 3:8.</p></div>
+</section>'''
+
+_V1_MEDITATIONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-medium">Meditations and Discourses</p>
+<p class="title-connector">on</p>
+<p class="title-line-major">The Glory of Christ,</p>
+<p class="title-connector">in</p>
+<p class="title-line-medium">His Person, Office, and Grace:</p>
+<p class="title-connector">with</p>
+<p class="title-line-medium">The Differences Between Faith and Sight;</p>
+<p class="title-line-medium">Applied Unto the Use of Them That Believe.</p>
+</section>'''
+
+_V1_TWO_CATECHISMS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-major">Two Short Catechisms:</p>
+<p class="title-connector">Wherein the</p>
+<p class="title-line-medium">Principles of the Doctrine of Christ,</p>
+<p class="title-connector">are</p>
+<p class="title-line-medium">Unfolded and Explained.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<p class="descriptive">Proper for all Persons to Learn Before They be Admitted to the Sacrament of the Lord's Supper; and Composed for the Use of all Congregations in General.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<div class="quote-block"><p>"Come, ye children, hearken to me; I will teach you the fear of the Lord." — Psalm 34:11.</p></div>
+</section>'''
+
 _V1_PART_2_TITLE_PAGE = '''<section class="treatise-title-page v1-applied-glory-title" epub:type="titlepage">
 <p class="title-line title-line-medium">Meditations and Discourses</p>
 <p class="title-connector">Concerning</p>
@@ -195,14 +233,30 @@ def _v1_heading_caps_text(text):
 
 
 def _postprocess_v1_chapter_summaries(html):
-    def repl(match):
-        summary = match.group(1).strip()
-        if '<' in summary:
-            return match.group(0)
-        polished = _v1_heading_caps_text(html_lib.unescape(summary))
-        return f'<p class="chapter-summary">{html_lib.escape(polished, quote=False)}</p>'
+    """Convert ALL-CAPS chapter summaries/headings to title case.
 
-    return re.sub(r'<p class="chapter-summary">\s*(.*?)\s*</p>', repl, html, flags=re.S)
+    [[SUMMARY]] tags may render as either <p class="chapter-summary"> or
+    <h3 class="chapter-heading"> depending on context. Both are converted.
+    """
+    def _convert_caps(text, tag, cls):
+        if '<' in text:
+            return f'<{tag} class="{cls}">{text}</{tag}>'
+        polished = _v1_heading_caps_text(html_lib.unescape(text))
+        return f'<{tag} class="{cls}">{html_lib.escape(polished, quote=False)}</{tag}>'
+
+    # Handle <p class="chapter-summary">
+    html = re.sub(
+        r'<p class="chapter-summary">\s*(.*?)\s*</p>',
+        lambda m: _convert_caps(m.group(1).strip(), 'p', 'chapter-summary'),
+        html, flags=re.S,
+    )
+    # Handle <h3 class="chapter-heading">
+    html = re.sub(
+        r'<h3 class="chapter-heading">\s*(.*?)\s*</h3>',
+        lambda m: _convert_caps(m.group(1).strip(), 'h3', 'chapter-heading'),
+        html, flags=re.S,
+    )
+    return html
 
 
 def _coalesce_v1_catechism_paragraphs(paragraphs):
@@ -275,7 +329,12 @@ OVERRIDES = {
     ),
     'extra_css': _V1_CATECHISM_CSS,
     'treatise_title_overrides': {
+        # All v1 treatise title pages defined here — do NOT put these in render.py or shared.py.
+        # Title strings must match the exact chapter title from volumes/v1/intermediate/volume_1.json.
+        'Christologia - a Declaration of the Glorious Mystery': _V1_CHRISTOLOGIA_TITLE_PAGE,
+        'Meditations and Discourses On The Glory of Christ': _V1_MEDITATIONS_TITLE_PAGE,
         'Part 2 - Meditations and Discourses Concerning The Glory of Christ': _V1_PART_2_TITLE_PAGE,
+        'Two Short Catechisms:': _V1_TWO_CATECHISMS_TITLE_PAGE,
     },
     # Volume 1: Tag Greek abbreviations that fall below the 3-codepoint minimum
     # in tag_unicode_ranges(). Also repairs damaged OCR form ".τ. λ." → "κ.τ.λ.".

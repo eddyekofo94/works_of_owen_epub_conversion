@@ -17,6 +17,11 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from cli_utils import green, red, yellow
+
 BASELINE_PATH = ROOT / "qa" / "bug_regression_baselines.json"
 
 
@@ -110,6 +115,24 @@ TEXT_CHECKS = [
         ("greek_hebrew_clause_fidelity", "missing_hebrew_clause_count"),
         ("text_integrity", "max_missing_hebrew_clauses"),
         ("greek_hebrew_clause_fidelity", "missing_hebrew_clauses"),
+    ),
+    (
+        "Residual AGES source artifacts",
+        ("ages_artifact_check", "ages_artifact_count"),
+        ("text_integrity", "max_ages_artifact_count"),
+        ("ages_artifact_check", "ages_artifacts"),
+    ),
+    (
+        "Flat ANALYSIS chapters",
+        ("analysis_extraction_check", "flat_analysis_count"),
+        ("text_integrity", "max_flat_analysis_count"),
+        ("analysis_extraction_check", "flat_analyses"),
+    ),
+    (
+        "Missing configured fonts",
+        ("font_config_check", "font_issue_count"),
+        ("text_integrity", "max_font_issue_count"),
+        ("font_config_check", "font_issues"),
     ),
 ]
 
@@ -523,8 +546,15 @@ def main() -> int:
         result = build_result(volume, args.root, args.baseline)
         write_result(result)
         failed = failed or result["status"] != "pass"
+        status_str = result["status"].upper()
+        if status_str == "PASS":
+            status_str = green(status_str)
+        elif status_str == "WARNING":
+            status_str = yellow(status_str)
+        else:
+            status_str = red(status_str)
         print(
-            f"Volume {volume}: {result['status'].upper()} "
+            f"Volume {volume}: {status_str} "
             f"({Path(result['output_markdown']).relative_to(args.root)})"
         )
 

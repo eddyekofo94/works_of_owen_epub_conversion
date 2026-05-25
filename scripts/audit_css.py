@@ -21,6 +21,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from shared import _get_font_name_records
+
 # Web-safe / universally available font families that don't need @font-face
 WEB_SAFE_FONTS = {
     "serif", "sans-serif", "monospace", "cursive", "fantasy",
@@ -29,6 +35,11 @@ WEB_SAFE_FONTS = {
     "Courier", "Courier New", "Verdana", "Trebuchet MS",
     "Palatino", "Palatino Linotype", "Book Antiqua",
     "Garamond", "Baskerville", "Hoefler Text",
+}
+
+FONT_FACE_ALIASES = {
+    # "Owen Title" is a deliberate CSS alias over the embedded Baskervville face.
+    "Owen Title": {"Baskervville"},
 }
 
 
@@ -200,6 +211,36 @@ def run_audit(epub_path: Path) -> dict[str, Any]:
                     "font_family": ff["font_family"],
                     "url": ff["url"],
                 })
+                continue
+            if resolved.endswith(('.ttf', '.otf')):
+                try:
+                    import tempfile
+                    with tempfile.NamedTemporaryFile(suffix=Path(resolved).suffix) as tmp:
+                        tmp.write(zf.read(resolved))
+                        tmp.flush()
+                        records = _get_font_name_records(tmp.name)
+                    family_values = {
+                        records.get("preferred_family", ""),
+                        records.get("family", ""),
+                    }
+                    allowed = {ff["font_family"]} | FONT_FACE_ALIASES.get(ff["font_family"], set())
+                    if not (allowed & family_values):
+                        warnings.append({
+                            "code": "font_family_metadata_mismatch",
+                            "message": (
+                                f"@font-face family '{ff['font_family']}' does not match embedded "
+                                f"font metadata family values {sorted(v for v in family_values if v)}"
+                            ),
+                            "font_family": ff["font_family"],
+                            "file": resolved,
+                            "metadata": records,
+                        })
+                except Exception as exc:
+                    warnings.append({
+                        "code": "font_metadata_unreadable",
+                        "message": f"Could not read font metadata for '{resolved}': {exc}",
+                        "file": resolved,
+                    })
 
         # Check embedded fonts have @font-face
         font_face_urls = set()

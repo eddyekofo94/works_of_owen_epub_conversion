@@ -11,7 +11,25 @@ import pytest
 from scripts.audit_epub import Audit
 from scripts.audit_text_integrity import run_audit
 from converter import clean_text, force_polyglot_mapping, get_pages_text, reconstruct_paragraphs
-from render import apply_scholastic_anchor_protocol, markdown_to_html, _polish_contents_page_html
+from render import (
+    apply_scholastic_anchor_protocol,
+    markdown_to_html,
+    tag_unicode_ranges,
+    _polish_contents_page_html,
+    _merge_reference_continuation_paragraphs,
+    _repair_analysis_spillover_chapters,
+    _merge_short_inline_lists,
+)
+from shared import (
+    EPUB_STYLESHEET,
+    EPUB3_FONT_STYLES,
+    FONT_FAMILY_MAP,
+    PROXIMA_NOVA_FILES,
+    TITLE_PAGE_FONTS,
+    _get_font_name_records,
+    generate_font_styles,
+    select_primary_font,
+)
 from volumes.v1.convert import OVERRIDES as V1_OVERRIDES
 
 
@@ -57,6 +75,55 @@ def paths_for(volume):
         volume_dir / "input" / f"owen-v{volume}.pdf",
         volume_dir / "output" / f"volume_{volume}.epub",
     )
+
+
+def test_primary_font_selection_uses_real_internal_family_names():
+    cases = {
+        "Adobe-garamond-pro-2": "Adobe Garamond Pro",
+        "Libertinus": "Libertinus Serif",
+        "Minion_pro": "Minion Pro",
+        "Brill_font": "Brill",
+        "Gentium-plus": "Gentium Plus",
+        "sabon-next-lt": "Sabon Next LT",
+        "Baskervville": "Baskervville",
+    }
+    for directory, expected_family in cases.items():
+        selected = select_primary_font(directory)
+        assert selected["name"] == expected_family
+        assert selected["files"], f"{directory} should select at least one font file"
+        css = generate_font_styles(selected["name"], selected["files"])
+        assert f'font-family: "{expected_family}"' in css
+        assert 'font-family: "Proxima Nova"' in css
+        assert "Proxima Nova Rg" not in css
+
+
+def test_mixed_font_directories_filter_to_body_family_faces():
+    libertinus = select_primary_font("Libertinus")
+    assert set(libertinus["files"]) == {
+        "LibertinusSerif-Regular.otf",
+        "LibertinusSerif-Bold.otf",
+        "LibertinusSerif-Italic.otf",
+        "LibertinusSerif-BoldItalic.otf",
+    }
+
+    minion = select_primary_font("Minion_pro")
+    assert set(minion["files"]) == {
+        "MinionPro-Regular.otf",
+        "MinionPro-Bold.otf",
+        "MinionPro-It.otf",
+        "MinionPro-BoldIt.otf",
+    }
+
+
+def test_font_assets_exist_and_otf_metadata_is_readable():
+    font_root = BASE_DIR / "fonts"
+    for _name, rel_path in {**PROXIMA_NOVA_FILES, **TITLE_PAGE_FONTS}.items():
+        assert (font_root / rel_path).exists(), rel_path
+
+    adobe = font_root / "Adobe-garamond-pro-2" / "AGaramondPro-Bold.otf"
+    records = _get_font_name_records(adobe)
+    assert records["family"] == "Adobe Garamond Pro Bold"
+    assert records["preferred_family"] == FONT_FAMILY_MAP["Adobe-garamond-pro-2"]
 
 
 @lru_cache(maxsize=None)
@@ -178,6 +245,149 @@ def test_ages_song_of_solomon_marker_does_not_keep_stale_proverbs_book():
     assert "Proverbs 5:1Song of Solomon" not in cleaned
 
 
+def test_residual_square_ages_codes_are_removed_before_scripture_refs():
+    cleaned = clean_text(
+        'And chap. [4611605]16:5-15, chap. [810119]1:19-21, '
+        'and [19B9105]Psalm 119:105, and is said.'
+    )
+
+    assert "[4611605]" not in cleaned
+    assert "[810119]" not in cleaned
+    assert "[19B9105]" not in cleaned
+    assert "chap. 16:5-15" in cleaned
+    assert "chap. 1:19-21" in cleaned
+    assert "Psalm 119:105" in cleaned
+
+
+def test_spaced_ordinal_markers_are_normalized_before_formatting():
+    cleaned = clean_text("1 st . Such as consist in grace. 2 dly . Such as flow from revelation.")
+
+    assert "1st." in cleaned
+    assert "2dly." in cleaned
+    assert "1 st ." not in cleaned
+    assert "2 dly ." not in cleaned
+
+
+def test_markdown_fragmented_ordinal_markers_are_normalized():
+    cleaned = clean_text(
+        "**[1** _**st**_ **.]** That we endeavor diligently. "
+        "**[2** _**dly.**_ **]** That we live and abound."
+    )
+
+    assert "**[1st.]** That we endeavor" in cleaned
+    assert "**[2dly.]** That we live" in cleaned
+    assert "_**st**_" not in cleaned
+    assert "_**dly.**_" not in cleaned
+
+
+def test_bracketed_word_ordinal_marker_splits_to_new_paragraph():
+    html, _, _ = markdown_to_html(
+        'This impotency is to be cured in our return. [SECONDLY], '
+        'The minds of men unregenerate being thus depraved and corrupted.'
+    )
+
+    assert '[SECONDLY]' in html
+    assert '<b>[SECONDLY],</b>' in html
+    assert re.search(r'</p>\s*<p class="list-item"><b>\[SECONDLY\],</b>', html)
+
+
+def test_inline_bold_decimal_markers_split_after_emphasized_semicolon():
+    # Items 1 and 2 end with ';' inside <i> tags — plain text ends with ';'
+    # so the new semicolon-based rule merges all 3 into one continuous paragraph.
+    html, _, _ = markdown_to_html(
+        '**1.** Of _sanctifying grace;_ **2.** Of _especial gifts;_ '
+        '**3.** Of peculiar _evangelical privileges._'
+    )
+
+    assert html.count('class="list-item"') == 1, (
+        "Items ending with ';' must be merged into one continuous paragraph"
+    )
+    assert '<b>1.</b> Of <i>sanctifying grace;</i>' in html
+    assert '<b>2.</b> Of <i>especial gifts;</i>' in html
+    assert '<b>3.</b> Of peculiar <i>evangelical privileges.</i>' in html
+
+
+def test_chapter_summary_continuations_stop_at_body_opener():
+    html, _, _ = markdown_to_html(
+        '[[CHAPTER]] CHAPTER 1.\n\n'
+        '[[SUMMARY]] GENERAL PRINCIPLES CONCERNING THE HOLY SPIRIT AND HIS WORK. '
+        '1 Corinthians 12:1 opened — Dispensation of the Spirit not confined to the first ages of the church\n\n'
+        '— The great necessity of a diligent inquiry into the things taught concerning the Spirit of God and his work.\n\n'
+        'THE apostle Paul, in the 12th chapter, proceeds with his argument.'
+    )
+
+    assert 'The great necessity' in re.search(r'<p class="chapter-summary">(.*?)</p>', html, re.S).group(1)
+    assert re.search(r'<p>THE apostle Paul', html)
+
+
+def test_secondly_the_opener_is_not_swallowed_by_summary():
+    html, _, _ = markdown_to_html(
+        '[[CHAPTER]] CHAPTER 4.\n\n'
+        '[[SUMMARY]] WORK OF THE HOLY SPIRIT IN AND ON THE HUMAN NATURE OF CHRIST. '
+        'What it is to love Christ as we ought.\n\n'
+        'Secondly, THE human nature of Christ being thus formed in the womb by a creating act of the Holy Spirit.'
+    )
+
+    summary = re.search(r'<p class="chapter-summary">(.*?)</p>', html, re.S).group(1)
+    assert "Secondly" not in summary
+    assert re.search(r'<p class="list-item"><b>Secondly,</b> THE human nature', html)
+
+
+def test_greek_synopsis_line_continues_chapter_summary():
+    html, _, _ = markdown_to_html(
+        '[[CHAPTER]] CHAPTER 9.\n\n'
+        '[[SUMMARY]] CORRUPTION OR DEPRAVATION OF THE MIND BY SIN. 1 Corinthians 2:14 opened —\n\n'
+        'Υυχικὸς ἄνθρωπος, or the "natural man," who — Spiritual things, what they are — Power of darkness declared.\n\n'
+        'WE have considered the state of the mind.'
+    )
+
+    summary = re.search(r'<p class="chapter-summary">(.*?)</p>', html, re.S).group(1)
+    assert 'Υυχικὸς' in summary
+    assert re.search(r'<p>WE have considered', html)
+
+
+def test_analysis_spillover_is_moved_back_to_previous_chapter():
+    intermediate = {
+        "chapters": [
+            {"title": "Prefatory Note", "raw_text": 'of the Holy Spirit," etc., attempted "a'},
+            {
+                "title": "Analysis",
+                "raw_text": (
+                    'confutation of some part of Dr. Owen\'s work on that subject." '
+                    'Mr. John Humfrey added more context.\n\nANALYSIS.\n\nPart I. The first thing.'
+                ),
+            },
+        ]
+    }
+
+    repaired = _repair_analysis_spillover_chapters(intermediate)
+    assert 'attempted "a confutation of some part' in repaired["chapters"][0]["raw_text"]
+    assert repaired["chapters"][1]["raw_text"].startswith("[[SUBTITLE]] ANALYSIS.")
+
+
+def test_chap_reference_continuation_paragraphs_are_merged():
+    merged = _merge_reference_continuation_paragraphs([
+        'And chap.',
+        '16:5-15, "Now I go my way."',
+        'This is another paragraph.',
+        'that grace abound, chapter',
+        '9:8; that "without Christ we can do nothing."',
+    ])
+
+    assert merged[0] == 'And chap. 16:5-15, "Now I go my way."'
+    assert merged[1] == 'This is another paragraph.'
+    assert merged[2].startswith('that grace abound, chapter 9:8;')
+
+
+def test_hebrew_inside_greek_span_is_retagged_separately():
+    tagged = tag_unicode_ranges("Φανέρωσις τοῦ Πνεύματος נלינא דרוחה Syr.")
+
+    assert '<span lang="he" xml:lang="he" dir="rtl">נלינא דרוחה</span>' in tagged
+    greek_spans = re.findall(r'<span lang="el" xml:lang="el">(.*?)</span>', tagged)
+    assert greek_spans
+    assert all(not re.search(r'[\u0590-\u05FF]', span) for span in greek_spans)
+
+
 def test_footnote_merge_translates_ages_verse_markers():
     from extract import merge_footnotes
 
@@ -283,6 +493,10 @@ def test_summary_continuation_is_rendered_as_one_summary_paragraph():
 
 
 def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
+    # (1.) ends with ';' → merges with (2.) which ends with '—' (terminator)
+    # → (1.)+(2.) become one paragraph.
+    # [1]. ends with ';' → merges with [2.] which ends with '—' (terminator)
+    # → [1].+[2.] become one paragraph.
     html, _, _ = markdown_to_html(
         "**(1.)** For their sanctification;\n\n"
         "**(2.)** For their consolation: to which two all the particular acts of "
@@ -292,9 +506,12 @@ def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
         "**[2.]** In respect of consolation: —"
     )
 
-    assert '<p class="list-item"><b>(2.)</b> For their consolation:' in html
-    assert '<p class="list-item"><b>[1].</b> In respect of sanctification;</p>' in html
-    assert '<p class="list-item"><b>[2.]</b> In respect of consolation: —</p>' in html
+    # (1.) and (2.) merge — (1.) ends with ';'
+    assert '<b>(1.)</b> For their sanctification;' in html
+    assert '<b>(2.)</b> For their consolation:' in html
+    assert html.count('class="list-item"') == 2, (
+        "Expected (1.)+(2.) to merge and [1].+[2.] to merge → 2 paragraphs total"
+    )
     assert '(2.)<b> For their consolation' not in html
 
 
@@ -414,7 +631,7 @@ def test_issues_37_to_40_textual_todo_regressions_are_guarded():
     assert '<b>ill.</b> For what he so does' not in html
     assert (
         '<blockquote epub:type="z3998:quotation"><p>"Behold my servant, whom I uphold; '
-        'mine elect, in whom my soul delighteth;" ( Isaiah 42:1;)</p></blockquote>'
+        'mine elect, in whom my soul delighteth;" (Isaiah 42:1;)</p></blockquote>'
     ) in html
     assert "</blockquote>\n<p>as he also proclaims the same delight" in html
     assert "open the door, I WILL come in to him, and will sup with him" not in html
@@ -633,11 +850,15 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
         html for html in files.values()
         if "<title>Christologia - a Declaration of the Glorious Mystery</title>" in html
     )
-    assert '<p class="greek-title"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span></p>' in christologia_title
-    assert '<p class="title-line title-line-major">CHRISTOLOGIA</p>' in christologia_title
-    assert '<p class="title-connector">OR</p>' in christologia_title
-    assert '<p class="title-connector">OF</p>' in christologia_title
-    assert '<p class="title-connector">WITH</p>' in christologia_title
+    # Christologia title page is now hardcoded in v1/convert.py — correct classes and mixed case
+    assert 'class="treatise-title-page"' in christologia_title
+    assert '<p class="greek-title"><span lang="el" xml:lang="el">Χριστολογία</span></p>' in christologia_title
+    assert '<p class="title-line-major">Christologia</p>' in christologia_title
+    assert '<p class="title-connector">Or,</p>' in christologia_title
+    assert 'Declaration of the Glorious Mystery' in christologia_title
+    assert 'The Person of Christ' in christologia_title
+    assert 'Philippians 3:8' in christologia_title
+    # No raw heading fallback artifacts
     assert "<h2>OR</h2>" not in christologia_title
     assert "<h2>OF</h2>" not in christologia_title
     assert "<h2>WITH</h2>" not in christologia_title
@@ -675,9 +896,8 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     assert re.search(r"\.front-matter-heading\s*\{[^}]*border-bottom:\s*1px solid #777;", css, re.S)
     assert ".contents-page" in css
     assert ".volume-title-page .title-author-main" in css
-    assert "EPUB/Fonts/Baskervville-Regular.ttf" in names
-    assert "EPUB/Fonts/Baskervville-Bold.ttf" in names
-    assert "EPUB/Fonts/Baskervville-Italic.ttf" in names
+    assert "EPUB/Fonts/Baskervville-VariableFont_wght.ttf" in names
+    assert "EPUB/Fonts/Baskervville-Italic-VariableFont_wght.ttf" in names
     assert re.search(r"\.treatise-title-page \.title-connector\s*\{[^}]*font-size:\s*0\.68em;", css, re.S)
 
 
@@ -722,15 +942,18 @@ def test_v1_catechism_questions_and_answers_are_grouped_and_bolded(volume):
     assert '<p class="catechism-item"><b>A.</b> From the holy' in greater_chapter_1
 
     combined = "\n".join(files.values())
+    # These sentences start with "A." in the OCR (article "A" followed by period artifact).
+    # They must be present as normal prose and NOT incorrectly parsed as catechism answers.
     false_answer_samples = [
-        "A prefatory note has commonly been given to the different treatises.",
-        "A complete index will be given in the last volume",
-        "A glorious representation hereof",
+        "A. prefatory note has commonly been given to the different treatises.",
+        "A. complete index will be given in the last volume",
+        "A. glorious representation hereof",
     ]
     for sample in false_answer_samples:
+        rest = sample[3:]  # strip "A. " prefix to get the body text
         assert sample in combined
-        assert f'<p class="catechism-item"><b>A.</b> {sample[2:]}' not in combined
-        assert f'<p class="catechism-item">A. {sample[2:]}' not in combined
+        assert f'<p class="catechism-item"><b>A.</b> {rest}' not in combined
+        assert f'<p class="catechism-item">A. {rest}' not in combined
 
 
 @pytest.mark.parametrize("volume", VOLUMES)
@@ -1085,3 +1308,317 @@ def test_implemented_bug_samples_stay_absent(volume):
             failures.append(f"{audit_name} still contains sample: {sample['text']}")
 
     assert not failures, "\n".join(failures)
+
+
+# ---------------------------------------------------------------------------
+# Issue 21: dangling single-letter initial splits
+# ---------------------------------------------------------------------------
+
+def test_issue_21_dangling_initial_pair_is_joined():
+    """A paragraph ending with a bare capital-letter initial (e.g. "S.") must be
+    merged with the following paragraph.  Real v3 case:
+
+        "…clamorous writings of S.\\n\\nP. [f80] do sufficiently manifest."
+
+    Both initials belong to the same author citation ("S. P.") and must land in
+    the same HTML paragraph — not split into <p>…S.</p> / <p>P…</p>.
+    """
+    md = (
+        "These things are sufficiently manifest, as the scurrilous, clamorous writings of S.\n\n"
+        "P. [f80] do sufficiently manifest.\n\n"
+        "Secondly, Regeneration by the Holy Spirit is the same work."
+    )
+    html, _, _ = markdown_to_html(md)
+    paras = re.findall(r'<p[^>]*>(.*?)</p>', html, re.S)
+    plain_paras = [re.sub(r'<[^>]+>', '', p) for p in paras]
+    # After the fix there should be exactly 2 body paragraphs (merged + Secondly)
+    # and the first must contain BOTH "S." and "P."
+    first_para = plain_paras[0] if plain_paras else ""
+    assert "S." in first_para and "P." in first_para, (
+        f"S. and P. must be in the same paragraph after the fix.\n"
+        f"Paragraphs: {plain_paras}"
+    )
+    # No paragraph should start with bare "P." (the orphan)
+    for para in plain_paras:
+        assert not re.match(r'^\s*P\.\s', para), \
+            f"Orphan paragraph starting with 'P.' found: {para[:80]!r}"
+
+
+def test_issue_21_chap_roman_numeral_not_merged():
+    """'chap. I.' at end of a paragraph is a chapter reference; the following
+    paragraph must NOT be swallowed into it.
+    """
+    md = (
+        "The complacency of the mind in them, chap. I.\n\n"
+        "The treatise is divided into two parts: —"
+    )
+    html, _, _ = markdown_to_html(md)
+    assert re.search(r'<p[^>]*>The treatise is divided', html), \
+        "chap. I. paragraph boundary must be preserved"
+
+
+def test_issue_21_structural_dash_roman_not_merged():
+    """'— I.' (em-dash + Roman numeral) marks a numbered observation.
+    The following observation text must stay in its own paragraph.
+    """
+    md = (
+        "This title of the psalm will yield us these two observations: — I.\n\n"
+        "That the espousals of Christ and his church are real and true."
+    )
+    html, _, _ = markdown_to_html(md)
+    assert re.search(r'<p[^>]*>That the espousals', html), \
+        "observation text must remain its own paragraph after '— I.'"
+
+
+def test_issue_21_multi_volume_known_cases():
+    """Real dangling-initial pairs from multiple volumes must be joined into one
+    paragraph — no orphan paragraph that opens with just the second initial.
+
+    Without the fix, D./V. at the start of a paragraph are promoted to bold
+    list-item markers: <p class="list-item"><b>D.</b> Kimchi …>.  After the fix
+    they are absorbed into the preceding paragraph as plain inline text.
+    """
+    cases = [
+        # v12: Rabbi David Kimchi — "R.\n\nD. Kimchi" → single paragraph
+        (
+            "men who are of the greatest note amongst them in these latter days, as R.\n\n"
+            "D. Kimchi, Aben Ezra, Abrabanel, Lipman.",
+            # The orphan pattern matches either a list-item bold marker or a bare <p>
+            r'<p[^>]*>(?:\s*<b>)?D\.',
+        ),
+        # v14: "Mr J.\n\nV. C." → single paragraph
+        (
+            "happily ensue after so various tumults in the kingdom. By Mr J.\n\n"
+            "V. C., a friend to men of all religions, 1661.",
+            r'<p[^>]*>(?:\s*<b>)?V\.',
+        ),
+    ]
+    for md, orphan_pattern in cases:
+        html, _, _ = markdown_to_html(md)
+        assert not re.search(orphan_pattern, html), \
+            f"Orphan paragraph detected in: {md[:60]!r}"
+
+
+# ---------------------------------------------------------------------------
+# Issue 22: Hebrew bidi isolation
+# ---------------------------------------------------------------------------
+
+def test_issue_22_hebrew_css_uses_bidi_isolate():
+    """Hebrew spans must declare unicode-bidi: isolate so brackets surrounding
+    inline Hebrew (e.g. '[Hebrew Keri]') stay on the correct visual side.
+    """
+    # Hebrew CSS lives in EPUB3_FONT_STYLES (the per-XHTML inline style block),
+    # not in the base EPUB_STYLESHEET.
+    assert 'unicode-bidi: isolate' in EPUB3_FONT_STYLES, \
+        "Hebrew CSS must use unicode-bidi: isolate, not embed"
+    assert 'unicode-bidi: embed' not in EPUB3_FONT_STYLES, \
+        "unicode-bidi: embed must be replaced with unicode-bidi: isolate"
+
+
+def test_issue_22_hebrew_keri_bracket_outside_span():
+    """tag_unicode_ranges must NOT pull the ASCII word 'Keri' inside a Hebrew
+    span — 'Keri' is an English label and must stay in LTR context.
+    """
+    from render import tag_unicode_ranges
+    from html import escape as _esc
+    raw = 'תוֹרָתִי [רֻבֵּי Keri] תֻבֵּוֹּ'
+    result = tag_unicode_ranges(_esc(raw))
+    # 'Keri' must appear outside any <span lang="he"…> element
+    assert 'Keri</span>' not in result, \
+        f"'Keri' is swallowed inside a Hebrew span: {result}"
+    assert re.search(r'</span>[^<]*Keri', result), \
+        f"'Keri' must follow the closing </span> of its Hebrew word: {result}"
+
+
+# ---------------------------------------------------------------------------
+# Issue 23: compact blockquote CSS
+# ---------------------------------------------------------------------------
+
+def test_issue_23_blockquote_css_is_compact():
+    """Blockquote margins must be reduced from the old 0.5em/2em that Eddy
+    reported as too airy.  Top/bottom ≤ 0.3em, left/right ≤ 1.6em.
+    """
+    bq_match = re.search(r'blockquote\s*\{([^}]+)\}', EPUB_STYLESHEET, re.S)
+    assert bq_match, "No blockquote rule found in EPUB_STYLESHEET"
+    bq_rule = bq_match.group(1)
+
+    m = re.search(r'margin\s*:\s*([\d.]+)em\s+([\d.]+)em', bq_rule)
+    assert m, f"Expected 'margin: Xem Yem' in blockquote rule; got:\n{bq_rule}"
+    top_bottom = float(m.group(1))
+    left_right = float(m.group(2))
+    assert top_bottom <= 0.3, \
+        f"blockquote top/bottom margin {top_bottom}em is too large (want ≤ 0.3em)"
+    assert left_right <= 1.6, \
+        f"blockquote left/right margin {left_right}em is too large (want ≤ 1.6em)"
+
+
+def test_issue_23_blockquote_p_margin_is_compact():
+    """blockquote p must have a small vertical margin — enough for breathing
+    room between quoted paragraphs but not so large that blockquotes feel airy.
+    """
+    bq_p_match = re.search(r'blockquote\s+p\s*\{([^}]+)\}', EPUB_STYLESHEET, re.S)
+    assert bq_p_match, "No 'blockquote p' rule found in EPUB_STYLESHEET"
+    bq_p_rule = bq_p_match.group(1)
+    p_m = re.search(r'margin\s*:\s*([\d.]+)', bq_p_rule)
+    if p_m:
+        assert float(p_m.group(1)) <= 0.3, \
+            f"blockquote p margin {p_m.group(1)}em is too large"
+
+
+# ---------------------------------------------------------------------------
+# Issue 19 – semicolon/comma-based list merging
+# Rule: items ending with ';' or ',' accumulate; items ending with anything
+# else flush the accumulated run into a single continuous paragraph.
+# ---------------------------------------------------------------------------
+
+def _build_list_html(*items):
+    """Build consecutive <p class="list-item"> elements from (marker, content) pairs."""
+    return ''.join(
+        f'<p class="list-item"><b>{mk}</b> {ct}</p>'
+        for mk, ct in items
+    )
+
+
+def test_issue_19_semicolon_list_merged_into_single_paragraph():
+    """All non-final items ending with ';' — entire run merges to one paragraph.
+
+    Canonical example: 1. Wisdom; 2. Knowledge, 1 Cor. 12:8; 3. Faith; ...
+    9. Interpretation of tongues, verse 10.
+    Non-finals end with ';' → all 9 items merge to one <p class="list-item">.
+    """
+    html = _build_list_html(
+        ('1.', 'Wisdom;'),
+        ('2.', 'Knowledge, 1 Corinthians 12: 8, or the word of wisdom and the word of knowledge;'),
+        ('3.', 'Faith;'),
+        ('4.', 'Healing, verse 9;'),
+        ('5.', 'Working of miracles;'),
+        ('6.', 'Prophecy;'),
+        ('7.', 'Discerning of spirits;'),
+        ('8.', 'Kinds of tongues;'),
+        ('9.', 'Interpretation of tongues, verse 10.'),
+    )
+    result = _merge_short_inline_lists(html)
+    assert result.count('<p class="list-item">') == 1, (
+        "Expected 9-item semicolon list to merge into a single paragraph"
+    )
+    assert 'Wisdom;' in result
+    assert 'Prophecy;' in result
+    assert 'Interpretation of tongues, verse 10.' in result
+
+
+def test_issue_19_long_items_with_semicolons_still_merge():
+    """Word count is irrelevant — long items ending with ';' must still merge."""
+    html = _build_list_html(
+        ('1.', 'God is absolutely sovereign over all creation, and his will cannot be frustrated;'),
+        ('2.', 'God is perfectly holy in all his ways and works;'),
+        ('3.', 'God is love, and all his acts flow from that love.'),
+    )
+    result = _merge_short_inline_lists(html)
+    assert result.count('<p class="list-item">') == 1, (
+        "Long-item semicolon list must merge regardless of word count"
+    )
+
+
+def test_issue_19_period_terminated_items_stay_separate():
+    """Items ending with '.' are standalone statements — must not be merged."""
+    html = _build_list_html(
+        ('1.', 'God is sovereign.'),
+        ('2.', 'God is holy.'),
+        ('3.', 'God is love.'),
+    )
+    result = _merge_short_inline_lists(html)
+    assert result.count('<p class="list-item">') == 3, (
+        "Period-terminated list items must remain as separate paragraphs"
+    )
+
+
+def test_issue_19_heterogeneous_run_splits_correctly():
+    """In a mixed run, long period-terminated items stay separate while the
+    following semicolon sub-run merges independently.
+    """
+    html = _build_list_html(
+        ('Secondly,', 'the Holy Spirit illuminates the mind with a full and clear apprehension of truth.'),
+        ('1.', 'Illumination;'),
+        ('2.', 'Conviction;'),
+        ('3.', 'Reformation.'),
+    )
+    result = _merge_short_inline_lists(html)
+    # 'Secondly' ends with '.' → stays alone; items 1-3 merge (non-finals end with ';')
+    assert result.count('<p class="list-item">') == 2, (
+        "Expected 'Secondly' paragraph to stay separate while 1/2/3 sub-run merges"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Issue 19.d – last item of inline run lacks a bold marker
+# When "5. To depart." is split from a merged paragraph, it may arrive as a
+# plain <p class="list-item"> with no <b> wrapper.  The regex must not create
+# nested <p> tags by falling through to the old 'item_contents' fallback.
+# ---------------------------------------------------------------------------
+
+def _build_roman_list_html(*items):
+    """Build consecutive <p class="roman-list-item"> elements from (marker, content) pairs."""
+    return ''.join(
+        f'<p class="roman-list-item"><b>{mk}</b> {ct}</p>'
+        for mk, ct in items
+    )
+
+
+def test_issue_19d_last_item_without_bold_marker_no_nested_p():
+    """A list-item paragraph that has no bold marker must not produce nested <p> tags."""
+    html = (
+        '<p class="list-item"><b>1.</b> To proceed;</p>'
+        '<p class="list-item"><b>2.</b> To come, or come upon;</p>'
+        '<p class="list-item"><b>3.</b> To fall on men;</p>'
+        '<p class="list-item"><b>4.</b> To rest; and,</p>'
+        '<p class="list-item">5. To depart.</p>'
+    )
+    result = _merge_short_inline_lists(html)
+    assert '<p class="list-item">' not in result.replace(
+        '<p class="list-item">', '', 1
+    ), "Should merge into a single list-item paragraph"
+    assert '<p <p' not in result, "Must not produce nested <p> tags"
+    assert 'To depart.' in result, "Last item content must survive the merge"
+
+
+def test_issue_19_roman_list_single_word_items_merge():
+    """Roman numeral list with single-word items should merge into continuous prose (Rule A)."""
+    html = _build_roman_list_html(
+        ('I.', 'Complacency;'),
+        ('II.', 'Permanency.'),
+    )
+    result = _merge_short_inline_lists(html)
+    assert result.count('<p class="roman-list-item">') == 1, (
+        "Single-word Roman list items must merge into one paragraph (Rule A)"
+    )
+    assert 'Complacency' in result and 'Permanency' in result
+
+
+def test_issue_19_roman_list_semicolon_run_merges():
+    """Roman numeral items ending in ';' accumulate under Rule B."""
+    html = _build_roman_list_html(
+        ('I.', 'To proceed;'),
+        ('II.', 'To come, or come upon;'),
+        ('III.', 'To fall on men;'),
+        ('IV.', 'To rest; and,'),
+        ('V.', 'To depart.'),
+    )
+    result = _merge_short_inline_lists(html)
+    assert result.count('<p class="roman-list-item">') == 1, (
+        "Semicolon-terminated Roman items must merge into one paragraph (Rule B)"
+    )
+    assert 'To depart.' in result
+
+
+def test_issue_19_roman_list_does_not_merge_with_arabic_run():
+    """A roman-list-item run and a list-item run must not be merged together."""
+    html = (
+        '<p class="roman-list-item"><b>I.</b> First;</p>'
+        '<p class="roman-list-item"><b>II.</b> Second.</p>'
+        '<p class="list-item"><b>1.</b> One;</p>'
+        '<p class="list-item"><b>2.</b> Two.</p>'
+    )
+    result = _merge_short_inline_lists(html)
+    # Each class merges independently; classes must not bleed into each other
+    assert result.count('<p class="roman-list-item">') == 1
+    assert result.count('<p class="list-item">') == 1

@@ -112,6 +112,76 @@ def test_bracket_corruption_does_not_touch_scripture_brackets():
     assert "[2.]" in result
 
 
+def test_bare_a_period_before_lowercase_is_stripped():
+    """
+    "A. brief view..." at ANY position is an OCR artifact: the indefinite
+    article 'A' gains a spurious period.  The repair strips it.
+
+    The fix uses \\bA\\. (word boundary) not ^ so it catches:
+      - Lines with leading whitespace: "    A. church state..."
+      - Mid-paragraph occurrences after sentence-ending punctuation:
+        "represent unto us. A. church state does the apostle..."
+    """
+    from shared import _repair_owen_ocr_errors
+
+    # Paragraph-start form
+    assert _repair_owen_ocr_errors("A. brief view of the faith") == "A brief view of the faith"
+    assert _repair_owen_ocr_errors("A. glorious representation hereof") == "A glorious representation hereof"
+    assert _repair_owen_ocr_errors("A. truth this is, of that importance") == "A truth this is, of that importance"
+
+    # Multi-paragraph form
+    multi = "Some preceding text.\n\nA. mystery it is.\n\nFollowing text."
+    result = _repair_owen_ocr_errors(multi)
+    assert "A mystery it is." in result
+    assert "A. mystery" not in result
+
+    # With leading whitespace — previously missed by ^ anchor
+    assert _repair_owen_ocr_errors("    A. church state does the apostle") == "    A church state does the apostle"
+
+    # Mid-paragraph — previously missed entirely (the real failing case)
+    mid = "represent unto us. A. church state does the apostle most expressly represent unto us. It"
+    fixed = _repair_owen_ocr_errors(mid)
+    assert "A. church" not in fixed
+    assert "A church" in fixed
+
+
+def test_fused_list_marker_space_inserted():
+    """
+    OCR fuses conjunctions directly with list markers: "and(2.)" → "and (2.)"
+    The repair inserts the missing space without affecting already-spaced markers.
+    Issue 12.a: "(1.) What this work is, and(2.) How it is performed."
+    """
+    from shared import _repair_owen_ocr_errors
+
+    assert _repair_owen_ocr_errors(
+        "(1.) What this work is, and(2.) How it is performed."
+    ) == "(1.) What this work is, and (2.) How it is performed."
+
+    assert _repair_owen_ocr_errors(
+        "(1.) First point, or(2.) second point."
+    ) == "(1.) First point, or (2.) second point."
+
+    # Already spaced — must not be double-spaced
+    assert _repair_owen_ocr_errors(
+        "(1.) First, and (2.) second."
+    ) == "(1.) First, and (2.) second."
+
+
+def test_bare_a_period_before_uppercase_is_preserved():
+    """
+    'A.' followed by an uppercase letter must NOT be touched — it is either a
+    real catechism Answer marker or a structural section label.
+    """
+    from shared import _repair_owen_ocr_errors
+
+    # Catechism answer
+    assert _repair_owen_ocr_errors("A. An eternal, infinite Spirit.") == "A. An eternal, infinite Spirit."
+    # Structural section label (v16 pattern)
+    assert _repair_owen_ocr_errors("A. THIRD inquiry may be") == "A. THIRD inquiry may be"
+    # Structural chapter-heading label
+    assert _repair_owen_ocr_errors("A. GENERAL account of the controversy") == "A. GENERAL account of the controversy"
+
+
 # ---------------------------------------------------------------------------
 # 1.2  Consecutive duplicate word detection
 # ---------------------------------------------------------------------------

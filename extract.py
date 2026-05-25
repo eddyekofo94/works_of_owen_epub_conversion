@@ -2008,9 +2008,18 @@ def reconstruct_paragraphs(text):
     lines = text.split('\n')
     paragraphs = []
     current = []
+    _bracket_continuation = False  # Issue 8: flag when last structural token has unbalanced [
 
     for i, line in enumerate(lines):
         stripped = line.strip()
+
+        # Issue 8: if previous structural token had unclosed bracket, join this line to it
+        if _bracket_continuation and stripped:
+            _bracket_continuation = False
+            if paragraphs:
+                paragraphs[-1] = paragraphs[-1] + ' ' + stripped
+            continue
+
         if not stripped:
             if current:
                 prev = current[-1]
@@ -2057,12 +2066,25 @@ def reconstruct_paragraphs(text):
                 paragraphs.append(' '.join(current))
                 current = []
             paragraphs.append(stripped)
+            # Issue 8: check for unbalanced '[' after stripping [[TOKEN]] markers.
+            # If content after the markers has more '[' than ']', the next line
+            # (e.g. "6. 546.]") belongs to this paragraph (e.g. "[Juv.,\n6. 546.]").
+            _token_stripped = re.sub(r'\[\[[A-Z_]+\]\]\s*', '', stripped)
+            _bracket_continuation = _token_stripped.count('[') > _token_stripped.count(']')
             continue
 
         # Preserve numbered/list-like starts as real paragraph breaks.
         if STRUCTURAL_START_RE.match(stripped):
             if current:
                 prev = current[-1]
+
+                # Blemish fix: numeric range hyphen — "Romans 1:19-" + "21. This..."
+                # The continuation digit matches STRUCTURAL_START_RE but it's a verse
+                # range continuation, not a new list item.  Join and preserve hyphen.
+                if re.search(r'\d+-$', prev):
+                    current[-1] = prev + stripped
+                    continue
+
                 ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
                 prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
                 starts_with_ref_number = bool(re.match(r'^\d{1,4}\.\s+', stripped))
@@ -2100,7 +2122,15 @@ def reconstruct_paragraphs(text):
                 ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
                 is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
 
-                if (not ends_terminal or is_dangling) and not hard_structural:
+                # Blemish fix: a line ending with a dangling connector word (e.g. "the",
+                # "of", "from") must ALWAYS join the next line, even if that next line
+                # superficially matches hard_structural (e.g. "the\n11th, which we…").
+                # "11th," looks like an ordinal list marker but it's mid-sentence here.
+                if is_dangling:
+                    current.append(stripped)
+                    continue
+
+                if (not ends_terminal) and not hard_structural:
                     current.append(stripped)
                     continue
             if current:
@@ -2112,6 +2142,12 @@ def reconstruct_paragraphs(text):
         if current and current[-1].endswith('-'):
             prev_tail = current[-1]
             candidate = prev_tail + stripped
+            # Blemish fix: numeric range hyphens (e.g. "1:19-" / "19-") must be
+            # preserved as-is — they are verse/chapter range delimiters, NOT
+            # word-break hyphens.  "Romans 1:19-\n21" → "Romans 1:19-21".
+            if re.search(r'\d+-$', prev_tail):
+                current[-1] = prev_tail + stripped
+                continue
             # If the resulting word is a known hard-hyphenated term, keep the hyphen (Issue 1)
             if any(term.lower() == candidate.lower() for term in OWEN_HARD_HYPHENS):
                 current[-1] = prev_tail + " " + stripped
@@ -2142,6 +2178,11 @@ def reconstruct_paragraphs(text):
                 (all_current_text.count('\u201c') > all_current_text.count('\u201d')) or
                 (all_current_text.count('"') % 2 != 0)
             )
+            # Blemish fix: unclosed parenthetical \u2014 if the accumulated paragraph
+            # has more open parens than closing parens we are inside a parenthetical
+            # expression (e.g. a Latin citation like "(Crell. de Natur. Spir.\nSanc.)")
+            # and must always join the continuation, regardless of terminal punctuation.
+            is_inside_paren = all_current_text.count('(') > all_current_text.count(')')
 
             if not ends_terminal or is_dangling or is_semantic_connector:
                 # Line does not end with terminal punctuation or ends with a connector
@@ -2150,8 +2191,8 @@ def reconstruct_paragraphs(text):
             elif starts_lower:
                 # Starts lowercase after terminal (e.g. middle of quotation) → join
                 current.append(stripped)
-            elif is_inside_quote:
-                # Inside an unclosed quote → join
+            elif is_inside_quote or is_inside_paren:
+                # Inside an unclosed quote or parenthetical → join
                 current.append(stripped)
             elif starts_with_connector:
                 # Next starts with connector word ("Wherefore", "But", "And", etc.) → join
@@ -2382,7 +2423,7 @@ def _is_probable_duplicate_fragment(prev, current):
     
     # High confidence for short runs, very high for longer ones
     if len(useful) < 25:
-        return ratio >= 0.85
+        return ratio >= 0.90
     return ratio >= 0.95
 
 

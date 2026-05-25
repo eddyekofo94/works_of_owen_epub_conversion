@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# v3
 """
 render.py — Stage 2: Rendering and EPUB3 assembly.
 
@@ -28,7 +29,7 @@ if str(_RENDER_DIR) not in sys.path:
 from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     EPUB_STYLESHEET, generate_font_styles,
-    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS,
+    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, PROXIMA_NOVA_FILES,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters, polytonic_sweep,
     # Pipeline constants — moved to shared.py so extract.py no longer imports render
@@ -90,11 +91,14 @@ STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)|'
     r'\[\d+\.?\]\.?|'
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?|'
-    r'[IVXLCDM]+\.|'
+    r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
+    r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?|'
+    r'(?!(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\.)[IVXLCDM]+\.|'
     r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)|'
     r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.)|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
-    r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
+    r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?|'
+    r'(?:First|Firstly|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Seventhly|Eighthly|Ninthly|Lastly)\b[,.]'
     r')(?P<space>\s+)'
 )
 # ================================================================
@@ -274,6 +278,28 @@ def tag_unicode_ranges(text):
         text = _el_join.sub(r'\1', text)
         text = _he_join.sub(r'\1', text)
 
+    def _split_hebrew_inside_greek(m):
+        content = m.group(1)
+        parts = re.split(
+            r'([\u0590-\u05FF\u0300-\u036F]*[\u0590-\u05FF][\u0590-\u05FF\u0300-\u036F]*(?:\s+[\u0590-\u05FF\u0300-\u036F]*[\u0590-\u05FF][\u0590-\u05FF\u0300-\u036F]*)*)',
+            content,
+        )
+        out = []
+        for part in parts:
+            if not part:
+                continue
+            if re.search(r'[\u0590-\u05FF]', part):
+                out.append(f'<span lang="he" xml:lang="he" dir="rtl">{part}</span>')
+            else:
+                out.append(f'<span lang="el" xml:lang="el">{part}</span>')
+        return ''.join(out)
+
+    text = re.sub(
+        r'<span lang="el" xml:lang="el">([^<]*[\u0590-\u05FF][^<]*)</span>',
+        _split_hebrew_inside_greek,
+        text,
+    )
+
     return text
 
 
@@ -284,10 +310,63 @@ def emphasize_structural_prefix(text):
     return STRUCTURAL_PREFIX_HTML_RE.sub(r'<b>\g<marker></b>\g<space>', text, count=1)
 
 
+def _detect_signature(plain: str, is_front_matter: bool) -> bool:
+    """Return True if *plain* (HTML-stripped paragraph text) looks like an author signature.
+
+    Patterns covered:
+      1. Dash/equals prefix + title-case name   — "= John Owen", "— Thomas Goodwin"
+      2. Bare initials                           — "J. O.", "W. H. G."
+      3. Initials + study phrase                 — "J.O. From my study, ..."
+      4. Goold/Edinburgh editor                  — "W. H. G. Edinburgh, 1850."
+      5. Date-only (month + year)                — "May 11, 1677", "September the last, 1645"
+      6. Place + year                            — "Edinburgh, 1682.", "London, 1682"
+      7. ALL-CAPS name (front-matter only)       — "JOHN OWEN", "DANIEL BURGESS"
+         Restricted to front-matter so that short chapter headings in body text
+         (e.g. "THE HOLY SPIRIT") are never false-positives.
+    """
+    # Pattern 1 — dash/equals + title-case name (1–4 words), no sentence content
+    if re.match(r'^[=—–-]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3}\.?$', plain):
+        if not re.search(r'\b(?:Chapter|Vol\.|p\.|pp\.|the|of|in|and)\b', plain, re.I):
+            return True
+    # Pattern 2 — bare initials only: "J. O." or "W. H. G."
+    if re.match(r'^[A-Z]\.\s*[A-Z]\.(?:\s*[A-Z]\.)?\.?$', plain):
+        return True
+    # Pattern 3 — initials + "From my study …"
+    if re.match(r'^[A-Z]\.[A-Z]\.\s+From\s+my\s+study', plain, re.I):
+        return True
+    # Pattern 4 — Goold header (initials + optional city + 18xx date)
+    if re.match(r'^W\.\s*H\.\s*G\.', plain):
+        return True
+    # Pattern 5 — date-only: "May 11, 1677", "September the last, [1645]"
+    if re.match(
+        r'^(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?'
+        r'|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
+        r'\s+(?:the\s+)?\w+,?\s*\[?\d{4}\]?\.?$',
+        plain,
+    ):
+        return True
+    # Pattern 6 — place + year: "Edinburgh, 1682", "London, 1677."
+    if re.match(r'^[A-Z][a-z]+,\s*\d{4}\.?$', plain):
+        return True
+    # Pattern 7 — ALL-CAPS name (front-matter only to avoid heading false positives)
+    if is_front_matter:
+        words = plain.rstrip('.').split()
+        if (
+            2 <= len(words) <= 4
+            and len(plain) < 50
+            and all(re.match(r'^[A-Z]+$', w) for w in words)
+            and not re.search(r'\b(?:THE|AND|FOR|NOT|BUT|ALL|GOD|HIS|ITS)\b', plain)
+        ):
+            return True
+    return False
+
+
 RENDERED_INLINE_STRUCTURAL_RE = re.compile(
     r'(?P<marker><b>(?:'
     r'(?!\d{4}\.)\d{1,3}\.|'
     r'\[(?:\d+\.?|\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\]\.?|'
+    r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
+    r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?|'
     r'\((?:\d+\.?|\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\)|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
@@ -406,10 +485,18 @@ def _is_roman_list_item(text):
 
 
 def _roman_head_match(text):
-    return re.match(
-        r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?(?:\s+(?P<rest>.*))?$',
+    # Exclude well-known scholarly abbreviations that are composed entirely of
+    # Roman-numeral letters (LXX, MT, OT, NT, DV, KJV, AV, NIV, ESV, NRSV).
+    # Also exclude any Roman value > L (50) in body text — large values like LXX (70)
+    # are virtually never section headings in Owen; they are abbreviations.
+    _EXCLUSION = r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])'
+    m = re.match(
+        _EXCLUSION + r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?(?:\s+(?P<rest>.*))?$',
         (text or '').strip(),
     )
+    if m and _roman_to_int(m.group('roman')) > 50:
+        return None
+    return m
 
 
 def _roman_decimal_marker_match(text):
@@ -719,6 +806,200 @@ def _repair_scholastic_blockquote_boundaries(text):
     return _SCHOLASTIC_QUOTED_OBJECTION_RE.sub(repl, text)
 
 
+_TOKEN_STRIP_RE = re.compile(r'\[\[[A-Z_]+\]\]\s*')
+
+
+def _repair_unbalanced_bracket_splits(text):
+    """Rejoin paragraph fragments split across a \n\n where the previous
+    paragraph has an unclosed '[' that isn't part of a [[TOKEN]] marker.
+
+    This commonly occurs when a citation like '[Juv., 6. 546.]' gets broken
+    across paragraphs during extraction: the structural token ends with '[Juv.,'
+    and the continuation '6. 546.]' lands in its own paragraph.
+    """
+    if not text or '[' not in text:
+        return text
+    paragraphs = text.split('\n\n')
+    result = []
+    i = 0
+    while i < len(paragraphs):
+        para = paragraphs[i]
+        # Strip [[TOKEN]] markers to count only content brackets
+        content = _TOKEN_STRIP_RE.sub('', para)
+        if content.count('[') > content.count(']') and i + 1 < len(paragraphs):
+            # Absorb the next paragraph (the continuation of the unclosed bracket)
+            paragraphs[i + 1] = para + ' ' + paragraphs[i + 1]
+            i += 1
+            continue
+        result.append(para)
+        i += 1
+    return '\n\n'.join(result)
+
+
+_DOC_STRUCTURE_TOKENS_RE = re.compile(
+    r'^\[\[(?:CHAPTER|SUMMARY|PART|SUBTITLE|DIGRESSION)\]\]'
+)
+
+
+def _repair_lowercase_continuation_splits(text: str) -> str:
+    """Rejoin paragraphs that open with a lowercase letter.
+
+    Owen never begins a fresh paragraph with a lowercase letter.  When a
+    paragraph starts with one it is a PDF page-boundary split: the sentence was
+    cut mid-stream at a page turn and the continuation was left as a separate
+    paragraph in the intermediate JSON.
+
+    Structural document tokens ([[CHAPTER]], [[SUMMARY]], [[PART]], etc.) are
+    never lowercased, so they are never affected.  [[BLOCKQUOTE]] text CAN be
+    extended (the quote itself may have split across a page).
+
+    Skipped when the previous paragraph is a bare document-structure header
+    (those have no trailing prose that could be incomplete).
+    """
+    if not text:
+        return text
+    paragraphs = text.split('\n\n')
+    result = []
+    for para in paragraphs:
+        stripped = para.strip()
+        if (
+            result
+            and stripped
+            and stripped[0].islower()
+            and not _DOC_STRUCTURE_TOKENS_RE.match(stripped)
+            and not _DOC_STRUCTURE_TOKENS_RE.match(result[-1].strip())
+        ):
+            result[-1] = result[-1].rstrip() + ' ' + stripped
+        else:
+            result.append(para)
+    return '\n\n'.join(result)
+
+
+_TRANSITIONAL_WORD_RE = re.compile(
+    r'^(Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
+    r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
+    r'Herein|Hereby|Hereof|Hereto|Hereunto|Herewith|Therein|Thereby|'
+    r'Thereof|Thereto|Thereunto|Therewith|But|So|Now)[,;.—\s]*$',
+    re.I,
+)
+_SCHOLASTIC_CONTINUATION_RE = re.compile(
+    r'^\d{1,3}\.\s+(?:q|a|p|pp|vol|sec|lib|cap|chap|serm|art|dist|part|num)\.',
+    re.I,
+)
+
+
+def _repair_transitional_word_isolation(text: str) -> str:
+    """Merge lone transitional words back onto their preceding paragraph.
+
+    Owen sometimes had sentences like "...these things are inseparable.
+    Therefore, 3. The difference..." which PDF extraction splits into three
+    separate paragraphs. The middle "Therefore," fragment has no prose on its
+    own and must be appended to the preceding paragraph.
+
+    Only words known to function as sentence connectors are merged; proper
+    nouns, names, and structural tokens are never touched.
+    """
+    if not text:
+        return text
+    paragraphs = text.split('\n\n')
+    result = []
+    for para in paragraphs:
+        stripped = para.strip()
+        if (
+            result
+            and _TRANSITIONAL_WORD_RE.match(stripped)
+            and not _DOC_STRUCTURE_TOKENS_RE.match(result[-1].strip())
+        ):
+            # Append transitional fragment with a space
+            trail = stripped.rstrip()
+            result[-1] = result[-1].rstrip() + ' ' + trail
+        else:
+            result.append(para)
+    return '\n\n'.join(result)
+
+
+def _repair_scholastic_anchor_splits(text: str) -> str:
+    """Rejoin scholastic citation tails split from their introducing clause.
+
+    Pattern: paragraph ending with a comma after an author name, followed by a
+    paragraph that begins with a two-or-more-digit number and a lowercase
+    abbreviation (e.g. "22. q. 174, a. 1" — a Thomistic q./a. reference).
+    These are never list items; they are inlined citation locators.
+    """
+    if not text:
+        return text
+    paragraphs = text.split('\n\n')
+    result = []
+    for para in paragraphs:
+        stripped = para.strip()
+        if (
+            result
+            and _SCHOLASTIC_CONTINUATION_RE.match(stripped)
+            and result[-1].rstrip().endswith(',')
+            and not _DOC_STRUCTURE_TOKENS_RE.match(result[-1].strip())
+        ):
+            result[-1] = result[-1].rstrip() + ' ' + stripped
+        else:
+            result.append(para)
+    return '\n\n'.join(result)
+
+
+# ---------------------------------------------------------------------------
+# Dangling single-letter initial repair (Issue 21)
+# ---------------------------------------------------------------------------
+_DANGLING_INITIAL_END_RE = re.compile(
+    r'(?<!\S)([A-Z])\.\s*$'   # bare single capital + period at end of paragraph
+)
+_CITATION_ABBREV_BEFORE_INITIAL_RE = re.compile(
+    r'\b(?:chap|cap|lib|part|sect|num|vol|art|op|cit|ibid|serm)\.\s+[A-Z]\.\s*$',
+    re.I,
+)
+_STRUCTURAL_DASH_BEFORE_INITIAL_RE = re.compile(
+    r'[—–]\s*[A-Z]\.\s*$'
+)
+_COMMA_BEFORE_INITIAL_RE = re.compile(
+    r',\s*[A-Z]\.\s*$'
+)
+
+
+def _repair_dangling_initial_splits(text: str) -> str:
+    """Join a paragraph ending with a bare single-letter initial to the next.
+
+    When a PDF line break falls in the middle of an author-initials citation
+    (e.g. "S. P."), extract.py emits one paragraph ending with "S." and the
+    next paragraph starting with "P. do sufficiently…".  This function merges
+    them back into one paragraph.
+
+    Guards — these endings are NOT merged (false positives):
+    - Citation abbreviation before initial: "chap. I.", "cap. V.", etc.
+    - Structural dash before initial:       "— I.", "– V." (numbered observations)
+    - Doc-structure token at para start:    "[[ROMAN_HEAD]]", "[[CHAPTER]]", etc.
+    - Comma immediately before initial:     ", V." (Roman numeral list entries)
+    - Standalone initial paragraph:         "I." alone (Roman numeral heading)
+    """
+    if not text:
+        return text
+    paragraphs = text.split('\n\n')
+    result: list = []
+    for para in paragraphs:
+        stripped = para.strip()
+        if result:
+            prev_stripped = result[-1].rstrip()
+            m = _DANGLING_INITIAL_END_RE.search(prev_stripped)
+            if m:
+                text_before = prev_stripped[:m.start()].strip()
+                if text_before:  # skip standalone initials (would be Roman headings)
+                    is_citation = bool(_CITATION_ABBREV_BEFORE_INITIAL_RE.search(prev_stripped))
+                    is_dash = bool(_STRUCTURAL_DASH_BEFORE_INITIAL_RE.search(prev_stripped))
+                    is_doc_token = bool(re.match(r'^\[\[', prev_stripped))
+                    is_comma = bool(_COMMA_BEFORE_INITIAL_RE.search(prev_stripped))
+                    if not any([is_citation, is_dash, is_doc_token, is_comma]):
+                        result[-1] = result[-1].rstrip() + ' ' + stripped
+                        continue
+        result.append(para)
+    return '\n\n'.join(result)
+
+
 def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                      front_matter_style="blurb", config=None):
     """
@@ -742,8 +1023,16 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     # Apply replacements (Issue 108)
     md_text = _repair_owen_ocr_errors(md_text, config=config)
     md_text = _repair_scholastic_blockquote_boundaries(md_text)
-    
-    normalized_paragraphs = [normalize_footnote_markers(para) for para in md_text.split('\n\n')]
+    md_text = _repair_unbalanced_bracket_splits(md_text)
+    md_text = _repair_lowercase_continuation_splits(md_text)
+    md_text = _repair_transitional_word_isolation(md_text)
+    md_text = _repair_scholastic_anchor_splits(md_text)
+    md_text = _repair_dangling_initial_splits(md_text)
+
+    normalized_paragraphs = [
+        normalize_footnote_markers(para)
+        for para in _merge_reference_continuation_paragraphs(md_text.split('\n\n'))
+    ]
     
     # Apply volume-specific coalesce hook if provided (Issue 26)
     coalesce_hook = config.get('paragraph_coalesce_hook') if config else None
@@ -887,6 +1176,10 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     return f'FNREFTOKEN{fn_num}TOKEN'
 
                 content_clean = _strip_inline_structural_tokens(raw_content)
+                # Issue 26: strip a trailing open/left quotation mark that has no
+                # matching close — the blockquote itself is the container, so an
+                # unclosed opening quote at the end is always an OCR artifact.
+                content_clean = re.sub(r'["“‘]\s*$', '', content_clean).rstrip()
                 with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, content_clean)
                 escaped = _html_escape(with_placeholders)
                 with_links = _restore_footnote_placeholders(escaped)
@@ -1068,8 +1361,73 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         recent_plain = recent_plain[-5:]
                     continue
             elif kind == 'SUMMARY':
-                html_parts.append(f'<p class="chapter-summary">{_render_summary_content(content)}</p>')
-                summary_continuation_active = True
+                # Blemish 7: Some chapter summaries begin with an all-caps titled
+                # heading (the sub-topic title of the treatise) followed by a mixed-
+                # case synopsis sentence.  Detect this and render the heading as
+                # <h3 class="chapter-heading"> (slightly smaller than the chapter
+                # title, larger than the synopsis) and the synopsis separately.
+                #
+                # Heuristic: content starts with ≥10-char all-caps run ending in
+                # sentence punctuation, immediately followed by a mixed-case sentence.
+                # Pure Roman-numeral tokens are excluded (handled by ROMAN_HEAD).
+                _summary_heading_re = re.compile(
+                    r"^(?P<heading>[A-Z][A-Z\s,;:'\u2018\u2019\u2014\-]{9,}[.!?])\s+"
+                    r"(?P<synopsis>[\dA-Z\"\u201c\u2018(].{10,})$",
+                    re.S,
+                )
+                # Issue 28: a footnote number immediately after sentence punctuation
+                # (e.g. "AUGUSTINE.133") prevents the heading/synopsis split because
+                # digits are not in the heading character class.  Strip inline
+                # footnote refs (digits following [.!?] before a space) so the
+                # heuristic sees clean all-caps heading text.
+                _content_for_split = re.sub(
+                    r'([.!?])(\d{1,4})(?=\s+[A-Z\"\u201c\u2018(])', r'\1', content.strip()
+                )
+                _smatch = _summary_heading_re.match(_content_for_split)
+                # Synopsis must contain lowercase letters to confirm it's genuinely
+                # mixed-case (avoids splitting a second all-caps run as heading+synopsis).
+                _synopsis_has_lower = (
+                    _smatch and bool(re.search(r'[a-z]', _smatch.group('synopsis')[:80]))
+                )
+                if _smatch and _synopsis_has_lower and not ROMAN_ONLY_RE.match(
+                    _smatch.group('heading').rstrip('.!? ').strip()
+                ):
+                    # Case 2: All-caps heading + mixed-case synopsis in same paragraph.
+                    # The synopsis may continue into the next paragraph (e.g. long
+                    # outlines split across PDF pages), so keep continuation active.
+                    h_text = _smatch.group('heading').strip()
+                    s_text = _smatch.group('synopsis').strip()
+                    html_parts.append(
+                        f'<h3 class="chapter-heading">{_render_heading_content(h_text)}</h3>'
+                    )
+                    html_parts.append(
+                        f'<p class="chapter-summary">{_render_summary_content(s_text)}</p>'
+                    )
+                    summary_continuation_active = True
+                else:
+                    # Distinguish Case 1 (entirely all-caps) from Case 3 (mixed-case synopsis).
+                    # Owen chapter sub-headings are all-caps outline entries; synopses are prose.
+                    _content_letters = [c for c in content if c.isalpha()]
+                    _upper_ratio = (
+                        sum(1 for c in _content_letters if c.isupper()) / len(_content_letters)
+                        if _content_letters else 0
+                    )
+                    _is_all_caps_heading = (
+                        _upper_ratio >= 0.92
+                        and not ROMAN_ONLY_RE.match(content.strip().rstrip('.!? ').strip())
+                    )
+                    if _is_all_caps_heading:
+                        # Case 1: Entirely all-caps → chapter sub-heading, body text follows.
+                        html_parts.append(
+                            f'<h3 class="chapter-heading">{_render_heading_content(content)}</h3>'
+                        )
+                        summary_continuation_active = False
+                    else:
+                        # Case 3: Mixed-case synopsis paragraph; continuation may follow.
+                        html_parts.append(
+                            f'<p class="chapter-summary">{_render_summary_content(content)}</p>'
+                        )
+                        summary_continuation_active = True
                 # SUMMARY does not trigger or reset pending_drop_cap (Issue 107)
                 recent_plain.append(_strip_footnote_placeholders(content))
                 if len(recent_plain) > 5:
@@ -1304,12 +1662,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         if not h_tag:
             if summary_continuation_active:
                 plain_summary_candidate = re.sub(r'\*\*(.+?)\*\*', r'\1', content_no_refs).strip()
-                starts_summary_list_item = bool(STRUCTURAL_START_RE.match(plain_summary_candidate))
-                starts_body_roman_section = bool(
-                    _roman_head_match(plain_summary_candidate)
-                    and len(re.findall(r'\w+', (_roman_head_match(plain_summary_candidate).group('rest') or ''))) >= 8
-                )
-                if starts_summary_list_item and not starts_body_roman_section:
+                if _looks_like_summary_continuation(plain_summary_candidate):
                     summary_piece = _render_summary_content(content_no_refs)
                     if html_parts and html_parts[-1].startswith('<p class="chapter-summary">'):
                         html_parts[-1] = html_parts[-1][:-4] + f' {summary_piece}</p>'
@@ -1450,6 +1803,15 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         text_html = re.sub(r'(\b(?:verse|verses|chap|chapter)\.?\s*)<b>(\d+[.;]?)</b>', r'\1\2', text_html, flags=re.I)
         text_html = re.sub(r'(\b\d+:\d+(?:[-,]\s*\d+)*,\s*)<b>(\d+[.;]?)</b>', r'\1\2', text_html)
         text_html = re.sub(r'<b>(\d+(?:st|nd|rd|th))</b>(\s+(?:Psalm|Psalms)\b)', r'\1\2', text_html)
+        # Issue 27: if the paragraph STARTS with a bare bold number (e.g. <b>9.</b>) and
+        # the previous paragraph ended with a scripture reference trailing comma or
+        # a bare comma (suggesting a verse-range continuation split across lines),
+        # the bold is spurious — undo it.
+        _prev_plain = recent_plain[-1] if recent_plain else ''
+        if re.match(r'^<b>\d+[.;]?</b>\s', text_html) and re.search(
+            r'(?:\b\d+:\d+(?:[-,]\s*\d+)*|,)\s*$', _prev_plain
+        ):
+            text_html = re.sub(r'^<b>(\d+[.;]?)</b>\s', r'\1 ', text_html)
         
         # Tag Unicode Greek/Hebrew ranges
         text_html = tag_unicode_ranges(text_html)
@@ -1502,48 +1864,12 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     if not paragraph_html:
                         continue
                     
-                    # Signature detection: "= John Owen" or "— John Owen" etc.
-                    # Lenient with trailing text like Greek titles (Issue 26)
+                    # Signature detection — consolidated helper (replaces fragmented patterns)
                     _sig_plain = re.sub(r'<[^>]+>', '', paragraph_html).strip()
-                    _is_signature = bool(re.match(
-                        r'^[=—–-]\s*[A-Z][a-z]+\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}\.?',
+                    _is_signature = _detect_signature(
                         _sig_plain,
-                    ))
-                    # Exclude false positives from first pattern (references, chapter markers)
-                    if _is_signature:
-                        _is_signature = not re.search(r'(?:Chapter|Vol\.|vol\.|p\.|pp\.|END|Aen)', _sig_plain, re.I)
-                    # Specialized Goold/Edinburgh signature detection (Issue 99/26)
-                    if not _is_signature:
-                         _is_signature = bool(re.match(
-                             r'^(?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*\s+(?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?',
-                             paragraph_html,
-                         ))
-                    # Date-only signatures: "May 11, 1677", "September the last, [1645]"
-                    if not _is_signature:
-                        _is_signature = bool(re.match(
-                            r'^(?:<i>|<b>)*(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s*(?:the\s+last)?\s*\[?\d{4}\]?\s*(?:</i>|</b>)*\.?$',
-                            paragraph_html,
-                        ))
-                    # Initials + "From my study" + date: "J.O. From my study, May the 30th, 1677"
-                    if not _is_signature:
-                        _is_signature = bool(re.match(
-                            r'^(?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)?\s+From\s+my\s+study',
-                            _sig_plain,
-                            re.I,
-                        ))
-                    # Name-only signatures: "DANIEL BURGESS", "JOHN OWEN" (2-4 all-caps words)
-                    # Only match if short enough to be a signature, not a heading
-                    if not _is_signature:
-                        words = _sig_plain.split()
-                        _is_signature = (
-                            2 <= len(words) <= 4
-                            and len(_sig_plain) < 60
-                            and bool(re.match(r'^[A-Z][A-Z\s]+\.?$', _sig_plain))
-                            and all(w[0].isupper() for w in words if len(w) > 1)
-                            # Exclude common non-signature patterns
-                            and not re.search(r'\b(?:Chapter|Vol|vol|p\.|pp\.|END)\b', _sig_plain, re.I)
-                        )
-                    
+                        is_front_matter=(current_mode == "FRONT_MATTER"),
+                    )
                     if _is_signature:
                         # Strip trailing Greek residue if it was pulled in (Issue 26)
                         paragraph_html = re.sub(r'\s*[\u0370-\u03FF\u1F00-\u1FFF].*$', '', paragraph_html)
@@ -1564,22 +1890,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
 
                     # Rule 1: FRONT_MATTER rules
                     if current_mode == "FRONT_MATTER":
-                        if _is_signature:
-                            # Strip trailing Greek residue
-                            paragraph_html = re.sub(r'\s*[\u0370-\u03FF\u1F00-\u1FFF].*$', '', paragraph_html)
-                            
-                            # Split Goold signature
-                            m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
-                            if m_sig:
-                                paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
-                            
-                            # Split J.O. study signature
-                            m_study = re.match(r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
-                            if m_study:
-                                paragraph_html = f'{m_study.group(1)}<br/>{m_study.group(2)}'
-                            
-                            html_parts.append(f'<p class="signature">{paragraph_html}</p>')
-                        elif front_matter_style == "prose":
+                        if front_matter_style == "prose":
                             # Check for embedded signature at end of paragraph (e.g., "...DANIEL BURGESS</b></i>")
                             _emb_sig = re.search(
                                 r'(,\s*|\.\s*)(<i><b>|<b><i>|<i>|<b>)([A-Z][A-Z\s]+)(</b></i>|</i></b>|</i>|</b>)\s*\.?\s*(<a[^>]*noteref[^>]*>.*?</a>)?\s*$',
@@ -1681,7 +1992,155 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         if len(recent_plain) > 5:
             recent_plain = recent_plain[-5:]
     
-    return '\n'.join(html_parts), current_mode, pending_drop_cap
+    result_html = '\n'.join(html_parts)
+    result_html = _merge_short_inline_lists(result_html)
+    return result_html, current_mode, pending_drop_cap
+
+
+# ---------------------------------------------------------------------------
+# Issue 19: Inline list merging
+# ---------------------------------------------------------------------------
+_LIST_ITEM_CONTENT_RE = re.compile(
+    r'<p class="(list-item|roman-list-item)">(<b>[^<]{1,30}</b>\s*)?(.*?)</p>',
+    re.S,
+)
+
+
+def _merge_short_inline_lists(html: str) -> str:
+    """Merge consecutive list items into continuous prose when appropriate.
+
+    Two complementary rules:
+
+    Rule A — short-item run (Issue 13 / Issue 19.b):
+      If every item in the entire run has very short plain-text content
+      (≤ _SHORT_ITEM_WORD_LIMIT words after stripping the bold marker),
+      the whole run is a "pseudo-list" — really an inline enumeration —
+      and is merged unconditionally into a single prose paragraph,
+      regardless of terminal punctuation.
+      Examples: "1. Complacency; 2. Permanency."
+                "1. Illumination; 2. Conviction; 3. Reformation."
+
+    Rule B — semicolon sub-run:
+      An item whose content ends with ';' or ',' is accumulated into the
+      current sub-run.  When a terminating item (ends with anything else) is
+      reached, the accumulated sub-run (≥ 2 items) is merged.  Items that
+      stand alone remain on their own line.
+
+      Handles heterogeneous runs naturally: a long 'Secondly,…' paragraph
+      ending with '.' stays separate while short ';' items are merged.
+    """
+    import re as _re
+
+    _SHORT_ITEM_WORD_LIMIT = 4   # items with ≤ this many words are "not really list items"
+
+    def _plain_text(html_frag: str) -> str:
+        return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', html_frag)).strip()
+
+    def _content_word_count(plain: str) -> int:
+        return len(plain.split())
+
+    def _ends_with_semi_or_comma(html_frag: str) -> bool:
+        return _plain_text(html_frag).endswith((';', ','))
+
+    # Split on both list-item and roman-list-item paragraphs
+    parts = _re.split(r'(<p class="(?:list-item|roman-list-item)">.*?</p>)', html, flags=_re.S)
+
+    def _item_class(frag: str) -> str:
+        """Return the CSS class of a list-item paragraph fragment."""
+        m2 = _re.match(r'<p class="(list-item|roman-list-item)">', frag)
+        return m2.group(1) if m2 else 'list-item'
+
+    out = []
+    i = 0
+    while i < len(parts):
+        token = parts[i]
+        if not _re.match(r'<p class="(?:list-item|roman-list-item)">', token):
+            out.append(token)
+            i += 1
+            continue
+
+        # Collect a run of consecutive list-item paragraphs of the SAME class
+        run_cls = _item_class(token)
+        run = [token]
+        j = i + 1
+        while j < len(parts):
+            if parts[j].strip() == '':
+                j += 1
+                continue
+            if _re.match(rf'<p class="{run_cls}">', parts[j]):
+                run.append(parts[j])
+                j += 1
+            else:
+                break
+
+        # Extract (marker, content) pairs — bold group is optional
+        item_contents = []
+        for item in run:
+            m = _LIST_ITEM_CONTENT_RE.match(item)
+            if m:
+                # group(1)=class, group(2)=optional bold marker, group(3)=content
+                item_contents.append((m.group(2) or '', m.group(3)))
+            else:
+                # Fallback: strip outer <p> tags to get inner HTML
+                inner = _re.sub(
+                    r'^<p class="(?:list-item|roman-list-item)">(.*?)</p>$',
+                    r'\1', item, flags=_re.S,
+                )
+                item_contents.append(('', inner))
+
+        # ── Rule A: all items are very short AND at least one non-final item
+        #    ends with ';' or ',' → merge the entire run.
+        #
+        #    The semicolon/comma guard prevents period-terminated standalone
+        #    statements ("God is sovereign. God is holy.") from merging, while
+        #    still catching short pseudo-lists ("1. Complacency; 2. Permanency.")
+        #    that Rule B would also handle.
+        if len(item_contents) >= 2:
+            all_short = all(
+                _content_word_count(_plain_text(ct)) <= _SHORT_ITEM_WORD_LIMIT
+                for _mk, ct in item_contents
+            )
+            any_non_final_has_semi = any(
+                _ends_with_semi_or_comma(ct)
+                for _mk, ct in item_contents[:-1]
+            )
+            if all_short and any_non_final_has_semi:
+                merged = ' '.join(mk2 + ct2 for mk2, ct2 in item_contents)
+                out.append(f'<p class="{run_cls}">{merged}</p>')
+                i = j
+                continue
+
+        # ── Rule B: semicolon/comma sub-run accumulation ──────────────────────
+        run_out = []
+        current_subrun = []
+
+        for mk, ct in item_contents:
+            current_subrun.append((mk, ct))
+            if not _ends_with_semi_or_comma(ct):
+                # Terminating item — flush the accumulated sub-run
+                if len(current_subrun) >= 2:
+                    merged = ' '.join(mk2 + ct2 for mk2, ct2 in current_subrun)
+                    run_out.append(f'<p class="{run_cls}">{merged}</p>')
+                else:
+                    mk2, ct2 = current_subrun[0]
+                    run_out.append(f'<p class="{run_cls}">{mk2}{ct2}</p>')
+                current_subrun = []
+
+        # Flush any remaining items (run where every item ends with ; or ,)
+        if current_subrun:
+            if len(current_subrun) >= 2:
+                merged = ' '.join(mk2 + ct2 for mk2, ct2 in current_subrun)
+                run_out.append(f'<p class="{run_cls}">{merged}</p>')
+            else:
+                mk2, ct2 = current_subrun[0]
+                run_out.append(f'<p class="{run_cls}">{mk2}{ct2}</p>')
+
+        out.extend(run_out)
+        i = j
+
+    return ''.join(out)
+
+
 def find_cover(vol_num):
     """Find cover image for a volume."""
     covers_dir = os.path.join(_RENDER_DIR, 'covers')
@@ -1872,6 +2331,9 @@ def _polish_contents_page_html(html: str) -> str:
             if desc.startswith('—'):
                 desc = desc[1:].strip()
             desc = re.sub(r'\s+', ' ', desc)
+            # Convert any Beta Code / AGES Greek encoding that survived into
+            # the summary description before HTML-escaping.
+            desc = clean_greek_text(polytonic_sweep(desc))
             return (
                 f'<p class="contents-item"><span class="contents-label">'
                 f'{_html_escape(label)}</span>'
@@ -1934,6 +2396,59 @@ def _polish_analysis_html(html: str) -> str:
     )
 
 
+def _looks_like_summary_body_start(text: str) -> bool:
+    """Detect the first real body paragraph after a chapter summary."""
+    if not text:
+        return False
+    plain = re.sub(r'\*\*(.+?)\*\*', r'\1', text).strip()
+    plain = re.sub(r'\s+', ' ', plain)
+    # Owen chapters commonly begin with a drop-cap all-caps word followed by
+    # ordinary prose.  Keep this strict so all-caps summary fragments survive.
+    if re.match(r'^(?:THE|WE|I|THIS|THAT|THERE|BEING|HAVING)\b\s+[a-zA-Z]', plain):
+        return True
+    # Some body sections begin with an outline word followed by the all-caps
+    # drop word from the source page: "Secondly, THE human nature..."
+    if re.match(
+        r'^(?:First|Firstly|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Lastly),?\s+THE\b',
+        plain,
+        re.I,
+    ):
+        return True
+    return False
+
+
+def _looks_like_summary_continuation(text: str) -> bool:
+    """Return True for summary fragments that continue after a [[SUMMARY]] tag."""
+    if not text:
+        return False
+    plain = re.sub(r'\*\*(.+?)\*\*', r'\1', text).strip()
+    if not plain or _looks_like_summary_body_start(plain):
+        return False
+    if plain.startswith(('—', '–', '-')):
+        # Explicit continuation marker — synopsis fragments that overflow onto
+        # the next PDF page always begin with an em/en-dash in Owen.
+        return True
+    if re.match(r'^[\u0370-\u03FF\u1F00-\u1FFF]', plain):
+        return True
+    if STRUCTURAL_START_RE.match(plain):
+        return not bool(
+            _roman_head_match(plain)
+            and len(re.findall(r'\w+', (_roman_head_match(plain).group('rest') or ''))) >= 8
+        )
+    # Long synopsis continuations often contain em-dash-separated clauses but
+    # are not outline/body paragraphs yet.  Require mostly uppercase — Owen
+    # synopses are all-caps; mixed-case body prose with em-dashes must not be
+    # absorbed (e.g. "Our blessed Savior — as he was usually...").
+    if '—' in plain:
+        _letters = [c for c in plain if c.isalpha()]
+        _upper_ratio = (
+            sum(1 for c in _letters if c.isupper()) / len(_letters)
+            if _letters else 0
+        )
+        return len(re.findall(r'\w+', plain)) >= 8 and _upper_ratio >= 0.65
+    return False
+
+
 def _prepare_analysis_raw_text(raw_text: str) -> str:
     """Normalize Analysis chapters into a stable outline before rendering.
 
@@ -1963,6 +2478,55 @@ def _prepare_analysis_raw_text(raw_text: str) -> str:
         flags=re.I,
     )
     return text
+
+
+def _repair_analysis_spillover_chapters(intermediate: dict) -> dict:
+    """Move prose accidentally captured before ANALYSIS back to the prior chapter.
+
+    AGES occasionally cuts a front-matter paragraph at the page where the
+    ANALYSIS title begins, producing one chapter that starts with the previous
+    sentence tail and only later says "ANALYSIS".  Rendering can repair this
+    without rewriting the cached JSON.
+    """
+    chapters = intermediate.get('chapters') or []
+    for index, chapter in enumerate(chapters):
+        if index == 0 or 'ANALYSIS' not in (chapter.get('title') or '').upper():
+            continue
+        raw_text = chapter.get('raw_text') or ''
+        if not raw_text or raw_text.lstrip().startswith('[['):
+            continue
+        match = re.search(r'\bANALYSIS\.?\s*', raw_text, re.I)
+        if not match or match.start() < 80:
+            continue
+        spill = raw_text[:match.start()].strip()
+        analysis_body = raw_text[match.end():].strip()
+        if not spill or not analysis_body:
+            continue
+
+        previous = chapters[index - 1]
+        previous_raw = (previous.get('raw_text') or '').rstrip()
+        separator = ' ' if previous_raw and not re.search(r'[.!?]["”\')\]]?\s*$', previous_raw) else '\n\n'
+        previous['raw_text'] = f'{previous_raw}{separator}{spill}'.strip()
+        chapter['raw_text'] = f'[[SUBTITLE]] ANALYSIS.\n\n{analysis_body}'
+    return intermediate
+
+
+def _merge_reference_continuation_paragraphs(paragraphs: list[str]) -> list[str]:
+    """Heal paragraph breaks inserted between "chap." and a following locator."""
+    merged: list[str] = []
+    for para in paragraphs:
+        current = para.strip()
+        if not current:
+            continue
+        if (
+            merged
+            and re.search(r'\b(?:chap|chapter)\.?\s*$', merged[-1], re.I)
+            and re.match(r'^\d{1,3}:\d+(?:[-,]\s*\d+)*[,:;]?\b', current)
+        ):
+            merged[-1] = f'{merged[-1].rstrip()} {current}'
+        else:
+            merged.append(current)
+    return merged
 
 
 def generate_frontispiece_xhtml(portrait_filename):
@@ -2010,13 +2574,14 @@ def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_fron
             lines.append('</li>')
             stack.pop()
         
-        lines.append(f'<li><a href="{_html_escape(href)}">{_html_escape(text)}</a>')
+        display_text = nav_display_title(text)
+        lines.append(f'<li><a href="{_html_escape(href)}">{_html_escape(display_text)}</a>')
         stack.append('li')
         current_level = level
-    
+
     while stack:
         lines.append(f'</{stack.pop()}>')
-    
+
     lines.append('</nav>')
     
     # Landmarks
@@ -2095,16 +2660,33 @@ def generate_ncx(title, uid, toc_entries):
 
 
 def repackage_canonical(epub_path, src_dir):
-    """Repackage as canonical EPUB3 (mimetype first, no compression)."""
-    if os.path.exists(epub_path):
-        os.remove(epub_path)
-    with open(os.path.join(src_dir, 'mimetype'), 'wb') as f:
-        f.write(b'application/epub+zip')
-    subprocess.run(['zip', '-0Xq', epub_path, 'mimetype'],
-                   cwd=src_dir, check=True)
-    subprocess.run(['zip', '-r9q', epub_path, '.', '-x',
-                    'mimetype', '-x', '*.DS_Store'],
-                   cwd=src_dir, check=True)
+    """Repackage as canonical EPUB3 (mimetype first, no compression).
+
+    Builds the zip in a system temp file, then copies it over the
+    destination.  Using a temp-then-copy strategy avoids PermissionError
+    on read-only or sandbox-mounted output directories where in-place
+    deletion or creation of new files is blocked but overwriting existing
+    file bytes (via shutil.copy2) is permitted.
+    """
+    import tempfile, shutil
+    fd, tmp_path = tempfile.mkstemp(suffix='.epub')
+    os.close(fd)
+    os.remove(tmp_path)   # zip must create the file itself; it fails on an empty pre-existing file
+    try:
+        with open(os.path.join(src_dir, 'mimetype'), 'wb') as f:
+            f.write(b'application/epub+zip')
+        subprocess.run(['zip', '-0Xq', tmp_path, 'mimetype'],
+                       cwd=src_dir, check=True)
+        subprocess.run(['zip', '-r9q', tmp_path, '.', '-x',
+                        'mimetype', '-x', '*.DS_Store'],
+                       cwd=src_dir, check=True)
+        # shutil.copy2 overwrites existing files without needing to delete them
+        shutil.copy2(tmp_path, epub_path)
+    finally:
+        try:
+            os.remove(tmp_path)
+        except OSError:
+            pass
 
 
 def _add_cover_manifest_properties(tmp_dir):
@@ -2640,6 +3222,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     if intermediate is None:
         with open(json_path, encoding='utf-8') as f:
             intermediate = json.load(f)
+    intermediate = _repair_analysis_spillover_chapters(intermediate)
 
     print(f'[render] Volume {vol_num}: {len(intermediate["chapters"])} chapters, '
           f'{len(intermediate["footnotes"])} footnotes')
@@ -2689,6 +3272,18 @@ def render_volume(vol_num: int, overrides: dict = None,
     font_fnames = set()
     font_base = os.path.join(_RENDER_DIR, 'fonts')
 
+    def _font_media_type(filename):
+        ext = os.path.splitext(filename)[1].lower()
+        if ext == '.otf':
+            return 'font/otf'
+        if ext == '.ttf':
+            return 'font/ttf'
+        if ext == '.woff':
+            return 'font/woff'
+        if ext == '.woff2':
+            return 'font/woff2'
+        return 'application/font-sfnt'
+
     # Primary font files (from select_primary_font dict)
     for _variant, _rel_path in primary_font.get('files', {}).items():
         _fbase = os.path.basename(_rel_path)
@@ -2696,18 +3291,15 @@ def render_volume(vol_num: int, overrides: dict = None,
             continue
         _src = os.path.join(font_base, _rel_path)
         if os.path.exists(_src):
-            _ext = os.path.splitext(_fbase)[1].lower()
-            _mt = ('font/otf' if _ext == '.otf' else
-                   'font/ttf' if _ext == '.ttf' else 'application/font-sfnt')
             book.add_item(epub.EpubItem(
                 uid=f'f_{_fbase.replace(".","_")}',
-                file_name=f'Fonts/{_fbase}', media_type=_mt,
+                file_name=f'Fonts/{_fbase}', media_type=_font_media_type(_fbase),
                 content=open(_src, 'rb').read(),
             ))
             font_fnames.add(_fbase)
 
-    # Supplemental biblical fonts and the embedded title display face
-    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS):
+    # Supplemental biblical fonts, heading font, and the embedded title display face
+    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS):
         for _fname, _fpath in _font_dict.items():
             _fbase = os.path.basename(_fpath)
             if _fbase in font_fnames:
@@ -2717,7 +3309,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 book.add_item(epub.EpubItem(
                     uid=f'f_{_fbase.replace(".","_")}',
                     file_name=f'Fonts/{_fbase}',
-                    media_type='application/font-sfnt',
+                    media_type=_font_media_type(_fbase),
                     content=open(_src, 'rb').read(),
                 ))
                 font_fnames.add(_fbase)
@@ -2804,24 +3396,19 @@ def render_volume(vol_num: int, overrides: dict = None,
         'TO THE READER', 'ADVERTISEMENT', 'GENERAL PREFACE',
     ]
 
-    in_catechism_context = False
-
     for ch_dict in intermediate['chapters']:
         title_upper = ch_dict['title'].upper()
         if ch_dict.get('is_endnotes') or title_upper == 'FOOTNOTES':
-            in_catechism_context = False
             continue
 
         fm_style = ch_dict.get('front_matter_style')
-        if 'THE GREATER CATECHISM' in title_upper or 'THE LESSER CATECHISM' in title_upper:
-            in_catechism_context = True
 
         if any(kw in title_upper for kw in ['ANALYSIS', 'PREFATORY NOTE', 'PREFACE', 'CONTENTS']):
             conv_mode = 'FRONT_MATTER'
             conv_drop_cap = False
             conv_fm_style = 'prose'
         elif ch_dict.get('is_treatise') and re.search(
-            r'\b(?:PART|BOOK)\s+[0-9IVXLCDM]+\b|\b(?:CHRISTOLOGIA|MEDITATIONS|TWO SHORT CATECHISMS)\b',
+            r'\b(?:PART|BOOK)\s+[0-9IVXLCDM]+\b',
             title_upper,
         ):
             conv_mode = 'BODY_START'
@@ -2847,6 +3434,35 @@ def render_volume(vol_num: int, overrides: dict = None,
         ):
             raw_text = f'[[PART]] PART {part_match.group(1)}.\n\n{raw_text}'
 
+        # Issue 41: Some chapters are missing their [[CHAPTER]] token because the
+        # PDF page for that chapter starts with the summary text and the chapter
+        # heading line was not detected during extraction.  When the metadata title
+        # says "Chapter N - …" but the raw_text has no [[CHAPTER]] token, inject it.
+        _chapter_num_match = re.match(
+            r'^Chapter\s+(\d+)\b', ch_dict.get('title', ''), re.I
+        )
+        if (
+            _chapter_num_match
+            and not re.search(r'\[\[CHAPTER\]\]', raw_text[:200])
+            and not re.search(r'\[\[PART\]\]', raw_text[:200])
+            and not ch_dict.get('is_treatise')
+        ):
+            _ch_num = _chapter_num_match.group(1)
+            raw_text = f'[[CHAPTER]] CHAPTER {_ch_num}.\n\n{raw_text}'
+
+        # Catechism context is per-chapter only — never sticky.
+        # A chapter qualifies when its title contains "CATECHISM" OR its
+        # raw_text contains actual Q./Ques./Ans. Q&A markers.  This prevents
+        # the flag from bleeding into any prose chapter that follows the
+        # catechism block (Issue #30 v1).
+        in_catechism_context = (
+            'CATECHISM' in title_upper
+            or bool(re.search(
+                r'^\s*(?:Q\.|Ques\.\s*\d|Ans\.\s*[A-Z])',
+                raw_text[:3000],
+                re.MULTILINE,
+            ))
+        )
         chapter_config = {**config, 'is_catechism_context': in_catechism_context}
         body_html, conv_mode, conv_drop_cap = markdown_to_html(
             raw_text,
@@ -2896,7 +3512,27 @@ def render_volume(vol_num: int, overrides: dict = None,
         book.add_item(endnotes_item)
 
     # ── NAV, NCX, spine ──────────────────────────────────────────
-    nav_entries = toc_entries  # already (level, title, href)
+    # Blemish fix (Issue 2): Cover and "Contents of Volume N" must appear in the
+    # main nav <nav epub:type="toc"> so Apple Books and all readers show them in
+    # the navigation panel.  Prepend them at level 1 ahead of chapter entries.
+    _nav_seen_titles: set = set()
+    _nav_prefix: list = []
+    if cover_page:
+        _nav_prefix.append((1, 'Cover', 'cover.xhtml'))
+        _nav_seen_titles.add('Cover')
+    for _fm in intermediate.get('front_matter_items', []):
+        _fm_title = _fm.get('title', '')
+        if _fm_title and _fm_title not in _nav_seen_titles:
+            _nav_prefix.append((1, _fm_title, _fm['file_name']))
+            _nav_seen_titles.add(_fm_title)
+    # Also add any prose front-matter items (Preface, Analysis, etc.) not yet listed
+    for _fm_item in front_matter_epub_items:
+        _fmt = getattr(_fm_item, 'title', None) or ''
+        _fmf = getattr(_fm_item, 'file_name', None) or ''
+        if _fmt and _fmt not in _nav_seen_titles and _fmf:
+            _nav_prefix.append((1, _fmt, _fmf))
+            _nav_seen_titles.add(_fmt)
+    nav_entries = _nav_prefix + toc_entries  # already (level, title, href)
     nav_html = generate_nav_xhtml(
         nav_entries,
         volume_title=intermediate['title'],
@@ -2942,7 +3578,10 @@ def render_volume(vol_num: int, overrides: dict = None,
         _add_cover_manifest_properties(tmp)
         repackage_canonical(epub_path, tmp)
     if os.path.exists(temp_epub):
-        os.remove(temp_epub)
+        try:
+            os.remove(temp_epub)
+        except OSError:
+            pass  # sandbox/read-only mount — stale .tmp_build is harmless
     _inject_apple_books_options(epub_path)
     print(f'[render] ✓ EPUB saved: {epub_path}')
     return epub_path

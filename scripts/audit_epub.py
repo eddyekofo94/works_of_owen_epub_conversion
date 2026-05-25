@@ -481,7 +481,10 @@ class Audit:
                 totals["spaced_caps_files"] += 1
 
             # Lowercase paragraph start (failed page-join)
-            lc_para_starts = re.findall(r"<p[^>]*>\s*[a-z]", raw)
+            # Strip blockquote content first so <p> inside <blockquote> aren't flagged
+            # (mid-sentence blockquote text legitimately starts lowercase).
+            raw_no_bq = re.sub(r'<blockquote\b[^>]*>.*?</blockquote>', '', raw, flags=re.S)
+            lc_para_starts = re.findall(r"<p[^>]*>\s*[a-z]", raw_no_bq)
             # Exclude list-continuation patterns like "(2." starting with digit
             lc_real = [h for h in lc_para_starts if not re.match(r"<p[^>]*>\s*[a-z]{1,2}\.", h)]
             if lc_real:

@@ -13,6 +13,8 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
+from cli_utils import cyan, green
+
 GREEK_FONT_MARKERS = ('Koine',)
 HEBREW_FONT_MARKERS = ('Gideon',)
 GREEK_UNICODE_RE = re.compile(r'[\u0370-\u03FF\u1F00-\u1FFF]')
@@ -158,7 +160,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Baskervville/static',
+        'body_font': 'Baskervville',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -255,7 +257,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Baskervville/static',
+        'body_font': 'Baskervville',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -356,7 +358,7 @@ def run_volume_cli(vol_num, overrides=None, description=None):
         parser.error('Cannot use both --extract-only and --render-only')
 
     if not args.render_only:
-        print(f'=== Volume {vol_num}: Stage 1 — Extract ===')
+        print(cyan(f'=== Volume {vol_num}: Stage 1 — Extract ==='))
         intermediate = extract_volume(vol_num, overrides=overrides)
         
         # Issue: Blemish fixes often require post-processing the whole intermediate JSON
@@ -372,10 +374,23 @@ def run_volume_cli(vol_num, overrides=None, description=None):
                 json.dump(intermediate, f, indent=2, ensure_ascii=False)
 
     if not args.extract_only:
-        print(f'=== Volume {vol_num}: Stage 2 — Render ===')
+        print(cyan(f'=== Volume {vol_num}: Stage 2 — Render ==='))
         render_volume(vol_num, overrides=overrides)
 
-    print(f'=== Volume {vol_num}: Done ===')
+    print(green(f'=== Volume {vol_num}: Done ==='))
+
+# ============================================================================
+# NAV / TOC DISPLAY HELPERS
+# ============================================================================
+
+# Apple Books silently truncates TOC sidebar entries longer than ~100 characters.
+_NAV_TITLE_MAX_CHARS = 100
+
+def nav_display_title(title: str) -> str:
+    """Truncate a nav/TOC entry to _NAV_TITLE_MAX_CHARS, appending an ellipsis if needed."""
+    if not title or len(title) <= _NAV_TITLE_MAX_CHARS:
+        return title
+    return title[:_NAV_TITLE_MAX_CHARS - 1].rstrip() + '…'
 
 # ============================================================================
 # VOLUME METADATA — Hebrews Commentary (7 volumes)
@@ -445,7 +460,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Baskervville/static',
+        'body_font': 'Baskervville',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 8:1 - 10:39']
@@ -921,7 +936,9 @@ STRUCTURAL_START_RE = re.compile(
     r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)\s+|'  # (1st,) Such...
     r'\[\d+\.?\]\.?\s+|'                    # [1.] There... / [1]. There...
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?\s+|'  # [1st,] There...
-    r'[IVXLCDM]+\.\s+|'                  # I. / II.
+    r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
+    r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?\s+|'
+    r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])[IVXLCDM]+\.\s+|'  # I. / II. (not LXX/MT/OT/NT etc.)
     r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)\s+|'                       # Q. / Ques. / Ans. / A. 1.
     r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.?)\s+|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
@@ -936,14 +953,18 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)|'
     r'\[\d+\.?\]|'
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]|'
+    r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
+    r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?|'
     r'\*\*\d+\.\*\*|'
     r'\*\*\((?!\d{4}\))\d+\.?\)\*\*|'
     r'\*\*\((?!\d{4}\))\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\)\*\*|'
     r'\*\*\[\d+\.?\]\.?\*\*|'
     r'\*\*\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?\*\*|'
+    r'\*\*\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
+    r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?\*\*|'
     r'\*\*\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)\*\*\s*[,.;]?|'
-    r'\*\*[IVXLCDM]+\.\*\*|'
-    r'[IVXLCDM]+\.|'
+    r'\*\*(?!(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\.)[IVXLCDM]+\.\*\*|'
+    r'(?!(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\.)[IVXLCDM]+\.|'
     r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
     r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
     r'(?:Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?)\s*(?:\d+\.)?|'
@@ -951,12 +972,29 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
     r')(?P<trail>\s+)'
 )
-# ROMAN_HEADING_RE: Only match if the following text is short or All-Caps (Issue 21)
-ROMAN_HEADING_RE = re.compile(
-    r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+'
-    r'(?P<rest>[^a-z]{1,150}|[A-Z][a-z ]{1,45}|[A-Z][a-z ]{1,45}\.)$'
+# ROMAN_HEADING_RE / ROMAN_ONLY_RE: Only match if the following text is short or
+# All-Caps (Issue 21).  Negative lookahead excludes well-known scholarly/biblical
+# abbreviations that happen to be composed entirely of Roman-numeral letters:
+#   LXX  — Septuagint (L=50, X=10, X=10 → looks like Roman 70)
+#   MT   — Masoretic Text
+#   OT / NT — Old/New Testament
+#   DV   — Douay-Vulgate
+#   KJV / AV / NIV / ESV / NRSV — Bible translations
+# The lookahead is case-insensitive and matches with or without surrounding ** bold markers.
+_ROMAN_EXCLUSION_LOOKAHEAD = (
+    r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])'
 )
-ROMAN_ONLY_RE = re.compile(r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?$')
+ROMAN_HEADING_RE = re.compile(
+    _ROMAN_EXCLUSION_LOOKAHEAD
+    + r'(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+'
+    r'(?P<rest>[^a-z]{1,150}|[A-Z][a-z ]{1,45}|[A-Z][a-z ]{1,45}\.)$',
+    re.I,
+)
+ROMAN_ONLY_RE = re.compile(
+    _ROMAN_EXCLUSION_LOOKAHEAD
+    + r'(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?$',
+    re.I,
+)
 PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
 CITATION_ABBREV_TRAIL_RE = re.compile(
     r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
@@ -1083,6 +1121,63 @@ def _repair_scripture_reference_artifacts(text: str) -> str:
     """Repair recurring OCR/reference punctuation artifacts from AGES PDFs."""
     if not text:
         return text
+    # Failed AGES verse-code translation can leave opaque source ids such as
+    # [4611605]16:5-15 or [19B9105]Psalm 119:105.  These are not editorial
+    # brackets, dates, footnotes, or section labels; remove only long alphanumeric
+    # codes with at least one digit when they directly prefix a scripture locator.
+    ages_code = r'\[(?=[0-9A-Z]{6,8}\])(?=[0-9A-Z]*\d)[0-9A-Z]{6,8}\]'
+    text = re.sub(
+        rf'{ages_code}(?=\s*(?:(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b|\d{{1,3}}(?::|-|,)))',
+        '',
+        text,
+        flags=re.I,
+    )
+    # v11 has double-bracket variants: [[4313101]] — strip those too
+    text = re.sub(
+        rf'\[{ages_code}\](?=\s*(?:(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b|\d{{1,3}}(?::|-|,)))',
+        '',
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'\*\*\[(\d{1,3})\*\*\s+_?\*\*(st|nd|rd|th|dly|ly)\.?\*\*_?\s+\*\*\.?\]\*\*',
+        lambda m: f'**[{m.group(1)}{m.group(2).lower()}.]**',
+        text,
+        flags=re.I,
+    )
+    # OCR sometimes separates ordinal/list suffixes into "1 st ." or "2 dly .".
+    # When the PDF uses italic for the suffix the extraction produces markdown like
+    # "**1** _**st**_ ." or "**2** _**dly**_ ." — normalise to "**1st.**" etc.
+    text = re.sub(
+        r'\*\*(\d{1,3})\*\*\s+_\*\*(st|nd|rd|th|dly|ndly|rdly|thly|ly)\*\*_\s*([.,;]?)',
+        lambda m: f'**{m.group(1)}{m.group(2).lower()}{m.group(3) or "."}**',
+        text,
+        flags=re.I,
+    )
+    # Also handle variant without inner bold: "**1** _st_ ."
+    text = re.sub(
+        r'\*\*(\d{1,3})\*\*\s+_(st|nd|rd|th|dly|ndly|rdly|thly|ly)_\s*([.,;]?)',
+        lambda m: f'**{m.group(1)}{m.group(2).lower()}{m.group(3) or "."}**',
+        text,
+        flags=re.I,
+    )
+    # OCR sometimes separates ordinal/list suffixes into "1 st ." or "2 dly .".
+    # Normalize before marker splitting so the usual structural formatters see it.
+    text = re.sub(
+        r'\b(\d{1,3})\s+(st|nd|rd|th|dly|ly)\s*([.,;])',
+        lambda m: f'{m.group(1)}{m.group(2).lower()}{m.group(3)}',
+        text,
+        flags=re.I,
+    )
+    # Issue 30: OCR sometimes produces a double period after an ordinal — "1st.."
+    # or "2dly.." — because the ordinal already carries a period and a sentence
+    # boundary adds another.  Collapse to a single period.
+    text = re.sub(
+        r'\b(\d{1,3}(?:st|nd|rd|th|dly|ndly|rdly|thly|ly))\.\.',
+        r'\1.',
+        text,
+        flags=re.I,
+    )
     # A single in-parenthesis reference can lose its closing parenthesis when
     # the following prose continues after a comma: "(John 6:63, to cause".
     text = re.sub(
@@ -1108,6 +1203,35 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     text = re.sub(r'\b([A-Za-z]{2,})]e\b', r'\1le', text)
     text = re.sub(r'(?<!\w)](?=earn|earning|earned|earnt|edge)', 'l', text, flags=re.I)
     text = re.sub(r'\bI\s+a\s+will\b', 'I will', text)
+    # Issue 29a: Remove stray underscore characters that are not part of
+    # markdown emphasis (i.e. not _word_ or __word__).  Isolated underscores
+    # or underscores adjacent to spaces are OCR artifacts in the Owen corpus.
+    # Stray isolated underscore: surrounded by whitespace or start/end of string.
+    # Only these are OCR artifacts; underscores adjacent to word characters may
+    # be markdown emphasis (_word_) or intra-word separators — leave those alone.
+    text = re.sub(r'(?:^|(?<=\s))_(?=\s|$)', '', text)
+    # Issue 29b: A single hyphen surrounded by spaces that is used as an
+    # em-dash substitute should be normalised to — (U+2014).  This is
+    # distinct from hyphenation (no surrounding spaces) and en-dash (–).
+    text = re.sub(r'(?<=\w)\s+-\s+(?=\w)', '—', text)
+    # Strip spurious period from the indefinite article 'A' when followed by
+    # a lowercase word.  The original fix anchored to line-start (^) but the
+    # artifact also appears mid-paragraph after sentence-ending punctuation
+    # ("...gave them. A. church state does...") and after leading whitespace.
+    # Using \b (word boundary) catches all positions safely.
+    #
+    # Example: "A. brief view of the faith" → "A brief view of the faith"
+    #          "the Lord gave them. A. church state..." → "...A church state..."
+    #
+    # Safe because every real structural label (A. FIRST, A. GATHERED, catechism
+    # A. The...) is always followed by a capital letter or digit — never lowercase.
+    text = re.sub(r'\bA\. (?=[a-z])', 'A ', text)
+
+    # Insert missing space before fused list markers: "and(2.)" → "and (2.)"
+    # OCR often fuses a conjunction or word directly with the opening parenthesis
+    # of a numbered sub-point.  Only fires when a word character immediately
+    # precedes '(' — already-spaced markers are unaffected.
+    text = re.sub(r'(\w)\((\d+\.)\)', r'\1 (\2)', text)
     if not config:
         return text
 
@@ -1231,22 +1355,29 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
             and re.match(r'\s*[—–-]\s*[IVXLCDM]+\.', para[match.end():])
         ):
             continue
+        # Unbalanced square brackets before this marker mean we're inside a
+        # citation like “[Juv., 6. 546.]” — don't split there.
+        _before_content = re.sub(r'\[\[[A-Z_]+\]\]\s*', '', para[:match.start()])
+        _inside_bracket = _before_content.count('[') > _before_content.count(']')
+
         if (
             (
                 SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
                 or CITATION_ABBREV_TRAIL_RE.search(before[-80:])
                 or re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', before, re.I)
                 or re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
-                or (para[:match.start()].count('"') % 2 != 0)
-                or (para[:match.start()].count('“') > para[:match.start()].count('”'))
+                or (para[:match.start()].count('”') % 2 != 0)
+                or (para[:match.start()].count('”') > para[:match.start()].count('”'))
+                or _inside_bracket
             )
             and not marker_is_wrapped
             and not has_list_intro_before_reference
         ):
             continue
 
-        before_ends_structural = bool(re.search(r'[,;:—-]\s*$', before))
-        before_ends_terminal = bool(re.search(r"""[.!?][""')\]]?\s*$""", before))
+        before_tail = re.sub(r'[*_]+$', '', before).rstrip()
+        before_ends_structural = bool(re.search(r'[,;:—-]\s*$', before_tail))
+        before_ends_terminal = bool(re.search(r"""[.!?][""')\]]?\s*$""", before_tail))
         before_ends_lead_word = bool(re.search(
             r'\b(?:wherefore|therefore|for|but|and|or|as)\s*$',
             before,
@@ -1263,6 +1394,23 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
         marker_is_bare_ordinal = bool(re.match(r'^(?:\*\*)?\d+(?:st|nd|rd|th)\b,?\s*(?:\*\*)?$', marker.strip(), re.I))
         after_preview = para[match.end():match.end() + 80].lstrip()
         after_starts_like_heading = bool(re.match(r"""[A-Z""']""", after_preview))
+        # Scholastic citation tail: "22. q. 174, a. 1" — the "22." is not a list
+        # item; "q. 174" is a Thomistic question reference.  Skip split when the
+        # text after the marker begins with a known citation abbreviation.
+        _after_is_citation_tail = bool(re.match(
+            r'^(?:q|a|p|pp|vol|sec|lib|cap|chap|serm|art|dist|part|num)\.\s*\d',
+            after_preview,
+            re.I,
+        ))
+        if _after_is_citation_tail:
+            continue
+        # Author-initial context: if the text immediately before this marker
+        # ends with a bare single-letter initial (e.g. "R."), the current
+        # single-letter marker is also an author initial, NOT a list marker.
+        # Prevents "R. D. Kimchi" from splitting at "D.", "V. C." at "V.", etc.
+        _before_ends_bare_initial = bool(re.search(r'(?<!\S)[A-Z]\.\s*$', before_tail))
+        if _before_ends_bare_initial and re.match(r'^[IVXLCDM]\.$', marker, re.I):
+            continue
         strong_source_like_marker = (
             (marker_is_bare_decimal or marker_is_bare_roman or marker_is_bare_ordinal)
             and len(before) >= 35
@@ -1274,7 +1422,7 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
             and not re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
             and marker_clean not in {'i', 'v', 'x', 'l', 'c', 'd', 'm'}
         )
-        if not (re.search(r'[.,;:—-]\s*$', before) or before_ends_terminal or before_ends_lead_word or before_ends_objection):
+        if not (re.search(r'[.,;:—-]\s*$', before_tail) or before_ends_terminal or before_ends_lead_word or before_ends_objection):
             if not (marker_is_wrapped or strong_source_like_marker):
                 continue
 
@@ -1354,11 +1502,236 @@ def _trim_duplicate_reference_prefix(prev, current):
 # FONT POOLS
 # ============================================================================
 
+# ============================================================================
+# FONT FAMILY NAME MAPPING
+# Maps directory names to the actual internal font-family names embedded in
+# the .ttf/.otf files. Apple Books/WebKit requires these to match for proper
+# font rendering.
+# ============================================================================
+
+FONT_FAMILY_MAP = {
+    # Body fonts (available for per-volume selection)
+    'Adobe-garamond-pro-2': 'Adobe Garamond Pro',
+    'Baskervville':         'Baskervville',
+    'Brill_font':           'Brill',
+    'Cardo':                'Cardo',
+    'Gentium-plus':         'Gentium Plus',
+    'Libertinus':           'Libertinus Serif',
+    'Minion_pro':           'Minion Pro',
+    'sabon-next-lt':        'Sabon Next LT',
+    # Heading-only fonts
+    'Proxima_Nova':         'Proxima Nova',
+    # Supplemental (not for body selection)
+    'SBL_BLit':             'SBL BibLit',
+    'STIX_Two_Text':        'STIX Two Text',
+    'EzraSIL2.51':          'Ezra SIL',
+}
+
+# Fonts excluded from body-font selection (used only for specific purposes)
+BODY_FONT_EXCLUDES = {'STIX_Two_Text', 'EzraSIL2.51', 'Proxima_Nova'}
+
+
+def _decode_font_name(raw, platform_id):
+    """Decode an OpenType name table string without requiring fontTools."""
+    encodings = ('utf-16-be', 'mac_roman') if platform_id == 3 else ('mac_roman', 'utf-16-be')
+    for encoding in encodings:
+        try:
+            text = raw.decode(encoding).strip('\x00').strip()
+            if text:
+                return text
+        except Exception:
+            continue
+    return ''
+
+
+def _read_sfnt_name_records(font_path):
+    """Read useful OpenType/TrueType name records with only the stdlib.
+
+    Apple Books/WebKit is much happier when CSS uses the font's preferred
+    family name (nameID 16) or, when absent, the legacy family name (nameID 1).
+    This parser keeps OTF/TTF metadata checks working even when fontTools is
+    not installed in the active virtualenv.
+    """
+    import struct
+
+    records = {}
+    try:
+        with open(font_path, 'rb') as fh:
+            data = fh.read()
+        if len(data) < 12:
+            return records
+        num_tables = struct.unpack('>H', data[4:6])[0]
+        name_offset = None
+        name_length = None
+        for idx in range(num_tables):
+            off = 12 + idx * 16
+            if off + 16 > len(data):
+                break
+            tag = data[off:off + 4]
+            table_offset, table_length = struct.unpack('>II', data[off + 8:off + 16])
+            if tag == b'name':
+                name_offset = table_offset
+                name_length = table_length
+                break
+        if name_offset is None or name_offset + 6 > len(data):
+            return records
+
+        table = data[name_offset:name_offset + name_length]
+        _fmt, count, string_offset = struct.unpack('>HHH', table[:6])
+        wanted = {
+            1: 'family',
+            2: 'subfamily',
+            4: 'full_name',
+            6: 'postscript',
+            16: 'preferred_family',
+            17: 'preferred_subfamily',
+        }
+        for idx in range(count):
+            off = 6 + idx * 12
+            if off + 12 > len(table):
+                break
+            platform_id, _encoding_id, language_id, name_id, length, offset = struct.unpack(
+                '>HHHHHH', table[off:off + 12]
+            )
+            if name_id not in wanted:
+                continue
+            start = string_offset + offset
+            end = start + length
+            if end > len(table):
+                continue
+            key = wanted[name_id]
+            decoded = _decode_font_name(table[start:end], platform_id)
+            if decoded and (key not in records or (platform_id == 3 and language_id in (0x0409, 0))):
+                records[key] = decoded
+        return records
+    except Exception:
+        return records
+
+
+def _get_font_name_records(font_path):
+    """Return key OpenType name records for a .ttf/.otf file."""
+    try:
+        from fontTools.ttLib import TTFont
+        font = TTFont(font_path)
+        wanted = {
+            1: 'family',
+            2: 'subfamily',
+            4: 'full_name',
+            6: 'postscript',
+            16: 'preferred_family',
+            17: 'preferred_subfamily',
+        }
+        records = {}
+        for record in font['name'].names:
+            key = wanted.get(record.nameID)
+            if key and key not in records:
+                value = record.toUnicode().strip()
+                if value:
+                    records[key] = value
+        if records:
+            return records
+    except Exception:
+        pass
+    return _read_sfnt_name_records(font_path)
+
+
+def _get_internal_family_name(font_path):
+    """Read the preferred internal font-family name from a .ttf/.otf file."""
+    records = _get_font_name_records(font_path)
+    return records.get('preferred_family') or records.get('family')
+
+
+def _font_style_key(filename, records=None):
+    """Return the canonical CSS slot for a standard family member."""
+    records = records or {}
+    text = ' '.join([
+        filename,
+        records.get('subfamily', ''),
+        records.get('preferred_subfamily', ''),
+        records.get('full_name', ''),
+    ]).lower()
+    is_bold = any(token in text for token in ('bold', '-bd', '_bd'))
+    is_italic = any(token in text for token in ('italic', 'ital', '-it', '_it'))
+    if is_bold and is_italic:
+        return 'bold_italic'
+    if is_bold:
+        return 'bold'
+    if is_italic:
+        return 'italic'
+    return 'regular'
+
+
+def _is_standard_body_face(filename, records, primary_family):
+    """Reject auxiliary display/width/weight faces in mixed font folders."""
+    style_text = ' '.join([
+        filename,
+        records.get('family', ''),
+        records.get('preferred_family', ''),
+        records.get('subfamily', ''),
+        records.get('preferred_subfamily', ''),
+        records.get('full_name', ''),
+    ]).lower()
+    banned = (
+        'cond', 'condensed', 'narrow', 'display', 'initial', 'keyboard', 'math',
+        'mono', 'semibold', 'semi bold', 'smbd', 'medium', 'light', 'extra',
+        'black', 'thin',
+    )
+    if 'sans' in style_text and 'sans' not in primary_family.lower():
+        return False
+    return not any(token in style_text for token in banned)
+
+
+def _font_sort_key(path):
+    n = os.path.basename(path).lower()
+    stem = os.path.splitext(n)[0]
+    is_regular = (
+        'regular' in n or 'roman' in n or stem.endswith('-r') or stem.endswith('_r')
+        or stem.endswith('regular')
+    )
+    return (0 if is_regular else 1, len(n), n)
+
+
+def _font_belongs_to_family(records, primary_family):
+    family_values = {
+        records.get('preferred_family', ''),
+        records.get('family', ''),
+    }
+    full_name = records.get('full_name', '')
+    return primary_family in family_values or bool(full_name and full_name.startswith(primary_family))
+
+
+def _filter_font_files(files, primary_family):
+    """Filter font files to only include those belonging to the primary family.
+
+    Some font directories (Libertinus, Minion_pro) contain multiple font
+    families. This ensures only the relevant variants are included.
+    """
+    by_style = {}
+    fallback = {}
+    for fname, rel_path in files.items():
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        full_path = os.path.join(base_dir, 'fonts', rel_path)
+        if os.path.exists(full_path):
+            records = _get_font_name_records(full_path)
+            if _font_belongs_to_family(records, primary_family):
+                fallback[fname] = rel_path
+                if _is_standard_body_face(fname, records, primary_family):
+                    by_style.setdefault(_font_style_key(fname, records), (fname, rel_path))
+    if by_style:
+        ordered = {}
+        for key in ('regular', 'bold', 'italic', 'bold_italic'):
+            if key in by_style:
+                fname, rel_path = by_style[key]
+                ordered[fname] = rel_path
+        return ordered
+    return fallback if fallback else files  # fallback: keep all if no metadata match
+
+
 def select_primary_font(body_font_name):
     """Select a primary font by name and scan its directory for associated files.
 
     Looks in fonts/<body_font_name>/ for .ttf and .otf files.
-    Returns a dict: {'name': body_font_name, 'files': {basename: relative_path}}.
+    Returns a dict: {'name': internal_font_family, 'files': {basename: relative_path}}.
     Falls back to SBL_BLit with a printed warning if the directory is missing —
     a missing font dir is almost always a typo in body_font or a missing font folder.
     """
@@ -1376,13 +1749,25 @@ def select_primary_font(body_font_name):
         font_dir = os.path.join(base_dir, 'fonts', body_font_name)
 
     files = {}
+    internal_name = FONT_FAMILY_MAP.get(body_font_name, body_font_name)
     if os.path.isdir(font_dir):
-        for f in os.listdir(font_dir):
+        for f in sorted(os.listdir(font_dir), key=_font_sort_key):
             if f.lower().endswith(('.ttf', '.otf')):
                 files[f] = f"{body_font_name}/{f}"
 
+        # Determine internal font family name from the first readable face.
+        if files:
+            detected = None
+            for rel_path in files.values():
+                full_path = os.path.join(base_dir, 'fonts', rel_path)
+                detected = _get_internal_family_name(full_path)
+                if detected:
+                    break
+            internal_name = FONT_FAMILY_MAP.get(body_font_name, detected or internal_name)
+            files = _filter_font_files(files, internal_name)
+
     return {
-        'name': body_font_name,
+        'name': internal_name,
         'files': files,
     }
 
@@ -1398,9 +1783,15 @@ EZRA_SIL_FILES = {
 }
 
 TITLE_PAGE_FONTS = {
-    'Baskervville-Regular.ttf': 'Baskervville/static/Baskervville-Regular.ttf',
-    'Baskervville-Bold.ttf': 'Baskervville/static/Baskervville-Bold.ttf',
-    'Baskervville-Italic.ttf': 'Baskervville/static/Baskervville-Italic.ttf',
+    'Baskervville-VariableFont_wght.ttf': 'Baskervville/Baskervville-VariableFont_wght.ttf',
+    'Baskervville-Italic-VariableFont_wght.ttf': 'Baskervville/Baskervville-Italic-VariableFont_wght.ttf',
+}
+
+PROXIMA_NOVA_FILES = {
+    'Proxima Nova Regular.ttf': 'Proxima_Nova/Proxima Nova Regular.ttf',
+    'Proxima Nova Extrabold.ttf': 'Proxima_Nova/Proxima Nova Extrabold.ttf',
+    'Proxima Nova Light.ttf': 'Proxima_Nova/Proxima Nova Light.ttf',
+    'Proxima Nova Semibold.ttf': 'Proxima_Nova/Proxima Nova Semibold.ttf',
 }
 
 
@@ -1409,16 +1800,33 @@ TITLE_PAGE_FONTS = {
 # ============================================================================
 
 EPUB_STYLESHEET = r"""
-/* Eduardus Ekofius style — clean serif, elegant hierarchy */
+/* Eduardus Ekofius style — mobile-first, vintage serif */
 body {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.1em;
-    line-height: 1.65;
-    color: #000;
-    margin: 1em 1.2em;
+    font-size: 1.0em;       /* Respect user's Apple Books font-size setting */
+    line-height: 1.7;       /* Slightly generous — easier to track lines on a small screen */
+    color: #111;            /* Near-black, easier on OLED than pure #000 */
+    margin: 0.4em 0.5em;    /* Minimal — Apple Books already adds generous reading margins */
     -webkit-font-smoothing: antialiased;
     -webkit-hyphens: auto;
     hyphens: auto;
+    -webkit-text-size-adjust: 100%;  /* Prevent iOS font inflation */
+    word-break: break-word;          /* Guard against long Greek/Hebrew spills */
+}
+
+.cover {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.cover img {
+    display: block;
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
 }
 
 /* Title Page Majesty (Puritan / Vintage Style) */
@@ -1489,15 +1897,14 @@ body {
 .titlepage h5,
 .title-page h5,
 .treatise-title-page h5 {
-    font-size: 0.15em; /* Extremely small as requested */
+    font-size: 0.72em;       /* Was 0.15em — literally 2px on a phone. Made readable. */
     font-weight: normal;
     text-transform: uppercase;
-    letter-spacing: 0.6em;
-    margin: 1.5em auto;
-    opacity: 0.6;
-    display: flex !important;
-    justify-content: center !important;
-    text-align: center !important;
+    letter-spacing: 0.35em;
+    margin: 1.2em auto;
+    opacity: 0.55;
+    text-align: center;
+    text-indent: 0;
     width: 100%;
     clear: both;
 }
@@ -1562,10 +1969,10 @@ body {
     text-align: center;
     text-indent: 0;
     margin: 0 0 0.5em;
-    font-size: 2.55em;
-    line-height: 1.05;
+    font-size: 2.1em;        /* Was 2.55em — "JOHN OWEN" would overflow on narrow screens */
+    line-height: 1.1;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     border: 0;
     padding: 0;
 }
@@ -1587,68 +1994,84 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.35em;      /* Reduced slightly — large headings eat screen on phones */
     font-weight: bold;
-    letter-spacing: 0.03em;
-    margin: 1.8em 0 0.6em;
+    letter-spacing: 0.02em;
+    margin: 1.5em 0 0.5em;  /* Less top breathing room on small screens */
     page-break-before: always;
     -webkit-column-break-before: always;
+    line-height: 1.25;      /* Tight multi-line headings look better on mobile */
 }
 
 h1.primary {
-    font-size: 1.35em;
+    font-size: 1.3em;
     text-align: center;
-    border-bottom: 1px solid #000;
-    padding-bottom: 0.2em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.25em;
 }
 
 h2 {
     text-align: center;
-    font-size: 1.15em;
+    font-size: 1.18em;      /* Slightly larger than before for clearer chapter hierarchy */
     font-weight: bold;
-    margin: 1.5em 0 0.5em;
+    margin: 1.3em 0 0.4em;
+    line-height: 1.3;
 }
 
 h2.secondary, h3.secondary, h1.secondary {
     font-size: 1.15em;
     text-align: center;
-    margin: 1.5em 0 0.5em;
+    margin: 1.3em 0 0.4em;
+    line-height: 1.3;
     border: none;
     padding: 0;
 }
 
 h3 {
     text-align: center;
-    font-size: 1.05em;
+    font-size: 1.08em;
     font-weight: bold;
-    margin: 1.2em 0 0.4em;
+    margin: 1.1em 0 0.35em;
+    line-height: 1.3;
+}
+
+/* Chapter sub-heading — sits between chapter number and synopsis */
+h3.chapter-heading {
+    text-align: center;
+    font-size: 0.98em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    margin: 0.5em 4% 0.4em;  /* Was 8% — on mobile that's 26px per side, too tight */
+    text-indent: 0;
 }
 
 p.chapter-summary {
     font-style: italic;
-    font-size: 0.95em;
+    font-size: 0.94em;
     text-align: center;
-    margin: 1.2em 12% 2.2em;
+    margin: 0.9em 6% 1.6em;  /* Was 12%/2.2em — both too aggressive on narrow screens */
     text-indent: 0;
-    line-height: 1.45;
+    line-height: 1.55;       /* Was 1.45 — italic text needs more room on small screens */
 }
 
 h4.chapter-subtitle {
     text-align: center;
-    font-size: 1.05em;
+    font-size: 1.02em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    line-height: 1.35;
-    margin: 0.4em 0 1em;
+    line-height: 1.3;
+    margin: 0.35em 0 0.8em;
     text-indent: 0;
 }
 
 .digression-heading {
     text-align: center;
-    font-size: 1.3em;
-    color: #000;
-    margin: 2em 0 0.5em;
+    font-size: 1.25em;
+    color: #111;
+    margin: 1.6em 0 0.5em;
     font-weight: bold;
     page-break-before: always;
 }
@@ -1657,7 +2080,7 @@ h4.chapter-subtitle {
     text-align: left;
     font-weight: normal;
     text-indent: 0;
-    margin: 1em 0 0.65em;
+    margin: 0.9em 0 0.55em;  /* Tighter vertical rhythm on small screens */
     break-after: avoid;
     page-break-after: avoid;
     break-inside: avoid;
@@ -1667,7 +2090,13 @@ h4.chapter-subtitle {
 .roman-list-item {
     text-align: left;
     text-indent: 0;
-    margin: 0.65em 0;
+    margin: 0.5em 0;         /* Was 0.65em — reduces whitespace between list entries */
+}
+
+.list-item {
+    text-align: left;
+    text-indent: 0;
+    margin: 0.45em 0;        /* Was 0.55em */
 }
 
 .roman-list-item b {
@@ -1678,7 +2107,7 @@ h4.chapter-subtitle {
 .analysis-part {
     text-align: left;
     text-indent: 0;
-    margin: 1.4em 0 0.55em;
+    margin: 1.2em 0 0.45em; /* Was 1.4em top — unnecessary height on mobile */
 }
 
 /* Front Matter Styling (Issue 107 / Issue 89) */
@@ -1714,7 +2143,7 @@ h4.chapter-subtitle {
 .front-matter-body {
     text-align: center;
     font-style: italic;
-    margin: 1.2em 10%;
+    margin: 1em 5%;         /* Was 10% — too tight on phone */
     line-height: 1.6;
     text-indent: 0;
 }
@@ -1738,7 +2167,7 @@ h4.chapter-subtitle {
 
 /* Body Flow */
 p {
-    text-indent: 1.5em;
+    text-indent: 1.1em;     /* Was 1.5em — on ~330px columns a 24px indent is too deep */
     margin: 0;
     text-align: justify;
     orphans: 2;
@@ -1750,13 +2179,19 @@ p.first, p.noindent {
 }
 
 blockquote {
-    margin: 0.8em 2em;
+    display: block;
+    margin: 0.9em 1.2em;    /* Was 2.5em per side — that consumed 80px on a 330px column */
+    padding: 0.1em 0.6em;   /* Subtle interior padding instead of huge outer margin */
+    border-left: 2px solid #bbb;  /* Gentle visual cue replacing the massive indent */
     font-size: 0.95em;
+    text-align: left;       /* Justified short-line blocks look ragged on mobile */
+    line-height: 1.55;      /* Was 1.10 — the tightest setting was unreadable on phone */
 }
 
 blockquote p {
-    text-indent: 0;
-    margin: 0.45em 0;
+    display: inline;        /* Keep multiple <p> flowing as one prose block */
+    margin: 0;
+    padding: 0;
 }
 
 /* Frontispiece / Portrait */
@@ -1797,28 +2232,29 @@ blockquote p {
 }
 
 sup {
-    font-size: 0.75em;
+    font-size: 0.72em;
     line-height: 0;
     vertical-align: super;
 }
 
 .footnote {
-    font-size: 0.9em;
+    font-size: 0.88em;
     text-indent: 0;
-    margin: 0.3em 0;
+    margin: 0.4em 0;        /* Slightly more space between footnotes on mobile */
+    line-height: 1.55;
 }
 
 a.footnote-ref {
     text-decoration: none;
-    color: #0000EE;
+    color: #2a55a0;          /* Softer blue — pure #0000EE is harsh on OLED/night mode */
     vertical-align: super;
     font-size: 1em;
 }
 
 a.fn-link {
-    color: #0000EE;
+    color: #2a55a0;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.88em;
     margin-right: 0.3em;
 }
 
@@ -1842,14 +2278,14 @@ a.fn-link {
 
 /* EPUB3 footnote styles */
 .noteref {
-    color: #0000EE;
+    color: #2a55a0;          /* Matches a.footnote-ref */
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.95em;
+    font-size: 0.72em;
     display: inline-block;
     line-height: 1;
     margin-left: 0.18em;
-    padding-right: 0.25em;
+    padding-right: 0.2em;
     text-indent: 0;
 }
 
@@ -1859,7 +2295,7 @@ a.fn-link {
 }
 
 .noteref sup {
-    font-size: 1em;
+    font-size: 0.95em;
     line-height: 1;
 }
 
@@ -1871,8 +2307,9 @@ a.fn-link {
 
 /* Scholastic anchor: Obj. / Ans. / Use N. — each on its own paragraph */
 p.scholastic-anchor {
-    margin-top: 1.5em;
+    text-align: left;
     text-indent: 0;
+    margin-top: 1.5em;
 }
 p.scholastic-anchor b,
 b.scholastic-label {
@@ -2037,6 +2474,16 @@ aside[epub\:type~="endnote"] {
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
+.contents-section-title {
+    text-align: center;
+    text-indent: 0;
+    font-size: 0.95em;
+    line-height: 1.35;
+    margin: 1.1em auto 0.4em;
+    max-width: 30em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
 .contents-frontmatter-line {
     text-align: center;
     text-indent: 0;
@@ -2088,64 +2535,125 @@ aside[epub\:type~="endnote"] {
 
 EPUB3_FONT_STYLES = r"""
 /* Injected font-face declarations and language-specific overrides */
-/* Primary font: {primary_font} */
+/* Primary body font: {primary_font} */
 @font-face {{
     font-family: "{primary_font}";
+    font-weight: normal;
+    font-style: normal;
     src: url("../Fonts/{primary_file}");
 }}
 {bold_face}
 {italic_face}
 {bold_italic_face}
+/* Proxima Nova — heading display font */
+@font-face {{
+    font-family: "Proxima Nova";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/Proxima Nova Regular.ttf");
+}}
+@font-face {{
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    font-style: normal;
+    src: url("../Fonts/Proxima Nova Extrabold.ttf");
+}}
+@font-face {{
+    font-family: "Proxima Nova";
+    font-weight: normal;
+    font-style: italic;
+    src: url("../Fonts/Proxima Nova Light.ttf");
+}}
+@font-face {{
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    font-style: italic;
+    src: url("../Fonts/Proxima Nova Semibold.ttf");
+}}
 /* SBL BibLit — universal biblical fallback */
 @font-face {{
     font-family: "SBL BibLit";
+    font-weight: normal;
+    font-style: normal;
     src: url("../Fonts/SBL_BLit.ttf");
 }}
 /* SBL Greek — polytonic Greek */
 @font-face {{
     font-family: "SBL Greek";
+    font-weight: normal;
+    font-style: normal;
     src: url("../Fonts/SBL_grk.ttf");
 }}
 /* SBL Hebrew — fully pointed Hebrew */
 @font-face {{
     font-family: "SBL Hebrew";
+    font-weight: normal;
+    font-style: normal;
     src: url("../Fonts/SBL_Hbrw.ttf");
 }}
 /* Ezra SIL — BHS-style Hebrew fallback */
 @font-face {{
     font-family: "Ezra SIL";
+    font-weight: normal;
+    font-style: normal;
     src: url("../Fonts/SILEOT.ttf");
 }}
 /* Owen Title - embedded Baskervville title display face */
 @font-face {{
+    font-family: "Baskervville";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/Baskervville-VariableFont_wght.ttf");
+}}
+@font-face {{
+    font-family: "Baskervville";
+    font-weight: normal;
+    font-style: italic;
+    src: url("../Fonts/Baskervville-Italic-VariableFont_wght.ttf");
+}}
+@font-face {{
     font-family: "Owen Title";
-    src: url("../Fonts/Baskervville-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/Baskervville-VariableFont_wght.ttf");
 }}
 @font-face {{
     font-family: "Owen Title";
     font-weight: bold;
-    src: url("../Fonts/Baskervville-Bold.ttf");
+    font-style: normal;
+    src: url("../Fonts/Baskervville-VariableFont_wght.ttf");
 }}
 @font-face {{
     font-family: "Owen Title";
+    font-weight: normal;
     font-style: italic;
-    src: url("../Fonts/Baskervville-Italic.ttf");
+    src: url("../Fonts/Baskervville-Italic-VariableFont_wght.ttf");
 }}
-/* Language overrides (GEMINI.md Section 4.2) */
-body, div, p, span, h1, h2, h3, h4, h5, h6 {{
+/* Body text — primary embedded font (Apple Books must respect this) */
+body, div, p, span {{
     font-family: "{primary_font}", "SBL BibLit", serif !important;
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+}}
+/* Headings — Baskervville vintage serif display font (Issue 25) */
+h1, h2, h3, h4, h5, h6 {{
+    font-family: "Baskervville", "Owen Title", "Baskerville", "Hoefler Text", "Garamond", "{primary_font}", serif !important;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+}}
+/* Roman list items and subheadings use body font, not heading font (Issue 24) */
+h4.roman-subheading, .roman-list-item, .roman-list-item b {{
+    font-family: "{primary_font}", "SBL BibLit", serif !important;
 }}
 [lang="el"], [lang="el"] *, .greek, .greek * {{
     font-family: "SBL Greek", "SBL BibLit", serif !important;
-    font-size: 1.15em;
+    font-size: 1.05em;
 }}
 [lang="he"], [lang="he"] *, .hebrew, .hebrew * {{
     direction: rtl;
-    unicode-bidi: embed;
+    unicode-bidi: isolate;
     font-family: "SBL Hebrew", "Ezra SIL", "SBL BibLit", serif !important;
-    font-size: 1.5em;
+    font-size: 1.10em;
     line-height: 1.24;
 }}
 [lang="he"], [lang="he"] p,
@@ -2169,14 +2677,31 @@ def generate_font_styles(primary_font_name, primary_font_files):
     italic_file = None
     bold_italic_file = None
     
-    # Sort files to ensure deterministic results (prefer shorter names or 'Regular')
-    sorted_files = sorted(primary_font_files.values(), key=lambda x: (len(x), x))
-    
+    # Sort files so that explicitly-named Regular/Roman faces come first,
+    # ensuring they claim the primary slot ahead of Medium/Condensed/etc.
+    # Within each group sort by (length, name) for deterministic results.
+    def _font_sort_key(path):
+        n = os.path.basename(path).lower()
+        stem = os.path.splitext(n)[0]
+        is_explicitly_regular = ('regular' in n or 'roman' in n
+                                  or n.endswith('-r.') or n.endswith('_r.'))
+        return (0 if is_explicitly_regular else 1, len(n), n)
+
+    sorted_files = sorted(primary_font_files.values(), key=_font_sort_key)
+
     for font_file in sorted_files:
         fname = os.path.basename(font_file).lower()
-        
-        is_bold = 'bold' in fname or '-b.' in fname or '_b.' in fname
-        is_italic = 'italic' in fname or 'ital' in fname or '-i.' in fname or '_i.' in fname
+
+        is_bold = 'bold' in fname or '-b.' in fname or '_b.' in fname or '-bd.' in fname or '_bd.' in fname
+        _ext = os.path.splitext(fname)[1]
+        _stem = os.path.splitext(fname)[0]
+        is_italic = (
+            'italic' in fname or 'ital' in fname
+            or '-i.' in fname or '-it.' in fname
+            or '_i.' in fname or '_it.' in fname
+            or _stem.endswith('-it') or _stem.endswith('_it')
+            or _stem.endswith('it')  # e.g. boldit, semiboldit
+        )
         is_regular = 'regular' in fname or 'roman' in fname or '-r.' in fname or '_r.' in fname or (not is_bold and not is_italic)
         
         if is_bold and is_italic:
@@ -2194,11 +2719,11 @@ def generate_font_styles(primary_font_name, primary_font_files):
     
     bold_face = ''
     if bold_file:
-        bold_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    src: url("../Fonts/{bold_file}");\n}}'
+        bold_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    font-style: normal;\n    src: url("../Fonts/{bold_file}");\n}}'
     
     italic_face = ''
     if italic_file:
-        italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-style: italic;\n    src: url("../Fonts/{italic_file}");\n}}'
+        italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: normal;\n    font-style: italic;\n    src: url("../Fonts/{italic_file}");\n}}'
     
     bold_italic_face = ''
     if bold_italic_file:
