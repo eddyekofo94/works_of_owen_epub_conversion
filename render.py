@@ -334,6 +334,9 @@ def _detect_signature(plain: str, is_front_matter: bool) -> bool:
     # Pattern 3 — initials + "From my study …"
     if re.match(r'^[A-Z]\.[A-Z]\.\s+From\s+my\s+study', plain, re.I):
         return True
+    # Pattern 3b — standalone "From my study"
+    if re.match(r'^From\s+my\s+study\b', plain, re.I) and len(plain) < 40:
+        return True
     # Pattern 4 — Goold header (initials + optional city + 18xx date)
     if re.match(r'^W\.\s*H\.\s*G\.', plain):
         return True
@@ -347,6 +350,10 @@ def _detect_signature(plain: str, is_front_matter: bool) -> bool:
         return True
     # Pattern 6 — place + year: "Edinburgh, 1682", "London, 1677."
     if re.match(r'^[A-Z][a-z]+,\s*\d{4}\.?$', plain):
+        return True
+    # Pattern 6b — place + month + year: "Edinburgh, August 1850."
+    _months = r'(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
+    if re.match(rf'^[A-Z][a-z]+,\s+{_months}\s+\d{{4}}\.?$', plain, re.I):
         return True
     # Pattern 7 — ALL-CAPS name (front-matter only to avoid heading false positives)
     if is_front_matter:
@@ -555,6 +562,16 @@ def _split_roman_section_opening(text):
         return None
     heading = f'{match.group("roman")} {sentence.group(1).strip()}'
     body = sentence.group(2).strip()
+    # Guard: do not split if the second part is a lone transitional connector
+    if re.match(
+        r'^(?:Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
+        r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
+        r'Herein|Hereby|Hereof|Hereto|Hereunto|Herewith|Therein|Thereby|'
+        r'Thereof|Thereto|Thereunto|Therewith|But|So|Now|As|For)[,;.—\s]*$',
+        body,
+        re.I
+    ):
+        return None
     return heading, body
 
 
@@ -806,6 +823,123 @@ def _repair_scholastic_blockquote_boundaries(text):
     return _SCHOLASTIC_QUOTED_OBJECTION_RE.sub(repl, text)
 
 
+def _repair_markdown_tables(text: str) -> str:
+    """Convert Markdown pipe-table paragraphs into [[BLOCKQUOTE]] / plain paragraph pairs."""
+    if not text or ('|---|' not in text and '|--' not in text):
+        return text
+
+    paras = text.split('\n\n')
+    out: list[str] = []
+
+    for para in paras:
+        stripped = para.strip()
+
+        # Quick bail — paragraph has no table separator row
+        if not re.search(r'\|[\-]+\|', stripped):
+            out.append(para)
+            continue
+
+        # Normalise <br> tags → space so cell text reads as a single line
+        normalised = re.sub(r'<br\s*/?>', ' ', stripped)
+
+        # Split inline-concatenated rows. Each row ends with '|' and the next
+        # starts with '|' with only whitespace between them.
+        row_texts = re.split(r'(?<=\|)\s+(?=\|)', normalised)
+
+        first_row = True
+        for rt in row_texts:
+            rt = rt.strip()
+            if not rt:
+                continue
+
+            # Split cells by '|' and strip them.
+            cells = [c.strip() for c in rt.split('|')]
+            if cells and not cells[0]:
+                cells.pop(0)
+            if cells and not cells[-1]:
+                cells.pop()
+
+            if not cells:
+                continue
+
+            # Check if this is the separator row
+            if all(re.match(r'^[\-]+$', c) for c in cells):
+                continue
+
+            if len(cells) >= 2:
+                left = cells[0]
+                right = cells[1]
+
+                # Special case: unclosed preceding blockquote
+                if first_row and out and out[-1].strip().startswith('[[BLOCKQUOTE]]') and out[-1].strip().endswith(','):
+                    out[-1] = out[-1] + ' ' + right
+                    out.append(left)
+                else:
+                    out.append('[[BLOCKQUOTE]] ' + right)
+                    out.append(left)
+                first_row = False
+
+    return '\n\n'.join(out)
+
+
+def _repair_fused_word_ordinals(text: str) -> str:
+    """Split paragraphs at fused capitalised word ordinals (e.g. Secondly, Thirdly) that follow terminal punctuation."""
+    if not text:
+        return text
+
+    paras = text.split('\n\n')
+    out = []
+    for para in paras:
+        stripped = para.strip()
+        # If it starts with a blockquote marker, do not split it.
+        if stripped.startswith('[[BLOCKQUOTE]]'):
+            out.append(para)
+            continue
+
+        # Otherwise, split at space before Thirdly/Secondly/etc. following terminal punctuation.
+        pattern = r'(?<=[.!?])\s+(?=(?:Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Seventhly|Eighthly|Ninthly|Lastly|Finally),\s)'
+        para_fixed = re.sub(pattern, '\n\n', para)
+        out.append(para_fixed)
+
+    return '\n\n'.join(out)
+
+
+def _repair_mid_sentence_blockquote_splits(text: str) -> str:
+    """Join paragraphs split mid-sentence before a [[BLOCKQUOTE]] marker."""
+    if not text or '[[BLOCKQUOTE]]' not in text:
+        return text
+
+    paras = text.split('\n\n')
+    out: list[str] = []
+    i = 0
+    n = len(paras)
+
+    while i < n:
+        para = paras[i]
+        stripped = para.strip()
+
+        if i == n - 1:
+            out.append(para)
+            i += 1
+            continue
+
+        next_para = paras[i+1].strip()
+        if next_para.startswith('[[BLOCKQUOTE]]'):
+            clean_end = stripped.rstrip('\"\' \t\r\n')
+            if clean_end and not clean_end.endswith(('.', ',', ';', ':', '?', '!', '—', '-')):
+                blockquote_content = next_para[len('[[BLOCKQUOTE]]'):].strip()
+                merged_para = stripped + ' ' + blockquote_content
+                paras[i+1] = merged_para
+                i += 1
+                continue
+
+        out.append(para)
+        i += 1
+
+    return '\n\n'.join(out)
+
+
+
 _TOKEN_STRIP_RE = re.compile(r'\[\[[A-Z_]+\]\]\s*')
 
 
@@ -837,7 +971,7 @@ def _repair_unbalanced_bracket_splits(text):
 
 
 _DOC_STRUCTURE_TOKENS_RE = re.compile(
-    r'^\[\[(?:CHAPTER|SUMMARY|PART|SUBTITLE|DIGRESSION)\]\]'
+    r'^\[\[(?:CHAPTER|PART|SUBTITLE|DIGRESSION|BLOCKQUOTE)\]\]'
 )
 
 
@@ -879,7 +1013,7 @@ _TRANSITIONAL_WORD_RE = re.compile(
     r'^(Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
     r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
     r'Herein|Hereby|Hereof|Hereto|Hereunto|Herewith|Therein|Thereby|'
-    r'Thereof|Thereto|Thereunto|Therewith|But|So|Now)[,;.—\s]*$',
+    r'Thereof|Thereto|Thereunto|Therewith|But|So|Now|As|For)[,;.—\s]*$',
     re.I,
 )
 _SCHOLASTIC_CONTINUATION_RE = re.compile(
@@ -1000,6 +1134,38 @@ def _repair_dangling_initial_splits(text: str) -> str:
     return '\n\n'.join(result)
 
 
+def _repair_sermon_prefatory_note_splits(text: str) -> str:
+    """Heal sermon prefatory note split by summary tag and page boundary.
+    
+    Pattern:
+      Paragraph 1: 'THIS sermon, from'
+      Paragraph 2: '[[SUMMARY]] Hebrews 12:27, was preached before Parliament on a'
+      Paragraph 3: 'day set apart for extraordinary humiliation.'
+    """
+    if not text:
+        return text
+    pattern = re.compile(
+        r'(THIS\s+sermon,\s+from)\s*\n\n\s*\[\[SUMMARY\]\]\s*([^A-Z\n]*[A-Z][^\n]*?)\s*\n\n\s*([a-z][^\n]*?)(?=\n\n|$)',
+        re.S | re.I
+    )
+    return pattern.sub(r'\1 \2 \3', text)
+
+
+def _split_tail_signature(text: str) -> str:
+    """Split J.O. signature fused at the end of a body paragraph into its own paragraph."""
+    if not text:
+        return text
+    pattern = re.compile(
+        r'([.!?”"])\s+'
+        r'(?P<sig>'
+        r'J\.?\s*O\.?\s+From\s+my\s+Study.*|'
+        r'J\.?\s*O\.?\s+September\s+the\s+last.*'
+        r')$',
+        re.I
+    )
+    return pattern.sub(r'\1\n\n\g<sig>', text)
+
+
 def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                      front_matter_style="blurb", config=None):
     """
@@ -1021,8 +1187,14 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     md_text = normalize_characters(md_text)
 
     # Apply replacements (Issue 108)
+    md_text = _split_tail_signature(md_text)
+    md_text = _repair_sermon_prefatory_note_splits(md_text)
     md_text = _repair_owen_ocr_errors(md_text, config=config)
+    md_text = _repair_markdown_tables(md_text)
+    md_text = _repair_fused_word_ordinals(md_text)
+    md_text = _repair_mid_sentence_blockquote_splits(md_text)
     md_text = _repair_scholastic_blockquote_boundaries(md_text)
+
     md_text = _repair_unbalanced_bracket_splits(md_text)
     md_text = _repair_lowercase_continuation_splits(md_text)
     md_text = _repair_transitional_word_isolation(md_text)
@@ -1200,7 +1372,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     content = scripture_match.group(2)
                     html_parts.append(f'<p class="scripture-ref-introduction">{tag_unicode_ranges(_html_escape(ref))},</p>')
 
-                html_parts.append(f'<blockquote epub:type="z3998:quotation"><p>{_render_blockquote_content(content)}</p></blockquote>')
+                html_parts.append(f'<blockquote epub:type="z3998:quotation"><p class="blockquote-content">{_render_blockquote_content(content)}</p></blockquote>')
                 pending_drop_cap = False
                 roman_list_expected = None
                 recent_plain.append(_strip_footnote_placeholders(content))
@@ -1808,8 +1980,10 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         # a bare comma (suggesting a verse-range continuation split across lines),
         # the bold is spurious — undo it.
         _prev_plain = recent_plain[-1] if recent_plain else ''
-        if re.match(r'^<b>\d+[.;]?</b>\s', text_html) and re.search(
-            r'(?:\b\d+:\d+(?:[-,]\s*\d+)*|,)\s*$', _prev_plain
+        if (
+            re.match(r'^<b>\d+[.;]?</b>\s', text_html)
+            and re.search(r'(?:\b\d+:\d+(?:[-,]\s*\d+)*|\b\d+)\s*,\s*$', _prev_plain)
+            and not _TRANSITIONAL_WORD_RE.match(_prev_plain.strip())
         ):
             text_html = re.sub(r'^<b>(\d+[.;]?)</b>\s', r'\1 ', text_html)
         
@@ -1879,10 +2053,20 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         if m_sig:
                             paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
                         
-                        # Split J.O. study signature: "J.O. From my study, ..."
-                        m_study = re.match(r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
+                        # Split J.O. study signature: "J.O. From my study, September..."
+                        m_study = re.match(
+                            r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+'
+                            r'(From\s+my\s+study\b.*?),\s*'
+                            r'([A-Z][a-z]+(?:\s+the\s+last)?,\s*\[?\d{4}\]?\.?)$',
+                            paragraph_html,
+                            re.I
+                        )
                         if m_study:
-                            paragraph_html = f'{m_study.group(1)}<br/>{m_study.group(2)}'
+                            paragraph_html = f'{m_study.group(1)}<br/>{m_study.group(2)}<br/>{m_study.group(3)}'
+                        else:
+                            m_study2 = re.match(r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
+                            if m_study2:
+                                paragraph_html = f'{m_study2.group(1)}<br/>{m_study2.group(2)}'
                         
                         html_parts.append(f'<p class="signature">{paragraph_html}</p>')
                         pending_drop_cap = False
@@ -1916,6 +2100,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                                 _fm_prose_started = True
                             else:
                                 p_cls = "front-matter-prose"
+                            # Run prefix bolding on front-matter prose lists
+                            paragraph_html = emphasize_structural_prefix(paragraph_html)
                             html_parts.append(f'<p class="{p_cls}">{paragraph_html}</p>')
                         else:
                             # Blurb: centered italic for decorative title-page content.
@@ -1993,8 +2179,540 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             recent_plain = recent_plain[-5:]
     
     result_html = '\n'.join(html_parts)
+    result_html = _attach_colon_introduced_list(result_html)
+    result_html = _attach_em_dash_flat_list(result_html)
+    result_html = _coalesce_adjacent_signatures(result_html)
     result_html = _merge_short_inline_lists(result_html)
+    result_html = _add_owen_list_level_classes(result_html)
+    result_html = _nest_owen_list_hierarchies(result_html)
     return result_html, current_mode, pending_drop_cap
+
+
+# ---------------------------------------------------------------------------
+# Issue #48 — colon-introduced list merging
+# ---------------------------------------------------------------------------
+def _attach_colon_introduced_list(html: str) -> str:
+    """Merge a colon-terminated paragraph inline with the following list-item."""
+    if not html:
+        return html
+
+    import re as _re
+
+    # Case A: any non-list-item <p> ending in ':'
+    html = _re.sub(
+        r'(<p(?:(?! class="list-item")[^>])*>)'
+        r'((?:(?!</p>).)*:)\s*</p>'
+        r'\s*<p class="list-item">',
+        r'<p class="list-item">\2 ',
+        html,
+        flags=_re.S,
+    )
+
+    # Case B: list-item whose bold marker is NOT parenthesised (e.g. "4." not "(1.)")
+    # and whose next sibling IS a parenthesised sub-item "(N.)"
+    html = _re.sub(
+        r'(<p class="list-item">(?!<b>\())'   # intro: list-item, marker not starting "(…"
+        r'((?:(?!</p>).)*:)\s*</p>'            # content ending ':'
+        r'\s*<p class="list-item">(<b>\([^)]+\)</b>)', # next sibling starting with parenthesized bold marker
+        r'\1\2 \3',
+        html,
+        flags=_re.S,
+    )
+
+    return html
+
+
+# ---------------------------------------------------------------------------
+# Issue #16 — em-dash / open-punctuation flat syllabus flattening
+# ---------------------------------------------------------------------------
+def _attach_em_dash_flat_list(html: str) -> str:
+    """Absorb short list prefixes into a preceding paragraph ending in em-dash or open punctuation."""
+    if not html:
+        return html
+
+    import re as _re
+
+    # Compiled patterns for syllabus introductions (updated to match all trailing punctuation)
+    _EXPLICIT_COUNT_RE = _re.compile(
+        r'\b(?:I\s+understand\s+)?(?:two|three|four|five|six|seven|'
+        r'eight|nine|ten|twofold|threefold|fourfold|\d+)\b.{0,120}'
+        r'\b(?:things?|ways?|heads?|accounts?|regards?|parts?|'
+        r'sorts?|considerations?|observations?|particulars?|'
+        r'respects?|instances?)\b.{0,60}[—\-:,;.]\s*$',
+        _re.I,
+    )
+    _FORMULA_TAIL_RE = _re.compile(
+        r'\b(?:these?\s+following|as\s+follows?|following\s+particulars?|'
+        r'(?:may|to)\s+be\s+(?:observed|noted|considered|mentioned)|'
+        r'I\s+shall\s+(?:observe|note|propose|mention|consider)|'
+        r'in\s+particular|are\s+these)\b.{0,60}[—\-:,;.]\s*$',
+        _re.I,
+    )
+
+    _LIST_ITEM_RE = _re.compile(
+        r'<p class="(list-item|roman-list-item)">(<b>[^<]{1,30}</b>\s*)?(.*?)</p>',
+        _re.S,
+    )
+
+    def _plain(frag: str) -> str:
+        return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', frag)).strip()
+
+    def _wc(frag: str) -> int:
+        return len(_plain(frag).split())
+
+    def _extract_count_from_text(text: str) -> int:
+        words = {
+            'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
+            'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+            'twofold': 2, 'threefold': 3, 'fourfold': 4
+        }
+        m = _re.search(r'\b(two|three|four|five|six|seven|eight|nine|ten|twofold|threefold|fourfold|\d+)\b', text, _re.I)
+        if m:
+            w = m.group(1).lower()
+            if w.isdigit():
+                return int(w)
+            return words.get(w, 0)
+        return 0
+
+    def _preceding_allows_attachment(preceding_plain: str) -> bool:
+        preceding_plain = preceding_plain.strip()
+        if not preceding_plain:
+            return False
+        # Guard: detailed explanatory lists introduced by whereby must not flatten
+        if _re.search(r'\bwhereby\b', preceding_plain, _re.I):
+            return False
+        # Remove trailing quotes for punctuation check
+        stripped = preceding_plain.rstrip('\"\'').strip()
+        if not stripped:
+            return False
+        if stripped[-1] in (',', ';', ':', '—', '-'):
+            return True
+        if stripped[-1] == '.':
+            return bool(_EXPLICIT_COUNT_RE.search(preceding_plain) or _FORMULA_TAIL_RE.search(preceding_plain))
+        return False
+
+    paras = html.split('\n')
+    out: list[str] = []
+    i = 0
+    n = len(paras)
+
+    while i < n:
+        para = paras[i]
+        stripped = para.strip()
+
+        # If it's a list item, we might start gathering a run!
+        m = _LIST_ITEM_RE.match(stripped)
+        if not m:
+            out.append(para)
+            i += 1
+            continue
+
+        # We have a list item! Let's find the run of consecutive list items.
+        run_indices = []
+        j = i
+        while j < n:
+            curr = paras[j].strip()
+            if not curr:
+                j += 1
+                continue
+            if _LIST_ITEM_RE.match(curr):
+                run_indices.append(j)
+                j += 1
+            else:
+                break
+
+        # If we didn't find at least two list items, just emit and move on.
+        if len(run_indices) < 2:
+            out.append(para)
+            i += 1
+            continue
+
+        # Let's see if we have a preceding paragraph to attach to!
+        prev_idx = -1
+        for k in range(len(out) - 1, -1, -1):
+            if out[k].strip():
+                prev_idx = k
+                break
+
+        if prev_idx == -1:
+            out.append(para)
+            i += 1
+            continue
+
+        preceding = out[prev_idx]
+        preceding_plain = _plain(preceding)
+
+        # Check if preceding paragraph allows attachment
+        if not _preceding_allows_attachment(preceding_plain):
+            out.append(para)
+            i += 1
+            continue
+
+        # We have a candidate run of list items!
+        item_pairs = []
+        for idx in run_indices:
+            pm = _LIST_ITEM_RE.match(paras[idx].strip())
+            marker = pm.group(2) or ''
+            content = pm.group(3) or ''
+            item_pairs.append((marker, content))
+
+        # Determine the length of the flat prefix we should flatten.
+        flat_prefix_len = 0
+        announced_count = _extract_count_from_text(preceding_plain)
+
+        for L in range(len(item_pairs), 1, -1):
+            sub_pairs = item_pairs[:L]
+            wcs = [_wc(ct) for _, ct in sub_pairs]
+
+            sig_e = (announced_count == L)
+            limit = 50 if sig_e else 8
+
+            # 1. Hard veto: any item > limit?
+            if any(wc > limit for wc in wcs):
+                continue
+
+            # 2. Check positive signals
+            sig_a = any(ct.rstrip('\"\'').strip().endswith((';', ',')) for _, ct in sub_pairs[:-1])
+            sig_b = any(_re.search(r'\b(and|or)\s*$', ct.rstrip('\"\'').strip(), _re.I) for _, ct in sub_pairs)
+            sig_c = all(wc <= 3 for wc in wcs)
+            sig_d = L >= 3 and all(wc <= 7 for wc in wcs)
+            sig_e = (announced_count == L)
+
+            if sig_a or sig_b or sig_c or sig_d or sig_e:
+                flat_prefix_len = L
+                break
+
+        if flat_prefix_len == 0:
+            out.append(para)
+            i += 1
+            continue
+
+        # ── ABSORB: strip </p> from preceding paragraph, append items inline ─
+        inline_parts = []
+        for mk, ct in item_pairs[:flat_prefix_len]:
+            inline_parts.append(((mk or '') + ' ' + ct).strip())
+        inline_text = ' '.join(inline_parts)
+
+        # Normalise double spaces
+        inline_text = _re.sub(r'\s+', ' ', inline_text)
+
+        new_preceding = _re.sub(r'</p>\s*$', ' ' + inline_text + '</p>', preceding, count=1)
+        
+        # Add syllabus-anchor class
+        if _re.match(r'<p\s+class="([^"]*)"', new_preceding):
+            new_preceding = _re.sub(
+                r'<p\s+class="([^"]*)"',
+                lambda m: f'<p class="{m.group(1)} syllabus-anchor"',
+                new_preceding, count=1,
+            )
+        elif _re.match(r'<p>', new_preceding):
+            new_preceding = _re.sub(r'^<p>', '<p class="syllabus-anchor">', new_preceding, count=1)
+        
+        out[prev_idx] = new_preceding
+
+        # Re-emit any non-flat expansion items as list paragraphs
+        remaining_indices = run_indices[flat_prefix_len:]
+        if remaining_indices:
+            remaining_paras = [paras[idx] for idx in remaining_indices]
+            processed_remaining = _attach_em_dash_flat_list('\n'.join(remaining_paras))
+            out.extend(processed_remaining.split('\n'))
+
+        i = j
+        continue
+
+    return '\n'.join(out)
+
+
+def _owen_marker_level(marker_text: str, previous_marker_family: str = None) -> tuple[str, str]:
+    """Classify an Owenian structural list marker into a reader level.
+    
+    Returns (level_class, marker_family).
+    """
+    marker_text = re.sub(r'<[^>]+>', '', marker_text).strip()
+    if not marker_text:
+        return 'list-level-1', previous_marker_family or 'other'
+
+    # Strip bold tags and normalize casing
+    clean = marker_text.strip('.,:; \t\n\r*')
+    clean_upper = clean.upper()
+
+    # 1. Level 3: Ordinals (1st., 2dly., 3dly., [SECONDLY], [3dly.])
+    is_digit_ordinal = bool(re.search(r'\d(?:st|nd|rd|th|dly|ly)', clean_upper))
+    is_bracketed_word_ordinal = clean_upper.startswith('[') and clean_upper.endswith(']') and any(
+        w in clean_upper for w in [
+            'FIRST', 'SECOND', 'THIRD', 'FOURTH', 'FIFTH', 'SIXTH', 'SEVENTH',
+            'EIGHTH', 'NINTH', 'LAST', 'LY'
+        ]
+    )
+    is_local_ordinal = any(clean_upper.startswith(w) for w in ['1ST', '2DLY', '3DLY', '4THLY'])
+    
+    if is_digit_ordinal or is_bracketed_word_ordinal or is_local_ordinal:
+        return 'list-level-3', 'ordinal'
+
+    # 2. Level 2: Bracketed markers (e.g., [1.], [1], [a]) that are NOT word ordinals
+    if clean.startswith('[') and clean.endswith(']'):
+        inner = clean[1:-1].strip('.,:; ')
+        if inner.isdigit():
+            return 'list-level-2', 'arabic_bracket'
+        elif len(inner) == 1 and inner.isalpha():
+            return 'list-level-2', 'alpha_bracket'
+        else:
+            return 'list-level-2', 'other_bracket'
+    if clean.startswith('[') or re.match(r'^\[\d+\]\.?$', clean):
+        return 'list-level-2', 'arabic_bracket'
+
+    # 3. Level 1: Parenthesized markers (1.), (a.) or bare decimals 1., 2. or major words Secondly, Objection 1, I. 1.
+    if clean.startswith('(') and clean.endswith(')'):
+        inner = clean[1:-1].strip('.,:; ')
+        if inner.isdigit():
+            return 'list-level-1', 'arabic_paren'
+        elif len(inner) == 1 and inner.isalpha():
+            return 'list-level-1', 'alpha_paren'
+        else:
+            return 'list-level-1', 'other_paren'
+
+    if clean.isdigit() or re.match(r'^\d+$', clean):
+        return 'list-level-1', 'arabic'
+        
+    if any(w in clean_upper for w in ['FIRST', 'SECOND', 'THIRD', 'FOURTH', 'FIFTH', 'OBJECTION', 'ANSWER', 'USE', 'SOL']):
+        return 'list-level-1', 'word'
+
+    if re.search(r'[IVXLCDM]+\.?\s+\d+', clean):
+        return 'list-level-1', 'roman_decimal'
+
+    return 'list-level-1', previous_marker_family or 'other'
+
+
+def _add_owen_list_level_classes(html: str) -> str:
+    """Add modest reader-facing hierarchy classes to remaining block lists."""
+    if not html:
+        return html
+
+    import re
+    item_re = re.compile(
+        r'<p class="(?P<class>list-item|roman-list-item)">(?P<inner>.*?)</p>',
+        re.S,
+    )
+    previous_family = None
+
+    def repl(match: re.Match) -> str:
+        nonlocal previous_family
+        cls = match.group('class')
+        inner = match.group('inner')
+        marker_match = re.match(r'\s*(<b>[^<]{1,40}</b>)', inner, re.S)
+
+        if cls == 'roman-list-item':
+            previous_family = 'roman'
+            return f'<p class="{cls} list-level-1">{inner}</p>'
+
+        level_class, family = _owen_marker_level(
+            marker_match.group(1) if marker_match else '',
+            previous_family,
+        )
+        previous_family = family
+        return f'<p class="{cls} {level_class}">{inner}</p>'
+
+    return item_re.sub(repl, html)
+
+
+def _nest_owen_list_hierarchies(html: str) -> str:
+    """Reconstruct flat list-item paragraphs into a nested <div> tree.
+    
+    This function processes top-level block elements (paragraphs, blockquotes, headings)
+    and wraps them in <div class="owen-branch owen-level-X"> containers based on their
+    list-level markings. Continuation prose and quotes automatically nest inside the
+    active leaf container.
+    """
+    import re
+    block_re = re.compile(
+        r'(<p\b[^>]*>.*?</p>|'
+        r'<blockquote\b[^>]*>.*?</blockquote>|'
+        r'<h[1-6]\b[^>]*>.*?</h[1-6]>|'
+        r'<aside\b[^>]*>.*?</aside>|'
+        r'<div\b[^>]*>.*?</div>|'
+        r'<table\b[^>]*>.*?</table>|'
+        r'<hr\s*/?>)',
+        re.S
+    )
+    
+    blocks = []
+    last_idx = 0
+    for m in block_re.finditer(html):
+        inter = html[last_idx:m.start()].strip()
+        if inter:
+            blocks.append(inter)
+        blocks.append(m.group(0))
+        last_idx = m.end()
+    tail = html[last_idx:].strip()
+    if tail:
+        blocks.append(tail)
+        
+    if not blocks:
+        return html
+        
+    output_parts = []
+    active_levels = []  # Stack of currently open levels (e.g. [1, 2])
+    
+    def close_levels_down_to(target_level: int):
+        """Close all open divs deeper than or equal to target_level."""
+        while active_levels and active_levels[-1] >= target_level:
+            output_parts.append("</div>")
+            active_levels.pop()
+
+    for block in blocks:
+        explicit_level = None
+        
+        p_match = re.match(r'^<p\b([^>]*)>', block)
+        if p_match:
+            attrs = p_match.group(1)
+            if 'list-level-3' in attrs:
+                explicit_level = 3
+            elif 'list-level-2' in attrs:
+                explicit_level = 2
+            elif 'list-level-1' in attrs:
+                explicit_level = 1
+            elif 'signature' in attrs or 'front-matter' in attrs:
+                explicit_level = 0
+        elif re.match(r'^<h[1-6]\b', block):
+            explicit_level = 0
+        elif re.match(r'^<aside\b', block):
+            explicit_level = 0
+            
+        if explicit_level is not None:
+            if explicit_level == 0:
+                close_levels_down_to(1)
+                output_parts.append(block)
+            else:
+                current_active = active_levels[-1] if active_levels else 0
+                
+                if explicit_level > current_active:
+                    for level in range(current_active + 1, explicit_level + 1):
+                        output_parts.append(f'<div class="owen-branch owen-level-{level}">')
+                        active_levels.append(level)
+                    output_parts.append(block)
+                    
+                elif explicit_level == current_active:
+                    output_parts.append("</div>")
+                    active_levels.pop()
+                    output_parts.append(f'<div class="owen-branch owen-level-{explicit_level}">')
+                    active_levels.append(explicit_level)
+                    output_parts.append(block)
+                    
+                else:  # explicit_level < current_active
+                    close_levels_down_to(explicit_level)
+                    output_parts.append(f'<div class="owen-branch owen-level-{explicit_level}">')
+                    active_levels.append(explicit_level)
+                    output_parts.append(block)
+        else:
+            output_parts.append(block)
+            
+    close_levels_down_to(1)
+    
+    return "\n".join(output_parts)
+
+
+
+# ---------------------------------------------------------------------------
+# Issue #49 — coalesce consecutive signature paragraphs
+# ---------------------------------------------------------------------------
+def _coalesce_adjacent_signatures(html: str) -> str:
+    """Merge consecutive <p class="signature"> elements into one, joined by <br/>."""
+    if not html:
+        return html
+
+    import re as _re
+
+    paras = html.split('\n')
+    out: list[str] = []
+    i = 0
+    n = len(paras)
+
+    while i < n:
+        para = paras[i]
+        stripped = para.strip()
+
+        m = _re.match(r'<p\s+class="signature">(.*?)</p>', stripped)
+        if not m:
+            out.append(para)
+            i += 1
+            continue
+
+        sig_contents = [m.group(1).strip()]
+        j = i + 1
+        while j < n:
+            curr = paras[j].strip()
+            if not curr:
+                j += 1
+                continue
+            m_curr = _re.match(r'<p\s+class="signature">(.*?)</p>', curr)
+            if m_curr:
+                sig_contents.append(m_curr.group(1).strip())
+                j += 1
+            else:
+                break
+
+        if len(sig_contents) > 1:
+            merged_content = '<br/>'.join(sig_contents)
+            out.append(f'<p class="signature">{merged_content}</p>')
+        else:
+            out.append(para)
+
+        i = j
+
+    return '\n'.join(out)
+
+
+# ---------------------------------------------------------------------------
+# Treatise title page override helper: preserve foreign script (Greek/Hebrew) epigraphs
+# ---------------------------------------------------------------------------
+def _foreign_fragments_in_section(html: str) -> list[str]:
+    """Extract elements containing Greek or Hebrew characters from an HTML section."""
+    if not html:
+        return []
+
+    import re as _re
+
+    # Find tags: blockquote, p, span, h1-6
+    pattern = r'(<(blockquote|p|span|h[1-6])\b[^>]*>.*?</\2>)'
+    matches = _re.findall(pattern, html, _re.S | _re.I)
+    
+    fragments = []
+    for match_tuple in matches:
+        full_tag = match_tuple[0]
+        # Strip HTML tags to check only the text content
+        plain_text = _re.sub(r'<[^>]+>', '', full_tag)
+        # Check for Greek range (\u0370-\u03FF, \u1F00-\u1FFF) or Hebrew range (\u0590-\u05FF)
+        if _re.search(r'[\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]', plain_text):
+            fragments.append(full_tag)
+            
+    return fragments
+
+
+def _merge_titlepage_override(override: str, fragments: list[str]) -> str:
+    """Merge missing Greek/Hebrew fragments into the override section before the closing </section>."""
+    if not override or not fragments:
+        return override
+
+    import re as _re
+
+    for frag in fragments:
+        plain_frag = _re.sub(r'<[^>]+>', '', frag).strip()
+        if not plain_frag:
+            continue
+        
+        # If this plain text is already present in the override, skip it
+        if plain_frag in override:
+            continue
+            
+        # Append before the closing </section>
+        override = _re.sub(
+            r'(</section>\s*$)',
+            '\n' + frag + '\n' + r'\1',
+            override,
+            flags=_re.I
+        )
+        
+    return override
 
 
 # ---------------------------------------------------------------------------
@@ -2039,8 +2757,13 @@ def _merge_short_inline_lists(html: str) -> str:
     def _content_word_count(plain: str) -> int:
         return len(plain.split())
 
-    def _ends_with_semi_or_comma(html_frag: str) -> bool:
-        return _plain_text(html_frag).endswith((';', ','))
+    def _is_non_terminating_item(html_frag: str) -> bool:
+        plain = _plain_text(html_frag).rstrip()
+        if plain.endswith((';', ',')):
+            return True
+        if _re.search(r'\b(and|or)\b\s*$', plain, _re.I):
+            return True
+        return False
 
     # Split on both list-item and roman-list-item paragraphs
     parts = _re.split(r'(<p class="(?:list-item|roman-list-item)">.*?</p>)', html, flags=_re.S)
@@ -2089,7 +2812,7 @@ def _merge_short_inline_lists(html: str) -> str:
                 item_contents.append(('', inner))
 
         # ── Rule A: all items are very short AND at least one non-final item
-        #    ends with ';' or ',' → merge the entire run.
+        #    ends with ';' or ',' or a connector → merge the entire run.
         #
         #    The semicolon/comma guard prevents period-terminated standalone
         #    statements ("God is sovereign. God is holy.") from merging, while
@@ -2101,7 +2824,7 @@ def _merge_short_inline_lists(html: str) -> str:
                 for _mk, ct in item_contents
             )
             any_non_final_has_semi = any(
-                _ends_with_semi_or_comma(ct)
+                _is_non_terminating_item(ct)
                 for _mk, ct in item_contents[:-1]
             )
             if all_short and any_non_final_has_semi:
@@ -2116,7 +2839,7 @@ def _merge_short_inline_lists(html: str) -> str:
 
         for mk, ct in item_contents:
             current_subrun.append((mk, ct))
-            if not _ends_with_semi_or_comma(ct):
+            if not _is_non_terminating_item(ct):
                 # Terminating item — flush the accumulated sub-run
                 if len(current_subrun) >= 2:
                     merged = ' '.join(mk2 + ct2 for mk2, ct2 in current_subrun)
@@ -2135,7 +2858,7 @@ def _merge_short_inline_lists(html: str) -> str:
                 mk2, ct2 = current_subrun[0]
                 run_out.append(f'<p class="{run_cls}">{mk2}{ct2}</p>')
 
-        out.extend(run_out)
+        out.append('\n'.join(run_out))
         i = j
 
     return ''.join(out)
@@ -2354,6 +3077,11 @@ def _polish_contents_page_html(html: str) -> str:
         return rendered
 
     for match in item_re.finditer(html):
+        pending_str = ''
+        if re.search(r'<h[1-6]\b', html[cursor:match.start()], re.I):
+            pending_str = _flush_pending()
+        if pending_str:
+            rebuilt.append(pending_str)
         rebuilt.append(html[cursor:match.start()])
         text = _plain_contents(match.group(1))
         entries = _split_entries(text)
@@ -3190,7 +3918,7 @@ def build_toc_page_xhtml(pages):
 # ================================================================
 
 def render_volume(vol_num: int, overrides: dict = None,
-                  intermediate: dict = None) -> str:
+                  intermediate: dict = None, progress_callback=None) -> str:
     """Run Stage 2 for a single Owen volume: JSON intermediate → EPUB3.
 
     Reads volumes/vN/intermediate/volume_N.json (or uses supplied dict),
@@ -3421,7 +4149,10 @@ def render_volume(vol_num: int, overrides: dict = None,
             conv_fm_style = 'blurb'
 
         raw_text = ch_dict.get('raw_text', '')
-        raw_text = config.get('treatise_title_overrides', {}).get(ch_dict['title'], raw_text)
+        titlepage_override = config.get('treatise_title_overrides', {}).get(ch_dict['title'])
+        if titlepage_override:
+            foreign_frags = _foreign_fragments_in_section(raw_text)
+            raw_text = _merge_titlepage_override(titlepage_override, foreign_frags)
         if not raw_text:
             continue
         if 'ANALYSIS' in title_upper:

@@ -35,7 +35,10 @@
       "min_greek_word_coverage_ratio": 0.80,
       "min_hebrew_word_coverage_ratio": 0.80,
       "max_missing_greek_clauses": 16,
-      "max_missing_hebrew_clauses": 0
+      "max_missing_hebrew_clauses": 0,
+      "max_ages_artifact_count": 0,
+      "max_flat_analysis_count": 0,
+      "max_font_issue_count": 0
     },
     "epub": {
       "allowed_warning_codes": [
@@ -116,6 +119,26 @@
         "audit": "epub",
         "text": "Proverbs 2:1Song of Solomon",
         "reason": "Stale Proverbs layer must not glue into Song of Solomon references"
+      },
+      {
+        "audit": "epub",
+        "text": "[4611605]",
+        "reason": "Residual AGES verse-code artifact must not render"
+      },
+      {
+        "audit": "epub",
+        "text": "[19B9105]",
+        "reason": "Residual alphanumeric AGES verse-code artifact must not render"
+      },
+      {
+        "audit": "epub",
+        "text": "1 st .",
+        "reason": "Spaced ordinal OCR artifact must be normalized before rendering"
+      },
+      {
+        "audit": "epub",
+        "text": "2 dly .",
+        "reason": "Spaced ordinal OCR artifact must be normalized before rendering"
       }
     ]
   },
@@ -123,6 +146,7 @@
     "1": {
       "text_integrity": {
         "max_split_candidate_count": 125,
+        "max_inline_structural_candidate_count": 5,
         "max_repeated_window_count": 25,
         "max_missing_greek_clauses": 0
       },
@@ -149,6 +173,41 @@
         "max_structural_bold_leak_files": 1,
         "max_lowercase_paragraph_start_files": 15,
         "max_noteref_leading_space_files": 0
+      }
+    },
+    "3": {
+      "text_integrity": {
+        "max_split_candidate_count": 176,
+        "max_repeated_window_count": 25,
+        "max_missing_greek_clauses": 0,
+        "max_missing_hebrew_clauses": 0,
+        "max_ages_artifact_count": 0,
+        "max_flat_analysis_count": 0,
+        "max_font_issue_count": 0
+      },
+      "epub": {
+        "max_greek_untagged_chars": 0,
+        "max_hebrew_untagged_chars": 0,
+        "max_repeated_phrase_count": 3,
+        "max_chapter_heading_in_paragraph_files": 1,
+        "max_structural_bold_leak_files": 1,
+        "max_lowercase_paragraph_start_files": 20
+      }
+    },
+    "8": {
+      "text_integrity": {
+        "max_split_candidate_count": 127,
+        "max_inline_structural_candidate_count": 0,
+        "max_repeated_window_count": 25,
+        "max_missing_marker_count": 0,
+        "max_missing_greek_clauses": 0,
+        "max_missing_hebrew_clauses": 0
+      },
+      "epub": {
+        "max_chapter_heading_in_paragraph_files": 0,
+        "max_structural_bold_leak_files": 0,
+        "max_lowercase_paragraph_start_files": 2,
+        "max_repeated_phrase_count": 0
       }
     }
   }
