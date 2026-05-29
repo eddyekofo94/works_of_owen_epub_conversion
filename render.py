@@ -2463,7 +2463,7 @@ def _owen_marker_level(marker_text: str, previous_marker_family: str = None) -> 
     clean_upper = clean.upper()
 
     # 1. Level 3: Ordinals (1st., 2dly., 3dly., [SECONDLY], [3dly.])
-    is_digit_ordinal = bool(re.search(r'\d(?:st|nd|rd|th|dly|ly)', clean_upper))
+    is_digit_ordinal = bool(re.search(r'\d(?:ST|ND|RD|TH|DLY|LY)', clean_upper))
     is_bracketed_word_ordinal = clean_upper.startswith('[') and clean_upper.endswith(']') and any(
         w in clean_upper for w in [
             'FIRST', 'SECOND', 'THIRD', 'FOURTH', 'FIFTH', 'SIXTH', 'SEVENTH',
