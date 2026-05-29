@@ -2261,12 +2261,16 @@ def _attach_em_dash_flat_list(html: str) -> str:
         return len(_plain(frag).split())
 
     def _extract_count_from_text(text: str) -> int:
+        # Strip any leading list marker e.g., "1. ", "I. ", "(1.) "
+        cleaned_text = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', text, flags=_re.I)
+        cleaned_text = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\s*\)\s*', '', cleaned_text, flags=_re.I)
+        cleaned_text = cleaned_text.strip()
         words = {
             'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
             'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
             'twofold': 2, 'threefold': 3, 'fourfold': 4
         }
-        m = _re.search(r'\b(two|three|four|five|six|seven|eight|nine|ten|twofold|threefold|fourfold|\d+)\b', text, _re.I)
+        m = _re.search(r'\b(two|three|four|five|six|seven|eight|nine|ten|twofold|threefold|fourfold|\d+)\b', cleaned_text, _re.I)
         if m:
             w = m.group(1).lower()
             if w.isdigit():
@@ -2275,6 +2279,12 @@ def _attach_em_dash_flat_list(html: str) -> str:
         return 0
 
     def _preceding_allows_attachment(preceding_plain: str) -> bool:
+        preceding_plain = preceding_plain.strip()
+        if not preceding_plain:
+            return False
+        # Strip any leading list marker e.g., "1. ", "I. ", "(1.) "
+        preceding_plain = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', preceding_plain, flags=_re.I)
+        preceding_plain = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\s*\)\s*', '', preceding_plain, flags=_re.I)
         preceding_plain = preceding_plain.strip()
         if not preceding_plain:
             return False
@@ -2327,30 +2337,40 @@ def _attach_em_dash_flat_list(html: str) -> str:
             i += 1
             continue
 
-        # Let's see if we have a preceding paragraph to attach to!
-        prev_idx = -1
-        for k in range(len(out) - 1, -1, -1):
-            if out[k].strip():
-                prev_idx = k
-                break
-
-        if prev_idx == -1:
-            out.append(para)
-            i += 1
-            continue
-
-        preceding = out[prev_idx]
-        preceding_plain = _plain(preceding)
-
-        # Check if preceding paragraph allows attachment
-        if not _preceding_allows_attachment(preceding_plain):
-            out.append(para)
-            i += 1
-            continue
-
         # We have a candidate run of list items!
+        is_case_2 = False
+        first_item_plain = _plain(para)
+        if _preceding_allows_attachment(first_item_plain) and len(run_indices) >= 3:
+            is_case_2 = True
+
+        if is_case_2:
+            preceding = para
+            preceding_plain = first_item_plain
+            candidate_indices = run_indices[1:]
+        else:
+            prev_idx = -1
+            for k in range(len(out) - 1, -1, -1):
+                if out[k].strip():
+                    prev_idx = k
+                    break
+
+            if prev_idx == -1:
+                out.append(para)
+                i += 1
+                continue
+
+            preceding = out[prev_idx]
+            preceding_plain = _plain(preceding)
+
+            if not _preceding_allows_attachment(preceding_plain):
+                out.append(para)
+                i += 1
+                continue
+
+            candidate_indices = run_indices
+
         item_pairs = []
-        for idx in run_indices:
+        for idx in candidate_indices:
             pm = _LIST_ITEM_RE.match(paras[idx].strip())
             marker = pm.group(2) or ''
             content = pm.group(3) or ''
@@ -2408,10 +2428,16 @@ def _attach_em_dash_flat_list(html: str) -> str:
         elif _re.match(r'<p>', new_preceding):
             new_preceding = _re.sub(r'^<p>', '<p class="syllabus-anchor">', new_preceding, count=1)
         
-        out[prev_idx] = new_preceding
+        if is_case_2:
+            out.append(new_preceding)
+        else:
+            out[prev_idx] = new_preceding
 
         # Re-emit any non-flat expansion items as list paragraphs
-        remaining_indices = run_indices[flat_prefix_len:]
+        if is_case_2:
+            remaining_indices = run_indices[1 + flat_prefix_len:]
+        else:
+            remaining_indices = run_indices[flat_prefix_len:]
         if remaining_indices:
             remaining_paras = [paras[idx] for idx in remaining_indices]
             processed_remaining = _attach_em_dash_flat_list('\n'.join(remaining_paras))
