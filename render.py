@@ -3935,13 +3935,47 @@ def build_toc_page_xhtml(pages):
                     else:
                         parts.append(f'<p class="contents-item">{safe_text}</p>')
                     
-    parts.append('</section>')
-    return '\n'.join(parts)
+def generate_structural_guide_html(vol_num: int) -> str:
+    """Generate a premium, mobile-first Structural Guide page for the front matter."""
+    return f'''<section class="front-matter-section structural-guide-page">
+<h2 class="front-matter-heading">Note on the Structural Formatting</h2>
+
+<p class="front-matter-prose first">In common with other scholastic theological works of the seventeenth century, the treatises of Dr. John Owen feature an incredibly rich, complex, and deeply layered hierarchy of divisions, subdivisions, and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines.</p>
+
+<p class="front-matter-prose">To restore Goold’s original logical clarity while ensuring a premium, seamless reading experience on modern mobile devices, this digital edition adopts a standardized, highly readable <strong>Three-Level Visual Hierarchy</strong> designed specifically for Apple Books and iPhone:</p>
+
+<div class="structural-guide-levels" style="margin: 1.8em 5%; padding: 0.5em 0.8em; border-left: 2.5px solid #2a55a0; background-color: rgba(42, 85, 160, 0.03);">
+  <p style="margin: 0.6em 0; text-indent: 0; line-height: 1.5; font-size: 0.95em;">
+    <strong style="color: #2a55a0;">Level 1 — Major Expository Divisions</strong><br/>
+    Marked by bare Arabic decimals (e.g., <strong>1., 2.</strong>) or uppercase Roman numerals (e.g., <strong>I., II.</strong>). These serve as the main anchors of Owen’s discourse and are positioned flush against the left margin.
+  </p>
+  <p style="margin: 0.8em 0 0.6em; text-indent: 0; line-height: 1.5; font-size: 0.95em;">
+    <strong style="color: #2a55a0;">Level 2 — Nested Proofs &amp; Subdivisions</strong><br/>
+    Marked by parenthesized Arabic numbers (e.g., <strong>(1.), (2.)</strong>) or bracketed Arabic numbers (e.g., <strong>[1.], [2.]</strong>). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left.
+  </p>
+  <p style="margin: 0.8em 0 0.6em; text-indent: 0; line-height: 1.5; font-size: 0.95em;">
+    <strong style="color: #2a55a0;">Level 3 — Local Rhetorical Subpoints</strong><br/>
+    Marked by digit-based ordinals (e.g., <strong>1st., 2dly., 3dly.</strong>) or bracketed word ordinals (e.g., <strong>[FIRSTLY]</strong>). These represent rapid logical chains or local lists, and are modestly indented without double vertical lines to prevent layout crushing on narrow screens.
+  </p>
+</div>
+
+<p class="front-matter-prose"><strong>Dynamic Outline Formatting (Inline vs. Block)</strong></p>
+<p class="front-matter-prose">To optimize the display for narrow smartphone screens, the outline rendering is determined dynamically by rhetorical length:</p>
+<ul style="margin: 0.8em 8% 1.2em; padding-left: 1.2em; line-height: 1.6; font-size: 0.95em; color: #333; list-style-type: square;">
+  <li style="margin-bottom: 0.6em;"><strong>Inline Flat Syllabus:</strong> Short, compact summary lists (e.g., <em>“reduced unto two heads: 1st, Adoration; 2ndly, Invocation”</em>) are elegant, flat, and inline. This prevents long, distracting vertical stacks of short words or phrases.</li>
+  <li><strong>Indented Block Paragraphs:</strong> When an outline ordinal introduces a substantial paragraph of expository prose or a detailed theological argument, it is kept as a distinct block paragraph with clear indents to preserve paragraph continuity and reading comfort.</li>
+</ul>
+
+<p class="front-matter-prose"><strong>Polyglot Typographical Integration</strong></p>
+<p class="front-matter-prose">Every Greek and Hebrew citation in this work is automatically isolated and wrapped in specialized, highly legible fonts (<em>SBL Greek</em> and <em>SBL Hebrew</em> or <em>Ezra SIL</em>) to ensure that the ancient languages render with premium clarity and correct right-to-left layout alignment across all digital platforms.</p>
+</section>
+'''
 
 
 # ================================================================
 # STAGE 2 ENTRY POINT — render_volume()
 # ================================================================
+
 
 def render_volume(vol_num: int, overrides: dict = None,
                   intermediate: dict = None, progress_callback=None) -> str:
@@ -4114,6 +4148,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     # ── PDF-extracted front matter (title pages, TOC) ────────────
     front_matter_epub_items = []
     _last_fm_title = None
+    added_structural_guide = False
     for fm in intermediate.get('front_matter_items', []):
         if fm['title'] == _last_fm_title:
             continue
@@ -4135,6 +4170,33 @@ def render_volume(vol_num: int, overrides: dict = None,
         fm_item.add_item(style_item)
         book.add_item(fm_item)
         front_matter_epub_items.append(fm_item)
+
+        # Dynamic insertion of the Note on Structural Formatting after TOC page
+        if fm.get('type') == 'toc' and not added_structural_guide:
+            note_item = epub.EpubHtml(
+                title='Note on Structural Formatting',
+                file_name='structural_guide.xhtml',
+                lang='en',
+            )
+            note_html = generate_structural_guide_html(vol_num)
+            note_item.set_content(_make_xhtml('Note on Structural Formatting', note_html).encode('utf-8'))
+            note_item.add_item(style_item)
+            book.add_item(note_item)
+            front_matter_epub_items.append(note_item)
+            added_structural_guide = True
+
+    if not added_structural_guide:
+        note_item = epub.EpubHtml(
+            title='Note on Structural Formatting',
+            file_name='structural_guide.xhtml',
+            lang='en',
+        )
+        note_html = generate_structural_guide_html(vol_num)
+        note_item.set_content(_make_xhtml('Note on Structural Formatting', note_html).encode('utf-8'))
+        note_item.add_item(style_item)
+        book.add_item(note_item)
+        front_matter_epub_items.append(note_item)
+        added_structural_guide = True
 
     # ── Chapters ─────────────────────────────────────────────────
     toc_entries = []
