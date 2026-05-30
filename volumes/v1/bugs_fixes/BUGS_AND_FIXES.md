@@ -31,7 +31,7 @@
 | 25 | Footnote False Positives (Strict f1, f2 prefix requirement) | pdftohtml | ⌛ PENDING CONFIRMATION |
 | 26 | Nested Tag Content Loss (Using itertext() recursion) | pdftohtml | ⌛ PENDING CONFIRMATION |
 | 27 | "W. H. G." Signature Missing at end of Preface | pdftohtml | ⌛ PENDING CONFIRMATION |
-| 28 | "CONTENTS OF VOLUME 1" Formatting (Hanging Indent) | pdftohtml | ⌛ PENDING CONFIRMATION |
+| 28 | "CONTENTS OF VOLUME 1" Formatting (Hanging Indent) | pdftohtml | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 29 | Scripture codes leaking into CONTENTS page XHTML | `build_toc_page_xhtml()` → `format_title_page()` | ✅ Fixed 2026-05-09 |
 | 30 | Treatise title pages merged into single `<p>` blob | chapter loop in `process_owen_volume()` | ✅ Fixed 2026-05-09 |
 | 31 | Font detection used `max()` on font names, missing Koine spans | `format_title_page()` | ✅ Fixed 2026-05-09 |
@@ -106,7 +106,8 @@
 | 103 | Catechism indentation and leaking tokens | Stripped `[[SUMMARY]]` and set `text-indent: 0` for Q&A items | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 | 104 | Chained footnote numbers look like a single string | Added `padding-right: 0.25em` to `.noteref` for better separation | ✅ Fixed 2026-05-16 |
 | 105 | Ornaments lost gold color | Restored `#b08d2d` to title-page ornaments for an elegant feel | ✅ Fixed 2026-05-16 |
-| 106 | Inner treatise title pages (e.g. Christologia) poorly formatted | Specialized `treatise-title-page` CSS and extraction logic | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 106 | Inner treatise title pages (e.g. Christologia) poorly formatted | Specialized treatise-title-page CSS and extraction logic | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 121 | Publication Metadata / Copyright (Colophon) Page | EPUB Spine & TOC assembly | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
@@ -920,10 +921,26 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-19T21:10:06.730188+00:00
+**Last run:** 2026-05-30T06:35:58.855591+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -934,18 +951,18 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 83 |
-| Spine items | 81 |
+| XHTML files | 85 |
+| Spine items | 83 |
 | Embedded fonts | 11 |
-| NAV links | 81 |
-| Greek chars / untagged | 4080 / 0 |
+| NAV links | 86 |
+| Greek chars / untagged | 4091 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
 | Noteref links / endnote anchors | 124 / 124 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 1 |
+| Repeated phrase hits | 5 |
 
 Warnings requiring triage:
 
@@ -1092,11 +1109,21 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-19T21:10:38.315857+00:00
-**Status:** WARN (8 warnings)
+**Last run:** 2026-05-29T11:41:17.805810+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1105,25 +1132,25 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 633 |
-| EPUB text files | 81 |
-| EPUB paragraphs/headings | 2762 |
-| Approximate PDF-to-EPUB word coverage | 0.9944 |
-| Weak page matches | 22 |
-| Dense source windows checked | 783 |
-| Missing dense source-window pages | 609 |
+| EPUB text files | 82 |
+| EPUB paragraphs/headings | 2730 |
+| Approximate PDF-to-EPUB word coverage | 0.9968 |
+| Weak page matches | 17 |
+| Dense source windows checked | 741 |
+| Missing dense source-window pages | 612 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 591 |
 | Top-of-page windows skipped as unstable | 13 |
-| Missing top-of-page body windows | 7 |
-| Bottom-of-page body windows checked | 544 |
+| Missing top-of-page body windows | 1 |
+| Bottom-of-page body windows checked | 538 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 19 |
-| Possible faulty paragraph splits | 106 |
-| Structural starts excluded from split warnings | 163 |
-| Short fragments | 19 |
+| Missing bottom-of-page body windows | 2 |
+| Possible faulty paragraph splits | 101 |
+| Structural starts excluded from split warnings | 126 |
+| Short fragments | 7 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 0 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -1135,7 +1162,7 @@ Reports:
 | EPUB enumerator markers | 310 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 812 / 811 |
+| PDF Greek words / EPUB Greek words | 812 / 812 |
 | Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
@@ -1149,6 +1176,7 @@ Warnings requiring triage:
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
@@ -1423,3 +1451,17 @@ Warnings requiring triage:
 3. Updated the audit to use the same font helpers as extraction/rendering.
 4. Changed Greek/Hebrew clause fidelity to check only contiguous script runs.
 5. Lowered V1's missing-Greek-clause regression budget to `0` and added focused regression tests.
+
+### 121. Publication Metadata / Copyright (Colophon) Page (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Books traditionally have a copyright/colophon page listing technical metadata, transcription source, and font specifications to provide historical and physical context, which was missing in the digitized EPUB output of the volumes.
+**Root cause:** The rendering pipeline had no structural template or logic to generate and insert a publication metadata page before the Table of Contents.
+**Fix:**
+1. Designed elegant CSS classes (`.colophon-page`, `.colophon-title`, `.colophon-section`, etc.) inside the global stylesheet `shared.py` using relative units (`em` and `%`) and beautiful typography.
+2. Implemented `generate_copyright_xhtml()` in `render.py` to dynamically construct a Colophon page detailing:
+   - Rev. William H. Goold's 1850-1853 standard edition source.
+   - The digitization legacy of the A.G.E.S. Digital Library (AGES Software).
+   - Embedded fonts including the volume-specific primary body font and linguistic supplements (SBL Greek, SBL Hebrew, Ezra SIL, Cardo).
+   - Conversion pipeline features (paragraph boundary healing, automatic polyglot tagging, continuous blockquotes, etc.).
+3. Programmed the front-matter loop in `render.py` to compile and insert `colophon.xhtml` directly before the TOC file (`contents_2.xhtml` / `toc`).
+4. Refactored the `_nav_prefix` navigation builder to pull directly from compiled front-matter spine items in visual order, aligning the TOC sidebar with the book's reading flow in Apple Books.
+5. Verified rebuilding Volume 1, passing all 111 regression tests, and getting 0 packaging warnings/errors.

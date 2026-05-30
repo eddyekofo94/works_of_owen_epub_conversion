@@ -3948,9 +3948,117 @@ def build_toc_page_xhtml(pages):
                         and re.search(r'[;—-]\s*</p>$', parts[-1])
                     ):
                         parts[-1] = parts[-1].replace('</p>', f' {continuation}</p>')
-                    else:
-                        parts.append(f'<p class="contents-item">{safe_text}</p>')
-                    
+def generate_copyright_xhtml(vol_num, config, primary_font_name):
+    """Generate visual and detailed Publication Metadata (colophon/copyright) page."""
+    publisher = config.get('publisher') or 'Eduardus Ekofius'
+    editors = config.get('editors') or ['William H. Goold']
+    editor = editors[0] if editors else 'William H. Goold'
+    subtitle = VOLUME_SUBTITLES.get(vol_num, '')
+    
+    ages_info = (
+        "The text of this digital edition was originally transcribed and prepared by "
+        "<strong>A.G.E.S. Software</strong> (Albany, Oregon) as part of their landmark "
+        "<strong>A.G.E.S. Digital Library</strong>, active during the late 1990s and early 2000s. "
+        "Their monumental CD-ROM collection, particularly \"The Master Christian Library\" "
+        "and \"the digital Owen collection,\" was pioneering in digital theological publishing—preserving "
+        "classic, out-of-print Puritan and Reformed literature, making these historic writings "
+        "inexpensively accessible to students, ministers, and scholars worldwide."
+    )
+    
+    historical_info = (
+        f"This digital volume reproduces the text of the authoritative 16-volume standard edition "
+        f"of the <i>Works of John Owen</i>, edited by the Reverend William H. Goold, originally "
+        f"published between 1850 and 1853 by Johnstone & Hunter in Edinburgh. The treatises "
+        f"and sermons in this volume cover core elements of Reformed and Puritan theology, "
+        f"dogmatics, and biblical exposition."
+    )
+    
+    conversion_info = (
+        "This EPUB 3.0 publication is the result of a modern agentic conversion pipeline "
+        "specifically optimized for high-fidelity rendering on mobile devices, tablets, and e-readers. "
+        "It features holistic paragraph healing across page boundaries, automatic language tagging "
+        "for Greek and Hebrew Unicode scripts, continuous blockquote styling, easy-tap footnote controls, "
+        "and complete typographic consistency tailored for Apple Books."
+    )
+
+    fonts_list_html = f"""
+    <ul class="colophon-metadata-list">
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Primary Body:</span>
+        <span class="colophon-metadata-value">{_escape_xml(primary_font_name)}</span>
+      </li>
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Greek Script:</span>
+        <span class="colophon-metadata-value">SBL Greek / SBL BibLit</span>
+      </li>
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Hebrew Script:</span>
+        <span class="colophon-metadata-value">SBL Hebrew / Ezra SIL</span>
+      </li>
+    </ul>
+    """
+    
+    subtitle_escaped = _escape_xml(subtitle)
+    metadata_list_html = f"""
+    <ul class="colophon-metadata-list">
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Title:</span>
+        <span class="colophon-metadata-value">The Works of John Owen, Volume {vol_num}</span>
+      </li>
+      {f'<li class="colophon-metadata-item"><span class="colophon-metadata-label">Subtitle:</span><span class="colophon-metadata-value">{subtitle_escaped}</span></li>' if subtitle else ''}
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Author:</span>
+        <span class="colophon-metadata-value">John Owen (1616–1683)</span>
+      </li>
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Editor:</span>
+        <span class="colophon-metadata-value">{_escape_xml(editor)}</span>
+      </li>
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Publisher:</span>
+        <span class="colophon-metadata-value">{_escape_xml(publisher)}</span>
+      </li>
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Release Year:</span>
+        <span class="colophon-metadata-value">2026</span>
+      </li>
+      <li class="colophon-metadata-item">
+        <span class="colophon-metadata-label">Format:</span>
+        <span class="colophon-metadata-value">EPUB 3.0 (Digital Edition)</span>
+      </li>
+    </ul>
+    """
+
+    html = f"""<section class="colophon-page" epub:type="colophon">
+  <h1 class="colophon-title">Publication Metadata</h1>
+  
+  <p class="colophon-ornament">❧</p>
+  
+  <div class="colophon-section">
+    <h2 class="colophon-section-title">Edition Details</h2>
+    {metadata_list_html}
+  </div>
+
+  <div class="colophon-section">
+    <h2 class="colophon-section-title">Historical Source</h2>
+    <p>{historical_info}</p>
+    <p>{ages_info}</p>
+  </div>
+
+  <div class="colophon-section">
+    <h2 class="colophon-section-title">Typography &amp; Fonts</h2>
+    <p>This volume is styled with a premium collection of typography designed specifically for legibility and aesthetic excellence on narrow screens and e-ink displays. The following fonts are embedded or referenced within this package:</p>
+    {fonts_list_html}
+  </div>
+
+  <div class="colophon-section">
+    <h2 class="colophon-section-title">Conversion Technology</h2>
+    <p>{conversion_info}</p>
+  </div>
+</section>"""
+    return html
+
+
 def generate_structural_guide_html(vol_num: int) -> str:
     """Generate a premium, mobile-first Structural Guide page for the front matter."""
     return f'''<section class="front-matter-section structural-guide-page">
@@ -4164,12 +4272,28 @@ def render_volume(vol_num: int, overrides: dict = None,
     # ── PDF-extracted front matter (title pages, TOC) ────────────
     front_matter_epub_items = []
     _last_fm_title = None
+    copyright_added = False
     added_structural_guide = False
     for fm in intermediate.get('front_matter_items', []):
         if fm['title'] == _last_fm_title:
             continue
         _last_fm_title = fm['title']
         
+        if fm.get('type') == 'toc' and not copyright_added:
+            cop_title = 'Publication Metadata'
+            cop_fn = 'colophon.xhtml'
+            cop_html = generate_copyright_xhtml(vol_num, config, primary_font['name'])
+            cop_item = epub.EpubHtml(
+                title=cop_title, file_name=cop_fn, lang='en',
+            )
+            cop_item.set_content(
+                _make_xhtml(cop_title, cop_html).encode('utf-8')
+            )
+            cop_item.add_item(style_item)
+            book.add_item(cop_item)
+            front_matter_epub_items.append(cop_item)
+            copyright_added = True
+
         fm_item = epub.EpubHtml(
             title=fm['title'], file_name=fm['file_name'], lang='en',
         )
@@ -4215,6 +4339,21 @@ def render_volume(vol_num: int, overrides: dict = None,
         book.add_item(note_item)
         front_matter_epub_items.append(note_item)
         added_structural_guide = True
+
+    if not copyright_added:
+        cop_title = 'Publication Metadata'
+        cop_fn = 'colophon.xhtml'
+        cop_html = generate_copyright_xhtml(vol_num, config, primary_font['name'])
+        cop_item = epub.EpubHtml(
+            title=cop_title, file_name=cop_fn, lang='en',
+        )
+        cop_item.set_content(
+            _make_xhtml(cop_title, cop_html).encode('utf-8')
+        )
+        cop_item.add_item(style_item)
+        book.add_item(cop_item)
+        front_matter_epub_items.append(cop_item)
+        copyright_added = True
 
     # ── Chapters ─────────────────────────────────────────────────
     toc_entries = []
