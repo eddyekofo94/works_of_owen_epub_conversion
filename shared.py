@@ -92,7 +92,9 @@ VOLUME_CONFIG = {
             'Two Short Catechisms'
         ],
         'text_replacements': {
-            # Moved to volumes/v1/convert.py (Issue 26 cleanup)
+            # Issue 43: PDF page-break splits "Hebrews 9:24" → "Hebrews 9" / "24"
+            # which after reconstruction appears as "Hebrews 9 24".
+            'Hebrews 9 24': 'Hebrews 9:24',
         },
         'regex_replacements': {
             r'(\w+)]y\b': r'\1ly',
@@ -131,7 +133,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Adobe-garamond-pro-2',
+        'body_font': 'Cardo',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -148,11 +150,10 @@ VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'Brill_font',
         'publisher': 'Eduardus Ekofius',
-        'source_type': 'ccel_xml',
-        'ccel_file': 'special_sources/owen-v5-justification.xml',
+        'source_type': 'ages_pdf',
         'treatises': [
             'The Doctrine of Justification by Faith',
-            'Evidences of the Faith of God’s Elect'
+            "Evidences of the Faith of God's Elect"
         ]
     },
     6: {
@@ -192,8 +193,24 @@ VOLUME_CONFIG = {
         'body_font': 'Gentium-plus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'suppress_prefatory_note_heading': True,  # Bug #2: Apple Books shows nav title; body h2 is redundant
         'treatises': [
-            'Sermons to the Nation (Sermons before the Long Parliament, Oliver Cromwell, and the Commonwealth)'
+            'Sermon 1 — A Vision of Unchangeable, Free Mercy',
+            'Sermon 2 — A Memorial of the Deliverance of Essex County, and Committee',
+            'Sermon 3 — Righteous Zeal Encouraged by Divine Protection',
+            'Sermon 4 — The Steadfastness of the Promises',
+            'Sermon 5 — The Shaking and Translating of Heaven and Earth',
+            'Sermon 6 — The Branch of the Lord the Beauty of Zion',
+            'Sermon 7 — Advantage of the Kingdom of Christ',
+            'Sermon 8 — The Laboring Saint\'s Dismission to Rest',
+            'Sermon 9 — Christ\'s Kingdom and the Magistrate\'s Power',
+            'Sermon 10 — God\'s Work in Founding Zion',
+            'Sermon 11 — God\'s Presence With a People the Spring of Their Prosperity',
+            'Sermon 12 — The Glory and Interest of Nations Professing the Gospel',
+            'Sermon 13 — How We May Bring Our Hearts to Bear Reproofs',
+            'Sermon 14 — The Testimony of the Church Is Not the Only Nor Chief Reason of Our Faith',
+            'Sermon 15 — The Chamber of Imagery in the Church of Rome Laid Open',
+            'Sermon 16 — An Humble Testimony Unto the Goodness and Severity of God',
         ]
     },
     9: {
@@ -201,9 +218,10 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Libertinus',
+        'body_font': 'Cardo',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
+        'suppress_prefatory_note_heading': True,  # Bug #2
         'treatises': [
             'Posthumous Sermons (83 Pastoral Sermons)',
             'Discourses Resolving Practical Cases of Conscience',
@@ -339,6 +357,7 @@ def run_volume_cli(vol_num, overrides=None, description=None):
     """Shared CLI for volumes/vN/convert.py entrypoints."""
     import argparse
     from extract import extract_volume
+    from progress import SequentialMode, spinner_wrap_callback
     from render import render_volume
 
     parser = argparse.ArgumentParser(
@@ -357,9 +376,37 @@ def run_volume_cli(vol_num, overrides=None, description=None):
     if args.render_only and args.extract_only:
         parser.error('Cannot use both --extract-only and --render-only')
 
+    config = merge_volume_config(vol_num, overrides)
+    body_font = config.get('body_font', 'unknown')
+    internal_name = FONT_FAMILY_MAP.get(body_font, body_font)
+    treatises = config.get('treatises', [])
+    langs = config.get('secondary_languages')
+
+    print(cyan(f'═══ Volume {vol_num} — config ═══'))
+    print(f'  Title:      {config.get("title", "unknown")}')
+    print(f'  Font:       {body_font} → "{internal_name}"')
+    print(f'  Source:     {config.get("source_type", "unknown")}')
+    print(f'  Treatises  ({len(treatises)}):')
+    for i, t in enumerate(treatises, 1):
+        print(f'    {i}. {t}')
+    if langs:
+        print(f'  Languages:  {", ".join(langs)}')
+    print()
+
+    # Per-volume scripts get \r progress bar when stdout is a tty
+    _seq = SequentialMode()
+    def _progress(current, total, label):
+        _seq.update(current, total)
+        if current >= total:
+            _seq.done(final_message=f"\r\033[K{label} {current}/{total} ✓\n")
+
     if not args.render_only:
         print(cyan(f'=== Volume {vol_num}: Stage 1 — Extract ==='))
-        intermediate = extract_volume(vol_num, overrides=overrides)
+        _extract_cb, _extract_spin = spinner_wrap_callback(_progress)
+        _extract_spin.message = f'Extracting Volume {vol_num}'
+        _extract_spin.start()
+        intermediate = extract_volume(vol_num, overrides=overrides,
+                                      progress_callback=_extract_cb)
         
         # Issue: Blemish fixes often require post-processing the whole intermediate JSON
         # (e.g. merging chapters, structural re-tagging) before rendering.
@@ -375,7 +422,10 @@ def run_volume_cli(vol_num, overrides=None, description=None):
 
     if not args.extract_only:
         print(cyan(f'=== Volume {vol_num}: Stage 2 — Render ==='))
-        render_volume(vol_num, overrides=overrides)
+        _render_cb, _render_spin = spinner_wrap_callback(_progress)
+        _render_spin.message = f'Rendering Volume {vol_num}'
+        _render_spin.start()
+        render_volume(vol_num, overrides=overrides, progress_callback=_render_cb)
 
     print(green(f'=== Volume {vol_num}: Done ==='))
 
@@ -623,18 +673,32 @@ def clean_greek_text(text):
     """
     User-mandated Greek cleaning:
     1. Strip "j" artifact prepended to Greek characters (handling optional spaces).
-    2. Normalize to NFC.
+    2. Strip "[" artifact immediately preceding Greek Unicode characters (legacy
+       AGES rough-breathing prefix -- the PDF encodes rough breathing as "[" before
+       the vowel; extraction captures the Unicode Greek glyph correctly but leaves
+       "[" as a stray literal character outside the Greek span).
+    3. Strip "+" and "{" immediately preceding Greek Unicode characters.
+       In AGES Koine encoding "+" and "{" are rough-breathing / diacritic prefixes
+       that appear as stray literals outside the Unicode span (e.g. "+\u03a9 \u0392\u03ac\u03b8\u03bf\u03c2").
+       polytonic_sweep() strips them INSIDE spans; this guard catches them OUTSIDE,
+       before tag_unicode_ranges() wraps them.
+    4. Normalize to NFC.
     """
     if not text:
         return ""
     # 1. Strip the "j" artifact prepended to Greek characters.
-    # Handle both "jΕ" and "j Ε" patterns found in PDF extraction.
+    # Handle both "j\u0395" and "j \u0395" patterns found in PDF extraction.
     text = re.sub(r'\b[jJ]\s*([\u0370-\u03FF\u1F00-\u1FFF])', r'\1', text)
-    # 2. Normalize to NFC
+    # 2. Strip "[" immediately before a Greek Unicode character (Issue #17).
+    # The lookahead ensures we only strip "[" directly adjacent to Greek text,
+    # leaving list markers "[1.]", abbreviations "[LXX]", and space-padded
+    # semantic brackets "[ eleos ]" untouched.
+    text = re.sub(r'\[(?=[\u0370-\u03FF\u1F00-\u1FFF])', '', text)
+    # 3. Strip "+" and "{" immediately before Greek Unicode (Issue #4).
+    text = re.sub(r'[+{](?=[\u0370-\u03FF\u1F00-\u1FFF])', '', text)
+    # 4. Normalize to NFC
     text = unicodedata.normalize('NFC', text)
     return text
-
-
 def convert_greek_word(word):
     """Convert a Beta Code / AGES-Koine word to Unicode Greek.
 
@@ -943,7 +1007,7 @@ STRUCTURAL_START_RE = re.compile(
     r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.?)\s+|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?\s+|'  # 2ndly, 3rdly
-    r'(?:First|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Lastly|Again|But)\b[,.]?\s+'
+    r'(?:First|Firstly|Secondly|Thirdly|Fourthly|Fifthly|Sixthly|Seventhly|Eighthly|Ninthly|Lastly|Again|But)\b[,.]?\s+'
     r')'
 )
 INLINE_STRUCTURAL_MARKER_RE = re.compile(
@@ -1203,6 +1267,7 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     text = re.sub(r'\b([A-Za-z]{2,})]e\b', r'\1le', text)
     text = re.sub(r'(?<!\w)](?=earn|earning|earned|earnt|edge)', 'l', text, flags=re.I)
     text = re.sub(r'\bI\s+a\s+will\b', 'I will', text)
+    text = re.sub(r'\b(Objection|Ans|Q)\s+\.', r'\1.', text)
     # Issue 29a: Remove stray underscore characters that are not part of
     # markdown emphasis (i.e. not _word_ or __word__).  Isolated underscores
     # or underscores adjacent to spaces are OCR artifacts in the Owen corpus.
@@ -1232,6 +1297,107 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     # of a numbered sub-point.  Only fires when a word character immediately
     # precedes '(' — already-spaced markers are unaffected.
     text = re.sub(r'(\w)\((\d+\.)\)', r'\1 (\2)', text)
+
+    # Issue 42: OCR misreads the interjection letter 'O' as digit '0'.
+    # "0 sweet permutation!" → "O sweet permutation!"
+    # "0 Lord, how great thou art!" → "O Lord, how great thou art!"
+    # Two positions are safe to fix:
+    #   (a) at the very start of a line (paragraph-opening interjection)
+    #   (b) immediately after sentence-terminal punctuation + space
+    # Both require a letter to follow — preserving numeric "0 units" etc.
+    text = re.sub(r'(?m)^0 (?=[A-Za-z])', 'O ', text)
+    text = re.sub(r'(?<=[.!?] )0 (?=[A-Za-z])', 'O ', text)
+
+    # Issue 44: A trailing lone hyphen at end of a line or sentence fragment
+    # is an OCR artifact for an em-dash that was at line's end in the source.
+    # "For, -" → "For, —"  (comma + space + hyphen → comma + em-dash)
+    # Also handles: word-space-hyphen at end of line (no comma).
+    text = re.sub(r'(?m),\s*-\s*$', ', —', text)
+    text = re.sub(r'(?m)(?<=\w) -\s*$', ' —', text)
+    # Issue 44b: "For, - before the saints" — hyphen mid-sentence with a space
+    # after it.  ", -\s+letter" is always an OCR em-dash in Owen's usage.
+    # The end-of-line rules above cannot catch this variant.
+    text = re.sub(r',\s*-\s+(?=[A-Za-z])', ', — ', text)
+
+    # Issue 47a: Colon/punctuation (not word-char) + space + lone hyphen at EOL.
+    # “directions: -” → “directions: —“
+    # The existing Issue 44 rule uses (?<=\w) which misses ‘:’ (not \w).
+    text = re.sub(r'(?m)(?<=[!?:;]) -\s*$', ' —', text)
+    # Issue 47b: Paragraph opening with a lone hyphen before a quotation mark.
+    # ‘- “We could not...’ → ‘— “We could not...’
+    # OCR often renders an opening em-dash as a bare hyphen when it starts a line.
+    # Matches straight double-quote, curly open/close double-quotes (U+201C/201D).
+    text = re.sub(r'(?m)^-\s+(?=["“”])', '— ', text)
+
+    # Issue 48.a: Fused Roman-numeral list items — OCR omits paragraph breaks.
+    # “I. Honor.II. Obedience.III. Conformity.” →
+    # “I. Honor.\n\nII. Obedience.\n\nIII. Conformity.”
+    # Safe trigger: period preceded by lowercase letter AND followed DIRECTLY
+    # (no space) by a Roman-numeral token + period + space/tab.  The no-space
+    # requirement means lib. IV. (space before IV) never fires.
+    text = re.sub(r'(?<=[a-z])\.(?=[IVX]+\.[  \t])', '.\n\n', text)
+
+    # Sermon volumes sometimes split bracketed ordinal markers across markdown
+    # emphasis runs: "**[** _**3dly**_ **.]**". Normalize before rendering so
+    # the marker is counted and styled like ordinary "[3dly.]".
+    text = re.sub(
+        r'\*\*\[\*\*\s*_?\*\*(\d+(?:st|nd|rd|th|dly|ly))\*\*_?\s*\*\*\.\]\*\*',
+        r'**[\1.]**',
+        text,
+        flags=re.I,
+    )
+
+    # Issue 21: Spurious backslash OCR artifact before word-start.
+    # OCR occasionally renders a character defect as a backslash at the boundary
+    # between paragraphs or inline: "\which" → "which", "\the" → "the".
+    # Only strip when the backslash is NOT preceded by a word character (i.e. it
+    # is a lone artifact, not part of a recognised escape) AND is followed by a
+    # lowercase letter (uppercase would indicate a new sentence after a genuine
+    # punctuation mark, which we leave alone).
+    text = re.sub(r'(?<!\w)\\(?=[a-z])', '', text)
+
+    # Bare ALL-CAPS ordinal adverbs at paragraph/line start are OCR artefacts
+    # for bold or italic rendering of structural section markers in the original
+    # print.  Normalize to title-case so STRUCTURAL_PREFIX_HTML_RE bolds them
+    # and STRUCTURAL_START_RE assigns class="list-item" in render.py.
+    #
+    # Covers comma- and period-terminated forms across all volumes:
+    #   "SECONDLY, There is in this death…"  →  "Secondly, There is…"
+    #   "SEVENTHLY. He is the head…"         →  "Seventhly. He is…"
+    #
+    # Anchored to line/paragraph start (^, MULTILINE) — never fires mid-sentence.
+    # FIRST(?:LY)? handles the "FIRST," form (Owen's preferred bare ordinal for
+    # the first item); FIRSTLY is included for completeness.
+    text = re.sub(
+        r'^(FIRST(?:LY)?|SECONDLY|THIRDLY|FOURTHLY|FIFTHLY|SIXTHLY|'
+        r'SEVENTHLY|EIGHTHLY|NINTHLY|LASTLY)([,.])',
+        lambda m: m.group(1).capitalize() + m.group(2),
+        text,
+        flags=re.MULTILINE,
+    )
+
+    # OCR misreads "thy" as "try" in archaic/biblical phrases.
+    # "thy" and "try" differ only in glyph form for 'h'/'r'; both are real words,
+    # so we only fix in high-confidence biblical phrases attested across Owen's corpus.
+    text = re.sub(r'\bin whose hand try (breath|soul|life|spirit)\b',
+                  lambda m: f'in whose hand thy {m.group(1)}', text, flags=re.I)
+    text = re.sub(r'\bwhose are all try (ways|works|deeds|paths)\b',
+                  lambda m: f'whose are all thy {m.group(1)}', text, flags=re.I)
+
+    # Stray bold-opener OCR artifact: ", ** Word" — the PDF extractor occasionally
+    # emits a dangling "**" (Markdown bold-open with no closing marker) before a
+    # capitalised word following a comma or semicolon.  The "**" + surrounding space
+    # is invisible to the reader but leaves a stray token in the Markdown source
+    # that the renderer strips as a malformed bold marker, producing a double space.
+    # Strip the "** " to leave a clean single space after the punctuation.
+    # Example: "enemies, ** Luke 1:74;" → "enemies, Luke 1:74;"
+    text = re.sub(r'([,;])\s+\*\*\s+(?=[A-Z])', r'\1 ', text)
+
+    # OCR month abbreviation: "APRI" → "APRIL" (missing final letter in dates).
+    # Example: "COGGESHALL, APRI 25, 1648." — the trailing 'L' was not captured.
+    # Anchored to a day-number to avoid false positives.
+    text = re.sub(r'\bAPRI\b(?=\s+\d{1,2}[,.])', 'APRIL', text)
+
     if not config:
         return text
 
@@ -1519,6 +1685,10 @@ FONT_FAMILY_MAP = {
     'Libertinus':           'Libertinus Serif',
     'Minion_pro':           'Minion Pro',
     'sabon-next-lt':        'Sabon Next LT',
+    'Cormorant_Garamond':   'Cormorant Garamond',
+    'IM_Fell_English':     'IM Fell English',
+    'Libre_Caslon_Text':   'Libre Caslon Text',
+    'Playfair_Display':    'Playfair Display',
     # Heading-only fonts
     'Proxima_Nova':         'Proxima Nova',
     # Supplemental (not for body selection)
@@ -1800,18 +1970,72 @@ PROXIMA_NOVA_FILES = {
 # ============================================================================
 
 EPUB_STYLESHEET = r"""
+/*<![CDATA[*/
 /* Eduardus Ekofius style — mobile-first, vintage serif */
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.0em;       /* Respect user's Apple Books font-size setting */
-    line-height: 1.7;       /* Slightly generous — easier to track lines on a small screen */
-    color: #111;            /* Near-black, easier on OLED than pure #000 */
-    margin: 0.4em 0.5em;    /* Minimal — Apple Books already adds generous reading margins */
+    -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;   /* CSS3 standard */
+    word-break: break-word;      /* Legacy WebKit fallback */
+    line-height: 1.65;
+    margin: 0.4em 0.5em !important;
+    color: #111;
+}
+
+body, div, p, span, h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", serif;
+    /* No !important — lets Apple Books honour the reader's chosen font */
+}
+
+p {
     -webkit-hyphens: auto;
     hyphens: auto;
-    -webkit-text-size-adjust: 100%;  /* Prevent iOS font inflation */
-    word-break: break-word;          /* Guard against long Greek/Hebrew spills */
+}
+
+[lang="el"], [lang="el"] * {
+    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
+    font-size: 1.15em;
+}
+
+[lang="he"], [lang="he"] * {
+    direction: rtl;
+    unicode-bidi: isolate;
+    font-family: "SBL Hebrew", "Ezra SIL", "SBL BibLit", "Cardo", serif !important;
+    font-size: 1.5em;
+    line-height: 1.24;
+}
+
+[lang="he"], [lang="he"] p, [lang="he"], [lang="he"] div {
+    text-align: left;
+}
+
+/* Interactive Owen Blue Palette (#2a55a0) */
+a, .noteref, a.footnote-ref, a.fn-link {
+    color: #2a55a0 !important;
+    text-decoration: none;
+}
+
+.noteref {
+    vertical-align: super;
+    font-size: 0.75em;   /* em-relative — consistent with body scale; was 0.85rem (root-relative, inconsistent) */
+    padding: 0.1em 0.2em; /* Easy-tap */
+}
+
+/* Continuous Blockquotes */
+blockquote p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: inline; /* Keep multiple <p> flowing as one prose block */
+}
+
+blockquote {
+    display: block;
+    border-left: 2.5px solid rgba(0, 0, 0, 0.08) !important;
+    padding-left: 1.2em !important;
+    margin: 1.2em 0 !important;
+    font-size: 0.95em;
+    text-align: left;
+    line-height: 1.47;
 }
 
 .cover {
@@ -1957,130 +2181,213 @@ body {
     justify-content: center;
     max-width: 34em;
 }
+.volume-title-page .title-divider-double {
+    border-top: 1.5px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+    height: 3px;
+    width: 60%;
+    margin: 1.6em auto 1.4em;
+}
+.volume-title-page .title-meta-divider {
+    border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+    width: 40%;
+    margin: 2em auto 1.5em;
+}
 .volume-title-page .title-work-top {
     text-align: center;
     text-indent: 0;
-    margin: 0 0 0.15em;
-    font-size: 1.12em;
+    margin: 0 0 0.4em;
+    font-size: 0.85em;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.22em;
+    opacity: 0.75;
 }
 .volume-title-page .title-author-main {
     text-align: center;
     text-indent: 0;
-    margin: 0 0 0.5em;
-    font-size: 2.1em;        /* Was 2.55em — "JOHN OWEN" would overflow on narrow screens */
+    margin: 0 auto 0.6em;
+    font-size: 2.3em;
     line-height: 1.1;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
+    font-weight: bold;
     border: 0;
     padding: 0;
+    color: #111;
 }
 .volume-title-page .title-volume-number {
     text-align: center;
     text-indent: 0;
-    margin: 1.4em 0 0.35em;
-    font-size: 0.95em;
+    margin: 1.2em 0 0.35em;
+    font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 0.18em;
 }
 .volume-title-page .title-volume-subtitle {
     text-align: center;
     text-indent: 0;
-    margin: 0;
-    font-size: 1.18em;
+    margin: 0.3em 0;
+    font-size: 1.2em;
     font-style: italic;
+    color: #333;
+    line-height: 1.35;
+}
+.volume-title-page .editor {
+    font-size: 0.88em;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.8em;
+    text-align: center !important;
+    text-indent: 0 !important;
+}
+.volume-title-page .publisher-brand {
+    font-variant: small-caps;
+    letter-spacing: 0.16em;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #111;
+    margin: 0.4em auto 0.1em;
+    text-align: center !important;
+    text-indent: 0 !important;
+}
+.volume-title-page .publisher-loc {
+    font-size: 0.76em;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #666;
+    margin: 0.1em auto;
+    text-align: center !important;
+    text-indent: 0 !important;
+}
+.volume-title-page .edition-year {
+    font-size: 0.82em;
+    letter-spacing: 0.18em;
+    color: #444;
+    margin-top: 0.4em;
+    text-align: center !important;
+    text-indent: 0 !important;
 }
 
+
 h1 {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
-    font-size: 1.35em;      /* Reduced slightly — large headings eat screen on phones */
-    font-weight: bold;
-    letter-spacing: 0.02em;
-    margin: 1.5em 0 0.5em;  /* Less top breathing room on small screens */
+    font-size: 1.55em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    margin: 2.2em 0 1.2em;
     page-break-before: always;
     -webkit-column-break-before: always;
-    line-height: 1.25;      /* Tight multi-line headings look better on mobile */
+    color: #111;
 }
 
 h1.primary {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     text-align: center;
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.25em;
+    border-bottom: 2px double rgba(42, 85, 160, 0.22); /* Owen Blue double brand border */
+    padding-bottom: 0.45em;
+    margin-bottom: 1.5em;
 }
 
 h2 {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
-    font-size: 1.18em;      /* Slightly larger than before for clearer chapter hierarchy */
+    font-size: 1.3em;
     font-weight: bold;
-    margin: 1.3em 0 0.4em;
+    margin: 1.6em 0 0.6em;
     line-height: 1.3;
+    color: #111;
 }
 
+/* Elegant chapter number label (e.g. "CHAPTER I") */
 h2.secondary, h3.secondary, h1.secondary {
-    font-size: 1.15em;
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em; /* Generous letter spacing */
     text-align: center;
-    margin: 1.3em 0 0.4em;
+    margin: 2.4em 0 0.4em !important;
     line-height: 1.3;
     border: none;
     padding: 0;
+    color: #b08d2d; /* Elegant Muted Gold */
 }
 
 h3 {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
-    font-size: 1.08em;
+    font-size: 1.12em;
     font-weight: bold;
-    margin: 1.1em 0 0.35em;
+    margin: 1.4em 0 0.5em;
     line-height: 1.3;
+    color: #222;
 }
 
-/* Chapter sub-heading — sits between chapter number and synopsis */
+/* Chapter sub-topic heading within summaries */
 h3.chapter-heading {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
-    font-size: 0.98em;
+    font-size: 0.95em;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     line-height: 1.35;
-    margin: 0.5em 4% 0.4em;  /* Was 8% — on mobile that's 26px per side, too tight */
+    margin: 1.4em 6% 0.6em !important;
     text-indent: 0;
+    color: #222;
 }
 
-p.chapter-summary {
-    font-style: italic;
-    font-size: 0.94em;
-    text-align: center;
-    margin: 0.9em 6% 1.6em;  /* Was 12%/2.2em — both too aggressive on narrow screens */
-    text-indent: 0;
-    line-height: 1.55;       /* Was 1.45 — italic text needs more room on small screens */
-}
-
+/* Chapter title subtitle */
 h4.chapter-subtitle {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
-    font-size: 1.02em;
+    font-size: 1.3em;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 0.02em;
     line-height: 1.3;
-    margin: 0.35em 0 0.8em;
+    margin: 0.4em 6% 1.2em !important;
     text-indent: 0;
+    color: #111;
+}
+
+/* Editorial synopsis/summary block */
+p.chapter-summary {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 0.92em;
+    text-align: center;
+    margin: 1.4em 10% 2.2em !important;
+    text-indent: 0;
+    line-height: 1.6;
+    color: #444;
+    border-top: 1.5px solid rgba(42, 85, 160, 0.12); /* Owen Blue top hairline */
+    border-bottom: 1.5px solid rgba(42, 85, 160, 0.12); /* Owen Blue bottom hairline */
+    padding: 0.85em 0.5em !important;
 }
 
 .digression-heading {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
     font-size: 1.25em;
     color: #111;
-    margin: 1.6em 0 0.5em;
+    margin: 1.8em 0 0.6em;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     page-break-before: always;
 }
 
 .roman-subheading {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: left;
-    font-weight: normal;
+    font-weight: normal; /* Preserves Goold look (bold numerals with normal-weight text) */
     text-indent: 0;
-    margin: 0.9em 0 0.55em;  /* Tighter vertical rhythm on small screens */
+    margin: 1.4em 0 0.55em;
+    color: #111;
     break-after: avoid;
     page-break-after: avoid;
     break-inside: avoid;
@@ -2099,9 +2406,56 @@ h4.chapter-subtitle {
     margin: 0.45em 0;        /* Was 0.55em */
 }
 
+.list-item.list-level-1,
+.roman-list-item.list-level-1,
+.list-item.list-level-2,
+.list-item.list-level-3,
+.roman-list-item.list-level-2,
+.roman-list-item.list-level-3 {
+    margin-left: 0 !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+}
+
+/* --- Visual Nesting Containers --- */
+div.owen-branch {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    -webkit-column-break-inside: auto !important;
+}
+div.owen-level-1 {
+    margin-left: 0;
+}
+div.owen-level-2 {
+    margin-left: 0.75em !important;
+    border-left: 1.5px solid rgba(42, 85, 160, 0.12) !important;
+    padding-left: 0.6em !important;
+}
+div.owen-level-3 {
+    margin-left: 0.75em !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+}
+
+/* Nested blockquotes alignment */
+div.owen-branch blockquote {
+    margin-left: 0.8em !important;
+    border-left: 1.5px solid rgba(0, 0, 0, 0.06) !important;
+    padding-left: 0.8em !important;
+}
+
 .roman-list-item b {
     display: inline;
     margin-bottom: 0;
+}
+
+/* Flat-syllabus anchor: a paragraph that has absorbed an inline enumeration.
+   The absorbed markers are bold inline text; no extra indent is needed.
+   This class exists primarily for future CSS targeting and reader tools. */
+.syllabus-anchor {
+    /* No override needed — inherits body paragraph spacing */
 }
 
 .analysis-part {
@@ -2116,36 +2470,44 @@ h4.chapter-subtitle {
    title-adjacent pages (e.g. "PREFACE" as a standalone centered line
    in blurb style). */
 .front-matter-title {
-    font-size: 1.35em;
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
+    font-size: 1.3em;
     text-align: center;
-    margin: 2em 0 1em;
+    margin: 2.2em 0 1.2em;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #111;
 }
 
 /* Section heading for prose-heavy front matter (General Preface,
    Prefatory Notes, Prefaces, Analyses). h2-level, uppercase, centered — same visual weight as front-matter-title
    but semantically a heading element. */
 .front-matter-heading {
-    font-size: 1.45em;
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
+    font-size: 1.4em;
     text-align: center;
-    margin: 2em auto 1.35em;
+    margin: 2.4em auto 1.4em;
     font-weight: bold;
     text-transform: uppercase;
     text-indent: 0;
-    max-width: 18em;
-    padding-bottom: 0.45em;
-    border-bottom: 1px solid #777;
+    max-width: 22em;
+    letter-spacing: 0.08em;
+    padding-bottom: 0.5em;
+    border-bottom: 1.5px solid rgba(42, 85, 160, 0.22); /* Beautiful Owen Blue bottom divider */
+    color: #111;
 }
 
 /* Decorative blurb body — for 2-5 line centered ornamental paragraphs
    on title-adjacent pages (author name, dedications, publisher info). */
 .front-matter-body {
+    font-family: Georgia, "Times New Roman", serif;
     text-align: center;
     font-style: italic;
-    margin: 1em 5%;         /* Was 10% — too tight on phone */
+    margin: 1.4em 8% !important;
     line-height: 1.6;
     text-indent: 0;
+    color: #444;
 }
 
 /* Running prose body — for editorial prefaces, prefatory notes,
@@ -2167,7 +2529,7 @@ h4.chapter-subtitle {
 
 /* Body Flow */
 p {
-    text-indent: 1.1em;     /* Was 1.5em — on ~330px columns a 24px indent is too deep */
+    text-indent: 1.1em;
     margin: 0;
     text-align: justify;
     orphans: 2;
@@ -2178,20 +2540,49 @@ p.first, p.noindent {
     text-indent: 0;
 }
 
-blockquote {
-    display: block;
-    margin: 0.9em 1.2em;    /* Was 2.5em per side — that consumed 80px on a 330px column */
-    padding: 0.1em 0.6em;   /* Subtle interior padding instead of huge outer margin */
-    border-left: 2px solid #bbb;  /* Gentle visual cue replacing the massive indent */
-    font-size: 0.95em;
-    text-align: left;       /* Justified short-line blocks look ragged on mobile */
-    line-height: 1.55;      /* Was 1.10 — the tightest setting was unreadable on phone */
+/* Scripture reference used as a standalone introduction to a displayed
+   quotation, e.g. "1 Corinthians 10:9," on its own line before the blockquote.
+   No indent — it reads as the lead-in citation for the following block. */
+p.scripture-ref-introduction {
+    margin-bottom: 0.1em;
+    font-size: 0.92em;
+    color: inherit;
+    text-indent: 0;
 }
 
-blockquote p {
-    display: inline;        /* Keep multiple <p> flowing as one prose block */
-    margin: 0;
+/* Proof-text hierarchy: a blockquote immediately following a list-item should
+   appear visually subordinate to it, not jut left at body margin.
+
+   Without this rule, a list-item's text starts at ~2.1em (margin 1.25em +
+   border 2px + padding 0.7em) while the default blockquote sits at only 1.2em —
+   so the proof-text quote sticks out to the LEFT of the item it proves.
+
+   The selectors mirror the three list levels. list-level-1 items have no
+   left margin so 1.5em is enough; level-2 and level-3 need proportionally
+   more to clear the item's own indent. */
+p.list-item.list-level-1 + blockquote {
+    margin-left: 1.5em;
+    border-left-color: rgba(0, 0, 0, 0.12);
+}
+p.list-item.list-level-2 + blockquote {
+    margin-left: 2.7em;
+    border-left-color: rgba(0, 0, 0, 0.10);
+}
+p.list-item.list-level-3 + blockquote {
+    margin-left: 3.5em;
+    border-left-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Sermon opening scripture verse — the text the sermon expounds.
+   Centred, italic, no side border; distinct from inline doctrinal quotations. */
+blockquote.sermon-opening-scripture {
+    border-left: none;
+    text-align: center;
+    font-style: italic;
+    font-size: 1em;
+    margin: 1.4em 1.5em 1.8em;
     padding: 0;
+    line-height: 1.55;
 }
 
 /* Frontispiece / Portrait */
@@ -2218,15 +2609,6 @@ blockquote p {
     text-indent: 0 !important;
 }
 
-.greek {
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
-}
-
-.hebrew {
-    font-family: Georgia, "Times New Roman", serif;
-}
-
 .small-caps {
     font-variant: small-caps;
 }
@@ -2242,20 +2624,6 @@ sup {
     text-indent: 0;
     margin: 0.4em 0;        /* Slightly more space between footnotes on mobile */
     line-height: 1.55;
-}
-
-a.footnote-ref {
-    text-decoration: none;
-    color: #2a55a0;          /* Softer blue — pure #0000EE is harsh on OLED/night mode */
-    vertical-align: super;
-    font-size: 1em;
-}
-
-a.fn-link {
-    color: #2a55a0;
-    text-decoration: none;
-    font-size: 0.88em;
-    margin-right: 0.3em;
 }
 
 /* Proper TOC Alignment */
@@ -2274,19 +2642,6 @@ a.fn-link {
     margin-left: 1em;
     text-align: right;
     white-space: nowrap;
-}
-
-/* EPUB3 footnote styles */
-.noteref {
-    color: #2a55a0;          /* Matches a.footnote-ref */
-    text-decoration: none;
-    vertical-align: super;
-    font-size: 0.72em;
-    display: inline-block;
-    line-height: 1;
-    margin-left: 0.18em;
-    padding-right: 0.2em;
-    text-indent: 0;
 }
 
 /* Consecutive noterefs: keep them visually separated */
@@ -2402,8 +2757,6 @@ p.signature {
     font-size: 0.96em;
     margin: 0.85em auto;
     max-width: 34em;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
     line-height: 1.35;
 }
 .treatise-title-page .quote-block {
@@ -2449,83 +2802,162 @@ aside[epub\:type~="endnote"] {
 
 /* Contents page */
 .contents-page {
-    max-width: 42em;
+    max-width: 38em;
     margin: 0 auto;
-    padding: 4% 2%;
+    padding: 1.5em 1em 2.5em;
+    box-sizing: border-box;
 }
 .contents-volume-title {
     text-align: center;
     text-indent: 0;
-    font-size: 1.45em;
-    margin: 0 0 1.4em;
+    font-family: "Owen Title", "Baskervville", "Baskerville", serif !important;
+    font-size: 1.55em;
+    margin: 1.5em 0 1.8em;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    color: #111;
+    font-weight: bold;
     border: 0;
-    padding: 0 0 0.5em;
-    border-bottom: 1px solid #777;
+    padding: 0 0 0.6em;
+    border-bottom: 1.5px double rgba(42, 85, 160, 0.25); /* Double border in Owen Blue */
 }
 .contents-treatise-title {
     text-align: center;
     text-indent: 0;
-    font-size: 1.02em;
-    line-height: 1.35;
-    margin: 1.8em auto 0.45em;
-    max-width: 30em;
+    font-family: "Owen Title", "Baskervville", "Baskerville", serif !important;
+    font-size: 1.15em;
+    line-height: 1.45;
+    margin: 2.5em 0 1.2em;
+    padding: 0.75em 5%;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+    color: #2a55a0; /* Owen Blue */
+    font-weight: bold;
+    border-top: 1.5px solid rgba(42, 85, 160, 0.15);
+    border-bottom: 1.5px solid rgba(42, 85, 160, 0.15);
 }
 .contents-section-title {
     text-align: center;
     text-indent: 0;
-    font-size: 0.95em;
-    line-height: 1.35;
-    margin: 1.1em auto 0.4em;
-    max-width: 30em;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 1em auto 0.5em;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    color: #555;
+    font-weight: bold;
 }
 .contents-frontmatter-line {
     text-align: center;
     text-indent: 0;
-    margin: 0.4em auto 0.85em;
-    font-size: 0.86em;
+    margin: 0.8em auto 1.4em;
+    font-size: 0.82em;
+    line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    color: #555;
 }
 .contents-part-title {
     text-align: left;
     text-indent: 0;
-    font-size: 1.18em;
-    line-height: 1.25;
-    font-weight: 700;
-    margin: 1.65em 0 0.7em;
-    padding-bottom: 0.18em;
-    border-bottom: 1px solid #777;
+    font-size: 1.1em;
+    line-height: 1.3;
+    font-weight: bold;
+    margin: 1.8em 0 0.8em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     letter-spacing: 0.02em;
+    color: #111;
 }
 .contents-item,
 .ContentsItem {
-    margin: 0.8em 0 0.2em;
-    padding-left: 6.5em;
-    text-indent: -6.5em;
+    margin: 1.2em 0;
+    padding: 0;
+    text-indent: 0 !important;
     text-align: left;
-    color: #000;
+    color: #111;
     font-size: 0.95em;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 .contents-label {
-    font-weight: 700;
-    white-space: nowrap;
+    display: block;
+    font-family: "Proxima Nova", "Owen Title", "Baskervville", sans-serif !important;
+    font-size: 0.72rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #2a55a0; /* Accent color */
+    margin-bottom: 0.2em;
 }
 
-.contents-desc-wrap,
-.ContentsDescWrap {
-    margin: 0 0 0.2em 6.5em;
-    text-indent: 0;
-    text-align: left;
-    font-size: 0.95em;
-    display: block;
+/* Colophon/Copyright Page Styling */
+.colophon-page {
+    font-family: Georgia, "Times New Roman", serif;
+    padding: 10% 8% 8%;
+    max-width: 32em;
+    margin: 0 auto;
+    page-break-before: always;
+    -webkit-column-break-before: always;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #333;
 }
+.colophon-title {
+    font-family: "Baskervville", "Baskerville", "Hoefler Text", "Garamond", serif;
+    font-variant: small-caps;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2em;
+    color: #111;
+    letter-spacing: 0.05em;
+}
+.colophon-section {
+    margin-bottom: 1.8em;
+}
+.colophon-section-title {
+    font-family: "Baskervville", "Baskerville", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    color: #2a55a0;
+    margin-bottom: 0.4em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 0.2em;
+}
+.colophon-section p {
+    text-indent: 0 !important;
+    text-align: left !important;
+    margin: 0 0 0.5em 0 !important;
+    font-size: 0.95em;
+}
+.colophon-metadata-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.colophon-metadata-item {
+    margin-bottom: 0.4em;
+    text-align: left;
+}
+.colophon-metadata-label {
+    font-weight: bold;
+    color: #555;
+    display: inline-block;
+    width: 8.5em;
+}
+.colophon-metadata-value {
+    color: #111;
+}
+.colophon-ornament {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 2em auto;
+    color: #b08d2d;
+}
+/*]]>*/
 """
 
 

@@ -2988,17 +2988,25 @@ def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str
 <p class="ornament">❧</p>
 <p class="title-work-top">The Works of</p>
 <h1 class="title-author-main">John Owen</h1>
+<div class="title-divider-double" aria-hidden="true"></div>
 <p class="title-volume-number">Volume {vol_num}</p>
 {subtitle_html}
-<div class="title-meta"><p class="editor">Edited by {editor}</p><p class="publisher">{publisher}</p><p class="edition-year">2026</p></div>
+<div class="title-meta-divider" aria-hidden="true"></div>
+<div class="title-meta">
+<p class="editor">Edited by {editor}</p>
+<p class="publisher-brand">{publisher}</p>
+<p class="publisher-loc">Parentis-en-Born</p>
+<p class="edition-year">MMXXVI</p>
+</div>
 </section>'''
     meta_bits = []
     if 'Edited by' not in html and 'EDITED BY' not in html:
         meta_bits.append(f'<p class="editor">Edited by {editor}</p>')
     if publisher not in html:
-        meta_bits.append(f'<p class="publisher">{publisher}</p>')
-    if '2026' not in html:
-        meta_bits.append('<p class="edition-year">2026</p>')
+        meta_bits.append(f'<p class="publisher-brand">{publisher}</p>')
+        meta_bits.append('<p class="publisher-loc">Parentis-en-Born</p>')
+    if '2026' not in html and 'MMXXVI' not in html:
+        meta_bits.append('<p class="edition-year">MMXXVI</p>')
     if not meta_bits:
         return html
     meta = '<div class="title-meta">' + ''.join(meta_bits) + '</div>'
@@ -3589,20 +3597,28 @@ def detect_page_type(page, page_num=None):
 
 
 def is_toc_continuation_page(page, page_num=None):
-    """Detect sparse continuation pages after a visual CONTENTS page."""
-    if page_num is not None and page_num > 8:
-        return False
+    """Detect continuation pages after a visual CONTENTS page.
+
+    No hardcoded page-number cutoff — the caller (extract.py) stops the scan
+    at the first known chapter page, which is the authoritative bound.
+    Two complementary signals:
+      1. Structural labels: CHAPTER N, PART N, numbered/Roman list items.
+      2. Em-dash density: analytical TOC styles use em-dashes as topic
+         separators (40–70 per page); body prose rarely exceeds ~5.
+    """
     text = page.get_text()
     clean = re.sub(r'\s+', ' ', text).strip()
     if not clean:
         return False
     upper = clean.upper()
+    # A page opening with a named section header is body content, not TOC
     if re.match(r'^\d*\s*(?:GENERAL PREFACE|PREFACE|PREFATORY NOTE|TO THE READER)\b', upper):
         return False
     chapter_hits = len(re.findall(r'\bCHAPTER\s+\d+', upper))
     part_hits = len(re.findall(r'\bPART\s+\d+', upper))
     numbered_hits = len(re.findall(r'(?:^|\s)(?:[IVXLCDM]+\.|\d+\.)\s+[—A-Z]', clean, re.I))
-    return (chapter_hits + part_hits + numbered_hits) >= 1
+    em_dash_hits = text.count('—')
+    return (chapter_hits + part_hits + numbered_hits) >= 1 or em_dash_hits >= 5
 
 
 def format_treatise_title_page(page, limit_to_title=False):
@@ -4158,6 +4174,8 @@ def render_volume(vol_num: int, overrides: dict = None,
             title=fm['title'], file_name=fm['file_name'], lang='en',
         )
         fm_html = fm['html']
+        if fm_html is None:
+            continue
         if fm.get('type') == 'title_page':
             fm_html = _polish_volume_title_page_html(fm_html, vol_num, config)
         elif fm.get('type') == 'treatise_title_page':
@@ -4341,6 +4359,9 @@ def render_volume(vol_num: int, overrides: dict = None,
         _nav_seen_titles.add('Cover')
     for _fm in intermediate.get('front_matter_items', []):
         _fm_title = _fm.get('title', '')
+        _fm_html = _fm.get('html')
+        if _fm_html is None:
+            continue
         if _fm_title and _fm_title not in _nav_seen_titles:
             _nav_prefix.append((1, _fm_title, _fm['file_name']))
             _nav_seen_titles.add(_fm_title)
