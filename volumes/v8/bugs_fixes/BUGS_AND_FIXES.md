@@ -101,3 +101,115 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+
+---
+
+
+
+
+
+<!-- TEXT_INTEGRITY_START -->
+## Automated Textual Integrity Audit
+
+**Last run:** 2026-05-29T11:53:18.509441+00:00
+**Status:** WARN (10 warnings)
+
+Reports:
+- `volume_8_text_integrity.json`
+- `volume_8_text_integrity.md`
+
+| Check | Result |
+|-------|--------|
+| PDF pages | 774 |
+| EPUB text files | 71 |
+| EPUB paragraphs/headings | 3243 |
+| Approximate PDF-to-EPUB word coverage | 0.9965 |
+| Weak page matches | 9 |
+| Dense source windows checked | 913 |
+| Missing dense source-window pages | 753 |
+| Front CONTENTS pages checked | 2 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 739 |
+| Top-of-page windows skipped as unstable | 22 |
+| Missing top-of-page body windows | 10 |
+| Bottom-of-page body windows checked | 712 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 6 |
+| Possible faulty paragraph splits | 125 |
+| Structural starts excluded from split warnings | 216 |
+| Short fragments | 32 |
+| Adjacent duplicate paragraphs | 0 |
+| Inline structural marker candidates | 5 |
+| Reference continuation splits | 0 |
+| Citation continuation splits | 0 |
+| Suspicious large-number starts | 2 |
+| Roman heading candidates | 18 |
+| Overlong heading candidates | 28 |
+| Front-matter heading/body candidates | 0 |
+| Repeated word windows | 25 |
+| PDF enumerator markers | 770 |
+| EPUB enumerator markers | 776 |
+| Missing enumerator marker forms | 0 |
+| Enumerator sequence candidates | 0 |
+| PDF Greek words / EPUB Greek words | 303 / 303 |
+| Greek word coverage ratio | 1.0 |
+| PDF Hebrew words / EPUB Hebrew words | 54 / 54 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+**Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
+<!-- TEXT_INTEGRITY_END -->
+
+---
+
+
+
+
+
+<!-- AUTO_AUDIT_START -->
+## Automated EPUB Audit
+
+**Last run:** 2026-05-29T11:52:45.429733+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub`
+**Status:** WARN (0 errors, 1 warnings)
+
+Reports:
+- `volume_8_audit.json`
+- `volume_8_audit.md`
+
+| Check | Result |
+|-------|--------|
+| OPF version | 3.0 |
+| XHTML files | 73 |
+| Spine items | 71 |
+| Embedded fonts | 11 |
+| NAV links | 74 |
+| Greek chars / untagged | 1667 / 0 |
+| Hebrew chars / untagged | 344 / 0 |
+| Noteref links / endnote anchors | 211 / 214 |
+| AGES boilerplate hits | 0 |
+| Possible Beta Code files | 0 |
+| Escaped language-tag files | 0 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 0 |
+
+Warnings requiring triage:
+
+- `orphan_endnotes`: Some endnote anchors have no matching noteref
+
+**Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
+<!-- AUTO_AUDIT_END -->

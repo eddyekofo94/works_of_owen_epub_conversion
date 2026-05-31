@@ -1,0 +1,583 @@
+{
+  "volume": 12,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 276,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "The Holy Ghost tells us that we are",
+          "next": "And thus do all they become the house of Christ \"who hold fast the confidence and the rejoicing of the hope firm unto the end,\" Hebrews 3:6. In this house of God there are daily bu"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "house of God there are daily builders, according as new living stones are to be fitted to their places therein; and continual oppositions have there been made thereto, and will be,",
+          "next": "In this work of building are some employed by Jesus Christ, and will be so to the end of the world, Matthew 28:19, 20, Ephesians 4:11, 12; and some employ themselves at least in a "
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "and not be believed. See Calvin's epistles, about the year 1561. But the man on this occasion being sent to the meeting at Pinckzow (as Statorius), he subscribes this confession: —",
+          "next": "This did the wretched man think meet to do, that he might preserve the good esteem of his patron and reserve himself for a fitter opportunity of doing mischief; which also he did, "
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " of Grotius, time will evidence. Now, because this man's creed is such as is not to be paralleled, perhaps some may be contented to take it in his own words, which are as follow: —",
+          "next": "To this issue did Satan drive the Socinian principles in this man and sundry others, even to a full and peremptory denial of the Lord that bought them. In answering this man, it fe"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "is day the Papists continue in the same idolatry (to touch that by the way), I shall give you, for your refreshment, a copy of a verse or two, whose poetry does much outgo the old,",
+          "next": "The other is of Franciscus de Mendoza, in Viridario Utriusque Eruditionis, lib. 2 prob. 2, as ensueth: —"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "The other is of Franciscus de Mendoza, in Viridario Utriusque Eruditionis, lib. 2 prob. 2, as ensueth: —",
+          "next": "And this their idolatry is objected to them by Soeinus, 94 who marvels at the impudence of Bellarmine closing his books of controversies (as is the manner of the men of that Societ"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": " are not owned by the Scripture, so neither the things contained in them. How excellent, therefore, was that advice of Paul to Timothy in his second epistle to him, 2 Timothy 1:13,",
+          "next": "JOHN BIDDLE."
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "y of God's essence or being is manifest from his absolute independence and firstness in being and operation, which God often insists upon in the revelation of himself: Isaiah 44:6,",
+          "next": "Secondly, God is absolutely and perfectly one and the same, and nothing differs from his essence in it: \"The LORD our God is one LORD,\" Deuteronomy 6:4; \"Thou art the same,\" Psalm "
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "with his master, who will not allow any such thing to be asserted in these words of our Savior. His words are (Fragment. Disput. de Adorat. Christi cure Christiano Franken, p. 60),",
+          "next": "Vorstius also follows him, Not. ad Disput. 3, p. 200. Because the verb substantive \"is\" is not in the original expressed (than the omission whereof nothing being more frequent, tho"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "n which way thou wilt, thou shalt see God meeting thee. Nothing is empty of him: he fills his own work.\" 138 \"All things are full of God,\" says the poet; 139 and another of them: —",
+          "next": "Of this presence of God, I say, with and unto all things, of the infinity of his essence, the very heathens themselves, by the light of nature (which Mr B. herein opposes), had a k"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 3,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch040.xhtml",
+          "text": "Now, both these were lost at once. The heavens were darkened when it might be expected, in an ordinary course, that the sun should have shone in its full beauty, Matthew 27:45, Luke 23:44, 45; and the earth lost its stability, and shook or trembled, and the ro"
+        },
+        {
+          "file": "EPUB/ch040.xhtml",
+          "text": "He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —"
+        },
+        {
+          "file": "EPUB/ch047.xhtml",
+          "text": "These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our sanctification also is called our righte"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "made of the seed of david according to the flesh",
+          "count": 5
+        },
+        {
+          "phrase": "that they which commit sin are worthy of death romans",
+          "count": 5
+        },
+        {
+          "phrase": "they which commit sin are worthy of death romans 32",
+          "count": 5
+        },
+        {
+          "phrase": "the lord hath laid on him the iniquity of us",
+          "count": 5
+        },
+        {
+          "phrase": "lord hath laid on him the iniquity of us all",
+          "count": 5
+        },
+        {
+          "phrase": "known unto god are all his works from the beginning",
+          "count": 4
+        },
+        {
+          "phrase": "unto god are all his works from the beginning of",
+          "count": 4
+        },
+        {
+          "phrase": "god are all his works from the beginning of the",
+          "count": 4
+        },
+        {
+          "phrase": "are all his works from the beginning of the world",
+          "count": 4
+        },
+        {
+          "phrase": "the son of god is come and hath given us",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 3,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "marker": "(1.)",
+          "pdf": 110,
+          "epub": 107,
+          "examples": [
+            {
+              "location": "pdf:p51",
+              "context": "them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could not agree; so that all parties looked on him as their own, and were read"
+            },
+            {
+              "location": "pdf:p87",
+              "context": "t as to Mr B.'s faithfulness in their production, I have sundry exceptions to make; as, — (1.) That by his leading questions, and application of the Scripture to them, he hath utterly perverted the scope and intendment of the places urged. Whereas he pretends not to assert"
+            },
+            {
+              "location": "pdf:p133",
+              "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
+            }
+          ]
+        },
+        {
+          "marker": "(3.)",
+          "pdf": 54,
+          "epub": 53,
+          "examples": [
+            {
+              "location": "pdf:p87",
+              "context": "he several particulars as they shall occur in the method wherein by him they are handled. (3.) What can be concluded of the mind of God in the Scripture, by cutting off any place or places of it from their dependence, connection, and tendency, catching at those words which"
+            },
+            {
+              "location": "pdf:p133",
+              "context": "ifference there is, but how great or little that difference is, as yet we are not taught. (3.) I desire to know of Mr B. what the throne is made of that God sits on in the heavens, and how far the glistering of his glory doth extend, and whether that glistering of glory dot"
+            },
+            {
+              "location": "pdf:p176",
+              "context": "he could not do unless he knew them, and that they would be, then when he foretold them. (3.) That he proves himself to be God by these his predictions. (4.) That he foretells them as the means of executing many of his judgments which he hath purposed and threatened, and t"
+            }
+          ]
+        },
+        {
+          "marker": "[4.]",
+          "pdf": 7,
+          "epub": 6,
+          "examples": [
+            {
+              "location": "pdf:p296",
+              "context": "f many nations,\" and not as a proper name, whereof in Scripture there is not any example. [4.] It is horribly wrested, — 1st. In making the words \"I am\" elliptical, whereas there is neither need of nor color for such a pretense. 2dly. In supplying the feigned ellipsis with"
+            },
+            {
+              "location": "pdf:p532",
+              "context": "s 8, 9. [3.] The bullock and goat being slain, the blood was carried into the holy place. [4.] Azazel, having all the sins of the people confessed over him, was sent into the wilderness to perish, verse 21. [5.] The end of this sacrifice was atonement and cleansing, verse 3"
+            },
+            {
+              "location": "pdf:p612",
+              "context": "315>Acts 3:15, Απεκτείνατε, \"Ye have killed;\" [3.] Put to death, John 18:31, 32; [4.] Cut off, Daniel 9:26. The death of Christ and the blood of Christ are on this account in the Scripture the same. His death was by the effusion of his blood, and what is d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 2,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "of the death of christ and of justification",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "a review of the annotations of hugo grotius",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 3,
+      "budget": 2,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch050.xhtml",
+          "text": "Jo"
+        },
+        {
+          "file": "EPUB/contents_2.xhtml",
+          "text": "~v"
+        },
+        {
+          "file": "EPUB/endnotes.xhtml",
+          "text": "ja"
+        }
+      ]
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 2,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch020.xhtml",
+          "text": "e Ans."
+        },
+        {
+          "file": "EPUB/ch049.xhtml",
+          "text": "d Ans."
+        }
+      ]
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

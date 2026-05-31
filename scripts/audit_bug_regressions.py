@@ -535,14 +535,23 @@ def parse_volumes(args: list[str]) -> list[int]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Summarize known bug-class regressions from Owen audit reports")
-    parser.add_argument("volumes", nargs="+", help="Volume number(s), or all")
+    parser.add_argument("volumes", nargs="*", type=int, help="Volume number(s); default all if --all is set")
+    parser.add_argument("--all", action="store_true", help="Process all 16 volumes")
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--baseline", type=Path, default=BASELINE_PATH)
     parser.add_argument("--strict", action="store_true", help="Return non-zero when regressions are present")
     args = parser.parse_args()
 
+    if args.all:
+        vol_list = list(range(1, 17))
+    elif args.volumes:
+        vol_list = args.volumes
+    else:
+        parser.print_help()
+        return 1
+
     failed = False
-    for volume in parse_volumes(args.volumes):
+    for volume in vol_list:
         result = build_result(volume, args.root, args.baseline)
         write_result(result)
         failed = failed or result["status"] != "pass"

@@ -53,14 +53,16 @@ volume-specific corrections.
 .venv/bin/python3 render.py 1
 ```
 
-### Legacy orchestrator (avoid for normal work)
+### Legacy orchestrator (now respects per-volume OVERRIDES)
 
 ```bash
-# Process a single Owen volume (legacy path — missing OVERRIDES)
+# Process a single Owen volume (loads OVERRIDES from volumes/vN/convert.py)
 .venv/bin/python3 converter.py 3
 
-# Process all 16 Owen volumes
+# Process all 16 Owen volumes (extract, render, or both)
 .venv/bin/python3 converter.py
+.venv/bin/python3 converter.py --extract-only
+.venv/bin/python3 converter.py --render-only
 ```
 
 ### Current outputs
@@ -98,7 +100,7 @@ Owen/
 ├── fonts -> ../../fonts         # Shared font repository symlink
 ├── pdfs/                        # Source AGES PDFs
 ├── portraits/                   # Frontispiece images
-├── special_sources/             # CCEL XML references for volumes 5 and 10
+├── special_sources/legacy/      # Archived CCEL XML zips for v5 and v10 (not used by pipeline)
 └── volumes/v1-v16/
     ├── convert.py               # Per-volume script (v1 exists; others to be created)
     ├── input/                   # PDF symlink
@@ -135,9 +137,9 @@ These are applied during Stage 2 rendering via `_repair_owen_ocr_errors()`.
 
 ## Source Rules
 
-Volumes 1-16 currently use the AGES PDF path through the live `extract.py`/`render.py` pipeline. `shared.py` records CCEL XML sources for volumes 5 and 10, but the current live conversion still opens `volumes/vN/input/owen-vN.pdf` for every volume.
+All 16 volumes use the AGES PDF path (`source_type: ages_pdf`) through the live `extract.py`/`render.py` pipeline. Volume 10 additionally uses CCEL XML enrichment via `ccel_enrich.py` as a `post_extract_hook`.
 
-Do not remove the CCEL XML files; they remain useful comparison sources and may become preferred source text later.
+**v5 + v10 migration (May 2026):** Both volumes were formerly `ccel_xml`-sourced. Clean AGES PDFs were obtained and both were migrated to `ages_pdf`. Legacy CCEL XMLs are archived at `special_sources/legacy/` — not used by the pipeline. `ccel_enrich.py` is now legacy/inactive.
 
 ## Font Strategy
 
@@ -165,6 +167,21 @@ For converter changes:
 4. Inspect the output package or rendered XHTML for the exact failure mode.
 5. Update `BUGS_AND_FIXES.md` only with validation-safe status language.
 6. Add an `ENGINEERING_LOG.md` entry for complex architectural changes.
+
+### Owenian Rendering Standards
+
+Before changing flat-list, block-list, nested-list, or blockquote behavior, read
+the shared standards:
+
+- `bugs_fixes/owenian-structure-rules.md` — the master standard for Owen's
+  inline syllabus lists, block exposition lists, nested subpoints, and
+  geometry-backed blockquotes.
+- `bugs_fixes/flat-list-rules.md` and `bugs_fixes/blockquote-rules.md` are
+  supporting focused notes for the two most common structural failure classes.
+
+These rules are agent-facing instructions, not historical notes. New fixes in
+these areas should preserve the documented false-positive guards and add focused
+regression coverage for any newly observed pattern.
 
 ### Regression Tests From Bug Reports
 
@@ -207,6 +224,180 @@ For documentation changes:
 2. Move historical notes to `docs/archive/` instead of deleting them.
 3. Avoid duplicating the same roadmap in multiple files.
 
+## Mobile-First Robust Styling Mandate
+
+Every volume must strictly adhere to these CSS and EPUB3 standards to ensure a premium reading experience on iPhone and Apple Books.
+
+### 1. Responsive Typography & Layout
+- **Relative Units ONLY**: Use `em` or `rem` for all margins, padding, and font-sizes. Never use fixed `px` or `pt`.
+- **Prevent Font Inflation**: Apply `-webkit-text-size-adjust: 100%;` to the `body` to stop iOS from randomly resizing text.
+- **Guard Railing**: Use `word-break: break-word;` globally to prevent long Greek/Hebrew strings from breaking the layout.
+- **iPhone Margins**: Avoid large side margins (e.g., `18em`). Use responsive alignments and small relative margins (`0.4em 0.5em`).
+- **Hyphenation**: Enable `-webkit-hyphens: auto;` for all prose paragraphs to ensure smooth flow on narrow screens.
+
+### 2. High-Quality Visual Refinements
+- **Owen Blue Palette**: Use `#2a55a0` for all interactive elements, including links and footnote numbers.
+- **Continuous Blockquotes**: 
+    - Quote paragraphs must have `margin-top: 0;` and `margin-bottom: 0;` to ensure they sit flush.
+    - Apply `border-left: 2.5px solid rgba(0, 0, 0, 0.08);` to create a continuous, subtle vertical marker.
+    - Use sibling selectors to provide breathing space (`1.2em`) before and after the *entire* quote block.
+- **Drop-Cap Spacing**: For large initials (`.large`), use negative margins (e.g., `-0.15em`) to pull the following text flush against the character stem.
+
+### 3. iPhone Usability (Tappability)
+- **Easy-Tap Footnotes**: Expand the touch target for all `noteref` links using "ghost padding" (`padding: 0.1em 0.2em;`). This makes small numbers much easier to tap on a phone screen.
+
+### 4. Automated Polyglot Support
+- **Automatic Tagging**: Every script must implement a function to automatically wrap untagged Greek and Hebrew Unicode runs in `<span lang="el">` or `<span lang="he">`.
+- **RTL Integrity**: Hebrew spans MUST include `dir="rtl"` and use `unicode-bidi: isolate;` to prevent layout spills.
+- **Specialized Fonts**: Assign **SBL Greek** and **SBL Hebrew** specifically to these language spans for maximum legibility.
+
+### 5. Structural & Package Integrity
+- **CDATA Wrapping**: Always wrap injected CSS in `/*<![CDATA[*/ ... /*]]>*/` blocks to prevent XML parsing errors from CSS comments or selectors.
+
+## Treatise Title Pages — Architecture and Rules
+
+### The Core Rule
+
+**Every treatise title page for every volume must be defined as hardcoded HTML inside that volume's `volumes/vN/convert.py`, in `OVERRIDES['treatise_title_overrides']`.**
+
+Never place volume-specific treatise names, verse text, or structural HTML inside `render.py` or `shared.py`. These shared files must remain volume-agnostic. Cross-volume contamination is the root cause of the "fix v3 → break v1" cycle.
+
+### Why This Rule Exists
+
+`render.py` contains `format_treatise_title_page()`, a generic PDF-reading fallback. It is unreliable because:
+
+1. It reads raw PDF layout data which is OCR-noisy and font-encoding-dependent.
+2. The same function is used by all volumes, so any change to it affects all volumes simultaneously.
+3. `render.py` line ~3343 also **hardcodes Volume 1 treatise names** (`CHRISTOLOGIA|MEDITATIONS|TWO SHORT CATECHISMS`) in a shared conditional — a direct violation of the separation principle.
+
+The dispatch hook at render.py line ~3357 already supports the correct pattern:
+```python
+raw_text = config.get('treatise_title_overrides', {}).get(ch_dict['title'], raw_text)
+```
+This means: if a `treatise_title_overrides` entry exists for a chapter's title, it replaces the raw PDF text entirely. **Use this hook for every treatise title page.**
+
+### render.py Cleanup Required
+
+When implementing the full architecture, remove the hardcoded volume-1 names from render.py line ~3343:
+```python
+# BEFORE (fragile — hardcodes v1 treatise names in shared code):
+elif ch_dict.get('is_treatise') and re.search(
+    r'\b(?:PART|BOOK)\s+[0-9IVXLCDM]+\b|\b(?:CHRISTOLOGIA|MEDITATIONS|TWO SHORT CATECHISMS)\b',
+    title_upper,
+):
+
+# AFTER (generic — any is_treatise chapter uses BODY_START mode):
+elif ch_dict.get('is_treatise'):
+```
+This change is safe because `is_treatise` is already the correct semantic signal. The named exceptions only existed because volume 1's treatises did not reliably set `is_treatise`.
+
+### CSS Classes Available for Title Page HTML
+
+All of these classes are defined in `shared.py`'s `EPUB_STYLESHEET` and apply within a `<section class="treatise-title-page ...">` wrapper:
+
+| Class | Purpose |
+|---|---|
+| `.treatise-title-page` | Outer section wrapper (required, centered text) |
+| `.title-line-major` | Large main title (~2.2em, serif) |
+| `.title-line-medium` | Subtitle line (~1.15em, serif) |
+| `.title-connector` | Small connector word ("Or", "Concerning", "In") — spaced with letter-spacing |
+| `.title-rule` | Decorative horizontal rule (`aria-hidden="true"`) |
+| `.title-source` | Scripture reference line (bold, small, centered) |
+| `.greek-title` | Greek heading text (1.25em, letter-spaced) |
+| `.descriptive` | Italic descriptive block |
+| `.quote-block` | Left-aligned quote block (margin 2em 8%) |
+
+### Standard Title Page HTML Template
+
+```html
+<section class="treatise-title-page" epub:type="titlepage">
+<p class="greek-title">Χριστολογία</p>           <!-- if has Greek title -->
+<p class="title-line-major">Main Title Here</p>
+<p class="title-connector">Or,</p>
+<p class="title-line-medium">Subtitle or Declaration Here</p>
+<p class="title-rule" aria-hidden="true"></p>
+<p class="title-source">Scripture Reference, Chapter X.</p>
+</section>
+```
+
+For multi-part treatises (no Greek, connector-heavy structure):
+```html
+<section class="treatise-title-page v1-applied-glory-title" epub:type="titlepage">
+<p class="title-line title-line-medium">Part Title</p>
+<p class="title-connector">Concerning</p>
+<p class="title-line title-line-major">Main Subject;</p>
+<p class="title-connector">Applied Unto</p>
+<p class="title-line title-line-medium">Further Specification</p>
+<p class="title-rule" aria-hidden="true"></p>
+<p class="title-source">In N Chapters, from John XVII. 24.</p>
+</section>
+```
+
+### Volume-by-Volume Title Page Inventory
+
+The chapter title strings used in `treatise_title_overrides` must match the exact title string in the JSON intermediate (`volumes/vN/intermediate/volume_N.json`). Verify by inspecting the JSON if a title page doesn't appear.
+
+**Volume 1** — 4 treatises (1 defined, 3 still using generic fallback):
+- `Christologia` — ⚠️ not in `treatise_title_overrides`; has broken verse rendering; needs hardcoded HTML
+- `Part 1 - Meditations and Discourses on the Glory of Christ` (or similar) — ⚠️ not defined
+- `Part 2 - Meditations and Discourses Concerning The Glory of Christ` — ✅ defined (`_V1_PART_2_TITLE_PAGE`)
+- `Two Short Catechisms` (or similar) — ⚠️ not defined
+
+**Volume 2** — 2 treatises:
+- Communion with God the Father, Son, and Holy Ghost
+- A Brief Declaration and Vindication of the Doctrine of the Trinity
+
+**Volume 3** — 1 treatise:
+- Pneumatologia (Books I–V; may have BOOK I–V sub-treatises)
+
+**Volume 4** — 4 treatises:
+- The Reason of Faith; Causes, Ways, and Means; Work of the Holy Spirit in Prayer; Holy Spirit and His Spiritual Gifts
+
+**Volume 5** — 2 treatises:
+- The Doctrine of Justification by Faith; Evidences of the Faith of God's Elect
+
+**Volumes 6–16** — see `works_of_john_owen.md` for full list.
+
+For each new volume's `convert.py`, add all treatise title pages to `OVERRIDES`:
+```python
+OVERRIDES = {
+    # ... other keys ...
+    'treatise_title_overrides': {
+        'Exact Chapter Title From JSON': '''<section class="treatise-title-page" epub:type="titlepage">
+...
+</section>''',
+        'Second Treatise Title': '''...''',
+    },
+}
+```
+
+### How to Find Exact Chapter Title Strings
+
+```bash
+# Inspect the JSON intermediate to find treatise chapter titles:
+python3 -c "
+import json
+with open('volumes/v1/intermediate/volume_1.json') as f:
+    data = json.load(f)
+for ch in data.get('chapters', []):
+    if ch.get('is_treatise'):
+        print(repr(ch['title']))
+"
+```
+
+Run this for each volume before writing its `treatise_title_overrides` entries.
+
+### Checklist for Adding a New Volume's Title Pages
+
+1. Run the JSON inspection command above to get exact title strings.
+2. Look at the PDF pages manually (or inspect the generic fallback output) to understand the layout.
+3. Write hardcoded HTML using the CSS classes above.
+4. Add to `OVERRIDES['treatise_title_overrides']` in `volumes/vN/convert.py`.
+5. Rebuild with `--render-only` and verify in Apple Books.
+6. Do **not** modify `render.py` or `shared.py` for volume-specific content.
+
+---
+
 ## Slash Commands
 
 When the user uses slash commands, execute them as follows:
@@ -246,3 +437,22 @@ Executes the known-bug regression report for the specified volume(s), using the 
 
 **Location of detailed reports:**
 - `volumes/vN/bugs_fixes/volume_N_bug_regressions.md`
+
+### `#test report [n]`
+
+Generates a ranked QA state report for the specified volume(s).
+
+**Command Syntax:**
+- `#test report`: Run report for all 16 volumes.
+- `#test report 1`: Run report for volume 1.
+- `#test report 1 2 5`: Run report for multiple volumes.
+
+**What it does:**
+- Reads existing audit, text integrity, and bug regression reports.
+- Scores each volume (coverage, Greek/Hebrew health, splits, warnings, errors).
+- Ranks worst → best, prints a ranked table, and writes detailed reports.
+- Updates the Per-Volume Script Status table in README.md.
+
+**Location of detailed reports:**
+- `qa/reports/volume_state_report.md`
+- `qa/reports/volume_state_report.json`

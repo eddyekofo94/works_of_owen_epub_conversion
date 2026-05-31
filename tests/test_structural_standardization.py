@@ -66,7 +66,7 @@ def test_blockquote_token_renders_as_semantic_blockquote():
 
     html, _, _ = markdown_to_html(md)
 
-    assert '<blockquote epub:type="z3998:quotation"><p>This is an indented patristic quotation.' in html
+    assert '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">This is an indented patristic quotation.' in html
     assert 'class="noteref"' in html
     assert '<p>This is body text.</p>' in html
 
@@ -76,7 +76,7 @@ def test_markdown_blockquote_prefix_renders_as_semantic_blockquote():
 
     html, _, _ = markdown_to_html(md)
 
-    assert '<blockquote epub:type="z3998:quotation"><p>First quote line second quote line.</p></blockquote>' in html
+    assert '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">First quote line second quote line.</p></blockquote>' in html
     assert '<p>Next paragraph.</p>' in html
 
 

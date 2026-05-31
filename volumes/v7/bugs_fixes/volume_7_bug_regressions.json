@@ -1,0 +1,507 @@
+{
+  "volume": 7,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [
+      "flat_analysis_chapters"
+    ],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 126,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "EDITED BY",
+          "next": "WILLIAM H. GOOLD"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "WILLIAM H. GOOLD",
+          "next": "NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL."
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "rked the reign of Charles II has often been the subject of speculation and inquiry. Mr Macaulay thus confirms our author's estimate of the rapid decline of morality at this time: —",
+          "next": "The historian, dealing with the surface of affairs rather than with the springs of conduct, may account the vulgar theory of a reaction against enforced strictness sufficient to ex"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "each shall be, if they endeavor not to prevent it with their utmost diligence, and the open hazard of all their earthly concerns. A learned writer of the church of England affirms,",
+          "next": "And after he had declared that \"ministers of the gospel may deny Christ, or manifest their being ashamed of the gospel, by not opposing his word at they ought unto the sins of men,"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "Certainly the Lord Christ may say to the churches and nations among whom his name is yet owned in the world, what God said of old concerning that of the Jews, then his only church,",
+          "next": "Yea, to most of them as in another place,"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "Yea, to most of them as in another place,",
+          "next": "The greatness of the evil complained of, the secret mystery of its accomplishment, the unreasonableness, folly, and ingratitude of the fact, the strangeness of the event, make the "
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "kedness in its relinquishment as to its principles and obedience, may well be expressed as God doth in the inferior instance of the apostasy of the Jewish church: Jeremiah 2:11,12,",
+          "next": "Yet thus is it, and no otherwise, as we shall afterward manifest, amongst the generality of them that are called Christians in the world."
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "y thought sufficient to repel the charge of the prophets, to vindicate their innocency, and secure their peace. The reply of the prophet unto them will equally serve in both cases,",
+          "next": "A plea of innocency and hope of impunity, under an evident guilt of the highest immoralities and the vilest of superstitions, do equally participate of folly and impudence."
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "bedience, which the gospel requireth. But this is no other but an account of the true nature of that apostasy of the latter times which is foretold by the apostle, 2 Timothy 3:1-5,",
+          "next": "Under the power of the most filthy and outrageous lusts, men frame to themselves an outward shape, image, and representation of holiness; they delineate a form of religion by a sub"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "n Timothy to be careful herein, manifest both the weight he laid upon it, the difficulty that was in it, and the danger of miscarriage wherewith it was attended: 1 Timothy 6:20,21,",
+          "next": "And the same apostle expressly mentions the proneness of some to relinquish the truth of the gospel; whom, therefore, he would have rebuked sharply,"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 3,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces."
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "nature of this grace and duty of being spiritually minded",
+          "count": 4
+        },
+        {
+          "phrase": "the true notion and consideration of spiritual and heavenly things",
+          "count": 4
+        },
+        {
+          "phrase": "dominion of sin which we are freed from and discharged",
+          "count": 4
+        },
+        {
+          "phrase": "of sin which we are freed from and discharged of",
+          "count": 4
+        },
+        {
+          "phrase": "sin which we are freed from and discharged of by",
+          "count": 4
+        },
+        {
+          "phrase": "which we are freed from and discharged of by grace",
+          "count": 4
+        },
+        {
+          "phrase": "what is the assurance given us and what are the",
+          "count": 4
+        },
+        {
+          "phrase": "is the assurance given us and what are the grounds",
+          "count": 4
+        },
+        {
+          "phrase": "that we are not under the law but under grace",
+          "count": 4
+        },
+        {
+          "phrase": "the good word of god and the powers of the",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch022.xhtml",
+          "paragraph_count": 7,
+          "structural_line_count": 2,
+          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
+        }
+      ]
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 1,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "the grace and duty of being spiritually minded",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

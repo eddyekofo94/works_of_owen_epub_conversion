@@ -1,0 +1,558 @@
+{
+  "volume": 5,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 78,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " habit inherent in ourselves, and the acts of it, they wrested the whole doctrine of justification unto a compliance wherewithal. So Pighius himself complained of them, Controv. 2,",
+          "next": "Secondly, A due consideration of him with whom in this matter we have to do, and that immediately, is necessary unto a right stating of our thoughts about it. The Scripture express"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " Lord's sake,\" Daniel 9:17, in whom \"all the seed of Israel are justified,\" Isaiah 45:25. In his sight, before his tribunal, it is that men are justified or condemned. Psalm 143:2,",
+          "next": "And the whole work of justification, with all that belongs thereunto, is represented after the manner of a juridical proceeding before God's tribunal; as we shall see afterwards. \""
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "cation, with all that belongs thereunto, is represented after the manner of a juridical proceeding before God's tribunal; as we shall see afterwards. \"Therefore,\" says the apostle,",
+          "next": "However any man be justified in the sight of men or angels by his own obedience, or deeds of the law, yet in his sight none can be so."
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "any means to manifest his glory unto sinners, all their prefidences and contrivances do issue in dreadful horror and distress. An account of their temper is given us, Isaiah 33:14,",
+          "next": "Nor is it thus only with some peculiar sort of sinners. The same will be the thoughts of all guilty persons at some time or other. For those who, through sensuality, security, or s"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " him in battle array. And we may see what extravagant contrivances convinced sinners will put themselves upon, under any real view of the majesty and holiness of God, Micah 6:6, 7,",
+          "next": "Neither shall I ever think them meet to be contended withal about the doctrine of justification who take no notice of these things, but rather despise them."
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "And again,",
+          "next": "Let any men place themselves in the condition wherein now Job was, — in the immediate presence of God; let them attend unto what he really speaks unto them in his word, — namely, w"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "visitation of the sick, composed, as they say, by Anselm, and published by Casparus Ulenbergius, which expresses a better sense of these things than some seem to be convinced of: —",
+          "next": "— that is, \"Dost thou believe that thou canst not be saved but by the death of Christ? The sick man answers, 'Yes, ' then let it be said unto him, Go to, then, and whilst thy soul "
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "Or that of the psalmist,",
+          "next": "Or,"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "Or,",
+          "next": "On which words the exposition of Austin is remarkable, speaking of David, and applying it unto himself:"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "\"The blood of Jesus Christ God's Son cleanseth us from all sin,\" 1 John 1:7. Wherefore,",
+          "next": "These are some of the places which at present occur to remembrance, wherein the Scripture represents unto us the grounds, causes, and reasons, of our acceptation with God. The espe"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 3,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "It may be it will be said: \"It is true in the time of their heathenism they did not at all follow after righteousness, but when the truth of the gospel was revealed unto them, then they followed after righteousness, and did attain it.\" But, — Romans 3:5; Roman"
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "text": "These things being premised, I shall briefly evidence that there is not the least repugnancy or contradiction between what is declared by these two apostles as unto our justification, with the causes of it. And this I shall do, 1. By some general consideration"
+        },
+        {
+          "file": "EPUB/ch029.xhtml",
+          "text": "Faith is not an especial assurance of a man's own justification and salvation by Christ; that it will produce, but not until another step or two in its progress be over: but faith is a satisfactory persuasion that the way of God proposed in the gospel is fitte"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "of justification by the imputation of the righteousness of christ",
+          "count": 13
+        },
+        {
+          "phrase": "doctrine of justification by the imputation of the righteousness of",
+          "count": 12
+        },
+        {
+          "phrase": "the doctrine of justification by the imputation of the righteousness",
+          "count": 11
+        },
+        {
+          "phrase": "set forth to be propitiation through faith in his blood",
+          "count": 10
+        },
+        {
+          "phrase": "freely by his grace through the redemption that is in",
+          "count": 9
+        },
+        {
+          "phrase": "justified freely by his grace through the redemption that is",
+          "count": 8
+        },
+        {
+          "phrase": "by his grace through the redemption that is in christ",
+          "count": 8
+        },
+        {
+          "phrase": "his grace through the redemption that is in christ jesus",
+          "count": 8
+        },
+        {
+          "phrase": "whom god has set forth to be propitiation through faith",
+          "count": 8
+        },
+        {
+          "phrase": "god has set forth to be propitiation through faith in",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "code": "noteref_targets_missing",
+          "message": "Some noteref targets do not have matching endnote anchors",
+          "examples": [
+            "EPUB/endnotes.xhtml#fn4"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 3,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "chapter 3 the use of faith in justification",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 17 testimonies out of the evangelists considered",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 19 objections against the doctrine of justification",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/contents_2.xhtml",
+          "text": "CHAPTER 1"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 9,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "and the other is that of our Savior, Luke 17:10,"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "text": "who yet disclaims any confidence therein as unto his justification before God; fo"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "attempts the sense of the word, but confounds it with \"reputare:\""
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "text": "and also Serm. 16 \"Caput nostrum Dominus Jesus Christus omnia in se corporis sui"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "injustus\", 1 Peter 3:18. \"Quod si ergo justi effecti sumus per vitam illius, caus"
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "consciences of believers, unto their supportment and comfort under all their conf"
+        },
+        {
+          "file": "EPUB/ch031.xhtml",
+          "text": "itself and all grace in due exercise in all ordinances of divine worship, private"
+        },
+        {
+          "file": "EPUB/ch032.xhtml",
+          "text": "will evidence itself, — not always, but on some occasions: and this is by bringin"
+        },
+        {
+          "file": "EPUB/contents_2.xhtml",
+          "text": "acceptable unto many — Reasons of it — Two parts of corrupted nature’s repugnancy"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

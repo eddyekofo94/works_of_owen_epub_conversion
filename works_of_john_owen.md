@@ -10,6 +10,7 @@
 
 ### Volume 2
 * Of Communion with God the Father, Son, and Holy Ghost, Each Person Distinctly, in Love, Grace, and Consolation
+* A Vindication of Some Passages in a Discourse Concerning Communion with God
 * A Brief Declaration and Vindication of the Doctrine of the Trinity
 
 ### Volume 3
@@ -39,7 +40,22 @@
 * A Treatise of the Dominion of Sin and Grace
 
 ### Volume 8
-* Sermons to the Nation (Sermons before the Long Parliament, Oliver Cromwell, and the Commonwealth)
+* Sermon 1 — A Vision of Unchangeable, Free Mercy
+* Sermon 2 — A Memorial of the Deliverance of Essex County, and Committee
+* Sermon 3 — Righteous Zeal Encouraged by Divine Protection
+* Sermon 4 — The Steadfastness of the Promises
+* Sermon 5 — The Shaking and Translating of Heaven and Earth
+* Sermon 6 — The Branch of the Lord the Beauty of Zion
+* Sermon 7 — Advantage of the Kingdom of Christ
+* Sermon 8 — The Laboring Saint's Dismission to Rest
+* Sermon 9 — Christ's Kingdom and the Magistrate's Power
+* Sermon 10 — God's Work in Founding Zion
+* Sermon 11 — God's Presence With a People the Spring of Their Prosperity
+* Sermon 12 — The Glory and Interest of Nations Professing the Gospel
+* Sermon 13 — How We May Bring Our Hearts to Bear Reproofs
+* Sermon 14 — The Testimony of the Church Is Not the Only Nor Chief Reason of Our Faith
+* Sermon 15 — The Chamber of Imagery in the Church of Rome Laid Open
+* Sermon 16 — An Humble Testimony Unto the Goodness and Severity of God
 
 ### Volume 9
 * Posthumous Sermons (83 Pastoral Sermons)

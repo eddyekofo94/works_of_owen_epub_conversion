@@ -29,6 +29,10 @@ def cyan(text: str) -> str:
     return f"\033[96m{text}\033[0m" if _supports_color() else text
 
 
+def magenta(text: str) -> str:
+    return f"\033[95m{text}\033[0m" if _supports_color() else text
+
+
 def bold(text: str) -> str:
     return f"\033[1m{text}\033[0m" if _supports_color() else text
 

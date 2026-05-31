@@ -101,3 +101,112 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+
+---
+
+
+
+<!-- AUTO_AUDIT_START -->
+## Automated EPUB Audit
+
+**Last run:** 2026-05-29T12:06:23.474207+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub`
+**Status:** FAIL (1 errors, 1 warnings)
+
+Reports:
+- `volume_15_audit.json`
+- `volume_15_audit.md`
+
+| Check | Result |
+|-------|--------|
+| OPF version | 3.0 |
+| XHTML files | 107 |
+| Spine items | 105 |
+| Embedded fonts | 14 |
+| NAV links | 108 |
+| Greek chars / untagged | 4865 / 0 |
+| Hebrew chars / untagged | 10 / 0 |
+| Noteref links / endnote anchors | 19 / 16 |
+| AGES boilerplate hits | 0 |
+| Possible Beta Code files | 0 |
+| Escaped language-tag files | 0 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 1 |
+
+Warnings requiring triage:
+
+- `repeated_phrases`: Potential repeated phrases detected
+
+Errors requiring correction:
+
+- `noteref_targets_missing`: Some noteref targets do not have matching endnote anchors
+
+**Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
+<!-- AUTO_AUDIT_END -->
+
+---
+
+
+
+<!-- TEXT_INTEGRITY_START -->
+## Automated Textual Integrity Audit
+
+**Last run:** 2026-05-29T12:06:56.662626+00:00
+**Status:** WARN (7 warnings)
+
+Reports:
+- `volume_15_text_integrity.json`
+- `volume_15_text_integrity.md`
+
+| Check | Result |
+|-------|--------|
+| PDF pages | 683 |
+| EPUB text files | 105 |
+| EPUB paragraphs/headings | 2402 |
+| Approximate PDF-to-EPUB word coverage | 0.9967 |
+| Weak page matches | 14 |
+| Dense source windows checked | 718 |
+| Missing dense source-window pages | 669 |
+| Front CONTENTS pages checked | 4 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 661 |
+| Top-of-page windows skipped as unstable | 20 |
+| Missing top-of-page body windows | 0 |
+| Bottom-of-page body windows checked | 618 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 4 |
+| Possible faulty paragraph splits | 105 |
+| Structural starts excluded from split warnings | 255 |
+| Short fragments | 62 |
+| Adjacent duplicate paragraphs | 0 |
+| Inline structural marker candidates | 0 |
+| Reference continuation splits | 0 |
+| Citation continuation splits | 0 |
+| Suspicious large-number starts | 5 |
+| Roman heading candidates | 0 |
+| Overlong heading candidates | 10 |
+| Front-matter heading/body candidates | 0 |
+| Repeated word windows | 25 |
+| PDF enumerator markers | 402 |
+| EPUB enumerator markers | 410 |
+| Missing enumerator marker forms | 0 |
+| Enumerator sequence candidates | 0 |
+| PDF Greek words / EPUB Greek words | 872 / 880 |
+| Greek word coverage ratio | 1.0 |
+| PDF Hebrew words / EPUB Hebrew words | 2 / 2 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+**Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
+<!-- TEXT_INTEGRITY_END -->

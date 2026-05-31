@@ -1,0 +1,503 @@
+{
+  "volume": 15,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 105,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "rpose, — namely, that the ordinances and institutions of the gospel may be administered to the edification of the church. Now, this the apostle expressly affirms, Ephesians 4:7-13,",
+          "next": "The Lord Jesus, who hath appointed the office of the ministry, hath also provided sufficient furniture for the persons called according to his mind to the discharge of that office "
+        },
+        {
+          "file": "EPUB/ch015.xhtml",
+          "previous": "invent, and nothing less can support. Unto such as these we shall not so much as tender satisfaction, until they are capable of receiving the advice of the apostle, Ephesians 4:31,",
+          "next": "It is for the sake of them alone who really value and esteem love, peace, and unity among Christians for themselves, that we here tender an account of our thoughts and principles c"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "previous": "to rise on the evil and on the good, and sendeth rain on the just and on the unjust.\" Now, all mankind may be cast into two ranks or orders: for, first, there are those who are yet",
+          "next": "— such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it "
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "previous": "\"Go ye into all the world, and preach the gospel to every creature,\" he adds unto it that decretory sentence concerning the everlasting condition of all men with respect thereunto,",
+          "next": "As the preaching of the gospel, and the belief on Jesus Christ thereon, are the only means of obtaining salvation, so all those who are not made partakers of them must perish etern"
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "previous": "e unto any particular church on the earth; and so it often falleth out, as we could manifest by instances, did that work now lie before us. This is the church which the Lord Christ",
+          "next": "And we must acknowledge that in all things this is the church unto which we have our first and principal regard, as being the spring from which all other considerations of the chur"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "tution of the whole, and their different forms, shapes, uses, operations, ornaments, all tend to make them serviceable in their unity unto their proper ends. And saith the apostle,",
+          "next": "And he doth elsewhere so describe this fundamental unity of believers in one body, under and in dependence on the same Head, as to make it the only means of the usefulness and pres"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "scribe this fundamental unity of believers in one body, under and in dependence on the same Head, as to make it the only means of the usefulness and preservation of the whole. They",
+          "next": "The conjunctions of all the members into one body, their mutual usefulness unto one another, the edification of the whole, with its increase, the due exercise of love (which things"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "he ecclesiastical faults of the clergy, and divers voluntary jurisdictions also over the laity. By these degrees the charitable correction of Christ did degenerate into domination,",
+          "next": "This degeneracy of discipline was long since esteemed burdensome, and looked on as the cause of innumerable troubles and grievances unto all sorts of people; yea, it hath had no be"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "from an acquiescence in their stations or relations to such churches; for the principal enforcements of men's obedience and reverence unto the rulers of the church are because they",
+          "next": "And if they see such set over them as give no evidence of any such watchful care acting itself according to those Scripture directions which are continually read unto them, but rat"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "previous": "o the conclusion which that most eminent champion of the protestant religion in England, namely, Whitaker, gives unto his learned disputation about antichrist: \"Igitur,!' saith he,",
+          "next": "If this will not suffice, we know better how to spend our remaining hours of life in peace than in contending about impertinent stories and surmises, exhaled by wit and invention o"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 0,
+      "budget": 1,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "the unity of the spirit in the bond of peace",
+          "count": 6
+        },
+        {
+          "phrase": "the whole body fitly joined together and compacted by that",
+          "count": 6
+        },
+        {
+          "phrase": "whole body fitly joined together and compacted by that which",
+          "count": 6
+        },
+        {
+          "phrase": "body fitly joined together and compacted by that which every",
+          "count": 6
+        },
+        {
+          "phrase": "fitly joined together and compacted by that which every joint",
+          "count": 6
+        },
+        {
+          "phrase": "joined together and compacted by that which every joint supplieth",
+          "count": 6
+        },
+        {
+          "phrase": "together and compacted by that which every joint supplieth according",
+          "count": 6
+        },
+        {
+          "phrase": "and compacted by that which every joint supplieth according to",
+          "count": 6
+        },
+        {
+          "phrase": "compacted by that which every joint supplieth according to the",
+          "count": 6
+        },
+        {
+          "phrase": "by that which every joint supplieth according to the effectual",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "code": "noteref_targets_missing",
+          "message": "Some noteref targets do not have matching endnote anchors",
+          "examples": [
+            "EPUB/endnotes.xhtml#fn186",
+            "EPUB/endnotes.xhtml#fn347"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 1,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "chapter 7 no other church-state of divine institution",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 2,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch071.xhtml",
+          "text": "MAY A PERSON BE CALLED TO, OR BE EMPLOYED IN, A PART ONLY OF THE OFFICE OR WORK OF THE MINISTRY; OR MAY HE HOLD THE RELATION AND EXERCISE THE DUTY OF AN ELDER OR MINISTER UNTO MORE"
+        },
+        {
+          "file": "EPUB/ch082.xhtml",
+          "text": "MAY NOT THE CHURCH, IN THE SOLEMN WORSHIP OF GOD, AND CELEBRATION OF THE ORDINANCES OF THE GOSPEL, MAKE USE OF AND CONTENT ITSELF IN THE USE OF FORMS OF PRAYER IN AN UNKNOWN TONGUE"
+        }
+      ]
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

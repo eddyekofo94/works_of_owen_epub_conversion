@@ -1,6 +1,6 @@
 {
-  "epub": "volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-19T23:04:19.263811+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
+  "generated_at": "2026-05-29T11:42:17.778559+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 83,
-    "epub_size_bytes": 6458920,
+    "file_count": 77,
+    "epub_size_bytes": 4929335,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +23,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 74,
-    "spine_count": 47,
-    "xhtml_count": 49,
+    "manifest_count": 68,
+    "spine_count": 48,
+    "xhtml_count": 50,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 21,
+    "font_count": 14,
     "language": {
       "greek_chars": 2627,
       "greek_untagged_chars": 0,
@@ -57,7 +57,7 @@
       "repeated_phrase_count": 1,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 2,
+      "chapter_heading_in_paragraph_files": 1,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 13,
+      "lowercase_paragraph_start_files": 0,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -95,10 +95,6 @@
         "page_reference_split": [],
         "chapter_heading_in_paragraph": [
           {
-            "file": "EPUB/ch035.xhtml",
-            "text": "The second section of this chapter i"
-          },
-          {
             "file": "EPUB/ch042.xhtml",
             "text": "Chapter 3"
           }
@@ -119,55 +115,14 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/ch008.xhtml",
-            "text": "a"
-          },
-          {
-            "file": "EPUB/ch014.xhtml",
-            "text": "a"
-          },
-          {
-            "file": "EPUB/ch016.xhtml",
-            "text": "i"
-          },
-          {
-            "file": "EPUB/ch017.xhtml",
-            "text": "a"
-          },
-          {
-            "file": "EPUB/ch019.xhtml",
-            "text": "b"
-          },
-          {
-            "file": "EPUB/ch021.xhtml",
-            "text": "i"
-          },
-          {
-            "file": "EPUB/ch023.xhtml",
-            "text": "n"
-          },
-          {
-            "file": "EPUB/ch025.xhtml",
-            "text": "t"
-          },
-          {
-            "file": "EPUB/ch028.xhtml",
-            "text": "i"
-          },
-          {
-            "file": "EPUB/ch035.xhtml",
-            "text": "w"
-          }
-        ],
+        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 47,
+    "nav_link_count": 51,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

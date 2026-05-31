@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+"""
+Volume 15 — The Works of John Owen, Volume 15: Liturgies, Evangelical Churches, Catechism
+Per-volume converter script.
+
+Usage:
+    python3 volumes/v15/convert.py                   # full pipeline (extract + render)
+    python3 volumes/v15/convert.py --extract-only    # Stage 1 only (PDF → JSON)
+    python3 volumes/v15/convert.py --render-only     # Stage 2 only (JSON → EPUB)
+
+Volume 15 contains:
+  - Discourse Concerning Liturgies, and Their Imposition
+  - A Discourse Concerning Evangelical Love, Church Peace, and Unity
+  - An Inquiry of Evangelical Churches
+  - An Answer to Dr Stillingfleet's Book of the Unreasonableness of Separation
+    (including: Worship of God and Discipline of the Churches — a sub-treatise)
+  - A Short Catechism (with An Explanation upon the Same)
+
+The catechism section (A Short Catechism + Questions 1–53) receives specialised
+CSS and postprocessing similar to v1, adapted for v15's chapter-per-question
+structure where each "Question N" chapter contains the Q and A inline.
+
+Note: The JSON title "An Axplanation Upon the Same - Questions" is an OCR
+corruption of "An Explanation Upon the Same." The key below matches the
+corrupted form; text_replacements repairs it in the rendered body.
+"""
+
+import os
+import sys
+import re
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.join(_HERE, '..', '..')
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
+
+from shared import run_volume_cli
+
+VOL = 15
+
+# ---------------------------------------------------------------------------
+# Treatise title pages
+# ---------------------------------------------------------------------------
+
+_V15_LITURGIES_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-major">A Discourse</p>
+<p class="title-connector">Concerning</p>
+<p class="title-line-medium">Liturgies,</p>
+<p class="title-connector">and Their Imposition.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<div class="quote-block"><p>"God is a Spirit: and they that worship him must worship him in spirit and in truth." — John 4:24.</p></div>
+</section>'''
+
+_V15_EVANGELICAL_LOVE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-major">A Discourse</p>
+<p class="title-connector">Concerning</p>
+<p class="title-line-medium">Evangelical Love,</p>
+<p class="title-line-medium">Church Peace, and Unity;</p>
+<p class="title-connector">with the Occasions and Reasons of</p>
+<p class="title-line-medium">Present Differences and Divisions</p>
+<p class="title-connector">About Things Sacred and Religious.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<div class="quote-block"><p>"Endeavouring to keep the unity of the Spirit in the bond of peace." — Ephesians 4:3.</p></div>
+</section>'''
+
+_V15_INQUIRY_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-medium">An Inquiry</p>
+<p class="title-connector">into the Original, Nature, Institution, Power,</p>
+<p class="title-connector">Order, and Communion of</p>
+<p class="title-line-major">Evangelical Churches.</p>
+</section>'''
+
+_V15_STILLINGFLEET_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-medium">An Answer</p>
+<p class="title-connector">to</p>
+<p class="title-line-medium">Dr Stillingfleet's Book</p>
+<p class="title-connector">of the</p>
+<p class="title-line-major">Unreasonableness of Separation.</p>
+</section>'''
+
+_V15_CATECHISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="title-line-major">A Short Catechism</p>
+<p class="title-connector">for the Instruction of the Ignorant</p>
+<p class="title-connector">in the Necessary Principles of</p>
+<p class="title-line-medium">Christian Religion.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<div class="quote-block"><p>"Train up a child in the way he should go: and when he is old, he will not depart from it." — Proverbs 22:6.</p></div>
+</section>'''
+
+# ---------------------------------------------------------------------------
+# Catechism CSS
+# ---------------------------------------------------------------------------
+
+_V15_CATECHISM_CSS = """
+/* Volume 15 Catechism polish */
+.v15-catechism-question {
+    margin: 0.8em 0 0.2em;
+    font-weight: 700;
+    text-indent: 0 !important;
+    text-align: left;
+}
+
+.v15-catechism-answer {
+    margin: 0.1em 0 0.8em;
+    padding-left: 1.2em;
+    text-indent: 0 !important;
+    text-align: left;
+}
+"""
+
+# ---------------------------------------------------------------------------
+# Catechism postprocessor
+# v15 catechism chapters have Q and A inline within each "Question N" chapter.
+# We detect the Q./A. labels and apply styled classes.
+# ---------------------------------------------------------------------------
+
+_V15_QA_RE = re.compile(
+    r'<p(?P<attrs>[^>]*)>\s*(?P<body>(?:Q(?:uestion)?|A(?:ns(?:wer)?)?)\..*?)</p>',
+    re.S | re.I,
+)
+
+def _postprocess_v15_catechism_html(html, chapter):
+    """Style Q/A paragraphs in v15 Short Catechism chapters."""
+    title = chapter.get('title', '')
+    # Only act on catechism chapters
+    if not any(t in title for t in ('Catechism', 'Question', 'Questions', 'Axplanation', 'Explanation')):
+        return html
+
+    def _style_qa(m):
+        body = m.group('body').strip()
+        if re.match(r'Q(?:uestion)?\.', body, re.I):
+            return f'<p class="v15-catechism-question">{body}</p>'
+        elif re.match(r'A(?:ns(?:wer)?)?\.', body, re.I):
+            return f'<p class="v15-catechism-answer">{body}</p>'
+        return m.group(0)
+
+    return _V15_QA_RE.sub(_style_qa, html)
+
+
+OVERRIDES = {
+    'treatise_title_overrides': {
+        'Discourse Concerning Liturgies, and Their Imposition.': _V15_LITURGIES_TITLE_PAGE,
+        'A Discourse Concerning Evangelical Love, Church Peace, and Unity;': _V15_EVANGELICAL_LOVE_TITLE_PAGE,
+        'An Inquiry of Evangelical Churches.': _V15_INQUIRY_TITLE_PAGE,
+        "An Answer To Dr Stillingfleet's Book of the Unreasonableness of Separation": _V15_STILLINGFLEET_TITLE_PAGE,
+        'A Short Catechism': _V15_CATECHISM_TITLE_PAGE,
+    },
+    'text_replacements': {
+        # OCR corruption in JSON title and body
+        'Axplanation': 'Explanation',
+        'Stillingfleet ': 'Stillingfleet ',  # preserve spacing
+        # Repair possessive OCR artifact (shared with v14 pattern)
+        "Stillingfleetìs": "Stillingfleet's",
+        "Stillingfleetìs": "Stillingfleet's",
+    },
+    'extra_css': _V15_CATECHISM_CSS,
+    'html_postprocess_hook': _postprocess_v15_catechism_html,
+}
+
+
+def main():
+    run_volume_cli(VOL, overrides=OVERRIDES)
+
+
+if __name__ == '__main__':
+    main()

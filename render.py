@@ -66,10 +66,10 @@ FONT_BASE = os.path.join(_RENDER_DIR, 'fonts')
 # words such as "author’s", "Jesus", "John", and "justification".
 BETA_CODE_RE = re.compile(
     r"(?<!\S)(?![^æ;]*[æ;])(?:"
-    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+[><=~|{}+]+"
-    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW><=~|{}\[\]jJ+’]*|"
-    r"[><=~|{}+]+[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW]+"
-    r"[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW><=~|{}\[\]jJ+’]*|"
+    r"[abgdezhqiklmnxoprstufcyvwjABGDEZHQIKLMNXOPRSTUFCYVWJ]+[><=~|{}+]+"
+    r"[abgdezhqiklmnxoprstufcyvwjABGDEZHQIKLMNXOPRSTUFCYVWJ><=~|{}\[\]+’]*|"
+    r"[><=~|{}+]+[abgdezhqiklmnxoprstufcyvwjABGDEZHQIKLMNXOPRSTUFCYVWJ]+"
+    r"[abgdezhqiklmnxoprstufcyvwjABGDEZHQIKLMNXOPRSTUFCYVWJ><=~|{}\[\]+’]*|"
     r"pneu’ma"
     r")\.?(?!\S)"
 )
@@ -142,6 +142,8 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
 
     # 2. Force paragraph break before scholastic labels that appear mid-paragraph
     def _split_before_label(m: re.Match) -> str:
+        # Prevent splitting on e.g. "Because of this Use. 1." if it's semantic mid-sentence.
+        # It's hard to tell, but we must ensure it only triggers when following terminal punctuation.
         return f'{m.group(1)}</p>\n<p class="scholastic-anchor"><b>{m.group("label")}</b> '
 
     html = _SCHOLASTIC_ANCHOR_SPLIT_RE.sub(_split_before_label, html)
@@ -634,11 +636,11 @@ def _is_catechism_scripture_spill(text):
     clean = re.sub(r'\[f\d+\]', ' ', text)
     if re.match(r'^(?:\*\*)?[QA]\.', clean.strip()):
         return False
-    has_ref_code = bool(re.search(r'<\d{6}>', clean))
+    has_ref_code = bool(re.search(r'<[0-9A-Fa-f]{6}>', clean))
     has_ref = bool(SCRIPTURE_REF_RE.search(clean))
     if not (has_ref_code or has_ref):
         return False
-    clean = re.sub(r'<\d{6}>', ' ', clean)
+    clean = re.sub(r'<[0-9A-Fa-f]{6}>', ' ', clean)
     clean = SCRIPTURE_REF_RE.sub(' ', clean)
     clean = re.sub(
         rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b|\b\d+:\d+(?:[-,]\s*\d+)*|\b\d+\b',
@@ -652,7 +654,7 @@ def _is_catechism_scripture_spill(text):
 
 def _answer_head(text):
     clean = FOOTNOTE_MARKER_RE.sub(' ', text)
-    clean = re.sub(r'<\d{6}>', ' ', clean)
+    clean = re.sub(r'<[0-9A-Fa-f]{6}>', ' ', clean)
     clean = SCRIPTURE_REF_RE.sub(' ', clean)
     clean = re.sub(r'\s+', ' ', clean).strip()
     match = re.match(r'^(?:\*\*)?A\.(?:\*\*)?\s+(.{5,120}?[.!?;])', clean, re.I)
@@ -1194,6 +1196,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     md_text = _repair_fused_word_ordinals(md_text)
     md_text = _repair_mid_sentence_blockquote_splits(md_text)
     md_text = _repair_scholastic_blockquote_boundaries(md_text)
+    # Strip stray '+' line-continuation OCR artifacts (e.g. ",+using" → ",using")
+    md_text = re.sub(r'(?<=[,;.!?\s])\+(?=[a-z])', '', md_text)
 
     md_text = _repair_unbalanced_bracket_splits(md_text)
     md_text = _repair_lowercase_continuation_splits(md_text)
@@ -1238,6 +1242,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     summary_continuation_active = False
     seen_footnote_refs = set()
     _fm_prose_started = False  # tracks first paragraph in a prose FM section
+    _is_sermon_volume = bool(config.get('suppress_prefatory_note_heading')) if config else False
+    _next_blockquote_is_opening = False  # reset per chapter in sermon volumes
 
     # Mode and drop cap state are passed in to preserve continuity across files
     
@@ -1250,12 +1256,12 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         if re.match(r'<section\b[^>]*class="[^"]*\btreatise-title-page\b', stripped):
             section_match = re.match(r'(?P<section><section\b[^>]*class="[^"]*\btreatise-title-page\b.*?</section>)(?P<trailing>.*)$', stripped, re.I | re.S)
             if section_match:
-                html_parts.append(_polish_treatise_title_page_html(section_match.group('section')))
+                html_parts.append(_polish_treatise_title_page_html(section_match.group('section'), seen_footnote_refs=seen_footnote_refs))
                 trailing = section_match.group('trailing').strip()
                 if trailing:
                     paragraphs.insert(para_idx + 1, trailing)
             else:
-                html_parts.append(_polish_treatise_title_page_html(stripped))
+                html_parts.append(_polish_treatise_title_page_html(stripped, seen_footnote_refs=seen_footnote_refs))
             continue
 
         if stripped.startswith('>'):
@@ -1339,6 +1345,21 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             kind = token_match.group(1)
             content = token_match.group(2).strip()
 
+            def _render_heading_content(raw_content: str) -> str:
+                """Escape content for use in a heading, converting [fN] markers to noteref links."""
+                def _fn_repl(m):
+                    fn_num = m.group(1)
+                    if fn_num in seen_footnote_refs:
+                        return ''
+                    seen_footnote_refs.add(fn_num)
+                    return f'FNREFTOKEN{fn_num}TOKEN'
+                
+                content_clean = _strip_inline_structural_tokens(raw_content)
+                with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, content_clean)
+                escaped = _html_escape(with_placeholders)
+                with_links = _restore_footnote_placeholders(escaped)
+                return tag_unicode_ranges(with_links)
+
             def _render_blockquote_content(raw_content: str) -> str:
                 def _fn_repl(m):
                     fn_num = m.group(1)
@@ -1372,7 +1393,12 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     content = scripture_match.group(2)
                     html_parts.append(f'<p class="scripture-ref-introduction">{tag_unicode_ranges(_html_escape(ref))},</p>')
 
-                html_parts.append(f'<blockquote epub:type="z3998:quotation"><p class="blockquote-content">{_render_blockquote_content(content)}</p></blockquote>')
+                if _next_blockquote_is_opening:
+                    bq_class = ' class="sermon-opening-scripture"'
+                    _next_blockquote_is_opening = False
+                else:
+                    bq_class = ''
+                html_parts.append(f'<blockquote{bq_class} epub:type="z3998:quotation"><p class="blockquote-content">{_render_blockquote_content(content)}</p></blockquote>')
                 pending_drop_cap = False
                 roman_list_expected = None
                 recent_plain.append(_strip_footnote_placeholders(content))
@@ -1383,13 +1409,13 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             # Zone A (Front Matter) Immunity: Treat all structural components as
             # simple items until we hit the Body transition.
             if current_mode == "FRONT_MATTER" and not is_major_trigger:
-                _escaped = tag_unicode_ranges(_html_escape(content))
+                _escaped = _render_heading_content(content)
                 if front_matter_style == "prose":
                     if kind == 'PART':
                         part_match = re.match(r'^(Part\s+[IVXLCDM]+\.?)(.*)$', content, re.I | re.S)
                         if part_match:
                             lead = _html_escape(part_match.group(1).rstrip('.'))
-                            rest = tag_unicode_ranges(_html_escape(part_match.group(2).strip()))
+                            rest = _render_heading_content(part_match.group(2).strip())
                             html_parts.append(f'<p class="analysis-part"><b>{lead}.</b> {rest}</p>')
                         else:
                             html_parts.append(f'<p class="analysis-part"><b>{_escaped}</b></p>')
@@ -1400,7 +1426,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         roman_match = re.match(r'^([IVXLCDM]+\.)\s*(.*)$', content, re.I | re.S)
                         if roman_match:
                             numeral = _html_escape(roman_match.group(1))
-                            rest = tag_unicode_ranges(_html_escape(roman_match.group(2).strip()))
+                            rest = _render_heading_content(roman_match.group(2).strip())
                             html_parts.append(f'<p class="roman-list-item"><b>{numeral}</b> {rest}</p>')
                         else:
                             html_parts.append(f'<p class="roman-list-item">{_escaped}</p>')
@@ -1424,7 +1450,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         title_text = content.rstrip('.').title()
                         html_parts.append(
                             f'<h2 class="front-matter-heading">'
-                            f'{tag_unicode_ranges(_html_escape(title_text))}'
+                            f'{_render_heading_content(title_text)}'
                             f'</h2>'
                         )
                     else:
@@ -1436,20 +1462,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                 pending_drop_cap = False
                 continue
 
-            def _render_heading_content(raw_content: str) -> str:
-                """Escape content for use in a heading, converting [fN] markers to noteref links."""
-                def _fn_repl(m):
-                    fn_num = m.group(1)
-                    if fn_num in seen_footnote_refs:
-                        return ''
-                    seen_footnote_refs.add(fn_num)
-                    return f'FNREFTOKEN{fn_num}TOKEN'
-                
-                content_clean = _strip_inline_structural_tokens(raw_content)
-                with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, content_clean)
-                escaped = _html_escape(with_placeholders)
-                with_links = _restore_footnote_placeholders(escaped)
-                return tag_unicode_ranges(with_links)
+
 
             def _render_summary_content(raw_content: str) -> str:
                 """Render chapter-summary text without body list/scholastic styling."""
@@ -1493,6 +1506,9 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             elif kind == 'CHAPTER':
                 summary_continuation_active = False
                 html_parts.append(f'<h1 class="secondary">{_render_heading_content(content)}</h1>')
+                # In sermon volumes, the first blockquote after each chapter heading is the opening scripture
+                if _is_sermon_volume:
+                    _next_blockquote_is_opening = True
                 # CHAPTER does not trigger or reset pending_drop_cap (Issue 107)
                 recent_plain.append(_strip_footnote_placeholders(content))
                 if len(recent_plain) > 5:
@@ -1929,8 +1945,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         if not MARKDOWN_STRUCTURAL_START_RE.match(text_html):
             text_html = re.sub(r'^\*\*(?:\*\*)?', '', text_html)
             text_html = re.sub(r'\*\*(?:\*\*)?$', '', text_html)
-        # Specifically remove surviving .** artifact
-        text_html = text_html.replace('.**', '.')
+        # Specifically remove surviving .** artifact (Issue 91/107)
+        text_html = re.sub(r'(?<!\*)\b(\d+)\.\*\*(?=\s+)', r'\1.', text_html)
         
         # Standardize Q/A labels for bolding (CASE-SENSITIVE, anchored)
         # Only allow A if followed by period or Ans/Ques (Issue 26)
@@ -1945,7 +1961,13 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         if text_html.count('**') % 2 != 0:
             text_html = text_html.replace('**', '')
             
-        text_html = re.sub(r'(?<!\*)\b(\d+\.)\*\*(?=\s+)', r'**\1**', text_html)
+        def _repair_bold_marker(m):
+            # Check if there is an unclosed ** before this match (Issue 91/107)
+            if text_html[:m.start()].count('**') % 2 != 0:
+                return m.group(0)
+            return f"**{m.group(1)}**"
+            
+        text_html = re.sub(r'(?<!\*)\b(\d+\.)\*\*(?=\s+)', _repair_bold_marker, text_html)
         text_html = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text_html)
         text_html = re.sub(r'(?<!\*)_(.+?)_(?!\*)', r'<i>\1</i>', text_html)
         text_html = re.sub(rf'\s*\*\*\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', ' ', text_html, flags=re.I)
@@ -2180,7 +2202,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     
     result_html = '\n'.join(html_parts)
     result_html = _attach_colon_introduced_list(result_html)
-    result_html = _attach_em_dash_flat_list(result_html)
+    result_html = _attach_em_dash_flat_list(result_html, config=config)
     result_html = _coalesce_adjacent_signatures(result_html)
     result_html = _merge_short_inline_lists(result_html)
     result_html = _add_owen_list_level_classes(result_html)
@@ -2223,16 +2245,187 @@ def _attach_colon_introduced_list(html: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Helper: join split flat-list ordinal markers across consecutive paragraphs
+# ---------------------------------------------------------------------------
+def _join_orphaned_flat_list_marker_paragraphs(html: str) -> str:
+    """Join paragraphs where a flat-list ordinal marker is orphaned at end of a <p>.
+
+    E.g. '<p>heads: — <b>1.</b> Temptations. 2.</p>\\n<p>Afflictions.</p>'
+    →    '<p>heads: — <b>1.</b> Temptations. <b>2.</b> Afflictions.</p>'
+    """
+    import re as _re
+    pattern = _re.compile(
+        r'(<p(?:\s[^>]*)?>)((?:(?!</p>).)*?)\s+(\d+\.)\s*</p>\s*\n\s*<p(?:\s[^>]*)?>((?:(?!</p>).)*?)</p>',
+        _re.S,
+    )
+    def _replacer(m: '_re.Match') -> str:
+        return f'{m.group(1)}{m.group(2)} <b>{m.group(3)}</b> {m.group(4)}</p>'
+    return pattern.sub(_replacer, html)
+
+
+# ---------------------------------------------------------------------------
+# Helper: split a list-item that embeds an ordinal sub-sequence after '—'
+# ---------------------------------------------------------------------------
+def _split_ordinal_inline_expansions(html: str) -> str:
+    """Split a list-item containing an embedded '— (ordinal)' expansion.
+
+    Only fires when the intro before '—' is ≥ 8 plain words.
+    E.g. '<p class="list-item"><b>(3rdly.)</b> His excellency…men: — (1st.) fitness…</p>'
+    →    two separate list-item paragraphs, second one with bolded (1st.) marker.
+    """
+    import re as _re
+
+    def _wc_plain(text: str) -> int:
+        return len(_re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', text)).strip().split())
+
+    # Matches '— (ordinal)' embedded inside a list-item body
+    _EMBEDDED_ORDINAL_RE = _re.compile(
+        r'(.*?—\s*)(\((?:1st|2nd(?:ly)?|2dly|3rd(?:ly)?|3dly|4th(?:ly)?|5th(?:ly)?)\.\))',
+        _re.I | _re.S,
+    )
+    _LIST_ITEM_FULL_RE = _re.compile(
+        r'^(<p class="list-item">)(<b>[^<]{1,30}</b>\s*)(.*)(</p>)$',
+        _re.S,
+    )
+
+    out: list[str] = []
+    for line in html.split('\n'):
+        m = _LIST_ITEM_FULL_RE.match(line.strip())
+        if not m:
+            out.append(line)
+            continue
+        tag_open, bold_marker, body, _ = m.group(1), m.group(2), m.group(3), m.group(4)
+        sm = _EMBEDDED_ORDINAL_RE.search(body)
+        if not sm:
+            out.append(line)
+            continue
+        intro_html = bold_marker + body[:sm.start(2)].rstrip()
+        if _wc_plain(intro_html) < 8:
+            out.append(line)
+            continue
+        ordinal = sm.group(2)                        # '(1st.)'
+        remainder = body[sm.start(2) + len(ordinal):]  # ' His fitness…'
+        out.append(f'{tag_open}{intro_html}</p>')
+        out.append(f'{tag_open}<b>{ordinal}</b>{remainder}</p>')
+    return '\n'.join(out)
+
+
+# ---------------------------------------------------------------------------
 # Issue #16 — em-dash / open-punctuation flat syllabus flattening
 # ---------------------------------------------------------------------------
-def _attach_em_dash_flat_list(html: str) -> str:
-    """Absorb short list prefixes into a preceding paragraph ending in em-dash or open punctuation."""
+def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
+    """Absorb short Owenian flat-list prefixes into a preceding em-dash anchor.
+
+    Signals
+    -------
+    F  — announced count exactly matches run length, ≤20 w per item
+    H  — ≥3 items, all end '.', all ≤25 w
+    G  — single-item ordinal that continues an existing inline ordinal sequence
+    all_non_final_semi — every non-final item ends ';', non-final ≤20 w
+    cont-comma — non-final item ends ',' → final item joins regardless of length
+    cont-connector — non-final item ends 'and'/'or' → same
+    A  — non-final item ends ';' or ',', ≤12 w (hard cap, Bug #6 raised from 8)
+    B  — any item ends 'and'/'or', ≤12 w
+    C  — all items ≤3 w
+    D  — ≥3 items, all ≤7 w
+    """
     if not html:
         return html
 
     import re as _re
 
-    # Compiled patterns for syllabus introductions (updated to match all trailing punctuation)
+    def _parse_roman(s: str) -> int:
+        s = s.upper().strip('.,:;()[]')
+        if not s or not _re.match(r'^[IVXLCDM]+$', s):
+            return 0
+        roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        val = 0
+        prev_val = 0
+        for char in reversed(s):
+            curr_val = roman_map.get(char, 0)
+            if curr_val >= prev_val:
+                val += curr_val
+            else:
+                val -= curr_val
+            prev_val = curr_val
+        return val
+
+    def _get_marker_val_and_type(marker_text: str) -> tuple[str, int]:
+        clean = _re.sub(r'<[^>]+>', '', marker_text).strip()
+        clean = clean.strip('.,:; \t\n\r*')
+        if not clean:
+            return ('empty', 0)
+        
+        clean_upper = clean.upper()
+        
+        if clean.startswith('(') and clean.endswith(')'):
+            inner = clean[1:-1].strip('.,:; ')
+            if inner.isdigit():
+                return ('arabic_paren', int(inner))
+            if len(inner) == 1 and inner.isalpha():
+                return ('alpha_paren', ord(inner.lower()) - ord('a') + 1)
+            roman_val = _parse_roman(inner)
+            if roman_val > 0:
+                return ('roman_paren', roman_val)
+                
+        if clean.startswith('[') and clean.endswith(']'):
+            inner = clean[1:-1].strip('.,:; ')
+            if inner.isdigit():
+                return ('arabic_bracket', int(inner))
+            if len(inner) == 1 and inner.isalpha():
+                return ('alpha_bracket', ord(inner.lower()) - ord('a') + 1)
+            roman_val = _parse_roman(inner)
+            if roman_val > 0:
+                return ('roman_bracket', roman_val)
+
+        w = clean_upper
+        if 'FIRST' in w or '1ST' in w: return ('ordinal', 1)
+        if 'SECOND' in w or '2ND' in w or '2DLY' in w: return ('ordinal', 2)
+        if 'THIRD' in w or '3RD' in w or '3DLY' in w: return ('ordinal', 3)
+        if 'FOURTH' in w or '4TH' in w or '4THLY' in w: return ('ordinal', 4)
+        if 'FIFTH' in w or '5TH' in w or '5THLY' in w: return ('ordinal', 5)
+        if 'SIXTH' in w or '6TH' in w: return ('ordinal', 6)
+        if 'SEVENTH' in w or '7TH' in w: return ('ordinal', 7)
+        if 'EIGHTH' in w or '8TH' in w: return ('ordinal', 8)
+        if 'NINTH' in w or '9TH' in w: return ('ordinal', 9)
+        if 'TENTH' in w or '10TH' in w: return ('ordinal', 10)
+
+        if clean.isdigit():
+            return ('arabic_bare', int(clean))
+            
+        roman_val = _parse_roman(clean)
+        if roman_val > 0:
+            return ('roman_bare', roman_val)
+            
+        if len(clean) == 1 and clean.isalpha():
+            return ('alpha_bare', ord(clean.lower()) - ord('a') + 1)
+            
+        return ('unknown', 0)
+
+    def _is_sequential_sequence(pairs) -> bool:
+        parsed = [_get_marker_val_and_type(mk) for mk, _ in pairs]
+        known_parsed = [(t, v) for t, v in parsed if t != 'unknown' and t != 'empty' and v > 0]
+        if len(known_parsed) < 2:
+            return True
+            
+        first_type = known_parsed[0][0]
+        if not all(t == first_type for t, _ in known_parsed):
+            return False
+            
+        for idx in range(1, len(known_parsed)):
+            if known_parsed[idx][1] <= known_parsed[idx-1][1]:
+                return False
+        return True
+
+
+    # ── caps ─────────────────────────────────────────────────────────────────
+    _HARD_CAP     = 12   # base cap raised from 8 (Bug #6)
+    _SIGNAL_F_CAP = config.get('list_item_merge_cap', 20) if config else 20   # exact announced-count match (tightened 2026-05-27)
+    _SIGNAL_H_CAP = 25   # preview-syllabus: ≥3 items, all end '.', all ≤25 w
+    _ALL_SEMI_CAP = 20   # all_non_final_semi: non-final items must be ≤20 w
+    _ANCHOR_LIMIT = 80   # max plain words in a list-item anchor for auto-attach
+
+    # ── patterns ─────────────────────────────────────────────────────────────
     _EXPLICIT_COUNT_RE = _re.compile(
         r'\b(?:I\s+understand\s+)?(?:two|three|four|five|six|seven|'
         r'eight|nine|ten|twofold|threefold|fourfold|\d+)\b.{0,120}'
@@ -2248,59 +2441,93 @@ def _attach_em_dash_flat_list(html: str) -> str:
         r'in\s+particular|are\s+these)\b.{0,60}[—\-:,;.]\s*$',
         _re.I,
     )
-
     _LIST_ITEM_RE = _re.compile(
         r'<p class="(list-item|roman-list-item)">(<b>[^<]{1,30}</b>\s*)?(.*?)</p>',
         _re.S,
     )
+    # Ordinal markers: (1st.), (2ndly.), 3rdly., etc.
+    _ORDINAL_MK_RE = _re.compile(
+        r'^\(?(?:\d+(?:(?:st|nd|rd|th)ly?|dly|ly)|1st|2nd(?:ly)?|'
+        r'3rd(?:ly)?|4th(?:ly)?)\)?\.?$',
+        _re.I,
+    )
+    # Detect inline ordinals already embedded in a preceding paragraph
+    _HAS_INLINE_ORDINAL_RE = _re.compile(
+        r'\((?:1st|2nd(?:ly|dly)?|3rd(?:ly|dly)?|4th(?:ly)?|5th(?:ly)?)\.\)',
+        _re.I,
+    )
 
+    # ── helpers ───────────────────────────────────────────────────────────────
     def _plain(frag: str) -> str:
         return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', frag)).strip()
 
     def _wc(frag: str) -> int:
         return len(_plain(frag).split())
 
-    def _extract_count_from_text(text: str) -> int:
-        # Strip any leading list marker e.g., "1. ", "I. ", "(1.) "
-        cleaned_text = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', text, flags=_re.I)
-        cleaned_text = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\s*\)\s*', '', cleaned_text, flags=_re.I)
-        cleaned_text = cleaned_text.strip()
-        words = {
-            'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
-            'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
-            'twofold': 2, 'threefold': 3, 'fourfold': 4
-        }
-        m = _re.search(r'\b(two|three|four|five|six|seven|eight|nine|ten|twofold|threefold|fourfold|\d+)\b', cleaned_text, _re.I)
-        if m:
-            w = m.group(1).lower()
-            if w.isdigit():
-                return int(w)
-            return words.get(w, 0)
-        return 0
+    def _strip_marker(text: str) -> str:
+        text = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', text, flags=_re.I)
+        text = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\s*\)\s*', '', text, flags=_re.I)
+        return text.strip()
 
-    def _preceding_allows_attachment(preceding_plain: str) -> bool:
-        preceding_plain = preceding_plain.strip()
-        if not preceding_plain:
+    def _extract_count(text: str) -> int:
+        """Return announced count only when text matches _EXPLICIT_COUNT_RE."""
+        if not _EXPLICIT_COUNT_RE.search(text):
+            return 0
+        cleaned = _strip_marker(text)
+        m = _re.search(
+            r'\b(two|three|four|five|six|seven|eight|nine|ten|'
+            r'twofold|threefold|fourfold|\d+)\b',
+            cleaned, _re.I,
+        )
+        if not m:
+            return 0
+        w = m.group(1).lower()
+        if w.isdigit():
+            return int(w)
+        return {'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
+                'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+                'twofold': 2, 'threefold': 3, 'fourfold': 4}.get(w, 0)
+
+    def _allows_attach(plain: str, is_list_item: bool = False) -> bool:
+        plain = plain.strip()
+        if not plain:
             return False
-        # Strip any leading list marker e.g., "1. ", "I. ", "(1.) "
-        preceding_plain = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', preceding_plain, flags=_re.I)
-        preceding_plain = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\s*\)\s*', '', preceding_plain, flags=_re.I)
-        preceding_plain = preceding_plain.strip()
-        if not preceding_plain:
+        if _re.search(r'\bwhereby\b', plain, _re.I):
             return False
-        # Guard: detailed explanatory lists introduced by whereby must not flatten
-        if _re.search(r'\bwhereby\b', preceding_plain, _re.I):
+        if is_list_item:
+            body_wc = len(_strip_marker(plain).split())
+            if body_wc > _ANCHOR_LIMIT:
+                if not (_EXPLICIT_COUNT_RE.search(plain) or _FORMULA_TAIL_RE.search(plain)):
+                    return False
+        last = plain.rstrip('\"\'').strip()
+        if not last:
             return False
-        # Remove trailing quotes for punctuation check
-        stripped = preceding_plain.rstrip('\"\'').strip()
-        if not stripped:
-            return False
-        if stripped[-1] in (',', ';', ':', '—', '-'):
+        if last[-1] in ('—', ',', ';', ':'):
             return True
-        if stripped[-1] == '.':
-            return bool(_EXPLICIT_COUNT_RE.search(preceding_plain) or _FORMULA_TAIL_RE.search(preceding_plain))
+        if last[-1] == '.':
+            return bool(_EXPLICIT_COUNT_RE.search(plain) or _FORMULA_TAIL_RE.search(plain))
         return False
 
+    def _add_anchor_class(para_html: str) -> str:
+        if 'syllabus-anchor' in para_html:
+            return para_html
+        if _re.match(r'<p\s+class="([^"]*)"', para_html):
+            return _re.sub(
+                r'<p\s+class="([^"]*)"',
+                lambda mm: f'<p class="{mm.group(1)} syllabus-anchor"',
+                para_html, count=1,
+            )
+        if para_html.startswith('<p>'):
+            return '<p class="syllabus-anchor">' + para_html[3:]
+        return para_html
+
+    def _absorb(preceding: str, pairs: list, count: int) -> str:
+        parts = [((mk or '') + ' ' + ct).strip() for mk, ct in pairs[:count]]
+        inline = _re.sub(r'\s+', ' ', ' '.join(parts))
+        merged = _re.sub(r'</p>\s*$', ' ' + inline + '</p>', preceding, count=1)
+        return _add_anchor_class(merged)
+
+    # ── main loop ─────────────────────────────────────────────────────────────
     paras = html.split('\n')
     out: list[str] = []
     i = 0
@@ -2310,15 +2537,14 @@ def _attach_em_dash_flat_list(html: str) -> str:
         para = paras[i]
         stripped = para.strip()
 
-        # If it's a list item, we might start gathering a run!
-        m = _LIST_ITEM_RE.match(stripped)
-        if not m:
+        m_item = _LIST_ITEM_RE.match(stripped)
+        if not m_item:
             out.append(para)
             i += 1
             continue
 
-        # We have a list item! Let's find the run of consecutive list items.
-        run_indices = []
+        # Collect consecutive list-item run
+        run_indices: list[int] = []
         j = i
         while j < n:
             curr = paras[j].strip()
@@ -2331,74 +2557,145 @@ def _attach_em_dash_flat_list(html: str) -> str:
             else:
                 break
 
-        # If we didn't find at least two list items, just emit and move on.
+        # ── Signal G: single-item ordinal continuation ───────────────────────
+        if len(run_indices) == 1:
+            pm = _LIST_ITEM_RE.match(stripped)
+            mk_plain = _plain(pm.group(2) or '').strip() if pm else ''
+            if pm and _ORDINAL_MK_RE.match(mk_plain):
+                prev_idx = next(
+                    (k for k in range(len(out) - 1, -1, -1) if out[k].strip()), -1
+                )
+                if prev_idx >= 0 and _HAS_INLINE_ORDINAL_RE.search(_plain(out[prev_idx])):
+                    # Ensure the next ordinal is a numerical continuation (Issue 91/107)
+                    def _parse_val(marker_text: str) -> int:
+                        m = _re.search(r'\d+', marker_text)
+                        if m: return int(m.group(0))
+                        w = marker_text.lower()
+                        if 'first' in w or '1st' in w: return 1
+                        if 'second' in w or '2nd' in w or '2dly' in w: return 2
+                        if 'third' in w or '3rd' in w or '3dly' in w: return 3
+                        if 'fourth' in w or '4th' in w: return 4
+                        if 'fifth' in w or '5th' in w: return 5
+                        return 0
+                    
+                    preceding_plain = _plain(out[prev_idx])
+                    matches = list(_re.finditer(r'\((?:\d+(?:st|nd|rd|th|ly|dly)?|1st|2nd(?:ly)?|3rd(?:ly)?|4th(?:ly)?)\.?\)', preceding_plain, _re.I))
+                    is_continuation = True
+                    if matches:
+                        last_val = _parse_val(matches[-1].group(0))
+                        next_val = _parse_val(mk_plain)
+                        if next_val != last_val + 1:
+                            is_continuation = False
+                    
+                    if is_continuation:
+                        ct = pm.group(3) or ''
+                        out[prev_idx] = _absorb(out[prev_idx], [(pm.group(2) or '', ct)], 1)
+                        i = j
+                        continue
+            out.append(para)
+            i += 1
+            continue
+
         if len(run_indices) < 2:
             out.append(para)
             i += 1
             continue
 
-        # We have a candidate run of list items!
+        # ── is_case_2: first list-item ends '—' (nested sub-list anchor) ─────
         is_case_2 = False
-        first_item_plain = _plain(para)
-        if _preceding_allows_attachment(first_item_plain) and len(run_indices) >= 3:
-            is_case_2 = True
+        first_plain = _plain(para)
+        if first_plain.rstrip('\"\'').strip().endswith('—'):
+            is_li = bool(_re.match(r'<p class="(?:list-item|roman-list-item)">', stripped))
+            if is_li and _allows_attach(first_plain, is_list_item=True):
+                is_case_2 = True
 
         if is_case_2:
-            preceding = para
-            preceding_plain = first_item_plain
-            candidate_indices = run_indices[1:]
+            preceding      = para
+            preceding_plain = first_plain
+            candidate_idx  = run_indices[1:]
         else:
-            prev_idx = -1
-            for k in range(len(out) - 1, -1, -1):
-                if out[k].strip():
-                    prev_idx = k
-                    break
-
+            prev_idx = next(
+                (k for k in range(len(out) - 1, -1, -1) if out[k].strip()), -1
+            )
             if prev_idx == -1:
                 out.append(para)
                 i += 1
                 continue
-
-            preceding = out[prev_idx]
+            preceding      = out[prev_idx]
             preceding_plain = _plain(preceding)
-
-            if not _preceding_allows_attachment(preceding_plain):
+            is_prec_li = bool(_re.match(
+                r'<p class="(?:list-item|roman-list-item)">', preceding.strip()
+            ))
+            if not _allows_attach(preceding_plain, is_list_item=is_prec_li):
                 out.append(para)
                 i += 1
                 continue
+            candidate_idx = run_indices
 
-            candidate_indices = run_indices
-
-        item_pairs = []
-        for idx in candidate_indices:
+        # Build item pairs
+        item_pairs: list[tuple[str, str]] = []
+        for idx in candidate_idx:
             pm = _LIST_ITEM_RE.match(paras[idx].strip())
-            marker = pm.group(2) or ''
-            content = pm.group(3) or ''
-            item_pairs.append((marker, content))
+            item_pairs.append((pm.group(2) or '', pm.group(3) or ''))
 
-        # Determine the length of the flat prefix we should flatten.
+        announced = _extract_count(preceding_plain)
+
+        # ── determine flat prefix length ──────────────────────────────────────
         flat_prefix_len = 0
-        announced_count = _extract_count_from_text(preceding_plain)
 
         for L in range(len(item_pairs), 1, -1):
-            sub_pairs = item_pairs[:L]
-            wcs = [_wc(ct) for _, ct in sub_pairs]
+            sub   = item_pairs[:L]
+            if not _is_sequential_sequence(sub):
+                continue
+            wcs   = [_wc(ct) for _, ct in sub]
+            nf    = sub[:-1]      # non-final items
 
-            sig_e = (announced_count == L)
-            limit = 50 if sig_e else 8
+            # Signal F: exact announced count, ≤20 w each
+            if announced == L and all(wc <= _SIGNAL_F_CAP for wc in wcs):
+                flat_prefix_len = L
+                break
 
-            # 1. Hard veto: any item > limit?
-            if any(wc > limit for wc in wcs):
+            # Signal H: ≥3 items, all end '.', all ≤25 w
+            if (L >= 3
+                    and all(ct.rstrip('\"\'').strip().endswith('.') for _, ct in sub)
+                    and all(wc <= _SIGNAL_H_CAP for wc in wcs)):
+                flat_prefix_len = L
+                break
+
+            # all_non_final_semi: every non-final item ends ';', non-final ≤20 w
+            if (nf
+                    and all(ct.rstrip('\"\'').strip().endswith(';') for _, ct in nf)
+                    and all(wcs[k] <= _ALL_SEMI_CAP for k in range(len(nf)))):
+                flat_prefix_len = L
+                break
+
+            # Continuation comma: non-final item ends ',' → final joins
+            if nf and any(ct.rstrip('\"\'').strip().endswith(',') for _, ct in nf):
+                flat_prefix_len = L
+                break
+
+            # Continuation connector: non-final ends 'and'/'or' → final joins
+            if nf and any(
+                _re.search(r'\b(?:and|or)\s*$', ct.rstrip('\"\'').strip(), _re.I)
+                for _, ct in nf
+            ):
+                flat_prefix_len = L
+                break
+
+            # Standard hard cap
+            if any(wc > _HARD_CAP for wc in wcs):
                 continue
 
-            # 2. Check positive signals
-            sig_a = any(ct.rstrip('\"\'').strip().endswith((';', ',')) for _, ct in sub_pairs[:-1])
-            sig_b = any(_re.search(r'\b(and|or)\s*$', ct.rstrip('\"\'').strip(), _re.I) for _, ct in sub_pairs)
+            # Standard signals A/B/C/D
+            sig_a = any(ct.rstrip('\"\'').strip().endswith((';', ',')) for _, ct in nf)
+            sig_b = any(
+                _re.search(r'\b(?:and|or)\s*$', ct.rstrip('\"\'').strip(), _re.I)
+                for _, ct in sub
+            )
             sig_c = all(wc <= 3 for wc in wcs)
             sig_d = L >= 3 and all(wc <= 7 for wc in wcs)
-            sig_e = (announced_count == L)
 
-            if sig_a or sig_b or sig_c or sig_d or sig_e:
+            if sig_a or sig_b or sig_c or sig_d:
                 flat_prefix_len = L
                 break
 
@@ -2407,41 +2704,18 @@ def _attach_em_dash_flat_list(html: str) -> str:
             i += 1
             continue
 
-        # ── ABSORB: strip </p> from preceding paragraph, append items inline ─
-        inline_parts = []
-        for mk, ct in item_pairs[:flat_prefix_len]:
-            inline_parts.append(((mk or '') + ' ' + ct).strip())
-        inline_text = ' '.join(inline_parts)
+        # ── absorb ───────────────────────────────────────────────────────────
+        new_preceding = _absorb(preceding, item_pairs, flat_prefix_len)
 
-        # Normalise double spaces
-        inline_text = _re.sub(r'\s+', ' ', inline_text)
-
-        new_preceding = _re.sub(r'</p>\s*$', ' ' + inline_text + '</p>', preceding, count=1)
-        
-        # Add syllabus-anchor class
-        if _re.match(r'<p\s+class="([^"]*)"', new_preceding):
-            new_preceding = _re.sub(
-                r'<p\s+class="([^"]*)"',
-                lambda m: f'<p class="{m.group(1)} syllabus-anchor"',
-                new_preceding, count=1,
-            )
-        elif _re.match(r'<p>', new_preceding):
-            new_preceding = _re.sub(r'^<p>', '<p class="syllabus-anchor">', new_preceding, count=1)
-        
         if is_case_2:
             out.append(new_preceding)
         else:
             out[prev_idx] = new_preceding
 
-        # Re-emit any non-flat expansion items as list paragraphs
-        if is_case_2:
-            remaining_indices = run_indices[1 + flat_prefix_len:]
-        else:
-            remaining_indices = run_indices[flat_prefix_len:]
-        if remaining_indices:
-            remaining_paras = [paras[idx] for idx in remaining_indices]
-            processed_remaining = _attach_em_dash_flat_list('\n'.join(remaining_paras))
-            out.extend(processed_remaining.split('\n'))
+        # Re-emit remaining expansion items (recurse)
+        remaining = [paras[idx] for idx in candidate_idx[flat_prefix_len:]]
+        if remaining:
+            out.extend(_attach_em_dash_flat_list('\n'.join(remaining)).split('\n'))
 
         i = j
         continue
@@ -2931,10 +3205,19 @@ _TITLE_CONNECTORS = {
 }
 
 
-def _polish_treatise_title_page_html(html: str) -> str:
+def _polish_treatise_title_page_html(html: str, seen_footnote_refs=None) -> str:
     """Normalize pre-rendered treatise title pages into one elegant title sheet."""
     if not re.search(r'<section\b[^>]*class="[^"]*\btreatise-title-page\b', html):
         return html
+
+    if seen_footnote_refs is not None:
+        def footnote_marker_repl(match):
+            fn_num = match.group(1)
+            if fn_num in seen_footnote_refs:
+                return ''
+            seen_footnote_refs.add(fn_num)
+            return f'FNREFTOKEN{fn_num}TOKEN'
+        html = FOOTNOTE_MARKER_RE.sub(footnote_marker_repl, html)
 
     # Fix "title-line -major" -> "title-line-major", handles -minor, -small, -medium too
     html = re.sub(r'class="title-line\s+-(\w+)"', r'class="title-line-\1"', html)
@@ -2971,6 +3254,10 @@ def _polish_treatise_title_page_html(html: str) -> str:
         html,
         flags=re.I | re.S,
     )
+
+    if seen_footnote_refs is not None:
+        html = _restore_footnote_placeholders(html)
+
     return html
 
 
@@ -3018,6 +3305,10 @@ def _polish_contents_page_html(html: str) -> str:
     if 'epub:type="toc"' not in html:
         return html
 
+    # Translate known legacy Beta Code in TOC to premium Greek Unicode
+    html = html.replace('Qemoci&gt;av Aujtexousiastikh~v SPECIMEN', '<span lang="el" xml:lang="el">Θεομαχίας Αὐτεξουσιαστικῆς</span> Specimen')
+    html = html.replace('QEOMACIA ATTEXOUSIASTIKH', '<span lang="el" xml:lang="el">ΘΕΟΜΑΧΙΑ ΑΥΤΕΞΟΥΣΙΑΣΤΙΚΗ</span>')
+
     html = re.sub(r'<section([^>]*)epub:type="toc"([^>]*)>', '<section class="contents-page" epub:type="toc">', html, count=1)
     seen_volume_title = False
 
@@ -3027,7 +3318,7 @@ def _polish_contents_page_html(html: str) -> str:
         plain = re.sub(r'<br\s*/?>', ' ', text_html, flags=re.I)
         plain = re.sub(r'<[^>]+>', '', plain).strip()
         plain_upper = plain.upper()
-        if re.match(r'^CONTENTS\s+OF\s+VOL(?:UME)?\.?\s*\d+', plain_upper):
+        if re.match(r'^CONTENTS\s+OF\s+VOL(?:UME)?\.?\s*\d+', plain_upper) or plain_upper == 'CONTENTS':
             seen_volume_title = True
             return f'<h1 class="contents-volume-title">{text_html}</h1>'
         if re.fullmatch(r'(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|NOTE TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER|BY D\.?\s+BURGESS))?(?:\s+(?:PREFATORY NOTE|PREFACE|PREFACE TO THE READER|ORIGINAL PREFACE|GENERAL PREFACE|TO THE READER|NOTE TO THE READER|ADVERTISEMENT)(?:\s+(?:BY THE EDITOR|TO THE READER|BY D\.?\s+BURGESS))?)*', plain_upper):
@@ -3038,6 +3329,22 @@ def _polish_contents_page_html(html: str) -> str:
     html = re.sub(r'<h[23][^>]*>\s*(.*?)\s*</h[23]>', _heading_repl, html, flags=re.I | re.S)
     html = re.sub(r'<p class="ContentsItem">', '<p class="contents-item">', html)
     html = re.sub(r'<span class="ContentsDescWrap">', '<span class="contents-desc-wrap">', html)
+
+    # Normalize contents-desc starting with ordinals or Roman numerals to contents-item
+    def _desc_to_item_repl(m):
+        content = m.group(1)
+        clean_content = re.sub(r'<[^>]+>', '', content).strip()
+        is_ordinal_or_roman = bool(re.match(
+            r'^(?:(?:First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)(?:ly)?,?|'
+            r'[IVXLCDM]+(?:\s+|\.|$))',
+            clean_content,
+            re.I
+        ))
+        if is_ordinal_or_roman:
+            return f'<p class="contents-item">{content}</p>'
+        return m.group(0)
+
+    html = re.sub(r'<p class="contents-desc">\s*(.*?)\s*</p>', _desc_to_item_repl, html, flags=re.I | re.S)
 
     item_re = re.compile(r'<p class="contents-item">\s*(.*?)\s*</p>', re.I | re.S)
     rebuilt = []
@@ -3077,7 +3384,12 @@ def _polish_contents_page_html(html: str) -> str:
             return f'<h2 class="contents-part-title">{_html_escape(label)}</h2>'
 
         match = re.match(
-            r'(?P<label>(?:Chapter|Digression)\s+[0-9IVXLCDM]+\.?|[0-9]+\.?\s*—)\s*(?P<desc>.*)$',
+            r'(?P<label>'
+            r'(?:Chapter|Digression)\s+[0-9IVXLCDM]+\.?|'
+            r'[0-9]+\.?\s*—|'
+            r'(?:First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)(?:ly)?,?|'
+            r'[IVXLCDM]+\.?'
+            r')\s*(?P<desc>.*)$',
             text,
             re.I | re.S,
         )
@@ -3088,19 +3400,17 @@ def _polish_contents_page_html(html: str) -> str:
             if desc.startswith('—'):
                 desc = desc[1:].strip()
             desc = re.sub(r'\s+', ' ', desc)
-            # Convert any Beta Code / AGES Greek encoding that survived into
-            # the summary description before HTML-escaping.
-            desc = clean_greek_text(polytonic_sweep(desc))
+            desc = clean_greek_text(desc)
             return (
                 f'<p class="contents-item"><span class="contents-label">'
                 f'{_html_escape(label)}</span>'
-                f'{(" " + _html_escape(desc)) if desc else ""}</p>'
+                f'{(" " + tag_unicode_ranges(_html_escape(desc))) if desc else ""}</p>'
             )
 
         if text.upper() == text and len(re.findall(r'[A-Z]', text)) >= 12:
-            return f'<h2 class="contents-treatise-title">{_html_escape(text)}</h2>'
+            return f'<h2 class="contents-treatise-title">{tag_unicode_ranges(_html_escape(text))}</h2>'
 
-        return f'<p class="contents-item">{_html_escape(text)}</p>'
+        return f'<p class="contents-item">{tag_unicode_ranges(_html_escape(text))}</p>'
 
     def _flush_pending():
         nonlocal pending_item
@@ -3641,7 +3951,7 @@ def format_treatise_title_page(page, limit_to_title=False):
             spans = line['spans']
             max_size = max(s['size'] for s in spans)
             text = "".join(s['text'] for s in spans).strip()
-            text = re.sub(r'<\d{6}>', '', text).strip()
+            text = re.sub(r'<[0-9A-Fa-f]{6}>', '', text).strip()
             if not text or text.isdigit(): continue
             if any(h in text for h in _AGES_HEADERS): continue
             
@@ -3789,7 +4099,7 @@ def format_title_page(page, section_class="title-page", epub_type="titlepage", l
             max_size = max(s['size'] for s in spans)
             font_names = [s['font'] for s in spans]
             text = ''.join(s['text'] for s in spans).strip()
-            text = re.sub(r'<\d{6}>', '', text).strip()
+            text = re.sub(r'<[0-9A-Fa-f]{6}>', '', text).strip()
             if not text or text.isdigit():
                 continue
             if any(h in text for h in _AGES_HEADERS):
@@ -3907,7 +4217,7 @@ def build_toc_page_xhtml(pages):
                         has_color = True
                 
                 l_text = "".join(s['text'] for s in spans).strip()
-                l_text = re.sub(r'<\d{6}>', '', l_text).strip()
+                l_text = re.sub(r'<[0-9A-Fa-f]{6}>', '', l_text).strip()
                 # Skip standalone page numbers
                 if l_text.isdigit() and len(l_text) <= 4:
                     continue
@@ -3947,7 +4257,16 @@ def build_toc_page_xhtml(pages):
                         and 'class="contents-item"' in parts[-1]
                         and re.search(r'[;—-]\s*</p>$', parts[-1])
                     ):
+                        # Sparse TOC style: merge continuation into previous entry
                         parts[-1] = parts[-1].replace('</p>', f' {continuation}</p>')
+                    elif continuation:
+                        # Analytical TOC style: descriptive paragraph after a heading
+                        parts.append(f'<p class="contents-desc">{continuation}</p>')
+
+    parts.append('</section>')
+    return '\n'.join(parts)
+
+
 def generate_copyright_xhtml(vol_num, config, primary_font_name):
     """Generate visual and detailed Publication Metadata (colophon/copyright) page."""
     publisher = config.get('publisher') or 'Eduardus Ekofius'
@@ -4300,12 +4619,19 @@ def render_volume(vol_num: int, overrides: dict = None,
         fm_html = fm['html']
         if fm_html is None:
             continue
-        if fm.get('type') == 'title_page':
+        fm_overrides = config.get('front_matter_overrides', {})
+        if fm['title'] in fm_overrides:
+            fm_html = fm_overrides[fm['title']]
+        elif fm.get('type') == 'title_page':
             fm_html = _polish_volume_title_page_html(fm_html, vol_num, config)
         elif fm.get('type') == 'treatise_title_page':
             fm_html = _polish_treatise_title_page_html(fm_html)
         elif fm.get('type') == 'toc':
-            fm_html = _polish_contents_page_html(fm_html)
+            toc_override = config.get('contents_page_overrides')
+            if toc_override:
+                fm_html = toc_override
+            else:
+                fm_html = _polish_contents_page_html(fm_html)
         fm_item.set_content(
             _make_xhtml(fm['title'], fm_html).encode('utf-8')
         )
@@ -4380,10 +4706,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             conv_mode = 'FRONT_MATTER'
             conv_drop_cap = False
             conv_fm_style = 'prose'
-        elif ch_dict.get('is_treatise') and re.search(
-            r'\b(?:PART|BOOK)\s+[0-9IVXLCDM]+\b',
-            title_upper,
-        ):
+        elif ch_dict.get('is_treatise'):
             conv_mode = 'BODY_START'
             conv_drop_cap = True
             conv_fm_style = 'blurb'

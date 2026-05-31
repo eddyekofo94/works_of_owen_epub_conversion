@@ -1,0 +1,519 @@
+{
+  "volume": 9,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 186,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "celebrated and much-respected preacher in London, — a kind of Latimer among the Nonconformists of his time. He died in 1713, and his funeral sermon was preached by Matthew Henry: —",
+          "next": "the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks; — now, that city. and country are crying, 'Watchman, what of the night? ?' — now, that the three fr"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "This was not now the case of Israel and Judah. It proved afterward to be their case, as the apostle describes it, 1 Thessalonians 2:15, 16,",
+          "next": "How come? They have filled their measure, reached to their bounds; — \"wrath is come upon them to the uttermost.\" I hope, I pray, that this is not, that this may not be, the state o"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": " but let all mankind do what they will, he will not pass it by without some severe, desolating judgment. Such was their case even at this time; — you may see in 2 Chronicles 36:16,",
+          "next": "It was impossible that the judgment of God should be turned away from them. In this state God saith, \"Pray not for this people; my heart shall not be toward them,\" (until he had br"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": " are absolutely resolved upon sovereign grace and mercy: and without relief from thence, I shall only say, as to the proof of the proposition, what the prophet saith, Isaiah 34:16,",
+          "next": "To omit all the considerations and all the proof I intended, that sovereign grace and mercy must be our relief, if ever we be relieved, I proceed unto the second thing; which is, —"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "e first place. Eternal life is promised by God, who cannot lie, Titus 1:2; that is, who is so faithful, as that it is utterly impossible he should deceive any. So Hebrews 6:17, 18,",
+          "next": "The design of God is, that we may receive encouragement in our flying for refuge to the hope set before us, — that is, in believing. What doth he propose to this end? Why, his own "
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —",
+          "next": "Use 1. We shall begin with the consideration of God himself, even the Father; and that declaration of his love, kindness, tenderness, readiness, and willingness to receive poor bel"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "ainting sinners: \"Give not over; let not go your hold; though you be in darkness to all other means of support and consolation, yet 'trust in the name of the LORD.' And,\" saith he,",
+          "next": "And what this name of God, which is such a stay and safe defense, is, is declared at large, Exodus 34:6, 7. This name of his, is that glory which he promised to show to Moses, chap"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": " requireth of us is so ordered and disposed in the revelation thereof, that when our Savior had made him and his whole will known from his bosom, he sums up his whole work in this,",
+          "next": "The manifestation of the name of God to the elect was the great work of Christ on the earth, as he was the prophet and teacher of his church. He declared the name of God, — his gra"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "self for our good, is greatly conquering to the soul; but none so much as this, — his being love, and ready to forgive on that account. Such is the frame of the church, Micah 7:18,",
+          "next": "Can it enter into the heart of man? O who is like to him! Is it possible he should be thus to sinners! This discovery overwhelms the soul, and strengthens it in faith and trust in "
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": " in the dispensation of his providence, that is too hard for the apprehensions of men when they come to be concerned in it. Poor Jonah was angry that he was so merciful, Jonah 4:2,",
+          "next": "And if God be thus full of compassion to the world, which today is, and to-morrow shall be cast into the fire, is he not much more loving and tender unto you, \"O ye of little faith"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 5,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "Now, surely, if God hath this delight in us in our walking before him, is it not expected that our delight should be in him in our obedience? It suits not my present business to go over the testimonies of Scripture, wherein either we are required to delight in"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "The latter containeth, — 1. A doctrinal observation for the use of the church, from the whole, verse 7. 2. The reasons and confirmation of the doctrine so laid down, taken from the power and righteousness of God in the actions recounted, verses 8, 9. 3. A thre"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "They shall have no better issue, because, — (1.) The Lord will take away their stout hearts, whereby they are supported; (2.) He will take away their strong hands, whereby they are confirmed: and when hearts and hands are gone, they also are gone."
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "text": "His estate is doubly expressed: — 1. From the place where he was, — \" From the end of the earth;\" and, 2. From the condition he was in, — \" His heart was overwhelmed.\" And in the course he steered there are two things also: —"
+        },
+        {
+          "file": "EPUB/ch029.xhtml",
+          "text": "There is a twofold hardening from God's fear: — 1. There is a total hardening; and, 2. A partial hardening: — 1. There is a total hardening, like that mentioned, Isaiah 6:10,"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "as often as ye eat this bread and drink this",
+          "count": 6
+        },
+        {
+          "phrase": "often as ye eat this bread and drink this cup",
+          "count": 6
+        },
+        {
+          "phrase": "loved us and washed us from our sins in his",
+          "count": 6
+        },
+        {
+          "phrase": "us and washed us from our sins in his own",
+          "count": 6
+        },
+        {
+          "phrase": "and washed us from our sins in his own blood",
+          "count": 6
+        },
+        {
+          "phrase": "that we might be made the righteousness of god in",
+          "count": 5
+        },
+        {
+          "phrase": "as ye eat this bread and drink this cup ye",
+          "count": 5
+        },
+        {
+          "phrase": "ye eat this bread and drink this cup ye do",
+          "count": 5
+        },
+        {
+          "phrase": "eat this bread and drink this cup ye do show",
+          "count": 5
+        },
+        {
+          "phrase": "is so filled with sin against the holy one of",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 0,
+      "budget": 7,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch059.xhtml",
+          "text": "Chapter 4"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 2,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "text": "\"To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. \"There appear unto me"
+        },
+        {
+          "file": "EPUB/ch053.xhtml",
+          "text": "\"To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs"
+        }
+      ]
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "text": "the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

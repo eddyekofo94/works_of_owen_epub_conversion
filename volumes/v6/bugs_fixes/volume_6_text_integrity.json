@@ -2,7 +2,7 @@
   "volume": 6,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/input/owen-v6.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/output/volume_6.epub",
-  "generated_at": "2026-05-17T14:46:27.018620+00:00",
+  "generated_at": "2026-05-29T11:49:41.696648+00:00",
   "status": "warn",
   "warning_count": 10,
   "warnings": [
@@ -48,107 +48,17 @@
     }
   ],
   "pdf": {
-    "page_count": 788
+    "page_count": 787
   },
   "epub": {
-    "spine_text_files": 113,
-    "paragraph_count": 3268
+    "spine_text_files": 111,
+    "paragraph_count": 3137
   },
   "word_coverage": {
-    "pdf_content_tokens": 274245,
-    "epub_content_tokens": 275120,
-    "coverage_ratio": 0.9975,
+    "pdf_content_tokens": 274707,
+    "epub_content_tokens": 274287,
+    "coverage_ratio": 0.9954,
     "missing_word_samples": [
-      {
-        "word": "ord",
-        "pdf": 142,
-        "epub": 0
-      },
-      {
-        "word": "irst",
-        "pdf": 8,
-        "epub": 0
-      },
-      {
-        "word": "econdly",
-        "pdf": 7,
-        "epub": 0
-      },
-      {
-        "word": "hirdly",
-        "pdf": 7,
-        "epub": 0
-      },
-      {
-        "word": "refatory",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
-        "word": "ote",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
-        "word": "ditor",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
-        "word": "econd",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
-        "word": "aving",
-        "pdf": 4,
-        "epub": 0
-      },
-      {
-        "word": "ourth",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "ifth",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "ixth",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "eventh",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "hristian",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "eader",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "ourthly",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "efore",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "hall",
-        "pdf": 3,
-        "epub": 1
-      },
       {
         "word": "stout",
         "pdf": 3,
@@ -157,226 +67,236 @@
     ],
     "excess_word_samples": [
       {
-        "word": "psalms",
-        "pdf": 1,
-        "epub": 12
+        "word": "digital",
+        "pdf": 0,
+        "epub": 6
       }
     ]
   },
   "page_coverage": {
-    "pages_checked": 782,
-    "weak_page_count": 9,
+    "pages_checked": 781,
+    "weak_page_count": 11,
     "weak_pages": [
       {
         "page": 9,
         "hit_ratio": 0.333,
-        "sample": "practical exposition upon psalm 130 refatory ote by the ditor to the reader psalm 130 verses first and second the state and condition of"
+        "sample": "practical exposition upon psalm 130 prefatory note by the editor to the reader psalm 130 verses first and second the state and condition of"
       },
       {
         "page": 10,
-        "hit_ratio": 0.333,
-        "sample": "the sending of the son of god to die for sin and from the obligation that is on us to forgive one another properties"
+        "hit_ratio": 0.0,
+        "sample": "10 the sending of the son of god to die for sin and from the obligation that is on us to forgive one another"
       },
       {
         "page": 11,
         "hit_ratio": 0.0,
-        "sample": "god the proper object of the soul's waiting in its distresses and depths considerations of god rendering our waiting on him reasonable and necessary"
+        "sample": "11 god the proper object of the soul's waiting in its distresses and depths considerations of god rendering our waiting on him reasonable and"
+      },
+      {
+        "page": 36,
+        "hit_ratio": 0.333,
+        "sample": "36 abound in those graces which are contrary opposite and destructive to all the fruits of the flesh and to the quiet or thriving"
       },
       {
         "page": 120,
         "hit_ratio": 0.333,
-        "sample": "of temptation the nature and power of it the danger of entering into it and the means of preventing that danger with resolution of"
+        "sample": "120 of temptation the nature and power of it the danger of entering into it and the means of preventing that danger with resolution"
       },
       {
         "page": 198,
         "hit_ratio": 0.333,
-        "sample": "the nature power deceit and prevalency of the remainders of indwelling sin in believers together with the ways of its working and means of"
+        "sample": "198 the nature power deceit and prevalency of the remainders of indwelling sin in believers together with the ways of its working and means"
       },
       {
-        "page": 409,
+        "page": 336,
         "hit_ratio": 0.333,
-        "sample": "an exposition upon psalm 130 verse out of the depths have cried unto thee ord lord hear my voice let thine ears be attentive"
+        "sample": "336 1st it is so only in cases of extraordinary temptation when through the violence of temptation and craft of satan they are hurried"
       },
       {
-        "page": 749,
+        "page": 403,
         "hit_ratio": 0.333,
-        "sample": "comes to deal with god in his great distress he says unto him ord thou art my god my times are in thy hand"
+        "sample": "403 practical exposition upon psalm 130 wherein the nature of the forgiveness of sin is declared the truth and reality of it asserted and"
       },
       {
-        "page": 779,
+        "page": 524,
         "hit_ratio": 0.333,
-        "sample": "verses seventh and eighth let israel hope in the ord for with the ord there is mercy add with him is plenteous redemption and"
+        "sample": "524 isaiah 22 well then if god will hasten it may not we hasten to it nay saith he will hasten it but in"
       },
       {
-        "page": 788,
-        "hit_ratio": 0.0,
-        "sample": "footnotes ft1 since the first edition of this treatise that other also is published ft2 there seems to be an oversight here as the"
+        "page": 566,
+        "hit_ratio": 0.333,
+        "sample": "566 plentiful assurance and that εις επιγνωσιν to the acknowledgment of the mystery of god owning it from sense and experience of its excellency"
+      },
+      {
+        "page": 644,
+        "hit_ratio": 0.333,
+        "sample": "644 he as apprehended by you are unequal yea hath god said ye shall eat of every tree of the garden but of the"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 33112,
-    "missing_dense_window_pages": 215,
+    "dense_windows_checked": 1054,
+    "missing_dense_window_pages": 762,
     "missing_dense_windows": [
       {
-        "page": 3,
-        "sample": "contents of vol of the mortification of sin in believers etc refatory ote by"
-      },
-      {
-        "page": 4,
-        "sample": "relation to the foregoing case proposed irst consider the dangerous symptoms of any lust"
-      },
-      {
-        "page": 5,
-        "sample": "direction vehement desire for deliverance the ifth some distempers rooted deeply in men's natural"
-      },
-      {
-        "page": 7,
-        "sample": "remainders of indwelling sin in believers refatory ote by the ditor preface chapter indwelling"
-      },
-      {
         "page": 9,
-        "sample": "practical exposition upon psalm 130 refatory ote by the ditor to the reader psalm"
+        "sample": "practical exposition upon psalm 130 prefatory note by the editor to the reader psalm"
       },
       {
         "page": 10,
-        "sample": "is on us to forgive one another properties of forgiveness the greatness and freedom"
+        "sample": "10 the sending of the son of god to die for sin and from"
       },
       {
-        "page": 13,
-        "sample": "prefatory note sheds interesting light on the character and resources of owen if the"
+        "page": 14,
+        "sample": "14 corruption are at the farthest remove from all the arts and practices of"
       },
       {
         "page": 15,
-        "sample": "preface hristian eader hall in few words acquaint thee with the reasons that obtained"
+        "sample": "15 preface christian reader shall in few words acquaint thee with the reasons that"
       },
       {
         "page": 16,
-        "sample": "with god some while since promised to them f1 and thereon apprehended that if"
+        "sample": "16 with such additions and alterations as should judge necessary under the inducement of"
+      },
+      {
+        "page": 17,
+        "sample": "17 chapter the foundation of the whole ensuing discourse laid in romans 13 the"
+      },
+      {
+        "page": 18,
+        "sample": "18 thirdly there is in them promise annexed to that duty ye shall live"
       },
       {
         "page": 19,
-        "sample": "this duty is the spirit εἰ δὲ πνεύματι if by the spirit the spirit"
+        "sample": "19 obtain that end if you do mortify you shall live and herein lies"
+      },
+      {
+        "page": 20,
+        "sample": "20 three things are here to be inquired into what is meant by the"
+      },
+      {
+        "page": 21,
+        "sample": "21 passions and lusts of the flesh galatians 24 whence the deeds and fruits"
       },
       {
         "page": 23,
-        "sample": "principle of the whole discourse hence confirmed want of this duty lamented aving laid"
+        "sample": "23 chapter the principal assertion concerning the necessity of mortification proposed to confirmation mortification"
+      },
+      {
+        "page": 24,
+        "sample": "24 exemption from this work and duty whilst we are in this world some"
+      },
+      {
+        "page": 25,
+        "sample": "25 be at work he that is appointed to kill an enemy if he"
+      },
+      {
+        "page": 26,
+        "sample": "26 foils or is foiled prevails or is prevailed on and it will be"
+      },
+      {
+        "page": 27,
+        "sample": "27 gospel requireth so far it is hardened but sin is still pressing forward"
       },
       {
         "page": 28,
-        "sample": "frame of the heart grows worse and worse and the lord knows what desperate"
+        "sample": "28 our outward man perish yet the inward man is renewed day by day"
       },
       {
         "page": 29,
-        "sample": "men's places envy strife variance emulations wrath pride worldliness selfishness corinthians be badges of"
+        "sample": "29 takes no steps towards his journey's end he who finds not opposition from"
+      },
+      {
+        "page": 30,
+        "sample": "30 in hand know no more of it but what consists in men's denying"
+      },
+      {
+        "page": 31,
+        "sample": "31 taking no care to exercise loving-kindness in the earth or they talk spiritually"
+      },
+      {
+        "page": 32,
+        "sample": "32 chapter the second general principle of the means of mortification proposed to confirmation"
+      },
+      {
+        "page": 33,
+        "sample": "33 unnecessary merit with proud barbarous title their glory is their shame but of"
       },
       {
         "page": 34,
-        "sample": "it lies at the bottom of very much of that superstition and will worship"
+        "sample": "34 knowledge of the truth so they are always mortifying but never come to"
+      },
+      {
+        "page": 35,
+        "sample": "35 36 26 will give my spirit and take away the stony heart and"
       },
       {
         "page": 36,
-        "sample": "and to do of his own good pleasure philippians 13 he works all our"
+        "sample": "36 abound in those graces which are contrary opposite and destructive to all the"
+      },
+      {
+        "page": 37,
+        "sample": "37 slavery all their days they spend their strength for that which is not"
+      },
+      {
+        "page": 38,
+        "sample": "38 chapter the last principle of the usefulness of mortification the vigor and comfort"
+      },
+      {
+        "page": 39,
+        "sample": "39 verse 18 but how by an immediate work of the new creation create"
+      },
+      {
+        "page": 40,
+        "sample": "40 are the choice affections of the soul that should be full of god"
+      },
+      {
+        "page": 41,
+        "sample": "41 the vigor and flourishing of the plants of grace in our hearts now"
+      },
+      {
+        "page": 42,
+        "sample": "42 chapter the principal intendment of the whole discourse proposed the first main case"
+      },
+      {
+        "page": 43,
+        "sample": "43 mortification in general but only in reference to the particular case before proposed"
+      },
+      {
+        "page": 44,
+        "sample": "44 men when perhaps their hearts are standing sink of all abominations some man"
+      },
+      {
+        "page": 45,
+        "sample": "45 there are two occasions or seasons wherein man who is contending with any"
+      },
+      {
+        "page": 46,
+        "sample": "46 for all this they sinned still and believed not for his wondrous works"
       },
       {
         "page": 47,
-        "sample": "lusts are said to fight or wage war against the soul f3 peter 11"
+        "sample": "47 chapter the mortification of sin in particular described the several parts and degrees"
       },
       {
-        "page": 55,
-        "sample": "in vain reprobate silver shall men call them because the ord hath rejected them"
+        "page": 48,
+        "sample": "48 might manifest fully from that description we have of it romans how it"
       },
       {
-        "page": 68,
-        "sample": "and called to remembrance the former loving-kindness of the lord psalm 77 6-9 this"
+        "page": 49,
+        "sample": "49 and on this account some men may go in their own thoughts and"
       },
       {
-        "page": 70,
-        "sample": "this great evil saith he and sin against the ord my good and gracious"
+        "page": 50,
+        "sample": "50 soever the troubling distemper be by what ways soever it make itself out"
       },
       {
-        "page": 75,
-        "sample": "chapter 10 the econd particular direction get clear sense of the guilt of the"
+        "page": 51,
+        "sample": "51 take this away and all waging of war wherein is the greatest improvement"
       },
       {
-        "page": 83,
-        "sample": "chapter 11 the hird direction proposed load thy conscience with the guilt of the"
-      },
-      {
-        "page": 86,
-        "sample": "the guilt of sin the soul will never vigorously attempt its mortification ourthly being"
-      },
-      {
-        "page": 87,
-        "sample": "shall not need to insist on it the ifth direction is consider whether the"
-      },
-      {
-        "page": 89,
-        "sample": "the natural root of that distemper the ixth direction is consider what occasions what"
-      },
-      {
-        "page": 90,
-        "sample": "entering into temptations treated of it the eventh direction is rise mightily against the"
-      },
-      {
-        "page": 91,
-        "sample": "chapter 12 the ighth direction thoughtfulness of the excellency of the majesty of god"
-      },
-      {
-        "page": 93,
-        "sample": "which moses had of god exodus 34 was gospel sight sight of god as"
-      },
-      {
-        "page": 94,
-        "sample": "childish we see but his back parts we know but little of him hence"
-      },
-      {
-        "page": 100,
-        "sample": "also of doing it on one singular account not universally inthly in case god"
-      },
-      {
-        "page": 105,
-        "sample": "finds out that promise isaiah 55 the ord will have mercy and our god"
-      },
-      {
-        "page": 106,
-        "sample": "the prophet isaiah chapter 17 will wait upon the ord who hideth his face"
-      },
-      {
-        "page": 111,
-        "sample": "and make me more than conqueror romans 37 why sayest thou my soul my"
-      },
-      {
-        "page": 115,
-        "sample": "this the psalmist gives us as an approved maxim thou ord never forsakest them"
-      },
-      {
-        "page": 117,
-        "sample": "of grace and power are from hence as have elsewhere f6 showed thus the"
-      },
-      {
-        "page": 119,
-        "sample": "the cross of christ into our hearts with its sin killing power for by"
-      },
-      {
-        "page": 121,
-        "sample": "preface hristian eader if thou art in any measure awake in these days wherein"
-      },
-      {
-        "page": 127,
-        "sample": "of experiences shall not treat of god doth it to show himself unto man"
-      },
-      {
-        "page": 134,
-        "sample": "may be when first it began to press upon the soul the soul was"
-      },
-      {
-        "page": 137,
-        "sample": "with the issue of former temptations some objections answered aving thus opened the words"
-      },
-      {
-        "page": 151,
-        "sample": "that hath mingled itself with the wall the wall itself must be pulled down"
+        "page": 52,
+        "sample": "52 out and fight against sin and have success against it then sin is"
       }
     ]
   },
@@ -387,8 +307,8 @@
     "missing_front_toc_samples": []
   },
   "top_of_page_integrity": {
-    "top_windows_checked": 785,
-    "top_windows_usable": 776,
+    "top_windows_checked": 784,
+    "top_windows_usable": 775,
     "skipped_top_window_count": 19,
     "skipped_top_windows": [
       {
@@ -506,171 +426,122 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 2,
+    "missing_top_window_count": 1,
     "missing_top_windows": [
       {
         "page": 9,
         "window": "practical exposition upon psalm 130 prefatory note by the editor",
         "sample": "A PRACTICAL EXPOSITION UPON PSALM 130. PREFATORY NOTE BY THE EDITOR"
-      },
-      {
-        "page": 410,
-        "window": "verse it is true lord thou god great and terrible that if thou shouldst",
-        "sample": "Verse 3. — It is true, O Lord, thou God great and terrible, that if thou shouldst deal with me in this condition, with any man living, with the"
       }
     ]
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 748,
-    "bottom_windows_usable": 735,
-    "skipped_bottom_window_count": 8,
-    "skipped_bottom_windows": [
-      {
-        "page": 20,
-        "window": "same nature with the former or as the paqh mata and ejpiqumi ai the",
-        "sample": "Romans 8:6, the \"wisdom of the flesh,\" by a metonymy of the same nature with the former; or as the paqh>mata and ejpiqumi>ai, the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 57,
-        "window": "seeing they do that which is work good in itself and they do not",
-        "sample": "[2.] By this means men satisfy themselves that their state and condition is good, seeing they do that which is a work good in itself, and they do not",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 147,
-        "window": "that was to come upon the world to try them that dwell upon the",
-        "sample": "[1.] There are public temptations; such as that mentioned, 3:10, that was to come upon the world, \"to try them that dwell upon the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 185,
-        "window": "who gives it the grace of the son which is the matter of it",
-        "sample": "[1.] The faithfulness of the Father, who gives it. [2.] The grace of the Son, which is the matter of it.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 291,
-        "window": "of sin by deceit namely its feeding the soul with promises and purposes of",
-        "sample": "[4.] I may add here that which hath place in all the workings of sin by deceit, — namely, its feeding the soul with promises and purposes of a",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 325,
-        "window": "being themselves stirred up incited and drawn forth by some violent provocation or suitable",
-        "sample": "[1.] By some hasty impulse and surprisal, being themselves stirred up, incited, and drawn forth by some violent provocation or suitable",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 521,
-        "window": "this abiding with god intimates two things oppositions solicitations and temptations unto the contrary",
-        "sample": "Now, this abiding with God intimates two things: — [1.] Oppositions, solicitations, and temptations unto the contrary.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 779,
-        "window": "this word is often used for proper redemption such as is made by the",
-        "sample": "hd;p;, \"to redeem;\" the same with ˆwOyd]pi, lu>trwsiv, \"redemption.\" This word is often used for a proper redemption, such as is made by the",
-        "reason": "font-encoded Greek/Hebrew window"
-      }
-    ],
-    "missing_bottom_window_count": 17,
+    "bottom_windows_usable": 730,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 2,
     "missing_bottom_windows": [
       {
-        "page": 108,
-        "window": "song of solomon grace the spouse was in sad condition",
-        "sample": "Song of Solomon 5:2, — grace. The spouse was in a sad condition,"
-      },
-      {
-        "page": 112,
-        "window": "john 68 whom wilt thou go so and saved this way or none to",
-        "sample": "John 6:68) whom wilt thou go? So and saved this way or none. To ("
-      },
-      {
-        "page": 154,
-        "window": "godly out of temptations solicitous that we enter not into them",
-        "sample": "godly out of temptations,' solicitous that we enter not into them?\""
-      },
-      {
-        "page": 181,
-        "window": "corinthians 20 now this word is called subject or matter of it",
-        "sample": "2 Corinthians 1:20. Now, this word is called subject or matter of it,"
-      },
-      {
-        "page": 198,
-        "window": "romans 24 25 death thank god through jesus christ our lord",
-        "sample": "Romans 7:24, 25 death? I thank God through Jesus Christ our Lord\" –"
-      },
-      {
-        "page": 233,
-        "window": "ecclesiastes keep thy foot when man cautions us against this evil",
-        "sample": "Ecclesiastes 5:1, \"Keep thy foot when man cautions us against this evil:"
-      },
-      {
-        "page": 270,
-        "window": "20 10 they not exceedingly deceived see also chap",
-        "sample": "20:10. they not exceedingly deceived. See also chap."
-      },
-      {
-        "page": 327,
-        "window": "genesis 20 but being ignorant that fornication wherein he miscarried",
-        "sample": "Genesis 20:5. But being ignorant that fornication wherein he miscarried,"
-      },
-      {
-        "page": 403,
-        "window": "rob grove humph dom episc lond sac dom",
-        "sample": "ROB. GROVE, R. P. Humph. Dom. Episc. Lond. à Sac. Dom."
-      },
-      {
-        "page": 409,
-        "window": "therefore attend and hearken unto the voice of my crying and supplications",
-        "sample": "therefore, attend and hearken unto the voice of my crying and supplications!"
-      },
-      {
-        "page": 442,
-        "window": "habakkuk 17 18 concernment provokes them to the earnestness mentioned",
-        "sample": "Habakkuk 3:17, 18, concernment provokes them to the earnestness mentioned."
-      },
-      {
-        "page": 505,
-        "window": "nehemiah 17 thou art god of goodness of the nature of god so",
-        "sample": "Nehemiah 9:17, \"Thou art a God of goodness of the nature of God. So"
-      },
-      {
-        "page": 529,
-        "window": "godhead see also may be known of god",
-        "sample": "Godhead.\" See also may be known of God."
-      },
-      {
-        "page": 564,
-        "window": "hebrews 14 where there is exercised to discern both good and evil",
-        "sample": "Hebrews 5:14. Where there is a exercised to discern both good and evil,\""
-      },
-      {
-        "page": 571,
-        "window": "hebrews 11 rewarder of them that diligently seek him",
-        "sample": "Hebrews 11:6; rewarder of them that diligently seek him,\""
+        "page": 2,
+        "window": "this edition of first published by johnstone hunter 1850-53",
+        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
       },
       {
         "page": 613,
         "window": "matter he that he speaks of is an impiously wicked man and ˆw vyai",
         "sample": "know little or nothing of the infinite largeness of his heart in this matter. He that he speaks of is [v;r;, \"an impiously wicked man,\" and ˆw,a; vyai,"
-      },
-      {
-        "page": 621,
-        "window": "hebrews 7-13 now very easy as god himself declares",
-        "sample": "Hebrews 8:7-13. Now, a very easy as God himself declares,"
       }
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3022,
-    "split_candidate_count": 36,
+    "paragraphs_checked": 2645,
+    "split_candidate_count": 193,
     "split_candidates": [
       {
-        "file": "EPUB/ch020.xhtml",
-        "previous": "y he doth it — Of temptation in its special nature: of the actions of it — The true nature of temptation stated \"Watch and pray, that ye enter not into temptation.\" — Matthew 26:41",
-        "next": "These words of our Savior are repeated with very little alteration in three evangelists; only, whereas Matthew and Mark have recorded them as above written, Luke reporteth them thu"
+        "file": "EPUB/ch004.xhtml",
+        "previous": "tribute to the carrying on of the work of mortification in believers may receive order and perspicuity, I shall lay the foundation of it in those words of the apostle, Romans 8:13,",
+        "next": "The apostle having made a recapitulation of his doctrine of justification by faith, and the blessed estate and condition of them who are made by grace partakers thereof, verses 1-3"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "when they are still, so ought our contrivances against it to be vigorous at all times and in all conditions, even where there is least suspicion. Sin doth not only abide in us, but",
+        "next": "If sin be subtle, watchful, strong, and always at work in the business of killing our souls, and we be slothful, negligent, foolish, in proceeding to the ruin thereof, can we expec"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "one, if not continually mortified, it will bring forth great, cursed, scandalous, soul-destroying sins. The apostle tells us what the works and fruits of it are, Galatians 5:19-21,",
+        "next": "You know what it did in David and sundry others. Sin aims always at the utmost; every time it rises up to tempt or entice, might it have its own course, it would go out to the utmo"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "THE last principle I shall insist on (omitting, first, the necessity of mortification unto life, and, secondly, the certainty of life upon mortification) is, —",
+        "next": "Strength and comfort, and power and peace, in our walking with God, are the things of our desires. Were any of us asked seriously, what it is that troubles us, we must refer it to "
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " refining will do them no good. The prophet gives us the sad issue of wicked men's utmost attempts for mortification, by what means soever that God affords them: Jeremiah 6:29, 30,",
+        "next": "And what is the reason hereof? Verse 28, They were \"brass and iron\" when they were put into the furnace. Men may refine brass and iron long enough before they will be good silver."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "n work that will not do God's. God's work consists in universal obedience; to be freed of the present perplexity is their own only. Hence is that of the apostle, 2 Corinthians 7:1,",
+        "next": "If we will do anything, we must do all things. So, then, it is not only an intense opposition to this or that peculiar lust, but a universal humble frame and temper of heart, with "
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "ll I do this great evil,\" saith he, \"and sin against the LORD?\" my good and gracious God. (Genesis 39:9.) And Paul, \"The love of Christ constraineth us;\" (2 Corinthians 5:14.) and,",
+        "next": "But now if a man be so under the power of his lust that he hath nothing but law to oppose it withal, if he cannot fight against it with gospel weapons, but deals with it altogether"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "6. When thy lust hath already withstood particular dealings from God against it. This condition is described, Isaiah 57:17,",
+        "next": "God had dealt with them about their prevailing lust, and that several ways, — by affliction and desertion; but they held out against all. This is a sad condition, which nothing but"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "t have it, that sin shall not have dominion over them as it hath over others, yet the guilt of sin that doth yet abide and remain is aggravated and heightened by it: Romans 6:1, 2,",
+        "next": "— \"How shall we, that are dead?\" The emphasis is on the word \"we.\""
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "(1.) Of being hardened by the deceitfulness. This the apostle sorely charges on the Hebrews, Hebrews 3:12, 13,",
+        "next": "\"Take heed,\" saith he, \"use all means, consider your temptations, watch diligently; there is a treachery, a deceit in sin, that tends to the hardening of your hearts from the fear "
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "57:17, \"For the iniquity of his covetousness I was wroth, and hid myself.\" What peace, I pray, is there to a soul while God hides himself, or strength whilst he smites? Hosea 5:15,",
+        "next": "— \"I will leave them, hide my face, and what will become of their peace and strength?\" If ever, then, thou hast enjoyed peace with God, if ever his terrors have made thee afraid, i"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": "Eighthly,",
+        "next": "Use and exercise thyself to such meditations as may serve to fill thee at all times with self-abasement and thoughts of thine own vileness; as, —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": " humble, yet how little a portion is it that thou knowest of him! The contemplation hereof cast that wise man into that apprehension of himself which he expresses, Proverbs 30:2-4,",
+        "next": "Labor with this also to take down the pride of thy heart. What dost thou know of God? How little a portion is it! How immense is he in his nature!"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": " what he is. Thus is he described to be immortal, infinite, — that is, he is not, as we are, mortal, finite, and limited. Hence is that glorious description of him, 1 Timothy 6:16,",
+        "next": "His light is such as no creature can approach unto. He is not seen, not because he cannot be seen, but because we cannot bear the sight of him."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "d, and in the strength of that Spirit which is poured out on believers, it will beget a detestation of that sin or sins for which healing and peace is sought. So Ezekiel 16:60, 61,",
+        "next": "And what then? \"Then thou shalt remember thy ways, and be ashamed.\""
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": " have true and solid peace. For instance, thou findest thy heart running out after the world, and it disturbs thee in thy communion with God; the Spirit speaks expressly to thee, —",
+        "next": "This puts thee on dealing with God in Christ for the healing of thy soul, the quieting of thy conscience; but yet, withal, a thorough detestation of the evil itself abides not upon"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "Relief in this case from Christ is like the prophet's vision, Habakkuk 2:3,",
+        "next": "Though it may seem somewhat long to thee, whilst thou art under thy trouble and perplexity, yet it shall surely come in the appointed time of the Lord Jesus; which is the best seas"
       },
       {
         "file": "EPUB/ch021.xhtml",
@@ -684,6 +555,11 @@
       },
       {
         "file": "EPUB/ch022.xhtml",
+        "previous": "ut they are turned out of the way, and are gone for ever. They fall to hate the word they have delighted in, despise the professors of it, and are hardened by sin. So Matthew 7:26,",
+        "next": "But what doth this house of profession do? It shelters him, keeps him warm, and stands for a while. But saith he, verse 27, \"When the rain descends, when temptation comes, it falls"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
         "previous": " say that even this consideration in him who is otherwhere off from his watch, and doth not make it his work to follow the other rules insisted on, it will not preserve him; for, —",
         "next": "(1st.) The peace of such a one may be false peace or security, made up of presumption and false hopes; yea, though he be a believer, it may be so."
       },
@@ -693,49 +569,19 @@
         "next": "(2dly.) Suppose the peace cared for, and proposed to safeguard the soul, be true and good, yet when all is laid up in this one bottom, when the hour of temptation comes, so many re"
       },
       {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "Particular cases proposed to consideration — The first, its resolution in sundry particulars — Several discoveries of the state of a soul entering into temptation",
-        "next": "These things being premised in general, I proceed to the consideration of three particular cases arising from the truth proposed: the first whereof relates unto the thing itself; t"
+        "file": "EPUB/ch022.xhtml",
+        "previous": "ther. Hence it will certainly accomplish what it receives commission from him to do. When Satan offered his service to go forth and seduce Ahab that he might fall, God says to him,",
+        "next": "He is permitted as to his wickedness, and commissionated as to the event and punishment intended. When the Christian world was to be given up to folly and false worship for their n"
       },
       {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "of temptation — The first season, in unusual prosperity — The second, in a slumber of grace — Third, a season of great spiritual enjoyment — The fourth, a season of self-confidence",
-        "next": "The other part of our Savior's direction, — namely, to \"watch,\" — is more general, and extends itself to many particulars. I shall fix on some things that are contained therein: —"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": "ons suited to them — Watching to lay in prevision against temptation — Directions for watchfulness in the first approaches of temptation — Directions after entering into temptation",
-        "next": "That part of watchfulness against temptation which we have considered regards the outward means, occasions, and advantages of temptation; proceed we now to that which respects the "
+        "file": "EPUB/ch024.xhtml",
+        "previous": "n instruction for the taking to ourselves \"the whole armor of God,\" that we may resist and stand in the time of temptation, he adds this general close of the whole, Ephesians 6:18,",
+        "next": "Without this all the rest will be of no efficacy for the end proposed. And therefore consider what weight he lays on it: \"Praying always,\" — that is, at all times and seasons, or b"
       },
       {
         "file": "EPUB/ch026.xhtml",
         "previous": "assistance and deliverance that he hath made; ponder them in thy heart. And rest upon it, that God hath innumerable ways that thou knowest not of to give thee in deliverance; as, —",
         "next": "(1st.) He can send an affliction that shall mortify thy heart unto the matter of the temptation, whatever it be, that that which was before a sweet morsel under the tongue shall ne"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": ", that that which was before a sweet morsel under the tongue shall neither have taste or relish in it unto thee, — thy desire to it shall be killed; as was the case with David: or,",
-        "next": "(2dly.) He can, by some providence, alter that whole state of things from whence thy temptation doth arise, so taking fuel from the fire, causing it to go out of itself; as it was "
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": "t whole state of things from whence thy temptation doth arise, so taking fuel from the fire, causing it to go out of itself; as it was with the same David in the day of battle: or,",
-        "next": "(3dly.) He can tread down Satan under thy feet, that he shall not dare to suggest any thing any more to thy disadvantage (the God of peace shall do it), that thou shalt hear of him"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": "n tread down Satan under thy feet, that he shall not dare to suggest any thing any more to thy disadvantage (the God of peace shall do it), that thou shalt hear of him no more: or,",
-        "next": "(4thly.) He can give thee such supply of grace as that thou mayst be freed, though not from the temptation itself, yet from the tendency and danger of it; as was the case with Paul"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": "y.) He can give thee such supply of grace as that thou mayst be freed, though not from the temptation itself, yet from the tendency and danger of it; as was the case with Paul: or,",
-        "next": "(5thly.) He can give thee such a comfortable persuasion of good success in the issue as that thou shalt have refreshment in thy trials, and be kept from the trouble of the temptati"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": "e persuasion of good success in the issue as that thou shalt have refreshment in thy trials, and be kept from the trouble of the temptation; as was the case with the same Paul: or,",
-        "next": "(6thly.) He can utterly remove it, and make thee a complete conqueror."
       },
       {
         "file": "EPUB/ch027.xhtml",
@@ -744,124 +590,85 @@
       },
       {
         "file": "EPUB/ch027.xhtml",
+        "previous": "en of by reason of him; that he is concerned in love to his soul, having that design upon him to \"present him holy, and unblamable, and unreprovable in his sight,\" Colossians 1:22,",
+        "next": "— and his Spirit is grieved where he is interrupted in this work; concerned on the account of his gospel, the progress and acceptation of it in the world, — its beauty would be slu"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
         "previous": "es by faith, and is acted by it in all his ways, Galatians 2:20. Now, upon a twofold account hath faith, when improved, the power of preservation from temptation annexed unto it: —",
         "next": "(1st.) Because it empties the soul of its own wisdom, understanding, and fullness, that it may act in the wisdom and fullness of Christ. The only advice for the preservation in tri"
       },
       {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "ding, and fullness, that it may act in the wisdom and fullness of Christ. The only advice for the preservation in trials and temptations lies in that of the wise man, Proverbs 3:5,",
+        "next": "This is the work of faith; it is faith; it is to live by faith. The great [cause of] falling of men in trials is their leaning to, or leaning upon, their own understanding and coun"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": " it is to live by faith. The great [cause of] falling of men in trials is their leaning to, or leaning upon, their own understanding and counsel. What is the issue of it? Job 18:7,",
+        "next": "First, he shall be entangled, and then cast down; and all by his own counsel, until he come to be ashamed of it, as Ephraim was, Hosea 10:6."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "ey suffer not upon our account, is a great preserving principle in a time of temptations and trials. How powerful this was in David, he declares in that earnest prayer, Psalm 69:9,",
+        "next": "— \"O let not me so miscarry, that those for whom I would lay down my life should be put to shame, be evil spoken of, dishonored, reviled, contemned on my account, for my failings.\""
+      },
+      {
         "file": "EPUB/ch028.xhtml",
-        "previous": "General exhortation to the duty prescribed",
-        "next": "Having thus passed through the considerations of the duty of watching that we enter not into temptation, I suppose I need not add motives to the observance of it. Those who are not"
+        "previous": "res. If you knew what hath been done by entering into temptation, perhaps you would be more watchful and careful. Men may think that they shall do well enough notwithstanding; but,",
+        "next": "No such thing; men come not out of their temptation without wounds, burnings, and scars. I know not any place in the world where there is more need of pressing this exhortation tha"
       },
       {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "2dly . Providential dispensations are used by the Lord to the same purpose, and these are of two sorts: —",
-        "next": "(1st.) Such as are suited to work upon the soul, and to cause it to desist and give over in its lustings and pursuit of sin. Such are afflictions and mercies: Isaiah 57:17, \"I was "
+        "file": "EPUB/ch034.xhtml",
+        "previous": "God himself: Ecclesiastes 9:3, \"Madness is in the heart of men while they live.\" This is their madness, or the root of all that madness which appears in their lives. Matthew 15:19,",
+        "next": "There are many outward temptations and provocations that befall men, which excite and stir them up unto these evils; but they do but as it were open the vessel, and let out what is"
       },
       {
-        "file": "EPUB/ch039.xhtml",
-        "previous": "3dly . In times of temptation, this deceitfulness of sin will argue expressly for sin from gospel grace; at least, it will plead for these two things: —",
-        "next": "(1st.) That there is not need of such a tenacious, severe contending against it, as the principle of the new creature is fixed on. If it cannot divert the soul or mind wholly from "
+        "file": "EPUB/ch035.xhtml",
+        "previous": "ul, he may take the course that he did, — consider what it is that provoked his enemy against him, and so address himself to remove the cause and make up his peace: 1 Samuel 26:19,",
+        "next": "Come it from God or man, there is yet hope of peace. But when a man hath enmity itself to deal withal, nothing is to be expected but continual fighting, to the destruction of the o"
       },
       {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "ose, that he may thereby prevent the execution or bringing forth of any particular sin that he had conceived, and which, without that taking away, he would have perpetrated; for, —",
-        "next": "(1st.) This is directly contrary to the very declared end of the patience of God towards them, 2 Peter 3:9. This is the very end of the long suffering of God towards believers, tha"
+        "file": "EPUB/ch035.xhtml",
+        "previous": "ty and holiness is in any thing, the greater is its enmity. That which hath most of God hath most of its opposition. Concerning them in whom this law is most predominant, God says,",
+        "next": "Not this or that part of God's counsel, his mind, or will is opposed, but all his counsel; whatever he calleth for or guideth unto, in every particular of it, all is set at nought,"
       },
       {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "2dly . There are some cases wherein God may and doth take away the lives of his own, to prevent the guilt that otherwise they would be involved in; as, —",
-        "next": "(1st.) In the coming of some great temptation and trial upon the world."
+        "file": "EPUB/ch036.xhtml",
+        "previous": "ny in obedience; break but one part, and you interrupt the whole. Our wounds in particular arise generally from negligence as to the whole course; so David informs us, Psalm 119:6,",
+        "next": "A universal respect to all God's commandments is the only preservative from shame; and nothing have we more reason to be ashamed of than the shameful miscarriages of our hearts in "
       },
       {
-        "file": "EPUB/ch044.xhtml",
-        "previous": " is that which we call restraining grace. These things being premised, we shall now consider some of the arguments which we find that he hath made use of to this end and purpose: —",
-        "next": "(1st.) God stops many men in their ways, upon the conception of sin, by an argument taken from the difficulty, if not impossibility, of doing that they aim at. They have a mind unt"
+        "file": "EPUB/ch036.xhtml",
+        "previous": "quest. Be sure you be not wearied out by its pertinacity, nor driven from your hold by its importunity; do not faint by its opposition. Take the apostle's advice, Hebrews 6:11, 12,",
+        "next": "Still hold out in the same diligence. There are many ways whereby men are driven from a constant holy performance of duties, all of them dangerous, if not pernicious to the soul. S"
       },
       {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "The Nature Of The Forgiveness Of Sin Is Declared; The Truth",
-        "next": "And Reality Of It Asserted; And The Case Of A Soul"
+        "file": "EPUB/ch036.xhtml",
+        "previous": " caution is the same with that of the same apostle, Romans 12:12, \"Rejoicing in hope, patient in tribulation, continuing instant in prayer;\" and in general with that of chap. 6:12,",
+        "next": "To cease from duty, in part or in whole, upon the aversation of sin unto its spirituality, is to give sin the rule, and to obey it in the lusts thereof."
       },
       {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "And Reality Of It Asserted; And The Case Of A Soul",
-        "next": "Distressed With The Guilt Of Sin, And Relieved By A"
+        "file": "EPUB/ch036.xhtml",
+        "previous": "Yield not, then, unto it, but hold out the conflict; wait on God, and ye shall prevail: Isaiah 40:31,",
+        "next": "But that which is now so difficult will increase in difficulty if we give way unto it; but if we abide in our station, we shall prevail. The mouth of the Lord hath spoken it."
       },
       {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "Distressed With The Guilt Of Sin, And Relieved By A",
-        "next": "Discovery Of Forgiveness With God, Is At Large Discoursed."
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "have brought myself into great distresses. Mine iniquities are always",
-        "next": "before me, and I AM ready to be overwhelmed with them, as with a"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "before me, and I AM ready to be overwhelmed with them, as with a",
-        "next": "flood of waters; for they have brought me into depths, wherein I AM"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "flood of waters; for they have brought me into depths, wherein I AM",
-        "next": "ready to be swallowed up. But yet, although my distress be great and"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "ready to be swallowed up. But yet, although my distress be great and",
-        "next": "perplexing, I do not, I dare not, utterly despond and cast away all"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "perplexing, I do not, I dare not, utterly despond and cast away all",
-        "next": "hopes of relief or recovery. Nor do I seek unto any other remedy, way,"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "hopes of relief or recovery. Nor do I seek unto any other remedy, way,",
-        "next": "or means of relief; but I apply myself to thee, Jehovah, to thee alone."
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "previous": "And in this my application unto thee, the greatness and urgency of my",
-        "next": "Verse 4. - But, O Lord, this is not absolutely and universally the state of things between thy Majesty and poor sinners; thou art in thy nature infinitely good and gracious, ready "
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "previous": "ee the application itself consists in and is made by the prayer of faith, or crying unto God. Now, this is done with intenseness of mind; which hath a twofold fruit or propriety, —",
-        "next": "(1st.) Importunity; and,"
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "previous": "(1st.) Importunity; and,",
-        "next": "(2dly.) Constancy."
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "previous": " sighs, groans, mourning, cries, tears, and roaring, according to the various working of his heart, and its being affected with the things that it hath to do; and this produceth, —",
-        "next": "(1st.) Importunity. The power of the importunity of faith our Savior hath marvellously set out, Luke 11:5-10, as also, chap. 18:1. Importunate prayer is certainly prevailing; and i"
-      },
-      {
-        "file": "EPUB/ch096.xhtml",
-        "previous": "effects by. And this is the ground of all that love without dissimulation and real communion that is among the saints of God in this world. But here two cautions must be allowed: —",
-        "next": "(1st.) That we would not judge the state and condition of any men in the world, — no farther than we are called thereunto in a way of duty; and we are so called only with reference"
+        "file": "EPUB/ch037.xhtml",
+        "previous": "d understanding, as well of the appetite and affections, and the body that attends their service. And in the blamelessness of all these consists our holiness: 1 Thessalonians 5:23,",
+        "next": "Yea, by the \"flesh\" in this matter the whole old man, or the law of sin, is intended: John 3:6, \"That which is born of the flesh is flesh,\" — that is, it is all so, and nothing els"
       }
     ],
-    "structural_start_exclusions": 422,
-    "short_fragment_count": 17,
+    "structural_start_exclusions": 357,
+    "short_fragment_count": 15,
     "short_fragments": [
       {
-        "file": "EPUB/ch014.xhtml",
-        "text": "As, —"
+        "file": "EPUB/ch015.xhtml",
+        "text": "Eighthly,"
       },
       {
         "file": "EPUB/ch015.xhtml",
         "text": "To which I answer, —"
-      },
-      {
-        "file": "EPUB/ch017.xhtml",
-        "text": "And they are these that follow: —"
       },
       {
         "file": "EPUB/ch019.xhtml",
@@ -869,51 +676,47 @@
       },
       {
         "file": "EPUB/ch022.xhtml",
-        "text": "And this it doth divers ways: —"
-      },
-      {
-        "file": "EPUB/ch027.xhtml",
-        "text": "And, therefore, I shall show, —"
+        "text": "To which I answer, —"
       },
       {
         "file": "EPUB/ch028.xhtml",
         "text": "Remember Peter!"
       },
       {
-        "file": "EPUB/ch037.xhtml",
-        "text": "And this it doth two ways: —"
-      },
-      {
         "file": "EPUB/ch047.xhtml",
         "text": "Let us take some few instances: —"
       },
       {
-        "file": "EPUB/ch052.xhtml",
-        "text": "supplications."
+        "file": "EPUB/ch049.xhtml",
+        "text": "Dom. Episc. Lond. à Sac. Dom."
       },
       {
-        "file": "EPUB/ch052.xhtml",
-        "text": "with him is plenteous redemption."
+        "file": "EPUB/ch053.xhtml",
+        "text": "GENERAL SCOPE OF THE WHOLE PSALM."
       },
       {
-        "file": "EPUB/ch060.xhtml",
-        "text": "In the supposition there is, —"
-      },
-      {
-        "file": "EPUB/ch061.xhtml",
-        "text": "In the supposition there is, —"
-      },
-      {
-        "file": "EPUB/ch072.xhtml",
-        "text": "And both these arise, —"
+        "file": "EPUB/ch067.xhtml",
+        "text": "This also is stated, Isaiah 33:14,"
       },
       {
         "file": "EPUB/ch082.xhtml",
         "text": "And, —"
       },
       {
-        "file": "EPUB/ch092.xhtml",
-        "text": "88."
+        "file": "EPUB/ch083.xhtml",
+        "text": "RULE 1."
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "RULE 1."
+      },
+      {
+        "file": "EPUB/ch093.xhtml",
+        "text": "RULE 10."
+      },
+      {
+        "file": "EPUB/ch100.xhtml",
+        "text": "RULE 4."
       },
       {
         "file": "EPUB/ch106.xhtml",
@@ -922,11 +725,23 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 1,
+    "inline_structural_candidate_count": 4,
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch021.xhtml",
         "text": "Before I descend to other particulars, having now entered hereon, I shall show in general, — 1st. How or by what means commonly any temptation attains its hour;"
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "The Nature Of The Forgiveness Of Sin Is Declared; The Truth And Reality Of It Asserted; And The Case Of A Soul Distressed With The Guilt Of Sin, And Relieved By A Discovery Of Forgiveness With God, Is At Large Discoursed. \"Search the Scriptures\" — JOHN 5:39 Im"
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "In the supposition there is, — 1. The name of God, that is fixed on as suited unto it; and, 2. The thing itself supposed."
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "In the supposition there is, — 1. The name of God, that is fixed on as suited unto it; and, 2. The thing itself supposed."
       }
     ],
     "reference_continuation_split_count": 0,
@@ -935,123 +750,44 @@
     "citation_continuation_splits": [],
     "suspicious_large_number_start_count": 0,
     "suspicious_large_number_starts": [],
-    "roman_heading_candidate_count": 27,
+    "roman_heading_candidate_count": 1,
     "roman_heading_candidates": [
       {
+        "file": "EPUB/ch074.xhtml",
+        "text": "II. God revealed this sacred truth by his institution of sacrifices."
+      }
+    ],
+    "overlong_heading_candidate_count": 19,
+    "overlong_heading_candidates": [
+      {
         "file": "EPUB/ch006.xhtml",
+        "tag": "h4",
         "text": "II. He only is sufficient for this work; all ways and means without him are as a thing of nought; and he is the great efficient of it, — he works in us as he pleases."
       },
       {
         "file": "EPUB/ch008.xhtml",
-        "text": "II. Give general directions for such things as without which it will be utterly impossible for anyone to get any sin truly and spiritually mortified."
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "text": "III. Draw out the particulars whereby this is to be done; in the whole carrying on this consideration, that it is not of the doctrine of mortification in general, but only in reference to the particular case before propo"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "text": "I. 1. (1.) To mortify a sin is not utterly to kill, root it out, and destroy it, that it should have no more hold at all nor residence in our hearts. It is true this is that which is aimed at; but this is not in this lif"
+        "tag": "h4",
+        "text": "I. 1. (1.) To mortify a sin is not utterly to _kill,_ root it out, and destroy it, that it should have no more hold at all nor residence in our hearts."
       },
       {
         "file": "EPUB/ch010.xhtml",
+        "tag": "h4",
         "text": "II. THE ways and means whereby a soul may proceed to the mortification of any particular lust and sin, which Satan takes advantage by to disquiet and weaken him, come next under consideration."
       },
       {
         "file": "EPUB/ch012.xhtml",
-        "text": "III. THE foregoing general rules being supposed, particular directions to the soul for its guidance under the sense of a disquieting lust or distemper, being the main thing I aim at, come next to be proposed. Now, of the"
+        "tag": "h4",
+        "text": "III. THE foregoing general rules being supposed, particular directions to the soul for its guidance under the sense of a disquieting lust or distemper, being the main thing I aim at, come next to be proposed."
       },
       {
         "file": "EPUB/ch020.xhtml",
-        "text": "II. The means of its prevalency, — by our entering into it."
-      },
-      {
-        "file": "EPUB/ch020.xhtml",
-        "text": "III. The way of preventing it, — watch and pray."
-      },
-      {
-        "file": "EPUB/ch020.xhtml",
-        "text": "I. First, For the general nature of tempting and temptation, it lies among things indifferent; to try, to experiment, to prove, to pierce a vessel, that the liquor that is in it may be known, is as much as is signified b"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "III. There is means of prevention prescribed by our Savior; they are two:"
-      },
-      {
-        "file": "EPUB/ch053.xhtml",
-        "text": "II. His inquiry after relief And therein are two things that present themselves unto him; the one whereof, which first offers the consideration of itself to him in his distress, he deprecates, verse 3: — \"If thou, LORD, "
-      },
-      {
-        "file": "EPUB/ch054.xhtml",
-        "text": "I. The present state of the soul under consideration is included in that expression, \"Out of the depths.\""
-      },
-      {
-        "file": "EPUB/ch055.xhtml",
-        "text": "I. The present state of the soul under consideration is included in that expression, \"Out of the depths.\""
+        "tag": "h4",
+        "text": "I. First, For the general nature of tempting and temptation, it lies among things indifferent; to try, to experiment, to prove, to pierce a vessel, that the liquor that is in it may be known, is as much as is signified by it."
       },
       {
         "file": "EPUB/ch059.xhtml",
-        "text": "II. THE words of these two first verses declare also the deportment of the soul in the condition that we have described; that is, what it doth, and what course it steers for relief.\" I have cried unto thee, O LORD. Lord,"
-      },
-      {
-        "file": "EPUB/ch074.xhtml",
-        "text": "I. THE first discovery of forgiveness in God (and which I place as the first evidence of it) was made in his dealing with our first parents after their shameful sin and fall. Now, to make it appear that this is an eviden"
-      },
-      {
-        "file": "EPUB/ch074.xhtml",
-        "text": "II. God revealed this sacred truth by his institution of sacrifices."
-      },
-      {
-        "file": "EPUB/ch074.xhtml",
-        "text": "III. God's appointment of repentance unto sinners doth reveal that there is forgiveness in himself. I say, the prescription of repentance is a revelation of forgiveness. After the angels had sinned, God never once called"
-      },
-      {
-        "file": "EPUB/ch075.xhtml",
-        "text": "IV. LET US, then, in the fourth place, as a fourth evidence of this truth, consider those, both under the Old Testament and the New, concerning whom we have the greatest assurance that God was well pleased with them, and"
-      },
-      {
-        "file": "EPUB/ch075.xhtml",
-        "text": "V. The same is evident from the patience of God towards the world, and the end of it For the clearing hereof we may observe, —"
-      },
-      {
-        "file": "EPUB/ch075.xhtml",
-        "text": "VI. The faith and experience of the saints in this world give in testimony unto this truth; and we know that their record in this matter is true. Let us, then, ask of them what they believe, what they have found, what th"
-      },
-      {
-        "file": "EPUB/ch076.xhtml",
-        "text": "VII. God's institution of religious worship, and honor therein to be rendered unto him by sinners, is another evidence that there is forgiveness with him. I have instanced before in one particular of worship to this purp"
-      },
-      {
-        "file": "EPUB/ch077.xhtml",
-        "text": "VIII. ANOTHER evidence hereof may be taken from the making, establishing, and ratifying of the new covenant. That God would make a new covenant with his people is often promised, often declared: see, among other places, "
-      },
-      {
-        "file": "EPUB/ch077.xhtml",
-        "text": "IX. The oath of God engaged and interposed in this matter is another evidence of the truth insisted on. Now, because this is annexed unto the covenant before mentioned, and is its establishment, I shall pass it over the "
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "text": "X. ANOTHER foundation of this truth, and infallible evidence of it, may be taken from that especial name and title which God takes unto himself in this matter; for he owns the name of \"The God of pardons,\" or \"The God of"
-      },
-      {
-        "file": "EPUB/ch078.xhtml",
-        "text": "XI. The consideration of the essential properties of the nature of God, and what is required to the manifestation of them, will afford us farther assurance hereof. Let us to this end take in the ensuing observations: — F"
-      },
-      {
-        "file": "EPUB/ch079.xhtml",
-        "text": "XII. IN the next place we shall proceed unto that evidence which is the center wherein all the lines of those foregoing do meet and rest, — the fountain of all those streams of refreshment that are in them, — that which "
-      },
-      {
-        "file": "EPUB/ch079.xhtml",
-        "text": "XIII. Another evidence of the same truth may be taken from hence, that God requires forgiveness in us, that we should forgive one another; and therefore, doubtless, there is forgiveness with him for us. The sense of this"
-      }
-    ],
-    "overlong_heading_candidate_count": 8,
-    "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch057.xhtml",
         "tag": "h4",
-        "text": "WHENCE IT IS THAT BELIEVERS MAY BE BROUGHT INTO DEPTHS ON ACCOUNT OF SIN — NATURE OF THE SUPPLIES OF GRACE GIVEN IN THE COVENANT — HOW FAR THEY EXTEND — PRINCIPLES OF THE POWER OF SIN."
+        "text": "II. THE words of these two first verses declare also the deportment of the soul in the condition that we have described; that is, what it doth, and what course it steers for relief.\" I have cried unto thee, O LORD."
       },
       {
         "file": "EPUB/ch062.xhtml",
@@ -1061,12 +797,12 @@
       {
         "file": "EPUB/ch063.xhtml",
         "tag": "h4",
-        "text": "THE FIRST PARTICULAR ACTINGS OF A SOUL TOWARDS A RECOVERY OUT OF THE DEPTHS OF SIN - SENSE OF SIN, WHEREIN IT CONSISTS, HOW IT IS WROUGHT -ACKNOWLEDGMENT OF SIN; ITS NATURE AND PROPERTIES — SELF-CONDEMNATION."
+        "text": "THE FIRST PARTICULAR ACTINGS OF A SOUL TOWARDS A RECOVERY OUT OF THE DEPTHS OF SIN—SENSE OF SIN, WHEREIN IT CONSISTS, HOW IT IS WROUGHT -ACKNOWLEDGMENT OF SIN; ITS NATURE AND PROPERTIES — SELF-CONDEMNATION."
       },
       {
         "file": "EPUB/ch067.xhtml",
         "tag": "h4",
-        "text": "PROPOSITIONS OR OBSERVATIONS FROM THE FORMER EXPOSITION OF THE WORDS - THE FIRST PROPOSED TO CONFIRMATION - NO ENCOURAGEMENT FOR ANY SINNER TO APPROACH UNTO GOD WITHOUT A DISCOVERY OF FORGIVENESS."
+        "text": "PROPOSITIONS OR OBSERVATIONS FROM THE FORMER EXPOSITION OF THE WORDS—THE FIRST PROPOSED TO CONFIRMATION—NO ENCOURAGEMENT FOR ANY SINNER TO APPROACH UNTO GOD WITHOUT A DISCOVERY OF FORGIVENESS."
       },
       {
         "file": "EPUB/ch070.xhtml",
@@ -1074,9 +810,39 @@
         "text": "THE TRUE NATURE OF GOSPEL FORGIVENESS — ITS RELATION TO THE GOODNESS, GRACE, AND WILL OF GOD; TO THE BLOOD OF CHRIST; TO THE PROMISE OF THE GOSPEL — THE CONSIDERATIONS OF FAITH ABOUT IT."
       },
       {
+        "file": "EPUB/ch074.xhtml",
+        "tag": "h4",
+        "text": "I. THE first discovery of forgiveness in God (and which I place as the first evidence of it) was made in his dealing with our first parents after their shameful sin and fall."
+      },
+      {
         "file": "EPUB/ch075.xhtml",
         "tag": "h4",
-        "text": "FARTHER EVIDENCES OF FORGIVENESS WITH GOD - TESTIMONIES THAT GOD WAS WELL PLEASED WITH SOME THAT WERE SINNERS - THE PATIENCE OF GOD TOWARDS THE WORLD AN EVIDENCE OF FORGIVENESS - EXPERIENCE OF THE SAINTS OF GOD TO THE SAME PURPOSE."
+        "text": "FARTHER EVIDENCES OF FORGIVENESS WITH GOD - TESTIMONIES THAT GOD WAS WELL PLEASED WITH SOME THAT WERE SINNERS—THE PATIENCE OF GOD TOWARDS THE WORLD AN EVIDENCE OF FORGIVENESS—EXPERIENCE OF THE SAINTS OF GOD TO THE SAME PURPOSE."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "tag": "h4",
+        "text": "IV. LET US, then, in the fourth place, as a fourth evidence of this truth, consider those, both under the Old Testament and the New, concerning whom we have the greatest assurance that God was well pleased with them, and that they are now in the enjoyment of h"
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "tag": "h4",
+        "text": "I. But he still supported me, sometimes by one means, sometimes by another; until, taking my soul near to himself, he caused me to see the folly of my unbelieving heart, and the vileness of the hard thoughts I had of him, and that, indeed, there is with him fo"
+      },
+      {
+        "file": "EPUB/ch078.xhtml",
+        "tag": "h4",
+        "text": "X. ANOTHER foundation of this truth, and infallible evidence of it, may be taken from that especial name and title which God takes unto himself in this matter; for he owns the name of \"The God of pardons,\" or \"The God of forgiveness.\" So is he called, Nehemiah"
+      },
+      {
+        "file": "EPUB/ch079.xhtml",
+        "tag": "h4",
+        "text": "XII. IN the next place we shall proceed unto that evidence which is the center wherein all the lines of those foregoing do meet and rest, — the fountain of all those streams of refreshment that are in them, — that which animates and gives life and efficacy unt"
+      },
+      {
+        "file": "EPUB/ch079.xhtml",
+        "tag": "h4",
+        "text": "XIII. Another evidence of the same truth may be taken from hence, that God requires forgiveness in us, that we should forgive one another; and therefore, doubtless, there is forgiveness with him for us."
       },
       {
         "file": "EPUB/ch095.xhtml",
@@ -1086,18 +852,18 @@
       {
         "file": "EPUB/ch096.xhtml",
         "tag": "h4",
-        "text": "OBJECTIONS AGAINST BELIEVING FROM THINGS INTERNAL - THE PERSON KNOWS NOT WHETHER HE BE REGENERATE OR NO - STATE OF REGENERATION ASSERTED - DIFFERENCE OF SAVING AND COMMON GRACE - THIS DIFFERENCE DISCERNIBLE - MEN MAY KNOW THEMSELVES TO HE REGENERATE - THE OBJE"
+        "text": "OBJECTIONS AGAINST BELIEVING FROM THINGS INTERNAL - THE PERSON KNOWS NOT WHETHER HE BE REGENERATE OR NO - STATE OF REGENERATION ASSERTED—DIFFERENCE OF SAVING AND COMMON GRACE—THIS DIFFERENCE DISCERNIBLE—MEN MAY KNOW THEMSELVES TO HE REGENERATE—THE OBJECTION"
       }
     ],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
-    "pdf_marker_count": 629,
-    "epub_marker_count": 633,
+    "pdf_marker_count": 631,
+    "epub_marker_count": 630,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 6,
+    "excess_marker_count": 4,
     "excess_markers": [
       {
         "marker": "(1.)",
@@ -1105,15 +871,15 @@
         "epub": 127,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p34",
+            "location": "EPUB/contents_2.xhtml#p42",
             "context": "the sin perplexing — Considerations for help therein proposed — 2. The danger manifold — (1.) Hardening — (2.) Temporal correction — (3.) Loss of peace and strength — (4.) Eternal destruction — Rules for the management of this consideration — 3. The evil of it — (l.) In gr"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p55",
+            "location": "EPUB/contents_2.xhtml#p62",
             "context": "down — The directions given by our Savior: \"Watch and pray\" — What is included therein — (1.) Sense of the danger of temptation — (2.) That it is not in our power to keep ourselves — (3.) Faith in promises of preservation — Of prayer in particular"
           },
           {
-            "location": "EPUB/ch004.xhtml#p130",
+            "location": "EPUB/ch004.xhtml#p136",
             "context": "(1.) The uncertainty of the event or thing promised, in respect of them to whom the duty is prescribed. And this takes place where the condition is absolutely necessary unto the issue,"
           }
         ]
@@ -1124,15 +890,15 @@
         "epub": 125,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p34",
+            "location": "EPUB/contents_2.xhtml#p42",
             "context": "ng — Considerations for help therein proposed — 2. The danger manifold — (1.) Hardening — (2.) Temporal correction — (3.) Loss of peace and strength — (4.) Eternal destruction — Rules for the management of this consideration — 3. The evil of it — (l.) In grieving the Spirit"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p34",
+            "location": "EPUB/contents_2.xhtml#p42",
             "context": "the management of this consideration — 3. The evil of it — (l.) In grieving the Spirit — (2.) Wounding the new creature — [(3.) Taking away a man's usefulness.]"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p55",
+            "location": "EPUB/contents_2.xhtml#p62",
             "context": "r: \"Watch and pray\" — What is included therein — (1.) Sense of the danger of temptation — (2.) That it is not in our power to keep ourselves — (3.) Faith in promises of preservation — Of prayer in particular"
           }
         ]
@@ -1140,18 +906,18 @@
       {
         "marker": "(3.)",
         "pdf": 61,
-        "epub": 65,
+        "epub": 64,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p34",
+            "location": "EPUB/contents_2.xhtml#p42",
             "context": "p therein proposed — 2. The danger manifold — (1.) Hardening — (2.) Temporal correction — (3.) Loss of peace and strength — (4.) Eternal destruction — Rules for the management of this consideration — 3. The evil of it — (l.) In grieving the Spirit — (2.) Wounding the new cr"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p34",
+            "location": "EPUB/contents_2.xhtml#p42",
             "context": "ion — 3. The evil of it — (l.) In grieving the Spirit — (2.) Wounding the new creature — [(3.) Taking away a man's usefulness.]"
           },
           {
-            "location": "EPUB/contents_2.xhtml#p55",
+            "location": "EPUB/contents_2.xhtml#p62",
             "context": "Sense of the danger of temptation — (2.) That it is not in our power to keep ourselves — (3.) Faith in promises of preservation — Of prayer in particular"
           }
         ]
@@ -1162,54 +928,16 @@
         "epub": 26,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p34",
+            "location": "EPUB/contents_2.xhtml#p42",
             "context": "manifold — (1.) Hardening — (2.) Temporal correction — (3.) Loss of peace and strength — (4.) Eternal destruction — Rules for the management of this consideration — 3. The evil of it — (l.) In grieving the Spirit — (2.) Wounding the new creature — [(3.) Taking away a man's"
           },
           {
-            "location": "EPUB/ch008.xhtml#p236",
+            "location": "EPUB/ch008.xhtml#p237",
             "context": "(4.) A sin is not mortified when it is only diverted. Simon Magus for a season left his sorceries; but his covetousness and ambition, that set him on work, remained still, and would ha"
           },
           {
-            "location": "EPUB/ch013.xhtml#p368",
-            "context": "(4.) Eternal destruction — Rules for the management of this consideration —"
-          }
-        ]
-      },
-      {
-        "marker": "[2.]",
-        "pdf": 59,
-        "epub": 61,
-        "examples": [
-          {
-            "location": "EPUB/ch006.xhtml#p191",
-            "context": "[2.] By a real physical efficiency on the root and habit of sin, for the weakening, destroying, and taking it away. Hence he is called a \"Spirit of judgment and burning,\" Isaiah 4:4, r"
-          },
-          {
-            "location": "EPUB/ch006.xhtml#p195",
-            "context": "[2.] He doth not so work our mortification in us as not to keep it still an act of our obedience. The Holy Ghost works in us and upon us, as we are fit to be wrought in and upon; that"
-          },
-          {
-            "location": "EPUB/ch007.xhtml#p212",
-            "context": "[2.] It will darken the soul, and deprive it of its comfort and peace."
-          }
-        ]
-      },
-      {
-        "marker": "[4.]",
-        "pdf": 12,
-        "epub": 13,
-        "examples": [
-          {
-            "location": "EPUB/ch015.xhtml#p474",
-            "context": "[4.] Jesus Christ by his word and Spirit reveals to the hearts of all his, God as a Father, as a God in covenant, as a rewarder, every way sufficiently to teach us to obey him here, an"
-          },
-          {
-            "location": "EPUB/ch026.xhtml#p818",
-            "context": "[4.] Suppose the soul hath been surprised by temptation, and entangled at unawares, so that now it is too late to resist the first entrances of it, what shall such a soul do that it be"
-          },
-          {
-            "location": "EPUB/ch027.xhtml#p911",
-            "context": "[4.] In recovering his ordinances and institutions from the carnal administrations that they were in bondage under by the lusts of men, bringing them forth in the beauty and the power"
+            "location": "EPUB/ch013.xhtml#p355",
+            "context": "manifold — (1.) Hardening — (2.) Temporal correction — (3.) Loss of peace and strength — (4.) Eternal destruction — Rules for the management of this consideration — 3. The evil of it — (1.) In grieving the Spirit — (2.) Wounding the new creature — [(3.) Taking away a man's"
           }
         ]
       }
@@ -1245,30 +973,6 @@
   "repeated_windows": [
     {
       "phrase": "there is forgiveness with thee that thou mayest be feared",
-      "count": 7
-    },
-    {
-      "phrase": "lord hear my voice let thine ears be attentive to",
-      "count": 6
-    },
-    {
-      "phrase": "hear my voice let thine ears be attentive to the",
-      "count": 6
-    },
-    {
-      "phrase": "my voice let thine ears be attentive to the voice",
-      "count": 6
-    },
-    {
-      "phrase": "voice let thine ears be attentive to the voice of",
-      "count": 6
-    },
-    {
-      "phrase": "let thine ears be attentive to the voice of my",
-      "count": 6
-    },
-    {
-      "phrase": "thine ears be attentive to the voice of my supplications",
       "count": 6
     },
     {
@@ -1296,23 +1000,27 @@
       "count": 5
     },
     {
-      "phrase": "have cried unto thee lord lord hear my voice let",
+      "phrase": "lord hear my voice let thine ears be attentive to",
       "count": 5
     },
     {
-      "phrase": "cried unto thee lord lord hear my voice let thine",
+      "phrase": "hear my voice let thine ears be attentive to the",
       "count": 5
     },
     {
-      "phrase": "unto thee lord lord hear my voice let thine ears",
+      "phrase": "my voice let thine ears be attentive to the voice",
       "count": 5
     },
     {
-      "phrase": "thee lord lord hear my voice let thine ears be",
+      "phrase": "voice let thine ears be attentive to the voice of",
       "count": 5
     },
     {
-      "phrase": "lord lord hear my voice let thine ears be attentive",
+      "phrase": "let thine ears be attentive to the voice of my",
+      "count": 5
+    },
+    {
+      "phrase": "thine ears be attentive to the voice of my supplications",
       "count": 5
     },
     {
@@ -1342,8 +1050,62 @@
     {
       "phrase": "if any man sin we have an advocate with the",
       "count": 4
+    },
+    {
+      "phrase": "any man sin we have an advocate with the father",
+      "count": 4
+    },
+    {
+      "phrase": "man sin we have an advocate with the father jesus",
+      "count": 4
+    },
+    {
+      "phrase": "sin we have an advocate with the father jesus christ",
+      "count": 4
+    },
+    {
+      "phrase": "we have an advocate with the father jesus christ the",
+      "count": 4
+    },
+    {
+      "phrase": "have an advocate with the father jesus christ the righteous",
+      "count": 4
     }
   ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 250,
+    "epub_greek_word_count": 250,
+    "pdf_greek_unique_words": 180,
+    "epub_greek_unique_words": 180,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 113,
+    "epub_hebrew_word_count": 116,
+    "pdf_hebrew_unique_words": 106,
+    "epub_hebrew_unique_words": 106,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 10,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 8,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

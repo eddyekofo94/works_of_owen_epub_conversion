@@ -1,0 +1,591 @@
+{
+  "volume": 10,
+  "status": "pass",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 158,
+      "budget": 158,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "ered, by the Committee of the House of Commons in Parliament for the Regulating of Printing and Publishing of Books, That this book, entitled \"A Display of Arminianism,\" be printed",
+          "next": "JOHN WHITE"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "to particular contingent events, Isaiah 48:14. Yea, it is an ordinary thing with the Lord to confirm the certainty of those things that are yet for to come from his own decree; as,",
+          "next": "Isaiah 14:24,25; — \"It is certain the Assyrian shall be broken, because the Lord hath purposed it;\" which were a weak kind of reasoning, if his purpose might be altered. Nay \"He is"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "omination? Even actions in themselves sinful are not; though not as sinful, yet in some other regard, as punishments of others. \"Behold,\" saith Nathan to David, in the name of God,",
+          "next": "So, also, when wicked robbers had nefariously spoiled Job of all his substance, the holy man concludeth, \"The LORD gave, and the LORD hath taken away,\" Job 1:21. Now, if the workin"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "His powerful overruling of all events, both necessary, free, and contingent, and disposing of them to certain ends for the manifestation of his glory. So Joseph tells his brethren,",
+          "next": "Fourthly, His determining and restraining second causes to such and such effects:"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "his revealed will to walk in his statutes, and keep his laws; upon this he also promiseth that he will so effect all things, that of some this shall be performed: Ezekiel 36:26,27,",
+          "next": "So that the self-same obedience of the people of God is here the object of his will, taken in either acceptation. And yet the precept of God is not here, as some learned men suppos"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "previous": "uld be saved,\" chapter 2:47. From both which places it is evident that God bestoweth faith only on them whom he hath pre-ordained to eternal life; but most clearly, Romans 8:29,30,",
+          "next": "St Austin interpreted this place by adding in every link of the chain, \"Only those.\" However, the words directly import a precedency of predestination before the bestowing of other"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "previous": "them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.\" So that \"nothing shall be able to separate us from the love of God,",
+          "next": "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before the foundation of the world, that we should be holy,\" Ephesians 1:4."
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "previous": "hought so by the wisdom of God himself; but our sin even compelled that good and wise Creator to hate and curse the work of his own hands. \"Cursed is the ground,\" saith he to Adam,",
+          "next": "Hence was that heavy burden of \"vanity,\" that \"bondage of corruption,\" under which to this day \"the whole creation groaneth and travaileth in pain\" until it be delivered, Romans 8:"
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "previous": " are dead,\" Ephesians 2:1,2, begetting us anew, John 1:13, making us in all things such as he would have us to be, is contained in that promise of the new covenant, Jeremiah 32:40,",
+          "next": "and is no way repugnant to the holy Scripture, declaring our duty to be all this that the Lord would have us. And now, let all men judge whether, against so many and clear testimon"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "previous": "ess than the least of all the saints of God, and unworthy the name which yet he is bold to subscribe himself by, — Your honor's most obliged servant in the service of Jesus Christ,",
+          "next": "THERE are two rotten pillars on which the fabric of late Arminianism (an egg of the old Pelagianism, which we had well hoped had been long since chilled, but is sit upon and broode"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 7,
+      "budget": 8,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch020.xhtml",
+          "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Mall's Approach to G"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: — 1. From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4. 2. From some texts before vindicated. 3. From Psalm 19:4; Romans 10:18; Acts 14:17, etc. 4. From John 16:7-11, "
+        },
+        {
+          "file": "EPUB/ch031.xhtml",
+          "text": "Now, what is it to obey the grace of God? Is it not to believe? Therefore, it seems that Christ intercedeth for them that they may believe, upon condition that they do believe. Others, more cautiously, assert the good using of the means of grace that they do e"
+        },
+        {
+          "file": "EPUB/ch046.xhtml",
+          "text": "Let now any one tell me what the reprobates, in this life, lie under more? And do not all the elect, until their actual reconciliation, in and by Christ, lie under the very same? for, — (1.) Are not their prayers an abomination to the Lord? can they without fa"
+        },
+        {
+          "file": "EPUB/ch057.xhtml",
+          "text": "Now, fourthly, after all this, and not before, it lies upon a believer to assure his soul, according as he finds the fruit of the death of Christ in him and towards him, of the goodwill and eternal love of God to him in sending his Son to die for him in partic"
+        },
+        {
+          "file": "EPUB/ch064.xhtml",
+          "text": "Wherefore, to clear the whole, I shall, — 1. Give you in the passages opposed; and, 2. Vindicate them from mutual opposition, with what is besides charged on them."
+        },
+        {
+          "file": "EPUB/ch073.xhtml",
+          "text": "To evince the main assertion, I shall, — 1. Show the nature and quality of this right; 2. The bottom or foundation of it; and, 3. Prove the thesis. 1. By right I understand jus in general. Now, \"Jus est quod justum est,\" Aug. in Psalm cxliv, sub. fin; — \"That "
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "that we might be made the righteousness of god in",
+          "count": 13
+        },
+        {
+          "phrase": "we might be made the righteousness of god in him",
+          "count": 13
+        },
+        {
+          "phrase": "made him to be sin for us who knew no",
+          "count": 8
+        },
+        {
+          "phrase": "him to be sin for us who knew no sin",
+          "count": 8
+        },
+        {
+          "phrase": "hath set forth to be propitiation through faith in his",
+          "count": 7
+        },
+        {
+          "phrase": "set forth to be propitiation through faith in his blood",
+          "count": 7
+        },
+        {
+          "phrase": "propitiation through faith in his blood to declare his righteousness",
+          "count": 7
+        },
+        {
+          "phrase": "to be sin for us who knew no sin that",
+          "count": 7
+        },
+        {
+          "phrase": "known unto god are all his works from the beginning",
+          "count": 6
+        },
+        {
+          "phrase": "even so father for so it seemed good in thy",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 1,
+      "budget": 1,
+      "status": "ok",
+      "samples": [
+        {
+          "page": 3,
+          "hit_ratio": 0.5,
+          "sample": "contents of θεομαχια αττεξουσιαστικη display of arminianism prefatory note by the editor epistle dedicatory to the christian reader θεμοχιας αυτεξουσιαστικης specimen of the two main ends aimed at"
+        }
+      ]
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 6,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "chapter 8 objections against the former proposal answered",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 1 arguments against the universality of redemption",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "an entrance to the answer unto particular arguments",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 4 answer to the second general argument",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 5 the last argument from scripture answered",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 7 the removal of other remaining objections",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 1,
+      "budget": 1,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "Chapter 1"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 18,
+      "budget": 18,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch010.xhtml",
+          "text": "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before th"
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "and is no way repugnant to the holy Scripture, declaring our duty to be all this"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "of the whole work is prefixed to it. We have not felt at liberty to adopt the num"
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "text": "which last words express also the very aim and end of Christ in giving himself fo"
+        },
+        {
+          "file": "EPUB/ch026.xhtml",
+          "text": "with that redoubled voice which afterward came from the excellent glory, \"This is"
+        },
+        {
+          "file": "EPUB/ch027.xhtml",
+          "text": "calling it everywhere his Father's work that he did, or his Father's will which h"
+        },
+        {
+          "file": "EPUB/ch031.xhtml",
+          "text": "which doubtless he inferreth from that law, Leviticus 19:18,"
+        },
+        {
+          "file": "EPUB/ch034.xhtml",
+          "text": "that is, at that hour \" when all that are in their graves shall hear his voice an"
+        },
+        {
+          "file": "EPUB/ch035.xhtml",
+          "text": "and, because sons, our deliverance from the law, and thereby our freedom from the"
+        },
+        {
+          "file": "EPUB/ch039.xhtml",
+          "text": "for if these things be not made known and revealed to all and every one that is c"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

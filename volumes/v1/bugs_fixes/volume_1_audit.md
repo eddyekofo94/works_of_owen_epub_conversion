@@ -8,16 +8,16 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 107
-- Manifest items: 98
-- Spine items: 81
-- XHTML files: 83
+- Files: 109
+- Manifest items: 100
+- Spine items: 83
+- XHTML files: 85
 - Embedded fonts: 11
-- NAV links: 81
+- NAV links: 86
 
 ## Content Checks
 
-- Greek chars: 4080
+- Greek chars: 4091
 - Untagged Greek chars: 0
 - Hebrew chars: 157
 - Untagged Hebrew chars: 0
@@ -28,7 +28,7 @@
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 1
+- Repeated phrase hits: 5
 
 ## Warnings
 
@@ -38,7 +38,11 @@
 
 ### repeated_phrase
 
+- `combined_text`: chapter 14 motives unto the love of christ
 - `combined_text`: meditations and discourses on the glory of christ
+- `combined_text`: chapter 8 of the state of corrupted nature
+- `combined_text`: chapter 10 of the person of jesus christ
+- `combined_text`: chapter 14 of the two-fold estate of christ
 
 ### chapter_heading_in_paragraph
 
@@ -46,8 +50,8 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch004.xhtml`: f
-- `EPUB/ch008.xhtml`: a
-- `EPUB/ch011.xhtml`: m
-- `EPUB/ch016.xhtml`: a
-- `EPUB/ch021.xhtml`: a
+- `EPUB/ch004.xhtml`: factores autem sermonum ejus facti, communionem habeamus cum ipso".
+- `EPUB/ch008.xhtml`: as he also proclaims the same delight in him, from heaven, in the days of his fle
+- `EPUB/ch016.xhtml`: and verse 23, "My Father will love him, and we will come unto him, and make our a
+- `EPUB/ch022.xhtml`: and in sundry other places. The assumption, the taking of our human nature to be
+- `EPUB/ch030.xhtml`: against him he lifted up himself; — which was the beginning of his transgression.

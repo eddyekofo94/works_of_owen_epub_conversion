@@ -426,3 +426,87 @@ Luke 24:26. The one is frequently expressed elsewhere, Romans 14:9; Philippians 
 Fix:
 "enter into his glory?" Luke 24:26. The one is frequently expressed elsewhere"
 There shouldn't be a break after the verse
+
+## 41
+“Meditations and Discourses on The Glory of Christ,”
+
+Heading "CHAPTER 1." is not showing, only “The Explication of the Text.”,
+Heading "CHAPTER 2." for example is showing and the subheading
+Heading "CHAPTER 3." is NOT showing
+
+There's a bug there somewhere. this is a sample from what I can see, there's potentially more of this
+
+#  TODO: (2026-05-25 00:54)
+
+## 42
+0 sweet permutation!
+
+Fix:
+O sweet permutation. False extraction, 0 instead of O.
+
+## 43
+Hebrews 9 24. Wherefore,
+on the json it's: Hebrews 9\n\n24, either the extraction is wrong or the pdf. I checked it is pdf issue. This can be dirrectly fixed
+text_replacements is the way here
+
+## 44
+For, -
+
+Fix:
+There should never be instances the em-dash is single. It should always be "--"
+
+## 45
+“Χριστολογία
+Christologia
+Or,
+A Declaration of the Glorious Mystery
+of
+The Person of Christ — God and Man:
+with
+The Infinite Wisdom, Love, and Power of God in the Contrivance and Constitution Thereof; as also, of the Grounds and Reasons of His Incarnation; the Nature of His Ministry in Heaven; the Present State of the Church Above Thereon; and the Use of His Person in Religion.
+with
+An Account and Vindication of the Honor, Worship, Faith, Love, and Obedience Due Unto Him, in and from the Church.”
+
+Fix:
+Look at pdf page 19 how everything is formatted and look at this. "AS ALSO" the connector is swallowed up, and everything is ALL caps, the pdf isn't like that. Can we make the text:
+“The Infinite Wisdom, Love, and Power of God in the Contrivance and Constitution Thereof; as also, of the Grounds and Reasons of His Incarnation; the Nature of His Ministry in Heaven; the Present State of the Church Above Thereon; and the Use of His Person in Religion.
+with
+An Account and Vindication of the Honor, Worship, Faith, Love, and Obedience Due Unto Him, in and from the Church.”
+
+slightly more beautiful and not in all caps screaming? This should apply to all treatise pages. This is 70 right, still not there yet.
+Why not just format these closely to the pdf we can work from there?
+
+The verses at the end are perfect, the title good, it's the ones in between that need fixing
+
+## 46
+“So he affirms again, 1 Corinthians 15:211 Corinthians reparation and recovery from sin. So he affirms again, 1 Corinthians 15:21,”
+
+something not right here with duplicates and verses not rendering properly.
+
+#  TODO: (2026-05-25 19:02)
+## 47: Fixed
+“ To such I shall tender the ensuing directions: -”
+"- "We could not otherwise have learned the things of God, unless our Master, ”
+
+Fix:
+There should be an em-dash (I thought you fixed?), where there is a hyphen standalone " - " it is an ocr fault, this is an em-dash, did you fix? This is inside "Preface"
+There should not be an hyphen between spaces, between words it's fine of course.
+
+## 48
+“And of them two things may be considered:(1.) Their original; (2.) The design of their accomplishment.”
+
+Fix:
+With a colon like this, the scholastic-anchor should not apply, the "(1.)" should be after the colon, not on a new line
+
+## 48.a
+“I. Honor.II. Obedience.III. Conformity.IV. The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory. And hereunto the whole of our religion, as it is Christian or evangelical, may be reduced.”
+
+This here should also be considered a fake list though the Roman numerals are rightly bolded. but if the "list" starts with one word, it should not be considered "flat".
+Note: when adding these you should not just "add" a rule but consider what has already been implemented and hoe to add them without breaking others.
+
+## 49: Fixed
+“effects and likeness of the same image unto us which was essentially in himself”
+
+Fix:
+“effects and likeness of the same image unto us which was essentially in himself.”
+Fixed

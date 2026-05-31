@@ -136,4 +136,149 @@ Note: The reference "Romans 1:1 1" is likely a formatting error and should be co
 Fix:
 Why is the hebrew here abnormally big? is there a formatting issue with the Hebrew text that is causing it to appear larger than the surrounding text? The formatting of the Hebrew text should be reviewed and adjusted to ensure that it is consistent with the rest of the document, which will improve readability and maintain a professional appearance. Proper formatting of all text, including Hebrew, is essential to effectively communicate the content to the reader and to maintain the overall quality of the document.
 
+## 16
+“Only here, as in all the particulars following, the manner of the Spirit's working this thing is always to be born in mind, and the interest of his power, will, and goodness in his working. He does this, —
+1st. Powerfully, or effectually; 2ndly. Voluntarily; 3rdly. Freely.
+1st. Powerfully: and therefore does comfort from the words and promises of Christ sometimes break in through all opposition into the saddest and darkest condition imaginable; it comes and makes men sing in a dungeon, rejoice in flames, glory in tribulation; it will into prisons, racks, through temptations, and the greatest distresses imaginable. Whence is this? Τὸ Πνεῦμα ἐνεργεῖ, — the Spirit works effectually, his power is in it; he will work, and none shall let him. If he will bring to our remembrance the promises of Christ for our consolation, neither Satan nor man, sin nor world, nor death, shall interrupt our comfort. This the saints, who have communion with the Holy Ghost, know to their advantage. Sometimes the heavens are black over them, and the earth trembles under them; public, personal calamities and distresses appear so full of horror and darkness, that they are ready to faint with the apprehensions of them[…]”
 
+Fix:
+Sometimes Owen introduces what he will talk about in a list, in this instance the list is rightly flat. But, "1st. " here should be attached to the last paragraph than start on it's own line. the second "1st., 2ndly" are rightly on it's own line. How can I have a smart detector of what's a list and should start on it's own line and what's a "scholastic-anchor" and each list deserves to be on it's own line? We have the rule:
+* "if every item on the list ends with a semicolons" this is clearly working well,
+* some are a single word but with a full stop, this should be "flat" and linked to the previous paragraph also,
+* some not so, they're a short sentence but end with a full stop. We need a smart way of knowing. I already have rules in place which are working very well but we can improve clearly without breaking what's already in place.
+
+Examples of "flat" lists that should be attached to previous paragraph which are not at the moment (not conclusive but which I have found):
+“may be referred to two heads: —
+1. Temptations. 2.
+Afflictions.”
+
+Should be:
+“may be referred to two heads: — 1. Temptations. 2. Afflictions.”
+
+“(1.) Per benevolam condolentiam, — a "friendly grieving."
+(2.) Per gratiosam opitulationem, — a "gracious supply:" both are eminent in Christ: —”
+
+Fix:
+“(1.) Per benevolam condolentiam, — a "friendly grieving." (2.) Per gratiosam opitulationem, — a "gracious supply:" both are eminent in Christ: —”
+
+--
+“I shall briefly observe four things therein: —
+(1.) Sweetness.
+(2.) Delight.
+(3.) Safety.
+(4.) Comfort.”
+
+Fix:
+“I shall briefly observe four things therein: — (1.) Sweetness. (2.) Delight. (3.) Safety. (4.) Comfort.”
+
+--
+“For the first, there are four things in sin that clearly shine out in the cross of Christ: —
+(1.) The desert of it.
+(2.) Man's impotency by reason of it.
+(3.) The death of it.
+(4.) A new end put to it.”
+
+Fix:
+
+“For the first, there are four things in sin that clearly shine out in the cross of Christ: — (1.) The desert of it. (2.) Man's impotency by reason of it. (3.) The death of it. (4.) A new end put to it.”
+
+--
+“(1.) The desert of sin does clearly shine in the cross of Christ upon a twofold account: —
+[1.] Of the person suffering for it.
+[2.] Of the penalty he underwent.”
+
+Fix:
+“(1.) The desert of sin does clearly shine in the cross of Christ upon a twofold account: — [1.] Of the person suffering for it. [2.] Of the penalty he underwent.”
+
+As you can see, if a paragraph or a sentence finishes with an em-dash (—), the next list should more likely be flat, what occurs next is an introduction list and then what proceeds after is the real scholastic-anchor list.
+BUT! This is not always the case, so if a short list (we need to define short) follows an em-dash, it is more likely a "flat list"
+
+16.a
+“account: —
+[1.] Of the person suffering for it.
+[2.] Of the penalty he underwent.”
+
+This should be joint to the previous paragraph and flat than block.
+
+### 16.b
+“understand two things: —
+[1.] Our disability to make any atonement with God for sin.
+[2.] Our disability to answer his mind and will, in all or any of the obedience that he requireth, by reason of sin.”
+
+### 16.6
+“the Lord Jesus: —
+(1.) As to the truth of it.
+(2.) As to the manner of it: —
+(1.) For the truth of it; and so in and by him it is confirmed, and that two ways: —
+[1.] By his death.
+[2.] By his resurrection: —”
+
+Fix:
+There's at least 2 here that should join the previous paragraph and be flat.
+
+### 16.d Fixed
+“ six things are required: —
+1. Agreement. 2. Acquaintance. 3. A way.
+4. Strength. 5. Boldness. 6. An aiming at the same end. All these, with the wisdom of them, are hid in the Lord Jesus.”
+
+Fix:
+This should be one long flat list and also joined to the previous paragraph. 1-6 six here, the algorithm need to cater to instances like this.
+
+### 16.e
+“(1.) For their sanctification;(2.) For their consolation: to which two all the particular acts of purging, teaching, anointing, and the rest that are ascribed to him, may be referred. So there be two ways whereby we may grieve him: —
+[1]. In respect of sanctification; [2.] In respect of consolation: —
+”
+Fix:
+Here is a good instance where they should all be one paragraph. Anything that follows ";" should be flat than block. This doesn't meet the criteria because it is "large", it is still following a semicolon.
+
+### 16.f Fixed
+“The end in respect of ourselves immediately is threefold: —
+[1st.] Honor.
+[2ndly.] Peace.
+[3rdly.] Usefulness.”
+
+Fix:
+Should be flat!
+
+## 17 Fixed
+“3. [Ελεος, — mercy forgiveness, compassion, tenderness, to them that suffer; and χάρις”
+
+Fix:
+Greek rendering error.
+
+## 18
+“1. In respect of sin. There is a sense and knowledge ”
+“2. There is no saving knowledge of any property of God,”
+“1. In respect of sin. There is a sense and knowledge o”
+
+Fix:
+"1.", "2." meets the criteria to be bold, why aren't they?
+
+## 19
+“ III. The THIRD part of our wisdom is to walk with God.”
+
+Fix:
+The Roman numerals seem to be broken, though the faulty list of Roman numerals are fixed but this is a genuine instance of a bold + block.
+
+## 20 Fixed
+“may be referred to two heads: —
+1. Temptations. 2.
+Afflictions.”
+
+Should be:
+“may be referred to two heads: — 1. Temptations. 2. Afflictions.”
+
+Fix:
+This is is still not fixed I believe it is an extraction problem, "Afflictions" here is a <p>? bad extraction? It should be a flat list and attached to previous paragraph ## 16
+
+## 21
+“\which, in the phrase of another evangelist”
+
+Fix:
+"\" what's this doing here? can we do a proper clean up?
+
+## 20
+“ 1. A sweet savor, as from spices, and flowers, and towers of perfume; 2. Beauty and order, as spices set in rows or beds, as the words import;3. Eminency in that word, as sweet or well-grown, great flowers.”
+
+Fix:
+I am still seeing 3 there not flat since the preceeding rule is a semicolon? I thought it was fixed? can you revisit that this should be inforced?

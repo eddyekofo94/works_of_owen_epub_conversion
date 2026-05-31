@@ -18,6 +18,8 @@
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
 | 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
+| 15 | PDF OCR errors in To the Reader (e.g. "may books" -> "many", "far although sunder" -> "for although sundry") | convert.py | 📝 IMPLEMENTED (AWAITING VALIDATION) |
+| 16 | Premium analytical Table of Contents formatting and J-stripping bug fix | render.py | 📝 IMPLEMENTED (AWAITING VALIDATION) |
 
 
 ---
@@ -86,6 +88,27 @@ See previous sessions.
 **Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
 **Status:** Pending surgical consolidation and merging of fragmented heads back into parent chapters.
 
+### 15. PDF OCR Errors in To the Reader (Awaiting Validation)
+**Problem:** Several inherited PDF OCR spelling errors were identified in the "To the Reader" preface, including:
+- `"may books"` instead of `"many books"`
+- `"far although sunder"` instead of `"for although sundry"`
+- `"get the main weight"` instead of `"yet the main weight"`
+- `"artificial seasonings"` instead of `"artificial reasonings"`
+- `"seasonings of carnal minds"` instead of `"reasonings of carnal minds"`
+- `"find sufficiently"` instead of `"and sufficiently"`
+- `"another writings"` instead of `"any other writings"`
+- `"that is declared only"` instead of `"that it is declared only"`
+- Latin typos: `"prerumque"` -> `"plerumque"`, `"graneis"` -> `"ganeis"`, `"nulla"` -> `"nullo"`
+**Fix:** Added precise string mappings to the `text_replacements` overrides inside `volumes/v5/convert.py` to fix these spellings during Stage 2 rendering.
+
+### 16. Premium Analytical Table of Contents Formatting and J-stripping Bug Fix (Awaiting Validation)
+**Problem:** The Table of Contents for Volume 5 contains highly detailed, analytical outlines (with written-out English ordinals like `First,`, `Secondly,` and plain Roman numerals like `I`, `II` at the start of paragraphs). These were extracted as raw `<p class="contents-desc">` blocks instead of premium styled items. Additionally, a legacy Greek-only Beta Code diacritic cleanup filter (`polytonic_sweep()`) was incorrectly called on the entire description, stripping all `J`/`j` letters from English prose and corrupting words like `Jesus` -> `esus` and `John` -> `ohn`.
+**Fix:** 
+- Enhanced `_polish_contents_page_html()` to recognize standalone `CONTENTS` as the volume title.
+- Added a preprocessor to convert outline-level `contents-desc` paragraphs to `contents-item`.
+- Expanded the label-matching regex in `_render_contents_entry()` to isolate ordinals and Roman numerals into premium `<span class="contents-label">` blocks.
+- Removed `polytonic_sweep()` from the description pipeline to prevent English prose corruption.
+
 ## Remaining Work
 
 | Issue | Priority | Notes |
@@ -104,12 +127,22 @@ See previous sessions.
 
 ---
 
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T00:19:59.596958+00:00
-**EPUB:** `volumes/v5/output/volume_5.epub`
-**Status:** WARN (0 errors, 2 warnings)
+**Last run:** 2026-05-30T07:55:02.261064+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub`
+**Status:** FAIL (1 errors, 1 warnings)
 
 Reports:
 - `volume_5_audit.json`
@@ -120,11 +153,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 39 |
 | Spine items | 38 |
-| Embedded fonts | 8 |
-| NAV links | 38 |
-| Greek chars / untagged | 6228 / 4 |
-| Hebrew chars / untagged | 947 / 0 |
-| Noteref links / endnote anchors | 0 / 0 |
+| Embedded fonts | 14 |
+| NAV links | 41 |
+| Greek chars / untagged | 6350 / 0 |
+| Hebrew chars / untagged | 980 / 0 |
+| Noteref links / endnote anchors | 1 / 0 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -133,19 +166,29 @@ Reports:
 
 Warnings requiring triage:
 
-- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
+
+Errors requiring correction:
+
+- `noteref_targets_missing`: Some noteref targets do not have matching endnote anchors
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
 
 ---
 
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-18T00:20:26.332222+00:00
-**Status:** WARN (11 warnings)
+**Last run:** 2026-05-30T07:55:28.445938+00:00
+**Status:** WARN (7 warnings)
 
 Reports:
 - `volume_5_text_integrity.json`
@@ -155,55 +198,51 @@ Reports:
 |-------|--------|
 | PDF pages | 576 |
 | EPUB text files | 38 |
-| EPUB paragraphs/headings | 2295 |
-| Approximate PDF-to-EPUB word coverage | 0.9889 |
-| Weak page matches | 16 |
-| Dense source windows checked | 952 |
-| Missing dense source-window pages | 562 |
+| EPUB paragraphs/headings | 2154 |
+| Approximate PDF-to-EPUB word coverage | 0.9969 |
+| Weak page matches | 0 |
+| Dense source windows checked | 902 |
+| Missing dense source-window pages | 564 |
 | Front CONTENTS pages checked | 6 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 564 |
 | Top-of-page windows skipped as unstable | 24 |
-| Missing top-of-page body windows | 7 |
-| Bottom-of-page body windows checked | 536 |
-| Bottom-of-page windows skipped as unstable | 24 |
-| Missing bottom-of-page body windows | 14 |
-| Possible faulty paragraph splits | 100 |
-| Structural starts excluded from split warnings | 269 |
-| Short fragments | 40 |
+| Missing top-of-page body windows | 0 |
+| Bottom-of-page body windows checked | 535 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 3 |
+| Possible faulty paragraph splits | 78 |
+| Structural starts excluded from split warnings | 235 |
+| Short fragments | 21 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 1 |
+| Inline structural marker candidates | 3 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
-| Roman heading candidates | 10 |
-| Overlong heading candidates | 0 |
+| Roman heading candidates | 1 |
+| Overlong heading candidates | 5 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 436 |
-| EPUB enumerator markers | 436 |
+| EPUB enumerator markers | 446 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 1161 / 1135 |
-| Greek word coverage ratio | 0.9752 |
-| PDF Hebrew words / EPUB Hebrew words | 149 / 149 |
-| Hebrew word coverage ratio | 0.4823 |
-| Missing Greek clauses | 64 |
-| Missing Hebrew clauses | 19 |
+| PDF Greek words / EPUB Greek words | 1161 / 1158 |
+| Greek word coverage ratio | 0.9973 |
+| PDF Hebrew words / EPUB Hebrew words | 124 / 123 |
+| Hebrew word coverage ratio | 0.9919 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_hebrew_word_coverage`: EPUB Hebrew word coverage against PDF extraction is lower than expected
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
-- `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

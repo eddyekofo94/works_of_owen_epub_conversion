@@ -1,0 +1,1302 @@
+{
+  "volume": 9,
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/input/owen-v9.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
+  "generated_at": "2026-05-29T11:55:02.740257+00:00",
+  "status": "warn",
+  "warning_count": 10,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    }
+  ],
+  "pdf": {
+    "page_count": 778
+  },
+  "epub": {
+    "spine_text_files": 100,
+    "paragraph_count": 3489
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 257225,
+    "epub_content_tokens": 256752,
+    "coverage_ratio": 0.9961,
+    "missing_word_samples": [
+      {
+        "word": "sufficiency",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "psalms",
+        "pdf": 8,
+        "epub": 19
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 771,
+    "weak_page_count": 6,
+    "weak_pages": [
+      {
+        "page": 42,
+        "hit_ratio": 0.333,
+        "sample": "42 were somewhat but presumption and security will do it also at least for season but these things fall in only by the way"
+      },
+      {
+        "page": 159,
+        "hit_ratio": 0.333,
+        "sample": "159 glorified verse these men aiming at acceptance with him and to have him delight in them pretended principally two things the glory of"
+      },
+      {
+        "page": 331,
+        "hit_ratio": 0.333,
+        "sample": "331 them and we profess it is from christ from god's sending him for this end and purpose we have no evidence that we"
+      },
+      {
+        "page": 352,
+        "hit_ratio": 0.333,
+        "sample": "352 that they are flock that they are the flock of god's heritage they are flock that is of sheep wherein these three things"
+      },
+      {
+        "page": 430,
+        "hit_ratio": 0.333,
+        "sample": "430 duties without this holy and humble reverence whatever your gifts be reverence of god will decay what poor slight withering things have seen"
+      },
+      {
+        "page": 616,
+        "hit_ratio": 0.333,
+        "sample": "616 chapter 13 and hast not sanctified the lord in thy heart nor made him thy fear who art thou god hates this sinful"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 961,
+    "missing_dense_window_pages": 749,
+    "missing_dense_windows": [
+      {
+        "page": 8,
+        "sample": "that city and country are crying watchman what of the night watchman what of"
+      },
+      {
+        "page": 10,
+        "sample": "10 whose destruction is so solemnly prophesied of in this and the foregoing chapter"
+      },
+      {
+        "page": 11,
+        "sample": "11 upon these three accounts which is that would observe the name of babylon"
+      },
+      {
+        "page": 12,
+        "sample": "12 danger of the same desolation and destruction from new babylon upon the same"
+      },
+      {
+        "page": 13,
+        "sample": "13 distinct titles of god unto the two distinct considerations of the people first"
+      },
+      {
+        "page": 14,
+        "sample": "14 ii gather up what evidences we have that england is not yet utterly"
+      },
+      {
+        "page": 15,
+        "sample": "15 filled with sin as that god's decree of absolute and universal desolation should"
+      },
+      {
+        "page": 16,
+        "sample": "16 determination what will be the issue judgment is deserved and there is nothing"
+      },
+      {
+        "page": 17,
+        "sample": "17 land is so filled with sin when all sorts of provoking sins do"
+      },
+      {
+        "page": 18,
+        "sample": "18 brethren you know my mind full well in this matter have been for"
+      },
+      {
+        "page": 19,
+        "sample": "19 when in the secret workings of god's providence there is an inclination in"
+      },
+      {
+        "page": 20,
+        "sample": "20 that were wise and considerative that there would from thence arise the desolation"
+      },
+      {
+        "page": 21,
+        "sample": "21 discovery it was not so in time when the nation was awake and"
+      },
+      {
+        "page": 22,
+        "sample": "22 it is an evidence that england is not yet forsaken in that secret"
+      },
+      {
+        "page": 23,
+        "sample": "23 nativity that if it were the will of god we may not see"
+      },
+      {
+        "page": 24,
+        "sample": "24 that whatsoever be the language of god's calls unless there be general compliance"
+      },
+      {
+        "page": 25,
+        "sample": "25 which is the principal that those who have been examples in sinning and"
+      },
+      {
+        "page": 26,
+        "sample": "26 posthumous sermons part sermons published 1721 prefatory note under the second division of"
+      },
+      {
+        "page": 28,
+        "sample": "28 sermon the strength of faith he staggered not at the promise of god"
+      },
+      {
+        "page": 29,
+        "sample": "29 there is another proposition lies in the text and that shall now apply"
+      },
+      {
+        "page": 30,
+        "sample": "30 as stated in men's philosophical disputes about them thus some place faith in"
+      },
+      {
+        "page": 31,
+        "sample": "31 his misery that he cannot but believe them and the promises of god"
+      },
+      {
+        "page": 32,
+        "sample": "32 this is of the nature of faith as was said before the judging"
+      },
+      {
+        "page": 33,
+        "sample": "33 with god and so much as we trust so much we adhere and"
+      },
+      {
+        "page": 34,
+        "sample": "34 that by two immutable things in which it was impossible for god to"
+      },
+      {
+        "page": 35,
+        "sample": "35 it hath been said that faith is the receiving of christ as priest"
+      },
+      {
+        "page": 36,
+        "sample": "36 it is true then we acknowledge that faith receives christ as lord as"
+      },
+      {
+        "page": 37,
+        "sample": "37 necessary concomitant of it and that is the soul's resting and quieting itself"
+      },
+      {
+        "page": 38,
+        "sample": "38 steadfastness or decline from that stability in believing which you have attained and"
+      },
+      {
+        "page": 39,
+        "sample": "39 consciences and that our hearts should be thus fixed settled and established that"
+      },
+      {
+        "page": 40,
+        "sample": "40 true faith in the least degree gives the soul share in the first"
+      },
+      {
+        "page": 41,
+        "sample": "41 have no better bottom for their quiet than that they have been disquieted"
+      },
+      {
+        "page": 42,
+        "sample": "42 were somewhat but presumption and security will do it also at least for"
+      },
+      {
+        "page": 43,
+        "sample": "43 glory relates not only to the thing itself that is glorious but to"
+      },
+      {
+        "page": 44,
+        "sample": "44 power righteousness grace mercy goodness love patience and whatever else god hath revealed"
+      },
+      {
+        "page": 45,
+        "sample": "45 thus poor sinner finding himself in condition of guilt surprised with sense of"
+      },
+      {
+        "page": 46,
+        "sample": "46 29 this is the work of god that ye believe will ye know"
+      },
+      {
+        "page": 47,
+        "sample": "47 what matter is this it is not the glory of god to cover"
+      },
+      {
+        "page": 48,
+        "sample": "48 sight taking no care of them now the bottom of all these expressions"
+      },
+      {
+        "page": 49,
+        "sample": "49 covenant and law given glory to himself in other respects he might by"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 5,
+    "front_toc_windows_checked": 20,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 776,
+    "top_windows_usable": 752,
+    "skipped_top_window_count": 28,
+    "skipped_top_windows": [
+      {
+        "page": 19,
+        "window": "when in the secret workings of god's providence there is an inclination in sinful",
+        "sample": "(4.) When, in the secret workings of God's providence, there is an inclination in a sinful people unto a compliance with them [those] from",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 43,
+        "window": "glory relates not only to the thing itself that is glorious but to the",
+        "sample": "[2.] Glory relates not only to the thing itself that is glorious, but to the estimation and opinion we have of it, — that is, do>xa; when that which is",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 100,
+        "window": "is attended with all his holy angels is the state place of this worship",
+        "sample": "is attended with all his holy angels, is the state [place?] of this worship. Hence is that glorious description given of it,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 117,
+        "window": "are there none who are acted in their obedience and duties not from inward",
+        "sample": "[2.] Are there none who are acted, in their obedience and duties, not from inward principles, and spiritualized faculties, but merely from outward",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 140,
+        "window": "this also is another thing we are to humble ourselves unto to be contented",
+        "sample": "[6.] This, also, is another thing we are to humble ourselves unto, — to be contented to have the sharpest afflictions accompanying and attending the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 153,
+        "window": "the infinite excellency and majesty of god and his great name this is the",
+        "sample": "[1.] The infinite excellency and majesty of God and his great name. This is the apostle's motive,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 162,
+        "window": "it is useless in the world shall freely say take away this humble walking",
+        "sample": "[3.] It is useless in the world. I shall freely say, Take away this humble walking, and all profession is a thing of nought; it doth no good at all in the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 184,
+        "window": "what are the ways and means whereby he doth so there are sundry things",
+        "sample": "[2.] What are the ways and means whereby he doth so: — [1.] There are sundry things on the account whereof Christ at his coming",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 205,
+        "window": "as to their separation in worship shall only point to that one place and",
+        "sample": "[5.] As to their separation in worship, I shall only point to that one place, and leave it,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 211,
+        "window": "begin the work the meaner poorer worse we are the more incumbent is it",
+        "sample": "begin the work. The meaner, poorer, worse we are, the more incumbent is it on us to rise and be doing. The water is moved, teaching [healing?] is in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 215,
+        "window": "2dly the outward form of moral duties that depend not merely on institution is",
+        "sample": "[2dly.] The outward form of moral duties, that depend not merely on institution, is the same. Such are praying, preaching, hearing. Abounding in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 244,
+        "window": "barrenness they shall never bear any fruit to god this was the curse that",
+        "sample": "[1.] Barrenness. They shall never bear any fruit to God. This was the curse that our Savior gave to the fig-tree, \"Never fruit grow on thee.\" Man",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 256,
+        "window": "he opposeth himself to the stoutness of their hearts and they yield themselves to",
+        "sample": "[1.] He opposeth himself to the stoutness of their hearts, and they \"yield themselves to the spoil.\" Where observe, first, The act itself: they \"yield",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 257,
+        "window": "its weakness condition of slumber and sleep is weak condition sleeping man is able",
+        "sample": "[1.] Its weakness. A condition of slumber and sleep is a weak condition. A sleeping man is able to do nothing. Jael can destroy a drowsy Sisera.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 267,
+        "window": "he fills them with folly and giddiness so taking away their counsel",
+        "sample": "[2.] He fills them with folly and giddiness; so taking away their counsel.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 269,
+        "window": "if he have any favor for them and so will not proceed in these",
+        "sample": "[4.] If he have any favor for them, and so will not proceed in these ways of revenge against them, which would end in their speedy ruin; he will give",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 316,
+        "window": "there is nothing contrary to his own nature in it there are things that",
+        "sample": "[1.] There is nothing contrary to his own nature in it. There are things that are contrary to the nature of God, and these things God cannot do. \"God",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "there will be an end put unto all other entangling disputes and dark thoughts",
+        "sample": "[1.] There will be an end put unto all other entangling disputes and dark thoughts, which overwhelm the mind: \"For now,\" saith the soul, \"it is",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 327,
+        "window": "in the exercise of it it will much answer the evidence that persons are",
+        "sample": "[1.] In the exercise of it, it will much answer the evidence that persons are interested in the mystical body of Christ. There are some whose vain",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 377,
+        "window": "want of due sense of surprisal into known sins want of due sense of",
+        "sample": "[3.] A want of a due sense of surprisal into known sins; [4.] A want of a due sense of the sins of others. Where these things",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 380,
+        "window": "eyes because men keep not thy law 19b9136 psalm 119 136 confess think",
+        "sample": "eyes, because men keep not thy law,\" <19B9136>Psalm 119:136. I confess, I think",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 420,
+        "window": "the one is from the ambiguous signification of the word kau chsiv which we",
+        "sample": "The one is from the ambiguous signification of the word kau>chsiv, which we render here \"rejoicing.\" But in other places it is rendered sometimes by",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 452,
+        "window": "there is another word of christ which very remarkably speaks just to the same",
+        "sample": "There is another word of Christ [which] very remarkably speaks just to the same purpose,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 521,
+        "window": "to undertake on our part to give us hearts that we shall love him",
+        "sample": "[2.] To undertake on our part to give us hearts that we shall love him and fear him; — to write the terms of the covenant on our part in our souls, so",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 535,
+        "window": "suppose all those he takes into covenant should fail him he can out of",
+        "sample": "[2.] Suppose all those he takes into covenant should fail him, \"he can out of stones raise up children unto Abraham;\" — he can bring up another",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 597,
+        "window": "it consists in the immeasurable unspeakable fullness of grace that was given to his",
+        "sample": "[2.] It consists in the immeasurable, unspeakable fullness of grace that was given to his human nature. It is what I have as much thought of as any one",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 649,
+        "window": "there is the grace of god which manifests itself in the aim and design",
+        "sample": "3. There is the grace of God, [which] manifests itself in the aim and design of God in all this matter. What did God aim at? It was \"that we might",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 749,
+        "window": "the way to apply the benefits and advantage of this great commutation to our",
+        "sample": "The way to apply the benefits and advantage of this great commutation to our souls, is in our minds, by faith, to [put our] seal to these acts of God.",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 9,
+    "missing_top_windows": [
+      {
+        "page": 151,
+        "window": "philippians 11 have learned it saith he this was paul's frame",
+        "sample": "Philippians 4:11, \"I have learned it,\" saith he; This was Paul's frame,"
+      },
+      {
+        "page": 273,
+        "window": "sermon 17 f16 the divine power of the gospel",
+        "sample": "SERMON 17. F16 THE DIVINE POWER OF THE GOSPEL."
+      },
+      {
+        "page": 370,
+        "window": "sermon 24 f26 god's withdrawing his presence the correction of",
+        "sample": "SERMON 24. F26 GOD'S WITHDRAWING HIS PRESENCE, THE CORRECTION OF"
+      },
+      {
+        "page": 385,
+        "window": "sermon 25 f27 the beauty and strength of zion",
+        "sample": "SERMON 25. F27 THE BEAUTY AND STRENGTH OF ZION."
+      },
+      {
+        "page": 419,
+        "window": "sermon 27 f31 the christian's work of dying daily",
+        "sample": "SERMON 27. F31 THE CHRISTIAN'S WORK OF DYING DAILY."
+      },
+      {
+        "page": 441,
+        "window": "sermon 30 f37 the evil and danger of offences",
+        "sample": "SERMON 30. F37 THE EVIL AND DANGER OF OFFENCES."
+      },
+      {
+        "page": 612,
+        "window": "sermon 10 f64 the use and advantage of faith",
+        "sample": "SERMON 10.F64 THE USE AND ADVANTAGE OF FAITH"
+      },
+      {
+        "page": 622,
+        "window": "sermon 11 f65 the use of faith under reproaches and",
+        "sample": "SERMON 11.F65 THE USE OF FAITH UNDER REPROACHES AND"
+      },
+      {
+        "page": 705,
+        "window": "are invited to feast upon the sacrifice the sacrifice is offered christ is the",
+        "sample": "are invited to feast upon the sacrifice. The sacrifice is offered; Christ is the sacrifice, — God's passover; God makes a feast upon it, and invites his"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 714,
+    "bottom_windows_usable": 701,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 2,
+    "missing_bottom_windows": [
+      {
+        "page": 2,
+        "window": "this edition of first published by johnstone hunter 1850-53",
+        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
+      },
+      {
+        "page": 159,
+        "window": "apostle that was in jesus christ philippians what mind was",
+        "sample": "apostle, \"that was in Jesus Christ,\" Philippians 2:5. What mind was"
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2958,
+    "split_candidate_count": 186,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "celebrated and much-respected preacher in London, — a kind of Latimer among the Nonconformists of his time. He died in 1713, and his funeral sermon was preached by Matthew Henry: —",
+        "next": "the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks; — now, that city. and country are crying, 'Watchman, what of the night? ?' — now, that the three fr"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "This was not now the case of Israel and Judah. It proved afterward to be their case, as the apostle describes it, 1 Thessalonians 2:15, 16,",
+        "next": "How come? They have filled their measure, reached to their bounds; — \"wrath is come upon them to the uttermost.\" I hope, I pray, that this is not, that this may not be, the state o"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": " but let all mankind do what they will, he will not pass it by without some severe, desolating judgment. Such was their case even at this time; — you may see in 2 Chronicles 36:16,",
+        "next": "It was impossible that the judgment of God should be turned away from them. In this state God saith, \"Pray not for this people; my heart shall not be toward them,\" (until he had br"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": " are absolutely resolved upon sovereign grace and mercy: and without relief from thence, I shall only say, as to the proof of the proposition, what the prophet saith, Isaiah 34:16,",
+        "next": "To omit all the considerations and all the proof I intended, that sovereign grace and mercy must be our relief, if ever we be relieved, I proceed unto the second thing; which is, —"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "e first place. Eternal life is promised by God, who cannot lie, Titus 1:2; that is, who is so faithful, as that it is utterly impossible he should deceive any. So Hebrews 6:17, 18,",
+        "next": "The design of God is, that we may receive encouragement in our flying for refuge to the hope set before us, — that is, in believing. What doth he propose to this end? Why, his own "
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —",
+        "next": "Use 1. We shall begin with the consideration of God himself, even the Father; and that declaration of his love, kindness, tenderness, readiness, and willingness to receive poor bel"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "ainting sinners: \"Give not over; let not go your hold; though you be in darkness to all other means of support and consolation, yet 'trust in the name of the LORD.' And,\" saith he,",
+        "next": "And what this name of God, which is such a stay and safe defense, is, is declared at large, Exodus 34:6, 7. This name of his, is that glory which he promised to show to Moses, chap"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": " requireth of us is so ordered and disposed in the revelation thereof, that when our Savior had made him and his whole will known from his bosom, he sums up his whole work in this,",
+        "next": "The manifestation of the name of God to the elect was the great work of Christ on the earth, as he was the prophet and teacher of his church. He declared the name of God, — his gra"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "self for our good, is greatly conquering to the soul; but none so much as this, — his being love, and ready to forgive on that account. Such is the frame of the church, Micah 7:18,",
+        "next": "Can it enter into the heart of man? O who is like to him! Is it possible he should be thus to sinners! This discovery overwhelms the soul, and strengthens it in faith and trust in "
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": " in the dispensation of his providence, that is too hard for the apprehensions of men when they come to be concerned in it. Poor Jonah was angry that he was so merciful, Jonah 4:2,",
+        "next": "And if God be thus full of compassion to the world, which today is, and to-morrow shall be cast into the fire, is he not much more loving and tender unto you, \"O ye of little faith"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": " prays for the guidance of the saints, he doth it by praying that God would give them the \"Spirit of wisdom and revelation\" in Christ, Ephesians 1:17. Now, this he doth two ways: —",
+        "next": "(1st.) By causing them diligently to attend unto the word, the voice of Christ, for their direction, and to that only. This is the great work of the Spirit. So John 16:13, it is sa"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "im in Christ; wherein, indeed, consists the chiefest head of all the glory and beauty that is in the worship of God. Should I handle it, I must insist upon all these particulars: —",
+        "next": "(1st.) That the Holy Spirit discovers their wants unto them, their state and condition, with all the spiritual concernments of their souls; with which, without his effectual workin"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": ", for it was perfect through the comeliness he had put upon her, Ezekiel 16:14. There was in her ways of worship a renowned beauty, a perfect comeliness; whence, saith the prophet,",
+        "next": "But I shall not need to multiply testimonies to this purpose. Who knows not what things are spoken of the tabernacle, the temple, and all the worship belonging to them, everywhere "
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " expectation of his immediately being torn asunder and devoured. So God threateneth to deal with them that pretend to walk with him, and yet are not at peace with him, Psalm 50:22,",
+        "next": "Who are these? Those to whom he speaks, verse 16, \"But unto the wicked, God saith:\" the exceptive \"but,\" distinguishes them from those of whom he spoke before, verse 5, who had mad"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "comfort in their communion. For a dead carcase, or a trunk, to be moved up and down, is not walking. Hence this is everywhere laid down as the principle of our obedience, — that we",
+        "next": "That we may walk with God, a principle of a new life is required; that we may have power for it, and be pressed to it from that which is within us."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "2dly. There is a perfection within us. Now this also is twofold: — A complete perfection of enjoyment; and a perfection of tendency towards enjoyment: —",
+        "next": "(1st.) In respect of the first, Paul says he was not made perfect, Philippians 3:12; and tells us where and by whom it is obtained, Hebrews 12:23, \"The spirits of just men made per"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "end. So Noah is said to be perfect, and Job perfect; and God commands Abraham to be perfect; and David describes the happy condition of the perfect man. Concerning this, observe, —",
+        "next": "[1st.] There is no word in the Scripture whereby this perfection, and being perfect, is expressed, that in its use is restrained to such an absolute perfection as should admit of n"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "Now, there are two things that will certainly follow this consideration of our walking with God, being under his eye and control: —",
+        "next": "(1st.) Reverential thoughts of him. This God, who is a consuming fire, is nigh to us; his eyes are always on us. \"Let us,\" saith the apostle, \"have grace, whereby we may serve him "
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "[4.] We must humble ourselves to place our obedience on a new foot of account, and yet to pursue it with no less diligence than if it stood upon the old. Ephesians 2:8-10,",
+        "next": "\"If not of works, then what need of works any more? The first end appointed to our obedience was, that, we might be saved. This end, it seems, is taken away: our works and duties a"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "th saved us freely; only let our conversation be as beseemeth the gospel. How this principle is effectual in believers, as to the crucifying of all sin, Paul declares, Romans 6:14,",
+        "next": "The argument to carnal reason would lie quite contrary. \"If we are not under the law, — that is, the condemning power of the law, — then let sin have its dominion, power, sway. Did"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "Men cannot look into his ways. So also Psalm 77:19,",
+        "next": "Men must be content to stand at the shore, and admire at the works of God; but as to the beauty and excellency of them, they cannot search them out. To this purpose discourseth Zop"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "(2dly.) Unspeakable variety. Not to insist on particulars, the case of the saints throughout the world is the only instance I shall mention, and that on a twofold account: —",
+        "next": "[1st.] Compared among themselves, in what unspeakable variety are they dealt withal! some under persecution always, — some always at peace; some in dungeons and prisons, — some at "
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "If this be our aim, if this be our great interest, — that we may please God, that he may delight in us, and rejoice over us; this is the way whereby it is to be done, Isaiah 57:15,",
+        "next": "Men in an opposition to this frame, be they what they will else in outward profession, are proud men. Nothing takes away pride in the sight of God but this humble walking with him."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": "It may be observed, that Christ puts very great weight on the present frame and course which he finds men in at his coming. Matthew 24:46,",
+        "next": "He annexes blessedness to the frame and course he finds men in at his coming; and [commends him that] waiteth for that hour, verse 42. Be not asleep when the thief comes to break u"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "fectual light, to break forth in the dispensation of his word. Before the first destruction of Jerusalem by the Babylonians, how he dealt with them he declares, 2 Chronicles 36:15,",
+        "next": "And before the final dissolution of the heavens and earth of that church and state, he preached to them himself in the flesh. A glorious light! Before the ruin of the antichristian"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "s coming, or stand when he appeared. He had a work to do they could not away with. They desired his coming, — they desired the day of the Lord; but, as the prophet says, Amos 5:18,",
+        "next": "That was the coming of Christ in person to his temple. It is not otherwise in any of his other comings in providential dispensations. Many men long for it, delight in it, — it is o"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "ngs, \"Come and see what God hath wrought.\" And as to these desolations of nations, ruin of families, alterations of governments, we may say of them all, as the psalmist, Psalm 46:8",
+        "next": "It is his work; he hath done it himself. There is no evil in the city, and the Lord hath not done it, Amos 3:6. Have there been any exaltations of men, recoveries from depression, "
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "arge them, it may be, that they act for self: but there are these two things that will evince men to make self their general end and aim, even then when they act for public ends: —",
+        "next": "(1st.) This is a rule that will not fail men: — whatever in public actings is not done with a single eye for the glory of God, is done for self. These two divide all the general en"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "sent practice, I shall add some evidences of the prevalency, or at least contending, of self-righteousness for an interest in the soul, under a pretense of duty and holiness; as, —",
+        "next": "(1st.) When, under a design of holiness, there is an increase of a bondageframe of spirit; — when the mind begins to be enslaved to the duties which it doth itself perform; — when "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "2. God doth it for a testimony against them that receive it not, and to leave them inexcusable at the last day. Mark 6:11,",
+        "next": "The word is to be preached, and witness, as it were, is to be taken upon it that it was preached, that men may be left without excuse at the last day."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "As our Savior pleads concerning his own preaching to the Pharisees, John 15:22,",
+        "next": "God will cause men to be without excuse, by that tender of mercy which is made unto them in the gospel. It shall be for a testimony against them at the last day."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "They are distempered, therefore, and woefully disordered, before the coming of these waters. So the apostle informs us, Titus 3:5,",
+        "next": "Before the gospel grace comes to heal and cleanse them, this is the state and condition of men; as it is more largely described by the apostle, Romans 1:18 to the end."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "led, he will cast it out of his husbandry. So Ezekiel 24:13, They have had their time and season, and \"are not purged;\" therefore \"they shall be purged no more.\" Jeremiah 6:29, 30,",
+        "next": "This the Lord Christ declares to be his way of proceeding with them, Zechariah 11:8, 9,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "This the Lord Christ declares to be his way of proceeding with them, Zechariah 11:8, 9,",
+        "next": "A sad parting, the Lord knows! They give up Christ, — he gives up them; and their meeting will be infinitely more sad to them. Now, this the Lord doth several ways: —"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "trial and exercise, are sensible of the displeasure of God in that dispensation, and greatly humble themselves under his hand on that account. They say, as the church in Micah 7:9,",
+        "next": "They look on this as the greatest calamity and trial that can befall them; whereas they that lose it penalty, are either very little concerned about it, or do greatly rejoice at it"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "y that lose it penalty, are either very little concerned about it, or do greatly rejoice at it. The word tormented them, and they are glad they are freed from it. Revelation 11:10,",
+        "next": "Some never rejoice more than when they are got quit of the gospel; and others are like Gallio. Now, when such as these have the word taken from them, and are no way sensible of the"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": ", — they can take no rest, but are still lamenting after the Lord, still longing after the enjoyment of his word. David doth excellently express this frame of heart, Psalm 63:1, 2,",
+        "next": "He was driven from the ordinances of God; the waters of the sanctuary came not to him. But now they from whom the word is taken penally are no way troubled about it, nor do long af"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "previous": "How was our Savior affected with it in reference to Jerusalem, Luke 19:41, 42,",
+        "next": "Oh! if we had but any measure of that pity and compassion which dwelt in his holy soul, how could we pass through towns and cities, and see and hear, and not mourn!"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "previous": "[2.] Eternal ruin, and that irreparable. Proverbs 29:1,",
+        "next": "This is the certain event of that land that is left unto salt, because not healed; and of those persons who, having passed over their season of quickening and sanctifying by the wo"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "previous": "rd, are given up to barrenness and ruin. It will do neither me nor you good to flatter you, and to put you into any better hope than your condition will admit of. See Ezekiel 33:8,",
+        "next": "This will be the end of the one and the other, when that course is taken."
+      }
+    ],
+    "structural_start_exclusions": 399,
+    "short_fragment_count": 43,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "To this end, —"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "I shall show in brief, —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "10."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "The grounds of it are: —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "The grounds hereof are, —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Come we now to the uses."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Use 1. Of trial or examination."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Jehu's spirit spoiled his work."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "The word must come and heal them."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "WE shall now proceed to the uses."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Use all diligence in this matter."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Use your day."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "I answer, In two things: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "I shall, —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "One word of use, and I have done."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "We may observe here, —"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "In the words we have, —"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "That is the third way."
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "So did Jacob, Genesis 28:22,"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "Where shall we look for it?"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "To this I answer, —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "One word of use, and I have done."
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "I answer plainly, —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "— Ed."
+      },
+      {
+        "file": "EPUB/ch055.xhtml",
+        "text": "16."
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "text": "Or,"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "The Lord prosper it in your hands!"
+      },
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "What shall we pray for?"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "Truly, —"
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "This is the preface of the song."
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "You may consider it, —"
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "I say, —"
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "The reasons are, —"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "And here I shall show you, —"
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "I would speak unto three things: —"
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "I will name a few things: —"
+      },
+      {
+        "file": "EPUB/ch069.xhtml",
+        "text": "March 4, 1760."
+      },
+      {
+        "file": "EPUB/ch072.xhtml",
+        "text": "And, —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 5,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Now, surely, if God hath this delight in us in our walking before him, is it not expected that our delight should be in him in our obedience? It suits not my present business to go over the testimonies of Scripture, wherein either we are required to delight in"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "The latter containeth, — 1. A doctrinal observation for the use of the church, from the whole, verse 7. 2. The reasons and confirmation of the doctrine so laid down, taken from the power and righteousness of God in the actions recounted, verses 8, 9. 3. A thre"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "They shall have no better issue, because, — (1.) The Lord will take away their stout hearts, whereby they are supported; (2.) He will take away their strong hands, whereby they are confirmed: and when hearts and hands are gone, they also are gone."
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "His estate is doubly expressed: — 1. From the place where he was, — \" From the end of the earth;\" and, 2. From the condition he was in, — \" His heart was overwhelmed.\" And in the course he steered there are two things also: —"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "There is a twofold hardening from God's fear: — 1. There is a total hardening; and, 2. A partial hardening: — 1. There is a total hardening, like that mentioned, Isaiah 6:10,"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 7,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "I. There are three ways whereby a land may be said to be filled with sin: —"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "III. I should now proceed to my last thing, — to show you, that in this state, wherein a land is so filled with sin as absolutely to put the determination of all things into the hand of sovereignty, and where yet there r"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "I. As to the former of these, —"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "III. Lay down some directions for its practice: —"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "II. There are offenses given and taken: —"
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "I. The subject treated of: —"
+      },
+      {
+        "file": "EPUB/ch071.xhtml",
+        "text": "III. We may see three things concerning ourselves: —"
+      }
+    ],
+    "overlong_heading_candidate_count": 28,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "tag": "h3",
+        "text": "\"To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. \"There appear unto me in it those two things, which do above all others commend any sermon, or any oth"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "tag": "h4",
+        "text": "I. That believers enjoy this privilege as a fruit and effect of the death and blood of Jesus Christ, I shall confirm only with one or two places of Scripture, Hebrews 9:8, compared with Hebrews 10:19-22."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "tag": "h4",
+        "text": "III. Let us now proceed to prove the proposition at first laid down, and shut up the whole; viz., — Humble walking with God is the great duty and most valuable concernment of believers. \"What doth the Lord thy God require of thee?\" This is sufficiently asserte"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "tag": "h4",
+        "text": "II. All places in the world are barren, unsound, and unhealthy, before the coming of the waters of the sanctuary upon them; — or, the souls of all men are spiritually dead and full of woeful distempers, until they are quickened and healed by the dispensation o"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "tag": "h4",
+        "text": "III. The waters of the sanctuary are healing waters; — or, the word of the gospel is in its own nature a quickening, healing, sanctifying, saving word, to them who receive it."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "tag": "h4",
+        "text": "IV. Where the waters of the sanctuary come, and the land is not healed, that land is given up of the Lord to salt or barrenness for ever; - or, where the word of the gospel is, by the infinitely wise disposal of God, preached unto a place or persons, and they "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "tag": "h4",
+        "text": "I. God is pleased oftentimes, in his infinite wisdom, to send the preaching of the word unto some places wherein it shall not put forth its quickening and sanctifying power and virtue upon the souls of them that hear it."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "tag": "h4",
+        "text": "IV. Where the waters of the sanctuary come, and the land is not healed, that land is given up of the Lord to salt and barrenness for ever; — or, where the word of the gospel is preached unto a place, or persons, and they receive it not so as to have their sinf"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "tag": "h4",
+        "text": "III. Though men have courage, might, and former successes to accompany them, yet when they engage themselves against the Lord, or any way of his, vanity, weakness, and disappointment will be the issue thereof. \"Can your heart endure, or can your hands be stron"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "tag": "h4",
+        "text": "III. I now proceed to show what it is that, in such an overwhelming condition as I have described, faith regards in God to give it a support and relief, that it be not utterly swallowed up and overwhelmed."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "tag": "h4",
+        "text": "IV. I thought to have shown you also, in the last place, the difference between the faith of the godly and that of unbelievers, — that which the worst of men will have in God in the time of their distresses, and that relief which true evangelical faith finds i"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "tag": "h4",
+        "text": "III. Having spoken thus far of the nature of evangelical love, and of the reasons of its importance, I would willingly say something to press it upon your hearts and mine own."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "tag": "h4",
+        "text": "I. We shall consider what the prophet here prays for; which is, that God would feed his people with his rod: \"Feed thy people with thy rod.\" God is here compared to a shepherd; and it is a relation that he doth very frequently in Scripture take to himself; and"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "tag": "h4",
+        "text": "III. The third way whereby the temple (as believers are peculiarly said to be \"God's temple,\" in the text and other places) and tabernacle were consecrated, was by inhabitation."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "tag": "h4",
+        "text": "II. A second perilous season, and that we shall hardly come off in, is, when men are prone to forsake the truth, and seducers abound to gather them up that are so; and you will have always these things go together."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "tag": "h4",
+        "text": "III. A third thing that makes a perilous season is, professors mixing themselves with the world, and learning their manner, And if the other perilous seasons are come upon us, this is come upon us also."
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "tag": "h4",
+        "text": "II. There is required, unto this great end, a readiness and willingness to part with this body which we carry about us, and to lay it down in the dust."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "tag": "h3",
+        "text": "\"To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs Cooke of Stoke Newington, by this means informs the reader that her pious grand"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "tag": "h4",
+        "text": "II. The second observation from its being a song of loves, is this, — that there is no love like to the love between Christ and the souls of believers."
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "tag": "h4",
+        "text": "II. The second thing to consider in the words is, — the ebdowment of Christ, in his human nature, for the discharge of this great office and work, which is here ascribed unto him in this psalm, set forth by grace being poured into his lips."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "tag": "h4",
+        "text": "III. To the appellation that is here given unto Christ, — \"O most Mighty, גִּבּוֹר , from גָּבַר , one that prevails in every thing he takes in hand."
+      },
+      {
+        "file": "EPUB/ch063.xhtml",
+        "tag": "h4",
+        "text": "I. How we shall live by faith, — how we should deport ourselves; what faith will do in such a season, — what our duty is under the approach of these calamitous, distressing times that are coming upon us."
+      },
+      {
+        "file": "EPUB/ch071.xhtml",
+        "tag": "h4",
+        "text": "I. I would remember, if the Lord help me, the sovereignty of God the Father, his justice, and his grace: — His sovereignty, \"He made him,\" — God the Father made him; his justice, \"He made him to be sin,\" — a sacrifice and an offering for sin; and his grace, \"T"
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "tag": "h4",
+        "text": "II. There is an end of _profession_ also; which is, to \"show the Lord's death till he come.\" But this must be spoken to at some other time."
+      },
+      {
+        "file": "EPUB/ch076.xhtml",
+        "tag": "h4",
+        "text": "I. The time of the performance of the duty; for that, indeed, regards as well what hath been said concerning preparation in general as what shall now be farther added concerning preparation in particular, with respect to this ordinance."
+      },
+      {
+        "file": "EPUB/ch076.xhtml",
+        "tag": "h4",
+        "text": "II. I shall now speak a little to the duty itself of preparation for that ordinance; remembering what I spake before of preparation in general unto all solemn ordinances, which must still be supposed."
+      },
+      {
+        "file": "EPUB/ch080.xhtml",
+        "tag": "h4",
+        "text": "II. Christ is present with us by way of _exhibition;_ that is, he doth really tender and exhibit himself unto the souls of believers in this ordinance; which the world hath lost, and knows not what to make of it."
+      },
+      {
+        "file": "EPUB/ch080.xhtml",
+        "tag": "h4",
+        "text": "III. Christ is present in this ordinance by way of _obsignation:_ he comes here to seal the covenant; and therefore the cup is called \"The new testament in the blood of Christ.\" How in the blood of Christ?"
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 834,
+    "epub_marker_count": 831,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 1,
+    "excess_markers": [
+      {
+        "marker": "[4.]",
+        "pdf": 21,
+        "epub": 22,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p325",
+            "context": "les mentioned, whereunto we may be exposed: — [1.] The wind; [2.] A tempest; [3.] Dearth; [4.] Weariness. And unto all these is the man in the promise — the Lord Jesus Christ, the King that \"reigns in righteousness,\" verse 1 — suited as a supply in them, or against them."
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p332",
+            "context": "[4.] There is weariness; —and in respect hereof Christ is said to be \"the shadow of a great rock.'' Weariness of travel and labor, through heat and drought, is insupportable. He that i"
+          },
+          {
+            "location": "EPUB/ch012.xhtml#p588",
+            "context": "[4.] We must humble ourselves to place our obedience on a new foot of account, and yet to pursue it with no less diligence than if it stood upon the old. Ephesians 2:8-10,"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 4,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch013.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) I come now to show what it is to humble ourselves to the law of his providence."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) That which in the next place is considerable, is the proposing of the ingredients that lie in the motive to holiness, here expressed by the apostle, \"Seeing that these things shal"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) The second thing that God doth, in giving up an unhealed land unto barrenness, is his judicial hardening of them, or leaving them to hardness and impenitency, that so they may fil"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "marker": "[2.]",
+        "family": "bracket_decimal",
+        "context": "[2.] There are some distresses that, in their own nature, refuse all relief that you can tender them, but only what is derived from the fountain itself, — the nature of God. Zion's dis"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "as often as ye eat this bread and drink this",
+      "count": 6
+    },
+    {
+      "phrase": "often as ye eat this bread and drink this cup",
+      "count": 6
+    },
+    {
+      "phrase": "loved us and washed us from our sins in his",
+      "count": 6
+    },
+    {
+      "phrase": "us and washed us from our sins in his own",
+      "count": 6
+    },
+    {
+      "phrase": "and washed us from our sins in his own blood",
+      "count": 6
+    },
+    {
+      "phrase": "that we might be made the righteousness of god in",
+      "count": 5
+    },
+    {
+      "phrase": "as ye eat this bread and drink this cup ye",
+      "count": 5
+    },
+    {
+      "phrase": "ye eat this bread and drink this cup ye do",
+      "count": 5
+    },
+    {
+      "phrase": "eat this bread and drink this cup ye do show",
+      "count": 5
+    },
+    {
+      "phrase": "is so filled with sin against the holy one of",
+      "count": 5
+    },
+    {
+      "phrase": "so filled with sin against the holy one of israel",
+      "count": 5
+    },
+    {
+      "phrase": "and the gates of hell shall not prevail against it",
+      "count": 5
+    },
+    {
+      "phrase": "who loved us and washed us from our sins in",
+      "count": 5
+    },
+    {
+      "phrase": "faith is weakened as to the hearing of our prayers",
+      "count": 4
+    },
+    {
+      "phrase": "sin for us who knew no sin that we might",
+      "count": 4
+    },
+    {
+      "phrase": "for us who knew no sin that we might be",
+      "count": 4
+    },
+    {
+      "phrase": "us who knew no sin that we might be made",
+      "count": 4
+    },
+    {
+      "phrase": "who knew no sin that we might be made the",
+      "count": 4
+    },
+    {
+      "phrase": "knew no sin that we might be made the righteousness",
+      "count": 4
+    },
+    {
+      "phrase": "no sin that we might be made the righteousness of",
+      "count": 4
+    },
+    {
+      "phrase": "sin that we might be made the righteousness of god",
+      "count": 4
+    },
+    {
+      "phrase": "we might be made the righteousness of god in him",
+      "count": 4
+    },
+    {
+      "phrase": "this bread and drink this cup ye do show the",
+      "count": 4
+    },
+    {
+      "phrase": "bread and drink this cup ye do show the lord's",
+      "count": 4
+    },
+    {
+      "phrase": "and drink this cup ye do show the lord's death",
+      "count": 4
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 140,
+    "epub_greek_word_count": 140,
+    "pdf_greek_unique_words": 116,
+    "epub_greek_unique_words": 116,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 34,
+    "epub_hebrew_word_count": 34,
+    "pdf_hebrew_unique_words": 27,
+    "epub_hebrew_unique_words": 27,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 3,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 1,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

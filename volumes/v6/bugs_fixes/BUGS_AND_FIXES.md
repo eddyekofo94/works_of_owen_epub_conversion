@@ -108,12 +108,14 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T00:20:27.035924+00:00
-**EPUB:** `volumes/v6/output/volume_6.epub`
-**Status:** WARN (0 errors, 2 warnings)
+**Last run:** 2026-05-29T11:49:09.656410+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/output/volume_6.epub`
+**Status:** WARN (0 errors, 1 warnings)
 
 Reports:
 - `volume_6_audit.json`
@@ -122,22 +124,21 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 114 |
-| Spine items | 112 |
-| Embedded fonts | 12 |
-| NAV links | 112 |
-| Greek chars / untagged | 1608 / 0 |
-| Hebrew chars / untagged | 827 / 0 |
+| XHTML files | 113 |
+| Spine items | 111 |
+| Embedded fonts | 10 |
+| NAV links | 114 |
+| Greek chars / untagged | 1461 / 0 |
+| Hebrew chars / untagged | 830 / 0 |
 | Noteref links / endnote anchors | 14 / 14 |
 | AGES boilerplate hits | 0 |
-| Possible Beta Code files | 3 |
+| Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 3 |
+| Repeated phrase hits | 1 |
 
 Warnings requiring triage:
 
-- `possible_beta_code_residue`: Possible Beta Code residue detected
 - `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
@@ -148,10 +149,12 @@ Warnings requiring triage:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-17T14:46:27.018620+00:00
+**Last run:** 2026-05-29T11:49:41.696648+00:00
 **Status:** WARN (10 warnings)
 
 Reports:
@@ -160,37 +163,43 @@ Reports:
 
 | Check | Result |
 |-------|--------|
-| PDF pages | 788 |
-| EPUB text files | 113 |
-| EPUB paragraphs/headings | 3268 |
-| Approximate PDF-to-EPUB word coverage | 0.9975 |
-| Weak page matches | 9 |
-| Dense source windows checked | 33112 |
-| Missing dense source-window pages | 215 |
+| PDF pages | 787 |
+| EPUB text files | 111 |
+| EPUB paragraphs/headings | 3137 |
+| Approximate PDF-to-EPUB word coverage | 0.9954 |
+| Weak page matches | 11 |
+| Dense source windows checked | 1054 |
+| Missing dense source-window pages | 762 |
 | Front CONTENTS pages checked | 6 |
 | Missing front CONTENTS pages | 0 |
-| Top-of-page body windows checked | 776 |
+| Top-of-page body windows checked | 775 |
 | Top-of-page windows skipped as unstable | 19 |
-| Missing top-of-page body windows | 2 |
-| Bottom-of-page body windows checked | 735 |
-| Bottom-of-page windows skipped as unstable | 8 |
-| Missing bottom-of-page body windows | 17 |
-| Possible faulty paragraph splits | 36 |
-| Structural starts excluded from split warnings | 422 |
-| Short fragments | 17 |
+| Missing top-of-page body windows | 1 |
+| Bottom-of-page body windows checked | 730 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 2 |
+| Possible faulty paragraph splits | 193 |
+| Structural starts excluded from split warnings | 357 |
+| Short fragments | 15 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 1 |
+| Inline structural marker candidates | 4 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
-| Roman heading candidates | 27 |
-| Overlong heading candidates | 8 |
+| Roman heading candidates | 1 |
+| Overlong heading candidates | 19 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
-| PDF enumerator markers | 629 |
-| EPUB enumerator markers | 633 |
+| PDF enumerator markers | 631 |
+| EPUB enumerator markers | 630 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 4 |
+| PDF Greek words / EPUB Greek words | 250 / 250 |
+| Greek word coverage ratio | 1.0 |
+| PDF Hebrew words / EPUB Hebrew words | 113 / 116 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 

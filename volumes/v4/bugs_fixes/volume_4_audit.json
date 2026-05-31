@@ -1,21 +1,11 @@
 {
-  "epub": "volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-18T00:19:28.408272+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
+  "generated_at": "2026-05-29T11:45:52.597794+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 3,
+  "warning_count": 1,
   "errors": [],
   "warnings": [
-    {
-      "code": "untagged_greek",
-      "message": "Greek characters appear outside lang='el' context",
-      "chars": 23
-    },
-    {
-      "code": "untagged_hebrew",
-      "message": "Hebrew characters appear outside lang='he' context",
-      "chars": 19
-    },
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
@@ -23,32 +13,31 @@
     }
   ],
   "info": {
-    "file_count": 93,
-    "epub_size_bytes": 2479032,
+    "file_count": 97,
+    "epub_size_bytes": 3583414,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
       "The Works of John Owen, Volume 4: The Work of the Spirit"
     ],
     "creators": [
-      "John Owen",
-      "William H. Goold"
+      "John Owen"
     ],
-    "manifest_count": 84,
-    "spine_count": 70,
-    "xhtml_count": 72,
+    "manifest_count": 88,
+    "spine_count": 69,
+    "xhtml_count": 71,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 8,
+    "font_count": 13,
     "language": {
-      "greek_chars": 4420,
-      "greek_untagged_chars": 23,
-      "hebrew_chars": 687,
-      "hebrew_untagged_chars": 19,
-      "files_with_untagged_greek": 2,
-      "files_with_untagged_hebrew": 1,
-      "hebrew_integrity_failures": 19
+      "greek_chars": 4075,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 698,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
     },
     "footnotes": {
       "noteref_count": 24,
@@ -67,8 +56,8 @@
       "noteref_without_class": 0,
       "repeated_phrase_count": 10,
       "unprocessed_ages_marker_files": 0,
-      "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 0,
+      "page_reference_split_files": 1,
+      "chapter_heading_in_paragraph_files": 1,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -80,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 12,
+      "lowercase_paragraph_start_files": 1,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -88,22 +77,8 @@
         "boilerplate": [],
         "beta_code": [],
         "escaped_lang_tag": [],
-        "untagged_greek": [
-          {
-            "file": "EPUB/ch006.xhtml",
-            "text": "First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a natural knowledge of supernatural things, and that both theoretical and practic"
-          },
-          {
-            "file": "EPUB/ch054.xhtml",
-            "text": "and nylons, the Spirit, is of the neuter. Some would have it to refer unto Christ, verse 12. But as it is not unusual in Scripture that the subjunctive article and relative should agree in gender with the following subst"
-          }
-        ],
-        "untagged_hebrew": [
-          {
-            "file": "EPUB/ch006.xhtml",
-            "text": "First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a natural knowledge of supernatural things, and that both theoretical and practic"
-          }
-        ],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [
           {
@@ -148,12 +123,12 @@
           },
           {
             "file": "combined_text",
-            "text": "chapter 6 of ordinary gifts of the spirit",
+            "text": "chapter 1 spiritual gifts their names and signification",
             "count": 1
           },
           {
             "file": "combined_text",
-            "text": "chapter 7 of spiritual gifts enabling the ministry",
+            "text": "chapter 6 of ordinary gifts of the spirit",
             "count": 1
           }
         ],
@@ -162,8 +137,18 @@
         "noteref_without_class": [],
         "missing_chapter_initialization": [],
         "unprocessed_ages_marker": [],
-        "page_reference_split": [],
-        "chapter_heading_in_paragraph": [],
+        "page_reference_split": [
+          {
+            "file": "EPUB/ch043.xhtml",
+            "text": "p. 249."
+          }
+        ],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/ch006.xhtml",
+            "text": "CHAPTER I"
+          }
+        ],
         "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
         "fragmented_hebrew_span_run": [],
@@ -173,7 +158,7 @@
         "structural_bold_leak": [
           {
             "file": "EPUB/ch001.xhtml",
-            "text": "ΠΗΕΨΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
+            "text": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
           }
         ],
         "repeated_structural_marker": [],
@@ -187,44 +172,8 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch006.xhtml",
-            "text": "p"
-          },
-          {
-            "file": "EPUB/ch011.xhtml",
-            "text": "d"
-          },
-          {
-            "file": "EPUB/ch016.xhtml",
-            "text": "p"
-          },
-          {
-            "file": "EPUB/ch018.xhtml",
-            "text": "m"
-          },
-          {
-            "file": "EPUB/ch019.xhtml",
-            "text": "d"
-          },
-          {
-            "file": "EPUB/ch020.xhtml",
-            "text": "m"
-          },
-          {
-            "file": "EPUB/ch021.xhtml",
-            "text": "d"
-          },
-          {
-            "file": "EPUB/ch041.xhtml",
-            "text": "d"
-          },
-          {
             "file": "EPUB/ch055.xhtml",
-            "text": "s"
-          },
-          {
-            "file": "EPUB/ch059.xhtml",
-            "text": "d"
+            "text": "should receive strong consolation in all their distresses, when they flee for ref"
           }
         ],
         "noteref_leading_space": [],
@@ -233,7 +182,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 70,
+    "nav_link_count": 72,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

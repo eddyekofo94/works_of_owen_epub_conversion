@@ -1,0 +1,301 @@
+Volume 3 Blemishes
+#  TODO: (2026-05-20 10:19) 
+## 1
+ANALYSIS
+Fix:
+Isn't being extracted properly, this issue was in v2, maybe not the same but I need this extraction to be added to the check, since I don't want to be doing this for every volume
+
+## 2
+cover, contents of volume [n] should be adeed to the nav. (this shoudl apply to all volumes, but I need to make sure this is added to the check, since I don't want to be doing this for every volume)
+
+## 3
+Is there a way to fix the font? the font that's showing on my macbook is not minion pro. Is there some config that's broken? can you investigate?
+
+## 4
+“in the verses preceding the
+11th, which we principally aim at.
+Treating,”
+
+Fix:
+“in the verses preceding the 11th, which we principally aim at."
+Note: This issue is still persisting in v3 now, it should've been dealt with in v1. When issues like this are found, the solutions should be robbust that I don't have to be going through every volume to fix them, I need to make sure the solution is added to the check so that it can be automatically fixed in the future.
+
+### 4.1
+“Romans 1:19-
+21. This is to honor, worship, fear God for himself; that”
+
+Fix:
+“Romans 1:19-21. This is to honor, worship, fear God for himself; that" 
+Note: false positive, it is a verse reference it should not be broken
+
+### 4.2
+“ It is excepted by our adversaries (Crell. de Natur. Spir.
+Sanc.), ”
+
+Fix:
+“ It is excepted by our adversaries (Crell. de Natur. Spir. Sanc.), "
+Note: false positive, it is a book reference it should not be broken
+
+## 5
+“proceedeth from the Father, he shall testify of me." And chap.
+[4611605]16:5-15, ”
+
+Fix:
+“proceedeth from the Father, he shall testify of me." And chap. 16:5-15," there is a blemish in the text, the [4611605] is not supposed to be there, can we do a check for anything like this? There should not be false positives, for example: (1670) is not a blemish, it's clealy a date. But something like [4611605] is not a date, it's not a verse reference, it's not a page number, it's not a footnote, it's not a chapter reference, it's not a section reference, it's not a volume reference, it's not a part reference, it's not a book reference, it's not an edition reference, it's not a publisher reference, it's not an author reference, it's not a title reference, it's not a series reference, it's not a collection reference, it's not a library reference, it's not a archive reference, it's not a database reference, it's not a website reference, it's not a social media reference, it's not a email reference, it's not a phone number reference, it's not an address reference, it's not a url reference, it's not a doi reference, it's not a isbn reference, it's not a issn reference, it's not a lccn reference, it's not a oclc reference, it's not a gnd reference, it's not a viaf reference, it's not a lcsh reference, it's not a ddc reference, it's not a udc reference, it's not a rda reference, it's not a marc reference, it's not a bnf reference, it's not a sudoc reference. So we can do a check for anything that is in the format of [number], and if it is in that format and it is greater than 1000 and less than 10000000 then we can flag it as a blemish.
+
+## 6
+“homini eloquium suum," discovering in his comment the mistake of the
+LXX. But it is certain that, from the ambiguity of the word ”
+
+Fix:
+“discovering in his comment the mistake of the LXX. But it is certain that, from the ambiguity of the"
+Note: LXX here is not a heading but the Spetuagint, this is a false positive, I don;t know how you will prevent this is the future but you have to find a way
+
+## 7
+“CHAPTER 3.
+DIVINE NATURE AND PERSONALITY OF THE HOLY SPIRIT PROVED AND VINDICATED. Ends of our consideration of the dispensation of the Spirit — Principles premised thereunto — The nature of God”
+
+Fix:
+[[CHAPTER]] CHAPTER 3.\n\n [[HEADING]]DIVINE NATURE AND PERSONALITY OF THE HOLY SPIRIT PROVED AND VINDICATED. [[SUMMARY]]Ends of our consideration of the dispensation 
+Note: This is how the json should be, I added [[HEADING]], in some chapters there's a heading and then summary, the heading is normally capitalized and the summary is not, so we can use this as a heuristic to determine if there is a heading and a summary, if there is a heading and a summary then we can add the [[HEADING]] tag to the heading and the [[SUMMARY]] tag to the summary, this way we can preserve the structure of the text and make it easier to read. This should be added to the check so that it can be automatically fixed in the future.
+The heading of course should be slightly smaller and than chapter, and the summary should be slightly smaller than the heading, this way we can visually distinguish between the different levels of the text. This is important because it helps the reader to understand the structure of the text and to navigate through it more easily.
+This occurs in some chapters but not all, so we need to make sure that the check is robust enough to handle this and to add the appropriate tags when necessary.
+
+#  TODO: (2026-05-20 12:28) 
+## 8
+“Qualiacumque voles Judaei somia vendant." — [Juv.,
+6. 546.] ”
+
+Fix:
+“Qualiacumque voles Judaei somia vendant." — [Juv., 6. 546.] ”
+Note: False break, all of this should be in the block quote
+
+#  TODO: (2026-05-20 19:52) 
+## 9
+Book 1, Chapter one's "sub-heading" is blending with the summary
+
+## 10
+“ of the Holy Spirit," etc., attempted "a [FALSE CHAPTER BREAK]
+“confutation of some part of Dr. Owen's work on that subject." Mr. John Humfrey, in his "Peaceable Disquisitions," having animadverted on the spirit in which Clagett had dealt with Owen,”
+
+Fix:
+“of the Holy Spirit," etc., attempted "a confutation of some part of Dr. Owen's work on that subject." Mr. John Humfrey, in his "Peaceable Disquisitions," having animadverted on the spirit in which Clagett had dealt with Owen,”
+Note: It is badly extracting this and then the ANALYSIS is being also badly extracted, the extraction for the ANALYSIS is broken. It needs fixing (This is my 3rd time asking now)
+
+## 11
+“— The great necessity of a diligent inquiry into the things taught concerning the Spirit of God and his work.”
+
+Fix:
+Book1, Chapter 1: this sentence is part of the summary. Most chapters start with an ALL CAPITAL word in this instance: “THE apostle Paul, in the 12th chapter.." (THE is the start)
+
+## 11.a
+“Secondly, THE human nature of Christ being thus formed in the womb by a creating act of the Holy Spirit, was in the instant of its conception sanctified, and filled with grace according to the measure of its receptivity.
+”
+
+Fix:
+For Book 2, Chapter 4, that sentence from "Secondly" is the beginning of the chapter.
+Note, the extraction needs to recognise where the italics end when extraction. (possibly the best approach)
+
+## 11.b
+“Υυχικὸς ἄνθρωπος, or the "natural man," who — Spiritual things, what they are — How the natural man cannot know or receive spiritual things — Difference between understanding doctrines and receiving of things — A twofold power and ability of mind with respect unto spiritual things explained — Reasons why a natural man cannot discern spiritual things — How and wherefore spiritual things are foolishness to natural men — Why natural men cannot receive the things of God — A double impotency in the mind of man by nature — 1 Corinthians 2:14 farther vindicated — Power of darkness in persons unregenerate — The mind filled with wills or lusts, and enmity thereby — The power and efficacy of spiritual darkness at large declared.”
+
+Fix:
+All this should be under [[SUMMARY]]
+
+We need proper checks on Chapter openings that we may capture the Chapter, Chapter-subheading (if there is one), summary (if there is one), all of this should be rightly formatted
+
+## 12
+“1. Of sanctifying grace; 2. Of especial gifts;
+3. Of peculiar evangelical privileges.”
+
+Fix:
+
+1. Of sanctifying grace; 
+2. Of especial gifts;
+3. Of peculiar evangelical privileges.
+Note: Not formatted properly, this was dealt with on volume 1, I shouldn't be having this problem here
+
+## 12.a
+(Taken from v1, a fix here should apply everywhere)
+“1.) What this work is, and(2.) How it is performed.”
+
+Fix:
+This also should be added to the rules, though not separated by semicolon; it is separated with "and" and same rules apply.
+With this rule, lists with one word especial the first entry on the lost should be indicative that this should not be treated as those that start inline
+
+## 13
+“[SECONDLY], The minds of men unregenerate being thus depraved and corrupted, being”
+
+Fix: it should be at the start of the line. FIRST, [SECONDLY] should be added to the list
+
+## 14
+“[19B9105]Psalm 119:105, and is said”
+
+Fix:
+[19B9105] should not be there, this is not being cleaned up properly, ## 5, we already dealt with this, we need a conclusive fix
+
+## 15
+“ 1 st . Such as consist in the confirmation, direction, and improvement of the moral principles and precepts of the law of nature.
+2 dly . Such as flow immediately from the sovereign will and wisdom of God, being no way communicated unto us but by supernatural revelation only.
+Such are all the effects of the wisdom and grace of God, as he was in Christ reconciling the world unto himself; the offices of Christ, his administration of them, and dispensation of the Spirit; with the especial, evangelical, supernatural graces and duties which are required in us with respect thereunto. The first sort of these things many will greatly praise and highly extol; and they will declare how consonant they are to reason, and what expressions suitable unto them may be found in the ancient philosophers. But it is evident, that herein also they fall under a double inconvenience: for, — 1 st . Mostly, they visibly transgress what they boast of as their rule, and that above others; for where shall we meet with any, at least with many, of this sort of men, who in any measure comply with that modesty, humility, meekness, patience, self-denial, abstinence, temperance, contempt of the[…]”
+
+Fix:
+1st., 2ndly. are badly extracted and formatted here.
+
+#  TODO: (2026-05-21 19:22) 
+
+## 16
+“The schoolmen, after Aquinas,
+22. q. 174, a. 1, do commonly reduce the means”
+
+Fix:
+The schoolmen, after Aquinas, 22. q. 174, a. 1, do commonly reduce the means
+Note: this is a false break, all of this should be in the same line, this is a problem with rendering, the scholastic "anchor" is falsely rendered here, this is a reference. If there is a comma, the next point is most likely not a new point, a ?, ., or other punctuations probably.
+
+## 17
+“of the
+LXX. But it is certain that, from the ambiguity of the word רוּחַ”
+
+False positive, this is not a Roman numeral but Septuagint (LXX), we need a way to catch this. I thought I had something in place already.
+
+shared.py line: 982 - 995
+_ROMAN_EXCLUSION_LOOKAHEAD = (
+    r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])'
+)
+
+This is clearly not working or needs to be fixed, I haven't seen any ROMAN numeral of 20 (XX), this does not mean there isn't but large roman numerals (inside the body), so anything above 50 L, should be treated as a false positive.
+
+## 18
+“that are adult, these things are inseparable.
+Therefore,
+3. The difference in this matter cometh unto this head: ”
+
+Fix:
+"Therefore" and other "transitional" words like "For--" etc. should be on the previous paragraph, not a paragraph on its owen
+so <p>Therefore,<p> is wrong, it be part of “that are adult, these things are inseparable. Therefore,
+
+The problem with this fix is that, it now breaks the rule of ## 16, so you will need to think of a way to catch this. A word like "Aquinas,", should be excluded from this. I have some code in place, can it be reviewed and improved?
+
+## 19 see ## 19.a
+“heads: —
+1. Illumination;
+2. Conviction;
+3. Reformation. The first of these respects the mind”
+
+Fix:
+lists with only one word such as this should be continuous:
+“heads: — 1. Illumination; 2. Conviction; 3. Reformation. The first of these respects the mind”
+these aren't really lists but an introduction to which the lists follow
+
+## 19.a
+“for,
+(1.) it doth not fix them; and,
+(2.) it doth not fill them.”
+
+Fix:
+even lists like this one also should be continuous as issue ##19
+
+“expressed in the Scripture: for he is said, —
+
+1. To give or bestow him;
+
+2. To send him;
+
+3. To minister him;
+
+4. To pour him out;
+
+5. To put him on us. And his own application of himself unto his wo”
+
+## 19.b
+“1. Complacency;
+2. Permanency.”
+
+
+Fix:
+A short list ending with a semicolon like these should not be treated as worthy on being considered a "list"
+
+## 19.c
+“1. What we are taught on the part of God the Father with respect unto the Holy Spirit and his work; and, 2. What relates immediately unto himself.”
+
+Fix:
+This should be considered a "non-list" also
+
+## 19.d
+“1. To proceed; 2. To come, or come upon; 3. To fall on men; 4. To rest; and, 5. To depart.”
+
+Fix:
+5. To depart. seem to not be detected as part of the list
+
+## 20
+“But the things declared in the gospel may be reduced unto two heads, as was before observed: — 1 st . Such as consist in the confirmation, direction, and improvement of the moral principles and precepts of the law of nature.
+2 dly . Such as flow immediately from the sovereign will and wisdom of God, being no way communicated unto us but by supernatural revelation only.
+Such are all the effects of the wisdom and grace of God, as he was in Christ reconciling the world unto himself; the offices of Christ, his administration of them, and dispensation of the Spirit; with the especial, evangelical, supernatural graces and duties which are required in us with respect thereunto. The first sort of these things many will greatly praise and highly extol; and they will declare how consonant they are to reason, and what expressions suitable unto them may be found in the ancient philosophers. But it is evident, that herein also they fall under a double inconvenience: for, — 1 st . Mostly, they visibly transgress what they boast of as their rule, and that above others; for where shall we meet with any, at least with many, of this sort of men, who[…]”
+
+Fix:
+in this body of text: 1st, 2ndly are badly extracted/rendered: "1 st", "2 dly" are defects. This needs to be cleaned up and guards set to catch them in the future
+
+
+## 21
+“S.
+P.80 do sufficiently manifest.”
+
+Fix:
+“S. P.80 do sufficiently manifest.” false break
+
+## 22
+“were תוֹרָתִי [רֻבֵּי Keri] תֻבֵּוֹּ, — the”
+
+Fix:
+The Hebrew is not rendered properly here
+
+## 23
+Blockquotes look too sparsed, I need them more compact and visually premium, it looks off at the moment
+
+
+#  TODO: (2026-05-23 14:10) 
+## 24
+“II. The next sort of the operations of the Holy Ghost under the Old Testament, whose explanation was designed, is of those whereby he improved, through immediate impressions of his own power, the natural faculties and abilities of the minds of men; and these, as was intimated, have respect to things political, moral, natural, and intellectual, with some of a mixed nature: —”
+
+Fix:
+The text after Roman numerals should just be normal body font
+
+## 25 
+Proxima Nova as the header font is not right, find me something vintage from  my ./fonts and change this
+
+## 26
+“These things have I spoken unto you, being yet present with you.
+But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you. Peace I leave with you," etc.”
+
+The blockquote should never finish with an open quote, like for this instance, the ending should end with etc. here
+
+## 27
+“chapter 12:8, 9. But he so raised”
+
+Fix:
+"9." here should not be bold. if the number doesn't pass the scholastic-anchor (rightly so here), neither should it be bold.
+
+## 28
+“THE MANNER OF CONVERSION EXPLAINED IN THE INSTANCE OF AUGUSTINE.133 The outward means and manner of conversion to God, or regeneration, with the degrees of spiritual operations on the minds of men and their effects, exemplified in the conversion of Augustine, as the account is given thereof by himself.”
+
+Fix:
+Book 3, Chapter 6, this is being considered as a summary when there should be sub-heading and summary, maybe because there is a footnote on the sub-heading it is making the regex to not understand, please investigate.
+"133" is the footnote
+
+## 29
+There shouldn't be any underscores "_" on the text, there's no reason for it, I have seen a few, also em-dash should always be 2 (--) some appear as one this is a bug from bad extraction. 
+
+## 30
+“Now, both these concur 1st.. He is not only in himself, morally considered, the most perfect, absolute, glorious patt”
+
+There is a bad extraction/formatting/rendering here. Fix please
+
+## 30.a
+“Hereunto two things are required: — 1st. Power for such operations, or for all the duties of holiness and obedience that are required of us. That this we are endued withal, that this is wrought in us, bestowed upon us, by the Holy Ghost, hath been before abundantly confirmed. But when this is done for us, is there aught else yet remaining to be done? Yea, 2dly. There is the actual exercise of the grace we have received. How may this be exercised?”
+
+Same as here.
+
+## 30.b
+“1st.. By a tacit concession that they will both of them be found true towards all who live and die under the law, without an interest in Jesus Christ; for, affirming that "there is no condemnation to them which are in Christ Jesus," he grants that those who are not so cannot avoid it. Such is the guilt of this sin, and such are the fruits of it, in all in whomsoever it abides, that it makes them obnoxious unto condemnation. But, — 2dly.. There is a deliverance from this condemnation and from all liableness thereunto, by free justification in the blood of Christ, Romans 8:1”
+
+Same issue here. This is reoccurring we need to tightened the extraction/rendering for this issue and add tests

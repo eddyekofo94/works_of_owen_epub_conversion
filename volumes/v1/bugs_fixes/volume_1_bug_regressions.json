@@ -12,7 +12,7 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 106,
+      "observed": 101,
       "budget": 125,
       "status": "ok",
       "samples": [
@@ -23,7 +23,7 @@
         },
         {
           "file": "EPUB/ch009.xhtml",
-          "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,",
+          "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I will do, saith God,",
           "next": "This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba"
         },
         {
@@ -70,10 +70,15 @@
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 0,
-      "budget": 1,
+      "observed": 1,
+      "budget": 5,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch031.xhtml",
+          "text": "In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love."
+        }
+      ]
     },
     {
       "label": "Repeated word windows",
@@ -206,6 +211,27 @@
       "budget": 0,
       "status": "ok",
       "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
     }
   ],
   "epub_checks": [
@@ -239,7 +265,7 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 6,
+      "observed": 5,
       "budget": 8,
       "status": "ok",
       "samples": [
@@ -251,11 +277,6 @@
         {
           "file": "combined_text",
           "text": "meditations and discourses on the glory of christ",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "meditations and discourses concerning the glory of christ",
           "count": 1
         },
         {
@@ -457,45 +478,13 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 9,
+      "observed": 1,
       "budget": 38,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch004.xhtml",
-          "text": "f"
-        },
-        {
           "file": "EPUB/ch008.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "text": "m"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch021.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch030.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch039.xhtml",
-          "text": "w"
-        },
-        {
-          "file": "EPUB/ch040.xhtml",
-          "text": "a"
+          "text": "as he also proclaims the same delight in him, from heaven, in the days of his fle"
         }
       ]
     },

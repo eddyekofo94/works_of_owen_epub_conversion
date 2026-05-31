@@ -792,12 +792,29 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-18T00:18:44.185698+00:00
+**Last run:** 2026-05-30T12:44:09.448509+00:00
 **EPUB:** `volumes/v3/output/volume_3.epub`
-**Status:** FAIL (1 errors, 5 warnings)
+**Status:** WARN (0 errors, 1 warnings)
 
 Reports:
 - `volume_3_audit.json`
@@ -809,27 +826,19 @@ Reports:
 | XHTML files | 46 |
 | Spine items | 44 |
 | Embedded fonts | 14 |
-| NAV links | 45 |
-| Greek chars / untagged | 10343 / 59 |
-| Hebrew chars / untagged | 1455 / 93 |
-| Noteref links / endnote anchors | 140 / 141 |
+| NAV links | 47 |
+| Greek chars / untagged | 4328 / 0 |
+| Hebrew chars / untagged | 1655 / 0 |
+| Noteref links / endnote anchors | 141 / 141 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
-| Empty bracket noise files | 1 |
-| Repeated phrase hits | 4 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 3 |
 
 Warnings requiring triage:
 
-- `untagged_greek`: Greek characters appear outside lang='el' context
-- `untagged_hebrew`: Hebrew characters appear outside lang='he' context
 - `repeated_phrases`: Potential repeated phrases detected
-- `orphan_endnotes`: Some endnote anchors have no matching noteref
-- `missing_apple_options`: Missing Apple Books display-options file
-
-Errors requiring correction:
-
-- `empty_bracket_noise`: Empty bracket residue appears in rendered text
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -915,11 +924,50 @@ Errors requiring correction:
 
 
 
+
+
+
+
+## Issue 128 — V3 Blemishes 9-15 Shared Structural Cleanup
+
+**Date:** 2026-05-20  
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+
+Implemented shared fixes for the V3 issue 9-15 blemish family:
+
+- Chapter-opening summaries now keep em-dash and Greek synopsis continuations inside `chapter-summary`, while body openers such as `THE...`, `WE...`, and `Secondly, THE...` start normal body/list paragraphs.
+- ANALYSIS spillover is repaired at render time when the previous front-matter sentence tail is accidentally captured before the `ANALYSIS` heading.
+- Bracketed word ordinals such as `[SECONDLY],` are recognized as list markers and rendered at the start of their own paragraph.
+- Inline bold decimal lists split correctly after emphasized punctuation, fixing the `1. Of sanctifying grace; 2. Of especial gifts; 3. ...` pattern.
+- Residual AGES source ids such as `[4611605]` and `[19B9105]` are removed only when directly prefixing scripture locators.
+- Spaced and fragmented ordinal OCR forms such as `1 st .`, `2 dly .`, and `**[1** _**st**_ **.]**` normalize into clean structural markers.
+- `chap.` / `chapter` paragraph breaks before `16:5-15` and `9:8` are merged before rendering.
+- Audit coverage now includes residual AGES artifact counts, flat ANALYSIS chapters, and missing configured font checks in the bug-regression report.
+
+Validation:
+
+- Rebuilt V3 with `.venv/bin/python3 volumes/v3/convert.py --render-only`.
+- EPUB audit: WARN, 0 errors; untagged Greek `0`, untagged Hebrew `0`, unprocessed AGES markers `0`.
+- Text integrity audit: WARN; reference continuation splits `0`, residual AGES artifacts `0`, flat ANALYSIS chapters `0`, font issues `0`, missing Greek clauses `0`, missing Hebrew clauses `0`.
+- Bug-regression report: PASS.
+- V3 regression tests: `40 passed, 8 skipped`.
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-12T12:18:48.054219+00:00
-**Status:** WARN (10 warnings)
+**Last run:** 2026-05-30T12:44:48.146514+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_3_text_integrity.json`
@@ -927,48 +975,55 @@ Reports:
 
 | Check | Result |
 |-------|--------|
-| PDF pages | 820 |
-| EPUB text files | 45 |
-| EPUB paragraphs/headings | 2623 |
-| Approximate PDF-to-EPUB word coverage | 0.9878 |
-| Weak page matches | 14 |
-| Dense source windows checked | 30948 |
-| Missing dense source-window pages | 113 |
-| Top-of-page body windows checked | 796 |
-| Top-of-page windows skipped as unstable | 37 |
-| Missing top-of-page body windows | 6 |
-| Bottom-of-page body windows checked | 775 |
-| Bottom-of-page windows skipped as unstable | 36 |
-| Missing bottom-of-page body windows | 16 |
-| Possible faulty paragraph splits | 19 |
-| Structural starts excluded from split warnings | 423 |
-| Short fragments | 20 |
+| PDF pages | 789 |
+| EPUB text files | 44 |
+| EPUB paragraphs/headings | 2500 |
+| Approximate PDF-to-EPUB word coverage | 0.9855 |
+| Weak page matches | 13 |
+| Dense source windows checked | 812 |
+| Missing dense source-window pages | 783 |
+| Front CONTENTS pages checked | 6 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 766 |
+| Top-of-page windows skipped as unstable | 31 |
+| Missing top-of-page body windows | 0 |
+| Bottom-of-page body windows checked | 748 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 5 |
+| Possible faulty paragraph splits | 152 |
+| Structural starts excluded from split warnings | 317 |
+| Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 18 |
+| Inline structural marker candidates | 5 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 6 |
+| Suspicious large-number starts | 0 |
 | Roman heading candidates | 0 |
-| Overlong heading candidates | 0 |
+| Overlong heading candidates | 12 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 626 |
-| EPUB enumerator markers | 559 |
-| Missing enumerator marker forms | 2 |
-| Enumerator sequence candidates | 1 |
+| EPUB enumerator markers | 636 |
+| Missing enumerator marker forms | 0 |
+| Enumerator sequence candidates | 4 |
+| PDF Greek words / EPUB Greek words | 809 / 816 |
+| Greek word coverage ratio | 0.9949 |
+| PDF Hebrew words / EPUB Hebrew words | 238 / 235 |
+| Hebrew word coverage ratio | 0.9874 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `flat_analysis_chapters`: 1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

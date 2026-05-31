@@ -1,27 +1,27 @@
 # EPUB Audit: volume_5.epub
 
-- Status: **WARN**
-- Errors: 0
-- Warnings: 2
+- Status: **FAIL**
+- Errors: 1
+- Warnings: 1
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 60
-- Manifest items: 51
+- Files: 66
+- Manifest items: 57
 - Spine items: 38
 - XHTML files: 39
-- Embedded fonts: 8
-- NAV links: 38
+- Embedded fonts: 14
+- NAV links: 41
 
 ## Content Checks
 
-- Greek chars: 6228
-- Untagged Greek chars: 4
-- Hebrew chars: 947
+- Greek chars: 6350
+- Untagged Greek chars: 0
+- Hebrew chars: 980
 - Untagged Hebrew chars: 0
-- Noteref links: 0
+- Noteref links: 1
 - Endnote anchors: 0
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
@@ -30,17 +30,15 @@
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 3
 
+## Errors
+
+- `noteref_targets_missing`: Some noteref targets do not have matching endnote anchors
+
 ## Warnings
 
-- `untagged_greek`: Greek characters appear outside lang='el' context
 - `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
-
-### untagged_greek
-
-- `EPUB/ch022.xhtml`: , the note of a syllogistical inference, declares what is here asserted to be the substance of the truth pleaded for. And the comparison is continued, ὠς, — these things have themselves after the same manner.
-- `EPUB/ch022.xhtml`: , — "sin," for a "sinner," (that is, passively, not actively; not by inhesion, but imputation); for this the phrase of speech and force of the antithesis seem to require. Speaking of another sense, Estius himself on the 
 
 ### repeated_phrase
 
@@ -50,13 +48,12 @@
 
 ### chapter_heading_in_paragraph
 
-- `EPUB/ch002.xhtml`: Lastly, the concluding chapter i
-- `EPUB/ch005.xhtml`: So chapter 9
+- `EPUB/contents_2.xhtml`: CHAPTER 1
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch006.xhtml`: e
-- `EPUB/ch009.xhtml`: q
-- `EPUB/ch013.xhtml`: f
-- `EPUB/ch019.xhtml`: c
-- `EPUB/ch021.xhtml`: d
+- `EPUB/ch004.xhtml`: and the other is that of our Savior, Luke 17:10,
+- `EPUB/ch010.xhtml`: who yet disclaims any confidence therein as unto his justification before God; fo
+- `EPUB/ch011.xhtml`: attempts the sense of the word, but confounds it with "reputare:"
+- `EPUB/ch012.xhtml`: and also Serm. 16 "Caput nostrum Dominus Jesus Christus omnia in se corporis sui
+- `EPUB/ch022.xhtml`: injustus", 1 Peter 3:18. "Quod si ergo justi effecti sumus per vitam illius, caus

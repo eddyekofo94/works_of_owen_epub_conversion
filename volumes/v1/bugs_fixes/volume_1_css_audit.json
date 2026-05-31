@@ -1,15 +1,25 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-05-17T22:19:24.590020+00:00",
+  "generated_at": "2026-05-21T15:10:12.772381+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 24,
+  "warning_count": 28,
   "errors": [],
   "warnings": [
     {
       "code": "orphan_class",
       "message": "Class '.ContentsDescWrap' defined in CSS but never used in XHTML",
       "class": "ContentsDescWrap"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.ContentsItem' defined in CSS but never used in XHTML",
+      "class": "ContentsItem"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.analysis-part' defined in CSS but never used in XHTML",
+      "class": "analysis-part"
     },
     {
       "code": "orphan_class",
@@ -23,13 +33,28 @@
     },
     {
       "code": "orphan_class",
-      "message": "Class '.digression-heading' defined in CSS but never used in XHTML",
-      "class": "digression-heading"
+      "message": "Class '.chapter-heading' defined in CSS but never used in XHTML",
+      "class": "chapter-heading"
     },
     {
       "code": "orphan_class",
-      "message": "Class '.editor' defined in CSS but never used in XHTML",
-      "class": "editor"
+      "message": "Class '.contents-desc-wrap' defined in CSS but never used in XHTML",
+      "class": "contents-desc-wrap"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.contents-part-title' defined in CSS but never used in XHTML",
+      "class": "contents-part-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.contents-treatise-title' defined in CSS but never used in XHTML",
+      "class": "contents-treatise-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.digression-heading' defined in CSS but never used in XHTML",
+      "class": "digression-heading"
     },
     {
       "code": "orphan_class",
@@ -63,18 +88,13 @@
     },
     {
       "code": "orphan_class",
-      "message": "Class '.md' defined in CSS but never used in XHTML",
-      "class": "md"
-    },
-    {
-      "code": "orphan_class",
       "message": "Class '.noindent' defined in CSS but never used in XHTML",
       "class": "noindent"
     },
     {
       "code": "orphan_class",
-      "message": "Class '.publisher' defined in CSS but never used in XHTML",
-      "class": "publisher"
+      "message": "Class '.quote-block' defined in CSS but never used in XHTML",
+      "class": "quote-block"
     },
     {
       "code": "orphan_class",
@@ -129,10 +149,10 @@
   ],
   "info": {
     "css_file_count": 1,
-    "css_classes_defined": 48,
-    "xhtml_classes_used": 24,
-    "xhtml_files_scanned": 84,
-    "font_face_count": 8,
-    "embedded_font_count": 8
+    "css_classes_defined": 74,
+    "xhtml_classes_used": 46,
+    "xhtml_files_scanned": 83,
+    "font_face_count": 17,
+    "embedded_font_count": 14
   }
 }

@@ -8,12 +8,12 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 83
-- Manifest items: 74
-- Spine items: 47
-- XHTML files: 49
-- Embedded fonts: 21
-- NAV links: 47
+- Files: 77
+- Manifest items: 68
+- Spine items: 48
+- XHTML files: 50
+- Embedded fonts: 14
+- NAV links: 51
 
 ## Content Checks
 
@@ -42,13 +42,4 @@
 
 ### chapter_heading_in_paragraph
 
-- `EPUB/ch035.xhtml`: The second section of this chapter i
 - `EPUB/ch042.xhtml`: Chapter 3
-
-### lowercase_paragraph_start
-
-- `EPUB/ch008.xhtml`: a
-- `EPUB/ch014.xhtml`: a
-- `EPUB/ch016.xhtml`: i
-- `EPUB/ch017.xhtml`: a
-- `EPUB/ch019.xhtml`: b

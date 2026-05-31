@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 106 | 125 | OK |
-| Inline structural marker candidates | 0 | 1 | OK |
+| Possible faulty paragraph splits | 101 | 125 | OK |
+| Inline structural marker candidates | 1 | 5 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -23,11 +23,14 @@
 | Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 0 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
+| Residual AGES source artifacts | 0 | 0 | OK |
+| Flat ANALYSIS chapters | 0 | 0 | OK |
+| Missing configured fonts | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 6 | 8 | OK |
+| Repeated phrase hits | 5 | 8 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
@@ -53,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 9 | 38 | OK |
+| Lowercase page fragments | 1 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -64,10 +67,14 @@
 ### Possible faulty paragraph splits
 
 - file: EPUB/ch004.xhtml; previous: on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things." And Ennodius has, as it were, turned this passage of Jerome into verse: —; next: Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the
-- file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I WILL do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
+- file: EPUB/ch009.xhtml; previous: nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I will do, saith God,; next: This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba
 - file: EPUB/ch009.xhtml; previous: he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they; next: Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S
 - file: EPUB/ch009.xhtml; previous: This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw; next: The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:
 - file: EPUB/ch010.xhtml; previous:  wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,; next: And they are called "treasures" on a twofold account, both mentioned together by the Psalmist. "How precious are thy thoughts unto me, O Lord; how great is the sum of them!" They a
+
+### Inline structural marker candidates
+
+- file: EPUB/ch031.xhtml; text: In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love.
 
 ### Repeated word windows
 
@@ -81,9 +88,9 @@
 
 - file: combined_text; text: chapter 14 motives unto the love of christ
 - file: combined_text; text: meditations and discourses on the glory of christ
-- file: combined_text; text: meditations and discourses concerning the glory of christ
 - file: combined_text; text: chapter 8 of the state of corrupted nature
 - file: combined_text; text: chapter 10 of the person of jesus christ
+- file: combined_text; text: chapter 14 of the two-fold estate of christ
 
 ### Chapter headings rendered as paragraphs
 
@@ -91,8 +98,4 @@
 
 ### Lowercase page fragments
 
-- file: EPUB/ch004.xhtml; text: f
-- file: EPUB/ch008.xhtml; text: a
-- file: EPUB/ch011.xhtml; text: m
-- file: EPUB/ch016.xhtml; text: a
-- file: EPUB/ch021.xhtml; text: a
+- file: EPUB/ch008.xhtml; text: as he also proclaims the same delight in him, from heaven, in the days of his fle

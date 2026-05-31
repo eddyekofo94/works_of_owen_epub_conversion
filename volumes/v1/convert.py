@@ -53,6 +53,12 @@ _V1_CATECHISM_PLAIN_LABEL_RE = re.compile(
 )
 
 
+_V1_CATECHISM_PROOFS_RE = re.compile(
+    rf'(?P<pre>.*?)(?P<proof>\b(?:[1-3]\s+)?(?:{SCRIPTURE_BOOK_RE})\b\s+\d+(?::\d+|(?:\s*,\s*\d+)+)?\b.*)$',
+    re.I | re.S,
+)
+
+
 def _format_v1_catechism_label(label, num=None):
     canonical = {'q': 'Q', 'ques': 'Ques', 'a': 'A', 'ans': 'Ans'}[label.lower()]
     formatted = f'{canonical}.'
@@ -84,14 +90,28 @@ def _normalize_v1_catechism_paragraph(match):
     if not rest:
         return match.group(0)
 
+    label_text = label_match.group('label').lower()
+    is_q = label_text in ('q', 'ques')
+    item_cls = 'catechism-question' if is_q else 'catechism-answer'
+
+    # Extract and wrap scripture proofs from the end of the answer
+    if not is_q:
+        proofs_match = _V1_CATECHISM_PROOFS_RE.match(rest)
+        if proofs_match:
+            pre_text = proofs_match.group('pre').strip()
+            proof_text = proofs_match.group('proof').strip()
+            pre_text = re.sub(r'\s*[—-]\s*$', '', pre_text).strip()
+            rest = f'{pre_text} <span class="catechism-proofs">{proof_text}</span>'
+
     label = _format_v1_catechism_label(label_match.group('label'), label_num)
-    return f'<p class="catechism-item"><b>{label}</b> {rest}</p>'
+    return f'<p class="catechism-item {item_cls}"><b>{label}</b> {rest}</p>'
 
 
 def _group_v1_catechism_pairs(html):
+    # Matches consecutive Question and Answer blocks (taking classes into account)
     qa_pair_re = re.compile(
-        r'(?P<q><p class="catechism-item"><b>(?:Ques|Q)\.(?:\s+\d+\.)?</b>.*?</p>)\s*\n\s*'
-        r'(?P<a><p class="catechism-item"><b>(?:Ans|A)\.(?:\s+\d+\.)?</b>.*?</p>)',
+        r'(?P<q><p class="catechism-item catechism-question"><b>(?:Ques|Q)\.(?:\s+\d+\.)?</b>.*?</p>)\s*\n\s*'
+        r'(?P<a><p class="catechism-item catechism-answer"><b>(?:Ans|A)\.(?:\s+\d+\.)?</b>.*?</p>)',
         re.S,
     )
     return qa_pair_re.sub(
@@ -122,28 +142,55 @@ def _postprocess_v1_catechism_html(html, chapter):
 _V1_CATECHISM_CSS = """
 /* Volume 1-only Catechism polish */
 .v1-catechism-pair {
-    margin: 1em 0 1.25em;
+    margin: 1.6em 0;
+    padding: 0.9em 1.1em;
+    background-color: rgba(42, 85, 160, 0.02) !important; /* Soft Owen Blue background tint */
+    border-left: 3px solid rgba(42, 85, 160, 0.35) !important; /* Primary accent line */
+    border-radius: 4px;
     break-inside: avoid;
     page-break-inside: avoid;
 }
 
 .v1-catechism-pair .catechism-item {
-    margin: 0.12em 0 0.2em;
+    margin: 0;
     text-align: left;
     text-indent: 0 !important;
 }
 
-.v1-catechism-pair .catechism-item + .catechism-item {
-    margin-top: 0.28em;
+.v1-catechism-pair .catechism-question {
+    color: #111;
+    font-weight: 500;
+    font-size: 0.98em;
 }
 
-p.catechism-item {
-    text-align: left;
-    text-indent: 0 !important;
+.v1-catechism-pair .catechism-question b {
+    color: #2a55a0 !important; /* Owen Blue Question Label */
+    font-weight: bold;
+    margin-right: 0.3em;
 }
 
-.catechism-item b {
-    font-weight: 700;
+.v1-catechism-pair .catechism-answer {
+    margin-top: 0.6em !important;
+    color: #222;
+    font-size: 0.96em;
+    line-height: 1.55;
+}
+
+.v1-catechism-pair .catechism-answer b {
+    color: #b08d2d !important; /* Muted Gold Answer Label */
+    font-weight: bold;
+    margin-right: 0.3em;
+}
+
+.v1-catechism-pair .catechism-proofs {
+    display: block; /* Sits on its own line below the answer */
+    margin-top: 0.55em;
+    font-size: 0.85em;
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+    padding-left: 0.8em;
+    border-left: 1.5px solid rgba(0, 0, 0, 0.08); /* Tiny hairline grouping */
 }
 """
 
@@ -171,6 +218,8 @@ _V1_MEDITATIONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="
 <p class="title-connector">with</p>
 <p class="title-line-medium">The Differences Between Faith and Sight;</p>
 <p class="title-line-medium">Applied Unto the Use of Them That Believe.</p>
+<p class="title-rule" aria-hidden="true"></p>
+<div class="quote-block"><p>"Father, I will that they also, whom thou hast given me, be with me where I am; that they may behold my glory, which thou hast given me: for thou lovedst me before the foundation of the world." — John 17:24.</p></div>
 </section>'''
 
 _V1_TWO_CATECHISMS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -186,17 +235,94 @@ _V1_TWO_CATECHISMS_TITLE_PAGE = '''<section class="treatise-title-page" epub:typ
 </section>'''
 
 _V1_PART_2_TITLE_PAGE = '''<section class="treatise-title-page v1-applied-glory-title" epub:type="titlepage">
-<p class="title-line title-line-medium">Meditations and Discourses</p>
+<p class="title-line-medium">Meditations and Discourses</p>
 <p class="title-connector">Concerning</p>
-<p class="title-line title-line-major">The Glory of Christ;</p>
+<p class="title-line-major">The Glory of Christ;</p>
 <p class="title-connector">Applied Unto</p>
-<p class="title-line title-line-medium">Unconverted Sinners</p>
+<p class="title-line-medium">Unconverted Sinners</p>
 <p class="title-connector">And</p>
-<p class="title-line title-line-medium">Saints Under Spiritual Decays.</p>
+<p class="title-line-medium">Saints Under Spiritual Decays.</p>
 <p class="title-rule" aria-hidden="true"></p>
 <p class="title-source">In Two Chapters, from John XVII. 24.</p>
+<div class="quote-block"><p>"Father, I will that they also, whom thou hast given me, be with me where I am; that they may behold my glory, which thou hast given me." — John 17:24.</p></div>
 </section>'''
 
+
+_V1_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
+<h1 class="contents-volume-title">CONTENTS OF VOLUME 1.</h1>
+<h2 class="contents-treatise-title">CHRISTOLOGIA: OR, A DECLARATION OF THE<br/>GLORIOUS MYSTERY OF THE PERSON OF<br/>CHRIST.</h2>
+<p class="contents-frontmatter-line">PREFATORY NOTE<br/>PREFACE</p>
+<p class="contents-item"><b>CHAPTER 1</b> . Peter’s Confession; Matthew 16:16 — Conceits of the Papists thereon — The Substance and Excellency of that Confession.</p>
+<p class="contents-item"><b>CHAPTER 2</b> . Opposition made unto the Church as built upon the Person of Christ.</p>
+<p class="contents-item"><b>CHAPTER 3</b> . The Person of Christ the most ineffable Effect of Divine Wisdom and Goodness — Thence the next Cause of all True Religion — In what sense it is so.</p>
+<p class="contents-item"><b>CHAPTER 4</b> . To Person of Christ the Foundation of all the Counsels of God.</p>
+<p class="contents-item"><b>CHAPTER 5</b> . The Person of Christ the great Representative of God and his Will.</p>
+<p class="contents-item"><b>CHAPTER 6</b> . The Person of Christ the great Repository of Sacred Truth — Its Relation thereunto.</p>
+<p class="contents-item"><b>CHAPTER 7</b> . Power and Efficacy Communicated unto the Office of Christ, for the Salvation of the Church, from his Person.</p>
+<p class="contents-item"><b>CHAPTER 8</b> . The Faith of the Church under the Old Testament in and concerning the Person of Christ.</p>
+<p class="contents-item"><b>CHAPTER 9</b> . Honor due to the Person of Christ — The nature and Causes of it.</p>
+<p class="contents-item"><b>CHAPTER 10</b> . The Principle of the Assignation of Divine Honor unto the Person of Christ, in both the Branches of it; with is Faith in Him.</p>
+<p class="contents-item"><b>CHAPTER 11</b> . Obedience unto Christ — The Nature and Causes of it.</p>
+<p class="contents-item"><b>CHAPTER 12</b> . The especial Principle of Obedience unto the Person of Christ; which is Love — Its Truth and Reality Vindicated.</p>
+<p class="contents-item"><b>CHAPTER 13</b> . The Nature, Operations, and Causes of Divine Love, as it respects the Person of Christ.</p>
+<p class="contents-item"><b>CHAPTER 14</b> . Motives unto the Love of Christ.</p>
+<p class="contents-item"><b>CHAPTER 15</b> . Conformity unto Christ, and Following his Example.</p>
+<p class="contents-item"><b>CHAPTER 16</b> . An humble Inquiry into, and Prospect of, the infinite Wisdom of God, in the Constitution of the Person of Christ, and the Way of Salvation thereby.</p>
+<p class="contents-item"><b>CHAPTER 17</b> . Other Evidences of Divine Wisdom in the Contrivance of the Work of Redemption in and by the Person of Christ, in Effects Evidencing a Condecency thereunto.</p>
+<p class="contents-item"><b>CHAPTER 18</b> . The Nature of the Person of Christ, and the Hypostatical Union of his Natures Declared.</p>
+<p class="contents-item"><b>CHAPTER 19</b> . The Exaltation of Christ, with his Present state and Condition in Glory during the Continuance of his Mediatory Office.</p>
+<p class="contents-item"><b>CHAPTER 20</b> . The Exercise of the Mediatory Office of Christ in Heaven.</p>
+<h2 class="contents-treatise-title">MEDITATIONS AND DISCOURSES ON THE<br/>GLORY OF CHRIST.</h2>
+<p class="contents-frontmatter-line">PREFATORY NOTE BY THE EDITOR<br/>PREFACE TO THE READER</p>
+<p class="contents-item"><b>1. — </b> The Explication of the Text; John 17:24</p>
+<p class="contents-item"><b>2. — </b> The Glory of the Person of Christ, as the only Representative of God unto the Church</p>
+<p class="contents-item"><b>3. — </b> The Glory of Christ in the mysterious Constitution of his Person</p>
+<p class="contents-item"><b>4. — </b> The Glory of Christ in his susception of the Office of a Mediator. — First, in his Condescension</p>
+<p class="contents-item"><b>5. — </b> The Glory of Christ in his Love</p>
+<p class="contents-item"><b>6. — </b> The Glory of Christ in the Discharge of his Mediatory Office</p>
+<p class="contents-item"><b>7. — </b> The Glory of Christ in his Exaltation, after the accomplishment of the Work of Mediation in this World</p>
+<p class="contents-item"><b>8. — </b> Representations of the Glory of Christ under the Old Testament</p>
+<p class="contents-item"><b>9. — </b> The Glory of Christ in his intimate Conjunction with the Church</p>
+<p class="contents-item"><b>10. — </b> The Glory of Christ in the Communication of himself unto Believers</p>
+<p class="contents-item"><b>11. — </b> The Glory of Christ in the Recapitulation of all things in him</p>
+<p class="contents-item"><b>12. — </b> Differences between our Beholding the Glory of Christ by Faith in this World and by Sight in Heaven — The First of them Explained .</p>
+<p class="contents-item"><b>13. — </b> The Second Difference between our Beholding the Glory of Christ by Faith in this World and by Sight in Heaven</p>
+<p class="contents-item"><b>14. — </b> Other Difference between our Beholding the Glory of Christ by Faith in this World and by Sight in Heaven</p>
+<h2 class="contents-treatise-title">MEDITATIONS AND DISCOURSES CONCERNING<br/>THE GLORY OF CHRIST, APPLIED, ETC.</h2>
+<p class="contents-frontmatter-line">ORIGINAL PREFACE</p>
+<p class="contents-item"><b>1. — </b> Application of the foregoing Meditations concerning the Glory of Christ — First, in an Exhortation unto such as are not yet Partakers of him</p>
+<p class="contents-item"><b>2. — </b> The Way and Means of the Recovery of Spiritual Decays, and of Obtaining fresh Springs of Grace</p>
+<h2 class="contents-treatise-title">TWO SHORT CATECHISMS.</h2>
+<p class="contents-frontmatter-line">PREFATORY NOTE BY THE EDITOR<br/>THE EPISTLE DEDICATORY<br/>THE LESSER CATECHISM</p>
+<h2 class="contents-treatise-title">THE GREATER CATECHISM</h2>
+<p class="contents-item"><b>1.— </b> Of the Scripture</p>
+<p class="contents-item"><b>2. — </b> Of God</p>
+<p class="contents-item"><b>3. — </b> Of the Holy Trinity</p>
+<p class="contents-item"><b>4. — </b> Of the Works of God; and, first, of those that are Internal and Immanent</p>
+<p class="contents-item"><b>5. — </b> Of the Works of God that outwardly are of him</p>
+<p class="contents-item"><b>6. — </b> Of God’s actual Providence</p>
+<p class="contents-item"><b>7. — </b> Of the Law of God</p>
+<p class="contents-item"><b>8. — </b> Of the State of Corrupted Nature</p>
+<p class="contents-item"><b>9. — </b> Of the Incarnation of Christ</p>
+<p class="contents-item"><b>10. — </b> Of the Person of Jesus Christ</p>
+<p class="contents-item"><b>11. — </b> Of the Offices of Christ; and first, of his Kingly</p>
+<p class="contents-item"><b>12. — </b> Of Christ’s Priestly Office</p>
+<p class="contents-item"><b>13. — </b> Of Christ’s Prophetical Office</p>
+<p class="contents-item"><b>14. — </b> Of the Twofold Estate of Christ</p>
+<p class="contents-item"><b>15. — </b> Of the Persons to whom the Benefits of Christ’s Offices do belong</p>
+<p class="contents-item"><b>16. — </b> Of the Church</p>
+<p class="contents-item"><b>17. — </b> Of Faith</p>
+<p class="contents-item"><b>18. — </b> Of our Vocation, or God’s Calling us</p>
+<p class="contents-item"><b>19. — </b> Of Justification</p>
+<p class="contents-item"><b>20. — </b> Of Sanctification</p>
+<p class="contents-item"><b>21. — </b> Of the Privileges of Believers</p>
+<p class="contents-item"><b>22. — </b> Of the Sacraments of the New Covenant in particular; a holy right whereunto is the Fourth Privilege of Believers</p>
+<p class="contents-item"><b>23. — </b> Of Baptism</p>
+<p class="contents-item"><b>24. — </b> Of the Lord’s Supper.</p>
+<p class="contents-item"><b>25. — </b> Of the Communion of Saints — the Fifth Privilege of Believers</p>
+<p class="contents-item"><b>26. — </b> Of Particular Churches</p>
+<p class="contents-item"><b>27. — </b> Of the Last Privilege of Believers, — being the Door of Entrance into Glory</p>
+</section>'''
 
 _V1_TITLE_SMALL_WORDS = {
     'a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'from', 'in', 'into',
@@ -305,10 +431,9 @@ OVERRIDES = {
         '1 John 5:205:20': '1 John 5:20',
         'Romans 1:1Romans': 'Romans 1:1',
         'Matthew 4:1Matthew 4': 'Matthew 4:1',
+        # Issue 46: "15:211 Corinthians" — verse fused with next book reference
+        '1 Corinthians 15:211 Corinthians': '1 Corinthians 15:21',
         'considered?"': 'considered?',
-        'Objection .': 'Objection.',
-        'Ans .': 'Ans.',
-        'Q .': 'Q.',
         'To object of Dr. Owen in this treatise': 'The object of Dr. Owen in this treatise',
         'simple vague and defective': 'simply vague and defective',
         'these apprehensions of Own.': 'these apprehensions of Owen.',
@@ -321,13 +446,24 @@ OVERRIDES = {
     },
     'regex_replacements': {
         r'\bknow\.\?': 'know?',
+
+        # Issue 46: AGES ghost duplication — "15:21<ghost>. So he affirms again, 15:21,"
+        # The ghost inserts "reparation and recovery from sin. So he affirms again, 1 Cor 15:21,"
+        # between the verse ref and its actual continuation.  Strip the ghost clause.
+        r'(1 Corinthians 15:21)\s+reparation and recovery from sin\.\s+So he affirms again,\s+1 Corinthians 15:21,': r'\1,',
+        # Issue 49: Ch 20 (Chapter 17) para 45 — OCR dropped the terminal period.
+        # "...essentially in himself" ends the sentence; must close with a period.
+        # Negative lookahead prevents doubling if the period is ever added to the JSON.
+        r'essentially in himself(?=["”]?\s*(?:\n|$))': 'essentially in himself.',
     },
+    'list_item_merge_cap': 40,
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
     'html_postprocess_hook': lambda html, chapter: _postprocess_v1_chapter_summaries(
         _postprocess_v1_catechism_html(html, chapter)
     ),
     'extra_css': _V1_CATECHISM_CSS,
+    'contents_page_overrides': _V1_CONTENTS_PAGE,
     'treatise_title_overrides': {
         # All v1 treatise title pages defined here — do NOT put these in render.py or shared.py.
         # Title strings must match the exact chapter title from volumes/v1/intermediate/volume_1.json.

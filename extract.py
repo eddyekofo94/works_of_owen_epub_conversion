@@ -49,6 +49,7 @@ try:
     import fitz
 except ImportError:
     sys.exit("Error: PyMuPDF (fitz) not installed. Run: pip install pymupdf4llm")
+os.environ.setdefault("PYMUPDF_SUGGEST_LAYOUT_ANALYZER", "0")
 try:
     import pymupdf4llm
 except ImportError:
@@ -585,6 +586,17 @@ def _merge_adjacent_blockquote_paragraphs(paragraphs):
             merged
             and paragraph.startswith('[[BLOCKQUOTE]]')
             and DANGLING_CONNECTOR_RE.search(merged[-1])
+        ):
+            merged[-1] = merged[-1].rstrip() + ' ' + paragraph
+            continue
+        # Merge: paragraph ends mid-sentence (plain word, no terminal punctuation) before
+        # [[BLOCKQUOTE]] — catches page-break splits like "They saw\n\n[[BLOCKQUOTE]] his glory"
+        # where the sentence was split at a PDF page boundary.
+        if (
+            merged
+            and paragraph.startswith('[[BLOCKQUOTE]]')
+            and re.search(r'[a-zA-Z]\s*$', merged[-1])
+            and not re.search(r'[.!?:;,\"“”‘’\']\s*$', merged[-1])
         ):
             merged[-1] = merged[-1].rstrip() + ' ' + paragraph
             continue
@@ -1596,7 +1608,8 @@ def _keep_only_prerendered_treatise_title_page(raw_text: str) -> str:
     return match.group('section').strip()
 
 
-def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=None):
+def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=None,
+                            vol_num=None, progress_callback=None):
     """
     Build chapters by grouping pages based on PDF TOC entries.
     Merges consecutive same-level entries and handles hierarchy.
@@ -1614,8 +1627,9 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
     filtered_nav = []
     skip_level = None  # level of the currently skipped metadata entry
     metadata_patterns = re.compile(
-        r'^(Owen Librarian|The Works of John Owen|Contents)$|'
-        r'^The Works of John Owen\s*[-–]', re.I
+        r'^(Owen Librarian|The Works of John Owen|Contents|The Works of John Owen Vol\.\s*\d+)$|'
+        r'^The Works of John Owen\s*[-–]|'
+        r'^Contents\s+of\b', re.I
     )
     for level, title, page in nav_entries:
         title_stripped = title.strip()
@@ -1784,7 +1798,11 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
             is_treatise=is_treatise,
         )
         chapters.append(chap)
-    
+
+        if progress_callback:
+            progress_callback(i + 1, len(nav_entries),
+                              f"[extract] Volume {vol_num}")
+
     return chapters
 
 def _remove_adjacent_duplicates(text):
@@ -2121,12 +2139,13 @@ def reconstruct_paragraphs(text):
 
                 ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
                 is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
+                is_comma_continuation = bool(re.search(r',\s*$', prev))
 
                 # Blemish fix: a line ending with a dangling connector word (e.g. "the",
-                # "of", "from") must ALWAYS join the next line, even if that next line
+                # "of", "from") or a comma must ALWAYS join the next line, even if that next line
                 # superficially matches hard_structural (e.g. "the\n11th, which we…").
                 # "11th," looks like an ordinal list marker but it's mid-sentence here.
-                if is_dangling:
+                if is_dangling or is_comma_continuation:
                     current.append(stripped)
                     continue
 
@@ -2532,6 +2551,23 @@ def _remove_interrupted_duplicate_clause(text):
             gap = text[words[i + size - 1][2]:words[j][1]]
             if len(SCRIPTURE_REF_RE.findall(gap)) < 2:
                 continue
+            # Guard 1 — never delete a span carrying source-language text. A true
+            # AGES ghost is an English clause restarting after a bare reference
+            # list; it never contains Greek/Hebrew. If the gap holds any Greek or
+            # Hebrew, the repeated phrase is coincidental (two distinct sentences
+            # that happen to share a 6-word run) and the Greek is genuine content
+            # that must not be dropped. (v16: "that spake in the name of" recurs
+            # around 2 Peter 2:1, ἐγένοντο ψευδοπροφῆται ἐν τῷ λαῷ.)
+            if re.search(r'[Ͱ-Ͽἀ-῿֐-׿]', gap):
+                continue
+            # Guard 2 — a genuine ghost interruption is essentially just the
+            # reference list. If, after removing the scripture references, the gap
+            # still carries substantive prose (more than a few words), the two
+            # occurrences are separate sentences, not a ghost restart — keep both.
+            residual = SCRIPTURE_REF_RE.sub(' ', gap)
+            residual_words = [w for w in re.findall(r"[A-Za-z]{2,}", residual)]
+            if len(residual_words) > 3:
+                continue
             cut_start = words[i + size - 1][2]
             cut_end = words[j + size - 1][2]
             return (text[:cut_start] + text[cut_end:]).strip()
@@ -2808,6 +2844,7 @@ def _build_flat_chapters(doc, pages_md, footnote_map):
             cid=f'page{page_num:04d}',
             title=f'Page {page_num}',
             level=2,
+            raw_text=text,
             body_html=f'<p>{_html_escape(text.strip())}</p>',
             page_start=pg,
             page_end=pg,
@@ -2819,7 +2856,8 @@ def _build_flat_chapters(doc, pages_md, footnote_map):
 # STAGE 1 ENTRY POINT — extract_volume()
 # ================================================================
 
-def extract_volume(vol_num: int, overrides: dict = None) -> dict:
+def extract_volume(vol_num: int, overrides: dict = None,
+                   progress_callback=None) -> dict:
     """Run Stage 1 for a single Owen volume: PDF → JSON intermediate.
 
     Writes volumes/vN/intermediate/volume_N.json and returns the dict.
@@ -2851,7 +2889,9 @@ def extract_volume(vol_num: int, overrides: dict = None) -> dict:
 
     # Chapter structure from TOC
     nav_entries = extract_ages_nav(doc, config=config)
-    chapters = build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=config)
+    chapters = build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map,
+                                       config=config, vol_num=vol_num,
+                                       progress_callback=progress_callback)
 
     # Determine front-matter prose style per chapter
     _FM_PROSE_KEYWORDS = [
@@ -2886,8 +2926,8 @@ def extract_volume(vol_num: int, overrides: dict = None) -> dict:
     while pg < scan_limit:
         page = doc[pg]
         ptype = detect_page_type(page, pg + 1)
-        toc_like = ptype == 'toc_page' or is_toc_continuation_page(page, pg + 1)
-        if pg in chapter_pages and not toc_like:
+        toc_like = ptype == 'toc_page'  # continuation detection runs only in the inner loop
+        if pg in chapter_pages:
             pg += 1
             continue
         text_upper = page.get_text().upper()
@@ -2906,7 +2946,7 @@ def extract_volume(vol_num: int, overrides: dict = None) -> dict:
         elif toc_like:
             toc_pages = [doc[pg]]
             j = pg + 1
-            while j < scan_limit:
+            while j < scan_limit and j not in chapter_pages:
                 if is_toc_continuation_page(doc[j], j + 1):
                     toc_pages.append(doc[j])
                     j += 1
@@ -2956,6 +2996,12 @@ def extract_volume(vol_num: int, overrides: dict = None) -> dict:
 
 
 if __name__ == '__main__':
-    import sys
-    vol = int(sys.argv[1]) if len(sys.argv) > 1 else 1
-    extract_volume(vol)
+    import argparse
+    parser = argparse.ArgumentParser(description="Stage 1: PDF → JSON intermediate for Owen volumes")
+    parser.add_argument("volumes", nargs="*", type=int, help="Volume number(s) to extract")
+    parser.add_argument("--all", action="store_true", help="Extract all 16 volumes")
+    args = parser.parse_args()
+
+    vols = list(range(1, 17)) if args.all else (args.volumes or [1])
+    for v in vols:
+        extract_volume(v)

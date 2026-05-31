@@ -12,7 +12,7 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 209,
+      "observed": 179,
       "budget": 209,
       "status": "ok",
       "samples": [
@@ -58,13 +58,13 @@
         },
         {
           "file": "EPUB/ch008.xhtml",
-          "previous": "Which yet is set forth with more glory, chapter 5:8,",
-          "next": "and verses 13,14, \"Every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and hon"
+          "previous": " And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,",
+          "next": "And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew "
         },
         {
           "file": "EPUB/ch008.xhtml",
-          "previous": " And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,",
-          "next": "And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew "
+          "previous": "he same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them. So are grace and peace, Revelation 1:4,5,",
+          "next": "The seven Spirits before the throne, are the Holy Spirit of God, considered as the perfect fountain of every perfect gift and dispensation. All are here joined together, and yet al"
         }
       ]
     },
@@ -82,11 +82,19 @@
       "status": "ok",
       "samples": [
         {
+          "phrase": "is with the father and with his son jesus christ",
+          "count": 7
+        },
+        {
           "phrase": "bare our sins in his own body on the tree",
           "count": 7
         },
         {
-          "phrase": "is with the father and with his son jesus christ",
+          "phrase": "our fellowship is with the father and with his son",
+          "count": 6
+        },
+        {
+          "phrase": "fellowship is with the father and with his son jesus",
           "count": 6
         },
         {
@@ -107,14 +115,6 @@
         },
         {
           "phrase": "are diversities of operations but it is the same god",
-          "count": 5
-        },
-        {
-          "phrase": "our fellowship is with the father and with his son",
-          "count": 5
-        },
-        {
-          "phrase": "fellowship is with the father and with his son jesus",
           "count": 5
         },
         {
@@ -202,6 +202,27 @@
     },
     {
       "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
       "observed": 0,
       "budget": 0,
       "status": "ok",
@@ -294,14 +315,10 @@
     },
     {
       "label": "Chapter headings rendered as paragraphs",
-      "observed": 2,
+      "observed": 1,
       "budget": 2,
       "status": "ok",
       "samples": [
-        {
-          "file": "EPUB/ch035.xhtml",
-          "text": "The second section of this chapter i"
-        },
         {
           "file": "EPUB/ch042.xhtml",
           "text": "Chapter 3"
@@ -436,51 +453,10 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 13,
+      "observed": 0,
       "budget": 15,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch008.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch014.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "i"
-        },
-        {
-          "file": "EPUB/ch017.xhtml",
-          "text": "a"
-        },
-        {
-          "file": "EPUB/ch019.xhtml",
-          "text": "b"
-        },
-        {
-          "file": "EPUB/ch021.xhtml",
-          "text": "i"
-        },
-        {
-          "file": "EPUB/ch023.xhtml",
-          "text": "n"
-        },
-        {
-          "file": "EPUB/ch025.xhtml",
-          "text": "t"
-        },
-        {
-          "file": "EPUB/ch028.xhtml",
-          "text": "i"
-        },
-        {
-          "file": "EPUB/ch035.xhtml",
-          "text": "w"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Noteref leading spaces",

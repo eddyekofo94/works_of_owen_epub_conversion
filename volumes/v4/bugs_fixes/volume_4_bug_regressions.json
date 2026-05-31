@@ -1,0 +1,559 @@
+{
+  "volume": 4,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 75,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "EDITED BY",
+          "next": "WILLIAM H. GOOLD"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "WILLIAM H. GOOLD",
+          "next": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "4. - Extraordinary spiritual gifts, [1 Corinthians 12:5] -",
+          "next": "11."
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "we do believe; and the reason why we do believe them is, because they are proposed in the Scripture. Thus the apostle expresseth the whole of what we intend: 1 Corinthians 15:3, 4,",
+          "next": "Christ's death, and burial, and resurrection, are the things proposed unto us to be believed, and so the object of our faith; but the reason why we believe them is, because they ar"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "o deservedly, for where it is absolute it is unquestionable; that which is most ancient in any kind is most true. God himself makes use of this plea against idols: Isaiah 43:10-12,",
+          "next": "That which he asserts is, that he alone is God, and no other: this he calls the people to testify by this argument, that he was among them as God, — that is, in the church, — befor"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "rship of idols, but a sedate, unprejudiced consideration of the revelation of these things in the books of the Scripture. We may say, therefore, to all the world, with our prophet,",
+          "next": "And this, also, plainly manifests the Scripture to be of a divine original: for if this declaration of God, this revelation of himself and his will, is incomparably the greatest an"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": " of them, severally and jointly, witnessed that what they wrote was received by inspiration from God. This is pleaded by the apostle Peter in the name of them all: 2 Peter 1:16-21,",
+          "next": "This is the concurrent testimony of the writers both of the Old Testament and the New, — namely, that as they had certain knowledge of the things they wrote, so their writing was b"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "the word of God, in the way and manner which God requireth, without a supernatural work of the Holy Spirit upon our minds in the illumination of them. So David prays that God would",
+          "next": "The communication of this light unto us the Scripture calleth revealing and revelation: Matthew 11:25, \"Thou hast hid these things from the wise and prudent, and hast revealed them"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "e kingdom of heaven, when they were preached unto them. And \"no man knoweth the Father, but he to whom the Son will reveal him,\" verse 27. So the apostle prayeth for the Ephesians,",
+          "next": "It is true, these Ephesians were already believers, or considered by the apostle as such; but if he judged it necessary to pray for them that they might have \"the Spirit of wisdom "
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "and revelation to enlighten the eyes of their understanding,\" with respect unto farther degrees of faith and knowledge, or, as he speaks in another place, that they might come unto",
+          "next": "But as a pretense hereof hath been abused, as we shall see afterward, so the pleading of it is liable to be mistaken; for some are ready to apprehend that this retreat unto a Spiri"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 2,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch044.xhtml",
+          "text": "Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference to [2 Corinthians 1:22] 5:5, [Ephesians"
+        },
+        {
+          "file": "EPUB/ch052.xhtml",
+          "text": "What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the church."
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "we believe the scripture to be the word of god",
+          "count": 21
+        },
+        {
+          "phrase": "to believe the scripture to be the word of god",
+          "count": 17
+        },
+        {
+          "phrase": "the mind and will of god as revealed in the",
+          "count": 11
+        },
+        {
+          "phrase": "believe the scripture to be the word of god with",
+          "count": 9
+        },
+        {
+          "phrase": "to be the word of god with faith divine and",
+          "count": 7
+        },
+        {
+          "phrase": "mind and will of god as revealed in the scripture",
+          "count": 7
+        },
+        {
+          "phrase": "of the holy spirit in the illumination of our minds",
+          "count": 6
+        },
+        {
+          "phrase": "the right understanding of the mind of god in the",
+          "count": 6
+        },
+        {
+          "phrase": "be the word of god with faith divine and supernatural",
+          "count": 6
+        },
+        {
+          "phrase": "believe the scripture to be the word of god in",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 10,
+      "budget": 7,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "chapter 5 divine revelation itself the only foundation",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 2 zechariah 12 10 opened and vindicated",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 3 galatians 4 6 opened and vindicated",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 5 the work of the holy spirit",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 7 the nature of prayer in general",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 9 duties inferred from the preceding discourse",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 6 the spirit a seal and how",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 7 the spirit an earnest and how",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 1 spiritual gifts their names and signification",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 6 of ordinary gifts of the spirit",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch043.xhtml",
+          "text": "p. 249."
+        }
+      ]
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "CHAPTER I"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "text": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
+        }
+      ]
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch055.xhtml",
+          "text": "should receive strong consolation in all their distresses, when they flee for ref"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

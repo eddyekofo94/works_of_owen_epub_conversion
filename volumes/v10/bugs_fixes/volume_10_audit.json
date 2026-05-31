@@ -1,0 +1,194 @@
+{
+  "epub": "volumes/v10/output/volume_10.epub",
+  "generated_at": "2026-05-30T08:38:14.724948+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 1,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 6
+    }
+  ],
+  "info": {
+    "file_count": 133,
+    "epub_size_bytes": 5845678,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 10: The Death of Christ"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 124,
+    "spine_count": 104,
+    "xhtml_count": 106,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 14,
+    "language": {
+      "greek_chars": 4525,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 113,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
+    },
+    "footnotes": {
+      "noteref_count": 468,
+      "unique_noteref_targets": 449,
+      "endnote_anchor_count": 449,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": []
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 6,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 1,
+      "overlong_heading_body_files": 0,
+      "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 0,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 18,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "chapter 8 objections against the former proposal answered",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 1 arguments against the universality of redemption",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "an entrance to the answer unto particular arguments",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 4 answer to the second general argument",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 5 the last argument from scripture answered",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 7 the removal of other remaining objections",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "Chapter 1"
+          }
+        ],
+        "overlong_heading_body": [],
+        "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch010.xhtml",
+            "text": "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before th"
+          },
+          {
+            "file": "EPUB/ch014.xhtml",
+            "text": "and is no way repugnant to the holy Scripture, declaring our duty to be all this"
+          },
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "of the whole work is prefixed to it. We have not felt at liberty to adopt the num"
+          },
+          {
+            "file": "EPUB/ch024.xhtml",
+            "text": "which last words express also the very aim and end of Christ in giving himself fo"
+          },
+          {
+            "file": "EPUB/ch026.xhtml",
+            "text": "with that redoubled voice which afterward came from the excellent glory, \"This is"
+          },
+          {
+            "file": "EPUB/ch027.xhtml",
+            "text": "calling it everywhere his Father's work that he did, or his Father's will which h"
+          },
+          {
+            "file": "EPUB/ch031.xhtml",
+            "text": "which doubtless he inferreth from that law, Leviticus 19:18,"
+          },
+          {
+            "file": "EPUB/ch034.xhtml",
+            "text": "that is, at that hour \" when all that are in their graves shall hear his voice an"
+          },
+          {
+            "file": "EPUB/ch035.xhtml",
+            "text": "and, because sons, our deliverance from the law, and thereby our freedom from the"
+          },
+          {
+            "file": "EPUB/ch039.xhtml",
+            "text": "for if these things be not made known and revealed to all and every one that is c"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
+      }
+    },
+    "nav_link_count": 107,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
+  }
+}

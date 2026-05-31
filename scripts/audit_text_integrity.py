@@ -315,8 +315,22 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
                 doc = parse_xml(zf.read(href))
             except etree.XMLSyntaxError:
                 continue
-            for el in doc.xpath(".//xhtml:p|.//xhtml:h1|.//xhtml:h2|.//xhtml:h3|.//xhtml:h4", namespaces=NS):
-                text = clean_text(" ".join(el.itertext()))
+            _BLOCK_TAGS = {"p", "h1", "h2", "h3", "h4", "div", "blockquote"}
+            for el in doc.xpath(".//xhtml:p|.//xhtml:h1|.//xhtml:h2|.//xhtml:h3|.//xhtml:h4|.//xhtml:div", namespaces=NS):
+                if etree.QName(el).localname == "div":
+                    # Collect a div's own (shallow) text — its direct text plus
+                    # inline children such as <span> — but NOT the text of nested
+                    # block elements (p/h/div), which are collected on their own.
+                    # This captures quote-block epigraphs that hold Greek/Hebrew
+                    # mottos directly in the div, without double counting.
+                    shallow = [el.text or ""]
+                    for child in el:
+                        if etree.QName(child).localname not in _BLOCK_TAGS:
+                            shallow.append(" ".join(child.itertext()))
+                        shallow.append(child.tail or "")
+                    text = clean_text(" ".join(shallow))
+                else:
+                    text = clean_text(" ".join(el.itertext()))
                 if not text:
                     continue
                 ancestor_classes = " ".join(
@@ -828,19 +842,67 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
             or REFERENCE_STEM_RE.search(context)
             or CITATION_TRAIL_RE.search(context)
             or re.search(r"\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|distinct)\.?\s*$", context, re.I)
+            or re.search(r"\b(?:p|pp)\.?\s*\d+,\s*$", context, re.I)
             or re.search(r"\b(?:see|cf)\s*$", context, re.I)
         )
 
+    def context_is_compact_enumerator(context: str) -> bool:
+        return bool(
+            re.search(
+                r"\b(?:two|three|four|five|six|several|sundry|these|those|"
+                r"things?|parts?|ways?|acts?|causes?|effects?|heads?|sorts?)\b"
+                r".{0,90}[:;,—-]\s*$",
+                context,
+                re.I,
+            )
+            or re.search(
+                r"\b(?:namely|as|by|for|and|answer|unto|wherein|whereby|"
+                r"consist(?:s|eth)?|considered|inquired into|comprised|included)\b"
+                r".{0,90}[:;,—-]\s*$",
+                context,
+                re.I,
+            )
+        )
+
+    def paragraph_is_intentional_flat_intro_list(text: str) -> bool:
+        """Ignore markers in compact lists intentionally attached after an em dash."""
+        return bool(
+            re.search(
+                r"\b(?:two|three|four|five|six|several|sundry|these|those|"
+                r"things?|parts?|ways?|acts?|causes?|effects?|heads?|sorts?|"
+                r"considerations?)\b.{0,180}[:;,]?\s*[—-]\s+"
+                r"(?:\(?\d+\.?\)|\[\d+\.?\]\.?|\d+\.|\d+(?:st|nd|rd|th|dly|ly)\b|[IVXLCDM]+\.)",
+                text,
+                re.I,
+            )
+            or re.search(
+                r"\b(?:observe|consider(?:ed)?|consist(?:s|eth)?|referred|"
+                r"proposed|reduced|comprised|included)\b.{0,180}[:;,]?\s*[—-]\s+"
+                r"(?:\(?\d+\.?\)|\[\d+\.?\]\.?|\d+\.|\d+(?:st|nd|rd|th|dly|ly)\b|[IVXLCDM]+\.)",
+                text,
+                re.I,
+            )
+        )
+
     def has_inline_structural_marker(text: str, html: str = "") -> bool:
+        if paragraph_is_intentional_flat_intro_list(text):
+            return False
+
         for match in INLINE_STRUCTURAL_RE.finditer(text):
             marker_start = match.start("marker")
             if marker_start <= 2:
                 continue
+            if HARD_STRUCTURAL_START_RE.match(text):
+                continue
             marker = match.group("marker").strip()
+            if re.fullmatch(r"\d{4}\.\s*", marker):
+                continue
             after_marker = text[match.end("marker"):match.end("marker") + 40]
             if re.fullmatch(r"[IVXLCDM]+\.", marker, re.I) and re.match(r"\s*[—-]\s*[IVXLCDM]+\.", after_marker, re.I):
                 continue
             context = text[max(0, marker_start - 90):marker_start]
+            if context_is_compact_enumerator(context):
+                continue
             if context_is_reference_or_citation(context) and not re.match(r"\s*(?:\([0-9]+\.?\)|\[[0-9]+\.?\])", match.group("marker")):
                 continue
             # Skip markers inside quoted passages
@@ -855,6 +917,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
             if len(before_text) < 35:
                 continue
             context = before_text[-120:]
+            if context_is_compact_enumerator(context):
+                continue
             if context_is_reference_or_citation(context):
                 continue
             return True
@@ -921,7 +985,11 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
                     })
         elif text:
             expected_roman_list_number = expected_roman_list_number
-        if has_inline_structural_marker(text, para.html):
+        if (
+            "list-item" not in para.classes.split()
+            and "catechism-item" not in para.classes.split()
+            and has_inline_structural_marker(text, para.html)
+        ):
             inline_structural_candidates.append({
                 "file": para.file,
                 "text": text[:260],
@@ -1862,35 +1930,47 @@ def update_bug_log(result: dict[str, Any], json_path: Path, md_path: Path) -> Pa
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Audit textual integrity between an Owen PDF and EPUB")
-    parser.add_argument("volume", type=int, help="Owen volume number")
+    parser.add_argument("volumes", nargs="*", type=int, help="Owen volume number(s)")
+    parser.add_argument("--all", action="store_true", help="Audit all 16 volumes")
     parser.add_argument("--pdf", type=Path, default=None, help="Override source PDF path")
     parser.add_argument("--epub", type=Path, default=None, help="Override generated EPUB path")
     parser.add_argument("--out-dir", type=Path, default=None, help="Override report output directory")
     parser.add_argument("--no-bug-log", action="store_true", help="Do not update BUGS_AND_FIXES.md")
     args = parser.parse_args(argv)
 
+    vol_list = list(range(1, 17)) if args.all else (args.volumes or [])
+    if not vol_list:
+        parser.print_help()
+        return 1
+
     root = Path.cwd()
-    default_pdf, default_epub, default_out = infer_paths(args.volume, root)
-    pdf_path = args.pdf or default_pdf
-    epub_path = args.epub or default_epub
-    out_dir = args.out_dir or default_out
+    for volume in vol_list:
+        default_pdf, default_epub, default_out = infer_paths(volume, root)
+        pdf_path = args.pdf or default_pdf
+        epub_path = args.epub or default_epub
+        out_dir = args.out_dir or default_out
 
-    if not pdf_path.exists():
-        print(f"PDF not found: {pdf_path}", file=sys.stderr)
-        return 1
-    if not epub_path.exists():
-        print(f"EPUB not found: {epub_path}", file=sys.stderr)
-        return 1
+        if not pdf_path.exists():
+            print(f"PDF not found: {pdf_path}", file=sys.stderr)
+            if len(vol_list) == 1:
+                return 1
+            continue
+        if not epub_path.exists():
+            print(f"EPUB not found: {epub_path}", file=sys.stderr)
+            if len(vol_list) == 1:
+                return 1
+            continue
 
-    result = run_audit(args.volume, pdf_path, epub_path)
-    stem = f"volume_{args.volume}"
-    json_path, md_path = write_reports(result, out_dir, stem)
-    bug_log = None if args.no_bug_log else update_bug_log(result, json_path, md_path)
+        result = run_audit(volume, pdf_path, epub_path)
+        stem = f"volume_{volume}"
+        json_path, md_path = write_reports(result, out_dir, stem)
+        bug_log = None if args.no_bug_log else update_bug_log(result, json_path, md_path)
 
-    print(render_markdown(result))
-    print(f"Reports written:\n- {json_path}\n- {md_path}")
-    if bug_log:
-        print(f"Bug log updated:\n- {bug_log}")
+        print(render_markdown(result))
+        print(f"Reports written:\n- {json_path}\n- {md_path}")
+        if bug_log:
+            print(f"Bug log updated:\n- {bug_log}")
+
     return 0
 
 

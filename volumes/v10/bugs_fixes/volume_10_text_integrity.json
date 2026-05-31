@@ -1,0 +1,1333 @@
+{
+  "volume": 10,
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/input/owen-v10.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
+  "generated_at": "2026-05-30T08:36:49.203201+00:00",
+  "status": "warn",
+  "warning_count": 11,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "front_matter_toc_loss",
+      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    }
+  ],
+  "pdf": {
+    "page_count": 828
+  },
+  "epub": {
+    "spine_text_files": 104,
+    "paragraph_count": 3215
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 270237,
+    "epub_content_tokens": 269340,
+    "coverage_ratio": 0.9947,
+    "missing_word_samples": [],
+    "excess_word_samples": [
+      {
+        "word": "proo",
+        "pdf": 0,
+        "epub": 18
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "psalms",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 817,
+    "weak_page_count": 15,
+    "weak_pages": [
+      {
+        "page": 3,
+        "hit_ratio": 0.333,
+        "sample": "contents of θεομαχια αττεξουσιαστικη display of arminianism prefatory note by the editor epistle dedicatory to the christian reader θεμοχιας αυτεξουσιαστικης specimen of the two"
+      },
+      {
+        "page": 12,
+        "hit_ratio": 0.0,
+        "sample": "12 θεομαχια αυτεξουσιαστικη display of arminianism being discovery of the old pelagian idol free-will with the new goddess contingency advancing themselves into the throne"
+      },
+      {
+        "page": 91,
+        "hit_ratio": 0.0,
+        "sample": "91 what hast thou that thou didst not receive corinthians are we better than they no in no wise romans but we are predestinated"
+      },
+      {
+        "page": 143,
+        "hit_ratio": 0.0,
+        "sample": "143 christ galatians 14 he that believeth not is condemned mark 16 16 without faith it is impossible to please god hebrews 11 other"
+      },
+      {
+        "page": 170,
+        "hit_ratio": 0.0,
+        "sample": "170 salus electorum sanguis jesu or the death of death in the death of christ treatise of the redemption and reconciliation that is in"
+      },
+      {
+        "page": 215,
+        "hit_ratio": 0.333,
+        "sample": "215 the actual inauguration or solemn admission of christ into his office committing all judgment unto the son john 22 making him to be"
+      },
+      {
+        "page": 258,
+        "hit_ratio": 0.333,
+        "sample": "258 john 64 now it is contrary to the rule which we have john 16 there is sin unto death etc to pray for"
+      },
+      {
+        "page": 484,
+        "hit_ratio": 0.333,
+        "sample": "484 whom he died not let them that can understand it rejoice in their quick apprehension confess it flies my thoughts fourthly the manner"
+      },
+      {
+        "page": 553,
+        "hit_ratio": 0.333,
+        "sample": "553 30 isaiah 20 luke 16 29 john 39 20 30 31 galatians thessalonians timothy 20 timothy 16 17 peter 19 etc thus much"
+      },
+      {
+        "page": 559,
+        "hit_ratio": 0.333,
+        "sample": "559 redemption with the holding out for the confirmation of one part of their opinion namely that christ died for all and every one"
+      },
+      {
+        "page": 644,
+        "hit_ratio": 0.0,
+        "sample": "644 dissertation on divine justice or the claims of vindicatory justice vindicated wherein that essential property of the divine nature is demonstrated from the"
+      },
+      {
+        "page": 651,
+        "hit_ratio": 0.333,
+        "sample": "651 highness dedicate with pleasure to your excellency in testimony of my gratitude what have accomplished in fulfillment of my duty to him for"
+      },
+      {
+        "page": 662,
+        "hit_ratio": 0.333,
+        "sample": "662 for while they are warmly employed in disputing whether theology be an art or science and whether it be speculative or practical art"
+      },
+      {
+        "page": 769,
+        "hit_ratio": 0.333,
+        "sample": "769 it hath been shown already that it is not proved by such reasoning as this that justice is not inherent in god nor"
+      },
+      {
+        "page": 828,
+        "hit_ratio": 0.333,
+        "sample": "828 law and freed the sinner both from sin and from the law he hath abounded toward us in all wisdom and prudence ephesians"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 955,
+    "missing_dense_window_pages": 808,
+    "missing_dense_windows": [
+      {
+        "page": 3,
+        "sample": "contents of θεομαχια αττεξουσιαστικη display of arminianism prefatory note by the editor epistle dedicatory"
+      },
+      {
+        "page": 4,
+        "sample": "the ensuing treatise to the reader book in general of the end of the"
+      },
+      {
+        "page": 5,
+        "sample": "book arguments against the universality of redemption the two first from the nature of"
+      },
+      {
+        "page": 6,
+        "sample": "actual believing in relation thereunto digression concerning the immediate effect of the death of"
+      },
+      {
+        "page": 7,
+        "sample": "public epistle dedicatory the preface to the reader part the introduction the design of"
+      },
+      {
+        "page": 8,
+        "sample": "first part of the dissertation part objections of the adversaries answered the racovian catechism"
+      },
+      {
+        "page": 10,
+        "sample": "10 instance of this learned opponent refuted the considerations of rewarding and punishing different"
+      },
+      {
+        "page": 11,
+        "sample": "11 courts from the divine appointment the manner of it what this learned author"
+      },
+      {
+        "page": 12,
+        "sample": "12 θεομαχια αυτεξουσιαστικη display of arminianism being discovery of the old pelagian idol free-will"
+      },
+      {
+        "page": 13,
+        "sample": "13 prefatory note the relation of man to his creator has engaged the attention"
+      },
+      {
+        "page": 14,
+        "sample": "14 augustinian doctrine for according to him predestination was twofold comprehending the punishment of"
+      },
+      {
+        "page": 15,
+        "sample": "15 systems of pelaglius and socinus it is not wonderful that this measure of"
+      },
+      {
+        "page": 16,
+        "sample": "16 of predestination the origin of prolonged troubles and controversies in the church of"
+      },
+      {
+        "page": 17,
+        "sample": "17 owen in the note to the reader prefixed to the following treatise having"
+      },
+      {
+        "page": 18,
+        "sample": "18 common in his day and his quotations seem to prove that his display"
+      },
+      {
+        "page": 19,
+        "sample": "19 to the right honorable the lords and gentlemen of the committee for religion"
+      },
+      {
+        "page": 20,
+        "sample": "20 whereof the one cannot stand without the other nor the whole fabric without"
+      },
+      {
+        "page": 21,
+        "sample": "21 private parties witness the horrible murder of diazius whose brains were chopped out"
+      },
+      {
+        "page": 22,
+        "sample": "22 the arminians and the orthodox divines of the reformed church be pleased but"
+      },
+      {
+        "page": 23,
+        "sample": "23 note of the names of divers german doctors and ministers being lutherans to"
+      },
+      {
+        "page": 24,
+        "sample": "24 to the christian reader reader thou canst not be such stranger in our"
+      },
+      {
+        "page": 25,
+        "sample": "25 diligence than our arminians laboring earnestly in the first place to instill some"
+      },
+      {
+        "page": 28,
+        "sample": "28 display of arminianism συν θεω chapter of the two main ends aimed at"
+      },
+      {
+        "page": 29,
+        "sample": "29 live and move in him but to have an absolute independent power in"
+      },
+      {
+        "page": 30,
+        "sample": "30 have but poor deity if god could how and when he would cross"
+      },
+      {
+        "page": 31,
+        "sample": "31 thirdly if ye will charge our human nature with repugnancy to the law"
+      },
+      {
+        "page": 32,
+        "sample": "32 chapter of the eternity and immutability of the decrees of almighty god denied"
+      },
+      {
+        "page": 33,
+        "sample": "33 places they speak not of god's external works of those actions which outwardly"
+      },
+      {
+        "page": 34,
+        "sample": "34 them to miss it however this is some recompense denying god power to"
+      },
+      {
+        "page": 35,
+        "sample": "35 as they say in every one's own power 24 is in their opinion"
+      },
+      {
+        "page": 36,
+        "sample": "36 talent of final impenitency in his death the decree of god must needs"
+      },
+      {
+        "page": 37,
+        "sample": "37 consideration of it as of an eternal act irrevocably and immutably established he"
+      },
+      {
+        "page": 38,
+        "sample": "38 with the lord to confirm the certainty of those things that are yet"
+      },
+      {
+        "page": 39,
+        "sample": "39 almighty power the infallibility of his knowledge his immunity from error in all"
+      },
+      {
+        "page": 40,
+        "sample": "40 his heart to all generations psalm 33 11 my counsel shall stand and"
+      },
+      {
+        "page": 41,
+        "sample": "41 chapter of the prescience or foreknowledge of god and how it is questioned"
+      },
+      {
+        "page": 42,
+        "sample": "42 shall never behold are thus open and naked unto him for was there"
+      },
+      {
+        "page": 43,
+        "sample": "43 their free and deliberate actions which they so perform as that they could"
+      },
+      {
+        "page": 44,
+        "sample": "44 return to the lord which in their conceit he may notwithstanding his former"
+      },
+      {
+        "page": 45,
+        "sample": "45 fourthly 48 see what positively they write concerning this everlasting foreknowledge of god"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 6,
+    "front_toc_windows_checked": 24,
+    "missing_front_toc_pages": 1,
+    "missing_front_toc_samples": [
+      {
+        "page": 3,
+        "hit_ratio": 0.5,
+        "sample": "contents of θεομαχια αττεξουσιαστικη display of arminianism prefatory note by the editor epistle dedicatory to the christian reader θεμοχιας αυτεξουσιαστικης specimen of the two main ends aimed at"
+      }
+    ]
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 822,
+    "top_windows_usable": 782,
+    "skipped_top_window_count": 19,
+    "skipped_top_windows": [
+      {
+        "page": 43,
+        "window": "their free and deliberate actions which they so perform as that they could have",
+        "sample": "their free and deliberate actions, which they so perform as that they could have not done them; — or else they produce effects to< sumbebhko>v,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 176,
+        "window": "by furnishing him with fullness of all gifts and graces christ had natural all-sufficient",
+        "sample": "(2.) By furnishing him with a fullness of all gifts and graces: — [1.] Christ had a natural all-sufficient perfection of his deity;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 196,
+        "window": "tells us in plato 245 that every god will be worshipped tw ma lista",
+        "sample": "tells us in Plato, f245 that every god will be worshipped tw~| ma>lista aujtw~| ajre>skonti tro>pw|, \"in that way which pleaseth best his own mind;\" and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 215,
+        "window": "the actual inauguration or solemn admission of christ into his office committing all judgment",
+        "sample": "[2.] The actual inauguration or solemn admission of Christ into his office; \"committing all judgment unto the Son,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "if it be answered god bestows faith on some not on others reply is",
+        "sample": "[If it be answered], \"God bestows faith on some, not on others,\" I reply, Is this distinguishing grace purchased for those some comparatively, in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 324,
+        "window": "nature ephesians but me nei it remaineth or abideth it was",
+        "sample": "nature, Ephesians 2:3; but me>nei, \"it remaineth,\" or abideth: it was",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 338,
+        "window": "people of israel were certainly in all remarkable things that happened unto them typical",
+        "sample": "people of Israel were certainly, in all remarkable things that happened unto them, typical of the church of God; as the apostle at large [declares],",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 344,
+        "window": "permutare so arist eth to bi on pro mikra ke rdh katalla ttontai 262",
+        "sample": "permutare, (so Arist. Eth. 3, To<n bi>on pro<v mikra< ke>rdh – katalla>ttontai, f262) because most commonly those that are reconciled",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 349,
+        "window": "translating it to himself signifieth as much yea all that we do by the",
+        "sample": "translating it to himself, signifieth as much, yea all that we do by the word satisfaction. So also doth that of ajnh>negken, used by Peter in the room",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 368,
+        "window": "timothy ransom to be accepted in the stead of others whence we are said",
+        "sample": "Timothy 2:6, a ransom to be accepted in the stead of others: whence we are said to have deliverance dia< th~v ajpolutrw>sewv, \"by the ransom-",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 369,
+        "window": "is said to be merciful high priest eijv to ijla skesqai ta ajmarti av",
+        "sample": "is said to be a \"merciful high priest, eijv to< iJla>skesqai ta<v aJmarti>av tou~ laou~,\" — \"to make reconciliation for the sins of the people,\" to",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 403,
+        "window": "secondly the word all is sometimes used for some of all sorts jeremiah 31",
+        "sample": "Secondly, The word all is sometimes used for some of all sorts, Jeremiah 31:34. The word µL;Wk is by Paul rendered pa>ntev,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 473,
+        "window": "of the truth known and professed upon any motives and inducements whatsoever which he",
+        "sample": "of the truth known and professed, upon any motives and inducements whatsoever; which he assureth [them] to be no less than a total casting off",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 540,
+        "window": "as elect who by the benefit of his death do become believers and so",
+        "sample": "as elect, who, by the benefit of his death, do become believers, and so obtain assurance that he died for them. [As] for such of those that are",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 543,
+        "window": "dia th ajga phn ejscen pro hjma to ai ma aujtou ejdwken ujpe hjmw",
+        "sample": "Dia< th<n ajga>phn h{n ejscen pro<v hJma~v to< ai=ma aujtou~ ejdwken uJpe<r hJmw~n ejn zelh>mati aujtou~ kai< th<n sa>rka uJpe<r th~v sarko<v",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 544,
+        "window": "para deison oujk eijseleu sontai wonder not if the whole world be redeemed for",
+        "sample": "para>deison oujk eijseleu>sontai; — \" Wonder not if the whole world be redeemed; for he was not a mere man, but the only-begotten",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 545,
+        "window": "viii augustine de cor et grat cap 40 420 per hunt mediato-rem deus ostendit",
+        "sample": "VIII. AUGUSTINE, de Cor. et Grat. cap. 40: [A.D. 420]: — \"Per hunt Mediato-rem Deus ostendit eos, quos ejus sanguine redemit, facere se ex",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 570,
+        "window": "if he intend to oppose himself to any thing handle and assert in the",
+        "sample": "1. If he intend to oppose himself to any thing I handle and assert in the place he considereth, he doth, by this query, plainly metazai>nein eijv to<",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 599,
+        "window": "but it is such an act of his will as in the scripture is",
+        "sample": "But it is such an act of his will as in the Scripture is termed pro>gnwsiv, Acts 2:23;",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 4,
+    "missing_top_windows": [
+      {
+        "page": 63,
+        "window": "unite my heart to fear thy or to one part of the",
+        "sample": "\"Unite my heart to fear thy or to one part of the"
+      },
+      {
+        "page": 91,
+        "window": "what hast thou that thou didst the sum of their doctrine is god",
+        "sample": "\"What hast thou that thou didst The sum of their doctrine is: God"
+      },
+      {
+        "page": 136,
+        "window": "thou hast wrought all our works faith and conversion cannot be",
+        "sample": "\"Thou hast wrought all our works \"Faith and conversion cannot be"
+      },
+      {
+        "page": 649,
+        "window": "to his illustrious highness lord oliver cromwell of england",
+        "sample": "TO HIS ILLUSTRIOUS HIGHNESS LORD OLIVER CROMWELL, OF ENGLAND,"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 750,
+    "bottom_windows_usable": 709,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 9,
+    "missing_bottom_windows": [
+      {
+        "page": 12,
+        "window": "kai mo nov ajna bhqi eijv to oujrano constant apud socrat lib cap 10",
+        "sample": "Qe>v w+ Ake>si>lai kli>maka kai< mo>nov ajna>bhqi eijv to<n oujrano>n. — Constant., apud Socrat., lib. 1. cap. 10."
+      },
+      {
+        "page": 39,
+        "window": "standeth for ever the thoughts of certain time episcop",
+        "sample": "standeth for ever, the thoughts of certain time,\" Episcop."
+      },
+      {
+        "page": 62,
+        "window": "psalm 119 36 man to this or that particular",
+        "sample": "Psalm 119:36. man to this or that particular,"
+      },
+      {
+        "page": 90,
+        "window": "determineth of them corr pleasing to god rem apol",
+        "sample": "determineth of them,\" Corr. pleasing to God,\" Rem. Apol."
+      },
+      {
+        "page": 112,
+        "window": "he him male and female created he not so vehement and inordinate",
+        "sample": "he him; male and female created he not so vehement and inordinate"
+      },
+      {
+        "page": 142,
+        "window": "on the gentiles through jesus only way of salvation be the",
+        "sample": "on the Gentiles through Jesus only way of salvation be the"
+      },
+      {
+        "page": 195,
+        "window": "saw bearing the superscription of agnw stw qew to the unknown god so socrates",
+        "sample": "due,\" — which gave occasion to the altar which Paul saw bearing the superscription of Agnw>stw| Qew~|, \"To the unknown God,\" — so Socrates"
+      },
+      {
+        "page": 543,
+        "window": "uijo qeou menogenh oj ujperapoqnh skwn kai eij po te dia pisteu ontev eijv",
+        "sample": "a]nqrwpov yilo<v ajlla< uiJo<v Qeou~ menogenh<v oJ uJperapoqnh>skwn—kai< eij po>te dia< pisteu>ontev eijv"
+      },
+      {
+        "page": 644,
+        "window": "god judge the world oxford thomas robinson 1653",
+        "sample": "God judge the world?\" — OXFORD: THOMAS ROBINSON. 1653."
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2550,
+    "split_candidate_count": 158,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "ered, by the Committee of the House of Commons in Parliament for the Regulating of Printing and Publishing of Books, That this book, entitled \"A Display of Arminianism,\" be printed",
+        "next": "JOHN WHITE"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "to particular contingent events, Isaiah 48:14. Yea, it is an ordinary thing with the Lord to confirm the certainty of those things that are yet for to come from his own decree; as,",
+        "next": "Isaiah 14:24,25; — \"It is certain the Assyrian shall be broken, because the Lord hath purposed it;\" which were a weak kind of reasoning, if his purpose might be altered. Nay \"He is"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "omination? Even actions in themselves sinful are not; though not as sinful, yet in some other regard, as punishments of others. \"Behold,\" saith Nathan to David, in the name of God,",
+        "next": "So, also, when wicked robbers had nefariously spoiled Job of all his substance, the holy man concludeth, \"The LORD gave, and the LORD hath taken away,\" Job 1:21. Now, if the workin"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "His powerful overruling of all events, both necessary, free, and contingent, and disposing of them to certain ends for the manifestation of his glory. So Joseph tells his brethren,",
+        "next": "Fourthly, His determining and restraining second causes to such and such effects:"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "his revealed will to walk in his statutes, and keep his laws; upon this he also promiseth that he will so effect all things, that of some this shall be performed: Ezekiel 36:26,27,",
+        "next": "So that the self-same obedience of the people of God is here the object of his will, taken in either acceptation. And yet the precept of God is not here, as some learned men suppos"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "uld be saved,\" chapter 2:47. From both which places it is evident that God bestoweth faith only on them whom he hath pre-ordained to eternal life; but most clearly, Romans 8:29,30,",
+        "next": "St Austin interpreted this place by adding in every link of the chain, \"Only those.\" However, the words directly import a precedency of predestination before the bestowing of other"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.\" So that \"nothing shall be able to separate us from the love of God,",
+        "next": "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before the foundation of the world, that we should be holy,\" Ephesians 1:4."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "hought so by the wisdom of God himself; but our sin even compelled that good and wise Creator to hate and curse the work of his own hands. \"Cursed is the ground,\" saith he to Adam,",
+        "next": "Hence was that heavy burden of \"vanity,\" that \"bondage of corruption,\" under which to this day \"the whole creation groaneth and travaileth in pain\" until it be delivered, Romans 8:"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": " are dead,\" Ephesians 2:1,2, begetting us anew, John 1:13, making us in all things such as he would have us to be, is contained in that promise of the new covenant, Jeremiah 32:40,",
+        "next": "and is no way repugnant to the holy Scripture, declaring our duty to be all this that the Lord would have us. And now, let all men judge whether, against so many and clear testimon"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "ess than the least of all the saints of God, and unworthy the name which yet he is bold to subscribe himself by, — Your honor's most obliged servant in the service of Jesus Christ,",
+        "next": "THERE are two rotten pillars on which the fabric of late Arminianism (an egg of the old Pelagianism, which we had well hoped had been long since chilled, but is sit upon and broode"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "es and utmost aims of all that are truly Christian. In pursuit of which desire and aims, I profess myself to be forever to serve thee. — Thine in Christ Jesus, RICHARD BYFIELD. 234",
+        "next": "IF thou intendest to go any farther, I would entreat thee to stay here a little. If thou art, as many in this pretending age, a sign or title gazer, and comest into hooks as Cato i"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "And let it be no small peccadillo, no underling opinion, friends, if in these busy times you would have it taken notice of. Of ordinary errors you may cry, —",
+        "next": "They must be glorious attainments, beyond the understanding of men, and above the wisdom of the word, which attract the eyes of poor deluded souls. The great shepherd of the sheep,"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "his task. I never like myself worse than when faced with a vizard of disputing in controversies. The complexion of my soul is much more pleasant unto me in the waters of Shiloah: —",
+        "next": "What invitation there can be in itself for anyone to lodge, much less abide, in this quarrelsome, scrambling territory, where, as Tertullian 248 says of Pontus, \"omne quod fiat Aqu"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": " est,\" no wind blows but what is sharp and keen, I know not. Small pleasure in those walks which are attended with dangerous precipices and unpleasing difficulties on every side: —",
+        "next": "NO quiet nor peace in these things and ways, but continual brawls and dissensions: —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "NO quiet nor peace in these things and ways, but continual brawls and dissensions: —",
+        "next": "The strongest bonds of nearest relations are too commonly broken by them. Were it not for that precept, Jude 3, and the like, of \"contending earnestly for the faith once delivered "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": " the Comedian, \"Ego me neque tam astutum esse, neque ita perspicacem id scio,\" that I should be fit for such an undertaking, the counsel of the poet also running much in my mind, —",
+        "next": "Yet, at the last, laying aside all such thoughts, by looking up to Him who supplieth seed to the sower, and doth all our works for us, I suffered myself to be overcome unto the wor"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": " rather it should have been done by any than myself, of myself only rather than of none;\" especially considering the industrious diligence of the opposers of truth in these days: —",
+        "next": "Add unto the former desire a consideration of the frequent conferences I had been invited unto about these things, the daily spreading of the opinions here opposed about the parts "
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": " lost sinners; that was his intent and design, as is again asserted, Luke 19:10. Ask also his apostles, who know his mind, and they will tell you the same. So Paul, 1 Timothy 1:15,",
+        "next": "Now, if you will ask who these sinners are towards whom he hath this gracious intent and purpose, himself tells you, Matthew 20:28, that he came to \"give his life a ransom for many"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "ans 1:4. That was the will and intention of God, that he should give himself for us, that we might be saved, being separated from the world. They are his church: Ephesians 5:25-27,",
+        "next": "which last words express also the very aim and end of Christ in giving himself for any, even that they may be made fit for God, and brought nigh unto him; — the like whereof is als"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "s also the very aim and end of Christ in giving himself for any, even that they may be made fit for God, and brought nigh unto him; — the like whereof is also asserted, Titus 2:14,",
+        "next": "Thus clear, then, and apparent, is the intention and design of Christ and his Father in this great work, even what it was, and towards whom, — namely, to save us, to deliver us fro"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "ness: for \"the blood of Christ, who through the eternal Spirit offered himself to God, purgeth our consciences from dead works that we may serve the living God,\" Hebrews 9:14; yea,",
+        "next": "To \"sanctify the people with his own blood, he suffered without the gate,\" chap. 13:12."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "previous": "an another. The inhabitants of the old world desiring and intending unity and cohabitation, with perhaps some reserves to provide for their safety against a second storm, they cry,",
+        "next": "First, They lay down their aim and design, and then let out the means in their apprehension conducing thereunto. And manifest, then, it is, that the whole reason and method of affa"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "n of sending is appropriate to the Father, according to his promise that he would \"send us a Savior, a great one, to deliver us,\" Isaiah 19:20; and to the profession of our Savior,",
+        "next": "Hence the Father himself is sometimes called our Savior: 1 Timothy 1:1, \"According to the commandment Θεοῦ σωτῆρος ἡμῶν ,\" — \"of God our Savior.\" Some copies, indeed, read it, Θεοῦ"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "[1.] The purposed imposition of his counsel, or his eternal counsel for the setting apart of his Son incarnate to this office, saying unto him,",
+        "next": "He said unto him, \"Sit thou at my right hand until I make thine enemies thy footstool;\" for \"the Lord swore, and will not repent, Thou art a priest for ever after the order of Melc"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": " this day in the city of David a Savior, which is Christ the Lord,\" Luke 2:10, 11; — which message was attended by and closed with that triumphant exultation of the host of heaven,",
+        "next": "with that redoubled voice which afterward came from the excellent glory, \"This is my beloved Son, in whom I am well-pleased,\" Matthew 3:7, 17:5; 2 Peter 1:7. If these things ought "
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": " promise of God; — one, of giving a Savior to his people, a Mediator, according to his former purpose, as Genesis 3:15, \"The seed of the woman shall break the serpent's head;\" and,",
+        "next": "Which he also foresignified by many sacrifices and other types, with prophetical predictions:"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "But with what confidence, blessed Savior, didst thou undergo all this shame and sorrow! Why,",
+        "next": "With this assurance he was brought as a \"lamb to the slaughter, and as a sheep before her shearers is dumb, so he opened not his mouth,\" Isaiah 53:7: for \"when he was reviled, he r"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "f to be a sacrifice for their sake, praying for their sanctification, John 17:17-19; their preservation in peace, or communion one with another, and union with God, John 17:20, 21,",
+        "next": "and lastly, their glory, John 17:24,"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "and lastly, their glory, John 17:24,",
+        "next": "All which several postulata are no doubt grounded upon the fore-cited promises which by his Father were made unto him. And in this, not one word concerning all and every one, but e"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "e was in the garden with his three choice apostles, before the traitor or any of his accomplices appeared, then was he \"sore amazed, and very heavy,\" Mark 14:33. That was the time,",
+        "next": "which how he performed the evangelist describeth, Luke 22:43, 44: \"There appeared an angel unto him from heaven, strengthening him. But being in an agony he prayed more earnestly: "
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "previous": "t of the nature of it, where is the least intimation of any alteration? We conclude, then, this second act of God, in laying the punishment on him for us, with that of the prophet,",
+        "next": "and add thereunto this observation, that it seems strange to me that Christ should undergo the pains of hell in their stead who lay in the pains of hell before he underwent those p"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "t words that we find recorded of him in the Scripture are to the same purpose, \"Wist ye not that I must be about my Father's business?\" Luke 2:49. And at the close of all he saith,",
+        "next": "calling it everywhere his Father's work that he did, or his Father's will which he came to accomplish, with reference to the imposition which we before treated of. Now, this undert"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "ry of godliness, that God should be manifested in the flesh,\" 1 Timothy 3:16, thereby assuming not any singular person, but our human nature, into personal union with himself. For,",
+        "next": "It was the children that he considered, the \"children whom the Lord gave him,\" Hebrews 2:13. Their participation in flesh and blood moved him to partake of the same, — not because "
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "Whence he saith,",
+        "next": "He might have been cruciated on the part of God; but his death could not have been an oblation and offering had not his will concurred."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "Now, what was this holy place whereinto he entered thus sprinkled with the blood of the covenant? and to what end did he enter into it? Why,",
+        "next": "And what doth he there appear for? Why, to be our advocate, to plead our cause with God, for the application of the good things procured by his oblation unto all them for whom he w"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "to be our advocate, to plead our cause with God, for the application of the good things procured by his oblation unto all them for whom he was an offering; as the apostle tells us,",
+        "next": "Why, how comes that to pass? \"He is the propitiation for our sins,\" 1 John 2:2. His being ἱλασμός , a propitiatory sacrifice for our sins, is the foundation of his interceding, the"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "Hence, is that confidence of the apostle, upon that intercession of Christ,",
+        "next": "Where, also, we cannot but observe that those for whom be died may assuredly conclude he maketh intercession for them, and that none shall lay any thing to their charge, — which br"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "e presenting himself before the throne of his Father, sprinkled with his own blood, for the making out to his people all spiritual things that are procured by his oblation, saying,",
+        "next": "So that for whomsoever he suffered, he appears for them in heaven with his satisfaction and merit. Here, also, we must call to mind what the Father promised his Son upon his undert"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "previous": " Matthew 1:18. If you ask, with Mary, how that could be? the angel resolves both her and us, as far as it is lawful for us to be acquainted with these mysterious things: Luke 1:35,",
+        "next": "It was an over shadowing power in the Spirit: so called by an allusion taken from fowls that cover their eggs, that so by their warmth young may be hatched; for by the sole power o"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "previous": "Thirdly, In his resurrection; of which the apostle, Romans 8:11,",
+        "next": "And thus have we discovered the blessed agents and undertakers in this work their several actions and orderly concurrence unto the whole; which, though they may be thus distinguish"
+      }
+    ],
+    "structural_start_exclusions": 173,
+    "short_fragment_count": 25,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "JOHN WHITE"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Whence he saith,"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "VI."
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "Such are Hebrews 9:12, 14,"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Arg. 15."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "Where, —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Scriptural Redemption."
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "COGGESHALL, APRIL 25, 1648."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "J.O. May 15th, [1650.]"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "Thus far he."
+      },
+      {
+        "file": "EPUB/ch065.xhtml",
+        "text": "To all which I say, —"
+      },
+      {
+        "file": "EPUB/ch068.xhtml",
+        "text": "Of Grotius' judgment herein."
+      },
+      {
+        "file": "EPUB/ch072.xhtml",
+        "text": "Here two things may be observed: —"
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "text": "Right also is twofold: —"
+      },
+      {
+        "file": "EPUB/ch074.xhtml",
+        "text": "Much every way."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "If the second, —"
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "Dublin Castle, December 20, 1649."
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "Hence, these common sayings, —"
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "And these: —"
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "— ῶ πάτερ πάρειμί σοι , etc."
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "And verse 8:"
+      },
+      {
+        "file": "EPUB/ch086.xhtml",
+        "text": "We go on to the third argument."
+      },
+      {
+        "file": "EPUB/ch089.xhtml",
+        "text": "He thus proceeds: —"
+      },
+      {
+        "file": "EPUB/ch091.xhtml",
+        "text": "Our opponent thus proceeds: —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 7,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Mall's Approach to G"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: — 1. From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4. 2. From some texts before vindicated. 3. From Psalm 19:4; Romans 10:18; Acts 14:17, etc. 4. From John 16:7-11, "
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Now, what is it to obey the grace of God? Is it not to believe? Therefore, it seems that Christ intercedeth for them that they may believe, upon condition that they do believe. Others, more cautiously, assert the good using of the means of grace that they do e"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "Let now any one tell me what the reprobates, in this life, lie under more? And do not all the elect, until their actual reconciliation, in and by Christ, lie under the very same? for, — (1.) Are not their prayers an abomination to the Lord? can they without fa"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Now, fourthly, after all this, and not before, it lies upon a believer to assure his soul, according as he finds the fruit of the death of Christ in him and towards him, of the goodwill and eternal love of God to him in sending his Son to die for him in partic"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "Wherefore, to clear the whole, I shall, — 1. Give you in the passages opposed; and, 2. Vindicate them from mutual opposition, with what is besides charged on them."
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "text": "To evince the main assertion, I shall, — 1. Show the nature and quality of this right; 2. The bottom or foundation of it; and, 3. Prove the thesis. 1. By right I understand jus in general. Now, \"Jus est quod justum est,\" Aug. in Psalm cxliv, sub. fin; — \"That "
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 8,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "119 \"Infants are simply in that estate in which Adam was before his fall,\" saith Venator. 120 \"Neither is it at all considerable whether they be the children of believem or of heathens and infidels; for infants, as infan"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "134 \"Whether ever any one were damned for original sin, and adjudged to everlasting torments, is deservedly doubted of. Yea, we doubt not to affirm that never any was so damned,\" saith Corvinus. And that this is not his "
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "36. To abide argueth a continued, uninterrupted act."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "169 \" Can any one,\" say they, \"wisely and seriously prescribe the performance of a condition to another, under the promise of a reward and threatening of punishment, who will effect it in him to whom it is prescribed? Th"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "96. All which assertions, how contrary they are to the express word of God, I shall now demonstrate."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "202 \"Herein,\" saith Arminius, \"consisteth the liberty of the will, that all things required to enable it to will any thing being accomplished, it still remains indifferent to will or not.\" And all of them at the synod: 2"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "206 \"In such a one wherein he may be suffered to sin, or to do well, at his pleasure,\" as the same author intimates. It seems, then, as to sin, so nothing is required for him to be able to do good but God's permission?"
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "117. And again, Aristotle says, \"It is a very strong proof, if all shall agree in what we shall say.\" And in that observation another author concurs: \"The things that are commonly agreed on are worthy of credit.\" And her"
+      }
+    ],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "II. His oblation not a mean good in itself, but only as conducing to its end, and inseparable from his intercession; as, —"
+      }
+    ],
+    "overlong_heading_candidate_count": 46,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch024.xhtml",
+        "tag": "h4",
+        "text": "II. The effect, also, and actual product of the work itself, or what is accomplished and fulfilled by the death, blood-shedding, or oblation of Jesus Christ, is no less clearly manifested, but is as fully, and very often more distinctly, expressed; — as, first"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "tag": "h4",
+        "text": "III. Thus full, clear, and evident are the expressions in the Scripture concerning the ends and effects of the death of Christ, that a man would think every one might run and read."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "tag": "h4",
+        "text": "I. The end of anything is that which the agent intendeth to accomplish in and by the operation which is proper unto its nature, and which it applieth itself unto, — that which any one aimeth at, and designeth in himself to attain, as a thing good and desirable"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "tag": "h4",
+        "text": "III. The former consideration, by reason of the defect and perverseness of some agents (for otherwise these things are coincident), holds out a twofold end of things, — first, of the work, and, secondly, of the workman; of the act and the agent: for when the m"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "tag": "h4",
+        "text": "V. Moreover, the means are of two sorts: — First, Such as have a true goodness in themselves without reference to any farther kind; though not so considered as we use them for means."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "tag": "h4",
+        "text": "VI. These things being thus proposed in general, our next task must be to accommodate them to the present business in hand; which we shall do in order, by laying down the agent working, the means wrought and the end effected, in the great work of our redemptio"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "tag": "h4",
+        "text": "I. The agent in, and chief author of, this great work of our redemption is the whole blessed Trinity; for all the works which outwardly are of the Deity are undivided and belong equally to each person, their distinct manner of subsistence and order being obser"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "tag": "h4",
+        "text": "II. Two peculiar acts there are in this work of our redemption by the blood of Jesus, which may be and are properly assigned to the person of the FATHER: — First, The sending, of his Son into the world for this employment."
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "tag": "h4",
+        "text": "I. Our first reason is taken from that perpetual union which the Scripture maketh of both these, almost always joining them together, and so manifesting those things to be most inseparable which are looked upon as the distinct fruits and effects of them:"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "tag": "h4",
+        "text": "II. To offer and to intercede, to sacrifice and to pray, are both acts of the same sacerdotal office, and both required in him who is a priest; so that if he omit either of these, he cannot be a faithful priest for them: if either he does not offer for them, o"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "tag": "h4",
+        "text": "III. The nature of the intercession of Christ will also prove no less than what we assert, requiring an inseparable conjunction between it and its oblation; for as it is now perfected in heaven, it is not a humble dejection of himself, with cries, tears, and s"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "tag": "h4",
+        "text": "IV. Again: if the oblation and death of Christ procured and obtained that every good thing should be bestowed which is actually conferred by the intervening of his intercession, then they have both of them the same aim, and are both means tending to one and th"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "tag": "h4",
+        "text": "I. An argument not unlike to this I find by some to be undertaken to be answered, being in these words proposed, \"The ransom and mediation of Christ is no larger than his office of priest, prophet, and king; but these offices pertain to his church and chosen t"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "tag": "h4",
+        "text": "II. Farther attempts, also, there are to give strength to this evasion, and so to invalidate our former argument, which I must also remove. \"Christ,\" say they, FNREFTOKEN254TOKEN \"in some sort intercedeth and putteth in for transgressors, even the sons of men,"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "tag": "h4",
+        "text": "III. \"As a priest in respect of one end, he offered sacrifice, — that is, propitiation for all men, Hebrews 2:9, 9:26; John 1:29; 1 John 2:2; — in respect of all the ends, propitiation, and sealing the new testament, and testification to the truth; — and of th"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "tag": "h4",
+        "text": "I. For the first, or those which hold out the counsel, purpose, mind, intention, and will of God and our Savior in this work: Matthew 18:11, \"The Son of man is come to save that which was lost;\" which words he repeateth again upon another occasion, Luke 19:10."
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "tag": "h4",
+        "text": "II. The second rank contains those places which lay down the actual accomplishment and effect of this oblation, or what it doth really produce and effect in and towards them for whom it is an oblation."
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "tag": "h4",
+        "text": "III. Many places there are that point out the persons for whom Christ died, as designed peculiarly to be the object of this work of redemption, according to the aim and purpose of God; some of which we will briefly recount."
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "tag": "h4",
+        "text": "II. Their arguments whereby they prove the generality of the ransom and universality of the reconciliation must afterward be considered: for the present, we handle only the distinction itself, the meaning and misapplication whereof I shall briefly declare; whi"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "tag": "h4",
+        "text": "III. Concerning the close of all this, in respect of the event and immediate product of the death of Christ, divers have diversely expressed themselves; some placing it in the power, some in the will, of God; some in the opening of a door of grace; some in a r"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "I. If Christ so took our sins, and had them by God so laid and imposed on him, as that he underwent the punishment due unto them in our stead, then he made satisfaction to the justice of God for them, that the sinners might go free; but Christ so took and bare"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "II. If Jesus Christ paid into his Father's hands a valuable price and ransom for our sins, as our surety, so discharging the debt that we lay under, that we might go free, then did he bear the punishment due to our sins, and make satisfaction to the justice of"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "III. To make an atonement for sin, and to reconcile God unto the sinners, is in effect to make satisfaction unto the justice of God for sin, and all that we understand thereby; but Jesus Christ, by his death and oblation, did make an atonement for sin, and rec"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "IV. That wherein the exercise of the priestly office of Jesus Christ whilst he was on earth doth consist, cannot be rejected nor denied without damnable error; but the exercise of the priestly office of Jesus Christ whilst he was upon the earth consisted in th"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "V. That doctrine cannot be true nor agreeable to the gospel which strikes at the root of gospel faith, and plucks away the foundation of all that strong consolation which God is so abundantly willing we should receive; but such is that of denying the satisfact"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "VI. Another argument we may take from some few particular places of Scripture, which, instead of many, I shall produce: — As, first, 2 Corinthians 5:21, \"He made him to be sin for us, who knew no sin.\" \"He made him to be sin for us;\" how could that be? are not"
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "tag": "h4",
+        "text": "II. THE second argument, wherewith our adversaries make no less flourish than with the former, is raised from those places of Scripture where there is mention made of all men and every man, in the business of redemption."
+      },
+      {
+        "file": "EPUB/ch055.xhtml",
+        "tag": "h4",
+        "text": "III. I COME, in the next place, to the third and last argument, drawn from the Scripture, wherewith the Arminians and their successors (as to this point) do strive to maintain their figment of universal redemption; and it is taken from such texts of Scripture "
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "tag": "h4",
+        "text": "II. \"Those whom Jesus Christ and his apostles, in plain terms, without any exception or restraint, affirm that Christ came to save, and to that end died, and gave himself a ransom for, and is a propitiation for their sin, he certainly did come to save, and gav"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "tag": "h4",
+        "text": "III. \"That which the Scripture layeth forth as one end of the death of Christ, and one ground and cause of God's exalting Christ to be the Lord and Judge of all, and of the equity of his judging, that is certainly to be believed, Psalm 12:6, 18:130, 119:4; \"Bu"
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 185,
+    "epub_marker_count": 195,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p105",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 45,
+        "epub": 46,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p108",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p601",
+            "context": "(1.) By an authoritative imposition of the office of mediator upon him:"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p653",
+            "context": "(1.) It has no place in the intention of Christ;"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 45,
+        "epub": 46,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p108",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p604",
+            "context": "(2.) By furnishing him with a fullness of all gifts and graces: —"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p654",
+            "context": "(2.) The will of God in this business is not at all conditional;"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 14,
+        "epub": 15,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p108",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p602",
+            "context": "[1.] The purposed imposition of his counsel"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p605",
+            "context": "[1.] Christ had a natural all-sufficient perfection of his deity;"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p105",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 14,
+        "epub": 15,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p108",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p603",
+            "context": "[2.] The actual inauguration of Christ as mediator."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p606",
+            "context": "[2.] He had a communicated fullness."
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "that we might be made the righteousness of god in",
+      "count": 13
+    },
+    {
+      "phrase": "we might be made the righteousness of god in him",
+      "count": 13
+    },
+    {
+      "phrase": "made him to be sin for us who knew no",
+      "count": 8
+    },
+    {
+      "phrase": "him to be sin for us who knew no sin",
+      "count": 8
+    },
+    {
+      "phrase": "hath set forth to be propitiation through faith in his",
+      "count": 7
+    },
+    {
+      "phrase": "set forth to be propitiation through faith in his blood",
+      "count": 7
+    },
+    {
+      "phrase": "propitiation through faith in his blood to declare his righteousness",
+      "count": 7
+    },
+    {
+      "phrase": "to be sin for us who knew no sin that",
+      "count": 7
+    },
+    {
+      "phrase": "known unto god are all his works from the beginning",
+      "count": 6
+    },
+    {
+      "phrase": "even so father for so it seemed good in thy",
+      "count": 6
+    },
+    {
+      "phrase": "so father for so it seemed good in thy sight",
+      "count": 6
+    },
+    {
+      "phrase": "us that we might be made the righteousness of god",
+      "count": 6
+    },
+    {
+      "phrase": "whom god hath set forth to be propitiation through faith",
+      "count": 6
+    },
+    {
+      "phrase": "god hath set forth to be propitiation through faith in",
+      "count": 6
+    },
+    {
+      "phrase": "forth to be propitiation through faith in his blood to",
+      "count": 6
+    },
+    {
+      "phrase": "to be propitiation through faith in his blood to declare",
+      "count": 6
+    },
+    {
+      "phrase": "be propitiation through faith in his blood to declare his",
+      "count": 6
+    },
+    {
+      "phrase": "through faith in his blood to declare his righteousness for",
+      "count": 6
+    },
+    {
+      "phrase": "faith in his blood to declare his righteousness for the",
+      "count": 6
+    },
+    {
+      "phrase": "in his blood to declare his righteousness for the remission",
+      "count": 6
+    },
+    {
+      "phrase": "his blood to declare his righteousness for the remission of",
+      "count": 6
+    },
+    {
+      "phrase": "blood to declare his righteousness for the remission of sins",
+      "count": 6
+    },
+    {
+      "phrase": "be sin for us who knew no sin that we",
+      "count": 6
+    },
+    {
+      "phrase": "sin for us who knew no sin that we might",
+      "count": 6
+    },
+    {
+      "phrase": "for us who knew no sin that we might be",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 838,
+    "epub_greek_word_count": 849,
+    "pdf_greek_unique_words": 475,
+    "epub_greek_unique_words": 484,
+    "greek_word_coverage_ratio": 0.9975,
+    "pdf_hebrew_word_count": 18,
+    "epub_hebrew_word_count": 18,
+    "pdf_hebrew_unique_words": 16,
+    "epub_hebrew_unique_words": 16,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 41,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 0,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

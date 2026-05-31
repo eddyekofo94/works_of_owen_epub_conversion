@@ -1,0 +1,566 @@
+{
+  "volume": 3,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [
+      "flat_analysis_chapters"
+    ],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 152,
+      "budget": 176,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "anions, saying, \"These men are the servants of the most high God,\" Acts 16:17. So also did the man who abode in the tombs, possessed with an unclean spirit, who cried out unto him,",
+          "next": "And other testimonies to the like purpose among the heathen, and from their oracles, might be produced."
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "great importance, he repeats it frequently unto them, and inculcates it upon them. Consider somewhat of what he says to this purpose in his last discourse with them: John 14:16-18,",
+          "next": "whom the world cannot receive, because it seeth him not, neither knoweth him: but ye know him; for he dwelleth with you, and shall be in you. I will not leave you comfortless: I wi"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "John 20:17, to wean her from any carnal consideration of him, so he instructs them all now to look after and trust unto the promise of the Holy Ghost. Hence is that of our apostle,",
+          "next": "for although it was a great privilege to have known Christ in this world after the flesh, yet it was much greater to enjoy him in the dispensation of the Spirit. And this was spoke"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "nstructed in what concerns him; for there is somewhat that doth so, which is accompanied with irrecoverable and eternal ruin; and so is nothing else in the world. So Mark 3:28, 29,",
+          "next": "Or, \"Whosoever speaketh against the Holy Ghost, it shall not be forgiven him, neither in this world, neither in the world to come,\" Matthew 12:32."
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": " pleaded in its justification, it is to be rejected, as they also are by whom it is declared. This rule the apostle Paul confirms by the highest instance imaginable: Galatians 1:8,",
+          "next": "And the apostle shows that, for our advantage in this trial we are to make of spirits, it is good to have a clear conviction of, and a constant adherence unto, some fundamental pri"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": ":8, \"God walked in the garden\" לְרוּחַ הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
+          "next": "\"At the going down of the sun, when the cold evening tempers the heat of the air.\" And some think this to be the sense of that place, Psalm 104:4, \"Who maketh his angels רוּחוֹת , "
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "\"establishing the thunder;\" and yet, when he hath done all, he can scarce free himself of the objection about the creation of the Spirit, which he designs to answer. His words are,",
+          "next": "And hereon, with some observations to the same purpose, he adds,"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "And hereon, with some observations to the same purpose, he adds,",
+          "next": "The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of \"confirming the thunder\" (which nowhere here app"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,",
+          "next": "declares the mistake of the LXX. and the occasion of it: —"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "declares the mistake of the LXX. and the occasion of it: —",
+          "next": "So he shows that it is not מְשִׁיחוֹ in the text, but מַה־צִיחוֹ ; — that is, saith he,"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 5,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch012.xhtml",
+          "text": "Not that God intended much to make use of this way of dreams and nocturnal visions under the New Testament; but the intention of the words is, to show that there should be a plentiful effusion of that Spirit which acted by these various ways and means then und"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "That spirit which revealeth anything, or pretendeth to reveal anything, any doctrine, any grace, any truth, that is contrary unto, that is not consonant to, yea, that is not the doctrine, grace, or truth of Christ, as now revealed in the word, that brings anyt"
+        },
+        {
+          "file": "EPUB/ch020.xhtml",
+          "text": "Some, indeed, give such an account of this text as if the apostle had said, \"Do not ye live after the manner of the heathens, in the vileness of those practices, and in their idol-worship. That long course of sin having blinded their understandings, so that th"
+        },
+        {
+          "file": "EPUB/ch028.xhtml",
+          "text": "This uncleanness as it is habitual, respecting our natural defilement, is equal in and unto every one that is born into the world; we are by nature all alike polluted, and that to the utmost of what our nature is capable. But with respect unto actual sins it i"
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "It is by all confessed that examples are most effectual ways of instruction, and, if seasonably proposed, do secretly solicit the mind unto imitation, and almost unavoidably incline it thereunto. But when unto this power which examples have naturally and moral"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "both to will and to do of his good pleasure",
+          "count": 7
+        },
+        {
+          "phrase": "the name of the father and of the son and",
+          "count": 6
+        },
+        {
+          "phrase": "in us both to will and to do of his",
+          "count": 6
+        },
+        {
+          "phrase": "us both to will and to do of his good",
+          "count": 6
+        },
+        {
+          "phrase": "name of the father and of the son and of",
+          "count": 5
+        },
+        {
+          "phrase": "of the father and of the son and of the",
+          "count": 5
+        },
+        {
+          "phrase": "the father and of the son and of the holy",
+          "count": 5
+        },
+        {
+          "phrase": "father and of the son and of the holy ghost",
+          "count": 5
+        },
+        {
+          "phrase": "the new man which after god is created in righteousness",
+          "count": 5
+        },
+        {
+          "phrase": "new man which after god is created in righteousness and",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/contents_2.xhtml",
+          "paragraph_count": 37,
+          "structural_line_count": 0,
+          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
+        }
+      ]
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 3,
+      "budget": 3,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "chapter 2 general dispensation of the holy spirit",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 2 works of the holy spirit preparatory",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 3 believers the only object of sanctification",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 1,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 1,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 15,
+      "budget": 20,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "whom the world cannot receive, because it seeth him not, neither knoweth him: but"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "declares the mistake of the LXX. and the occasion of it: —"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "text": "and a fire thence kindled was always kept burning on the altar. And in like manne"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "text": "for it is evidently of the gifts of the Spirit, enabling men for rule and governm"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "and they who were instructed in the doctrine of John the Baptist only, knew not \""
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "he took upon him a body and soul, entire human nature, as the children, or all be"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "and verse 8,"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "text": "compared with Matthew 7:18. The fruit followeth the nature of the tree; and there"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "which he doth by his Spirit. Man by sin is become like the \"beasts that perish, w"
+        },
+        {
+          "file": "EPUB/ch025.xhtml",
+          "text": "which last expression compriseth the whole of our covenant obedience, Genesis 17:"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

@@ -1,37 +1,37 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 8
+- Warnings: 9
 - PDF pages: 633
-- EPUB text files: 81
-- EPUB paragraphs/headings: 2762
+- EPUB text files: 82
+- EPUB paragraphs/headings: 2730
 
 ## Coverage
 
-- PDF content tokens: 208222
-- EPUB content tokens: 207195
-- Approximate PDF-to-EPUB coverage ratio: 0.9944
+- PDF content tokens: 208214
+- EPUB content tokens: 208118
+- Approximate PDF-to-EPUB coverage ratio: 0.9968
 - Pages checked: 624
-- Weak page matches: 22
-- Dense source windows checked: 783
-- Missing dense source-window pages: 609
+- Weak page matches: 17
+- Dense source windows checked: 741
+- Missing dense source-window pages: 612
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 591
 - Top-of-page windows skipped as unstable: 13
-- Missing top-of-page body windows: 7
-- Bottom-of-page body windows checked: 544
+- Missing top-of-page body windows: 1
+- Bottom-of-page body windows checked: 538
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 19
+- Missing bottom-of-page body windows: 2
 
 ## Paragraphs
 
-- Body paragraphs checked: 2344
-- Possible faulty paragraph splits: 106
-- Structural starts excluded from split warnings: 163
-- Short fragments: 19
+- Body paragraphs checked: 2263
+- Possible faulty paragraph splits: 101
+- Structural starts excluded from split warnings: 126
+- Short fragments: 7
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 0
+- Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
@@ -47,7 +47,7 @@
 ## Greek / Hebrew
 
 - PDF Greek words: 812
-- EPUB Greek words: 811
+- EPUB Greek words: 812
 - Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
@@ -64,6 +64,7 @@
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
@@ -71,37 +72,23 @@
 ## Missing Dense Source Windows
 
 - page: 3; sample: contents of χριστολογια or declaration of the glorious mystery of the person of christ
+- page: 4; sample: note by the editor preface to the reader the explication of the text john
+- page: 5; sample: under the old testament the glory of christ in his intimate conjunction with the
+- page: 6; sample: of corrupted nature of the incarnation of christ 10 of the person of jesus
 - page: 9; sample: embraces the most comprehensive view of this vitally-important subject his exposition of psalm 130
 - page: 10; sample: 10 dutch divines the most favorable mention is made of the various treatises of
 - page: 11; sample: 11 ushered under their auspices into public notice there was large body of subscribers
 - page: 12; sample: 12 the edition was comprised in twenty-one octavo volumes the first however consisting of
 - page: 13; sample: 13 that the theologoumena had been much disfigured with errors nobis praelo capite ad
 - page: 14; sample: 14 the punctuation has undergone thorough revisal passages which from negligence in this respect
-- page: 15; sample: 15 were printed when he was himself alive here abound in errors to degree
-- page: 16; sample: 16 sometimes at loss to judge of the treatise of an old author whether
-- page: 17; sample: 17 which belongs to the library of the college and from which the portrait
 
 ## Missing Top-Of-Page Body Windows
 
-- page: 157; sample: Hebrews 2:18; 4:15; 5:2. So is he also, as he alone who is able to succor, to relieve, and to deliver them. "He is able to succor them that are
-- page: 399; sample: CHAPTER 3. THE GLORY OF CHRIST IN THE MYSTERIOUS
-- page: 429; sample: CHAPTER 5. THE GLORY OF CHRIST IN THIS LOVE.
-- page: 608; sample: CHAPTER 10 OF THE PERSON OF JESUS CHRIST.
 - page: 613; sample: A. In that for us he underwent the punishment due to our sin. Isaiah
-- page: 616; sample: CHAPTER 14 OF THE TWO-FOLD ESTATE OF CHRIST.
-- page: 619; sample: A. No; essentially they are but one,f91 differing only in some outward administrations.
 
 ## Missing Bottom-Of-Page Body Windows
 
-- page: 25; sample: Matthew 16:18:) whereon the church is built: (
 - page: 26; sample: oijkodomh>sw mou th<n ejhkklhsi>an, kai< pu>lai a[|dou ouj katiscu>sousin aujth~v".
-- page: 87; sample: Zechariah 6:13,) or the originally between Jehovah and the Branch, (
-- page: 98; sample: John 1:18; the Father, he has declared him:"
-- page: 99; sample: Exodus 33:18. Moses had Moses: "I beseech thee, show me thy glory:"
-- page: 105; sample: John 1:1. "The Word was God," in with God, and the Word was God:"
-- page: 156; sample: suffered, being tempted, he is touched with a feeling of our infirmities, and knows how to have compassion on them that are out of the way,
-- page: 195; sample: Matthew 3:17, "Lo, a voice from heaven, saying, heaven afterwards,
-- page: 241; sample: Ecclesiastes 7:29; unto. Wherein it did consist, see
 - page: 293; sample: of God. Such are "ejnsa>rkwsiv", "incarnation;" "ejnswma>twsiv", "embodying," "ejnanqrw>phsiv", "inhumanation;" "hJ despotikh<
 
 ## Possible Paragraph Splits
@@ -117,6 +104,10 @@
 - file: EPUB/ch011.xhtml; previous: hed unto those that were disobedient in the days of Noah, who are now in prison for their disobedience, 1 Peter 3:19, 20. For he was so to prophet of the church always as to tender; next: John 1:9, by one way or other communicating to them some notices of God and his will; for his light shineth in, or irradiates darkness itself — that darkness which is come on the m
 - file: EPUB/ch011.xhtml; previous: not only received divine truth by parcel, but comprehended not the depths of the revelations made unto them, 1 Peter 1:11, 12. To this purpose is that divine testimony, John 1:18,; next: It is of all the prophets concerning whom it is affirmed, that no man has seen God at any time. So is it evident in the antithesis between Moses the principal of them, and the Lord
 
+## Inline Structural Marker Candidates
+
+- file: EPUB/ch031.xhtml; text: In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love.
+
 ## Roman Heading Candidates
 
 - file: EPUB/ch033.xhtml; text: I. 1. What he did, what obedience he yielded unto the law of God in the discharge of his office (with respect whereunto he said, "Lo, I come to do thy will, O God; yea, thy law is in my heart"), it was all on his own fre
@@ -127,7 +118,7 @@
 - file: EPUB/ch024.xhtml; tag: h4; text: III. The third and last thing which we proposed unto consideration, in our inquiry into the present state and condition of the person of Christ in heaven, is the exercise and discharge of his mediatory once in behalf of the church; espec...
 - file: EPUB/ch027.xhtml; tag: h4; text: IV. He it is who in himself has given us a pledge of the capacity of our nature to inhabit those blessed regions of light, which are far above these aspectable heavens.
 - file: EPUB/ch029.xhtml; tag: h4; text: I. Since men fell from God by sin, it is no small part of their misery and punishment, that they are covered with thick darkness and ignorance of the nature of God.
-- file: EPUB/ch029.xhtml; tag: h4; text: II. This darkness in the minds of men, this ignorance of God, his nature and his will, was the original of all evil unto the world, and yet continues so to be.
+- file: EPUB/ch029.xhtml; tag: h4; text: II. This darkness in the minds of men, this ignorance of God, his nature and his will, was the original of all evil unto the world, and yet continues so to be. For, —
 - file: EPUB/ch036.xhtml; tag: h4; text: III. There is a greater, a more intimate conjunction, a nearer relation, a higher mutual interest, between Christ and the church, than ever was or can be between any other persons or relations in the world, whereon it became just and equ...
 - file: EPUB/ch041.xhtml; tag: h4; text: I. In the view which we have here of the glory of Christ by faith, we gather things, as it were, one by one, in several parts and parcels out of the Scripture; and comparing them together in our minds, they become the object of our prese...
 - file: EPUB/ch045.xhtml; tag: h4; text: II. The second thing proposed is, that notwithstanding all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great perplexities,...
@@ -136,16 +127,13 @@
 
 ## Short Fragments
 
-- file: EPUB/ch006.xhtml; text: For,
-- file: EPUB/ch006.xhtml; text: As,
 - file: EPUB/ch009.xhtml; text: All this himself instructs us in.
-- file: EPUB/ch011.xhtml; text: This must be declared.
-- file: EPUB/ch013.xhtml; text: 2ndly, Invocation.
-- file: EPUB/ch022.xhtml; text: And herein we may consider, —
-- file: EPUB/ch022.xhtml; text: Wherefore, —
-- file: EPUB/ch024.xhtml; text: As, —
 - file: EPUB/ch026.xhtml; text: - Teron and Aspasio, vol. 3 p. 75.
-- file: EPUB/ch029.xhtml; text: For, -
+- file: EPUB/ch031.xhtml; text: There is not
+- file: EPUB/ch035.xhtml; text: The sum is,
+- file: EPUB/ch037.xhtml; text: And, —
+- file: EPUB/ch041.xhtml; text: END.
+- file: EPUB/ch049.xhtml; text: Glory be to God on high!
 
 ## Repeated Windows
 
@@ -170,6 +158,7 @@
 ## Excess Word Samples
 
 - word: faithfulness; pdf: 5; epub: 12
+- word: digital; pdf: 0; epub: 6
 
 ## Limits
 

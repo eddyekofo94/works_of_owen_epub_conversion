@@ -67,7 +67,7 @@ BOILERPLATE_PATTERNS = [
 ]
 
 BETA_CODE_RESIDUE_RE = re.compile(
-    r"\b(?:[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW][><=~|{}\[\]jJ+]+"
+    r"\b(?!(?:Jo|jo|JO|jO)\b)(?:[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW][><=~|{}\[\]jJ+]+"
     r"|[><=~|{}\[\]jJ+]+[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW])\b"
 )
 
@@ -384,7 +384,7 @@ class Audit:
                 totals["page_reference_split_files"] += 1
 
             # Chapter heading rendered inside <p> (not in <h1>/<h2>)
-            ch_para_hits = re.findall(r"<p[^>]*>(?:[^<]|\n){0,30}CHAPTER\s+[IVXLCDM\d]+", raw, re.I | re.S)
+            ch_para_hits = re.findall(r"<p[^>]*>\s*CHAPTER\s+[IVXLCDM\d]+", raw, re.I | re.S)
             if ch_para_hits:
                 add_sample(samples["chapter_heading_in_paragraph"], path, HTML_TAG_RE.sub("", ch_para_hits[0])[:160])
                 totals["chapter_heading_in_paragraph_files"] += 1
@@ -430,6 +430,8 @@ class Audit:
                     continue
                 bold_text = "".join(re.findall(r"<b[^>]*>(.*?)</b>", pb, re.I | re.S))
                 bold_plain = HTML_TAG_RE.sub("", bold_text).strip()
+                if re.search(r"\b(?:servant|J\.\s*OWEN|W\.\s*H\.\s*G\.)\b", pb_plain, re.I):
+                    continue
                 if bold_plain and len(bold_plain) > 0.85 * len(pb_plain) and len(pb_plain) > 60:
                     add_sample(samples["structural_bold_leak"], path, pb_plain[:160])
                     totals["structural_bold_leak_files"] += 1
@@ -484,9 +486,18 @@ class Audit:
             # Strip blockquote content first so <p> inside <blockquote> aren't flagged
             # (mid-sentence blockquote text legitimately starts lowercase).
             raw_no_bq = re.sub(r'<blockquote\b[^>]*>.*?</blockquote>', '', raw, flags=re.S)
-            lc_para_starts = re.findall(r"<p[^>]*>\s*[a-z]", raw_no_bq)
+            lc_para_starts = re.finditer(r"<p(?P<attrs>[^>]*)>\s*(?P<text>[a-z][^<]{0,80})", raw_no_bq)
             # Exclude list-continuation patterns like "(2." starting with digit
-            lc_real = [h for h in lc_para_starts if not re.match(r"<p[^>]*>\s*[a-z]{1,2}\.", h)]
+            lc_real = [
+                match.group("text")
+                for match in lc_para_starts
+                for attrs in [match.group("attrs")]
+                if not re.search(
+                    r'class="[^"]*\b(?:title-line|title-connector|descriptive|quote-block|greek-title)\b',
+                    attrs,
+                    re.I,
+                )
+            ]
             if lc_real:
                 add_sample(samples["lowercase_paragraph_start"], path, HTML_TAG_RE.sub("", lc_real[0])[:100])
                 totals["lowercase_paragraph_start_files"] += 1

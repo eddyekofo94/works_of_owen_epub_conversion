@@ -1,0 +1,1138 @@
+{
+  "volume": 7,
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/input/owen-v7.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
+  "generated_at": "2026-05-29T11:51:24.243489+00:00",
+  "status": "warn",
+  "warning_count": 12,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "flat_analysis_chapters",
+      "message": "1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.",
+      "sample": [
+        {
+          "file": "EPUB/ch022.xhtml",
+          "paragraph_count": 7,
+          "structural_line_count": 2,
+          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
+        }
+      ]
+    }
+  ],
+  "pdf": {
+    "page_count": 683
+  },
+  "epub": {
+    "spine_text_files": 62,
+    "paragraph_count": 2379
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 232551,
+    "epub_content_tokens": 233372,
+    "coverage_ratio": 0.9968,
+    "missing_word_samples": [],
+    "excess_word_samples": [
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 679,
+    "weak_page_count": 4,
+    "weak_pages": [
+      {
+        "page": 145,
+        "hit_ratio": 0.333,
+        "sample": "145 conceive of and apprehend the things of man things merely natural civil or moral which are cognate unto human nature but saith he"
+      },
+      {
+        "page": 251,
+        "hit_ratio": 0.333,
+        "sample": "251 rule or of those promises and threats of eternal things wherein the highest blessedness and utmost misery of our nature do consist which"
+      },
+      {
+        "page": 615,
+        "hit_ratio": 0.333,
+        "sample": "615 it is enough to say that the author hath left his encomium firmly rooted in the minds of all pious and learned men"
+      },
+      {
+        "page": 679,
+        "hit_ratio": 0.333,
+        "sample": "679 apostle but the principal design intended is accomplished and do but touch on these things shall add one observation more and with it"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 852,
+    "missing_dense_window_pages": 665,
+    "missing_dense_windows": [
+      {
+        "page": 8,
+        "sample": "in an exposition of hebrews 4-6 with an inquiry into the causes and reasons"
+      },
+      {
+        "page": 10,
+        "sample": "10 strain of solemn appeal appropriate to work written according to its author amid"
+      },
+      {
+        "page": 11,
+        "sample": "11 of the zealous orthodoxy of the reformation the rise of arminianism and socinianism"
+      },
+      {
+        "page": 12,
+        "sample": "12 national vices ignorance of the spiritual beauty of religion the operations of satan"
+      },
+      {
+        "page": 13,
+        "sample": "13 to the reader some brief account of the occasion and design of the"
+      },
+      {
+        "page": 14,
+        "sample": "14 pleasures of it with readiness for the cross are all so overgrown and"
+      },
+      {
+        "page": 15,
+        "sample": "15 professors it will not long abide the shock of that opposition which it"
+      },
+      {
+        "page": 16,
+        "sample": "16 the corrupt worldly conversation of the generality of the members of its communion"
+      },
+      {
+        "page": 17,
+        "sample": "17 it should get ground and enlarge its territories unless it be among them"
+      },
+      {
+        "page": 18,
+        "sample": "18 things in the world by the confident use of this artifice and the"
+      },
+      {
+        "page": 19,
+        "sample": "19 this age the use of reason might be vindicated without rejection of the"
+      },
+      {
+        "page": 20,
+        "sample": "20 profession of christianity doth in any tolerable measure answer the original pattern of"
+      },
+      {
+        "page": 21,
+        "sample": "21 verily believe neither my prayers nor tears have been proportionable unto the causes"
+      },
+      {
+        "page": 22,
+        "sample": "22 he adds that any age since christian religion was first propagated hath wanted"
+      },
+      {
+        "page": 24,
+        "sample": "24 the nature and causes of apostasy from the gospel chapter the nature of"
+      },
+      {
+        "page": 25,
+        "sample": "25 τους απαξ σωτισθεντας הָנוּן זְ־בן לְ־מעֲמוּדִיתָא נְחֵתוּ those who one time or once"
+      },
+      {
+        "page": 26,
+        "sample": "26 the word is active as rendered by ours to renew them again to"
+      },
+      {
+        "page": 27,
+        "sample": "27 had fixed no certain general rule whereby they should unanimously proceed but every"
+      },
+      {
+        "page": 28,
+        "sample": "28 singular text of scripture and will not bring their interpretation of it unto"
+      },
+      {
+        "page": 29,
+        "sample": "29 do say that either they are not here intended or if they are"
+      },
+      {
+        "page": 30,
+        "sample": "30 unto it is both remote from administering any just occasion to the mistakes"
+      },
+      {
+        "page": 31,
+        "sample": "31 and some things we may observe concerning this description of them in general"
+      },
+      {
+        "page": 32,
+        "sample": "32 text concerning whom he supposeth that they may perish eternally which these fruits"
+      },
+      {
+        "page": 33,
+        "sample": "33 itself as here used did not require another interpretation for it was good"
+      },
+      {
+        "page": 34,
+        "sample": "34 dark place wherein ignorance folly errors and superstition do dwell and reign by"
+      },
+      {
+        "page": 35,
+        "sample": "35 iii where there is total neglect of the due improvement of this privilege"
+      },
+      {
+        "page": 36,
+        "sample": "36 intended is attended with efficacy so as that it doth effectually press in"
+      },
+      {
+        "page": 37,
+        "sample": "37 ministering unto the poor saints the grant hereof is called god's gift so"
+      },
+      {
+        "page": 38,
+        "sample": "38 by christ after his ascension thither and exaltation there is principally here regarded"
+      },
+      {
+        "page": 39,
+        "sample": "39 and that by the full revelation of the accomplishment of all that was"
+      },
+      {
+        "page": 40,
+        "sample": "40 received or refused and is sometimes opposed to eating and digestion as matthew"
+      },
+      {
+        "page": 41,
+        "sample": "41 of the word in its truth not its power of the worship of"
+      },
+      {
+        "page": 42,
+        "sample": "42 exceeding aggravation of the sins of those apostates that in these things they"
+      },
+      {
+        "page": 43,
+        "sample": "43 preached and declared see romans 10 17 john 68 the word of god"
+      },
+      {
+        "page": 44,
+        "sample": "44 these supposed apostates we may consider the ensuing observations which declare the sense"
+      },
+      {
+        "page": 45,
+        "sample": "45 the nature and properties of god are declared therein god being the only"
+      },
+      {
+        "page": 46,
+        "sample": "46 how apostatizing persons do taste of this good word of god may be"
+      },
+      {
+        "page": 47,
+        "sample": "47 little hereunto and withal to declare what the difference is between them and"
+      },
+      {
+        "page": 48,
+        "sample": "48 1st the laying it up or treasuring of it in the heart luke"
+      },
+      {
+        "page": 49,
+        "sample": "49 in the world as also show the necessity which all the hearers of"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 5,
+    "front_toc_windows_checked": 20,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 679,
+    "top_windows_usable": 667,
+    "skipped_top_window_count": 16,
+    "skipped_top_windows": [
+      {
+        "page": 14,
+        "window": "pleasures of it with readiness for the cross are all so overgrown and almost",
+        "sample": "pleasures of it, with readiness for the cross, are all [so] overgrown, and almost worn out amongst men, that they can hardly be discerned where",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 25,
+        "window": "tou pax swtisqe ntav wtjen at ydiwm m'l ˆb'z ˆwnh those who one time",
+        "sample": "Tou<v a[pax swtisqe>ntav. Wtjen] at;ydiWm[}m'l] ˆb'z] ˆWnh; — \"Those who one time,\" or \"once descended unto baptism;\" of which intepretation we",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 38,
+        "window": "by christ after his ascension thither and exaltation there is principally here regarded he",
+        "sample": "by Christ, after his ascension thither and exaltation there, is principally here regarded. He therefore is this hJ dwrea< hJ ejpoura>niov, the \"heavenly",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 45,
+        "window": "the nature and properties of god are declared therein god being the only good",
+        "sample": "[1.] The nature and properties of God are declared therein. God being the only good, the only fountain and cause of all goodness, and in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 51,
+        "window": "he ascribes unto them in general better things and such as accompany salvation as",
+        "sample": "[1.] He ascribes unto them in general \"better things,\" and such as \"accompany salvation,\" as we observed, verse 9.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 70,
+        "window": "paradeigmati sai not willing to make her public example that is by bringing of",
+        "sample": "paradeigmati>sai, — \"Not willing to make her a public example;\" that is, by bringing of her forth unto a shameful punishment, for the terror of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 78,
+        "window": "besides the lives of the generality of them who adhere unto the communion of",
+        "sample": "Besides, the lives of the generality of them who adhere unto the communion of that church, [and] of the most who preside therein, are",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 223,
+        "window": "dereliction of the gospel on this account with respect unto the inwardness spirituality and",
+        "sample": "[2.] A dereliction of the gospel on this account, with respect unto the inwardness, spirituality, and extent of its commands, is much increased",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 332,
+        "window": "unto this spirit there is fro nhma ascribed which as we have intimated is",
+        "sample": "2. Unto this Spirit there is fro>nhma ascribed, which, as we have intimated, is translated with great variety. Fro>nhsiv is the principal",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 446,
+        "window": "3dly it will increase the grace of being heavenly minded in us on the",
+        "sample": "[3dly.] It will increase the grace of being heavenly minded in us, on the grounds before declared.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 579,
+        "window": "chapter 19 the true notion and consideration of spiritual and heavenly things",
+        "sample": "CHAPTER 19. [The true notion and consideration of spiritual and heavenly things.]",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 588,
+        "window": "chapter 20 the application of the soul unto spiritual objects",
+        "sample": "CHAPTER 20. [The application of the soul unto spiritual objects.]",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 644,
+        "window": "it is effectual unto the same end by the way of powerful motive as",
+        "sample": "[2.] It is effectual unto the same end by the way of a powerful motive, as that which calls and leads unto conformity to him. This is pressed by the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 646,
+        "window": "hereby we obtain spiritual aids and supplies of strength against it we are not",
+        "sample": "[1.] Hereby we obtain spiritual aids and supplies of strength against it. We are not more necessarily and fervently to pray that sin may be pardoned",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 660,
+        "window": "from an increase of an unsanctified light and gifts which fill men with high",
+        "sample": "[2.] From an increase of an unsanctified light and gifts, which fill men with high thoughts of themselves, and keep them off from that humble",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 671,
+        "window": "whereby sin may be mortified in us we are exceeding injurious to the grace",
+        "sample": "whereby sin may be mortified in us, we are exceeding]y injurious to the grace of God.",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 1,
+    "missing_top_windows": [
+      {
+        "page": 183,
+        "window": "12 39-41 and that of the apostles acts 28 25-27 and is expounded",
+        "sample": "12:39-41, and that of the apostles, Acts 28:25-27, and is expounded,"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 647,
+    "bottom_windows_usable": 632,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 1,
+    "missing_bottom_windows": [
+      {
+        "page": 2,
+        "window": "this edition of first published by johnstone hunter 1850-53",
+        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2013,
+    "split_candidate_count": 126,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "EDITED BY",
+        "next": "WILLIAM H. GOOLD"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "WILLIAM H. GOOLD",
+        "next": "NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "rked the reign of Charles II has often been the subject of speculation and inquiry. Mr Macaulay thus confirms our author's estimate of the rapid decline of morality at this time: —",
+        "next": "The historian, dealing with the surface of affairs rather than with the springs of conduct, may account the vulgar theory of a reaction against enforced strictness sufficient to ex"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "each shall be, if they endeavor not to prevent it with their utmost diligence, and the open hazard of all their earthly concerns. A learned writer of the church of England affirms,",
+        "next": "And after he had declared that \"ministers of the gospel may deny Christ, or manifest their being ashamed of the gospel, by not opposing his word at they ought unto the sins of men,"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "Certainly the Lord Christ may say to the churches and nations among whom his name is yet owned in the world, what God said of old concerning that of the Jews, then his only church,",
+        "next": "Yea, to most of them as in another place,"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "Yea, to most of them as in another place,",
+        "next": "The greatness of the evil complained of, the secret mystery of its accomplishment, the unreasonableness, folly, and ingratitude of the fact, the strangeness of the event, make the "
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "kedness in its relinquishment as to its principles and obedience, may well be expressed as God doth in the inferior instance of the apostasy of the Jewish church: Jeremiah 2:11,12,",
+        "next": "Yet thus is it, and no otherwise, as we shall afterward manifest, amongst the generality of them that are called Christians in the world."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "y thought sufficient to repel the charge of the prophets, to vindicate their innocency, and secure their peace. The reply of the prophet unto them will equally serve in both cases,",
+        "next": "A plea of innocency and hope of impunity, under an evident guilt of the highest immoralities and the vilest of superstitions, do equally participate of folly and impudence."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "bedience, which the gospel requireth. But this is no other but an account of the true nature of that apostasy of the latter times which is foretold by the apostle, 2 Timothy 3:1-5,",
+        "next": "Under the power of the most filthy and outrageous lusts, men frame to themselves an outward shape, image, and representation of holiness; they delineate a form of religion by a sub"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "n Timothy to be careful herein, manifest both the weight he laid upon it, the difficulty that was in it, and the danger of miscarriage wherewith it was attended: 1 Timothy 6:20,21,",
+        "next": "And the same apostle expressly mentions the proneness of some to relinquish the truth of the gospel; whom, therefore, he would have rebuked sharply,"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "And the same apostle expressly mentions the proneness of some to relinquish the truth of the gospel; whom, therefore, he would have rebuked sharply,",
+        "next": "Neither would there be any need that some should \"earnestly contend for the faith once delivered unto the saints,\" Jude 8, but that others are very ready to corrupt it and turn awa"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "prised with it and amazed at it, they fell from the doctrine of grace and justification by faith alone, to seek after righteousness as it were by the works of the law: Chapter 3:1,",
+        "next": "Notwithstanding the evident demonstration of the troth which they had received, and experience of the power of the word, which he mentions, verse 2, yet all on a sudden they aposta"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "really of the church, not of the flock of sheep, no, not in profession, but devouring wolves. The same persons are intended who by Peter are called \"false teachers,\" such as should",
+        "next": "But the apostle adds, moreover, in the next place,"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "But the apostle adds, moreover, in the next place,",
+        "next": "I do not think that the apostle in that expression, \"Also of your own selves,\" intended precisely any of those who were then personally present with him, or at least it is not nece"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "gelical truth and purity which was to befall the churches, and did so. And this, with the danger of it, he doth more vehemently urge, as from a spirit of prophecy, 1 Timothy 4:1,2,",
+        "next": "By that phrase of speech, \"The Spirit speaketh expressly,\" the apostle understands not a plain, distinct revelation made thereof unto himself alone, but that the infallible Spirit "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "ockers, who should walk after their ungodly lusts.\" This all the apostles agreed in the prediction of, and warned all the churches concerning it, So John expresseth it, 1 John 4:3,",
+        "next": "He speaks of the coming of antichrist, and therewithal an apostasy from the faith, as that which they had been fully instructed in. And the apostle Paul mentioneth it as that which"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "hose days to mention publicly, for fear of offense. \"There must,\" saith he, \"be a falling away,\" or an apostasy from the faith, under the leading of \"the man of sin.\" And saith he,",
+        "next": "He had both told them of the apostasy, and also acquainted them with one particular about it, which he will not now mention. This being the great testimony of the Spirit of God in "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "re continually all of them abundantly answered and confuted by learned men of all sorts, so as it was justly hoped it would obtain no great success or progress in the world. But, —",
+        "next": "The vanity of the minds of men, their weariness of sound doctrine, which they will endure no longer, whatever they embrace, have given it admission, either in part or in whole, amo"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "rvation therein. When the apostle took his last farewell of them who were converted by his ministry at Ephesus, he \"commended them to the word of God's grace, which,\" as he judged,",
+        "next": "A man would think it were a more difficult work to convert men from Judaism or Paganism, or any false religion, unto the profession of the gospel, than to retain them in that profe"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "they have a fair opportunity to part with it. That this frame of mind is an effectual obstruction unto the due receiving of the gospel, our Savior expressly declares: John 3:19,20,",
+        "next": "Wherever the power of sin abideth, and men are engaged in the practice of it, so as that their deeds are evil, they will not receive the light of the gospel, — that is, in its own "
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "e whilst their deeds are evil. So was it with them who are said to believe in Christ. Being some way convinced of the truth of his doctrine, yet would they not confess him, because",
+        "next": "By the reigning power of this one sin of ambitious hypocrisy most of them were kept off from any assent unto the gospel; as our Savior speaks unto them,"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "By the reigning power of this one sin of ambitious hypocrisy most of them were kept off from any assent unto the gospel; as our Savior speaks unto them,",
+        "next": "With the residue, who were not able wholly to withstand their convictions, it prevailed so far as that they should not receive it sincerely, but partially and hypocritically. Now, "
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "nconsistent with their principal interests and chiefest joys. Hence is that description which the apostle giveth of those who were evangelically converted unto God: Romans 6:17,18,",
+        "next": "There is no obedience from the heart unto the gospel, no possibility of being cast into the mould of the doctrine delivered in it, unless we be made free from the service of sin."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "vain, sensualists, and the like enemies of the cross of Christ, should adhere unto the truth with any constancy if a trial should befall them? \"Look diligently,\" saith the apostle,",
+        "next": "Esau's birthright was his right unto and interest in the promise of the gospel made unto Abraham. This he, being a profane person, when he was pressed with a little hunger, parted "
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "sin and a life therein, God is ready also penally to give them up unto such delusions as shall turn them off from the gospel. So the apostle expresseth it, 2 Thessalonians 2:10-12,",
+        "next": "Where men, under the profession of the truth, will continue profligate in sin, and take pleasure in unrighteousness, God will not always suffer the gospel to be prostituted to give"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "fectual operation of the Spirit of God. As to the nature of this illumination I shall not here dispute, but take it at present for granted that it is an act of His power who of old",
+        "next": "There is a glory and beauty in those spiritual things which are the subjects of the truths of the gospel. There is in them the wisdom of God, \" in a mystery,\" 1 Corinthians 2:6,7, "
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "itual view and knowledge of these things, his mind will be, and is, certainly changed and transformed into the image of them. So the apostle tells us expressly, 2 Corinthians 3:18,",
+        "next": "They are cast into the same mould with the doctrine whereunto they are given up, Romans 6:17. The mind is united unto the things so discerned, and the image of them is so brought f"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "ey went out from us, but they were not of us,\" saith the apostle of such persons; \"for if they had been of us\" (whose fellowship is with the Father, and with his Son Jesus Christ),",
+        "next": "Thus when the apostle had described the woeful apostasy of some among the Hebrews, he adds concerning them whose preservation he believed,"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "Thus when the apostle had described the woeful apostasy of some among the Hebrews, he adds concerning them whose preservation he believed,",
+        "next": "Whatever knowledge men may have of the doctrines of the gospel, and whatever profession they may make, unless they have withal those things which are inseparable from salvation, su"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " in any notions of truth, unless you find that you have learned it as it is in Jesus What it is to learn the truth as it is in Jesus, the apostle fully declares, Ephesians 4:20-25,",
+        "next": "This it is to learn the truth as it is in Jesus, — namely, together with the knowledge of it, to have an experience of its power and efficacy in the mortification of sin, in the re"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "With respect hereunto the design and work of the gospel is, to \"cast down imaginations, and every high thing that exalteth itself against the knowledge of God,\" taught therein,",
+        "next": "The mind of man is naturally lifted up with high thoughts in itself and of itself. That it is sufficient unto all the ends of its being, all the duties of its condition, without an"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "nds of its being, all the duties of its condition, without any special aid or assistance from above, is the prevailing principle whereby it is acted. Men do not only by nature say,",
+        "next": "— \"We have a sovereignty over all our outward actions;\" but also, that nothing is, or can, or ought to be required of us, but what we have power in ourselves to comprehend, comply "
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ook upon them a profession of the gospel, they were the men who corrupted its principal mysteries by their vain philosophy, as the apostle intimates, Colossians 2:8. So Tertullian,",
+        "next": "We may apply these things unto our present purpose. The design of the gospel, in all its especial truths and mysteries, is to bring every thought into subjection unto the obedience"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ll its especial truths and mysteries, is to bring every thought into subjection unto the obedience of faith. Hence is that direction which flesh and blood will never comply withal,",
+        "next": "Unless men renounce their carnal wisdom, in all its principles, effects, and operations, they will never become wise with that wisdom which is from above; and he who knoweth not wh"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "The first is that of persecution, wherein the professors compared by our Savior unto the stony ground do presently fall away. \"Such persons,\" saith he,",
+        "next": "The first thing that persecution attacks the minds of men withal is their secular interests in this world; their wealth, their houses, lands, and possessions, are put into hazard b"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "d preservation. The rule of his continuance with any people or church, as to the outward dispensation of his providence and the means of grace, is that expressed 2 Chronicles 15:2,",
+        "next": "He judicially forsakes them by whom he is wilfully forsaken."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "ious light of the gospel And the reason why he was rejected by the Jews at his coming (for \"he came unto his own, and his own received him not,\" John 1:11), was, because they could",
+        "next": "None can or will abide constant in his doctrine who is not able spiritually to discern the glory of his person and offices. Hence the apostles lay it down as the foundation of thei"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "f Peter that he was \"the Christ, the Son of the living God\" (which expresseth the glory both of his person as the Son of the living God, and of his offices as the Christ), he says,",
+        "next": "Whosoever builds not hereon builds on the sand, and will be prevailed against. So our apostle declares that those that hold him not as the Head will be beguiled, and vainly puffed "
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "he law,\" Romans 9:31,32. Of all men they thought themselves most knowing of the \"righteousness of God;\" for they \"made their boast of God, and knew\" (as they thought and professed)",
+        "next": "Yet these men submitted not unto the righteousness of God, but went about to establish their own righteousness, because they were ignorant of the righteousness of God. And wheresoe"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "God\" in this place is taken principally for that righteousness which he hath provided for us in the gospel; and what this is the apostle declares in the next verse: \"For,\" says he,",
+        "next": "And this he calls \"The righteousness which is of faith,\" chapter 9:30."
+      }
+    ],
+    "structural_start_exclusions": 285,
+    "short_fragment_count": 16,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "EDITED BY"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "WILLIAM H. GOOLD"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "SEARCH THE SCRIPTURES — JOHN 5:39."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "LONDON: 1676."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Ans."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "Verse 20,"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "And this it doth several ways: —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "LONDON: 1688."
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "- ED."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "I answer briefly three things: —"
+      },
+      {
+        "file": "EPUB/ch055.xhtml",
+        "text": "I shall mention some of them: —"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "text": "The law is taken two ways: —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "I shall name some of them: —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 3,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 1,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "23. Let them beware by whom they are despised."
+      }
+    ],
+    "roman_heading_candidate_count": 6,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "I. Apostasy from the doctrines of the gospel is illustrated by facts in the history of the ancient church, and by the predictions of the a apostles, who foretold, —"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "II. Apostasy from the holiness of the gospel is next considered theoretically, in reference, —"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "III. Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "I. 1. That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —"
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "I. As to the nature of this dominion, — 1. It is evil and perverse, (1.) as usurped, and (2.) as exercised to evil ends. 2. It implies no force contrary to the human will"
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "II. As to the evidence of this dominion, —"
+      }
+    ],
+    "overlong_heading_candidate_count": 26,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "tag": "h4",
+        "text": "II. The Holy Ghost, for the remission of the mysteries of the gospel, and the institution of the ordinances of spiritual worship, is the great gift of God under the new testament."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "tag": "h4",
+        "text": "III. There is a goodness and excellency in this heavenly gift which may be tasted or experienced in some measure by such as never receive them in their life, power, and efficacy."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "tag": "h4",
+        "text": "IV. A rejection of the gospel, its truth and worship, after some experience had of their worth and excellency, is a high aggravation of sin, and a certain presage of destruction."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "tag": "h4",
+        "text": "I. There is a goodness and excellency in the word of God able to attract and affect the minds of men who yet never arrive at sincere obedience unto it."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "tag": "h4",
+        "text": "I. That rooted enmity which is in the minds of men by nature unto spiritual things, abiding uncured under the profession of the gospel, is the original and first spring of this apostasy."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "tag": "h4",
+        "text": "II. THE second spring or cause of defection from the gospel in any kind, is that spiritual darkness and ignorance which abides in the minds of men under the profession of the truth."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "tag": "h4",
+        "text": "III. THE innate pride and vanity of the minds of men is another means whereby they are disposed and inclined unto an apostasy from the profession of evangelical truth."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "tag": "h4",
+        "text": "II. Again; others confine the _whole_ of their obedience unto _morality,_ and deride whatever is pleaded as above it and beyond it, under the name of evangelical grace, as \"enthusiastical folly.\" And the truth is, if those persons who plead for the necessity o"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "tag": "h4",
+        "text": "III. Some there are who, as unto themselves, pretend they have attained unto _perfection_ already in this world; such a perfection in all degrees of holiness as the gospel is but an introduction towards."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "tag": "h4",
+        "text": "I. The first occasion hereof, in all ages, hath been given by or taken from the public readers, guides, or leaders of the people in the matter of religion."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "tag": "h4",
+        "text": "II. MULTITUDES are led into and countenanced in the ways of sin and profaneness, freely indulging unto their lusts and corrupt affections, by a false appropriation of justifying names and titles unto them, in ways of sin and wickedness."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "tag": "h4",
+        "text": "III. _Great examples of persons exalted in places of eminency_ giving up themselves unto boldness in a course of sinning, — which have fallen out in all the latter ages of the church, — have had a signal influence into the increase and furtherance of this apos"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "tag": "h4",
+        "text": "IV. This apostasy hath been very much promoted by _persecution._ I mean not that persecution which hath befallen the sincere, constant professors of Christianity from the avowed enemies thereof, upon the account of their profession of it."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "tag": "h4",
+        "text": "V. Want of watchfulness against the insinuation of national vices and the prevailing sins of any present age, hath effectually promoted an apostasy from evangelical holiness among the generality of Christians."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "tag": "h4",
+        "text": "VII. During these seasons, Satan (as he will never be) was not wanting unto his own occasions and advantages; and they are altogether ignorant of his devices who discern him not at work even at present unto the same end and purpose."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "tag": "h4",
+        "text": "VIII. Moreover, among the occasions of the present decay of holiness and the power of Christianity in the world, we may reckon _the_ _scandal_ _that hath been given by or is justly taken at those who have professed the_ _most strict obedience unto the rules of"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "tag": "h4",
+        "text": "II. There is another way whereby men may, and many men do fall away, and have for many ages fallen away, from the gospel with respect unto its worship, and that is, by rejecting its simplicity and pure institutions, substituting a superstitious, yea, idolatrou"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "tag": "h4",
+        "text": "III. The soul's application to such objects must be firm, accompanied with a spiritual relish for them, must afford a continual spring of spiritual affections, must be prevailing and victorious, and afford help in subduing the remaining vanity to which the hea"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "tag": "h4",
+        "text": "II. I HAVE spoken very briefly unto the first particular instance of the heavenly things that we are to fix our thoughts upon, namely, the person of Christ; and I have done it on the reason before mentioned, namely, that I intend a peculiar treatise on that su"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "tag": "h4",
+        "text": "I. As unto the principle acting in them, that our affections may be spiritual and the spring of our being spiritually minded, it is required that they be changed, renewed, and inlaid with grace, spiritual and supernatural."
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "tag": "h4",
+        "text": "II. THE second thing required that we may be spiritually minded, as unto the interest of our affections therein, is, the object of them about which they are conversant and whereunto they do adhere."
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "tag": "h4",
+        "text": "III. HAVING considered the nature of spiritual affections as renewed by grace, and those notions of their objects under which they cleave unto them, it remains only that we inquire into the way of the soul's application of itself unto those objects by its affe"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "tag": "h4",
+        "text": "II. Our next inquiry is, how this \"spiritual mindedness\" is \"life and peace,\" or what it contributes unto them, how it produceth the frame of heart and mind so expressed."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "tag": "h4",
+        "text": "I. As unto the first of these, I shall only recount some such properties of it as will discover its nature in general; the particulars wherein it doth consist will be considered afterward."
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "tag": "h4",
+        "text": "II. THESE things being thus premised in general concerning the nature of the dominion of sin, we shall now proceed unto our principal inquiry, — namely, Whether sin have dominion in us or no, whereby we may know whether we are under the law or under grace, or "
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "tag": "h4",
+        "text": "III. AND thus much hath been spoken unto the second thing proposed at the entrance of this discourse, — namely, an inquiry, Whether sin have the dominion in any of us or no."
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 381,
+    "epub_marker_count": 386,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 5,
+    "excess_markers": [
+      {
+        "marker": "(1.)",
+        "pdf": 80,
+        "epub": 81,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p190",
+            "context": "(1.) The apostle, designing to express the fearful state and judgment of these persons, describes them by such things as may fully evidence it to be, as unavoidable, so righteous and e"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p212",
+            "context": "Ans. (1.) It is ordinary to have the same thing twice expressed, in various words, to quicken the sense of them; and it is necessary it should be so, when there are divers respects unto the"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p235",
+            "context": "e word of God preached under the dispensation of the gospel may be considered two ways, — (1.) In general, as to the whole system of truths contained therein; and, (2.) In especial, for the declaration made of the accomplishment of the promise in sending Jesus Christ for th"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 79,
+        "epub": 80,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p191",
+            "context": "(2.) That all these privileges do consist in certain especial operations of the Holy Ghost, which were peculiar unto the dispensation of the gospel, such as they neither were nor could"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p213",
+            "context": "(2.) The following clause may be exegetical of this, declaring more fully and plainly what is here intended; which is usual also in the Scripture: so that nothing is cogent from this c"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p235",
+            "context": "red two ways, — (1.) In general, as to the whole system of truths contained therein; and, (2.) In especial, for the declaration made of the accomplishment of the promise in sending Jesus Christ for the redemption of the church, — it is here especially intended in this latte"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 40,
+        "epub": 41,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p193",
+            "context": "[1.] That they had such things as did accompany sal vation, — that is, such as salvation is inseparable from. None of these things, therefore, had he ascribed unto those whom he descri"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p244",
+            "context": "[1.] The nature and properties of God are declared therein. God being the only good, the only fountain and cause of all goodness, and in whose enjoyment all rest and blessedness do con"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p256",
+            "context": "[1.] This taste is accompanied, or it may be so, with delight, pleasure, and satisfaction in hearing of the word preached, especially when it is dispensed by any skillful \"master of as"
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 39,
+        "epub": 40,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p194",
+            "context": "[2.] He describes them by their duties of obedience and fruits of faith."
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p245",
+            "context": "[2.] It is exceeding good in the revelation of the glorious mystery of the Trinity, therein alone contained. This is that mystery the knowledge whereof is the only means to have a righ"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p257",
+            "context": "[2.] It gives not only delight in hearing, but some joy in the things heard. Such are the hearers of the word whom our Savior compared to the stony ground; they receive it with joy, Ma"
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 23,
+        "epub": 24,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p196",
+            "context": "[3.] He adds, that in the preservation of those there mentioned the faithfulness of God was concerned: \"God is not unrighteous to forget.\" For they were such he intended as were intere"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p246",
+            "context": "[3.] It is so in the revelation of the whole mystery of the incarnation of the Son of God, with all the effects of infinite wisdom and grace thereunto belonging. What a satisfactory go"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p258",
+            "context": "[3.] The word only thus tasted of will work on men a change and reformation of their lives, with a readiness unto the performance of many duties, 2 Peter 2:18,20; Mark 6:20. And, —"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 2,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch031.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) WE have treated in general before of the proper objects of our spiritual thoughts as unto our present duty. That which we were last engaged in is an especial instance in heavenly"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "marker": "[3.]",
+        "family": "bracket_decimal",
+        "context": "[3.] Again; meditate and think of the glory of heaven so as to compare it with the opposite state of death and eternal misery. Few men care to think much of hell, and the everlasting t"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "nature of this grace and duty of being spiritually minded",
+      "count": 4
+    },
+    {
+      "phrase": "the true notion and consideration of spiritual and heavenly things",
+      "count": 4
+    },
+    {
+      "phrase": "dominion of sin which we are freed from and discharged",
+      "count": 4
+    },
+    {
+      "phrase": "of sin which we are freed from and discharged of",
+      "count": 4
+    },
+    {
+      "phrase": "sin which we are freed from and discharged of by",
+      "count": 4
+    },
+    {
+      "phrase": "which we are freed from and discharged of by grace",
+      "count": 4
+    },
+    {
+      "phrase": "what is the assurance given us and what are the",
+      "count": 4
+    },
+    {
+      "phrase": "is the assurance given us and what are the grounds",
+      "count": 4
+    },
+    {
+      "phrase": "that we are not under the law but under grace",
+      "count": 4
+    },
+    {
+      "phrase": "the good word of god and the powers of the",
+      "count": 4
+    },
+    {
+      "phrase": "good word of god and the powers of the world",
+      "count": 4
+    },
+    {
+      "phrase": "word of god and the powers of the world to",
+      "count": 4
+    },
+    {
+      "phrase": "of god and the powers of the world to come",
+      "count": 4
+    },
+    {
+      "phrase": "the knowledge of his glory in the face of jesus",
+      "count": 4
+    },
+    {
+      "phrase": "knowledge of his glory in the face of jesus christ",
+      "count": 4
+    },
+    {
+      "phrase": "the nature of apostasy from the gospel declared in an",
+      "count": 3
+    },
+    {
+      "phrase": "nature of apostasy from the gospel declared in an exposition",
+      "count": 3
+    },
+    {
+      "phrase": "of apostasy from the gospel declared in an exposition of",
+      "count": 3
+    },
+    {
+      "phrase": "apostasy from the gospel declared in an exposition of hebrews",
+      "count": 3
+    },
+    {
+      "phrase": "from the gospel declared in an exposition of hebrews 4-6",
+      "count": 3
+    },
+    {
+      "phrase": "of the church of rome against the charge of this",
+      "count": 3
+    },
+    {
+      "phrase": "the church of rome against the charge of this evil",
+      "count": 3
+    },
+    {
+      "phrase": "church of rome against the charge of this evil examined",
+      "count": 3
+    },
+    {
+      "phrase": "of rome against the charge of this evil examined and",
+      "count": 3
+    },
+    {
+      "phrase": "apostasy from the mystery truth or doctrine of the gospel",
+      "count": 3
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 325,
+    "epub_greek_word_count": 325,
+    "pdf_greek_unique_words": 167,
+    "epub_greek_unique_words": 167,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 26,
+    "epub_hebrew_word_count": 26,
+    "pdf_hebrew_unique_words": 26,
+    "epub_hebrew_unique_words": 26,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 18,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 3,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 1,
+    "flat_analyses": [
+      {
+        "file": "EPUB/ch022.xhtml",
+        "paragraph_count": 7,
+        "structural_line_count": 2,
+        "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
+      }
+    ]
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

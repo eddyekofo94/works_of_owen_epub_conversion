@@ -1,0 +1,33 @@
+Created At: 2026-05-29T22:19:23Z
+Completed At: 2026-05-29T22:19:23Z
+File Path: `file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/scratch/recovered/6b2d2bef-b94b-4dca-a8fc-22bed9bc0586_step_22_def__repair_fused_word_ordinals_raw.py`
+Total Lines: 29
+Total Bytes: 4120
+Showing lines 1 to 29
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: Created At: 2026-05-28T22:25:22Z
+2: Completed At: 2026-05-28T22:25:23Z
+3: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":131,"LineContent":"def apply_scholastic_anchor_protocol(html: str) -\u003e str:"}
+4: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":145,"LineContent":"    def _split_before_label(m: re.Match) -\u003e str:"}
+5: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":151,"LineContent":"    def _clean_scholastic_label(label: str) -\u003e str:"}
+6: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":168,"LineContent":"def normalize_footnote_markers(text):"}
+7: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":170,"LineContent":"    def repl(match):"}
+8: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":178,"LineContent":"def _noteref_link(fn_num):"}
+9: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":185,"LineContent":"def _restore_footnote_placeholders(text):"}
+10: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":193,"LineContent":"def _strip_footnote_placeholders(text):"}
+11: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":197,"LineContent":"def
+<truncated 765 bytes>
+_paragraphs(paragraphs):"}
+18: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":811,"LineContent":"def _strip_inline_structural_tokens(text):"}
+19: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":824,"LineContent":"def _repair_scholastic_blockquote_boundaries(text):"}
+20: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":829,"LineContent":"    def repl(match):"}
+21: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":837,"LineContent":"def _repair_sermon_prefatory_note_splits(text):"}
+22: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":852,"LineContent":"def _repair_markdown_tables(text: str) -\u003e str:"}
+23: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":957,"LineContent":"def _repair_fused_word_ordinals(text: str) -\u003e str:"}
+24: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1000,"LineContent":"def _repair_unbalanced_bracket_splits(text):"}
+25: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1032,"LineContent":"def _repair_lowercase_continuation_splits(text: str) -\u003e str:"}
+26: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1091,"LineContent":"def _repair_transitional_word_isolation(text: str) -\u003e str:"}
+27: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1129,"LineContent":"def _repair_scholastic_anchor_splits(text: str) -\u003e str:"}
+28: {"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1173,"LineContent":"def _repair_dangling_initial_splits(text: str) -\u003e str:"}
+29: (...77 more results not shown)
+The above content shows the entire, complete file contents of the requested file.

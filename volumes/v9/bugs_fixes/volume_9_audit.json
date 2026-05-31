@@ -1,0 +1,142 @@
+{
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
+  "generated_at": "2026-05-29T11:54:34.266550+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 1,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn18",
+        "EPUB/endnotes.xhtml#fn22"
+      ]
+    }
+  ],
+  "info": {
+    "file_count": 128,
+    "epub_size_bytes": 3943090,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 9: Sermons to the Church"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 119,
+    "spine_count": 100,
+    "xhtml_count": 102,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 13,
+    "language": {
+      "greek_chars": 814,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 223,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
+    },
+    "footnotes": {
+      "noteref_count": 93,
+      "unique_noteref_targets": 91,
+      "endnote_anchor_count": 93,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn18",
+        "EPUB/endnotes.xhtml#fn22"
+      ]
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 0,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 1,
+      "overlong_heading_body_files": 2,
+      "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 0,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 1,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "repeated_phrase": [],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/ch059.xhtml",
+            "text": "Chapter 4"
+          }
+        ],
+        "overlong_heading_body": [
+          {
+            "file": "EPUB/ch002.xhtml",
+            "text": "\"To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. \"There appear unto me"
+          },
+          {
+            "file": "EPUB/ch053.xhtml",
+            "text": "\"To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs"
+          }
+        ],
+        "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch002.xhtml",
+            "text": "the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
+      }
+    },
+    "nav_link_count": 103,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
+  }
+}

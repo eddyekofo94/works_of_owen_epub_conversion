@@ -1,0 +1,589 @@
+{
+  "volume": 11,
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 143,
+      "budget": 61,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "OR, THE",
+          "next": "DOCTRINE OF THE"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "DOCTRINE OF THE",
+          "next": "SAINTS PERSEVERANCE _Explained and Confirmed._ **THE CERTAIN PERMANENCY OF THEIR**"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "TO",
+          "next": "Your Highness's most humble and most faithful servant, John Owen"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "ll manner of signal improvements that may render it keen or pleasant, according to his intendment or desire. What the Latin lyric said of the Grecian poets may be applied to him: —",
+          "next": "And he is hereby plainly possessed of not a few advantages. It is true that when the proof of his opinion by argument, and the orderly pursuit of it, is incumbent on him (a course "
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "ak to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo.\" 3",
+          "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,",
+          "next": "But for a man to warm himself by casting about his own pen until it be so filled with indignation and scorn as to blur every page and almost every line, is a course that will never"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "eems to have been, who is followed by sundry of the schoolmen, with many of the divines of the reformed churches. Hence is that conclusion of Alvarez, De Auxil., lib. 10 disp. 103,",
+          "next": "And of this proposition he says, \"In hac omnes catholici conveniunt.\" Of the same judgment was his master, Thomas, lib. 3 Con. Genesis cap. ely.; where, also, he gives this reason "
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "o be a superadded gift to saving grace, which, as before was observed, he denied, but to manifest that it was immediately and wholly from God. His words are, lib. 2 cap. 8, Corol.,",
+          "next": "The same schoolmen also (a generation of men exceeding ready to speak of any thing, though they know not what they speak nor whereof they affirm) go yet farther, some of them, and "
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "Add, in the next place, the most ancient of the Latins, TERTULLIAN, that great storehouse of all manner of leaning and knowledge. Saith",
+          "next": "The certain salvation of the whole body of Christ, with whom he hath that communion as to give them his Spirit, as he took their flesh (for he took upon him flesh and blood, becaus"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "CYPRIAN is express to our purpose. Saith he,",
+          "next": "The whole doctrine we contend for is plainly and clearly asserted, and bottomed on a text of Scripture; which in a special manner (as we have cause) we do insist upon. All that is "
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 4,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch012.xhtml",
+          "text": "Gospel promises, then, are, — 1. The free and gracious dispensations, and, 2. discoveries of God's good-will and love, to, 3. sinners, 4. through Christ, 5. in a covenant of grace;"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: — 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
+        },
+        {
+          "file": "EPUB/ch023.xhtml",
+          "text": "Mr. G.'s seventh argument, about the tendency of the doctrine of the saints' apostasy as to their consolation, proposed, considered — What that doctrine offereth for the consolation of the saints stated — The impossibility of its affording the least true conso"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "both to will and to do of his good pleasure",
+          "count": 9
+        },
+        {
+          "phrase": "all things work together for good to them that love",
+          "count": 5
+        },
+        {
+          "phrase": "law in their inward parts and write it in their",
+          "count": 5
+        },
+        {
+          "phrase": "in their inward parts and write it in their hearts",
+          "count": 5
+        },
+        {
+          "phrase": "he wrought in christ when he raised him from the",
+          "count": 4
+        },
+        {
+          "phrase": "wrought in christ when he raised him from the dead",
+          "count": 4
+        },
+        {
+          "phrase": "will put my law in their inward parts and write",
+          "count": 4
+        },
+        {
+          "phrase": "put my law in their inward parts and write it",
+          "count": 4
+        },
+        {
+          "phrase": "my law in their inward parts and write it in",
+          "count": 4
+        },
+        {
+          "phrase": "in them both to will and to do of his",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 4,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "marker": "(1)",
+          "pdf": 1,
+          "epub": 0,
+          "examples": [
+            {
+              "location": "pdf:p11",
+              "context": "gospel obedience in the hearts of these true believers — 1. By removing discouragements — (1) Perplexing fears, which impair their faith; (2.) Hard thoughts of God, which weaken their love: without which two, faith and love, no gospel obedience performed — 2. Unspeakable o"
+            }
+          ]
+        },
+        {
+          "marker": "(1.)",
+          "pdf": 63,
+          "epub": 61,
+          "examples": [
+            {
+              "location": "pdf:p10",
+              "context": "Union with Christ by the indwelling of the same Spirit in him and us — This proved from, (1.) Scriptural declarations of it — 2 Peter 1:4, how we are made partakers of the divine nature — Union expressed by eating the flesh and drinking the blood of Christ — <43065"
+            },
+            {
+              "location": "pdf:p10",
+              "context": "d from the indwelling Spirit, supportment — The way whereby the Spirit gives supportment: (1.) By bringing to mind the things spoken by Christ for their consolation John 14:16, 17. 26 — (2.) By renewing his graces in them as to strength — The benefits issuing and fl"
+            },
+            {
+              "location": "pdf:p82",
+              "context": "hurch at Philippi, with the bishops and deacons. Two things do here trouble our doctor: — (1.) The mention of more bishops than one at Philippi; (2.) The knitting together of bishops and deacons, as the only two orders in the church, bringing down episcopacy one degree at l"
+            }
+          ]
+        },
+        {
+          "marker": "(2.)",
+          "pdf": 65,
+          "epub": 61,
+          "examples": [
+            {
+              "location": "pdf:p10",
+              "context": "disciples, John 17:2l — The union of the persons in the Trinity with themselves — (2.) Scriptural illustrations for the manifestation of union — The union of head and members, what it is, and wherein it doth consist — Of the union between husband and wife, and our u"
+            },
+            {
+              "location": "pdf:p10",
+              "context": "ng to mind the things spoken by Christ for their consolation John 14:16, 17. 26 — (2.) By renewing his graces in them as to strength — The benefits issuing and flowing from thence — Restraint given by the indwelling Spirit and how — The continuance of the Spirit wit"
+            },
+            {
+              "location": "pdf:p11",
+              "context": "n the form of it, which is considered — (l.) In the principle setting it on work, faith — (2.) In the manner of doing it, eyeing both precepts and promises — (3.) The end aimed at in it, the glory of God as a rewarder, Hebrews 11:6; Romans 4:4 — The principl"
+            }
+          ]
+        },
+        {
+          "marker": "(3.)",
+          "pdf": 24,
+          "epub": 23,
+          "examples": [
+            {
+              "location": "pdf:p11",
+              "context": "g it on work, faith — (2.) In the manner of doing it, eyeing both precepts and promises — (3.) The end aimed at in it, the glory of God as a rewarder, Hebrews 11:6; Romans 4:4 — The principle in us whence it proceeds, which is the new man, the Spirit, proved"
+            },
+            {
+              "location": "pdf:p302",
+              "context": "s be forgiven, as conversion is on condition they be converted, or do convert themselves. (3.) This promise being by the prophet and apostle insisted on as containing the grace whereby, eminently and peculiarly, the new covenant is distinguished from that which was abolishe"
+            },
+            {
+              "location": "pdf:p314",
+              "context": ", both on the part of God and on ours, whatever is needful for confirmation thereof. And, (3.) Because that himself is the great subject of all these promises, and in him (it being of his own purchase and procuring, he \"having obtained eternal redemption for us,\" He"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 0,
+      "budget": 7,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/contents_2.xhtml",
+          "text": "CHAPTER 1"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that \"no man knoweth love or hatre"
+        }
+      ]
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 2,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "text": "SAINTS PERSEVERANCE _Explained and Confirmed._ **THE CERTAIN PERMANENCY OF THEIR**"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "1. That from the beginning to verse 14 containeth a most fearful and dreadful commination and threatening of the judgments of the Lord against the whole church"
+        }
+      ]
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch017.xhtml",
+          "text": "of perseverance in reference to the"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

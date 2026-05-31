@@ -199,6 +199,149 @@ def run_pytest(volumes: list[int]) -> dict:
         return {"ok": False, "summary": "pytest not found", "output": "", "elapsed": 0}
 
 
+def _collect_issues_for_volume(vol_num: int, result: dict) -> list[tuple[str, str, str, str]]:
+    """Return [(kind_label, code, message, extra_context), ...] for one volume."""
+    issues: list[tuple[str, str, str, str]] = []
+
+    if not result["converter"]["ok"]:
+        tail = result["converter"]["output"].split("\n")[-1][:200]
+        issues.append(("Converter", "", tail, ""))
+
+    ea = result.get("epub_audit")
+    if ea:
+        for ed in ea.get("error_details", []):
+            extra = _fmt_extra_fields(ed)
+            issues.append(("EPUB Error", ed.get("code", ""), ed.get("message", ""), extra))
+        for wd in ea.get("warning_details", []):
+            extra = _fmt_extra_fields(wd)
+            issues.append(("EPUB Warning", wd.get("code", ""), wd.get("message", ""), extra))
+
+    ti = result.get("text_integrity")
+    if ti:
+        ti_raw = _read_json(ROOT / "volumes" / f"v{vol_num}" / "bugs_fixes" / f"volume_{vol_num}_text_integrity.json")
+        for wd in ti.get("warning_details", []):
+            code = wd.get("code", "")
+            extra = _fmt_text_integrity_extra(ti_raw, code)
+            issues.append(("Integrity Warn", code, wd.get("message", ""), extra))
+
+    br = result.get("bug_regression")
+    if br:
+        for rd in br.get("regression_details", []):
+            label = rd.get("label", "?")
+            actual = rd.get("actual", "?")
+            budget = rd.get("budget", "?")
+            msg = f"{label} (actual={actual}, budget={budget})"
+            samples = rd.get("samples", [])
+            extra_parts = []
+            for s in samples[:2]:
+                if isinstance(s, dict) and "file" in s:
+                    t = str(s.get("text", ""))[:120]
+                    extra_parts.append(f"{s['file']}: {t}" if t else s['file'])
+                else:
+                    extra_parts.append(str(s)[:150])
+            issues.append(("Bug Regression", label, msg, "  " + "\n       ".join(extra_parts) if extra_parts else ""))
+
+    return issues
+
+
+def _fmt_extra_fields(d: dict) -> str:
+    """Format extra context fields from an audit error/warning dict."""
+    skip = {"code", "message"}
+    parts = []
+    for k, v in d.items():
+        if k in skip:
+            continue
+        if isinstance(v, list):
+            if len(v) > 3:
+                parts.append(f"{k}={', '.join(str(x) for x in v[:3])}…")
+            else:
+                parts.append(f"{k}={', '.join(str(x) for x in v)}")
+        elif isinstance(v, (int, float)):
+            parts.append(f"{k}={v}")
+        elif isinstance(v, str) and v:
+            parts.append(f"{k}={v}")
+    return "  " + "  ".join(parts) if parts else ""
+
+
+def _fmt_text_integrity_extra(tj: dict, code: str) -> str:
+    """Pull sample file/page references from text integrity data for a warning code."""
+    lookup = {
+        "weak_page_coverage": ("page_coverage", "weak_pages", "page"),
+        "dense_source_window_loss": ("dense_source_window_integrity", "missing_windows", "page"),
+        "front_matter_toc_loss": ("front_matter_toc_integrity", "missing_pages", "page"),
+        "top_of_page_text_loss": ("top_of_page_integrity", "missing_pages", "page"),
+        "bottom_of_page_text_loss": ("bottom_of_page_integrity", "missing_pages", "page"),
+        "paragraph_split_candidates": ("paragraph_integrity", "split_candidates", "file"),
+        "inline_structural_markers": ("paragraph_integrity", "inline_structural_candidates", "file"),
+        "reference_continuation_splits": ("paragraph_integrity", "reference_continuation_splits", "file"),
+        "citation_continuation_splits": ("paragraph_integrity", "citation_continuation_splits", "file"),
+        "paragraph_duplicates": ("paragraph_integrity", "adjacent_duplicates", "file"),
+        "roman_heading_candidates": ("paragraph_integrity", "roman_heading_candidates", "file"),
+        "overlong_heading_candidates": ("paragraph_integrity", "overlong_heading_candidates", "file"),
+        "suspicious_large_number_starts": ("paragraph_integrity", "suspicious_large_number_starts", "file"),
+        "enumerator_discrepancies": ("enumerator_integrity", "missing_markers", "file"),
+        "missing_enumerator_markers": ("enumerator_integrity", "missing_markers", "file"),
+        "missing_greek_clauses": ("greek_hebrew_clause_fidelity", "missing_greek_clauses", "page"),
+    }
+    if code not in lookup:
+        return ""
+
+    section, subkey, file_field = lookup[code]
+    data = tj.get(section, {}).get(subkey, [])
+    if not data:
+        return ""
+
+    seen: set[str] = set()
+    samples: list[str] = []
+    for item in data:
+        ref = str(item.get(file_field, item.get("file", "")))
+        if ref and ref not in seen:
+            seen.add(ref)
+            if file_field == "page":
+                samples.append(f"page {ref}")
+            else:
+                text = str(item.get("text", ""))[:80] if "text" in item else ""
+                samples.append(f"{ref}: {text}" if text else ref)
+        if len(samples) >= 2:
+            break
+
+    if samples:
+        return "  " + "\n       ".join(samples)
+    return ""
+
+
+def _print_volume_issues(vol_num: int, result: dict) -> None:
+    """Print numbered issues for a single volume inline after its pipeline."""
+    issues = _collect_issues_for_volume(vol_num, result)
+    if not issues:
+        return
+
+    sep = dim("\u2500" * 72)
+    print()
+    print(f"  {bold(red(f'Volume {vol_num} — {len(issues)} issue{"s" if len(issues) > 1 else ""}'))}")
+    print(f"  {dim('\u2500' * 50)}")
+
+    for i, (kind, code, msg, extra) in enumerate(issues, 1):
+        if kind == "Converter":
+            tag = red("Converter")
+        elif kind.startswith("EPUB Error"):
+            tag = red("EPUB Error")
+        elif kind.startswith("Bug Regression"):
+            tag = red("Bug Regression")
+        elif kind.startswith("EPUB Warning"):
+            tag = yellow("EPUB Warn ")
+        else:
+            tag = yellow("Integrity ")
+
+        code_str = f" [{code}]" if code else ""
+        print(f"  {i:>2}. {tag}{code_str}")
+        print(f"       {msg}")
+        if extra:
+            print(f"       {extra}")
+
+    print(f"  {dim('\u2500' * 72)}")
+
+
 def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
     sep = dim("\u2500" * 72)
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -206,7 +349,7 @@ def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
     print(f"  {bold('FULL CHECK SUMMARY')} \u2014 {now}")
     print(f"{bold('=' * 72)}\n")
 
-    has_issues = False
+    any_fail = False
 
     for vol in sorted(results):
         r = results[vol]
@@ -218,7 +361,7 @@ def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
             and (r["bug_regression"] is None or r["bug_regression"]["ok"])
         )
         if not all_ok:
-            has_issues = True
+            any_fail = True
         vol_label = bold(f"Volume {vol}") if all_ok else bold(red(f"Volume {vol}"))
         print(f"  {vol_label}  {dim(dur)}")
 
@@ -260,66 +403,10 @@ def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
           f"{pytest_result['summary']}  {dim(_fmt_dur(pytest_result['elapsed']))}")
     print(f"  {dim('\u2500' * 68)}\n")
 
-    _print_issue_list(results)
-
-    if not has_issues and pytest_result["ok"]:
+    if not any_fail and pytest_result["ok"]:
         print(f"  {green(bold('All checks passed — no issues found.'))}\n")
 
     print(f"  {dim('Detailed reports: volumes/v{n}/bugs_fixes/')}\n")
-
-
-def _print_issue_list(results: dict[int, dict]) -> None:
-    """Print a detailed issue list grouped by volume."""
-    all_issues: list[tuple[int, str, str]] = []
-
-    for vol in sorted(results):
-        r = results[vol]
-
-        if not r["converter"]["ok"]:
-            tail = r["converter"]["output"].split("\n")[-1][:120]
-            all_issues.append((vol, "Converter", tail))
-
-        ea = r["epub_audit"]
-        if ea:
-            for ed in ea.get("error_details", []):
-                msg = ed.get("message", str(ed))
-                all_issues.append((vol, "EPUB Error", msg))
-            for wd in ea.get("warning_details", []):
-                msg = wd.get("message", str(wd))
-                all_issues.append((vol, "EPUB Warning", msg))
-
-        ti = r["text_integrity"]
-        if ti:
-            for wd in ti.get("warning_details", []):
-                msg = wd.get("message", str(wd))
-                all_issues.append((vol, "Integrity Warning", msg))
-
-        br = r["bug_regression"]
-        if br:
-            for rd in br.get("regression_details", []):
-                label = rd.get("label", "?")
-                actual = rd.get("actual", "?")
-                budget = rd.get("budget", "?")
-                all_issues.append((vol, "Bug Regression", f"{label} (actual={actual}, budget={budget})"))
-                for sample in rd.get("samples", [])[:3]:
-                    s = str(sample)[:150]
-                    all_issues.append((vol, "  Sample", s))
-
-    if not all_issues:
-        return
-
-    print(f"  {bold(red('Issues Found'))}\n")
-    for vol, kind, msg in all_issues:
-        vol_tag = dim(f"v{vol}")
-        if kind.startswith("EPUB Error") or kind == "Converter":
-            kind_tag = red(kind)
-        elif kind.startswith("Bug Regression"):
-            kind_tag = red(kind)
-        elif kind == "  Sample":
-            kind_tag = dim("  Sample")
-        else:
-            kind_tag = yellow(kind)
-        print(f"  {vol_tag} {kind_tag}: {msg}")
 
 
 def main() -> int:
@@ -334,9 +421,13 @@ def main() -> int:
         "--no-rebuild", action="store_true",
         help="Skip converter.py, audit existing EPUBs only",
     )
+    parser.add_argument(
+        "--all", action="store_true",
+        help="Process all 16 volumes",
+    )
     args = parser.parse_args()
 
-    volumes = resolve_volumes(args.volumes)
+    volumes = list(OWEN_VOLUME_RANGE) if args.all else resolve_volumes(args.volumes)
     if not volumes:
         print("No valid volumes specified.", file=sys.stderr)
         return 1
@@ -349,6 +440,7 @@ def main() -> int:
     for v in volumes:
         print(f"\n{cyan(f'=== Volume {v} ===')}")
         results[v] = run_volume_pipeline(v, no_rebuild=args.no_rebuild)
+        _print_volume_issues(v, results[v])
 
     print(f"\n{cyan('=== Pytest ===')}")
     pt = run_pytest(volumes)

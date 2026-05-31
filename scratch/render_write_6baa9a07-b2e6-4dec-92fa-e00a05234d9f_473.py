@@ -1,0 +1,1 @@
+"    # Preceding-<p> em-dash/colon/comma/semicolon/period detector\n    _EMDASH_TAIL_RE = _re.compile(r'(<p(?:\\s[^>]*)?>.*)(?:—|:|;|,|\\.)\\s*</p>\\s*$', _re.S)"

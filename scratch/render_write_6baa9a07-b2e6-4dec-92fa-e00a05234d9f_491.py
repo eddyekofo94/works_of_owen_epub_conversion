@@ -1,0 +1,1 @@
+"    Intentionally NOT flattened (left as block for safety):\n      • 2-item runs with 4-7 word items and no continuation markers\n      • Any run where an item exceeds the hard cap\n\n    Called after _attach_colon_introduced_list but before _merge_short_inline_lists\n    so that the absorbed items are never seen by Rules A/B.\n    \"\"\"\n    import re as _re"

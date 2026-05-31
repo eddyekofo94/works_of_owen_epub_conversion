@@ -101,3 +101,112 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+
+---
+
+
+
+<!-- AUTO_AUDIT_START -->
+## Automated EPUB Audit
+
+**Last run:** 2026-05-29T12:04:35.298456+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v14/output/volume_14.epub`
+**Status:** WARN (0 errors, 2 warnings)
+
+Reports:
+- `volume_14_audit.json`
+- `volume_14_audit.md`
+
+| Check | Result |
+|-------|--------|
+| OPF version | 3.0 |
+| XHTML files | 71 |
+| Spine items | 69 |
+| Embedded fonts | 14 |
+| NAV links | 72 |
+| Greek chars / untagged | 6690 / 8 |
+| Hebrew chars / untagged | 374 / 0 |
+| Noteref links / endnote anchors | 52 / 51 |
+| AGES boilerplate hits | 0 |
+| Possible Beta Code files | 0 |
+| Escaped language-tag files | 0 |
+| Empty bracket noise files | 0 |
+| Repeated phrase hits | 2 |
+
+Warnings requiring triage:
+
+- `untagged_greek`: Greek characters appear outside lang='el' context
+- `repeated_phrases`: Potential repeated phrases detected
+
+**Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
+<!-- AUTO_AUDIT_END -->
+
+---
+
+
+
+<!-- TEXT_INTEGRITY_START -->
+## Automated Textual Integrity Audit
+
+**Last run:** 2026-05-29T12:05:13.820139+00:00
+**Status:** WARN (10 warnings)
+
+Reports:
+- `volume_14_text_integrity.json`
+- `volume_14_text_integrity.md`
+
+| Check | Result |
+|-------|--------|
+| PDF pages | 661 |
+| EPUB text files | 69 |
+| EPUB paragraphs/headings | 1726 |
+| Approximate PDF-to-EPUB word coverage | 0.9969 |
+| Weak page matches | 3 |
+| Dense source windows checked | 769 |
+| Missing dense source-window pages | 636 |
+| Front CONTENTS pages checked | 4 |
+| Missing front CONTENTS pages | 0 |
+| Top-of-page body windows checked | 621 |
+| Top-of-page windows skipped as unstable | 13 |
+| Missing top-of-page body windows | 0 |
+| Bottom-of-page body windows checked | 607 |
+| Bottom-of-page windows skipped as unstable | 0 |
+| Missing bottom-of-page body windows | 7 |
+| Possible faulty paragraph splits | 75 |
+| Structural starts excluded from split warnings | 164 |
+| Short fragments | 14 |
+| Adjacent duplicate paragraphs | 0 |
+| Inline structural marker candidates | 1 |
+| Reference continuation splits | 0 |
+| Citation continuation splits | 0 |
+| Suspicious large-number starts | 4 |
+| Roman heading candidates | 3 |
+| Overlong heading candidates | 21 |
+| Front-matter heading/body candidates | 0 |
+| Repeated word windows | 25 |
+| PDF enumerator markers | 130 |
+| EPUB enumerator markers | 130 |
+| Missing enumerator marker forms | 0 |
+| Enumerator sequence candidates | 2 |
+| PDF Greek words / EPUB Greek words | 1249 / 1250 |
+| Greek word coverage ratio | 1.0 |
+| PDF Hebrew words / EPUB Hebrew words | 51 / 51 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
+- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+**Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
+<!-- TEXT_INTEGRITY_END -->

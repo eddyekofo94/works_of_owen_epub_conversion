@@ -1,0 +1,127 @@
+================================================================================
+RECOVERED FUNCTION: _repair_markdown_tables
+================================================================================
+Created At: 2026-05-28T22:25:22Z
+Completed At: 2026-05-28T22:25:23Z
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":131,"LineContent":"def apply_scholastic_anchor_protocol(html: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":145,"LineContent":"    def _split_before_label(m: re.Match) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":151,"LineContent":"    def _clean_scholastic_label(label: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":168,"LineContent":"def normalize_footnote_markers(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":170,"LineContent":"    def repl(match):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":178,"LineContent":"def _noteref_link(fn_num):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":185,"LineContent":"def _restore_footnote_placeholders(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":193,"LineContent":"def _strip_footnote_placeholders(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":197,"LineContent":"def force_polyglot_mapping(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":234,"LineContent":"def tag_unicode_ranges(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":254,"LineContent":"    def tag_greek(m):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":265,"LineContent":"    def tag_hebrew(m):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":282,"LineContent":"    def _spl
+<truncated 4104 bytes>
+:"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":792,"LineContent":"def _coalesce_catechism_paragraphs(paragraphs):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":811,"LineContent":"def _strip_inline_structural_tokens(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":824,"LineContent":"def _repair_scholastic_blockquote_boundaries(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":829,"LineContent":"    def repl(match):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":837,"LineContent":"def _repair_sermon_prefatory_note_splits(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":852,"LineContent":"def _repair_markdown_tables(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":957,"LineContent":"def _repair_fused_word_ordinals(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1000,"LineContent":"def _repair_unbalanced_bracket_splits(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1032,"LineContent":"def _repair_lowercase_continuation_splits(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1091,"LineContent":"def _repair_transitional_word_isolation(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1129,"LineContent":"def _repair_scholastic_anchor_splits(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1173,"LineContent":"def _repair_dangling_initial_splits(text: str) -\u003e str:"}
+(...77 more results not shown)
+
+================================================================================
+RECOVERED FUNCTION: _repair_fused_word_ordinals
+================================================================================
+Created At: 2026-05-28T22:25:22Z
+Completed At: 2026-05-28T22:25:23Z
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":131,"LineContent":"def apply_scholastic_anchor_protocol(html: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":145,"LineContent":"    def _split_before_label(m: re.Match) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":151,"LineContent":"    def _clean_scholastic_label(label: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":168,"LineContent":"def normalize_footnote_markers(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":170,"LineContent":"    def repl(match):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":178,"LineContent":"def _noteref_link(fn_num):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":185,"LineContent":"def _restore_footnote_placeholders(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":193,"LineContent":"def _strip_footnote_placeholders(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":197,"LineContent":"def force_polyglot_mapping(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":234,"LineContent":"def tag_unicode_ranges(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":254,"LineContent":"    def tag_greek(m):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":265,"LineContent":"    def tag_hebrew(m):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":282,"LineContent":"    def _spl
+<truncated 4104 bytes>
+:"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":792,"LineContent":"def _coalesce_catechism_paragraphs(paragraphs):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":811,"LineContent":"def _strip_inline_structural_tokens(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":824,"LineContent":"def _repair_scholastic_blockquote_boundaries(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":829,"LineContent":"    def repl(match):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":837,"LineContent":"def _repair_sermon_prefatory_note_splits(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":852,"LineContent":"def _repair_markdown_tables(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":957,"LineContent":"def _repair_fused_word_ordinals(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1000,"LineContent":"def _repair_unbalanced_bracket_splits(text):"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1032,"LineContent":"def _repair_lowercase_continuation_splits(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1091,"LineContent":"def _repair_transitional_word_isolation(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1129,"LineContent":"def _repair_scholastic_anchor_splits(text: str) -\u003e str:"}
+{"File":"/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/render.py","LineNumber":1173,"LineContent":"def _repair_dangling_initial_splits(text: str) -\u003e str:"}
+(...77 more results not shown)
+
+================================================================================
+RECOVERED FUNCTION: _attach_em_dash_flat_list
+================================================================================
+# Resuming from a compaction
+
+You are continuing work on the task described above, but you have lost access to the full conversation history, and need to resume work efficiently using the progress summary below:
+
+# User Requests
+The following were user requests from the truncated conversation in chronological order:
+1. Can you look at @[bugs_fixes/owenian-structure-rules.md] The ## Editor Problem explains what Goold himself was facing over 100 years ago, I will try to solve it with your help. That document explains how we can solve it at least visually. What do you think of the plan, I have it implemented but it is not perfect because the way some paragraphs break in these sections it looks patchy. I would like to create a visual nesting this would help the reader keep up with these sub-points inside another.
+
+Can you choose a posrtion and ceate a reasnable solition and this we can apply everywhere, the code will have to use some sort of reccursion and or a tree to keep track of the branches, this I think will be best visual representation of Owenian structure. Give me suggestions with examples, do you even understand the problem we are trying to solve? Let's think together
+2. Did you implement it?
+3. can you uodate the plan then? Detailed enough another agent may understand! Are these changes on pdfs right now?
+4. epubs I meant
+5. I meant @[bugs_fixes/owenian-structure-rules.md] 
+6. Your implementation is worse, I don't get it, since you never removed the old implentation, there is now two lines on the indents. You can disable it for now and implement yours olnly thouroughly 
+7. Look at the highlighted bit, there shouldn't be a page break there, this is on every volume and evry chapter. These are false breaks. can you fix this? it is a new introduced bug
+8. 
+Overall structure of the document should incoporate this too as a sylabus entry, Owen often cites the points he's about to make and then he would expound on them one my one, here this should not be block, but inline. There are countless examples of these, so
+<truncated 4469 bytes>
+nder.py` replacements:**
+   * Update `_EMDASH_TAIL_RE` and `_preceding_allows_attachment` in `_attach_em_dash_flat_list`.
+   * Add the `_extract_count_from_text` helper and integrate the exact-count-matching logic (Signal I) in `_is_flat_prefix`.
+   * Remove the Roman outline guard in `_is_flat_prefix`.
+2. **Update the unit test assertion:**
+   * Modify the Chapter 9 Roman assertions in `tests/test_bug_regressions.py` (lines 1140-1146) to assert the unified flat paragraph instead of separate `<p class="roman-list-item">` blocks.
+3. **Compile and Verify:**
+   * Recompile Volume 1 EPUB: `.venv/bin/python3 volumes/v1/convert.py --render-only`
+   * Run the test suite: `.venv/bin/python3 -m pytest tests/test_bug_regressions.py`
+4. **Document in standard rulebooks:**
+   * Update `PLAN.md` and `bugs_fixes/owenian-structure-rules.md` to reflect these robust flat-syllabus matching changes.
+
+</summary>
+
+You have the 6 following artifacts written to the artifacts directory:
+
+[ARTIFACT: analysis_owenian_nesting]
+Path: file:///Users/eddyekofo/.gemini/antigravity/brain/6baa9a07-b2e6-4dec-92fa-e00a05234d9f/analysis_owenian_nesting.md
+Last Edited: 2026-05-29T17:46:38Z
+
+[ARTIFACT: media__1780079661664]
+Path: file:///Users/eddyekofo/.gemini/antigravity/brain/6baa9a07-b2e6-4dec-92fa-e00a05234d9f/media__1780079661664.png
+Last Edited: 2026-05-29T18:34:45Z
+
+[ARTIFACT: media__1780080260491]
+Path: file:///Users/eddyekofo/.gemini/antigravity/brain/6baa9a07-b2e6-4dec-92fa-e00a05234d9f/media__1780080260491.png
+Last Edited: 2026-05-29T18:45:14Z
+
+[ARTIFACT: media__1780087828192]
+Path: file:///Users/eddyekofo/.gemini/antigravity/brain/6baa9a07-b2e6-4dec-92fa-e00a05234d9f/media__1780087828192.png
+Last Edited: 2026-05-29T20:54:13Z
+
+[ARTIFACT: task]
+Path: file:///Users/eddyekofo/.gemini/antigravity/brain/6baa9a07-b2e6-4dec-92fa-e00a05234d9f/task.md
+Last Edited: 2026-05-29T17:49:07Z
+
+[ARTIFACT: walkthrough]
+Path: file:///Users/eddyekofo/.gemini/antigravity/brain/6baa9a07-b2e6-4dec-92fa-e00a05234d9f/walkthrough.md
+Last Edited: 2026-05-29T17:49:04Z
+

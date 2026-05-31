@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 209 | 209 | OK |
+| Possible faulty paragraph splits | 179 | 209 | OK |
 | Inline structural marker candidates | 0 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -23,6 +23,9 @@
 | Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
+| Residual AGES source artifacts | 0 | 0 | OK |
+| Flat ANALYSIS chapters | 0 | 0 | OK |
+| Missing configured fonts | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
@@ -34,7 +37,7 @@
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
-| Chapter headings rendered as paragraphs | 2 | 2 | OK |
+| Chapter headings rendered as paragraphs | 1 | 2 | OK |
 | Overlong headings containing body prose | 0 | 0 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 2 | OK |
@@ -53,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 13 | 15 | OK |
+| Lowercase page fragments | 0 | 15 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -71,11 +74,11 @@
 
 ### Repeated word windows
 
-- phrase: bare our sins in his own body on the tree
 - phrase: is with the father and with his son jesus christ
+- phrase: bare our sins in his own body on the tree
+- phrase: our fellowship is with the father and with his son
+- phrase: fellowship is with the father and with his son jesus
 - phrase: pleased the father that in him should all fullness dwell
-- phrase: the father that in him should all fullness dwell colossians
-- phrase: father that in him should all fullness dwell colossians 19
 
 ### Repeated phrase hits
 
@@ -83,13 +86,4 @@
 
 ### Chapter headings rendered as paragraphs
 
-- file: EPUB/ch035.xhtml; text: The second section of this chapter i
 - file: EPUB/ch042.xhtml; text: Chapter 3
-
-### Lowercase page fragments
-
-- file: EPUB/ch008.xhtml; text: a
-- file: EPUB/ch014.xhtml; text: a
-- file: EPUB/ch016.xhtml; text: i
-- file: EPUB/ch017.xhtml; text: a
-- file: EPUB/ch019.xhtml; text: b

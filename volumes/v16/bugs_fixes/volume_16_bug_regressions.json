@@ -1,0 +1,561 @@
+{
+  "volume": 16,
+  "status": "pass",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 31,
+      "budget": 61,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "d his fullness, and, by union with him, Christ mystical, Ephesians 2:2 2:23; and this is that πανήγυρις (the only word most fully expressing the catholic church used in Scripture),",
+          "next": "that is, in the Lamb's book of life; and they shall all appear one day gathered together to their Head, in the perfection and fullness of the New Jerusalem state, where they will m"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "nd the court which is without the temple, namely, the generality of visible professors, and the external part of worship, which hath been so long trod down by Gentilism. Wherefore,",
+          "next": "Men, it may be, have thought they have got, or at least saved, by not troubling themselves with the care, charge, and trouble of gathering churches and walking in gospel order; but"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "previous": "d the same spirit, the same mind herein, ought, according to their measure, to be in all that have the pastoral office committed unto them. So the apostle expresseth it in himself,",
+          "next": "And unless this compassion and goodness do run through the discharge of their whole office, men cannot be said to be evangelical shepherds, nor the sheep said in any sense to be th"
+        },
+        {
+          "file": "EPUB/ch025.xhtml",
+          "previous": "3. It is contrary to the rule delivered, Malachi 1:13, 14,",
+          "next": "We are obliged, by all divine laws, natural, moral, and positive, to serve God always with our best. The obligations hereunto are inseparable from all just conceptions of the divin"
+        },
+        {
+          "file": "EPUB/ch029.xhtml",
+          "previous": "marry who is maliciously and obstinately deserted, alarming that the Christian religion doth not prejudice the natural right and privilege of men in such cases: 1 Corinthians 7:15,",
+          "next": "If a person obstinately depart, on pretense of religion or otherwise, and will no more cohabit with a husband or wife, it is known that, by the law of nature and the usage of all n"
+        },
+        {
+          "file": "EPUB/ch032.xhtml",
+          "previous": "sm of that regeneration which is unto God.' But that indeed the word 'renascuntur,' 'are born again,' is not meant of baptism is proved from the words and the scope of them; for, —",
+          "next": "words and scope show. But he was not in his age an example of every age by his baptism, as if he did by it sanctify every age, for then he should have been baptized in every age; b"
+        },
+        {
+          "file": "EPUB/ch044.xhtml",
+          "previous": "es; which show the work of the law written in their hearts, their conscience also bearing witness, and their thoughts the mean while accusing or else excusing one another.\" (Romans",
+          "next": "2:14, 15.) By the light that God hath indelibly implanted in the minds of men — accompanied with a moral instinct of good and evil, seconded by that selfjudgment which he hath plac"
+        },
+        {
+          "file": "EPUB/ch052.xhtml",
+          "previous": "ause this thing is much insisted on by Galatinus to prove the Jews' corrupting of the text, it may not be amiss to set down the words of that great master of all Jewish learning: —",
+          "next": "The עיטור סופרים are insisted on by the same Galatinus; but these are only about the use of the letter ו four or five times, which seem to be of the same rise with them foregoing."
+        },
+        {
+          "file": "EPUB/ch062.xhtml",
+          "previous": "or in the LORD JEHOVAH is everlasting strength.\" Ye know that God doth often invite us to trust in his name; and they that know his name will put their trust in him: Psalm 9:9, 10,",
+          "next": "Is there any one that \"walketh in darkness, and hath no light? let him trust in the name of the LORD,\" Isaiah 1:10."
+        },
+        {
+          "file": "EPUB/ch062.xhtml",
+          "previous": "2. God, to show it to be our duty and wisdom, doth immediately propose the very properties of his nature for our relief: Isaiah 40:27,",
+          "next": "— words whose sense are often ready to possess our hearts: I am sure they often lie at the door of mine; I know not how it is with you. What doth God propose to relieve them in tha"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 6,
+      "budget": 6,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the carnal baptized posterity of those who d"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1, 15. 3. Humble waiting on God for the re"
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "text": "Nor was this a temporary institution, for that season, and so the officers appointed extraordinary, but it was to abide in the church throughout a!! generations; for, — 1. The work itself, as a distinct work of ministry in the church, was never to cease; it wa"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humiliation for it. [3.] The "
+        },
+        {
+          "file": "EPUB/ch063.xhtml",
+          "text": "Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: \"Write it.\" It is a certain vision. 2. It is evident: \"Make it plain upon tables, that he may run that readeth it.\" 3. It is determined: \"The vision is yet for an appointed ti"
+        },
+        {
+          "file": "EPUB/ch070.xhtml",
+          "text": "Why, saith he, — 1. \"No man layeth it to heart.\" And, 2. \"None considering that they are taken away from the evil to come.\" The meaning of it is this, that in those strange and wonderful dispensations of God, there are very few that either consider the cause o"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "the various readings of ben asher and ben naphtali of",
+          "count": 4
+        },
+        {
+          "phrase": "various readings of ben asher and ben naphtali of the",
+          "count": 4
+        },
+        {
+          "phrase": "of ben asher and ben naphtali of the eastern and",
+          "count": 4
+        },
+        {
+          "phrase": "ben asher and ben naphtali of the eastern and western",
+          "count": 4
+        },
+        {
+          "phrase": "asher and ben naphtali of the eastern and western jews",
+          "count": 4
+        },
+        {
+          "phrase": "will say unto me and what shall answer when am",
+          "count": 4
+        },
+        {
+          "phrase": "say unto me and what shall answer when am reproved",
+          "count": 4
+        },
+        {
+          "phrase": "let this mind be in you which was also in",
+          "count": 4
+        },
+        {
+          "phrase": "this mind be in you which was also in christ",
+          "count": 4
+        },
+        {
+          "phrase": "mind be in you which was also in christ jesus",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 6,
+      "budget": 7,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "of the formal cause of a particular church",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "of marrying after divorce in case of adultery",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "reflections on a slanderous libel against dr owen",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "the prebends of christ church college in oxford",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "sermon 6 the obligation to increase in godliness",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "sermon 11 the humiliation and condescension of christ",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 1,
+      "budget": 2,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/contents_3.xhtml",
+          "text": "]W"
+        }
+      ]
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 5,
+      "budget": 5,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "text": "that is, in the Lamb's book of life; and they shall all appear one day gathered t"
+        },
+        {
+          "file": "EPUB/ch032.xhtml",
+          "text": "words and scope show. But he was not in his age an example of every age by his ba"
+        },
+        {
+          "file": "EPUB/ch033.xhtml",
+          "text": "them in his own person, is a mere cavil; for all that are born to God by baptism"
+        },
+        {
+          "file": "EPUB/ch064.xhtml",
+          "text": "that is, whatsoever is required to lead a godly life is given unto believers by t"
+        },
+        {
+          "file": "EPUB/ch065.xhtml",
+          "text": "how long shall they! be in this state and condition? \"And he answered, Until the"
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

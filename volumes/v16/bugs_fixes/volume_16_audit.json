@@ -1,0 +1,179 @@
+{
+  "epub": "volumes/v16/output/volume_16.epub",
+  "generated_at": "2026-05-30T08:51:31.902708+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "possible_beta_code_residue",
+      "message": "Possible Beta Code residue detected",
+      "files": 1
+    },
+    {
+      "code": "repeated_phrases",
+      "message": "Potential repeated phrases detected",
+      "count": 6
+    }
+  ],
+  "info": {
+    "file_count": 110,
+    "epub_size_bytes": 3778663,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 16: The Church and the Bible"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 101,
+    "spine_count": 84,
+    "xhtml_count": 86,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 11,
+    "language": {
+      "greek_chars": 6015,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 1211,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
+    },
+    "footnotes": {
+      "noteref_count": 120,
+      "unique_noteref_targets": 120,
+      "endnote_anchor_count": 120,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": []
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 1,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 6,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 0,
+      "overlong_heading_body_files": 0,
+      "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 0,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 5,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [
+          {
+            "file": "EPUB/contents_3.xhtml",
+            "text": "]W"
+          }
+        ],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "of the formal cause of a particular church",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "of marrying after divorce in case of adultery",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "reflections on a slanderous libel against dr owen",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "the prebends of christ church college in oxford",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "sermon 6 the obligation to increase in godliness",
+            "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "sermon 11 the humiliation and condescension of christ",
+            "count": 1
+          }
+        ],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [],
+        "overlong_heading_body": [],
+        "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch003.xhtml",
+            "text": "that is, in the Lamb's book of life; and they shall all appear one day gathered t"
+          },
+          {
+            "file": "EPUB/ch032.xhtml",
+            "text": "words and scope show. But he was not in his age an example of every age by his ba"
+          },
+          {
+            "file": "EPUB/ch033.xhtml",
+            "text": "them in his own person, is a mere cavil; for all that are born to God by baptism"
+          },
+          {
+            "file": "EPUB/ch064.xhtml",
+            "text": "that is, whatsoever is required to lead a godly life is given unto believers by t"
+          },
+          {
+            "file": "EPUB/ch065.xhtml",
+            "text": "how long shall they! be in this state and condition? \"And he answered, Until the"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
+      }
+    },
+    "nav_link_count": 87,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
+  }
+}

@@ -235,8 +235,7 @@ VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'Brill_font',
         'publisher': 'Eduardus Ekofius',
-        'source_type': 'ccel_xml',
-        'ccel_file': 'special_sources/owen-10-deathofdeath.xml',
+        'source_type': 'ages_pdf',
         'treatises': [
             'A Display of Arminianism',
             'Salus Electorum, Sanguis Jesu: Or, The Death of Death in the Death of Christ',
@@ -2038,6 +2037,13 @@ blockquote {
     line-height: 1.47;
 }
 
+/* Paragraph inside a <blockquote epub:type="z3998:quotation"> */
+.blockquote-content {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
 .cover {
     text-align: center;
     margin: 0;
@@ -2508,6 +2514,22 @@ div.owen-branch blockquote {
     line-height: 1.6;
     text-indent: 0;
     color: #444;
+}
+
+/* Structural guide page — the full-page TOC-overview container */
+.front-matter-section {
+    margin: 1.5em 0;
+}
+
+.structural-guide-page {
+    page-break-after: always;
+}
+
+.structural-guide-levels {
+    margin: 1.8em 5%;
+    padding: 0.5em 0.8em;
+    border-left: 2.5px solid #2a55a0;
+    background-color: rgba(42, 85, 160, 0.03);
 }
 
 /* Running prose body — for editorial prefaces, prefatory notes,

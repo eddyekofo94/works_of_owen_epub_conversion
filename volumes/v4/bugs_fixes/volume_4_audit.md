@@ -2,25 +2,25 @@
 
 - Status: **WARN**
 - Errors: 0
-- Warnings: 3
+- Warnings: 1
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 93
-- Manifest items: 84
-- Spine items: 70
-- XHTML files: 72
-- Embedded fonts: 8
-- NAV links: 70
+- Files: 97
+- Manifest items: 88
+- Spine items: 69
+- XHTML files: 71
+- Embedded fonts: 13
+- NAV links: 72
 
 ## Content Checks
 
-- Greek chars: 4420
-- Untagged Greek chars: 23
-- Hebrew chars: 687
-- Untagged Hebrew chars: 19
+- Greek chars: 4075
+- Untagged Greek chars: 0
+- Hebrew chars: 698
+- Untagged Hebrew chars: 0
 - Noteref links: 24
 - Endnote anchors: 23
 - Boilerplate hits: 0
@@ -32,20 +32,9 @@
 
 ## Warnings
 
-- `untagged_greek`: Greek characters appear outside lang='el' context
-- `untagged_hebrew`: Hebrew characters appear outside lang='he' context
 - `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
-
-### untagged_greek
-
-- `EPUB/ch006.xhtml`: First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a natural knowledge of supernatural things, and that both theoretical and practic
-- `EPUB/ch054.xhtml`: and nylons, the Spirit, is of the neuter. Some would have it to refer unto Christ, verse 12. But as it is not unusual in Scripture that the subjunctive article and relative should agree in gender with the following subst
-
-### untagged_hebrew
-
-- `EPUB/ch006.xhtml`: First, Supernatural revelation is the only objective cause and means of supernatural illumination. These things are commensurate. There is a natural knowledge of supernatural things, and that both theoretical and practic
 
 ### repeated_phrase
 
@@ -55,14 +44,18 @@
 - `combined_text`: chapter 5 the work of the holy spirit
 - `combined_text`: chapter 7 the nature of prayer in general
 
+### page_reference_split
+
+- `EPUB/ch043.xhtml`: p. 249.
+
+### chapter_heading_in_paragraph
+
+- `EPUB/ch006.xhtml`: CHAPTER I
+
 ### structural_bold_leak
 
-- `EPUB/ch001.xhtml`: ΠΗΕΨΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR
+- `EPUB/ch001.xhtml`: ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch006.xhtml`: p
-- `EPUB/ch011.xhtml`: d
-- `EPUB/ch016.xhtml`: p
-- `EPUB/ch018.xhtml`: m
-- `EPUB/ch019.xhtml`: d
+- `EPUB/ch055.xhtml`: should receive strong consolation in all their distresses, when they flee for ref

@@ -1,0 +1,145 @@
+{
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
+  "generated_at": "2026-05-29T11:58:44.479674+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 1,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn21"
+      ]
+    }
+  ],
+  "info": {
+    "file_count": 58,
+    "epub_size_bytes": 4023007,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "The Works of John Owen, Volume 11: Continuing in the Faith"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 49,
+    "spine_count": 29,
+    "xhtml_count": 31,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 14,
+    "language": {
+      "greek_chars": 11105,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 0,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
+    },
+    "footnotes": {
+      "noteref_count": 39,
+      "unique_noteref_targets": 37,
+      "endnote_anchor_count": 38,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn21"
+      ]
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 0,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 0,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 1,
+      "overlong_heading_body_files": 1,
+      "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 2,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 1,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "repeated_phrase": [],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [
+          {
+            "file": "EPUB/contents_2.xhtml",
+            "text": "CHAPTER 1"
+          }
+        ],
+        "overlong_heading_body": [
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that \"no man knoweth love or hatre"
+          }
+        ],
+        "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [
+          {
+            "file": "EPUB/ch001.xhtml",
+            "text": "SAINTS PERSEVERANCE _Explained and Confirmed._ **THE CERTAIN PERMANENCY OF THEIR**"
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "1. That from the beginning to verse 14 containeth a most fearful and dreadful commination and threatening of the judgments of the Lord against the whole church"
+          }
+        ],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch017.xhtml",
+            "text": "of perseverance in reference to the"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
+      }
+    },
+    "nav_link_count": 32,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
+  }
+}
