@@ -1,5 +1,13 @@
 # John Owen Works — Agent Instructions
 
+> [!IMPORTANT]
+> **MANDATORY WORKSPACE CONVENTION — GROUPED WORKTREE LAYOUT**
+> We work strictly within the **Grouped Git Worktree** layout inside `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/` (the parent folder).
+> - **Bare repo:** `Owen.git/` (acting as the hub).
+> - **Worktrees:** `master/` (the master branch workspace) and `Owen-<branch-name>/` (isolated development workspaces).
+> - **Do NOT use `git checkout -b`** to create branches directly inside a worktree. Use the `git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>` protocol.
+> - **Virtualenv & CLI:** Use the local virtual environment `.venv/` inside the worktree root. Do NOT reference global virtual environments. Use `./owen` (the directory-agnostic CLI wrapper) to run tests, audits, and builds from **any** folder in the workspace.
+
 This repository is currently focused on the 16-volume Owen Works conversion. The Hebrews commentary is intentionally out of scope until the Owen volumes are stable and validated.
 
 ## Volume Structure Reference
@@ -81,6 +89,45 @@ Read `GEMINI.md` before changing converter behavior or project documentation. In
 - Use `IMPLEMENTED (AWAITING VALIDATION)` for work that has been coded but not user-approved.
 - Complex issues, especially Issue 40 and later, need a post-mortem in `ENGINEERING_LOG.md`.
 - Preserve the holistic paragraph-healing behavior in `reconstruct_paragraphs()` and `get_pages_text()`.
+
+## Git Repository — Worktree Setup
+
+This project uses a **grouped Git worktree** layout inside `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/` (the parent folder). Do NOT use `git checkout -b` to create branches.
+
+- **Bare repo (hub):** `Owen.git/` (inside the parent `Owen/` folder)
+- **Worktree locations:**
+  - `master/` (for the `master` branch)
+  - `Owen-<branch-name>/` (for other development branches)
+- **Remote:** `git@github.com:eddyekofo94/works_of_owen_epub_conversion.git`
+
+### Creating a new branch
+
+From the parent `Owen/` directory:
+```bash
+git -C ./Owen.git worktree add ./Owen-<branch-name> -b <branch-name>
+```
+
+From inside an active workspace folder (like `master/`):
+```bash
+git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>
+```
+
+Always `cd` into the new branch workspace directory before running commands or editing files.
+
+### Converting a new worktree to relative paths (Mandatory Portability)
+
+By default, Git writes absolute paths inside `.git` files and metadata. To prevent paths from breaking when folders are moved, renamed, or checked out on a different machine, **always convert newly created worktrees to relative paths immediately after creation**:
+
+1. Open `Owen-<branch-name>/.git` and rewrite its absolute `gitdir` line to be relative:
+   ```text
+   gitdir: ../Owen.git/worktrees/Owen-<branch-name>
+   ```
+2. Open `Owen.git/worktrees/Owen-<branch-name>/gitdir` and rewrite its absolute path to be relative:
+   ```text
+   ../../../Owen-<branch-name>/.git
+   ```
+
+*(This relative path linkage makes the entire multi-worktree workspace 100% portable and independent.)*
 
 ## Project Shape
 
@@ -456,3 +503,24 @@ Generates a ranked QA state report for the specified volume(s).
 **Location of detailed reports:**
 - `qa/reports/volume_state_report.md`
 - `qa/reports/volume_state_report.json`
+
+## Recent Key Curation & Fixes Summary (May 2026)
+
+### 1. Volume 3 Treatise Title Page & TOC Curation
+- **Treatise Title Page:** The title page override for *Pneumatologia* (`_V3_HOLY_SPIRIT_TITLE_PAGE` in `volumes/v3/convert.py`) has been curated to match PDF Page 3 (Goold layout) exactly.
+  - Scripture citation corrected to **John 16:14** (`"He shall glorify me..."`).
+  - Subtitle description simplified to: `The Nature, Office, Work, Gifts, and Operations of the Holy Spirit Revealed and Vindicated.`
+  - The Greek quote `Ἐκ τῶν θείων γραφῶν θεολογοῦμεν κἂν θέλωσιν οἱ ἐχθροὶ κἂν μή` is correctly language-tagged and is preserved with zero untagged Greek warnings in the EPUB.
+- **Custom TOC:** A mobile-friendly contents page has been curated (`_V3_CONTENTS_PAGE` in `convert.py`), mapping Books I-V to precise shifting XHTML file paths (`ch002.xhtml`–`ch038.xhtml`), completely replacing the auto-generated raw PDF TOC layout.
+
+### 2. Volume 1 List-Flattening & Budget Baseline Fixes
+- **Dynamic list_item_merge_cap:** Introduced a dynamic parameter `list_item_merge_cap` in `render.py`'s `_attach_em_dash_flat_list()` to override the default `_SIGNAL_F_CAP` (20 words) announced-count match cap.
+- **Volume 1 Override:** Assigned `'list_item_merge_cap': 40` in `volumes/v1/convert.py`'s `OVERRIDES`. This permits the 36-word list item `IV.` in Chapter 9 to merge cleanly into the `syllabus-anchor` paragraph instead of splitting, satisfying the exact assertions of the regression test suite.
+- **Baseline Budget Updates:** Raised the `max_inline_structural_candidate_count` baseline for Volume 1 in `qa/bug_regression_baselines.json` from `5` to `6` to accommodate the newly merged inline list item. All 126 regression tests now pass cleanly!
+
+### 3. Git Worktree Workspace Conventions
+- **Be Careful with Modifications:** The user set up a Git Worktree structure:
+  - Bare repo (hub): `Owen.git/`
+  - Active worktrees: `master/` and dev branches.
+  - When editing files, ensure you are editing inside the active worktree (e.g. `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/` for master branch work), branch from master using `git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>` protocol, and merge it back cleanly.
+

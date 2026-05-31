@@ -2332,6 +2332,9 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
     if not html:
         return html
 
+    if config and config.get('chapter_title') in config.get('flat_list_exclude_chapters', []):
+        return html
+
     import re as _re
 
     def _parse_roman(s: str) -> int:
@@ -2431,7 +2434,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         r'eight|nine|ten|twofold|threefold|fourfold|\d+)\b.{0,120}'
         r'\b(?:things?|ways?|heads?|accounts?|regards?|parts?|'
         r'sorts?|considerations?|observations?|particulars?|'
-        r'respects?|instances?)\b.{0,60}[—\-:,;.]\s*$',
+        r'respects?|instances?)\b.{0,100}[—\-:,;.]\s*$',
         _re.I,
     )
     _FORMULA_TAIL_RE = _re.compile(
@@ -2448,7 +2451,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
     # Ordinal markers: (1st.), (2ndly.), 3rdly., etc.
     _ORDINAL_MK_RE = _re.compile(
         r'^\(?(?:\d+(?:(?:st|nd|rd|th)ly?|dly|ly)|1st|2nd(?:ly)?|'
-        r'3rd(?:ly)?|4th(?:ly)?)\)?\.?$',
+        r'3rd(?:ly)?|4th(?:ly)?)\.?\)?\.?$',
         _re.I,
     )
     # Detect inline ordinals already embedded in a preceding paragraph
@@ -2466,7 +2469,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
 
     def _strip_marker(text: str) -> str:
         text = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', text, flags=_re.I)
-        text = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\s*\)\s*', '', text, flags=_re.I)
+        text = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\.?\s*\)\s*', '', text, flags=_re.I)
         return text.strip()
 
     def _extract_count(text: str) -> int:
@@ -4762,7 +4765,11 @@ def render_volume(vol_num: int, overrides: dict = None,
                 re.MULTILINE,
             ))
         )
-        chapter_config = {**config, 'is_catechism_context': in_catechism_context}
+        chapter_config = {
+            **config,
+            'is_catechism_context': in_catechism_context,
+            'chapter_title': ch_dict.get('title'),
+        }
         body_html, conv_mode, conv_drop_cap = markdown_to_html(
             raw_text,
             current_mode=conv_mode,

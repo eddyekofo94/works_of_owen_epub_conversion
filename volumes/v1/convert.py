@@ -457,6 +457,9 @@ OVERRIDES = {
         r'essentially in himself(?=["”]?\s*(?:\n|$))': 'essentially in himself.',
     },
     'list_item_merge_cap': 40,
+    'flat_list_exclude_chapters': [
+        "Chapter 1 - Peter's Confession",
+    ],
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
     'html_postprocess_hook': lambda html, chapter: _postprocess_v1_chapter_summaries(
