@@ -1,20 +1,18 @@
 {
   "volume": 3,
-  "status": "warn",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_bug_regressions.md",
+  "status": "pass",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/bugs_fixes/volume_3_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/bugs_fixes/volume_3_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/bugs_fixes/volume_3_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/bugs_fixes/volume_3_bug_regressions.md",
   "extra_warning_codes": {
-    "text_integrity": [
-      "flat_analysis_chapters"
-    ],
+    "text_integrity": [],
     "epub": []
   },
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 152,
+      "observed": 153,
       "budget": 176,
       "status": "ok",
       "samples": [
@@ -45,7 +43,7 @@
         },
         {
           "file": "EPUB/ch007.xhtml",
-          "previous": ":8, \"God walked in the garden\" לְרוּחַ הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
+          "previous": "God walked in the garden\" לְ רוּחַ [6] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
           "next": "\"At the going down of the sun, when the cold evening tempers the heat of the air.\" And some think this to be the sense of that place, Psalm 104:4, \"Who maketh his angels רוּחוֹת , "
         },
         {
@@ -73,8 +71,8 @@
     {
       "label": "Inline structural marker candidates",
       "observed": 5,
-      "budget": 1,
-      "status": "regression",
+      "budget": 5,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch012.xhtml",
@@ -214,7 +212,13 @@
       "observed": 0,
       "budget": 0,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "word": "לְרוּחַ",
+          "pdf": 2,
+          "epub": 0
+        }
+      ]
     },
     {
       "label": "Missing Greek clauses",
@@ -225,10 +229,26 @@
     },
     {
       "label": "Missing Hebrew clauses",
-      "observed": 0,
-      "budget": 0,
+      "observed": 3,
+      "budget": 3,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "page": 80,
+          "word_count": 3,
+          "sample": "רוּחַ־רָעָה מֵאֵת יְהוָֹה"
+        },
+        {
+          "page": 109,
+          "word_count": 5,
+          "sample": "שַׁדַּי תְחַיֵנִי רוּחַ־אֵל עָצָתְנִי וְנִשְׁמַת"
+        },
+        {
+          "page": 130,
+          "word_count": 3,
+          "sample": "רֹאצ עַפְרוֹת חֵבֵל"
+        }
+      ]
     },
     {
       "label": "Residual AGES source artifacts",
@@ -239,17 +259,10 @@
     },
     {
       "label": "Flat ANALYSIS chapters",
-      "observed": 1,
+      "observed": 0,
       "budget": 0,
-      "status": "regression",
-      "samples": [
-        {
-          "file": "EPUB/contents_2.xhtml",
-          "paragraph_count": 37,
-          "structural_line_count": 0,
-          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Missing configured fonts",
@@ -290,10 +303,15 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 3,
-      "budget": 3,
+      "observed": 4,
+      "budget": 4,
       "status": "ok",
       "samples": [
+        {
+          "file": "combined_text",
+          "text": "רוּח spirit breath or wind hebrew ruach 1",
+          "count": 2
+        },
         {
           "file": "combined_text",
           "text": "chapter 2 general dispensation of the holy spirit",

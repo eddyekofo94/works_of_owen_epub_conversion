@@ -8,27 +8,27 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 73
-- Manifest items: 64
-- Spine items: 44
-- XHTML files: 46
+- Files: 74
+- Manifest items: 65
+- Spine items: 45
+- XHTML files: 47
 - Embedded fonts: 14
-- NAV links: 47
+- NAV links: 48
 
 ## Content Checks
 
-- Greek chars: 4328
+- Greek chars: 4318
 - Untagged Greek chars: 0
-- Hebrew chars: 1655
+- Hebrew chars: 1620
 - Untagged Hebrew chars: 0
-- Noteref links: 141
-- Endnote anchors: 141
+- Noteref links: 210
+- Endnote anchors: 179
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 3
+- Repeated phrase hits: 4
 
 ## Warnings
 
@@ -38,6 +38,7 @@
 
 ### repeated_phrase
 
+- `combined_text`: רוּח spirit breath or wind hebrew ruach 1
 - `combined_text`: chapter 2 general dispensation of the holy spirit
 - `combined_text`: chapter 2 works of the holy spirit preparatory
 - `combined_text`: chapter 3 believers the only object of sanctification

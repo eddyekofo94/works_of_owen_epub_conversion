@@ -1,6 +1,6 @@
 {
-  "epub": "volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-05-30T12:44:09.448509+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub",
+  "generated_at": "2026-06-01T15:30:33.061492+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -9,12 +9,12 @@
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 3
+      "count": 4
     }
   ],
   "info": {
-    "file_count": 73,
-    "epub_size_bytes": 4140802,
+    "file_count": 74,
+    "epub_size_bytes": 4162504,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,26 +23,26 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 64,
-    "spine_count": 44,
-    "xhtml_count": 46,
+    "manifest_count": 65,
+    "spine_count": 45,
+    "xhtml_count": 47,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
     "font_count": 14,
     "language": {
-      "greek_chars": 4328,
+      "greek_chars": 4318,
       "greek_untagged_chars": 0,
-      "hebrew_chars": 1655,
+      "hebrew_chars": 1620,
       "hebrew_untagged_chars": 0,
       "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 141,
-      "unique_noteref_targets": 141,
-      "endnote_anchor_count": 141,
+      "noteref_count": 210,
+      "unique_noteref_targets": 179,
+      "endnote_anchor_count": 179,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -54,7 +54,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 3,
+      "repeated_phrase_count": 4,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
@@ -81,6 +81,11 @@
         "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "רוּח spirit breath or wind hebrew ruach 1",
+            "count": 2
+          },
           {
             "file": "combined_text",
             "text": "chapter 2 general dispensation of the holy spirit",
@@ -168,7 +173,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 47,
+    "nav_link_count": 48,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

@@ -515,6 +515,27 @@ BODY_TRANSLATIONS = {
     "מֵצִיץ": "peering, looking, or glancing through the lattice (Song of Solomon 2:9).",
 
     # --- VOLUME 3 BODY PHRASES ---
+    "(Crell. de Natur. Spir. Sanc.)": (
+        "<b>Modern Citation:</b> Johannes Crellius (John Crell), <i>Liber de Spiritu Sancto</i> "
+        "(On the Holy Spirit, 1631); also known as <i>De Natura Spiritus Sancti</i>, "
+        "later compiled in the <i>Bibliotheca Fratrum Polonorum</i> (BFP, 1656), Vol. 4. "
+        "Crellius was a leading Socinian theologian who argued that the Holy Spirit is "
+        "not a divine Person but a divine energy or power."
+    ),
+    "Crell. Prolegom., p. 7": (
+        "<b>Modern Citation:</b> Johannes Crellius, <i>Prolegomena</i> (Preface) to "
+        "<i>Liber de Spiritu Sancto</i> (1631), p. 7 [BFP, Vol. 4]."
+    ),
+    "Crell. Prolegom., pp. 13, 14": (
+        "<b>Modern Citation:</b> Johannes Crellius, <i>Prolegomena</i> to "
+        "<i>Liber de Spiritu Sancto</i> (1631), pp. 13–14 [BFP, Vol. 4]."
+    ),
+    "Crellius, de Spir. Sanc.": (
+        "<b>Modern Citation:</b> Johannes Crellius, <i>Liber de Spiritu Sancto</i> (1631) [BFP, Vol. 4]."
+    ),
+    "Crell. de Spir. Sanc., cap. 5": (
+        "<b>Modern Citation:</b> Johannes Crellius, <i>Liber de Spiritu Sancto</i> (1631), Chapter 5 [BFP, Vol. 4]."
+    ),
     "Εκ τῶν θείων γραφᾶν θεολογοῦμεν κἇν θέλωσιν οἱ ἐχθροὶ κἆν μή": (
         "&ldquo;We speak of theology from the divine Scriptures, whether our enemies want it or not&rdquo; "
         "(Early Greek patristic maxim, frequently quoted by Athanasius and Chrysostom)."
@@ -535,7 +556,7 @@ BODY_TRANSLATIONS = {
     "יֵשׁוּ": "Yeshu (a Rabbinic polemical abbreviation/anagram for Jesus).",
     "יִΜַח שְׁמוֹ וְזִכְροֹ": "&ldquo;May his name and memory be blotted out&rdquo; (Hebrew polemical phrase: <i>yimach shemo ve-zichro</i>).",
     "יִΜַח שְׁמוֹ וְזִכְרוֹ": "&ldquo;May his name and memory be blotted out&rdquo; (Hebrew polemical phrase: <i>yimach shemo ve-zichro</i>).",
-    "יְהוָֹה": "Yahweh / Jehovah (the sacred Tetragrammaton, the personal name of God in Hebrew).",
+    "יְהוָֹה": "Jehovah (the sacred Tetragrammaton, the personal name of God in Hebrew).",
     "נליινא דרוחה": "revelation of the Spirit (Aramaic/Syriac phrase).",
     "יוּחַ": "spirit, wind, or breath (originally written Hebrew/Aramaic term).",
     "רוּחַ": "spirit, breath, or wind (Hebrew: <i>ruach</i>).",

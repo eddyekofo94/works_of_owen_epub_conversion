@@ -1,18 +1,18 @@
 # Text Integrity Audit: Volume 3
 
 - Status: **WARN**
-- Warnings: 9
+- Warnings: 8
 - PDF pages: 789
-- EPUB text files: 44
-- EPUB paragraphs/headings: 2500
+- EPUB text files: 45
+- EPUB paragraphs/headings: 2507
 
 ## Coverage
 
 - PDF content tokens: 282216
-- EPUB content tokens: 278672
-- Approximate PDF-to-EPUB coverage ratio: 0.9855
+- EPUB content tokens: 278727
+- Approximate PDF-to-EPUB coverage ratio: 0.9851
 - Pages checked: 787
-- Weak page matches: 13
+- Weak page matches: 15
 - Dense source windows checked: 812
 - Missing dense source-window pages: 783
 - Front CONTENTS pages checked: 6
@@ -22,40 +22,40 @@
 - Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 748
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 5
+- Missing bottom-of-page body windows: 6
 
 ## Paragraphs
 
-- Body paragraphs checked: 2114
-- Possible faulty paragraph splits: 152
-- Structural starts excluded from split warnings: 317
-- Short fragments: 12
+- Body paragraphs checked: 2116
+- Possible faulty paragraph splits: 153
+- Structural starts excluded from split warnings: 319
+- Short fragments: 13
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 5
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
 - Roman heading candidates: 0
-- Overlong heading candidates: 12
+- Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 626
-- EPUB enumerator markers: 636
+- EPUB enumerator markers: 708
 - Missing enumerator marker forms: 0
-- Enumerator sequence candidates: 4
+- Enumerator sequence candidates: 23
 
 ## Greek / Hebrew
 
 - PDF Greek words: 809
-- EPUB Greek words: 816
-- Greek word coverage ratio: 0.9949
+- EPUB Greek words: 815
+- Greek word coverage ratio: 0.9936
 - PDF Hebrew words: 238
-- EPUB Hebrew words: 235
-- Hebrew word coverage ratio: 0.9874
+- EPUB Hebrew words: 238
+- Hebrew word coverage ratio: 0.9454
 - Greek clauses checked: 42
 - Missing Greek clauses: 0
 - Hebrew clauses checked: 23
-- Missing Hebrew clauses: 0
+- Missing Hebrew clauses: 3
 
 ## Warnings
 
@@ -64,10 +64,9 @@
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `flat_analysis_chapters`: 1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.
+- `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
@@ -84,6 +83,7 @@
 
 ## Missing Bottom-Of-Page Body Windows
 
+- page: 129; sample: 2. The quickening principle added thereunto; and, 3. The effect of their conjunction and union.
 - page: 206; sample: operation of the Holy Ghost, it seems purposely to be hid from us in that expression, Du>namis Uyi>stou ejpiskia>sei soi, — "The power of the
 - page: 318; sample: yucikou>v, "natural men," but rather a]logs zw~a fusika>, 2 Peter 2:12,
 - page: 320; sample: spiritual things is doubly expressed: — [1.] By ouj de>cetai, — "He receiveth them not;"
@@ -97,7 +97,7 @@
 - file: EPUB/ch006.xhtml; previous: John 20:17, to wean her from any carnal consideration of him, so he instructs them all now to look after and trust unto the promise of the Holy Ghost. Hence is that of our apostle,; next: for although it was a great privilege to have known Christ in this world after the flesh, yet it was much greater to enjoy him in the dispensation of the Spirit. And this was spoke
 - file: EPUB/ch006.xhtml; previous: nstructed in what concerns him; for there is somewhat that doth so, which is accompanied with irrecoverable and eternal ruin; and so is nothing else in the world. So Mark 3:28, 29,; next: Or, "Whosoever speaketh against the Holy Ghost, it shall not be forgiven him, neither in this world, neither in the world to come," Matthew 12:32.
 - file: EPUB/ch006.xhtml; previous: pleaded in its justification, it is to be rejected, as they also are by whom it is declared. This rule the apostle Paul confirms by the highest instance imaginable: Galatians 1:8,; next: And the apostle shows that, for our advantage in this trial we are to make of spirits, it is good to have a clear conviction of, and a constant adherence unto, some fundamental pri
-- file: EPUB/ch007.xhtml; previous: :8, "God walked in the garden" לְרוּחַ הַיוֹם , "in the cool of the day;" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —; next: "At the going down of the sun, when the cold evening tempers the heat of the air." And some think this to be the sense of that place, Psalm 104:4, "Who maketh his angels רוּחוֹת ,
+- file: EPUB/ch007.xhtml; previous: God walked in the garden" לְ רוּחַ [6] הַיוֹם , "in the cool of the day;" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —; next: "At the going down of the sun, when the cold evening tempers the heat of the air." And some think this to be the sense of that place, Psalm 104:4, "Who maketh his angels רוּחוֹת ,
 - file: EPUB/ch007.xhtml; previous: "establishing the thunder;" and yet, when he hath done all, he can scarce free himself of the objection about the creation of the Spirit, which he designs to answer. His words are,; next: And hereon, with some observations to the same purpose, he adds,
 - file: EPUB/ch007.xhtml; previous: And hereon, with some observations to the same purpose, he adds,; next: The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of "confirming the thunder" (which nowhere here app
 - file: EPUB/ch007.xhtml; previous: The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,; next: declares the mistake of the LXX. and the occasion of it: —
@@ -111,19 +111,6 @@
 - file: EPUB/ch028.xhtml; text: This uncleanness as it is habitual, respecting our natural defilement, is equal in and unto every one that is born into the world; we are by nature all alike polluted, and that to the utmost of what our nature is capable. But with respec...
 - file: EPUB/ch030.xhtml; text: It is by all confessed that examples are most effectual ways of instruction, and, if seasonably proposed, do secretly solicit the mind unto imitation, and almost unavoidably incline it thereunto. But when unto this power which examples h...
 
-## Overlong Heading Candidates
-
-- file: EPUB/ch012.xhtml; tag: h4; text: I. 1. The first eminent gift and work of the Holy Ghost under the Old Testament, and which had the most direct and immediate respect unto Jesus Christ, was that of _prophecy:_ for the chief and principal end hereof in the church was to f...
-- file: EPUB/ch012.xhtml; tag: h4; text: II. The next sort of the operations of the Holy Ghost under the Old Testament, whose explanation was designed, is of those whereby he improved, through immediate impressions of his own power, the natural faculties and abilities of the mi...
-- file: EPUB/ch014.xhtml; tag: h4; text: I. But yet, before we enter upon the first sort of his works which we shall begin withal, an objection of seeming weight and difficulty must be removed out of our way; which I shall the rather do because our answer unto it will make the ...
-- file: EPUB/ch015.xhtml; tag: h4; text: II. There is yet another work of the Holy Spirit, not immediately in and upon the person of the Lord Christ, but _towards him,_ and on his behalf, with respect unto his work and office; and it compriseth the head and fountain of the whol...
-- file: EPUB/ch029.xhtml; tag: h4; text: I. That we are purged and purified from sin by the Spirit of God communicated unto us hath been before in general confirmed by many testimonies of the holy Scriptures.
-- file: EPUB/ch029.xhtml; tag: h4; text: II. It is, therefore, the _blood of Christ,_ in the second place, which is the _meritorious_ procuring, and so the effective cause, that _immediately purgeth_ us from our sins, by an especial application of it unto our souls by the Holy ...
-- file: EPUB/ch030.xhtml; tag: h4; text: I. The first of these assertions I affirm not only to be true, but of so great weight and importance that our hope of life and salvation depends thereon; and it is the second great principle constituting our Christian profession.
-- file: EPUB/ch031.xhtml; tag: h4; text: II. THE second part of the work of the Spirit of God in our sanctification respects the acts and duties of holy obedience; for what we have before treated of chiefly concerns the principle of it as habitually resident in our souls, and t...
-- file: EPUB/ch034.xhtml; tag: h4; text: I. First, then, The nature of God as revealed unto us, with our dependence on him, the obligation that is upon us to live unto him, with the nature of our blessedness in the enjoyment of him, do require indispensably that we should be holy.
-- file: EPUB/ch036.xhtml; tag: h4; text: III. WE have evinced the necessity of holiness from the nature and the decrees of God; our next argument shall be taken from his word or commands, as the nature and order of these things do require.
-
 ## Short Fragments
 
 - file: EPUB/ch007.xhtml; text: — and the Spirit of Christ:
@@ -135,14 +122,20 @@
 - file: EPUB/ch023.xhtml; text: And a little after,
 - file: EPUB/ch025.xhtml; text: Yea, —
 - file: EPUB/ch027.xhtml; text: Ans.
-- file: EPUB/ch032.xhtml; text: Now, this the Holy Ghost doth, —
+- file: EPUB/ch027.xhtml; text: And, —
 
 ## Enumerator Sequence Candidates
 
+- file: EPUB/ch006.xhtml; marker: [3]; family: bracket_decimal; context: discourse declare: Verse 1, "Now, concerning spiritual gifts," — Περὶ δὲ τῶν πνευματικῶν [3] that is χαρισμάτων as his ensuing declaration doth evince. And the imagination of some, concerning spiritual persons to be here intended, contra...
+- file: EPUB/ch006.xhtml; marker: [8]; family: bracket_decimal; context: e which he proposed to treat of, and had done so accordingly, verse 31. The τὰ πνευματικὰ [8] of verse 1 are the τὰ χαρίσματα [9] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [2] — that is, χαρίσματα , — "'Desire...
+- file: EPUB/ch006.xhtml; marker: [12]; family: bracket_decimal; context: pronunciation of his name: for instead of יֵשׁוּעַ [10] , they write and call him יֵשׁוּ [12] , the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, "Let his name and memory be blotted out;" the same with "Jesus anathema" And this ...
+- file: EPUB/ch006.xhtml; marker: [6]; family: bracket_decimal; context: Treating, therefore, περὶ τῶν πνευματικῶν [6] , of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the "Spirit," vers
 - file: EPUB/ch006.xhtml; marker: [18]; family: bracket_decimal; context: before them, — namely, the old scoffing heathens; for so doth Lucian, in his Philopatris [18], speak in imitation of a Christian by way of scorn, Λέγε παρὰ τοῦ Πνεύματος δύναμιν τοῦ λόγου λαβών — "Speak out now, receiving power or abilit...
-- file: EPUB/ch030.xhtml; marker: [2dly.]; family: bracket_ordinal; context: [2dly.] Salvation, or deliverance from sin and punishment. "Look unto me," saith he, "and be ye saved."
-- file: EPUB/ch030.xhtml; marker: (3.); family: paren_decimal; context: (3.) The immediate efficient cause of all gospel holiness is the Spirit of God. This we have sufficiently proved already. And although many cavils have been raised against the manner o
-- file: EPUB/ch032.xhtml; marker: (3.); family: paren_decimal; context: (3.) That which remains farther to be demonstrated is, that the Holy Spirit is the author of this work in us, so that although it is our duty, it is his grace and strength whereby it i
+- file: EPUB/ch007.xhtml; marker: [5]; family: bracket_decimal; context: Of the name of the Holy Spirit — Various uses of the words יוּחַ [5] and πνεῦμα — יוּחַ [5] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for va...
+- file: EPUB/ch007.xhtml; marker: [5]; family: bracket_decimal; context: Of the name of the Holy Spirit — Various uses of the words יוּחַ [5] and πνεῦμα — יוּחַ [5] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for va...
+- file: EPUB/ch007.xhtml; marker: [3]; family: bracket_decimal; context: ense, sometimes it signifies a "great and strong wind," — that is, רוּחַ נְדוֹלָה וְחָזָק [3] , 1 Kings 19:11; and sometimes a cool and soft wind, or a light easy agitation of the air, such as often ariseth in the evenings of the spring ...
+- file: EPUB/ch007.xhtml; marker: [6]; family: bracket_decimal; context: appellation of him in the New Testament; and it is derived from the Old: Psalm 51, רוּחַ [6] קָדְשְׁך , "The Spirit of thy Holiness," or "Thy Holy Spirit" Isaiah 63:10, 11, רוּחַ [6] קָדְשׁוֹ , "The Spirit of his Holiness," or "His Holy ...
+- file: EPUB/ch007.xhtml; marker: [6]; family: bracket_decimal; context: [6] קָדְשְׁך , "The Spirit of thy Holiness," or "Thy Holy Spirit" Isaiah 63:10, 11, רוּחַ [6] קָדְשׁוֹ , "The Spirit of his Holiness," or "His Holy Spirit." Hence are רוּחַ [6] הַקָּדוֹשׁ and רוּחַ [6] הַקֹּדֶשׁ , "The Holy Spirit," and ...
 
 ## Repeated Windows
 
@@ -163,18 +156,25 @@
 
 ## Excess Word Samples
 
-- word: digital; pdf: 0; epub: 8
+- word: digital; pdf: 0; epub: 10
+- word: modern; pdf: 9; epub: 18
+- word: greek; pdf: 1; epub: 9
 - word: ii; pdf: 6; epub: 13
+- word: hebrew; pdf: 2; epub: 9
+- word: edition; pdf: 3; epub: 9
 - word: iii; pdf: 2; epub: 8
 - word: iv; pdf: 2; epub: 8
+- word: footnotes; pdf: 0; epub: 6
 
-## Flat ANALYSIS Chapters
+## Missing Hebrew Word Samples
 
-**1 ANALYSIS chapter(s)** appear under-structured — fewer outline markers than expected.  Extraction may have failed to parse the outline.
+- word: לְרוּחַ; pdf: 2; epub: 0
 
-## Flat Analysis Details
+## Missing Hebrew Clauses
 
-- file: EPUB/contents_2.xhtml; paragraph_count: 37; structural_line_count: 0; note: ANALYSIS chapter appears flat — fewer structural outline lines than expected. Check extraction quality.
+- page: 80; word_count: 3; sample: רוּחַ־רָעָה מֵאֵת יְהוָֹה
+- page: 109; word_count: 5; sample: שַׁדַּי תְחַיֵנִי רוּחַ־אֵל עָצָתְנִי וְנִשְׁמַת
+- page: 130; word_count: 3; sample: רֹאצ עַפְרוֹת חֵבֵל
 
 ## Limits
 
