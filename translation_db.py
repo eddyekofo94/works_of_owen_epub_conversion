@@ -540,6 +540,65 @@ BODY_TRANSLATIONS = {
         "&ldquo;We speak of theology from the divine Scriptures, whether our enemies want it or not&rdquo; "
         "(Early Greek patristic maxim, frequently quoted by Athanasius and Chrysostom)."
     ),
+    "De Spiritu Sancto, lib. 2 cap. 6": (
+        "<b>Modern Citation:</b> Ambrose of Milan, <i>On the Holy Spirit</i> (De Spiritu Sancto), "
+        "Book 2, Chapter 6 [NPNF2, 10:121; PL 16.753]."
+    ),
+    "Didym. lib. 2 de Spiritu Sancto": (
+        "<b>Modern Citation:</b> Didymus the Blind, <i>On the Holy Spirit</i>, Book 2 "
+        "(translated into Latin by Jerome) [PL 23.125]."
+    ),
+    "Basil. lib. 4. contra Eunom.": (
+        "<b>Modern Citation:</b> Basil of Caesarea, <i>Against Eunomius</i>, Book 4 [PG 29.673] "
+        "(historically attributed to Basil, now sometimes regarded as spurious)."
+    ),
+    "Concil. Sardicen. in Socrat. lib. 2 cap. 20": (
+        "<b>Modern Citation:</b> <i>Creed of the Council of Sardica</i> (A.D. 343), preserved in "
+        "Socrates Scholasticus, <i>Ecclesiastical History</i>, Book 2, Chapter 20 [NPNF2, 2:47; PG 67.236]."
+    ),
+    "Siquis propheticum dictum, ideo derivandum putet ad interpretationem Spiritus Sancti; quia habet, 'annuncians in homines Christum suum,' is ad incarnationis Dominicae mysteria dictum facilius derivabit. Nam si te movet quia Spiritum dixit, et hoc non putas derivandum ad mysterium assumptionis humanae; prosequere scripturas et invenies optime congruere de Christo, de quo bene convenit aestimari, quia firmavit tonitrua adventu suo; vim videlicet et sonum coelestium scripturarum; quarum velut quodam tonitru mentes nostrae redduntur attonitae, ut timere discamus, et reverntiam coelestibus deferamus oraculis. Denique, in Evangelio fratres Domini filii tonitru dicebantur. Et cum vox Patris facta esset dicentis ad Filim, 'Et honorificavi te, et iterum honorificabo,' Judaei dicebant, 'Tonitruum factum est illi.'": (
+        "<b>Modern Citation:</b> Ambrose of Milan, <i>On the Holy Spirit</i>, Book 2, Chapter 6, Sections 49–50 [NPNF2, 10:121; PL 16.753].<br/>"
+        "<b>Translation:</b> &ldquo;If anyone thinks that this prophetic saying is to be referred to the interpretation of the Holy Spirit "
+        "because it contains &lsquo;announcing His Christ unto men,&rsquo; he will more easily refer the saying to the mysteries of the Lord's Incarnation. "
+        "For if it troubles you that he said &lsquo;spirit,&rsquo; and you do not think this should be referred to the mystery of the assumption "
+        "of human nature, follow the Scriptures and you will find it agrees best with Christ, of whom it is well suitable to think "
+        "that He established the thunders by His coming—namely, the power and sound of the heavenly Scriptures, by whose thunder, as it were, "
+        "our minds are struck with awe, so that we learn to fear and offer reverence to the heavenly oracles. Finally, in the Gospel, "
+        "the brothers of the Lord were called &lsquo;sons of thunder.&rsquo; And when the voice of the Father came, saying to the Son, "
+        "&lsquo;I have both glorified it, and will glorify it again,&rsquo; the Jews said, &lsquo;It thundered unto Him.&rsquo;&rdquo;"
+    ),
+    "Ergo tonitrua ad sermones Domini retulit, quorum in omnem terram exivit sonus; Spiritum autem hoc loco animam, quam suscepit rationabilem et perfectam intelligimus.": (
+        "<b>Modern Citation:</b> Ambrose of Milan, <i>On the Holy Spirit</i>, Book 2, Chapter 6, Section 54 [NPNF2, 10:121; PL 16.754].<br/>"
+        "<b>Translation:</b> &ldquo;Therefore, he referred the thunders to the words of the Lord, the sound of which went out into "
+        "all the earth; and by &lsquo;spirit&rsquo; in this place, we understand the soul, rational and perfect, which He assumed.&rdquo;"
+    ),
+    "Quia ecce formans montes, et creans ventum, et annuncians homini eloquium suum,": (
+        "<b>Modern Citation:</b> Jerome, <i>Commentary on Amos</i>, on Amos 4:13 [PL 25.1033] (translating the verse).<br/>"
+        "<b>Translation:</b> &ldquo;For behold, He who forms the mountains, and creates the wind, and declares to man His utterance.&rdquo;"
+    ),
+    "Pro montibus qui Hebraicè dicuntur הָריִם soli LXX βροντήν, id est, tontitruum, verterunt. Cur autem illi Spiritum et nos dixerimus ventum, qui Hebraice רוּחַ vocatur, causa manifesta est: quodque sequitur, 'Annuncians homini eloquium suum,' LXX. transtulerunt, 'Απαγγέλλων εἰς ἀνθρώπους τὸν Χριστὸν αὐτοῦ, verbi similitudine, et ambiguitate decepti.": (
+        "<b>Modern Citation:</b> Jerome, <i>Commentary on Amos</i>, on Amos 4:13 [PL 25.1033].<br/>"
+        "<b>Translation:</b> &ldquo;For &lsquo;mountains,&rsquo; which in Hebrew are called <i>harim</i>, only the Septuagint translated as &lsquo;thunder&rsquo; "
+        "(<i>brontēn</i>). But why they translated it as &lsquo;Spirit&rsquo; and we as &lsquo;wind,&rsquo; which in Hebrew is called <i>ruach</i>, "
+        "the reason is manifest; and what follows, &lsquo;declares to man His utterance,&rsquo; the Septuagint translated as &lsquo;announcing "
+        "His Christ unto men,&rsquo; being deceived by the similarity and ambiguity of the word.&rdquo;"
+    ),
+    "juxta Aquilam, ὁμιλίαν αὐτοῦ Symmachum, τὸ φώημα αὐτοῦ juxta Theodotionem, τὸν λόγον αὐτοῦ juxta quintam editionem, τὴν ἀδολεσχίαν αὐτοῦ.": (
+        "<b>Modern Citation:</b> Jerome, <i>Commentary on Amos</i>, on Amos 4:13 [PL 25.1033] (citing ancient Greek translations).<br/>"
+        "<b>Translation:</b> &ldquo;according to Aquila, &lsquo;his speech/conversation&rsquo; (<i>homilian autou</i>); according to Symmachus, "
+        "&lsquo;his utterance/voice&rsquo; (<i>to phōnēma autou</i>); according to Theodotion, &lsquo;his word&rsquo; (<i>ton logon autou</i>); "
+        "according to the Fifth Edition, &lsquo;his discourse/meditation&rsquo; (<i>tēn adoleschian autou</i>).&rdquo;"
+    ),
+    "Qui confirmat montes, ad cujus vocem coelorum cardines et terrae fundamenta quatiuntur. Ipse qui creat spiritum, quem in hoc loco non Spiritum Sanctum, ut haeretici suspicantur, sed venture intelligimus, sive spiritum hominis, annuncians homini eloquium ejus, qui cogitationum secreta cognoscit,": (
+        "<b>Modern Citation:</b> Jerome, <i>Commentary on Amos</i>, on Amos 4:13 [PL 25.1034].<br/>"
+        "<b>Translation:</b> &ldquo;Who establishes the mountains, at whose voice the hinges of the heavens and the foundations of the earth are shaken. "
+        "He who creates the wind [or spirit], which in this place we understand not as the Holy Spirit, as heretics suspect, but as the wind, "
+        "or the spirit of man, declaring to man his utterance, who knows the secrets of thoughts.&rdquo;"
+    ),
+    "Hieron. in loc.": (
+        "<b>Modern Citation:</b> Jerome, <i>Commentary on Amos</i>, on Amos 4:13 [PL 25.1033–1034]."
+    ),
+    
     
     "Περὶ δὲ τῶν πνευματικῶν": "&ldquo;Now concerning spiritual gifts&rdquo; (1 Corinthians 12:1).",
     "Ζηλοῦτε δὲ τὰ χαρίσματα τὰ κρείττνα": "&ldquo;But earnestly desire the greater gifts&rdquo; (1 Corinthians 12:31).",
