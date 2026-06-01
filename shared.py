@@ -2069,6 +2069,53 @@ a, .noteref, a.footnote-ref, a.fn-link {
     padding: 0.1em 0.2em; /* Easy-tap */
 }
 
+/* Modern Editorial Translation Link (Elegant Amber/Gold) */
+a.noteref-trans, .noteref-trans {
+    color: #b8860b !important;
+    text-decoration: none;
+    vertical-align: super;
+    font-size: 0.75em;
+    padding: 0.1em 0.2em;
+    font-weight: bold;
+}
+.noteref-trans sup {
+    font-size: 0.95em;
+    line-height: 1;
+}
+
+/* Modern Translation Footnote Sub-Block */
+.footnote-modern-translation {
+    margin-top: 0.4em !important;
+    margin-bottom: 0.2em !important;
+    font-size: 0.95em !important;
+    color: #555 !important;
+    border-left: 3px solid #d4af37 !important;
+    padding-left: 8px !important;
+    font-style: normal !important;
+}
+
+/* Modern Editorial Translations Page Header */
+.translation-notes-header {
+    margin-top: 3em !important;
+    border-top: 2px double #ccc !important;
+    padding-top: 1.5em !important;
+    margin-bottom: 1.5em !important;
+}
+
+.endnotes-section-title {
+    font-family: 'Proxima Nova', sans-serif !important;
+    font-size: 1.4em !important;
+    color: #111 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Original Phrase Label in Modern Translations */
+.original-phrase {
+    font-weight: bold !important;
+}
+
 /* Continuous Blockquotes */
 blockquote p {
     margin-top: 0 !important;

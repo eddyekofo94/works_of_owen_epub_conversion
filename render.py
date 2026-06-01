@@ -4465,19 +4465,50 @@ def _inject_apple_books_options(epub_path):
 # MAIN PIPELINE
 # ================================================================
 
-def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None):
+def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None):
+    from translation_db import FOOTNOTE_TRANSLATIONS
     fn_map = {f.fnum: f for f in footnotes.values()}
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
     for fnum in sorted(fn_map.keys()):
         fn = fn_map[fnum]
         fn_text = tag_unicode_ranges(_html_escape(fn.text))
+        
+        # Look up translation and modernized patristic citation
+        trans_key = f"v{vol_num}_fn{fnum}" if vol_num else f"v3_fn{fnum}"
+        trans_info = FOOTNOTE_TRANSLATIONS.get(trans_key)
+        
+        extra_html = ""
+        if trans_info:
+            extra_html = f'<p class="footnote-modern-translation">{trans_info}</p>'
+            
         parts.append(
             f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="fn{fnum}">'
             f'<p class="footnote">'
             f'<span class="fn-link">{fnum}</span> '
             f'{fn_text}'
-            f'</p></aside>'
+            f'</p>'
+            f'{extra_html}'
+            f'</aside>'
         )
+        
+    if trans_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Modern Editorial Translations</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Translations of Latin, Greek, and Hebrew phrases appearing in the main text of this volume.</p>'
+            f'</div>'
+        )
+        for note in trans_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">[{note["num"]}]</span> '
+                f'<span class="original-phrase">{tag_unicode_ranges(_html_escape(note["phrase"]))}</span>: '
+                f'{note["translation"]}'
+                f'</p>'
+                f'</aside>'
+            )
+            
     parts.append('</section>')
     html = ''.join(parts)
     return _make_xhtml('Footnotes', html)
@@ -5024,6 +5055,15 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
   </div>
 
   <div class="colophon-section">
+    <h2 class="colophon-section-title">Modern Translations &amp; Patristic Citations</h2>
+    <p>This digital edition features premium scholarly enhancements for modern readers. Because John Owen frequently utilized Greek, Hebrew, and Latin without translation, this volume implements a double-track footnote architecture:</p>
+    <ul>
+      <li><strong>Bracketed Footnotes <code>[1], [2], ...</code></strong>: These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the original authorial/historical footnotes and reset starting at <code>[1]</code> for each chapter.</li>
+      <li><strong>Enhanced Original Footnotes <code>1, 2, ...</code></strong>: Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Latin quotes or abbreviated patristic references, a dedicated modernization block has been appended directly beneath them showing full modern translations and standard academic source citations.</li>
+    </ul>
+  </div>
+
+  <div class="colophon-section">
     <h2 class="colophon-section-title">Conversion Technology</h2>
     <p>{conversion_info}</p>
   </div>
@@ -5348,6 +5388,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     # ── Chapters ─────────────────────────────────────────────────
     toc_entries = []
     epub_chapters = []
+    all_translation_notes = []
     guide_landmarks = [] # was [('Title Page', 'title.xhtml')]
 
     conv_mode = 'FRONT_MATTER'
@@ -5456,8 +5497,40 @@ def render_volume(vol_num: int, overrides: dict = None,
         if not body_html.strip():
             continue
 
-        body = f'<section>{body_html}</section>'
+        # Dynamic translation notes scanning and substitution
+        from translation_db import BODY_TRANSLATIONS
+        sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+        local_notes = []
+        placeholders = {}
+        trans_counter = 0
         cid = ch_dict['cid']
+
+        for idx, (phrase, trans) in enumerate(sorted_phrases):
+            # Match the phrase, optionally wrapped in language spans
+            pattern = re.compile(
+                rf'(<span\s+lang="(?:el|he)"[^>]*>\s*{re.escape(phrase)}\s*</span>|{re.escape(phrase)})'
+            )
+            if pattern.search(body_html):
+                trans_counter += 1
+                placeholder = f"___TRANSPHRASE_PLACEHOLDER_{idx}___"
+                matched_str = pattern.search(body_html).group(0)
+                fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">[{trans_counter}]</a></sup>'
+                placeholders[placeholder] = f"{matched_str}{fn_link}"
+                local_notes.append({
+                    'id': f"fntrans_{cid}_{trans_counter}",
+                    'num': trans_counter,
+                    'phrase': phrase,
+                    'translation': trans
+                })
+                body_html = pattern.sub(placeholder, body_html)
+
+        for placeholder, replacement in placeholders.items():
+            body_html = body_html.replace(placeholder, replacement)
+
+        if local_notes:
+            all_translation_notes.extend(local_notes)
+
+        body = f'<section>{body_html}</section>'
         ch_item = epub.EpubHtml(
             title=ch_dict['title'], file_name=f'{cid}.xhtml', lang='en',
         )
@@ -5472,8 +5545,8 @@ def render_volume(vol_num: int, overrides: dict = None,
 
     # ── Endnotes ─────────────────────────────────────────────────
     endnotes_item = None
-    if footnote_map:
-        endnotes_html = build_endnotes_chapter(footnote_map, style_item)
+    if footnote_map or all_translation_notes:
+        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes)
         endnotes_item = epub.EpubHtml(
             title='Footnotes', file_name='endnotes.xhtml', lang='en',
         )
