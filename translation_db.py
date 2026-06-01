@@ -374,6 +374,61 @@ FOOTNOTE_TRANSLATIONS = {
     "v3_fn136": (
         "<b>Modern Citation:</b> Augustine of Hippo, <i>On the Good of Widowhood</i> (De Bono Viduitatis), Chapter 6.9 [NPNF1, 3:344; PL 40.435].<br/>"
         "<b>Translation:</b> &ldquo;It is impossible that a body should not be holy when it is used by a sanctified Spirit.&rdquo;"
+    ),
+    "v3_fn67": (
+        "<b>Modern Citation:</b> Cyprian of Carthage (Arnold of Bonneval), <i>On the Baptism of Christ</i> (De Baptismo Christi) [PL 189.1654].<br/>"
+        "<b>Translation:</b> &ldquo;I give thanks to You, most merciful God, because what I sought in the morning, You Yourself have first given to me.&rdquo;"
+    ),
+    "v3_fn69": (
+        "<b>Modern Citation:</b> Athanasius of Alexandria, <i>On the Creed of Nicaea</i> [PG 28.1601]. Didymus the Blind, <i>On the Holy Spirit</i>, Book 2 [PL 23.125].<br/>"
+        "<b>Translation:</b> (Athanasius) &ldquo;The greatest testimony of the divinity of the Holy Spirit in all creation is the body of the Lord, which is believed to be from the Holy Spirit according to the Evangelist Matthew...&rdquo; / (Didymus) &ldquo;The creative power of the Most High, the Holy Spirit coming upon the Virgin Mary, fashioned Christ's body, which temple He used and was born without the seed of man.&rdquo;"
+    ),
+    "v3_fn78": (
+        "<b>Modern Citation:</b> Augustine of Hippo, <i>On Original Sin</i>, Chapter 18.20 [NPNF1, 5:244; PL 44.395]; <i>On the Grace of Christ</i>, Book 1, Chapter 3.3 [NPNF1, 5:218; PL 44.362].<br/>"
+        "<b>Translation:</b> &ldquo;Observe how he replies, and see how the hiding places of ambiguity prepare refugees for falsehood... He had almost persuaded me to confess that this was the very grace in question...&rdquo;"
+    ),
+    "v3_fn79": (
+        "<b>Modern Citation:</b> Augustine of Hippo, <i>On Original Sin</i>, Chapter 8.9 [NPNF1, 5:240; PL 44.389].<br/>"
+        "<b>Translation:</b> &ldquo;He deceived the Palestinian judgment, and therefore seemed to be cleared there; but the Roman Church... he could not deceive in any way, although he tried both...&rdquo;"
+    ),
+    "v3_fn81": (
+        "<b>Modern Citation:</b> John Davenant, <i>A Treatise on Justification</i> (De Justitia Habituali), Chapter 3 [1631]. Origen of Alexandria, <i>Commentary on the Epistle to the Romans</i>, Book 4, Section 1 [PG 14.960].<br/>"
+        "<b>Translation:</b> (Davenant) &ldquo;By inherent righteousness we understand a supernatural gift of sanctifying grace, opposed to original sin, and in individual faculties of the soul repairing and renewing that image of God which by original sin was defiled and scattered...&rdquo; / (Origen) &ldquo;Faith, like a root that has received rain, clings to the soil of the soul; so that when it begins to be cultivated through the law of God, branches rise in it which bear the fruit of works...&rdquo;"
+    ),
+    "v3_fn82": (
+        "<b>Modern Citation:</b> Didymus the Blind, <i>On the Holy Spirit</i>, Book 1, Section 10 [PL 23.111].<br/>"
+        "<b>Translation:</b> &ldquo;He who is made a partaker of the Holy Spirit, through His communion becomes spiritually co-equal and holy.&rdquo;"
+    ),
+    "v3_fn83": (
+        "<b>Modern Citation:</b> Fulgentius of Ruspe, <i>On the Incarnation and Grace of Christ</i>, Chapters 20 and 29 [PL 65.584, 590].<br/>"
+        "<b>Translation:</b> &ldquo;Just as in carnal birth the shaping of the divine work precedes every will of the man being born, so in spiritual birth by which we begin to lay aside the old man... The pattern has preceded in the flesh of Christ, which we spiritually recognize in our faith; for Christ the Son of God, according to the flesh, was conceived and born of the Holy Spirit...&rdquo;"
+    ),
+    "v3_fn84": (
+        "<b>Modern Citation:</b> Augustine of Hippo, <i>On the Grace of Christ</i>, Book 1, Chapter 7.8 [NPNF1, 5:220; PL 44.364] (quoting Pelagius).<br/>"
+        "<b>Translation:</b> &ldquo;God helps us (the words of Pelagius), through His teaching and revelation, while He opens the eyes of our heart, while He points out the future to us lest we should be occupied with the present...&rdquo;"
+    ),
+    "v3_fn86": (
+        "<b>Modern Citation:</b> <i>Acts of the Synod of Dort (1618&ndash;1619)</i>, Suffrages of the British Theologians on the Fourth Article, Theses 1 &amp; 2.<br/>"
+        "<b>Translation:</b> &ldquo;There are certain external works, ordinarily required of men, before they are brought to the state of regeneration or conversion, which are sometimes freely done and sometimes freely omitted; such as going to church, hearing the preaching of the Word... There are certain internal effects previous to conversion or regeneration, which are excited by the power of the Word and the Spirit in the hearts of those not yet regenerated...&rdquo;"
+    ),
+    "v3_fn87": (
+        "<b>Modern Citation:</b> Pseudo-Augustine, <i>On Contrition of Heart</i> (De Contritione Cordis), Chapter 1 [PL 40.943].<br/>"
+        "<b>Translation:</b> &ldquo;Alas, wretched and too wretched is he whom his own conscience tortures, which he cannot flee; too wretched whom his own condemnation awaits, unless God snatches him away...&rdquo;"
+    ),
+    "v3_fn88": (
+        "<b>Modern Citation:</b> Augustine of Hippo, <i>To Simplician, on Diverse Questions</i>, Book 2, Question 2.3 [PL 40.138].<br/>"
+        "<b>Translation:</b> &ldquo;Do we not observe many of our faithful walking the way of God, in no part compared in intellect&mdash;I will not say to certain heretics, but even to lesser men?...&rdquo;"
+    ),
+    "v3_fn90": (
+        "<b>Modern Citation:</b> Johann Ferus (Wild), <i>Commentary on the Gospel of John</i>, on Chapter 1 [1552]. Prosper of Aquitaine, <i>On the Call of All Nations</i>, Book 1, Chapter 7 [PL 51.652].<br/>"
+        "<b>Translation:</b> (Ferus) &ldquo;I say that the old birth, and indeed all powers of nature which are transfused into offspring by natural propagation, are condemned in Scripture...&rdquo; / (Prosper) &ldquo;With faith lost, hope abandoned, understanding blinded, and will captive, man finds no way in himself by which he may be restored.&rdquo;"
+    ),
+    "v3_fn96": (
+        "<b>Translation:</b> &ldquo;To the cold ones,&rdquo; from the Paris edition, 1733. &mdash; ED."
+    ),
+    "v3_fn105": (
+        "<b>Modern Citation:</b> Pseudo-Athanasius, <i>On Sowing</i> (De Semente) [PG 28.160].<br/>"
+        "<b>Translation:</b> &ldquo;What is the use if the word is well-composed but the behavior is ill-composed? For if the Church were a school of sophistry, it would be the time for eloquence; but since the combat of behaviors and bearing fruit is what lies before us, seek not details but the walk of life.&rdquo;"
     )
 }
 
