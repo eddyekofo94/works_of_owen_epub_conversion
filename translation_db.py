@@ -561,5 +561,16 @@ BODY_TRANSLATIONS = {
     "is admired by Leo": (
         "<b>Editorial Explanation:</b> Archaic usage. &ldquo;Admired&rdquo; here means held in marveling awe or "
         "contemplated with sacred wonder."
+    ),
+    "subordination": (
+        "<b>Editorial Explanation &amp; Scholastic Context:</b> In 17th-century Reformed scholastic theology, "
+        "the term &ldquo;subordination&rdquo; (Latin: <i>subordinatio</i>) possesses a highly precise, technical "
+        "meaning that must not be confused with modern notions of ontological inferiority or inequality (which is the "
+        "ancient heresy of Subordinationism). Instead, the Puritans distinguished between: (1) <i>Subordination of "
+        "Order (Subordinatio Ordinis)</i>, which denotes the eternal personal relations of origin within the co-equal Trinity "
+        "(the Son eternally begotten of the Father, and the Spirit eternally proceeding from both); and (2) <i>Economical "
+        "Subordination (Subordinatio Officii)</i>, which refers to the voluntary, covenantal submission of the Son to assume "
+        "human nature and act as the Mediator under the Father's administration in the economy of salvation, and the Spirit's "
+        "mission to apply that redemption. In both aspects, there is perfect equality of divine essence, power, and glory."
     )
 }
