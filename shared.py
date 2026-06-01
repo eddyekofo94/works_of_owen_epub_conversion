@@ -2632,6 +2632,37 @@ div.owen-branch blockquote {
     background-color: rgba(42, 85, 160, 0.03);
 }
 
+/* Table of Abbreviations & Citations Guide */
+.abbreviations-guide-page {
+    page-break-after: always;
+}
+.abbreviations-table {
+    width: 90% !important;
+    margin: 1.5em auto !important;
+    border-collapse: collapse !important;
+    font-size: 0.95em !important;
+}
+.abbr-row {
+    border-bottom: 1px solid #eee !important;
+}
+.abbr-row:last-child {
+    border-bottom: none !important;
+}
+.abbr-code {
+    font-weight: bold !important;
+    color: #d4af37 !important;
+    padding: 0.6em 1em 0.6em 0.5em !important;
+    white-space: nowrap !important;
+    vertical-align: top !important;
+    width: 25% !important;
+}
+.abbr-desc {
+    padding: 0.6em 0.5em 0.6em 1em !important;
+    color: #444 !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+}
+
 /* Running prose body — for editorial prefaces, prefatory notes,
    analyses. Identical to normal chapter body paragraphs so long
    prose reads naturally. */

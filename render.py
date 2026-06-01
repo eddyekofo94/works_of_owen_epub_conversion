@@ -5108,6 +5108,61 @@ def generate_structural_guide_html(vol_num: int) -> str:
 '''
 
 
+def generate_abbreviations_guide_html(vol_num: int) -> str:
+    """Generate a premium Table of Abbreviations & Citations Guide page for the front matter."""
+    return f'''<section class="front-matter-section abbreviations-guide-page">
+<h2 class="front-matter-heading">Abbreviations &amp; Scholarly Citations Guide</h2>
+
+<p class="front-matter-prose first">To preserve the flow of John Owen’s theological treatises while providing modern readers with standard academic context, this digital edition employs standardized abbreviation codes in all editorial footnotes. Below is a comprehensive guide to these references, matching the standards found in modern Reformed theological scholarship (such as the <em>Institutes of Elenctic Theology</em> and <em>Reformed Systematic Theology</em>):</p>
+
+<table class="abbreviations-table">
+  <tr class="abbr-row">
+    <td class="abbr-code">NPNF1</td>
+    <td class="abbr-desc"><strong>Nicene and Post-Nicene Fathers, First Series</strong> (Philip Schaff, ed., 14 vols.). Standard English translation of Augustine and John Chrysostom.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">NPNF2</td>
+    <td class="abbr-desc"><strong>Nicene and Post-Nicene Fathers, Second Series</strong> (Philip Schaff and Henry Wace, eds., 14 vols.). Standard English translation of Ambrose, Basil, Gregory of Nyssa, Gregory the Great, and Jerome.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">ANF</td>
+    <td class="abbr-desc"><strong>Ante-Nicene Fathers</strong> (Alexander Roberts and James Donaldson, eds., 10 vols.). English translation of early patristics prior to Nicea (e.g., Justin Martyr, Irenaeus, Tertullian, Origen, Cyprian).</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">PL</td>
+    <td class="abbr-desc"><strong>Patrologia Latina</strong> (Jacques-Paul Migne, ed., 221 vols.). The authoritative compilation of Latin patristic and medieval writers, including Augustine, Ambrose, Prosper of Aquitaine, Fulgentius, and Bernard of Clairvaux.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">PG</td>
+    <td class="abbr-desc"><strong>Patrologia Graeca</strong> (Jacques-Paul Migne, ed., 161 vols.). The authoritative compilation of Greek patristic writers, including John Chrysostom, Basil of Caesarea, Athanasius of Alexandria, and Gregory of Nyssa.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">ST</td>
+    <td class="abbr-desc"><strong>Summa Theologiae</strong> (Thomas Aquinas). Reference coordinates denote Part (e.g., I, I-II, II-II, III), Question (Q.), Article (Art.), and Reply (ad).</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">LCC</td>
+    <td class="abbr-desc"><strong>Library of Christian Classics</strong> (Westminster Press). Volumes 20–21 comprise the standard English edition of John Calvin’s <em>Institutes of the Christian Religion</em>.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">Battles</td>
+    <td class="abbr-desc">Ford Lewis Battles, translator of the definitive 1960 English edition of John Calvin’s <em>Institutes of the Christian Religion</em>.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">LXX</td>
+    <td class="abbr-desc"><strong>Septuagint</strong>. The ancient Greek translation of the Hebrew Scriptures (Old Testament), frequently cited by early Christian authors.</td>
+  </tr>
+  <tr class="abbr-row">
+    <td class="abbr-code">ED</td>
+    <td class="abbr-desc"><strong>Editor’s Note</strong>. Indicates annotations added by William H. Goold, the definitive 19th-century editor of Owen's Works, or the modern editorial team.</td>
+  </tr>
+</table>
+
+<p class="front-matter-prose" style="margin-top: 1.5em;"><strong>Note on Bible Translations:</strong> Scripture citations followed by the designation <em>“margin”</em> denote alternative readings or explanatory notes found in the margins of the 1611 Authorized Version (King James Bible), which Owen and his contemporaries frequently consulted.</p>
+</section>
+'''
+
+
 # ================================================================
 # STAGE 2 ENTRY POINT — render_volume()
 # ================================================================
@@ -5297,6 +5352,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     _last_fm_title = None
     copyright_added = False
     added_structural_guide = False
+    added_abbreviations_guide = False
     for fm in intermediate.get('front_matter_items', []):
         if fm['title'] == _last_fm_title:
             continue
@@ -5357,6 +5413,19 @@ def render_volume(vol_num: int, overrides: dict = None,
             front_matter_epub_items.append(note_item)
             added_structural_guide = True
 
+        if fm.get('type') == 'toc' and not added_abbreviations_guide:
+            abbr_item = epub.EpubHtml(
+                title='Abbreviations & Scholarly Citations',
+                file_name='abbreviations_guide.xhtml',
+                lang='en',
+            )
+            abbr_html = generate_abbreviations_guide_html(vol_num)
+            abbr_item.set_content(_make_xhtml('Abbreviations & Scholarly Citations', abbr_html).encode('utf-8'))
+            abbr_item.add_item(style_item)
+            book.add_item(abbr_item)
+            front_matter_epub_items.append(abbr_item)
+            added_abbreviations_guide = True
+
     if not added_structural_guide:
         note_item = epub.EpubHtml(
             title='Note on Structural Formatting',
@@ -5369,6 +5438,19 @@ def render_volume(vol_num: int, overrides: dict = None,
         book.add_item(note_item)
         front_matter_epub_items.append(note_item)
         added_structural_guide = True
+
+    if not added_abbreviations_guide:
+        abbr_item = epub.EpubHtml(
+            title='Abbreviations & Scholarly Citations',
+            file_name='abbreviations_guide.xhtml',
+            lang='en',
+        )
+        abbr_html = generate_abbreviations_guide_html(vol_num)
+        abbr_item.set_content(_make_xhtml('Abbreviations & Scholarly Citations', abbr_html).encode('utf-8'))
+        abbr_item.add_item(style_item)
+        book.add_item(abbr_item)
+        front_matter_epub_items.append(abbr_item)
+        added_abbreviations_guide = True
 
     if not copyright_added:
         cop_title = 'Publication Metadata'
