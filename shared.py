@@ -1307,6 +1307,28 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     text = re.sub(r'(?m)^0 (?=[A-Za-z])', 'O ', text)
     text = re.sub(r'(?<=[.!?] )0 (?=[A-Za-z])', 'O ', text)
 
+    # Repair Volume 1 Chapter 15 scripture reference split OCR error ("verse, 7. He has," -> "verse 7. He has,")
+    text = re.sub(
+        r'\bverse\s*,\s*7\.\s+He\s+has\s*,',
+        r'verse 7. He has,',
+        text,
+        flags=re.I
+    )
+
+    # Clean stray double quotes preceding a scripture reference (e.g. '," " John' -> '," John')
+    text = re.sub(
+        rf'([”"“]\s*,?\s*)[”"“]\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)',
+        r'\1',
+        text,
+        flags=re.I
+    )
+
+    # Repair Volume 1 Meditations Chapter 1 missing list marker '4.' OCR error
+    text = text.replace(
+        "\n\nConsider therefore, his infinite condescension",
+        "\n\n4. Consider therefore, his infinite condescension"
+    )
+
     # Issue 44: A trailing lone hyphen at end of a line or sentence fragment
     # is an OCR artifact for an em-dash that was at line's end in the source.
     # "For, -" → "For, —"  (comma + space + hyphen → comma + em-dash)
@@ -1497,6 +1519,17 @@ def _scripture_ref_tokens(text):
 
 def _split_inline_structural_markers(para, allow_bare_a=False):
     """Promote inline Owen list markers to paragraph starts."""
+    # 3-Level Indentation Cap: If the paragraph itself starts with a Level 3 marker (an ordinal),
+    # any deeper sub-points represent Level 4+ and should remain flat/inline inside this paragraph.
+    clean_start = re.sub(r'<[^>]+>', '', para).strip().upper()
+    is_level_3_start = (
+        re.match(r'^\(?(?:\d+(?:ST|ND|RD|TH|DLY|LY))\b', clean_start)
+        or re.match(r'^\[(?:FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH|LAST|LY)\]', clean_start)
+        or re.match(r'^\d+(?:ST|ND|RD|TH|DLY|LY)\b', clean_start)
+    )
+    if is_level_3_start:
+        return [para]
+
     pieces = []
     pos = 0
     for match in INLINE_STRUCTURAL_MARKER_RE.finditer(para):
@@ -1541,6 +1574,22 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
             continue
 
         before_tail = re.sub(r'[*_]+$', '', before).rstrip()
+        # Flat lists (ordinals) preceded by a comma, semicolon, or connector word must remain inline.
+        is_ordinal_marker = bool(re.search(
+            r'(?i)\b(?:1st|2nd(?:ly)?|2dly|3rd(?:ly)?|3dly|4th(?:ly)?|first|secondly|thirdly|fourthly|lastly|firstly)\b',
+            marker
+        ))
+        if is_ordinal_marker:
+            is_preceded_by_connector = bool(re.search(
+                r'(?i)(?:'
+                r'[,;]\s*|'
+                r'\b(?:and|or|but|as|to|into|unto|of|in|by|with|that|which|is|are|were|was|be|been)\b\s*'
+                r')[”"\'’]*\s*$',
+                before_tail
+            ))
+            if is_preceded_by_connector:
+                continue
+
         before_ends_structural = bool(re.search(r'[,;:—-]\s*$', before_tail))
         before_ends_terminal = bool(re.search(r"""[.!?][""')\]]?\s*$""", before_tail))
         before_ends_lead_word = bool(re.search(
@@ -2389,7 +2438,7 @@ p.chapter-summary {
 
 .roman-subheading {
     font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
-    text-align: left;
+    text-align: center;
     font-weight: normal; /* Preserves Goold look (bold numerals with normal-weight text) */
     text-indent: 0;
     margin: 1.4em 0 0.55em;
@@ -2687,6 +2736,10 @@ p.scholastic-anchor {
     text-align: left;
     text-indent: 0;
     margin-top: 1.5em;
+}
+p.scholastic-anchor-parent,
+p.scholastic-anchor-child {
+    /* Semantic subclasses for mobile-first visual Cap */
 }
 p.scholastic-anchor b,
 b.scholastic-label {
