@@ -230,7 +230,7 @@
     {
       "label": "Missing Hebrew clauses",
       "observed": 3,
-      "budget": 3,
+      "budget": 4,
       "status": "ok",
       "samples": [
         {

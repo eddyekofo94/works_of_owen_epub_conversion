@@ -22,7 +22,7 @@
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 0 | 0 | OK |
 | Missing Greek clauses | 0 | 0 | OK |
-| Missing Hebrew clauses | 3 | 3 | OK |
+| Missing Hebrew clauses | 3 | 4 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
 | Missing configured fonts | 0 | 0 | OK |

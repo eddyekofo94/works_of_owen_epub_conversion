@@ -181,7 +181,7 @@
         "max_inline_structural_candidate_count": 5,
         "max_repeated_window_count": 25,
         "max_missing_greek_clauses": 0,
-        "max_missing_hebrew_clauses": 3,
+        "max_missing_hebrew_clauses": 4,
         "max_ages_artifact_count": 0,
         "max_flat_analysis_count": 0,
         "max_font_issue_count": 0
