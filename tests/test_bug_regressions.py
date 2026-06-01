@@ -512,8 +512,8 @@ def test_summary_continuation_is_rendered_as_one_summary_paragraph():
     assert "(2.) Exinanition, 2 Corinthians 8:9;" in summary
     assert "2. Believers&#x27; estimation of Christ: —" in summary
     assert "</p> <p" not in summary
-    assert '<p class="list-item"><b>(1.)</b> His incarnation' not in html
-    assert '<h4 class="roman-subheading"><b>II.</b> Christ values his saints' in html
+    assert '<h4 class="roman-subheading"><b>II.</b></h4>' in html
+    assert 'Christ values his saints' in html
 
 
 def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
@@ -536,8 +536,8 @@ def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
     assert html.count('class="list-item ') == 2, (
         "Expected (1.)+(2.) to merge and [1].+[2.] to merge → 2 paragraphs total"
     )
-    assert '<p class="list-item list-level-1"><b>(1.)</b>' in html
-    assert '<p class="list-item list-level-2"><b>[1].</b>' in html
+    assert '<p class="list-item list-level-2"><b>(1.)</b>' in html
+    assert '<p class="list-item list-level-3"><b>[1].</b>' in html
     assert '(2.)<b> For their consolation' not in html
 
 
@@ -621,7 +621,7 @@ def test_scholastic_quoted_objection_opener_moves_inside_blockquote():
         '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">&quot;Alas! how shall I hold '
         'communion with the Father in love? I know not at all whether he loves '
         'me or no; and shall I venture to cast myself upon it? How if I should '
-        'not be accepted?</p></blockquote>'
+        'not be accepted?&quot;</p></blockquote>'
     ) in html
     assert 'But some may say, &quot;Alas!' not in html
 
@@ -943,7 +943,7 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     )
     # Christologia title page is now hardcoded in v1/convert.py — correct classes and mixed case
     assert 'class="treatise-title-page"' in christologia_title
-    assert '<p class="greek-title"><span lang="el" xml:lang="el">Χριστολογία</span></p>' in christologia_title
+    assert '<p class="greek-title"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span></p>' in christologia_title
     assert '<p class="title-line-major">Christologia</p>' in christologia_title
     assert '<p class="title-connector">Or,</p>' in christologia_title
     assert 'Declaration of the Glorious Mystery' in christologia_title
@@ -963,7 +963,7 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     contents = next(html for name, html in files.items() if name.endswith("contents_2.xhtml"))
     assert '<section class="contents-page" epub:type="toc">' in contents
     assert '<h1 class="contents-volume-title">CONTENTS OF VOLUME 1.</h1>' in contents
-    assert '<p class="contents-frontmatter-line">ORIGINAL PREFACE</p>' in contents
+    assert '<a href="ch042.xhtml">Original Preface</a>' in contents
     assert 'class="ContentsItem"' not in contents
 
     chapter_1 = next(html for html in files.values() if "<title>Chapter 1 - Peter's Confession</title>" in html)
@@ -1095,7 +1095,7 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
     assert not any("Baronius" in block for block in quote_blocks)
     assert '<p class="list-item list-level-1"><b>1.</b> The faith of Peter in this confession' in peters_confession
     assert not any("1. The faith of Peter" in block for block in quote_blocks)
-    assert re.search(r'<blockquote[^>]*><p[^>]*>"Thou, Lord,.*?a vesture shalt thou fold them up.*?not fail\.</p></blockquote>', power_chapter, re.S)
+    assert re.search(r'<blockquote[^>]*><p[^>]*>"Thou, Lord,.*?a vesture shalt thou fold them up.*?not fail\."</p></blockquote>', power_chapter, re.S)
     assert re.search(r'<blockquote[^>]*><p[^>]*>"Unto him that loved us,.*?Amen\." Revelation 1:5, 6\.</p></blockquote>', honor_chapter, re.S)
     assert '<p>This, therefore, is another season that calls for this duty.</p>' in honor_chapter
     assert re.search(r'<blockquote[^>]*><p[^>]*>"If so be that we suffer with him,.*?Romans 8:17, 18\.</p></blockquote>', conformity_chapter, re.S)
@@ -1128,7 +1128,7 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
     assert "[[/MARKER]]" not in roman_html
     assert "&lt;b&gt;" not in roman_html
     assert "&lt;/b&gt;" not in roman_html
-    assert re.search(r"\.roman-subheading\s*\{[^}]*text-align:\s*left;", css, re.S)
+    assert re.search(r"\.roman-subheading\s*\{[^}]*text-align:\s*center;", css, re.S)
     assert re.search(r"\.roman-subheading\s*\{[^}]*font-weight:\s*normal;", css, re.S)
     assert re.search(r"\.roman-list-item\s*\{[^}]*text-align:\s*left;", css, re.S)
     assert re.search(r"\.roman-list-item b\s*\{[^}]*display:\s*inline;", css, re.S)
@@ -1140,13 +1140,15 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
     assert '<p class="syllabus-anchor">' in chapter_9
     assert 'The respect which we have in all acts of religion unto the person of Christ may be reduced unto these four heads: <b>I.</b> Honor. <b>II.</b> Obedience. <b>III.</b> Conformity. <b>IV.</b> The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory. And hereunto the whole of our religion, as it is Christian or evangelical, may be reduced.</p>' in chapter_9
     assert '<h4 class="roman-subheading"><b>I.</b> Honor.</h4>' not in chapter_9
-    assert '<b>I.</b> The person of Christ is the object of divine honor and worship.' in chapter_9
+    assert '<h4 class="roman-subheading"><b>I.</b></h4>' in chapter_9
+    assert 'The person of Christ is the object of divine honor and worship.' in chapter_9
 
     chapter_7 = next(
         html for html in files.values()
         if "<title>Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ</title>" in html
     )
-    assert '<b>I.</b> The first of these is, that he should have a nature provided for him,' in chapter_7
+    assert '<h4 class="roman-subheading"><b>I.</b></h4>' in chapter_7
+    assert 'The first of these is, that he should have a nature provided for him,' in chapter_7
 
 
 def test_list_item_announcer_syllabus_is_flattened():
@@ -1158,7 +1160,7 @@ def test_list_item_announcer_syllabus_is_flattened():
         "(1.) No truth whatever brings any spiritual light unto the mind, but by virtue thereof."
     )
     html, _, _ = markdown_to_html(md)
-    assert '<p class="list-item syllabus-anchor"><b>1.</b> There are two things wherein the glory of truth does consist. <b>(1.)</b> Its light. <b>(2.)</b> Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ.</p>' in html
+    assert '<p class="list-item list-level-1 syllabus-anchor"><b>1.</b> There are two things wherein the glory of truth does consist. <b>(1.)</b> Its light. <b>(2.)</b> Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ.</p>' in html
     assert '<b>(1.)</b> No truth whatever' in html
 
 
@@ -2520,4 +2522,51 @@ def test_closed_sentence_gate_prevents_false_positives():
     assert 'class="list-item"' not in result_exact, "Exact count match list after period should flatten"
     assert result_exact.count("<p") == 1
     assert "proposes two things. <b>(1.)</b> The person of Christ. <b>(2.)</b> The work of Christ.</p>" in result_exact
+
+
+def test_apply_premium_salutations():
+    """Verify that prefatory salutations like 'Christian Reader,' are properly converted and styled, while standard prose references are ignored."""
+    from render import _apply_premium_salutations
+
+    # 1. Volume 1 Preface summary-tagged greeting
+    html1 = '<p class="chapter-summary">Christian Reader,</p>'
+    res1 = _apply_premium_salutations(html1)
+    assert res1 == '<p class="prefatory-salutation">Christian Reader,</p>'
+
+    # 2. Wrapped in bold/italic tags
+    html2 = '<p class="front-matter-prose"><i><b>To the Christian Reader,</b></i></p>'
+    res2 = _apply_premium_salutations(html2)
+    assert res2 == '<p class="prefatory-salutation">To the Christian Reader,</p>'
+
+    # 3. Plain tag version
+    html3 = '<p>To the Reader.</p>'
+    res3 = _apply_premium_salutations(html3)
+    assert res3 == '<p class="prefatory-salutation">To the Reader.</p>'
+
+    # 4. Standard sentence containing the words (Should be skipped!)
+    html4 = '<p class="front-matter-prose">The Christian Reader will immediately notice the depth of Owen\'s thought.</p>'
+    res4 = _apply_premium_salutations(html4)
+    assert res4 == html4
+
+    # 5. H3 heading tag (like those produced in front-matter prose mode)
+    html5 = '<h3 class="secondary">Christian Reader,</h3>'
+    res5 = _apply_premium_salutations(html5)
+    assert res5 == '<p class="prefatory-salutation">Christian Reader,</p>'
+
+
+def test_apply_premium_chapter_endings():
+    """Verify that chapter ending statements (like 'END OF PART 2') are isolated and styled, while not touching other text."""
+    from render import _apply_premium_chapter_endings
+
+    # 1. Standalone ending in bold
+    html1 = '<p><b>END OF PART 2.</b></p>'
+    res1 = _apply_premium_chapter_endings(html1)
+    assert res1 == '<p class="chapter-end-marker"><b>END OF PART 2.</b></p>'
+
+    # 2. Trailing ending in paragraph
+    html2 = '<p>This concludes the meditations. **THE END.**</p>'
+    res2 = _apply_premium_chapter_endings(html2)
+    assert '<p class="chapter-end-marker"><b>THE END.</b></p>' in res2
+    assert '<p>This concludes the meditations.</p>' in res2
+
 

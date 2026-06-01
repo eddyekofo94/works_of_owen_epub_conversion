@@ -48,11 +48,9 @@ _V3_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <h1 class="contents-volume-title">CONTENTS OF VOLUME 3.</h1>
 <h2 class="contents-treatise-title">PNEUMATOLOGIA: OR, A DISCOURSE CONCERNING THE HOLY SPIRIT</h2>
 
-<p class="contents-frontmatter-line">
-<a href="ch002.xhtml">Prefatory Note by the Editor</a> &bull; 
-<a href="ch003.xhtml">Analysis by the Editor</a> &bull; 
-<a href="ch004.xhtml">To the Readers</a>
-</p>
+<p class="contents-item"><a href="ch002.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch003.xhtml">Analysis by the Editor</a></p>
+<p class="contents-item"><a href="ch004.xhtml">To the Readers</a></p>
 
 <h3 class="contents-part-title">BOOK I. — GENERAL PRINCIPLES CONCERNING THE HOLY SPIRIT AND HIS WORK</h3>
 <p class="contents-item"><b>Chapter I.</b> <a href="ch006.xhtml">General Principles Concerning the Holy Spirit and His Work</a></p>

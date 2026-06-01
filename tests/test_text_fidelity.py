@@ -1064,12 +1064,15 @@ def test_inline_roman_section_splits_to_subheading_before_flat_list():
     )
 
     assert 'Intro sentence.</p>' in html
-    assert '<h4 class="roman-subheading"><b>III.</b> The THIRD part of our wisdom is to walk with God.</h4>' in html
+    assert '<h4 class="roman-subheading"><b>III.</b></h4>' in html
     assert (
-        '<p>Now, that one may walk with another, six things are required: — '
+        '<p class="syllabus-anchor">The THIRD part of our wisdom is to walk with God. '
+        'Now, that one may walk with another, six things are required: — '
         '<b>1.</b> Agreement. <b>2.</b> Acquaintance. <b>3.</b> A way. '
-        '<b>4.</b> Strength. <b>5.</b> Boldness. <b>6.</b> An aiming at the same end. '
-        'All these, with the wisdom of them, are hid in the Lord Jesus.</p>'
+        '<b>4.</b> Strength. <b>5.</b> Boldness. <b>6.</b> An aiming at the same end.</p>'
+    ) in html
+    assert (
+        '<p>All these, with the wisdom of them, are hid in the Lord Jesus.</p>'
     ) in html
 
 
@@ -2480,3 +2483,148 @@ def test_apri_not_changed_without_day_number():
     text = 'The APRI conference was held in spring.'
     result = _repair_owen_ocr_errors(text)
     assert 'APRI ' in result, repr(result)
+
+
+def test_scholastic_anchors_are_nested_in_owen_level_2():
+    """Consecutive scholastic anchors should be grouped and nested inside <div class="owen-branch owen-level-2">."""
+    from render import apply_scholastic_anchor_protocol
+
+    html = apply_scholastic_anchor_protocol(
+        "<p>An answer unto an inquiry which may possibly arise...</p>\n"
+        "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 1.</b> There is no precedent...</p>\n"
+        "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 2.</b> In the invocation of Christ...</p>"
+    )
+
+    # Verify that they are wrapped in a single owen-level-2 div
+    assert '<div class="owen-branch owen-level-2">' in html
+    assert html.count('<div class="owen-branch owen-level-2">') == 1
+    # Check that they end with a closed div
+    assert '</div>' in html
+
+
+def test_scholastic_parent_child_differentiation():
+    """Objections/Uses (parents) remain flush-left at level 1, while Answers/Solutions (children) nest at level 2."""
+    from render import apply_scholastic_anchor_protocol
+
+    html = apply_scholastic_anchor_protocol(
+        "<p>Objection 1. But how can a holy God justify sinners?</p>\n"
+        "<p>Ans. 1. He justifies them through the righteousness of Christ.</p>\n"
+        "<p>Ans. 2. This satisfies the demands of the law.</p>"
+    )
+
+    # Objection (parent) should have scholastic-anchor-parent class and NOT be wrapped in owen-level-2
+    assert 'scholastic-anchor-parent' in html
+    # Answers (children) should have scholastic-anchor-child class and BE wrapped in owen-level-2
+    assert 'scholastic-anchor-child' in html
+    assert '<div class="owen-branch owen-level-2">' in html
+    
+    obj_idx = html.find('Objection 1.')
+    div_idx = html.find('<div class="owen-branch owen-level-2">')
+    ans_idx = html.find('Ans. 1.')
+    
+    assert obj_idx < div_idx < ans_idx
+
+
+def test_nesting_cap_beyond_level_3_remains_flat():
+    """Any inline sub-points (representing Level 4+) inside a Level 3 paragraph (e.g. starting with 1st.) should remain flat and inline."""
+    from shared import _split_inline_structural_markers
+
+    para = "1st. First point, which has several sub-elements: — (1.) The first sub-element; (2.) The second sub-element."
+    pieces = _split_inline_structural_markers(para)
+
+    # Since it starts with a Level 3 marker (1st.), the list cap prevents splitting of the inline markers!
+    assert len(pieces) == 1
+    assert pieces[0] == para
+
+
+def test_dynamic_trigger_based_demotion():
+    """Verify that the Dynamic Demotion Engine correctly demotes lists introduced by count triggers under level-2 items to Level 3."""
+    from render import _add_owen_list_level_classes
+
+    # Case A: Level 2 item ([1.]) introduces a sub-list of two things using bare decimals (1., 2.)
+    html = (
+        '<p class="list-item"><b>[1.]</b> Of the person suffering for it, which consists in two things: —</p>\n'
+        '<p class="list-item"><b>1.</b> The dignity of the person.</p>\n'
+        '<p class="list-item"><b>2.</b> The greatness of the penalty.</p>\n'
+        '<p class="list-item"><b>[2.]</b> The next bracketed item.</p>'
+    )
+    result = _add_owen_list_level_classes(html)
+
+    # The bracketed items [1.] and [2.] are base level 2
+    assert 'class="list-item list-level-2"><b>[1.]</b>' in result
+    assert 'class="list-item list-level-2"><b>[2.]</b>' in result
+
+    # The subordinate decimals 1. and 2. must be dynamically demoted to Level 3
+    assert 'class="list-item list-level-3"><b>1.</b>' in result
+    assert 'class="list-item list-level-3"><b>2.</b>' in result
+
+    # Case B: A Level 1 item (4.) introduces two parenthesized items (1.), (2.) and then 5. resets sequence
+    html2 = (
+        '<p class="list-item"><b>4.</b> Some outline point, for these two reasons: —</p>\n'
+        '<p class="list-item"><b>(1.)</b> First reason.</p>\n'
+        '<p class="list-item"><b>(2.)</b> Second reason.</p>\n'
+        '<p class="list-item"><b>5.</b> Next outline point.</p>'
+    )
+    result2 = _add_owen_list_level_classes(html2)
+
+    # 4. and 5. are Level 1 (bare decimals)
+    assert 'class="list-item list-level-1"><b>4.</b>' in result2
+    assert 'class="list-item list-level-1"><b>5.</b>' in result2
+
+    # (1.) and (2.) are Level 2 (parenthesized, subordinate)
+    assert 'class="list-item list-level-2"><b>(1.)</b>' in result2
+    assert 'class="list-item list-level-2"><b>(2.)</b>' in result2
+
+
+def test_blockquote_trailing_quote_preservation():
+    """Verify that balanced double quotes inside blockquotes are preserved, while unclosed trailing opening quotes are stripped."""
+    from render import markdown_to_html
+
+    # Case 1: Balanced straight double quotes (should be preserved)
+    html, _, _ = markdown_to_html(
+        '[[BLOCKQUOTE]] "Thou, Lord, in the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands: they shall perish, but thou remainest; and they all shall wax old as does a garment; and as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail."'
+    )
+    assert 'Thou, Lord, in the beginning' in html
+    assert 'shall not fail.&quot;' in html  # closing double quote is preserved!
+
+    # Case 2: Unbalanced straight double quote at the end of blockquote (should be stripped)
+    html2, _, _ = markdown_to_html(
+        '[[BLOCKQUOTE]] Unbalanced quote test at the end. "'
+    )
+    # The count of " is 1 (odd) so it is stripped!
+    assert '&quot;' not in html2
+
+
+def test_flat_list_continuation_splits():
+    """Verify that flat list items starting with ordinals or list markers are merged
+    onto the preceding paragraph if it ends with a comma, semicolon, or connector word.
+    """
+    from render import markdown_to_html
+
+    md = (
+        "The duties whereby we ascribe and express divine honor unto Christ may be reduced unto two heads,\n\n"
+        "1st, Adoration;\n\n"
+        "2ndly, Invocation."
+    )
+    html, _, _ = markdown_to_html(md)
+    # They should be joined into a single paragraph and bolded!
+    assert "reduced unto two heads, <b>1st</b>, Adoration; <b>2ndly</b>, Invocation." in html
+
+
+def test_stray_quotes_before_scripture_reference():
+    """Verify that stray double quotes preceding a scripture reference are correctly stripped."""
+    from shared import _repair_owen_ocr_errors
+
+    # Case A: Stray quote preceded by double quote + comma + space
+    raw1 = 'cried unto him, "My Lord and my God," " John 20:28.'
+    assert _repair_owen_ocr_errors(raw1) == 'cried unto him, "My Lord and my God," John 20:28.'
+
+    # Case B: Stray quote in another context
+    raw2 = 'mind be in us that was in Christ Jesus," " Philippians 2:6'
+    assert _repair_owen_ocr_errors(raw2) == 'mind be in us that was in Christ Jesus," Philippians 2:6'
+
+    # Case C: Valid closing quote at end of phrase (should not be stripped)
+    raw3 = 'he is the "image of God, " 2 Corinthians 4:4'
+    assert _repair_owen_ocr_errors(raw3) == 'he is the "image of God, " 2 Corinthians 4:4'
+
+

@@ -139,6 +139,33 @@ def _postprocess_v1_catechism_html(html, chapter):
     return _group_v1_catechism_pairs(html)
 
 
+def _postprocess_v1_html(html, chapter):
+    """Holistic post-processing for Volume 1, handling Catechisms, chapter summaries, signatures, and Part dividers."""
+    # 1. Catechism formatting
+    html = _postprocess_v1_catechism_html(html, chapter)
+
+    # 2. Chapter summaries formatting
+    html = _postprocess_v1_chapter_summaries(html)
+
+    # 3. Signature block parsing and layout styling (Issue 48)
+    sig_pattern = r'<p class="front-matter-prose">Your servant in the work of the Lord,\s*<i>\s*<b>\s*J\.O\.\s*</b>\s*</i>\s*From my Study,\s*September the last,\s*\[1645\]\.</p>'
+    sig_replacement = """<div class="epub-signature">
+  <p class="signature-intro">Your servant in the work of the Lord,</p>
+  <p class="signature-name">J.O.</p>
+  <p class="signature-date">From my Study, September the last, [1645].</p>
+</div>"""
+    html = re.sub(sig_pattern, sig_replacement, html, flags=re.I)
+
+    # 4. Part Title formatting (e.g. Chapter 43 - Part 2 Title Page)
+    html = html.replace(
+        '<h1 class="primary" style="text-align:center;margin:2em 0 1.5em;">PART 2.</h1>',
+        '<div class="contents-part-divider"><span class="divider-ornament">❦</span><h3 class="contents-part-title">PART II</h3></div>'
+    )
+
+    return html
+
+
+
 _V1_CATECHISM_CSS = """
 /* Volume 1-only Catechism polish */
 .v1-catechism-pair {
@@ -192,10 +219,17 @@ _V1_CATECHISM_CSS = """
     padding-left: 0.8em;
     border-left: 1.5px solid rgba(0, 0, 0, 0.08); /* Tiny hairline grouping */
 }
+
+.contents-general-preface {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+}
 """
 
 _V1_CHRISTOLOGIA_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="greek-title"><span lang="el" xml:lang="el">Χριστολογία</span></p>
+<p class="greek-title"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span></p>
 <p class="title-line-major">Christologia</p>
 <p class="title-connector">Or,</p>
 <p class="title-line-medium">A Declaration of the Glorious Mystery</p>
@@ -250,78 +284,91 @@ _V1_PART_2_TITLE_PAGE = '''<section class="treatise-title-page v1-applied-glory-
 
 _V1_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <h1 class="contents-volume-title">CONTENTS OF VOLUME 1.</h1>
-<h2 class="contents-treatise-title">CHRISTOLOGIA: OR, A DECLARATION OF THE<br/>GLORIOUS MYSTERY OF THE PERSON OF<br/>CHRIST.</h2>
-<p class="contents-frontmatter-line">PREFATORY NOTE<br/>PREFACE</p>
-<p class="contents-item"><b>CHAPTER 1</b> . Peter’s Confession; Matthew 16:16 — Conceits of the Papists thereon — The Substance and Excellency of that Confession.</p>
-<p class="contents-item"><b>CHAPTER 2</b> . Opposition made unto the Church as built upon the Person of Christ.</p>
-<p class="contents-item"><b>CHAPTER 3</b> . The Person of Christ the most ineffable Effect of Divine Wisdom and Goodness — Thence the next Cause of all True Religion — In what sense it is so.</p>
-<p class="contents-item"><b>CHAPTER 4</b> . To Person of Christ the Foundation of all the Counsels of God.</p>
-<p class="contents-item"><b>CHAPTER 5</b> . The Person of Christ the great Representative of God and his Will.</p>
-<p class="contents-item"><b>CHAPTER 6</b> . The Person of Christ the great Repository of Sacred Truth — Its Relation thereunto.</p>
-<p class="contents-item"><b>CHAPTER 7</b> . Power and Efficacy Communicated unto the Office of Christ, for the Salvation of the Church, from his Person.</p>
-<p class="contents-item"><b>CHAPTER 8</b> . The Faith of the Church under the Old Testament in and concerning the Person of Christ.</p>
-<p class="contents-item"><b>CHAPTER 9</b> . Honor due to the Person of Christ — The nature and Causes of it.</p>
-<p class="contents-item"><b>CHAPTER 10</b> . The Principle of the Assignation of Divine Honor unto the Person of Christ, in both the Branches of it; with is Faith in Him.</p>
-<p class="contents-item"><b>CHAPTER 11</b> . Obedience unto Christ — The Nature and Causes of it.</p>
-<p class="contents-item"><b>CHAPTER 12</b> . The especial Principle of Obedience unto the Person of Christ; which is Love — Its Truth and Reality Vindicated.</p>
-<p class="contents-item"><b>CHAPTER 13</b> . The Nature, Operations, and Causes of Divine Love, as it respects the Person of Christ.</p>
-<p class="contents-item"><b>CHAPTER 14</b> . Motives unto the Love of Christ.</p>
-<p class="contents-item"><b>CHAPTER 15</b> . Conformity unto Christ, and Following his Example.</p>
-<p class="contents-item"><b>CHAPTER 16</b> . An humble Inquiry into, and Prospect of, the infinite Wisdom of God, in the Constitution of the Person of Christ, and the Way of Salvation thereby.</p>
-<p class="contents-item"><b>CHAPTER 17</b> . Other Evidences of Divine Wisdom in the Contrivance of the Work of Redemption in and by the Person of Christ, in Effects Evidencing a Condecency thereunto.</p>
-<p class="contents-item"><b>CHAPTER 18</b> . The Nature of the Person of Christ, and the Hypostatical Union of his Natures Declared.</p>
-<p class="contents-item"><b>CHAPTER 19</b> . The Exaltation of Christ, with his Present state and Condition in Glory during the Continuance of his Mediatory Office.</p>
-<p class="contents-item"><b>CHAPTER 20</b> . The Exercise of the Mediatory Office of Christ in Heaven.</p>
-<h2 class="contents-treatise-title">MEDITATIONS AND DISCOURSES ON THE<br/>GLORY OF CHRIST.</h2>
-<p class="contents-frontmatter-line">PREFATORY NOTE BY THE EDITOR<br/>PREFACE TO THE READER</p>
-<p class="contents-item"><b>1. — </b> The Explication of the Text; John 17:24</p>
-<p class="contents-item"><b>2. — </b> The Glory of the Person of Christ, as the only Representative of God unto the Church</p>
-<p class="contents-item"><b>3. — </b> The Glory of Christ in the mysterious Constitution of his Person</p>
-<p class="contents-item"><b>4. — </b> The Glory of Christ in his susception of the Office of a Mediator. — First, in his Condescension</p>
-<p class="contents-item"><b>5. — </b> The Glory of Christ in his Love</p>
-<p class="contents-item"><b>6. — </b> The Glory of Christ in the Discharge of his Mediatory Office</p>
-<p class="contents-item"><b>7. — </b> The Glory of Christ in his Exaltation, after the accomplishment of the Work of Mediation in this World</p>
-<p class="contents-item"><b>8. — </b> Representations of the Glory of Christ under the Old Testament</p>
-<p class="contents-item"><b>9. — </b> The Glory of Christ in his intimate Conjunction with the Church</p>
-<p class="contents-item"><b>10. — </b> The Glory of Christ in the Communication of himself unto Believers</p>
-<p class="contents-item"><b>11. — </b> The Glory of Christ in the Recapitulation of all things in him</p>
-<p class="contents-item"><b>12. — </b> Differences between our Beholding the Glory of Christ by Faith in this World and by Sight in Heaven — The First of them Explained .</p>
-<p class="contents-item"><b>13. — </b> The Second Difference between our Beholding the Glory of Christ by Faith in this World and by Sight in Heaven</p>
-<p class="contents-item"><b>14. — </b> Other Difference between our Beholding the Glory of Christ by Faith in this World and by Sight in Heaven</p>
-<h2 class="contents-treatise-title">MEDITATIONS AND DISCOURSES CONCERNING<br/>THE GLORY OF CHRIST, APPLIED, ETC.</h2>
-<p class="contents-frontmatter-line">ORIGINAL PREFACE</p>
-<p class="contents-item"><b>1. — </b> Application of the foregoing Meditations concerning the Glory of Christ — First, in an Exhortation unto such as are not yet Partakers of him</p>
-<p class="contents-item"><b>2. — </b> The Way and Means of the Recovery of Spiritual Decays, and of Obtaining fresh Springs of Grace</p>
-<h2 class="contents-treatise-title">TWO SHORT CATECHISMS.</h2>
-<p class="contents-frontmatter-line">PREFATORY NOTE BY THE EDITOR<br/>THE EPISTLE DEDICATORY<br/>THE LESSER CATECHISM</p>
-<h2 class="contents-treatise-title">THE GREATER CATECHISM</h2>
-<p class="contents-item"><b>1.— </b> Of the Scripture</p>
-<p class="contents-item"><b>2. — </b> Of God</p>
-<p class="contents-item"><b>3. — </b> Of the Holy Trinity</p>
-<p class="contents-item"><b>4. — </b> Of the Works of God; and, first, of those that are Internal and Immanent</p>
-<p class="contents-item"><b>5. — </b> Of the Works of God that outwardly are of him</p>
-<p class="contents-item"><b>6. — </b> Of God’s actual Providence</p>
-<p class="contents-item"><b>7. — </b> Of the Law of God</p>
-<p class="contents-item"><b>8. — </b> Of the State of Corrupted Nature</p>
-<p class="contents-item"><b>9. — </b> Of the Incarnation of Christ</p>
-<p class="contents-item"><b>10. — </b> Of the Person of Jesus Christ</p>
-<p class="contents-item"><b>11. — </b> Of the Offices of Christ; and first, of his Kingly</p>
-<p class="contents-item"><b>12. — </b> Of Christ’s Priestly Office</p>
-<p class="contents-item"><b>13. — </b> Of Christ’s Prophetical Office</p>
-<p class="contents-item"><b>14. — </b> Of the Twofold Estate of Christ</p>
-<p class="contents-item"><b>15. — </b> Of the Persons to whom the Benefits of Christ’s Offices do belong</p>
-<p class="contents-item"><b>16. — </b> Of the Church</p>
-<p class="contents-item"><b>17. — </b> Of Faith</p>
-<p class="contents-item"><b>18. — </b> Of our Vocation, or God’s Calling us</p>
-<p class="contents-item"><b>19. — </b> Of Justification</p>
-<p class="contents-item"><b>20. — </b> Of Sanctification</p>
-<p class="contents-item"><b>21. — </b> Of the Privileges of Believers</p>
-<p class="contents-item"><b>22. — </b> Of the Sacraments of the New Covenant in particular; a holy right whereunto is the Fourth Privilege of Believers</p>
-<p class="contents-item"><b>23. — </b> Of Baptism</p>
-<p class="contents-item"><b>24. — </b> Of the Lord’s Supper.</p>
-<p class="contents-item"><b>25. — </b> Of the Communion of Saints — the Fifth Privilege of Believers</p>
-<p class="contents-item"><b>26. — </b> Of Particular Churches</p>
-<p class="contents-item"><b>27. — </b> Of the Last Privilege of Believers, — being the Door of Entrance into Glory</p>
+
+<p class="contents-general-preface"><a href="ch001.xhtml">General Preface</a></p>
+
+<h2 class="contents-treatise-title">CHRISTOLOGIA: OR, A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST</h2>
+<p class="contents-item"><a href="ch003.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch004.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch005.xhtml">Peter’s Confession; Matthew 16:16</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch006.xhtml">Opposition made unto the Church as built upon the Person of Christ</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch007.xhtml">The Person of Christ the most ineffable Effect of Divine Wisdom and Goodness</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch008.xhtml">The Person of Christ the Foundation of all the Counsels of God</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch009.xhtml">The Person of Christ the great Representative of God and his Will</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch010.xhtml">The Person of Christ the great Repository of Sacred Truth</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch011.xhtml">Power and Efficacy Communicated unto the Office of Christ, for the Salvation of the Church</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch012.xhtml">The Faith of the Church under the Old Testament in and concerning the Person of Christ</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch013.xhtml">Honor due to the Person of Christ — The nature and Causes of it</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch014.xhtml">The Principle of the Assignation of Divine Honor unto the Person of Christ</a></p>
+<p class="contents-item"><b>Chapter XI.</b> <a href="ch015.xhtml">Obedience unto Christ — The Nature and Causes of it</a></p>
+<p class="contents-item"><b>Chapter XII.</b> <a href="ch016.xhtml">The especial Principle of Obedience unto the Person of Christ; which is Love</a></p>
+<p class="contents-item"><b>Chapter XIII.</b> <a href="ch017.xhtml">The Nature, Operations, and Causes of Divine Love, as it respects the Person of Christ</a></p>
+<p class="contents-item"><b>Chapter XIV.</b> <a href="ch018.xhtml">Motives unto the Love of Christ</a></p>
+<p class="contents-item"><b>Chapter XV.</b> <a href="ch019.xhtml">Conformity unto Christ, and Following his Example</a></p>
+<p class="contents-item"><b>Chapter XVI.</b> <a href="ch020.xhtml">An humble Inquiry into, and Prospect of, the infinite Wisdom of God</a></p>
+<p class="contents-item"><b>Chapter XVII.</b> <a href="ch021.xhtml">Other Evidences of Divine Wisdom in the Contrivance of the Work of Redemption</a></p>
+<p class="contents-item"><b>Chapter XVIII.</b> <a href="ch022.xhtml">The Nature of the Person of Christ, and the Hypostatical Union of his Natures Declared</a></p>
+<p class="contents-item"><b>Chapter XIX.</b> <a href="ch023.xhtml">The Exaltation of Christ, with his Present state and Condition in Glory</a></p>
+<p class="contents-item"><b>Chapter XX.</b> <a href="ch024.xhtml">The Exercise of the Mediatory Office of Christ in Heaven</a></p>
+
+<h2 class="contents-treatise-title">MEDITATIONS AND DISCOURSES ON THE GLORY OF CHRIST</h2>
+<p class="contents-item"><a href="ch026.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch027.xhtml">Preface to the Reader</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch028.xhtml">The Explication of the Text; John 17:24</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch029.xhtml">The Glory of the Person of Christ, as the only Representative of God unto the Church</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch030.xhtml">The Glory of Christ in the mysterious Constitution of his Person</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch031.xhtml">The Glory of Christ in his susception of the Office of a Mediator</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch032.xhtml">The Glory of Christ in his Love</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch033.xhtml">The Glory of Christ in the Discharge of his Mediatory Office</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch034.xhtml">The Glory of Christ in his Exaltation, after the accomplishment of the Work of Mediation</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch035.xhtml">Representations of the Glory of Christ under the Old Testament</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch036.xhtml">The Glory of Christ in his intimate Conjunction with the Church</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch037.xhtml">The Glory of Christ in the Communication of himself unto Believers</a></p>
+<p class="contents-item"><b>Chapter XI.</b> <a href="ch038.xhtml">The Glory of Christ in the Recapitulation of all things in him</a></p>
+<p class="contents-item"><b>Chapter XII.</b> <a href="ch039.xhtml">Differences between our Beholding the Glory of Christ by Faith and by Sight (First Difference)</a></p>
+<p class="contents-item"><b>Chapter XIII.</b> <a href="ch040.xhtml">The Second Difference between our Beholding the Glory of Christ by Faith and by Sight</a></p>
+<p class="contents-item"><b>Chapter XIV.</b> <a href="ch041.xhtml">Other Differences between our Beholding the Glory of Christ by Faith and by Sight</a></p>
+
+<h2 class="contents-treatise-title">MEDITATIONS AND DISCOURSES CONCERNING THE GLORY OF CHRIST, APPLIED</h2>
+<p class="contents-item"><a href="ch042.xhtml">Original Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch044.xhtml">Application of the foregoing Meditations — Exhortation unto such as are not yet Partakers of him</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch045.xhtml">The Way and Means of the Recovery of Spiritual Decays, and of Obtaining fresh Springs of Grace</a></p>
+
+<h2 class="contents-treatise-title">TWO SHORT CATECHISMS</h2>
+<p class="contents-item"><a href="ch047.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch048.xhtml">To My Loving Neighbors and Christian Friends</a></p>
+<p class="contents-item"><a href="ch049.xhtml">The Lesser Catechism</a></p>
+<div class="contents-part-divider">
+  <span class="divider-ornament">❦</span>
+  <h3 class="contents-part-title">THE GREATER CATECHISM</h3>
+</div>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch051.xhtml">Of the Scripture</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch052.xhtml">Of God</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch053.xhtml">Of the Holy Trinity</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch054.xhtml">Of the Works of God; and, first, of those that are Internal and Immanent</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch055.xhtml">Of the Works of God that outwardly are of him</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch056.xhtml">Of God’s actual Providence</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch057.xhtml">Of the Law of God</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch058.xhtml">Of the State of Corrupted Nature</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch059.xhtml">Of the Incarnation of Christ</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch060.xhtml">Of the Person of Jesus Christ</a></p>
+<p class="contents-item"><b>Chapter XI.</b> <a href="ch061.xhtml">Of the Offices of Christ; and first, of his Kingly</a></p>
+<p class="contents-item"><b>Chapter XII.</b> <a href="ch062.xhtml">Of Christ’s Priestly Office</a></p>
+<p class="contents-item"><b>Chapter XIII.</b> <a href="ch063.xhtml">Of Christ’s Prophetical Office</a></p>
+<p class="contents-item"><b>Chapter XIV.</b> <a href="ch064.xhtml">Of the Twofold Estate of Christ</a></p>
+<p class="contents-item"><b>Chapter XV.</b> <a href="ch065.xhtml">Of the Persons to whom the Benefits of Christ’s Offices do belong</a></p>
+<p class="contents-item"><b>Chapter XVI.</b> <a href="ch066.xhtml">Of the Church</a></p>
+<p class="contents-item"><b>Chapter XVII.</b> <a href="ch067.xhtml">Of Faith</a></p>
+<p class="contents-item"><b>Chapter XVIII.</b> <a href="ch068.xhtml">Of our Vocation, or God’s Calling us</a></p>
+<p class="contents-item"><b>Chapter XIX.</b> <a href="ch069.xhtml">Of Justification</a></p>
+<p class="contents-item"><b>Chapter XX.</b> <a href="ch070.xhtml">Of Sanctification</a></p>
+<p class="contents-item"><b>Chapter XXI.</b> <a href="ch071.xhtml">Of the Privileges of Believers</a></p>
+<p class="contents-item"><b>Chapter XXII.</b> <a href="ch072.xhtml">Of the Sacraments of the New Covenant in particular</a></p>
+<p class="contents-item"><b>Chapter XXIII.</b> <a href="ch073.xhtml">Of Baptism</a></p>
+<p class="contents-item"><b>Chapter XXIV.</b> <a href="ch074.xhtml">Of the Lord’s Supper</a></p>
+<p class="contents-item"><b>Chapter XXV.</b> <a href="ch075.xhtml">Of the Communion of Saints</a></p>
+<p class="contents-item"><b>Chapter XXVI.</b> <a href="ch076.xhtml">Of Particular Churches</a></p>
+<p class="contents-item"><b>Chapter XXVII.</b> <a href="ch077.xhtml">Of the Last Privilege of Believers, — being the Door of Entrance into Glory</a></p>
 </section>'''
 
 _V1_TITLE_SMALL_WORDS = {
@@ -462,9 +509,7 @@ OVERRIDES = {
     ],
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
-    'html_postprocess_hook': lambda html, chapter: _postprocess_v1_chapter_summaries(
-        _postprocess_v1_catechism_html(html, chapter)
-    ),
+    'html_postprocess_hook': _postprocess_v1_html,
     'extra_css': _V1_CATECHISM_CSS,
     'contents_page_overrides': _V1_CONTENTS_PAGE,
     'treatise_title_overrides': {

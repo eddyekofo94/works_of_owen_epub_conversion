@@ -127,28 +127,146 @@ _SCHOLASTIC_SPACE_DOT_RE = re.compile(
 )
 
 
+def _get_scholastic_subclass(label_text: str) -> str:
+    label_upper = label_text.upper()
+    if any(w in label_upper for w in ['OBJ', 'USE', 'USUS', 'APPLICATION', 'INQUIRY']):
+        return 'scholastic-anchor-parent'
+    if any(w in label_upper for w in ['ANS', 'SOL', 'RESPONSE']):
+        return 'scholastic-anchor-child'
+    return 'scholastic-anchor-child'  # default fallback is child
+
+
+def _nest_scholastic_in_divs(html: str) -> str:
+    """Group consecutive scholastic-anchor-child paragraphs and nest them in a <div class="owen-branch owen-level-2">
+    container under their preceding introducing paragraph/objection, ensuring proper vertical border and indentation.
+    """
+    import re
+    # 1. Promote level-1 divs that start with a scholastic child anchor to level-2
+    html = re.sub(
+        r'<div class="owen-branch owen-level-1">\s*(<p\b[^>]*class="[^"]*scholastic-anchor-child[^"]*")',
+        r'<div class="owen-branch owen-level-2">\n\1',
+        html,
+        flags=re.I
+    )
+
+    # 2. Token-based wrapping for any remaining top-level scholastic child anchors
+    token_re = re.compile(
+        r'(<div\b[^>]*>|</div>|<p\b[^>]*>.*?</p>|'
+        r'<blockquote\b[^>]*>.*?</blockquote>|'
+        r'<h[1-6]\b[^>]*>.*?</h[1-6]>|'
+        r'<aside\b[^>]*>.*?</aside>|'
+        r'<table\b[^>]*>.*?</table>|'
+        r'<hr\s*/?>)',
+        re.S
+    )
+    
+    tokens = []
+    last_idx = 0
+    for m in token_re.finditer(html):
+        inter = html[last_idx:m.start()]
+        if inter:
+            tokens.append(inter)
+        tokens.append(m.group(0))
+        last_idx = m.end()
+    tail = html[last_idx:]
+    if tail:
+        tokens.append(tail)
+
+    def is_scholastic_child(t: str) -> bool:
+        if not t.startswith('<p') or not t.endswith('</p>'):
+            return False
+        m = re.match(r'^<p\b[^>]*class="([^"]*)"', t)
+        if m:
+            classes = m.group(1).split()
+            return 'scholastic-anchor-child' in classes
+        return False
+
+    def is_whitespace(t: str) -> bool:
+        return not t.strip()
+
+    output_tokens = []
+    active_divs = []
+    i = 0
+    n = len(tokens)
+    while i < n:
+        token = tokens[i]
+        if token.startswith('<div'):
+            m_div = re.match(r'^<div\b[^>]*class="([^"]*)"', token)
+            div_classes = m_div.group(1).split() if m_div else []
+            level = 0
+            for c in div_classes:
+                if c.startswith('owen-level-'):
+                    try:
+                        level = int(c.split('-')[-1])
+                    except ValueError:
+                        pass
+            active_divs.append(level)
+            output_tokens.append(token)
+            i += 1
+        elif token == '</div>':
+            if active_divs:
+                active_divs.pop()
+            output_tokens.append(token)
+            i += 1
+        elif is_scholastic_child(token):
+            current_level = active_divs[-1] if active_divs else 0
+            if current_level >= 2:
+                output_tokens.append(token)
+                i += 1
+            else:
+                seq_indices = [i]
+                j = i + 1
+                while j < n:
+                    if is_scholastic_child(tokens[j]):
+                        seq_indices.append(j)
+                        j += 1
+                    elif is_whitespace(tokens[j]):
+                        j += 1
+                    else:
+                        break
+                
+                end_idx = seq_indices[-1]
+                output_tokens.append('<div class="owen-branch owen-level-2">')
+                for idx in range(i, end_idx + 1):
+                    output_tokens.append(tokens[idx])
+                output_tokens.append('</div>')
+                i = end_idx + 1
+        else:
+            output_tokens.append(token)
+            i += 1
+            
+    return "".join(output_tokens)
+
+
 def apply_scholastic_anchor_protocol(html: str) -> str:
-    """Post-processor: ensure Obj./Ans./Use. labels start their own paragraphs.
+    """Post-processor: ensure Obj./Ans./Use. labels start their own paragraphs
+    and sequentially chain bare ordinals following a starting scholastic label.
 
     Runs on the assembled chapter XHTML string after markdown_to_html().
-    Three transformations:
-      1. Normalize "Objection ." → "Objection." (stray space OCR artifact).
-      2. Force </p><p> break before any Obj./Ans./Use. label that appears
-         mid-paragraph after closing punctuation.
-      3. Wrap the label itself in <b> and assign class="scholastic-anchor".
     """
     # 1. Remove stray space before period in scholastic labels
     html = _SCHOLASTIC_SPACE_DOT_RE.sub(lambda m: m.group(1) + '.', html)
 
     # 2. Force paragraph break before scholastic labels that appear mid-paragraph
     def _split_before_label(m: re.Match) -> str:
-        # Prevent splitting on e.g. "Because of this Use. 1." if it's semantic mid-sentence.
-        # It's hard to tell, but we must ensure it only triggers when following terminal punctuation.
         return f'{m.group(1)}</p>\n<p class="scholastic-anchor"><b>{m.group("label")}</b> '
 
     html = _SCHOLASTIC_ANCHOR_SPLIT_RE.sub(_split_before_label, html)
 
-    # 3. Ensure labels at paragraph start are bold
+    # 3. Clean up leading <b> tags around Obj./Ans. abbreviations to expose them as plain text
+    # e.g., <b>Ans.</b> 1. -> Ans. 1.
+    def _strip_b_tags(m: re.Match) -> str:
+        label_word = m.group(2)
+        digit_part = m.group(3)
+        return f'{m.group(1)}{label_word} {digit_part} '
+
+    _STRIP_B_RE = re.compile(
+        r'(<p(?:\s[^>]*)?>)\s*<b>\s*(Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?|Usus\.?|Application\.?)\s*</b>\s*(\d+\.?)\s*',
+        re.I
+    )
+    html = _STRIP_B_RE.sub(_strip_b_tags, html)
+
+    # 4. Bold all scholastic labels at paragraph start (improved original step)
     def _clean_scholastic_label(label: str) -> str:
         label = re.sub(r'\s+', ' ', label).strip()
         label = re.sub(r'\s+\.', '.', label)
@@ -163,7 +281,92 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
         flags=re.I,
     )
 
-    return html
+    # 5. Standardize paragraph class to "scholastic-anchor" for all scholastic labels
+    _SCHOLASTIC_ANCHOR_PARA_RE = re.compile(
+        r'<p\s+class="([^"]*)"([^>]*)>\s*(<b class="scholastic-label">.*?</b>)',
+        re.I
+    )
+    def _add_anchor_class(m: re.Match) -> str:
+        classes = m.group(1).split()
+        filtered = [c for c in classes if not (c.startswith('list-') or c == 'roman-list-item')]
+        if 'scholastic-anchor' not in filtered:
+            filtered.append('scholastic-anchor')
+            
+        label_content = re.sub(r'<[^>]+>', '', m.group(3))
+        subclass = _get_scholastic_subclass(label_content)
+        if subclass not in filtered:
+            filtered.append(subclass)
+            
+        return f'<p class="{" ".join(filtered)}"{m.group(2)}>{m.group(3)}'
+
+    html = _SCHOLASTIC_ANCHOR_PARA_RE.sub(_add_anchor_class, html)
+
+    # Add class to bare paragraphs starting with a scholastic label
+    def _add_bare_anchor_class(m: re.Match) -> str:
+        label_content = re.sub(r'<[^>]+>', '', m.group(1))
+        subclass = _get_scholastic_subclass(label_content)
+        return f'<p class="scholastic-anchor {subclass}">{m.group(1)}'
+
+    html = re.sub(
+        r'<p>\s*(<b class="scholastic-label">.*?</b>)',
+        _add_bare_anchor_class,
+        html,
+        flags=re.I
+    )
+
+    # 6. Smart Scholastic Chain State Machine
+    lines = html.split('\n')
+    out = []
+    active_prefix = None
+    expected_idx = None
+
+    for line in lines:
+        stripped = line.strip()
+        
+        m_label = re.search(
+            r'<p[^>]*class="[^"]*scholastic-anchor[^"]*"[^>]*>\s*<b class="scholastic-label">(Obj|Ans|Sol|Use|Usus|Application)\.\s*(\d+)\.</b>',
+            stripped,
+            re.I
+        )
+        if m_label:
+            active_prefix = m_label.group(1)
+            expected_idx = int(m_label.group(2)) + 1
+            out.append(line)
+            continue
+
+        if active_prefix and expected_idx is not None:
+            m_digit = re.search(
+                r'(<p\s+class=")([^"]*)("[^>]*>\s*)<b>(\d+)\.</b>\s*(.*)',
+                line,
+                re.I
+            )
+            if m_digit:
+                digit_val = int(m_digit.group(4))
+                if digit_val == expected_idx:
+                    classes = m_digit.group(2).split()
+                    filtered = [c for c in classes if not (c.startswith('list-') or c == 'roman-list-item')]
+                    subclass = _get_scholastic_subclass(active_prefix)
+                    if 'scholastic-anchor' not in filtered:
+                        filtered.append('scholastic-anchor')
+                    if subclass not in filtered:
+                        filtered.append(subclass)
+
+                    rewritten_line = (
+                        f'{m_digit.group(1)}{" ".join(filtered)}{m_digit.group(3)}'
+                        f'<b class="scholastic-label">{active_prefix.capitalize()}. {digit_val}.</b> {m_digit.group(5)}'
+                    )
+                    out.append(rewritten_line)
+                    expected_idx += 1
+                    continue
+
+        if '<h' in stripped or '<hr' in stripped:
+            active_prefix = None
+            expected_idx = None
+
+        out.append(line)
+
+    combined_html = '\n'.join(out)
+    return _nest_scholastic_in_divs(combined_html)
 
 
 def normalize_footnote_markers(text):
@@ -517,7 +720,7 @@ def _roman_decimal_marker_match(text):
 
 
 def _starts_roman_outline(previous_text, roman_number):
-    if roman_number not in (1, 2):
+    if roman_number != 1:
         return False
     return bool(
         re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
@@ -559,21 +762,8 @@ def _split_roman_section_opening(text):
     rest = (match.group('rest') or '').strip()
     if len(re.findall(r'\w+', rest)) < 12:
         return None
-    sentence = re.match(r'^(.+?[.!?])\s+([A-Z].+)$', rest)
-    if not sentence:
-        return None
-    heading = f'{match.group("roman")} {sentence.group(1).strip()}'
-    body = sentence.group(2).strip()
-    # Guard: do not split if the second part is a lone transitional connector
-    if re.match(
-        r'^(?:Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
-        r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
-        r'Herein|Hereby|Hereof|Hereto|Hereunto|Herewith|Therein|Thereby|'
-        r'Thereof|Thereto|Thereunto|Therewith|But|So|Now|As|For)[,;.—\s]*$',
-        body,
-        re.I
-    ):
-        return None
+    heading = match.group("roman")
+    body = rest
     return heading, body
 
 
@@ -595,7 +785,7 @@ def _coalesce_roman_list_paragraphs(paragraphs):
             roman_number = _roman_to_int(roman_match.group('roman'))
             previous_text = out[-1].strip() if out else ''
             starts_list = (
-                roman_number in (1, 2)
+                roman_number == 1
                 and (
                     re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
                     or re.search(r'(?:[—-]|,)\s*$', previous_text)
@@ -603,7 +793,7 @@ def _coalesce_roman_list_paragraphs(paragraphs):
             )
             continues_list = expected_roman_number == roman_number
 
-            if (starts_list or continues_list) and _is_roman_list_item(paragraphs[i + 1]):
+            if (starts_list and _is_roman_list_item(paragraphs[i + 1])) or continues_list:
                 out.append(f'{ROMAN_LIST_TOKEN} {roman_match.group("roman")} {paragraphs[i + 1].strip()}')
                 expected_roman_number = roman_number + 1
                 i += 2
@@ -1011,6 +1201,69 @@ def _repair_lowercase_continuation_splits(text: str) -> str:
     return '\n\n'.join(result)
 
 
+_CONNECTOR_END_RE = re.compile(
+    r'(?:'
+    r'[,;:—–-]\s*|'
+    r'\b(?:and|or|but|as|to|into|unto|of|in|by|with|that|which|is|are|were|was|be|been)\b\s*'
+    r')[”"\'’]*\s*$',
+    re.I
+)
+
+_LIST_MARKER_START_RE = re.compile(
+    r'^\s*(?:'
+    r'[\(\[]?(?:1st|2nd(?:ly)?|2dly|3rd(?:ly)?|3dly|4th(?:ly)?|5th(?:ly)?|first|secondly|thirdly|fourthly|fifthly|lastly)\b'
+    r')\s*',
+    re.I
+)
+
+
+def _repair_flat_list_continuation_splits(text: str) -> str:
+    """Rejoin paragraphs that open with a list marker when the previous paragraph
+    ends with a connector or punctuation (e.g. comma, semicolon, colon, or connector word).
+    This ensures that short inline lists that flow with the sentence are elegantly joined
+    into a single paragraph instead of being broken into vertical block fragments.
+    """
+    if not text:
+        return text
+def _repair_flat_list_continuation_splits(text: str) -> str:
+    """Rejoin paragraphs that open with a list marker when the previous paragraph
+    ends with a connector or punctuation (e.g. comma, semicolon, colon, or connector word).
+    This ensures that short inline lists that flow with the sentence are elegantly joined
+    into a single paragraph, wrapping the inline markers in bold formatting (**marker**)
+    to preserve their visual distinction.
+    """
+    if not text:
+        return text
+    paragraphs = text.split('\n\n')
+    result = []
+    for para in paragraphs:
+        stripped = para.strip()
+        match = _LIST_MARKER_START_RE.match(stripped)
+        if (
+            result
+            and stripped
+            and match
+            and _CONNECTOR_END_RE.search(result[-1].strip())
+            and not _DOC_STRUCTURE_TOKENS_RE.match(stripped)
+            and not _DOC_STRUCTURE_TOKENS_RE.match(result[-1].strip())
+        ):
+            marker = match.group(0)
+            marker_stripped = marker.strip()
+            # Wrap marker in markdown bold asterisks if not already bolded
+            if not (marker_stripped.startswith('**') and marker_stripped.endswith('**')):
+                trailing_space = marker[len(marker_stripped):]
+                bold_marker = f"**{marker_stripped}**{trailing_space}"
+                stripped_bolded = bold_marker + stripped[match.end():]
+            else:
+                stripped_bolded = stripped
+            
+            result[-1] = result[-1].rstrip() + ' ' + stripped_bolded
+        else:
+            result.append(para)
+    return '\n\n'.join(result)
+
+
+
 _TRANSITIONAL_WORD_RE = re.compile(
     r'^(Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
     r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
@@ -1204,6 +1457,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     md_text = _repair_transitional_word_isolation(md_text)
     md_text = _repair_scholastic_anchor_splits(md_text)
     md_text = _repair_dangling_initial_splits(md_text)
+    md_text = _repair_flat_list_continuation_splits(md_text)
 
     normalized_paragraphs = [
         normalize_footnote_markers(para)
@@ -1238,6 +1492,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     paragraphs = [_repair_known_catechism_ghosts(para) for para in paragraphs]
     recent_plain = []
     roman_list_expected = None
+    roman_sequence_choice = None
     pending_chapter_subtitle = False
     summary_continuation_active = False
     seen_footnote_refs = set()
@@ -1372,7 +1627,13 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                 # Issue 26: strip a trailing open/left quotation mark that has no
                 # matching close — the blockquote itself is the container, so an
                 # unclosed opening quote at the end is always an OCR artifact.
-                content_clean = re.sub(r'["“‘]\s*$', '', content_clean).rstrip()
+                # Strip trailing unclosed opening quotes (Issue 26)
+                content_clean = content_clean.rstrip()
+                if content_clean.endswith(('“', '‘')):
+                    content_clean = content_clean[:-1].rstrip()
+                elif content_clean.endswith('"'):
+                    if len(content_clean) <= 1 or content_clean[-2].isspace():
+                        content_clean = content_clean[:-1].rstrip()
                 with_placeholders = FOOTNOTE_MARKER_RE.sub(_fn_repl, content_clean)
                 escaped = _html_escape(with_placeholders)
                 with_links = _restore_footnote_placeholders(escaped)
@@ -1517,17 +1778,42 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             elif kind == 'ROMAN_HEAD':
                 summary_continuation_active = False
                 previous_text = recent_plain[-1] if recent_plain else ''
-                is_roman_list, next_roman = _is_roman_outline_entry(
-                    content,
-                    previous_text,
-                    roman_list_expected,
-                )
+                
+                roman_match = _roman_head_match(content)
+                roman_number = _roman_to_int(roman_match.group('roman')) if roman_match else None
+                
+                is_roman_list = False
+                if roman_number == 1:
+                    is_roman_list, next_roman = _is_roman_outline_entry(
+                        content,
+                        previous_text,
+                        roman_list_expected,
+                    )
+                    roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
+                elif roman_number is not None and roman_number > 1:
+                    if roman_sequence_choice == 'list-item':
+                        is_roman_list = True
+                    elif roman_sequence_choice == 'roman-subheading':
+                        is_roman_list = False
+                    else:
+                        is_roman_list, next_roman = _is_roman_outline_entry(
+                            content,
+                            previous_text,
+                            roman_list_expected,
+                        )
+                else:
+                    is_roman_list, next_roman = _is_roman_outline_entry(
+                        content,
+                        previous_text,
+                        roman_list_expected,
+                    )
+
                 if current_mode == "FRONT_MATTER":
                     html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
-                    roman_list_expected = next_roman if is_roman_list else None
+                    roman_list_expected = roman_number + 1 if (is_roman_list and roman_number is not None) else None
                 elif is_roman_list:
                     html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
-                    roman_list_expected = next_roman
+                    roman_list_expected = roman_number + 1 if roman_number is not None else None
                 else:
                     html_parts.append(f'<h4 class="roman-subheading">{_render_roman_heading_content(content)}</h4>')
                     roman_list_expected = None
@@ -1891,22 +2177,28 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                     roman_number = _roman_to_int(roman_match.group('roman'))
                     rest_after_roman = roman_match.group('rest').strip()
                     previous_text = recent_plain[-1] if recent_plain else ''
-                    starts_roman_list = (
-                        roman_number in (1, 2)
-                        and (
+                    
+                    is_roman_list = False
+                    if roman_number == 1:
+                        starts_roman_list = (
                             re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
                             or re.search(r'(?:[—-]|,)\s*$', previous_text)
                         )
-                    )
-                    continues_roman_list = roman_list_expected == roman_number
-                    if (starts_roman_list or continues_roman_list) and _is_roman_list_item(rest_after_roman):
+                        if starts_roman_list and _is_roman_list_item(rest_after_roman):
+                            is_roman_list = True
+                        roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
+                    elif roman_number > 1:
+                        if roman_sequence_choice == 'list-item':
+                            is_roman_list = True
+                        elif roman_sequence_choice == 'roman-subheading':
+                            is_roman_list = False
+                        else:
+                            is_roman_list = roman_list_expected == roman_number
+                    
+                    if is_roman_list or current_mode == "FRONT_MATTER":
                         content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
                         is_centered_roman_list = True
-                        roman_list_expected = roman_number + 1
-                    elif current_mode == "FRONT_MATTER":
-                        content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
-                        is_centered_roman_list = True
-                        roman_list_expected = None
+                        roman_list_expected = roman_number + 1 if (is_roman_list or current_mode == "FRONT_MATTER") else None
                     else:
                         roman_heading = _render_simple_roman_heading_content(roman_match.group('roman'))
                         content_no_refs = rest_after_roman
@@ -1918,7 +2210,21 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
                         roman_number = _roman_to_int(roman_head_start.group('roman'))
                         rest_after_roman = (roman_head_start.group('rest') or '').strip()
                         previous_text = recent_plain[-1] if recent_plain else ''
-                        if _starts_roman_outline(previous_text, roman_number) or roman_list_expected == roman_number:
+                        
+                        is_roman_list = False
+                        if roman_number == 1:
+                            if _starts_roman_outline(previous_text, roman_number):
+                                is_roman_list = True
+                            roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
+                        elif roman_number > 1:
+                            if roman_sequence_choice == 'list-item':
+                                is_roman_list = True
+                            elif roman_sequence_choice == 'roman-subheading':
+                                is_roman_list = False
+                            else:
+                                is_roman_list = roman_list_expected == roman_number
+                        
+                        if is_roman_list:
                             content_no_refs = f'**{roman_head_start.group("roman")}** {rest_after_roman}'
                             is_centered_roman_list = True
                             roman_list_expected = roman_number + 1
@@ -2441,7 +2747,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         r'\b(?:these?\s+following|as\s+follows?|following\s+particulars?|'
         r'(?:may|to)\s+be\s+(?:observed|noted|considered|mentioned)|'
         r'I\s+shall\s+(?:observe|note|propose|mention|consider)|'
-        r'in\s+particular|are\s+these)\b.{0,60}[—\-:,;.]\s*$',
+        r'in\s+particular|are\s+these|namely\s+these|namely,\s+these)\b.{0,60}[—\-:,;.]\s*$',
         _re.I,
     )
     _LIST_ITEM_RE = _re.compile(
@@ -2764,15 +3070,15 @@ def _owen_marker_level(marker_text: str, previous_marker_family: str = None) -> 
     if clean.startswith('[') or re.match(r'^\[\d+\]\.?$', clean):
         return 'list-level-2', 'arabic_bracket'
 
-    # 3. Level 1: Parenthesized markers (1.), (a.) or bare decimals 1., 2. or major words Secondly, Objection 1, I. 1.
+    # 3. Level 2: Parenthesized markers (1.), (a.) (subordinate to main points)
     if clean.startswith('(') and clean.endswith(')'):
         inner = clean[1:-1].strip('.,:; ')
         if inner.isdigit():
-            return 'list-level-1', 'arabic_paren'
+            return 'list-level-2', 'arabic_paren'
         elif len(inner) == 1 and inner.isalpha():
-            return 'list-level-1', 'alpha_paren'
+            return 'list-level-2', 'alpha_paren'
         else:
-            return 'list-level-1', 'other_paren'
+            return 'list-level-2', 'other_paren'
 
     if clean.isdigit() or re.match(r'^\d+$', clean):
         return 'list-level-1', 'arabic'
@@ -2787,35 +3093,170 @@ def _owen_marker_level(marker_text: str, previous_marker_family: str = None) -> 
 
 
 def _add_owen_list_level_classes(html: str) -> str:
-    """Add modest reader-facing hierarchy classes to remaining block lists."""
+    """Add modest reader-facing hierarchy classes to remaining block lists,
+    dynamically adjusting nesting levels based on count-phrase triggers in parent paragraphs.
+    """
     if not html:
         return html
 
     import re
-    item_re = re.compile(
-        r'<p class="(?P<class>list-item|roman-list-item)">(?P<inner>.*?)</p>',
-        re.S,
+
+    # Trigger patterns
+    COUNT_TRIGGER_RE = re.compile(
+        r'\b(?:two|three|four|five|six|seven|eight|nine|ten|sundry|several|twofold|threefold|fourfold|ensuing|following)\s+'
+        r'(?:ways|reasons|things|respects|accounts|causes|parts|points|arguments|properties|instances|ends|acts|observations|propositions|heads)\b',
+        re.I
     )
+    ENDS_WITH_INTRO_RE = re.compile(r'[:—\-]\s*$', re.I)
+
+    # Helper to check if a block contains a list trigger
+    def has_list_trigger(text: str) -> bool:
+        clean = re.sub(r'<[^>]+>', '', text).strip()
+        return bool(COUNT_TRIGGER_RE.search(clean)) and bool(ENDS_WITH_INTRO_RE.search(clean))
+
+    # Helper to convert Roman to Int
+    def roman_to_int(s: str) -> int:
+        roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        val = 0
+        prev_val = 0
+        for char in reversed(s.upper()):
+            curr_val = roman_map.get(char, 0)
+            if curr_val == 0:
+                return None
+            if curr_val >= prev_val:
+                val += curr_val
+            else:
+                val -= curr_val
+            prev_val = curr_val
+        return val
+
+    # Block regex to split the XHTML safely
+    block_re = re.compile(
+        r'(<p\b[^>]*>.*?</p>|'
+        r'<blockquote\b[^>]*>.*?</blockquote>|'
+        r'<h[1-6]\b[^>]*>.*?</h[1-6]>|'
+        r'<aside\b[^>]*>.*?</aside>|'
+        r'<table\b[^>]*>.*?</table>|'
+        r'<hr\s*/?>)',
+        re.S
+    )
+
+    blocks = []
+    last_idx = 0
+    for m in block_re.finditer(html):
+        inter = html[last_idx:m.start()]
+        if inter.strip():
+            blocks.append(inter)
+        blocks.append(m.group(0))
+        last_idx = m.end()
+    tail = html[last_idx:]
+    if tail.strip():
+        blocks.append(tail)
+
+    output_blocks = []
+    active_override_level = None
     previous_family = None
 
-    def repl(match: re.Match) -> str:
-        nonlocal previous_family
-        cls = match.group('class')
-        inner = match.group('inner')
-        marker_match = re.match(r'\s*(<b>[^<]{1,40}</b>)', inner, re.S)
+    last_digit_at_level = {1: None, 2: None, 3: None}
+    last_family_at_level = {1: None, 2: None, 3: None}
 
-        if cls == 'roman-list-item':
-            previous_family = 'roman'
-            return f'<p class="{cls} list-level-1">{inner}</p>'
+    for block in blocks:
+        # Check if it's a list item
+        p_match = re.match(r'^<p class="(?P<classes>[^"]*)">(?P<inner>.*?)</p>$', block, re.S)
+        if p_match:
+            classes_list = p_match.group('classes').split()
+            if 'list-item' in classes_list or 'roman-list-item' in classes_list:
+                cls = 'roman-list-item' if 'roman-list-item' in classes_list else 'list-item'
+                inner = p_match.group('inner')
+                marker_match = re.match(r'\s*(<b>[^<]{1,40}</b>)', inner, re.S)
+                marker_raw = marker_match.group(1) if marker_match else ''
+                
+                # Determine base level and family
+                if cls == 'roman-list-item':
+                    base_level_class = 'list-level-1'
+                    family = 'roman'
+                else:
+                    base_level_class, family = _owen_marker_level(marker_raw, previous_family)
+                
+                previous_family = family
+                
+                try:
+                    base_level = int(base_level_class.split('-')[-1])
+                except ValueError:
+                    base_level = 1
+                
+                # Extract decimal / Roman integer value if available
+                clean_marker = re.sub(r'<[^>]+>', '', marker_raw).strip('.,:; \t\n\r*()[]')
+                val = None
+                if clean_marker.isdigit():
+                    val = int(clean_marker)
+                elif re.match(r'^[IVXLCDM]+$', clean_marker, re.I):
+                    val = roman_to_int(clean_marker)
 
-        level_class, family = _owen_marker_level(
-            marker_match.group(1) if marker_match else '',
-            previous_family,
-        )
-        previous_family = family
-        return f'<p class="{cls} {level_class}">{inner}</p>'
+                # Determine dynamic context-aware level
+                assigned_level = base_level
 
-    return item_re.sub(repl, html)
+                if val is not None:
+                    # 1. Check if it continues Level 1 sequence (resets overrides)
+                    if last_digit_at_level[1] is not None and val == last_digit_at_level[1] + 1 and family == last_family_at_level[1]:
+                        active_override_level = None
+                        assigned_level = 1
+                    # 2. Check if it continues Level 2 sequence
+                    elif last_digit_at_level[2] is not None and val == last_digit_at_level[2] + 1 and family == last_family_at_level[2]:
+                        assigned_level = 2
+                    # 3. Check if it continues Level 3 sequence
+                    elif last_digit_at_level[3] is not None and val == last_digit_at_level[3] + 1 and (family == last_family_at_level[3] or active_override_level == 3):
+                        assigned_level = 3
+                    # 4. Check if it is starting a new nested sequence (val == 1)
+                    elif val == 1:
+                        if active_override_level is not None:
+                            assigned_level = active_override_level
+                        else:
+                            assigned_level = base_level
+                    # 5. Fallback for non-sequential but numeric items
+                    else:
+                        if active_override_level is not None:
+                            assigned_level = max(base_level, active_override_level)
+                        else:
+                            assigned_level = base_level
+                else:
+                    # Non-numeric items (e.g. scholastic anchors, ordinals)
+                    if active_override_level is not None:
+                        assigned_level = max(base_level, active_override_level)
+                    else:
+                        assigned_level = base_level
+
+                # Update sequence trackers
+                if val is not None:
+                    last_digit_at_level[assigned_level] = val
+                    last_family_at_level[assigned_level] = family
+
+                # Reconstruct the list item paragraph preserving other classes (like syllabus-anchor)
+                other_classes = [c for c in classes_list if c not in ('list-item', 'roman-list-item') and not c.startswith('list-level-')]
+                new_classes = [cls, f'list-level-{assigned_level}'] + other_classes
+                block = f'<p class="{" ".join(new_classes)}">{inner}</p>'
+                
+                # Check if this list item itself acts as an introducing trigger for a sub-list
+                if has_list_trigger(inner):
+                    active_override_level = min(3, assigned_level + 1)
+                
+                output_blocks.append(block)
+            else:
+                output_blocks.append(block)
+        elif re.match(r'^<h[1-6]\b', block):
+            output_blocks.append(block)
+            active_override_level = None
+        else:
+            output_blocks.append(block)
+            
+            # Check if it acts as a list trigger
+            if has_list_trigger(block):
+                active_override_level = 2
+            else:
+                # Non-list paragraph with no trigger resets overrides
+                active_override_level = None
+
+    return "".join(output_blocks)
 
 
 def _nest_owen_list_hierarchies(html: str) -> str:
@@ -3275,7 +3716,9 @@ def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str
     if re.search(r'THE\s+WORKS\s+OF(?:<br\s*/?>|\s)+JOHN\s+OWEN', html, re.I):
         subtitle_html = f'<p class="title-volume-subtitle">{subtitle}</p>' if subtitle else ''
         return f'''<section class="title-page volume-title-page" epub:type="titlepage">
-<p class="ornament">❧</p>
+<div class="emblem-container">
+<img class="title-emblem-seal" src="images/emblem_seal.png" alt="Emblem Seal of Dr. John Owen"/>
+</div>
 <p class="title-work-top">The Works of</p>
 <h1 class="title-author-main">John Owen</h1>
 <div class="title-divider-double" aria-hidden="true"></div>
@@ -3469,6 +3912,213 @@ def _polish_analysis_html(html: str) -> str:
         html,
         flags=re.I | re.S,
     )
+
+
+def _apply_premium_signatures(html: str, ch_title: str) -> str:
+    """Detect signature paragraphs in prefaces/introductions and format them as premium signature blocks."""
+    if not html:
+        return html
+        
+    def replacer(match):
+        p_html = match.group(0)
+        p_content = match.group(1).strip()
+        
+        # Skip if already part of an epub-signature or pre-formatted signature class
+        if 'class="signature-' in p_html or 'epub-signature' in p_html:
+            return p_html
+            
+        parsed = parse_signature_paragraph(p_content)
+        if parsed:
+            return format_signature_html(parsed)
+        return p_html
+        
+    def parse_signature_paragraph(content):
+        # Strip HTML tags and markdown symbols to look for a signature name
+        cleaned = re.sub(r'<[^>]+>', '', content).strip()
+        cleaned = re.sub(r'[\*_]+', '', cleaned).strip()
+        
+        name_patterns = [
+            r"\bJOHN\s+OWEN\b", r"\bJohn\s+Owen\b", r"\bJ\.\s*O\.", 
+            r"\bWILLIAM\s+H\.\s+GOOLD\b", r"\bWilliam\s+H\.\s+Goold\b", r"\bW\.\s*H\.\s*G\.",
+            r"\bSir\s+John\s+Hartopp\b", r"\bMrs\s+Cooke\b", r"\bDANIEL\s+BURGESS\b"
+        ]
+        
+        matched_name = None
+        for pattern in name_patterns:
+            m = re.search(pattern, cleaned, re.I)
+            if m:
+                matched_name = m.group(0)
+                break
+                
+        if not matched_name:
+            return None
+            
+        name_plain = matched_name.strip()
+        
+        # Find where it occurs in the plain text
+        m = re.search(re.escape(name_plain), cleaned)
+        start_idx, end_idx = m.start(), m.end()
+        
+        # ── Strict Signature Criteria ─────────────────────────────
+        # A paragraph is a signature ONLY if:
+        # 1. It is short (under 200 characters total).
+        # 2. OR, the name is near the very end of a longer paragraph (within the last 120 characters).
+        total_len = len(cleaned)
+        dist_from_end = total_len - start_idx
+        
+        is_short = total_len < 200
+        is_near_end = dist_from_end <= 120
+        
+        if not (is_short or is_near_end):
+            return None  # Standard body prose mentioning the name
+            
+        prefix = cleaned[:start_idx].strip()
+        suffix = cleaned[end_idx:].strip()
+        
+        def clean_block(t):
+            t = re.sub(r'^[\s,.\—\-_—\-]+|[\s,.\—\-_—\-]+$', '', t)
+            t = t.strip()
+            return t
+            
+        intro = clean_block(prefix)
+        date_loc = clean_block(suffix)
+        body_text = ""
+        
+        split_patterns = [
+            r"\bYour\s+(?:devoted|humble|humblest|obedient|loving)?\s*Servant\b",
+            r"\bSo\s+prays\b",
+            r"\bunworthy\s+author\b",
+            r"\bloving\s+brother\b",
+            r"\bYour\s+Excellency's\s+Most\s+humble\s+and\s+devoted\s*Servant\b"
+        ]
+        
+        found_split_idx = -1
+        for sp in split_patterns:
+            m_sp = re.search(sp, intro, re.I)
+            if m_sp:
+                if found_split_idx == -1 or m_sp.start() > found_split_idx:
+                    found_split_idx = m_sp.start()
+                    
+        # If it's a long paragraph and we didn't find an explicit valediction split,
+        # reject it to prevent body text false positives
+        if total_len >= 200 and found_split_idx == -1:
+            return None
+            
+        # If it is a shorter paragraph but:
+        # - Has no valediction split
+        # - Has no date/location
+        # - The text before the name is a long sentence (> 20 characters)
+        # Reject it as it's a standard sentence (e.g., "...preached by Dr John Owen.")
+        if found_split_idx == -1 and not date_loc and len(intro) > 20:
+            return None
+            
+        if found_split_idx != -1:
+            body_text = intro[:found_split_idx].strip()
+            intro = intro[found_split_idx:].strip()
+            body_text = re.sub(r'[\s,.\—\-_—\-]+$', '', body_text).strip()
+            intro = re.sub(r'^[\s,.\—\-_—\-]+', '', intro).strip()
+            
+        name = name_plain
+        # Normalize name casing
+        if name.lower() in ("john owen", "john owen."):
+            name = "John Owen"
+        elif name.lower() in ("j.o.", "j. o.", "j.o", "j. o"):
+            name = "J.O."
+        elif name.lower() in ("william h. goold", "william h. goold."):
+            name = "William H. Goold"
+            
+        return {
+            "body_text": body_text,
+            "intro": intro,
+            "name": name,
+            "date_loc": date_loc
+        }
+
+    def format_signature_html(sig):
+        parts = []
+        if sig["body_text"]:
+            parts.append(f'<p class="front-matter-prose">{sig["body_text"]}</p>')
+        parts.append('<div class="epub-signature">')
+        if sig["intro"]:
+            parts.append(f'  <p class="signature-intro">{sig["intro"]}</p>')
+        parts.append(f'  <p class="signature-name">{sig["name"]}</p>')
+        if sig["date_loc"]:
+            parts.append(f'  <p class="signature-date">{sig["date_loc"]}</p>')
+        parts.append('</div>')
+        return "\n".join(parts)
+        
+    return re.sub(r'<p\b[^>]*>(.*?)</p>', replacer, html, flags=re.I | re.S)
+
+
+def _apply_premium_chapter_endings(html: str) -> str:
+    """Detect 'END', 'THE END', or 'END OF PART...' at the end of chapters and format them as distinct, centered bold markers."""
+    if not html:
+        return html
+        
+    end_pattern = re.compile(
+        r'(?:,\s*|\.\s*|;\s*|\s+)?'
+        r'(?:<[^>]+>|[\*_]|\s)*'
+        r'\b(THE\s+END|END\s+OF\s+(?:THE\s+)?(?:(?:PART|BOOK|VOLUME|TREATISE)\s+(?:FIRST|SECOND|THIRD|FOURTH|V\w+|[IVXLCDM\d\s]+)|(?:FIRST|SECOND|THIRD|FOURTH|V\w+|[IVXLCDM\d\s]+)\s*(?:PART|BOOK|VOLUME|TREATISE)|PART|BOOK|VOLUME|TREATISE)|END)\b'
+        r'(?:<[^>]+>|[\*_]|\s|[,.\—\-_—\-])*$',
+        re.I
+    )
+
+    def replacer(match):
+        p_html = match.group(0)
+        p_attrs = match.group(1)
+        p_content = match.group(2).strip()
+        
+        m_end = end_pattern.search(p_content)
+        if m_end:
+            matched_txt = m_end.group(1)
+            
+            is_uppercase = matched_txt.isupper()
+            has_formatting = '<' in p_content[m_end.start():] or '*' in p_content[m_end.start():] or '_' in p_content[m_end.start():]
+            is_standalone = m_end.start() == 0 or p_content[:m_end.start()].strip() == ""
+            
+            if not (is_uppercase or has_formatting or is_standalone):
+                return p_html
+                
+            prefix = p_content[:m_end.start()].strip()
+            prefix = re.sub(r'[\s,.\—\-_—\-]+$', '', prefix).strip()
+            
+            clean_txt = re.sub(r'<[^>]+>', '', matched_txt).strip()
+            clean_txt = re.sub(r'[\*_]+', '', clean_txt).strip()
+            clean_txt = re.sub(r'[^a-zA-Z\d\s]', '', clean_txt).strip()
+            formatted_marker = f'<p class="chapter-end-marker"><b>{clean_txt.upper()}.</b></p>'
+            
+            if prefix:
+                return f'<p{p_attrs}>{prefix}.</p>\n{formatted_marker}'
+            else:
+                return formatted_marker
+                
+        return p_html
+
+    return re.sub(r'<p(\b[^>]*)>(.*?)</p>', replacer, html, flags=re.I | re.S)
+
+
+def _apply_premium_salutations(html: str) -> str:
+    """Detect 'Christian Reader,', 'To the Christian Reader,', etc. and format them as elegant left-aligned salutations."""
+    if not html:
+        return html
+        
+    salutation_pattern = re.compile(
+        r'<(p|h[1-6])(\b[^>]*)>(?:<[^>]+>)*\s*'
+        r'\b((?:To\s+the\s+)?(?:Christian\s+)?Reader\b\s*[,.\—\-_—\-]*)\s*'
+        r'(?:<[^>]+>)*\s*</\1>',
+        re.I
+    )
+
+    def replacer(match):
+        p_html = match.group(0)
+        p_text = match.group(3).strip()
+        
+        if len(p_text) > 60:
+            return p_html
+            
+        return f'<p class="prefatory-salutation">{p_text}</p>'
+
+    return salutation_pattern.sub(replacer, html)
 
 
 def _looks_like_summary_body_start(text: str) -> bool:
@@ -4591,6 +5241,17 @@ def render_volume(vol_num: int, overrides: dict = None,
         frontispiece_item.add_item(style_item)
         book.add_item(frontispiece_item)
 
+    # ── Emblem Seal ──────────────────────────────────────────────
+    emblem_path = _RENDER_DIR / 'covers' / 'emblem_seal.png'
+    if emblem_path.exists():
+        with open(emblem_path, 'rb') as f:
+            emblem_item = epub.EpubItem(
+                file_name='images/emblem_seal.png',
+                media_type='image/png',
+                content=f.read()
+            )
+        book.add_item(emblem_item)
+
     # ── PDF-extracted front matter (title pages, TOC) ────────────
     front_matter_epub_items = []
     _last_fm_title = None
@@ -4785,6 +5446,9 @@ def render_volume(vol_num: int, overrides: dict = None,
         if html_postprocess_hook:
             ch_context = {**ch_dict, 'is_catechism_context': in_catechism_context}
             body_html = html_postprocess_hook(body_html, ch_context)
+        body_html = _apply_premium_signatures(body_html, ch_dict.get('title', ''))
+        body_html = _apply_premium_chapter_endings(body_html)
+        body_html = _apply_premium_salutations(body_html)
         inline_replacements = config.get('inline_html_replacements', {})
         if inline_replacements:
             for old, new in inline_replacements.items():

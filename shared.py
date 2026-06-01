@@ -1307,6 +1307,28 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     text = re.sub(r'(?m)^0 (?=[A-Za-z])', 'O ', text)
     text = re.sub(r'(?<=[.!?] )0 (?=[A-Za-z])', 'O ', text)
 
+    # Repair Volume 1 Chapter 15 scripture reference split OCR error ("verse, 7. He has," -> "verse 7. He has,")
+    text = re.sub(
+        r'\bverse\s*,\s*7\.\s+He\s+has\s*,',
+        r'verse 7. He has,',
+        text,
+        flags=re.I
+    )
+
+    # Clean stray double quotes preceding a scripture reference (e.g. '," " John' -> '," John')
+    text = re.sub(
+        rf'([”"“]\s*,?\s*)[”"“]\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)',
+        r'\1',
+        text,
+        flags=re.I
+    )
+
+    # Repair Volume 1 Meditations Chapter 1 missing list marker '4.' OCR error
+    text = text.replace(
+        "\n\nConsider therefore, his infinite condescension",
+        "\n\n4. Consider therefore, his infinite condescension"
+    )
+
     # Issue 44: A trailing lone hyphen at end of a line or sentence fragment
     # is an OCR artifact for an em-dash that was at line's end in the source.
     # "For, -" → "For, —"  (comma + space + hyphen → comma + em-dash)
@@ -1497,6 +1519,17 @@ def _scripture_ref_tokens(text):
 
 def _split_inline_structural_markers(para, allow_bare_a=False):
     """Promote inline Owen list markers to paragraph starts."""
+    # 3-Level Indentation Cap: If the paragraph itself starts with a Level 3 marker (an ordinal),
+    # any deeper sub-points represent Level 4+ and should remain flat/inline inside this paragraph.
+    clean_start = re.sub(r'<[^>]+>', '', para).strip().upper()
+    is_level_3_start = (
+        re.match(r'^\(?(?:\d+(?:ST|ND|RD|TH|DLY|LY))\b', clean_start)
+        or re.match(r'^\[(?:FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH|LAST|LY)\]', clean_start)
+        or re.match(r'^\d+(?:ST|ND|RD|TH|DLY|LY)\b', clean_start)
+    )
+    if is_level_3_start:
+        return [para]
+
     pieces = []
     pos = 0
     for match in INLINE_STRUCTURAL_MARKER_RE.finditer(para):
@@ -1541,6 +1574,22 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
             continue
 
         before_tail = re.sub(r'[*_]+$', '', before).rstrip()
+        # Flat lists (ordinals) preceded by a comma, semicolon, or connector word must remain inline.
+        is_ordinal_marker = bool(re.search(
+            r'(?i)\b(?:1st|2nd(?:ly)?|2dly|3rd(?:ly)?|3dly|4th(?:ly)?|first|secondly|thirdly|fourthly|lastly|firstly)\b',
+            marker
+        ))
+        if is_ordinal_marker:
+            is_preceded_by_connector = bool(re.search(
+                r'(?i)(?:'
+                r'[,;]\s*|'
+                r'\b(?:and|or|but|as|to|into|unto|of|in|by|with|that|which|is|are|were|was|be|been)\b\s*'
+                r')[”"\'’]*\s*$',
+                before_tail
+            ))
+            if is_preceded_by_connector:
+                continue
+
         before_ends_structural = bool(re.search(r'[,;:—-]\s*$', before_tail))
         before_ends_terminal = bool(re.search(r"""[.!?][""')\]]?\s*$""", before_tail))
         before_ends_lead_word = bool(re.search(
@@ -2188,14 +2237,14 @@ blockquote {
     max-width: 34em;
 }
 .volume-title-page .title-divider-double {
-    border-top: 1.5px solid rgba(0, 0, 0, 0.16);
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+    border-top: 1.5px solid rgba(176, 141, 45, 0.45);
+    border-bottom: 0.5px solid rgba(176, 141, 45, 0.25);
     height: 3px;
     width: 60%;
     margin: 1.6em auto 1.4em;
 }
 .volume-title-page .title-meta-divider {
-    border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+    border-top: 0.5px solid rgba(176, 141, 45, 0.25);
     width: 40%;
     margin: 2em auto 1.5em;
 }
@@ -2206,6 +2255,7 @@ blockquote {
     font-size: 0.85em;
     text-transform: uppercase;
     letter-spacing: 0.22em;
+    color: #666;
     opacity: 0.75;
 }
 .volume-title-page .title-author-main {
@@ -2219,15 +2269,17 @@ blockquote {
     font-weight: bold;
     border: 0;
     padding: 0;
-    color: #111;
+    color: #2a55a0; /* Monumental deep Owen Blue */
 }
 .volume-title-page .title-volume-number {
     text-align: center;
     text-indent: 0;
     margin: 1.2em 0 0.35em;
-    font-size: 0.9em;
+    font-size: 0.95em;
     text-transform: uppercase;
     letter-spacing: 0.18em;
+    color: #2a55a0; /* Owen Blue */
+    font-weight: bold;
 }
 .volume-title-page .title-volume-subtitle {
     text-align: center;
@@ -2266,9 +2318,10 @@ blockquote {
     text-indent: 0 !important;
 }
 .volume-title-page .edition-year {
-    font-size: 0.82em;
+    font-size: 0.88em;
     letter-spacing: 0.18em;
-    color: #444;
+    color: #b08d2d; /* Elegant Gold */
+    font-weight: bold;
     margin-top: 0.4em;
     text-align: center !important;
     text-indent: 0 !important;
@@ -2389,7 +2442,7 @@ p.chapter-summary {
 
 .roman-subheading {
     font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
-    text-align: left;
+    text-align: center;
     font-weight: normal; /* Preserves Goold look (bold numerals with normal-weight text) */
     text-indent: 0;
     margin: 1.4em 0 0.55em;
@@ -2688,6 +2741,10 @@ p.scholastic-anchor {
     text-indent: 0;
     margin-top: 1.5em;
 }
+p.scholastic-anchor-parent,
+p.scholastic-anchor-child {
+    /* Semantic subclasses for mobile-first visual Cap */
+}
 p.scholastic-anchor b,
 b.scholastic-label {
     font-weight: bold;
@@ -2978,6 +3035,102 @@ aside[epub\:type~="endnote"] {
     font-size: 1.2em;
     margin: 2em auto;
     color: #b08d2d;
+}
+
+/* Premium Curation Styles */
+.emblem-container {
+    text-align: center;
+    margin: 0 auto 1.5em;
+    width: 90px;
+    height: 90px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid rgba(176, 141, 45, 0.45);
+    box-shadow: 0 4px 12px rgba(176, 141, 45, 0.2);
+    background: transparent;
+}
+.title-emblem-seal {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.epub-signature {
+    margin-top: 2.2em;
+    margin-bottom: 2em;
+    text-align: right;
+    font-style: italic;
+    break-inside: avoid;
+    padding-right: 1.2em;
+    border-right: 2px solid rgba(176, 141, 45, 0.22);
+}
+.signature-intro {
+    margin: 0 0 0.3em;
+    font-size: 0.95em;
+    color: #444;
+}
+.signature-name {
+    margin: 0 0 0.3em;
+    font-weight: bold;
+    font-size: 1.05em;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    color: #2a55a0;
+}
+.signature-date {
+    margin: 0;
+    font-size: 0.90em;
+    color: #666;
+}
+.contents-part-divider {
+    text-align: center;
+    margin: 2.2em 0 1.6em;
+    break-after: avoid;
+}
+.contents-part-divider .divider-ornament {
+    display: block;
+    font-size: 1.1em;
+    color: #b08d2d;
+    margin-bottom: 0.3em;
+}
+.contents-part-divider .contents-part-title {
+    font-family: inherit;
+    font-size: 1.12em;
+    font-weight: bold;
+    font-variant: small-caps;
+    letter-spacing: 0.12em;
+    color: #2a55a0;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 0.25em 1.2em;
+    border-top: 1px solid rgba(176, 141, 45, 0.22);
+    border-bottom: 1px solid rgba(176, 141, 45, 0.22);
+}
+.chapter-end-marker {
+    text-align: center;
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif;
+    font-size: 1.05em;
+    font-weight: bold;
+    font-variant: small-caps;
+    letter-spacing: 0.18em;
+    color: #b08d2d; /* Classic Gold */
+    margin: 2.5em auto 1.8em;
+    display: block;
+    break-inside: avoid;
+}
+.prefatory-salutation {
+    font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif;
+    font-size: 1.05em;
+    font-weight: bold;
+    font-style: italic;
+    color: #444;
+    text-align: left !important;
+    text-indent: 0 !important;
+    margin: 1.6em 0 1.2em !important;
+    display: block;
+    border: none !important;
+    padding: 0 !important;
 }
 /*]]>*/
 """
