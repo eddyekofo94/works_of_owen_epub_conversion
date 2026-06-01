@@ -16,6 +16,16 @@ FOOTNOTE_TRANSLATIONS = {
         "rather than &ldquo;into the heavens.&rdquo;"
     ),
     
+    # --- VOLUME 12 FOOTNOTES ---
+    "v12_fn111": (
+        "<b>Modern Citation:</b> John Calvin, <i>Institutes of the Christian Religion</i>, ed. John T. McNeill, "
+        "trans. Ford Lewis Battles, Library of Christian Classics, vols. 20&ndash;21 (Philadelphia: Westminster Press, 1960), "
+        "1.13.3 (discussing the distinction of the Persons in the Trinity). Heinrich Alting, <i>Theologia Elenctica Nova</i>, "
+        "Locus 2 (De Deo).<br/>"
+        "<b>Translation:</b> &ldquo;See Calvin, <i>Institutes</i>, Book 1, Chapter 13, Section 3; Heinrich Alting, <i>Elenctic Theology</i>, "
+        "Locus 2 (On God).&rdquo;"
+    ),
+    
     # --- VOLUME 3 FOOTNOTES ---
     "v3_fn1": (
         "<b>Modern Citation:</b> John Chrysostom, <i>Homilies on First Corinthians</i>, Homily 29.1 [NPNF1, 12:168; PG 61.239]. "
