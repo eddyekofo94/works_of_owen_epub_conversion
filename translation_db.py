@@ -119,10 +119,19 @@ FOOTNOTE_TRANSLATIONS = {
     ),
 
     # --- VOLUME 1 FOOTNOTES ---
+    "v1_fn5": (
+        "<b>Modern Citation:</b> Johann Albrecht Bengel, <i>Gnomon Novi Testamenti</i>, on 2 Corinthians 3:18; Edward Robinson, <i>A Greek and English Lexicon of the New Testament</i>, s.v. <span lang=\"el\" xml:lang=\"el\">κατοπτρίζω</span>.<br/><b>Translation:</b> <span lang=\"el\" xml:lang=\"el\">Κατοπτρίζω</span> means &ldquo;to behold as in a mirror&rdquo; or &ldquo;to reflect as a mirror,&rdquo; not &ldquo;to look through a telescope.&rdquo; Bengel's Latin means: &ldquo;The Lord mirrors himself to us, sending the splendor of his face into our hearts as into mirrors; we receive and reflect that splendor. This is an elegant contrast with &lsquo;engraved&rsquo; or &lsquo;inscribed&rsquo;; for things engraved are made gradually, but things represented in a mirror are made very quickly.&rdquo;"
+    ),
+    "v1_fn9": (
+        "<b>Modern Citation:</b> Nestorius of Constantinople, controversy over the title <span lang=\"el\" xml:lang=\"el\">Θεοτόκος</span> (&ldquo;God-bearer&rdquo;), condemned at the Council of Ephesus (A.D. 431); see Socrates Scholasticus, <i>Ecclesiastical History</i>, Book 7, Chapters 29–34 [NPNF2, 2:169–178; PG 67.793–824], and the conciliar acts of Ephesus.<br/><b>Translation Summary:</b> The Greek terms are technical Christological vocabulary: <span lang=\"el\" xml:lang=\"el\">Θεοτόκος</span> means &ldquo;God-bearer&rdquo; or &ldquo;Mother of God&rdquo;; <span lang=\"el\" xml:lang=\"el\">συνάφεια</span> means &ldquo;conjunction&rdquo; or &ldquo;association&rdquo;; <span lang=\"el\" xml:lang=\"el\">ἐνοίκησις</span> means &ldquo;indwelling&rdquo;; and <span lang=\"el\" xml:lang=\"el\">ἕνωσις</span> means &ldquo;union.&rdquo; The note explains that Nestorius preferred language of conjunction or indwelling between Christ's two natures rather than the orthodox language of true personal union."
+    ),
     "v1_fn10": (
         "Hebrews 4:14. The Greek phrase <span lang=\"el\" xml:lang=\"el\">διεληλυθότα τοὺς οὐρανούς</span> "
         "transliterates as <i>dielylythota tous ouranous</i>, meaning &ldquo;having passed through the heavens,&rdquo; "
         "rather than &ldquo;into the heavens.&rdquo;"
+    ),
+    "v1_fn11": (
+        "<b>Modern Citation:</b> Hadrian, <i>Animula vagula blandula</i>, preserved in the <i>Historia Augusta</i>, <i>Life of Hadrian</i>, 25.9.<br/><b>Translation:</b> &ldquo;Little soul, wandering and charming, guest and companion of the body, to what places will you now depart? Pale, stiff, and bare, you will no longer make your usual jokes.&rdquo;"
     ),
     
     # --- VOLUME 12 FOOTNOTES ---
@@ -546,6 +555,54 @@ FOOTNOTE_TRANSLATIONS = {
 # will be injected immediately after it.
 BODY_TRANSLATIONS = {
     # --- VOLUME 1 BODY PHRASES ---
+    "factores autem sermonum ejus facti, communionem habeamus cum ipso": (
+        "<b>Modern Citation:</b> John Calvin, <i>Commentary on the First Epistle of John</i>, Preface / Argument on 1 John 1:1–4.<br/><b>Translation:</b> &ldquo;Having become doers of his words, let us have communion with him.&rdquo;"
+    ),
+    "ἐν Πατρὶ": (
+        "<b>Modern Citation:</b> John 14:10–11.<br/><b>Translation:</b> &ldquo;in the Father.&rdquo; Owen uses the phrase for the Son's unity of essence with the Father."
+    ),
+    "πρὸς τὸν Πατέρα": (
+        "<b>Modern Citation:</b> John 1:1; compare John 13:3 and 1 John 1:2.<br/><b>Translation:</b> &ldquo;with the Father&rdquo; or &ldquo;toward the Father.&rdquo; Owen uses it for the Son's distinct personal subsistence in relation to the Father."
+    ),
+    "ἐν προσώπῳ τοῦ Χηριστοῦ": (
+        "<b>Modern Citation:</b> 2 Corinthians 4:6 (with the printed text's spelling of Christ as <span lang=\"el\" xml:lang=\"el\">Χηριστοῦ</span> for <span lang=\"el\" xml:lang=\"el\">Χριστοῦ</span>).<br/><b>Translation:</b> &ldquo;in the face [or person] of Christ.&rdquo;"
+    ),
+    "λόγος οὐσιώδης": (
+        "<b>Modern Citation:</b> Patristic and Reformed scholastic terminology for the essential Word of God; compare John 1:1 and Hebrews 1:3.<br/><b>Translation:</b> &ldquo;essential Word.&rdquo; Owen distinguishes Christ, the internal and essential Word, from Scripture as the externally spoken word."
+    ),
+    "λόγος προφορικὸς": (
+        "<b>Modern Citation:</b> Patristic and Reformed scholastic terminology for the uttered or expressed word; compare the distinction between <i>Logos endiathetos</i> and <i>Logos prophorikos</i> in early Christian theology.<br/><b>Translation:</b> &ldquo;spoken Word&rdquo; or &ldquo;uttered Word.&rdquo;"
+    ),
+    "שִׁיר יְדִידְֹת": (
+        "<b>Modern Citation:</b> Psalm 45 title, Hebrew Bible / Masoretic Text.<br/><b>Translation:</b> &ldquo;A song of loves&rdquo; or &ldquo;a love song.&rdquo;"
+    ),
+    "κατὰ βούλησιν καὶ ἐυδοκίαν": (
+        "<b>Modern Citation:</b> John of Damascus, <i>Exposition of the Orthodox Faith</i>, Book 3, Chapter 1 [NPNF2, 9:45; PG 94.985].<br/><b>Translation:</b> &ldquo;according to will and good pleasure.&rdquo; Owen is summarizing Damascene's point that the Father and the Spirit concurred in the incarnation by counsel and approval, while the Son personally assumed human nature."
+    ),
+    "ἐναλλαγή": (
+        "<b>Modern Citation:</b> Classical rhetorical and theological usage; used in Christological discussions of predication concerning Christ's two natures.<br/><b>Translation:</b> &ldquo;interchange&rdquo; or &ldquo;alteration.&rdquo;"
+    ),
+    "ἀλλοίωσις": (
+        "<b>Modern Citation:</b> Classical rhetorical and theological usage in Christological predication.<br/><b>Translation:</b> &ldquo;change,&rdquo; &ldquo;alteration,&rdquo; or &ldquo;permutation.&rdquo;"
+    ),
+    "κοινότης": (
+        "<b>Modern Citation:</b> Patristic and scholastic Christological terminology.<br/><b>Translation:</b> &ldquo;communion&rdquo; or &ldquo;commonness.&rdquo;"
+    ),
+    "τρόπος ἀντιδόσεως": (
+        "<b>Modern Citation:</b> Patristic and scholastic Christological terminology related to the communication of properties.<br/><b>Translation:</b> &ldquo;the mode of exchange&rdquo; or &ldquo;the manner of mutual attribution.&rdquo;"
+    ),
+    "κοινωνία ἰδιωμάτων": (
+        "<b>Modern Citation:</b> Standard Christological formula, commonly rendered in Latin as <i>communicatio idiomatum</i>; compare the Definition of Chalcedon (A.D. 451) and later patristic/scholastic usage.<br/><b>Translation:</b> &ldquo;communication [or communion] of properties.&rdquo;"
+    ),
+    "Τὴν δόξαν τὴν ἐμὴν": (
+        "<b>Modern Citation:</b> John 17:24.<br/><b>Translation:</b> &ldquo;my glory&rdquo; or &ldquo;the glory that is mine.&rdquo;"
+    ),
+    "δἰ ἐσόπτρου ἐν αἰνίγματι": (
+        "<b>Modern Citation:</b> 1 Corinthians 13:12; the standard Greek reads <span lang=\"el\" xml:lang=\"el\">διʼ ἐσόπτρου ἐν αἰνίγματι</span>.<br/><b>Translation:</b> &ldquo;through a mirror, in an enigma&rdquo; or &ldquo;by means of a mirror, dimly.&rdquo;"
+    ),
+    "וְקַח טוֹב": (
+        "<b>Modern Citation:</b> Hosea 14:2, Hebrew Bible / Masoretic Text.<br/><b>Translation:</b> &ldquo;and receive what is good&rdquo; or idiomatically, &ldquo;receive us graciously.&rdquo;"
+    ),
     "ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΠA": "Various Theological Writings (Owen's Latin title for his massive Latin work on the history of theology).",
     "ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΠΆ": "Various Theological Writings.",
     "ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΙΙΑ": "Various Theological Writings (originally parsed as Greek/Latin hybrid).",
