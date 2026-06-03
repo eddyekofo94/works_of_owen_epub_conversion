@@ -810,10 +810,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-01T15:30:33.061492+00:00
+**Last run:** 2026-06-02T22:21:39.126938+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -830,12 +833,12 @@ Reports:
 | NAV links | 48 |
 | Greek chars / untagged | 4318 / 0 |
 | Hebrew chars / untagged | 1620 / 0 |
-| Noteref links / endnote anchors | 210 / 179 |
+| Noteref links / endnote anchors | 299 / 299 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 4 |
+| Repeated phrase hits | 3 |
 
 Warnings requiring triage:
 
@@ -965,11 +968,14 @@ Validation:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-01T15:31:08.628403+00:00
-**Status:** WARN (8 warnings)
+**Last run:** 2026-06-02T22:22:17.789134+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_3_text_integrity.json`
@@ -979,9 +985,9 @@ Reports:
 |-------|--------|
 | PDF pages | 789 |
 | EPUB text files | 45 |
-| EPUB paragraphs/headings | 2507 |
-| Approximate PDF-to-EPUB word coverage | 0.9851 |
-| Weak page matches | 15 |
+| EPUB paragraphs/headings | 2498 |
+| Approximate PDF-to-EPUB word coverage | 0.9853 |
+| Weak page matches | 13 |
 | Dense source windows checked | 812 |
 | Missing dense source-window pages | 783 |
 | Front CONTENTS pages checked | 6 |
@@ -991,12 +997,12 @@ Reports:
 | Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 748 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 6 |
-| Possible faulty paragraph splits | 153 |
-| Structural starts excluded from split warnings | 319 |
-| Short fragments | 13 |
+| Missing bottom-of-page body windows | 5 |
+| Possible faulty paragraph splits | 161 |
+| Structural starts excluded from split warnings | 304 |
+| Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 5 |
+| Inline structural marker candidates | 14 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -1005,15 +1011,15 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 626 |
-| EPUB enumerator markers | 708 |
+| EPUB enumerator markers | 797 |
 | Missing enumerator marker forms | 0 |
-| Enumerator sequence candidates | 23 |
+| Enumerator sequence candidates | 65 |
 | PDF Greek words / EPUB Greek words | 809 / 815 |
 | Greek word coverage ratio | 0.9936 |
-| PDF Hebrew words / EPUB Hebrew words | 238 / 238 |
-| Hebrew word coverage ratio | 0.9454 |
-| Missing Greek clauses | 0 |
-| Missing Hebrew clauses | 3 |
+| PDF Hebrew words / EPUB Hebrew words | 238 / 235 |
+| Hebrew word coverage ratio | 0.958 |
+| Missing Greek clauses | 1 |
+| Missing Hebrew clauses | 5 |
 
 Warnings requiring triage:
 
@@ -1024,6 +1030,7 @@ Warnings requiring triage:
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 - `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.

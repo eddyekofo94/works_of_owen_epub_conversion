@@ -86,7 +86,87 @@ _V4_SPIRITUAL_GIFTS_TITLE_PAGE = '''<section class="treatise-title-page" epub:ty
 <p class="title-line-medium">Excellency, Use, and Abuse.</p>
 </section>'''
 
+_V4_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
+<h1 class="contents-volume-title">CONTENTS OF VOLUME 4.</h1>
+
+<p class="contents-general-preface"><a href="ch002.xhtml">A Discourse Concerning the Holy Spirit, Continued</a></p>
+
+<h2 class="contents-treatise-title">THE REASON OF FAITH</h2>
+<p class="contents-item"><a href="ch004.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch005.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch006.xhtml">The Subject Stated — Preliminary Remarks</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch007.xhtml">What It Is to Believe the Scripture to Be the Word of God</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch008.xhtml">Convincing Arguments for Divine Revelation</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch009.xhtml">Moral Certainty</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch010.xhtml">Divine Revelation Itself the Only Foundation</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch011.xhtml">The Nature of Divine Revelations</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch012.xhtml">Inferences From the Whole</a></p>
+<p class="contents-item"><a href="ch013.xhtml">Appendix</a></p>
+
+<h2 class="contents-treatise-title">THE CAUSES, WAYS, AND MEANS OF UNDERSTANDING THE MIND OF GOD</h2>
+<p class="contents-item"><a href="ch015.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch016.xhtml">Analysis</a></p>
+<p class="contents-item"><a href="ch017.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch018.xhtml">Usurpation of the church of Rome with reference unto the interpretation of the Scripture</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch019.xhtml">The general assertion confirmed with testimonies of the Scripture</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch020.xhtml">Other testimonies pleaded in confirmation of the same truth</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch021.xhtml">The especial work of the Holy Spirit in the illumination of our minds</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch022.xhtml">Causes of the ignorance of the mind of God revealed in the Scripture</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch023.xhtml">The work of the Holy Spirit in the composing and disposal of the Scripture</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch024.xhtml">Means to be used for the right understanding of the mind of God</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch025.xhtml">Further Rules</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch026.xhtml">Helps ecclesiastical in the interpretation of the Scripture</a></p>
+
+<h2 class="contents-treatise-title">A DISCOURSE OF THE WORK OF THE HOLY SPIRIT IN PRAYER</h2>
+<p class="contents-item"><a href="ch028.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch029.xhtml">Analysis</a></p>
+<p class="contents-item"><a href="ch030.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch031.xhtml">The Use of Prayer, and the Work</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch032.xhtml">Zechariah 12:10 Opened and Vindicated</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch033.xhtml">Galatians 4:6 Opened and Vindicated</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch034.xhtml">The Nature of Prayer</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch035.xhtml">The Work of the Holy Spirit</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch036.xhtml">The Due Manner of Prayer</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch037.xhtml">The Nature of Prayer in General</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch038.xhtml">Duty of Prayer by Virtue of a Spiritual Gift Explained</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch039.xhtml">Duties Inferred From the Preceding Discourse</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch040.xhtml">Of Mental Prayer as Pretended Unto by Some</a></p>
+<p class="contents-item"><b>Chapter XI.</b> <a href="ch041.xhtml">Prescribed Forms of Prayer Examined</a></p>
+
+<h2 class="contents-treatise-title">OF THE HOLY SPIRIT AS A COMFORTER</h2>
+<p class="contents-item"><a href="ch043.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch044.xhtml">Analysis of the First Treatise</a></p>
+<p class="contents-item"><a href="ch045.xhtml">Analysis of the Second Treatise</a></p>
+<p class="contents-item"><a href="ch046.xhtml">Preface</a></p>
+<div class="contents-part-divider">
+  <span class="divider-ornament">❦</span>
+  <h3 class="contents-part-title">OF THE SPIRIT AS A COMFORTER</h3>
+</div>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch048.xhtml">The Holy Ghost the comforter of the church by way of office</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch049.xhtml">General Adjuncts or Properties of the Office of a Comforter</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch050.xhtml">Unto Whom the Holy Spirit Is Promised and Given as a Comforter</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch051.xhtml">Inhabitation of the Spirit</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch052.xhtml">Particular Actings of the Holy Spirit As A Comforter</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch053.xhtml">The Spirit a Seal, and How</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch054.xhtml">The Spirit an Earnest, and How</a></p>
+<p class="contents-item"><a href="ch055.xhtml">The Application of the Foregoing Discourse</a></p>
+
+<h2 class="contents-treatise-title">A DISCOURSE OF SPIRITUAL GIFTS</h2>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch057.xhtml">Spiritual Gifts, Their Names and Signification</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch058.xhtml">Differences Between Spiritual Gifts and Saving Grace</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch059.xhtml">Of Gifts and Offices Extraordinary</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch060.xhtml">Extraordinary Spiritual Gifts</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch061.xhtml">Extraordinary Spiritual Gifts</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch062.xhtml">Of Ordinary Gifts of the Spirit</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch063.xhtml">Of Spiritual Gifts Enabling the Ministry</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch064.xhtml">Of the Gifts of the Spirit With Respect Unto Doctrine, Worship, & Rule</a></p>
+</section>'''
+
 OVERRIDES = {
+    'contents_page_overrides': _V4_CONTENTS_PAGE,
+    'exclude_chapters': [
+        'The Works of John Owen Vol. 4',
+    ],
     'treatise_title_overrides': {
         'A Discourse Concerning the Holy Spirit, Continued:': _V4_HS_CONTINUED_TITLE_PAGE,
         'The Reason of Faith;': _V4_REASON_OF_FAITH_TITLE_PAGE,

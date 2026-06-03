@@ -1,0 +1,238 @@
+v11: 52 citations
+
+======================================================================
+COMPREHENSIVE INLINE CITATION AUDIT — JOHN OWEN WORKS
+======================================================================
+  Total citation instances:     52
+  Already resolved:             0  (0%)
+  Self-references (Owen):       0
+  Unresolved — author found:    20
+  Unresolved — no author:       32
+
+By abbreviation type:
+    lib.:  39
+    epist.:  9
+    dial.:  2
+    homil.:  2
+
+Unresolved by volume:
+    v11:  52
+
+----------------------------------------------------------------------
+CITATION DETAILS:
+----------------------------------------------------------------------
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VOLUME 11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ch006  [Varro]
+    CITE:  'lib. 4'
+    CTX:   ...hese are not rather distinguished from their objects than in themselves.  Varro,«lib. 4»De Ling. Lat., tells us that pertinacia...
+
+  ch006  [Augustine of Hippo]
+    CITE:  'lib. 83'
+    CTX:   ...do. Hence is that definition of it commonly given by the schoolmen from Austin,«lib. 83», qu. 31, who took it from Cicero (one t...
+
+  ch006  [Cicero]
+    CITE:  'lib. 2'
+    CTX:   ...qu. 31, who took it from Cicero (one they little acquainted themselves withal),«lib. 2»De Invent, cap. 54. It is, say they, "In...
+
+  ch006  [Aristotle]
+    CITE:  'lib. 7 cap. 6'
+    CTX:   ...nded withal. Aristotle informs us that it is exercised about things troublesome,«lib. 7 cap. 6», Eth. Nicom., giving a difference betwe...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 10 cap. 9'
+    CTX:   ...ce he tells us that καρτερκῶς ζῇν, as well as σωφρόνως, is not pleasant to many,«lib. 10 cap. 9»; and that because so to live implies di...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 7 cap. 9'
+    CTX:   ..., ἀμαθεῖς, and ἄγροικοι. All these are, in his judgment, ἰσχυρογνώμονες, Nicom.,«lib. 7 cap. 9»; which perverse disposition of spirit h...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 2'
+    CTX:   ...rom the habit of faith and love itself; for which Bradwardin earnestly contends,«lib. 2»De Cau. Dei. cap. 7, concluding his disp...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 10'
+    CTX:   ...ivines of the reformed churches. Hence is that conclusion of Alvarez, De Auxil.,«lib. 10»disp. 103,  [[BLOCKQUOTE]] "Secundum fid...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...In hac omnes catholici conveniunt." Of the same judgment was his master, Thomas,«lib. 3»Con. Genesis cap. ely.; where, also, he...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 2 cap. 8'
+    CTX:   ...ied, but to manifest that it was immediately and wholly from God. His words are,«lib. 2 cap. 8», Corol.,  [[BLOCKQUOTE]] "Sieur secundu...
+
+  ch006  [Eusebius of Caesarea]
+    CITE:  'lib. 3 cap. 32'
+    CTX:   ...l be found] in that known passage of Hegesippus, in Eusebius Hist. Ecclesiastes,«lib. 3 cap. 32»: Ως ἄρα μέχρι τῶν τότε χρόνων, παρθένος...
+
+  ch006  [Clement of Alexandria]
+    CITE:  'lib. 2'
+    CTX:   ...inus, in hac alioquin palaestra non ita exer-citatus ut sequentia secula," Hom.,«lib. 2». "Basilii et Valentini dogma esse dicit...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 3 cap. 33'
+    CTX:   ...cular person, doth that great and holy doctor discourse, De Doctrin. Christiana,«lib. 3 cap. 33».  Saith he,  [[BLOCKQUOTE]] "Non erat e...
+
+  ch006  [Sozomen]
+    CITE:  'lib. 7 cap. 12'
+    WORK:  Ecclesiastical History
+    CTX:   ...Agelius the Novatians sometimes gave, as Sozomen reports of them (Hist. Eccles.,«lib. 7 cap. 12»), to Nectarius, by him communicated to...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 6 cap. 14'
+    CTX:   ...pretended that these Constitutions were made at a convention of the apostles, as«lib. 6 cap. 14», they are brought in discoursing ἡμεις...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 2 cap. 57'
+    CTX:   ...αὶ Ανδρέας, Ιάκωζος καὶ Ιωάννης υἱοὶ Ζεζεδαίου, etc. They are made to inform us,«lib. 2 cap. 57», that the Acts written by Luke and read...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 8 cap. 4'
+    CTX:   ...they make Stephen and Paul to be together at the making of those Constitutions,«lib. 8 cap. 4»(whereas the martyrdom of Stephen was be...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 8 cap. 46'
+    CTX:   ...was before the conversion of Paul), and yet also mention the stoning of Stephen,«lib. 8 cap. 46». They tell us whom they appointed bisho...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 7 cap. 48'
+    CTX:   ...the death of James, and yet James is one of them who is met together with them,«lib. 7 cap. 48». Nay, mention is made of Cerinthus, and...
+
+  ch006  [Clement of Alexandria]
+    CITE:  'lib. 7'
+    WORK:  Stromata (Miscellanies)
+    CTX:   ...y, about the reign of Hadrian, as Eusebius manifesteth, and Clem. Alex., Strom.,«lib. 7». But, to leave such husks as these unto...
+
+  ch006  [Irenaeus of Lyon]
+    CITE:  'Lib. 5 cap. 28'
+    CTX:   ..., — it is answered, that they were mentioned by Irenaeus some good while before.«Lib. 5 cap. 28», salth he, "Quemadmodum quidam de nostr...
+
+  ch006  [Richard Montague (Montacutius)]
+    CITE:  'lib. 5 sect. 47'
+    CTX:   ...cos, et praestigias non est quod quicquam expectemus</span>" (Montacu. Appar. l,«lib. 5 sect. 47», p. 19), and so thought not fit to look...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 1 cap. 13 sect. 29'
+    CTX:   ...um impudentia qui talibus larvis ad fallendum se instruunt,</span>" Calv. Inst.,«lib. 1 cap. 13 sect. 29».  Whatever be the judgment of our docto...
+
+  ch006  [Clement of Alexandria]
+    CITE:  'lib. 6'
+    CTX:   ...is that period in the Epistle to the Magnesians, taken from Clemens. Constitut.,«lib. 6»cap, 2, Αζεδδαδὰν ὡσαύτως τῆς κεφαλῆς ἀφ...
+
+  ch006  [Theodoret of Cyrrhus]
+    CITE:  'Dial. 3'
+    CTX:   ...tions made out of them by them of old, which now appear not in them.  Theodoret,«Dial. 3», adv. Haere., gives us this sentence fr...
+
+  ch006  [Jerome (Hieronymus)]
+    CITE:  'Dial. 3'
+    WORK:  Letters
+    CTX:   ...that Epistle to the Church of Smyrna, from whence they were taken. Jerome also,«Dial. 3», con. Pelag., hath this passage of him...
+
+  ch006  [UNKNOWN]
+    CITE:  'Epist. ad Tral'
+    CTX:   ...im. Αναγκαῖον οῦν ἐστιν, ὅσαπερ ποιεῖτε, ἄνευ τοῦ ἐπισκόπου μηδὲν πράττειν ὑμᾶς,«Epist. ad Tral». [cap. 2], whereunto is immediately sub...
+
+  ch006  [UNKNOWN]
+    CITE:  'Epist. ad Philadel'
+    CTX:   ...d manner, being most remote from the least countenance from the sacred writings.«Epist. ad Philadel». [cap. 5]: Οἱ πρεσζύτεροι καὶ οἱ διάκον...
+
+  ch006  [Clement of Alexandria]
+    CITE:  'Lib. 2 cap. 2'
+    CTX:   ...olical Constitutions. At this rate, or somewhat beyond it, have you him ranting:«Lib. 2 cap. 2», Επίσκοπον Θεοῦ τύπον ἔχειν ἐν ἀνθρώποι...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 2 cap. 20'
+    CTX:   ...h) to honor, love, and fear the bishop ὡς κύριον, ὡς δεσπότην, ὡς ἀρχιερέα Θεοῦ,«lib. 2 cap. 20». And that you may see whither the man d...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 4'
+    CTX:   ...ecclesiam primitivam habuisse, et de his solis praeceptum apostoli nos habere,'«lib. 4»Sen.  D. 24. It seems, moreover, that th...
+
+  ch006  [UNKNOWN]
+    CITE:  'Epist. ad Trall'
+    CTX:   ...nner; which is one considerable bottom and foundation of the truth we plead for:«Epist. ad Trall». cap. 8], Γίνεσθε μιμηταὶ παθημάτων (Χρ...
+
+  ch006  [UNKNOWN]
+    CITE:  'Homil. 5'
+    CTX:   ...o are not at last (for such he discourses of) found worthy.  MACARIUS AEgyptius,«Homil. 5», about the same time with the other, or...
+
+  ch006  [Ambrose of Milan]
+    CITE:  'lib. 1 cap. 6'
+    CTX:   ...rnest may lose it again, I know not.  The words of AMBROSE to this same purpose,«lib. 1 cap. 6». De Jacob. et Vita Beat, are many; but...
+
+  ch006  [UNKNOWN]
+    CITE:  'Epist. ad Rusti'
+    CTX:   ...doctrine, hujus viri, sicut in tota fide, ita in gratiae confessione congruere,"«Epist. ad Rusti». And when his writings began to be carp...
+
+  ch006  [UNKNOWN]
+    CITE:  'Epist. ad Gall'
+    CTX:   ...be carped at by the semi-Pelagians of France, Caelestine, bishop of Rome, in his«Epist. ad Gall»os, gives him this testimony:  [[BLOCKQU...
+
+  ch006  [Leo the Great]
+    CITE:  'Epist. ad Concil'
+    CTX:   ...adversus libros tamen Pelagianorum beati Augustini responsa poscebat."  And Leo,«Epist. ad Concil». Arausic., transcribes out of him verba...
+
+  ch006  [Jerome (Hieronymus)]
+    CITE:  'Epist. 94'
+    CTX:   ...ithstanding the differences between them, the aged and learned Jerome tells him,«Epist. 94»,  [[BLOCKQUOTE]] "Mihi decretum est to...
+
+  ch006  [UNKNOWN]
+    CITE:  'Homil. 53'
+    CTX:   ...bedience notwithstanding and against temptation. To this is that of his on John,«Homil. 53»:  [[BLOCKQUOTE]] "Quosdam nimia volunta...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 2 cap. 8'
+    CTX:   ...e any should persevere to the end: which Bradwardin more confirms, De Cans. Dei,«lib. 2 cap. 8»Coroll.,  [[BLOCKQUOTE]] "Omne quod est...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 3 cap. 32'
+    CTX:   ...appellantur quod appellantur, et non sunt.</span>" As also, De Doct. Christiana,«lib. 3 cap. 32», "<span lang="la" xml:lang="la">Non est...
+
+  ch006  [Augustine of Hippo]
+    CITE:  'Epist. 42'
+    CTX:   ...er gives us an account, reckoning them up in their order, and Austin before him,«Epist. 42»and 47, with special relation to what wa...
+
+  ch006  [Gregory of Nazianzus]
+    CITE:  'lib. 1'
+    CTX:   ...ges is that which I shall farther demonstrate.  After these was GREGORY I., who,«lib. 1»Epist. 99, speaks to the same purpose wi...
+
+  ch006  [Gregory of Nazianzus]
+    CITE:  'Epist. 99'
+    CTX:   ...that which I shall farther demonstrate.  After these was GREGORY I., who, lib. 1«Epist. 99», speaks to the same purpose with them i...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 34'
+    CTX:   ...ain. And most expressive to our purpose is that discourse of his which you have,«lib. 34». Moral, cap. 8. Saith he,  [[BLOCKQUOTE...
+
+  ch006  [UNKNOWN]
+    CITE:  'Lib. 2'
+    CTX:   ...in the year 1325, and obtained by general consent the title of Doctor Profundus.«Lib. 2», De Causa Dei, cap. 8, this profoundly...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 3 cap. 53'
+    CTX:   ...iculae pervigil laborabat, jam in puppi super cervicalia dormiat, vel dormitet,"«lib. 3 cap. 53».  With this earnestness, above three hu...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...rsevere, without the peculiar preservation of God.  Of this he gives his reason,«lib. 3»(Contra Gent. Ca. 155,  [[BLOCKQUOTE]] "...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 10'
+    CTX:   ...tur eisdem habitibus, nisi speciali Dei auxilio moveatur,</span>" Alvar. De Aux.«lib. 10»disput. 100.  Though received graces are...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...and infallibly persevere to the end, pp. quest. 109, a. 10, c.; and Contra Gent.«lib. 3», he proves this assertion from p. 6, 1...
+
+  ch006  [UNKNOWN]
+    CITE:  'lib. 2'
+    CTX:   ...ll not transcribe his assertions and arguments; but only refer the reader to his«lib. 2», De Grat. et Lib. Arbit. cap. 12, "Deni...
+
+  ch006  [UNKNOWN]
+    CITE:  'Lib. 11'
+    CTX:   ...r is SUAREZ, who delivers his thoughts succinctly upon the whole of this matter.«Lib. 11»De Perpetuitat. vel Amis. Grat, cap. 2,...

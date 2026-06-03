@@ -472,6 +472,7 @@ OVERRIDES = {
         'learnt': 'learnt',
         'learning': 'learning',
         'faithfullness': 'faithfulness',
+        'Athanasiu6': 'Athanasius',
         r'\(\s+': '(',
         r'\(\s*8\)': ', 8',
         'John 16:1516:15': 'John 16:15',
@@ -505,7 +506,7 @@ OVERRIDES = {
     },
     'list_item_merge_cap': 40,
     'flat_list_exclude_chapters': [
-        "Chapter 1 - Peter's Confession",
+        "Chapter 1 — Peter's Confession",
     ],
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
@@ -515,9 +516,9 @@ OVERRIDES = {
     'treatise_title_overrides': {
         # All v1 treatise title pages defined here — do NOT put these in render.py or shared.py.
         # Title strings must match the exact chapter title from volumes/v1/intermediate/volume_1.json.
-        'Christologia - a Declaration of the Glorious Mystery': _V1_CHRISTOLOGIA_TITLE_PAGE,
+        'Christologia — a Declaration of the Glorious Mystery': _V1_CHRISTOLOGIA_TITLE_PAGE,
         'Meditations and Discourses On The Glory of Christ': _V1_MEDITATIONS_TITLE_PAGE,
-        'Part 2 - Meditations and Discourses Concerning The Glory of Christ': _V1_PART_2_TITLE_PAGE,
+        'Part 2 — Meditations and Discourses Concerning The Glory of Christ': _V1_PART_2_TITLE_PAGE,
         'Two Short Catechisms:': _V1_TWO_CATECHISMS_TITLE_PAGE,
     },
     # Volume 1: Tag Greek abbreviations that fall below the 3-codepoint minimum

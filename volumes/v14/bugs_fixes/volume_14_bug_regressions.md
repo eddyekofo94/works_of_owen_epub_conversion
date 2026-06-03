@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 14
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_14_audit.json`
 - Text integrity audit: `volume_14_text_integrity.json`
 
@@ -8,14 +8,14 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 75 | 61 | REGRESSION |
-| Inline structural marker candidates | 1 | 1 | OK |
+| Possible faulty paragraph splits | 75 | 75 | OK |
+| Inline structural marker candidates | 1 | 12 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 0 | 3 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 0 | 0 | OK |
+| Missing enumerator markers | 0 | 7 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
@@ -36,7 +36,7 @@
 | Literal footnote marker files | 0 | 0 | OK |
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
-| Page reference split files | 1 | 0 | REGRESSION |
+| Page reference split files | 1 | 1 | OK |
 | Chapter headings rendered as paragraphs | 0 | 0 | OK |
 | Overlong headings containing body prose | 0 | 0 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |

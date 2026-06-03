@@ -90,6 +90,7 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
         "epub_audit": None,
         "text_integrity": None,
         "bug_regression": None,
+        "anomalies_audit": None,
     }
 
     if not no_rebuild:
@@ -164,6 +165,20 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
         "ok": ok,
         "regressions": len(regression_details),
         "regression_details": regression_details,
+        "output": out,
+    }
+
+    print(f"  [{vol_num}] audit_anomalies.py ...", end=" ", flush=True)
+    code, out = _run(
+        [PYTHON, str(ROOT / "scripts" / "audit_anomalies.py"), str(vol_num)],
+        f"v{vol_num} anomalies audit",
+    )
+    ok = code == 0
+    print(status_icon(ok))
+    anj = _read_json(bugs_dir / f"volume_{vol_num}_anomalies.json")
+    summary["anomalies_audit"] = {
+        "ok": ok,
+        "count": anj.get("total_anomalies_count", "?"),
         "output": out,
     }
 
@@ -394,6 +409,12 @@ def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
             reg_s = red(str(reg)) if reg > 0 else green(str(reg))
             print(f"    Bug Regressions: {status_icon(br['ok'])}  "
                   f"Over budget: {reg_s}")
+
+        an = r.get("anomalies_audit")
+        if an:
+            an_count = an["count"]
+            print(f"    Text Anomalies:  {status_icon(an['ok'])}  "
+                  f"Flagged: {an_count}")
 
         print(f"    {sep}")
 

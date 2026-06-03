@@ -5,6 +5,7 @@
 > We work strictly within the **Grouped Git Worktree** layout inside `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/` (the parent folder).
 > - **Bare repo:** `Owen.git/` (acting as the hub).
 > - **Worktrees:** `master/` (the master branch workspace) and `Owen-<branch-name>/` (isolated development workspaces).
+> - **Always work on the latest development branch:** Check for other active worktrees/branches (e.g. `translation-citations`, `architectural-hardening`) using `git worktree list` or `git branch` and always work on the most recent developmental branch/worktree, as `master/` may not contain the latest features or changes.
 > - **Do NOT use `git checkout -b`** to create branches directly inside a worktree. Use the `git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>` protocol.
 > - **Virtualenv & CLI:** Use the local virtual environment `.venv/` inside the worktree root. Do NOT reference global virtual environments. Use `./owen` (the directory-agnostic CLI wrapper) to run tests, audits, and builds from **any** folder in the workspace.
 
@@ -89,6 +90,7 @@ Read `GEMINI.md` before changing converter behavior or project documentation. In
 - Use `IMPLEMENTED (AWAITING VALIDATION)` for work that has been coded but not user-approved.
 - Complex issues, especially Issue 40 and later, need a post-mortem in `ENGINEERING_LOG.md`.
 - Preserve the holistic paragraph-healing behavior in `reconstruct_paragraphs()` and `get_pages_text()`.
+- **Text Integrity & Anomaly Triage Protocol:** When reviewing text anomalies flagged by `scripts/audit_anomalies.py` (such as hyphenation anomalies like `birth-place`, `free-will`, `co-essential`), **NEVER modernize 17th-century orthography**. All potential anomalies should be flagged for visibility, but **do not apply replacements to historical spellings or hyphenations if they were acceptable in the author's day**. Apply overrides strictly to clear OCR errors, line-break leftovers (like `Peta-vius`), and alphanumeric typos (like `iraFated`).
 
 ## Git Repository — Worktree Setup
 
@@ -503,6 +505,83 @@ Generates a ranked QA state report for the specified volume(s).
 **Location of detailed reports:**
 - `qa/reports/volume_state_report.md`
 - `qa/reports/volume_state_report.json`
+
+## Citation System — Agent Briefing (June 2026)
+
+### Goal
+Every abbreviated inline citation Owen makes must be expanded to a full modern
+academic footnote matching the quality of the reference EPUBs in `epub_examples/`:
+
+> John Chrysostom, *Homilies on the Gospel of John*, Homily 15, on John 1:18
+> [NPNF1, 14:51; PG 59.97–98].
+
+NOT acceptable: "Modern Citation: Book 7, Chapter 29." (vague, useless).
+
+### Citation audit files
+- `plans/citation_audit_report.md` — full human-readable report of all 499 citations
+- `plans/citation_audit.csv` — machine-readable row for every citation
+- `plans/current_state.md` — overall project state and priority queue
+
+Run `python3 scripts/scan_citations.py` to regenerate the audit at any time.
+
+### The two-tier system
+
+**Tier 1 — `BODY_TRANSLATIONS` (translation_db.py)**
+Exact phrase → full citation. Add when Owen writes a specific, distinctive phrase
+(author + work + location in one string). The matching is word-by-word and
+resilient to intervening HTML tags.
+
+Format:
+```python
+"Euseb. Hist. Eccles., lib. 4: cap. 15:": (
+    "<b>Modern Citation:</b> Eusebius of Caesarea, "
+    "<i>Ecclesiastical History</i> (Historia Ecclesiastica), "
+    "Book 4, Chapter 15 [NPNF2, 1:185; PG 20.349]."
+),
+```
+
+**Tier 2 — `WORK_MAP` (patristic_refs.py)**
+Pattern-based: add (author_key, work_fragment) → work data. The system detects
+the author and work abbreviation from surrounding text and automatically generates
+a citation for any `lib./cap./epist.` location reference that follows.
+
+Format:
+```python
+("bellar", "de justif"): {
+    "full_title": "On Justification",
+    "latin_title": "De Iustificatione",
+    "std_ref": ["Disputationes de Controversiis, Tom. IV (Ingolstadt, 1601)"],
+},
+```
+
+Author key comes from `AUTHOR_ABBREV_MAP`. Work fragment is the lowercase,
+dot-stripped form of Owen's work abbreviation (e.g. "De Justif." → "de justif").
+
+To add a new author: add a line to `AUTHOR_ABBREV_MAP` in `patristic_refs.py`.
+
+### Important rules
+- **Only generate notes when the specific work is identified.** A footnote without
+  the work title is worthless. Both tiers enforce this: if neither the work context
+  search nor the cite-abbrev fallback finds a WORK_MAP entry, no note is generated.
+- **Do NOT add English Bible verse text as BODY_TRANSLATIONS keys.** This generates
+  pointless "Modern Citation: Bible, John, 14:1" notes on every scripture quotation.
+- **Do NOT add `<span lang="la">` manually** to raw_text in JSON intermediates.
+  The renderer strips these before html_escape anyway; `tag_unicode_ranges()` handles
+  all language tagging automatically.
+- **Research using internet resources**: NPNF/ANF at ccel.org, PL at pl.mgh.de,
+  PG at migne.patristica.net, Loeb at loebclassics.com, Perseus at perseus.tufts.edu.
+
+### Priority unresolved citations (high-impact WORK_MAP additions)
+| Add to WORK_MAP | Owen's text | Resolves |
+|---|---|---|
+| `("bellar","de justif")` | `Bellar. de Justif., lib. 2` | ~15 v5 citations |
+| `("bellar","de amiss")` | `De Amiss. Grat., lib. 4` | ~8 citations |
+| `("bellar","de grat")` | `De Grat. et Lib. Arbit., lib. 6` | ~5 citations |
+| `("socin","de servat")` | `Socin. de Servant. lib. 3` | ~10 citations |
+| `("canus","loc theol")` | `Canus, Loc. Theol., lib. 2` | ~6 v4 citations |
+| `("sozomen","hist eccles")` | `Sozomen Hist. Eccles.` | ~8 v11/v12 citations |
+| `("damasc","de fide")` | `Damascen, lib. 4 chap. 3` | ~4 citations |
+| `("bernard","epist")` | `Bernard, Epist. 190` | ~5 v5 citations |
 
 ## Recent Key Curation & Fixes Summary (May 2026)
 

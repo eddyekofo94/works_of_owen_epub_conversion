@@ -31,7 +31,7 @@
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
 | Repeated phrase hits | 2 | 7 | OK |
-| Possible Beta Code residue files | 3 | 2 | REGRESSION |
+| Possible Beta Code residue files | 1 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
 | Empty bracket noise files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 0 | 0 | OK |
+| Lowercase page fragments | 15 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -99,11 +99,17 @@
 
 ### Possible Beta Code residue files
 
-- file: EPUB/ch050.xhtml; text: Jo
-- file: EPUB/contents_2.xhtml; text: ~v
 - file: EPUB/endnotes.xhtml; text: ja
 
 ### Inline scholastic labels
 
 - file: EPUB/ch020.xhtml; text: e Ans.
 - file: EPUB/ch049.xhtml; text: d Ans.
+
+### Lowercase page fragments
+
+- file: EPUB/ch003.xhtml; text: who is your unworthy fellow-laborer
+- file: EPUB/ch004.xhtml; text: and whose blasphemy comes not at all short of it. The first is of Clarus Bonarus
+- file: EPUB/ch005.xhtml; text: for if we once let go those forms of sound words learned from the apostles, and t
+- file: EPUB/ch006.xhtml; text: so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, "Who hath f
+- file: EPUB/ch014.xhtml; text: is so far from proving that the image of God wherein man was created did consist

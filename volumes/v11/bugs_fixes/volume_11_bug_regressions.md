@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 11
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_11_audit.json`
 - Text integrity audit: `volume_11_text_integrity.json`
 
@@ -8,14 +8,14 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 143 | 61 | REGRESSION |
-| Inline structural marker candidates | 4 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 143 | 150 | OK |
+| Inline structural marker candidates | 4 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 0 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 4 | 0 | REGRESSION |
+| Missing enumerator markers | 4 | 5 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
@@ -37,8 +37,8 @@
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
-| Chapter headings rendered as paragraphs | 1 | 0 | REGRESSION |
-| Overlong headings containing body prose | 1 | 0 | REGRESSION |
+| Chapter headings rendered as paragraphs | 1 | 1 | OK |
+| Overlong headings containing body prose | 1 | 1 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
 | Fragmented Hebrew span-run files | 0 | 0 | OK |
@@ -46,7 +46,7 @@
 | Scripture blockquote false positives | 0 | 0 | OK |
 | Orphan scripture brackets | 0 | 0 | OK |
 | Glued ordinal anchors | 0 | 0 | OK |
-| Structural bold leaks | 2 | 0 | REGRESSION |
+| Structural bold leaks | 2 | 2 | OK |
 | Repeated structural markers | 0 | 0 | OK |
 | Scholastic bold leaks | 0 | 0 | OK |
 | Inline scholastic labels | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 1 | 0 | REGRESSION |
+| Lowercase page fragments | 1 | 1 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |

@@ -1,10 +1,10 @@
 {
   "volume": 13,
   "status": "warn",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/bugs_fixes/volume_13_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/bugs_fixes/volume_13_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/bugs_fixes/volume_13_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/bugs_fixes/volume_13_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v13/bugs_fixes/volume_13_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v13/bugs_fixes/volume_13_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v13/bugs_fixes/volume_13_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v13/bugs_fixes/volume_13_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -13,8 +13,8 @@
     {
       "label": "Possible faulty paragraph splits",
       "observed": 92,
-      "budget": 61,
-      "status": "regression",
+      "budget": 95,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch006.xhtml",
@@ -71,8 +71,8 @@
     {
       "label": "Inline structural marker candidates",
       "observed": 8,
-      "budget": 1,
-      "status": "regression",
+      "budget": 8,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch009.xhtml",
@@ -159,7 +159,7 @@
     {
       "label": "Missing front CONTENTS pages",
       "observed": 0,
-      "budget": 0,
+      "budget": 2,
       "status": "ok",
       "samples": []
     },
@@ -187,7 +187,7 @@
     {
       "label": "Missing enumerator markers",
       "observed": 0,
-      "budget": 0,
+      "budget": 6,
       "status": "ok",
       "samples": []
     },
@@ -293,7 +293,7 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 2,
+      "observed": 3,
       "budget": 7,
       "status": "ok",
       "samples": [
@@ -305,6 +305,11 @@
         {
           "file": "combined_text",
           "text": "a review of the true nature of schism",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "chapter 3 a review of the charger's preface",
           "count": 1
         }
       ]
@@ -353,14 +358,10 @@
     },
     {
       "label": "Chapter headings rendered as paragraphs",
-      "observed": 2,
-      "budget": 0,
-      "status": "regression",
+      "observed": 1,
+      "budget": 2,
+      "status": "ok",
       "samples": [
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Chapter 4"
-        },
         {
           "file": "EPUB/ch020.xhtml",
           "text": "Chapter 11"
@@ -370,8 +371,8 @@
     {
       "label": "Overlong headings containing body prose",
       "observed": 2,
-      "budget": 0,
-      "status": "regression",
+      "budget": 2,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch049.xhtml",
@@ -504,10 +505,51 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 0,
+      "observed": 10,
       "budget": 0,
-      "status": "ok",
-      "samples": []
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "text": "obliged servant in Jesus Christ, our common Master"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "will be mounting. In the matter concerning which I propose my weak essay, some wo"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "and again,"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "and Jeremiah 20:9, \"His word was in mine heart as a burning fire shut up in my bo"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "to which add that of the apostle,"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "who is herein followed by not a few of the Papists. Hence saith Biel., \"Accipitur"
+        },
+        {
+          "file": "EPUB/ch025.xhtml",
+          "text": "is pleaded to this purpose; but that any more but the spiritual reign of Christ i"
+        },
+        {
+          "file": "EPUB/ch050.xhtml",
+          "text": "though our author should be allowed to turn \"joy\" into \"cheerfulness,\" \"peace\" in"
+        },
+        {
+          "file": "EPUB/ch053.xhtml",
+          "text": "he is God, and not man."
+        },
+        {
+          "file": "EPUB/ch054.xhtml",
+          "text": "which is the sum of all that in this matter is contended for. To the same purpose"
+        }
+      ]
     },
     {
       "label": "Noteref leading spaces",

@@ -81,7 +81,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Adobe-garamond-pro-2',
+        'body_font': 'adobe-garamond-pro-2-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'front_matter_skip': 3,
@@ -107,7 +107,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Libertinus',
+        'body_font': 'libertinus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -121,7 +121,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Minion_pro',
+        'body_font': 'minion-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -133,7 +133,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Cardo',
+        'body_font': 'cardo',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -148,7 +148,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Brill_font',
+        'body_font': 'brill-font',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -161,7 +161,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Baskervville',
+        'body_font': 'baskerville',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -190,7 +190,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Gentium-plus',
+        'body_font': 'gentium-plus-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'suppress_prefatory_note_heading': True,  # Bug #2: Apple Books shows nav title; body h2 is redundant
@@ -218,7 +218,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Cardo',
+        'body_font': 'cardo',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'suppress_prefatory_note_heading': True,  # Bug #2
@@ -233,7 +233,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Brill_font',
+        'body_font': 'brill-font',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -248,7 +248,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Minion_pro',
+        'body_font': 'minion-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -260,7 +260,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Adobe-garamond-pro-2',
+        'body_font': 'arno-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -274,7 +274,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Baskervville',
+        'body_font': 'baskerville',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -290,7 +290,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Brill_font',
+        'body_font': 'brill-font',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -317,7 +317,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Gentium-plus',
+        'body_font': 'gentium-plus-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -451,7 +451,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Adobe-garamond-pro-2',
+        'body_font': 'adobe-garamond-pro-2-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -465,7 +465,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Gentium-plus',
+        'body_font': 'gentium-plus-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -479,7 +479,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Adobe-garamond-pro-2',
+        'body_font': 'adobe-garamond-pro-2-2',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 1:1 - 3:6']
@@ -489,7 +489,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Libertinus',
+        'body_font': 'libertinus',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 3:7 - 5:14']
@@ -499,7 +499,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Minion_pro',
+        'body_font': 'minion-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 6:1 - 7:28']
@@ -509,7 +509,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'Baskervville',
+        'body_font': 'baskerville',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 8:1 - 10:39']
@@ -1063,6 +1063,16 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
     r'enchirid|distinct|q|a|p|pp|sec|ad|m|aen|liv|hist)\.?\s*$'
     r'|'
+    r'\b(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|Esth|Job|Ps|Prov|Eccl|Cant|'
+    r'Sol|Isa|Jer|Lam|Ezek|Dan|Hos|Joel|Amos|Obad|Jonah|Mic|Nah|Hab|Zeph|Hag|Zech|Mal|'
+    r'Matt|Mk|Lk|Jn|Acts|Rom|Cor|Gal|Eph|Phil|Col|Thess|Tim|Tit|Phlm|Heb|Jas|Pet|Jude|Rev)\.\s*$'
+    r'|'
+    # Patristic author abbreviations
+    r'\b(?:Aug|August|Austin|Chrys|Chrysost|Hierom|Jerome|Clem|Clement|Tertull|Orig|Origen|Cyp|Cyprian|'
+    r'Euseb|Athan|Athanas|Basil|Naz|Nazianz|Nyss|Ambr|Ambrose|Theod|Theodoret|Cyril|Hilar|Hilary|Leo|Bern|'
+    r'Bernard|Bell|Bellar|Soc|Socin|Faust|Faustus|Calv|Calvin|Epiph|Epiphan|Greg|Gregory|Plut|Cic|Sen|Tac|'
+    r'Plin|Arist|Plat|Justin|Iren|Alex|Alexand|Mart)\.\s*$'
+    r'|'
     # Scholarly citation tails: "cap. 8," / "q. 81,"
     r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
     r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|pp|sec|ad|aen|liv|hist)'
@@ -1072,11 +1082,7 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     r'\bp+\.\s+\d{1,4}\s*$'
     r'|'
     # Classical references: "Aen. 10." / "Liv., Hist. viii."
-    r'\b(?:Aen|Liv|Hist)\.?,?(?:\s+Hist\.?)?(?:\s+[ivxlcdm]+|\s+\d+)?\.\s*$'
-    r'|'
-    # Scripture book abbreviations before chapter:verse — e.g. "Cant. 5:10"
-    r'\b(?:Cant|Prov|Eccl|Sol|Isa|Jer|Lam|Ezek|Dan|Hos|Zeph|Zech|Mal|'
-    r'Matt|Mk|Lk|Jn|Gal|Eph|Phil|Col|Thess|Tim|Tit|Phlm|Heb|Jas|Rev)\.\s*$',
+    r'\b(?:Aen|Liv|Hist)\.?,?(?:\s+Hist\.?)?(?:\s+[ivxlcdm]+|\s+\d+)?\.\s*$',
     re.I,
 )
 CITATION_ABBREV_START_RE = re.compile(
@@ -1274,10 +1280,7 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     # Only these are OCR artifacts; underscores adjacent to word characters may
     # be markdown emphasis (_word_) or intra-word separators — leave those alone.
     text = re.sub(r'(?:^|(?<=\s))_(?=\s|$)', '', text)
-    # Issue 29b: A single hyphen surrounded by spaces that is used as an
-    # em-dash substitute should be normalised to — (U+2014).  This is
-    # distinct from hyphenation (no surrounding spaces) and en-dash (–).
-    text = re.sub(r'(?<=\w)\s+-\s+(?=\w)', '—', text)
+    text = re.sub(r'(?<=\S)\s+(?:-|--|–)\s+(?=\S)', ' — ', text)
     # Strip spurious period from the indefinite article 'A' when followed by
     # a lowercase word.  The original fix anchored to line-start (^) but the
     # artifact also appears mid-paragraph after sentence-ending punctuation
@@ -1573,6 +1576,19 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
         ):
             continue
 
+        # Mid-sentence dangling connectors, commas, or hyphens must NEVER cause a split
+        before_tail_clean = re.sub(r'[*_”"\'’\s]+$', '', before)
+        is_preceded_by_dangling = (
+            bool(re.search(
+                r'(?i)\b(?:and|the|of|for|with|in|to|a|is|was|were|be|been|being|has|have|had|by|from|as|at|or|which|who|whom|this|that|these|those)\b\s*$',
+                before_tail_clean
+            ))
+            or bool(re.search(r',(?!\s*”)\s*$', before_tail_clean))
+            or bool(re.search(r'-\s*$', before_tail_clean))
+        )
+        if is_preceded_by_dangling:
+            continue
+
         before_tail = re.sub(r'[*_]+$', '', before).rstrip()
         # Flat lists (ordinals) preceded by a comma, semicolon, or connector word must remain inline.
         is_ordinal_marker = bool(re.search(
@@ -1725,28 +1741,30 @@ def _trim_duplicate_reference_prefix(prev, current):
 
 FONT_FAMILY_MAP = {
     # Body fonts (available for per-volume selection)
-    'Adobe-garamond-pro-2': 'Adobe Garamond Pro',
-    'Baskervville':         'Baskervville',
-    'Brill_font':           'Brill',
-    'Cardo':                'Cardo',
-    'Gentium-plus':         'Gentium Plus',
-    'Libertinus':           'Libertinus Serif',
-    'Minion_pro':           'Minion Pro',
-    'sabon-next-lt':        'Sabon Next LT',
-    'Cormorant_Garamond':   'Cormorant Garamond',
-    'IM_Fell_English':     'IM Fell English',
-    'Libre_Caslon_Text':   'Libre Caslon Text',
-    'Playfair_Display':    'Playfair Display',
+    'adobe-garamond-pro-2-2': 'Adobe Garamond Pro',
+    'arno-pro':               'Arno Pro',
+    'baskerville':            'Baskervville',
+    'brill-font':             'Brill',
+    'cardo':                  'Cardo',
+    'gentium-plus-2':         'Gentium Plus',
+    'libertinus':             'Libertinus Serif',
+    'minion-pro':             'Minion Pro',
+    'sabon-next-lt':          'Sabon Next LT',
+    'cormorant-garamond':     'Cormorant Garamond',
+    'im-fell-english':        'IM Fell English',
+    'libre-caslon-text':      'Libre Caslon Text',
+    'playfair-display':       'Playfair Display',
     # Heading-only fonts
-    'Proxima_Nova':         'Proxima Nova',
+    'proxima-nova':           'Proxima Nova',
     # Supplemental (not for body selection)
-    'SBL_BLit':             'SBL BibLit',
-    'STIX_Two_Text':        'STIX Two Text',
-    'EzraSIL2.51':          'Ezra SIL',
+    'sbl-blit':               'SBL BibLit',
+    'stix-two-text':          'STIX Two Text',
+    'ezra-sil-2-51':          'Ezra SIL',
+    'gfs-porson':             'GFS Porson',
 }
 
 # Fonts excluded from body-font selection (used only for specific purposes)
-BODY_FONT_EXCLUDES = {'STIX_Two_Text', 'EzraSIL2.51', 'Proxima_Nova'}
+BODY_FONT_EXCLUDES = {'stix-two-text', 'ezra-sil-2-51', 'proxima-nova', 'gfs-porson'}
 
 
 def _decode_font_name(raw, platform_id):
@@ -1960,10 +1978,10 @@ def select_primary_font(body_font_name):
     if not os.path.isdir(font_dir):
         print(
             f"[WARN] Font directory not found for '{body_font_name}' "
-            f"(looked in fonts/{body_font_name}/). Falling back to SBL_BLit.",
+            f"(looked in fonts/{body_font_name}/). Falling back to sbl-blit.",
             file=sys.stderr,
         )
-        body_font_name = 'SBL_BLit'
+        body_font_name = 'sbl-blit'
         font_dir = os.path.join(base_dir, 'fonts', body_font_name)
 
     files = {}
@@ -1991,25 +2009,29 @@ def select_primary_font(body_font_name):
 
 
 SBL_SUPPLEMENTS = {
-    'SBL_BLit.ttf': 'SBL_BLit/SBL_BLit.ttf',
-    'SBL_grk.ttf': 'SBL_BLit/SBL_grk.ttf',
-    'SBL_Hbrw.ttf': 'SBL_BLit/SBL_Hbrw.ttf',
+    'SBL_BLit.ttf': 'sbl-blit/SBL_BLit.ttf',
+    'SBL_grk.ttf': 'sbl-blit/SBL_grk.ttf',
+    'SBL_Hbrw.ttf': 'sbl-blit/SBL_Hbrw.ttf',
 }
 
 EZRA_SIL_FILES = {
-    'SILEOT.ttf': 'EzraSIL2.51/SILEOT.ttf',
+    'SILEOT.ttf': 'ezra-sil-2-51/SILEOT.ttf',
 }
 
 TITLE_PAGE_FONTS = {
-    'Baskervville-VariableFont_wght.ttf': 'Baskervville/Baskervville-VariableFont_wght.ttf',
-    'Baskervville-Italic-VariableFont_wght.ttf': 'Baskervville/Baskervville-Italic-VariableFont_wght.ttf',
+    'BaskervilleBT.ttf': 'baskerville/BaskervilleBT.ttf',
+    'BaskervilleItalicBT.ttf': 'baskerville/BaskervilleItalicBT.ttf',
 }
 
 PROXIMA_NOVA_FILES = {
-    'Proxima Nova Regular.ttf': 'Proxima_Nova/Proxima Nova Regular.ttf',
-    'Proxima Nova Extrabold.ttf': 'Proxima_Nova/Proxima Nova Extrabold.ttf',
-    'Proxima Nova Light.ttf': 'Proxima_Nova/Proxima Nova Light.ttf',
-    'Proxima Nova Semibold.ttf': 'Proxima_Nova/Proxima Nova Semibold.ttf',
+    'Proxima Nova Regular.ttf': 'proxima-nova/Proxima Nova Regular.ttf',
+    'Proxima Nova Extrabold.ttf': 'proxima-nova/Proxima Nova Extrabold.ttf',
+    'Proxima Nova Light.ttf': 'proxima-nova/Proxima Nova Light.ttf',
+    'Proxima Nova Semibold.ttf': 'proxima-nova/Proxima Nova Semibold.ttf',
+}
+
+GFS_PORSON_FILES = {
+    'GFSPorson.ttf': 'gfs-porson/GFSPorson.ttf',
 }
 
 
@@ -2041,7 +2063,7 @@ p {
 }
 
 [lang="el"], [lang="el"] * {
-    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
+    font-family: "GFS Porson", "SBL Greek", "Cardo", "SBL BibLit", serif !important;
     font-size: 1.15em;
 }
 
@@ -2065,7 +2087,7 @@ a, .noteref, a.footnote-ref, a.fn-link {
 
 .noteref {
     vertical-align: super;
-    font-size: 0.75em;   /* em-relative — consistent with body scale; was 0.85rem (root-relative, inconsistent) */
+    font-size: 0.85rem;   /* root-relative to remain consistent inside headings */
     padding: 0.1em 0.2em; /* Easy-tap */
 }
 
@@ -2074,7 +2096,7 @@ a.noteref-trans, .noteref-trans {
     color: #b8860b !important;
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.75em;
+    font-size: 0.85rem;
     padding: 0.1em 0.2em;
     font-weight: bold;
 }
@@ -3036,6 +3058,13 @@ aside[epub\:type~="endnote"] {
     font-size: 0.95em;
     line-height: 1.5;
 }
+.contents-desc {
+    margin: 0.5em 0 1em 1.5em;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #555;
+    font-style: italic;
+}
 .contents-label {
     display: block;
     font-family: "Proxima Nova", "Owen Title", "Baskervville", sans-serif !important;
@@ -3283,36 +3312,43 @@ EPUB3_FONT_STYLES = r"""
     font-style: normal;
     src: url("../Fonts/SILEOT.ttf");
 }}
+/* GFS Porson — classical Greek font */
+@font-face {{
+    font-family: "GFS Porson";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/GFSPorson.ttf");
+}}
 /* Owen Title - embedded Baskervville title display face */
 @font-face {{
     font-family: "Baskervville";
     font-weight: normal;
     font-style: normal;
-    src: url("../Fonts/Baskervville-VariableFont_wght.ttf");
+    src: url("../Fonts/BaskervilleBT.ttf");
 }}
 @font-face {{
     font-family: "Baskervville";
     font-weight: normal;
     font-style: italic;
-    src: url("../Fonts/Baskervville-Italic-VariableFont_wght.ttf");
+    src: url("../Fonts/BaskervilleItalicBT.ttf");
 }}
 @font-face {{
     font-family: "Owen Title";
     font-weight: normal;
     font-style: normal;
-    src: url("../Fonts/Baskervville-VariableFont_wght.ttf");
+    src: url("../Fonts/BaskervilleBT.ttf");
 }}
 @font-face {{
     font-family: "Owen Title";
     font-weight: bold;
     font-style: normal;
-    src: url("../Fonts/Baskervville-VariableFont_wght.ttf");
+    src: url("../Fonts/BaskervilleBT.ttf");
 }}
 @font-face {{
     font-family: "Owen Title";
     font-weight: normal;
     font-style: italic;
-    src: url("../Fonts/Baskervville-Italic-VariableFont_wght.ttf");
+    src: url("../Fonts/BaskervilleItalicBT.ttf");
 }}
 /* Body text — primary embedded font (Apple Books must respect this) */
 body, div, p, span {{
@@ -3331,7 +3367,7 @@ h4.roman-subheading, .roman-list-item, .roman-list-item b {{
     font-family: "{primary_font}", "SBL BibLit", serif !important;
 }}
 [lang="el"], [lang="el"] *, .greek, .greek * {{
-    font-family: "SBL Greek", "SBL BibLit", serif !important;
+    font-family: "GFS Porson", "SBL Greek", "SBL BibLit", serif !important;
     font-size: 1.05em;
 }}
 [lang="he"], [lang="he"] *, .hebrew, .hebrew * {{

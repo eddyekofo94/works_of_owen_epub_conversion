@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-01T15:30:33.061492+00:00",
+  "generated_at": "2026-06-02T22:21:39.126938+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -9,12 +9,12 @@
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 4
+      "count": 3
     }
   ],
   "info": {
-    "file_count": 74,
-    "epub_size_bytes": 4162504,
+    "file_count": 75,
+    "epub_size_bytes": 5101242,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,7 +23,7 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 65,
+    "manifest_count": 66,
     "spine_count": 45,
     "xhtml_count": 47,
     "nav_files": [
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 210,
-      "unique_noteref_targets": 179,
-      "endnote_anchor_count": 179,
+      "noteref_count": 299,
+      "unique_noteref_targets": 299,
+      "endnote_anchor_count": 299,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -54,7 +54,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 4,
+      "repeated_phrase_count": 3,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 15,
+      "lowercase_paragraph_start_files": 16,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -81,11 +81,6 @@
         "untagged_hebrew": [],
         "hebrew_integrity": [],
         "repeated_phrase": [
-          {
-            "file": "combined_text",
-            "text": "רוּח spirit breath or wind hebrew ruach 1",
-            "count": 2
-          },
           {
             "file": "combined_text",
             "text": "chapter 2 general dispensation of the holy spirit",
@@ -163,8 +158,8 @@
             "text": "which he doth by his Spirit. Man by sin is become like the \"beasts that perish, w"
           },
           {
-            "file": "EPUB/ch025.xhtml",
-            "text": "which last expression compriseth the whole of our covenant obedience, Genesis 17:"
+            "file": "EPUB/ch023.xhtml",
+            "text": "need that so I should do; for upon the end of that sentence, as if a light of pea"
           }
         ],
         "noteref_leading_space": [],

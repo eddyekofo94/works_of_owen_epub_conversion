@@ -1,0 +1,92 @@
+v13: 18 citations
+
+======================================================================
+COMPREHENSIVE INLINE CITATION AUDIT — JOHN OWEN WORKS
+======================================================================
+  Total citation instances:     18
+  Already resolved:             2  (11%)
+  Self-references (Owen):       0
+  Unresolved — author found:    8
+  Unresolved — no author:       8
+
+By abbreviation type:
+    lib.:  14
+    epist.:  2
+    homil.:  1
+    ep.:  1
+
+Unresolved by volume:
+    v13:  16
+
+----------------------------------------------------------------------
+CITATION DETAILS:
+----------------------------------------------------------------------
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VOLUME 13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ch020  [UNKNOWN]
+    CITE:  'Homil. 3'
+    CTX:   ...υμφωνεῖ οῦμφωνεῖ οῦτος Χριστιανός? εἴτις μάχεται οῦτος πόῤῥω τοῦ κανόνος τούτου.«Homil. 3»in Acta.[f39] But yet, lest this should...
+
+  ch020  [UNKNOWN]
+    CITE:  'lib. 20 cap. 3'
+    CTX:   ...antem, et eodem ritu utentem solo congregationis delectari dissidio," Con. Faust«lib. 20 cap. 3». By "dissidium congregationis" he inten...
+
+  ch020  [Basil of Caesarea]
+    CITE:  'Epist. ad Amphil'
+    CTX:   ...ed to the cause he had in hand and was pleading against the Donatists. Basil, in«Epist. ad Amphil»och. Con. 44, distinguisheth between αἵρ...
+
+  ch022  [UNKNOWN]
+    CITE:  'lib. 1'
+    CTX:   ...tineant ad compagem domus, sed sicut esse palea dicitur in frumentis," De Bapt.,«lib. 1». cap. 51;  who is herein followed by no...
+
+  ch023  [Socrates Scholasticus]
+    CITE:  'lib. 5'
+    CTX:   ...α for, and sundry other alterations were likewise made in the same kind, Socrat.«lib. 5». cap. 8: the ground and reason of which...
+
+  ch023  [Eusebius of Caesarea]
+    CITE:  'lib. 4'
+    CTX:   ...re diffused in the church. This is that of Hegesippus in Eusebius, Eccles. Hist.«lib. 4». cap. 22; who affirms that the church r...
+
+  ch023  [Irenaeus of Lyon]
+    CITE:  'lib. 4'
+    CTX:   ...id he, "Judicabit omnes eos, qui sunt extra veritatem, id est, extra ecclesiam,"«lib. 4». cap. 62. And on the same account is a...
+
+  ch023  [UNKNOWN]
+    CITE:  'lib. 1'
+    CTX:   ...aeres esto, sancta et venerabilis ecclesia catholica urbis Remorum," Flodoardus,«lib. 1». In the sense insisted on was it so fre...
+
+  ch023  [UNKNOWN]
+    CITE:  'lib. 1'
+    CTX:   ...verso mundo unus et idem est, sic et lumen, praedicatio veritatis ubique lucet,"«lib. 1». cap. 10.  To the same purpose Justin M...
+
+  ch024  [Augustine of Hippo]
+    CITE:  'lib. 10'
+    CTX:   ...it rather to be a "setting up against the temple of God," Aug. de Civitate Dei,«lib. 10». cap. 59. But grant the sense of the ex...
+
+  ch042  [Aristotle]
+    CITE:  'lib. 2'
+    CTX:   ...ient man, I cannot but wonder he should be so easy of belief. Aristotle, Rhetor.«lib. 2». cap. 18, tells us, Οἱ πρεσζύτεροι, ἄπι...
+
+  ch045  [Socrates Scholasticus]
+    CITE:  'lib. 5'
+    CTX:   ...y law or rule about outward rites, ceremonies, times, and the like. See Socrat.,«lib. 5». cap. 21.  However, then, the apostles...
+
+  ch048  [UNKNOWN]
+    CITE:  'lib. 2'
+    CTX:   ...ented themselves. The reader may see the whole story exactly related in AElian.,«lib. 2»; Var. Histor., cap. 13. Much of it also...
+
+  ch054  [UNKNOWN]
+    CITE:  'Epist. 80'
+    CTX:   ...of all that in this matter is contended for. To the same purpose he discourseth,«Epist. 80». ad Eustath.; where, moreover, he rejec...
+
+  ch065  [Sozomen]
+    CITE:  'lib. 6'
+    WORK:  Ecclesiastical History
+    CTX:   ...c decree, granted liberty of religion unto all Christians, as Sozomen testifies,«lib. 6». Ammianus Marcellinus, in his History,...
+
+  ch065  [UNKNOWN]
+    CITE:  'Ep. 1'
+    CTX:   ...s etiam atque agros superstitionis istius contagio pervagata est.</span>" [Plin.«Ep. 1»0:97.]  So then they termed Christian re...

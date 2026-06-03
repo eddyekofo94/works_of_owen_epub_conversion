@@ -1,20 +1,33 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub",
-  "generated_at": "2026-05-29T12:02:47.834716+00:00",
+  "epub": "volumes/v13/output/volume_13.epub",
+  "generated_at": "2026-06-03T00:16:38.554653+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 2,
   "errors": [],
   "warnings": [
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
-      "count": 2
+      "count": 3
+    },
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn57",
+        "EPUB/endnotes.xhtml#fn58",
+        "EPUB/endnotes.xhtml#fn59",
+        "EPUB/endnotes.xhtml#fn60",
+        "EPUB/endnotes.xhtml#fn61",
+        "EPUB/endnotes.xhtml#fn62",
+        "EPUB/endnotes.xhtml#fn63"
+      ]
     }
   ],
   "info": {
-    "file_count": 107,
-    "epub_size_bytes": 3352883,
+    "file_count": 121,
+    "epub_size_bytes": 4649431,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,15 +36,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 98,
-    "spine_count": 82,
-    "xhtml_count": 84,
+    "manifest_count": 112,
+    "spine_count": 84,
+    "xhtml_count": 86,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 10,
+    "font_count": 21,
     "language": {
-      "greek_chars": 5778,
+      "greek_chars": 5566,
       "greek_untagged_chars": 0,
       "hebrew_chars": 87,
       "hebrew_untagged_chars": 0,
@@ -40,11 +53,19 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 77,
-      "unique_noteref_targets": 74,
-      "endnote_anchor_count": 74,
+      "noteref_count": 132,
+      "unique_noteref_targets": 129,
+      "endnote_anchor_count": 136,
       "missing_endnote_targets": [],
-      "orphan_endnotes": []
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn57",
+        "EPUB/endnotes.xhtml#fn58",
+        "EPUB/endnotes.xhtml#fn59",
+        "EPUB/endnotes.xhtml#fn60",
+        "EPUB/endnotes.xhtml#fn61",
+        "EPUB/endnotes.xhtml#fn62",
+        "EPUB/endnotes.xhtml#fn63"
+      ]
     },
     "content_scan": {
       "boilerplate_hits": 0,
@@ -54,10 +75,10 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 2,
+      "repeated_phrase_count": 3,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 2,
+      "chapter_heading_in_paragraph_files": 1,
       "overlong_heading_body_files": 2,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -69,7 +90,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
+      "lowercase_paragraph_start_files": 10,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -90,6 +111,11 @@
             "file": "combined_text",
             "text": "a review of the true nature of schism",
             "count": 1
+          },
+          {
+            "file": "combined_text",
+            "text": "chapter 3 a review of the charger's preface",
+            "count": 1
           }
         ],
         "literal_footnote_marker": [],
@@ -99,10 +125,6 @@
         "unprocessed_ages_marker": [],
         "page_reference_split": [],
         "chapter_heading_in_paragraph": [
-          {
-            "file": "EPUB/ch016.xhtml",
-            "text": "Chapter 4"
-          },
           {
             "file": "EPUB/ch020.xhtml",
             "text": "Chapter 11"
@@ -133,14 +155,55 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch003.xhtml",
+            "text": "obliged servant in Jesus Christ, our common Master"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "will be mounting. In the matter concerning which I propose my weak essay, some wo"
+          },
+          {
+            "file": "EPUB/ch007.xhtml",
+            "text": "and again,"
+          },
+          {
+            "file": "EPUB/ch009.xhtml",
+            "text": "and Jeremiah 20:9, \"His word was in mine heart as a burning fire shut up in my bo"
+          },
+          {
+            "file": "EPUB/ch011.xhtml",
+            "text": "to which add that of the apostle,"
+          },
+          {
+            "file": "EPUB/ch022.xhtml",
+            "text": "who is herein followed by not a few of the Papists. Hence saith Biel., \"Accipitur"
+          },
+          {
+            "file": "EPUB/ch025.xhtml",
+            "text": "is pleaded to this purpose; but that any more but the spiritual reign of Christ i"
+          },
+          {
+            "file": "EPUB/ch050.xhtml",
+            "text": "though our author should be allowed to turn \"joy\" into \"cheerfulness,\" \"peace\" in"
+          },
+          {
+            "file": "EPUB/ch053.xhtml",
+            "text": "he is God, and not man."
+          },
+          {
+            "file": "EPUB/ch054.xhtml",
+            "text": "which is the sum of all that in this matter is contended for. To the same purpose"
+          }
+        ],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 85,
+    "nav_link_count": 87,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

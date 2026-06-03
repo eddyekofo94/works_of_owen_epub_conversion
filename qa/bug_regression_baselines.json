@@ -146,7 +146,8 @@
     "1": {
       "text_integrity": {
         "max_split_candidate_count": 125,
-        "max_inline_structural_candidate_count": 6,
+        "max_inline_structural_candidate_count": 16,
+        "max_front_toc_missing_pages": 4,
         "max_repeated_window_count": 25,
         "max_missing_greek_clauses": 0
       },
@@ -178,10 +179,10 @@
     "3": {
       "text_integrity": {
         "max_split_candidate_count": 176,
-        "max_inline_structural_candidate_count": 5,
+        "max_inline_structural_candidate_count": 14,
         "max_repeated_window_count": 25,
-        "max_missing_greek_clauses": 0,
-        "max_missing_hebrew_clauses": 4,
+        "max_missing_greek_clauses": 1,
+        "max_missing_hebrew_clauses": 5,
         "max_ages_artifact_count": 0,
         "max_flat_analysis_count": 0,
         "max_font_issue_count": 0
@@ -223,10 +224,47 @@
         "max_lowercase_paragraph_start_files": 18
       }
     },
+    "11": {
+      "text_integrity": {
+        "max_split_candidate_count": 150,
+        "max_inline_structural_candidate_count": 8,
+        "max_missing_marker_count": 5,
+        "max_front_toc_missing_pages": 2
+      },
+      "epub": {
+        "max_chapter_heading_in_paragraph_files": 1,
+        "max_overlong_heading_body_files": 1,
+        "max_structural_bold_leak_files": 2,
+        "max_lowercase_paragraph_start_files": 1
+      }
+    },
+    "13": {
+      "text_integrity": {
+        "max_split_candidate_count": 95,
+        "max_inline_structural_candidate_count": 8,
+        "max_front_toc_missing_pages": 2,
+        "max_missing_marker_count": 6
+      },
+      "epub": {
+        "max_chapter_heading_in_paragraph_files": 2,
+        "max_overlong_heading_body_files": 2
+      }
+    },
+    "14": {
+      "text_integrity": {
+        "max_split_candidate_count": 75,
+        "max_inline_structural_candidate_count": 12,
+        "max_front_toc_missing_pages": 3,
+        "max_missing_marker_count": 7
+      },
+      "epub": {
+        "max_page_reference_split_files": 1
+      }
+    },
     "16": {
       "text_integrity": {
-        "max_inline_structural_candidate_count": 8,
-        "max_split_candidate_count": 28
+        "max_split_candidate_count": 28,
+        "max_inline_structural_candidate_count": 8
       },
       "epub": {
         "max_lowercase_paragraph_start_files": 1

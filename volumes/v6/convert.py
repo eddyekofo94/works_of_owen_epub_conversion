@@ -69,8 +69,78 @@ _V6_PSALM_130_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="ti
 <p class="title-rule" aria-hidden="true"></p>
 <div class="quote-block"><p>"Out of the depths have I cried unto thee, O Lord." — Psalm 130:1.</p></div>
 </section>'''
+_V6_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
+<h1 class="contents-volume-title">CONTENTS OF VOLUME 6.</h1>
+
+<h2 class="contents-treatise-title">I. OF THE MORTIFICATION OF SIN IN BELIEVERS</h2>
+<p class="contents-item"><a href="ch002.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch003.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch004.xhtml">The foundation of the whole ensuing discourse (Romans 8:13)</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch005.xhtml">The necessity of mortification</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch006.xhtml">The means of mortification: the Spirit</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch007.xhtml">The vigor and comfort of our spiritual life depend on mortification</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch008.xhtml">The first main case of conscience: a lust perplexing</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch009.xhtml">The nature of mortification: what it is not, and what it is</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch010.xhtml">General rules: no mortification without an interest in Christ</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch011.xhtml">The second general rule: without universal sincerity, no lust will be mortified</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch012.xhtml">Particular directions: first, consider the dangerous symptoms of any lust</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch013.xhtml">Get a clear sense of the guilt of the perplexing lust</a></p>
+<p class="contents-item"><b>Chapter XI.</b> <a href="ch014.xhtml">Load thy conscience with the guilt of it</a></p>
+<p class="contents-item"><b>Chapter XII.</b> <a href="ch015.xhtml">Thoughtfulness of the majesty and holiness of God</a></p>
+<p class="contents-item"><b>Chapter XIII.</b> <a href="ch016.xhtml">Speak no peace to the heart until God speaks it</a></p>
+<p class="contents-item"><b>Chapter XIV.</b> <a href="ch017.xhtml">The great direction: act faith on Christ</a></p>
+
+<h2 class="contents-treatise-title">II. OF TEMPTATION: THE NATURE AND POWER OF IT</h2>
+<p class="contents-item"><a href="ch019.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch020.xhtml">The foundation laid in Matthew 26:41</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch021.xhtml">What it is to "enter into temptation"</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch022.xhtml">The great doctrine: entering into temptation is a highly dangerous state</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch023.xhtml">Particular cases proposed: the first case resolved</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch024.xhtml">The second case proposed: directions to those who are entered into temptation</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch025.xhtml">Of watching that we enter not into temptation</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch026.xhtml">Several acts of watchfulness: watch the heart</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch027.xhtml">Watch against temptation by constant abiding in the hour of trial</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch028.xhtml">General exhortation to watchfulness</a></p>
+
+<h2 class="contents-treatise-title">III. INDWELLING SIN IN BELIEVERS</h2>
+<p class="contents-item"><a href="ch030.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch031.xhtml">Preface</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch032.xhtml">Indwelling sin treated of in Romans 7:21</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch033.xhtml">Indwelling sin a law: in what sense</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch034.xhtml">The seat or subject of the law of sin: the heart</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch035.xhtml">Indwelling sin enmity against God</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch036.xhtml">Nature of sin farther discovered as enmity</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch037.xhtml">The work of this enmity: it lusteth</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch038.xhtml">The captivating power of indwelling sin</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch039.xhtml">Indwelling sin proved powerful from its deceit</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch040.xhtml">Deceit in drawing off the mind from duties</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch041.xhtml">Deceit in drawing off the mind from particular duties</a></p>
+<p class="contents-item"><b>Chapter XI.</b> <a href="ch042.xhtml">The working of sin to entangle the affections</a></p>
+<p class="contents-item"><b>Chapter XII.</b> <a href="ch043.xhtml">The conception of sin through its deceit</a></p>
+<p class="contents-item"><b>Chapter XIII.</b> <a href="ch044.xhtml">Several ways whereby conceived sin is obstructed</a></p>
+<p class="contents-item"><b>Chapter XIV.</b> <a href="ch045.xhtml">The power of sin demonstrated by its effects in believers</a></p>
+<p class="contents-item"><b>Chapter XV.</b> <a href="ch046.xhtml">Decays in degrees of grace caused by indwelling sin</a></p>
+<p class="contents-item"><b>Chapter XVI.</b> <a href="ch047.xhtml">The strength of indwelling sin in persons unregenerate</a></p>
+<p class="contents-item"><b>Chapter XVII.</b> <a href="ch048.xhtml">Strength of sin evidenced from its resistance to the law</a></p>
+
+<h2 class="contents-treatise-title">IV. A PRACTICAL EXPOSITION UPON PSALM 130</h2>
+<p class="contents-item"><a href="ch050.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch051.xhtml">To the Reader</a></p>
+<p class="contents-item"><a href="ch052.xhtml">A Paraphrase on the Psalm</a></p>
+<p class="contents-item"><a href="ch053.xhtml">General Scope of the Whole Psalm</a></p>
+<p class="contents-item"><b>Verses 1, 2.</b> <a href="ch054.xhtml">The State and Condition of the Soul</a></p>
+<p class="contents-item"><a href="ch055.xhtml">Spiritual Depths and Distresses</a></p>
+<p class="contents-item"><b>Verse 3.</b> <a href="ch060.xhtml">The Words Explained</a></p>
+<p class="contents-item"><b>Verse 4.</b> <a href="ch065.xhtml">The Words Explained: Gospel Forgiveness</a></p>
+<p class="contents-item"><b>Verses 5, 6.</b> <a href="ch102.xhtml">The Soul's Waiting in Distresses</a></p>
+<p class="contents-item"><b>Verses 7, 8.</b> <a href="ch106.xhtml">Plenteous Redemption</a></p>
+</section>'''
 
 OVERRIDES = {
+    'contents_page_overrides': _V6_CONTENTS_PAGE,
+    'front_matter_overrides': {
+        'Contents': _V6_CONTENTS_PAGE,
+    },
     'treatise_title_overrides': {
         'Mortification of Sin in Believers;': _V6_MORTIFICATION_TITLE_PAGE,
         'Of Temptation:': _V6_TEMPTATION_TITLE_PAGE,

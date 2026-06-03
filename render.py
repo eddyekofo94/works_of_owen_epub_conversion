@@ -29,7 +29,7 @@ if str(_RENDER_DIR) not in sys.path:
 from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     EPUB_STYLESHEET, generate_font_styles,
-    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, PROXIMA_NOVA_FILES,
+    select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, PROXIMA_NOVA_FILES, GFS_PORSON_FILES,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters, polytonic_sweep,
     # Pipeline constants — moved to shared.py so extract.py no longer imports render
@@ -3914,6 +3914,22 @@ def _polish_analysis_html(html: str) -> str:
     )
 
 
+def map_plain_to_html_index(html: str, plain_index: int) -> int:
+    """Map a character index in plain text back to the corresponding index in the original HTML string."""
+    plain_idx = 0
+    in_tag = False
+    for html_idx, char in enumerate(html):
+        if plain_idx == plain_index and not in_tag:
+            return html_idx
+        if char == '<':
+            in_tag = True
+        elif char == '>':
+            in_tag = False
+        elif not in_tag:
+            plain_idx += 1
+    return len(html)
+
+
 def _apply_premium_signatures(html: str, ch_title: str) -> str:
     """Detect signature paragraphs in prefaces/introductions and format them as premium signature blocks."""
     if not html:
@@ -3921,7 +3937,7 @@ def _apply_premium_signatures(html: str, ch_title: str) -> str:
         
     def replacer(match):
         p_html = match.group(0)
-        p_content = match.group(1).strip()
+        p_content = match.group(1)
         
         # Skip if already part of an epub-signature or pre-formatted signature class
         if 'class="signature-' in p_html or 'epub-signature' in p_html:
@@ -3960,9 +3976,6 @@ def _apply_premium_signatures(html: str, ch_title: str) -> str:
         start_idx, end_idx = m.start(), m.end()
         
         # ── Strict Signature Criteria ─────────────────────────────
-        # A paragraph is a signature ONLY if:
-        # 1. It is short (under 200 characters total).
-        # 2. OR, the name is near the very end of a longer paragraph (within the last 120 characters).
         total_len = len(cleaned)
         dist_from_end = total_len - start_idx
         
@@ -3980,21 +3993,24 @@ def _apply_premium_signatures(html: str, ch_title: str) -> str:
             t = t.strip()
             return t
             
-        intro = clean_block(prefix)
-        date_loc = clean_block(suffix)
-        body_text = ""
+        intro_plain = clean_block(prefix)
+        date_loc_plain = clean_block(suffix)
         
         split_patterns = [
             r"\bYour\s+(?:devoted|humble|humblest|obedient|loving)?\s*Servant\b",
             r"\bSo\s+prays\b",
             r"\bunworthy\s+author\b",
-            r"\bloving\s+brother\b",
-            r"\bYour\s+Excellency's\s+Most\s+humble\s+and\s+devoted\s*Servant\b"
+            r"(?:\bwho\s+is\s+your\s+)?\bloving\s+brother\b",
+            r"\bYour\s+Excellency's\s+Most\s+humble\s+and\s+devoted\s*Servant\b",
+            r"(?:\bwho\s+is\s+your\s+)?\bunworthy\s+(?:fellow[- ])?laborer\b",
+            r"(?:\bwho\s+is\s+your\s+)?\bunworthy\s+(?:fellow[- ])?labourer\b",
+            r"(?:\bwho\s+is\s+your\s+)?\bobliged\s+servant\b",
+            r"(?:\bwho\s+is\s+your\s+)?\bunworthy\s+servant\b"
         ]
         
         found_split_idx = -1
         for sp in split_patterns:
-            m_sp = re.search(sp, intro, re.I)
+            m_sp = re.search(sp, intro_plain, re.I)
             if m_sp:
                 if found_split_idx == -1 or m_sp.start() > found_split_idx:
                     found_split_idx = m_sp.start()
@@ -4009,15 +4025,36 @@ def _apply_premium_signatures(html: str, ch_title: str) -> str:
         # - Has no date/location
         # - The text before the name is a long sentence (> 20 characters)
         # Reject it as it's a standard sentence (e.g., "...preached by Dr John Owen.")
-        if found_split_idx == -1 and not date_loc and len(intro) > 20:
+        if found_split_idx == -1 and not date_loc_plain and len(intro_plain) > 20:
             return None
             
+        # Map plain-text split indices back to HTML indices for original preservation
+        html_start_idx = map_plain_to_html_index(content, start_idx)
+        html_end_idx = map_plain_to_html_index(content, end_idx)
+        
+        body_text_html = ""
+        intro_html = ""
+        
         if found_split_idx != -1:
-            body_text = intro[:found_split_idx].strip()
-            intro = intro[found_split_idx:].strip()
-            body_text = re.sub(r'[\s,.\—\-_—\-]+$', '', body_text).strip()
-            intro = re.sub(r'^[\s,.\—\-_—\-]+', '', intro).strip()
+            html_split_idx = map_plain_to_html_index(content, found_split_idx)
+            body_text_html = content[:html_split_idx].strip()
+            intro_html = content[html_split_idx:html_start_idx].strip()
+        else:
+            intro_html = content[:html_start_idx].strip()
             
+        name_html = content[html_start_idx:html_end_idx].strip()
+        date_loc_html = content[html_end_idx:].strip()
+        
+        def clean_html_block(h):
+            h = h.strip()
+            h = re.sub(r'^[\s,.\—\-_—\-]+|[\s,.\—\-_—\-]+$', '', h)
+            return h.strip()
+            
+        body_text_html = clean_html_block(body_text_html)
+        intro_html = clean_html_block(intro_html)
+        name_html = clean_html_block(name_html)
+        date_loc_html = clean_html_block(date_loc_html)
+        
         name = name_plain
         # Normalize name casing
         if name.lower() in ("john owen", "john owen."):
@@ -4028,10 +4065,10 @@ def _apply_premium_signatures(html: str, ch_title: str) -> str:
             name = "William H. Goold"
             
         return {
-            "body_text": body_text,
-            "intro": intro,
+            "body_text": body_text_html,
+            "intro": intro_html,
             "name": name,
-            "date_loc": date_loc
+            "date_loc": date_loc_html
         }
 
     def format_signature_html(sig):
@@ -4300,7 +4337,7 @@ def generate_nav_xhtml(toc_entries, volume_title=None, has_cover=False, has_fron
             stack.pop()
         
         display_text = nav_display_title(text)
-        lines.append(f'<li><a href="{_html_escape(href)}">{_html_escape(display_text)}</a>')
+        lines.append(f'<li><a href="{_html_escape(href)}">{tag_unicode_ranges(_html_escape(display_text))}</a>')
         stack.append('li')
         current_level = level
 
@@ -4465,13 +4502,14 @@ def _inject_apple_books_options(epub_path):
 # MAIN PIPELINE
 # ================================================================
 
-def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None):
+def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, config=None):
     from translation_db import FOOTNOTE_TRANSLATIONS
     fn_map = {f.fnum: f for f in footnotes.values()}
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
     for fnum in sorted(fn_map.keys()):
         fn = fn_map[fnum]
-        fn_text = tag_unicode_ranges(_html_escape(fn.text))
+        repaired_text = _repair_owen_ocr_errors(fn.text, config=config)
+        fn_text = tag_unicode_ranges(_html_escape(repaired_text))
         
         # Look up translation and modernized patristic citation
         trans_key = f"v{vol_num}_fn{fnum}" if vol_num else f"v3_fn{fnum}"
@@ -5183,7 +5221,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     from shared import (
         merge_volume_config,
         EPUB_STYLESHEET, generate_font_styles, select_primary_font,
-        SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS,
+        SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES,
     )
     try:
         from ebooklib import epub
@@ -5202,6 +5240,9 @@ def render_volume(vol_num: int, overrides: dict = None,
         with open(json_path, encoding='utf-8') as f:
             intermediate = json.load(f)
     intermediate = _repair_analysis_spillover_chapters(intermediate)
+    for ch in intermediate.get('chapters', []):
+        if 'title' in ch:
+            ch['title'] = _repair_owen_ocr_errors(ch['title'], config=config)
 
     print(f'[render] Volume {vol_num}: {len(intermediate["chapters"])} chapters, '
           f'{len(intermediate["footnotes"])} footnotes')
@@ -5278,7 +5319,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             font_fnames.add(_fbase)
 
     # Supplemental biblical fonts, heading font, and the embedded title display face
-    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS):
+    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES):
         for _fname, _fpath in _font_dict.items():
             _fbase = os.path.basename(_fpath)
             if _fbase in font_fnames:
@@ -5487,6 +5528,10 @@ def render_volume(vol_num: int, overrides: dict = None,
         if ch_dict.get('is_endnotes') or title_upper == 'FOOTNOTES':
             continue
 
+        # Skip explicitly excluded chapters (e.g. raw printed Table of Contents pages)
+        if ch_dict['title'] in config.get('exclude_chapters', []):
+            continue
+
         fm_style = ch_dict.get('front_matter_style')
 
         if any(kw in title_upper for kw in ['ANALYSIS', 'PREFATORY NOTE', 'PREFACE', 'CONTENTS']):
@@ -5588,26 +5633,25 @@ def render_volume(vol_num: int, overrides: dict = None,
         cid = ch_dict['cid']
 
         for idx, (phrase, trans) in enumerate(sorted_phrases):
-            # Match the phrase, optionally wrapped in language spans
+            # Match the phrase, optionally wrapped in language spans, followed by any trailing punctuation or quotes
             pattern = re.compile(
-                rf'(<span\s+lang="(?:el|he)"[^>]*>\s*{re.escape(phrase)}\s*</span>|{re.escape(phrase)})'
+                rf'(<span\s+lang="(?:el|he|la)"[^>]*>\s*{re.escape(phrase)}\s*</span>|{re.escape(phrase)})([\.,\?!:;\'"“”’]*)'
             )
             if pattern.search(body_html):
-                trans_counter += 1
-                placeholder = f"___TRANSPHRASE_PLACEHOLDER_{idx}___"
-                matched_str = pattern.search(body_html).group(0)
-                fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">[{trans_counter}]</a></sup>'
-                placeholders[placeholder] = f"{matched_str}{fn_link}"
-                local_notes.append({
-                    'id': f"fntrans_{cid}_{trans_counter}",
-                    'num': trans_counter,
-                    'phrase': phrase,
-                    'translation': trans
-                })
-                body_html = pattern.sub(placeholder, body_html)
-
-        for placeholder, replacement in placeholders.items():
-            body_html = body_html.replace(placeholder, replacement)
+                def replace_func(m):
+                    nonlocal trans_counter
+                    trans_counter += 1
+                    matched_str = m.group(1)
+                    trailing_punc = m.group(2)
+                    fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">[{trans_counter}]</a></sup>'
+                    local_notes.append({
+                        'id': f"fntrans_{cid}_{trans_counter}",
+                        'num': trans_counter,
+                        'phrase': phrase,
+                        'translation': trans
+                    })
+                    return f"{matched_str}{trailing_punc}{fn_link}"
+                body_html = pattern.sub(replace_func, body_html)
 
         if local_notes:
             all_translation_notes.extend(local_notes)
@@ -5628,7 +5672,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     # ── Endnotes ─────────────────────────────────────────────────
     endnotes_item = None
     if footnote_map or all_translation_notes:
-        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes)
+        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes, config=config)
         endnotes_item = epub.EpubHtml(
             title='Footnotes', file_name='endnotes.xhtml', lang='en',
         )
