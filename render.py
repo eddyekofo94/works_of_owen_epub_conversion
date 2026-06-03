@@ -5097,6 +5097,15 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
     <h2 class="colophon-section-title">Edition Details</h2>
     {metadata_list_html}
   </div>
+  
+  <div class="colophon-section">
+    <h2 class="colophon-section-title">Theological Glossary</h2>
+    <p class="colophon-text">
+      Throughout the text of this volume, archaic theological or historical terms (e.g., <i>Socinians</i>, <i>Pelagians</i>, <i>Sublapsarian</i>) may appear. 
+      When a technical term from the glossary appears for the first time in a chapter, it is marked with an asterisk superscript (<sup>*</sup>). 
+      Tapping or clicking this asterisk will open a pop-up footnote containing a brief, contextual definition of the word.
+    </p>
+  </div>
 
   <div class="colophon-section">
     <h2 class="colophon-section-title">Historical Source</h2>

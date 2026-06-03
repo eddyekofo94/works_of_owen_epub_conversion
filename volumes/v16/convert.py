@@ -170,16 +170,6 @@ def post_extract_hook(intermediate: dict) -> dict:
         html = html.replace('Peter 3:11,</p>', '2 Peter 3:11,</p>')
         fm['html'] = html
 
-    # Add glossary explanation
-    found_explanation = any("Editor's Note" in fm.get("title", "") for fm in intermediate.get("front_matter_items", []))
-    if not found_explanation:
-        explanation = {
-            "title": "Editor's Note on the Theological Glossary",
-            "file_name": "glossary_note.xhtml",
-            "html": "<section epub:type=\"preface\"><h2>Editor's Note on the Theological Glossary</h2><p>Throughout the text of this volume, you may encounter archaic theological or historical terms (e.g., <i>Socinians</i>, <i>Pelagians</i>, <i>Sublapsarian</i>) that are no longer in common use. To aid the modern reader, a <b>Theological Glossary</b> has been compiled.</p><p>When a term from the glossary appears for the first time in a chapter, it is marked with an asterisk superscript (<sup>*</sup>). Tapping or clicking this asterisk will open a pop-up footnote containing a brief, contextual definition of the word, allowing you to quickly grasp its meaning without losing your place in the text.</p></section>"
-        }
-        intermediate.get("front_matter_items", []).insert(0, explanation)
-
     return intermediate
 
 
