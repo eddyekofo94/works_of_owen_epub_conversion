@@ -2650,17 +2650,16 @@ def test_bracket_spacing_cleanup():
 
 def test_latin_dedication_translation_matching():
     """Verify that the Latin dedicatory inscription is matched and translated under the Volume 12 config, and is not double-replaced."""
-    from shared import _repair_owen_ocr_errors
-    from volumes.v12.convert import OVERRIDES
+    from render import apply_inline_translations
     
     text = 'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S."'
-    repaired = _repair_owen_ocr_errors(text, config=OVERRIDES)
+    repaired = apply_inline_translations(text)
     
     assert "[Translated:" in repaired
     assert "George Blandrata, physician-in-chief and intimate counselor of Stephen" in repaired
     
     # Run a second time to ensure no double translation
-    repaired_twice = _repair_owen_ocr_errors(repaired, config=OVERRIDES)
+    repaired_twice = apply_inline_translations(repaired)
     assert repaired_twice == repaired
     assert repaired_twice.count("[Translated:") == 1
 
@@ -2728,6 +2727,44 @@ def test_nav_xhtml_double_wrap_prevention():
     assert nav_html.count("<head>") == 1
     assert nav_html.count("<body>") == 1
     assert nav_html.count("Table of Contents") == 3  # One in title, one in h2, one in landmarks guide
+
+
+def test_latin_ocr_repairs():
+    """Verify that centralized Latin OCR corrections are correctly applied."""
+    from shared import _repair_owen_ocr_errors
+    
+    # Check 'sod' -> 'sed'
+    text_sod = "sod credere illum oportet"
+    repaired_sod = _repair_owen_ocr_errors(text_sod)
+    assert repaired_sod.startswith("sed ")
+    
+    # Check 'Cicerco' -> 'Cicero'
+    text_cic = "ut ait Cicerco in"
+    repaired_cic = _repair_owen_ocr_errors(text_cic)
+    assert "Cicero" in repaired_cic
+    
+    # Check 'remain' -> 'veniam' restricted to Latin phrase
+    text_remain_latin = "delictorum nostrorum remain"
+    repaired_remain = _repair_owen_ocr_errors(text_remain_latin)
+    assert repaired_remain == "delictorum nostrorum veniam"
+    
+    # Make sure English 'remain' is not corrupted
+    text_remain_eng = "we remain in the faith"
+    repaired_remain_eng = _repair_owen_ocr_errors(text_remain_eng)
+    assert repaired_remain_eng == "we remain in the faith"
+
+
+def test_latin_inline_translations():
+    """Verify that inline translations are correctly injected without corrupting language span tags."""
+    from render import apply_inline_translations
+    
+    body_html = '<p>whose inscription is, <span lang="la" xml:lang="la">Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S.</span>.</p>'
+    
+    repaired = apply_inline_translations(body_html)
+    assert '[Translated: ' in repaired
+    assert '“To the most distinguished and renowned George Blandrata' in repaired
+    assert '</span>.' in repaired
+
 
 
 

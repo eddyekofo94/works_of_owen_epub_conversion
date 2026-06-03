@@ -1263,8 +1263,41 @@ def _repair_scripture_reference_artifacts(text: str) -> str:
     return text
 
 
+LATIN_OCR_CORRECTIONS = {
+    'sod': 'sed',
+    'Cicerco': 'Cicero',
+    'sub ape': 'sub spe',
+    'credere ilium': 'credere illum',
+    'putaut': 'putant',
+    'efiiciens': 'efficiens',
+    'queastum facere solitua': 'quaestum facere solitus',
+    'prerumque': 'plerumque',
+    'graneis': 'ganeis',
+    'nulla pietatis commendatione, nulla': 'nulla pietatis commendatione, nullo',
+    'delictorum nostrorum remain': 'delictorum nostrorum veniam',
+    'Virgln': 'Virgin',
+    'Virglnique': 'Virginique',
+    'Francisei': 'Francisci',
+    'Fragm, de Jus. tificat.': 'Fragm. de Justificat.',
+    'Pater quam inepte': 'Patet quam inepte',
+    'pater denique quam': 'patet denique quam',
+    'adversari. orum': 'adversariorum',
+    'Clarke': 'Clarae',
+    'Voss. Rasp': 'Voss. Resp',
+}
+
+
 def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     """Repair known OCR character misreads using volume-specific configuration."""
+    # Apply centralized Latin OCR corrections
+    for wrong, right in LATIN_OCR_CORRECTIONS.items():
+        pattern = re.escape(wrong)
+        if wrong and wrong[0].isalnum():
+            pattern = r'\b' + pattern
+        if wrong and wrong[-1].isalnum():
+            pattern = pattern + r'\b'
+        text = re.sub(pattern, right, text)
+
     text = _normalize_scholarly_citation_artifacts(text)
     text = _unwrap_quote_wrapped_structural_markers(text)
     text = _repair_scripture_reference_artifacts(text)

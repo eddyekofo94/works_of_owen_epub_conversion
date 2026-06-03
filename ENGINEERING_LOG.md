@@ -4,6 +4,32 @@ This log captures detailed technical analysis and architectural decisions for co
 
 ---
 
+## [Session: 2026-06-03] Centralized Latin OCR and Inline Translation System
+
+**Date:** 2026-06-03
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volumes tested:** 12 (verified against entire 416-test suite)
+
+### 1. Executive Summary
+Establish a robust, centralized architecture for Latin spelling/OCR corrections, inline translations, and automated metrics auditing. This replaces the volume-specific, ad-hoc replacements that previously cluttered individual `convert.py` configs. The new layout has been successfully validated on Volume 12.
+
+### 2. Root Cause Analysis
+Volume-specific Latin corrections (such as George Blandrata's dedication, Martin Seidelius's confession, Ennius's poetry, etc.) were hardcoded within individual `convert.py` files. This led to code duplication, fragile regexes, lack of test coverage, and no centralized QA validation. In addition, there were no automated Latin metrics (word coverage, tag coverage, clause fidelity, or translation ratios) in the audit system, unlike Greek and Hebrew.
+
+### 3. Implementation of the Fix
+1. **Centralized OCR Corrections:** Created a global `LATIN_OCR_CORRECTIONS` map in `shared.py` containing 20+ common Latin OCR typos (e.g., `sod` -> `sed`, `Cicerco` -> `Cicero`, `remain` -> `veniam` in Latin contexts) and integrated it into `_repair_owen_ocr_errors` using word boundary checks.
+2. **Centralized Inline Translations:** Moved all block-level Latin translations to a new dictionary `INLINE_TRANSLATIONS` in `translation_db.py`.
+3. **Regex Integration:** Implemented `apply_inline_translations` in `render.py` using a backtrack-safe negative lookahead pattern `(?!\s*(?:[\.,\?!:;'"“”’]*\s*)?\[Translated:)` to inject the translations outside of the `<span lang="la">` tags without risking double translations or punctuation displacement.
+4. **Automated Auditing:** Added `latin_word_coverage`, `latin_clause_fidelity`, and `latin_translation_coverage` functions to `scripts/audit_text_integrity.py`. These verify Latin word count ratios, tagging percentages, clause presence, and translation rates. Triggered warnings (e.g. `low_latin_tagging`, `low_latin_translation_coverage`) are checked against the allowed baseline budget in `qa/bug_regression_baselines.json`.
+5. **Cleanups and Tests:** Cleared out the local Latin replacements in `volumes/v12/convert.py` and added regression tests `test_latin_ocr_repairs` and `test_latin_inline_translations` to `tests/test_bug_regressions.py`.
+
+### 4. Validation
+1. Rebuilt Volume 12 (`convert.py`) and verified that all centralized inline translations rendered cleanly as `[Translated: “...”]` after their respective spans.
+2. Ran `pytest tests/` and verified that all 416 test cases passed without failures.
+3. Inspected the generated `volume_12_text_integrity.md` report showing full coverage metrics for the new Latin check block.
+
+---
+
 ## [Session: 2026-06-02] Latin Translation Footnote Punctuation Shifting
 
 **Date:** 2026-06-02

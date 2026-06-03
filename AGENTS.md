@@ -498,13 +498,66 @@ Generates a ranked QA state report for the specified volume(s).
 
 **What it does:**
 - Reads existing audit, text integrity, and bug regression reports.
-- Scores each volume (coverage, Greek/Hebrew health, splits, warnings, errors).
-- Ranks worst → best, prints a ranked table, and writes detailed reports.
-- Updates the Per-Volume Script Status table in README.md.
+- Scores each volume based on coverage, Greek/Hebrew/Latin health, unresolved citations ratio, splits, warnings, and errors.
+- Ranks worst → best, prints a ranked table (including `Lat%` and `Unres` columns), and writes detailed reports.
+- Updates the Per-Volume Script Status table in `README.md`.
+
+**Quality Stages of a Volume:**
+- **PRISTINE (Stage 4)**: The highest QA stage. All 3 QA report files exist, word coverage is $\ge$ 99.5%, Greek/Hebrew/Latin word coverages are all $\ge$ 99.0%, and there are **0 unresolved patristic/classical citations**.
+- **FULL (Stage 3)**: All 3 QA report files exist (audit, text integrity, bug regressions) but there are still quality gaps (e.g. coverage below threshold, or unresolved citations remaining).
+- **STANDARD (Stage 2)**: Both EPUB audit and text integrity reports exist.
+- **BASIC (Stage 1)**: Only the EPUB audit report exists.
+- **NONE (Stage 0)**: No QA reports exist.
+
+**Scoring & Quality Contributions:**
+- **Unresolved Citations Ratio**: Calculated as `unresolved_citations / total_citations` (for volumes with patristic/classical citations). It directly penalizes the volume's quality `Need` score by up to `15.0` points, encouraging the resolution of all inline citation abbreviations.
+- **Latin Quality Metrics**: Latin coverage, tagging, and translation coverage ratios are evaluated.
+- **Missing Audits Penalty**: To prevent volumes without completed Latin audits from appearing cleaner than they are, missing Latin metrics incur a combined flat penalty of `9.0` points in the quality `Need` score (`5.0` for missing coverage, `2.0` for missing tagging, `2.0` for missing translation).
 
 **Location of detailed reports:**
 - `qa/reports/volume_state_report.md`
 - `qa/reports/volume_state_report.json`
+
+### `#test all [n]`
+
+Executes the full check pipeline for the specified volume(s) and runs the entire test suite.
+
+**Command Syntax:**
+- `#test all`: Run the full pipeline for all 16 volumes.
+- `#test all 3`: Run the full pipeline for volume 3.
+- `#test all 1 2 5`: Run the full pipeline for multiple volumes.
+
+**What it does:**
+- Runs the converter, EPUB audit, text integrity audit, bug regression checks, anomalies audit, and runs all pytest tests.
+
+### `#report [n]`
+
+Generates or updates volume-specific reports.
+
+**Command Syntax:**
+- `#report 1`: Generate report for volume 1.
+- `#report 1 2 5`: Generate reports for multiple volumes.
+- `#report all`: Generate reports for all 16 volumes.
+
+**What it does:**
+- Executes `generate_v1_report.py [n]` to write detailed summaries to `volumes/vN/bugs_fixes/VOLUME_N_REPORT.md`.
+
+### `#heal worst` / `#heal [n]`
+
+Automates the volume repair and quality healing process.
+
+**Command Syntax:**
+- `#heal worst`: Find the worst quality volume, branch, pre-audit, plan, repair, and verify.
+- `#heal [n]`: Branch, pre-audit, plan, repair, and verify a specific volume `n` directly.
+
+**What it does:**
+- Identifies the target volume by scanning `qa/reports/volume_state_report.json`.
+- Branches `heal-v[n]` from `master`.
+- Gathers baseline quality metrics.
+- Creates a structured repair plan checklist at `volumes/v[n]/bugs_fixes/volume_[n]_repair_plan.md`.
+- Executes repairs (OCR fixes, patristic citations resolution, split healing).
+- Verifies EPUB building, checks, and test suite.
+- Re-runs state report and outputs before-and-after quality progression.
 
 ## Citation System — Agent Briefing (June 2026)
 

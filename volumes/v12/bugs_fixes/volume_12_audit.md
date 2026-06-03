@@ -1,34 +1,38 @@
 # EPUB Audit: volume_12.epub
 
-- Status: **WARN**
-- Errors: 0
+- Status: **FAIL**
+- Errors: 1
 - Warnings: 3
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 90
-- Manifest items: 81
-- Spine items: 59
-- XHTML files: 61
-- Embedded fonts: 15
-- NAV links: 62
+- Files: 97
+- Manifest items: 88
+- Spine items: 62
+- XHTML files: 63
+- Embedded fonts: 20
+- NAV links: 64
 
 ## Content Checks
 
-- Greek chars: 12770
+- Greek chars: 14115
 - Untagged Greek chars: 0
 - Hebrew chars: 1448
 - Untagged Hebrew chars: 0
-- Noteref links: 605
-- Endnote anchors: 610
+- Noteref links: 584
+- Endnote anchors: 586
 - Boilerplate hits: 0
 - Possible Beta Code files: 1
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 2
+
+## Errors
+
+- `nav_in_spine`: EPUB navigation document is in the reading-order spine
 
 ## Warnings
 
@@ -55,7 +59,7 @@
 ### lowercase_paragraph_start
 
 - `EPUB/ch003.xhtml`: who is your unworthy fellow-laborer
-- `EPUB/ch004.xhtml`: and whose blasphemy comes not at all short of it. The first is of Clarus Bonarus
+- `EPUB/ch004.xhtml`: and whose blasphemy comes not at all short of it. The first is of
 - `EPUB/ch005.xhtml`: for if we once let go those forms of sound words learned from the apostles, and t
 - `EPUB/ch006.xhtml`: so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, "Who hath f
 - `EPUB/ch014.xhtml`: is so far from proving that the image of God wherein man was created did consist

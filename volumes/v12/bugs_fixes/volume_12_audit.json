@@ -1,10 +1,18 @@
 {
   "epub": "volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-03T00:07:50.969639+00:00",
-  "status": "warn",
-  "error_count": 0,
+  "generated_at": "2026-06-03T21:08:16.169498+00:00",
+  "status": "fail",
+  "error_count": 1,
   "warning_count": 3,
-  "errors": [],
+  "errors": [
+    {
+      "code": "nav_in_spine",
+      "message": "EPUB navigation document is in the reading-order spine",
+      "idrefs": [
+        "chapter_62"
+      ]
+    }
+  ],
   "warnings": [
     {
       "code": "possible_beta_code_residue",
@@ -22,22 +30,13 @@
       "examples": [
         "EPUB/endnotes.xhtml#fn285",
         "EPUB/endnotes.xhtml#fn446",
-        "EPUB/endnotes.xhtml#fn489",
-        "EPUB/endnotes.xhtml#fn490",
-        "EPUB/endnotes.xhtml#fn491",
-        "EPUB/endnotes.xhtml#fn492",
-        "EPUB/endnotes.xhtml#fn493",
-        "EPUB/endnotes.xhtml#fn494",
-        "EPUB/endnotes.xhtml#fn495",
-        "EPUB/endnotes.xhtml#fn496",
-        "EPUB/endnotes.xhtml#fn497",
-        "EPUB/endnotes.xhtml#fn498"
+        "EPUB/endnotes.xhtml#fn489"
       ]
     }
   ],
   "info": {
-    "file_count": 90,
-    "epub_size_bytes": 6399960,
+    "file_count": 97,
+    "epub_size_bytes": 8391075,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -46,15 +45,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 81,
-    "spine_count": 59,
-    "xhtml_count": 61,
+    "manifest_count": 88,
+    "spine_count": 62,
+    "xhtml_count": 63,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 15,
+    "font_count": 20,
     "language": {
-      "greek_chars": 12770,
+      "greek_chars": 14115,
       "greek_untagged_chars": 0,
       "hebrew_chars": 1448,
       "hebrew_untagged_chars": 0,
@@ -63,23 +62,14 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 605,
-      "unique_noteref_targets": 598,
-      "endnote_anchor_count": 610,
+      "noteref_count": 584,
+      "unique_noteref_targets": 583,
+      "endnote_anchor_count": 586,
       "missing_endnote_targets": [],
       "orphan_endnotes": [
         "EPUB/endnotes.xhtml#fn285",
         "EPUB/endnotes.xhtml#fn446",
-        "EPUB/endnotes.xhtml#fn489",
-        "EPUB/endnotes.xhtml#fn490",
-        "EPUB/endnotes.xhtml#fn491",
-        "EPUB/endnotes.xhtml#fn492",
-        "EPUB/endnotes.xhtml#fn493",
-        "EPUB/endnotes.xhtml#fn494",
-        "EPUB/endnotes.xhtml#fn495",
-        "EPUB/endnotes.xhtml#fn496",
-        "EPUB/endnotes.xhtml#fn497",
-        "EPUB/endnotes.xhtml#fn498"
+        "EPUB/endnotes.xhtml#fn489"
       ]
     },
     "content_scan": {
@@ -125,7 +115,7 @@
           {
             "file": "combined_text",
             "text": "of the death of christ and of justification",
-            "count": 1
+            "count": 2
           },
           {
             "file": "combined_text",
@@ -172,7 +162,7 @@
           },
           {
             "file": "EPUB/ch004.xhtml",
-            "text": "and whose blasphemy comes not at all short of it. The first is of Clarus Bonarus"
+            "text": "and whose blasphemy comes not at all short of it. The first is of"
           },
           {
             "file": "EPUB/ch005.xhtml",
@@ -213,7 +203,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 62,
+    "nav_link_count": 64,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

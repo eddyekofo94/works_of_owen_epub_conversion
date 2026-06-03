@@ -272,57 +272,57 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| 1 | v1 | Populated | FULL | Cov 99.68 Greek 99.87 Heb 100.00 |
-| 2 | v2 | Populated | FULL | Cov 99.68 Greek 99.77 Heb 100.00 |
-| 3 | v3 | Populated | FULL | Cov 98.53 Greek 99.36 Heb 95.80 Anom 598 |
-| 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 |
-| 5 | v5 | Populated | FULL | Cov 99.69 Greek 99.73 Heb 99.19 |
-| 6 | v6 | Populated | FULL | Cov 99.54 Greek 100.00 Heb 100.00 |
-| 7 | v7 | Populated | FULL | Cov 99.68 Greek 100.00 Heb 100.00 |
-| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 |
-| 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 |
-| 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 |
-| 11 | v11 | Populated | FULL | Cov 97.63 Greek 99.70 Heb 100.00 |
-| 12 | v12 | Populated | FULL | Cov 93.81 Greek 89.79 Heb 99.55 Anom 663 |
-| 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 |
-| 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 |
-| 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 |
-| 16 | v16 | Populated | FULL | Cov 99.59 Greek 99.30 Heb 99.01 Anom 299 |
+| 1 | v1 | Populated | FULL | Cov 99.68 Greek 99.87 Heb 100.00 Lat ? |
+| 2 | v2 | Populated | FULL | Cov 99.68 Greek 99.77 Heb 100.00 Lat ? Unres 2 |
+| 3 | v3 | Populated | FULL | Cov 98.53 Greek 99.36 Heb 95.80 Lat ? |
+| 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 Lat ? Unres 8 |
+| 5 | v5 | Populated | FULL | Cov 99.69 Greek 99.73 Heb 99.19 Lat ? Unres 2 |
+| 6 | v6 | Populated | FULL | Cov 99.54 Greek 100.00 Heb 100.00 Lat ? |
+| 7 | v7 | Populated | FULL | Cov 99.68 Greek 100.00 Heb 100.00 Lat ? Unres 2 |
+| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 |
+| 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? |
+| 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 |
+| 11 | v11 | Populated | FULL | Cov 97.63 Greek 99.70 Heb 100.00 Lat ? Unres 4 |
+| 12 | v12 | Populated | PRISTINE | Cov 99.60 Greek 99.92 Heb 99.55 Lat 99.82 |
+| 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 Lat ? |
+| 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 Lat ? Unres 6 |
+| 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 Lat ? Unres 4 |
+| 16 | v16 | Populated | FULL | Cov 99.59 Greek 99.30 Heb 99.01 Lat ? Unres 4 |
 
-## Slash Commands (test-executor Skill)
+## Agent-Driven Skills & Slash Commands
 
-For agent-driven workflows, the `test-executor` skill in `test-executor/SKILL.md`
-provides `#test` slash commands:
+For agent-driven workflows, three packaged skills are available to automate testing, report generation, and volume healing.
 
-### `#test audit [n...]`
+### 1. Test Executor Skill (`test-executor.skill`)
+Provides `#test` commands to execute audits, bug-regression reports, and pytest suites.
 
-Regenerates EPUB and runs EPUB audit + text integrity audit.
+*   `#test audit [n...]` — Rebuilds EPUB and runs EPUB and text-integrity audits.
+    *   `#test audit 1` (volume 1)
+    *   `#test audit 1 2 5` (multiple)
+    *   `#test audit all` (all 16 volumes)
+*   `#test bug [n...]` — Runs the known-bug regression report against existing audit data.
+    *   `#test bug 3`
+    *   `#test bug all`
+*   `#test all [n...]` — Runs the full check pipeline (converter → audits → bug regressions → pytest).
+    *   `#test all 12`
+    *   `#test all`
+*   `#test report [n...]` — Gathers QA state reports, updates README table and state files.
+    *   `#test report 1 2`
+    *   `#test report` (all 16 volumes)
 
-```text
-#test audit 1        → audit volume 1
-#test audit 1 2 5    → audit volumes 1, 2, 5
-#test audit all      → audit all 16 volumes
-```
+### 2. Report Generator Skill (`report-generator.skill`)
+Provides `#report` commands to generate or update volume-specific markdown and JSON reports.
 
-### `#test bug [n...]`
+*   `#report [n...]` — Generates reports at `volumes/v[n]/bugs_fixes/VOLUME_[n]_REPORT.md`.
+    *   `#report 1`
+    *   `#report 1 2 5`
+    *   `#report all` (all 16 volumes)
 
-Runs the known-bug regression report against existing audit data.
+### 3. Volume Healer Skill (`volume-healer.skill`)
+Provides `#heal` commands to automatically heal bugs, resolve citations, correct spelling errors, and verify the progression.
 
-```text
-#test bug 1          → bug regression for volume 1
-#test bug 1 2 5      → bug regressions for volumes 1, 2, 5
-#test bug all        → bug regressions for all 16 volumes
-```
-
-### `#test all [n...]`
-
-Runs the full check pipeline (converter → audits → bug regressions → pytest).
-
-```text
-#test all            → full pipeline for all 16 volumes
-#test all 3          → full pipeline for volume 3
-#test all 1 2 5      → full pipeline for volumes 1, 2, 5
-```
+*   `#heal worst` — Scans rankings, checks out a new branch (`heal-v[n]`), runs pre-audit, plans the repair, executes automated fixes, verifies via tests, and reports before-and-after progression.
+*   `#heal [n]` — Runs the healing pipeline for a specific volume `n`.
 
 ## What the Converter Does
 

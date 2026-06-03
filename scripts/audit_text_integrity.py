@@ -30,7 +30,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 try:
     from shared import (
         convert_greek_word, convert_gideon_hebrew, clean_greek_text,
-        is_greek_font, is_hebrew_font,
+        is_greek_font, is_hebrew_font, is_latin_word,
     )
 except ImportError:
     convert_greek_word = lambda x: x
@@ -38,6 +38,7 @@ except ImportError:
     clean_greek_text = lambda x: x
     is_greek_font = lambda x: False
     is_hebrew_font = lambda x: False
+    is_latin_word = lambda x: False
 
 NS = {
     "container": "urn:oasis:names:tc:opendocument:xmlns:container",
@@ -1309,6 +1310,193 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
     }
 
 
+def extract_latin_words_from_text(text: str) -> list[str]:
+    tokens = re.findall(r'\b[a-zA-ZæœæŒ\’-]+\b', text)
+    return [t for t in tokens if is_latin_word(t) is True]
+
+
+def extract_tagged_latin_from_html(html_str: str) -> list[str]:
+    try:
+        root = etree.fromstring(html_str)
+        spans = root.xpath('.//*[local-name()="span" and (@lang="la" or @xml:lang="la")]')
+        texts = []
+        for s in spans:
+            texts.append(" ".join(s.itertext()))
+        text_str = " ".join(texts)
+    except Exception:
+        matches = re.findall(r'<span\s+[^>]*lang="la"[^>]*>(.*?)</span>', html_str, re.S)
+        text_str = " ".join(re.sub(r'<[^>]+>', ' ', m) for m in matches)
+        
+    tokens = re.findall(r'\b[a-zA-ZæœæŒ\’-]+\b', text_str)
+    return [t for t in tokens if is_latin_word(t) is True]
+
+
+def contiguous_latin_runs(text: str, min_words: int = 4) -> list[list[str]]:
+    tokens = re.split(r'(\b[a-zA-ZæœæŒ\’-]+\b)', text)
+    runs: list[list[str]] = []
+    current: list[str] = []
+    
+    for token in tokens:
+        if not token:
+            continue
+        if re.match(r'^[a-zA-ZæœæŒ\’-]+$', token):
+            is_lat = is_latin_word(token)
+            if is_lat in (True, 'shared'):
+                current.append(token.lower())
+            else:
+                if len(current) >= min_words:
+                    runs.append(current)
+                current = []
+        else:
+            if re.search(r'[0-9]', token):
+                if len(current) >= min_words:
+                    runs.append(current)
+                current = []
+    if len(current) >= min_words:
+        runs.append(current)
+    return runs
+
+
+def latin_word_coverage(pdf_pages: list[str], paragraphs: list[Paragraph]) -> dict[str, Any]:
+    pdf_text = "\n".join(pdf_pages)
+    epub_text = "\n".join(p.text for p in paragraphs)
+
+    pdf_latin = extract_latin_words_from_text(pdf_text)
+    epub_latin = extract_latin_words_from_text(epub_text)
+
+    epub_tagged_latin = []
+    for p in paragraphs:
+        if p.html:
+            epub_tagged_latin.extend(extract_tagged_latin_from_html(p.html))
+
+    pdf_latin_counts = Counter(w.lower() for w in pdf_latin if len(w) >= 2)
+    epub_latin_counts = Counter(w.lower() for w in epub_latin if len(w) >= 2)
+    epub_tagged_counts = Counter(w.lower() for w in epub_tagged_latin if len(w) >= 2)
+
+    latin_total = sum(pdf_latin_counts.values())
+    latin_overlap = sum(min(c, epub_latin_counts.get(w, 0)) for w, c in pdf_latin_counts.items())
+    latin_coverage = latin_overlap / latin_total if latin_total else 1.0
+
+    epub_total = sum(epub_latin_counts.values())
+    tagged_total = sum(epub_tagged_counts.values())
+    latin_tagging_ratio = tagged_total / epub_total if epub_total else 1.0
+
+    missing_latin = []
+    for word, count in pdf_latin_counts.items():
+        if count >= 3 and epub_latin_counts.get(word, 0) < count * 0.5:
+            missing_latin.append({
+                "word": word,
+                "pdf": count,
+                "epub": epub_latin_counts.get(word, 0),
+            })
+    missing_latin.sort(key=lambda x: x["pdf"] - x["epub"], reverse=True)
+
+    untagged_latin = []
+    for word, count in epub_latin_counts.items():
+        tagged_count = epub_tagged_counts.get(word, 0)
+        if count >= 3 and tagged_count < count * 0.5:
+            untagged_latin.append({
+                "word": word,
+                "epub": count,
+                "tagged": tagged_count,
+            })
+    untagged_latin.sort(key=lambda x: x["epub"] - x["tagged"], reverse=True)
+
+    return {
+        "pdf_latin_word_count": len(pdf_latin),
+        "epub_latin_word_count": len(epub_latin),
+        "epub_tagged_latin_word_count": len(epub_tagged_latin),
+        "pdf_latin_unique_words": len(pdf_latin_counts),
+        "epub_latin_unique_words": len(epub_latin_counts),
+        "epub_tagged_unique_words": len(epub_tagged_counts),
+        "latin_word_coverage_ratio": round(latin_coverage, 4),
+        "latin_tagging_ratio": round(latin_tagging_ratio, 4),
+        "missing_latin_word_samples": missing_latin[:25],
+        "untagged_latin_word_samples": untagged_latin[:25],
+    }
+
+
+def latin_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[str, Any]:
+    epub_norm = normalized_word_string(epub_text)
+    missing_latin_clauses = []
+    checked_latin = 0
+
+    for page_no, page_text in enumerate(pdf_pages, start=1):
+        for current_seq in contiguous_latin_runs(page_text, min_words=4):
+            checked_latin += 1
+            phrase = " ".join(current_seq)
+            if phrase not in epub_norm:
+                window_size = max(3, int(len(current_seq) * 0.8))
+                found = any(
+                    " ".join(current_seq[i:i + window_size]) in epub_norm
+                    for i in range(len(current_seq) - window_size + 1)
+                )
+                if not found:
+                    missing_latin_clauses.append({
+                        "page": page_no,
+                        "word_count": len(current_seq),
+                        "sample": " ".join(current_seq[:12]),
+                    })
+
+    return {
+        "latin_clauses_checked": checked_latin,
+        "missing_latin_clause_count": len(missing_latin_clauses),
+        "missing_latin_clauses": missing_latin_clauses[:30],
+    }
+
+
+def latin_translation_coverage(paragraphs: list[Paragraph]) -> dict[str, Any]:
+    from translation_db import BODY_TRANSLATIONS, INLINE_TRANSLATIONS
+    trans_keys = {normalized_word_string(k) for k in list(BODY_TRANSLATIONS.keys()) + list(INLINE_TRANSLATIONS.keys())}
+    
+    tagged_runs = []
+    for p in paragraphs:
+        if not p.html:
+            continue
+        try:
+            root = etree.fromstring(p.html)
+            spans = root.xpath('.//*[local-name()="span" and (@lang="la" or @xml:lang="la")]')
+            for s in spans:
+                text = " ".join(s.itertext()).strip()
+                if text:
+                    tagged_runs.append(text)
+        except Exception:
+            matches = re.findall(r'<span\s+[^>]*lang="la"[^>]*>(.*?)</span>', p.html, re.S)
+            for m in matches:
+                text = re.sub(r'<[^>]+>', ' ', m).strip()
+                if text:
+                    tagged_runs.append(text)
+                    
+    translated_count = 0
+    untranslated_samples = []
+    for run in tagged_runs:
+        norm_run = normalized_word_string(run)
+        has_trans = False
+        for k in trans_keys:
+            if k in norm_run or norm_run in k:
+                has_trans = True
+                break
+        if has_trans:
+            translated_count += 1
+        else:
+            untranslated_samples.append(run)
+            
+    unique_untranslated = []
+    seen = set()
+    for s in untranslated_samples:
+        if s.lower() not in seen:
+            seen.add(s.lower())
+            unique_untranslated.append({"phrase": s})
+            
+    ratio = translated_count / len(tagged_runs) if tagged_runs else 1.0
+    return {
+        "tagged_latin_runs_count": len(tagged_runs),
+        "translated_latin_runs_count": translated_count,
+        "latin_translation_ratio": round(ratio, 4),
+        "untranslated_latin_samples": unique_untranslated[:20],
+    }
+
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Blemish audits: new checks added 2026-05-20 based on visual inspection report
 # ──────────────────────────────────────────────────────────────────────────────
@@ -1476,6 +1664,9 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     font_check = font_config_check(volume, root)
     gh_word_cov = greek_hebrew_word_coverage(pdf_pages, paragraphs)
     gh_clause_fid = greek_hebrew_clause_fidelity(pdf_pages, epub_text)
+    latin_word_cov = latin_word_coverage(pdf_pages, paragraphs)
+    latin_clause_fid = latin_clause_fidelity(pdf_pages, epub_text)
+    latin_trans_cov = latin_translation_coverage(paragraphs)
 
     warnings = []
     if word_coverage["coverage_ratio"] < 0.86:
@@ -1588,6 +1779,26 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
             "code": "missing_hebrew_clauses",
             "message": "Some dense Hebrew passages from the PDF are missing from the EPUB",
         })
+    if latin_word_cov["pdf_latin_word_count"] >= 10 and latin_word_cov["latin_word_coverage_ratio"] < 0.80:
+        warnings.append({
+            "code": "low_latin_word_coverage",
+            "message": "EPUB Latin word coverage against PDF extraction is lower than expected",
+        })
+    if latin_word_cov["epub_latin_word_count"] >= 10 and latin_word_cov["latin_tagging_ratio"] < 0.70:
+        warnings.append({
+            "code": "low_latin_tagging",
+            "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+        })
+    if latin_clause_fid["missing_latin_clause_count"]:
+        warnings.append({
+            "code": "missing_latin_clauses",
+            "message": "Some dense Latin passages from the PDF are missing from the EPUB",
+        })
+    if latin_trans_cov["latin_translation_ratio"] < 0.85 and latin_trans_cov["tagged_latin_runs_count"] >= 5:
+        warnings.append({
+            "code": "low_latin_translation_coverage",
+            "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+        })
     # ── Blemish checks (2026-05-20) ───────────────────────────────────────────
     if ages_artifacts["ages_artifact_count"]:
         warnings.append({
@@ -1640,6 +1851,9 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
         "repeated_windows": repeats,
         "greek_hebrew_word_coverage": gh_word_cov,
         "greek_hebrew_clause_fidelity": gh_clause_fid,
+        "latin_word_coverage": latin_word_cov,
+        "latin_clause_fidelity": latin_clause_fid,
+        "latin_translation_coverage": latin_trans_cov,
         "ages_artifact_check": ages_artifacts,
         "analysis_extraction_check": analysis_quality,
         "font_config_check": font_check,
@@ -1669,6 +1883,9 @@ def render_markdown(result: dict[str, Any]) -> str:
     ei = result["enumerator_integrity"]
     gh = result["greek_hebrew_word_coverage"]
     ghf = result["greek_hebrew_clause_fidelity"]
+    lat = result.get("latin_word_coverage", {})
+    latf = result.get("latin_clause_fidelity", {})
+    latt = result.get("latin_translation_coverage", {})
     lines = [
         f"# Text Integrity Audit: Volume {result['volume']}",
         "",
@@ -1729,6 +1946,19 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Hebrew clauses checked: {ghf['hebrew_clauses_checked']}",
         f"- Missing Hebrew clauses: {ghf['missing_hebrew_clause_count']}",
         "",
+        "## Latin",
+        "",
+        f"- PDF Latin words: {lat.get('pdf_latin_word_count', 0)}",
+        f"- EPUB Latin words: {lat.get('epub_latin_word_count', 0)}",
+        f"- EPUB Tagged Latin words: {lat.get('epub_tagged_latin_word_count', 0)}",
+        f"- Latin word coverage ratio: {lat.get('latin_word_coverage_ratio', 0.0)}",
+        f"- Latin word tagging ratio: {lat.get('latin_tagging_ratio', 0.0)}",
+        f"- Latin clauses checked: {latf.get('latin_clauses_checked', 0)}",
+        f"- Missing Latin clauses: {latf.get('missing_latin_clause_count', 0)}",
+        f"- Tagged Latin runs checked: {latt.get('tagged_latin_runs_count', 0)}",
+        f"- Translated Latin runs: {latt.get('translated_latin_runs_count', 0)}",
+        f"- Latin translation ratio: {latt.get('latin_translation_ratio', 0.0)}",
+        "",
     ]
 
     if result["warnings"]:
@@ -1760,6 +1990,10 @@ def render_markdown(result: dict[str, Any]) -> str:
     add_sample_section(lines, "Missing Hebrew Word Samples", gh["missing_hebrew_word_samples"], ["word", "pdf", "epub"])
     add_sample_section(lines, "Missing Greek Clauses", ghf["missing_greek_clauses"], ["page", "word_count", "sample"])
     add_sample_section(lines, "Missing Hebrew Clauses", ghf["missing_hebrew_clauses"], ["page", "word_count", "sample"])
+    add_sample_section(lines, "Missing Latin Word Samples", lat.get("missing_latin_word_samples", []), ["word", "pdf", "epub"])
+    add_sample_section(lines, "Untagged Latin Word Samples", lat.get("untagged_latin_word_samples", []), ["word", "epub", "tagged"])
+    add_sample_section(lines, "Missing Latin Clauses", latf.get("missing_latin_clauses", []), ["page", "word_count", "sample"])
+    add_sample_section(lines, "Untranslated Latin Samples", latt.get("untranslated_latin_samples", []), ["phrase"])
 
     # ── Blemish checks ────────────────────────────────────────────────────────
     ages_chk = result.get("ages_artifact_check", {})

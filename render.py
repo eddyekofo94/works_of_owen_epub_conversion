@@ -5289,6 +5289,23 @@ def generate_abbreviations_guide_html(vol_num: int) -> str:
 '''
 
 
+def apply_inline_translations(body_html: str) -> str:
+    """Scan and substitute centralized inline translations in body HTML."""
+    from translation_db import INLINE_TRANSLATIONS
+    for phrase, trans in INLINE_TRANSLATIONS.items():
+        words = phrase.split()
+        if not words:
+            continue
+        phrase_pat = r'\s+'.join(re.escape(w) for w in words)
+        pattern = re.compile(
+            rf'(<span\s+lang="la"[^>]*>\s*{phrase_pat}\s*</span>|{phrase_pat})(?!\s*(?:[\.,\?!:;\'"“”’]*\s*)?\[Translated:)([\.,\?!:;\'"“”’]*)',
+            re.DOTALL
+        )
+        if pattern.search(body_html):
+            body_html = pattern.sub(rf'\1\2 [Translated: {trans}]', body_html)
+    return body_html
+
+
 # ================================================================
 # STAGE 2 ENTRY POINT — render_volume()
 # ================================================================
@@ -5721,6 +5738,9 @@ def render_volume(vol_num: int, overrides: dict = None,
                 body_html = body_html.replace(old, new)
         if not body_html.strip():
             continue
+
+        # Centralized inline translations scanning and substitution
+        body_html = apply_inline_translations(body_html)
 
         # Dynamic translation notes scanning and substitution
         from translation_db import BODY_TRANSLATIONS

@@ -20,7 +20,11 @@
         "low_hebrew_word_coverage",
         "missing_greek_clauses",
         "missing_hebrew_clauses",
-        "flat_analysis_chapters"
+        "flat_analysis_chapters",
+        "low_latin_word_coverage",
+        "low_latin_tagging",
+        "missing_latin_clauses",
+        "low_latin_translation_coverage"
       ],
       "max_split_candidate_count": 61,
       "max_inline_structural_candidate_count": 1,

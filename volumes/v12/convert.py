@@ -167,24 +167,8 @@ OVERRIDES = {
         'Cra-covia': 'Cracovia',
         'iraFated': 'imputed',
         'B[AXTER': 'BAXTER',
-        'Francisei': 'Francisci',
-        'Virglnique': 'Virginique',
-        'Virgln': 'Virgin',
-        'Clarke': 'Clarae',
-        'Voss. Rasp': 'Voss. Resp',
         r'(— Thes\.\n\nFrancisci)': '— Thes. Francisci',
-        'sod': 'sed',
         '"De Christo,\'': '"De Christo,"',
-        'delictorum nostrorum remain': 'delictorum nostrorum veniam',
-        'Cicerco': 'Cicero',
-        'sub ape': 'sub spe',
-        'credere ilium': 'credere illum',
-        'putaut': 'putant',
-        'Fragm, de Jus. tificat.': 'Fragm. de Justificat.',
-        'Pater quam inepte': 'Patet quam inepte',
-        'pater denique quam': 'patet denique quam',
-        'adversari. orum': 'adversariorum',
-        'efiiciens': 'efficiens',
         'Hist. Ecclesiastes lib. 5': 'Hist. Eccles. lib. 5',
         'Euseb. Hist. Ecclesiastes lib. 7 cap. 29, 30': 'Euseb. Hist. Eccles. lib. 7 cap. 29, 30',
         'Socrat. Ecclesiastes Hist. lib. 2 cap. 24, 25': 'Socrat. Eccles. Hist. lib. 2 cap. 24, 25',
@@ -193,19 +177,12 @@ OVERRIDES = {
         'discourse is is evident': 'discourse is, is evident',
         'asserts it it is': 'asserts it, it is',
         'for for that end': 'for that end',
-        'queastum facere solitua': 'quaestum facere solitus',
         'which it is is inconsistent': 'which it is, is inconsistent',
     },
     'regex_replacements': {
         r',,': ',',
         r'xauni~am': 'familiam',
         r'con~erendls': 'conferendis',
-        # Translate the George Blandrata Latin dedication, using negative lookahead to prevent double replacement
-        r'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc\., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F\. S\."(?! \[Translated:)':
-        r'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S." [Translated: “To the most distinguished and renowned George Blandrata, physician-in-chief and intimate counselor of Stephen, the most unconquered king of Poland, etc., his lord and patron to be cherished with perpetual respect; and it is subscribed, Your most devoted client in the Lord Jesus, F. S.”]',
-        # Translate the Martin Seidelius Latin quote, using negative lookahead to prevent double replacement
-        r'("Caeterum ut sciatis cujus sim religionis, .*? est decalogus, qui est aeterna, et immutabilis\s*)(\[f\d+\]|<[^>]+>)?(\s*voluntas Dei; .*? profiteor\."\s*—\s*Martin\.\s*Seidelius\s*Olaviensis\s*Silesius\.)(?!\s*\[Translated:)':
-        r'\1\2\3 [Translated: “For the rest, that you may know of what religion I am, although I have shown it in that writing of mine which you have, yet I will briefly repeat it here. And first, indeed, the doctrine concerning the Messiah, or that promised king, belongs not at all to my religion: for that king was promised only to the Jews, as also were those goods of Canaan. So also circumcision, sacrifices, and the other ceremonies of Moses do not belong to me, but were promised, given, and commanded only to the Jewish people. Nor were those things the worship of God among the Jews, but they were subservient to divine worship, and led the Jews to divine worship. But the true worship of God, which I call my religion, is the Decalogue [the Ten Commandments], which is the eternal and unchangeable will of God; which Decalogue therefore belongs to me, because it was also given to me by God, not indeed by a voice sounding from heaven, as to the Jewish people, but by creation it was implanted in my mind; but because the implanted Decalogue, through the corruption of human nature and bad habits, has been obscured in some part, therefore, for the illustrating of it, I use the vocal Decalogue, which vocal Decalogue therefore also belongs to me and to all peoples, because it agrees with the Decalogue implanted in us, nay rather, is that very same Decalogue. This is my opinion concerning the Messiah, or that promised king, and this is my religion, which I ingenuously profess before you.” — Martin Seidelius, of Olawa in Silesia.]',
         # Format the Chapter 3 summary and fix "drape" -> "shape" typo
         r'\[\[SUMMARY\]\] Of the drape and bodily visible figure of God\.\s+MR BIDDLE\'S question:\s*—\s+\[\[SUMMARY\]\] Is God in the Scripture said to have any likeness, similitude, person, shape\?':
         r"[[SUMMARY]] Of the shape and bodily visible figure of God.\n\n[[SUMMARY]] Mr Biddle's question: — Is God in the Scripture said to have any likeness, similitude, person, shape?",
@@ -218,23 +195,12 @@ OVERRIDES = {
         # Translate the Calicratides Greek quote, using negative lookahead
         r'(Serm\. 83: )(Τὸ δὲ ἕν ἐστιν .*? διακοσμάσιος)(?!\s*\[Translated:)':
         r'\1\2 [Translated: “But the One is the best, which is, according to our conception, a heavenly, incorruptible living being, the beginning and cause of the ordering of all things.”]',
-        # Translate the Seneca Latin quote, correcting demure to demum, using negative lookahead
-        r'(\"Quid est Deus\? Mens universi\. Quid est Deus\? Quod vides totum, et quod non vides totum\. Sic )demure( magnitude sua illi redditur, qua nihil majus excogitari potest, si solus est omnia, opus suum et extra et intra tenet\. Quid ergo interest inter naturam Dei et nostram\? Nostri melior pars animus est, in illo nulla pars extra animum\.\" Natural\. Quaest\. lib\. 1\. Praefat\.)(?!\s*\[Translated:)':
-        r'\1demum\2 [Translated: “What is God? The mind of the universe. What is God? All that you see, and all that you do not see. Thus indeed is his greatness restored to him, than which nothing greater can be conceived, if he alone is all things, holding his work both from without and from within. What then is the difference between the nature of God and ours? The better part of us is the soul; in him there is no part besides the soul.”]',
         # Correct citation typos in Chapter 8
         r'Theodoret, Lib\. 4 Ecclesiastes Hist\., cap\. 10': 'Theodoret, Lib. 4 Eccles. Hist., cap. 10',
         r'Socrat\. Ecclesiastes Hist\. lib\. 6:cap\. 7\.': 'Socrat. Eccles. Hist. lib. 6:cap. 7.',
         r'De Nat\. Deer\.': 'De Nat. Deor.',
         # Correct and translate Rutherford citation and quote in Chapter 49
         r'exercit\. 1, cap\. 2, Titus, \"Quomodo': 'exercit. 1, cap. 2, titulus, "Quomodo',
-        r'(Dicent ergo Arminiani, .*? in conscientia\s*,\"\s*etc\.)(?!\s*\[Translated:)':
-        r'\1 [Translated: “The Arminians will say, therefore, that we take justification here for the sense and knowledge of justification; and therefore that \'men are justified by faith\' is equivalent to saying that men are only then at last justified when they believe—that is, when they feel themselves to be justified, whereas they were justified before. Sicilian trifles and toys! For to be justified is more than to feel oneself to be justified: for (1.) it is an act of God absolving, terminated in the conscience of man, who has been summoned and dragged to the tribunal of the dreadful Judge; which act before this instant was not terminated in the conscience,” etc.]',
-        # Translate the Ennius poem in Chapter 49
-        r'(\"O Nam qui lepide postulat alterum frustrari, Quem frustratur, frustra eum dicit frustra esse\. Nam qui sese frustrari quem frustra, sentit, Qui )frustatur( is frustra est, si non, ille est frustra\.\")(?!\s*\[Translated:)':
-        r'\1frustratur\2 [Translated: “For he who pleasantly seeks to deceive another, when he deceives him, says in vain that he is in vain. For he who perceives that he himself is deceived by him who is in vain, he who is deceived is in vain, and if not, the other is in vain.”]',
-        # Translate Socinus quote (Paragraph 45) in Chapter 49
-        r'(\"Credere in Jesum Christum .*? deinde ut)(?!\s*\[Translated:)':
-        r'\1 [Translated: “To believe in Jesus Christ is nothing else than to trust in Jesus Christ, and therefore to direct one\'s life according to his prescript.” — Socinus, Synopsis of Justification, 2, p. 17. “Faith is trust through God in Christ, whence it appears that faith in Christ comprehends two things: first, that we trust not only in God, but also in Christ; then that...”]',
         # Translate the Racovian Catechism, Smalcius, Schlichting, Faustus Socinus quote (Paragraph 46) in Chapter 49
         r'(Deo obtemperemus,\"\s+etc\..*? Faust\.\s+Socin\.\s+Opusc\.\s+p\.\s+115\.)(?!\s*\[Translated:)':
         r'\1 [Translated: “...we obey God,” etc. — Racovian Catechism, chapter 9, on faith; Volkel, On True Religion, book 4, chapter 3, pp. 179, 180; Smalcius, Refutation of the Theses of Franz, disputation 4, p. 103, and disputation 6, p. 184. “To believe in Christ is nothing else than to trust in him, that is, to obey him under the hope of the promises made to us by him,” etc. — Smalcius, Refutation of the Theses of Franz, disputation 7, p. 209. “Faith in Christ is to place trust in him, and to believe that he is the cause of eternal salvation to all who obey him. If taken properly and strictly, it differs from obedience. But by a certain metonymy or synecdoche it is often taken so broadly as to comprehend all works of piety and justice.” — Schlichting, Commentary on chapter 11 to the Hebrews, p. 519. “What is it to believe in the name of Christ? Answer: To receive him, to have faith in his words, to trust in him, and finally to obey him.” — Anonymous Dialogue on Justification, p. 4. “From these things which have been said so far, it can be sufficiently understood that, although it is most true, as Scripture most openly testifies, that we are saved through the death of Christ and through the shedding of his blood, and our sins are blotted out, yet to believe this very thing is not that faith in Christ by which, as the holy Scriptures teach, we are justified, which many both in the past and today have thought, and so similarly believe; for it is far other to believe that, and under the hope of obtaining eternal life from him, to obey Christ, which was previously said and demonstrated by us to be necessarily required for our justification.” — Fragment on Justification; Faustus Socinus, Minor Works, p. 115.]',

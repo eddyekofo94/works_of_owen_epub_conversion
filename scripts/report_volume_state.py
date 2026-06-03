@@ -27,7 +27,7 @@ from cli_utils import bold, cyan, dim, green, magenta, red, yellow
 PYTHON = sys.executable
 OWEN_VOLUMES = list(range(1, 17))
 
-QA_LEVELS = {"FULL": 3, "STANDARD": 2, "BASIC": 1, "NONE": 0}
+QA_LEVELS = {"PRISTINE": 4, "FULL": 3, "STANDARD": 2, "BASIC": 1, "NONE": 0}
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
@@ -90,6 +90,21 @@ def gather_volume_data(vol: int) -> dict:
     wc = text_int.get("word_coverage", {})
     pi = text_int.get("paragraph_integrity", {})
     gh = text_int.get("greek_hebrew_word_coverage", {})
+    lat_cov_info = text_int.get("latin_word_coverage", {})
+    lat_trans_info = text_int.get("latin_translation_coverage", {})
+
+    # citations from scan_citations.py
+    total_citations = 0
+    unresolved_citations = 0
+    try:
+        from scripts.scan_citations import load_volume, scan_volume
+        vol_data = load_volume(vol)
+        if vol_data:
+            hits = scan_volume(vol, vol_data)
+            total_citations = len(hits)
+            unresolved_citations = sum(1 for h in hits if not h['already_resolved'] and not h['is_self_ref'])
+    except Exception:
+        pass
 
     data: dict[str, Any] = {
         "vol": vol,
@@ -100,6 +115,8 @@ def gather_volume_data(vol: int) -> dict:
         "convert_py_lines": convert_lines,
         "text_replacements": text_repl_count,
         "anomalies_count": anom.get("total_anomalies_count"),
+        "total_citations": total_citations,
+        "unresolved_citations": unresolved_citations,
     }
 
     # audit report
@@ -124,12 +141,18 @@ def gather_volume_data(vol: int) -> dict:
         data["coverage"] = coverage
         data["greek_coverage"] = greek_cov
         data["hebrew_coverage"] = hebrew_cov
+        data["latin_coverage"] = lat_cov_info.get("latin_word_coverage_ratio")
+        data["latin_tagging"] = lat_cov_info.get("latin_tagging_ratio")
+        data["latin_translation"] = lat_trans_info.get("latin_translation_ratio")
         data["splits"] = splits
         data["text_warnings"] = text_int.get("warning_count", 0)
     else:
         data["coverage"] = None
         data["greek_coverage"] = None
         data["hebrew_coverage"] = None
+        data["latin_coverage"] = None
+        data["latin_tagging"] = None
+        data["latin_translation"] = None
         data["splits"] = None
         data["text_warnings"] = None
 
@@ -154,7 +177,23 @@ def gather_volume_data(vol: int) -> dict:
     has_text = text_int != {}
     has_bug = bug_reg != {}
     if has_audit and has_text and has_bug:
-        data["qa_level"] = "FULL"
+        cov = data.get("coverage")
+        greek_cov = data.get("greek_coverage")
+        hebrew_cov = data.get("hebrew_coverage")
+        latin_cov = data.get("latin_coverage")
+        unres = data.get("unresolved_citations", 0)
+
+        is_pristine = (
+            cov is not None and cov >= 0.995 and
+            greek_cov is not None and greek_cov >= 0.990 and
+            hebrew_cov is not None and hebrew_cov >= 0.990 and
+            latin_cov is not None and latin_cov >= 0.990 and
+            unres == 0
+        )
+        if is_pristine:
+            data["qa_level"] = "PRISTINE"
+        else:
+            data["qa_level"] = "FULL"
     elif has_audit and has_text:
         data["qa_level"] = "STANDARD"
     elif has_audit:
@@ -180,6 +219,11 @@ def gather_volume_data(vol: int) -> dict:
         hc = data.get("hebrew_coverage")
         if hc is not None and hc < 0.90:
             actions.append("investigate_hebrew_extraction")
+        lat_c = data.get("latin_coverage")
+        if lat_c is not None and lat_c < 0.90:
+            actions.append("investigate_latin_extraction")
+        if unresolved_citations > 0:
+            actions.append("translate_unresolved_citations")
     if not has_convert:
         actions.append("create_per_volume_script")
     anom_count = data.get("anomalies_count")
@@ -219,6 +263,34 @@ def score_volume(d: dict) -> float:
     hc = d.get("hebrew_coverage")
     if hc is not None:
         score += min((1.0 - hc) * 3000, 15.0)
+
+    # Latin coverage
+    lat_cov = d.get("latin_coverage")
+    if lat_cov is not None:
+        score += min((1.0 - lat_cov) * 2000, 10.0)
+    elif d["qa_level"] != "NONE":
+        score += 5.0
+
+    # Latin tagging
+    lat_tag = d.get("latin_tagging")
+    if lat_tag is not None:
+        score += min((1.0 - lat_tag) * 10, 5.0)
+    elif d["qa_level"] != "NONE":
+        score += 2.0
+
+    # Latin translation
+    lat_trans = d.get("latin_translation")
+    if lat_trans is not None:
+        score += min((1.0 - lat_trans) * 10, 5.0)
+    elif d["qa_level"] != "NONE":
+        score += 2.0
+
+    # Unresolved citations ratio penalty
+    total_cite = d.get("total_citations", 0)
+    unresolved_cite = d.get("unresolved_citations", 0)
+    if total_cite > 0:
+        cite_ratio = unresolved_cite / total_cite
+        score += cite_ratio * 15.0
 
     # splits
     splits = d.get("splits")
@@ -272,8 +344,8 @@ def _format_table(ranked: list[dict]) -> str:
     lines.append(sep)
     header = (
         f"  {'Rank':>4}  {'Vol':>3}  {'Need':>6}  "
-        f"{'Cov%':>6}  {'Greek':>6}  {'Heb':>6}  "
-        f"{'Splits':>6}  {'Anom':>5}  {'QA Level':>9}"
+        f"{'Cov%':>6}  {'Greek':>6}  {'Heb':>6}  {'Lat%':>6}  "
+        f"{'Splits':>6}  {'Unres':>5}  {'QA Level':>9}"
     )
     lines.append(header)
     lines.append(dim("\u2500" * 78))
@@ -285,12 +357,18 @@ def _format_table(ranked: list[dict]) -> str:
         cov = _maybe_pct(d.get("coverage"))
         greek = _maybe_pct(d.get("greek_coverage"))
         hebrew = _maybe_pct(d.get("hebrew_coverage"))
+        lat_cov = _maybe_pct(d.get("latin_coverage"))
 
         splits = d.get("splits")
         splits_s = str(splits) if splits is not None else "?"
+        
+        unres = d.get("unresolved_citations")
+        unres_s = str(unres) if unres is not None else "?"
 
         ql = d["qa_level"]
-        if ql == "FULL":
+        if ql == "PRISTINE":
+            ql_s = bold(green("PRISTINE"))
+        elif ql == "FULL":
             ql_s = green("FULL")
         elif ql == "STANDARD":
             ql_s = cyan("STANDARD")
@@ -301,13 +379,10 @@ def _format_table(ranked: list[dict]) -> str:
 
         rank_str = red(f"{i:>4}") if ql == "NONE" else f"{i:>4}"
 
-        anom = d.get("anomalies_count")
-        anom_s = str(anom) if anom is not None else "?"
-
         lines.append(
             f"  {rank_str}  {vol:>3}  {_score_color(score)}  "
-            f"{_fmt(cov):>6}  {_fmt(greek):>6}  {_fmt(hebrew):>6}  "
-            f"{splits_s:>6}  {anom_s:>5}  {ql_s:>9}"
+            f"{_fmt(cov, 6)}  {_fmt(greek, 6)}  {_fmt(hebrew, 6)}  {_fmt(lat_cov, 6)}  "
+            f"{_fmt(splits_s, 6)}  {_fmt(unres_s, 5)}  {ql_s:>9}"
         )
 
     lines.append(sep)
@@ -342,19 +417,20 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
     lines.append("")
     lines.append("## Summary")
     lines.append("")
-    lines.append("**Need** (0–100): lower is better. Combines coverage, Greek/Hebrew health, splits, warnings, and QA completeness into a single score. Volumes ranked worst first.")
+    lines.append("**Need** (0–100): lower is better. Combines coverage, Greek/Hebrew/Latin health, unresolved citations, splits, warnings, and QA completeness into a single score. Volumes ranked worst first.")
     lines.append("")
-    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Anomalies | QA Level |")
-    lines.append("|------|-----|------|------|-----------|----------|-------|--------|-----------|----------|")
+    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | QA Level |")
+    lines.append("|------|-----|------|------|-----------|----------|-------|--------|-------|-------|----------|")
 
     for i, d in enumerate(ranked, 1):
         lines.append(
             f"| {i} | {d['vol']} | {d['score']} "
             f"| {d['font']} | {d['treatises']} "
-            f"| {_fmt(_maybe_pct(d.get('coverage')))} "
-            f"| {_fmt(_maybe_pct(d.get('greek_coverage')))} "
-            f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')))} "
-            f"| {d.get('anomalies_count', '?')} "
+            f"| {_fmt(_maybe_pct(d.get('coverage')), 6)} "
+            f"| {_fmt(_maybe_pct(d.get('greek_coverage')), 6)} "
+            f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')), 6)} "
+            f"| {_fmt(_maybe_pct(d.get('latin_coverage')), 6)} "
+            f"| {d.get('unresolved_citations', '?')} "
             f"| {d['qa_level']} |"
         )
 
@@ -384,6 +460,10 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
         lines.append(f"- **Word coverage:** {_pct(d.get('coverage')) if d.get('coverage') is not None else '?'}")
         lines.append(f"- **Greek coverage:** {_pct(d.get('greek_coverage')) if d.get('greek_coverage') is not None else '?'}")
         lines.append(f"- **Hebrew coverage:** {_pct(d.get('hebrew_coverage')) if d.get('hebrew_coverage') is not None else '?'}")
+        lines.append(f"- **Latin coverage:** {_pct(d.get('latin_coverage')) if d.get('latin_coverage') is not None else '?'}")
+        lines.append(f"- **Latin tagging:** {_pct(d.get('latin_tagging')) if d.get('latin_tagging') is not None else '?'}")
+        lines.append(f"- **Latin translation:** {_pct(d.get('latin_translation')) if d.get('latin_translation') is not None else '?'}")
+        lines.append(f"- **Citations:** total={d.get('total_citations', 0)}, unresolved={d.get('unresolved_citations', 0)}")
         lines.append(f"- **Splits:** {d.get('splits', '?')}")
         lines.append(f"- **Regressions:** {d.get('regressions', '?')}")
         lines.append(f"- **Suspected anomalies:** {d.get('anomalies_count', '?')}")
@@ -416,6 +496,11 @@ def write_json_report(ranked: list[dict], path: Path) -> None:
             "coverage": _maybe_pct(d.get("coverage")),
             "greek_coverage": _maybe_pct(d.get("greek_coverage")),
             "hebrew_coverage": _maybe_pct(d.get("hebrew_coverage")),
+            "latin_coverage": _maybe_pct(d.get("latin_coverage")),
+            "latin_tagging": _maybe_pct(d.get("latin_tagging")),
+            "latin_translation": _maybe_pct(d.get("latin_translation")),
+            "total_citations": d.get("total_citations", 0),
+            "unresolved_citations": d.get("unresolved_citations", 0),
             "splits": d.get("splits"),
             "warnings": d.get("audit_warnings"),
             "errors": d.get("audit_errors"),
@@ -449,12 +534,15 @@ def _table_line(d: dict) -> str:
         cov = d.get("coverage")
         greek = d.get("greek_coverage")
         hebrew = d.get("hebrew_coverage")
-        anom = d.get("anomalies_count")
+        lat = d.get("latin_coverage")
+        unres = d.get("unresolved_citations", 0)
+        
         cov_s = f"{_pct(cov)}" if cov is not None else "?"
         greek_s = f"{_pct(greek)}" if greek is not None else "?"
         hebrew_s = f"{_pct(hebrew)}" if hebrew is not None else "?"
-        anom_s = f" Anom {anom}" if anom is not None else ""
-        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s}{anom_s}"
+        lat_s = f"{_pct(lat)}" if lat is not None else "?"
+        unres_s = f" Unres {unres}" if unres else ""
+        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s} Lat {lat_s}{unres_s}"
 
     return f"| {v} | {convert} | {overrides} | {ql} | {notes} |"
 

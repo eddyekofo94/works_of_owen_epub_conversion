@@ -216,7 +216,8 @@ def test_untranslated_prose_body(vol_num):
                 quote = quote.strip()
                 if is_body_latin_prose(quote) or is_body_greek_prose(quote):
                     translated = False
-                    for phrase in BODY_TRANSLATIONS:
+                    from translation_db import INLINE_TRANSLATIONS
+                    for phrase in list(BODY_TRANSLATIONS.keys()) + list(INLINE_TRANSLATIONS.keys()):
                         if phrase in quote or quote in phrase:
                             translated = True
                             break

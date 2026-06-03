@@ -133,12 +133,13 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-03T00:07:50.969639+00:00
+**Last run:** 2026-06-03T21:08:16.169498+00:00
 **EPUB:** `volumes/v12/output/volume_12.epub`
-**Status:** WARN (0 errors, 3 warnings)
+**Status:** FAIL (1 errors, 3 warnings)
 
 Reports:
 - `volume_12_audit.json`
@@ -147,13 +148,13 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 61 |
-| Spine items | 59 |
-| Embedded fonts | 15 |
-| NAV links | 62 |
-| Greek chars / untagged | 12770 / 0 |
+| XHTML files | 63 |
+| Spine items | 62 |
+| Embedded fonts | 20 |
+| NAV links | 64 |
+| Greek chars / untagged | 14115 / 0 |
 | Hebrew chars / untagged | 1448 / 0 |
-| Noteref links / endnote anchors | 605 / 610 |
+| Noteref links / endnote anchors | 584 / 586 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 1 |
 | Escaped language-tag files | 0 |
@@ -166,6 +167,10 @@ Warnings requiring triage:
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
 
+Errors requiring correction:
+
+- `nav_in_spine`: EPUB navigation document is in the reading-order spine
+
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
 
@@ -174,11 +179,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-03T00:08:36.854299+00:00
-**Status:** WARN (12 warnings)
+**Last run:** 2026-06-03T21:10:34.978484+00:00
+**Status:** WARN (14 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -187,25 +193,25 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 822 |
-| EPUB text files | 59 |
-| EPUB paragraphs/headings | 3294 |
-| Approximate PDF-to-EPUB word coverage | 0.9381 |
-| Weak page matches | 79 |
-| Dense source windows checked | 920 |
-| Missing dense source-window pages | 808 |
+| EPUB text files | 61 |
+| EPUB paragraphs/headings | 3532 |
+| Approximate PDF-to-EPUB word coverage | 0.996 |
+| Weak page matches | 31 |
+| Dense source windows checked | 961 |
+| Missing dense source-window pages | 807 |
 | Front CONTENTS pages checked | 3 |
-| Missing front CONTENTS pages | 3 |
+| Missing front CONTENTS pages | 1 |
 | Top-of-page body windows checked | 798 |
 | Top-of-page windows skipped as unstable | 48 |
-| Missing top-of-page body windows | 48 |
+| Missing top-of-page body windows | 5 |
 | Bottom-of-page body windows checked | 746 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 59 |
-| Possible faulty paragraph splits | 257 |
-| Structural starts excluded from split warnings | 331 |
-| Short fragments | 42 |
+| Missing bottom-of-page body windows | 14 |
+| Possible faulty paragraph splits | 276 |
+| Structural starts excluded from split warnings | 342 |
+| Short fragments | 48 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 6 |
+| Inline structural marker candidates | 5 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 4 |
@@ -214,14 +220,14 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 450 |
-| EPUB enumerator markers | 569 |
+| EPUB enumerator markers | 513 |
 | Missing enumerator marker forms | 1 |
-| Enumerator sequence candidates | 38 |
-| PDF Greek words / EPUB Greek words | 2593 / 2342 |
-| Greek word coverage ratio | 0.8979 |
+| Enumerator sequence candidates | 14 |
+| PDF Greek words / EPUB Greek words | 2593 / 2593 |
+| Greek word coverage ratio | 0.9992 |
 | PDF Hebrew words / EPUB Hebrew words | 222 / 221 |
 | Hebrew word coverage ratio | 0.9955 |
-| Missing Greek clauses | 20 |
+| Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -237,7 +243,9 @@ Warnings requiring triage:
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
