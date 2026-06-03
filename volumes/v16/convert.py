@@ -151,7 +151,8 @@ def post_extract_hook(intermediate: dict) -> dict:
 
     
     # Fix TOC Greek/Hebrew artifacts and typos
-    for fm in intermediate.get('front_matter', []):
+    import re
+    for fm in intermediate.get('front_matter_items', []):
         html = fm.get('html', '')
         html = html.replace('aujto&gt;grafa', '<span lang="el">αὐτόγραφα</span>')
         html = html.replace('zeopneustoi', '<span lang="el">θεόπνευστοι</span>')
@@ -160,6 +161,8 @@ def post_extract_hook(intermediate: dict) -> dict:
         html = html.replace('to&lt; loipo&lt;n ou+n', '<span lang="el">τὸ λοιπὸν οὖν</span>')
         html = html.replace('bytik]W yriq]', '<span lang="he" dir="rtl">קְרִי וּכְתִיב</span>')
         html = html.replace('putty of the originals', 'purity of the originals')
+        # Fix the fragmented dash line breaks in the TOC
+        html = re.sub(r'</p>\s*<p[^>]*>—</p>\s*<p[^>]*>', ' — ', html)
         fm['html'] = html
 
     return intermediate

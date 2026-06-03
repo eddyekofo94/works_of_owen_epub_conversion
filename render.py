@@ -5738,7 +5738,7 @@ def render_volume(vol_num: int, overrides: dict = None,
         sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
         for term, definition in sorted_terms:
             # We use a single substitution pass so it only replaces the FIRST occurrence
-            pattern = re.compile(rf'\b({re.escape(term)})\b', re.I)
+            pattern = re.compile(rf'\b({re.escape(term)}(?:s|es)?)\b', re.I)
             if pattern.search(body_html):
                 def replace_glossary(m):
                     nonlocal glossary_counter
