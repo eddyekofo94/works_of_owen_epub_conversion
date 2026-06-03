@@ -2612,3 +2612,99 @@ def test_ocr_bold_and_paragraph_healing():
     assert "J. Owen," in joined
 
 
+def test_simon_magus_casing_normalization():
+    """Verify that Simon Magus, Simon M. Agus, Simon M'Agus, and SIMON MAGUS are correctly normalized."""
+    from shared import _repair_owen_ocr_errors
+    
+    # Test case 1: Simon M Agus (case variations)
+    assert _repair_owen_ocr_errors("Simon M Agus") == "Simon Magus"
+    assert _repair_owen_ocr_errors("Simon M. Agus") == "Simon Magus"
+    assert _repair_owen_ocr_errors("Simon M'Agus") == "Simon Magus"
+    assert _repair_owen_ocr_errors("Simon M’Agus") == "Simon Magus"
+    assert _repair_owen_ocr_errors("SIMON M AGUS") == "Simon Magus"
+    assert _repair_owen_ocr_errors("simon m agus") == "simon magus"
+    
+    # Test case 2: SIMON MAGUS all-caps
+    assert _repair_owen_ocr_errors("SIMON MAGUS") == "Simon Magus"
+    
+    # Test case 3: Simon Magus normal Title Case unchanged
+    assert _repair_owen_ocr_errors("Simon Magus") == "Simon Magus"
+
+
+def test_bracket_spacing_cleanup():
+    """Verify that spaces inside brackets for single word/digit tokens are cleaned up corpus-wide."""
+    from shared import _repair_owen_ocr_errors
+    
+    assert _repair_owen_ocr_errors("Some text [ a] reference.") == "Some text [a] reference."
+    assert _repair_owen_ocr_errors("Some text [ a ] reference.") == "Some text [a] reference."
+    assert _repair_owen_ocr_errors("Some text [a ] reference.") == "Some text [a] reference."
+    assert _repair_owen_ocr_errors("Some text [ft10 ] reference.") == "Some text [ft10] reference."
+    assert _repair_owen_ocr_errors("Some text [ f12] reference.") == "Some text [f12] reference."
+    assert _repair_owen_ocr_errors("Some text [β ] reference.") == "Some text [β] reference."
+    assert _repair_owen_ocr_errors("Some text [ 1 ] reference.") == "Some text [1] reference."
+    
+    # Multi-word/longer contents within brackets should remain untouched
+    assert _repair_owen_ocr_errors("Some text [See page 638.] reference.") == "Some text [See page 638.] reference."
+    assert _repair_owen_ocr_errors("Some text [Translated: to cherish] reference.") == "Some text [Translated: to cherish] reference."
+
+
+def test_latin_dedication_translation_matching():
+    """Verify that the Latin dedicatory inscription is matched and translated under the Volume 12 config, and is not double-replaced."""
+    from shared import _repair_owen_ocr_errors
+    from volumes.v12.convert import OVERRIDES
+    
+    text = 'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S."'
+    repaired = _repair_owen_ocr_errors(text, config=OVERRIDES)
+    
+    assert "[Translated:" in repaired
+    assert "George Blandrata, physician-in-chief and intimate counselor of Stephen" in repaired
+    
+    # Run a second time to ensure no double translation
+    repaired_twice = _repair_owen_ocr_errors(repaired, config=OVERRIDES)
+    assert repaired_twice == repaired
+    assert repaired_twice.count("[Translated:") == 1
+
+
+def test_latin_word_tagging():
+    """Verify that runs of Latin text are tagged with lang="la" spans, while English words are not."""
+    from shared import tag_latin_words
+    
+    # Simple runs of 2+ Latin words
+    assert tag_latin_words("This is a simple sentence.") == "This is a simple sentence."
+    assert tag_latin_words("He said, sola fide.") == 'He said, <span lang="la" xml:lang="la">sola fide</span>.'
+    assert tag_latin_words("Wait, simul iustus et peccator is latin.") == 'Wait, <span lang="la" xml:lang="la">simul iustus et peccator</span> is latin.'
+    
+    # A single distinctly Latin word that is not in English dictionary and matches Latin suffix
+    # (Since our rule requires latin_word_count >= 2, single Latin words are NOT tagged to avoid false positives,
+    # which is the safest approach.)
+    assert tag_latin_words("An alumnus of the school.") == "An alumnus of the school."
+    
+    # Verify that false positives are avoided
+    assert tag_latin_words("The book is a classic, in a ridiculous style.") == "The book is a classic, in a ridiculous style."
+    assert tag_latin_words("He was an intimate counselor to the king.") == "He was an intimate counselor to the king."
+    assert tag_latin_words("Here also we find some curious, intricate opinions.") == "Here also we find some curious, intricate opinions."
+    assert tag_latin_words("Servetus at Geneva was a ridiculous impostor, Beza said.") == "Servetus at Geneva was a ridiculous impostor, Beza said."
+    assert tag_latin_words("who, as Smalcius and others had done, argued for this.") == "who, as Smalcius and others had done, argued for this."
+    assert tag_latin_words("They took much labor. Thus, the work was finished.") == "They took much labor. Thus, the work was finished."
+    
+    # HTML tag protection
+    assert tag_latin_words("Look at <a href=\"#\">sola fide</a> in context.") == 'Look at <a href=\"#\"><span lang="la" xml:lang="la">sola fide</span></a> in context.'
+
+
+def test_cardo_gentium_style_overrides():
+    """Verify that Latin font stack dynamically switches to Gentium Plus when Cardo is the body font."""
+    from shared import generate_font_styles
+    
+    # Case 1: Primary font is NOT Cardo
+    styles_standard = generate_font_styles("Arno Pro", {})
+    assert '"Cardo", "Gentium Plus", serif' in styles_standard
+    
+    # Case 2: Primary font IS Cardo (either case-insensitive or exact)
+    styles_cardo = generate_font_styles("Cardo", {})
+    assert '"Gentium Plus", serif' in styles_cardo
+    assert '"Cardo", "Gentium Plus", serif' not in styles_cardo
+
+
+
+
+

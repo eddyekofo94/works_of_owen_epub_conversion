@@ -19,3 +19,7 @@ tmp_epub/**
 
 # Archives (kept in reference/)
 canva-covers.zip
+
+# Scratch files
+scratch/
+

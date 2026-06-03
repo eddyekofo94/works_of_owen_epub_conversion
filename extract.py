@@ -2231,7 +2231,13 @@ def reconstruct_paragraphs(text):
                 # "of", "from") or a comma must ALWAYS join the next line, even if that next line
                 # superficially matches hard_structural (e.g. "the\n11th, which we…").
                 # "11th," looks like an ordinal list marker but it's mid-sentence here.
-                if is_dangling or is_comma_continuation:
+                # However, if the next line starts with a clear structural list marker (like "(2.)" or "2."),
+                # it should NOT be merged since lists can end items with commas.
+                is_clear_list_marker = bool(re.match(
+                    r'^(?:\(\d+\.?\)|\(\w+\.?\)|\[\d+\.?\]|\[\w+\.?\]|\b\d+\.\s+[A-Z]|\b[IVXLCDM]+\.\s+[A-Z])',
+                    stripped
+                ))
+                if (is_dangling or is_comma_continuation) and not is_clear_list_marker:
                     current.append(stripped)
                     continue
 

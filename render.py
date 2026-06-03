@@ -30,6 +30,7 @@ from shared import (
     VOLUME_CONFIG, VOLUME_SUBTITLES,
     EPUB_STYLESHEET, generate_font_styles,
     select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, PROXIMA_NOVA_FILES, GFS_PORSON_FILES,
+    CARDO_FILES, GENTIUM_PLUS_FILES, tag_latin_words,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters, polytonic_sweep,
     # Pipeline constants — moved to shared.py so extract.py no longer imports render
@@ -505,6 +506,7 @@ def tag_unicode_ranges(text):
         text,
     )
 
+    text = tag_latin_words(text)
     return text
 
 
@@ -3438,6 +3440,18 @@ def _merge_titlepage_override(override: str, fragments: list[str]) -> str:
         return override
 
     import re as _re
+    import unicodedata
+
+    def _strip_diacritics(text):
+        normalized = unicodedata.normalize('NFD', text)
+        return "".join(c for c in normalized if not unicodedata.combining(c))
+
+    def _clean_for_compare(text):
+        cleaned = _strip_diacritics(text).lower()
+        cleaned = _re.sub(r'[^a-z\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff]', '', cleaned)
+        return cleaned
+
+    override_clean = _clean_for_compare(override)
 
     for frag in fragments:
         plain_frag = _re.sub(r'<[^>]+>', '', frag).strip()
@@ -3445,7 +3459,7 @@ def _merge_titlepage_override(override: str, fragments: list[str]) -> str:
             continue
         
         # If this plain text is already present in the override, skip it
-        if plain_frag in override:
+        if plain_frag in override or _clean_for_compare(plain_frag) in override_clean:
             continue
             
         # Append before the closing </section>
@@ -3455,6 +3469,7 @@ def _merge_titlepage_override(override: str, fragments: list[str]) -> str:
             override,
             flags=_re.I
         )
+        override_clean = _clean_for_compare(override)
         
     return override
 
@@ -4633,7 +4648,7 @@ def detect_page_type(page, page_num=None):
     n_blocks = len(text_blocks)
 
     # TOC detection: any CONTENTS page OR pages with many numbered/chapter items
-    if 'CONTENTS' in text_upper and n_blocks > 5:
+    if 'CONTENTS' in text_upper and (n_blocks > 5 or 'CONTENTS OF VOLUME' in text_upper):
         return 'toc_page'
     
     # Heuristic for multi-page TOC (pages with high count of "CHAPTER X" or numbered items)
@@ -5391,7 +5406,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             font_fnames.add(_fbase)
 
     # Supplemental biblical fonts, heading font, and the embedded title display face
-    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES):
+    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES):
         for _fname, _fpath in _font_dict.items():
             _fbase = os.path.basename(_fpath)
             if _fbase in font_fnames:
@@ -5470,21 +5485,6 @@ def render_volume(vol_num: int, overrides: dict = None,
         if fm['title'] == _last_fm_title:
             continue
         _last_fm_title = fm['title']
-        
-        if fm.get('type') == 'toc' and not copyright_added:
-            cop_title = 'Publication Metadata'
-            cop_fn = 'colophon.xhtml'
-            cop_html = generate_copyright_xhtml(vol_num, config, primary_font['name'])
-            cop_item = epub.EpubHtml(
-                title=cop_title, file_name=cop_fn, lang='en',
-            )
-            cop_item.set_content(
-                _make_xhtml(cop_title, cop_html).encode('utf-8')
-            )
-            cop_item.add_item(style_item)
-            book.add_item(cop_item)
-            front_matter_epub_items.append(cop_item)
-            copyright_added = True
 
         fm_item = epub.EpubHtml(
             title=fm['title'], file_name=fm['file_name'], lang='en',
@@ -5505,7 +5505,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 fm_html = toc_override
             else:
                 fm_html = _polish_contents_page_html(fm_html)
-        if fm.get('type') == 'toc':
+        if fm.get('type') == 'toc' and fm.get('file_name', '').startswith('contents_'):
             fm['title'] = 'Original Printed Contents'
 
         fm_item.set_content(
@@ -5514,6 +5514,22 @@ def render_volume(vol_num: int, overrides: dict = None,
         fm_item.add_item(style_item)
         book.add_item(fm_item)
         front_matter_epub_items.append(fm_item)
+
+        # Relocate Publication Metadata (copyright/colophon page) immediately after the main Title Page
+        if fm.get('type') == 'title_page' and not copyright_added:
+            cop_title = 'Publication Metadata'
+            cop_fn = 'colophon.xhtml'
+            cop_html = generate_copyright_xhtml(vol_num, config, primary_font['name'])
+            cop_item = epub.EpubHtml(
+                title=cop_title, file_name=cop_fn, lang='en',
+            )
+            cop_item.set_content(
+                _make_xhtml(cop_title, cop_html).encode('utf-8')
+            )
+            cop_item.add_item(style_item)
+            book.add_item(cop_item)
+            front_matter_epub_items.append(cop_item)
+            copyright_added = True
 
         # Dynamic insertion of the Note on Structural Formatting after TOC page
         if fm.get('type') == 'toc' and not added_structural_guide:

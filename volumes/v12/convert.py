@@ -116,8 +116,36 @@ _V12_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch053.xhtml">A Second Consideration of the Annotations of Hugo Grotius</a></p>
 </section>'''
 
+def post_extract_hook(intermediate):
+    # Insert the modern curated Contents page as the first TOC item in front_matter_items
+    fm_items = intermediate.get('front_matter_items', [])
+    
+    # Find the original printed contents page and rename its title to distinguish it
+    original_toc = None
+    insert_idx = 0
+    for idx, item in enumerate(fm_items):
+        if item.get('type') == 'toc':
+            original_toc = item
+            insert_idx = idx
+            break
+            
+    if original_toc:
+        original_toc['title'] = 'Original Printed Contents'
+        
+    modern_toc = {
+        'type': 'toc',
+        'file_name': 'contents.xhtml',
+        'title': 'Contents',
+        'page': 2,
+        'html': _V12_CONTENTS_PAGE
+    }
+    fm_items.insert(insert_idx, modern_toc)
+    intermediate['front_matter_items'] = fm_items
+    return intermediate
+
+
 OVERRIDES = {
-    'contents_page_overrides': _V12_CONTENTS_PAGE,
+    'post_extract_hook': post_extract_hook,
     'front_matter_overrides': {
         'Contents': _V12_CONTENTS_PAGE,
     },
@@ -163,6 +191,9 @@ OVERRIDES = {
         r',,': ',',
         r'xauni~am': 'familiam',
         r'con~erendls': 'conferendis',
+        # Translate the George Blandrata Latin dedication, using negative lookahead to prevent double replacement
+        r'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc\., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F\. S\."(?! \[Translated:)':
+        r'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S." [Translated: “To the most distinguished and renowned George Blandrata, physician-in-chief and intimate counselor of Stephen, the most unconquered king of Poland, etc., his lord and patron to be cherished with perpetual respect; and it is subscribed, Your most devoted client in the Lord Jesus, F. S.”]',
     },
 }
 

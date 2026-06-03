@@ -150,8 +150,93 @@ OVERRIDES = {
     'text_replacements': {
         'mortifled': 'mortified',
         'sanctifled': 'sanctified',
+        'in in the inward man': 'in the inward man',
+        'unto it it hath not': 'unto it, it hath not',
+        'in in the business': 'in the business',
+        'in in secret': 'is in secret',
     },
 }
+
+
+def post_extract_hook(data):
+    chapters = data.get("chapters", [])
+    
+    # Helper to move tail
+    def move_tail(idx_a, idx_b, suffix):
+        if idx_a >= len(chapters) or idx_b >= len(chapters):
+            return
+        text_a = chapters[idx_a]['raw_text'].strip()
+        text_b = chapters[idx_b]['raw_text'].strip()
+        
+        if text_a.endswith(suffix):
+            chapters[idx_a]['raw_text'] = text_a[:-len(suffix)].strip()
+            chapters[idx_b]['raw_text'] = (suffix + " " + text_b).strip()
+            print(f"Healed transition {idx_a}->{idx_b} for suffix: '{suffix}'")
+        else:
+            print(f"WARNING: Transition {idx_a}->{idx_b} failed, suffix '{suffix}' not found at end")
+
+    # Apply transitions on original indices
+    move_tail(72, 73, '"Why," saith he, "he')
+    move_tail(78, 79, 'forgiveness')
+    move_tail(79, 80, 'by invitations,')
+    move_tail(80, 81, 'how he should come')
+    
+    # First set of rules
+    move_tail(84, 85, 'temptations,')
+    move_tail(85, 86, 'and have no')
+    move_tail(86, 87, 'and')
+    move_tail(87, 88, 'soul unto more')
+    move_tail(88, 89, 'conclude, that')
+    move_tail(89, 90, 'adhere to, mere')
+    move_tail(90, 91, 'person that he')
+    move_tail(91, 92, 'will insensibly')
+    move_tail(92, 93, 'do but to')
+    
+    # Transition 94->95
+    move_tail(94, 95, 'So, you')
+    
+    # Move prefix 96->95
+    prefix_96 = 'interest in that forgiveness that is with God; nor dare we, on that account, admit of the consolation that is tendered on the truth insisted on."'
+    if 96 < len(chapters):
+        text_96 = chapters[96]['raw_text'].strip()
+        if text_96.startswith(prefix_96):
+            chapters[96]['raw_text'] = text_96[len(prefix_96):].strip()
+            chapters[95]['raw_text'] = (chapters[95]['raw_text'].strip() + " " + prefix_96).strip()
+            print("Successfully moved prefix from Chapter 96 to Chapter 95!")
+        else:
+            print("WARNING: Failed to move prefix from Chapter 96!")
+            
+    # Split Rule 1 and Rule 2 of the second set
+    if 96 < len(chapters) and 97 < len(chapters):
+        raw_96 = chapters[96]['raw_text']
+        parts = raw_96.split('RULE 2.', 1)
+        if len(parts) == 2:
+            chapters[96]['raw_text'] = parts[0].strip()
+            chapters[97]['raw_text'] = ('RULE 2.' + parts[1]).strip()
+            print("Successfully split Rule 1 and Rule 2 of second set!")
+        else:
+            print("WARNING: Failed to split Rule 1 and Rule 2!")
+            
+    # Move transitions of second set
+    move_tail(97, 98, 'he hath left the nature of')
+    move_tail(98, 99, 'in')
+    move_tail(99, 100, 'doth not')
+    move_tail(101, 102, 'faint, and to')
+    
+    # Delete Chapter 82 (duplicate prefix)
+    new_chapters = []
+    for ch in chapters:
+        if ch.get('title') == 'Rules to Be Observed by Them Who Would Come to Stability in Obedience.':
+            print("Deleted Chapter 82 (duplicate prefix)")
+            continue
+        new_chapters.append(ch)
+    data['chapters'] = new_chapters
+    
+    return data
+
+
+# Add post_extract_hook to OVERRIDES
+OVERRIDES['post_extract_hook'] = post_extract_hook
 
 
 def main():

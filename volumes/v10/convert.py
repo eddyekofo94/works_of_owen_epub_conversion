@@ -187,12 +187,48 @@ OVERRIDES = {
         '169 " Can': '"Can',
         '202 "Herein': '"Herein',
         '206 "In': '"In',
+        'suit{rig': 'suiting',
     },
     'regex_replacements': {
-        '(?s)unworthiest laborer in his vineyard, _\\*\\*J\\.O\\.\\*\\*_\\s*<section class="treatise-title-page"[^>]*>.*?</section>': 'unworthiest laborer in his vineyard, _**J.O.**_',
+        '(?s)unworthiest laborer in his vineyard, _J\\.O\\._\\s*<section class="treatise-title-page"[^>]*>.*?</section>': 'unworthiest laborer in his vineyard, _J.O._',
         'T\\. M\\[ore(\\.?)\\]': 'T. More\\1',
     },
 }
+
+
+def post_extract_hook(data):
+    chapters = data.get("chapters", [])
+    
+    # 1. Clean Chapter 1 title (index 80)
+    if 80 < len(chapters):
+        ch = chapters[80]
+        if 'prolepsis' in ch.get('title', '').lower():
+            ch['title'] = 'Chapter 1 - The introduction — The design of the work — Atheists — The prolepsis of divine justice in general'
+            print("Successfully updated Volume 10 Chapter 1 title!")
+
+    # 2. Clean Chapter 10 title (index 89)
+    if 89 < len(chapters):
+        ch = chapters[89]
+        if 'socinus' in ch.get('title', '').lower():
+            ch['title'] = 'Chapter 10 - The opinion of Socinus considered — What he thought of our present question'
+            print("Successfully updated Volume 10 Chapter 10 title!")
+
+    # 3. Merge bad split in Chapter 3 (index 34)
+    if 34 < len(chapters):
+        ch = chapters[34]
+        old_txt = "Now, having thus gaily Matthew 20:28, Mark 10:45.\n\ntrimmed and set up"
+        new_txt = "Now, having thus gaily Matthew 20:28, Mark 10:45. trimmed and set up"
+        if old_txt in ch.get('raw_text', ''):
+            ch['raw_text'] = ch['raw_text'].replace(old_txt, new_txt)
+            print("Successfully merged scripture paragraph split in Volume 10 Chapter 3!")
+        else:
+            print("WARNING: Scripture split text not found in Volume 10 Chapter 3!")
+
+    return data
+
+
+# Add post_extract_hook to OVERRIDES
+OVERRIDES['post_extract_hook'] = post_extract_hook
 
 
 def main():

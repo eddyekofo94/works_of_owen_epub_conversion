@@ -1061,7 +1061,7 @@ ROMAN_ONLY_RE = re.compile(
 PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
 CITATION_ABBREV_TRAIL_RE = re.compile(
     r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
-    r'enchirid|distinct|q|a|p|pp|sec|ad|m|aen|liv|hist)\.?\s*$'
+    r'enchirid|distinct|q|a|p|pp|page|pages|sec|ad|m|aen|liv|hist)\.?\s*$'
     r'|'
     r'\b(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|Esth|Job|Ps|Prov|Eccl|Cant|'
     r'Sol|Isa|Jer|Lam|Ezek|Dan|Hos|Joel|Amos|Obad|Jonah|Mic|Nah|Hab|Zeph|Hag|Zech|Mal|'
@@ -1318,6 +1318,18 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
         flags=re.I
     )
 
+    # Simon Magus case-insensitive OCR repair and casing normalization
+    def _fix_simon_magus(m):
+        orig = m.group(0)
+        if orig.islower():
+            return "simon magus"
+        else:
+            return "Simon Magus"
+    # Matches "Simon M Agus", "Simon M. Agus", "Simon M'Agus", "Simon M’Agus" etc.
+    text = re.sub(r"\bSimon\s+M(?:['’]|\.?\s+)?Agus\b", _fix_simon_magus, text, flags=re.I)
+    # Also normalize any all-caps "SIMON MAGUS" (which is usually an OCR/small-caps artifact)
+    text = re.sub(r"\bSIMON\s+MAGUS\b", "Simon Magus", text)
+
     # Clean stray double quotes preceding a scripture reference (e.g. '," " John' -> '," John')
     text = re.sub(
         rf'([”"“]\s*,?\s*)[”"“]\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)',
@@ -1422,6 +1434,9 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     # Anchored to a day-number to avoid false positives.
     text = re.sub(r'\bAPRI\b(?=\s+\d{1,2}[,.])', 'APRIL', text)
 
+    # Clean up spacing inside brackets for single word/digit tokens (e.g. [ a] or [ a ] -> [a])
+    text = re.sub(r'\[\s*([^\s\]]+)\s*\]', r'[\1]', text)
+
     if not config:
         return text
 
@@ -1433,7 +1448,13 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
         if wrong.startswith('(') or wrong.endswith('\\b'):
             result = re.sub(wrong, right, result)
         else:
-            result = re.sub(r'\b' + re.escape(wrong) + r'\b', right, result)
+            # Only apply \b if the boundary characters are word characters
+            pattern = re.escape(wrong)
+            if wrong and wrong[0].isalnum():
+                pattern = r'\b' + pattern
+            if wrong and wrong[-1].isalnum():
+                pattern = pattern + r'\b'
+            result = re.sub(pattern, right, result)
 
     for pattern, repl in regex_corrections.items():
         result = re.sub(pattern, repl, result)
@@ -1647,7 +1668,7 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
             and after_starts_like_heading
             and not SCRIPTURE_CONTINUATION_TRAIL_RE.search(before[-120:])
             and not CITATION_ABBREV_TRAIL_RE.search(before[-80:])
-            and not re.search(r'\b(?:verse|verses|chap|chapter)[.,]?\s*$', before, re.I)
+            and not re.search(r'\b(?:verse|verses|chap|chapter|page|pages)[.,]?\s*$', before, re.I)
             and not re.search(r'\b(?:chapter|chap)\.?\s+[IVXLCDM0-9]+\s+to\s*$', before, re.I)
             and not re.search(rf'\b(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\s*$', before, re.I)
             and marker_clean not in {'i', 'v', 'x', 'l', 'c', 'd', 'm'}
@@ -2034,6 +2055,247 @@ GFS_PORSON_FILES = {
     'GFSPorson.ttf': 'gfs-porson/GFSPorson.ttf',
 }
 
+CARDO_FILES = {
+    'Cardo-Regular.ttf': 'cardo/Cardo-Regular.ttf',
+    'Cardo-Italic.ttf': 'cardo/Cardo-Italic.ttf',
+    'Cardo-Bold.ttf': 'cardo/Cardo-Bold.ttf',
+}
+
+GENTIUM_PLUS_FILES = {
+    'GentiumPlus-R.ttf': 'gentium-plus-2/GentiumPlus-R.ttf',
+    'GentiumPlus-I.ttf': 'gentium-plus-2/GentiumPlus-I.ttf',
+}
+
+# Distinctly Latin words for tagging
+LATIN_DICTIONARY = {
+    'et', 'est', 'non', 'ut', 'ad', 'cum', 'qui', 'quae', 'quod', 'quibus', 'sub', 'pro', 'per', 
+    'ab', 'ex', 'sine', 'de', 'sunt', 'esse', 'fuit', 'deus', 'dominus', 'christus', 'jesu', 
+    'patris', 'filii', 'spiritus', 'sancti', 'gratia', 'fide', 'scriptura', 'ecclesia', 'vero', 
+    'enim', 'autem', 'etiam', 'nam', 'quia', 'sicut', 'ita', 'tamen', 'sed', 'nisi', 'hic', 
+    'haec', 'hoc', 'illud', 'ipsum', 'eum', 'ejus', 'tibi', 'mihi', 'nobis', 'vobis', 'se', 
+    'suo', 'sua', 'suum', 'aliquid', 'omnia', 'nihil', 'unus', 'duo', 'tres', 'primo', 'secundo', 
+    'tertio', 'liber', 'caput', 'versus', 'sermo', 'epistola', 'tractatus', 'distinctio', 
+    'quaestio', 'articulus', 'apud', 'vel', 'atque', 'ac', 'si', 'nunc', 'tunc', 'post', 'ante', 
+    'inter', 'contra', 'super', 'ob', 'propter', 'modo', 'ratione', 'causa', 're', 'rem', 'res', 
+    'eorum', 'earum', 'suorum', 'suarum', 'illius', 'hujus', 'eo', 'ea', 'id', 'quos', 
+    'quas', 'quo', 'qua', 'unde', 'ubi', 'ibi', 'inde', 'dum', 'donec', 'antequam', 
+    'priusquam', 'quasi', 'tamquam', 'velut', 'utrum', 'an', 'num', 'ne', 'nonne', 'imo', 'potius', 
+    'solum', 'tantum', 'ergo', 'ideo', 'igitur', 'itaque', 'propterea', 'quocirca', 'simul', 
+    'hinc', 'illinc', 'illuc', 'huc', 'ii', 'eae', 'eius', 'ei', 'eam', 'eis', 'eos', 'eas', 
+    'alius', 'alia', 'aliud', 'alter', 'altera', 'alterum', 'neuter', 'neutra', 'neutrum', 
+    'solus', 'sola', 'solum', 'totus', 'tota', 'totum', 'ullus', 'ulla', 'ullum', 'nullus', 
+    'nulla', 'nullum', 'uter', 'utra', 'utrum', 'quivis', 'quaevis', 'quodvis', 'quilibet', 
+    'quaelibet', 'quodlibet', 'quisque', 'quaeque', 'quodque', 'unusquisque', 'unaquaeque', 
+    'unumquodque', 'quidam', 'quaedam', 'quoddam', 'quis', 'quid', 'quisnam', 'quaenam', 
+    'quidnam', 'ecquis', 'ecquae', 'ecquid', 'quispiam', 'quaepiam', 'quidpiam', 'pene', 
+    'prope', 'fere', 'vix', 'statim', 'mox', 'deinde', 'tum', 'nuper', 'olim', 'aliquando', 
+    'saepe', 'semper', 'nunquam', 'usque', 'quousque', 'adhuc', 'jam', 'equidem', 'saltem', 
+    'nihilominus', 'attamen', 'verumtamen', 'nemo', 'nihilum', 'alias', 'aliter', 'secus', 
+    'frustra', 'gratis', 'invito', 'sponte', 'vulgo', 'passim', 'idcirco', 'quapropter', 
+    'quare', 'quomodo', 'quemadmodum', 'utpote', 'nempe', 'scilicet', 'videlicet', 'quippe', 
+    'sane', 'profecto', 'certe', 'forsitan', 'fortasse', 'forte', 'casu', 'temere', 'nequicquam', 
+    'magis', 'minus', 'plus', 'aeque', 'pariter', 'similiter', 'valde', 'admodum', 'nimis', 
+    'satis', 'bene', 'male', 'facile', 'difficile', 'cito', 'tarde', 'diu', 'pridem', 'antea', 
+    'postea', 'deinceps', 'protinus', 'subito', 'repente', 'derepente', 'sensim', 'paulatim', 
+    'pedetentim', 'ubique', 'nusquam', 'alibi', 'undique', 'utrobique', 'intus', 'foris', 
+    'procul', 'longe', 'alio', 'eodem', 'utroque', 'quorsum', 'dextrorsum', 'sinistrorsum', 
+    'sursum', 'deorsum', 'retrorsum', 'ultro', 'citro', 'obviam', 'unice', 'praecipue', 
+    'praesertim', 'maximiter', 'plurimum', 'multum', 'paulum', 'aliquantum', 'partim', 
+    'singulatim', 'generatim', 'speciatim', 'nominatim', 'sigillatim', 'vicissim', 'rursus', 
+    'iterum', 'denuo', 'novo', 'semel', 'bis', 'ter', 'quater', 'pluries', 'saepius', 
+    'frequentius', 'rarius', 'primum', 'secundum', 'tertium', 'postremum', 'ultima', 
+    'postremo', 'denique', 'tandem', 'demum', 'extremum', 'finem', 'viro', 'domino', 
+    'patrono', 'regis', 'observantia', 'subscribitur', 'cliens', 'tuus', 'invictissimi', 
+    'clarissimoque', 'Poloniae', 'archiatro', 'conciliario', 'intimo', 'perpetua', 'colendo', 
+    'deditissimus', 'Stephani', 'lib', 'cap', 'serm', 'sermo', 'epist', 'orat', 'tract', 
+    'homil', 'haer', 'dial', 'enchirid', 'distinct', 'ad', 'aen', 'liv', 'hist', 'operam', 
+    'omnem', 'suam', 'fucandis', 'barbarissimi', 'scriptoris', 'commentis', 'navante',
+    'controversiam', 'moverunt', 'quidam', 'advenae', 'praecipui', 'theologus', 'medicus',
+    'quorum', 'initio', 'opera', 'reformationis', 'valde', 'procliva', 'unius', 'solius',
+    'vera', 'religione', 'deinceps', 'propter', 'nobis', 'vobis', 'tibi', 'te', 'me', 'se',
+    'dei', 'patri', 'patre', 'filio', 'spiritui', 'sancto', 'eiusque', 'suisque', 'suae',
+    'suis', 'suos', 'suas', 'sua', 'suum', 'suorum', 'suarum', 'nobiscum', 'vobiscum',
+    'deum', 'christum', 'jesum', 'salvatorem', 'salvatore', 'redemptorem', 'redemptore',
+    'mediatorem', 'mediatore', 'pontificem', 'pontifice', 'sacrificium', 'sacrificio',
+    'satisfactionem', 'satisfactione', 'justificationem', 'justificatione', 'fidei',
+    'operum', 'legis', 'gratiae', 'foederis', 'foedere', 'testamenti', 'testamento',
+    'morte', 'cruce', 'sanguine', 'passione', 'resurrectione', 'ascensione', 'regno',
+    'regni', 'regis', 'rege', 'altare', 'altari', 'templo', 'sacerdote', 'sacerdotibus',
+    'pontifice', 'pontificibus', 'apostolo', 'apostolis', 'propheta', 'prophetis',
+    'scriptura', 'scripturis', 'libris', 'libro', 'capite', 'versu', 'versibus',
+    'dictis', 'dicto', 'verbis', 'verbo', 'sententia', 'sententiis', 'auctoritate', 'etc'
+}
+
+# English vocabulary to filter out false positives
+ENGLISH_WORDS = {
+    # Most common English words
+    'the', 'of', 'to', 'and', 'a', 'in', 'is', 'it', 'you', 'that', 'he', 'was', 'for', 'on', 
+    'are', 'as', 'with', 'his', 'they', 'i', 'at', 'be', 'this', 'have', 'from', 'or', 'one', 
+    'had', 'by', 'word', 'but', 'not', 'what', 'all', 'were', 'we', 'when', 'your', 'can', 
+    'said', 'there', 'use', 'an', 'each', 'which', 'she', 'do', 'how', 'their', 'if', 'will', 
+    'up', 'other', 'about', 'out', 'many', 'then', 'them', 'these', 'so', 'some', 'her', 
+    'would', 'make', 'like', 'him', 'into', 'has', 'look', 'two', 'more', 'write', 'go', 
+    'see', 'no', 'way', 'could', 'people', 'my', 'than', 'first', 'water', 'been', 'call', 
+    'who', 'oil', 'its', 'now', 'find', 'long', 'down', 'day', 'did', 'get', 'come', 'made', 
+    'may', 'part', 'over', 'new', 'sound', 'take', 'only', 'little', 'work', 'know', 'place', 
+    'year', 'live', 'me', 'back', 'give', 'most', 'very', 'after', 'thing', 'our', 'just', 
+    'name', 'good', 'sentence', 'man', 'think', 'say', 'great', 'where', 'help', 'through', 
+    'much', 'before', 'line', 'right', 'too', 'mean', 'old', 'any', 'same', 'tell', 'boy', 
+    'follow', 'came', 'want', 'show', 'also', 'around', 'form', 'three', 'small', 'set', 
+    'end', 'does', 'another', 'well', 'large', 'must', 'big', 'even', 'such', 'because', 
+    'turn', 'here', 'why', 'ask', 'went', 'men', 'read', 'need', 'land', 'different', 'home', 
+    'us', 'move', 'try', 'kind', 'hand', 'picture', 'again', 'change', 'off', 'play', 'spell', 
+    'air', 'away', 'animal', 'house', 'point', 'page', 'letter', 'mother', 'answer', 'found', 
+    'study', 'still', 'learn', 'should', 'america', 'world', 'high', 'every', 'near', 'add', 
+    'food', 'between', 'own', 'below', 'country', 'plant', 'last', 'school', 'father', 'keep', 
+    'tree', 'never', 'start', 'city', 'earth', 'eye', 'light', 'thought', 'head', 'under', 
+    'story', 'saw', 'left', 'don', 'few', 'while', 'along', 'might', 'close', 'something', 
+    'seem', 'next', 'hard', 'open', 'example', 'begin', 'life', 'always', 'those', 'both', 
+    'paper', 'together', 'got', 'group', 'often', 'run', 'important', 'until', 'children', 
+    'side', 'feet', 'car', 'mile', 'night', 'walk', 'white', 'sea', 'began', 'grow', 'took', 
+    'river', 'four', 'carry', 'state', 'once', 'book', 'hear', 'stop', 'without', 'second', 
+    'late', 'later', 'miss', 'idea', 'enough', 'eat', 'face', 'watch', 'far', 'indian', 
+    'really', 'almost', 'let', 'above', 'girl', 'sometimes', 'mountain', 'cut', 'young', 
+    'talk', 'soon', 'list', 'song', 'being', 'leave', 'family', 'it', 'its', 'unto', 'thus', 
+    # Theological / Context-specific English words
+    'editor', 'note', 'treatise', 'death', 'justification', 'review', 'annotation', 
+    'doctrine', 'deity', 'satisfaction', 'christ', 'gospel', 'mystery', 'vindicated', 
+    'examined', 'catechism', 'published', 'common', 'called', 'testimony', 'perverse', 
+    'exposition', 'interpretation', 'believe', 'proof', 'declare', 'divine', 'scripture', 
+    'lectures', 'sec', 'sect', 'section', 'reference', 'objection', 'answer', 'firstly', 
+    'secondly', 'thirdly', 'fourthly', 'lastly', 'indeed', 'rather', 'curious', 'intricate', 
+    'accurate', 'private', 'public', 'particular', 'different', 'same', 'another', 
+    'between', 'among', 'throughout', 'against', 'without', 'within', 'whose', 'whom', 
+    'labor', 'favor', 'honor', 'error', 'pastor', 'doctor', 'counselor', 'impostor', 
+    'author', 'savior', 'saviour', 'preface', 'reader', 'blessed', 'holy', 'spirit', 
+    'grace', 'faith', 'works', 'law', 'covenant', 'blood', 'cross', 'resurrection', 
+    'ascension', 'kingdom', 'church', 'apostle', 'prophet', 'psalm', 'chapter', 'verse', 
+    'objections', 'answers', 'questions', 'question', 'translation', 'translated', 
+    'ridiculous', 'gentile', 'gentiles', 'jews', 'jewish', 'greek', 'hebrew', 'syriac', 
+    'latin', 'english', 'french', 'german', 'italian', 'spanish', 'romans', 'corinthians', 
+    'ephesians', 'philippians', 'colossians', 'thessalonians', 'timothy', 'titus', 
+    'philemon', 'hebrews', 'james', 'peter', 'john', 'jude', 'revelation', 'genesis', 
+    'exodus', 'levitique', 'leviticus', 'numbers', 'deuteronomy', 'joshua', 'judges', 
+    'ruth', 'samuel', 'kings', 'chronicles', 'ezra', 'nehemiah', 'esther', 'job', 
+    'psalms', 'proverbs', 'ecclesiastes', 'canticles', 'isaiah', 'jeremiah', 'lamentations', 
+    'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah', 'nahum', 
+    'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 
+    'acts', 'opinion', 'opinions', 'heresy', 'heresies', 'orthodox', 'socinian', 
+    'socinians', 'arian', 'arians', 'sabellian', 'sabellians', 'trinitarian', 
+    'trinitarians', 'antitrinitarian', 'antitrinitarians'
+}
+
+SHARED_WORDS = {
+    'in', 'is', 'an', 'a', 'ad', 'me', 'etc', 'post', 'cap', 'lib', 'sub', 'rem', 're', 
+    'res', 'am', 'as', 'os', 'or', 'do', 'no', 'si', 'vel', 'ac', 'inter', 'pro', 'per', 'ab', 
+    'ex', 'id', 'ii', 'eo', 'ea', 'sine', 'art', 'sect', 'sec'
+}
+
+# Common Latin endings (suffixes)
+LATIN_SUFFIX_RE = re.compile(
+    r'.*(?:orum|arum|ibus|issimus|issimi|issimusque|issimique|ae|am|um|as|os|is|'
+    r'untur|itur|amur|emur|imur|antur|entur|isset|issent|issentque|ate|atis|'
+    r'ere|ari|iri|or|ris|tur|mur|mini|ntur|o|i|(?<!o)us|a)$',
+    re.I
+)
+
+def is_latin_word(word):
+    word_clean = re.sub(r'[^a-zA-ZæœæŒ]', '', word).lower()
+    if not word_clean:
+        return False
+    if word_clean in SHARED_WORDS:
+        return 'shared'
+    if word_clean in ENGLISH_WORDS:
+        return False
+    if word_clean in LATIN_DICTIONARY:
+        return True
+    if len(word_clean) >= 3 and LATIN_SUFFIX_RE.match(word_clean):
+        return True
+    return False
+
+def tag_latin_words(text):
+    """Scan the text (ignoring HTML tags) and wrap runs of 2+ Latin words in <span lang="la" xml:lang="la">."""
+    if not text:
+        return ""
+    parts = re.split(r'(<[^>]+>)', text)
+    out_parts = []
+    
+    for part in parts:
+        if part.startswith('<'):
+            out_parts.append(part)
+        else:
+            tokens = re.split(r'(\b[a-zA-ZæœæŒ\’-]+\b)', part)
+            n = len(tokens)
+            
+            # Label word tokens as Latin, shared, or not
+            labeled_tokens = []
+            for idx, token in enumerate(tokens):
+                if re.match(r'^[a-zA-ZæœæŒ\’-]+$', token):
+                    labeled_tokens.append((token, is_latin_word(token)))
+                else:
+                    labeled_tokens.append((token, None))
+            
+            reconstructed = []
+            i = 0
+            while i < n:
+                token, is_lat = labeled_tokens[i]
+                if is_lat in (True, 'shared'):
+                    # Collect Latin run
+                    run_tokens = [labeled_tokens[i]]
+                    j = i + 1
+                    while j < n:
+                        next_token, next_is_lat = labeled_tokens[j]
+                        if next_is_lat in (True, 'shared'):
+                            run_tokens.append(labeled_tokens[j])
+                            j += 1
+                        elif next_is_lat is False:
+                            break
+                        else:
+                            # It is a separator. Only accumulate if there is a subsequent Latin word in the remaining tokens.
+                            has_more_latin = False
+                            k = j + 1
+                            while k < n:
+                                k_tok, k_is_lat = labeled_tokens[k]
+                                if k_is_lat in (True, 'shared'):
+                                    has_more_latin = True
+                                    break
+                                elif k_is_lat is False:
+                                    break
+                                k += 1
+                            if has_more_latin and re.match(r'^[^\w<>&]+$', next_token):
+                                run_tokens.append(labeled_tokens[j])
+                                j += 1
+                            else:
+                                break
+                    
+                    # Trim trailing separators and shared words from the end of the run
+                    while run_tokens:
+                        last_tok, last_is_lat = run_tokens[-1]
+                        if last_is_lat is True:
+                            break
+                        # It is a separator (None) or 'shared'. Pop it and adjust j.
+                        run_tokens.pop()
+                        j -= 1
+
+                    # Count uniquely Latin words in the run
+                    latin_word_count = sum(1 for tok, is_l in run_tokens if is_l is True)
+                    if latin_word_count >= 2:
+                        run_str = "".join(tok for tok, is_l in run_tokens)
+                        # Split out leading/trailing spaces so they stay outside the tag
+                        m = re.match(r'^(\s*)(.*?)(\s*)$', run_str, re.S)
+                        lead_space, inner, trail_space = m.group(1), m.group(2), m.group(3)
+                        reconstructed.append(f'{lead_space}<span lang="la" xml:lang="la">{inner}</span>{trail_space}')
+                        i = j
+                    else:
+                        reconstructed.append(tokens[i])
+                        i += 1
+                else:
+                    reconstructed.append(token)
+                    i += 1
+            
+            out_parts.append("".join(reconstructed))
+            
+    return "".join(out_parts)
 
 # ============================================================================
 # EPUB STYLESHEET (GEMINI.md compliant)
@@ -2986,6 +3248,12 @@ aside[epub\:type~="endnote"] {
 }
 
 /* Contents page */
+.contents-general-preface {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+}
 .contents-page {
     max-width: 38em;
     margin: 0 auto;
@@ -3331,6 +3599,38 @@ EPUB3_FONT_STYLES = r"""
     font-style: normal;
     src: url("../Fonts/GFSPorson.ttf");
 }}
+/* Cardo — Latin font designed for classical scholarship */
+@font-face {{
+    font-family: "Cardo";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/Cardo-Regular.ttf");
+}}
+@font-face {{
+    font-family: "Cardo";
+    font-weight: bold;
+    font-style: normal;
+    src: url("../Fonts/Cardo-Bold.ttf");
+}}
+@font-face {{
+    font-family: "Cardo";
+    font-weight: normal;
+    font-style: italic;
+    src: url("../Fonts/Cardo-Italic.ttf");
+}}
+/* Gentium Plus — Latin backup font */
+@font-face {{
+    font-family: "Gentium Plus";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/GentiumPlus-R.ttf");
+}}
+@font-face {{
+    font-family: "Gentium Plus";
+    font-weight: normal;
+    font-style: italic;
+    src: url("../Fonts/GentiumPlus-I.ttf");
+}}
 /* Owen Title - embedded Baskervville title display face */
 @font-face {{
     font-family: "Baskervville";
@@ -3393,6 +3693,7 @@ h4.roman-subheading, .roman-list-item, .roman-list-item b {{
 [lang="he"], [lang="he"] div {{
     text-align: left;
 }}
+{latin_styles}
 """
 
 
@@ -3462,10 +3763,18 @@ def generate_font_styles(primary_font_name, primary_font_files):
     if bold_italic_file:
         bold_italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    font-style: italic;\n    src: url("../Fonts/{bold_italic_file}");\n}}'
     
+    if 'cardo' in primary_font_name.lower():
+        latin_font_stack = '"Gentium Plus", serif'
+    else:
+        latin_font_stack = '"Cardo", "Gentium Plus", serif'
+    
+    latin_styles = f'[lang="la"], [lang="la"] *, .latin, .latin * {{\n    font-family: {latin_font_stack} !important;\n}}'
+    
     return EPUB3_FONT_STYLES.format(
         primary_font=primary_font_name,
         primary_file=primary_file,
         bold_face=bold_face,
         italic_face=italic_face,
         bold_italic_face=bold_italic_face,
+        latin_styles=latin_styles,
     )
