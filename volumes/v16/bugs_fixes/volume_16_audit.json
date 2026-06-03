@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-05-30T08:51:31.902708+00:00",
+  "generated_at": "2026-06-03T08:36:11.374738+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 2,
@@ -18,8 +18,8 @@
     }
   ],
   "info": {
-    "file_count": 110,
-    "epub_size_bytes": 3778663,
+    "file_count": 107,
+    "epub_size_bytes": 3779132,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -28,9 +28,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 101,
-    "spine_count": 84,
-    "xhtml_count": 86,
+    "manifest_count": 98,
+    "spine_count": 81,
+    "xhtml_count": 83,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -45,9 +45,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 120,
-      "unique_noteref_targets": 120,
-      "endnote_anchor_count": 120,
+      "noteref_count": 130,
+      "unique_noteref_targets": 125,
+      "endnote_anchor_count": 125,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -74,7 +74,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 5,
+      "lowercase_paragraph_start_files": 1,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -147,24 +147,8 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch003.xhtml",
-            "text": "that is, in the Lamb's book of life; and they shall all appear one day gathered t"
-          },
-          {
-            "file": "EPUB/ch032.xhtml",
-            "text": "words and scope show. But he was not in his age an example of every age by his ba"
-          },
-          {
-            "file": "EPUB/ch033.xhtml",
-            "text": "them in his own person, is a mere cavil; for all that are born to God by baptism"
-          },
-          {
-            "file": "EPUB/ch064.xhtml",
-            "text": "that is, whatsoever is required to lead a godly life is given unto believers by t"
-          },
-          {
-            "file": "EPUB/ch065.xhtml",
-            "text": "how long shall they! be in this state and condition? \"And he answered, Until the"
+            "file": "EPUB/contents_3.xhtml",
+            "text": "incomparable care of the scribes of it — The whole word of God, in every tittle o"
           }
         ],
         "noteref_leading_space": [],
@@ -173,7 +157,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 87,
+    "nav_link_count": 84,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

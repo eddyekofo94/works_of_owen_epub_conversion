@@ -1,10 +1,10 @@
 {
   "volume": 16,
-  "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,14 +12,14 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 31,
+      "observed": 28,
       "budget": 61,
       "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch003.xhtml",
           "previous": "d his fullness, and, by union with him, Christ mystical, Ephesians 2:2 2:23; and this is that πανήγυρις (the only word most fully expressing the catholic church used in Scripture),",
-          "next": "that is, in the Lamb's book of life; and they shall all appear one day gathered together to their Head, in the perfection and fullness of the New Jerusalem state, where they will m"
+          "next": "In order, therefore, unto the completing this great and mystical body, Christ hath his particular visible churches and assemblies in this world; wherein he hath ordained ordinances"
         },
         {
           "file": "EPUB/ch003.xhtml",
@@ -42,11 +42,6 @@
           "next": "If a person obstinately depart, on pretense of religion or otherwise, and will no more cohabit with a husband or wife, it is known that, by the law of nature and the usage of all n"
         },
         {
-          "file": "EPUB/ch032.xhtml",
-          "previous": "sm of that regeneration which is unto God.' But that indeed the word 'renascuntur,' 'are born again,' is not meant of baptism is proved from the words and the scope of them; for, —",
-          "next": "words and scope show. But he was not in his age an example of every age by his baptism, as if he did by it sanctify every age, for then he should have been baptized in every age; b"
-        },
-        {
           "file": "EPUB/ch044.xhtml",
           "previous": "es; which show the work of the law written in their hearts, their conscience also bearing witness, and their thoughts the mean while accusing or else excusing one another.\" (Romans",
           "next": "2:14, 15.) By the light that God hath indelibly implanted in the minds of men — accompanied with a moral instinct of good and evil, seconded by that selfjudgment which he hath plac"
@@ -65,14 +60,19 @@
           "file": "EPUB/ch062.xhtml",
           "previous": "2. God, to show it to be our duty and wisdom, doth immediately propose the very properties of his nature for our relief: Isaiah 40:27,",
           "next": "— words whose sense are often ready to possess our hearts: I am sure they often lie at the door of mine; I know not how it is with you. What doth God propose to relieve them in tha"
+        },
+        {
+          "file": "EPUB/ch063.xhtml",
+          "previous": "Consider ourselves as men: Job 4:17-19,",
+          "next": "If God chargeth his very angels with folly, that is, an unanswerableness unto his infinite holiness and wisdom, — what can poor mortal men expect, that dwell in houses of clay, tha"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 6,
+      "observed": 8,
       "budget": 6,
-      "status": "ok",
+      "status": "regression",
       "samples": [
         {
           "file": "EPUB/ch004.xhtml",
@@ -89,6 +89,14 @@
         {
           "file": "EPUB/ch013.xhtml",
           "text": "The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humiliation for it. [3.] The "
+        },
+        {
+          "file": "EPUB/ch033.xhtml",
+          "text": "But I say, — 1. It doth not signify properly \"to dip\" or \"plunge,\" for that in Greek is ἐμζάπτω and ἐμζαπτίζω . 2. it nowhere signifies \"to dip,\" but as a mode of and in order to washing. 3. It signifies the \"dipping\" of a finger, or the least touch of the wat"
+        },
+        {
+          "file": "EPUB/ch043.xhtml",
+          "text": "By the assertion, then, laid down, of God \"speaking in the prophets of old,\" from the beginning to the end of that long tract of time (consisting of one thousand years) wherein he gave out the writings of the Old Testament, two things are ascertained unto us, "
         },
         {
           "file": "EPUB/ch063.xhtml",
@@ -503,29 +511,13 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 5,
+      "observed": 1,
       "budget": 5,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch003.xhtml",
-          "text": "that is, in the Lamb's book of life; and they shall all appear one day gathered t"
-        },
-        {
-          "file": "EPUB/ch032.xhtml",
-          "text": "words and scope show. But he was not in his age an example of every age by his ba"
-        },
-        {
-          "file": "EPUB/ch033.xhtml",
-          "text": "them in his own person, is a mere cavil; for all that are born to God by baptism"
-        },
-        {
-          "file": "EPUB/ch064.xhtml",
-          "text": "that is, whatsoever is required to lead a godly life is given unto believers by t"
-        },
-        {
-          "file": "EPUB/ch065.xhtml",
-          "text": "how long shall they! be in this state and condition? \"And he answered, Until the"
+          "file": "EPUB/contents_3.xhtml",
+          "text": "incomparable care of the scribes of it — The whole word of God, in every tittle o"
         }
       ]
     },

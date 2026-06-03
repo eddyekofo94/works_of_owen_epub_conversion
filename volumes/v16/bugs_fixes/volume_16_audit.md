@@ -8,12 +8,12 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 110
-- Manifest items: 101
-- Spine items: 84
-- XHTML files: 86
+- Files: 107
+- Manifest items: 98
+- Spine items: 81
+- XHTML files: 83
 - Embedded fonts: 11
-- NAV links: 87
+- NAV links: 84
 
 ## Content Checks
 
@@ -21,8 +21,8 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 1211
 - Untagged Hebrew chars: 0
-- Noteref links: 120
-- Endnote anchors: 120
+- Noteref links: 130
+- Endnote anchors: 125
 - Boilerplate hits: 0
 - Possible Beta Code files: 1
 - Escaped language-tag files: 0
@@ -51,8 +51,4 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch003.xhtml`: that is, in the Lamb's book of life; and they shall all appear one day gathered t
-- `EPUB/ch032.xhtml`: words and scope show. But he was not in his age an example of every age by his ba
-- `EPUB/ch033.xhtml`: them in his own person, is a mere cavil; for all that are born to God by baptism
-- `EPUB/ch064.xhtml`: that is, whatsoever is required to lead a godly life is given unto believers by t
-- `EPUB/ch065.xhtml`: how long shall they! be in this state and condition? "And he answered, Until the
+- `EPUB/contents_3.xhtml`: incomparable care of the scribes of it — The whole word of God, in every tittle o
