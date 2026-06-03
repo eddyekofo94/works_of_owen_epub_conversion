@@ -5460,12 +5460,15 @@ def render_volume(vol_num: int, overrides: dict = None,
                 fm_html = toc_override
             else:
                 fm_html = _polish_contents_page_html(fm_html)
-        fm_item.set_content(
-            _make_xhtml(fm['title'], fm_html).encode('utf-8')
-        )
-        fm_item.add_item(style_item)
-        book.add_item(fm_item)
-        front_matter_epub_items.append(fm_item)
+        if fm.get('type') == 'toc':
+            pass # We skip adding the static unlinked PDF TOC to the spine entirely
+        else:
+            fm_item.set_content(
+                _make_xhtml(fm['title'], fm_html).encode('utf-8')
+            )
+            fm_item.add_item(style_item)
+            book.add_item(fm_item)
+            front_matter_epub_items.append(fm_item)
 
         # Dynamic insertion of the Note on Structural Formatting after TOC page
         if fm.get('type') == 'toc' and not added_structural_guide:
@@ -5791,6 +5794,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     if cover_page:
         spine.append(cover_page)
     spine.extend(front_matter_epub_items)
+    spine.append(nav_item)  # Insert the perfectly linked, interactive TOC into the reading flow!
     if frontispiece_item:
         spine.append(frontispiece_item)
     spine += epub_chapters
