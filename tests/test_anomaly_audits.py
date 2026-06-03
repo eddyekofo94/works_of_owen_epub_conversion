@@ -32,14 +32,14 @@ def test_check_hyphenations():
     words_dict = load_dictionary()
     
     # 1. Catch bad splits
-    anomalies = check_hyphenations("The learned Jesuit Peta-vius said prayers.", words_dict)
+    anomalies = check_hyphenations("The learned Calvin-ist said prayers.", words_dict)
     assert len(anomalies) > 0
-    assert any(a[0] == "Peta-vius" for a in anomalies)
+    assert any(a[0] == "Calvin-ist" for a in anomalies)
     
     # 2. Catch splittable words that rejoin perfectly
-    anomalies2 = check_hyphenations("This is a beautiful birth-place for him.", words_dict)
+    anomalies2 = check_hyphenations("This is a beautiful fire-place for him.", words_dict)
     assert len(anomalies2) > 0
-    assert any("birth-place" in a[0] for a in anomalies2)
+    assert any("fire-place" in a[0] for a in anomalies2)
     
     # 3. Whitelisted words must NOT be flagged
     anomalies3 = check_hyphenations("Owen practiced self-denial daily.", words_dict)

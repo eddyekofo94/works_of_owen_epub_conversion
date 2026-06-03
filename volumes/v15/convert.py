@@ -137,7 +137,28 @@ def _postprocess_v15_catechism_html(html, chapter):
     return _V15_QA_RE.sub(_style_qa, html)
 
 
+def post_extract_hook(intermediate: dict) -> dict:
+    # Process chapters for sequence split and OCR footnote corruptions
+    for ch in intermediate.get('chapters', []):
+        text = ch.get('raw_text', '')
+        # Fix A. D. 912. 5, 8
+        text = text.replace('A. D.\n\n912. 5, 8', 'A. D. 912, sections 5, 8')
+        # Fix OCR footnote corruptions (often in Prefaces/Prefatory notes which are processed as chapters)
+        text = text.replace('o [f186] to 180', 'of 186 to 180')
+        text = text.replace('o [f347] pages', 'of 347 pages')
+        ch['raw_text'] = text
+        
+    # Process front matter items for OCR footnote corruptions
+    for fm in intermediate.get('front_matter_items', []):
+        for key in ('raw_text', 'html'):
+            if key in fm and fm[key]:
+                fm[key] = fm[key].replace('o [f186] to 180', 'of 186 to 180')
+                fm[key] = fm[key].replace('o [f347] pages', 'of 347 pages')
+    return intermediate
+
+
 OVERRIDES = {
+    'post_extract_hook': post_extract_hook,
     'treatise_title_overrides': {
         'Discourse Concerning Liturgies, and Their Imposition.': _V15_LITURGIES_TITLE_PAGE,
         'A Discourse Concerning Evangelical Love, Church Peace, and Unity;': _V15_EVANGELICAL_LOVE_TITLE_PAGE,
@@ -151,7 +172,13 @@ OVERRIDES = {
         'Stillingfleet ': 'Stillingfleet ',  # preserve spacing
         # Repair possessive OCR artifact (shared with v14 pattern)
         "Stillingfleetìs": "Stillingfleet's",
-        "Stillingfleetìs": "Stillingfleet's",
+        # Fix consecutive duplicate words
+        'the the things': 'the things',
+        'is is now': 'is now',
+    },
+    'regex_replacements': {
+        # Fix doubled punctuation sequence where word boundary would fail
+        'murder!!': 'murder!',
     },
     'extra_css': _V15_CATECHISM_CSS,
     'html_postprocess_hook': _postprocess_v15_catechism_html,
@@ -164,3 +191,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

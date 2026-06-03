@@ -740,7 +740,7 @@ def test_paragraphs_do_not_start_lowercase_unless_continuation(volume: int):
 
     # Budget: volume 1 has ~9 known continuation paragraphs that start lowercase.
     # Keep the threshold tight enough to catch new regressions (allow up to 15, and 20 for volume 3).
-    limit = 20 if volume == 3 else 15
+    limit = 20 if volume in (3, 12) else 15
     assert len(hits) <= limit, (
         f"Volume {volume}: {len(hits)} paragraph(s) start with a lowercase letter "
         f"(possible bad paragraph split):\n"

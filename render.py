@@ -3459,6 +3459,51 @@ def _merge_titlepage_override(override: str, fragments: list[str]) -> str:
     return override
 
 
+def _split_raw_title_body(raw_text: str) -> tuple[str, str]:
+    """
+    Splits raw_text into (title_block, body_text).
+    The title_block is the leading part containing headings, summary, etc.
+    The body_text is the subsequent actual content.
+    If no body text is found, body_text will be empty.
+    """
+    if not raw_text:
+        return "", ""
+
+    # If the raw_text is already an HTML section (e.g. standalone title page),
+    # then it doesn't have a separate body text to preserve.
+    if raw_text.strip().startswith('<section') and '</section>' in raw_text:
+        return raw_text, ""
+
+    paragraphs = raw_text.split('\n\n')
+    title_paras = []
+    body_paras = []
+    in_body = False
+
+    for p in paragraphs:
+        p_strip = p.strip()
+        if not p_strip:
+            continue
+        if in_body:
+            body_paras.append(p)
+        else:
+            # Check if this paragraph is part of the title page metadata/headings.
+            is_title_tag = (
+                p_strip.startswith('[[CHAPTER]]') or
+                p_strip.startswith('[[SUMMARY]]') or
+                p_strip.startswith('[[TITLE]]') or
+                p_strip.startswith('[[PART]]') or
+                p_strip.startswith('[[AUTHOR]]') or
+                p_strip.startswith('[[EPIGRAPH]]')
+            )
+            if is_title_tag:
+                title_paras.append(p)
+            else:
+                in_body = True
+                body_paras.append(p)
+
+    return '\n\n'.join(title_paras), '\n\n'.join(body_paras)
+
+
 # ---------------------------------------------------------------------------
 # Issue 19: Inline list merging
 # ---------------------------------------------------------------------------
@@ -5582,8 +5627,13 @@ def render_volume(vol_num: int, overrides: dict = None,
         raw_text = ch_dict.get('raw_text', '')
         titlepage_override = config.get('treatise_title_overrides', {}).get(ch_dict['title'])
         if titlepage_override:
-            foreign_frags = _foreign_fragments_in_section(raw_text)
-            raw_text = _merge_titlepage_override(titlepage_override, foreign_frags)
+            title_block, body_text = _split_raw_title_body(raw_text)
+            foreign_frags = _foreign_fragments_in_section(title_block or raw_text)
+            overridden_title = _merge_titlepage_override(titlepage_override, foreign_frags)
+            if body_text:
+                raw_text = f"{overridden_title}\n\n{body_text}"
+            else:
+                raw_text = overridden_title
         if not raw_text:
             continue
         if 'ANALYSIS' in title_upper:
@@ -5747,25 +5797,30 @@ def render_volume(vol_num: int, overrides: dict = None,
     # main nav <nav epub:type="toc"> so Apple Books and all readers show them in
     # the navigation panel.  Prepend them at level 1 ahead of chapter entries.
     _nav_seen_titles: set = set()
+    _nav_seen_files: set = set()
     _nav_prefix: list = []
     if cover_page:
         _nav_prefix.append((1, 'Cover', 'cover.xhtml'))
         _nav_seen_titles.add('Cover')
+        _nav_seen_files.add('cover.xhtml')
     for _fm in intermediate.get('front_matter_items', []):
         _fm_title = _fm.get('title', '')
         _fm_html = _fm.get('html')
+        _fm_fn = _fm.get('file_name', '')
         if _fm_html is None:
             continue
-        if _fm_title and _fm_title not in _nav_seen_titles:
-            _nav_prefix.append((1, _fm_title, _fm['file_name']))
+        if _fm_title and _fm_title not in _nav_seen_titles and _fm_fn not in _nav_seen_files:
+            _nav_prefix.append((1, _fm_title, _fm_fn))
             _nav_seen_titles.add(_fm_title)
+            _nav_seen_files.add(_fm_fn)
     # Also add any prose front-matter items (Preface, Analysis, etc.) not yet listed
     for _fm_item in front_matter_epub_items:
         _fmt = getattr(_fm_item, 'title', None) or ''
         _fmf = getattr(_fm_item, 'file_name', None) or ''
-        if _fmt and _fmt not in _nav_seen_titles and _fmf:
+        if _fmt and _fmt not in _nav_seen_titles and _fmf and _fmf not in _nav_seen_files:
             _nav_prefix.append((1, _fmt, _fmf))
             _nav_seen_titles.add(_fmt)
+            _nav_seen_files.add(_fmf)
     nav_entries = _nav_prefix + toc_entries  # already (level, title, href)
     nav_html = generate_nav_xhtml(
         nav_entries,

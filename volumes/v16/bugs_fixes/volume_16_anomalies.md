@@ -2,16 +2,16 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 259006
-* **Total Suspected Anomalies Found:** 329
+* **Total Words Audited:** 258018
+* **Total Suspected Anomalies Found:** 299
 
 Add corrections to `text_replacements` inside `volumes/v16/convert.py` to fix these.
 
 ## Summary by Category
 
-* **Hyphenation Anomalies:** 35 items
-* **Punctuation Spacing Blemishes:** 45 items
-* **OCR & Bracket Residues:** 1 items
+* **Hyphenation Anomalies:** 0 items
+* **Punctuation Spacing Blemishes:** 47 items
+* **OCR & Bracket Residues:** 4 items
 * **Mixed-Case Capitalization Errors:** 0 items
 * **Unresolved Citation References:** 6 items
 * **Structural Nesting Sequence Jumps:** 242 items
@@ -20,222 +20,7 @@ Add corrections to `text_replacements` inside `volumes/v16/convert.py` to fix th
 
 ## Hyphenation Anomalies
 
-### 1. `corner-stone`
-* **Description:** Splittable word (rejoins to valid word 'cornerstone')
-* **Chapter:** *Preface (The True Nature of a Gospel Church and Its Government)*
-* **Contexts:**
-  * ... nd holiness, wherein the Lord Jesus Christ is the **corner-stone**, Ephesians 2:20; Matthew 16:18. This profession i ...
-
-### 2. `scare-crow`
-* **Description:** Splittable word (rejoins to valid word 'scarecrow')
-* **Chapter:** *Chapter 1 - the Subject-matter of the Church.*
-* **Contexts:**
-  * ... count of the minute of wicked men in it is made a **scare-crow** to frighten men from attempting the reformation o ...
-
-### 3. `non-admission`
-* **Description:** Splittable word (rejoins to valid word 'nonadmission')
-* **Chapter:** *Chapter 1 - the Subject-matter of the Church.*
-* **Contexts:**
-  * ... sons, through the severity of the church in their **non-admission** of them, should be cast on a conjunction in super ...
-
-### 4. `pre-requisite`
-* **Description:** Splittable word (rejoins to valid word 'prerequisite')
-* **Chapter:** *Chapter 2 - Of the Formal Cause of a Particular Church.*
-* **Contexts:**
-  * ... sundry things which concur as remote causes, or **pre-requisite** conditions, unto this conjunction of believers i ...
-
-### 5. `non-institution`
-* **Description:** Splittable word (rejoins to valid word 'noninstitution')
-* **Chapter:** *Chapter 4 - the Officers of the Church.*
-* **Contexts:**
-  * ... ion, unto what hath been pleaded before about the **non-institution** of any churches beyond particular congregations, ...
-
-### 6. `arch-apostle`
-* **Description:** Splittable word (rejoins to valid word 'archapostle')
-* **Chapter:** *Chapter 4 - the Officers of the Church.*
-* **Contexts:**
-  * ... san bishops are, nor of an archdeacon, than of an **arch-apostle**, or of an archevangelist, or an archprophet. Howb ...
-
-### 7. `noon-day`
-* **Description:** Splittable word (rejoins to valid word 'noonday')
-* **Chapter:** *Chapter 4 - the Officers of the Church.*
-* **Contexts:**
-  * ... is all one as to deny that the sun gives light at **noon-day**), is, as unto its right, by various degrees trans ...
-
-### 8. `re-delivery`
-* **Description:** Splittable word (rejoins to valid word 'redelivery')
-* **Chapter:** *Chapter 10 - of Excommunication.*
-* **Contexts:**
-  * ... om of Christ, his just rejection out of it is the **re-delivery** of him into the visible kingdom of Satan; which i ...
-
-### 9. `re-admission`
-* **Description:** Splittable word (rejoins to valid word 'readmission')
-* **Chapter:** *Chapter 10 - of Excommunication.*
-* **Contexts:**
-  * ... emn the opinions of the Novatians in refusing the **re-admission** of lapsed sinners into the church, upon repentanc ...
-
-### 10. `anti-evangelical`
-* **Description:** Splittable word (rejoins to valid word 'antievangelical')
-* **Chapter:** *Chapter 10 - of Excommunication.*
-* **Contexts:**
-  * ... whom it is administered, and there is present an **anti-evangelical** order in its administration. 4. It is sufficie ...
-
-### 11. `there-with`
-* **Description:** Splittable word (rejoins to valid word 'therewith')
-* **Chapter:** *Chapter 11 - of the Communion of Churches.*
-* **Contexts:**
-  * ... d communion, unto the pope of Rome, investing him **there-with** as an article of faith, constituting him thereby ...
-
-### 12. `hedge-hog`
-* **Description:** Splittable word (rejoins to valid word 'hedgehog')
-* **Chapter:** *A Letter Concerining the Matter of the Present Excommunications*
-* **Contexts:**
-  * ... such thing at all. If a man should paint a rat or **hedge-hog**, and write over it that it is a lion, no man woul ...
-
-### 13. `CHURCH-CENSURES`
-* **Description:** Capitalized hyphenation with unrecognized right particle
-* **Chapter:** *A Discourse Concerning the Administration of Church Censures.*
-* **Contexts:**
-  * [[SUMMARY]] CONCERNING THE ADMINISTRATION OF **CHURCH-CENSURES**. Ques. 1. May a true church of Christ err or mis ...
-  * ... of Christ err or mistake in the administration of **church-censures**? ANS. A true church of Christ may err or mistake ...
-  * ... ist, and the utter impairing the authority of all **church-censures**, must needs ensue, if there be no way to rectify ...
-
-### 14. `like-wise`
-* **Description:** Splittable word (rejoins to valid word 'likewise')
-* **Chapter:** *Reflections on a Slanderous Libel*
-* **Contexts:**
-  * ... all that read and know laugh at with scorn. Such **like-wise** is the ridiculous story he tells, p. 66, of my or ...
-
-### 15. `SELF-EVIDENCING`
-* **Description:** Capitalized hyphenation with unrecognized right particle
-* **Chapter:** *Treatises Concerning the Scriptures.*
-* **Contexts:**
-  * OF THE DIVINE ORIGINAL, AUTHORITY, **SELF-EVIDENCING** LIGHT, AND POWER OF THE SCRIPTURES; WITH AN ...
-
-### 16. `touch-stone`
-* **Description:** Splittable word (rejoins to valid word 'touchstone')
-* **Chapter:** *The Prebends of Christ Church College in Oxford,*
-* **Contexts:**
-  * ... ain standard and measure of all doctrines, or the **touch-stone** of all translations. Now, concerning these thing ...
-
-### 17. `SELF-EVIDENCING`
-* **Description:** Capitalized hyphenation with unrecognized right particle
-* **Chapter:** *The Scriptures: an Answer to That Inquiry,*
-* **Contexts:**
-  * OF THE DIVINE ORIGINAL, AUTHORITY. **SELF-EVIDENCING** LIGHT, AND POWER THE SCRIPTURES: with AN AN ...
-
-### 18. `in-being`
-* **Description:** Splittable word (rejoins to valid word 'inbeing')
-* **Chapter:** *Chapter 1 - The divine original of the Scripture the sole foundation of its authority — The or...*
-* **Contexts:**
-  * ... had a subsistence given unto it, or an effectual **in-being**, by the Spirit's entering into him. (Ver. 14.) No ...
-
-### 19. `ever-living`
-* **Description:** Splittable word (rejoins to valid word 'everliving')
-* **Chapter:** *Chapter 5 - Of the testimony of the Spirit — Traditions — Miracles.*
-* **Contexts:**
-  * ... ct our souls unto it, as the word and will of the **ever-living**, sovereign God and Judge of all. And if this be n ...
-
-### 20. `fore-mentioned`
-* **Description:** Splittable word (rejoins to valid word 'forementioned')
-* **Chapter:** *Chapter 6 - Consequential considerations, for the confirmation of the divine authority of the ...*
-* **Contexts:**
-  * ... o have the advantage of receiving the Word on the **fore-mentioned** account seem not only to persuade, and in a great ...
-
-### 21. `Ca-ari`
-* **Description:** Capitalized hyphenation with unrecognized right particle
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
-* **Contexts:**
-  * ... Vatablus, Mercer, Rivet, etc. Others contend that **Ca-ari**, "as a lion," ought to be retained, repeating ὑπὸ ...
-
-### 22. `Chal-dean`
-* **Description:** Splittable word (rejoins to valid word 'Chaldean')
-* **Chapter:** *Chapter 4 - General premises — Opinions prejudicial to the authority of the originals in the P...*
-* **Contexts:**
-  * ... ch before the captivity of Babylon, but it is the **Chal-dean**, the other being left to the Samaritans; that the ...
-
-### 23. `pre-existing`
-* **Description:** Hyphenated word with unrecognized particles on both sides
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
-* **Contexts:**
-  * ... if it were an arbitrary invention, limited to no **pre-existing** writing, been found out first and established as ...
-
-### 24. `Ben-lafrad`
-* **Description:** Capitalized hyphenation with unrecognized right particle
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
-* **Contexts:**
-  * ... ame Aben Ezra on Psalm 9:7 tells us of one Adonim **Ben-lafrad**, who, long before this R. Jehuda, found for in an ...
-
-### 25. `fly-leaf`
-* **Description:** Splittable word (rejoins to valid word 'flyleaf')
-* **Chapter:** *Prefatory Note (Chapter 2 - of the Formal Cause of a Particular Church.)*
-* **Contexts:**
-  * ... rs of the present edition of Owen's works. On the **fly-leaf** of the volume, which is beautifully written and c ...
-
-### 26. `meeting-house`
-* **Description:** Splittable word (rejoins to valid word 'meetinghouse')
-* **Chapter:** *Prefatory Note (Chapter 2 - of the Formal Cause of a Particular Church.)*
-* **Contexts:**
-  * ... where he mentions, that having come late into the **meeting-house**, after the service had begun, he had not been abl ...
-
-### 27. `blood-thirsty`
-* **Description:** Splittable word (rejoins to valid word 'bloodthirsty')
-* **Chapter:** *Sermon 1 - the Furnace of Divine Wrath.*
-* **Contexts:**
-  * ... lars mentioned; — to deliver us from the hands of **blood-thirsty** men; to divert the judgment ('I repented me of th ...
-
-### 28. `jaw-bone`
-* **Description:** Splittable word (rejoins to valid word 'jawbone')
-* **Chapter:** *Sermon 2 - the Wisdom of Making the Lord Our Refuge.*
-* **Contexts:**
-  * ... teeth with gravel; and he began to break out the **jaw-bone** of the terrible ones when they came to feed upon ...
-
-### 29. `eye-sore`
-* **Description:** Splittable word (rejoins to valid word 'eyesore')
-* **Chapter:** *Sermon 2 - the Wisdom of Making the Lord Our Refuge.*
-* **Contexts:**
-  * ... or my goods and possessions;" he was a very great **eye-sore** to all the wicked inhabitants of the land, as Isa ...
-
-### 30. `watch-tower`
-* **Description:** Splittable word (rejoins to valid word 'watchtower')
-* **Chapter:** *Sermon 3 - Faith's Answer to Divine Reproofs.*
-* **Contexts:**
-  * ... ed, A lion: My lord, I stand continually upon the **watch-tower** in the daytime, and I am set in my ward whole nig ...
-  * ... and the corn of my floor." God sets him upon the **watch-tower** in a vision, and he seeth all sorts of creatures ...
-  * ... to reprove us, and we have set ourselves upon the **watch-tower** to see what we can answer him; for God must be an ...
-
-### 31. `over-compliant`
-* **Description:** Splittable word (rejoins to valid word 'overcompliant')
-* **Chapter:** *Sermon 5 - Holiness Urged From the Liability of All Things to D*
-* **Contexts:**
-  * ... nt upon the occasions of this life, and the other **over-compliant** with the temptations of life, sin and wickedness, ...
-
-### 32. `way-side`
-* **Description:** Splittable word (rejoins to valid word 'wayside')
-* **Chapter:** *Sermon 12 - Enoch's Walk With God.*
-* **Contexts:**
-  * ... nd that attended unto with circumspection. Loose, **way-side** walkers are like **way-side** hearers; both will fail ...
-  * ... circumspection. Loose, **way-side** walkers are like **way-side** hearers; both will fail of what they seem to aim ...
-
-### 33. `Ammi-nadib`
-* **Description:** Capitalized hyphenation with unrecognized right particle
-* **Chapter:** *Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O*
-* **Contexts:**
-  * ... I was aware, my heart made me as the chariots of **Ammi-nadib**," Cant. 6:12. Have not we found oftentimes that w ...
-
-### 34. `noon-day`
-* **Description:** Splittable word (rejoins to valid word 'noonday')
-* **Chapter:** *Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O*
-* **Contexts:**
-  * ... and we grope as if we had no eyes: we stumble at **noon-day** as in the night." Our way is plain, our rule is p ...
-
-### 35. `non-compliance`
-* **Description:** Splittable word (rejoins to valid word 'noncompliance')
-* **Chapter:** *Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O*
-* **Contexts:**
-  * ... e from us: — Love of the world, frowardness, or a **non-compliance** with the calls of providence, formality in spirit ...
-
----
+No anomalies found in this category.
 
 ## Punctuation Spacing Blemishes
 
@@ -245,7 +30,7 @@ Add corrections to `text_replacements` inside `volumes/v16/convert.py` to fix th
 * **Contexts:**
   * ... aking their staff of beauty and their staff of **bands ,** he erects his gospel church, calls in disciples b ...
 
-### 2. `(  H`
+### 2. `(   H`
 * **Description:** Spaced opening parenthesis
 * **Chapter:** *Chapter 4 - the Officers of the Church.*
 * **Contexts:**
@@ -401,115 +186,127 @@ Add corrections to `text_replacements` inside `volumes/v16/convert.py` to fix th
 
 ### 27. `Son ?`
 * **Description:** Spaced punctuation (space before character)
-* **Chapter:** *Chapter 3 - Arguments of two sorts — Inartificial arguments, by way of testimony to the truth ...*
+* **Chapter:** *Chapter 3.*
 * **Contexts:**
   * ... , "from the excellent glory" — This is my beloved **Son ?**" Yet Peter, who heard that voice, tells us that, ...
 
-### 28. `1st ,`
+### 28. `( 5`
+* **Description:** Spaced opening parenthesis
+* **Chapter:** *Chapter 4.*
+* **Contexts:**
+  * ... is inaccessible to our understandings. So Isaiah, **( 5**7:15,) "God inhabiteth eternity." So עטֶח אוֹר sai ...
+
+### 29. `( 2`
+* **Description:** Spaced opening parenthesis
+* **Chapter:** *Chapter 4.*
+* **Contexts:**
+  * ... ) "Thou clothest thyself with light;" and Daniel, **( 2**:22,) עִמֵה שְׁרֵא וּנְהֹירָא, the "light remainet ...
+
+### 30. `1st ,`
 * **Description:** Spaced punctuation (space before character)
-* **Chapter:** *Chapter 6 - Consequential considerations, for the confirmation of the divine authority of the ...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
   * ... njoyment in glory, there are these two parts: — **1st ,** God's gracious communication of his love, goodnes ...
 
-### 29. `d  ,`
+### 31. `d  ,`
 * **Description:** Spaced punctuation (space before character)
-* **Chapter:** *Chapter 6 - Consequential considerations, for the confirmation of the divine authority of the ...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
   * ... s, etc., with the fruits of them, unto man; 2 d , The obedience of man unto God, in a way of gratit ...
 
-### 30. `..`
+### 32. `..`
 * **Description:** Duplicate period (double dot)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
   * **..**. ey had so done, and how often they are so used, as**..** and**..** for**..**, and the like, when they might, if th **..**.
   * **..**. so done, and how often they are so used, as**..** and**..** for**..**, and the like, when they might, if they had **..**.
   * **..**. ne, and how often they are so used, as**..** and**..** for**..**, and the like, when they might, if they had so pl **..**.
 
-### 31. `f  )`
+### 33. `f   )`
 * **Description:** Spaced closing parenthesis
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
   * ... hat purpose. This man (whom Thuanus takes notice of ) lived with Paulus Fagius, and assisted him in his ...
 
-### 32. `Ans  .`
+### 34. `Ans  .`
 * **Description:** Spaced period (space before period)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
   * ... whole punctuation from the Tiberian Masoretes." Ans . It is very true that Elias was of that judgment; ...
 
-### 33. `Eo .`
+### 35. `Eo .`
 * **Description:** Spaced period (space before period)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
   * ... , stout, how, now. 8. Ui, uy Bui, juice. 9. **Eo .**Yeoman, people. How other diphthongs (which have ...
 
-### 34. `God  ,`
+### 36. `God  ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 3 - Faith's Answer to Divine Reproofs.*
 * **Contexts:**
   * ... re come to an end; that is, the whole covenant of God , and the ordinances and presence of God with them ...
 
-### 35. `And  ,`
+### 37. `And  ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 3 - Faith's Answer to Divine Reproofs.*
 * **Contexts:**
   * ... Write the vision, and make it plain upon tables." And , 4. There is the conclusion which he works all ...
 
-### 36. `Sodom ?`
+### 38. `Sodom ?`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 9 - National Sins and National Judgments.*
 * **Contexts:**
   * ... in as Sodom." How is it to "declare their sin as **Sodom ?**" (1.) When men will confer and talk together a ...
 
-### 37. `First ,`
+### 39. `First ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 9 - National Sins and National Judgments.*
 * **Contexts:**
   * ... I shall close all with a word or two of use: — **First ,** If this be the deplorable state and condition of ...
 
-### 38. `Secondly ,`
+### 40. `Secondly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 9 - National Sins and National Judgments.*
 * **Contexts:**
   * ... evil that he hath purposed against this nation. **Secondly ,** If they will not be healed, let our souls mourn i ...
 
-### 39. `Thirdly ,`
+### 41. `Thirdly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 9 - National Sins and National Judgments.*
 * **Contexts:**
   * ... ereby we have provoked the eyes of God's glory. **Thirdly ,** Take heed that we do not partake in any of their ...
 
-### 40. `Fourthly ,`
+### 42. `Fourthly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 9 - National Sins and National Judgments.*
 * **Contexts:**
   * ... declared that he hath a controversy with them. **Fourthly ,** Prepare to meet the Lord in the way of his judgme ...
 
-### 41. `me ?`
+### 43. `me ?`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 11 - the Humiliation and Condescension of Christ.*
 * **Contexts:**
   * ... e of faith for this purpose! 'But will he relieve **me ?**' Why, he hath humbled, emptied himself, and laid ...
 
-### 42. `1st   .`
+### 44. `1st   .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 12 - Enoch's Walk With God.*
 * **Contexts:**
   * ... r the glorifying of him, their principal end: — 1st . They are bound to prefer, esteem, and value, the ...
 
-### 43. `1st .`
+### 45. `1st .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 12 - Enoch's Walk With God.*
 * **Contexts:**
   * ... and grace. And we may observe concerning it, — **1st .** That he who doth So will not have his endeavors a ...
 
-### 44. `2dly   .`
+### 46. `2dly   .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 12 - Enoch's Walk With God.*
 * **Contexts:**
-  * ... he greatest confluence of earthly mercies. Nor, 2dly . will he despond of finding rest and satisfaction ...
+  * ... the greatest confluence of earthly mercies. Nor, 2dly . will he despond of finding rest and satisfaction ...
 
-### 45. `3dly   .`
+### 47. `3dly   .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 12 - Enoch's Walk With God.*
 * **Contexts:**
@@ -519,9 +316,27 @@ Add corrections to `text_replacements` inside `volumes/v16/convert.py` to fix th
 
 ## OCR & Bracket Residues
 
-### 1. `seem[ing`
+### 1. `al]so`
+* **Description:** OCR residue containing stray closing bracket/paren
+* **Chapter:** *Chapter 4 - the Officers of the Church.*
+* **Contexts:**
+  * ... ed that persons so chosen, so submitted unto, be [**al]so** solemnly separated, dedicated unto, and confirme ...
+
+### 2. `know]edge`
+* **Description:** OCR residue containing stray closing bracket/paren
+* **Chapter:** *Chapter 9 - of Deacons.*
+* **Contexts:**
+  * ... by the apostle, 1 Timothy 3:8-13. Upon the trial, **know]edge**, and approbation of them, with respect unto these ...
+
+### 3. `mal]administrations`
+* **Description:** OCR residue containing stray closing bracket/paren
+* **Chapter:** *A Discourse Concerning the Administration of Church Censures.*
+* **Contexts:**
+  * ... their peace and edification. Q. 3. How may such [**mal]administrations** be rectified? A. The rectifying such maladminist ...
+
+### 4. `seem[ing`
 * **Description:** OCR residue containing stray opening bracket/paren
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
   * ... atinus his Gale Rezeia, which must be set aside), **seem[ing**] to be wrested the most of them beside their inte ...
 
@@ -543,31 +358,31 @@ No anomalies found in this category.
 * **Description:** Unresolved patristic/classical citation reference (no translation found)
 * **Chapter:** *A Vindication of Two Passages in Irenaeus Against the Exception*
 * **Contexts:**
-  * ... ceps vitae, prior omnium, et praecedens omnes. " **Lib. 1: cap. 18**: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ, τοσα ...
+  * ... nceps vitae, prior omnium, et praecedens omnes." **Lib. 1: cap. 18**: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ, τοσα ...
 
 ### 3. `lib. 1`
 * **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
+* **Chapter:** *Chapter 2.*
 * **Contexts:**
-  * ... editiones exigerentur et emendarentur, " Exercit. **lib. 1**, cap. 3, p. 15. The truth is, he placed the Hebre ...
+  * ... editiones exigerentur et emendarentur," Exercit. **lib. 1**, cap. 3, p. 15. The truth is, he placed the Hebre ...
   * ... hey are all in particular considered by Glassius, **lib. 1**, tract. 1; but the whole matter is satisfactorily ...
   * ... im, and repeated again by Amama, Anti. Barb. Bib. **lib. 1** p. 30, 31. Because this thing is much insisted o ...
 
 ### 4. `lib. Im`
 * **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
   * ... mind of God but by their exposition, R. Azarias, **lib. Im**re Binah. cap. 59. If these reasons satisfy not an ...
 
 ### 5. `tract. 1`
 * **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
   * ... ved. See par. 1 cap. 6. See also Glassius, lib. 1 **tract. 1**. De Textus Hebraei Puritate, who gives instances ...
 
 ### 6. `lib. 2`
 * **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Chapter 8 - Of gathering various lections by the help of translations — The proper use and ben...*
+* **Chapter:** *Chapter 8.*
 * **Contexts:**
   * ... d vitiated that it plainly appears to be another, **lib. 2** De Verbo Dei, cap. 6. He that shall read and con ...
 
@@ -1402,7 +1217,7 @@ No anomalies found in this category.
 
 ### 166. `3. ... 5.`
 * **Description:** List sequence jump (skipped from 3 to 5)
-* **Chapter:** *Of Dipping.*
+* **Chapter:** *A Vindication of Two Passages in Irenaeus Against the Exception*
 * **Contexts:**
 
 ### 167. `3. ... 21.`
@@ -1432,172 +1247,172 @@ No anomalies found in this category.
 
 ### 172. `2. ... 21.`
 * **Description:** List sequence jump (skipped from 2 to 21)
-* **Chapter:** *Chapter 1 - The divine original of the Scripture the sole foundation of its authority — The or...*
+* **Chapter:** *Chapter 1.*
 * **Contexts:**
 
 ### 173. `1. ... 119.`
 * **Description:** List sequence jump (skipped from 1 to 119)
-* **Chapter:** *Chapter 4 - Innate arguments in the Scripture of its divine original and authority — Its self-...*
+* **Chapter:** *Chapter 4.*
 * **Contexts:**
 
 ### 174. `1. ... 4.`
 * **Description:** List sequence jump (skipped from 1 to 4)
-* **Chapter:** *Chapter 1 - The occasion of this discourse — The danger of supposing corruptions in the origin...*
+* **Chapter:** *Chapter 1.*
 * **Contexts:**
 
 ### 175. `2. ... 26.`
 * **Description:** List sequence jump (skipped from 2 to 26)
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
+* **Chapter:** *Chapter 2.*
 * **Contexts:**
 
 ### 176. `5. ... 24.`
 * **Description:** List sequence jump (skipped from 5 to 24)
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
+* **Chapter:** *Chapter 2.*
 * **Contexts:**
 
 ### 177. `10. ... 15.`
 * **Description:** List sequence jump (skipped from 10 to 15)
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
+* **Chapter:** *Chapter 2.*
 * **Contexts:**
 
 ### 178. `12. ... 31.`
 * **Description:** List sequence jump (skipped from 12 to 31)
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
+* **Chapter:** *Chapter 2.*
 * **Contexts:**
 
 ### 179. `3. ... 13.`
 * **Description:** List sequence jump (skipped from 3 to 13)
-* **Chapter:** *Chapter 2 - Of the purity of the originals — The αὐτόγραφα of the Scripture lost — That of Mos...*
+* **Chapter:** *Chapter 2.*
 * **Contexts:**
 
 ### 180. `3. ... 7.`
 * **Description:** List sequence jump (skipped from 3 to 7)
-* **Chapter:** *Chapter 3 - Of various lections in the Greek copies of the New Testament.*
+* **Chapter:** *Chapter 3.*
 * **Contexts:**
 
 ### 181. `2. ... 136.`
 * **Description:** List sequence jump (skipped from 2 to 136)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 182. `27. ... 144.`
 * **Description:** List sequence jump (skipped from 27 to 144)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 183. `144. ... 510.`
 * **Description:** List sequence jump (skipped from 144 to 510)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 184. `21. ... 83.`
 * **Description:** List sequence jump (skipped from 21 to 83)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 185. `83. ... 264.`
 * **Description:** List sequence jump (skipped from 83 to 264)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 186. `1. ... 21.`
 * **Description:** List sequence jump (skipped from 1 to 21)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 187. `6. ... 59.`
 * **Description:** List sequence jump (skipped from 6 to 59)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 188. `2. ... 53.`
 * **Description:** List sequence jump (skipped from 2 to 53)
-* **Chapter:** *Chapter 5 - The original of the points proposed to consideration in particular — The importanc...*
+* **Chapter:** *Chapter 5.*
 * **Contexts:**
 
 ### 189. `6. ... 40.`
 * **Description:** List sequence jump (skipped from 6 to 40)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 190. `1. ... 17.`
 * **Description:** List sequence jump (skipped from 1 to 17)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 191. `8. ... 10.`
 * **Description:** List sequence jump (skipped from 8 to 10)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 192. `10. ... 22.`
 * **Description:** List sequence jump (skipped from 10 to 22)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 193. `2. ... 59.`
 * **Description:** List sequence jump (skipped from 2 to 59)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 194. `3. ... 92.`
 * **Description:** List sequence jump (skipped from 3 to 92)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 195. `4. ... 6.`
 * **Description:** List sequence jump (skipped from 4 to 6)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 196. `1. ... 5.`
 * **Description:** List sequence jump (skipped from 1 to 5)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 197. `1. ... 3.`
 * **Description:** List sequence jump (skipped from 1 to 3)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 198. `2. ... 28.`
 * **Description:** List sequence jump (skipped from 2 to 28)
-* **Chapter:** *Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration — The arg...*
+* **Chapter:** *Chapter 6.*
 * **Contexts:**
 
 ### 199. `1. ... 40.`
 * **Description:** List sequence jump (skipped from 1 to 40)
-* **Chapter:** *Chapter 7 - Of the קְרִי וּכְתִיב, their nature and original — The difference is in the conson...*
+* **Chapter:** *Chapter 7.*
 * **Contexts:**
 
 ### 200. `2. ... 22.`
 * **Description:** List sequence jump (skipped from 2 to 22)
-* **Chapter:** *Chapter 7 - Of the קְרִי וּכְתִיב, their nature and original — The difference is in the conson...*
+* **Chapter:** *Chapter 7.*
 * **Contexts:**
 
 ### 201. `2. ... 950.`
 * **Description:** List sequence jump (skipped from 2 to 950)
-* **Chapter:** *Chapter 8 - Of gathering various lections by the help of translations — The proper use and ben...*
+* **Chapter:** *Chapter 8.*
 * **Contexts:**
 
 ### 202. `10. ... 30.`
 * **Description:** List sequence jump (skipped from 10 to 30)
-* **Chapter:** *Chapter 8 - Of gathering various lections by the help of translations — The proper use and ben...*
+* **Chapter:** *Chapter 8.*
 * **Contexts:**
 
 ### 203. `4. ... 11.`
 * **Description:** List sequence jump (skipped from 4 to 11)
-* **Chapter:** *Chapter 8 - Of gathering various lections by the help of translations — The proper use and ben...*
+* **Chapter:** *Chapter 8.*
 * **Contexts:**
 
 ### 204. `11. ... 150.`
 * **Description:** List sequence jump (skipped from 11 to 150)
-* **Chapter:** *Chapter 8 - Of gathering various lections by the help of translations — The proper use and ben...*
+* **Chapter:** *Chapter 8.*
 * **Contexts:**
 
 ### 205. `6. ... 41.`
 * **Description:** List sequence jump (skipped from 6 to 41)
-* **Chapter:** *Chapter 8 - Of gathering various lections by the help of translations — The proper use and ben...*
+* **Chapter:** *Chapter 8.*
 * **Contexts:**
 
 ### 206. `2. ... 13.`

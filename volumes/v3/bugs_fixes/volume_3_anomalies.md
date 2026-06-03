@@ -3,13 +3,13 @@
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
 * **Total Words Audited:** 325682
-* **Total Suspected Anomalies Found:** 629
+* **Total Suspected Anomalies Found:** 598
 
 Add corrections to `text_replacements` inside `volumes/v3/convert.py` to fix these.
 
 ## Summary by Category
 
-* **Hyphenation Anomalies:** 31 items
+* **Hyphenation Anomalies:** 0 items
 * **Punctuation Spacing Blemishes:** 42 items
 * **OCR & Bracket Residues:** 2 items
 * **Mixed-Case Capitalization Errors:** 0 items
@@ -20,199 +20,7 @@ Add corrections to `text_replacements` inside `volumes/v3/convert.py` to fix the
 
 ## Hyphenation Anomalies
 
-### 1. `self-same`
-* **Description:** Splittable word (rejoins to valid word 'selfsame')
-* **Chapter:** *Chapter 1 - General Principles Concerning the Holy Spirit & His Work*
-* **Contexts:**
-  * ... verse 11, "But all these worketh that one and the **self-same** Spirit, dividing to every man severally as he wil ...
-  * ... All these," saith he, "worketh that one and the **self-same** Spirit, dividing to every man severally as he wil ...
-
-### 2. `vain-glory`
-* **Description:** Splittable word (rejoins to valid word 'vainglory')
-* **Chapter:** *Chapter 1 - General Principles Concerning the Holy Spirit & His Work*
-* **Contexts:**
-  * ... an his own. And so far were they transported with **vain-glory** and a desire of selfadvancement, as that they pre ...
-
-### 3. `Ramoth-gilead`
-* **Description:** Capitalized hyphenation with unrecognized left particle
-* **Chapter:** *Chapter 1 - General Principles Concerning the Holy Spirit & His Work*
-* **Contexts:**
-  * ... rophets of Ahab, who encouraged him to go up unto **Ramoth-gilead**, foretelling his prosperous success, 1 Kings 22:6 ...
-
-### 4. `self-same`
-* **Description:** Splittable word (rejoins to valid word 'selfsame')
-* **Chapter:** *Chapter 2 - the Name and Titles of the Holy Spirit.*
-* **Contexts:**
-  * ... operations, but one Spirit; and that the one and **self-same** Spirit worketh all these things as he pleaseth, 1 ...
-
-### 5. `self-same`
-* **Description:** Splittable word (rejoins to valid word 'selfsame')
-* **Chapter:** *Chapter 3 - Divine Nature & Personality of the Holy Spirit*
-* **Contexts:**
-  * ... investigation of those things which that one and **self-same** Spirit distributeth according to his own will. An ...
-  * ... [BLOCKQUOTE]] "All these worketh that one and the **self-same** Spirit, dividing to every man severally as he wil ...
-
-### 6. `peace-maker`
-* **Description:** Splittable word (rejoins to valid word 'peacemaker')
-* **Chapter:** *Chapter 3 - Divine Nature & Personality of the Holy Spirit*
-* **Contexts:**
-  * ... o them that would return to God by him, the great **peace-maker**, Ephesians 2:14-17. And this work he immediately ...
-
-### 7. `To-day`
-* **Description:** Splittable word (rejoins to valid word 'Today')
-* **Chapter:** *Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory*
-* **Contexts:**
-  * ... Hebrews 3:7, "Wherefore, as the Holy Ghost saith, **To-day** if ye will hear his voice;" and chapter 4:7, "Say ...
-
-### 8. `bare-foot`
-* **Description:** Splittable word (rejoins to valid word 'barefoot')
-* **Chapter:** *Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory*
-* **Contexts:**
-  * ... tions. So Isaiah was commanded to "walk naked and **bare-foot**," chapter 20:1-3; Jeremiah, to dispose of a "line ...
-
-### 9. `pre-signify`
-* **Description:** Splittable word (rejoins to valid word 'presignify')
-* **Chapter:** *Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory*
-* **Contexts:**
-  * ... y directed by the Holy Ghost by word or action to **pre-signify** their operation. So was it with Joshua when he co ...
-
-### 10. `praise-worthy`
-* **Description:** Splittable word (rejoins to valid word 'praiseworthy')
-* **Chapter:** *Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory*
-* **Contexts:**
-  * ... and all his actings, for then everything that is **praise-worthy** in the church must have been inquired into; for a ...
-
-### 11. `self-same`
-* **Description:** Splittable word (rejoins to valid word 'selfsame')
-* **Chapter:** *Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory*
-* **Contexts:**
-  * ... ll these things were wrought by "that one and the **self-same** Spirit, which divideth to every man severally as ...
-
-### 12. `in-being`
-* **Description:** Splittable word (rejoins to valid word 'inbeing')
-* **Chapter:** *Chapter 4 - Work of the Holy Spirit in and on the Human Nature of Christ*
-* **Contexts:**
-  * ... ness of grace, as unto its habitual residence and **in-being**, though the actual exercise of it was suspended f ...
-
-### 13. `broken-hearted`
-* **Description:** Splittable word (rejoins to valid word 'brokenhearted')
-* **Chapter:** *Chapter 4 - Work of the Holy Spirit in and on the Human Nature of Christ*
-* **Contexts:**
-  * ... ngs unto the meek; he hath sent me to bind up the **broken-hearted**, to proclaim liberty to the captives, and the ope ...
-
-### 14. `blood-shedding`
-* **Description:** Splittable word (rejoins to valid word 'bloodshedding')
-* **Chapter:** *Chapter 4 - Work of the Holy Spirit in and on the Human Nature of Christ*
-* **Contexts:**
-  * ... were the ways and means whereby, in his death and **blood-shedding**, — which was violent and by force inflicted on hi ...
-  * ... cious and victorious. Without these his death and **blood-shedding** had been no oblation. (2.) These were the things ...
-
-### 15. `corner-stone`
-* **Description:** Splittable word (rejoins to valid word 'cornerstone')
-* **Chapter:** *Chapter 5 - the General Work of the Holy Spirit in the New Creation*
-* **Contexts:**
-  * ... n the laying of the foundation and placing of the **corner-stone** of the earth in the old creation, "the morning st ...
-  * ... he laying of this foundation, and placing of this **corner-stone** in the new creation, all things sing together and ...
-
-### 16. `co-witnessing`
-* **Description:** Hyphenated word with unrecognized particles on both sides
-* **Chapter:** *Chapter 5 - the General Work of the Holy Spirit in the New Creation*
-* **Contexts:**
-  * ... υροῦντος τοῦ Θεοῦ σημείοις τε καὶ τέρασι," — "God **co-witnessing** by signs and wonders." He enabled the apostles to ...
-
-### 17. `over-solicitous`
-* **Description:** Splittable word (rejoins to valid word 'oversolicitous')
-* **Chapter:** *Chapter 3 - Corruption or Depravation of the Mind by Sin.*
-* **Contexts:**
-  * ... its propagation in others, yet need we not to be **over-solicitous** about it. This work and care the Holy Ghost hath ...
-
-### 18. `good-will`
-* **Description:** Splittable word (rejoins to valid word 'goodwill')
-* **Chapter:** *Chapter 4 - Life and Death, Natural and Spiritual, Compared.*
-* **Contexts:**
-  * ... use, of that which was without him, — namely, the **good-will** and power of God; but it was left to grow on no o ...
-
-### 19. `us-ward`
-* **Description:** Splittable word (rejoins to valid word 'usward')
-* **Chapter:** *Chapter 5 - the Nature, Causes, and Means of Regeneration.*
-* **Contexts:**
-  * ... w what is the exceeding greatness of his power to **us-ward** who believe, according to the working of his migh ...
-
-### 20. `non-improvement`
-* **Description:** Splittable word (rejoins to valid word 'nonimprovement')
-* **Chapter:** *Chapter 6 - the Manner of Conversion Explained in the Instance of Augustine*
-* **Contexts:**
-  * ... from God, he chargeth the want and guilt of their **non-improvement** on his natural blindness, his mind being not illu ...
-
-### 21. `good-will`
-* **Description:** Splittable word (rejoins to valid word 'goodwill')
-* **Chapter:** *Chapter 6 - the Manner of Conversion Explained in the Instance of Augustine*
-* **Contexts:**
-  * ... in and declare the love, grace, faithfulness, and **good-will** of God herein. In the due management and improvem ...
-
-### 22. `re-introduce`
-* **Description:** Splittable word (rejoins to valid word 'reintroduce')
-* **Chapter:** *Chapter 1 - the Nature of Sanctification*
-* **Contexts:**
-  * ... , it is in our own power to restore ourselves, to **re-introduce** the image of God into our souls, and that in a fa ...
-
-### 23. `self-same`
-* **Description:** Splittable word (rejoins to valid word 'selfsame')
-* **Chapter:** *Chapter 3 - Believers the Only Object of Sanctification*
-* **Contexts:**
-  * ... although he be himself but one, "the one and the **self-same** Spirit," and he himself is promised, given forth, ...
-
-### 24. `scape-goat`
-* **Description:** Splittable word (rejoins to valid word 'scapegoat')
-* **Chapter:** *Chapter 5 - the Filth of Sin Purged by the Spirit*
-* **Contexts:**
-  * ... hen, by the sacrifice of the sin-offering and the **scape-goat**, the whole congregation were purged from all thei ...
-
-### 25. `after-times`
-* **Description:** Splittable word (rejoins to valid word 'aftertimes')
-* **Chapter:** *Chapter 5 - the Filth of Sin Purged by the Spirit*
-* **Contexts:**
-  * ... tly from carnal hopes and foolish resolutions for **after-times**, as will set it at liberty from that watchful dil ...
-
-### 26. `honey-comb`
-* **Description:** Splittable word (rejoins to valid word 'honeycomb')
-* **Chapter:** *Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.*
-* **Contexts:**
-  * ... n thy statutes; they are sweeter unto me than the **honey-comb**." Where these three things concur, — where the mi ...
-
-### 27. `in-being`
-* **Description:** Splittable word (rejoins to valid word 'inbeing')
-* **Chapter:** *Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.*
-* **Contexts:**
-  * ... , apart from me) "ye can do nothing." The natural **in-being** of the vine and branches in each other is known u ...
-  * ... h the reason of it; and so is the way whereby the **in-being** of the branches in the vine is the cause and mean ...
-  * ... 'and ye are the branches.' And there is a mutual **in-being** between us; I am in you, and ye are in me, by vir ...
-
-### 28. `God-ward`
-* **Description:** Splittable word (rejoins to valid word 'Godward')
-* **Chapter:** *Chapter 7 - of the Acts and Duties of Holiness.*
-* **Contexts:**
-  * ... QUOTE]] "And such trust have we through Christ to **God-ward**: not that we are sufficient of ourselves to think ...
-
-### 29. `vain-glory`
-* **Description:** Splittable word (rejoins to valid word 'vainglory')
-* **Chapter:** *Chapter 1 - Necessity of Holiness From the Consideration of the Nature of God.*
-* **Contexts:**
-  * ... or other in all they do. Either superstition, or **vain-glory**, or selfishness, or merit, or one thing or other, ...
-
-### 30. `under-valuation`
-* **Description:** Splittable word (rejoins to valid word 'undervaluation')
-* **Chapter:** *Chapter 2 - Eternal Election a Cause of & Motive Unto Holiness.*
-* **Contexts:**
-  * ... n those things that God hath so manifestly put an **under-valuation** upon, in comparison of the least concernment of g ...
-
-### 31. `blood-shedding`
-* **Description:** Splittable word (rejoins to valid word 'bloodshedding')
-* **Chapter:** *Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.*
-* **Contexts:**
-  * ... culiar ones? If you find not these effects of the **blood-shedding** of Christ in and upon your souls and consciences, ...
-
----
+No anomalies found in this category.
 
 ## Punctuation Spacing Blemishes
 

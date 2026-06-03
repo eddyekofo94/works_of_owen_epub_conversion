@@ -274,7 +274,7 @@ The new engine:
 |---|---|---|---|---|
 | 1 | v1 | Populated | FULL | Cov 99.68 Greek 99.87 Heb 100.00 |
 | 2 | v2 | Populated | FULL | Cov 99.68 Greek 99.77 Heb 100.00 |
-| 3 | v3 | Populated | FULL | Cov 98.53 Greek 99.36 Heb 95.80 Anom 629 |
+| 3 | v3 | Populated | FULL | Cov 98.53 Greek 99.36 Heb 95.80 Anom 598 |
 | 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 |
 | 5 | v5 | Populated | FULL | Cov 99.69 Greek 99.73 Heb 99.19 |
 | 6 | v6 | Populated | FULL | Cov 99.54 Greek 100.00 Heb 100.00 |
@@ -287,7 +287,7 @@ The new engine:
 | 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 |
 | 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 |
 | 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 |
-| 16 | v16 | Populated | FULL | Cov 99.59 Greek 99.30 Heb 99.01 Anom 329 |
+| 16 | v16 | Populated | FULL | Cov 99.59 Greek 99.30 Heb 99.01 Anom 299 |
 
 ## Slash Commands (test-executor Skill)
 

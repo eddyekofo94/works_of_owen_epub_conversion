@@ -813,11 +813,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-02T22:21:39.126938+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub`
+**Last run:** 2026-06-03T11:37:15.167714+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/output/volume_3.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -829,7 +830,7 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 47 |
 | Spine items | 45 |
-| Embedded fonts | 14 |
+| Embedded fonts | 15 |
 | NAV links | 48 |
 | Greek chars / untagged | 4318 / 0 |
 | Hebrew chars / untagged | 1620 / 0 |
@@ -971,10 +972,11 @@ Validation:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-02T22:22:17.789134+00:00
+**Last run:** 2026-06-03T11:37:54.228813+00:00
 **Status:** WARN (9 warnings)
 
 Reports:

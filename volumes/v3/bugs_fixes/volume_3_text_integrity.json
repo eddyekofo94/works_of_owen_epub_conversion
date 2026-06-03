@@ -1,8 +1,8 @@
 {
   "volume": 3,
-  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/input/owen-v3.pdf",
-  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-02T22:22:17.789134+00:00",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/input/owen-v3.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/output/volume_3.epub",
+  "generated_at": "2026-06-03T11:37:54.228813+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [

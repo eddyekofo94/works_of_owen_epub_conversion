@@ -151,6 +151,18 @@ OVERRIDES = {
         'Hist. Ecclesiastes lib. 5': 'Hist. Eccles. lib. 5',
         'Euseb. Hist. Ecclesiastes lib. 7 cap. 29, 30': 'Euseb. Hist. Eccles. lib. 7 cap. 29, 30',
         'Socrat. Ecclesiastes Hist. lib. 2 cap. 24, 25': 'Socrat. Eccles. Hist. lib. 2 cap. 24, 25',
+        'in in odum': 'in modum',
+        'put to to give': 'put to, to give',
+        'discourse is is evident': 'discourse is, is evident',
+        'asserts it it is': 'asserts it, it is',
+        'for for that end': 'for that end',
+        'queastum facere solitua': 'quaestum facere solitus',
+        'which it is is inconsistent': 'which it is, is inconsistent',
+    },
+    'regex_replacements': {
+        r',,': ',',
+        r'xauni~am': 'familiam',
+        r'con~erendls': 'conferendis',
     },
 }
 

@@ -981,9 +981,9 @@ def convert_gideon_hebrew(encoded):
 FOOTNOTE_MARKER_RE = re.compile(r'\[f(\d+)\]')
 LOOSE_FOOTNOTE_MARKER_RE = re.compile(
     r'\[\s*f\s*(\d{1,3})\s*\]|'
-    r'(?<=[a-z])f\s*(\d{1,3})(?=[a-z])|'
+    r'(?<=[a-z])f(\d{1,3})(?=[a-z])|'
     r'(?<![A-Za-z])f\s*(\d{1,3})(?=[a-z])|'
-    r'(?<=[a-z])f\s*(\d{1,3})\b|'
+    r'(?<=[a-z])f(\d{1,3})\b|'
     r'(?<![A-Za-z])f\s*(\d{1,3})\b',
     re.I,
 )
@@ -2091,6 +2091,12 @@ a, .noteref, a.footnote-ref, a.fn-link {
     padding: 0.1em 0.2em; /* Easy-tap */
 }
 
+.noteref-glossary {
+    vertical-align: super;
+    font-size: 0.85rem;
+    padding: 0.1em 0.2em;
+}
+
 /* Modern Editorial Translation Link (Elegant Amber/Gold) */
 a.noteref-trans, .noteref-trans {
     color: #b8860b !important;
@@ -3114,6 +3120,12 @@ aside[epub\:type~="endnote"] {
     padding-bottom: 0.2em;
 }
 .colophon-section p {
+    text-indent: 0 !important;
+    text-align: left !important;
+    margin: 0 0 0.5em 0 !important;
+    font-size: 0.95em;
+}
+.colophon-text {
     text-indent: 0 !important;
     text-align: left !important;
     margin: 0 0 0.5em 0 !important;

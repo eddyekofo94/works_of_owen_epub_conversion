@@ -1,295 +1,9 @@
 {
   "volume": 16,
-  "total_words_audited": 259006,
-  "total_anomalies_count": 329,
+  "total_words_audited": 258018,
+  "total_anomalies_count": 299,
   "anomalies": {
-    "Hyphenation Anomalies": [
-      {
-        "target": "corner-stone",
-        "description": "Splittable word (rejoins to valid word 'cornerstone')",
-        "chapter": "Preface (The True Nature of a Gospel Church and Its Government)",
-        "contexts": [
-          "... nd holiness, wherein the Lord Jesus Christ is the corner-stone, Ephesians 2:20; Matthew 16:18. This profession i ..."
-        ]
-      },
-      {
-        "target": "scare-crow",
-        "description": "Splittable word (rejoins to valid word 'scarecrow')",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": [
-          "... count of the minute of wicked men in it is made a scare-crow to frighten men from attempting the reformation o ..."
-        ]
-      },
-      {
-        "target": "non-admission",
-        "description": "Splittable word (rejoins to valid word 'nonadmission')",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": [
-          "... sons, through the severity of the church in their non-admission of them, should be cast on a conjunction in super ..."
-        ]
-      },
-      {
-        "target": "pre-requisite",
-        "description": "Splittable word (rejoins to valid word 'prerequisite')",
-        "chapter": "Chapter 2 - Of the Formal Cause of a Particular Church.",
-        "contexts": [
-          "... sundry things which concur as remote causes, or pre-requisite conditions, unto this conjunction of believers i ..."
-        ]
-      },
-      {
-        "target": "non-institution",
-        "description": "Splittable word (rejoins to valid word 'noninstitution')",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": [
-          "... ion, unto what hath been pleaded before about the non-institution of any churches beyond particular congregations, ..."
-        ]
-      },
-      {
-        "target": "arch-apostle",
-        "description": "Splittable word (rejoins to valid word 'archapostle')",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": [
-          "... san bishops are, nor of an archdeacon, than of an arch-apostle, or of an archevangelist, or an archprophet. Howb ..."
-        ]
-      },
-      {
-        "target": "noon-day",
-        "description": "Splittable word (rejoins to valid word 'noonday')",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": [
-          "... is all one as to deny that the sun gives light at noon-day), is, as unto its right, by various degrees trans ..."
-        ]
-      },
-      {
-        "target": "re-delivery",
-        "description": "Splittable word (rejoins to valid word 'redelivery')",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": [
-          "... om of Christ, his just rejection out of it is the re-delivery of him into the visible kingdom of Satan; which i ..."
-        ]
-      },
-      {
-        "target": "re-admission",
-        "description": "Splittable word (rejoins to valid word 'readmission')",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": [
-          "... emn the opinions of the Novatians in refusing the re-admission of lapsed sinners into the church, upon repentanc ..."
-        ]
-      },
-      {
-        "target": "anti-evangelical",
-        "description": "Splittable word (rejoins to valid word 'antievangelical')",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": [
-          "... whom it is administered, and there is present an anti-evangelical order in its administration. 4. It is sufficie ..."
-        ]
-      },
-      {
-        "target": "there-with",
-        "description": "Splittable word (rejoins to valid word 'therewith')",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": [
-          "... d communion, unto the pope of Rome, investing him there-with as an article of faith, constituting him thereby ..."
-        ]
-      },
-      {
-        "target": "hedge-hog",
-        "description": "Splittable word (rejoins to valid word 'hedgehog')",
-        "chapter": "A Letter Concerining the Matter of the Present Excommunications",
-        "contexts": [
-          "... such thing at all. If a man should paint a rat or hedge-hog, and write over it that it is a lion, no man woul ..."
-        ]
-      },
-      {
-        "target": "CHURCH-CENSURES",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": [
-          "[[SUMMARY]] CONCERNING THE ADMINISTRATION OF CHURCH-CENSURES. Ques. 1. May a true church of Christ err or mis ...",
-          "... of Christ err or mistake in the administration of church-censures? ANS. A true church of Christ may err or mistake ...",
-          "... ist, and the utter impairing the authority of all church-censures, must needs ensue, if there be no way to rectify ..."
-        ]
-      },
-      {
-        "target": "like-wise",
-        "description": "Splittable word (rejoins to valid word 'likewise')",
-        "chapter": "Reflections on a Slanderous Libel",
-        "contexts": [
-          "... all that read and know laugh at with scorn. Such like-wise is the ridiculous story he tells, p. 66, of my or ..."
-        ]
-      },
-      {
-        "target": "SELF-EVIDENCING",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Treatises Concerning the Scriptures.",
-        "contexts": [
-          "OF THE DIVINE ORIGINAL, AUTHORITY, SELF-EVIDENCING LIGHT, AND POWER OF THE SCRIPTURES; WITH AN ..."
-        ]
-      },
-      {
-        "target": "touch-stone",
-        "description": "Splittable word (rejoins to valid word 'touchstone')",
-        "chapter": "The Prebends of Christ Church College in Oxford,",
-        "contexts": [
-          "... ain standard and measure of all doctrines, or the touch-stone of all translations. Now, concerning these thing ..."
-        ]
-      },
-      {
-        "target": "SELF-EVIDENCING",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "The Scriptures: an Answer to That Inquiry,",
-        "contexts": [
-          "OF THE DIVINE ORIGINAL, AUTHORITY. SELF-EVIDENCING LIGHT, AND POWER THE SCRIPTURES: with AN AN ..."
-        ]
-      },
-      {
-        "target": "in-being",
-        "description": "Splittable word (rejoins to valid word 'inbeing')",
-        "chapter": "Chapter 1 - The divine original of the Scripture the sole foundation of its authority \u2014 The or...",
-        "contexts": [
-          "... had a subsistence given unto it, or an effectual in-being, by the Spirit's entering into him. (Ver. 14.) No ..."
-        ]
-      },
-      {
-        "target": "ever-living",
-        "description": "Splittable word (rejoins to valid word 'everliving')",
-        "chapter": "Chapter 5 - Of the testimony of the Spirit \u2014 Traditions \u2014 Miracles.",
-        "contexts": [
-          "... ct our souls unto it, as the word and will of the ever-living, sovereign God and Judge of all. And if this be n ..."
-        ]
-      },
-      {
-        "target": "fore-mentioned",
-        "description": "Splittable word (rejoins to valid word 'forementioned')",
-        "chapter": "Chapter 6 - Consequential considerations, for the confirmation of the divine authority of the ...",
-        "contexts": [
-          "... o have the advantage of receiving the Word on the fore-mentioned account seem not only to persuade, and in a great ..."
-        ]
-      },
-      {
-        "target": "Ca-ari",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
-        "contexts": [
-          "... Vatablus, Mercer, Rivet, etc. Others contend that Ca-ari, \"as a lion,\" ought to be retained, repeating \u1f51\u03c0\u1f78 ..."
-        ]
-      },
-      {
-        "target": "Chal-dean",
-        "description": "Splittable word (rejoins to valid word 'Chaldean')",
-        "chapter": "Chapter 4 - General premises \u2014 Opinions prejudicial to the authority of the originals in the P...",
-        "contexts": [
-          "... ch before the captivity of Babylon, but it is the Chal-dean, the other being left to the Samaritans; that the ..."
-        ]
-      },
-      {
-        "target": "pre-existing",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
-        "contexts": [
-          "... if it were an arbitrary invention, limited to no pre-existing writing, been found out first and established as ..."
-        ]
-      },
-      {
-        "target": "Ben-lafrad",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
-        "contexts": [
-          "... ame Aben Ezra on Psalm 9:7 tells us of one Adonim Ben-lafrad, who, long before this R. Jehuda, found for in an ..."
-        ]
-      },
-      {
-        "target": "fly-leaf",
-        "description": "Splittable word (rejoins to valid word 'flyleaf')",
-        "chapter": "Prefatory Note (Chapter 2 - of the Formal Cause of a Particular Church.)",
-        "contexts": [
-          "... rs of the present edition of Owen's works. On the fly-leaf of the volume, which is beautifully written and c ..."
-        ]
-      },
-      {
-        "target": "meeting-house",
-        "description": "Splittable word (rejoins to valid word 'meetinghouse')",
-        "chapter": "Prefatory Note (Chapter 2 - of the Formal Cause of a Particular Church.)",
-        "contexts": [
-          "... where he mentions, that having come late into the meeting-house, after the service had begun, he had not been abl ..."
-        ]
-      },
-      {
-        "target": "blood-thirsty",
-        "description": "Splittable word (rejoins to valid word 'bloodthirsty')",
-        "chapter": "Sermon 1 - the Furnace of Divine Wrath.",
-        "contexts": [
-          "... lars mentioned; \u2014 to deliver us from the hands of blood-thirsty men; to divert the judgment ('I repented me of th ..."
-        ]
-      },
-      {
-        "target": "jaw-bone",
-        "description": "Splittable word (rejoins to valid word 'jawbone')",
-        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
-        "contexts": [
-          "... teeth with gravel; and he began to break out the jaw-bone of the terrible ones when they came to feed upon ..."
-        ]
-      },
-      {
-        "target": "eye-sore",
-        "description": "Splittable word (rejoins to valid word 'eyesore')",
-        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
-        "contexts": [
-          "... or my goods and possessions;\" he was a very great eye-sore to all the wicked inhabitants of the land, as Isa ..."
-        ]
-      },
-      {
-        "target": "watch-tower",
-        "description": "Splittable word (rejoins to valid word 'watchtower')",
-        "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
-        "contexts": [
-          "... ed, A lion: My lord, I stand continually upon the watch-tower in the daytime, and I am set in my ward whole nig ...",
-          "... and the corn of my floor.\" God sets him upon the watch-tower in a vision, and he seeth all sorts of creatures ...",
-          "... to reprove us, and we have set ourselves upon the watch-tower to see what we can answer him; for God must be an ..."
-        ]
-      },
-      {
-        "target": "over-compliant",
-        "description": "Splittable word (rejoins to valid word 'overcompliant')",
-        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
-        "contexts": [
-          "... nt upon the occasions of this life, and the other over-compliant with the temptations of life, sin and wickedness, ..."
-        ]
-      },
-      {
-        "target": "way-side",
-        "description": "Splittable word (rejoins to valid word 'wayside')",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": [
-          "... nd that attended unto with circumspection. Loose, way-side walkers are like way-side hearers; both will fail ...",
-          "... circumspection. Loose, way-side walkers are like way-side hearers; both will fail of what they seem to aim ..."
-        ]
-      },
-      {
-        "target": "Ammi-nadib",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
-        "contexts": [
-          "... I was aware, my heart made me as the chariots of Ammi-nadib,\" Cant. 6:12. Have not we found oftentimes that w ..."
-        ]
-      },
-      {
-        "target": "noon-day",
-        "description": "Splittable word (rejoins to valid word 'noonday')",
-        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
-        "contexts": [
-          "... and we grope as if we had no eyes: we stumble at noon-day as in the night.\" Our way is plain, our rule is p ..."
-        ]
-      },
-      {
-        "target": "non-compliance",
-        "description": "Splittable word (rejoins to valid word 'noncompliance')",
-        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
-        "contexts": [
-          "... e from us: \u2014 Love of the world, frowardness, or a non-compliance with the calls of providence, formality in spirit ..."
-        ]
-      }
-    ],
+    "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [
       {
         "target": "bands ,",
@@ -300,7 +14,7 @@
         ]
       },
       {
-        "target": "(  H",
+        "target": "(   H",
         "description": "Spaced opening parenthesis",
         "chapter": "Chapter 4 - the Officers of the Church.",
         "contexts": [
@@ -506,15 +220,31 @@
       {
         "target": "Son ?",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 3 - Arguments of two sorts \u2014 Inartificial arguments, by way of testimony to the truth ...",
+        "chapter": "Chapter 3.",
         "contexts": [
           "... , \"from the excellent glory\" \u2014 This is my beloved Son ?\" Yet Peter, who heard that voice, tells us that, ..."
         ]
       },
       {
+        "target": "( 5",
+        "description": "Spaced opening parenthesis",
+        "chapter": "Chapter 4.",
+        "contexts": [
+          "... is inaccessible to our understandings. So Isaiah, ( 57:15,) \"God inhabiteth eternity.\" So \u05e2\u05d8\u05b6\u05d7 \u05d0\u05d5\u05b9\u05e8 sai ..."
+        ]
+      },
+      {
+        "target": "( 2",
+        "description": "Spaced opening parenthesis",
+        "chapter": "Chapter 4.",
+        "contexts": [
+          "... ) \"Thou clothest thyself with light;\" and Daniel, ( 2:22,) \u05e2\u05b4\u05de\u05b5\u05d4 \u05e9\u05b0\u05c1\u05e8\u05b5\u05d0 \u05d5\u05bc\u05e0\u05b0\u05d4\u05b9\u05d9\u05e8\u05b8\u05d0, the \"light remainet ..."
+        ]
+      },
+      {
         "target": "1st ,",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 6 - Consequential considerations, for the confirmation of the divine authority of the ...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... njoyment in glory, there are these two parts: \u2014 1st , God's gracious communication of his love, goodnes ..."
         ]
@@ -522,7 +252,7 @@
       {
         "target": "d  ,",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 6 - Consequential considerations, for the confirmation of the divine authority of the ...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... s, etc., with the fruits of them, unto man; 2 d , The obedience of man unto God, in a way of gratit ..."
         ]
@@ -530,7 +260,7 @@
       {
         "target": "..",
         "description": "Duplicate period (double dot)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": [
           "... ey had so done, and how often they are so used, as.. and.. for.., and the like, when they might, if th ...",
           "... so done, and how often they are so used, as.. and.. for.., and the like, when they might, if they had ...",
@@ -538,9 +268,9 @@
         ]
       },
       {
-        "target": "f  )",
+        "target": "f   )",
         "description": "Spaced closing parenthesis",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": [
           "... hat purpose. This man (whom Thuanus takes notice of ) lived with Paulus Fagius, and assisted him in his ..."
         ]
@@ -548,7 +278,7 @@
       {
         "target": "Ans  .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... whole punctuation from the Tiberian Masoretes.\" Ans . It is very true that Elias was of that judgment; ..."
         ]
@@ -556,7 +286,7 @@
       {
         "target": "Eo .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... , stout, how, now. 8. Ui, uy Bui, juice. 9. Eo .Yeoman, people. How other diphthongs (which have ..."
         ]
@@ -646,7 +376,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 12 - Enoch's Walk With God.",
         "contexts": [
-          "... he greatest confluence of earthly mercies. Nor, 2dly . will he despond of finding rest and satisfaction ..."
+          "... the greatest confluence of earthly mercies. Nor, 2dly . will he despond of finding rest and satisfaction ..."
         ]
       },
       {
@@ -660,9 +390,33 @@
     ],
     "OCR & Bracket Residues": [
       {
+        "target": "al]so",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Chapter 4 - the Officers of the Church.",
+        "contexts": [
+          "... ed that persons so chosen, so submitted unto, be [al]so solemnly separated, dedicated unto, and confirme ..."
+        ]
+      },
+      {
+        "target": "know]edge",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Chapter 9 - of Deacons.",
+        "contexts": [
+          "... by the apostle, 1 Timothy 3:8-13. Upon the trial, know]edge, and approbation of them, with respect unto these ..."
+        ]
+      },
+      {
+        "target": "mal]administrations",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "A Discourse Concerning the Administration of Church Censures.",
+        "contexts": [
+          "... their peace and edification. Q. 3. How may such [mal]administrations be rectified? A. The rectifying such maladminist ..."
+        ]
+      },
+      {
         "target": "seem[ing",
         "description": "OCR residue containing stray opening bracket/paren",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": [
           "... atinus his Gale Rezeia, which must be set aside), seem[ing] to be wrested the most of them beside their inte ..."
         ]
@@ -683,15 +437,15 @@
         "description": "Unresolved patristic/classical citation reference (no translation found)",
         "chapter": "A Vindication of Two Passages in Irenaeus Against the Exception",
         "contexts": [
-          "... ceps vitae, prior omnium, et praecedens omnes. \" Lib. 1: cap. 18: \u039f\u03c3\u03bf\u03b9 \u03b3\u03ac\u03c1 \u03b5\u1f30\u03c3\u03b9 \u03c4\u03b1\u03cd\u03c4\u03b7\u03c2 \u03c4\u1fc6\u03c2 \u03b3\u03bd\u03ce\u03bc\u03b7\u03c2 \u03bc\u03c5\u03c3\u03c4\u03b1\u03b3\u03c9\u03b3\u03bf\u1f76, \u03c4\u03bf\u03c3\u03b1 ..."
+          "... nceps vitae, prior omnium, et praecedens omnes.\" Lib. 1: cap. 18: \u039f\u03c3\u03bf\u03b9 \u03b3\u03ac\u03c1 \u03b5\u1f30\u03c3\u03b9 \u03c4\u03b1\u03cd\u03c4\u03b7\u03c2 \u03c4\u1fc6\u03c2 \u03b3\u03bd\u03ce\u03bc\u03b7\u03c2 \u03bc\u03c5\u03c3\u03c4\u03b1\u03b3\u03c9\u03b3\u03bf\u1f76, \u03c4\u03bf\u03c3\u03b1 ..."
         ]
       },
       {
         "target": "lib. 1",
         "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
+        "chapter": "Chapter 2.",
         "contexts": [
-          "... editiones exigerentur et emendarentur, \" Exercit. lib. 1, cap. 3, p. 15. The truth is, he placed the Hebre ...",
+          "... editiones exigerentur et emendarentur,\" Exercit. lib. 1, cap. 3, p. 15. The truth is, he placed the Hebre ...",
           "... hey are all in particular considered by Glassius, lib. 1, tract. 1; but the whole matter is satisfactorily ...",
           "... im, and repeated again by Amama, Anti. Barb. Bib. lib. 1 p. 30, 31. Because this thing is much insisted o ..."
         ]
@@ -699,7 +453,7 @@
       {
         "target": "lib. Im",
         "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... mind of God but by their exposition, R. Azarias, lib. Imre Binah. cap. 59. If these reasons satisfy not an ..."
         ]
@@ -707,7 +461,7 @@
       {
         "target": "tract. 1",
         "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... ved. See par. 1 cap. 6. See also Glassius, lib. 1 tract. 1. De Textus Hebraei Puritate, who gives instances ..."
         ]
@@ -715,7 +469,7 @@
       {
         "target": "lib. 2",
         "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 8 - Of gathering various lections by the help of translations \u2014 The proper use and ben...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... d vitiated that it plainly appears to be another, lib. 2 De Verbo Dei, cap. 6. He that shall read and con ..."
         ]
@@ -1715,7 +1469,7 @@
       {
         "target": "3. ... 5.",
         "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Of Dipping.",
+        "chapter": "A Vindication of Two Passages in Irenaeus Against the Exception",
         "contexts": []
       },
       {
@@ -1751,205 +1505,205 @@
       {
         "target": "2. ... 21.",
         "description": "List sequence jump (skipped from 2 to 21)",
-        "chapter": "Chapter 1 - The divine original of the Scripture the sole foundation of its authority \u2014 The or...",
+        "chapter": "Chapter 1.",
         "contexts": []
       },
       {
         "target": "1. ... 119.",
         "description": "List sequence jump (skipped from 1 to 119)",
-        "chapter": "Chapter 4 - Innate arguments in the Scripture of its divine original and authority \u2014 Its self-...",
+        "chapter": "Chapter 4.",
         "contexts": []
       },
       {
         "target": "1. ... 4.",
         "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 1 - The occasion of this discourse \u2014 The danger of supposing corruptions in the origin...",
+        "chapter": "Chapter 1.",
         "contexts": []
       },
       {
         "target": "2. ... 26.",
         "description": "List sequence jump (skipped from 2 to 26)",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
+        "chapter": "Chapter 2.",
         "contexts": []
       },
       {
         "target": "5. ... 24.",
         "description": "List sequence jump (skipped from 5 to 24)",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
+        "chapter": "Chapter 2.",
         "contexts": []
       },
       {
         "target": "10. ... 15.",
         "description": "List sequence jump (skipped from 10 to 15)",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
+        "chapter": "Chapter 2.",
         "contexts": []
       },
       {
         "target": "12. ... 31.",
         "description": "List sequence jump (skipped from 12 to 31)",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
+        "chapter": "Chapter 2.",
         "contexts": []
       },
       {
         "target": "3. ... 13.",
         "description": "List sequence jump (skipped from 3 to 13)",
-        "chapter": "Chapter 2 - Of the purity of the originals \u2014 The \u03b1\u1f50\u03c4\u03cc\u03b3\u03c1\u03b1\u03c6\u03b1 of the Scripture lost \u2014 That of Mos...",
+        "chapter": "Chapter 2.",
         "contexts": []
       },
       {
         "target": "3. ... 7.",
         "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 3 - Of various lections in the Greek copies of the New Testament.",
+        "chapter": "Chapter 3.",
         "contexts": []
       },
       {
         "target": "2. ... 136.",
         "description": "List sequence jump (skipped from 2 to 136)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "27. ... 144.",
         "description": "List sequence jump (skipped from 27 to 144)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "144. ... 510.",
         "description": "List sequence jump (skipped from 144 to 510)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "21. ... 83.",
         "description": "List sequence jump (skipped from 21 to 83)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "83. ... 264.",
         "description": "List sequence jump (skipped from 83 to 264)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "1. ... 21.",
         "description": "List sequence jump (skipped from 1 to 21)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "6. ... 59.",
         "description": "List sequence jump (skipped from 6 to 59)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "2. ... 53.",
         "description": "List sequence jump (skipped from 2 to 53)",
-        "chapter": "Chapter 5 - The original of the points proposed to consideration in particular \u2014 The importanc...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
         "target": "6. ... 40.",
         "description": "List sequence jump (skipped from 6 to 40)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "1. ... 17.",
         "description": "List sequence jump (skipped from 1 to 17)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "8. ... 10.",
         "description": "List sequence jump (skipped from 8 to 10)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "10. ... 22.",
         "description": "List sequence jump (skipped from 10 to 22)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "2. ... 59.",
         "description": "List sequence jump (skipped from 2 to 59)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "3. ... 92.",
         "description": "List sequence jump (skipped from 3 to 92)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "4. ... 6.",
         "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "1. ... 5.",
         "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "1. ... 3.",
         "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "2. ... 28.",
         "description": "List sequence jump (skipped from 2 to 28)",
-        "chapter": "Chapter 6 - Arguments for the novelty of the Hebrew points proposed to consideration \u2014 The arg...",
+        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
         "target": "1. ... 40.",
         "description": "List sequence jump (skipped from 1 to 40)",
-        "chapter": "Chapter 7 - Of the \u05e7\u05b0\u05e8\u05b4\u05d9 \u05d5\u05bc\u05db\u05b0\u05ea\u05b4\u05d9\u05d1, their nature and original \u2014 The difference is in the conson...",
+        "chapter": "Chapter 7.",
         "contexts": []
       },
       {
         "target": "2. ... 22.",
         "description": "List sequence jump (skipped from 2 to 22)",
-        "chapter": "Chapter 7 - Of the \u05e7\u05b0\u05e8\u05b4\u05d9 \u05d5\u05bc\u05db\u05b0\u05ea\u05b4\u05d9\u05d1, their nature and original \u2014 The difference is in the conson...",
+        "chapter": "Chapter 7.",
         "contexts": []
       },
       {
         "target": "2. ... 950.",
         "description": "List sequence jump (skipped from 2 to 950)",
-        "chapter": "Chapter 8 - Of gathering various lections by the help of translations \u2014 The proper use and ben...",
+        "chapter": "Chapter 8.",
         "contexts": []
       },
       {
         "target": "10. ... 30.",
         "description": "List sequence jump (skipped from 10 to 30)",
-        "chapter": "Chapter 8 - Of gathering various lections by the help of translations \u2014 The proper use and ben...",
+        "chapter": "Chapter 8.",
         "contexts": []
       },
       {
         "target": "4. ... 11.",
         "description": "List sequence jump (skipped from 4 to 11)",
-        "chapter": "Chapter 8 - Of gathering various lections by the help of translations \u2014 The proper use and ben...",
+        "chapter": "Chapter 8.",
         "contexts": []
       },
       {
         "target": "11. ... 150.",
         "description": "List sequence jump (skipped from 11 to 150)",
-        "chapter": "Chapter 8 - Of gathering various lections by the help of translations \u2014 The proper use and ben...",
+        "chapter": "Chapter 8.",
         "contexts": []
       },
       {
         "target": "6. ... 41.",
         "description": "List sequence jump (skipped from 6 to 41)",
-        "chapter": "Chapter 8 - Of gathering various lections by the help of translations \u2014 The proper use and ben...",
+        "chapter": "Chapter 8.",
         "contexts": []
       },
       {

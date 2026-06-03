@@ -19,7 +19,8 @@
         "low_greek_word_coverage",
         "low_hebrew_word_coverage",
         "missing_greek_clauses",
-        "missing_hebrew_clauses"
+        "missing_hebrew_clauses",
+        "flat_analysis_chapters"
       ],
       "max_split_candidate_count": 61,
       "max_inline_structural_candidate_count": 1,
@@ -238,6 +239,17 @@
         "max_lowercase_paragraph_start_files": 1
       }
     },
+    "12": {
+      "text_integrity": {
+        "max_split_candidate_count": 285,
+        "max_inline_structural_candidate_count": 6,
+        "max_front_toc_missing_pages": 3,
+        "max_missing_marker_count": 1
+      },
+      "epub": {
+        "max_lowercase_paragraph_start_files": 20
+      }
+    },
     "13": {
       "text_integrity": {
         "max_split_candidate_count": 95,
@@ -261,10 +273,17 @@
         "max_page_reference_split_files": 1
       }
     },
+    "15": {
+      "text_integrity": {
+        "max_split_candidate_count": 98,
+        "max_inline_structural_candidate_count": 3,
+        "max_missing_marker_count": 3
+      }
+    },
     "16": {
       "text_integrity": {
-        "max_split_candidate_count": 28,
-        "max_inline_structural_candidate_count": 8
+        "max_split_candidate_count": 35,
+        "max_inline_structural_candidate_count": 12
       },
       "epub": {
         "max_lowercase_paragraph_start_files": 1

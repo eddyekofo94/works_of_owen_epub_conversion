@@ -103,6 +103,7 @@ OVERRIDES = {
     'text_replacements': {
         'Pelaglan': 'Pelagian',
         'Socimanism': 'Socinianism',
+        'without it it is': 'without it, it is',
     },
 }
 

@@ -188,6 +188,7 @@ OVERRIDES = {
         'Concerining': 'Concerning',
         'Lordìs Supper': "Lord's Supper",
         'lordìs supper': "lord's supper",
+        'throughout a!! generations': 'throughout all generations',
     },
     'regex_replacements': {
         r'for, — 1\. ': 'for, —\n\n1. ',

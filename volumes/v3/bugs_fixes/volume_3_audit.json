@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-02T22:21:39.126938+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/output/volume_3.epub",
+  "generated_at": "2026-06-03T11:37:15.167714+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 75,
-    "epub_size_bytes": 5101242,
+    "file_count": 76,
+    "epub_size_bytes": 5098959,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +23,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 66,
+    "manifest_count": 67,
     "spine_count": 45,
     "xhtml_count": 47,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 15,
     "language": {
       "greek_chars": 4318,
       "greek_untagged_chars": 0,

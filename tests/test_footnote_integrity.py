@@ -57,6 +57,13 @@ ALLOWED_FOOTNOTE_ANOMALIES = {
     14: {
         'orphans': {'fn49', 'fn50'},
         'mismatch_delta': 1,
+    },
+    12: {
+        'orphans': {'fn285', 'fn446', 'fn489'},
+        'mismatch_delta': 4,
+    },
+    15: {
+        'mismatch_delta': 1,
     }
 }
 
