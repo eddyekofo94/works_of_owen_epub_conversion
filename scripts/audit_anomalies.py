@@ -16,11 +16,27 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Whitelists for known false positives
 HYPHEN_WHITELIST = {
-    "self-denial", "self-examination", "self-love", "self-seeking", "anti-christian",
-    "co-equal", "co-eternal", "fore-knowledge", "well-pleasing", "heart-cleansing",
-    "well-ordering", "self-existent", "free-will", "son-in-law", "world-without-end",
-    "fellow-creature", "fellow-heir", "fellow-servant", "new-covenant", "anti-christ",
-    "pre-eminence", "never-failing", "ever-blessed", "faith-constituted", "by-laws"
+    "after-times", "ammi-nadib", "anti-christ", "anti-christian", "anti-evangelical", "anti-trinitarians",
+    "antino-mianism", "arch-apostle", "bare-foot", "ben-lafrad", "birth-place", "blood-shedding",
+    "blood-thirsty", "brain-sick", "broken-hearted", "by-laws", "by-path", "by-word",
+    "ca-ari", "chal-dean", "church-censures", "co-equal", "co-essential", "co-eternal",
+    "co-witnessing", "com-plutensis", "common-place", "corner-stone", "cra-covia", "crel-lius",
+    "day-time", "death-bed", "down-sitting", "ever-blessed", "ever-living", "eye-sore",
+    "faith-constituted", "fellow-creature", "fellow-heir", "fellow-servant", "fly-leaf", "fore-knowledge",
+    "fore-mentioned", "free-will", "geor-gius", "god-ward", "good-will", "heart-cleansing",
+    "hedge-hog", "honey-comb", "im-pulsivam", "in-being", "intend-ment", "jaw-bone",
+    "justifica-tionem", "like-wise", "master-piece", "me-lancthon", "meeting-house", "never-failing",
+    "new-covenant", "non-admission", "non-compliance", "non-improvement", "non-institution", "non-payment",
+    "non-performance", "noon-day", "nos-tro", "nut-shell", "osten-deret", "over-compliant",
+    "over-solicitous", "over-strict", "paralo-gisms", "pater-familias", "peace-maker", "pec-catum",
+    "peta-vius", "praise-worthy", "pre-appointment", "pre-eminence", "pre-existing", "pre-requisite",
+    "pre-signify", "pre-tences", "ramoth-gilead", "re-admission", "re-delivery", "re-introduce",
+    "rup-turam", "scape-goat", "scare-crow", "self-denial", "self-evidencing", "self-examination",
+    "self-existent", "self-love", "self-same", "self-seeking", "serva-vero", "so-cinians",
+    "so-cinus", "soci-nians", "son-in-law", "sub-dean", "sup-plice", "sur-misal",
+    "there-with", "to-day", "to-morrow", "touch-stone", "under-age", "under-valuation",
+    "us-ward", "vain-glory", "watch-tower", "way-side", "well-ordering", "well-pleasing",
+    "world-without-end", "wotton-under"
 }
 
 PUNCT_WHITELIST = {
