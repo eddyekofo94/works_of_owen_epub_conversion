@@ -2705,6 +2705,32 @@ def test_cardo_gentium_style_overrides():
     assert '"Cardo", "Gentium Plus", serif' not in styles_cardo
 
 
+def test_citation_abbrev_split_false_positive():
+    """Verify that citation abbreviations followed by spaces and numbers (e.g. Haer. 51.)
+    do not trigger false-positive paragraph splits in _split_rendered_inline_structural_html."""
+    from render import _split_rendered_inline_structural_html
+    text_html = (
+        'even in the entrance of the Gospel being confounded by John, as is affirmed by '
+        '<span lang="la" xml:lang="la">Epiphanius, Haer</span>. 51. '
+        '"Hieronymus de Seriptoribus Ecclesiasticis de Johanne." The same abomination'
+    )
+    result = _split_rendered_inline_structural_html(text_html)
+    assert len(result) == 1, f"Should not split paragraph on Haer. 51.: {result}"
+
+
+def test_nav_xhtml_double_wrap_prevention():
+    """Verify that generate_nav_xhtml generates a clean navigation document without duplicate
+    head or body double-wrap markers."""
+    from render import generate_nav_xhtml
+    toc_entries = [(1, "Contents", "contents.xhtml"), (2, "Chapter 1", "ch001.xhtml")]
+    nav_html = generate_nav_xhtml(toc_entries, "Volume 12")
+    # Verify it has exactly one head, body, and html set, and no nested duplicate headers
+    assert nav_html.count("<head>") == 1
+    assert nav_html.count("<body>") == 1
+    assert nav_html.count("Table of Contents") == 3  # One in title, one in h2, one in landmarks guide
+
+
+
 
 
 

@@ -605,6 +605,7 @@ def _split_rendered_inline_structural_html(text_html):
         before_html = text_html[pos:match.start()].strip()
         before_text = re.sub(r'<[^>]+>', ' ', before_html)
         before_text = re.sub(r'\s+', ' ', before_text).strip()
+        before_text = re.sub(r'\s+([.,;:?!])', r'\1', before_text)
         if not before_text or len(before_text) < 35:
             continue
         if re.search(r'\b(?:verse|verses|chap|chapter|john|romans|corinthians|timothy|peter)\.?\s*$', before_text, re.I):
@@ -5850,7 +5851,7 @@ def render_volume(vol_num: int, overrides: dict = None,
         media_type='application/xhtml+xml', lang='en',
     )
     nav_item.properties = ['nav']
-    nav_item.set_content(_make_xhtml('Table of Contents', nav_html).encode('utf-8'))
+    nav_item.set_content(nav_html.encode('utf-8'))
     nav_item.add_item(style_item)
     book.add_item(nav_item)
     
