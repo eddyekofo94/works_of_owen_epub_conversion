@@ -4502,7 +4502,7 @@ def _inject_apple_books_options(epub_path):
 # MAIN PIPELINE
 # ================================================================
 
-def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, config=None):
+def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, glossary_notes=None, config=None):
     from translation_db import FOOTNOTE_TRANSLATIONS
     fn_map = {f.fnum: f for f in footnotes.values()}
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
@@ -4543,6 +4543,24 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
                 f'<span class="fn-link">[{note["num"]}]</span> '
                 f'<span class="original-phrase">{tag_unicode_ranges(_html_escape(note["phrase"]))}</span>: '
                 f'{note["translation"]}'
+                f'</p>'
+                f'</aside>'
+            )
+            
+    if glossary_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
+            f'</div>'
+        )
+        for note in glossary_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">*</span> '
+                f'<strong>{note["term"]}</strong>: '
+                f'{note["definition"]}'
                 f'</p>'
                 f'</aside>'
             )
@@ -4798,6 +4816,24 @@ def format_treatise_title_page(page, limit_to_title=False):
         parts.append(f'<p class="descriptive">{_html_escape(text)}</p>')
         i += 1
 
+    if glossary_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
+            f'</div>'
+        )
+        for note in glossary_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">*</span> '
+                f'<strong>{note["term"]}</strong>: '
+                f'{note["definition"]}'
+                f'</p>'
+                f'</aside>'
+            )
+            
     parts.append('</section>')
     result = "\n".join(parts)
     if body_remainder:
@@ -4885,6 +4921,24 @@ def format_title_page(page, section_class="title-page", epub_type="titlepage", l
     for lvl, cls, texts in groups:
         content = '<br/>'.join(texts)
         parts.append(f'<{lvl}{cls}>{content}</{lvl}>')
+    if glossary_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
+            f'</div>'
+        )
+        for note in glossary_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">*</span> '
+                f'<strong>{note["term"]}</strong>: '
+                f'{note["definition"]}'
+                f'</p>'
+                f'</aside>'
+            )
+            
     parts.append('</section>')
     return '\n'.join(parts)
 
@@ -4985,6 +5039,24 @@ def build_toc_page_xhtml(pages):
                         # Analytical TOC style: descriptive paragraph after a heading
                         parts.append(f'<p class="contents-desc">{continuation}</p>')
 
+    if glossary_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
+            f'</div>'
+        )
+        for note in glossary_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">*</span> '
+                f'<strong>{note["term"]}</strong>: '
+                f'{note["definition"]}'
+                f'</p>'
+                f'</aside>'
+            )
+            
     parts.append('</section>')
     return '\n'.join(parts)
 
@@ -5512,6 +5584,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     toc_entries = []
     epub_chapters = []
     all_translation_notes = []
+    all_glossary_notes = []
     guide_landmarks = [] # was [('Title Page', 'title.xhtml')]
 
     conv_mode = 'FRONT_MATTER'
@@ -5656,6 +5729,36 @@ def render_volume(vol_num: int, overrides: dict = None,
         if local_notes:
             all_translation_notes.extend(local_notes)
 
+        # Dynamic Glossary Notes scanning (First Occurrence Only per chapter)
+        from technical_glossary import TECHNICAL_TERMS
+        local_glossary = []
+        glossary_counter = 0
+        
+        # Sort terms so longer ones match first
+        sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
+        for term, definition in sorted_terms:
+            # We use a single substitution pass so it only replaces the FIRST occurrence
+            pattern = re.compile(rf'\b({re.escape(term)})\b', re.I)
+            if pattern.search(body_html):
+                def replace_glossary(m):
+                    nonlocal glossary_counter
+                    glossary_counter += 1
+                    matched_str = m.group(1)
+                    # For glossary, we can just use an asterisk or dagger
+                    fn_link = f'<sup><a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}">*</a></sup>'
+                    local_glossary.append({
+                        'id': f"fngloss_{cid}_{glossary_counter}",
+                        'term': term,
+                        'definition': definition
+                    })
+                    return f"{matched_str}{fn_link}"
+                
+                # Replace only count=1
+                body_html = pattern.sub(replace_glossary, body_html, count=1)
+                
+        if local_glossary:
+            all_glossary_notes.extend(local_glossary)
+
         body = f'<section>{body_html}</section>'
         ch_item = epub.EpubHtml(
             title=ch_dict['title'], file_name=f'{cid}.xhtml', lang='en',
@@ -5671,8 +5774,8 @@ def render_volume(vol_num: int, overrides: dict = None,
 
     # ── Endnotes ─────────────────────────────────────────────────
     endnotes_item = None
-    if footnote_map or all_translation_notes:
-        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes, config=config)
+    if footnote_map or all_translation_notes or all_glossary_notes:
+        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes, glossary_notes=all_glossary_notes, config=config)
         endnotes_item = epub.EpubHtml(
             title='Footnotes', file_name='endnotes.xhtml', lang='en',
         )
