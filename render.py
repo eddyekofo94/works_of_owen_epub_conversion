@@ -5658,7 +5658,6 @@ def render_volume(vol_num: int, overrides: dict = None,
             all_translation_notes.extend(local_notes)
 
         # Dynamic Glossary Notes scanning (First Occurrence Only per chapter)
-        import re
         from technical_glossary import TECHNICAL_TERMS
         local_glossary = []
         glossary_counter = 0
