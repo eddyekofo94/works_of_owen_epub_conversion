@@ -49,22 +49,22 @@
   {
     "vol": 16,
     "rank": 3,
-    "score": 68.8,
-    "need": 68.8,
+    "score": 70.4,
+    "need": 70.4,
     "grade": "poor",
     "qa_level": "FULL",
-    "coverage": 99.58,
+    "coverage": 99.59,
     "greek_coverage": 99.3,
     "hebrew_coverage": 99.01,
-    "splits": 33,
-    "warnings": 1,
+    "splits": 28,
+    "warnings": 2,
     "errors": 0,
     "regressions": 0,
     "anomalies_count": 329,
     "font": "gentium-plus-2",
     "treatises": 5,
     "has_convert_py": true,
-    "text_replacements": 2,
+    "text_replacements": 1,
     "recommended_actions": [
       "review_ocr_anomalies"
     ]

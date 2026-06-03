@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-03T00:20:56Z
+Generated: 2026-06-03T09:17:04Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-03T00:20:56Z
 |------|-----|------|------|-----------|----------|-------|--------|-----------|----------|
 | 1 | 12 | 74.5 | arno-pro | 3 |    93.81 |    89.79 |    99.55 | 663 | FULL |
 | 2 | 3 | 72.0 | minion-pro | 1 |    98.53 |    99.36 |     95.8 | 629 | FULL |
-| 3 | 16 | 68.8 | gentium-plus-2 | 5 |    99.58 |     99.3 |    99.01 | 329 | FULL |
+| 3 | 16 | 70.4 | gentium-plus-2 | 5 |    99.59 |     99.3 |    99.01 | 329 | FULL |
 | 4 | 5 | 52.5 | brill-font | 2 |    99.69 |    99.73 |    99.19 | None | FULL |
 | 5 | 13 | 49.0 | baskerville | 5 |    89.75 |    96.19 |    100.0 | None | FULL |
 | 6 | 11 | 41.0 | minion-pro | 1 |    97.63 |     99.7 |    100.0 | None | FULL |
@@ -59,18 +59,18 @@ Generated: 2026-06-03T00:20:56Z
 - **Suspected anomalies:** 629
 - **Recommended:** 🔍 Review OCR anomalies
 
-### Volume 16 — Need: 68.8 (❌ Poor) — Rank 3
+### Volume 16 — Need: 70.4 (❌ Poor) — Rank 3
 
 - **Body font:** gentium-plus-2
 - **Source type:** ages_pdf
 - **Treatises:** 5
 - **QA level:** FULL
-- **convert.py:** Yes (113 lines, 2 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
-- **Word coverage:** 99.58
+- **convert.py:** Yes (198 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=2, footnotes=None
+- **Word coverage:** 99.59
 - **Greek coverage:** 99.30
 - **Hebrew coverage:** 99.01
-- **Splits:** 33
+- **Splits:** 28
 - **Regressions:** 0
 - **Suspected anomalies:** 329
 - **Recommended:** 🔍 Review OCR anomalies

@@ -287,7 +287,7 @@ The new engine:
 | 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 |
 | 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 |
 | 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 |
-| 16 | v16 | Populated | FULL | Cov 99.58 Greek 99.30 Heb 99.01 Anom 329 |
+| 16 | v16 | Populated | FULL | Cov 99.59 Greek 99.30 Heb 99.01 Anom 329 |
 
 ## Slash Commands (test-executor Skill)
 
