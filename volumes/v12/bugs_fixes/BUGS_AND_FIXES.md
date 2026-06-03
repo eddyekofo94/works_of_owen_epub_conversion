@@ -18,6 +18,9 @@
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
 | 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
+| 15 | Untranslated Latin and Greek quotes | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 16 | Chapter 3 summary layout formatting & drape typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 17 | Chapter 49 summary formatting & CONCENRING typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
 
 
 ---
@@ -86,6 +89,24 @@ See previous sessions.
 **Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
 **Status:** Pending surgical consolidation and merging of fragmented heads back into parent chapters.
 
+### 15. Untranslated Latin and Greek Quotes (Awaiting Validation)
+**Problem:** Several large Latin and Greek passages in Chapter 3 (the Seidelius quote, the Hermes Trismegistus/Mercurius quote, the Calicratides quote, and the Seneca quote) and Chapter 49 (quotes by Crellius, Socinus, Rutherford, Smalcius, Schlichting, etc.) were left untranslated. Also, a previous too-broad search-and-replace correction for `remain` -> `veniam` caused cross-contamination, corrupting English occurrences of `remain` across multiple chapters.
+**Fix:**
+- Added translations for all untranslated passages as `[Translated: “...”]` blocks immediately following the original language runs.
+- Targeted the `remain` -> `veniam` replacement specifically to the Latin phrase `delictorum nostrorum remain` -> `delictorum nostrorum veniam`, restoring all English occurrences of `remain` to their correct form.
+- Fixed OCR typos: `Cicerco` -> `Cicero`, `sub ape` -> `sub spe`, `ilium` -> `illum`, `putaut` -> `putant`, `Fragm, de Jus. tificat.` -> `Fragm. de Justificat.`, `Pater quam inepte` -> `Patet quam inepte`, `pater denique quam` -> `patet denique quam`, `adversari. orum` -> `adversariorum`, `efiiciens` -> `efficiens`.
+- Wrapped translations in lookahead guards `(?!\s*\[Translated:)` to prevent double-translation during Stage 1 and Stage 2 pipeline runs.
+
+### 16. Chapter 3 Summary Formatting and drape Typo (Awaiting Validation)
+**Problem:** Chapter 3's summary was split by the parser, sandwiching a raw paragraph (`MR BIDDLE'S question: —`) between two `[[SUMMARY]]` tokens, which rendered as a broken list block. Also contained the OCR typo `drape` instead of `shape`.
+**Fix:** Added a regex correction in `volumes/v12/convert.py` to format the summary under two clean, consecutive `[[SUMMARY]]` markers and corrected `drape` to `shape`.
+
+### 17. Chapter 49 Summary Formatting and CONCENRING Typo (Awaiting Validation)
+**Problem:** Chapter 49's summary had a typo `CONCENRING` instead of `CONCERNING` and a stray closing bracket `]` at the end of the text.
+**Fix:** Added a regex replacement to correct `CONCENRING` to `CONCERNING` and remove the stray bracket.
+
+---
+
 ## Remaining Work
 
 | Issue | Priority | Notes |
@@ -101,6 +122,7 @@ See previous sessions.
 - **2025-05-05**: Fixed portrait, frontispiece, cover format, NAV structure, spine order, id="creator"
 - **2025-05-05**: Fixed footnotes — fnref→noteref conversion, endnotes chapter generation
 - **2025-05-05**: Fixed portrait randomization, OPF manifest, title page design, NAV title splitting, CSS alignment, noteref color, duplicate footnote rules
+- **2026-06-03**: Translated untranslated Latin and Greek quotes in Chapter 3 and Chapter 49, fixed remain->veniam cross-contamination regression, corrected Chapter 3 and Chapter 49 summary formatting issues and typos (Awaiting Validation)
 
 ---
 

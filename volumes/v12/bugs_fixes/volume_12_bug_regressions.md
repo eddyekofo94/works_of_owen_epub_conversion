@@ -8,20 +8,20 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 276 | 61 | REGRESSION |
-| Inline structural marker candidates | 3 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 257 | 285 | OK |
+| Inline structural marker candidates | 6 | 6 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 3 | 3 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 3 | 0 | REGRESSION |
+| Missing enumerator markers | 1 | 1 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 1 | 0 | OK |
+| Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 0 | 0 | OK |
-| Missing Greek clauses | 0 | 16 | OK |
+| Missing Greek clauses | 20 | 16 | REGRESSION |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 15 | 0 | REGRESSION |
+| Lowercase page fragments | 15 | 20 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,17 +66,19 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch004.xhtml; previous: The Holy Ghost tells us that we are; next: And thus do all they become the house of Christ "who hold fast the confidence and the rejoicing of the hope firm unto the end," Hebrews 3:6. In this house of God there are daily bu
+- file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
+- file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
+- file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
 - file: EPUB/ch004.xhtml; previous: house of God there are daily builders, according as new living stones are to be fitted to their places therein; and continual oppositions have there been made thereto, and will be,; next: In this work of building are some employed by Jesus Christ, and will be so to the end of the world, Matthew 28:19, 20, Ephesians 4:11, 12; and some employ themselves at least in a 
 - file: EPUB/ch004.xhtml; previous: and not be believed. See Calvin's epistles, about the year 1561. But the man on this occasion being sent to the meeting at Pinckzow (as Statorius), he subscribes this confession: —; next: This did the wretched man think meet to do, that he might preserve the good esteem of his patron and reserve himself for a fitter opportunity of doing mischief; which also he did, 
-- file: EPUB/ch004.xhtml; previous:  of Grotius, time will evidence. Now, because this man's creed is such as is not to be paralleled, perhaps some may be contented to take it in his own words, which are as follow: —; next: To this issue did Satan drive the Socinian principles in this man and sundry others, even to a full and peremptory denial of the Lord that bought them. In answering this man, it fe
-- file: EPUB/ch004.xhtml; previous: is day the Papists continue in the same idolatry (to touch that by the way), I shall give you, for your refreshment, a copy of a verse or two, whose poetry does much outgo the old,; next: The other is of Franciscus de Mendoza, in Viridario Utriusque Eruditionis, lib. 2 prob. 2, as ensueth: —
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch040.xhtml; text: Now, both these were lost at once. The heavens were darkened when it might be expected, in an ordinary course, that the sun should have shone in its full beauty, Matthew 27:45, Luke 23:44, 45; and the earth lost its stab
+- file: EPUB/ch017.xhtml; text: The intendment of these questions being the application of what is spoken of Christ, either as mediator or as man, unto his person, to the exclusion of any other consideration, namely, that of a divine nature therein, th
+- file: EPUB/ch022.xhtml; text: The first they propose is taken from Hebrews 1:3, where the words spoken of Christ are, Φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως αὑτοῦ , [1] — "Upholding all things by the word of his power."
+- file: EPUB/ch032.xhtml; text: Of the same judgment with him is Volk. de Vera Relig. lib. 4:cap. 11: [2] de Christi invocatione, Schlichting. ad Meisner., pp. 206, 207, and generally the rest of them; which again how consistent it is with what they af
 - file: EPUB/ch040.xhtml; text: He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —
-- file: EPUB/ch047.xhtml; text: These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our 
+- file: EPUB/ch047.xhtml; text: I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is e
 
 ### Repeated word windows
 
@@ -86,11 +88,27 @@
 - phrase: the lord hath laid on him the iniquity of us
 - phrase: lord hath laid on him the iniquity of us all
 
+### Missing front CONTENTS pages
+
+- page: 3; sample: contents of vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined prefatory note by the editor dedication epistle dedicatory preface to the reader mr biddle's
+- page: 4; sample: 20 of the priestly office of christ how he was priest when he entered on his office and how he dischargeth it 21 of the death of christ
+- page: 5; sample: vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism written by biddle and the catechism
+
 ### Missing enumerator markers
 
 - marker: (1.)
-- marker: (3.)
-- marker: [4.]
+
+### Low Greek word coverage
+
+- {'word': 'ζητήσεις', 'pdf': 3, 'epub': 0}
+
+### Missing Greek clauses
+
+- page: 63; sample: αθανατους μεν πρωτα θεους νομω ως διακειται τιμα και σεβου ορκον επειθ
+- page: 748; sample: γινεται φθονος ερις βλασφημιαι υπονοιαι πονηραι παραδιατριβαι
+- page: 748; sample: το γινεσθαι πατερα παιδων λυπη φοβος φροντις
+- page: 749; sample: φιλει γαρ οκειν πραγμ ανηρ πρασσων μεγα
+- page: 749; sample: ως ουχ υπαρχων αλλα τιμωρουμενος
 
 ### Repeated phrase hits
 
