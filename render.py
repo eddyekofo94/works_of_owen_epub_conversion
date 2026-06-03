@@ -4547,24 +4547,6 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
                 f'</aside>'
             )
             
-    if glossary_notes:
-        parts.append(
-            f'<div class="translation-notes-header">'
-            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
-            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
-            f'</div>'
-        )
-        for note in glossary_notes:
-            parts.append(
-                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
-                f'<span class="fn-link">*</span> '
-                f'<strong>{note["term"]}</strong>: '
-                f'{note["definition"]}'
-                f'</p>'
-                f'</aside>'
-            )
-            
     parts.append('</section>')
     html = ''.join(parts)
     return _make_xhtml('Footnotes', html)
@@ -4816,24 +4798,6 @@ def format_treatise_title_page(page, limit_to_title=False):
         parts.append(f'<p class="descriptive">{_html_escape(text)}</p>')
         i += 1
 
-    if glossary_notes:
-        parts.append(
-            f'<div class="translation-notes-header">'
-            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
-            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
-            f'</div>'
-        )
-        for note in glossary_notes:
-            parts.append(
-                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
-                f'<span class="fn-link">*</span> '
-                f'<strong>{note["term"]}</strong>: '
-                f'{note["definition"]}'
-                f'</p>'
-                f'</aside>'
-            )
-            
     parts.append('</section>')
     result = "\n".join(parts)
     if body_remainder:
@@ -4921,24 +4885,6 @@ def format_title_page(page, section_class="title-page", epub_type="titlepage", l
     for lvl, cls, texts in groups:
         content = '<br/>'.join(texts)
         parts.append(f'<{lvl}{cls}>{content}</{lvl}>')
-    if glossary_notes:
-        parts.append(
-            f'<div class="translation-notes-header">'
-            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
-            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
-            f'</div>'
-        )
-        for note in glossary_notes:
-            parts.append(
-                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
-                f'<span class="fn-link">*</span> '
-                f'<strong>{note["term"]}</strong>: '
-                f'{note["definition"]}'
-                f'</p>'
-                f'</aside>'
-            )
-            
     parts.append('</section>')
     return '\n'.join(parts)
 
@@ -5039,24 +4985,6 @@ def build_toc_page_xhtml(pages):
                         # Analytical TOC style: descriptive paragraph after a heading
                         parts.append(f'<p class="contents-desc">{continuation}</p>')
 
-    if glossary_notes:
-        parts.append(
-            f'<div class="translation-notes-header">'
-            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
-            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
-            f'</div>'
-        )
-        for note in glossary_notes:
-            parts.append(
-                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
-                f'<span class="fn-link">*</span> '
-                f'<strong>{note["term"]}</strong>: '
-                f'{note["definition"]}'
-                f'</p>'
-                f'</aside>'
-            )
-            
     parts.append('</section>')
     return '\n'.join(parts)
 
@@ -5730,6 +5658,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             all_translation_notes.extend(local_notes)
 
         # Dynamic Glossary Notes scanning (First Occurrence Only per chapter)
+        import re
         from technical_glossary import TECHNICAL_TERMS
         local_glossary = []
         glossary_counter = 0
@@ -5738,6 +5667,7 @@ def render_volume(vol_num: int, overrides: dict = None,
         sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
         for term, definition in sorted_terms:
             # We use a single substitution pass so it only replaces the FIRST occurrence
+            # Match optional s or es for plurals
             pattern = re.compile(rf'\b({re.escape(term)}(?:s|es)?)\b', re.I)
             if pattern.search(body_html):
                 def replace_glossary(m):
