@@ -1,6 +1,6 @@
 {
   "volume": 16,
-  "status": "warn",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-vol16-fixes/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
@@ -13,7 +13,7 @@
     {
       "label": "Possible faulty paragraph splits",
       "observed": 28,
-      "budget": 61,
+      "budget": 28,
       "status": "ok",
       "samples": [
         {
@@ -71,8 +71,8 @@
     {
       "label": "Inline structural marker candidates",
       "observed": 8,
-      "budget": 6,
-      "status": "regression",
+      "budget": 8,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch004.xhtml",
@@ -512,7 +512,7 @@
     {
       "label": "Lowercase page fragments",
       "observed": 1,
-      "budget": 5,
+      "budget": 1,
       "status": "ok",
       "samples": [
         {

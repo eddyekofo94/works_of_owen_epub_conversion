@@ -113,10 +113,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-03T08:36:11.374738+00:00
+**Last run:** 2026-06-03T08:57:57.298851+00:00
 **EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** WARN (0 errors, 2 warnings)
 
@@ -158,10 +159,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-03T08:36:41.554132+00:00
+**Last run:** 2026-06-03T08:58:29.691721+00:00
 **Status:** WARN (11 warnings)
 
 Reports:

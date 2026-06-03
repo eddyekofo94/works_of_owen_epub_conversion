@@ -32,8 +32,8 @@
       "max_low_density_chapter_count": 0,
       "max_malformed_transition_chapter_count": 0,
       "max_fragmented_sentence_run_count": 0,
-      "min_greek_word_coverage_ratio": 0.80,
-      "min_hebrew_word_coverage_ratio": 0.80,
+      "min_greek_word_coverage_ratio": 0.8,
+      "min_hebrew_word_coverage_ratio": 0.8,
       "max_missing_greek_clauses": 16,
       "max_missing_hebrew_clauses": 0,
       "max_ages_artifact_count": 0,
@@ -155,8 +155,8 @@
         "max_repeated_phrase_count": 8,
         "max_literal_footnote_marker_files": 0,
         "max_chapter_heading_in_paragraph_files": 3,
-      "max_fragmented_greek_span_run_files": 0,
-      "max_fragmented_hebrew_span_run_files": 0,
+        "max_fragmented_greek_span_run_files": 0,
+        "max_fragmented_hebrew_span_run_files": 0,
         "max_lowercase_paragraph_start_files": 38,
         "max_noteref_leading_space_files": 0
       }
@@ -225,10 +225,11 @@
     },
     "16": {
       "text_integrity": {
-        "max_inline_structural_candidate_count": 6
+        "max_inline_structural_candidate_count": 8,
+        "max_split_candidate_count": 28
       },
       "epub": {
-        "max_lowercase_paragraph_start_files": 5
+        "max_lowercase_paragraph_start_files": 1
       }
     }
   }

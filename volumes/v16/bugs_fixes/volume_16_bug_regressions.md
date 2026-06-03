@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 16
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_16_audit.json`
 - Text integrity audit: `volume_16_text_integrity.json`
 
@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 28 | 61 | OK |
-| Inline structural marker candidates | 8 | 6 | REGRESSION |
+| Possible faulty paragraph splits | 28 | 28 | OK |
+| Inline structural marker candidates | 8 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 1 | 5 | OK |
+| Lowercase page fragments | 1 | 1 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
