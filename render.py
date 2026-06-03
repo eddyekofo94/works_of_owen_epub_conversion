@@ -4547,6 +4547,24 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
                 f'</aside>'
             )
             
+    if glossary_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Theological Glossary</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Definitions of technical theological and historical terms.</p>'
+            f'</div>'
+        )
+        for note in glossary_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">*</span> '
+                f'<strong>{note["term"]}</strong>: '
+                f'{note["definition"]}'
+                f'</p>'
+                f'</aside>'
+            )
+
     parts.append('</section>')
     html = ''.join(parts)
     return _make_xhtml('Footnotes', html)
