@@ -1844,7 +1844,18 @@ def _remove_adjacent_line_overlaps(text):
             out.append(line)
             continue
 
-        prev_words = words_with_spans(out[-1])
+        # Find the last non-empty line in out
+        last_non_empty = None
+        for prev_line in reversed(out):
+            if prev_line.strip():
+                last_non_empty = prev_line
+                break
+
+        if last_non_empty is None:
+            out.append(line)
+            continue
+
+        prev_words = words_with_spans(last_non_empty)
         curr_words = words_with_spans(line)
         max_overlap = min(8, len(prev_words), len(curr_words))
         trim_at = None
@@ -1892,6 +1903,66 @@ def _normalize_extracted_footnote_markers(text):
     return text
 
 
+def strip_false_ocr_bolds(text):
+    """Strip false OCR bold markers (**word**) that are not structural list or heading elements."""
+    if not text:
+        return text
+
+    def replace_bold(match):
+        full_match = match.group(0)
+        content = match.group(1)
+        clean_content = content.strip()
+
+        # Preserve structural list markers: e.g. "1.", "(1)", "[1]", "I.", "Q.", "Ans.", "First.", "1stly", "[1st.]"
+        # Handles optional brackets or parentheses around digit/ordinal/Roman/Letter
+        if re.match(
+            r'^[\(\[]?(?:(?!\d{4}\.)\d{1,4}(?:st|nd|rd|th)?(?:ly|dly)?|[IVXLCDM]+|[A-Z])\.?[\)\]]?$',
+            clean_content,
+            re.I
+        ):
+            return full_match
+        if re.match(r'^(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?$', clean_content, re.I):
+            return full_match
+        if re.match(r'^(?:First|Secondly|Thirdly|Fourthly|Fifthly|Lastly)\.?$', clean_content, re.I):
+            return full_match
+
+        # Otherwise, if it is a random word or phrase in the text, it is likely false OCR bold.
+        return content
+
+    # Use re.sub with a non-greedy match for **content**
+    return re.sub(r'\*\*(?!\*)([^\n*]+?)\*\*', replace_bold, text)
+
+
+def _is_terminal(text):
+    """Check if the text ends in a terminal punctuation, excluding abbreviations."""
+    if not text:
+        return False
+    text_clean = text.strip()
+    if not re.search(r'[.!?]"?\s*$', text_clean):
+        return False
+    # If it ends with a citation abbreviation, it's not a true terminal period
+    if CITATION_ABBREV_TRAIL_RE.search(text_clean):
+        return False
+    # Also check other common theological/patristic/Bible abbreviations
+    abbrevs = (
+        r'\b(?:Dr|Mr|Mrs|St|viz|i\.e|e\.g|[A-Z])\.\s*$'
+        r'|'
+        # Bible books
+        r'\b(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|Esth|Job|Ps|Prov|Eccl|Cant|'
+        r'Isa|Jer|Lam|Ezek|Dan|Hos|Joel|Amos|Obad|Jonah|Mic|Nah|Hab|Zeph|Hag|Zech|Mal|'
+        r'Matt|Mk|Lk|Jn|Acts|Rom|Cor|Gal|Eph|Phil|Col|Thess|Tim|Tit|Phlm|Heb|Jas|Pet|Jude|Rev)\.\s*$'
+        r'|'
+        # Patristic / Scholastic authors
+        r'\b(?:Aug|August|Austin|Chrys|Chrysost|Hierom|Jerome|Clem|Clement|Tertull|Orig|Origen|Cyp|Cyprian|'
+        r'Euseb|Athan|Athanas|Basil|Naz|Nazianz|Nyss|Ambr|Ambrose|Theod|Theodoret|Cyril|Hilar|Hilary|Leo|Bern|'
+        r'Bernard|Bell|Bellar|Soc|Socin|Faust|Faustus|Calv|Calvin|Epiph|Epiphan|Greg|Gregory|Plut|Cic|Sen|Tac|'
+        r'Plin|Arist|Plat|Justin|Iren|Alex|Alexand|Mart)\.\s*$'
+    )
+    if re.search(abbrevs, text_clean, re.I):
+        return False
+    return True
+
+
 def clean_text(text, config=None):
     """Sanitize extracted text before paragraph reconstruction."""
     if not text:
@@ -1903,6 +1974,8 @@ def clean_text(text, config=None):
     # 0a. Owen-specific OCR repairs (Issue 75/108)
     text = _repair_owen_ocr_errors(text, config=config)
     text = _normalize_extracted_footnote_markers(text)
+    # Normalize loose bracketed footnote letters: [ a] or [ a[ -> [a]
+    text = re.sub(r'\[\s*([a-z])\s*[\]\[]', r'[\1]', text, flags=re.I)
 
     # 0b. Normalize spaced-caps OCR and I WILL / I AM mangles
     text = _normalize_spaced_caps(text)
@@ -1963,6 +2036,7 @@ def clean_text(text, config=None):
     # 5. Remove adjacent ghost-layer duplicates and repeated line tails
     text = _remove_adjacent_duplicates(text)
     text = _remove_adjacent_line_overlaps(text)
+    text = strip_false_ocr_bolds(text)
     return clean_greek_text(text.strip())
 
 
@@ -2041,7 +2115,7 @@ def reconstruct_paragraphs(text):
         if not stripped:
             if current:
                 prev = current[-1]
-                ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
+                ends_terminal = _is_terminal(prev)
                 # Look ahead: if next non-empty line starts with connector, don't break
                 next_nonempty = None
                 for j in range(i + 1, len(lines)):
@@ -2063,7 +2137,7 @@ def reconstruct_paragraphs(text):
                 )
                 
                 # Issue 108/Blemish 8: Reference continuation awareness across blank lines
-                ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
+                ref_abbrevs = r'(?:p|pp|page|pages|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
                 prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
                 next_starts_with_ref_number = next_nonempty and bool(re.match(r'^\d{1,4}\b', next_nonempty))
                 
@@ -2103,7 +2177,7 @@ def reconstruct_paragraphs(text):
                     current[-1] = prev + stripped
                     continue
 
-                ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
+                ref_abbrevs = r'(?:p|pp|page|pages|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
                 prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
                 starts_with_ref_number = bool(re.match(r'^\d{1,4}\.\s+', stripped))
                 if prev_is_ref_abbrev and starts_with_ref_number:
@@ -2137,7 +2211,19 @@ def reconstruct_paragraphs(text):
                     current.append(stripped)
                     continue
 
-                ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
+                # Bible book abbreviation followed by Roman or Arabic chapter/verse marker
+                prev_is_book_abbrev = bool(re.search(
+                    r'\b(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|Esth|Job|Ps|Prov|Eccl|Cant|'
+                    r'Isa|Jer|Lam|Ezek|Dan|Hos|Joel|Amos|Obad|Jonah|Mic|Nah|Hab|Zeph|Hag|Zech|Mal|'
+                    r'Matt|Mk|Lk|Jn|Acts|Rom|Cor|Gal|Eph|Phil|Col|Thess|Tim|Tit|Phlm|Heb|Jas|Pet|Jude|Rev)\.\s*$',
+                    prev, re.I
+                ))
+                is_ref_start = bool(re.match(r'^(?:[ivxlcdm]+|\d+)\b', stripped, re.I))
+                if prev_is_book_abbrev and is_ref_start:
+                    current.append(stripped)
+                    continue
+
+                ends_terminal = _is_terminal(prev)
                 is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
                 is_comma_continuation = bool(re.search(r',\s*$', prev))
 
@@ -2176,7 +2262,7 @@ def reconstruct_paragraphs(text):
 
         if current:
             prev = current[-1]
-            ends_terminal = bool(re.search(r'[.!?]"?\s*$', prev))
+            ends_terminal = _is_terminal(prev)
             starts_lower = bool(re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', stripped))
             is_dangling = bool(DANGLING_CONNECTOR_RE.search(prev))
             is_semantic_connector = bool(SEMANTIC_CONNECTOR_RE.match(stripped))
@@ -2186,7 +2272,7 @@ def reconstruct_paragraphs(text):
             starts_with_scripture = bool(re.match(rf'^(?:[1-3]\s+)?(?:{SCRIPTURE_BOOK_RE})\b', stripped, re.I))
             starts_with_bare_ref = bool(re.match(r'^\d+:\d+', stripped))
             
-            ref_abbrevs = r'(?:p|pp|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
+            ref_abbrevs = r'(?:p|pp|page|pages|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
             prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
             starts_with_ref_number = bool(re.match(r'^\d{1,4}\b', stripped))
             prev_ends_with_number_period = bool(re.search(r'\d+\.\s*$', prev))
@@ -2251,6 +2337,14 @@ def _paragraph_needs_numeric_continuation(prev, current):
         return False
 
     prev_clean = prev.strip()
+    
+    # Mid-sentence dangling connectors, commas, or hyphens always indicate continuation
+    if (
+        bool(DANGLING_CONNECTOR_RE.search(prev_clean))
+        or bool(re.search(r',\s*$', prev_clean))
+        or bool(re.search(r'-\s*$', prev_clean))
+    ):
+        return True
     if re.search(
         r'\b(?:p|pp|sec|chap|vol|cf|see|ibid|id|op|cit|fol|col|liv|aen|hist)\.?\s*$',
         prev_clean,
@@ -2402,8 +2496,7 @@ def _paragraph_needs_text_continuation(prev, current):
     if (prev.count('\u201c') > prev.count('\u201d')) or (prev.count('"') % 2 != 0):
         return True
 
-    if not re.search(r'[.!?]"?\s*$', prev.strip()):
-
+    if not _is_terminal(prev):
         return True
     if re.search(r'\b(?:verse|verses|chap|chapter)[.,]?\s*$', prev, re.I):
         return True
@@ -2685,7 +2778,7 @@ def post_process_paragraphs(paragraphs):
                 if (
                     trimmed != part
                     or _is_reference_continuation(cleaned[-1], part)
-                    or not re.search(r'[.!?]"?\s*$', cleaned[-1].strip())
+                    or not _is_terminal(cleaned[-1])
                     or re.match(r'^(?:\*\*)?\d+(?:st|nd|rd|th)\b\s+', part)
                 ):
                     cleaned[-1] = f"{cleaned[-1]} {trimmed}".strip()

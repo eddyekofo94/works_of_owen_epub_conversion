@@ -1,0 +1,283 @@
+v14: 63 citations
+
+======================================================================
+COMPREHENSIVE INLINE CITATION AUDIT — JOHN OWEN WORKS
+======================================================================
+  Total citation instances:     63
+  Already resolved:             1  (1%)
+  Self-references (Owen):       0
+  Unresolved — author found:    41
+  Unresolved — no author:       21
+
+By abbreviation type:
+    lib.:  52
+    epist.:  9
+    homil.:  1
+    haer.:  1
+
+Unresolved by volume:
+    v14:  62
+
+----------------------------------------------------------------------
+CITATION DETAILS:
+----------------------------------------------------------------------
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VOLUME 14
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ch030  [Clement of Alexandria]
+    CITE:  'lib. 7'
+    WORK:  Stromata (Miscellanies)
+    CTX:   ...ror. That others of them took the same course, is testified by Clemens, Stromat.«lib. 7», Augustin. Lib. de Ovib. cap. 15, and s...
+
+  ch030  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...κδεξαμένων τοὺς ἅμα πᾶσι πιστευθέντας εῖναι ζείους λόγους, τὸ γενέσθαι αἱρέσεις,«lib. 3»Con. Cel, cap. 1; — "When many were conv...
+
+  ch031  [Aristotle]
+    CITE:  'lib. 7'
+    CTX:   ...e. And Aristotle thought it worth while to remember out of Hesiod, Moral. Nicom.«lib. 7», that, — Φήμη δ οὔ τις πάμπαν ἀπόλλυται...
+
+  ch031  [Aristotle]
+    CITE:  'lib. 9 cap. 26'
+    CTX:   ...om you have to do; like the bonassus that Aristotle informs us of Hist. Animal.,«lib. 9 cap. 26»; which, being as big as a bull, but hav...
+
+  ch032  [UNKNOWN]
+    CITE:  'lib. 6'
+    CTX:   ...to deserve it." Of the same mind are most of you (see Andrad. Orthodox. Explic.«lib. 6», Bagus de Merit. Op., lib. 1 cap. 9), t...
+
+  ch032  [UNKNOWN]
+    CITE:  'lib. 1 cap. 9'
+    CTX:   ...mind are most of you (see Andrad. Orthodox. Explic. lib. 6, Bagus de Merit. Op.,«lib. 1 cap. 9»), though I can assure you Paul was not,...
+
+  ch032  [Robert Bellarmine]
+    CITE:  'lib. 5'
+    CTX:   ...ore now of the conclusion made in this matter by your great champion Bellarmine,«lib. 5», De Justificat., cap. 7. "Propter," sai...
+
+  ch033  [UNKNOWN]
+    CITE:  'lib. 19'
+    CTX:   ...pius, Hist. Goth. 1:3.  Concerning which action, saith Sigonius de Imper. Occid.«lib. 19»: "Urbs Romae, incolis omnibus amotis, p...
+
+  ch033  [UNKNOWN]
+    CITE:  'lib. 2 cap. 2'
+    CTX:   ...your refusal to admit those of that church; the story whereof you have in Beda,«lib. 2 cap. 2». I know it may be rationally replied th...
+
+  ch034  [UNKNOWN]
+    CITE:  'lib. 2, cap.\n\n7'
+    CTX:   ...s of great use for you, and indispensably he-cessary for your defense, De Idol.,«lib. 2, cap.
+
+7». St Peter, he tells us, insinuates some...
+
+  ch034  [Augustine of Hippo]
+    CITE:  'lib. 28'
+    WORK:  Confessions
+    CTX:   ...s So your own learned Vives confesseth of many of you, in August. de Civit. Dei,«lib. 28»cap. ult. "Multi Christiani," saith he,...
+
+  ch034  [Clement of Alexandria]
+    CITE:  'lib. 8'
+    CTX:   ...ct heresy," or way of religion, among the Jews. And Clemens Alexandrinus, Strom.«lib. 8», calls Christian religion αἵρεσιν ἀρίστ...
+
+  ch034  [Eusebius of Caesarea]
+    CITE:  'lib. 5 cap. 22-25'
+    WORK:  Ecclesiastical History
+    CTX:   ...Asia, called together for the same purpose by Polycrates, Euseb. Eccleas. Hist.,«lib. 5 cap. 22-25». This is an early instance of a conside...
+
+  ch034  [Ambrose of Milan]
+    CITE:  'Epist. 27'
+    CTX:   ...nishment of the persons mentioned; so doth Ambrose declare himself to have done,«Epist. 27»; as did the rest of the sober, godly bi...
+
+  ch034  [Cyprian of Carthage]
+    CITE:  'Epist. ad Cornel'
+    CTX:   ...before, in reference unto some actings of Cornelius, the predecessor of Stephen,«Epist. ad Cornel». Though the pretensions ot Cornelius an...
+
+  ch034  [UNKNOWN]
+    CITE:  'lib. 4 cap. 2, 3'
+    CTX:   ...n in no case err in those things which appertain unto faith," De Romans Pontif.,«lib. 4 cap. 2, 3». What a blind that is "of teaching the...
+
+  ch034  [Sozomen]
+    CITE:  'lib. 4 cap. 15'
+    WORK:  Ecclesiastical History
+    CTX:   ...did he not subscribe to _Arianism?_ Sozomen tells you expressly that he did so,«lib. 4 cap. 15»; and so doth Athanasius, Epist. ad Soli...
+
+  ch034  [Athanasius of Alexandria]
+    CITE:  'Epist. ad Soli'
+    CTX:   ...omen tells you expressly that he did so, lib. 4 cap. 15; and so doth Athanasius,«Epist. ad Soli»tarios, giving the reason why he did so,...
+
+  ch034  [UNKNOWN]
+    CITE:  'lib. 9 cap. 6'
+    CTX:   ...hat is your faith, or rather misbelief, in this matter. Hence Azorius, Institut.«lib. 9 cap. 6», tells us that "<span lang="la" xml:lan...
+
+  ch034  [Gregory of Nazianzus]
+    CITE:  'lib. 7'
+    CTX:   ...n of them is expressly condemned by Gregory the Great, in an epistle to Serinus,«lib. 7»epist. 111, and lib. 9 epist. 9. The Gre...
+
+  ch034  [Gregory of Nazianzus]
+    CITE:  'epist. 111'
+    CTX:   ...em is expressly condemned by Gregory the Great, in an epistle to Serinus, lib. 7«epist. 111», and lib. 9 epist. 9. The Greek church...
+
+  ch034  [Gregory of Nazianzus]
+    CITE:  'lib. 9'
+    CTX:   ...condemned by Gregory the Great, in an epistle to Serinus, lib. 7 epist. 111, and«lib. 9»epist. 9. The Greek church condemned it,...
+
+  ch034  [Gregory of Nazianzus]
+    CITE:  'epist. 9'
+    CTX:   ...ed by Gregory the Great, in an epistle to Serinus, lib. 7 epist. 111, and lib. 9«epist. 9». The Greek church condemned it, in a sy...
+
+  ch036  [Gregory of Nazianzus]
+    CITE:  'lib. 1 cap. 4'
+    CTX:   ...of God, I have declared; with that of one Basilius, out of Gregory's Dialogues,«lib. 1 cap. 4», whom he confesseth to have been a magi...
+
+  ch037  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...ny the first part of this assertion; so doth Andradius, Defens. Concil. Trident.«lib. 3». "Neque enim," saith he, "<span lang="l...
+
+  ch037  [UNKNOWN]
+    CITE:  'lib. 2'
+    CTX:   ...t thereunto, to believe the things that are contained in them." Hence Cochlaeus,«lib. 2». De Authoritate Ecclesiastes et Script....
+
+  ch037  [UNKNOWN]
+    CITE:  'lib. 1'
+    CTX:   ...ius Groningen. De Potestat. Ecclesiastes et Epist. ad Jacob. Hock. Alliacens. in«lib. 1»:Sentent.  Artic. 3; Gerson Exam. Dec. p...
+
+  ch037  [Clement of Alexandria]
+    CITE:  'lib. 4'
+    CTX:   ...nts? Clemens Alexand. Strom. vii., speaks fully to our purpose; as he doth also,«lib. 4», where he plainly affirms that the chur...
+
+  ch037  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...κρατορικῆς, — as we also do; Strom  4. To this purpose speaks Salvianus de Gub.,«lib. 3», "<span lang="la" xml:lang="la">Alia om...
+
+  ch037  [Augustine of Hippo]
+    CITE:  'lib. 6 cap. 5'
+    CTX:   ...saving assent unto the truth proposed unto it. Thus Austin, in his Confessions,«lib. 6 cap. 5», "<span lang="la" xml:lang="la">Persuas...
+
+  ch037  [John Chrysostom]
+    CITE:  'Homil. 33'
+    CTX:   ...ssage out of Chrysostom, which fully confirms all that I have asserted; it is in«Homil. 33», in Act. Apost. cap. 15 Τί οῦν, saith h...
+
+  ch038  [Eusebius of Caesarea]
+    CITE:  'lib. 2 cap. 25'
+    CTX:   ...aken up upon the credit and report of one or two persons; as Eusebius manifests,«lib. 2 cap. 25».  Whether Dionysius Corinthius or Papia...
+
+  ch038  [Eusebius of Caesarea]
+    CITE:  'lib. i'
+    CTX:   ...false, and easily disproved. This computation is ascribed to Eusebius in Chron.«lib. i».; but it is evidently an addition of Je...
+
+  ch038  [Eusebius of Caesarea]
+    CITE:  'lib. 3 cap. 1'
+    CTX:   ...ia, which certainly are not provinces of Europe; in which places Eusebius, Hist.«lib. 3 cap. 1», Origen, and all the ancients, agree th...
+
+  ch042  [Gregory of Nazianzus]
+    CITE:  'lib. 4'
+    CTX:   ...of Gregory himself: for your better information you may do well to consult him,«lib. 4»epist. 32, 36, 38; and sundry other inst...
+
+  ch042  [Gregory of Nazianzus]
+    CITE:  'epist. 32, 36, 38'
+    CTX:   ...gory himself: for your better information you may do well to consult him, lib. 4«epist. 32, 36, 38»; and sundry other instances may be give...
+
+  ch043  [UNKNOWN]
+    CITE:  'lib. 1 cap. 4'
+    CTX:   ...Epistola." Pighius, another champion of your church (Ecclesiastical Hierarchies,«lib. 1 cap. 4»), after he hath given many reasons to p...
+
+  ch043  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...on to be true, because the saying is defended by Hosius, De Authoritat. Script.,«lib. 3», who adds unto it of his own: "Revera n...
+
+  ch043  [UNKNOWN]
+    CITE:  'lib. 2'
+    CTX:   ...espect do you bear unto it! And the fore-mentioned Andradius, Defens. Con. Trid.«lib. 2», to the same purpose:  [[BLOCKQUOTE]] "...
+
+  ch046  [Bernard of Clairvaux]
+    CITE:  'Epist. 42'
+    CTX:   ...ery same instances are given by Theodoret, Oecumenius, and Theophylact. Bernard,«Epist. 42», ad Archiepisc. Senonena, meets with yo...
+
+  ch046  [Socrates Scholasticus]
+    CITE:  'lib. 1 cap. 28'
+    CTX:   ...istrate invested with supreme authority, both in the case of Athanasius, Socrat.«lib. 1 cap. 28», and cap. 34, Athan. Apol. 2, as also o...
+
+  ch046  [Eusebius of Caesarea]
+    CITE:  'lib. 10 cap. 5'
+    WORK:  Ecclesiastical History
+    CTX:   ...t. lib. 1 cap. 28, and cap. 34, Athan. Apol. 2, as also of the Donatists, Euseb.«lib. 10 cap. 5», August. Epist. 162, 166, and Advers....
+
+  ch046  [Augustine of Hippo]
+    CITE:  'Epist. 162, 166'
+    CTX:   ...ap. 34, Athan. Apol. 2, as also of the Donatists, Euseb. lib. 10 cap. 5, August.«Epist. 162, 166», and Advers.  Crescon lib. 3 cap. 17; w...
+
+  ch046  [Augustine of Hippo]
+    CITE:  'lib. 3 cap. 17'
+    WORK:  Letters
+    CTX:   ...Donatists, Euseb. lib. 10 cap. 5, August. Epist. 162, 166, and Advers.  Crescon«lib. 3 cap. 17»; whereunto innumerable instances in his...
+
+  ch046  [Robert Bellarmine]
+    CITE:  'lib. 5'
+    CTX:   ...ath an absolute supreme dominion over the whole world. This opinion, Bellarmine,«lib. 5», De Pont, cap. 1, confesseth to be main...
+
+  ch046  [UNKNOWN]
+    CITE:  'lib. 1 cap. 9'
+    CTX:   ...that you give both swords to the pope, and that over and over; whence Carerius,«lib. 1 cap. 9», affirms that it is the common opinion...
+
+  ch046  [UNKNOWN]
+    CITE:  'lib. 1 cap. 28'
+    CTX:   ...them without their leave, if they transgress, or to pay any tribute, De Cleric.«lib. 1 cap. 28». They are all reserved to the power and...
+
+  ch047  [UNKNOWN]
+    CITE:  'lib. 1 cap. 4'
+    CTX:   ...agree not in the time wherein the matter mentioned in it should fall out. Beda,«lib. 1 cap. 4», assigns it unto the year 156, which wa...
+
+  ch047  [UNKNOWN]
+    CITE:  'lib. 3'
+    CTX:   ...or what I said. And what if I had minded you of the words of Salvian, De Provid.«lib. 3»: "<span lang="la" xml:lang="la">Quemcun...
+
+  ch047  [UNKNOWN]
+    CITE:  'lib. 2 cap. 2'
+    CTX:   ...e place unto its authority in things of very small weight and amount. Bed. Hist.«lib. 2 cap. 2», Concil. Anglic. p. 188. The sixth gene...
+
+  ch047  [Gregory of Nazianzus]
+    CITE:  'lib. 8'
+    CTX:   ...success. See Sigibert Chron. anno 1046; Platina, Vit.  Greg. VI.; Sigon. de Reg.«lib. 8». From that time forward until the Refor...
+
+  ch049  [Robert Bellarmine]
+    CITE:  'lib. 1 cap. 2'
+    CTX:   ...nsible thing to be offered unto God be changed and plainly destroyed," De Miss.,«lib. 1 cap. 2»which you esteem the substance of your b...
+
+  ch049  [UNKNOWN]
+    CITE:  'lib. 10 cap. 19'
+    CTX:   ...it doth consist. Some of your discrepant opinions are given us by your Azorius,«lib. 10 cap. 19»: "Sunt," saith he,  [[BLOCKQUOTE]] "<sp...
+
+  ch051  [Theodoret of Cyrrhus]
+    CITE:  'lib. 1'
+    CTX:   ...f images into their worship, with the adoration of them. Theodoret. Haeret. sub.«lib. 1», tells us that Simon Magus gave his own...
+
+  ch051  [Irenaeus of Lyon]
+    CITE:  'lib. 1 cap. 23'
+    CTX:   ...is own image and that of Selene to be worshipped by his followers. And Irenaeus,«lib. 1 cap. 23», that the followers of Basilides used i...
+
+  ch051  [Epiphanius of Salamis]
+    CITE:  'lib. 1'
+    CTX:   ...lly by Pontius Pilate; and this they adored. And so doth Epiphanius also, tom. 2«lib. 1», Haer. 27. Carpocrates procured the ima...
+
+  ch051  [Epiphanius of Salamis]
+    CITE:  'Haer. 27'
+    CTX:   ...ontius Pilate; and this they adored. And so doth Epiphanius also, tom. 2 lib. 1,«Haer. 27». Carpocrates procured the images of Chr...
+
+  ch051  [Clement of Alexandria]
+    CITE:  'lib. 6'
+    CTX:   ...gans against them for professing an imageless religion. Clemens Alexand., Strom.«lib. 6», plainly and openly confesseth and test...
+
+  ch051  [Constantine I]
+    CITE:  'lib. 2'
+    CTX:   ...erine council I have before told you. Lactantius, in his Institut. ad Constant.,«lib. 2», by a happy anticipation, answers all t...
+
+  ch051  [Constantine I]
+    CITE:  'lib. 9 cap. 6'
+    CTX:   ...urch, 3 p. q. 25, ae. 3, which Azorius says is the constant judgment of divines,«lib. 9 cap. 6»; as also the exposition of the Tridenti...
+
+  ch051  [Eusebius of Caesarea]
+    CITE:  'lib. 7 cap. 18'
+    CTX:   ...s, the first beginning of their use arising from heathens, as Eusebius declares,«lib. 7 cap. 18». But if you intend your Roman Catholic...
+
+  ch051  [Seneca]
+    CITE:  'Epist. 33'
+    CTX:   ...a Pompilius, the Roman Solon, admitted not the use of them. Seneca decries them,«Epist. 33»; and Macrobius denies that antiquity ma...

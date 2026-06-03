@@ -8,14 +8,14 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 92 | 61 | REGRESSION |
-| Inline structural marker candidates | 8 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 92 | 95 | OK |
+| Inline structural marker candidates | 8 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 0 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 0 | 0 | OK |
+| Missing enumerator markers | 0 | 6 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
@@ -30,15 +30,15 @@
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 2 | 7 | OK |
+| Repeated phrase hits | 3 | 7 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
-| Chapter headings rendered as paragraphs | 2 | 0 | REGRESSION |
-| Overlong headings containing body prose | 2 | 0 | REGRESSION |
+| Chapter headings rendered as paragraphs | 1 | 2 | OK |
+| Overlong headings containing body prose | 2 | 2 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
 | Fragmented Hebrew span-run files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 0 | 0 | OK |
+| Lowercase page fragments | 10 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -92,13 +92,21 @@
 
 - file: combined_text; text: eshcol a cluster of the fruit of canaan
 - file: combined_text; text: a review of the true nature of schism
+- file: combined_text; text: chapter 3 a review of the charger's preface
 
 ### Chapter headings rendered as paragraphs
 
-- file: EPUB/ch016.xhtml; text: Chapter 4
 - file: EPUB/ch020.xhtml; text: Chapter 11
 
 ### Overlong headings containing body prose
 
 - file: EPUB/ch049.xhtml; text: [Inconsistent expressions of Parker in regard to the power of the magistrate and the rights of conscience — The design of his discourse to prove the magistrate's authority to gover
 - file: EPUB/ch050.xhtml; text: [Alleged power of the magistrate over the conscience in matters of morality refuted — Distinction between moral virtue and grace — Meaning of the terms — Four propositions of Parke
+
+### Lowercase page fragments
+
+- file: EPUB/ch003.xhtml; text: obliged servant in Jesus Christ, our common Master
+- file: EPUB/ch004.xhtml; text: will be mounting. In the matter concerning which I propose my weak essay, some wo
+- file: EPUB/ch007.xhtml; text: and again,
+- file: EPUB/ch009.xhtml; text: and Jeremiah 20:9, "His word was in mine heart as a burning fire shut up in my bo
+- file: EPUB/ch011.xhtml; text: to which add that of the apostle,

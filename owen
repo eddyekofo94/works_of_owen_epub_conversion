@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: ./owen <volume> [args]"
+    echo "Example: ./owen v1 --render-only"
+    exit 1
+fi
+
+VOLUME=$1
+shift
+
+if [ ! -f "volumes/${VOLUME}/convert.py" ]; then
+    echo "Error: Volume script volumes/${VOLUME}/convert.py not found."
+    exit 1
+fi
+
+python3 "volumes/${VOLUME}/convert.py" "$@"

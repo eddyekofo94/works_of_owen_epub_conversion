@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Owen Works — Academic Translation Audit Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: rgba(20, 26, 46, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            
+            /* Status Badges */
+            --color-gold-start: #f59e0b;
+            --color-gold-end: #d97706;
+            --color-clean: #10b981;
+            --color-near-clean: #3b82f6;
+            --color-warning: #f97316;
+            --color-critical: #ef4444;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, #f3f4f6, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 45px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-num.gold {
+            background: linear-gradient(135deg, var(--color-gold-start), var(--color-gold-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Leaderboard Table */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        tr:nth-child(1) .rank-badge {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #0b0f19;
+        }
+        tr:nth-child(2) .rank-badge,
+        tr:nth-child(3) .rank-badge,
+        tr:nth-child(4) .rank-badge,
+        tr:nth-child(5) .rank-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .vol-link {
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .vol-link:hover {
+            color: #3b82f6;
+        }
+
+        /* Custom Status Badges */
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-gold {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.15));
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .status-clean {
+            background: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .status-near {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .status-warning {
+            background: rgba(249, 115, 22, 0.1);
+            color: #f97316;
+            border: 1px solid rgba(249, 115, 22, 0.25);
+        }
+
+        .status-critical {
+            background: rgba(239, 68, 68, 0.1);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.25);
+        }
+
+        .indicator-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: currentColor;
+            display: inline-block;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>John Owen Works</h1>
+            <div class="subtitle">Academic Translation & Patristic Citation Leaderboard. Ranked from best to worst, evaluating substantial Greek, Hebrew, and Latin prose/verse baselines.</div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-num gold">5 / 16</div>
+                <div class="stat-label">Fully Clean Volumes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">95%</div>
+                <div class="stat-label">Footnote Translation Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">12</div>
+                <div class="stat-label">Total Unmapped Fns</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">59</div>
+                <div class="stat-label">Total Unmapped Body Quotes</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Academic Coverage Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 80px;">Rank</th>
+                        <th>Volume</th>
+                        <th style="text-align: center;">Unresolved Footnotes</th>
+                        <th style="text-align: center;">Unresolved Body Quotes</th>
+                        <th style="text-align: center;">Total Remaining</th>
+                        <th style="text-align: right;">Coverage Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank-badge">1</span></td>
+                        <td><a href="#" class="vol-link">Volume 12: The Gospel Defended</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 800; color: #fbbf24;">0</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-gold">
+                                <span class="indicator-dot"></span>Golden Baseline
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">2</span></td>
+                        <td><a href="#" class="vol-link">Volume 1: Christologia & Meditations</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 800; color: #10b981;">0</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-clean">
+                                <span class="indicator-dot"></span>Clean Baseline
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">3</span></td>
+                        <td><a href="#" class="vol-link">Volume 6: Temptation and Sin</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 800; color: #10b981;">0</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-clean">
+                                <span class="indicator-dot"></span>Clean Baseline
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">4</span></td>
+                        <td><a href="#" class="vol-link">Volume 7: Spiritual-Mindedness</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 800; color: #10b981;">0</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-clean">
+                                <span class="indicator-dot"></span>Clean Baseline
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">5</span></td>
+                        <td><a href="#" class="vol-link">Volume 9: Sermons to the Nation</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #10b981;">0</td>
+                        <td style="text-align: center; font-weight: 800; color: #10b981;">0</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-clean">
+                                <span class="indicator-dot"></span>Clean Baseline
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">6</span></td>
+                        <td><a href="#" class="vol-link">Volume 3: Pneumatologia (Books I-V)</a></td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">1</td>
+                        <td style="text-align: center; font-weight: 800; color: #3b82f6;">1</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-near">
+                                <span class="indicator-dot"></span>Near Complete
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">7</span></td>
+                        <td><a href="#" class="vol-link">Volume 5: Doctrine of Justification</a></td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">1</td>
+                        <td style="text-align: center; font-weight: 800; color: #3b82f6;">1</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-near">
+                                <span class="indicator-dot"></span>Near Complete
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">8</span></td>
+                        <td><a href="#" class="vol-link">Volume 2: Communion with God</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">2</td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 800; color: #3b82f6;">2</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-near">
+                                <span class="indicator-dot"></span>Near Complete
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">9</span></td>
+                        <td><a href="#" class="vol-link">Volume 8: Sermons and Tracts</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">1</td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">3</td>
+                        <td style="text-align: center; font-weight: 800; color: #3b82f6;">4</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-near">
+                                <span class="indicator-dot"></span>Near Complete
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">10</span></td>
+                        <td><a href="#" class="vol-link">Volume 15: Church Government</a></td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #f97316;">5</td>
+                        <td style="text-align: center; font-weight: 800; color: #f97316;">5</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-warning">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">11</span></td>
+                        <td><a href="#" class="vol-link">Volume 4: Reason of Faith & Gifts</a></td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #f97316;">6</td>
+                        <td style="text-align: center; font-weight: 800; color: #f97316;">6</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-warning">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">12</span></td>
+                        <td><a href="#" class="vol-link">Volume 14: True Church & Liturgies</a></td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #f97316;">6</td>
+                        <td style="text-align: center; font-weight: 800; color: #f97316;">6</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-warning">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">13</span></td>
+                        <td><a href="#" class="vol-link">Volume 16: Tracts & Walton Controversy</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">3</td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">4</td>
+                        <td style="text-align: center; font-weight: 800; color: #f97316;">7</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-warning">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">14</span></td>
+                        <td><a href="#" class="vol-link">Volume 13: Schism and Fellowship</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #3b82f6;">1</td>
+                        <td style="text-align: center; font-weight: 600; color: #f97316;">7</td>
+                        <td style="text-align: center; font-weight: 800; color: #f97316;">8</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-warning">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">15</span></td>
+                        <td><a href="#" class="vol-link">Volume 10: The Death of Death</a></td>
+                        <td style="text-align: center; font-weight: 600; color: #f97316;">5</td>
+                        <td style="text-align: center; font-weight: 600; color: #f97316;">6</td>
+                        <td style="text-align: center; font-weight: 800; color: #ef4444;">11</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-critical">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge">16</span></td>
+                        <td><a href="#" class="vol-link">Volume 11: The Saints' Perseverance</a></td>
+                        <td style="text-align: center; font-weight: 600;">0</td>
+                        <td style="text-align: center; font-weight: 600; color: #ef4444;">12</td>
+                        <td style="text-align: center; font-weight: 800; color: #ef4444;">12</td>
+                        <td style="text-align: right;">
+                            <span class="status-pill status-critical">
+                                <span class="indicator-dot"></span>Requires Sweep
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+v5: 45 citations
+
+======================================================================
+COMPREHENSIVE INLINE CITATION AUDIT — JOHN OWEN WORKS
+======================================================================
+  Total citation instances:     45
+  Already resolved:             0  (0%)
+  Self-references (Owen):       0
+  Unresolved — author found:    21
+  Unresolved — no author:       24
+
+By abbreviation type:
+    lib.:  32
+    epist.:  8
+    serm.:  2
+    orat.:  1
+    ep.:  1
+    dial.:  1
+
+Unresolved by volume:
+    v5:  45
+
+----------------------------------------------------------------------
+CITATION DETAILS:
+----------------------------------------------------------------------
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VOLUME 5
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ch004  [UNKNOWN]
+    CITE:  'lib. 6'
+    CTX:   ...pheta dicit in psalmo, 'Si iniquitates attends Domine, quis sustinebit'</span>",«lib. 6»in  Isaiah 13:6, 7; — "When the day of j...
+
+  ch004  [Jerome (Hieronymus)]
+    CITE:  'lib. 2'
+    CTX:   ...inced of sinful miscarriages in the sight of men; as they are charged by Jerome,«lib. 2»Dialog.; and by Austin, lib. 2 contra Ju...
+
+  ch004  [Augustine of Hippo]
+    CITE:  'lib. 2'
+    CTX:   ...the sight of men; as they are charged by Jerome, lib. 2 Dialog.; and by Austin,«lib. 2»contra Julian., cap. 8. Such persons are...
+
+  ch004  [UNKNOWN]
+    CITE:  'Epist. 31'
+    CTX:   ...Unum bonum est, quod beatae vitae causa et firmamentum est, sibi fidere", Senec.«Epist. 31». Hence, also, is the internal sanctifyi...
+
+  ch004  [Robert Bellarmine]
+    CITE:  'lib. 5 cap. 7'
+    WORK:  On Justification
+    CTX:   ...totam in sola misericordia Dei et benignitate reponere", Bellar. de Justificat.,«lib. 5 cap. 7», prop. 3;  — "By reason of the uncertai...
+
+  ch004  [Gregory of Nyssa]
+    CITE:  'Orat. 2'
+    CTX:   ...the same purpose: Μεταθεὶς γὰρ πρὸς ἑαυτὸν τὸν τῶν ἡμῶν ἁμαρτιῶν ἀπεργασάμενος,«Orat. 2»in Cant.; — "He has transferred unto him...
+
+  ch004  [Bernard of Clairvaux]
+    CITE:  'Epist. 190'
+    CTX:   ...found in them), but by grace, whereby all sin is blotted out." So Bernard also,«Epist. 190», ad Innocent: —  [[BLOCKQUOTE]] "<span...
+
+  ch004  [UNKNOWN]
+    CITE:  'lib. 2 cap. 7'
+    CTX:   ...iam; vel nos justos esse per Christi justitiam nobis imputatam", De Justificat.,«lib. 2 cap. 7»;  — an objection, doubtless, unreasonab...
+
+  ch004  [UNKNOWN]
+    CITE:  'lib. 2, cap. 10'
+    CTX:   ...nobis donentur et applicentur; ac si nos ipsi Deo satisfecissemus". De Justif.,«lib. 2, cap. 10»;  — "It were not absurd, if any one sho...
+
+  ch004  [Bernard of Clairvaux]
+    CITE:  'Epist. ad Innocent. 190'
+    CTX:   ...ourselves had satisfied God." And this he confirms with that saying of Bernard,«Epist. ad Innocent. 190»,  [[BLOCKQUOTE]] "Nam 'si unus pro omni...
+
+  ch004  [UNKNOWN]
+    CITE:  'lib. 2, cap. 1'
+    CTX:   ...different from one another, reckoning that of Osiander for one, De Justificat.,«lib. 2, cap. 1». But whereas he knew that the imaginati...
+
+  ch004  [Horace]
+    CITE:  'Ep. 202, 209'
+    CTX:   ...rrores magici, miracula, sagae Nocturni lemures, portentaque Thessala," — (Hor.,«Ep. 202, 209».) were the principal objects of their c...
+
+  ch008  [UNKNOWN]
+    CITE:  'lib. 2'
+    CTX:   ...im by whom he was adopted, which, what it is, is well declared by Budaeus, Cajus«lib. 2», F. de Adopt. De Arrogatione loquens: "...
+
+  ch008  [UNKNOWN]
+    CITE:  'Epist. 2, 29'
+    CTX:   ...nt (nor, it may be, in any other author) but by him. And he uses it expressly, 1«Epist. 2, 29», and chap. 3, 7, where these words, Ο π...
+
+  ch009  [Robert Bellarmine]
+    CITE:  'lib. 2 cap. 16'
+    CTX:   ...ut James treats of the second justification; which is by good works. So Bellar.,«lib. 2 cap. 16», and lib 4 cap. 18. And it is the expre...
+
+  ch010  [UNKNOWN]
+    CITE:  'lib. 2 cap. 15'
+    CTX:   ...n any one is denominated righteous from habitual righteousness, (De Justificat.,«lib. 2 cap. 15»); but is forced to attempt the proof of...
+
+  ch011  [UNKNOWN]
+    CITE:  'lib. 18 cap. 1'
+    CTX:   ...incorrupta rerum fides, magno authori suo imputate", Senec. ad Mart.  And Plin.,«lib. 18 cap. 1», in his apology for the earth, our comm...
+
+  ch011  [UNKNOWN]
+    CITE:  'lib. 4 cap. 10'
+    CTX:   ...ris omnibus imputatur, ac si omnes idem peccatum patravissent", De Amiss. Grat.,«lib. 4 cap. 10»; — "The sin of Adam is so imputed unto...
+
+  ch012  [Leo the Great]
+    CITE:  'Serm. 17'
+    CTX:   ...tc., Montacut. Origin. Ecclesiast.  The ancients speak to the same purpose. Leo.«Serm. 17»:  [[BLOCKQUOTE]] "<span lang="la" xml:l...
+
+  ch012  [UNKNOWN]
+    CITE:  'Serm. 16'
+    CTX:   ...acit esse quae nostra sunt, nostra faceret esse quae sua sunt</span>";  and also«Serm. 16»[[BLOCKQUOTE]] "<span lang="la" xml:lang...
+
+  ch012  [Augustine of Hippo]
+    CITE:  'Epist. 120'
+    CTX:   ...orum suorum voce clamavit</span>".  And so speaks Augustine to the same purpose,«Epist. 120», ad Honoratum,  [[BLOCKQUOTE]] "Audimus...
+
+  ch012  [UNKNOWN]
+    CITE:  'lib. 3 cap. 33'
+    CTX:   ...ipso recapitulatus est; unde a Paulo typus futuri dictus est ipse Adam</span>",«lib. 3 cap. 33». And again,  [[BLOCKQUOTE]] "<span lang...
+
+  ch012  [Cyprian of Carthage]
+    CITE:  'Epist. 62'
+    CTX:   ...ul of the first Adam was the soul of Christ, it is charged on him". And Cyprian,«Epist. 62», on bearing about the administration of...
+
+  ch012  [Eusebius of Caesarea]
+    CITE:  'lib. 10 cap. 1'
+    CTX:   ...ed in him." Eusebius speaks many things to this purpose, Demonstrate.  Evangeli.«lib. 10 cap. 1». Expounding those words of the psalmist...
+
+  ch012  [Robert Bellarmine]
+    CITE:  'lib. 7 cap. 7'
+    WORK:  On the Loss of Grace and State of Sin
+    CTX:   ...nae," or "obligationem ad poenam," as Bellarmine distinguishes. De Amiss. Grat.,«lib. 7 cap. 7», with respect unto Christ the latter on...
+
+  ch012  [UNKNOWN]
+    CITE:  'lib. 5'
+    CTX:   ...a praefectis esse ac suae quique partis tutandae reus sit", Liv. De Bello Punic.«lib. 5»30;  — that every captain should so take...
+
+  ch012  [UNKNOWN]
+    CITE:  'lib. 4'
+    CTX:   ...aut aliquibus ministeriis contigissent, alienae culpae rei trucidarentur", B.P.,«lib. 4»22;  — should be guilty of the fault of...
+
+  ch012  [UNKNOWN]
+    CITE:  'lib. 8, cap. 3'
+    CTX:   ...So Quintilian informs us, in his discourse of the use of obsolete and new words,«lib. 8, cap. 3»,  [[BLOCKQUOTE]] "<span lang="la" xml:l...
+
+  ch012  [Robert Bellarmine]
+    CITE:  'lib. 2'
+    CTX:   ...lt of sin that makes any one to be truly a sinner.  This is urged by Bellarmine,«lib. 2», De Justificat., not for its own sake,...
+
+  ch013  [Faustus Socinus]
+    CITE:  'lib. 4 cap. 2-4'
+    WORK:  On Jesus Christ the Savior
+    CTX:   ...ssion of sins on the part of God". This is pleaded for by Socinus, De Servatore,«lib. 4 cap. 2-4»; and by others it is also made use of....
+
+  ch013  [Faustus Socinus]
+    CITE:  'lib. 4 cap. 2-5'
+    WORK:  On Jesus Christ the Savior
+    CTX:   ...or faith on ours." These things I have transcribed out of Socinus, De Servatore,«lib. 4 cap. 2-5»; which I would not have done but that I...
+
+  ch013  [UNKNOWN]
+    CITE:  'lib. 5 cap. 18'
+    CTX:   ...llius nostra etiam inobedientia esset</span>", De Amiss. Grat. et Stat. Peccat.,«lib. 5 cap. 18». And elsewhere, that the actual sin of...
+
+  ch014  [Gregory of Nazianzus]
+    CITE:  'lib. 9, cap. 14'
+    CTX:   ...t he should be righteous?" Job 15:14-16; 4:18,19. Hence says Gregory, in Job. 9,«lib. 9, cap. 14», "Ut saepe diximus omnis justitia human...
+
+  ch018  [UNKNOWN]
+    CITE:  'Epist. 200'
+    CTX:   ...et ait; 'per legem cognitio peccati'".  And to the same purpose he speaks again,«Epist. 200»,  [[BLOCKQUOTE]] "Non solum illa opera...
+
+  ch020  [UNKNOWN]
+    CITE:  'lib. 2 cap. 10'
+    CTX:   ...antur et applicantur, ad si nos ipsi Deo stisfecissimus</span>", De Justificat.,«lib. 2 cap. 10»;  — "Christ is said to be our righteous...
+
+  ch022  [UNKNOWN]
+    CITE:  'Dial. 3'
+    CTX:   ...that believe unto the justification of life. The sum of it is given by Theodore,«Dial. 3»"<span lang="la" xml:lang="la">Vide, quo...
+
+  ch022  [UNKNOWN]
+    CITE:  'lib. 4 cap. 6'
+    CTX:   ...of. This is the substance of his long disputation on this subject, De Servatore,«lib. 4 cap. 6». But this is not to expound the words o...
+
+  ch022  [Cyril of Alexandria]
+    CITE:  'lib. 11 cap. 25'
+    WORK:  Commentary on John
+    CTX:   ...ny be made righteous."  This is well explained by Cyrillus Alexandrinus in Joan.«lib. 11 cap. 25»:  [[BLOCKQUOTE]] "<span lang="la" xml:l...
+
+  ch022  [Leo the Great]
+    CITE:  'Epist. 12'
+    CTX:   ...quae per Spiritum est, ad totam nostram penetravit naturam</span>". And by Leo,«Epist. 12»ad Juvenalem: "<span lang="la" xml:lang=...
+
+  ch022  [UNKNOWN]
+    CITE:  'lib. 2 cap. 10'
+    CTX:   ...ing up his whole cause in satisfaction unto them, in the words before described,«lib. 2 cap. 10».  Socinus prefaces his answer unto this...
+
+  ch022  [UNKNOWN]
+    CITE:  'lib. 2 cap. 7'
+    CTX:   ...it is his first argument against the imputation of the righteousness of Christ,«lib. 2 cap. 7», De Justificatione,  [[BLOCKQUOTE]] "<s...
+
+  ch022  [UNKNOWN]
+    CITE:  'lib. 1'
+    CTX:   ...sertion falls upon himself; we are not concerned in it. For he affirms directly,«lib. 1», De Purgator., cap. 14, that "a man may...
+
+  ch022  [Robert Bellarmine]
+    CITE:  'lib. 1 cap. 18, li'
+    CTX:   ...n of any such distinction?  Bellarmine considers this testimony in three places,«lib. 1 cap. 18, li»b. 1 cap. 19, lib. 5 cap. 5, De Justific...
+
+  ch022  [Robert Bellarmine]
+    CITE:  'lib. 5 cap. 5'
+    CTX:   ...armine considers this testimony in three places, lib. 1 cap. 18, lib. 1 cap. 19,«lib. 5 cap. 5», De Justificat. And he returns three an...
+
+  ch024  [UNKNOWN]
+    CITE:  'lib. 1 cap. 15'
+    CTX:   ...ut a real assent unto the catholic doctrine or divine revelation: De Justificat.«lib. 1 cap. 15». His first is, "That James calleth it '...

@@ -2,29 +2,29 @@
 
 - Status: **WARN**
 - Errors: 0
-- Warnings: 2
+- Warnings: 1
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 110
-- Manifest items: 101
-- Spine items: 84
-- XHTML files: 86
-- Embedded fonts: 11
-- NAV links: 87
+- Files: 114
+- Manifest items: 105
+- Spine items: 85
+- XHTML files: 87
+- Embedded fonts: 13
+- NAV links: 88
 
 ## Content Checks
 
-- Greek chars: 6015
+- Greek chars: 6024
 - Untagged Greek chars: 0
-- Hebrew chars: 1211
+- Hebrew chars: 1224
 - Untagged Hebrew chars: 0
-- Noteref links: 120
-- Endnote anchors: 120
+- Noteref links: 159
+- Endnote anchors: 159
 - Boilerplate hits: 0
-- Possible Beta Code files: 1
+- Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
@@ -32,14 +32,9 @@
 
 ## Warnings
 
-- `possible_beta_code_residue`: Possible Beta Code residue detected
 - `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
-
-### beta_code
-
-- `EPUB/contents_3.xhtml`: ]W
 
 ### repeated_phrase
 

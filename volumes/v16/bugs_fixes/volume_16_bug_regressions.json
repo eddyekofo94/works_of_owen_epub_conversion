@@ -1,10 +1,10 @@
 {
   "volume": 16,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v16/bugs_fixes/volume_16_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,7 +12,7 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 31,
+      "observed": 33,
       "budget": 61,
       "status": "ok",
       "samples": [
@@ -43,13 +43,13 @@
         },
         {
           "file": "EPUB/ch032.xhtml",
-          "previous": "sm of that regeneration which is unto God.' But that indeed the word 'renascuntur,' 'are born again,' is not meant of baptism is proved from the words and the scope of them; for, —",
-          "next": "words and scope show. But he was not in his age an example of every age by his baptism, as if he did by it sanctify every age, for then he should have been baptized in every age; b"
+          "previous": "um ipsis quoque fiens; deinde et usque ad mortem pervenit, ut sit primogenitus ex mortuis, ipse primatum tenens in omnibus, princeps vitae, prior omnium, et praecedens omnes. \" [1]",
+          "next": "Lib. 1: cap. 18: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ , τοσαῦται καὶ ἀπολυτρώσεις . Οτι μὲν εἰς ἐξάρνησιν τοῦ βαπτισ́ματος τῆς εἰς Θεὸν ἀναγεννήσεως , καὶ πάσης τῆς πίστεως ἀ"
         },
         {
-          "file": "EPUB/ch044.xhtml",
-          "previous": "es; which show the work of the law written in their hearts, their conscience also bearing witness, and their thoughts the mean while accusing or else excusing one another.\" (Romans",
-          "next": "2:14, 15.) By the light that God hath indelibly implanted in the minds of men — accompanied with a moral instinct of good and evil, seconded by that selfjudgment which he hath plac"
+          "file": "EPUB/ch032.xhtml",
+          "previous": "sm of that regeneration which is unto God.' But that indeed the word 'renascuntur,' 'are born again,' is not meant of baptism is proved from the words and the scope of them; for, —",
+          "next": "words and scope show. But he was not in his age an example of every age by his baptism, as if he did by it sanctify every age, for then he should have been baptized in every age; b"
         },
         {
           "file": "EPUB/ch052.xhtml",
@@ -57,21 +57,21 @@
           "next": "The עיטור סופרים are insisted on by the same Galatinus; but these are only about the use of the letter ו four or five times, which seem to be of the same rise with them foregoing."
         },
         {
-          "file": "EPUB/ch062.xhtml",
-          "previous": "or in the LORD JEHOVAH is everlasting strength.\" Ye know that God doth often invite us to trust in his name; and they that know his name will put their trust in him: Psalm 9:9, 10,",
-          "next": "Is there any one that \"walketh in darkness, and hath no light? let him trust in the name of the LORD,\" Isaiah 1:10."
+          "file": "EPUB/ch058.xhtml",
+          "previous": "am veritatem, ut interim fatear illos non admodum peritos fuisse linguae Hebraicae id vel quod inviti cogimur fateri, alioquin in plurimis locis non tam fcede lapsi fuissent. \" [1]",
+          "next": "If, moreover, the ability be granted, what security have we of their principles and honesty? Cardinal Ximenes, in his preface to the edition of the Complutensian Bibles, tells us ("
         },
         {
           "file": "EPUB/ch062.xhtml",
-          "previous": "2. God, to show it to be our duty and wisdom, doth immediately propose the very properties of his nature for our relief: Isaiah 40:27,",
-          "next": "— words whose sense are often ready to possess our hearts: I am sure they often lie at the door of mine; I know not how it is with you. What doth God propose to relieve them in tha"
+          "previous": "or in the LORD JEHOVAH is everlasting strength.\" Ye know that God doth often invite us to trust in his name; and they that know his name will put their trust in him: Psalm 9:9, 10,",
+          "next": "Is there any one that \"walketh in darkness, and hath no light? let him trust in the name of the LORD,\" Isaiah 1:10."
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 6,
-      "budget": 6,
+      "observed": 10,
+      "budget": 10,
       "status": "ok",
       "samples": [
         {
@@ -89,6 +89,22 @@
         {
           "file": "EPUB/ch013.xhtml",
           "text": "The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humiliation for it. [3.] The "
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "There is nothing, therefore, in Scripture example or the light of natural reason, with the principles of all societies in union or communion, that will lead us any farther than this, that such synods are to be composed and consist of such persons as are chosen"
+        },
+        {
+          "file": "EPUB/ch043.xhtml",
+          "text": "By the assertion, then, laid down, of God \"speaking in the prophets of old,\" from the beginning to the end of that long tract of time (consisting of one thousand years) wherein he gave out the writings of the Old Testament, two things are ascertained unto us, "
+        },
+        {
+          "file": "EPUB/ch055.xhtml",
+          "text": "Junius, in the close of his animadversions on Bell. De Verbo Dei, lib. 2, cap. 2, [4] commends that saying of Johannes Isaac against Lindanus, \"He that reads the Scriptures without points is like a man that rides a horse ἀχάλινος , without a bridle; he may be "
+        },
+        {
+          "file": "EPUB/ch056.xhtml",
+          "text": "The place insisted on by him out of Aben Ezra was some years before produced, weighed, and explained, by Buxtorf, out of his לָשׁוֹן ־הקֹּדֶשׁ מאֹזְנֵי , or the Standard of the Holy Tongue, De Punct. Orig. par. 1 p. 13, 14, cap. 3; [4] and it is not unlikely, "
         },
         {
           "file": "EPUB/ch063.xhtml",
@@ -272,14 +288,14 @@
     {
       "label": "Untagged Hebrew characters",
       "observed": 0,
-      "budget": 0,
+      "budget": 26,
       "status": "ok",
       "samples": []
     },
     {
       "label": "Hebrew integrity failures",
       "observed": 0,
-      "budget": 0,
+      "budget": 26,
       "status": "ok",
       "samples": []
     },
@@ -323,15 +339,10 @@
     },
     {
       "label": "Possible Beta Code residue files",
-      "observed": 1,
+      "observed": 0,
       "budget": 2,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/contents_3.xhtml",
-          "text": "]W"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Escaped language-tag files",

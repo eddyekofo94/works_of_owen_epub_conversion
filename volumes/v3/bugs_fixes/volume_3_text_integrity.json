@@ -2,9 +2,9 @@
   "volume": 3,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-01T15:31:08.628403+00:00",
+  "generated_at": "2026-06-02T22:22:17.789134+00:00",
   "status": "warn",
-  "warning_count": 8,
+  "warning_count": 9,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -35,6 +35,10 @@
       "message": "Repeated word windows may indicate ghost-layer duplication"
     },
     {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
       "code": "missing_hebrew_clauses",
       "message": "Some dense Hebrew passages from the PDF are missing from the EPUB"
     }
@@ -44,12 +48,12 @@
   },
   "epub": {
     "spine_text_files": 45,
-    "paragraph_count": 2507
+    "paragraph_count": 2498
   },
   "word_coverage": {
     "pdf_content_tokens": 282216,
-    "epub_content_tokens": 278727,
-    "coverage_ratio": 0.9851,
+    "epub_content_tokens": 278801,
+    "coverage_ratio": 0.9853,
     "missing_word_samples": [
       {
         "word": "self",
@@ -107,7 +111,7 @@
   },
   "page_coverage": {
     "pages_checked": 787,
-    "weak_page_count": 15,
+    "weak_page_count": 13,
     "weak_pages": [
       {
         "page": 10,
@@ -123,11 +127,6 @@
         "page": 69,
         "hit_ratio": 0.333,
         "sample": "69 chapter the name and titles of the holy spirit of the name of the holy spirit various uses of the words יוּחַ and"
-      },
-      {
-        "page": 70,
-        "hit_ratio": 0.333,
-        "sample": "70 alexandria whose words therefore have set down at large and shall cast his observations into more perspicuous method with such additions as are"
       },
       {
         "page": 82,
@@ -155,9 +154,9 @@
         "sample": "243 de physica et crassa impletione accipiunt quam tamen talis πληρωσις seu impletio locorum in mundo omnium quae vel expansionem corpoream in quantitate continua"
       },
       {
-        "page": 355,
+        "page": 423,
         "hit_ratio": 0.333,
-        "sample": "355 it leaves the body with all its own natural properties but utterly deprived of them which it had by virtue of its union"
+        "sample": "423 the darkness of their minds being yet uncured they are not able to discern the true nature of these divine intimations and instructions"
       },
       {
         "page": 472,
@@ -168,11 +167,6 @@
         "page": 474,
         "hit_ratio": 0.333,
         "sample": "474 he doth it morally by proposing their objects suitably and seasonably unto them this he doth by his ordinances of worship especially the"
-      },
-      {
-        "page": 537,
-        "hit_ratio": 0.333,
-        "sample": "537 as at other times and hereby the habitual purification of the congregation that they might be holy to the lord and their cleansing"
       },
       {
         "page": 559,
@@ -558,7 +552,7 @@
     "bottom_windows_usable": 748,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 6,
+    "missing_bottom_window_count": 5,
     "missing_bottom_windows": [
       {
         "page": 129,
@@ -581,11 +575,6 @@
         "sample": "spiritual things is doubly expressed: — [1.] By ouj de>cetai, — \"He receiveth them not;\""
       },
       {
-        "page": 537,
-        "window": "fountain opened for sin and uncleanness zechariah 13 and he who",
-        "sample": "fountain opened for sin and uncleanness,\" Zechariah 13:1. And he who"
-      },
-      {
         "page": 706,
         "window": "glory that therein we shall be ijsa ggeloi luke 20 36 like or equal",
         "sample": "glory, that therein we shall be ijsa>ggeloi, Luke 20:36, like or \"equal"
@@ -593,8 +582,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2116,
-    "split_candidate_count": 153,
+    "paragraphs_checked": 2107,
+    "split_candidate_count": 161,
     "split_candidates": [
       {
         "file": "EPUB/ch006.xhtml",
@@ -623,7 +612,7 @@
       },
       {
         "file": "EPUB/ch007.xhtml",
-        "previous": "God walked in the garden\" לְ רוּחַ [6] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
+        "previous": "God walked in the garden\" לְרוּחַ [33] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
         "next": "\"At the going down of the sun, when the cold evening tempers the heat of the air.\" And some think this to be the sense of that place, Psalm 104:4, \"Who maketh his angels רוּחוֹת , "
       },
       {
@@ -635,6 +624,11 @@
         "file": "EPUB/ch007.xhtml",
         "previous": "And hereon, with some observations to the same purpose, he adds,",
         "next": "The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of \"confirming the thunder\" (which nowhere here app"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": " 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]",
+        "next": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,"
       },
       {
         "file": "EPUB/ch007.xhtml",
@@ -653,18 +647,23 @@
       },
       {
         "file": "EPUB/ch007.xhtml",
+        "previous": "m Sanctum, ut haeretici suspicantur, sed venture intelligimus, sive spiritum hominis, annuncians homini eloquium ejus, qui cogitationum secreta cognoscit,\" [1] Hieron. in loc. [23]",
+        "next": "Secondly, Because the wind, on the account of its unaccountable variation, inconstancy, and changes, is esteemed vain, not to be observed or trusted unto, — whence the wise man tel"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
         "previous": "ness?\") so is the Spirit called \"Holy\" to denote the holiness of his nature. And on this account is the opposition made between him and the unholy or unclean spirit: Mark 3:29, 30,",
         "next": "And herein first his personality is asserted; for the unclean spirit is a person, and if the Spirit of God were only a quality or accident, as some fancy and dream, there could no "
       },
       {
         "file": "EPUB/ch007.xhtml",
         "previous": "hat are wrought, by God's permission and in his righteous judgment, by evil spirits; whose persons and actings are placed in opposition to the Spirit of God. So 1 Samuel 16:14, 15,",
-        "next": "So also verse 23, \"The evil spirit from God was upon Saul.\" So chap. 18:10, 19:9. This spirit is called, רוּחַ [6] ־אלֹהִים רָעָה , — an evil spirit of God,\" chapter 16:15; and abs"
+        "next": "So also verse 23, \"The evil spirit from God was upon Saul.\" So chap. 18:10, 19:9. This spirit is called, רוּחַ [52] ־אלֹהִים רָעָה , — an evil spirit of God,\" chapter 16:15; and ab"
       },
       {
         "file": "EPUB/ch007.xhtml",
-        "previous": " personal distempers, moral and natural; for these have in themselves a great efficacy in cruciating the minds of guilty persons. So Tacitus observes out of Plato, Annal. lib. 6:6,",
-        "next": "So he, as I suppose from Plato de Repub. lib. 9., where Socrates disputes sundry things to that purpose. And another Roman historian gives us a signal instance hereof in Jugurtha, "
+        "previous": "sonal distempers, moral and natural; for these have in themselves a great efficacy in cruciating the minds of guilty persons. So Tacitus observes out of Plato, Annal. lib. 6:6, [8]",
+        "next": "So he, as I suppose from Plato de Repub. lib. 9., [18] where Socrates disputes sundry things to that purpose. And another Roman historian gives us a signal instance hereof in Jugur"
       },
       {
         "file": "EPUB/ch007.xhtml",
@@ -785,20 +784,10 @@
         "file": "EPUB/ch010.xhtml",
         "previous": "o a division of the Spirit himself is the greatest madness. And casting aside prejudices, there is no difficulty in the understanding of that saying of God to Moses, Numbers 11:17,",
         "next": "for it is evidently of the gifts of the Spirit, enabling men for rule and government, that God speaketh, and not of the Spirit himself. Without any diminution of that Spirit in him"
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "ot their own. It is true, when he had thus inspired any with the mind of God, they had no rest, nor could have, unless they declared it in its proper way and season: Jeremiah 20:9,",
-        "next": "But this disturbance was from a moral sense of their duty, and not from any violent agitations of his upon their natures. And whereas sometimes trouble and consternation of spirit "
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "mpressions they conveyed to the minds of men. Hence, in the promise of the plentiful pouring out of the Spirit, or communication of his gifts, mention is made of dreams: Acts 2:17,",
-        "next": "Not that God intended much to make use of this way of dreams and nocturnal visions under the New Testament; but the intention of the words is, to show that there should be a plenti"
       }
     ],
-    "structural_start_exclusions": 319,
-    "short_fragment_count": 13,
+    "structural_start_exclusions": 304,
+    "short_fragment_count": 12,
     "short_fragments": [
       {
         "file": "EPUB/ch007.xhtml",
@@ -815,10 +804,6 @@
       {
         "file": "EPUB/ch020.xhtml",
         "text": "And another:"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "text": "This again he repeats, cap. 7:"
       },
       {
         "file": "EPUB/ch023.xhtml",
@@ -855,23 +840,59 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 5,
+    "inline_structural_candidate_count": 14,
     "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "The FIRST BOOK of the treatise is devoted to considerations of a general and preliminary nature. The promise of spiritual gifts contained in Scripture is examined; and occasion is hence taken to illustrate the importance of sound views on the doctrine of the S"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "THE apostle Paul, in the 12th chapter of his First Epistle to the Corinthians, directs their exercise of spiritual gifts, concerning which, amongst other things and emergencies, they had made inquiry of him. This the fast words wherewith he prefaceth his whole"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Treating, therefore, περὶ τῶν πνευματικῶν , [7] of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the \"Spirit,\" verse 4; the \"Lord,\" verse 5; \"God,\" ve"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "This is one signification of the word רוּחַ , [34] or this is one thing denoted by it in the Scripture. So, among many other places, expressly Amos 4:13, \"For, lo,\" יוֹצֵר הָרִים וּבֹרֵא רוּחַ [35] , he that formeth the mountains, and createth the spirit,\" tha"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of \"confirming the thunder\" (which nowhere here appears), by which the sound of the Scriptures and preaching of the word is intende"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Hence, their disagreement is infinitely more than their agreement; yet such allusions doth our weakness need instruction from and by. Thus he is called רוּחַ [47] פִיו Psalm 33:6, \"The Spirit\" or \"breath of the mouth of the LORD,\" or \"of his nostrils;\" as Psal"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "To return; As he is called the Holy, so he is the Good Spirit of God: Psalm 143:10, רִוּחֲך טוֹבָה תַנְחֵנִי ; — \"Thy Spirit is good; lead me into the land of uprightness;\" so ours: — rather, \"Thy good Spirit shall lead me;\" or, as Junius, \"Spiritu tuo bone de"
+      },
       {
         "file": "EPUB/ch012.xhtml",
         "text": "Not that God intended much to make use of this way of dreams and nocturnal visions under the New Testament; but the intention of the words is, to show that there should be a plentiful effusion of that Spirit which acted by these various ways and means then und"
       },
       {
-        "file": "EPUB/ch016.xhtml",
-        "text": "That spirit which revealeth anything, or pretendeth to reveal anything, any doctrine, any grace, any truth, that is contrary unto, that is not consonant to, yea, that is not the doctrine, grace, or truth of Christ, as now revealed in the word, that brings anyt"
+        "file": "EPUB/ch015.xhtml",
+        "text": "None doubts but that this is a description of the person of Christ. And in the beginning of this verse, \"He whom God hath sent speaketh the words of God;\" which is the usual periphrasis of the Lord Christ, used at least twenty times in this Gospel. Of him this"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Therefore, 3. The difference in this matter cometh unto this head: We say and believe that regeneration consists in spirituali renovatione naturae, — \"in a spiritual renovation of our nature;\" our modem Socinians, that it doth so in morali reformatione vitae, "
       },
       {
         "file": "EPUB/ch020.xhtml",
         "text": "Some, indeed, give such an account of this text as if the apostle had said, \"Do not ye live after the manner of the heathens, in the vileness of those practices, and in their idol-worship. That long course of sin having blinded their understandings, so that th"
       },
       {
-        "file": "EPUB/ch028.xhtml",
-        "text": "This uncleanness as it is habitual, respecting our natural defilement, is equal in and unto every one that is born into the world; we are by nature all alike polluted, and that to the utmost of what our nature is capable. But with respect unto actual sins it i"
+        "file": "EPUB/ch023.xhtml",
+        "text": "Neither is this a practice taken up of late, in these declining times of the world, but seems to have been started and followed from days of old, — possibly from the beginning; yea, the enmity of Cain against Abel was but a branch of this proud and perverse in"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Of the original depravation of our nature we have treated so far as is needful unto our present purpose; yet some things must be added concerning the effects of that depravation, which will conduce unto the right understanding of the way and manner whereby the"
       },
       {
         "file": "EPUB/ch030.xhtml",
@@ -893,10 +914,10 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 626,
-    "epub_marker_count": 708,
+    "epub_marker_count": 797,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 17,
+    "excess_marker_count": 60,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -919,11 +940,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p170",
+            "location": "EPUB/ch006.xhtml#p146",
             "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who"
           },
           {
-            "location": "EPUB/ch008.xhtml#p295",
+            "location": "EPUB/ch008.xhtml#p270",
             "context": "(1.) Such as respect one another; for there are external acts of one person towards another: but then the person that is the object of these actings is not considered absolutely as a d"
           }
         ]
@@ -938,11 +959,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p170",
+            "location": "EPUB/ch006.xhtml#p146",
             "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who was a liar from the beginning; and \"Malus bonum cure simulat, tune est pessimus.\""
           },
           {
-            "location": "EPUB/ch008.xhtml#p296",
+            "location": "EPUB/ch008.xhtml#p271",
             "context": "(2.) There are especial acts, ad extra, towards the creatures. 32 This the whole Scripture testifieth unto, so that it is altogether needless to confirm it with particular instances. N"
           }
         ]
@@ -957,11 +978,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch015.xhtml#p662",
+            "location": "EPUB/ch015.xhtml#p640",
             "context": "[1.] The manifestation of his righteousness, holiness, and severity against sin. His design was, to repair the glory of God, wherein it had seemed to suffer by sin. Psalm 40:6-8, Hebre"
           },
           {
-            "location": "EPUB/ch015.xhtml#p665",
+            "location": "EPUB/ch015.xhtml#p643",
             "context": "is, testified unto in the Old Testament: Hebrews 2:13, \"I will put my trust in him.\" And, [1.] This respected himself, namely, that he should be supported, assisted, and carried through the work he had undertaken unto a blessed issue."
           }
         ]
@@ -969,40 +990,185 @@
       {
         "marker": "[10]",
         "pdf": 0,
-        "epub": 1,
+        "epub": 3,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "heir cursed sentiments under a corrupt pronunciation of his name: for instead of יֵשׁוּעַ [10] , they write and call him יֵשׁוּ [12] , the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\" And thi"
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": ", contracting the design of the whole, he doth it in that advice, Ζηλοῦτε δὲ τὰ χαρίσματα [10] τὰ κρείττνα , [1] — Covet earnestly the best gifts,\" — namely, among those which he proposed to treat of, and had done so accordingly, verse 31. The τὰ πνευματικὰ [9] of verse 1 a"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p213",
+            "context": "ith this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1328",
+            "context": "o exaudires, et cito sanares a morbo concupiscentiae, quam malebam expleri quam extingui. [10] \""
           }
         ]
       },
       {
         "marker": "[11]",
         "pdf": 0,
-        "epub": 1,
+        "epub": 3,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "hey owned him to be Jehovah, the Lord over all, God blessed forever; for the name יְהוָֹה [11] is everywhere in the New Testament expressed by Κύριος , here used. He who thus professeth Jesus to be the Lord, in the first place acknowledgeth him to be the true God. And then"
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": "had done so accordingly, verse 31. The τὰ πνευματικὰ [9] of verse 1 are the τὰ χαρίσματα [11] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [3] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and use you are now instructed in, as it"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p232",
+            "context": "rved before, the word πνεῦμα is variously used, Didymus, de Spiritu Sancto, lib. 3., [12] [11] supposeth that the prefixing of the article τὸ doth distinguish the signification, and confine it to the Holy Ghost in the New Testament. Ofttimes no doubt it doth so, but not alw"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1326",
+            "context": "erant conatibus expergisci volentium, qui tamen superati soporis altitudine remerguntur. [11] \""
           }
         ]
       },
       {
         "marker": "[12]",
         "pdf": 0,
-        "epub": 1,
+        "epub": 3,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "pronunciation of his name: for instead of יֵשׁוּעַ [10] , they write and call him יֵשׁוּ [12] , the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\" And this blasphemy of pronouncing Jesus accur"
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": "sed sentiments under a corrupt pronunciation of his name: for instead of יֵשׁוּ [14] עַ , [12] they write and call him יֵשׁוּ , [15] the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\" And this"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p232",
+            "context": "observed before, the word πνεῦμα is variously used, Didymus, de Spiritu Sancto, lib. 3., [12] [11] supposeth that the prefixing of the article τὸ doth distinguish the signification, and confine it to the Holy Ghost in the New Testament. Ofttimes no doubt it doth so, but no"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1282",
+            "context": "aliquem; qui posses etiam non adparens sensibus nostris, exaudire nos et subvenire nobis, [12] \" lib. 1. cap. 9. [32] And hereunto he adds some general instruction which he had from the word, cap. 11. [38] And from the same principles, when he was a little after surprised w"
+          }
+        ]
+      },
+      {
+        "marker": "[13]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": "hey owned him to be Jehovah, the Lord over all, God blessed forever; for the name יְהוָֹה [13] is everywhere in the New Testament expressed by Κύριος , here used. He who thus professeth Jesus to be the Lord, in the first place acknowledgeth him to be the true God. And then"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p209",
+            "context": "rose, who, interpreting these words in his second book, De Spiritu Sancto, lib. 2 cap. 6, [13] [3] being deceived by the corrupt translation mentioned, \"Annuncians in homines Christum suum,\" is forced to give a very strained exposition of that which, in truth, is not in the"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1268",
+            "context": "haberem quod darem pueris, ludum suum mihi, quo pariter delectabantur tamen, vendentibus, [13] \" lib. 1. cap. 19. [29]"
+          }
+        ]
+      },
+      {
+        "marker": "[14]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": "their cursed sentiments under a corrupt pronunciation of his name: for instead of יֵשׁוּ [14] עַ , [12] they write and call him יֵשׁוּ , [15] the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\""
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p213",
+            "context": "f Jesus Christ. Nor was he alone in this interpretation. Didym. lib. 2 de Spiritu Sancto, [14] Athanas. ad Serapion, [21] Basil. lib. 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardic"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1281",
+            "context": "ebam nodos linguae meae, et rogabam to parvus non parvo affectu, ne in schola vapularem.\" [14] He prayed earnestly to God as a refuge, when he was afraid to be beat at school. And this he resolves into instruction, or what he had observed in others:"
+          }
+        ]
+      },
+      {
+        "marker": "[15]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": "iation of his name: for instead of יֵשׁוּ [14] עַ , [12] they write and call him יֵשׁוּ , [15] the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\" And this blasphemy of pronouncing Jesus accurse"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p242",
+            "context": "e good Spirit of thy holiness\" or \"Thy holy good Spirit.\" Didymus, lib. 2 de Spir. Sanc., [15] says that some copies here read τὸ ἅγιον , a remembrance whereof is in the MS. of Thecla, and not elsewhere. So Nehemiah 9:20, \"Thou gavest them\" רִוּחֲך הַטוֹבָה , \"thy good Spir"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1252",
+            "context": "prostrati et elisi a te, Deus meus, ego tamen confitear tibi dedecora mea, in laude tua,\" [15] Confess. lib. 4. cap. 1; [23] [22] — \"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] conf"
+          }
+        ]
+      },
+      {
+        "marker": "[16]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p255",
+            "context": "he Spirit's teaching, and not the author of his sending! So Crell. Prolegom., pp. 13, 14. [16] But why, then, is he not called the \"Spirit of God\" also on this reason, because the prophets that spake by him treated wholly of God, the things and the will of God? This they wi"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1335",
+            "context": "debar intus et confundebar pudore horribili vehementer, cum Pontitianus talia loqueretur. [16] \""
+          }
+        ]
+      },
+      {
+        "marker": "[17]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p213",
+            "context": "2 de Spiritu Sancto, [14] Athanas. ad Serapion, [21] Basil. lib. 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1279",
+            "context": "of afterward. This is excellently expressed by Austin, Confess. lib. 2. cap. 7: [43] [19] [17]"
+          }
+        ]
+      },
+      {
+        "marker": "[18]",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p189",
+            "context": "before them, — namely, the old scoffing heathens; for so doth Lucian, in his Philopatris [18], speak in imitation of a Christian by way of scorn, Λέγε παρὰ τοῦ Πνεύματος δύναμιν τοῦ λόγου λαβών — \"Speak out now, receiving power or ability of speaking from the Spirit,\" or \""
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p241",
+            "context": "So he, as I suppose from Plato de Repub. lib. 9., [18] where Socrates disputes sundry things to that purpose. And another Roman historian gives us a signal instance hereof in Jugurtha, after he had contracted the guilt of many horribl"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1311",
+            "context": "xcellent labors, preserved for the use of the church: see Confess. lib. 5. cap. 7-9, etc. [18]"
+          }
+        ]
+      },
+      {
+        "marker": "[19]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p242",
+            "context": "and unto them that believe are full of goodness in their effects. Crell. Prolegom., p. 7, [19] distinguisheth between this good Spirit and the Holy Spirit, or the Holy Ghost; for this good Spirit he would confine unto the Old Testament, making it the author or cause of thos"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1279",
+            "context": "whereof afterward. This is excellently expressed by Austin, Confess. lib. 2. cap. 7: [43] [19] [17]"
           }
         ]
       },
       {
         "marker": "[1]",
         "pdf": 0,
-        "epub": 25,
+        "epub": 23,
         "examples": [
           {
             "location": "EPUB/colophon.xhtml#p17",
@@ -1028,165 +1194,421 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch015.xhtml#p663",
+            "location": "EPUB/ch015.xhtml#p641",
             "context": "[2.] The exercise of his grace and love. This he knew was the way to open the treasures of grace and love, that they might be poured out on sinners, to the everlasting glory of God; fo"
           },
           {
-            "location": "EPUB/ch015.xhtml#p669",
+            "location": "EPUB/ch015.xhtml#p647",
             "context": "[2.] This respected the covenant, and all the benefits that the church of the elect was to be made partaker of thereby. The blood that he now shed was the \"blood of the covenant,\" and"
+          }
+        ]
+      },
+      {
+        "marker": "[20]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": "ometimes it signifies a \"great and strong wind,\" — that is, רוּחַ [32] נְדוֹלָה וְחָזָק , [20] 1 Kings 19:11; and sometimes a cool and soft wind, or a light easy agitation of the air, such as often ariseth in the evenings of the spring or summer. So Genesis 3:8, \"God walked"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1279",
+            "context": "of it; and love to it makes men greedy in the pursuit of it. See Confess. lib. 2. cap. 6. [20] And this last effect of sin, as incited, provoked, and assisted by temptations, hath great variety in the effects and degrees of it. Hence are the various courses of unhumbled sin"
+          }
+        ]
+      },
+      {
+        "marker": "[21]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p213",
+            "context": "alone in this interpretation. Didym. lib. 2 de Spiritu Sancto, [14] Athanas. ad Serapion, [21] Basil. lib. 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1253",
+            "context": "f nature in its infant state, one is peculiarly remarkable: Confess. lib. 1. cap. 6, [24] [21]"
+          }
+        ]
+      },
+      {
+        "marker": "[22]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p213",
+            "context": "tion. Didym. lib. 2 de Spiritu Sancto, [14] Athanas. ad Serapion, [21] Basil. lib. 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1252",
+            "context": "ego tamen confitear tibi dedecora mea, in laude tua,\" [15] Confess. lib. 4. cap. 1; [23] [22] — \"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] confess my own shame, unto thy praise.\""
+          }
+        ]
+      },
+      {
+        "marker": "[23]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p220",
+            "context": "annuncians homini eloquium ejus, qui cogitationum secreta cognoscit,\" [1] Hieron. in loc. [23]"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1252",
+            "context": "meus, ego tamen confitear tibi dedecora mea, in laude tua,\" [15] Confess. lib. 4. cap. 1; [23] [22] — \"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] confess my own shame, unto thy pra"
+          }
+        ]
+      },
+      {
+        "marker": "[24]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p242",
+            "context": "rd was in my tongue.\" And what Spirit this was Peter declares, 2 Peter 1:212 Epist. 1:21, [24] \"Holy men of God spake in old time as they were moved by the Holy Ghost.\" So vain is this pretense."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1253",
+            "context": "ngs of nature in its infant state, one is peculiarly remarkable: Confess. lib. 1. cap. 6, [24] [21]"
+          }
+        ]
+      },
+      {
+        "marker": "[25]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p239",
+            "context": "e regulated and explained by verse 14, where he is called רוּחַ [54] ־רָעָה מֵאֵת יְהוָֹה [25] , — \"an evil spirit from the LORD;\" that is, appointed and commissioned by him for the punishing and terrifying of Saul: for as the Spirit of the Lord departed from him, by withdr"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1271",
+            "context": "whereof he was long detained. To this purpose he discourseth at large, lib. 2. cap. 1-3. [25] And of the reason of this his humble and public acknowledgment he gives this holy account:"
+          }
+        ]
+      },
+      {
+        "marker": "[26]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p202",
+            "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [26] and πνεῦμα — יוּחַ [27] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, meto"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1301",
+            "context": "cknesses of his own, and in the death of his dear friend and companion, lib. 4. cap. 5-7. [26] And in all the several warnings he had from God, he chargeth the want and guilt of their non-improvement on his natural blindness, his mind being not illuminated, and the corrupti"
+          }
+        ]
+      },
+      {
+        "marker": "[27]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p202",
+            "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [26] and πνεῦμα — יוּחַ [27] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, metonymically for the part o"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1271",
+            "context": "some gross actual sin or sins. That all are not so is a mere effect of preventing grace, [27] and not at all from themselves. This the apostle respects in his charge, 2 Timothy 2:22, \"Flee youthful lusts;\" such lusts as work effectually and prevail mightily in those that a"
+          }
+        ]
+      },
+      {
+        "marker": "[28]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": "It is, then, acknowledged that the use of the words רוּחַ [28] and πνεῦμα in the Old Testament and New is very various; yet are they the words whereby alone the Holy Spirit of God is denoted. Their peculiar signification, therefore, in partic"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1260",
+            "context": "s aetatibus transeunt [sicuti ferulis majora supplicia succedunt], [6] \" lib. 1. cap. 19. [28]"
+          }
+        ]
+      },
+      {
+        "marker": "[29]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": "as are needful for the farther clearing of the whole matter. 18 First, In general, רוּחַ [29] and πνεῦμα signify a wind or spirit, — that is, anything which moves and is not seen. So the air in a violent agitation is called רוּחַ : [30] Genesis 8:1, רוּחַ [31] עַל־הָאָרֶץ"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1268",
+            "context": "s, ludum suum mihi, quo pariter delectabantur tamen, vendentibus, [13] \" lib. 1. cap. 19. [29]"
           }
         ]
       },
       {
         "marker": "[2]",
         "pdf": 0,
-        "epub": 6,
+        "epub": 14,
         "examples": [
           {
             "location": "EPUB/colophon.xhtml#p17",
             "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
           },
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "he τὰ χαρίσματα [9] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [2] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and use you are now instructed in, as it first was proposed.\" Of these that church had received an abundant measur"
+            "location": "EPUB/ch004.xhtml#p121",
+            "context": "world takes its liberty to immerge itself in all licentiousness of life and conversation; [2] the end whereof many cannot but expect with dread and terror."
           },
           {
-            "location": "EPUB/ch007.xhtml#p266",
-            "context": "and unto them that believe are full of goodness in their effects. Crell. Prolegom., p. 7 [2] , distinguisheth between this good Spirit and the Holy Spirit, or the Holy Ghost; for this good Spirit he would confine unto the Old Testament, making it the author or cause of th"
+            "location": "EPUB/ch006.xhtml#p154",
+            "context": "ce of faith and profession in others: Πρὸς τὸ δυμφέρον [8] \"Ad id quod expedit, prodest;\" [2] \"For that which is expedient, useful, profitable,\" — namely, to the church, 1 Corinthians 6:12, 10:23; 2 Corinthians 8:10. Thus was the foundation of the first churches of the gos"
           }
         ]
       },
       {
-        "marker": "[3]",
-        "pdf": 0,
-        "epub": 3,
-        "examples": [
-          {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "discourse declare: Verse 1, \"Now, concerning spiritual gifts,\" — Περὶ δὲ τῶν πνευματικῶν [3] that is χαρισμάτων as his ensuing declaration doth evince. And the imagination of some, concerning spiritual persons to be here intended, contrary to the sense of all the ancients"
-          },
-          {
-            "location": "EPUB/ch007.xhtml#p228",
-            "context": "ense, sometimes it signifies a \"great and strong wind,\" — that is, רוּחַ נְדוֹלָה וְחָזָק [3] , 1 Kings 19:11; and sometimes a cool and soft wind, or a light easy agitation of the air, such as often ariseth in the evenings of the spring or summer. So Genesis 3:8, \"God walk"
-          },
-          {
-            "location": "EPUB/ch008.xhtml#p332",
-            "context": "ause he gave it.\" But this is too much confidence. The words are, שַׁדַּי תְחַיֵנִי רוּחַ [3] ־אֵל עָצָתְנִי וְנִשְׁמַת . There were two distinct divine operations in and about the creation of man. The first was the forming of his body out of the dust of the earth; this is"
-          }
-        ]
-      },
-      {
-        "marker": "[4]",
+        "marker": "[30]",
         "pdf": 0,
         "epub": 2,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "ere Gentiles, carried away with dumb idols, even as ye were led;\" ὠς ἆν ἤγεσθε ἀπαγόμενοι [4] , — hurried with violent impressions from the devil into the service of idols. This he mentions not to reproach them, but to let them know what frame of mind and what fruit of lif"
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": "anything which moves and is not seen. So the air in a violent agitation is called רוּחַ : [30] Genesis 8:1, רוּחַ [31] עַל־הָאָרֶץ וַיַעֲבֵר ־אלֹהִיַם ; — \"And God made a wind,\" or \"spirit,\" that is, a strong and mighty wind, \"to pass over the earth,\" for the driving and re"
           },
           {
-            "location": "EPUB/ch007.xhtml#p263",
-            "context": "be regulated and explained by verse 14, where he is called רוּחַ [6] ־רָעָה מֵאֵת יְהוָֹה [4] , — \"an evil spirit from the LORD;\" that is, appointed and commissioned by him for the punishing and terrifying of Saul: for as the Spirit of the Lord departed from him, by withdr"
+            "location": "EPUB/ch023.xhtml#p1264",
+            "context": "di, studio spectandi nugatoria [et imitandi ludicra inquietudine?] [7] \" lib. 1. cap. 19; [30]"
           }
         ]
       },
       {
-        "marker": "[5]",
+        "marker": "[31]",
         "pdf": 0,
-        "epub": 3,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p178",
-            "context": "ifestation of the Spirit is given to every man to profit withal.\" Φανέρωσις τοῦ Πνεύματος [5] נלינא דרוחה Syr., — \"the revelation of the Spirit;\" that is, the gifts whereby and in whose exercise he manifests and reveals his own presence, power, and effectual operation. And"
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": "is not seen. So the air in a violent agitation is called רוּחַ : [30] Genesis 8:1, רוּחַ [31] עַל־הָאָרֶץ וַיַעֲבֵר ־אלֹהִיַם ; — \"And God made a wind,\" or \"spirit,\" that is, a strong and mighty wind, \"to pass over the earth,\" for the driving and removal of the waters. So"
           },
           {
-            "location": "EPUB/ch007.xhtml#p226",
-            "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [5] and πνεῦμα — יוּחַ [5] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, meton"
-          },
-          {
-            "location": "EPUB/ch007.xhtml#p226",
-            "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [5] and πνεῦμα — יוּחַ [5] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, metonymically for the part o"
+            "location": "EPUB/ch023.xhtml#p1343",
+            "context": "nedicit tibi, qui potens es ultra quam petimus aut intelligimus facere,\" lib. 8. cap. 12; [31] — \"Having read these verses, I would read no more, nor was there any"
           }
         ]
       },
       {
-        "marker": "[6]",
+        "marker": "[32]",
         "pdf": 0,
-        "epub": 28,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p176",
-            "context": "Treating, therefore, περὶ τῶν πνευματικῶν [6] , of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the \"Spirit,\" vers"
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": ":4. And in this sense, sometimes it signifies a \"great and strong wind,\" — that is, רוּחַ [32] נְדוֹלָה וְחָזָק , [20] 1 Kings 19:11; and sometimes a cool and soft wind, or a light easy agitation of the air, such as often ariseth in the evenings of the spring or summer. So"
           },
           {
-            "location": "EPUB/ch007.xhtml#p228",
-            "context": "It is, then, acknowledged that the use of the words רוּחַ [6] and πνεῦμα in the Old Testament and New is very various; yet are they the words whereby alone the Holy Spirit of God is denoted. Their peculiar signification, therefore, in partic"
+            "location": "EPUB/ch023.xhtml#p1282",
+            "context": "am non adparens sensibus nostris, exaudire nos et subvenire nobis, [12] \" lib. 1. cap. 9. [32] And hereunto he adds some general instruction which he had from the word, cap. 11. [38] And from the same principles, when he was a little after surprised with a fit of sickness,"
+          }
+        ]
+      },
+      {
+        "marker": "[33]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p204",
+            "context": "the evenings of the spring or summer. So Genesis 3:8, \"God walked in the garden\" לְרוּחַ [33] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —"
           },
           {
-            "location": "EPUB/ch007.xhtml#p228",
-            "context": "as are needful for the farther clearing of the whole matter. 18 First, In general, רוּחַ [6] and πνεῦμα signify a wind or spirit, — that is, anything which moves and is not seen. So the air in a violent agitation is called רוּחַ [6] : Genesis 8:1, רוּחַ [6] עַל־הָאָרֶץ וַ"
+            "location": "EPUB/ch023.xhtml#p1332",
+            "context": "pleased to make use of farther to awake him, and even to amaze him. Lib. 8. cap. 7: [44] [33]"
           }
         ]
       },
       {
-        "marker": "[7]",
+        "marker": "[34]",
         "pdf": 0,
-        "epub": 1,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p178",
-            "context": "on of the church, and the furtherance of faith and profession in others: Πρὸς τὸ δυμφέρον [7] \"Ad id quod expedit, prodest;\" \"For that which is expedient, useful, profitable,\" — namely, to the church, 1 Corinthians 6:12, 10:23; 2 Corinthians 8:10. Thus was the foundation o"
+            "location": "EPUB/ch007.xhtml#p207",
+            "context": "This is one signification of the word רוּחַ , [34] or this is one thing denoted by it in the Scripture. So, among many other places, expressly Amos 4:13, \"For, lo,\" יוֹצֵר הָרִים וּבֹרֵא רוּחַ [35] , he that formeth the mountains,"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1337",
+            "context": "nor when they shall be delivered. So was it with the person instanced in. Lib. 8. cap. 5: [34]"
           }
         ]
       },
       {
-        "marker": "[8]",
+        "marker": "[35]",
         "pdf": 0,
-        "epub": 1,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "e which he proposed to treat of, and had done so accordingly, verse 31. The τὰ πνευματικὰ [8] of verse 1 are the τὰ χαρίσματα [9] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [2] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and"
+            "location": "EPUB/ch007.xhtml#p207",
+            "context": "So, among many other places, expressly Amos 4:13, \"For, lo,\" יוֹצֵר הָרִים וּבֹרֵא רוּחַ [35] , he that formeth the mountains, and createth the spirit,\" that is, \"the wind.\" The LXX. render this place, Στερεῶν βροντὴν καὶ κτίζων πνεῦμα — \"Who establisheth the thunder, and"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1386",
+            "context": "suum; et rapiebant amando et gaudendo. Hae rapientium manus erant, [1] \" lib. 8. cap. 2. [35]"
           }
         ]
       },
       {
-        "marker": "[9]",
+        "marker": "[36]",
         "pdf": 0,
-        "epub": 1,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p165",
-            "context": "had done so accordingly, verse 31. The τὰ πνευματικὰ [8] of verse 1 are the τὰ χαρίσματα [9] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [2] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and use you are now instructed in, as it"
+            "location": "EPUB/ch007.xhtml#p207",
+            "context": "ment the mistake of the LXX. But it is certain that, from the ambiguity of the word רוּחַ [36] in this place, with the corrupt translations making mention of Christ in the next words, some who of old denied the deity of the Holy Spirit mightily insisted on it to prove him a"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1301",
+            "context": "that God gave him by the persuasions and exhortations of his mother, lib. 2. cap. 3; [41] [36] such were those which he had in sicknesses of his own, and in the death of his dear friend and companion, lib. 4. cap. 5-7. [26] And in all the several warnings he had from God, h"
+          }
+        ]
+      },
+      {
+        "marker": "[37]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p217",
+            "context": "ontitruum, verterunt. Cur autem illi Spiritum et nos dixerimus ventum, qui Hebraice רוּחַ [37] vocatur, causa manifesta est: quodque sequitur, 'Annuncians homini eloquium suum,' LXX. transtulerunt, ' Απαγγέλλων εἰς ἀνθρώπους τὸν Χριστὸν αὐτοῦ , verbi similitudine, et ambigu"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1323",
+            "context": "wn experience after his great convictions and before his full conversion, lib. 8. cap. 5: [37]"
+          }
+        ]
+      },
+      {
+        "marker": "[38]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p221",
+            "context": "lly to signify vanity: Ecclesiastes 5:16, \"What profit hath he that hath laboured לָרוּחַ [38] , for the wind?\" So Micah 2:11, \"If a man walk\" וָֹשֶׁקֶר רוּחַ [39] , \"with the wind and falsehood;\" — that is, in vanity, pretending to a spirit of prophecy; and falsehood, vain"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1282",
+            "context": ". [32] And hereunto he adds some general instruction which he had from the word, cap. 11. [38] And from the same principles, when he was a little after surprised with a fit of sickness, he cried out with all earnestness that he might be baptized, that so he might, as he tho"
+          }
+        ]
+      },
+      {
+        "marker": "[39]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p221",
+            "context": "ath laboured לָרוּחַ [38] , for the wind?\" So Micah 2:11, \"If a man walk\" וָֹשֶׁקֶר רוּחַ [39] , \"with the wind and falsehood;\" — that is, in vanity, pretending to a spirit of prophecy; and falsehood, vainly, foolishly, falsely boasting. So Job 15:2, \"Should a wise man utte"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1283",
+            "context": "motu animi et qua fide baptismum Christi tui, Dei et Domini mei flagitavi, [9] \" cap. 11. [39]"
+          }
+        ]
+      },
+      {
+        "marker": "[3]",
+        "pdf": 0,
+        "epub": 9,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p141",
+            "context": "e τὰ χαρίσματα [11] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [3] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and use you are now instructed in, as it first was proposed.\" Of these that church had received an abundant measur"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p209",
+            "context": "who, interpreting these words in his second book, De Spiritu Sancto, lib. 2 cap. 6, [13] [3] being deceived by the corrupt translation mentioned, \"Annuncians in homines Christum suum,\" is forced to give a very strained exposition of that which, in truth, is not in the tex"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p299",
+            "context": "— it is endless, boundless, infinite. It is excepted (Schlichting. de Trinitat., p. 605) [3] \"That the Spirit is not here taken for the Spirit himself, nor doth the apostle express what the Spirit himself doth, but what by the assistance of the Holy Ghost men are enabled"
+          }
+        ]
+      },
+      {
+        "marker": "[40]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p221",
+            "context": ", vainly, foolishly, falsely boasting. So Job 15:2, \"Should a wise man utter\" דַעַת רוּחַ [40] \"knowledge of wind?\" vain words, with a pretense of knowledge and wisdom; and he calls them דִבְרֵי רוּחַ [41] , \"words of wind,\" chap. 16:3. So also Jeremiah 5:13, \"And the proph"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1272",
+            "context": "ego et quisquis haec legit, cogitemus de quam profundo clamandum sit ad te, [8] \" cap. 3; [40]"
+          }
+        ]
+      },
+      {
+        "marker": "[41]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p221",
+            "context": "nd?\" vain words, with a pretense of knowledge and wisdom; and he calls them דִבְרֵי רוּחַ [41] , \"words of wind,\" chap. 16:3. So also Jeremiah 5:13, \"And the prophets shall become לְרוּחַ [42] , wind,\" or be vain, foolish, uncertain, and false, in their predictions. But πνε"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p1301",
+            "context": "dged that God gave him by the persuasions and exhortations of his mother, lib. 2. cap. 3; [41] [36] such were those which he had in sicknesses of his own, and in the death of his dear friend and companion, lib. 4. cap. 5-7. [26] And in all the several warnings he had from G"
           }
         ]
       }
     ],
-    "orphan_candidate_count": 23,
+    "orphan_candidate_count": 65,
     "orphan_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "marker": "[4]",
+        "family": "bracket_decimal",
+        "context": "discourse declare: Verse 1, \"Now, concerning spiritual gifts,\" — Περὶ δὲ τῶν πνευματικῶν [4] that is χαρισμάτων as his ensuing declaration doth evince. And the imagination of some, concerning spiritual persons to be here intended, contrary to the sense of all the ancients"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "marker": "[10]",
+        "family": "bracket_decimal",
+        "context": ", contracting the design of the whole, he doth it in that advice, Ζηλοῦτε δὲ τὰ χαρίσματα [10] τὰ κρείττνα , [1] — Covet earnestly the best gifts,\" — namely, among those which he proposed to treat of, and had done so accordingly, verse 31. The τὰ πνευματικὰ [9] of verse 1 a"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "marker": "[9]",
+        "family": "bracket_decimal",
+        "context": "e which he proposed to treat of, and had done so accordingly, verse 31. The τὰ πνευματικὰ [9] of verse 1 are the τὰ χαρίσματα [11] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [3] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and"
+      },
       {
         "file": "EPUB/ch006.xhtml",
         "marker": "[3]",
         "family": "bracket_decimal",
-        "context": "discourse declare: Verse 1, \"Now, concerning spiritual gifts,\" — Περὶ δὲ τῶν πνευματικῶν [3] that is χαρισμάτων as his ensuing declaration doth evince. And the imagination of some, concerning spiritual persons to be here intended, contrary to the sense of all the ancients"
+        "context": "e τὰ χαρίσματα [11] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [3] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and use you are now instructed in, as it first was proposed.\" Of these that church had received an abundant measur"
       },
       {
         "file": "EPUB/ch006.xhtml",
-        "marker": "[8]",
+        "marker": "[14]",
         "family": "bracket_decimal",
-        "context": "e which he proposed to treat of, and had done so accordingly, verse 31. The τὰ πνευματικὰ [8] of verse 1 are the τὰ χαρίσματα [9] of verse 31; as it is expressed, chap. 14:1, Ζηλοῦτε δὲ τὰ πνευματικά [2] — that is, χαρίσματα , — \"'Desire spiritual gifts,' whose nature and"
+        "context": "their cursed sentiments under a corrupt pronunciation of his name: for instead of יֵשׁוּ [14] עַ , [12] they write and call him יֵשׁוּ , [15] the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\""
       },
       {
         "file": "EPUB/ch006.xhtml",
-        "marker": "[12]",
+        "marker": "[7]",
         "family": "bracket_decimal",
-        "context": "pronunciation of his name: for instead of יֵשׁוּעַ [10] , they write and call him יֵשׁוּ [12] , the initial letters of יִמַח שְׁמוֹ וְזִכְרוֹ , — that is, \"Let his name and memory be blotted out;\" the same with \"Jesus anathema\" And this blasphemy of pronouncing Jesus accur"
-      },
-      {
-        "file": "EPUB/ch006.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "Treating, therefore, περὶ τῶν πνευματικῶν [6] , of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the \"Spirit,\" vers"
+        "context": "Treating, therefore, περὶ τῶν πνευματικῶν , [7] of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the \"Spirit,\" verse"
       },
       {
         "file": "EPUB/ch006.xhtml",
@@ -1196,87 +1618,129 @@
       },
       {
         "file": "EPUB/ch007.xhtml",
-        "marker": "[5]",
+        "marker": "[26]",
         "family": "bracket_decimal",
-        "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [5] and πνεῦμα — יוּחַ [5] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, meton"
+        "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [26] and πνεῦμα — יוּחַ [27] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, meto"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[20]",
+        "family": "bracket_decimal",
+        "context": "ometimes it signifies a \"great and strong wind,\" — that is, רוּחַ [32] נְדוֹלָה וְחָזָק , [20] 1 Kings 19:11; and sometimes a cool and soft wind, or a light easy agitation of the air, such as often ariseth in the evenings of the spring or summer. So Genesis 3:8, \"God walked"
       },
       {
         "file": "EPUB/ch007.xhtml",
         "marker": "[5]",
         "family": "bracket_decimal",
-        "context": "Of the name of the Holy Spirit — Various uses of the words יוּחַ [5] and πνεῦμα — יוּחַ [5] for the wind or anything invisible with a sensible agitation, Amos 4:13 — Mistakes of the ancients rectified by Hierom רוּח metaphorically for vanity, metonymically for the part o"
+        "context": "e words, \"Firmans tonitruum, et creans Spiritum, et annuncians in homines Christum suum;\" [5] which Hierom rectified into \"Formans montes, et creans ventum, et annuntians homini eloquium suum,\" [7] discovering in his comment the mistake of the LXX. But it is certain that,"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[7]",
+        "family": "bracket_decimal",
+        "context": "om rectified into \"Formans montes, et creans ventum, et annuntians homini eloquium suum,\" [7] discovering in his comment the mistake of the LXX. But it is certain that, from the ambiguity of the word רוּחַ [36] in this place, with the corrupt translations making mention of"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[13]",
+        "family": "bracket_decimal",
+        "context": "rose, who, interpreting these words in his second book, De Spiritu Sancto, lib. 2 cap. 6, [13] [3] being deceived by the corrupt translation mentioned, \"Annuncians in homines Christum suum,\" is forced to give a very strained exposition of that which, in truth, is not in the"
       },
       {
         "file": "EPUB/ch007.xhtml",
         "marker": "[3]",
         "family": "bracket_decimal",
-        "context": "ense, sometimes it signifies a \"great and strong wind,\" — that is, רוּחַ נְדוֹלָה וְחָזָק [3] , 1 Kings 19:11; and sometimes a cool and soft wind, or a light easy agitation of the air, such as often ariseth in the evenings of the spring or summer. So Genesis 3:8, \"God walk"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "appellation of him in the New Testament; and it is derived from the Old: Psalm 51, רוּחַ [6] קָדְשְׁך , \"The Spirit of thy Holiness,\" or \"Thy Holy Spirit\" Isaiah 63:10, 11, רוּחַ [6] קָדְשׁוֹ , \"The Spirit of his Holiness,\" or \"His Holy Spirit.\" Hence are רוּחַ [6] הַקָּד"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "[6] קָדְשְׁך , \"The Spirit of thy Holiness,\" or \"Thy Holy Spirit\" Isaiah 63:10, 11, רוּחַ [6] קָדְשׁוֹ , \"The Spirit of his Holiness,\" or \"His Holy Spirit.\" Hence are רוּחַ [6] הַקָּדוֹשׁ and רוּחַ [6] הַקֹּדֶשׁ , \"The Holy Spirit,\" and \"The Spirit of Holiness,\" in common"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "רוּחַ [6] קָדְשׁוֹ , \"The Spirit of his Holiness,\" or \"His Holy Spirit.\" Hence are רוּחַ [6] הַקָּדוֹשׁ and רוּחַ [6] הַקֹּדֶשׁ , \"The Holy Spirit,\" and \"The Spirit of Holiness,\" in common use among the Jews. In the New Testament he is τὸ Πνεῦμα τὸ Αγιον , \"That Holy Spir"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "e Spirit of his Holiness,\" or \"His Holy Spirit.\" Hence are רוּחַ [6] הַקָּדוֹשׁ and רוּחַ [6] הַקֹּדֶשׁ , \"The Holy Spirit,\" and \"The Spirit of Holiness,\" in common use among the Jews. In the New Testament he is τὸ Πνεῦμα τὸ Αγιον , \"That Holy Spirit.\" And we must inquire"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "e evil spirit from God was upon Saul.\" So chap. 18:10, 19:9. This spirit is called, רוּחַ [6] ־אלֹהִים רָעָה , — an evil spirit of God,\" chapter 16:15; and absolutely רוּחַ [6] ־אלחִים — \"a spirit of God,\" verse 23, where we have supplied \"evil\" in the translation. But the"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "רוּחַ [6] ־אלֹהִים רָעָה , — an evil spirit of God,\" chapter 16:15; and absolutely רוּחַ [6] ־אלחִים — \"a spirit of God,\" verse 23, where we have supplied \"evil\" in the translation. But these expressions are to be regulated and explained by verse 14, where he is called רו"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[6]",
-        "family": "bracket_decimal",
-        "context": "these expressions are to be regulated and explained by verse 14, where he is called רוּחַ [6] ־רָעָה מֵאֵת יְהוָֹה [4] , — \"an evil spirit from the LORD;\" that is, appointed and commissioned by him for the punishing and terrifying of Saul: for as the Spirit of the Lord dep"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "marker": "[4]",
-        "family": "bracket_decimal",
-        "context": "be regulated and explained by verse 14, where he is called רוּחַ [6] ־רָעָה מֵאֵת יְהוָֹה [4] , — \"an evil spirit from the LORD;\" that is, appointed and commissioned by him for the punishing and terrifying of Saul: for as the Spirit of the Lord departed from him, by withdr"
+        "context": "who, interpreting these words in his second book, De Spiritu Sancto, lib. 2 cap. 6, [13] [3] being deceived by the corrupt translation mentioned, \"Annuncians in homines Christum suum,\" is forced to give a very strained exposition of that which, in truth, is not in the tex"
       },
       {
         "file": "EPUB/ch007.xhtml",
         "marker": "[2]",
         "family": "bracket_decimal",
-        "context": "and unto them that believe are full of goodness in their effects. Crell. Prolegom., p. 7 [2] , distinguisheth between this good Spirit and the Holy Spirit, or the Holy Ghost; for this good Spirit he would confine unto the Old Testament, making it the author or cause of th"
+        "context": "us; Spiritum autem hoc loco animam, quam suscepit rationabilem et perfectam intelligimus. [2] \""
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[17]",
+        "family": "bracket_decimal",
+        "context": "2 de Spiritu Sancto, [14] Athanas. ad Serapion, [21] Basil. lib. 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[10]",
+        "family": "bracket_decimal",
+        "context": "ith this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[9]",
+        "family": "bracket_decimal",
+        "context": "his corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[12]",
+        "family": "bracket_decimal",
+        "context": "observed before, the word πνεῦμα is variously used, Didymus, de Spiritu Sancto, lib. 3., [12] [11] supposeth that the prefixing of the article τὸ doth distinguish the signification, and confine it to the Holy Ghost in the New Testament. Ofttimes no doubt it doth so, but no"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[25]",
+        "family": "bracket_decimal",
+        "context": "e regulated and explained by verse 14, where he is called רוּחַ [54] ־רָעָה מֵאֵת יְהוָֹה [25] , — \"an evil spirit from the LORD;\" that is, appointed and commissioned by him for the punishing and terrifying of Saul: for as the Spirit of the Lord departed from him, by withdr"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[8]",
+        "family": "bracket_decimal",
+        "context": "ruciating the minds of guilty persons. So Tacitus observes out of Plato, Annal. lib. 6:6, [8]"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[18]",
+        "family": "bracket_decimal",
+        "context": "So he, as I suppose from Plato de Repub. lib. 9., [18] where Socrates disputes sundry things to that purpose. And another Roman historian gives us a signal instance hereof in Jugurtha, after he had contracted the guilt of many horribl"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[15]",
+        "family": "bracket_decimal",
+        "context": "e good Spirit of thy holiness\" or \"Thy holy good Spirit.\" Didymus, lib. 2 de Spir. Sanc., [15] says that some copies here read τὸ ἅγιον , a remembrance whereof is in the MS. of Thecla, and not elsewhere. So Nehemiah 9:20, \"Thou gavest them\" רִוּחֲך הַטוֹבָה , \"thy good Spir"
       },
       {
         "file": "EPUB/ch007.xhtml",
         "marker": "[6]",
         "family": "bracket_decimal",
-        "context": "t of God, and the Spirit of the Lord; so, in the first mention of him, Genesis 1:2, רוּחַ [6] אֶלֹהִים , \"The Spirit of God moved upon the face of the waters.\" And I doubt not but that the name אֶלֹהִים \"Elohim,\" which includes a plurality in the same nature, is used in th"
+        "context": "t he was \"filled with the Spirit of God, in wisdom, and understanding, and in knowledge,\" [6] Exodus 31:3; so 35:31; — \"That is,\" saith he, \"with this 'good Spirit of God.'\" So also, it is pretended, in all those places where the Spirit of God is said to \"come on\" men to e"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[24]",
+        "family": "bracket_decimal",
+        "context": "rd was in my tongue.\" And what Spirit this was Peter declares, 2 Peter 1:212 Epist. 1:21, [24] \"Holy men of God spake in old time as they were moved by the Holy Ghost.\" So vain is this pretense."
       },
       {
         "file": "EPUB/ch008.xhtml",
         "marker": "[2]",
         "family": "bracket_decimal",
-        "context": "from the Lord for the kindling of them. Hence Theodotion of old rendered וַישַׁע יְהוָֹה [2] , Genesis 4:4, \"The LORD had respect unto Abel, and to his offering,\" by ' Ενεπύρισεν ὁ Θεός , \"God fired the offering of Abel;\" sent down fire that kindled his sacrifice as a tok"
+        "context": "it is produced to give countenance unto, — Schlichting. de Trinitat. ad Meisner., p. 605 [2] ); but it is from the manner and end of his being conjoined with the Father and the Son, wherein their \"name,\" — that is, their divine nature and authority, — is ascribed unto him"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "marker": "[6]",
+        "family": "bracket_decimal",
+        "context": "from the Lord for the kindling of them. Hence Theodotion of old rendered וַישַׁע יְהוָֹה [6] , Genesis 4:4, \"The LORD had respect unto Abel, and to his offering,\" by ' Ενεπύρισεν ὁ Θεός , \"God fired the offering of Abel;\" sent down fire that kindled his sacrifice as a tok"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "marker": "[5]",
+        "family": "bracket_decimal",
+        "context": "de but what is monstrous. It is excepted by our adversaries (Crell. de Natur. Spir. Sanc. [5] ), [4] \"That a dove is no person, because not endued with an understanding, which is essentially required unto the constitution of a person; and therefore,\" they say, \"no argument"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "marker": "[4]",
+        "family": "bracket_decimal",
+        "context": "what is monstrous. It is excepted by our adversaries (Crell. de Natur. Spir. Sanc. [5] ), [4] \"That a dove is no person, because not endued with an understanding, which is essentially required unto the constitution of a person; and therefore,\" they say, \"no argument can th"
       },
       {
         "file": "EPUB/ch018.xhtml",
@@ -1285,22 +1749,70 @@
         "context": "sians 3:9. Some intimations were given of them, in \"parables\" and \"dark sayings,\" חִידוֹת [2] מִנִי־קֶדֶם , Psalm 78:2, in types, shadows, and ceremonies, so as the nature of the grace in them was not clearly to be discerned. But now, when the great Physician of our souls"
       },
       {
-        "file": "EPUB/ch030.xhtml",
-        "marker": "[2dly.]",
-        "family": "bracket_ordinal",
-        "context": "God, and is by his Spirit made effectual. And these ends are two: — [lst.] Justification; [2dly.] Salvation, or deliverance from sin and punishment. \"Look unto me,\" saith he, \"and be ye saved.\""
+        "file": "EPUB/ch022.xhtml",
+        "marker": "[4]",
+        "family": "bracket_decimal",
+        "context": "ure or experience; for, \"natura sic apparet vitiata ut hoc majoris vitii sit non videre,\" [4] as Austin speaks. It is an evidence of the corruption of nature, that it disenables the minds of men to discern their own corruption. We have previously discharged this work so fa"
       },
       {
-        "file": "EPUB/ch030.xhtml",
-        "marker": "(3.)",
-        "family": "paren_decimal",
-        "context": "(3.) The immediate efficient cause of all gospel holiness is the Spirit of God. This we have sufficiently proved already. And although many cavils have been raised against the manner o"
+        "file": "EPUB/ch022.xhtml",
+        "marker": "[5]",
+        "family": "bracket_decimal",
+        "context": "t was objected unto him in the Diospolitan synod, that is at Lydda in Palestine, cap. 6.; [5] only he taught her not to say that she had no deceit in her heart, as one among us doth wisely and humbly vaunt that he knoweth of none in his, so every way perfect is the man! On"
       },
       {
-        "file": "EPUB/ch032.xhtml",
-        "marker": "(3.)",
-        "family": "paren_decimal",
-        "context": "(3.) That which remains farther to be demonstrated is, that the Holy Spirit is the author of this work in us, so that although it is our duty, it is his grace and strength whereby it i"
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[15]",
+        "family": "bracket_decimal",
+        "context": "prostrati et elisi a te, Deus meus, ego tamen confitear tibi dedecora mea, in laude tua,\" [15] Confess. lib. 4. cap. 1; [23] [22] — \"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] conf"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[23]",
+        "family": "bracket_decimal",
+        "context": "meus, ego tamen confitear tibi dedecora mea, in laude tua,\" [15] Confess. lib. 4. cap. 1; [23] [22] — \"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] confess my own shame, unto thy pra"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[22]",
+        "family": "bracket_decimal",
+        "context": "ego tamen confitear tibi dedecora mea, in laude tua,\" [15] Confess. lib. 4. cap. 1; [23] [22] — \"Let arrogant men deride or scorn me, who were never savingly cast down nor broken in pieces by thee, my God, yet I will [rather, let me] confess my own shame, unto thy praise.\""
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[21]",
+        "family": "bracket_decimal",
+        "context": "f nature in its infant state, one is peculiarly remarkable: Confess. lib. 1. cap. 6, [24] [21]"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[42]",
+        "family": "bracket_decimal",
+        "context": "This again he repeats, cap. 7: [42]"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[3]",
+        "family": "bracket_decimal",
+        "context": "se obediretur? Ita imbecillitas membrorum infantilium innocens est, non animus infantium. [3] \""
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[6]",
+        "family": "bracket_decimal",
+        "context": "succedentibus majoribus aetatibus transeunt [sicuti ferulis majora supplicia succedunt], [6] \" lib. 1. cap. 19. [28]"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[28]",
+        "family": "bracket_decimal",
+        "context": "s aetatibus transeunt [sicuti ferulis majora supplicia succedunt], [6] \" lib. 1. cap. 19. [28]"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "[30]",
+        "family": "bracket_decimal",
+        "context": "di, studio spectandi nugatoria [et imitandi ludicra inquietudine?] [7] \" lib. 1. cap. 19; [30]"
       }
     ]
   },
@@ -1413,26 +1925,36 @@
     "epub_greek_unique_words": 450,
     "greek_word_coverage_ratio": 0.9936,
     "pdf_hebrew_word_count": 238,
-    "epub_hebrew_word_count": 238,
+    "epub_hebrew_word_count": 235,
     "pdf_hebrew_unique_words": 183,
     "epub_hebrew_unique_words": 177,
-    "hebrew_word_coverage_ratio": 0.9454,
+    "hebrew_word_coverage_ratio": 0.958,
     "missing_greek_word_samples": [],
-    "missing_hebrew_word_samples": [
-      {
-        "word": "לְרוּחַ",
-        "pdf": 2,
-        "epub": 0
-      }
-    ]
+    "missing_hebrew_word_samples": []
   },
   "greek_hebrew_clause_fidelity": {
     "greek_clauses_checked": 42,
-    "missing_greek_clause_count": 0,
-    "missing_greek_clauses": [],
+    "missing_greek_clause_count": 1,
+    "missing_greek_clauses": [
+      {
+        "page": 34,
+        "word_count": 6,
+        "sample": "ζηλουτε δε τα χαρισματα τα κρειττνα"
+      }
+    ],
     "hebrew_clauses_checked": 23,
-    "missing_hebrew_clause_count": 3,
+    "missing_hebrew_clause_count": 5,
     "missing_hebrew_clauses": [
+      {
+        "page": 70,
+        "word_count": 3,
+        "sample": "רוּחַ נְדוֹלָה וְחָזָק"
+      },
+      {
+        "page": 74,
+        "word_count": 3,
+        "sample": "רוּחַ בְּנֵי הָאָדָם"
+      },
       {
         "page": 80,
         "word_count": 3,

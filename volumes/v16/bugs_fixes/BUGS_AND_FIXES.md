@@ -110,12 +110,17 @@ See previous sessions.
 
 
 
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-30T08:51:31.902708+00:00
+**Last run:** 2026-06-03T00:20:18.554057+00:00
 **EPUB:** `volumes/v16/output/volume_16.epub`
-**Status:** WARN (0 errors, 2 warnings)
+**Status:** WARN (0 errors, 1 warnings)
 
 Reports:
 - `volume_16_audit.json`
@@ -124,22 +129,21 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 86 |
-| Spine items | 84 |
-| Embedded fonts | 11 |
-| NAV links | 87 |
-| Greek chars / untagged | 6015 / 0 |
-| Hebrew chars / untagged | 1211 / 0 |
-| Noteref links / endnote anchors | 120 / 120 |
+| XHTML files | 87 |
+| Spine items | 85 |
+| Embedded fonts | 13 |
+| NAV links | 88 |
+| Greek chars / untagged | 6024 / 0 |
+| Hebrew chars / untagged | 1224 / 0 |
+| Noteref links / endnote anchors | 159 / 159 |
 | AGES boilerplate hits | 0 |
-| Possible Beta Code files | 1 |
+| Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 6 |
 
 Warnings requiring triage:
 
-- `possible_beta_code_residue`: Possible Beta Code residue detected
 - `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
@@ -152,10 +156,15 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-30T08:52:03.888943+00:00
+**Last run:** 2026-06-03T00:20:53.797392+00:00
 **Status:** WARN (11 warnings)
 
 Reports:
@@ -165,10 +174,10 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 672 |
-| EPUB text files | 84 |
-| EPUB paragraphs/headings | 2683 |
+| EPUB text files | 85 |
+| EPUB paragraphs/headings | 2687 |
 | Approximate PDF-to-EPUB word coverage | 0.9958 |
-| Weak page matches | 12 |
+| Weak page matches | 10 |
 | Dense source windows checked | 779 |
 | Missing dense source-window pages | 652 |
 | Front CONTENTS pages checked | 5 |
@@ -179,22 +188,22 @@ Reports:
 | Bottom-of-page body windows checked | 605 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 5 |
-| Possible faulty paragraph splits | 31 |
-| Structural starts excluded from split warnings | 278 |
-| Short fragments | 20 |
+| Possible faulty paragraph splits | 33 |
+| Structural starts excluded from split warnings | 280 |
+| Short fragments | 19 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 6 |
+| Inline structural marker candidates | 10 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 3 |
-| Roman heading candidates | 8 |
-| Overlong heading candidates | 11 |
+| Roman heading candidates | 1 |
+| Overlong heading candidates | 1 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 509 |
-| EPUB enumerator markers | 519 |
+| EPUB enumerator markers | 561 |
 | Missing enumerator marker forms | 0 |
-| Enumerator sequence candidates | 2 |
+| Enumerator sequence candidates | 9 |
 | PDF Greek words / EPUB Greek words | 1037 / 1039 |
 | Greek word coverage ratio | 0.993 |
 | PDF Hebrew words / EPUB Hebrew words | 268 / 266 |

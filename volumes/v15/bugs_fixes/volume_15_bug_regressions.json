@@ -1,10 +1,10 @@
 {
   "volume": 15,
   "status": "warn",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v15/bugs_fixes/volume_15_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v15/bugs_fixes/volume_15_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v15/bugs_fixes/volume_15_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v15/bugs_fixes/volume_15_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []

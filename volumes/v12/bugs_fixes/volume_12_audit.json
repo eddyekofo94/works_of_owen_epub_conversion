@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-05-29T12:00:58.469684+00:00",
+  "epub": "volumes/v12/output/volume_12.epub",
+  "generated_at": "2026-06-03T00:07:50.969639+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 3,
@@ -9,7 +9,7 @@
     {
       "code": "possible_beta_code_residue",
       "message": "Possible Beta Code residue detected",
-      "files": 3
+      "files": 1
     },
     {
       "code": "repeated_phrases",
@@ -22,13 +22,22 @@
       "examples": [
         "EPUB/endnotes.xhtml#fn285",
         "EPUB/endnotes.xhtml#fn446",
-        "EPUB/endnotes.xhtml#fn489"
+        "EPUB/endnotes.xhtml#fn489",
+        "EPUB/endnotes.xhtml#fn490",
+        "EPUB/endnotes.xhtml#fn491",
+        "EPUB/endnotes.xhtml#fn492",
+        "EPUB/endnotes.xhtml#fn493",
+        "EPUB/endnotes.xhtml#fn494",
+        "EPUB/endnotes.xhtml#fn495",
+        "EPUB/endnotes.xhtml#fn496",
+        "EPUB/endnotes.xhtml#fn497",
+        "EPUB/endnotes.xhtml#fn498"
       ]
     }
   ],
   "info": {
-    "file_count": 84,
-    "epub_size_bytes": 4235514,
+    "file_count": 90,
+    "epub_size_bytes": 6399960,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -37,15 +46,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 75,
-    "spine_count": 58,
-    "xhtml_count": 60,
+    "manifest_count": 81,
+    "spine_count": 59,
+    "xhtml_count": 61,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 11,
+    "font_count": 15,
     "language": {
-      "greek_chars": 14115,
+      "greek_chars": 12770,
       "greek_untagged_chars": 0,
       "hebrew_chars": 1448,
       "hebrew_untagged_chars": 0,
@@ -54,19 +63,28 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 505,
-      "unique_noteref_targets": 499,
-      "endnote_anchor_count": 502,
+      "noteref_count": 605,
+      "unique_noteref_targets": 598,
+      "endnote_anchor_count": 610,
       "missing_endnote_targets": [],
       "orphan_endnotes": [
         "EPUB/endnotes.xhtml#fn285",
         "EPUB/endnotes.xhtml#fn446",
-        "EPUB/endnotes.xhtml#fn489"
+        "EPUB/endnotes.xhtml#fn489",
+        "EPUB/endnotes.xhtml#fn490",
+        "EPUB/endnotes.xhtml#fn491",
+        "EPUB/endnotes.xhtml#fn492",
+        "EPUB/endnotes.xhtml#fn493",
+        "EPUB/endnotes.xhtml#fn494",
+        "EPUB/endnotes.xhtml#fn495",
+        "EPUB/endnotes.xhtml#fn496",
+        "EPUB/endnotes.xhtml#fn497",
+        "EPUB/endnotes.xhtml#fn498"
       ]
     },
     "content_scan": {
       "boilerplate_hits": 0,
-      "beta_code_files": 3,
+      "beta_code_files": 1,
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
@@ -87,21 +105,13 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
+      "lowercase_paragraph_start_files": 15,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
       "samples": {
         "boilerplate": [],
         "beta_code": [
-          {
-            "file": "EPUB/ch050.xhtml",
-            "text": "Jo"
-          },
-          {
-            "file": "EPUB/contents_2.xhtml",
-            "text": "~v"
-          },
           {
             "file": "EPUB/endnotes.xhtml",
             "text": "ja"
@@ -155,14 +165,55 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch003.xhtml",
+            "text": "who is your unworthy fellow-laborer"
+          },
+          {
+            "file": "EPUB/ch004.xhtml",
+            "text": "and whose blasphemy comes not at all short of it. The first is of Clarus Bonarus"
+          },
+          {
+            "file": "EPUB/ch005.xhtml",
+            "text": "for if we once let go those forms of sound words learned from the apostles, and t"
+          },
+          {
+            "file": "EPUB/ch006.xhtml",
+            "text": "so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, \"Who hath f"
+          },
+          {
+            "file": "EPUB/ch014.xhtml",
+            "text": "is so far from proving that the image of God wherein man was created did consist"
+          },
+          {
+            "file": "EPUB/ch017.xhtml",
+            "text": "which surely as to his incarnation he was not. \"Before Abraham was, I am,\" John 8"
+          },
+          {
+            "file": "EPUB/ch018.xhtml",
+            "text": "and, verse 53,"
+          },
+          {
+            "file": "EPUB/ch020.xhtml",
+            "text": "to which is added that of Revelation 4:8chap. 4:8,"
+          },
+          {
+            "file": "EPUB/ch031.xhtml",
+            "text": "but that I find him in his next query repeating that expression, \"Like unto me,\""
+          },
+          {
+            "file": "EPUB/ch032.xhtml",
+            "text": "and, verse 13, joint worship is given to him who sits upon the throne and to the"
+          }
+        ],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 61,
+    "nav_link_count": 62,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

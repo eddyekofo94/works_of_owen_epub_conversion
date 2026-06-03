@@ -9,7 +9,7 @@
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
 | Possible faulty paragraph splits | 101 | 125 | OK |
-| Inline structural marker candidates | 1 | 5 | OK |
+| Inline structural marker candidates | 1 | 6 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 1 | 38 | OK |
+| Lowercase page fragments | 7 | 38 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -98,4 +98,8 @@
 
 ### Lowercase page fragments
 
+- file: EPUB/ch004.xhtml; text: factores autem sermonum ejus facti, communionem habeamus cum ipso".
 - file: EPUB/ch008.xhtml; text: as he also proclaims the same delight in him, from heaven, in the days of his fle
+- file: EPUB/ch016.xhtml; text: and verse 23, "My Father will love him, and we will come unto him, and make our a
+- file: EPUB/ch022.xhtml; text: and in sundry other places. The assumption, the taking of our human nature to be
+- file: EPUB/ch030.xhtml; text: against him he lifted up himself; — which was the beginning of his transgression.

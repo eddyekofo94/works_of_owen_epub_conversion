@@ -64,7 +64,113 @@ _V10_DIVINE_JUSTICE_TITLE_PAGE = '''<section class="treatise-title-page" epub:ty
 <p class="descriptive">Wherein the Necessity of Punishing Sin Is Asserted, the Satisfaction of Christ Founded Thereon, and the Remission of Sins Through Him Vindicated.</p>
 </section>'''
 
+_V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
+<h1 class="contents-volume-title">CONTENTS OF VOLUME 10.</h1>
+
+<h2 class="contents-treatise-title">I. A DISPLAY OF ARMINIANISM</h2>
+<p class="contents-item"><a href="ch002.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch003.xhtml">To the Committee for Religion</a></p>
+<p class="contents-item"><a href="ch004.xhtml">To the Christian Reader</a></p>
+<div style="font-size: 0.9em; line-height: 1.6; margin-left: 1.5em; color: #444; margin-bottom: 1.5em;">
+  <b>Chapters:</b>
+  <a href="ch005.xhtml">1. Arminian Ends</a> | 
+  <a href="ch006.xhtml">2. Divine Decrees</a> | 
+  <a href="ch007.xhtml">3. Prescience of God</a> | 
+  <a href="ch008.xhtml">4. Providence</a> | 
+  <a href="ch009.xhtml">5. Resisting God’s Will</a> | 
+  <a href="ch010.xhtml">6. Predestination</a> | 
+  <a href="ch011.xhtml">7. Original Sin</a> | 
+  <a href="ch012.xhtml">8. Adam before the Fall</a> | 
+  <a href="ch013.xhtml">9. Death of Christ</a> | 
+  <a href="ch014.xhtml">10. Cause of Grace</a> | 
+  <a href="ch015.xhtml">11. Salvation apart from Knowledge</a> | 
+  <a href="ch016.xhtml">12. Free-Will</a> | 
+  <a href="ch017.xhtml">13. Power of Free-Will</a> | 
+  <a href="ch018.xhtml">14. Conversion</a>
+</div>
+
+<h2 class="contents-treatise-title">II. THE DEATH OF DEATH IN THE DEATH OF CHRIST</h2>
+<p class="contents-item"><a href="ch020.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch021.xhtml">Analysis of the Work</a></p>
+<p class="contents-item"><a href="ch022.xhtml">To Robert, Earl of Warwick</a></p>
+
+<p class="contents-item"><b>Book I.</b> <a href="ch023.xhtml">Redemption, Its Agents and Work</a></p>
+<p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
+  Chapters: 
+  <a href="ch024.xhtml">1</a> | <a href="ch025.xhtml">2</a> | <a href="ch026.xhtml">3</a> | <a href="ch027.xhtml">4</a> | <a href="ch028.xhtml">5</a> | <a href="ch029.xhtml">6</a> | <a href="ch030.xhtml">7</a> | <a href="ch031.xhtml">8</a>
+</p>
+
+<p class="contents-item"><b>Book II.</b> <a href="ch032.xhtml">The End of the Death of Christ Stated</a></p>
+<p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
+  Chapters: 
+  <a href="ch033.xhtml">1</a> | <a href="ch034.xhtml">2</a> | <a href="ch035.xhtml">3</a> | <a href="ch036.xhtml">4</a> | <a href="ch037.xhtml">5</a>
+</p>
+
+<p class="contents-item"><b>Book III.</b> <a href="ch038.xhtml">Arguments Against Universal Redemption</a></p>
+<p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
+  Chapters: 
+  <a href="ch039.xhtml">1</a> | <a href="ch040.xhtml">2</a> | <a href="ch041.xhtml">3</a> | <a href="ch042.xhtml">4</a> | <a href="ch043.xhtml">5</a> | <a href="ch044.xhtml">6</a> | <a href="ch045.xhtml">7</a> | <a href="ch046.xhtml">8</a> | <a href="ch047.xhtml">9</a> | <a href="ch048.xhtml">10</a> | <a href="ch049.xhtml">11</a>
+</p>
+
+<p class="contents-item"><b>Book IV.</b> <a href="ch050.xhtml">Objections Answered and Ancient Testimonies</a></p>
+<p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
+  Chapters: 
+  <a href="ch051.xhtml">1</a> | <a href="ch052.xhtml">2</a> | <a href="ch053.xhtml">3</a> | <a href="ch054.xhtml">4</a> | <a href="ch055.xhtml">5</a> | <a href="ch056.xhtml">6</a> | <a href="ch057.xhtml">7</a> | <a href="ch058.xhtml">Ancient Testimonies</a>
+</p>
+
+<h2 class="contents-treatise-title">III. OF THE DEATH OF CHRIST (REPLY TO BAXTER)</h2>
+<p class="contents-item"><a href="ch061.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch062.xhtml">To the Reader</a></p>
+<div style="font-size: 0.9em; line-height: 1.6; margin-left: 1.5em; color: #444; margin-bottom: 1.5em;">
+  <b>Chapters:</b>
+  <a href="ch063.xhtml">1. Occasion</a> | 
+  <a href="ch064.xhtml">2. Entrance</a> | 
+  <a href="ch065.xhtml">3. Grotius and Baxter</a> | 
+  <a href="ch066.xhtml">4. Satisfaction</a> | 
+  <a href="ch067.xhtml">5. Justification before Faith</a> | 
+  <a href="ch068.xhtml">6. Acts of God’s Will</a> | 
+  <a href="ch069.xhtml">7. State of the Elect</a> | 
+  <a href="ch070.xhtml">8. Efficacy of Christ’s Death</a> | 
+  <a href="ch071.xhtml">9. Immediate Effect</a> | 
+  <a href="ch072.xhtml">10. Merit of Christ</a> | 
+  <a href="ch073.xhtml">11. State before Believing</a> | 
+  <a href="ch074.xhtml">12. Attaining Faith</a> | 
+  <a href="ch075.xhtml">13. Conclusion</a>
+</div>
+
+<h2 class="contents-treatise-title">IV. A DISSERTATION ON DIVINE JUSTICE</h2>
+<p class="contents-item"><a href="ch077.xhtml">Prefatory Note</a></p>
+<p class="contents-item"><a href="ch078.xhtml">To the Public</a></p>
+<p class="contents-item"><a href="ch079.xhtml">To Lord Oliver Cromwell</a></p>
+<p class="contents-item"><a href="ch080.xhtml">Preface to the Reader</a></p>
+<div style="font-size: 0.9em; line-height: 1.6; margin-left: 1.5em; color: #444; margin-bottom: 1.5em;">
+  <b>Chapters:</b>
+  <a href="ch081.xhtml">1. Design</a> | 
+  <a href="ch082.xhtml">2. Universal Justice</a> | 
+  <a href="ch083.xhtml">3. Vindicatory Justice</a> | 
+  <a href="ch084.xhtml">4. Human Sacrifices</a> | 
+  <a href="ch085.xhtml">5. Providence</a> | 
+  <a href="ch086.xhtml">6. Punitory Justice</a> | 
+  <a href="ch087.xhtml">7. God’s Glory</a> | 
+  <a href="ch088.xhtml">8. Necessity of Punishment</a> | 
+  <a href="ch089.xhtml">9. Crellius Examined</a> | 
+  <a href="ch090.xhtml">10. Socinus Examined</a> | 
+  <a href="ch091.xhtml">11. Socinian Arguments</a> | 
+  <a href="ch092.xhtml">12. Domestic Controversy</a> | 
+  <a href="ch093.xhtml">13. Twisse First Argument</a> | 
+  <a href="ch094.xhtml">14. Twisse Third Argument</a> | 
+  <a href="ch095.xhtml">15. Lubbertus defended</a> | 
+  <a href="ch096.xhtml">16. Piscator Review</a> | 
+  <a href="ch097.xhtml">17. Rutherford Review</a> | 
+  <a href="ch098.xhtml">18. Spiritual Utility</a>
+</div>
+</section>'''
+
 OVERRIDES = {
+    'contents_page_overrides': _V10_CONTENTS_PAGE,
+    'front_matter_overrides': {
+        'Contents': _V10_CONTENTS_PAGE,
+    },
     'treatise_title_overrides': {
         'A Display of Arminianism:': _V10_ARMINIANISM_TITLE_PAGE,
         'The Death of Death in the Death of Christ': _V10_DEATH_OF_DEATH_TITLE_PAGE,
@@ -83,7 +189,8 @@ OVERRIDES = {
         '206 "In': '"In',
     },
     'regex_replacements': {
-        r'T\. M\[ore(\.?)\]': r'T. More\1',
+        '(?s)unworthiest laborer in his vineyard, _\\*\\*J\\.O\\.\\*\\*_\\s*<section class="treatise-title-page"[^>]*>.*?</section>': 'unworthiest laborer in his vineyard, _**J.O.**_',
+        'T\\. M\\[ore(\\.?)\\]': 'T. More\\1',
     },
 }
 

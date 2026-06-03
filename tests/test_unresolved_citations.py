@@ -23,7 +23,7 @@ UNRESOLVED_BUDGETS = {
     9: 0,
     10: 12,
     11: 7,
-    12: 55,
+    12: 0,
     13: 3,
     14: 16,
     15: 21,
@@ -160,4 +160,79 @@ def test_untranslated_prose_footnotes(vol_num):
         print(f"\nSUCCESS: Volume {vol_num} beat its untranslated prose footnote budget! "
               f"(Got {untranslated_count}, budgeted {budget}). "
               "Please lower the budget in test_unresolved_citations.py.")
+
+@pytest.mark.parametrize("vol_num", get_available_volumes())
+def test_untranslated_prose_body(vol_num):
+    """
+    Deep semantic check: Ensures that all substantial Latin or Greek prose runs in
+    the body paragraphs have a modern academic translation mapped in BODY_TRANSLATIONS.
+    """
+    from translation_db import BODY_TRANSLATIONS
+    
+    data = load_volume(vol_num)
+    if not data:
+        pytest.skip(f"Volume {vol_num} intermediate JSON not found.")
+        
+    COMMON_ENGLISH_WORDS = {
+        'the', 'and', 'of', 'to', 'a', 'in', 'is', 'that', 'it', 'he', 'was', 'for', 'on', 'are', 'as', 'with', 'his', 
+        'they', 'i', 'this', 'be', 'at', 'have', 'from', 'or', 'by', 'one', 'had', 'not', 'but', 'what', 'all', 'were', 
+        'we', 'when', 'your', 'my', 'their', 'them', 'who', 'which', 'him', 'whose', 'our', 'us', 'you', 'your', 'so',
+        'if', 'out', 'up', 'do', 'will', 'no', 'only', 'would', 'there', 'about', 'more', 'can', 'has', 'been'
+    }
+
+    LATIN_INDICATOR_WORDS = {
+        'et', 'est', 'non', 'sunt', 'enim', 'autem', 'sed', 'quod', 'qui', 'quae', 'ut', 'ad', 'per', 'ab', 'cum', 'vel',
+        'nec', 'se', 'sibi', 'suo', 'sua', 'ejus', 'eorum', 'de', 'ex', 'pro', 'sine', 'atque', 'quia', 'vero', 'nam',
+        'hic', 'haec', 'hoc', 'ipsa', 'ipso', 'illud', 'illa', 'tamen', 'dum', 'ita', 'si', 'nisi', 'sub', 'ob', 'sod'
+    }
+
+    def is_body_latin_prose(text: str) -> bool:
+        words = re.findall(r'\b[a-zA-Z]+\b', text.lower())
+        if len(words) < 5:
+            return False
+        
+        english_count = sum(1 for w in words if w in COMMON_ENGLISH_WORDS)
+        latin_indicator_count = sum(1 for w in words if w in LATIN_INDICATOR_WORDS)
+        
+        non_english_count = len(words) - english_count
+        if non_english_count < 4:
+            return False
+            
+        if latin_indicator_count >= 2 and non_english_count / len(words) > 0.6:
+            return True
+        return False
+
+    def is_body_greek_prose(text: str) -> bool:
+        greek_words = re.findall(r'\b[\u0370-\u03ff\u1f00-\u1fff]+\b', text)
+        return len(greek_words) >= 4
+
+    untranslated_body_runs = []
+    for ch in data.get("chapters", []):
+        raw = ch.get("raw_text", "")
+        paragraphs = [p.strip() for p in raw.split("\n\n") if p.strip()]
+        for p_idx, p in enumerate(paragraphs):
+            quotes = re.findall(r'\"([^\"]{8,})\"', p)
+            for quote in quotes:
+                quote = quote.strip()
+                if is_body_latin_prose(quote) or is_body_greek_prose(quote):
+                    translated = False
+                    for phrase in BODY_TRANSLATIONS:
+                        if phrase in quote or quote in phrase:
+                            translated = True
+                            break
+                    if not translated:
+                        untranslated_body_runs.append((ch.get("title"), p_idx, quote))
+
+    untranslated_count = len(untranslated_body_runs)
+    budget = 145 if vol_num == 12 else 200
+    
+    error_msg = (
+        f"Volume {vol_num} has {untranslated_count} untranslated body prose runs, "
+        f"exceeding the budget of {budget}.\n"
+    )
+    for title, p_idx, quote in untranslated_body_runs[:10]:
+        error_msg += f"  - Ch [{title}], P {p_idx}: {quote[:120]}...\n"
+        
+    assert untranslated_count <= budget, error_msg
+
 

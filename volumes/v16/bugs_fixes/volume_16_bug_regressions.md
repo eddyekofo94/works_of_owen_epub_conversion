@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 31 | 61 | OK |
-| Inline structural marker candidates | 6 | 6 | OK |
+| Possible faulty paragraph splits | 33 | 61 | OK |
+| Inline structural marker candidates | 10 | 10 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -28,10 +28,10 @@
 | Missing configured fonts | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
-| Untagged Hebrew characters | 0 | 0 | OK |
-| Hebrew integrity failures | 0 | 0 | OK |
+| Untagged Hebrew characters | 0 | 26 | OK |
+| Hebrew integrity failures | 0 | 26 | OK |
 | Repeated phrase hits | 6 | 7 | OK |
-| Possible Beta Code residue files | 1 | 2 | OK |
+| Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
 | Empty bracket noise files | 0 | 0 | OK |
@@ -78,7 +78,7 @@
 - file: EPUB/ch006.xhtml; text: Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1,
 - file: EPUB/ch012.xhtml; text: Nor was this a temporary institution, for that season, and so the officers appointed extraordinary, but it was to abide in the church throughout a!! generations; for, — 1. The work itself, as a distinct work of ministry 
 - file: EPUB/ch013.xhtml; text: The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and sca
-- file: EPUB/ch063.xhtml; text: Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: "Write it." It is a certain vision. 2. It is evident: "Make it plain upon tables, that he may run that readeth it." 3. It is determined
+- file: EPUB/ch014.xhtml; text: There is nothing, therefore, in Scripture example or the light of natural reason, with the principles of all societies in union or communion, that will lead us any farther than this, that such synods are to be composed a
 
 ### Repeated word windows
 
@@ -95,10 +95,6 @@
 - file: combined_text; text: reflections on a slanderous libel against dr owen
 - file: combined_text; text: the prebends of christ church college in oxford
 - file: combined_text; text: sermon 6 the obligation to increase in godliness
-
-### Possible Beta Code residue files
-
-- file: EPUB/contents_3.xhtml; text: ]W
 
 ### Lowercase page fragments
 

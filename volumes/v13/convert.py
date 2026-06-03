@@ -149,7 +149,102 @@ _V13_WORD_OF_ADVICE_TITLE_PAGE = '''<section class="treatise-title-page" epub:ty
 <p class="title-line-major">Citizens of London.</p>
 </section>'''
 
+_V13_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
+<h1 class="contents-volume-title">CONTENTS OF VOLUME 13.</h1>
+
+<h2 class="contents-treatise-title">THE DUTY OF PASTORS AND PEOPLE DISTINGUISHED</h2>
+<p class="contents-item"><a href="ch002.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch003.xhtml">Epistle Dedicatory to Sir Edward Scot</a></p>
+<p class="contents-item"><a href="ch004.xhtml">Preface to the Reader</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch005.xhtml">Of the administration of holy things among the patriarchs before the law</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch006.xhtml">Of the same among the Jews, and of the duty of that people distinct from their church-state</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch007.xhtml">Containing a digression concerning the name of "priests," the right of Christians to that title, etc.</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch008.xhtml">Of the duty of God's people in cases extraordinary concerning his worship</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch009.xhtml">Of the several ways of extraordinary calling to the teaching of others</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch010.xhtml">What assurance men extraordinarily called can give to others that they are so called</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch011.xhtml">The second way whereby a man may be called extraordinarily</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch012.xhtml">Of the liberty and duty of gifted uncalled Christians in the exercise of divers acts of God's worship</a></p>
+
+<h2 class="contents-treatise-title">ESHCOL: A CLUSTER OF THE FRUIT OF CANAAN</h2>
+<p class="contents-item"><a href="ch014.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch015.xhtml">To the Reader</a></p>
+<p class="contents-item"><a href="ch016.xhtml">Rules for Church Fellowship (Eshcol; a Cluster of the Fruit of Canaan)</a></p>
+
+<h2 class="contents-treatise-title">OF SCHISM: THE TRUE NATURE OF IT STATED</h2>
+<p class="contents-item"><a href="ch018.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch019.xhtml">Aggravations of the evil of schism, from the authority of the ancients</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch020.xhtml">The nature of schism to be determined from Scripture only</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch021.xhtml">Objections against the former discourse proposed to consideration</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch022.xhtml">Several acceptations in the Scripture of the name "church" — Of the church catholic, etc.</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch023.xhtml">Of the catholic church visible — Of the nature thereof</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch024.xhtml">Romanists' charge of schism on the account of separation from the church catholic examined</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch025.xhtml">Of a particular church; its nature — Frequently mentioned in Scripture</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch026.xhtml">Of the church of England — The charge of schism in the name thereof proposed and considered</a></p>
+
+<h2 class="contents-treatise-title">A REVIEW OF THE TRUE NATURE OF SCHISM</h2>
+<p class="contents-item"><a href="ch028.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch029.xhtml">To the Reader</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch030.xhtml">Introductory observations</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch031.xhtml">An answer to the appendix of Mr. Cawdrey's charge</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch032.xhtml">A review of the charger's preface</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch033.xhtml">Of the nature of schism</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch034.xhtml">The scripture meaning of schism farther considered</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch035.xhtml">Of the church catholic visible, and separation from it</a></p>
+<p class="contents-item"><b>Chapter VII.</b> <a href="ch036.xhtml">Of the congregational church-state and separation</a></p>
+<p class="contents-item"><b>Chapter VIII.</b> <a href="ch037.xhtml">Of Independentism and Donatism</a></p>
+<p class="contents-item"><b>Chapter IX.</b> <a href="ch038.xhtml">Of the charge of schism against congregational churches</a></p>
+<p class="contents-item"><b>Chapter X.</b> <a href="ch039.xhtml">Independency no schism</a></p>
+
+<h2 class="contents-treatise-title">AN ANSWER TO A LATE TREATISE ABOUT THE NATURE OF SCHISM</h2>
+<p class="contents-item"><a href="ch041.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch042.xhtml">An Answer to Mr. Cawdrey's Book About Schism</a></p>
+
+<h2 class="contents-treatise-title">A BRIEF VINDICATION OF THE NONCONFORMISTS FROM THE CHARGE OF SCHISM</h2>
+<p class="contents-item"><a href="ch044.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch045.xhtml">A Brief Vindication of the Nonconformists</a></p>
+
+<h2 class="contents-treatise-title">TRUTH AND INNOCENCE VINDICATED</h2>
+<p class="contents-item"><a href="ch047.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch048.xhtml">A Survey of a Discourse Concerning Ecclesiastical Polity</a></p>
+<p class="contents-item"><b>Chapter I.</b> <a href="ch049.xhtml">A survey of the first chapter</a></p>
+<p class="contents-item"><b>Chapter II.</b> <a href="ch050.xhtml">A survey of the second chapter</a></p>
+<p class="contents-item"><b>Chapter III.</b> <a href="ch051.xhtml">A survey of the third chapter</a></p>
+<p class="contents-item"><b>Chapter IV.</b> <a href="ch052.xhtml">A survey of the fourth chapter</a></p>
+<p class="contents-item"><b>Chapter V.</b> <a href="ch053.xhtml">A survey of the fifth chapter</a></p>
+<p class="contents-item"><b>Chapter VI.</b> <a href="ch054.xhtml">A survey of the sixth chapter</a></p>
+
+<h2 class="contents-treatise-title">TWO QUESTIONS CONCERNING THE POWER OF THE SUPREME MAGISTRATE</h2>
+<p class="contents-item"><a href="ch056.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><b>Question I.</b> <a href="ch057.xhtml">First question considered</a></p>
+<p class="contents-item"><b>Question II.</b> <a href="ch058.xhtml">Second question considered</a></p>
+<p class="contents-item"><b>Question III.</b> <a href="ch059.xhtml">Third question considered</a></p>
+
+<h2 class="contents-treatise-title">INDULGENCE AND TOLERATION CONSIDERED</h2>
+<p class="contents-item"><a href="ch061.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch062.xhtml">Indulgence and Toleration Considered (A Letter to a Person of Honour)</a></p>
+
+<h2 class="contents-treatise-title">A PEACE-OFFERING</h2>
+<p class="contents-item"><a href="ch064.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch065.xhtml">A Peace-offering in an Apology for Indulgence</a></p>
+
+<h2 class="contents-treatise-title">THE GROUNDS AND REASONS ON WHICH PROTESTANT DISSENTERS DESIRE TOLERATION</h2>
+<p class="contents-item"><a href="ch067.xhtml">Prefatory Note by the Editor</a></p>
+<p class="contents-item"><a href="ch068.xhtml">I. An Account of the Grounds and Reasons on Which Protestant Dissenters Desire Relief</a></p>
+<p class="contents-item"><a href="ch070.xhtml">Prefatory Note: The Case of Present Distresses</a></p>
+<p class="contents-item"><a href="ch071.xhtml">II. The Case of Present Distresses on Nonconformists Examined</a></p>
+
+<h2 class="contents-treatise-title">THE STATE OF THE KINGDOM WITH RESPECT TO THE BILL AGAINST NONCONFORMISTS</h2>
+<p class="contents-item"><a href="ch073.xhtml">Prefatory Note: Posthumous Tracts</a></p>
+<p class="contents-item"><a href="ch074.xhtml">I. The State of the Kingdom with Respect to the Bill Against Nonconformists</a></p>
+<p class="contents-item"><a href="ch076.xhtml">Prefatory Note: Advice to the Citizens of London</a></p>
+<p class="contents-item"><a href="ch077.xhtml">II. A Word of Advice to the Citizens of London</a></p>
+</section>'''
+
 OVERRIDES = {
+    'contents_page_overrides': _V13_CONTENTS_PAGE,
+    'front_matter_overrides': {
+        'Contents': _V13_CONTENTS_PAGE,
+    },
     'treatise_title_overrides': {
         'The Duty of Pastors and People Distinguished:': _V13_DUTY_PASTORS_TITLE_PAGE,
         # Two JSON entries for Eshcol (one with comma, one with period)

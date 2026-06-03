@@ -1,10 +1,10 @@
 {
   "volume": 1,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -71,7 +71,7 @@
     {
       "label": "Inline structural marker candidates",
       "observed": 1,
-      "budget": 5,
+      "budget": 6,
       "status": "ok",
       "samples": [
         {
@@ -478,13 +478,37 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 1,
+      "observed": 7,
       "budget": 38,
       "status": "ok",
       "samples": [
         {
+          "file": "EPUB/ch004.xhtml",
+          "text": "factores autem sermonum ejus facti, communionem habeamus cum ipso\"."
+        },
+        {
           "file": "EPUB/ch008.xhtml",
           "text": "as he also proclaims the same delight in him, from heaven, in the days of his fle"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "and verse 23, \"My Father will love him, and we will come unto him, and make our a"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "and in sundry other places. The assumption, the taking of our human nature to be"
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "against him he lifted up himself; — which was the beginning of his transgression."
+        },
+        {
+          "file": "EPUB/ch039.xhtml",
+          "text": "whereunto we shall speak immediately. And if this were so excellent a privilege a"
+        },
+        {
+          "file": "EPUB/ch040.xhtml",
+          "text": "and the Psalmist, \"How long, LORD? wilt thou hide thyself for ever?\" Psalm 89:46."
         }
       ]
     },

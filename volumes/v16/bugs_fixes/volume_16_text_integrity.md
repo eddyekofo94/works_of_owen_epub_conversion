@@ -3,16 +3,16 @@
 - Status: **WARN**
 - Warnings: 11
 - PDF pages: 672
-- EPUB text files: 84
-- EPUB paragraphs/headings: 2683
+- EPUB text files: 85
+- EPUB paragraphs/headings: 2687
 
 ## Coverage
 
 - PDF content tokens: 219816
-- EPUB content tokens: 220364
+- EPUB content tokens: 220548
 - Approximate PDF-to-EPUB coverage ratio: 0.9958
 - Pages checked: 662
-- Weak page matches: 12
+- Weak page matches: 10
 - Dense source windows checked: 779
 - Missing dense source-window pages: 652
 - Front CONTENTS pages checked: 5
@@ -26,23 +26,23 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2352
-- Possible faulty paragraph splits: 31
-- Structural starts excluded from split warnings: 278
-- Short fragments: 20
+- Body paragraphs checked: 2349
+- Possible faulty paragraph splits: 33
+- Structural starts excluded from split warnings: 280
+- Short fragments: 19
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 6
+- Inline structural marker candidates: 10
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 3
-- Roman heading candidates: 8
-- Overlong heading candidates: 11
+- Roman heading candidates: 1
+- Overlong heading candidates: 1
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 509
-- EPUB enumerator markers: 519
+- EPUB enumerator markers: 561
 - Missing enumerator marker forms: 0
-- Enumerator sequence candidates: 2
+- Enumerator sequence candidates: 9
 
 ## Greek / Hebrew
 
@@ -107,11 +107,11 @@
 - file: EPUB/ch008.xhtml; previous: d the same spirit, the same mind herein, ought, according to their measure, to be in all that have the pastoral office committed unto them. So the apostle expresseth it in himself,; next: And unless this compassion and goodness do run through the discharge of their whole office, men cannot be said to be evangelical shepherds, nor the sheep said in any sense to be th
 - file: EPUB/ch025.xhtml; previous: 3. It is contrary to the rule delivered, Malachi 1:13, 14,; next: We are obliged, by all divine laws, natural, moral, and positive, to serve God always with our best. The obligations hereunto are inseparable from all just conceptions of the divin
 - file: EPUB/ch029.xhtml; previous: marry who is maliciously and obstinately deserted, alarming that the Christian religion doth not prejudice the natural right and privilege of men in such cases: 1 Corinthians 7:15,; next: If a person obstinately depart, on pretense of religion or otherwise, and will no more cohabit with a husband or wife, it is known that, by the law of nature and the usage of all n
+- file: EPUB/ch032.xhtml; previous: um ipsis quoque fiens; deinde et usque ad mortem pervenit, ut sit primogenitus ex mortuis, ipse primatum tenens in omnibus, princeps vitae, prior omnium, et praecedens omnes. " [1]; next: Lib. 1: cap. 18: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ , τοσαῦται καὶ ἀπολυτρώσεις . Οτι μὲν εἰς ἐξάρνησιν τοῦ βαπτισ́ματος τῆς εἰς Θεὸν ἀναγεννήσεως , καὶ πάσης τῆς πίστεως ἀ
 - file: EPUB/ch032.xhtml; previous: sm of that regeneration which is unto God.' But that indeed the word 'renascuntur,' 'are born again,' is not meant of baptism is proved from the words and the scope of them; for, —; next: words and scope show. But he was not in his age an example of every age by his baptism, as if he did by it sanctify every age, for then he should have been baptized in every age; b
-- file: EPUB/ch044.xhtml; previous: es; which show the work of the law written in their hearts, their conscience also bearing witness, and their thoughts the mean while accusing or else excusing one another." (Romans; next: 2:14, 15.) By the light that God hath indelibly implanted in the minds of men — accompanied with a moral instinct of good and evil, seconded by that selfjudgment which he hath plac
 - file: EPUB/ch052.xhtml; previous: ause this thing is much insisted on by Galatinus to prove the Jews' corrupting of the text, it may not be amiss to set down the words of that great master of all Jewish learning: —; next: The עיטור סופרים are insisted on by the same Galatinus; but these are only about the use of the letter ו four or five times, which seem to be of the same rise with them foregoing.
+- file: EPUB/ch058.xhtml; previous: am veritatem, ut interim fatear illos non admodum peritos fuisse linguae Hebraicae id vel quod inviti cogimur fateri, alioquin in plurimis locis non tam fcede lapsi fuissent. " [1]; next: If, moreover, the ability be granted, what security have we of their principles and honesty? Cardinal Ximenes, in his preface to the edition of the Complutensian Bibles, tells us (
 - file: EPUB/ch062.xhtml; previous: or in the LORD JEHOVAH is everlasting strength." Ye know that God doth often invite us to trust in his name; and they that know his name will put their trust in him: Psalm 9:9, 10,; next: Is there any one that "walketh in darkness, and hath no light? let him trust in the name of the LORD," Isaiah 1:10.
-- file: EPUB/ch062.xhtml; previous: 2. God, to show it to be our duty and wisdom, doth immediately propose the very properties of his nature for our relief: Isaiah 40:27,; next: — words whose sense are often ready to possess our hearts: I am sure they often lie at the door of mine; I know not how it is with you. What doth God propose to relieve them in tha
 
 ## Inline Structural Marker Candidates
 
@@ -119,6 +119,10 @@
 - file: EPUB/ch006.xhtml; text: Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1, 15. 3. Humble wa...
 - file: EPUB/ch012.xhtml; text: Nor was this a temporary institution, for that season, and so the officers appointed extraordinary, but it was to abide in the church throughout a!! generations; for, — 1. The work itself, as a distinct work of ministry in the church, wa...
 - file: EPUB/ch013.xhtml; text: The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humili...
+- file: EPUB/ch014.xhtml; text: There is nothing, therefore, in Scripture example or the light of natural reason, with the principles of all societies in union or communion, that will lead us any farther than this, that such synods are to be composed and consist of suc...
+- file: EPUB/ch043.xhtml; text: By the assertion, then, laid down, of God "speaking in the prophets of old," from the beginning to the end of that long tract of time (consisting of one thousand years) wherein he gave out the writings of the Old Testament, two things ar...
+- file: EPUB/ch055.xhtml; text: Junius, in the close of his animadversions on Bell. De Verbo Dei, lib. 2, cap. 2, [4] commends that saying of Johannes Isaac against Lindanus, "He that reads the Scriptures without points is like a man that rides a horse ἀχάλινος , witho...
+- file: EPUB/ch056.xhtml; text: The place insisted on by him out of Aben Ezra was some years before produced, weighed, and explained, by Buxtorf, out of his לָשׁוֹן ־הקֹּדֶשׁ מאֹזְנֵי , or the Standard of the Holy Tongue, De Punct. Orig. par. 1 p. 13, 14, cap. 3; [4] a...
 - file: EPUB/ch063.xhtml; text: Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: "Write it." It is a certain vision. 2. It is evident: "Make it plain upon tables, that he may run that readeth it." 3. It is determined: "The vision is ...
 - file: EPUB/ch070.xhtml; text: Why, saith he, — 1. "No man layeth it to heart." And, 2. "None considering that they are taken away from the evil to come." The meaning of it is this, that in those strange and wonderful dispensations of God, there are very few that eith...
 
@@ -130,26 +134,10 @@
 
 ## Roman Heading Candidates
 
-- file: EPUB/ch018.xhtml; text: II. The way and order laid down is directed unto, warranted, and confirmed, by general rules of the Scripture.
-- file: EPUB/ch018.xhtml; text: III. The way and order expressed is warranted by necessity, as that without which the peace of communion and edification of the churches cannot be preserved and carried on; as, —
-- file: EPUB/ch018.xhtml; text: IV. This whole order and practice are grounded on especial warrant and approbation, recorded Acts 15.; concerning which we may observe, —
-- file: EPUB/ch030.xhtml; text: I. THE question is not whether professing believers, Jews or Gentiles, not baptized in their infancy, ought to be baptized; for this is by all confessed.
-- file: EPUB/ch030.xhtml; text: III. The question is not whether all infants are to be baptized or not; for, according to the will of God, some are not to be baptized, even such whose parents are strangers from the covenant, But hence it will follow th
-- file: EPUB/ch031.xhtml; text: III. The question is not whether all infants are to be baptized or not; for, according to the will of God, some are not to be baptized, even such whose parents are strangers from the covenant, But hence it will follow th
-- file: EPUB/ch036.xhtml; text: II. His last attempt is upon some sayings which he calls my "principles;" in the representation whereof whether he hath dealt with any greater regard to truth and honesty than are the things we have already passed throug
 - file: EPUB/ch056.xhtml; text: L. One, none, note, etc. — oe velca. O rotund.
 
 ## Overlong Heading Candidates
 
-- file: EPUB/ch006.xhtml; tag: h4; text: II. The rule of the church is, in general, the exercise of the power or authority of Jesus Christ, given unto it, according unto the laws and directions prescribed by himself, unto its edification.
-- file: EPUB/ch006.xhtml; tag: h4; text: III. This is the especial nature and especial end of all power granted by Jesus Christ unto the church, namely, a ministry unto edification, in opposition unto all the ends whereunto it hath been abused; for it hath been so unto the usur...
-- file: EPUB/ch006.xhtml; tag: h4; text: IV. Whereas, therefore, there is a power and authority for its rule unto edification given and committed by the Lord Christ unto his church, I shall proceed to inquire how this power is communicated, what it is, and to whom it is granted...
-- file: EPUB/ch006.xhtml; tag: h4; text: V. These things being thus premised in general concerning church-power, we must treat yet particularly of the communication of it from Christ, and of its distribution as unto its residence in the church: —
-- file: EPUB/ch006.xhtml; tag: h4; text: VI. These things have been spoken concerning the polity of the church in general, as it is taken _objectively_ for the constitution of its state and the laws of its rule.
-- file: EPUB/ch007.xhtml; tag: h4; text: II. As to _the nature of this election,_ call, or choice of a person known, tried, and judged meetly qualified for the pastoral office, it is an act of the whole church; that is, of the fraternity with their elders, if they have any; for...
-- file: EPUB/ch007.xhtml; tag: h4; text: III. That, therefore, which we have now to prove is this, that it is the mind and will of Jesus Christ that meet persons should be called unto the pastoral office (or any other office in the church) by the election and choice of the chur...
-- file: EPUB/ch007.xhtml; tag: h4; text: IV. But this election of the church doth not actually and immediately instate the person chosen in the office whereunto he is chosen, nor give actual right unto its exercise.
-- file: EPUB/ch018.xhtml; tag: h4; text: V. The order asserted is confirmed by the practice of the first churches, after the decease of the apostles; for when the church of Corinth had, by an undue exercise of discipline, deposed some of their elders, the church of Rome, taking...
 - file: EPUB/ch024.xhtml; tag: h3; text: QUESTION 1. WHETHER persons who have engaged unto reformation and another way of divine worship, according to the word of God, as they believe, may lawfully go unto and attend on the us of the prayer book in divine worship?
 
 ## Short Fragments
@@ -162,13 +150,20 @@
 - file: EPUB/ch022.xhtml; text: I.
 - file: EPUB/ch033.xhtml; text: OF DIPPING.
 - file: EPUB/ch044.xhtml; text: So Job 37-39, throughout.
-- file: EPUB/ch050.xhtml; text: - ED.
 - file: EPUB/ch056.xhtml; text: Double. Diphthongs.
+- file: EPUB/ch056.xhtml; text: Shi, di; thy, my.
 
 ## Enumerator Sequence Candidates
 
 - file: EPUB/ch011.xhtml; marker: [2.]; family: bracket_decimal; context: [2.] Personal holiness, in gracious moral obedience.
 - file: EPUB/ch013.xhtml; marker: (2dly.); family: paren_ordinal; context: unto it for its administration in the name of our Lord Jesus Christ, and with his power; (2dly.) The declarative cause of the equity of this sentence, which was the spirit of the apostle, or the authoritative declaration of his judgment ...
+- file: EPUB/ch014.xhtml; marker: [2]; family: bracket_decimal; context: f the same kind and nature; for there is, no such disparity between them or subordination [2] among them as should make a difference between the acts of their mutual communion, so as that the acts of some should be acts of authority, and...
+- file: EPUB/ch039.xhtml; marker: [3]; family: bracket_decimal; context: th Morinus, and calls his work " Plagium portentosum, cui vix simile unquam factum est. " [3] (Exerc. 1, cap. 2.) From Raymundus, saith Scaliget (Epist. 2:41), mistaking Raymundus Martinus for Raymundus Sebon, but giving the first tiding...
+- file: EPUB/ch055.xhtml; marker: [2]; family: bracket_decimal; context: diversimodo legi, ut futura sit major confusio unicae hujus linguae quam illa Babylonia " [2] Morinus plainly affirms that it is so indeed, instancing in the word דבר , which, as it may be variously pointed, hath at least eight several s...
+- file: EPUB/ch055.xhtml; marker: [4]; family: bracket_decimal; context: Junius, in the close of his animadversions on Bell. De Verbo Dei, lib. 2, cap. 2, [4] commends that saying of Johannes Isaac against Lindanus, "He that reads the Scriptures without points is like a man that rides a horse ἀχάλινος , witho...
+- file: EPUB/ch056.xhtml; marker: [4]; family: bracket_decimal; context: מאֹזְנֵי , or the Standard of the Holy Tongue, De Punct. Orig. par. 1 p. 13, 14, cap. 3; [4] and it is not unlikely, from Morinus his preface to his consideration of that place, that he fixed on it some years ago, that he learned it from...
+- file: EPUB/ch056.xhtml; marker: [3]; family: bracket_decimal; context: . 5, " Dicesve me haec omnia mutuatum a Buxtorfio? quidni vero mutuor, si necesse erit. " [3] But what is the great discovery here made?
+- file: EPUB/ch058.xhtml; marker: [3]; family: bracket_decimal; context: rk, are all of them incredible. 113 See Scal. ad Euseb. fol. 123; Wouwer Syntag. cap. 11. [3] — Some of the Jews say that they made the translation out of a corrupt Chaldee paraphrase; and to me this seems not unlikely. Josephus, Austin,...
 
 ## Repeated Windows
 
@@ -193,7 +188,9 @@
 
 ## Excess Word Samples
 
-- word: digital; pdf: 0; epub: 8
+- word: modern; pdf: 8; epub: 18
+- word: digital; pdf: 0; epub: 10
+- word: footnotes; pdf: 0; epub: 6
 
 ## Limits
 

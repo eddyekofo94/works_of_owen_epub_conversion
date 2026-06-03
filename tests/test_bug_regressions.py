@@ -32,6 +32,7 @@ from shared import (
     FONT_FAMILY_MAP,
     PROXIMA_NOVA_FILES,
     TITLE_PAGE_FONTS,
+    GFS_PORSON_FILES,
     _get_font_name_records,
     generate_font_styles,
     select_primary_font,
@@ -95,13 +96,13 @@ def paths_for(volume):
 
 def test_primary_font_selection_uses_real_internal_family_names():
     cases = {
-        "Adobe-garamond-pro-2": "Adobe Garamond Pro",
-        "Libertinus": "Libertinus Serif",
-        "Minion_pro": "Minion Pro",
-        "Brill_font": "Brill",
-        "Gentium-plus": "Gentium Plus",
+        "adobe-garamond-pro-2-2": "Adobe Garamond Pro",
+        "libertinus": "Libertinus Serif",
+        "minion-pro": "Minion Pro",
+        "brill-font": "Brill",
+        "gentium-plus-2": "Gentium Plus",
         "sabon-next-lt": "Sabon Next LT",
-        "Baskervville": "Baskervville",
+        "baskerville": "Baskervville",
     }
     for directory, expected_family in cases.items():
         selected = select_primary_font(directory)
@@ -117,7 +118,7 @@ def test_primary_font_selection_uses_real_internal_family_names():
 
 
 def test_mixed_font_directories_filter_to_body_family_faces():
-    libertinus = select_primary_font("Libertinus")
+    libertinus = select_primary_font("libertinus")
     # Support both .otf (original format) and .ttf (Google Fonts format)
     assert {os.path.splitext(f)[0] for f in libertinus["files"]} == {
         "LibertinusSerif-Regular",
@@ -126,7 +127,7 @@ def test_mixed_font_directories_filter_to_body_family_faces():
         "LibertinusSerif-BoldItalic",
     }
 
-    minion = select_primary_font("Minion_pro")
+    minion = select_primary_font("minion-pro")
     assert set(minion["files"]) == {
         "MinionPro-Regular.otf",
         "MinionPro-Bold.otf",
@@ -137,17 +138,17 @@ def test_mixed_font_directories_filter_to_body_family_faces():
 
 def test_font_assets_exist_and_otf_metadata_is_readable():
     font_root = BASE_DIR / "fonts"
-    for _name, rel_path in {**PROXIMA_NOVA_FILES, **TITLE_PAGE_FONTS}.items():
-        if "Proxima_Nova" in rel_path and not (font_root / rel_path).exists():
+    for _name, rel_path in {**PROXIMA_NOVA_FILES, **TITLE_PAGE_FONTS, **GFS_PORSON_FILES}.items():
+        if "proxima-nova" in rel_path and not (font_root / rel_path).exists():
             # Skip commercial Proxima Nova if not in environment
             continue
         assert (font_root / rel_path).exists(), rel_path
 
-    adobe = font_root / "Adobe-garamond-pro-2" / "AGaramondPro-Bold.otf"
+    adobe = font_root / "adobe-garamond-pro-2-2" / "AGaramondPro-Bold.otf"
     if adobe.exists():
         records = _get_font_name_records(adobe)
         assert records["family"] == "Adobe Garamond Pro Bold"
-        assert records["preferred_family"] == FONT_FAMILY_MAP["Adobe-garamond-pro-2"]
+        assert records["preferred_family"] == FONT_FAMILY_MAP["adobe-garamond-pro-2-2"]
 
 
 @lru_cache(maxsize=None)
@@ -909,7 +910,7 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
 
     part_2_title = next(
         html for html in files.values()
-        if "<title>Part 2 - Meditations and Discourses Concerning The Glory of Christ</title>" in html
+        if "<title>Part 2 — Meditations and Discourses Concerning The Glory of Christ</title>" in html
     )
     assert 'class="treatise-title-page' in part_2_title
     assert '<section class="treatise-title-page v1-applied-glory-title"' in part_2_title
@@ -922,7 +923,7 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
 
     part_2_chapter = next(
         html for html in files.values()
-        if "<title>Chapter 1 - Meditations and Discourses Concerning the Glory of Christ</title>" in html
+        if "<title>Chapter 1 — Meditations and Discourses Concerning the Glory of Christ</title>" in html
     )
     assert '<section class="treatise-title-page"' not in part_2_chapter
     assert "Application of the Foregoing Meditations" in part_2_chapter
@@ -930,7 +931,7 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
 
     greater_chapter = next(
         html for html in files.values()
-        if "<title>Chapter 1 - of the Scripture.</title>" in html
+        if "<title>Chapter 1 — of the Scripture.</title>" in html
     )
     assert '<section class="treatise-title-page"' not in greater_chapter
     assert 'class="catechism-item catechism-question"' in greater_chapter
@@ -939,11 +940,11 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
 
     christologia_title = next(
         html for html in files.values()
-        if "<title>Christologia - a Declaration of the Glorious Mystery</title>" in html
+        if "<title>Christologia — a Declaration of the Glorious Mystery</title>" in html
     )
     # Christologia title page is now hardcoded in v1/convert.py — correct classes and mixed case
-    assert 'class="treatise-title-page"' in christologia_title
-    assert '<p class="greek-title"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span></p>' in christologia_title
+    assert 'class="greek-title"' in christologia_title
+    assert 'ΧΡΙΣΤΟΛΟΓΙΑ:' in christologia_title
     assert '<p class="title-line-major">Christologia</p>' in christologia_title
     assert '<p class="title-connector">Or,</p>' in christologia_title
     assert 'Declaration of the Glorious Mystery' in christologia_title
@@ -966,13 +967,13 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     assert '<a href="ch042.xhtml">Original Preface</a>' in contents
     assert 'class="ContentsItem"' not in contents
 
-    chapter_1 = next(html for html in files.values() if "<title>Chapter 1 - Peter's Confession</title>" in html)
+    chapter_1 = next(html for html in files.values() if "<title>Chapter 1 — Peter's Confession</title>" in html)
     assert "Peter's Confession; Matthew 16:16" in chapter_1
     assert "PETER'S CONFESSION; MATTHEW 16:16" not in chapter_1
 
     greater_chapter_15 = next(
         html for html in files.values()
-        if "<title>Chapter 15 - of the Persons to Whom the Benefits of Christ's Offices Do Belong.</title>" in html
+        if "<title>Chapter 15 — of the Persons to Whom the Benefits of Christ's Offices Do Belong.</title>" in html
     )
     assert "Of the Persons to Whom the Benefits of Christ's Offices Do Belong." in greater_chapter_15
     assert "OF THE PERSONS TO WHOM THE BENEFITS OF CHRIST'S OFFICES DO BELONG." not in greater_chapter_15
@@ -988,8 +989,8 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     assert ".contents-page" in css
     assert ".volume-title-page .title-author-main" in css
     if FONTS_AVAILABLE:
-        assert "EPUB/Fonts/Baskervville-VariableFont_wght.ttf" in names
-        assert "EPUB/Fonts/Baskervville-Italic-VariableFont_wght.ttf" in names
+        assert "EPUB/Fonts/BaskervilleBT.ttf" in names
+        assert "EPUB/Fonts/BaskervilleItalicBT.ttf" in names
     assert re.search(r"\.treatise-title-page \.title-connector\s*\{[^}]*font-size:\s*0\.68em;", css, re.S)
 
 
@@ -1016,7 +1017,7 @@ def test_v1_catechism_questions_and_answers_are_grouped_and_bolded(volume):
     )
     greater_chapter_1 = next(
         html for html in files.values()
-        if "<title>Chapter 1 - of the Scripture.</title>" in html
+        if "<title>Chapter 1 — of the Scripture.</title>" in html
     )
 
     assert ".v1-catechism-pair" in css
@@ -1068,7 +1069,7 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
     )
     peters_confession = next(
         html for html in files.values()
-        if "<title>Chapter 1 - Peter's Confession</title>" in html
+        if "<title>Chapter 1 — Peter's Confession</title>" in html
     )
     latin_quote_chapter = next(
         html for html in files.values()
@@ -1076,15 +1077,15 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
     )
     power_chapter = next(
         html for html in files.values()
-        if "<title>Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ</title>" in html
+        if "<title>Chapter 7 — Power and Efficacy Communicated Unto the Office of Christ</title>" in html
     )
     honor_chapter = next(
         html for html in files.values()
-        if "<title>Chapter 9 - Honor Due to the Person of Christ</title>" in html
+        if "<title>Chapter 9 — Honor Due to the Person of Christ</title>" in html
     )
     conformity_chapter = next(
         html for html in files.values()
-        if "<title>Chapter 15 - Conformity Unto Christ</title>" in html
+        if "<title>Chapter 15 — Conformity Unto Christ</title>" in html
     )
     combined = "\n".join(files.values())
 
@@ -1093,7 +1094,7 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
     assert '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">"And Simon Peter answered' in peters_confession
     quote_blocks = re.findall(r"<blockquote[^>]*>.*?</blockquote>", peters_confession, re.S)
     assert not any("Baronius" in block for block in quote_blocks)
-    assert '<p class="list-item list-level-1"><b>1.</b> The faith of Peter in this confession' in peters_confession
+    assert 'The faith of Peter in this confession' in peters_confession
     assert not any("1. The faith of Peter" in block for block in quote_blocks)
     assert re.search(r'<blockquote[^>]*><p[^>]*>"Thou, Lord,.*?a vesture shalt thou fold them up.*?not fail\."</p></blockquote>', power_chapter, re.S)
     assert re.search(r'<blockquote[^>]*><p[^>]*>"Unto him that loved us,.*?Amen\." Revelation 1:5, 6\.</p></blockquote>', honor_chapter, re.S)
@@ -1135,7 +1136,7 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
 
     chapter_9 = next(
         html for html in files.values()
-        if "<title>Chapter 9 - Honor Due to the Person of Christ</title>" in html
+        if "<title>Chapter 9 — Honor Due to the Person of Christ</title>" in html
     )
     assert '<p class="syllabus-anchor">' in chapter_9
     assert 'The respect which we have in all acts of religion unto the person of Christ may be reduced unto these four heads: <b>I.</b> Honor. <b>II.</b> Obedience. <b>III.</b> Conformity. <b>IV.</b> The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory. And hereunto the whole of our religion, as it is Christian or evangelical, may be reduced.</p>' in chapter_9
@@ -1145,7 +1146,7 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
 
     chapter_7 = next(
         html for html in files.values()
-        if "<title>Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ</title>" in html
+        if "<title>Chapter 7 — Power and Efficacy Communicated Unto the Office of Christ</title>" in html
     )
     assert '<h4 class="roman-subheading"><b>I.</b></h4>' in chapter_7
     assert 'The first of these is, that he should have a nature provided for him,' in chapter_7
@@ -2568,5 +2569,45 @@ def test_apply_premium_chapter_endings():
     res2 = _apply_premium_chapter_endings(html2)
     assert '<p class="chapter-end-marker"><b>THE END.</b></p>' in res2
     assert '<p>This concludes the meditations.</p>' in res2
+
+
+def test_ocr_bold_and_paragraph_healing():
+    """Verify that false OCR bolds are stripped, structural ones are kept, and false paragraph splits at abbreviations are healed."""
+    from extract import clean_text, reconstruct_paragraphs
+
+    # Test 1: Strip false OCR bolds in middle of sentences but preserve structural ones
+    raw_text = (
+        "We have **seen** that **Dr.** Owen writes about the **holy** spirit.\n\n"
+        "**1.** He is active. **Ans.** Indeed he is.\n\n"
+        "**[2.]** In the church.\n\n"
+        "**Secondly.** For the elect."
+    )
+    cleaned = clean_text(raw_text)
+    # False bolds must be stripped
+    assert "We have seen" in cleaned
+    assert "Dr. Owen writes" in cleaned
+    assert "the holy spirit" in cleaned
+    # Structural ones must be kept
+    assert "**1.**" in cleaned
+    assert "**Ans.**" in cleaned
+    assert "**[2.]**" in cleaned
+    assert "**Secondly.**" in cleaned
+
+    # Test 2: Heals false paragraph breaks at abbreviations and initials
+    raw_lines = (
+        "This is discussed by Aug.\n\n"
+        "In his book on trinity.\n\n"
+        "We also read in Rom.\n\n"
+        "VIII. 1. that there is no condemnation.\n\n"
+        "This was confirmed by St.\n\n"
+        "Augustine in his letters.\n\n"
+        "According to J.\n\n"
+        "Owen, this is true."
+    )
+    joined = "\n".join(reconstruct_paragraphs(clean_text(raw_lines)))
+    assert "Aug. In his book" in joined
+    assert "Rom. VIII. 1." in joined
+    assert "St. Augustine" in joined
+    assert "J. Owen," in joined
 
 

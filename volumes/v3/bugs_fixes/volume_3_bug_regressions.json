@@ -12,7 +12,7 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 153,
+      "observed": 161,
       "budget": 176,
       "status": "ok",
       "samples": [
@@ -43,7 +43,7 @@
         },
         {
           "file": "EPUB/ch007.xhtml",
-          "previous": "God walked in the garden\" לְ רוּחַ [6] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
+          "previous": "God walked in the garden\" לְרוּחַ [33] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
           "next": "\"At the going down of the sun, when the cold evening tempers the heat of the air.\" And some think this to be the sense of that place, Psalm 104:4, \"Who maketh his angels רוּחוֹת , "
         },
         {
@@ -58,41 +58,61 @@
         },
         {
           "file": "EPUB/ch007.xhtml",
-          "previous": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,",
-          "next": "declares the mistake of the LXX. and the occasion of it: —"
+          "previous": " 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]",
+          "next": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,"
         },
         {
           "file": "EPUB/ch007.xhtml",
-          "previous": "declares the mistake of the LXX. and the occasion of it: —",
-          "next": "So he shows that it is not מְשִׁיחוֹ in the text, but מַה־צִיחוֹ ; — that is, saith he,"
+          "previous": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,",
+          "next": "declares the mistake of the LXX. and the occasion of it: —"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 5,
-      "budget": 5,
+      "observed": 14,
+      "budget": 14,
       "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "text": "The FIRST BOOK of the treatise is devoted to considerations of a general and preliminary nature. The promise of spiritual gifts contained in Scripture is examined; and occasion is hence taken to illustrate the importance of sound views on the doctrine of the S"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "THE apostle Paul, in the 12th chapter of his First Epistle to the Corinthians, directs their exercise of spiritual gifts, concerning which, amongst other things and emergencies, they had made inquiry of him. This the fast words wherewith he prefaceth his whole"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "Treating, therefore, περὶ τῶν πνευματικῶν , [7] of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the \"Spirit,\" verse 4; the \"Lord,\" verse 5; \"God,\" ve"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "This is one signification of the word רוּחַ , [34] or this is one thing denoted by it in the Scripture. So, among many other places, expressly Amos 4:13, \"For, lo,\" יוֹצֵר הָרִים וּבֹרֵא רוּחַ [35] , he that formeth the mountains, and createth the spirit,\" tha"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of \"confirming the thunder\" (which nowhere here appears), by which the sound of the Scriptures and preaching of the word is intende"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "Hence, their disagreement is infinitely more than their agreement; yet such allusions doth our weakness need instruction from and by. Thus he is called רוּחַ [47] פִיו Psalm 33:6, \"The Spirit\" or \"breath of the mouth of the LORD,\" or \"of his nostrils;\" as Psal"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "text": "To return; As he is called the Holy, so he is the Good Spirit of God: Psalm 143:10, רִוּחֲך טוֹבָה תַנְחֵנִי ; — \"Thy Spirit is good; lead me into the land of uprightness;\" so ours: — rather, \"Thy good Spirit shall lead me;\" or, as Junius, \"Spiritu tuo bone de"
+        },
         {
           "file": "EPUB/ch012.xhtml",
           "text": "Not that God intended much to make use of this way of dreams and nocturnal visions under the New Testament; but the intention of the words is, to show that there should be a plentiful effusion of that Spirit which acted by these various ways and means then und"
         },
         {
-          "file": "EPUB/ch016.xhtml",
-          "text": "That spirit which revealeth anything, or pretendeth to reveal anything, any doctrine, any grace, any truth, that is contrary unto, that is not consonant to, yea, that is not the doctrine, grace, or truth of Christ, as now revealed in the word, that brings anyt"
+          "file": "EPUB/ch015.xhtml",
+          "text": "None doubts but that this is a description of the person of Christ. And in the beginning of this verse, \"He whom God hath sent speaketh the words of God;\" which is the usual periphrasis of the Lord Christ, used at least twenty times in this Gospel. Of him this"
         },
         {
-          "file": "EPUB/ch020.xhtml",
-          "text": "Some, indeed, give such an account of this text as if the apostle had said, \"Do not ye live after the manner of the heathens, in the vileness of those practices, and in their idol-worship. That long course of sin having blinded their understandings, so that th"
-        },
-        {
-          "file": "EPUB/ch028.xhtml",
-          "text": "This uncleanness as it is habitual, respecting our natural defilement, is equal in and unto every one that is born into the world; we are by nature all alike polluted, and that to the utmost of what our nature is capable. But with respect unto actual sins it i"
-        },
-        {
-          "file": "EPUB/ch030.xhtml",
-          "text": "It is by all confessed that examples are most effectual ways of instruction, and, if seasonably proposed, do secretly solicit the mind unto imitation, and almost unavoidably incline it thereunto. But when unto this power which examples have naturally and moral"
+          "file": "EPUB/ch018.xhtml",
+          "text": "Therefore, 3. The difference in this matter cometh unto this head: We say and believe that regeneration consists in spirituali renovatione naturae, — \"in a spiritual renovation of our nature;\" our modem Socinians, that it doth so in morali reformatione vitae, "
         }
       ]
     },
@@ -212,27 +232,37 @@
       "observed": 0,
       "budget": 0,
       "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 1,
+      "budget": 1,
+      "status": "ok",
       "samples": [
         {
-          "word": "לְרוּחַ",
-          "pdf": 2,
-          "epub": 0
+          "page": 34,
+          "word_count": 6,
+          "sample": "ζηλουτε δε τα χαρισματα τα κρειττνα"
         }
       ]
     },
     {
-      "label": "Missing Greek clauses",
-      "observed": 0,
-      "budget": 0,
-      "status": "ok",
-      "samples": []
-    },
-    {
       "label": "Missing Hebrew clauses",
-      "observed": 3,
-      "budget": 4,
+      "observed": 5,
+      "budget": 5,
       "status": "ok",
       "samples": [
+        {
+          "page": 70,
+          "word_count": 3,
+          "sample": "רוּחַ נְדוֹלָה וְחָזָק"
+        },
+        {
+          "page": 74,
+          "word_count": 3,
+          "sample": "רוּחַ בְּנֵי הָאָדָם"
+        },
         {
           "page": 80,
           "word_count": 3,
@@ -303,15 +333,10 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 4,
+      "observed": 3,
       "budget": 4,
       "status": "ok",
       "samples": [
-        {
-          "file": "combined_text",
-          "text": "רוּח spirit breath or wind hebrew ruach 1",
-          "count": 2
-        },
         {
           "file": "combined_text",
           "text": "chapter 2 general dispensation of the holy spirit",
@@ -506,7 +531,7 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 15,
+      "observed": 16,
       "budget": 20,
       "status": "ok",
       "samples": [
@@ -547,8 +572,8 @@
           "text": "which he doth by his Spirit. Man by sin is become like the \"beasts that perish, w"
         },
         {
-          "file": "EPUB/ch025.xhtml",
-          "text": "which last expression compriseth the whole of our covenant obedience, Genesis 17:"
+          "file": "EPUB/ch023.xhtml",
+          "text": "need that so I should do; for upon the end of that sentence, as if a light of pea"
         }
       ]
     },

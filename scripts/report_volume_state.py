@@ -67,6 +67,7 @@ def gather_volume_data(vol: int) -> dict:
     audit = _read_json(bugs / f"volume_{vol}_audit.json")
     text_int = _read_json(bugs / f"volume_{vol}_text_integrity.json")
     bug_reg = _read_json(bugs / f"volume_{vol}_bug_regressions.json")
+    anom = _read_json(bugs / f"volume_{vol}_anomalies.json")
 
     # metadata from shared.py
     try:
@@ -98,6 +99,7 @@ def gather_volume_data(vol: int) -> dict:
         "has_convert_py": has_convert,
         "convert_py_lines": convert_lines,
         "text_replacements": text_repl_count,
+        "anomalies_count": anom.get("total_anomalies_count"),
     }
 
     # audit report
@@ -180,6 +182,9 @@ def gather_volume_data(vol: int) -> dict:
             actions.append("investigate_hebrew_extraction")
     if not has_convert:
         actions.append("create_per_volume_script")
+    anom_count = data.get("anomalies_count")
+    if anom_count is not None and anom_count > 20:
+        actions.append("review_ocr_anomalies")
     data["recommended_actions"] = actions
 
     return data
@@ -230,6 +235,11 @@ def score_volume(d: dict) -> float:
     if ae is not None:
         score += min(ae * 5, 5.0)
 
+    # anomalies
+    anom_c = d.get("anomalies_count")
+    if anom_c is not None:
+        score += min(anom_c * 0.1, 10.0)
+
     return round(score, 1)
 
 
@@ -263,7 +273,7 @@ def _format_table(ranked: list[dict]) -> str:
     header = (
         f"  {'Rank':>4}  {'Vol':>3}  {'Need':>6}  "
         f"{'Cov%':>6}  {'Greek':>6}  {'Heb':>6}  "
-        f"{'Splits':>6}  {'QA Level':>9}"
+        f"{'Splits':>6}  {'Anom':>5}  {'QA Level':>9}"
     )
     lines.append(header)
     lines.append(dim("\u2500" * 78))
@@ -291,10 +301,13 @@ def _format_table(ranked: list[dict]) -> str:
 
         rank_str = red(f"{i:>4}") if ql == "NONE" else f"{i:>4}"
 
+        anom = d.get("anomalies_count")
+        anom_s = str(anom) if anom is not None else "?"
+
         lines.append(
             f"  {rank_str}  {vol:>3}  {_score_color(score)}  "
             f"{_fmt(cov):>6}  {_fmt(greek):>6}  {_fmt(hebrew):>6}  "
-            f"{splits_s:>6}  {ql_s:>9}"
+            f"{splits_s:>6}  {anom_s:>5}  {ql_s:>9}"
         )
 
     lines.append(sep)
@@ -315,6 +328,7 @@ def _actions_to_text(actions: list[str]) -> str:
         "investigate_greek_extraction": "🔤 Investigate Greek extraction",
         "investigate_hebrew_extraction": "🔤 Investigate Hebrew extraction",
         "create_per_volume_script": "📄 Create per-volume script",
+        "review_ocr_anomalies": "🔍 Review OCR anomalies",
     }
     return "; ".join(icons.get(a, a) for a in actions)
 
@@ -330,8 +344,8 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
     lines.append("")
     lines.append("**Need** (0–100): lower is better. Combines coverage, Greek/Hebrew health, splits, warnings, and QA completeness into a single score. Volumes ranked worst first.")
     lines.append("")
-    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | QA Level |")
-    lines.append("|------|-----|------|------|-----------|----------|-------|--------|----------|")
+    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Anomalies | QA Level |")
+    lines.append("|------|-----|------|------|-----------|----------|-------|--------|-----------|----------|")
 
     for i, d in enumerate(ranked, 1):
         lines.append(
@@ -340,6 +354,7 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
             f"| {_fmt(_maybe_pct(d.get('coverage')))} "
             f"| {_fmt(_maybe_pct(d.get('greek_coverage')))} "
             f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')))} "
+            f"| {d.get('anomalies_count', '?')} "
             f"| {d['qa_level']} |"
         )
 
@@ -371,6 +386,7 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
         lines.append(f"- **Hebrew coverage:** {_pct(d.get('hebrew_coverage')) if d.get('hebrew_coverage') is not None else '?'}")
         lines.append(f"- **Splits:** {d.get('splits', '?')}")
         lines.append(f"- **Regressions:** {d.get('regressions', '?')}")
+        lines.append(f"- **Suspected anomalies:** {d.get('anomalies_count', '?')}")
         lines.append(f"- **Recommended:** {_actions_to_text(d['recommended_actions'])}")
         lines.append("")
 
@@ -404,6 +420,7 @@ def write_json_report(ranked: list[dict], path: Path) -> None:
             "warnings": d.get("audit_warnings"),
             "errors": d.get("audit_errors"),
             "regressions": d.get("regressions"),
+            "anomalies_count": d.get("anomalies_count"),
             "font": d["font"],
             "treatises": d["treatises"],
             "has_convert_py": d["has_convert_py"],
@@ -432,10 +449,12 @@ def _table_line(d: dict) -> str:
         cov = d.get("coverage")
         greek = d.get("greek_coverage")
         hebrew = d.get("hebrew_coverage")
+        anom = d.get("anomalies_count")
         cov_s = f"{_pct(cov)}" if cov is not None else "?"
         greek_s = f"{_pct(greek)}" if greek is not None else "?"
         hebrew_s = f"{_pct(hebrew)}" if hebrew is not None else "?"
-        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s}"
+        anom_s = f" Anom {anom}" if anom is not None else ""
+        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s}{anom_s}"
 
     return f"| {v} | {convert} | {overrides} | {ql} | {notes} |"
 
@@ -545,6 +564,20 @@ def run_audit_for_volume(vol: int) -> dict:
             results["bug_regression"] = False
     else:
         results["bug_regression"] = True
+
+    # Anomalies
+    anom_json = bugs / f"volume_{vol}_anomalies.json"
+    if not anom_json.exists():
+        print(f"    [{vol}] Running audit_anomalies.py ...", end=" ", flush=True)
+        r = subprocess.run(
+            [PYTHON, str(ROOT / "scripts" / "audit_anomalies.py"), str(vol)],
+            capture_output=True, text=True, timeout=300,
+        )
+        ok = r.returncode == 0
+        print(green("done") if ok else red(f"failed ({r.returncode})"))
+        results["anomalies"] = ok
+    else:
+        results["anomalies"] = True
 
     return results
 

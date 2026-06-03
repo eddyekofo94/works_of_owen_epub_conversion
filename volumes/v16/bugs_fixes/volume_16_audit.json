@@ -1,16 +1,11 @@
 {
   "epub": "volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-05-30T08:51:31.902708+00:00",
+  "generated_at": "2026-06-03T00:20:18.554057+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 2,
+  "warning_count": 1,
   "errors": [],
   "warnings": [
-    {
-      "code": "possible_beta_code_residue",
-      "message": "Possible Beta Code residue detected",
-      "files": 1
-    },
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
@@ -18,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 110,
-    "epub_size_bytes": 3778663,
+    "file_count": 114,
+    "epub_size_bytes": 5411845,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -28,32 +23,32 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 101,
-    "spine_count": 84,
-    "xhtml_count": 86,
+    "manifest_count": 105,
+    "spine_count": 85,
+    "xhtml_count": 87,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 11,
+    "font_count": 13,
     "language": {
-      "greek_chars": 6015,
+      "greek_chars": 6024,
       "greek_untagged_chars": 0,
-      "hebrew_chars": 1211,
+      "hebrew_chars": 1224,
       "hebrew_untagged_chars": 0,
       "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 120,
-      "unique_noteref_targets": 120,
-      "endnote_anchor_count": 120,
+      "noteref_count": 159,
+      "unique_noteref_targets": 159,
+      "endnote_anchor_count": 159,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
-      "beta_code_files": 1,
+      "beta_code_files": 0,
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
@@ -80,12 +75,7 @@
       "i_will_mangle_files": 0,
       "samples": {
         "boilerplate": [],
-        "beta_code": [
-          {
-            "file": "EPUB/contents_3.xhtml",
-            "text": "]W"
-          }
-        ],
+        "beta_code": [],
         "escaped_lang_tag": [],
         "untagged_greek": [],
         "untagged_hebrew": [],
@@ -173,7 +163,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 87,
+    "nav_link_count": 88,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

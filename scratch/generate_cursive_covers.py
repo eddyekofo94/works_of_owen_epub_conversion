@@ -30,7 +30,7 @@ def get_dynamic_line_font(line_text, font_path, target_width, max_height=500, st
         size -= 5
     return ImageFont.truetype(font_path, size), size
 
-def test_generate(vol_num, title_lines):
+def generate_cover(vol_num, title_lines):
     img = Image.new("RGB", (WIDTH, HEIGHT), COLOR_WHITE_BG)
     draw = ImageDraw.Draw(img)
     
@@ -116,5 +116,5 @@ def test_generate(vol_num, title_lines):
     img.save(output_path, "PNG")
     print(f"Generated: {output_path}")
 
-test_generate("3", ["THE", "HOLY", "SPIRIT"])
-test_generate("16", ["A", "GOSPEL", "CHURCH"])
+generate_cover("3", ["THE", "HOLY", "SPIRIT"])
+generate_cover("16", ["A", "GOSPEL", "CHURCH"])

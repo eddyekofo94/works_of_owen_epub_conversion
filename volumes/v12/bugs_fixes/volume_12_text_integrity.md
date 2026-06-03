@@ -1,59 +1,59 @@
 # Text Integrity Audit: Volume 12
 
 - Status: **WARN**
-- Warnings: 11
+- Warnings: 12
 - PDF pages: 822
-- EPUB text files: 58
-- EPUB paragraphs/headings: 3516
+- EPUB text files: 59
+- EPUB paragraphs/headings: 3294
 
 ## Coverage
 
 - PDF content tokens: 275563
-- EPUB content tokens: 274978
-- Approximate PDF-to-EPUB coverage ratio: 0.9958
+- EPUB content tokens: 259266
+- Approximate PDF-to-EPUB coverage ratio: 0.9381
 - Pages checked: 815
-- Weak page matches: 26
-- Dense source windows checked: 993
-- Missing dense source-window pages: 806
+- Weak page matches: 79
+- Dense source windows checked: 920
+- Missing dense source-window pages: 808
 - Front CONTENTS pages checked: 3
-- Missing front CONTENTS pages: 0
+- Missing front CONTENTS pages: 3
 - Top-of-page body windows checked: 798
 - Top-of-page windows skipped as unstable: 48
-- Missing top-of-page body windows: 5
+- Missing top-of-page body windows: 48
 - Bottom-of-page body windows checked: 746
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 14
+- Missing bottom-of-page body windows: 59
 
 ## Paragraphs
 
-- Body paragraphs checked: 3115
-- Possible faulty paragraph splits: 276
-- Structural starts excluded from split warnings: 367
-- Short fragments: 46
+- Body paragraphs checked: 2948
+- Possible faulty paragraph splits: 257
+- Structural starts excluded from split warnings: 331
+- Short fragments: 42
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 3
+- Inline structural marker candidates: 6
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 5
+- Suspicious large-number starts: 4
 - Roman heading candidates: 0
-- Overlong heading candidates: 5
+- Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 450
-- EPUB enumerator markers: 445
-- Missing enumerator marker forms: 3
-- Enumerator sequence candidates: 2
+- EPUB enumerator markers: 569
+- Missing enumerator marker forms: 1
+- Enumerator sequence candidates: 38
 
 ## Greek / Hebrew
 
 - PDF Greek words: 2593
-- EPUB Greek words: 2593
-- Greek word coverage ratio: 1.0
+- EPUB Greek words: 2342
+- Greek word coverage ratio: 0.8979
 - PDF Hebrew words: 222
 - EPUB Hebrew words: 221
 - Hebrew word coverage ratio: 0.9955
 - Greek clauses checked: 133
-- Missing Greek clauses: 0
+- Missing Greek clauses: 20
 - Hebrew clauses checked: 7
 - Missing Hebrew clauses: 0
 
@@ -61,28 +61,35 @@
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
-- page: 4; sample: of christ to be punishment properly so called 25 digression concerning the 53d chapter
-- page: 5; sample: from the animad versions of mr μηδε εμοι τω ταυτα λεγοντι απλως πιστευσης εαν
+- page: 3; sample: contents of vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined
+- page: 4; sample: office and how he dischargeth it 21 of the death of christ the causes
+- page: 5; sample: vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism
 - page: 7; sample: the son and of the spirit and similar doctrines biddle had well nigh fallen
+- page: 9; sample: he is claimed alike by socinians arminians and papists the learned jesuit peta-vius said
 - page: 11; sample: 11 to the right worshipful his reverend learned and worthy friends and brethren the
 - page: 12; sample: 12 the like nature which to my thoughts did then occur not prevailing with
 - page: 13; sample: 13 maresius professor at groningen man well known by his works published goes farther
 - page: 14; sample: 14 from thence whence in the thoughts of some am most likely to suffer
 - page: 15; sample: 15 that be men of what religion soever that is professed in the world
-- page: 16; sample: 16 given to that sacred truth which is not wrested to another sense or
-- page: 17; sample: 17 their business to despise what is done by others shall very little trouble
+
+## Missing Front CONTENTS Pages
+
+- page: 3; hit_ratio: 0.25; sample: contents of vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined prefatory note by the editor dedication epistle dedicatory preface to the reader mr biddle's
+- page: 4; hit_ratio: 0.5; sample: 20 of the priestly office of christ how he was priest when he entered on his office and how he dischargeth it 21 of the death of christ
+- page: 5; hit_ratio: 0.5; sample: vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism written by biddle and the catechism
 
 ## Missing Top-Of-Page Body Windows
 
@@ -91,9 +98,15 @@
 - page: 229; sample: Luke 1:35;" f235 — the place insisted on the Son of God, as we read in
 - page: 258; sample: himself abundantly hath manifested to be otherwise. Of 1 Corinthians
 - page: 445; sample: Exodus 33:11, in the Hebrew is µyniP;Ala, µyniP;, panim el That which,
+- page: 749; sample: engage in this now in hand; of the necessity whereof I shall give the reader a brief account. That as to the matter of the contest between Mr B. and
+- page: 750; sample: But why must my arguments be answered and myself confuted? Two reasons hereof are given. The first by very many insinuations, namely, that
+- page: 751; sample: are answered in reference to another, and that this is the sum of Mr B.'s discourse against me, I shall only recommend to them some verses of old
+- page: 752; sample: than he, that he have more illumination and grace than he; that is, that he be a better, wiser, more holy, and learned man than Mr B. Now, if we may
+- page: 753; sample: That he hath been able to discern the positions he opposes in the beginning of his eighth chapter to be contained in any writings of mine, as maintained
 
 ## Missing Bottom-Of-Page Body Windows
 
+- page: 4; sample: A SECOND CONSIDERATION OF THE ANNOTATIONS OF HUGO GROTIUS, EPISTLES OF GROTIUS TO CRELLIUS,
 - page: 145; sample: Cwrei~te qnhtw~n to<n Qeo<n kai< mh< do>kei. Omoion aujtw~| sarkiko<n kaqesta>nai.
 - page: 175; sample: propositions: — (1.) That God hath so foretold the free actions of men.
 - page: 209; sample: explained. The words are, Oti oJ Qeo<v e]ktise to<n a]nqrwton ejp ajfqarsi>a| kai< eijko>na th~v ijdi>av ijdio>thtov ejpoi>hsen aujto>n Fqo>nw|
@@ -103,66 +116,65 @@
 - page: 438; sample: 1 Timothy 2:6, "in whom we have redemption redemption for us,
 - page: 514; sample: chap. 9:12, "He entered by his own blood into the holy place, aijwni>an lu>trwsin euJra>menov," — "after he had obtained eternal
 - page: 526; sample: the LXX. constantly render it by apolutrou~n and sometimes lutrw>sasqai, otherwise by rju>omai, and the like.
-- page: 660; sample: 1 Timothy 2:5, 6, gives us this fully. He is the mediator, and as such he gave himself ajnti>lutron, a price of redemption to God.
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch004.xhtml; previous: The Holy Ghost tells us that we are; next: And thus do all they become the house of Christ "who hold fast the confidence and the rejoicing of the hope firm unto the end," Hebrews 3:6. In this house of God there are daily bu
+- file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
+- file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
+- file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
 - file: EPUB/ch004.xhtml; previous: house of God there are daily builders, according as new living stones are to be fitted to their places therein; and continual oppositions have there been made thereto, and will be,; next: In this work of building are some employed by Jesus Christ, and will be so to the end of the world, Matthew 28:19, 20, Ephesians 4:11, 12; and some employ themselves at least in a
 - file: EPUB/ch004.xhtml; previous: and not be believed. See Calvin's epistles, about the year 1561. But the man on this occasion being sent to the meeting at Pinckzow (as Statorius), he subscribes this confession: —; next: This did the wretched man think meet to do, that he might preserve the good esteem of his patron and reserve himself for a fitter opportunity of doing mischief; which also he did,
 - file: EPUB/ch004.xhtml; previous: of Grotius, time will evidence. Now, because this man's creed is such as is not to be paralleled, perhaps some may be contented to take it in his own words, which are as follow: —; next: To this issue did Satan drive the Socinian principles in this man and sundry others, even to a full and peremptory denial of the Lord that bought them. In answering this man, it fe
-- file: EPUB/ch004.xhtml; previous: is day the Papists continue in the same idolatry (to touch that by the way), I shall give you, for your refreshment, a copy of a verse or two, whose poetry does much outgo the old,; next: The other is of Franciscus de Mendoza, in Viridario Utriusque Eruditionis, lib. 2 prob. 2, as ensueth: —
-- file: EPUB/ch004.xhtml; previous: The other is of Franciscus de Mendoza, in Viridario Utriusque Eruditionis, lib. 2 prob. 2, as ensueth: —; next: And this their idolatry is objected to them by Soeinus, 94 who marvels at the impudence of Bellarmine closing his books of controversies (as is the manner of the men of that Societ
-- file: EPUB/ch005.xhtml; previous: are not owned by the Scripture, so neither the things contained in them. How excellent, therefore, was that advice of Paul to Timothy in his second epistle to him, 2 Timothy 1:13,; next: JOHN BIDDLE.
-- file: EPUB/ch006.xhtml; previous: y of God's essence or being is manifest from his absolute independence and firstness in being and operation, which God often insists upon in the revelation of himself: Isaiah 44:6,; next: Secondly, God is absolutely and perfectly one and the same, and nothing differs from his essence in it: "The LORD our God is one LORD," Deuteronomy 6:4; "Thou art the same," Psalm
-- file: EPUB/ch008.xhtml; previous: with his master, who will not allow any such thing to be asserted in these words of our Savior. His words are (Fragment. Disput. de Adorat. Christi cure Christiano Franken, p. 60),; next: Vorstius also follows him, Not. ad Disput. 3, p. 200. Because the verb substantive "is" is not in the original expressed (than the omission whereof nothing being more frequent, tho
-- file: EPUB/ch008.xhtml; previous: n which way thou wilt, thou shalt see God meeting thee. Nothing is empty of him: he fills his own work." 138 "All things are full of God," says the poet; 139 and another of them: —; next: Of this presence of God, I say, with and unto all things, of the infinity of his essence, the very heathens themselves, by the light of nature (which Mr B. herein opposes), had a k
+- file: EPUB/ch004.xhtml; previous: ne day send him again to Jerusalem, there to take upon him a kingdom, and to rule as the kings of this world do or have done." — Thes. Francisci David de Adorat. Jes. Christi. [10]; next: The reminding of these abominations gives occasion, by the way, to complain of the carnal apprehensions of a kingdom of Christ , which too many amongst ourselves have filled their
+- file: EPUB/ch004.xhtml; previous: , nam ratio vocabuli non patitur, ut quis dicatur sine matre pater: et si Logos filius erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus." [2]; next: To this height of atheism and blasphemy had Satan wrought up the spirit of the man; so that I must say he is the only person in the world, that I ever read or heard of, that ever d
+- file: EPUB/ch004.xhtml; previous: is day the Papists continue in the same idolatry (to touch that by the way), I shall give you, for your refreshment, a copy of a verse or two, whose poetry does much outgo the old,; next: and whose blasphemy comes not at all short of it. The first is of Clarus Bonarus the Jesuit, lib. 3 Amphitrial. Honor. lib. 3 cap. ult. ad Divinam Hallensem et Puerum Jesum, as fol
+- file: EPUB/ch004.xhtml; previous: blasphemy comes not at all short of it. The first is of Clarus Bonarus the Jesuit, lib. 3 Amphitrial. Honor. lib. 3 cap. ult. ad Divinam Hallensem et Puerum Jesum, as followeth: —; next: The other is of Franciscus de Mendoza, in Viridario Utriusque Eruditionis, lib. 2 prob. 2, as ensueth: —
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch040.xhtml; text: Now, both these were lost at once. The heavens were darkened when it might be expected, in an ordinary course, that the sun should have shone in its full beauty, Matthew 27:45, Luke 23:44, 45; and the earth lost its stability, and shook ...
+- file: EPUB/ch017.xhtml; text: The intendment of these questions being the application of what is spoken of Christ, either as mediator or as man, unto his person, to the exclusion of any other consideration, namely, that of a divine nature therein, the whole of Mr B.'...
+- file: EPUB/ch022.xhtml; text: The first they propose is taken from Hebrews 1:3, where the words spoken of Christ are, Φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως αὑτοῦ , [1] — "Upholding all things by the word of his power."
+- file: EPUB/ch032.xhtml; text: Of the same judgment with him is Volk. de Vera Relig. lib. 4:cap. 11: [2] de Christi invocatione, Schlichting. ad Meisner., pp. 206, 207, and generally the rest of them; which again how consistent it is with what they affirm in the Racov...
 - file: EPUB/ch040.xhtml; text: He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —
+- file: EPUB/ch047.xhtml; text: I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is evident from the w...
 - file: EPUB/ch047.xhtml; text: These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our sanctification al...
 
 ## Suspicious Large-Number Starts
 
 - file: EPUB/ch011.xhtml; text: 11. Crellius is something more candid, as he pretends, but indeed infected with the same venom with the other; for after he hath disputed for sundry pages to prove the foreknowledge of God, he concludes at last that for
-- file: EPUB/ch017.xhtml; text: 18. Acts 13:32, 33; Revelation 1:5; 4. His exaltation, Hebrews 5:5; Romans 8:29. For the removal of all this from prejudicing the eternal sonship of Jesus Christ there is an abundant sufficiency, arising from the conside
 - file: EPUB/ch019.xhtml; text: 24. Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei." Again, " Παρὰ σοί , refer ad illud εῖχον , et intellige, ut diximus, in decreto tuo." But what intends the learned man by those places o 1 Peter 1:20
 - file: EPUB/ch039.xhtml; text: 52. The words of that verse are, —
 - file: EPUB/ch042.xhtml; text: 12. And that may be the sense of the word ἐπιλαμβάνεται , if not in the effect, yet in the cause, Hebrews 2:16.
 
-## Overlong Heading Candidates
-
-- file: EPUB/ch017.xhtml; tag: h4; text: II. That he is and is termed the Son of God solely on this account, and not upon the reasons mentioned by Mr B. and explained from his companions, is with equal clearness evinced.
-- file: EPUB/ch018.xhtml; tag: h4; text: III. ALTHOUGH the testimonies and arguments for the deity of Christ might be urged and handled to a better advantage, if liberty might be used to insist upon them in the method that seems most natural for the clearing and confirmation of...
-- file: EPUB/ch036.xhtml; tag: h4; text: I. THE death of Christ in this business is a PRICE, and that properly so called: 1 Corinthians 6:20, ' Ηγοράσθητε τιμῆς , — "Ye are bought with a price." And if we will know what that price was with which we are bought, the Holy Ghost in...
-- file: EPUB/ch036.xhtml; tag: h4; text: II. It was a SACRIFICE; and what sacrifice it was shall be declared: — That Christ offered a sacrifice is abundantly evident from what was said before, in the consideration of the time and place when and wherein Christ was a high priest.
-- file: EPUB/ch044.xhtml; tag: h4; text: III. THE third consideration of the death of Christ was of it as it was penal, as therein he underwent punishment for us, or that punishment which for sin was due to us.
-
 ## Short Fragments
 
+- file: EPUB/ch003.xhtml; text: John Owen
 - file: EPUB/ch005.xhtml; text: JOHN BIDDLE.
 - file: EPUB/ch009.xhtml; text: MR BIDDLE'S question: —
 - file: EPUB/ch009.xhtml; text: Whereunto answers that in Cato: —
 - file: EPUB/ch009.xhtml; text: Ομοιον αὐτῷ σαρκικὸν καθεστάναι .
 - file: EPUB/ch011.xhtml; text: Ans.
 - file: EPUB/ch013.xhtml; text: Ans. Genesis 1:1
+- file: EPUB/ch014.xhtml; text: EXAMINATION.
 - file: EPUB/ch016.xhtml; text: Ans. Ephesians 4:5.
 - file: EPUB/ch017.xhtml; text: EXAMINATION.
-- file: EPUB/ch017.xhtml; text: He adds, 12th,
-- file: EPUB/ch019.xhtml; text: Thus, then, they proceed: —
 
 ## Missing Enumerator Markers
 
-- marker: (1.); pdf: 110; epub: 107; examples: [{'location': 'pdf:p51', 'context': 'them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could...
-- marker: (3.); pdf: 54; epub: 53; examples: [{'location': 'pdf:p87', 'context': 'he several particulars as they shall occur in the method wherein by him they are handled. (3.) What can be concluded of the mind of God in the Scripture, by cutting off any place or places of it from ...
-- marker: [4.]; pdf: 7; epub: 6; examples: [{'location': 'pdf:p296', 'context': 'f many nations," and not as a proper name, whereof in Scripture there is not any example. [4.] It is horribly wrested, — 1st. In making the words "I am" elliptical, whereas there is neither need of n...
+- marker: (1.); pdf: 110; epub: 108; examples: [{'location': 'pdf:p51', 'context': 'them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could...
 
 ## Enumerator Sequence Candidates
 
-- file: EPUB/ch011.xhtml; marker: (8.); family: paren_decimal; context: (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a
-- file: EPUB/ch027.xhtml; marker: (2.); family: paren_decimal; context: (2.) Omniscience, 1 Corinthians 2:10; John 16:13. His omnipotency and eternity are both manifest from the creation.
+- file: EPUB/ch004.xhtml; marker: [18]; family: bracket_decimal; context: , lib. 1 tom. 2; and Augustine, in his book of Heresies, 5 "ad quod vult deus manifeste." [18] To these may be added Tatianus, Cerdo, Marcion, and their companions (of whom see Tertullian at large, and Eusebius, in their respective place...
+- file: EPUB/ch004.xhtml; marker: [9]; family: bracket_decimal; context: affirmed by Epiphanius, Haer. 51. "Hieronymus de Seriptoribus Ecclesiasticis de Johanne." [9] The same abomination was again revived by Theodotus, called Coriarius (who, having once denied Christ, was resolved to do so always); excommuni...
+- file: EPUB/ch004.xhtml; marker: [17]; family: bracket_decimal; context: municated on that account by Victor, as Eusebius relates, Hist. Eccles. lib. 5 cap. ult., [17] where he gives also an account of his associates in judgment, Artemon, Asclepiodotus, Natalius, etc.; and the books written against him are th...
+- file: EPUB/ch004.xhtml; marker: [16]; family: bracket_decimal; context: stantly boast. Of Samosatenus and his heresy, see Euseb. Hist. Eccles. lib. 7 cap. 29, 30 [16] and Hilary, De Synodis; of Photinus, Socrat. Eccles. Hist. lib. 2 cap. 24, 25. [14] And with these do our present Socinians expressly agree in...
+- file: EPUB/ch004.xhtml; marker: [14]; family: bracket_decimal; context: 9, 30 [16] and Hilary, De Synodis; of Photinus, Socrat. Eccles. Hist. lib. 2 cap. 24, 25. [14] And with these do our present Socinians expressly agree in the matter of the person of Christ. 7 To the third head I refer that deluge of ARIA...
+- file: EPUB/ch004.xhtml; marker: [6]; family: bracket_decimal; context: "Defensio Fidei Catholicae de Satisfactione Christi, adversus Faustum Socinum Senensem." [6] Immediately upon the coming out of that book, animadversions were put forth against it by Harmanus Ravenspergerus, approved, as it seems, by our...
+- file: EPUB/ch004.xhtml; marker: [3]; family: bracket_decimal; context: sia, seu rege illo promisso, et haec est mea religio, quam coram vobis ingenue profiteor. [3] " — Martin. Seidelius Olaviensis Silesius.
+- file: EPUB/ch004.xhtml; marker: [13]; family: bracket_decimal; context: defense of Socinus against Grotius' treatise, "De Causis Morris Christi, de Effectu SS.," [13] his comments and ethics, declare his abilities and industry in his way. After him arose Jonas Schlichtingius, a man no whit behind any of the ...
+- file: EPUB/ch004.xhtml; marker: [2]; family: bracket_decimal; context: erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus." [2]
+- file: EPUB/ch004.xhtml; marker: [8]; family: bracket_decimal; context: rmine, in his book, "De Christo,' lays it to the charge of Bullinger, that in his book, " [8] De Scripturae et Ecclesiae Authoritate," he wrote that there were three persons in the Deity, "non statu, sed gradu, non subsistentia, sed form...
 
 ## Repeated Windows
 
@@ -179,20 +191,46 @@
 
 ## Missing Word Samples
 
-- word: chap; pdf: 142; epub: 35
-- word: pre; pdf: 4; epub: 0
-- word: ; pdf: 3; epub: 1
+- word: chap; pdf: 142; epub: 31
+- word: justification; pdf: 145; epub: 68
+- word: jus; pdf: 45; epub: 1
+- word: myself; pdf: 69; epub: 33
+- word: ex; pdf: 54; epub: 25
+- word: elect; pdf: 47; epub: 23
+- word: deo; pdf: 42; epub: 20
+- word: nobis; pdf: 42; epub: 20
+- word: opera; pdf: 23; epub: 1
+- word: esse; pdf: 39; epub: 18
 
 ## Excess Word Samples
 
 - word: 5chap; pdf: 0; epub: 14
+- word: digital; pdf: 0; epub: 10
+- word: veniam; pdf: 1; epub: 10
 - word: 1chap; pdf: 0; epub: 9
+- word: modern; pdf: 7; epub: 15
 - word: psalms; pdf: 3; epub: 11
 - word: 6chap; pdf: 0; epub: 8
 - word: 13chap; pdf: 0; epub: 7
-- word: digital; pdf: 0; epub: 6
+- word: footnotes; pdf: 0; epub: 6
 - word: onlybegotten; pdf: 0; epub: 6
-- word: 9chap; pdf: 0; epub: 6
+
+## Missing Greek Word Samples
+
+- word: ζητήσεις; pdf: 3; epub: 0
+
+## Missing Greek Clauses
+
+- page: 63; word_count: 21; sample: αθανατους μεν πρωτα θεους νομω ως διακειται τιμα και σεβου ορκον επειθ
+- page: 748; word_count: 7; sample: γινεται φθονος ερις βλασφημιαι υπονοιαι πονηραι παραδιατριβαι
+- page: 748; word_count: 7; sample: το γινεσθαι πατερα παιδων λυπη φοβος φροντις
+- page: 749; word_count: 7; sample: φιλει γαρ οκειν πραγμ ανηρ πρασσων μεγα
+- page: 749; word_count: 5; sample: ως ουχ υπαρχων αλλα τιμωρουμενος
+- page: 750; word_count: 6; sample: μικρα προφασις εστι του πραξαι κακως
+- page: 750; word_count: 14; sample: ειδε παν εχει καλως τω παιγνιω δοτε κροτον και παντες υμεις μετα
+- page: 751; word_count: 7; sample: και ταυτα πρασσων φασκ ανηρ ουδεν ποιων
+- page: 752; word_count: 8; sample: ουθεις επ αυτου τα κακα συνορα σαφως ετερου
+- page: 753; word_count: 6; sample: εγω ειμι μονος των ημων εμος
 
 ## Limits
 

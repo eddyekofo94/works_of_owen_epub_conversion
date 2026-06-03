@@ -737,7 +737,11 @@ def inspect_language_tagging(root: etree._Element, path: str, samples: dict[str,
             file_has_untagged_hebrew = True
             add_sample(samples["untagged_hebrew"], path, text)
 
-    visit(root, None, None)
+    body = root.find(".//{http://www.w3.org/1999/xhtml}body")
+    if body is not None:
+        visit(body, None, None)
+    else:
+        visit(root, None, None)
     if file_has_untagged_greek:
         stats["files_with_untagged_greek"] += 1
     if file_has_untagged_hebrew:
