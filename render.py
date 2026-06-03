@@ -5461,14 +5461,14 @@ def render_volume(vol_num: int, overrides: dict = None,
             else:
                 fm_html = _polish_contents_page_html(fm_html)
         if fm.get('type') == 'toc':
-            pass # We skip adding the static unlinked PDF TOC to the spine entirely
-        else:
-            fm_item.set_content(
-                _make_xhtml(fm['title'], fm_html).encode('utf-8')
-            )
-            fm_item.add_item(style_item)
-            book.add_item(fm_item)
-            front_matter_epub_items.append(fm_item)
+            fm['title'] = 'Original Printed Contents'
+
+        fm_item.set_content(
+            _make_xhtml(fm['title'], fm_html).encode('utf-8')
+        )
+        fm_item.add_item(style_item)
+        book.add_item(fm_item)
+        front_matter_epub_items.append(fm_item)
 
         # Dynamic insertion of the Note on Structural Formatting after TOC page
         if fm.get('type') == 'toc' and not added_structural_guide:
