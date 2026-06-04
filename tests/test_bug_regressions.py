@@ -481,7 +481,7 @@ def test_reference_and_scripture_false_breaks_are_healed():
 
 
 def test_same_page_treatise_title_keeps_only_title_section():
-    from extract import _keep_only_prerendered_treatise_title_page
+    from scripts.chapter_builder import _keep_only_prerendered_treatise_title_page
 
     raw = (
         '<section class="treatise-title-page" epub:type="titlepage">'
