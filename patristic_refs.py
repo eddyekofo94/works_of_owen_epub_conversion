@@ -1238,16 +1238,21 @@ def expand_inline_citations(
         trans_counter += 1
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
-            f'<a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>[{trans_counter}]</sup></a>'
+            f'<sup><a class="noteref noteref-trans" epub:type="noteref" '
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a></sup>'
         )
+        # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
+        actual_end = end
+        while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’ ':
+            actual_end += 1
         trans_notes.append({
             'id': fn_id,
             'num': trans_counter,
             'phrase': _esc(cite_str),
             'translation': note_body,
+            'type': 'citation',
         })
-        html = html[:end] + fn_link + html[end:]
+        html = html[:actual_end] + fn_link + html[actual_end:]
 
     # ── Pass B: parenthetical standalone chapter refs "(cap. N)" ────────────
     # Collected separately so they are NOT subject to the _bt_covered filter
@@ -1276,15 +1281,20 @@ def expand_inline_citations(
         trans_counter += 1
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
-            f'<a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>[{trans_counter}]</sup></a>'
+            f'<sup><a class="noteref noteref-trans" epub:type="noteref" '
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a></sup>'
         )
+        # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
+        actual_end = end
+        while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’ ':
+            actual_end += 1
         trans_notes.append({
             'id': fn_id,
             'num': trans_counter,
             'phrase': _esc(cite_str),
             'translation': note_body,
+            'type': 'citation',
         })
-        html = html[:end] + fn_link + html[end:]
+        html = html[:actual_end] + fn_link + html[actual_end:]
 
     return html, trans_notes, trans_counter

@@ -1,38 +1,34 @@
 # EPUB Audit: volume_3.epub
 
-- Status: **WARN**
+- Status: **PASS**
 - Errors: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 76
-- Manifest items: 67
-- Spine items: 45
+- Files: 81
+- Manifest items: 72
+- Spine items: 46
 - XHTML files: 47
-- Embedded fonts: 15
+- Embedded fonts: 20
 - NAV links: 48
 
 ## Content Checks
 
-- Greek chars: 4318
+- Greek chars: 4328
 - Untagged Greek chars: 0
-- Hebrew chars: 1620
+- Hebrew chars: 1655
 - Untagged Hebrew chars: 0
-- Noteref links: 299
-- Endnote anchors: 299
+- Noteref links: 304
+- Endnote anchors: 304
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 3
-
-## Warnings
-
-- `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
 

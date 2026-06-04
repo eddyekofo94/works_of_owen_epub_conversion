@@ -171,7 +171,8 @@
       "text_integrity": {
         "max_split_candidate_count": 209,
         "max_repeated_window_count": 25,
-        "max_missing_marker_count": 2
+        "max_missing_marker_count": 2,
+        "max_front_toc_missing_pages": 2
       },
       "epub": {
         "max_chapter_heading_in_paragraph_files": 2,

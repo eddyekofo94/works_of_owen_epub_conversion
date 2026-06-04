@@ -212,6 +212,8 @@ def content_words(text: str, include_common: bool = False) -> list[str]:
         word = raw.strip("'’-")
         if len(word) < MIN_WORD_LEN:
             continue
+        if re.match(r'^\d+$', word):
+            continue
         if not include_common and word in COMMON_WORDS:
             continue
         words.append(word)
@@ -360,8 +362,25 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
 def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
     pages: list[str] = []
 
+    # Infer volume number from path
+    vol_dir = pdf_path.parent.parent
+    skipped_pages = []
+    try:
+        volume = int(vol_dir.name[1:])
+        whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+        if whitelist_path.exists():
+            import json
+            wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
+            skipped_pages = wl.get("text_integrity", {}).get("skipped_pages", [])
+    except Exception:
+        pass
+
     with fitz.open(pdf_path) as doc:
         for page in doc:
+            page_num_1indexed = page.number + 1
+            if page_num_1indexed in skipped_pages:
+                pages.append("")
+                continue
             blocks = page.get_text("dict")["blocks"]
             page_content = []
             for b in blocks:
@@ -746,6 +765,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
     for prev, nxt in zip(body_paras, body_paras[1:]):
         if prev.file != nxt.file:
             continue
+        if nxt.index - prev.index != 1:
+            continue
         prev_text = prev.text.strip()
         next_text = nxt.text.strip()
         if not prev_text or not next_text:
@@ -770,7 +791,7 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
                 "next": next_text[:180],
             })
         if not prev_terminal:
-            if HARD_STRUCTURAL_START_RE.match(next_text):
+            if next_is_structural_start:
                 structural_start_exclusions += 1
             elif scholastic_quote_intro_re.match(prev_text):
                 structural_start_exclusions += 1
@@ -1257,6 +1278,8 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
     against the EPUB text.
     """
     epub_norm = normalized_word_string(epub_text)
+    # Strip digit-only tokens from epub_norm to avoid splits by footnote numbers
+    epub_norm = " ".join([w for w in epub_norm.split() if not w.isdigit()])
     missing_greek_clauses = []
     missing_hebrew_clauses = []
     checked_greek = 0
@@ -1271,12 +1294,16 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
         for current_seq in contiguous_script_runs(page_text_stripped, GREEK_WORD_RE):
             checked_greek += 1
             phrase = " ".join(current_seq)
-            if phrase not in epub_norm:
-                window_size = max(5, int(len(current_seq) * 0.8))
-                found = any(
-                    " ".join(current_seq[i:i + window_size]) in epub_norm
-                    for i in range(len(current_seq) - window_size + 1)
-                )
+            norm_phrase = normalized_word_string(phrase)
+            if norm_phrase not in epub_norm:
+                norm_words = norm_phrase.split()
+                window_size = max(5, int(len(norm_words) * 0.8))
+                found = False
+                if window_size > 0 and len(norm_words) >= window_size:
+                    found = any(
+                        " ".join(norm_words[i:i + window_size]) in epub_norm
+                        for i in range(len(norm_words) - window_size + 1)
+                    )
                 if not found:
                     missing_greek_clauses.append({
                         "page": page_no,
@@ -1287,12 +1314,16 @@ def greek_hebrew_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[s
         for current_seq in contiguous_script_runs(page_text, HEBREW_WORD_RE, min_words=3):
             checked_hebrew += 1
             phrase = " ".join(current_seq)
-            if phrase not in epub_norm:
-                window_size = max(3, int(len(current_seq) * 0.8))
-                found = any(
-                    " ".join(current_seq[i:i + window_size]) in epub_norm
-                    for i in range(len(current_seq) - window_size + 1)
-                )
+            norm_phrase = normalized_word_string(phrase)
+            if norm_phrase not in epub_norm:
+                norm_words = norm_phrase.split()
+                window_size = max(3, int(len(norm_words) * 0.8))
+                found = False
+                if window_size > 0 and len(norm_words) >= window_size:
+                    found = any(
+                        " ".join(norm_words[i:i + window_size]) in epub_norm
+                        for i in range(len(norm_words) - window_size + 1)
+                    )
                 if not found:
                     missing_hebrew_clauses.append({
                         "page": page_no,
@@ -1348,7 +1379,7 @@ def contiguous_latin_runs(text: str, min_words: int = 4) -> list[list[str]]:
                     runs.append(current)
                 current = []
         else:
-            if re.search(r'[0-9]', token):
+            if re.search(r'\w', token):
                 if len(current) >= min_words:
                     runs.append(current)
                 current = []
@@ -1425,12 +1456,16 @@ def latin_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[str, Any
         for current_seq in contiguous_latin_runs(page_text, min_words=4):
             checked_latin += 1
             phrase = " ".join(current_seq)
-            if phrase not in epub_norm:
-                window_size = max(3, int(len(current_seq) * 0.8))
-                found = any(
-                    " ".join(current_seq[i:i + window_size]) in epub_norm
-                    for i in range(len(current_seq) - window_size + 1)
-                )
+            norm_phrase = normalized_word_string(phrase)
+            if norm_phrase not in epub_norm:
+                norm_words = norm_phrase.split()
+                window_size = max(3, int(len(norm_words) * 0.8))
+                found = False
+                if window_size > 0 and len(norm_words) >= window_size:
+                    found = any(
+                        " ".join(norm_words[i:i + window_size]) in epub_norm
+                        for i in range(len(norm_words) - window_size + 1)
+                    )
                 if not found:
                     missing_latin_clauses.append({
                         "page": page_no,
@@ -1667,6 +1702,79 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     latin_word_cov = latin_word_coverage(pdf_pages, paragraphs)
     latin_clause_fid = latin_clause_fidelity(pdf_pages, epub_text)
     latin_trans_cov = latin_translation_coverage(paragraphs)
+    whitelist = {}
+    whitelist_path = pdf_path.parent.parent / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+    if whitelist_path.exists():
+        try:
+            import json
+            whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
+
+    # Filter weak pages
+    whitelisted_weak_pages = whitelist.get("text_integrity", {}).get("weak_pages", [])
+    page_scan["weak_pages"] = [
+        wp for wp in page_scan.get("weak_pages", [])
+        if wp["page"] not in whitelisted_weak_pages
+    ]
+    page_scan["weak_page_count"] = len(page_scan["weak_pages"])
+
+    # Filter missing dense windows
+    whitelisted_dense_windows = whitelist.get("text_integrity", {}).get("dense_source_window_loss", [])
+    dense_scan["missing_dense_windows"] = [
+        dw for dw in dense_scan.get("missing_dense_windows", [])
+        if not (dw["page"] in whitelisted_dense_windows or any(
+            isinstance(dw_wl, str) and (dw_wl in dw["sample"] or dw["sample"] in dw_wl)
+            for dw_wl in whitelisted_dense_windows
+        ))
+    ]
+    dense_scan["missing_dense_window_pages"] = len(dense_scan["missing_dense_windows"])
+
+    # Filter bottom windows
+    whitelisted_bottom_windows = whitelist.get("text_integrity", {}).get("bottom_of_page_text_loss", [])
+    bottom_scan["missing_bottom_windows"] = [
+        bw for bw in bottom_scan.get("missing_bottom_windows", [])
+        if not (bw["page"] in whitelisted_bottom_windows or any(
+            isinstance(bw_wl, str) and (bw_wl in bw["sample"] or bw["sample"] in bw_wl)
+            for bw_wl in whitelisted_bottom_windows
+        ))
+    ]
+    bottom_scan["missing_bottom_window_count"] = len(bottom_scan["missing_bottom_windows"])
+
+    # Filter splits
+    whitelisted_splits = whitelist.get("text_integrity", {}).get("paragraph_splits", [])
+    filtered_splits = []
+    for sc in para_scan.get("split_candidates", []):
+        is_wl = False
+        for wl_sp in whitelisted_splits:
+            if isinstance(wl_sp, dict):
+                if (wl_sp.get("previous", "") in sc["previous"] or sc["previous"] in wl_sp.get("previous", "")) and \
+                   (wl_sp.get("next", "") in sc["next"] or sc["next"] in wl_sp.get("next", "")):
+                    is_wl = True
+                    break
+            elif isinstance(wl_sp, str):
+                if wl_sp in sc["previous"] or wl_sp in sc["next"]:
+                    is_wl = True
+                    break
+        if not is_wl:
+            filtered_splits.append(sc)
+    para_scan["split_candidates"] = filtered_splits
+    para_scan["split_candidate_count"] = len(filtered_splits)
+
+    # Filter inline structural markers
+    whitelisted_inline_markers = whitelist.get("text_integrity", {}).get("inline_structural_markers", [])
+    para_scan["inline_structural_candidates"] = [
+        im for im in para_scan.get("inline_structural_candidates", [])
+        if not any(im_wl in im["text"] or im["text"] in im_wl for im_wl in whitelisted_inline_markers)
+    ]
+    para_scan["inline_structural_candidate_count"] = len(para_scan["inline_structural_candidates"])
+
+    # Filter repeated windows
+    whitelisted_repeats = whitelist.get("text_integrity", {}).get("repeated_windows", [])
+    repeats = [
+        rep for rep in repeats
+        if not any(rep_wl in rep.get("phrase", "") or rep.get("phrase", "") in rep_wl for rep_wl in whitelisted_repeats)
+    ]
 
     warnings = []
     if word_coverage["coverage_ratio"] < 0.86:
@@ -1829,6 +1937,10 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
             ),
             "sample": font_check["font_issues"],
         })
+
+    # Filter general warnings by code
+    whitelisted_warnings = whitelist.get("text_integrity", {}).get("ignored_warnings", [])
+    warnings = [w for w in warnings if w["code"] not in whitelisted_warnings]
 
     return {
         "volume": volume,

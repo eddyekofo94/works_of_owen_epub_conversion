@@ -1,10 +1,10 @@
 {
   "volume": 3,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/bugs_fixes/volume_3_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/bugs_fixes/volume_3_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/bugs_fixes/volume_3_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/bugs_fixes/volume_3_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,157 +12,24 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 161,
+      "observed": 0,
       "budget": 176,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "anions, saying, \"These men are the servants of the most high God,\" Acts 16:17. So also did the man who abode in the tombs, possessed with an unclean spirit, who cried out unto him,",
-          "next": "And other testimonies to the like purpose among the heathen, and from their oracles, might be produced."
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "great importance, he repeats it frequently unto them, and inculcates it upon them. Consider somewhat of what he says to this purpose in his last discourse with them: John 14:16-18,",
-          "next": "whom the world cannot receive, because it seeth him not, neither knoweth him: but ye know him; for he dwelleth with you, and shall be in you. I will not leave you comfortless: I wi"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "John 20:17, to wean her from any carnal consideration of him, so he instructs them all now to look after and trust unto the promise of the Holy Ghost. Hence is that of our apostle,",
-          "next": "for although it was a great privilege to have known Christ in this world after the flesh, yet it was much greater to enjoy him in the dispensation of the Spirit. And this was spoke"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "nstructed in what concerns him; for there is somewhat that doth so, which is accompanied with irrecoverable and eternal ruin; and so is nothing else in the world. So Mark 3:28, 29,",
-          "next": "Or, \"Whosoever speaketh against the Holy Ghost, it shall not be forgiven him, neither in this world, neither in the world to come,\" Matthew 12:32."
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": " pleaded in its justification, it is to be rejected, as they also are by whom it is declared. This rule the apostle Paul confirms by the highest instance imaginable: Galatians 1:8,",
-          "next": "And the apostle shows that, for our advantage in this trial we are to make of spirits, it is good to have a clear conviction of, and a constant adherence unto, some fundamental pri"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "God walked in the garden\" לְרוּחַ [33] הַיוֹם , \"in the cool of the day;\" that is, when the evening air began to breathe gently, and moderate the heat of the day. So in the poet, —",
-          "next": "\"At the going down of the sun, when the cold evening tempers the heat of the air.\" And some think this to be the sense of that place, Psalm 104:4, \"Who maketh his angels רוּחוֹת , "
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "\"establishing the thunder;\" and yet, when he hath done all, he can scarce free himself of the objection about the creation of the Spirit, which he designs to answer. His words are,",
-          "next": "And hereon, with some observations to the same purpose, he adds,"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "And hereon, with some observations to the same purpose, he adds,",
-          "next": "The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of \"confirming the thunder\" (which nowhere here app"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": " 4. con [22] tra Eunom., [17] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [10] [9]",
-          "next": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,",
-          "next": "declares the mistake of the LXX. and the occasion of it: —"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 14,
+      "observed": 0,
       "budget": 14,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch003.xhtml",
-          "text": "The FIRST BOOK of the treatise is devoted to considerations of a general and preliminary nature. The promise of spiritual gifts contained in Scripture is examined; and occasion is hence taken to illustrate the importance of sound views on the doctrine of the S"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "text": "THE apostle Paul, in the 12th chapter of his First Epistle to the Corinthians, directs their exercise of spiritual gifts, concerning which, amongst other things and emergencies, they had made inquiry of him. This the fast words wherewith he prefaceth his whole"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "text": "Treating, therefore, περὶ τῶν πνευματικῶν , [7] of these spiritual things or gifts in the church, he first declares their author, from whom they come, and by whom they are wrought and bestowed. Him he calls the \"Spirit,\" verse 4; the \"Lord,\" verse 5; \"God,\" ve"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "text": "This is one signification of the word רוּחַ , [34] or this is one thing denoted by it in the Scripture. So, among many other places, expressly Amos 4:13, \"For, lo,\" יוֹצֵר הָרִים וּבֹרֵא רוּחַ [35] , he that formeth the mountains, and createth the spirit,\" tha"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "text": "The substance of his discourse is, that treating of Christ (who indeed is neither mentioned nor intended in the text), he speaks of \"confirming the thunder\" (which nowhere here appears), by which the sound of the Scriptures and preaching of the word is intende"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "text": "Hence, their disagreement is infinitely more than their agreement; yet such allusions doth our weakness need instruction from and by. Thus he is called רוּחַ [47] פִיו Psalm 33:6, \"The Spirit\" or \"breath of the mouth of the LORD,\" or \"of his nostrils;\" as Psal"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "text": "To return; As he is called the Holy, so he is the Good Spirit of God: Psalm 143:10, רִוּחֲך טוֹבָה תַנְחֵנִי ; — \"Thy Spirit is good; lead me into the land of uprightness;\" so ours: — rather, \"Thy good Spirit shall lead me;\" or, as Junius, \"Spiritu tuo bone de"
-        },
-        {
-          "file": "EPUB/ch012.xhtml",
-          "text": "Not that God intended much to make use of this way of dreams and nocturnal visions under the New Testament; but the intention of the words is, to show that there should be a plentiful effusion of that Spirit which acted by these various ways and means then und"
-        },
-        {
-          "file": "EPUB/ch015.xhtml",
-          "text": "None doubts but that this is a description of the person of Christ. And in the beginning of this verse, \"He whom God hath sent speaketh the words of God;\" which is the usual periphrasis of the Lord Christ, used at least twenty times in this Gospel. Of him this"
-        },
-        {
-          "file": "EPUB/ch018.xhtml",
-          "text": "Therefore, 3. The difference in this matter cometh unto this head: We say and believe that regeneration consists in spirituali renovatione naturae, — \"in a spiritual renovation of our nature;\" our modem Socinians, that it doth so in morali reformatione vitae, "
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
-      "observed": 25,
+      "observed": 0,
       "budget": 25,
       "status": "ok",
-      "samples": [
-        {
-          "phrase": "both to will and to do of his good pleasure",
-          "count": 7
-        },
-        {
-          "phrase": "the name of the father and of the son and",
-          "count": 6
-        },
-        {
-          "phrase": "in us both to will and to do of his",
-          "count": 6
-        },
-        {
-          "phrase": "us both to will and to do of his good",
-          "count": 6
-        },
-        {
-          "phrase": "name of the father and of the son and of",
-          "count": 5
-        },
-        {
-          "phrase": "of the father and of the son and of the",
-          "count": 5
-        },
-        {
-          "phrase": "the father and of the son and of the holy",
-          "count": 5
-        },
-        {
-          "phrase": "father and of the son and of the holy ghost",
-          "count": 5
-        },
-        {
-          "phrase": "the new man which after god is created in righteousness",
-          "count": 5
-        },
-        {
-          "phrase": "new man which after god is created in righteousness and",
-          "count": 5
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Missing front CONTENTS pages",
@@ -222,63 +89,31 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
     },
     {
       "label": "Low Hebrew word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
     },
     {
       "label": "Missing Greek clauses",
-      "observed": 1,
+      "observed": 0,
       "budget": 1,
       "status": "ok",
-      "samples": [
-        {
-          "page": 34,
-          "word_count": 6,
-          "sample": "ζηλουτε δε τα χαρισματα τα κρειττνα"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Missing Hebrew clauses",
-      "observed": 5,
+      "observed": 0,
       "budget": 5,
       "status": "ok",
-      "samples": [
-        {
-          "page": 70,
-          "word_count": 3,
-          "sample": "רוּחַ נְדוֹלָה וְחָזָק"
-        },
-        {
-          "page": 74,
-          "word_count": 3,
-          "sample": "רוּחַ בְּנֵי הָאָדָם"
-        },
-        {
-          "page": 80,
-          "word_count": 3,
-          "sample": "רוּחַ־רָעָה מֵאֵת יְהוָֹה"
-        },
-        {
-          "page": 109,
-          "word_count": 5,
-          "sample": "שַׁדַּי תְחַיֵנִי רוּחַ־אֵל עָצָתְנִי וְנִשְׁמַת"
-        },
-        {
-          "page": 130,
-          "word_count": 3,
-          "sample": "רֹאצ עַפְרוֹת חֵבֵל"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Residual AGES source artifacts",
@@ -333,7 +168,7 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 3,
+      "observed": 4,
       "budget": 4,
       "status": "ok",
       "samples": [
@@ -350,6 +185,11 @@
         {
           "file": "combined_text",
           "text": "chapter 3 believers the only object of sanctification",
+          "count": 1
+        },
+        {
+          "file": "combined_text",
+          "text": "רוּח spirit breath or wind hebrew ruach 1",
           "count": 1
         }
       ]

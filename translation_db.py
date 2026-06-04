@@ -2572,6 +2572,9 @@ FOOTNOTE_TRANSLATIONS = {
 }
 
 BODY_TRANSLATIONS = {
+    "Qualiacumque voles Judaei somia vendant.": (
+        "<b>Modern Translation:</b> &ldquo;Jews will sell you whatever dreams you like [for the tiniest copper coin].&rdquo; &mdash; Juvenal, <i>Satires</i>, 6.547 (where the text reads <i>somia</i> for <i>somnia</i>, &ldquo;dreams&rdquo;)."
+    ),
     "factores autem sermonum ejus facti, communionem habeamus cum ipso": (
         "<b>Modern Citation:</b> John Calvin, <i>Commentary on the First Epistle of John</i>, Preface / Argument on 1 John 1:1–4.<br/><b>Translation:</b> &ldquo;Having become doers of his words, let us have communion with him.&rdquo;"
     ),
@@ -2860,7 +2863,7 @@ BODY_TRANSLATIONS = {
     "Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν": (
         "&ldquo;Upon this rock of secure faith I will build My church&rdquo; (Commonly attributed to Origen or early Greek commentators on Matthew 16:18)."
     ),
-    "ὁμοιούσιος, ἑτερούσιος, ἐξ οὐκ ὀ": (
+    "ὁμοιούσιος, ἑτερούσιος, ἐξ οὐκ ὀ͂ντων": (
         "<i>homoiousios</i> (of similar substance), <i>heterousios</i> (of different substance), <i>ex ouk onton</i> (from things that do not exist)."
     ),
     "μίαν φύσιν": (

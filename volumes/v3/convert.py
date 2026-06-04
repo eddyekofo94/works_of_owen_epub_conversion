@@ -35,8 +35,11 @@ _V3_HOLY_SPIRIT_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="
 <p class="title-rule" aria-hidden="true"></p>
 <p class="title-source">"He shall glorify me: for he shall receive of mine, and shall shew it unto you." — John 16:14.</p>
 <div class="quote-block">
-<p><span lang="el" xml:lang="el">Ἐκ τῶν θείων γραφῶν θεολογοῦμεν κἂν θέλωσιν οἱ ἐχθροὶ κἂν μή.</span> — Chrysostom</p>
+<p><span lang="el" xml:lang="el">Ἐκ τῶν θείων γραφῶν θεολογοῦμεν κἂν θέλωσιν οἱ ἐχθροὶ κἂν μή.</span><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="#fn_chrysostom"><sup>[1]</sup></a> — Chrysostom</p>
 </div>
+<aside epub:type="footnote" id="fn_chrysostom" class="footnote" role="doc-endnote">
+<p class="footnote"><span class="fn-link">[1]</span> “We speak of theology from the divine Scriptures, whether our enemies want it or not.” — John Chrysostom; also cited as an early Greek patristic maxim.</p>
+</aside>
 <!-- Prevent duplicate Greek quote merge: -->
 <div style="display:none;" lang="el">Εκ τῶν θείων γραφᾶν θεολογοῦμεν κἇν θέλωσιν οἱ ἐχθροὶ κἆν μή</div>
 </section>'''
@@ -95,16 +98,60 @@ _V3_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 # ---------------------------------------------------------------------------
 # Overrides and replacements
 # ---------------------------------------------------------------------------
+import re
+
+def html_postprocess_hook(html, ch_context):
+    title = ch_context.get('title', '')
+    if 'TO THE READERS' in title.upper():
+        unified = (
+            '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">&quot;<span lang="la" xml:lang="la">'
+            'In seculo hodie tam Perverso prorsus immersi vivinus miseri, in quo Spiritus Sanctus omnino ferme pro ludibrio habetur: '
+            'imo in quo etiam sunt qui non tantum corde toto eum repudient ut factis negent, sed quoque adeo blasphemi in eum exsurgant '
+            'ut penitus eundem ex orbe expulsum aut exulatum cupiant, quum illi nullam in operationibus suis relinquant efficaciam; '
+            'ac propriis vanorum habituum suorum viribus, ac rationis profanae libertati carnalitatique suae omnem ascribant sapientiam, '
+            'et fortitudinem in rebus agendis. Unde tanta malignitas externae proterviae apud mortales cernitur. Ideoque pernicies '
+            'nostra nos jam ante fores expectat,</span>&quot; etc.</p></blockquote>'
+        )
+        pattern = re.compile(r'<blockquote epub:type="z3998:quotation"><p class="blockquote-content">(?:&quot;|")In seculo hodie.*?</p></blockquote>', re.S)
+        html = pattern.sub(unified, html)
+    elif 'PECULIAR OPERATIONS' in title.upper():
+        # Fix the Juvenal quote language tagging to include the whole phrase
+        html = re.sub(
+            r'(?:&quot;|")Qualiacumque voles <span lang="la" xml:lang="la">Judaei somia</span> vendant\.(?:&quot;|")',
+            r'&quot;<span lang="la" xml:lang="la">Qualiacumque voles Judaei somia vendant.</span>&quot;',
+            html
+        )
+        # Merge flat-list item 4 and split concluding sentence
+        pattern_list = re.compile(
+            r'(Those of the other sort we shall find: — <b>1\.</b>.*?<b>3\.</b> In things <i>natural,</i> as increase of bodily strength\.)</p>\s*</div>\s*<div class="owen-branch owen-level-1">\s*<p class="list-item list-level-1"><b>4\.</b> (In gifts <i>intellectual,</i> <b>\(1\.\)</b> For things sacred, as to preach the word of God; <b>\(2\.\)</b> In things artificial, as in Bezaleel and Aholiab\.)\s+(.*?)\s*</p>\s*</div>',
+            re.S
+        )
+        html = pattern_list.sub(r'\1 <b>4.</b> \2</p>\n</div>\n<p>\3</p>', html)
+    return html
+
 OVERRIDES = {
     'contents_page_overrides': _V3_CONTENTS_PAGE,
     'treatise_title_overrides': {
         'A Discourse Concerning the Holy Spirit:': _V3_HOLY_SPIRIT_TITLE_PAGE,
     },
     'text_replacements': {
+        'VII1TUES': 'VIRTUES',
         'Pelaglan': 'Pelagian',
         'Socimanism': 'Socinianism',
         'without it it is': 'without it, it is',
+        '_no_ s _upernatural strength;_': '_no supernatural strength;_',
+        'no s upernatural strength': 'no supernatural strength',
+        'giving, s ending': 'giving, sending',
+        'enmit y': 'enmity',
+        'in tended': 'intended',
+        'p ersuasion': 'persuasion',
+        'p rinciple': 'principle',
+        'm orally': 'morally',
+        'C hrist': 'Christ',
+        'C hristian': 'Christian',
+        'f orbidden': 'forbidden',
     },
+    'html_postprocess_hook': html_postprocess_hook,
 }
 
 

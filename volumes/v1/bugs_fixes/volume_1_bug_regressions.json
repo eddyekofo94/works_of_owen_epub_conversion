@@ -1,10 +1,10 @@
 {
   "volume": 1,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,71 +12,107 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 101,
+      "observed": 19,
       "budget": 125,
       "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch004.xhtml",
-          "previous": "on, the Only-begotten, the First-begotten, the Door, the Way, the Arrow, Wisdom, and sundry other things.\" And Ennodius has, as it were, turned this passage of Jerome into verse: —",
-          "next": "Chap. IV. That he was the foundation of all the holy counsels of God, with respect unto the vocation, sanctification, justification, and eternal salvation of the church, is, in the"
+          "previous": "nim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus\". [1]",
+          "next": "— \"He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "rtium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?\" [2]",
+          "next": "— \"I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "To the same purpose. speaks Eusebius at large: Demonstratio Evang., lib. 5 cap. 2. [47]",
+          "next": "Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.:) [73] \"Quia in Christo Jesus Filio Dei non solum ad divinam essentiam,"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "veniret utriusque diversitas, ut unus idemque sit filius, qui se, et secundum quod verus est homo, Patre dicit minorem, et secundum quod verus est Deus Patrise profitetur aequalem\"",
+          "next": "— \"Human nature is assumed into the society of the Creator, not that he should be the inhabitant, and that the habitation,\" (that is, by an inhabitation in the effects of his power"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. [27]",
+          "next": "Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "to the same purpose: (lib. 5 cap. 1:) [90] \"Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". [12]",
+          "next": "That which these passages give testimony unto, is what we have discoursed concerning the necessity of our redemption in and by the nature that sinned; and yet withal, that it shoul"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "non aeriae, non alterius cujusquam putes esse naturae, sed ejus coujus est omnium caro; id est, quam ipse Deus, homini primo de terra plasmavit, et caeteris hominibus plasmat.\" [4]",
+          "next": "— \"So believe Christ the Son of God, that is, one person of the Trinity, to be the true God, that you doubt not but that his divinity was born\" (thy eternal generation) \"of the nat"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " tantum; at qui erat in divinitate Dei Patris Filius, ipse fieret in homine hominis matris Filius; ne Filii nomen ad alterum transiret, qui non esset eterna nativitate filius\". [6]",
+          "next": "— \"The Father did not assume flesh, nor the Holy Spirit, but the Son only; that he who in the Deity was the Son of the Father, should be made the Son of man, in his mother of human"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "amnatione justissima derelictis, ostenderetur, quod meruisset universa conspersio, et quo etiam istos debitum judicium Dei duceret, nisi ejus indebita misericordia subveniret.\" [3]",
+          "next": "— \"Behold, the whole race of mankind, by the just judgment of God, so condemned in the apostatical root, that if no one were thence delivered, yet no man could rightly complain of "
         },
         {
           "file": "EPUB/ch009.xhtml",
-          "previous": "nswer hereunto God tells him, that he cannot see his face and live; none can have either bodily sight or direct mental intuition of the Divine Being. But this I will do, saith God,",
-          "next": "This is all that God would grant, viz, such external representations of himself, in the proclamation of his name, and created appearances of his glory, as we have of a man whose ba"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "he being of God, his infinite wisdom, power, and goodness — viz., in the impressions and characters of them on the things that were made — in their own representations of him, they",
-          "next": "Wherefore this common presumption — that there was no way to attain a due sense of the Divine Being but by some representation of it — though true in itself, yet, by the craft of S"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "This was the testimony which the apostles gave concerning him, when he dwelt among them in the days of his flesh. They saw",
-          "next": "The divine glory was manifest in him, and in him they saw the glory of the Father. So the same apostle witnesses again, who recorded this testimony:"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": " wisdom and knowledge of God — in his counsels concerning the vocation, sanctification, and salvation, of the church — concerning which the apostle falls into that holy admiration,",
-          "next": "And they are called \"treasures\" on a twofold account, both mentioned together by the Psalmist. \"How precious are thy thoughts unto me, O Lord; how great is the sum of them!\" They a"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "is power and care for the church, that is so expressed. These were from the beginning the first foundation of the church, in answer unto his everlasting counsels, Zechariah 2:8, 9,",
-          "next": "He who is sent calleth himself \"The Lord of hosts,\" and affirms that he will destroy the nations by the shaking of his hand; who can be no other but God himself. That is, it was th"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "tion, so it is not only intended. He was so before Abraham, as that the care of the church was then and always from the beginning on him. And he discharged this office four ways: —",
-          "next": "(1st,) By personal appearances in the likeness of human nature, in the shape of a man, as an indication of his future incarnation; and under those appearances instructing the churc"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
-          "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "hed unto those that were disobedient in the days of Noah, who are now in prison for their disobedience, 1 Peter 3:19, 20. For he was so to prophet of the church always as to tender",
-          "next": "John 1:9, by one way or other communicating to them some notices of God and his will; for his light shineth in, or irradiates darkness itself — that darkness which is come on the m"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": " not only received divine truth by parcel, but comprehended not the depths of the revelations made unto them, 1 Peter 1:11, 12. To this purpose is that divine testimony, John 1:18,",
-          "next": "It is of all the prophets concerning whom it is affirmed, that no man has seen God at any time. So is it evident in the antithesis between Moses the principal of them, and the Lord"
+          "previous": "affirm] we know not; only we declare what we believe and adore. \"Neque sensus est ejus, neque phantsia, neque opinio, nec ratio, nec scientia\", says Dionys. De Divan. Nomine,1. [1]",
+          "next": "We have no means — no corporeal, no intellectual instrument or power — for the comprehension of him; nor has any other creature: \" Επεὶ αὐτὸ ὅπε ? ρ ἐστιν ὁ Θεὸς , οὐ μόνον προφῆτα"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 1,
-      "budget": 6,
+      "observed": 15,
+      "budget": 16,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch031.xhtml",
-          "text": "In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love."
+          "file": "EPUB/ch001.xhtml",
+          "text": "They have repeatedly appeared in the language of Holland; and by the Dutch divines the most favorable mention is made of the various treatises of our pious and learned Puritan. We are informed by Dr Steven, 2 that his Exposition of the Epistle to the Hebrews w"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "We may take an instance hereof with respect unto the Nestorian heresy, condemned in the first Ephesian Council, and afterwards in that at Chalcedon. Cyril of Alexandria, a man learned and vehement, designed by all means to be unto it what his predecessor Athan"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "As he is in his divine person his eternal, essential image; so, in his incarnation, as the teacher of men, he is the representative image of God unto the church, as is afterwards declared. So also Jerome expresseth his mind herein: (Comment. in Psalm 66: [74] "
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. Treating of Christ as the teacher of all men, his \" παιδαγωγὸς \", he affirms that"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "Herein we consider the incarnation of the Son of God, with respect unto the recovery and salvation of the church alone. Some have contended that he should have been incarnate, had man never fallen or sinned. Of these are Rupertus, lib. 3, De Gloria et Honore F"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "Still it is supposed that the glory of God, as essentially in him, is invisible unto us, and incomprehensible by us. Yet is there a knowledge of it necessary unto us, that we may live unto him, and come unto the enjoyment of him. This we obtain only in the fac"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "It may be said, that the Scripture itself is sufficient for this end of the declaration of God unto us, so that there is no need of any other representation of him; and [that] these things serve only to turn the minds of men from learning the mind and will of "
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "In the confirmation hereof it will appear what judgment ought to be passed on that inquiry — which, after the uninterrupted profession of the catholic church for so many ages of a faith unto the contrary, is begun to be made by some amongst us — namely, Of wha"
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "text": "The faith and love of believers is not to be regulated by the ignorance and boldness of them who have neither the one nor the other. The title of the 45th Psalm is, \" שִׁיר יְדִידְֹת \", [2] \"A song of loves;\" — that is, of the mutual love of Christ and the chu"
+        },
+        {
+          "file": "EPUB/ch029.xhtml",
+          "text": "The glory of Christ is the glory of the person of Christ So he calls it \" Τὴν δόξαν τὴν ἐμὴν \", [2] John 17:24, \"That glory which is mine,\" which belongeth to me, unto my person."
         }
       ]
     },
@@ -91,49 +127,70 @@
           "count": 12
         },
         {
-          "phrase": "between our beholding the glory of christ by faith in",
-          "count": 6
-        },
-        {
-          "phrase": "our beholding the glory of christ by faith in this",
-          "count": 6
-        },
-        {
-          "phrase": "beholding the glory of christ by faith in this world",
-          "count": 6
-        },
-        {
-          "phrase": "the glory of christ by faith in this world and",
-          "count": 6
-        },
-        {
-          "phrase": "glory of christ by faith in this world and by",
-          "count": 6
-        },
-        {
-          "phrase": "of christ by faith in this world and by sight",
-          "count": 6
-        },
-        {
-          "phrase": "christ by faith in this world and by sight in",
-          "count": 6
-        },
-        {
-          "phrase": "by faith in this world and by sight in heaven",
-          "count": 6
-        },
-        {
           "phrase": "unto us child is born unto us son is given",
           "count": 6
+        },
+        {
+          "phrase": "of the glory of god in the face of jesus",
+          "count": 6
+        },
+        {
+          "phrase": "us child is born unto us son is given and",
+          "count": 5
+        },
+        {
+          "phrase": "the brightness of his glory and the express image of",
+          "count": 5
+        },
+        {
+          "phrase": "brightness of his glory and the express image of his",
+          "count": 5
+        },
+        {
+          "phrase": "of his glory and the express image of his person",
+          "count": 5
+        },
+        {
+          "phrase": "are changed into the same image from glory to glory",
+          "count": 5
+        },
+        {
+          "phrase": "both which are in heaven and which are on earth",
+          "count": 5
+        },
+        {
+          "phrase": "the only-begotten son who is in the bosom of the",
+          "count": 5
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 0,
-      "budget": 0,
+      "observed": 4,
+      "budget": 4,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "page": 3,
+          "hit_ratio": 0.0,
+          "sample": "contents of χριστολογια or declaration of the glorious mystery of the person of christ prefatory note preface chapter peter's confession matthew conceits of the papists thereon the substance"
+        },
+        {
+          "page": 4,
+          "hit_ratio": 0.5,
+          "sample": "chapter the especial principle of obedience unto the person of christ which is love its truth and reality vindicated chapter the nature operations and causes of divine love"
+        },
+        {
+          "page": 5,
+          "hit_ratio": 0.5,
+          "sample": "the glory of christ in his exaltation after the accomplishment of the work of mediation in this world representations of the glory of christ under the old testament"
+        },
+        {
+          "page": 6,
+          "hit_ratio": 0.25,
+          "sample": "of the holy trinity of the works of god and first of those that are internal and immanent of the works of god that outwardly are of him"
+        }
+      ]
     },
     {
       "label": "Reference continuation splits",

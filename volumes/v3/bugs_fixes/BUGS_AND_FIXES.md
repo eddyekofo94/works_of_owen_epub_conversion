@@ -88,10 +88,34 @@
 | 85 | Missing footnotes in Volumes 2 and 3 | Case-insensitive `ft` marker detection + font-aware extraction | ✅ Fixed 2026-05-11 |
 | 86 | Small font sizes for body and footnote references | Increased base `1.1em` + `noteref` size reset | ✅ Fixed 2026-05-11 |
 | 87 | Refactor font selection for per-volume body fonts | `VOLUME_CONFIG` + dynamic lookup + CSS locking | ✅ Fixed 2026-05-11 |
+| 88 | Inline list item 4 block separation in Chapter 1 | `html_postprocess_hook` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 89 | Missing translation and reference for Juvenal 6.546 quote in Chapter 1 | `translation_db.py` + `html_postprocess_hook` | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
 
 ---
 
 ## Issue Details
+
+### 88. Inline list item 4 block separation in Chapter 1 (⌛ IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** In Chapter 1, `4. In gifts intellectual...` was separated from the rest of the list (items 1–3) and rendered as an independent block `list-item` paragraph because the preceding paragraph `Those of the other sort we shall find: —` did not contain a number word for automatic count detection, and item `4` was fused with a trailing paragraph of text (`The work of grace...`) during extraction, exceeding flat-list merge word count caps.
+
+**Fix approach:**
+1. Split the concluding sentence `The work of grace...` from the list item text using `html_postprocess_hook` in `volumes/v3/convert.py`.
+2. Pulled list item `4. In gifts intellectual...` inline as part of the preceding `syllabus-anchor` paragraph containing items 1–3, rendering a clean inline list.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
+
+### 89. Missing translation and reference for Juvenal 6.546 quote in Chapter 1 (⌛ IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** The classical Latin quote `"Qualiacumque voles Judaei somia vendant." — [Juv., 6. 546.]` in Chapter 1 had no translation and no dynamic footnote reference link because only a portion of the phrase (`Judaei somia`) was wrapped in `<span lang="la">`, preventing the translation matcher from locating the complete exact phrase.
+
+**Fix approach:**
+1. Added `"Qualiacumque voles Judaei somia vendant."` along with its translation and citation metadata to `BODY_TRANSLATIONS` in `translation_db.py`.
+2. Unified the tag structure in `html_postprocess_hook` inside `volumes/v3/convert.py` to wrap the entire quote in a single `<span lang="la" xml:lang="la">` element, enabling the translation engine to match it.
+
+**Status:** ⌛ IMPLEMENTED (AWAITING VALIDATION)
+
+---
 
 ### 76. Multiline block quotes falsely split mid-quote (Open — Documented)
 **Problem:** Multiline block quotes (especially Greek and Latin patristic citations) are being falsely split into multiple paragraphs in the middle of the quote. The entire block quote should be treated as a single cohesive unit without interruptions.
@@ -814,12 +838,33 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-03T11:37:15.167714+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/volumes/v3/output/volume_3.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Last run:** 2026-06-04T00:53:45.118106+00:00
+**EPUB:** `volumes/v3/output/volume_3.epub`
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_3_audit.json`
@@ -829,21 +874,17 @@ Reports:
 |-------|--------|
 | OPF version | 3.0 |
 | XHTML files | 47 |
-| Spine items | 45 |
-| Embedded fonts | 15 |
+| Spine items | 46 |
+| Embedded fonts | 20 |
 | NAV links | 48 |
-| Greek chars / untagged | 4318 / 0 |
-| Hebrew chars / untagged | 1620 / 0 |
-| Noteref links / endnote anchors | 299 / 299 |
+| Greek chars / untagged | 4328 / 0 |
+| Hebrew chars / untagged | 1655 / 0 |
+| Noteref links / endnote anchors | 304 / 304 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 3 |
-
-Warnings requiring triage:
-
-- `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -973,11 +1014,31 @@ Validation:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-03T11:37:54.228813+00:00
-**Status:** WARN (9 warnings)
+**Last run:** 2026-06-04T00:54:28.700223+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_3_text_integrity.json`
@@ -987,53 +1048,41 @@ Reports:
 |-------|--------|
 | PDF pages | 789 |
 | EPUB text files | 45 |
-| EPUB paragraphs/headings | 2498 |
-| Approximate PDF-to-EPUB word coverage | 0.9853 |
-| Weak page matches | 13 |
-| Dense source windows checked | 812 |
-| Missing dense source-window pages | 783 |
-| Front CONTENTS pages checked | 6 |
+| EPUB paragraphs/headings | 2512 |
+| Approximate PDF-to-EPUB word coverage | 0.9998 |
+| Weak page matches | 0 |
+| Dense source windows checked | 36088 |
+| Missing dense source-window pages | 20 |
+| Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
-| Top-of-page body windows checked | 766 |
-| Top-of-page windows skipped as unstable | 31 |
+| Top-of-page body windows checked | 765 |
+| Top-of-page windows skipped as unstable | 30 |
 | Missing top-of-page body windows | 0 |
-| Bottom-of-page body windows checked | 748 |
+| Bottom-of-page body windows checked | 746 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 5 |
-| Possible faulty paragraph splits | 161 |
-| Structural starts excluded from split warnings | 304 |
-| Short fragments | 12 |
+| Missing bottom-of-page body windows | 0 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 314 |
+| Short fragments | 13 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 14 |
+| Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
 | Roman heading candidates | 0 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
-| Repeated word windows | 25 |
+| Repeated word windows | 0 |
 | PDF enumerator markers | 626 |
-| EPUB enumerator markers | 797 |
+| EPUB enumerator markers | 638 |
 | Missing enumerator marker forms | 0 |
-| Enumerator sequence candidates | 65 |
-| PDF Greek words / EPUB Greek words | 809 / 815 |
-| Greek word coverage ratio | 0.9936 |
-| PDF Hebrew words / EPUB Hebrew words | 238 / 235 |
-| Hebrew word coverage ratio | 0.958 |
-| Missing Greek clauses | 1 |
-| Missing Hebrew clauses | 5 |
-
-Warnings requiring triage:
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
-- `missing_hebrew_clauses`: Some dense Hebrew passages from the PDF are missing from the EPUB
+| Enumerator sequence candidates | 4 |
+| PDF Greek words / EPUB Greek words | 792 / 816 |
+| Greek word coverage ratio | 1.0 |
+| PDF Hebrew words / EPUB Hebrew words | 235 / 235 |
+| Hebrew word coverage ratio | 1.0 |
+| Missing Greek clauses | 0 |
+| Missing Hebrew clauses | 0 |
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

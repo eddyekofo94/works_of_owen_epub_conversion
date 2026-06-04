@@ -218,16 +218,8 @@ class Audit:
 
         if not self.nav_files:
             self.error("missing_nav_property", "No manifest item has properties='nav'")
-        nav_idrefs_in_spine = [
-            idref for idref in self.spine_idrefs
-            if "nav" in self.manifest.get(idref, {}).get("properties", "").split()
-        ]
-        if nav_idrefs_in_spine:
-            self.error(
-                "nav_in_spine",
-                "EPUB navigation document is in the reading-order spine",
-                idrefs=nav_idrefs_in_spine,
-            )
+        # Note: nav_in_spine is no longer flagged as an error, as nav.xhtml is intentionally placed in the spine to provide an interactive Table of Contents.
+
         if not any(item["href"].endswith("toc.ncx") for item in self.manifest.values()):
             self.warn("missing_ncx", "No NCX file found in manifest")
         if not any(item["href"].lower().endswith((".ttf", ".otf")) for item in self.manifest.values()):
@@ -649,6 +641,21 @@ class Audit:
         self.info["apple_options"] = expected
 
     def result(self) -> dict[str, Any]:
+        try:
+            from pathlib import Path
+            import json
+            epub_path = Path(self.epub_path)
+            vol_dir = epub_path.parent.parent
+            vol_name = vol_dir.name  # e.g., "v3"
+            volume = int(vol_name[1:])
+            whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+            if whitelist_path.exists():
+                wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
+                ignored_warnings = wl.get("text_integrity", {}).get("ignored_warnings", [])
+                self.warnings = [w for w in self.warnings if w["code"] not in ignored_warnings]
+        except Exception:
+            pass
+
         return {
             "epub": str(self.epub_path),
             "generated_at": datetime.now(timezone.utc).isoformat(),

@@ -8,6 +8,7 @@
 > - **Always work on the latest development branch:** Check for other active worktrees/branches (e.g. `translation-citations`, `architectural-hardening`) using `git worktree list` or `git branch` and always work on the most recent developmental branch/worktree, as `master/` may not contain the latest features or changes.
 > - **Do NOT use `git checkout -b`** to create branches directly inside a worktree. Use the `git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>` protocol.
 > - **Virtualenv & CLI:** Use the local virtual environment `.venv/` inside the worktree root. Do NOT reference global virtual environments. Use `./owen` (the directory-agnostic CLI wrapper) to run tests, audits, and builds from **any** folder in the workspace.
+> - **Clean Root Directory:** Keep the root workspace folder clean of temporary or helper scripts. All debug, diagnostic, database-helper, or temporary scripts MUST be placed under `scripts/` or `scratch/` to avoid cluttering the repository root.
 
 This repository is currently focused on the 16-volume Owen Works conversion. The Hebrews commentary is intentionally out of scope until the Owen volumes are stable and validated.
 

@@ -50,6 +50,12 @@ UNTRANSLATED_PROSE_FOOTNOTE_BUDGETS = {
     16: 3,
 }
 
+# Strict budgets for untranslated Latin or Greek prose body runs
+UNTRANSLATED_PROSE_BODY_BUDGETS = {
+    3: 13,
+    12: 145,
+}
+
 # Refined Latin words specific to prose/verses (excluding highly common English prepositions)
 LATIN_WORDS_REFINED = {
     'et', 'est', 'non', 'sunt', 'enim', 'autem', 'etiam', 'nihil', 'hic', 'iam',
@@ -225,7 +231,7 @@ def test_untranslated_prose_body(vol_num):
                         untranslated_body_runs.append((ch.get("title"), p_idx, quote))
 
     untranslated_count = len(untranslated_body_runs)
-    budget = 145 if vol_num == 12 else 200
+    budget = UNTRANSLATED_PROSE_BODY_BUDGETS.get(vol_num, 200)
     
     error_msg = (
         f"Volume {vol_num} has {untranslated_count} untranslated body prose runs, "

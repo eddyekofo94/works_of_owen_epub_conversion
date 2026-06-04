@@ -43,6 +43,16 @@ PUNCT_WHITELIST = {
     "i.e.", "e.g.", "viz.", "a.d.", "b.c.", "vol.", "chap.", "v.", "vv.", "p.", "pp.", "sec.", "sect."
 }
 
+GLOBAL_SPLIT_WHITELIST = {
+    # Heuristic 4b false positives
+    "be loved", "be held", "be paid", "be done", "be met", "be run", "be set",
+    "be led", "be put", "be got", "be sent", "within doors", "without doors",
+    "not withstanding", "non licet", "fore mentioned", "or leans", "amor et",
+    # Heuristic 4a false positives (primarily Latin prepositions or specific names)
+    "e sacris", "e coelo", "e scriptis", "e mundo", "e medio", "e latere",
+    "e cruce", "e nihilo", "e magis", "e min", "d ie", "in ner"
+}
+
 def load_dictionary() -> set[str]:
     """Load standard dictionary words from common system paths."""
     words_set = set()
@@ -83,7 +93,7 @@ def clean_text(text: str) -> str:
     """Strip XML tags, footnotes, and markdown formatting for cleaner matching."""
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\[f\d+\]", " ", text)
-    text = re.sub(r"\*\*|_", " ", text)
+    text = re.sub(r"\*\*|_", "", text)
     return text
 
 
@@ -195,8 +205,8 @@ def check_punctuation(text: str) -> list[tuple[str, str]]:
     return anomalies
 
 
-def check_ocr_residues(text: str) -> list[tuple[str, str]]:
-    """Identify classic OCR artifacts like bracket residues or mixed alphanumeric words."""
+def check_ocr_residues(text: str, dict_words: set[str] = None) -> list[tuple[str, str]]:
+    """Identify classic OCR artifacts like bracket residues, mixed alphanumeric words, and split word anomalies."""
     anomalies = []
     
     # 1. Bracket characters inside words, e.g. on]y, name]y, th[e]
@@ -218,6 +228,33 @@ def check_ocr_residues(text: str) -> list[tuple[str, str]]:
     matches = re.finditer(r"\[\s*\]", text)
     for m in matches:
         anomalies.append((m.group(0), "Empty square brackets"))
+
+    # 4. Spliced/split words check using dictionary heuristics
+    if dict_words:
+        # Heuristic 4a: Isolated letter (except a, i, o) followed by space and then lowercase word segment.
+        # Exclude possessives (e.g., "Owen's preface", "Majesty's chaplains") using lookbehind.
+        # E.g. "s upernatural", "c ommon", "p erfect"
+        matches = re.finditer(r"(?<!['’])\b([a-zA-Z])\s+([a-z][a-zA-Z]*)\b", text)
+        for m in matches:
+            let = m.group(1)
+            target = m.group(0)
+            if let.lower() not in ('a', 'i', 'o'):
+                if target.lower().strip() not in GLOBAL_SPLIT_WHITELIST:
+                    anomalies.append((target, f"Split word anomaly (isolated letter '{let}')"))
+
+        # Heuristic 4b: Rejoined check for consecutive word tokens
+        # E.g. "acknow ledged" -> rejoined "acknowledged" is valid, but "ledged" is not a valid word.
+        matches = re.finditer(r"\b([A-Za-z]{2,})\s+([A-Za-z]{2,})\b", text)
+        for m in matches:
+            w1 = m.group(1)
+            w2 = m.group(2)
+            target = m.group(0)
+            rejoined = (w1 + w2).lower()
+            w2_lower = w2.lower()
+            if len(rejoined) > 4:
+                if rejoined in dict_words and w2_lower not in dict_words:
+                    if target.lower().strip() not in GLOBAL_SPLIT_WHITELIST:
+                        anomalies.append((target, f"Split word anomaly (rejoins to '{w1+w2}')"))
 
     return anomalies
 
@@ -304,11 +341,45 @@ def check_structural_nesting(text: str) -> list[tuple[str, str]]:
                 val += r_map[roman[i]]
         return val
 
+    # Whitelisted books of the Bible to skip scripture references
+    BOOK_NAMES = {
+        'genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', 'judges', 'ruth', 'samuel', 'kings',
+        'chronicles', 'ezra', 'nehemiah', 'esther', 'job', 'psalm', 'psalms', 'proverbs', 'ecclesiastes', 'canticles',
+        'solomon', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah',
+        'jonah', 'micah', 'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark',
+        'luke', 'john', 'acts', 'romans', 'corinthians', 'galatians', 'ephesians', 'philippians', 'colossians',
+        'thessalonians', 'timothy', 'titus', 'philemon', 'hebrews', 'james', 'peter', 'jude', 'revelation'
+    }
+
     # Scan for each pattern
     for key, regex in patterns.items():
         sequence = []
         for m in regex.finditer(text):
             val_str = m.group(1)
+            
+            # Context checks to filter out scripture verses and other non-outline numbers
+            context_before_short = text[max(0, m.start()-15):m.start()].lower()
+            
+            # Skip verse numbers (preceded by colon)
+            if context_before_short.endswith(':'):
+                continue
+                
+            # Skip verse lists or ranges (preceded by comma or hyphen/dash)
+            if re.search(r'[,-]\s*$', context_before_short):
+                continue
+                
+            # Skip scripture book names immediately preceding the number
+            last_word_match = re.search(r'\b([a-z]+)\b\s*$', context_before_short)
+            if last_word_match and last_word_match.group(1) in BOOK_NAMES:
+                continue
+                
+            # Skip page, chapter, volume, verse, book, lib, cap abbreviations
+            if any(context_before_short.rstrip().endswith(abbrev) for abbrev in [
+                'p.', 'pp.', 'vol.', 'chap.', 'v.', 'vv.', 'lib.', 'cap.', 'book', 
+                'volume', 'chapter', 'section', 'sect.', 'page', 'verse', 'no.'
+            ]):
+                continue
+                
             # Parse value to an integer index
             if key in ("arabic_dot", "arabic_paren"):
                 val = int(val_str)
@@ -342,6 +413,16 @@ def check_structural_nesting(text: str) -> list[tuple[str, str]]:
     return anomalies
 
 
+def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
+    items = whitelist.get("anomalies", {}).get(category, [])
+    if target in items:
+        return True
+    for item in items:
+        if item in target or target in item:
+            return True
+    return False
+
+
 def main():
     parser = argparse.ArgumentParser(description="Audit a volume's intermediate JSON for OCR, hyphenation, and punctuation anomalies.")
     parser.add_argument("volume", type=int, help="Volume number (e.g., 12)")
@@ -365,6 +446,14 @@ def main():
     print(f"Reading Volume {vol_num} intermediate JSON...")
     with open(vol_json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
+
+    whitelist = {}
+    whitelist_path = vol_dir / "bugs_fixes" / f"volume_{vol_num}_whitelist.json"
+    if whitelist_path.exists():
+        try:
+            whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
     # Dictionary to hold all anomalies grouped by category
     categories = {
@@ -393,6 +482,8 @@ def main():
         # 1. Check Hyphenations
         hyphen_hits = check_hyphenations(raw_text, dict_words)
         for target, desc in hyphen_hits:
+            if is_whitelisted("Hyphenation Anomalies", target, whitelist):
+                continue
             snippets = find_contexts(raw_text, target)
             categories["Hyphenation Anomalies"].append({
                 "target": target,
@@ -404,6 +495,8 @@ def main():
         # 2. Check Punctuation Spacing
         punct_hits = check_punctuation(raw_text)
         for target, desc in punct_hits:
+            if is_whitelisted("Punctuation Spacing Blemishes", target, whitelist):
+                continue
             snippets = find_contexts(raw_text, target)
             categories["Punctuation Spacing Blemishes"].append({
                 "target": target,
@@ -413,8 +506,10 @@ def main():
             })
             
         # 3. Check OCR & Bracket Residues
-        ocr_hits = check_ocr_residues(raw_text)
+        ocr_hits = check_ocr_residues(raw_text, dict_words)
         for target, desc in ocr_hits:
+            if is_whitelisted("OCR & Bracket Residues", target, whitelist):
+                continue
             snippets = find_contexts(raw_text, target)
             categories["OCR & Bracket Residues"].append({
                 "target": target,
@@ -426,6 +521,8 @@ def main():
         # 4. Check Capitalization Issues
         cap_hits = check_capitalization(raw_text)
         for target, desc in cap_hits:
+            if is_whitelisted("Mixed-Case Capitalization Errors", target, whitelist):
+                continue
             snippets = find_contexts(raw_text, target)
             categories["Mixed-Case Capitalization Errors"].append({
                 "target": target,
@@ -433,10 +530,12 @@ def main():
                 "chapter": title,
                 "contexts": snippets
             })
-
+ 
         # 5. Check Unresolved Citations
         cite_hits = check_unresolved_citations(raw_text, ch.get("cid", ""))
         for target, desc in cite_hits:
+            if is_whitelisted("Unresolved Citation References", target, whitelist):
+                continue
             snippets = find_contexts(raw_text, target)
             categories["Unresolved Citation References"].append({
                 "target": target,
@@ -448,6 +547,8 @@ def main():
         # 6. Check Structural Nesting Sequence Jumps
         nest_hits = check_structural_nesting(raw_text)
         for target, desc in nest_hits:
+            if is_whitelisted("Structural Nesting Sequence Jumps", target, whitelist):
+                continue
             snippets = find_contexts(raw_text, target)
             categories["Structural Nesting Sequence Jumps"].append({
                 "target": target,

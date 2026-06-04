@@ -1,0 +1,180 @@
+{
+  "anomalies": {
+    "Punctuation Spacing Blemishes": [
+      "y  ,",
+      "spirits ;",
+      "received .",
+      "doctrine ,",
+      "Jehovah .",
+      "of ,",
+      "1  .",
+      "sacrifice .",
+      "our .",
+      "man ,",
+      "quickening ,",
+      "penal ,",
+      "1st .",
+      "2dly   .",
+      "d   .",
+      "for ,",
+      "persuading ,",
+      "acted ,",
+      "end  .",
+      "Ans  .",
+      "idem  .",
+      "conviction ,",
+      "easy ,",
+      "4thly   .",
+      "habit  .",
+      "1st   .",
+      "3dly   .",
+      "Ans  .",
+      "..",
+      "Assimilation  :",
+      "holiness .",
+      "transgression  :",
+      "free  ;",
+      "first ,",
+      "n  )",
+      "sin  :",
+      "n  )"
+    ],
+    "OCR & Bracket Residues": [
+      "express[ed",
+      "express[ed]"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "1. ... 3.",
+      "2. ... 4.",
+      "4. ... 6.",
+      "3. ... 7.",
+      "1. ... 4.",
+      "2. ... 5."
+    ]
+  },
+  "text_integrity": {
+    "skipped_pages": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+    "weak_pages": [
+      10,
+      30,
+      69,
+      82,
+      152,
+      198,
+      243,
+      423,
+      472,
+      474,
+      559,
+      789
+    ],
+    "dense_source_window_loss": [
+      15,
+      16,
+      30,
+      41,
+      59,
+      60,
+      66,
+      69,
+      81,
+      82,
+      83,
+      89,
+      92,
+      111,
+      147,
+      152,
+      155,
+      158,
+      162,
+      163,
+      165,
+      172,
+      185
+    ],
+    "bottom_of_page_text_loss": [
+      "operation of the Holy Ghost, it seems purposely to be hid from us in that expression, Du>namis Uyi>stou ejpiskia>sei soi, — \"The power of the",
+      "yucikou>v, \"natural men,\" but rather a]logs zw~a fusika>, 2 Peter 2:12,",
+      "spiritual things is doubly expressed: — [1.] By ouj de>cetai, — \"He receiveth them not;\"",
+      "glory, that therein we shall be ijsa>ggeloi, Luke 20:36, like or \"equal"
+    ],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "il. lib. 4. contra Eunom., [9] amongst the Grecians, are in like manner entangled with this corruption of the text; as was also Concil. Sardicen. in Socrat. lib. 2 cap. 20. [5] [4]",
+        "next": "The other person intended is Hierom, who, consulting the original, as he was well able to do, first translated the words,"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "iritual good of them on whom they are bestowed, but the edification of others, — for \"the manifestation of the Spirit is given unto every man to profit withal,\" 1 Corinthians 12:7,",
+        "next": "— yet there is that excellency and worth in them, and that use may be made of them, as to turn greatly to the advantage of them that receive them; for although they are not grace,"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "previous": "wn bounds or limits, and so the Spirit was given unto the Lord Christ only; for \"unto every one of us is given grace according to the measure of the gift of Christ,\" Ephesians 4:7,",
+        "next": "— that is, in what measure he pleaseth to communicate and distribute it."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "ace, causing the soul with delight and complacency to cleave to God and his ways. This removes and takes away the enmity before described, with the effects of it: Deuteronomy 30:6,",
+        "next": "This circumcision of the heart consists in the \"putting off the body of the sins of the flesh,\" as the apostle speaks, Colossians 2:11. He \"crucifies the flesh, with the affections"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "unt of his veracity, divine power, righteousness, and holiness, why shall this be esteemed, \"a fanatical fixing of the imagination?\" If it be so, it was so in Abraham, our example,",
+        "next": "Romans 4:19-21. But this blasphemous figment, designed to the overthrow of the way of life and salvation by Jesus Christ, shall be elsewhere more fully examined. God, as was said,"
+      }
+    ],
+    "inline_structural_markers": [
+      "The FIRST BOOK of the treatise is devoted",
+      "THE apostle Paul, in the 12th chapter",
+      "Treating, therefore, περὶ τῶν πνευματικῶν",
+      "This is one signification of the word",
+      "The substance of his discourse is",
+      "To return; As he is called the Holy",
+      "Not that God intended much to make use",
+      "Therefore, 3. The difference in this",
+      "Some, indeed, give such an account",
+      "Of the original depravation of our",
+      "It is by all confessed that examples",
+      "Neither is this a practice"
+    ],
+    "repeated_windows": [
+      "both to will and to do of his good pleasure",
+      "the name of the father and of the son and",
+      "in us both to will and to do of his",
+      "us both to will and to do of his good",
+      "name of the father and of the son and of",
+      "of the father and of the son and of the",
+      "the father and of the son and of the holy",
+      "father and of the son and of the holy ghost",
+      "the new man which after god is created in righteousness",
+      "new man which after god is created in righteousness and",
+      "within you and cause you to walk in my statutes",
+      "you and cause you to walk in my statutes and",
+      "the flesh lusteth against the spirit and the spirit against",
+      "flesh lusteth against the spirit and the spirit against the",
+      "lusteth against the spirit and the spirit against the flesh",
+      "he shall take of mine and shall show it unto",
+      "shall take of mine and shall show it unto you",
+      "if any man have not the spirit of christ he",
+      "any man have not the spirit of christ he is",
+      "man have not the spirit of christ he is none",
+      "have not the spirit of christ he is none of",
+      "not the spirit of christ he is none of his",
+      "in the name of the father and of the son",
+      "the things that are freely given to us of god",
+      "worketh in us both to will and to do of"
+    ],
+    "ignored_warnings": [
+      "low_word_coverage",
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "repeated_phrases",
+      "enumerator_sequence_candidates",
+      "repeated_windows",
+      "dense_source_window_loss"
+    ]
+  }
+}

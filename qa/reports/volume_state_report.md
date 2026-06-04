@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-03T21:31:05Z
+Generated: 2026-06-04T08:30:36Z
 
 ## Summary
 
@@ -8,46 +8,26 @@ Generated: 2026-06-03T21:31:05Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|----------|
-| 1 | 3 | 81.0 | minion-pro | 1 |  98.53 |  99.36 |   95.8 |      ? | 0 | FULL |
-| 2 | 16 | 80.9 | gentium-plus-2 | 5 |  99.59 |   99.3 |  99.01 |      ? | 4 | FULL |
-| 3 | 12 | 75.6 | arno-pro | 3 |   99.6 |  99.92 |  99.55 |  99.82 | 0 | PRISTINE |
-| 4 | 5 | 62.2 | brill-font | 2 |  99.69 |  99.73 |  99.19 |      ? | 2 | FULL |
-| 5 | 13 | 58.0 | baskerville | 5 |  89.75 |  96.19 |  100.0 |      ? | 0 | FULL |
-| 6 | 10 | 51.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | FULL |
-| 7 | 11 | 51.2 | minion-pro | 1 |  97.63 |   99.7 |  100.0 |      ? | 4 | FULL |
-| 8 | 2 | 50.7 | libertinus | 3 |  99.68 |  99.77 |  100.0 |      ? | 2 | FULL |
-| 9 | 4 | 50.4 | cardo | 4 |  99.67 |  99.71 |  100.0 |      ? | 8 | FULL |
-| 10 | 7 | 41.3 | sabon-next-lt | 3 |  99.68 |  100.0 |  100.0 |      ? | 2 | FULL |
-| 11 | 15 | 40.2 | sabon-next-lt | 3 |  99.67 |  100.0 |  100.0 |      ? | 4 | FULL |
-| 12 | 6 | 39.4 | baskerville | 4 |  99.54 |  100.0 |  100.0 |      ? | 0 | FULL |
-| 13 | 8 | 38.9 | gentium-plus-2 | 16 |  99.65 |  100.0 |  100.0 |      ? | 10 | FULL |
-| 14 | 1 | 37.7 | adobe-garamond-pro-2-2 | 4 |  99.68 |  99.87 |  100.0 |      ? | 0 | FULL |
-| 15 | 14 | 36.8 | brill-font | 2 |  99.69 |  100.0 |  100.0 |      ? | 6 | FULL |
-| 16 | 9 | 36.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | FULL |
+| 1 | 16 | 80.9 | gentium-plus-2 | 5 |  99.59 |   99.3 |  99.01 |      ? | 4 | FULL |
+| 2 | 12 | 75.6 | arno-pro | 3 |   99.6 |  99.92 |  99.55 |  99.82 | 0 | PRISTINE |
+| 3 | 5 | 62.2 | brill-font | 2 |  99.69 |  99.73 |  99.19 |      ? | 2 | FULL |
+| 4 | 13 | 58.0 | baskerville | 5 |  89.75 |  96.19 |  100.0 |      ? | 0 | FULL |
+| 5 | 10 | 51.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | FULL |
+| 6 | 11 | 51.2 | minion-pro | 1 |  97.63 |   99.7 |  100.0 |      ? | 4 | FULL |
+| 7 | 2 | 50.7 | libertinus | 3 |  99.68 |  99.77 |  100.0 |      ? | 2 | FULL |
+| 8 | 4 | 50.4 | cardo | 4 |  99.67 |  99.71 |  100.0 |      ? | 8 | FULL |
+| 9 | 7 | 41.3 | sabon-next-lt | 3 |  99.68 |  100.0 |  100.0 |      ? | 2 | FULL |
+| 10 | 15 | 40.2 | sabon-next-lt | 3 |  99.67 |  100.0 |  100.0 |      ? | 4 | FULL |
+| 11 | 6 | 39.4 | baskerville | 4 |  99.54 |  100.0 |  100.0 |      ? | 0 | FULL |
+| 12 | 8 | 38.9 | gentium-plus-2 | 16 |  99.65 |  100.0 |  100.0 |      ? | 10 | FULL |
+| 13 | 14 | 36.8 | brill-font | 2 |  99.69 |  100.0 |  100.0 |      ? | 6 | FULL |
+| 14 | 9 | 36.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | FULL |
+| 15 | 1 | 33.9 | adobe-garamond-pro-2-2 | 4 |  99.92 |  99.87 |  100.0 |  99.71 | 0 | PRISTINE |
+| 16 | 3 | 11.6 | minion-pro | 1 |  99.98 |  100.0 |  100.0 |  99.95 | 0 | PRISTINE |
 
 ## Per-Volume Details
 
-### Volume 3 — Need: 81.0 (❌ Poor) — Rank 1
-
-- **Body font:** minion-pro
-- **Source type:** ages_pdf
-- **Treatises:** 1
-- **QA level:** FULL
-- **convert.py:** Yes (116 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
-- **Word coverage:** 98.53
-- **Greek coverage:** 99.36
-- **Hebrew coverage:** 95.80
-- **Latin coverage:** ?
-- **Latin tagging:** ?
-- **Latin translation:** ?
-- **Citations:** total=25, unresolved=0
-- **Splits:** 161
-- **Regressions:** 0
-- **Suspected anomalies:** 598
-- **Recommended:** 🔍 Review OCR anomalies
-
-### Volume 16 — Need: 80.9 (❌ Poor) — Rank 2
+### Volume 16 — Need: 80.9 (❌ Poor) — Rank 1
 
 - **Body font:** gentium-plus-2
 - **Source type:** ages_pdf
@@ -67,7 +47,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** 299
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 12 — Need: 75.6 (❌ Poor) — Rank 3
+### Volume 12 — Need: 75.6 (❌ Poor) — Rank 2
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
@@ -87,7 +67,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** 663
 - **Recommended:** 🔍 Review OCR anomalies
 
-### Volume 5 — Need: 62.2 (❌ Poor) — Rank 4
+### Volume 5 — Need: 62.2 (❌ Poor) — Rank 3
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -107,7 +87,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 13 — Need: 58.0 (🩷 Needs work) — Rank 5
+### Volume 13 — Need: 58.0 (🩷 Needs work) — Rank 4
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
@@ -127,7 +107,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** ⚠️ Investigate low word coverage
 
-### Volume 10 — Need: 51.5 (🩷 Needs work) — Rank 6
+### Volume 10 — Need: 51.5 (🩷 Needs work) — Rank 5
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -147,7 +127,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 11 — Need: 51.2 (🩷 Needs work) — Rank 7
+### Volume 11 — Need: 51.2 (🩷 Needs work) — Rank 6
 
 - **Body font:** minion-pro
 - **Source type:** ages_pdf
@@ -167,13 +147,13 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 2 — Need: 50.7 (🩷 Needs work) — Rank 8
+### Volume 2 — Need: 50.7 (🩷 Needs work) — Rank 7
 
 - **Body font:** libertinus
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** FULL
-- **convert.py:** Yes (140 lines, 1 text_replacements)
+- **convert.py:** Yes (141 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=1, footnotes=None
 - **Word coverage:** 99.68
 - **Greek coverage:** 99.77
@@ -187,7 +167,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 4 — Need: 50.4 (🩷 Needs work) — Rank 9
+### Volume 4 — Need: 50.4 (🩷 Needs work) — Rank 8
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -207,7 +187,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 7 — Need: 41.3 (🩷 Needs work) — Rank 10
+### Volume 7 — Need: 41.3 (🩷 Needs work) — Rank 9
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -227,7 +207,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 15 — Need: 40.2 (🩷 Needs work) — Rank 11
+### Volume 15 — Need: 40.2 (🩷 Needs work) — Rank 10
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -247,7 +227,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 6 — Need: 39.4 (👌 Fair) — Rank 12
+### Volume 6 — Need: 39.4 (👌 Fair) — Rank 11
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
@@ -267,7 +247,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** 
 
-### Volume 8 — Need: 38.9 (👌 Fair) — Rank 13
+### Volume 8 — Need: 38.9 (👌 Fair) — Rank 12
 
 - **Body font:** gentium-plus-2
 - **Source type:** ages_pdf
@@ -287,27 +267,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 1 — Need: 37.7 (👌 Fair) — Rank 14
-
-- **Body font:** adobe-garamond-pro-2-2
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** FULL
-- **convert.py:** Yes (540 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
-- **Word coverage:** 99.68
-- **Greek coverage:** 99.87
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** ?
-- **Latin tagging:** ?
-- **Latin translation:** ?
-- **Citations:** total=49, unresolved=0
-- **Splits:** 101
-- **Regressions:** 0
-- **Suspected anomalies:** None
-- **Recommended:** 
-
-### Volume 14 — Need: 36.8 (👌 Fair) — Rank 15
+### Volume 14 — Need: 36.8 (👌 Fair) — Rank 13
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -327,7 +287,7 @@ Generated: 2026-06-03T21:31:05Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 9 — Need: 36.6 (👌 Fair) — Rank 16
+### Volume 9 — Need: 36.6 (👌 Fair) — Rank 14
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -346,3 +306,43 @@ Generated: 2026-06-03T21:31:05Z
 - **Regressions:** 5
 - **Suspected anomalies:** None
 - **Recommended:** 
+
+### Volume 1 — Need: 33.9 (👌 Fair) — Rank 15
+
+- **Body font:** adobe-garamond-pro-2-2
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** PRISTINE
+- **convert.py:** Yes (542 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=1, footnotes=None
+- **Word coverage:** 99.92
+- **Greek coverage:** 99.87
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.71
+- **Latin tagging:** 0.00
+- **Latin translation:** 100.00
+- **Citations:** total=49, unresolved=0
+- **Splits:** 19
+- **Regressions:** 0
+- **Suspected anomalies:** 45
+- **Recommended:** 🔍 Review OCR anomalies
+
+### Volume 3 — Need: 11.6 (✅ Good) — Rank 16
+
+- **Body font:** minion-pro
+- **Source type:** ages_pdf
+- **Treatises:** 1
+- **QA level:** PRISTINE
+- **convert.py:** Yes (163 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.98
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.95
+- **Latin tagging:** 50.82
+- **Latin translation:** 81.40
+- **Citations:** total=25, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 30
+- **Recommended:** 🔍 Review OCR anomalies

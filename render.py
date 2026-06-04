@@ -2771,7 +2771,10 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
 
     # ── helpers ───────────────────────────────────────────────────────────────
     def _plain(frag: str) -> str:
-        return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', frag)).strip()
+        import html as _html
+        text = _re.sub(r'<[^>]+>', '', frag)
+        text = _html.unescape(text)
+        return _re.sub(r'\s+', ' ', text).strip()
 
     def _wc(frag: str) -> int:
         return len(_plain(frag).split())
@@ -4563,7 +4566,7 @@ def _inject_apple_books_options(epub_path):
 # MAIN PIPELINE
 # ================================================================
 
-def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, glossary_notes=None, config=None):
+def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, glossary_notes=None, config=None, biographical_notes=None):
     from translation_db import FOOTNOTE_TRANSLATIONS
     fn_map = {f.fnum: f for f in footnotes.values()}
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
@@ -4593,15 +4596,17 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
     if trans_notes:
         parts.append(
             f'<div class="translation-notes-header">'
-            f'<h2 class="endnotes-section-title">Modern Editorial Translations</h2>'
-            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Translations of Latin, Greek, and Hebrew phrases appearing in the main text of this volume.</p>'
+            f'<h2 class="endnotes-section-title">Modern Translations &amp; Citations</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Translations of Latin, Greek, and Hebrew phrases, and modern academic citations of historical sources.</p>'
             f'</div>'
         )
         for note in trans_notes:
+            note_type = note.get('type', 'translation')
+            symbol = '†' if note_type == 'translation' else '*'
             parts.append(
                 f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
                 f'<p class="footnote">'
-                f'<span class="fn-link">[{note["num"]}]</span> '
+                f'<span class="fn-link">{symbol}</span> '
                 f'<span class="original-phrase">{tag_unicode_ranges(_html_escape(note["phrase"]))}</span>: '
                 f'{note["translation"]}'
                 f'</p>'
@@ -4619,7 +4624,25 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
             parts.append(
                 f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
                 f'<p class="footnote">'
-                f'<span class="fn-link">*</span> '
+                f'<span class="fn-link">§</span> '
+                f'<strong>{note["term"]}</strong>: '
+                f'{note["definition"]}'
+                f'</p>'
+                f'</aside>'
+            )
+
+    if biographical_notes:
+        parts.append(
+            f'<div class="translation-notes-header">'
+            f'<h2 class="endnotes-section-title">Biographical Notes</h2>'
+            f'<p style="font-size: 0.9em; color: #666; text-align: center; font-style: italic; margin-top: 0.5em;">Brief biographical details of key historical figures.</p>'
+            f'</div>'
+        )
+        for note in biographical_notes:
+            parts.append(
+                f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
+                f'<p class="footnote">'
+                f'<span class="fn-link">‡</span> '
                 f'<strong>{note["term"]}</strong>: '
                 f'{note["definition"]}'
                 f'</p>'
@@ -5160,11 +5183,9 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
   </div>
   
   <div class="colophon-section">
-    <h2 class="colophon-section-title">Theological Glossary</h2>
+    <h2 class="colophon-section-title">Theological Glossary &amp; Biographical Notes</h2>
     <p class="colophon-text">
-      Throughout the text of this volume, archaic theological or historical terms (e.g., <i>Socinians</i>, <i>Pelagians</i>, <i>Sublapsarian</i>) may appear. 
-      When a technical term from the glossary appears for the first time in a chapter, it is marked with an asterisk superscript (<sup>*</sup>). 
-      Tapping or clicking this asterisk will open a pop-up footnote containing a brief, contextual definition of the word.
+      Throughout the text of this volume, archaic theological or historical terms (e.g., <i>Socinians</i>, <i>Pelagians</i>, <i>Sublapsarian</i>) are marked with a section sign (<sup>§</sup>), and key historical figures (e.g., <i>Calvin</i>, <i>Cyril</i>, <i>Charnock</i>) are marked with a double dagger (<sup>‡</sup>) upon their first occurrence in the book. Tapping these symbols opens contextual definitions and brief biographical details in a pop-up footnote.
     </p>
   </div>
 
@@ -5181,11 +5202,14 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
   </div>
 
   <div class="colophon-section">
-    <h2 class="colophon-section-title">Modern Translations &amp; Patristic Citations</h2>
-    <p>This digital edition features premium scholarly enhancements for modern readers. Because John Owen frequently utilized Greek, Hebrew, and Latin without translation, this volume implements a double-track footnote architecture:</p>
+    <h2 class="colophon-section-title">Scholarly Footnote Architecture</h2>
+    <p>This digital edition features a five-track footnote architecture designed for high readability and premium scholarly utility:</p>
     <ul>
-      <li><strong>Bracketed Footnotes <code>[1], [2], ...</code></strong>: These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the original authorial/historical footnotes and reset starting at <code>[1]</code> for each chapter.</li>
-      <li><strong>Enhanced Original Footnotes <code>1, 2, ...</code></strong>: Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Latin quotes or abbreviated patristic references, a dedicated modernization block has been appended directly beneath them showing full modern translations and standard academic source citations.</li>
+      <li><strong>Original Historical Footnotes <code>1, 2, ...</code></strong>: Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Latin quotes or abbreviated patristic references, a dedicated modernization block has been appended directly beneath them showing full modern translations and standard academic source citations.</li>
+      <li><strong>Word Translation Footnotes <code>†</code></strong>: Indicated by a superscript dagger, these represent modern editorial translations of foreign-language words and phrases (Latin, Greek, and Hebrew) appearing in the main text. They are kept entirely distinct from the original historical footnotes.</li>
+      <li><strong>Reference &amp; Citation Footnotes <code>*</code></strong>: Indicated by a superscript asterisk, these provide modern academic citations for inline patristic, classical, or scholastic references.</li>
+      <li><strong>Theological Glossary <code>§</code></strong>: Indicated by a superscript section sign, these provide brief, contextual definitions of technical theological and historical terms upon their first mention in the book.</li>
+      <li><strong>Biographical Notes <code>‡</code></strong>: Indicated by a superscript double dagger, these provide brief biographical details for key historical figures upon their first mention in the book.</li>
     </ul>
   </div>
 
@@ -5304,6 +5328,25 @@ def apply_inline_translations(body_html: str) -> str:
         if pattern.search(body_html):
             body_html = pattern.sub(rf'\1\2 [Translated: {trans}]', body_html)
     return body_html
+
+
+def replace_first_outside_tags_and_comments(body_html: str, pattern: re.Pattern, replace_fn) -> tuple[str, bool]:
+    """Search for all matches of pattern, replacing the first occurrence that does not fall inside HTML tags or comments."""
+    exclusion_spans = []
+    for m_ex in re.finditer(r'<!--.*?-->|<[^>]+>', body_html, re.S):
+        exclusion_spans.append(m_ex.span())
+
+    def is_excluded(pos):
+        return any(start <= pos < end for start, end in exclusion_spans)
+
+    for m in pattern.finditer(body_html):
+        term_pos = m.start(1)
+        if not is_excluded(term_pos):
+            replacement = replace_fn(m)
+            body_html = body_html[:m.start()] + replacement + body_html[m.end():]
+            return body_html, True
+
+    return body_html, False
 
 
 # ================================================================
@@ -5622,6 +5665,10 @@ def render_volume(vol_num: int, overrides: dict = None,
     epub_chapters = []
     all_translation_notes = []
     all_glossary_notes = []
+    all_biographical_notes = []
+    seen_body_translations = set()
+    seen_glossary_terms = set()
+    seen_biographical_terms = set()
     guide_landmarks = [] # was [('Title Page', 'title.xhtml')]
 
     conv_mode = 'FRONT_MATTER'
@@ -5744,66 +5791,227 @@ def render_volume(vol_num: int, overrides: dict = None,
 
         # Dynamic translation notes scanning and substitution
         from translation_db import BODY_TRANSLATIONS
+        from patristic_refs import expand_inline_citations
+        import html
         sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
         local_notes = []
         placeholders = {}
+        placeholder_counter = 0
         trans_counter = 0
         cid = ch_dict['cid']
 
-        for idx, (phrase, trans) in enumerate(sorted_phrases):
-            # Match the phrase, optionally wrapped in language spans, followed by any trailing punctuation or quotes
-            pattern = re.compile(
-                rf'(<span\s+lang="(?:el|he|la)"[^>]*>\s*{re.escape(phrase)}\s*</span>|{re.escape(phrase)})([\.,\?!:;\'"“”’]*)'
-            )
-            if pattern.search(body_html):
-                def replace_func(m):
-                    nonlocal trans_counter
-                    trans_counter += 1
-                    matched_str = m.group(1)
-                    trailing_punc = m.group(2)
-                    fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">[{trans_counter}]</a></sup>'
-                    local_notes.append({
-                        'id': f"fntrans_{cid}_{trans_counter}",
-                        'num': trans_counter,
-                        'phrase': phrase,
-                        'translation': trans
-                    })
-                    return f"{matched_str}{trailing_punc}{fn_link}"
-                body_html = pattern.sub(replace_func, body_html)
+        # Clean and map helper for tag-agnostic matching
+        def clean_and_map(orig_str):
+            stripped_chars = []
+            map_to_orig = []
+            i = 0
+            n = len(orig_str)
+            while i < n:
+                if orig_str[i] == '<':
+                    # Skip tag
+                    while i < n and orig_str[i] != '>':
+                        i += 1
+                    i += 1 # skip '>'
+                elif orig_str[i] == '&':
+                    # Find end of entity
+                    j = i + 1
+                    while j < n and orig_str[j] != ';' and (j - i) < 10:
+                        j += 1
+                    if j < n and orig_str[j] == ';':
+                        entity = orig_str[i:j+1]
+                        decoded = html.unescape(entity)
+                        for char in decoded:
+                            stripped_chars.append(char)
+                            map_to_orig.append(i) # map to start of entity
+                        i = j + 1
+                    else:
+                        stripped_chars.append(orig_str[i])
+                        map_to_orig.append(i)
+                        i += 1
+                else:
+                    stripped_chars.append(orig_str[i])
+                    map_to_orig.append(i)
+                    i += 1
+            return "".join(stripped_chars), map_to_orig
+
+        def make_quote_agnostic(phrase):
+            words = phrase.split()
+            escaped_words = []
+            for w in words:
+                escaped = re.escape(w)
+                escaped = escaped.replace(r"\'", "'").replace("'", r"['’‘]")
+                escaped = escaped.replace(r'\"', '"').replace('"', r'["“”]')
+                escaped_words.append(escaped)
+            return r'\s+'.join(escaped_words)
+
+        # Initialize clean text and mapping once per chapter
+        clean_text, mapping = clean_and_map(body_html)
+        dirty = False
+
+        for phrase, trans in sorted_phrases:
+            if phrase in seen_body_translations:
+                continue
+
+            if dirty:
+                clean_text, mapping = clean_and_map(body_html)
+                dirty = False
+
+            first_char = phrase[0]
+            last_char = phrase[-1]
+            lb = ""
+            la = ""
+            if '\u0590' <= first_char <= '\u05ff':
+                lb = r'(?<![\u0590-\u05ff־-])'
+            elif ('\u0370' <= first_char <= '\u03ff' or '\u1f00' <= first_char <= '\u1fff'):
+                lb = r'(?<![\u0370-\u03ff\u1f00-\u1fff\u0300-\u036f־-])'
+            elif first_char.isalnum():
+                lb = r'(?<![a-zA-Z0-9\u0300-\u036f])'
+
+            if '\u0590' <= last_char <= '\u05ff':
+                la = r'(?![\u0590-\u05ff־-])'
+            elif ('\u0370' <= last_char <= '\u03ff' or '\u1f00' <= last_char <= '\u1fff'):
+                la = r'(?![\u0370-\u03ff\u1f00-\u1fff\u0300-\u036f־-])'
+            elif last_char.isalnum():
+                la = r'(?![a-zA-Z0-9\u0300-\u036f])'
+
+            phrase_regex = make_quote_agnostic(phrase)
+            pattern = re.compile(rf'{lb}{phrase_regex}{la}', re.I)
+
+            match = pattern.search(clean_text)
+            if match:
+                start_idx = match.start()
+                end_idx = match.end()
+
+                orig_start = mapping[start_idx]
+                orig_end = mapping[end_idx] if end_idx < len(mapping) else len(body_html)
+
+                punc_match = re.match(r'^((?:</[a-zA-Z]+>)*)([\.,\?!:;\'"“”’]*)', body_html[orig_end:])
+                if punc_match:
+                    trailing_tags = punc_match.group(1)
+                    trailing_punc = punc_match.group(2)
+                else:
+                    trailing_tags = ""
+                    trailing_punc = ""
+                orig_end_with_punc = orig_end + len(trailing_tags) + len(trailing_punc)
+
+                matched_str = body_html[orig_start:orig_end]
+
+                trans_counter += 1
+                placeholder_counter += 1
+
+                fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a></sup>'
+                local_notes.append({
+                    'id': f"fntrans_{cid}_{trans_counter}",
+                    'num': trans_counter,
+                    'phrase': phrase,
+                    'translation': trans,
+                    'type': 'translation'
+                })
+
+                placeholder_key = f"__BODY_TRANS_PH_{placeholder_counter}__"
+                placeholders[placeholder_key] = (matched_str, trailing_tags, trailing_punc, fn_link)
+                replacement = placeholder_key
+
+                body_html = body_html[:orig_start] + replacement + body_html[orig_end_with_punc:]
+                seen_body_translations.add(phrase)
+                dirty = True
+
+        # Call patristic citation resolution fallback while placeholders are active (prevents matching inside translated phrases)
+        body_html, citation_notes, trans_counter = expand_inline_citations(
+            body_html,
+            cid=cid,
+            trans_notes=local_notes,
+            trans_counter=trans_counter
+        )
 
         if local_notes:
             all_translation_notes.extend(local_notes)
 
-        # Dynamic Glossary Notes scanning (First Occurrence Only per chapter)
-        from technical_glossary import TECHNICAL_TERMS
+        # Dynamic Glossary Notes scanning (First Occurrence Only in the book)
+        from scripts.technical_glossary import TECHNICAL_TERMS
         local_glossary = []
         glossary_counter = 0
-        
+
         # Sort terms so longer ones match first
         sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
         for term, definition in sorted_terms:
+            if term in seen_glossary_terms:
+                continue
+
             # We use a single substitution pass so it only replaces the FIRST occurrence
-            # Match optional s or es for plurals
-            pattern = re.compile(rf'\b({re.escape(term)}(?:s|es)?)\b', re.I)
-            if pattern.search(body_html):
-                def replace_glossary(m):
-                    nonlocal glossary_counter
-                    glossary_counter += 1
-                    matched_str = m.group(1)
-                    # For glossary, we can just use an asterisk or dagger
-                    fn_link = f'<sup><a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}">*</a></sup>'
-                    local_glossary.append({
-                        'id': f"fngloss_{cid}_{glossary_counter}",
-                        'term': term,
-                        'definition': definition
-                    })
-                    return f"{matched_str}{fn_link}"
-                
-                # Replace only count=1
-                body_html = pattern.sub(replace_glossary, body_html, count=1)
-                
+            pattern = re.compile(
+                rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
+                rf'({re.escape(term)}(?:s|es)?)'
+                rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
+                rf'((?:</[a-zA-Z]+>)*)'
+                rf'([\.,\?!:;\'"“”’]*)',
+                re.I
+            )
+            def replace_glossary(m):
+                nonlocal glossary_counter
+                glossary_counter += 1
+                matched_str = m.group(1)
+                trailing_tags = m.group(2)
+                trailing_punc = m.group(3)
+                # Section sign symbol (§) for glossary notes (Rule 11)
+                fn_link = f'<sup><a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}">§</a></sup>'
+                local_glossary.append({
+                    'id': f"fngloss_{cid}_{glossary_counter}",
+                    'term': term,
+                    'definition': definition
+                })
+                return f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}"
+
+            body_html, replaced = replace_first_outside_tags_and_comments(body_html, pattern, replace_glossary)
+            if replaced:
+                seen_glossary_terms.add(term)
+
         if local_glossary:
             all_glossary_notes.extend(local_glossary)
+
+        # Dynamic Biographical Notes scanning (First Occurrence Only in the book)
+        from scripts.biography_db import BIOGRAPHICAL_DB
+        local_biographical = []
+        biographical_counter = 0
+
+        sorted_biog_terms = sorted(BIOGRAPHICAL_DB.items(), key=lambda x: len(x[0]), reverse=True)
+        for term, definition in sorted_biog_terms:
+            if term in seen_biographical_terms:
+                continue
+
+            pattern = re.compile(
+                rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
+                rf'({re.escape(term)}(?:s|es)?)'
+                rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
+                rf'((?:</[a-zA-Z]+>)*)'
+                rf'([\.,\?!:;\'"“”’]*)',
+                re.I
+            )
+            def replace_biographical(m):
+                nonlocal biographical_counter
+                biographical_counter += 1
+                matched_str = m.group(1)
+                trailing_tags = m.group(2)
+                trailing_punc = m.group(3)
+                # Double dagger symbol (‡) for biographical notes (Rule 11)
+                fn_link = f'<sup><a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a></sup>'
+                local_biographical.append({
+                    'id': f"fnbiog_{cid}_{biographical_counter}",
+                    'term': term,
+                    'definition': definition
+                })
+                return f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}"
+
+            body_html, replaced = replace_first_outside_tags_and_comments(body_html, pattern, replace_biographical)
+            if replaced:
+                seen_biographical_terms.add(term)
+
+        if local_biographical:
+            all_biographical_notes.extend(local_biographical)
+
+        # Restore all translation placeholders, placing their footnote links after punctuation (Rule 11)
+        for ph_key, (matched_str, trailing_tags, trailing_punc, fn_link) in placeholders.items():
+            body_html = body_html.replace(ph_key, f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}")
 
         body = f'<section>{body_html}</section>'
         ch_item = epub.EpubHtml(
@@ -5820,8 +6028,8 @@ def render_volume(vol_num: int, overrides: dict = None,
 
     # ── Endnotes ─────────────────────────────────────────────────
     endnotes_item = None
-    if footnote_map or all_translation_notes or all_glossary_notes:
-        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes, glossary_notes=all_glossary_notes, config=config)
+    if footnote_map or all_translation_notes or all_glossary_notes or all_biographical_notes:
+        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes, glossary_notes=all_glossary_notes, config=config, biographical_notes=all_biographical_notes)
         endnotes_item = epub.EpubHtml(
             title='Footnotes', file_name='endnotes.xhtml', lang='en',
         )

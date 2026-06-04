@@ -128,6 +128,7 @@ OVERRIDES = {
     'text_replacements': {
         'Sherloclc': 'Sherlock',
         'Sherlok': 'Sherlock',
+        'soul. e is': 'soul. He is',
     },
 }
 

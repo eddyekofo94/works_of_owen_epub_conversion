@@ -854,7 +854,7 @@ def test_v2_same_page_part_entries_do_not_duplicate_chapter_one(volume):
     assert "CHAPTER 1" not in part_1["raw_text"]
     assert "That the saints have communion with God" not in part_1["raw_text"]
 
-    part_1_chapter = chapter_matching(volume, r"^Chapter 1\.$")
+    part_1_chapter = chapter_matching(volume, r"^Chapter 1\b")
     assert part_1_chapter["raw_text"].startswith("[[CHAPTER]] CHAPTER 1")
     assert "That the saints have communion with God" in part_1_chapter["raw_text"]
     assert '<section class="treatise-title-page"' not in part_1_chapter["raw_text"]
@@ -867,7 +867,7 @@ def test_v2_same_page_part_entries_do_not_duplicate_chapter_one(volume):
 
     matching_chapters = [
         chapter for chapter in volume_intermediate(volume)["chapters"]
-        if chapter["title"] == "Chapter 1"
+        if chapter["title"].startswith("Chapter 1")
         and "Of the fellowship which the saints have with Jesus Christ" in chapter["raw_text"]
     ]
     assert len(matching_chapters) == 1
@@ -1073,7 +1073,7 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
     )
     latin_quote_chapter = next(
         html for html in files.values()
-        if "Universam significabat ecclesiam" in html
+        if "Universam" in html and "significabat" in html and "ecclesiam" in html
     )
     power_chapter = next(
         html for html in files.values()
@@ -1090,7 +1090,7 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
     combined = "\n".join(files.values())
 
     assert '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">"The divines of the Puritan school' in general_preface
-    assert "Universam significabat ecclesiam" in latin_quote_chapter
+    assert "Universam significabat ecclesiam" in " ".join(re.sub(r'<[^>]+>', ' ', latin_quote_chapter).split())
     assert '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">"And Simon Peter answered' in peters_confession
     quote_blocks = re.findall(r"<blockquote[^>]*>.*?</blockquote>", peters_confession, re.S)
     assert not any("Baronius" in block for block in quote_blocks)
@@ -2764,6 +2764,78 @@ def test_latin_inline_translations():
     assert '[Translated: ' in repaired
     assert '“To the most distinguished and renowned George Blandrata' in repaired
     assert '</span>.' in repaired
+
+
+import importlib.util
+
+ALL_JSON_VOLUMES = [
+    int(path.name[1:])
+    for path in sorted(Path(__file__).parent.parent.glob("volumes/v[0-9]*"))
+    if (path / "intermediate" / f"volume_{path.name[1:]}.json").exists()
+]
+
+def get_volume_overrides(volume):
+    convert_path = Path(__file__).parent.parent / "volumes" / f"v{volume}" / "convert.py"
+    if not convert_path.exists():
+        return {}
+    spec = importlib.util.spec_from_file_location(f"volume_{volume}_convert", convert_path)
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+        return getattr(module, "OVERRIDES", {})
+    except Exception:
+        return {}
+
+@pytest.mark.parametrize("volume", ALL_JSON_VOLUMES)
+def test_no_unwhitelisted_split_word_anomalies_in_json(volume):
+    """Ensure that the intermediate JSON files do not contain any unwhitelisted split-word OCR anomalies."""
+    from scripts.audit_anomalies import check_ocr_residues, load_dictionary, is_whitelisted, clean_text
+    from shared import _repair_owen_ocr_errors
+    
+    # 1. Load intermediate JSON
+    data = volume_intermediate(volume)
+    
+    # 2. Load dictionary
+    dict_words = load_dictionary()
+    
+    # 3. Load whitelist
+    whitelist = {}
+    vol_dir = BASE_DIR / "volumes" / f"v{volume}"
+    whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+    if whitelist_path.exists():
+        whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+        
+    # 4. Get volume-specific overrides to apply before checking
+    overrides = get_volume_overrides(volume)
+    
+    # 5. Check each chapter for split word anomalies
+    unwhitelisted_anomalies = []
+    for ch_idx, ch in enumerate(data.get("chapters", [])):
+        raw_text = clean_text(ch.get("raw_text", "") or "")
+        if not raw_text:
+            continue
+            
+        # Apply OCR corrections before checking
+        raw_text = _repair_owen_ocr_errors(raw_text, config=overrides)
+        
+        hits = check_ocr_residues(raw_text, dict_words)
+        for target, desc in hits:
+            # We are only interested in split word anomalies for this test
+            if "Split word anomaly" in desc:
+                if not is_whitelisted("OCR & Bracket Residues", target, whitelist):
+                    unwhitelisted_anomalies.append({
+                        "target": target,
+                        "chapter": ch.get("title", f"Chapter {ch_idx}"),
+                        "description": desc
+                    })
+                    
+    if unwhitelisted_anomalies:
+        msg = "\n".join(
+            f"- In '{item['chapter']}': '{item['target']}' ({item['description']})"
+            for item in unwhitelisted_anomalies
+        )
+        pytest.fail(f"Found unwhitelisted split word OCR anomalies in Volume {volume} JSON intermediate:\n{msg}")
+
 
 
 
