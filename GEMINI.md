@@ -4,7 +4,7 @@
 - **Validation Requirement:** NEVER update the status of an issue or task as "Finished", "Fixed", or "Done" in any changelog or status log (e.g., `BUGS_AND_FIXES.md`) unless the change has been explicitly validated and approved by the user. Use "IMPLEMENTED (AWAITING VALIDATION)".
 - **Engineering Log:** Detailed technical post-mortems and architectural deep-dives must be recorded in `ENGINEERING_LOG.md` for all complex issues (Issue 40+).
 - **Reporting:** Always provide a summary of the implemented fix and wait for a validation directive before marking the item as resolved in the project documentation.
-- **Repository Cleanliness:** Keep the repository root folder clean of temporary, debug, or utility scripts. All debug scripts, diagnostic tools, and one-off files must reside inside `scratch/`, and helper libraries or persistent scripts should reside in `scripts/` (e.g. `scripts/technical_glossary.py`, `scripts/biography_db.py`).
+- **Repository Cleanliness (MANDATORY):** You must keep the repository root folder pristine. DO NOT create one-off text files, shell scripts, Python utility scripts, or logs in the root directory. ALL temporary or diagnostic work MUST be placed in `scratch/`. ALL persistent helper scripts MUST be placed in `scripts/` (e.g. `scripts/technical_glossary.py`, `scripts/biography_db.py`). If you accidentally create a file in the root directory during your session, you MUST CLEAN IT UP before concluding your work.
 
 ### Typography & CSS (Mobile-First v5.1)
 Inject this CSS into every XHTML `<head>` using `!important` to override legacy styles. Wrap the content in CDATA blocks for XML compliance.
