@@ -272,7 +272,7 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| 1 | v1 | Populated | PRISTINE | Cov 99.92 Greek 99.87 Heb 100.00 Lat 99.71 |
+| 1 | v1 | Populated | PRISTINE | Cov 99.92 Greek 99.87 Heb 100.00 Lat 99.74 |
 | 2 | v2 | Populated | FULL | Cov 99.68 Greek 99.77 Heb 100.00 Lat ? Unres 2 |
 | 3 | v3 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.95 |
 | 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 Lat ? Unres 8 |

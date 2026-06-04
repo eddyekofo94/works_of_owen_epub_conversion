@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-04T08:30:36Z
+Generated: 2026-06-04T21:43:54Z
 
 ## Summary
 
@@ -22,7 +22,7 @@ Generated: 2026-06-04T08:30:36Z
 | 12 | 8 | 38.9 | gentium-plus-2 | 16 |  99.65 |  100.0 |  100.0 |      ? | 10 | FULL |
 | 13 | 14 | 36.8 | brill-font | 2 |  99.69 |  100.0 |  100.0 |      ? | 6 | FULL |
 | 14 | 9 | 36.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | FULL |
-| 15 | 1 | 33.9 | adobe-garamond-pro-2-2 | 4 |  99.92 |  99.87 |  100.0 |  99.71 | 0 | PRISTINE |
+| 15 | 1 | 35.9 | adobe-garamond-pro-2-2 | 4 |  99.92 |  99.87 |  100.0 |  99.74 | 0 | PRISTINE |
 | 16 | 3 | 11.6 | minion-pro | 1 |  99.98 |  100.0 |  100.0 |  99.95 | 0 | PRISTINE |
 
 ## Per-Volume Details
@@ -307,24 +307,24 @@ Generated: 2026-06-04T08:30:36Z
 - **Suspected anomalies:** None
 - **Recommended:** 
 
-### Volume 1 — Need: 33.9 (👌 Fair) — Rank 15
+### Volume 1 — Need: 35.9 (👌 Fair) — Rank 15
 
 - **Body font:** adobe-garamond-pro-2-2
 - **Source type:** ages_pdf
 - **Treatises:** 4
 - **QA level:** PRISTINE
-- **convert.py:** Yes (542 lines, 1 text_replacements)
+- **convert.py:** Yes (547 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=1, footnotes=None
 - **Word coverage:** 99.92
 - **Greek coverage:** 99.87
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.71
-- **Latin tagging:** 0.00
-- **Latin translation:** 100.00
+- **Latin coverage:** 99.74
+- **Latin tagging:** 33.36
+- **Latin translation:** 55.17
 - **Citations:** total=49, unresolved=0
 - **Splits:** 19
 - **Regressions:** 0
-- **Suspected anomalies:** 45
+- **Suspected anomalies:** 26
 - **Recommended:** 🔍 Review OCR anomalies
 
 ### Volume 3 — Need: 11.6 (✅ Good) — Rank 16
