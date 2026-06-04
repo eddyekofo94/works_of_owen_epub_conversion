@@ -10,7 +10,7 @@ We will extract pure text-processing functions first (like markdown conversion a
 | Phase | Branch Name | Target File | Functions Extracted | Built Fine? | Tests Passed? | Status |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
 | **Phase 1** | `render-refactor-lists` | `scripts/owen_lists.py` | `_attach_em_dash_flat_list`, `_add_owen_list_level_classes`, `_merge_short_inline_lists`, `_nest_owen_list_hierarchies`, `_owen_marker_level` | [x] | [x] | ✅ Complete |
-| **Phase 2** | `render-refactor-markdown` | `scripts/markdown_parser.py` | `markdown_to_html`, `_repair_markdown_tables` | [ ] | [ ] | ⏳ Pending |
+| **Phase 2** | `render-refactor-markdown` | `scripts/markdown_parser.py` | `markdown_to_html`, `_repair_markdown_tables` | [x] | [x] | ✅ Complete |
 | **Phase 3** | `render-refactor-glossary` | `scripts/technical_glossary.py` | Encapsulate glossary text-scanning loop into `apply_glossary_footnotes()`, add complex nested dictionaries with regex rules. | [ ] | [ ] | ⏳ Pending |
 | **Phase 4** | `render-refactor-epub-pages`| `scripts/epub_pages.py` | `format_treatise_title_page`, `_polish_contents_page_html`, `generate_copyright_xhtml`, `format_title_page`, `build_toc_page_xhtml` | [ ] | [ ] | ⏳ Pending |
 | **Phase 5** | `render-refactor-scholastic`| `scripts/scholastic_parser.py`, `scripts/polish.py` | `apply_scholastic_anchor_protocol`, `_nest_scholastic_in_divs`, `_apply_premium_signatures` | [ ] | [ ] | ⏳ Pending |
