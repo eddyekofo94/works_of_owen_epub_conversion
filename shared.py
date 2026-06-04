@@ -356,7 +356,7 @@ def run_volume_cli(vol_num, overrides=None, description=None):
     """Shared CLI for volumes/vN/convert.py entrypoints."""
     import argparse
     from extract import extract_volume
-    from progress import SequentialMode, spinner_wrap_callback
+    from scripts.progress import SequentialMode, spinner_wrap_callback
     from render import render_volume
 
     parser = argparse.ArgumentParser(

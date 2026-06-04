@@ -1,10 +1,12 @@
 import re
 import os
 import zipfile
+import shutil
 import xml.etree.ElementTree as ET
-from shared import _repair_owen_ocr_errors, nav_display_title
+from shared import _repair_owen_ocr_errors, nav_display_title, VOLUME_SUBTITLES, FOOTNOTE_MARKER_RE
 from html import escape as _html_escape, unescape as _html_unescape
 from ebooklib import epub
+from scripts.epub_pages import _TITLE_CONNECTORS
 
 def _escape_xml(text):
     if text is None:
@@ -98,6 +100,7 @@ def _polish_treatise_title_page_html(html: str, seen_footnote_refs=None) -> str:
     )
 
     if seen_footnote_refs is not None:
+        from render import _restore_footnote_placeholders
         html = _restore_footnote_placeholders(html)
 
     return html
@@ -286,7 +289,7 @@ def repackage_canonical(epub_path, src_dir):
     deletion or creation of new files is blocked but overwriting existing
     file bytes (via shutil.copy2) is permitted.
     """
-    import tempfile, shutil
+    import tempfile, shutil, subprocess
     fd, tmp_path = tempfile.mkstemp(suffix='.epub')
     os.close(fd)
     os.remove(tmp_path)   # zip must create the file itself; it fails on an empty pre-existing file
@@ -355,7 +358,7 @@ def _inject_apple_books_options(epub_path):
 
 
 def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, glossary_notes=None, config=None, biographical_notes=None):
-    from translation_db import FOOTNOTE_TRANSLATIONS
+    from scripts.translation_db import FOOTNOTE_TRANSLATIONS
     from render import tag_unicode_ranges
     fn_map = {f.fnum: f for f in footnotes.values()}
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
