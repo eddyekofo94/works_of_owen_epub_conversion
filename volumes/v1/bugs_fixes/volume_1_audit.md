@@ -8,11 +8,11 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 115
-- Manifest items: 106
-- Spine items: 84
+- Files: 120
+- Manifest items: 111
+- Spine items: 85
 - XHTML files: 86
-- Embedded fonts: 15
+- Embedded fonts: 20
 - NAV links: 87
 
 ## Content Checks
@@ -21,8 +21,8 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 157
 - Untagged Hebrew chars: 0
-- Noteref links: 268
-- Endnote anchors: 268
+- Noteref links: 314
+- Endnote anchors: 314
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
@@ -50,7 +50,7 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch004.xhtml`: factores autem sermonum ejus facti, communionem habeamus cum ipso".
+- `EPUB/ch004.xhtml`: factores
 - `EPUB/ch008.xhtml`: as he also proclaims the same delight in him, from heaven, in the days of his fle
 - `EPUB/ch016.xhtml`: and verse 23, "My Father will love him, and we will come unto him, and make our a
 - `EPUB/ch022.xhtml`: and in sundry other places. The assumption, the taking of our human nature to be

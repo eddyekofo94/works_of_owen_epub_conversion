@@ -126,3 +126,59 @@ TECHNICAL_TERMS = {
     'vouchsafe': 'To deign, condescend to grant, or bestow.',
     'wont': 'Accustomed; used to; in the habit of doing.'
 }
+
+import re
+
+def apply_glossary_footnotes(body_html: str, cid: str, seen_glossary_terms: set, replace_first_outside_tags_and_comments) -> tuple[str, list, set]:
+    """
+    Scans the chapter body_html for first-occurrences of technical glossary terms.
+    Injects a superscript section sign (§) and populates local_glossary.
+    Supports basic string definitions or complex nested dictionaries with 'regex' rules.
+    """
+    local_glossary = []
+    glossary_counter = 0
+
+    # Sort terms so longer ones match first
+    sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
+    for term, definition_data in sorted_terms:
+        if term in seen_glossary_terms:
+            continue
+
+        if isinstance(definition_data, dict):
+            term_def = definition_data.get('definition', '')
+            custom_pattern = definition_data.get('regex', rf'({re.escape(term)}(?:s|es)?)')
+            flags = definition_data.get('flags', re.I)
+        else:
+            term_def = definition_data
+            custom_pattern = rf'({re.escape(term)}(?:s|es)?)'
+            flags = re.I
+
+        pattern = re.compile(
+            rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
+            rf'{custom_pattern}'
+            rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
+            rf'((?:</[a-zA-Z]+>)*)'
+            rf'([\.,\?!:;\'"“”’]*)',
+            flags
+        )
+
+        def replace_glossary(m):
+            nonlocal glossary_counter
+            glossary_counter += 1
+            matched_str = m.group(1)
+            trailing_tags = m.group(2)
+            trailing_punc = m.group(3)
+            # Section sign symbol (§) for glossary notes (Rule 11)
+            fn_link = f'<sup><a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}">§</a></sup>'
+            local_glossary.append({
+                'id': f"fngloss_{cid}_{glossary_counter}",
+                'term': term,
+                'definition': term_def
+            })
+            return f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}"
+
+        body_html, replaced = replace_first_outside_tags_and_comments(body_html, pattern, replace_glossary)
+        if replaced:
+            seen_glossary_terms.add(term)
+
+    return body_html, local_glossary, seen_glossary_terms

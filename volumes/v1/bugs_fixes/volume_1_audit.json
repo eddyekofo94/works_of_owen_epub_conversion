@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-03T22:57:13.792330+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-06-04T11:04:24.694082+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 115,
-    "epub_size_bytes": 4513938,
+    "file_count": 120,
+    "epub_size_bytes": 6458914,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +23,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 106,
-    "spine_count": 84,
+    "manifest_count": 111,
+    "spine_count": 85,
     "xhtml_count": 86,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 15,
+    "font_count": 20,
     "language": {
       "greek_chars": 4080,
       "greek_untagged_chars": 0,
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 268,
-      "unique_noteref_targets": 268,
-      "endnote_anchor_count": 268,
+      "noteref_count": 314,
+      "unique_noteref_targets": 314,
+      "endnote_anchor_count": 314,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -138,7 +138,7 @@
         "lowercase_paragraph_start": [
           {
             "file": "EPUB/ch004.xhtml",
-            "text": "factores autem sermonum ejus facti, communionem habeamus cum ipso\"."
+            "text": "factores"
           },
           {
             "file": "EPUB/ch008.xhtml",

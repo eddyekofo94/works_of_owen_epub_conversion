@@ -9,7 +9,7 @@
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
 | Possible faulty paragraph splits | 19 | 125 | OK |
-| Inline structural marker candidates | 15 | 16 | OK |
+| Inline structural marker candidates | 5 | 16 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 4 | 4 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -66,19 +66,19 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch004.xhtml; previous: nim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus". [1]; next: — "He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the
-- file: EPUB/ch004.xhtml; previous: rtium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?" [2]; next: — "I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o
-- file: EPUB/ch004.xhtml; previous: To the same purpose. speaks Eusebius at large: Demonstratio Evang., lib. 5 cap. 2. [47]; next: Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.:) [73] "Quia in Christo Jesus Filio Dei non solum ad divinam essentiam,
+- file: EPUB/ch004.xhtml; previous:  καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς ". †; next: He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse
+- file: EPUB/ch004.xhtml; previous: enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus ". †; next: — "He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the
+- file: EPUB/ch004.xhtml; previous: tertium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?" †; next: — "I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o
+- file: EPUB/ch004.xhtml; previous: αὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων ". †; next: The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre
 - file: EPUB/ch004.xhtml; previous: veniret utriusque diversitas, ut unus idemque sit filius, qui se, et secundum quod verus est homo, Patre dicit minorem, et secundum quod verus est Deus Patrise profitetur aequalem"; next: — "Human nature is assumed into the society of the Creator, not that he should be the inhabitant, and that the habitation," (that is, by an inhabitation in the effects of his power
-- file: EPUB/ch004.xhtml; previous: image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. [27]; next: Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch001.xhtml; text: They have repeatedly appeared in the language of Holland; and by the Dutch divines the most favorable mention is made of the various treatises of our pious and learned Puritan. We are informed by Dr Steven, 2 that his Ex
-- file: EPUB/ch004.xhtml; text: We may take an instance hereof with respect unto the Nestorian heresy, condemned in the first Ephesian Council, and afterwards in that at Chalcedon. Cyril of Alexandria, a man learned and vehement, designed by all means 
-- file: EPUB/ch004.xhtml; text: As he is in his divine person his eternal, essential image; so, in his incarnation, as the teacher of men, he is the representative image of God unto the church, as is afterwards declared. So also Jerome expresseth his m
-- file: EPUB/ch004.xhtml; text: Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. Treating of Christ as the teacher of all 
-- file: EPUB/ch004.xhtml; text: Herein we consider the incarnation of the Son of God, with respect unto the recovery and salvation of the church alone. Some have contended that he should have been incarnate, had man never fallen or sinned. Of these are
+- file: EPUB/ch013.xhtml; text: In the confirmation hereof it will appear what judgment ought to be passed on that inquiry — which, after the uninterrupted profession of the catholic church for so many ages of a faith unto the contrary, is begun to be 
+- file: EPUB/ch031.xhtml; text: That which we inquire after at present, is, the glory of Christ herein, and how we may behold that glory. And there are three things wherein we may take a prospect of it. 1. In his susception of this office. 2. In his di
+- file: EPUB/ch031.xhtml; text: In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love.
+- file: EPUB/ch040.xhtml; text: Two things we must here speak unto. 1. Why does the Lord Christ, at any time, thus hide himself in his glory from the faith of believers, that they cannot behold him? 2. How we may perceive and know that he does so withd
+- file: EPUB/ch045.xhtml; text: The second thing proposed is, that notwithstanding all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great 
 
 ### Repeated word windows
 
@@ -109,7 +109,7 @@
 
 ### Lowercase page fragments
 
-- file: EPUB/ch004.xhtml; text: factores autem sermonum ejus facti, communionem habeamus cum ipso".
+- file: EPUB/ch004.xhtml; text: factores
 - file: EPUB/ch008.xhtml; text: as he also proclaims the same delight in him, from heaven, in the days of his fle
 - file: EPUB/ch016.xhtml; text: and verse 23, "My Father will love him, and we will come unto him, and make our a
 - file: EPUB/ch022.xhtml; text: and in sundry other places. The assumption, the taking of our human nature to be

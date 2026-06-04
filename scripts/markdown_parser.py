@@ -14,6 +14,15 @@ from scripts.owen_lists import (
     _merge_short_inline_lists, _nest_owen_list_hierarchies
 )
 
+
+_TRANSITIONAL_WORD_RE = re.compile(
+    r'^(Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
+    r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
+    r'Herein|Hereby|Hereof|Hereto|Hereunto|Herewith|Therein|Thereby|'
+    r'Thereof|Thereto|Thereunto|Therewith|But|So|Now|As|For)[,;.—\s]*$',
+    re.I,
+)
+
 def _repair_markdown_tables(text: str) -> str:
     """Convert Markdown pipe-table paragraphs into [[BLOCKQUOTE]] / plain paragraph pairs."""
     if not text or ('|---|' not in text and '|--' not in text):

@@ -2386,7 +2386,7 @@ a, .noteref, a.footnote-ref, a.fn-link {
     padding: 0.1em 0.2em; /* Easy-tap */
 }
 
-.noteref-glossary {
+.noteref-glossary, .noteref-biographical {
     vertical-align: super;
     font-size: 0.85rem;
     padding: 0.1em 0.2em;

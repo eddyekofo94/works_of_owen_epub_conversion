@@ -1,10 +1,10 @@
 {
   "volume": 1,
-  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
-  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-03T22:57:43.026959+00:00",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/input/owen-v1.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-06-04T11:04:55.364651+00:00",
   "status": "warn",
-  "warning_count": 11,
+  "warning_count": 10,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -35,10 +35,6 @@
       "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
     },
     {
-      "code": "enumerator_sequence_candidates",
-      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
-    },
-    {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
     },
@@ -47,8 +43,8 @@
       "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
     },
     {
-      "code": "missing_latin_clauses",
-      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
@@ -56,11 +52,11 @@
   },
   "epub": {
     "spine_text_files": 84,
-    "paragraph_count": 2703
+    "paragraph_count": 2706
   },
   "word_coverage": {
     "pdf_content_tokens": 204998,
-    "epub_content_tokens": 205763,
+    "epub_content_tokens": 205862,
     "coverage_ratio": 0.9992,
     "missing_word_samples": [
       {
@@ -91,14 +87,14 @@
         "epub": 10
       },
       {
-        "word": "modern",
-        "pdf": 4,
-        "epub": 13
+        "word": "theological",
+        "pdf": 2,
+        "epub": 11
       },
       {
-        "word": "greek",
-        "pdf": 9,
-        "epub": 17
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
       },
       {
         "word": "faithfulness",
@@ -106,14 +102,19 @@
         "epub": 12
       },
       {
-        "word": "hebrew",
-        "pdf": 3,
-        "epub": 10
+        "word": "modern",
+        "pdf": 4,
+        "epub": 11
       },
       {
         "word": "footnotes",
         "pdf": 0,
-        "epub": 6
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 3,
+        "epub": 9
       }
     ]
   },
@@ -144,7 +145,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 27225,
+    "dense_windows_checked": 27185,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -164,8 +165,16 @@
         "sample": "of the holy trinity of the works of god and first of those that"
       },
       {
+        "page": 8,
+        "sample": "man to himself with peculiar closeness of application stripping in of his false dependencies"
+      },
+      {
         "page": 9,
         "sample": "embraces the most comprehensive view of this vitally-important subject his exposition of psalm exhibits"
+      },
+      {
+        "page": 10,
+        "sample": "as his own john nesbitt matthew clarke thomas ridgley and thomas bradbury eminent independent"
       },
       {
         "page": 11,
@@ -196,12 +205,8 @@
         "sample": "in their signification or if they did wherein that difference lay athanasiu6 at first"
       },
       {
-        "page": 46,
-        "sample": "serm augustine de trinit lib cap 13-20 leo epist sermo de nativit basil in"
-      },
-      {
         "page": 51,
-        "sample": "we also inquire into lib de definitionibus orthodoxae fidei sive de ecclesiastica dogmatibus cap"
+        "sample": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit"
       },
       {
         "page": 53,
@@ -302,10 +307,6 @@
       {
         "page": 291,
         "sample": "is clearly expressed and to take it to be his own his own nature"
-      },
-      {
-        "page": 295,
-        "sample": "same being or nature the father in the son the son in the father"
       }
     ]
   },
@@ -448,18 +449,23 @@
     "split_candidates": [
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "nim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus\". [1]",
+        "previous": " καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς \". †",
+        "next": "He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus \". †",
         "next": "— \"He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "rtium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?\" [2]",
+        "previous": "tertium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?\" †",
         "next": "— \"I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "To the same purpose. speaks Eusebius at large: Demonstratio Evang., lib. 5 cap. 2. [47]",
-        "next": "Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.:) [73] \"Quia in Christo Jesus Filio Dei non solum ad divinam essentiam,"
+        "previous": "αὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων \". †",
+        "next": "The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre"
       },
       {
         "file": "EPUB/ch004.xhtml",
@@ -468,33 +474,33 @@
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. [27]",
-        "next": "Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T"
+        "previous": "ν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας . Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων , διὰ τῆς ἰδίας πρὸς ἑκατέρους οἰκειότητος εις φιλίαν καὶ ὁμόνοιαν τοῦς ἀμφοτέρους συναγαγεῖν \". †",
+        "next": "Words plainly divine; an illustrious testimony of the faith of the ancient church, and expressive of the principal mystery of the gospel! \"Wherefore, as we said before, he united m"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "to the same purpose: (lib. 5 cap. 1:) [90] \"Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". [12]",
+        "previous": "And to the same purpose: (lib. 5 cap. 1:) \"Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". †",
         "next": "That which these passages give testimony unto, is what we have discoursed concerning the necessity of our redemption in and by the nature that sinned; and yet withal, that it shoul"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "non aeriae, non alterius cujusquam putes esse naturae, sed ejus coujus est omnium caro; id est, quam ipse Deus, homini primo de terra plasmavit, et caeteris hominibus plasmat.\" [4]",
+        "previous": ", non aeriae, non alterius cujusquam putes esse naturae, sed ejus coujus est omnium caro; id est, quam ipse Deus, homini primo de terra plasmavit, et caeteris hominibus plasmat.\" †",
         "next": "— \"So believe Christ the Son of God, that is, one person of the Trinity, to be the true God, that you doubt not but that his divinity was born\" (thy eternal generation) \"of the nat"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": " tantum; at qui erat in divinitate Dei Patris Filius, ipse fieret in homine hominis matris Filius; ne Filii nomen ad alterum transiret, qui non esset eterna nativitate filius\". [6]",
+        "previous": "ccato ceciderat. Utraque operatus est filius Verbum Dei existens, a Patre descendens et incarnatus, et usque ad mortem descendens, et dispensationem consummans salutis nostrae \". †",
+        "next": "— \"Being the Son of God always with the Father, and being made man, he reconciled or gathered up in himself the long-continued exposing of men,\" (unto sin and judgment,) \"bringing "
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "tantum ; at qui erat in divinitate Dei Patris Filius , ipse fieret in homine hominis matris Filius; ne Filii nomen ad alterum transiret, qui non esset eterna nativitate filius \". †",
         "next": "— \"The Father did not assume flesh, nor the Holy Spirit, but the Son only; that he who in the Deity was the Son of the Father, should be made the Son of man, in his mother of human"
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": "amnatione justissima derelictis, ostenderetur, quod meruisset universa conspersio, et quo etiam istos debitum judicium Dei duceret, nisi ejus indebita misericordia subveniret.\" [3]",
+        "previous": " damnatione justissima derelictis, ostenderetur, quod meruisset universa conspersio, et quo etiam istos debitum judicium Dei duceret, nisi ejus indebita misericordia subveniret.\" †",
         "next": "— \"Behold, the whole race of mankind, by the just judgment of God, so condemned in the apostatical root, that if no one were thence delivered, yet no man could rightly complain of "
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "affirm] we know not; only we declare what we believe and adore. \"Neque sensus est ejus, neque phantsia, neque opinio, nec ratio, nec scientia\", says Dionys. De Divan. Nomine,1. [1]",
-        "next": "We have no means — no corporeal, no intellectual instrument or power — for the comprehension of him; nor has any other creature: \" Επεὶ αὐτὸ ὅπε ? ρ ἐστιν ὁ Θεὸς , οὐ μόνον προφῆτα"
       },
       {
         "file": "EPUB/ch011.xhtml",
@@ -518,13 +524,8 @@
       },
       {
         "file": "EPUB/ch027.xhtml",
-        "previous": "on of this glory, will be carried above the perplexing prevailing sense of any of these evils, of a confluence of them all. \"Crus nil sentit in nervo, dum animus est in coelo.\" [1]",
+        "previous": "ion of this glory, will be carried above the perplexing prevailing sense of any of these evils, of a confluence of them all. \"Crus nil sentit in nervo, dum animus est in coelo .\" †",
         "next": "It is a woeful kind of life, when men scramble for poor perishing reliefs in their distresses. This is the universal remedy and cure, — the only balsam for all our diseases. Whatev"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "previous": "s a man, as they were men; and otherwise, that he was at the greatest distance from them all as it is possible for one man to be from another, Socin. de Servant. lib. 3 cap. 3. [1]",
-        "next": "The falseness of this latter assertion, and the gross ignorance of the Scripture, under a pretense of subtlety, in them that make it, will evidently appear in our ensuing Discourse"
       },
       {
         "file": "EPUB/ch039.xhtml",
@@ -542,7 +543,7 @@
         "next": "J.O."
       }
     ],
-    "structural_start_exclusions": 117,
+    "structural_start_exclusions": 116,
     "short_fragment_count": 11,
     "short_fragments": [
       {
@@ -592,47 +593,11 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 15,
+    "inline_structural_candidate_count": 5,
     "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "They have repeatedly appeared in the language of Holland; and by the Dutch divines the most favorable mention is made of the various treatises of our pious and learned Puritan. We are informed by Dr Steven, 2 that his Exposition of the Epistle to the Hebrews w"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "text": "We may take an instance hereof with respect unto the Nestorian heresy, condemned in the first Ephesian Council, and afterwards in that at Chalcedon. Cyril of Alexandria, a man learned and vehement, designed by all means to be unto it what his predecessor Athan"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "text": "As he is in his divine person his eternal, essential image; so, in his incarnation, as the teacher of men, he is the representative image of God unto the church, as is afterwards declared. So also Jerome expresseth his mind herein: (Comment. in Psalm 66: [74] "
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "text": "Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. Treating of Christ as the teacher of all men, his \" παιδαγωγὸς \", he affirms that"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "text": "Herein we consider the incarnation of the Son of God, with respect unto the recovery and salvation of the church alone. Some have contended that he should have been incarnate, had man never fallen or sinned. Of these are Rupertus, lib. 3, De Gloria et Honore F"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "text": "Still it is supposed that the glory of God, as essentially in him, is invisible unto us, and incomprehensible by us. Yet is there a knowledge of it necessary unto us, that we may live unto him, and come unto the enjoyment of him. This we obtain only in the fac"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "text": "It may be said, that the Scripture itself is sufficient for this end of the declaration of God unto us, so that there is no need of any other representation of him; and [that] these things serve only to turn the minds of men from learning the mind and will of "
-      },
       {
         "file": "EPUB/ch013.xhtml",
         "text": "In the confirmation hereof it will appear what judgment ought to be passed on that inquiry — which, after the uninterrupted profession of the catholic church for so many ages of a faith unto the contrary, is begun to be made by some amongst us — namely, Of wha"
-      },
-      {
-        "file": "EPUB/ch017.xhtml",
-        "text": "The faith and love of believers is not to be regulated by the ignorance and boldness of them who have neither the one nor the other. The title of the 45th Psalm is, \" שִׁיר יְדִידְֹת \", [2] \"A song of loves;\" — that is, of the mutual love of Christ and the chu"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "text": "The glory of Christ is the glory of the person of Christ So he calls it \" Τὴν δόξαν τὴν ἐμὴν \", [2] John 17:24, \"That glory which is mine,\" which belongeth to me, unto my person."
       },
       {
         "file": "EPUB/ch031.xhtml",
@@ -641,10 +606,6 @@
       {
         "file": "EPUB/ch031.xhtml",
         "text": "In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love."
-      },
-      {
-        "file": "EPUB/ch039.xhtml",
-        "text": "There is no part of his glory that we can fully comprehend. And what we do comprehend, — there is a comprehension in faith, Ephesians 3:18, — we cannot abide in the steady contemplation of. For ever blessed be that sovereign grace, whence it is that He who \"co"
       },
       {
         "file": "EPUB/ch040.xhtml",
@@ -675,10 +636,10 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 310,
-    "epub_marker_count": 467,
+    "epub_marker_count": 320,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 101,
+    "excess_marker_count": 6,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -686,11 +647,11 @@
         "epub": 2,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p102",
+            "location": "EPUB/structural_guide.xhtml#p104",
             "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           },
           {
-            "location": "EPUB/ch001.xhtml#p133",
+            "location": "EPUB/ch001.xhtml#p135",
             "context": "e errors, and the subdivisions are denoted by the usual gradation in the numerals — I, 1, (1), [1], first, and first . It would have been an advantage if we could have dispensed with this cumbrous and complex apparatus; but such a course would have been questionable in pri"
           }
         ]
@@ -701,15 +662,15 @@
         "epub": 76,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p105",
+            "location": "EPUB/structural_guide.xhtml#p107",
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch005.xhtml#p259",
+            "location": "EPUB/ch005.xhtml#p261",
             "context": "(1.) From its effect; (2.) From its cause."
           },
           {
-            "location": "EPUB/ch005.xhtml#p260",
+            "location": "EPUB/ch005.xhtml#p262",
             "context": "(1.) Its effect was, that it made him blessed in whom it was. For it is not only a blessed thing to believe and know Jesus Christ, as it is called life eternal; (John 17:3;) but it is"
           }
         ]
@@ -720,15 +681,15 @@
         "epub": 76,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p105",
+            "location": "EPUB/structural_guide.xhtml#p107",
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch005.xhtml#p259",
+            "location": "EPUB/ch005.xhtml#p261",
             "context": "(1.) From its effect; (2.) From its cause."
           },
           {
-            "location": "EPUB/ch005.xhtml#p261",
+            "location": "EPUB/ch005.xhtml#p263",
             "context": "(2.) The immediate cause of this faith is divine revelation. It is not the effect or product of our own abilities, the best of which are but flesh and blood. That faith which renders t"
           }
         ]
@@ -739,157 +700,31 @@
         "epub": 22,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p105",
+            "location": "EPUB/structural_guide.xhtml#p107",
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch011.xhtml#p500",
+            "location": "EPUB/ch011.xhtml#p503",
             "context": "[1.] He was to be the prophet of the whole catholic church; that is, of act the elect of God, of all that shall be saved in all ages and places, from the beginning of the world unto th"
           },
           {
-            "location": "EPUB/ch011.xhtml#p527",
+            "location": "EPUB/ch011.xhtml#p530",
             "context": "[1.] The extent of his power and rule gives evidence hereunto. It is over the whole creation of God. \"All power is given him in heaven and earth.\" Matthew 28:18. \"A11 things are put un"
-          }
-        ]
-      },
-      {
-        "marker": "[10]",
-        "pdf": 0,
-        "epub": 2,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p181",
-            "context": "be, or that they were used unto the same purpose in the Council of Nice: Epist. 78. [66] [10] The like difference immediately fell out between the Grecians and Latins about \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \" πρόσωπον \" b"
-          },
-          {
-            "location": "EPUB/ch022.xhtml#p1119",
-            "context": "of enunciations the ancients expressed by \" ἐναλλαγή \", [11] \"alteration;\" \" ἀλλοίωσις \", [10] \"permutation,\" \" κοινότης \", [12] \"communion;\" \" τρόπος ἀντιδόσεως \", [9] \"the manner of mutual position;\" \" κοινωνία ἰδιωμάτων \", [8] \"the communication of properties,\" and other"
-          }
-        ]
-      },
-      {
-        "marker": "[11]",
-        "pdf": 0,
-        "epub": 2,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p177",
-            "context": "sum filium Dei vivi, aedificabo ecclesiam meam. Super me aedificabo te, non me super te:\" [11] De Verbis Dom., Serm. 13. [68] — \"Upon this rock which thou hast confessed — upon myself, the God of the living God — I will build my church I will build thee upon myself, and not"
-          },
-          {
-            "location": "EPUB/ch022.xhtml#p1119",
-            "context": "s 9:5; Matthew 22:42. These kinds of enunciations the ancients expressed by \" ἐναλλαγή \", [11] \"alteration;\" \" ἀλλοίωσις \", [10] \"permutation,\" \" κοινότης \", [12] \"communion;\" \" τρόπος ἀντιδόσεως \", [9] \"the manner of mutual position;\" \" κοινωνία ἰδιωμάτων \", [8] \"the commu"
-          }
-        ]
-      },
-      {
-        "marker": "[12]",
-        "pdf": 0,
-        "epub": 2,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p230",
-            "context": "habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". [12]"
-          },
-          {
-            "location": "EPUB/ch022.xhtml#p1119",
-            "context": "ssed by \" ἐναλλαγή \", [11] \"alteration;\" \" ἀλλοίωσις \", [10] \"permutation,\" \" κοινότης \", [12] \"communion;\" \" τρόπος ἀντιδόσεως \", [9] \"the manner of mutual position;\" \" κοινωνία ἰδιωμάτων \", [8] \"the communication of properties,\" and other the like expressions. These thing"
-          }
-        ]
-      },
-      {
-        "marker": "[13]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "ermo. De Nativit. 1, 4, 10; [65] [31] Basil., in Psalm 48; [82] Albinus, lib. 1 in Johan. [13] Cap. 11; Damascen., lib. 3, De Fide, cap. 15, 19; [40] Anselm., quod Deus Homo, lib. duo. [49] Guil. Parisiensis, lib. Cur Deus Homo. [43] [17] Some especial testimonies we may pr"
-          }
-        ]
-      },
-      {
-        "marker": "[14]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "vangel., lib. 4 cap. 1-4, etc.; [75] [38] [29] Cyril. Alexand., lib. 5 cap. 6, lib. 1. De [14] Fide ad Regin.; Chrysostom, Homil. 10 in Johan., [54] et in cap. 8, ad Romans Serm. 18; [52] Augustine, De Trinit., lib. 13 cap. 13 [16] -20; Leo, Epist. 13, 18, Sermo. De Nativit"
-          }
-        ]
-      },
-      {
-        "marker": "[15]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p233",
-            "context": "r immensam suam dilectionem, factus est quod sumus nos, ut nos perficeret quod est ipse\". [15] — \"Jesus Christ, the Word of God, who, from his own infinite love, was made what we are, that he might make us what he is;\" that is, by the restoration of the image of God in us."
-          }
-        ]
-      },
-      {
-        "marker": "[16]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "ohan., [54] et in cap. 8, ad Romans Serm. 18; [52] Augustine, De Trinit., lib. 13 cap. 13 [16] -20; Leo, Epist. 13, 18, Sermo. De Nativit. 1, 4, 10; [65] [31] Basil., in Psalm 48; [82] Albinus, lib. 1 in Johan. [13] Cap. 11; Damascen., lib. 3, De Fide, cap. 15, 19; [40] Ans"
-          }
-        ]
-      },
-      {
-        "marker": "[17]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "[40] Anselm., quod Deus Homo, lib. duo. [49] Guil. Parisiensis, lib. Cur Deus Homo. [43] [17] Some especial testimonies we may produce in confirmation of what we have discoursed, in the places directed unto. There is one of them, one of the most ancient, the most learned,"
-          }
-        ]
-      },
-      {
-        "marker": "[18]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "Rupertus, lib. 3, De Gloria et Honore Filii Hominis; Albertus Magnus, in 3 distinct. 10, [18] a 4; Petrus Galatinus, lib. 3 cap. 4; [55] as are Scotus, halensis, [91] and others, whom Osiander followed. The same is affirmed by Socinus concerning the birth of that man, whic"
-          }
-        ]
-      },
-      {
-        "marker": "[19]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p235",
-            "context": "(Lib. de Definitionibus Orthodoxae Fidei sive de Ecclesiastica Dogm [23] atibus, cap. 2:) [19] \"Non Pater carnem assumpsit, neque Spiritus Sanctus, set Filius tantum; at qui erat in divinitate Dei Patris Filius, ipse fieret in homine hominis matris Filius; ne Filii nomen ad"
           }
         ]
       },
       {
         "marker": "[1]",
         "pdf": 1,
-        "epub": 25,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from"
-          },
-          {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "entirely distinct from the original authorial/historical footnotes and reset starting at [1] for each chapter. Enhanced Original Footnotes 1, 2, ... : Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Lati"
-          },
-          {
-            "location": "EPUB/structural_guide.xhtml#p102",
+            "location": "EPUB/structural_guide.xhtml#p104",
             "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p135",
+            "context": "ors, and the subdivisions are denoted by the usual gradation in the numerals — I, 1, (1), [1], first, and first . It would have been an advantage if we could have dispensed with this cumbrous and complex apparatus; but such a course would have been questionable in principl"
           }
         ]
       },
@@ -899,543 +734,22 @@
         "epub": 22,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p105",
+            "location": "EPUB/structural_guide.xhtml#p107",
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch011.xhtml#p511",
+            "location": "EPUB/ch011.xhtml#p514",
             "context": "[2.] The full comprehension of the mind and will of God, of the whole divine counsel concerning his glory in the sanctification and salvation of the church, could not at once reside in"
           },
           {
-            "location": "EPUB/ch011.xhtml#p530",
+            "location": "EPUB/ch011.xhtml#p533",
             "context": "[2.] The rule of Christ, as king of the church, is internal and spiritual, over the minds, souls, and consciences of all that do believe. There is no one gracious acting of soul in any"
-          }
-        ]
-      },
-      {
-        "marker": "[20]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p198",
-            "context": "Augustinus De Fide, ad Peter Diacon., cap. 17; [48] [33] Justitianus Imperator Epist. ad [20] Hormisdam, Romae Episcop. And the mystery is well expressed by Maxentius: (Biblioth. Patr. pars prima:) \"Non confundimus naturarum diversitatem; veruntamen Christum non tu asseris"
-          }
-        ]
-      },
-      {
-        "marker": "[21]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p231",
-            "context": "hteousness.) \"So he saved in himself in the end, what perished in Adam at the beginning.\" [21] (The same nature, in and by the same nature.) \"For if the Lord had been incarnate for any other disposition,\" (i. e., cause, reason, or end,) \"and had brought flesh from any other"
-          }
-        ]
-      },
-      {
-        "marker": "[22]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p176",
-            "context": ", Haer.29: [69] \" Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν \". [22] — \"Upon this rock\" of assured faith \"I will build my church\". For many thought that faith itself was metonymically called the Rock, because of its object, or the person of Christ,"
-          }
-        ]
-      },
-      {
-        "marker": "[23]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p235",
-            "context": "we also inquire into: (Lib. de Definitionibus Orthodoxae Fidei sive de Ecclesiastica Dogm [23] atibus, cap. 2:) [19] \"Non Pater carnem assumpsit, neque Spiritus Sanctus, set Filius tantum; at qui erat in divinitate Dei Patris Filius, ipse fieret in homine hominis matris Fil"
-          }
-        ]
-      },
-      {
-        "marker": "[24]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p217",
-            "context": "factores autem sermonum ejus facti, communionem habeamus cum ipso\". [24] — \"We could not otherwise have learned the things of God, unless our Master, being and continuing the\" (eternal) \"Word, had been made man. For no other could declare unto us the t"
-          }
-        ]
-      },
-      {
-        "marker": "[25]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p195",
-            "context": "ompositus praedicatur:\" Peter Diacon., Lib. De Incarnat. et Grat. Christi, ad Fulgentium. [25] And the union which they intended by this composition they called \" ἔνωσιν φυσικὴν \", [92] because it was of diverse natures, and \" ἕνωσιν κατὰ σύνθεσιν \", [78] a union by composi"
-          }
-        ]
-      },
-      {
-        "marker": "[26]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p223",
-            "context": "all, blessed for ever. See Aquin. 22 q. 81, a. 3, ad prim., and q. 84, a. 1, ad tertium; [26] Alexand. Alens. p. 3, q. 30, m. 1, a. 3. [39] But yet, although we may call on God in and by the name of any divine person, or enumerate at once each person, ( ὡ τριὰς ἁγία ἀριθμο"
-          }
-        ]
-      },
-      {
-        "marker": "[27]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p211",
-            "context": "hap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. [27]"
-          }
-        ]
-      },
-      {
-        "marker": "[28]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p215",
-            "context": "cal office. So it is well expressed by Irenaeus, \"qui nil molitur inepte:\" lib. 1 cap. 1. [28]"
-          }
-        ]
-      },
-      {
-        "marker": "[29]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": ", lib. 3, cap. 20, 21; [60] Eusebius, Demonst. Evangel., lib. 4 cap. 1-4, etc.; [75] [38] [29] Cyril. Alexand., lib. 5 cap. 6, lib. 1. De [14] Fide ad Regin.; Chrysostom, Homil. 10 in Johan., [54] et in cap. 8, ad Romans Serm. 18; [52] Augustine, De Trinit., lib. 13 cap. 13"
-          }
-        ]
-      },
-      {
-        "marker": "[2]",
-        "pdf": 0,
-        "epub": 12,
-        "examples": [
-          {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
-          },
-          {
-            "location": "EPUB/ch001.xhtml#p126",
-            "context": "from its scarcity or its size, the edition of 1826 stood, prevented many from purchasing [2] it who cherished an admiration for the writings of this great Nonconformist divine. A strong desire was evinced, in various ways, that his works might be issued in a form more acc"
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p189",
-            "context": "canum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?\" [2]"
-          }
-        ]
-      },
-      {
-        "marker": "[30]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p196",
-            "context": "t able to bear. So is it illustrated by Eusebius: (Demonst. Evang., lib. 4 cap. 5, etc.:) [30] \" Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα , φωτίζει δὲ ὀφθαλμοὺς , ἁφὴν δὲ θερμαίνει , πιαίνει δὲ γῆν , αὔξει δὲ φυτὰ , κ . τ . λ . ("
-          }
-        ]
-      },
-      {
-        "marker": "[31]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "Trinit., lib. 13 cap. 13 [16] -20; Leo, Epist. 13, 18, Sermo. De Nativit. 1, 4, 10; [65] [31] Basil., in Psalm 48; [82] Albinus, lib. 1 in Johan. [13] Cap. 11; Damascen., lib. 3, De Fide, cap. 15, 19; [40] Anselm., quod Deus Homo, lib. duo. [49] Guil. Parisiensis, lib. Cur"
-          }
-        ]
-      },
-      {
-        "marker": "[32]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p231",
-            "context": "t which was lost.\" The same is observed by Augustine: (Lib. de Fide, ad Petrum Diaconum:) [32] \"Sic igitur Christum Dei Filium, id est, unam ex Trinitate personam, Deum verum crede, ut divinitatem ejus de natura Patris natam esse non dubites; et sic eum verum hominem crede,"
-          }
-        ]
-      },
-      {
-        "marker": "[33]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p198",
-            "context": "self equal unto the Father.\" See also Augustinus De Fide, ad Peter Diacon., cap. 17; [48] [33] Justitianus Imperator Epist. ad [20] Hormisdam, Romae Episcop. And the mystery is well expressed by Maxentius: (Biblioth. Patr. pars prima:) \"Non confundimus naturarum diversitate"
-          }
-        ]
-      },
-      {
-        "marker": "[34]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p201",
-            "context": "et homo possit esse quod Christus est\", saith Cyprian: De Idolorum Vanitate, cap. 3. [44] [34] And,"
-          }
-        ]
-      },
-      {
-        "marker": "[35]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p223",
-            "context": "ud nomen Patris est, \"etc., \"quia unus Deus:\" Ambrose, De Spirit. Sanct., lib. 1 cap. 14. [35] \" Ονομα δὲ κοινὸν τῶν τριῶν ἕν , ἡ θεότης \". — \"The one name common to the three is the Deity:\" Gregor. Nazianzen, Orat. 40. [63] Hence Augustine gives it as a rule, in speaking o"
-          }
-        ]
-      },
-      {
-        "marker": "[36]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p181",
-            "context": "nasius at first affirmed them to be the same: Orat. 5 con. Arian., and Epist. ad African. [36] Basil denied them so to be, or that they were used unto the same purpose in the Council of Nice: Epist. 78. [66] [10] The like difference immediately fell out between the Grecians"
-          }
-        ]
-      },
-      {
-        "marker": "[37]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p211",
-            "context": "sebius also speaks often unto this purpose, as: (Demonstratio Evangelica, lib. 4 cap. 2:) [37] \" Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες , θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν , ὡς ἇν τῆς ἀνεκφράστου καὶ ἀπερινοήτου θεότητος μόνον ἐν αυτῷ φέροντα τὴν εἰκόνα δι ' ῆν καὶ θεὸν εῖναι τ"
-          }
-        ]
-      },
-      {
-        "marker": "[38]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "naeus, lib. 3, cap. 20, 21; [60] Eusebius, Demonst. Evangel., lib. 4 cap. 1-4, etc.; [75] [38] [29] Cyril. Alexand., lib. 5 cap. 6, lib. 1. De [14] Fide ad Regin.; Chrysostom, Homil. 10 in Johan., [54] et in cap. 8, ad Romans Serm. 18; [52] Augustine, De Trinit., lib. 13 ca"
-          }
-        ]
-      },
-      {
-        "marker": "[39]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p223",
-            "context": ". 3, ad prim., and q. 84, a. 1, ad tertium; [26] Alexand. Alens. p. 3, q. 30, m. 1, a. 3. [39] But yet, although we may call on God in and by the name of any divine person, or enumerate at once each person, ( ὡ τριὰς ἁγία ἀριθμουμένη , τριὰς ἐν ἑνὶ ὀνόματι ἀριθμουμένη \", Ep"
-          }
-        ]
-      },
-      {
-        "marker": "[3]",
-        "pdf": 0,
-        "epub": 5,
-        "examples": [
-          {
-            "location": "EPUB/ch001.xhtml#p123",
-            "context": "l as to indicate, perhaps, the special difficulty which may have prevented the same honor [3] and service being rendered to his memory by the publication of his collected works, when we bear in mind that one of them, his Exposition of the Epistle to the Hebrews, occupies o"
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p237",
-            "context": "uo etiam istos debitum judicium Dei duceret, nisi ejus indebita misericordia subveniret.\" [3]"
-          },
-          {
-            "location": "EPUB/ch009.xhtml#p446",
-            "context": "t \" λόγος οὐσιώδης \", [5] the internal, essential Word of God — but \" λόγος προφορικὸς \", [3] the external word spoken by him. It is not, therefore, nor can be, the image of God, either essential or representative; but is the revelation and declaration of it unto us, witho"
-          }
-        ]
-      },
-      {
-        "marker": "[40]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p225",
-            "context": "48; [82] Albinus, lib. 1 in Johan. [13] Cap. 11; Damascen., lib. 3, De Fide, cap. 15, 19; [40] Anselm., quod Deus Homo, lib. duo. [49] Guil. Parisiensis, lib. Cur Deus Homo. [43] [17] Some especial testimonies we may produce in confirmation of what we have discoursed, in th"
-          }
-        ]
-      },
-      {
-        "marker": "[41]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/ch004.xhtml#p175",
-            "context": "in the name of all the rest of the apostles. Euseb. Preparat. Evang., lib. 1 cap. 3: [42] [41] \" Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη , καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτ"
           }
         ]
       }
     ],
-    "orphan_candidate_count": 88,
-    "orphan_candidates": [
-      {
-        "file": "EPUB/ch001.xhtml",
-        "marker": "[4]",
-        "family": "bracket_decimal",
-        "context": "rculated most of the impression His work which bears the title, ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΙΙΑ , [4] etc., originally published at Oxford in 1661, must have been highly esteemed abroad, as it was reprinted at Bremen in 1684, and at Franeker in 1700. 3 In Scotland, the influence e"
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "marker": "[3]",
-        "family": "bracket_decimal",
-        "context": "l as to indicate, perhaps, the special difficulty which may have prevented the same honor [3] and service being rendered to his memory by the publication of his collected works, when we bear in mind that one of them, his Exposition of the Epistle to the Hebrews, occupies o"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[45]",
-        "family": "bracket_decimal",
-        "context": "υσα ηοσος , ηε πετρα , ηε κλεις , ηε ποιμεν \", etc, saith Ignatius: Epist. ad Philadelph. [45] — \"He\" (that is, Christ) \"is the way leading unto the Father, the rock, the key, the shepherd\" — wherein he has respect unto this testimony. And Origen expressly denies the words"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[94]",
-        "family": "bracket_decimal",
-        "context": "Origen expressly denies the words to be spoken of Peter, in Matthew 16:1 16: (Tract. 1:) [94] \"Quod si super unum illum Petrum tantum existimees totam eclesiam aedificar, quid dicturus es de Johanne, et apostolorum unoquoque? Num audebimus dicere quod adversus Petrum unum"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[42]",
-        "family": "bracket_decimal",
-        "context": "unto in the name of all the rest of the apostles. Euseb. Preparat. Evang., lib. 1 cap. 3: [42] [41] \" Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη , καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥ"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[41]",
-        "family": "bracket_decimal",
-        "context": "in the name of all the rest of the apostles. Euseb. Preparat. Evang., lib. 1 cap. 3: [42] [41] \" Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη , καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτ"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[72]",
-        "family": "bracket_decimal",
-        "context": "lix fidei Petra, Petri ore confessa, Tu es filius Dei vivi,\" says Hilary de Trin., lib. 2 [72] — \"This is the only immovable foundation, this is the blessed rock of faith confessed by Peter, Thou art the Son of the living God\". And Epiphanius, Haer.29: [69] \" Επὶ τῇ πέτρᾳ τ"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[69]",
-        "family": "bracket_decimal",
-        "context": "f faith confessed by Peter, Thou art the Son of the living God\". And Epiphanius, Haer.29: [69] \" Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν \". [22] — \"Upon this rock\" of assured faith \"I will build my church\". For many thought that faith itself was"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[22]",
-        "family": "bracket_decimal",
-        "context": ", Haer.29: [69] \" Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν \". [22] — \"Upon this rock\" of assured faith \"I will build my church\". For many thought that faith itself was metonymically called the Rock, because of its object, or the person of Christ,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[11]",
-        "family": "bracket_decimal",
-        "context": "sum filium Dei vivi, aedificabo ecclesiam meam. Super me aedificabo te, non me super te:\" [11] De Verbis Dom., Serm. 13. [68] — \"Upon this rock which thou hast confessed — upon myself, the God of the living God — I will build my church I will build thee upon myself, and not"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[68]",
-        "family": "bracket_decimal",
-        "context": "ecclesiam meam. Super me aedificabo te, non me super te:\" [11] De Verbis Dom., Serm. 13. [68] — \"Upon this rock which thou hast confessed — upon myself, the God of the living God — I will build my church I will build thee upon myself, and not myself on thee.\" And he more f"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[71]",
-        "family": "bracket_decimal",
-        "context": ", and not myself on thee.\" And he more fully declareth his mind: (Tract. 124, in Johan.:) [71] \"Universam significabat ecclesiam, quae in hoc seculo diversis tentationibus, velut imbribus, fluminibus, tempestatibusque quatitur, et non cadit; quoniam fundata est supra Petram"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[36]",
-        "family": "bracket_decimal",
-        "context": "nasius at first affirmed them to be the same: Orat. 5 con. Arian., and Epist. ad African. [36] Basil denied them so to be, or that they were used unto the same purpose in the Council of Nice: Epist. 78. [66] [10] The like difference immediately fell out between the Grecians"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[66]",
-        "family": "bracket_decimal",
-        "context": "so to be, or that they were used unto the same purpose in the Council of Nice: Epist. 78. [66] [10] The like difference immediately fell out between the Grecians and Latins about \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \" πρόσωπο"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[10]",
-        "family": "bracket_decimal",
-        "context": "be, or that they were used unto the same purpose in the Council of Nice: Epist. 78. [66] [10] The like difference immediately fell out between the Grecians and Latins about \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \" πρόσωπον \" b"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[96]",
-        "family": "bracket_decimal",
-        "context": "t to confess \"tres hypostases,\" and he would only acknowledge \"tree personas:\" Epist. 71. [96] [9] And Augustine gives an account of the same difference: De Trinitate, lib. 5 cap. 8, 9. [57] Athanasius endeavored the composing of this difference, and in a good measure effec"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[9]",
-        "family": "bracket_decimal",
-        "context": "confess \"tres hypostases,\" and he would only acknowledge \"tree personas:\" Epist. 71. [96] [9] And Augustine gives an account of the same difference: De Trinitate, lib. 5 cap. 8, 9. [57] Athanasius endeavored the composing of this difference, and in a good measure effected"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[57]",
-        "family": "bracket_decimal",
-        "context": "9] And Augustine gives an account of the same difference: De Trinitate, lib. 5 cap. 8, 9. [57] Athanasius endeavored the composing of this difference, and in a good measure effected it, as Gregory Nazianzen affirms in his oration concerning his praise. [7] It was done by hi"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[7]",
-        "family": "bracket_decimal",
-        "context": "d measure effected it, as Gregory Nazianzen affirms in his oration concerning his praise. [7] It was done by him in a synod at Alexandria, in the first year of Julian's reign. On this occasion many contests arose even among them who all pleaded their adherence unto the doc"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[83]",
-        "family": "bracket_decimal",
-        "context": "nity had \" μίαν φύσιν \", [95] one nature only. So he does plainly in Epist. ad Successum: [83] \"They are ignorant,\" saith he, \" ὅτι κατ ' ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη \". Hence Eutyches the Archimandrite took occasion to run into a contrary extreme, being a"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[50]",
-        "family": "bracket_decimal",
-        "context": "he is the Son of God, that he is the Word of God.\" And Ambrose: (De Fide, ad Gratianum:) [50] \"Quaero abs te, quando aut quomodo putes filium esse generatum? Mihi enim impossibile est scire generationis secretum Mens deficit, vox silet, non mea tantum, sed et angelorum. Su"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[47]",
-        "family": "bracket_decimal",
-        "context": "To the same purpose. speaks Eusebius at large: Demonstratio Evang., lib. 5 cap. 2. [47]"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[5]",
-        "family": "bracket_decimal",
-        "context": "sonam, nisi fides credat, sermo non explicat; et ideo materia nunquam deficit laudis; qui [5] nunquam sufficit copia laudatoris) — gaudeamus igitur quod ad eloquendum tantum, misericordiae sacramentum impares sumus; et cum salutis nostrae altitudinem promere non valeamus,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[61]",
-        "family": "bracket_decimal",
-        "context": "tum proficiat, semper sibi superesse quod quaerat\". See also Fulg., lib. 2 ad Thrasimund. [61]"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[25]",
-        "family": "bracket_decimal",
-        "context": "ompositus praedicatur:\" Peter Diacon., Lib. De Incarnat. et Grat. Christi, ad Fulgentium. [25] And the union which they intended by this composition they called \" ἔνωσιν φυσικὴν \", [92] because it was of diverse natures, and \" ἕνωσιν κατὰ σύνθεσιν \", [78] a union by composi"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[92]",
-        "family": "bracket_decimal",
-        "context": "25] And the union which they intended by this composition they called \" ἔνωσιν φυσικὴν \", [92] because it was of diverse natures, and \" ἕνωσιν κατὰ σύνθεσιν \", [78] a union by composition."
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[78]",
-        "family": "bracket_decimal",
-        "context": "\" ἔνωσιν φυσικὴν \", [92] because it was of diverse natures, and \" ἕνωσιν κατὰ σύνθεσιν \", [78] a union by composition."
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[59]",
-        "family": "bracket_decimal",
-        "context": "the Son of God, as shall be afterwards explained. This they constantly admire as the most [59] ineffable effect of divine wisdom and grace: \" Ο ἄσαρκος σαρκοῦται , ὁ λόγος παχύνεται , ὁ ἀόρατος ὁρᾶται , ὁ ἀναφὴς ψηλαφᾶται , ὁ ἄχρονος ἄρχεται , ὁ υἱὸς Θεοῦ ὑιὸς ἀνθρώπου γίνε"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[30]",
-        "family": "bracket_decimal",
-        "context": "t able to bear. So is it illustrated by Eusebius: (Demonst. Evang., lib. 4 cap. 5, etc.:) [30] \" Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα , φωτίζει δὲ ὀφθαλμοὺς , ἁφὴν δὲ θερμαίνει , πιαίνει δὲ γῆν , αὔξει δὲ φυτὰ , κ . τ . λ . ("
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[85]",
-        "family": "bracket_decimal",
-        "context": "d unto us, in a way suited unto our reception and comprehension. So it is admired by Leo: [85] (Serm. 3, De Nativit.:) [62] \"Natura humana in Creatoris societatem assumpta est, non ut ille habitator, et illa esset habitaculum; sed ut naturae alteri sic misceretur altera, ut"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[33]",
-        "family": "bracket_decimal",
-        "context": "self equal unto the Father.\" See also Augustinus De Fide, ad Peter Diacon., cap. 17; [48] [33] Justitianus Imperator Epist. ad [20] Hormisdam, Romae Episcop. And the mystery is well expressed by Maxentius: (Biblioth. Patr. pars prima:) \"Non confundimus naturarum diversitate"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[20]",
-        "family": "bracket_decimal",
-        "context": "Augustinus De Fide, ad Peter Diacon., cap. 17; [48] [33] Justitianus Imperator Epist. ad [20] Hormisdam, Romae Episcop. And the mystery is well expressed by Maxentius: (Biblioth. Patr. pars prima:) \"Non confundimus naturarum diversitatem; veruntamen Christum non tu asseris"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[53]",
-        "family": "bracket_decimal",
-        "context": "sh.\" And Jerome, speaking of the effects of this mystery: (Comment. in Ezekiel, cap. 46:) [53] \"Ne miretur lector si idem et Princeps est et Sacerdos, et Vitulus, et Aries, et Agnus; cum in Scripturis sanctis pro varietate causarum legamus eum Dominum, et Deum, et Hominem,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[44]",
-        "family": "bracket_decimal",
-        "context": "; ut et homo possit esse quod Christus est\", saith Cyprian: De Idolorum Vanitate, cap. 3. [44] [34] And,"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[77]",
-        "family": "bracket_decimal",
-        "context": ". And he explains his mind in this expression by way of admiration: (Lib. de Eleemosyn.:) [77] \"Christus hominis filius fieri voluit, ut nos Dei filios faceret; humiliavit se, ut popolum qui prius jacebat, erigeret; vulneratus est, ut vulnera nostra curaret\"."
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[37]",
-        "family": "bracket_decimal",
-        "context": "sebius also speaks often unto this purpose, as: (Demonstratio Evangelica, lib. 4 cap. 2:) [37] \" Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες , θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν , ὡς ἇν τῆς ἀνεκφράστου καὶ ἀπερινοήτου θεότητος μόνον ἐν αυτῷ φέροντα τὴν εἰκόνα δι ' ῆν καὶ θεὸν εῖναι τ"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[27]",
-        "family": "bracket_decimal",
-        "context": "hap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. [27]"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[70]",
-        "family": "bracket_decimal",
-        "context": "acher of all men, his \" παιδαγωγὸς \", he affirms that he is \" Θεὸς ἐν ἀνθρώπου σχήματι \", [70] \"God in the figure or form of man;\" \" ἄχραντος , πατρικῷ θελήματι διάκονος , λόγος , Θεὸς , ὁ ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς , σὺν καὶ τῷ σχήματι Θεοῦ \", \"impolluted, serving the"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[84]",
-        "family": "bracket_decimal",
-        "context": "e great end of his being the representative image of God unto us And: (Stromat., lib. 4:) [84] \" Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν , οὐκ ἔστιν ἐπιστημονικός . Ο δὲ υἱος σοφία τε ἐστι καὶ ἐπιστ́μῃ , καὶ ἀλήθεια , καὶ , ὅσα ἄλλα τούτῳ συγγενῆ \". — \"As God\" (absolutely) \"falls no"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "marker": "[24]",
-        "family": "bracket_decimal",
-        "context": "factores autem sermonum ejus facti, communionem habeamus cum ipso\". [24] — \"We could not otherwise have learned the things of God, unless our Master, being and continuing the\" (eternal) \"Word, had been made man. For no other could declare unto us the t"
-      }
-    ]
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
   },
   "repeated_windows": [
     {
@@ -1563,44 +877,44 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 3418,
-    "epub_latin_word_count": 3457,
-    "epub_tagged_latin_word_count": 0,
+    "epub_latin_word_count": 3459,
+    "epub_tagged_latin_word_count": 1154,
     "pdf_latin_unique_words": 828,
-    "epub_latin_unique_words": 843,
-    "epub_tagged_unique_words": 0,
-    "latin_word_coverage_ratio": 0.9971,
-    "latin_tagging_ratio": 0.0,
+    "epub_latin_unique_words": 844,
+    "epub_tagged_unique_words": 554,
+    "latin_word_coverage_ratio": 0.9974,
+    "latin_tagging_ratio": 0.3336,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
         "word": "nor",
         "epub": 352,
-        "tagged": 0
+        "tagged": 5
       },
       {
         "word": "jesus",
         "epub": 254,
-        "tagged": 0
+        "tagged": 7
       },
       {
         "word": "yea",
         "epub": 97,
-        "tagged": 0
+        "tagged": 1
       },
       {
         "word": "immediate",
         "epub": 97,
-        "tagged": 0
+        "tagged": 2
       },
       {
         "word": "distinct",
         "epub": 86,
-        "tagged": 0
+        "tagged": 1
       },
       {
         "word": "thereunto",
         "epub": 73,
-        "tagged": 0
+        "tagged": 3
       },
       {
         "word": "mere",
@@ -1610,12 +924,7 @@
       {
         "word": "hereunto",
         "epub": 63,
-        "tagged": 0
-      },
-      {
-        "word": "et",
-        "epub": 62,
-        "tagged": 0
+        "tagged": 2
       },
       {
         "word": "whereas",
@@ -1625,22 +934,17 @@
       {
         "word": "adam",
         "epub": 52,
-        "tagged": 0
+        "tagged": 3
       },
       {
         "word": "endeavor",
         "epub": 48,
-        "tagged": 0
-      },
-      {
-        "word": "est",
-        "epub": 47,
-        "tagged": 0
+        "tagged": 2
       },
       {
         "word": "mediator",
         "epub": 45,
-        "tagged": 0
+        "tagged": 1
       },
       {
         "word": "whereunto",
@@ -1648,18 +952,8 @@
         "tagged": 0
       },
       {
-        "word": "non",
-        "epub": 37,
-        "tagged": 0
-      },
-      {
         "word": "incarnate",
         "epub": 36,
-        "tagged": 0
-      },
-      {
-        "word": "de",
-        "epub": 34,
         "tagged": 0
       },
       {
@@ -1680,7 +974,7 @@
       {
         "word": "communicate",
         "epub": 26,
-        "tagged": 0
+        "tagged": 1
       },
       {
         "word": "estate",
@@ -1688,33 +982,108 @@
         "tagged": 0
       },
       {
-        "word": "quod",
-        "epub": 24,
+        "word": "sum",
+        "epub": 18,
         "tagged": 0
       },
       {
-        "word": "dei",
-        "epub": 23,
+        "word": "sincere",
+        "epub": 21,
+        "tagged": 3
+      },
+      {
+        "word": "dishonor",
+        "epub": 18,
         "tagged": 0
+      },
+      {
+        "word": "intimate",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
+        "word": "whereinto",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
+        "word": "contemplate",
+        "epub": 16,
+        "tagged": 1
       }
     ]
   },
   "latin_clause_fidelity": {
     "latin_clauses_checked": 149,
-    "missing_latin_clause_count": 1,
-    "missing_latin_clauses": [
-      {
-        "page": 51,
-        "word_count": 4,
-        "sample": "de ecclesiastica dogmatibus cap"
-      }
-    ]
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 0,
-    "translated_latin_runs_count": 0,
-    "latin_translation_ratio": 1.0,
-    "untranslated_latin_samples": []
+    "tagged_latin_runs_count": 290,
+    "translated_latin_runs_count": 160,
+    "latin_translation_ratio": 0.5517,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "bias — in an inveterate"
+      },
+      {
+        "phrase": "quarto (Amsterdam"
+      },
+      {
+        "phrase": "Clarae, Thomas"
+      },
+      {
+        "phrase": "operis absentibus"
+      },
+      {
+        "phrase": "Salus Electorum Sauguis"
+      },
+      {
+        "phrase": "quam conspici"
+      },
+      {
+        "phrase": "contemplate a separate"
+      },
+      {
+        "phrase": "Quod si super unum illum Petrum tantum"
+      },
+      {
+        "phrase": "totam eclesiam"
+      },
+      {
+        "phrase": "quid dicturus"
+      },
+      {
+        "phrase": "et apostolorum"
+      },
+      {
+        "phrase": "Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum"
+      },
+      {
+        "phrase": "Unum hoc est"
+      },
+      {
+        "phrase": "fundamentum, una haec est"
+      },
+      {
+        "phrase": "fidei Petra, Petri"
+      },
+      {
+        "phrase": "super meipsum filium Dei vivi, aedificabo ecclesiam meam. Super me aedificabo te, non me super te:\" †  De Verbis"
+      },
+      {
+        "phrase": "predecessor Athanasius"
+      },
+      {
+        "phrase": "Scrutator majestatis absorbetur a gloria"
+      },
+      {
+        "phrase": "Quomodo igitur"
+      },
+      {
+        "phrase": "sciri a quoquam"
+      }
+    ]
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,

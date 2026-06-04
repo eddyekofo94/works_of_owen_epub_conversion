@@ -1,7 +1,7 @@
 {
   "volume": 1,
-  "total_words_audited": 243048,
-  "total_anomalies_count": 45,
+  "total_words_audited": 243045,
+  "total_anomalies_count": 26,
   "anomalies": {
     "Hyphenation Anomalies": [
       {
@@ -113,65 +113,11 @@
     ],
     "Punctuation Spacing Blemishes": [
       {
-        "target": "first  .",
+        "target": "first .",
         "description": "Spaced period (space before period)",
         "chapter": "General Preface.",
         "contexts": [
-          "... ion in the numerals \u2014 I, 1, (1), [1], first, and first . It would have been an advantage if we could have ..."
-        ]
-      },
-      {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ",
-        "contexts": [
-          "... benefit and comfort of divine light or truth \u2014 1st , The fullness of its revelation; 2ndly , The infa ...",
-          "... rance in the faith of it, or obedience unto it. 1st , Full it must be, to free us from all attempt of f ..."
-        ]
-      },
-      {
-        "target": "2ndly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ",
-        "contexts": [
-          "... truth \u2014 1st , The fullness of its revelation; 2ndly , The infallibility of it; and, 3rdly , The author ...",
-          "... either does nor can know, because not revealed. 2ndly , And it must be infallible also. For this divine t ..."
-        ]
-      },
-      {
-        "target": "3rdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ",
-        "contexts": [
-          "... velation; 2ndly , The infallibility of it; and, 3rdly , The authority from whence it does proceed. If ei ...",
-          "... with him as to instruction in the mind of God. 3rdly , It was requisite unto the office of this great pr ..."
-        ]
-      },
-      {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 9 - Honor Due to the Person of Christ",
-        "contexts": [
-          "... ather, and jointly with him. And he is proposed, 1st , As having fulfilled the work of his mediation in ...",
-          "... ration is described to consist in three things. 1st , Solemn prostration: \"And the four living creature ..."
-        ]
-      },
-      {
-        "target": "2ndly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 9 - Honor Due to the Person of Christ",
-        "contexts": [
-          "... his incarnation and oblation \u2014 as a Lamb slain. 2ndly , In his glorious exaltation \u2014 \"in the midst of the ...",
-          "... ever.\" So also is it described, chap. 4:10, 11. 2ndly , In the ascription of all divine honor and glory, ...",
-          "... ercised unto this worship of him here on earth. 2ndly , Invocation is the second general branch of divine ..."
-        ]
-      },
-      {
-        "target": "3rdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 9 - Honor Due to the Person of Christ",
-        "contexts": [
-          "... glory, as is at large expressed, chap. 5:11-13. 3rdly , In the way of expressing the design of their soul ..."
+          "... tion in the numerals \u2014 I, 1, (1), [1], first, and first . It would have been an advantage if we could have ..."
         ]
       },
       {
@@ -179,56 +125,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 9 - Honor Due to the Person of Christ",
         "contexts": [
-          "... ed in the duty of invocation or prayer unto him? Ans . 1. There is no precedent nor example of any suc ..."
-        ]
-      },
-      {
-        "target": "2ndly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 10 - the Principle of the Assignation of Divine Honor Unto the Person of Christ",
-        "contexts": [
-          "... ve them all unto us, or that prayer is in vain. 2ndly , Again, that we are baptized into the name of Jesu ...",
-          "... aith of them who believe not his divine person. 2ndly , There is no derogation from the honor and glory o ..."
-        ]
-      },
-      {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 10 - the Principle of the Assignation of Divine Honor Unto the Person of Christ",
-        "contexts": [
-          "... he formal reason and only ground of divine faith 1st , That the Lord Christ is not the absolute and ulti ..."
-        ]
-      },
-      {
-        "target": "3rdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 10 - the Principle of the Assignation of Divine Honor Unto the Person of Christ",
-        "contexts": [
-          "... h the Son, he therein honoreth the Father also. 3rdly , Hence it appears what is that especial acting of ..."
-        ]
-      },
-      {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 15 - Conformity Unto Christ",
-        "contexts": [
-          "... these things belongs unto these three heads: \u2014 1st , A declaration that all these things are wrought i ..."
-        ]
-      },
-      {
-        "target": "2ndly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 15 - Conformity Unto Christ",
-        "contexts": [
-          "... to give repentance and the forgiveness of sins. 2ndly , A declaration of the way and manner how believers ..."
-        ]
-      },
-      {
-        "target": "3rdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 15 - Conformity Unto Christ",
-        "contexts": [
-          "... ecome the fullness of him who fills all in all. 3rdly , A conviction that a real interest in, and partici ..."
+          "... ed in the duty of invocation or prayer unto him? Ans . 1. There is no precedent nor example of any such ..."
         ]
       },
       {
@@ -240,92 +137,33 @@
         ]
       },
       {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 18 - the Nature of the Person of Christ",
-        "contexts": [
-          "... e seems to be an agreement between them. For, \u2014 1st , The soul and body are so united as to constitute ..."
-        ]
-      },
-      {
-        "target": "2ndly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 18 - the Nature of the Person of Christ",
-        "contexts": [
-          "... same perfect, complete nature after this union. 2ndly , The union of the soul and body doth constitute th ..."
-        ]
-      },
-      {
-        "target": "3rdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 18 - the Nature of the Person of Christ",
-        "contexts": [
-          "... tself to be its own, into personal subsistence. 3rdly , Soul and body are united by an external efficient ..."
-        ]
-      },
-      {
-        "target": "4thly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 18 - the Nature of the Person of Christ",
-        "contexts": [
-          "... wards the human which we have before described. 4thly , Neither soul nor body have any personal subsisten ..."
-        ]
-      },
-      {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 20 - the Exercise of the Mediatory Office of Christ in Heaven",
-        "contexts": [
-          "... son and thing in its proper place and exercise. 1st , Heaven itself is a temple, a sanctuary, made so b ...",
-          "... t shall be far better, Philippians 1:23. For, \u2014 1st , although service here below shall cease, and be g ...",
-          "... e earth, and that, among others, in two things. 1st , For the encouragement of their faith. God could, ..."
-        ]
-      },
-      {
-        "target": "2ndly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 20 - the Exercise of the Mediatory Office of Christ in Heaven",
-        "contexts": [
-          "... f Christ in the tabernacle of his human nature. 2ndly , God is on the throne of grace, gloriously exalted ...",
-          "... ice itself, it is an inconceivable advancement. 2ndly , The enjoyment of Christ in and by the ordinances ...",
-          "... th himself unto our faith, Revelation 1:17, 18. 2ndly , That our faith may be guided and directed in all ..."
-        ]
-      },
-      {
-        "target": "3rdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 20 - the Exercise of the Mediatory Office of Christ in Heaven",
-        "contexts": [
-          "... mmunications of grace and mercy through Christ. 3rdly , The Lord Christ, in his human nature, is before t ...",
-          "... d himself, and will manifest himself in Christ. 3rdly , The person of Christ, and therein his human natur ..."
-        ]
-      },
-      {
-        "target": "4thly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 20 - the Exercise of the Mediatory Office of Christ in Heaven",
-        "contexts": [
-          "... atory office and power in behalf of the church. 4thly , All the holy angels, in the various orders and de ..."
-        ]
-      },
-      {
-        "target": "5thly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 20 - the Exercise of the Mediatory Office of Christ in Heaven",
-        "contexts": [
-          "... tration, are about the throne continually. So \u2014 5thly , Are the spirits of just men made perfect, in the ..."
-        ]
-      },
-      {
         "target": "2 .",
         "description": "Spaced period (space before period)",
         "chapter": "The Lesser Catechism",
         "contexts": [
-          "... repentance also, and holiness. \u2014 Chapter 20. Q. 2 . What is repentance? A. A forsaking of all sin, ..."
+          "... repentance also, and holiness. \u2014 Chapter 20. Q. 2 . What is repentance? A. A forsaking of all sin, w ..."
         ]
       }
     ],
     "OCR & Bracket Residues": [
+      {
+        "target": "h in",
+        "description": "Split word anomaly (isolated letter 'h')",
+        "chapter": "General Preface.",
+        "contexts": [
+          "... itical authors of Great Britain; and there is truth in the assertion, that the philosopher \"ploughed wit ...",
+          "... with peculiar closeness of application; stripping h in of his false dependencies, and exhibiting before ...",
+          "... of Dr Wright, a minister of the Established Church in Stirling. In the list of subscribers to a folio v ..."
+        ]
+      },
+      {
+        "target": "d imaginem",
+        "description": "Split word anomaly (isolated letter 'd')",
+        "chapter": "Preface",
+        "contexts": [
+          "... E]] \"Imago, [id est, Verbum Dei, ] ad eum qui est d imaginem, [hoc est, hominem, ] venit, et quaerit imago eum ..."
+        ]
+      },
       {
         "target": "fulfil1ing",
         "description": "Spliced alphanumeric word (contains inline numbers)",

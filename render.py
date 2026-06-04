@@ -1219,14 +1219,7 @@ def _repair_flat_list_continuation_splits(text: str) -> str:
     return '\n\n'.join(result)
 
 
-
-_TRANSITIONAL_WORD_RE = re.compile(
-    r'^(Therefore|Wherefore|Hence|Again|Moreover|Accordingly|Furthermore|'
-    r'Nevertheless|Notwithstanding|Howbeit|Howsoever|Whence|Hereupon|'
-    r'Herein|Hereby|Hereof|Hereto|Hereunto|Herewith|Therein|Thereby|'
-    r'Thereof|Thereto|Thereunto|Therewith|But|So|Now|As|For)[,;.—\s]*$',
-    re.I,
-)
+from scripts.markdown_parser import _TRANSITIONAL_WORD_RE
 _SCHOLASTIC_CONTINUATION_RE = re.compile(
     r'^\d{1,3}\.\s+(?:q|a|p|pp|vol|sec|lib|cap|chap|serm|art|dist|part|num)\.',
     re.I,
@@ -3897,43 +3890,10 @@ def render_volume(vol_num: int, overrides: dict = None,
             all_translation_notes.extend(local_notes)
 
         # Dynamic Glossary Notes scanning (First Occurrence Only in the book)
-        from scripts.technical_glossary import TECHNICAL_TERMS
-        local_glossary = []
-        glossary_counter = 0
-
-        # Sort terms so longer ones match first
-        sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
-        for term, definition in sorted_terms:
-            if term in seen_glossary_terms:
-                continue
-
-            # We use a single substitution pass so it only replaces the FIRST occurrence
-            pattern = re.compile(
-                rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
-                rf'({re.escape(term)}(?:s|es)?)'
-                rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
-                rf'((?:</[a-zA-Z]+>)*)'
-                rf'([\.,\?!:;\'"“”’]*)',
-                re.I
-            )
-            def replace_glossary(m):
-                nonlocal glossary_counter
-                glossary_counter += 1
-                matched_str = m.group(1)
-                trailing_tags = m.group(2)
-                trailing_punc = m.group(3)
-                # Section sign symbol (§) for glossary notes (Rule 11)
-                fn_link = f'<sup><a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}">§</a></sup>'
-                local_glossary.append({
-                    'id': f"fngloss_{cid}_{glossary_counter}",
-                    'term': term,
-                    'definition': definition
-                })
-                return f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}"
-
-            body_html, replaced = replace_first_outside_tags_and_comments(body_html, pattern, replace_glossary)
-            if replaced:
-                seen_glossary_terms.add(term)
+        from scripts.technical_glossary import apply_glossary_footnotes
+        body_html, local_glossary, seen_glossary_terms = apply_glossary_footnotes(
+            body_html, cid, seen_glossary_terms, replace_first_outside_tags_and_comments
+        )
 
         if local_glossary:
             all_glossary_notes.extend(local_glossary)
