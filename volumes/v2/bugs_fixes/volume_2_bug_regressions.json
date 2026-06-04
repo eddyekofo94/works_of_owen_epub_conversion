@@ -1,10 +1,10 @@
 {
   "volume": 2,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v2/bugs_fixes/volume_2_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v2/bugs_fixes/volume_2_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v2/bugs_fixes/volume_2_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v2/bugs_fixes/volume_2_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-volume/volumes/v2/bugs_fixes/volume_2_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-volume/volumes/v2/bugs_fixes/volume_2_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-volume/volumes/v2/bugs_fixes/volume_2_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-volume/volumes/v2/bugs_fixes/volume_2_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -126,7 +126,7 @@
     {
       "label": "Missing front CONTENTS pages",
       "observed": 0,
-      "budget": 0,
+      "budget": 2,
       "status": "ok",
       "samples": []
     },

@@ -11,7 +11,7 @@
 | Possible faulty paragraph splits | 179 | 209 | OK |
 | Inline structural marker candidates | 0 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 0 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |

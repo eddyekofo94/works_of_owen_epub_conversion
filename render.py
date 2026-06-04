@@ -962,44 +962,26 @@ def replace_first_outside_tags_and_comments(body_html: str, pattern: re.Pattern,
     return body_html, False
 
 
-# ================================================================
-# STAGE 2 ENTRY POINT — render_volume()
-# ================================================================
+@dataclass
+class _Fn:
+    fnum: int
+    text: str
+    source: str = 'pdf'
+    pages: list = field(default_factory=list)
 
 
-def render_volume(vol_num: int, overrides: dict = None,
-                  intermediate: dict = None, progress_callback=None) -> str:
-    """Run Stage 2 for a single Owen volume: JSON intermediate → EPUB3.
-
-    Reads volumes/vN/intermediate/volume_N.json (or uses supplied dict),
-    assembles the EPUB3, and writes volumes/vN/output/volume_N.epub.
-    Returns the path to the written EPUB.
-
-    overrides: optional per-volume config additions (see volumes/vN/convert.py).
-    intermediate: if supplied, use this dict instead of reading from disk.
-    """
-    # Import here to avoid circular import at module level
-    from shared import (
-        merge_volume_config,
-        EPUB_STYLESHEET, generate_font_styles, select_primary_font,
-        SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES,
-    )
-    try:
-        from ebooklib import epub
-    except ImportError:
-        import sys; sys.exit("Error: ebooklib not installed.")
-
-    config = merge_volume_config(vol_num, overrides)
-
+def load_volume_intermediate(vol_num: int, config: dict, intermediate: dict = None) -> tuple[dict, dict]:
+    """Load and repair volume intermediate representation, reconstruct footnotes."""
+    from scripts.analysis_parser import _repair_analysis_spillover_chapters
+    from shared import _repair_owen_ocr_errors
+    
     vol_dir = _RENDER_DIR / 'volumes' / f'v{vol_num}'
     json_path = vol_dir / 'intermediate' / f'volume_{vol_num}.json'
-    out_dir = vol_dir / 'output'
-    out_dir.mkdir(parents=True, exist_ok=True)
-    epub_path = str(out_dir / f'volume_{vol_num}.epub')
-
+    
     if intermediate is None:
         with open(json_path, encoding='utf-8') as f:
             intermediate = json.load(f)
+            
     intermediate = _repair_analysis_spillover_chapters(intermediate)
     for ch in intermediate.get('chapters', []):
         if 'title' in ch:
@@ -1008,26 +990,20 @@ def render_volume(vol_num: int, overrides: dict = None,
     print(f'[render] Volume {vol_num}: {len(intermediate["chapters"])} chapters, '
           f'{len(intermediate["footnotes"])} footnotes')
 
-    # Reconstruct Footnote-like objects from JSON
-    from dataclasses import dataclass as _dc, field as _field
-
-    @_dc
-    class _Fn:
-        fnum: int
-        text: str
-        source: str = 'pdf'
-        pages: list = _field(default_factory=list)
-
     footnote_map = {
         int(k): _Fn(fnum=int(k), text=v['text'], source=v['source'])
         for k, v in intermediate['footnotes'].items()
     }
+    
+    return intermediate, footnote_map
 
-    # ── EPUB book setup ──────────────────────────────────────────
+
+def initialize_epub_book(vol_num: int, title: str, config: dict) -> tuple[epub.EpubBook, str]:
+    """Initialize EpubBook and set basic metadata."""
     book = epub.EpubBook()
     uid = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'john-owen-works-vol-{vol_num}'))
     book.set_identifier(uid)
-    book.set_title(intermediate['title'])
+    book.set_title(title)
     book.set_language('en')
     book.add_author(config.get('authors', ['John Owen'])[0])
     for ed in config.get('editors', []):
@@ -1035,8 +1011,14 @@ def render_volume(vol_num: int, overrides: dict = None,
                           {'role': 'edt', 'id': 'editor'})
     book.add_metadata('DC', 'publisher', config.get('publisher', ''))
     book.add_metadata('DC', 'rights', 'Public Domain')
+    return book, uid
 
-    # ── CSS and fonts ────────────────────────────────────────────
+
+def embed_fonts_and_stylesheet(book: epub.EpubBook, vol_num: int, config: dict) -> tuple[epub.EpubItem, str]:
+    """Embed primary and supplemental fonts, and add the main stylesheet to the book."""
+    from shared import EPUB_STYLESHEET, generate_font_styles, select_primary_font
+    from shared import SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES
+    
     body_font_name = config.get('body_font', 'SBL_BLit')
     primary_font = select_primary_font(body_font_name)
     font_css = generate_font_styles(primary_font['name'], primary_font['files'])
@@ -1094,8 +1076,12 @@ def render_volume(vol_num: int, overrides: dict = None,
                     content=open(_src, 'rb').read(),
                 ))
                 font_fnames.add(_fbase)
+                
+    return style_item, primary_font['name']
 
-    # ── Cover ────────────────────────────────────────────────────
+
+def add_cover_and_frontispiece(book: epub.EpubBook, vol_num: int, style_item: epub.EpubItem) -> tuple[Optional[epub.EpubHtml], Optional[epub.EpubItem], Optional[epub.EpubHtml]]:
+    """Find, read, and add cover, frontispiece portrait, and emblem seal to the book."""
     cover_path = find_cover(vol_num)
     cover_page = None
     cover_item = None
@@ -1148,13 +1134,27 @@ def render_volume(vol_num: int, overrides: dict = None,
                 content=f.read()
             )
         book.add_item(emblem_item)
+        
+    return cover_page, cover_item, frontispiece_item
 
-    # ── PDF-extracted front matter (title pages, TOC) ────────────
+
+def build_and_add_front_matter(book: epub.EpubBook, vol_num: int, config: dict, intermediate: dict, primary_font_name: str, style_item: epub.EpubItem) -> list[epub.EpubHtml]:
+    """Polishes and adds front matter pages, publication colophon, and guides."""
+    from scripts.epub_pages import (
+        _polish_contents_page_html,
+        generate_copyright_xhtml
+    )
+    from scripts.epub_builder import (
+        _polish_volume_title_page_html,
+        _polish_treatise_title_page_html
+    )
+    
     front_matter_epub_items = []
     _last_fm_title = None
     copyright_added = False
     added_structural_guide = False
     added_abbreviations_guide = False
+    
     for fm in intermediate.get('front_matter_items', []):
         if fm['title'] == _last_fm_title:
             continue
@@ -1193,7 +1193,7 @@ def render_volume(vol_num: int, overrides: dict = None,
         if fm.get('type') == 'title_page' and not copyright_added:
             cop_title = 'Publication Metadata'
             cop_fn = 'colophon.xhtml'
-            cop_html = generate_copyright_xhtml(vol_num, config, primary_font['name'])
+            cop_html = generate_copyright_xhtml(vol_num, config, primary_font_name)
             cop_item = epub.EpubHtml(
                 title=cop_title, file_name=cop_fn, lang='en',
             )
@@ -1261,7 +1261,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     if not copyright_added:
         cop_title = 'Publication Metadata'
         cop_fn = 'colophon.xhtml'
-        cop_html = generate_copyright_xhtml(vol_num, config, primary_font['name'])
+        cop_html = generate_copyright_xhtml(vol_num, config, primary_font_name)
         cop_item = epub.EpubHtml(
             title=cop_title, file_name=cop_fn, lang='en',
         )
@@ -1272,6 +1272,68 @@ def render_volume(vol_num: int, overrides: dict = None,
         book.add_item(cop_item)
         front_matter_epub_items.append(cop_item)
         copyright_added = True
+
+    return front_matter_epub_items
+
+
+def finalize_epub_archive(book: epub.EpubBook, epub_path: str):
+    """Write, repackage canonically, and inject options into the EPUB archive."""
+    import tempfile as _tempfile
+    import zipfile as _zf
+    # ebooklib writes a valid EPUB but not in canonical form (mimetype must be
+    # first and uncompressed). Write to a temp path, extract, repackage.
+    temp_epub = epub_path + '.tmp_build'
+    epub.write_epub(temp_epub, book)
+    with _tempfile.TemporaryDirectory() as tmp:
+        with _zf.ZipFile(temp_epub, 'r') as z:
+            z.extractall(tmp)
+        _add_cover_manifest_properties(tmp)
+        repackage_canonical(epub_path, tmp)
+    if os.path.exists(temp_epub):
+        try:
+            os.remove(temp_epub)
+        except OSError:
+            pass  # sandbox/read-only mount — stale .tmp_build is harmless
+    _inject_apple_books_options(epub_path)
+    print(f'[render] ✓ EPUB saved: {epub_path}')
+
+
+def render_volume(vol_num: int, overrides: dict = None,
+                  intermediate: dict = None, progress_callback=None) -> str:
+    """Run Stage 2 for a single Owen volume: JSON intermediate → EPUB3.
+
+    Reads volumes/vN/intermediate/volume_N.json (or uses supplied dict),
+    assembles the EPUB3, and writes volumes/vN/output/volume_N.epub.
+    Returns the path to the written EPUB.
+
+    overrides: optional per-volume config additions (see volumes/vN/convert.py).
+    intermediate: if supplied, use this dict instead of reading from disk.
+    """
+    from shared import merge_volume_config
+    
+    config = merge_volume_config(vol_num, overrides)
+
+    vol_dir = _RENDER_DIR / 'volumes' / f'v{vol_num}'
+    out_dir = vol_dir / 'output'
+    out_dir.mkdir(parents=True, exist_ok=True)
+    epub_path = str(out_dir / f'volume_{vol_num}.epub')
+
+    # 1. Load and repair intermediate data
+    intermediate, footnote_map = load_volume_intermediate(vol_num, config, intermediate)
+
+    # 2. EPUB book setup
+    book, uid = initialize_epub_book(vol_num, intermediate['title'], config)
+
+    # 3. CSS and fonts
+    style_item, primary_font_name = embed_fonts_and_stylesheet(book, vol_num, config)
+
+    # 4. Cover and frontispiece
+    cover_page, cover_item, frontispiece_item = add_cover_and_frontispiece(book, vol_num, style_item)
+
+    # 5. PDF-extracted front matter (title pages, TOC)
+    front_matter_epub_items = build_and_add_front_matter(
+        book, vol_num, config, intermediate, primary_font_name, style_item
+    )
 
     # ── Chapters ─────────────────────────────────────────────────
     toc_entries = []
@@ -1529,7 +1591,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 seen_body_translations.add(phrase)
                 dirty = True
 
-        # Call patristic citation resolution fallback while placeholders are active (prevents matching inside translated phrases)
+        # Call patristic citation resolution fallback while placeholders are active (prevents matching inline translated phrases)
         body_html, citation_notes, trans_counter = expand_inline_citations(
             body_html,
             cid=cid,
@@ -1681,24 +1743,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     book.spine = spine
 
     # ── Write and repackage ──────────────────────────────────────
-    import tempfile as _tempfile
-    import zipfile as _zf
-    # ebooklib writes a valid EPUB but not in canonical form (mimetype must be
-    # first and uncompressed). Write to a temp path, extract, repackage.
-    temp_epub = epub_path + '.tmp_build'
-    epub.write_epub(temp_epub, book)
-    with _tempfile.TemporaryDirectory() as tmp:
-        with _zf.ZipFile(temp_epub, 'r') as z:
-            z.extractall(tmp)
-        _add_cover_manifest_properties(tmp)
-        repackage_canonical(epub_path, tmp)
-    if os.path.exists(temp_epub):
-        try:
-            os.remove(temp_epub)
-        except OSError:
-            pass  # sandbox/read-only mount — stale .tmp_build is harmless
-    _inject_apple_books_options(epub_path)
-    print(f'[render] ✓ EPUB saved: {epub_path}')
+    finalize_epub_archive(book, epub_path)
     return epub_path
 
 
