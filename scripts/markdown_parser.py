@@ -91,7 +91,6 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         _looks_like_summary_continuation,
         _merge_reference_continuation_paragraphs,
         _polish_treatise_title_page_html,
-        _remove_duplicate_catechism_answer_opening,
         _repair_dangling_initial_splits,
         _repair_flat_list_continuation_splits,
         _repair_fused_word_ordinals,
@@ -103,7 +102,6 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         _repair_transitional_word_isolation,
         _repair_unbalanced_bracket_splits,
         _restore_footnote_placeholders,
-        _split_inline_catechism_questions,
         _split_leading_chapter_subtitle,
         _split_rendered_inline_structural_html,
         _split_tail_signature,
@@ -127,6 +125,10 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         _split_roman_section_opening,
         _starts_roman_outline,
         _strip_markdown_heading_marker,
+    )
+    from scripts.catechism_parser import (
+        _remove_duplicate_catechism_answer_opening,
+        _split_inline_catechism_questions,
     )
     """
     Convert paragraph-healed text to clean XHTML.
