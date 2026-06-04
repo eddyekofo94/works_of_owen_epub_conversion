@@ -14,7 +14,7 @@ We will extract pure text-processing functions first (like markdown conversion a
 | **Phase 3** | `render-refactor-glossary` | `scripts/technical_glossary.py` | Encapsulate glossary text-scanning loop into `apply_glossary_footnotes()`, add complex nested dictionaries with regex rules. | [x] | [x] | ✅ Complete |
 | **Phase 4** | `render-refactor-epub-pages`| `scripts/epub_pages.py` | `format_treatise_title_page`, `_polish_contents_page_html`, `generate_copyright_xhtml`, `format_title_page`, `build_toc_page_xhtml` | [x] | [x] | ✅ Complete |
 | **Phase 5** | `render-refactor-scholastic`| `scripts/scholastic_parser.py`, `scripts/polish.py` | `apply_scholastic_anchor_protocol`, `_nest_scholastic_in_divs`, `_apply_premium_signatures` | [x] | [x] | ✅ Complete |
-| **Phase 6** | `render-refactor-volume` | `render.py` | `load_volume_intermediate`, `initialize_epub_book`, `embed_fonts_and_stylesheet`, `add_cover_and_frontispiece`, `build_and_add_front_matter`, `finalize_epub_archive` | [x] | [x] | IMPLEMENTED (AWAITING VALIDATION) |
+| **Phase 6** | `render-refactor-volume` | `render.py` | `load_volume_intermediate`, `initialize_epub_book`, `embed_fonts_and_stylesheet`, `add_cover_and_frontispiece`, `build_and_add_front_matter`, `finalize_epub_archive` | [x] | [x] | ✅ Complete |
 
 ---
 
