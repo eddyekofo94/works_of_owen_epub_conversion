@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from cli_utils import cyan, green
+from scripts.cli_utils import cyan, green
 
 from shared import FONT_FAMILY_MAP, merge_volume_config
 
@@ -38,7 +38,7 @@ from extract import (
     get_pages_text,
     reconstruct_paragraphs,
 )
-from progress import (
+from scripts.progress import (
     ParallelTracker,
     SequentialMode,
     Spinner,

@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from cli_utils import green, red, yellow
+from scripts.cli_utils import green, red, yellow
 
 BASELINE_PATH = ROOT / "qa" / "bug_regression_baselines.json"
 

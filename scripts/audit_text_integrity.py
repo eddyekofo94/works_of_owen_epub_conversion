@@ -1481,7 +1481,7 @@ def latin_clause_fidelity(pdf_pages: list[str], epub_text: str) -> dict[str, Any
 
 
 def latin_translation_coverage(paragraphs: list[Paragraph]) -> dict[str, Any]:
-    from translation_db import BODY_TRANSLATIONS, INLINE_TRANSLATIONS
+    from scripts.translation_db import BODY_TRANSLATIONS, INLINE_TRANSLATIONS
     trans_keys = {normalized_word_string(k) for k in list(BODY_TRANSLATIONS.keys()) + list(INLINE_TRANSLATIONS.keys())}
     
     tagged_runs = []

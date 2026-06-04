@@ -928,7 +928,7 @@ def generate_abbreviations_guide_html(vol_num: int) -> str:
 
 def apply_inline_translations(body_html: str) -> str:
     """Scan and substitute centralized inline translations in body HTML."""
-    from translation_db import INLINE_TRANSLATIONS
+    from scripts.translation_db import INLINE_TRANSLATIONS
     for phrase, trans in INLINE_TRANSLATIONS.items():
         words = phrase.split()
         if not words:
@@ -1403,8 +1403,8 @@ def render_volume(vol_num: int, overrides: dict = None,
         body_html = apply_inline_translations(body_html)
 
         # Dynamic translation notes scanning and substitution
-        from translation_db import BODY_TRANSLATIONS
-        from patristic_refs import expand_inline_citations
+        from scripts.translation_db import BODY_TRANSLATIONS
+        from scripts.patristic_refs import expand_inline_citations
         import html
         sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
         local_notes = []

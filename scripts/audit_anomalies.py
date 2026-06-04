@@ -283,8 +283,8 @@ def check_capitalization(text: str) -> list[tuple[str, str]]:
 def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
     """Scan for patristic/classical citations and flag if they cannot be resolved."""
     # Local imports to avoid circular dependency issues
-    from patristic_refs import PATRISTIC_CITATION_RE, SELF_REF_PATTERNS, build_citation_note
-    from translation_db import BODY_TRANSLATIONS
+    from scripts.patristic_refs import PATRISTIC_CITATION_RE, SELF_REF_PATTERNS, build_citation_note
+    from scripts.translation_db import BODY_TRANSLATIONS
     
     anomalies = []
     for m in PATRISTIC_CITATION_RE.finditer(text):

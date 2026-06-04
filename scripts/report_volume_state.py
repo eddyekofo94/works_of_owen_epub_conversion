@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from cli_utils import bold, cyan, dim, green, magenta, red, yellow
+from scripts.cli_utils import bold, cyan, dim, green, magenta, red, yellow
 
 PYTHON = sys.executable
 OWEN_VOLUMES = list(range(1, 17))

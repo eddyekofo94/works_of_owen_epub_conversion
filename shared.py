@@ -13,7 +13,7 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
-from cli_utils import cyan, green
+from scripts.cli_utils import cyan, green
 
 GREEK_FONT_MARKERS = ('Koine',)
 HEBREW_FONT_MARKERS = ('Gideon',)
