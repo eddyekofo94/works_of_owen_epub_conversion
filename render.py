@@ -1276,7 +1276,7 @@ def build_and_add_front_matter(book: epub.EpubBook, vol_num: int, config: dict, 
     return front_matter_epub_items
 
 
-def finalize_epub_archive(book: epub.EpubBook, epub_path: str):
+def finalize_epub_archive(book: epub.EpubBook, epub_path: str) -> None:
     """Write, repackage canonically, and inject options into the EPUB archive."""
     import tempfile as _tempfile
     import zipfile as _zf
