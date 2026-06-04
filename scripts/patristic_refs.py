@@ -1183,7 +1183,7 @@ def expand_inline_citations(
 
     # Collect all matches with their positions, processing in reverse order
     # so that string insertions don't shift earlier positions.
-    from translation_db import BODY_TRANSLATIONS as _bt
+    from scripts.translation_db import BODY_TRANSLATIONS as _bt
 
     # Pre-compute which citation strings are already "owned" by BODY_TRANSLATIONS.
     # _apply_translations() resolved LONGER phrases that CONTAIN these citation
