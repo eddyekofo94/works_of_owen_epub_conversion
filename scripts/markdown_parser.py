@@ -88,19 +88,23 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         _attach_colon_introduced_list,
         _coalesce_adjacent_signatures,
         _detect_signature,
-        _looks_like_summary_continuation,
-        _merge_reference_continuation_paragraphs,
-        _polish_treatise_title_page_html,
         _restore_footnote_placeholders,
         _split_leading_chapter_subtitle,
         _split_rendered_inline_structural_html,
         _strip_footnote_placeholders,
         _strip_inline_structural_tokens,
         _trim_duplicate_reference_prefix,
-        build_endnotes_chapter,
         emphasize_structural_prefix,
         normalize_footnote_markers,
         tag_unicode_ranges,
+    )
+    from scripts.analysis_parser import (
+        _looks_like_summary_continuation,
+        _merge_reference_continuation_paragraphs,
+    )
+    from scripts.epub_builder import (
+        _polish_treatise_title_page_html,
+        build_endnotes_chapter,
     )
     from scripts.roman_parser import (
         _clean_heading_text,

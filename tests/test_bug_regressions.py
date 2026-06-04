@@ -16,14 +16,19 @@ from render import (
     markdown_to_html,
     tag_unicode_ranges,
     _polish_contents_page_html,
-    _merge_reference_continuation_paragraphs,
-    _repair_analysis_spillover_chapters,
     _merge_short_inline_lists,
     _attach_colon_introduced_list,
     _detect_signature,
     _coalesce_adjacent_signatures,
     _foreign_fragments_in_section,
     _merge_titlepage_override,
+    _join_orphaned_flat_list_marker_paragraphs,
+)
+from scripts.analysis_parser import (
+    _merge_reference_continuation_paragraphs,
+    _repair_analysis_spillover_chapters,
+    _looks_like_summary_body_start,
+    _looks_like_summary_continuation,
 )
 from scripts.paragraph_healer import _repair_transitional_word_isolation
 from shared import (
