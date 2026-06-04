@@ -5,7 +5,7 @@ from shared import *
 from shared import (
     _normalize_spaced_caps, _normalize_i_will, _normalize_scholarly_citation_artifacts,
     _repair_owen_ocr_errors, _norm_for_dedupe, _is_scripture_ref_fragment,
-    _scripture_ref_tokens, _split_inline_structural_markers, _repair_known_catechism_ghosts,
+    _scripture_ref_tokens, _split_inline_structural_markers,
     _trim_duplicate_reference_prefix
 )
 from scripts.owen_lists import *
@@ -101,7 +101,6 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         _repair_dangling_initial_splits,
         _repair_flat_list_continuation_splits,
         _repair_fused_word_ordinals,
-        _repair_known_front_matter_text,
         _repair_lowercase_continuation_splits,
         _repair_mid_sentence_blockquote_splits,
         _repair_scholastic_anchor_splits,
@@ -191,7 +190,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             )
         )
     paragraphs = expanded_paragraphs
-    paragraphs = [_repair_known_catechism_ghosts(para) for para in paragraphs]
+    # Catechism ghosts were handled in config overrides
     recent_plain = []
     roman_list_expected = None
     roman_sequence_choice = None
@@ -678,7 +677,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         content_no_refs = _strip_inline_structural_tokens(content_no_refs)
         content_no_refs = re.sub(r'\s{2,}', ' ', content_no_refs)
         content_no_refs = _remove_duplicate_catechism_answer_opening(content_no_refs)
-        content_no_refs = _repair_known_front_matter_text(content_no_refs)
+        content_no_refs = content_no_refs
         if recent_plain:
             content_no_refs = _trim_duplicate_reference_prefix(' '.join(recent_plain[-3:]), content_no_refs)
             if not content_no_refs:

@@ -493,6 +493,7 @@ OVERRIDES = {
         'open the door, I WILL come in to him, and will sup with him': 'open the door, I will come in to him, and will sup with him',
         'stripping h in of his': 'stripping him of his',
         'd imaginem': 'ad imaginem',
+        'by the mighty, effectual working of his preaching of the Word': 'by the mighty, effectual working of his Spirit in the preaching of the Word',
     },
     'regex_replacements': {
         r'\bknow\.\?': 'know?',
@@ -505,6 +506,10 @@ OVERRIDES = {
         # "...essentially in himself" ends the sentence; must close with a period.
         # Negative lookahead prevents doubling if the period is ever added to the JSON.
         r'essentially in himself(?=["”]?\s*(?:\n|$))': 'essentially in himself.',
+        
+        # Catechism ghosts damaged by AGES footnote columns
+        rf'\s*\*\*\s*\]\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)': ' ',
+        r'\bNothing at all, being merely(?P<fn>\s+\[f\d+\])?\s+in ourselves\b': r'Nothing at all, being merely wrought upon by the free grace and Spirit of God, when in ourselves\g<fn>',
     },
     'list_item_merge_cap': 40,
     'flat_list_exclude_chapters': [

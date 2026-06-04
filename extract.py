@@ -39,7 +39,7 @@ from shared import (
     MARKDOWN_STRUCTURAL_START_RE, ROMAN_LIST_TOKEN, PLAIN_CHAPTER_RE,
     INLINE_STRUCTURAL_MARKER_RE, ROMAN_HEADING_RE, ROMAN_ONLY_RE,
     _is_scripture_ref_fragment, _scripture_ref_tokens,
-    _split_inline_structural_markers, _repair_known_catechism_ghosts,
+    _split_inline_structural_markers,
     _trim_duplicate_reference_prefix, _norm_for_dedupe,
     _normalize_spaced_caps, _normalize_i_will, _repair_owen_ocr_errors,
     title_case, nav_display_title,
@@ -2748,7 +2748,7 @@ def post_process_paragraphs(paragraphs):
         para = _repair_glued_scripture_book_references(para)
         para = _remove_duplicate_scripture_tail(para)
         para = _remove_adjacent_repeated_word_runs(para)
-        para = _repair_known_catechism_ghosts(para)
+        # Catechism ghosts repaired in v1 overrides during rendering
         if not para:
             continue
 

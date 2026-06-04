@@ -58,7 +58,7 @@ from shared import (
     _normalize_scholarly_citation_artifacts, _repair_owen_ocr_errors,
     title_case, nav_display_title, _norm_for_dedupe,
     _is_scripture_ref_fragment, _scripture_ref_tokens,
-    _split_inline_structural_markers, _repair_known_catechism_ghosts,
+    _split_inline_structural_markers,
     _trim_duplicate_reference_prefix,
 )
 
@@ -696,65 +696,6 @@ def _remove_duplicate_catechism_answer_opening(text):
         previous = text
         text = pattern.sub(r'\g<label>\g<body>', text)
     return text
-
-
-def _repair_known_front_matter_text(text):
-    """Repair front-matter phrases lost when PDF footnote overlays interrupt text."""
-    text = text.replace(
-        'To object of Dr. Owen in this treatise',
-        'The object of Dr. Owen in this treatise',
-    )
-    text = text.replace(
-        'simple vague and defective',
-        'simply vague and defective',
-    )
-    text = text.replace(
-        'these apprehensions of Own.',
-        'these apprehensions of Owen.',
-    )
-    text = text.replace(
-        'The Christology of Owens has always been highly valued',
-        'The Christology of Owen has always been highly valued',
-    )
-    text = text.replace(
-        'They were among the firsts as the other treatises',
-        'They were among the first, as the other treatises',
-    )
-    text = text.replace(
-        'publish all the treatises of ushered under their auspices into public notice',
-        'publish all the treatises of Owen in volumes corresponding in size and appearance with the one ushered under their auspices into public notice',
-    )
-    return text
-
-
-def _repair_known_source_losses(text):
-    """Restore source text lost by font-aware extraction around PDF overlays."""
-    text = text.replace(
-        'This being the [f8] [f9] declare wherein he placed',
-        'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
-    )
-    text = text.replace(
-        'This being the [f9] declare wherein he placed',
-        'This being the opinion of Nestorius, [f9] revived again in the days wherein we live, I shall declare wherein he placed',
-    )
-    return text
-def _coalesce_catechism_paragraphs(paragraphs):
-    """Merge scripture reference paragraphs into the preceding Catechism answer."""
-    if not paragraphs:
-        return []
-    out = []
-    for para in paragraphs:
-        stripped = para.strip()
-        # If this paragraph looks like a bare scripture proof list and the 
-        # previous paragraph was an Answer, merge them.
-        # Allow leading digits/item markers (Issue 26)
-        is_proof = re.match(rf'^(?:\d{{1,3}}\.?\s+)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', stripped, re.I)
-        if is_proof and out and re.match(r'^(?:\*\*)?(?:A\.|Ans\.)', out[-1].strip(), re.I):
-            # Join with a space (Issue 16)
-            out[-1] = out[-1].rstrip() + " " + stripped
-        else:
-            out.append(para)
-    return out
 
 
 def _strip_inline_structural_tokens(text):

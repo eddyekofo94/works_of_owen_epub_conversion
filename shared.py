@@ -1723,32 +1723,6 @@ def _split_inline_structural_markers(para, allow_bare_a=False):
     return pieces
 
 
-def _repair_known_catechism_ghosts(text):
-    """Repair source-confirmed catechism phrases damaged by AGES footnote columns."""
-    text = re.sub(
-        rf'\s*\*\*\s*\]\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)',
-        ' ',
-        text,
-        flags=re.I,
-    )
-    text = re.sub(
-        r'\bby the mighty, effectual working of his preaching of the Word\b',
-        'by the mighty, effectual working of his Spirit in the preaching of the Word',
-        text,
-        flags=re.I,
-    )
-    text = re.sub(
-        r'\bNothing at all, being merely(?P<fn>\s+\[f\d+\])?\s+in ourselves\b',
-        lambda match: (
-            'Nothing at all, being merely wrought upon by the free grace '
-            f'and Spirit of God, when in ourselves{match.group("fn") or ""}'
-        ),
-        text,
-        flags=re.I,
-    )
-    return text
-
-
 def _trim_duplicate_reference_prefix(prev, current):
     """Drop a leading scripture-reference run when the same refs just appeared."""
     if not prev or not current:
