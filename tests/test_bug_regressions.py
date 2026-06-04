@@ -22,10 +22,10 @@ from render import (
     _attach_colon_introduced_list,
     _detect_signature,
     _coalesce_adjacent_signatures,
-    _repair_transitional_word_isolation,
     _foreign_fragments_in_section,
     _merge_titlepage_override,
 )
+from scripts.paragraph_healer import _repair_transitional_word_isolation
 from shared import (
     EPUB_STYLESHEET,
     EPUB3_FONT_STYLES,
@@ -2428,7 +2428,7 @@ def test_closed_quote_ending_before_blockquote_not_merged():
 def test_render_repair_mid_sentence_blockquote_strips_marker():
     """The render-time repair strips [[BLOCKQUOTE]] and merges content as plain
     prose when the previous paragraph ends mid-sentence (v1 ch9 pattern)."""
-    from render import _repair_mid_sentence_blockquote_splits
+    from scripts.paragraph_healer import _repair_mid_sentence_blockquote_splits
     raw = (
         "when he dwelt among them in the days of his flesh. They saw\n\n"
         '[[BLOCKQUOTE]] "his glory, the glory as of the only-begotten of the Father," John 1:14.\n\n'
@@ -2444,7 +2444,7 @@ def test_render_repair_mid_sentence_blockquote_strips_marker():
 
 def test_render_repair_leaves_comma_intro_untouched():
     """Comma-ending intro ('saith God,') before [[BLOCKQUOTE]] must NOT merge."""
-    from render import _repair_mid_sentence_blockquote_splits
+    from scripts.paragraph_healer import _repair_mid_sentence_blockquote_splits
     raw = (
         'But this I will do, saith God,\n\n'
         '[[BLOCKQUOTE]] "I will make my glory pass before thee."\n\n'
