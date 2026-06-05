@@ -1,18 +1,10 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
-  "generated_at": "2026-05-30T07:55:02.261064+00:00",
-  "status": "fail",
-  "error_count": 1,
+  "epub": "volumes/v5/output/volume_5.epub",
+  "generated_at": "2026-06-05T00:01:42.318103+00:00",
+  "status": "warn",
+  "error_count": 0,
   "warning_count": 1,
-  "errors": [
-    {
-      "code": "noteref_targets_missing",
-      "message": "Some noteref targets do not have matching endnote anchors",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn4"
-      ]
-    }
-  ],
+  "errors": [],
   "warnings": [
     {
       "code": "repeated_phrases",
@@ -21,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 66,
-    "epub_size_bytes": 5272371,
+    "file_count": 75,
+    "epub_size_bytes": 8147907,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -31,13 +23,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 57,
-    "spine_count": 38,
-    "xhtml_count": 39,
+    "manifest_count": 66,
+    "spine_count": 40,
+    "xhtml_count": 41,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 20,
     "language": {
       "greek_chars": 6350,
       "greek_untagged_chars": 0,
@@ -48,12 +40,10 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 1,
-      "unique_noteref_targets": 1,
-      "endnote_anchor_count": 0,
-      "missing_endnote_targets": [
-        "EPUB/endnotes.xhtml#fn4"
-      ],
+      "noteref_count": 175,
+      "unique_noteref_targets": 175,
+      "endnote_anchor_count": 175,
+      "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
     "content_scan": {
@@ -67,7 +57,7 @@
       "repeated_phrase_count": 3,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 1,
+      "chapter_heading_in_paragraph_files": 0,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -79,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 9,
+      "lowercase_paragraph_start_files": 8,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -113,12 +103,7 @@
         "missing_chapter_initialization": [],
         "unprocessed_ages_marker": [],
         "page_reference_split": [],
-        "chapter_heading_in_paragraph": [
-          {
-            "file": "EPUB/contents_2.xhtml",
-            "text": "CHAPTER 1"
-          }
-        ],
+        "chapter_heading_in_paragraph": [],
         "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
         "fragmented_hebrew_span_run": [],
@@ -150,11 +135,11 @@
           },
           {
             "file": "EPUB/ch012.xhtml",
-            "text": "and also Serm. 16 \"Caput nostrum Dominus Jesus Christus omnia in se corporis sui"
+            "text": "and also Serm. 16"
           },
           {
             "file": "EPUB/ch022.xhtml",
-            "text": "injustus\", 1 Peter 3:18. \"Quod si ergo justi effecti sumus per vitam illius, caus"
+            "text": "injustus\", 1 Peter 3:18. \""
           },
           {
             "file": "EPUB/ch030.xhtml",
@@ -167,10 +152,6 @@
           {
             "file": "EPUB/ch032.xhtml",
             "text": "will evidence itself, — not always, but on some occasions: and this is by bringin"
-          },
-          {
-            "file": "EPUB/contents_2.xhtml",
-            "text": "acceptable unto many — Reasons of it — Two parts of corrupted nature’s repugnancy"
           }
         ],
         "noteref_leading_space": [],
@@ -179,7 +160,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 41,
+    "nav_link_count": 42,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

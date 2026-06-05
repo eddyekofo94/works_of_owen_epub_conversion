@@ -90,6 +90,7 @@ from scripts.owen_lists import (
 
 from scripts.markdown_parser import markdown_to_html, _repair_markdown_tables
 from scripts.roman_parser import _roman_head_match
+from scripts.paragraph_healer import _repair_fused_word_ordinals
 
 try:
     from ebooklib import epub
@@ -1615,6 +1616,8 @@ def render_volume(vol_num: int, overrides: dict = None,
         from scripts.biography_db import BIOGRAPHICAL_DB
         local_biographical = []
         biographical_counter = 0
+        biog_placeholders = {}
+        biog_placeholder_counter = 0
 
         sorted_biog_terms = sorted(BIOGRAPHICAL_DB.items(), key=lambda x: len(x[0]), reverse=True)
         for term, definition in sorted_biog_terms:
@@ -1626,12 +1629,12 @@ def render_volume(vol_num: int, overrides: dict = None,
                 rf'({re.escape(term)}(?:s|es)?)'
                 rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
                 rf'((?:</[a-zA-Z]+>)*)'
-                rf'([\.,\?!:;\'"“”’]*)',
-                re.I
+                rf'([\.,\?!:;\'"“”’]*)'
             )
             def replace_biographical(m):
-                nonlocal biographical_counter
+                nonlocal biographical_counter, biog_placeholder_counter
                 biographical_counter += 1
+                biog_placeholder_counter += 1
                 matched_str = m.group(1)
                 trailing_tags = m.group(2)
                 trailing_punc = m.group(3)
@@ -1642,7 +1645,9 @@ def render_volume(vol_num: int, overrides: dict = None,
                     'term': term,
                     'definition': definition
                 })
-                return f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}"
+                ph_key = f"__BIOG_PH_{biog_placeholder_counter}__"
+                biog_placeholders[ph_key] = (matched_str, trailing_tags, trailing_punc, fn_link)
+                return ph_key
 
             body_html, replaced = replace_first_outside_tags_and_comments(body_html, pattern, replace_biographical)
             if replaced:
@@ -1650,6 +1655,10 @@ def render_volume(vol_num: int, overrides: dict = None,
 
         if local_biographical:
             all_biographical_notes.extend(local_biographical)
+
+        # Restore all biographical placeholders, placing their footnote links after punctuation (Rule 11)
+        for ph_key, (matched_str, trailing_tags, trailing_punc, fn_link) in biog_placeholders.items():
+            body_html = body_html.replace(ph_key, f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}")
 
         # Restore all translation placeholders, placing their footnote links after punctuation (Rule 11)
         for ph_key, (matched_str, trailing_tags, trailing_punc, fn_link) in placeholders.items():

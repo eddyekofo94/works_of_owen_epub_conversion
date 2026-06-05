@@ -21,6 +21,8 @@
 | 15 | Untranslated Latin and Greek quotes | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
 | 16 | Chapter 3 summary layout formatting & drape typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
 | 17 | Chapter 49 summary formatting & CONCENRING typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 18 | Biographical double-tagging and missing prefatory biographies | render.py, technical_glossary.py, biography_db.py, convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+
 
 
 ---
@@ -105,6 +107,14 @@ See previous sessions.
 **Problem:** Chapter 49's summary had a typo `CONCENRING` instead of `CONCERNING` and a stray closing bracket `]` at the end of the text.
 **Fix:** Added a regex replacement to correct `CONCENRING` to `CONCERNING` and remove the stray bracket.
 
+### 18. Biographical Double-Tagging and Missing Prefatory Biographies (Awaiting Validation)
+**Problem:** Space-separated name suffix overlaps (such as "Andrew Fuller" and "Fuller", or "George Bull" and "Bull") were being double-tagged. When the longer name matched and was replaced with its footnote, the shorter surname prefix/suffix was still matched and tagged on the same word, resulting in overlapping pop-up footnotes (e.g. `Andrew Fuller‡‡`). Additionally, several historical figures mentioned in the Volume 12 Prefatory Note (Estwick, Poole, Cheynell, Moscorovius, Schomann, Pezold, Bossuet, Ménage, Sandius) did not have biographies in the database.
+**Fix:**
+- Implemented temporary placeholder shielding for both biographical and glossary footnotes during rendering (similar to translation notes). Once a term is matched, it is replaced with a temporary placeholder (e.g. `__BIOG_PH_{n}__` or `__GLOSS_PH_{n}__`), preventing any nested substrings or suffixes from matching subsequently. The placeholders are restored to their full HTML formatting at the end of the scanning phase.
+- Added new biographical entries for all missing figures from the Volume 12 Prefatory Note to `scripts/biography_db.py`.
+- Mapped short surnames (such as "Beza", "Crellius", "Bull", "Waterland", etc.) directly to their respective biographies in the central database, keeping the original names in Owen's main text intact while ensuring they are correctly tagged.
+- Removed the inline main-text name expansion replacements from `volumes/v12/convert.py` to keep Owen's original author names unchanged in the text.
+
 ---
 
 ## Remaining Work
@@ -134,12 +144,18 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-03T21:08:16.169498+00:00
+**Last run:** 2026-06-05T13:50:01.986624+00:00
 **EPUB:** `volumes/v12/output/volume_12.epub`
-**Status:** FAIL (1 errors, 3 warnings)
+**Status:** WARN (0 errors, 3 warnings)
 
 Reports:
 - `volume_12_audit.json`
@@ -154,7 +170,7 @@ Reports:
 | NAV links | 64 |
 | Greek chars / untagged | 14115 / 0 |
 | Hebrew chars / untagged | 1448 / 0 |
-| Noteref links / endnote anchors | 584 / 586 |
+| Noteref links / endnote anchors | 1092 / 1094 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 1 |
 | Escaped language-tag files | 0 |
@@ -167,10 +183,6 @@ Warnings requiring triage:
 - `repeated_phrases`: Potential repeated phrases detected
 - `orphan_endnotes`: Some endnote anchors have no matching noteref
 
-Errors requiring correction:
-
-- `nav_in_spine`: EPUB navigation document is in the reading-order spine
-
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
 
@@ -180,10 +192,15 @@ Errors requiring correction:
 
 
 
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-03T21:10:34.978484+00:00
+**Last run:** 2026-06-05T13:50:46.318316+00:00
 **Status:** WARN (14 warnings)
 
 Reports:
@@ -194,24 +211,24 @@ Reports:
 |-------|--------|
 | PDF pages | 822 |
 | EPUB text files | 61 |
-| EPUB paragraphs/headings | 3532 |
-| Approximate PDF-to-EPUB word coverage | 0.996 |
-| Weak page matches | 31 |
-| Dense source windows checked | 961 |
-| Missing dense source-window pages | 807 |
+| EPUB paragraphs/headings | 3523 |
+| Approximate PDF-to-EPUB word coverage | 0.999 |
+| Weak page matches | 2 |
+| Dense source windows checked | 30528 |
+| Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
-| Top-of-page body windows checked | 798 |
-| Top-of-page windows skipped as unstable | 48 |
-| Missing top-of-page body windows | 5 |
-| Bottom-of-page body windows checked | 746 |
+| Top-of-page body windows checked | 793 |
+| Top-of-page windows skipped as unstable | 47 |
+| Missing top-of-page body windows | 3 |
+| Bottom-of-page body windows checked | 740 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 14 |
-| Possible faulty paragraph splits | 276 |
-| Structural starts excluded from split warnings | 342 |
-| Short fragments | 48 |
+| Possible faulty paragraph splits | 40 |
+| Structural starts excluded from split warnings | 439 |
+| Short fragments | 47 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 5 |
+| Inline structural marker candidates | 2 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 4 |
@@ -220,9 +237,9 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 450 |
-| EPUB enumerator markers | 513 |
+| EPUB enumerator markers | 460 |
 | Missing enumerator marker forms | 1 |
-| Enumerator sequence candidates | 14 |
+| Enumerator sequence candidates | 1 |
 | PDF Greek words / EPUB Greek words | 2593 / 2593 |
 | Greek word coverage ratio | 0.9992 |
 | PDF Hebrew words / EPUB Hebrew words | 222 / 221 |

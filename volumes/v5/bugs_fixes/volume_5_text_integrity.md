@@ -1,46 +1,46 @@
 # Text Integrity Audit: Volume 5
 
 - Status: **WARN**
-- Warnings: 7
+- Warnings: 12
 - PDF pages: 576
-- EPUB text files: 38
-- EPUB paragraphs/headings: 2154
+- EPUB text files: 39
+- EPUB paragraphs/headings: 2136
 
 ## Coverage
 
-- PDF content tokens: 199504
-- EPUB content tokens: 199431
-- Approximate PDF-to-EPUB coverage ratio: 0.9969
+- PDF content tokens: 197338
+- EPUB content tokens: 194158
+- Approximate PDF-to-EPUB coverage ratio: 0.9807
 - Pages checked: 571
-- Weak page matches: 0
-- Dense source windows checked: 902
-- Missing dense source-window pages: 564
+- Weak page matches: 9
+- Dense source windows checked: 26256
+- Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 6
-- Missing front CONTENTS pages: 0
-- Top-of-page body windows checked: 564
+- Missing front CONTENTS pages: 6
+- Top-of-page body windows checked: 561
 - Top-of-page windows skipped as unstable: 24
-- Missing top-of-page body windows: 0
-- Bottom-of-page body windows checked: 535
+- Missing top-of-page body windows: 8
+- Bottom-of-page body windows checked: 527
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 3
+- Missing bottom-of-page body windows: 10
 
 ## Paragraphs
 
-- Body paragraphs checked: 1837
-- Possible faulty paragraph splits: 78
-- Structural starts excluded from split warnings: 235
-- Short fragments: 21
+- Body paragraphs checked: 1842
+- Possible faulty paragraph splits: 7
+- Structural starts excluded from split warnings: 228
+- Short fragments: 25
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 3
+- Inline structural marker candidates: 4
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
 - Roman heading candidates: 1
-- Overlong heading candidates: 5
+- Overlong heading candidates: 2
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 436
-- EPUB enumerator markers: 446
+- EPUB enumerator markers: 444
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 0
 
@@ -57,53 +57,96 @@
 - Hebrew clauses checked: 14
 - Missing Hebrew clauses: 0
 
+## Latin
+
+- PDF Latin words: 5329
+- EPUB Latin words: 5314
+- EPUB Tagged Latin words: 3768
+- Latin word coverage ratio: 0.9891
+- Latin word tagging ratio: 0.7091
+- Latin clauses checked: 344
+- Missing Latin clauses: 2
+- Tagged Latin runs checked: 728
+- Translated Latin runs: 436
+- Latin translation ratio: 0.5989
+
 ## Warnings
 
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
-- page: 3; sample: 11 galatians isaiah 45 22 john 14 15 bold calumny answered sixthly introduction of
-- page: 4; sample: applied unto the doctrine of justification seventhly general prejudices against the imputation of the
-- page: 5; sample: by it from jus and justum justus filius who the hebrew הִצְדִּיק use and
-- page: 9; sample: testimony removed that of socinus disproved true sense of the words evinced corinthians 21
-- page: 10; sample: 10 the exception removed righteousness before conversion not intended by the apostle chapter 19
-- page: 11; sample: 11 counted unto him for righteousness when he offered his son on the altar
-- page: 13; sample: 13 prefatory note there is pregnant and striking passage in one of the charges
-- page: 14; sample: 14 aut cadentis ecclesiae it had to encounter accordingly strong opposition from all who
-- page: 15; sample: 15 made transition from the ground of justification by faith to views clearly opposed
-- page: 16; sample: 16 should be carefully examined before they were embraced his work therefore is not
+- page: 3; sample: contents the doctrine of justification general considerations first the general nature of justification state
+- page: 4; sample: acceptable unto many reasons of it two parts of corrupted nature's repugnancy unto the
+- page: 5; sample: sinners by christ with its acquiescency therein the description given explained and confirmed from
+- page: 6; sample: juridical scheme and of forensic title the parts and progress of it inferences from
+- page: 7; sample: day that judgment being according unto works answered and the impertinency of it declared
+- page: 8; sample: chapter arguments for justification by the imputation of the righteousness of christ our own
+- page: 9; sample: romans l2-21 boasting excluded in ourselves asserted in god the design and sum of
+- page: 10; sample: the exception removed righteousness before conversion not intended by the apostle chapter objections against
+- page: 11; sample: counted unto him for righteousness when he offered his son on the altar works
+- page: 13; sample: in one of the charges of bishop horsley which may be said to embody
+
+## Missing Front CONTENTS Pages
+
+- page: 3; hit_ratio: 0.0; sample: contents the doctrine of justification general considerations first the general nature of justification state of the person to be justified antecedently thereunto romans galatians john galatians the sole
+- page: 4; hit_ratio: 0.0; sample: acceptable unto many reasons of it two parts of corrupted nature's repugnancy unto the mystery of the gospel that which would reduce it unto the private reason of
+- page: 5; hit_ratio: 0.0; sample: sinners by christ with its acquiescency therein the description given explained and confirmed from the nature of the gospel exemplified in its contrary or the nature of unbelief
+- page: 6; hit_ratio: 0.0; sample: juridical scheme and of forensic title the parts and progress of it inferences from the whole chapter distinction of first and second justification the whole doctrine of the
+- page: 7; hit_ratio: 0.0; sample: day that judgment being according unto works answered and the impertinency of it declared chapter imputation and the nature of it the first express record of justification determines
+- page: 8; hit_ratio: 0.25; sample: chapter arguments for justification by the imputation of the righteousness of christ our own personal righteousness not that on the account whereof we are justified in the sight
+
+## Missing Top-Of-Page Body Windows
+
+- page: 4; sample: acceptable unto many — Reasons of it — Two parts of corrupted nature's repugnancy unto the mystery of the gospel: — 1. That which would reduce it unto the private reason
+- page: 5; sample: sinners by Christ, with its acquiescency therein — The description given, explained and confirmed: — 1. From the nature of the gospel — Exemplified in its contrary, or the
+- page: 6; sample: juridical scheme, and of a forensic title — The parts and progress of it — Inferences from the whole
+- page: 7; sample: day, that judgment being according unto works, answered; and the impertinency of it declared
+- page: 9; sample: Romans 5:l2-21 — Boasting excluded in ourselves, asserted in God — The design and sum of the apostle's argument — Objection of Socinus removed —
+- page: 10; sample: The exception removed — Righteousness before conversion, not intended by the apostle
+- page: 31; sample: compliance wherewithal. So Pighius himself complained of them, Controv. 2,
+- page: 126; sample: verse 47, "He that be1ieveth on me has everlasting life;" chapter 7:38,
 
 ## Missing Bottom-Of-Page Body Windows
 
-- page: 148; sample: dikaiou~sqai a]nqrwpon, Romans 3:28; — "Therefore we conclude
+- page: 3; sample: of the gospel esteemed folly — Reason, as corrupted, repugnant unto the mystery of grace — Accommodation of spiritual mysteries unto corrupt reason, wherefore
+- page: 4; sample: The nature of justifying faith in particular, or of faith in the exercise of it, whereby we are justified — The heart's approbation of the way of the justification and salvation of
+- page: 5; sample: Romans 4:6, 11; 5:9, 10; 2 Corinthians 5:20, 21; Matthew 1:21; Acts 13:39; Galatians 2:16, etc. — Justification in the Scripture, proposed under a
+- page: 6; sample: glory, the whole of justification at the last day — The argument that we are justified in this life in the same manner, and on the same grounds, as we shall be judged at the last
+- page: 7; sample: necessity — Other objections, arising mostly from mistakes of the truth, asserted, discussed, and answered
+- page: 8; sample: alone the means of justification on our part — Faith itself, absolutely considered, not the righteousness that is imputed unto us — Proved by sundry arguments
+- page: 9; sample: with respect unto the law and gospel — External righteousness only required by the law, an impious imagination — Works wrought before faith only rejected —
+- page: 10; sample: and causes; the other, as unto its signs and evidence — Proved by the instances insisted on — How the Scripture was fulfilled, that Abraham believed in God, and it was
 - page: 169; sample: Proverbs 17:15, qyDixæ [æyvir]mæW [v;r; qyDix]mæ, — "He that justifieth the wicked, and
 - page: 233; sample: and applying them unto our Savior in his sufferings, he says thus, jEpeida<n ta<v hJmete>rav koinopoiei~ eijv eJauto<n aJmarti>av? —
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch004.xhtml; previous: habit inherent in ourselves, and the acts of it, they wrested the whole doctrine of justification unto a compliance wherewithal. So Pighius himself complained of them, Controv. 2,; next: Secondly, A due consideration of him with whom in this matter we have to do, and that immediately, is necessary unto a right stating of our thoughts about it. The Scripture express
-- file: EPUB/ch004.xhtml; previous: Lord's sake," Daniel 9:17, in whom "all the seed of Israel are justified," Isaiah 45:25. In his sight, before his tribunal, it is that men are justified or condemned. Psalm 143:2,; next: And the whole work of justification, with all that belongs thereunto, is represented after the manner of a juridical proceeding before God's tribunal; as we shall see afterwards. "
-- file: EPUB/ch004.xhtml; previous: cation, with all that belongs thereunto, is represented after the manner of a juridical proceeding before God's tribunal; as we shall see afterwards. "Therefore," says the apostle,; next: However any man be justified in the sight of men or angels by his own obedience, or deeds of the law, yet in his sight none can be so.
-- file: EPUB/ch004.xhtml; previous: any means to manifest his glory unto sinners, all their prefidences and contrivances do issue in dreadful horror and distress. An account of their temper is given us, Isaiah 33:14,; next: Nor is it thus only with some peculiar sort of sinners. The same will be the thoughts of all guilty persons at some time or other. For those who, through sensuality, security, or s
-- file: EPUB/ch004.xhtml; previous: him in battle array. And we may see what extravagant contrivances convinced sinners will put themselves upon, under any real view of the majesty and holiness of God, Micah 6:6, 7,; next: Neither shall I ever think them meet to be contended withal about the doctrine of justification who take no notice of these things, but rather despise them.
-- file: EPUB/ch004.xhtml; previous: And again,; next: Let any men place themselves in the condition wherein now Job was, — in the immediate presence of God; let them attend unto what he really speaks unto them in his word, — namely, w
-- file: EPUB/ch004.xhtml; previous: visitation of the sick, composed, as they say, by Anselm, and published by Casparus Ulenbergius, which expresses a better sense of these things than some seem to be convinced of: —; next: — that is, "Dost thou believe that thou canst not be saved but by the death of Christ? The sick man answers, 'Yes, ' then let it be said unto him, Go to, then, and whilst thy soul
-- file: EPUB/ch004.xhtml; previous: Or that of the psalmist,; next: Or,
-- file: EPUB/ch004.xhtml; previous: Or,; next: On which words the exposition of Austin is remarkable, speaking of David, and applying it unto himself:
-- file: EPUB/ch004.xhtml; previous: "The blood of Jesus Christ God's Son cleanseth us from all sin," 1 John 1:7. Wherefore,; next: These are some of the places which at present occur to remembrance, wherein the Scripture represents unto us the grounds, causes, and reasons, of our acceptation with God. The espe
+- file: EPUB/ch003.xhtml; previous: To The Reader; next: I shall not need to detain the reader with an account of the nature and moment of that doctrine which is the entire subject of the ensuing discourse; for although sundry persons, e
+- file: EPUB/ch004.xhtml; previous: are justified freely by the grace of God, through the redemption that is in Christ Jesus; whom God has set forth to be a propitiation through faith in his blood," Romans 3:24, 25,; next: — they will offer violence unto common sense and reason, rather than not disturb that harmony which they cannot understand. For although it be plainly affirmed to be a redemption b
+- file: EPUB/ch012.xhtml; previous: Caput nostrum Dominus Jesus Christus omnia in se corporis sui membra transformans, quod olim in psalmo eructaverit, id in supplicio crucis sub redemptorum suorum voce clamavit ". †; next: And so speaks Augustine to the same purpose, Epist. 120, * ad Honoratum,
+- file: EPUB/ch022.xhtml; previous: peccato justitia, cum execratione benedictio, cum condemnatione remissio, cum transgressione obedientie, cum morte vita, cum inferis regnum, Christus cum Adam, homo cum homine ". †; next: The differences that are among interpreters about the exposition of these words relate unto the use of some particles, prepositions, and the dependence of one passage upon another;
+- file: EPUB/ch022.xhtml; previous: 23:6: which place he conjoins with this, as of the same sense and importance, giving up his whole cause in satisfaction unto them, in the words before described, lib. 2 cap. 10. †; next: Socinus prefaces his answer unto this testimony with an admiration that any should make use of it, or plead it in this cause, it is so impertinent unto the purpose. And, indeed, a
+- file: EPUB/ch022.xhtml; previous: anquam apostolico sensui et scopo contrariam omnino repudiandam esse. Verum constat voculam 'nisi ' frequenter in Scripturis adversative sumi, utidem valeat quod 'sed tantum ' ". †; next: So he according to his usual candor and ingenuity.
+- file: EPUB/ch027.xhtml; previous: To The Reader; next: As faith is the first vital act that every true Christian puts Forth, and the life which he lives is by the faith of the Son of God, so it is his next and great concern to know tha
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch022.xhtml; text: It may be it will be said: "It is true in the time of their heathenism they did not at all follow after righteousness, but when the truth of the gospel was revealed unto them, then they followed after righteousness, and did attain it." B...
-- file: EPUB/ch024.xhtml; text: These things being premised, I shall briefly evidence that there is not the least repugnancy or contradiction between what is declared by these two apostles as unto our justification, with the causes of it. And this I shall do, 1. By som...
-- file: EPUB/ch029.xhtml; text: Faith is not an especial assurance of a man's own justification and salvation by Christ; that it will produce, but not until another step or two in its progress be over: but faith is a satisfactory persuasion that the way of God proposed...
+- file: EPUB/ch004.xhtml; text: All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of their own, and s...
+- file: EPUB/ch010.xhtml; text: A very few words will also free our inquiry from any concernment in that which is called sentential justification, at the day of judgment; for of what nature soever it be, the person concerning whom that sentence is pronounced was, — (1....
+- file: EPUB/ch021.xhtml; text: In opposition hereunto, the state and prayer of the publican, under the same design of seeking justification before God, are expressed. And the outward acts of his person are mentioned, as representing and expressive of the inward frame ...
+- file: EPUB/ch022.xhtml; text: This, in the matter of our justification, he calls, — (1.) Χάρισμα , with respect unto the free, gratuitous grant of it by the grace of God, Δωρεὰ τῆς χάριτος , and (2.) Δώρημα , with respect unto us who receive it, — a free gift it is u...
 
 ## Roman Heading Candidates
 
@@ -112,13 +155,13 @@
 ## Overlong Heading Candidates
 
 - file: EPUB/ch012.xhtml; tag: h3; text: IMPUTATION OF THE SINS OF THE CHURCH UNTO CHRIST — GROUNDS OF IT — THE NATURE OF HIS SURETISHIP — CAUSES OF THE NEW COVENANT — CHRIST AND THE CHURCH ONE MYSTICAL PERSON — CONSEQUENTS THEREOF
-- file: EPUB/ch013.xhtml; tag: h4; text: II. These things being premised, I proceed unto the consideration of the general objections that are urged against the imputation we plead for: and I shall insist only on some of the principal of them, and whereinto all others may be res...
-- file: EPUB/ch016.xhtml; tag: h4; text: I. The first part of this charge, concerning the impossibility of the imputation of the obedience of Christ unto us, is insisted on by Socinus de Servat., part 3 cap. 5.
-- file: EPUB/ch016.xhtml; tag: h4; text: II. The second part of the objection or charge against the imputation of the obedience of Christ unto us is, "That it is useless unto the persons that are to be justified; for whereas they have in their justification the pardon of all th...
-- file: EPUB/ch022.xhtml; tag: h3; text: THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY. — 3:4CHAP. 3,4,5,10; 1 CORINTHIANS 1:30; 2 Corinthians 5:212 CORINTHIANS 5:21; GALATIANS 2:16; EPHESIANS 2:8-10; PHILIPPIANS 3:8,9.)
+- file: EPUB/ch022.xhtml; tag: h3; text: THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY. — 3:4CHAP. 3,4,5,10; 1 CORINTHIANS 1:30; 2 Corinthians 5:212 CORINTHIANS 5:21; GALATIANS 2:16; EPHESIANS 2:8-10; PHILIPPIANS 3:8, 9.)
 
 ## Short Fragments
 
+- file: EPUB/ch003.xhtml; text: To The Reader
+- file: EPUB/ch003.xhtml; text: J.O.
+- file: EPUB/ch003.xhtml; text: From my study, May the 30th, 1677
 - file: EPUB/ch004.xhtml; text: And again,
 - file: EPUB/ch004.xhtml; text: Or that of the psalmist,
 - file: EPUB/ch004.xhtml; text: Or,
@@ -126,16 +169,13 @@
 - file: EPUB/ch006.xhtml; text: — of his love;
 - file: EPUB/ch006.xhtml; text: —of his grace;
 - file: EPUB/ch006.xhtml; text: — of his wisdom;
-- file: EPUB/ch006.xhtml; text: — of his power;
-- file: EPUB/ch006.xhtml; text: And, —
-- file: EPUB/ch006.xhtml; text: The whole is expressed, John 14:6,
 
 ## Repeated Windows
 
-- phrase: of justification by the imputation of the righteousness of christ; count: 13
-- phrase: doctrine of justification by the imputation of the righteousness of; count: 12
-- phrase: the doctrine of justification by the imputation of the righteousness; count: 11
+- phrase: of justification by the imputation of the righteousness of christ; count: 11
+- phrase: doctrine of justification by the imputation of the righteousness of; count: 10
 - phrase: set forth to be propitiation through faith in his blood; count: 10
+- phrase: the doctrine of justification by the imputation of the righteousness; count: 9
 - phrase: freely by his grace through the redemption that is in; count: 9
 - phrase: justified freely by his grace through the redemption that is; count: 8
 - phrase: by his grace through the redemption that is in christ; count: 8
@@ -143,9 +183,54 @@
 - phrase: whom god has set forth to be propitiation through faith; count: 8
 - phrase: god has set forth to be propitiation through faith in; count: 8
 
+## Missing Word Samples
+
+- word: mr; pdf: 7; epub: 2
+- word: alterations; pdf: 3; epub: 1
+- word: apostolical; pdf: 3; epub: 1
+- word: bishop; pdf: 3; epub: 1
+
 ## Excess Word Samples
 
-- word: digital; pdf: 0; epub: 8
+- word: digital; pdf: 0; epub: 10
+- word: theological; pdf: 3; epub: 12
+- word: historical; pdf: 5; epub: 12
+- word: greek; pdf: 5; epub: 12
+- word: modern; pdf: 3; epub: 10
+- word: footnotes; pdf: 0; epub: 7
+- word: edition; pdf: 2; epub: 8
+- word: section; pdf: 0; epub: 6
+
+## Untagged Latin Word Samples
+
+- word: nor; epub: 424; tagged: 12
+- word: jesus; epub: 234; tagged: 10
+- word: thereunto; epub: 109; tagged: 5
+- word: yea; epub: 104; tagged: 1
+- word: whereas; epub: 104; tagged: 1
+- word: adam; epub: 93; tagged: 5
+- word: abraham; epub: 81; tagged: 0
+- word: hereunto; epub: 60; tagged: 0
+- word: mere; epub: 48; tagged: 0
+- word: whereunto; epub: 48; tagged: 1
+
+## Missing Latin Clauses
+
+- page: 22; word_count: 13; sample: alios ex castris aulis graneis prolatam esse scrupuli ab excellenti viro propositi
+- page: 359; word_count: 59; sample: non solum illa opera legis quae sunt in veteribus sacramentis et nunc
+
+## Untranslated Latin Samples
+
+- phrase: Articulus stantis
+- phrase: cadentis ecclesiae
+- phrase: nor endeavor
+- phrase: nulla pietatis
+- phrase: nullo laudato prioris vitae exemplo commendatos; imo ut
+- phrase: videmus, per vagabundos, et contentionum zeli carnalis plenos
+- phrase: alios ex castris, aulis, ganeis, prolatam esse. Scrupuli ab excellenti viro propositi
+- phrase: hupodikoi tooi Theoo
+- phrase: in "materia probabili
+- phrase: Albertus Pighius
 
 ## Limits
 

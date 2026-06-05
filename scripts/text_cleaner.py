@@ -1,5 +1,6 @@
 import re
 from shared import (
+    OWEN_HARD_HYPHENS,
     convert_greek_word, clean_greek_text, convert_gideon_hebrew,
     normalize_characters,
     is_greek_font, is_hebrew_font, contains_greek, contains_hebrew,
@@ -28,12 +29,6 @@ from scripts.ages_verse_translator import translate_ages_verse_markers
 from scripts.footnote_extractor import _normalize_extracted_footnote_markers
 from scripts.greek_hebrew_dedupe import _remove_adjacent_duplicates, _remove_adjacent_line_overlaps
 from scripts.markdown_skeleton import get_merged_page_text
-
-OWEN_HARD_HYPHENS = {
-    'Spiritual-mindedness', 'spiritually-minded', 'heavenly-mindedness',
-    'self-denial', 'faith-fulness', 'church-state', 'fellow-creature',
-    'well-pleased', 'good-will', 'soul-satisfying'
-}
 
 def strip_false_ocr_bolds(text):
     """Strip false OCR bold markers (**word**) that are not structural list or heading elements."""

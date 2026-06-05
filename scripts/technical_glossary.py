@@ -137,6 +137,8 @@ def apply_glossary_footnotes(body_html: str, cid: str, seen_glossary_terms: set,
     """
     local_glossary = []
     glossary_counter = 0
+    gloss_placeholders = {}
+    gloss_placeholder_counter = 0
 
     # Sort terms so longer ones match first
     sorted_terms = sorted(TECHNICAL_TERMS.items(), key=lambda x: len(x[0]), reverse=True)
@@ -163,8 +165,9 @@ def apply_glossary_footnotes(body_html: str, cid: str, seen_glossary_terms: set,
         )
 
         def replace_glossary(m):
-            nonlocal glossary_counter
+            nonlocal glossary_counter, gloss_placeholder_counter
             glossary_counter += 1
+            gloss_placeholder_counter += 1
             matched_str = m.group(1)
             trailing_tags = m.group(2)
             trailing_punc = m.group(3)
@@ -175,10 +178,16 @@ def apply_glossary_footnotes(body_html: str, cid: str, seen_glossary_terms: set,
                 'term': term,
                 'definition': term_def
             })
-            return f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}"
+            ph_key = f"__GLOSS_PH_{gloss_placeholder_counter}__"
+            gloss_placeholders[ph_key] = (matched_str, trailing_tags, trailing_punc, fn_link)
+            return ph_key
 
         body_html, replaced = replace_first_outside_tags_and_comments(body_html, pattern, replace_glossary)
         if replaced:
             seen_glossary_terms.add(term)
+
+    # Restore all glossary placeholders, placing their footnote links after punctuation (Rule 11)
+    for ph_key, (matched_str, trailing_tags, trailing_punc, fn_link) in gloss_placeholders.items():
+        body_html = body_html.replace(ph_key, f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}")
 
     return body_html, local_glossary, seen_glossary_terms

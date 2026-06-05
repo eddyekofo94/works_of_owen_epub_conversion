@@ -69,6 +69,7 @@ from scripts.pdf_coordinates import (
     CONNECTOR_STARTERS_RE,
     SCRIPTURE_TAIL_RE,
     DANGLING_CONNECTOR_RE,
+    _text_block_is_fully_inset,
 )
 from scripts.ages_verse_translator import (
     translate_ages_verse_markers,
@@ -97,7 +98,8 @@ from scripts.markdown_skeleton import (
 from scripts.chapter_builder import Chapter, build_chapters_from_toc
 from scripts.text_cleaner import (
     clean_text, reconstruct_paragraphs, strip_false_ocr_bolds, 
-    _is_terminal, get_pages_text, post_process_paragraphs
+    _is_terminal, get_pages_text, post_process_paragraphs,
+    _remove_interrupted_duplicate_clause,
 )
 
 try:

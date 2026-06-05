@@ -2,9 +2,9 @@
   "volume": 2,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/input/owen-v2.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-29T11:42:42.968556+00:00",
+  "generated_at": "2026-06-05T00:00:42.467334+00:00",
   "status": "warn",
-  "warning_count": 7,
+  "warning_count": 11,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -15,6 +15,14 @@
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
     },
     {
+      "code": "front_matter_toc_loss",
+      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
       "code": "bottom_of_page_text_loss",
       "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
     },
@@ -23,8 +31,8 @@
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     },
     {
-      "code": "overlong_heading_candidates",
-      "message": "Some chapter headings are long enough to suggest swallowed body text"
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     },
     {
       "code": "enumerator_sequence_candidates",
@@ -33,241 +41,284 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
     "page_count": 555
   },
   "epub": {
-    "spine_text_files": 48,
-    "paragraph_count": 2047
+    "spine_text_files": 50,
+    "paragraph_count": 2081
   },
   "word_coverage": {
-    "pdf_content_tokens": 189773,
-    "epub_content_tokens": 189658,
-    "coverage_ratio": 0.9968,
-    "missing_word_samples": [
-      {
-        "word": "cant",
-        "pdf": 3,
-        "epub": 1
-      }
-    ],
+    "pdf_content_tokens": 187092,
+    "epub_content_tokens": 186879,
+    "coverage_ratio": 0.9948,
+    "missing_word_samples": [],
     "excess_word_samples": [
-      {
-        "word": "ohn",
-        "pdf": 0,
-        "epub": 15
-      },
       {
         "word": "digital",
         "pdf": 0,
-        "epub": 6
+        "epub": 10
+      },
+      {
+        "word": "william",
+        "pdf": 4,
+        "epub": 13
+      },
+      {
+        "word": "theological",
+        "pdf": 3,
+        "epub": 12
+      },
+      {
+        "word": "historical",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "greek",
+        "pdf": 5,
+        "epub": 12
+      },
+      {
+        "word": "modern",
+        "pdf": 5,
+        "epub": 12
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 6,
+        "epub": 12
+      },
+      {
+        "word": "edition",
+        "pdf": 5,
+        "epub": 11
       }
     ]
   },
   "page_coverage": {
     "pages_checked": 550,
-    "weak_page_count": 5,
+    "weak_page_count": 4,
     "weak_pages": [
       {
-        "page": 10,
+        "page": 5,
         "hit_ratio": 0.333,
-        "sample": "10 of communion with god the father son and holy ghost each person distinctly in love grace and consolation or the saints fellowship with"
+        "sample": "satisfaction thereby the intercession of christ with its influence into our acceptation with god chapter the nature of purchased grace referred to three heads"
       },
       {
-        "page": 95,
+        "page": 9,
         "hit_ratio": 0.333,
-        "sample": "95 eye their delight also in streams of water is known their being washed in milk or clear white crystal water adds to their"
+        "sample": "the blessed trinity let them attend what is said by mr lewis stuckley in his preface to mr polwheil's book of quenching the spirit"
+      },
+      {
+        "page": 10,
+        "hit_ratio": 0.0,
+        "sample": "of communion with god the father son and holy ghost each person distinctly in love grace and consolation or the saints fellowship with the"
       },
       {
         "page": 445,
         "hit_ratio": 0.0,
-        "sample": "445 brief declaration and vindication of the doctrine of the trinity and also of the person and satisfaction of christ accomodated to the capacity"
-      },
-      {
-        "page": 456,
-        "hit_ratio": 0.333,
-        "sample": "456 now because the assertors of the opinions mentioned do seem to set out themselves to be some great ones above the ordinary rate"
-      },
-      {
-        "page": 476,
-        "hit_ratio": 0.333,
-        "sample": "476 that christ they worship they say is god but they deny that he is that god that made the heavens and the earth"
+        "sample": "brief declaration and vindication of the doctrine of the trinity and also of the person and satisfaction of christ accomodated to the capacity and"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 693,
-    "missing_dense_window_pages": 543,
+    "dense_windows_checked": 25151,
+    "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
         "page": 3,
-        "sample": "burgess part chapter that the saints have communion with god john considered to that"
+        "sample": "contents of vol of communion with god the father son and holy ghost prefatory"
       },
       {
         "page": 4,
-        "sample": "had in christ also of righteousness and of judgment the wisdom of walking with"
+        "sample": "his suitableness to endear these considerations improved chapter of the way and manner whereby"
       },
       {
         "page": 5,
-        "sample": "christ and believers some objections answered chapter of communion with christ in holiness the"
+        "sample": "influence into our acceptation with god chapter the nature of purchased grace referred to"
       },
       {
         "page": 6,
-        "sample": "its adjuncts peace joy how it is wrought immediately chapter some observations and inferences"
+        "sample": "of the holy ghost how the spirit of adoption and of supplication chapter the"
       },
       {
         "page": 8,
-        "sample": "the doctrine of distinct communion with the divine persons to be new fangled one"
+        "sample": "reading livy and ferdinand king of sicily in reading quintus curtius but thou hast"
+      },
+      {
+        "page": 9,
+        "sample": "the blessed trinity let them attend what is said by mr lewis stuckley in"
       },
       {
         "page": 10,
-        "sample": "10 of communion with god the father son and holy ghost each person distinctly"
-      },
-      {
-        "page": 11,
-        "sample": "11 prefatory note the reader may be referred to the life of dr owen"
+        "sample": "of communion with god the father son and holy ghost each person distinctly in"
       },
       {
         "page": 12,
-        "sample": "12 part ii the reality of communion with christ is proved chap and the"
-      },
-      {
-        "page": 13,
-        "sample": "13 part chapter that the saints have communion with god john considered to that"
-      },
-      {
-        "page": 14,
-        "sample": "14 by nature since the entrance of sin no man hath any communion with"
-      },
-      {
-        "page": 15,
-        "sample": "15 access with confidence to god ephesians 12 this boldness and access with confidence"
-      },
-      {
-        "page": 16,
-        "sample": "16 they had communion in that cruel act of revenge and murder our communion"
-      },
-      {
-        "page": 17,
-        "sample": "17 perfect and complete in the full fruition of his glory and total giving"
-      },
-      {
-        "page": 18,
-        "sample": "18 chapter that the saints have this communion distinctly with the father son and"
+        "sample": "christ is exhibited under three divisions his personal grace iii vi and under this"
       },
       {
         "page": 19,
-        "sample": "19 done distinctly the father beareth witness the son beareth witness and the holy"
-      },
-      {
-        "page": 20,
-        "sample": "20 and revelation 20 if any man hear my voice and open the door"
+        "sample": "are differences of administrations but the same lord the same lord jesus verse and"
       },
       {
         "page": 21,
-        "sample": "21 of the son he is to be received in it by faith and"
-      },
-      {
-        "page": 22,
-        "sample": "22 carrying it on which are by him appointed isaiah 45 23 unto me"
+        "sample": "is to receive the lord christ as the son the son given unto us"
       },
       {
         "page": 23,
-        "sample": "23 the name of the son of god john 13 so also john 36"
+        "sample": "matthew john 19-26 corinthians galatians john 22-24 10-13 hebrews philippians john and distinctly directed"
       },
       {
         "page": 24,
-        "sample": "24 and verses 13 14 every creature which is in heaven and on the"
-      },
-      {
-        "page": 25,
-        "sample": "25 wherein the saints have communion with god 19 as all the spiritual ascendings"
+        "sample": "divine worship and honor for ever and ever and therefore stephen in his solemn"
       },
       {
         "page": 26,
-        "sample": "26 unto union and communion with the lord jesus this is his drawing us"
+        "sample": "teaching of the son is life-giving spirit breathing teaching an effectual influence of light"
       },
       {
-        "page": 27,
-        "sample": "27 it remaineth only to intimate in word wherein this distinction lies and what"
+        "page": 53,
+        "sample": "keepeth not his commandments is liar and the truth is not in him chap"
       },
       {
-        "page": 29,
-        "sample": "29 chapter of the peculiar and distinct communion which the saints have with the"
+        "page": 76,
+        "sample": "consent unto will be for thee and thou shalt be for me and not"
       },
       {
-        "page": 30,
-        "sample": "30 look by what act soever we hold communion with any person there is"
+        "page": 91,
+        "sample": "and lo he lives for ever and ever and has the keys of hell"
       },
       {
-        "page": 31,
-        "sample": "31 anger and indignation against sin nor can the sons of men have any"
+        "page": 92,
+        "sample": "canticles to this very end and purpose cant 10-16 my beloved is white and"
       },
       {
-        "page": 32,
-        "sample": "32 say not unto you that will pray the father for you for the"
+        "page": 95,
+        "sample": "so it is land that the lord thy god careth for careth for it"
       },
       {
-        "page": 33,
-        "sample": "33 corinthians 13 11 and is said to be love so that whoever will"
+        "page": 114,
+        "sample": "the mystery of godliness timothy and that without controversy we receive grace for grace"
       },
       {
-        "page": 34,
-        "sample": "34 malice and envy hateful and hating one another all naught all out of"
+        "page": 117,
+        "sample": "will it avail us to hear him proclaim himself the lord the lord god"
       },
       {
-        "page": 35,
-        "sample": "35 by and through christ we have an access unto the father we then"
+        "page": 128,
+        "sample": "will follow its direction is the law the law has many fair pleas to"
       },
       {
-        "page": 36,
-        "sample": "36 the saints do in their communion with the father of the due improvement"
+        "page": 134,
+        "sample": "needs be most remote from the soul is light and in him is no"
       },
       {
-        "page": 37,
-        "sample": "37 which is as the life and form of all moral obedience but peculiar"
+        "page": 141,
+        "sample": "in the world to make an experiment of their skill and earning in giving"
       },
       {
-        "page": 38,
-        "sample": "38 leap as men overcome with some joyful surprisal and therefore god is said"
+        "page": 150,
+        "sample": "may be referred to these two heads himself his kingdom himself john he that"
       },
       {
-        "page": 39,
-        "sample": "39 grave through innumerable troubles yet he found more sweetness in god than in"
+        "page": 158,
+        "sample": "love to it that it were more that it were more that were as"
       },
       {
-        "page": 40,
-        "sample": "40 father's purpose and good pleasure have its rise and foundation in his mere"
+        "page": 162,
+        "sample": "heart is couched in the redoubling of the expression sought him sought him setting"
       },
       {
-        "page": 41,
-        "sample": "41 fountain always communicating love from whence proceeds every thing that is lovely in"
+        "page": 170,
+        "sample": "him and inquiry after him they say of him in their hearts continual as"
       },
       {
-        "page": 42,
-        "sample": "42 2ndly in respect of all other causes of love whatever it goes not"
+        "page": 190,
+        "sample": "chapter of communion with christ in purchased grace purchased grace considered in respect of"
       },
       {
-        "page": 43,
-        "sample": "43 man that he should repent on whom he fixes his love it is"
+        "page": 221,
+        "sample": "expressions which express commutation designed by god in this matter as corinthians galatians peter"
       },
       {
-        "page": 44,
-        "sample": "44 grace he rebukes them he chastens them he hides his face from them"
+        "page": 237,
+        "sample": "and unto the lamb for ever and ever and the living creatures said amen"
       },
       {
-        "page": 45,
-        "sample": "45 chapter inferences on the former doctrine concerning communion with the father in love"
+        "page": 246,
+        "sample": "we call habitual grace that is the fruits of the spirit the spirit which"
+      },
+      {
+        "page": 258,
+        "sample": "unto them they are the sons of god they are the sons of god"
+      },
+      {
+        "page": 261,
+        "sample": "wherein the saints have communion with christ shall hand them together referring the concernments"
+      },
+      {
+        "page": 292,
+        "sample": "his church so peter tells us epistle holy men of god spake as they"
+      },
+      {
+        "page": 294,
+        "sample": "world and the fellowship which we have with the ho ghost therein only here"
+      },
+      {
+        "page": 311,
+        "sample": "that you may abound in hope through the power of the holy ghost the"
+      },
+      {
+        "page": 318,
+        "sample": "kindness grace and purchase unto them this is the work of the spirit the"
+      },
+      {
+        "page": 341,
+        "sample": "the public it seems to have been sherlock's first appearance in authorship and some"
+      },
+      {
+        "page": 342,
+        "sample": "in religion etc edward polhill followed in an answer to the discourse of mr"
+      },
+      {
+        "page": 347,
+        "sample": "herein no regard had unto them he whom shall name is mr hooker and"
       }
     ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 4,
     "front_toc_windows_checked": 16,
-    "missing_front_toc_pages": 0,
-    "missing_front_toc_samples": []
+    "missing_front_toc_pages": 2,
+    "missing_front_toc_samples": [
+      {
+        "page": 3,
+        "hit_ratio": 0.5,
+        "sample": "contents of vol of communion with god the father son and holy ghost prefatory note by the editor preface note to the reader by burgess part chapter that"
+      },
+      {
+        "page": 6,
+        "hit_ratio": 0.5,
+        "sample": "of the powers of the world to come unction by the spirit isaiah the various teachings of the holy ghost how the spirit of adoption and of supplication"
+      }
+    ]
   },
   "top_of_page_integrity": {
     "top_windows_checked": 551,
@@ -449,20 +500,31 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 0,
-    "missing_top_windows": []
+    "missing_top_window_count": 1,
+    "missing_top_windows": [
+      {
+        "page": 3,
+        "window": "contents of vol of communion with god the father",
+        "sample": "CONTENTS OF VOL. 2. OF COMMUNION WITH GOD THE FATHER,"
+      }
+    ]
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 528,
-    "bottom_windows_usable": 509,
+    "bottom_windows_usable": 505,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 2,
+    "missing_bottom_window_count": 3,
     "missing_bottom_windows": [
       {
         "page": 2,
         "window": "this edition of first published by johnstone hunter 1850-53",
         "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
+      },
+      {
+        "page": 540,
+        "window": "and rp ko this last word we render satisfaction numbers",
+        "sample": "and rp,Ko. This last word we render \"satisfaction,\" Numbers 35:32,33,"
       },
       {
         "page": 547,
@@ -472,48 +534,28 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1717,
-    "split_candidate_count": 179,
+    "paragraphs_checked": 1742,
+    "split_candidate_count": 15,
     "split_candidates": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "CHRISTIAN READER,",
+        "next": "IT is now six years past since I was brought under an engagement of promise for the publishing of some meditations on the subject which thou wilt find handled in the ensuing treati"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "To The Reader",
+        "next": "ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; ‡ and Ferdinand, king of Sicily, in reading Quintus Curtius ‡ Rufus : ‡ but thou hast here nobler e"
+      },
       {
         "file": "EPUB/ch002.xhtml",
         "previous": "Reader, I am Thy servant in Christ Jesus",
-        "next": "DANIEL BURGESS"
+        "next": "Daniel Burgess"
       },
       {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "n what the peculiar appropriation of this distinct communion unto the several persons doth consist, must, in the first place, be made manifest. 14 1 John 5:7, the apostle tells us,",
-        "next": "In heaven they are, and bear witness to us. And what is it that they bear witness unto? Unto the sonship of Christ, and the salvation of believers in his blood. Of the carrying on "
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "Sometimes the Son only is spoken of, as to this purpose. 1 Corinthians 1:9,",
-        "next": "— of which place afterward."
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "Sometimes the Spirit alone is mentioned. 2 Corinthians 13:14,",
-        "next": "This distinct communion, then, of the saints with the Father, Son, and Spirit, is very plain in the Scripture; but yet it may admit of farther demonstration Only this caution I mus"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "er: these graces as acted in prayer and praises, and as clothed with instituted worship, are peculiarly directed unto him. \"Ye call on the Father,\" 1 Peter 1:17, Ephesians 3:14,15,",
-        "next": "Bowing the knee compriseth the whole worship of God, both that which is moral, in the universal obedience he requireth, and those peculiar ways of carrying it on which are by him a"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "therefore the same apostle doth, in another place, expressly conjoin, and yet as expressly distinguish, the Father and the Son in directing his supplications, 1 Thessalonians 3:11,",
-        "next": "The like precedent, also, have you of thanksgiving, Ephesians 1:3,4, \"Blessed be the God and Father of our Lord Jesus Christ,\" etc. I shall not add those very many places wherein t"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "on hath everlasting life,\" verse 36. \"This is the work of God, that ye believe on him whom he hath sent,\" John 6:29,40; 1 John 5:10. The foundation of the whole is laid, John 5:23,",
-        "next": "But of this honor and worship of the Son I have treated at large elsewhere; 18 and shall not in general insist upon it again. For love, I shall only add that solemn apostolical ben"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": " 2:22-24, 1 John 5:10-13; Hebrews 1:6; Philippians 29:10 2:10; John 5:23.) and distinctly directed unto the Son, is abundantly manifest from that solemn doxology, Revelation 1:5,6,",
-        "next": "Which yet is set forth with more glory, chapter 5:8,"
+        "file": "EPUB/ch005.xhtml",
+        "previous": "der three divisions: — his _personal grace,_ III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; _— purchased grace_,",
+        "next": "VII."
       },
       {
         "file": "EPUB/ch008.xhtml",
@@ -521,171 +563,82 @@
         "next": "And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew "
       },
       {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "he same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them. So are grace and peace, Revelation 1:4,5,",
-        "next": "The seven Spirits before the throne, are the Holy Spirit of God, considered as the perfect fountain of every perfect gift and dispensation. All are here joined together, and yet al"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": ", ye shall abide in him,\" 1 John 2:27. That teaching unction which is not only true, but truth itself, is only the Holy Spirit of God: so that he teacheth also; being given unto us",
-        "next": "I have chosen this special instance because, as I told you, it is comprehensive, and comprises in itself most of the particulars that might be annumerated, — quickening, preserving"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "2. So in that distribution made by the apostle in his solemn parting benediction, 2 Corinthians 13:14,",
-        "next": "Ascribing sundry things unto the distinct persons, it is love that he peculiarly assigns to the Father. And the fellowship of the Spirit is mentioned with the grace of Christ and t"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "3. John 16:26,27, saith our Savior,",
-        "next": "But how is this, that our Savior saith, \"I say not that I will pray the Father for you,\" when he saith plainly, chapter 14:16, \"I will pray the Father for you?\" The disciples, with"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "4. The apostle teaches the same, Romans 5:5,",
-        "next": "God, whose love this is, is plainly distinguished from the Holy Ghost, who sheds abroad that love of his; and, verse 8, he is also distinguished from the Son, for it is from that l"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "in faith, the ground of all acceptable obedience, Deuteronomy 5:10; Exodus 20:6; Deuteronomy 10:12, 11:1,13, 13:3. Thus is this whole business stated by the apostle, Ephesians 1:4,",
-        "next": "It begins in the love of God, and ends in our love to him. That is it which the eternal love of God aims at in us, and works us up unto. It is true, our universal obedience falls w"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "[1.] They agree in two things: — 1st. That they' are each a love of rest and complacency. (1st.) The love of God is so. Zephaniah 3:17,",
-        "next": "Both these things are here assigned unto God in his love, — REST and DELIGHT. The words are, יַחֲרִישׁ בְּאַהֲבָתי , — \"He shall be silent because of his love.\" To rest with conten"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "a long life, under its best and most noble considerations, attended with all enjoyments that make it pleasant and comfortable. From both these is that of the church, in Hosea 14:3,",
-        "next": "They reject the most goodly appearances of rest and contentment, to make up all in God, on whom they cast themselves, as otherwise helpless orphans."
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "(1st.) The love of the Father unto us is an antecedent love, and that in two respects: —",
-        "next": "[1st.] It is antecedent in respect of our love, 1 John 4:10, \"Herein is love, not that we loved God, but that he loved us.\" His love goes before ours. The father loves the child, w"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "[2ndly.] In respect of all other causes of love whatever. It goes not only before our love, but also any thing in us that is lovely. Romans 5:8,",
-        "next": "Not only his love, but the eminent fruit thereof, is made out towards us as sinners. Sin holds out all of unloveliness and undesirableness that can be in a creature. The very menti"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "(2ndly.) Our love is consequential in both these regards: —",
-        "next": "[1st.] In respect of the love of God. Never did creature turn his affections towards God, if the heart of God were not first set upon him."
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "ng; that cannot be heightened by any act of ours, that cannot be lessened by any thing in us. I say, in itself it is thus; otherwise, in a twofold regard, it may admit of change: —",
-        "next": "[1st.] In respect of its fruits. It is, as I said, a fruitful love, a love of bounty. In reference unto those fruits, it may sometimes be greater, sometimes less; its communication"
-      },
-      {
         "file": "EPUB/ch010.xhtml",
         "previous": " art, then, in this, upon a most sure bottom. If thou believest and receives the Father as love, he will infallibly be so to thee, though others may fall under his severity. But, —",
         "next": "Obj. 3. \"I cannot find my heart making returns of love unto God. Could I find my soul set upon him, I could then believe his soul delighted in me.\""
       },
       {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "close, spiritual, heavenly refreshing, in the mutual communication of love with the Father himself. How they are generally misconceived, the apostle declares, 2 Corinthians 6:8-10,",
-        "next": "And as it is thus in general, so in no one thing more than this, that they are looked on as poor, low, despicable persons, when indeed they are the only great and noble personages "
+        "file": "EPUB/ch021.xhtml",
+        "previous": "(2ndly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, —",
+        "next": "(3rdly.) The holy Ghost appoints and ordains believers to works of obedience and holiness, and to work holiness in others. So, in particular, Acts 13:2, he appoints and designs men"
       },
       {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "I. For the first, I shall only produce some few places of Scripture to confirm it, that it is so: — 1 Corinthians 1:9,",
-        "next": "This is that whereunto all the saints are called, and wherein, by the faithfulness of God, they shall be preserved, even fellowship with Jesus Christ our Lord. We are called of God"
+        "file": "EPUB/ch021.xhtml",
+        "previous": "ur walking in the light of faith does glory arise to the Father. The fruits of his love, of his grace, of his kindness, are seen upon us; and God is glorified in our behalf. And, —",
+        "next": "[2ndly.] The Son is gloried thereby. It is the will of God that as all men honor the Father, so should they honor the Son, John 5:23. And how is this done? By believing in him, Joh"
       },
       {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "served, even fellowship with Jesus Christ our Lord. We are called of God the Father, as the Father, in pursuit of his love, to communion with the Son, as our Lord. Revelation 3:20,",
-        "next": "Certainly this is fellowship, or I know not what is. Christ will sup with believers: he refreshes himself with his own graces in them, by his Spirit bestowed on them. The Lord Chri"
+        "file": "EPUB/ch023.xhtml",
+        "previous": "(1st.) Unto a present place, name, and room, in the house of God, and all the privileges and administrations thereof",
+        "next": "(2ndly.) To a future fullness of the great inheritance of glory, — of a kingdom purchased for that whole family whereof they are by Jesus Christ: —"
       },
       {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "ng of the sweet fruits of the Spirit in the saints. Hence is that prayer of the spouse that she may have something for his entertainment when he comes to her, Song of Solomon 4:16,",
-        "next": "The souls of the saints are the garden of Jesus Christ, the good ground, Hebrews 6:7; — a garden for delight; he rejoices in them; \"his delights are with the sons of men,\" Proverbs"
+        "file": "EPUB/ch026.xhtml",
+        "previous": "nce on him. He distributes as he will; — who should not be content with his portion? what claim can any lay to that which he distributeth as he will? which is farther manifested, —",
+        "next": "[3rdly.] By his being said to give when and what he bestows. They \"spake with other tongues, as the Spirit gave them utterance,\" Acts 2:4. He gave them to them; that is, freely: wh"
       },
       {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "s are with the sons of men,\" Proverbs 8:31; and he \"rejoices over them,\" Zephaniah 3:17; — and a garden for fruit, yea, pleasant fruit; so he describes it, Song of Solomon 4:12-14,",
-        "next": "Whatever is sweet and delicious for taste, whatever savory and odoriferous, whatever is useful and medicinal, is in this garden. There is all manner of spiritual refreshments, of a"
+        "file": "EPUB/ch027.xhtml",
+        "previous": "But, —",
+        "next": "[2ndly.] Suppose that by \"the powers of the world to come\" the glory of heaven is intended, there is a wide difference between taking a vanishing taste of it ourselves, and receivi"
       },
       {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "mmunication of spiritual blessings from the several persons unto the saints is so exactly distinguished; it is grace that is ascribed to our Lord Jesus Christ, 2 Corinthians 13:14,",
-        "next": "Yea, Paul is so delighted with this, that he makes it his motto, and the token whereby he would have his epistles known, 2 Thessalonians 3:17,18,"
+        "file": "EPUB/ch035.xhtml",
+        "previous": "ature are absolutely divine, and all those of the human nature absolutely human, whence it came to pass that all the operations and works of Christ, as mediator, are theandrical? §",
+        "next": "Although there be nothing in the person of Christ but his divine and human nature, yet the person of Christ is neither his divine nature nor his human; for the human nature is, and"
       },
       {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "Yea, Paul is so delighted with this, that he makes it his motto, and the token whereby he would have his epistles known, 2 Thessalonians 3:17,18,",
-        "next": "Yea, he makes these two, \"Grace be with you,\" and, \"The Lord Jesus be with you,\" to be equivalent expressions; for whereas he affirmed the one to be the token in all his epistles, "
+        "file": "EPUB/ch035.xhtml",
+        "previous": "o, who can afford to spend his time in a particular examination of it, unless it be in the exposition of those places which are almost verbatim transcribed out of Schlichtingius. ‡",
+        "next": "Besides, for the first truth which he opposeth, I have confirmed it in a discourse which I suppose may be made public before this come to view, beyond what I expect any sober reply"
       },
       {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "There are three things in general wherein this personal excellency and grace of the Lord Christ does consist: —",
-        "next": "(1st.) His fitness to save, from the grace of union, and the proper necessary effects thereof (2ndly.) His fullness to save, from the grace of communion; or the free consequences o"
+        "file": "EPUB/ch038.xhtml",
+        "previous": "To The Reader",
+        "next": "Reader, This small treatise has no other design but thy good, and establishment in the truth. And therefore, as laying aside that consideration alone, I could desirously have been "
       },
       {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "om the grace of communion; or the free consequences of the grace of union. (3rdly.) His excellency to endear, from his complete suitableness to all the wants of the souls of men: —",
-        "next": "(1st.) His fitness to save, — his being \"hikanos\", a fit Savior, suited to the work; and this, I say, is from his grace of union. The uniting of the natures of God and man in one p"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "Union is the conjunction of the two natures of God and man in one person, John 1:14; Isaiah 9:6; Romans 1:3, 9:5. The necessary consequences whereof are, —",
-        "next": "[1st.] The subsistence of the human nature in the person of the Son of God, having no subsistence of its own, Luke 1:35; 1 Timothy 3:16."
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "have interest in him, as my head and my husband; and I am his, possessed of him, owned by him, given up unto him: and that as to my Beloved in a conjugal relation.\" So Isaiah 54:5,",
-        "next": "This is yielded as the reason why the church shall not be ashamed nor confounded, in the midst of her troubles and trials, — she is married unto her Maker, and her Redeemer is her "
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "e with me from Lebanon, my spouse, with me from Lebanon: look from the top of Amana, from the top of Shenir and Herman, from the lions' dens, from the mountains of the leopards;\" —",
-        "next": "Upon this invitation, the spouse boldly concludes, Song of Solomon 7:10, that the desire of Christ is towards her; that he does indeed love her, and aim at taking her into this fel"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "ighteousness, he is \"The LORD our Righteousness,\" Jeremiah 23:6. Because he is the wisdom of God, and the power of God, he is \"made unto us wisdom,\" etc., 1 Corinthians 1:30. Thus,",
-        "next": "This is the first thing on the part of Christ, — the free donation and bestowing of himself upon us to be our Christ, our Beloved, as to all the ends and purposes of love, mercy, g"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "There are two things that complete this self-resignation of the soul: —",
-        "next": "(1st.) The liking of Christ, for his excellency, grace, and suitableness, far above all other beloveds whatever, preferring him in the judgement and mind above them all. In the pla"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "appeared in the form of a servant, yet then \"he thought it not robbery to be equal with God,\" Philippians 17:6 2:6. In the glory of this majesty he dwells in light inaccessible. We",
-        "next": "We may all say one to another of this,"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "We may all say one to another of this,",
-        "next": "If any one should ask, now, with them in the Canticles, what is in the Lord Jesus, our beloved, more than in other beloveds, that should make him so desirable, and amiable, and wor"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "ners in an all-sufficient God, it is in Christ; and, indeed, in any other there cannot be enough. The Lord gives this reason for the peace and confidence of sinners, Isaiah 54:4,5,",
-        "next": "But how shall this be? So much sin, and not ashamed! so much guilt, and not confounded! \"Thy Maker,\" saith he, \"is thine husband; the LORD of hosts is his name; and thy Redeemer th"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "(1.) It is eternal: \"Come ye near unto me, hear ye this; I have not,\" saith he,",
-        "next": "He himself is \"yesterday, today, and for ever,\" Hebrews 13:8; and so is his love, being his who is \"Alpha and Omega, the first and the last, the beginning and the ending, which is,"
+        "file": "EPUB/ch041.xhtml",
+        "previous": "is name whereby he should be called in this world; but that this should be the condition of his person, — he should be \"God with us,\" God in our nature. So are the words expounded,",
+        "next": "Matthew 1:20-23,"
       }
     ],
-    "structural_start_exclusions": 198,
-    "short_fragment_count": 17,
+    "structural_start_exclusions": 243,
+    "short_fragment_count": 22,
     "short_fragments": [
       {
+        "file": "EPUB/ch001.xhtml",
+        "text": "CHRISTIAN READER,"
+      },
+      {
         "file": "EPUB/ch002.xhtml",
-        "text": "DANIEL BURGESS"
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Daniel Burgess"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "VII."
       },
       {
         "file": "EPUB/ch008.xhtml",
         "text": "— of which place afterward."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Afflictions."
       },
       {
         "file": "EPUB/ch019.xhtml",
@@ -697,7 +650,7 @@
       },
       {
         "file": "EPUB/ch032.xhtml",
-        "text": "END"
+        "text": "END."
       },
       {
         "file": "EPUB/ch035.xhtml",
@@ -709,11 +662,15 @@
       },
       {
         "file": "EPUB/ch035.xhtml",
-        "text": "END"
+        "text": "END."
       },
       {
         "file": "EPUB/ch037.xhtml",
         "text": "EDITOR"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "To The Reader"
       },
       {
         "file": "EPUB/ch040.xhtml",
@@ -750,8 +707,13 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 0,
-    "inline_structural_candidates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Part I. — The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity, II. Communion with the FATHER is described, III. and practical inferences dedu"
+      }
+    ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -760,79 +722,64 @@
     "suspicious_large_number_starts": [],
     "roman_heading_candidate_count": 0,
     "roman_heading_candidates": [],
-    "overlong_heading_candidate_count": 5,
-    "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch013.xhtml",
-        "tag": "h4",
-        "text": "II. Having manifested that the saints hold peculiar fellowship with the Lord Jesus, it neatly follows that we show wherein it is that they have this peculiar communion with him."
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "tag": "h4",
-        "text": "II. For the knowledge of ourselves, which is the SECOND part of our wisdom, this consists in these three things, which our Savior sends his Spirit to convince the world of, — even \"sin, righteousness, and judgement,\" John 16:8."
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "tag": "h4",
-        "text": "II. Christ values his saints, values believers (which is the second branch of that conjugal affection he bears towards them), having taken them into the relation whereof we speak."
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "tag": "h4",
-        "text": "I. Communion with Christ in purchased grace, as unto acceptation with God, from the obedience of his life and efficacy of his death, is the first thing we inquire into."
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "tag": "h4",
-        "text": "II. Our communion with the Lord Jesus as to that grace of sanctification and purification whereof we have made mention, in the several distinctions and degrees thereof, formerly, is neatly to be considered."
-      }
-    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
     "pdf_marker_count": 478,
-    "epub_marker_count": 479,
+    "epub_marker_count": 482,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 5,
+    "excess_marker_count": 7,
     "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p69",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
       {
         "marker": "(1.)",
         "pdf": 80,
-        "epub": 82,
+        "epub": 81,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "tions: — 1. On the part of Christ — He values his saints — Evidences of that valuation: — (1.) His incarnation; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believe"
+            "location": "EPUB/structural_guide.xhtml#p72",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "ath. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of belie"
-          },
-          {
-            "location": "EPUB/ch008.xhtml#p152",
+            "location": "EPUB/ch008.xhtml#p169",
             "context": "(1.) When the same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them. So are grace and peace, Revelation"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p206",
+            "context": "(1.) John 3:16, \"God so loved the world, that he gave,\" etc.; that is, with the love of his purpose and good pleasure, his determinate will of doing good. This is distinctly ascribed t"
           }
         ]
       },
       {
         "marker": "(2.)",
         "pdf": 80,
-        "epub": 82,
+        "epub": 81,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "t of Christ — He values his saints — Evidences of that valuation: — (1.) His incarnation; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Chri"
+            "location": "EPUB/structural_guide.xhtml#p72",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "elievers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conugal affection — On the part of Chris"
-          },
-          {
-            "location": "EPUB/ch008.xhtml#p155",
+            "location": "EPUB/ch008.xhtml#p172",
             "context": "(2.) When the same thing is attributed severally and singly unto each person. There is, indeed, no gracious influence from above, no illapse of light, life, love, or grace upon our hea"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p207",
+            "context": "(2.) John 14:23, there is 25 mention of that other kind of love whereof we speak. \"If a man love me,\" saith Christ, \"he will keep my words: and my Father will love him, and we will com"
           }
         ]
       },
@@ -842,54 +789,69 @@
         "epub": 4,
         "examples": [
           {
-            "location": "EPUB/ch035.xhtml#p1502",
-            "context": ", Ephesians 2:10. The Father is spoken of personally, Christ being mentioned as mediator. (2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, —"
+            "location": "EPUB/ch035.xhtml#p1541",
+            "context": "(2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, — (3dly.) Th"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1507",
+            "location": "EPUB/ch035.xhtml#p1544",
             "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1508",
-            "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
+            "location": "EPUB/ch035.xhtml#p1544",
+            "context": "eople, zealous of good works.\" This was his aim, his design, in giving himself for us; as (2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
           }
         ]
       },
       {
-        "marker": "(3.)",
-        "pdf": 32,
-        "epub": 34,
+        "marker": "[1.]",
+        "pdf": 56,
+        "epub": 57,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "luation: — (1.) His incarnation; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and pers"
+            "location": "EPUB/structural_guide.xhtml#p72",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "st: — (1.) They value him above all other things and persons; (2.) Above their own lives; (3.) All spiritual excellencies. The sum of all on the part of Christ — The sum on the part of believers. The third conugal affection — On the part of Christ, pity or compassion — Wher"
+            "location": "EPUB/ch008.xhtml#p175",
+            "context": "[1.] Unto the FATHER. The accomplishment of that promise is peculiarly referred to him, John 6:45, \"It is written in the prophets, And they shall be all taught of God. Every man theref"
           },
           {
-            "location": "EPUB/ch010.xhtml#p263",
-            "context": "(3.) Let it have its proper fruit and efficacy upon thy heart, in return of love to him again. So shall we walk in the light of God's countenance, and hold holy communion with our Fath"
+            "location": "EPUB/ch009.xhtml#p228",
+            "context": "[1.] Wherein this love of God unto us and our love to him do agree, as to some manner of analogy and likeness."
           }
         ]
       },
       {
-        "marker": "(4.)",
-        "pdf": 15,
-        "epub": 16,
+        "marker": "[1]",
+        "pdf": 1,
+        "epub": 2,
         "examples": [
           {
-            "location": "EPUB/contents_2.xhtml#p37",
-            "context": "on; (2.) Exinanition, 2 Corinthians 8:9; Philippians 2:6, 7; (3.) Obedience as a servant; (4.) In his death. His valuation of them in comparison of others. 2. Believers' estimation of Christ: — (1.) They value him above all other things and persons; (2.) Above their own liv"
+            "location": "EPUB/structural_guide.xhtml#p69",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           },
           {
-            "location": "EPUB/ch012.xhtml#p312",
-            "context": "I shall briefly observe four things therein: — (1.) Sweetness. (2.) Delight. (3.) Safety. (4.) Comfort."
+            "location": "EPUB/ch018.xhtml#p748",
+            "context": "[1]. In respect of sanctification; [2.] In respect of consolation: —"
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 56,
+        "epub": 57,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p72",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch012.xhtml#p319",
-            "context": "(4.) Supportment and consolation, verse 6, \"His left hand is under my head, and his right hand does embrace me.\" Christ here has the posture of a most tender friend towards any one in"
+            "location": "EPUB/ch008.xhtml#p176",
+            "context": "[2.] Unto the SON. The Father proclaims him from heaven to be the great teacher, in that solemn charge to hear him, which came once [and] again from the excellent glory: \"This is my be"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p229",
+            "context": "[2.] Wherein they differ; which will farther discover the nature of each of them."
           }
         ]
       }
@@ -928,18 +890,6 @@
     {
       "phrase": "the father that in him should all fullness dwell colossians",
       "count": 6
-    },
-    {
-      "phrase": "father that in him should all fullness dwell colossians 19",
-      "count": 6
-    },
-    {
-      "phrase": "there are diversities of operations but it is the same",
-      "count": 5
-    },
-    {
-      "phrase": "are diversities of operations but it is the same god",
-      "count": 5
     },
     {
       "phrase": "it pleased the father that in him should all fullness",
@@ -1004,6 +954,18 @@
     {
       "phrase": "the righteousness of the law might be fulfilled in us",
       "count": 5
+    },
+    {
+      "phrase": "our sins in his own body on the tree peter",
+      "count": 5
+    },
+    {
+      "phrase": "baptizing them in the name of the father and of",
+      "count": 5
+    },
+    {
+      "phrase": "them in the name of the father and of the",
+      "count": 5
     }
   ],
   "greek_hebrew_word_coverage": {
@@ -1027,6 +989,216 @@
     "hebrew_clauses_checked": 11,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 2598,
+    "epub_latin_word_count": 2628,
+    "epub_tagged_latin_word_count": 585,
+    "pdf_latin_unique_words": 629,
+    "epub_latin_unique_words": 637,
+    "epub_tagged_unique_words": 372,
+    "latin_word_coverage_ratio": 0.995,
+    "latin_tagging_ratio": 0.2226,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "jesus",
+        "epub": 360,
+        "tagged": 6
+      },
+      {
+        "word": "nor",
+        "epub": 271,
+        "tagged": 8
+      },
+      {
+        "word": "mediator",
+        "epub": 164,
+        "tagged": 3
+      },
+      {
+        "word": "yea",
+        "epub": 91,
+        "tagged": 2
+      },
+      {
+        "word": "distinct",
+        "epub": 78,
+        "tagged": 0
+      },
+      {
+        "word": "whereas",
+        "epub": 58,
+        "tagged": 0
+      },
+      {
+        "word": "whereunto",
+        "epub": 52,
+        "tagged": 0
+      },
+      {
+        "word": "poor",
+        "epub": 51,
+        "tagged": 1
+      },
+      {
+        "word": "adam",
+        "epub": 51,
+        "tagged": 1
+      },
+      {
+        "word": "sum",
+        "epub": 42,
+        "tagged": 1
+      },
+      {
+        "word": "thereunto",
+        "epub": 34,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 33,
+        "tagged": 0
+      },
+      {
+        "word": "elsewhere",
+        "epub": 33,
+        "tagged": 1
+      },
+      {
+        "word": "savor",
+        "epub": 25,
+        "tagged": 0
+      },
+      {
+        "word": "mere",
+        "epub": 27,
+        "tagged": 3
+      },
+      {
+        "word": "endeavor",
+        "epub": 20,
+        "tagged": 0
+      },
+      {
+        "word": "abraham",
+        "epub": 25,
+        "tagged": 6
+      },
+      {
+        "word": "terror",
+        "epub": 19,
+        "tagged": 0
+      },
+      {
+        "word": "hereunto",
+        "epub": 18,
+        "tagged": 0
+      },
+      {
+        "word": "everywhere",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "communicate",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "undergo",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "governor",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "whereinto",
+        "epub": 12,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 60,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 169,
+    "translated_latin_runs_count": 41,
+    "latin_translation_ratio": 0.2426,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Quintus Curtius ‡  Rufus"
+      },
+      {
+        "phrase": "permista deliciis auxilia"
+      },
+      {
+        "phrase": "pauci sacras Scripturas"
+      },
+      {
+        "phrase": "nomina rerum, plurimi nomina magistrorum sequuntur"
+      },
+      {
+        "phrase": "paucissimae lectionis mancipia"
+      },
+      {
+        "phrase": "contra antidotum"
+      },
+      {
+        "phrase": "VII., VIII"
+      },
+      {
+        "phrase": "doloris socii"
+      },
+      {
+        "phrase": "is \"communitas homini cum Deo"
+      },
+      {
+        "phrase": "Believe you in God; believe also in me."
+      },
+      {
+        "phrase": "prima Veritas"
+      },
+      {
+        "phrase": "Trinitatis ad extra"
+      },
+      {
+        "phrase": "super vitas"
+      },
+      {
+        "phrase": "austere, severe"
+      },
+      {
+        "phrase": "admodum prae filiis hominum"
+      },
+      {
+        "phrase": "principium quo"
+      },
+      {
+        "phrase": "principium quod"
+      },
+      {
+        "phrase": "eramus unus"
+      },
+      {
+        "phrase": "massa auri"
+      },
+      {
+        "phrase": "Jesus abominate"
+      }
+    ]
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,

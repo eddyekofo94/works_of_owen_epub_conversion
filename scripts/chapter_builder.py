@@ -2,6 +2,7 @@ import re
 from dataclasses import dataclass, field
 from shared import title_case
 from scripts.markdown_skeleton import get_merged_page_text
+from scripts.text_cleaner import get_pages_text
 # ================================================================
 # STAGE 5: Chapter Building from TOC
 # ================================================================

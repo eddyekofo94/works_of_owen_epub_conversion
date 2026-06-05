@@ -8,12 +8,12 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 77
-- Manifest items: 68
-- Spine items: 48
-- XHTML files: 50
-- Embedded fonts: 14
-- NAV links: 51
+- Files: 86
+- Manifest items: 77
+- Spine items: 51
+- XHTML files: 52
+- Embedded fonts: 20
+- NAV links: 53
 
 ## Content Checks
 
@@ -21,8 +21,8 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 633
 - Untagged Hebrew chars: 0
-- Noteref links: 26
-- Endnote anchors: 26
+- Noteref links: 131
+- Endnote anchors: 131
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
@@ -43,3 +43,11 @@
 ### chapter_heading_in_paragraph
 
 - `EPUB/ch042.xhtml`: Chapter 3
+
+### lowercase_paragraph_start
+
+- `EPUB/ch008.xhtml`: and verses 13,14, "Every creature which is in heaven, and on the earth, and under
+- `EPUB/ch013.xhtml`: which, in the phrase of another evangelist, is, "White as snow, so as no fuller o
+- `EPUB/ch017.xhtml`: he rejoices in him who was to take away the curse, by being made a curse for us.
+- `EPUB/ch019.xhtml`: because that we could not in that condition of weakness whereinto we are cast by
+- `EPUB/ch023.xhtml`: no more in bondage, but have the liberty of sons. And this liberty respects, —

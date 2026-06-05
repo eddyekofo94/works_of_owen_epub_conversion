@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-05-29T11:42:17.778559+00:00",
+  "epub": "volumes/v2/output/volume_2.epub",
+  "generated_at": "2026-06-05T00:00:10.485130+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 77,
-    "epub_size_bytes": 4929335,
+    "file_count": 86,
+    "epub_size_bytes": 7902634,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +23,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 68,
-    "spine_count": 48,
-    "xhtml_count": 50,
+    "manifest_count": 77,
+    "spine_count": 51,
+    "xhtml_count": 52,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 20,
     "language": {
       "greek_chars": 2627,
       "greek_untagged_chars": 0,
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 26,
-      "unique_noteref_targets": 26,
-      "endnote_anchor_count": 26,
+      "noteref_count": 131,
+      "unique_noteref_targets": 131,
+      "endnote_anchor_count": 131,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
+      "lowercase_paragraph_start_files": 10,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -115,14 +115,55 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "and verses 13,14, \"Every creature which is in heaven, and on the earth, and under"
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "which, in the phrase of another evangelist, is, \"White as snow, so as no fuller o"
+          },
+          {
+            "file": "EPUB/ch017.xhtml",
+            "text": "he rejoices in him who was to take away the curse, by being made a curse for us."
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": "because that we could not in that condition of weakness whereinto we are cast by"
+          },
+          {
+            "file": "EPUB/ch023.xhtml",
+            "text": "no more in bondage, but have the liberty of sons. And this liberty respects, —"
+          },
+          {
+            "file": "EPUB/ch025.xhtml",
+            "text": "that is, till the Gentiles be called, and the Jews rejected. And chap. 44:3, \"I w"
+          },
+          {
+            "file": "EPUB/ch028.xhtml",
+            "text": "is not only extended to hope, but to our peace also in believing. So is it in the"
+          },
+          {
+            "file": "EPUB/ch035.xhtml",
+            "text": "which is plainly false. I own no knowledge of God, nor of Christ, but what is rev"
+          },
+          {
+            "file": "EPUB/ch040.xhtml",
+            "text": "compared with Numbers 21:6. Philippians 14:5 2:5,6, \"Let this mind be in you, whi"
+          },
+          {
+            "file": "EPUB/ch041.xhtml",
+            "text": "his name whereby he was to be called, was Jesus; that is, a Savior. And thereby w"
+          }
+        ],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 51,
+    "nav_link_count": 53,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

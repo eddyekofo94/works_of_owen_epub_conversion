@@ -1,18 +1,10 @@
 {
   "epub": "volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-03T21:08:16.169498+00:00",
-  "status": "fail",
-  "error_count": 1,
+  "generated_at": "2026-06-05T13:50:01.986624+00:00",
+  "status": "warn",
+  "error_count": 0,
   "warning_count": 3,
-  "errors": [
-    {
-      "code": "nav_in_spine",
-      "message": "EPUB navigation document is in the reading-order spine",
-      "idrefs": [
-        "chapter_62"
-      ]
-    }
-  ],
+  "errors": [],
   "warnings": [
     {
       "code": "possible_beta_code_residue",
@@ -36,7 +28,7 @@
   ],
   "info": {
     "file_count": 97,
-    "epub_size_bytes": 8391075,
+    "epub_size_bytes": 8445543,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -62,9 +54,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 584,
-      "unique_noteref_targets": 583,
-      "endnote_anchor_count": 586,
+      "noteref_count": 1092,
+      "unique_noteref_targets": 1091,
+      "endnote_anchor_count": 1094,
       "missing_endnote_targets": [],
       "orphan_endnotes": [
         "EPUB/endnotes.xhtml#fn285",
@@ -178,7 +170,7 @@
           },
           {
             "file": "EPUB/ch017.xhtml",
-            "text": "which surely as to his incarnation he was not. \"Before Abraham was, I am,\" John 8"
+            "text": "etc."
           },
           {
             "file": "EPUB/ch018.xhtml",
@@ -186,7 +178,7 @@
           },
           {
             "file": "EPUB/ch020.xhtml",
-            "text": "to which is added that of Revelation 4:8chap. 4:8,"
+            "text": "to which is added that of Revelation 4:8; chap. 4:8,"
           },
           {
             "file": "EPUB/ch031.xhtml",

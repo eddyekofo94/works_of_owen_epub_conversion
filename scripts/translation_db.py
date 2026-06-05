@@ -5,6 +5,12 @@ for Greek, Hebrew, Latin, and Patristic passages in John Owen's Works.
 """
 
 FOOTNOTE_TRANSLATIONS = {
+    "v12_fn457": (
+        "<b>Modern Citation:</b> Zechariah 6:13.<br/><b>Translation:</b> &ldquo;between them both&rdquo; or &ldquo;between the two of them.&rdquo; This refers to the eternal covenant of peace between the Father and the Son."
+    ),
+    "v12_fn319": (
+        "<b>Modern Citation:</b> 1 Timothy 3:16 textual variant discussion (Griesbach, Lachmann, Tischendorf favoring &ldquo;who&rdquo; [<i>hos</i>], others favoring &ldquo;God&rdquo; [<i>Theos</i>])."
+    ),
     "v12_fn107": (
         "<b>Modern Citation:</b> Aristotle, <i>Nicomachean Ethics</i>, Book 10, Chapter 2, 1172b36.<br/><b>Translation:</b> &ldquo;For what seems true to all, this we assert to be true; and he who destroys this belief will not have anything more trustworthy to offer.&rdquo;"
     ),
@@ -5841,6 +5847,883 @@ BODY_TRANSLATIONS = {
     "Thes. Francisci David de Adorat. Jes. Christi.": (
         "<b>Modern Citation:</b> Francis David, <i>Theses on the Adoration of Jesus Christ</i> "
         "(Theses de Adoratione Jesu Christi) [1578]."
+    ),
+
+    # --- Volume 12 Translation Sweep ---
+    "Μηδὲ ἑμοὶ τῷ ταῦτα λέγοντι ἁπλῶς πιστεύσης ἐὰν τὴν ἀπόδειξιν τῶν καταγγελλομένων ἀπὸ θείων μὴ λάβῃς γραφῶν": (
+        "<b>Modern Citation:</b> Cyril of Jerusalem, <i>Catechetical Lectures</i>, 4.17 (PG 33:476).<br/><b>Translation:</b> &ldquo;Do not simply believe even me who say these things, unless you receive the proof of what is announced from the divine Scriptures.&rdquo;"
+    ),
+    "מָקוֹם": (
+        "<b>Modern Citation:</b> Rabbinic usage; Hebrew term.<br/><b>Translation:</b> &ldquo;place&rdquo; (often used in Rabbinic theology as a divine name, <i>Ha-Maqom</i>, meaning &ldquo;the Place,&rdquo; to express God's omnipresence)."
+    ),
+    "דְּמוּת": (
+        "<b>Modern Citation:</b> Genesis 1:26, 5:1.<br/><b>Translation:</b> &ldquo;likeness&rdquo; or &ldquo;similitude.&rdquo;"
+    ),
+    "צֶלֶם": (
+        "<b>Modern Citation:</b> Genesis 1:26, 9:6.<br/><b>Translation:</b> &ldquo;image.&rdquo;"
+    ),
+    "תֹאַר": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;form,&rdquo; &ldquo;shape,&rdquo; or &ldquo;outline&rdquo; (denoting physical appearance)."
+    ),
+    "כִּδְמוּת חֲמַת־נָחָשׁ": (
+        "<b>Modern Citation:</b> Psalm 58:4 (Hebrew Bible 58:5).<br/><b>Translation:</b> &ldquo;like the poison of a serpent.&rdquo;"
+    ),
+    "Τοὺς καθ ὁμοίωσιν Θεοῦ γεγονότας": (
+        "<b>Modern Citation:</b> James 3:9.<br/><b>Translation:</b> &ldquo;who have been made after the similitude of God.&rdquo;"
+    ),
+    "ὁμοίωσις": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term; compare Genesis 1:26 (LXX) and James 3:9.<br/><b>Translation:</b> &ldquo;likeness&rdquo; or &ldquo;similitude.&rdquo;"
+    ),
+    "־הפָנָיו": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;his face&rdquo; or &ldquo;his presence&rdquo; (often translated as <span lang=\"el\" xml:lang=\"el\">πρόσωπον αὐτοῦ</span> in the Septuagint)."
+    ),
+    "πρόσωπον αὐτοῦ": (
+        "<b>Modern Citation:</b> Septuagint and New Testament Greek usage.<br/><b>Translation:</b> &ldquo;his face&rdquo; or &ldquo;his presence.&rdquo;"
+    ),
+    "אֶת־פְנֵי": (
+        "<b>Modern Citation:</b> Genesis 33:18.<br/><b>Translation:</b> &ldquo;before&rdquo; or &ldquo;in the face of.&rdquo;"
+    ),
+    "ὁ ὀφθαλμός": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term.<br/><b>Translation:</b> &ldquo;the eye.&rdquo;"
+    ),
+    "Οὔτε εῖδος αὐτοῦ ἑωράκατε": (
+        "<b>Modern Citation:</b> John 5:37.<br/><b>Translation:</b> &ldquo;nor have you seen his form.&rdquo;"
+    ),
+    "Απὸ παντὸς εἴδους πονηροῦ ἀπέχεσθε": (
+        "<b>Modern Citation:</b> 1 Thessalonians 5:22.<br/><b>Translation:</b> &ldquo;Abstain from every form of evil.&rdquo;"
+    ),
+    "Ομοιον αὐτῷ σαρκικὸν καθεστάναι": (
+        "<b>Modern Citation:</b> Scholastic or patristic summary of anthropomorphite or Gnostic views.<br/><b>Translation:</b> &ldquo;that he was established as a fleshly similitude of him.&rdquo;"
+    ),
+    "Ταῦτα ἀνθρωποπαθῶς μὲν λέγονται θεοπρεπῶς δὲ νοοῦνται": (
+        "<b>Modern Citation:</b> Patristic maxim; compare John of Damascus, <i>De Fide Orthodoxa</i>, Book 1, Chapter 11.<br/><b>Translation:</b> &ldquo;These things are spoken after the manner of men, but are understood in a manner becoming to God.&rdquo;"
+    ),
+    "ὁ ἐπιφέρων τὴν ὀργήν": (
+        "<b>Modern Citation:</b> Romans 3:5.<br/><b>Translation:</b> &ldquo;who inflicteth wrath.&rdquo;"
+    ),
+    "ὄρεξις μετὰ λύπης": (
+        "<b>Modern Citation:</b> Aristotle, <i>Rhetoric</i>, Book 2, Chapter 2, 1378a30.<br/><b>Translation:</b> &ldquo;desire accompanied by pain.&rdquo;"
+    ),
+    "τιμωρίας φαινομένης διὰ φαινομένην ὀλιγωρίαν": (
+        "<b>Modern Citation:</b> Aristotle, <i>Rhetoric</i>, Book 2, Chapter 2, 1378a30.<br/><b>Translation:</b> &ldquo;of an apparent revenge on account of an apparent neglect.&rdquo;"
+    ),
+    "ἐφ ῷ": (
+        "<b>Modern Citation:</b> Romans 5:12.<br/><b>Translation:</b> &ldquo;on account of which&rdquo; or &ldquo;because.&rdquo;"
+    ),
+    "εν ῷ": (
+        "<b>Modern Citation:</b> Romans 8:3, Hebrews 2:18.<br/><b>Translation:</b> &ldquo;in which&rdquo; or &ldquo;wherein.&rdquo;"
+    ),
+    "ἴδιος υἱός": (
+        "<b>Modern Citation:</b> Romans 8:32.<br/><b>Translation:</b> &ldquo;his own Son.&rdquo;"
+    ),
+    "ἴδιον Πατέρα": (
+        "<b>Modern Citation:</b> John 5:18.<br/><b>Translation:</b> &ldquo;his own Father.&rdquo;"
+    ),
+    "φυσικὰ καὶ ἀδιάβλητα πάθη": (
+        "<b>Modern Citation:</b> John of Damascus, <i>De Fide Orthodoxa</i>, Book 3, Chapter 20 (PG 94:1081).<br/><b>Translation:</b> &ldquo;natural and blameless passions.&rdquo; In classical Christology, these refer to human limitations like hunger, thirst, sleep, and weariness which contain no sin."
+    ),
+    "בְּרִ שִׁית": (
+        "<b>Modern Citation:</b> Genesis 1:1, Syriac translation.<br/><b>Translation:</b> &ldquo;In the beginning.&rdquo;"
+    ),
+    "εἰς τὰ ἴδια": (
+        "<b>Modern Citation:</b> John 1:11.<br/><b>Translation:</b> &ldquo;unto his own [possessions/things].&rdquo;"
+    ),
+    "οἱ ἴδιοι": (
+        "<b>Modern Citation:</b> John 1:11.<br/><b>Translation:</b> &ldquo;his own [people].&rdquo;"
+    ),
+    "Τοῦ γενομένου ἐκ σπέρματος Δαβὶδ κατὰ σάρκα": (
+        "<b>Modern Citation:</b> Romans 1:3.<br/><b>Translation:</b> &ldquo;who was made of the seed of David according to the flesh.&rdquo;"
+    ),
+    "Γενόμενον ἐκ γυναικός": (
+        "<b>Modern Citation:</b> Galatians 4:4.<br/><b>Translation:</b> &ldquo;made of a woman.&rdquo;"
+    ),
+    "מוֹצָאֹתָיו": (
+        "<b>Modern Citation:</b> Micah 5:2.<br/><b>Translation:</b> &ldquo;his goings forth.&rdquo;"
+    ),
+    "מִקֶּדֶם": (
+        "<b>Modern Citation:</b> Micah 5:2.<br/><b>Translation:</b> &ldquo;from of old&rdquo; or &ldquo;from the beginning.&rdquo;"
+    ),
+    "עוֹלָם": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;eternity,&rdquo; &ldquo;age,&rdquo; or &ldquo;duration&rdquo; (often denoting perpetual existence)."
+    ),
+    "בֵּין שְׁנֵיהֶם": (
+        "<b>Modern Citation:</b> Zechariah 6:13.<br/><b>Translation:</b> &ldquo;between them both&rdquo; or &ldquo;between the two of them.&rdquo; Owen cites this verse in the context of the covenant of peace between the Father and the Son."
+    ),
+    "Еν ὁμοιώματι ἀνθρώπων γενόμενος": (
+        "<b>Modern Citation:</b> Philippians 2:7.<br/><b>Translation:</b> &ldquo;being made in the likeness of men.&rdquo;"
+    ),
+    "Cum similis esset hominibus, illis nempe primis, id est, peccati expers": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Philippians 2:7</i>.<br/><b>Translation:</b> &ldquo;Whereas he was like men, namely those first [i.e., Adam before the Fall], that is, without sin.&rdquo;"
+    ),
+    "ὅσιος ἄκακος ἀμίαντος κεχωρισμένος ἀπὸ τῶν ἁμαρτωλῶν": (
+        "<b>Modern Citation:</b> Hebrews 7:26.<br/><b>Translation:</b> &ldquo;holy, harmless, undefiled, separate from sinners.&rdquo;"
+    ),
+    "δεύτερος ἄνθρωπος": (
+        "<b>Modern Citation:</b> 1 Corinthians 15:47.<br/><b>Translation:</b> &ldquo;the second man.&rdquo;"
+    ),
+    "ἔσχατος Αδάμ": (
+        "<b>Modern Citation:</b> 1 Corinthians 15:45.<br/><b>Translation:</b> &ldquo;the last Adam.&rdquo;"
+    ),
+    "ἐν ὁμοιώματι τοῦ Αδάμ": (
+        "<b>Modern Citation:</b> Theological phrase derived from Romans 5:14.<br/><b>Translation:</b> &ldquo;in the likeness of Adam.&rdquo;"
+    ),
+    "ἐφανερώθη ἐν σαρκί": (
+        "<b>Modern Citation:</b> 1 Timothy 3:16.<br/><b>Translation:</b> &ldquo;was manifested in the flesh.&rdquo;"
+    ),
+    "σὰρξ ἐγένετο": (
+        "<b>Modern Citation:</b> John 1:14.<br/><b>Translation:</b> &ldquo;became flesh.&rdquo;"
+    ),
+    "ἐν ὁμοιώματι σαρκός": (
+        "<b>Modern Citation:</b> Romans 8:3.<br/><b>Translation:</b> &ldquo;in the likeness of flesh.&rdquo;"
+    ),
+    "ἐσκήνωσεν ἐν ἡμῖν": (
+        "<b>Modern Citation:</b> John 1:14.<br/><b>Translation:</b> &ldquo;dwelt among us.&rdquo;"
+    ),
+    "ὁ͂ ἐφανερώθη": (
+        "<b>Modern Citation:</b> Textual variant in 1 Timothy 3:16.<br/><b>Translation:</b> &ldquo;which was manifested.&rdquo;"
+    ),
+    "Sensum bonum facit illud, ὁ͂ ἐφανερώθη. Evangelium illud coeleste innotuit primum non per angelos, sod per homines mortales, et quantum extera species ferebat infirmos, Christum, et apostolos ejua Εφανερώθη, bene convenit mysterio, id est, rei latenti. Sic et Colossians 1:26; σάρξ hominem significat mortalem, 2 Corinthians 5:16. Vide 1 John 4:2, et quae ad eum locum dicentur.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 Timothy 3:16</i>.<br/><b>Translation:</b> &ldquo;That makes a good sense: 'which [the gospel] was manifested.' That heavenly gospel became known first not through angels, but through mortal men, and weak as far as outward appearance bore, namely Christ and his apostles. 'Was manifested' fits well with mystery, that is, a hidden thing. So also Colossians 1:26; 'flesh' signifies a mortal man, 2 Corinthians 5:16. See 1 John 4:2, and what will be said on that place.&rdquo;"
+    ),
+    "Εδικαιώθη ἐν Πεύμαti. \"Per plurima miracula approbata est ea veritas. Πνεῦμα sunt miracula divina, per μετωνυμίαν quae est, 1 Corinthians 2:4, et alibi.\"": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 Timothy 3:16</i>.<br/><b>Translation:</b> &ldquo;'Was justified in the Spirit.' This truth was approved by very many miracles. Spirit means divine miracles, by a metonymy which is found in 1 Corinthians 2:4 and elsewhere.&rdquo;"
+    ),
+    "δικαιοῦσθαι": (
+        "<b>Modern Citation:</b> New Testament Greek term; compare 1 Timothy 3:16.<br/><b>Translation:</b> &ldquo;to be justified&rdquo; or &ldquo;approved.&rdquo;"
+    ),
+    "δουλεύειν ὑποθέσει": (
+        "<b>Modern Citation:</b> Classical Greek phrase.<br/><b>Translation:</b> &ldquo;to serve a hypothesis&rdquo; or &ldquo;to be enslaved to a preconception.&rdquo; Owen accuses Grotius of twisting texts to fit his pre-formed Socinian hypotheses."
+    ),
+    "Ωφθη ἀγγέλοις. \"Nempe cum admiratione maxima. Angeli hoc arcanum per homines mortales didicere, Ephesians 3:10; 1 Peter 1:12.\"": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 Timothy 3:16</i>.<br/><b>Translation:</b> &ldquo;'Was seen of angels.' Namely, with the greatest admiration. The angels learned this secret through mortal men, Ephesians 3:10; 1 Peter 1:12.&rdquo;"
+    ),
+    "ἐπιλαμβάνεται": (
+        "<b>Modern Citation:</b> Hebrews 2:16.<br/><b>Translation:</b> &ldquo;takes hold of&rdquo; or &ldquo;helps.&rdquo;"
+    ),
+    "ἐπελάβετο": (
+        "<b>Modern Citation:</b> Hebrews 2:16.<br/><b>Translation:</b> &ldquo;took hold of&rdquo; or &ldquo;helped.&rdquo;"
+    ),
+    "κεκοινώνηκε": (
+        "<b>Modern Citation:</b> Hebrews 2:14.<br/><b>Translation:</b> &ldquo;has partaken.&rdquo;"
+    ),
+    "κοινωνεῖ": (
+        "<b>Modern Citation:</b> New Testament Greek term.<br/><b>Translation:</b> &ldquo;partakes&rdquo; or &ldquo;shares.&rdquo;"
+    ),
+    "μετέσχε": (
+        "<b>Modern Citation:</b> Hebrews 2:14.<br/><b>Translation:</b> &ldquo;shared in.&rdquo;"
+    ),
+    "μετέχει": (
+        "<b>Modern Citation:</b> New Testament Greek term.<br/><b>Translation:</b> &ldquo;shares&rdquo; or &ldquo;partakes.&rdquo;"
+    ),
+    "Εν σαρκί": (
+        "<b>Modern Citation:</b> New Testament Greek term; compare 1 Timothy 3:16 and 1 John 4:2.<br/><b>Translation:</b> &ldquo;In the flesh.&rdquo;"
+    ),
+    "εἰς σάρκα": (
+        "<b>Modern Citation:</b> New Testament Greek term.<br/><b>Translation:</b> &ldquo;into flesh.&rdquo;"
+    ),
+    "ἐληλυθότα": (
+        "<b>Modern Citation:</b> 1 John 4:2.<br/><b>Translation:</b> &ldquo;having come.&rdquo;"
+    ),
+    "Еγὼ καὶ ὁ Πατὴρ ἕν ἐσμεν": (
+        "<b>Modern Citation:</b> John 10:30.<br/><b>Translation:</b> &ldquo;I and the Father are one.&rdquo;"
+    ),
+    "Connectit quod dixerat cum superioribus. Si Patris potestati eripi non poterunt, nec meae poterunt; nam mea potestas a Patre emanat, et quidem ita, ut tantundem valeat a me, aut a Patre, custodiri. Vid. Genesis 41:25, 27.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on John 10:30</i>.<br/><b>Translation:</b> &ldquo;He connects what he had said with what went before. If they cannot be snatched from the Father's power, neither can they from mine; for my power flows from the Father, and indeed in such a way that it is of equal value to be kept by me or by the Father. See Genesis 41:25, 27 [referring to Pharaoh's delegation of power to Joseph].&rdquo;"
+    ),
+    "πρωτότοκος": (
+        "<b>Modern Citation:</b> Colossians 1:15.<br/><b>Translation:</b> &ldquo;firstborn.&rdquo;"
+    ),
+    "πρωτόκτιστος": (
+        "<b>Modern Citation:</b> Early Christian theological term.<br/><b>Translation:</b> &ldquo;first-created.&rdquo; Owen contrasts this with <i>prototokos</i> (\"firstborn\")."
+    ),
+
+    # --- Volume 12 Translation Sweep Part 2 ---
+    "שׁוֹפֵט": (
+        "<b>Modern Citation:</b> Hebrew biblical term; compare Isaiah 66:16.<br/><b>Translation:</b> &ldquo;judging&rdquo; or &ldquo;a judge.&rdquo;"
+    ),
+    "נִשְׁפָט": (
+        "<b>Modern Citation:</b> Isaiah 66:16.<br/><b>Translation:</b> &ldquo;is judged&rdquo; or &ldquo;enters into judgment.&rdquo;"
+    ),
+    "גּוֹאֵל": (
+        "<b>Modern Citation:</b> Job 19:25.<br/><b>Translation:</b> &ldquo;redeemer&rdquo; or &ldquo;kinsman-redeemer.&rdquo;"
+    ),
+    "λυτρωτής": (
+        "<b>Modern Citation:</b> Acts 7:35.<br/><b>Translation:</b> &ldquo;redeemer&rdquo; or &ldquo;deliverer.&rdquo;"
+    ),
+    "Τοῦτον ὁ Θεὸς ἄρχοντὰ καὶ λυτρωτὴν ἀπέστειλεν": (
+        "<b>Modern Citation:</b> Acts 7:35.<br/><b>Translation:</b> &ldquo;Him did God send to be a ruler and a deliverer.&rdquo;"
+    ),
+    "Συνέκλεισε ὁ Θεὸς τοὺς πάντας εἰς ἀπείθειαν": (
+        "<b>Modern Citation:</b> Romans 11:32.<br/><b>Translation:</b> &ldquo;God has shut up all in disobedience.&rdquo;"
+    ),
+    "ἀπολύτρωσις παραβάσεων": (
+        "<b>Modern Citation:</b> Hebrews 9:15.<br/><b>Translation:</b> &ldquo;redemption of transgressions.&rdquo;"
+    ),
+    "εἰς τὸ ἰλάσκεσθαι": (
+        "<b>Modern Citation:</b> Hebrews 2:17.<br/><b>Translation:</b> &ldquo;to make reconciliation&rdquo; or &ldquo;to make propitiation.&rdquo;"
+    ),
+    "δωρεάν": (
+        "<b>Modern Citation:</b> Romans 3:24; compare Galatians 2:21 and John 15:25.<br/><b>Translation:</b> &ldquo;freely,&rdquo; &ldquo;gratuitously,&rdquo; or &ldquo;without cause.&rdquo;"
+    ),
+    "τῇ αὐτοῦ χάριτι": (
+        "<b>Modern Citation:</b> Romans 3:24.<br/><b>Translation:</b> &ldquo;by his grace.&rdquo;"
+    ),
+    "εκλογὴ χάριτος": (
+        "<b>Modern Citation:</b> Romans 11:5.<br/><b>Translation:</b> &ldquo;election of grace.&rdquo;"
+    ),
+    "τῇ χάριτι Θεοῦ": (
+        "<b>Modern Citation:</b> Hebrews 2:9.<br/><b>Translation:</b> &ldquo;by the grace of God.&rdquo;"
+    ),
+    "Δικαιούμενοι δωρεάν": (
+        "<b>Modern Citation:</b> Romans 3:24.<br/><b>Translation:</b> &ldquo;being justified freely.&rdquo;"
+    ),
+    "πρῶτον ψεῦδος": (
+        "<b>Modern Citation:</b> Classical logical and debating terminology.<br/><b>Translation:</b> &ldquo;first falsehood&rdquo; or &ldquo;fundamental error.&rdquo; It refers to the primary false assumption from which subsequent erroneous conclusions are derived."
+    ),
+    "ἔνδειξις δικαιοσύνης": (
+        "<b>Modern Citation:</b> Romans 3:25.<br/><b>Translation:</b> &ldquo;declaration of his righteousness [or justice].&rdquo;"
+    ),
+    "Δικαιοσύνη": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term.<br/><b>Translation:</b> &ldquo;righteousness&rdquo; or &ldquo;justice.&rdquo;"
+    ),
+    "חֶסֶד": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;lovingkindness,&rdquo; &ldquo;mercy,&rdquo; or &ldquo;steadfast covenant love.&rdquo;"
+    ),
+    "de fide in promissis proestandis, quia quae sequuntur non ad Judaeos solos pertinent, sed etiam ad Gentes quibus promissio nulls erat facta": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Romans 3:25</i>.<br/><b>Translation:</b> &ldquo;of fidelity in performing promises, because what follows does not pertain to the Jews alone, but also to the Gentiles, to whom no promise had been made.&rdquo;"
+    ),
+
+    # --- Volume 12 Translation Sweep Part 3 ---
+    "תַבְנִית": (
+        "<b>Modern Citation:</b> Hebrew biblical term; compare Joshua 22:28.<br/><b>Translation:</b> &ldquo;pattern,&rdquo; &ldquo;model,&rdquo; or &ldquo;copy.&rdquo;"
+    ),
+    "תְמוּνָה": (
+        "<b>Modern Citation:</b> Deuteronomy 4:15-16.<br/><b>Translation:</b> &ldquo;likeness,&rdquo; &ldquo;form,&rdquo; or &ldquo;similitude.&rdquo;"
+    ),
+    "זִיו": (
+        "<b>Modern Citation:</b> Daniel 2:31.<br/><b>Translation:</b> &ldquo;splendor,&rdquo; &ldquo;brightness,&rdquo; or &ldquo;countenance.&rdquo;"
+    ),
+    "Οὐκ ἁρπαγμὸν ἡγήσατο τὸ εῖναι ῖνα Θεῷ": (
+        "<b>Modern Citation:</b> Philippians 2:6 (with the printed text's typo of <span lang=\"el\" xml:lang=\"el\">ῖνα</span> for <span lang=\"el\" xml:lang=\"el\">ἶσα</span>).<br/><b>Translation:</b> &ldquo;thought it not robbery to be equal with God.&rdquo;"
+    ),
+    "Ααρπαγμὸν ἡγεῖσθαι": (
+        "<b>Modern Citation:</b> Philippians 2:6 (with the printed text's typo <span lang=\"el\" xml:lang=\"el\">Ααρπαγμὸν</span> for <span lang=\"el\" xml:lang=\"el\">Ἁρπαγμὸν</span>).<br/><b>Translation:</b> &ldquo;to esteem as a prey&rdquo; or &ldquo;to count as a thing to be grasped.&rdquo;"
+    ),
+    "non assumam rapinam": (
+        "<b>Modern Citation:</b> Ancient Syriac Liturgy.<br/><b>Translation:</b> &ldquo;I will not take a prey&rdquo; or &ldquo;I will not commit robbery.&rdquo;"
+    ),
+    "Οὐχ ἁρπαγὴν ἡγήσατο": (
+        "<b>Modern Citation:</b> Plutarch, <i>Life of Timoleon</i>.<br/><b>Translation:</b> &ldquo;did not count it as a prey&rdquo; or &ldquo;did not deem it spoils.&rdquo;"
+    ),
+    "Ισα": (
+        "<b>Modern Citation:</b> Philippians 2:6.<br/><b>Translation:</b> &ldquo;equal&rdquo; or &ldquo;equally.&rdquo;"
+    ),
+    "Τὸν νῦν ῖσα Θεῷ": (
+        "<b>Modern Citation:</b> Homer, <i>Odyssey</i>, Book 15, line 520.<br/><b>Translation:</b> &ldquo;whom now they honor equally with a god.&rdquo;"
+    ),
+    "Ισόθεα φρονεῖν": (
+        "<b>Modern Citation:</b> 2 Maccabees 9:12.<br/><b>Translation:</b> &ldquo;to think thoughts equal to God&rdquo; or &ldquo;to have pride like a god.&rdquo;"
+    ),
+    "Εῖναι ῖνα Θεῷ": (
+        "<b>Modern Citation:</b> Philippians 2:6 (with the printed text's typo <span lang=\"el\" xml:lang=\"el\">ῖνα</span>).<br/><b>Translation:</b> &ldquo;to be equal with God.&rdquo;"
+    ),
+    "Αλλ ἑαυτὸν ἀκένωσε": (
+        "<b>Modern Citation:</b> Philippians 2:7.<br/><b>Translation:</b> &ldquo;but emptied himself.&rdquo;"
+    ),
+    "libenter duxit vitam inopem": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Philippians 2:7</i>.<br/><b>Translation:</b> &ldquo;he willingly led a life of poverty.&rdquo;"
+    ),
+    "μορφὴν δούλου λαβών": (
+        "<b>Modern Citation:</b> Philippians 2:7.<br/><b>Translation:</b> &ldquo;taking the form of a servant.&rdquo;"
+    ),
+    "Id est, nascetur. Nam Hebraea praeterita sumuntur pro futuris;": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:6</i>.<br/><b>Translation:</b> &ldquo;That is, shall be born. For Hebrew past tenses are taken for future tenses.&rdquo;"
+    ),
+    "Dabitur. Ezechias patri Achazo multum dissimilis. Sic tamen ut multo excellentius haec ad Messiam pertinere, non Christiani tantum agnoscant, sed et Chaldaeus hoc loco;": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:6</i>.<br/><b>Translation:</b> &ldquo;Shall be given. Hezekiah, most unlike his father Ahaz. Yet so that these things belong more excellently to the Messiah, not only as the Christians acknowledge, but the Chaldee in this place.&rdquo;"
+    ),
+    "In Hebraeo est vocabit; supple quisque. Etiam Chaldaeus vocabitur transtulit. Notum autem Hebraeis dici sic vel sic vocari aliquem cui tales tituli aut ἐπίθετα conveniunt.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:6</i>.<br/><b>Translation:</b> &ldquo;In the Hebrew it is 'he shall call'; supply 'each one'. Also the Chaldee rendered it 'he shall be called'. Moreover, it is known to the Hebrews that someone is said to be called so or so to whom such titles or epithets belong.&rdquo;"
+    ),
+    "In Hebraeo non est futuri. Pater seculi est qui multos post se relicturus sit posteros, et in longum tempus;": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:6</i>.<br/><b>Translation:</b> &ldquo;In the Hebrew the word 'future' is not. The 'father of the age' is he who leaves many of his posterity behind him, and that for a long time.&rdquo;"
+    ),
+    "עַד": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;eternity&rdquo; or &ldquo;duration.&rdquo;"
+    ),
+    "וָעֶם עוֹלָם": (
+        "<b>Modern Citation:</b> Hebrew biblical phrase (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">וָעֶם</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">וָעֶד</span>).<br/><b>Translation:</b> &ldquo;forever and ever.&rdquo;"
+    ),
+    "seculi et aeternitatis, for ever and ever": (
+        "<b>Modern Citation:</b> Psalm 10:16 (Vulgate / Hebrew commentary).<br/><b>Translation:</b> &ldquo;of the age and of eternity, for ever and ever.&rdquo;"
+    ),
+    "Princeps Pacis;": (
+        "<b>Modern Citation:</b> Isaiah 9:6.<br/><b>Translation:</b> &ldquo;Prince of Peace.&rdquo;"
+    ),
+    "Princeps pacificus, et in pace victurus;": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:6</i>.<br/><b>Translation:</b> &ldquo;A peaceable prince, and one who will live in peace.&rdquo;"
+    ),
+    "Multiplicabitur ejus imperiam, et pacis ejus non erit finis.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:7</i> (with the printed text's typo <i>imperiam</i> for <i>imperium</i>).<br/><b>Translation:</b> &ldquo;His empire shall be multiplied, and of his peace there shall be no end.&rdquo;"
+    ),
+    "Id est, durabit per annos 29;": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Isaiah 9:7</i>.<br/><b>Translation:</b> &ldquo;That is, it shall endure for twenty-nine years.&rdquo;"
+    ),
+    "ὁ Λόγος": (
+        "<b>Modern Citation:</b> John 1:1.<br/><b>Translation:</b> &ldquo;the Word.&rdquo;"
+    ),
+    "προφορικός": (
+        "<b>Modern Citation:</b> Classical and patristic philosophical term.<br/><b>Translation:</b> &ldquo;spoken&rdquo; or &ldquo;uttered.&rdquo; Used of the spoken word in contrast to the internal thought."
+    ),
+    "ἐνδιάθετος": (
+        "<b>Modern Citation:</b> Classical and patristic philosophical term.<br/><b>Translation:</b> &ldquo;immanent,&rdquo; &ldquo;internal,&rdquo; or &ldquo;within the mind.&rdquo;"
+    ),
+    "θεότης": (
+        "<b>Modern Citation:</b> Colossians 2:9.<br/><b>Translation:</b> &ldquo;deity&rdquo; or &ldquo;divine nature.&rdquo;"
+    ),
+    "πλήρωμα θεότητος": (
+        "<b>Modern Citation:</b> Colossians 2:9.<br/><b>Translation:</b> &ldquo;the fullness of the Godhead.&rdquo;"
+    ),
+
+    # --- Volume 12 Translation Sweep Part 4 (Final Remaining Items) ---
+    "מָקוֹם": (
+        "<b>Modern Citation:</b> Hebrew term for &lsquo;place&rsquo;; used rabbinically as a name for God to indicate His omnipresence.<br/><b>Translation:</b> &ldquo;place,&rdquo; or &ldquo;space.&rdquo;"
+    ),
+    "כִּדְמוּת חֲמַת־נָחָשׁ": (
+        "<b>Modern Citation:</b> Psalm 58:4.<br/><b>Translation:</b> &ldquo;like the poison of a serpent.&rdquo;"
+    ),
+    "תֹאַר": (
+        "<b>Modern Citation:</b> Hebrew term; compare Genesis 29:17, 39:6.<br/><b>Translation:</b> &ldquo;form,&rdquo; &ldquo;appearance,&rdquo; or &ldquo;outline.&rdquo;"
+    ),
+    "ἐφ ῷ": (
+        "<b>Modern Citation:</b> Romans 5:12.<br/><b>Translation:</b> &ldquo;in whom&rdquo; or &ldquo;because.&rdquo;"
+    ),
+    "ἐν ῷ": (
+        "<b>Modern Citation:</b> Romans 8:3, Hebrews 2:18.<br/><b>Translation:</b> &ldquo;in which,&rdquo; &ldquo;wherein,&rdquo; or &ldquo;in that.&rdquo;"
+    ),
+    "מִקֶּדֶם": (
+        "<b>Modern Citation:</b> Micah 5:2.<br/><b>Translation:</b> &ldquo;from of old&rdquo; or &ldquo;from everlasting.&rdquo;"
+    ),
+    "בְּנִי אַתָה": (
+        "<b>Modern Citation:</b> Psalm 2:7.<br/><b>Translation:</b> &ldquo;Thou art my son.&rdquo;"
+    ),
+    "filius meus tu": (
+        "<b>Modern Citation:</b> Latin translation of Psalm 2:7.<br/><b>Translation:</b> &ldquo;Thou art my son.&rdquo;"
+    ),
+    "fili mi": (
+        "<b>Modern Citation:</b> Latin vocative expression.<br/><b>Translation:</b> &ldquo;my son.&rdquo;"
+    ),
+    "εῖχον": (
+        "<b>Modern Citation:</b> John 17:5 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">εῖχον</span> for <span lang=\"el\" xml:lang=\"el\">εἶχον</span>).<br/><b>Translation:</b> &ldquo;I had.&rdquo;"
+    ),
+    "πρό χρόνων αἰωνίων": (
+        "<b>Modern Citation:</b> 2 Timothy 1:9, Titus 1:2.<br/><b>Translation:</b> &ldquo;before the ages of time&rdquo; or &ldquo;before the world began.&rdquo;"
+    ),
+    "Τῇ δόξῃ ῇ εῖχον": (
+        "<b>Modern Citation:</b> John 17:5 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">εῖχον</span>).<br/><b>Translation:</b> &ldquo;With the glory which I had.&rdquo;"
+    ),
+    "Destinatione tua": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on John 17:5</i>.<br/><b>Translation:</b> &ldquo;By thy destination&rdquo; or &ldquo;in thy decree.&rdquo;"
+    ),
+    "Τοῦ μεγάλου Θεοῦ καὶ Σωτῆρος ἡμῶν Ιησοῦ Χριστοῦ": (
+        "<b>Modern Citation:</b> Titus 2:13.<br/><b>Translation:</b> &ldquo;of the great God and our Savior Jesus Christ.&rdquo;"
+    ),
+    "Ο Θεὸς καὶ Πατὴρ Ιησοῦ Χρυστοῦ": (
+        "<b>Modern Citation:</b> 2 Corinthians 1:3 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">Χρυστοῦ</span> for <span lang=\"el\" xml:lang=\"el\">Χριστοῦ</span>).<br/><b>Translation:</b> &ldquo;The God and Father of Jesus Christ.&rdquo;"
+    ),
+    "μέχρι τῆς ἐπιφανείας τοῦ Χριστοῦ": (
+        "<b>Modern Citation:</b> 1 Timothy 6:14.<br/><b>Translation:</b> &ldquo;until the appearing of Christ.&rdquo;"
+    ),
+    "τὴν ἐπιφάνειαν αὐτοῦ": (
+        "<b>Modern Citation:</b> 2 Timothy 4:8.<br/><b>Translation:</b> &ldquo;his appearing.&rdquo;"
+    ),
+    "אֶהְיֶה": (
+        "<b>Modern Citation:</b> Exodus 3:14.<br/><b>Translation:</b> &ldquo;I AM&rdquo; (Ehejeh)."
+    ),
+    "Εκεῖνος": (
+        "<b>Modern Citation:</b> 1 John 3:16.<br/><b>Translation:</b> &ldquo;He&rdquo; or &ldquo;that one.&rdquo;"
+    ),
+    "hoc Christum fecisse Dec sic decernente nostri causa quod expressum est": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 John 3:16</i> (with printed text's typo <i>Dec</i> for <i>Deo</i>).<br/><b>Translation:</b> &ldquo;that Christ did this, God so decreeing for our sake, which is expressed [in Romans 5:8].&rdquo;"
+    ),
+    "Τὰ πάντα δἰ αὐτοῦ": (
+        "<b>Modern Citation:</b> Colossians 1:16.<br/><b>Translation:</b> &ldquo;all things by him.&rdquo;"
+    ),
+    "Καὶ εἰς αὐτὸν ἔκτισται": (
+        "<b>Modern Citation:</b> Colossians 1:16.<br/><b>Translation:</b> &ldquo;and they were created for him.&rdquo;"
+    ),
+    "propter ipsum, ut ipse omnibus illis praeesset": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on Colossians 1:16</i>.<br/><b>Translation:</b> &ldquo;for him, that he himself might preside over all those things.&rdquo;"
+    ),
+    "Αἰών": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term.<br/><b>Translation:</b> &ldquo;age,&rdquo; &ldquo;eon,&rdquo; or &ldquo;world.&rdquo;"
+    ),
+    "οἰκουμένην τὴν μέλλουσαν": (
+        "<b>Modern Citation:</b> Hebrews 2:5.<br/><b>Translation:</b> &ldquo;the world to come.&rdquo;"
+    ),
+    "ἀιῶνα μέλλοντα": (
+        "<b>Modern Citation:</b> Hebrews 6:5.<br/><b>Translation:</b> &ldquo;the age to come.&rdquo;"
+    ),
+    "δἰ οῦ": (
+        "<b>Modern Citation:</b> Hebrews 1:2.<br/><b>Translation:</b> &ldquo;through whom&rdquo; or &ldquo;by whom.&rdquo;"
+    ),
+    "δἰ ὁ͂ν": (
+        "<b>Modern Citation:</b> Hebrews 2:10 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">δἰ ὁ͂ν</span> for <span lang=\"el\" xml:lang=\"el\">δἰ ὅν</span>).<br/><b>Translation:</b> &ldquo;for whom&rdquo; or &ldquo;on whose account.&rdquo;"
+    ),
+    "Δἰ αὐτοῦ καὶ εἰς αὐτὸν τὰ πάντα": (
+        "<b>Modern Citation:</b> Romans 11:36.<br/><b>Translation:</b> &ldquo;by him and for him are all things.&rdquo;"
+    ),
+    "ἐν μορφῇ Θεοῦ ὑάρχων": (
+        "<b>Modern Citation:</b> Philippians 2:6 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">ὑάρχων</span> for <span lang=\"el\" xml:lang=\"el\">ὑπάρχων</span>).<br/><b>Translation:</b> &ldquo;being in the form of God.&rdquo;"
+    ),
+    "ἐν μορφῇ Θεοῦ ὑπάρχων": (
+        "<b>Modern Citation:</b> Philippians 2:6.<br/><b>Translation:</b> &ldquo;being in the form of God.&rdquo;"
+    ),
+    "תְמוּנָה": (
+        "<b>Modern Citation:</b> Hebrew biblical term; compare Deuteronomy 4:15.<br/><b>Translation:</b> &ldquo;likeness,&rdquo; &ldquo;form,&rdquo; or &ldquo;similitude.&rdquo;"
+    ),
+    "imago": (
+        "<b>Modern Citation:</b> Latin term.<br/><b>Translation:</b> &ldquo;image&rdquo; or &ldquo;likeness.&rdquo;"
+    ),
+    "ὁμοίωμα": (
+        "<b>Modern Citation:</b> Deuteronomy 4:15.<br/><b>Translation:</b> &ldquo;likeness,&rdquo; &ldquo;similitude,&rdquo; or &ldquo;copy.&rdquo;"
+    ),
+    "γλυπτὸν ὁμόιωμα": (
+        "<b>Modern Citation:</b> Deuteronomy 4:16 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">ὁμόιωμα</span> for <span lang=\"el\" xml:lang=\"el\">ὁμοίωμα</span>).<br/><b>Translation:</b> &ldquo;a graven likeness.&rdquo;"
+    ),
+    "δἰ οῦ τὰ πάμta": (
+        "<b>Modern Citation:</b> 1 Corinthians 8:6 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">πάμta</span> for <span lang=\"el\" xml:lang=\"el\">πάντα</span>).<br/><b>Translation:</b> &ldquo;by whom are all things.&rdquo;"
+    ),
+    "Κύριον τῆς δόξης": (
+        "<b>Modern Citation:</b> 1 Corinthians 2:8.<br/><b>Translation:</b> &ldquo;the Lord of glory.&rdquo;"
+    ),
+    "Eum quem Deus vult esse omnium judicem. Nam gloria Christi maxime illum diem respicit": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 Corinthians 2:8</i>.<br/><b>Translation:</b> &ldquo;Him whom God wills to be the judge of all. For the glory of Christ especially respects that day.&rdquo;"
+    ),
+    "Christus Κύριος δόξης, praefiguratus per arcam, quae מֶלֶך הַכָּבוֹר": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 Corinthians 2:8</i> (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מֶלֶך הַכָּבוֹר</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מֶלֶךְ הַכָּבוֹד</span>).<br/><b>Translation:</b> &ldquo;Christ the Lord of glory, prefigured by the ark, which [is called] the King of glory.&rdquo;"
+    ),
+    "מֶלֶך הַכָּבוֹר": (
+        "<b>Modern Citation:</b> Psalm 24:9 (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מֶלֶך הַכָּבוֹר</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מֶלֶךְ הַכָּבוֹד</span>).<br/><b>Translation:</b> &ldquo;King of glory.&rdquo;"
+    ),
+    "מֶלֶךְ הַכָּבוֹד": (
+        "<b>Modern Citation:</b> Psalm 24:9.<br/><b>Translation:</b> &ldquo;King of glory.&rdquo;"
+    ),
+    "Θεάνθρωπος": (
+        "<b>Modern Citation:</b> Patristic theological term.<br/><b>Translation:</b> &ldquo;God-man.&rdquo;"
+    ),
+    "τὸ γεννώμενον ἅγιον": (
+        "<b>Modern Citation:</b> Luke 1:35.<br/><b>Translation:</b> &ldquo;the holy thing that is born.&rdquo;"
+    ),
+    "ἀνυπόστατον": (
+        "<b>Modern Citation:</b> Patristic theological term.<br/><b>Translation:</b> &ldquo;impersonal&rdquo; or &ldquo;having no independent subsistence.&rdquo;"
+    ),
+    "τὰ πρὸς τὸν Θεόν": (
+        "<b>Modern Citation:</b> Hebrews 2:17, 5:1.<br/><b>Translation:</b> &ldquo;in things pertaining to God.&rdquo;"
+    ),
+    "Καθίσταται": (
+        "<b>Modern Citation:</b> Hebrews 5:1.<br/><b>Translation:</b> &ldquo;is ordained&rdquo; or &ldquo;is appointed.&rdquo;"
+    ),
+    "Παρέδωκεν": (
+        "<b>Modern Citation:</b> Ephesians 5:2.<br/><b>Translation:</b> &ldquo;He delivered up&rdquo; or &ldquo;He gave up.&rdquo;"
+    ),
+    "Ος παρεδόθη διὰ τὰ παραπτώματα ἡμῶν καὶ ἠγέρθη διὰ τὴν δικαίωσιν ἡμῶν": (
+        "<b>Modern Citation:</b> Romans 4:25.<br/><b>Translation:</b> &ldquo;Who was delivered for our offenses, and was raised again for our justification.&rdquo;"
+    ),
+    "προσφορὰν καὶ θυσίαν": (
+        "<b>Modern Citation:</b> Ephesians 5:2.<br/><b>Translation:</b> &ldquo;an offering and a sacrifice.&rdquo;"
+    ),
+    "καθαρισμοῦ": (
+        "<b>Modern Citation:</b> Hebrews 1:3.<br/><b>Translation:</b> &ldquo;purging&rdquo; or &ldquo;cleansing.&rdquo;"
+    ),
+    "Καθαρισμὸν ποιησάμενος": (
+        "<b>Modern Citation:</b> Hebrews 1:3.<br/><b>Translation:</b> &ldquo;when he had made purification&rdquo; or &ldquo;having made purging.&rdquo;"
+    ),
+    "δἰ ἑαυτοῦ": (
+        "<b>Modern Citation:</b> Hebrews 1:3.<br/><b>Translation:</b> &ldquo;by himself.&rdquo;"
+    ),
+    "ἐφάπαξ": (
+        "<b>Modern Citation:</b> Hebrews 7:27, 9:12, 10:10.<br/><b>Translation:</b> &ldquo;once for all.&rdquo;"
+    ),
+    "λύτρον": (
+        "<b>Modern Citation:</b> Matthew 20:28.<br/><b>Translation:</b> &ldquo;ransom&rdquo; or &ldquo;price of redemption.&rdquo;"
+    ),
+    "λύτρον ἀντὶ πολλῶν": (
+        "<b>Modern Citation:</b> Matthew 20:28.<br/><b>Translation:</b> &ldquo;a ransom for many.&rdquo;"
+    ),
+    "ἀντίλυτρον": (
+        "<b>Modern Citation:</b> 1 Timothy 2:6.<br/><b>Translation:</b> &ldquo;a corresponding ransom&rdquo; or &ldquo;price of redemption.&rdquo;"
+    ),
+    "פִדְיֹן": (
+        "<b>Modern Citation:</b> Exodus 21:30, Psalm 49:8.<br/><b>Translation:</b> &ldquo;ransom&rdquo; or &ldquo;redemption price.&rdquo;"
+    ),
+    "λύτρα": (
+        "<b>Modern Citation:</b> Greek translation of redemption price.<br/><b>Translation:</b> &ldquo;ransoms&rdquo; or &ldquo;prices of redemption.&rdquo;"
+    ),
+    "Δώσει λύτρα τῆς ψυχῆς αὐτοῦ": (
+        "<b>Modern Citation:</b> Exodus 21:30 (LXX).<br/><b>Translation:</b> &ldquo;he shall give a ransom for his life.&rdquo;"
+    ),
+    "פָדָה": (
+        "<b>Modern Citation:</b> Hebrew biblical verb.<br/><b>Translation:</b> &ldquo;to redeem,&rdquo; &ldquo;to ransom,&rdquo; or &ldquo;to rescue.&rdquo;"
+    ),
+    "απολυτροῦν": (
+        "<b>Modern Citation:</b> Biblical Greek verb (with printed text's typo <span lang=\"el\" xml:lang=\"el\">απολυτροῦν</span> for <span lang=\"el\" xml:lang=\"el\">ἀπολυτροῦν</span>).<br/><b>Translation:</b> &ldquo;to redeem&rdquo; or &ldquo;to release on payment of ransom.&rdquo;"
+    ),
+    "λυτρώσασθαι": (
+        "<b>Modern Citation:</b> Luke 24:21, Titus 2:14.<br/><b>Translation:</b> &ldquo;to redeem&rdquo; or &ldquo;to ransom.&rdquo;"
+    ),
+    "ῤύομαι": (
+        "<b>Modern Citation:</b> Biblical Greek verb.<br/><b>Translation:</b> &ldquo;to deliver&rdquo; or &ldquo;to rescue.&rdquo;"
+    ),
+    "λυτρωτής": (
+        "<b>Modern Citation:</b> Acts 7:35.<br/><b>Translation:</b> &ldquo;redeemer&rdquo; or &ldquo;deliverer.&rdquo;"
+    ),
+    "כֹּפֶר": (
+        "<b>Modern Citation:</b> Exodus 21:30, Job 33:24.<br/><b>Translation:</b> &ldquo;ransom,&rdquo; &ldquo;propitiation,&rdquo; or &ldquo;atonement price.&rdquo;"
+    ),
+    "περικάθαρμα": (
+        "<b>Modern Citation:</b> Proverbs 21:18.<br/><b>Translation:</b> &ldquo;ransom&rdquo; or &ldquo;offscouring.&rdquo;"
+    ),
+    "τοῦς προσερχομένους": (
+        "<b>Modern Citation:</b> Hebrews 10:1 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">τοῦς</span> for <span lang=\"el\" xml:lang=\"el\">τοὺς</span>).<br/><b>Translation:</b> &ldquo;those who draw near.&rdquo;"
+    ),
+    "toὺς προσερχομένους": (
+        "<b>Modern Citation:</b> Hebrews 7:25.<br/><b>Translation:</b> &ldquo;those who draw near.&rdquo;"
+    ),
+    "Deῖ τὸν προσερχόμενον": (
+        "<b>Modern Citation:</b> Hebrews 11:6 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">Deῖ</span> for <span lang=\"el\" xml:lang=\"el\">Δεῖ</span>).<br/><b>Translation:</b> &ldquo;it is necessary for the one drawing near.&rdquo;"
+    ),
+    "каτ ἐνιαυτόν": (
+        "<b>Modern Citation:</b> Hebrews 10:1.<br/><b>Translation:</b> &ldquo;year by year.&rdquo;"
+    ),
+    "εἰς τὸ διηνεκές": (
+        "<b>Modern Citation:</b> Hebrews 10:1.<br/><b>Translation:</b> &ldquo;continually&rdquo; or &ldquo;for ever.&rdquo;"
+    ),
+    "אָזְנַים כָּרִיתָ לִי": (
+        "<b>Modern Citation:</b> Psalm 40:6 (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">אָזְנַים</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">אָזְנַיִם</span>).<br/><b>Translation:</b> &ldquo;ears hast thou digged [opened] for me.&rdquo;"
+    ),
+    "Σῶμα κατηρτίσω μοι": (
+        "<b>Modern Citation:</b> Psalm 40:6 (LXX) / Hebrews 10:5.<br/><b>Translation:</b> &ldquo;a body hast thou prepared for me.&rdquo;"
+    ),
+    "κόλασις": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term.<br/><b>Translation:</b> &ldquo;chastisement,&rdquo; &ldquo;correction,&rdquo; or &ldquo;punishment.&rdquo;"
+    ),
+    "коλασία": (
+        "<b>Modern Citation:</b> Classical Greek term.<br/><b>Translation:</b> &ldquo;chastisement&rdquo; or &ldquo;punishment.&rdquo;"
+    ),
+    "πάσχοντος ἕνεκα": (
+        "<b>Modern Citation:</b> Aristotle, <i>Rhetoric</i>, Book 1, chapter 10.<br/><b>Translation:</b> &ldquo;for the sake of the sufferer.&rdquo;"
+    ),
+    "τιμωρία": (
+        "<b>Modern Citation:</b> Classical Greek term.<br/><b>Translation:</b> &ldquo;retributive punishment&rdquo; or &ldquo;vengeance.&rdquo;"
+    ),
+    "τοῦ πονοῦντος ἕνεκα ἵνα ἀποπληρωθῆ": (
+        "<b>Modern Citation:</b> Aristotle, <i>Rhetoric</i>, Book 1, chapter 10 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">ἕνελ\κα</span>).<br/><b>Translation:</b> &ldquo;for the sake of the one inflicting it, that he may be satisfied.&rdquo;"
+    ),
+    "ἀκολάστος": (
+        "<b>Modern Citation:</b> Classical Greek term.<br/><b>Translation:</b> &ldquo;uncorrected,&rdquo; &ldquo;undisciplined,&rdquo; or &ldquo;licentious.&rdquo;"
+    ),
+    "animo ulciscendi": (
+        "<b>Modern Citation:</b> Legal and scholastic Latin phrase.<br/><b>Translation:</b> &ldquo;with the intent of avenging&rdquo; or &ldquo;with a mind to punish.&rdquo;"
+    ),
+    "vindicta noxae": (
+        "<b>Modern Citation:</b> Roman law term.<br/><b>Translation:</b> &ldquo;punishment of the offense&rdquo; or &ldquo;avenging of harm.&rdquo;"
+    ),
+    "νουθεσία": (
+        "<b>Modern Citation:</b> 1 Corinthians 10:11, Titus 3:10.<br/><b>Translation:</b> &ldquo;admonition&rdquo; or &ldquo;instruction.&rdquo;"
+    ),
+    "δοκιμασία": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term.<br/><b>Translation:</b> &ldquo;testing,&rdquo; &ldquo;probation,&rdquo; or &ldquo;trial.&rdquo;"
+    ),
+    "παιδεία": (
+        "<b>Modern Citation:</b> Ephesians 6:4, Hebrews 12:5.<br/><b>Translation:</b> &ldquo;discipline,&rdquo; &ldquo;training,&rdquo; or &ldquo;instruction.&rdquo;"
+    ),
+    "הִפְגִּיעַ": (
+        "<b>Modern Citation:</b> Isaiah 53:6.<br/><b>Translation:</b> &ldquo;he caused to meet&rdquo; or &ldquo;he laid upon.&rdquo;"
+    ),
+    "פָגַע": (
+        "<b>Modern Citation:</b> Hebrew biblical root.<br/><b>Translation:</b> &ldquo;to meet,&rdquo; &ldquo;to encounter,&rdquo; or &ldquo;to entreat.&rdquo;"
+    ),
+    "בִּזְבוּלֻן וּפָגַע": (
+        "<b>Modern Citation:</b> Joshua 19:34.<br/><b>Translation:</b> &ldquo;and reached to Zebulun.&rdquo;"
+    ),
+    "obviam ire": (
+        "<b>Modern Citation:</b> Latin idiom.<br/><b>Translation:</b> &ldquo;to go to meet.&rdquo;"
+    ),
+    "וּפְגָעוֹ": (
+        "<b>Modern Citation:</b> Amos 5:19.<br/><b>Translation:</b> &ldquo;and met him.&rdquo;"
+    ),
+    "מַפְגִּיעַ": (
+        "<b>Modern Citation:</b> Isaiah 59:16.<br/><b>Translation:</b> &ldquo;intercessor&rdquo; or &ldquo;one who entreats.&rdquo;"
+    ),
+    "עֲוֹן": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;iniquity,&rdquo; &ldquo;guilt,&rdquo; or &ldquo;punishment of iniquity.&rdquo;"
+    ),
+    "עֲוֹנִי": (
+        "<b>Modern Citation:</b> Genesis 4:13.<br/><b>Translation:</b> &ldquo;my iniquity&rdquo; or &ldquo;my punishment.&rdquo;"
+    ),
+    "נֹצֵא עָוֹן": (
+        "<b>Modern Citation:</b> Exodus 34:7 (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">נֹצֵא</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">נֹשֵׂא</span>).<br/><b>Translation:</b> &ldquo;bearing iniquity&rdquo; or &ldquo;forgiving iniquity.&rdquo;"
+    ),
+    "ferens iniquitatem": (
+        "<b>Modern Citation:</b> Vulgate translation of Exodus 34:7.<br/><b>Translation:</b> &ldquo;bearing iniquity.&rdquo;"
+    ),
+    "שָׁמְמוּ": (
+        "<b>Modern Citation:</b> Leviticus 26:32, 1 Kings 9:8.<br/><b>Translation:</b> &ldquo;they shall be astonished&rdquo; or &ldquo;desolated.&rdquo;"
+    ),
+    "Αὐτὸς δὲ ἐτραυματίσθη διὰ τὰς ἁμαρτίας ἡμῶν καὶ μεμαλάκισται διὰ τὰς ἀνομίας ἡμῶν": (
+        "<b>Modern Citation:</b> Isaiah 53:5 (LXX).<br/><b>Translation:</b> &ldquo;But he was wounded for our sins, and bruised for our iniquities.&rdquo;"
+    ),
+    "חֲבוּרָה": (
+        "<b>Modern Citation:</b> Isaiah 53:5.<br/><b>Translation:</b> &ldquo;stripe,&rdquo; &ldquo;wound,&rdquo; or &ldquo;bruise.&rdquo;"
+    ),
+    "μώλως": (
+        "<b>Modern Citation:</b> 1 Peter 2:24 (LXX / NT).<br/><b>Translation:</b> &ldquo;stripe&rdquo; or &ldquo;wound.&rdquo;"
+    ),
+    "permisit": (
+        "<b>Modern Citation:</b> Latin verb.<br/><b>Translation:</b> &ldquo;he permitted.&rdquo;"
+    ),
+    "נַעֲגֶה": (
+        "<b>Modern Citation:</b> Isaiah 53:7 (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">נַעֲגֶה</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">נִגַּשׂ</span>).<br/><b>Translation:</b> &ldquo;he was afflicted&rdquo; or &ldquo;pressed.&rdquo;"
+    ),
+    "voluit": (
+        "<b>Modern Citation:</b> Latin verb.<br/><b>Translation:</b> &ldquo;he willed&rdquo; or &ldquo;he wished.&rdquo;"
+    ),
+    "מֵעֹצֶר": (
+        "<b>Modern Citation:</b> Isaiah 53:8.<br/><b>Translation:</b> &ldquo;from prison&rdquo; or &ldquo;from restraint.&rdquo;"
+    ),
+    "עָצַר": (
+        "<b>Modern Citation:</b> Hebrew biblical root.<br/><b>Translation:</b> &ldquo;to restrain,&rdquo; &ldquo;to shut up,&rdquo; or &ldquo;to forbid.&rdquo;"
+    ),
+    "Εν τῇ ταπεινώσει ἡ κρίσις αὐτοῦ ἤρθη": (
+        "<b>Modern Citation:</b> Isaiah 53:8 (LXX) / Acts 8:33.<br/><b>Translation:</b> &ldquo;In his humiliation his judgment was taken away.&rdquo;"
+    ),
+    "claustrum": (
+        "<b>Modern Citation:</b> Latin term.<br/><b>Translation:</b> &ldquo;barrier,&rdquo; &ldquo;lock,&rdquo; or &ldquo;prison.&rdquo;"
+    ),
+    "angustia": (
+        "<b>Modern Citation:</b> Latin term.<br/><b>Translation:</b> &ldquo;narrowness,&rdquo; &ldquo;distress,&rdquo; or &ldquo;strait.&rdquo;"
+    ),
+    "clausura": (
+        "<b>Modern Citation:</b> Latin term.<br/><b>Translation:</b> &ldquo;closure&rdquo; or &ldquo;confinement.&rdquo;"
+    ),
+    "per coarctationem": (
+        "<b>Modern Citation:</b> Latin theological phrase.<br/><b>Translation:</b> &ldquo;by constraint&rdquo; or &ldquo;by narrowing.&rdquo;"
+    ),
+    "דּוֹרוֹ": (
+        "<b>Modern Citation:</b> Isaiah 53:8.<br/><b>Translation:</b> &ldquo;his generation&rdquo; or &ldquo;his lifespan.&rdquo;"
+    ),
+    "דוֹר": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;generation,&rdquo; &ldquo;age,&rdquo; or &ldquo;period.&rdquo;"
+    ),
+    "γενεά": (
+        "<b>Modern Citation:</b> Classical and biblical Greek term.<br/><b>Translation:</b> &ldquo;generation,&rdquo; &ldquo;race,&rdquo; or &ldquo;age.&rdquo;"
+    ),
+    "Τὴν γενεὰν αὐτοῦ τίς διηγήσεται": (
+        "<b>Modern Citation:</b> Isaiah 53:8 (LXX) / Acts 8:33.<br/><b>Translation:</b> &ldquo;Who shall declare his generation?&rdquo;"
+    ),
+    "quis eloquetur": (
+        "<b>Modern Citation:</b> Latin phrase.<br/><b>Translation:</b> &ldquo;who shall declare&rdquo; or &ldquo;who shall speak out?&rdquo;"
+    ),
+    "בְּמֹתָיו": (
+        "<b>Modern Citation:</b> Isaiah 53:9.<br/><b>Translation:</b> &ldquo;in his deaths&rdquo; or &ldquo;in his death.&rdquo;"
+    ),
+    "חָפֵץ": (
+        "<b>Modern Citation:</b> Hebrew biblical verb.<br/><b>Translation:</b> &ldquo;to delight in,&rdquo; &ldquo;to desire,&rdquo; or &ldquo;to will.&rdquo;"
+    ),
+    "delectatus est": (
+        "<b>Modern Citation:</b> Latin translation of Isaiah 53:10.<br/><b>Translation:</b> &ldquo;he was delighted.&rdquo;"
+    ),
+    "βούλεται": (
+        "<b>Modern Citation:</b> Classical and biblical Greek verb.<br/><b>Translation:</b> &ldquo;wills,&rdquo; &ldquo;desires,&rdquo; or &ldquo;intends.&rdquo;"
+    ),
+    "חֵפֶץ": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;pleasure,&rdquo; &ldquo;delight,&rdquo; or &ldquo;purpose.&rdquo;"
+    ),
+    "דַּכְּאוֹ": (
+        "<b>Modern Citation:</b> Isaiah 53:10.<br/><b>Translation:</b> &ldquo;to bruise him&rdquo; or &ldquo;to crush him.&rdquo;"
+    ),
+    "eum contundere, conterere, frangore": (
+        "<b>Modern Citation:</b> Latin translation of Isaiah 53:10 (with printed text's typo <i>frangore</i> for <i>frangere</i>).<br/><b>Translation:</b> &ldquo;to bruise, crush, or break him.&rdquo;"
+    ),
+    "velle": (
+        "<b>Modern Citation:</b> Latin verb.<br/><b>Translation:</b> &ldquo;to will&rdquo; or &ldquo;to wish.&rdquo;"
+    ),
+    "אָשָׁם": (
+        "<b>Modern Citation:</b> Leviticus 5:15, Isaiah 53:10.<br/><b>Translation:</b> &ldquo;trespass offering&rdquo; or &ldquo;guilt offering.&rdquo;"
+    ),
+    "חָטַא": (
+        "<b>Modern Citation:</b> Genesis 31:39, Zechariah 14:19.<br/><b>Translation:</b> &ldquo;to sin&rdquo; or &ldquo;to bear the loss.&rdquo;"
+    ),
+    "חֵטְא": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;sin&rdquo; or &ldquo;guilt.&rdquo;"
+    ),
+    "חַטָאָה": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;sin&rdquo; or &ldquo;sin offering.&rdquo;"
+    ),
+    "בְּדָעְתוֹ": (
+        "<b>Modern Citation:</b> Isaiah 53:11.<br/><b>Translation:</b> &ldquo;by his knowledge.&rdquo;"
+    ),
+    "In (or by) his knowledge": (
+        "<b>Modern Citation:</b> English translation of Isaiah 53:11.<br/><b>Translation:</b> &ldquo;by his knowledge.&rdquo;"
+    ),
+    "In scientia sua": (
+        "<b>Modern Citation:</b> Vulgate translation of Isaiah 53:11.<br/><b>Translation:</b> &ldquo;In his knowledge.&rdquo;"
+    ),
+    "Cognitione sui": (
+        "<b>Modern Citation:</b> Junius & Tremellius translation of Isaiah 53:11.<br/><b>Translation:</b> &ldquo;by the knowledge of him.&rdquo;"
+    ),
+    "יַצְדִּיר": (
+        "<b>Modern Citation:</b> Isaiah 53:11 (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">יַצְדִּיר</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">יַצְדִּיק</span>).<br/><b>Translation:</b> &ldquo;he shall justify.&rdquo;"
+    ),
+    "δικαιοῦν": (
+        "<b>Modern Citation:</b> Romans 3:28, Revelation 22:11.<br/><b>Translation:</b> &ldquo;to justify&rdquo; or &ldquo;to declare righteous.&rdquo;"
+    ),
+    "נִשְfָט": (
+        "<b>Modern Citation:</b> Isaiah 66:16 (with printed text's typo <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">נִשְfָט</span> for <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">נִשְׁפָּט</span>).<br/><b>Translation:</b> &ldquo;is judged&rdquo; or &ldquo;enters into judgment.&rdquo;"
+    ),
+    "שׁוֹפֵט": (
+        "<b>Modern Citation:</b> Hebrew biblical term.<br/><b>Translation:</b> &ldquo;judging&rdquo; or &ldquo;judge.&rdquo;"
+    ),
+    "גּוֹאֵל": (
+        "<b>Modern Citation:</b> Job 19:25.<br/><b>Translation:</b> &ldquo;redeemer&rdquo; or &ldquo;kinsman-redeemer.&rdquo;"
+    ),
+    "causa προηγουμένη": (
+        "<b>Modern Citation:</b> Scholastic theological term.<br/><b>Translation:</b> &ldquo;disposing cause&rdquo; or &ldquo;antecedent cause.&rdquo;"
+    ),
+    "causa προκαταρκτική": (
+        "<b>Modern Citation:</b> Scholastic theological term.<br/><b>Translation:</b> &ldquo;instrumental cause&rdquo; or &ldquo;procuring cause.&rdquo;"
+    ),
+    "ἀπολύτρωσις": (
+        "<b>Modern Citation:</b> Romans 3:24, Ephesians 1:7.<br/><b>Translation:</b> &ldquo;redemption&rdquo; or &ldquo;release effected by payment of ransom.&rdquo;"
+    ),
+    "λύτρωσις": (
+        "<b>Modern Citation:</b> Luke 1:68, Hebrews 9:12.<br/><b>Translation:</b> &ldquo;redemption&rdquo; or &ldquo;ransoming.&rdquo;"
+    ),
+    "ῥύσις": (
+        "<b>Modern Citation:</b> Colossians 1:13.<br/><b>Translation:</b> &ldquo;rescue&rdquo; or &ldquo;deliverance.&rdquo;"
+    ),
+    "διὰ πίστεως ἐν αἵμαti αὐτοῦ": (
+        "<b>Modern Citation:</b> Romans 3:25 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">αἵμαti</span>).<br/><b>Translation:</b> &ldquo;through faith in his blood.&rdquo;"
+    ),
+    "Ον προέΘετο ὁ Θεὸς ἱλαστήριον": (
+        "<b>Modern Citation:</b> Romans 3:25 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">προέΘετο</span> for <span lang=\"el\" xml:lang=\"el\">προέθετο</span>).<br/><b>Translation:</b> &ldquo;Whom God set forth to be a propitiation.&rdquo;"
+    ),
+    "προέθετο": (
+        "<b>Modern Citation:</b> Romans 3:25.<br/><b>Translation:</b> &ldquo;set forth&rdquo; or &ldquo;purposed.&rdquo;"
+    ),
+    "Ην προέθεto ἐν αὑτῷ": (
+        "<b>Modern Citation:</b> Ephesians 1:9 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">προέθεto</span>).<br/><b>Translation:</b> &ldquo;Which he purposed in himself.&rdquo;"
+    ),
+    "τὸν λόγον τῆς καταλλαγῆς": (
+        "<b>Modern Citation:</b> 2 Corinthians 5:19.<br/><b>Translation:</b> &ldquo;the word of reconciliation.&rdquo;"
+    ),
+    "Αποκαταλλάξῃ ἐν ἑνὶ σώματι τῷ Θεῷ": (
+        "<b>Modern Citation:</b> Ephesians 2:16 (with printed text's typo <span lang=\"el\" xml:lang=\"el\">Αποκαταλλάξῃ</span>).<br/><b>Translation:</b> &ldquo;that he might reconcile both in one body to God.&rdquo;"
+    ),
+    "ἀπέθανε": (
+        "<b>Modern Citation:</b> Romans 5:6, 2 Corinthians 5:14.<br/><b>Translation:</b> &ldquo;he died.&rdquo;"
+    ),
+    "ἀπέθανεν ὑπὲρ ἡμῶν": (
+        "<b>Modern Citation:</b> Romans 5:8, 1 Thessalonians 5:10.<br/><b>Translation:</b> &ldquo;he died for us.&rdquo;"
+    ),
+    "jacta est alea": (
+        "<b>Modern Citation:</b> Famous saying of Julius Caesar.<br/><b>Translation:</b> &ldquo;the die is cast.&rdquo;"
+    ),
+    "Ως οὐχ ὑπάρχων ἀλλὰ τιμωρούμενος": (
+        "<b>Modern Citation:</b> Classical Greek phrase.<br/><b>Translation:</b> &ldquo;As if not existing, but being punished.&rdquo;"
+    ),
+    "καὶ ταῦτα πράσσων φάσκ ἀνὴр οὐδὲν ποιῶν": (
+        "<b>Modern Citation:</b> Classical Greek proverb/idiom (with printed text's typo <span lang=\"el\" xml:lang=\"el\">ἀνὴр</span>).<br/><b>Translation:</b> &ldquo;and doing these things, a man claims to do nothing.&rdquo;"
+    ),
+    "Malum omen": (
+        "<b>Modern Citation:</b> Latin phrase.<br/><b>Translation:</b> &ldquo;a bad omen.&rdquo;"
+    ),
+    "παρὰ τὴν τοῦ ἐλέγχου ἄγνοιαν": (
+        "<b>Modern Citation:</b> Aristotle, <i>Sophistical Refutations</i>.<br/><b>Translation:</b> &ldquo;from ignorance of the refutation&rdquo; (fallacy of ignoratio elenchi)."
+    ),
+    "τὸ ἐκ σημείου": (
+        "<b>Modern Citation:</b> Aristotle, <i>Rhetoric</i>.<br/><b>Translation:</b> &ldquo;the argument from a sign.&rdquo;"
+    ),
+    "ἀσυλλογίστου γὰρ καὶ τοῦτο": (
+        "<b>Modern Citation:</b> Aristotle, <i>Rhetoric</i>.<br/><b>Translation:</b> &ldquo;for this also is unsyllogistic.&rdquo;"
+    ),
+    "pulveris exigui jactu": (
+        "<b>Modern Citation:</b> Virgil, <i>Georgics</i>, Book 4, line 87.<br/><b>Translation:</b> &ldquo;by the casting of a little dust.&rdquo;"
+    ),
+    "ἀμετρία ἀνθολκῆς": (
+        "<b>Modern Citation:</b> Classical Greek phrase.<br/><b>Translation:</b> &ldquo;disproportion of pulling against one another&rdquo; or &ldquo;excess of opposition.&rdquo;"
+    ),
+    "Ο δὲ ὁρῶν toὺς νόμους Λιαν ἀκριβῶς συκοφάντης φαίνεται": (
+        "<b>Modern Citation:</b> Classical Greek proverb (with printed text's typo <span lang=\"el\" xml:lang=\"el\">toὺς</span> and <span lang=\"el\" xml:lang=\"el\">Λιαν</span>).<br/><b>Translation:</b> &ldquo;He who observes the laws too strictly seems a sycophant.&rdquo;"
+    ),
+    "Quomodo justificamur fide": (
+        "<b>Modern Citation:</b> Samuel Rutherford, <i>De Gratia</i>, Exercitation 1, Chapter 2.<br/><b>Translation:</b> &ldquo;How we are justified by faith.&rdquo;"
+    ),
+    "Τὰ τῶν φίλων κοιν οὐ μόνον τὰ χρήματα Καὶ νοῦς δὲ καὶ φρονήσεως κοινωνιά": (
+        "<b>Modern Citation:</b> Classical Greek proverb, derived from Euripides / Plato.<br/><b>Translation:</b> &ldquo;Friends share not only their possessions, but also their minds and thoughts.&rdquo;"
+    ),
+    "non qua eundum est, sed qua itur": (
+        "<b>Modern Citation:</b> Seneca, <i>Letters to Lucilius</i>, 123.1.<br/><b>Translation:</b> &ldquo;not where one ought to go, but where others go.&rdquo;"
+    ),
+    "jus": (
+        "<b>Modern Citation:</b> Roman law term.<br/><b>Translation:</b> &ldquo;right&rdquo; or &ldquo;law.&rdquo;"
+    ),
+    "Quod dicimus eum qui nasci speratur pro superstite esse, tunc verum est, cum de ipsius jure quaeritur, alias non prodest, nisi natus sit": (
+        "<b>Modern Citation:</b> Paulus, <i>Digest of Justinian</i>, 50.16.231.<br/><b>Translation:</b> &ldquo;When we say that one who is expected to be born is considered as already living, this is true only when his own rights are concerned; otherwise it does not benefit him unless he is actually born.&rdquo;"
+    ),
+    "Каὶ ταῦτα μὲν δὴ ταῦτα": (
+        "<b>Modern Citation:</b> Classical Greek conversational formula (with printed text's typo <span lang=\"el\" xml:lang=\"el\">Каὶ</span>).<br/><b>Translation:</b> &ldquo;And so much for these things.&rdquo;"
+    ),
+    "סָבַל": (
+        "<b>Modern Citation:</b> Isaiah 53:4, 11.<br/><b>Translation:</b> &ldquo;to bear,&rdquo; &ldquo;to carry,&rdquo; or &ldquo;to endure.&rdquo;"
+    ),
+    "Non enim proprie Christus cum crucifigeretur vitia nostra abstulit, sed causas dedit per quas auferrentur": (
+        "<b>Modern Citation:</b> Faustus Socinus / Hugo Grotius, <i>De Satisfactione</i> discussion.<br/><b>Translation:</b> &ldquo;For Christ did not properly take away our sins when he was crucified, but he gave the causes by which they might be taken away.&rdquo;"
+    ),
+    "Nam crux Christi fundamentum est praedicationis; praedicatio vero poenitentiae: poenitentia vero aufert vitia": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Annotations on 1 Peter 2:24</i>.<br/><b>Translation:</b> &ldquo;For the cross of Christ is the foundation of preaching; but preaching [is the foundation] of repentance; and repentance indeed takes away sins.&rdquo;"
+    ),
+    "τῷ λόγῳ": (
+        "<b>Modern Citation:</b> John 1:1.<br/><b>Translation:</b> &ldquo;by the Word&rdquo; or &ldquo;to the Word.&rdquo;"
+    ),
+    "ὑπόστασις": (
+        "<b>Modern Citation:</b> Hebrews 1:3, 11:1.<br/><b>Translation:</b> &ldquo;hypostasis,&rdquo; &ldquo;person,&rdquo; or &ldquo;subsistence.&rdquo;"
+    ),
+    "τῷ Θεοῦ λόγῳ": (
+        "<b>Modern Citation:</b> Patristic theological phrase.<br/><b>Translation:</b> &ldquo;by the Word of God.&rdquo;"
+    ),
+    "Reverendo summaeque eruditionis ac pietatis viro, Domino Johanni Crellio, pastori Racov. H. G. S.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Epistle to Johannes Crellius</i>.<br/><b>Translation:</b> &ldquo;To the reverend man of the highest erudition and piety, Lord Johannes Crellius, pastor at Rak&oacute;w, Hugo Grotius sends greeting.&rdquo;"
+    ),
+
+    # --- Precise and Correct Unicode mappings for Volume 12 Sweep ---
+    "διὰ πίστεως ἐν αἵματι αὐτοῦ": (
+        "<b>Modern Citation:</b> Romans 3:25.<br/><b>Translation:</b> &ldquo;through faith in his blood.&rdquo;"
+    ),
+    "καὶ ταῦτα πράσσων φάσκ ἀνὴρ οὐδὲν ποιῶν": (
+        "<b>Modern Citation:</b> Classical Greek proverb/idiom.<br/><b>Translation:</b> &ldquo;and doing these things, a man claims to do nothing.&rdquo;"
+    ),
+    "Καὶ ταῦτα μὲν δὴ ταῦτα": (
+        "<b>Modern Citation:</b> Classical Greek conversational formula.<br/><b>Translation:</b> &ldquo;And so much for these things.&rdquo;"
+    ),
+    "Ην προέθετο ἐν αὑτῷ": (
+        "<b>Modern Citation:</b> Ephesians 1:9.<br/><b>Translation:</b> &ldquo;Which he purposed in himself.&rdquo;"
+    ),
+    "נִשְׁפָט": (
+        "<b>Modern Citation:</b> Isaiah 66:16.<br/><b>Translation:</b> &ldquo;is judged&rdquo; or &ldquo;enters into judgment.&rdquo;"
+    ),
+    "Libro tuo quo ad eum quem ego quondam scripseram (eruditissime Crelli) respondisti, adeo offensus non fui, ut etiam gratias tunc intra animum meum egerim, nunc et hisce agam literis.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Epistle to Johannes Crellius</i>.<br/><b>Translation:</b> &ldquo;By your book in which you replied to that which I formerly wrote (most learned Crellius), I was so far from being offended that I even returned thanks within my mind then, and now do so by these letters.&rdquo;"
+    ),
+    "Primo, quod non tantum humane, sed et valde officiose mecum egeris, ita ut queri nihil possim, nisi quod in me praediando, modum interdum excedis, deinde vero, quod multa me docueris, partita utilia, partim jucunda scitu, meque exemplo tuo incitaveris ad penitius expenden. dum sensus sacrorum librorum.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Epistle to Johannes Crellius</i> (with printed text's typo <i>praediando</i> for <i>praedicando</i>, and <i>partita</i> for <i>partim</i>, and <i>expenden. dum</i> for <i>expendendum</i>).<br/><b>Translation:</b> &ldquo;First, because you dealt with me not only humanely but also very courteously, so that I can complain of nothing, except that in praising me you sometimes exceed the limit; and next indeed, because you have taught me many things, partly useful, partly pleasant to know, and by your example have incited me to weigh more deeply the meaning of the sacred books.&rdquo;"
+    ),
+    "Bene autem in epistola tua quae mihi longe gratissima advenit, de me judicas, non esse me eorum in numero qui ob sententias saiva pietate dissidentes alieno a quoquam sim animo, aut boni alicuius amicitiam repudiem. Equidem in libro \"De Vera Religione,\" quem jam percurri, relecturus et posthac, multa invenio summo cum judicio observats.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Epistle to Johannes Crellius</i> (with printed text's typo <i>saiva</i> for <i>salva</i>, and <i>observats</i> for <i>observata</i>).<br/><b>Translation:</b> &ldquo;But in your letter, which came to me as by far the most welcome, you judge well of me, that I am not of the number of those who, on account of opinions that differ without harming piety, am of an estranged mind toward anyone, or would reject the friendship of any good man. Indeed, in the book &lsquo;On the True Religion,&rsquo; which I have already run through and shall reread hereafter, I find many things observed with the highest judgment.&rdquo;"
+    ),
+    "Illud vero saeculo gratulor, repertos homines qui neutiquam in controversiis subtilibus tantum ponunt quantum in vera vitae emendatione, et quotidiano ad sanctitatem profectu.": (
+        "<b>Modern Citation:</b> Hugo Grotius, <i>Epistle to Johannes Crellius</i>.<br/><b>Translation:</b> &ldquo;But I congratulate the age that men have been found who place by no means so much in subtle controversies as in the true amendment of life and a daily progress toward holiness.&rdquo;"
     ),
 }
 

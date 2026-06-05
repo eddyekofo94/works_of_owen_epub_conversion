@@ -102,6 +102,24 @@ OVERRIDES = {
         'graneis': 'ganeis',
         'another writings of mine': 'any other writings of mine',
         'that is declared only': 'that it is declared only',
+
+        # Volume 5 Biographical Expansions (Idempotent)
+        'charges of Bishop Horsley': 'charges of Samuel Horsley',
+        'says Horsley,': 'says Samuel Horsley,',
+        'Bishop Barlow traces': 'Thomas Barlow traces',
+        'Life of Mr. Joseph Williams,': 'Life of Joseph Williams,',
+        'So Pighius himself': 'So Albertus Pighius himself',
+        'what he says of Pighius is': 'what he says of Albertus Pighius is',
+        'more than Dr. Jackson; yet': 'more than Thomas Jackson; yet',
+        'namely, Dr. Jacomb), as': 'namely, Thomas Jacomb), as',
+        'time of his (Mr Grimshawe\'s, an active': 'time of his (William Grimshawe\'s, an active',
+        'converted Grimshawe. The': 'converted William Grimshawe. The',
+        'one Mr. Hotchkis, in': 'one Thomas Hotchkis, in',
+        'which Mr. Hotchkis, in his': 'which Thomas Hotchkis, in his',
+        'letter to Mr. Humfrey, author': 'letter to John Humfrey, author',
+
+        # Ghost footnote OCR fix
+        'himsel [f4].': 'himself.',
     },
     'treatise_title_overrides': {
         'The Doctrine of Justification By Faith,': _V5_JUSTIFICATION_TITLE_PAGE,

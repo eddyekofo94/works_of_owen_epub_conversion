@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-04T21:43:54Z
+Generated: 2026-06-05T14:15:31Z
 
 ## Summary
 
@@ -9,12 +9,12 @@ Generated: 2026-06-04T21:43:54Z
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|----------|
 | 1 | 16 | 80.9 | gentium-plus-2 | 5 |  99.59 |   99.3 |  99.01 |      ? | 4 | FULL |
-| 2 | 12 | 75.6 | arno-pro | 3 |   99.6 |  99.92 |  99.55 |  99.82 | 0 | PRISTINE |
-| 3 | 5 | 62.2 | brill-font | 2 |  99.69 |  99.73 |  99.19 |      ? | 2 | FULL |
-| 4 | 13 | 58.0 | baskerville | 5 |  89.75 |  96.19 |  100.0 |      ? | 0 | FULL |
-| 5 | 10 | 51.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | FULL |
-| 6 | 11 | 51.2 | minion-pro | 1 |  97.63 |   99.7 |  100.0 |      ? | 4 | FULL |
-| 7 | 2 | 50.7 | libertinus | 3 |  99.68 |  99.77 |  100.0 |      ? | 2 | FULL |
+| 2 | 2 | 66.4 | libertinus | 3 |  99.48 |  99.77 |  100.0 |   99.5 | 2 | FULL |
+| 3 | 5 | 66.2 | brill-font | 2 |  98.07 |  99.73 |  99.19 |  98.91 | 2 | FULL |
+| 4 | 12 | 60.8 | arno-pro | 3 |   99.9 |  99.92 |  99.55 |   99.7 | 0 | PRISTINE |
+| 5 | 13 | 58.0 | baskerville | 5 |  89.75 |  96.19 |  100.0 |      ? | 0 | FULL |
+| 6 | 10 | 51.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | FULL |
+| 7 | 11 | 51.2 | minion-pro | 1 |  97.63 |   99.7 |  100.0 |      ? | 4 | FULL |
 | 8 | 4 | 50.4 | cardo | 4 |  99.67 |  99.71 |  100.0 |      ? | 8 | FULL |
 | 9 | 7 | 41.3 | sabon-next-lt | 3 |  99.68 |  100.0 |  100.0 |      ? | 2 | FULL |
 | 10 | 15 | 40.2 | sabon-next-lt | 3 |  99.67 |  100.0 |  100.0 |      ? | 4 | FULL |
@@ -47,47 +47,67 @@ Generated: 2026-06-04T21:43:54Z
 - **Suspected anomalies:** 299
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 12 — Need: 75.6 (❌ Poor) — Rank 2
+### Volume 2 — Need: 66.4 (❌ Poor) — Rank 2
 
-- **Body font:** arno-pro
+- **Body font:** libertinus
 - **Source type:** ages_pdf
 - **Treatises:** 3
-- **QA level:** PRISTINE
-- **convert.py:** Yes (225 lines, 1 text_replacements)
-- **Audit:** errors=1, warnings=3, footnotes=None
-- **Word coverage:** 99.60
-- **Greek coverage:** 99.92
-- **Hebrew coverage:** 99.55
-- **Latin coverage:** 99.82
-- **Latin tagging:** 59.14
-- **Latin translation:** 30.77
-- **Citations:** total=70, unresolved=0
-- **Splits:** 276
-- **Regressions:** 2
-- **Suspected anomalies:** 663
-- **Recommended:** 🔍 Review OCR anomalies
+- **QA level:** FULL
+- **convert.py:** Yes (164 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=1, footnotes=None
+- **Word coverage:** 99.48
+- **Greek coverage:** 99.77
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.50
+- **Latin tagging:** 22.26
+- **Latin translation:** 24.26
+- **Citations:** total=3, unresolved=2
+- **Splits:** 15
+- **Regressions:** 0
+- **Suspected anomalies:** None
+- **Recommended:** translate_unresolved_citations
 
-### Volume 5 — Need: 62.2 (❌ Poor) — Rank 3
+### Volume 5 — Need: 66.2 (❌ Poor) — Rank 3
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
 - **Treatises:** 2
 - **QA level:** FULL
-- **convert.py:** Yes (118 lines, 1 text_replacements)
-- **Audit:** errors=1, warnings=1, footnotes=None
-- **Word coverage:** 99.69
+- **convert.py:** Yes (136 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=1, footnotes=None
+- **Word coverage:** 98.07
 - **Greek coverage:** 99.73
 - **Hebrew coverage:** 99.19
-- **Latin coverage:** ?
-- **Latin tagging:** ?
-- **Latin translation:** ?
+- **Latin coverage:** 98.91
+- **Latin tagging:** 70.91
+- **Latin translation:** 59.89
 - **Citations:** total=45, unresolved=2
-- **Splits:** 78
+- **Splits:** 7
 - **Regressions:** 5
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 13 — Need: 58.0 (🩷 Needs work) — Rank 4
+### Volume 12 — Need: 60.8 (❌ Poor) — Rank 4
+
+- **Body font:** arno-pro
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** PRISTINE
+- **convert.py:** Yes (232 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=3, footnotes=None
+- **Word coverage:** 99.90
+- **Greek coverage:** 99.92
+- **Hebrew coverage:** 99.55
+- **Latin coverage:** 99.70
+- **Latin tagging:** 60.86
+- **Latin translation:** 40.71
+- **Citations:** total=70, unresolved=0
+- **Splits:** 40
+- **Regressions:** 1
+- **Suspected anomalies:** 663
+- **Recommended:** 🔍 Review OCR anomalies
+
+### Volume 13 — Need: 58.0 (🩷 Needs work) — Rank 5
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
@@ -107,7 +127,7 @@ Generated: 2026-06-04T21:43:54Z
 - **Suspected anomalies:** None
 - **Recommended:** ⚠️ Investigate low word coverage
 
-### Volume 10 — Need: 51.5 (🩷 Needs work) — Rank 5
+### Volume 10 — Need: 51.5 (🩷 Needs work) — Rank 6
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -127,7 +147,7 @@ Generated: 2026-06-04T21:43:54Z
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 11 — Need: 51.2 (🩷 Needs work) — Rank 6
+### Volume 11 — Need: 51.2 (🩷 Needs work) — Rank 7
 
 - **Body font:** minion-pro
 - **Source type:** ages_pdf
@@ -143,26 +163,6 @@ Generated: 2026-06-04T21:43:54Z
 - **Latin translation:** ?
 - **Citations:** total=52, unresolved=4
 - **Splits:** 143
-- **Regressions:** 0
-- **Suspected anomalies:** None
-- **Recommended:** translate_unresolved_citations
-
-### Volume 2 — Need: 50.7 (🩷 Needs work) — Rank 7
-
-- **Body font:** libertinus
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** FULL
-- **convert.py:** Yes (141 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
-- **Word coverage:** 99.68
-- **Greek coverage:** 99.77
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** ?
-- **Latin tagging:** ?
-- **Latin translation:** ?
-- **Citations:** total=3, unresolved=2
-- **Splits:** 179
 - **Regressions:** 0
 - **Suspected anomalies:** None
 - **Recommended:** translate_unresolved_citations
@@ -313,7 +313,7 @@ Generated: 2026-06-04T21:43:54Z
 - **Source type:** ages_pdf
 - **Treatises:** 4
 - **QA level:** PRISTINE
-- **convert.py:** Yes (547 lines, 1 text_replacements)
+- **convert.py:** Yes (561 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=1, footnotes=None
 - **Word coverage:** 99.92
 - **Greek coverage:** 99.87

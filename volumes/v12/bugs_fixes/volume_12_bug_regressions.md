@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 257 | 285 | OK |
-| Inline structural marker candidates | 6 | 6 | OK |
+| Possible faulty paragraph splits | 39 | 285 | OK |
+| Inline structural marker candidates | 2 | 6 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 3 | 3 | OK |
+| Missing front CONTENTS pages | 1 | 3 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -21,7 +21,7 @@
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 0 | 0 | OK |
-| Missing Greek clauses | 20 | 16 | REGRESSION |
+| Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -69,46 +69,29 @@
 - file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
 - file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
 - file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
-- file: EPUB/ch004.xhtml; previous: house of God there are daily builders, according as new living stones are to be fitted to their places therein; and continual oppositions have there been made thereto, and will be,; next: In this work of building are some employed by Jesus Christ, and will be so to the end of the world, Matthew 28:19, 20, Ephesians 4:11, 12; and some employ themselves at least in a 
-- file: EPUB/ch004.xhtml; previous: and not be believed. See Calvin's epistles, about the year 1561. But the man on this occasion being sent to the meeting at Pinckzow (as Statorius), he subscribes this confession: —; next: This did the wretched man think meet to do, that he might preserve the good esteem of his patron and reserve himself for a fitter opportunity of doing mischief; which also he did, 
+- file: EPUB/ch004.xhtml; previous: er, nam ratio vocabuli non patitur, ut quis dicatur sine matre pater: et si Logos filius erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus." †; next: To this height of atheism and blasphemy had Satan wrought up the spirit of the man; so that I must say he is the only person in the world, that I ever read or heard of, that ever d
+- file: EPUB/ch004.xhtml; previous: n possumus, aliquid in quo nitamur conquirimus ; sequiturque, ut frequens ac mobilis transitus maximum perfecti operis impedimentum sit." † — Paterc. Hist. Romans lib. 1 cap. 17. *; next: I wish some such things may not be said of the doctrine of the reformed churches. It was not long since raised to a great height of purity in itself, and perspicuity in the way of 
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch017.xhtml; text: The intendment of these questions being the application of what is spoken of Christ, either as mediator or as man, unto his person, to the exclusion of any other consideration, namely, that of a divine nature therein, th
-- file: EPUB/ch022.xhtml; text: The first they propose is taken from Hebrews 1:3, where the words spoken of Christ are, Φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως αὑτοῦ , [1] — "Upholding all things by the word of his power."
-- file: EPUB/ch032.xhtml; text: Of the same judgment with him is Volk. de Vera Relig. lib. 4:cap. 11: [2] de Christi invocatione, Schlichting. ad Meisner., pp. 206, 207, and generally the rest of them; which again how consistent it is with what they af
 - file: EPUB/ch040.xhtml; text: He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —
-- file: EPUB/ch047.xhtml; text: I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is e
+- file: EPUB/ch047.xhtml; text: These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our 
 
 ### Repeated word windows
 
 - phrase: made of the seed of david according to the flesh
 - phrase: that they which commit sin are worthy of death romans
-- phrase: they which commit sin are worthy of death romans 32
 - phrase: the lord hath laid on him the iniquity of us
 - phrase: lord hath laid on him the iniquity of us all
+- phrase: known unto god are all his works from the beginning
 
 ### Missing front CONTENTS pages
 
-- page: 3; sample: contents of vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined prefatory note by the editor dedication epistle dedicatory preface to the reader mr biddle's
-- page: 4; sample: 20 of the priestly office of christ how he was priest when he entered on his office and how he dischargeth it 21 of the death of christ
 - page: 5; sample: vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism written by biddle and the catechism
 
 ### Missing enumerator markers
 
 - marker: (1.)
-
-### Low Greek word coverage
-
-- {'word': 'ζητήσεις', 'pdf': 3, 'epub': 0}
-
-### Missing Greek clauses
-
-- page: 63; sample: αθανατους μεν πρωτα θεους νομω ως διακειται τιμα και σεβου ορκον επειθ
-- page: 748; sample: γινεται φθονος ερις βλασφημιαι υπονοιαι πονηραι παραδιατριβαι
-- page: 748; sample: το γινεσθαι πατερα παιδων λυπη φοβος φροντις
-- page: 749; sample: φιλει γαρ οκειν πραγμ ανηρ πρασσων μεγα
-- page: 749; sample: ως ουχ υπαρχων αλλα τιμωρουμενος
 
 ### Repeated phrase hits
 
@@ -127,7 +110,7 @@
 ### Lowercase page fragments
 
 - file: EPUB/ch003.xhtml; text: who is your unworthy fellow-laborer
-- file: EPUB/ch004.xhtml; text: and whose blasphemy comes not at all short of it. The first is of Clarus Bonarus
+- file: EPUB/ch004.xhtml; text: and whose blasphemy comes not at all short of it. The first is of
 - file: EPUB/ch005.xhtml; text: for if we once let go those forms of sound words learned from the apostles, and t
 - file: EPUB/ch006.xhtml; text: so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, "Who hath f
 - file: EPUB/ch014.xhtml; text: is so far from proving that the image of God wherein man was created did consist

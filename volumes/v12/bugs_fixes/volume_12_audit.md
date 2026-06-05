@@ -1,7 +1,7 @@
 # EPUB Audit: volume_12.epub
 
-- Status: **FAIL**
-- Errors: 1
+- Status: **WARN**
+- Errors: 0
 - Warnings: 3
 
 ## Summary
@@ -21,18 +21,14 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 1448
 - Untagged Hebrew chars: 0
-- Noteref links: 584
-- Endnote anchors: 586
+- Noteref links: 1092
+- Endnote anchors: 1094
 - Boilerplate hits: 0
 - Possible Beta Code files: 1
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 2
-
-## Errors
-
-- `nav_in_spine`: EPUB navigation document is in the reading-order spine
 
 ## Warnings
 

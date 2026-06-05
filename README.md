@@ -273,17 +273,17 @@ The new engine:
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
 | 1 | v1 | Populated | PRISTINE | Cov 99.92 Greek 99.87 Heb 100.00 Lat 99.74 |
-| 2 | v2 | Populated | FULL | Cov 99.68 Greek 99.77 Heb 100.00 Lat ? Unres 2 |
+| 2 | v2 | Populated | FULL | Cov 99.48 Greek 99.77 Heb 100.00 Lat 99.50 Unres 2 |
 | 3 | v3 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.95 |
 | 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 Lat ? Unres 8 |
-| 5 | v5 | Populated | FULL | Cov 99.69 Greek 99.73 Heb 99.19 Lat ? Unres 2 |
+| 5 | v5 | Populated | FULL | Cov 98.07 Greek 99.73 Heb 99.19 Lat 98.91 Unres 2 |
 | 6 | v6 | Populated | FULL | Cov 99.54 Greek 100.00 Heb 100.00 Lat ? |
 | 7 | v7 | Populated | FULL | Cov 99.68 Greek 100.00 Heb 100.00 Lat ? Unres 2 |
 | 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 |
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? |
 | 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 |
 | 11 | v11 | Populated | FULL | Cov 97.63 Greek 99.70 Heb 100.00 Lat ? Unres 4 |
-| 12 | v12 | Populated | PRISTINE | Cov 99.60 Greek 99.92 Heb 99.55 Lat 99.82 |
+| 12 | v12 | Populated | PRISTINE | Cov 99.90 Greek 99.92 Heb 99.55 Lat 99.70 |
 | 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 Lat ? |
 | 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 Lat ? Unres 6 |
 | 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 Lat ? Unres 4 |

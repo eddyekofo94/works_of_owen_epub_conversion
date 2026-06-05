@@ -20,6 +20,12 @@ HEBREW_FONT_MARKERS = ('Gideon',)
 GREEK_UNICODE_RE = re.compile(r'[\u0370-\u03FF\u1F00-\u1FFF]')
 HEBREW_UNICODE_RE = re.compile(r'[\u0590-\u05FF]')
 
+OWEN_HARD_HYPHENS = {
+    'Spiritual-mindedness', 'spiritually-minded', 'heavenly-mindedness',
+    'self-denial', 'faith-fulness', 'church-state', 'fellow-creature',
+    'well-pleased', 'good-will', 'soul-satisfying'
+}
+
 
 def is_greek_font(font_name):
     """Return True for AGES Koine font names, including subset prefixes."""
@@ -1260,6 +1266,10 @@ def _repair_scripture_reference_artifacts(text: str) -> str:
     # chapter:verse plus the same chapter again.
     text = re.sub(r'\bRomans\s+(\d+):1\s+\1\b', r'Romans \1', text)
     text = re.sub(r'\b1\s+Corinthians\s+(\d+):1\s*1\s+Corinthians\s+\1\b', r'1 Corinthians \1', text)
+
+    # Separating run-together verse/chapter numbers, e.g., "12chap." -> "12; chap."
+    text = re.sub(r'(\d+)chap\.', r'\1; chap.', text)
+    text = re.sub(r'(\d+)chap\b', r'\1; chap', text)
     return text
 
 
@@ -1282,8 +1292,36 @@ LATIN_OCR_CORRECTIONS = {
     'Pater quam inepte': 'Patet quam inepte',
     'pater denique quam': 'patet denique quam',
     'adversari. orum': 'adversariorum',
-    'Clarke': 'Clarae',
     'Voss. Rasp': 'Voss. Resp',
+}
+
+GLOBAL_OCR_CORRECTIONS = {
+    'wbefore': 'before',
+    'nthou': 'thou',
+    'unuto': 'unto',
+    'twithout': 'without',
+    'acording': 'according',
+    'mumber': 'number',
+    'whoe': 'whole',
+    'afiter': 'after',
+    'gire': 'give',
+    'inyest': 'invest',
+    'cailed': 'called',
+    'estet': 'est et',
+    'affiictus': 'afflictus',
+    'affiictionum': 'afflictionum',
+    'affiigitur': 'affligitur',
+    'heaing': 'healing',
+    'oequipotent': 'equipotent',
+    '2d1y': '2dly',
+    'plentifu1': 'plentiful',
+    'shal1': 'shall',
+    'sou1s': 'souls',
+    'fulfil1ing': 'fulfilling',
+    'l4l': '141',
+    'l74': '174',
+    'al]so': 'also',
+    'mal]administrations': 'maladministrations',
 }
 
 
@@ -1291,6 +1329,15 @@ def _repair_owen_ocr_errors(text: str, config: dict = None) -> str:
     """Repair known OCR character misreads using volume-specific configuration."""
     # Apply centralized Latin OCR corrections
     for wrong, right in LATIN_OCR_CORRECTIONS.items():
+        pattern = re.escape(wrong)
+        if wrong and wrong[0].isalnum():
+            pattern = r'\b' + pattern
+        if wrong and wrong[-1].isalnum():
+            pattern = pattern + r'\b'
+        text = re.sub(pattern, right, text)
+
+    # Apply centralized global English/general OCR corrections
+    for wrong, right in GLOBAL_OCR_CORRECTIONS.items():
         pattern = re.escape(wrong)
         if wrong and wrong[0].isalnum():
             pattern = r'\b' + pattern

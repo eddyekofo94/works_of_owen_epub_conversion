@@ -178,8 +178,15 @@ OVERRIDES = {
         'asserts it it is': 'asserts it, it is',
         'for for that end': 'for that end',
         'which it is is inconsistent': 'which it is, is inconsistent',
+        'ca]Ties': 'carries',
+        'co]our': 'colour',
+        'giguitur in nobis tides': 'gignitur in nobis fides',
+        'quae deinde tides': 'quae deinde fides',
+        'Isaiah 3:13chap. 3': 'Isaiah 52:13; chap. 52',
     },
     'regex_replacements': {
+        r'divines,\s*—\s*Bull,\s*Waterland,\s*Horsley,\s*Magee,\s*Fuller,\s*Pye\s+Smith,\s*and\s*Wardlaw,\s*—\s*by':
+        'divines, — George Bull, Daniel Waterland, Samuel Horsley, William Magee, Andrew Fuller, John Pye Smith, and Ralph Wardlaw, — by',
         r',,': ',',
         r'xauni~am': 'familiam',
         r'con~erendls': 'conferendis',
