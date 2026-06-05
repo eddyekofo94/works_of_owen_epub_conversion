@@ -115,7 +115,17 @@ def process_owen_volume(
         _extract_cb, _extract_spin = spinner_wrap_callback(progress_callback)
         _extract_spin.message = f"Extracting Volume {vol_num}"
         _extract_spin.start()
-        extract_volume(vol_num, overrides=overrides, progress_callback=_extract_cb)
+        intermediate = extract_volume(vol_num, overrides=overrides, progress_callback=_extract_cb)
+        
+        post_extract_hook = (overrides or {}).get('post_extract_hook')
+        if post_extract_hook:
+            print(f'[converter] Running post_extract_hook for Volume {vol_num}')
+            intermediate = post_extract_hook(intermediate)
+            vol_dir = Path(__file__).parent / 'volumes' / f'v{vol_num}'
+            out_json = vol_dir / 'intermediate' / f'volume_{vol_num}.json'
+            import json
+            with open(out_json, 'w', encoding='utf-8') as f:
+                json.dump(intermediate, f, indent=2, ensure_ascii=False)
 
     if not extract_only:
         print(cyan(f"=== Volume {vol_num}: Stage 2 - Render ==="))

@@ -1,80 +1,64 @@
 {
   "volume": 16,
-  "total_words_audited": 258018,
-  "total_anomalies_count": 299,
+  "total_words_audited": 258369,
+  "total_anomalies_count": 57,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [
       {
-        "target": "bands ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Preface (The True Nature of a Gospel Church and Its Government)",
-        "contexts": [
-          "... aking their staff of beauty and their staff of bands , he erects his gospel church, calls in disciples b ..."
-        ]
-      },
-      {
-        "target": "(   H",
-        "description": "Spaced opening parenthesis",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": [
-          "... nation. (9.) The general force of the rule, ( Hebrews 5:4, includes a prohibition of undertaking ..."
-        ]
-      },
-      {
-        "target": "desertions  ;",
+        "target": "desertions ;",
         "description": "Spaced punctuation (space before character)",
         "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
         "contexts": [
-          "... ent, particular occur; some on sovereign, divine desertions ; some through the buffetings of Satan and the in ..."
+          "... gent, particular occur; some on sovereign, divine desertions ; some through the buffetings of Satan and the inje ..."
         ]
       },
       {
-        "target": "1    .",
+        "target": "1 .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
         "contexts": [
-          "... unto the office of a pastor in the church; as, \u2014 1 . Whether a man may be ordained a pastor or a mi ..."
+          "... unto the office of a pastor in the church; as, \u2014 1 . Whether a man may be ordained a pastor or a minis ..."
         ]
       },
       {
-        "target": "2    .",
+        "target": "2 .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
         "contexts": [
-          "... attend unto who have none to be ruled by them. 2 . May a pastor remove from one congregation unto ..."
+          "... t attend unto who have none to be ruled by them. 2 . May a pastor remove from one congregation unto an ..."
         ]
       },
       {
-        "target": "3    .",
+        "target": "3 .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
         "contexts": [
-          "... le; though I acknowledge it had no good success, 3 . May a pastor voluntarily, or of his own accord ..."
+          "... ple; though I acknowledge it had no good success, 3 . May a pastor voluntarily, or of his own accord, r ..."
         ]
       },
       {
-        "target": "6    .",
+        "target": "6 .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
         "contexts": [
-          "... t institution, which we shall afterward evince. 6 . The work of the ministry in prayer and preachi ..."
+          "... at institution, which we shall afterward evince. 6 . The work of the ministry in prayer and preaching ..."
         ]
       },
       {
-        "target": "land  ;",
+        "target": "land ;",
         "description": "Spaced punctuation (space before character)",
         "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
         "contexts": [
-          "... l cases out of and according to the law of the land ; and when they do not, their sentence is of no val ..."
+          "... all cases out of and according to the law of the land ; and when they do not, their sentence is of no val ..."
         ]
       },
       {
-        "target": "Ans  .",
+        "target": "Ans .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 9 - of Deacons.",
         "contexts": [
-          "... heir husbands may be continued in their office? Ans . 1. He who in his own person faithfully discharg ..."
+          "... their husbands may be continued in their office? Ans . 1. He who in his own person faithfully discharget ..."
         ]
       },
       {
@@ -86,143 +70,119 @@
         ]
       },
       {
-        "target": "consciences ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": [
-          "... s of common equity, and principles of unseared consciences , as unto the nature, efficacy, and rule of it, tha ..."
-        ]
-      },
-      {
-        "target": "1st .",
+        "target": "2dly .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 10 - of Excommunication.",
         "contexts": [
-          "... h of Corinth is express, 1 Corinthians 5:1-7: \u2014 1st . He declares the sin whereof the person charged wa ..."
+          "... y, with the ignominy and scandal of it, verse 1. 2dly . He blames the church that they had not been affec ...",
+          "... ect unto the church, its purging and vindication; 2dly . With respect unto the person excommunicated, his ..."
         ]
       },
       {
-        "target": "2dly   .",
+        "target": "3dly .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 10 - of Excommunication.",
         "contexts": [
-          "... , with the ignominy and scandal of it, verse 1. 2dly . He blames the church that they had not been affe ...",
-          "... unto the church, its purging and vindication; 2dly . With respect unto the person excommunicated, h ..."
+          "... t be \"taken away\" or cut off from them, verse 2. 3dly . He declares his own judgment in the case, that he ..."
         ]
       },
       {
-        "target": "3dly   .",
+        "target": "4thly .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 10 - of Excommunication.",
         "contexts": [
-          "... be \"taken away\" or cut off from them, verse 2. 3dly . He declares his own judgment in the case, that h ..."
+          "... d by that judgment and sentence of his, verse 3. 4thly . He declares the causes of this excision: \u2014 (lst.) ..."
         ]
       },
       {
-        "target": "4thly   .",
+        "target": "5thly .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 10 - of Excommunication.",
         "contexts": [
-          "... by that judgment and sentence of his, verse 3. 4thly . He declares the causes of this excision: \u2014 (lst ..."
+          "... mfort him, \u2014 that is, the whole church, verse 7. 5thly . The nature of the sentence is, the \"delivering of ..."
         ]
       },
       {
-        "target": "5thly   .",
+        "target": "Ans .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 10 - of Excommunication.",
         "contexts": [
-          "... fort him, \u2014 that is, the whole church, verse 7. 5thly . The nature of the sentence is, the \"delivering o ..."
+          "... nication, in case the sin be great and notorious? Ans . 1. It is certain that, in an orderly progress, a ...",
+          "... e received into the church upon their repentance? Ans . 1. As unto the internal manner, with all readine ..."
         ]
       },
       {
-        "target": "Ans  .",
-        "description": "Spaced period (space before period)",
+        "target": "..",
+        "description": "Duplicate period (double dot)",
         "chapter": "Chapter 10 - of Excommunication.",
         "contexts": [
-          "... tion, in case the sin be great and notorious? Ans . 1. It is certain that, in an orderly progress, ...",
-          "... ceived into the church upon their repentance? Ans . 1. As unto the internal manner, with all rea ..."
+          "... ivileges of the church. [6.] The end of it, \u2014 1st.. With respect unto the church, its purging and vin ..."
         ]
       },
       {
-        "target": "1    .",
+        "target": "1 .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 11 - of the Communion of Churches.",
         "contexts": [
-          "... among all the churches of Christ is fivefold: \u2014 1 . General, in the belief of the same doctrine of ..."
+          "... h among all the churches of Christ is fivefold: \u2014 1 . General, in the belief of the same doctrine of tr ..."
         ]
       },
       {
-        "target": "A  .",
+        "target": "A .",
         "description": "Spaced period (space before period)",
         "chapter": "A Discourse Concerning the Administration of Church Censures.",
         "contexts": [
-          "... sary that such maladministrations be rectified? A . It is necessary such maladministrations should be ..."
+          "... essary that such maladministrations be rectified? A . It is necessary such maladministrations should be ..."
         ]
       },
       {
-        "target": "Corol  .",
+        "target": "Corol .",
         "description": "Spaced period (space before period)",
         "chapter": "A Discourse Concerning the Administration of Church Censures.",
         "contexts": [
-          "... ng, design, and importance of this institution. Corol . To deny an institution of so great necessity to t ..."
+          "... ing, design, and importance of this institution. Corol . To deny an institution of so great necessity to t ..."
         ]
       },
       {
-        "target": "Ans  .",
+        "target": "Ans .",
         "description": "Spaced period (space before period)",
         "chapter": "A Discourse Concerning the Administration of Church Censures.",
         "contexts": [
-          "... on of the whole superstruction of church-order. Ans . 1. Particular churches have certainly no libert ..."
+          "... ion of the whole superstruction of church-order. Ans . 1. Particular churches have certainly no libertie ...",
+          "... on the right ways of the Lord. In answer I say, \u2014 Ans . 1. Excommunication itself, whatever men may supp ...",
+          "... d, yea, to harden them in their sin and offense. Ans . 1. Concerning whom are these things feared? Were ..."
         ]
       },
       {
-        "target": "Ans   .",
-        "description": "Spaced period (space before period)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": [
-          "... n the right ways of the Lord. In answer I say, \u2014 Ans . 1. Excommunication itself, whatever men may supp ...",
-          "... , yea, to harden them in their sin and offense. Ans . 1. Concerning whom are these things feared? Were ...",
-          "... he like case only may the like course be taken. Ans . 1. The way of mutual counsel and advice amongst ..."
-        ]
-      },
-      {
-        "target": "1    .",
+        "target": "1 .",
         "description": "Spaced period (space before period)",
         "chapter": "Question 2.",
         "contexts": [
-          "... pears that they may not, or cannot so do; for, \u2014 1 . Their so doing would be an ecclesiastical inco ..."
+          "... ppears that they may not, or cannot so do; for, \u2014 1 . Their so doing would be an ecclesiastical incorpo ..."
         ]
       },
       {
-        "target": "1    .",
+        "target": "1 .",
         "description": "Spaced period (space before period)",
         "chapter": "Answer.",
         "contexts": [
-          "... pears that they may not, or cannot so do; for, \u2014 1 . Their so doing would be an ecclesiastical inco ..."
+          "... ppears that they may not, or cannot so do; for, \u2014 1 . Their so doing would be an ecclesiastical incorpo ..."
         ]
       },
       {
-        "target": "4    .",
+        "target": "4 .",
         "description": "Spaced period (space before period)",
         "chapter": "Answer.",
         "contexts": [
-          "... h the gospel requireth in the professors of it. 4 . The posture of kneeling in the receiving of th ..."
+          "... ch the gospel requireth in the professors of it. 4 . The posture of kneeling in the receiving of this ..."
         ]
       },
       {
-        "target": "1655  .",
+        "target": "1655 .",
         "description": "Spaced period (space before period)",
         "chapter": "Reflections on a Slanderous Libel",
         "contexts": [
-          "... declaration of its notorious falsity, in the year 1655 . But so prone are many to give entertainment to f ..."
-        ]
-      },
-      {
-        "target": "Son ?",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 3.",
-        "contexts": [
-          "... , \"from the excellent glory\" \u2014 This is my beloved Son ?\" Yet Peter, who heard that voice, tells us that, ..."
+          "... declaration of its notorious falsity, in the year 1655 . But so prone are many to give entertainment to fa ..."
         ]
       },
       {
@@ -239,22 +199,6 @@
         "chapter": "Chapter 4.",
         "contexts": [
           "... ) \"Thou clothest thyself with light;\" and Daniel, ( 2:22,) \u05e2\u05b4\u05de\u05b5\u05d4 \u05e9\u05b0\u05c1\u05e8\u05b5\u05d0 \u05d5\u05bc\u05e0\u05b0\u05d4\u05b9\u05d9\u05e8\u05b8\u05d0, the \"light remainet ..."
-        ]
-      },
-      {
-        "target": "1st ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 6.",
-        "contexts": [
-          "... njoyment in glory, there are these two parts: \u2014 1st , God's gracious communication of his love, goodnes ..."
-        ]
-      },
-      {
-        "target": "d  ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 6.",
-        "contexts": [
-          "... s, etc., with the fruits of them, unto man; 2 d , The obedience of man unto God, in a way of gratit ..."
         ]
       },
       {
@@ -276,11 +220,11 @@
         ]
       },
       {
-        "target": "Ans  .",
+        "target": "Ans .",
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 6.",
         "contexts": [
-          "... whole punctuation from the Tiberian Masoretes.\" Ans . It is very true that Elias was of that judgment; ..."
+          "... e whole punctuation from the Tiberian Masoretes.\" Ans . It is very true that Elias was of that judgment; ..."
         ]
       },
       {
@@ -288,79 +232,23 @@
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 6.",
         "contexts": [
-          "... , stout, how, now. 8. Ui, uy Bui, juice. 9. Eo .Yeoman, people. How other diphthongs (which have ..."
+          "... Rout, stout, how, now. 8. Ui, uy Bui, juice. 9. Eo .Yeoman, people. How other diphthongs (which have ..."
         ]
       },
       {
-        "target": "God  ,",
+        "target": "God ,",
         "description": "Spaced punctuation (space before character)",
         "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
         "contexts": [
-          "... re come to an end; that is, the whole covenant of God , and the ordinances and presence of God with them ..."
+          "... re come to an end; that is, the whole covenant of God , and the ordinances and presence of God with them, ..."
         ]
       },
       {
-        "target": "And  ,",
+        "target": "And ,",
         "description": "Spaced punctuation (space before character)",
         "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
         "contexts": [
-          "... Write the vision, and make it plain upon tables.\" And , 4. There is the conclusion which he works all ..."
-        ]
-      },
-      {
-        "target": "Sodom ?",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": [
-          "... in as Sodom.\" How is it to \"declare their sin as Sodom ?\" (1.) When men will confer and talk together a ..."
-        ]
-      },
-      {
-        "target": "First ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": [
-          "... I shall close all with a word or two of use: \u2014 First , If this be the deplorable state and condition of ..."
-        ]
-      },
-      {
-        "target": "Secondly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": [
-          "... evil that he hath purposed against this nation. Secondly , If they will not be healed, let our souls mourn i ..."
-        ]
-      },
-      {
-        "target": "Thirdly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": [
-          "... ereby we have provoked the eyes of God's glory. Thirdly , Take heed that we do not partake in any of their ..."
-        ]
-      },
-      {
-        "target": "Fourthly ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": [
-          "... declared that he hath a controversy with them. Fourthly , Prepare to meet the Lord in the way of his judgme ..."
-        ]
-      },
-      {
-        "target": "me ?",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
-        "contexts": [
-          "... e of faith for this purpose! 'But will he relieve me ?' Why, he hath humbled, emptied himself, and laid ..."
-        ]
-      },
-      {
-        "target": "1st   .",
-        "description": "Spaced period (space before period)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": [
-          "... r the glorifying of him, their principal end: \u2014 1st . They are bound to prefer, esteem, and value, the ..."
+          "... Write the vision, and make it plain upon tables.\" And , 4. There is the conclusion which he works all unt ..."
         ]
       },
       {
@@ -368,11 +256,11 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 12 - Enoch's Walk With God.",
         "contexts": [
-          "... and grace. And we may observe concerning it, \u2014 1st . That he who doth So will not have his endeavors a ..."
+          "... or the glorifying of him, their principal end: \u2014 1st . They are bound to prefer, esteem, and value, the ..."
         ]
       },
       {
-        "target": "2dly   .",
+        "target": "2dly .",
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 12 - Enoch's Walk With God.",
         "contexts": [
@@ -380,48 +268,24 @@
         ]
       },
       {
-        "target": "3dly   .",
+        "target": "3dly .",
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 12 - Enoch's Walk With God.",
         "contexts": [
-          "... in God under the greatest pressures imaginable. 3dly . It may be observed, also, that our aim and desig ..."
+          "... in God under the greatest pressures imaginable. 3dly . It may be observed, also, that our aim and design ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Sermon 12 - Enoch's Walk With God.",
+        "contexts": [
+          "... his may be regular, two things are required: \u2014 1st.. That we look for it by the way that he hath appoi ...",
+          "... ence in him, the way of attaining their end. 2dly.. That we aim at the enjoyment of God spa spiritual ..."
         ]
       }
     ],
-    "OCR & Bracket Residues": [
-      {
-        "target": "al]so",
-        "description": "OCR residue containing stray closing bracket/paren",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": [
-          "... ed that persons so chosen, so submitted unto, be [al]so solemnly separated, dedicated unto, and confirme ..."
-        ]
-      },
-      {
-        "target": "know]edge",
-        "description": "OCR residue containing stray closing bracket/paren",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": [
-          "... by the apostle, 1 Timothy 3:8-13. Upon the trial, know]edge, and approbation of them, with respect unto these ..."
-        ]
-      },
-      {
-        "target": "mal]administrations",
-        "description": "OCR residue containing stray closing bracket/paren",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": [
-          "... their peace and edification. Q. 3. How may such [mal]administrations be rectified? A. The rectifying such maladminist ..."
-        ]
-      },
-      {
-        "target": "seem[ing",
-        "description": "OCR residue containing stray opening bracket/paren",
-        "chapter": "Chapter 5.",
-        "contexts": [
-          "... atinus his Gale Rezeia, which must be set aside), seem[ing] to be wrested the most of them beside their inte ..."
-        ]
-      }
-    ],
+    "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],
     "Unresolved Citation References": [
       {
@@ -429,7 +293,7 @@
         "description": "Unresolved patristic/classical citation reference (no translation found)",
         "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
         "contexts": [
-          "... have peace among them; which he did accordingly, Orat. 52, et Vit. Greg. Nazian. And afterward a synod at ..."
+          "... have peace among them; which he did accordingly, Orat. 52, et Vit. Greg. Nazian. And afterward a synod at C ..."
         ]
       },
       {
@@ -477,315 +341,9 @@
     ],
     "Structural Nesting Sequence Jumps": [
       {
-        "target": "262. ... 433.",
-        "description": "List sequence jump (skipped from 262 to 433)",
-        "chapter": "Prefatory Note (The True Nature of a Gospel Church and Its Government)",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 25.",
-        "description": "List sequence jump (skipped from 2 to 25)",
-        "chapter": "Preface (The True Nature of a Gospel Church and Its Government)",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 18.",
-        "description": "List sequence jump (skipped from 1 to 18)",
-        "chapter": "Preface (The True Nature of a Gospel Church and Its Government)",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 8.",
-        "description": "List sequence jump (skipped from 3 to 8)",
-        "chapter": "Preface (The True Nature of a Gospel Church and Its Government)",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 21.",
-        "description": "List sequence jump (skipped from 3 to 21)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 13.",
-        "description": "List sequence jump (skipped from 4 to 13)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 16.",
-        "description": "List sequence jump (skipped from 1 to 16)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 15.",
-        "description": "List sequence jump (skipped from 4 to 15)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 19.",
-        "description": "List sequence jump (skipped from 15 to 19)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 14.",
-        "description": "List sequence jump (skipped from 5 to 14)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 21.",
-        "description": "List sequence jump (skipped from 14 to 21)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 17.",
-        "description": "List sequence jump (skipped from 10 to 17)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 19.",
-        "description": "List sequence jump (skipped from 1 to 19)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 20.",
-        "description": "List sequence jump (skipped from 7 to 20)",
-        "chapter": "Chapter 2 - Of the Formal Cause of a Particular Church.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 2 - Of the Formal Cause of a Particular Church.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 12.",
-        "description": "List sequence jump (skipped from 5 to 12)",
-        "chapter": "Chapter 2 - Of the Formal Cause of a Particular Church.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 20.",
-        "description": "List sequence jump (skipped from 9 to 20)",
-        "chapter": "Chapter 2 - Of the Formal Cause of a Particular Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 15.",
-        "description": "List sequence jump (skipped from 2 to 15)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 5.",
-        "description": "List sequence jump (skipped from 2 to 5)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 28.",
-        "description": "List sequence jump (skipped from 5 to 28)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 15.",
-        "description": "List sequence jump (skipped from 1 to 15)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 12.",
-        "description": "List sequence jump (skipped from 1 to 12)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 20.",
-        "description": "List sequence jump (skipped from 2 to 20)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 15.",
-        "description": "List sequence jump (skipped from 5 to 15)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 8.",
-        "description": "List sequence jump (skipped from 2 to 8)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 17.",
-        "description": "List sequence jump (skipped from 5 to 17)",
-        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 28.",
-        "description": "List sequence jump (skipped from 3 to 28)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 17.",
-        "description": "List sequence jump (skipped from 3 to 17)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 23.",
-        "description": "List sequence jump (skipped from 4 to 23)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 30.",
-        "description": "List sequence jump (skipped from 23 to 30)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 15.",
-        "description": "List sequence jump (skipped from 4 to 15)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 14.",
-        "description": "List sequence jump (skipped from 1 to 14)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 10.",
-        "description": "List sequence jump (skipped from 7 to 10)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 17.",
-        "description": "List sequence jump (skipped from 11 to 17)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 28.",
-        "description": "List sequence jump (skipped from 2 to 28)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 21.",
-        "description": "List sequence jump (skipped from 3 to 21)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 26.",
-        "description": "List sequence jump (skipped from 21 to 26)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 15.",
-        "description": "List sequence jump (skipped from 1 to 15)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 15.",
-        "description": "List sequence jump (skipped from 2 to 15)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 22.",
-        "description": "List sequence jump (skipped from 3 to 22)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 26.",
-        "description": "List sequence jump (skipped from 7 to 26)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 31.",
-        "description": "List sequence jump (skipped from 4 to 31)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 5.",
-        "description": "List sequence jump (skipped from 2 to 5)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 10.",
-        "description": "List sequence jump (skipped from 5 to 10)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 266.",
-        "description": "List sequence jump (skipped from 2 to 266)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 25.",
-        "description": "List sequence jump (skipped from 4 to 25)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
         "target": "3. ... 5.",
         "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
+        "chapter": "The True Nature of a Gospel Church and Its Government.",
         "contexts": []
       },
       {
@@ -795,471 +353,21 @@
         "contexts": []
       },
       {
-        "target": "1. ... 6.",
-        "description": "List sequence jump (skipped from 1 to 6)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 6.",
-        "description": "List sequence jump (skipped from 2 to 6)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 11.",
-        "description": "List sequence jump (skipped from 6 to 11)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 23.",
-        "description": "List sequence jump (skipped from 6 to 23)",
-        "chapter": "Chapter 4 - the Officers of the Church.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 15.",
-        "description": "List sequence jump (skipped from 1 to 15)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 17.",
-        "description": "List sequence jump (skipped from 15 to 17)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 11.",
-        "description": "List sequence jump (skipped from 4 to 11)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 23.",
-        "description": "List sequence jump (skipped from 3 to 23)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 28.",
-        "description": "List sequence jump (skipped from 23 to 28)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 17.",
-        "description": "List sequence jump (skipped from 4 to 17)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 31.",
-        "description": "List sequence jump (skipped from 17 to 31)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 11.",
-        "description": "List sequence jump (skipped from 6 to 11)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 29.",
-        "description": "List sequence jump (skipped from 7 to 29)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 12.",
-        "description": "List sequence jump (skipped from 7 to 12)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 20.",
-        "description": "List sequence jump (skipped from 5 to 20)",
-        "chapter": "Chapter 5 - the Especial Duty of Pastors of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 11.",
-        "description": "List sequence jump (skipped from 6 to 11)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 28.",
-        "description": "List sequence jump (skipped from 11 to 28)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 25.",
-        "description": "List sequence jump (skipped from 1 to 25)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 11.",
-        "description": "List sequence jump (skipped from 4 to 11)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 29.",
-        "description": "List sequence jump (skipped from 11 to 29)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 20.",
-        "description": "List sequence jump (skipped from 1 to 20)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 7.",
-        "description": "List sequence jump (skipped from 4 to 7)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 3.",
-        "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 28.",
-        "description": "List sequence jump (skipped from 4 to 28)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 7.",
-        "description": "List sequence jump (skipped from 2 to 7)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 6.",
-        "description": "List sequence jump (skipped from 1 to 6)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 15.",
-        "description": "List sequence jump (skipped from 6 to 15)",
-        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 17.",
-        "description": "List sequence jump (skipped from 1 to 17)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 28.",
-        "description": "List sequence jump (skipped from 17 to 28)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 19.",
-        "description": "List sequence jump (skipped from 2 to 19)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 3.",
-        "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 7.",
-        "description": "List sequence jump (skipped from 2 to 7)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 10.",
-        "description": "List sequence jump (skipped from 7 to 10)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 10.",
-        "description": "List sequence jump (skipped from 8 to 10)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 16.",
-        "description": "List sequence jump (skipped from 4 to 16)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 23.",
-        "description": "List sequence jump (skipped from 7 to 23)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 9.",
-        "description": "List sequence jump (skipped from 4 to 9)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 14.",
-        "description": "List sequence jump (skipped from 1 to 14)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 14.",
-        "description": "List sequence jump (skipped from 5 to 14)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 12.",
-        "description": "List sequence jump (skipped from 3 to 12)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 6.",
-        "description": "List sequence jump (skipped from 3 to 6)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 12.",
-        "description": "List sequence jump (skipped from 5 to 12)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 8.",
-        "description": "List sequence jump (skipped from 2 to 8)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 13.",
-        "description": "List sequence jump (skipped from 8 to 13)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 7.",
-        "description": "List sequence jump (skipped from 4 to 7)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 28.",
-        "description": "List sequence jump (skipped from 6 to 28)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 26.",
-        "description": "List sequence jump (skipped from 11 to 26)",
-        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 8.",
-        "description": "List sequence jump (skipped from 1 to 8)",
-        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 17.",
-        "description": "List sequence jump (skipped from 1 to 17)",
-        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 14.",
-        "description": "List sequence jump (skipped from 2 to 14)",
-        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 25.",
-        "description": "List sequence jump (skipped from 14 to 25)",
-        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 30.",
-        "description": "List sequence jump (skipped from 15 to 30)",
-        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 13.",
-        "description": "List sequence jump (skipped from 4 to 13)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 13.",
-        "description": "List sequence jump (skipped from 6 to 13)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 30.",
-        "description": "List sequence jump (skipped from 13 to 30)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 12.",
-        "description": "List sequence jump (skipped from 4 to 12)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 13.",
-        "description": "List sequence jump (skipped from 5 to 13)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 6.",
-        "description": "List sequence jump (skipped from 2 to 6)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 8.",
-        "description": "List sequence jump (skipped from 1 to 8)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 6.",
-        "description": "List sequence jump (skipped from 3 to 6)",
-        "chapter": "Chapter 9 - of Deacons.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 8.",
-        "description": "List sequence jump (skipped from 2 to 8)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 13.",
-        "description": "List sequence jump (skipped from 8 to 13)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
         "target": "5. ... 7.",
         "description": "List sequence jump (skipped from 5 to 7)",
-        "chapter": "Chapter 10 - of Excommunication.",
+        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
         "contexts": []
       },
       {
-        "target": "6. ... 12.",
-        "description": "List sequence jump (skipped from 6 to 12)",
-        "chapter": "Chapter 10 - of Excommunication.",
+        "target": "3. ... 5.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "Chapter 9 - of Deacons.",
         "contexts": []
       },
       {
-        "target": "12. ... 21.",
-        "description": "List sequence jump (skipped from 12 to 21)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 21.",
-        "description": "List sequence jump (skipped from 2 to 21)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 39.",
-        "description": "List sequence jump (skipped from 3 to 39)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 10 - of Excommunication.",
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "Chapter 9 - of Deacons.",
         "contexts": []
       },
       {
@@ -1269,291 +377,27 @@
         "contexts": []
       },
       {
-        "target": "4. ... 220.",
-        "description": "List sequence jump (skipped from 4 to 220)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 16.",
-        "description": "List sequence jump (skipped from 3 to 16)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 24.",
-        "description": "List sequence jump (skipped from 1 to 24)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 6.",
-        "description": "List sequence jump (skipped from 3 to 6)",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 15.",
-        "description": "List sequence jump (skipped from 1 to 15)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 15.",
-        "description": "List sequence jump (skipped from 2 to 15)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 15.",
-        "description": "List sequence jump (skipped from 3 to 15)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 15.",
-        "description": "List sequence jump (skipped from 4 to 15)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 15.",
-        "description": "List sequence jump (skipped from 6 to 15)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 24.",
-        "description": "List sequence jump (skipped from 15 to 24)",
-        "chapter": "Chapter 11 - of the Communion of Churches.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
         "chapter": "A Discourse Concerning the Administration of Church Censures.",
         "contexts": []
       },
       {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 15.",
-        "description": "List sequence jump (skipped from 11 to 15)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 32.",
-        "description": "List sequence jump (skipped from 1 to 32)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 8.",
-        "description": "List sequence jump (skipped from 3 to 8)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 11.",
-        "description": "List sequence jump (skipped from 8 to 11)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 27.",
-        "description": "List sequence jump (skipped from 2 to 27)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 15.",
-        "description": "List sequence jump (skipped from 2 to 15)",
-        "chapter": "A Discourse Concerning the Administration of Church Censures.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Answer.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 26.",
-        "description": "List sequence jump (skipped from 4 to 26)",
-        "chapter": "Answer.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 13.",
-        "description": "List sequence jump (skipped from 2 to 13)",
-        "chapter": "Answer.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 22.",
-        "description": "List sequence jump (skipped from 4 to 22)",
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
         "chapter": "Twelve Arguments",
         "contexts": []
       },
       {
-        "target": "5. ... 33.",
-        "description": "List sequence jump (skipped from 5 to 33)",
-        "chapter": "Twelve Arguments",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 23.",
-        "description": "List sequence jump (skipped from 1 to 23)",
-        "chapter": "Twelve Arguments",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 12.",
-        "description": "List sequence jump (skipped from 2 to 12)",
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
         "chapter": "Of Infant Baptism.",
         "contexts": []
       },
       {
-        "target": "2. ... 47.",
-        "description": "List sequence jump (skipped from 2 to 47)",
-        "chapter": "Of Infant Baptism.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 14.",
-        "description": "List sequence jump (skipped from 3 to 14)",
-        "chapter": "Of Infant Baptism.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 39.",
-        "description": "List sequence jump (skipped from 2 to 39)",
-        "chapter": "Of Infant Baptism.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 73.",
-        "description": "List sequence jump (skipped from 2 to 73)",
-        "chapter": "Of Infant Baptism.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 8.",
-        "description": "List sequence jump (skipped from 5 to 8)",
-        "chapter": "Of Infant Baptism.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 23.",
-        "description": "List sequence jump (skipped from 9 to 23)",
-        "chapter": "Of Infant Baptism.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 8.",
-        "description": "List sequence jump (skipped from 4 to 8)",
-        "chapter": "A Vindication of Two Passages in Irenaeus Against the Exception",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "A Vindication of Two Passages in Irenaeus Against the Exception",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 21.",
-        "description": "List sequence jump (skipped from 3 to 21)",
-        "chapter": "Of Dipping.",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 23.",
-        "description": "List sequence jump (skipped from 21 to 23)",
-        "chapter": "Of Dipping.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 21.",
-        "description": "List sequence jump (skipped from 4 to 21)",
-        "chapter": "Of Dipping.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 21.",
-        "description": "List sequence jump (skipped from 6 to 21)",
-        "chapter": "Of Dipping.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 67.",
-        "description": "List sequence jump (skipped from 2 to 67)",
-        "chapter": "Reflections on a Slanderous Libel",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 21.",
-        "description": "List sequence jump (skipped from 2 to 21)",
-        "chapter": "Chapter 1.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 119.",
-        "description": "List sequence jump (skipped from 1 to 119)",
-        "chapter": "Chapter 4.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 1.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 26.",
-        "description": "List sequence jump (skipped from 2 to 26)",
+        "target": "6. ... 9.",
+        "description": "List sequence jump (skipped from 6 to 9)",
         "chapter": "Chapter 2.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 24.",
-        "description": "List sequence jump (skipped from 5 to 24)",
-        "chapter": "Chapter 2.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 15.",
-        "description": "List sequence jump (skipped from 10 to 15)",
-        "chapter": "Chapter 2.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 31.",
-        "description": "List sequence jump (skipped from 12 to 31)",
-        "chapter": "Chapter 2.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 13.",
-        "description": "List sequence jump (skipped from 3 to 13)",
-        "chapter": "Chapter 2.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 3.",
         "contexts": []
       },
       {
@@ -1563,87 +407,15 @@
         "contexts": []
       },
       {
-        "target": "27. ... 144.",
-        "description": "List sequence jump (skipped from 27 to 144)",
+        "target": "136. ... 510.",
+        "description": "List sequence jump (skipped from 136 to 510)",
         "chapter": "Chapter 5.",
         "contexts": []
       },
       {
-        "target": "144. ... 510.",
-        "description": "List sequence jump (skipped from 144 to 510)",
+        "target": "2. ... 14.",
+        "description": "List sequence jump (skipped from 2 to 14)",
         "chapter": "Chapter 5.",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 83.",
-        "description": "List sequence jump (skipped from 21 to 83)",
-        "chapter": "Chapter 5.",
-        "contexts": []
-      },
-      {
-        "target": "83. ... 264.",
-        "description": "List sequence jump (skipped from 83 to 264)",
-        "chapter": "Chapter 5.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 21.",
-        "description": "List sequence jump (skipped from 1 to 21)",
-        "chapter": "Chapter 5.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 59.",
-        "description": "List sequence jump (skipped from 6 to 59)",
-        "chapter": "Chapter 5.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 53.",
-        "description": "List sequence jump (skipped from 2 to 53)",
-        "chapter": "Chapter 5.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 40.",
-        "description": "List sequence jump (skipped from 6 to 40)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 17.",
-        "description": "List sequence jump (skipped from 1 to 17)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 10.",
-        "description": "List sequence jump (skipped from 8 to 10)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 22.",
-        "description": "List sequence jump (skipped from 10 to 22)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 59.",
-        "description": "List sequence jump (skipped from 2 to 59)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 92.",
-        "description": "List sequence jump (skipped from 3 to 92)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 6.",
         "contexts": []
       },
       {
@@ -1659,273 +431,15 @@
         "contexts": []
       },
       {
-        "target": "2. ... 28.",
-        "description": "List sequence jump (skipped from 2 to 28)",
-        "chapter": "Chapter 6.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 40.",
-        "description": "List sequence jump (skipped from 1 to 40)",
-        "chapter": "Chapter 7.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 22.",
-        "description": "List sequence jump (skipped from 2 to 22)",
-        "chapter": "Chapter 7.",
-        "contexts": []
-      },
-      {
         "target": "2. ... 950.",
         "description": "List sequence jump (skipped from 2 to 950)",
         "chapter": "Chapter 8.",
         "contexts": []
       },
       {
-        "target": "10. ... 30.",
-        "description": "List sequence jump (skipped from 10 to 30)",
+        "target": "7. ... 9.",
+        "description": "List sequence jump (skipped from 7 to 9)",
         "chapter": "Chapter 8.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 11.",
-        "description": "List sequence jump (skipped from 4 to 11)",
-        "chapter": "Chapter 8.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 150.",
-        "description": "List sequence jump (skipped from 11 to 150)",
-        "chapter": "Chapter 8.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 41.",
-        "description": "List sequence jump (skipped from 6 to 41)",
-        "chapter": "Chapter 8.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 13.",
-        "description": "List sequence jump (skipped from 2 to 13)",
-        "chapter": "Sermon 1 - the Furnace of Divine Wrath.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 6.",
-        "description": "List sequence jump (skipped from 2 to 6)",
-        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 12.",
-        "description": "List sequence jump (skipped from 6 to 12)",
-        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 5.",
-        "description": "List sequence jump (skipped from 2 to 5)",
-        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 10.",
-        "description": "List sequence jump (skipped from 4 to 10)",
-        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 10.",
-        "description": "List sequence jump (skipped from 2 to 10)",
-        "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 23.",
-        "description": "List sequence jump (skipped from 2 to 23)",
-        "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 18.",
-        "description": "List sequence jump (skipped from 3 to 18)",
-        "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 24.",
-        "description": "List sequence jump (skipped from 18 to 24)",
-        "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 31.",
-        "description": "List sequence jump (skipped from 4 to 31)",
-        "chapter": "Sermon 4 - Spiritual Strength; - Its Reality, Decay, & Renovati",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 12.",
-        "description": "List sequence jump (skipped from 1 to 12)",
-        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 12.",
-        "description": "List sequence jump (skipped from 2 to 12)",
-        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 36.",
-        "description": "List sequence jump (skipped from 12 to 36)",
-        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 8.",
-        "description": "List sequence jump (skipped from 1 to 8)",
-        "chapter": "Sermon 6 - the Obligation to Increase in Godliness,",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 16.",
-        "description": "List sequence jump (skipped from 8 to 16)",
-        "chapter": "Sermon 8 - the Mutual Care of Believers Over One Another.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 12.",
-        "description": "List sequence jump (skipped from 4 to 12)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 15.",
-        "description": "List sequence jump (skipped from 12 to 15)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 13.",
-        "description": "List sequence jump (skipped from 1 to 13)",
-        "chapter": "Sermon 9 - National Sins and National Judgments.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 25.",
-        "description": "List sequence jump (skipped from 8 to 25)",
-        "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 6.",
-        "description": "List sequence jump (skipped from 2 to 6)",
-        "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 8.",
-        "description": "List sequence jump (skipped from 3 to 8)",
-        "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 24.",
-        "description": "List sequence jump (skipped from 12 to 24)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 15.",
-        "description": "List sequence jump (skipped from 3 to 15)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 23.",
-        "description": "List sequence jump (skipped from 1 to 23)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 24.",
-        "description": "List sequence jump (skipped from 1 to 24)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "24. ... 31.",
-        "description": "List sequence jump (skipped from 24 to 31)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 29.",
-        "description": "List sequence jump (skipped from 9 to 29)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 17.",
-        "description": "List sequence jump (skipped from 2 to 17)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 20.",
-        "description": "List sequence jump (skipped from 5 to 20)",
-        "chapter": "Sermon 12 - Enoch's Walk With God.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 12.",
-        "description": "List sequence jump (skipped from 3 to 12)",
-        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 21.",
-        "description": "List sequence jump (skipped from 12 to 21)",
-        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 8.",
-        "description": "List sequence jump (skipped from 1 to 8)",
-        "chapter": "Discourse 1.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 20.",
-        "description": "List sequence jump (skipped from 8 to 20)",
-        "chapter": "Discourse 1.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 12.",
-        "description": "List sequence jump (skipped from 3 to 12)",
-        "chapter": "Discourse 3.",
         "contexts": []
       }
     ]

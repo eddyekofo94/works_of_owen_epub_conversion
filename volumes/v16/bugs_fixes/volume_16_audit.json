@@ -1,16 +1,11 @@
 {
-  "epub": "volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-03T08:57:57.298851+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/output/volume_16.epub",
+  "generated_at": "2026-06-05T15:38:12.850413+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 2,
+  "warning_count": 1,
   "errors": [],
   "warnings": [
-    {
-      "code": "possible_beta_code_residue",
-      "message": "Possible Beta Code residue detected",
-      "files": 1
-    },
     {
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
@@ -18,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 107,
-    "epub_size_bytes": 3779131,
+    "file_count": 114,
+    "epub_size_bytes": 5994302,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -28,32 +23,32 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 98,
-    "spine_count": 81,
-    "xhtml_count": 83,
+    "manifest_count": 105,
+    "spine_count": 83,
+    "xhtml_count": 84,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 11,
+    "font_count": 16,
     "language": {
-      "greek_chars": 6015,
+      "greek_chars": 6044,
       "greek_untagged_chars": 0,
-      "hebrew_chars": 1211,
+      "hebrew_chars": 1224,
       "hebrew_untagged_chars": 0,
       "files_with_untagged_greek": 0,
       "files_with_untagged_hebrew": 0,
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 130,
-      "unique_noteref_targets": 125,
-      "endnote_anchor_count": 125,
+      "noteref_count": 257,
+      "unique_noteref_targets": 257,
+      "endnote_anchor_count": 257,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
-      "beta_code_files": 1,
+      "beta_code_files": 0,
       "escaped_lang_tag_files": 0,
       "literal_footnote_marker_files": 0,
       "empty_bracket_noise_files": 0,
@@ -74,18 +69,13 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 1,
+      "lowercase_paragraph_start_files": 0,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
       "samples": {
         "boilerplate": [],
-        "beta_code": [
-          {
-            "file": "EPUB/contents_3.xhtml",
-            "text": "]W"
-          }
-        ],
+        "beta_code": [],
         "escaped_lang_tag": [],
         "untagged_greek": [],
         "untagged_hebrew": [],
@@ -145,19 +135,14 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/contents_3.xhtml",
-            "text": "incomparable care of the scribes of it — The whole word of God, in every tittle o"
-          }
-        ],
+        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 84,
+    "nav_link_count": 85,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

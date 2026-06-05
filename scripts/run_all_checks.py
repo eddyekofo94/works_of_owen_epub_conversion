@@ -94,11 +94,19 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     }
 
     if not no_rebuild:
-        print(f"  [{vol_num}] converter.py ...", end=" ", flush=True)
-        code, out = _run(
-            [PYTHON, str(ROOT / "converter.py"), str(vol_num)],
-            f"v{vol_num} converter",
-        )
+        vol_script = ROOT / "volumes" / f"v{vol_num}" / "convert.py"
+        if vol_script.exists():
+            print(f"  [{vol_num}] volumes/v{vol_num}/convert.py ...", end=" ", flush=True)
+            code, out = _run(
+                [PYTHON, str(vol_script)],
+                f"v{vol_num} convert.py",
+            )
+        else:
+            print(f"  [{vol_num}] converter.py ...", end=" ", flush=True)
+            code, out = _run(
+                [PYTHON, str(ROOT / "converter.py"), str(vol_num)],
+                f"v{vol_num} converter",
+            )
         ok = code == 0
         print(status_icon(ok))
         summary["converter"] = {"ok": ok, "output": out}

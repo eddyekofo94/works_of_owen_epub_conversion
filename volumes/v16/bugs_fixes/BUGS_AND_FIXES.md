@@ -17,7 +17,7 @@
 | 11 | CSS not aligned with reference EPUB (title page, footnotes, font-smoothing) | shared.py | ✅ Fixed |
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
-| 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
+| 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | Obsolete (using ages_pdf) |
 
 
 ---
@@ -82,9 +82,9 @@ See previous sessions.
 
 ---
 
-### 14. Structural Misalignment (Open)
+### 14. Structural Misalignment (Obsolete)
 **Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
-**Status:** Pending surgical consolidation and merging of fragmented heads back into parent chapters.
+**Status:** Obsolete for Volume 16. Volume 16 has been migrated completely to the `ages_pdf` pipeline which does not suffer from CCEL/ThML `div1` fragmentation.
 
 ## Remaining Work
 
@@ -114,12 +114,18 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-03T08:57:57.298851+00:00
-**EPUB:** `volumes/v16/output/volume_16.epub`
-**Status:** WARN (0 errors, 2 warnings)
+**Last run:** 2026-06-05T15:38:12.850413+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/output/volume_16.epub`
+**Status:** WARN (0 errors, 1 warnings)
 
 Reports:
 - `volume_16_audit.json`
@@ -128,22 +134,21 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 83 |
-| Spine items | 81 |
-| Embedded fonts | 11 |
-| NAV links | 84 |
-| Greek chars / untagged | 6015 / 0 |
-| Hebrew chars / untagged | 1211 / 0 |
-| Noteref links / endnote anchors | 130 / 125 |
+| XHTML files | 84 |
+| Spine items | 83 |
+| Embedded fonts | 16 |
+| NAV links | 85 |
+| Greek chars / untagged | 6044 / 0 |
+| Hebrew chars / untagged | 1224 / 0 |
+| Noteref links / endnote anchors | 257 / 257 |
 | AGES boilerplate hits | 0 |
-| Possible Beta Code files | 1 |
+| Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 6 |
 
 Warnings requiring triage:
 
-- `possible_beta_code_residue`: Possible Beta Code residue detected
 - `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
@@ -160,11 +165,17 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-03T08:58:29.691721+00:00
-**Status:** WARN (11 warnings)
+**Last run:** 2026-06-05T15:38:47.976755+00:00
+**Status:** WARN (14 warnings)
 
 Reports:
 - `volume_16_text_integrity.json`
@@ -173,23 +184,23 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 672 |
-| EPUB text files | 81 |
-| EPUB paragraphs/headings | 2684 |
-| Approximate PDF-to-EPUB word coverage | 0.9959 |
-| Weak page matches | 11 |
-| Dense source windows checked | 741 |
-| Missing dense source-window pages | 653 |
+| EPUB text files | 82 |
+| EPUB paragraphs/headings | 2653 |
+| Approximate PDF-to-EPUB word coverage | 0.9992 |
+| Weak page matches | 1 |
+| Dense source windows checked | 28539 |
+| Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 5 |
 | Missing front CONTENTS pages | 0 |
-| Top-of-page body windows checked | 631 |
+| Top-of-page body windows checked | 630 |
 | Top-of-page windows skipped as unstable | 34 |
-| Missing top-of-page body windows | 5 |
-| Bottom-of-page body windows checked | 605 |
+| Missing top-of-page body windows | 3 |
+| Bottom-of-page body windows checked | 602 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 6 |
-| Possible faulty paragraph splits | 28 |
-| Structural starts excluded from split warnings | 280 |
-| Short fragments | 17 |
+| Missing bottom-of-page body windows | 5 |
+| Possible faulty paragraph splits | 2 |
+| Structural starts excluded from split warnings | 275 |
+| Short fragments | 20 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 8 |
 | Reference continuation splits | 0 |
@@ -200,13 +211,13 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 509 |
-| EPUB enumerator markers | 532 |
+| EPUB enumerator markers | 519 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 2 |
-| PDF Greek words / EPUB Greek words | 1037 / 1039 |
-| Greek word coverage ratio | 0.993 |
-| PDF Hebrew words / EPUB Hebrew words | 268 / 266 |
-| Hebrew word coverage ratio | 0.9901 |
+| PDF Greek words / EPUB Greek words | 1037 / 1042 |
+| Greek word coverage ratio | 0.995 |
+| PDF Hebrew words / EPUB Hebrew words | 268 / 268 |
+| Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
@@ -223,6 +234,9 @@ Warnings requiring triage:
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
+- `flat_analysis_chapters`: 1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

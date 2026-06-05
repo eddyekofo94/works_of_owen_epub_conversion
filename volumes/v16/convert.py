@@ -100,13 +100,19 @@ def post_extract_hook(intermediate: dict) -> dict:
             ch['title'] = 'Prefatory Note'
             
     # Remove fragments and duplicates
-    drop_titles = {'II. and III.', 'Of Infant Baptism and Dipping.'}
+    drop_titles = {'Of Infant Baptism and Dipping.'}
     new_chapters = []
     
     for idx, ch in enumerate(chapters):
         t = ch.get('title', '')
         
         if t in drop_titles:
+            continue
+            
+        if t == 'II. and III.':
+            if new_chapters:
+                # Merge the text of II. and III. into the Prefatory Note chapter
+                new_chapters[-1]['raw_text'] = new_chapters[-1].get('raw_text', '').strip() + '\n\n' + ch.get('raw_text', '').strip()
             continue
             
         if t == 'Answers and Questions':
@@ -147,6 +153,8 @@ def post_extract_hook(intermediate: dict) -> dict:
         text = text.replace('the example of his age, as the\n\nwords and scope show.', 'the example of his age, as the words and scope show.')
         text = text.replace('glory and virtue;"\n\nthat is, whatsoever', 'glory and virtue;" that is, whatsoever')
         text = text.replace('Lord, how long?"\n\nhow long shall they!', 'Lord, how long?" how long shall they!')
+        text = text.replace('in Luc. 10 et\n\n41. Yea, in how', 'in Luc. 10 et 11. Yea, in how')
+        text = text.replace('excusing one another." (Romans\n\n2:14, 15.)', 'excusing one another." (Romans 2:14, 15.)')
         ch['raw_text'] = text
 
     
@@ -170,6 +178,24 @@ def post_extract_hook(intermediate: dict) -> dict:
         html = html.replace('Peter 3:11,</p>', '2 Peter 3:11,</p>')
         fm['html'] = html
 
+    # Add Publishers' Note to front_matter_items if not already present
+    has_pub_note = any(fm.get('title') == "Publishers' Note" for fm in intermediate.get('front_matter_items', []))
+    if not has_pub_note:
+        pub_note_html = '''<section class="front-matter-section" epub:type="preface">
+<h2 class="front-matter-heading">PUBLISHERS’ NOTE</h2>
+<p class="front-matter-body">TO 1968 REPRINT OF VOLUME SIXTEEN</p>
+<p class="front-matter-prose first">The Goold edition of John Owen’s works originally comprised seventeen volumes, with an additional seven volumes containing Owen’s Exposition on the Epistle to the Hebrews. The latter exposition is not being reprinted at present and the seventeen volumes have been reduced to sixteen by the omission of the author’s Latin writings — these will be found listed on page 548 of this volume. Should his Latin works be subsequently translated and reprinted they would form an additional volume of approximately 600 pages.</p>
+<p class="front-matter-prose">Posthumous Sermons and Three Discourses Suitable to the Lord’s Supper, which appeared as the only material in English in volume seventeen of Goold’s edition, have been transferred to volume sixteen of this re-issue of John Owen’s works.</p>
+</section>'''
+        intermediate.setdefault('front_matter_items', []).append({
+            'type': 'preface',
+            'file_name': 'publishers_note.xhtml',
+            'title': "Publishers' Note",
+            'page': 2,
+            'html': pub_note_html
+        })
+        intermediate['front_matter_items'] = sorted(intermediate['front_matter_items'], key=lambda x: x['page'])
+
     return intermediate
 
 
@@ -189,6 +215,31 @@ OVERRIDES = {
         'Lordìs Supper': "Lord's Supper",
         'lordìs supper': "lord's supper",
         'throughout a!! generations': 'throughout all generations',
+        'know]edge': 'knowledge',
+        'seem[ing]': 'seeming',
+        'desertions ;': 'desertions;',
+        'land ;': 'land;',
+        'Son ?': 'Son?',
+        'Sodom ?': 'Sodom?',
+        'me ?': 'me?',
+        'God ,': 'God,',
+        'And ,': 'And,',
+        'pounds )': 'pounds)',
+        'of )': 'of)',
+        '1 .': '1.',
+        '2 .': '2.',
+        '3 .': '3.',
+        '4 .': '4.',
+        '6 .': '6.',
+        'Ans .': 'Ans.',
+        '2dly .': '2dly.',
+        '3dly .': '3dly.',
+        '4thly .': '4thly.',
+        '5thly .': '5thly.',
+        'A .': 'A.',
+        'Corol .': 'Corol.',
+        '1655 .': '1655.',
+        'Eo .': 'Eo.',
     },
     'regex_replacements': {
         r'for, — 1\. ': 'for, —\n\n1. ',
@@ -197,6 +248,9 @@ OVERRIDES = {
         r'are intended: — 1\. ': 'are intended: —\n\n1. ',
         r'name: — 1\. ': 'name: —\n\n1. ',
         r'he, — 1\. ': 'he, —\n\n1. ',
+        r'\b(\d+(?:st|nd|rd|th|dly|ly))\.\s*\.': r'\1.',
+        r'\(\s*(\d+)': r'(\1',
+        r'(\d+)\s*\)': r'\1)',
     },
 }
 

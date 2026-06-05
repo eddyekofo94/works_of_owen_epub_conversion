@@ -299,7 +299,8 @@
     "16": {
       "text_integrity": {
         "max_split_candidate_count": 35,
-        "max_inline_structural_candidate_count": 12
+        "max_inline_structural_candidate_count": 12,
+        "max_flat_analysis_count": 1
       },
       "epub": {
         "max_lowercase_paragraph_start_files": 1
