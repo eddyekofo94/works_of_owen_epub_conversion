@@ -1043,7 +1043,7 @@ def build_citation_note(
     ctx_before = plain_context.split(' | ')[0] if ' | ' in plain_context else plain_context
     
     # Skip Bible citations (e.g., "1 Epist. 2, 29", "2 Epist. 3") to avoid pointless footnotes
-    if re.search(r'\b[1-3]\s+$', ctx_before):
+    if re.search(r'\b[1-3]\s+$', ctx_before) and not re.search(r'\b(?:lib|cap|chap|vol|t|p|pp)\.?\s+[1-3]\s*$', ctx_before, re.I):
         return None
 
     author_key = _find_author_in_context(plain_context)
@@ -1086,6 +1086,10 @@ def build_citation_note(
             (r'\bsanct\w*\s+spir\w*\b', 'nazianz', 'spir'),
             (r'\bepist\w*\s+ad\s+evagrium\b|\bad\s+evagrium\b|\bevagrius\b', 'hieronym', 'epist'),
             (r'\brecapitulat\w*\b', 'irenaeus', 'haer'),
+            (r'\borat\w*\b.*\b(greg|nazian)', 'nazianz', 'orat'),
+            (r'\b(greg|nazian).*\borat\w*\b', 'nazianz', 'orat'),
+            (r'\bde\s+verbo\s+dei\b', 'bellar', 'de verbo dei'),
+            (r'\bex\s+mortuis\b|\bprior\s+omnium\b|\bmystagog\w*\b', 'irenaeus', 'haer'),
         ]
         for pattern, inferred_author, inferred_work in inferences:
             if re.search(pattern, ctx_to_check, re.I):

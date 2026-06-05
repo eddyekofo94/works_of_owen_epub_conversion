@@ -287,7 +287,7 @@ The new engine:
 | 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 Lat ? |
 | 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 Lat ? Unres 6 |
 | 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 Lat ? Unres 4 |
-| 16 | v16 | Populated | FULL | Cov 99.59 Greek 99.30 Heb 99.01 Lat ? Unres 4 |
+| 16 | v16 | Populated | PRISTINE | Cov 99.92 Greek 99.50 Heb 100.00 Lat 99.88 |
 
 ## Agent-Driven Skills & Slash Commands
 
