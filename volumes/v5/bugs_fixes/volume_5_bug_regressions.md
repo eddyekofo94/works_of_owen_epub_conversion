@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 78 | 61 | REGRESSION |
-| Inline structural marker candidates | 3 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 3 | 61 | OK |
+| Inline structural marker candidates | 4 | 1 | REGRESSION |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 6 | 0 | REGRESSION |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -26,7 +26,7 @@
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
 | Missing configured fonts | 0 | 0 | OK |
-| EPUB packaging errors | 1 | 0 | REGRESSION |
+| EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
@@ -37,7 +37,7 @@
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
-| Chapter headings rendered as paragraphs | 1 | 0 | REGRESSION |
+| Chapter headings rendered as paragraphs | 0 | 0 | OK |
 | Overlong headings containing body prose | 0 | 0 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 9 | 0 | REGRESSION |
+| Lowercase page fragments | 8 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,29 +66,32 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch004.xhtml; previous:  habit inherent in ourselves, and the acts of it, they wrested the whole doctrine of justification unto a compliance wherewithal. So Pighius himself complained of them, Controv. 2,; next: Secondly, A due consideration of him with whom in this matter we have to do, and that immediately, is necessary unto a right stating of our thoughts about it. The Scripture express
-- file: EPUB/ch004.xhtml; previous:  Lord's sake," Daniel 9:17, in whom "all the seed of Israel are justified," Isaiah 45:25. In his sight, before his tribunal, it is that men are justified or condemned. Psalm 143:2,; next: And the whole work of justification, with all that belongs thereunto, is represented after the manner of a juridical proceeding before God's tribunal; as we shall see afterwards. "
-- file: EPUB/ch004.xhtml; previous: cation, with all that belongs thereunto, is represented after the manner of a juridical proceeding before God's tribunal; as we shall see afterwards. "Therefore," says the apostle,; next: However any man be justified in the sight of men or angels by his own obedience, or deeds of the law, yet in his sight none can be so.
-- file: EPUB/ch004.xhtml; previous: any means to manifest his glory unto sinners, all their prefidences and contrivances do issue in dreadful horror and distress. An account of their temper is given us, Isaiah 33:14,; next: Nor is it thus only with some peculiar sort of sinners. The same will be the thoughts of all guilty persons at some time or other. For those who, through sensuality, security, or s
-- file: EPUB/ch004.xhtml; previous:  him in battle array. And we may see what extravagant contrivances convinced sinners will put themselves upon, under any real view of the majesty and holiness of God, Micah 6:6, 7,; next: Neither shall I ever think them meet to be contended withal about the doctrine of justification who take no notice of these things, but rather despise them.
+- file: EPUB/ch003.xhtml; previous: To The Reader; next: I shall not need to detain the reader with an account of the nature and moment of that doctrine which is the entire subject of the ensuing discourse; for although sundry persons, e
+- file: EPUB/ch004.xhtml; previous:  are justified freely by the grace of God, through the redemption that is in Christ Jesus; whom God has set forth to be a propitiation through faith in his blood," Romans 3:24, 25,; next: — they will offer violence unto common sense and reason, rather than not disturb that harmony which they cannot understand. For although it be plainly affirmed to be a redemption b
+- file: EPUB/ch027.xhtml; previous: To The Reader; next: As faith is the first vital act that every true Christian puts Forth, and the life which he lives is by the faith of the Son of God, so it is his next and great concern to know tha
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch022.xhtml; text: It may be it will be said: "It is true in the time of their heathenism they did not at all follow after righteousness, but when the truth of the gospel was revealed unto them, then they followed after righteousness, and 
-- file: EPUB/ch024.xhtml; text: These things being premised, I shall briefly evidence that there is not the least repugnancy or contradiction between what is declared by these two apostles as unto our justification, with the causes of it. And this I sh
-- file: EPUB/ch029.xhtml; text: Faith is not an especial assurance of a man's own justification and salvation by Christ; that it will produce, but not until another step or two in its progress be over: but faith is a satisfactory persuasion that the wa
+- file: EPUB/ch004.xhtml; text: All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of
+- file: EPUB/ch010.xhtml; text: A very few words will also free our inquiry from any concernment in that which is called sentential justification, at the day of judgment; for of what nature soever it be, the person concerning whom that sentence is pron
+- file: EPUB/ch021.xhtml; text: In opposition hereunto, the state and prayer of the publican, under the same design of seeking justification before God, are expressed. And the outward acts of his person are mentioned, as representing and expressive of 
+- file: EPUB/ch022.xhtml; text: This, in the matter of our justification, he calls, — (1.) Χάρισμα , with respect unto the free, gratuitous grant of it by the grace of God, Δωρεὰ τῆς χάριτος , and (2.) Δώρημα , with respect unto us who receive it, — a 
 
 ### Repeated word windows
 
 - phrase: of justification by the imputation of the righteousness of christ
 - phrase: doctrine of justification by the imputation of the righteousness of
-- phrase: the doctrine of justification by the imputation of the righteousness
 - phrase: set forth to be propitiation through faith in his blood
+- phrase: the doctrine of justification by the imputation of the righteousness
 - phrase: freely by his grace through the redemption that is in
 
-### EPUB packaging errors
+### Missing front CONTENTS pages
 
-- {'code': 'noteref_targets_missing', 'message': 'Some noteref targets do not have matching endnote anchors', 'examples': ['EPUB/endnotes.xhtml#fn4']}
+- page: 3; sample: contents the doctrine of justification general considerations first the general nature of justification state of the person to be justified antecedently thereunto romans galatians john galatians the sole
+- page: 4; sample: acceptable unto many reasons of it two parts of corrupted nature's repugnancy unto the mystery of the gospel that which would reduce it unto the private reason of
+- page: 5; sample: sinners by christ with its acquiescency therein the description given explained and confirmed from the nature of the gospel exemplified in its contrary or the nature of unbelief
+- page: 6; sample: juridical scheme and of forensic title the parts and progress of it inferences from the whole chapter distinction of first and second justification the whole doctrine of the
+- page: 7; sample: day that judgment being according unto works answered and the impertinency of it declared chapter imputation and the nature of it the first express record of justification determines
 
 ### Repeated phrase hits
 
@@ -96,14 +99,10 @@
 - file: combined_text; text: chapter 17 testimonies out of the evangelists considered
 - file: combined_text; text: chapter 19 objections against the doctrine of justification
 
-### Chapter headings rendered as paragraphs
-
-- file: EPUB/contents_2.xhtml; text: CHAPTER 1
-
 ### Lowercase page fragments
 
 - file: EPUB/ch004.xhtml; text: and the other is that of our Savior, Luke 17:10,
 - file: EPUB/ch010.xhtml; text: who yet disclaims any confidence therein as unto his justification before God; fo
 - file: EPUB/ch011.xhtml; text: attempts the sense of the word, but confounds it with "reputare:"
-- file: EPUB/ch012.xhtml; text: and also Serm. 16 "Caput nostrum Dominus Jesus Christus omnia in se corporis sui
-- file: EPUB/ch022.xhtml; text: injustus", 1 Peter 3:18. "Quod si ergo justi effecti sumus per vitam illius, caus
+- file: EPUB/ch012.xhtml; text: and also Serm. 16
+- file: EPUB/ch022.xhtml; text: injustus", 1 Peter 3:18. "

@@ -1050,11 +1050,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-05T00:00:10.485130+00:00
-**EPUB:** `volumes/v2/output/volume_2.epub`
+**Last run:** 2026-06-09T10:44:38.793361+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -1228,10 +1229,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-05T00:00:42.467334+00:00
+**Last run:** 2026-06-09T10:45:07.859637+00:00
 **Status:** WARN (11 warnings)
 
 Reports:
@@ -1242,10 +1244,10 @@ Reports:
 |-------|--------|
 | PDF pages | 555 |
 | EPUB text files | 50 |
-| EPUB paragraphs/headings | 2081 |
-| Approximate PDF-to-EPUB word coverage | 0.9948 |
-| Weak page matches | 4 |
-| Dense source windows checked | 25151 |
+| EPUB paragraphs/headings | 2080 |
+| Approximate PDF-to-EPUB word coverage | 0.9949 |
+| Weak page matches | 3 |
+| Dense source windows checked | 25354 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 2 |
@@ -1255,7 +1257,7 @@ Reports:
 | Bottom-of-page body windows checked | 505 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 3 |
-| Possible faulty paragraph splits | 15 |
+| Possible faulty paragraph splits | 13 |
 | Structural starts excluded from split warnings | 243 |
 | Short fragments | 22 |
 | Adjacent duplicate paragraphs | 0 |
@@ -1272,7 +1274,7 @@ Reports:
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 1 |
 | PDF Greek words / EPUB Greek words | 450 / 449 |
-| Greek word coverage ratio | 0.9977 |
+| Greek word coverage ratio | 0.9954 |
 | PDF Hebrew words / EPUB Hebrew words | 88 / 89 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |

@@ -2,7 +2,7 @@
   "volume": 16,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/input/owen-v16.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-09T08:26:19.179591+00:00",
+  "generated_at": "2026-06-09T11:41:20.519722+00:00",
   "status": "warn",
   "warning_count": 14,
   "warnings": [
@@ -64,8 +64,8 @@
       "sample": [
         {
           "file": "EPUB/ch042.xhtml",
-          "paragraph_count": 4,
-          "structural_line_count": 2,
+          "paragraph_count": 3,
+          "structural_line_count": 1,
           "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
         }
       ]
@@ -76,11 +76,11 @@
   },
   "epub": {
     "spine_text_files": 82,
-    "paragraph_count": 2704
+    "paragraph_count": 2751
   },
   "word_coverage": {
-    "pdf_content_tokens": 217259,
-    "epub_content_tokens": 219090,
+    "pdf_content_tokens": 217248,
+    "epub_content_tokens": 219087,
     "coverage_ratio": 0.9994,
     "missing_word_samples": [
       {
@@ -154,7 +154,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 27795,
+    "dense_windows_checked": 27889,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -238,6 +238,10 @@
         "sample": "as he was able to be church officer he had the choice and consent"
       },
       {
+        "page": 89,
+        "sample": "the first sense by demosthenes orat de corona οδʹ the people confirmed my sayings"
+      },
+      {
         "page": 93,
         "sample": "worthy and reject the unworthy as cyprian speaks see matthew john galatians thessalonians john"
       },
@@ -256,10 +260,6 @@
       {
         "page": 100,
         "sample": "the church he says diligenter de traditione divina et apostolica observatione servandum estet tenendum"
-      },
-      {
-        "page": 107,
-        "sample": "that which is their proper portion and this requires prudent and diligent consideration of"
       },
       {
         "page": 114,
@@ -589,8 +589,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2351,
-    "split_candidate_count": 33,
+    "paragraphs_checked": 2395,
+    "split_candidate_count": 36,
     "split_candidates": [
       {
         "file": "EPUB/ch002.xhtml",
@@ -610,12 +610,22 @@
       {
         "file": "EPUB/ch007.xhtml",
         "previous": ", magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —",
-        "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiastes 266."
+        "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiazusae 266."
       },
       {
         "file": "EPUB/ch007.xhtml",
         "previous": "hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —",
         "next": "And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": " from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: —",
+        "next": "CLEMENS, Epist. ad Corinth., affirms that the apostles themselves appointed approved persons unto the office of the ministry, συνευδοκησάσης τῆς ἐκκλησίας πάσης , \"by (or with) the"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "n to the pastoral office, yet I must say that where they are not all duly attended unto, the institution of Christ is neglected, and the order of the church infringed. Wherefore, —",
+        "next": "The plea of the communication of all authority for office, and of office itself, solely by a flux of power from the first ordainers, through the hands of their pretended successors"
       },
       {
         "file": "EPUB/ch010.xhtml",
@@ -636,6 +646,11 @@
         "file": "EPUB/ch016.xhtml",
         "previous": "s published in 1721, but seems to have been previously given to the world. It is of use in explaining and defending Congregational usages in matters of ecclesiastical discipline. —",
         "next": "ED."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "ave not, it may be, duly weighed either what jurisdiction, properly so called, is, or how great an evil it is to cast a reproach upon the right ways of the Lord. In answer I say, —",
+        "next": "Ans. 1. Excommunication itself, whatever men may suppose, is no proper act of jurisdiction; for jurisdiction in any sense is an adjunct of office, and the acts of it are acts of of"
       },
       {
         "file": "EPUB/ch031.xhtml",
@@ -758,7 +773,7 @@
         "next": "ED."
       }
     ],
-    "structural_start_exclusions": 276,
+    "structural_start_exclusions": 280,
     "short_fragment_count": 24,
     "short_fragments": [
       {
@@ -891,12 +906,8 @@
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 3,
+    "suspicious_large_number_start_count": 2,
     "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch007.xhtml",
-        "text": "124. in Johan.: \"Peter the apostle bare, in a general figure, the person of the church; for as unto what belonged unto himself, he was by nature one man, by grace one Christian, and of special, more abounding grace one a"
-      },
       {
         "file": "EPUB/ch055.xhtml",
         "text": "14. Let any man consider those two racks of the Rabbins and swords of Judaical unbelief, Isaiah 53 and Daniel 9, as they are now pointed and accented in our Bibles, and compare them with the translation of the LXX, and t"
@@ -926,7 +937,7 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 509,
-    "epub_marker_count": 519,
+    "epub_marker_count": 520,
     "missing_marker_count": 0,
     "missing_markers": [],
     "excess_marker_count": 6,
@@ -945,7 +956,7 @@
       {
         "marker": "(1.)",
         "pdf": 112,
-        "epub": 113,
+        "epub": 114,
         "examples": [
           {
             "location": "EPUB/structural_guide.xhtml#p106",
@@ -1025,7 +1036,7 @@
           },
           {
             "location": "EPUB/ch004.xhtml#p234",
-            "context": "[2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unto his person and offices; are, [3.] Free from scandalous sins; and, [4.] Are willing to give"
+            "context": "[2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unto his person and offices; are,"
           }
         ]
       }
@@ -1149,10 +1160,10 @@
     }
   ],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 1030,
-    "epub_greek_word_count": 1042,
-    "pdf_greek_unique_words": 564,
-    "epub_greek_unique_words": 572,
+    "pdf_greek_word_count": 1020,
+    "epub_greek_word_count": 1032,
+    "pdf_greek_unique_words": 563,
+    "epub_greek_unique_words": 571,
     "greek_word_coverage_ratio": 1.0,
     "pdf_hebrew_word_count": 268,
     "epub_hebrew_word_count": 268,
@@ -1171,14 +1182,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 4901,
-    "epub_latin_word_count": 4983,
-    "epub_tagged_latin_word_count": 2007,
-    "pdf_latin_unique_words": 1579,
-    "epub_latin_unique_words": 1587,
+    "pdf_latin_word_count": 4904,
+    "epub_latin_word_count": 4986,
+    "epub_tagged_latin_word_count": 2011,
+    "pdf_latin_unique_words": 1580,
+    "epub_latin_unique_words": 1588,
     "epub_tagged_unique_words": 1138,
     "latin_word_coverage_ratio": 0.9994,
-    "latin_tagging_ratio": 0.4028,
+    "latin_tagging_ratio": 0.4033,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -1314,9 +1325,9 @@
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 584,
-    "translated_latin_runs_count": 298,
-    "latin_translation_ratio": 0.5103,
+    "tagged_latin_runs_count": 586,
+    "translated_latin_runs_count": 300,
+    "latin_translation_ratio": 0.5119,
     "untranslated_latin_samples": [
       {
         "phrase": "undergo; whereas"
@@ -1389,8 +1400,8 @@
     "flat_analyses": [
       {
         "file": "EPUB/ch042.xhtml",
-        "paragraph_count": 4,
-        "structural_line_count": 2,
+        "paragraph_count": 3,
+        "structural_line_count": 1,
         "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
       }
     ]

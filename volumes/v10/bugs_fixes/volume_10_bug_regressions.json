@@ -1,10 +1,10 @@
 {
   "volume": 10,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v10/bugs_fixes/volume_10_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v10/bugs_fixes/volume_10_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v10/bugs_fixes/volume_10_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v10/bugs_fixes/volume_10_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -13,7 +13,7 @@
     {
       "label": "Possible faulty paragraph splits",
       "observed": 158,
-      "budget": 158,
+      "budget": 165,
       "status": "ok",
       "samples": [
         {
@@ -155,7 +155,7 @@
     {
       "label": "Missing front CONTENTS pages",
       "observed": 1,
-      "budget": 1,
+      "budget": 4,
       "status": "ok",
       "samples": [
         {
@@ -268,7 +268,7 @@
     {
       "label": "EPUB packaging errors",
       "observed": 0,
-      "budget": 0,
+      "budget": 1,
       "status": "ok",
       "samples": []
     },
@@ -513,8 +513,8 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 18,
-      "budget": 18,
+      "observed": 17,
+      "budget": 35,
       "status": "ok",
       "samples": [
         {

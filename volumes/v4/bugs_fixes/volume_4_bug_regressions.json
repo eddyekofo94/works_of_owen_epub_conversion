@@ -1,10 +1,10 @@
 {
   "volume": 4,
   "status": "warn",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v4/bugs_fixes/volume_4_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v4/bugs_fixes/volume_4_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v4/bugs_fixes/volume_4_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v4/bugs_fixes/volume_4_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/bugs_fixes/volume_4_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,68 +12,75 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 75,
+      "observed": 9,
       "budget": 61,
-      "status": "regression",
+      "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "EDITED BY",
-          "next": "WILLIAM H. GOOLD"
+          "file": "EPUB/ch029.xhtml",
+          "previous": "Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,",
+          "next": "IV."
         },
         {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "WILLIAM H. GOOLD",
-          "next": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
+          "file": "EPUB/ch029.xhtml",
+          "previous": "on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,",
+          "next": "V."
         },
         {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "4. - Extraordinary spiritual gifts, [1 Corinthians 12:5] -",
-          "next": "11."
+          "file": "EPUB/ch029.xhtml",
+          "previous": "planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,",
+          "next": "VI."
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "we do believe; and the reason why we do believe them is, because they are proposed in the Scripture. Thus the apostle expresseth the whole of what we intend: 1 Corinthians 15:3, 4,",
-          "next": "Christ's death, and burial, and resurrection, are the things proposed unto us to be believed, and so the object of our faith; but the reason why we believe them is, because they ar"
+          "file": "EPUB/ch029.xhtml",
+          "previous": "The manner of prayer is farther considered with special reference to [Ephesians 6:18]",
+          "next": "VII."
         },
         {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "o deservedly, for where it is absolute it is unquestionable; that which is most ancient in any kind is most true. God himself makes use of this plea against idols: Isaiah 43:10-12,",
-          "next": "That which he asserts is, that he alone is God, and no other: this he calls the people to testify by this argument, that he was among them as God, — that is, in the church, — befor"
+          "file": "EPUB/ch044.xhtml",
+          "previous": "In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,",
+          "next": "III."
         },
         {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "rship of idols, but a sedate, unprejudiced consideration of the revelation of these things in the books of the Scripture. We may say, therefore, to all the world, with our prophet,",
-          "next": "And this, also, plainly manifests the Scripture to be of a divine original: for if this declaration of God, this revelation of himself and his will, is incomparably the greatest an"
+          "file": "EPUB/ch045.xhtml",
+          "previous": "(1.) Extraordinary gifts constituted extraordinary officers — apostles, evangelists, and prophets,",
+          "next": "III."
         },
         {
-          "file": "EPUB/ch008.xhtml",
-          "previous": " of them, severally and jointly, witnessed that what they wrote was received by inspiration from God. This is pleaded by the apostle Peter in the name of them all: 2 Peter 1:16-21,",
-          "next": "This is the concurrent testimony of the writers both of the Old Testament and the New, — namely, that as they had certain knowledge of the things they wrote, so their writing was b"
+          "file": "EPUB/ch045.xhtml",
+          "previous": "ction, from its original acquisition, from the immediate cause of its actual communication, from its own nature, from the variety of offices in it, and from the end designed by it,",
+          "next": "VI."
         },
         {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "the word of God, in the way and manner which God requireth, without a supernatural work of the Holy Spirit upon our minds in the illumination of them. So David prays that God would",
-          "next": "The communication of this light unto us the Scripture calleth revealing and revelation: Matthew 11:25, \"Thou hast hid these things from the wise and prudent, and hast revealed them"
+          "file": "EPUB/ch045.xhtml",
+          "previous": " the Spirit is promised, administered, and continued; the plain assertions of Scripture; the indispensable necessity for them; and from the actual enjoyment and experience of them,",
+          "next": "VII."
         },
         {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "e kingdom of heaven, when they were preached unto them. And \"no man knoweth the Father, but he to whom the Son will reveal him,\" verse 27. So the apostle prayeth for the Ephesians,",
-          "next": "It is true, these Ephesians were already believers, or considered by the apostle as such; but if he judged it necessary to pray for them that they might have \"the Spirit of wisdom "
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "and revelation to enlighten the eyes of their understanding,\" with respect unto farther degrees of faith and knowledge, or, as he speaks in another place, that they might come unto",
-          "next": "But as a pretense hereof hath been abused, as we shall see afterward, so the pleading of it is liable to be mistaken; for some are ready to apprehend that this retreat unto a Spiri"
+          "file": "EPUB/ch057.xhtml",
+          "previous": "e, another a hand, another a foot, in the body, by virtue of peculiar gifts: for \"unto every one of us is given grace according to the measure of the gift of Christ,\" Ephesians 4:7",
+          "next": "These gifts are not saving, sanctifying graces; those were not so in themselves which made the most glorious and astonishing appearance in the world, and which were most eminently "
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 2,
+      "observed": 6,
       "budget": 1,
       "status": "regression",
       "samples": [
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "2. Into the especial nature of the Spirit's work in enlightening us into a knowledge of the mind of God in Scripture. Its nature is first considered by a reference to several scriptural expressions descriptive of it, such as \"opening the eyes,\" \"translating ou"
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "text": "Nor do I believe that any one who doth and can thus pray as he ought, in a conscientious study of the word, shall ever be left unto the final prevalency of any pernicious error or the ignorance of any fundamental truth. None utterly miscarry in the seeking aft"
+        },
+        {
+          "file": "EPUB/ch037.xhtml",
+          "text": "I say, therefore, — 1. That the things insisted on are in some degree and measure necessary unto all acceptable prayer. The Scripture assigns them thereunto, and believers find them so by their own experience. For we discourse not about prayer as it is the wor"
+        },
         {
           "file": "EPUB/ch044.xhtml",
           "text": "Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference to [2 Corinthians 1:22] 5:5, [Ephesians"
@@ -81,6 +88,10 @@
         {
           "file": "EPUB/ch052.xhtml",
           "text": "What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the church."
+        },
+        {
+          "file": "EPUB/ch062.xhtml",
+          "text": "Designing to treat of the spiritual gifts bestowed on the ministry of the church, I have thus far diverted unto the consideration of the ministry itself as it is a gift of Christ, and shall shut it up with a few corollaries, As, 1. Where there is any office er"
         }
       ]
     },
@@ -96,14 +107,14 @@
         },
         {
           "phrase": "to believe the scripture to be the word of god",
-          "count": 17
-        },
-        {
-          "phrase": "the mind and will of god as revealed in the",
-          "count": 11
+          "count": 16
         },
         {
           "phrase": "believe the scripture to be the word of god with",
+          "count": 9
+        },
+        {
+          "phrase": "the mind and will of god as revealed in the",
           "count": 9
         },
         {
@@ -115,29 +126,50 @@
           "count": 7
         },
         {
-          "phrase": "of the holy spirit in the illumination of our minds",
-          "count": 6
-        },
-        {
-          "phrase": "the right understanding of the mind of god in the",
-          "count": 6
-        },
-        {
           "phrase": "be the word of god with faith divine and supernatural",
           "count": 6
         },
         {
           "phrase": "believe the scripture to be the word of god in",
           "count": 6
+        },
+        {
+          "phrase": "of the mind and will of god as revealed in",
+          "count": 6
+        },
+        {
+          "phrase": "of the holy spirit in the illumination of our minds",
+          "count": 5
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 0,
+      "observed": 4,
       "budget": 0,
-      "status": "ok",
-      "samples": []
+      "status": "regression",
+      "samples": [
+        {
+          "page": 3,
+          "hit_ratio": 0.25,
+          "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what"
+        },
+        {
+          "page": 4,
+          "hit_ratio": 0.5,
+          "sample": "question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god"
+        },
+        {
+          "page": 5,
+          "hit_ratio": 0.25,
+          "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work"
+        },
+        {
+          "page": 6,
+          "hit_ratio": 0.5,
+          "sample": "unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised"
+        }
+      ]
     },
     {
       "label": "Reference continuation splits",
@@ -442,15 +474,10 @@
     },
     {
       "label": "Structural bold leaks",
-      "observed": 1,
+      "observed": 0,
       "budget": 0,
-      "status": "regression",
-      "samples": [
-        {
-          "file": "EPUB/ch001.xhtml",
-          "text": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Repeated structural markers",
@@ -517,13 +544,41 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 1,
+      "observed": 8,
       "budget": 0,
       "status": "regression",
       "samples": [
         {
+          "file": "EPUB/ch007.xhtml",
+          "text": "or the things delivered in the Scripture and farther declared by Christ, which be"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "nor is there any of the divines of that church which diment herein. We do not, th"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "for \"of his own will doth God beget us with the word of truth,\" James 1:18."
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "saith Stapleton; — \"The secret testimony of the Spirit is altogether necessary, t"
+        },
+        {
+          "file": "EPUB/ch021.xhtml",
+          "text": "for men are very apt to please themselves with the working and improvement of the"
+        },
+        {
           "file": "EPUB/ch055.xhtml",
           "text": "should receive strong consolation in all their distresses, when they flee for ref"
+        },
+        {
+          "file": "EPUB/ch059.xhtml",
+          "text": "whereas those who pretend to be their successors, if they will speak the truth, m"
+        },
+        {
+          "file": "EPUB/ch060.xhtml",
+          "text": "this gift of healing being a token and pledge thereof. This sign did our Savior g"
         }
       ]
     },

@@ -1,85 +1,74 @@
 {
   "volume": 7,
   "status": "warn",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v7/bugs_fixes/volume_7_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v7/bugs_fixes/volume_7_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v7/bugs_fixes/volume_7_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v7/bugs_fixes/volume_7_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/bugs_fixes/volume_7_bug_regressions.md",
   "extra_warning_codes": {
-    "text_integrity": [
-      "flat_analysis_chapters"
-    ],
+    "text_integrity": [],
     "epub": []
   },
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 126,
+      "observed": 9,
       "budget": 61,
-      "status": "regression",
+      "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "EDITED BY",
-          "next": "WILLIAM H. GOOLD"
+          "file": "EPUB/ch004.xhtml",
+          "previous": "3. To those who pretend to perfection in this life. The causes of this kind of apostasy are mentioned,",
+          "next": "VIII."
         },
         {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "WILLIAM H. GOOLD",
-          "next": "NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL."
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "rked the reign of Charles II has often been the subject of speculation and inquiry. Mr Macaulay thus confirms our author's estimate of the rapid decline of morality at this time: —",
-          "next": "The historian, dealing with the surface of affairs rather than with the springs of conduct, may account the vulgar theory of a reaction against enforced strictness sufficient to ex"
+          "file": "EPUB/ch004.xhtml",
+          "previous": "Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,",
+          "next": "XI."
         },
         {
           "file": "EPUB/ch005.xhtml",
-          "previous": "each shall be, if they endeavor not to prevent it with their utmost diligence, and the open hazard of all their earthly concerns. A learned writer of the church of England affirms,",
-          "next": "And after he had declared that \"ministers of the gospel may deny Christ, or manifest their being ashamed of the gospel, by not opposing his word at they ought unto the sins of men,"
+          "previous": "To The Reader",
+          "next": "SOME brief account of the occasion and design of the ensuing discourse I judge due unto the reader, that, upon a prospect of them, he may either proceed in its perusal or desist, a"
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "Certainly the Lord Christ may say to the churches and nations among whom his name is yet owned in the world, what God said of old concerning that of the Jews, then his only church,",
-          "next": "Yea, to most of them as in another place,"
+          "file": "EPUB/ch015.xhtml",
+          "previous": "observe, that upon the destruction of Babylon, it is said that \"in her was found the blood of prophets, and of saints, and of all that were slain upon the earth,\" Revelation 18:24,",
+          "next": "— that is, for the gospel and the profession thereof. Whoever, therefore, offereth violence unto the life of any on the account of their profession of the gospel and religion of Ch"
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "Yea, to most of them as in another place,",
-          "next": "The greatness of the evil complained of, the secret mystery of its accomplishment, the unreasonableness, folly, and ingratitude of the fact, the strangeness of the event, make the "
+          "file": "EPUB/ch023.xhtml",
+          "previous": " the fullness of wisdom in spiritual things; 3. their value as perfective of our present condition; and, 4. as constituting in the future enjoyment of them our eternal blessedness,",
+          "next": "XIX."
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "kedness in its relinquishment as to its principles and obedience, may well be expressed as God doth in the inferior instance of the apostasy of the Jewish church: Jeremiah 2:11,12,",
-          "next": "Yet thus is it, and no otherwise, as we shall afterward manifest, amongst the generality of them that are called Christians in the world."
+          "file": "EPUB/ch030.xhtml",
+          "previous": "em solid relief but the consideration and faith of things invisible and eternal. So the apostle declares this state of things, 2 Corinthians 4:16-18 (the words before insisted on),",
+          "next": "He lays all sorts of afflictions in one scale, and, on the consideration of them, declares them to be \"light\" and \"but for a moment.\" Then he lays glory in the other scale, and fin"
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "y thought sufficient to repel the charge of the prophets, to vindicate their innocency, and secure their peace. The reply of the prophet unto them will equally serve in both cases,",
-          "next": "A plea of innocency and hope of impunity, under an evident guilt of the highest immoralities and the vilest of superstitions, do equally participate of folly and impudence."
+          "file": "EPUB/ch037.xhtml",
+          "previous": " him by our affections, it is despised by him; he owns us not. As \"if a man would give all the substance of his house for love, it would utterly be contemned,\" Song of Solomon 8:7,",
+          "next": "— it is not to be bought or purchased with riches; so if a man would give to God an the substance of his house without love, it would in like manner be despised. And however, on th"
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "bedience, which the gospel requireth. But this is no other but an account of the true nature of that apostasy of the latter times which is foretold by the apostle, 2 Timothy 3:1-5,",
-          "next": "Under the power of the most filthy and outrageous lusts, men frame to themselves an outward shape, image, and representation of holiness; they delineate a form of religion by a sub"
+          "file": "EPUB/ch050.xhtml",
+          "previous": "ls in the affections, when there is a neglect of the means by which it is mortified, when a reservation is made in favor of any known sin, and when hardness of heart is manifested,",
+          "next": "III."
         },
         {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "n Timothy to be careful herein, manifest both the weight he laid upon it, the difficulty that was in it, and the danger of miscarriage wherewith it was attended: 1 Timothy 6:20,21,",
-          "next": "And the same apostle expressly mentions the proneness of some to relinquish the truth of the gospel; whom, therefore, he would have rebuked sharply,"
+          "file": "EPUB/ch054.xhtml",
+          "previous": "(4thly.) They will receive in the warnings which are given them by the word preached, especially if their particular case be touched on or laid open",
+          "next": "(5thly.) They will have no quiet, rest, or self-approbation, until they come thoroughly off unto a healing and recovery, such as that described, Hosea 14:1-4. Thus it may be with s"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 3,
+      "observed": 5,
       "budget": 1,
       "status": "regression",
       "samples": [
-        {
-          "file": "EPUB/ch006.xhtml",
-          "text": "They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces."
-        },
         {
           "file": "EPUB/ch021.xhtml",
           "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
@@ -87,6 +76,18 @@
         {
           "file": "EPUB/ch022.xhtml",
           "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
+        },
+        {
+          "file": "EPUB/ch033.xhtml",
+          "text": "It is the spiritual mind alone that can reconcile those things which are prescribed to us as our duty towards God. \"To delight and rejoice in him always, to triumph in the remembrance of him, to draw nigh unto him with boldness and confidence,\" are on the one "
+        },
+        {
+          "file": "EPUB/ch050.xhtml",
+          "text": "The reason of the assurance that sin shall have no more dominion over believers is, that they are \"not under the law, but under grace;\" because, — whereas, 1. the law gives no strength against sin, 2. confers no spiritual liberty, and, 3. supplies no motives t"
+        },
+        {
+          "file": "EPUB/ch057.xhtml",
+          "text": "I shall name some of them: — 1. Such a soul can have no solid peace, because it hath not satisfaction what state it doth belong unto. 2. It cannot receive refreshment by gospel consolations in any condition, for its just fears of the dominion of sin will defea"
         }
       ]
     },
@@ -97,53 +98,64 @@
       "status": "ok",
       "samples": [
         {
-          "phrase": "nature of this grace and duty of being spiritually minded",
-          "count": 4
-        },
-        {
-          "phrase": "the true notion and consideration of spiritual and heavenly things",
-          "count": 4
-        },
-        {
-          "phrase": "dominion of sin which we are freed from and discharged",
-          "count": 4
-        },
-        {
-          "phrase": "of sin which we are freed from and discharged of",
-          "count": 4
-        },
-        {
-          "phrase": "sin which we are freed from and discharged of by",
-          "count": 4
-        },
-        {
-          "phrase": "which we are freed from and discharged of by grace",
-          "count": 4
-        },
-        {
-          "phrase": "what is the assurance given us and what are the",
-          "count": 4
-        },
-        {
-          "phrase": "is the assurance given us and what are the grounds",
-          "count": 4
-        },
-        {
-          "phrase": "that we are not under the law but under grace",
-          "count": 4
-        },
-        {
           "phrase": "the good word of god and the powers of the",
           "count": 4
+        },
+        {
+          "phrase": "good word of god and the powers of the world",
+          "count": 4
+        },
+        {
+          "phrase": "word of god and the powers of the world to",
+          "count": 4
+        },
+        {
+          "phrase": "of god and the powers of the world to come",
+          "count": 4
+        },
+        {
+          "phrase": "the knowledge of his glory in the face of jesus",
+          "count": 4
+        },
+        {
+          "phrase": "knowledge of his glory in the face of jesus christ",
+          "count": 4
+        },
+        {
+          "phrase": "they received not the love of the truth that they",
+          "count": 3
+        },
+        {
+          "phrase": "received not the love of the truth that they might",
+          "count": 3
+        },
+        {
+          "phrase": "not the love of the truth that they might be",
+          "count": 3
+        },
+        {
+          "phrase": "the love of the truth that they might be saved",
+          "count": 3
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 0,
+      "observed": 2,
       "budget": 0,
-      "status": "ok",
-      "samples": []
+      "status": "regression",
+      "samples": [
+        {
+          "page": 3,
+          "hit_ratio": 0.25,
+          "sample": "contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews"
+        },
+        {
+          "page": 7,
+          "hit_ratio": 0.25,
+          "sample": "law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the"
+        }
+      ]
     },
     {
       "label": "Reference continuation splits",
@@ -196,7 +208,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 1,
+      "observed": 0,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -231,17 +243,10 @@
     },
     {
       "label": "Flat ANALYSIS chapters",
-      "observed": 1,
+      "observed": 0,
       "budget": 0,
-      "status": "regression",
-      "samples": [
-        {
-          "file": "EPUB/ch022.xhtml",
-          "paragraph_count": 7,
-          "structural_line_count": 2,
-          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Missing configured fonts",
@@ -470,10 +475,27 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 0,
+      "observed": 4,
       "budget": 0,
-      "status": "ok",
-      "samples": []
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch018.xhtml",
+          "text": "may be applied unto the men of this persuasion: either they alone know the state"
+        },
+        {
+          "file": "EPUB/ch027.xhtml",
+          "text": "and this he doth as the \"liberal deviseth liberal things,\" verse 8. From his own"
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "and chapter 4:15,16, \"We have not an high priest that cannot be touched with the"
+        },
+        {
+          "file": "EPUB/ch035.xhtml",
+          "text": "for hereby our minds, that were created in a state of blessed adherence unto God,"
+        }
+      ]
     },
     {
       "label": "Noteref leading spaces",

@@ -4,16 +4,16 @@
 - Warnings: 14
 - PDF pages: 672
 - EPUB text files: 82
-- EPUB paragraphs/headings: 2704
+- EPUB paragraphs/headings: 2751
 
 ## Coverage
 
-- PDF content tokens: 217259
-- EPUB content tokens: 219090
+- PDF content tokens: 217248
+- EPUB content tokens: 219087
 - Approximate PDF-to-EPUB coverage ratio: 0.9994
 - Pages checked: 660
 - Weak page matches: 1
-- Dense source windows checked: 27795
+- Dense source windows checked: 27889
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 1
 - Missing front CONTENTS pages: 0
@@ -26,28 +26,28 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2351
-- Possible faulty paragraph splits: 33
-- Structural starts excluded from split warnings: 276
+- Body paragraphs checked: 2395
+- Possible faulty paragraph splits: 36
+- Structural starts excluded from split warnings: 280
 - Short fragments: 24
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 6
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 3
+- Suspicious large-number starts: 2
 - Roman heading candidates: 1
 - Overlong heading candidates: 1
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 509
-- EPUB enumerator markers: 519
+- EPUB enumerator markers: 520
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 2
 
 ## Greek / Hebrew
 
-- PDF Greek words: 1030
-- EPUB Greek words: 1042
+- PDF Greek words: 1020
+- EPUB Greek words: 1032
 - Greek word coverage ratio: 1.0
 - PDF Hebrew words: 268
 - EPUB Hebrew words: 268
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 4901
-- EPUB Latin words: 4983
-- EPUB Tagged Latin words: 2007
+- PDF Latin words: 4904
+- EPUB Latin words: 4986
+- EPUB Tagged Latin words: 2011
 - Latin word coverage ratio: 0.9994
-- Latin word tagging ratio: 0.4028
+- Latin word tagging ratio: 0.4033
 - Latin clauses checked: 221
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 584
-- Translated Latin runs: 298
-- Latin translation ratio: 0.5103
+- Tagged Latin runs checked: 586
+- Translated Latin runs: 300
+- Latin translation ratio: 0.5119
 
 ## Warnings
 
@@ -119,13 +119,13 @@
 - file: EPUB/ch002.xhtml; previous: th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —; next: Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g
 - file: EPUB/ch003.xhtml; previous: But the different consideration lies in these things, —; next: That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu
 - file: EPUB/ch004.xhtml; previous: (4.) If such churches do not, can not, will not reform themselves: then, —; next: It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi
-- file: EPUB/ch007.xhtml; previous: , magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —; next: — Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiastes 266.
+- file: EPUB/ch007.xhtml; previous: , magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —; next: — Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiazusae 266.
 - file: EPUB/ch007.xhtml; previous: hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —; next: And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover
+- file: EPUB/ch007.xhtml; previous: from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: —; next: CLEMENS, Epist. ad Corinth., affirms that the apostles themselves appointed approved persons unto the office of the ministry, συνευδοκησάσης τῆς ἐκκλησίας πάσης , "by (or with) the
+- file: EPUB/ch007.xhtml; previous: n to the pastoral office, yet I must say that where they are not all duly attended unto, the institution of Christ is neglected, and the order of the church infringed. Wherefore, —; next: The plea of the communication of all authority for office, and of office itself, solely by a flux of power from the first ordainers, through the hands of their pretended successors
 - file: EPUB/ch010.xhtml; previous: unto; and, 5. Whereas, in the wisdom of the Holy Ghost, distinct works did require distinct offices for their discharge (all which we have proved already), our inquiry hereon is, —; next: Whether the same Holy Spirit hath not distinguished this office of elders into these two sorts, — -namely, those who are called unto teaching and rule also, and those who are calle
 - file: EPUB/ch010.xhtml; previous: l of them but one are accompanied with the modesty of granting that divers sorts of elders are here intended; which, without more than ordinary confidence, cannot be denied. But, —; next: Some, by "elders that rule well," do understand bishops that are diocesans; and by "those that labor in the word and doctrine," ordinary preaching presbyters; which plainly gives t
 - file: EPUB/ch013.xhtml; previous: 2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —; next: If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule
-- file: EPUB/ch016.xhtml; previous: s published in 1721, but seems to have been previously given to the world. It is of use in explaining and defending Congregational usages in matters of ecclesiastical discipline. —; next: ED.
-- file: EPUB/ch031.xhtml; previous: en their right hand and their left, to deal with infants any otherwise but in and according to the covenant of their parents; and that he doth so, see Romans 5:14. Hence I argue, —; next: Those who, by God's appointment, and by virtue of the law of their creation, are, and must of necessity be, included in the covenant of their parents, have the same right with them
 
 ## Inline Structural Marker Candidates
 
@@ -138,7 +138,6 @@
 
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch007.xhtml; text: 124. in Johan.: "Peter the apostle bare, in a general figure, the person of the church; for as unto what belonged unto himself, he was by nature one man, by grace one Christian, and of special, more abounding grace one a
 - file: EPUB/ch055.xhtml; text: 14. Let any man consider those two racks of the Rabbins and swords of Judaical unbelief, Isaiah 53 and Daniel 9, as they are now pointed and accented in our Bibles, and compare them with the translation of the LXX, and t
 - file: EPUB/ch057.xhtml; text: 22. But this is only to question whether Ezra, Nehemiah, Joshua, Zechariah, Haggai, and the rest of the leaders of the people, on their return from the captivity, did set a sanhedrim, according to the institution of God,
 
@@ -230,7 +229,7 @@
 
 ## Flat Analysis Details
 
-- file: EPUB/ch042.xhtml; paragraph_count: 4; structural_line_count: 2; note: ANALYSIS chapter appears flat — fewer structural outline lines than expected. Check extraction quality.
+- file: EPUB/ch042.xhtml; paragraph_count: 3; structural_line_count: 1; note: ANALYSIS chapter appears flat — fewer structural outline lines than expected. Check extraction quality.
 
 ## Limits
 

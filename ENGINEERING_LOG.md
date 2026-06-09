@@ -3571,3 +3571,26 @@ We resolved these issues through the following updates:
 - **Symmetry Test Success:** Ran `pytest` on `tests/test_structural_symmetry.py` for Volumes 12 and 16 -> **100% green pass rate without whitelists**.
 - **Regression Suite Green:** Ran `pytest` on `tests/test_bug_regressions.py` -> **153 tests passed cleanly**.
 - **Audit Compliance:** Both Volume 12 and Volume 16 EPUBs audited with 0 errors.
+
+## [Session: 2026-06-09] — Bold List Marker Detection and Paragraph Healer Split Refinements
+
+### Issue: Bold List Marker Healing Merger Bug (Volume 16, Chapter 4)
+**Observed:**
+- In Volume 16, Chapter 4 ("The Officers of the Church"), list item `**[1.]** Constant prayer for the flock;` was incorrectly merged into the end of the preceding anchor paragraph `And hereunto do belong,`. Meanwhile, subsequent items `**[2.]**`, `**[3.]**`, etc. remained as separate block paragraphs. This resulted in an asymmetric and broken layout where the first list item was inlined/flattened into a normal paragraph while other items were rendered as blocks.
+- This occurred because PyMuPDF4LLM outputs list markers wrapped in markdown bold asterisks (e.g. `**[1.]**` or `**1.**`). During paragraph healing (`reconstruct_paragraphs` in `scripts/text_cleaner.py`), the list-like pattern checkers `hard_structural` and `is_clear_list_marker` did not expect leading/trailing asterisks `**` or `__` in the line text, failing to recognize them as list markers.
+- Because `is_clear_list_marker` evaluated to `False` and the previous line ended with a comma (`do belong,`), the paragraph healer assumed the line was a sentence continuation and merged it.
+- Furthermore, `STRUCTURAL_START_RE` failed to match bold list markers containing trailing spaces and punctuation (like `**[1.]** ` or `**1.** `) because it expected the trailing spaces `\s+` immediately after the plain marker, without accounting for the closing asterisks.
+
+### Implementation & Fixes
+We resolved these issues through the following updates:
+1. **Bold-Aware Structural Start Recognition (`scripts/text_cleaner.py`):**
+   - Modified `reconstruct_paragraphs` to check both `STRUCTURAL_START_RE` and `MARKDOWN_STRUCTURAL_START_RE` when identifying list-like paragraph starts. `MARKDOWN_STRUCTURAL_START_RE` is specifically designed to recognize bold-wrapped list markers.
+2. **Text Marker Strip for Checks (`scripts/text_cleaner.py`):**
+   - Introduced a `marker_check` variable within the structural start handler of `reconstruct_paragraphs` by stripping matching leading/trailing markdown bold and italic wrapper tags (e.g. `**` or `__`) from the line.
+   - Refactored `starts_with_ref_number`, `hard_structural`, `is_bare_decimal`, `is_ref_start`, and `is_clear_list_marker` to run their matching checks against `marker_check` instead of the original `stripped` string.
+   - This ensures correct structural classification while preserving the original markdown formatting of the line when it is written to the output.
+
+### Validation
+- **Unified Block List Layout:** Rebuilt Volume 16. Checked `ch007.xhtml` and verified that `[1.] Constant prayer` is now split from its anchor sentence and rendered as a block list item with `<p class="list-item list-level-3">` inside a `<div class="owen-branch owen-level-3">`, matching items `[2.]`, `[3.]`, and `[4.]` perfectly.
+- **Audit Compliance:** Re-audited Volume 16. EPUB structural check and text integrity checks passed with 0 errors and a clean bug-regression status report.
+- **Global Applicability:** Since the fix resides in `scripts/text_cleaner.py`, it naturally applies to all 16 Owen volumes during Stage 1 PDF extraction.

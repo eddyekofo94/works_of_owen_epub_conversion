@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-05-29T11:52:45.429733+00:00",
+  "generated_at": "2026-06-09T10:48:36.989810+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -10,7 +10,7 @@
       "code": "orphan_endnotes",
       "message": "Some endnote anchors have no matching noteref",
       "examples": [
-        "EPUB/endnotes.xhtml#fn208",
+        "EPUB/endnotes.xhtml#fn2",
         "EPUB/endnotes.xhtml#fn30",
         "EPUB/endnotes.xhtml#fn31",
         "EPUB/endnotes.xhtml#fn5",
@@ -19,8 +19,8 @@
     }
   ],
   "info": {
-    "file_count": 97,
-    "epub_size_bytes": 4026381,
+    "file_count": 100,
+    "epub_size_bytes": 5095428,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -29,9 +29,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 88,
-    "spine_count": 71,
-    "xhtml_count": 73,
+    "manifest_count": 91,
+    "spine_count": 73,
+    "xhtml_count": 75,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -46,12 +46,12 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 211,
-      "unique_noteref_targets": 209,
-      "endnote_anchor_count": 214,
+      "noteref_count": 273,
+      "unique_noteref_targets": 273,
+      "endnote_anchor_count": 278,
       "missing_endnote_targets": [],
       "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn208",
+        "EPUB/endnotes.xhtml#fn2",
         "EPUB/endnotes.xhtml#fn30",
         "EPUB/endnotes.xhtml#fn31",
         "EPUB/endnotes.xhtml#fn5",
@@ -74,14 +74,14 @@
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
-      "structural_bold_leak_files": 0,
+      "structural_bold_leak_files": 1,
       "repeated_structural_marker_files": 0,
       "scholastic_bold_leak_files": 0,
       "inline_scholastic_label_files": 0,
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 2,
+      "lowercase_paragraph_start_files": 3,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -106,7 +106,12 @@
         "scripture_blockquote": [],
         "orphan_scripture_bracket": [],
         "glued_ordinal": [],
-        "structural_bold_leak": [],
+        "structural_bold_leak": [
+          {
+            "file": "EPUB/ch015.xhtml",
+            "text": "Si quid novisti rectius istis, Candidus imperti; si non, his utere mecum."
+          }
+        ],
         "repeated_structural_marker": [],
         "scholastic_bold_leak": [],
         "inline_scholastic_label": [],
@@ -117,6 +122,10 @@
         "nav_duplicate_text": [],
         "spaced_caps": [],
         "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch038.xhtml",
+            "text": "looks wholly this way. Taste of the nature and intendment of the whole: \"And the"
+          },
           {
             "file": "EPUB/ch056.xhtml",
             "text": "hitherto itself? Nay, can it be consistent with common sense, that the Scripture"
@@ -132,7 +141,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 74,
+    "nav_link_count": 76,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

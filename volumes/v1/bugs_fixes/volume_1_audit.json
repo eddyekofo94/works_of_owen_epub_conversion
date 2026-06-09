@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-04T11:04:24.694082+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-06-09T10:44:05.326157+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -14,7 +14,7 @@
   ],
   "info": {
     "file_count": 120,
-    "epub_size_bytes": 6458914,
+    "epub_size_bytes": 6460823,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 314,
-      "unique_noteref_targets": 314,
-      "endnote_anchor_count": 314,
+      "noteref_count": 337,
+      "unique_noteref_targets": 337,
+      "endnote_anchor_count": 337,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },

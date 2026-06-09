@@ -1,22 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-05-29T11:58:44.479674+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-09T10:49:02.885614+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "orphan_endnotes",
-      "message": "Some endnote anchors have no matching noteref",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn21"
-      ]
-    }
-  ],
+  "warnings": [],
   "info": {
-    "file_count": 58,
-    "epub_size_bytes": 4023007,
+    "file_count": 61,
+    "epub_size_bytes": 5081809,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -25,9 +17,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 49,
-    "spine_count": 29,
-    "xhtml_count": 31,
+    "manifest_count": 52,
+    "spine_count": 31,
+    "xhtml_count": 33,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -42,13 +34,11 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 39,
-      "unique_noteref_targets": 37,
-      "endnote_anchor_count": 38,
+      "noteref_count": 137,
+      "unique_noteref_targets": 128,
+      "endnote_anchor_count": 128,
       "missing_endnote_targets": [],
-      "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn21"
-      ]
+      "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
@@ -61,19 +51,19 @@
       "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 1,
+      "chapter_heading_in_paragraph_files": 0,
       "overlong_heading_body_files": 1,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
-      "structural_bold_leak_files": 2,
+      "structural_bold_leak_files": 0,
       "repeated_structural_marker_files": 0,
       "scholastic_bold_leak_files": 0,
       "inline_scholastic_label_files": 0,
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 1,
+      "lowercase_paragraph_start_files": 8,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -91,16 +81,11 @@
         "missing_chapter_initialization": [],
         "unprocessed_ages_marker": [],
         "page_reference_split": [],
-        "chapter_heading_in_paragraph": [
-          {
-            "file": "EPUB/contents_2.xhtml",
-            "text": "CHAPTER 1"
-          }
-        ],
+        "chapter_heading_in_paragraph": [],
         "overlong_heading_body": [
           {
             "file": "EPUB/ch004.xhtml",
-            "text": "HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that \"no man knoweth love or hatre"
+            "text": "HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that \"no man knoweth love or"
           }
         ],
         "fragmented_greek_span_run": [],
@@ -108,16 +93,7 @@
         "scripture_blockquote": [],
         "orphan_scripture_bracket": [],
         "glued_ordinal": [],
-        "structural_bold_leak": [
-          {
-            "file": "EPUB/ch001.xhtml",
-            "text": "SAINTS PERSEVERANCE _Explained and Confirmed._ **THE CERTAIN PERMANENCY OF THEIR**"
-          },
-          {
-            "file": "EPUB/ch013.xhtml",
-            "text": "1. That from the beginning to verse 14 containeth a most fearful and dreadful commination and threatening of the judgments of the Lord against the whole church"
-          }
-        ],
+        "structural_bold_leak": [],
         "repeated_structural_marker": [],
         "scholastic_bold_leak": [],
         "inline_scholastic_label": [],
@@ -129,8 +105,36 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
+            "file": "EPUB/ch005.xhtml",
+            "text": "unworthy fellow-laborer and brother in our dear Lord Jesus"
+          },
+          {
+            "file": "EPUB/ch006.xhtml",
+            "text": "cant et fructum afferant, et fructus eorum maneat, quis audeat dicere 'Forsitan n"
+          },
+          {
+            "file": "EPUB/ch010.xhtml",
+            "text": "it is said of him,"
+          },
+          {
+            "file": "EPUB/ch012.xhtml",
+            "text": "and in [1 John 4:10] \"Herein is love, not that we loved God, but that he loved us"
+          },
+          {
+            "file": "EPUB/ch015.xhtml",
+            "text": "and verse 22, \"Let them be one, even as we, are one.\" And that ye may not think t"
+          },
+          {
             "file": "EPUB/ch017.xhtml",
             "text": "of perseverance in reference to the"
+          },
+          {
+            "file": "EPUB/ch019.xhtml",
+            "text": "causing us, chap. 4:24, to \"put on the new man, which after God is created in rig"
+          },
+          {
+            "file": "EPUB/ch024.xhtml",
+            "text": "repentance; seeing they crucify to themselves the Son of God afresh, and put him"
           }
         ],
         "noteref_leading_space": [],
@@ -139,7 +143,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 32,
+    "nav_link_count": 34,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

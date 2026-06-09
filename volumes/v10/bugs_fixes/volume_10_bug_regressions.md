@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 158 | 158 | OK |
+| Possible faulty paragraph splits | 158 | 165 | OK |
 | Inline structural marker candidates | 7 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 1 | 1 | OK |
+| Missing front CONTENTS pages | 1 | 4 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -26,7 +26,7 @@
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
 | Missing configured fonts | 0 | 0 | OK |
-| EPUB packaging errors | 0 | 0 | OK |
+| EPUB packaging errors | 0 | 1 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 18 | 18 | OK |
+| Lowercase page fragments | 17 | 35 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |

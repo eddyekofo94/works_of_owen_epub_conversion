@@ -1,19 +1,10 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub",
-  "generated_at": "2026-05-29T12:06:23.474207+00:00",
-  "status": "fail",
-  "error_count": 1,
+  "generated_at": "2026-06-09T10:52:34.040666+00:00",
+  "status": "warn",
+  "error_count": 0,
   "warning_count": 1,
-  "errors": [
-    {
-      "code": "noteref_targets_missing",
-      "message": "Some noteref targets do not have matching endnote anchors",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn186",
-        "EPUB/endnotes.xhtml#fn347"
-      ]
-    }
-  ],
+  "errors": [],
   "warnings": [
     {
       "code": "repeated_phrases",
@@ -22,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 134,
-    "epub_size_bytes": 3666976,
+    "file_count": 138,
+    "epub_size_bytes": 4656576,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -32,15 +23,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 125,
-    "spine_count": 105,
-    "xhtml_count": 107,
+    "manifest_count": 129,
+    "spine_count": 108,
+    "xhtml_count": 109,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 15,
     "language": {
-      "greek_chars": 4865,
+      "greek_chars": 4816,
       "greek_untagged_chars": 0,
       "hebrew_chars": 10,
       "hebrew_untagged_chars": 0,
@@ -49,13 +40,10 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 19,
-      "unique_noteref_targets": 18,
-      "endnote_anchor_count": 16,
-      "missing_endnote_targets": [
-        "EPUB/endnotes.xhtml#fn186",
-        "EPUB/endnotes.xhtml#fn347"
-      ],
+      "noteref_count": 46,
+      "unique_noteref_targets": 45,
+      "endnote_anchor_count": 45,
+      "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
     "content_scan": {
@@ -81,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
+      "lowercase_paragraph_start_files": 11,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -131,14 +119,55 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch015.xhtml",
+            "text": "for until this be done, men are to be esteemed but as \"raging waves of the sea, f"
+          },
+          {
+            "file": "EPUB/ch018.xhtml",
+            "text": "because, as temporal commodities, so suits did increase. This judgment, though it"
+          },
+          {
+            "file": "EPUB/ch023.xhtml",
+            "text": "saith Hilary. Suppose that men retain a form of godliness in the profession of th"
+          },
+          {
+            "file": "EPUB/ch037.xhtml",
+            "text": "unto whom of all sorts it is commanded that they should examine and try antichris"
+          },
+          {
+            "file": "EPUB/ch048.xhtml",
+            "text": "and that because \"there arose not a prophet afterwards in Israel like unto Moses,"
+          },
+          {
+            "file": "EPUB/ch051.xhtml",
+            "text": "and it is \"he that shall endure unto the end\" that shall be \"saved,\" Matthew 24:1"
+          },
+          {
+            "file": "EPUB/ch052.xhtml",
+            "text": "or profession, \"is made unto salvation;\" John 12:42-45. Now, this profession of t"
+          },
+          {
+            "file": "EPUB/ch058.xhtml",
+            "text": "and he rejecteth all that honor which is given him by those whose fear towards hi"
+          },
+          {
+            "file": "EPUB/ch060.xhtml",
+            "text": "so he doth plainly declare wherein the apostasy and sin itself should principally"
+          },
+          {
+            "file": "EPUB/ch064.xhtml",
+            "text": "so Deuteronomy 5:27. And hereby they had their solemn admission into their church"
+          }
+        ],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 108,
+    "nav_link_count": 110,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

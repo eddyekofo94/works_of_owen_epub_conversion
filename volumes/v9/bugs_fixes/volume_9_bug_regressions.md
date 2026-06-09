@@ -38,7 +38,7 @@
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
 | Chapter headings rendered as paragraphs | 1 | 0 | REGRESSION |
-| Overlong headings containing body prose | 2 | 0 | REGRESSION |
+| Overlong headings containing body prose | 5 | 0 | REGRESSION |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
 | Fragmented Hebrew span-run files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 1 | 0 | REGRESSION |
+| Lowercase page fragments | 11 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -95,8 +95,15 @@
 ### Overlong headings containing body prose
 
 - file: EPUB/ch002.xhtml; text: "To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. "There appear unto me
+- file: EPUB/ch044.xhtml; text: DISCOURSE 7. 44 Question. When our own faith is weakened as to the hearing of our prayers — when we ourselves are hindered within ourselves from believing the answer of our pray
 - file: EPUB/ch053.xhtml; text: "To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs
+- file: EPUB/ch060.xhtml; text: SERMON 7. 61 "My heart is inditing a good matter: I speak of the things which I have made touching the King; my tongue is the pen of a ready writer. Thou art fairer than the chi
+- file: EPUB/ch089.xhtml; text: DISCOURSE 19. 86 "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son
 
 ### Lowercase page fragments
 
 - file: EPUB/ch002.xhtml; text: the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;
+- file: EPUB/ch027.xhtml; text: as he spake by the mouth of his holy prophets, which have been since the world be
+- file: EPUB/ch028.xhtml; text: that is, of the whole church, alive and dead, that they might be his. He took the
+- file: EPUB/ch030.xhtml; text: saith he, "if the Lord be with us, why then is all this befallen us?" — "Whence i
+- file: EPUB/ch033.xhtml; text: that is, as a God who is omnipotent, who made all things, and is faithful in the

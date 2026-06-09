@@ -266,6 +266,9 @@ OVERRIDES = {
         '1655 .': '1655.',
         'Eo .': 'Eo.',
         'the minute of wicked men': 'the mixture of wicked men',
+        'Ecclesiastes 266.': 'Ecclesiazusae 266.',
+        'De Ecclesiastes lib. 3': 'De Ecclesia lib. 3',
+        'De Corona, οδ >,': 'De Corona, οδʹ,',
         
         # Latin OCR corrections
         'testimomo': 'testimonio',
@@ -326,6 +329,14 @@ OVERRIDES = {
         # Split lists and anchor sentences in Chapter 1
         r'all enemies whatever\.\s+(Hence it appears that there are none excluded from an entrance into the church-state but such as are either, —)': r'all enemies whatever.\n\n\1',
         r'\bor,\s+(\*\*\(\d+\.\)\*\*)': r'or,\n\n\1',
+        
+        # Split inline questions (like **3** _._) into new block paragraphs and normalize list representations
+        r'([.;,!?”"])\s+(\*\*\d+\*\*\s*_\._)': r'\1\n\n\2',
+        r'\*\*(?P<num>\d+)\*\*\s*_\._': r'**\g<num>.**',
+
+        # Correct OCR typo (l.) representing (1.) list item safely using escaped regex
+        r'\(l\)': '(1)',
+        r'\(l\.\)': '(1.)',
     },
 }
 

@@ -107,11 +107,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-03T00:16:38.554653+00:00
-**EPUB:** `volumes/v13/output/volume_13.epub`
+**Last run:** 2026-06-09T10:50:54.564962+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub`
 **Status:** WARN (0 errors, 2 warnings)
 
 Reports:
@@ -147,11 +148,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-03T00:17:24.961843+00:00
-**Status:** WARN (14 warnings)
+**Last run:** 2026-06-09T10:51:40.292493+00:00
+**Status:** WARN (16 warnings)
 
 Reports:
 - `volume_13_text_integrity.json`
@@ -162,23 +164,23 @@ Reports:
 | PDF pages | 749 |
 | EPUB text files | 84 |
 | EPUB paragraphs/headings | 1979 |
-| Approximate PDF-to-EPUB word coverage | 0.8975 |
-| Weak page matches | 102 |
-| Dense source windows checked | 765 |
-| Missing dense source-window pages | 726 |
+| Approximate PDF-to-EPUB word coverage | 0.9014 |
+| Weak page matches | 30 |
+| Dense source windows checked | 29743 |
+| Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 6 |
 | Missing front CONTENTS pages | 2 |
-| Top-of-page body windows checked | 722 |
+| Top-of-page body windows checked | 720 |
 | Top-of-page windows skipped as unstable | 20 |
 | Missing top-of-page body windows | 86 |
-| Bottom-of-page body windows checked | 681 |
+| Bottom-of-page body windows checked | 679 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 88 |
-| Possible faulty paragraph splits | 76 |
-| Structural starts excluded from split warnings | 91 |
+| Missing bottom-of-page body windows | 40 |
+| Possible faulty paragraph splits | 9 |
+| Structural starts excluded from split warnings | 90 |
 | Short fragments | 22 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 4 |
+| Inline structural marker candidates | 3 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 4 |
@@ -187,11 +189,11 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 80 |
-| EPUB enumerator markers | 138 |
+| EPUB enumerator markers | 76 |
 | Missing enumerator marker forms | 6 |
-| Enumerator sequence candidates | 19 |
-| PDF Greek words / EPUB Greek words | 1049 / 1020 |
-| Greek word coverage ratio | 0.9619 |
+| Enumerator sequence candidates | 2 |
+| PDF Greek words / EPUB Greek words | 1046 / 1020 |
+| Greek word coverage ratio | 0.9521 |
 | PDF Hebrew words / EPUB Hebrew words | 12 / 12 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 1 |
@@ -213,6 +215,8 @@ Warnings requiring triage:
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

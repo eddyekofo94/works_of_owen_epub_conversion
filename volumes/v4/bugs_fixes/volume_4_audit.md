@@ -8,21 +8,21 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 97
-- Manifest items: 88
-- Spine items: 69
-- XHTML files: 71
+- Files: 99
+- Manifest items: 90
+- Spine items: 70
+- XHTML files: 72
 - Embedded fonts: 13
-- NAV links: 72
+- NAV links: 73
 
 ## Content Checks
 
-- Greek chars: 4075
+- Greek chars: 4062
 - Untagged Greek chars: 0
 - Hebrew chars: 698
 - Untagged Hebrew chars: 0
-- Noteref links: 24
-- Endnote anchors: 23
+- Noteref links: 41
+- Endnote anchors: 40
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
@@ -52,10 +52,10 @@
 
 - `EPUB/ch006.xhtml`: CHAPTER I
 
-### structural_bold_leak
-
-- `EPUB/ch001.xhtml`: ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR
-
 ### lowercase_paragraph_start
 
-- `EPUB/ch055.xhtml`: should receive strong consolation in all their distresses, when they flee for ref
+- `EPUB/ch007.xhtml`: or the things delivered in the Scripture and farther declared by Christ, which be
+- `EPUB/ch009.xhtml`: nor is there any of the divines of that church which diment herein. We do not, th
+- `EPUB/ch011.xhtml`: for "of his own will doth God beget us with the word of truth," James 1:18.
+- `EPUB/ch013.xhtml`: saith Stapleton; — "The secret testimony of the Spirit is altogether necessary, t
+- `EPUB/ch021.xhtml`: for men are very apt to please themselves with the working and improvement of the

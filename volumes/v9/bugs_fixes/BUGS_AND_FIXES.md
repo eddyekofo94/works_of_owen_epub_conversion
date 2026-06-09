@@ -105,12 +105,13 @@ See previous sessions.
 ---
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-29T11:54:34.266550+00:00
+**Last run:** 2026-06-09T10:48:45.504274+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_9_audit.json`
@@ -119,22 +120,18 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 102 |
-| Spine items | 100 |
+| XHTML files | 104 |
+| Spine items | 102 |
 | Embedded fonts | 13 |
-| NAV links | 103 |
+| NAV links | 105 |
 | Greek chars / untagged | 814 / 0 |
 | Hebrew chars / untagged | 223 / 0 |
-| Noteref links / endnote anchors | 93 / 93 |
+| Noteref links / endnote anchors | 97 / 95 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 0 |
-
-Warnings requiring triage:
-
-- `orphan_endnotes`: Some endnote anchors have no matching noteref
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->

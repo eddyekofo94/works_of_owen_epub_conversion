@@ -8,25 +8,25 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 105 | 61 | REGRESSION |
-| Inline structural marker candidates | 0 | 1 | OK |
+| Possible faulty paragraph splits | 4 | 98 | OK |
+| Inline structural marker candidates | 1 | 3 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 0 | 0 | OK |
+| Missing enumerator markers | 3 | 3 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 1 | 0 | OK |
+| Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
-| Missing Greek clauses | 0 | 16 | OK |
+| Missing Greek clauses | 1 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
 | Missing configured fonts | 0 | 0 | OK |
-| EPUB packaging errors | 1 | 0 | REGRESSION |
+| EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 0 | 0 | OK |
+| Lowercase page fragments | 11 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,11 +66,14 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch011.xhtml; previous: rpose, — namely, that the ordinances and institutions of the gospel may be administered to the edification of the church. Now, this the apostle expressly affirms, Ephesians 4:7-13,; next: The Lord Jesus, who hath appointed the office of the ministry, hath also provided sufficient furniture for the persons called according to his mind to the discharge of that office 
-- file: EPUB/ch015.xhtml; previous: invent, and nothing less can support. Unto such as these we shall not so much as tender satisfaction, until they are capable of receiving the advice of the apostle, Ephesians 4:31,; next: It is for the sake of them alone who really value and esteem love, peace, and unity among Christians for themselves, that we here tender an account of our thoughts and principles c
-- file: EPUB/ch016.xhtml; previous: to rise on the evil and on the good, and sendeth rain on the just and on the unjust." Now, all mankind may be cast into two ranks or orders: for, first, there are those who are yet; next: — such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it 
-- file: EPUB/ch016.xhtml; previous: "Go ye into all the world, and preach the gospel to every creature," he adds unto it that decretory sentence concerning the everlasting condition of all men with respect thereunto,; next: As the preaching of the gospel, and the belief on Jesus Christ thereon, are the only means of obtaining salvation, so all those who are not made partakers of them must perish etern
-- file: EPUB/ch017.xhtml; previous: e unto any particular church on the earth; and so it often falleth out, as we could manifest by instances, did that work now lie before us. This is the church which the Lord Christ; next: And we must acknowledge that in all things this is the church unto which we have our first and principal regard, as being the spring from which all other considerations of the chur
+- file: EPUB/ch016.xhtml; previous: o are yet "without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world," Ephesians 2:12,; next: — such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it 
+- file: EPUB/ch022.xhtml; previous: To The Reader; next: I THOUGHT to have wholly omitted the consideration of that part of the discourse of Dr Stillingfleet, in his preface, which concerneth the furtherance and promotion of the designs 
+- file: EPUB/ch038.xhtml; previous: e those of which Justice Hobart speaks: and therefore it is plain he spake of all the churches which were under the care of the apostles, which he calls 'voluntary congregations.'"; next: Ans. 1. Whereas this argument seems to be cast into the form of a syllogism, I could easily manifest how asyllogistical it is, did I delight to contend with him or any else. But, —
+- file: EPUB/ch059.xhtml; previous: lessness, have miscarried in not observing exactly his will and appointment in and about his worship. This was the case of Nadab and Abihu, the sons of Aaron, Leviticus 10:1, 2; of; next: Korah, Dathan, and Abiram, Numbers 16:1-40; of the sons of Eli, — a sin not to be "expiated with sacrifice nor offering for ever," 1 Samuel 2:27-34, 3:14; of Uzza in putting the ar
+
+### Inline structural marker candidates
+
+- file: EPUB/ch034.xhtml; text: It might be easily demonstrated what great numbers [there are] amongst us, — [1.] Who have imbibed atheistical opinions, and either vent them or speak presumptuously, according unto their influence and tendency every day
 
 ### Repeated word windows
 
@@ -80,9 +83,15 @@
 - phrase: body fitly joined together and compacted by that which every
 - phrase: fitly joined together and compacted by that which every joint
 
-### EPUB packaging errors
+### Missing enumerator markers
 
-- {'code': 'noteref_targets_missing', 'message': 'Some noteref targets do not have matching endnote anchors', 'examples': ['EPUB/endnotes.xhtml#fn186', 'EPUB/endnotes.xhtml#fn347']}
+- marker: (1.)
+- marker: (2.)
+- marker: (4.)
+
+### Missing Greek clauses
+
+- page: 482; sample: οσοι τω κανονι τουτω στοιχησουσιν
 
 ### Repeated phrase hits
 
@@ -92,3 +101,11 @@
 
 - file: EPUB/ch071.xhtml; text: MAY A PERSON BE CALLED TO, OR BE EMPLOYED IN, A PART ONLY OF THE OFFICE OR WORK OF THE MINISTRY; OR MAY HE HOLD THE RELATION AND EXERCISE THE DUTY OF AN ELDER OR MINISTER UNTO MORE
 - file: EPUB/ch082.xhtml; text: MAY NOT THE CHURCH, IN THE SOLEMN WORSHIP OF GOD, AND CELEBRATION OF THE ORDINANCES OF THE GOSPEL, MAKE USE OF AND CONTENT ITSELF IN THE USE OF FORMS OF PRAYER IN AN UNKNOWN TONGUE
+
+### Lowercase page fragments
+
+- file: EPUB/ch015.xhtml; text: for until this be done, men are to be esteemed but as "raging waves of the sea, f
+- file: EPUB/ch018.xhtml; text: because, as temporal commodities, so suits did increase. This judgment, though it
+- file: EPUB/ch023.xhtml; text: saith Hilary. Suppose that men retain a form of godliness in the profession of th
+- file: EPUB/ch037.xhtml; text: unto whom of all sorts it is commanded that they should examine and try antichris
+- file: EPUB/ch048.xhtml; text: and that because "there arose not a prophet afterwards in Israel like unto Moses,

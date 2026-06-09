@@ -46,7 +46,7 @@
 | Scripture blockquote false positives | 0 | 0 | OK |
 | Orphan scripture brackets | 0 | 0 | OK |
 | Glued ordinal anchors | 0 | 0 | OK |
-| Structural bold leaks | 0 | 0 | OK |
+| Structural bold leaks | 1 | 0 | REGRESSION |
 | Repeated structural markers | 0 | 0 | OK |
 | Scholastic bold leaks | 0 | 0 | OK |
 | Inline scholastic labels | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 2 | 2 | OK |
+| Lowercase page fragments | 3 | 2 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -88,7 +88,12 @@
 - phrase: nor the chief reason of our believing the scripture to
 - phrase: the chief reason of our believing the scripture to be
 
+### Structural bold leaks
+
+- file: EPUB/ch015.xhtml; text: Si quid novisti rectius istis, Candidus imperti; si non, his utere mecum.
+
 ### Lowercase page fragments
 
+- file: EPUB/ch038.xhtml; text: looks wholly this way. Taste of the nature and intendment of the whole: "And the
 - file: EPUB/ch056.xhtml; text: hitherto itself? Nay, can it be consistent with common sense, that the Scripture
 - file: EPUB/ch060.xhtml; text: the four evangelists, or Paul's Epistles by him? And if the present church prove

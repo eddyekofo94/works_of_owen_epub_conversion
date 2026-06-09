@@ -1,9 +1,9 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v14/output/volume_14.epub",
-  "generated_at": "2026-05-29T12:04:35.298456+00:00",
+  "generated_at": "2026-06-09T10:51:44.415988+00:00",
   "status": "warn",
   "error_count": 0,
-  "warning_count": 2,
+  "warning_count": 3,
   "errors": [],
   "warnings": [
     {
@@ -15,11 +15,19 @@
       "code": "repeated_phrases",
       "message": "Potential repeated phrases detected",
       "count": 2
+    },
+    {
+      "code": "orphan_endnotes",
+      "message": "Some endnote anchors have no matching noteref",
+      "examples": [
+        "EPUB/endnotes.xhtml#fn49",
+        "EPUB/endnotes.xhtml#fn50"
+      ]
     }
   ],
   "info": {
-    "file_count": 98,
-    "epub_size_bytes": 5588898,
+    "file_count": 100,
+    "epub_size_bytes": 6592839,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -28,9 +36,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 89,
-    "spine_count": 69,
-    "xhtml_count": 71,
+    "manifest_count": 91,
+    "spine_count": 70,
+    "xhtml_count": 72,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -45,11 +53,14 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 52,
-      "unique_noteref_targets": 51,
-      "endnote_anchor_count": 51,
+      "noteref_count": 163,
+      "unique_noteref_targets": 162,
+      "endnote_anchor_count": 164,
       "missing_endnote_targets": [],
-      "orphan_endnotes": []
+      "orphan_endnotes": [
+        "EPUB/endnotes.xhtml#fn49",
+        "EPUB/endnotes.xhtml#fn50"
+      ]
     },
     "content_scan": {
       "boilerplate_hits": 0,
@@ -74,7 +85,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
+      "lowercase_paragraph_start_files": 7,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -84,11 +95,11 @@
         "escaped_lang_tag": [],
         "untagged_greek": [
           {
-            "file": "EPUB/ch002.xhtml",
+            "file": "EPUB/ch001.xhtml",
             "text": "Ν. N."
           },
           {
-            "file": "EPUB/ch051.xhtml",
+            "file": "EPUB/ch050.xhtml",
             "text": "פֶסֶל γλυπτόν"
           }
         ],
@@ -113,7 +124,7 @@
         "unprocessed_ages_marker": [],
         "page_reference_split": [
           {
-            "file": "EPUB/ch011.xhtml",
+            "file": "EPUB/ch010.xhtml",
             "text": "p. 126."
           }
         ],
@@ -134,14 +145,43 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch012.xhtml",
+            "text": "come than Moses were, surely born a Jew, he would, being come into the world, rat"
+          },
+          {
+            "file": "EPUB/ch030.xhtml",
+            "text": "yet I shall say, that as many as take notice of this discourse will do no less of"
+          },
+          {
+            "file": "EPUB/ch031.xhtml",
+            "text": "when you know what his business was But the truth is, when you talk of the merit"
+          },
+          {
+            "file": "EPUB/ch032.xhtml",
+            "text": "which of old she professed!"
+          },
+          {
+            "file": "EPUB/ch033.xhtml",
+            "text": "as Lactantius reports him. But you say, \"If they fall by idolatry, and yet keep a"
+          },
+          {
+            "file": "EPUB/ch038.xhtml",
+            "text": "we may look for peace, moderation, and unity, when we are here no more, and not s"
+          },
+          {
+            "file": "EPUB/ch040.xhtml",
+            "text": "that I might have been freed from the consideration of such trifles: as the case"
+          }
+        ],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 72,
+    "nav_link_count": 73,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

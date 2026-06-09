@@ -2,9 +2,9 @@
   "volume": 15,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/input/owen-v15.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub",
-  "generated_at": "2026-05-29T12:06:56.662626+00:00",
+  "generated_at": "2026-06-09T10:53:14.666053+00:00",
   "status": "warn",
-  "warning_count": 7,
+  "warning_count": 13,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -15,12 +15,20 @@
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
     },
     {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
       "code": "bottom_of_page_text_loss",
       "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
     },
     {
       "code": "paragraph_split_candidates",
       "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     },
     {
       "code": "suspicious_large_number_starts",
@@ -31,26 +39,67 @@
       "message": "Some chapter headings are long enough to suggest swallowed body text"
     },
     {
+      "code": "missing_enumerator_markers",
+      "message": "Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB"
+    },
+    {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "missing_latin_clauses",
+      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
     }
   ],
   "pdf": {
     "page_count": 683
   },
   "epub": {
-    "spine_text_files": 105,
-    "paragraph_count": 2402
+    "spine_text_files": 107,
+    "paragraph_count": 2276
   },
   "word_coverage": {
-    "pdf_content_tokens": 224233,
-    "epub_content_tokens": 227855,
-    "coverage_ratio": 0.9967,
+    "pdf_content_tokens": 221576,
+    "epub_content_tokens": 218388,
+    "coverage_ratio": 0.9783,
     "missing_word_samples": [
+      {
+        "word": "apostle's",
+        "pdf": 9,
+        "epub": 1
+      },
+      {
+        "word": "jewish",
+        "pdf": 11,
+        "epub": 5
+      },
       {
         "word": "pre",
         "pdf": 6,
         "epub": 0
+      },
+      {
+        "word": "intends",
+        "pdf": 7,
+        "epub": 3
+      },
+      {
+        "word": "verses",
+        "pdf": 6,
+        "epub": 2
+      },
+      {
+        "word": "attainments",
+        "pdf": 6,
+        "epub": 2
       },
       {
         "word": "self",
@@ -63,7 +112,42 @@
         "epub": 0
       },
       {
+        "word": "forborne",
+        "pdf": 5,
+        "epub": 2
+      },
+      {
+        "word": "analogy",
+        "pdf": 5,
+        "epub": 2
+      },
+      {
+        "word": "replies",
+        "pdf": 4,
+        "epub": 1
+      },
+      {
         "word": "defence",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "scope",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "include",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "regarding",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "obviated",
         "pdf": 3,
         "epub": 1
       }
@@ -75,12 +159,42 @@
         "epub": 19
       },
       {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "greek",
+        "pdf": 6,
+        "epub": 15
+      },
+      {
+        "word": "modern",
+        "pdf": 0,
+        "epub": 9
+      },
+      {
         "word": "churchcommunion",
         "pdf": 0,
         "epub": 9
       },
       {
-        "word": "digital",
+        "word": "theological",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "edition",
+        "pdf": 5,
+        "epub": 11
+      },
+      {
+        "word": "footnotes",
         "pdf": 0,
         "epub": 6
       }
@@ -88,243 +202,308 @@
   },
   "page_coverage": {
     "pages_checked": 675,
-    "weak_page_count": 14,
+    "weak_page_count": 27,
     "weak_pages": [
       {
         "page": 115,
-        "hit_ratio": 0.0,
-        "sample": "115 empire so was the mystery of iniquity consummated for whereas the pope to secure his new acquisitions endeavored to empale the title and"
+        "hit_ratio": 0.333,
+        "sample": "empire so was the mystery of iniquity consummated for whereas the pope to secure his new acquisitions endeavored to empale the title and privileges"
       },
       {
         "page": 224,
-        "hit_ratio": 0.333,
-        "sample": "224 an inquiry into the original nature institution power order and communion of evangelical churches the first part with an answer to the discourse"
+        "hit_ratio": 0.0,
+        "sample": "an inquiry into the original nature institution power order and communion of evangelical churches the first part with an answer to the discourse of"
       },
       {
-        "page": 342,
-        "hit_ratio": 0.333,
-        "sample": "342 christ then are they of his institution and who can divest them of that power or any part of it that they have"
+        "page": 470,
+        "hit_ratio": 0.0,
+        "sample": "an answer to dr stillingfleet's book of the unreasonableness of separation in defence of the vindication of nonconformists from the guilt of schism the"
       },
       {
-        "page": 382,
-        "hit_ratio": 0.333,
-        "sample": "382 themselves now these are such many of them as cannot be acted or performed in any church by the body of the people"
+        "page": 471,
+        "hit_ratio": 0.0,
+        "sample": "all the reasonings exceptions and pleas in and of that book to render them useless unto the end designed which is to reinforce charge"
       },
       {
-        "page": 399,
-        "hit_ratio": 0.333,
-        "sample": "399 ans whose fault is it that these churches are not meet for the exercise of that power which christ hath granted unto such"
+        "page": 472,
+        "hit_ratio": 0.0,
+        "sample": "things under the rule of those who are set over them by virtue of civil constitutions foreign unto them not submitted willingly unto by"
       },
       {
-        "page": 423,
-        "hit_ratio": 0.333,
-        "sample": "423 chapter 10 what sort of churches the disciples of christ may and ought to join themselves unto as unto entire communion we have"
+        "page": 473,
+        "hit_ratio": 0.0,
+        "sample": "nonconformists from the charge of schism and desire the reader to take notice that we delight not in these contentions that we desire nothing"
       },
       {
-        "page": 467,
-        "hit_ratio": 0.333,
-        "sample": "467 of these churches one only was originally planted in one city town or village this way was taken from conveniency for edification and"
+        "page": 474,
+        "hit_ratio": 0.0,
+        "sample": "of divine worship it will be necessary for men to oblige themselves unto total constant communion with renunciation and condemnation of all other ways"
       },
       {
-        "page": 564,
-        "hit_ratio": 0.333,
-        "sample": "564 therefore he calls for and requires indispensably of all that draw nigh to him and that because he is the lord our god"
+        "page": 475,
+        "hit_ratio": 0.0,
+        "sample": "will spare the reader as much as is possible in the repetition of things formerly spoken and the transcription of his words or my"
+      },
+      {
+        "page": 476,
+        "hit_ratio": 0.0,
+        "sample": "without any long deductions artificial insinuations or diverting reasonings without wresting the text or context these things are plain and evident in them supposition"
+      },
+      {
+        "page": 477,
+        "hit_ratio": 0.0,
+        "sample": "that because the apostles made such rule which we know not what it is or what is become of it the guides of the"
+      },
+      {
+        "page": 478,
+        "hit_ratio": 0.0,
+        "sample": "minded to pursue your main end but if any be otherwise minded did any think they ought not to mind chiefly their great end"
+      },
+      {
+        "page": 479,
+        "hit_ratio": 0.0,
+        "sample": "that in some things there were different apprehensions and practices amongst them which hindered not their agreement in what they had attained if any"
+      },
+      {
+        "page": 480,
+        "hit_ratio": 0.0,
+        "sample": "there were others who acquiescing in the liberty of the gentiles declared by the apostles acts yet judged themselves and all other circumcised jews"
+      },
+      {
+        "page": 481,
+        "hit_ratio": 0.0,
+        "sample": "those of the jews who lived in the nations and observed all the rites of the law which were not confined unto the land"
+      },
+      {
+        "page": 482,
+        "hit_ratio": 0.0,
+        "sample": "had voluntarily relinquished and renounced for christ and the gospel whereon he testifies what he had attained if any one do judge that he"
+      },
+      {
+        "page": 483,
+        "hit_ratio": 0.0,
+        "sample": "matter the rule here intended by the apostle is no book of canons but the analogy of faith or the rule of faith in"
+      },
+      {
+        "page": 484,
+        "hit_ratio": 0.0,
+        "sample": "do expressly assign those lesser differences which the direction here is applicable unto namely those between the blind sort of jews mentioned before and"
+      },
+      {
+        "page": 485,
+        "hit_ratio": 0.0,
+        "sample": "from this place where such communion is required of them regularly and in way of duty and saith he that the best christians are"
+      },
+      {
+        "page": 486,
+        "hit_ratio": 0.0,
+        "sample": "the apostle's rule is not that we should go as far as we can as though there were any thing of dispute and difficulty"
+      },
+      {
+        "page": 487,
+        "hit_ratio": 0.0,
+        "sample": "ans let the reader if he please consult the place whence these words are taken in my discourse and he will find this evasion"
+      },
+      {
+        "page": 488,
+        "hit_ratio": 0.0,
+        "sample": "rules about things not ordained by our lord jesus christ which might have given some bounds unto the inclinations of men in making and"
+      },
+      {
+        "page": 489,
+        "hit_ratio": 0.0,
+        "sample": "all that should by their rulers be imposed on them as lawful in their judgment this sovereignty over their consciences was reserved by the"
+      },
+      {
+        "page": 490,
+        "hit_ratio": 0.0,
+        "sample": "differences at this day in the church of england in doctrine and practice some of them in my judgment of more importance than those"
+      },
+      {
+        "page": 491,
+        "hit_ratio": 0.0,
+        "sample": "case unto all churches namely whether the mosaical law were to be observed among christians but some churches were left unto their own judgment"
+      },
+      {
+        "page": 492,
+        "hit_ratio": 0.0,
+        "sample": "the governors of the christian church which made the determination insisted on were the apostles themselves there was no such determination made that the"
+      },
+      {
+        "page": 493,
+        "hit_ratio": 0.0,
+        "sample": "whereas he adds that he hath considered all things that are material in my discourse which seem to take off the force of the"
       },
       {
         "page": 609,
         "hit_ratio": 0.333,
-        "sample": "609 ephesians 20-22 ye are built upon the foundation of the apostles and prophets jesus christ himself being the chief corner-stone in whom all"
-      },
-      {
-        "page": 627,
-        "hit_ratio": 0.333,
-        "sample": "627 question 24 what are the principal differences between these two sorts of officers or rulers in the church extraordinary and ordinary answer the"
-      },
-      {
-        "page": 628,
-        "hit_ratio": 0.333,
-        "sample": "628 question 25 what is required unto the due constitution of an elder pastor or teacher of the church answer that he be furnished"
-      },
-      {
-        "page": 636,
-        "hit_ratio": 0.333,
-        "sample": "636 question 27 what are the principal duties of the pastors or teachers of the church answer to be examples unto the flock in"
-      },
-      {
-        "page": 653,
-        "hit_ratio": 0.333,
-        "sample": "653 because he bestows on the ministers of the church gifts and ability of prayer for the benefit and edification thereof he hath appointed"
-      },
-      {
-        "page": 674,
-        "hit_ratio": 0.333,
-        "sample": "674 secondly the instrumentally efficient cause is that which is expressed in the answer namely the adding in due order unto it such as"
+        "sample": "ephesians 20-22 ye are built upon the foundation of the apostles and prophets jesus christ himself being the chief corner-stone in whom all the"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 718,
-    "missing_dense_window_pages": 669,
+    "dense_windows_checked": 28786,
+    "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
         "page": 3,
-        "sample": "prefatory note by the editor chapter the state of the judaical church the liberty"
+        "sample": "righteousness and legal ceremonies contended for together the reason of it chapter the disciples"
       },
       {
         "page": 4,
-        "sample": "10 other considerations about the imposition of liturgies discourse concerning evangelical love church peace"
+        "sample": "worship prohibitions of additions produced considered applied chapter of the authority needful for the"
       },
       {
         "page": 5,
-        "sample": "worship chapter nature of the catholic church the first and principal object of christian"
-      },
-      {
-        "page": 6,
-        "sample": "of divine institution chapter the duty of believers to join themselves in church-order chapter"
+        "sample": "ignorance readiness to take offense remedies hereof pride false teachers chapter grounds and reasons"
       },
       {
         "page": 7,
         "sample": "discourse concerning liturgies and their imposition prefatory note it deserves attention that this pamphlet"
       },
       {
-        "page": 8,
-        "sample": "before passed the house of commons by majority of 186 to 180 the house"
-      },
-      {
         "page": 10,
-        "sample": "10 chapter the state of the judaical church the liberty given by christ from"
+        "sample": "from the authority of the law maker the latter he utterly rejected as introduced"
       },
       {
-        "page": 11,
-        "sample": "11 is to be the sole lawgiver of his church the only fountain and"
+        "page": 52,
+        "sample": "may keep the commandments of the lord your god which command you chapter what"
       },
       {
-        "page": 12,
-        "sample": "12 unto any thing in the worship but what is of his own institution"
+        "page": 75,
+        "sample": "with the occasions and reasons of the present differences and divisions about things sacred"
       },
       {
-        "page": 13,
-        "sample": "13 original obligation on conscience from the first institution of their ceremonies was taken"
+        "page": 90,
+        "sample": "and power do make compliance with themselves in all their impositions and self interested"
       },
       {
-        "page": 14,
-        "sample": "14 believers were not concerned as also that determination of the case of scandal"
+        "page": 102,
+        "sample": "in our hearts and made natural unto us by that one and self same"
       },
       {
-        "page": 15,
-        "sample": "15 ordinances and such hath been the force and efficacy of these combined principles"
+        "page": 103,
+        "sample": "profess and yet notwithstanding all this such cross entangled wheels are there in the"
       },
       {
-        "page": 16,
-        "sample": "16 chapter the disciples of christ taken into his own disposal general things to"
+        "page": 106,
+        "sample": "9-11 he would not continue from generation to generation to scatter his pearls where"
       },
       {
-        "page": 17,
-        "sample": "17 willing ready subjection to the impositions of his wisdom and authority and their"
+        "page": 108,
+        "sample": "judge by the fundamental principles and laws of their church communion but men ought"
       },
       {
-        "page": 18,
-        "sample": "18 aptitude to be used for that end if the authority were sufficient to"
+        "page": 115,
+        "sample": "them who first possessed the rule of such churches about their dignities pre eminencies"
       },
       {
-        "page": 19,
-        "sample": "19 unto every one of us is given grace according to the measure of"
+        "page": 119,
+        "sample": "where the calves were set up kings chronicles accordingly many of the most zealous"
       },
       {
-        "page": 20,
-        "sample": "20 that the means which jesus christ hath appointed for the attaining of any"
+        "page": 126,
+        "sample": "should all or any of them immediately forfeit their church state so as to"
       },
       {
-        "page": 21,
-        "sample": "21 and purpose promising his presence with them to the end of the world"
+        "page": 138,
+        "sample": "fell out among them on account of pre eminences jurisdictions liturgies rites ceremonies violently"
       },
       {
-        "page": 22,
-        "sample": "22 chapter of the lord's prayer and what may be concluded from thence as"
+        "page": 141,
+        "sample": "about revealed truths nor different practice in sacred administrations but pride self interest love"
       },
       {
-        "page": 23,
-        "sample": "23 wherein he had comprised the matter of their requests and petitions about this"
+        "page": 145,
+        "sample": "ordained or for which pastors and teachers are granted unto the church ephesians and"
       },
       {
-        "page": 24,
-        "sample": "24 which is false and asserted without any color of proof also that he"
+        "page": 180,
+        "sample": "to observe when imposed as necessary conditions of all church communion contrary to the"
       },
       {
-        "page": 25,
-        "sample": "25 it is lawful for men to do under the pretense of their being"
+        "page": 188,
+        "sample": "who were recommended unto the church by the apostle john probably because they would"
       },
       {
-        "page": 26,
-        "sample": "26 chapter of the worship of god by the apostles no liturgies used by"
+        "page": 189,
+        "sample": "and unskilful as to degrees in the word of truth romans philippians hebrews but"
       },
       {
-        "page": 27,
-        "sample": "27 gave unto the bishops or pastors of the churches which they planted that"
+        "page": 200,
+        "sample": "advantages prompts them to pour out upon us for our non compliance with their"
       },
       {
-        "page": 28,
-        "sample": "28 honor of god and edification of the church without the use of them"
+        "page": 218,
+        "sample": "are cast out and excluded from church communion with them by the unscriptural conditions"
       },
       {
-        "page": 29,
-        "sample": "29 the worship of god which is acceptable unto him evidence lies so full"
+        "page": 219,
+        "sample": "to act obedientially towards him and ministerially towards others and were church actings considered"
       },
       {
-        "page": 30,
-        "sample": "30 comprecatio fuit quae nos admoneret hos esse deos quos colere venerari precarique majores"
+        "page": 239,
+        "sample": "to be supposed that diotrephes was alone in his desire of pre eminence nor"
       },
       {
-        "page": 31,
-        "sample": "31 james printed in greek and latin another ascribed unto peter published by lindanus"
+        "page": 245,
+        "sample": "christian nations but to give farther evidence hereunto shall consider the causes afore mentioned"
       },
       {
-        "page": 32,
-        "sample": "32 chapter the practice of the churches in the first three centuries as to"
+        "page": 248,
+        "sample": "did the example of the apostolical churches acts 23-31 instances of such meetings may"
       },
       {
-        "page": 33,
-        "sample": "33 that duty by virtue of spiritual gifts received from jesus christ much less"
+        "page": 250,
+        "sample": "no intimation is given of any pre eminence or superiority amongst them of one"
       },
       {
-        "page": 34,
-        "sample": "34 origen cyprian and their contemporaries there is the same silence concerning them the"
+        "page": 271,
+        "sample": "of force in the arguments pleaded for non compliance with arbitrary unnecessary impositions that"
       },
       {
-        "page": 35,
-        "sample": "35 whether this description of the public worship of the christians in those days"
+        "page": 289,
+        "sample": "to think of or to assert any other church state it was impossible that"
       },
       {
-        "page": 36,
-        "sample": "36 αυτω αναπεμπει poureth out according to his ability and επι πολυ ποιειται he"
+        "page": 293,
+        "sample": "good in there is no benefit to be obtained by any church state whatever"
       },
       {
-        "page": 37,
-        "sample": "37 chapter the pretended antiquity of liturgies disproved the most ancient their variety canons"
+        "page": 297,
+        "sample": "especial nature and condition of the evangelical church state such the relation of it"
       },
       {
-        "page": 38,
-        "sample": "38 invention know not it may be those who are wiser do and wish"
+        "page": 300,
+        "sample": "the majesty of the name of the lord his god micah so did they"
       },
       {
-        "page": 39,
-        "sample": "39 the profitable discharge of the work of the ministry unto the edification of"
+        "page": 307,
+        "sample": "have dominion over your faith but are helpers of your joy chap for we"
       },
       {
-        "page": 40,
-        "sample": "40 know it is pretended that when christians were multiplied there was necessity of"
+        "page": 315,
+        "sample": "many nations in the coming of christ whereunto this church state was subservient the"
       },
       {
-        "page": 41,
-        "sample": "41 with the care of the disciples of christ or his churches which are"
+        "page": 326,
+        "sample": "these sure grounds is founded the continuation of the gospel church state under ordinary"
       },
       {
-        "page": 42,
-        "sample": "42 reformation and what were the minds of the greater part of men in"
+        "page": 327,
+        "sample": "continuation and preservation of this church-state depends solely on successive ordination of church officers"
       },
       {
-        "page": 43,
-        "sample": "43 our wise and provident reformers considering this state of things and temper of"
+        "page": 328,
+        "sample": "doth lie but all grant that the church state whereunto they are ordained is"
+      },
+      {
+        "page": 330,
+        "sample": "pride and luxury as baronius acknowledgeth or by the church of antioch by samosatenus"
+      },
+      {
+        "page": 334,
+        "sample": "evangelical discipline visibly to profess their subjection unto christ in the world by the"
       }
     ]
   },
@@ -336,7 +515,7 @@
   },
   "top_of_page_integrity": {
     "top_windows_checked": 680,
-    "top_windows_usable": 661,
+    "top_windows_usable": 659,
     "skipped_top_window_count": 20,
     "skipped_top_windows": [
       {
@@ -383,7 +562,7 @@
       },
       {
         "page": 371,
-        "window": "of the epistle cap 13 spouda zete ou pukno teron sune rcesqai tan ga",
+        "window": "of the epistle cap spouda zete ou pukno teron sune rcesqai tan ga sunecw",
         "sample": "of the epistle [cap. 13]: Spouda>zete ou=n pukno>teron sune>rcesqai o[tan ga<r sunecw~v ejpi< to< aujto< ge>nhsqe kaqairou~ntai aiJ duna>meiv",
         "reason": "font-encoded Greek/Hebrew window"
       },
@@ -460,16 +639,137 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 0,
-    "missing_top_windows": []
+    "missing_top_window_count": 23,
+    "missing_top_windows": [
+      {
+        "page": 471,
+        "window": "all the reasonings exceptions and pleas in and of that book to render them",
+        "sample": "all the reasonings, exceptions, and pleas in and of that book, to render them useless unto the end designed, which is to reinforce a charge of"
+      },
+      {
+        "page": 472,
+        "window": "things under the rule of those who are set over them by virtue of",
+        "sample": "things under the rule of those who are set over them by virtue of civil constitutions foreign unto them, not submitted willingly unto by them,"
+      },
+      {
+        "page": 473,
+        "window": "nonconformists from the charge of schism and desire the reader to take notice that",
+        "sample": "Nonconformists from the charge of schism. And I desire the reader to take notice that we delight not in these contentions, that we desire nothing but"
+      },
+      {
+        "page": 474,
+        "window": "of divine worship it will be necessary for men to oblige themselves unto total",
+        "sample": "of divine worship, it will be necessary for men to oblige themselves unto total, constant communion, with a renunciation and condemnation of all"
+      },
+      {
+        "page": 475,
+        "window": "will spare the reader as much as is possible in the repetition of things",
+        "sample": "I will spare the reader as much as is possible in the repetition of things formerly spoken, and the transcription of his words or my own, without"
+      },
+      {
+        "page": 476,
+        "window": "without any long deductions artificial insinuations or diverting reasonings without wresting the text or",
+        "sample": "Without any long deductions, artificial insinuations, or diverting reasonings, without wresting the text or context, these things are plain and"
+      },
+      {
+        "page": 477,
+        "window": "that because the apostles made such rule which we know not what it is",
+        "sample": "2. That because the apostles made such a rule (which we know not what it is, or what is become of it), the guides of the church (and that in such a"
+      },
+      {
+        "page": 478,
+        "window": "minded to pursue your main end but if any be otherwise minded did any",
+        "sample": "minded,' to pursue your main end; but if any be 'otherwise minded. Did any think they ought not to mind chiefly their great end? — that is"
+      },
+      {
+        "page": 479,
+        "window": "that in some things there were different apprehensions and practices amongst them which hindered",
+        "sample": "(2.) That in some things there were different apprehensions and practices amongst them, which hindered not their agreement in what they had"
+      },
+      {
+        "page": 480,
+        "window": "there were others who acquiescing in the liberty of the gentiles declared by the",
+        "sample": "3. There were others who, acquiescing in the liberty of the Gentiles declared by the apostles,"
+      },
+      {
+        "page": 481,
+        "window": "those of the jews who lived in the nations and observed all the rites",
+        "sample": "2. Those of the Jews who lived in the nations, and observed all the rites of the law which were not confined unto the land of Canaan. And, —"
+      },
+      {
+        "page": 482,
+        "window": "had voluntarily relinquished and renounced for christ and the gospel whereon he testifies what",
+        "sample": "had voluntarily relinquished and renounced for Christ and the gospel; whereon he testifies what he had attained. If any one do judge that he"
+      },
+      {
+        "page": 483,
+        "window": "matter the rule here intended by the apostle is no book of canons but",
+        "sample": "matter, the rule here intended by the apostle is no Book of Canons, but the analogy of faith, or the rule of faith in Christ as declared in the gospel, in"
+      },
+      {
+        "page": 484,
+        "window": "do expressly assign those lesser differences which the direction here is applicable unto namely",
+        "sample": "4. I do expressly assign those lesser differences, which the direction here is applicable unto, — namely, those between the blind sort of Jews"
+      },
+      {
+        "page": 485,
+        "window": "from this place where such communion is required of them regularly and in way",
+        "sample": "from this place), where such a communion is required of them regularly and in a way of duty. And, —"
+      },
+      {
+        "page": 486,
+        "window": "the apostle's rule is not that we should go as far as we can",
+        "sample": "2. The apostle's rule is not that we should go as far as we can, as though there were any thing of dispute and difficulty in the matter; but that"
+      },
+      {
+        "page": 487,
+        "window": "ans let the reader if he please consult the place whence these words are",
+        "sample": "Ans. 1. Let the reader, if he please, consult the place whence these words are taken in my discourse, and he will find this evasion obviated."
+      },
+      {
+        "page": 488,
+        "window": "rules about things not ordained by our lord jesus christ which might have given",
+        "sample": "rules about things not ordained by our Lord Jesus Christ, which might have given some bounds unto the inclinations of men in making and"
+      },
+      {
+        "page": 489,
+        "window": "all that should by their rulers be imposed on them as lawful in their",
+        "sample": "all that should by their rulers be imposed on them as lawful in their judgment. This sovereignty over their consciences was reserved by the"
+      },
+      {
+        "page": 490,
+        "window": "differences at this day in the church of england in doctrine and practice some",
+        "sample": "differences at this day in the church of England in doctrine and practice, some of them, in my judgment, of more importance than those between"
+      },
+      {
+        "page": 491,
+        "window": "case unto all churches namely whether the mosaical law were to be observed among",
+        "sample": "case unto all churches, — namely, whether the Mosaical law were to be observed among Christians, — but some churches were left unto their own"
+      },
+      {
+        "page": 492,
+        "window": "the governors of the christian church which made the determination insisted on were the",
+        "sample": "(1.) The governors of the Christian church which made the determination insisted on were the apostles themselves."
+      },
+      {
+        "page": 493,
+        "window": "whereas he adds that he hath considered all things that are material in my",
+        "sample": "Whereas he adds, \"That he hath considered all things that are material in my discourse, which seem to take off the force of the argument drawn"
+      }
+    ]
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 646,
-    "bottom_windows_usable": 618,
+    "bottom_windows_usable": 615,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 4,
+    "missing_bottom_window_count": 28,
     "missing_bottom_windows": [
+      {
+        "page": 224,
+        "window": "the good way and walk therein and ye find rest for your souls jeremiah",
+        "sample": "the good way, and walk therein, and ye find rest for your souls\" — Jeremiah 6:16."
+      },
       {
         "page": 273,
         "window": "av th ojmo noian th pi stewv suni sthsin the difference of fastings and",
@@ -486,175 +786,140 @@
         "sample": "oJsi>wv prosene>gkontav ta< dw~ra th~v ejpiskoph~v ajpobalwmen maka>rioi de< proodoiporh>santev presbu>teroi"
       },
       {
+        "page": 470,
+        "window": "that the principles and demonstrations of them contained therein may easily be applied unto",
+        "sample": "answered beforehand in the preceding discourse, so as that the principles and demonstrations of them contained therein may easily be applied unto"
+      },
+      {
+        "page": 471,
+        "window": "reform at any time what is amiss among them churches which are in all",
+        "sample": "provide for their own continuation, to admit or exclude members, or to reform at any time what is amiss among them; — churches which are in all"
+      },
+      {
+        "page": 472,
+        "window": "examine what the reverend doctor hath farther offered against our former vindication of the",
+        "sample": "These things being premised, I shall proceed to examine what the reverend Doctor hath farther offered against our former vindication of the"
+      },
+      {
+        "page": 473,
+        "window": "hard to prove that on concession of the lawfulness of communion in some acts",
+        "sample": "edification by joint communion as unlawful and evil. And it will be hard to prove that, on a concession of the lawfulness of communion in some acts"
+      },
+      {
+        "page": 474,
+        "window": "application of these words of the apostle in my vindication of the nonconformists",
+        "sample": "application of these words of the apostle in my \"Vindication of the Nonconformists.\""
+      },
+      {
+        "page": 475,
+        "window": "and the proof of sundry things which belong not unto the case in hand",
+        "sample": "whereby an appearance is made of various arguings, and the proof of sundry things which belong not unto the case in hand."
+      },
+      {
+        "page": 476,
+        "window": "schismatics and dealt withal accordingly for this only is that wherein we are concerned",
+        "sample": "conform, on the penalty of being esteemed schismatics, and dealt withal accordingly; for this only is that wherein we are concerned."
+      },
+      {
+        "page": 477,
+        "window": "the being otherwise minded otherwise than what as many as be perfect be thus",
+        "sample": "demands, \"What sense can Dr Owen here put upon the being 'otherwise minded?' otherwise than what? — 'As many as be perfect be thus"
+      },
+      {
+        "page": 478,
+        "window": "common attained unto whereto we have already attained we all of us in general",
+        "sample": "in common attained unto: \"Whereto we have already attained,\" — we, all of us in general."
+      },
+      {
+        "page": 479,
+        "window": "of the pharisees and seem to be the least sort of the three for",
+        "sample": "were generally of the sect of the Pharisees, and seem to be the least sort of the three; for, —"
+      },
+      {
+        "page": 480,
+        "window": "law and of the services of the temple being allowed them by the apostles",
+        "sample": "of all the law and of the services of the temple, being allowed them by the apostles."
+      },
+      {
+        "page": 481,
+        "window": "but what he himself had right unto as well as they and which he",
+        "sample": "Hereon, in opposition unto them, he declares that they had nothing to boast of but what he himself had a right unto as well as they, and which he"
+      },
+      {
+        "page": 482,
+        "window": "that were in difference among them wherefore not farther to contend in so plain",
+        "sample": "the gospel, without the least aid and assistance from the things that were in difference among them. Wherefore, not farther to contend in so plain a"
+      },
+      {
+        "page": 483,
+        "window": "were opposed for the apostle gives no such rule as this in that case",
+        "sample": "those by whom they were opposed; for the apostle gives no such rule as this in that case."
+      },
+      {
+        "page": 484,
+        "window": "join together as to opinion or communion grant it though it be not proved",
+        "sample": "1. But then saith the Doctor, \"So far as men agree they are bound to join together, as to opinion or communion.\" I grant it (though it be not proved"
+      },
+      {
+        "page": 485,
+        "window": "of the apostle believe some men judge it ought so to have been but",
+        "sample": "authority so to make and impose them, if this be not the rule of the apostle, I believe some men judge it ought so to have been. But, —"
+      },
+      {
+        "page": 486,
+        "window": "that they be not unlawful in themselves nor repugnant unto the word of god",
+        "sample": "commanded of God, yet are enjoined by lawful authority, provided that they be not unlawful in themselves, nor repugnant unto the word of God.\""
+      },
+      {
+        "page": 487,
+        "window": "much whereunto the mystery of iniquity tended yet would they not appoint any arbitrary",
+        "sample": "about such things as these, and probably knew much whereunto the mystery of iniquity tended; yet would they not appoint any arbitrary"
+      },
+      {
+        "page": 488,
+        "window": "ceremonies which they had taken away namely that riley were to do and observe",
+        "sample": "which might prove heavier, and did so, than that of the Jewish ceremonies which they had taken away, — namely, that riley were to do and observe"
+      },
+      {
+        "page": 489,
+        "window": "such determination but every one may be left unto his own liberty there are",
+        "sample": "is concerned in them; for otherwise there is no need of any such determination, but every one may be left unto his own liberty. There are"
+      },
+      {
+        "page": 490,
+        "window": "so forborne and whereas this determination was not absolute and obligatory on the whole",
+        "sample": "instance in the things which at that season were to be so forborne. And whereas this determination was not absolute and obligatory on the whole"
+      },
+      {
+        "page": 491,
+        "window": "the peace of the christian church which otherwise might have been extremely hazarded but",
+        "sample": "unto the law of Moses, and out of regard unto the peace of the Christian church, which otherwise might have been extremely hazarded.\" But, —"
+      },
+      {
+        "page": 492,
+        "window": "esteem indifferent and those on whom they are imposed do judge to be unlawful",
+        "sample": "esteem indifferent, and those on whom they are imposed do judge to be unlawful."
+      },
+      {
         "page": 546,
-        "window": "alexa ndreia du ejpisko pouv scen wjv aij ajllai po leiv haeres 68 for",
+        "window": "hj alexa ndreia du ejpisko pouv scen wjv aij ajllai po leiv haeres for",
         "sample": "churches, as Epiphanius affirms: Ouj ga<r po>te hJ Alexa>ndreia du>o ejpisko>pouv e]scen wJv aiJ ajllai po>leiv, Haeres. 68 s. 6; — \"For"
       }
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1967,
-    "split_candidate_count": 105,
+    "paragraphs_checked": 1842,
+    "split_candidate_count": 4,
     "split_candidates": [
       {
-        "file": "EPUB/ch011.xhtml",
-        "previous": "rpose, — namely, that the ordinances and institutions of the gospel may be administered to the edification of the church. Now, this the apostle expressly affirms, Ephesians 4:7-13,",
-        "next": "The Lord Jesus, who hath appointed the office of the ministry, hath also provided sufficient furniture for the persons called according to his mind to the discharge of that office "
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "invent, and nothing less can support. Unto such as these we shall not so much as tender satisfaction, until they are capable of receiving the advice of the apostle, Ephesians 4:31,",
-        "next": "It is for the sake of them alone who really value and esteem love, peace, and unity among Christians for themselves, that we here tender an account of our thoughts and principles c"
-      },
-      {
         "file": "EPUB/ch016.xhtml",
-        "previous": "to rise on the evil and on the good, and sendeth rain on the just and on the unjust.\" Now, all mankind may be cast into two ranks or orders: for, first, there are those who are yet",
+        "previous": "o are yet \"without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world,\" Ephesians 2:12,",
         "next": "— such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it "
       },
       {
-        "file": "EPUB/ch016.xhtml",
-        "previous": "\"Go ye into all the world, and preach the gospel to every creature,\" he adds unto it that decretory sentence concerning the everlasting condition of all men with respect thereunto,",
-        "next": "As the preaching of the gospel, and the belief on Jesus Christ thereon, are the only means of obtaining salvation, so all those who are not made partakers of them must perish etern"
-      },
-      {
-        "file": "EPUB/ch017.xhtml",
-        "previous": "e unto any particular church on the earth; and so it often falleth out, as we could manifest by instances, did that work now lie before us. This is the church which the Lord Christ",
-        "next": "And we must acknowledge that in all things this is the church unto which we have our first and principal regard, as being the spring from which all other considerations of the chur"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "tution of the whole, and their different forms, shapes, uses, operations, ornaments, all tend to make them serviceable in their unity unto their proper ends. And saith the apostle,",
-        "next": "And he doth elsewhere so describe this fundamental unity of believers in one body, under and in dependence on the same Head, as to make it the only means of the usefulness and pres"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "scribe this fundamental unity of believers in one body, under and in dependence on the same Head, as to make it the only means of the usefulness and preservation of the whole. They",
-        "next": "The conjunctions of all the members into one body, their mutual usefulness unto one another, the edification of the whole, with its increase, the due exercise of love (which things"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "he ecclesiastical faults of the clergy, and divers voluntary jurisdictions also over the laity. By these degrees the charitable correction of Christ did degenerate into domination,",
-        "next": "This degeneracy of discipline was long since esteemed burdensome, and looked on as the cause of innumerable troubles and grievances unto all sorts of people; yea, it hath had no be"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "from an acquiescence in their stations or relations to such churches; for the principal enforcements of men's obedience and reverence unto the rulers of the church are because they",
-        "next": "And if they see such set over them as give no evidence of any such watchful care acting itself according to those Scripture directions which are continually read unto them, but rat"
-      },
-      {
         "file": "EPUB/ch022.xhtml",
-        "previous": "o the conclusion which that most eminent champion of the protestant religion in England, namely, Whitaker, gives unto his learned disputation about antichrist: \"Igitur,!' saith he,",
-        "next": "If this will not suffice, we know better how to spend our remaining hours of life in peace than in contending about impertinent stories and surmises, exhaled by wit and invention o"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "m being the only instance of the corruption of church order and rule by the influence of this ambition, yet it is one that is pregnant, which is given us by Ambrose; for, saith he,",
-        "next": "It seems there was some alteration in church rule and order in his time, whose beginning and progress he could not well discover and trace, but knew well enough that so it was then"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "But that our principle herein is according unto truth we are fully persuaded. There is a rule of Christ's given, which whosoever walk according unto,",
-        "next": "And we desire no more, no more is needful unto the peace and unity of the church; and this rule, whatever it be, is of his giving and appointment. No rule of men's invention or imp"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "as apt to excite new exasperations, and to provoke the spirits of them concerned, as any I have read of late. However, the defense of our own innocency must not be forsaken. But, —",
-        "next": "This discourse, indeed, of the reverend author is increased into so large a volume as might justly discourage any from undertaking the examination of it who hath any other necessar"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "The Doctor tells us, preface, p. 51,",
-        "next": "I confess I was somewhat surprised, that, coming into this coast, all things should appear so new and strange unto me as that I could fix on no one mark to discover that I had ever"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "unto present occasions of what they had received by revelation. But as they were apostles, Christ sent them, as his Father sent him; and he was so sent of the Father as that he did",
-        "next": "So did they feed the sheep of Christ in his strength, and in the authority or majesty of his name."
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "so many ecclesiastical laws, they are, in the first place, to be desired themselves to remember the example of Christ himself in his personal ministry here on earth: Matthew 20:28,",
-        "next": "— with the rule prescribed by him thereon, verses 25-27, \"But Jesus called them unto him, and said, Ye know that the princes of the Gentiles exercise dominion over them, and they t"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "t the two brethren;\" — as also the injunction given them by the apostle Peter, on whom, for their own advantage, some would fasten a monarchy over the whole church, 1 Peter 5:2, 3,",
-        "next": "— and the blessed expressions of the apostolical state by Paul, 1 Corinthians 4:1,"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "— and the blessed expressions of the apostolical state by Paul, 1 Corinthians 4:1,",
-        "next": "It may prepare their minds for the right management of that honor which is their due. For, secondly, there is, in and by the constitution of Christ and his express laws, an honor a"
-      },
-      {
-        "file": "EPUB/ch028.xhtml",
-        "previous": "Designing to declare, as he doth in particular,",
-        "next": "In these assemblies there presided the elders, that, upon a testimony of their meetness unto that office, were chosen thereunto:"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "e variance that is pretended to be caused by the setting up of these particular congregations is a part of that variance which Christ came to send into the world: Matthew 10:34-36,",
-        "next": "He was the Prince of Peace; he came to make peace between God and men, between men themselves, Jews and Gentiles; he taught nothing, enjoined nothing that in its own nature should "
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "previous": "But the Doctor proceeds unto a second argument, p. 163, to the same purpose, from, as he calls it, \"the particular force of that text,\" Philippians 3:16",
-        "next": "This is the text which gave the first occasion unto this whole dispute. The Doctor's intention is so indefensible from this place, that I thought, however he might persist in the d"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "previous": "ns. They acted accordingly. Those who lived at Jerusalem adhered unto the temple worship; the whole church there did so. Their judgment in these things is declared, Acts 21:20, 21,",
-        "next": "They were not at all offended with Paul that he did not impose the law on the Gentiles, verse 25, but only that, as they had been informed, he taught the Jews to forsake the law, a"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "previous": "pinions, but that which they differed about was urged on the one hand as necessary to salvation, and opposed on the other as pernicious and destructive unto it.\" And again, p. 169,",
-        "next": "I answer briefly, —"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "previous": "He therefore objects out of my discourse, p. 171,",
-        "next": "To which he replies, This is the apostle's rule, to go as far as they can, and if they can go no farther, to sit down quietly and wait for farther instruction, and not to break the"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": "The words of Mr Chillingworth unto this purpose are emphatical; which I shall therefore transcribe, though that be a thing which I am very averse from: —",
-        "next": "This fundamental principle of the first Reformation we do not only firmly adhere unto, rejecting all those opinions and practices whereby its force is weakened and impaired, but al"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": "e for themselves in all matters of faith and obedience, but also an especial interest in the order and discipline of the church; those who were to say unto Archippus, their bishop,",
-        "next": "This principle of the Reformation, in vindication of the rights, liberties, and privileges of the Christian people, to judge and choose for themselves in matters of religion, to jo"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": " by Papists against all Protestants, yet, upon the Doctor's intimation, I have given it again the consideration required. The words as they lie in the author are to this purpose: —",
-        "next": "I know not why he should give us such a severe charge for the impartial consideration of these words, — that as we love our souls, we should impartially and without prejudice consi"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "That which first occurs in the treatise under consideration unto the point in hand is the exception put in unto a passage in my former discourse, which is as follows: —",
-        "next": "I have not observed any occasion wherein the Doctor is more vehement in his rhetoric than he is on that of this passage, which yet appears to me to be good sense and innocent"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "1. Hereunto he says, p. 221, —",
-        "next": "I cannot help it, and he might, as I suppose, have done well to have taken no notice of it, as I have dealt with many passages in his discourse; but if it be \"a giving up of the ca"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "t if it be \"a giving up of the cause of Independency,\" I say, whatever that be, let whoso will take it, and dispose of it as it seems good unto them. But in proof hereof he says, —",
-        "next": "I answer, —"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "2. He adds, secondly,",
-        "next": "I fear I do not well understand what this means, nor what it tends unto; but according as I apprehend the sense of it, I say, —"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "Presbyterians, by minding them what was done in former times, \"in the debate of the dissenting brethren, and the setting up of congregational churches in those days.\" For saith he,",
-        "next": "Ans. 1. There is no difference, that I know of, between Presbyterians and those whom he calls Independents, about particular churches; far the Presbyterians allow them to be of div"
+        "previous": "To The Reader",
+        "next": "I THOUGHT to have wholly omitted the consideration of that part of the discourse of Dr Stillingfleet, in his preface, which concerneth the furtherance and promotion of the designs "
       },
       {
         "file": "EPUB/ch038.xhtml",
@@ -662,47 +927,17 @@
         "next": "Ans. 1. Whereas this argument seems to be cast into the form of a syllogism, I could easily manifest how asyllogistical it is, did I delight to contend with him or any else. But, —"
       },
       {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "urch of Carthage in Cypriantime, he gives us a large account of the state of the church of Carthage at that time, wherein we are not much concerned. My words are, Vindic, 16 p. 41,",
-        "next": "I thought no man who is so conversant in the writings of Cyprian as our author apparently is could have denied the truth hereof, nor do I say it is so done by him; only, he takes o"
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "1. Romans 1:21, 2:14, 15; Acts 14:16, 17, 17:23-",
-        "next": "31."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "2. Exodus 20:4-",
-        "next": "6."
-      },
-      {
-        "file": "EPUB/ch047.xhtml",
-        "previous": "his authority. So saith he, \"Thou shalt reverence my sanctuary, I am the LORD;\" which no more proves that a moral duty than that enjoined upon the same foundation, Leviticus 11:44,",
-        "next": "Not defiling ourselves with the touching or eating of creeping things is now no moral duty since the institution is ceased, although it be enforced by many moral considerations."
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "previous": "(2.) Authoritatively, by his Spirit in the apostles, and the doctrine of the gospel preached by them: Acts 15:10, 11,",
-        "next": "Galatians 3:24, 25, \"Wherefore the law was our schoolmaster to bring us unto Christ, that we might be justified by faith. But after that faith is come, we are no longer under a sch"
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "previous": "Moses under the Old Testament, there could be no alteration made in his institutions, but the church was bound severely to observe them all until the coming of Christ: Malachi 4:4,",
-        "next": "And our apostle, to prove the right of Christ to alter the ordinances of the law, lays his foundation in manifesting that he was above the angels: Hebrews 1:4,"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "th him, of obedience unto him, of enjoyment of him, on this side heaven and glory, he hath not appointed nor revealed. Now, this is the covenant that God hath made with his people,",
-        "next": "And whatever men attain unto, it is by virtue of the grace of that covenant; nor is there any grace promised in the covenant to lead men in this life, or to give them up into a sta"
+        "file": "EPUB/ch059.xhtml",
+        "previous": "lessness, have miscarried in not observing exactly his will and appointment in and about his worship. This was the case of Nadab and Abihu, the sons of Aaron, Leviticus 10:1, 2; of",
+        "next": "Korah, Dathan, and Abiram, Numbers 16:1-40; of the sons of Eli, — a sin not to be \"expiated with sacrifice nor offering for ever,\" 1 Samuel 2:27-34, 3:14; of Uzza in putting the ar"
       }
     ],
-    "structural_start_exclusions": 255,
-    "short_fragment_count": 62,
+    "structural_start_exclusions": 218,
+    "short_fragment_count": 21,
     "short_fragments": [
       {
-        "file": "EPUB/ch025.xhtml",
-        "text": "3."
+        "file": "EPUB/ch022.xhtml",
+        "text": "To The Reader"
       },
       {
         "file": "EPUB/ch028.xhtml",
@@ -711,14 +946,6 @@
       {
         "file": "EPUB/ch032.xhtml",
         "text": "Yet, —"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "text": "I answer briefly, —"
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "text": "Yea, but, —"
       },
       {
         "file": "EPUB/ch037.xhtml",
@@ -745,112 +972,28 @@
         "text": "Answer — That we:"
       },
       {
-        "file": "EPUB/ch044.xhtml",
-        "text": "20."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "text": "31."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "text": "6."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "text": "18."
-      },
-      {
         "file": "EPUB/ch057.xhtml",
         "text": "Answer —"
       },
       {
-        "file": "EPUB/ch057.xhtml",
-        "text": "14."
-      },
-      {
-        "file": "EPUB/ch057.xhtml",
-        "text": "26."
-      },
-      {
-        "file": "EPUB/ch059.xhtml",
-        "text": "16."
-      },
-      {
         "file": "EPUB/ch061.xhtml",
         "text": "Answer —"
-      },
-      {
-        "file": "EPUB/ch061.xhtml",
-        "text": "16."
-      },
-      {
-        "file": "EPUB/ch061.xhtml",
-        "text": "23."
       },
       {
         "file": "EPUB/ch067.xhtml",
         "text": "Answer —"
       },
       {
-        "file": "EPUB/ch067.xhtml",
-        "text": "11."
-      },
-      {
         "file": "EPUB/ch069.xhtml",
         "text": "Answer —"
       },
       {
-        "file": "EPUB/ch069.xhtml",
-        "text": "33."
-      },
-      {
         "file": "EPUB/ch070.xhtml",
         "text": "Answer —"
       },
       {
-        "file": "EPUB/ch070.xhtml",
-        "text": "13."
-      },
-      {
-        "file": "EPUB/ch070.xhtml",
-        "text": "7."
-      },
-      {
-        "file": "EPUB/ch070.xhtml",
-        "text": "3."
-      },
-      {
-        "file": "EPUB/ch070.xhtml",
-        "text": "23."
-      },
-      {
-        "file": "EPUB/ch070.xhtml",
-        "text": "22."
-      },
-      {
         "file": "EPUB/ch072.xhtml",
         "text": "Answer —"
-      },
-      {
-        "file": "EPUB/ch072.xhtml",
-        "text": "28."
-      },
-      {
-        "file": "EPUB/ch072.xhtml",
-        "text": "8."
-      },
-      {
-        "file": "EPUB/ch072.xhtml",
-        "text": "3."
-      },
-      {
-        "file": "EPUB/ch072.xhtml",
-        "text": "15."
-      },
-      {
-        "file": "EPUB/ch072.xhtml",
-        "text": "16."
       },
       {
         "file": "EPUB/ch072.xhtml",
@@ -859,25 +1002,42 @@
       {
         "file": "EPUB/ch073.xhtml",
         "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch078.xhtml",
+        "text": "Answer — Yes, of deacons also."
+      },
+      {
+        "file": "EPUB/ch090.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch092.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch095.xhtml",
+        "text": "5."
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 0,
-    "inline_structural_candidates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "It might be easily demonstrated what great numbers [there are] amongst us, — [1.] Who have imbibed atheistical opinions, and either vent them or speak presumptuously, according unto their influence and tendency every day; [2.] Who are profane scoffers at all t"
+      }
+    ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 5,
+    "suspicious_large_number_start_count": 4,
     "suspicious_large_number_starts": [
       {
         "file": "EPUB/ch007.xhtml",
         "text": "30. again, cap. 39:"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "text": "912. 5, 8; or by the church of Antioch, by Samosatenus, Eudoxius, Gnapheus, Severus, and the like heretics; or in Constantinople, by Macedonius, Eusebius, Demophilus, Anthorinus, and their companions; or at Alexandria, b"
       },
       {
         "file": "EPUB/ch029.xhtml",
@@ -894,23 +1054,8 @@
     ],
     "roman_heading_candidate_count": 0,
     "roman_heading_candidates": [],
-    "overlong_heading_candidate_count": 10,
+    "overlong_heading_candidate_count": 7,
     "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch034.xhtml",
-        "tag": "h4",
-        "text": "III. There is not in them (and therefore not in the church of England, as unto its present profession) a _fixed standard of truth,_ or rule of faith to be professed, which every believer may own, and have his part or interest therein."
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "tag": "h4",
-        "text": "V. This defect in parochial churches, that they are intrusted by law with no part of the rule of themselves, but are wholly governed and disposed of by others at their pleasure, in the ways before mentioned, — which shakes their very being as churches, though "
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "tag": "h4",
-        "text": "VI. What remaineth of those reasons whereon those who cannot comply with the conformity under consideration are cleared, in point of conscience, from any obligation thereunto, and so from all guilt of schism whatever, belongs unto the head of impositions on th"
-      },
       {
         "file": "EPUB/ch049.xhtml",
         "tag": "h3",
@@ -953,64 +1098,76 @@
   "enumerator_integrity": {
     "pdf_marker_count": 402,
     "epub_marker_count": 410,
-    "missing_marker_count": 0,
-    "missing_markers": [],
-    "excess_marker_count": 5,
-    "excess_markers": [
+    "missing_marker_count": 3,
+    "missing_markers": [
       {
         "marker": "(1.)",
         "pdf": 89,
-        "epub": 90,
+        "epub": 87,
         "examples": [
           {
-            "location": "EPUB/ch023.xhtml#p465",
-            "context": "(1.) That the reasons and arguings of the Doctor in this matter, — the necessity of his cause compelling him thereunto, — are the same with those of the Papists about the apostasy of t"
+            "location": "pdf:p237",
+            "context": "ledge to be the foundation of all that we plead for in point of church reformation; as, — (1.) That the reasons and arguings of the Doctor in this matter, — the necessity of his cause compelling him thereunto, — are the same with those of the Papists about the apostasy of t"
           },
           {
-            "location": "EPUB/ch023.xhtml#p493",
-            "context": "(1.) It is evident that there was an alteration made in the state of the church as to its officers; for it issued at last in popes, patriarchs, cardinals, metropolitan and diocesan bis"
+            "location": "pdf:p249",
+            "context": "the declension of the churches from their primitive institution, order, and rule; and, — (1.) It is evident that there was an alteration made in the state of the church as to its officers; for it issued at last in popes, patriarchs, cardinals, metropolitan and diocesan bis"
           },
           {
-            "location": "EPUB/ch023.xhtml#p508",
-            "context": "(1.) None do more bless God for the first reformers, and the work they did, than we do; none have a higher esteem of their persons, abilities, graces, add sufferings, than we have; non"
+            "location": "pdf:p256",
+            "context": "le; and that what we endeavor therein, though never so peaceably, is schismatical. But, — (1.) None do more bless God for the first reformers, and the work they did, than we do; none have a higher esteem of their persons, abilities, graces, add sufferings, than we have; non"
           }
         ]
       },
       {
         "marker": "(2.)",
         "pdf": 89,
-        "epub": 91,
+        "epub": 87,
         "examples": [
           {
-            "location": "EPUB/ch023.xhtml#p466",
-            "context": "(2.) But it may be pleaded, that although the churches following the first ages did insensibly degenerate from the purity and simplicity of gospel faith and worship, yet they neither d"
+            "location": "pdf:p237",
+            "context": "de eminent by his defense of the protestant religion against those of the church of Rome. (2.) But it may be pleaded, that although the churches following the first ages did insensibly degenerate from the purity and simplicity of gospel faith and worship, yet they neither d"
           },
           {
-            "location": "EPUB/ch023.xhtml#p494",
-            "context": "(2.) The beginnings of this great alteration were small, nor at all perceived in the days wherein they were first acted. Nor is it agreed, nor, as far as I see, will it ever be agreed"
+            "location": "pdf:p250",
+            "context": "250 (2.) The beginnings of this great alteration were small, nor at all perceived in the days wherein they were first acted. Nor is it agreed, nor, as far as I see, will it ever be agreed"
           },
           {
-            "location": "EPUB/ch023.xhtml#p509",
-            "context": "(2.) The titles assigned unto them, of wise, learned, holy, zealous, are fully answered by that reformation of the church in its doctrine and worship which God wrought by their ministr"
+            "location": "pdf:p256",
+            "context": "suffering. We have other thoughts concerning them, — another kind of remembrance of them. (2.) The titles assigned unto them, of wise, learned, holy, zealous, are fully answered by that reformation of the church in its doctrine and worship which God wrought by their ministr"
           }
         ]
       },
       {
-        "marker": "(3.)",
-        "pdf": 59,
-        "epub": 60,
+        "marker": "(4.)",
+        "pdf": 32,
+        "epub": 31,
         "examples": [
           {
-            "location": "EPUB/ch023.xhtml#p510",
-            "context": "(3.) We are not obliged to make what they did, and what they attained unto, and what they judged meet as unto the government and worship of the church, to be our absolute rule, from wh"
+            "location": "pdf:p262",
+            "context": "262 from the use of the ceremonies, and full compliance with episcopal jurisdiction. (4.) Hereon those who were for the establishment, having secured their interests therein and obtained power, began after a while to oppress, excommunicate, silence, deprive, and impris"
           },
           {
-            "location": "EPUB/ch023.xhtml#p525",
-            "context": "(3.) This Order was unsatisfactory unto great numbers of ministers and others; who yet, considering what the necessity of the times did call for, did outwardly acquiesce in it in sever"
+            "location": "pdf:p265",
+            "context": "nor will ever be proved, nor is it endeavored so to be by any instances in this treatise. (4.) That to withhold communion from parochial assemblies in the worship of God, as unto things confessedly not of divine institution, is schism, — that kind of schism which is condemn"
           },
           {
-            "location": "EPUB/ch023.xhtml#p538",
-            "context": "(3.) That we separate from this church in things wherein we are obliged by the authority of Christ to hold communion with it; which neither is nor will ever be proved, nor is it endeav"
+            "location": "pdf:p270",
+            "context": "cribed in the Scripture, and impose the observation of them on all members of the church; (4.) That this church they are;"
+          }
+        ]
+      }
+    ],
+    "excess_marker_count": 5,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p65",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           }
         ]
       },
@@ -1020,16 +1177,35 @@
         "epub": 31,
         "examples": [
           {
-            "location": "EPUB/ch023.xhtml#p467",
+            "location": "EPUB/structural_guide.xhtml#p68",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p477",
             "context": "[1.] That as unto the original of any thing that looks like diocesan episcopacy, or the pastoral relation of one person of a distinct order from presbyters unto many particular complet"
           },
           {
-            "location": "EPUB/ch023.xhtml#p512",
+            "location": "EPUB/ch023.xhtml#p522",
             "context": "[1.] They did not think themselves obliged, they did not think meet, to abide within the bounds and limits of that reformation of the church which had been attempted before them, by me"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/colophon.xhtml#p19",
+            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from"
           },
           {
-            "location": "EPUB/ch023.xhtml#p529",
-            "context": "[1.] Many of those who refused to conform unto the church in all its constitutions yet thought it their duty to wait quietly for a national reformation , thinking no other possible, be"
+            "location": "EPUB/colophon.xhtml#p19",
+            "context": "entirely distinct from the original authorial/historical footnotes and reset starting at [1] for each chapter. Enhanced Original Footnotes 1, 2, ... : Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Lati"
+          },
+          {
+            "location": "EPUB/structural_guide.xhtml#p65",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           }
         ]
       },
@@ -1039,16 +1215,27 @@
         "epub": 31,
         "examples": [
           {
-            "location": "EPUB/ch023.xhtml#p469",
+            "location": "EPUB/structural_guide.xhtml#p68",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p479",
             "context": "[2.] Why may not the churches be supposed to have departed from their original constitution, order, and rule, as well as from their first faith and worship? which they did gradually, i"
           },
           {
-            "location": "EPUB/ch023.xhtml#p513",
+            "location": "EPUB/ch023.xhtml#p523",
             "context": "[2.] They did not at once make what they had done themselves to be a fixed rule in these things, for themselves made many alterations in the service-book which they first composed; and"
-          },
+          }
+        ]
+      },
+      {
+        "marker": "[2]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
           {
-            "location": "EPUB/ch023.xhtml#p530",
-            "context": "[2.] Those who did so separate, being not agreed among themselves as unto all principles of church-order, nor as unto the measure of their separation from the church of England, there"
+            "location": "EPUB/colophon.xhtml#p19",
+            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
           }
         ]
       }
@@ -1160,10 +1347,10 @@
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 872,
-    "epub_greek_word_count": 880,
+    "epub_greek_word_count": 871,
     "pdf_greek_unique_words": 487,
-    "epub_greek_unique_words": 488,
-    "greek_word_coverage_ratio": 1.0,
+    "epub_greek_unique_words": 484,
+    "greek_word_coverage_ratio": 0.9893,
     "pdf_hebrew_word_count": 2,
     "epub_hebrew_word_count": 2,
     "pdf_hebrew_unique_words": 2,
@@ -1174,11 +1361,177 @@
   },
   "greek_hebrew_clause_fidelity": {
     "greek_clauses_checked": 39,
-    "missing_greek_clause_count": 0,
-    "missing_greek_clauses": [],
+    "missing_greek_clause_count": 1,
+    "missing_greek_clauses": [
+      {
+        "page": 482,
+        "word_count": 5,
+        "sample": "οσοι τω κανονι τουτω στοιχησουσιν"
+      }
+    ],
     "hebrew_clauses_checked": 0,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 3300,
+    "epub_latin_word_count": 3310,
+    "epub_tagged_latin_word_count": 0,
+    "pdf_latin_unique_words": 612,
+    "epub_latin_unique_words": 612,
+    "epub_tagged_unique_words": 0,
+    "latin_word_coverage_ratio": 0.9821,
+    "latin_tagging_ratio": 0.0,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "nor",
+        "epub": 601,
+        "tagged": 0
+      },
+      {
+        "word": "jesus",
+        "epub": 296,
+        "tagged": 0
+      },
+      {
+        "word": "church-state",
+        "epub": 217,
+        "tagged": 0
+      },
+      {
+        "word": "whereas",
+        "epub": 127,
+        "tagged": 0
+      },
+      {
+        "word": "thereunto",
+        "epub": 120,
+        "tagged": 0
+      },
+      {
+        "word": "yea",
+        "epub": 99,
+        "tagged": 0
+      },
+      {
+        "word": "whereunto",
+        "epub": 85,
+        "tagged": 0
+      },
+      {
+        "word": "endeavor",
+        "epub": 57,
+        "tagged": 0
+      },
+      {
+        "word": "distinct",
+        "epub": 56,
+        "tagged": 0
+      },
+      {
+        "word": "hereunto",
+        "epub": 51,
+        "tagged": 0
+      },
+      {
+        "word": "dissent",
+        "epub": 42,
+        "tagged": 0
+      },
+      {
+        "word": "magistrate",
+        "epub": 41,
+        "tagged": 0
+      },
+      {
+        "word": "separate",
+        "epub": 34,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 33,
+        "tagged": 0
+      },
+      {
+        "word": "plea",
+        "epub": 32,
+        "tagged": 0
+      },
+      {
+        "word": "severe",
+        "epub": 32,
+        "tagged": 0
+      },
+      {
+        "word": "sincere",
+        "epub": 29,
+        "tagged": 0
+      },
+      {
+        "word": "communicate",
+        "epub": 26,
+        "tagged": 0
+      },
+      {
+        "word": "poor",
+        "epub": 25,
+        "tagged": 0
+      },
+      {
+        "word": "mere",
+        "epub": 24,
+        "tagged": 0
+      },
+      {
+        "word": "et",
+        "epub": 21,
+        "tagged": 0
+      },
+      {
+        "word": "pleas",
+        "epub": 20,
+        "tagged": 0
+      },
+      {
+        "word": "de",
+        "epub": 19,
+        "tagged": 0
+      },
+      {
+        "word": "churchstate",
+        "epub": 19,
+        "tagged": 0
+      },
+      {
+        "word": "eusebius",
+        "epub": 18,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 66,
+    "missing_latin_clause_count": 2,
+    "missing_latin_clauses": [
+      {
+        "page": 330,
+        "word_count": 4,
+        "sample": "lucius dioscorus aelurus sergius"
+      },
+      {
+        "page": 470,
+        "word_count": 4,
+        "sample": "si pergama dextra etc"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 0,
+    "translated_latin_runs_count": 0,
+    "latin_translation_ratio": 1.0,
+    "untranslated_latin_samples": []
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,

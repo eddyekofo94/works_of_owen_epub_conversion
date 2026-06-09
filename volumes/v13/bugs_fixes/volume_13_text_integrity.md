@@ -1,37 +1,37 @@
 # Text Integrity Audit: Volume 13
 
 - Status: **WARN**
-- Warnings: 14
+- Warnings: 16
 - PDF pages: 749
 - EPUB text files: 84
 - EPUB paragraphs/headings: 1979
 
 ## Coverage
 
-- PDF content tokens: 252246
-- EPUB content tokens: 228001
-- Approximate PDF-to-EPUB coverage ratio: 0.8975
-- Pages checked: 738
-- Weak page matches: 102
-- Dense source windows checked: 765
-- Missing dense source-window pages: 726
+- PDF content tokens: 250071
+- EPUB content tokens: 226985
+- Approximate PDF-to-EPUB coverage ratio: 0.9014
+- Pages checked: 737
+- Weak page matches: 30
+- Dense source windows checked: 29743
+- Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 6
 - Missing front CONTENTS pages: 2
-- Top-of-page body windows checked: 722
+- Top-of-page body windows checked: 720
 - Top-of-page windows skipped as unstable: 20
 - Missing top-of-page body windows: 86
-- Bottom-of-page body windows checked: 681
+- Bottom-of-page body windows checked: 679
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 88
+- Missing bottom-of-page body windows: 40
 
 ## Paragraphs
 
 - Body paragraphs checked: 1543
-- Possible faulty paragraph splits: 76
-- Structural starts excluded from split warnings: 91
+- Possible faulty paragraph splits: 9
+- Structural starts excluded from split warnings: 90
 - Short fragments: 22
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 4
+- Inline structural marker candidates: 3
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 4
@@ -40,15 +40,15 @@
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 80
-- EPUB enumerator markers: 138
+- EPUB enumerator markers: 76
 - Missing enumerator marker forms: 6
-- Enumerator sequence candidates: 19
+- Enumerator sequence candidates: 2
 
 ## Greek / Hebrew
 
-- PDF Greek words: 1049
+- PDF Greek words: 1046
 - EPUB Greek words: 1020
-- Greek word coverage ratio: 0.9619
+- Greek word coverage ratio: 0.9521
 - PDF Hebrew words: 12
 - EPUB Hebrew words: 12
 - Hebrew word coverage ratio: 1.0
@@ -56,6 +56,19 @@
 - Missing Greek clauses: 1
 - Hebrew clauses checked: 0
 - Missing Hebrew clauses: 0
+
+## Latin
+
+- PDF Latin words: 4940
+- EPUB Latin words: 4550
+- EPUB Tagged Latin words: 179
+- Latin word coverage ratio: 0.904
+- Latin word tagging ratio: 0.0393
+- Latin clauses checked: 215
+- Missing Latin clauses: 14
+- Tagged Latin runs checked: 26
+- Translated Latin runs: 23
+- Latin translation ratio: 0.8846
 
 ## Warnings
 
@@ -73,6 +86,8 @@
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
@@ -83,9 +98,9 @@
 - page: 7; sample: of elijah the last objection waived inferences upon the whole review of the true
 - page: 8; sample: an answer etc brief vindication of the nonconformists from the charge of schism prefatory
 - page: 9; sample: alleged evils from the free exercise of conscience charges of parker against noncomformists mischief
-- page: 11; sample: 11 the duty of pastors and people distinguished or brief discourse touching the administration
-- page: 12; sample: 12 prefatory note the title-page of the following treatise indicates that it was published
-- page: 14; sample: 14 to the truly noble and my ever honored friend sir edward scot of
+- page: 11; sample: the duty of pastors and people distinguished or brief discourse touching the administration of
+- page: 12; sample: and independency he afterwards changed his views on church government but in the work
+- page: 14; sample: to the truly noble and my ever honored friend sir edward scot of scot's
 
 ## Missing Front CONTENTS Pages
 
@@ -122,19 +137,17 @@
 
 - file: EPUB/ch003.xhtml; previous: ays of mercy and grace which are necessary to carry you along through all your engagements, until you arrive at the haven of everlasting glory, where you would be. I rest your most; next: obliged servant in Jesus Christ, our common Master
 - file: EPUB/ch003.xhtml; previous: obliged servant in Jesus Christ, our common Master; next: John Owen
-- file: EPUB/ch004.xhtml; previous: pretended to be sought with so much earnestness may be often gathered up quite neglected between the parties litigant. "Medio tutissimus" is a sure rule, but that fiery spirits, —; next: will be mounting. In the matter concerning which I propose my weak essay, some would have all Christians to be almost ministers; others, none but ministers to be God's clergy. Thos
-- file: EPUB/ch006.xhtml; previous: ning of it; and the "ears of all the people were attentive to the book of the law." Which course continued until there was an end put to the observances of that law; as Acts 15:21,; next: On which ground, not receding from their ancient observations, the people assembled to hear our Savior teaching with authority, Luke 21:38; and St Paul divers times took advantage
-- file: EPUB/ch006.xhtml; previous: ary assemblies to preach the gospel unto them. For the other, which concerns their own searching into the law and studying of the word, we have a strict command, Deuteronomy 6:6-9,; next: Which strict charge is again repeated, chapter 11:18, summarily comprehending all ways whereby they might become exercised in the law.
-- file: EPUB/ch006.xhtml; previous: s belonged to that kind of public teaching which was necessary under that administration of the covenant. But instead of many, I will name one not liable to exception: Malachi 2:7,; next: — where both a recital of his own duty, that he should be full of knowledge to instruct; the intimation to the people, that they should seek unto him, or give heed to his teaching;
-- file: EPUB/ch006.xhtml; previous: 2, 3, than him because he did. There are, indeed, many sharp reproofs in the Old Testament of those who undertook to be God's messengers without his warrant; as Jeremiah 22:21, 22,; next: — to which, and the like places, it may satisfactorily be answered, that howsoever, by the way of analogy, they may be drawn into rule for these times of the gospel, yet they were
-- file: EPUB/ch007.xhtml; previous: 16:5, — chosen by a particular calling "ad munus," to the office of the ritual priesthood; so in regard of that other kind, comparatively so called, it is said of the whole people,; next: Their approaching nigh unto God made them all a nation of priests, in comparison of those "dogs" and unclean Gentiles that were out of the covenant. Now, this prerogative is often
-- file: EPUB/ch007.xhtml; previous: Now, they are of divers sorts, though all in general eucharistical; — as, first, Of prayers and thanksgivings: Psalm 116:17,; next: and again,
-- file: EPUB/ch007.xhtml; previous: and again,; next: so Hebrews 13:15, "Let us offer the sacrifice of praise to God," — that is, the "fruit of our lips." Secondly, Of good works: Hebrews 13:16, "To do good and to communicate forget n
+- file: EPUB/ch015.xhtml; previous: To The Reader; next: THERE are, Christian reader, certain principles in church affairs generally consented unto by all men aiming at reformation and the furtherance of the power of godliness therein, h
+- file: EPUB/ch026.xhtml; previous: h and making profession of Christianity, may claim admission into the society of Christians within those bounds, and enjoy the privileges and ordinances which are there dispensed,"; next: Ans. of Commit., p. 105. This is also pursued by the authors of Jus Divinum Ministerii Anglicani, pp. 9,10, where, after the repetition of the words first mentioned, they add, that
+- file: EPUB/ch029.xhtml; previous: To The Reader; next: CHRISTIAN READER,
+- file: EPUB/ch029.xhtml; previous: CHRISTIAN READER,; next: IT is now about three weeks since that there was sent unto me a book entitle, "Independency a Great Schism;" as the frontispiece farther promiseth, undertaken to be managed against
+- file: EPUB/ch039.xhtml; previous: ll as the doctrine, and that we are all departed from it, and so are schismatical; for we hold communion with them," he says, " in the same doctrine, but not in the same worship. "; next: Ans. 1. His first exception ariseth from the advantage he makes use of from his large use of the word "Independent;" which will serve him, in his sense, for what end he pleaseth. I
+- file: EPUB/ch048.xhtml; previous: uld be restrained. It is far from my purpose to return him any answer in the like manner to these things; to do it " — opus est mangone perito Qui Smithfieldensi polleat eloquio. "; next: Yet some instances of prodigious excesses in this kind will, in our process, be reflected on; and it may be the repetition of them may make an appearance, unto some less considerat
+- file: EPUB/ch059.xhtml; previous: Yours; next: J.O.
 
 ## Inline Structural Marker Candidates
 
 - file: EPUB/ch009.xhtml; text: Now, three ways may a man receive, and be assured that he hath received, this divine mission, or know that he is called of God to the preaching of the word; I mean not that persuasion of divine concurrence which is necessary also for the...
-- file: EPUB/ch020.xhtml; text: It is, indeed, said that at this time there were many other episcopal sees in Achaia; which, until it is attempted to be put upon some kind of proof, may be passed by. It is granted that Paul speaks of that which was done at Corinth to b...
 - file: EPUB/ch031.xhtml; text: Thus, in general, to take a view of some particular passages in the appendix destined to this good work: The first section tries, with much wit and rhetoric, to improve the pretended alteration of judgment to the blemishing of my reputat...
 - file: EPUB/ch059.xhtml; text: The reasonableness of this gospel institution is manifested by the Holy Ghost: — 1. From the law of nature, Luke 10:7; 1 Corinthians 9:7, 11. 2. From the law of nations, in the same place. 3. From the tendency and equity of Mosaical inst...
 
@@ -181,16 +194,8 @@
 
 ## Enumerator Sequence Candidates
 
-- file: EPUB/ch020.xhtml; marker: [4]; family: bracket_decimal; context: φωνεῖ οῦτος Χριστιανός ? εἴτις μάχεται οῦτος πόῤῥω τοῦ κανόνος τούτου . Homil. 3 in Acta. [4] 39 But yet, lest this should seem too strait, as being, at first view, exclusive of the learned debates and disputes which we have had about th...
-- file: EPUB/ch020.xhtml; marker: [3]; family: bracket_decimal; context: et eodem ritu utentem solo congregationis delectari dissidio," Con. Faust lib. 20 cap. 3. [3] By "dissidium congregationis" he intends separation from the church into a peculiar congregation; a definition directly suited to the cause he ...
-- file: EPUB/ch022.xhtml; marker: [4]; family: bracket_decimal; context: ad compagem domus, sed sicut esse palea dicitur in frumentis," De Bapt., lib. 1. cap. 51; [4]
-- file: EPUB/ch023.xhtml; marker: [2]; family: bracket_decimal; context: ticular instituted church — Not in relation to any one officer, or more, in subordination [2] to one another — Such a subordination [3] not provable — Τὰ ἀρχαῖα of the Nicene synod — Of general councils — Union of the church visible not ...
 - file: EPUB/ch023.xhtml; marker: (2.); family: paren_decimal; context: (2.) That doing so, in the course of our lives we manifest and declare a principle that is utterly inconsistent with the belief of those truths which outwardly we profess; or, —
-- file: EPUB/ch024.xhtml; marker: [2]; family: bracket_decimal; context: Scripturam non credit esse divinam, nisi propter ecclesiae vocem, Christianus non est. " [2] To deny that the Scripture hath immediate force and efficacy to evince its own authority is plainly to deny it, On that account, being brought u...
-- file: EPUB/ch042.xhtml; marker: [3]; family: bracket_decimal; context: If there be any truth in reports," " hic nigrae succus loliginis, haec est aerugo mera. " [3] Is this a bottom for a minister of the gospel to proceed upon to such charges as those insinuated? Is not the course of nature set on fire at t...
 - file: EPUB/ch042.xhtml; marker: [16]; family: bracket_decimal; context: [16] 46; all the ministers almost in the county of Essex know the contrary, one especially, being a man of great ability and moderation of spirit, and for his knowledge in those things
-- file: EPUB/ch048.xhtml; marker: [2]; family: bracket_decimal; context: these things; to do it " — opus est mangone perito Qui Smithfieldensi polleat eloquio. " [2]
-- file: EPUB/ch048.xhtml; marker: [5]; family: bracket_decimal; context: reader may see the whole story exactly related in AElian., lib. 2; Var. Histor., cap. 13. [5] Much of it also may be collected from the Apologies of Xenophon and Plato in behalf of Socrates, as also Plutarch's Discourse concerning his Ge...
 
 ## Repeated Windows
 
@@ -234,6 +239,50 @@
 ## Missing Greek Clauses
 
 - page: 263; word_count: 5; sample: δουλον κυριου ου δει μαχεσθαι
+
+## Missing Latin Word Samples
+
+- word: communicate; pdf: 13; epub: 5
+- word: affectionate; pdf: 4; epub: 0
+- word: judea; pdf: 6; epub: 2
+- word: aquila; pdf: 5; epub: 2
+- word: vos; pdf: 4; epub: 1
+- word: galatia; pdf: 3; epub: 1
+- word: macedonia; pdf: 3; epub: 1
+- word: paulus; pdf: 3; epub: 1
+- word: samaria; pdf: 3; epub: 1
+
+## Untagged Latin Word Samples
+
+- word: nor; epub: 471; tagged: 0
+- word: magistrate; epub: 229; tagged: 0
+- word: jesus; epub: 178; tagged: 0
+- word: thereunto; epub: 104; tagged: 0
+- word: yea; epub: 98; tagged: 0
+- word: plea; epub: 71; tagged: 0
+- word: whereas; epub: 71; tagged: 0
+- word: et; epub: 75; tagged: 12
+- word: dissent; epub: 60; tagged: 0
+- word: debate; epub: 51; tagged: 0
+
+## Missing Latin Clauses
+
+- page: 389; word_count: 7; sample: coitio christianorum merito sane illicita si illicitis
+- page: 389; word_count: 16; sample: merito damnanda si quis de ea queritur eo titulo quo de factionibus
+- page: 389; word_count: 13; sample: aliquando convenimus hoc sumus congregati quod et dispersi hoc universi quod et
+- page: 389; word_count: 4; sample: quum probi cum boni
+- page: 389; word_count: 11; sample: cum pii cum casti congregantur non est factio dicenda sed curia
+- page: 398; word_count: 5; sample: in maenia si nilus non
+- page: 398; word_count: 4; sample: in arva si coelum
+- page: 416; word_count: 4; sample: in a sincere endeavor
+- page: 435; word_count: 5; sample: vos aequo animo aequa noscere
+- page: 435; word_count: 7; sample: si vos voltis perhiberi probos ter ad
+
+## Untranslated Latin Samples
+
+- phrase: doctrine and fellowship, and in breaking of bread, and in prayers,
+- phrase: some decays in true grace in the members of this church,
+- phrase: in the same doctrine, but not in the same worship.
 
 ## Limits
 

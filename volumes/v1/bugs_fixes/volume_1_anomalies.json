@@ -1,7 +1,7 @@
 {
   "volume": 1,
   "total_words_audited": 243045,
-  "total_anomalies_count": 26,
+  "total_anomalies_count": 48,
   "anomalies": {
     "Hyphenation Anomalies": [
       {
@@ -107,7 +107,7 @@
         "chapter": "Chapter 14 - of the Two-fold Estate of Christ.",
         "contexts": [
           "[[SUMMARY]] OF THE TWO-FOLD ESTATE OF CHRIST. Q. 1. In what estate or condit ...",
-          "... tion does Christ exercise these offices? A. In a two-fold estate; first, of humiliation or abasement; ..."
+          "... tion does Christ exercise these offices? A. In a two-fold estate; first, of humiliation or abasement; se ..."
         ]
       }
     ],
@@ -118,14 +118,6 @@
         "chapter": "General Preface.",
         "contexts": [
           "... tion in the numerals \u2014 I, 1, (1), [1], first, and first . It would have been an advantage if we could have ..."
-        ]
-      },
-      {
-        "target": "Ans .",
-        "description": "Spaced period (space before period)",
-        "chapter": "Chapter 9 - Honor Due to the Person of Christ",
-        "contexts": [
-          "... ed in the duty of invocation or prayer unto him? Ans . 1. There is no precedent nor example of any such ..."
         ]
       },
       {
@@ -145,56 +137,17 @@
         ]
       }
     ],
-    "OCR & Bracket Residues": [
-      {
-        "target": "h in",
-        "description": "Split word anomaly (isolated letter 'h')",
-        "chapter": "General Preface.",
-        "contexts": [
-          "... itical authors of Great Britain; and there is truth in the assertion, that the philosopher \"ploughed wit ...",
-          "... with peculiar closeness of application; stripping h in of his false dependencies, and exhibiting before ...",
-          "... of Dr Wright, a minister of the Established Church in Stirling. In the list of subscribers to a folio v ..."
-        ]
-      },
-      {
-        "target": "d imaginem",
-        "description": "Split word anomaly (isolated letter 'd')",
-        "chapter": "Preface",
-        "contexts": [
-          "... E]] \"Imago, [id est, Verbum Dei, ] ad eum qui est d imaginem, [hoc est, hominem, ] venit, et quaerit imago eum ..."
-        ]
-      },
-      {
-        "target": "fulfil1ing",
-        "description": "Spliced alphanumeric word (contains inline numbers)",
-        "chapter": "Chapter 8 - Representations of the Glory of Christ Under the Old Testament.",
-        "contexts": [
-          "... erity of the curse wherewith it was attended; his fulfil1ing of it was life, by the pardon and righteousness w ..."
-        ]
-      },
-      {
-        "target": "sou1s",
-        "description": "Spliced alphanumeric word (contains inline numbers)",
-        "chapter": "Chapter 12 - Differences Between Our Beholding the Glory of Christ by Faith in This World and by Sight in Heaven",
-        "contexts": [
-          "... sight. Those are the two spiritual powers of our sou1s; \u2014 by the one whereof we are made partakers of gr ..."
-        ]
-      }
-    ],
+    "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],
     "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [
       {
-        "target": "3. ... 40.",
-        "description": "List sequence jump (skipped from 3 to 40)",
+        "target": "13.",
+        "description": "List sequence starts at 13 instead of 1",
         "chapter": "Preface",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 5 - the Person of Christ the Great Representative of God",
-        "contexts": []
+        "contexts": [
+          "... icabo te, non me super te:\" De Verbis Dom., Serm. 13. \u2014 \"Upon this rock which thou hast confessed \u2014 upo ..."
+        ]
       },
       {
         "target": "4. ... 7.",
@@ -203,10 +156,28 @@
         "contexts": []
       },
       {
-        "target": "1. ... 26.",
-        "description": "List sequence jump (skipped from 1 to 26)",
-        "chapter": "Chapter 9 - the Glory of Christ in His Intimate Conjunction With the Church",
-        "contexts": []
+        "target": "III.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Chapter 15 - Conformity Unto Christ",
+        "contexts": [
+          "... ONFORMITY UNTO CHRIST, AND FOLLOWING HIS EXAMPLE III. The third thing proposed to declare the use of th ..."
+        ]
+      },
+      {
+        "target": "III.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Preface (Meditations and Discourses on the Glory of Christ)",
+        "contexts": [
+          "... e is the head, we are participant in this glory. III. It is he in whom our nature has been carried succ ..."
+        ]
+      },
+      {
+        "target": "10.",
+        "description": "List sequence starts at 10 instead of 1",
+        "chapter": "The Lesser Catechism",
+        "contexts": [
+          "... son, to be a mediator between God and man. \u2014 Chap 10. Q. What is he unto us? A. A King, a Priest, and ..."
+        ]
       },
       {
         "target": "1. ... 3.",
@@ -214,6 +185,221 @@
         "chapter": "The Lesser Catechism",
         "contexts": []
       }
-    ]
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 3 - the Person of Christ the Most Ineffable Effect of Divine Wisdom",
+        "contexts": [
+          "... hat wherein he will be admired unto eternity. See Philippians 17:6 2:6-9. In Isaiah (chap. 6) there is a represen ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 4 - to Person of Christ the Foundation of All",
+        "contexts": [
+          "... one of us,\" as the apostle declares it at large, Philippians 17:6 2:6-8. It is the nature of sincere goodness \u2014 e ..."
+        ]
+      },
+      {
+        "target": "Philippians 29",
+        "description": "Invalid Bible reference (chapter 29 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 7 - Power and Efficacy Communicated Unto the Office of Christ",
+        "contexts": [
+          "... the sea, with all things in them and under them, (Philippians 29:10 2:10,) with the dead bodies of men, which he s ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 9 - Honor Due to the Person of Christ",
+        "contexts": [
+          "... nd \"thought it not robbery to be equal with God,\" Philippians 17:6 2:6, 7. He can no more really and essentially, ..."
+        ]
+      },
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 9 - Honor Due to the Person of Christ",
+        "contexts": [
+          "... which the apostle unto this purpose insists upon, Philippians 14:5 2:5-8. Now the great design of all believers is ..."
+        ]
+      },
+      {
+        "target": "Jude 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 1 for Jude)",
+        "chapter": "Chapter 10 - the Principle of the Assignation of Divine Honor Unto the Person of Christ",
+        "contexts": [
+          "... to accompany the accomplishment of this promise, Jude 14; and Noah was a preacher of the righteousness to ..."
+        ]
+      },
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 14 - Motives Unto the Love of Christ",
+        "contexts": [
+          "... all other things to engage our love unto him. See Philippians 14:5 2:5-11, with chap. 3:8-11. Motives unto the lo ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 15 - Conformity Unto Christ",
+        "contexts": [
+          "... the same mind be in us that was in Christ Jesus,\" Philippians 17:6 2:6; and that we \"walk in love, as he also love ..."
+        ]
+      },
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 15 - Conformity Unto Christ",
+        "contexts": [
+          "... m, as they are all of them summarily represented, Philippians 14:5 2:5-8, by reason of the glory of his person and ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 18 - the Nature of the Person of Christ",
+        "contexts": [
+          "... angels, but he took on him the seed of Abraham;\" Philippians 17:6 2:6, 7, [[BLOCKQUOTE]] \"Being in the form of ...",
+          "... him the form of a servant, and became obedient,\" Philippians 17:6 2:6-8. That by his being \"in the form of God,\" ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 20 - the Exercise of the Mediatory Office of Christ in Heaven",
+        "contexts": [
+          "... to undergo things difficult, hard, and terrible, Philippians 17:6 2:6-8. Such were the things which our Lord Jesu ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 3 - the Glory of Christ in the Mysterious Constitution of His Person.",
+        "contexts": [
+          "... 10; Isaiah 6:1-4, 9:6; Zechariah 3:8; John 1:1-3; Philippians 17:6 2:6-8; Hebrews 1:1-3, 2:14-16; Revelation 1:17, ..."
+        ]
+      },
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 4 - the Glory of Christ in His Susception of the Office of a Mediator",
+        "contexts": [
+          "... nd discharge of it. So the apostle expresseth it, Philippians 14:5 2:5-8, [[BLOCKQUOTE]] \"Let this mind be in you ...",
+          "... he Son of God, as it is described by the apostle, Philippians 14:5 2:5-8. And this is that wherein in an especial ...",
+          "... in it is to be resolved; as the apostle declares, Philippians 14:5 2:5-8. And no man does deny himself in a due ma ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 4 - the Glory of Christ in His Susception of the Office of a Mediator",
+        "contexts": [
+          "... and thought it not robbery to be equal with God,\" Philippians 17:6 2:6; \u2014 that is, being really and essentially G ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 4 - the Glory of Christ in His Susception of the Office of a Mediator",
+        "contexts": [
+          "... of a servant, and was found in fashion as a man, Philippians 20:7 2:7. This is his condescension. It is not said ...",
+          "... bled himself, and made himself of no reputation,\" Philippians 20:7 2:7, 8. He veiled the glory of his divine natur ..."
+        ]
+      },
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 7 - the Glory of Christ in His Exaltation After the Accomplishment of the Work",
+        "contexts": [
+          "... e is frequently expressed elsewhere, Romans 14:9; Philippians 14:5 2:5-9. So much as we know of Christ, his suffer ..."
+        ]
+      },
+      {
+        "target": "2 Kings 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "chapter": "Chapter 9 - the Glory of Christ in His Intimate Conjunction With the Church",
+        "contexts": [
+          "... pecially those committed in the days of Manasseh, 2 Kings 23:26, 27; as afterward, in the final destruction of ..."
+        ]
+      },
+      {
+        "target": "Jude 6",
+        "description": "Invalid Bible reference (chapter 6 exceeds max 1 for Jude)",
+        "chapter": "Chapter 4 - of the Works of God; And, First, of Those That Are Internal and Immanent.",
+        "contexts": [
+          "... whom other things were ordained. 1 Timothy 5:21; Jude 6. Q. 4. What are the decrees of God concerning me ..."
+        ]
+      },
+      {
+        "target": "Philippians 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 9 - of the Incarnation of Christ.",
+        "contexts": [
+          "... of the cross. Isaiah 50:6; John 1:14; Luke 1:35; Philippians 23:8 2:8; 1 Timothy 3:16."
+        ]
+      },
+      {
+        "target": "Philippians 29",
+        "description": "Invalid Bible reference (chapter 29 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 10 - of the Person of Jesus Christ.",
+        "contexts": [
+          "... in John 1:23; Isaiah 45:22, 23, in Romans 14:11, Philippians 29:10 2:10, 11; Malachi 3:1, in Matthew 11:10. Seco ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 10 - of the Person of Jesus Christ.",
+        "contexts": [
+          "... pressly, John 1:1, 20:28; Acts 20:28; Romans 9:5; Philippians 17:6 2:6; Hebrews 1:8; 1 Timothy 3:16; secondly, of ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 11 - of the Offices of Christ; And, First, of His Kingly.",
+        "contexts": [
+          "... Acts 2:36, 10:42; 1 Corinthians 11:3, 15:27, 28; Philippians 26:9 2:9; Hebrews 3:2, 6, 2:7-9. Q. 3. Wherein does ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 12 - of Christ's Priestly Office.",
+        "contexts": [
+          "... ebrews 10:5-10. Psalm 2:7, 8; Isaiah 53:8, 10-12; Philippians 20:7 2:7, 9; Hebrews 12:2; John 17:2, 4. Q. 2. Wher ..."
+        ]
+      },
+      {
+        "target": "Philippians 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 14 - of the Two-fold Estate of Christ.",
+        "contexts": [
+          "... or abasement; secondly, of exaltation or glory. Philippians 23:8 2:8-10. Q. 2. Wherein consisteth the state of ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 14 - of the Two-fold Estate of Christ.",
+        "contexts": [
+          "... r. Matthew 28:18; Romans 1:4, 6:4; Ephesians 4:9; Philippians 26:9 2:9, 10; 1 Timothy 3:16."
+        ]
+      },
+      {
+        "target": "Philippians 5",
+        "description": "Invalid Bible reference (chapter 5 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 25 - of the Communion of Saints,",
+        "contexts": [
+          "... 12:5; 1 Corinthians 12:27,28; Ephesians 4:11-13; Philippians 5:2 2:2; Colossians 3:15; 1 Peter 3:8."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
   }
 }

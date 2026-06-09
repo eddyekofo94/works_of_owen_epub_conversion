@@ -2,9 +2,9 @@
   "volume": 12,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T07:41:25.652944+00:00",
+  "generated_at": "2026-06-09T10:50:49.485692+00:00",
   "status": "warn",
-  "warning_count": 12,
+  "warning_count": 13,
   "warnings": [
     {
       "code": "dense_source_window_loss",
@@ -43,6 +43,10 @@
       "message": "Repeated word windows may indicate ghost-layer duplication"
     },
     {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
       "code": "low_latin_tagging",
       "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
     },
@@ -63,7 +67,7 @@
     "paragraph_count": 3619
   },
   "word_coverage": {
-    "pdf_content_tokens": 270737,
+    "pdf_content_tokens": 270734,
     "epub_content_tokens": 272543,
     "coverage_ratio": 0.9991,
     "missing_word_samples": [
@@ -122,7 +126,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32888,
+    "dense_windows_checked": 32925,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -234,6 +238,10 @@
         "sample": "large account in epiphanius tom lib haer as also in theodoret lib ecclesiastes hist"
       },
       {
+        "page": 145,
+        "sample": "σωματι σημηναι αδυνατον και το τελειον τω ατελει καταλαβεσθαι ου δυνατον και το αιδιον"
+      },
+      {
         "page": 146,
         "sample": "testimonies that to this purpose might be produced out of plato aristotle cicerco epictetus"
       },
@@ -280,10 +288,6 @@
       {
         "page": 209,
         "sample": "and james testify only that he was made in the image of god at"
-      },
-      {
-        "page": 220,
-        "sample": "examination the aim and design of our catechist in this chapter being to despoil"
       }
     ]
   },
@@ -1275,11 +1279,11 @@
     }
   ],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 2593,
+    "pdf_greek_word_count": 2590,
     "epub_greek_word_count": 2593,
-    "pdf_greek_unique_words": 1209,
+    "pdf_greek_unique_words": 1207,
     "epub_greek_unique_words": 1209,
-    "greek_word_coverage_ratio": 0.9992,
+    "greek_word_coverage_ratio": 0.998,
     "pdf_hebrew_word_count": 222,
     "epub_hebrew_word_count": 221,
     "pdf_hebrew_unique_words": 157,
@@ -1290,8 +1294,14 @@
   },
   "greek_hebrew_clause_fidelity": {
     "greek_clauses_checked": 133,
-    "missing_greek_clause_count": 0,
-    "missing_greek_clauses": [],
+    "missing_greek_clause_count": 1,
+    "missing_greek_clauses": [
+      {
+        "page": 793,
+        "word_count": 16,
+        "sample": "μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι"
+      }
+    ],
     "hebrew_clauses_checked": 7,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []

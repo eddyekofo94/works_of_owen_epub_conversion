@@ -862,10 +862,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T05:41:32.573888+00:00
+**Last run:** 2026-06-09T10:45:11.538897+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -1040,10 +1041,11 @@ Validation:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T05:42:15.729478+00:00
+**Last run:** 2026-06-09T10:45:53.319513+00:00
 **Status:** WARN (1 warnings)
 
 Reports:
@@ -1057,7 +1059,7 @@ Reports:
 | EPUB paragraphs/headings | 2503 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 35212 |
+| Dense source windows checked | 35182 |
 | Missing dense source-window pages | 20 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
@@ -1083,8 +1085,8 @@ Reports:
 | EPUB enumerator markers | 638 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 4 |
-| PDF Greek words / EPUB Greek words | 792 / 816 |
-| Greek word coverage ratio | 1.0 |
+| PDF Greek words / EPUB Greek words | 791 / 816 |
+| Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 235 / 235 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |

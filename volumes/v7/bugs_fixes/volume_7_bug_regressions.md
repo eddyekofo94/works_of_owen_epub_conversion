@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 126 | 61 | REGRESSION |
-| Inline structural marker candidates | 3 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 9 | 61 | OK |
+| Inline structural marker candidates | 5 | 1 | REGRESSION |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 2 | 0 | REGRESSION |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -19,12 +19,12 @@
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 1 | 0 | OK |
+| Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
-| Flat ANALYSIS chapters | 1 | 0 | REGRESSION |
+| Flat ANALYSIS chapters | 0 | 0 | OK |
 | Missing configured fonts | 0 | 0 | OK |
 | EPUB packaging errors | 0 | 0 | OK |
 | Untagged Greek characters | 0 | 55 | OK |
@@ -56,44 +56,50 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 0 | 0 | OK |
+| Lowercase page fragments | 4 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
 | I WILL/I AM mangles | 0 | 0 | OK |
 
-## New Warning Codes
-
-- Text integrity: flat_analysis_chapters
-
 ## Triage Samples
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch001.xhtml; previous: EDITED BY; next: WILLIAM H. GOOLD
-- file: EPUB/ch001.xhtml; previous: WILLIAM H. GOOLD; next: NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL.
-- file: EPUB/ch003.xhtml; previous: rked the reign of Charles II has often been the subject of speculation and inquiry. Mr Macaulay thus confirms our author's estimate of the rapid decline of morality at this time: —; next: The historian, dealing with the surface of affairs rather than with the springs of conduct, may account the vulgar theory of a reaction against enforced strictness sufficient to ex
-- file: EPUB/ch005.xhtml; previous: each shall be, if they endeavor not to prevent it with their utmost diligence, and the open hazard of all their earthly concerns. A learned writer of the church of England affirms,; next: And after he had declared that "ministers of the gospel may deny Christ, or manifest their being ashamed of the gospel, by not opposing his word at they ought unto the sins of men,
-- file: EPUB/ch007.xhtml; previous: Certainly the Lord Christ may say to the churches and nations among whom his name is yet owned in the world, what God said of old concerning that of the Jews, then his only church,; next: Yea, to most of them as in another place,
+- file: EPUB/ch004.xhtml; previous: 3. To those who pretend to perfection in this life. The causes of this kind of apostasy are mentioned,; next: VIII.
+- file: EPUB/ch004.xhtml; previous: Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,; next: XI.
+- file: EPUB/ch005.xhtml; previous: To The Reader; next: SOME brief account of the occasion and design of the ensuing discourse I judge due unto the reader, that, upon a prospect of them, he may either proceed in its perusal or desist, a
+- file: EPUB/ch015.xhtml; previous: observe, that upon the destruction of Babylon, it is said that "in her was found the blood of prophets, and of saints, and of all that were slain upon the earth," Revelation 18:24,; next: — that is, for the gospel and the profession thereof. Whoever, therefore, offereth violence unto the life of any on the account of their profession of the gospel and religion of Ch
+- file: EPUB/ch023.xhtml; previous:  the fullness of wisdom in spiritual things; 3. their value as perfective of our present condition; and, 4. as constituting in the future enjoyment of them our eternal blessedness,; next: XIX.
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch006.xhtml; text: They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces.
 - file: EPUB/ch021.xhtml; text: An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —
 - file: EPUB/ch022.xhtml; text: An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —
+- file: EPUB/ch033.xhtml; text: It is the spiritual mind alone that can reconcile those things which are prescribed to us as our duty towards God. "To delight and rejoice in him always, to triumph in the remembrance of him, to draw nigh unto him with b
+- file: EPUB/ch050.xhtml; text: The reason of the assurance that sin shall have no more dominion over believers is, that they are "not under the law, but under grace;" because, — whereas, 1. the law gives no strength against sin, 2. confers no spiritua
+- file: EPUB/ch057.xhtml; text: I shall name some of them: — 1. Such a soul can have no solid peace, because it hath not satisfaction what state it doth belong unto. 2. It cannot receive refreshment by gospel consolations in any condition, for its just
 
 ### Repeated word windows
 
-- phrase: nature of this grace and duty of being spiritually minded
-- phrase: the true notion and consideration of spiritual and heavenly things
-- phrase: dominion of sin which we are freed from and discharged
-- phrase: of sin which we are freed from and discharged of
-- phrase: sin which we are freed from and discharged of by
+- phrase: the good word of god and the powers of the
+- phrase: good word of god and the powers of the world
+- phrase: word of god and the powers of the world to
+- phrase: of god and the powers of the world to come
+- phrase: the knowledge of his glory in the face of jesus
 
-### Flat ANALYSIS chapters
+### Missing front CONTENTS pages
 
-- file: EPUB/ch022.xhtml
+- page: 3; sample: contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews
+- page: 7; sample: law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the
 
 ### Repeated phrase hits
 
 - file: combined_text; text: the grace and duty of being spiritually minded
+
+### Lowercase page fragments
+
+- file: EPUB/ch018.xhtml; text: may be applied unto the men of this persuasion: either they alone know the state
+- file: EPUB/ch027.xhtml; text: and this he doth as the "liberal deviseth liberal things," verse 8. From his own
+- file: EPUB/ch030.xhtml; text: and chapter 4:15,16, "We have not an high priest that cannot be touched with the
+- file: EPUB/ch035.xhtml; text: for hereby our minds, that were created in a state of blessed adherence unto God,

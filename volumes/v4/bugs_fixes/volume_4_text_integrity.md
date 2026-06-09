@@ -1,54 +1,54 @@
 # Text Integrity Audit: Volume 4
 
 - Status: **WARN**
-- Warnings: 10
+- Warnings: 12
 - PDF pages: 650
-- EPUB text files: 69
-- EPUB paragraphs/headings: 2168
+- EPUB text files: 70
+- EPUB paragraphs/headings: 2109
 
 ## Coverage
 
-- PDF content tokens: 221655
-- EPUB content tokens: 222385
-- Approximate PDF-to-EPUB coverage ratio: 0.9967
+- PDF content tokens: 219414
+- EPUB content tokens: 220016
+- Approximate PDF-to-EPUB coverage ratio: 0.9985
 - Pages checked: 641
-- Weak page matches: 12
-- Dense source windows checked: 742
-- Missing dense source-window pages: 625
+- Weak page matches: 6
+- Dense source windows checked: 28298
+- Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 4
-- Missing front CONTENTS pages: 0
+- Missing front CONTENTS pages: 4
 - Top-of-page body windows checked: 622
 - Top-of-page windows skipped as unstable: 28
-- Missing top-of-page body windows: 2
+- Missing top-of-page body windows: 1
 - Bottom-of-page body windows checked: 605
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 8
+- Missing bottom-of-page body windows: 10
 
 ## Paragraphs
 
-- Body paragraphs checked: 1813
-- Possible faulty paragraph splits: 75
-- Structural starts excluded from split warnings: 313
-- Short fragments: 13
+- Body paragraphs checked: 1765
+- Possible faulty paragraph splits: 9
+- Structural starts excluded from split warnings: 295
+- Short fragments: 20
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 2
+- Inline structural marker candidates: 6
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
-- Roman heading candidates: 3
-- Overlong heading candidates: 8
+- Roman heading candidates: 0
+- Overlong heading candidates: 1
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 416
-- EPUB enumerator markers: 416
+- EPUB enumerator markers: 429
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 1
 
 ## Greek / Hebrew
 
 - PDF Greek words: 713
-- EPUB Greek words: 713
-- Greek word coverage ratio: 0.9971
+- EPUB Greek words: 712
+- Greek word coverage ratio: 0.9899
 - PDF Hebrew words: 99
 - EPUB Hebrew words: 99
 - Hebrew word coverage ratio: 1.0
@@ -57,42 +57,65 @@
 - Hebrew clauses checked: 7
 - Missing Hebrew clauses: 0
 
+## Latin
+
+- PDF Latin words: 3199
+- EPUB Latin words: 3226
+- EPUB Tagged Latin words: 102
+- Latin word coverage ratio: 0.9978
+- Latin word tagging ratio: 0.0316
+- Latin clauses checked: 114
+- Missing Latin clauses: 0
+- Tagged Latin runs checked: 9
+- Translated Latin runs: 7
+- Latin translation ratio: 0.7778
+
 ## Warnings
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
-- page: 4; sample: objections answered corinthians 13-18 isaiah 27 explained luke 24 44 45 opened ephesians 17-19
+- page: 3; sample: contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason
+- page: 4; sample: question stated the principal sufficient cause of the understanding which believers have in the
+- page: 5; sample: book vii discourse of the work of the holy spirit in prayer prefatory note
+- page: 6; sample: given as comforter or the object of his acting in this office inhabitation of
 - page: 8; sample: be the word of god with the causes and nature of that faith wherewith
-- page: 10; sample: 10 fanatical excesses which they sought to rebuke they stated the question in such
-- page: 11; sample: 11 itself substantiates such claim in his behalf it is the first recognition of
-- page: 12; sample: 12 preface having added brief account of the design order and method of the
-- page: 13; sample: 13 the consciences of men immediately and the way whereby they may come to
-- page: 15; sample: 15 the reason of faith or the grounds whereon the scripture is believed to
-- page: 16; sample: 16 first supernatural revelation is the only objective cause and means of supernatural illumination
-- page: 17; sample: 17 that it did sufficiently evidence itself to be from god unto the minds
-- page: 18; sample: 18 of his will πολυμερως by sundry parts and degrees yet so that every
+- page: 17; sample: and power this they do undeniably and infallibly psalm romans 19-21 yet it is
+- page: 19; sample: own counsels as it is expressed psalm and although this fell not out without
+- page: 20; sample: of curse unto the contrary malachi 4-6 so the writings of the new testament
+- page: 21; sample: is the only repository of all divine supernatural revelation psalm isaiah timothy the pretenses
+- page: 22; sample: in the ministry of the word see matthew corinthians 18-20 ephesians 11-15 timothy the
+
+## Missing Front CONTENTS Pages
+
+- page: 3; hit_ratio: 0.25; sample: contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what
+- page: 4; hit_ratio: 0.5; sample: question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god
+- page: 5; hit_ratio: 0.25; sample: book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work
+- page: 6; hit_ratio: 0.5; sample: unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised
 
 ## Missing Top-Of-Page Body Windows
 
 - page: 35; sample: wisdom before all the world, Deuteronomy 4:6-8. Now, we shall not need to consider what were the first attempts of other nations in
-- page: 164; sample: V. That hereby alone is that full assurance of understanding in the knowledge of the mystery of God, his truth and grace, to be obtained,
 
 ## Missing Bottom-Of-Page Body Windows
 
 - page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
 - page: 44; sample: testimony may rationally be supposed to be so far influenced by self- interest as to be of little validity.
 - page: 93; sample: let it be observed, that what we assert respects the revelation itself, the Scripture, the writing, th<n grafh>n, and not merely the things written or
+- page: 150; sample: out of thy law. — Psalm 119:18. Give me understanding, and I shall live. — <19B9144>Psalm 119:144.
+- page: 219; sample: understanding, and I shall keep thy law," Psalm 119:34. So the apostle speaks to Timothy,
 - page: 365; sample: its proper place, as a consequent and fruit of his death and resurrection, verse 35. And there he is said simply ejntugca>nein? but the Spirit here is
 - page: 413; sample: aJrpasqei<v h{ ejnqousia>sav hJsuch~ ejn ejrh>mw| katasta>sei gege>nhtai ajtremei~, th~| aujtou~ oujsi>a| oujdamou~ ajpokli>nwn, oujde<
 - page: 513; sample: expressed in every place where there is mention made of it: 2 Corinthians 1:22, Dou<v to<n ajrjrJazw~na tou~ Pneu>matov? — "The earnest
@@ -101,51 +124,41 @@
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch001.xhtml; previous: EDITED BY; next: WILLIAM H. GOOLD
-- file: EPUB/ch001.xhtml; previous: WILLIAM H. GOOLD; next: ΠΗΕΥΜΑΤΟΛΟΓΙΑ ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR
-- file: EPUB/ch001.xhtml; previous: 4. - Extraordinary spiritual gifts, [1 Corinthians 12:5] -; next: 11.
-- file: EPUB/ch007.xhtml; previous: we do believe; and the reason why we do believe them is, because they are proposed in the Scripture. Thus the apostle expresseth the whole of what we intend: 1 Corinthians 15:3, 4,; next: Christ's death, and burial, and resurrection, are the things proposed unto us to be believed, and so the object of our faith; but the reason why we believe them is, because they ar
-- file: EPUB/ch008.xhtml; previous: o deservedly, for where it is absolute it is unquestionable; that which is most ancient in any kind is most true. God himself makes use of this plea against idols: Isaiah 43:10-12,; next: That which he asserts is, that he alone is God, and no other: this he calls the people to testify by this argument, that he was among them as God, — that is, in the church, — befor
-- file: EPUB/ch008.xhtml; previous: rship of idols, but a sedate, unprejudiced consideration of the revelation of these things in the books of the Scripture. We may say, therefore, to all the world, with our prophet,; next: And this, also, plainly manifests the Scripture to be of a divine original: for if this declaration of God, this revelation of himself and his will, is incomparably the greatest an
-- file: EPUB/ch008.xhtml; previous: of them, severally and jointly, witnessed that what they wrote was received by inspiration from God. This is pleaded by the apostle Peter in the name of them all: 2 Peter 1:16-21,; next: This is the concurrent testimony of the writers both of the Old Testament and the New, — namely, that as they had certain knowledge of the things they wrote, so their writing was b
-- file: EPUB/ch009.xhtml; previous: the word of God, in the way and manner which God requireth, without a supernatural work of the Holy Spirit upon our minds in the illumination of them. So David prays that God would; next: The communication of this light unto us the Scripture calleth revealing and revelation: Matthew 11:25, "Thou hast hid these things from the wise and prudent, and hast revealed them
-- file: EPUB/ch009.xhtml; previous: e kingdom of heaven, when they were preached unto them. And "no man knoweth the Father, but he to whom the Son will reveal him," verse 27. So the apostle prayeth for the Ephesians,; next: It is true, these Ephesians were already believers, or considered by the apostle as such; but if he judged it necessary to pray for them that they might have "the Spirit of wisdom
-- file: EPUB/ch009.xhtml; previous: and revelation to enlighten the eyes of their understanding," with respect unto farther degrees of faith and knowledge, or, as he speaks in another place, that they might come unto; next: But as a pretense hereof hath been abused, as we shall see afterward, so the pleading of it is liable to be mistaken; for some are ready to apprehend that this retreat unto a Spiri
+- file: EPUB/ch029.xhtml; previous: Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,; next: IV.
+- file: EPUB/ch029.xhtml; previous: on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,; next: V.
+- file: EPUB/ch029.xhtml; previous: planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,; next: VI.
+- file: EPUB/ch029.xhtml; previous: The manner of prayer is farther considered with special reference to [Ephesians 6:18]; next: VII.
+- file: EPUB/ch044.xhtml; previous: In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,; next: III.
+- file: EPUB/ch045.xhtml; previous: (1.) Extraordinary gifts constituted extraordinary officers — apostles, evangelists, and prophets,; next: III.
+- file: EPUB/ch045.xhtml; previous: ction, from its original acquisition, from the immediate cause of its actual communication, from its own nature, from the variety of offices in it, and from the end designed by it,; next: VI.
+- file: EPUB/ch045.xhtml; previous: the Spirit is promised, administered, and continued; the plain assertions of Scripture; the indispensable necessity for them; and from the actual enjoyment and experience of them,; next: VII.
+- file: EPUB/ch057.xhtml; previous: e, another a hand, another a foot, in the body, by virtue of peculiar gifts: for "unto every one of us is given grace according to the measure of the gift of Christ," Ephesians 4:7; next: These gifts are not saving, sanctifying graces; those were not so in themselves which made the most glorious and astonishing appearance in the world, and which were most eminently
 
 ## Inline Structural Marker Candidates
 
+- file: EPUB/ch016.xhtml; text: 2. Into the especial nature of the Spirit's work in enlightening us into a knowledge of the mind of God in Scripture. Its nature is first considered by a reference to several scriptural expressions descriptive of it, such as "opening the...
+- file: EPUB/ch024.xhtml; text: Nor do I believe that any one who doth and can thus pray as he ought, in a conscientious study of the word, shall ever be left unto the final prevalency of any pernicious error or the ignorance of any fundamental truth. None utterly misc...
+- file: EPUB/ch037.xhtml; text: I say, therefore, — 1. That the things insisted on are in some degree and measure necessary unto all acceptable prayer. The Scripture assigns them thereunto, and believers find them so by their own experience. For we discourse not about ...
 - file: EPUB/ch044.xhtml; text: Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference to [2 Corinthian...
 - file: EPUB/ch052.xhtml; text: What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the church.
-
-## Roman Heading Candidates
-
-- file: EPUB/ch016.xhtml; text: I. The Holy, Spirit is represented as the EFFICIENT CAUSE, and an inquiry follows: —
-- file: EPUB/ch029.xhtml; text: I. The evidence of its reality consists in a minute explanation of two passages in Scripture, Zechariah 12:10, and Galatians 4:6, 2, 3.
-- file: EPUB/ch029.xhtml; text: II. Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,
+- file: EPUB/ch062.xhtml; text: Designing to treat of the spiritual gifts bestowed on the ministry of the church, I have thus far diverted unto the consideration of the ministry itself as it is a gift of Christ, and shall shut it up with a few corollaries, As, 1. Where...
 
 ## Overlong Heading Candidates
 
-- file: EPUB/ch013.xhtml; tag: h4; text: II. This being the substance of what is declared and pleaded for in the preceding treatise, to prevent the obloquy of some and confirm the judgment of others, I shall add the suffrage of ancient and modern writers given unto the principa...
-- file: EPUB/ch018.xhtml; tag: h4; text: IV. That there is an especial work of the Holy Spirit, in the supernatural illumination of our minds, needful unto the end proposed, — namely, that we may aright, and according unto our duty, understand the mind of God in the Scripture o...
-- file: EPUB/ch018.xhtml; tag: h4; text: V. That hereby alone is that full _assurance of understanding in the_ _knowledge of the mystery of God,_ his truth and grace, to be obtained, whereby any man may answer the mind and will of God, or comply with his own duty in all that he...
-- file: EPUB/ch018.xhtml; tag: h4; text: VI. The certainty and assurance that we may have and ought to have of our right understanding the mind of God in the Scripture, either in general or as to any especial doctrine, doth not depend upon, is not resolved into, any immediate i...
-- file: EPUB/ch018.xhtml; tag: h4; text: VII. That whereas the means of the right interpretation of the Scripture, and understanding of the mind of God therein, are of two sorts, — first, such as are prescribed unto us in a way of duty, as _prayer, meditation_ on the word itsel...
-- file: EPUB/ch043.xhtml; tag: h4; text: XI. The discourse on Spiritual Gifts, though comparatively short, is the second part of the main.body of the whole work on the Spirit; and, from various allusions to it in other works of the author, he seems to trove attached considerabl...
 - file: EPUB/ch047.xhtml; tag: h3; text: The Holy Ghost the comforter of the church by way of office — How he is the church's advocate — John 14:16; 1 John 2:1, 2; John 16:8-11 opened.
-- file: EPUB/ch064.xhtml; tag: h4; text: I. In our inquiry after the first, or what are the gifts whereby men are fitted and enabled for the ministry, we wholly set aside the consideration of all those gracious qualifications of faith, love, zeal, compassion, careful tender wat...
 
 ## Short Fragments
 
-- file: EPUB/ch001.xhtml; text: EDITED BY
-- file: EPUB/ch001.xhtml; text: WILLIAM H. GOOLD
-- file: EPUB/ch001.xhtml; text: Appendix.
-- file: EPUB/ch001.xhtml; text: 11.
 - file: EPUB/ch005.xhtml; text: May 11, 1677.
-- file: EPUB/ch010.xhtml; text: Isaiah 8:19,20,
+- file: EPUB/ch010.xhtml; text: Isaiah 8:19, 20,
+- file: EPUB/ch016.xhtml; text: I.
+- file: EPUB/ch029.xhtml; text: I.
+- file: EPUB/ch029.xhtml; text: II.
+- file: EPUB/ch029.xhtml; text: IV.
+- file: EPUB/ch029.xhtml; text: V.
+- file: EPUB/ch029.xhtml; text: VI.
+- file: EPUB/ch029.xhtml; text: VII.
 - file: EPUB/ch035.xhtml; text: I answer, —
-- file: EPUB/ch037.xhtml; text: I say, therefore, —
-- file: EPUB/ch043.xhtml; text: See vol. 15 p. 249.
-- file: EPUB/ch044.xhtml; text: I.
 
 ## Enumerator Sequence Candidates
 
@@ -154,27 +167,50 @@
 ## Repeated Windows
 
 - phrase: we believe the scripture to be the word of god; count: 21
-- phrase: to believe the scripture to be the word of god; count: 17
-- phrase: the mind and will of god as revealed in the; count: 11
+- phrase: to believe the scripture to be the word of god; count: 16
 - phrase: believe the scripture to be the word of god with; count: 9
+- phrase: the mind and will of god as revealed in the; count: 9
 - phrase: to be the word of god with faith divine and; count: 7
 - phrase: mind and will of god as revealed in the scripture; count: 7
-- phrase: of the holy spirit in the illumination of our minds; count: 6
-- phrase: the right understanding of the mind of god in the; count: 6
 - phrase: be the word of god with faith divine and supernatural; count: 6
 - phrase: believe the scripture to be the word of god in; count: 6
+- phrase: of the mind and will of god as revealed in; count: 6
+- phrase: of the holy spirit in the illumination of our minds; count: 5
 
 ## Missing Word Samples
 
-- word: self; pdf: 7; epub: 3
+- word: self; pdf: 7; epub: 2
 - word: 14-17; pdf: 4; epub: 0
+- word: editor; pdf: 4; epub: 1
 - word: 16-18; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
+- word: chapter; pdf: 48; epub: 92
 - word: psalms; pdf: 7; epub: 30
-- word: ohn; pdf: 0; epub: 7
-- word: digital; pdf: 0; epub: 6
+- word: digital; pdf: 0; epub: 10
+- word: modern; pdf: 4; epub: 13
+- word: greek; pdf: 8; epub: 16
+- word: edition; pdf: 3; epub: 9
+- word: footnotes; pdf: 0; epub: 6
+
+## Untagged Latin Word Samples
+
+- word: nor; epub: 488; tagged: 0
+- word: jesus; epub: 175; tagged: 0
+- word: thereunto; epub: 160; tagged: 0
+- word: whereas; epub: 139; tagged: 0
+- word: immediate; epub: 137; tagged: 0
+- word: yea; epub: 114; tagged: 0
+- word: hereunto; epub: 76; tagged: 0
+- word: distinct; epub: 52; tagged: 0
+- word: elsewhere; epub: 51; tagged: 0
+- word: whereunto; epub: 47; tagged: 0
+
+## Untranslated Latin Samples
+
+- phrase: continuing in the Son, and in the Father.
+- phrase: witnesses in Jerusalem, and in all Judea, and in Samaria, and unto the uttermost part of the earth;
 
 ## Limits
 

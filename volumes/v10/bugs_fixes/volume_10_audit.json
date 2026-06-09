@@ -1,6 +1,6 @@
 {
-  "epub": "volumes/v10/output/volume_10.epub",
-  "generated_at": "2026-05-30T08:38:14.724948+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
+  "generated_at": "2026-06-09T10:48:53.825132+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 133,
-    "epub_size_bytes": 5845678,
+    "file_count": 136,
+    "epub_size_bytes": 6785319,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,15 +23,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 124,
-    "spine_count": 104,
-    "xhtml_count": 106,
+    "manifest_count": 127,
+    "spine_count": 106,
+    "xhtml_count": 107,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 15,
     "language": {
-      "greek_chars": 4525,
+      "greek_chars": 4477,
       "greek_untagged_chars": 0,
       "hebrew_chars": 113,
       "hebrew_untagged_chars": 0,
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 468,
-      "unique_noteref_targets": 449,
-      "endnote_anchor_count": 449,
+      "noteref_count": 566,
+      "unique_noteref_targets": 566,
+      "endnote_anchor_count": 566,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 18,
+      "lowercase_paragraph_start_files": 17,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -188,7 +188,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 107,
+    "nav_link_count": 108,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

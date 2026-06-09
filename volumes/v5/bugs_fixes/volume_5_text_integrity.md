@@ -1,19 +1,19 @@
 # Text Integrity Audit: Volume 5
 
 - Status: **WARN**
-- Warnings: 12
+- Warnings: 13
 - PDF pages: 576
 - EPUB text files: 39
-- EPUB paragraphs/headings: 2136
+- EPUB paragraphs/headings: 2135
 
 ## Coverage
 
-- PDF content tokens: 197338
+- PDF content tokens: 197342
 - EPUB content tokens: 194158
-- Approximate PDF-to-EPUB coverage ratio: 0.9807
+- Approximate PDF-to-EPUB coverage ratio: 0.9808
 - Pages checked: 571
 - Weak page matches: 9
-- Dense source windows checked: 26256
+- Dense source windows checked: 26722
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 6
 - Missing front CONTENTS pages: 6
@@ -27,8 +27,8 @@
 ## Paragraphs
 
 - Body paragraphs checked: 1842
-- Possible faulty paragraph splits: 7
-- Structural starts excluded from split warnings: 228
+- Possible faulty paragraph splits: 3
+- Structural starts excluded from split warnings: 227
 - Short fragments: 25
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 4
@@ -48,7 +48,7 @@
 
 - PDF Greek words: 1161
 - EPUB Greek words: 1158
-- Greek word coverage ratio: 0.9973
+- Greek word coverage ratio: 0.9965
 - PDF Hebrew words: 124
 - EPUB Hebrew words: 123
 - Hebrew word coverage ratio: 0.9919
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 5329
+- PDF Latin words: 5337
 - EPUB Latin words: 5314
-- EPUB Tagged Latin words: 3768
-- Latin word coverage ratio: 0.9891
-- Latin word tagging ratio: 0.7091
-- Latin clauses checked: 344
-- Missing Latin clauses: 2
-- Tagged Latin runs checked: 728
-- Translated Latin runs: 436
-- Latin translation ratio: 0.5989
+- EPUB Tagged Latin words: 3261
+- Latin word coverage ratio: 0.9895
+- Latin word tagging ratio: 0.6137
+- Latin clauses checked: 345
+- Missing Latin clauses: 1
+- Tagged Latin runs checked: 637
+- Translated Latin runs: 409
+- Latin translation ratio: 0.6421
 
 ## Warnings
 
@@ -82,6 +82,7 @@
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
@@ -96,7 +97,7 @@
 - page: 9; sample: romans l2-21 boasting excluded in ourselves asserted in god the design and sum of
 - page: 10; sample: the exception removed righteousness before conversion not intended by the apostle chapter objections against
 - page: 11; sample: counted unto him for righteousness when he offered his son on the altar works
-- page: 13; sample: in one of the charges of bishop horsley which may be said to embody
+- page: 15; sample: charles wolsley baronet of some reputation who had been member of cromwell's council of
 
 ## Missing Front CONTENTS Pages
 
@@ -135,10 +136,6 @@
 
 - file: EPUB/ch003.xhtml; previous: To The Reader; next: I shall not need to detain the reader with an account of the nature and moment of that doctrine which is the entire subject of the ensuing discourse; for although sundry persons, e
 - file: EPUB/ch004.xhtml; previous: are justified freely by the grace of God, through the redemption that is in Christ Jesus; whom God has set forth to be a propitiation through faith in his blood," Romans 3:24, 25,; next: — they will offer violence unto common sense and reason, rather than not disturb that harmony which they cannot understand. For although it be plainly affirmed to be a redemption b
-- file: EPUB/ch012.xhtml; previous: Caput nostrum Dominus Jesus Christus omnia in se corporis sui membra transformans, quod olim in psalmo eructaverit, id in supplicio crucis sub redemptorum suorum voce clamavit ". †; next: And so speaks Augustine to the same purpose, Epist. 120, * ad Honoratum,
-- file: EPUB/ch022.xhtml; previous: peccato justitia, cum execratione benedictio, cum condemnatione remissio, cum transgressione obedientie, cum morte vita, cum inferis regnum, Christus cum Adam, homo cum homine ". †; next: The differences that are among interpreters about the exposition of these words relate unto the use of some particles, prepositions, and the dependence of one passage upon another;
-- file: EPUB/ch022.xhtml; previous: 23:6: which place he conjoins with this, as of the same sense and importance, giving up his whole cause in satisfaction unto them, in the words before described, lib. 2 cap. 10. †; next: Socinus prefaces his answer unto this testimony with an admiration that any should make use of it, or plead it in this cause, it is so impertinent unto the purpose. And, indeed, a
-- file: EPUB/ch022.xhtml; previous: anquam apostolico sensui et scopo contrariam omnino repudiandam esse. Verum constat voculam 'nisi ' frequenter in Scripturis adversative sumi, utidem valeat quod 'sed tantum ' ". †; next: So he according to his usual candor and ingenuity.
 - file: EPUB/ch027.xhtml; previous: To The Reader; next: As faith is the first vital act that every true Christian puts Forth, and the life which he lives is by the faith of the Son of God, so it is his next and great concern to know tha
 
 ## Inline Structural Marker Candidates
@@ -185,10 +182,8 @@
 
 ## Missing Word Samples
 
-- word: mr; pdf: 7; epub: 2
 - word: alterations; pdf: 3; epub: 1
 - word: apostolical; pdf: 3; epub: 1
-- word: bishop; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
@@ -208,7 +203,7 @@
 - word: thereunto; epub: 109; tagged: 5
 - word: yea; epub: 104; tagged: 1
 - word: whereas; epub: 104; tagged: 1
-- word: adam; epub: 93; tagged: 5
+- word: adam; epub: 93; tagged: 4
 - word: abraham; epub: 81; tagged: 0
 - word: hereunto; epub: 60; tagged: 0
 - word: mere; epub: 48; tagged: 0
@@ -216,7 +211,6 @@
 
 ## Missing Latin Clauses
 
-- page: 22; word_count: 13; sample: alios ex castris aulis graneis prolatam esse scrupuli ab excellenti viro propositi
 - page: 359; word_count: 59; sample: non solum illa opera legis quae sunt in veteribus sacramentis et nunc
 
 ## Untranslated Latin Samples

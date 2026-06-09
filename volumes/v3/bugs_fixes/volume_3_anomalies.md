@@ -3,7 +3,7 @@
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
 * **Total Words Audited:** 325640
-* **Total Suspected Anomalies Found:** 27
+* **Total Suspected Anomalies Found:** 39
 
 Add corrections to `text_replacements` inside `volumes/v3/convert.py` to fix these.
 
@@ -15,6 +15,8 @@ Add corrections to `text_replacements` inside `volumes/v3/convert.py` to fix the
 * **Mixed-Case Capitalization Errors:** 0 items
 * **Unresolved Citation References:** 0 items
 * **Structural Nesting Sequence Jumps:** 0 items
+* **Invalid Bible References:** 12 items
+* **List Formatting Inconsistencies:** 0 items
 
 ---
 
@@ -204,6 +206,88 @@ No anomalies found in this category.
 No anomalies found in this category.
 
 ## Structural Nesting Sequence Jumps
+
+No anomalies found in this category.
+
+## Invalid Bible References
+
+### 1. `Jude 14`
+* **Description:** Invalid Bible reference (chapter 14 exceeds max 1 for Jude)
+* **Chapter:** *Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory*
+* **Contexts:**
+  * ... ot only remembered, but called over and recorded, **Jude 14**, 15. And it is a matter neither curious nor diffi ...
+
+### 2. `Philippians 14`
+* **Description:** Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 2 - General Dispensation of the Holy Spirit*
+* **Contexts:**
+  * ... and wisdom of the Father, was appointed for him, **Philippians 14**:5 2:5-8. And in these divine operations is the pe ...
+
+### 3. `Philippians 17`
+* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 3 - Work of the Holy Spirit With Respect Unto the Head of the New Creation*
+* **Contexts:**
+  * ... he Son. See John 1:14; Romans 1:3; Galatians 4:4; **Philippians 17**:6 2:6, 7; Hebrews 2:14, 16; which places, with ma ...
+
+### 4. `Philippians 23`
+* **Description:** Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 4 - Work of the Holy Spirit in and on the Human Nature of Christ*
+* **Contexts:**
+  * ... nce into the efficacy and merit of his sacrifice: **Philippians 23**:8 2:8, "He humbled himself, and became obedient u ...
+
+### 5. `Philippians 26`
+* **Description:** Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 4 - Work of the Holy Spirit in and on the Human Nature of Christ*
+* **Contexts:**
+  * ... n therein and acceptance of it, Isaiah 53:11, 12; **Philippians 26**:9 2:9, 10. This was wrought in him, this he was w ...
+
+### 6. `Philippians 38`
+* **Description:** Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 5 - the General Work of the Holy Spirit in the New Creation*
+* **Contexts:**
+  * ... us both to will and to do of his good pleasure," **Philippians 38**:13 2:13. To grant, therefore, that there is any ...
+
+### 7. `Philemon 10`
+* **Description:** Invalid Bible reference (chapter 10 exceeds max 1 for Philemon)
+* **Chapter:** *Chapter 1 - Work of the Holy Spirit in the New Creation*
+* **Contexts:**
+  * ... him "his son, whom he had begotten in his bonds," **Philemon 10**. And this he declared to have been prescribed unt ...
+
+### 8. `Philippians 38`
+* **Description:** Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 5 - the Nature, Causes, and Means of Regeneration.*
+* **Contexts:**
+  * ... ward. "God worketh in us both to will and to do," **Philippians 38**:13 2:13. The act, therefore, itself of willing in ...
+  * ... the first act of God is to work in us "to will:" **Philippians 38**:13 2:13, "He worketh in us to will." Now, to will ...
+
+### 9. `Philippians 38`
+* **Description:** Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 2 - Sanctification a Progressive Work.*
+* **Contexts:**
+  * ... us both to will and to do of his good pleasure," **Philippians 38**:13 2:13; — that is, there is no part of our will ...
+
+### 10. `Hebrews 19`
+* **Description:** Invalid Bible reference (chapter 19 exceeds max 13 for Hebrews)
+* **Chapter:** *Chapter 5 - the Filth of Sin Purged by the Spirit*
+* **Contexts:**
+  * ... s of believers, to purge them from dead works, as **Hebrews 19**:12-14. And hence it is called, with respect unto ...
+
+### 11. `Philippians 14`
+* **Description:** Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.*
+* **Contexts:**
+  * ... on, merely out of love unto us, Hebrews 2:14, 15; **Philippians 14**:5 2:5-8. And all the actings of grace in him, all ...
+
+### 12. `Philippians 38`
+* **Description:** Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)
+* **Chapter:** *Chapter 3 - Holiness Necessary From the Commands of God.*
+* **Contexts:**
+  * ... God administered in that covenant: as John 15:5; **Philippians 38**:13 2:13; 2 Corinthians 3:5. It will be said, then ...
+  * ... us both to will and to do of his good pleasure," **Philippians 38**:13 2:13, so as that we "may do all things" throu ...
+
+---
+
+## List Formatting Inconsistencies
 
 No anomalies found in this category.
 

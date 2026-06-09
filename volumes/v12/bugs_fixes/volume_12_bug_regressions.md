@@ -21,7 +21,7 @@
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 0 | 0 | OK |
-| Missing Greek clauses | 0 | 16 | OK |
+| Missing Greek clauses | 1 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -93,6 +93,10 @@
 ### Missing enumerator markers
 
 - marker: (1.)
+
+### Missing Greek clauses
+
+- page: 793; sample: μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι
 
 ### Repeated phrase hits
 

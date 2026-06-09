@@ -8,21 +8,21 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 133
-- Manifest items: 124
-- Spine items: 104
-- XHTML files: 106
-- Embedded fonts: 14
-- NAV links: 107
+- Files: 136
+- Manifest items: 127
+- Spine items: 106
+- XHTML files: 107
+- Embedded fonts: 15
+- NAV links: 108
 
 ## Content Checks
 
-- Greek chars: 4525
+- Greek chars: 4477
 - Untagged Greek chars: 0
 - Hebrew chars: 113
 - Untagged Hebrew chars: 0
-- Noteref links: 468
-- Endnote anchors: 449
+- Noteref links: 566
+- Endnote anchors: 566
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0

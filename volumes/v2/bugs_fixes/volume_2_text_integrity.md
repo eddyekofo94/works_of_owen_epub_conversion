@@ -4,16 +4,16 @@
 - Warnings: 11
 - PDF pages: 555
 - EPUB text files: 50
-- EPUB paragraphs/headings: 2081
+- EPUB paragraphs/headings: 2080
 
 ## Coverage
 
-- PDF content tokens: 187092
-- EPUB content tokens: 186879
-- Approximate PDF-to-EPUB coverage ratio: 0.9948
+- PDF content tokens: 187098
+- EPUB content tokens: 186880
+- Approximate PDF-to-EPUB coverage ratio: 0.9949
 - Pages checked: 550
-- Weak page matches: 4
-- Dense source windows checked: 25151
+- Weak page matches: 3
+- Dense source windows checked: 25354
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 2
@@ -27,7 +27,7 @@
 ## Paragraphs
 
 - Body paragraphs checked: 1742
-- Possible faulty paragraph splits: 15
+- Possible faulty paragraph splits: 13
 - Structural starts excluded from split warnings: 243
 - Short fragments: 22
 - Adjacent duplicate paragraphs: 0
@@ -48,7 +48,7 @@
 
 - PDF Greek words: 450
 - EPUB Greek words: 449
-- Greek word coverage ratio: 0.9977
+- Greek word coverage ratio: 0.9954
 - PDF Hebrew words: 88
 - EPUB Hebrew words: 89
 - Hebrew word coverage ratio: 1.0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 2598
-- EPUB Latin words: 2628
+- PDF Latin words: 2606
+- EPUB Latin words: 2629
 - EPUB Tagged Latin words: 585
 - Latin word coverage ratio: 0.995
-- Latin word tagging ratio: 0.2226
+- Latin word tagging ratio: 0.2225
 - Latin clauses checked: 60
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 169
-- Translated Latin runs: 41
-- Latin translation ratio: 0.2426
+- Translated Latin runs: 43
+- Latin translation ratio: 0.2544
 
 ## Warnings
 
@@ -90,8 +90,8 @@
 - page: 4; sample: his suitableness to endear these considerations improved chapter of the way and manner whereby
 - page: 5; sample: influence into our acceptation with god chapter the nature of purchased grace referred to
 - page: 6; sample: of the holy ghost how the spirit of adoption and of supplication chapter the
-- page: 8; sample: reading livy and ferdinand king of sicily in reading quintus curtius but thou hast
-- page: 9; sample: the blessed trinity let them attend what is said by mr lewis stuckley in
+- page: 8; sample: take the doctrine of distinct communion with the divine persons to be new fangled
+- page: 9; sample: said by lewis stucley in his preface to theophilus polwhele's book of quenching the
 - page: 10; sample: of communion with god the father son and holy ghost each person distinctly in
 - page: 12; sample: christ is exhibited under three divisions his personal grace iii vi and under this
 - page: 19; sample: are differences of administrations but the same lord the same lord jesus verse and
@@ -115,7 +115,7 @@
 ## Possible Paragraph Splits
 
 - file: EPUB/ch001.xhtml; previous: CHRISTIAN READER,; next: IT is now six years past since I was brought under an engagement of promise for the publishing of some meditations on the subject which thou wilt find handled in the ensuing treati
-- file: EPUB/ch002.xhtml; previous: To The Reader; next: ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; ‡ and Ferdinand, king of Sicily, in reading Quintus Curtius ‡ Rufus : ‡ but thou hast here nobler e
+- file: EPUB/ch002.xhtml; previous: To The Reader; next: ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; and Ferdinand, king of Sicily, in reading Quintus Curtius Rufus : but thou hast here nobler enterta
 - file: EPUB/ch002.xhtml; previous: Reader, I am Thy servant in Christ Jesus; next: Daniel Burgess
 - file: EPUB/ch005.xhtml; previous: der three divisions: — his _personal grace,_ III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; _— purchased grace_,; next: VII.
 - file: EPUB/ch008.xhtml; previous: And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,; next: And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew
@@ -162,7 +162,6 @@
 ## Excess Word Samples
 
 - word: digital; pdf: 0; epub: 10
-- word: william; pdf: 4; epub: 13
 - word: theological; pdf: 3; epub: 12
 - word: historical; pdf: 0; epub: 8
 - word: greek; pdf: 5; epub: 12

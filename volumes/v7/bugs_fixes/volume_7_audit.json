@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
-  "generated_at": "2026-05-29T11:50:53.089171+00:00",
+  "generated_at": "2026-06-09T10:47:55.845208+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 91,
-    "epub_size_bytes": 3643983,
+    "file_count": 93,
+    "epub_size_bytes": 4670456,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,9 +23,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 82,
-    "spine_count": 62,
-    "xhtml_count": 64,
+    "manifest_count": 84,
+    "spine_count": 63,
+    "xhtml_count": 65,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 21,
-      "unique_noteref_targets": 21,
-      "endnote_anchor_count": 21,
+      "noteref_count": 31,
+      "unique_noteref_targets": 31,
+      "endnote_anchor_count": 31,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 0,
+      "lowercase_paragraph_start_files": 4,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -110,14 +110,31 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch018.xhtml",
+            "text": "may be applied unto the men of this persuasion: either they alone know the state"
+          },
+          {
+            "file": "EPUB/ch027.xhtml",
+            "text": "and this he doth as the \"liberal deviseth liberal things,\" verse 8. From his own"
+          },
+          {
+            "file": "EPUB/ch030.xhtml",
+            "text": "and chapter 4:15,16, \"We have not an high priest that cannot be touched with the"
+          },
+          {
+            "file": "EPUB/ch035.xhtml",
+            "text": "for hereby our minds, that were created in a state of blessed adherence unto God,"
+          }
+        ],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 65,
+    "nav_link_count": 66,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

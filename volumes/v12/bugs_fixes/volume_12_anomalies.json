@@ -1,7 +1,7 @@
 {
   "volume": 12,
-  "total_words_audited": 319764,
-  "total_anomalies_count": 63,
+  "total_words_audited": 319583,
+  "total_anomalies_count": 95,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [
@@ -66,7 +66,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Examination.",
         "contexts": [
-          "... B. lays at the bottom of this appellation, are, \u2014 1 . His birth of the Virgin, from Luke 1:30-35. 2. H ..."
+          "... . lays at the bottom of this appellation, are, \u2014 1 . His birth of the Virgin, from Luke 1:30-35. 2. H ..."
         ]
       },
       {
@@ -298,7 +298,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 33.",
         "contexts": [
-          "... ie and deceive ourselves, and the truth is not in us . \" He adds: \u2014 Q. Have you not examples of the choi ..."
+          "... ie and deceive ourselves, and the truth is not in us . \" He adds: \u2014 Q. Have you not examples of the cho ..."
         ]
       },
       {
@@ -399,12 +399,30 @@
         "description": "Mixed-case capitalization error",
         "chapter": "Chapter 9.",
         "contexts": [
-          "... us Smalcius against Smiglecius, cap. 26; Ostorod. InsTitus cap. 7, with the rest of them. He, then, who was ..."
+          "... 4; Smalcius against Smiglecius, cap. 26; Ostorod. InsTitus cap. 7, with the rest of them. He, then, who was ..."
         ]
       }
     ],
     "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [
+      {
+        "target": "15.",
+        "description": "List sequence starts at 15 instead of 1",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "... the Jesuit, in Atheis, sui saeculi, cap. 13 fol. 15. The assembly of states was called against the Mu ..."
+        ]
+      },
+      {
+        "target": "3.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "... hor of all the works which outwardly are of him. 3. God is said to be in heaven in an especial manner ...",
+          "... lf bigger than he was, to fill that heaven also? 3. The omnipresence of God is grounded on the infini ...",
+          "... e that difference is, as yet we are not taught. (3.) I desire to know of Mr B. what the throne is mad ..."
+        ]
+      },
       {
         "target": "1. ... 4.",
         "description": "List sequence jump (skipped from 1 to 4)",
@@ -460,6 +478,16 @@
         "contexts": []
       },
       {
+        "target": "4.",
+        "description": "List sequence starts at 4 instead of 1",
+        "chapter": "Examination.",
+        "contexts": [
+          "... what saith Christ concerning him? A. John 16:13, 14. Q. Do men receive the Holy Ghost while they are ...",
+          "... stians are there? \u2014 A. 'One Spirit,' Ephesians 4:4.\" I must take leave to put one question to Mr B, t ...",
+          "... them who shall be heirs of salvation,\" Hebrews 1:14. So that by this one testimony, that there is but ..."
+        ]
+      },
+      {
         "target": "2. ... 4.",
         "description": "List sequence jump (skipped from 2 to 4)",
         "chapter": "Chapter 19.",
@@ -472,10 +500,29 @@
         "contexts": []
       },
       {
+        "target": "12.",
+        "description": "List sequence starts at 12 instead of 1",
+        "chapter": "Chapter 28.",
+        "contexts": [
+          "... \u03ad\u03c3\u03b8\u03b1\u03b9 \u03bc\u03b7\u03b4\u1f72\u03bd \u1f00\u03c0\u03b5\u03bb\u03b8\u03cc\u03bd\u03c4\u03bf\u03c2 \u1f10\u03bd\u03b9\u03b1\u03c5\u03c4\u03bf\u1fe6. Plato de Legib. 12. And that may be the sense of the word \u1f10\u03c0\u03b9\u03bb\u03b1\u03bc\u03b2\u03ac\u03bd\u03b5\u03c4 ...",
+          "... d obtained for us \"eternal redemption,\" Hebrews 9:12. And he having so obtained it, we are \"justified f ...",
+          "... hope\" is a description of the elect, Zechariah 9:12. So also are they called captives expressly: Isaia ..."
+        ]
+      },
+      {
         "target": "2. ... 4.",
         "description": "List sequence jump (skipped from 2 to 4)",
         "chapter": "Chapter 30.",
         "contexts": []
+      },
+      {
+        "target": "13.",
+        "description": "List sequence starts at 13 instead of 1",
+        "chapter": "Chapter 35.",
+        "contexts": [
+          "... othing, though they have no life of grace. But Mr 13. proceeds, and saith, \u2014 Q. Though this passage wh ...",
+          "... What is the Holy Ghost? A. A principal angel. Q. 13. Did death enter by sin, or was mortality actually ..."
+        ]
       },
       {
         "target": "1. ... 3.",
@@ -489,6 +536,232 @@
         "chapter": "Of the Death of Christ, and of Justification:",
         "contexts": []
       }
-    ]
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "... 8; Acts 20:28; Romans 1:3, 4, 9:5; Galatians 4:4; Philippians 14:5 2:5-8; 1 Timothy 3:16; 1 John 1:1, 2; Revelatio ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "... John 1:14; Galatians 4:4, 5; Hebrews 2:14, 16,17; Philippians 17:6 2:6-8.) for these, and these only, are the thin ..."
+        ]
+      },
+      {
+        "target": "Zephaniah 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 3 for Zephaniah)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "... oned, but no corporeal similitude. Vide 1:28, and Zephaniah 23:14 (to which may be added many more places), wher ..."
+        ]
+      },
+      {
+        "target": "2 Kings 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "... The accomplishment of it you have in the story, 2 Kings 23:17. Did Josiah act freely? was his proceeding at ..."
+        ]
+      },
+      {
+        "target": "Colossians 5",
+        "description": "Invalid Bible reference (chapter 5 exceeds max 4 for Colossians)",
+        "chapter": "Examination.",
+        "contexts": [
+          "... , John 1:18; 1 Corinthians 2:7; Ephesians 3:8-11; Colossians 5. 2, 3; 1 Timothy 3:16. 2. Because man in his.fal ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Examination.",
+        "contexts": [
+          "... he \"thought it not robbery to be equal with God,\" Philippians 17:6 2:6. It is of God the Father that this is spoke ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Examination.",
+        "contexts": [
+          "... n the discovery of the rise and occasion of them, Philippians 20:7 2:7-9. He who was in the form of God, and equal ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... 2:16; Luke 1:35; Hebrews 9:14; Acts 3:15, 20:28; Philippians 20:7 2:7; 1 Corinthians 2:8, etc.; and by arguments ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... he had it by a gift of the Father, Matthew 28:18; Philippians 26:9 2:9; 1 Corinthians 15:27; John 5:19, John 10:25 ...",
+          "... r were needful; which is mentioned, Matthew 28:18 Philippians 26:9 2:9, 1 Corinthians 15:27: which is by no means ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... aside for a season, that here he desires of God, Philippians 17:6 2:6-11. He glorified his Father by manifesting ...",
+          "... akedly to be imposed on us. Let Proverbs 8:22-31, Philippians 17:6 2:6-11, be consulted, as parallel to this place ..."
+        ]
+      },
+      {
+        "target": "Jude 4",
+        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "... etc., Jeremiah 23:6; Zechariah 2:8; 1 John 5:20; Jude 4; Titus 2:13; Revelation 1:8, 4:8; Acts 20:28; 1 J ..."
+        ]
+      },
+      {
+        "target": "Ephesians 11",
+        "description": "Invalid Bible reference (chapter 11 exceeds max 6 for Ephesians)",
+        "chapter": "Chapter 11.",
+        "contexts": [
+          "... oken in his Prolegomena to the Gospels; and urges Ephesians 11:10, 13, 3:9, 4:24, to prove the sense proposed. ..."
+        ]
+      },
+      {
+        "target": "Jude 5",
+        "description": "Invalid Bible reference (chapter 5 exceeds max 1 for Jude)",
+        "chapter": "Chapter 12.",
+        "contexts": [
+          "... ive mentioned. About that which they urge out of Jude 5 I shall not contend. The testimony from thence re ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... ey speak, incarnate? Ans. From these, John 1:14; Philippians 17:6 2:6, 7; 1 Timothy 3:16; Hebrews 2:16; 1 John 4: ...",
+          "... ere Christ is said to be equal to God, John 5:18, Philippians 17:6 2:6? A. That Christ is equal to God doth no wa ...",
+          "... he interpretation of Erasmus, by Beza, annot., in Philippians 17:6 2:6, 7; of Ochinus and Laelius Socinus, by Zanc ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "... st Christ's being equal with God, from John 5:18, Philippians 17:6 2:6, 7, hath been already removed, and the plac ..."
+        ]
+      },
+      {
+        "target": "Philippians 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 19.",
+        "contexts": [
+          "... alted to his kingdom?\" \u2014 to which he answers from Philippians 23:8 2:8-10 in both places; intimating that Christ w ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 19.",
+        "contexts": [
+          "... ne who thinks it no robbery to be equal with him, Philippians 17:6 2:6; the \"fellow of the LORD of hosts,\" Zechari ...",
+          "... nature is \"equal with God,\" that is, the Father, Philippians 17:6 2:6; but in respect of his mediation he is not ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 19.",
+        "contexts": [
+          "... h,\" Matthew 28:18, and \"a name above every name,\" Philippians 26:9 2:9, giving him an excellency, an \u1f00\u03be\u03af\u03b1, as he i ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "... siah, the servant of the Father, Isaiah 42:1, 19, Philippians 20:7 2:7, 8, \"shall deal prudently,\" and prosper in ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "... ove every name, that at the name of Jesus,\" etc., Philippians 26:9 2:9, 10. The next verse is, \u2014 [[BLOCKQUOTE]] \" ..."
+        ]
+      },
+      {
+        "target": "2 Kings 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "... s of any is the most common sense of the word. So 2 Kings 23:35, \"Jehoiakim exacted the silver and the gold of ..."
+        ]
+      },
+      {
+        "target": "2 Kings 25",
+        "description": "Invalid Bible reference (chapter 25 exceeds max 22 for Kings)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "... designed his death, up to death by the Chaldeans, 2 Kings 25:18-21. Their riches, whereby they hoped to redeem ...",
+          "... rave with the wicked. Nor were those mentioned in 2 Kings 25:18-21, that were slain by the king of Babe], as i ..."
+        ]
+      },
+      {
+        "target": "Philippians 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 26.",
+        "contexts": [
+          "... be \"obedient unto death, the death of the cross,\" Philippians 23:8 2:8, that shameful and ignominious death. And w ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 27.",
+        "contexts": [
+          "... pressible exinanition and eclipsing of his glory, Philippians 17:6 2:6, 7, [[BLOCKQUOTE]] \"Being in the form of G ...",
+          "... d, he humbled himself to the death of the cross,\" Philippians 17:6 2:6-8. And so, by his own voluntary consent, h ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 27.",
+        "contexts": [
+          "... f, Christ takes upon him \"the form of a servant,\" Philippians 20:7 2:7: and this is his perpetual profession, \"I c ..."
+        ]
+      },
+      {
+        "target": "Jude 4",
+        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
+        "chapter": "Chapter 31.",
+        "contexts": [
+          "... on 13:8; being \"of old ordained to condemnation,\" Jude 4; being as \"natural brute beasts, made to be taken ..."
+        ]
+      },
+      {
+        "target": "Titus 16",
+        "description": "Invalid Bible reference (chapter 16 exceeds max 3 for Titus)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "... f Paulus, lib. 11 ad Edict. D.D. de verb. signif, Titus 16: \"Princeps bona concedendo, videtur etiam obligat ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
   }
 }

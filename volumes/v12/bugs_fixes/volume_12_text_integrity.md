@@ -1,19 +1,19 @@
 # Text Integrity Audit: Volume 12
 
 - Status: **WARN**
-- Warnings: 12
+- Warnings: 13
 - PDF pages: 822
 - EPUB text files: 61
 - EPUB paragraphs/headings: 3619
 
 ## Coverage
 
-- PDF content tokens: 270737
+- PDF content tokens: 270734
 - EPUB content tokens: 272543
 - Approximate PDF-to-EPUB coverage ratio: 0.9991
 - Pages checked: 815
 - Weak page matches: 0
-- Dense source windows checked: 32888
+- Dense source windows checked: 32925
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 3
 - Missing front CONTENTS pages: 1
@@ -46,14 +46,14 @@
 
 ## Greek / Hebrew
 
-- PDF Greek words: 2593
+- PDF Greek words: 2590
 - EPUB Greek words: 2593
-- Greek word coverage ratio: 0.9992
+- Greek word coverage ratio: 0.998
 - PDF Hebrew words: 222
 - EPUB Hebrew words: 221
 - Hebrew word coverage ratio: 0.9955
 - Greek clauses checked: 133
-- Missing Greek clauses: 0
+- Missing Greek clauses: 1
 - Hebrew clauses checked: 7
 - Missing Hebrew clauses: 0
 
@@ -81,6 +81,7 @@
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 - `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
@@ -191,6 +192,10 @@
 - word: modern; pdf: 7; epub: 14
 - word: footnotes; pdf: 0; epub: 7
 - word: onlybegotten; pdf: 0; epub: 6
+
+## Missing Greek Clauses
+
+- page: 793; word_count: 16; sample: μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι
 
 ## Untagged Latin Word Samples
 

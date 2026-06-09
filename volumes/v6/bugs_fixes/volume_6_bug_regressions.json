@@ -1,10 +1,10 @@
 {
   "volume": 6,
-  "status": "warn",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v6/bugs_fixes/volume_6_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v6/bugs_fixes/volume_6_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v6/bugs_fixes/volume_6_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/Owen-translation-citations/volumes/v6/bugs_fixes/volume_6_bug_regressions.md",
+  "status": "pass",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/bugs_fixes/volume_6_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/bugs_fixes/volume_6_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/bugs_fixes/volume_6_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v6/bugs_fixes/volume_6_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,83 +12,79 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 193,
-      "budget": 61,
-      "status": "regression",
+      "observed": 15,
+      "budget": 205,
+      "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "tribute to the carrying on of the work of mortification in believers may receive order and perspicuity, I shall lay the foundation of it in those words of the apostle, Romans 8:13,",
-          "next": "The apostle having made a recapitulation of his doctrine of justification by faith, and the blessed estate and condition of them who are made by grace partakers thereof, verses 1-3"
+          "file": "EPUB/ch003.xhtml",
+          "previous": "CHRISTIAN READER,",
+          "next": "I SHALL in a few words acquaint thee with the reasons that obtained my consent to the publishing of the ensuing discourse. The consideration of the present state and condition of t"
         },
         {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "when they are still, so ought our contrivances against it to be vigorous at all times and in all conditions, even where there is least suspicion. Sin doth not only abide in us, but",
-          "next": "If sin be subtle, watchful, strong, and always at work in the business of killing our souls, and we be slothful, negligent, foolish, in proceeding to the ruin thereof, can we expec"
+          "file": "EPUB/ch003.xhtml",
+          "previous": "s is the sum of the account I shall give) may in anything be useful to the least of the saints, it will be looked on as a return of the weak prayers wherewith it is attended by its",
+          "next": "unworthy author"
         },
         {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "one, if not continually mortified, it will bring forth great, cursed, scandalous, soul-destroying sins. The apostle tells us what the works and fruits of it are, Galatians 5:19-21,",
-          "next": "You know what it did in David and sundry others. Sin aims always at the utmost; every time it rises up to tempt or entice, might it have its own course, it would go out to the utmo"
+          "file": "EPUB/ch003.xhtml",
+          "previous": "unworthy author",
+          "next": "John Owen"
         },
         {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "THE last principle I shall insist on (omitting, first, the necessity of mortification unto life, and, secondly, the certainty of life upon mortification) is, —",
-          "next": "Strength and comfort, and power and peace, in our walking with God, are the things of our desires. Were any of us asked seriously, what it is that troubles us, we must refer it to "
+          "file": "EPUB/ch019.xhtml",
+          "previous": "CHRISTIAN READER,",
+          "next": "If thou art in any measure awake in these days wherein we live, and hast taken notice of the manifold, great, and various temptations wherewith all sorts of persons that know the L"
         },
         {
-          "file": "EPUB/ch010.xhtml",
-          "previous": " refining will do them no good. The prophet gives us the sad issue of wicked men's utmost attempts for mortification, by what means soever that God affords them: Jeremiah 6:29, 30,",
-          "next": "And what is the reason hereof? Verse 28, They were \"brass and iron\" when they were put into the furnace. Men may refine brass and iron long enough before they will be good silver."
+          "file": "EPUB/ch022.xhtml",
+          "previous": "ty of such indispensable necessity to them who intend to walk with God in any peace, or with any faithfulness, — are to be considered and removed. And they are these that follow: —",
+          "next": "Obj. 1. \"Why should we so fear and labor to avoid temptation? James 1:2, we are commanded to 'count it all joy when we fall into divers temptations.' Now, certainly I need not soli"
         },
         {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "n work that will not do God's. God's work consists in universal obedience; to be freed of the present perplexity is their own only. Hence is that of the apostle, 2 Corinthians 7:1,",
-          "next": "If we will do anything, we must do all things. So, then, it is not only an intense opposition to this or that peculiar lust, but a universal humble frame and temper of heart, with "
+          "file": "EPUB/ch027.xhtml",
+          "previous": "en of by reason of him; that he is concerned in love to his soul, having that design upon him to \"present him holy, and unblamable, and unreprovable in his sight,\" Colossians 1:22,",
+          "next": "— and his Spirit is grieved where he is interrupted in this work; concerned on the account of his gospel, the progress and acceptation of it in the world, — its beauty would be slu"
         },
         {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "ll I do this great evil,\" saith he, \"and sin against the LORD?\" my good and gracious God. (Genesis 39:9.) And Paul, \"The love of Christ constraineth us;\" (2 Corinthians 5:14.) and,",
-          "next": "But now if a man be so under the power of his lust that he hath nothing but law to oppose it withal, if he cannot fight against it with gospel weapons, but deals with it altogether"
+          "file": "EPUB/ch051.xhtml",
+          "previous": "To The Reader",
+          "next": "CHRISTIAN READER,"
         },
         {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "6. When thy lust hath already withstood particular dealings from God against it. This condition is described, Isaiah 57:17,",
-          "next": "God had dealt with them about their prevailing lust, and that several ways, — by affliction and desertion; but they held out against all. This is a sad condition, which nothing but"
+          "file": "EPUB/ch051.xhtml",
+          "previous": "CHRISTIAN READER,",
+          "next": "THE ensuing exposition and discourses are intended for the benefit of those whose spiritual state and condition is represented in the psalm here explained. That these are not a few"
         },
         {
-          "file": "EPUB/ch013.xhtml",
-          "previous": "t have it, that sin shall not have dominion over them as it hath over others, yet the guilt of sin that doth yet abide and remain is aggravated and heightened by it: Romans 6:1, 2,",
-          "next": "— \"How shall we, that are dead?\" The emphasis is on the word \"we.\""
+          "file": "EPUB/ch075.xhtml",
+          "previous": "God's countenance, and say unto him, \"Did we not know you some while since to be full of sadness and great anxiety of spirit; yea, sorrowful almost to death, and bitter in soul?\" —",
+          "next": "Ans. \"Yes,\" saith he, \"so it was, indeed. My days were consumed with mourning, and my life with sorrow; and I walked heavily, in fear and bitterness of spirit, all the day long.\""
         },
         {
-          "file": "EPUB/ch013.xhtml",
-          "previous": "(1.) Of being hardened by the deceitfulness. This the apostle sorely charges on the Hebrews, Hebrews 3:12, 13,",
-          "next": "\"Take heed,\" saith he, \"use all means, consider your temptations, watch diligently; there is a treachery, a deceit in sin, that tends to the hardening of your hearts from the fear "
+          "file": "EPUB/ch075.xhtml",
+          "previous": "\"Why, what ailed you, what was the matter with you, seeing as to outward things you were in peace?\" —",
+          "next": "Ans. \"The law of God had laid hold upon me and slain me. I found myself thereby a woful sinner, yea, overwhelmed with the guilt of sin. Every moment I expected tribulation and wrat"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 4,
-      "budget": 1,
-      "status": "regression",
+      "observed": 3,
+      "budget": 3,
+      "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch021.xhtml",
-          "text": "Before I descend to other particulars, having now entered hereon, I shall show in general, — 1st. How or by what means commonly any temptation attains its hour;"
+          "file": "EPUB/ch025.xhtml",
+          "text": "Such was the state of the church or Sardis, (3.) A season of great spiritual enjoyments is often, by the malice of Satan and the weakness of our hearts, turned into a season of danger as to this business of temptation."
         },
         {
-          "file": "EPUB/ch049.xhtml",
-          "text": "The Nature Of The Forgiveness Of Sin Is Declared; The Truth And Reality Of It Asserted; And The Case Of A Soul Distressed With The Guilt Of Sin, And Relieved By A Discovery Of Forgiveness With God, Is At Large Discoursed. \"Search the Scriptures\" — JOHN 5:39 Im"
+          "file": "EPUB/ch076.xhtml",
+          "text": "Indeed, if we should go upon our own heads, without his warranty and authority, to ask any thing at his hand, we might well expect to meet with disappointment; for what should encourage us unto any such boldness? but now, when God himself shall command us to c"
         },
         {
-          "file": "EPUB/ch060.xhtml",
-          "text": "In the supposition there is, — 1. The name of God, that is fixed on as suited unto it; and, 2. The thing itself supposed."
-        },
-        {
-          "file": "EPUB/ch061.xhtml",
-          "text": "In the supposition there is, — 1. The name of God, that is fixed on as suited unto it; and, 2. The thing itself supposed."
+          "file": "EPUB/ch082.xhtml",
+          "text": "Gospel pardon is a thing of another nature; it hath its spring in the gracious heart of the Father, is made out by a sovereign act of his will, rendered consistent with the glory of his justice and holiness by the blood of Christ, by which it is purchased in a"
         }
       ]
     },
@@ -100,14 +96,6 @@
       "samples": [
         {
           "phrase": "there is forgiveness with thee that thou mayest be feared",
-          "count": 6
-        },
-        {
-          "phrase": "the lord hath forsaken me and my lord hath forgotten",
-          "count": 6
-        },
-        {
-          "phrase": "lord hath forsaken me and my lord hath forgotten me",
           "count": 6
         },
         {
@@ -137,15 +125,29 @@
         {
           "phrase": "my voice let thine ears be attentive to the voice",
           "count": 5
+        },
+        {
+          "phrase": "voice let thine ears be attentive to the voice of",
+          "count": 5
+        },
+        {
+          "phrase": "let thine ears be attentive to the voice of my",
+          "count": 5
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 0,
-      "budget": 0,
+      "observed": 1,
+      "budget": 1,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "page": 6,
+          "hit_ratio": 0.25,
+          "sample": "chapter the doctrine grounds of it our savior's direction in this case his promise of preservation issues of men entering into temptation of ungrounded professors of the choicest"
+        }
+      ]
     },
     {
       "label": "Reference continuation splits",
@@ -465,10 +467,34 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 27,
-      "budget": 0,
-      "status": "regression",
+      "observed": 31,
+      "budget": 35,
+      "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "text": "unworthy author"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "and reduce the whole to an improvement of the great evangelical truth and mystery"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "and of our repentance our mortification is no small portion. How doth he do it? H"
+        },
+        {
+          "file": "EPUB/ch037.xhtml",
+          "text": "a similitude most lively, expressing the lustings of the law of sin, restlessly a"
+        },
+        {
+          "file": "EPUB/ch044.xhtml",
+          "text": "and with the prophet, Hosea 14:9,"
+        },
+        {
+          "file": "EPUB/ch048.xhtml",
+          "text": "intimating plainly, that though a person be in never so much subjection to the au"
+        },
         {
           "file": "EPUB/ch053.xhtml",
           "text": "every way and means of thy appearance, of the manifestation of thyself, and comin"
@@ -478,36 +504,12 @@
           "text": "chiefly to respect that which he himself, in this address unto God, did principal"
         },
         {
+          "file": "EPUB/ch059.xhtml",
+          "text": "and with David,"
+        },
+        {
           "file": "EPUB/ch062.xhtml",
           "text": "stand?,\" When the Holy Ghost would set out the certainty and dreadfulness of the"
-        },
-        {
-          "file": "EPUB/ch064.xhtml",
-          "text": "prepares the soul for the receiving of mercy in a sense of pardon, the great thin"
-        },
-        {
-          "file": "EPUB/ch069.xhtml",
-          "text": "government of the world, his holiness and righteousness, to take care that every"
-        },
-        {
-          "file": "EPUB/ch070.xhtml",
-          "text": "the contrary, insinuated in the objection now removed, it is a great thing to hav"
-        },
-        {
-          "file": "EPUB/ch072.xhtml",
-          "text": "have been a great thing. When the soul comes in any measure to be made sensible o"
-        },
-        {
-          "file": "EPUB/ch074.xhtml",
-          "text": "hath declared it by his word, and that given in a way of promise: which, as in it"
-        },
-        {
-          "file": "EPUB/ch080.xhtml",
-          "text": "without limitation and bounds. The grace hereof he bestoweth on his saints, sets"
-        },
-        {
-          "file": "EPUB/ch081.xhtml",
-          "text": "exhortations, propositions; which all have in them the nature of commands, which"
         }
       ]
     },

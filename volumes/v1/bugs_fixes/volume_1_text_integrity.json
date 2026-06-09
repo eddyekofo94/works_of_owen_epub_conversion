@@ -1,8 +1,8 @@
 {
   "volume": 1,
-  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/input/owen-v1.pdf",
-  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-04T11:04:55.364651+00:00",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-06-09T10:44:34.386593+00:00",
   "status": "warn",
   "warning_count": 10,
   "warnings": [
@@ -52,18 +52,13 @@
   },
   "epub": {
     "spine_text_files": 84,
-    "paragraph_count": 2706
+    "paragraph_count": 2705
   },
   "word_coverage": {
-    "pdf_content_tokens": 204998,
-    "epub_content_tokens": 205862,
-    "coverage_ratio": 0.9992,
+    "pdf_content_tokens": 205010,
+    "epub_content_tokens": 205874,
+    "coverage_ratio": 0.9993,
     "missing_word_samples": [
-      {
-        "word": "faithfullness",
-        "pdf": 7,
-        "epub": 0
-      },
       {
         "word": "pre",
         "pdf": 6,
@@ -97,11 +92,6 @@
         "epub": 10
       },
       {
-        "word": "faithfulness",
-        "pdf": 5,
-        "epub": 12
-      },
-      {
         "word": "modern",
         "pdf": 4,
         "epub": 11
@@ -120,7 +110,7 @@
   },
   "page_coverage": {
     "pages_checked": 622,
-    "weak_page_count": 4,
+    "weak_page_count": 5,
     "weak_pages": [
       {
         "page": 3,
@@ -141,11 +131,16 @@
         "page": 6,
         "hit_ratio": 0.0,
         "sample": "of the holy trinity of the works of god and first of those that are internal and immanent of the works of god that"
+      },
+      {
+        "page": 533,
+        "hit_ratio": 0.333,
+        "sample": "original preface to the reader the design of this preface is not to commend either the author or the matter contained in this little"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 27185,
+    "dense_windows_checked": 27414,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -165,48 +160,28 @@
         "sample": "of the holy trinity of the works of god and first of those that"
       },
       {
-        "page": 8,
-        "sample": "man to himself with peculiar closeness of application stripping in of his false dependencies"
-      },
-      {
         "page": 9,
         "sample": "embraces the most comprehensive view of this vitally-important subject his exposition of psalm exhibits"
       },
       {
         "page": 10,
-        "sample": "as his own john nesbitt matthew clarke thomas ridgley and thomas bradbury eminent independent"
+        "sample": "learned puritan we are informed by dr steven that his exposition of the epistle"
       },
       {
         "page": 11,
-        "sample": "whose literary industry the church of christ had been se largely indebted it would"
-      },
-      {
-        "page": 20,
-        "sample": "prefatory note to object of dr owen in this treatise is to illustrate the"
+        "sample": "owen whose name towers into just pre eminence among all his venerable compeers in"
       },
       {
         "page": 21,
-        "sample": "events ensued which justified these apprehensions of own prolonged controversy on the subject of"
+        "sample": "individuals since the reformation next to calvin's institutions we would have deemed it our"
       },
       {
-        "page": 26,
-        "sample": "the shepherd wherein he has respect unto this testimony and origin expressly denies the"
-      },
-      {
-        "page": 27,
-        "sample": "inquit petram quam confessus es aedificabo eccleaism meam petra enim erat christus super quod"
-      },
-      {
-        "page": 29,
-        "sample": "secondly an eminent instance of his power and faithfullness in the appointment and conquest"
-      },
-      {
-        "page": 30,
-        "sample": "in their signification or if they did wherein that difference lay athanasiu6 at first"
+        "page": 44,
+        "sample": "πατρος και του υιου και του αγιου πνευματος πιστευομενης ομοτιμου της αξιας και συναιδιου"
       },
       {
         "page": 51,
-        "sample": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit"
+        "sample": "imago id est verbum dei ad eum qui est ad imaginem hoc est hominem"
       },
       {
         "page": 53,
@@ -229,10 +204,6 @@
         "sample": "of his person by whom they are performed john if any man sin we"
       },
       {
-        "page": 88,
-        "sample": "to communicate them unto us that all the faithfullness of god was engaged in"
-      },
-      {
         "page": 90,
         "sample": "place no small portion of divine blessedness self existence in its own immense being"
       },
@@ -247,10 +218,6 @@
       {
         "page": 106,
         "sample": "unto his divine person as the son of the father the only begotten the"
-      },
-      {
-        "page": 108,
-        "sample": "it was designed unto the wisdom power goodness love grace mercy holiness and faithfullness"
       },
       {
         "page": 117,
@@ -281,10 +248,6 @@
         "sample": "divine goodness how great is his goodness how great is his beauty zechariah nothing"
       },
       {
-        "page": 204,
-        "sample": "goodness exerting itself in all that mercy grace faithfullness and bounty which are needful"
-      },
-      {
         "page": 216,
         "sample": "is but nextly and immediately for what he did what he did for us"
       },
@@ -307,6 +270,38 @@
       {
         "page": 291,
         "sample": "is clearly expressed and to take it to be his own his own nature"
+      },
+      {
+        "page": 295,
+        "sample": "same being or nature the father in the son the son in the father"
+      },
+      {
+        "page": 297,
+        "sample": "of one into another such notions of these things some fancied of old eutyches'8"
+      },
+      {
+        "page": 300,
+        "sample": "our human nature to be his own his own nature wherein he was made"
+      },
+      {
+        "page": 319,
+        "sample": "residence of god in glory and majesty chap there on the throne of god"
+      },
+      {
+        "page": 328,
+        "sample": "and worship have we communion by faith whilst we are here below hebrews that"
+      },
+      {
+        "page": 332,
+        "sample": "figure of christ on his forehead exodus he has made atonement for them in"
+      },
+      {
+        "page": 341,
+        "sample": "by god the father unto his only begotten son no other being able to"
+      },
+      {
+        "page": 343,
+        "sample": "above is described by being with christ being with christ forever in the presence"
       }
     ]
   },
@@ -445,62 +440,12 @@
   },
   "paragraph_integrity": {
     "paragraphs_checked": 2255,
-    "split_candidate_count": 19,
+    "split_candidate_count": 8,
     "split_candidates": [
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": " καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς \". †",
-        "next": "He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus \". †",
-        "next": "— \"He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "tertium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?\" †",
-        "next": "— \"I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "αὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων \". †",
-        "next": "The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre"
-      },
       {
         "file": "EPUB/ch004.xhtml",
         "previous": "veniret utriusque diversitas, ut unus idemque sit filius, qui se, et secundum quod verus est homo, Patre dicit minorem, et secundum quod verus est Deus Patrise profitetur aequalem\"",
         "next": "— \"Human nature is assumed into the society of the Creator, not that he should be the inhabitant, and that the habitation,\" (that is, by an inhabitation in the effects of his power"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "ν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας . Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων , διὰ τῆς ἰδίας πρὸς ἑκατέρους οἰκειότητος εις φιλίαν καὶ ὁμόνοιαν τοῦς ἀμφοτέρους συναγαγεῖν \". †",
-        "next": "Words plainly divine; an illustrious testimony of the faith of the ancient church, and expressive of the principal mystery of the gospel! \"Wherefore, as we said before, he united m"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "And to the same purpose: (lib. 5 cap. 1:) \"Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". †",
-        "next": "That which these passages give testimony unto, is what we have discoursed concerning the necessity of our redemption in and by the nature that sinned; and yet withal, that it shoul"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": ", non aeriae, non alterius cujusquam putes esse naturae, sed ejus coujus est omnium caro; id est, quam ipse Deus, homini primo de terra plasmavit, et caeteris hominibus plasmat.\" †",
-        "next": "— \"So believe Christ the Son of God, that is, one person of the Trinity, to be the true God, that you doubt not but that his divinity was born\" (thy eternal generation) \"of the nat"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "ccato ceciderat. Utraque operatus est filius Verbum Dei existens, a Patre descendens et incarnatus, et usque ad mortem descendens, et dispensationem consummans salutis nostrae \". †",
-        "next": "— \"Being the Son of God always with the Father, and being made man, he reconciled or gathered up in himself the long-continued exposing of men,\" (unto sin and judgment,) \"bringing "
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "tantum ; at qui erat in divinitate Dei Patris Filius , ipse fieret in homine hominis matris Filius; ne Filii nomen ad alterum transiret, qui non esset eterna nativitate filius \". †",
-        "next": "— \"The Father did not assume flesh, nor the Holy Spirit, but the Son only; that he who in the Deity was the Son of the Father, should be made the Son of man, in his mother of human"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": " damnatione justissima derelictis, ostenderetur, quod meruisset universa conspersio, et quo etiam istos debitum judicium Dei duceret, nisi ejus indebita misericordia subveniret.\" †",
-        "next": "— \"Behold, the whole race of mankind, by the just judgment of God, so condemned in the apostatical root, that if no one were thence delivered, yet no man could rightly complain of "
       },
       {
         "file": "EPUB/ch011.xhtml",
@@ -523,11 +468,6 @@
         "next": "To design of the ensuing Discourse is to declare some part of that glory of our Lord Jesus Christ which is revealed in the Scripture, and proposed as the principal object of our fa"
       },
       {
-        "file": "EPUB/ch027.xhtml",
-        "previous": "ion of this glory, will be carried above the perplexing prevailing sense of any of these evils, of a confluence of them all. \"Crus nil sentit in nervo, dum animus est in coelo .\" †",
-        "next": "It is a woeful kind of life, when men scramble for poor perishing reliefs in their distresses. This is the universal remedy and cure, — the only balsam for all our diseases. Whatev"
-      },
-      {
         "file": "EPUB/ch039.xhtml",
         "previous": "Yea, whilst we are in this tabernacle, we groan earnestly, as being burdened, because we are not \"absent from the body, and present with the Lord,\" 2 Corinthians 5:2, 4, 8",
         "next": "The more we grow in faith and spiritual light, the more sensible are we of our present burdens, and the more vehemently do we groan for deliverance into the perfect liberty of the "
@@ -543,7 +483,7 @@
         "next": "J.O."
       }
     ],
-    "structural_start_exclusions": 116,
+    "structural_start_exclusions": 115,
     "short_fragment_count": 11,
     "short_fragments": [
       {
@@ -704,11 +644,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch011.xhtml#p503",
+            "location": "EPUB/ch011.xhtml#p502",
             "context": "[1.] He was to be the prophet of the whole catholic church; that is, of act the elect of God, of all that shall be saved in all ages and places, from the beginning of the world unto th"
           },
           {
-            "location": "EPUB/ch011.xhtml#p530",
+            "location": "EPUB/ch011.xhtml#p529",
             "context": "[1.] The extent of his power and rule gives evidence hereunto. It is over the whole creation of God. \"All power is given him in heaven and earth.\" Matthew 28:18. \"A11 things are put un"
           }
         ]
@@ -738,11 +678,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch011.xhtml#p514",
+            "location": "EPUB/ch011.xhtml#p513",
             "context": "[2.] The full comprehension of the mind and will of God, of the whole divine counsel concerning his glory in the sanctification and salvation of the church, could not at once reside in"
           },
           {
-            "location": "EPUB/ch011.xhtml#p533",
+            "location": "EPUB/ch011.xhtml#p532",
             "context": "[2.] The rule of Christ, as king of the church, is internal and spiritual, over the minds, souls, and consciences of all that do believe. There is no one gracious acting of soul in any"
           }
         ]
@@ -854,11 +794,11 @@
     }
   ],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 812,
+    "pdf_greek_word_count": 811,
     "epub_greek_word_count": 811,
-    "pdf_greek_unique_words": 461,
+    "pdf_greek_unique_words": 460,
     "epub_greek_unique_words": 461,
-    "greek_word_coverage_ratio": 0.9987,
+    "greek_word_coverage_ratio": 0.9973,
     "pdf_hebrew_word_count": 20,
     "epub_hebrew_word_count": 20,
     "pdf_hebrew_unique_words": 20,
@@ -876,14 +816,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 3418,
-    "epub_latin_word_count": 3459,
-    "epub_tagged_latin_word_count": 1154,
-    "pdf_latin_unique_words": 828,
-    "epub_latin_unique_words": 844,
-    "epub_tagged_unique_words": 554,
-    "latin_word_coverage_ratio": 0.9974,
-    "latin_tagging_ratio": 0.3336,
+    "pdf_latin_word_count": 3423,
+    "epub_latin_word_count": 3463,
+    "epub_tagged_latin_word_count": 1149,
+    "pdf_latin_unique_words": 827,
+    "epub_latin_unique_words": 843,
+    "epub_tagged_unique_words": 552,
+    "latin_word_coverage_ratio": 0.998,
+    "latin_tagging_ratio": 0.3318,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -1014,23 +954,20 @@
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 149,
+    "latin_clauses_checked": 150,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 290,
-    "translated_latin_runs_count": 160,
-    "latin_translation_ratio": 0.5517,
+    "tagged_latin_runs_count": 288,
+    "translated_latin_runs_count": 163,
+    "latin_translation_ratio": 0.566,
     "untranslated_latin_samples": [
       {
         "phrase": "bias — in an inveterate"
       },
       {
         "phrase": "quarto (Amsterdam"
-      },
-      {
-        "phrase": "Clarae, Thomas"
       },
       {
         "phrase": "operis absentibus"
@@ -1082,6 +1019,9 @@
       },
       {
         "phrase": "sciri a quoquam"
+      },
+      {
+        "phrase": "narrari, opera divina; sed tamen sacrae literae"
       }
     ]
   },

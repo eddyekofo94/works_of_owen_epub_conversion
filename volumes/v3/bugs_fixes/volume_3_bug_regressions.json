@@ -89,7 +89,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 1,
+      "observed": 0,
       "budget": 0,
       "status": "ok",
       "samples": []

@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 75 | 61 | REGRESSION |
-| Inline structural marker candidates | 2 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 9 | 61 | OK |
+| Inline structural marker candidates | 6 | 1 | REGRESSION |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 4 | 0 | REGRESSION |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -46,7 +46,7 @@
 | Scripture blockquote false positives | 0 | 0 | OK |
 | Orphan scripture brackets | 0 | 0 | OK |
 | Glued ordinal anchors | 0 | 0 | OK |
-| Structural bold leaks | 1 | 0 | REGRESSION |
+| Structural bold leaks | 0 | 0 | OK |
 | Repeated structural markers | 0 | 0 | OK |
 | Scholastic bold leaks | 0 | 0 | OK |
 | Inline scholastic labels | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 1 | 0 | REGRESSION |
+| Lowercase page fragments | 8 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,14 +66,17 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch001.xhtml; previous: EDITED BY; next: WILLIAM H. GOOLD
-- file: EPUB/ch001.xhtml; previous: WILLIAM H. GOOLD; next: ΠΗΕΥΜΑΤΟΛΟΓΙΑ ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR
-- file: EPUB/ch001.xhtml; previous: 4. - Extraordinary spiritual gifts, [1 Corinthians 12:5] -; next: 11.
-- file: EPUB/ch007.xhtml; previous: we do believe; and the reason why we do believe them is, because they are proposed in the Scripture. Thus the apostle expresseth the whole of what we intend: 1 Corinthians 15:3, 4,; next: Christ's death, and burial, and resurrection, are the things proposed unto us to be believed, and so the object of our faith; but the reason why we believe them is, because they ar
-- file: EPUB/ch008.xhtml; previous: o deservedly, for where it is absolute it is unquestionable; that which is most ancient in any kind is most true. God himself makes use of this plea against idols: Isaiah 43:10-12,; next: That which he asserts is, that he alone is God, and no other: this he calls the people to testify by this argument, that he was among them as God, — that is, in the church, — befor
+- file: EPUB/ch029.xhtml; previous: Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,; next: IV.
+- file: EPUB/ch029.xhtml; previous: on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,; next: V.
+- file: EPUB/ch029.xhtml; previous: planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,; next: VI.
+- file: EPUB/ch029.xhtml; previous: The manner of prayer is farther considered with special reference to [Ephesians 6:18]; next: VII.
+- file: EPUB/ch044.xhtml; previous: In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,; next: III.
 
 ### Inline structural marker candidates
 
+- file: EPUB/ch016.xhtml; text: 2. Into the especial nature of the Spirit's work in enlightening us into a knowledge of the mind of God in Scripture. Its nature is first considered by a reference to several scriptural expressions descriptive of it, suc
+- file: EPUB/ch024.xhtml; text: Nor do I believe that any one who doth and can thus pray as he ought, in a conscientious study of the word, shall ever be left unto the final prevalency of any pernicious error or the ignorance of any fundamental truth. 
+- file: EPUB/ch037.xhtml; text: I say, therefore, — 1. That the things insisted on are in some degree and measure necessary unto all acceptable prayer. The Scripture assigns them thereunto, and believers find them so by their own experience. For we dis
 - file: EPUB/ch044.xhtml; text: Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference
 - file: EPUB/ch052.xhtml; text: What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the ch
 
@@ -81,9 +84,16 @@
 
 - phrase: we believe the scripture to be the word of god
 - phrase: to believe the scripture to be the word of god
-- phrase: the mind and will of god as revealed in the
 - phrase: believe the scripture to be the word of god with
+- phrase: the mind and will of god as revealed in the
 - phrase: to be the word of god with faith divine and
+
+### Missing front CONTENTS pages
+
+- page: 3; sample: contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what
+- page: 4; sample: question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god
+- page: 5; sample: book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work
+- page: 6; sample: unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised
 
 ### Repeated phrase hits
 
@@ -101,10 +111,10 @@
 
 - file: EPUB/ch006.xhtml; text: CHAPTER I
 
-### Structural bold leaks
-
-- file: EPUB/ch001.xhtml; text: ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR
-
 ### Lowercase page fragments
 
-- file: EPUB/ch055.xhtml; text: should receive strong consolation in all their distresses, when they flee for ref
+- file: EPUB/ch007.xhtml; text: or the things delivered in the Scripture and farther declared by Christ, which be
+- file: EPUB/ch009.xhtml; text: nor is there any of the divines of that church which diment herein. We do not, th
+- file: EPUB/ch011.xhtml; text: for "of his own will doth God beget us with the word of truth," James 1:18.
+- file: EPUB/ch013.xhtml; text: saith Stapleton; — "The secret testimony of the Spirit is altogether necessary, t
+- file: EPUB/ch021.xhtml; text: for men are very apt to please themselves with the working and improvement of the

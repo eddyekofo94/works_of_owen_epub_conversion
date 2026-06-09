@@ -1,0 +1,227 @@
+{
+  "volume": 5,
+  "total_words_audited": 228812,
+  "total_anomalies_count": 26,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "wire-draw",
+        "description": "Splittable word (rejoins to valid word 'wiredraw')",
+        "chapter": "To the Reader (The Doctrine of Justification by Faith)",
+        "contexts": [
+          "... iness to cavil at expressions, to wrest my words, wire-draw inferences and conclusions from them not expressl ..."
+        ]
+      },
+      {
+        "target": "dikaio-oo",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Chapter 4 - of Justification",
+        "contexts": [
+          "... y no man was ever yet so fond as to pretend that \"dikaio-oo\" did signify to pardon sin, yet is it the only wo ..."
+        ]
+      },
+      {
+        "target": "non-imputation",
+        "description": "Splittable word (rejoins to valid word 'nonimputation')",
+        "chapter": "Chapter 4 - of Justification",
+        "contexts": [
+          "... nishment due unto sin;\" for it comprises both the non-imputation of sin and the imputation of righteousness, with ..."
+        ]
+      },
+      {
+        "target": "sub-distinguished",
+        "description": "Splittable word (rejoins to valid word 'subdistinguished')",
+        "chapter": "Chapter 5 - the Continuation of Justification",
+        "contexts": [
+          "... t that either of these should, on any account, be sub-distinguished into a first and second of the same kind, \u2014 that ..."
+        ]
+      },
+      {
+        "target": "non-imputation",
+        "description": "Splittable word (rejoins to valid word 'nonimputation')",
+        "chapter": "Chapter 7 - Imputation, & the Nature of It",
+        "contexts": [
+          "... ation, or, that our justification consists in the non-imputation of sin, and the imputation of righteousness. But ...",
+          "... tation, in both branches of it, \u2014 negative in the non-imputation of sin, and positive in the imputation of righteo ..."
+        ]
+      },
+      {
+        "target": "non-solvent",
+        "description": "Splittable word (rejoins to valid word 'nonsolvent')",
+        "chapter": "Chapter 8 - Imputation of the Sins of the Church Unto Christ",
+        "contexts": [
+          "... noxius\", \u2014 liable to payments for others that are non-solvent. 2. God can, therefore, have no surety properly, ..."
+        ]
+      },
+      {
+        "target": "blood-guiltiness",
+        "description": "Splittable word (rejoins to valid word 'bloodguiltiness')",
+        "chapter": "Chapter 8 - Imputation of the Sins of the Church Unto Christ",
+        "contexts": [
+          "... ver me\" \u05de\u05b4\u05d3\u05b8\u05bc\u05de\u05b4\u05d9\u05dd, \"from blood\"; which we render \"blood-guiltiness,\" Psalm 51:14. And this was because, by the const ..."
+        ]
+      },
+      {
+        "target": "non-imputation",
+        "description": "Splittable word (rejoins to valid word 'nonimputation')",
+        "chapter": "Chapter 8 - Imputation of the Sins of the Church Unto Christ",
+        "contexts": [
+          "... tever be imputed unto them. And where that is, no non-imputation of sin, as unto punishment, can free the person i ...",
+          "... y he escaped present punishment, yet did not that non-imputation free him formally from being a sinner. Wherefore ..."
+        ]
+      },
+      {
+        "target": "non-imputation",
+        "description": "Splittable word (rejoins to valid word 'nonimputation')",
+        "chapter": "Chapter 18 - the Nature of Justification",
+        "contexts": [
+          "... , in that the imputation of righteousness and the non-imputation of sin (both which the apostle mentions distinctl ..."
+        ]
+      },
+      {
+        "target": "co-interest",
+        "description": "Splittable word (rejoins to valid word 'cointerest')",
+        "chapter": "Chapter 18 - the Nature of Justification",
+        "contexts": [
+          "... heir merit, as inconsistent with grace, but their co-interest on our part with, or subsequent interest unto fai ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "Answer .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 3 - the Use of Faith in Justification",
+        "contexts": [
+          "... d what belongs thereunto, or is derived from it. Answer . This exception derives from that common objection ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - of Justification",
+        "contexts": [
+          "... merely to be freed from the punishment of sin.\" Ans . 1. All these reasons prove not that it is the sam ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": [
+          "... in the ensuing discourse, or answered elsewhere. Ans . This cause is of more importance, and more eviden ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 18 - the Nature of Justification",
+        "contexts": [
+          "... non sumus justi effecti per sanctam vitam Christi..Item, Christus mortuus est ut justitiam illam Dei ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [
+      {
+        "target": "Epist. 2, 29",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 4 - of Justification",
+        "contexts": [
+          "... r author) but by him. And he uses it expressly, 1 Epist. 2, 29, and chap. 3, 7, where these words, \u039f \u03c0\u03bf\u03b9\u1ff6\u03bd \u03b4\u03b9\u03ba\u03b1\u03b9 ..."
+        ]
+      },
+      {
+        "target": "lib. 4",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 8 - Imputation of the Sins of the Church Unto Christ",
+        "contexts": [
+          "... gissent, alienae culpae rei trucidarentur\", B.P., lib. 4 22; \u2014 should be guilty of the fault of another ( ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Chapter 3 - the Use of Faith in Justification",
+        "contexts": [
+          "... \u03be \u1f00\u03ba\u03bf\u1fc6\u03c2 \u03c0\u03af\u03c3\u03c4\u03b5\u03c9\u03c2 are directly opposed, Galatians 3:2. But when it is said that a man is not justified \u1f10 ...",
+          "... \u2014 itself being the formal object of its assent. 2. We cannot so receive Christ in the promise, as in ...",
+          "... their faith in their justification before God. (2.) The Scripture plainly declares that faith as jus ..."
+        ]
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "Chapter 11 - the Nature of the Obedience That God Requires",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 5.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "Chapter 20 - Doctrine of the Apostle James Concerning Faith",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "John 22",
+        "description": "Invalid Bible reference (chapter 22 exceeds max 21 for John)",
+        "chapter": "General Considerations,",
+        "contexts": [
+          "... elieve that Jesus is the Christ, the Son of God,\" John 22:30, 31. Unto this end every thing is recorded by ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": [
+          "... ajestical exaltation, as the Scripture witnesses, Philippians 26:9 2:9; Luke 24:26; Romans 14:9; yet absolutely hi ..."
+        ]
+      },
+      {
+        "target": "Philippians 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": [
+          "... , as it is asserted by the apostle, Hebrews 2:14; Philippians 14:5 2:5-8. Some of the ancient schoolmen disputed, ..."
+        ]
+      },
+      {
+        "target": "Philippians 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": [
+          "... pect unto his antecedent obedience and suffering, Philippians 23:8 2:8,9. The actual possession of this glory was, ...",
+          "... bedient unto death, even the death of the cross,\" Philippians 23:8 2:8. But yet there is herein no color of probab ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": [
+          "... pecial dispensation and condescension, expressed, Philippians 17:6 2:6-8, \u2014 the obedience he yielded thereon was f ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 18 - the Nature of Justification",
+        "contexts": [
+          "... this purpose, 2 Corinthians 8:9; Galatians 2:20; Philippians 17:6 2:6,7; Revelation 1:5, 6. And those also are mo ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
+  }
+}

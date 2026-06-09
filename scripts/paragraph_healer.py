@@ -100,10 +100,12 @@ def _repair_unbalanced_bracket_splits(text):
         # Strip [[TOKEN]] markers to count only content brackets
         content = _TOKEN_STRIP_RE.sub('', para)
         if content.count('[') > content.count(']') and i + 1 < len(paragraphs):
-            # Absorb the next paragraph (the continuation of the unclosed bracket)
-            paragraphs[i + 1] = para + ' ' + paragraphs[i + 1]
-            i += 1
-            continue
+            next_para = paragraphs[i + 1]
+            next_content = _TOKEN_STRIP_RE.sub('', next_para)
+            if next_content.count(']') > next_content.count('['):
+                paragraphs[i + 1] = para + ' ' + paragraphs[i + 1]
+                i += 1
+                continue
         result.append(para)
         i += 1
     return '\n\n'.join(result)

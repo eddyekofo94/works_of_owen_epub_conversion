@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-29T11:45:52.597794+00:00",
+  "generated_at": "2026-06-09T10:45:58.693519+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 97,
-    "epub_size_bytes": 3583414,
+    "file_count": 99,
+    "epub_size_bytes": 4606370,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,15 +23,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 88,
-    "spine_count": 69,
-    "xhtml_count": 71,
+    "manifest_count": 90,
+    "spine_count": 70,
+    "xhtml_count": 72,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
     "font_count": 13,
     "language": {
-      "greek_chars": 4075,
+      "greek_chars": 4062,
       "greek_untagged_chars": 0,
       "hebrew_chars": 698,
       "hebrew_untagged_chars": 0,
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 24,
-      "unique_noteref_targets": 23,
-      "endnote_anchor_count": 23,
+      "noteref_count": 41,
+      "unique_noteref_targets": 40,
+      "endnote_anchor_count": 40,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -62,14 +62,14 @@
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
-      "structural_bold_leak_files": 1,
+      "structural_bold_leak_files": 0,
       "repeated_structural_marker_files": 0,
       "scholastic_bold_leak_files": 0,
       "inline_scholastic_label_files": 0,
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 1,
+      "lowercase_paragraph_start_files": 8,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -155,12 +155,7 @@
         "scripture_blockquote": [],
         "orphan_scripture_bracket": [],
         "glued_ordinal": [],
-        "structural_bold_leak": [
-          {
-            "file": "EPUB/ch001.xhtml",
-            "text": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
-          }
-        ],
+        "structural_bold_leak": [],
         "repeated_structural_marker": [],
         "scholastic_bold_leak": [],
         "inline_scholastic_label": [],
@@ -172,8 +167,36 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
+            "file": "EPUB/ch007.xhtml",
+            "text": "or the things delivered in the Scripture and farther declared by Christ, which be"
+          },
+          {
+            "file": "EPUB/ch009.xhtml",
+            "text": "nor is there any of the divines of that church which diment herein. We do not, th"
+          },
+          {
+            "file": "EPUB/ch011.xhtml",
+            "text": "for \"of his own will doth God beget us with the word of truth,\" James 1:18."
+          },
+          {
+            "file": "EPUB/ch013.xhtml",
+            "text": "saith Stapleton; — \"The secret testimony of the Spirit is altogether necessary, t"
+          },
+          {
+            "file": "EPUB/ch021.xhtml",
+            "text": "for men are very apt to please themselves with the working and improvement of the"
+          },
+          {
             "file": "EPUB/ch055.xhtml",
             "text": "should receive strong consolation in all their distresses, when they flee for ref"
+          },
+          {
+            "file": "EPUB/ch059.xhtml",
+            "text": "whereas those who pretend to be their successors, if they will speak the truth, m"
+          },
+          {
+            "file": "EPUB/ch060.xhtml",
+            "text": "this gift of healing being a token and pledge thereof. This sign did our Savior g"
           }
         ],
         "noteref_leading_space": [],
@@ -182,7 +205,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 72,
+    "nav_link_count": 73,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

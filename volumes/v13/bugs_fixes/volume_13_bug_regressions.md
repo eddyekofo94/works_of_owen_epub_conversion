@@ -8,20 +8,20 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 92 | 95 | OK |
-| Inline structural marker candidates | 8 | 8 | OK |
+| Possible faulty paragraph splits | 9 | 95 | OK |
+| Inline structural marker candidates | 3 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 2 | OK |
+| Missing front CONTENTS pages | 2 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 0 | 6 | OK |
+| Missing enumerator markers | 6 | 6 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
-| Missing Greek clauses | 0 | 16 | OK |
+| Missing Greek clauses | 1 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -66,27 +66,42 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch006.xhtml; previous: uty: concerning each of which we have both the precept and the practice, God's command and their performance. The one in that injunction given unto the priest, Deuteronomy 31:11-13; next: All which we find punctually performed on both sides, Nehemiah 8:1-8. Ezra the priest, standing on a pulpit of wood, read the law and gave the meaning of it; and the "ears of all t
-- file: EPUB/ch006.xhtml; previous: ning of it; and the "ears of all the people were attentive to the book of the law." Which course continued until there was an end put to the observances of that law; as Acts 15:21,; next: On which ground, not receding from their ancient observations, the people assembled to hear our Savior teaching with authority, Luke 21:38; and St Paul divers times took advantage 
-- file: EPUB/ch006.xhtml; previous: ary assemblies to preach the gospel unto them. For the other, which concerns their own searching into the law and studying of the word, we have a strict command, Deuteronomy 6:6-9,; next: Which strict charge is again repeated, chapter 11:18, summarily comprehending all ways whereby they might become exercised in the law.
-- file: EPUB/ch006.xhtml; previous: s belonged to that kind of public teaching which was necessary under that administration of the covenant. But instead of many, I will name one not liable to exception: Malachi 2:7,; next: — where both a recital of his own duty, that he should be full of knowledge to instruct; the intimation to the people, that they should seek unto him, or give heed to his teaching;
-- file: EPUB/ch006.xhtml; previous: 6:2,3, than him because he did. There are, indeed, many sharp reproofs in the Old Testament of those who undertook to be God's messengers without his warrant; as Jeremiah 22:21,22,; next: — to which, and the like places, it may satisfactorily be answered, that howsoever, by the way of analogy, they may be drawn into rule for these times of the gospel, yet they were 
+- file: EPUB/ch003.xhtml; previous: ays of mercy and grace which are necessary to carry you along through all your engagements, until you arrive at the haven of everlasting glory, where you would be. I rest your most; next: obliged servant in Jesus Christ, our common Master
+- file: EPUB/ch003.xhtml; previous: obliged servant in Jesus Christ, our common Master; next: John Owen
+- file: EPUB/ch015.xhtml; previous: To The Reader; next: THERE are, Christian reader, certain principles in church affairs generally consented unto by all men aiming at reformation and the furtherance of the power of godliness therein, h
+- file: EPUB/ch026.xhtml; previous: h and making profession of Christianity, may claim admission into the society of Christians within those bounds, and enjoy the privileges and ordinances which are there dispensed,"; next: Ans. of Commit., p. 105. This is also pursued by the authors of Jus Divinum Ministerii Anglicani, pp. 9,10, where, after the repetition of the words first mentioned, they add, that
+- file: EPUB/ch029.xhtml; previous: To The Reader; next: CHRISTIAN READER,
 
 ### Inline structural marker candidates
 
 - file: EPUB/ch009.xhtml; text: Now, three ways may a man receive, and be assured that he hath received, this divine mission, or know that he is called of God to the preaching of the word; I mean not that persuasion of divine concurrence which is neces
-- file: EPUB/ch016.xhtml; text: Explication III. The greatness of the work (for which who is sufficient? 2 Corinthians 2:16); — the strength of the opposition which lies against it, 1 Corinthians 16:9; Revelation 12:12; 2 Timothy 4:3-5; — the concernme
-- file: EPUB/ch016.xhtml; text: Let motives hereunto be, — 1. God's command. 2. Our own preservation from sin and protection from punishment, that with others we be not infected and plagued. 3. Christ's delight in the purity of his ordinances.
-- file: EPUB/ch016.xhtml; text: Now, to a right performance of this duty, and in the discharge of it, are required, — 1. A due valuation, strong desire, and high esteem of the church's prosperity, in every member of it, Psalm 122:6. 2. Bowels of compas
-- file: EPUB/ch016.xhtml; text: Motives to this duty are: — 1. The love of God unto us, 1 John 3: 16. 2. The glory of the gospel, exceedingly exalted thereby, Titus 3:8,14; Matthew 5:7.
+- file: EPUB/ch031.xhtml; text: Thus, in general, to take a view of some particular passages in the appendix destined to this good work: The first section tries, with much wit and rhetoric, to improve the pretended alteration of judgment to the blemish
+- file: EPUB/ch059.xhtml; text: The reasonableness of this gospel institution is manifested by the Holy Ghost: — 1. From the law of nature, Luke 10:7; 1 Corinthians 9:7, 11. 2. From the law of nations, in the same place. 3. From the tendency and equity
 
 ### Repeated word windows
 
 - phrase: the grounds and reasons on which protestant dissenters desire their
-- phrase: ii word of advice to the citizens of london this
-- phrase: word of advice to the citizens of london this tract
-- phrase: of advice to the citizens of london this tract only
-- phrase: advice to the citizens of london this tract only appeared
+- phrase: grounds and reasons on which protestant dissenters desire their liberty
+- phrase: the state of the kingdom with respect to the present
+- phrase: state of the kingdom with respect to the present bill
+- phrase: of the kingdom with respect to the present bill against
+
+### Missing front CONTENTS pages
+
+- page: 3; sample: contents of the duty of pastors and people distinguished preface of the administration of holy things among the patriarchs before the law of the same among the jews
+- page: 8; sample: an answer etc brief vindication of the nonconformists from the charge of schism prefatory note by the editor brief vindication etc truth and innocence vindicated prefatory note by
+
+### Missing enumerator markers
+
+- marker: (1.)
+- marker: (2.)
+- marker: (3.)
+- marker: (4.)
+- marker: (5.)
+
+### Missing Greek clauses
+
+- page: 263; sample: δουλον κυριου ου δει μαχεσθαι
 
 ### Repeated phrase hits
 

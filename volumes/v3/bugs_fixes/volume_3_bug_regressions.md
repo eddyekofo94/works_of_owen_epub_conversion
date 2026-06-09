@@ -19,7 +19,7 @@
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 1 | 0 | OK |
+| Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 1 | OK |
 | Missing Hebrew clauses | 0 | 5 | OK |

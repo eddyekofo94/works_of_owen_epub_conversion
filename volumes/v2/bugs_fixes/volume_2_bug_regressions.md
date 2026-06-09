@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 179 | 209 | OK |
-| Inline structural marker candidates | 0 | 1 | OK |
+| Possible faulty paragraph splits | 13 | 209 | OK |
+| Inline structural marker candidates | 1 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 2 | OK |
+| Missing front CONTENTS pages | 2 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 0 | 15 | OK |
+| Lowercase page fragments | 10 | 15 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,11 +66,15 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch002.xhtml; previous: Reader, I am Thy servant in Christ Jesus; next: DANIEL BURGESS
-- file: EPUB/ch008.xhtml; previous: n what the peculiar appropriation of this distinct communion unto the several persons doth consist, must, in the first place, be made manifest. 14 1 John 5:7, the apostle tells us,; next: In heaven they are, and bear witness to us. And what is it that they bear witness unto? Unto the sonship of Christ, and the salvation of believers in his blood. Of the carrying on 
-- file: EPUB/ch008.xhtml; previous: Sometimes the Son only is spoken of, as to this purpose. 1 Corinthians 1:9,; next: — of which place afterward.
-- file: EPUB/ch008.xhtml; previous: Sometimes the Spirit alone is mentioned. 2 Corinthians 13:14,; next: This distinct communion, then, of the saints with the Father, Son, and Spirit, is very plain in the Scripture; but yet it may admit of farther demonstration Only this caution I mus
-- file: EPUB/ch008.xhtml; previous: er: these graces as acted in prayer and praises, and as clothed with instituted worship, are peculiarly directed unto him. "Ye call on the Father," 1 Peter 1:17, Ephesians 3:14,15,; next: Bowing the knee compriseth the whole worship of God, both that which is moral, in the universal obedience he requireth, and those peculiar ways of carrying it on which are by him a
+- file: EPUB/ch001.xhtml; previous: CHRISTIAN READER,; next: IT is now six years past since I was brought under an engagement of promise for the publishing of some meditations on the subject which thou wilt find handled in the ensuing treati
+- file: EPUB/ch002.xhtml; previous: To The Reader; next: ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; and Ferdinand, king of Sicily, in reading Quintus Curtius Rufus : but thou hast here nobler enterta
+- file: EPUB/ch002.xhtml; previous: Reader, I am Thy servant in Christ Jesus; next: Daniel Burgess
+- file: EPUB/ch005.xhtml; previous: der three divisions: — his _personal grace,_ III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; _— purchased grace_,; next: VII.
+- file: EPUB/ch008.xhtml; previous:  And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,; next: And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew 
+
+### Inline structural marker candidates
+
+- file: EPUB/ch005.xhtml; text: Part I. — The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity, II. Communion with the FATHER is descr
 
 ### Repeated word windows
 
@@ -80,6 +84,11 @@
 - phrase: fellowship is with the father and with his son jesus
 - phrase: pleased the father that in him should all fullness dwell
 
+### Missing front CONTENTS pages
+
+- page: 3; sample: contents of vol of communion with god the father son and holy ghost prefatory note by the editor preface note to the reader by burgess part chapter that
+- page: 6; sample: of the powers of the world to come unction by the spirit isaiah the various teachings of the holy ghost how the spirit of adoption and of supplication
+
 ### Repeated phrase hits
 
 - file: combined_text; text: part 3 of communion with the holy ghost
@@ -87,3 +96,11 @@
 ### Chapter headings rendered as paragraphs
 
 - file: EPUB/ch042.xhtml; text: Chapter 3
+
+### Lowercase page fragments
+
+- file: EPUB/ch008.xhtml; text: and verses 13,14, "Every creature which is in heaven, and on the earth, and under
+- file: EPUB/ch013.xhtml; text: which, in the phrase of another evangelist, is, "White as snow, so as no fuller o
+- file: EPUB/ch017.xhtml; text: he rejoices in him who was to take away the curse, by being made a curse for us.
+- file: EPUB/ch019.xhtml; text: because that we could not in that condition of weakness whereinto we are cast by
+- file: EPUB/ch023.xhtml; text: no more in bondage, but have the liberty of sons. And this liberty respects, —

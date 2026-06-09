@@ -2,9 +2,9 @@
   "volume": 4,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/input/owen-v4.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-05-29T11:46:21.699070+00:00",
+  "generated_at": "2026-06-09T10:46:33.475758+00:00",
   "status": "warn",
-  "warning_count": 10,
+  "warning_count": 12,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -13,6 +13,10 @@
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "front_matter_toc_loss",
+      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
     },
     {
       "code": "top_of_page_text_loss",
@@ -31,10 +35,6 @@
       "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     },
     {
-      "code": "roman_heading_candidates",
-      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
-    },
-    {
       "code": "overlong_heading_candidates",
       "message": "Some chapter headings are long enough to suggest swallowed body text"
     },
@@ -45,29 +45,42 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
     "page_count": 650
   },
   "epub": {
-    "spine_text_files": 69,
-    "paragraph_count": 2168
+    "spine_text_files": 70,
+    "paragraph_count": 2109
   },
   "word_coverage": {
-    "pdf_content_tokens": 221655,
-    "epub_content_tokens": 222385,
-    "coverage_ratio": 0.9967,
+    "pdf_content_tokens": 219414,
+    "epub_content_tokens": 220016,
+    "coverage_ratio": 0.9985,
     "missing_word_samples": [
       {
         "word": "self",
         "pdf": 7,
-        "epub": 3
+        "epub": 2
       },
       {
         "word": "14-17",
         "pdf": 4,
         "epub": 0
+      },
+      {
+        "word": "editor",
+        "pdf": 4,
+        "epub": 1
       },
       {
         "word": "16-18",
@@ -77,17 +90,37 @@
     ],
     "excess_word_samples": [
       {
+        "word": "chapter",
+        "pdf": 48,
+        "epub": 92
+      },
+      {
         "word": "psalms",
         "pdf": 7,
         "epub": 30
       },
       {
-        "word": "ohn",
+        "word": "digital",
         "pdf": 0,
-        "epub": 7
+        "epub": 10
       },
       {
-        "word": "digital",
+        "word": "modern",
+        "pdf": 4,
+        "epub": 13
+      },
+      {
+        "word": "greek",
+        "pdf": 8,
+        "epub": 16
+      },
+      {
+        "word": "edition",
+        "pdf": 3,
+        "epub": 9
+      },
+      {
+        "word": "footnotes",
         "pdf": 0,
         "epub": 6
       }
@@ -95,241 +128,232 @@
   },
   "page_coverage": {
     "pages_checked": 641,
-    "weak_page_count": 12,
+    "weak_page_count": 6,
     "weak_pages": [
       {
-        "page": 44,
+        "page": 3,
         "hit_ratio": 0.333,
-        "sample": "44 matter is that duty of the church whereby it proposeth and declareth the scripture to be the word of god and that as"
+        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject"
       },
       {
-        "page": 64,
+        "page": 4,
         "hit_ratio": 0.333,
-        "sample": "64 chapter moral certainty the result of external arguments insufficient divine revelation is the proper object of divine faith with such faith we can"
+        "sample": "question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures"
       },
       {
-        "page": 102,
+        "page": 5,
+        "hit_ratio": 0.0,
+        "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of"
+      },
+      {
+        "page": 8,
         "hit_ratio": 0.333,
-        "sample": "102 acquiesce in isaiah 20 malachi setting out its power and excellency for all the ends of faith and obedience psalm 19 7-9 119"
+        "sample": "the reason of faith or an answer unto that inquiry wherefore we believe the scripture to be the word of god with the causes"
       },
       {
         "page": 150,
-        "hit_ratio": 0.0,
-        "sample": "150 συηεσις πνευματικη or the causes ways and means of understanding the mind of god as revealed in his word with assurance therein and"
-      },
-      {
-        "page": 164,
         "hit_ratio": 0.333,
-        "sample": "164 that hereby alone is that full assurance of understanding in the knowledge of the mystery of god his truth and grace to be"
-      },
-      {
-        "page": 219,
-        "hit_ratio": 0.333,
-        "sample": "219 the power of this darkness that is while their minds are deeply affected with their natural ignorance they cannot perceive spiritual things corinthians"
+        "sample": "συηεσις πνευματικη or the causes ways and means of understanding the mind of god as revealed in his word with assurance therein and declaration"
       },
       {
         "page": 277,
         "hit_ratio": 0.333,
-        "sample": "277 god hath hereby given an account of the beginning progress trials faith obedience and whole proceedings of the church in the pursuit of"
-      },
-      {
-        "page": 409,
-        "hit_ratio": 0.333,
-        "sample": "409 2dly although the exercise of the gift itself ought to be nothing but the way of those graces acting themselves towards god in"
-      },
-      {
-        "page": 462,
-        "hit_ratio": 0.333,
-        "sample": "462 the personal righteousness of christ and the righteousness of his office are intended for concerning both these the church hath contest with the"
-      },
-      {
-        "page": 589,
-        "hit_ratio": 0.333,
-        "sample": "589 principally committed went up and down the world laying hold on all occasions to preach it unto jews and gentiles as yet unconverted"
-      },
-      {
-        "page": 592,
-        "hit_ratio": 0.333,
-        "sample": "592 doctrinally unto it might certainly and infallibly be tried judged and determined on and this was the rule of the written word according"
-      },
-      {
-        "page": 627,
-        "hit_ratio": 0.333,
-        "sample": "627 have so confirmed it in our former discourses concerning the dispensation and operations of the holy ghost as that fear not nor expect"
+        "sample": "god hath hereby given an account of the beginning progress trials faith obedience and whole proceedings of the church in the pursuit of the"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 742,
-    "missing_dense_window_pages": 625,
+    "dense_windows_checked": 28298,
+    "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
+        "page": 3,
+        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason"
+      },
+      {
         "page": 4,
-        "sample": "objections answered corinthians 13-18 isaiah 27 explained luke 24 44 45 opened ephesians 17-19"
+        "sample": "question stated the principal sufficient cause of the understanding which believers have in the"
+      },
+      {
+        "page": 5,
+        "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note"
+      },
+      {
+        "page": 6,
+        "sample": "given as comforter or the object of his acting in this office inhabitation of"
       },
       {
         "page": 8,
         "sample": "be the word of god with the causes and nature of that faith wherewith"
       },
       {
-        "page": 10,
-        "sample": "10 fanatical excesses which they sought to rebuke they stated the question in such"
-      },
-      {
-        "page": 11,
-        "sample": "11 itself substantiates such claim in his behalf it is the first recognition of"
-      },
-      {
-        "page": 12,
-        "sample": "12 preface having added brief account of the design order and method of the"
-      },
-      {
-        "page": 13,
-        "sample": "13 the consciences of men immediately and the way whereby they may come to"
-      },
-      {
-        "page": 15,
-        "sample": "15 the reason of faith or the grounds whereon the scripture is believed to"
-      },
-      {
-        "page": 16,
-        "sample": "16 first supernatural revelation is the only objective cause and means of supernatural illumination"
-      },
-      {
         "page": 17,
-        "sample": "17 that it did sufficiently evidence itself to be from god unto the minds"
-      },
-      {
-        "page": 18,
-        "sample": "18 of his will πολυμερως by sundry parts and degrees yet so that every"
+        "sample": "and power this they do undeniably and infallibly psalm romans 19-21 yet it is"
       },
       {
         "page": 19,
-        "sample": "19 before the call of moses during which time all things went into darkness"
+        "sample": "own counsels as it is expressed psalm and although this fell not out without"
       },
       {
         "page": 20,
-        "sample": "20 when god first committed the law to writing with all those things which"
+        "sample": "of curse unto the contrary malachi 4-6 so the writings of the new testament"
       },
       {
         "page": 21,
-        "sample": "21 fourthly the scripture is now become the only external means of divine supernatural"
+        "sample": "is the only repository of all divine supernatural revelation psalm isaiah timothy the pretenses"
       },
       {
         "page": 22,
-        "sample": "22 meditating on the scripture do take an effectual course to keep them in"
-      },
-      {
-        "page": 24,
-        "sample": "24 namely that we truly believe the scripture to be the word of god"
-      },
-      {
-        "page": 25,
-        "sample": "25 chapter what it is infallibly to believe the scripture to be the word"
-      },
-      {
-        "page": 26,
-        "sample": "26 the first is the material object of our faith namely the things which"
+        "sample": "in the ministry of the word see matthew corinthians 18-20 ephesians 11-15 timothy the"
       },
       {
         "page": 27,
-        "sample": "27 answer unto this question contains the formal reason and object of our faith"
-      },
-      {
-        "page": 28,
-        "sample": "28 that which is false or which may be false with divine faith for"
+        "sample": "been so instructed by them whom they have sufficient reason to give credit unto"
       },
       {
         "page": 29,
-        "sample": "29 afterwards or to speak distinctly our faith is supernatural with respect unto the"
-      },
-      {
-        "page": 30,
-        "sample": "30 lord is true absolutely but thus saith the lord and the lord hath"
-      },
-      {
-        "page": 32,
-        "sample": "32 chapter sundry convincing external arguments for divine revelation there are sundry cogent arguments"
-      },
-      {
-        "page": 33,
-        "sample": "33 original and authority of the scriptures which the mind ought to give upon"
-      },
-      {
-        "page": 34,
-        "sample": "34 writing pretended to be given unto the same end whatever therefore ensued with"
+        "sample": "inhabiteth eternity whose name is holy chap believe in the lord your god chronicles"
       },
       {
         "page": 35,
-        "sample": "35 wisdom before all the world deuteronomy 6-8 now we shall not need to"
+        "sample": "wisdom before all the world deuteronomy 6-8 now we shall not need to consider"
       },
       {
-        "page": 36,
-        "sample": "36 pretends to be there had been nothing more suitable to the nature of"
+        "page": 51,
+        "sample": "witnesses wherewith we are compassed about chap giving testimony unto what we do believe"
       },
       {
-        "page": 37,
-        "sample": "37 power it was to have it corrupted as it was of the apostate"
+        "page": 54,
+        "sample": "and rose again according to the scriptures chap and this they did by virtue"
       },
       {
-        "page": 38,
-        "sample": "38 practices absolutely inconsistent with it but also built all their present and future"
+        "page": 56,
+        "sample": "when they apprehended it would bring in decay of their trade acts 23-41 what"
       },
       {
-        "page": 39,
-        "sample": "39 notions and apprehensions of him according to the utmost capacity of our finite"
+        "page": 64,
+        "sample": "were accused to have followed cunningly devised fables they appealed unto moses and the"
       },
       {
-        "page": 40,
-        "sample": "40 dark place peter 19 it gives unto all men at once perfect clear"
+        "page": 65,
+        "sample": "power in and by his word is appealed unto corinthians corinthians but yet in"
       },
       {
-        "page": 41,
-        "sample": "41 make it or that there is any way to free them from it"
+        "page": 79,
+        "sample": "neither do we nor can we rationally answer by it unto this question why"
       },
       {
-        "page": 42,
-        "sample": "42 themselves in endless questions to no purpose arose from their ignorance of what"
+        "page": 95,
+        "sample": "inquiry is what he requireth it unto it is to this law to this"
       },
       {
-        "page": 43,
-        "sample": "43 original others will retain sacred veneration of it as of the offspring of"
+        "page": 97,
+        "sample": "but is it of this authority and efficacy in itself see luke 27-31 then"
       },
       {
-        "page": 44,
-        "sample": "44 matter is that duty of the church whereby it proposeth and declareth the"
+        "page": 102,
+        "sample": "and excellency for all the ends of faith and obedience psalm 7-9 and not"
       },
       {
-        "page": 45,
-        "sample": "45 the testimony therefore which intend is that of multitudes of persons of unspotted"
+        "page": 105,
+        "sample": "chapter the nature of divine revelations their self evidencing power considered particularly that of"
       },
       {
-        "page": 46,
-        "sample": "46 particular john beareth witness unto his revelation chap 19 22 these are the"
+        "page": 112,
+        "sample": "or his word which he hath magnified above all his name psalm that is"
       },
       {
-        "page": 47,
-        "sample": "47 violently engaged and have put an immediate issue unto all that difference and"
+        "page": 116,
+        "sample": "the word incomparably before them psalm 1-3 7-9 etc and these do manifest the"
       },
       {
-        "page": 48,
-        "sample": "48 unto the testimony of the divine writers themselves we must add that of"
+        "page": 124,
+        "sample": "it hath fixed in the hearts of multitudes of its enemies psalm it evidences"
       },
       {
-        "page": 49,
-        "sample": "49 what it was they gave testimony unto is duly to be considered and"
+        "page": 131,
+        "sample": "are not from themselves nor of their own invention timothy 14-17 and this is"
       },
       {
-        "page": 50,
-        "sample": "50 1st many of them especially in some seasons gave it in with sundry"
+        "page": 136,
+        "sample": "afterward converted by the preaching of the word acts or they will produce only"
+      },
+      {
+        "page": 146,
+        "sample": "but what need is there of a0y long disputation we therefore firmly believe the"
+      },
+      {
+        "page": 152,
+        "sample": "scripture are adduced involving minute discussion of psalm corinthians 13-18 isaiah luke ephesians 17-19"
+      },
+      {
+        "page": 156,
+        "sample": "infallible conduct in these things but probably the near ap preach of the daily-expected"
+      },
+      {
+        "page": 158,
+        "sample": "συνεσις πνευματικη chapter usurpation of the church of rome with reference unto the interpretation"
+      },
+      {
+        "page": 177,
+        "sample": "for them again unto the same purpose with great fervency ephesians 14-19 all the"
+      },
+      {
+        "page": 190,
+        "sample": "their faith ye need no such teaching because of the unction which ye have"
+      },
+      {
+        "page": 208,
+        "sample": "by opening of our eyes psalm the enlightening of the eyes of our understanding"
+      },
+      {
+        "page": 211,
+        "sample": "speaks in that place and from which he elsewhere plainly dis tinguisheth his giving"
+      },
+      {
+        "page": 214,
+        "sample": "seeing all were so and were always to be so 2ndly it brings in"
+      },
+      {
+        "page": 216,
+        "sample": "of them essentially in his person as god man as vested with his offices"
+      },
+      {
+        "page": 219,
+        "sample": "me understanding and shall keep thy law psalm so the apostle speaks to timothy"
+      },
+      {
+        "page": 221,
+        "sample": "things of god as he ought daniel hosea psalm although men may bear themselves"
       }
     ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 4,
     "front_toc_windows_checked": 16,
-    "missing_front_toc_pages": 0,
-    "missing_front_toc_samples": []
+    "missing_front_toc_pages": 4,
+    "missing_front_toc_samples": [
+      {
+        "page": 3,
+        "hit_ratio": 0.25,
+        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what"
+      },
+      {
+        "page": 4,
+        "hit_ratio": 0.5,
+        "sample": "question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god"
+      },
+      {
+        "page": 5,
+        "hit_ratio": 0.25,
+        "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work"
+      },
+      {
+        "page": 6,
+        "hit_ratio": 0.5,
+        "sample": "unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised"
+      }
+    ]
   },
   "top_of_page_integrity": {
     "top_windows_checked": 646,
@@ -386,7 +410,7 @@
       },
       {
         "page": 269,
-        "window": "in them peculiarly is it grafh zeo pneustov writing by divine inspiration timothy 16",
+        "window": "in them peculiarly is it grafh zeo pneustov writing by divine inspiration timothy and",
         "sample": "(1.) In them peculiarly is it grafh< zeo>pneustov, a \"writing by divine inspiration,\" 2 Timothy 3:16; and hw;hoy] rp,se, the \"book of writing of",
         "reason": "font-encoded Greek/Hebrew window"
       },
@@ -505,17 +529,12 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 2,
+    "missing_top_window_count": 1,
     "missing_top_windows": [
       {
         "page": 35,
         "window": "wisdom before all the world deuteronomy 6-8 now we shall not need to consider",
         "sample": "wisdom before all the world, Deuteronomy 4:6-8. Now, we shall not need to consider what were the first attempts of other nations in"
-      },
-      {
-        "page": 164,
-        "window": "that hereby alone is that full assurance of understanding in the knowledge of the",
-        "sample": "V. That hereby alone is that full assurance of understanding in the knowledge of the mystery of God, his truth and grace, to be obtained,"
       }
     ]
   },
@@ -524,7 +543,7 @@
     "bottom_windows_usable": 605,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 8,
+    "missing_bottom_window_count": 10,
     "missing_bottom_windows": [
       {
         "page": 2,
@@ -542,8 +561,18 @@
         "sample": "let it be observed, that what we assert respects the revelation itself, the Scripture, the writing, th<n grafh>n, and not merely the things written or"
       },
       {
+        "page": 150,
+        "window": "out of thy law psalm give me understanding and shall live 19b9144 psalm",
+        "sample": "out of thy law. — Psalm 119:18. Give me understanding, and I shall live. — <19B9144>Psalm 119:144."
+      },
+      {
+        "page": 219,
+        "window": "understanding and shall keep thy law psalm so the apostle speaks to timothy",
+        "sample": "understanding, and I shall keep thy law,\" Psalm 119:34. So the apostle speaks to Timothy,"
+      },
+      {
         "page": 365,
-        "window": "35 and there he is said simply ejntugca nein but the spirit here is",
+        "window": "verse and there he is said simply ejntugca nein but the spirit here is",
         "sample": "its proper place, as a consequent and fruit of his death and resurrection, verse 35. And there he is said simply ejntugca>nein? but the Spirit here is"
       },
       {
@@ -553,7 +582,7 @@
       },
       {
         "page": 513,
-        "window": "made of it corinthians 22 dou to ajrjrjazw na tou pneu matov the earnest",
+        "window": "mention made of it corinthians dou to ajrjrjazw na tou pneu matov the earnest",
         "sample": "expressed in every place where there is mention made of it: 2 Corinthians 1:22, Dou<v to<n ajrjrJazw~na tou~ Pneu>matov? — \"The earnest"
       },
       {
@@ -569,252 +598,125 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1813,
-    "split_candidate_count": 75,
+    "paragraphs_checked": 1765,
+    "split_candidate_count": 9,
     "split_candidates": [
       {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "EDITED BY",
-        "next": "WILLIAM H. GOOLD"
+        "file": "EPUB/ch029.xhtml",
+        "previous": "Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,",
+        "next": "IV."
       },
       {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "WILLIAM H. GOOLD",
-        "next": "ΠΗΕΥΜΑΤΟΛΟΓΙΑ ? OR A DISCOURSE CONCERNING THE HOLY SPIRIT — CONTINUED. [BOOK VI., PART I.] THE REASON OF FAITH. PREFATORY NOTE BY THE EDITOR"
+        "file": "EPUB/ch029.xhtml",
+        "previous": "on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,",
+        "next": "V."
       },
       {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "4. - Extraordinary spiritual gifts, [1 Corinthians 12:5] -",
-        "next": "11."
+        "file": "EPUB/ch029.xhtml",
+        "previous": "planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,",
+        "next": "VI."
       },
       {
-        "file": "EPUB/ch007.xhtml",
-        "previous": "we do believe; and the reason why we do believe them is, because they are proposed in the Scripture. Thus the apostle expresseth the whole of what we intend: 1 Corinthians 15:3, 4,",
-        "next": "Christ's death, and burial, and resurrection, are the things proposed unto us to be believed, and so the object of our faith; but the reason why we believe them is, because they ar"
+        "file": "EPUB/ch029.xhtml",
+        "previous": "The manner of prayer is farther considered with special reference to [Ephesians 6:18]",
+        "next": "VII."
       },
       {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "o deservedly, for where it is absolute it is unquestionable; that which is most ancient in any kind is most true. God himself makes use of this plea against idols: Isaiah 43:10-12,",
-        "next": "That which he asserts is, that he alone is God, and no other: this he calls the people to testify by this argument, that he was among them as God, — that is, in the church, — befor"
+        "file": "EPUB/ch044.xhtml",
+        "previous": "In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,",
+        "next": "III."
       },
       {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "rship of idols, but a sedate, unprejudiced consideration of the revelation of these things in the books of the Scripture. We may say, therefore, to all the world, with our prophet,",
-        "next": "And this, also, plainly manifests the Scripture to be of a divine original: for if this declaration of God, this revelation of himself and his will, is incomparably the greatest an"
+        "file": "EPUB/ch045.xhtml",
+        "previous": "(1.) Extraordinary gifts constituted extraordinary officers — apostles, evangelists, and prophets,",
+        "next": "III."
       },
       {
-        "file": "EPUB/ch008.xhtml",
-        "previous": " of them, severally and jointly, witnessed that what they wrote was received by inspiration from God. This is pleaded by the apostle Peter in the name of them all: 2 Peter 1:16-21,",
-        "next": "This is the concurrent testimony of the writers both of the Old Testament and the New, — namely, that as they had certain knowledge of the things they wrote, so their writing was b"
+        "file": "EPUB/ch045.xhtml",
+        "previous": "ction, from its original acquisition, from the immediate cause of its actual communication, from its own nature, from the variety of offices in it, and from the end designed by it,",
+        "next": "VI."
       },
       {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "the word of God, in the way and manner which God requireth, without a supernatural work of the Holy Spirit upon our minds in the illumination of them. So David prays that God would",
-        "next": "The communication of this light unto us the Scripture calleth revealing and revelation: Matthew 11:25, \"Thou hast hid these things from the wise and prudent, and hast revealed them"
+        "file": "EPUB/ch045.xhtml",
+        "previous": " the Spirit is promised, administered, and continued; the plain assertions of Scripture; the indispensable necessity for them; and from the actual enjoyment and experience of them,",
+        "next": "VII."
       },
       {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "e kingdom of heaven, when they were preached unto them. And \"no man knoweth the Father, but he to whom the Son will reveal him,\" verse 27. So the apostle prayeth for the Ephesians,",
-        "next": "It is true, these Ephesians were already believers, or considered by the apostle as such; but if he judged it necessary to pray for them that they might have \"the Spirit of wisdom "
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "and revelation to enlighten the eyes of their understanding,\" with respect unto farther degrees of faith and knowledge, or, as he speaks in another place, that they might come unto",
-        "next": "But as a pretense hereof hath been abused, as we shall see afterward, so the pleading of it is liable to be mistaken; for some are ready to apprehend that this retreat unto a Spiri"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "y to reproach them with giving countenance unto enthusiams, and exposing the minds of men to endless delusiona Wherefore, this matter must be a little farther inquired into. And, —",
-        "next": "This is that which is commonly imputed unto those who deny either the authority of the church, or any other external arguments or motives of credibility, to be the formal reason of"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "Isaiah 8:19,20,",
-        "next": "The inquiry is, by what means men may come to satisfaction in their minds and consciences, or what their faith or trust is in. Two things are proposed unto this end: — (1.) Immedia"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "e believe for its own sake, or because \"holy men of God\" wrote it \"as they were moved by the Holy Ghost.\" So is the whole object of faith proposed by the same apostle, 2 Peter 3:2,",
-        "next": "And because our faith is resolved into them, we are said to be \"built upon the foundation of the apostles and prophets,\" as was said, Ephesians 2:20; that is, our faith rests solel"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "25,26. This ministry of the church, either extraordinary or ordinary, God hath appointed unto this end, and ordinarily it is indispensable thereunto: chap. [Romans 10:14] 10:14,15,",
-        "next": "Without this ordinarily we cannot believe the Scripture to be the word of God, nor the things contained in it to be from him, though we do not believe either the one or the other f"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "previous": " he doth by the works of creation and providence, which present themselves unavoidably unto reason in its exercise, to instruct us in the nature, being, and properties of God. Thus",
-        "next": "But yet they do not thus declare, evidence, and reveal the glory of God unto the first principles and notions of natural light without the actual exercise of reason. They only do s"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "previous": "e word, namely, by that divine power which it hath upon our souls and consciences, that we do assuredly acquiesce in it to be from God. So the Thessalonians are commended that they",
-        "next": "It distinguisheth itself from the word of men, and evidences itself to be indeed the word of God, by its effectual operation in them that believe. And he who hath this testimony in"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "previous": "Now, of this great and glorious effect the word is the only instrumental cause, whereby the divine power operates and is expressive of itself: for we are \"born again,\" born of God,",
-        "next": "The word is the seed of the new creature in us, that whereby our whole natures, our souls and all their faculties, are changed and renewed into the image and likeness of God; and b"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "The design of Stapleton, De Principiis Fidei, controver. 4, lib. 8 cap. 1, is to prove,",
-        "next": "— which he there proves with sundry arguments, — namely,"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "— which he there proves with sundry arguments, — namely,",
-        "next": "And Bellarmine speaks to the same purpose:"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "And a little after he speaks yet more plainly,",
-        "next": "Yea, all other learned men of the same profession do speak to the same purpose."
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "Wherefore, principally, it is asserted, —",
-        "next": "Wherefore, the nature and use of all these means shall be afterward declared."
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "n removed out of the way. And there are two ends designed in this undertaking: — First, That which the evangelist Luke proposed in his writing the Gospel unto Theophilus, — namely,",
-        "next": "When we have been instructed in the truth of the gospel, and do give our assent thereunto, yet it is needful that we should examine the grounds and reasons of what we do believe th"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "But the meaning of the psalmist will the better appear if we consider the communication of the grace which he prayed for unto others. This is expressed, Luke 24:45,",
-        "next": "— a needless work if some men may be believed; but our Lord Jesus Christ thought not so. The truths concerning him were revealed in the Scripture, that is, in the law, and the prop"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "But there is an eminent place that must be pleaded distinctly to this purpose: Ephesians 1:17-19,",
-        "next": "This is the whole of what we would assert, and nothing else. And if men would acquiesce by faith in what is here declared, we [would] need to plead this cause no farther, for the w"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "all investigation\" or search; the same word that he useth to set forth the ways of God, when his design is to declare them wonderful, or the object of our admiration: Romans 11:33,",
-        "next": "And there is in them ὑπερζάλλον μέγεθος , \"an exceeding\" or inexpressible \"greatness of power.\""
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "nicated, do evidence the nature and evince the truth of the work ascribed unto him. As for the first, it is by the grant, donation, or free gift of God the Father: [Ephesians 3:17]",
-        "next": "God is called \"The King of glory,\" Psalm 24:7, 8, and \"The God of glory,\" Acts 7:2, with respect unto his own glorious majesty; but he is \"The Father of glory\" as he is the eternal"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "nd spiritual things, and in their contempt of what they do not so as folly, 1 Corinthians 1:18, 23. And with respect hereunto doth the apostle give that advice unto us as our duty,",
-        "next": "This is a matter wherein men are very apt to deceive themselves, even to conceit themselves wise, and to trust thereunto in the things of God; whereof alone he there treats. Wherea"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "ustification thereby, was accused to have made void the law, whereas without his doctrine the law would have been void, or of no use to the souls of men. So he pleads, Romans 3:31,",
-        "next": "So to this day, justification by the imputation of the righteousness of Christ, and the necessity of our own obedience; the efficacy of divine grace in conversion, and the liberty "
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "oded out of Christian theology. God says, \"What could have been done more to my vineyard, that I have not done?\" [Isaiah 5:4] But the expression hath plainly a double limitation: —",
-        "next": "(1st.) Unto the use of outward means only, concerning which God speaks in that place, and from which he elsewhere plainly distinguisheth his giving them a new heart and a new spiri"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "id to have given men understanding, because he hath done what is requisite on his part, in the declaration of the gospel, that we may have it, whether ever we have it or no. But, —",
-        "next": "(1st.) What he is said to have done , he had at least a design to do; and if he had so, why doth it not take effect? \"It is,\" they say, \"because of the unwillingness of men to turn"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": ",\" they say, \"because of the unwillingness of men to turn unto him, and other vicious habits of their minds, which hinder them from receiving instruction.\" But ff it be so, then, —",
-        "next": "[1st.] It is supposed that man also in their teachings can give us an understanding as well as the Son of God; for they may teach men the knowledge of the gospel if they are willin"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "2dly. A teaching suited unto that ability is promised or asserted. Three ways of this teaching are pleaded: —",
-        "next": "(1st.) That it consists in a ζεοπνευστία , an immediate infallible inspiration and afflatus, of the same nature with that of the prophets and apostles of old. But, [1st.] This take"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "ces against the gospel and the doctrine of it. Being blinded hereby, they can see nothing of beauty and glory in it, and so certainly do not apprehend it aright: 2 Corinthians 4:4,",
-        "next": "This is acknowledged by all to be an obstacle against the right understanding of the gospel. Unless the mind be freed from such prejudices as are the effects of such blinding effic"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "at is that darkness!\" Matthew 6:23. And because men are subject to mistake herein, and to suppose themselves, with the Pharisees, to see when they are blind, he gives that caution,",
-        "next": "Whatever he may do in way of disposition or preparation, in way of duty and diligence, in the utmost improvement of the natural faculties of his mind (which no man will ever rise u"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "[2.] It is called understanding. So the psalmist prays, \"Give me understanding, and I shall keep thy law,\" [Psalms 119:34] Psalm 119:34. So the apostle speaks to Timothy,",
-        "next": "Besides his own consideration of what was proposed unto him, which includes the due and diligent use of all outward means, it was moreover necessary that God should give him unders"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "reof, as of that without which there can be no saving knowledge of the word, nor advantage by it, the psalmist expresseth emphatically with great fervency of spirit: Psalm 119:144,",
-        "next": "Without this he knew that he could have no benefit by the everlasting righteousness of the testimonies of God. All understanding, indeed, however it be abused by the most, is the w"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "When the Lord Christ came forth first unto the preaching of the gospel, there came a voice from heaven, saying,",
-        "next": "Neither was this command given unto them alone who heard it immediately from the \"excellent glory,\" as Peter speaks, 2 Peter 1:17, but, as recorded in the word, is given equally un"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "heir sins. This sets them at a distance from it in affection; whereon they can never make any near approach unto it in knowledge or understanding. So we are assured, John 3:19, 20,",
-        "next": "Persons under the power of this frame take up under the shades of ignorance and corrupt imaginations; and if they should attempt to learn the truth, they would never be able so to "
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "n for these ends is stored. Hence it is their duty to meditate upon the word day and night; to \"seek for wisdom as silver, and to search for it as for hid treasures,\" that they may",
-        "next": "And this being a duty whereunto the exercise of all graces is required, they are all improved thereby. The soul which is hereby engaged unto constant converse with God will thrive "
-      },
-      {
-        "file": "EPUB/ch024.xhtml",
-        "previous": "ides them into fresh discoveries of it. This frame of mind is under a promise of divine teaching: Hosea 6:3, \"Then shall we know, if we follow on to know the LORD.\" Proverbs 2:8-5,",
-        "next": "When men live in a holy admiration of and complacency in God, as the God of truth, as the first infinite essential Truth, in whose enjoyment alone there is fullness of all satisfac"
+        "file": "EPUB/ch057.xhtml",
+        "previous": "e, another a hand, another a foot, in the body, by virtue of peculiar gifts: for \"unto every one of us is given grace according to the measure of the gift of Christ,\" Ephesians 4:7",
+        "next": "These gifts are not saving, sanctifying graces; those were not so in themselves which made the most glorious and astonishing appearance in the world, and which were most eminently "
       }
     ],
-    "structural_start_exclusions": 313,
-    "short_fragment_count": 13,
+    "structural_start_exclusions": 295,
+    "short_fragment_count": 20,
     "short_fragments": [
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "EDITED BY"
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "WILLIAM H. GOOLD"
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "Appendix."
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "11."
-      },
       {
         "file": "EPUB/ch005.xhtml",
         "text": "May 11, 1677."
       },
       {
         "file": "EPUB/ch010.xhtml",
-        "text": "Isaiah 8:19,20,"
+        "text": "Isaiah 8:19, 20,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "I."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "I."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "II."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "IV."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "V."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "VI."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "VII."
       },
       {
         "file": "EPUB/ch035.xhtml",
         "text": "I answer, —"
       },
       {
-        "file": "EPUB/ch037.xhtml",
-        "text": "I say, therefore, —"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "text": "See vol. 15 p. 249."
+        "file": "EPUB/ch044.xhtml",
+        "text": "I."
       },
       {
         "file": "EPUB/ch044.xhtml",
-        "text": "I."
+        "text": "II."
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "III."
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "III."
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "III."
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "VI."
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "VII."
       },
       {
         "file": "EPUB/ch046.xhtml",
@@ -831,8 +733,20 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 2,
+    "inline_structural_candidate_count": 6,
     "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "2. Into the especial nature of the Spirit's work in enlightening us into a knowledge of the mind of God in Scripture. Its nature is first considered by a reference to several scriptural expressions descriptive of it, such as \"opening the eyes,\" \"translating ou"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "Nor do I believe that any one who doth and can thus pray as he ought, in a conscientious study of the word, shall ever be left unto the final prevalency of any pernicious error or the ignorance of any fundamental truth. None utterly miscarry in the seeking aft"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "I say, therefore, — 1. That the things insisted on are in some degree and measure necessary unto all acceptable prayer. The Scripture assigns them thereunto, and believers find them so by their own experience. For we discourse not about prayer as it is the wor"
+      },
       {
         "file": "EPUB/ch044.xhtml",
         "text": "Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference to [2 Corinthians 1:22] 5:5, [Ephesians"
@@ -840,6 +754,10 @@
       {
         "file": "EPUB/ch052.xhtml",
         "text": "What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the church."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "Designing to treat of the spiritual gifts bestowed on the ministry of the church, I have thus far diverted unto the consideration of the ministry itself as it is a gift of Christ, and shall shut it up with a few corollaries, As, 1. Where there is any office er"
       }
     ],
     "reference_continuation_split_count": 0,
@@ -848,62 +766,14 @@
     "citation_continuation_splits": [],
     "suspicious_large_number_start_count": 0,
     "suspicious_large_number_starts": [],
-    "roman_heading_candidate_count": 3,
-    "roman_heading_candidates": [
-      {
-        "file": "EPUB/ch016.xhtml",
-        "text": "I. The Holy, Spirit is represented as the EFFICIENT CAUSE, and an inquiry follows: —"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "text": "I. The evidence of its reality consists in a minute explanation of two passages in Scripture, Zechariah 12:10, and Galatians 4:6, 2, 3."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "text": "II. Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,"
-      }
-    ],
-    "overlong_heading_candidate_count": 8,
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 1,
     "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch013.xhtml",
-        "tag": "h4",
-        "text": "II. This being the substance of what is declared and pleaded for in the preceding treatise, to prevent the obloquy of some and confirm the judgment of others, I shall add the suffrage of ancient and modern writers given unto the principal parts of it, and wher"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "tag": "h4",
-        "text": "IV. That there is an especial work of the Holy Spirit, in the supernatural illumination of our minds, needful unto the end proposed, — namely, that we may aright, and according unto our duty, understand the mind of God in the Scripture ourselves, or interpret "
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "tag": "h4",
-        "text": "V. That hereby alone is that full _assurance of understanding in the_ _knowledge of the mystery of God,_ his truth and grace, to be obtained, whereby any man may answer the mind and will of God, or comply with his own duty in all that he may be called to do or"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "tag": "h4",
-        "text": "VI. The certainty and assurance that we may have and ought to have of our right understanding the mind of God in the Scripture, either in general or as to any especial doctrine, doth not depend upon, is not resolved into, any immediate inspiration or enthusias"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "tag": "h4",
-        "text": "VII. That whereas the means of the right interpretation of the Scripture, and understanding of the mind of God therein, are of two sorts, — first, such as are prescribed unto us in a way of duty, as _prayer, meditation_ on the word itself, and the like; and, s"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "tag": "h4",
-        "text": "XI. The discourse on Spiritual Gifts, though comparatively short, is the second part of the main.body of the whole work on the Spirit; and, from various allusions to it in other works of the author, he seems to trove attached considerable importance to it."
-      },
       {
         "file": "EPUB/ch047.xhtml",
         "tag": "h3",
         "text": "The Holy Ghost the comforter of the church by way of office — How he is the church's advocate — John 14:16; 1 John 2:1, 2; John 16:8-11 opened."
-      },
-      {
-        "file": "EPUB/ch064.xhtml",
-        "tag": "h4",
-        "text": "I. In our inquiry after the first, or what are the gifts whereby men are fitted and enabled for the ministry, we wholly set aside the consideration of all those gracious qualifications of faith, love, zeal, compassion, careful tender watchfulness, and the like"
       }
     ],
     "frontmatter_heading_body_candidate_count": 0,
@@ -911,11 +781,129 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 416,
-    "epub_marker_count": 416,
+    "epub_marker_count": 429,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 0,
-    "excess_markers": [],
+    "excess_marker_count": 7,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p88",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 98,
+        "epub": 99,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p91",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p161",
+            "context": "1. And in our believing, or our faith, two things are to be considered: — (1.) What it is that we do believe; and, (2.) Wherefore we do so believe it."
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p194",
+            "context": "(1.) As it takes on itself to speak in the name and authority of God, and delivers nothing, commands nothing, but what becomes his infinite holiness, wisdom, and goodness; so it makes"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 97,
+        "epub": 98,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p91",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p161",
+            "context": "or our faith, two things are to be considered: — (1.) What it is that we do believe; and, (2.) Wherefore we do so believe it."
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p198",
+            "context": "(2.) The second end of this doctrine is, to direct mankind in their proper course of living unto God, and attaining that rest and blessedness whereof they are capable, and which they c"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 32,
+        "epub": 33,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p91",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p207",
+            "context": "And, to evidence the force that is in this consideration, I shall briefly represent, [1.] Who they were that gave and do give this testimony, in some especial instances; [2.] What they gave this testimony unto; [3.] How, or by what means, they did so: —"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p208",
+            "context": "[1.] And, in the first place, the testimony of those by whom the several books of the Scripture were written is to be considered. They all of them, severally and jointly, witnessed tha"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/colophon.xhtml#p17",
+            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from"
+          },
+          {
+            "location": "EPUB/colophon.xhtml#p17",
+            "context": "entirely distinct from the original authorial/historical footnotes and reset starting at [1] for each chapter. Enhanced Original Footnotes 1, 2, ... : Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Lati"
+          },
+          {
+            "location": "EPUB/structural_guide.xhtml#p88",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 32,
+        "epub": 33,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p91",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p207",
+            "context": "ent, [1.] Who they were that gave and do give this testimony, in some especial instances; [2.] What they gave this testimony unto; [3.] How, or by what means, they did so: —"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p216",
+            "context": "[2.] What it was they gave testimony unto is duly to be considered; and this was, not only that the book of the Scripture was good, holy, and true, in all the contents of it, but that"
+          }
+        ]
+      },
+      {
+        "marker": "[2]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/colophon.xhtml#p17",
+            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
+          }
+        ]
+      }
+    ],
     "orphan_candidate_count": 1,
     "orphan_candidates": [
       {
@@ -933,14 +921,14 @@
     },
     {
       "phrase": "to believe the scripture to be the word of god",
-      "count": 17
-    },
-    {
-      "phrase": "the mind and will of god as revealed in the",
-      "count": 11
+      "count": 16
     },
     {
       "phrase": "believe the scripture to be the word of god with",
+      "count": 9
+    },
+    {
+      "phrase": "the mind and will of god as revealed in the",
       "count": 9
     },
     {
@@ -950,14 +938,6 @@
     {
       "phrase": "mind and will of god as revealed in the scripture",
       "count": 7
-    },
-    {
-      "phrase": "of the holy spirit in the illumination of our minds",
-      "count": 6
-    },
-    {
-      "phrase": "the right understanding of the mind of god in the",
-      "count": 6
     },
     {
       "phrase": "be the word of god with faith divine and supernatural",
@@ -972,11 +952,7 @@
       "count": 6
     },
     {
-      "phrase": "work of the holy spirit in the illumination of our",
-      "count": 5
-    },
-    {
-      "phrase": "right understanding of the mind of god in the scripture",
+      "phrase": "of the holy spirit in the illumination of our minds",
       "count": 5
     },
     {
@@ -1008,32 +984,44 @@
       "count": 5
     },
     {
-      "phrase": "infallibly to believe the scripture to be the word of",
+      "phrase": "work of the holy spirit in the illumination of our",
       "count": 4
     },
     {
-      "phrase": "for the right understanding of the mind of god in",
+      "phrase": "us to believe the scripture to be the word of",
       "count": 4
     },
     {
-      "phrase": "the holy ghost the comforter of the church by way",
+      "phrase": "believe the scripture to be the word of god and",
       "count": 4
     },
     {
-      "phrase": "holy ghost the comforter of the church by way of",
+      "phrase": "faith whereby we believe the scripture to be the word",
       "count": 4
     },
     {
-      "phrase": "ghost the comforter of the church by way of office",
+      "phrase": "lest the light of the glorious gospel of christ who",
+      "count": 4
+    },
+    {
+      "phrase": "the light of the glorious gospel of christ who is",
+      "count": 4
+    },
+    {
+      "phrase": "light of the glorious gospel of christ who is the",
+      "count": 4
+    },
+    {
+      "phrase": "of the glorious gospel of christ who is the image",
       "count": 4
     }
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 713,
-    "epub_greek_word_count": 713,
+    "epub_greek_word_count": 712,
     "pdf_greek_unique_words": 435,
-    "epub_greek_unique_words": 435,
-    "greek_word_coverage_ratio": 0.9971,
+    "epub_greek_unique_words": 434,
+    "greek_word_coverage_ratio": 0.9899,
     "pdf_hebrew_word_count": 99,
     "epub_hebrew_word_count": 99,
     "pdf_hebrew_unique_words": 84,
@@ -1049,6 +1037,162 @@
     "hebrew_clauses_checked": 7,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 3199,
+    "epub_latin_word_count": 3226,
+    "epub_tagged_latin_word_count": 102,
+    "pdf_latin_unique_words": 809,
+    "epub_latin_unique_words": 811,
+    "epub_tagged_unique_words": 81,
+    "latin_word_coverage_ratio": 0.9978,
+    "latin_tagging_ratio": 0.0316,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "nor",
+        "epub": 488,
+        "tagged": 0
+      },
+      {
+        "word": "jesus",
+        "epub": 175,
+        "tagged": 0
+      },
+      {
+        "word": "thereunto",
+        "epub": 160,
+        "tagged": 0
+      },
+      {
+        "word": "whereas",
+        "epub": 139,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 137,
+        "tagged": 0
+      },
+      {
+        "word": "yea",
+        "epub": 114,
+        "tagged": 0
+      },
+      {
+        "word": "hereunto",
+        "epub": 76,
+        "tagged": 0
+      },
+      {
+        "word": "distinct",
+        "epub": 52,
+        "tagged": 0
+      },
+      {
+        "word": "elsewhere",
+        "epub": 51,
+        "tagged": 0
+      },
+      {
+        "word": "whereunto",
+        "epub": 47,
+        "tagged": 0
+      },
+      {
+        "word": "mere",
+        "epub": 44,
+        "tagged": 0
+      },
+      {
+        "word": "endeavor",
+        "epub": 41,
+        "tagged": 0
+      },
+      {
+        "word": "et",
+        "epub": 44,
+        "tagged": 9
+      },
+      {
+        "word": "abba",
+        "epub": 31,
+        "tagged": 0
+      },
+      {
+        "word": "advocate",
+        "epub": 31,
+        "tagged": 0
+      },
+      {
+        "word": "non",
+        "epub": 27,
+        "tagged": 1
+      },
+      {
+        "word": "poor",
+        "epub": 23,
+        "tagged": 0
+      },
+      {
+        "word": "de",
+        "epub": 19,
+        "tagged": 0
+      },
+      {
+        "word": "communicate",
+        "epub": 18,
+        "tagged": 0
+      },
+      {
+        "word": "abraham",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 16,
+        "tagged": 0
+      },
+      {
+        "word": "est",
+        "epub": 17,
+        "tagged": 1
+      },
+      {
+        "word": "sed",
+        "epub": 16,
+        "tagged": 0
+      },
+      {
+        "word": "adhere",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "everywhere",
+        "epub": 15,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 114,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 9,
+    "translated_latin_runs_count": 7,
+    "latin_translation_ratio": 0.7778,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "continuing in the Son, and in the Father."
+      },
+      {
+        "phrase": "witnesses in Jerusalem, and in all Judea, and in Samaria, and unto the uttermost part of the earth;"
+      }
+    ]
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,

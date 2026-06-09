@@ -139,11 +139,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-05T00:01:42.318103+00:00
-**EPUB:** `volumes/v5/output/volume_5.epub`
+**Last run:** 2026-06-09T10:46:37.075733+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -183,11 +184,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-05T00:02:14.065800+00:00
-**Status:** WARN (12 warnings)
+**Last run:** 2026-06-09T10:47:07.433806+00:00
+**Status:** WARN (13 warnings)
 
 Reports:
 - `volume_5_text_integrity.json`
@@ -197,10 +199,10 @@ Reports:
 |-------|--------|
 | PDF pages | 576 |
 | EPUB text files | 39 |
-| EPUB paragraphs/headings | 2136 |
-| Approximate PDF-to-EPUB word coverage | 0.9807 |
+| EPUB paragraphs/headings | 2135 |
+| Approximate PDF-to-EPUB word coverage | 0.9808 |
 | Weak page matches | 9 |
-| Dense source windows checked | 26256 |
+| Dense source windows checked | 26722 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 6 |
 | Missing front CONTENTS pages | 6 |
@@ -210,8 +212,8 @@ Reports:
 | Bottom-of-page body windows checked | 527 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 10 |
-| Possible faulty paragraph splits | 7 |
-| Structural starts excluded from split warnings | 228 |
+| Possible faulty paragraph splits | 3 |
+| Structural starts excluded from split warnings | 227 |
 | Short fragments | 25 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 4 |
@@ -227,7 +229,7 @@ Reports:
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 1161 / 1158 |
-| Greek word coverage ratio | 0.9973 |
+| Greek word coverage ratio | 0.9965 |
 | PDF Hebrew words / EPUB Hebrew words | 124 / 123 |
 | Hebrew word coverage ratio | 0.9919 |
 | Missing Greek clauses | 0 |
@@ -245,6 +247,7 @@ Warnings requiring triage:
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 

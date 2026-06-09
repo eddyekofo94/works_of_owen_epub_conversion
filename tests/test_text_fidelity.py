@@ -805,7 +805,7 @@ def test_greek_open_bracket_prefix_is_stripped():
     Regression guard for Issue #17 (v2: "[Ελεος, — mercy forgiveness").
     """
     from shared import clean_greek_text
-    assert clean_greek_text("[Ελεος") == "Ελεος"
+    assert clean_greek_text("[Ελεος") == "Ἕλεος"
     assert clean_greek_text("[χάρις") == "χάρις"
     assert clean_greek_text("[ἔλεος") == "ἔλεος"
 

@@ -939,11 +939,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-04T11:04:24.694082+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-render-refactor-glossary/volumes/v1/output/volume_1.epub`
+**Last run:** 2026-06-09T10:44:05.326157+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -959,7 +960,7 @@ Reports:
 | NAV links | 87 |
 | Greek chars / untagged | 4080 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
-| Noteref links / endnote anchors | 314 / 314 |
+| Noteref links / endnote anchors | 337 / 337 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -1123,10 +1124,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-04T11:04:55.364651+00:00
+**Last run:** 2026-06-09T10:44:34.386593+00:00
 **Status:** WARN (10 warnings)
 
 Reports:
@@ -1137,10 +1139,10 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 84 |
-| EPUB paragraphs/headings | 2706 |
-| Approximate PDF-to-EPUB word coverage | 0.9992 |
-| Weak page matches | 4 |
-| Dense source windows checked | 27185 |
+| EPUB paragraphs/headings | 2705 |
+| Approximate PDF-to-EPUB word coverage | 0.9993 |
+| Weak page matches | 5 |
+| Dense source windows checked | 27414 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 4 |
@@ -1150,8 +1152,8 @@ Reports:
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 2 |
-| Possible faulty paragraph splits | 19 |
-| Structural starts excluded from split warnings | 116 |
+| Possible faulty paragraph splits | 8 |
+| Structural starts excluded from split warnings | 115 |
 | Short fragments | 11 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 5 |
@@ -1166,8 +1168,8 @@ Reports:
 | EPUB enumerator markers | 320 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 812 / 811 |
-| Greek word coverage ratio | 0.9987 |
+| PDF Greek words / EPUB Greek words | 811 / 811 |
+| Greek word coverage ratio | 0.9973 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |

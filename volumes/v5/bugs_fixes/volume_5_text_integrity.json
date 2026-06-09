@@ -2,9 +2,9 @@
   "volume": 5,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/input/owen-v5.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
-  "generated_at": "2026-06-05T00:02:14.065800+00:00",
+  "generated_at": "2026-06-09T10:47:07.433806+00:00",
   "status": "warn",
-  "warning_count": 12,
+  "warning_count": 13,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -47,6 +47,10 @@
       "message": "Repeated word windows may indicate ghost-layer duplication"
     },
     {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
       "code": "missing_latin_clauses",
       "message": "Some dense Latin passages from the PDF are missing from the EPUB"
     },
@@ -60,18 +64,13 @@
   },
   "epub": {
     "spine_text_files": 39,
-    "paragraph_count": 2136
+    "paragraph_count": 2135
   },
   "word_coverage": {
-    "pdf_content_tokens": 197338,
+    "pdf_content_tokens": 197342,
     "epub_content_tokens": 194158,
-    "coverage_ratio": 0.9807,
+    "coverage_ratio": 0.9808,
     "missing_word_samples": [
-      {
-        "word": "mr",
-        "pdf": 7,
-        "epub": 2
-      },
       {
         "word": "alterations",
         "pdf": 3,
@@ -79,11 +78,6 @@
       },
       {
         "word": "apostolical",
-        "pdf": 3,
-        "epub": 1
-      },
-      {
-        "word": "bishop",
         "pdf": 3,
         "epub": 1
       }
@@ -183,7 +177,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 26256,
+    "dense_windows_checked": 26722,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -223,48 +217,16 @@
         "sample": "counted unto him for righteousness when he offered his son on the altar works"
       },
       {
-        "page": 13,
-        "sample": "in one of the charges of bishop horsley which may be said to embody"
-      },
-      {
         "page": 15,
-        "sample": "modified and amended his views but to his aphorisms bishop barlow traces the first"
+        "sample": "charles wolsley baronet of some reputation who had been member of cromwell's council of"
       },
       {
         "page": 16,
-        "sample": "this book is mentioned in the life of mr joseph williams of kidderminster at"
-      },
-      {
-        "page": 19,
-        "sample": "entire subject of the ensuing discourse far although sunder persons even among ourselves have"
-      },
-      {
-        "page": 20,
-        "sample": "explication of the doctrine itself and terms wherein it is usually taught get the"
-      },
-      {
-        "page": 21,
-        "sample": "influence into the life of god are uncouth unto the seasonings of carnal minds"
-      },
-      {
-        "page": 22,
-        "sample": "adhere unto one who knew them well enough find sufficiently inclined unto their antitrinitarian"
-      },
-      {
-        "page": 23,
-        "sample": "concerning oppositions of the like nature unto another writings of mine work which as"
-      },
-      {
-        "page": 31,
-        "sample": "compliance wherewithal so pighius himself complained of them controv dissimulate non possumus hanc vel"
+        "sample": "joseph williams of kidderminster at last the time of his mr grimshawe's an active"
       },
       {
         "page": 35,
         "sample": "totum committe hac sola te totum contege totum immisce te in hac morte in"
-      },
-      {
-        "page": 68,
-        "sample": "is steered of late by one mr hotchkis in book about justification wherein in"
       },
       {
         "page": 88,
@@ -273,14 +235,6 @@
       {
         "page": 89,
         "sample": "them which will be pleaded in their proper place chapter 14-18 but we may"
-      },
-      {
-        "page": 92,
-        "sample": "free from the prepossession of prejudices and notions derived from other artificial seasonings imposed"
-      },
-      {
-        "page": 98,
-        "sample": "pighius and the antitagma coloniense as bellarmine acknowledges and what he says of pighius"
       },
       {
         "page": 122,
@@ -293,10 +247,6 @@
       {
         "page": 137,
         "sample": "mentioned in the scripture what shall we do what shall we do to be"
-      },
-      {
-        "page": 145,
-        "sample": "in this argument about the nature of faith more than dr jackson yet when"
       },
       {
         "page": 151,
@@ -343,8 +293,52 @@
         "sample": "do say so but not all not the most not the most learned with"
       },
       {
-        "page": 343,
-        "sample": "this place had formerly urged to this purpose about communion with god which mr"
+        "page": 353,
+        "sample": "are justified before god be our own our own personal righteousness we are yet"
+      },
+      {
+        "page": 358,
+        "sample": "world obnoxious unto the judgment of god chapter which none can do but the"
+      },
+      {
+        "page": 359,
+        "sample": "revelato testamento novo non observantur christianis sicut est circumcisio praeputii et sabbati non observantur"
+      },
+      {
+        "page": 365,
+        "sample": "he treats for as unto our justification whatever they are they are absolutely and"
+      },
+      {
+        "page": 377,
+        "sample": "old testament are leaning on god micah or christ cant rolling or casting ourselves"
+      },
+      {
+        "page": 393,
+        "sample": "the epistles of st paul in that unto the romans especially chap corinthians corinthians"
+      },
+      {
+        "page": 418,
+        "sample": "judgment of death is to this man this man is guilty of death has"
+      },
+      {
+        "page": 431,
+        "sample": "which he uses on the like occasions chap what shall we say then that"
+      },
+      {
+        "page": 436,
+        "sample": "looks for no righteousness from us but what is prescribed in the law the"
+      },
+      {
+        "page": 441,
+        "sample": "and the words of chrysostom upon this ace unto the same purpose have been"
+      },
+      {
+        "page": 442,
+        "sample": "graecorum chrysostomi et caeterorum quia peccatum emphaticως interpretantur magnum peccatorem ac si dicat apostolus"
+      },
+      {
+        "page": 457,
+        "sample": "least principally himself declares works say some of the law the law of moses"
       }
     ]
   },
@@ -640,7 +634,7 @@
   },
   "paragraph_integrity": {
     "paragraphs_checked": 1842,
-    "split_candidate_count": 7,
+    "split_candidate_count": 3,
     "split_candidates": [
       {
         "file": "EPUB/ch003.xhtml",
@@ -653,32 +647,12 @@
         "next": "— they will offer violence unto common sense and reason, rather than not disturb that harmony which they cannot understand. For although it be plainly affirmed to be a redemption b"
       },
       {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "Caput nostrum Dominus Jesus Christus omnia in se corporis sui membra transformans, quod olim in psalmo eructaverit, id in supplicio crucis sub redemptorum suorum voce clamavit \". †",
-        "next": "And so speaks Augustine to the same purpose, Epist. 120, * ad Honoratum,"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "peccato justitia, cum execratione benedictio, cum condemnatione remissio, cum transgressione obedientie, cum morte vita, cum inferis regnum, Christus cum Adam, homo cum homine \". †",
-        "next": "The differences that are among interpreters about the exposition of these words relate unto the use of some particles, prepositions, and the dependence of one passage upon another;"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": " 23:6: which place he conjoins with this, as of the same sense and importance, giving up his whole cause in satisfaction unto them, in the words before described, lib. 2 cap. 10. †",
-        "next": "Socinus prefaces his answer unto this testimony with an admiration that any should make use of it, or plead it in this cause, it is so impertinent unto the purpose. And, indeed, a "
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "anquam apostolico sensui et scopo contrariam omnino repudiandam esse. Verum constat voculam 'nisi ' frequenter in Scripturis adversative sumi, utidem valeat quod 'sed tantum ' \". †",
-        "next": "So he according to his usual candor and ingenuity."
-      },
-      {
         "file": "EPUB/ch027.xhtml",
         "previous": "To The Reader",
         "next": "As faith is the first vital act that every true Christian puts Forth, and the life which he lives is by the faith of the Son of God, so it is his next and great concern to know tha"
       }
     ],
-    "structural_start_exclusions": 228,
+    "structural_start_exclusions": 227,
     "short_fragment_count": 25,
     "short_fragments": [
       {
@@ -860,11 +834,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch005.xhtml#p392",
+            "location": "EPUB/ch005.xhtml#p391",
             "context": "[1.] Without the due consideration and supposition of it, the true nature of faith can never be understood. For, as we have showed before, justification is God's way of the deliverance"
           },
           {
-            "location": "EPUB/ch005.xhtml#p400",
+            "location": "EPUB/ch005.xhtml#p399",
             "context": "[1.] Displicency and sorrow that we have sinned. It is impossible that any one should be really convinced of sin in the way before declared, but that a dislike of sin, and of himself t"
           }
         ]
@@ -890,11 +864,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch005.xhtml#p393",
+            "location": "EPUB/ch005.xhtml#p392",
             "context": "[2.] The order, relation, and use of the law and the gospel do uncontrollably evince the necessity of this conviction previous unto believing. For that which any man has first to deal"
           },
           {
-            "location": "EPUB/ch005.xhtml#p401",
+            "location": "EPUB/ch005.xhtml#p400",
             "context": "[2.] Fear of punishment due to sin. For conviction respects not only the instructive and receptive part of the law, whereby the being and nature of sin are discovered, but the sentence"
           }
         ]
@@ -1010,7 +984,7 @@
     "epub_greek_word_count": 1158,
     "pdf_greek_unique_words": 553,
     "epub_greek_unique_words": 553,
-    "greek_word_coverage_ratio": 0.9973,
+    "greek_word_coverage_ratio": 0.9965,
     "pdf_hebrew_word_count": 124,
     "epub_hebrew_word_count": 123,
     "pdf_hebrew_unique_words": 100,
@@ -1028,14 +1002,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 5329,
+    "pdf_latin_word_count": 5337,
     "epub_latin_word_count": 5314,
-    "epub_tagged_latin_word_count": 3768,
-    "pdf_latin_unique_words": 1429,
+    "epub_tagged_latin_word_count": 3261,
+    "pdf_latin_unique_words": 1430,
     "epub_latin_unique_words": 1440,
     "epub_tagged_unique_words": 1169,
-    "latin_word_coverage_ratio": 0.9891,
-    "latin_tagging_ratio": 0.7091,
+    "latin_word_coverage_ratio": 0.9895,
+    "latin_tagging_ratio": 0.6137,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -1066,7 +1040,7 @@
       {
         "word": "adam",
         "epub": 93,
-        "tagged": 5
+        "tagged": 4
       },
       {
         "word": "abraham",
@@ -1144,14 +1118,14 @@
         "tagged": 0
       },
       {
+        "word": "sum",
+        "epub": 14,
+        "tagged": 2
+      },
+      {
         "word": "undergo",
         "epub": 12,
         "tagged": 0
-      },
-      {
-        "word": "sum",
-        "epub": 14,
-        "tagged": 3
       },
       {
         "word": "pleas",
@@ -1166,14 +1140,9 @@
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 344,
-    "missing_latin_clause_count": 2,
+    "latin_clauses_checked": 345,
+    "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
-      {
-        "page": 22,
-        "word_count": 13,
-        "sample": "alios ex castris aulis graneis prolatam esse scrupuli ab excellenti viro propositi"
-      },
       {
         "page": 359,
         "word_count": 59,
@@ -1182,9 +1151,9 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 728,
-    "translated_latin_runs_count": 436,
-    "latin_translation_ratio": 0.5989,
+    "tagged_latin_runs_count": 637,
+    "translated_latin_runs_count": 409,
+    "latin_translation_ratio": 0.6421,
     "untranslated_latin_samples": [
       {
         "phrase": "Articulus stantis"
@@ -1223,9 +1192,6 @@
         "phrase": "vel primam doctrinae Christianae"
       },
       {
-        "phrase": "de justificatione) obscuram magis quam illustratam a scholasticis, spinosis"
-      },
-      {
         "phrase": "quaestionibus, et definitionibus, secundum quas nonnulli magno supercilio primam in omnibus"
       },
       {
@@ -1245,6 +1211,9 @@
       },
       {
         "phrase": "sola morte fiduciam tuam"
+      },
+      {
+        "phrase": "in nulla alia re fiduciam"
       }
     ]
   },

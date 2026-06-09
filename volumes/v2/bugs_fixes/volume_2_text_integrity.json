@@ -2,7 +2,7 @@
   "volume": 2,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/input/owen-v2.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-06-05T00:00:42.467334+00:00",
+  "generated_at": "2026-06-09T10:45:07.859637+00:00",
   "status": "warn",
   "warning_count": 11,
   "warnings": [
@@ -56,23 +56,18 @@
   },
   "epub": {
     "spine_text_files": 50,
-    "paragraph_count": 2081
+    "paragraph_count": 2080
   },
   "word_coverage": {
-    "pdf_content_tokens": 187092,
-    "epub_content_tokens": 186879,
-    "coverage_ratio": 0.9948,
+    "pdf_content_tokens": 187098,
+    "epub_content_tokens": 186880,
+    "coverage_ratio": 0.9949,
     "missing_word_samples": [],
     "excess_word_samples": [
       {
         "word": "digital",
         "pdf": 0,
         "epub": 10
-      },
-      {
-        "word": "william",
-        "pdf": 4,
-        "epub": 13
       },
       {
         "word": "theological",
@@ -113,17 +108,12 @@
   },
   "page_coverage": {
     "pages_checked": 550,
-    "weak_page_count": 4,
+    "weak_page_count": 3,
     "weak_pages": [
       {
         "page": 5,
         "hit_ratio": 0.333,
         "sample": "satisfaction thereby the intercession of christ with its influence into our acceptation with god chapter the nature of purchased grace referred to three heads"
-      },
-      {
-        "page": 9,
-        "hit_ratio": 0.333,
-        "sample": "the blessed trinity let them attend what is said by mr lewis stuckley in his preface to mr polwheil's book of quenching the spirit"
       },
       {
         "page": 10,
@@ -138,7 +128,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 25151,
+    "dense_windows_checked": 25354,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -159,11 +149,11 @@
       },
       {
         "page": 8,
-        "sample": "reading livy and ferdinand king of sicily in reading quintus curtius but thou hast"
+        "sample": "take the doctrine of distinct communion with the divine persons to be new fangled"
       },
       {
         "page": 9,
-        "sample": "the blessed trinity let them attend what is said by mr lewis stuckley in"
+        "sample": "said by lewis stucley in his preface to theophilus polwhele's book of quenching the"
       },
       {
         "page": 10,
@@ -224,10 +214,6 @@
       {
         "page": 128,
         "sample": "will follow its direction is the law the law has many fair pleas to"
-      },
-      {
-        "page": 134,
-        "sample": "needs be most remote from the soul is light and in him is no"
       },
       {
         "page": 141,
@@ -294,12 +280,16 @@
         "sample": "the public it seems to have been sherlock's first appearance in authorship and some"
       },
       {
-        "page": 342,
-        "sample": "in religion etc edward polhill followed in an answer to the discourse of mr"
+        "page": 352,
+        "sample": "every member thereof is in him by original derivation and he personal in them"
       },
       {
-        "page": 347,
-        "sample": "herein no regard had unto them he whom shall name is mr hooker and"
+        "page": 403,
+        "sample": "what he was become what he was not was not the person of christ"
+      },
+      {
+        "page": 406,
+        "sample": "he would pick something if he knew what out of my quotations of cant"
       }
     ]
   },
@@ -535,7 +525,7 @@
   },
   "paragraph_integrity": {
     "paragraphs_checked": 1742,
-    "split_candidate_count": 15,
+    "split_candidate_count": 13,
     "split_candidates": [
       {
         "file": "EPUB/ch001.xhtml",
@@ -545,7 +535,7 @@
       {
         "file": "EPUB/ch002.xhtml",
         "previous": "To The Reader",
-        "next": "ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; ‡ and Ferdinand, king of Sicily, in reading Quintus Curtius ‡ Rufus : ‡ but thou hast here nobler e"
+        "next": "ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; and Ferdinand, king of Sicily, in reading Quintus Curtius Rufus : but thou hast here nobler enterta"
       },
       {
         "file": "EPUB/ch002.xhtml",
@@ -591,16 +581,6 @@
         "file": "EPUB/ch027.xhtml",
         "previous": "But, —",
         "next": "[2ndly.] Suppose that by \"the powers of the world to come\" the glory of heaven is intended, there is a wide difference between taking a vanishing taste of it ourselves, and receivi"
-      },
-      {
-        "file": "EPUB/ch035.xhtml",
-        "previous": "ature are absolutely divine, and all those of the human nature absolutely human, whence it came to pass that all the operations and works of Christ, as mediator, are theandrical? §",
-        "next": "Although there be nothing in the person of Christ but his divine and human nature, yet the person of Christ is neither his divine nature nor his human; for the human nature is, and"
-      },
-      {
-        "file": "EPUB/ch035.xhtml",
-        "previous": "o, who can afford to spend his time in a particular examination of it, unless it be in the exposition of those places which are almost verbatim transcribed out of Schlichtingius. ‡",
-        "next": "Besides, for the first truth which he opposeth, I have confirmed it in a discourse which I suppose may be made public before this come to view, beyond what I expect any sober reply"
       },
       {
         "file": "EPUB/ch038.xhtml",
@@ -755,11 +735,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch008.xhtml#p169",
+            "location": "EPUB/ch008.xhtml#p168",
             "context": "(1.) When the same thing is, at the same time, ascribed jointly and yet distinctly to all the persons in the Deity, and respectively to each of them. So are grace and peace, Revelation"
           },
           {
-            "location": "EPUB/ch009.xhtml#p206",
+            "location": "EPUB/ch009.xhtml#p205",
             "context": "(1.) John 3:16, \"God so loved the world, that he gave,\" etc.; that is, with the love of his purpose and good pleasure, his determinate will of doing good. This is distinctly ascribed t"
           }
         ]
@@ -774,11 +754,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch008.xhtml#p172",
+            "location": "EPUB/ch008.xhtml#p171",
             "context": "(2.) When the same thing is attributed severally and singly unto each person. There is, indeed, no gracious influence from above, no illapse of light, life, love, or grace upon our hea"
           },
           {
-            "location": "EPUB/ch009.xhtml#p207",
+            "location": "EPUB/ch009.xhtml#p206",
             "context": "(2.) John 14:23, there is 25 mention of that other kind of love whereof we speak. \"If a man love me,\" saith Christ, \"he will keep my words: and my Father will love him, and we will com"
           }
         ]
@@ -789,15 +769,15 @@
         "epub": 4,
         "examples": [
           {
-            "location": "EPUB/ch035.xhtml#p1541",
+            "location": "EPUB/ch035.xhtml#p1540",
             "context": "(2dly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, — (3dly.) Th"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1544",
+            "location": "EPUB/ch035.xhtml#p1543",
             "context": "(2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14, \"Who gave himself for us, that he might redeem"
           },
           {
-            "location": "EPUB/ch035.xhtml#p1544",
+            "location": "EPUB/ch035.xhtml#p1543",
             "context": "eople, zealous of good works.\" This was his aim, his design, in giving himself for us; as (2dly.) It is so also of the exceeding love of the Son; whereof the testimonies are innumerable. I shall give but one or two: — Titus 2:14 Ephesians 5:25-27, \"Christ loved the church, and"
           }
         ]
@@ -812,11 +792,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch008.xhtml#p175",
+            "location": "EPUB/ch008.xhtml#p174",
             "context": "[1.] Unto the FATHER. The accomplishment of that promise is peculiarly referred to him, John 6:45, \"It is written in the prophets, And they shall be all taught of God. Every man theref"
           },
           {
-            "location": "EPUB/ch009.xhtml#p228",
+            "location": "EPUB/ch009.xhtml#p227",
             "context": "[1.] Wherein this love of God unto us and our love to him do agree, as to some manner of analogy and likeness."
           }
         ]
@@ -831,7 +811,7 @@
             "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           },
           {
-            "location": "EPUB/ch018.xhtml#p748",
+            "location": "EPUB/ch018.xhtml#p747",
             "context": "[1]. In respect of sanctification; [2.] In respect of consolation: —"
           }
         ]
@@ -846,11 +826,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch008.xhtml#p176",
+            "location": "EPUB/ch008.xhtml#p175",
             "context": "[2.] Unto the SON. The Father proclaims him from heaven to be the great teacher, in that solemn charge to hear him, which came once [and] again from the excellent glory: \"This is my be"
           },
           {
-            "location": "EPUB/ch009.xhtml#p229",
+            "location": "EPUB/ch009.xhtml#p228",
             "context": "[2.] Wherein they differ; which will farther discover the nature of each of them."
           }
         ]
@@ -973,7 +953,7 @@
     "epub_greek_word_count": 449,
     "pdf_greek_unique_words": 319,
     "epub_greek_unique_words": 319,
-    "greek_word_coverage_ratio": 0.9977,
+    "greek_word_coverage_ratio": 0.9954,
     "pdf_hebrew_word_count": 88,
     "epub_hebrew_word_count": 89,
     "pdf_hebrew_unique_words": 80,
@@ -991,14 +971,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 2598,
-    "epub_latin_word_count": 2628,
+    "pdf_latin_word_count": 2606,
+    "epub_latin_word_count": 2629,
     "epub_tagged_latin_word_count": 585,
-    "pdf_latin_unique_words": 629,
+    "pdf_latin_unique_words": 631,
     "epub_latin_unique_words": 637,
     "epub_tagged_unique_words": 372,
     "latin_word_coverage_ratio": 0.995,
-    "latin_tagging_ratio": 0.2226,
+    "latin_tagging_ratio": 0.2225,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -1122,9 +1102,9 @@
         "tagged": 0
       },
       {
-        "word": "whereinto",
-        "epub": 12,
-        "tagged": 0
+        "word": "william",
+        "epub": 14,
+        "tagged": 2
       }
     ]
   },
@@ -1135,8 +1115,8 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 169,
-    "translated_latin_runs_count": 41,
-    "latin_translation_ratio": 0.2426,
+    "translated_latin_runs_count": 43,
+    "latin_translation_ratio": 0.2544,
     "untranslated_latin_samples": [
       {
         "phrase": "Quintus Curtius ‡  Rufus"

@@ -272,22 +272,22 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| 1 | v1 | Populated | PRISTINE | Cov 99.92 Greek 99.87 Heb 100.00 Lat 99.74 |
-| 2 | v2 | Populated | FULL | Cov 99.48 Greek 99.77 Heb 100.00 Lat 99.50 Unres 2 |
-| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 100.00 Heb 100.00 Lat 99.95 |
-| 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 Lat ? Unres 8 |
-| 5 | v5 | Populated | FULL | Cov 98.07 Greek 99.73 Heb 99.19 Lat 98.91 Unres 2 |
-| 6 | v6 | Populated | FULL | Cov 99.54 Greek 100.00 Heb 100.00 Lat ? |
-| 7 | v7 | Populated | FULL | Cov 99.68 Greek 100.00 Heb 100.00 Lat ? Unres 2 |
+| 1 | v1 | Populated | PRISTINE | Cov 99.93 Greek 99.73 Heb 100.00 Lat 99.80 |
+| 2 | v2 | Populated | FULL | Cov 99.49 Greek 99.54 Heb 100.00 Lat 99.50 Unres 2 |
+| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.95 |
+| 4 | v4 | Populated | FULL | Cov 99.85 Greek 98.99 Heb 100.00 Lat 99.78 Unres 8 |
+| 5 | v5 | Populated | FULL | Cov 98.08 Greek 99.65 Heb 99.19 Lat 98.95 Unres 2 |
+| 6 | v6 | Populated | FULL | Cov 99.26 Greek 100.00 Heb 100.00 Lat 99.01 |
+| 7 | v7 | Populated | FULL | Cov 99.71 Greek 99.69 Heb 100.00 Lat 99.62 Unres 2 |
 | 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 |
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? |
 | 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 |
-| 11 | v11 | Populated | FULL | Cov 97.63 Greek 99.70 Heb 100.00 Lat ? Unres 4 |
-| 12 | v12 | Populated | PRISTINE | Cov 99.90 Greek 99.92 Heb 99.55 Lat 99.70 |
-| 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 Lat ? |
-| 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 Lat ? Unres 6 |
-| 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 Lat ? Unres 4 |
-| 16 | v16 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.94 |
+| 11 | v11 | Populated | FULL | Cov 97.62 Greek 99.31 Heb 100.00 Lat 98.64 Unres 4 |
+| 12 | v12 | Populated | PRISTINE | Cov 99.91 Greek 99.80 Heb 99.55 Lat 99.80 |
+| 13 | v13 | Populated | FULL | Cov 90.14 Greek 95.21 Heb 100.00 Lat 90.40 |
+| 14 | v14 | Populated | FULL | Cov 98.45 Greek 99.17 Heb 100.00 Lat 98.83 Unres 6 |
+| 15 | v15 | Populated | FULL | Cov 97.83 Greek 98.93 Heb 100.00 Lat 98.21 Unres 4 |
+| 16 | v16 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.94 Unres 1 |
 
 ## Agent-Driven Skills & Slash Commands
 

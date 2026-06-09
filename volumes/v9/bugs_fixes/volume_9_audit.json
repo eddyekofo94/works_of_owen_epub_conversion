@@ -1,23 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
-  "generated_at": "2026-05-29T11:54:34.266550+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-09T10:48:45.504274+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "orphan_endnotes",
-      "message": "Some endnote anchors have no matching noteref",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn18",
-        "EPUB/endnotes.xhtml#fn22"
-      ]
-    }
-  ],
+  "warnings": [],
   "info": {
-    "file_count": 128,
-    "epub_size_bytes": 3943090,
+    "file_count": 131,
+    "epub_size_bytes": 4982967,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -26,9 +17,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 119,
-    "spine_count": 100,
-    "xhtml_count": 102,
+    "manifest_count": 122,
+    "spine_count": 102,
+    "xhtml_count": 104,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -43,14 +34,11 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 93,
-      "unique_noteref_targets": 91,
-      "endnote_anchor_count": 93,
+      "noteref_count": 97,
+      "unique_noteref_targets": 95,
+      "endnote_anchor_count": 95,
       "missing_endnote_targets": [],
-      "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn18",
-        "EPUB/endnotes.xhtml#fn22"
-      ]
+      "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
@@ -64,7 +52,7 @@
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 1,
-      "overlong_heading_body_files": 2,
+      "overlong_heading_body_files": 5,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
@@ -75,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 1,
+      "lowercase_paragraph_start_files": 11,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -105,8 +93,20 @@
             "text": "\"To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. \"There appear unto me"
           },
           {
+            "file": "EPUB/ch044.xhtml",
+            "text": "DISCOURSE 7. 44 Question. When our own faith is weakened as to the hearing of our prayers — when we ourselves are hindered within ourselves from believing the answer of our pray"
+          },
+          {
             "file": "EPUB/ch053.xhtml",
             "text": "\"To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs"
+          },
+          {
+            "file": "EPUB/ch060.xhtml",
+            "text": "SERMON 7. 61 \"My heart is inditing a good matter: I speak of the things which I have made touching the King; my tongue is the pen of a ready writer. Thou art fairer than the chi"
+          },
+          {
+            "file": "EPUB/ch089.xhtml",
+            "text": "DISCOURSE 19. 86 \"I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son"
           }
         ],
         "fragmented_greek_span_run": [],
@@ -128,6 +128,42 @@
           {
             "file": "EPUB/ch002.xhtml",
             "text": "the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;"
+          },
+          {
+            "file": "EPUB/ch027.xhtml",
+            "text": "as he spake by the mouth of his holy prophets, which have been since the world be"
+          },
+          {
+            "file": "EPUB/ch028.xhtml",
+            "text": "that is, of the whole church, alive and dead, that they might be his. He took the"
+          },
+          {
+            "file": "EPUB/ch030.xhtml",
+            "text": "saith he, \"if the Lord be with us, why then is all this befallen us?\" — \"Whence i"
+          },
+          {
+            "file": "EPUB/ch033.xhtml",
+            "text": "that is, as a God who is omnipotent, who made all things, and is faithful in the"
+          },
+          {
+            "file": "EPUB/ch056.xhtml",
+            "text": "namely, to testify their consent in their solemn dedication to the Lord to minist"
+          },
+          {
+            "file": "EPUB/ch059.xhtml",
+            "text": "because God is so glorified, and Christ so exalted. God hath put this way of conv"
+          },
+          {
+            "file": "EPUB/ch060.xhtml",
+            "text": "and which refers us to but one part of his kingly office, — namely, to the power"
+          },
+          {
+            "file": "EPUB/ch064.xhtml",
+            "text": "and from thence took occasion to consider what is our especial duty when clouds a"
+          },
+          {
+            "file": "EPUB/ch067.xhtml",
+            "text": "of Stoke Newington"
           }
         ],
         "noteref_leading_space": [],
@@ -136,7 +172,7 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 103,
+    "nav_link_count": 105,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   }
 }

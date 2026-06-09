@@ -282,7 +282,8 @@ def reconstruct_paragraphs(text):
             continue
 
         # Preserve numbered/list-like starts as real paragraph breaks.
-        if STRUCTURAL_START_RE.match(stripped):
+        if STRUCTURAL_START_RE.match(stripped) or MARKDOWN_STRUCTURAL_START_RE.match(stripped):
+            marker_check = re.sub(r'^(\*\*|__)(.*?)\1', r'\2', stripped)
             if current:
                 prev = current[-1]
 
@@ -295,7 +296,7 @@ def reconstruct_paragraphs(text):
 
                 ref_abbrevs = r'(?:p|pp|page|pages|sec|chap|vol|cf|see|ibid|id|op\.?|cit\.?|fol\.?|col\.?|liv\.?|aen\.?|hist\.?)\.?'
                 prev_is_ref_abbrev = bool(re.search(rf'\b{ref_abbrevs}\s*$', prev, re.I))
-                starts_with_ref_number = bool(re.match(r'^\d{1,4}\.\s+', stripped))
+                starts_with_ref_number = bool(re.match(r'^\d{1,4}\.\s+', marker_check))
                 if prev_is_ref_abbrev and starts_with_ref_number:
                     current.append(stripped)
                     continue
@@ -306,23 +307,23 @@ def reconstruct_paragraphs(text):
                     r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
                     r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
                     r'\d+(?:st|nd|rd|th)\b[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)',
-                    stripped
+                    marker_check
                 )
                 if not hard_structural:
                      # Fallback for case-insensitive Roman numerals but NOT Q/A
                      hard_structural = re.match(
                         r'^(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
                         r'\d+(?:st|nd|rd|th)\b[,.;]|\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b)',
-                        stripped,
+                        marker_check,
                         re.I
-                    )
+                     )
                 
                 # Blemish 11: Classical/Scholarly reference tail detection: "Liv. viii." -> "9."
                 prev_is_classical_ref = bool(re.search(
                     r'\b(?:liv|aen|hist|tac|plut|cic|sen|aug)\.?\s+(?:hist\.?\s+)?[ivxlcdm]+\.\s*$',
                     prev, re.I
                 ))
-                is_bare_decimal = bool(re.match(r'^\d{1,2}\.\s+[A-Z]', stripped))
+                is_bare_decimal = bool(re.match(r'^\d{1,2}\.\s+[A-Z]', marker_check))
                 if prev_is_classical_ref and is_bare_decimal:
                     current.append(stripped)
                     continue
@@ -334,7 +335,7 @@ def reconstruct_paragraphs(text):
                     r'Matt|Mk|Lk|Jn|Acts|Rom|Cor|Gal|Eph|Phil|Col|Thess|Tim|Tit|Phlm|Heb|Jas|Pet|Jude|Rev)\.\s*$',
                     prev, re.I
                 ))
-                is_ref_start = bool(re.match(r'^(?:[ivxlcdm]+|\d+)\b', stripped, re.I))
+                is_ref_start = bool(re.match(r'^(?:[ivxlcdm]+|\d+)\b', marker_check, re.I))
                 if prev_is_book_abbrev and is_ref_start:
                     current.append(stripped)
                     continue
@@ -351,7 +352,7 @@ def reconstruct_paragraphs(text):
                 # it should NOT be merged since lists can end items with commas.
                 is_clear_list_marker = bool(re.match(
                     r'^(?:\(\d+\.?\)|\(\w+\.?\)|\[\d+\.?\]|\[\w+\.?\]|\b\d+\.\s+[A-Z]|\b[IVXLCDM]+\.\s+[A-Z])',
-                    stripped
+                    marker_check
                 ))
                 if (is_dangling or is_comma_continuation) and not is_clear_list_marker:
                     current.append(stripped)

@@ -655,7 +655,7 @@ GRAVE = '\u0300'
 CIRCUMFLEX = '\u0342'
 IOTASUB = '\u0345'
 
-DIACRITIC_CHARS = set('><=~]J[j}|{=+\'')
+DIACRITIC_CHARS = set('><=~]J[j}|{=+\'`')
 # DIACRITIC_MAP: Maps AGES/Beta Code marks to Unicode combining diacritics.
 DIACRITIC_MAP = {
     'j': ('\u0313',),        # SMOOTH breathing
@@ -663,6 +663,7 @@ DIACRITIC_MAP = {
     '>': ('\u0301',),        # ACUTE accent
     '<': ('\u0300',),        # GRAVE accent
     '\'': ('\u0301',),       # ACUTE accent
+    '`': ('\u0308',),        # DIAERESIS
     '~': ('\u0342',),        # CIRCUMFLEX
     '=': ('\u0342',),        # CIRCUMFLEX
     '+': ('\u0342',),        # CIRCUMFLEX
@@ -678,15 +679,9 @@ def clean_greek_text(text):
     """
     User-mandated Greek cleaning:
     1. Strip "j" artifact prepended to Greek characters (handling optional spaces).
-    2. Strip "[" artifact immediately preceding Greek Unicode characters (legacy
-       AGES rough-breathing prefix -- the PDF encodes rough breathing as "[" before
-       the vowel; extraction captures the Unicode Greek glyph correctly but leaves
-       "[" as a stray literal character outside the Greek span).
-    3. Strip "+" and "{" immediately preceding Greek Unicode characters.
-       In AGES Koine encoding "+" and "{" are rough-breathing / diacritic prefixes
-       that appear as stray literals outside the Unicode span (e.g. "+\u03a9 \u0392\u03ac\u03b8\u03bf\u03c2").
-       polytonic_sweep() strips them INSIDE spans; this guard catches them OUTSIDE,
-       before tag_unicode_ranges() wraps them.
+    2. Map Beta Code uppercase breathing/accent prefixes to Unicode accented uppercase letters
+       (using Greek Unicode capitals: \u0391=Α, \u0395=Ε, \u0397=Η, \u0399=Ι, \u039f=Ο, \u03a5=Υ, \u03a9=Ω).
+    3. Strip any remaining legacy prefixes ([, ], +, {, }) directly before Greek Unicode.
     4. Normalize to NFC.
     """
     if not text:
@@ -694,13 +689,20 @@ def clean_greek_text(text):
     # 1. Strip the "j" artifact prepended to Greek characters.
     # Handle both "j\u0395" and "j \u0395" patterns found in PDF extraction.
     text = re.sub(r'\b[jJ]\s*([\u0370-\u03FF\u1F00-\u1FFF])', r'\1', text)
-    # 2. Strip "[" immediately before a Greek Unicode character (Issue #17).
-    # The lookahead ensures we only strip "[" directly adjacent to Greek text,
-    # leaving list markers "[1.]", abbreviations "[LXX]", and space-padded
-    # semantic brackets "[ eleos ]" untouched.
-    text = re.sub(r'\[(?=[\u0370-\u03FF\u1F00-\u1FFF])', '', text)
-    # 3. Strip "+" and "{" immediately before Greek Unicode (Issue #4).
-    text = re.sub(r'[+{](?=[\u0370-\u03FF\u1F00-\u1FFF])', '', text)
+
+    # 2. Map Beta Code uppercase breathing/accent prefixes to Unicode accented uppercase letters
+    up_map = {
+        ']\u0391': 'Ἄ', ']\u0395': 'Ἔ', ']\u0397': 'Ἤ', ']\u0399': 'Ἴ', ']\u039f': 'Ὄ', ']\u03a9': 'Ὤ',
+        '[\u0391': 'Ἅ', '[\u0395': 'Ἕ', '[\u0397': 'Ἥ', '[\u0399': 'Ἵ', '[\u039f': 'Ὅ', '[\u03a5': 'Ὕ', '[\u03a9': 'Ὥ',
+        'j\u0391': 'Ἀ', 'j\u0395': 'Ἐ', 'j\u0397': 'Ἠ', 'j\u0399': 'Ἰ', 'j\u039f': 'Ὀ', 'j\u03a9': 'Ὠ',
+        'J\u0391': 'Ἁ', 'J\u0395': 'Ἑ', 'J\u0397': 'Ἡ', 'J\u0399': 'Ἱ', 'J\u039f': 'Ὁ', 'J\u03a5': 'Ὑ', 'J\u03a9': 'Ὡ',
+    }
+    for k, v in up_map.items():
+        text = text.replace(k, v)
+
+    # 3. Strip any remaining legacy prefixes directly before Greek Unicode
+    text = re.sub(r'[\]\[+{}](?=[\u0370-\u03FF\u1F00-\u1FFF])', '', text)
+
     # 4. Normalize to NFC
     text = unicodedata.normalize('NFC', text)
     return text
@@ -1066,7 +1068,7 @@ ROMAN_ONLY_RE = re.compile(
 )
 PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
 CITATION_ABBREV_TRAIL_RE = re.compile(
-    r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|homil|haer|dial|'
+    r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|tractat|tractatus|homil|haer|dial|'
     r'enchirid|distinct|q|a|p|pp|page|pages|sec|ad|m|aen|liv|hist)\.?\s*$'
     r'|'
     r'\b(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|Esth|Job|Ps|Prov|Eccl|Cant|'
@@ -1080,7 +1082,7 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     r'Plin|Arist|Plat|Justin|Iren|Alex|Alexand|Mart)\.\s*$'
     r'|'
     # Scholarly citation tails: "cap. 8," / "q. 81,"
-    r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|homil|haer|dial|'
+    r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|tractat|tractatus|homil|haer|dial|'
     r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|pp|sec|ad|aen|liv|hist)'
     r'\.?\s+\d+(?:[-,;]\s*\d+)*,?\s*$'
     r'|'
@@ -1092,7 +1094,7 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     re.I,
 )
 CITATION_ABBREV_START_RE = re.compile(
-    r'^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Homil|Haer|Dial|Quest|Art|Dist|Part|Vol)\.?\s+',
+    r'^(?:Lib|Serm|Sermo|Epist|Ep|Cap|Chap|Orat|Tract|Tractat|Tractatus|Homil|Haer|Dial|Quest|Art|Dist|Part|Vol)\.?\s+',
     re.I,
 )
 CITATION_AUTHOR_TRAIL_RE = re.compile(
@@ -2404,17 +2406,22 @@ a, .noteref, a.footnote-ref, a.fn-link {
 .noteref {
     vertical-align: super;
     font-size: 0.85rem;   /* root-relative to remain consistent inside headings */
-    padding: 0.1em 0.2em; /* Easy-tap */
+    display: inline-block;
+    line-height: 1;
+    padding: 0.3em 0.4em;   /* ghost tap area — generous for thumb use */
+    margin: -0.3em -0.25em; /* compensate: invisible to layout, large to touch */
 }
 
 .noteref-glossary, .noteref-biographical {
+    display: inline !important;
     vertical-align: super;
     font-size: 0.85rem;
     padding: 0.1em 0.2em;
 }
 
-/* Modern Editorial Translation Link (Elegant Amber/Gold) */
+/* Interactive Owen Blue Palette (#2a55a0) */
 a.noteref-trans, .noteref-trans {
+    display: inline !important;
     color: #b8860b !important;
     text-decoration: none;
     vertical-align: super;

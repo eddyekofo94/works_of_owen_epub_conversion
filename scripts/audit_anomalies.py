@@ -229,6 +229,11 @@ def check_ocr_residues(text: str, dict_words: set[str] = None) -> list[tuple[str
     for m in matches:
         anomalies.append((m.group(0), "Empty square brackets"))
 
+    # 3b. Stray or typo ordinal (l.) likely meant to be (1.)
+    matches = re.finditer(r"\b\(l\)\b|\b\(l\.\)", text)
+    for m in matches:
+        anomalies.append((m.group(0), "Stray or typo ordinal (l.) likely meant to be (1.)"))
+
     # 4. Spliced/split words check using dictionary heuristics
     if dict_words:
         # Heuristic 4a: Isolated letter (except a, i, o) followed by space and then lowercase word segment.
@@ -417,6 +422,11 @@ def check_structural_nesting(text: str) -> list[tuple[str, str]]:
             sequence.append((m.start(), m.group(0).strip(), val))
             
         # Audit the sequence for jumps
+        if len(sequence) >= 2:
+            first_pos, first_str, first_val = sequence[0]
+            if first_val > 1:
+                anomalies.append((first_str, f"List sequence starts at {first_val} instead of 1"))
+        
         for i in range(len(sequence) - 1):
             pos1, str1, val1 = sequence[i]
             pos2, str2, val2 = sequence[i+1]
@@ -433,6 +443,121 @@ def check_structural_nesting(text: str) -> list[tuple[str, str]]:
                 if val2 > val1 + 1:
                     anomalies.append((f"{str1} ... {str2}", f"List sequence jump (skipped from {val1} to {val2})"))
                     
+    return anomalies
+
+
+def check_invalid_bible_references(text: str) -> list[tuple[str, str]]:
+    """Scan for Bible references and flag any chapter numbers that exceed the book's maximum chapters."""
+    anomalies = []
+    # Bible books mapping to max chapters
+    BIBLE_MAX_CHAPTERS = {
+        'genesis': 50, 'exodus': 40, 'leviticus': 27, 'numbers': 36, 'deuteronomy': 34,
+        'joshua': 24, 'judges': 21, 'ruth': 4, 'samuel': 31, 'kings': 22, 'chronicles': 36,
+        'ezra': 10, 'nehemiah': 13, 'esther': 10, 'job': 42, 'psalm': 150, 'psalms': 150,
+        'proverbs': 31, 'ecclesiastes': 12, 'canticles': 8, 'song': 8, 'isaiah': 66,
+        'jeremiah': 52, 'lamentations': 5, 'ezekiel': 48, 'daniel': 12, 'hosea': 14,
+        'joel': 3, 'amos': 9, 'obadiah': 1, 'jonah': 4, 'micah': 7, 'nahum': 3,
+        'habakkuk': 3, 'zephaniah': 3, 'haggai': 2, 'zechariah': 14, 'malachi': 4,
+        'matthew': 28, 'mark': 16, 'luke': 24, 'john': 21, 'acts': 28, 'romans': 16,
+        'corinthians': 16, 'galatians': 6, 'ephesians': 6, 'philippians': 4,
+        'colossians': 4, 'thessalonians': 5, 'timothy': 6, 'titus': 3, 'philemon': 1,
+        'hebrews': 13, 'james': 5, 'peter': 5, 'jude': 1, 'revelation': 22
+    }
+    
+    book_pattern = "|".join(BIBLE_MAX_CHAPTERS.keys())
+    pattern = re.compile(rf"\b(?:([1-3])\s+)?({book_pattern})\s+(\d+)\b", re.I)
+    
+    for m in pattern.finditer(text):
+        num_prefix = m.group(1)
+        book = m.group(2).lower()
+        ch_num = int(m.group(3))
+        
+        # Check lookbehind for page indicator like "p." or "pp." or "page" or "vol."
+        lookback = text[max(0, m.start()-15):m.start()].lower()
+        if any(lookback.rstrip().endswith(abbrev) for abbrev in ['p.', 'pp.', 'page', 'pages', 'vol.', 'volume']):
+            continue
+            
+        max_ch = BIBLE_MAX_CHAPTERS[book]
+        if ch_num > max_ch:
+            ref_str = m.group(0)
+            anomalies.append((ref_str, f"Invalid Bible reference (chapter {ch_num} exceeds max {max_ch} for {m.group(2)})"))
+            
+    return anomalies
+
+
+def check_list_consistency(text: str) -> list[tuple[str, str]]:
+    """Scan for list sequences and flag formatting inconsistencies (e.g. mixed bold/plain markers)."""
+    anomalies = []
+    paragraphs = text.split('\n\n')
+    
+    marker_patterns = [
+        (re.compile(r'^(\*\*)?(\d+)\.(\*\*)?\s+'), 'arabic_dot', lambda x: int(x)),
+        (re.compile(r'^(\*\*)?\((\d+)\)(\*\*)?\s+'), 'arabic_paren', lambda x: int(x)),
+        (re.compile(r'^(\*\*)?\(([a-zA-Z])\)(\*\*)?\s+'), 'alpha_paren', lambda x: ord(x.lower()) - ord('a') + 1),
+        (re.compile(r'^(\*\*)?([IVXLCDM]+)\.(\*\*)?\s+', re.I), 'roman_dot', lambda x: roman_to_int(x))
+    ]
+    
+    def roman_to_int(roman: str) -> int:
+        r_map = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+        val = 0
+        for idx in range(len(roman)):
+            if idx > 0 and r_map[roman[idx].upper()] > r_map[roman[idx-1].upper()]:
+                val += r_map[roman[idx].upper()] - 2 * r_map[roman[idx-1].upper()]
+            else:
+                val += r_map[roman[idx].upper()]
+        return val
+
+    extracted = []
+    for p_idx, para in enumerate(paragraphs):
+        stripped = para.strip()
+        if not stripped:
+            continue
+        for pattern, type_name, parse_fn in marker_patterns:
+            m = pattern.match(stripped)
+            if m:
+                is_bold = bool(m.group(1) or m.group(3))
+                val_str = m.group(2)
+                try:
+                    val = parse_fn(val_str)
+                    if val is not None:
+                        if type_name == 'arabic_dot' and (1000 <= val <= 2100):
+                            continue
+                        extracted.append((p_idx, type_name, val, is_bold, m.group(0).strip()))
+                        break
+                except Exception:
+                    pass
+                
+    sequences = []
+    current_seq = []
+    for item in extracted:
+        if not current_seq:
+            current_seq.append(item)
+            continue
+        
+        last_item = current_seq[-1]
+        p_diff = item[0] - last_item[0]
+        if item[1] == last_item[1] and p_diff < 15:
+            if item[2] == last_item[2] + 1 or item[2] == 1:
+                current_seq.append(item)
+                continue
+        
+        if len(current_seq) >= 3:
+            sequences.append(current_seq)
+        current_seq = [item]
+        
+    if len(current_seq) >= 3:
+        sequences.append(current_seq)
+        
+    for seq in sequences:
+        bolds = [item for item in seq if item[3]]
+        plains = [item for item in seq if not item[3]]
+        
+        if bolds and plains:
+            bold_markers = ", ".join(item[4] for item in bolds)
+            plain_markers = ", ".join(item[4] for item in plains)
+            seq_range = f"{seq[0][4]} ... {seq[-1][4]}"
+            anomalies.append((seq_range, f"Inconsistent list formatting: mixed bold ({bold_markers}) and plain ({plain_markers}) in same sequence"))
+            
     return anomalies
 
 
@@ -501,7 +626,9 @@ def main():
         "OCR & Bracket Residues": [],
         "Mixed-Case Capitalization Errors": [],
         "Unresolved Citation References": [],
-        "Structural Nesting Sequence Jumps": []
+        "Structural Nesting Sequence Jumps": [],
+        "Invalid Bible References": [],
+        "List Formatting Inconsistencies": []
     }
 
     # Total counts
@@ -592,6 +719,32 @@ def main():
                 continue
             snippets = find_contexts(raw_text, target)
             categories["Structural Nesting Sequence Jumps"].append({
+                "target": target,
+                "description": desc,
+                "chapter": title,
+                "contexts": snippets
+            })
+
+        # 7. Check Invalid Bible References
+        bible_hits = check_invalid_bible_references(raw_text)
+        for target, desc in bible_hits:
+            if is_whitelisted("Invalid Bible References", target, whitelist):
+                continue
+            snippets = find_contexts(raw_text, target)
+            categories["Invalid Bible References"].append({
+                "target": target,
+                "description": desc,
+                "chapter": title,
+                "contexts": snippets
+            })
+
+        # 8. Check List Formatting Inconsistencies
+        list_hits = check_list_consistency(raw_text)
+        for target, desc in list_hits:
+            if is_whitelisted("List Formatting Inconsistencies", target, whitelist):
+                continue
+            snippets = find_contexts(raw_text, target)
+            categories["List Formatting Inconsistencies"].append({
                 "target": target,
                 "description": desc,
                 "chapter": title,

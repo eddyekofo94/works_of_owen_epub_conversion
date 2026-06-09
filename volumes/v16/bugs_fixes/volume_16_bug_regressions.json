@@ -12,8 +12,8 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 33,
-      "budget": 35,
+      "observed": 36,
+      "budget": 36,
       "status": "ok",
       "samples": [
         {
@@ -34,12 +34,22 @@
         {
           "file": "EPUB/ch007.xhtml",
           "previous": ", magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —",
-          "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiastes 266."
+          "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiazusae 266."
         },
         {
           "file": "EPUB/ch007.xhtml",
           "previous": "hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —",
           "next": "And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": " from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: —",
+          "next": "CLEMENS, Epist. ad Corinth., affirms that the apostles themselves appointed approved persons unto the office of the ministry, συνευδοκησάσης τῆς ἐκκλησίας πάσης , \"by (or with) the"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "n to the pastoral office, yet I must say that where they are not all duly attended unto, the institution of Christ is neglected, and the order of the church infringed. Wherefore, —",
+          "next": "The plea of the communication of all authority for office, and of office itself, solely by a flux of power from the first ordainers, through the hands of their pretended successors"
         },
         {
           "file": "EPUB/ch010.xhtml",
@@ -55,16 +65,6 @@
           "file": "EPUB/ch013.xhtml",
           "previous": "2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —",
           "next": "If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "previous": "s published in 1721, but seems to have been previously given to the world. It is of use in explaining and defending Congregational usages in matters of ecclesiastical discipline. —",
-          "next": "ED."
-        },
-        {
-          "file": "EPUB/ch031.xhtml",
-          "previous": "en their right hand and their left, to deal with infants any otherwise but in and according to the covenant of their parents; and that he doth so, see Romans 5:14. Hence I argue, —",
-          "next": "Those who, by God's appointment, and by virtue of the law of their creation, are, and must of necessity be, included in the covenant of their parents, have the same right with them"
         }
       ]
     },
@@ -247,8 +247,8 @@
       "samples": [
         {
           "file": "EPUB/ch042.xhtml",
-          "paragraph_count": 4,
-          "structural_line_count": 2,
+          "paragraph_count": 3,
+          "structural_line_count": 1,
           "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
         }
       ]

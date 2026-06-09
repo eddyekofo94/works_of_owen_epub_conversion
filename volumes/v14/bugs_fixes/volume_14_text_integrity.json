@@ -2,9 +2,9 @@
   "volume": 14,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v14/input/owen-v14.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v14/output/volume_14.epub",
-  "generated_at": "2026-05-29T12:05:13.820139+00:00",
+  "generated_at": "2026-06-09T10:52:30.244153+00:00",
   "status": "warn",
-  "warning_count": 10,
+  "warning_count": 14,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -13,6 +13,14 @@
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "front_matter_toc_loss",
+      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
     },
     {
       "code": "bottom_of_page_text_loss",
@@ -31,12 +39,8 @@
       "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
     },
     {
-      "code": "roman_heading_candidates",
-      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
-    },
-    {
-      "code": "overlong_heading_candidates",
-      "message": "Some chapter headings are long enough to suggest swallowed body text"
+      "code": "missing_enumerator_markers",
+      "message": "Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB"
     },
     {
       "code": "enumerator_sequence_candidates",
@@ -45,20 +49,72 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "missing_latin_clauses",
+      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
     }
   ],
   "pdf": {
     "page_count": 661
   },
   "epub": {
-    "spine_text_files": 69,
-    "paragraph_count": 1726
+    "spine_text_files": 70,
+    "paragraph_count": 1646
   },
   "word_coverage": {
-    "pdf_content_tokens": 231840,
-    "epub_content_tokens": 232164,
-    "coverage_ratio": 0.9969,
+    "pdf_content_tokens": 230477,
+    "epub_content_tokens": 227537,
+    "coverage_ratio": 0.9845,
     "missing_word_samples": [
+      {
+        "word": "national",
+        "pdf": 18,
+        "epub": 7
+      },
+      {
+        "word": "authoritative",
+        "pdf": 17,
+        "epub": 8
+      },
+      {
+        "word": "constitution",
+        "pdf": 17,
+        "epub": 8
+      },
+      {
+        "word": "liberties",
+        "pdf": 13,
+        "epub": 5
+      },
+      {
+        "word": "courts",
+        "pdf": 8,
+        "epub": 3
+      },
+      {
+        "word": "unnecessary",
+        "pdf": 6,
+        "epub": 2
+      },
+      {
+        "word": "magistrates",
+        "pdf": 5,
+        "epub": 1
+      },
+      {
+        "word": "estates",
+        "pdf": 5,
+        "epub": 2
+      },
       {
         "word": "pre",
         "pdf": 5,
@@ -68,217 +124,318 @@
         "word": "eminence",
         "pdf": 5,
         "epub": 2
+      },
+      {
+        "word": "jurisdictions",
+        "pdf": 4,
+        "epub": 1
+      },
+      {
+        "word": "jealousies",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "encroachment",
+        "pdf": 3,
+        "epub": 1
+      },
+      {
+        "word": "laborious",
+        "pdf": 3,
+        "epub": 1
       }
     ],
     "excess_word_samples": [
       {
-        "word": "editor",
-        "pdf": 5,
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "modern",
+        "pdf": 2,
         "epub": 11
       },
       {
-        "word": "digital",
+        "word": "footnotes",
         "pdf": 0,
         "epub": 6
       }
     ]
   },
   "page_coverage": {
-    "pages_checked": 656,
-    "weak_page_count": 3,
+    "pages_checked": 653,
+    "weak_page_count": 15,
     "weak_pages": [
       {
-        "page": 517,
+        "page": 3,
         "hit_ratio": 0.333,
-        "sample": "517 some sayings also they produced out of some ancient writers of the church but all of them either perverted or forged the scriptures"
+        "sample": "contents of animadversions on treatise entitled fiat lux prefatory note by the editor to the reader preface chap our author's preface and his method"
+      },
+      {
+        "page": 5,
+        "hit_ratio": 0.0,
+        "sample": "proposals from protestant principles tending unto moderation and unity farther vindication of the second chapter of the animadversions the remaining principles of fiat lux"
+      },
+      {
+        "page": 6,
+        "hit_ratio": 0.333,
+        "sample": "communion heroes of the ass's head whose worship was objected to jews and christians the church of rome no safe guide prefatory note by"
+      },
+      {
+        "page": 204,
+        "hit_ratio": 0.0,
+        "sample": "vindication of the animadversions on fiat lux wherein the principles of the roman church as to moderation unity and truth are examined and sundry"
       },
       {
         "page": 574,
         "hit_ratio": 0.333,
-        "sample": "574 the church of rome no safe guide or reasons to prove that no rational man who takes due care of his own eternal"
+        "sample": "the church of rome no safe guide or reasons to prove that no rational man who takes due care of his own eternal salvation"
       },
       {
-        "page": 630,
+        "page": 620,
         "hit_ratio": 0.0,
-        "sample": "630 brief and impartial account of the nature of the protestant religion its present state in the world its strength and weakness with the"
+        "sample": "some considerations about union among protestants the protestant religion introduced into this nation by the apostolical way and means of the holiness and laborious"
+      },
+      {
+        "page": 621,
+        "hit_ratio": 0.0,
+        "sample": "many of the professors of it from the very first beginning of the reformation and which are continued unto this day these differences though"
+      },
+      {
+        "page": 622,
+        "hit_ratio": 0.0,
+        "sample": "have accompanied or followed it which until they are removed the weakness of the protestant interest through mutual divisions will remain among us and"
+      },
+      {
+        "page": 623,
+        "hit_ratio": 0.0,
+        "sample": "conformity in canonical obedience ceremonies rites and modes of worship hath no other end but the sustentation and preservation thereof being things otherwise that"
+      },
+      {
+        "page": 624,
+        "hit_ratio": 0.0,
+        "sample": "both which things are effectual engines to expel all peace and union among protestants those who are for the presbyterian form of an authoritative"
+      },
+      {
+        "page": 625,
+        "hit_ratio": 0.0,
+        "sample": "preserve the protestant religion amongst us to keep uniformity in the profession of it and agreement amongst its professors it is answered nothing ought"
+      },
+      {
+        "page": 626,
+        "hit_ratio": 0.0,
+        "sample": "nor is it morally possible that ever popery should return into this or any other nation but under the conduct of such church constitution"
+      },
+      {
+        "page": 627,
+        "hit_ratio": 0.0,
+        "sample": "unto the interest of popery as it may be it is possible some individual persons may be found that for the sake of truth"
+      },
+      {
+        "page": 628,
+        "hit_ratio": 0.0,
+        "sample": "the days of queen elizabeth and king james before the inroad of novel opinions among us to be subscribed by all enjoying public ministry"
+      },
+      {
+        "page": 629,
+        "hit_ratio": 0.0,
+        "sample": "which themselves by diligent prayer sedulous preaching of the word and an exemplary conversation ought to labor for in the hearts of men it"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 769,
-    "missing_dense_window_pages": 636,
+    "dense_windows_checked": 31012,
+    "missing_dense_window_pages": 40,
     "missing_dense_windows": [
+      {
+        "page": 4,
+        "sample": "note by the editor to the reader chap an answer to the preface or"
+      },
+      {
+        "page": 5,
+        "sample": "proposals from protestant principles tending unto moderation and unity farther vindication of the second"
+      },
       {
         "page": 7,
         "sample": "animadversions on treatise entitled fiat lux or guide in differences of religion between papist"
       },
       {
         "page": 10,
-        "sample": "10 to the reader reader the treatise entitled fiat lux which thou wilt find"
-      },
-      {
-        "page": 11,
-        "sample": "11 flourish withal are not vox ultima papae discovery of the inconsistency of his"
-      },
-      {
-        "page": 12,
-        "sample": "12 preface considering the condition of affairs in these nations in reference to the"
-      },
-      {
-        "page": 13,
-        "sample": "13 discontented individuals which hath been their constant employment but also come with their"
-      },
-      {
-        "page": 14,
-        "sample": "14 advantage in his conjectures at the way and manner wherein he would proceed"
-      },
-      {
-        "page": 15,
-        "sample": "15 no certainty or establishment for their faith in scripture but must for it"
-      },
-      {
-        "page": 16,
-        "sample": "16 in my dealing with him shall not make it my business to defend"
-      },
-      {
-        "page": 17,
-        "sample": "17 religion as some of them seem to be they come not within the"
-      },
-      {
-        "page": 18,
-        "sample": "18 know none that can vie with the romanists in laying foundations of and"
-      },
-      {
-        "page": 19,
-        "sample": "19 tendency unto his main end though pretended to be used to another purpose"
-      },
-      {
-        "page": 20,
-        "sample": "20 chapter our author's preface and his method it is not any disputation or"
-      },
-      {
-        "page": 21,
-        "sample": "21 concealed his method he hath used one if he hath used none he"
-      },
-      {
-        "page": 22,
-        "sample": "22 occasion to personate protestant that although for method purely adventitious and belonging to"
-      },
-      {
-        "page": 23,
-        "sample": "23 commands of law and gospel encouraging men unto them by the blessed promises"
-      },
-      {
-        "page": 24,
-        "sample": "24 chapter heathen pleas general principles we have done with his method or manner"
-      },
-      {
-        "page": 25,
-        "sample": "25 he is acquainted with their persons and hath read the books of all"
-      },
-      {
-        "page": 26,
-        "sample": "26 and scoff at the first reformers with no less witty and biting sarcasms"
-      },
-      {
-        "page": 27,
-        "sample": "27 of less moment than that treated about so hope no man can justly"
-      },
-      {
-        "page": 28,
-        "sample": "28 is in itself obscure and we have none to determine of the sense"
-      },
-      {
-        "page": 29,
-        "sample": "29 return thither now if this must be admitted to be true that we"
-      },
-      {
-        "page": 30,
-        "sample": "30 there is considerable in the place or persons from whence or whom nation"
-      },
-      {
-        "page": 31,
-        "sample": "31 luke nor st paul nor any one who by divine inspiration committed any"
-      },
-      {
-        "page": 32,
-        "sample": "32 ii that whence and from whom we first received our religion there and"
-      },
-      {
-        "page": 33,
-        "sample": "33 converted by their means do afterward through the craft and subtlety of seducers"
-      },
-      {
-        "page": 34,
-        "sample": "34 easily granted that if we ought to abide under its rule and conduct"
-      },
-      {
-        "page": 35,
-        "sample": "35 believers in the city and suburbs of it and some few adjacent towns"
+        "sample": "to the reader reader the treatise entitled fiat lux which thou wilt find examined"
       },
       {
         "page": 36,
-        "sample": "36 old but though this were really more serious work and more useful and"
-      },
-      {
-        "page": 37,
-        "sample": "37 church all it seems in the superlative degree will not contend about the"
-      },
-      {
-        "page": 38,
-        "sample": "38 not nor do we find that they do the acknowledgment of protestants is"
+        "sample": "close and safe all the long-billed birds that he hoped to lime twig by"
       },
       {
         "page": 39,
-        "sample": "39 that the church of rome had ever such fall or fell thus tell"
+        "sample": "we say plainly that she fell by she fell by apostasy from many of"
       },
       {
         "page": 40,
-        "sample": "40 pitiful definition of heresy he gives us coined merely to serve the roman"
+        "sample": "ask of this or that age or of the first of the first certainly"
       },
       {
-        "page": 41,
-        "sample": "41 for no more will it at all follow that the church of rome"
+        "page": 49,
+        "sample": "sense but hic nigrae succus loliginis haec est aerugo mera hor sat suppose they"
       },
       {
-        "page": 42,
-        "sample": "42 peace and amity dissolved the whole harmony of mankind's agreement amongst themselves was"
+        "page": 58,
+        "sample": "chapter motive matter and method of our author's book what remains of our author's"
       },
       {
-        "page": 43,
-        "sample": "43 witnesses of the lord christ and his truths will at the last day"
+        "page": 83,
+        "sample": "impossible to be kept if christ be not our law maker and director of"
       },
       {
-        "page": 44,
-        "sample": "44 on it is no small part of the gospel's glory that being promulgated"
+        "page": 85,
+        "sample": "imitation of that which was useful of the rest which they reject they reject"
       },
       {
-        "page": 45,
-        "sample": "45 royal word and vowed as in the sight of the almighty god was"
+        "page": 90,
+        "sample": "believed understood but by the church the church cannot be proved to have being"
       },
       {
-        "page": 46,
-        "sample": "46 important consideration than our differences themselves should very little value the one or"
+        "page": 107,
+        "sample": "by relinquishment of their first principles and re assuming popish ones for their defense"
       },
       {
-        "page": 47,
-        "sample": "47 private studies of learned men abound with them their invectives apologies accusations charges"
+        "page": 110,
+        "sample": "of men from the basis of the scripture the church the church the roman"
       },
       {
-        "page": 48,
-        "sample": "48 was to quiet greece whilst he his wife and children were together by"
+        "page": 118,
+        "sample": "to matter of fact we have no contest 7a with him that the gospel"
+      },
+      {
+        "page": 150,
+        "sample": "he forbids them to make and he en forceth his command upon them from"
+      },
+      {
+        "page": 169,
+        "sample": "it is any other way the trade language of religion amongst learned men but"
+      },
+      {
+        "page": 181,
+        "sample": "jesus christ our lord whose head and half portrait christians used upon their altars"
+      },
+      {
+        "page": 184,
+        "sample": "praying saints not praying to them praying to them indirectly not directly praying them"
+      },
+      {
+        "page": 186,
+        "sample": "be good and lawful suppose they be in heaven what then what then may"
+      },
+      {
+        "page": 195,
+        "sample": "revenge these are somewhat strange stories our author grievous complains of uncivil carriage toward"
+      },
+      {
+        "page": 209,
+        "sample": "στασεις ιδιας εχειν εκαστοι ζελουσι και υπο πληθους παλιν διισταμενοι σφας αυτους ελεγκουσιν ενος"
+      },
+      {
+        "page": 234,
+        "sample": "his supremacy above general council some would bring him into co ordination with it"
+      },
+      {
+        "page": 235,
+        "sample": "not such proceedings εχθρος γαρ μοι κεινος ομως αιδαο πυλησιν ος ετερον μεν κευθει"
+      },
+      {
+        "page": 250,
+        "sample": "the third of claudius and the forty fifth of christ to contemporize but upon"
+      },
+      {
+        "page": 258,
+        "sample": "the heaviest 22ae ad the church in the wilderness fell by its μοσχοποιια its"
+      },
+      {
+        "page": 259,
+        "sample": "narratur de lappis vel viva animalia ut quondam aegyptii quam eorum qui frustum panis"
+      },
+      {
+        "page": 292,
+        "sample": "see cause tales casus cassandra canebat virg aen the differences you suppose and look"
+      },
+      {
+        "page": 300,
+        "sample": "on contrary practice and for this self deceiving attended with eternal ruin many men"
+      },
+      {
+        "page": 307,
+        "sample": "the council unto which of them the pre eminence is due now this is"
+      },
+      {
+        "page": 308,
+        "sample": "be he first hears of them in mercury or weekly news book or it"
+      },
+      {
+        "page": 311,
+        "sample": "asserted the positions in them as of faith and necessary to be believed are"
+      },
+      {
+        "page": 315,
+        "sample": "any characters of god's truth and holiness upon it unto livy's story yea aesop's"
+      },
+      {
+        "page": 316,
+        "sample": "an virtus quis in hoste requirat virg aen as to cast off all reverence"
+      },
+      {
+        "page": 340,
+        "sample": "who will affirm that it is midnight at noon day know the apostolical office"
+      },
+      {
+        "page": 345,
+        "sample": "again to jerusalem and found peter still there which was in the fifty second"
+      },
+      {
+        "page": 358,
+        "sample": "of these your crying out the church the church the church cannot err makes"
+      },
+      {
+        "page": 375,
+        "sample": "tam myra facies tot pullulat atra colubris virg aen wherever this opinion takes place"
+      },
+      {
+        "page": 395,
+        "sample": "britons being expelled by the saxons the saxons first received their christianity from rome"
+      },
+      {
+        "page": 401,
+        "sample": "inficeto est inficetior rure simul poemata attigit neque idem unquam aeque est beatus ac"
       }
     ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 4,
     "front_toc_windows_checked": 16,
-    "missing_front_toc_pages": 0,
-    "missing_front_toc_samples": []
+    "missing_front_toc_pages": 3,
+    "missing_front_toc_samples": [
+      {
+        "page": 3,
+        "hit_ratio": 0.25,
+        "sample": "contents of animadversions on treatise entitled fiat lux prefatory note by the editor to the reader preface chap our author's preface and his method heathen pleas general principles"
+      },
+      {
+        "page": 5,
+        "hit_ratio": 0.0,
+        "sample": "proposals from protestant principles tending unto moderation and unity farther vindication of the second chapter of the animadversions the remaining principles of fiat lux considered judicious readers schoolmen"
+      },
+      {
+        "page": 6,
+        "hit_ratio": 0.25,
+        "sample": "communion heroes of the ass's head whose worship was objected to jews and christians the church of rome no safe guide prefatory note by the editor preface some"
+      }
+    ]
   },
   "top_of_page_integrity": {
     "top_windows_checked": 656,
-    "top_windows_usable": 621,
+    "top_windows_usable": 619,
     "skipped_top_window_count": 13,
     "skipped_top_windows": [
       {
@@ -360,20 +517,71 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 0,
-    "missing_top_windows": []
+    "missing_top_window_count": 9,
+    "missing_top_windows": [
+      {
+        "page": 621,
+        "window": "many of the professors of it from the very first beginning of the reformation",
+        "sample": "many of the professors of it, from the very first beginning of the Reformation, and which are continued unto this day."
+      },
+      {
+        "page": 622,
+        "window": "have accompanied or followed it which until they are removed the weakness of the",
+        "sample": "have accompanied or followed it; which, until they are removed, the weakness of the protestant interest, through mutual divisions, will remain"
+      },
+      {
+        "page": 623,
+        "window": "conformity in canonical obedience ceremonies rites and modes of worship hath no other end",
+        "sample": "conformity in canonical obedience, ceremonies, rites, and modes of worship, hath no other end but the sustentation and preservation thereof,"
+      },
+      {
+        "page": 624,
+        "window": "both which things are effectual engines to expel all peace and union among protestants",
+        "sample": "both: which things are effectual engines to expel all peace and union among Protestants."
+      },
+      {
+        "page": 625,
+        "window": "preserve the protestant religion amongst us to keep uniformity in the profession of it",
+        "sample": "preserve the protestant religion amongst us, to keep uniformity in the profession of it, and agreement amongst its professors, it is answered, —"
+      },
+      {
+        "page": 626,
+        "window": "nor is it morally possible that ever popery should return into this or any",
+        "sample": "Nor is it morally possible that ever Popery should return into this or any other nation, but under the conduct of such a church constitution; without"
+      },
+      {
+        "page": 627,
+        "window": "unto the interest of popery as it may be it is possible some individual",
+        "sample": "unto the interest of Popery, as it may be; it is possible some individual persons may be found that, for the sake of truth, will expose their lives to"
+      },
+      {
+        "page": 628,
+        "window": "the days of queen elizabeth and king james before the inroad of novel opinions",
+        "sample": "the days of Queen Elizabeth and King James, before the inroad of novel opinions among us, to be subscribed by all enjoying a public ministry."
+      },
+      {
+        "page": 629,
+        "window": "which themselves by diligent prayer sedulous preaching of the word and an exemplary conversation",
+        "sample": "which themselves, by diligent prayer, sedulous preaching of the word, and an exemplary conversation, ought to labor for in the hearts of men."
+      }
+    ]
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 613,
-    "bottom_windows_usable": 607,
+    "bottom_windows_usable": 605,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 7,
+    "missing_bottom_window_count": 17,
     "missing_bottom_windows": [
       {
         "page": 2,
         "window": "this edition of first published by johnstone hunter 1850-53",
         "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
+      },
+      {
+        "page": 5,
+        "window": "the pretenses for image-worship examined and disproved of latin service",
+        "sample": "the pretenses for image-worship examined and disproved 22. — Of Latin service"
       },
       {
         "page": 274,
@@ -404,449 +612,383 @@
         "page": 541,
         "window": "la tou staurou proskunw to tu pon dia cristo to ejn aujtw staurwqe nta",
         "sample": "[Ewv me>n ejsti sumpepedhme>na ta< du>w xu>la tou~ staurou~ proskunw~ to<n tu>pon dia< Cristo<n to<n ejn aujtw~| staurwqe>nta,"
+      },
+      {
+        "page": 620,
+        "window": "before it was infested with novel opinions was the differences that have been amongst",
+        "sample": "3. The only weakness in it, as the interest of the nation (before it was infested with novel opinions), was the differences that have been amongst"
+      },
+      {
+        "page": 621,
+        "window": "constitution partly from the inclinations of them by whom it is managed other evils",
+        "sample": "established. Yet experience manifests that, partly from its constitution, partly from the inclinations of them by whom it is managed, other evils"
+      },
+      {
+        "page": 622,
+        "window": "church-state which is of itself altogether unnecessary for the whole complex of the imposed",
+        "sample": "supposed necessary for the preservation of their church-state, which is of itself altogether unnecessary; for the whole complex of the imposed"
+      },
+      {
+        "page": 623,
+        "window": "as sacred as the crown or religion itself unto the great disparagement of them",
+        "sample": "manage these things would have men believe that their state and rule is as sacred as the crown or religion itself, unto the great disparagement of them"
+      },
+      {
+        "page": 624,
+        "window": "divested of the powers claimed at present by it it will be impossible to",
+        "sample": "be removed, and no other of another form set up in the room of it, or be divested of the powers claimed at present by it, it will be impossible to"
+      },
+      {
+        "page": 625,
+        "window": "and secular advantages than to venture all by rigid contest for the protestant religion",
+        "sample": "power and secular advantages, than to venture all by a rigid contest for the protestant religion."
+      },
+      {
+        "page": 626,
+        "window": "trust and power of it be seduced corrupted or any way induced or disposed",
+        "sample": "Allow that the church-state supposed may, in those who have the trust and power of it, be seduced, corrupted, or any way induced or disposed"
+      },
+      {
+        "page": 627,
+        "window": "of england especially as explained in the public authorized writings of the church in",
+        "sample": "faith, such as is the doctrine of the Articles of the church of England, especially as explained in the public authorized writings of the church in"
+      },
+      {
+        "page": 628,
+        "window": "the clergy who would have an outward appearance of effecting that by external force",
+        "sample": "cover for the negligence, idleness, and insufficiency of some of the clergy, who would have an outward appearance of effecting that by external force"
       }
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1388,
-    "split_candidate_count": 75,
+    "paragraphs_checked": 1315,
+    "split_candidate_count": 4,
     "split_candidates": [
       {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "EDITED BY",
-        "next": "WILLIAM H. GOOLD"
+        "file": "EPUB/ch003.xhtml",
+        "previous": "READER,",
+        "next": "THE treatise entitled \"Fiat Lux,\" which thou wilt find examined in the ensuing discourse, was lent unto me, not long since, by an honorable person, with a request to return an answ"
       },
       {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "WILLIAM H. GOOLD",
-        "next": "ANIMADVERSIONS ON A TREATISE ENTITLED \"FIAT LUX.\""
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "PREFATORY NOTE BY THE EDITOR",
-        "next": "Preface Chap. 1. — Our author's preface, and his method"
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "7. —",
-        "next": "Use of reason"
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "orld, began in Ireland, amongst his good Roman Catholics, who were blessed from Rome into rebellion and murder, somewhat before any drop of blood was shed in England or Scotland, —",
-        "next": "Let them that are innocent throw stones at others: Roman Catholics are unfit to be employed in that work. But it was never judged either a safe or honest way to judge of any religi"
-      },
-      {
-        "file": "EPUB/ch006.xhtml",
-        "previous": "works done in Christ, by his special grace, out of obedience to his command, with a promise of everlasting reward and intrinsic acceptability thence accruing.\" Thus we see still, —",
-        "next": "Use of disputing has cast him, at the very entrance of his discourse, upon, as he supposeth, a particular controversy between Protestants and Roman Catholics, quite besides his des"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": "f constitutive principles of that union and agreement which remains amongst them. But, whatever their evils be, it is pretended that they have a remedy at hand for them all. But, —",
-        "next": "This I know, that a returnal unto Rome will not do it, unless, when we come thither, we can learn to behave ourselves better than those do who are there already; and there is indee"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": " most of the great contests in the world about perishing things proceed from the unmortified lusts of men. The Scripture abounds in testimonies given hereunto: St. James expressly,",
-        "next": "Men's lusts put them on endless irregularities, in unbounded desires, and foolish, sinful enterprises, for their satisfaction. Neither is Satan, the old enemy of the welfare of man"
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "ns, doubtless promote them, and make men precipitate above their natural tempers in their productions; but the principal cause of all our evils is still to be looked for at home, —",
-        "next": "Sect. 3 p. 34. In the next section of this chapter, whereunto he prefixes \"Nullity of Title,\" he pursues the persuasive unto peace, moderation, charity, and quietness in our severa"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "previous": "would not denounce an anathema against such a defense of any religion whatever. But you will say, the same person defends also the Scripture, just as he in the poet did Pelilius: —",
-        "next": "A defense worse and more bitter than a downright accusation. I am not now to observe what prejudice this excuse brings to the cause of our author with all intelligent persons, havi"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "hristians, — the objections of the Jews against the Christian religion are brought on the stage, and an inquiry made how they can be satisfactorily answered. His words are, p. 142,",
-        "next": "The difficulty, as is evident, lay in this, that the authority and judgment of the whole church of the Hebrews lay against Christ and the gospel. That church, when Christ conversed"
-      },
-      {
-        "file": "EPUB/ch017.xhtml",
-        "previous": "ragraph. The first is of its occasion and rise in general; the second, of its entrance into England; the third, of its progress amongst us. Of the first he gives us this account: —",
-        "next": "He that had no other acquaintance with Christian religion but what the Scriptures and ancient fathers will afford him, could not but be amazed at the canting language of this story"
-      },
-      {
-        "file": "EPUB/ch017.xhtml",
-        "previous": "ee, if he knows not, he shall be acquainted from stories that he hath no color to except against. For the present, I shall only mind him and his friends of the comedian's advice: —",
-        "next": "The declaration made in the days of that king, that he was the head of the church of England, intended no more but that there was no other person in the world from whom any jurisdi"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "He will not yet have done, but tells us the precept lies in this,",
-        "next": "But that \"Nil admirari\" relieves me, I should be at a great loss in reading these things; for truly a mall would think that he that talks at this rate had read the Bible no otherwi"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": ", cannot reasonably be proposed for our imitation. I hope we shall not easily be induced either to return unto or embrace the effects of barbarism. But, saith our author, secondly,",
-        "next": "What Catholics have or have not, is not our present dispute. Whether what they have of story and dogma in their own language be that which Paul calls\" the whole counsel of God,\" wh"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "ich our author in this matter sets off with a handsome flourish of words, and some very unhandsome similitudes, considering what he treats of, he sums up, p. 283, in these words: —",
-        "next": "So doth our author advance his wisdom and judgment above the wisdom and judgment of all churches and nations that ever embraced the faith of Christ for a thousand years; all which,"
-      },
-      {
-        "file": "EPUB/ch025.xhtml",
-        "previous": "tocks. It is their prayer for the dead which he so entitles; and in the excellency of their devotion in this particular he is so confident, that he deals with us as the orator told",
-        "next": "Q. Caecilius, Hortensius would with him, in the case of Verres, — bid him take his option and make his choice of what he pleased, and it should all turn to his disadvantage. Horten"
-      },
-      {
-        "file": "EPUB/ch026.xhtml",
-        "previous": "they were all his councils, and that which was not his is none.\" I shall only mind our author of what was said of old unto one talking at that fate that he is pleased here to do: —",
-        "next": "All the glory and renown of the old ancient councils, all their labors for the extirpation of heresies and errors, and the success that their honest endeavors were blessed withal, "
-      },
-      {
-        "file": "EPUB/ch030.xhtml",
+        "file": "EPUB/ch029.xhtml",
         "previous": "CHRISTIAN READER,",
         "next": "ALTHOUGH our Lord Jesus Christ hath laid blessed and stable foundations of unity, peace, and agreement in judgment and affection amongst all his disciples, and given forth command "
       },
       {
-        "file": "EPUB/ch030.xhtml",
-        "previous": " πλήθους πάλιν διι ` στάμενοι σφᾶς αὐτοὺς ἐλέγκουσιν ? ἑνὸς , ὠς εἰπεῖν , ἔτι κοινωνοῦντες , εἴγε κοινωνοῦσιν ἔτι , τοῦ ὀνόματος ? αἱ τοῦτου μόνον ἐγκαταλιπεῖν ὅμως αἰσχύνονται ? —",
-        "next": "So doth he, for his purpose, as is the manner of men, invidiously exaggerate the differences that were in those early times amongst Christians; for he wrote about the days of Traja"
+        "file": "EPUB/ch045.xhtml",
+        "previous": "r thou be an apostle, or an evangelist, or a prophet, or whatever thou be; for subjection overthrows not piety. And he saith not simply, 'Let him obey,' but, 'Let him be subject.'\"",
+        "next": "The very same instances are given by Theodoret, Oecumenius, and Theophylact. Bernard, Epist. 42, ad Archiepisc. Senonena, meets with your exception, which in his days began to be b"
       },
       {
-        "file": "EPUB/ch030.xhtml",
-        "previous": "position to the right ways of God which we behold it come unto at this day. The great Roman historian desires his reader, in the perusal of his discourses, to consider and observe,",
-        "next": "— \"What was the course of life, what were the manners of those men, both at home and abroad, by whom the Roman empire was erected and enlarged; as also how ancient discipline insen"
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "doctrine that is according unto godliness; otherwise suspicion is in your own power, nor can any man hinder you from surmising what you please. This he knew in Plautus who cried, —",
-        "next": "And I know that, concerning all your dispute and arguings in these pages, you may say what Lucian doth about his \"true story:\" Γράφω τοίνυν περὶ ῶν μήτ εῖδον , μήτ ἔπαθον , μήτε πα"
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": ", and they are as well worthy our consideration as any thing else you have written in your epistle; and shall therefore not be neglected. The first of them you thus express, p. 12,",
-        "next": "This is your first reason; which you have exactly squared to the old rule, \"Calumniare fortiter, aliquid adhaerebit;\"— \"Calumny will leave a scar.\""
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "of), than any evil intention or design? This was my threatening you; to which now I shall add, that though I may not say of these papers what Catullus did of his verses on Rufus, —",
-        "next": "But what now is the end in all this heap of things, which you would have mistaken for reasons, that you aim at? It is all to show how unfit I am to defend the protestant religion, "
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "I shall not insist on the particulars, there being not one word of truth in the whole, but leave you to the discipline of your own thoughts, —",
-        "next": "And so I have done with your prefatory discourse, wherein you have made it appear with what reverence of God and love to the truth you are conversant in the great concernments of t"
-      },
-      {
-        "file": "EPUB/ch032.xhtml",
-        "previous": "hat wise and mighty emperor, after all his military actings against them, found the only safe anchor for his soul \"in extremis,\" his only relief against crying out, with Hadrian, —",
-        "next": "— the only antidote against despair, the only stay of a soul when once entering the lists of eternity. And I am persuaded that many of you fix on the same principles as to your hop"
-      },
-      {
-        "file": "EPUB/ch033.xhtml",
-        "previous": "t Lux,\" and which I affirmed to run through and to animate your whole discourse, and to be the foundation on which your superstructure is built. Concerning them all you say, p. 21,",
-        "next": "Pray, sir, remember that I never pretended to set down your words, but to express your sense in my own. And if I do not make it appear that there is no one of the principles mentio"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "ceptation thereon in the sight of God; neither will men \"dead in trespasses and sins\" be \"terrible\" unto any \"as an army with banners,\" unless they are like those in Lucilius, who,",
-        "next": "Are idolatry and heresy the same? Tertullian, who, of all the old ecclesiastical writers, most enlargeth the bounds of idolatry, defines it to be \"Omnis circa omne idolum famulatus"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "business of that council), \"ought to be performed, would vouchsafe to help him, that he might,\" etc.; and thereupon sings this hymn unto her, recorded in the acts of the council: —",
-        "next": "\"O Mary! the beauty, honor, and everlasting light of all virgins, the mother of the Highest, the only glory of mankind; thou, Virgin, alone rulest the stars; thou alone art the lig"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "nder thy goodness, to enter the walls of the heavenly countries.\" I suppose it cannot be doubted whence the pattern of this Conciliary prayer was taken: it is but an imitation of —",
-        "next": "And if this be not plainly to place her in the throne of God, I know not what can be imagined so to do. Your worship of angels and of saints is of the same importance, concerning w"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "for a little wit and merriment that ever I met with. If you would take my advice, you should not strain your genius for that which it will not afford you; you forgot the old rule —",
-        "next": "Any other diversion were better than this, which proves so successless; yet I must confess you deserve well of pastime, seeing to serve its interests you so often make yourself rid"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "s of your idolatry; and would feign post off all to heresy, under a corrupt notion of which term you hope to find some shelter for yourself and your church, although in vain. But —",
-        "next": "You must bear the charge of apostasy also; for why must that needs be the notion of these terms, in the division you made, that you now express? Is it from the strict sense and imp"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "30. And he hath done well to record them, that they might be preserved \"in perpetuam rei memoriam,\" that we might learn what your great father exercised himself about, —",
-        "next": "They are called \"Dictata Papae,\" and \"ex tripode\" we may not doubt, being in number twenty-seven; whereof I shall mind you of a few."
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": " these heresies because the so doing is not suited to our present design. I took them out of your Cardinal Baronius, in the place above quoted, who hath placed them as on a pillar,",
-        "next": "P. L. P.,' 26 — \"Where they may be easily read by an men.\" And that you may not think that these were the heresies of Gregory alone, the same Baronius affirms that these Dictates w"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "previous": "the sixth general council, act. 12, 13; which sentence was afterward ratified by your own darling, the second of Nice, act. 3, 7, and is mentioned in a decretal epistle of Pope Leo",
-        "next": "Neither did Vigilius behave himself one jot better in his chair. The council of Pisa deposed Gregory XII. and Benedict XIII. for schismatics and heretics. The council of Constance "
-      },
-      {
-        "file": "EPUB/ch036.xhtml",
-        "previous": "Men in such cases may make great pretenses, —",
-        "next": "Being destitute of any real foundation, your attempts are but like the fruitless endeavors of men in their sleep, wherein great workings of spirits and fancy produce no effects. I "
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": "ῇ Κυρίου παιδευόμεθα πρὸς τὴν ἐπίγνωσιν τῆς ἀληθείας — \"It is meet, then, that receiving by faith the most absolute principle without other demonstration, and taking demonstrations",
-        "next": "Into the voice, the word of God alone, the church then resolved their faith; this only they built upon, acknowledging all human testimony to be too weak and infirm to be made a fou"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": "δείξαι . I shall close this discourse with a passage out of Chrysostom, which fully confirms all that I have asserted; it is in Homil. 33, in Act. Apost. cap. 15 Τί οῦν , saith he,",
-        "next": "Let us hear the reasons of his hesitation. Saith he, Μάχη παρ ὑμῖν πολλὴ καὶ στάσις , πολὺς ζόρυζος ? ποῖον ἕλωμαι δόγμα ; τί αἱρήσομαι ; ἕκαστος λέγει ὅτι ἀληθεύω ? τίνι πεισθῶ ; "
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "salem, Samaria, Joppa, Antioch, Babylon, and sundry other places; and yet we fred no such consequences pleaded from thence as you urge from his coming to Rome. Wherefore you add, —",
-        "next": "Now, this conclusion is built on these three suppositions: — 1. That Peter had an episcopal office distinct from his apostolical; 2. That he was at Rome; 3. That he fixed his episc"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "of Rome is as yet behind the curtain, neither can he appear upon the stage until he be ushered in by one pretense more of the same nature with them that went before. And this is, —",
-        "next": "Why was it not needful that Paul should have a successor as well as Peter? and John as well as either of them? \"Because,\" you say, \"that was necessary for the church; not so these."
+        "file": "EPUB/ch050.xhtml",
+        "previous": "τεύουσι — \"But if any should say, 'Why do our images work no miracles?' to them we answer, 'Because,' as the apostle saith, 'signs are for unbelievers, not for them that believe.'\"",
+        "next": "And yet the misadventure of it is, that the most of the miracles which they report and build their faith upon were wrought as by, so amongst, their chiefest believers. And what wer"
       }
     ],
-    "structural_start_exclusions": 164,
-    "short_fragment_count": 14,
+    "structural_start_exclusions": 126,
+    "short_fragment_count": 13,
     "short_fragments": [
       {
-        "file": "EPUB/ch001.xhtml",
-        "text": "EDITED BY"
+        "file": "EPUB/ch003.xhtml",
+        "text": "READER,"
       },
       {
-        "file": "EPUB/ch001.xhtml",
-        "text": "WILLIAM H. GOOLD"
-      },
-      {
-        "file": "EPUB/ch001.xhtml",
-        "text": "Use of reason"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
+        "file": "EPUB/ch003.xhtml",
         "text": "Farewell."
       },
       {
-        "file": "EPUB/ch028.xhtml",
-        "text": "Decemb. 9, 1663."
+        "file": "EPUB/ch029.xhtml",
+        "text": "To The Reader."
       },
       {
-        "file": "EPUB/ch030.xhtml",
+        "file": "EPUB/ch029.xhtml",
         "text": "CHRISTIAN READER,"
       },
       {
-        "file": "EPUB/ch031.xhtml",
+        "file": "EPUB/ch030.xhtml",
         "text": "Hesiod. Εργ . καὶ ἡμ ."
       },
       {
-        "file": "EPUB/ch036.xhtml",
+        "file": "EPUB/ch032.xhtml",
+        "text": "which of old she professed!"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
         "text": "Hor. ad. Pis. 150."
       },
       {
-        "file": "EPUB/ch037.xhtml",
+        "file": "EPUB/ch036.xhtml",
         "text": "And, —"
       },
       {
-        "file": "EPUB/ch041.xhtml",
+        "file": "EPUB/ch040.xhtml",
         "text": "I wish we had agreed beforehand,"
       },
       {
-        "file": "EPUB/ch046.xhtml",
+        "file": "EPUB/ch045.xhtml",
         "text": "God, Christ, Minister, People."
       },
       {
-        "file": "EPUB/ch052.xhtml",
-        "text": "Nor,"
-      },
-      {
-        "file": "EPUB/ch058.xhtml",
+        "file": "EPUB/ch057.xhtml",
         "text": "I answer two things: —"
       },
       {
-        "file": "EPUB/ch064.xhtml",
+        "file": "EPUB/ch063.xhtml",
         "text": "THE PROTESTANT RELIGION."
+      },
+      {
+        "file": "EPUB/ch063.xhtml",
+        "text": "END OF VOL. 14."
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 1,
+    "inline_structural_candidate_count": 6,
     "inline_structural_candidates": [
       {
-        "file": "EPUB/ch031.xhtml",
+        "file": "EPUB/ch030.xhtml",
         "text": "And I know that, concerning all your dispute and arguings in these pages, you may say what Lucian doth about his \"true story:\" Γράφω τοίνυν περὶ ῶν μήτ εῖδον , μήτ ἔπαθον , μήτε παρ ἄλλων ἐπυθόμην ? — \"You write about the things which you have neither seen nor"
+      },
+      {
+        "file": "EPUB/ch033.xhtml",
+        "text": "Do you think it so easy for you, \"Cornicum oculos, configere,\" as Cicero tells us an attorney, one Cn. Flavius, thought to do, in going beyond all that the great lawyers had done before him, Orat. pro Muraena, 11. We cannot yet be persuaded that you are so gre"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "The present face of Christianity makes the worm a wearisome wilderness; nor should I think any thing a more necessary duty than it would be for persons of piety and ability to apologize for the religion of Jesus Christ, and to show how unconcerned it is in the"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "Some few observations upon this discourse of yours will farther manifest the absurdity of that consequence which you feign not to have been taken notice of in the \"Animadversions;\" for which you had no cause, but that you might easily discern that you did not "
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "Our Savior gave them equal commission to teach all nations; told them that as his Father had sent him so he sent them; that he had chosen them twelve, but that one of them was a devil, — never that one of them should be pope. Their institution, instruction, pr"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "(2.) the oppression of Nonconformists in order that its claims and dignity might be upheld; and (3.) the spirit it fostered of subserviency to royal aggrandizement, in order to secure a share in the preferment which is under the patronage and at the disposal o"
       }
     ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 4,
+    "suspicious_large_number_start_count": 5,
     "suspicious_large_number_starts": [
       {
-        "file": "EPUB/ch031.xhtml",
+        "file": "EPUB/ch030.xhtml",
         "text": "15. 20 In their steps you set out in this your first reason, wherein there is not one word of truth. I had formerly told you that I Aid not think you could yourself believe some of the things that you affirmed, at which "
       },
       {
-        "file": "EPUB/ch032.xhtml",
+        "file": "EPUB/ch031.xhtml",
+        "text": "41. \"A supernatural work,\" saith he, \"proceeding from grace, in itself, and in its own nature, hath a proportion unto and condignity of the reward, and is of sufficient value to be worth the same.\" And you seem to be of "
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
         "text": "27. In the explication of your distinction of \"congruity\" and \"condignity,\" how woefully are you divided! as also in the application of it. There is no end of your altercations about it, the terms of it being horrid, unc"
       },
       {
-        "file": "EPUB/ch034.xhtml",
+        "file": "EPUB/ch033.xhtml",
         "text": "30. And he hath done well to record them, that they might be preserved \"in perpetuam rei memoriam,\" that we might learn what your great father exercised himself about, —"
       },
       {
-        "file": "EPUB/ch034.xhtml",
+        "file": "EPUB/ch033.xhtml",
         "text": "11. And that of Basil condemned Engenius as one \"a fide devium et pertinacem haereticum,\" sess. 34; — \"an erroneous person and obstinate heretic.\" Other instances of the like nature might be called over, manifesting that"
       }
     ],
-    "roman_heading_candidate_count": 3,
-    "roman_heading_candidates": [
-      {
-        "file": "EPUB/ch063.xhtml",
-        "text": "II. Then follows an account of the way in which Protestantism had arisen; of the costly sacrifices made in order that it might be established, its martyrs exceeding in number those who had fallen under the Pagan persecut"
-      },
-      {
-        "file": "EPUB/ch063.xhtml",
-        "text": "III. The political weakness of Protestantism, frown its manifold divisions, is exhibited, and the importance is urged of establishing a great Protestant interest throughout Europe."
-      },
-      {
-        "file": "EPUB/ch063.xhtml",
-        "text": "IV. Then follows a discussion of the probable way in which the Papacy may regain predominance; — either by defection, or force, or reconciliation. The author dwells chiefly on the danger to be apprehended frown the last "
-      }
-    ],
-    "overlong_heading_candidate_count": 21,
-    "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "IX. \"That the pope is a good man, one that seeks nothing but our good, that never did us harm, and hath the care and inspection of us committed unto him by Christ.\""
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "III. That which is the main pillar, bearing the weight of all this fine fabric, is the principle we mentioned in the third place, — namely, \"That the Roman profession of religion and practice in the worship of God are every way the same as when we first receiv"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "IV. It is frequently pleaded by our author (nor is there any thing which he more triumphs in), \"That all things, as to religion, were quiet and in peace, all men in union and agreement amongst themselves in the worship of God, before the departure made by our "
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "V. \"That the first reformers were most of them sorry, contemptible persons, whose errors were propagated by indirect means, and entertained for sinister ends,\" is in several places of this book alleged, and consequences, pretended thence to ensue, urged and im"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "VI. \"That our departure from Rome hath been the cause of all our evils, and particularly of all those divisions which are at this day found amongst Protestants, and which have been since the Reformation,\" is a supposition that not only insinuates itself into t"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "VII. \"That we have no remedy of our evils, no means of ending our differences, but by a returnal to the Roman see.\" Whether there be any way to end differences among ourselves, as far and as soon as there is any need they should be ended, will be afterward inq"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "IX. We are come at length unto the pope, of whom we are told that \"he is a good man, one that seeks nothing but our good, that never did us harm, but has the care and inspection of us committed unto him by Christ.\" For my part I am glad to hear such news of hi"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "tag": "h4",
-        "text": "X. The last principle which I have observed diffusing its influences throughout the whole discourse is, that \"the devotion of Catholics far transcends that of Protestants; their preaching also\" (which I forgot to mention before) \"is far to be preferred above t"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "tag": "h4",
-        "text": "II. So infallible was he during his life, so infallible was he thought to be when he was dead, — whilst he lived he taught heresy, and when he was dead he was condemned for a heretic; and with him the principle which is the hinge of your present faith."
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "tag": "h4",
-        "text": "I. Protestants lay down this as the ἡ ἀρχὴ τῆς ὑποστάσεως καὶ ὁμολογίας , — as \"the very beginning and first principle of their confidence and confession,\" — that all Scripture is given by inspiration of God, as the Holy Ghost teacheth them, 2 Timothy 3:16; th"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "tag": "h4",
-        "text": "II. They affirm that this Scripture evidenceth itself by many infallible τεκμήρια to be so given by inspiration from God; and, besides, is witnessed so to be by the testimony of the church of God from the days of Moses, wherein it began to be written, to the d"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "tag": "h4",
-        "text": "III. Protestants believe and profess that the end wherefore God gave forth his word by inspiration was, that it might be a stable, infallible revelation of his mind and will as to that knowledge which he would have mankind entertain of him, with that worship a"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "tag": "h4",
-        "text": "IV. Protestants believe that it is the duty of all men who desire to know the will of God, and to worship him according unto his mind, to use diligence, in the improvement of the means appointed for that end, to come unto a right and full understanding of all "
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "tag": "h4",
-        "text": "V. Protestants say that _the Lord Christ hath instituted his church, and_ _therein appointed a ministry to preside over the rest of his disciples in his_ _name, and to unfold unto them his mind and will as recorded in his word;_ for which end he hath promised "
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "tag": "h4",
-        "text": "IV. \"That St Peter was bishop of the Roman church; that he fixed his seat there, and there he died.\" In gathering up your principles I follow the footsteps of Bellarmine, Baronius, and other great champions of your church, so that you cannot except against the"
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "tag": "h4",
-        "text": "VI. \"That the bishop of Rome is the man that thus succeeds Peter in his episcopacy; which, though it were settled at Rome, was over the whole catholic church.\" So you say, and so you profess yourselves to believe."
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "tag": "h4",
-        "text": "III. \"That yourselves, — that is, the pope, with those who in matters of religion adhere unto him, and live in subjection unto him, — are this church, in an assent unto whose infallible teachings and determinations the unity of faith doth consist.\" Could you p"
-      },
-      {
-        "file": "EPUB/ch039.xhtml",
-        "tag": "h4",
-        "text": "III. If those theological determinations that make up at this day amongst some men the greatest part of those assertions, positions, or propositions, which are called articles of faith or truth, — which are not delivered in the words that the Spirit of God tea"
-      },
-      {
-        "file": "EPUB/ch039.xhtml",
-        "tag": "h4",
-        "text": "IV. It were well if Christians would but seriously consider what and _how_ _many things they are wherein their present apprehensions of the mind and_ _will of God do center and agree, —_ I mean as to the substance of them, their nature and importance, and how "
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "tag": "h4",
-        "text": "II. Neither is this all: your request also lies cross to your _reason_ no less than to your _faith;_ for your sacrifice cannot be performed without a supposition of a change of the substance of the bread and wine into the substance of the body and blood of Chr"
-      },
-      {
-        "file": "EPUB/ch063.xhtml",
-        "tag": "h4",
-        "text": "I. The first part of the tract is occupied with an account of the Protestant religion, — generally, in its origin and principles; and then more particularly, as it is opposed to Popery."
-      }
-    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
     "pdf_marker_count": 130,
-    "epub_marker_count": 130,
-    "missing_marker_count": 0,
-    "missing_markers": [],
-    "excess_marker_count": 0,
-    "excess_markers": [],
+    "epub_marker_count": 129,
+    "missing_marker_count": 7,
+    "missing_markers": [
+      {
+        "marker": "(1.)",
+        "pdf": 29,
+        "epub": 27,
+        "examples": [
+          {
+            "location": "pdf:p40",
+            "context": "all by heresy, I add, that she is thus fallen also from what she was. But then he asks, — (1.) \"By what general council was she ever condemned?\" (2.) \"Which of the fathers ever wrote against her? By what authority was she otherwise reproved?\" But this is all one as if a thi"
+          },
+          {
+            "location": "pdf:p278",
+            "context": "hat we inquire after. Bellarmine tells us that all Catholics agree in these two things: — (1.) \"Pontificem, cure generali concilio, non posse errare in condendis decretis fidei, vel generalibus praeceptis morum;\" — \"That the pope, with a general council, cannot err in makin"
+          },
+          {
+            "location": "pdf:p307",
+            "context": "hat only a man knows which he knows explicitly) that he doth answer his duty herein. For, (1.) The determinations of your church of things to be believed are so many and various, that it is not within the compass of an ordinary diligence and ability to search and find them"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 32,
+        "epub": 30,
+        "examples": [
+          {
+            "location": "pdf:p40",
+            "context": "what she was. But then he asks, — (1.) \"By what general council was she ever condemned?\" (2.) \"Which of the fathers ever wrote against her? By what authority was she otherwise reproved?\" But this is all one as if a thief, arraigned for stealing before a judge, and the good"
+          },
+          {
+            "location": "pdf:p272",
+            "context": "(1). Your pope's spiritual power over all persons and churches in the things of religion; (2.) His power over emperors, kings, and protestants, in reference unto religion; or, as you speak, \"in ordine ad spiritualia.\" The first your church stumbled into by many degrees, fro"
+          },
+          {
+            "location": "pdf:p276",
+            "context": "esia a solo Domino sit fundata;\" — \"That the Roman church was founded by the Lord alone.\" (2.) \"Quod solus Romanus pontifex jure dicatur universalis;\" — \"That the Roman bishop is rightfully called universal.\" So some think, indeed, ever since Pope Gregory I. taught them tha"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 22,
+        "epub": 20,
+        "examples": [
+          {
+            "location": "pdf:p276",
+            "context": "ope Gregory I. taught them that he who assumed that title was a forerunner of antichrist. (3.) \"Quod ille solus possit deponere episcopos, vel reconciliare;\" — \"That he alone can depose bishops, or restore them;\" which agrees well with the practice of all the councils from"
+          },
+          {
+            "location": "pdf:p308",
+            "context": "s own interpretation of it, which, it may be, within a few months is confuted by another. (3.) Suppose a man have attained a knowledge of all, that your church hath determined and proposed to be believed, and to a right understanding of her precise sense and meaning in all"
+          },
+          {
+            "location": "pdf:p344",
+            "context": ", is no abode indeed; for he continued almost twice as long at Antioch as he did at Rome. (3.) Here is no time at all allowed unto him for preaching the gospel in Galatia, Cappadocia, Asia, and Bithynia, which certainly are not provinces of Europe; in which places Eusebius,"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 10,
+        "epub": 9,
+        "examples": [
+          {
+            "location": "pdf:p308",
+            "context": "mneth as heretical, as you are bound to believe what it pro-poseth for Catholic doctrine. (4.) I desire to know when a man who lives here in England begins to be obliged to believe the determinations of your church that are made at Rome. It may be he first hears of them in"
+          },
+          {
+            "location": "pdf:p344",
+            "context": "at he did attend unto his apostleship towards the Jews, and his epistles make it evident. (4.) Nor is there any time left for him to be at Babylon, where yet we know he was. So that this fancy can have no countenance given it without a full rejection of all that we know to"
+          },
+          {
+            "location": "pdf:p403",
+            "context": "in the signal instance of the opinion of Pope Gregory about your papal power and titles. (4.) \"That we have no occasion of exception against Papists but only their holding the things that those did who first preached the gospel here;\" when that is no cause at all of our ex"
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 4,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "pdf:p502",
+            "context": "ests; so that the context ex-dudes your sense. The same is the interpretation of Erasmus. (5.) Your vulgar Latin [the Vulgate] reads the words, \"administrantibus Domino,\" as they were \"ministering unto the Lord,\" excluding their notion of sacrificing. And, (6.) The Syriac t"
+          },
+          {
+            "location": "pdf:p521",
+            "context": "521 (5.) They positively deny that they had any images, or made any use of them, and defend themselves against the charge of the Pagans against them for professing an imageless religion. C"
+          },
+          {
+            "location": "pdf:p554",
+            "context": "among Protestants than among you, and yourself cannot deny it to be done more frequently? (5.) You reproach the Scripture, by calling it \"the letter,\" in opposition to your \"conceived substance of the word of God:\" for though the literal sense of metaphorical expressions (b"
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 2,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "pdf:p598",
+            "context": "e unto that resignation of themselves unto the church of Rome which it requireth of them. [3.] They have a guide promised unto them, to give them an understanding of the rule in the discharge of this duty, and to enable them to make a right and safe determination thereon,"
+          },
+          {
+            "location": "pdf:p628",
+            "context": "st; without which, government will never be well fixed on its proper and immovable basis. [3.] That provision be made for the sedulous preaching of the gospel in all parts and places of the land, or all parochial churches; the care whereof is incumbent on the magistrates. ["
+          }
+        ]
+      },
+      {
+        "marker": "[4.]",
+        "pdf": 1,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p628",
+            "context": "of the land, or all parochial churches; the care whereof is incumbent on the magistrates. [4.] Let the church be protected in the exercise of its spiritual power by spiritual means only, — as preaching of the word, administration of the sacraments, and the like. Whatever is"
+          }
+        ]
+      }
+    ],
+    "excess_marker_count": 3,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p87",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          },
+          {
+            "location": "EPUB/ch033.xhtml#p674",
+            "context": "3. Your papal cecumenical supremacy hath two main branches: — (1). Your pope's spiritual power over all persons and churches in the things of religion; (2.) His power over emperors, kings, and protestants, in reference unto religion; or, as you"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/colophon.xhtml#p17",
+            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from"
+          },
+          {
+            "location": "EPUB/colophon.xhtml#p17",
+            "context": "entirely distinct from the original authorial/historical footnotes and reset starting at [1] for each chapter. Enhanced Original Footnotes 1, 2, ... : Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Lati"
+          },
+          {
+            "location": "EPUB/structural_guide.xhtml#p87",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/colophon.xhtml#p17",
+            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
+          }
+        ]
+      }
+    ],
     "orphan_candidate_count": 2,
     "orphan_candidates": [
       {
-        "file": "EPUB/ch034.xhtml",
+        "file": "EPUB/ch033.xhtml",
         "marker": "(7.)",
         "family": "paren_decimal",
         "context": "(7.) \"Quod illi soli licet, pro temporis necessitate, novas leges condere;\" — \"That he alone, as necessity requires, can make new laws.\" Let him proceed."
       },
       {
-        "file": "EPUB/ch034.xhtml",
+        "file": "EPUB/ch033.xhtml",
         "marker": "(11.)",
         "family": "paren_decimal",
         "context": "(11.) \"Quod unicum est nomen in mundo, — papae scilicet;\" — \"That there is only one name in the world, — into wit, that of the pope;\" no other name, it seems, given under heaven. Once m"
@@ -855,112 +997,112 @@
   },
   "repeated_windows": [
     {
-      "phrase": "fiat lux prefatory note by the editor to the reader",
-      "count": 4
-    },
-    {
-      "phrase": "vindication of the first chapter of the animadversions the method",
+      "phrase": "chapter farther vindication of the second chapter of the animadversions",
       "count": 3
     },
     {
-      "phrase": "of the first chapter of the animadversions the method of",
+      "phrase": "that whence and from whom we first received our religion",
       "count": 3
     },
     {
-      "phrase": "the first chapter of the animadversions the method of fiat",
+      "phrase": "whence and from whom we first received our religion there",
       "count": 3
     },
     {
-      "phrase": "defense of the second chapter of the animadversions principles of",
+      "phrase": "and from whom we first received our religion there and",
       "count": 3
     },
     {
-      "phrase": "of the second chapter of the animadversions principles of fiat",
+      "phrase": "from whom we first received our religion there and with",
       "count": 3
     },
     {
-      "phrase": "the second chapter of the animadversions principles of fiat lux",
+      "phrase": "whom we first received our religion there and with them",
       "count": 3
     },
     {
-      "phrase": "second chapter of the animadversions principles of fiat lux re-examined",
+      "phrase": "we first received our religion there and with them we",
       "count": 3
     },
     {
-      "phrase": "chapter of the animadversions principles of fiat lux re-examined of",
+      "phrase": "that the roman profession of religion and practice in the",
       "count": 3
     },
     {
-      "phrase": "of the animadversions principles of fiat lux re-examined of our",
+      "phrase": "the roman profession of religion and practice in the worship",
       "count": 3
     },
     {
-      "phrase": "the animadversions principles of fiat lux re-examined of our receiving",
+      "phrase": "roman profession of religion and practice in the worship of",
       "count": 3
     },
     {
-      "phrase": "animadversions principles of fiat lux re-examined of our receiving the",
+      "phrase": "profession of religion and practice in the worship of god",
       "count": 3
     },
     {
-      "phrase": "principles of fiat lux re-examined of our receiving the gospel",
+      "phrase": "sundry accounts is insufficient to settle us in the truth",
       "count": 3
     },
     {
-      "phrase": "of fiat lux re-examined of our receiving the gospel from",
+      "phrase": "accounts is insufficient to settle us in the truth of",
       "count": 3
     },
     {
-      "phrase": "fiat lux re-examined of our receiving the gospel from rome",
+      "phrase": "is insufficient to settle us in the truth of religion",
       "count": 3
     },
     {
-      "phrase": "lux re-examined of our receiving the gospel from rome our",
+      "phrase": "insufficient to settle us in the truth of religion or",
       "count": 3
     },
     {
-      "phrase": "re-examined of our receiving the gospel from rome our abode",
+      "phrase": "to settle us in the truth of religion or to",
       "count": 3
     },
     {
-      "phrase": "of our receiving the gospel from rome our abode with",
+      "phrase": "settle us in the truth of religion or to bring",
       "count": 3
     },
     {
-      "phrase": "our receiving the gospel from rome our abode with them",
+      "phrase": "us in the truth of religion or to bring us",
       "count": 3
     },
     {
-      "phrase": "receiving the gospel from rome our abode with them from",
+      "phrase": "in the truth of religion or to bring us to",
       "count": 3
     },
     {
-      "phrase": "the gospel from rome our abode with them from whom",
+      "phrase": "the truth of religion or to bring us to an",
       "count": 3
     },
     {
-      "phrase": "gospel from rome our abode with them from whom we",
+      "phrase": "truth of religion or to bring us to an agreement",
       "count": 3
     },
     {
-      "phrase": "from rome our abode with them from whom we received",
+      "phrase": "of religion or to bring us to an agreement amongst",
       "count": 3
     },
     {
-      "phrase": "rome our abode with them from whom we received it",
+      "phrase": "religion or to bring us to an agreement amongst ourselves",
       "count": 3
     },
     {
-      "phrase": "second chapter of the animadversions church of rome not what",
+      "phrase": "is good man one that seeks nothing but our good",
+      "count": 3
+    },
+    {
+      "phrase": "good man one that seeks nothing but our good that",
       "count": 3
     }
   ],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 1249,
+    "pdf_greek_word_count": 1246,
     "epub_greek_word_count": 1250,
-    "pdf_greek_unique_words": 775,
+    "pdf_greek_unique_words": 771,
     "epub_greek_unique_words": 775,
-    "greek_word_coverage_ratio": 1.0,
+    "greek_word_coverage_ratio": 0.9917,
     "pdf_hebrew_word_count": 51,
     "epub_hebrew_word_count": 51,
     "pdf_hebrew_unique_words": 40,
@@ -971,11 +1113,177 @@
   },
   "greek_hebrew_clause_fidelity": {
     "greek_clauses_checked": 64,
-    "missing_greek_clause_count": 0,
-    "missing_greek_clauses": [],
+    "missing_greek_clause_count": 2,
+    "missing_greek_clauses": [
+      {
+        "page": 209,
+        "word_count": 47,
+        "sample": "αρχομενοι μεν ολιγοι τε ησαν και εν εφρονουν ες πληθος δε σπαρεντες"
+      },
+      {
+        "page": 235,
+        "word_count": 8,
+        "sample": "εχθρος γαρ μοι κεινος ομως αιδαο πυλησιν ος"
+      }
+    ],
     "hebrew_clauses_checked": 2,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 5634,
+    "epub_latin_word_count": 5625,
+    "epub_tagged_latin_word_count": 0,
+    "pdf_latin_unique_words": 2185,
+    "epub_latin_unique_words": 2196,
+    "epub_tagged_unique_words": 0,
+    "latin_word_coverage_ratio": 0.9883,
+    "latin_tagging_ratio": 0.0,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "nor",
+        "epub": 471,
+        "tagged": 0
+      },
+      {
+        "word": "et",
+        "epub": 122,
+        "tagged": 0
+      },
+      {
+        "word": "jesus",
+        "epub": 111,
+        "tagged": 0
+      },
+      {
+        "word": "yea",
+        "epub": 84,
+        "tagged": 0
+      },
+      {
+        "word": "non",
+        "epub": 66,
+        "tagged": 0
+      },
+      {
+        "word": "whereas",
+        "epub": 65,
+        "tagged": 0
+      },
+      {
+        "word": "whereunto",
+        "epub": 52,
+        "tagged": 0
+      },
+      {
+        "word": "est",
+        "epub": 51,
+        "tagged": 0
+      },
+      {
+        "word": "endeavor",
+        "epub": 48,
+        "tagged": 0
+      },
+      {
+        "word": "de",
+        "epub": 45,
+        "tagged": 0
+      },
+      {
+        "word": "quod",
+        "epub": 44,
+        "tagged": 0
+      },
+      {
+        "word": "celsus",
+        "epub": 44,
+        "tagged": 0
+      },
+      {
+        "word": "plea",
+        "epub": 40,
+        "tagged": 0
+      },
+      {
+        "word": "thereunto",
+        "epub": 37,
+        "tagged": 0
+      },
+      {
+        "word": "poor",
+        "epub": 33,
+        "tagged": 0
+      },
+      {
+        "word": "mere",
+        "epub": 30,
+        "tagged": 0
+      },
+      {
+        "word": "qui",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "sed",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "sum",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "ut",
+        "epub": 27,
+        "tagged": 0
+      },
+      {
+        "word": "prelate",
+        "epub": 26,
+        "tagged": 0
+      },
+      {
+        "word": "dissent",
+        "epub": 24,
+        "tagged": 0
+      },
+      {
+        "word": "emperor",
+        "epub": 23,
+        "tagged": 0
+      },
+      {
+        "word": "pleas",
+        "epub": 22,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 22,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 318,
+    "missing_latin_clause_count": 1,
+    "missing_latin_clauses": [
+      {
+        "page": 259,
+        "word_count": 24,
+        "sample": "deos suos venerabantur vel pannum rubrum in hastam elevatum quod narratur de"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 0,
+    "translated_latin_runs_count": 0,
+    "latin_translation_ratio": 1.0,
+    "untranslated_latin_samples": []
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,

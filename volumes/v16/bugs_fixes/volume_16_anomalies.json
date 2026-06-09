@@ -1,13 +1,100 @@
 {
   "volume": 16,
-  "total_words_audited": 258380,
-  "total_anomalies_count": 0,
+  "total_words_audited": 258379,
+  "total_anomalies_count": 10,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [],
     "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],
-    "Unresolved Citation References": [],
-    "Structural Nesting Sequence Jumps": []
+    "Unresolved Citation References": [
+      {
+        "target": "lib. 3 cap. 2",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 1 - the Subject-matter of the Church.",
+        "contexts": [
+          "... titution of a church in its members,\" De Ecclesia lib. 3 cap. 2. 4. They must be such as do make an open profess ...",
+          "... ith none in this matter. Bellarmine, De Ecclesia lib. 3 cap. 2, gives an account out of Augustine, and that trul ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "4.",
+        "description": "List sequence starts at 4 instead of 1",
+        "chapter": "Sermon 4 - Spiritual Strength; - Its Reality, Decay, & Renovati",
+        "contexts": [
+          "SERMON 4. SPIRITUAL STRENGTH; \u2014 ITS REALITY, DECAY, AND ..."
+        ]
+      },
+      {
+        "target": "8.",
+        "description": "List sequence starts at 8 instead of 1",
+        "chapter": "Sermon 8 - the Mutual Care of Believers Over One Another.",
+        "contexts": [
+          "SERMON 8. THE MUTUAL CARE OF BELIEVERS OVER ONE ANOTHER ...",
+          "... RS OVER ONE ANOTHER. PREACHED SEPTEMBER 6, 1678. \"But speaking the truth in love, may grow up i ..."
+        ]
+      },
+      {
+        "target": "10.",
+        "description": "List sequence starts at 10 instead of 1",
+        "chapter": "Sermon 10 - the Death of the Righteous.",
+        "contexts": [
+          "SERMON 10. THE DEATH OF THE RIGHTEOUS. PREACHED JULY 1, ..."
+        ]
+      },
+      {
+        "target": "11.",
+        "description": "List sequence starts at 11 instead of 1",
+        "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
+        "contexts": [
+          "SERMON 11. THE HUMILIATION AND CONDESCENSION OF CHRIST. ..."
+        ]
+      },
+      {
+        "target": "12.",
+        "description": "List sequence starts at 12 instead of 1",
+        "chapter": "Sermon 12 - Enoch's Walk With God.",
+        "contexts": [
+          "SERMON 12. ENOCH'S WALK WITH GOD. [THE DATE OF THIS SERM ..."
+        ]
+      },
+      {
+        "target": "13.",
+        "description": "List sequence starts at 13 instead of 1",
+        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
+        "contexts": [
+          "SERMON 13. A FAST SERMON: \u2014 CHRISTIAN DUTY UNDER THE HID ..."
+        ]
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Philippians 5",
+        "description": "Invalid Bible reference (chapter 5 exceeds max 4 for Philippians)",
+        "chapter": "A Vindication of Two Passages in Irenaeus Against the Exception",
+        "contexts": [
+          "... f, \u2014 'Took upon him the form of a servant,' etc., Philippians 5 7, 8. \"By all which reasons,\" saith Mr Tombs, \"I ..."
+        ]
+      },
+      {
+        "target": "2 Kings 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "chapter": "Sermon 6 - the Obligation to Increase in Godliness,",
+        "contexts": [
+          "... t;\" \u2014 sometimes it is called a walking after God: 2 Kings 23:3, \"The king made a covenant to walk after the LO ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
+        "contexts": [
+          "... and thought it not robbery to be equal with God,\" Philippians 17:6 2:6. He was \"in the form of God.\" God hath no i ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
   }
 }

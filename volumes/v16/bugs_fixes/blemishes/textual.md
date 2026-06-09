@@ -1,3 +1,7 @@
+# Imptant
+fix bugs, now I don't want partial fixes, I want thorough revisiting of algorithms/regex and audits why are these bugs here and how can they be
+fixed or rewritten that these bugs are not leaking on other volumes also
+
 ## 1
 — Ecclesiastes 266.
 Note: do we not have audits that check for verses?
@@ -54,3 +58,14 @@ Note: can we have audits that check for numbering and formatting consistency? Th
 Fix:
 "10." is a higher level than previous points, I believe the previous points should be higher level. Your algorithn though it works well in alot of cases, it seems hit and miss in terms of consistency. We need to have audits that check for consistency in numbering and formatting.
 I am tired of trying to fix these issues manually, we need to have a system in place that can catch these issues automatically. This is a clear case of inconsistency in the formatting of numbered points, and it should be caught by the audits.
+
+## 10
+[1.] Constant prayer for the flock;
+
+
+[2.] Diligence in the dispensation of the word with wisdom, as unto times, seasons, the state of the flock in general, their light, knowledge, ways, walking, ignorance, temptations, trials, defections, weaknesses of all sorts, growth, and decays, etc;
+
+Fix:
+[1.] is not block, but [2.] is block. This is an inconsistency in formatting that should be caught by the audits. We need to have a system in place that can catch these issues automatically, as it is clear that the algorithm is not consistent in its formatting decisions.
+
+Status: IMPLEMENTED (AWAITING VALIDATION)

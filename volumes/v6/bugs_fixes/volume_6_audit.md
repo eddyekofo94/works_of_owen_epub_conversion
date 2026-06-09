@@ -8,12 +8,12 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 136
-- Manifest items: 127
-- Spine items: 111
-- XHTML files: 113
-- Embedded fonts: 10
-- NAV links: 114
+- Files: 149
+- Manifest items: 140
+- Spine items: 113
+- XHTML files: 114
+- Embedded fonts: 21
+- NAV links: 115
 
 ## Content Checks
 
@@ -21,8 +21,8 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 830
 - Untagged Hebrew chars: 0
-- Noteref links: 14
-- Endnote anchors: 14
+- Noteref links: 30
+- Endnote anchors: 30
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
@@ -42,8 +42,8 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch053.xhtml`: every way and means of thy appearance, of the manifestation of thyself, and comin
-- `EPUB/ch056.xhtml`: chiefly to respect that which he himself, in this address unto God, did principal
-- `EPUB/ch062.xhtml`: stand?," When the Holy Ghost would set out the certainty and dreadfulness of the
-- `EPUB/ch064.xhtml`: prepares the soul for the receiving of mercy in a sense of pardon, the great thin
-- `EPUB/ch069.xhtml`: government of the world, his holiness and righteousness, to take care that every
+- `EPUB/ch003.xhtml`: unworthy author
+- `EPUB/ch004.xhtml`: and reduce the whole to an improvement of the great evangelical truth and mystery
+- `EPUB/ch006.xhtml`: and of our repentance our mortification is no small portion. How doth he do it? H
+- `EPUB/ch037.xhtml`: a similitude most lively, expressing the lustings of the law of sin, restlessly a
+- `EPUB/ch044.xhtml`: and with the prophet, Hosea 14:9,

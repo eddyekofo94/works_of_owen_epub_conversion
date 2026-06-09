@@ -234,10 +234,16 @@
     },
     {
       "label": "Missing Greek clauses",
-      "observed": 0,
+      "observed": 1,
       "budget": 16,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "page": 793,
+          "word_count": 16,
+          "sample": "μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι"
+        }
+      ]
     },
     {
       "label": "Missing Hebrew clauses",

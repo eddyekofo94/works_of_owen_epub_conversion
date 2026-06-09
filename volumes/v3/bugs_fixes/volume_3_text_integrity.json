@@ -2,7 +2,7 @@
   "volume": 3,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-09T05:42:15.729478+00:00",
+  "generated_at": "2026-06-09T10:45:53.319513+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -19,7 +19,7 @@
     "paragraph_count": 2503
   },
   "word_coverage": {
-    "pdf_content_tokens": 267301,
+    "pdf_content_tokens": 267300,
     "epub_content_tokens": 276195,
     "coverage_ratio": 0.9997,
     "missing_word_samples": [
@@ -133,7 +133,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 35212,
+    "dense_windows_checked": 35182,
     "missing_dense_window_pages": 20,
     "missing_dense_windows": [
       {
@@ -147,6 +147,10 @@
       {
         "page": 80,
         "sample": "seraphims that attended his throne isaiah 9-12 john acts there are indeed some actions"
+      },
+      {
+        "page": 99,
+        "sample": "was pledge so also the israelites are said to be baptized εις μωυσην into"
       },
       {
         "page": 103,
@@ -211,10 +215,6 @@
       {
         "page": 333,
         "sample": "but we proceed having cleared the impotency to discern spiritual things spiritually that is"
-      },
-      {
-        "page": 339,
-        "sample": "own kind whereby men inflame themselves isaiah waxing worse and worse and the particular"
       }
     ]
   },
@@ -652,11 +652,11 @@
   },
   "repeated_windows": [],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 792,
+    "pdf_greek_word_count": 791,
     "epub_greek_word_count": 816,
-    "pdf_greek_unique_words": 439,
+    "pdf_greek_unique_words": 438,
     "epub_greek_unique_words": 451,
-    "greek_word_coverage_ratio": 1.0,
+    "greek_word_coverage_ratio": 0.9987,
     "pdf_hebrew_word_count": 235,
     "epub_hebrew_word_count": 235,
     "pdf_hebrew_unique_words": 183,

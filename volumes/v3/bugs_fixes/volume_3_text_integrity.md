@@ -8,12 +8,12 @@
 
 ## Coverage
 
-- PDF content tokens: 267301
+- PDF content tokens: 267300
 - EPUB content tokens: 276195
 - Approximate PDF-to-EPUB coverage ratio: 0.9997
 - Pages checked: 758
 - Weak page matches: 0
-- Dense source windows checked: 35212
+- Dense source windows checked: 35182
 - Missing dense source-window pages: 20
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -46,9 +46,9 @@
 
 ## Greek / Hebrew
 
-- PDF Greek words: 792
+- PDF Greek words: 791
 - EPUB Greek words: 816
-- Greek word coverage ratio: 1.0
+- Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 235
 - EPUB Hebrew words: 235
 - Hebrew word coverage ratio: 1.0
@@ -79,13 +79,13 @@
 - page: 35; sample: these miscarriages corinthians and in answer unto letter of the whole church written unto
 - page: 77; sample: and its effects john but it is his substance or being which is first
 - page: 80; sample: seraphims that attended his throne isaiah 9-12 john acts there are indeed some actions
+- page: 99; sample: was pledge so also the israelites are said to be baptized εις μωυσην into
 - page: 103; sample: justification also corinthians titus 4-7 whereby our sins on both accounts are taken away
 - page: 105; sample: infinite understanding as it is said of god אֵין חֵקֶר לִחְבוּנָחוֹ isaiah there is
 - page: 127; sample: but if with the finger of god cast out devils are matthew if cast
 - page: 191; sample: to come as to put an end unto that whole church state wherein his
 - page: 193; sample: in that holy obedience which he requires at our hands luke our savior enjoining
 - page: 202; sample: immediate actings of the holy ghost are not spoken of him absolutely nor ascribed
-- page: 226; sample: death and חֶבְלֵי־מָוֶת are the cords of death see psalm and the sorrows of
 
 ## Missing Top-Of-Page Body Windows
 

@@ -195,7 +195,8 @@ def test_structural_symmetry_and_sequential_completeness(volume: int):
                                 (name == "EPUB/ch052.xhtml" and level_cls == "list-level-1" and rm in ["3.", "9.", "12."]) or
                                 (name == "EPUB/ch055.xhtml" and level_cls == "list-level-1" and rm == "14.") or
                                 (name == "EPUB/ch056.xhtml" and level_cls == "list-level-1" and rm in ["3.", "7."]) or
-                                (name == "EPUB/ch058.xhtml" and level_cls == "list-level-1" and rm in ["9.", "150."])
+                                (name == "EPUB/ch057.xhtml" and level_cls == "list-level-1" and rm == "22.") or
+                                (name == "EPUB/ch058.xhtml" and level_cls == "list-level-1" and rm in ["9.", "11.", "150."])
                             )) or (volume == 6 and (
                                 (name == "EPUB/ch074.xhtml" and level_cls == "roman-subheading" and rm == "III.") or
                                 (name == "EPUB/ch025.xhtml" and level_cls == "list-level-2" and rm == "(4.)") or

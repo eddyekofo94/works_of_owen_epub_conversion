@@ -3,44 +3,44 @@
 - Status: **WARN**
 - Warnings: 12
 - PDF pages: 683
-- EPUB text files: 62
-- EPUB paragraphs/headings: 2379
+- EPUB text files: 63
+- EPUB paragraphs/headings: 2333
 
 ## Coverage
 
-- PDF content tokens: 232551
-- EPUB content tokens: 233372
-- Approximate PDF-to-EPUB coverage ratio: 0.9968
+- PDF content tokens: 230677
+- EPUB content tokens: 230772
+- Approximate PDF-to-EPUB coverage ratio: 0.9971
 - Pages checked: 679
-- Weak page matches: 4
-- Dense source windows checked: 852
-- Missing dense source-window pages: 665
+- Weak page matches: 3
+- Dense source windows checked: 32118
+- Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 5
-- Missing front CONTENTS pages: 0
+- Missing front CONTENTS pages: 2
 - Top-of-page body windows checked: 667
 - Top-of-page windows skipped as unstable: 16
-- Missing top-of-page body windows: 1
+- Missing top-of-page body windows: 3
 - Bottom-of-page body windows checked: 632
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 1
+- Missing bottom-of-page body windows: 2
 
 ## Paragraphs
 
-- Body paragraphs checked: 2013
-- Possible faulty paragraph splits: 126
-- Structural starts excluded from split warnings: 285
-- Short fragments: 16
+- Body paragraphs checked: 1972
+- Possible faulty paragraph splits: 9
+- Structural starts excluded from split warnings: 241
+- Short fragments: 18
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 3
+- Inline structural marker candidates: 5
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 1
-- Roman heading candidates: 6
-- Overlong heading candidates: 26
+- Suspicious large-number starts: 0
+- Roman heading candidates: 3
+- Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 381
-- EPUB enumerator markers: 386
+- EPUB enumerator markers: 399
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 2
 
@@ -48,7 +48,7 @@
 
 - PDF Greek words: 325
 - EPUB Greek words: 325
-- Greek word coverage ratio: 1.0
+- Greek word coverage ratio: 0.9969
 - PDF Hebrew words: 26
 - EPUB Hebrew words: 26
 - Hebrew word coverage ratio: 1.0
@@ -57,99 +57,101 @@
 - Hebrew clauses checked: 3
 - Missing Hebrew clauses: 0
 
+## Latin
+
+- PDF Latin words: 2349
+- EPUB Latin words: 2382
+- EPUB Tagged Latin words: 40
+- Latin word coverage ratio: 0.9962
+- Latin word tagging ratio: 0.0168
+- Latin clauses checked: 20
+- Missing Latin clauses: 0
+- Tagged Latin runs checked: 9
+- Translated Latin runs: 5
+- Latin translation ratio: 0.5556
+
 ## Warnings
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `flat_analysis_chapters`: 1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
-- page: 8; sample: in an exposition of hebrews 4-6 with an inquiry into the causes and reasons
-- page: 10; sample: 10 strain of solemn appeal appropriate to work written according to its author amid
-- page: 11; sample: 11 of the zealous orthodoxy of the reformation the rise of arminianism and socinianism
-- page: 12; sample: 12 national vices ignorance of the spiritual beauty of religion the operations of satan
-- page: 13; sample: 13 to the reader some brief account of the occasion and design of the
-- page: 14; sample: 14 pleasures of it with readiness for the cross are all so overgrown and
-- page: 15; sample: 15 professors it will not long abide the shock of that opposition which it
-- page: 16; sample: 16 the corrupt worldly conversation of the generality of the members of its communion
-- page: 17; sample: 17 it should get ground and enlarge its territories unless it be among them
-- page: 18; sample: 18 things in the world by the confident use of this artifice and the
+- page: 3; sample: contents of nature and causes of apostasy from the gospel prefatory note by the
+- page: 4; sample: of apostasy from the truth and decays in the practice of evangelical holiness directions
+- page: 5; sample: and what they are to be accompanied withal etc what of god or in
+- page: 6; sample: growth in our spiritual affections as unto this assimilation decays in spiritual affections with
+- page: 24; sample: the nature and causes of apostasy from the gospel chapter the nature of apostasy
+- page: 31; sample: were differenced from them as that they had such things as did accompany salvation
+- page: 37; sample: holy ghost in miraculous operations so expressly chap elsewhere δωρεα so far as can
+- page: 39; sample: on the earth but he gave the gospel church state by that spirit which
+- page: 45; sample: respect unto its blessed effects psalm acts james on this account the psalmist assures
+- page: 59; sample: description of himself nahum god is jealous and the lord revengeth the lord revengeth
+
+## Missing Front CONTENTS Pages
+
+- page: 3; hit_ratio: 0.25; sample: contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews
+- page: 7; hit_ratio: 0.25; sample: law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the
 
 ## Missing Top-Of-Page Body Windows
 
+- page: 3; sample: CONTENTS OF . NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL.
+- page: 24; sample: THE NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL.
 - page: 183; sample: 12:39-41, and that of the apostles, Acts 28:25-27, and is expounded,
 
 ## Missing Bottom-Of-Page Body Windows
 
 - page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
+- page: 617; sample: ejpiqumi>av, Romans 13:14, — a continual working and provision to
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch001.xhtml; previous: EDITED BY; next: WILLIAM H. GOOLD
-- file: EPUB/ch001.xhtml; previous: WILLIAM H. GOOLD; next: NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL.
-- file: EPUB/ch003.xhtml; previous: rked the reign of Charles II has often been the subject of speculation and inquiry. Mr Macaulay thus confirms our author's estimate of the rapid decline of morality at this time: —; next: The historian, dealing with the surface of affairs rather than with the springs of conduct, may account the vulgar theory of a reaction against enforced strictness sufficient to ex
-- file: EPUB/ch005.xhtml; previous: each shall be, if they endeavor not to prevent it with their utmost diligence, and the open hazard of all their earthly concerns. A learned writer of the church of England affirms,; next: And after he had declared that "ministers of the gospel may deny Christ, or manifest their being ashamed of the gospel, by not opposing his word at they ought unto the sins of men,
-- file: EPUB/ch007.xhtml; previous: Certainly the Lord Christ may say to the churches and nations among whom his name is yet owned in the world, what God said of old concerning that of the Jews, then his only church,; next: Yea, to most of them as in another place,
-- file: EPUB/ch007.xhtml; previous: Yea, to most of them as in another place,; next: The greatness of the evil complained of, the secret mystery of its accomplishment, the unreasonableness, folly, and ingratitude of the fact, the strangeness of the event, make the
-- file: EPUB/ch007.xhtml; previous: kedness in its relinquishment as to its principles and obedience, may well be expressed as God doth in the inferior instance of the apostasy of the Jewish church: Jeremiah 2:11,12,; next: Yet thus is it, and no otherwise, as we shall afterward manifest, amongst the generality of them that are called Christians in the world.
-- file: EPUB/ch007.xhtml; previous: y thought sufficient to repel the charge of the prophets, to vindicate their innocency, and secure their peace. The reply of the prophet unto them will equally serve in both cases,; next: A plea of innocency and hope of impunity, under an evident guilt of the highest immoralities and the vilest of superstitions, do equally participate of folly and impudence.
-- file: EPUB/ch007.xhtml; previous: bedience, which the gospel requireth. But this is no other but an account of the true nature of that apostasy of the latter times which is foretold by the apostle, 2 Timothy 3:1-5,; next: Under the power of the most filthy and outrageous lusts, men frame to themselves an outward shape, image, and representation of holiness; they delineate a form of religion by a sub
-- file: EPUB/ch008.xhtml; previous: n Timothy to be careful herein, manifest both the weight he laid upon it, the difficulty that was in it, and the danger of miscarriage wherewith it was attended: 1 Timothy 6:20,21,; next: And the same apostle expressly mentions the proneness of some to relinquish the truth of the gospel; whom, therefore, he would have rebuked sharply,
+- file: EPUB/ch004.xhtml; previous: 3. To those who pretend to perfection in this life. The causes of this kind of apostasy are mentioned,; next: VIII.
+- file: EPUB/ch004.xhtml; previous: Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,; next: XI.
+- file: EPUB/ch005.xhtml; previous: To The Reader; next: SOME brief account of the occasion and design of the ensuing discourse I judge due unto the reader, that, upon a prospect of them, he may either proceed in its perusal or desist, a
+- file: EPUB/ch015.xhtml; previous: observe, that upon the destruction of Babylon, it is said that "in her was found the blood of prophets, and of saints, and of all that were slain upon the earth," Revelation 18:24,; next: — that is, for the gospel and the profession thereof. Whoever, therefore, offereth violence unto the life of any on the account of their profession of the gospel and religion of Ch
+- file: EPUB/ch023.xhtml; previous: the fullness of wisdom in spiritual things; 3. their value as perfective of our present condition; and, 4. as constituting in the future enjoyment of them our eternal blessedness,; next: XIX.
+- file: EPUB/ch030.xhtml; previous: em solid relief but the consideration and faith of things invisible and eternal. So the apostle declares this state of things, 2 Corinthians 4:16-18 (the words before insisted on),; next: He lays all sorts of afflictions in one scale, and, on the consideration of them, declares them to be "light" and "but for a moment." Then he lays glory in the other scale, and fin
+- file: EPUB/ch037.xhtml; previous: him by our affections, it is despised by him; he owns us not. As "if a man would give all the substance of his house for love, it would utterly be contemned," Song of Solomon 8:7,; next: — it is not to be bought or purchased with riches; so if a man would give to God an the substance of his house without love, it would in like manner be despised. And however, on th
+- file: EPUB/ch050.xhtml; previous: ls in the affections, when there is a neglect of the means by which it is mortified, when a reservation is made in favor of any known sin, and when hardness of heart is manifested,; next: III.
+- file: EPUB/ch054.xhtml; previous: (4thly.) They will receive in the warnings which are given them by the word preached, especially if their particular case be touched on or laid open; next: (5thly.) They will have no quiet, rest, or self-approbation, until they come thoroughly off unto a healing and recovery, such as that described, Hosea 14:1-4. Thus it may be with s
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch006.xhtml; text: They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces.
 - file: EPUB/ch021.xhtml; text: An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —
 - file: EPUB/ch022.xhtml; text: An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —
-
-## Suspicious Large-Number Starts
-
-- file: EPUB/ch006.xhtml; text: 23. Let them beware by whom they are despised.
+- file: EPUB/ch033.xhtml; text: It is the spiritual mind alone that can reconcile those things which are prescribed to us as our duty towards God. "To delight and rejoice in him always, to triumph in the remembrance of him, to draw nigh unto him with boldness and confi...
+- file: EPUB/ch050.xhtml; text: The reason of the assurance that sin shall have no more dominion over believers is, that they are "not under the law, but under grace;" because, — whereas, 1. the law gives no strength against sin, 2. confers no spiritual liberty, and, 3...
+- file: EPUB/ch057.xhtml; text: I shall name some of them: — 1. Such a soul can have no solid peace, because it hath not satisfaction what state it doth belong unto. 2. It cannot receive refreshment by gospel consolations in any condition, for its just fears of the dom...
 
 ## Roman Heading Candidates
 
-- file: EPUB/ch004.xhtml; text: I. Apostasy from the doctrines of the gospel is illustrated by facts in the history of the ancient church, and by the predictions of the a apostles, who foretold, —
-- file: EPUB/ch004.xhtml; text: II. Apostasy from the holiness of the gospel is next considered theoretically, in reference, —
-- file: EPUB/ch004.xhtml; text: III. Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,
 - file: EPUB/ch047.xhtml; text: I. 1. That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —
-- file: EPUB/ch050.xhtml; text: I. As to the nature of this dominion, — 1. It is evil and perverse, (1.) as usurped, and (2.) as exercised to evil ends. 2. It implies no force contrary to the human will
+- file: EPUB/ch050.xhtml; text: I. As to the nature of this dominion, —
 - file: EPUB/ch050.xhtml; text: II. As to the evidence of this dominion, —
-
-## Overlong Heading Candidates
-
-- file: EPUB/ch006.xhtml; tag: h4; text: II. The Holy Ghost, for the remission of the mysteries of the gospel, and the institution of the ordinances of spiritual worship, is the great gift of God under the new testament.
-- file: EPUB/ch006.xhtml; tag: h4; text: III. There is a goodness and excellency in this heavenly gift which may be tasted or experienced in some measure by such as never receive them in their life, power, and efficacy.
-- file: EPUB/ch006.xhtml; tag: h4; text: IV. A rejection of the gospel, its truth and worship, after some experience had of their worth and excellency, is a high aggravation of sin, and a certain presage of destruction.
-- file: EPUB/ch006.xhtml; tag: h4; text: I. There is a goodness and excellency in the word of God able to attract and affect the minds of men who yet never arrive at sincere obedience unto it.
-- file: EPUB/ch009.xhtml; tag: h4; text: I. That rooted enmity which is in the minds of men by nature unto spiritual things, abiding uncured under the profession of the gospel, is the original and first spring of this apostasy.
-- file: EPUB/ch010.xhtml; tag: h4; text: II. THE second spring or cause of defection from the gospel in any kind, is that spiritual darkness and ignorance which abides in the minds of men under the profession of the truth.
-- file: EPUB/ch011.xhtml; tag: h4; text: III. THE innate pride and vanity of the minds of men is another means whereby they are disposed and inclined unto an apostasy from the profession of evangelical truth.
-- file: EPUB/ch013.xhtml; tag: h4; text: II. Again; others confine the _whole_ of their obedience unto _morality,_ and deride whatever is pleaded as above it and beyond it, under the name of evangelical grace, as "enthusiastical folly." And the truth is, if those persons who pl...
-- file: EPUB/ch013.xhtml; tag: h4; text: III. Some there are who, as unto themselves, pretend they have attained unto _perfection_ already in this world; such a perfection in all degrees of holiness as the gospel is but an introduction towards.
-- file: EPUB/ch014.xhtml; tag: h4; text: I. The first occasion hereof, in all ages, hath been given by or taken from the public readers, guides, or leaders of the people in the matter of religion.
 
 ## Short Fragments
 
-- file: EPUB/ch001.xhtml; text: EDITED BY
-- file: EPUB/ch001.xhtml; text: WILLIAM H. GOOLD
-- file: EPUB/ch002.xhtml; text: SEARCH THE SCRIPTURES — JOHN 5:39.
-- file: EPUB/ch002.xhtml; text: LONDON: 1676.
+- file: EPUB/ch004.xhtml; text: I.
+- file: EPUB/ch004.xhtml; text: II.
+- file: EPUB/ch004.xhtml; text: VIII.
+- file: EPUB/ch004.xhtml; text: III.
+- file: EPUB/ch004.xhtml; text: XI.
+- file: EPUB/ch005.xhtml; text: To The Reader
 - file: EPUB/ch006.xhtml; text: And, —
 - file: EPUB/ch006.xhtml; text: Ans.
 - file: EPUB/ch014.xhtml; text: Verse 20,
 - file: EPUB/ch018.xhtml; text: I answer, —
-- file: EPUB/ch028.xhtml; text: I answer, —
-- file: EPUB/ch047.xhtml; text: And this it doth several ways: —
 
 ## Enumerator Sequence Candidates
 
@@ -158,28 +160,50 @@
 
 ## Repeated Windows
 
-- phrase: nature of this grace and duty of being spiritually minded; count: 4
-- phrase: the true notion and consideration of spiritual and heavenly things; count: 4
-- phrase: dominion of sin which we are freed from and discharged; count: 4
-- phrase: of sin which we are freed from and discharged of; count: 4
-- phrase: sin which we are freed from and discharged of by; count: 4
-- phrase: which we are freed from and discharged of by grace; count: 4
-- phrase: what is the assurance given us and what are the; count: 4
-- phrase: is the assurance given us and what are the grounds; count: 4
-- phrase: that we are not under the law but under grace; count: 4
 - phrase: the good word of god and the powers of the; count: 4
+- phrase: good word of god and the powers of the world; count: 4
+- phrase: word of god and the powers of the world to; count: 4
+- phrase: of god and the powers of the world to come; count: 4
+- phrase: the knowledge of his glory in the face of jesus; count: 4
+- phrase: knowledge of his glory in the face of jesus christ; count: 4
+- phrase: they received not the love of the truth that they; count: 3
+- phrase: received not the love of the truth that they might; count: 3
+- phrase: not the love of the truth that they might be; count: 3
+- phrase: the love of the truth that they might be saved; count: 3
+
+## Missing Word Samples
+
+- word: london; pdf: 3; epub: 0
+- word: editor; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
-- word: digital; pdf: 0; epub: 6
+- word: digital; pdf: 0; epub: 10
+- word: modern; pdf: 1; epub: 10
+- word: greek; pdf: 3; epub: 11
+- word: hebrew; pdf: 1; epub: 8
+- word: edition; pdf: 4; epub: 10
+- word: footnotes; pdf: 0; epub: 6
 
-## Flat ANALYSIS Chapters
+## Untagged Latin Word Samples
 
-**1 ANALYSIS chapter(s)** appear under-structured — fewer outline markers than expected.  Extraction may have failed to parse the outline.
+- word: nor; epub: 395; tagged: 0
+- word: yea; epub: 184; tagged: 0
+- word: jesus; epub: 159; tagged: 0
+- word: thereunto; epub: 95; tagged: 0
+- word: endeavor; epub: 89; tagged: 0
+- word: whereas; epub: 84; tagged: 0
+- word: hereunto; epub: 60; tagged: 0
+- word: sincere; epub: 52; tagged: 0
+- word: whereunto; epub: 41; tagged: 0
+- word: immediate; epub: 37; tagged: 0
 
-## Flat Analysis Details
+## Untranslated Latin Samples
 
-- file: EPUB/ch022.xhtml; paragraph_count: 7; structural_line_count: 2; note: ANALYSIS chapter appears flat — fewer structural outline lines than expected. Check extraction quality.
+- phrase: But ye are not in the flesh, but in the Spirit.
+- phrase: the word of Christ might dwell in them richly in all wisdom,
+- phrase: God is love; and he that dwelleth in love dwelleth in God, and God in him,
+- phrase: having no joy in its prevalency, but grief, being planted in this respect
 
 ## Limits
 

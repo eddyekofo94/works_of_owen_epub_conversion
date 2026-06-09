@@ -113,11 +113,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-05-30T08:38:14.724948+00:00
-**EPUB:** `volumes/v10/output/volume_10.epub`
+**Last run:** 2026-06-09T10:48:53.825132+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -127,13 +128,13 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 106 |
-| Spine items | 104 |
-| Embedded fonts | 14 |
-| NAV links | 107 |
-| Greek chars / untagged | 4525 / 0 |
+| XHTML files | 107 |
+| Spine items | 106 |
+| Embedded fonts | 15 |
+| NAV links | 108 |
+| Greek chars / untagged | 4477 / 0 |
 | Hebrew chars / untagged | 113 / 0 |
-| Noteref links / endnote anchors | 468 / 449 |
+| Noteref links / endnote anchors | 566 / 566 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |

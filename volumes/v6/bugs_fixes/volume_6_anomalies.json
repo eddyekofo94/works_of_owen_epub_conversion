@@ -1,0 +1,785 @@
+{
+  "volume": 6,
+  "total_words_audited": 324281,
+  "total_anomalies_count": 94,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "sign-post",
+        "description": "Splittable word (rejoins to valid word 'signpost')",
+        "chapter": "Chapter 7.",
+        "contexts": [
+          "... h from true mortification as the sun painted on a sign-post from the sun in the firmament; they had neither l ..."
+        ]
+      },
+      {
+        "target": "sermon-proof",
+        "description": "Splittable word (rejoins to valid word 'sermonproof')",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "... ctions, wilt grow as some have profanely spoken, \"sermon-proof and sickness-proof.\" Thou that didst tremble at t ..."
+        ]
+      },
+      {
+        "target": "sickness-proof",
+        "description": "Splittable word (rejoins to valid word 'sicknessproof')",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "... as some have profanely spoken, \"sermon-proof and sickness-proof.\" Thou that didst tremble at the presence of God, ..."
+        ]
+      },
+      {
+        "target": "Christ-dishonoring",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Chapter 3",
+        "contexts": [
+          "... of the truth, and their naked, barren, fruitless, Christ-dishonoring profession, it is said of the temptation that fel ..."
+        ]
+      },
+      {
+        "target": "good-man",
+        "description": "Splittable word (rejoins to valid word 'goodman')",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "... use, and yet not be always meddling with what the good-man of the house hath to do (that so we may keep to t ..."
+        ]
+      },
+      {
+        "target": "Proper-ties",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "... the law of sin, the heart \u2014 What meant thereby \u2014 Proper-ties of the heart as possessed by sin, unsearchable, d ..."
+        ]
+      },
+      {
+        "target": "work-house",
+        "description": "Splittable word (rejoins to valid word 'workhouse')",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "... actual sin, is here described. And its seat, its work-house, is said to be the heart; and so it is called by ..."
+        ]
+      },
+      {
+        "target": "under-earth",
+        "description": "Splittable word (rejoins to valid word 'underearth')",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "... o watch its first appearances, to catch its first under-earth heavings and workings, and to set ourselves in op ..."
+        ]
+      },
+      {
+        "target": "under-ground",
+        "description": "Splittable word (rejoins to valid word 'underground')",
+        "chapter": "Chapter 6.",
+        "contexts": [
+          "... e convictions and resolutions, or makes itself an under-ground passage by some secret lust, that shall give a fu ..."
+        ]
+      },
+      {
+        "target": "spring-head",
+        "description": "Splittable word (rejoins to valid word 'springhead')",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... of God and his grace. This evidently lies at the spring-head of gospel obedience. The way whereby sin draws of ..."
+        ]
+      },
+      {
+        "target": "day-star",
+        "description": "Splittable word (rejoins to valid word 'daystar')",
+        "chapter": "Chapter 12.",
+        "contexts": [
+          "... be in them all a principle of saving light, \u2014 the day-star is risen in their hearts, \u2014 yet all the shades of ..."
+        ]
+      },
+      {
+        "target": "such-like",
+        "description": "Splittable word (rejoins to valid word 'suchlike')",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... he dealt with him, so also would he do with some such-like sinners: \"For this cause I obtained mercy, that i ..."
+        ]
+      },
+      {
+        "target": "eye-salve",
+        "description": "Splittable word (rejoins to valid word 'eyesalve')",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "... t met not with such opposition; so is it with the eye-salve and the healing grace which we have abundantly fr ..."
+        ]
+      },
+      {
+        "target": "land-flood",
+        "description": "Splittable word (rejoins to valid word 'landflood')",
+        "chapter": "Chapter 15.",
+        "contexts": [
+          "... holiness, fruitfulness, and obedience; as upon a land-flood, when many lesser streams run into a river, it sw ..."
+        ]
+      },
+      {
+        "target": "ale-house",
+        "description": "Splittable word (rejoins to valid word 'alehouse')",
+        "chapter": "Chapter 16.",
+        "contexts": [
+          "... ghts of it, \u2014 the fellowship of the saints for an ale-house or a brothel-house, after a man hath been admitte ..."
+        ]
+      },
+      {
+        "target": "Under-valuations",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "What Sins Usually Bring Believers Into Great Spiritual Distresses:",
+        "contexts": [
+          "... o the heart of God, and shall not be passed over. Under-valuations of love are great provocations. \"Hath Nabal thus ..."
+        ]
+      },
+      {
+        "target": "safe-guard",
+        "description": "Splittable word (rejoins to valid word 'safeguard')",
+        "chapter": "What Sins Usually Bring Believers Into Great Spiritual Distresses:",
+        "contexts": [
+          "... e, seeketh thy life; but with me thou shalt be in safe-guard;\" \u2014 \"Sin is my enemy no less than thine; it seeke ..."
+        ]
+      },
+      {
+        "target": "heart-blood",
+        "description": "Splittable word (rejoins to valid word 'heartblood')",
+        "chapter": "The True Nature of Gospel Forgiveness",
+        "contexts": [
+          "... sue forth from the heart of the Father but by the heart-blood of the Son; and so do they stream unto the heart ..."
+        ]
+      },
+      {
+        "target": "El-shaddai",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "The Name of God Confirming the Truth and Reality of Forgiveness With Him",
+        "contexts": [
+          "... hem.\" It is certain that both these names of God, El-shaddai and Jehovah, were known among his people before. ...",
+          "... t said that God appeared unto them by the name of El-shaddai, but not by the name of Jehovah? The reason is, ...",
+          "... braham: Genesis 17:1, \u05e9\u05b7\u05c1 \u05d3\u05b7\u05bc\u05d9 \u05d0\u05b2\u05e0\u05b4\u05d9\u05be\u05d0\u05b5\u05dc, \u2014 \"I am El-shaddai,\" \"God Almighty,\" \"God All-sufficient.\" And when ..."
+        ]
+      },
+      {
+        "target": "peace-making",
+        "description": "Splittable word (rejoins to valid word 'peacemaking')",
+        "chapter": "Forgiveness Manifested in the Sending of the Son of God to Die for Sin",
+        "contexts": [
+          "... sends him, and himself. There lay the counsel of peace-making between God and man, in due time accomplished by ..."
+        ]
+      },
+      {
+        "target": "sad-hearted",
+        "description": "Splittable word (rejoins to valid word 'sadhearted')",
+        "chapter": "Exhortation Unto the Belief of the Forgiveness That Is With God",
+        "contexts": [
+          "... shall tender this new wine of the gospel to poor, sad-hearted, conscience-distressed sinners, \u2014 sinners that ar ..."
+        ]
+      },
+      {
+        "target": "Self-determinations",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Rule 1.",
+        "contexts": [
+          "... , then, is our first general rule and direction \u2014 Self-determinations concerning men's spiritual state and condition, b ..."
+        ]
+      },
+      {
+        "target": "home-bred",
+        "description": "Splittable word (rejoins to valid word 'homebred')",
+        "chapter": "Rule 2.",
+        "contexts": [
+          "... g wholly taken up with the consideration of these home-bred perplexities, and not clearly acquainted with the ..."
+        ]
+      },
+      {
+        "target": "after-reckoning",
+        "description": "Splittable word (rejoins to valid word 'afterreckoning')",
+        "chapter": "Rule 4.",
+        "contexts": [
+          "... , full, close work in this kind as they ought. An after-reckoning may come in on this hand to their own disturbance ..."
+        ]
+      },
+      {
+        "target": "Self-judging",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Rule 9.",
+        "contexts": [
+          "... s of special use in the case under consideration. Self-judging in reference unto sin and the demerit of it is ou ..."
+        ]
+      },
+      {
+        "target": "make-bate",
+        "description": "Splittable word (rejoins to valid word 'makebate')",
+        "chapter": "Second General Head of the Application of the Truth Insisted on",
+        "contexts": [
+          "... which he hath nothing to do withal. Let not this make-bate by any means inflame the difference. 5. Learn to ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 12.",
+        "contexts": [
+          "... e know of him; we see but his back parts. For, \u2014 1st . The intendment of all gospel revelation is, not t ..."
+        ]
+      },
+      {
+        "target": "him :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 1",
+        "contexts": [
+          "... Savior expostulates the matter in particular with him : verse 40, \"He saith unto Peter, Could you not wat ..."
+        ]
+      },
+      {
+        "target": "unto :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 3",
+        "contexts": [
+          "... is, \u2014 its power and efficacy, with what it leads unto : \u2014 (1.) For ourselves, we are weakness itself. We ..."
+        ]
+      },
+      {
+        "target": ",,",
+        "description": "Duplicate comma",
+        "chapter": "Chapter 3",
+        "contexts": [
+          "... in the subject, not in the object, \u2014 in the heart,, not in the world. But they are said to be \"in the ..."
+        ]
+      },
+      {
+        "target": "heart ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Prefatory Note (The Nature, Power, Deceit, and Prevalency of the Remainders of Indwelling Sin in Believers)",
+        "contexts": [
+          "... \"a law;\" \u2014 the seat and subject of this law, the heart ; \u2014 its nature generally, as enmity against God; \u2014 ..."
+        ]
+      },
+      {
+        "target": "God !",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 1.",
+        "contexts": [
+          "... f you in whose hearts is any thing of the ways of God ! Your enemy is not only upon you, as on Samson of ..."
+        ]
+      },
+      {
+        "target": "members ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "... , \"It is present with me;\" verse 23, \"It is in my members ;\" \u2014 yea, it is so far in a man, as in some sense i ..."
+        ]
+      },
+      {
+        "target": "discovered !",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "... assistance of the Holy Ghost, will be hence also discovered ! I fear we have few of us a diligence proportionab ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... danger of sin. And this is done several ways: \u2014 1st . The soul, having frequent need of relief by gospe ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... assengers, secures his journey beyond the other. 2dly . The deceitfulness of sin takes advantage from the ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... occasion to speak more hereafter in particular. 3dly . In times of temptation, this deceitfulness of sin ..."
+        ]
+      },
+      {
+        "target": ",,",
+        "description": "Duplicate comma",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... deeply sensible of sin, it becomes on any account,, or by any means whatever, to have less, fewer, sl ..."
+        ]
+      },
+      {
+        "target": "God ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... ticular duties, according to the mind and will of God , \u2014 namely, to endeavor after a sound and steadfast ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... nds the place of it, and sets itself against it. 3dly . Whilst the soul can thus constantly engage itself ..."
+        ]
+      },
+      {
+        "target": "4thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... appointment, yea, to the ruin of the law of sin. 4thly . If the heart be not deceived by cursed hypocrisy, ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "... t they may do all according as he had commanded. 2dly . The affections of the heart and mind in duties be ...",
+          "... d what we are in them, that we are, and no more. 2dly . It draws off the mind from the duties before ment ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "... themselves. And this it attempts several ways: \u2014 1st . By persuading the mind to content itself with gen ..."
+        ]
+      },
+      {
+        "target": "in :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 12.",
+        "contexts": [
+          "... a large field for its deceit and subtlety to lurk in : \u2014 \"Though it is an evil indeed to be relinquished ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... , before I go hence, and be no more.\" But yet, \u2014 2dly . There are some cases wherein God may and doth tak ...",
+          "... ey cannot do all the wickedness that they would. 2dly . God doth it not to leave them to wrestle with sin ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... rom the same dispensation towards others; for, \u2014 1st . It is so only in cases of extraordinary temptatio ..."
+        ]
+      },
+      {
+        "target": "4thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... hearts are full of anxiety, trouble, and sorrow. 4thly . Do we see sometimes the flood-gates of men's lust ..."
+        ]
+      },
+      {
+        "target": "5thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... , or chain up their wrath; and who can oppose him 5thly . Those who have received benefit by any of the way ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 15.",
+        "contexts": [
+          "... e several ways whereby it brings this to pass: \u2014 1st . It works by sloth and negligence. It prevails in ...",
+          "... necessary to preserve men from this infection: \u2014 1st . In the body of professors there is a great number ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 15.",
+        "contexts": [
+          "... emselves unto those who bear the image of Satan. 2dly . You know not what may be the present temptation o ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 15.",
+        "contexts": [
+          "... l for you to become sick and to be wounded also. 3dly . Remember that of many of the best Christians, the ..."
+        ]
+      },
+      {
+        "target": "obedience ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 16.",
+        "contexts": [
+          "... ture made for the glory of God by rational, moral obedience , \u2014 rational, because by him chosen, and performed ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 16.",
+        "contexts": [
+          "... ve some worldly, cruel, or filthy and sensual lust.. Certainly, here lies a secret efficacy, whose dep ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 17.",
+        "contexts": [
+          "... quered, not subdued, nor mortified by it; for, \u2014 1st . Though the course of sin may be repelled for a se ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 17.",
+        "contexts": [
+          "... This was the state with Pharaoh once and again. 2dly . In such seasons sin is not conquered, but diverte ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "False Presumptions of Forgiveness Discovered",
+        "contexts": [
+          "... e very \"first principles of the oracles of God.\" Ans . All this, then, I say, is so, and much more to th ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Farther Evidences of Forgiveness With God -testimonies",
+        "contexts": [
+          "... thus long, in the patience and forbearance of God.. And to what end hath he thus spared us, and let p ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Evidences That Most Men Do Not Believe Forgiveness.",
+        "contexts": [
+          "... e forgiveness in God do thereby obtain forgiveness.. Believing gives an interest in it; it brings it h ..."
+        ]
+      },
+      {
+        "target": "peace .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Rule 2.",
+        "contexts": [
+          "... o very well consist with gospel justification and peace . Some men have no peace, because they have that wi ..."
+        ]
+      },
+      {
+        "target": "together .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Rule 7.",
+        "contexts": [
+          "... er. Mix not too much foundation and building work together . Our foundation in dealing with God is Christ alon ..."
+        ]
+      },
+      {
+        "target": "duty .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Rule 8.",
+        "contexts": [
+          "... omplaints when vigorous actings of grace are your duty . Fruitless and heartless complaints, bemoanings o ..."
+        ]
+      },
+      {
+        "target": "matter .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Second General Head of the Application of the Truth Insisted on",
+        "contexts": [
+          "... men, and keep them off from establishment in this matter . And, FIRST, such disquietments and objections ag ..."
+        ]
+      },
+      {
+        "target": "God .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Rule 2.",
+        "contexts": [
+          "... of it by an immediate testimony of the Spirit of God . I do grant that God doth sometimes, by this means ..."
+        ]
+      },
+      {
+        "target": "trouble .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Rule 3.",
+        "contexts": [
+          "... of it upon your spirits now in your darkness and trouble . I am persuaded there are but few believers, but t ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [
+      {
+        "target": "Adam)were",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Discovery of Forgiveness in the First Promise",
+        "contexts": [
+          "... f mankind (He only excepted which was not then in Adam)were embarked in the same crime and guilt. Besides, it ..."
+        ]
+      },
+      {
+        "target": "the]east",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Farther Evidences of Forgiveness With God -testimonies",
+        "contexts": [
+          "... day of his solemn judgment and execution, without the]east intention to spare him, none will say there is pa ..."
+        ]
+      },
+      {
+        "target": "the]ate",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Second General Head of the Application of the Truth Insisted on",
+        "contexts": [
+          "... f them who are reduced to the utmost extremity by the]ate consuming fire; some have had their whole familie ..."
+        ]
+      }
+    ],
+    "Mixed-Case Capitalization Errors": [
+      {
+        "target": "seasonlHow",
+        "description": "Mixed-case capitalization error",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... onviction. How sensible of sin will they be for a seasonlHow will they then mourn and weep under a sense of th ..."
+        ]
+      }
+    ],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "II.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Chapter 2",
+        "contexts": [
+          "... tching, and what is intended thereby \u2014 Of prayer II. Having showed what temptation is, I come, secondl ...",
+          "... of which more in the process of our discourse. III. There is means of prevention prescribed by our Sa ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Chapter 5",
+        "contexts": [
+          "... ein \u2014 (1.) Sense of the danger of temptation \u2014 (2.) That it is not in our power to keep ourselves \u2014 ...",
+          "... omises of preservation \u2014 Of prayer in particular 2. Having seen the danger of entering into temptatio ...",
+          "... ion in a daily conscientious observation of it. (2.) There is this in it also, that it is not a thing ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "[[CHAPTER]] CHAPTER 2. [[SUMMARY]] Indwelling sin a law \u2014 In what sense ...",
+          "... answer the danger of their state and condition! 2. It is always ready to apply itself to every end a ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "A Paraphrase",
+        "contexts": [
+          "... of the depths have I cried unto thee, O LORD. 2. Lord, hear my voice; let thine ears be attentive ...",
+          "... from all his iniquities. A. PARAPHRASE Verses 1, 2. \u2014 O Lord, through my manifold sins and provocatio ..."
+        ]
+      },
+      {
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "Forgiveness Discovered or Revealed Only to Faith",
+        "contexts": []
+      },
+      {
+        "target": "3.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Farther Evidences of Forgiveness With God -testimonies",
+        "contexts": [
+          "3. We multiply these evidences, because they are mul ...",
+          "... of all these sorts were justified and pardoned. 3. Suppose this enumeration of sins doth not reach t ...",
+          "... n, every city, every family is filled with them. 3. That there is a common abuse of this patience of ..."
+        ]
+      },
+      {
+        "target": "IV.",
+        "description": "List sequence starts at 4 instead of 1",
+        "chapter": "Farther Evidences of Forgiveness With God -testimonies",
+        "contexts": [
+          "... RIENCE OF THE SAINTS OF GOD TO THE SAME PURPOSE. IV. LET US, then, in the fourth place, as a fourth ev ..."
+        ]
+      },
+      {
+        "target": "VIII.",
+        "description": "List sequence starts at 8 instead of 1",
+        "chapter": "The Giving & Establishing of the New Covenant",
+        "contexts": [
+          "... OATH OF GOD ENGAGED IN THE CONFIRMATION THEREOF. VIII. ANOTHER evidence hereof may be taken from the mak ..."
+        ]
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "The Name of God Confirming the Truth and Reality of Forgiveness With Him",
+        "contexts": []
+      },
+      {
+        "target": "X.",
+        "description": "List sequence starts at 10 instead of 1",
+        "chapter": "The Name of God Confirming the Truth and Reality of Forgiveness With Him",
+        "contexts": [
+          "... HE SAME IS DONE BY THE PROPERTIES OF HIS NATURE. X. ANOTHER foundation of this truth, and infallible ..."
+        ]
+      },
+      {
+        "target": "XII.",
+        "description": "List sequence starts at 12 instead of 1",
+        "chapter": "Forgiveness Manifested in the Sending of the Son of God to Die for Sin",
+        "contexts": [
+          "... OBLIGATION THAT IS ON US TO FORGIVE ONE ANOTHER. XII. IN the next place we shall proceed unto that evid ..."
+        ]
+      },
+      {
+        "target": "3.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Evidences That Most Men Do Not Believe Forgiveness.",
+        "contexts": [
+          "... a great part of the books of the New Testament. 3. It is a duty, as we have showed, of the greatest ...",
+          "... covenants, as God himself declares, Hebrews 8:7-13. Now, a very easy consideration of the ways and wa ...",
+          "... aintance with the mystery of gospel forgiveness. 3. Let it be inquired of them who pretend unto this ..."
+        ]
+      },
+      {
+        "target": "2. ... 7.",
+        "description": "List sequence jump (skipped from 2 to 7)",
+        "chapter": "Evidences That Most Men Do Not Believe Forgiveness.",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Rule 2.",
+        "contexts": [
+          "RULE 2. Self-condemnation and abhorrency for sin consist ...",
+          "... e him beneath the assurance sought after. And, \u2014 2. I shall speak somewhat of its nature, especially ...",
+          "... ng that all the heirs of promise should receive. 2. Evangelical assurance is not a thing that consist ..."
+        ]
+      },
+      {
+        "target": "4.",
+        "description": "List sequence starts at 4 instead of 1",
+        "chapter": "Rule 4.",
+        "contexts": [
+          "... is duty, which must be farther spoken unto. RULE 4. Remove the hinderances of believing by a searchi ..."
+        ]
+      },
+      {
+        "target": "5.",
+        "description": "List sequence starts at 5 instead of 1",
+        "chapter": "Rule 5.",
+        "contexts": [
+          "... undoubtedly hinder and interrupt our peace. RULE 5. The fifth rule \u2014 Distinction between unbelief an ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Rule 6.",
+        "contexts": [
+          "... im to hide, withdraw, or absent himself from it. 2. Unbelief, that works by questioning of the promis ...",
+          "... forgiveness of sin that we are treating of; and, 2. Grace of sanctification from God in Christ. Of ea ...",
+          "... in due time will cause it to bring forth peace. 2. The like may be said concerning the other head of ..."
+        ]
+      },
+      {
+        "target": "2. ... 6.",
+        "description": "List sequence jump (skipped from 2 to 6)",
+        "chapter": "Rule 6.",
+        "contexts": []
+      },
+      {
+        "target": "8.",
+        "description": "List sequence starts at 8 instead of 1",
+        "chapter": "Rule 8.",
+        "contexts": [
+          "... s the life of a believer, Ephesians 2:8-10. RULE 8. The eighth rule \u2014 Spend not time in heartless co ..."
+        ]
+      },
+      {
+        "target": "9.",
+        "description": "List sequence starts at 9 instead of 1",
+        "chapter": "Rule 9.",
+        "contexts": [
+          "... l together in the same soul and conscience. RULE 9. The ninth rule \u2014 Take heed of undue expressions ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Objections From the Present State and Condition of the Soul",
+        "contexts": [
+          "... w, whereas we were blind by nature, now we see.\" 2. Even in this matter also, we must, it may be, be ...",
+          "... s necessary; to know it, sometimes a temptation (2.) Even duties of God's appointment, when turned in ...",
+          "... of all is a great sign of somewhat in the soul. 2. As to what was alleged as to the nothingness, the ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "God the Proper Object of the Soul\u00ecs Waiting in Its Distresses and Depths.",
+        "contexts": [
+          "... as the most blessed course for his deliverance. 2. Remember that diligent use of the means for the e ...",
+          "... rom, \u2014 1. The absence of God from the soul; and, 2. From his displeasure. 1. The absence of God from ...",
+          "... ith the Lord, \"when I depart from them!\" Hosea 9:12. And this woe, this sorrow, doth not attend only a ..."
+        ]
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Considerations of God, Rendering Our Waiting on Him Reasonable and Necessary:",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Philippians 38",
+        "description": "Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "... n us to will and to do of his own good pleasure,\" Philippians 38:13 2:13; he works \"all our works in us,\" Isaiah 2 ..."
+        ]
+      },
+      {
+        "target": "Jude 4",
+        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... e \"turning of the grace of God into wantonness;\" (Jude 4.) yet I doubt not but, through the craft of Satan ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Forgiveness Manifested in the Sending of the Son of God to Die for Sin",
+        "contexts": [
+          "... l flesh,\" Romans 8:3; in \"the form of a servant,\" Philippians 20:7 2:7; being \"made of a woman, made under the law ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
+  }
+}

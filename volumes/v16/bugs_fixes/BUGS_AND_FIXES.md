@@ -182,10 +182,18 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T08:25:44.429093+00:00
+**Last run:** 2026-06-09T21:34:13.025810+00:00
 **EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -202,7 +210,7 @@ Reports:
 | NAV links | 85 |
 | Greek chars / untagged | 6044 / 0 |
 | Hebrew chars / untagged | 1224 / 0 |
-| Noteref links / endnote anchors | 258 / 258 |
+| Noteref links / endnote anchors | 257 / 257 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -268,10 +276,16 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T08:26:19.179591+00:00
+**Last run:** 2026-06-09T11:41:20.519722+00:00
 **Status:** WARN (14 warnings)
 
 Reports:
@@ -282,10 +296,10 @@ Reports:
 |-------|--------|
 | PDF pages | 672 |
 | EPUB text files | 82 |
-| EPUB paragraphs/headings | 2704 |
+| EPUB paragraphs/headings | 2751 |
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 1 |
-| Dense source windows checked | 27795 |
+| Dense source windows checked | 27889 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 1 |
 | Missing front CONTENTS pages | 0 |
@@ -295,23 +309,23 @@ Reports:
 | Bottom-of-page body windows checked | 602 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 5 |
-| Possible faulty paragraph splits | 33 |
-| Structural starts excluded from split warnings | 276 |
+| Possible faulty paragraph splits | 36 |
+| Structural starts excluded from split warnings | 280 |
 | Short fragments | 24 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 6 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 3 |
+| Suspicious large-number starts | 2 |
 | Roman heading candidates | 1 |
 | Overlong heading candidates | 1 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 509 |
-| EPUB enumerator markers | 519 |
+| EPUB enumerator markers | 520 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 2 |
-| PDF Greek words / EPUB Greek words | 1030 / 1042 |
+| PDF Greek words / EPUB Greek words | 1020 / 1032 |
 | Greek word coverage ratio | 1.0 |
 | PDF Hebrew words / EPUB Hebrew words | 268 / 268 |
 | Hebrew word coverage ratio | 1.0 |

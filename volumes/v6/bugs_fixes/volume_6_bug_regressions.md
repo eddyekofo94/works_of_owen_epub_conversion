@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 6
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_6_audit.json`
 - Text integrity audit: `volume_6_text_integrity.json`
 
@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 193 | 61 | REGRESSION |
-| Inline structural marker candidates | 4 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 15 | 205 | OK |
+| Inline structural marker candidates | 3 | 3 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 1 | 1 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 27 | 0 | REGRESSION |
+| Lowercase page fragments | 31 | 35 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,26 +66,29 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch004.xhtml; previous: tribute to the carrying on of the work of mortification in believers may receive order and perspicuity, I shall lay the foundation of it in those words of the apostle, Romans 8:13,; next: The apostle having made a recapitulation of his doctrine of justification by faith, and the blessed estate and condition of them who are made by grace partakers thereof, verses 1-3
-- file: EPUB/ch005.xhtml; previous: when they are still, so ought our contrivances against it to be vigorous at all times and in all conditions, even where there is least suspicion. Sin doth not only abide in us, but; next: If sin be subtle, watchful, strong, and always at work in the business of killing our souls, and we be slothful, negligent, foolish, in proceeding to the ruin thereof, can we expec
-- file: EPUB/ch005.xhtml; previous: one, if not continually mortified, it will bring forth great, cursed, scandalous, soul-destroying sins. The apostle tells us what the works and fruits of it are, Galatians 5:19-21,; next: You know what it did in David and sundry others. Sin aims always at the utmost; every time it rises up to tempt or entice, might it have its own course, it would go out to the utmo
-- file: EPUB/ch007.xhtml; previous: THE last principle I shall insist on (omitting, first, the necessity of mortification unto life, and, secondly, the certainty of life upon mortification) is, —; next: Strength and comfort, and power and peace, in our walking with God, are the things of our desires. Were any of us asked seriously, what it is that troubles us, we must refer it to 
-- file: EPUB/ch010.xhtml; previous:  refining will do them no good. The prophet gives us the sad issue of wicked men's utmost attempts for mortification, by what means soever that God affords them: Jeremiah 6:29, 30,; next: And what is the reason hereof? Verse 28, They were "brass and iron" when they were put into the furnace. Men may refine brass and iron long enough before they will be good silver.
+- file: EPUB/ch003.xhtml; previous: CHRISTIAN READER,; next: I SHALL in a few words acquaint thee with the reasons that obtained my consent to the publishing of the ensuing discourse. The consideration of the present state and condition of t
+- file: EPUB/ch003.xhtml; previous: s is the sum of the account I shall give) may in anything be useful to the least of the saints, it will be looked on as a return of the weak prayers wherewith it is attended by its; next: unworthy author
+- file: EPUB/ch003.xhtml; previous: unworthy author; next: John Owen
+- file: EPUB/ch019.xhtml; previous: CHRISTIAN READER,; next: If thou art in any measure awake in these days wherein we live, and hast taken notice of the manifold, great, and various temptations wherewith all sorts of persons that know the L
+- file: EPUB/ch022.xhtml; previous: ty of such indispensable necessity to them who intend to walk with God in any peace, or with any faithfulness, — are to be considered and removed. And they are these that follow: —; next: Obj. 1. "Why should we so fear and labor to avoid temptation? James 1:2, we are commanded to 'count it all joy when we fall into divers temptations.' Now, certainly I need not soli
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch021.xhtml; text: Before I descend to other particulars, having now entered hereon, I shall show in general, — 1st. How or by what means commonly any temptation attains its hour;
-- file: EPUB/ch049.xhtml; text: The Nature Of The Forgiveness Of Sin Is Declared; The Truth And Reality Of It Asserted; And The Case Of A Soul Distressed With The Guilt Of Sin, And Relieved By A Discovery Of Forgiveness With God, Is At Large Discoursed
-- file: EPUB/ch060.xhtml; text: In the supposition there is, — 1. The name of God, that is fixed on as suited unto it; and, 2. The thing itself supposed.
-- file: EPUB/ch061.xhtml; text: In the supposition there is, — 1. The name of God, that is fixed on as suited unto it; and, 2. The thing itself supposed.
+- file: EPUB/ch025.xhtml; text: Such was the state of the church or Sardis, (3.) A season of great spiritual enjoyments is often, by the malice of Satan and the weakness of our hearts, turned into a season of danger as to this business of temptation.
+- file: EPUB/ch076.xhtml; text: Indeed, if we should go upon our own heads, without his warranty and authority, to ask any thing at his hand, we might well expect to meet with disappointment; for what should encourage us unto any such boldness? but now
+- file: EPUB/ch082.xhtml; text: Gospel pardon is a thing of another nature; it hath its spring in the gracious heart of the Father, is made out by a sovereign act of his will, rendered consistent with the glory of his justice and holiness by the blood 
 
 ### Repeated word windows
 
 - phrase: there is forgiveness with thee that thou mayest be feared
-- phrase: the lord hath forsaken me and my lord hath forgotten
-- phrase: lord hath forsaken me and my lord hath forgotten me
 - phrase: the lust of the flesh the lust of the eyes
 - phrase: from the lord and my judgment is passed over from
+- phrase: the lord and my judgment is passed over from my
+- phrase: lord and my judgment is passed over from my god
+
+### Missing front CONTENTS pages
+
+- page: 6; sample: chapter the doctrine grounds of it our savior's direction in this case his promise of preservation issues of men entering into temptation of ungrounded professors of the choicest
 
 ### Repeated phrase hits
 
@@ -93,8 +96,8 @@
 
 ### Lowercase page fragments
 
-- file: EPUB/ch053.xhtml; text: every way and means of thy appearance, of the manifestation of thyself, and comin
-- file: EPUB/ch056.xhtml; text: chiefly to respect that which he himself, in this address unto God, did principal
-- file: EPUB/ch062.xhtml; text: stand?," When the Holy Ghost would set out the certainty and dreadfulness of the
-- file: EPUB/ch064.xhtml; text: prepares the soul for the receiving of mercy in a sense of pardon, the great thin
-- file: EPUB/ch069.xhtml; text: government of the world, his holiness and righteousness, to take care that every
+- file: EPUB/ch003.xhtml; text: unworthy author
+- file: EPUB/ch004.xhtml; text: and reduce the whole to an improvement of the great evangelical truth and mystery
+- file: EPUB/ch006.xhtml; text: and of our repentance our mortification is no small portion. How doth he do it? H
+- file: EPUB/ch037.xhtml; text: a similitude most lively, expressing the lustings of the law of sin, restlessly a
+- file: EPUB/ch044.xhtml; text: and with the prophet, Hosea 14:9,
