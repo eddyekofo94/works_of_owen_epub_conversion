@@ -3573,6 +3573,10 @@ aside[epub\:type~="endnote"] {
     border: none !important;
     padding: 0 !important;
 }
+/* mobile-first safety net */
+body { overflow-x: hidden; }
+img, svg { max-width: 100% !important; height: auto !important; display: block; }
+table { max-width: 100% !important; width: 100% !important; overflow-x: auto; display: block; }
 /*]]>*/
 """
 

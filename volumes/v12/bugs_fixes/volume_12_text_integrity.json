@@ -2,7 +2,7 @@
   "volume": 12,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T06:35:05.444132+00:00",
+  "generated_at": "2026-06-09T07:41:25.652944+00:00",
   "status": "warn",
   "warning_count": 12,
   "warnings": [
@@ -1057,7 +1057,7 @@
   "enumerator_integrity": {
     "pdf_marker_count": 450,
     "epub_marker_count": 460,
-    "missing_marker_count": 2,
+    "missing_marker_count": 1,
     "missing_markers": [
       {
         "marker": "(1.)",
@@ -1077,20 +1077,9 @@
             "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
           }
         ]
-      },
-      {
-        "marker": "(8.)",
-        "pdf": 1,
-        "epub": 0,
-        "examples": [
-          {
-            "location": "pdf:p178",
-            "context": "f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
-          }
-        ]
       }
     ],
-    "excess_marker_count": 6,
+    "excess_marker_count": 5,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -1119,25 +1108,6 @@
           {
             "location": "EPUB/ch006.xhtml#p291",
             "context": "(2.) Mr B. pretending to give an account of the\" chiefest things pertaining to belief and practice,\" doth yet propose no question at all concerning many of the most important heads of"
-          }
-        ]
-      },
-      {
-        "marker": "(3.)",
-        "pdf": 54,
-        "epub": 55,
-        "examples": [
-          {
-            "location": "EPUB/ch006.xhtml#p292",
-            "context": "(3.) What can be concluded of the mind of God in the Scripture, by cutting off any place or places of it from their dependence, connection, and tendency, catching at those words which"
-          },
-          {
-            "location": "EPUB/ch008.xhtml#p400",
-            "context": "(3.) I desire to know of Mr B. what the throne is made of that God sits on in the heavens, and how far the glistering of his glory doth extend, and whether that glistering of glory dot"
-          },
-          {
-            "location": "EPUB/ch011.xhtml#p550",
-            "context": "(3.) That he proves himself to be God by these his predictions."
           }
         ]
       },

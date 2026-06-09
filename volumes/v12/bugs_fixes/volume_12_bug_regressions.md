@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 12
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_12_audit.json`
 - Text integrity audit: `volume_12_text_integrity.json`
 
@@ -49,7 +49,7 @@
 | Structural bold leaks | 0 | 0 | OK |
 | Repeated structural markers | 0 | 0 | OK |
 | Scholastic bold leaks | 0 | 0 | OK |
-| Inline scholastic labels | 2 | 0 | REGRESSION |
+| Inline scholastic labels | 2 | 2 | OK |
 | Trailing scholastic labels | 0 | 0 | OK |
 | DIGRESSION headings not h3 | 0 | 0 | OK |
 | Cross-chapter continuation before heading | 0 | 0 | OK |

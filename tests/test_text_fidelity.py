@@ -1109,7 +1109,7 @@ def test_owenian_list_levels_mark_exposition_and_nested_subpoints():
         'penalty he underwent.</p>'
     ) in html
     assert (
-        '<p class="list-item list-level-2"><b>[1.]</b> Of the person suffering '
+        '<p class="list-item list-level-3"><b>[1.]</b> Of the person suffering '
         'for it. This the Scripture oftentimes very emphatically sets forth, '
         'and lays great weight upon the matter, as that which gives glory to '
         'the justice of God.</p>'

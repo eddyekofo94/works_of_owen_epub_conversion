@@ -153,10 +153,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T06:34:19.030182+00:00
+**Last run:** 2026-06-09T07:40:41.028007+00:00
 **EPUB:** `volumes/v12/output/volume_12.epub`
 **Status:** WARN (0 errors, 3 warnings)
 
@@ -203,10 +204,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T06:35:05.444132+00:00
+**Last run:** 2026-06-09T07:41:25.652944+00:00
 **Status:** WARN (12 warnings)
 
 Reports:
@@ -244,7 +246,7 @@ Reports:
 | Repeated word windows | 25 |
 | PDF enumerator markers | 450 |
 | EPUB enumerator markers | 460 |
-| Missing enumerator marker forms | 2 |
+| Missing enumerator marker forms | 1 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 2593 / 2593 |
 | Greek word coverage ratio | 0.9992 |

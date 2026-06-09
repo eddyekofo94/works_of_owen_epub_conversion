@@ -642,27 +642,35 @@ def _add_owen_list_level_classes(html: str) -> str:
                     # Check in descending order of levels to prefer the deepest active sequence (Issue #91 / list refinement)
                     if last_digit_at_level[3] is not None and val == last_digit_at_level[3] + 1 and (family == last_family_at_level[3] or active_override_level == 3):
                         assigned_level = 3
+                        active_override_level = None
                     elif last_digit_at_level[2] is not None and val == last_digit_at_level[2] + 1 and family == last_family_at_level[2]:
                         assigned_level = 2
+                        active_override_level = None
                     elif last_digit_at_level[1] is not None and val == last_digit_at_level[1] + 1 and family == last_family_at_level[1]:
                         active_override_level = None
                         assigned_level = 1
-                    # 4. Check if it is starting a new nested sequence (val == 1)
                     elif val == 1:
                         if active_override_level is not None:
-                            assigned_level = active_override_level
+                            assigned_level = max(base_level, active_override_level)
+                            active_override_level = None
                         else:
-                            assigned_level = base_level
+                            # If Level 2 is occupied by a different family, nest to Level 3
+                            if base_level == 2 and last_digit_at_level[2] is not None and family != last_family_at_level[2]:
+                                assigned_level = 3
+                            else:
+                                assigned_level = base_level
                     # 5. Fallback for non-sequential but numeric items
                     else:
                         if active_override_level is not None:
                             assigned_level = max(base_level, active_override_level)
+                            active_override_level = None
                         else:
                             assigned_level = base_level
                 else:
                     # Non-numeric items (e.g. scholastic anchors, ordinals)
                     if active_override_level is not None:
                         assigned_level = max(base_level, active_override_level)
+                        active_override_level = None
                     else:
                         assigned_level = base_level
 
@@ -695,7 +703,7 @@ def _add_owen_list_level_classes(html: str) -> str:
             
             # Check if it acts as a list trigger
             if has_list_trigger(block):
-                active_override_level = 2
+                active_override_level = 1
             else:
                 # Non-list paragraph with no trigger resets overrides
                 active_override_level = None

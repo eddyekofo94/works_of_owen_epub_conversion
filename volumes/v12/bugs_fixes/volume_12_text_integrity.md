@@ -41,7 +41,7 @@
 - Repeated word windows: 25
 - PDF enumerator markers: 450
 - EPUB enumerator markers: 460
-- Missing enumerator marker forms: 2
+- Missing enumerator marker forms: 1
 - Enumerator sequence candidates: 0
 
 ## Greek / Hebrew
@@ -163,7 +163,6 @@
 ## Missing Enumerator Markers
 
 - marker: (1.); pdf: 110; epub: 109; examples: [{'location': 'pdf:p51', 'context': 'them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could...
-- marker: (8.); pdf: 1; epub: 0; examples: [{'location': 'pdf:p178', 'context': 'f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity;...
 
 ## Repeated Windows
 

@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T06:34:19.030182+00:00",
+  "generated_at": "2026-06-09T07:40:41.028007+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 3,
@@ -28,7 +28,7 @@
   ],
   "info": {
     "file_count": 97,
-    "epub_size_bytes": 8444964,
+    "epub_size_bytes": 8445009,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [

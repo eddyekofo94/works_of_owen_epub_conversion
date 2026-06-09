@@ -263,7 +263,8 @@
         "max_missing_marker_count": 1
       },
       "epub": {
-        "max_lowercase_paragraph_start_files": 20
+        "max_lowercase_paragraph_start_files": 20,
+        "max_inline_scholastic_label_files": 2
       }
     },
     "13": {
