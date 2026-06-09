@@ -150,11 +150,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-05T13:50:01.986624+00:00
-**EPUB:** `volumes/v12/output/volume_12.epub`
+**Last run:** 2026-06-09T05:42:20.071673+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub`
 **Status:** WARN (0 errors, 3 warnings)
 
 Reports:
@@ -197,10 +198,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-05T13:50:46.318316+00:00
+**Last run:** 2026-06-09T05:43:04.069108+00:00
 **Status:** WARN (14 warnings)
 
 Reports:
@@ -211,10 +213,10 @@ Reports:
 |-------|--------|
 | PDF pages | 822 |
 | EPUB text files | 61 |
-| EPUB paragraphs/headings | 3523 |
-| Approximate PDF-to-EPUB word coverage | 0.999 |
+| EPUB paragraphs/headings | 3518 |
+| Approximate PDF-to-EPUB word coverage | 0.9991 |
 | Weak page matches | 2 |
-| Dense source windows checked | 30528 |
+| Dense source windows checked | 30713 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
@@ -224,11 +226,11 @@ Reports:
 | Bottom-of-page body windows checked | 740 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 14 |
-| Possible faulty paragraph splits | 40 |
-| Structural starts excluded from split warnings | 439 |
-| Short fragments | 47 |
+| Possible faulty paragraph splits | 35 |
+| Structural starts excluded from split warnings | 433 |
+| Short fragments | 48 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 2 |
+| Inline structural marker candidates | 3 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 4 |

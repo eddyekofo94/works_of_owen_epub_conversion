@@ -4,16 +4,16 @@
 - Warnings: 14
 - PDF pages: 822
 - EPUB text files: 61
-- EPUB paragraphs/headings: 3523
+- EPUB paragraphs/headings: 3518
 
 ## Coverage
 
-- PDF content tokens: 270741
-- EPUB content tokens: 272712
-- Approximate PDF-to-EPUB coverage ratio: 0.999
+- PDF content tokens: 270738
+- EPUB content tokens: 272724
+- Approximate PDF-to-EPUB coverage ratio: 0.9991
 - Pages checked: 815
 - Weak page matches: 2
-- Dense source windows checked: 30528
+- Dense source windows checked: 30713
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 3
 - Missing front CONTENTS pages: 1
@@ -26,12 +26,12 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 3082
-- Possible faulty paragraph splits: 40
-- Structural starts excluded from split warnings: 439
-- Short fragments: 47
+- Body paragraphs checked: 3081
+- Possible faulty paragraph splits: 35
+- Structural starts excluded from split warnings: 433
+- Short fragments: 48
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 2
+- Inline structural marker candidates: 3
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 4
@@ -60,15 +60,15 @@
 ## Latin
 
 - PDF Latin words: 10596
-- EPUB Latin words: 10725
-- EPUB Tagged Latin words: 6527
-- Latin word coverage ratio: 0.997
-- Latin word tagging ratio: 0.6086
+- EPUB Latin words: 10733
+- EPUB Tagged Latin words: 6394
+- Latin word coverage ratio: 0.9975
+- Latin word tagging ratio: 0.5957
 - Latin clauses checked: 776
 - Missing Latin clauses: 3
-- Tagged Latin runs checked: 1690
-- Translated Latin runs: 688
-- Latin translation ratio: 0.4071
+- Tagged Latin runs checked: 1658
+- Translated Latin runs: 668
+- Latin translation ratio: 0.4029
 
 ## Warnings
 
@@ -94,7 +94,7 @@
 - page: 6; sample: first among that splendid catena of divines bull waterland horsley magee fuller pye smith
 - page: 7; sample: son and of the spirit and similar doctrines biddle had well nigh fallen martyr
 - page: 8; sample: by their brethren of the same creed the task was devolved on valentine smalcius
-- page: 9; sample: he is claimed alike by socinians arminians and papists the learned jesuit peta-vius said
+- page: 9; sample: of the latter to the socinian crellius see page is the difference between those
 - page: 11; sample: to the right worshipful his reverend learned and worthy friends and brethren the heads
 - page: 14; sample: of his inclinations that way some parcels of letter of his to crellius some
 - page: 15; sample: the socinians and oftentimes consist in the very words of socinus and smalcius and
@@ -128,23 +128,24 @@
 - file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
 - file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
 - file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
-- file: EPUB/ch004.xhtml; previous: er, nam ratio vocabuli non patitur, ut quis dicatur sine matre pater: et si Logos filius erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus." †; next: To this height of atheism and blasphemy had Satan wrought up the spirit of the man; so that I must say he is the only person in the world, that I ever read or heard of, that ever d
-- file: EPUB/ch004.xhtml; previous: n possumus, aliquid in quo nitamur conquirimus ; sequiturque, ut frequens ac mobilis transitus maximum perfecti operis impedimentum sit." † — Paterc. Hist. Romans lib. 1 cap. 17. *; next: I wish some such things may not be said of the doctrine of the reformed churches. It was not long since raised to a great height of purity in itself, and perspicuity in the way of
-- file: EPUB/ch009.xhtml; previous: And AEschylus, in the same place of Clemens, Strom. 5: — Χωρεῖτε θνητῶν τὸν Θεὸν καὶ μὴ δόκει . †; next: Ομοιον αὐτῷ σαρκικὸν καθεστάναι . †
 - file: EPUB/ch010.xhtml; previous: ry about the nature of God respects the attribution of several affections and passions unto him in the Scriptures, of whose sense and meaning he thus expresseth his apprehension: —; next: Ques. Are there not, according to the perpetual tenor of the Scriptures, affections and passions in God, as anger, fury, zeal, wrath, love, hatred, mercy, grace, jealousy, repentan
 - file: EPUB/ch011.xhtml; previous: ution thereof, in order to a discovery of what God himself hath revealed concerning his knowledge of all things, is the next part of our employment. Thus, then, it may be framed: —; next: Ques. Doth not God know all things, whether past, present, or to come, all the ways and actions of men, even before their accomplishment, or is any thing hid from him? What says th
 - file: EPUB/ch014.xhtml; previous: nd discourse, let us also propose a few questions as to the matter under consideration, and see what answer the Scripture will positively give in to our inquiries: — First, then, —; next: Ques. 1. In what state and condition was man at first created?
 - file: EPUB/ch018.xhtml; previous: Their first question and answer are: —; next: Ques. Declare now to me what I ought to know concerning Jesus Christ?
+- file: EPUB/ch018.xhtml; previous: ns 15:21; such a one as God of old promised by the prophets, and such as the creed, commonly called the Apostles', witnesseth him to be; which, with us, all Christians embrace. 259; next: Ans. That Jesus Christ was a true man, in his nature like unto us, sin only excepted, we believe, and do abhor the abominations of Paracelsus, Wigelius , etc., and the Familists am
+- file: EPUB/ch018.xhtml; previous: t bring other causes, which thou wilt afterward find in the person of Christ, which most evidently declare that the Lord Jesus can by no means be esteemed a pure (or mere) man. 260; next: Ans. 1. But I have abundantly demonstrated that Christ neither was nor was called the Son of God upon the account here mentioned, nor any other whatever intimated in the close of t
+- file: EPUB/ch018.xhtml; previous: But as the divine nature by itself constitutes a person, so it is necessary that the human nature should do. 263; next: Ans. 1. In what sense it may be said that Christ, that is, the person of Christ, consisteth of a divine and human nature, was before declared. The person of the Son of God assumed
 
 ## Inline Structural Marker Candidates
 
 - file: EPUB/ch040.xhtml; text: He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —
+- file: EPUB/ch047.xhtml; text: I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is evident from the w...
 - file: EPUB/ch047.xhtml; text: These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our sanctification al...
 
 ## Suspicious Large-Number Starts
 
 - file: EPUB/ch011.xhtml; text: 11. Johannes Crellius is something more candid, as he pretends, but indeed infected with the same venom with the other; for after he hath disputed for sundry pages to prove the foreknowledge of God, he concludes at last
-- file: EPUB/ch019.xhtml; text: 24. Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei." Again, " Παρὰ σοί , refer ad illud εῖχον , et intellige, ut diximus, in decreto tuo ." † But what intends the learned man by those places of 1 Peter
+- file: EPUB/ch019.xhtml; text: 24. Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei." Again, " Παρὰ σοί , refer ad illud εῖχον , et intellige, ut diximus, in decreto tuo ." But what intends the learned man by those places of 1 Peter 1:
 - file: EPUB/ch039.xhtml; text: 52. The words of that verse are, —
 - file: EPUB/ch042.xhtml; text: 12. And that may be the sense of the word ἐπιλαμβάνεται , if not in the effect, yet in the cause, Hebrews 2:16.
 
@@ -153,13 +154,13 @@
 - file: EPUB/ch003.xhtml; text: John Owen
 - file: EPUB/ch005.xhtml; text: JOHN BIDDLE.
 - file: EPUB/ch009.xhtml; text: Whereunto answers that in Cato: —
+- file: EPUB/ch009.xhtml; text: Ομοιον αὐτῷ σαρκικὸν καθεστάναι .
 - file: EPUB/ch011.xhtml; text: Ans.
 - file: EPUB/ch013.xhtml; text: Ans. Genesis 1:1
 - file: EPUB/ch014.xhtml; text: EXAMINATION.
 - file: EPUB/ch016.xhtml; text: Ans. Ephesians 4:5.
 - file: EPUB/ch017.xhtml; text: etc.
 - file: EPUB/ch017.xhtml; text: He adds, 12th,
-- file: EPUB/ch018.xhtml; text: and, verse 53,
 
 ## Missing Enumerator Markers
 
@@ -188,7 +189,6 @@
 - word: schlusselburgius; pdf: 3; epub: 0
 - word: sod; pdf: 3; epub: 0
 - word: gerlachius; pdf: 3; epub: 0
-- word: tides; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
@@ -215,7 +215,7 @@
 - word: grotius; epub: 197; tagged: 20
 - word: mediator; epub: 148; tagged: 5
 - word: yea; epub: 139; tagged: 3
-- word: socinus; epub: 169; tagged: 37
+- word: socinus; epub: 169; tagged: 36
 - word: abraham; epub: 93; tagged: 2
 - word: thereunto; epub: 73; tagged: 2
 - word: annotator; epub: 69; tagged: 1

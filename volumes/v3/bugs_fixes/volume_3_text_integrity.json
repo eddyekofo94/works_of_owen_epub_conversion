@@ -2,7 +2,7 @@
   "volume": 3,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-05T21:29:31.260405+00:00",
+  "generated_at": "2026-06-09T05:42:15.729478+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -16,11 +16,11 @@
   },
   "epub": {
     "spine_text_files": 45,
-    "paragraph_count": 2512
+    "paragraph_count": 2503
   },
   "word_coverage": {
     "pdf_content_tokens": 267301,
-    "epub_content_tokens": 276197,
+    "epub_content_tokens": 276195,
     "coverage_ratio": 0.9997,
     "missing_word_samples": [
       {
@@ -133,7 +133,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 35055,
+    "dense_windows_checked": 35212,
     "missing_dense_window_pages": 20,
     "missing_dense_windows": [
       {
@@ -193,10 +193,6 @@
         "sample": "under his curse psalm john romans 15-18 ephesians titus there are degrees of wickedness"
       },
       {
-        "page": 271,
-        "sample": "infallibly produce the reformation of life intended in some it doth it more completely"
-      },
-      {
         "page": 284,
         "sample": "disposition is where one degree of the same kind disposeth the subject unto farther"
       },
@@ -215,6 +211,10 @@
       {
         "page": 333,
         "sample": "but we proceed having cleared the impotency to discern spiritual things spiritually that is"
+      },
+      {
+        "page": 339,
+        "sample": "own kind whereby men inflame themselves isaiah waxing worse and worse and the particular"
       }
     ]
   },
@@ -431,7 +431,7 @@
     "paragraphs_checked": 2109,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 315,
+    "structural_start_exclusions": 316,
     "short_fragment_count": 14,
     "short_fragments": [
       {
@@ -536,11 +536,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p151",
+            "location": "EPUB/ch006.xhtml#p150",
             "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who"
           },
           {
-            "location": "EPUB/ch008.xhtml#p274",
+            "location": "EPUB/ch008.xhtml#p273",
             "context": "(1.) Such as respect one another; for there are external acts of one person towards another: but then the person that is the object of these actings is not considered absolutely as a d"
           }
         ]
@@ -555,11 +555,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p151",
+            "location": "EPUB/ch006.xhtml#p150",
             "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who was a liar from the beginning; and \" Malus bonum cure simulat, tune est pessimus .\""
           },
           {
-            "location": "EPUB/ch008.xhtml#p275",
+            "location": "EPUB/ch008.xhtml#p274",
             "context": "(2.) There are especial acts, ad extra, towards the creatures. 32 This the whole Scripture testifieth unto, so that it is altogether needless to confirm it with particular instances. N"
           }
         ]
@@ -574,11 +574,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch015.xhtml#p646",
+            "location": "EPUB/ch015.xhtml#p645",
             "context": "[1.] The manifestation of his righteousness, holiness, and severity against sin. His design was, to repair the glory of God, wherein it had seemed to suffer by sin. Psalm 40:6-8, Hebre"
           },
           {
-            "location": "EPUB/ch015.xhtml#p649",
+            "location": "EPUB/ch015.xhtml#p648",
             "context": "is, testified unto in the Old Testament: Hebrews 2:13, \"I will put my trust in him.\" And, [1.] This respected himself, namely, that he should be supported, assisted, and carried through the work he had undertaken unto a blessed issue."
           }
         ]
@@ -593,11 +593,11 @@
             "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           },
           {
-            "location": "EPUB/ch001.xhtml#p85",
+            "location": "EPUB/ch001.xhtml#p84",
             "context": "Ἐκ τῶν θείων γραφῶν θεολογοῦμεν κἂν θέλωσιν οἱ ἐχθροὶ κἂν μή. [1] — Chrysostom"
           },
           {
-            "location": "EPUB/ch001.xhtml#p86",
+            "location": "EPUB/ch001.xhtml#p85",
             "context": "[1] \"We speak of theology from the divine Scriptures, whether our enemies want it or not.\" — John Chrysostom; also cited as an early Greek patristic maxim."
           }
         ]
@@ -612,11 +612,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch015.xhtml#p647",
+            "location": "EPUB/ch015.xhtml#p646",
             "context": "[2.] The exercise of his grace and love. This he knew was the way to open the treasures of grace and love, that they might be poured out on sinners, to the everlasting glory of God; fo"
           },
           {
-            "location": "EPUB/ch015.xhtml#p653",
+            "location": "EPUB/ch015.xhtml#p652",
             "context": "[2.] This respected the covenant, and all the benefits that the church of the elect was to be made partaker of thereby. The blood that he now shed was the \"blood of the covenant,\" and"
           }
         ]
@@ -676,12 +676,12 @@
   "latin_word_coverage": {
     "pdf_latin_word_count": 4115,
     "epub_latin_word_count": 4276,
-    "epub_tagged_latin_word_count": 2173,
+    "epub_tagged_latin_word_count": 1443,
     "pdf_latin_unique_words": 1058,
     "epub_latin_unique_words": 1112,
     "epub_tagged_unique_words": 823,
     "latin_word_coverage_ratio": 0.9995,
-    "latin_tagging_ratio": 0.5082,
+    "latin_tagging_ratio": 0.3375,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -817,9 +817,9 @@
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 457,
-    "translated_latin_runs_count": 373,
-    "latin_translation_ratio": 0.8162,
+    "tagged_latin_runs_count": 320,
+    "translated_latin_runs_count": 238,
+    "latin_translation_ratio": 0.7438,
     "untranslated_latin_samples": [
       {
         "phrase": "commensurate thereunto"

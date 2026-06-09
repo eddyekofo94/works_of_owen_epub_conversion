@@ -1,515 +1,12 @@
 {
   "volume": 12,
-  "total_words_audited": 318970,
-  "total_anomalies_count": 663,
+  "total_words_audited": 319764,
+  "total_anomalies_count": 63,
   "anomalies": {
-    "Hyphenation Anomalies": [
-      {
-        "target": "Wotton-under",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "Prefatory Note.",
-        "contexts": [
-          "... ther of English Socinianism, was born in 1616, at Wotton-under-Edge. Having made considerable proficiency at the ..."
-        ]
-      },
-      {
-        "target": "Peta-vius",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "Prefatory Note.",
-        "contexts": [
-          "... nians, Arminians, and Papists. The learned Jesuit Peta-vius said prayers for the repose of his soul; and Boss ..."
-        ]
-      },
-      {
-        "target": "birth-place",
-        "description": "Splittable word (rejoins to valid word 'birthplace')",
-        "chapter": "Prefatory Note.",
-        "contexts": [
-          "... ius as towns contended for the honor of being the birth-place of Homer. Who would not wish to rank among the ab ..."
-        ]
-      },
-      {
-        "target": "corner-stone",
-        "description": "Splittable word (rejoins to valid word 'cornerstone')",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... nd prophets, Jesus Christ himself being the chief corner-stone; in whom all the building fitly framed together g ...",
-          "... the work [rock?] itself, the great foundation and corner-stone of the church, the Lord Jesus, who is\" God blesse ..."
-        ]
-      },
-      {
-        "target": "Soci-nians",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... this great disadvantage did the persuasion of the Soci-nians set out in the world, that Christ is only \u03c8\u03b9\u03bb\u1f78\u03c2 \u1f04 ..."
-        ]
-      },
-      {
-        "target": "pre-existing",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... ge, though they agree not with them in allowing a pre-existing nature to Christ before his incarnation; but that ..."
-        ]
-      },
-      {
-        "target": "Anti-trinitarians",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... le dealing, and after that wholly fell off to the Anti-trinitarians, and in the issue drowned himself in a well. An ..."
-        ]
-      },
-      {
-        "target": "Geor-gius",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... e come off to the reformed churches; amongst whom Geor-gius Petrovicius, bishop of Sarmogitia, is reckoned by ..."
-        ]
-      },
-      {
-        "target": "Cra-covia",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... dispute, and went one thousand miles (namely, to Cra-covia in Poland) afterward to make it good. After some ..."
-        ]
-      },
-      {
-        "target": "So-cinus",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... escending to them on very ridiculous conditions), So-cinus seeming to prevail, by having most friends among ..."
-        ]
-      },
-      {
-        "target": "by-path",
-        "description": "Splittable word (rejoins to valid word 'bypath')",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... Ahimaaz had not outrun Cushi but that he took a by-path. Many finding it impossible to emerge unto any co ..."
-        ]
-      },
-      {
-        "target": "co-essential",
-        "description": "Splittable word (rejoins to valid word 'coessential')",
-        "chapter": "Mr Biddle's Preface to His Catechism.",
-        "contexts": [
-          "... he business touching the Son of God, calling him\" co-essential with the Father,\" this opened a gap for others af ..."
-        ]
-      },
-      {
-        "target": "over-strict",
-        "description": "Splittable word (rejoins to valid word 'overstrict')",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... the church, \u03b4\u1f30 \u1f40\u03bb\u03af\u03b3\u03b7\u03bd \u03b4\u03bf\u03b3\u03bc\u03ac\u03c4\u03c9\u03bd \u1f00\u03ba\u03c1\u03af\u03b2\u03b5\u03b9\u03b1\u03bd, for an over-strict observance of opinions, it being but one word, in ..."
-        ]
-      },
-      {
-        "target": "good-will",
-        "description": "Splittable word (rejoins to valid word 'goodwill')",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... d's gracious distributions of his kindness, love, good-will and the receiving of them. So that it be acknowle ..."
-        ]
-      },
-      {
-        "target": "brain-sick",
-        "description": "Splittable word (rejoins to valid word 'brainsick')",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": [
-          "... siastes Hist. lib. 6:cap. 7. As this madness of brain-sick men was always rejected by all persons of sobriet ..."
-        ]
-      },
-      {
-        "target": "down-sitting",
-        "description": "Splittable word (rejoins to valid word 'downsitting')",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": [
-          "... of knowledge,\" 1 Samuel 2:3. \"Thou knowest my down-sitting and mine uprising, thou understandest my thought ..."
-        ]
-      },
-      {
-        "target": "to-morrow",
-        "description": "Splittable word (rejoins to valid word 'tomorrow')",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": [
-          "... shall write, or ride, or speak to another person to-morrow, the agent being free, is contingent both as to t ..."
-        ]
-      },
-      {
-        "target": "common-place",
-        "description": "Splittable word (rejoins to valid word 'commonplace')",
-        "chapter": "Examination.",
-        "contexts": [
-          "... t next before. It is not my purpose to handle the common-place of the corruption of nature by sin: nor can I say ..."
-        ]
-      },
-      {
-        "target": "So-cinians",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Examination.",
-        "contexts": [
-          "... the reasons and causes above insisted on from the So-cinians, Christ be the Son of God, then Christ is the Son ..."
-        ]
-      },
-      {
-        "target": "to-day",
-        "description": "Splittable word (rejoins to valid word 'today')",
-        "chapter": "Examination.",
-        "contexts": [
-          "... iest; but he that said unto him, Thou art my Son, to-day have I begotten thee.\" When Mr B. proves any thin ...",
-          "... his Father, who said unto him, \"Thou art my Son, to-day have I begotten thee,\" declaring him so to be wit ..."
-        ]
-      },
-      {
-        "target": "to-day",
-        "description": "Splittable word (rejoins to valid word 'today')",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": [
-          "... r, nor of a pre-eternal generation; for the word \"to-day,\" signifying a certain time, cannot denote pre-et ..."
-        ]
-      },
-      {
-        "target": "to-day",
-        "description": "Splittable word (rejoins to valid word 'today')",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": [
-          "... another place expresses it, \"The same yesterday, to-day, and for ever\"), \"the Lord God Almighty.\" I shal ..."
-        ]
-      },
-      {
-        "target": "Com-plutensis",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": [
-          "... , that neither in any Greek edition (but only the Com-plutensis) nor in the Syriac the word\" God\" is found But su ..."
-        ]
-      },
-      {
-        "target": "rup-turam",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": [
-          "... icari volunt Hebraei, ut per mem aperture in fine rup-turam.\" Perhaps sometimes they do so, but here some of ..."
-        ]
-      },
-      {
-        "target": "paralo-gisms",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Examination.",
-        "contexts": [
-          "... for his own conviction and scattering of all his paralo-gisms and sophistical insinuations, running through the ..."
-        ]
-      },
-      {
-        "target": "self-same",
-        "description": "Splittable word (rejoins to valid word 'selfsame')",
-        "chapter": "Examination.",
-        "contexts": [
-          "... on 2:29. And he imparts of his own fullness, \"the self-same Spirit dividing to every man severally as he will ..."
-        ]
-      },
-      {
-        "target": "master-piece",
-        "description": "Splittable word (rejoins to valid word 'masterpiece')",
-        "chapter": "Mr Biddle's Sixth Chapter Considered.",
-        "contexts": [
-          "... of Christ have looked upon that book as the main master-piece of the adversaries, and have made it their busine ..."
-        ]
-      },
-      {
-        "target": "non-performance",
-        "description": "Splittable word (rejoins to valid word 'nonperformance')",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": [
-          "... His next question, discovering the danger of the non-performance of this duty of yielding divine honor and worship ...",
-          "... ause to exclude any from being Christians for the non-performance of that which himself dares not affirm that they ..."
-        ]
-      },
-      {
-        "target": "blood-shedding",
-        "description": "Splittable word (rejoins to valid word 'bloodshedding')",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": [
-          "... is not intended that faith fixes on his blood or blood-shedding, or on him as shedding his blood, as the prime ob ..."
-        ]
-      },
-      {
-        "target": "in-being",
-        "description": "Splittable word (rejoins to valid word 'inbeing')",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": [
-          "... on that the eternal persons have in the manner of in-being in the same essence, which also is the object of ..."
-        ]
-      },
-      {
-        "target": "under-age",
-        "description": "Splittable word (rejoins to valid word 'underage')",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": [
-          "... s 9:10. They served the use of that people in the under-age condition wherein God was pleased to keep them. ..."
-        ]
-      },
-      {
-        "target": "to-day",
-        "description": "Splittable word (rejoins to valid word 'today')",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": [
-          "... ement. This is \"Jesus Christ, the same yesterday, to-day, and for ever.\" But they plead proof of Scriptur ..."
-        ]
-      },
-      {
-        "target": "pec-catum",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": [
-          "... osopher: [[BLOCKQUOTE]] \"Nemo prudens punit quia pec-catum est, sed ne peccetur: revocari enim praeterita no ..."
-        ]
-      },
-      {
-        "target": "intend-ment",
-        "description": "Splittable word (rejoins to valid word 'intendment')",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": [
-          "... and is evil to him that is punished, \u2014 yet if the intend-ment of God be not to revenge the evil past upon him i ..."
-        ]
-      },
-      {
-        "target": "pre-appointment",
-        "description": "Splittable word (rejoins to valid word 'preappointment')",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": [
-          "... them, Romans 11:33-37. 2. In respect of us, this pre-appointment of God was an act of grace, \u2014 that is, a sovereig ..."
-        ]
-      },
-      {
-        "target": "Soci-nians",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": [
-          "... ated in the effect and evidence of it. Nor do the Soci-nians themselves think that this was a full accomplishm ..."
-        ]
-      },
-      {
-        "target": "pre-tences",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": [
-          "... Ezra, Abrabanel, Lipman, with what weak and mean pre-tences, with what inconsistency as to the words of the t ..."
-        ]
-      },
-      {
-        "target": "nos-tro",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": [
-          "... to ipse vulneratus' (id est, male tractatus est) 'nos-tro crimine.' In nobis culpa fuit, non in ipso. Sic e ..."
-        ]
-      },
-      {
-        "target": "by-word",
-        "description": "Splittable word (rejoins to valid word 'byword')",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": [
-          "... ctors in the eye of the world, made a scorn and a by-word, men wagging the head and making mouths at him in ..."
-        ]
-      },
-      {
-        "target": "in-being",
-        "description": "Splittable word (rejoins to valid word 'inbeing')",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": [
-          "... punished, for, \u2014 1st . The worm is from the in-being and everlasting abiding of a man's own sin. That ..."
-        ]
-      },
-      {
-        "target": "day-time",
-        "description": "Splittable word (rejoins to valid word 'daytime')",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": [
-          "... cry for a while he says, \"O my God, I cry in the day-time, but thou hearest not,\" Psalm 22:2, until he give ..."
-        ]
-      },
-      {
-        "target": "serva-vero",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": [
-          "... t foede hunt porcum macto, ai pactum foederis non serva-vero; \" whence is that phrase of one in danger, \"Sto ..."
-        ]
-      },
-      {
-        "target": "blood-shedding",
-        "description": "Splittable word (rejoins to valid word 'bloodshedding')",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": [
-          "... s actually done and accomplished in the death and blood-shedding of Jesus Christ, Not as though we were all then a ..."
-        ]
-      },
-      {
-        "target": "non-payment",
-        "description": "Splittable word (rejoins to valid word 'nonpayment')",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": [
-          "... nsgressions.\" Debt makes men liable to prison for non-payment; and so doth sin (without satisfaction made) to t ..."
-        ]
-      },
-      {
-        "target": "osten-deret",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": [
-          "... s goes another way. Says he, \"In Christo, Deus ut osten-deret se veracem et fidelem esse, quod significant verb ..."
-        ]
-      },
-      {
-        "target": "blood-shedding",
-        "description": "Splittable word (rejoins to valid word 'bloodshedding')",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": [
-          "... [4.] This is all the effect here assigned to the blood-shedding of Jesus Christ, this is the redemption we have t ..."
-        ]
-      },
-      {
-        "target": "good-will",
-        "description": "Splittable word (rejoins to valid word 'goodwill')",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": [
-          "... , yet this hinders not but that, in his sovereign good-will and pleasure, he might purpose to recover us from ...",
-          "... reater evidence and argument of the love of God's good-will and pleasure in general than in sending his Son t ..."
-        ]
-      },
-      {
-        "target": "sur-misal",
-        "description": "Splittable word (rejoins to valid word 'surmisal')",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": [
-          "... ure him that he shall be saved. It is a most vain sur-misal, that as to that obedience which God requires of ..."
-        ]
-      },
-      {
-        "target": "us-ward",
-        "description": "Splittable word (rejoins to valid word 'usward')",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": [
-          "... d; which, as the apostle there informs us, is \"to us-ward,\" \u2014 that is, to believers, of whom he is speaking ..."
-        ]
-      },
-      {
-        "target": "to-morrow",
-        "description": "Splittable word (rejoins to valid word 'tomorrow')",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": [
-          "... ty! Will they not say, \"Let us eat and drink, for to-morrow we shall die?\" Down we lie of a season; God, it s ...",
-          "... providence, if he knows not what will befall me to-morrow? A. What is that to me? see you to that. Q. ..."
-        ]
-      },
-      {
-        "target": "blood-shedding",
-        "description": "Splittable word (rejoins to valid word 'bloodshedding')",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": [
-          "... o; there is no such use or fruit of his death and blood-shedding. Q. 29. If he neither suffered in our stead, ..."
-        ]
-      },
-      {
-        "target": "Antino-mianism",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... t of the Papists, should himself so freely impute Antino-mianism to others, an opinion which he esteems as bad, if ..."
-        ]
-      },
-      {
-        "target": "justifica-tionem",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... e Meisnerus fidem vocet cansam instrumentalem qua justifica-tionem (seu justitiam) apprehendamus seu recipiamus; pat ..."
-        ]
-      },
-      {
-        "target": "im-pulsivam",
-        "description": "Hyphenated word with unrecognized particles on both sides",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... justificationis coram Deo causam efficientem aut im-pulsivam esse affirmemus, sed tantummodo,\" etc. \u2014 Socin. J ..."
-        ]
-      },
-      {
-        "target": "Pater-familias",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... by Cicero in secundo [libro] de Inventione, 42: \"Pater-familias cum liberorum nihil haberet, uxorem autem haberae ..."
-        ]
-      },
-      {
-        "target": "nut-shell",
-        "description": "Splittable word (rejoins to valid word 'nutshell')",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... ing in them, so for my part I value them not at a nut-shell, properly so called. This being premised, his an ..."
-        ]
-      },
-      {
-        "target": "sub-dean",
-        "description": "Splittable word (rejoins to valid word 'subdean')",
-        "chapter": "Prefatory Note (A Review of the Annotations of Hugo Grotius)",
-        "contexts": [
-          "... ENRY HAMMOND, the chaplain of Charles I., and the sub-dean of Christ Church, Oxford, from which office he wa ..."
-        ]
-      },
-      {
-        "target": "death-bed",
-        "description": "Splittable word (rejoins to valid word 'deathbed')",
-        "chapter": "Prefatory Note (A Review of the Annotations of Hugo Grotius)",
-        "contexts": [
-          "... on certain expressions which fell from him on his death-bed, and partly on his Scholia on the Bible. Two volu ...",
-          "... sy between them; gives a different version of his death-bed utterances; and maintains that the posthumous Sch ..."
-        ]
-      },
-      {
-        "target": "Crel-lius",
-        "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... o modo auspicatus;\" yet herein he goes not beyond Crel-lius, who tells us, \"Mortem Christus subiit duplici ra ..."
-        ]
-      },
-      {
-        "target": "co-essential",
-        "description": "Splittable word (rejoins to valid word 'coessential')",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... lo with them, harped on, never once dreaming of a co-essential and hypostatical Word of God, though the word \u1f51\u03c0\u03cc ..."
-        ]
-      },
-      {
-        "target": "Me-lancthon",
-        "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... out the Trinity, from some expressions of Luther, Me-lancthon, Calvin, and others; but as to Calvin's expositio ..."
-        ]
-      },
-      {
-        "target": "sup-plice",
-        "description": "Splittable word (rejoins to valid word 'supplice')",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... eiam. Nunc quum aliud possim nihil, Dominum Jesum sup-plice animo veneror, ut tibl aliisque, pietatem promove ..."
-        ]
-      }
-    ],
+    "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [
       {
-        "target": "e  )",
+        "target": "e )",
         "description": "Spaced closing parenthesis",
         "chapter": "The Heads and Governors of the Colleges and Halls,",
         "contexts": [
@@ -517,67 +14,11 @@
         ]
       },
       {
-        "target": "Christ ,",
+        "target": "True ,",
         "description": "Spaced punctuation (space before character)",
         "chapter": "The Preface to the Reader.",
         "contexts": [
-          "... lain of the carnal apprehensions of a kingdom of Christ , which too many amongst ourselves have filled thei ..."
-        ]
-      },
-      {
-        "target": "sin ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... d obnoxious to death, that there was no original sin , that Christ was not a high-priest on the earth, ..."
-        ]
-      },
-      {
-        "target": "day ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... be utterly confined and annihilated at the last day , with the rest of his opinions, which afterward he ..."
-        ]
-      },
-      {
-        "target": "True  ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... God blessed for ever, and the Socinians tell us, \"True , but he is a God by office , not by nature,\" i ..."
-        ]
-      },
-      {
-        "target": "office ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": [
-          "... Socinians tell us, \"True , but he is a God by office , not by nature,\" is it not lawful for us to say, ..."
-        ]
-      },
-      {
-        "target": "Ehejeh ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... hat God that revealed himself by Moses, Jehovah, Ehejeh , it doth not appear that ever they entertained in ..."
-        ]
-      },
-      {
-        "target": "numen ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... ntertained in their thoughts any thing but purum numen , a most simple, spiritual, eternal Being, as I sha ..."
-        ]
-      },
-      {
-        "target": "one ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... res, not only to be the rule, but the only one , of walking with God. If you take any others into ..."
+          "... God blessed for ever, and the Socinians tell us, \"True , but he is a God by office, not by nature,\" is it ..."
         ]
       },
       {
@@ -585,7 +26,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Mr Biddle's Preface Briefly Examined.",
         "contexts": [
-          "... 's being our surety, of Christ's paying our debt, of .our sins iraFated to Christ, of Christ's righteous ..."
+          "... 's being our surety, of Christ's paying our debt, of .our sins imputed to Christ, of Christ's righteousn ..."
         ]
       },
       {
@@ -597,59 +38,35 @@
         ]
       },
       {
-        "target": "is  ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
+        "target": "( 5",
+        "description": "Spaced opening parenthesis",
+        "chapter": "Chapter 4.",
         "contexts": [
-          "... The conclusion which Mr B. guides unto from hence is , that God knew not that which he inquired after, ..."
+          "... After thy hardness,\" etc. In the place of Ezekiel ( 5:13; chap. 5:13) mentioned by Mr B., the Lord tell ..."
         ]
       },
       {
-        "target": "present ,",
+        "target": "is ,",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
+        "chapter": "Chapter 5.",
         "contexts": [
-          "... e of man, they conclude him not to know things present , the frame of the heart of any man in the world to ..."
+          "... The conclusion which Mr B. guides unto from hence is , that God knew not that which he inquired after, a ..."
         ]
       },
       {
-        "target": "also  .",
+        "target": "also .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
+        "chapter": "Chapter 5.",
         "contexts": [
-          "... th in respect of the effect and of its causes also . Such was the soldier's piercing of the side of C ..."
+          "... t both in respect of the effect and of its causes also . Such was the soldier's piercing of the side of Ch ..."
         ]
       },
       {
-        "target": "dead ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Examination.",
-        "contexts": [
-          "... of the world,\" John 1:29. 2. In whom all are dead , and in whom they have contracted the guilt of dea ..."
-        ]
-      },
-      {
-        "target": "ante ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Examination.",
-        "contexts": [
-          "... ingly or exclusively to actual sins, not a parte ante , or from the causes of it, but from its effects. T ..."
-        ]
-      },
-      {
-        "target": "priori ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Examination.",
-        "contexts": [
-          "... titutive cause of the sonship of Jesus Christ, a priori , is in his participation of the divine nature, and ..."
-        ]
-      },
-      {
-        "target": "1  .",
+        "target": "1 .",
         "description": "Spaced period (space before period)",
         "chapter": "Examination.",
         "contexts": [
-          "... . lays at the bottom of this appellation, are, \u2014 1 . His birth of the Virgin, from Luke 1:30-35. 2. ..."
+          "... B. lays at the bottom of this appellation, are, \u2014 1 . His birth of the Virgin, from Luke 1:30-35. 2. H ..."
         ]
       },
       {
@@ -661,33 +78,17 @@
         ]
       },
       {
-        "target": ",,",
-        "description": "Duplicate comma",
-        "chapter": "Examination.",
-        "contexts": [
-          "... he) whereby Christ is in the Scripture \u03ba\u03b1\u03c4 \u1f10\u03be\u03bf\u03c7\u1f74\u03bd,, called the \"Son of God,\" is in that as man he was ..."
-        ]
-      },
-      {
         "target": "came ,",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... said in the next verse, which expounds this, \"He came ,\u03b5\u1f30\u03c2 \u03c4\u1f70 \u1f34\u03b4\u03b9\u03b1,\" \"to his own,\" for then \"his own,\" \u03bf\u1f31 ..."
         ]
       },
       {
-        "target": ",,",
-        "description": "Duplicate comma",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": [
-          "... he Virgin; \u2014 which if it be disproved, they do not,, they cannot, deny but that it must be on the acco ..."
-        ]
-      },
-      {
         "target": "m  )",
         "description": "Spaced closing parenthesis",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... holar as the world enjoyed in his days from atheism ) we proceed. He that was in the beginning before ..."
         ]
@@ -695,49 +96,41 @@
       {
         "target": "disobedient .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
+        "chapter": "Chapter 9.",
         "contexts": [
           "... d unto the spirits in prison, which sometime were disobedient . . . . . in the days of Noah.\" He who was in the d ..."
         ]
       },
       {
-        "target": "2  .",
+        "target": "2 .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
+        "chapter": "Chapter 11.",
         "contexts": [
-          "... t describes him in his divine nature and being. 2 . To translate out of one condition into another ..."
+          "... ut describes him in his divine nature and being. 2 . To translate out of one condition into another is ..."
         ]
       },
       {
-        "target": "ejus  ;",
+        "target": "ejus ;",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 12 - All-ruling and disposing providence assigned unto Christ, and his eternal Godhead ...",
+        "chapter": "Chapter 12.",
         "contexts": [
-          "... vidisse gloriam Christi, sicut Abrahamus diem ejus ;\" \u2014 \"Isaiah saw his glory, as Abraham saw his da ..."
+          "... ias vidisse gloriam Christi, sicut Abrahamus diem ejus ;\" \u2014 \"Isaiah saw his glory, as Abraham saw his day. ..."
         ]
       },
       {
-        "target": "est  ,",
+        "target": "est ,",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
+        "chapter": "Chapter 13.",
         "contexts": [
-          "... retation of. \"He took the seed of Abraham.\" \" Id est , Id agit ut vos Hebroaeos liberet a peccatis et ..."
+          "... pretation of. \"He took the seed of Abraham.\" \"Id est , Id agit ut vos Hebroaeos liberet a peccatis et me ..."
         ]
       },
       {
-        "target": "death ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": [
-          "... he apostle is about the undertaking of Christ by death , and his being fitted thereunto by partaking of f ..."
-        ]
-      },
-      {
-        "target": "office  .",
+        "target": "office .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
+        "chapter": "Chapter 14.",
         "contexts": [
-          "... ed in that and the following verses, and not his office . 2. The title given to God, whose image he is, ..."
+          "... bed in that and the following verses, and not his office . 2. The title given to God, whose image he is, \"T ..."
         ]
       },
       {
@@ -749,17 +142,9 @@
         ]
       },
       {
-        "target": "heard ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": [
-          "... hat it was SAID to THEM OF OLD TIME;\" \u2014 \"Ye have heard ,\" not. \"Ye have read.\" \"Ye have heard it of th ..."
-        ]
-      },
-      {
         "target": "m  )",
         "description": "Spaced closing parenthesis",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
+        "chapter": "Chapter 18.",
         "contexts": [
           "... indeed, a kind of modest and subtile Mohammedanism ), of Christ's seeing God, as did Moses, seems to b ..."
         ]
@@ -767,17 +152,17 @@
       {
         "target": "confess .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
+        "chapter": "Chapter 19.",
         "contexts": [
           "... tterly impossible and contradictory to itself. We confess .that there be most weighty causes why Christ shoul ..."
         ]
       },
       {
-        "target": "Ans   .",
+        "target": "Ans .",
         "description": "Spaced period (space before period)",
         "chapter": "Mr Biddle's Eleventh Chapter Examined.",
         "contexts": [
-          "... down on the right hand of the Majesty on high.\" Ans . That Christ is a high priest there also we grant ..."
+          "... down on the right hand of the Majesty on high.\" Ans . That Christ is a high priest there also we grant; ..."
         ]
       },
       {
@@ -797,17 +182,17 @@
         ]
       },
       {
-        "target": "2dly   .",
+        "target": "2dly .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
+        "chapter": "Chapter 22.",
         "contexts": [
-          "... rincipally to the person, God-man, who offered. 2dly . The free will of his human nature was in it al ..."
+          "... principally to the person, God-man, who offered. 2dly . The free will of his human nature was in it also; ..."
         ]
       },
       {
         "target": "comeliness ;",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
+        "chapter": "Chapter 25.",
         "contexts": [
           "... at Anathoth, a poor village. 'He hath no form nor comeliness ;' \u2014 He shall be heavy and sad. 'And when we shall ..."
         ]
@@ -815,15 +200,15 @@
       {
         "target": "the .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
+        "chapter": "Chapter 25.",
         "contexts": [
           "... , and treading-on of every one; yet, preserved by the .providence of God, under whose eye and before whom ..."
         ]
       },
       {
-        "target": "t  )",
+        "target": "t )",
         "description": "Spaced closing parenthesis",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
+        "chapter": "Chapter 25.",
         "contexts": [
           "... ning his dispute with a learned Jew on that subject ), yet it appears that by this they are confessedly ..."
         ]
@@ -831,31 +216,31 @@
       {
         "target": "two .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
+        "chapter": "Chapter 26.",
         "contexts": [
           "... s comprehending his punishment, may be considered two .ways: 1. In itself; 2. In reference to the law. ..."
         ]
       },
       {
-        "target": "1st   .",
+        "target": "1st .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
+        "chapter": "Chapter 26.",
         "contexts": [
-          "... of its relation to the persons punished, for, \u2014 1st . The worm is from the in-being and everlasting ab ..."
+          "... of its relation to the persons punished, for, \u2014 1st . The worm is from the in-being and everlasting abi ..."
         ]
       },
       {
-        "target": "2dly   .",
+        "target": "2dly .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
+        "chapter": "Chapter 26.",
         "contexts": [
-          "... of God against themselves about their own sin. 2dly . That this worm never dies, that this fire can ne ..."
+          "... h of God against themselves about their own sin. 2dly . That this worm never dies, that this fire can nev ..."
         ]
       },
       {
         "target": "name .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
+        "chapter": "Chapter 26.",
         "contexts": [
           "... give occasion of blaspheming the holy and blessed name .of the Son of God. Vaninus, that great atheist, w ..."
         ]
@@ -863,23 +248,23 @@
       {
         "target": "..",
         "description": "Duplicate period (double dot)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
+        "chapter": "Chapter 27.",
         "contexts": [
           "... aled, though revealed in expressions of doing them.. These things being premised, I proceed to manifes ..."
         ]
       },
       {
-        "target": "A   .",
+        "target": "A .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
+        "chapter": "Chapter 28.",
         "contexts": [
-          "... which witness that we are redeemed of Christ? A . It is hence evident that satisfaction cannot be ..."
+          "... ies which witness that we are redeemed of Christ? A . It is hence evident that satisfaction cannot be c ..."
         ]
       },
       {
         "target": "spiritual .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
+        "chapter": "Chapter 28.",
         "contexts": [
           "... l, temporal deliverances; which yet doth not make spiritual .redemption to be improper, nay, rather the other i ..."
         ]
@@ -887,845 +272,148 @@
       {
         "target": "there .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
+        "chapter": "Chapter 31.",
         "contexts": [
           "... tention spoken of is peculiar and distinguishing, there .is express mention of another sort of men who are ..."
         ]
       },
       {
-        "target": "fieri  ,",
+        "target": "fieri ,",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
+        "chapter": "Chapter 33.",
         "contexts": [
-          "... in us; or, 2. Such as mention a perfection in \"fieri , \" but not in \"facto esse,\" as we speak, \u2014 a pre ..."
+          "... ty in us; or, 2. Such as mention a perfection in \"fieri , \" but not in \"facto esse,\" as we speak, \u2014 a press ..."
         ]
       },
       {
         "target": "exact .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
+        "chapter": "Chapter 33.",
         "contexts": [
           "... s of their best performances to the spiritual and exact .perfection of the law of God (things which the pro ..."
         ]
       },
       {
-        "target": "us  .",
+        "target": "us .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
+        "chapter": "Chapter 33.",
         "contexts": [
-          "... ie and deceive ourselves, and the truth is not in us . \" He adds: \u2014 Q. Have you not examples of the ..."
+          "... ie and deceive ourselves, and the truth is not in us . \" He adds: \u2014 Q. Have you not examples of the choi ..."
         ]
       },
       {
         "target": "law .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
+        "chapter": "Chapter 35.",
         "contexts": [
-          "... ed in our stead, nor underwent the curse of the law .for us, nor satisfied justice by making reconcilia ..."
+          "... ered in our stead, nor underwent the curse of the law .for us, nor satisfied justice by making reconcilia ..."
         ]
       },
       {
-        "target": "not  ,",
+        "target": "not ,",
         "description": "Spaced punctuation (space before character)",
         "chapter": "Of the Death of Christ, and of Justification:",
         "contexts": [
-          "... earance, which in their own proper place they had not , or gathering up their concessions to the adversa ..."
+          "... earance, which in their own proper place they had not , or gathering up their concessions to the adversar ..."
         ]
       },
       {
-        "target": "semel ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... stification than they that say it is simul and semel , or than I, whom Mr Cr. blames for it, \u2014 and so th ..."
-        ]
-      },
-      {
-        "target": "foedere ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... can be extended unto is, that they have it ex foedere , not reality, for the subject of it I place else ..."
-        ]
-      },
-      {
-        "target": "jus ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... jus and its application. For the description of jus , Mr B. relies on Grotius; and something also he me ...",
-          "... nning both of the Institutions and Digests about jus , and those also which they handle under the head \" ...",
-          "... wing what is jus in general, and what is their jus , and where fixed. 2. He questions the anteceden ..."
-        ]
-      },
-      {
-        "target": "facultas ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... right by me intended. He tells us, indeed, that facultas , which the lawyers call sui , is that which prope ..."
-        ]
-      },
-      {
-        "target": "sui ,",
-        "description": "Spaced punctuation (space before character)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... indeed, that facultas , which the lawyers call sui , is that which properly and strictly he intends to ..."
-        ]
-      },
-      {
-        "target": "jus  .",
+        "target": "jus .",
         "description": "Spaced period (space before period)",
         "chapter": "Of the Death of Christ, and of Justification:",
         "contexts": [
-          "... t which properly and strictly he intends to call jus . But the other member of the distinction he terms ...",
-          "... e justum, yet they may not be subjects of this jus . To this I have answered by showing what is jus ..."
+          "... at which properly and strictly he intends to call jus . But the other member of the distinction he terms ...",
+          "... t be justum, yet they may not be subjects of this jus . To this I have answered by showing what is jus in ..."
         ]
       },
       {
-        "target": "Ans  .",
-        "description": "Spaced period (space before period)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... procured for us finaliter, not subjective. \" Ans . They are procured for us objective, are granted ..."
-        ]
-      },
-      {
-        "target": "necessaria  .",
+        "target": "necessaria .",
         "description": "Spaced period (space before period)",
         "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
         "contexts": [
-          "... bus vitam det, et quae alia ad istiusmodi labores necessaria . Mihi ad juvandam communem Christianismi causam, ..."
+          "... bus vitam det, et quae alia ad istiusmodi labores necessaria . Mihi ad juvandam communem Christianismi causam, u ..."
         ]
       }
     ],
     "OCR & Bracket Residues": [
       {
-        "target": "B[AXTER",
+        "target": "say)millions",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "... herefore it is no wonder if, among so many (I may say)millions of persons as in those days there were that fell ..."
+        ]
+      },
+      {
+        "target": "know]edge",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "... ainly and infallibly, on the account of their own know]edge of them, gods they are, and gods they shall be es ..."
+        ]
+      },
+      {
+        "target": "say)we",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Chapter 30.",
+        "contexts": [
+          "... nfirmation of the truth contended for. What (they say)we pretend from reason (though indeed it be from inn ..."
+        ]
+      },
+      {
+        "target": "part)by",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "... Belli et Pacis,' in the sections transcribed (in part)by Mr B. and some others, expresses, in his way, the ..."
+        ]
+      },
+      {
+        "target": "myself(with",
         "description": "OCR residue containing stray opening bracket/paren",
         "chapter": "Of the Death of Christ, and of Justification:",
         "contexts": [
-          "... ERED VINDICATED FROM THE ANIMADVERSIONS OF MR. R. B[AXTER.] OF this task I would complain if I durst, bu ..."
+          "... rld, as to write books to give them an account of myself(with whom they very little trouble their thoughts); to ..."
         ]
       }
     ],
     "Mixed-Case Capitalization Errors": [
       {
-        "target": "iraFated",
+        "target": "inScripturis",
         "description": "Mixed-case capitalization error",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "chapter": "The Preface to the Reader.",
         "contexts": [
-          "... surety, of Christ's paying our debt, of .our sins iraFated to Christ, of Christ's righteousness imputed to u ..."
+          "... unte aetate sua in arte dialectica lusit, et nunc inScripturis sanctis insanit:\" and in his epistle (which is to ..."
+        ]
+      },
+      {
+        "target": "chimerA",
+        "description": "Mixed-case capitalization error",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "... of necessity make a monster of him, and worship a chimerA. Nay, the Scripture plainly interprets itself as ..."
+        ]
+      },
+      {
+        "target": "InsTitus",
+        "description": "Mixed-case capitalization error",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... us Smalcius against Smiglecius, cap. 26; Ostorod. InsTitus cap. 7, with the rest of them. He, then, who was ..."
         ]
       }
     ],
-    "Unresolved Citation References": [
-      {
-        "target": "lib. 1:cap. 2",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": [
-          "... , verum hoc sibi placere, ut Jupiter nominetur, \" lib. 1:cap. 2.); which, as Servius on the place observes, he ha ..."
-        ]
-      },
-      {
-        "target": "lib. 3",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": [
-          "... om you have a large account in Epiphanius, tom. 1:lib. 3, Haer. 70; as also in Theodoret, Lib. 4 Ecclesias ..."
-        ]
-      },
-      {
-        "target": "Haer. 70",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": [
-          "... ave a large account in Epiphanius, tom. 1:lib. 3, Haer. 70; as also in Theodoret, Lib. 4 Ecclesiastes Hist., ..."
-        ]
-      },
-      {
-        "target": "lib. 1",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": [
-          "... a heathen, in the person of Cotta (De Nat. Deer. lib. 1:6), against Velleius the Epicurean, the Epicurean ...",
-          "... illo nulla pars extra animum. \" Natural. Quaest. lib. 1. Praefat. It would be burdensome, if not endless, ..."
-        ]
-      },
-      {
-        "target": "lib. 3",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Examination.",
-        "contexts": [
-          "... t up with that distich of Greg. Naz. Sanct. Spir. lib. 3: \u2014 \u03a0\u03ac\u03bd\u03c4\u03b1 \u03bc\u1f72\u03bd \u03b1\u1f30\u1f72\u03bd \u1f04\u03c1\u03b9\u03c3\u03c4\u03b1 \u03b8\u03b5\u03bf\u03c0\u03b9\u03b5\u03c0\u1f72\u03c2 \u1f14\u03c1\u03b3\u03b1 \u03c4\u03b5\u03bb\u03b5\u03af\u03c3\u03b8\u03c9 ..."
-        ]
-      },
-      {
-        "target": "Ep. ad Niemojev. 1",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": [
-          "... otice of. Six years after, as himself telleth us (Ep. ad Niemojev. 1 ), he wrote his answer to Volanus, wherein he co ..."
-        ]
-      },
-      {
-        "target": "Ep. 190",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": [
-          "... into the same abomination; of whom says Bernard, Ep. 190, [[BLOCKQUOTE]] \" Habemus in Francia novum de ve ..."
-        ]
-      },
-      {
-        "target": "lib. 20",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": [
-          "... d so is that expression explained by Ulpian, Dig. lib. 20: \" Capitalem fraudem admittere est tale aliquid d ..."
-        ]
-      },
-      {
-        "target": "lib. 1",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": [
-          "... ption of redemption, \"De Jesu Christo Servatore,\" lib. 1 part. 2 cap. 1-3. To remove these difficulties ( ...",
-          "... s purpose may be taken notice of, Lib. de Servat. lib. 1 part. 2 cap. 2: \u2014 Nothing is wanting in this deli ...",
-          "... ti sumus, sed gratis per gratiam Dei,\" De Servat. lib. 1 part. 2 cap. 2. (2.) The end on the part of God ..."
-        ]
-      },
-      {
-        "target": "lib. 1 cap. 1",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... this definition, as Conanus, Comment. Jur. Civil. lib. 1 cap. 1:That which is oequum is the subject of it. So the ..."
-        ]
-      },
-      {
-        "target": "lib. 2 cap. i",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... tanquam comes et adjutrix,\" Comment. Jut. Civil. lib. 2 cap. i., which obligation is the foundation of action, i ..."
-        ]
-      },
-      {
-        "target": "lib. 1",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... this definition, as Conanus, Comment. Jur. Civil. lib. 1 cap. 1:That which is oequum is the subject of it. ...",
-          "... een jus utendi, fruendi, and jus obligationis, D. lib. 1:1, 8, which he could not do if all and every righ ...",
-          "... inions are repeated by Menochius de Arbit. Judic. lib. 1 qu. 16, 2. And such a jus as this ariseth \"ex ..."
-        ]
-      },
-      {
-        "target": "lib. 11",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... , I question not. Again, consider that of Paulus, lib. 11 ad Edict. D.D. de verb. signif, Titus 16: \"Prince ..."
-        ]
-      },
-      {
-        "target": "lib. 4",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. Thes. Franz. di ...",
-          "... eneficium consequamur. \" \u2014 Volkel, de Vera Relig. lib. 4 cap. 3 p. 181; Smalc. Refut. Thes. Franz. disp. 4 ...",
-          "... cationis nostrae esse. \" \u2014 Volkel, de Vera Relig. lib. 4 cap. 3 p. 181. \" Quod vero ad nos pertinet, non a ..."
-        ]
-      },
-      {
-        "target": "lib. 3",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": [
-          "... bono jure atque honore:\" Bachid. and Paulus, in lib. 3 ff. de servitut, urb. praed., \"Ne jus sit vicino ...",
-          "... that section, \"Quibus modis tollitur obligatio,\" lib. 3 Instit., will evince this sufficiently. The title ..."
-        ]
-      },
-      {
-        "target": "lib. 3 cap. 15",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... \u1f26 \u03bf\u1f50 \u03bc\u03ad\u03b3\u03b1 \u1f26 \u03bf\u1f50\u03ba \u03b1\u1f30\u03c3\u03c7\u03c1\u1f78\u03bd \u1f26 \u03bf\u1f50\u03ba \u1f14\u03c7\u03bf\u03bd \u03bc\u03ad\u03b3\u03b5\u03b8\u03bf\u03c2 (Rhet. lib. 3 cap. 15); all which, in a plain matter of fact, may be re ..."
-        ]
-      },
-      {
-        "target": "lib. 2 cap. 6",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... ferre, significare,\" Socin. de Jes. Christ. Serv. lib. 2 cap. 6. What difference there is between the design of ..."
-        ]
-      },
-      {
-        "target": "lib. 3 cap. 47",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... entam sanguinis profusionem con-tinct,\" De Relig. lib. 3 cap. 47, p. 145. And again: \"Hinc colligitur solam Christ ..."
-        ]
-      },
-      {
-        "target": "lib. 1",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": [
-          "... eak in our hearts, says Damascen. De Orthod. Fid. lib. 1 cap 18: so Psalm 14:1, \u05e0\u05b8\u05d1\u05b8\u05dc \u05d1\u05b0\u05bc\u05dc\u05b4\u05d1\u05bc\u05d5\u05b9 \u05d0\u05b8\u05de\u05b7\u05e8. Thi ..."
-        ]
-      }
-    ],
+    "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [
       {
-        "target": "6. ... 13.",
-        "description": "List sequence jump (skipped from 6 to 13)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 51.",
-        "description": "List sequence jump (skipped from 13 to 51)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 366.",
-        "description": "List sequence jump (skipped from 15 to 366)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "49. ... 403.",
-        "description": "List sequence jump (skipped from 49 to 403)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 9.",
-        "description": "List sequence jump (skipped from 1 to 9)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 17.",
-        "description": "List sequence jump (skipped from 2 to 17)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 28.",
-        "description": "List sequence jump (skipped from 5 to 28)",
-        "chapter": "The Preface to the Reader.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 28.",
-        "description": "List sequence jump (skipped from 4 to 28)",
-        "chapter": "Mr Biddle's Preface to His Catechism.",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 27.",
-        "description": "List sequence jump (skipped from 13 to 27)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 14.",
-        "description": "List sequence jump (skipped from 5 to 14)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 18.",
-        "description": "List sequence jump (skipped from 14 to 18)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "Chapter 2.",
         "contexts": []
       },
       {
         "target": "2. ... 6.",
         "description": "List sequence jump (skipped from 2 to 6)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 11.",
-        "description": "List sequence jump (skipped from 6 to 11)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 19.",
-        "description": "List sequence jump (skipped from 11 to 19)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "19. ... 200.",
-        "description": "List sequence jump (skipped from 19 to 200)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 27.",
-        "description": "List sequence jump (skipped from 11 to 27)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 48.",
-        "description": "List sequence jump (skipped from 10 to 48)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 48.",
-        "description": "List sequence jump (skipped from 11 to 48)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 726.",
-        "description": "List sequence jump (skipped from 4 to 726)",
-        "chapter": "Chapter 2 - Of the nature of God.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 26.",
-        "description": "List sequence jump (skipped from 2 to 26)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 23.",
-        "description": "List sequence jump (skipped from 3 to 23)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 25.",
-        "description": "List sequence jump (skipped from 18 to 25)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 26.",
-        "description": "List sequence jump (skipped from 4 to 26)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 7.",
-        "description": "List sequence jump (skipped from 1 to 7)",
-        "chapter": "Chapter 3 - Of the drape and bodily visible figure of God.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 17.",
-        "description": "List sequence jump (skipped from 1 to 17)",
-        "chapter": "Chapter 4 - Of the attribution of passions and affections, anger, fear, repentance, unto God \u2014...",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 26.",
-        "description": "List sequence jump (skipped from 17 to 26)",
-        "chapter": "Chapter 4 - Of the attribution of passions and affections, anger, fear, repentance, unto God \u2014...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 14.",
-        "description": "List sequence jump (skipped from 2 to 14)",
-        "chapter": "Chapter 4 - Of the attribution of passions and affections, anger, fear, repentance, unto God \u2014...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 18.",
-        "description": "List sequence jump (skipped from 4 to 18)",
-        "chapter": "Chapter 4 - Of the attribution of passions and affections, anger, fear, repentance, unto God \u2014...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 27.",
-        "description": "List sequence jump (skipped from 6 to 27)",
-        "chapter": "Chapter 4 - Of the attribution of passions and affections, anger, fear, repentance, unto God \u2014...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 7.",
-        "description": "List sequence jump (skipped from 1 to 7)",
-        "chapter": "Chapter 4 - Of the attribution of passions and affections, anger, fear, repentance, unto God \u2014...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 6.",
-        "description": "List sequence jump (skipped from 3 to 6)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 30.",
-        "description": "List sequence jump (skipped from 3 to 30)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 31.",
-        "description": "List sequence jump (skipped from 5 to 31)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 23.",
-        "description": "List sequence jump (skipped from 3 to 23)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 39.",
-        "description": "List sequence jump (skipped from 7 to 39)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 20.",
-        "description": "List sequence jump (skipped from 11 to 20)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 14.",
-        "description": "List sequence jump (skipped from 5 to 14)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 28.",
-        "description": "List sequence jump (skipped from 14 to 28)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 3.",
-        "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 17.",
-        "description": "List sequence jump (skipped from 2 to 17)",
-        "chapter": "Chapter 5 - Of God's prescience or foreknowledge.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 19.",
-        "description": "List sequence jump (skipped from 7 to 19)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 22.",
-        "description": "List sequence jump (skipped from 7 to 22)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 19.",
-        "description": "List sequence jump (skipped from 17 to 19)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 19.",
-        "description": "List sequence jump (skipped from 2 to 19)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 15.",
-        "description": "List sequence jump (skipped from 4 to 15)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 23.",
-        "description": "List sequence jump (skipped from 15 to 23)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 16.",
-        "description": "List sequence jump (skipped from 3 to 16)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 27.",
-        "description": "List sequence jump (skipped from 1 to 27)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "27. ... 31.",
-        "description": "List sequence jump (skipped from 27 to 31)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 29.",
-        "description": "List sequence jump (skipped from 6 to 29)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 17.",
-        "description": "List sequence jump (skipped from 2 to 17)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 23.",
-        "description": "List sequence jump (skipped from 12 to 23)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 23.",
-        "description": "List sequence jump (skipped from 3 to 23)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 29.",
-        "description": "List sequence jump (skipped from 23 to 29)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 3.",
-        "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 22.",
-        "description": "List sequence jump (skipped from 3 to 22)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 36.",
-        "description": "List sequence jump (skipped from 3 to 36)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 14.",
-        "description": "List sequence jump (skipped from 4 to 14)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 18.",
-        "description": "List sequence jump (skipped from 5 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 20.",
-        "description": "List sequence jump (skipped from 6 to 20)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 7.",
-        "description": "List sequence jump (skipped from 5 to 7)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 21.",
-        "description": "List sequence jump (skipped from 1 to 21)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 23.",
-        "description": "List sequence jump (skipped from 21 to 23)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 12.",
-        "description": "List sequence jump (skipped from 6 to 12)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 15.",
-        "description": "List sequence jump (skipped from 7 to 15)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 23.",
-        "description": "List sequence jump (skipped from 1 to 23)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 44.",
-        "description": "List sequence jump (skipped from 2 to 44)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 29.",
-        "description": "List sequence jump (skipped from 1 to 29)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 23.",
-        "description": "List sequence jump (skipped from 2 to 23)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 10.",
-        "description": "List sequence jump (skipped from 4 to 10)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 16.",
-        "description": "List sequence jump (skipped from 5 to 16)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 26.",
-        "description": "List sequence jump (skipped from 2 to 26)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 12.",
-        "description": "List sequence jump (skipped from 3 to 12)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 35.",
-        "description": "List sequence jump (skipped from 6 to 35)",
-        "chapter": "Mr Biddle's Fourth Chapter.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 36.",
-        "description": "List sequence jump (skipped from 9 to 36)",
-        "chapter": "Mr Biddle's Fourth Chapter.",
-        "contexts": []
-      },
-      {
-        "target": "36. ... 38.",
-        "description": "List sequence jump (skipped from 36 to 38)",
-        "chapter": "Mr Biddle's Fourth Chapter.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 29.",
-        "description": "List sequence jump (skipped from 10 to 29)",
-        "chapter": "Mr Biddle's Fourth Chapter.",
-        "contexts": []
-      },
-      {
-        "target": "29. ... 36.",
-        "description": "List sequence jump (skipped from 29 to 36)",
-        "chapter": "Mr Biddle's Fourth Chapter.",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 28.",
-        "description": "List sequence jump (skipped from 23 to 28)",
-        "chapter": "Mr Biddle's Fourth Chapter.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 9.",
-        "description": "List sequence jump (skipped from 4 to 9)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 49.",
-        "description": "List sequence jump (skipped from 11 to 49)",
         "chapter": "Examination.",
         "contexts": []
       },
@@ -1736,2565 +424,69 @@
         "contexts": []
       },
       {
-        "target": "9. ... 35.",
-        "description": "List sequence jump (skipped from 9 to 35)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 36.",
-        "description": "List sequence jump (skipped from 2 to 36)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 18.",
-        "description": "List sequence jump (skipped from 3 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 29.",
-        "description": "List sequence jump (skipped from 4 to 29)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "29. ... 35.",
-        "description": "List sequence jump (skipped from 29 to 35)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 150.",
-        "description": "List sequence jump (skipped from 4 to 150)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "150. ... 158.",
-        "description": "List sequence jump (skipped from 150 to 158)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 69.",
-        "description": "List sequence jump (skipped from 1 to 69)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "20. ... 32.",
-        "description": "List sequence jump (skipped from 20 to 32)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 18.",
-        "description": "List sequence jump (skipped from 14 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 33.",
-        "description": "List sequence jump (skipped from 6 to 33)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 7.",
-        "description": "List sequence jump (skipped from 4 to 7)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 18.",
-        "description": "List sequence jump (skipped from 7 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 25.",
-        "description": "List sequence jump (skipped from 18 to 25)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "25. ... 31.",
-        "description": "List sequence jump (skipped from 25 to 31)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 15.",
-        "description": "List sequence jump (skipped from 3 to 15)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 36.",
-        "description": "List sequence jump (skipped from 18 to 36)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 9.",
-        "description": "List sequence jump (skipped from 7 to 9)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 58.",
-        "description": "List sequence jump (skipped from 2 to 58)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 35.",
-        "description": "List sequence jump (skipped from 4 to 35)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 35.",
-        "description": "List sequence jump (skipped from 1 to 35)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 32.",
-        "description": "List sequence jump (skipped from 2 to 32)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "28. ... 30.",
-        "description": "List sequence jump (skipped from 28 to 30)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "33. ... 39.",
-        "description": "List sequence jump (skipped from 33 to 39)",
-        "chapter": "Examination.",
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "Chapter 8.",
         "contexts": []
       },
       {
         "target": "2. ... 4.",
         "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 18.",
-        "description": "List sequence jump (skipped from 4 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 35.",
-        "description": "List sequence jump (skipped from 18 to 35)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 35.",
-        "description": "List sequence jump (skipped from 6 to 35)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 17.",
-        "description": "List sequence jump (skipped from 9 to 17)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 28.",
-        "description": "List sequence jump (skipped from 3 to 28)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 8.",
-        "description": "List sequence jump (skipped from 2 to 8)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 17.",
-        "description": "List sequence jump (skipped from 8 to 17)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 25.",
-        "description": "List sequence jump (skipped from 6 to 25)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 23.",
-        "description": "List sequence jump (skipped from 3 to 23)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 58.",
-        "description": "List sequence jump (skipped from 2 to 58)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 14.",
-        "description": "List sequence jump (skipped from 1 to 14)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 23.",
-        "description": "List sequence jump (skipped from 2 to 23)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 12.",
-        "description": "List sequence jump (skipped from 5 to 12)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 5.",
-        "description": "List sequence jump (skipped from 2 to 5)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 24.",
-        "description": "List sequence jump (skipped from 3 to 24)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 6.",
-        "description": "List sequence jump (skipped from 2 to 6)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 21.",
-        "description": "List sequence jump (skipped from 5 to 21)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 29.",
-        "description": "List sequence jump (skipped from 6 to 29)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "28. ... 67.",
-        "description": "List sequence jump (skipped from 28 to 67)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 58.",
-        "description": "List sequence jump (skipped from 5 to 58)",
-        "chapter": "Chapter 8 - An entrance into the examination of the Racovian Catechism in the business of the ...",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 23.",
-        "description": "List sequence jump (skipped from 9 to 23)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 9.",
-        "description": "List sequence jump (skipped from 3 to 9)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 12.",
-        "description": "List sequence jump (skipped from 9 to 12)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 17.",
-        "description": "List sequence jump (skipped from 4 to 17)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 42.",
-        "description": "List sequence jump (skipped from 5 to 42)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 33.",
-        "description": "List sequence jump (skipped from 2 to 33)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 18.",
-        "description": "List sequence jump (skipped from 5 to 18)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 8.",
-        "description": "List sequence jump (skipped from 3 to 8)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 7.",
-        "description": "List sequence jump (skipped from 5 to 7)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 30.",
-        "description": "List sequence jump (skipped from 1 to 30)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 29.",
-        "description": "List sequence jump (skipped from 2 to 29)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
+        "chapter": "Chapter 9.",
         "contexts": []
       },
       {
         "target": "1. ... 3.",
         "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 17.",
-        "description": "List sequence jump (skipped from 2 to 17)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
+        "chapter": "Chapter 10.",
         "contexts": []
       },
       {
         "target": "1. ... 4.",
         "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 16.",
-        "description": "List sequence jump (skipped from 6 to 16)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 14.",
-        "description": "List sequence jump (skipped from 7 to 14)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 47.",
-        "description": "List sequence jump (skipped from 8 to 47)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 24.",
-        "description": "List sequence jump (skipped from 6 to 24)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 6.",
-        "description": "List sequence jump (skipped from 3 to 6)",
-        "chapter": "Chapter 9 - The pre-eternity of Christ farther evinced \u2014 Sundry texts of Scripture vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 16.",
-        "description": "List sequence jump (skipped from 10 to 16)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 23.",
-        "description": "List sequence jump (skipped from 3 to 23)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 55.",
-        "description": "List sequence jump (skipped from 23 to 55)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 30.",
-        "description": "List sequence jump (skipped from 5 to 30)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 38.",
-        "description": "List sequence jump (skipped from 6 to 38)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 18.",
-        "description": "List sequence jump (skipped from 1 to 18)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 12.",
-        "description": "List sequence jump (skipped from 3 to 12)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 456.",
-        "description": "List sequence jump (skipped from 1 to 456)",
-        "chapter": "Chapter 10 - Of the names of God given unto Christ.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 10.",
-        "description": "List sequence jump (skipped from 2 to 10)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 18.",
-        "description": "List sequence jump (skipped from 10 to 18)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 24.",
-        "description": "List sequence jump (skipped from 3 to 24)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
+        "chapter": "Chapter 13.",
         "contexts": []
       },
       {
         "target": "1. ... 3.",
         "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
+        "chapter": "Chapter 14.",
         "contexts": []
       },
       {
         "target": "2. ... 4.",
         "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 10.",
-        "description": "List sequence jump (skipped from 5 to 10)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 32.",
-        "description": "List sequence jump (skipped from 10 to 32)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 20.",
-        "description": "List sequence jump (skipped from 2 to 20)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 7.",
-        "description": "List sequence jump (skipped from 5 to 7)",
-        "chapter": "Chapter 11 - Of the work of creation assigned to Jesus Christ, etc. \u2014 The confirmation of his e...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 9.",
-        "description": "List sequence jump (skipped from 3 to 9)",
-        "chapter": "Chapter 12 - All-ruling and disposing providence assigned unto Christ, and his eternal Godhead ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 41.",
-        "description": "List sequence jump (skipped from 5 to 41)",
-        "chapter": "Chapter 12 - All-ruling and disposing providence assigned unto Christ, and his eternal Godhead ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 26.",
-        "description": "List sequence jump (skipped from 1 to 26)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 12.",
-        "description": "List sequence jump (skipped from 5 to 12)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 14.",
-        "description": "List sequence jump (skipped from 6 to 14)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 12.",
-        "description": "List sequence jump (skipped from 1 to 12)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 26.",
-        "description": "List sequence jump (skipped from 3 to 26)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 14.",
-        "description": "List sequence jump (skipped from 1 to 14)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
+        "chapter": "Chapter 14.",
         "contexts": []
       },
       {
         "target": "2. ... 4.",
         "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 47.",
-        "description": "List sequence jump (skipped from 4 to 47)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 15.",
-        "description": "List sequence jump (skipped from 3 to 15)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 55.",
-        "description": "List sequence jump (skipped from 2 to 55)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 16.",
-        "description": "List sequence jump (skipped from 3 to 16)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 19.",
-        "description": "List sequence jump (skipped from 4 to 19)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "19. ... 34.",
-        "description": "List sequence jump (skipped from 19 to 34)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "22. ... 29.",
-        "description": "List sequence jump (skipped from 22 to 29)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 13.",
-        "description": "List sequence jump (skipped from 1 to 13)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
+        "chapter": "Chapter 19.",
         "contexts": []
       },
       {
         "target": "2. ... 14.",
         "description": "List sequence jump (skipped from 2 to 14)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
+        "chapter": "Chapter 19.",
         "contexts": []
       },
       {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 22.",
-        "description": "List sequence jump (skipped from 1 to 22)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 37.",
-        "description": "List sequence jump (skipped from 1 to 37)",
-        "chapter": "Chapter 13 - Of the incarnation of Christ, and his pre-existence thereunto.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 14.",
-        "description": "List sequence jump (skipped from 3 to 14)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 28.",
-        "description": "List sequence jump (skipped from 3 to 28)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 18.",
-        "description": "List sequence jump (skipped from 5 to 18)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 26.",
-        "description": "List sequence jump (skipped from 18 to 26)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 7.",
-        "description": "List sequence jump (skipped from 5 to 7)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 15.",
-        "description": "List sequence jump (skipped from 7 to 15)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 9.",
-        "description": "List sequence jump (skipped from 4 to 9)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 15.",
-        "description": "List sequence jump (skipped from 3 to 15)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 13.",
-        "description": "List sequence jump (skipped from 3 to 13)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 33.",
-        "description": "List sequence jump (skipped from 3 to 33)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 11.",
-        "description": "List sequence jump (skipped from 8 to 11)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 37.",
-        "description": "List sequence jump (skipped from 12 to 37)",
-        "chapter": "Chapter 14 - Sundry other testimonies given to the deity of Christ vindicated.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 11.",
-        "description": "List sequence jump (skipped from 4 to 11)",
-        "chapter": "Mr Biddle's Fifth Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 39.",
-        "description": "List sequence jump (skipped from 7 to 39)",
-        "chapter": "Mr Biddle's Fifth Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 32.",
-        "description": "List sequence jump (skipped from 14 to 32)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 13.",
-        "description": "List sequence jump (skipped from 6 to 13)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 30.",
-        "description": "List sequence jump (skipped from 13 to 30)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 18.",
-        "description": "List sequence jump (skipped from 11 to 18)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 11.",
-        "description": "List sequence jump (skipped from 4 to 11)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 19.",
-        "description": "List sequence jump (skipped from 6 to 19)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 16.",
-        "description": "List sequence jump (skipped from 7 to 16)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 19.",
-        "description": "List sequence jump (skipped from 8 to 19)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 22.",
-        "description": "List sequence jump (skipped from 4 to 22)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 9.",
-        "description": "List sequence jump (skipped from 1 to 9)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 17.",
-        "description": "List sequence jump (skipped from 4 to 17)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 20.",
-        "description": "List sequence jump (skipped from 1 to 20)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 21.",
-        "description": "List sequence jump (skipped from 11 to 21)",
-        "chapter": "Examination.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 21.",
-        "description": "List sequence jump (skipped from 5 to 21)",
-        "chapter": "Mr Biddle's Sixth Chapter Considered.",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 24.",
-        "description": "List sequence jump (skipped from 17 to 24)",
-        "chapter": "Chapter 17 - Of the mediation of Christ.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 22.",
-        "description": "List sequence jump (skipped from 18 to 22)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 18.",
-        "description": "List sequence jump (skipped from 1 to 18)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 20.",
-        "description": "List sequence jump (skipped from 3 to 20)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 12.",
-        "description": "List sequence jump (skipped from 2 to 12)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 9.",
-        "description": "List sequence jump (skipped from 4 to 9)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 40.",
-        "description": "List sequence jump (skipped from 8 to 40)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 34.",
-        "description": "List sequence jump (skipped from 2 to 34)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 40.",
-        "description": "List sequence jump (skipped from 4 to 40)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 26.",
-        "description": "List sequence jump (skipped from 5 to 26)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 32.",
-        "description": "List sequence jump (skipped from 1 to 32)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 10.",
-        "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 27.",
-        "description": "List sequence jump (skipped from 10 to 27)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 21.",
-        "description": "List sequence jump (skipped from 1 to 21)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 17.",
-        "description": "List sequence jump (skipped from 2 to 17)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 8.",
-        "description": "List sequence jump (skipped from 3 to 8)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 20.",
-        "description": "List sequence jump (skipped from 4 to 20)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 25.",
-        "description": "List sequence jump (skipped from 5 to 25)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 12.",
-        "description": "List sequence jump (skipped from 3 to 12)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 45.",
-        "description": "List sequence jump (skipped from 7 to 45)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 40.",
-        "description": "List sequence jump (skipped from 12 to 40)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 22.",
-        "description": "List sequence jump (skipped from 4 to 22)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 26.",
-        "description": "List sequence jump (skipped from 1 to 26)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 30.",
-        "description": "List sequence jump (skipped from 2 to 30)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 19.",
-        "description": "List sequence jump (skipped from 3 to 19)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 19.",
-        "description": "List sequence jump (skipped from 7 to 19)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 10.",
-        "description": "List sequence jump (skipped from 2 to 10)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 12.",
-        "description": "List sequence jump (skipped from 1 to 12)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 14.",
-        "description": "List sequence jump (skipped from 7 to 14)",
-        "chapter": "Chapter 18 - Of Christ's prophetical office",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 23.",
-        "description": "List sequence jump (skipped from 8 to 23)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 27.",
-        "description": "List sequence jump (skipped from 2 to 27)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 9.",
-        "description": "List sequence jump (skipped from 3 to 9)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 12.",
-        "description": "List sequence jump (skipped from 9 to 12)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 298.",
-        "description": "List sequence jump (skipped from 2 to 298)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 8.",
-        "description": "List sequence jump (skipped from 2 to 8)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 21.",
-        "description": "List sequence jump (skipped from 3 to 21)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 6.",
-        "description": "List sequence jump (skipped from 1 to 6)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 10.",
-        "description": "List sequence jump (skipped from 6 to 10)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 23.",
-        "description": "List sequence jump (skipped from 2 to 23)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "Chapter 30.",
         "contexts": []
       },
       {
         "target": "1. ... 3.",
         "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 28.",
-        "description": "List sequence jump (skipped from 4 to 28)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 7.",
-        "description": "List sequence jump (skipped from 5 to 7)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 35.",
-        "description": "List sequence jump (skipped from 2 to 35)",
-        "chapter": "Chapter 19 - Of the kingly office of Jesus Christ, and of the worship that is ascribed and due ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 69.",
-        "description": "List sequence jump (skipped from 1 to 69)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 16.",
-        "description": "List sequence jump (skipped from 2 to 16)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "16. ... 22.",
-        "description": "List sequence jump (skipped from 16 to 22)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 25.",
-        "description": "List sequence jump (skipped from 2 to 25)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 24.",
-        "description": "List sequence jump (skipped from 3 to 24)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 10.",
-        "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 26.",
-        "description": "List sequence jump (skipped from 10 to 26)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "26. ... 28.",
-        "description": "List sequence jump (skipped from 26 to 28)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 14.",
-        "description": "List sequence jump (skipped from 4 to 14)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 23.",
-        "description": "List sequence jump (skipped from 21 to 23)",
-        "chapter": "Chapter 21 - Of the death of Christ, the causes, ends, and fruits thereof, with an entrance int...",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 28.",
-        "description": "List sequence jump (skipped from 23 to 28)",
-        "chapter": "Chapter 21 - Of the death of Christ, the causes, ends, and fruits thereof, with an entrance int...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 9.",
-        "description": "List sequence jump (skipped from 1 to 9)",
-        "chapter": "Chapter 21 - Of the death of Christ, the causes, ends, and fruits thereof, with an entrance int...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 10.",
-        "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Chapter 21 - Of the death of Christ, the causes, ends, and fruits thereof, with an entrance int...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 31.",
-        "description": "List sequence jump (skipped from 4 to 31)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 9.",
-        "description": "List sequence jump (skipped from 6 to 9)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 21.",
-        "description": "List sequence jump (skipped from 9 to 21)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 30.",
-        "description": "List sequence jump (skipped from 21 to 30)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 7.",
-        "description": "List sequence jump (skipped from 4 to 7)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 10.",
-        "description": "List sequence jump (skipped from 7 to 10)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 13.",
-        "description": "List sequence jump (skipped from 9 to 13)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 12.",
-        "description": "List sequence jump (skipped from 6 to 12)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 15.",
-        "description": "List sequence jump (skipped from 12 to 15)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 28.",
-        "description": "List sequence jump (skipped from 3 to 28)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 12.",
-        "description": "List sequence jump (skipped from 10 to 12)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 27.",
-        "description": "List sequence jump (skipped from 12 to 27)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 14.",
-        "description": "List sequence jump (skipped from 3 to 14)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 28.",
-        "description": "List sequence jump (skipped from 14 to 28)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 18.",
-        "description": "List sequence jump (skipped from 5 to 18)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 19.",
-        "description": "List sequence jump (skipped from 7 to 19)",
-        "chapter": "Chapter 22 - The several considerations of the death of Christ as to the expiation of our sins ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 9.",
-        "description": "List sequence jump (skipped from 1 to 9)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 32.",
-        "description": "List sequence jump (skipped from 9 to 32)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 19.",
-        "description": "List sequence jump (skipped from 2 to 19)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 40.",
-        "description": "List sequence jump (skipped from 2 to 40)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 10.",
-        "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 26.",
-        "description": "List sequence jump (skipped from 3 to 26)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 12.",
-        "description": "List sequence jump (skipped from 4 to 12)",
-        "chapter": "Chapter 23 - Of the death of Christ as it was a punishment, and the satisfaction made thereby.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 12.",
-        "description": "List sequence jump (skipped from 2 to 12)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 133.",
-        "description": "List sequence jump (skipped from 12 to 133)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 14.",
-        "description": "List sequence jump (skipped from 1 to 14)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 29.",
-        "description": "List sequence jump (skipped from 3 to 29)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 23.",
-        "description": "List sequence jump (skipped from 1 to 23)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "23. ... 37.",
-        "description": "List sequence jump (skipped from 23 to 37)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 11.",
-        "description": "List sequence jump (skipped from 2 to 11)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 30.",
-        "description": "List sequence jump (skipped from 3 to 30)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "30. ... 54.",
-        "description": "List sequence jump (skipped from 30 to 54)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 21.",
-        "description": "List sequence jump (skipped from 1 to 21)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Chapter 24 - Some particular testimonies evincing the death of Christ to be a punishment, prope...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 10.",
-        "description": "List sequence jump (skipped from 1 to 10)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 13.",
-        "description": "List sequence jump (skipped from 4 to 13)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 52.",
-        "description": "List sequence jump (skipped from 13 to 52)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 10.",
-        "description": "List sequence jump (skipped from 4 to 10)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 26.",
-        "description": "List sequence jump (skipped from 2 to 26)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 21.",
-        "description": "List sequence jump (skipped from 1 to 21)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 22.",
-        "description": "List sequence jump (skipped from 2 to 22)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 24.",
-        "description": "List sequence jump (skipped from 2 to 24)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 68.",
-        "description": "List sequence jump (skipped from 6 to 68)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 32.",
-        "description": "List sequence jump (skipped from 3 to 32)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 4.",
-        "description": "List sequence jump (skipped from 1 to 4)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 7.",
-        "description": "List sequence jump (skipped from 4 to 7)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 39.",
-        "description": "List sequence jump (skipped from 1 to 39)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 26.",
-        "description": "List sequence jump (skipped from 3 to 26)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 26.",
-        "description": "List sequence jump (skipped from 4 to 26)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "21. ... 26.",
-        "description": "List sequence jump (skipped from 21 to 26)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 64.",
-        "description": "List sequence jump (skipped from 2 to 64)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 19.",
-        "description": "List sequence jump (skipped from 4 to 19)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 23.",
-        "description": "List sequence jump (skipped from 1 to 23)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 19.",
-        "description": "List sequence jump (skipped from 1 to 19)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 8.",
-        "description": "List sequence jump (skipped from 2 to 8)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 15.",
-        "description": "List sequence jump (skipped from 8 to 15)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 17.",
-        "description": "List sequence jump (skipped from 4 to 17)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 13.",
-        "description": "List sequence jump (skipped from 5 to 13)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 11.",
-        "description": "List sequence jump (skipped from 5 to 11)",
-        "chapter": "Chapter 25 - A digression concerning the 53d chapter of Isaiah, and the vindication of it from ...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 26.",
-        "description": "List sequence jump (skipped from 1 to 26)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 23.",
-        "description": "List sequence jump (skipped from 2 to 23)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 30.",
-        "description": "List sequence jump (skipped from 2 to 30)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "15. ... 26.",
-        "description": "List sequence jump (skipped from 15 to 26)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 10.",
-        "description": "List sequence jump (skipped from 1 to 10)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 26.",
-        "description": "List sequence jump (skipped from 10 to 26)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 56.",
-        "description": "List sequence jump (skipped from 7 to 56)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 69.",
-        "description": "List sequence jump (skipped from 11 to 69)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 18.",
-        "description": "List sequence jump (skipped from 3 to 18)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 38.",
-        "description": "List sequence jump (skipped from 18 to 38)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "38. ... 50.",
-        "description": "List sequence jump (skipped from 38 to 50)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 37.",
-        "description": "List sequence jump (skipped from 8 to 37)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 68.",
-        "description": "List sequence jump (skipped from 3 to 68)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 46.",
-        "description": "List sequence jump (skipped from 17 to 46)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 9.",
-        "description": "List sequence jump (skipped from 1 to 9)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 23.",
-        "description": "List sequence jump (skipped from 9 to 23)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 24.",
-        "description": "List sequence jump (skipped from 2 to 24)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 15.",
-        "description": "List sequence jump (skipped from 1 to 15)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 7.",
-        "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 26 - Of the matter of the punishment that Christ underwent, or what he suffered.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 66.",
-        "description": "List sequence jump (skipped from 5 to 66)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 10.",
-        "description": "List sequence jump (skipped from 2 to 10)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 9.",
-        "description": "List sequence jump (skipped from 3 to 9)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 10.",
-        "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 28.",
-        "description": "List sequence jump (skipped from 9 to 28)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "28. ... 31.",
-        "description": "List sequence jump (skipped from 28 to 31)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 28.",
-        "description": "List sequence jump (skipped from 4 to 28)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 8.",
-        "description": "List sequence jump (skipped from 5 to 8)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 24.",
-        "description": "List sequence jump (skipped from 5 to 24)",
-        "chapter": "Chapter 27 - Of the covenant between the Father and the Son, the ground and foundation of this ...",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 16.",
-        "description": "List sequence jump (skipped from 12 to 16)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 12.",
-        "description": "List sequence jump (skipped from 8 to 12)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 24.",
-        "description": "List sequence jump (skipped from 12 to 24)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "24. ... 30.",
-        "description": "List sequence jump (skipped from 24 to 30)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 13.",
-        "description": "List sequence jump (skipped from 4 to 13)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 35.",
-        "description": "List sequence jump (skipped from 13 to 35)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 26.",
-        "description": "List sequence jump (skipped from 2 to 26)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 7.",
-        "description": "List sequence jump (skipped from 1 to 7)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 29.",
-        "description": "List sequence jump (skipped from 7 to 29)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 26.",
-        "description": "List sequence jump (skipped from 12 to 26)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 26.",
-        "description": "List sequence jump (skipped from 4 to 26)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "26. ... 32.",
-        "description": "List sequence jump (skipped from 26 to 32)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 15.",
-        "description": "List sequence jump (skipped from 2 to 15)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 24.",
-        "description": "List sequence jump (skipped from 1 to 24)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "24. ... 32.",
-        "description": "List sequence jump (skipped from 24 to 32)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 14.",
-        "description": "List sequence jump (skipped from 2 to 14)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 19.",
-        "description": "List sequence jump (skipped from 14 to 19)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "19. ... 22.",
-        "description": "List sequence jump (skipped from 19 to 22)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 70.",
-        "description": "List sequence jump (skipped from 4 to 70)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 32.",
-        "description": "List sequence jump (skipped from 9 to 32)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 10.",
-        "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 16.",
-        "description": "List sequence jump (skipped from 4 to 16)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "16. ... 18.",
-        "description": "List sequence jump (skipped from 16 to 18)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 20.",
-        "description": "List sequence jump (skipped from 18 to 20)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 22.",
-        "description": "List sequence jump (skipped from 6 to 22)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 25.",
-        "description": "List sequence jump (skipped from 14 to 25)",
-        "chapter": "Chapter 28 - Of redemption by the death of Christ as it was a price or ransom.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 3.",
-        "description": "List sequence jump (skipped from 1 to 3)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 36.",
-        "description": "List sequence jump (skipped from 3 to 36)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 13.",
-        "description": "List sequence jump (skipped from 4 to 13)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 19.",
-        "description": "List sequence jump (skipped from 13 to 19)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 17.",
-        "description": "List sequence jump (skipped from 6 to 17)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 26.",
-        "description": "List sequence jump (skipped from 17 to 26)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 32.",
-        "description": "List sequence jump (skipped from 1 to 32)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 10.",
-        "description": "List sequence jump (skipped from 1 to 10)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 7.",
-        "description": "List sequence jump (skipped from 1 to 7)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 5.",
-        "description": "List sequence jump (skipped from 1 to 5)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 12.",
-        "description": "List sequence jump (skipped from 1 to 12)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 25.",
-        "description": "List sequence jump (skipped from 3 to 25)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 18.",
-        "description": "List sequence jump (skipped from 2 to 18)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "18. ... 22.",
-        "description": "List sequence jump (skipped from 18 to 22)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 32.",
-        "description": "List sequence jump (skipped from 4 to 32)",
-        "chapter": "Chapter 29 - Of reconciliation by the death of Christ as it is a sacrifice.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 142.",
-        "description": "List sequence jump (skipped from 2 to 142)",
-        "chapter": "Chapter 30 - The satisfaction of Christ on the consideration of his death being a punishment fa...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 33.",
-        "description": "List sequence jump (skipped from 3 to 33)",
-        "chapter": "Chapter 30 - The satisfaction of Christ on the consideration of his death being a punishment fa...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 13.",
-        "description": "List sequence jump (skipped from 2 to 13)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 12.",
-        "description": "List sequence jump (skipped from 4 to 12)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "12. ... 23.",
-        "description": "List sequence jump (skipped from 12 to 23)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 8.",
-        "description": "List sequence jump (skipped from 1 to 8)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 10.",
-        "description": "List sequence jump (skipped from 8 to 10)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 28.",
-        "description": "List sequence jump (skipped from 10 to 28)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "28. ... 70.",
-        "description": "List sequence jump (skipped from 28 to 70)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 9.",
-        "description": "List sequence jump (skipped from 5 to 9)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 10.",
-        "description": "List sequence jump (skipped from 6 to 10)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 18.",
-        "description": "List sequence jump (skipped from 10 to 18)",
-        "chapter": "Chapter 31 - Of election and universal grace \u2014 Of the resurrection of Christ from the dead.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 12.",
-        "description": "List sequence jump (skipped from 2 to 12)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 14.",
-        "description": "List sequence jump (skipped from 4 to 14)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 13.",
-        "description": "List sequence jump (skipped from 5 to 13)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 24.",
-        "description": "List sequence jump (skipped from 13 to 24)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 6.",
-        "description": "List sequence jump (skipped from 1 to 6)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 15.",
-        "description": "List sequence jump (skipped from 3 to 15)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 6.",
-        "description": "List sequence jump (skipped from 4 to 6)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 5.",
-        "description": "List sequence jump (skipped from 3 to 5)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 28.",
-        "description": "List sequence jump (skipped from 5 to 28)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 6.",
-        "description": "List sequence jump (skipped from 3 to 6)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 26.",
-        "description": "List sequence jump (skipped from 4 to 26)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 7.",
-        "description": "List sequence jump (skipped from 1 to 7)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 9.",
-        "description": "List sequence jump (skipped from 7 to 9)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 30.",
-        "description": "List sequence jump (skipped from 9 to 30)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 22.",
-        "description": "List sequence jump (skipped from 2 to 22)",
-        "chapter": "Chapter 33 - Of keeping the commandments of God, and of perfection of obedience \u2014 How attainabl...",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 26.",
-        "description": "List sequence jump (skipped from 4 to 26)",
-        "chapter": "Chapter 34 - Of prayer; and whether Christ prescribed a form of prayer to be used by believers;...",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 17.",
-        "description": "List sequence jump (skipped from 1 to 17)",
-        "chapter": "Chapter 34 - Of prayer; and whether Christ prescribed a form of prayer to be used by believers;...",
-        "contexts": []
-      },
-      {
-        "target": "13. ... 16.",
-        "description": "List sequence jump (skipped from 13 to 16)",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 11.",
-        "description": "List sequence jump (skipped from 3 to 11)",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 16.",
-        "description": "List sequence jump (skipped from 9 to 16)",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 48.",
-        "description": "List sequence jump (skipped from 3 to 48)",
-        "chapter": "Chapter 35 - Of the resurrection of the dead and the state of the wicked at the last day.",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 269.",
-        "description": "List sequence jump (skipped from 1 to 269)",
         "chapter": "Of the Death of Christ, and of Justification:",
         "contexts": []
       },
       {
-        "target": "1. ... 17.",
-        "description": "List sequence jump (skipped from 1 to 17)",
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
         "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 184.",
-        "description": "List sequence jump (skipped from 17 to 184)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "184. ... 209.",
-        "description": "List sequence jump (skipped from 184 to 209)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "209. ... 519.",
-        "description": "List sequence jump (skipped from 209 to 519)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 115.",
-        "description": "List sequence jump (skipped from 4 to 115)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 131.",
-        "description": "List sequence jump (skipped from 2 to 131)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 14.",
-        "description": "List sequence jump (skipped from 3 to 14)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 17.",
-        "description": "List sequence jump (skipped from 7 to 17)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "17. ... 32.",
-        "description": "List sequence jump (skipped from 17 to 32)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 14.",
-        "description": "List sequence jump (skipped from 4 to 14)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 181.",
-        "description": "List sequence jump (skipped from 5 to 181)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 14.",
-        "description": "List sequence jump (skipped from 11 to 14)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "14. ... 29.",
-        "description": "List sequence jump (skipped from 14 to 29)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "29. ... 110.",
-        "description": "List sequence jump (skipped from 29 to 110)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "110. ... 221.",
-        "description": "List sequence jump (skipped from 110 to 221)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "5. ... 147.",
-        "description": "List sequence jump (skipped from 5 to 147)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 60.",
-        "description": "List sequence jump (skipped from 2 to 60)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "60. ... 74.",
-        "description": "List sequence jump (skipped from 60 to 74)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 8.",
-        "description": "List sequence jump (skipped from 4 to 8)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 108.",
-        "description": "List sequence jump (skipped from 8 to 108)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "108. ... 115.",
-        "description": "List sequence jump (skipped from 108 to 115)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "7. ... 291.",
-        "description": "List sequence jump (skipped from 7 to 291)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "8. ... 277.",
-        "description": "List sequence jump (skipped from 8 to 277)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "9. ... 113.",
-        "description": "List sequence jump (skipped from 9 to 113)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 4.",
-        "description": "List sequence jump (skipped from 2 to 4)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "4. ... 69.",
-        "description": "List sequence jump (skipped from 4 to 69)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "1. ... 11.",
-        "description": "List sequence jump (skipped from 1 to 11)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "11. ... 35.",
-        "description": "List sequence jump (skipped from 11 to 35)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "35. ... 190.",
-        "description": "List sequence jump (skipped from 35 to 190)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 44.",
-        "description": "List sequence jump (skipped from 2 to 44)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 229.",
-        "description": "List sequence jump (skipped from 3 to 229)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 9.",
-        "description": "List sequence jump (skipped from 2 to 9)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "2. ... 29.",
-        "description": "List sequence jump (skipped from 2 to 29)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "29. ... 274.",
-        "description": "List sequence jump (skipped from 29 to 274)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "3. ... 30.",
-        "description": "List sequence jump (skipped from 3 to 30)",
-        "chapter": "Of the Death of Christ, and of Justification:",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 53.",
-        "description": "List sequence jump (skipped from 6 to 53)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": []
-      },
-      {
-        "target": "24. ... 26.",
-        "description": "List sequence jump (skipped from 24 to 26)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": []
-      },
-      {
-        "target": "6. ... 145.",
-        "description": "List sequence jump (skipped from 6 to 145)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
-        "contexts": []
-      },
-      {
-        "target": "XXVI. ... XXXII.",
-        "description": "List sequence jump (skipped from 26 to 32)",
-        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
         "contexts": []
       }
     ]

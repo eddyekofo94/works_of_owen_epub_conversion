@@ -12,7 +12,7 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 39,
+      "observed": 35,
       "budget": 285,
       "status": "ok",
       "samples": [
@@ -30,21 +30,6 @@
           "file": "EPUB/ch003.xhtml",
           "previous": "John Owen",
           "next": "OXON. CH. CH. COLL., April 1 [1655.]"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "er, nam ratio vocabuli non patitur, ut quis dicatur sine matre pater: et si Logos filius erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus.\" †",
-          "next": "To this height of atheism and blasphemy had Satan wrought up the spirit of the man; so that I must say he is the only person in the world, that I ever read or heard of, that ever d"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "n possumus, aliquid in quo nitamur conquirimus ; sequiturque, ut frequens ac mobilis transitus maximum perfecti operis impedimentum sit.\" † — Paterc. Hist. Romans lib. 1 cap. 17. *",
-          "next": "I wish some such things may not be said of the doctrine of the reformed churches. It was not long since raised to a great height of purity in itself, and perspicuity in the way of "
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "And AEschylus, in the same place of Clemens, Strom. 5: — Χωρεῖτε θνητῶν τὸν Θεὸν καὶ μὴ δόκει . †",
-          "next": "Ομοιον αὐτῷ σαρκικὸν καθεστάναι ."
         },
         {
           "file": "EPUB/ch010.xhtml",
@@ -65,18 +50,37 @@
           "file": "EPUB/ch018.xhtml",
           "previous": "Their first question and answer are: —",
           "next": "Ques. Declare now to me what I ought to know concerning Jesus Christ?"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "ns 15:21; such a one as God of old promised by the prophets, and such as the creed, commonly called the Apostles', witnesseth him to be; which, with us, all Christians embrace. 259",
+          "next": "Ans. That Jesus Christ was a true man, in his nature like unto us, sin only excepted, we believe, and do abhor the abominations of Paracelsus, Wigelius , etc., and the Familists am"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "t bring other causes, which thou wilt afterward find in the person of Christ, which most evidently declare that the Lord Jesus can by no means be esteemed a pure (or mere) man. 260",
+          "next": "Ans. 1. But I have abundantly demonstrated that Christ neither was nor was called the Son of God upon the account here mentioned, nor any other whatever intimated in the close of t"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "previous": "But as the divine nature by itself constitutes a person, so it is necessary that the human nature should do. 263",
+          "next": "Ans. 1. In what sense it may be said that Christ, that is, the person of Christ, consisteth of a divine and human nature, was before declared. The person of the Son of God assumed "
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 2,
+      "observed": 3,
       "budget": 6,
       "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch040.xhtml",
           "text": "He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —"
+        },
+        {
+          "file": "EPUB/ch047.xhtml",
+          "text": "I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is evident from the whole design of the apos"
         },
         {
           "file": "EPUB/ch047.xhtml",
@@ -536,7 +540,7 @@
         },
         {
           "file": "EPUB/ch020.xhtml",
-          "text": "to which is added that of Revelation 4:8chap. 4:8,"
+          "text": "to which is added that of Revelation 4:8; chap. 4:8,"
         },
         {
           "file": "EPUB/ch031.xhtml",

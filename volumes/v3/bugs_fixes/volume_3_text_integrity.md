@@ -4,16 +4,16 @@
 - Warnings: 1
 - PDF pages: 789
 - EPUB text files: 45
-- EPUB paragraphs/headings: 2512
+- EPUB paragraphs/headings: 2503
 
 ## Coverage
 
 - PDF content tokens: 267301
-- EPUB content tokens: 276197
+- EPUB content tokens: 276195
 - Approximate PDF-to-EPUB coverage ratio: 0.9997
 - Pages checked: 758
 - Weak page matches: 0
-- Dense source windows checked: 35055
+- Dense source windows checked: 35212
 - Missing dense source-window pages: 20
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -28,7 +28,7 @@
 
 - Body paragraphs checked: 2109
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 315
+- Structural starts excluded from split warnings: 316
 - Short fragments: 14
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
@@ -61,14 +61,14 @@
 
 - PDF Latin words: 4115
 - EPUB Latin words: 4276
-- EPUB Tagged Latin words: 2173
+- EPUB Tagged Latin words: 1443
 - Latin word coverage ratio: 0.9995
-- Latin word tagging ratio: 0.5082
+- Latin word tagging ratio: 0.3375
 - Latin clauses checked: 152
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 457
-- Translated Latin runs: 373
-- Latin translation ratio: 0.8162
+- Tagged Latin runs checked: 320
+- Translated Latin runs: 238
+- Latin translation ratio: 0.7438
 
 ## Warnings
 

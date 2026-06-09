@@ -2,7 +2,7 @@
   "volume": 12,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-05T13:50:46.318316+00:00",
+  "generated_at": "2026-06-09T05:43:04.069108+00:00",
   "status": "warn",
   "warning_count": 14,
   "warnings": [
@@ -68,12 +68,12 @@
   },
   "epub": {
     "spine_text_files": 61,
-    "paragraph_count": 3523
+    "paragraph_count": 3518
   },
   "word_coverage": {
-    "pdf_content_tokens": 270741,
-    "epub_content_tokens": 272712,
-    "coverage_ratio": 0.999,
+    "pdf_content_tokens": 270738,
+    "epub_content_tokens": 272724,
+    "coverage_ratio": 0.9991,
     "missing_word_samples": [
       {
         "word": "pre",
@@ -94,11 +94,6 @@
         "word": "gerlachius",
         "pdf": 3,
         "epub": 0
-      },
-      {
-        "word": "tides",
-        "pdf": 3,
-        "epub": 1
       }
     ],
     "excess_word_samples": [
@@ -186,7 +181,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 30528,
+    "dense_windows_checked": 30713,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -211,7 +206,7 @@
       },
       {
         "page": 9,
-        "sample": "he is claimed alike by socinians arminians and papists the learned jesuit peta-vius said"
+        "sample": "of the latter to the socinian crellius see page is the difference between those"
       },
       {
         "page": 11,
@@ -232,14 +227,6 @@
       {
         "page": 17,
         "sample": "hammond's answer to my animadversions on his dissertations about episcopacy mr baxter's objections against"
-      },
-      {
-        "page": 22,
-        "sample": "that account by victor as eusebius relates hist ecclesiastes lib cap ult where he"
-      },
-      {
-        "page": 23,
-        "sample": "of their religion under this great disadvantage did the persuasion of the soci-nians set"
       },
       {
         "page": 27,
@@ -267,7 +254,7 @@
       },
       {
         "page": 34,
-        "sample": "were come off to the reformed churches amongst whom geor-gius petrovicius bishop of sarmogitia"
+        "sample": "arianism as erasmus johannes of some to photinianism as statorius and blandrata some to"
       },
       {
         "page": 35,
@@ -292,10 +279,6 @@
       {
         "page": 41,
         "sample": "is since published this was before his going into poland in the year 52a"
-      },
-      {
-        "page": 42,
-        "sample": "socinus to dispute and went one thousand miles namely to cra-covia in poland afterward"
       },
       {
         "page": 44,
@@ -348,6 +331,18 @@
       {
         "page": 60,
         "sample": "it that this man bare to gerlachius and his companions that he gives them"
+      },
+      {
+        "page": 63,
+        "sample": "himself and his work by redemptus baranzano the priest in these words deo virglnique"
+      },
+      {
+        "page": 65,
+        "sample": "and craft of seducers and at length recovered themselves by the advice of beza"
+      },
+      {
+        "page": 66,
+        "sample": "they are in asserting may be seen in volkelius institutions and here whilst they"
       }
     ]
   },
@@ -708,8 +703,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3082,
-    "split_candidate_count": 40,
+    "paragraphs_checked": 3081,
+    "split_candidate_count": 35,
     "split_candidates": [
       {
         "file": "EPUB/ch003.xhtml",
@@ -725,21 +720,6 @@
         "file": "EPUB/ch003.xhtml",
         "previous": "John Owen",
         "next": "OXON. CH. CH. COLL., April 1 [1655.]"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "er, nam ratio vocabuli non patitur, ut quis dicatur sine matre pater: et si Logos filius erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus.\" †",
-        "next": "To this height of atheism and blasphemy had Satan wrought up the spirit of the man; so that I must say he is the only person in the world, that I ever read or heard of, that ever d"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "n possumus, aliquid in quo nitamur conquirimus ; sequiturque, ut frequens ac mobilis transitus maximum perfecti operis impedimentum sit.\" † — Paterc. Hist. Romans lib. 1 cap. 17. *",
-        "next": "I wish some such things may not be said of the doctrine of the reformed churches. It was not long since raised to a great height of purity in itself, and perspicuity in the way of "
-      },
-      {
-        "file": "EPUB/ch009.xhtml",
-        "previous": "And AEschylus, in the same place of Clemens, Strom. 5: — Χωρεῖτε θνητῶν τὸν Θεὸν καὶ μὴ δόκει . †",
-        "next": "Ομοιον αὐτῷ σαρκικὸν καθεστάναι . †"
       },
       {
         "file": "EPUB/ch010.xhtml",
@@ -792,11 +772,6 @@
         "next": "Ans. They are of two sorts, whereof some respect the names, others the works, which they suppose in the Scriptures to be attributed to Christ."
       },
       {
-        "file": "EPUB/ch020.xhtml",
-        "previous": "πιφανείας τοῦ Χριστοῦ .\" † 2 Timothy 4:8, \"Which the Lord, the righteous judge, shall give me at that day: and not to me only, but unto all them that love τὴν ἐπιφάνειαν αὐτοῦ .\" †",
-        "next": "Neither, as was said, is it ever used of the Father, but is the word continually used to express the second coming of Jesus Christ. Sometimes παρουσία hath the same signification; "
-      },
-      {
         "file": "EPUB/ch023.xhtml",
         "previous": "oing, they labor, in their next attempt, to corrupt, and so to evade the force and efficacy which from them appeareth so destructive to their cause; and herein they thus proceed: —",
         "next": "Ques. From what testimonies of Scripture do they endeavor to demonstrate that Christ was, as they speak, incarnate?"
@@ -827,19 +802,9 @@
         "next": "Ques. Is not Christ dignified, as with the title of mediator, so also with that of prophet?"
       },
       {
-        "file": "EPUB/ch036.xhtml",
-        "previous": " it being in both places used in such business as a ransom useth to be accepted in. Proverbs 21:18Chap. 21:18, they have properly rendered it to the subject-matter, περικάθαρμα . †",
-        "next": "Περικαθάρματα are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them for their sakes. So is κάθαρμα , \" homo piacularis pro lustrat"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": "hout punishment, 431 And so is that expression explained by Ulpian, Dig. lib. 20: \" * Capitalem fraudem admittere est tale aliquid delinquere, propter quod capite puniendus sit.\" †",
-        "next": "The schoolmen have two rules that pass amongst them without control: — First, that \"Omne peccatum est adeo voluntarium, ut si non sit voluntarium non est peccatum .\" † It is so of "
-      },
-      {
-        "file": "EPUB/ch039.xhtml",
-        "previous": "king; not of the sin of the Jews in crucifying Christ, but of all our sins, for which he was crucified. \"Muners magna quidem misit sed misit in homo.\" — Martial. ‡ lib. 6 Ep. 68. *",
-        "next": "Verse 6, \"All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all.\""
+        "file": "EPUB/ch040.xhtml",
+        "previous": "plishment, Matthew 27:39-44, Luke 23:36, 37. They reproached him with God, and his ministry, and his profession; as did also one of the thieves that were crucified with him. And, —",
+        "next": "(5thly.) They crucified him in a noisome place, a place of stink and loathsomeness, a place where they cast the dead bodies of men, from whose bones it got the name of \"Golgotha,\" "
       },
       {
         "file": "EPUB/ch042.xhtml",
@@ -910,10 +875,15 @@
         "file": "EPUB/ch049.xhtml",
         "previous": "Ques. 1. What is God",
         "next": "Ans. God is a spirit, that hath a bodily shape, eyes, ears, hands, feet, like to us."
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "previous": "2. He says, \"That the fruits of the death of Christ are procured for us finaliter, not subjective. \"",
+        "next": "Ans. They are procured for us objective, are granted \"ex adaequatione rerum,\" and may make us subjects of the right, though not of the things themselves which it regards; may, I sa"
       }
     ],
-    "structural_start_exclusions": 439,
-    "short_fragment_count": 47,
+    "structural_start_exclusions": 433,
+    "short_fragment_count": 48,
     "short_fragments": [
       {
         "file": "EPUB/ch003.xhtml",
@@ -926,6 +896,10 @@
       {
         "file": "EPUB/ch009.xhtml",
         "text": "Whereunto answers that in Cato: —"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "Ομοιον αὐτῷ σαρκικὸν καθεστάναι ."
       },
       {
         "file": "EPUB/ch011.xhtml",
@@ -1070,19 +1044,19 @@
       {
         "file": "EPUB/ch049.xhtml",
         "text": "Ans. John 3:36."
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "Ques. 1. What is God"
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 2,
+    "inline_structural_candidate_count": 3,
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch040.xhtml",
         "text": "He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is evident from the whole design of the apos"
       },
       {
         "file": "EPUB/ch047.xhtml",
@@ -1101,7 +1075,7 @@
       },
       {
         "file": "EPUB/ch019.xhtml",
-        "text": "24. Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei.\" Again, \" Παρὰ σοί , refer ad illud εῖχον , et intellige, ut diximus, in decreto tuo .\" † But what intends the learned man by those places of 1 Peter "
+        "text": "24. Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei.\" Again, \" Παρὰ σοί , refer ad illud εῖχον , et intellige, ut diximus, in decreto tuo .\" But what intends the learned man by those places of 1 Peter 1:"
       },
       {
         "file": "EPUB/ch039.xhtml",
@@ -1186,11 +1160,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1038",
+            "location": "EPUB/ch018.xhtml#p1036",
             "context": "[1.] Will they say that this order is observed by the apostle, — that that which is first done is first expressed as to all particulars? What, then, becomes of their interpretation who"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1095",
+            "location": "EPUB/ch018.xhtml#p1093",
             "context": "[1.] Because Abraham was the father of many nations, Jews and proselytes, before the preaching of the gospel, as Genesis 15:5."
           }
         ]
@@ -1210,7 +1184,7 @@
           },
           {
             "location": "EPUB/ch001.xhtml#p105",
-            "context": "[1] \"Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.\" — Cyril ‡ of Jerusalem, Catechetical Lectures , Lecture 4,"
+            "context": "[1] \"Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.\" — Cyril of Jerusalem, Catechetical Lectures , Lecture 4, S"
           }
         ]
       },
@@ -1224,11 +1198,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1040",
+            "location": "EPUB/ch018.xhtml#p1038",
             "context": "[2.] The order of the words is most proper. John having asserted the deity of Christ, with some general concomitants and consequences of the dispensation wherein he undertakes to be a"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1096",
+            "location": "EPUB/ch018.xhtml#p1094",
             "context": "[2.] It is false that Abram was not Abraham until after the ascension of Christ and preaching of the gospel to the Gentiles, He was made Abraham from his first enjoyment of his name an"
           }
         ]
@@ -1370,13 +1344,13 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 10596,
-    "epub_latin_word_count": 10725,
-    "epub_tagged_latin_word_count": 6527,
-    "pdf_latin_unique_words": 2943,
+    "epub_latin_word_count": 10733,
+    "epub_tagged_latin_word_count": 6394,
+    "pdf_latin_unique_words": 2940,
     "epub_latin_unique_words": 2955,
     "epub_tagged_unique_words": 2403,
-    "latin_word_coverage_ratio": 0.997,
-    "latin_tagging_ratio": 0.6086,
+    "latin_word_coverage_ratio": 0.9975,
+    "latin_tagging_ratio": 0.5957,
     "missing_latin_word_samples": [
       {
         "word": "schlusselburgius",
@@ -1418,7 +1392,7 @@
       {
         "word": "socinus",
         "epub": 169,
-        "tagged": 37
+        "tagged": 36
       },
       {
         "word": "abraham",
@@ -1539,9 +1513,9 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 1690,
-    "translated_latin_runs_count": 688,
-    "latin_translation_ratio": 0.4071,
+    "tagged_latin_runs_count": 1658,
+    "translated_latin_runs_count": 668,
+    "latin_translation_ratio": 0.4029,
     "untranslated_latin_samples": [
       {
         "phrase": "HUGO GROTIUS"

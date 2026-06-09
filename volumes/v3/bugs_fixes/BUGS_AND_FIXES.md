@@ -861,10 +861,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-05T21:28:47.732169+00:00
+**Last run:** 2026-06-09T05:41:32.573888+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -1038,10 +1039,11 @@ Validation:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-05T21:29:31.260405+00:00
+**Last run:** 2026-06-09T05:42:15.729478+00:00
 **Status:** WARN (1 warnings)
 
 Reports:
@@ -1052,10 +1054,10 @@ Reports:
 |-------|--------|
 | PDF pages | 789 |
 | EPUB text files | 45 |
-| EPUB paragraphs/headings | 2512 |
+| EPUB paragraphs/headings | 2503 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 35055 |
+| Dense source windows checked | 35212 |
 | Missing dense source-window pages | 20 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
@@ -1066,7 +1068,7 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 315 |
+| Structural starts excluded from split warnings | 316 |
 | Short fragments | 14 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |

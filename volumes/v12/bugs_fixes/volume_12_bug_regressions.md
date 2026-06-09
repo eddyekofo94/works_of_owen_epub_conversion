@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 39 | 285 | OK |
-| Inline structural marker candidates | 2 | 6 | OK |
+| Possible faulty paragraph splits | 35 | 285 | OK |
+| Inline structural marker candidates | 3 | 6 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 1 | 3 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -69,12 +69,13 @@
 - file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
 - file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
 - file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
-- file: EPUB/ch004.xhtml; previous: er, nam ratio vocabuli non patitur, ut quis dicatur sine matre pater: et si Logos filius erat, natus ex patre sine matre; dic mihi quomodo peporit eum, per ventrem an per latus." †; next: To this height of atheism and blasphemy had Satan wrought up the spirit of the man; so that I must say he is the only person in the world, that I ever read or heard of, that ever d
-- file: EPUB/ch004.xhtml; previous: n possumus, aliquid in quo nitamur conquirimus ; sequiturque, ut frequens ac mobilis transitus maximum perfecti operis impedimentum sit." † — Paterc. Hist. Romans lib. 1 cap. 17. *; next: I wish some such things may not be said of the doctrine of the reformed churches. It was not long since raised to a great height of purity in itself, and perspicuity in the way of 
+- file: EPUB/ch010.xhtml; previous: ry about the nature of God respects the attribution of several affections and passions unto him in the Scriptures, of whose sense and meaning he thus expresseth his apprehension: —; next: Ques. Are there not, according to the perpetual tenor of the Scriptures, affections and passions in God, as anger, fury, zeal, wrath, love, hatred, mercy, grace, jealousy, repentan
+- file: EPUB/ch011.xhtml; previous: ution thereof, in order to a discovery of what God himself hath revealed concerning his knowledge of all things, is the next part of our employment. Thus, then, it may be framed: —; next: Ques. Doth not God know all things, whether past, present, or to come, all the ways and actions of men, even before their accomplishment, or is any thing hid from him? What says th
 
 ### Inline structural marker candidates
 
 - file: EPUB/ch040.xhtml; text: He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —
+- file: EPUB/ch047.xhtml; text: I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is e
 - file: EPUB/ch047.xhtml; text: These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our 
 
 ### Repeated word windows

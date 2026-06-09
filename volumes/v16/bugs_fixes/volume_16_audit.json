@@ -1,6 +1,6 @@
 {
-  "epub": "volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-06T07:46:25.812197+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
+  "generated_at": "2026-06-09T05:43:08.517284+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -14,7 +14,7 @@
   ],
   "info": {
     "file_count": 114,
-    "epub_size_bytes": 5995167,
+    "epub_size_bytes": 5995131,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
