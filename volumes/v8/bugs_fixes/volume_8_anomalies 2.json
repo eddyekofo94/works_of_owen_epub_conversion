@@ -1,0 +1,1617 @@
+{
+  "volume": 8,
+  "total_words_audited": 306814,
+  "total_anomalies_count": 199,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "ANGLO-BRITANNORUM",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "Prefatory Note.",
+        "contexts": [
+          "... I CONVENTUI, [[SUBTITLE]] OB [[SUMMARY]] PRISCA ANGLO-BRITANNORUM JURA STRENUE ET FIDELITER ASSERTA; LIBERTATEM PAT ..."
+        ]
+      },
+      {
+        "target": "pre-supposeth",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... f the gospel, but not the sending of it, which it pre-supposeth: secondly, Against the covenant they are under, a ..."
+        ]
+      },
+      {
+        "target": "Sabbath-breaker",
+        "description": "Splittable word (rejoins to valid word 'Sabbathbreaker')",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... mpieties; for were a man a drunkard, a swearer, a Sabbath-breaker, an unclean person, so he were no Puritan, and ha ..."
+        ]
+      },
+      {
+        "target": "eye-salve",
+        "description": "Splittable word (rejoins to valid word 'eyesalve')",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... en know not that they are blind, and seek not for eye-salve; they know not that they are dead, and seek not f ..."
+        ]
+      },
+      {
+        "target": "pre-conceptions",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "A Short Defensative",
+        "contexts": [
+          "... able, if men would but a little lay aside beloved pre-conceptions. But the printer stays for every line; only I mus ..."
+        ]
+      },
+      {
+        "target": "pre-discoveries",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... r. The prophet having had visions from God, and pre-discoveries of many approaching judgments, in the first and s ..."
+        ]
+      },
+      {
+        "target": "lion-like",
+        "description": "Splittable word (rejoins to valid word 'lionlike')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... iver me from the mouth of the lion,\" \u2014 Nero, that lion-like tyrant. And what then? \"He shall deliver me from ..."
+        ]
+      },
+      {
+        "target": "Christ-purchased",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... sad reckoning. (2.) In point of ordinances, and Christ-purchased privileges. Here it is dangerous encroaching inde ..."
+        ]
+      },
+      {
+        "target": "evil-doer",
+        "description": "Splittable word (rejoins to valid word 'evildoer')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... God, wound Jesus Christ, and prosecute him as an evil-doer? I know the usual colors, the common pleas, that ..."
+        ]
+      },
+      {
+        "target": "slaughter-house",
+        "description": "Splittable word (rejoins to valid word 'slaughterhouse')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... o a prison, a crown into a cottage, Christ into a slaughter-house. And this arises, \u2014 [1.] From the nature of fait ..."
+        ]
+      },
+      {
+        "target": "sick-bed",
+        "description": "Splittable word (rejoins to valid word 'sickbed')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... mfortable and full of joy. Store thy cottage, thy sick-bed, by faith, with all sorts of mercies; they are th ..."
+        ]
+      },
+      {
+        "target": "fore-cited",
+        "description": "Splittable word (rejoins to valid word 'forecited')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... odus 14:21; which the prophet also admires in the fore-cited psalm: \"The sea saw it, and fled. What ailed thee ..."
+        ]
+      },
+      {
+        "target": "such-like",
+        "description": "Splittable word (rejoins to valid word 'suchlike')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... ss of blood: \u2014 all these, I say, and sundry other such-like things as these, are \"the Lord's doing, and marve ..."
+        ]
+      },
+      {
+        "target": "home-bred",
+        "description": "Splittable word (rejoins to valid word 'homebred')",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... have wanted them one day longer. Farther, these home-bred eruptions were timely seasoned, to rouse the disc ..."
+        ]
+      },
+      {
+        "target": "top-stone",
+        "description": "Splittable word (rejoins to valid word 'topstone')",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... maninvented worship, but either the foundation or top-stone is laid in the blood of God's people. \"The wisdom ..."
+        ]
+      },
+      {
+        "target": "pre-imaginations",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... yet being come, because not accommodated to their pre-imaginations, they rejected him, as having neither form nor co ..."
+        ]
+      },
+      {
+        "target": "such-like",
+        "description": "Splittable word (rejoins to valid word 'suchlike')",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... there a backsliding upon your spirit to these, or such-like things as these, the Lord will walk contrary to y ..."
+        ]
+      },
+      {
+        "target": "co-partner",
+        "description": "Splittable word (rejoins to valid word 'copartner')",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... le. That herein the Holy One of Israel is no ways co-partner with the guilt of the sons of men, will appear by ..."
+        ]
+      },
+      {
+        "target": "fore-named",
+        "description": "Splittable word (rejoins to valid word 'forenamed')",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... d let this be spoken to the third argument of the fore-named reverend persons, from the analogy of delinquenci ..."
+        ]
+      },
+      {
+        "target": "after-reckoning",
+        "description": "Splittable word (rejoins to valid word 'afterreckoning')",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... promote the service of God. Let them not fear an after-reckoning who use the discipline of Christ according to his ..."
+        ]
+      },
+      {
+        "target": "co-action",
+        "description": "Splittable word (rejoins to valid word 'coaction')",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... s discourse, I shall, as to any ways of corporeal co-action and restraint, oppose some few things. 1st . The ..."
+        ]
+      },
+      {
+        "target": "non-submission",
+        "description": "Splittable word (rejoins to valid word 'nonsubmission')",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... them with any civil penalty in case of refusal or non-submission; nor yet did I ever in my life meet with any thin ..."
+        ]
+      },
+      {
+        "target": "Jehovah-nissi",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "The Steadfastness of the Promises, and the Sinfulness of Stagge",
+        "contexts": [
+          "... in that work, did never sacrifice at the altar of Jehovah-nissi, nor consider that the Lord hath sworn to have wa ..."
+        ]
+      },
+      {
+        "target": "mitred-confirmations",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... g and pursuing their unjust conquests, or foolish mitred-confirmations of sword-purchases, he got them all framed to his ..."
+        ]
+      },
+      {
+        "target": "under-propping",
+        "description": "Splittable word (rejoins to valid word 'underpropping')",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... antics under the windows, that make some show of under-propping it: \u2014 here you have a magistrate, there an army, ..."
+        ]
+      },
+      {
+        "target": "shittim-wood",
+        "description": "Splittable word (rejoins to valid word 'shittimwood')",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... r remission were offered. The other less, made of shittim-wood, all overlaid with pure gold, and a crown of beat ..."
+        ]
+      },
+      {
+        "target": "eye-salve",
+        "description": "Splittable word (rejoins to valid word 'eyesalve')",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... dviseth the church of Laodicea to come to him for eye-salve, that she might see, Revelation 3:18. At his comi ..."
+        ]
+      },
+      {
+        "target": "hog-sty",
+        "description": "Splittable word (rejoins to valid word 'hogsty')",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... dwells in a stately palace of his own, show him a hog-sty, tell him, \"This is your house; here you dwell; t ..."
+        ]
+      },
+      {
+        "target": "Beerlahai-roi",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... They may call every spring of their refreshment, Beerlahai-roi [The well of Him that liveth and seeth me]. (2dl ..."
+        ]
+      },
+      {
+        "target": "top-stone",
+        "description": "Splittable word (rejoins to valid word 'topstone')",
+        "chapter": "The Laboring Saint's Dismission to Rest.",
+        "contexts": [
+          "... as very rare, who saw the foundation and also the top-stone of the temple laid; and yet the work of Jerusalem ..."
+        ]
+      },
+      {
+        "target": "sea-shore",
+        "description": "Splittable word (rejoins to valid word 'seashore')",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... ied like the stars of heaven and the sands of the sea-shore, shall possess the gates of their enemies, and sh ..."
+        ]
+      },
+      {
+        "target": "short-sighted",
+        "description": "Splittable word (rejoins to valid word 'shortsighted')",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... ence to them may lie therein. Alas! we are poor, short-sighted creatures; we know nothing that is before us, \u2014 m ..."
+        ]
+      },
+      {
+        "target": "pole-star",
+        "description": "Splittable word (rejoins to valid word 'polestar')",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... ll not wonder if you err in your ways. It is your pole-star, and will be so, by which your whole course is to ...",
+          "... my directions: \u2014 (2.) Make this work of God your pole-star, that you may steer and guide your course by it. ..."
+        ]
+      },
+      {
+        "target": "pre-required",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... itherto taken care for us. This, then, I say, is pre-required, as a qualification of any person to the performa ..."
+        ]
+      },
+      {
+        "target": "Giles-inthe",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Prefatory Note (Sermon 7 \u2014 Advantage of the Kingdom of Christ)",
+        "contexts": [
+          "... of them may be given: \u2014 \"The Morning Exercise at Giles-inthe-Fields, May 1655, printed for Richard Gibbs, in C ..."
+        ]
+      },
+      {
+        "target": "busy-body",
+        "description": "Splittable word (rejoins to valid word 'busybody')",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "... so to do, unless he design the just reproach of a busy-body for his reward. The command is general, with resp ..."
+        ]
+      },
+      {
+        "target": "hard-heartedness",
+        "description": "Splittable word (rejoins to valid word 'hardheartedness')",
+        "chapter": "Except.",
+        "contexts": [
+          "... s their actual unbelief to be the effect of their hard-heartedness; which, though it might be judicial, they being l ..."
+        ]
+      },
+      {
+        "target": "deutero-canonical",
+        "description": "Splittable word (rejoins to valid word 'deuterocanonical')",
+        "chapter": "Except.",
+        "contexts": [
+          "... Papists to the Old Testament, and called by them \"deutero-canonical,\" and by us no better still than \"apocryphal,\" su ..."
+        ]
+      },
+      {
+        "target": "how-ever",
+        "description": "Splittable word (rejoins to valid word 'however')",
+        "chapter": "The Chamber of Imagery in the Church of Rome Laid Open.",
+        "contexts": [
+          "... be its efficacy unto all the proper ends of it \u2014 how-ever it be ordered according unto the prescription of ..."
+        ]
+      },
+      {
+        "target": "over-numerous",
+        "description": "Splittable word (rejoins to valid word 'overnumerous')",
+        "chapter": "The Chamber of Imagery in the Church of Rome Laid Open.",
+        "contexts": [
+          "... ey call them, or a surcharge of friars from their over-numerous fraternities, upon their errands into remote nati ..."
+        ]
+      },
+      {
+        "target": "foot-breadth",
+        "description": "Splittable word (rejoins to valid word 'footbreadth')",
+        "chapter": "The Chamber of Imagery in the Church of Rome Laid Open.",
+        "contexts": [
+          "... rights or enjoyments, nor gave to his apostles a foot-breadth of inheritance among them. But upon this grant, t ..."
+        ]
+      },
+      {
+        "target": "god-like",
+        "description": "Splittable word (rejoins to valid word 'godlike')",
+        "chapter": "The Chamber of Imagery in the Church of Rome Laid Open.",
+        "contexts": [
+          "... st, and good: but, since the ascription of such a god-like authority unto men, as to secure blind obedience ...",
+          "... emolish this cursed image, or the ascription of a god-like power unto men to require blind obedience unto th ..."
+        ]
+      },
+      {
+        "target": "such-like",
+        "description": "Splittable word (rejoins to valid word 'suchlike')",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... ng the best cause, as they suppose; and with many such-like notions are the minds of men possessed. But the t ..."
+        ]
+      },
+      {
+        "target": "fore-signify",
+        "description": "Splittable word (rejoins to valid word 'foresignify')",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... unt of these things, as they were to foretell and fore-signify the fatal destruction of Jerusalem, is given us b ..."
+        ]
+      },
+      {
+        "target": "over-neglect",
+        "description": "Splittable word (rejoins to valid word 'overneglect')",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... zeal, what exercise of all gospel grace, with the over-neglect of these things among many, \u2014 it would take up a ..."
+        ]
+      },
+      {
+        "target": "stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'stoutheartedness')",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... ections may be made use of: \u2014 First. Take heed of stout-heartedness, and a contempt or neglect thereby of divine warn ..."
+        ]
+      },
+      {
+        "target": "stout-hearted",
+        "description": "Splittable word (rejoins to valid word 'stouthearted')",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... ections may be made use of: \u2014 First. Take heed of stout-heartedness, and a contempt or neglect thereby of divine ...",
+          "... either really or in pretense, are bold, fearless, stout-hearted, regardless of these things; they seem to provoke ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "D .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Prefatory Note.",
+        "contexts": [
+          "... nder their handwriting. H. ELSYINGE, Cler. Parl. D . Com."
+        ]
+      },
+      {
+        "target": "sight ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... nt. Even so, Father; for so it seemed good in thy sight ;\" and with Acts 14:16, \u2014 he \"suffered all nations ..."
+        ]
+      },
+      {
+        "target": "indignity ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... clear it. There is, then, a twofold demerit and indignity ; \u2014 one merely negative, or a not deserving to have ..."
+        ]
+      },
+      {
+        "target": "1st ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... iration, and a little after violently assaulted. 1st , In the first way, how do we find the Jews putting ..."
+        ]
+      },
+      {
+        "target": "Behold ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... 13:41, Paul concludes his sermon to thorn with, \"Behold , ye despisers, and wonder, and perish;\" \u2014 and vers ..."
+        ]
+      },
+      {
+        "target": "2dly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... the martyrs of Jesus that suffered amongst them! 2dly , After some continuance. So the Church of Laodicea ...",
+          "... s and glorious fancies, became head of that fatal 2dly , After some continuance. So the Church of Laodicea ..."
+        ]
+      },
+      {
+        "target": "3dly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... not professedly found in any party amongst us. 3dly , Which was worst of all, they had centred in their ..."
+        ]
+      },
+      {
+        "target": "old :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... hout him are liars, like the devil, who was so of old : \u2014 he is the Life; (John 1:3-5; Ephesians 4:18; Jo ..."
+        ]
+      },
+      {
+        "target": "from ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... age than any by your means we have been delivered from ; \u2014 if you leave us thus, all your protection will ..."
+        ]
+      },
+      {
+        "target": "God .",
+        "description": "Spaced period (space before period)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... n, is of the mere free grace and good pleasure of God . \"Stay not in Asia;\" etc. III. No men in the worl ..."
+        ]
+      },
+      {
+        "target": "continuance .",
+        "description": "Spaced period (space before period)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... patience, long-suffering, and forbearance in the continuance . He bears with our manners, whilst we grieve his S ..."
+        ]
+      },
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... s example. These things being presupposed, \u2014 Use 1 . Let no flesh glory in themselves, but let every m ..."
+        ]
+      },
+      {
+        "target": "e )",
+        "description": "Spaced closing parenthesis",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... g how this vial was poured out upon the very throne ), and then let us all be ashamed and confounded in ..."
+        ]
+      },
+      {
+        "target": "s )",
+        "description": "Spaced closing parenthesis",
+        "chapter": "A Country Essay",
+        "contexts": [
+          "... nasius and others in the east deposed by the Arians ). Now, who would not have thought, that his standi ..."
+        ]
+      },
+      {
+        "target": "you ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "To the Worthy and Honored Sir William Masham, Sir William Rowe,",
+        "contexts": [
+          "... fear but that that God who hath so appeared with you , and for you, will so indulge to y spirits the pre ..."
+        ]
+      },
+      {
+        "target": "Colchester ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... neral mercies we have received . The surrender of Colchester , the particular celebrated this day, though marchi ..."
+        ]
+      },
+      {
+        "target": "portion .",
+        "description": "Spaced period (space before period)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... servation 15. The measuring out of God's people's portion .fills Cushan with affliction and Midian with tremb ..."
+        ]
+      },
+      {
+        "target": "received .",
+        "description": "Spaced period (space before period)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... our trust. I speak of the general mercies we have received . The surrender of Colchester , the particular cele ..."
+        ]
+      },
+      {
+        "target": "Behold ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... e curse of a professing people at the same time. \"Behold , I and the children whom God hath given me, are fo ..."
+        ]
+      },
+      {
+        "target": "Observation .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... entreaty, it cannot, it shall not, be reversed. Observation . There is a time when sin grows ripe for ruin: \"Fo ...",
+          "... rd be your guide; \u2014 poor England lieth at stake. Observation . The greatest difficulty that lieth in bringing of ...",
+          "... authority of God, in this general proposition: \u2014 Observation . Plausible compliances of men in authority with th ..."
+        ]
+      },
+      {
+        "target": "Obj .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... their own deliverers, if ever they be delivered. Obj . But is not a people's contending with the instrum ..."
+        ]
+      },
+      {
+        "target": "5thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... his own, \u2014 hardening whom he will, Romans 9:18. 5thly . He positively sends upon their understandings tha ..."
+        ]
+      },
+      {
+        "target": "6thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... give them up to contend with their only helpers. 6thly . Suitably upon the will and affections he hath sev ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... ith their only supporters and means of deliverance.. Jeremiah had labored with God for them, and with ..."
+        ]
+      },
+      {
+        "target": "1 ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... i. cap. 24; Greg. de Valen. de Idol, lib. i. cap. 1 ; \u2014 suitable to the description of it given by the ..."
+        ]
+      },
+      {
+        "target": "1st ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... rranted zeal. Now, concerning these, I affirm, \u2014 1st , That the magistrate ought not to make provision o ...",
+          "... truth so owned, as before, and act accordingly. 1st , For the first of these, or such as dissent about ..."
+        ]
+      },
+      {
+        "target": "6 ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... accordingly performed this duty, 2 Chronicles 17:6 , 30:14, are enough to confirm it, and to bottom th ..."
+        ]
+      },
+      {
+        "target": "experience .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... uthority. It is but too clearly made out by daily experience . If they close with them, they are \"custodes utriu ..."
+        ]
+      },
+      {
+        "target": "2 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... te's duty can be stretched to cover them. Reason 2 . Neither party, I am persuaded, in their retired t ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... t do. Now, it cannot be his duty to further sin. 2dly . Outward monuments \u2014 ways of declaring and holding ...",
+          "... tions sufficient to make an article fundamental. 2dly . That the persons holding the error are convinced, ...",
+          "... ed in this case, I refer to another opportunity. 2dly . Gospel constitutions in the case of heresy or err ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... f, there are sundry things gratis assumed; as, \u2014 1st . That it is known and confessed what articles in r ...",
+          "... co-action and restraint, oppose some few things. 1st . The non-constitution of a judge in case of heresy ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... ht forth to the joy of all the children of Zion. 3dly . Sundry other arguments, taken from the nature of ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... and Eunomians, Sozom. Ecclesiastes Hist., lib. vii.. cap. 1. Many more the like examples might be pro ..."
+        ]
+      },
+      {
+        "target": "in ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Steadfastness of the Promises, and the Sinfulness of Stagge",
+        "contexts": [
+          "... the vine. \"God,\" saith he, \"is able to graft them in ;\" though now they seem as dead bones, yet the Lord ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Steadfastness of the Promises, and the Sinfulness of Stagge",
+        "contexts": [
+          "... is often spoken of, seldom driven to any close! 1st . Pray. \"Pray the Lord of the harvest, that he woul ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Steadfastness of the Promises, and the Sinfulness of Stagge",
+        "contexts": [
+          "... into the fields that are white for the harvest. 2dly . Make such provision, that those who will go may b ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Steadfastness of the Promises, and the Sinfulness of Stagge",
+        "contexts": [
+          "... is be the business of an unpursued order. But, \u2014 3dly . Let some be appointed (generals die and sink by t ..."
+        ]
+      },
+      {
+        "target": "pretences ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... e Pharisees' hypocrisy, notwithstanding all their pretences , and possession of Moses' chair, that they were wi ..."
+        ]
+      },
+      {
+        "target": "2dly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... lly in four sinful things: \u2014 1st, Sinful cares; 2dly , Sinful fears; 3dly , Sinful follies; 4thly , Si ..."
+        ]
+      },
+      {
+        "target": "3dly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... ngs: \u2014 1st, Sinful cares; 2dly , Sinful fears; 3dly , Sinful follies; 4thly , Sinful negligence. 1st ..."
+        ]
+      },
+      {
+        "target": "4thly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... s; 2dly , Sinful fears; 3dly , Sinful follies; 4thly , Sinful negligence. 1st . Sinful cares, \u2014 anxious ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... greatness or power; which he sets out two ways. 1st . Absolutely, as he is God, to be \"blessed for ever ...",
+          "... ly , Sinful follies; 4thly , Sinful negligence. 1st . Sinful cares, \u2014 anxious and dubious thoughts abou ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... into the hands of the living God,\" chap. 10:31. 2dly . Comparatively, as he is the mediator of the new c ...",
+          "... quaintedness with the work and mind of the Lord. 2dly . Sinful fears. Luke 21:28, our Savior having told ..."
+        ]
+      },
+      {
+        "target": "Observation .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... hristian consideration this following position: \u2014 Observation . The Lord Jesus Christ, by his mighty power, in th ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... ll things working together to the appointed end. 3dly . Sinful follies. Toil and labor in vain is, of all ..."
+        ]
+      },
+      {
+        "target": "4thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... r;\" and all because they discern not the season. 4thly . Sinful negligence. You are no way able to do the ..."
+        ]
+      },
+      {
+        "target": "me ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... g out, \"If it be possible, let this cup pass from me ;\" but he recollects himself, and says, \"I am conte ..."
+        ]
+      },
+      {
+        "target": "pieces .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "... hidden, against which they dash themselves all to pieces . I say, then, Christ, as the foundation of this ho ..."
+        ]
+      },
+      {
+        "target": "them ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Advantage of the Kingdom of Christ",
+        "contexts": [
+          "... as were the residue of their types, every one of them ; \u2014 yea, the most glorious enjoyments whatsoever wh ..."
+        ]
+      },
+      {
+        "target": "dismission :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Laboring Saint's Dismission to Rest.",
+        "contexts": [
+          "... n the most useful employments, must receive their dismission : \u2014 be their work of never so great importance, be ..."
+        ]
+      },
+      {
+        "target": "world :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Laboring Saint's Dismission to Rest.",
+        "contexts": [
+          "... nd of his life and pilgrimage. 2. The end of the world : \"Go thy ways to the end of the world: till then t ..."
+        ]
+      },
+      {
+        "target": "therein :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... hand. And these three things he mentions of them therein : \u2014 (1.) Their rise; (2.) Nature; (3.) Destructi ..."
+        ]
+      },
+      {
+        "target": "5thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... rience what will be the issue of such allowance. 5thly . I shall only propose one thing more to your consi ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... the present, these brief directions following: \u2014 1st . Labor to be fully persuaded in your own minds, th ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... ion of them whom God will spew out of his mouth. 2dly . Know that error and falsehood have no fight or ti ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... nor morally they are a disturbance unto others. 3dly . Know that in things of practice, so of persuasion ..."
+        ]
+      },
+      {
+        "target": "Zion ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... ven in is the work of God. \"The Lord hath founded Zion ;\" \u2014 Zion , that is, his church, his people, his ch ..."
+        ]
+      },
+      {
+        "target": "Zion ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... the work of God. \"The Lord hath founded Zion ;\" \u2014 Zion , that is, his church, his people, his chosen ones, ..."
+        ]
+      },
+      {
+        "target": "founded ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... ordinances of worship. This God \"hath founded;\"\u2014founded , or established, strengthened, that it shall not b ..."
+        ]
+      },
+      {
+        "target": "Joseph ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... that there rise not up a generation that know not Joseph ; \u2014 that knew us not in the days of our distress an ..."
+        ]
+      },
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "... n part touched before; I shall add but two more. 1 . Discontentment with our peculiar lot and portion ..."
+        ]
+      },
+      {
+        "target": "supposition :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... hetical propositions, or promissory assertions on supposition : \u2014 \"If you abide with the Lord, he will be with yo ..."
+        ]
+      },
+      {
+        "target": "General ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... ntial dispensations. And this is twofold: \u2014 (1.) General ; \u2014 ordering, disposing, guiding, ruling all things ..."
+        ]
+      },
+      {
+        "target": "say ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... ffice as an instance in every kind. But you will say , How shall we inquire of God? The nations had the ..."
+        ]
+      },
+      {
+        "target": "First .",
+        "description": "Spaced period (space before period)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... ngs are, then, principally to be inquired into: \u2014 First . What it is for God to be with any people. Secondl ..."
+        ]
+      },
+      {
+        "target": "Secondly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... First . What it is for God to be with any people. Secondly . What it is for a people to be or abide with God. ..."
+        ]
+      },
+      {
+        "target": "peace .",
+        "description": "Spaced period (space before period)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... f Christ: our being with God is in him who is our peace . Two cannot walk together, unless they be agreed, ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... few things that are signally required thereunto. 1st . That they inquire of God, ask counsel at his hand ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "... sting of him in reference to special protection. 3dly . A third thing I should fix upon is, a people's un ..."
+        ]
+      },
+      {
+        "target": "1st ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... offense, in these few ensuing considerations: \u2014 1st , Then, I shall willingly lay this down for a princ ..."
+        ]
+      },
+      {
+        "target": "3dly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... om owning the portion and inheritance of Christ! 3dly , It cannot be denied, but that many of them who do ..."
+        ]
+      },
+      {
+        "target": "4thly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... miscarriages of others, have most of their own. 4thly , That differences of judgments, in civil affairs o ..."
+        ]
+      },
+      {
+        "target": "5thly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... on such accounts, it is because they will be so. 5thly , This hath ever been the way of the men of the wor ..."
+        ]
+      },
+      {
+        "target": "6thly ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... power of grace, harden themselves to their ruin. 6thly , This remnant of Christ, with whom his presence is ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... hat is here expressed as to the type and figure; 2dly . What is here intended as to the substance of the ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... ended as to the substance of the mercy promised. 1st . For the figure; by the \"glory\" and \"defense,\" a d ...",
+          "... uation pleaded for be cast? To this I answer, \u2014 1st . Some do say so, and plead thus, it cannot be deni ..."
+        ]
+      },
+      {
+        "target": "will .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... as is their deportment towards this remnant, such will .their issue be. But what shall this remnant do? Wh ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "... ,\" they will flourish again in peace and beauty. 3dly . Let not Satan cheat you of your duty by this triv ..."
+        ]
+      },
+      {
+        "target": "Observation .",
+        "description": "Spaced period (space before period)",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "... n may be comprised in this general observation: \u2014 Observation . Reproofs, though accompanied with some sharpness, ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "... nsidered, that it may not be unuseful unto us: \u2014 1st . The circumstances of the reprover; as, first, Whe ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "... are reproved for that whereof we are not guilty. 2dly . Consider aright the difference between a reproof ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "... and if it be false, it is, moreover, a calumny. 3dly . Where a man, in such cases, is fully justified by ..."
+        ]
+      },
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Testimony of the Church Is Not the Only Nor the Chief Reaso",
+        "contexts": [
+          "... agree with them; 2. In some we differ from them. 1 . In some we agree. (1.) That the scripture of the ..."
+        ]
+      },
+      {
+        "target": "testimony .",
+        "description": "Spaced period (space before period)",
+        "chapter": "The Testimony of the Church Is Not the Only Nor the Chief Reaso",
+        "contexts": [
+          "... manifest itself to us, even without the church's testimony . The reason of the consequence is, because faith ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Except. III.",
+        "contexts": [
+          "... g, together with the apostles', they were built. Ans . The preaching [of] the truth, or writing it, make ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Except. IV.",
+        "contexts": [
+          "... g, together with the apostles', they were built. Ans . The preaching [of] the truth, or writing it, make ..."
+        ]
+      },
+      {
+        "target": "V .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Except.",
+        "contexts": [
+          "... church, because she says she is the church. Arg. V . If we are to believe the divinity of the Scriptur ..."
+        ]
+      },
+      {
+        "target": "1st .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Except.",
+        "contexts": [
+          "... aith, and comfort, and obedience, all at once: \u2014 1st . It is destructive to our faith. It leaves us no f ..."
+        ]
+      },
+      {
+        "target": "2d .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Except.",
+        "contexts": [
+          "... eived them, when the rest are, because she hath. 2d . It is as destructive to our comfort. When our gre ..."
+        ]
+      },
+      {
+        "target": "3d .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Except.",
+        "contexts": [
+          "... tainties for the very foundation of their faith. 3d . It is as destructive to our obedience as to eithe ..."
+        ]
+      },
+      {
+        "target": "the :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Prefatory Note (Sermon 7 \u2014 Advantage of the Kingdom of Christ)",
+        "contexts": [
+          "... n had been agitated with stormy discussions about the :Exclusion Bill. The Whig party were bent on preven ..."
+        ]
+      },
+      {
+        "target": "privileges ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... ot repent nor reform their ways. First. By their privileges ; \u2014 that they were the only church and people of Go ..."
+        ]
+      },
+      {
+        "target": "sorts :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... and ready to seize on us?\" And they are of three sorts : \u2014 First. Such as are absolute, decretory, and uni ..."
+        ]
+      },
+      {
+        "target": "therein ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... udgments, and of our reverence of the name of God therein ; \u2014 much fruitfulness in charity and good works be ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... nd worship due to the Creator, Rainold. de Idol., lib. ii. cap. 1, sect. 1. \" Idololatria est circa omne i ...",
+          "... olatry, say the Papists, Bell, de Ecclea Triumph, lib. ii. cap. 24; Greg. de Valen. de Idol, lib. i. cap. 1 ...",
+          "... rnment do and ought to enjoy. So Cicero tells us, lib. ii., De Leg., \"Suosque deos, aut novos, aut alienige ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... nd worship due to the Creator, Rainold. de Idol., lib. ii. cap. 1, sect. 1. \" Idololatria est circa omne ...",
+          "... servitutem exhibent, quae debertur Deo, \" August, lib. i. de Trinit. cap. 6 \u2014 \" They are idolaters who giv ...",
+          "... olatry, say the Papists, Bell, de Ecclea Triumph, lib. ii. cap. 24; Greg. de Valen. de Idol, lib. i. cap. ..."
+        ]
+      },
+      {
+        "target": "lib. 5",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... things no way conducing to monarchy,\" Hist. Rom., lib. 52:36. Hence, doubtless, was that opposition which ..."
+        ]
+      },
+      {
+        "target": "Epist. lii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... And long after these, Gregory of Rome, lib. ii. Epist. lii., tells us, \" Nova et inaudita est ista praedicat ..."
+        ]
+      },
+      {
+        "target": "lib. iv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... \"Yea, to be the first-born of the devil,\" Euseb., lib. iv. cap. 14. Ignatius's epistles are full of the li ...",
+          "... hodox professors of the Deity of Christ, Socrat., lib. iv. cap 27. 5. Lastly, add unto all that hath been ...",
+          "... hut up Pagans' temples, Euseb. de Vita Constant., lib. iv. cap. 23, 24; and demolished some of the most fil ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... e building fall on us where Cerinthus is,\" Iren., lib. iii. cap. 3; Euseb. Ecclesiastes Hist., lib. iii. cap ...",
+          "... en., lib. iii. cap. 3; Euseb. Ecclesiastes Hist., lib. iii. cap. 28. Marcion meeting Polycarpus, and asking ...",
+          "... Irenaeus says, he would have no words with them, lib. iii. cap. 3. Tertullian's books testify for him at la ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Of Toleration;",
+        "contexts": [
+          "... y \u2014 first fastened on the Jews by Tacitus, Hist., lib. v. cap. 1, in these words, \"Effigiem animalis, quo ...",
+          "... inians, and Eunomians, Sozom. Ecclesiastes Hist., lib. vii.. cap. 1. Many more the like examples might be ...",
+          "... e two years, was slain with his children, Euseb., lib. vii. cap. 1. Valerian, being taken by Sapores king ..."
+        ]
+      },
+      {
+        "target": "lib. 53",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... had spread themselves over all the nation, Hist., lib. 53:Nor is it otherwise among us at present; though n ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "SERMON 2. A MEMORIAL OF THE DELIVERANCE OF ESSEX COUNTY ...",
+          "... Secondly, The prophet's main request in it, verse 2. Thirdly, Arguments to sustain his faith in that ...",
+          "... is way to the rock of our salvation. Observation 2. Prophets' discoveries of fearful judgments must b ..."
+        ]
+      },
+      {
+        "target": "2. ... 17.",
+        "description": "List sequence jump (skipped from 2 to 17)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 7.",
+        "description": "List sequence jump (skipped from 2 to 7)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 8.",
+        "description": "List sequence jump (skipped from 2 to 8)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 9.",
+        "description": "List sequence jump (skipped from 3 to 9)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 10.",
+        "description": "List sequence jump (skipped from 2 to 10)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 13.",
+        "description": "List sequence jump (skipped from 3 to 13)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 14.",
+        "description": "List sequence jump (skipped from 2 to 14)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 15.",
+        "description": "List sequence jump (skipped from 5 to 15)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 17.",
+        "description": "List sequence jump (skipped from 3 to 17)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 19.",
+        "description": "List sequence jump (skipped from 2 to 19)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 20.",
+        "description": "List sequence jump (skipped from 1 to 20)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": []
+      },
+      {
+        "target": "3.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "SERMON 3. RIGHTEOUS ZEAL ENCOURAGED BY DIVINE PROTECTIO ...",
+          "... s just and righteous See verse 6 of this chapter. 3. Because the people, by virtue of their retained s ...",
+          "... s for Baal, and a grove, as did Ahab,\" 2 Kings 21:3. (2.) Cruelty: \"He shed innocent blood very much, ..."
+        ]
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "Of Toleration;",
+        "contexts": []
+      },
+      {
+        "target": "4.",
+        "description": "List sequence starts at 4 instead of 1",
+        "chapter": "The Steadfastness of the Promises, and the Sinfulness of Stagge",
+        "contexts": [
+          "SERMON 4. THE STEADFASTNESS OF THE PROMISES, AND THE SI ...",
+          "... and conclusions, to the end of verse 17, chapter 4. Having laid down this, in the next place he give ...",
+          "... ll, to lie down quietly in God's allsufficiency. 4. The last is, that \"he staggered not,\" verse 20. T ..."
+        ]
+      },
+      {
+        "target": "5.",
+        "description": "List sequence starts at 5 instead of 1",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "SERMON 5. THE SHAKING AND TRANSLATING OF HEAVEN AND EAR ...",
+          "... al states; as Isaiah 14:12-15; Jeremiah 15:9, 51:25. (Isaiah 13:13; Psalm 68:8; Joel 51:10; Revelation ...",
+          "... lation 1:14-17, as also chapter 4 and chapter 11:15. And both these may be again considered two ways. ..."
+        ]
+      },
+      {
+        "target": "6.",
+        "description": "List sequence starts at 6 instead of 1",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "SERMON 6. THE BRANCH OF THE LORD THE BEAUTY OF ZION: OR ...",
+          "... ious corner-stone, a sure foundation,\" Isaiah 28:16. Now, this foundation is no other but the rock upo ...",
+          "... his own house, whose house are we,\" Hebrews 3:5, 6. And that you may see that he doth not own it as ..."
+        ]
+      },
+      {
+        "target": "8.",
+        "description": "List sequence starts at 8 instead of 1",
+        "chapter": "The Laboring Saint's Dismission to Rest.",
+        "contexts": [
+          "SERMON 8. THE LABORING SAINT'S DISMISSION TO REST. \"But ...",
+          "... a man to be \"weary and heavy laden,\" Matthew 11:28. This oftentimes makes the inhabitants of Zion say ..."
+        ]
+      },
+      {
+        "target": "9.",
+        "description": "List sequence starts at 9 instead of 1",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "SERMON 9. CHRIST'S KINGDOM AND THE MAGISTRATE'S POWER. ...",
+          "... pt of the gospel, 2 Corinthians 2:16; Hebrews 10:29. He sends his Spirit to convince even the perishin ...",
+          "... gh never so glorious and excellent, Revelation 22:9. 2dly. For Satan, as he came to bind the strong m ..."
+        ]
+      },
+      {
+        "target": "10.",
+        "description": "List sequence starts at 10 instead of 1",
+        "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
+        "contexts": [
+          "SERMON 10. GOD'S WORK IN FOUNDING ZION, AND HIS PEOPLE'S ..."
+        ]
+      },
+      {
+        "target": "11.",
+        "description": "List sequence starts at 11 instead of 1",
+        "chapter": "God's Presence With a People the Spring of Their Prosperity.",
+        "contexts": [
+          "SERMON 11. GOD'S PRESENCE WITH A PEOPLE THE SPRING OF TH ..."
+        ]
+      },
+      {
+        "target": "12.",
+        "description": "List sequence starts at 12 instead of 1",
+        "chapter": "The Glory and Interest of Nations Professing the Gospel.",
+        "contexts": [
+          "SERMON 12. THE GLORY AND INTEREST OF NATIONS PROFESSING ...",
+          "... number; yea, very few, and strangers,\" Psalm 105:12. You know what it cost David in being seduced by S ..."
+        ]
+      },
+      {
+        "target": "13.",
+        "description": "List sequence starts at 13 instead of 1",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "SERMON 13. HOW WE MAY BRING OUR HEARTS TO BEAR REPROOFS. ...",
+          "... and cutting manner,\" 2 Corinthians 13:10; Titus 1:13. But with respect unto their use, benefit, and adv ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Except. II.",
+        "contexts": [
+          "... prophets and Moses did say should come,\" Acts 26:22. So Acts 17. 2. The preaching of the apostles and ...",
+          "... es did say should come,\" Acts 26:22. So Acts 17. 2. The preaching of the apostles and prophets did la ...",
+          "... the good knowledge of the Lord,\" 2 Chronicles 30:22."
+        ]
+      },
+      {
+        "target": "III.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Except. III.",
+        "contexts": [
+          "Except. III. \"But,\" say they again, \"the Ephesians were not bu ..."
+        ]
+      },
+      {
+        "target": "III.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "Except. IV.",
+        "contexts": [
+          "Except. III. \"But,\" say they again, \"the Ephesians were not bu ...",
+          "... er, till their doctrine was first believed. Arg. III. The Scripture hath its authority, in relation to ..."
+        ]
+      },
+      {
+        "target": "VI.",
+        "description": "List sequence starts at 6 instead of 1",
+        "chapter": "Except.",
+        "contexts": [
+          "... e to be before the testimony of the church. Arg. VI. If we must believe the Scripture to be the word o ..."
+        ]
+      },
+      {
+        "target": "I. ... IX.",
+        "description": "List sequence jump (skipped from 1 to 9)",
+        "chapter": "Except.",
+        "contexts": []
+      },
+      {
+        "target": "16.",
+        "description": "List sequence starts at 16 instead of 1",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "SERMON 16. AN HUMBLE TESTIMONY UNTO THE GOODNESS AND SEV ...",
+          "... te described by the apostle, 1 Thessalonians 2:14-16. But it may be said, If their destruction was so ...",
+          "... ith his people as the angel dealt with Lot, verse 16. They are apt to linger, and know not how to leave ..."
+        ]
+      },
+      {
+        "target": "3. ... 9.",
+        "description": "List sequence jump (skipped from 3 to 9)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Jude 4",
+        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "... have fulfilled, John 12:37-41; in men described, Jude 4, and 1 Peter 2:8. But here we must strike sail, t ..."
+        ]
+      },
+      {
+        "target": "Obadiah 9",
+        "description": "Invalid Bible reference (chapter 9 exceeds max 1 for Obadiah)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
+        "contexts": [
+          "... Teman (Genesis 36:15; Jeremiah 49:7; Habakkuk 1:9 Obadiah 9.) was a city of the Edomites, whose land the peop ..."
+        ]
+      },
+      {
+        "target": "2 Kings 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
+        "contexts": [
+          "... this Manasseh, he recalls his thoughts of mercy, 2 Kings 23:26, 27. The deposing of divine and human things i ..."
+        ]
+      },
+      {
+        "target": "Joel 51",
+        "description": "Invalid Bible reference (chapter 51 exceeds max 3 for Joel)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... Jeremiah 15:9, 51:25. (Isaiah 13:13; Psalm 68:8; Joel 51:10; Revelation 8:12; Matthew 24:29; Luke 21:25; I ..."
+        ]
+      },
+      {
+        "target": "Obadiah 4",
+        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Obadiah)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... on 8:12; Matthew 24:29; Luke 21:25; Isaiah 60:20; Obadiah 4; Revelation 8:13, 40:12, 20:11.) Furthermore, to ..."
+        ]
+      },
+      {
+        "target": "Jude 4",
+        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... n of the sense and matter thereof. (Hebrews 11:5; Jude 4:1; Galatians 1:6; Hebrews 6:18, 7:12.) Understand ..."
+        ]
+      },
+      {
+        "target": "Obadiah 21",
+        "description": "Invalid Bible reference (chapter 21 exceeds max 1 for Obadiah)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... administrations. (Psalm 45:6, 45:13; Isaiah 9:7; Obadiah 21) So is Christ described as a king in the midst of ..."
+        ]
+      },
+      {
+        "target": "Hosea 52",
+        "description": "Invalid Bible reference (chapter 52 exceeds max 14 for Hosea)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... ah 37:31; Jeremiah 30:9; Ezekiel 34:27, 37:24,25; Hosea 52:5; Amos 9:11.) and in answer to millions of praye ..."
+        ]
+      },
+      {
+        "target": "2 Kings 24",
+        "description": "Invalid Bible reference (chapter 24 exceeds max 22 for Kings)",
+        "chapter": "Advantage of the Kingdom of Christ",
+        "contexts": [
+          "... appoints Zedekiah a titulary governor under him. (2 Kings 24:1-3) But the wrath of God being to come upon them ...",
+          "... es with Egypt, rebels against him (Jeremiah 37:1; 2 Kings 24:17; 2 Chronicles 36:10) by whose appointment alon ..."
+        ]
+      },
+      {
+        "target": "Obadiah 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 1 for Obadiah)",
+        "chapter": "Advantage of the Kingdom of Christ",
+        "contexts": [
+          "... destroy the residue, when at any time straitened, Obadiah 14:1. How many in the late trial rejoiced in the str ..."
+        ]
+      },
+      {
+        "target": "Philippians 20",
+        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
+        "chapter": "Advantage of the Kingdom of Christ",
+        "contexts": [
+          "... , 22, 13:55, 8:19; John 4:28, 29; Isaiah 53:2, 3; Philippians 20:7 2:7,8, etc.) Thus lays he the foundation of the ..."
+        ]
+      },
+      {
+        "target": "Obadiah 12",
+        "description": "Invalid Bible reference (chapter 12 exceeds max 1 for Obadiah)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "... abound. In such a day Edom will appear an enemy, (Obadiah 12, 13; Isaiah 7:1.) and Ephraim with the son of Rem ..."
+        ]
+      },
+      {
+        "target": "Jude 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 1 for Jude)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... st recorded of them are in the prophecy of Enoch, Jude 14,15. And they have been since continued in all age ...",
+          "... e coming of God to take vengeance on ungodly men, Jude 14,15. And this message was scoffed at, as is eviden ..."
+        ]
+      },
+      {
+        "target": "2 Kings 23",
+        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... onish captivity, as an account is given us of it, 2 Kings 23:25-27, \"Like unto him was there no king before hi ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
+  }
+}

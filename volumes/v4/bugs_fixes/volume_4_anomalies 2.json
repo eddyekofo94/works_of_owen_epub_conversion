@@ -1,0 +1,861 @@
+{
+  "volume": 4,
+  "total_words_audited": 261905,
+  "total_anomalies_count": 109,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "day-star",
+        "description": "Splittable word (rejoins to valid word 'daystar')",
+        "chapter": "Chapter 3 - Convincing Arguments for Divine Revelation",
+        "contexts": [
+          "... neth in a dark place, until the day dawn, and the day-star arise in your hearts: knowing this first, that no ..."
+        ]
+      },
+      {
+        "target": "com-prebends",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Chapter 4 - Moral Certainty",
+        "contexts": [
+          "... t oftentimes shines in darkness, but the darkness com-prebends it not. But this neither is nor can be the formal ..."
+        ]
+      },
+      {
+        "target": "day-star",
+        "description": "Splittable word (rejoins to valid word 'daystar')",
+        "chapter": "Chapter 5 - Divine Revelation Itself the Only Foundation",
+        "contexts": [
+          "... neth in a dark place, until the day dawn, and the day-star arise in your hearts: knowing this first, that no ..."
+        ]
+      },
+      {
+        "target": "hac-tenus",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Appendix.",
+        "contexts": [
+          "... ecipue quidem propter nullum argumentum, quod vel hac-tenus fecimus vel ratione similiter excogitari possit, ..."
+        ]
+      },
+      {
+        "target": "pre-required",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Preface",
+        "contexts": [
+          "... d of God,\" with that faith which is our duty, and pre-required unto all other acceptable obedience. But although ..."
+        ]
+      },
+      {
+        "target": "pre-imbibed",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Chapter 5 - Causes of the ignorance of the mind of God revealed in the Scripture, and of error...",
+        "contexts": [
+          "... gness to hear him. But if men will not forego all pre-imbibed opinions, prejudices, and conceptions of mind, ho ..."
+        ]
+      },
+      {
+        "target": "Prayer-books",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Preface",
+        "contexts": [
+          "... that the Christians received their Tephilloth, or Prayer-books, from Armillus, \u2014 that is, Antichrist. It is tru ..."
+        ]
+      },
+      {
+        "target": "limi-rations",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Chapter 4 - the Nature of Prayer",
+        "contexts": [
+          "... ed the supply of it, in such a way and under such limi-rations as may make it good and useful unto us; and there ..."
+        ]
+      },
+      {
+        "target": "evil-doer",
+        "description": "Splittable word (rejoins to valid word 'evildoer')",
+        "chapter": "Chapter 1 - The Holy Ghost the comforter of the church by way of office \u2014 How he is the church...",
+        "contexts": [
+          "... advocate. Christ was looked on by the world as an evil-doer; accused to be a glutton, a wine-bibber, a sediti ..."
+        ]
+      },
+      {
+        "target": "wine-bibber",
+        "description": "Splittable word (rejoins to valid word 'winebibber')",
+        "chapter": "Chapter 1 - The Holy Ghost the comforter of the church by way of office \u2014 How he is the church...",
+        "contexts": [
+          "... world as an evil-doer; accused to be a glutton, a wine-bibber, a seditious person, a seducer, a blasphemer, a m ..."
+        ]
+      },
+      {
+        "target": "eye-salve",
+        "description": "Splittable word (rejoins to valid word 'eyesalve')",
+        "chapter": "Chapter 5 - Particular Actings of the Holy Spirit As A Comforter",
+        "contexts": [
+          "... ed the [[BLOCKQUOTE]] \"anointing of our eyes with eye-salve that we may see,\" Revelation 3:18. So doth it an ..."
+        ]
+      },
+      {
+        "target": "safe-keeping",
+        "description": "Splittable word (rejoins to valid word 'safekeeping')",
+        "chapter": "Chapter 6 - the Spirit a Seal, and How.",
+        "contexts": [
+          "... es, that are said to be sealed. 2. It is for the safe-keeping or preservation of that which a seal is set upon. ..."
+        ]
+      },
+      {
+        "target": "co-heirs",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Chapter 7 - the Spirit an Earnest, and How.",
+        "contexts": [
+          "... he giving of his Spirit unto us, God making of us co-heirs with Christ, we have the greatest and most assure ...",
+          "... t of the Spirit\" given unto us, whereby we become co-heirs with Christ, whose Spirit we are made partakers o ...",
+          "... n of the same Spirit from him and by him makes us co-heirs with him; and so he is an earnest given us of God ..."
+        ]
+      },
+      {
+        "target": "over-earnestly",
+        "description": "Splittable word (rejoins to valid word 'overearnestly')",
+        "chapter": "Chapter 3 - of Gifts and Offices Extraordinary",
+        "contexts": [
+          "... orm some parts of it, so it may be very few would over-earnestly press after a participation of their office; for ..."
+        ]
+      },
+      {
+        "target": "ma-nagery",
+        "description": "Splittable word (rejoins to valid word 'managery')",
+        "chapter": "Chapter 3 - of Gifts and Offices Extraordinary",
+        "contexts": [
+          "... only their power and authority, in a new kind of ma-nagery, many would willingly possess themselves of. (2. ..."
+        ]
+      },
+      {
+        "target": "child-like",
+        "description": "Splittable word (rejoins to valid word 'childlike')",
+        "chapter": "Chapter 6 - of Ordinary Gifts of the Spirit",
+        "contexts": [
+          "... [2.] The means hereof is our deliverance out of a child-like state, accompanied with, \u2014 1st. Weakness; 2dly.. ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": ",,",
+        "description": "Duplicate comma",
+        "chapter": "Preface",
+        "contexts": [
+          "... out them, \u2014 not for want of a due assent unto them,, but of a right understanding what is the true and ..."
+        ]
+      },
+      {
+        "target": "sense ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter I - the Subject Stated - Preliminary Remarks.",
+        "contexts": [
+          "... y, that it was an evidence unto faith, and not to sense ; as is that also which we have now by the Scriptur ..."
+        ]
+      },
+      {
+        "target": ",,",
+        "description": "Duplicate comma",
+        "chapter": "Chapter I - the Subject Stated - Preliminary Remarks.",
+        "contexts": [
+          "... ged that the Bible is, as a sufficient and perfect,, so the only treasury of divine revelations; and w ..."
+        ]
+      },
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 3 - Convincing Arguments for Divine Revelation",
+        "contexts": [
+          "... t be deceived. Two things are replied hereunto: \u2014 1 . \"That where the things believed are divine and su ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 3 - Convincing Arguments for Divine Revelation",
+        "contexts": [
+          "... ism, are forced to retreat unto for shelter. 2dly.. Their style or manner of writing deserves a pecul ..."
+        ]
+      },
+      {
+        "target": "afflatus ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 4 - Moral Certainty",
+        "contexts": [
+          "... elation, consisted in an immediate inspiration or afflatus , or in visions and voices from heaven, with a powe ..."
+        ]
+      },
+      {
+        "target": "same ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 4 - Moral Certainty",
+        "contexts": [
+          "... ct of faith, or reason whereon we believe, is the same , and common unto all that do believe; for our inqu ..."
+        ]
+      },
+      {
+        "target": "disappear .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - the Nature of Divine Revelations",
+        "contexts": [
+          "... fancied unto themselves in the dark to vanish and disappear . Digitus Dei!\u2014this is none other but the power of ..."
+        ]
+      },
+      {
+        "target": "inspired ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 7 - Inferences From the Whole",
+        "contexts": [
+          "... by writings that were not divinely and infallibly inspired ; and so might the doctrine of Christ have been, bu ..."
+        ]
+      },
+      {
+        "target": "grace .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 7 - Inferences From the Whole",
+        "contexts": [
+          "... h we have no power to answer but by virtue of his grace . 4. Where the proposal of the Scripture is made i ..."
+        ]
+      },
+      {
+        "target": "enthusiasm ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 1 - Usurpation of the church of Rome with reference unto the interpretation of the Scr...",
+        "contexts": [
+          "... s not resolved into, any immediate inspiration or enthusiasm ; it doth not depend upon nor is resolved into the ..."
+        ]
+      },
+      {
+        "target": "him ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 3 - Other testimonies pleaded in confirmation of the same truth \u2014 John 16:13 opened \u2014 ...",
+        "contexts": [
+          "... sed is, our abiding in Christ: \"Ye shall abide in him ;\" which the apostle expresseth, [1 John 2:24] by \" ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 3 - Other testimonies pleaded in confirmation of the same truth \u2014 John 16:13 opened \u2014 ...",
+        "contexts": [
+          "... , the other from the special design proposed. 1st.. The general end proposed is, our abiding in Chris ...",
+          "... o requireth a limitation or exposition; for, \u2014 1st.. It is only the things as before declared that res ...",
+          "... farther ministerial teaching in the church. 2dly.. It is spoken of the things themselves absolutely, ..."
+        ]
+      },
+      {
+        "target": "ndly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - The especial work of the Holy Spirit in the illumination of our minds unto the und...",
+        "contexts": [
+          "... seeing all were so, and were always to be so. [2 ndly .] It brings in a neglect of the Scripture, and a l ..."
+        ]
+      },
+      {
+        "target": "thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - The especial work of the Holy Spirit in the illumination of our minds unto the und...",
+        "contexts": [
+          "... tions of them that pretend unto it; and would, [4 thly .] thereon be a principle, first of confusion, then ...",
+          "... then of infidelity, and so lead unto atheism. [5 thly .] The prophets themselves had not the knowledge an ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - The especial work of the Holy Spirit in the illumination of our minds unto the und...",
+        "contexts": [
+          "... this is required of us; but the apostle adds, \u2014 2dly . That there must, moreover, be a divine light shin ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 4 - The especial work of the Holy Spirit in the illumination of our minds unto the und...",
+        "contexts": [
+          "... iven unto us, for so alone do we come by it. 2dly.. It is given us. That a real and effectual communi ..."
+        ]
+      },
+      {
+        "target": "2 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - Causes of the ignorance of the mind of God revealed in the Scripture, and of error...",
+        "contexts": [
+          "... umination, I have elsewhere at large discoursed. 2 . Corrupt affections prevalent in the minds of men ..."
+        ]
+      },
+      {
+        "target": "flesh ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 6 - The work of the Holy Spirit in the composing and disposal of the Scripture as a me...",
+        "contexts": [
+          "... Word, which was God, and was with God,\" was \"made flesh ;\" that \"God was manifest in the flesh;\" that \"the ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - The work of the Holy Spirit in the composing and disposal of the Scripture as a me...",
+        "contexts": [
+          "... t confirmed elsewhere, is a dangerous curiosity. 3dly . As to sundry prophecies of future revolutions in ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 6 - The work of the Holy Spirit in the composing and disposal of the Scripture as a me...",
+        "contexts": [
+          "... as had so much obscurity attending of them: \u2014 1st.. As for types, allegories, mystical stories, and o ...",
+          "... erved \"better things for us,\" [Hebrews 11:40] 2dly.. Whatever seems yet to be continued under any obsc ..."
+        ]
+      },
+      {
+        "target": "2 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 7 - Means to be used for the right understanding of the mind of God in the Scripture \u2014...",
+        "contexts": [
+          "... Spirit in the diligent performance of this duty. 2 . Readiness to receive impressions from divine trut ..."
+        ]
+      },
+      {
+        "target": "3 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 7 - Means to be used for the right understanding of the mind of God in the Scripture \u2014...",
+        "contexts": [
+          "... n hearts, we lose our principal advantage by it. 3 . Practical obedience in the course of our walking ..."
+        ]
+      },
+      {
+        "target": "4 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 7 - Means to be used for the right understanding of the mind of God in the Scripture \u2014...",
+        "contexts": [
+          "... can descend into it from the fountain of truth. 4 . A constant design for growth and a progress in kn ..."
+        ]
+      },
+      {
+        "target": "corrupted .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... sition that the ordinal text hath been changed or corrupted . And the boldness of some herein is grown intolera ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... things to be rested on or much trusted unto. 2dly.. That the exercise of this skill in and about the ...",
+          "... ith respect unto the end aimed at. Wherefore, 3dly.. The blessing of God on our endeavors, succeeding ...",
+          "... we expect herein from the Holy Spirit. And, 4thly.. Sundry other things are required of us, if we hop ..."
+        ]
+      },
+      {
+        "target": "God ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Preface",
+        "contexts": [
+          "... to enable them to pray according unto the will of God ; there is no assistance promised to enable any to ..."
+        ]
+      },
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... ur duty herein; and they are these that follow: \u2014 1 . It it the duty of every man to pray for himself. ..."
+        ]
+      },
+      {
+        "target": "4 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... readful among the heathen,\" Malachi 1:8, 13, 14. 4 . In our reasonable service, the best wherewith we ..."
+        ]
+      },
+      {
+        "target": "5 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... y are free from the force of this consideration. 5 . There is no man but, in the use of the aids which ..."
+        ]
+      },
+      {
+        "target": "6 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... d what he is not able for he is not called unto. 6 . We are expressly commanded to pray, but are nowhe ..."
+        ]
+      },
+      {
+        "target": "7 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... o the light of nature and Scripture institution. 7 . There is assistance promised unto believers to en ..."
+        ]
+      },
+      {
+        "target": "8 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... they may do so in the reading of them afterward. 8 . Whatever forms of prayer were given out unto the ..."
+        ]
+      },
+      {
+        "target": "ceremonies .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Preface",
+        "contexts": [
+          "... ning the observance of them with sundry arbitrary ceremonies . And this also in the end, as is confessed among a ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 2 - Zechariah 12:10 Opened and Vindicated.",
+        "contexts": [
+          "... the day of Pentecost, [Acts 2:15] Acts 2:1521.\" Ans . 1. I have elsewhere already, in general, obviated ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - the Due Manner of Prayer",
+        "contexts": [
+          "... y be so esteemed, are of another consideration.\" Ans . 1. It may be that some think so; and also, it may ..."
+        ]
+      },
+      {
+        "target": "which ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 8 - Duty of Prayer by Virtue of a Spiritual Gift Explained",
+        "contexts": [
+          "... d in the mind into that sense and those sentences which ,nay be expressed; and the mind can conceive no mor ..."
+        ]
+      },
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8 - Duty of Prayer by Virtue of a Spiritual Gift Explained",
+        "contexts": [
+          "... the truth asserted by the ensuing observations. 1 . Every man is to pray or call upon God, according ..."
+        ]
+      },
+      {
+        "target": "6 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8 - Duty of Prayer by Virtue of a Spiritual Gift Explained",
+        "contexts": [
+          "... be planted, it will neither thrive nor flourish. 6 . Spiritual gifts are of two sorts: \u2014 (1.) Such as ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8 - Duty of Prayer by Virtue of a Spiritual Gift Explained",
+        "contexts": [
+          "... estly otherwise, and contrary to all experience. Ans . [1.] For the first of these inferences, I grant i ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 8 - Duty of Prayer by Virtue of a Spiritual Gift Explained",
+        "contexts": [
+          "... m him to express themselves in vocal prayer. 2dly.. It is required hereunto that such persons be foun ...",
+          "... nd helps quickly grow into disuse with them. 3dly.. The ability which we ascribe unto all who have th ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 9 - Duties Inferred From the Preceding Discourse.",
+        "contexts": [
+          "... e to deal about between God and their own souls. 2dly . Unto Scripture light . This is that which lively ..."
+        ]
+      },
+      {
+        "target": "light .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 9 - Duties Inferred From the Preceding Discourse.",
+        "contexts": [
+          "... n God and their own souls. 2dly . Unto Scripture light . This is that which lively expresseth the spiritua ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 9 - Duties Inferred From the Preceding Discourse.",
+        "contexts": [
+          "... gs intended, the use of the words profiteth not. 3dly . Unto an observation of their ways and walking, wi ..."
+        ]
+      },
+      {
+        "target": "4thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 9 - Duties Inferred From the Preceding Discourse.",
+        "contexts": [
+          "... re to be used herein I may not here insist upon. 4thly . Unto the account which they receive from themselv ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 9 - Duties Inferred From the Preceding Discourse.",
+        "contexts": [
+          "... ble neglect of his grace and bounty therein. 2dly.. The increase will be added unto, by virtue of God ...",
+          "... hat is spoken unless a man lift up his voice; 2dly.. When the vehemency of affections will bear no res ...",
+          "... to attend unto a fourfold direction therein: \u2014 1st.. Unto their own experience. If such persons are be ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 11 - Prescribed Forms of Prayer Examined.",
+        "contexts": [
+          "... a great advantage, at least unto many, in prayer. Ans . Whether they are approved or disapproved of God, ..."
+        ]
+      },
+      {
+        "target": "old .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 1 - Spiritual Gifts, Their Names and Signification.",
+        "contexts": [
+          "... the new testament differenced from that under the old . There is, indeed, a great difference between thei ..."
+        ]
+      },
+      {
+        "target": "4 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - Extraordinary Spiritual Gifts",
+        "contexts": [
+          "... the apostles and evangelists all the world over. 4 . The use of this gift in the church at that time a ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - of Ordinary Gifts of the Spirit",
+        "contexts": [
+          "... that design, \"They lie in wait to accomplish it;\" 3dly . The means they use to compass their end, which ar ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 6 - of Ordinary Gifts of the Spirit",
+        "contexts": [
+          "... sign of their authors, which is \"to deceive;\" 2dly.. Their diligence in that design, \"They lie in wait ...",
+          "... ike state, accompanied with, \u2014 1st. Weakness; 2dly.. Instability; and, 3dly. Wilfulness. And sad is th ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [
+      {
+        "target": "lib. 2",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 3 - Convincing Arguments for Divine Revelation",
+        "contexts": [
+          "... ropitious and succourable unto them,\" Antiq. Rom. lib. 2. The consideration hereof made them so obstinate ..."
+        ]
+      },
+      {
+        "target": "lib. 6 cap. 3",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Appendix.",
+        "contexts": [
+          "... ns divinitus adjuvetur,\" De Grat. et Lib. Arbit., lib. 6 cap. 3; \u2014 \"The arguments which render the articles of o ..."
+        ]
+      },
+      {
+        "target": "lib. 2 cap. 8, di",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Appendix.",
+        "contexts": [
+          "... e divinely assisted. Melchior Canns, Lee. Theol., lib. 2 cap. 8, disputes expressly to this purpose: [[BLOCKQUOTE]] ..."
+        ]
+      },
+      {
+        "target": "lib. 2",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 3 - Other testimonies pleaded in confirmation of the same truth \u2014 John 16:13 opened \u2014 ...",
+        "contexts": [
+          "... pirit, and the Holy One to be the Spirit himself, lib. 2 de Spir. Sanc. But the other interpretation is mo ..."
+        ]
+      },
+      {
+        "target": "lib. 24 cap. 30",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 2 - Zechariah 12:10 Opened and Vindicated.",
+        "contexts": [
+          "... t such covered branches. So Livy, De Bel. Punic., lib. 24 cap. 30, \"Ramos oleae, ac velamenta alia supplicantium po ..."
+        ]
+      },
+      {
+        "target": "lib. 10 cap. 23",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 2 - Zechariah 12:10 Opened and Vindicated.",
+        "contexts": [
+          "... to their gods, supplicia and supplications, Liv., lib. 10 cap. 23, \"Eo anno prodigia multa fuerunt: quorum averrunc ..."
+        ]
+      },
+      {
+        "target": "lib. 4 chap. 3",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 5 - the Work of the Holy Spirit",
+        "contexts": [
+          "... sibi Deum. \" To the same purpose speaks Damascen, lib. 4 chap. 3; and Austin in sundry places, collected by Beda, ..."
+        ]
+      },
+      {
+        "target": "Epist. 1",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Chapter 2 - General Adjuncts or Properties of the Office of a Comforter",
+        "contexts": [
+          "... the \"God of love and peace,\" 2 Corinthians 13:112 Epist. 13:11. And the communication of the whole love of G ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "The Works of John Owen Vol. 4",
+        "contexts": []
+      },
+      {
+        "target": "11.",
+        "description": "List sequence starts at 11 instead of 1",
+        "chapter": "Chapter 1 - Usurpation of the church of Rome with reference unto the interpretation of the Scr...",
+        "contexts": [
+          "... do it in and by the written word, [1 Peter 1:10] 11. II. That as to the right understanding of the mi ..."
+        ]
+      },
+      {
+        "target": "3. ... 27.",
+        "description": "List sequence jump (skipped from 3 to 27)",
+        "chapter": "Chapter 2 - The general assertion confirmed with testimonies of the Scripture \u2014 Psalm 119:18 o...",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 40.",
+        "description": "List sequence jump (skipped from 5 to 40)",
+        "chapter": "Chapter 2 - The general assertion confirmed with testimonies of the Scripture \u2014 Psalm 119:18 o...",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Chapter 4 - The especial work of the Holy Spirit in the illumination of our minds unto the und...",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 16.",
+        "description": "List sequence jump (skipped from 3 to 16)",
+        "chapter": "Chapter 6 - The work of the Holy Spirit in the composing and disposal of the Scripture as a me...",
+        "contexts": []
+      },
+      {
+        "target": "II. ... VII.",
+        "description": "List sequence jump (skipped from 2 to 7)",
+        "chapter": "Analysis.",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Preface",
+        "contexts": [
+          "... e prayed unto, and that it is our duty so to do. 2. It it the duty of some, by virtue of natural rela ...",
+          "... ient to enervate all pleas for their imposition. 2. There is a promise in the Scripture, there are ma ..."
+        ]
+      },
+      {
+        "target": "1. ... 10.",
+        "description": "List sequence jump (skipped from 1 to 10)",
+        "chapter": "Chapter 6 - the Due Manner of Prayer",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 17.",
+        "description": "List sequence jump (skipped from 10 to 17)",
+        "chapter": "Chapter 6 - the Due Manner of Prayer",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Chapter 8 - Duty of Prayer by Virtue of a Spiritual Gift Explained",
+        "contexts": [
+          "... s instead thereof, which they do not understand? 2. All the examples we have in the Scripture of the ...",
+          "... secret guilt which it doth variously contract. (2.) Constant, diligent reading of the Scriptures is ...",
+          "... joined unto any other gifts or graces whatever. (2.) Such as were adjuncts of, or annexed unto, any o ..."
+        ]
+      },
+      {
+        "target": "II.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Prefatory Note",
+        "contexts": [
+          "... and on the Perseverance of the Saints. See vols. II. and XI. The discourse on Spiritual Gifts, though ..."
+        ]
+      },
+      {
+        "target": "II. ... XI.",
+        "description": "List sequence jump (skipped from 2 to 11)",
+        "chapter": "Prefatory Note",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Chapter 1 - The Holy Ghost the comforter of the church by way of office \u2014 How he is the church...",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 9.",
+        "description": "List sequence jump (skipped from 4 to 9)",
+        "chapter": "Chapter 5 - Particular Actings of the Holy Spirit As A Comforter",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 18.",
+        "description": "List sequence jump (skipped from 1 to 18)",
+        "chapter": "Chapter 5 - Particular Actings of the Holy Spirit As A Comforter",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 28.",
+        "description": "List sequence jump (skipped from 3 to 28)",
+        "chapter": "The Application of the Foregoing Discourse.",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 10.",
+        "description": "List sequence jump (skipped from 4 to 10)",
+        "chapter": "Chapter 2 - Differences Between Spiritual Gifts and Saving Grace.",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "Chapter 3 - of Gifts and Offices Extraordinary",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "Chapter 3 - of Gifts and Offices Extraordinary",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 11.",
+        "description": "List sequence jump (skipped from 8 to 11)",
+        "chapter": "Chapter 3 - of Gifts and Offices Extraordinary",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Chapter 3 - of Gifts and Offices Extraordinary",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 15.",
+        "description": "List sequence jump (skipped from 3 to 15)",
+        "chapter": "Chapter 4 - Extraordinary Spiritual Gifts",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 29.",
+        "description": "List sequence jump (skipped from 3 to 29)",
+        "chapter": "Chapter 4 - Extraordinary Spiritual Gifts",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 17.",
+        "description": "List sequence jump (skipped from 2 to 17)",
+        "chapter": "Chapter 8 - of the Gifts of the Spirit With Respect Unto Doctrine, Worship, & Rule",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 17.",
+        "description": "List sequence jump (skipped from 3 to 17)",
+        "chapter": "Chapter 8 - of the Gifts of the Spirit With Respect Unto Doctrine, Worship, & Rule",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 13.",
+        "description": "List sequence jump (skipped from 2 to 13)",
+        "chapter": "Chapter 8 - of the Gifts of the Spirit With Respect Unto Doctrine, Worship, & Rule",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Jude 10",
+        "description": "Invalid Bible reference (chapter 10 exceeds max 1 for Jude)",
+        "chapter": "Chapter 6 - the Nature of Divine Revelations",
+        "contexts": [
+          "... actically complies not with what they guide unto, Jude 10. And so doth it assent unto many principles of re ..."
+        ]
+      },
+      {
+        "target": "Jude 22",
+        "description": "Invalid Bible reference (chapter 22 exceeds max 1 for Jude)",
+        "chapter": "Chapter 5 - Causes of the ignorance of the mind of God revealed in the Scripture, and of error...",
+        "contexts": [
+          "... rs save with fear, pulling them out of the fire,\" Jude 22, 23. Some are so given up in their apostasy as th ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 1 - The Holy Ghost the comforter of the church by way of office \u2014 How he is the church...",
+        "contexts": [
+          "... im, and belong unto his dominion, Ephesians 1:21; Philippians 26:9 2:9-11. Among them, attended with their ready s ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 1 - The Holy Ghost the comforter of the church by way of office \u2014 How he is the church...",
+        "contexts": [
+          "... bedient unto death, even the death of the cross,\" Philippians 17:6 2:6-8. Now, in this respect the Lord Christ an ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 2 - General Adjuncts or Properties of the Office of a Comforter",
+        "contexts": [
+          "... capable of. So is it represented by the apostle, Philippians 17:6 2:6-8: for he not only took our nature into per ..."
+        ]
+      },
+      {
+        "target": "Philippians 17",
+        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 6 - of Ordinary Gifts of the Spirit",
+        "contexts": [
+          "... ory authority, whereof the ministry is an effect, Philippians 17:6 2:6-11. And it was appointed by him to be the m ..."
+        ]
+      },
+      {
+        "target": "Philippians 26",
+        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
+        "chapter": "Chapter 7 - of Spiritual Gifts Enabling the Ministry",
+        "contexts": [
+          "... y which the Father gave him upon his exaltation, [Philippians 26:9] Philippians 2:9-11, joined unto \"that glory wh ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": []
+  }
+}
