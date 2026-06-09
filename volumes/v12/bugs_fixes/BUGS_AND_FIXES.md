@@ -151,11 +151,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T05:42:20.071673+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub`
+**Last run:** 2026-06-09T06:13:19.429665+00:00
+**EPUB:** `volumes/v12/output/volume_12.epub`
 **Status:** WARN (0 errors, 3 warnings)
 
 Reports:
@@ -171,7 +172,7 @@ Reports:
 | NAV links | 64 |
 | Greek chars / untagged | 14115 / 0 |
 | Hebrew chars / untagged | 1448 / 0 |
-| Noteref links / endnote anchors | 1092 / 1094 |
+| Noteref links / endnote anchors | 1084 / 1086 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 1 |
 | Escaped language-tag files | 0 |
@@ -199,11 +200,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T05:43:04.069108+00:00
-**Status:** WARN (14 warnings)
+**Last run:** 2026-06-09T06:14:04.763095+00:00
+**Status:** WARN (13 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -213,10 +215,10 @@ Reports:
 |-------|--------|
 | PDF pages | 822 |
 | EPUB text files | 61 |
-| EPUB paragraphs/headings | 3518 |
+| EPUB paragraphs/headings | 3611 |
 | Approximate PDF-to-EPUB word coverage | 0.9991 |
-| Weak page matches | 2 |
-| Dense source windows checked | 30713 |
+| Weak page matches | 0 |
+| Dense source windows checked | 32888 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
@@ -225,10 +227,10 @@ Reports:
 | Missing top-of-page body windows | 3 |
 | Bottom-of-page body windows checked | 740 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 14 |
-| Possible faulty paragraph splits | 35 |
-| Structural starts excluded from split warnings | 433 |
-| Short fragments | 48 |
+| Missing bottom-of-page body windows | 13 |
+| Possible faulty paragraph splits | 40 |
+| Structural starts excluded from split warnings | 441 |
+| Short fragments | 53 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 3 |
 | Reference continuation splits | 0 |
@@ -251,7 +253,6 @@ Reports:
 
 Warnings requiring triage:
 
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 - `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB

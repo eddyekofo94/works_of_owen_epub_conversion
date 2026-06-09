@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 35 | 285 | OK |
+| Possible faulty paragraph splits | 40 | 285 | OK |
 | Inline structural marker candidates | 3 | 6 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 1 | 3 | OK |
@@ -69,8 +69,8 @@
 - file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
 - file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
 - file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
-- file: EPUB/ch010.xhtml; previous: ry about the nature of God respects the attribution of several affections and passions unto him in the Scriptures, of whose sense and meaning he thus expresseth his apprehension: —; next: Ques. Are there not, according to the perpetual tenor of the Scriptures, affections and passions in God, as anger, fury, zeal, wrath, love, hatred, mercy, grace, jealousy, repentan
-- file: EPUB/ch011.xhtml; previous: ution thereof, in order to a discovery of what God himself hath revealed concerning his knowledge of all things, is the next part of our employment. Thus, then, it may be framed: —; next: Ques. Doth not God know all things, whether past, present, or to come, all the ways and actions of men, even before their accomplishment, or is any thing hid from him? What says th
+- file: EPUB/ch004.xhtml; previous: of old opposed the doctrine of the Trinity, especially of the deity of Christ, his person and natures, may be referred to three heads, and of them and their ways this is the sum: —; next: The first sort of them may be reckoned to be those who are commonly esteemed to be followers of Simon Magus, known chiefly by the names of Gnostics and Valentinians. These, with th
+- file: EPUB/ch004.xhtml; previous: ince of Transylvania, who had then cast David into prison for his blasphemy. 58 To give a little account, by the way, of the end of this man, with his contempt of the Lord Jesus: —; next: In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and lived until the end of November. 59 That he was cast into prison
 
 ### Inline structural marker candidates
 

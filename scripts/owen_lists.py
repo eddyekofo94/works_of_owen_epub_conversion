@@ -163,6 +163,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
     def _strip_marker(text: str) -> str:
         text = _re.sub(r'^\s*(?:[IVXLCDM]+|\d+)\s*[\).:]\s*', '', text, flags=_re.I)
         text = _re.sub(r'^\s*\(\s*(?:[IVXLCDM]+|\d+)\.?\s*\)\s*', '', text, flags=_re.I)
+        text = _re.sub(r'^\s*\[\s*(?:[IVXLCDM]+|\d+)\.?\s*\]\s*', '', text, flags=_re.I)
         return text.strip()
 
     def _extract_count(text: str) -> int:
@@ -191,10 +192,18 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         if _re.search(r'\bwhereby\b', plain, _re.I):
             return False
         if is_list_item:
-            body_wc = len(_strip_marker(plain).split())
+            stripped = _strip_marker(plain)
+            body_wc = len(stripped.split())
             if body_wc > _ANCHOR_LIMIT:
-                if not (_EXPLICIT_COUNT_RE.search(plain) or _FORMULA_TAIL_RE.search(plain)):
+                if not (_EXPLICIT_COUNT_RE.search(stripped) or _FORMULA_TAIL_RE.search(stripped)):
                     return False
+            last = stripped.rstrip('\"\'').strip()
+            if not last:
+                return False
+            if last[-1] in ('—', ':'):
+                return True
+            return bool(_EXPLICIT_COUNT_RE.search(stripped) or _FORMULA_TAIL_RE.search(stripped))
+
         last = plain.rstrip('\"\'').strip()
         if not last:
             return False
@@ -858,6 +867,7 @@ def _merge_short_inline_lists(html: str) -> str:
     import re as _re
 
     _SHORT_ITEM_WORD_LIMIT = 4   # items with ≤ this many words are "not really list items"
+    _RULE_B_WORD_LIMIT = 20      # cap to prevent merging long exposition paragraphs
 
     def _plain_text(html_frag: str) -> str:
         return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', html_frag)).strip()
@@ -867,6 +877,8 @@ def _merge_short_inline_lists(html: str) -> str:
 
     def _is_non_terminating_item(html_frag: str) -> bool:
         plain = _plain_text(html_frag).rstrip()
+        if _content_word_count(plain) > _RULE_B_WORD_LIMIT:
+            return False
         if plain.endswith((';', ',')):
             return True
         if _re.search(r'\b(and|or)\b\s*$', plain, _re.I):

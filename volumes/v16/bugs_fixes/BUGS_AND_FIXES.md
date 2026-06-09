@@ -179,11 +179,12 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T05:43:08.517284+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub`
+**Last run:** 2026-06-09T06:14:06.745568+00:00
+**EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -262,10 +263,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T05:43:42.202478+00:00
+**Last run:** 2026-06-09T06:14:41.256394+00:00
 **Status:** WARN (14 warnings)
 
 Reports:
@@ -276,7 +278,7 @@ Reports:
 |-------|--------|
 | PDF pages | 672 |
 | EPUB text files | 82 |
-| EPUB paragraphs/headings | 2682 |
+| EPUB paragraphs/headings | 2697 |
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 1 |
 | Dense source windows checked | 27795 |

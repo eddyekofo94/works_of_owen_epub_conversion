@@ -2,7 +2,7 @@
   "volume": 16,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/input/owen-v16.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-09T05:43:42.202478+00:00",
+  "generated_at": "2026-06-09T06:14:41.256394+00:00",
   "status": "warn",
   "warning_count": 14,
   "warnings": [
@@ -76,7 +76,7 @@
   },
   "epub": {
     "spine_text_files": 82,
-    "paragraph_count": 2682
+    "paragraph_count": 2697
   },
   "word_coverage": {
     "pdf_content_tokens": 217259,
@@ -589,7 +589,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2329,
+    "paragraphs_checked": 2344,
     "split_candidate_count": 33,
     "split_candidates": [
       {
@@ -604,7 +604,7 @@
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "previous": " the gospel and the profession of it, giving no representation of the holiness of Christ or his doctrine; (4.) If such churches do not, can not, will not reform themselves: then, —",
+        "previous": "(4.) If such churches do not, can not, will not reform themselves: then, —",
         "next": "It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi"
       },
       {
@@ -990,11 +990,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p222",
-            "context": "[1.] In not valuing aright the great privilege of having their children and servants under the inspection, care, and blessing of the church; [2.] In not instilling into them a sense of"
+            "location": "EPUB/ch004.xhtml#p224",
+            "context": "[1.] In not valuing aright the great privilege of having their children and servants under the inspection, care, and blessing of the church;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p227",
+            "location": "EPUB/ch004.xhtml#p230",
             "context": "[1.] Flee from idols, and are ready to confirm their testimony against them with suffering; [2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unt"
           }
         ]
@@ -1020,11 +1020,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p222",
-            "context": "aving their children and servants under the inspection, care, and blessing of the church; [2.] In not instilling into them a sense of it, with the duties that are expected from them on the account of their relation unto the church;"
+            "location": "EPUB/ch004.xhtml#p225",
+            "context": "[2.] In not instilling into them a sense of it, with the duties that are expected from them on the account of their relation unto the church;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p227",
+            "location": "EPUB/ch004.xhtml#p230",
             "context": ".] Flee from idols, and are ready to confirm their testimony against them with suffering; [2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unto his person and offices; are, [3.] Free from scandalous sins; and, [4.] Are willing to give"
           }
         ]
@@ -1042,7 +1042,7 @@
         "file": "EPUB/ch013.xhtml",
         "marker": "(2dly.)",
         "family": "paren_ordinal",
-        "context": "unto it for its administration in the name of our Lord Jesus Christ, and with his power; (2dly.) The declarative cause of the equity of this sentence, which was the spirit of the apostle, or the authoritative declaration of his judgment in the case, \"With my spirit;\" (3dly.)"
+        "context": "(2dly.) The declarative cause of the equity of this sentence, which was the spirit of the apostle, or the authoritative declaration of his judgment in the case, \"With my spirit;\" (3dly.)"
       }
     ]
   },

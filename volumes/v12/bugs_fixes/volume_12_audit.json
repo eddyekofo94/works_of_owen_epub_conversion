@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T05:42:20.071673+00:00",
+  "epub": "volumes/v12/output/volume_12.epub",
+  "generated_at": "2026-06-09T06:13:19.429665+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 3,
@@ -28,7 +28,7 @@
   ],
   "info": {
     "file_count": 97,
-    "epub_size_bytes": 8445605,
+    "epub_size_bytes": 8444949,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -54,9 +54,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 1092,
-      "unique_noteref_targets": 1091,
-      "endnote_anchor_count": 1094,
+      "noteref_count": 1084,
+      "unique_noteref_targets": 1083,
+      "endnote_anchor_count": 1086,
       "missing_endnote_targets": [],
       "orphan_endnotes": [
         "EPUB/endnotes.xhtml#fn285",

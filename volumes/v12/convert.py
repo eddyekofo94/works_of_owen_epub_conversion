@@ -183,6 +183,7 @@ OVERRIDES = {
         'giguitur in nobis tides': 'gignitur in nobis fides',
         'quae deinde tides': 'quae deinde fides',
         'Isaiah 3:13chap. 3': 'Isaiah 52:13; chap. 52',
+        'peculiar to Christ. But, 2. These gentlemen': 'peculiar to Christ. But,\n\n2. These gentlemen',
     },
     'regex_replacements': {
         r'divines,\s*—\s*Bull,\s*Waterland,\s*Horsley,\s*Magee,\s*Fuller,\s*Pye\s+Smith,\s*and\s*Wardlaw,\s*—\s*by':

@@ -2,14 +2,10 @@
   "volume": 12,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T05:43:04.069108+00:00",
+  "generated_at": "2026-06-09T06:14:04.763095+00:00",
   "status": "warn",
-  "warning_count": 14,
+  "warning_count": 13,
   "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
@@ -68,11 +64,11 @@
   },
   "epub": {
     "spine_text_files": 61,
-    "paragraph_count": 3518
+    "paragraph_count": 3611
   },
   "word_coverage": {
     "pdf_content_tokens": 270738,
-    "epub_content_tokens": 272724,
+    "epub_content_tokens": 272544,
     "coverage_ratio": 0.9991,
     "missing_word_samples": [
       {
@@ -81,47 +77,12 @@
         "epub": 0
       },
       {
-        "word": "schlusselburgius",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
         "word": "sod",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "gerlachius",
         "pdf": 3,
         "epub": 0
       }
     ],
     "excess_word_samples": [
-      {
-        "word": "johannes",
-        "pdf": 10,
-        "epub": 60
-      },
-      {
-        "word": "valentinus",
-        "pdf": 11,
-        "epub": 49
-      },
-      {
-        "word": "christianus",
-        "pdf": 6,
-        "epub": 23
-      },
-      {
-        "word": "theodore",
-        "pdf": 0,
-        "epub": 16
-      },
-      {
-        "word": "george",
-        "pdf": 1,
-        "epub": 13
-      },
       {
         "word": "digital",
         "pdf": 0,
@@ -131,11 +92,6 @@
         "word": "theological",
         "pdf": 4,
         "epub": 13
-      },
-      {
-        "word": "christophorus",
-        "pdf": 0,
-        "epub": 9
       },
       {
         "word": "psalms",
@@ -166,22 +122,11 @@
   },
   "page_coverage": {
     "pages_checked": 815,
-    "weak_page_count": 2,
-    "weak_pages": [
-      {
-        "page": 40,
-        "hit_ratio": 0.333,
-        "sample": "exceedingly increased and cherished by an epistle of his to crellius who had subtilely managed the man according to his desire of honor and"
-      },
-      {
-        "page": 55,
-        "hit_ratio": 0.333,
-        "sample": "opposed the doctrine of the trinity and forsook the reformed church hence he dealt with men as his brethren friends and companions who scarcely"
-      }
-    ]
+    "weak_page_count": 0,
+    "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 30713,
+    "dense_windows_checked": 32888,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -201,148 +146,148 @@
         "sample": "son and of the spirit and similar doctrines biddle had well nigh fallen martyr"
       },
       {
-        "page": 8,
-        "sample": "by their brethren of the same creed the task was devolved on valentine smalcius"
-      },
-      {
-        "page": 9,
-        "sample": "of the latter to the socinian crellius see page is the difference between those"
-      },
-      {
         "page": 11,
         "sample": "to the right worshipful his reverend learned and worthy friends and brethren the heads"
-      },
-      {
-        "page": 14,
-        "sample": "of his inclinations that way some parcels of letter of his to crellius some"
-      },
-      {
-        "page": 15,
-        "sample": "the socinians and oftentimes consist in the very words of socinus and smalcius and"
-      },
-      {
-        "page": 16,
-        "sample": "let bellarmine on the one hand and beza on the other evince and as"
       },
       {
         "page": 17,
         "sample": "hammond's answer to my animadversions on his dissertations about episcopacy mr baxter's objections against"
       },
       {
-        "page": 27,
-        "sample": "subtile and serpentine wits the chief leaders of them were georgius blandrata petrus statorius"
-      },
-      {
-        "page": 28,
-        "sample": "of their abominations as they can this statorius find by the frequent mention made"
-      },
-      {
         "page": 29,
-        "sample": "to him calvin instantly wrote that he should take care of blandrata as man"
+        "sample": "he became the patron of all the antitrini tarians of all sorts throughout poland"
       },
       {
         "page": 30,
-        "sample": "second part whereof he inscribed with all the magnifical titles before mentioned to blandrata"
-      },
-      {
-        "page": 31,
-        "sample": "epistles of calvin beza bullinger zanchius with what hath of late from them been"
+        "sample": "at morden anno and there acquitted with testimonial 15a but in the year at"
       },
       {
         "page": 32,
-        "sample": "note to his abominations man of great subtilty and cunning as beza says of"
-      },
-      {
-        "page": 34,
-        "sample": "arianism as erasmus johannes of some to photinianism as statorius and blandrata some to"
-      },
-      {
-        "page": 35,
-        "sample": "indeed it is supposed that both paulus alciatus and ochinus turned mohammedans having thus"
-      },
-      {
-        "page": 37,
-        "sample": "though he pleads that he read ochinus dialogues in poland and as it seems"
-      },
-      {
-        "page": 38,
-        "sample": "was wont afterward to boast as crellius informs us and to say that if"
-      },
-      {
-        "page": 39,
-        "sample": "book was at length answered by crellius the successor of valentinus smalcius in the"
-      },
-      {
-        "page": 40,
-        "sample": "exceedingly increased and cherished by an epistle of his to crellius who had subtilely"
+        "sample": "and cunning as beza says of him 18a incredibly furnished for contradiction and sophism"
       },
       {
         "page": 41,
         "sample": "is since published this was before his going into poland in the year 52a"
       },
       {
-        "page": 44,
-        "sample": "word and spirit but to proceed with socinus blandrata having got great interest with"
-      },
-      {
-        "page": 45,
-        "sample": "now mentioned and on which occasion he was sent for by blandrata into poland"
-      },
-      {
-        "page": 46,
-        "sample": "he was cast into prison by the instigation of socinus himself and blandrata the"
-      },
-      {
         "page": 48,
-        "sample": "haec est mea religio quam coram vobis ingenue profiteor martin seidelius olaviensis silesius to"
-      },
-      {
-        "page": 49,
-        "sample": "is that before the coming of socinus blandrata by the help of franciscus david"
-      },
-      {
-        "page": 51,
-        "sample": "of them tenaciously held their opinion and for those who as smalcius informed him"
-      },
-      {
-        "page": 52,
-        "sample": "defend their opinions in any measure against skillful adversary blandrata their great patron was"
-      },
-      {
-        "page": 53,
-        "sample": "then no wonder they gave themselves up to his guidance hence smalcius wrote unto"
+        "sample": "the kings of this world do or have done thes francisei david de adorat"
       },
       {
         "page": 55,
-        "sample": "with the help of valentinus smalcius volkelius and some few others who wholly fell"
-      },
-      {
-        "page": 56,
-        "sample": "and judgment among whom valentinus smalcius hieronymus moscorovius johannes volkelius christopherus ostorodius were the"
-      },
-      {
-        "page": 57,
-        "sample": "stuffed all his discourses with horrid blasphemies beza tells us that he called the"
+        "sample": "all which and the like concern meats of the man and his business in"
       },
       {
         "page": 59,
         "sample": "there were three persons in the deity non statu sed gradu non subsistentia sod"
       },
       {
-        "page": 60,
-        "sample": "it that this man bare to gerlachius and his companions that he gives them"
-      },
-      {
         "page": 63,
         "sample": "himself and his work by redemptus baranzano the priest in these words deo virglnique"
       },
       {
-        "page": 65,
-        "sample": "and craft of seducers and at length recovered themselves by the advice of beza"
+        "page": 94,
+        "sample": "different words the same thing was intended and that υποστασιςwith the greeks was not"
       },
       {
-        "page": 66,
-        "sample": "they are in asserting may be seen in volkelius institutions and here whilst they"
+        "page": 100,
+        "sample": "is it with god his name is am am that am exodus which is"
+      },
+      {
+        "page": 104,
+        "sample": "expressed but the same thing still intended 119a or being made so the scripture"
+      },
+      {
+        "page": 105,
+        "sample": "of divine worship to the deity 122a to be born to bleed and die"
+      },
+      {
+        "page": 110,
+        "sample": "christ's being our surety of christ's paying our debt of our sins ira fated"
+      },
+      {
+        "page": 113,
+        "sample": "are filled with troubles terrors arrows from him etc job psalm isaiah etc and"
+      },
+      {
+        "page": 116,
+        "sample": "his discoveries his own but borrowed of socinus ep ad squarcialupum we have not"
+      },
+      {
+        "page": 118,
+        "sample": "that their use and service though the pre eminence be given to them sounds"
+      },
+      {
+        "page": 120,
+        "sample": "vindiciae evangelicae chapter mr biddle's first chapter examined of the scriptures mr biddle having"
+      },
+      {
+        "page": 128,
+        "sample": "fit one part of the place wherein they are and the whole the whole"
+      },
+      {
+        "page": 136,
+        "sample": "chapter of the drape and bodily visible figure of god mr biddle's question is"
+      },
+      {
+        "page": 138,
+        "sample": "properties there mentioned but no corporeal similitude vide ezekiel and to which may be"
+      },
+      {
+        "page": 144,
+        "sample": "large account in epiphanius tom lib haer as also in theodoret lib ecclesiastes hist"
+      },
+      {
+        "page": 146,
+        "sample": "testimonies that to this purpose might be produced out of plato aristotle cicerco epictetus"
+      },
+      {
+        "page": 154,
+        "sample": "no need of us or our sacrifices psalm 8-10 job 6-8 can man be"
+      },
+      {
+        "page": 162,
+        "sample": "those divine perfections which the living all seeing god hath described himself by but"
+      },
+      {
+        "page": 169,
+        "sample": "all that he pleaseth are future 179a the creation itself and all things that"
+      },
+      {
+        "page": 174,
+        "sample": "saying they are things future and contingent 187a you grant them to be among"
+      },
+      {
+        "page": 175,
+        "sample": "in the several transactions and concernments of our lives nullum numen abest 187b si"
+      },
+      {
+        "page": 184,
+        "sample": "unto the man genesis where did god put man afiter he was created genesis"
+      },
+      {
+        "page": 187,
+        "sample": "things corinthians revelation of the holy ghost the same is alarmed genesis job psalm"
+      },
+      {
+        "page": 194,
+        "sample": "aside all the places of scripture where it is positively and punctual asserted that"
+      },
+      {
+        "page": 197,
+        "sample": "to be deprived of in that estate he had the immortality mentioned or power"
+      },
+      {
+        "page": 199,
+        "sample": "were sometimes darkness but now are ye light in the lord chap for god"
+      },
+      {
+        "page": 209,
+        "sample": "and james testify only that he was made in the image of god at"
+      },
+      {
+        "page": 220,
+        "sample": "examination the aim and design of our catechist in this chapter being to despoil"
       }
     ]
   },
@@ -628,7 +573,7 @@
     "bottom_windows_usable": 740,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 14,
+    "missing_bottom_window_count": 13,
     "missing_bottom_windows": [
       {
         "page": 145,
@@ -666,11 +611,6 @@
         "sample": "1 Timothy 2:6, \"in whom we have redemption redemption for us,"
       },
       {
-        "page": 483,
-        "window": "and invocated in his third epistle to volkelius where he labors to answer the",
-        "sample": "invocation of Christ, that others as well as God may be worshipped and invocated, in his third epistle to Volkelius, where he labors to answer the"
-      },
-      {
         "page": 514,
         "window": "the holy place aijwni an lu trwsin eujra menov after he had obtained eternal",
         "sample": "chap. 9:12, \"He entered by his own blood into the holy place, aijwni>an lu>trwsin euJra>menov,\" — \"after he had obtained eternal"
@@ -703,8 +643,8 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3081,
-    "split_candidate_count": 35,
+    "paragraphs_checked": 3174,
+    "split_candidate_count": 40,
     "split_candidates": [
       {
         "file": "EPUB/ch003.xhtml",
@@ -722,9 +662,79 @@
         "next": "OXON. CH. CH. COLL., April 1 [1655.]"
       },
       {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "of old opposed the doctrine of the Trinity, especially of the deity of Christ, his person and natures, may be referred to three heads, and of them and their ways this is the sum: —",
+        "next": "The first sort of them may be reckoned to be those who are commonly esteemed to be followers of Simon Magus, known chiefly by the names of Gnostics and Valentinians. These, with th"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ince of Transylvania, who had then cast David into prison for his blasphemy. 58 To give a little account, by the way, of the end of this man, with his contempt of the Lord Jesus: —",
+        "next": "In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and lived until the end of November. 59 That he was cast into prison"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "glad.), and that of the Athenians, by the advice of Epimenides Θεοῖς Ασίας καὶ Ευρώπης καὶ Λιβύης , Θεῷ ἀγνώστῳ καὶ Ξένῳ both of them being suitable to the counsel of Pythagoras: —",
+        "next": "Αθανάτους μὲν πρῶτα θεοὺς νόμῳ ὡς διάκειται Τίμα καὶ σέβου ὅρκον ἔπειθ ἥρωας ἀγανούς Τούς τε καταχθονίους οέβε δαίμονας ἕννομα ῥέζων Let them be sure to worship all sorts, that the"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": " comprehended, compounded; he believes there is no trinity of persons in the Godhead, — that Christ is not the eternal Son of God. The following parts of it are of the same kind: —",
+        "next": "The eternal procession of the Holy Ghost is nextly rejected. The Holy Ghost being constantly termed the \"Spirit of God,\" the \"Spirit of the Father,\" and the \"Spirit of the Son\" (be"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "Some things I shall remark upon that discourse, and shut up these considerations of his preface: —",
+        "next": "For his own success, he tells us \"That being otherwise of no great abilities, yet searching the Scriptures impartially, he hath detected many errors, and hath presented the reader "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "Let us all, then, supply our catechumens, in the room of Mr B.'s, with this question, expressly leading to the things inquired after: —",
+        "next": "What says the Scripture concerning the essence and presence of God? is it confined and limited to a certain place, or is he infinitely and equally present everywhere?"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "nt, ipsum se colere , afrmant, verum hoc sibi placere, ut Jupiter nominetur,\" lib. 1:cap. 2.); which, as Servius on the place observes, he had taken from Aratus, whose words are: —",
+        "next": "Εκ διὸς ἀρχώμεσθα τὸν οὐδὲ ποτ ἄνδρες ἐῶμεν Αῤῥητον μεσταὶ δὲ διὸς πᾶσαι μὲν ἁγυιαὶ Πᾶσαι δ ἀνθρώπων ἀγοραὶ μεστὴ δὲ θάλασσα Καὶ λιμένες πάντη δὲ διὸς κεχρήμεθα πάντες — giving a f"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "throw that gross conception of a human shape we are in the consideration of; and so it cloth, by consequence, overthrow the conceit of any other, though a spherical shape. Again, —",
+        "next": "Whatever is incorporeal is destitute of shape; whatever is infinite is incorporeal: therefore, whatever is infinite is destitute of shape."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "n, a heavenly, incorruptible living being, the beginning and cause of the ordering of all things.\"] Of the like import is that distich of Xenophanes in Clemens Alexan., Strom. 5: —",
+        "next": "Εἰς Θεὸς ἔν τε θεοῖσι καὶ ἀνθρώποισι μέγιστος ."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "And AEschylus, in the same place of Clemens, Strom. 5: —",
+        "next": "Χωρεῖτε θνητῶν τὸν Θεὸν καὶ μὴ δόκει ."
+      },
+      {
         "file": "EPUB/ch010.xhtml",
         "previous": "ry about the nature of God respects the attribution of several affections and passions unto him in the Scriptures, of whose sense and meaning he thus expresseth his apprehension: —",
         "next": "Ques. Are there not, according to the perpetual tenor of the Scriptures, affections and passions in God, as anger, fury, zeal, wrath, love, hatred, mercy, grace, jealousy, repentan"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": " or foreknowledge of God, with what success the farther consideration of the way whereby he endeavors it will manifest. His question (the engine whereby he works) is thus framed: —",
+        "next": "As for our free actions which are neither past nor present, but may afterward either be or not be, what are the chief passages of Scripture from whence it is wont to be gathered th"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ces by him so produced, is to be considered; 2. Another question and answer are to be supplied in the room of his; 3. The truth vindicated to be farther confirmed. For the first: —",
+        "next": "In the proof of the assertion proposed Mr B. finds himself entangled more than ordinarily, though I confess his task in general be such as no man not made desperate by the loss of "
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": " unto him, he may be as well concluded forgetful of what himself hath spoken, because he bids us put him in remembrance, and appoints some to be his remembrancers. But to return: —",
+        "next": "This is the aspect of almost one-half of the places produced by Mr B. towards the business in hand. If they are properly spoken of God, in the same sense as they are of man, they c"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "But to proceed to that which is more directly under consideration: —",
+        "next": "The sole foundation of Mr B.'s insinuation, that God knows not our free actions that are future, being laid, as was observed, on the assignation of fear, repentance, expectation, a"
       },
       {
         "file": "EPUB/ch011.xhtml",
@@ -732,9 +742,24 @@
         "next": "Ques. Doth not God know all things, whether past, present, or to come, all the ways and actions of men, even before their accomplishment, or is any thing hid from him? What says th"
       },
       {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "out these is our principal inquiry; and to the knowledge of God which he is said to have of them is the opposition most expressly made by Mr B. Let this, then, be our conclusion: —",
+        "next": "God perfectly knows all the free actions of men before they are wrought by them. 180 All things that will be done or shall be to all eternity, though in their own natures contingen"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "he had allowed to be questioned in his private Theological Disputations, 190 though in his public afterward he pleads for it. The sum of the argument insisted on amounts to this: —",
+        "next": "Those things which God foretells that they shall certainly and infallibly come to pass before they so do, those he certainly and infallibly knoweth whilst they are future, and that"
+      },
+      {
         "file": "EPUB/ch014.xhtml",
         "previous": "nd discourse, let us also propose a few questions as to the matter under consideration, and see what answer the Scripture will positively give in to our inquiries: — First, then, —",
         "next": "Ques. 1. In what state and condition was man at first created?"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "The reasons, as far as I can gather, which Mr B. lays at the bottom of this appellation, are, —",
+        "next": "1 . His birth of the Virgin, from Luke 1:30-35."
       },
       {
         "file": "EPUB/ch018.xhtml",
@@ -757,6 +782,21 @@
         "next": "Ans. 1. In what sense it may be said that Christ, that is, the person of Christ, consisteth of a divine and human nature, was before declared. The person of the Son of God assumed "
       },
       {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "g\" is to be interpreted variously, according to the subjectmatter spoken of, as Genesis 1:1; which being here the gospel, it is the beginning of the gospel that is intended! But, —",
+        "next": "Be it agreed that the word \"beginning\" is to be understood according to the subject-matter whereunto it is applied, yet that the apostle doth firstly and nextly treat of the gospel"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": ", on pretence of the method wherein they proceed, but indeed to take off from the evidence of the testimony, as they deal with what we plead from John 1. The places I intend are: —",
+        "next": "John 3:13, \"And no man hath ascended up to heaven, but he that came down from heaven, even the Son of man which is in heaven.\" Verse 31, \"He that cometh from above is above all: he"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "t rank, as they are sorted by our catechists, for the proof of the eternity of Christ, which is also from John, 8:58; chap. 8:58, \"Before Abraham was, I am,\" that they insist on: —",
+        "next": "In this place the pre-eternity of Christ is not only not expressed, seeing it is one thing to be before Abraham, and another to be eternal, but also, it is not so much as expressed"
+      },
+      {
         "file": "EPUB/ch019.xhtml",
         "previous": "Thus, then, they proceed: —",
         "next": "Ques. What are the testimonies of Scripture wherein they think that this pre-eternity of Christ is not indeed expressed, but yet may thence be proved?"
@@ -772,118 +812,43 @@
         "next": "Ans. They are of two sorts, whereof some respect the names, others the works, which they suppose in the Scriptures to be attributed to Christ."
       },
       {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "This place, or the testimony therein given to the divine power of Jesus Christ, they seek thus to elude: —",
+        "next": "The word here,\" all things,\" doth not, no more than in many other places, signify all things universally without exception, but is referred to those things only which belong to the"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "n the wilderness, and for which they were destroyed by serpents, was the Lord Jehovah; now, this doth the apostle apply to Christ: he therefore is the Lord Jehovah. But they say, —",
+        "next": "From those words it cannot be proved that Christ was really tempted in the wilderness, as from the like speech, if any one should so speak, may be apprehended. \"Be not refractory t"
+      },
+      {
         "file": "EPUB/ch023.xhtml",
         "previous": "oing, they labor, in their next attempt, to corrupt, and so to evade the force and efficacy which from them appeareth so destructive to their cause; and herein they thus proceed: —",
         "next": "Ques. From what testimonies of Scripture do they endeavor to demonstrate that Christ was, as they speak, incarnate?"
       },
       {
         "file": "EPUB/ch023.xhtml",
-        "previous": "p or worldly ostentation, with great humility as to outward appearance. and great contempt, and lastly underwent a contumelious death, is Christ, and King of the people of God. 322",
-        "next": "I shall not contend with them about the translation of the words."
+        "previous": "this, that \"he took upon him the form of a servant,\" being made man, that in that form and nature he might be \"obedient unto death\" for us and in our behalf. Hence we thus plead: —",
+        "next": "He that was \"in the form of God,\" and \"equal with God,\" existing therein, and \"took on him the\" nature and \"form of a servant,\" he is God by nature, and was incarnate or made flesh"
       },
       {
-        "file": "EPUB/ch024.xhtml",
-        "previous": "Their first question here is: —",
-        "next": "Ques. In what scriptures is Christ called God?"
+        "file": "EPUB/ch023.xhtml",
+        "previous": "ad of a mouth, and he should be to him instead of God;\" that is, Aaron should speak and deliver to Pharaoh and the people what God revealed to Moses, Moses revealing it to Aaron, —",
+        "next": "Aaron receiving his message from Moses as other prophets did from God; whence he is said to be to him \"instead of God.\" And this is given as the reason of that expression, Exodus 7"
       },
       {
-        "file": "EPUB/ch027.xhtml",
-        "previous": "To the same purpose is that of the Racovian Catechism: —",
-        "next": "Ques. Is there not need of the internal gift of the Spirit, that we may believe the gospel?"
+        "file": "EPUB/ch023.xhtml",
+        "previous": "s employment, that he was the servant of the Father, according as it was foretold that he should be, Isaiah 42:1, 19, and which he everywhere professed himself to be. He goes on, —",
+        "next": "Εν ὁμοιώματι ἀνθρώπων γενόμενος . \" Cum similis esset hominibus, illis nempe primis, id est, peccati expers,\" 2 Corinthians 5:21; — \"Whereas he was like men, namely, those first; t"
       },
       {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "bly rectify the man's mistakes. His first question we pass, as a principle in the terms of it on all sides confessed, namely, that \"Christ is our Lord and Savior.\" His second is: —",
-        "next": "Ques. Is Christ our Savior originally and of himself, or because he was given, exalted, and raised up by another to be a Savior?"
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "His first question is, —",
-        "next": "Ques. Is not Christ dignified, as with the title of mediator, so also with that of prophet?"
-      },
-      {
-        "file": "EPUB/ch040.xhtml",
-        "previous": "plishment, Matthew 27:39-44, Luke 23:36, 37. They reproached him with God, and his ministry, and his profession; as did also one of the thieves that were crucified with him. And, —",
-        "next": "(5thly.) They crucified him in a noisome place, a place of stink and loathsomeness, a place where they cast the dead bodies of men, from whose bones it got the name of \"Golgotha,\" "
-      },
-      {
-        "file": "EPUB/ch042.xhtml",
-        "previous": " things do detain us captives; now they are sin, the devil, and the world, and that which followeth sin, the guilt of eternal death, or the punishment of death appointed to us. 461",
-        "next": "Ans. A lawful captive is detained two ways, — First, Directly; and that two ways also: —"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "sacrifice for sins,\" there \"remaineth nothing to sinners but a certain fearful looking for of judgment and fiery indignation, which shall devour the adversaries,\" Hebrews 10:26, 27",
-        "next": "How comes, then, this jealous God, this holy God and just Judge, to command some to beseech sinners to be reconciled to him? The reason is given before. It is because he reconciles"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": " it is evident in the Scripture that God reconciled us to himself, which evinceth the opinion of the adversaries to be altogether false, 2 Corinthians 5:18. Colossians 1:20-22. 469",
-        "next": "Ans. 1. Whether there be any mention in the Scripture of such a reconciliation as whereby the anger of God is turned away and we received into favor, the reader will judge from wha"
-      },
-      {
-        "file": "EPUB/ch043.xhtml",
-        "previous": "at Jesus Christ showed a way to us, who by reason of our sins were enemies to God and alienated from him, how we ought to turn unto God, and by that means be reconciled to him. 470",
-        "next": "Ans. I suppose there was never a more perverse description of any thing, part or parcel, of the gospel by any men fixed on. Some of the excellencies of it may be pointed out: —"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "Having assigned some causes and effects of the death of Christ, partly true in their own place, partly false, they ask, question 12, —",
-        "next": "Ques. Is there no other cause of the death of Christ?"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "us,\" have this sense, that he therefore died, that we might embrace and obtain that eternal salvation which he brought to us from heaven; which how it is done you heard before. 479",
-        "next": "Ans. Briefly to state the difference between us about the meaning of this expression, \"Christ died for us,\" I shall give one or two observations upon what they deliver, then confir"
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "ction,\" Romans 11:5; one being chosen when another was rejected \"before they were born, or had done either good or evil, that the purpose of God according to election might stand,\"",
-        "next": "Romans 9:11; chap. 9:11, 12; and those who obtain salvation are \"chosen thereunto through sanctification of the Spirit and belief of the truth,\" 2 Thessalonians 2:13."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "ls, all that while \"showing his word unto Jacob, his statutes and his judgments unto Israel, not dealing so with any nation, whereby they knew not his judgments,\" Psalm 147:19, 20,",
-        "next": "— so, in the pursuit of his eternal love, calling a few only in comparison, leaving the bulk of mankind in sin, \"having no hope, and without God in the world,\" Ephesians 2:12; but "
-      },
-      {
-        "file": "EPUB/ch046.xhtml",
-        "previous": "to the whole doctrine that is concerned herein. Some brief animadversions upon his questions and suiting of answers to them will be' all that I shall go forth unto. His first is: —",
-        "next": "Ques. How many sorts of justification or righteousness are there?"
-      },
-      {
-        "file": "EPUB/ch047.xhtml",
-        "previous": "d godliness to be attained; and of departing from righteousness and faith.\" What the man hath to offer on these several heads shall be considered in order. His first question is, —",
-        "next": "Ques. Are the commandments possible to be kept?"
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "previous": "THE first question is: —",
-        "next": "Ques. Is prayer a Christian duty?"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "That wherewith I am to deal he enters upon in this question: —",
-        "next": "Ques. Shall not the wicked and unbelievers live for ever, though in torments, as well as the godly and faithful? or is eternal life peculiar to the faithful?"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "'s catechumens with a shorter catechism than either of his, collected out of their master's questions, with some few inferences naturally flowing from them; and it is as follows: —",
-        "next": "Ques. 1. What is God"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "previous": "Ques. 1. What is God",
-        "next": "Ans. God is a spirit, that hath a bodily shape, eyes, ears, hands, feet, like to us."
-      },
-      {
-        "file": "EPUB/ch050.xhtml",
-        "previous": "2. He says, \"That the fruits of the death of Christ are procured for us finaliter, not subjective. \"",
-        "next": "Ans. They are procured for us objective, are granted \"ex adaequatione rerum,\" and may make us subjects of the right, though not of the things themselves which it regards; may, I sa"
+        "file": "EPUB/ch023.xhtml",
+        "previous": "in a divine nature antecedently thereunto. The words are, \"For verily he took not on him the nature of angels; but he took on him the seed of Abraham.'' To this they answer, that —",
+        "next": "Herein not so much as any likeness of the incarnation, as they call it, doth appear; for this writer doth not say that \"Christ took\" (as some read it, and commonly they take it in "
       }
     ],
-    "structural_start_exclusions": 433,
-    "short_fragment_count": 48,
+    "structural_start_exclusions": 441,
+    "short_fragment_count": 53,
     "short_fragments": [
       {
         "file": "EPUB/ch003.xhtml",
@@ -936,6 +901,14 @@
       {
         "file": "EPUB/ch024.xhtml",
         "text": "Their first question here is: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "Thus, then, they: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "To this they say: —"
       },
       {
         "file": "EPUB/ch026.xhtml",
@@ -1015,6 +988,14 @@
       },
       {
         "file": "EPUB/ch042.xhtml",
+        "text": "This Socinus thus expresses: —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "Saith he: —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
         "text": "(3.)"
       },
       {
@@ -1022,28 +1003,12 @@
         "text": "They add,"
       },
       {
+        "file": "EPUB/ch044.xhtml",
+        "text": "They say, then: —"
+      },
+      {
         "file": "EPUB/ch046.xhtml",
         "text": "His next question is: —"
-      },
-      {
-        "file": "EPUB/ch047.xhtml",
-        "text": "His next questions are, first, —"
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "text": "THE first question is: —"
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "text": "Ques. Is prayer a Christian duty?"
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "text": "He proceeds: —"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "Ans. John 3:36."
       }
     ],
     "adjacent_duplicate_count": 0,
@@ -1071,7 +1036,7 @@
     "suspicious_large_number_starts": [
       {
         "file": "EPUB/ch011.xhtml",
-        "text": "11. Johannes Crellius is something more candid, as he pretends, but indeed infected with the same venom with the other; for after he hath disputed for sundry pages to prove the foreknowledge of God, he concludes at last "
+        "text": "11. Crellius is something more candid, as he pretends, but indeed infected with the same venom with the other; for after he hath disputed for sundry pages to prove the foreknowledge of God, he concludes at last that for "
       },
       {
         "file": "EPUB/ch019.xhtml",
@@ -1141,11 +1106,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p200",
+            "location": "EPUB/ch004.xhtml#p202",
             "context": "(2.) He was less exposed to the fury of the Papists, which he greatly feared (loving well the things of this world), than he would have been had he joined himself to any visible church"
           },
           {
-            "location": "EPUB/ch006.xhtml#p288",
+            "location": "EPUB/ch006.xhtml#p291",
             "context": "(2.) Mr B. pretending to give an account of the\" chiefest things pertaining to belief and practice,\" doth yet propose no question at all concerning many of the most important heads of"
           }
         ]
@@ -1160,11 +1125,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1036",
+            "location": "EPUB/ch018.xhtml#p1059",
             "context": "[1.] Will they say that this order is observed by the apostle, — that that which is first done is first expressed as to all particulars? What, then, becomes of their interpretation who"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1093",
+            "location": "EPUB/ch018.xhtml#p1118",
             "context": "[1.] Because Abraham was the father of many nations, Jews and proselytes, before the preaching of the gospel, as Genesis 15:5."
           }
         ]
@@ -1198,11 +1163,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1038",
+            "location": "EPUB/ch018.xhtml#p1061",
             "context": "[2.] The order of the words is most proper. John having asserted the deity of Christ, with some general concomitants and consequences of the dispensation wherein he undertakes to be a"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1094",
+            "location": "EPUB/ch018.xhtml#p1119",
             "context": "[2.] It is false that Abram was not Abraham until after the ascension of Christ and preaching of the gospel to the Gentiles, He was made Abraham from his first enjoyment of his name an"
           }
         ]
@@ -1344,25 +1309,14 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 10596,
-    "epub_latin_word_count": 10733,
-    "epub_tagged_latin_word_count": 6394,
+    "epub_latin_word_count": 10668,
+    "epub_tagged_latin_word_count": 6309,
     "pdf_latin_unique_words": 2940,
     "epub_latin_unique_words": 2955,
-    "epub_tagged_unique_words": 2403,
-    "latin_word_coverage_ratio": 0.9975,
-    "latin_tagging_ratio": 0.5957,
-    "missing_latin_word_samples": [
-      {
-        "word": "schlusselburgius",
-        "pdf": 3,
-        "epub": 0
-      },
-      {
-        "word": "gerlachius",
-        "pdf": 3,
-        "epub": 0
-      }
-    ],
+    "epub_tagged_unique_words": 2402,
+    "latin_word_coverage_ratio": 0.998,
+    "latin_tagging_ratio": 0.5914,
+    "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
         "word": "nor",
@@ -1392,7 +1346,7 @@
       {
         "word": "socinus",
         "epub": 169,
-        "tagged": 36
+        "tagged": 40
       },
       {
         "word": "abraham",
@@ -1442,7 +1396,7 @@
       {
         "word": "whereas",
         "epub": 46,
-        "tagged": 4
+        "tagged": 5
       },
       {
         "word": "distinct",
@@ -1455,9 +1409,9 @@
         "tagged": 5
       },
       {
-        "word": "crellius",
-        "epub": 37,
-        "tagged": 3
+        "word": "smalcius",
+        "epub": 50,
+        "tagged": 16
       },
       {
         "word": "tenor",
@@ -1468,6 +1422,11 @@
         "word": "undergo",
         "epub": 33,
         "tagged": 1
+      },
+      {
+        "word": "crellius",
+        "epub": 37,
+        "tagged": 7
       },
       {
         "word": "endeavor",
@@ -1483,28 +1442,13 @@
         "word": "nowhere",
         "epub": 25,
         "tagged": 0
-      },
-      {
-        "word": "jus",
-        "epub": 44,
-        "tagged": 21
       }
     ]
   },
   "latin_clause_fidelity": {
     "latin_clauses_checked": 776,
-    "missing_latin_clause_count": 3,
+    "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
-      {
-        "page": 27,
-        "word_count": 6,
-        "sample": "georgius blandrata petrus statorius franciscus lismaninus"
-      },
-      {
-        "page": 116,
-        "word_count": 4,
-        "sample": "socinus smalcius crellius etc"
-      },
       {
         "page": 593,
         "word_count": 6,
@@ -1513,9 +1457,9 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 1658,
+    "tagged_latin_runs_count": 1617,
     "translated_latin_runs_count": 668,
-    "latin_translation_ratio": 0.4029,
+    "latin_translation_ratio": 0.4131,
     "untranslated_latin_samples": [
       {
         "phrase": "HUGO GROTIUS"
@@ -1530,10 +1474,10 @@
         "phrase": "Statorius, ‡  junior"
       },
       {
-        "phrase": "Valentinus Smalcius"
+        "phrase": "as \"quantilla causa"
       },
       {
-        "phrase": "as \"quantilla causa"
+        "phrase": "Valentinus Smalcius"
       },
       {
         "phrase": "Nicolaus Arnoldus"
@@ -1545,7 +1489,7 @@
         "phrase": "Dionysius ‡  Petavius"
       },
       {
-        "phrase": "Socinus, Valentinus Smalcius"
+        "phrase": "Socinus, Smalcius, Crellius"
       },
       {
         "phrase": "Ptolemaeus, Valentinus secundus"
