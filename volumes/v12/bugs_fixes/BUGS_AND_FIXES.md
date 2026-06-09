@@ -152,10 +152,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T06:13:19.429665+00:00
+**Last run:** 2026-06-09T06:34:19.030182+00:00
 **EPUB:** `volumes/v12/output/volume_12.epub`
 **Status:** WARN (0 errors, 3 warnings)
 
@@ -201,11 +202,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T06:14:04.763095+00:00
-**Status:** WARN (13 warnings)
+**Last run:** 2026-06-09T06:35:05.444132+00:00
+**Status:** WARN (12 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -215,7 +217,7 @@ Reports:
 |-------|--------|
 | PDF pages | 822 |
 | EPUB text files | 61 |
-| EPUB paragraphs/headings | 3611 |
+| EPUB paragraphs/headings | 3619 |
 | Approximate PDF-to-EPUB word coverage | 0.9991 |
 | Weak page matches | 0 |
 | Dense source windows checked | 32888 |
@@ -229,7 +231,7 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 13 |
 | Possible faulty paragraph splits | 40 |
-| Structural starts excluded from split warnings | 441 |
+| Structural starts excluded from split warnings | 443 |
 | Short fragments | 53 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 3 |
@@ -242,8 +244,8 @@ Reports:
 | Repeated word windows | 25 |
 | PDF enumerator markers | 450 |
 | EPUB enumerator markers | 460 |
-| Missing enumerator marker forms | 1 |
-| Enumerator sequence candidates | 1 |
+| Missing enumerator marker forms | 2 |
+| Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 2593 / 2593 |
 | Greek word coverage ratio | 0.9992 |
 | PDF Hebrew words / EPUB Hebrew words | 222 / 221 |
@@ -261,7 +263,6 @@ Warnings requiring triage:
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
-- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB

@@ -2,9 +2,9 @@
   "volume": 12,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T06:14:04.763095+00:00",
+  "generated_at": "2026-06-09T06:35:05.444132+00:00",
   "status": "warn",
-  "warning_count": 13,
+  "warning_count": 12,
   "warnings": [
     {
       "code": "dense_source_window_loss",
@@ -39,10 +39,6 @@
       "message": "Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB"
     },
     {
-      "code": "enumerator_sequence_candidates",
-      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
-    },
-    {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
     },
@@ -64,11 +60,11 @@
   },
   "epub": {
     "spine_text_files": 61,
-    "paragraph_count": 3611
+    "paragraph_count": 3619
   },
   "word_coverage": {
-    "pdf_content_tokens": 270738,
-    "epub_content_tokens": 272544,
+    "pdf_content_tokens": 270737,
+    "epub_content_tokens": 272543,
     "coverage_ratio": 0.9991,
     "missing_word_samples": [
       {
@@ -643,7 +639,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3174,
+    "paragraphs_checked": 3182,
     "split_candidate_count": 40,
     "split_candidates": [
       {
@@ -847,7 +843,7 @@
         "next": "Herein not so much as any likeness of the incarnation, as they call it, doth appear; for this writer doth not say that \"Christ took\" (as some read it, and commonly they take it in "
       }
     ],
-    "structural_start_exclusions": 441,
+    "structural_start_exclusions": 443,
     "short_fragment_count": 53,
     "short_fragments": [
       {
@@ -1061,7 +1057,7 @@
   "enumerator_integrity": {
     "pdf_marker_count": 450,
     "epub_marker_count": 460,
-    "missing_marker_count": 1,
+    "missing_marker_count": 2,
     "missing_markers": [
       {
         "marker": "(1.)",
@@ -1081,9 +1077,20 @@
             "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
           }
         ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 1,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p178",
+            "context": "f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
+          }
+        ]
       }
     ],
-    "excess_marker_count": 5,
+    "excess_marker_count": 6,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -1116,6 +1123,25 @@
         ]
       },
       {
+        "marker": "(3.)",
+        "pdf": 54,
+        "epub": 55,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p292",
+            "context": "(3.) What can be concluded of the mind of God in the Scripture, by cutting off any place or places of it from their dependence, connection, and tendency, catching at those words which"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p400",
+            "context": "(3.) I desire to know of Mr B. what the throne is made of that God sits on in the heavens, and how far the glistering of his glory doth extend, and whether that glistering of glory dot"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p550",
+            "context": "(3.) That he proves himself to be God by these his predictions."
+          }
+        ]
+      },
+      {
         "marker": "[1.]",
         "pdf": 21,
         "epub": 22,
@@ -1125,11 +1151,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1059",
+            "location": "EPUB/ch018.xhtml#p1060",
             "context": "[1.] Will they say that this order is observed by the apostle, — that that which is first done is first expressed as to all particulars? What, then, becomes of their interpretation who"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1118",
+            "location": "EPUB/ch018.xhtml#p1119",
             "context": "[1.] Because Abraham was the father of many nations, Jews and proselytes, before the preaching of the gospel, as Genesis 15:5."
           }
         ]
@@ -1163,25 +1189,18 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1061",
+            "location": "EPUB/ch018.xhtml#p1062",
             "context": "[2.] The order of the words is most proper. John having asserted the deity of Christ, with some general concomitants and consequences of the dispensation wherein he undertakes to be a"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1119",
+            "location": "EPUB/ch018.xhtml#p1120",
             "context": "[2.] It is false that Abram was not Abraham until after the ascension of Christ and preaching of the gospel to the Gentiles, He was made Abraham from his first enjoyment of his name an"
           }
         ]
       }
     ],
-    "orphan_candidate_count": 1,
-    "orphan_candidates": [
-      {
-        "file": "EPUB/ch011.xhtml",
-        "marker": "(8.)",
-        "family": "paren_decimal",
-        "context": "(8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
-      }
-    ]
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
   },
   "repeated_windows": [
     {

@@ -184,6 +184,10 @@ OVERRIDES = {
         'quae deinde tides': 'quae deinde fides',
         'Isaiah 3:13chap. 3': 'Isaiah 52:13; chap. 52',
         'peculiar to Christ. But, 2. These gentlemen': 'peculiar to Christ. But,\n\n2. These gentlemen',
+        'To affirm, on the other side, — (1.)': 'To affirm, on the other side, —\n\n(1.)',
+        '; (2.) That he hath': ';\n\n(2.) That he hath',
+        '; and, (4.) That he sits': ';\n\n(4.) That he sits',
+        r'(\(8\.\)) By this prerogative of certain predictions': '(3.) By this prerogative of certain predictions',
     },
     'regex_replacements': {
         r'divines,\s*—\s*Bull,\s*Waterland,\s*Horsley,\s*Magee,\s*Fuller,\s*Pye\s+Smith,\s*and\s*Wardlaw,\s*—\s*by':

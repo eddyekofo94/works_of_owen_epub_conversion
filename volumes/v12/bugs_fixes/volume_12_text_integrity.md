@@ -1,15 +1,15 @@
 # Text Integrity Audit: Volume 12
 
 - Status: **WARN**
-- Warnings: 13
+- Warnings: 12
 - PDF pages: 822
 - EPUB text files: 61
-- EPUB paragraphs/headings: 3611
+- EPUB paragraphs/headings: 3619
 
 ## Coverage
 
-- PDF content tokens: 270738
-- EPUB content tokens: 272544
+- PDF content tokens: 270737
+- EPUB content tokens: 272543
 - Approximate PDF-to-EPUB coverage ratio: 0.9991
 - Pages checked: 815
 - Weak page matches: 0
@@ -26,9 +26,9 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 3174
+- Body paragraphs checked: 3182
 - Possible faulty paragraph splits: 40
-- Structural starts excluded from split warnings: 441
+- Structural starts excluded from split warnings: 443
 - Short fragments: 53
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 3
@@ -41,8 +41,8 @@
 - Repeated word windows: 25
 - PDF enumerator markers: 450
 - EPUB enumerator markers: 460
-- Missing enumerator marker forms: 1
-- Enumerator sequence candidates: 1
+- Missing enumerator marker forms: 2
+- Enumerator sequence candidates: 0
 
 ## Greek / Hebrew
 
@@ -80,7 +80,6 @@
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
-- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
@@ -164,10 +163,7 @@
 ## Missing Enumerator Markers
 
 - marker: (1.); pdf: 110; epub: 109; examples: [{'location': 'pdf:p51', 'context': 'them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could...
-
-## Enumerator Sequence Candidates
-
-- file: EPUB/ch011.xhtml; marker: (8.); family: paren_decimal; context: (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a
+- marker: (8.); pdf: 1; epub: 0; examples: [{'location': 'pdf:p178', 'context': 'f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity;...
 
 ## Repeated Windows
 

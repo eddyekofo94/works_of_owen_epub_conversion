@@ -4,7 +4,7 @@
 - Warnings: 14
 - PDF pages: 672
 - EPUB text files: 82
-- EPUB paragraphs/headings: 2697
+- EPUB paragraphs/headings: 2704
 
 ## Coverage
 
@@ -26,7 +26,7 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2344
+- Body paragraphs checked: 2351
 - Possible faulty paragraph splits: 33
 - Structural starts excluded from split warnings: 276
 - Short fragments: 24

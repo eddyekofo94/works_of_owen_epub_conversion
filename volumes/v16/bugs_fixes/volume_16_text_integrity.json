@@ -2,7 +2,7 @@
   "volume": 16,
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/input/owen-v16.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-09T06:14:41.256394+00:00",
+  "generated_at": "2026-06-09T06:35:45.246332+00:00",
   "status": "warn",
   "warning_count": 14,
   "warnings": [
@@ -76,7 +76,7 @@
   },
   "epub": {
     "spine_text_files": 82,
-    "paragraph_count": 2697
+    "paragraph_count": 2704
   },
   "word_coverage": {
     "pdf_content_tokens": 217259,
@@ -589,7 +589,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2344,
+    "paragraphs_checked": 2351,
     "split_candidate_count": 33,
     "split_candidates": [
       {
@@ -990,12 +990,12 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p224",
+            "location": "EPUB/ch004.xhtml#p225",
             "context": "[1.] In not valuing aright the great privilege of having their children and servants under the inspection, care, and blessing of the church;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p230",
-            "context": "[1.] Flee from idols, and are ready to confirm their testimony against them with suffering; [2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unt"
+            "location": "EPUB/ch004.xhtml#p233",
+            "context": "[1.] Flee from idols, and are ready to confirm their testimony against them with suffering;"
           }
         ]
       },
@@ -1020,12 +1020,12 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p225",
+            "location": "EPUB/ch004.xhtml#p226",
             "context": "[2.] In not instilling into them a sense of it, with the duties that are expected from them on the account of their relation unto the church;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p230",
-            "context": ".] Flee from idols, and are ready to confirm their testimony against them with suffering; [2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unto his person and offices; are, [3.] Free from scandalous sins; and, [4.] Are willing to give"
+            "location": "EPUB/ch004.xhtml#p234",
+            "context": "[2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unto his person and offices; are, [3.] Free from scandalous sins; and, [4.] Are willing to give"
           }
         ]
       }

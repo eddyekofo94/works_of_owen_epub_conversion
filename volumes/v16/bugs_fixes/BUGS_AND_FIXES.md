@@ -180,10 +180,11 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T06:14:06.745568+00:00
+**Last run:** 2026-06-09T06:35:09.158665+00:00
 **EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
@@ -264,10 +265,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T06:14:41.256394+00:00
+**Last run:** 2026-06-09T06:35:45.246332+00:00
 **Status:** WARN (14 warnings)
 
 Reports:
@@ -278,7 +280,7 @@ Reports:
 |-------|--------|
 | PDF pages | 672 |
 | EPUB text files | 82 |
-| EPUB paragraphs/headings | 2697 |
+| EPUB paragraphs/headings | 2704 |
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 1 |
 | Dense source windows checked | 27795 |

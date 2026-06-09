@@ -867,7 +867,7 @@ def _merge_short_inline_lists(html: str) -> str:
     import re as _re
 
     _SHORT_ITEM_WORD_LIMIT = 4   # items with ≤ this many words are "not really list items"
-    _RULE_B_WORD_LIMIT = 20      # cap to prevent merging long exposition paragraphs
+    _RULE_B_WORD_LIMIT = 40      # cap to prevent merging long exposition paragraphs
 
     def _plain_text(html_frag: str) -> str:
         return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', html_frag)).strip()
@@ -930,6 +930,22 @@ def _merge_short_inline_lists(html: str) -> str:
                     r'\1', item, flags=_re.S,
                 )
                 item_contents.append(('', inner))
+
+        # ── Sibling Symmetry Guard: if any item in the run is a long paragraph
+        #    exceeding _RULE_B_WORD_LIMIT, do not merge the run at all.
+        #    Keep all items as block paragraphs to ensure sibling symmetry.
+        if len(item_contents) >= 2:
+            any_long = any(
+                _content_word_count(_plain_text(ct)) > _RULE_B_WORD_LIMIT
+                for _mk, ct in item_contents
+            )
+            if any_long:
+                run_out = []
+                for mk2, ct2 in item_contents:
+                    run_out.append(f'<p class="{run_cls}">{mk2}{ct2}</p>')
+                out.append('\n'.join(run_out))
+                i = j
+                continue
 
         # ── Rule A: all items are very short AND at least one non-final item
         #    ends with ';' or ',' or a connector → merge the entire run.
