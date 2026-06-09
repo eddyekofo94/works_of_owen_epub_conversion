@@ -3550,4 +3550,24 @@ We updated the list-formatting pipeline in `scripts/owen_lists.py` to implement 
 - **Regression Suite Green:** Ran `pytest` on `tests/test_bug_regressions.py` -> **153 tests passed cleanly**.
 - **Audit Compliance:** Audited Volume 16; EPUB structural check and text integrity checks passed with 0 errors.
 
+## [Session: 2026-06-09] — Correcting Volume 12 and Volume 16 Sequence Gaps and Sibling Symmetry Guard
 
+### Issue: Genuine Sequence Gaps in Volume 12 and Volume 16 Lists
+**Observed:**
+1. **Volume 12 `ch011` OCR Regex Bug:** In Chapter 5 ("Of God's prescience or foreknowledge"), the list sequence went `(1.)`, `(2.)`, `(8.)`. The `(8.)` was identified as an OCR error for `(3.)` (proving God's deity from certain predictions). An override `' (8.) By this prerogative...': ' (3.) By this prerogative...'` in `volumes/v12/convert.py` failed to match, leaving a sequence gap from `(2.)` to `(8.)`. This happened because `shared.py`'s `_repair_owen_ocr_errors` treated keys starting with `(` as raw regular expressions, causing the literal parentheses `(` and `)` in the replacement key to be parsed as capturing groups rather than literal characters.
+2. **Volume 16 `ch004` and Volume 12 `ch020` Sequence Gaps:** Sequence gaps existed in the lists due to asymmetrical structural formatting in the original texts.
+
+### Implementation & Fixes
+We resolved these issues through the following updates:
+1. **Captured Escaped Regex key (`volumes/v12/convert.py`):**
+   - Corrected the replacement key in `volumes/v12/convert.py` to `r'(\(8\.\)) By this prerogative of certain predictions'`. Prepending `(` escapes it while telling the compiler to treat the rest of the key as a regex pattern, ensuring the literal `(8.)` is matched and replaced by `(3.)`.
+2. **Sibling Symmetry Guard (`scripts/owen_lists.py`):**
+   - Added a check in `_merge_short_inline_lists` before applying list flattening: if a run of list items contains even a single long paragraph (exceeding `_RULE_B_WORD_LIMIT = 40`), the entire run is kept block to preserve sibling symmetry.
+3. **Whitelist Cleanup (`tests/test_structural_symmetry.py`):**
+   - Removed the whitelists for Volume 12 `ch011` `(8.)` and Volume 16 `ch004` `(4.)` / `[3.]`, requiring both volumes to pass all structural symmetry checks natively.
+
+### Validation
+- **Unified Block Layout:** Rebuilt Volume 12 and Volume 16 EPUBs.
+- **Symmetry Test Success:** Ran `pytest` on `tests/test_structural_symmetry.py` for Volumes 12 and 16 -> **100% green pass rate without whitelists**.
+- **Regression Suite Green:** Ran `pytest` on `tests/test_bug_regressions.py` -> **153 tests passed cleanly**.
+- **Audit Compliance:** Both Volume 12 and Volume 16 EPUBs audited with 0 errors.
