@@ -2404,12 +2404,10 @@ a, .noteref, a.footnote-ref, a.fn-link {
 }
 
 .noteref {
+    display: inline !important;
     vertical-align: super;
     font-size: 0.85rem;   /* root-relative to remain consistent inside headings */
-    display: inline-block;
-    line-height: 1;
-    padding: 0.3em 0.4em;   /* ghost tap area — generous for thumb use */
-    margin: -0.3em -0.25em; /* compensate: invisible to layout, large to touch */
+    padding: 0.1em 0.15em;
 }
 
 .noteref-glossary, .noteref-biographical {
@@ -3150,7 +3148,7 @@ sup {
 
 /* Consecutive noterefs: keep them visually separated */
 .noteref + .noteref {
-    margin-left: 0;
+    margin-left: 0.22em !important;
 }
 
 .noteref sup {

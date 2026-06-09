@@ -190,10 +190,11 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T21:34:13.025810+00:00
+**Last run:** 2026-06-09T21:54:03.888512+00:00
 **EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
