@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 2 | 35 | OK |
-| Inline structural marker candidates | 8 | 12 | OK |
+| Possible faulty paragraph splits | 33 | 35 | OK |
+| Inline structural marker candidates | 6 | 12 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -19,7 +19,7 @@
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 0 | 0 | OK |
+| Low Greek word coverage | 1 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
@@ -66,16 +66,19 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch032.xhtml; previous: plum ipsis quoque fiens; deinde et usque ad mortem pervenit, ut sit primogenitus ex mortuis , ipse primatum tenens in omnibus, princeps vitae, prior omnium, et praecedens omnes." †; next: Lib. 1: cap. 18: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ , τοσαῦται καὶ ἀπολυτρώσεις . Οτι μὲν εἰς ἐξάρνησιν τοῦ βαπτισ́ματος τῆς εἰς Θεὸν ἀναγεννήσεως , καὶ πάσης τῆς πίστεως ἀ
-- file: EPUB/ch058.xhtml; previous: cam veritatem, ut interim fatear illos non admodum peritos fuisse linguae Hebraicae id vel quod inviti cogimur fateri , alioquin in plurimis locis non tam fcede lapsi fuissent ." †; next: If, moreover, the ability be granted, what security have we of their principles and honesty? Cardinal Ximenes, in his preface to the edition of the Complutensian Bibles, tells us (
+- file: EPUB/ch002.xhtml; previous: th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —; next: Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g
+- file: EPUB/ch003.xhtml; previous: But the different consideration lies in these things, —; next: That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu
+- file: EPUB/ch004.xhtml; previous:  the gospel and the profession of it, giving no representation of the holiness of Christ or his doctrine; (4.) If such churches do not, can not, will not reform themselves: then, —; next: It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi
+- file: EPUB/ch007.xhtml; previous: , magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —; next: — Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiastes 266.
+- file: EPUB/ch007.xhtml; previous: hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —; next: And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover
 
 ### Inline structural marker candidates
 
+- file: EPUB/ch004.xhtml; text: Hence it appears that there are none excluded from an entrance into the church-state but such as are either, — (1.) Grossly ignorant; or, (2.) Persecutors or reproachers of those that are good, or of the ways of God wher
 - file: EPUB/ch004.xhtml; text: The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the 
 - file: EPUB/ch006.xhtml; text: Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1,
 - file: EPUB/ch013.xhtml; text: The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and sca
-- file: EPUB/ch027.xhtml; text: (2.) Admit of none unto this sacrament by virtue of their communion with any other church, or any churches not of their own constitution; nor, (3.) Will administer it unto any hut those whom they claim to be their own, a
-- file: EPUB/ch029.xhtml; text: Secondly, If the innocent party upon a divorce be not set at liberty, then, 1. He is deprived of his right by the sin of another; which is against the law of nature; — and so every wicked woman hath it in her power to de
+- file: EPUB/ch058.xhtml; text: The industry of learned men of old, and of late Jews and Christians, has been well exercised in the interpretation and reconciliation of them: by one or other a fair and probable account is given of them all. Where we ca
 
 ### Repeated word windows
 

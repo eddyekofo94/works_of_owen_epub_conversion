@@ -2629,3 +2629,56 @@ def test_stray_quotes_before_scripture_reference():
     assert _repair_owen_ocr_errors(raw3) == 'he is the "image of God, " 2 Corinthians 4:4'
 
 
+def test_list_nesting_lookahead_termination():
+    """Verify that continuation prose exiting a sub-point list is correctly un-nested back to its parent level."""
+    from scripts.owen_lists import _nest_owen_list_hierarchies
+
+    html = (
+        '<p class="list-item list-level-1"><b>1.</b> First major point.</p>\n'
+        '<p class="list-item list-level-2"><b>(1)</b> Subpoint A.</p>\n'
+        '<p class="list-item list-level-2"><b>(2)</b> Subpoint B.</p>\n'
+        '<p>This is continuation prose that belongs to Level 1, not Level 2.</p>\n'
+        '<p class="list-item list-level-1"><b>2.</b> Second major point.</p>'
+    )
+    result = _nest_owen_list_hierarchies(html)
+
+    # Level 2 subpoint containers should close before the Level 1 continuation prose block!
+    # So the continuation prose should NOT be inside the level-2 div.
+    parts = result.split('<p>This is continuation prose that belongs to Level 1, not Level 2.</p>')
+    assert len(parts) == 2
+    
+    # Before the continuation prose, the level-2 divs must have been closed (contains </div>)
+    assert '</div>' in parts[0]
+    # And the continuation prose should still be inside the level-1 div (so the level-1 div closes *after* the prose)
+    assert '</div>' in parts[1]
+
+
+def test_nesting_precedence_fix():
+    """Verify that a bare decimal list item is not incorrectly pulled out to list-level-1
+    when it belongs to a nested list-level-3 sequence that happens to continue a preceding list-level-1 value.
+    """
+    from scripts.owen_lists import _add_owen_list_level_classes
+
+    html = (
+        '<p class="list-item"><b>1.</b> First major point.</p>\n'
+        '<p class="list-item"><b>[1.]</b> Of the person suffering for it, which consists in two things: —</p>\n'
+        '<p class="list-item"><b>1.</b> The dignity of the person.</p>\n'
+        '<p class="list-item"><b>2.</b> The greatness of the penalty.</p>\n'
+        '<p class="list-item"><b>2.</b> Second major point.</p>'
+    )
+    result = _add_owen_list_level_classes(html)
+    
+    # First major point remains Level 1
+    assert 'class="list-item list-level-1"><b>1.</b> First major point.' in result
+    # Sub-point header remains Level 2
+    assert 'class="list-item list-level-2"><b>[1.]</b> Of the person suffering for it, which consists in two things: —' in result
+    # Dignity of the person should be Level 3
+    assert 'class="list-item list-level-3"><b>1.</b> The dignity of the person.' in result
+    # Greatness of penalty should be Level 3 (not promoted to Level 1!)
+    assert 'class="list-item list-level-3"><b>2.</b> The greatness of the penalty.' in result
+    # Second major point should be Level 1
+    assert 'class="list-item list-level-1"><b>2.</b> Second major point.' in result
+
+
+
+

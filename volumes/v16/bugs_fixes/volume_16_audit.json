@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-05T15:38:12.850413+00:00",
+  "epub": "volumes/v16/output/volume_16.epub",
+  "generated_at": "2026-06-06T07:46:25.812197+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -14,7 +14,7 @@
   ],
   "info": {
     "file_count": 114,
-    "epub_size_bytes": 5994302,
+    "epub_size_bytes": 5995167,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 257,
-      "unique_noteref_targets": 257,
-      "endnote_anchor_count": 257,
+      "noteref_count": 258,
+      "unique_noteref_targets": 258,
+      "endnote_anchor_count": 258,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },

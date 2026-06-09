@@ -397,21 +397,63 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
 
         if flat_prefix_len == 0:
             out.append(para)
-            i += 1
+            remaining = run_indices[1:]
+            if remaining:
+                sub_html = '\n'.join([paras[idx] for idx in remaining])
+                recurse_res = _attach_em_dash_flat_list(sub_html, config=config)
+                out.extend(recurse_res.split('\n'))
+            i = j
             continue
 
+        # Re-emit remaining expansion items (recurse)
+        remaining = [paras[idx] for idx in candidate_idx[flat_prefix_len:]]
+        remaining_to_absorb = []
+        remaining_to_recurse = []
+
+        # Find the type and value of the last item in the flattened prefix to act as a sequence anchor
+        last_type = 'unknown'
+        last_val = 0
+        if flat_prefix_len > 0:
+            last_mk_plain = _plain(item_pairs[flat_prefix_len - 1][0]).strip()
+            last_type, last_val = _get_marker_val_and_type(last_mk_plain)
+
+        if flat_prefix_len > 0 and remaining and last_type != 'unknown' and last_val > 0:
+            absorb_all = True
+            current_type = last_type
+            current_val = last_val
+            for idx in candidate_idx[flat_prefix_len:]:
+                curr_para = paras[idx].strip()
+                pm = _LIST_ITEM_RE.match(curr_para)
+                if pm:
+                    mk_plain = _plain(pm.group(2) or '').strip()
+                    m_type, m_val = _get_marker_val_and_type(mk_plain)
+                    # Must be the same marker family (type) and strictly sequential (+1)
+                    if m_type == current_type and m_val == current_val + 1:
+                        current_val = m_val
+                    else:
+                        absorb_all = False
+                        split_idx = candidate_idx.index(idx)
+                        remaining_to_absorb = [paras[k] for k in candidate_idx[flat_prefix_len:split_idx]]
+                        remaining_to_recurse = [paras[k] for k in candidate_idx[split_idx:]]
+                        break
+            if absorb_all:
+                remaining_to_absorb = remaining
+                remaining_to_recurse = []
+        else:
+            remaining_to_recurse = remaining
+
+        total_to_absorb = flat_prefix_len + len(remaining_to_absorb)
+
         # ── absorb ───────────────────────────────────────────────────────────
-        new_preceding = _absorb(preceding, item_pairs, flat_prefix_len)
+        new_preceding = _absorb(preceding, item_pairs, total_to_absorb)
 
         if is_case_2:
             out.append(new_preceding)
         else:
             out[prev_idx] = new_preceding
 
-        # Re-emit remaining expansion items (recurse)
-        remaining = [paras[idx] for idx in candidate_idx[flat_prefix_len:]]
-        if remaining:
-            out.extend(_attach_em_dash_flat_list('\n'.join(remaining)).split('\n'))
+        if remaining_to_recurse:
+            out.extend(_attach_em_dash_flat_list('\n'.join(remaining_to_recurse)).split('\n'))
 
         i = j
         continue
@@ -499,7 +541,11 @@ def _add_owen_list_level_classes(html: str) -> str:
     # Helper to check if a block contains a list trigger
     def has_list_trigger(text: str) -> bool:
         clean = re.sub(r'<[^>]+>', '', text).strip()
-        return bool(COUNT_TRIGGER_RE.search(clean)) and bool(ENDS_WITH_INTRO_RE.search(clean))
+        m = COUNT_TRIGGER_RE.search(clean)
+        if not m:
+            return False
+        dist_from_end = len(clean) - m.end()
+        return dist_from_end <= 120 and bool(ENDS_WITH_INTRO_RE.search(clean))
 
     # Helper to convert Roman to Int
     def roman_to_int(s: str) -> int:
@@ -584,16 +630,14 @@ def _add_owen_list_level_classes(html: str) -> str:
                 assigned_level = base_level
 
                 if val is not None:
-                    # 1. Check if it continues Level 1 sequence (resets overrides)
-                    if last_digit_at_level[1] is not None and val == last_digit_at_level[1] + 1 and family == last_family_at_level[1]:
-                        active_override_level = None
-                        assigned_level = 1
-                    # 2. Check if it continues Level 2 sequence
+                    # Check in descending order of levels to prefer the deepest active sequence (Issue #91 / list refinement)
+                    if last_digit_at_level[3] is not None and val == last_digit_at_level[3] + 1 and (family == last_family_at_level[3] or active_override_level == 3):
+                        assigned_level = 3
                     elif last_digit_at_level[2] is not None and val == last_digit_at_level[2] + 1 and family == last_family_at_level[2]:
                         assigned_level = 2
-                    # 3. Check if it continues Level 3 sequence
-                    elif last_digit_at_level[3] is not None and val == last_digit_at_level[3] + 1 and (family == last_family_at_level[3] or active_override_level == 3):
-                        assigned_level = 3
+                    elif last_digit_at_level[1] is not None and val == last_digit_at_level[1] + 1 and family == last_family_at_level[1]:
+                        active_override_level = None
+                        assigned_level = 1
                     # 4. Check if it is starting a new nested sequence (val == 1)
                     elif val == 1:
                         if active_override_level is not None:
@@ -617,6 +661,10 @@ def _add_owen_list_level_classes(html: str) -> str:
                 if val is not None:
                     last_digit_at_level[assigned_level] = val
                     last_family_at_level[assigned_level] = family
+                    # Reset sequence trackers for all deeper levels to prevent scoping carryover bugs
+                    for lvl in range(assigned_level + 1, 4):
+                        last_digit_at_level[lvl] = None
+                        last_family_at_level[lvl] = None
 
                 # Reconstruct the list item paragraph preserving other classes (like syllabus-anchor)
                 other_classes = [c for c in classes_list if c not in ('list-item', 'roman-list-item') and not c.startswith('list-level-')]
@@ -690,7 +738,7 @@ def _nest_owen_list_hierarchies(html: str) -> str:
             output_parts.append("</div>")
             active_levels.pop()
 
-    for block in blocks:
+    for i, block in enumerate(blocks):
         explicit_level = None
         
         p_match = re.match(r'^<p\b([^>]*)>', block)
@@ -735,6 +783,39 @@ def _nest_owen_list_hierarchies(html: str) -> str:
                     active_levels.append(explicit_level)
                     output_parts.append(block)
         else:
+            # Lookahead to find the next explicit list level or heading/reset
+            next_level = 0
+            for j in range(i + 1, len(blocks)):
+                next_block = blocks[j]
+                next_explicit_level = None
+                p_match_next = re.match(r'^<p\b([^>]*)>', next_block)
+                if p_match_next:
+                    attrs_next = p_match_next.group(1)
+                    if 'list-level-3' in attrs_next:
+                        next_explicit_level = 3
+                    elif 'list-level-2' in attrs_next:
+                        next_explicit_level = 2
+                    elif 'list-level-1' in attrs_next:
+                        next_explicit_level = 1
+                    elif 'signature' in attrs_next or 'front-matter' in attrs_next:
+                        next_explicit_level = 0
+                elif re.match(r'^<h[1-6]\b', next_block):
+                    next_explicit_level = 0
+                elif re.match(r'^<aside\b', next_block):
+                    next_explicit_level = 0
+                elif re.match(r'^<div\b', next_block):
+                    next_explicit_level = 0
+                
+                if next_explicit_level is not None:
+                    next_level = next_explicit_level
+                    break
+            
+            # If the current active nesting level is deeper than the next list item's level,
+            # the deeper list/subpoint is finished. Close it.
+            current_active = active_levels[-1] if active_levels else 0
+            if current_active > next_level:
+                close_levels_down_to(next_level + 1)
+                
             output_parts.append(block)
             
     close_levels_down_to(1)

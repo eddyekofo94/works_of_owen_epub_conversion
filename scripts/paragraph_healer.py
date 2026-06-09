@@ -229,6 +229,7 @@ def _repair_transitional_word_isolation(text: str) -> str:
             result
             and _TRANSITIONAL_WORD_RE.match(stripped)
             and not _DOC_STRUCTURE_TOKENS_RE.match(result[-1].strip())
+            and not re.search(r'\b\d+\.\s*$', result[-1].strip())
         ):
             # Append transitional fragment with a space
             trail = stripped.rstrip()

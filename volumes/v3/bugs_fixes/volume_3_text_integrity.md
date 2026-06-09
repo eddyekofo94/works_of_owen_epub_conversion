@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 3
 
-- Status: **PASS**
-- Warnings: 0
+- Status: **WARN**
+- Warnings: 1
 - PDF pages: 789
 - EPUB text files: 45
 - EPUB paragraphs/headings: 2512
@@ -9,17 +9,17 @@
 ## Coverage
 
 - PDF content tokens: 267301
-- EPUB content tokens: 276233
-- Approximate PDF-to-EPUB coverage ratio: 0.9998
+- EPUB content tokens: 276197
+- Approximate PDF-to-EPUB coverage ratio: 0.9997
 - Pages checked: 758
 - Weak page matches: 0
-- Dense source windows checked: 36088
+- Dense source windows checked: 35055
 - Missing dense source-window pages: 20
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 765
 - Top-of-page windows skipped as unstable: 30
-- Missing top-of-page body windows: 0
+- Missing top-of-page body windows: 1
 - Bottom-of-page body windows checked: 746
 - Bottom-of-page windows skipped as unstable: 0
 - Missing bottom-of-page body windows: 0
@@ -28,8 +28,8 @@
 
 - Body paragraphs checked: 2109
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 314
-- Short fragments: 13
+- Structural starts excluded from split warnings: 315
+- Short fragments: 14
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
@@ -67,21 +67,29 @@
 - Latin clauses checked: 152
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 457
-- Translated Latin runs: 372
-- Latin translation ratio: 0.814
+- Translated Latin runs: 373
+- Latin translation ratio: 0.8162
+
+## Warnings
+
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 
 ## Missing Dense Source Windows
 
+- page: 35; sample: these miscarriages corinthians and in answer unto letter of the whole church written unto
+- page: 77; sample: and its effects john but it is his substance or being which is first
+- page: 80; sample: seraphims that attended his throne isaiah 9-12 john acts there are indeed some actions
+- page: 103; sample: justification also corinthians titus 4-7 whereby our sins on both accounts are taken away
+- page: 105; sample: infinite understanding as it is said of god אֵין חֵקֶר לִחְבוּנָחוֹ isaiah there is
+- page: 127; sample: but if with the finger of god cast out devils are matthew if cast
 - page: 191; sample: to come as to put an end unto that whole church state wherein his
 - page: 193; sample: in that holy obedience which he requires at our hands luke our savior enjoining
 - page: 202; sample: immediate actings of the holy ghost are not spoken of him absolutely nor ascribed
 - page: 226; sample: death and חֶבְלֵי־מָוֶת are the cords of death see psalm and the sorrows of
-- page: 233; sample: of holiness because in him there was an all fullness of the graces of
-- page: 240; sample: for by our lord jesus christ there is no church state amongst them nor
-- page: 243; sample: whose name he doth accomplish it john howbeit when the spirit of truth is
-- page: 271; sample: infallibly produce the reformation of life intended in some it doth it more completely
-- page: 284; sample: disposition is where one degree of the same kind disposeth the subject unto farther
-- page: 300; sample: mind alienated from the life of god the life of god what it is
+
+## Missing Top-Of-Page Body Windows
+
+- page: 441; sample: grace and truth came by Jesus Christ," John 1:17;
 
 ## Short Fragments
 
@@ -89,12 +97,12 @@
 - file: EPUB/ch008.xhtml; text: The other is chapter 20:28,
 - file: EPUB/ch016.xhtml; text: and verse 8,
 - file: EPUB/ch020.xhtml; text: And another:
+- file: EPUB/ch022.xhtml; text: Jeremiah 31:33,
 - file: EPUB/ch023.xhtml; text: This again he repeats, cap. 7:
 - file: EPUB/ch023.xhtml; text: So saith the same person,
 - file: EPUB/ch023.xhtml; text: And a little after,
 - file: EPUB/ch025.xhtml; text: Yea, —
 - file: EPUB/ch027.xhtml; text: Ans.
-- file: EPUB/ch027.xhtml; text: And, —
 
 ## Enumerator Sequence Candidates
 

@@ -1,10 +1,10 @@
 {
   "volume": 16,
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/bugs_fixes/volume_16_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -12,28 +12,72 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 2,
+      "observed": 33,
       "budget": 35,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch032.xhtml",
-          "previous": "plum ipsis quoque fiens; deinde et usque ad mortem pervenit, ut sit primogenitus ex mortuis , ipse primatum tenens in omnibus, princeps vitae, prior omnium, et praecedens omnes.\" †",
-          "next": "Lib. 1: cap. 18: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ , τοσαῦται καὶ ἀπολυτρώσεις . Οτι μὲν εἰς ἐξάρνησιν τοῦ βαπτισ́ματος τῆς εἰς Θεὸν ἀναγεννήσεως , καὶ πάσης τῆς πίστεως ἀ"
+          "file": "EPUB/ch002.xhtml",
+          "previous": "th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —",
+          "next": "Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g"
         },
         {
-          "file": "EPUB/ch058.xhtml",
-          "previous": "cam veritatem, ut interim fatear illos non admodum peritos fuisse linguae Hebraicae id vel quod inviti cogimur fateri , alioquin in plurimis locis non tam fcede lapsi fuissent .\" †",
-          "next": "If, moreover, the ability be granted, what security have we of their principles and honesty? Cardinal Ximenes, in his preface to the edition of the Complutensian Bibles, tells us ("
+          "file": "EPUB/ch003.xhtml",
+          "previous": "But the different consideration lies in these things, —",
+          "next": "That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " the gospel and the profession of it, giving no representation of the holiness of Christ or his doctrine; (4.) If such churches do not, can not, will not reform themselves: then, —",
+          "next": "It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi"
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": ", magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —",
+          "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiastes 266."
+        },
+        {
+          "file": "EPUB/ch007.xhtml",
+          "previous": "hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —",
+          "next": "And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "previous": "unto; and, 5. Whereas, in the wisdom of the Holy Ghost, distinct works did require distinct offices for their discharge (all which we have proved already), our inquiry hereon is, —",
+          "next": "Whether the same Holy Spirit hath not distinguished this office of elders into these two sorts, — -namely, those who are called unto teaching and rule also, and those who are calle"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "previous": "l of them but one are accompanied with the modesty of granting that divers sorts of elders are here intended; which, without more than ordinary confidence, cannot be denied. But, —",
+          "next": "Some, by \"elders that rule well,\" do understand bishops that are diocesans; and by \"those that labor in the word and doctrine,\" ordinary preaching presbyters; which plainly gives t"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "previous": "2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —",
+          "next": "If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "previous": "s published in 1721, but seems to have been previously given to the world. It is of use in explaining and defending Congregational usages in matters of ecclesiastical discipline. —",
+          "next": "ED."
+        },
+        {
+          "file": "EPUB/ch031.xhtml",
+          "previous": "en their right hand and their left, to deal with infants any otherwise but in and according to the covenant of their parents; and that he doth so, see Romans 5:14. Hence I argue, —",
+          "next": "Those who, by God's appointment, and by virtue of the law of their creation, are, and must of necessity be, included in the covenant of their parents, have the same right with them"
         }
       ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 8,
+      "observed": 6,
       "budget": 12,
       "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "Hence it appears that there are none excluded from an entrance into the church-state but such as are either, — (1.) Grossly ignorant; or, (2.) Persecutors or reproachers of those that are good, or of the ways of God wherein they walk; or, (3.) Idolaters; or, ("
+        },
         {
           "file": "EPUB/ch004.xhtml",
           "text": "The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the carnal baptized posterity of those who d"
@@ -45,18 +89,6 @@
         {
           "file": "EPUB/ch013.xhtml",
           "text": "The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humiliation for it. [3.] The "
-        },
-        {
-          "file": "EPUB/ch027.xhtml",
-          "text": "(2.) Admit of none unto this sacrament by virtue of their communion with any other church, or any churches not of their own constitution; nor, (3.) Will administer it unto any hut those whom they claim to be their own, as living in their Parishes, in oppositio"
-        },
-        {
-          "file": "EPUB/ch029.xhtml",
-          "text": "Secondly, If the innocent party upon a divorce be not set at liberty, then, 1. He is deprived of his right by the sin of another; which is against the law of nature; — and so every wicked woman hath it in her power to deprive her husband of his natural right."
-        },
-        {
-          "file": "EPUB/ch033.xhtml",
-          "text": "But I say, — 1. It doth not signify properly \"to dip\" or \"plunge,\" for that in Greek is ἐμζάπτω and ἐμζαπτίζω . 2. it nowhere signifies \"to dip,\" but as a mode of and in order to washing. 3. It signifies the \"dipping\" of a finger, or the least touch of the wat"
         },
         {
           "file": "EPUB/ch058.xhtml",
@@ -174,7 +206,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []

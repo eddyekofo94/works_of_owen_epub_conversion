@@ -1,7 +1,7 @@
 {
   "volume": 3,
-  "total_words_audited": 325683,
-  "total_anomalies_count": 30,
+  "total_words_audited": 325640,
+  "total_anomalies_count": 27,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [
@@ -26,7 +26,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
         "contexts": [
-          "... ies of mind to make use of them unto their proper end . \" But they grant, at least some of them do, tha ..."
+          "... ies of mind to make use of them unto their proper end . \" But they grant, at least some of them do, that ..."
         ]
       },
       {
@@ -160,14 +160,6 @@
         ]
       },
       {
-        "target": "s upernatural",
-        "description": "Split word anomaly (isolated letter 's')",
-        "chapter": "Analysis.",
-        "contexts": [
-          "... . It leaves the will undetermined; 2. Imparts no s upernatural strength; 3. Is not all we pray for when we pray ..."
-        ]
-      },
-      {
         "target": "y against",
         "description": "Split word anomaly (isolated letter 'y')",
         "chapter": "To the Readers.",
@@ -227,27 +219,11 @@
         ]
       },
       {
-        "target": "within doors",
-        "description": "Split word anomaly (rejoins to 'withindoors')",
-        "chapter": "Chapter 1 - Necessity of Holiness From the Consideration of the Nature of God.",
-        "contexts": [
-          "... iance with convictions, and what they do therein, within doors and without, is all lost, as unto the great ends ..."
-        ]
-      },
-      {
         "target": "f orbidden",
         "description": "Split word anomaly (isolated letter 'f')",
         "chapter": "Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.",
         "contexts": [
           "... ed, or perverse, or displeasing to God, but it is f orbidden by him. It is, therefore, a perfect rule of holin ..."
-        ]
-      },
-      {
-        "target": "be loved",
-        "description": "Split word anomaly (rejoins to 'beloved')",
-        "chapter": "Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.",
-        "contexts": [
-          "... ur duty to perform; such are they, that God is to be loved, that others are not to be injured, that everyone ..."
         ]
       }
     ],

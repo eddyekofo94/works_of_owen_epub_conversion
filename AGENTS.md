@@ -1,13 +1,11 @@
 # John Owen Works — Agent Instructions
 
 > [!IMPORTANT]
-> **MANDATORY WORKSPACE CONVENTION — GROUPED WORKTREE LAYOUT**
-> We work strictly within the **Grouped Git Worktree** layout inside `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/` (the parent folder).
-> - **Bare repo:** `Owen.git/` (acting as the hub).
-> - **Worktrees:** `master/` (the master branch workspace) and `Owen-<branch-name>/` (isolated development workspaces).
-> - **Always work on the latest development branch:** Check for other active worktrees/branches (e.g. `translation-citations`, `architectural-hardening`) using `git worktree list` or `git branch` and always work on the most recent developmental branch/worktree, as `master/` may not contain the latest features or changes.
-> - **Do NOT use `git checkout -b`** to create branches directly inside a worktree. Use the `git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>` protocol.
-> - **Virtualenv & CLI:** Use the local virtual environment `.venv/` inside the worktree root. Do NOT reference global virtual environments. Use `./owen` (the directory-agnostic CLI wrapper) to run tests, audits, and builds from **any** folder in the workspace.
+> **MANDATORY WORKSPACE CONVENTION — STANDARD BRANCH MODEL**
+> We work strictly within the standard Git branching model.
+> - **Git Branching:** Create branches inside the repository using standard Git commands (e.g., `git checkout -b <branch-name>`). Do not use the legacy git worktree workflow.
+> - **Always work on the latest development branch:** Keep your branch up to date and push/pull regularly.
+> - **Virtualenv & CLI:** Use the local virtual environment `.venv/` inside the repository root. Do NOT reference global virtual environments. Use `./owen` (the directory-agnostic CLI wrapper) to run tests, audits, and builds.
 > - **Clean Root Directory (MANDATORY):** You must keep the root workspace folder pristine. DO NOT create one-off text files, shell scripts, Python utility scripts, or logs in the root directory. ALL temporary or diagnostic work MUST be placed in `scratch/`. ALL persistent helper scripts MUST be placed in `scripts/`. If you accidentally create a file in the root directory during your session, you MUST CLEAN IT UP before concluding your work.
 
 This repository is currently focused on the 16-volume Owen Works conversion. The Hebrews commentary is intentionally out of scope until the Owen volumes are stable and validated.
@@ -89,48 +87,20 @@ Read `GEMINI.md` before changing converter behavior or project documentation. In
 
 - Do not mark issues as "Finished", "Fixed", or "Done" in `BUGS_AND_FIXES.md` unless the user explicitly validates the result.
 - Use `IMPLEMENTED (AWAITING VALIDATION)` for work that has been coded but not user-approved.
+- **PRISTINE Tier Target:** When working on any volume, the goal is always to reduce its quality `Need` score below `20.0` (aiming for `PRISTINE` status).
+- **Whitelisting & Reporting Mandate:** If you decide to whitelist specific pages, warnings, or anomalies (e.g. in `volume_N_whitelist.json`), you are permitted to do so, but you MUST explicitly list and explain all whitelisted items in the final session report to the user.
 - Complex issues, especially Issue 40 and later, need a post-mortem in `ENGINEERING_LOG.md`.
 - Preserve the holistic paragraph-healing behavior in `reconstruct_paragraphs()` and `get_pages_text()`.
 - **Text Integrity & Anomaly Triage Protocol:** When reviewing text anomalies flagged by `scripts/audit_anomalies.py` (such as hyphenation anomalies like `birth-place`, `free-will`, `co-essential`), **NEVER modernize 17th-century orthography**. All potential anomalies should be flagged for visibility, but **do not apply replacements to historical spellings or hyphenations if they were acceptable in the author's day**. Apply overrides strictly to clear OCR errors, line-break leftovers (like `Peta-vius`), and alphanumeric typos (like `iraFated`).
 
-## Git Repository — Worktree Setup
 
-This project uses a **grouped Git worktree** layout inside `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/` (the parent folder). Do NOT use `git checkout -b` to create branches.
+## Git Repository — Branch Setup
 
-- **Bare repo (hub):** `Owen.git/` (inside the parent `Owen/` folder)
-- **Worktree locations:**
-  - `master/` (for the `master` branch)
-  - `Owen-<branch-name>/` (for other development branches)
+This project uses a standard Git branching model.
+
+- **Branch creation:** Create local development branches from `master` using standard `git checkout -b <branch-name>`.
 - **Remote:** `git@github.com:eddyekofo94/works_of_owen_epub_conversion.git`
 
-### Creating a new branch
-
-From the parent `Owen/` directory:
-```bash
-git -C ./Owen.git worktree add ./Owen-<branch-name> -b <branch-name>
-```
-
-From inside an active workspace folder (like `master/`):
-```bash
-git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>
-```
-
-Always `cd` into the new branch workspace directory before running commands or editing files.
-
-### Converting a new worktree to relative paths (Mandatory Portability)
-
-By default, Git writes absolute paths inside `.git` files and metadata. To prevent paths from breaking when folders are moved, renamed, or checked out on a different machine, **always convert newly created worktrees to relative paths immediately after creation**:
-
-1. Open `Owen-<branch-name>/.git` and rewrite its absolute `gitdir` line to be relative:
-   ```text
-   gitdir: ../Owen.git/worktrees/Owen-<branch-name>
-   ```
-2. Open `Owen.git/worktrees/Owen-<branch-name>/gitdir` and rewrite its absolute path to be relative:
-   ```text
-   ../../../Owen-<branch-name>/.git
-   ```
-
-*(This relative path linkage makes the entire multi-worktree workspace 100% portable and independent.)*
 
 ## Project Shape
 
@@ -651,9 +621,7 @@ To add a new author: add a line to `AUTHOR_ABBREV_MAP` in `patristic_refs.py`.
 - **Volume 1 Override:** Assigned `'list_item_merge_cap': 40` in `volumes/v1/convert.py`'s `OVERRIDES`. This permits the 36-word list item `IV.` in Chapter 9 to merge cleanly into the `syllabus-anchor` paragraph instead of splitting, satisfying the exact assertions of the regression test suite.
 - **Baseline Budget Updates:** Raised the `max_inline_structural_candidate_count` baseline for Volume 1 in `qa/bug_regression_baselines.json` from `5` to `6` to accommodate the newly merged inline list item. All 126 regression tests now pass cleanly!
 
-### 3. Git Worktree Workspace Conventions
-- **Be Careful with Modifications:** The user set up a Git Worktree structure:
-  - Bare repo (hub): `Owen.git/`
-  - Active worktrees: `master/` and dev branches.
-  - When editing files, ensure you are editing inside the active worktree (e.g. `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/master/` for master branch work), branch from master using `git -C ../Owen.git worktree add ../Owen-<branch-name> -b <branch-name>` protocol, and merge it back cleanly.
+### 3. Git Branching Conventions
+- **Standard Git Commands:** Work directly inside the main workspace/repository. Create branch, edit files, and check status using standard commands (`git checkout -b <branch-name>`, `git status`, `git commit`).
+
 

@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 325683
-* **Total Suspected Anomalies Found:** 30
+* **Total Words Audited:** 325640
+* **Total Suspected Anomalies Found:** 27
 
 Add corrections to `text_replacements` inside `volumes/v3/convert.py` to fix these.
 
@@ -11,7 +11,7 @@ Add corrections to `text_replacements` inside `volumes/v3/convert.py` to fix the
 
 * **Hyphenation Anomalies:** 0 items
 * **Punctuation Spacing Blemishes:** 18 items
-* **OCR & Bracket Residues:** 12 items
+* **OCR & Bracket Residues:** 9 items
 * **Mixed-Case Capitalization Errors:** 0 items
 * **Unresolved Citation References:** 0 items
 * **Structural Nesting Sequence Jumps:** 0 items
@@ -40,7 +40,7 @@ No anomalies found in this category.
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Chapter 5 - the Nature, Causes, and Means of Regeneration.*
 * **Contexts:**
-  * ... ies of mind to make use of them unto their proper **end .** " But they grant, at least some of them do, tha ...
+  * ... ies of mind to make use of them unto their proper **end .** " But they grant, at least some of them do, that ...
 
 ### 4. `Ans .`
 * **Description:** Spaced period (space before period)
@@ -142,13 +142,7 @@ No anomalies found in this category.
 * **Contexts:**
   * ... illustrated in reference to the Father as giving, **s ending** him, etc., and in reference to his own voluntary ...
 
-### 2. `s upernatural`
-* **Description:** Split word anomaly (isolated letter 's')
-* **Chapter:** *Analysis.*
-* **Contexts:**
-  * ... . It leaves the will undetermined; 2. Imparts no **s upernatural** strength; 3. Is not all we pray for when we pray ...
-
-### 3. `y against`
+### 2. `y against`
 * **Description:** Split word anomaly (isolated letter 'y')
 * **Chapter:** *To the Readers.*
 * **Contexts:**
@@ -156,60 +150,48 @@ No anomalies found in this category.
   * ... e doctrines, and which common light gives testimon**y against** in the conversations of them by whom they are rec ...
   * ... s of the gospel, in their own nature, it is enmit **y against** them, and they are foolishness unto it. If, there ...
 
-### 4. `in tended`
+### 3. `in tended`
 * **Description:** Split word anomaly (rejoins to 'intended')
 * **Chapter:** *Chapter 1 - Work of the Holy Spirit in the New Creation*
 * **Contexts:**
   * ... ly and infallibly produce the reformation of life **in tended**. In some it doth it more completely, in others mo ...
 
-### 5. `p ersuasion`
+### 4. `p ersuasion`
 * **Description:** Split word anomaly (isolated letter 'p')
 * **Chapter:** *Chapter 5 - the Nature, Causes, and Means of Regeneration.*
 * **Contexts:**
   * ... not be effectual; so absolutely we call that only **p ersuasion** whereby a man is actually persuaded. Concerning t ...
 
-### 6. `p rinciple`
+### 5. `p rinciple`
 * **Description:** Split word anomaly (isolated letter 'p')
 * **Chapter:** *Chapter 1 - the Nature of Sanctification*
 * **Contexts:**
   * ... bides forever, and passeth over into glory in its **p rinciple** or nature. The love wherewith we now adhere to G ...
 
-### 7. `m orally`
+### 6. `m orally`
 * **Description:** Split word anomaly (isolated letter 'm')
 * **Chapter:** *Chapter 3 - Believers the Only Object of Sanctification*
 * **Contexts:**
   * ... o not so naturally and physically, yet it doth so **m orally**, so that the constitution itself shall be no more ...
 
-### 8. `C hristian`
+### 7. `C hristian`
 * **Description:** Split word anomaly (isolated letter 'C')
 * **Chapter:** *Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.*
 * **Contexts:**
   * ... f some in these days is about the suitableness of **C hristian** religion unto reason; and to make good their asse ...
 
-### 9. `C hrist`
+### 8. `C hrist`
 * **Description:** Split word anomaly (isolated letter 'C')
 * **Chapter:** *Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.*
 * **Contexts:**
   * ... f some in these days is about the suitableness of **C hrist**ian religion unto reason; and to make good their a ...
   * ... im, wherein our union doth consist; for certainly **C hrist** doth not unite ungodly and impure sinners unto hi ...
 
-### 10. `within doors`
-* **Description:** Split word anomaly (rejoins to 'withindoors')
-* **Chapter:** *Chapter 1 - Necessity of Holiness From the Consideration of the Nature of God.*
-* **Contexts:**
-  * ... iance with convictions, and what they do therein, **within doors** and without, is all lost, as unto the great ends ...
-
-### 11. `f orbidden`
+### 9. `f orbidden`
 * **Description:** Split word anomaly (isolated letter 'f')
 * **Chapter:** *Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.*
 * **Contexts:**
   * ... ed, or perverse, or displeasing to God, but it is **f orbidden** by him. It is, therefore, a perfect rule of holin ...
-
-### 12. `be loved`
-* **Description:** Split word anomaly (rejoins to 'beloved')
-* **Chapter:** *Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.*
-* **Contexts:**
-  * ... ur duty to perform; such are they, that God is to **be loved**, that others are not to be injured, that everyone ...
 
 ---
 

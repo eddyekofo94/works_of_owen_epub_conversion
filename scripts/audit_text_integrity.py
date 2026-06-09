@@ -329,11 +329,21 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
                     shallow = [el.text or ""]
                     for child in el:
                         if etree.QName(child).localname not in _BLOCK_TAGS:
-                            shallow.append(" ".join(child.itertext()))
+                            # Strip noteref texts from child
+                            child_copy = etree.fromstring(etree.tostring(child))
+                            for sub_el in child_copy.iter():
+                                if "noteref" in sub_el.get("class", ""):
+                                    sub_el.text = ""
+                            shallow.append(" ".join(child_copy.itertext()))
                         shallow.append(child.tail or "")
                     text = clean_text(" ".join(shallow))
                 else:
-                    text = clean_text(" ".join(el.itertext()))
+                    # Strip noteref texts from el
+                    el_copy = etree.fromstring(etree.tostring(el))
+                    for sub_el in el_copy.iter():
+                        if "noteref" in sub_el.get("class", ""):
+                            sub_el.text = ""
+                    text = clean_text(" ".join(el_copy.itertext()))
                 if not text:
                     continue
                 ancestor_classes = " ".join(
@@ -1681,6 +1691,35 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     root = pdf_path.parents[3]  # volumes/vN/input/owen-vN.pdf → project root
     pdf_pages, pdf_meta = extract_pdf_pages(pdf_path)
     paragraphs, epub_meta = extract_epub_paragraphs(epub_path)
+
+    # Dynamically apply volume-specific text replacements to pdf_pages and paragraphs
+    try:
+        import importlib.util
+        convert_py = pdf_path.parent.parent / "convert.py"
+        if convert_py.exists():
+            spec = importlib.util.spec_from_file_location(f"convert_v{volume}", convert_py)
+            if spec and spec.loader:
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                overrides = getattr(module, "OVERRIDES", {})
+                text_repls = overrides.get("text_replacements", {})
+                if text_repls:
+                    for i in range(len(pdf_pages)):
+                        if pdf_pages[i]:
+                            for k, v in text_repls.items():
+                                if not k.startswith(r'\b') and not k.startswith('(?'):
+                                    pdf_pages[i] = pdf_pages[i].replace(k, v)
+                    for p in paragraphs:
+                        if p.text:
+                            for k, v in text_repls.items():
+                                if not k.startswith(r'\b') and not k.startswith('(?'):
+                                    p.text = p.text.replace(k, v)
+                        if p.html:
+                            for k, v in text_repls.items():
+                                if not k.startswith(r'\b') and not k.startswith('(?'):
+                                    p.html = p.html.replace(k, v)
+    except Exception as e:
+        print(f"[Warning] Failed to apply convert.py overrides to audit: {e}")
 
     pdf_text = "\n".join(pdf_pages)
     epub_text = "\n".join(p.text for p in paragraphs)

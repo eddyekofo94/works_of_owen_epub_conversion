@@ -4,18 +4,18 @@
 - Warnings: 14
 - PDF pages: 672
 - EPUB text files: 82
-- EPUB paragraphs/headings: 2653
+- EPUB paragraphs/headings: 2682
 
 ## Coverage
 
-- PDF content tokens: 217723
-- EPUB content tokens: 218950
-- Approximate PDF-to-EPUB coverage ratio: 0.9992
-- Pages checked: 662
+- PDF content tokens: 217259
+- EPUB content tokens: 219090
+- Approximate PDF-to-EPUB coverage ratio: 0.9994
+- Pages checked: 660
 - Weak page matches: 1
-- Dense source windows checked: 28539
+- Dense source windows checked: 27795
 - Missing dense source-window pages: 40
-- Front CONTENTS pages checked: 5
+- Front CONTENTS pages checked: 1
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 630
 - Top-of-page windows skipped as unstable: 34
@@ -26,12 +26,12 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2300
-- Possible faulty paragraph splits: 2
-- Structural starts excluded from split warnings: 275
-- Short fragments: 20
+- Body paragraphs checked: 2329
+- Possible faulty paragraph splits: 33
+- Structural starts excluded from split warnings: 276
+- Short fragments: 24
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 8
+- Inline structural marker candidates: 6
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 3
@@ -46,9 +46,9 @@
 
 ## Greek / Hebrew
 
-- PDF Greek words: 1037
+- PDF Greek words: 1030
 - EPUB Greek words: 1042
-- Greek word coverage ratio: 0.995
+- Greek word coverage ratio: 1.0
 - PDF Hebrew words: 268
 - EPUB Hebrew words: 268
 - Hebrew word coverage ratio: 1.0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 4907
-- EPUB Latin words: 4942
-- EPUB Tagged Latin words: 2001
-- Latin word coverage ratio: 0.9988
-- Latin word tagging ratio: 0.4049
+- PDF Latin words: 4901
+- EPUB Latin words: 4983
+- EPUB Tagged Latin words: 2007
+- Latin word coverage ratio: 0.9994
+- Latin word tagging ratio: 0.4028
 - Latin clauses checked: 221
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 583
-- Translated Latin runs: 246
-- Latin translation ratio: 0.422
+- Tagged Latin runs checked: 584
+- Translated Latin runs: 298
+- Latin translation ratio: 0.5103
 
 ## Warnings
 
@@ -89,14 +89,14 @@
 
 ## Missing Dense Source Windows
 
-- page: 6; sample: formerly asserted by others reasons of the opposition made to them of the putty
 - page: 10; sample: the true nature of gospel church and its government the second part wherein these
+- page: 16; sample: chimera of some men's brains it is not in rerum natura for if catholic
 - page: 19; sample: separation is proper and inseparable adjunct thereof the apostle speaks of church member-ship corinthians
 - page: 25; sample: not be tolerated at least not approved in well governed kingdom or commonwealth of
 - page: 27; sample: covetous oppressors and the like who shall not inherit the kingdom of god corinthians
 - page: 28; sample: even deride the necessity of the same things in present church members or the
 - page: 33; sample: the things ascribed unto those who are to be esteemed the proper subject matter
-- page: 34; sample: things as to deny that the members of the church ought to be visibly
+- page: 34; sample: for themselves but possession which being malae fidei ill obtained and ill continued will
 - page: 43; sample: chapter of the formal cause of particular church the way or means whereby such
 - page: 48; sample: useful unto the ends of church edification jointly giving up themselves unto the lord
 
@@ -116,17 +116,23 @@
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch032.xhtml; previous: plum ipsis quoque fiens; deinde et usque ad mortem pervenit, ut sit primogenitus ex mortuis , ipse primatum tenens in omnibus, princeps vitae, prior omnium, et praecedens omnes." †; next: Lib. 1: cap. 18: Οσοι γάρ εἰσι ταύτης τῆς γνώμης μυσταγωγοὶ , τοσαῦται καὶ ἀπολυτρώσεις . Οτι μὲν εἰς ἐξάρνησιν τοῦ βαπτισ́ματος τῆς εἰς Θεὸν ἀναγεννήσεως , καὶ πάσης τῆς πίστεως ἀ
-- file: EPUB/ch058.xhtml; previous: cam veritatem, ut interim fatear illos non admodum peritos fuisse linguae Hebraicae id vel quod inviti cogimur fateri , alioquin in plurimis locis non tam fcede lapsi fuissent ." †; next: If, moreover, the ability be granted, what security have we of their principles and honesty? Cardinal Ximenes, in his preface to the edition of the Complutensian Bibles, tells us (
+- file: EPUB/ch002.xhtml; previous: th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —; next: Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g
+- file: EPUB/ch003.xhtml; previous: But the different consideration lies in these things, —; next: That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu
+- file: EPUB/ch004.xhtml; previous: the gospel and the profession of it, giving no representation of the holiness of Christ or his doctrine; (4.) If such churches do not, can not, will not reform themselves: then, —; next: It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi
+- file: EPUB/ch007.xhtml; previous: , magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —; next: — Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiastes 266.
+- file: EPUB/ch007.xhtml; previous: hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —; next: And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover
+- file: EPUB/ch010.xhtml; previous: unto; and, 5. Whereas, in the wisdom of the Holy Ghost, distinct works did require distinct offices for their discharge (all which we have proved already), our inquiry hereon is, —; next: Whether the same Holy Spirit hath not distinguished this office of elders into these two sorts, — -namely, those who are called unto teaching and rule also, and those who are calle
+- file: EPUB/ch010.xhtml; previous: l of them but one are accompanied with the modesty of granting that divers sorts of elders are here intended; which, without more than ordinary confidence, cannot be denied. But, —; next: Some, by "elders that rule well," do understand bishops that are diocesans; and by "those that labor in the word and doctrine," ordinary preaching presbyters; which plainly gives t
+- file: EPUB/ch013.xhtml; previous: 2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —; next: If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule
+- file: EPUB/ch016.xhtml; previous: s published in 1721, but seems to have been previously given to the world. It is of use in explaining and defending Congregational usages in matters of ecclesiastical discipline. —; next: ED.
+- file: EPUB/ch031.xhtml; previous: en their right hand and their left, to deal with infants any otherwise but in and according to the covenant of their parents; and that he doth so, see Romans 5:14. Hence I argue, —; next: Those who, by God's appointment, and by virtue of the law of their creation, are, and must of necessity be, included in the covenant of their parents, have the same right with them
 
 ## Inline Structural Marker Candidates
 
+- file: EPUB/ch004.xhtml; text: Hence it appears that there are none excluded from an entrance into the church-state but such as are either, — (1.) Grossly ignorant; or, (2.) Persecutors or reproachers of those that are good, or of the ways of God wherein they walk; or...
 - file: EPUB/ch004.xhtml; text: The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the carnal baptized p...
 - file: EPUB/ch006.xhtml; text: Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1, 15. 3. Humble wa...
 - file: EPUB/ch013.xhtml; text: The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humili...
-- file: EPUB/ch027.xhtml; text: (2.) Admit of none unto this sacrament by virtue of their communion with any other church, or any churches not of their own constitution; nor, (3.) Will administer it unto any hut those whom they claim to be their own, as living in their...
-- file: EPUB/ch029.xhtml; text: Secondly, If the innocent party upon a divorce be not set at liberty, then, 1. He is deprived of his right by the sin of another; which is against the law of nature; — and so every wicked woman hath it in her power to deprive her husband...
-- file: EPUB/ch033.xhtml; text: But I say, — 1. It doth not signify properly "to dip" or "plunge," for that in Greek is ἐμζάπτω and ἐμζαπτίζω . 2. it nowhere signifies "to dip," but as a mode of and in order to washing. 3. It signifies the "dipping" of a finger, or the...
 - file: EPUB/ch058.xhtml; text: The industry of learned men of old, and of late Jews and Christians, has been well exercised in the interpretation and reconciliation of them: by one or other a fair and probable account is given of them all. Where we cannot reach the ut...
 - file: EPUB/ch063.xhtml; text: Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: "Write it." It is a certain vision. 2. It is evident: "Make it plain upon tables, that he may run that readeth it." 3. It is determined: "The vision is ...
 
@@ -147,15 +153,15 @@
 ## Short Fragments
 
 - file: EPUB/ch004.xhtml; text: I answer, therefore, —
+- file: EPUB/ch008.xhtml; text: Wherefore, —
 - file: EPUB/ch013.xhtml; text: I answer, —
 - file: EPUB/ch016.xhtml; text: I.
 - file: EPUB/ch016.xhtml; text: II.
+- file: EPUB/ch016.xhtml; text: ED.
 - file: EPUB/ch021.xhtml; text: I.
 - file: EPUB/ch026.xhtml; text: QUESTION 2.
 - file: EPUB/ch027.xhtml; text: QUESTION 2.
-- file: EPUB/ch044.xhtml; text: So Job 37-39, throughout.
-- file: EPUB/ch056.xhtml; text: Double. Diphthongs.
-- file: EPUB/ch056.xhtml; text: Shi, di; thy, my.
+- file: EPUB/ch032.xhtml; text: The passages are these: —
 
 ## Enumerator Sequence Candidates
 
@@ -182,10 +188,14 @@
 
 ## Excess Word Samples
 
+- word: translated; pdf: 14; epub: 55
+- word: polyglot; pdf: 0; epub: 18
+- word: montanus; pdf: 12; epub: 23
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 1; epub: 10
 - word: historical; pdf: 3; epub: 11
 - word: modern; pdf: 8; epub: 15
+- word: editor; pdf: 6; epub: 13
 - word: footnotes; pdf: 0; epub: 7
 
 ## Untagged Latin Word Samples
@@ -198,21 +208,21 @@
 - word: poor; epub: 98; tagged: 2
 - word: thereunto; epub: 93; tagged: 1
 - word: whereunto; epub: 65; tagged: 1
-- word: prolegomena; epub: 48; tagged: 1
-- word: morinus; epub: 50; tagged: 4
+- word: prolegomena; epub: 49; tagged: 1
+- word: morinus; epub: 51; tagged: 4
 
 ## Untranslated Latin Samples
 
-- phrase: Biblia Polyglotta
-- phrase: Prolegomena enumerate
-- phrase: Arias Montanus
-- phrase: Morinus, Junius
-- phrase: Elias Levita
-- phrase: Arias Montaus
-- phrase: in rerum natura
 - phrase: undergo; whereas
-- phrase: malae fidei
 - phrase: nor communicate
+- phrase: church-state, whereinto
+- phrase: successor, as Ali
+- phrase: Erasmus, ‡ Vatablus, Beza
+- phrase: Orat. De Corona
+- phrase: senate nor
+- phrase: praeceptis Dominicis et Deum
+- phrase: se ad sacrilegi sacerdotis sacrificia miscere; quando ipsa
+- phrase: vel eligendi dignos
 
 ## Flat ANALYSIS Chapters
 

@@ -92,7 +92,7 @@ def load_dictionary() -> set[str]:
 def clean_text(text: str) -> str:
     """Strip XML tags, footnotes, and markdown formatting for cleaner matching."""
     text = re.sub(r"<[^>]+>", " ", text)
-    text = re.sub(r"\[f\d+\]", " ", text)
+    text = re.sub(r"\[f\d+\]", "", text)
     text = re.sub(r"\*\*|_", "", text)
     return text
 
@@ -292,7 +292,11 @@ def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
         ctx_start = max(0, m.start() - 120)
         ctx_end = min(len(text), m.end() + 80)
         context_before = text[ctx_start:m.start()].replace('\n', ' ')
+        context_after = text[m.end():ctx_end].replace('\n', ' ')
         full_context = text[ctx_start:ctx_end].replace('\n', ' ')
+        
+        # Combine before/after context with a separator
+        combined_context = context_before + " | " + context_after
         
         # Check if already resolved via BODY_TRANSLATIONS or local patristic map
         resolved = any(
@@ -301,7 +305,7 @@ def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
             if len(phrase) > 8
         )
         if not resolved:
-            if build_citation_note(cite_str, context_before) is not None:
+            if build_citation_note(cite_str, combined_context) is not None:
                 resolved = True
                 
         is_self_ref = bool(SELF_REF_PATTERNS.search(context_before))
@@ -312,9 +316,22 @@ def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
     return anomalies
 
 
+
 def check_structural_nesting(text: str) -> list[tuple[str, str]]:
     """Rigorous audit of sequential outline enumerators (1., 2. or I., II. or (a), (b)) to flag sequence jumps."""
     anomalies = []
+    
+    def is_at_para_or_line_start(pos: int) -> bool:
+        if pos == 0:
+            return True
+        lookback = text[max(0, pos-25):pos]
+        stripped = lookback.rstrip()
+        if not stripped:
+            return True
+        whitespace = lookback[len(stripped):]
+        if '\n' in whitespace or stripped.endswith('[[BLOCKQUOTE]]') or stripped.endswith('[[CHAPTER]]') or stripped.endswith('[[SUMMARY]]'):
+            return True
+        return False
     
     # Types of sequence markers to scan:
     # 1. Standard numbered lists at paragraph starts: e.g. " 1. " or " 2. "
@@ -376,7 +393,7 @@ def check_structural_nesting(text: str) -> list[tuple[str, str]]:
             # Skip page, chapter, volume, verse, book, lib, cap abbreviations
             if any(context_before_short.rstrip().endswith(abbrev) for abbrev in [
                 'p.', 'pp.', 'vol.', 'chap.', 'v.', 'vv.', 'lib.', 'cap.', 'book', 
-                'volume', 'chapter', 'section', 'sect.', 'page', 'verse', 'no.'
+                'volume', 'chapter', 'section', 'sect.', 'sec.', 'page', 'verse', 'no.'
             ]):
                 continue
                 
@@ -385,11 +402,17 @@ def check_structural_nesting(text: str) -> list[tuple[str, str]]:
                 val = int(val_str)
                 if 1000 <= val <= 2100:  # Skip standard year numbers in text
                     continue
+                # Robustness Guard: if a list marker is greater than 20 and doesn't start a paragraph/line, it is a false positive
+                if val > 20 and not is_at_para_or_line_start(m.start()):
+                    continue
             elif key == "alpha_paren":
                 val = ord(val_str) - ord('a') + 1
             else:  # roman_dot
                 val = roman_to_int(val_str)
                 if val > 50:  # Skip name initials like D. Petavius or M. Biddle
+                    continue
+                # Robustness Guard: if a Roman list marker is greater than 20 and doesn't start a paragraph/line, it is a false positive
+                if val > 20 and not is_at_para_or_line_start(m.start()):
                     continue
             sequence.append((m.start(), m.group(0).strip(), val))
             
@@ -455,6 +478,22 @@ def main():
         except Exception as e:
             print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
+    # Load config overrides if available to apply repairs before auditing
+    config = {}
+    vol_convert_path = vol_dir / "convert.py"
+    if vol_convert_path.exists():
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(f"v{vol_num}_convert", vol_convert_path)
+            if spec and spec.loader:
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                config = getattr(module, "OVERRIDES", {})
+        except Exception as e:
+            print(f"[Warning] Failed to load overrides from {vol_convert_path}: {e}")
+
+    from shared import _repair_owen_ocr_errors
+
     # Dictionary to hold all anomalies grouped by category
     categories = {
         "Hyphenation Anomalies": [],
@@ -471,7 +510,9 @@ def main():
     print("Auditing chapters...")
     for ch_idx, ch in enumerate(data.get("chapters", [])):
         title = ch.get("title", f"Chapter {ch_idx}")
-        raw_text = clean_text(ch.get("raw_text", "") or "")
+        raw_text = ch.get("raw_text", "") or ""
+        raw_text = _repair_owen_ocr_errors(raw_text, config=config)
+        raw_text = clean_text(raw_text)
         if not raw_text:
             continue
             

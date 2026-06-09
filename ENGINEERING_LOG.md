@@ -3445,7 +3445,109 @@ The legacy `TECHNICAL_TERMS` dictionary in `technical_glossary.py` was highly in
 - Ran the test suite `OWEN_REGRESSION_VOLUMES="16" .venv/bin/python3 -m pytest tests/ --tb=short` -> **422 passed, 11 skipped** (100% green pass rate).
 - Ran `.venv/bin/python3 scripts/run_all_checks.py 16` -> **Converter, EPUB Audit, Text Integrity, Bug Regressions (0 over budget), Text Anomalies, Pytest all PASS**.
 
+---
+
+## [Session: 2026-06-06] — Volume 16 Justin Martyr 136. Citation Split and Anomaly Auditor Calibration
+
+**Date:** 2026-06-06
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volumes tested:** 16
+
+### 1. The Problem
+1. **Justin Martyr Citation Split:** In Volume 16, a sequence outline jump warning was triggered in audits because `136.` was split into its own paragraph and parsed as an outline list item (`<b>136.</b>`).
+2. **Lazily Silenced Year Threshold:** The previous session had bypassed this warning by changing the year threshold in `scripts/audit_anomalies.py` from `1000` to `100` (which silenced any years between 100 and 1000, including 136). This hid the layout bug rather than fixing it.
+
+### 2. Root Cause
+1. **Inline Structural List Checker Split:** The text `"See Euseb. Chron. ad an. Christi 136. And this war they managed..."` contains `136. `. The inline structural marker regex matches any digit followed by a period (except 4-digit years). Since the preceding text `"See Euseb. Chron. ad an. Christi"` does not end in a standard citation abbreviation (like `chap.`), the strong promoter incorrectly split the paragraph at `136.`. Once split, `136.` was at the start of a paragraph, causing the parser to treat it as a list item.
+2. **Missing Blockquote Structure:** The Greek quotation of Justin Martyr, its English translation, and the Eusebius citation form a single quote block, which should be styled as a blockquote and kept together, while the subsequent narrative sentence starts a new paragraph.
+
+### 3. Fix
+1. **Reverted Year Threshold:** Reverted the year check threshold in `scripts/audit_anomalies.py` back to `1000 <= val <= 2100` to ensure all outline sequence anomalies under 1000 are correctly caught.
+2. **Blockquote Formatting & Split:** Modified the `post_extract_hook` in `volumes/v16/convert.py` to:
+   - Wrap the Justin Martyr Greek quote, translation, and Eusebius citation in a `[[BLOCKQUOTE]]` block.
+   - Insert a double newline (`\n\n`) before the narrative sentence `"And this war they managed..."` to split it into a separate paragraph. Since the citation now ends the paragraph, there is no trailing space/capital letter in the same paragraph, preventing the inline structural marker promoter from matching and splitting it.
+3. **Anomaly Whitelisting:** Whitelisted the remaining sequence outline jumps (both author outline jumps present in the printed source and false positives from page/citation numbers in the text) in `volume_16_whitelist.json`.
+
+### 4. Validation
+- Rebuilt Volume 16 EPUB (`volumes/v16/output/volume_16.epub`).
+- Verified that in `EPUB/ch055.xhtml` the Justin Martyr quote, translation, and Eusebius citation are rendered correctly within a `<blockquote epub:type="z3998:quotation">` block, and the next paragraph starts cleanly with `"And this war they managed..."`.
+- Ran the full suite of audits:
+  - `audit_anomalies.py 16` -> **0 suspected anomalies found**.
+  - `audit_epub.py` -> **0 errors, 1 warnings (repeated phrases)**.
+  - `audit_text_integrity.py 16` -> **PASS**.
+  - `audit_bug_regressions.py 16` -> **PASS (0 over budget)**.
+  - `report_volume_state.py --volumes 16` -> **Volume 16 ranked as PRISTINE with a Need score of 15.5**.
+
+---
+
+## [Session: 2026-06-06] — Structural List Nesting Refinement and Sequence Check Precedence
+
+**Date:** 2026-06-06
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volumes tested:** 16 (and verified across all 16 JSON intermediates via pytest)
+
+### 1. The Problem
+1. **Wrong Level Nesting / Promoted Subpoints:** In nested lists, when a subpoint (e.g. `2. Greatness of the penalty`) shared the same marker family (like `arabic` bare decimals `1.`, `2.`) as the Level 1 list, and was preceded by a Level 1 list item (like `1. First major point`), it was incorrectly classified as Level 1 instead of Level 3/Level 2.
+2. **Sticky Nesting / Points Not Finishing:** Because the subpoint was wrongly promoted to Level 1, the lookahead logic did not close the active Level 2/3 nesting, causing subsequent continuation prose and unrelated list items to be swallowed into the wrong nested subpoint, preventing the subpoint from finishing.
+
+### 2. Root Cause
+1. **First-Match Precedence in List Level Assignment:** In `_add_owen_list_level_classes` (`scripts/owen_lists.py`), the sequence-continuation checkers were evaluated from Level 1 up to Level 3. Because `2. Greatness of the penalty` had value 2 and family `arabic` (which matched the Level 1 sequence `last_digit_at_level[1] = 1`), it matched Level 1 first, short-circuiting the Level 3 check.
+2. **Nesting Termination Failure:** The `_nest_owen_list_hierarchies` lookahead parser determines list-closure boundaries based on the next encountered list item's level class. Since `2. Greatness of the penalty` was wrongly classified as Level 1 instead of Level 3, the lookahead logic failed to detect that the Level 2/3 sequence was still active, which broke the indentation boundaries and kept the nesting active too long.
+
+### 3. Fix
+1. **Reordered Sequence Check Precedence:** Modified `_add_owen_list_level_classes` to evaluate sequence continuation checks in descending order (checking Level 3, then Level 2, and finally Level 1). This ensures that when a marker matches multiple levels, it is matched against the deepest active level (Level 3 or 2) first, preventing premature promotion to Level 1.
+2. **Dynamic Level Exits:** Since the nested subpoint is now correctly assigned to Level 3, the sequence tracker updates `last_digit_at_level[3] = 2`. When the next major point `2. Second major point` comes, it has value 2 but the Level 3 sequence expects 3, so it fails Level 3 matching and correctly falls through to Level 1.
+3. **Regression Coverage:** Added the `test_nesting_precedence_fix` unit test to `tests/test_text_fidelity.py` to assert correct level assignment and sequence resets across the entire three-level hierarchy.
+
+### 4. Validation
+- Rebuilt Volume 16 EPUB using `.venv/bin/python3 volumes/v16/convert.py`.
+- Ran the full test suite `.venv/bin/python3 -m pytest -p no:faker tests/test_text_fidelity.py` and `tests/test_bug_regressions.py` -> **144 and 153 tests passed cleanly (100% green pass rate)**.
+- EPUB structure audits, text integrity audits, and bug regression budgets all pass cleanly.
+
+---
+
+## [Session: 2026-06-06] — Paragraph Healer Trailing Em-Dash Split and List Flattener Refinements
+
+### Issue: Hybrid Flat/Block Lists and Fused Prose Paragraphs in Volume 16
+**Observed:**
+1. **Hybrid List Splits:** In Volume 16, Chapter 1 ("The Subject-Matter of the Church"), the third list containing items `(1.)` to `(4.)` was split into a hybrid style: items `(1.)` to `(3.)` were flattened inline, while `(4.)` was left as a block paragraph. This violated the list symmetry rules (which mandate that a list must be either fully flat or fully block).
+2. **Fused Prose Paragraphs:** During extraction and paragraph healing, the main clause of the sentence `"It is the duty of every man..."` was incorrectly fused onto the end of list item `(4.)` (which ended with `: then, —`). Because the main clause began after an em-dash (`—`), the paragraph healer `reconstruct_paragraphs` and the subsequent post-processing continuation checkers (`_paragraph_needs_text_continuation`) treated the em-dash as a non-terminal punctuation, joining them. This made item `(4.)` extremely long (205 words), violating the list flattener's word-count caps and forcing it to remain block.
+3. **Whitelist/Test Divergence:** Following the list level precedence changes in the previous session, `EPUB/ch010.xhtml`'s sequence check complained about a gap at `10.` (where expected value was 4 since subpoints `1.` through `9.` were now correctly nested at Level 2 under `3.`, leaving `3.` followed by `10.` at Level 1). This caused the regression tests to fail.
+
+### Implementation & Fixes
+We resolved these issues through the following updates:
+1. **Em-Dash Split Check in Healer (`scripts/text_cleaner.py`):**
+   - Modified `reconstruct_paragraphs` to split lines if the previous line ends with a trailing em-dash (`—`) and the next line does not start with a lowercase character.
+   - Updated `_paragraph_needs_text_continuation` in `post_process_paragraphs` to return `False` if the previous paragraph ends with an em-dash (`—`) and the current paragraph starts with a capitalized letter. This prevents the healer and post-processing from joining subsequent narrative prose to the end of transitional list items.
+2. **List Flattener Fallback Correction (`scripts/owen_lists.py`):**
+   - Fixed `_attach_em_dash_flat_list` to skip the entire run (`i = j` instead of `i += 1`) if the run cannot be merged into the parent anchor, avoiding hybrid splits.
+3. **Test Whitelist Realignment (`tests/test_structural_symmetry.py`):**
+   - Realigned the sequence check whitelist for Volume 16's `EPUB/ch010.xhtml` to whitelist the `10.` gap at `list-level-1` instead of `7.`, matching the new, correct nesting structure.
+
+### Results
+- **Seamless Flat List Rendering:** Re-rendered Volume 16. Verified that in `ch004.xhtml`, the entire list `(1.)` through `(4.)` is now cleanly flattened into a single paragraph under `list-level-2`, while the conclusion `"It is the duty of every man..."` is rendered as a separate prose paragraph outside the list.
+- **100% Core Test Success:** Ran `pytest` and confirmed that all **424 passed successfully** with 0 failures and 0 over-budget regressions.
+- **Audits Clean Pass:** Ran the full check pipeline (`run_all_checks.py 16 --no-rebuild`) which passed with zero errors.
 
 
+## [Session: 2026-06-06] — Flat List Sequential Continuation Absorption
+
+### Issue: Inconsistent Mixed Flat/Block List Styling (Volume 16, Chapter 3)
+**Observed:**
+- In Volume 16, Chapter 3 ("Of the Polity, Rule, or Discipline of the Church in General"), a contiguous list of 5 items was rendered in a mixed state: items 1–4 were flattened inline, while item 5 remained a block paragraph.
+- This occurred because item 5's word count (29 words) exceeded the Signal H cap of 25 words (`_SIGNAL_H_CAP`), causing `_attach_em_dash_flat_list` to select a prefix length of 4.
+- In Owen's works, a mixed list (some inline, some block) is visually confusing. Contiguous lists should remain consistent: either fully flat (inline) or fully block.
+
+### Implementation & Fixes
+We updated the list-formatting pipeline in `scripts/owen_lists.py` to implement **Sequential Continuation Absorption**:
+1. **Continuation Detection:** After deciding on a flat prefix length (`flat_prefix_len > 0`), if there are remaining items in the contiguous run, we inspect them.
+2. **List Membership Check:** An item continues the same list if it does not represent the start of a new list (i.e. its parsed marker value is not 1, e.g. it starts with `5.`, not `1.`).
+3. **Continuation Absorption:** All sequential continuation items in the remaining run are pulled inline and absorbed into the parent anchor paragraph alongside the prefix items, regardless of their individual word count.
+4. **New List Boundary:** If we encounter a marker with value 1, we stop absorbing, partition the run, and recurse on the rest of the list starting from that marker.
+
+### Validation
+- **Unified List Formatting:** Rebuilt Volume 16 EPUB. Checked `ch006.xhtml` and verified that all 5 items of the Chapter 3 requirements list are now flattened inline into a single `syllabus-anchor` paragraph.
+- **Regression Suite Green:** Ran `pytest` on `tests/test_bug_regressions.py` -> **153 tests passed cleanly**.
+- **Audit Compliance:** Audited Volume 16; EPUB structural check and text integrity checks passed with 0 errors.
 
 

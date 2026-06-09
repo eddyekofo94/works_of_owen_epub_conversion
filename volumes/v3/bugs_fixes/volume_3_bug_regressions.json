@@ -168,7 +168,7 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 4,
+      "observed": 3,
       "budget": 4,
       "status": "ok",
       "samples": [
@@ -185,11 +185,6 @@
         {
           "file": "combined_text",
           "text": "chapter 3 believers the only object of sanctification",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "רוּח spirit breath or wind hebrew ruach 1",
           "count": 1
         }
       ]

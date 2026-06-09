@@ -155,6 +155,31 @@ def post_extract_hook(intermediate: dict) -> dict:
         text = text.replace('Lord, how long?"\n\nhow long shall they!', 'Lord, how long?" how long shall they!')
         text = text.replace('in Luc. 10 et\n\n41. Yea, in how', 'in Luc. 10 et 11. Yea, in how')
         text = text.replace('excusing one another." (Romans\n\n2:14, 15.)', 'excusing one another." (Romans 2:14, 15.)')
+        text = text.replace('We ἁςε ρενδερεδ ιτ ηερε, "Φυρτηερμορε τηεν." Ιτ ις τὸ λοιπὸν οῦν, — "φορ what remains', 'We have rendered it here, "Furthermore then." It is τὸ λοιπὸν οὖν, — "for what remains')
+        text = text.replace('praecedens omnes." †', 'praecedens omnes." †.')
+        text = text.replace('lapsi fuissent ." †', 'lapsi fuissent ." †.')
+        text = text.replace('See Euseb. Chron. ad an. Christi\n\n136.', 'See Euseb. Chron. ad an. Christi 136.')
+        text = text.replace(
+            'informs us of it: Apol. 2 ad Anton. Pium., Καὶ γὰρ',
+            'informs us of it: Apol. 2 ad Anton. Pium.,\n\n[[BLOCKQUOTE]] Καὶ γὰρ'
+        )
+        text = text.replace(
+            'See Euseb. Chron. ad an. Christi 136. And this war they managed',
+            'See Euseb. Chron. ad an. Christi 136.\n\nAnd this war they managed'
+        )
+        text = text.replace('Tractat.\n\n124. in Johan.:', 'Tractat. 124. in Johan.:')
+        text = text.replace(
+            'That such an authority is included in this office is evident, —',
+            'That such an authority is included in this office is evident, as follows: —'
+        )
+        text = text.replace(
+            'proper portion. And this requires, **(4.)** A _prudent',
+            'proper portion.\n\n**(4.)** A _prudent'
+        )
+        text = text.replace(
+            'hearing of them. And, **(5.)** All these',
+            'hearing of them.\n\n**(5.)** All these'
+        )
         ch['raw_text'] = text
 
     
@@ -240,6 +265,41 @@ OVERRIDES = {
         'Corol .': 'Corol.',
         '1655 .': '1655.',
         'Eo .': 'Eo.',
+        'the minute of wicked men': 'the mixture of wicked men',
+        
+        # Latin OCR corrections
+        'testimomo': 'testimonio',
+        'cure sacerdote': 'cum sacerdote',
+        'et citum': 'et illicitum',
+
+        # Greek OCR/font corrections
+        'ζεοπνευστία': 'θεοπνευστία',
+        'ζεόπνευστος': 'θεόπνευστος',
+        'ζεόπνευστοι': 'θεόπνευστοι',
+        'ζελήματι': 'θελήματι',
+        'ζεοῦ': 'θεοῦ',
+        'ζεῖον': 'θεῖον',
+        'ζεοπνευστοι': 'θεόπνευστοι',
+        'πρεσζυτέρους': 'πρεσβυτέρους',
+        'ῥαζζουνί': 'ῥαββουνί',
+        'ῥαζζonί': 'ῥαββονί',
+        'ῥαζζονί': 'ῥαββονί',
+        'πρεσζύτεροι': 'πρεσβύτεροι',
+        'μεμζράνας': 'μεμβράνας',
+        'πρεσζυτέroις': 'πρεσβυτέροις',
+        'πρεσζυτέροις': 'πρεσβυτέροις',
+        'ὑποζέζληται': 'ὑποβέβληται',
+        'ἐμζάπτω': 'ἐμβάπτω',
+        'ἐμζαπτίζω': 'ἐμβαπτίζω',
+        'ζεόπνευστα': 'θεόπνευστα',
+        'ζεμελίῳ': 'θεμελίῳ',
+        'ζεοπνευστίας': 'θεοπνευστίας',
+        'ἀποδείζει': 'ἀποδείξει',
+        'ἀεροζατεῖν': 'ἀεροβατεῖν',
+        'βαρχοχέζας': 'βαρχοχέβας',
+        'λαζεῖν': 'λαβεῖν',
+        'βίζλοι': 'βίβλοι',
+        'οῦν': 'οὖν',
     },
     'regex_replacements': {
         r'for, — 1\. ': 'for, —\n\n1. ',
@@ -248,9 +308,24 @@ OVERRIDES = {
         r'are intended: — 1\. ': 'are intended: —\n\n1. ',
         r'name: — 1\. ': 'name: —\n\n1. ',
         r'he, — 1\. ': 'he, —\n\n1. ',
+        r'(\*\*1\.\*\* That covenant was with and unto Christ mystical,)\s+(\*\*2\.\*\*)': r'\1\n\n\2',
+        r'lawful, can\.\r?\n\r?\n5\. Wherefore, —': 'lawful, can. 5.\n\nWherefore, —',
         r'\b(\d+(?:st|nd|rd|th|dly|ly))\.\s*\.': r'\1.',
+
         r'\(\s*(\d+)': r'(\1',
         r'(\d+)\s*\)': r'\1)',
+        r'\*\*([A-Za-z0-9]+)\.?\*\*\s*_\._\s*': r'**\1.** ',
+        r'(\b\d{4})\s*_\._\s*': r'\1. ',
+        r'_([A-Za-z0-9]+)_\s+\.\s*': r'_\1._ ',
+        r'\s+_\s*,\s*_': r',',
+        r'([A-Za-z0-9_]+)\s+([,;:!?])': r'\1\2',
+        r'([A-Za-z0-9]+)\s+\[f(\d+)\]\s*\)': r'\1)[f\2]',
+        r'\(\s+(?=[A-Za-z0-9])': r'(',
+        r'(?<=[A-Za-z0-9])\s+\)': r')',
+
+        # Split lists and anchor sentences in Chapter 1
+        r'all enemies whatever\.\s+(Hence it appears that there are none excluded from an entrance into the church-state but such as are either, —)': r'all enemies whatever.\n\n\1',
+        r'\bor,\s+(\*\*\(\d+\.\)\*\*)': r'or,\n\n\1',
     },
 }
 

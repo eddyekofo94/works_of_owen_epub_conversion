@@ -159,7 +159,7 @@ def apply_glossary_footnotes(body_html: str, cid: str, seen_glossary_terms: set,
             rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
             rf'{custom_pattern}'
             rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
-            rf'((?:</[a-zA-Z]+>)*)'
+            rf'((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)'
             rf'([\.,\?!:;\'"“”’]*)',
             flags
         )

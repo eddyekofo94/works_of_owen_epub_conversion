@@ -197,12 +197,12 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
 def run_pytest(volumes: list[int]) -> dict:
     test_files = sorted((ROOT / "tests").glob("test_*.py"))
     vol_str = "all" if len(volumes) >= 16 else " ".join(str(v) for v in volumes)
-    env = {**os.environ, "OWEN_REGRESSION_VOLUMES": vol_str}
+    env = {**os.environ, "OWEN_REGRESSION_VOLUMES": vol_str, "PYTHONPATH": str(ROOT)}
 
     start = datetime.now()
     try:
         r = subprocess.run(
-            [PYTHON, "-m", "pytest", "-v"] + [str(f) for f in test_files],
+            [PYTHON, "-m", "pytest", "-v", "-p", "no:faker"] + [str(f) for f in test_files],
             capture_output=True, text=True, timeout=7200, env=env,
         )
         lines = (r.stdout + r.stderr).strip().split("\n")

@@ -1479,7 +1479,8 @@ def render_volume(vol_num: int, overrides: dict = None,
         # Clean and map helper for tag-agnostic matching
         def clean_and_map(orig_str):
             stripped_chars = []
-            map_to_orig = []
+            map_to_orig_start = []
+            map_to_orig_end = []
             i = 0
             n = len(orig_str)
             while i < n:
@@ -1498,17 +1499,20 @@ def render_volume(vol_num: int, overrides: dict = None,
                         decoded = html.unescape(entity)
                         for char in decoded:
                             stripped_chars.append(char)
-                            map_to_orig.append(i) # map to start of entity
+                            map_to_orig_start.append(i)
+                            map_to_orig_end.append(j + 1)
                         i = j + 1
                     else:
                         stripped_chars.append(orig_str[i])
-                        map_to_orig.append(i)
+                        map_to_orig_start.append(i)
+                        map_to_orig_end.append(i + 1)
                         i += 1
                 else:
                     stripped_chars.append(orig_str[i])
-                    map_to_orig.append(i)
+                    map_to_orig_start.append(i)
+                    map_to_orig_end.append(i + 1)
                     i += 1
-            return "".join(stripped_chars), map_to_orig
+            return "".join(stripped_chars), map_to_orig_start, map_to_orig_end
 
         def make_quote_agnostic(phrase):
             words = phrase.split()
@@ -1520,8 +1524,8 @@ def render_volume(vol_num: int, overrides: dict = None,
                 escaped_words.append(escaped)
             return r'\s+'.join(escaped_words)
 
-        # Initialize clean text and mapping once per chapter
-        clean_text, mapping = clean_and_map(body_html)
+        # Initialize clean text and mappings once per chapter
+        clean_text, map_start, map_end = clean_and_map(body_html)
         dirty = False
 
         for phrase, trans in sorted_phrases:
@@ -1529,7 +1533,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 continue
 
             if dirty:
-                clean_text, mapping = clean_and_map(body_html)
+                clean_text, map_start, map_end = clean_and_map(body_html)
                 dirty = False
 
             first_char = phrase[0]
@@ -1558,10 +1562,10 @@ def render_volume(vol_num: int, overrides: dict = None,
                 start_idx = match.start()
                 end_idx = match.end()
 
-                orig_start = mapping[start_idx]
-                orig_end = mapping[end_idx] if end_idx < len(mapping) else len(body_html)
+                orig_start = map_start[start_idx]
+                orig_end = map_end[end_idx - 1]
 
-                punc_match = re.match(r'^((?:</[a-zA-Z]+>)*)([\.,\?!:;\'"“”’]*)', body_html[orig_end:])
+                punc_match = re.match(r'^((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)([\.,\?!:;\'"“”’]*)', body_html[orig_end:])
                 if punc_match:
                     trailing_tags = punc_match.group(1)
                     trailing_punc = punc_match.group(2)
@@ -1628,7 +1632,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
                 rf'({re.escape(term)}(?:s|es)?)'
                 rf'(?![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
-                rf'((?:</[a-zA-Z]+>)*)'
+                rf'((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)'
                 rf'([\.,\?!:;\'"“”’]*)'
             )
             def replace_biographical(m):

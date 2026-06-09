@@ -414,7 +414,11 @@ def reconstruct_paragraphs(text):
             if not ends_terminal or is_dangling or is_semantic_connector:
                 # Line does not end with terminal punctuation or ends with a connector
                 # OR the current line is a semantic connector ("For,", "As,") → join
-                current.append(stripped)
+                if prev.rstrip().endswith('—') and not starts_lower:
+                    paragraphs.append(' '.join(current))
+                    current = [stripped]
+                else:
+                    current.append(stripped)
             elif starts_lower:
                 # Starts lowercase after terminal (e.g. middle of quotation) → join
                 current.append(stripped)
@@ -596,6 +600,10 @@ def _paragraph_needs_text_continuation(prev, current):
     if current.startswith('#') or '[[' in current:
         return False
     if '[[' in prev:
+        return False
+    
+    # If prev ends with em-dash and current starts capitalized, do not join
+    if prev.rstrip().endswith('—') and not re.match(r'^[a-z0-9({\[\'"\u201c\u2018]', current.strip()):
         return False
     
     # Check for continuation contexts FIRST (Issues 71, 72)

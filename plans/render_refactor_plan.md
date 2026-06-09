@@ -1,6 +1,6 @@
 # Render.py Refactoring Plan
 
-This plan outlines the systematic breakdown of the monolithic `render.py` script into smaller, domain-specific modules inside the `scripts/` directory. Each phase will be executed on its own isolated Git worktree branch and ticked off upon completion and verification.
+This plan outlines the systematic breakdown of the monolithic `render.py` script into smaller, domain-specific modules inside the `scripts/` directory. Each phase will be executed on its own isolated Git branch and ticked off upon completion and verification.
 
 ## Strategy: Outside-In
 We will extract pure text-processing functions first (like markdown conversion and list processing) because they are stateless and easiest to decouple from the core EPUB assembly logic. As `render.py` shrinks, the remaining structural logic will be easier to organize.
@@ -20,9 +20,9 @@ We will extract pure text-processing functions first (like markdown conversion a
 
 ## Execution Protocol
 For each phase, I will:
-1. Create a new worktree branch (e.g., `Owen-render-refactor-lists`).
-2. Implement the relative path linkage for worktree portability.
-3. Extract the functions into the new script in `scripts/`.
-4. Update `render.py` to import and use the extracted functions.
-5. Generate the EPUB and run the `#test audit 1` validation command to ensure Volume 1 still builds perfectly and all tests pass.
-6. Tick the boxes in the table above and mark the phase as ✅ Complete.
+1. Create a new branch (e.g., `render-refactor-lists`).
+2. Extract the functions into the new script in `scripts/`.
+3. Update `render.py` to import and use the extracted functions.
+4. Generate the EPUB and run the `#test audit 1` validation command to ensure Volume 1 still builds perfectly and all tests pass.
+5. Tick the boxes in the table above and mark the phase as ✅ Complete.
+

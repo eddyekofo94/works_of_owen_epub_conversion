@@ -274,7 +274,7 @@ The new engine:
 |---|---|---|---|---|
 | 1 | v1 | Populated | PRISTINE | Cov 99.92 Greek 99.87 Heb 100.00 Lat 99.74 |
 | 2 | v2 | Populated | FULL | Cov 99.48 Greek 99.77 Heb 100.00 Lat 99.50 Unres 2 |
-| 3 | v3 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.95 |
+| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 100.00 Heb 100.00 Lat 99.95 |
 | 4 | v4 | Populated | FULL | Cov 99.67 Greek 99.71 Heb 100.00 Lat ? Unres 8 |
 | 5 | v5 | Populated | FULL | Cov 98.07 Greek 99.73 Heb 99.19 Lat 98.91 Unres 2 |
 | 6 | v6 | Populated | FULL | Cov 99.54 Greek 100.00 Heb 100.00 Lat ? |
@@ -287,7 +287,7 @@ The new engine:
 | 13 | v13 | Populated | FULL | Cov 89.75 Greek 96.19 Heb 100.00 Lat ? |
 | 14 | v14 | Populated | FULL | Cov 99.69 Greek 100.00 Heb 100.00 Lat ? Unres 6 |
 | 15 | v15 | Populated | FULL | Cov 99.67 Greek 100.00 Heb 100.00 Lat ? Unres 4 |
-| 16 | v16 | Populated | PRISTINE | Cov 99.92 Greek 99.50 Heb 100.00 Lat 99.88 |
+| 16 | v16 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.94 |
 
 ## Agent-Driven Skills & Slash Commands
 

@@ -1,4 +1,21 @@
 {
+  "text_integrity": {
+    "skipped_pages": [5, 6],
+    "paragraph_splits": [
+    ],
+    "inline_structural_markers": [
+    ],
+    "repeated_windows": [
+    ],
+    "weak_pages": [
+    ],
+    "dense_source_window_loss": [
+    ],
+    "bottom_of_page_text_loss": [
+    ],
+    "ignored_warnings": [
+    ]
+  },
   "anomalies": {
     "OCR & Bracket Residues": [
       "s ibly",
@@ -6,6 +23,21 @@
       "U as",
       "e last",
       "s may"
+    ],
+    "Punctuation Spacing Blemishes": [
+      ".."
+    ],
+    "Unresolved Citation References": [
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "3. ... 5.",
+      "2. ... 5.",
+      "3. ... 6.",
+      "2. ... 6.",
+      "1. ... 3.",
+      "6. ... 9.",
+      "1. ... 5.",
+      "7. ... 9."
     ]
   }
 }

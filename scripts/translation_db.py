@@ -6751,6 +6751,45 @@ INLINE_TRANSLATIONS = {
     ),
     "O Nam qui lepide postulat alterum frustrari, Quem frustratur, frustra eum dicit frustra esse. Nam qui sese frustrari quem frustra, sentit, Qui frustratur is frustra est, si non, ille est frustra.": (
         "“For he who pleasantly seeks to deceive another, when he deceives him, says in vain that he is in vain. For he who perceives that he himself is deceived by him who is in vain, he who is deceived is in vain, and if not, the other is in vain.”"
+    ),
+    "Biblia Polyglotta": (
+        "“Polyglot Bible”"
+    ),
+    "Prolegomena enumerate": (
+        "“Prolegomena enumerated”"
+    ),
+    "Prolegomena enumerata": (
+        "“Prolegomena enumerated”"
+    ),
+    "Arias Montanus": (
+        "“Arias Montanus”"
+    ),
+    "Arias Montaus": (
+        "“Arias Montanus”"
+    ),
+    "Morinus, Junius": (
+        "“Morinus, Junius”"
+    ),
+    "Elias Levita": (
+        "“Elias Levita”"
+    ),
+    "in rerum natura": (
+        "“in the nature of things”"
+    ),
+    "malae fidei": (
+        "“of bad faith”"
+    ),
+    "manus: psephisma natum est": (
+        "“hands [were raised]: a decree was born”"
+    ),
+    "Principio rerum, gentium nationumque imperium penes reges erat": (
+        "“In the beginning of things, the rule of nations and peoples was in the hands of kings”"
+    ),
+    "Praesident probati quique seniores, honorem istum non pretio, sed testimonio adepti": (
+        "“Each of the approved elders presides, having obtained this honor not by price, but by testimony”"
+    ),
+    "Nec sibi plebs blandiatur, quasi immunis esse a contagio delicti possit cum sacerdote peccatore communicans": (
+        "“Nor let the people flatter themselves, as if they could be immune from the contagion of sin when communicating with a sinful priest”"
     )
 }
 

@@ -18,6 +18,13 @@
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
 | 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | Obsolete (using ages_pdf) |
+| 15 | Reference year 136. split into outline list item and separated from quote | post_extract_hook | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 16 | Flat list layout bug (first list item split, anchor sentence stuck in previous paragraph) | regex_replacements / post_extract_hook | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 17 | Hybrid flat/block list split (list item 4 swallowing subsequent prose and becoming block) | owen_lists.py / text_cleaner.py | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 18 | List item 5 split and rendered as block instead of following previous flattened run | owen_lists.py | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 19 | Pastors list items (4.) and (5.) rendered as flat instead of block in Chapter 5 | post_extract_hook | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+| 20 | Sequential continuation absorption skips subsequent nested lists in consecutive list runs | owen_lists.py | ⌛ IMPLEMENTED (AWAITING VALIDATION) |
+
 
 
 ---
@@ -79,12 +86,39 @@ See previous sessions.
 
 ---
 
-
 ---
 
 ### 14. Structural Misalignment (Obsolete)
 **Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
 **Status:** Obsolete for Volume 16. Volume 16 has been migrated completely to the `ages_pdf` pipeline which does not suffer from CCEL/ThML `div1` fragmentation.
+
+### 15. Reference year 136. split (Implemented - Awaiting Validation)
+**Problem:** The citation "See Euseb. Chron. ad an. Christi 136." was split at "136." because of inline structural marker rules. The parser then treated "136." as a list item, causing sequence outline jumps in audits and incorrectly separating it from the blockquote.
+**Fix:** Modified the `post_extract_hook` in `volumes/v16/convert.py` to keep the citation in the blockquote and split out the subsequent narrative paragraph using `\n\n`. Restored the year check threshold in `scripts/audit_anomalies.py` back to `1000`.
+
+### 16. Flat list layout bug (Implemented - Awaiting Validation)
+**Problem:** In Chapter 1 ("The Subject-Matter of the Church"), the sentence "Hence it appears that there are none excluded..." (the anchor sentence for the second list) was stuck inside the final paragraph of the first list due to a missing paragraph break in the source text extraction. As a result, the first item of the second list began on a new paragraph, preventing it from being flattened inline with its anchor.
+**Fix:** Added regex replacements in `volumes/v16/convert.py` to:
+- Split the anchor sentence "Hence it appears..." from the preceding paragraph of the first list using `\n\n`.
+- Split the items `(1.)` through `(5.)` of the second list into separate paragraphs.
+This allows the Stage 2 flat-list flattener to correctly identify both runs as flat syllabi and merge them inline with their respective anchors.
+
+### 17. Hybrid flat/block list split (Implemented - Awaiting Validation)
+**Problem:** In Chapter 1, the third list contains items `(1.)` to `(4.)` followed by the main clause of the sentence "It is the duty of every man...". Because this main clause began after an em-dash (`—`), the paragraph healer `reconstruct_paragraphs` and post-processing joined the main clause into item `(4.)`. This made item `(4.)` extremely long (205 words), violating the list flattener cap and causing it to render as a block while items `(1.)` to `(3.)` were flat.
+**Fix:** Updated the list flattener in `scripts/owen_lists.py` to safely re-emit non-flattened items, and updated the paragraph healer (`reconstruct_paragraphs` and `_paragraph_needs_text_continuation` in `scripts/text_cleaner.py`) to split paragraphs across trailing em-dashes (`—`) when followed by capitalized prose. This keeps list items within their true semantic boundary and allows the entire list `(1.)` through `(4.)` to be successfully flattened inline.
+
+### 18. List item 5 split and rendered as block (Implemented - Awaiting Validation)
+**Problem:** In Chapter 3 ("Of the Polity, Rule, or Discipline of the Church in General"), a list with 5 items had items 1-4 flattened inline while item 5 remained block because it exceeded the word count cap (29 words > 25). Rendering some items inline and others as block creates an inconsistent list style.
+**Fix:** Updated the list flattener in `scripts/owen_lists.py` to check the remaining items of a contiguous run. If a prefix is flattened, the remaining items are inspected and only absorbed if they strictly belong to the same list sequence (same marker family type, e.g., `arabic_bare`, and strictly sequential $+1$ value progression). This prevents false positives from swallowing unrelated list groups, while ensuring lists are styled consistently.
+
+### 19. Pastors list items (4.) and (5.) rendered as flat instead of block (Implemented - Awaiting Validation)
+**Problem:** In Chapter 5 ("The Especial Duty of Pastors of Churches"), list items `(4.)` and `(5.)` were rendered flat inline because they were originally inlined in the source text, but they should be block paragraphs in this instance.
+**Fix:** Added text replacements in `post_extract_hook` in `volumes/v16/convert.py` to insert newlines (`\n\n`) before `(4.)` and `(5.)` to split them into separate block paragraphs.
+
+### 20. Sequential list absorption skips subsequent nested lists (Implemented - Awaiting Validation)
+**Problem:** In `_attach_em_dash_flat_list`, when a consecutive run of list items was processed, the loop consumed the entire run in one go by jumping `i = j` even when no prefix was flattened (`flat_prefix_len == 0`). This prevented any subsequent items in that run (like `(5.)` in Chapter 4) from being checked as parent paragraphs for their own sub-lists.
+**Fix:** Updated `_attach_em_dash_flat_list` to append the first item and recursively call itself on the remaining items `run_indices[1:]` when `flat_prefix_len == 0`. This allows nested lists to be evaluated and flattened properly.
+
 
 ## Remaining Work
 
@@ -120,11 +154,35 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-05T15:38:12.850413+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen-improvement-v16/volumes/v16/output/volume_16.epub`
+**Last run:** 2026-06-06T07:46:25.812197+00:00
+**EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -140,7 +198,7 @@ Reports:
 | NAV links | 85 |
 | Greek chars / untagged | 6044 / 0 |
 | Hebrew chars / untagged | 1224 / 0 |
-| Noteref links / endnote anchors | 257 / 257 |
+| Noteref links / endnote anchors | 258 / 258 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -171,10 +229,41 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-05T15:38:47.976755+00:00
+**Last run:** 2026-06-06T10:48:33.746863+00:00
 **Status:** WARN (14 warnings)
 
 Reports:
@@ -185,12 +274,12 @@ Reports:
 |-------|--------|
 | PDF pages | 672 |
 | EPUB text files | 82 |
-| EPUB paragraphs/headings | 2653 |
-| Approximate PDF-to-EPUB word coverage | 0.9992 |
+| EPUB paragraphs/headings | 2682 |
+| Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 1 |
-| Dense source windows checked | 28539 |
+| Dense source windows checked | 27795 |
 | Missing dense source-window pages | 40 |
-| Front CONTENTS pages checked | 5 |
+| Front CONTENTS pages checked | 1 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 630 |
 | Top-of-page windows skipped as unstable | 34 |
@@ -198,11 +287,11 @@ Reports:
 | Bottom-of-page body windows checked | 602 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 5 |
-| Possible faulty paragraph splits | 2 |
-| Structural starts excluded from split warnings | 275 |
-| Short fragments | 20 |
+| Possible faulty paragraph splits | 33 |
+| Structural starts excluded from split warnings | 276 |
+| Short fragments | 24 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 8 |
+| Inline structural marker candidates | 6 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 3 |
@@ -214,8 +303,8 @@ Reports:
 | EPUB enumerator markers | 519 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 2 |
-| PDF Greek words / EPUB Greek words | 1037 / 1042 |
-| Greek word coverage ratio | 0.995 |
+| PDF Greek words / EPUB Greek words | 1030 / 1042 |
+| Greek word coverage ratio | 1.0 |
 | PDF Hebrew words / EPUB Hebrew words | 268 / 268 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |

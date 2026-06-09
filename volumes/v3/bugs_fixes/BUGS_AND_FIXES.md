@@ -859,11 +859,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-04T00:53:45.118106+00:00
-**EPUB:** `volumes/v3/output/volume_3.epub`
+**Last run:** 2026-06-05T21:28:47.732169+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -879,7 +881,7 @@ Reports:
 | NAV links | 48 |
 | Greek chars / untagged | 4328 / 0 |
 | Hebrew chars / untagged | 1655 / 0 |
-| Noteref links / endnote anchors | 304 / 304 |
+| Noteref links / endnote anchors | 311 / 311 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -1034,11 +1036,13 @@ Validation:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-04T00:54:28.700223+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-05T21:29:31.260405+00:00
+**Status:** WARN (1 warnings)
 
 Reports:
 - `volume_3_text_integrity.json`
@@ -1049,21 +1053,21 @@ Reports:
 | PDF pages | 789 |
 | EPUB text files | 45 |
 | EPUB paragraphs/headings | 2512 |
-| Approximate PDF-to-EPUB word coverage | 0.9998 |
+| Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 36088 |
+| Dense source windows checked | 35055 |
 | Missing dense source-window pages | 20 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 765 |
 | Top-of-page windows skipped as unstable | 30 |
-| Missing top-of-page body windows | 0 |
+| Missing top-of-page body windows | 1 |
 | Bottom-of-page body windows checked | 746 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 314 |
-| Short fragments | 13 |
+| Structural starts excluded from split warnings | 315 |
+| Short fragments | 14 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
@@ -1083,6 +1087,10 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
