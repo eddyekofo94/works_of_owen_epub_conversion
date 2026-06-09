@@ -4759,7 +4759,7 @@ BODY_TRANSLATIONS = {
     "Bernard speaks to the same purpose, and almost in the same words, Serm.1.": (
         "<b>Modern Citation:</b> Bernard of Clairvaux, <i>Sermons</i>, Sermon 1."
     ),
-    "Bellar., lib 5 cap.": (
+    "Bellar., lib 5 cap. 1": (
         "<b>Modern Citation:</b> Robert Bellarmine, <i>De Justificatione</i>, Book 5."
     ),
     "ad Smyrn, [cap.1]:": (

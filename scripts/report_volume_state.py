@@ -68,6 +68,7 @@ def gather_volume_data(vol: int) -> dict:
     text_int = _read_json(bugs / f"volume_{vol}_text_integrity.json")
     bug_reg = _read_json(bugs / f"volume_{vol}_bug_regressions.json")
     anom = _read_json(bugs / f"volume_{vol}_anomalies.json")
+    unmatched_q_json = _read_json(bugs / f"volume_{vol}_unmatched_quotes.json")
 
     # metadata from shared.py
     try:
@@ -117,6 +118,7 @@ def gather_volume_data(vol: int) -> dict:
         "anomalies_count": anom.get("total_anomalies_count"),
         "total_citations": total_citations,
         "unresolved_citations": unresolved_citations,
+        "unmatched_quotes": unmatched_q_json.get("unmatched_quotes_count"),
     }
 
     # audit report
@@ -182,13 +184,15 @@ def gather_volume_data(vol: int) -> dict:
         hebrew_cov = data.get("hebrew_coverage")
         latin_cov = data.get("latin_coverage")
         unres = data.get("unresolved_citations", 0)
+        unmatched_quotes = data.get("unmatched_quotes")
 
         is_pristine = (
             cov is not None and cov >= 0.995 and
             greek_cov is not None and greek_cov >= 0.990 and
             hebrew_cov is not None and hebrew_cov >= 0.990 and
             latin_cov is not None and latin_cov >= 0.990 and
-            unres == 0
+            unres == 0 and
+            (unmatched_quotes is None or unmatched_quotes == 0)
         )
         if is_pristine:
             data["qa_level"] = "PRISTINE"
@@ -203,6 +207,9 @@ def gather_volume_data(vol: int) -> dict:
 
     # recommended actions
     actions: list[str] = []
+    unmatched_quotes = data.get("unmatched_quotes")
+    if unmatched_quotes is not None and unmatched_quotes > 0:
+        actions.append("resolve_unmatched_quotes")
     if not has_audit:
         actions.append("run_epub_audit")
     if not has_text:
@@ -312,6 +319,11 @@ def score_volume(d: dict) -> float:
     if anom_c is not None:
         score += min(anom_c * 0.1, 10.0)
 
+    # unmatched quotes
+    unmatched_quotes = d.get("unmatched_quotes")
+    if unmatched_quotes is not None:
+        score += min(unmatched_quotes * 0.5, 10.0)
+
     return round(score, 1)
 
 
@@ -404,6 +416,7 @@ def _actions_to_text(actions: list[str]) -> str:
         "investigate_hebrew_extraction": "🔤 Investigate Hebrew extraction",
         "create_per_volume_script": "📄 Create per-volume script",
         "review_ocr_anomalies": "🔍 Review OCR anomalies",
+        "resolve_unmatched_quotes": "❓ Resolve unmatched quotation marks",
     }
     return "; ".join(icons.get(a, a) for a in actions)
 
@@ -419,8 +432,8 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
     lines.append("")
     lines.append("**Need** (0–100): lower is better. Combines coverage, Greek/Hebrew/Latin health, unresolved citations, splits, warnings, and QA completeness into a single score. Volumes ranked worst first.")
     lines.append("")
-    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | QA Level |")
-    lines.append("|------|-----|------|------|-----------|----------|-------|--------|-------|-------|----------|")
+    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |")
+    lines.append("|------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|")
 
     for i, d in enumerate(ranked, 1):
         lines.append(
@@ -431,6 +444,7 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
             f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')), 6)} "
             f"| {_fmt(_maybe_pct(d.get('latin_coverage')), 6)} "
             f"| {d.get('unresolved_citations', '?')} "
+            f"| {d.get('unmatched_quotes', '?')} "
             f"| {d['qa_level']} |"
         )
 
@@ -467,6 +481,7 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
         lines.append(f"- **Splits:** {d.get('splits', '?')}")
         lines.append(f"- **Regressions:** {d.get('regressions', '?')}")
         lines.append(f"- **Suspected anomalies:** {d.get('anomalies_count', '?')}")
+        lines.append(f"- **Unmatched quotes:** {d.get('unmatched_quotes', '?')}")
         lines.append(f"- **Recommended:** {_actions_to_text(d['recommended_actions'])}")
         lines.append("")
 
@@ -506,6 +521,7 @@ def write_json_report(ranked: list[dict], path: Path) -> None:
             "errors": d.get("audit_errors"),
             "regressions": d.get("regressions"),
             "anomalies_count": d.get("anomalies_count"),
+            "unmatched_quotes": d.get("unmatched_quotes"),
             "font": d["font"],
             "treatises": d["treatises"],
             "has_convert_py": d["has_convert_py"],
@@ -536,13 +552,15 @@ def _table_line(d: dict) -> str:
         hebrew = d.get("hebrew_coverage")
         lat = d.get("latin_coverage")
         unres = d.get("unresolved_citations", 0)
+        unmatched = d.get("unmatched_quotes")
         
         cov_s = f"{_pct(cov)}" if cov is not None else "?"
         greek_s = f"{_pct(greek)}" if greek is not None else "?"
         hebrew_s = f"{_pct(hebrew)}" if hebrew is not None else "?"
         lat_s = f"{_pct(lat)}" if lat is not None else "?"
         unres_s = f" Unres {unres}" if unres else ""
-        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s} Lat {lat_s}{unres_s}"
+        unmatched_s = f" Quotes {unmatched}" if unmatched else ""
+        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s} Lat {lat_s}{unres_s}{unmatched_s}"
 
     return f"| {v} | {convert} | {overrides} | {ql} | {notes} |"
 

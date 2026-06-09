@@ -1,7 +1,18 @@
 import re
 import sys
-from html import escape as _html_escape, unescape as _html_unescape
+from html import escape as _raw_html_escape, unescape as _html_unescape
 from shared import *
+
+def _html_escape(text: str) -> str:
+    escaped = _raw_html_escape(text)
+    # Restore escaped span and a tags to preserve manual language tagging or inline links from intermediate JSON
+    escaped = re.sub(
+        r'&lt;(\/?(?:span|a)\b.*?)&gt;',
+        lambda m: '<' + m.group(1).replace('&quot;', '"').replace('&#x27;', "'") + '>',
+        escaped,
+        flags=re.I
+    )
+    return escaped
 from shared import (
     _normalize_spaced_caps, _normalize_i_will, _normalize_scholarly_citation_artifacts,
     _repair_owen_ocr_errors, _norm_for_dedupe, _is_scripture_ref_fragment,

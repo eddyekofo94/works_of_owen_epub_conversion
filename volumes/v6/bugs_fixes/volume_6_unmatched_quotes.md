@@ -1,0 +1,258 @@
+# Unmatched Quotation Marks Report: Volume 6
+
+This report lists all paragraphs containing an odd number of double quotes.
+Some of these may be legitimate (e.g., multi-paragraph quotes where only the last paragraph gets a closing quote),
+while others may indicate dropped words, OCR defects, or punctuation errors.
+
+- **Total Paragraphs Checked:** 3054
+- **Unmatched Paragraphs Found:** 31
+
+---
+
+### 1. Chapter: *Chapter 8* (Paragraph 41)
+* **Quotation Marks Count:** 7
+* **Paragraph Text (Quotes Highlighted):**
+
+Paul's temptation grew very high; it was likely to have come to its prevalent hour. He **"**besought the Lord, that is, the Lord Jesus Christ, for help, 2 Corinthians 12:8; and received that answer from him, **"**My grace is sufficient for thee,**"** verse 9. That is was the Lord Christ and his grace with whom he had peculiarly to do is evident from the close of that verse: **"**I will glory in my infirmity, that the power of Christ may rest upon me;**"** or **"**the efficacy of the grace of Christ in my preservation be made evident.**"** So Hebrews 2:18.
+
+---
+
+### 2. Chapter: *Chapter 2.* (Paragraph 16)
+* **Quotation Marks Count:** 21
+* **Paragraph Text (Quotes Highlighted):**
+
+The law of God was at first inbred and natural unto man; it was concreated with his faculties, and was their rectitude, both in being and operation, in reference to his end of living unto God and glorifying of him. Hence it had an especial power in the whole soul to enable it unto all obedience, yea, and to make all obedience easy and pleasant. Such is the power of an inbred law. And though this law, as to the rule and dominion of it, be now by nature cast out of the soul, yet the remaining sparks of it, because they are inbred, are very powerful and effectual; as the apostle declares, Romans 2:14, 15. Afterward God renews this law, and writes it in tables of stone. But what is the efficacy of this law? Will it now, as it is external and proposed unto men, enable them to perform the things that it exacts and requires? Not at all. God knew it would not, unless it were turned to an internal law again; that is, until, of a moral outward rule, it be turned into an inward real principle. Wherefore God makes his law internal again, and implants it on the heart as it was at first, when he intends to give it power to produce obedience in his people: Jeremiah 31:31-33, **"**I will put my law in their inward parts, and write it in their hearts.**"** This is that which God fixeth on, as it were, upon a discovery of the insufficiency of an outward law leading men unto obedience. **"**The written law,**"** saith he, **"**will not do it; mercies and deliverances from distress will not effect it; trials and afflictions will not accomplish it. **"**Then,**"** saith the Lord, **"**will I take another course: I will turn the written law into an internal living principle in their hearts; and that will have such an efficacy as shall assuredly make them my people, and keep them so.**"** Now, such is this law of sin. It is an indwelling law: Romans 7:17, **"**It is sin that dwelleth in me;**"** verse 20, **"**Sin that dwelleth in me;**"** verse 21, **"**It is present with me;**"** verse 23, **"**It is in my members ;**"** — yea, it is so far in a man, as in some sense it is said to be the man himself; verse 18, **"**I know that in me (that is, in my flesh) dwelleth no good thing.**"** The flesh, which is the seat and throne of this law, yea, which indeed is this law, is in some sense the man himself, as grace also is the new man. Now, from this consideration of it, that it is an indwelling law inclining and moving to sin, as aa inward habit or principle, it hath sundry advantages increasing its strength and furthering its power; as, **1.** It always abides in the soul, — it is never absent. The apostle twice useth that expression, **"**It dwelleth in me.**"** There is its constant residence and habitation. If it came upon the soul only at certain seasons, much obedience might be perfectly accomplished in its absence; yea, and as they deal with usurping tyrants, whom they intend to thrust out of a city, the gates might be sometimes shut against it, that it might not return, — the soul might fortify itself against it. But the soul is its home; there it dwells, and is no wanderer. Wherever you are, whatever you are about, this law of sin is always in you; in the best that You do, and in the worst. Men little consider what a dangerous companion is always at home with them. When they are in company, when alone, by night or by day, all is one, sin is with them. There is a living coal continually in their houses; which, if it be not looked unto, will fire them, and it may be consume them. Oh, the woful security of poor souls! How little do the most of men think of this inbred enemy that is never from home! How little, for the most part, doth the watchfulness of any professors answer the danger of their state and condition!
+
+---
+
+### 3. Chapter: *Chapter 4.* (Paragraph 7)
+* **Quotation Marks Count:** 11
+* **Paragraph Text (Quotes Highlighted):**
+
+Secondly, It is not only said to be **"**enmity,**"** but it is said to be **"**enmity against God.**"** It hath chosen a great enemy indeed. It is in sundry places proposed as our enemy: 1 Peter 2:11, **"**Abstain from fleshly lusts, which war against the soul;**"** they are enemies to the soul, that is, to ourselves. Sometimes as an enemy to the Spirit that is in us: **"**The flesh lusteth**"** or fighteth **"**against the Spirit, Galatians 5:17. It fights against the Spirit, or the spiritual principle that is in us, to conquer it; it fights against our souls, to destroy them. It hath special ends and designs against our souls, and against the principle of grace that is in us; but its proper formal object is God: it is **"**enmity against God.**"** It is its work to oppose grace; it is a consequent of its work to oppose our souls, which follows upon what it doth more than what it intends; but its nature and formal design is to oppose God, — God as the lawgiver, God as holy, God as the author of the gospel, a way of salvation by. grace, and not by works, — this is the direct object of the law of sin. Why doth it oppose duty, so that the good we would do we do not, either as to matter or manner? Why doth it render the soul carnal, indisposed, unbelieving, unspiritual, weary, wandering? It is because of its enmity to God, whom the soul aims to have communion withal in duty. It hath, as it were, that command from Satan which the Assyrians had from their king:
+
+---
+
+### 4. Chapter: *Chapter 6.* (Paragraph 21)
+* **Quotation Marks Count:** 11
+* **Paragraph Text (Quotes Highlighted):**
+
+(1.) In its unexpected surprisals of the soul into foolish, sinful figments and imaginations, which it looked not for, nor was any occasion administered unto them. It is with indwelling sin as it is with the contrary principle of sanctifying grace. This gives the soul, if I may so say, many a blessed surprisal. It oftentimes ingenerates and brings forth a holy, spiritual frame in the heart and mind, when we have had no previous rational considerations to work them thereunto. And this manifests it to be an habitual principle prevailing in the mind: so Song of Solomon 6:12, **"**Or ever I was aware, my soul made me as the chariots of Ammi-nadib; that is, free, willing, and ready for communion with Christ. לֹא יָדַעְתִי; — **"**I knew not; it was done by the power of the Spirit of grace; so that I took no notice of it, as it were, until it was done.**"** The frequent actings of grace in this manner, exciting acts of faith, love, and complacency in God, are evidences of much strength and prevalency of it in the soul. And thus, also, is it with indwelling sin; ere the soul is aware, without any provocation or temptation, when it knows not, it is cast into a vain and foolish frame. Sin produceth its figments secretly in the heart, and prevents the mind's consideration of what it is about. I mean hereby those **"**actus primo primi,**"** first acts of the soul; which are thus far involuntary, as that they have not the actual consent of the will unto them, but are voluntary as far as sin hath its residence in the will. And these surprisals, if the soul be not awake to take speedy care for the prevention of their tendency, do oftentimes set all as it were on fire, and engage the mind and affections into actual sin: for as by grace we are oftentimes, ere we are aware, **"**made as the chariots of a willing people,**"** and are far engaged in heavenly-mindedness and communion with Christ, making speed in it as in a chariot; so by sin are we oftentimes, ere we are aware, carried into distempered affections, foolish imaginations, and pleasing delightfulness in things that are not good nor profitable. Hence is that caution of the apostle, Galatians 6:1, Εὰν προληφθῇ — **"**If a man be surprised at unawares with a fault, or in a transgression.**"** I doubt not but the subtlety of Satan and the power of temptation are here taken into consideration by the apostle, which causeth him to express a man's falling into sin by προληφθῇ, — **"**if he be surprised.**"** So this working of indwelling sin also hath its consideration in it, and that in the chiefest place, without which nothing else could surprise us; for without the help thereof, whatever comes from without, from Satan or the world, must admit of some parley in the mind before it be received, but it is from within, from ourselves, that we are surprised. Hereby are we disappointed and wrought over to do that which we would not, and hindered from the doing of that which we would. Hence it is, that when the soul is oftentimes doing as it were quite another thing, engaged quite upon another design, sin starts that in the heart or imaginations of it that carries it away into that which is evil and sinful. Yea, to manifest its power, sometimes, when the soul is seriously engaged in the mortification of any sin, it will, by one means or other, lead it away into a dalliance with that very sin whose ruin it is seeking, and whose mortification it is engaged in! But as there is in this operation of the law of sin a special enticing or entangling, we shall speak unto it fully afterward. Now, these surprisals can be from nothing but an habitual propensity unto evil in the principle from whence they proceed; not an habitual inclination unto actual sin in the mind or heart, but an habitual propensity unto evil in the sin that is in the mind or heart. This prevents the soul with its figments. How much communion with God is hereby prevented, how many meditations are disturbed, how much the minds and consciences of men have been defiled by this acting of sin, some may have observed. I know no greater burden in the life of a believer than these involuntary surprisals of soul; involuntary, I say, as to the actual consent of the will, but not so in respect of that corruption which is in the will, and is the principle of them. And it is in respect unto these that the apostle makes his complaint, Romans 7:25.
+
+---
+
+### 5. Chapter: *Chapter 6.* (Paragraph 42)
+* **Quotation Marks Count:** 13
+* **Paragraph Text (Quotes Highlighted):**
+
+2. It doth not only rebel and resist, but it assaults the soul. It sets upon the law of the mind and grace; which is the second part of its warring: 1 Peter 2:11, Στρατεύονται κατὰ τῆς ψυχῆς, — **"**They fight, or war, **"**against the soul;**"** James 4:1, Στρατεύονται ἐν τοῖς μέλεσιν ὑμῶν, — **"**They fight,**"** or war, **"**in your members.**"** Peter shows what they oppose and fight against, — namely, the **"**soul**"** and the law of grace therein; James, what they fight with or by, — namely, the **"**members,**"** or the corruption that is in our mortal bodies. Αντιστρατεύεσθαι is to rebel against a superior; στρατεύεσθαι is to assault or war for a superiority. It takes the part of an assailant as well as of a resister. It makes attempts for rule and sovereignty, as well as opposeth the rule of grace. Now, all war and fighting hath somewhat of violence in it; and there is therefore some violence in that acting of sin which the Scripture calls **"**fighting and warring.**"** And this assailing efficacy of sin, as distinguished from its rebelling, before treated of, consists in these things that ensue: —
+
+---
+
+### 6. Chapter: *Chapter 6.* (Paragraph 46)
+* **Quotation Marks Count:** 11
+* **Paragraph Text (Quotes Highlighted):**
+
+(2.) Its importunity and urgency seems to be noted in this expression, of its warring. Enemies in war are restless, pressing, and importunate; so is the law of sin. Doth it set upon the soul? — Cast off its motions; it returns again. Rebuke them by the power of grace; they withdraw for a while, and return again. Set before them the cross of Christ; they do as those that came to take him, — at sight of him they went backwards and fell unto the ground, but they arose again and laid hands on him — sin gives place for a season, but returns and presseth on the soul again. Mind it of the love of God in Christ; though it be stricken, yet it gives not over. Present hell-fire unto it; it rusheth into the midst of those flames. Reproach it with its folly and madness; it knows no shame, but presseth on still. Let the thoughts of the mind strive to fly from it; it follows as on the wings of the wind. And by this importunity it wearies and wears out the soul; and if the great remedy, Romans 8:3, come not timely, it prevails to a conquest. There is nothing more marvellous nor dreadful in the working of sin than this of its importunity. The soul knows not what to make of it; it dislikes, abhors, abominates the evil it tends unto; it despiseth the thoughts of it, hates them as hell; and yet is by itself imposed on with them, as if it were another person, an express enemy got within him. All this the apostle discovers, Romans 7:15-17: **"**The things that I do I hate.**"** It is not of outward actions, but the inward risings of the mind that he treats. **"**I hate them,**"** saith he; **"**I abominate them.**"** But why, then, will he have any thing more to do with them? If he hate them, and abhor himself for them, let them alone, have no more to do with them, and so end the matter. Alas! saith he, verse 17, **"**It is no more I that do it, but sin that dwelleth in me;**"** — **"**I have one within me that is my enemy, that with endless, restless importunity puts these things upon me, even the things that I hate and abominate. I cannot be rid of them, I am weary of myself, I cannot fly from them. **"**O wretched man that I am! who shall deliver me?'**"** I do not say that this is the ordinary condition of believers, but thus it is often when this law of sin riseth up to war and fighting. It is not thus with them in respect of particular sins, — this or that sin, outward sins, sins of life and conversation, — but yet in respect of vanity of mind, inward and spiritual distempers, it is often so. Some, I know, pretend to great perfection; but I am resolved to believe the apostle before them all and every one.
+
+---
+
+### 7. Chapter: *Chapter 10.* (Paragraph 8)
+* **Quotation Marks Count:** 7
+* **Paragraph Text (Quotes Highlighted):**
+
+Our minds are often in the Scriptures called our spirits, — as Romans 1:9, **"**Whom I serve with my spirit;**"** and are distinguished from the soul, which principally intends the affections in that distribution, 1 Thessalonians 5:23, **"**Sanctify you wholly, your whole spirit and soul,**"** — that is, your mind and affections. It is true, where the [word] **"**spirit**"** is used to express spiritual gifts, it is, as unto those gifts, opposed to our **"**understanding,'' 1 Corinthians 14:15, which is there taken for the first act of the mind in a rational perception of things; but as that word is applied unto any faculty of our souls, it is the mind that it expresseth. This, then, being our spirit, the actings of it are secret and hidden, and not to be discovered without spiritual wisdom and diligence. Let us not suppose, then, that we dwell too long on this consideration, which is of so great importance to us, and yet so hidden, and which we are apt to be very insensible of; and yet our carefulness in this matter is one of the best evidences that we have of our sincerity. Let us not, then, be like a man that is sensible, and complains of a cut finger, but not of a decay of spirits tending unto death. There remains therefore, as unto this head of our discourse, the consideration of the charge of the mind in reference unto particular duties and sins; and in the consideration of it we shall do these two things:
+
+---
+
+### 8. Chapter: *Chapter 10.* (Paragraph 22)
+* **Quotation Marks Count:** 7
+* **Paragraph Text (Quotes Highlighted):**
+
+**2dly** _._ It draws off the mind from the duties before mentioned by insinuating a secret _contentment_ into it from the duty itself performed, as to the matter of it. This is a fair discharge of a natural conscience. If the duty be performed, though as to the manner of its performance it come short almost in all things of the rule, conscience and conviction will be satisfied; as Saul, upon his expedition against Amalek, cries to Samuel, **"**Come in, thou blessed of the Lord; **"**I have performed the commandment of the Lord.'**"** He satisfied himself, though he had not attended as he ought to the whole will of God in that matter. And thus was it with them, Isaiah 58:3, **"**Wherefore have we fasted, say they, and thou regardest it not?**"** They had pleased themselves in the performance of their duties, and expected that God also should be pleased with them. But he shows them at large wherein they had failed, and that so far as to render what they had done an abomination; and the like charge he expresseth against them, chap. 48:1, 2. This the deceitfulness of sin endeavors to draw the mind unto, namely, to take up in the performance of the duty itself. **"**Pray thou oughtst, and thou hast prayed; give alms thou oughtst, and thou hast given alms; quiet, then, thyself in what thou hast done, and go on to do the like.**"** If it prevail herein the mind is discharged from farther attendance and watching unto duty, which leaves the soul on the borders of many evils; for, —
+
+---
+
+### 9. Chapter: *Chapter 10.* (Paragraph 56)
+* **Quotation Marks Count:** 1
+* **Paragraph Text (Quotes Highlighted):**
+
+**"**For if these things be in you, and abound, they make you that ye shall neither be barren nor unfruitful in the knowledge of our Lord Jesus Christ.
+
+---
+
+### 10. Chapter: *Chapter 10.* (Paragraph 57)
+* **Quotation Marks Count:** 1
+* **Paragraph Text (Quotes Highlighted):**
+
+But he that lacketh these things is blind, and cannot see afar off, and hath forgotten that he was purged from his old sins. Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things ye shall never fall: for so an entrance shall be ministered unto you abundantly into the everlasting kingdom of our Lord and Savior Jesus Christ,**"** All this the mind is turned from, if once, by the deceit of sin, it be made slothful. Now, this sloth consists in four things: —
+
+---
+
+### 11. Chapter: *Chapter 14.* (Paragraph 20)
+* **Quotation Marks Count:** 3
+* **Paragraph Text (Quotes Highlighted):**
+
+Are there not decays and declensions to be found amongst them? May it not be said, _**"**Grey hairs are here and there upon them, and they perceive it_ _not?**"**_ Yea, are not men ready to say with them of old, _**"**'_ What a weariness is it!' Malachi 1:13. It is even a burden and a weariness to be tied up to the observation of all these ordinances. What need we be at all so strict in the observation of the Sabbath? What need we hear so often? What need this distinction in hearing? Insensibly a great disrespect, yea, even a contempt of the pleasant and excellent ways of Christ and his gospel is fallen upon many professors.
+
+---
+
+### 12. Chapter: *Chapter 17.* (Paragraph 7)
+* **Quotation Marks Count:** 3
+* **Paragraph Text (Quotes Highlighted):**
+
+**2.** The law not only discovers sin, but discovers it to be a very _bad inmate,_ dangerous, yea, pernicious to the soul: Romans 7:13, **"**Was then that which is good,**"** — that is, the law, — **"**made death unto me? God forbid.
+
+---
+
+### 13. Chapter: *Chapter 17.* (Paragraph 8)
+* **Quotation Marks Count:** 1
+* **Paragraph Text (Quotes Highlighted):**
+
+But sin, that it might appear sin, working death in me by that which is good; that sin by the commandment might become exceeding sinful.**"** There are many things in this verse wherein we are not at present concerned: that which I only aim at is the manifestation of sin by the law, — it _appears to_ _be sin;_ and the manifestation of it in its own colors, — it appears to be _exceeding sinful._ The law gives the soul to know the filth and guilt of this indwelling sin, — how great they are, how vile it is, what an abomination, what an enmity to God, how hated of him. The soul shall never more look upon it as a _small matter,_ what thoughts soever it had of it before, whereby it is greatly surprised.
+
+---
+
+### 14. Chapter: *Gracious Souls May Be Brought Into Depths on the Account of Sin* (Paragraph 20)
+* **Quotation Marks Count:** 9
+* **Paragraph Text (Quotes Highlighted):**
+
+Psalm 119:120, saith David, **"**My flesh trembleth for fear of thee, and I am afraid of thy judgments? He knows not what the great God may bring upon him; and being full of a sense of the guilt of sin, which is the bottom of this whole condition, every judgment of God is full of terror unto him. Sometimes he thinks God may lay open the filth of his heart, and make him a scandal and a reproach in the world. Psalm 39:8, **"**O,**"** saith he, **"**make me not a reproach of the foolish.**"** Sometimes he trembles lest God should strike him suddenly with some signal judgment, and take him out of the world in darkness and sorrow: so saith David, **"**Take me not away in thy wrath.**"** Sometimes he fears lest he shall be like Jonah, and raise a storm in his family, in the church whereof he is a member, or in the whole nation: **"**Let them not be ashamed for my sake.**"** These things make his heart soft, as Job speaks, and to melt within him. When any affliction or public judgment of God is fastened to a quick, living sense of sin in the conscience, it overwhelms the soul, whether it be only justly feared or be actually inflicted; as was the case of Joseph's brethren in Egypt. The soul is then rolled from one deep to another. Sense of sin casts it on the consideration of its affliction, and affliction turns it back on a sense of sin. So deep calleth unto deep, and all God's billows go over the soul. And they do each of them make the soul tender, and sharpen its sense unto the other. Affliction softens the soul, so that the sense of sin cuts the deeper, and makes the larger wounds; and the sense of sin weakens the soul, and makes affliction sit the heavier, and so increaseth its burden. In this case, that affliction which a man in his usual state of spiritual peace could have embraced as a sweet pledge of love, is as goads and thorns in his side, depriving him of all rest and quietness; God makes it as thorns and briers, wherewith he will teach stubborn souls their duty, as Gideon did the men of Succoth.
+
+---
+
+### 15. Chapter: *What Sins Usually Bring Believers Into Great Spiritual Distresses:* (Paragraph 16)
+* **Quotation Marks Count:** 3
+* **Paragraph Text (Quotes Highlighted):**
+
+2. Whereas this new creature, this principle of life and obedience, is not able of itself to preserve the soul from such sins as will bring it into depths, there is full provision for continual supplies made. for it and all its wants in Jesus Christ. There are treasures of relief in Christ, whereunto the soul may at any time repair and find succor against the incursions of sin. He says to the soul, as David unto Abiathar, when he fled from Doeg, **"**Abide thou with me, fear not: for he that seeketh my life, seeketh thy life; but with me thou shalt be in safe-guard;**"** — **"**Sin is my enemy no less than thine; it seeketh the life of thy soul, and it seeketh my life. 'Abide with me, for with me thou shalt be in safety.' This the apostle exhorts us unto, Hebrews 4:16,
+
+---
+
+### 16. Chapter: *The Words of the Verse Explained, & Their Meaning Opened.* (Paragraph 15)
+* **Quotation Marks Count:** 21
+* **Paragraph Text (Quotes Highlighted):**
+
+To deny it is all one as to deny the very being of God; deny his holiness and righteousness, and you deny his existence. But there is a day appointed, wherein all the men of the world shall know that God knew and took notice of all and every one of their most secret sins. There is, then, a double marking of sin in God; neither of which can be denied in reference unto any sins, in any persons. The first is physical, consisting in his omniscience, whereunto all things are open and naked. Thus no sin is hid from him; the secretest are before the light of his countenance. All are marked by him. Secondly, moral, in a displicency with or displeasure against every sin; which is inseparable from the nature of God, upon the account of his holiness. And this is declared in the sentence of the law, and that equally to all men in the world. But the marking here intended is that which is in a tendency to animadversion and punishment, according to the tenor of the law. Not only the sentence of the law, but a will of punishing according to it, is included in it. **"**If,**"** saith the psalmist, **"**thou, the great and dreadful God, who art extolled by the glorious name Jah, shouldst take notice of iniquities, so as to recompense sinners that come unto thee according to the severity and exigence of thy holy law;**"** — what then? It is answered by the matter of the proposal, **"**Who can stand?**"** that is, none can so do. Τὸ γὰρ τίς ἐνταῦθα οὐδείς ἐστιν, says Chrysostom. This **"**who,**"** is none; no man; not one in the world. מִי יַעֲמֹד, **"**Quis stabit?**"** or **"**consistet,**"** — **"**Who can stand?**"** or abide and endure the trial? Every one on this supposition must perish, and that eternally. This the desert of sin, and the curse of the law, which is the rule of this marking of their iniquity, doth require. And there is a notable emphasis in the interrogation, which contains the manner of the inference. **"**Who can stand?**"** is more than if he had said, **"**None can abide the trial, and escape without everlasting ruin;**"** for the interrogation is indefinite; not, **"**How can I?**"** but, **"**Who can
+
+---
+
+### 17. Chapter: *What First Presents Itself to a Soul in Distress on the Account of Sin* (Paragraph 1)
+* **Quotation Marks Count:** 7
+* **Paragraph Text (Quotes Highlighted):**
+
+stand?,**"** When the Holy Ghost would set out the certainty and dreadfulness of the perishing of ungodly men, he doth it by such a kind of expression, wherein there is a deeper sense intimated into the minds of men than any words can well clothe or declare: 1 Peter 4:17, **"**What shall the end be of them that obey not the gospels.**"** and verse 18, **"**Where shall the ungodly and the sinner appears.**"** So here, **"**Who can stand?**"** There is a deep insinuation of a dreadful ruin as unto all with whom God shall so deal as to mark their iniquities. See Psalm 1:5.
+
+---
+
+### 18. Chapter: *What First Presents Itself to a Soul in Distress on the Account of Sin* (Paragraph 35)
+* **Quotation Marks Count:** 3
+* **Paragraph Text (Quotes Highlighted):**
+
+**"**There is not,**"** saith Job, **"**between us מוֹכִיחַ, one that might argue the case, in pleading for me, and so make up the matter, 'laying his hand upon us both,' Job 9:33. We now consider a sinner purely under the administration of the law, which knows nothing of a mediator. In that case, who shall take upon him to intercede for the sinner? Besides that all creatures in heaven and earth are engaged in the quarrel of God against sinners, and besides the greatness and terror of his majesty, that will certainly deter all or any of them from undertaking any such work, what is the request that in this case must be put up unto God? Is it not that he would cease to be holy, leave off from being righteous, relinquish his throne, deny himself and his sovereignty, that a rebel, a traitor, his cursed enemy, may live and escape his justice? Is this request reasonable? Is he fit to intercede for sinners that make it? Would he not by so doing prove himself to be the greatest of them? The sinner cannot, then, expect any door of escape to be opened unto him; all the world is against him; and the case must be tried out nakedly between God and him. But, —
+
+---
+
+### 19. Chapter: *The Words Explained, and the Design or Scope of the Psalmist in Them Discovered.* (Paragraph 7)
+* **Quotation Marks Count:** 17
+* **Paragraph Text (Quotes Highlighted):**
+
+Now, it is constantly applied unto sin, and expresseth every thing that concurs to its pardon or forgiveness; as, — First, It expresseth the mind or will of pardoning, or God's gracious readiness to forgive: Psalm 136:5, **"**Thou, Lord, art good, וְסַלָח, and ready to forgive;**"** χρηστὸς καὶ ἐπιεικής, **"**benign and meek,**"** or **"**sparing, propitious, — of a gracious, merciful heard and nature. So Nehemiah 9:17, **"**Thou art a God סְלִיחוֹת **"**propitiationum,**"** of propitiations or pardons;**"** or, as we have rendered it, **"**ready to forgive,**"** — **"**a God of forgivenesses;**"** or, **"**all plenty of them is in thy gracious heart,**"** Isaiah 55:7, **"**so that thou art always ready to make out pardons to sinners.**"** The word is used again, Daniel 9:9, to the same purpose.
+
+---
+
+### 20. Chapter: *Greatness and Rareness of the Discovery of Forgiveness in God* (Paragraph 1)
+* **Quotation Marks Count:** 5
+* **Paragraph Text (Quotes Highlighted):**
+
+Alas! if thou hadst all the **"**bulls and goats**"** in the world, **"**it is not possible that their blood should take away sins,**"** verse 4. **"**But I have heard of them who have snatched their own children from their mothers' breasts, and cast them into the fire, until they were consumed, so to pacify their consciences in expiating the guilt of their iniquities. Shall I take this course? will it relieve me? I am ready to part with my 'first-born' into the fire, so I may have deliverance from my 'transgression.' Alas! this never came into the heart of God to approve or accept of. And as it was then, whilst that kind of worship was in force, so is it still as to any duties really to be performed, or imaginarily. Where there is no discovery of forgiveness, they will yield the soul no relief, no supportment; God is not to be treated upon such terms. GREATNESS AND RARENESS OF THE DISCOVERY OF FORGIVENESS IN GOD — REASONS OF IT: — TESTIMONIES OF CONSCIENCE AND LAW AGAINST IT, ETC.
+
+---
+
+### 21. Chapter: *Greatness and Rareness of the Discovery of Forgiveness in God* (Paragraph 24)
+* **Quotation Marks Count:** 3
+* **Paragraph Text (Quotes Highlighted):**
+
+**(3.)** The law, though it speak against the soul's interest, yet it speaks nothing but what is so just, righteous, and equal, that it even forceth the soul's consent. So Paul tells us, that men know this voice of the law to be the **"**judgment of God,**"** Romans 1:32. They know it, and cannot but consent unto it, that it is the judgment of God, — that is, good, righteous, equal, not to be controlled. And, indeed, what can be more righteous than its sentence? It commands obedience to the God of life and death; promiseth a reward, and declares that for non-performance of duty, death will be inflicted. On these terms the sinner cometh into the world. They are good, righteous, holy; the soul accepts of them, and knows not what it can desire better or more equal. This the apostle insists upon, chap. 7:12, 13, **"**Wherefore the law is holy, and the commandment holy, and just, and good. Was then that which was good made death unto me? God forbid.
+
+---
+
+### 22. Chapter: *Greatness and Rareness of the Discovery of Forgiveness in God* (Paragraph 25)
+* **Quotation Marks Count:** 1
+* **Paragraph Text (Quotes Highlighted):**
+
+But sin, that it might appear sin, working death in me by that which is good; that sin by the commandment might become exceeding sinful.**"** Wherever the blame falls, the soul cannot but acquit the law, and confess that what it says is righteous and uncontrollably equal. And it is meet things should be so. Now, though the authority and credit of a witness may go very far in a doubtful matter, when there is a concurrence of more witnesses it strengthens the testimony; but nothing is so prevalent to beget belief as when the things themselves that are spoken are just and good, not liable to any reasonable exception. And so is it in this case: unto the authority of the law and concurrence of conscience, this also is added, the reasonableness and equity of the thing itself proposed, even in the judgment of the sinner, — namely, that every sin shall be punished, and every transgression receive a meet recompense of reward.
+
+---
+
+### 23. Chapter: *False Presumptions of Forgiveness Discovered* (Paragraph 10)
+* **Quotation Marks Count:** 5
+* **Paragraph Text (Quotes Highlighted):**
+
+**1.** An atheistical presumption on God, that he is not so just and holy, or not just and holy in such a way and manner, as he is by some represented, is the ground of their persuasion of forgiveness. Men think that some declarations of God are fitted only to make them mad; that he takes little notice of these things; and that what he doth he will easily pass by, as, they suppose, better becomes him. **"**Come, 'let us eat and drink, for tomorrow we shall die.**"****"** This is their inward thought, **"**The Lord will not do good, neither will he do evil;**"** which, says the psalmist, is men's thinking that God is such a one as themselves, Psalm 50:21. They have no deep nor serious thoughts of his greatness, holiness, purity, severity, but think that he is like themselves, so far as not to be much moved with what they do. What thoughts they have of sin, the same they think God hath. If with them a slight ejaculation be enough to expiate sin, that their consciences be no more troubled, they think it is enough with God that it be not punished. The generality of men make light work of sin; and yet in nothing doth it more appear what thoughts they have of God. He that hath slight thoughts of sin had never great thoughts of God. Indeed, men's undervaluing of sin ariseth merely from their contempt of God. All sin's concernments flow from its relation unto God; and as men's apprehensions are of God, so will they be of sin, which is an opposition to him. This is the frame of the most of men, — they know little of God, and are little troubled about any thing that relates unto him. God is not reverenced, sin is but a trifle, forgiveness a matter of nothing; whoso will may have it for asking. But shall this atheistical wickedness of the heart of man be called a discovery of forgiveness? Is not this to make God an idol? He who is not acquainted with God's holiness and purity, who knows not sin's desert and sinfulness, knows nothing of forgiveness.
+
+---
+
+### 24. Chapter: *The True Nature of Gospel Forgiveness* (Paragraph 20)
+* **Quotation Marks Count:** 7
+* **Paragraph Text (Quotes Highlighted):**
+
+Were there no more mercy, grace, compassion to be showed in this case than it is possible should be treasured up in the heart of a man, it would be impossible that Ephraim should be spared; but saith he, **"**I am God, and not man.**"** Consider the infinite largeness, bounty, and goodness of the heart of God, and there is yet hope. When a sinner is in good earnest seeking after forgiveness, there is nothing he is more solicitous about than the heart of God towards him, — nothing that he more labors to have a discovery of; there is nothing that sin and Satan labor more to hide from him. This he rolls in his mind, and exercises his thoughts about; and if ever that voice of God, Isaiah 27:4, **"**Fury is not in me,**"** sound in his heart, he is relieved from his great distresses. And the fear of our hearts in this matter our Savior seems to intend the prevention or a removal of: John 16:26, 27, **"**I say not unto you, that I will pray the Father for you; for the Father himself loveth you.**"** They had good thoughts of the tender heart and care of Christ himself, the mediator, towards them; but what is the heart of the Father? what acceptance shall they find with him? Will Christ pray that they may find favor with him? Why, saith he, as to the love of his heart, **"**There is no need of it; 'for the Father himself loveth you.' If this, then, belongeth to forgiveness, as whoever bath sought for it knoweth that it doth, it is certainly no common discovery to have it revealed unto us. To have all the clouds and darkness that are raised by sin between us and the throne of God dispelled; to have the fire, and storms, and tempests, that are kindled and stirred up about him by the law removed; to have his glorious face unvailed, and his holy heart laid open, and a view given of those infinite treasures and stores of goodness, mercy, love, and kindness which have had an unchangeable habitation therein from all eternity; to have a discovery of these eternal springs of forbearance and forgiveness, — is that which none but Christ can accomplish and bring about, John 17:6.
+
+---
+
+### 25. Chapter: *Discovery of Forgiveness in God a Great Supportment to Sin-entangled Souls:* (Paragraph 28)
+* **Quotation Marks Count:** 9
+* **Paragraph Text (Quotes Highlighted):**
+
+verse 8. So far is she from a comfortable persuasion of a particular interest in mercy and acceptance, that, under her pressures and in her temptations, she is ready positively to determine on the other side, namely, that she is rejected and cast off for ever. What course, then, shall she take? Shall she give over waiting on God, and say, **"**There is no hope?**"** **"**No,**"** saith she, **"**I will not take that way; for (verse 26) 'It is good that a man should both hope and quietly wait for the salvation of God.' But yet there seems small encouragement for her so to do if things be with her as was expressed. **"**Things, indeed,**"** saith she, **"**are very sad with me. 'My soul hath them still in remembrance, and is bowed down in me,' verse 20; but yet somewhat 'I recall to mind, and therefore have I hope,' verse 21, — 'It is of the LORD's mercy that we are not consumed, because his compassions fail not.' [verse 22.] There is mercy and never-failing compassion in God, so that though my own present condition be full of darkness, and I see no deliverance, yet I purpose still to abide waiting on him. Who knows what those infinite stores and treasures of mercy and relief that are with him may at length afford unto me?**"** And many instances of the like kind may be added. We may observe, by the way, how far this relief extends itself, and what it enables the soul unto; as, —
+
+---
+
+### 26. Chapter: *Evidences of Forgiveness in God* (Paragraph 23)
+* **Quotation Marks Count:** 13
+* **Paragraph Text (Quotes Highlighted):**
+
+3. It is undoubtedly greatly incumbent on us to inquire diligently, as the prophets did of old, into this salvation; to consider what sure evidences faith hath of it, such as will not, as cannot fail us. To be slight and common in this matter, to take it up at random, is an argument of an unsound, rotten heart. He that is not serious in his inquiry into the revelation of this matter, is serious in nothing wherein God or his soul is concerned. The Holy Ghost knows what our frame of heart is, and how slow we are to receive this blessed truth in a gracious, saving manner. Therefore doth he confirm it unto us with such weighty considerations as, Hebrews 6:17, 18, **"**God, willing more abundantly to shew unto the heirs of promise the immutability of his counsel, confirmed it by an oath: that by two immutable things, in which it was impossible for God to lie, we might have strong consolation.**"** It is of forgiveness of sin that the apostle treats; as hath been made evident by the description of it before given. Now, to give evidence hereunto, and to beget a belief of it in us, he first engages a property of God's nature in that business. He with whom we deal is ἀ ψευδής as Titus 1:2, the God that cannot lie, that cannot deceive or be deceived: it is impossible it should be so with him. Now, as this extends itself in general to all the words and works of God, so there is peculiarly in this, whereof he treats, τὸ ἀμετάθετον τῆς βουλῆς, — an especial **"**immutability of his counsel.**"** [ Hebrews 6:17.] Men may think that although there be words spoken about forgiveness, yet it is possible it may be otherwise.**"** **"**No,**"** saith the apostle; **"**it is spoken by God, and it is impossible he should lie.**"** Yea, but upon the manifold provocations of sinners, he may change his mind and thoughts therein. **"**No,**"** saith the apostle; **"**there is a peculiar immutability in his counsel concerning the execution of this thing: there can be no change in it.**"** But how doth this appear, that indeed this is the counsel of his will?
+
+---
+
+### 27. Chapter: *Discovery of Forgiveness in the First Promise* (Paragraph 3)
+* **Quotation Marks Count:** 11
+* **Paragraph Text (Quotes Highlighted):**
+
+1. The first sin in the world was, on many accounts, the greatest sin that ever was in the world. It was the sin, as it were, of human nature, wherein there was a conspiracy of all individuals: **"**Omnes eramus unus ille homo;**"** — **"**In that one man, or that one sin, 'we all sinned,' Romans 5:12. It left not God one subject, as to moral obedience, on the earth, nor the least ground for any such to be unto eternity. When the angels sinned, the whole race or kind did not prevaricate. **"**Thousand thousands**"** of them, and **"**ten thousand times ten thousand,**"** continued in their obedience, Daniel 7:10. But here all and every individual of mankind (He only excepted which was not then in Adam)were embarked in the same crime and guilt. Besides, it disturbed the government of God in and over the whole creation. God had made all things, in number, weight, and measure, in order and beauty; pronouncing himself concerning his whole work that it was טוֹב מְאֹד, **"**exceeding beautiful and good,**"** Genesis 1:31. Much of this beauty lay in the subordination of one thing to another, and of all to himself by the mediation and interposition of man, through whose praises and obedience the rest of the creation, being made subject unto him, was to return their tribute of honor and glory unto God. But all this order was destroyed by this sin, and the very **"**creation made subject to vanity,**"** Romans 8:20; on which and the like accounts, it might be easily made to appear that it was the greatest sin that ever was in the world.
+
+---
+
+### 28. Chapter: *Discovery of Forgiveness in the First Promise* (Paragraph 23)
+* **Quotation Marks Count:** 3
+* **Paragraph Text (Quotes Highlighted):**
+
+(1.) He was convinced of his sin in general: **"**Ημαρτον, saith he, — **"**I have sinned,**"** verse 4.
+
+---
+
+### 29. Chapter: *Rule 8.* (Paragraph 13)
+* **Quotation Marks Count:** 5
+* **Paragraph Text (Quotes Highlighted):**
+
+What, then, is the peculiar instruction that is proper for souls in this condition? That, plainly, of the apostle, 2 Peter 1:10, **"**Give diligence to make your calling and election sure.**"** **"**Alas!**"** saith the soul, **"**I am at no certainty, but rather am afflicted and tossed, and not comforted. My heart will come to no stability. I have no assurance, know not whether I am chosen or called; yea, fear that my latter end will be darkness and sorrow.
+
+---
+
+### 30. Chapter: *Rule 8.* (Paragraph 14)
+* **Quotation Marks Count:** 1
+* **Paragraph Text (Quotes Highlighted):**
+
+There is, I confess, forgiveness with God, but [I] justly fear I shall never be made partaker of it.**"** What is the usual course that is taken in such complaints by them to whom they are made? Mostly, they have a good opinion of them that come with these complaints; they judge them to be godly and holy, though much in the dark. If they knew them not before, yet upon these complaints they begin to be well persuaded of them. Hereupon, they are moved with pity and compassion, and troubled to see them in their perplexities, and set themselves to tender relief unto them: they mind them of the gracious promises of the gospel; it may be, fix upon some one or more of them in particular, which they explain to them; thence they mind them of the abundant grace and tender love of the Father, of the merciful care of our High Priest, his readiness and ability to save, his communications of such favors unto them as they perceive not. By such ways and means, by such applications, do they seek to relieve them in the state and condition wherein they are. But what is the issue? Doth not this relief prove, for the most part, like the morning cloud, and as the early dew? A little refreshment it may be it yields for a season, but is quickly again dried up, and the soul left in its heartless, withering condition.
+
+---
+
+### 31. Chapter: *Considerations of God, Rendering Our Waiting on Him Reasonable and Necessary:* (Paragraph 5)
+* **Quotation Marks Count:** 1
+* **Paragraph Text (Quotes Highlighted):**
+
+Consider who I am. 'Be still, and know that I am God.'**"** Farther to help us in this consideration, let us a little also fix our minds towards some of the glorious, essential, incommunicable properties of his nature distinctly; as, —
+
+---

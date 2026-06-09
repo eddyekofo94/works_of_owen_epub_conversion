@@ -120,6 +120,8 @@ OVERRIDES = {
 
         # Ghost footnote OCR fix
         'himsel [f4].': 'himself.',
+        'Bellar., lib 5 cap. l;': 'Bellar., lib 5 cap. 1;',
+        'How unsearchable are his judgments, and his ways past finding Romans 11:33-36.': 'How unsearchable are his judgments, and his ways past finding out!" Romans 11:33-36.',
     },
     'treatise_title_overrides': {
         'The Doctrine of Justification By Faith,': _V5_JUSTIFICATION_TITLE_PAGE,

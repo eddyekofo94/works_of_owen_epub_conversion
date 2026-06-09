@@ -4,6 +4,34 @@ This log captures detailed technical analysis and architectural decisions for co
 
 ---
 
+### [Session: 2026-06-10] Unclosed Quotation Marks Verification and Auditing Tool
+
+**Date:** 2026-06-10
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volumes tested:** 5 (and audited all 16 volumes)
+
+### 1. Executive Summary
+This session successfully resolved a critical text truncation/omission bug in Volume 5 (Issue 4, Romans 11:33-36) where a physical print/OCR defect dropped the word `"out!"` and the closing double quotes. Additionally, we designed and implemented a new persistent helper auditing tool, `scripts/audit_unmatched_quotes.py`, to programmatically detect, locate, and output detailed reports of all paragraphs containing unmatched double quotes across all 16 volumes.
+
+### 2. Root Cause Analysis
+1. **Omitted Text in Romans 11:33-36:** In the source AGES PDF for Volume 5, page 76, the final clause of the Romans 11:33-36 quotation was cut short as `"...his ways past finding Romans 11:33-36"`. The word `"out!"` and the closing double quotation mark were completely missing from the physical text layer.
+2. **Missing Diagnostic Audit for Quotes:** Multi-paragraph quotations and physical page/OCR drops frequently cause quotation marks to go unclosed. However, the standard audit check (`audit_anomalies.py`) only reported truncated 120-character snippets, which did not provide enough context for a human or an agent to assess *where* the quotation marks were opened or where they should be closed.
+
+### 3. Implementation of the Fix
+1. **OCR Correction for Romans 11:33-36:** Added the text replacement `'How unsearchable are his judgments, and his ways past finding Romans 11:33-36.': 'How unsearchable are his judgments, and his ways past finding out!" Romans 11:33-36.'` under `OVERRIDES['text_replacements']` in `volumes/v5/convert.py`.
+2. **Dedicated Unmatched Quotes Auditor (`scripts/audit_unmatched_quotes.py`):**
+   - Created a persistent helper script that parses the intermediate JSON (`volume_N.json`) for any volume.
+   - Scans all paragraphs and counts double quotes (straight and curly: `["“”]`).
+   - For paragraphs with odd counts (unmatched quotes), it generates a Markdown report `volumes/vN/bugs_fixes/volume_N_unmatched_quotes.md`.
+   - The report lists the full paragraph text with all double quotes visually highlighted in bold (`**"**`, `**“**`, `**”**`) and links back to the chapter and paragraph index. This enables easy manual review or future agentic triage.
+   - Run the auditor across all 16 volumes to generate baseline unmatched quote reports.
+
+### 4. Verification
+1. Re-rendered Volume 5 EPUB and verified that the corrected passage renders correctly as `"How unsearchable are his judgments, and his ways past finding out!" Romans 11:33-36.` in Chapter 4 (`EPUB/ch004.xhtml`).
+2. Ran `scripts/audit_unmatched_quotes.py` on all 16 volumes, successfully generating `volume_N_unmatched_quotes.md` reports for each.
+
+---
+
 ### [Session: 2026-06-04] Clause Integrity, Smart Audits, and Volume Whitelisting Architecture
 
 **Date:** 2026-06-04
@@ -3594,3 +3622,31 @@ We resolved these issues through the following updates:
 - **Unified Block List Layout:** Rebuilt Volume 16. Checked `ch007.xhtml` and verified that `[1.] Constant prayer` is now split from its anchor sentence and rendered as a block list item with `<p class="list-item list-level-3">` inside a `<div class="owen-branch owen-level-3">`, matching items `[2.]`, `[3.]`, and `[4.]` perfectly.
 - **Audit Compliance:** Re-audited Volume 16. EPUB structural check and text integrity checks passed with 0 errors and a clean bug-regression status report.
 - **Global Applicability:** Since the fix resides in `scripts/text_cleaner.py`, it naturally applies to all 16 Owen volumes during Stage 1 PDF extraction.
+
+## [Session: 2026-06-10] — Safe HTML Tag Preservation in Markdown Parser and Bellarmine Citation Corrections
+
+### Issue: Escaped Latin Span Tags and Misplaced Footnotes
+**Observed:**
+- In Volume 5 and seven other volumes (Volumes 2, 4, 7, 8, 9, 11, 13), manual `<span lang="la" xml:lang="la">` tags in the intermediate JSON raw text were escaped by the markdown parser to raw text `&lt;span...&gt;`, corrupting the rendering of Latin paragraphs.
+- In Chapter 3, the citation `"Bellar., lib 5 cap. l"` had an OCR typo `l` instead of `1`, and because the database key was `"Bellar., lib 5 cap."`, the footnote dagger was placed inside the citation (`cap.† l;`).
+- An audit check was missing for stray lowercase `l` following standard citation abbreviations.
+
+### Root Cause
+1. **HTML Escaping in Markdown Parser:** The markdown parser's `_html_escape` function was calling standard `html.escape` to escape all `<` and `>` characters inside paragraph blocks. However, it did not account for valid HTML tags (like `<span>` or `<a>`) already present in the intermediate JSON's `raw_text` field (remnants of legacy ThML/CCEL structures). This caused the tags to be escaped to plain-text entities (`&lt;` and `&gt;`).
+2. **Key-Mapping Limitation in Translation DB:** The key in `translation_db.py` was defined as `"Bellar., lib 5 cap."` without the chapter number. When matching, the text-enrichment engine matched up to `cap.`, placed the footnote marker `†` there, and left the OCR-corrupted `l;` trailing outside the match, resulting in `cap.† l;`.
+
+### Implementation & Fixes
+We resolved these issues through the following updates:
+1. **Safe HTML Tag Preservation in `_html_escape` (`scripts/markdown_parser.py`):**
+   - Redefined `_html_escape` in `scripts/markdown_parser.py` to wrap the standard `html.escape` and restore escaped `span` and `a` tags (e.g. `&lt;span...&gt;` and `&lt;/span&gt;`) using a regex parser with lambda replacement.
+   - The lambda function handles escaped quotes (`&quot;`) and apostrophes (`&#x27;`) inside tag attributes, restoring them to proper HTML structure.
+2. **Translation DB Key and OCR Correction (`scripts/translation_db.py`, `volumes/v5/convert.py`):**
+   - Modified `scripts/translation_db.py` to change the translation database key `"Bellar., lib 5 cap."` to `"Bellar., lib 5 cap. 1"`.
+   - Added the OCR text replacement `'Bellar., lib 5 cap. l;': 'Bellar., lib 5 cap. 1;'` to `text_replacements` in `volumes/v5/convert.py` to fix the OCR error in the raw text, placing the footnote marker correctly after the chapter number (`cap. 1;†`).
+3. **Audit Check for Stray Lowercase L (`scripts/audit_anomalies.py`):**
+   - Added a new audit check `3c` to `check_ocr_residues` in `scripts/audit_anomalies.py` to flag stray lowercase `l`s following citation abbreviations.
+
+### Validation
+- **EPUB Content Verification:** Rebuilt Volume 5 EPUB. Checked `ch004.xhtml` and verified that `"Tu hinc o rosea..."` is correctly wrapped in `<span lang="la" xml:lang="la">` (unescaped), and that the Bellarmine citation reads `"Bellar., lib 5 cap. 1;†"`.
+- **Audit Compliance:** Re-ran `scripts/audit_anomalies.py 5` and confirmed it successfully flagged the stray lowercase L.
+- **Global Impact:** Safe tag preservation applies to all 16 volumes, naturally restoring manually-tagged spans across all 8 affected volumes.

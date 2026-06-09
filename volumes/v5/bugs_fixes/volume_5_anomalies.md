@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 228812
-* **Total Suspected Anomalies Found:** 26
+* **Total Words Audited:** 228811
+* **Total Suspected Anomalies Found:** 42
 
 Add corrections to `text_replacements` inside `volumes/v5/convert.py` to fix these.
 
@@ -11,12 +11,13 @@ Add corrections to `text_replacements` inside `volumes/v5/convert.py` to fix the
 
 * **Hyphenation Anomalies:** 10 items
 * **Punctuation Spacing Blemishes:** 4 items
-* **OCR & Bracket Residues:** 0 items
+* **OCR & Bracket Residues:** 1 items
 * **Mixed-Case Capitalization Errors:** 0 items
 * **Unresolved Citation References:** 2 items
 * **Structural Nesting Sequence Jumps:** 4 items
 * **Invalid Bible References:** 6 items
 * **List Formatting Inconsistencies:** 0 items
+* **Unmatched Quotation Marks:** 15 items
 
 ---
 
@@ -116,7 +117,13 @@ Add corrections to `text_replacements` inside `volumes/v5/convert.py` to fix the
 
 ## OCR & Bracket Residues
 
-No anomalies found in this category.
+### 1. `cap. l`
+* **Description:** Stray lowercase 'l' following citation abbreviation 'cap' (likely typo for '1' or 'i')
+* **Chapter:** *Chapter 19 - Objections Against the Doctrine of Justification*
+* **Contexts:**
+  * ... rine of the Reformed churches, De Servat. par. 4, **cap. l**; and he made it the foundation whereon, and the r ...
+
+---
 
 ## Mixed-Case Capitalization Errors
 
@@ -209,4 +216,98 @@ No anomalies found in this category.
 ## List Formatting Inconsistencies
 
 No anomalies found in this category.
+
+## Unmatched Quotation Marks
+
+### 1. `1. The first inquiry in this matter, in a way of duty, is after the proper relief of the conscience of a sinner pressed ...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *General Considerations,*
+* **Contexts:**
+  * **1. The first inquiry in this matter, in a way of duty, is after the proper relief of the conscience of a sinner pressed ...**
+
+### 2. `[[BLOCKQUOTE]] "Credisne te non posse salvari nisi per mortem Christi? Respondet infirmus, 'Etiam". Tum dicit illi, Age ...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *General Considerations,*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Credisne te non posse salvari nisi per mortem Christi? Respondet infirmus, 'Etiam". Tum dicit illi, Age ...**
+
+### 3. `Isaiah 13:6, 7; — "When the day of judgment or of death shall come, all hands will be dissolved" (that is, faint or fall...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *General Considerations,*
+* **Contexts:**
+  * **Isaiah 13:6, 7; — "When the day of judgment or of death shall come, all hands will be dissolved" (that is, faint or fall...**
+
+### 4. `The excellent words of Justin Martyr deserve the first place: Αὑτὸς τὸν ἴδιον υἱὸν ἀπέδοτο λύτρον ὑπέρ ἡμῶν, τὸν ἅγιον ὑ...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *General Considerations,*
+* **Contexts:**
+  * **The excellent words of Justin Martyr deserve the first place: Αὑτὸς τὸν ἴδιον υἱὸν ἀπέδοτο λύτρον ὑπέρ ἡμῶν, τὸν ἅγιον ὑ...**
+
+### 5. `A full comprehension of it no creature can in this world arise unto. Only, in the contemplation of faith, we may arrive ...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *General Considerations,*
+* **Contexts:**
+  * **A full comprehension of it no creature can in this world arise unto. Only, in the contemplation of faith, we may arrive ...**
+
+### 6. `But the true and genuine signification of these words is to be determined from those in the original languages of the Sc...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 4 - of Justification*
+* **Contexts:**
+  * **But the true and genuine signification of these words is to be determined from those in the original languages of the Sc...**
+
+### 7. `3. "Ex injuria; or,`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 7 - Imputation, & the Nature of It*
+* **Contexts:**
+  * **3. "Ex injuria; or,**
+
+### 8. `(1.) "Injuriarum," of wrongs: Εἰ δέ τι ἡδίκησέ σε? — If he has dealt unjustly with thee, or by thee, if he has so wronge...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 7 - Imputation, & the Nature of It*
+* **Contexts:**
+  * **(1.) "Injuriarum," of wrongs: Εἰ δέ τι ἡδίκησέ σε? — If he has dealt unjustly with thee, or by thee, if he has so wronge...**
+
+### 9. `In this state the apostle interposes himself by a voluntary sponsion, to undertake for Onesimus: "I Paul have written it...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 7 - Imputation, & the Nature of It*
+* **Contexts:**
+  * **In this state the apostle interposes himself by a voluntary sponsion, to undertake for Onesimus: "I Paul have written it...**
+
+### 10. `(1.) The Lord Christ, our mediator and surety, was, in his human nature, made ὑπὸ νόμον, — "under the law," Galatians 4:...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 12 - the Imputation of the Obedience of Christ*
+* **Contexts:**
+  * **(1.) The Lord Christ, our mediator and surety, was, in his human nature, made ὑπὸ νόμον, — "under the law," Galatians 4:...**
+
+### 11. `We shall take our fourth argument from the express exclusion of all works, of what sort soever, from our justification b...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Chapter 14 - the Exclusion of All Sorts of Works*
+* **Contexts:**
+  * **We shall take our fourth argument from the express exclusion of all works, of what sort soever, from our justification b...**
+
+### 12. `(3.) Works of the law originally included no merit, as that which "ariseth from the proportion of one thing unto another...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 14 - the Exclusion of All Sorts of Works*
+* **Contexts:**
+  * **(3.) Works of the law originally included no merit, as that which "ariseth from the proportion of one thing unto another...**
+
+### 13. `[[BLOCKQUOTE]] "Si obedientia vitae Christi nobis ad justitiam imputaretur, non fuit opus Christum pro nobis mori; mori ...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 18 - the Nature of Justification*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Si obedientia vitae Christi nobis ad justitiam imputaretur, non fuit opus Christum pro nobis mori; mori ...**
+
+### 14. `injustus", 1 Peter 3:18. " Quod si ergo justi effecti sumus per vitam illius, causa nulla relicta fuit cur pro nobis mor...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 18 - the Nature of Justification*
+* **Contexts:**
+  * **injustus", 1 Peter 3:18. " Quod si ergo justi effecti sumus per vitam illius, causa nulla relicta fuit cur pro nobis mor...**
+
+### 15. `This treatise, entitled Gospel Grounds and Evidences of the Faith of God's Elect," was given to the world in 1695. The r...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Prefatory Note (Evidences of the Faith of God's Elect)*
+* **Contexts:**
+  * **This treatise, entitled Gospel Grounds and Evidences of the Faith of God's Elect," was given to the world in 1695. The r...**
+
+---
 

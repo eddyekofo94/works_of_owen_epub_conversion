@@ -234,6 +234,11 @@ def check_ocr_residues(text: str, dict_words: set[str] = None) -> list[tuple[str
     for m in matches:
         anomalies.append((m.group(0), "Stray or typo ordinal (l.) likely meant to be (1.)"))
 
+    # 3c. Stray lowercase L (l) after a citation abbreviation (like cap. l, lib. l, p. l, etc.)
+    matches = re.finditer(r"\b(lib|cap|chap|vol|p|pp|v|sect|fol)s?\.?\s*(?:[†*‡§¶#]|\b)?\s*\bl\b", text, re.I)
+    for m in matches:
+        anomalies.append((m.group(0), f"Stray lowercase 'l' following citation abbreviation '{m.group(1)}' (likely typo for '1' or 'i')"))
+
     # 4. Spliced/split words check using dictionary heuristics
     if dict_words:
         # Heuristic 4a: Isolated letter (except a, i, o) followed by space and then lowercase word segment.
@@ -485,6 +490,20 @@ def check_invalid_bible_references(text: str) -> list[tuple[str, str]]:
     return anomalies
 
 
+def check_unmatched_quotes(text: str) -> list[tuple[str, str]]:
+    """Scan for unmatched double quotes in paragraphs."""
+    anomalies = []
+    paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
+    for para in paragraphs:
+        # Count all straight and curly double quotes
+        quotes_count = len(re.findall(r'["“”]', para))
+        if quotes_count % 2 != 0:
+            snippet = para[:120] + "..." if len(para) > 120 else para
+            snippet_clean = snippet.replace('\n', ' ')
+            anomalies.append((snippet_clean, f"Paragraph has unmatched double quotes (count: {quotes_count})"))
+    return anomalies
+
+
 def check_list_consistency(text: str) -> list[tuple[str, str]]:
     """Scan for list sequences and flag formatting inconsistencies (e.g. mixed bold/plain markers)."""
     anomalies = []
@@ -628,7 +647,8 @@ def main():
         "Unresolved Citation References": [],
         "Structural Nesting Sequence Jumps": [],
         "Invalid Bible References": [],
-        "List Formatting Inconsistencies": []
+        "List Formatting Inconsistencies": [],
+        "Unmatched Quotation Marks": []
     }
 
     # Total counts
@@ -749,6 +769,18 @@ def main():
                 "description": desc,
                 "chapter": title,
                 "contexts": snippets
+            })
+
+        # 9. Check Unmatched Quotation Marks
+        quote_hits = check_unmatched_quotes(raw_text)
+        for target, desc in quote_hits:
+            if is_whitelisted("Unmatched Quotation Marks", target, whitelist):
+                continue
+            categories["Unmatched Quotation Marks"].append({
+                "target": target,
+                "description": desc,
+                "chapter": title,
+                "contexts": [target]
             })
 
     # Deduplicate hits per category (target + chapter context)

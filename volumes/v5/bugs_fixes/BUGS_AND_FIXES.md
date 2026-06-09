@@ -20,6 +20,8 @@
 | 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
 | 15 | PDF OCR errors in To the Reader (e.g. "may books" -> "many", "far although sunder" -> "for although sundry") | convert.py | 📝 IMPLEMENTED (AWAITING VALIDATION) |
 | 16 | Premium analytical Table of Contents formatting and J-stripping bug fix | render.py | 📝 IMPLEMENTED (AWAITING VALIDATION) |
+| 17 | Textual blemishes (misread footnote citation cap.† l, double daggers, escaped Latin span tags) | markdown_parser.py, translation_db.py, convert.py | 📝 IMPLEMENTED (AWAITING VALIDATION) |
+| 18 | Missing text and quotes in Romans 11:33-36 and unmatched quotes verification tool | convert.py, audit_unmatched_quotes.py | 📝 IMPLEMENTED (AWAITING VALIDATION) |
 
 
 ---
@@ -107,7 +109,24 @@ See previous sessions.
 - Enhanced `_polish_contents_page_html()` to recognize standalone `CONTENTS` as the volume title.
 - Added a preprocessor to convert outline-level `contents-desc` paragraphs to `contents-item`.
 - Expanded the label-matching regex in `_render_contents_entry()` to isolate ordinals and Roman numerals into premium `<span class="contents-label">` blocks.
-- Removed `polytonic_sweep()` from the description pipeline to prevent English prose corruption.
+### 17. Textual Blemishes: Bellar. Cap. 1, Pighius, and Escaped Latin Span Tags (Awaiting Validation)
+**Problem:** Three textual issues were reported in `volumes/v5/bugs_fixes/blemishes/textual.md`:
+1. In Chapter 3, the citation `"Bellar., lib 5 cap. l"` had an OCR typo `l` instead of `1`, and because the database key was `"Bellar., lib 5 cap."`, the footnote dagger was placed inside the citation (`cap.† l;`).
+2. An audit check was missing for stray lowercase `l` following standard citation abbreviations.
+3. In Chapters 1, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 19, 21, and 23 of Volume 5 (and similarly in Volumes 2, 4, 7, 8, 9, 11, 13), manual `<span lang="la" xml:lang="la">` tags in the intermediate JSON raw text were escaped by the markdown parser to raw text `&lt;span...&gt;`, corrupting the rendering of Latin paragraphs.
+**Fix:**
+- Modified `scripts/translation_db.py` to update the translation database key `"Bellar., lib 5 cap."` to `"Bellar., lib 5 cap. 1"`.
+- Added the OCR text replacement `'Bellar., lib 5 cap. l;': 'Bellar., lib 5 cap. 1;'` to `text_replacements` in `volumes/v5/convert.py` to fix the OCR error in the raw text. This corrects the typo and places the footnote marker after the chapter number (`cap. 1;†`).
+- Added a new audit check `3c` to `check_ocr_residues` in `scripts/audit_anomalies.py` to flag stray lowercase `l`s following citation abbreviations.
+- Overrode the `_html_escape` function in `scripts/markdown_parser.py` with a custom implementation that safely restores escaped HTML tags (like `<span>` and `<a>`) using a regex parser with lambda replacement. This preserves the manual language tags and inline links from the intermediate JSON intermediates across all affected volumes.
+121: 
+122: ### 18. Missing Text in Romans 11:33-36 and Unmatched Quotes Verification Tool (Awaiting Validation)
+123: **Problem:** In Volume 5, Chapter 4, a citation of Romans 11:33-36 was truncated due to a physical print/OCR omission in the source AGES PDF (page 76), leaving out the word `"out!"` and the closing double quotation mark. Additionally, there was no comprehensive tool to audit and present unclosed/unmatched double quotes with full paragraph contexts to allow humans or agents to easily determine where quotes are missing or should close.
+124: **Fix:**
+125: - Added the text override `'How unsearchable are his judgments, and his ways past finding Romans 11:33-36.': 'How unsearchable are his judgments, and his ways past finding out!" Romans 11:33-36.'` to `text_replacements` in `volumes/v5/convert.py`.
+126: - Created a persistent helper script `scripts/audit_unmatched_quotes.py` which scans the intermediate JSON of any volume, counts double quotes in each paragraph, and outputs a detailed Markdown report (`volumes/vN/bugs_fixes/volume_N_unmatched_quotes.md`) containing the full text of paragraphs with odd quote counts, with all double quotes visually highlighted.
+127: - Ran the audit script across all 16 volumes to generate baseline unmatched quote reports.
+
 
 ## Remaining Work
 
