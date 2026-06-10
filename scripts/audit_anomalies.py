@@ -293,7 +293,7 @@ def check_capitalization(text: str) -> list[tuple[str, str]]:
 def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
     """Scan for patristic/classical citations and flag if they cannot be resolved."""
     # Local imports to avoid circular dependency issues
-    from scripts.patristic_refs import PATRISTIC_CITATION_RE, SELF_REF_PATTERNS, build_citation_note
+    from scripts.patristic_refs import PATRISTIC_CITATION_RE, SELF_REF_PATTERNS, build_citation_note, is_bible_citation_ref
     from scripts.translation_db import BODY_TRANSLATIONS
     
     anomalies = []
@@ -308,6 +308,10 @@ def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
         # Combine before/after context with a separator
         combined_context = context_before + " | " + context_after
         
+        # Check if it looks like a Bible citation matched by mistake
+        if is_bible_citation_ref(cite_str, combined_context):
+            continue
+            
         # Check if already resolved via BODY_TRANSLATIONS or local patristic map
         resolved = any(
             phrase in full_context

@@ -1,38 +1,34 @@
 # EPUB Audit: volume_15.epub
 
-- Status: **WARN**
+- Status: **PASS**
 - Errors: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 138
-- Manifest items: 129
+- Files: 143
+- Manifest items: 134
 - Spine items: 108
 - XHTML files: 109
-- Embedded fonts: 15
+- Embedded fonts: 20
 - NAV links: 110
 
 ## Content Checks
 
-- Greek chars: 4816
+- Greek chars: 4829
 - Untagged Greek chars: 0
 - Hebrew chars: 10
 - Untagged Hebrew chars: 0
-- Noteref links: 46
-- Endnote anchors: 45
+- Noteref links: 137
+- Endnote anchors: 136
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 1
-
-## Warnings
-
-- `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
 
@@ -49,6 +45,6 @@
 
 - `EPUB/ch015.xhtml`: for until this be done, men are to be esteemed but as "raging waves of the sea, f
 - `EPUB/ch018.xhtml`: because, as temporal commodities, so suits did increase. This judgment, though it
-- `EPUB/ch023.xhtml`: saith Hilary. Suppose that men retain a form of godliness in the profession of th
+- `EPUB/ch023.xhtml`: saith Hilary.
 - `EPUB/ch037.xhtml`: unto whom of all sorts it is commanded that they should examine and try antichris
 - `EPUB/ch048.xhtml`: and that because "there arose not a prophet afterwards in Israel like unto Moses,

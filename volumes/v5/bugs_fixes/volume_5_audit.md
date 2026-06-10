@@ -1,8 +1,8 @@
 # EPUB Audit: volume_5.epub
 
-- Status: **WARN**
+- Status: **PASS**
 - Errors: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
@@ -21,18 +21,14 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 980
 - Untagged Hebrew chars: 0
-- Noteref links: 175
-- Endnote anchors: 175
+- Noteref links: 195
+- Endnote anchors: 195
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 3
-
-## Warnings
-
-- `repeated_phrases`: Potential repeated phrases detected
 
 ## Samples
 

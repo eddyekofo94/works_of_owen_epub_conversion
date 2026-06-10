@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 15
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_15_audit.json`
 - Text integrity audit: `volume_15_text_integrity.json`
 
@@ -8,20 +8,20 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 4 | 98 | OK |
-| Inline structural marker candidates | 1 | 3 | OK |
+| Possible faulty paragraph splits | 0 | 98 | OK |
+| Inline structural marker candidates | 2 | 3 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 3 | 3 | OK |
+| Missing enumerator markers | 0 | 3 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 0 | 0 | OK |
+| Low Greek word coverage | 1 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
-| Missing Greek clauses | 1 | 16 | OK |
+| Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -38,7 +38,7 @@
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
 | Chapter headings rendered as paragraphs | 0 | 0 | OK |
-| Overlong headings containing body prose | 2 | 0 | REGRESSION |
+| Overlong headings containing body prose | 2 | 2 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
 | Fragmented Hebrew span-run files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 11 | 0 | REGRESSION |
+| Lowercase page fragments | 11 | 11 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -64,34 +64,18 @@
 
 ## Triage Samples
 
-### Possible faulty paragraph splits
-
-- file: EPUB/ch016.xhtml; previous: o are yet "without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world," Ephesians 2:12,; next: — such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it 
-- file: EPUB/ch022.xhtml; previous: To The Reader; next: I THOUGHT to have wholly omitted the consideration of that part of the discourse of Dr Stillingfleet, in his preface, which concerneth the furtherance and promotion of the designs 
-- file: EPUB/ch038.xhtml; previous: e those of which Justice Hobart speaks: and therefore it is plain he spake of all the churches which were under the care of the apostles, which he calls 'voluntary congregations.'"; next: Ans. 1. Whereas this argument seems to be cast into the form of a syllogism, I could easily manifest how asyllogistical it is, did I delight to contend with him or any else. But, —
-- file: EPUB/ch059.xhtml; previous: lessness, have miscarried in not observing exactly his will and appointment in and about his worship. This was the case of Nadab and Abihu, the sons of Aaron, Leviticus 10:1, 2; of; next: Korah, Dathan, and Abiram, Numbers 16:1-40; of the sons of Eli, — a sin not to be "expiated with sacrifice nor offering for ever," 1 Samuel 2:27-34, 3:14; of Uzza in putting the ar
-
 ### Inline structural marker candidates
 
+- file: EPUB/ch026.xhtml; text: Whereas, therefore, the Lord Christ, in the exercise of his right and power, on the grant of the Father of a perpetual visible kingdom in this world, and the discharge of his own promise, hath, — (1.) Appointed the ordin
 - file: EPUB/ch034.xhtml; text: It might be easily demonstrated what great numbers [there are] amongst us, — [1.] Who have imbibed atheistical opinions, and either vent them or speak presumptuously, according unto their influence and tendency every day
 
 ### Repeated word windows
 
-- phrase: the unity of the spirit in the bond of peace
 - phrase: the whole body fitly joined together and compacted by that
 - phrase: whole body fitly joined together and compacted by that which
 - phrase: body fitly joined together and compacted by that which every
 - phrase: fitly joined together and compacted by that which every joint
-
-### Missing enumerator markers
-
-- marker: (1.)
-- marker: (2.)
-- marker: (4.)
-
-### Missing Greek clauses
-
-- page: 482; sample: οσοι τω κανονι τουτω στοιχησουσιν
+- phrase: joined together and compacted by that which every joint supplieth
 
 ### Repeated phrase hits
 
@@ -106,6 +90,6 @@
 
 - file: EPUB/ch015.xhtml; text: for until this be done, men are to be esteemed but as "raging waves of the sea, f
 - file: EPUB/ch018.xhtml; text: because, as temporal commodities, so suits did increase. This judgment, though it
-- file: EPUB/ch023.xhtml; text: saith Hilary. Suppose that men retain a form of godliness in the profession of th
+- file: EPUB/ch023.xhtml; text: saith Hilary.
 - file: EPUB/ch037.xhtml; text: unto whom of all sorts it is commanded that they should examine and try antichris
 - file: EPUB/ch048.xhtml; text: and that because "there arose not a prophet afterwards in Israel like unto Moses,

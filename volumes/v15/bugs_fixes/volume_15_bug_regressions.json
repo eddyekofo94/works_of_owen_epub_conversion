@@ -1,6 +1,6 @@
 {
   "volume": 15,
-  "status": "warn",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/bugs_fixes/volume_15_bug_regressions.json",
@@ -12,38 +12,21 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 4,
+      "observed": 0,
       "budget": 98,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch016.xhtml",
-          "previous": "o are yet \"without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world,\" Ephesians 2:12,",
-          "next": "— such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it "
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "previous": "To The Reader",
-          "next": "I THOUGHT to have wholly omitted the consideration of that part of the discourse of Dr Stillingfleet, in his preface, which concerneth the furtherance and promotion of the designs "
-        },
-        {
-          "file": "EPUB/ch038.xhtml",
-          "previous": "e those of which Justice Hobart speaks: and therefore it is plain he spake of all the churches which were under the care of the apostles, which he calls 'voluntary congregations.'\"",
-          "next": "Ans. 1. Whereas this argument seems to be cast into the form of a syllogism, I could easily manifest how asyllogistical it is, did I delight to contend with him or any else. But, —"
-        },
-        {
-          "file": "EPUB/ch059.xhtml",
-          "previous": "lessness, have miscarried in not observing exactly his will and appointment in and about his worship. This was the case of Nadab and Abihu, the sons of Aaron, Leviticus 10:1, 2; of",
-          "next": "Korah, Dathan, and Abiram, Numbers 16:1-40; of the sons of Eli, — a sin not to be \"expiated with sacrifice nor offering for ever,\" 1 Samuel 2:27-34, 3:14; of Uzza in putting the ar"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 1,
+      "observed": 2,
       "budget": 3,
       "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch026.xhtml",
+          "text": "Whereas, therefore, the Lord Christ, in the exercise of his right and power, on the grant of the Father of a perpetual visible kingdom in this world, and the discharge of his own promise, hath, — (1.) Appointed the ordinary offices, which he will have continue"
+        },
         {
           "file": "EPUB/ch034.xhtml",
           "text": "It might be easily demonstrated what great numbers [there are] amongst us, — [1.] Who have imbibed atheistical opinions, and either vent them or speak presumptuously, according unto their influence and tendency every day; [2.] Who are profane scoffers at all t"
@@ -56,10 +39,6 @@
       "budget": 25,
       "status": "ok",
       "samples": [
-        {
-          "phrase": "the unity of the spirit in the bond of peace",
-          "count": 6
-        },
         {
           "phrase": "the whole body fitly joined together and compacted by that",
           "count": 6
@@ -95,6 +74,10 @@
         {
           "phrase": "by that which every joint supplieth according to the effectual",
           "count": 6
+        },
+        {
+          "phrase": "that which every joint supplieth according to the effectual working",
+          "count": 6
         }
       ]
     },
@@ -128,68 +111,10 @@
     },
     {
       "label": "Missing enumerator markers",
-      "observed": 3,
+      "observed": 0,
       "budget": 3,
       "status": "ok",
-      "samples": [
-        {
-          "marker": "(1.)",
-          "pdf": 89,
-          "epub": 87,
-          "examples": [
-            {
-              "location": "pdf:p237",
-              "context": "ledge to be the foundation of all that we plead for in point of church reformation; as, — (1.) That the reasons and arguings of the Doctor in this matter, — the necessity of his cause compelling him thereunto, — are the same with those of the Papists about the apostasy of t"
-            },
-            {
-              "location": "pdf:p249",
-              "context": "the declension of the churches from their primitive institution, order, and rule; and, — (1.) It is evident that there was an alteration made in the state of the church as to its officers; for it issued at last in popes, patriarchs, cardinals, metropolitan and diocesan bis"
-            },
-            {
-              "location": "pdf:p256",
-              "context": "le; and that what we endeavor therein, though never so peaceably, is schismatical. But, — (1.) None do more bless God for the first reformers, and the work they did, than we do; none have a higher esteem of their persons, abilities, graces, add sufferings, than we have; non"
-            }
-          ]
-        },
-        {
-          "marker": "(2.)",
-          "pdf": 89,
-          "epub": 87,
-          "examples": [
-            {
-              "location": "pdf:p237",
-              "context": "de eminent by his defense of the protestant religion against those of the church of Rome. (2.) But it may be pleaded, that although the churches following the first ages did insensibly degenerate from the purity and simplicity of gospel faith and worship, yet they neither d"
-            },
-            {
-              "location": "pdf:p250",
-              "context": "250 (2.) The beginnings of this great alteration were small, nor at all perceived in the days wherein they were first acted. Nor is it agreed, nor, as far as I see, will it ever be agreed"
-            },
-            {
-              "location": "pdf:p256",
-              "context": "suffering. We have other thoughts concerning them, — another kind of remembrance of them. (2.) The titles assigned unto them, of wise, learned, holy, zealous, are fully answered by that reformation of the church in its doctrine and worship which God wrought by their ministr"
-            }
-          ]
-        },
-        {
-          "marker": "(4.)",
-          "pdf": 32,
-          "epub": 31,
-          "examples": [
-            {
-              "location": "pdf:p262",
-              "context": "262 from the use of the ceremonies, and full compliance with episcopal jurisdiction. (4.) Hereon those who were for the establishment, having secured their interests therein and obtained power, began after a while to oppress, excommunicate, silence, deprive, and impris"
-            },
-            {
-              "location": "pdf:p265",
-              "context": "nor will ever be proved, nor is it endeavored so to be by any instances in this treatise. (4.) That to withhold communion from parochial assemblies in the worship of God, as unto things confessedly not of divine institution, is schism, — that kind of schism which is condemn"
-            },
-            {
-              "location": "pdf:p270",
-              "context": "cribed in the Scripture, and impose the observation of them on all members of the church; (4.) That this church they are;"
-            }
-          ]
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Low-density chapter failures",
@@ -214,7 +139,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -228,16 +153,10 @@
     },
     {
       "label": "Missing Greek clauses",
-      "observed": 1,
+      "observed": 0,
       "budget": 16,
       "status": "ok",
-      "samples": [
-        {
-          "page": 482,
-          "word_count": 5,
-          "sample": "οσοι τω κανονι τουτω στοιχησουσιν"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Missing Hebrew clauses",
@@ -362,8 +281,8 @@
     {
       "label": "Overlong headings containing body prose",
       "observed": 2,
-      "budget": 0,
-      "status": "regression",
+      "budget": 2,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch071.xhtml",
@@ -497,8 +416,8 @@
     {
       "label": "Lowercase page fragments",
       "observed": 11,
-      "budget": 0,
-      "status": "regression",
+      "budget": 11,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch015.xhtml",
@@ -510,7 +429,7 @@
         },
         {
           "file": "EPUB/ch023.xhtml",
-          "text": "saith Hilary. Suppose that men retain a form of godliness in the profession of th"
+          "text": "saith Hilary."
         },
         {
           "file": "EPUB/ch037.xhtml",

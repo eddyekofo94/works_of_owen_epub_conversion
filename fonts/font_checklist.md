@@ -53,7 +53,7 @@ Each font should be located in `fonts/<font_folder>/` so that the symlink in the
   - [x] Regular (`fonts/arno-pro/fonnts.com-Arno-Pro-.otf`)
 
 ### 5. Other Mentioned/Commercial Fonts
-- [x] **Adobe Garamond Pro** (`fonts/adobe-garamond-pro-2-2/` — commercial)
+- [x] **Adobe Garamond Pro** (`fonts/adobe-garamond-pro/` — commercial)
 - [x] **Sabon Next LT** (`fonts/sabon-next-lt/` — commercial)
 - [x] **Proxima Nova** (Heading-only font, commercial)
   - [x] Regular (`fonts/proxima-nova/Proxima Nova Regular.ttf`)

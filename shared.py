@@ -87,7 +87,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'adobe-garamond-pro-2-2',
+        'body_font': 'adobe-garamond-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'front_matter_skip': 3,
@@ -457,7 +457,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'adobe-garamond-pro-2-2',
+        'body_font': 'adobe-garamond-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -485,7 +485,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'adobe-garamond-pro-2-2',
+        'body_font': 'adobe-garamond-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 1:1 - 3:6']
@@ -1818,7 +1818,7 @@ def _trim_duplicate_reference_prefix(prev, current):
 
 FONT_FAMILY_MAP = {
     # Body fonts (available for per-volume selection)
-    'adobe-garamond-pro-2-2': 'Adobe Garamond Pro',
+    'adobe-garamond-pro': 'Adobe Garamond Pro',
     'arno-pro':               'Arno Pro',
     'baskerville':            'Baskervville',
     'brill-font':             'Brill',
@@ -2238,7 +2238,10 @@ ENGLISH_WORDS = {
     'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 
     'acts', 'opinion', 'opinions', 'heresy', 'heresies', 'orthodox', 'socinian', 
     'socinians', 'arian', 'arians', 'sabellian', 'sabellians', 'trinitarian', 
-    'trinitarians', 'antitrinitarian', 'antitrinitarians'
+    'trinitarians', 'antitrinitarian', 'antitrinitarians',
+    # Additional common English words that end in Latin suffixes
+    'nor', 'jesus', 'yea', 'whereas', 'distinct', 'endeavor', 'endeavours', 'endeavour',
+    'thereunto', 'whereunto', 'hereunto', 'thereto', 'churchstate', 'churchcommunion'
 }
 
 SHARED_WORDS = {

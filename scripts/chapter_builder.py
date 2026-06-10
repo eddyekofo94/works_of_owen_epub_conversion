@@ -104,7 +104,7 @@ def build_chapters_from_toc(doc, pages_md, nav_entries, footnote_map, config=Non
         
         filtered_nav.append((level, title_stripped, page))
     
-    nav_entries = filtered_nav
+    nav_entries = sorted(filtered_nav, key=lambda x: x[2])
     
     if not nav_entries:
         return _build_flat_chapters(doc, pages_md, footnote_map)

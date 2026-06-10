@@ -107,12 +107,20 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T10:52:34.040666+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Last run:** 2026-06-10T00:36:11.204062+00:00
+**EPUB:** `volumes/v15/output/volume_15.epub`
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_15_audit.json`
@@ -123,20 +131,16 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 109 |
 | Spine items | 108 |
-| Embedded fonts | 15 |
+| Embedded fonts | 20 |
 | NAV links | 110 |
-| Greek chars / untagged | 4816 / 0 |
+| Greek chars / untagged | 4829 / 0 |
 | Hebrew chars / untagged | 10 / 0 |
-| Noteref links / endnote anchors | 46 / 45 |
+| Noteref links / endnote anchors | 137 / 136 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 1 |
-
-Warnings requiring triage:
-
-- `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -146,11 +150,24 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T10:53:14.666053+00:00
-**Status:** WARN (13 warnings)
+**Last run:** 2026-06-10T00:36:51.121332+00:00
+**Status:** WARN (8 warnings)
 
 Reports:
 - `volume_15_text_integrity.json`
@@ -160,24 +177,24 @@ Reports:
 |-------|--------|
 | PDF pages | 683 |
 | EPUB text files | 107 |
-| EPUB paragraphs/headings | 2276 |
-| Approximate PDF-to-EPUB word coverage | 0.9783 |
-| Weak page matches | 27 |
-| Dense source windows checked | 28786 |
+| EPUB paragraphs/headings | 2435 |
+| Approximate PDF-to-EPUB word coverage | 0.9994 |
+| Weak page matches | 3 |
+| Dense source windows checked | 29601 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 659 |
-| Top-of-page windows skipped as unstable | 20 |
-| Missing top-of-page body windows | 23 |
+| Top-of-page windows skipped as unstable | 13 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 615 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 28 |
-| Possible faulty paragraph splits | 4 |
-| Structural starts excluded from split warnings | 218 |
-| Short fragments | 21 |
+| Missing bottom-of-page body windows | 0 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 243 |
+| Short fragments | 102 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 1 |
+| Inline structural marker candidates | 2 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 4 |
@@ -186,31 +203,26 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 402 |
-| EPUB enumerator markers | 410 |
-| Missing enumerator marker forms | 3 |
+| EPUB enumerator markers | 412 |
+| Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 872 / 871 |
-| Greek word coverage ratio | 0.9893 |
+| PDF Greek words / EPUB Greek words | 872 / 873 |
+| Greek word coverage ratio | 1.0 |
 | PDF Hebrew words / EPUB Hebrew words | 2 / 2 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 1 |
+| Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
-- `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
 - `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

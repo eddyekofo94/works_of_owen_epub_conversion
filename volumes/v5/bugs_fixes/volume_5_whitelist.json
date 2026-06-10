@@ -1,12 +1,64 @@
 {
+  "text_integrity": {
+    "ignored_warnings": [
+      "repeated_phrases"
+    ],
+    "skipped_pages": [3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "paragraph_splits": [
+      "To The Reader",
+      "was this, —",
+      "Whence I argue, —",
+      "the inquiry is, —",
+      "Justification by the law is this, —",
+      "various inquiries are made, —",
+      "hence we argue, —",
+      "observed, —",
+      "There was עֲצֶרֶת הַדְּבָרִים , —",
+      "I shall consider, first, —",
+      "Hence we argue, —",
+      "Wherefore, —",
+      "Again, —",
+      "the question proposed, —"
+    ],
+    "top_of_page_text_loss": [
+      31
+    ]
+  },
   "anomalies": {
     "OCR & Bracket Residues": [
-      "s detailed",
-      "s ex",
-      "s proposed",
-      "s declared",
-      "qui et",
-      "s to"
+      "qui et"
+    ],
+    "Hyphenation Anomalies": [
+      "wire-draw",
+      "dikaio-oo",
+      "non-imputation",
+      "sub-distinguished",
+      "non-solvent",
+      "blood-guiltiness",
+      "co-interest"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "2.",
+      "5. ... 7.",
+      "3. ... 5.",
+      "2. ... 4."
+    ],
+    "Unmatched Quotation Marks": [
+      "The first inquiry in this matter, in a way of duty, is after the proper relief",
+      "Credisne te non posse salvari",
+      "Whence the prophet says in the psalm",
+      "The excellent words of Justin Martyr",
+      "A full comprehension of it no creature",
+      "But the true and genuine signification of these words",
+      "3. \"Ex injuria; or,",
+      "(1.) \"Injuriarum,\" of wrongs:",
+      "In this state the apostle interposes himself",
+      "(1.) The Lord Christ, our mediator and surety",
+      "We shall take our fourth argument from the express exclusion",
+      "originally included no merit",
+      "Si obedientia vitae Christi nobis",
+      "injustus\", 1 Peter 3:18",
+      "This treatise, entitled Gospel Grounds and Evidences"
     ]
   }
 }

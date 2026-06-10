@@ -898,6 +898,8 @@ WORK_MAP = {
     ("nazianz", "orat"):          {"full_title": "Orations", "latin_title": "Orationes", "std_ref": ["NPNF2, 7"], "pg": "PG 35–36"},
     ("bernard", "ep"):            {"full_title": "Letters", "latin_title": "Epistulae", "std_ref": ["PL 182"]},
     ("irenaeus", "haer"):         {"full_title": "Against Heresies", "latin_title": "Adversus Haereses", "std_ref": ["ANF 1"], "pg": "PG 7"},
+    ("livy", "hist"):             {"full_title": "History of Rome", "latin_title": "Ab Urbe Condita", "std_ref": ["Ab Urbe Condita"]},
+    ("livy", "lib"):              {"full_title": "History of Rome", "latin_title": "Ab Urbe Condita", "std_ref": ["Ab Urbe Condita"]},
 }
 
 # ── Detection regex ──────────────────────────────────────────────────────────
@@ -1019,6 +1021,14 @@ def _expand_location_string(loc_text: str) -> str:
     return ", ".join(parts) if parts else loc_text
 
 
+def is_bible_citation_ref(matched_text: str, plain_context: str) -> bool:
+    """Check if a matched citation looks like a Bible citation (e.g. 1 Epist. 2, 29)."""
+    ctx_before = plain_context.split(' | ')[0] if ' | ' in plain_context else plain_context
+    if re.search(r'\b[1-3]\s+$', ctx_before) and not re.search(r'\b(?:lib|cap|chap|vol|t|p|pp)\.?\s+[1-3]\s*$', ctx_before, re.I):
+        return True
+    return False
+
+
 def build_citation_note(
     matched_text: str,
     plain_context: str,
@@ -1038,12 +1048,8 @@ def build_citation_note(
     worse than silence: it creates the impression of scholarship while telling
     the reader nothing they cannot see for themselves.
     """
-    # If the context contains a '|' separator (indicating before/after boundary),
-    # get context before the boundary to check for Bible citations.
-    ctx_before = plain_context.split(' | ')[0] if ' | ' in plain_context else plain_context
-    
     # Skip Bible citations (e.g., "1 Epist. 2, 29", "2 Epist. 3") to avoid pointless footnotes
-    if re.search(r'\b[1-3]\s+$', ctx_before) and not re.search(r'\b(?:lib|cap|chap|vol|t|p|pp)\.?\s+[1-3]\s*$', ctx_before, re.I):
+    if is_bible_citation_ref(matched_text, plain_context):
         return None
 
     author_key = _find_author_in_context(plain_context)
@@ -1090,6 +1096,10 @@ def build_citation_note(
             (r'\b(greg|nazian).*\borat\w*\b', 'nazianz', 'orat'),
             (r'\bde\s+verbo\s+dei\b', 'bellar', 'de verbo dei'),
             (r'\bex\s+mortuis\b|\bprior\s+omnium\b|\bmystagog\w*\b', 'irenaeus', 'haer'),
+            (r'\b(?:adv(?:er)?|con(?:tra)?|ad)?\s*cels\w*\b', 'origen', 'con cels'),
+            (r'\banthropomorph\w*\b', 'theodoret', 'hist eccles'),
+            (r'\brend\s+and\s+divide\s+the\s+glorious\s+body\b|\bmischief\s+of\s+schism\b', 'irenaeus', 'haer'),
+            (r'\bconcio\w*\b', 'livy', 'hist'),
         ]
         for pattern, inferred_author, inferred_work in inferences:
             if re.search(pattern, ctx_to_check, re.I):

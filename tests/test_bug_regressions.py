@@ -101,7 +101,7 @@ def paths_for(volume):
 
 def test_primary_font_selection_uses_real_internal_family_names():
     cases = {
-        "adobe-garamond-pro-2-2": "Adobe Garamond Pro",
+        "adobe-garamond-pro": "Adobe Garamond Pro",
         "libertinus": "Libertinus Serif",
         "minion-pro": "Minion Pro",
         "brill-font": "Brill",
@@ -149,11 +149,11 @@ def test_font_assets_exist_and_otf_metadata_is_readable():
             continue
         assert (font_root / rel_path).exists(), rel_path
 
-    adobe = font_root / "adobe-garamond-pro-2-2" / "AGaramondPro-Bold.otf"
+    adobe = font_root / "adobe-garamond-pro" / "AGaramondPro-Bold.otf"
     if adobe.exists():
         records = _get_font_name_records(adobe)
         assert records["family"] == "Adobe Garamond Pro Bold"
-        assert records["preferred_family"] == FONT_FAMILY_MAP["adobe-garamond-pro-2-2"]
+        assert records["preferred_family"] == FONT_FAMILY_MAP["adobe-garamond-pro"]
 
 
 @lru_cache(maxsize=None)

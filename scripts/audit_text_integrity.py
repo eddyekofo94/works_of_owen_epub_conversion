@@ -587,7 +587,16 @@ def extract_top_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], dict
                     y_center = (line["bbox"][1] + line["bbox"][3]) / 2
                     if y_center < 35 or y_center > 145:
                         continue
-                    text = "".join(span.get("text", "") for span in line.get("spans", [])).strip()
+                    span_texts = []
+                    for span in line.get("spans", []):
+                        span_text = span.get("text", "")
+                        font = span.get("font", "")
+                        if is_greek_font(font):
+                            span_text = clean_greek_text(convert_greek_word(span_text))
+                        elif is_hebrew_font(font):
+                            span_text = convert_gideon_hebrew(span_text)
+                        span_texts.append(span_text)
+                    text = "".join(span_texts).strip()
                     if is_running_header_or_page_number(text):
                         continue
                     lines.append((line["bbox"][1], line["bbox"][0], text))
@@ -666,7 +675,16 @@ def extract_bottom_body_windows(pdf_path: Path) -> tuple[list[dict[str, Any]], d
                     # Bottom zone: above typical footer but below main body midpoint
                     if y_center < page_height - 145 or y_center > page_height - 30:
                         continue
-                    text = "".join(span.get("text", "") for span in line.get("spans", [])).strip()
+                    span_texts = []
+                    for span in line.get("spans", []):
+                        span_text = span.get("text", "")
+                        font = span.get("font", "")
+                        if is_greek_font(font):
+                            span_text = clean_greek_text(convert_greek_word(span_text))
+                        elif is_hebrew_font(font):
+                            span_text = convert_gideon_hebrew(span_text)
+                        span_texts.append(span_text)
+                    text = "".join(span_texts).strip()
                     if is_running_header_or_page_number(text):
                         continue
                     lines.append((line["bbox"][1], line["bbox"][0], text))
@@ -1751,10 +1769,11 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
             print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
     # Filter weak pages
+    skipped_pages = whitelist.get("text_integrity", {}).get("skipped_pages", [])
     whitelisted_weak_pages = whitelist.get("text_integrity", {}).get("weak_pages", [])
     page_scan["weak_pages"] = [
         wp for wp in page_scan.get("weak_pages", [])
-        if wp["page"] not in whitelisted_weak_pages
+        if wp["page"] not in whitelisted_weak_pages and wp["page"] not in skipped_pages
     ]
     page_scan["weak_page_count"] = len(page_scan["weak_pages"])
 
@@ -1762,7 +1781,7 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     whitelisted_dense_windows = whitelist.get("text_integrity", {}).get("dense_source_window_loss", [])
     dense_scan["missing_dense_windows"] = [
         dw for dw in dense_scan.get("missing_dense_windows", [])
-        if not (dw["page"] in whitelisted_dense_windows or any(
+        if dw["page"] not in skipped_pages and not (dw["page"] in whitelisted_dense_windows or any(
             isinstance(dw_wl, str) and (dw_wl in dw["sample"] or dw["sample"] in dw_wl)
             for dw_wl in whitelisted_dense_windows
         ))
@@ -1773,12 +1792,23 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     whitelisted_bottom_windows = whitelist.get("text_integrity", {}).get("bottom_of_page_text_loss", [])
     bottom_scan["missing_bottom_windows"] = [
         bw for bw in bottom_scan.get("missing_bottom_windows", [])
-        if not (bw["page"] in whitelisted_bottom_windows or any(
+        if bw["page"] not in skipped_pages and not (bw["page"] in whitelisted_bottom_windows or any(
             isinstance(bw_wl, str) and (bw_wl in bw["sample"] or bw["sample"] in bw_wl)
             for bw_wl in whitelisted_bottom_windows
         ))
     ]
     bottom_scan["missing_bottom_window_count"] = len(bottom_scan["missing_bottom_windows"])
+
+    # Filter top windows
+    whitelisted_top_windows = whitelist.get("text_integrity", {}).get("top_of_page_text_loss", [])
+    top_scan["missing_top_windows"] = [
+        tw for tw in top_scan.get("missing_top_windows", [])
+        if tw["page"] not in skipped_pages and not (tw["page"] in whitelisted_top_windows or any(
+            isinstance(tw_wl, str) and (tw_wl in tw["sample"] or tw["sample"] in tw_wl)
+            for tw_wl in whitelisted_top_windows
+        ))
+    ]
+    top_scan["missing_top_window_count"] = len(top_scan["missing_top_windows"])
 
     # Filter splits
     whitelisted_splits = whitelist.get("text_integrity", {}).get("paragraph_splits", [])

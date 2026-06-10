@@ -667,6 +667,9 @@ def _split_raw_title_body(raw_text: str) -> tuple[str, str]:
     # If the raw_text is already an HTML section (e.g. standalone title page),
     # then it doesn't have a separate body text to preserve.
     if raw_text.strip().startswith('<section') and '</section>' in raw_text:
+        parts = raw_text.split('</section>', 1)
+        if len(parts) == 2 and parts[1].strip():
+            return parts[0] + '</section>', parts[1]
         return raw_text, ""
 
     paragraphs = raw_text.split('\n\n')

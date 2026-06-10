@@ -44,8 +44,12 @@ def coordinate_redactor(blocks, page_height=PAGE_H, top_margin=TOP_MARGIN, botto
                 continue
 
             if y_center < top_margin and not is_header_footer:
-                # Top safety: don't clip lines that might be part of a chapter head
-                if y_center > 25 and len(line_text) > 20:
+                # Top safety: don't clip lines that might be part of a chapter head or list start
+                if y_center > 25 and (
+                    len(line_text) > 20
+                    or STRUCTURAL_START_RE.match(line_text + ' ')
+                    or any(c.islower() for c in line_text)
+                ):
                     keep_lines.append(line)
                     continue
                 continue

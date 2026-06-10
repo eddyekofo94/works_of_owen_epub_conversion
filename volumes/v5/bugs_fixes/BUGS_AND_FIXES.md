@@ -159,12 +159,17 @@ See previous sessions.
 
 
 
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T10:46:37.075733+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Last run:** 2026-06-10T12:23:05.094509+00:00
+**EPUB:** `volumes/v5/output/volume_5.epub`
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_5_audit.json`
@@ -179,16 +184,12 @@ Reports:
 | NAV links | 42 |
 | Greek chars / untagged | 6350 / 0 |
 | Hebrew chars / untagged | 980 / 0 |
-| Noteref links / endnote anchors | 175 / 175 |
+| Noteref links / endnote anchors | 195 / 195 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 3 |
-
-Warnings requiring triage:
-
-- `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -204,11 +205,17 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T10:47:07.433806+00:00
-**Status:** WARN (13 warnings)
+**Last run:** 2026-06-10T13:02:41.836473+00:00
+**Status:** WARN (8 warnings)
 
 Reports:
 - `volume_5_text_integrity.json`
@@ -218,24 +225,24 @@ Reports:
 |-------|--------|
 | PDF pages | 576 |
 | EPUB text files | 39 |
-| EPUB paragraphs/headings | 2135 |
-| Approximate PDF-to-EPUB word coverage | 0.9808 |
-| Weak page matches | 9 |
-| Dense source windows checked | 26722 |
-| Missing dense source-window pages | 40 |
-| Front CONTENTS pages checked | 6 |
-| Missing front CONTENTS pages | 6 |
+| EPUB paragraphs/headings | 2155 |
+| Approximate PDF-to-EPUB word coverage | 0.9998 |
+| Weak page matches | 0 |
+| Dense source windows checked | 26785 |
+| Missing dense source-window pages | 33 |
+| Front CONTENTS pages checked | 0 |
+| Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 561 |
-| Top-of-page windows skipped as unstable | 24 |
-| Missing top-of-page body windows | 8 |
+| Top-of-page windows skipped as unstable | 8 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 527 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 10 |
-| Possible faulty paragraph splits | 3 |
-| Structural starts excluded from split warnings | 227 |
-| Short fragments | 25 |
+| Missing bottom-of-page body windows | 0 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 229 |
+| Short fragments | 27 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 4 |
+| Inline structural marker candidates | 6 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -243,25 +250,20 @@ Reports:
 | Overlong heading candidates | 2 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
-| PDF enumerator markers | 436 |
+| PDF enumerator markers | 434 |
 | EPUB enumerator markers | 444 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 1161 / 1158 |
-| Greek word coverage ratio | 0.9965 |
-| PDF Hebrew words / EPUB Hebrew words | 124 / 123 |
-| Hebrew word coverage ratio | 0.9919 |
+| PDF Greek words / EPUB Greek words | 1158 / 1158 |
+| Greek word coverage ratio | 1.0 |
+| PDF Hebrew words / EPUB Hebrew words | 123 / 123 |
+| Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text

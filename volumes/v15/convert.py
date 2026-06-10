@@ -60,7 +60,7 @@ _V15_EVANGELICAL_LOVE_TITLE_PAGE = '''<section class="treatise-title-page" epub:
 <p class="title-line-medium">Present Differences and Divisions</p>
 <p class="title-connector">About Things Sacred and Religious.</p>
 <p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Endeavouring to keep the unity of the Spirit in the bond of peace." — Ephesians 4:3.</p></div>
+<div class="quote-block"><p>"<span lang="la" xml:lang="la">Speciosum quidem nomen est pacis, et pulchra opinio unitatis; sed quis ambigat eam solam unicam ecclesiae pacem esse quae Christi est</span>."</p></div>
 </section>'''
 
 _V15_INQUIRY_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -146,6 +146,40 @@ def post_extract_hook(intermediate: dict) -> dict:
         # Fix OCR footnote corruptions (often in Prefaces/Prefatory notes which are processed as chapters)
         text = text.replace('o [f186] to 180', 'of 186 to 180')
         text = text.replace('o [f347] pages', 'of 347 pages')
+        text = text.replace('_A_ Elurus', 'Aelurus')
+        # Heal faulty paragraph split and match quotes in Chapter 5 (Clemens/Clement)
+        text = text.replace(
+            'without blame.\n\nBlessed are the elders',
+            'without blame. Blessed are the elders'
+        )
+        # Philippians verse corruptions
+        text = text.replace('Philippians 5:2 2:2', 'Philippians 2:2')
+        text = text.replace('Philippians 74:25 2:25-28', 'Philippians 2:25-28')
+        text = text.replace('Philippians 50:17 2:17', 'Philippians 2:17')
+        text = text.replace('Philippians 44:15 2:15', 'Philippians 2:15')
+        text = text.replace('Philippians 47:16 2:16', 'Philippians 2:16')
+        
+        # Unresolved citations fixes
+        text = text.replace('Deorum [[BLOCKQUOTE]] comprecatio', 'Deorum comprecatio')
+        text = text.replace('opinion with him, lib. 4 cap. 10.', 'opinion with him, Theodoret, lib. 4 cap. 10.')
+        text = text.replace('religion as were then fallen out, lib. 39:15:', 'religion as were then fallen out, lib. 39, cap. 15:')
+        
+        # Spacing and OCR fixes
+        text = text.replace('heads _:', 'heads:')
+        text = text.replace('efficacy_ ;', 'efficacy;')
+        text = text.replace('**2dly** _._', '**2dly.**')
+        text = text.replace('**3dly** _._', '**3dly.**')
+        text = text.replace('**4thly** _._', '**4thly.**')
+        text = text.replace('**1** _._ _Particular', '**1.** _Particular')
+        text = text.replace('**1st.**_._', '**1st.**')
+        text = text.replace('acqui-escency', 'acquiescency')
+        
+        # Wrap the Hilary quote in a Latin span and fix the 'earn' -> 'eam' typo
+        text = text.replace(
+            'Speciosum quidem est nomen pacis, et pulchra opinio unitatis, sed quis ambigat earn solam, unicam, ecclesiae pacem esse, quae Christi est',
+            '<span lang="la" xml:lang="la">Speciosum quidem est nomen pacis, et pulchra opinio unitatis, sed quis ambigat eam solam, unicam, ecclesiae pacem esse, quae Christi est</span>'
+        )
+        
         ch['raw_text'] = text
         
     # Process front matter items for OCR footnote corruptions
@@ -154,6 +188,7 @@ def post_extract_hook(intermediate: dict) -> dict:
             if key in fm and fm[key]:
                 fm[key] = fm[key].replace('o [f186] to 180', 'of 186 to 180')
                 fm[key] = fm[key].replace('o [f347] pages', 'of 347 pages')
+                fm[key] = fm[key].replace('_A_ Elurus', 'Aelurus')
     return intermediate
 
 
@@ -175,6 +210,27 @@ OVERRIDES = {
         # Fix consecutive duplicate words
         'the the things': 'the things',
         'is is now': 'is now',
+        # Quote matching and OCR repairs
+        'is "written for our admonition, 1 Corinthians 10:11;': 'is "written for our admonition," 1 Corinthians 10:11;',
+        '"Igitur,!\'': '"Igitur,"!',
+        "To which he replies, This is the apostle's rule,": 'To which he replies, "This is the apostle\'s rule,',
+        'single congregation? Why so?': 'single congregation?" Why so?',
+        'giving us caution not to lose those things which we have wrought,"': 'giving us caution "not to lose those things which we have wrought,"',
+        "inheritance,''": 'inheritance,"',
+        "''Wherefore did": '"Wherefore did',
+        'Either, then, he must quit': '"Either, then, he must quit',
+        '"But, saith he, "I': '"But," saith he, "I',
+        'the presbyters or elders of the church,"': 'the presbyters or elders of the church,',
+        # Spelling and spacing repairs
+        'lieS': 'lies',
+        'thiS': 'this',
+        'mahLtain': 'maintain',
+        'heads :': 'heads:',
+        ',,': ',',
+        'it ?': 'it?',
+        'infected ?': 'infected?',
+        'efficacy ;': 'efficacy;',
+        '..': '.',
     },
     'regex_replacements': {
         # Fix doubled punctuation sequence where word boundary would fail

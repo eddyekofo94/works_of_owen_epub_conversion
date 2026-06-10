@@ -1,6 +1,6 @@
 {
   "volume": 5,
-  "status": "warn",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.json",
@@ -12,36 +12,28 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 3,
-      "budget": 61,
+      "observed": 0,
+      "budget": 0,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "To The Reader",
-          "next": "I shall not need to detain the reader with an account of the nature and moment of that doctrine which is the entire subject of the ensuing discourse; for although sundry persons, e"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": " are justified freely by the grace of God, through the redemption that is in Christ Jesus; whom God has set forth to be a propitiation through faith in his blood,\" Romans 3:24, 25,",
-          "next": "— they will offer violence unto common sense and reason, rather than not disturb that harmony which they cannot understand. For although it be plainly affirmed to be a redemption b"
-        },
-        {
-          "file": "EPUB/ch027.xhtml",
-          "previous": "To The Reader",
-          "next": "As faith is the first vital act that every true Christian puts Forth, and the life which he lives is by the faith of the Son of God, so it is his next and great concern to know tha"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 4,
-      "budget": 1,
-      "status": "regression",
+      "observed": 6,
+      "budget": 6,
+      "status": "ok",
       "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "text": "Lastly, the concluding chapter is devoted to an explanation of the passages in Paul and James which are alleged to be at variance but which are proved to be in perfect harmony, 20. — Ed."
+        },
         {
           "file": "EPUB/ch004.xhtml",
           "text": "All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of their own, and supererogatory of others"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "What it is that, when a justified person is guilty of sin (as guilty he is more or less every day), and his conscience is pressed with a sense thereof, as that only thing which can endanger or intercept his justified estate, his favor with God, and title unto "
         },
         {
           "file": "EPUB/ch010.xhtml",
@@ -107,41 +99,10 @@
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 6,
+      "observed": 0,
       "budget": 0,
-      "status": "regression",
-      "samples": [
-        {
-          "page": 3,
-          "hit_ratio": 0.0,
-          "sample": "contents the doctrine of justification general considerations first the general nature of justification state of the person to be justified antecedently thereunto romans galatians john galatians the sole"
-        },
-        {
-          "page": 4,
-          "hit_ratio": 0.0,
-          "sample": "acceptable unto many reasons of it two parts of corrupted nature's repugnancy unto the mystery of the gospel that which would reduce it unto the private reason of"
-        },
-        {
-          "page": 5,
-          "hit_ratio": 0.0,
-          "sample": "sinners by christ with its acquiescency therein the description given explained and confirmed from the nature of the gospel exemplified in its contrary or the nature of unbelief"
-        },
-        {
-          "page": 6,
-          "hit_ratio": 0.0,
-          "sample": "juridical scheme and of forensic title the parts and progress of it inferences from the whole chapter distinction of first and second justification the whole doctrine of the"
-        },
-        {
-          "page": 7,
-          "hit_ratio": 0.0,
-          "sample": "day that judgment being according unto works answered and the impertinency of it declared chapter imputation and the nature of it the first express record of justification determines"
-        },
-        {
-          "page": 8,
-          "hit_ratio": 0.25,
-          "sample": "chapter arguments for justification by the imputation of the righteousness of christ our own personal righteousness not that on the account whereof we are justified in the sight"
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Reference continuation splits",
@@ -194,14 +155,14 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
     },
     {
       "label": "Low Hebrew word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -274,7 +235,7 @@
     {
       "label": "Repeated phrase hits",
       "observed": 3,
-      "budget": 7,
+      "budget": 3,
       "status": "ok",
       "samples": [
         {
@@ -472,8 +433,8 @@
     {
       "label": "Lowercase page fragments",
       "observed": 8,
-      "budget": 0,
-      "status": "regression",
+      "budget": 8,
+      "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch004.xhtml",

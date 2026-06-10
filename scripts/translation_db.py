@@ -3964,7 +3964,10 @@ BODY_TRANSLATIONS = {
     "Vidisti, Domine, cum adhuc puer essem, et quodam die pressus stomachi dolore repente aestuarem pene moriturus; vidisti, Deus meus, quoniam custos meus jam eras, quo motu animi et qua fide baptismum Christi tui, Dei et Domini mei flagitavi,": (
         "<b>Modern Translation:</b> You saw, O Lord, when I was yet a boy, and one day, pressed by the pain of my stomach, I suddenly grew hot, almost about to die; you saw, my God, since you were already my keeper, with what emotion of mind and with what faith I demanded the baptism of your Christ, my God and Lord. (Augustine, <i>Confessions</i>, Book 1, Chapter 11)"
     ),
-    "Speciosum quidem est nomen pacis, et pulchra opinio unitatis, sed quis ambigat earn solam, unicam, ecclesiae pacem esse, quae Christi est,": (
+    "Speciosum quidem est nomen pacis, et pulchra opinio unitatis, sed quis ambigat eam solam, unicam, ecclesiae pacem esse, quae Christi est": (
+        "<b>Modern Translation:</b> The name of peace is indeed attractive, and the idea of unity is beautiful; but who can doubt that the only true peace of the Church is that which is of Christ. (Hilary of Poitiers, <i>Contra Auxentium</i>, Unknown)"
+    ),
+    "Speciosum quidem nomen est pacis, et pulchra opinio unitatis; sed quis ambigat eam solam unicam ecclesiae pacem esse quae Christi est": (
         "<b>Modern Translation:</b> The name of peace is indeed attractive, and the idea of unity is beautiful; but who can doubt that the only true peace of the Church is that which is of Christ. (Hilary of Poitiers, <i>Contra Auxentium</i>, Unknown)"
     ),
     "actus vivificantis in vivificatum per unionem utriusque,": (

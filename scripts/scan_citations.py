@@ -38,7 +38,7 @@ if _HERE not in sys.path:
 from patristic_refs import (
     PATRISTIC_CITATION_RE, SELF_REF_PATTERNS,
     _strip_tags, _find_author_in_context, _find_work_in_context,
-    AUTHOR_ABBREV_MAP, build_citation_note, WORK_MAP
+    AUTHOR_ABBREV_MAP, build_citation_note, WORK_MAP, is_bible_citation_ref
 )
 from translation_db import BODY_TRANSLATIONS
 
@@ -68,6 +68,10 @@ def scan_volume(vol_num: int, data: dict) -> list[dict]:
 
             # Combine before/after context with a separator
             combined_context = context_before + " | " + context_after
+
+            # Check if it looks like a Bible citation matched by mistake
+            if is_bible_citation_ref(cite_str, combined_context):
+                continue
 
             # Already resolved: a BODY_TRANSLATIONS phrase overlaps this window
             already_resolved = any(
