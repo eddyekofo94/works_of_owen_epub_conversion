@@ -30,7 +30,7 @@
 | Untagged Greek characters | 0 | 0 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 3 | 4 | OK |
+| Repeated phrase hits | 0 | 4 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
@@ -63,12 +63,6 @@
 | I WILL/I AM mangles | 0 | 0 | OK |
 
 ## Triage Samples
-
-### Repeated phrase hits
-
-- file: combined_text; text: chapter 2 general dispensation of the holy spirit
-- file: combined_text; text: chapter 2 works of the holy spirit preparatory
-- file: combined_text; text: chapter 3 believers the only object of sanctification
 
 ### Lowercase page fragments
 

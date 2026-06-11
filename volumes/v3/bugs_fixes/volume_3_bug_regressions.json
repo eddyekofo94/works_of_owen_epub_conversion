@@ -1,5 +1,5 @@
 {
-  "volume": 3,
+  "volume": "3",
   "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/bugs_fixes/volume_3_text_integrity.json",
@@ -168,26 +168,10 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 3,
+      "observed": 0,
       "budget": 4,
       "status": "ok",
-      "samples": [
-        {
-          "file": "combined_text",
-          "text": "chapter 2 general dispensation of the holy spirit",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 2 works of the holy spirit preparatory",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 3 believers the only object of sanctification",
-          "count": 1
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Possible Beta Code residue files",

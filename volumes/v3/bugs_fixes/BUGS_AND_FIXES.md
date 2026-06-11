@@ -863,11 +863,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T10:45:11.538897+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub`
+**Last run:** 2026-06-11T21:25:40.027373+00:00
+**EPUB:** `volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -888,7 +890,7 @@ Reports:
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 3 |
+| Repeated phrase hits | 0 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -1042,10 +1044,12 @@ Validation:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T10:45:53.319513+00:00
+**Last run:** 2026-06-11T21:26:24.729681+00:00
 **Status:** WARN (1 warnings)
 
 Reports:
@@ -1056,21 +1060,21 @@ Reports:
 |-------|--------|
 | PDF pages | 789 |
 | EPUB text files | 45 |
-| EPUB paragraphs/headings | 2503 |
+| EPUB paragraphs/headings | 2528 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 35182 |
+| Dense source windows checked | 35165 |
 | Missing dense source-window pages | 20 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 765 |
-| Top-of-page windows skipped as unstable | 30 |
+| Top-of-page windows skipped as unstable | 20 |
 | Missing top-of-page body windows | 1 |
 | Bottom-of-page body windows checked | 746 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 316 |
+| Structural starts excluded from split warnings | 332 |
 | Short fragments | 14 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |

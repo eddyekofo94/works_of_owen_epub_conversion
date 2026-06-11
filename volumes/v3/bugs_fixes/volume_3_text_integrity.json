@@ -1,8 +1,8 @@
 {
-  "volume": 3,
+  "volume": "3",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-09T10:45:53.319513+00:00",
+  "generated_at": "2026-06-11T21:26:24.729681+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -16,7 +16,7 @@
   },
   "epub": {
     "spine_text_files": 45,
-    "paragraph_count": 2503
+    "paragraph_count": 2528
   },
   "word_coverage": {
     "pdf_content_tokens": 267300,
@@ -133,7 +133,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 35182,
+    "dense_windows_checked": 35165,
     "missing_dense_window_pages": 20,
     "missing_dense_windows": [
       {
@@ -197,6 +197,10 @@
         "sample": "under his curse psalm john romans 15-18 ephesians titus there are degrees of wickedness"
       },
       {
+        "page": 271,
+        "sample": "wrought in us consists doth always certainly and infallibly produce the reformation of life"
+      },
+      {
         "page": 284,
         "sample": "disposition is where one degree of the same kind disposeth the subject unto farther"
       },
@@ -211,10 +215,6 @@
       {
         "page": 326,
         "sample": "unto them that believe the effectual working of his grace in the conversion of"
-      },
-      {
-        "page": 333,
-        "sample": "but we proceed having cleared the impotency to discern spiritual things spiritually that is"
       }
     ]
   },
@@ -227,42 +227,12 @@
   "top_of_page_integrity": {
     "top_windows_checked": 787,
     "top_windows_usable": 765,
-    "skipped_top_window_count": 30,
+    "skipped_top_window_count": 20,
     "skipped_top_windows": [
       {
-        "page": 71,
-        "window": "ajpagge llwn eijv ajnqrw pouv to cristo aujtou and declareth unto men his christ",
-        "sample": "ajpagge>llwn eijv ajnqrw>pouv to<n Cristo<n aujtou~, — \"And declareth unto men his Christ,\" or his Anointed, or his Messiah; for they took",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 83,
-        "window": "john and he is thus termed ujpostatikw upon and our father",
-        "sample": "John 20:17. And he is thus termed uJpostatikw~v, upon and our Father,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 105,
-        "window": "infinite understanding as it is said of god wojn wbj li rq je ˆyae",
-        "sample": "infinite understanding; as it is said of God, wOjn;Wbj]li rq,je ˆyae , Isaiah",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 107,
-        "window": "metaphor be plain and obvious so when our savior says of the wind that",
-        "sample": "metaphor be plain and obvious. So when our Savior says of the wind that it bloweth o[pou Qe>lei, \"as it willeth,\" or listeth,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 130,
-        "window": "for the matter he was made of it is said he was formed hm",
-        "sample": "For the matter he was made of, it is said he was formed hm;d;a}jæAˆmi rp;[;, [of] \"dust of the ground,\" or dust gathered together on a heap from and",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 145,
-        "window": "the spirit corhge is to give sufficiency of any thing and corhgi and corh",
-        "sample": "the Spirit.\" Corhge>w is \"to give a sufficiency of any thing;\" and corhgi>a and corh>ghma are dimensum, \"a sufficiency of provision.\" An addition",
+        "window": "for the matter he was made of it is said he was formed עָפָר",
+        "sample": "For the matter he was made of, it is said he was formed עָפָר מִן־חַאֲדָמָה, [of] \"dust of the ground,\" or dust gathered together on a heap from and",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -278,21 +248,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 218,
-        "window": "be said ejkba llein to drive him is not so easy to be apprehended",
-        "sample": "be said ejkba>llein, to \"drive him,\" is not so easy to be apprehended. But the word in Luke is h]geto, which denotes a guiding and rational",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 228,
         "window": "tenthly it was the holy spirit that glorified the human nature of christ and",
         "sample": "Tenthly, It was the Holy Spirit that glorified the human nature [of Christ], and made it every way meet for its eternal residence at the right hand of",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 243,
-        "window": "de physica et crassa impletione accipiunt quam tamen talis plh rwsiv seu impletio locorum",
-        "sample": "de physicâ et crassâ impletione accipiunt; quam tamen talis plh>rwsiv seu impletio locorum in mundo omnium quae vel",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -302,27 +260,15 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 310,
-        "window": "there is oj nou the mind this is the to hjgemoniko the leading and",
-        "sample": "1. There is oJ nou~v, the \"mind.\" This is the to< hJgemoniko>n, the leading and ruling faculty of the soul. It is that in us which looketh out after",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 315,
         "window": "in the due and constant improvement of that gracious principle by constant watchfulness against",
         "sample": "(2.) In the due and constant improvement of that gracious principle, — [1.] By constant watchfulness against the mind's acting itself in vain,",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 318,
-        "window": "the subject spoken of is yuciko nqrwpov animalis homo the natural man he who",
-        "sample": "(1.) The subject spoken of is yuciko<v a]nqrwpov, \"animalis homo,\" the \"natural man,\" he who is a natural man. This epithet is in the Scripture",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 321,
-        "window": "by ouj du natai gnw nai he cannot know them in this double assertion",
-        "sample": "[2.] By ouj du>natai gnw~nai, — \"He cannot know them.\" In this double assertion, —",
+        "window": "by ου δυναται γνωναι he cannot know them in this double assertion",
+        "sample": "[2.] By οὐ δύναται γνῶναι, — \"He cannot know them.\" In this double assertion, —",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -386,12 +332,6 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 657,
-        "window": "work and what the apostle here calls ta pra xeiv tou sw matov the",
-        "sample": "work.\" And what the apostle here calls ta<v pra>xeiv tou~ sw>matov, \"the deeds of the body,\" he therein expresseth the effect for the cause",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 725,
         "window": "persuasion of their own election never any who complained when they had received it",
         "sample": "persuasion of their own election; never any who [complained,] when they had received it in a due way and manner, that it proved a snare unto them,",
@@ -428,10 +368,10 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2109,
+    "paragraphs_checked": 2134,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 316,
+    "structural_start_exclusions": 332,
     "short_fragment_count": 14,
     "short_fragments": [
       {
@@ -574,12 +514,12 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch015.xhtml#p645",
+            "location": "EPUB/ch015.xhtml#p650",
             "context": "[1.] The manifestation of his righteousness, holiness, and severity against sin. His design was, to repair the glory of God, wherein it had seemed to suffer by sin. Psalm 40:6-8, Hebre"
           },
           {
-            "location": "EPUB/ch015.xhtml#p648",
-            "context": "is, testified unto in the Old Testament: Hebrews 2:13, \"I will put my trust in him.\" And, [1.] This respected himself, namely, that he should be supported, assisted, and carried through the work he had undertaken unto a blessed issue."
+            "location": "EPUB/ch015.xhtml#p654",
+            "context": "[1.] This respected himself, namely, that he should be supported, assisted, and carried through the work he had undertaken unto a blessed issue."
           }
         ]
       },
@@ -612,11 +552,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch015.xhtml#p646",
+            "location": "EPUB/ch015.xhtml#p651",
             "context": "[2.] The exercise of his grace and love. This he knew was the way to open the treasures of grace and love, that they might be poured out on sinners, to the everlasting glory of God; fo"
           },
           {
-            "location": "EPUB/ch015.xhtml#p652",
+            "location": "EPUB/ch015.xhtml#p658",
             "context": "[2.] This respected the covenant, and all the benefits that the church of the elect was to be made partaker of thereby. The blood that he now shed was the \"blood of the covenant,\" and"
           }
         ]
@@ -674,167 +614,158 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 4115,
-    "epub_latin_word_count": 4276,
-    "epub_tagged_latin_word_count": 1443,
-    "pdf_latin_unique_words": 1058,
-    "epub_latin_unique_words": 1112,
-    "epub_tagged_unique_words": 823,
-    "latin_word_coverage_ratio": 0.9995,
-    "latin_tagging_ratio": 0.3375,
+    "pdf_latin_word_count": 1982,
+    "epub_latin_word_count": 2086,
+    "epub_tagged_latin_word_count": 1386,
+    "pdf_latin_unique_words": 1007,
+    "epub_latin_unique_words": 1058,
+    "epub_tagged_unique_words": 799,
+    "latin_word_coverage_ratio": 0.999,
+    "latin_tagging_ratio": 0.6644,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "nor",
-        "epub": 472,
-        "tagged": 8
-      },
-      {
-        "word": "jesus",
-        "epub": 365,
-        "tagged": 2
-      },
-      {
-        "word": "thereunto",
-        "epub": 152,
-        "tagged": 2
-      },
-      {
-        "word": "yea",
-        "epub": 134,
-        "tagged": 1
-      },
-      {
-        "word": "immediate",
-        "epub": 139,
-        "tagged": 9
-      },
-      {
-        "word": "whereas",
-        "epub": 106,
-        "tagged": 0
-      },
-      {
-        "word": "hereunto",
-        "epub": 81,
-        "tagged": 0
-      },
-      {
-        "word": "distinct",
-        "epub": 71,
-        "tagged": 3
-      },
-      {
-        "word": "endeavor",
-        "epub": 69,
-        "tagged": 1
-      },
-      {
-        "word": "mere",
-        "epub": 58,
-        "tagged": 0
-      },
-      {
-        "word": "whereunto",
-        "epub": 56,
-        "tagged": 0
-      },
-      {
-        "word": "unregenerate",
-        "epub": 53,
-        "tagged": 2
-      },
-      {
-        "word": "adam",
-        "epub": 44,
-        "tagged": 0
-      },
-      {
-        "word": "elsewhere",
-        "epub": 36,
-        "tagged": 1
-      },
-      {
-        "word": "poor",
-        "epub": 31,
-        "tagged": 1
-      },
-      {
-        "word": "sincere",
-        "epub": 30,
-        "tagged": 1
-      },
-      {
-        "word": "regenerate",
-        "epub": 31,
-        "tagged": 4
-      },
       {
         "word": "communicate",
         "epub": 25,
         "tagged": 0
       },
       {
-        "word": "abraham",
-        "epub": 23,
+        "word": "hate",
+        "epub": 13,
         "tagged": 0
       },
       {
-        "word": "tenor",
-        "epub": 19,
+        "word": "abhor",
+        "epub": 12,
         "tagged": 0
       },
       {
-        "word": "mediator",
-        "epub": 18,
+        "word": "profligate",
+        "epub": 12,
         "tagged": 0
       },
       {
-        "word": "separate",
-        "epub": 20,
-        "tagged": 3
-      },
-      {
-        "word": "terror",
-        "epub": 16,
+        "word": "adhere",
+        "epub": 12,
         "tagged": 0
       },
       {
-        "word": "everywhere",
-        "epub": 16,
+        "word": "obstinate",
+        "epub": 10,
         "tagged": 0
       },
       {
-        "word": "estate",
-        "epub": 16,
+        "word": "metaphor",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "inferior",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "forego",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "obviate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "operator",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "incarnate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "create",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "pelagius",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "subordinate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "door",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "inordinate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "ingenerate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "dream",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "adequate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "cyrus",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "balaam",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "denominate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "ultimate",
+        "epub": 6,
         "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 152,
+    "latin_clauses_checked": 148,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 320,
+    "tagged_latin_runs_count": 292,
     "translated_latin_runs_count": 238,
-    "latin_translation_ratio": 0.7438,
+    "latin_translation_ratio": 0.8151,
     "untranslated_latin_samples": [
-      {
-        "phrase": "commensurate thereunto"
-      },
-      {
-        "phrase": "Jesus anathema"
-      },
       {
         "phrase": "Malus bonum"
       },
       {
         "phrase": "est pessimus"
-      },
-      {
-        "phrase": "immediate operator"
       },
       {
         "phrase": "de facto"
@@ -864,9 +795,6 @@
         "phrase": "motus primo-primus"
       },
       {
-        "phrase": "Separate me Barnabas"
-      },
-      {
         "phrase": "opera naturae"
       },
       {
@@ -880,6 +808,18 @@
       },
       {
         "phrase": "ornatus eorum"
+      },
+      {
+        "phrase": "divinae aurae particulam"
+      },
+      {
+        "phrase": "is gratia indebita"
+      },
+      {
+        "phrase": "is totum logicum"
+      },
+      {
+        "phrase": "nihil humani"
       }
     ]
   },

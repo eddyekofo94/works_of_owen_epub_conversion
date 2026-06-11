@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-09T10:45:11.538897+00:00",
+  "epub": "volumes/v3/output/volume_3.epub",
+  "generated_at": "2026-06-11T21:25:40.027373+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 81,
-    "epub_size_bytes": 7047879,
+    "epub_size_bytes": 7047507,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -48,7 +48,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 3,
+      "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
@@ -74,23 +74,7 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "repeated_phrase": [
-          {
-            "file": "combined_text",
-            "text": "chapter 2 general dispensation of the holy spirit",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 2 works of the holy spirit preparatory",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 3 believers the only object of sanctification",
-            "count": 1
-          }
-        ],
+        "repeated_phrase": [],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],

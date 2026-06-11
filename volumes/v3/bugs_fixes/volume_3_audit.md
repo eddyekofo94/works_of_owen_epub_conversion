@@ -28,15 +28,9 @@
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 3
+- Repeated phrase hits: 0
 
 ## Samples
-
-### repeated_phrase
-
-- `combined_text`: chapter 2 general dispensation of the holy spirit
-- `combined_text`: chapter 2 works of the holy spirit preparatory
-- `combined_text`: chapter 3 believers the only object of sanctification
 
 ### lowercase_paragraph_start
 

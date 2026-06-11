@@ -274,7 +274,7 @@ The new engine:
 |---|---|---|---|---|
 | 1 | v1 | Populated | FULL | Cov 99.93 Greek 99.73 Heb 100.00 Lat 99.80 Quotes 19 |
 | 2 | v2 | Populated | PRISTINE | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
-| 3 | v3 | Populated | FULL | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.95 Quotes 30 |
+| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.90 |
 | 4 | v4 | Populated | FULL | Cov 99.85 Greek 98.99 Heb 100.00 Lat 99.78 Unres 7 Quotes 27 |
 | 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.73 |
 | 6 | v6 | Populated | FULL | Cov 99.26 Greek 100.00 Heb 100.00 Lat 99.01 Quotes 31 |

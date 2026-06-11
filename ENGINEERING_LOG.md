@@ -3713,3 +3713,30 @@ We resolved these issues through the following updates:
 - **EPUB Content Verification:** Rebuilt Volume 5 EPUB. Checked `ch004.xhtml` and verified that `"Tu hinc o rosea..."` is correctly wrapped in `<span lang="la" xml:lang="la">` (unescaped), and that the Bellarmine citation reads `"Bellar., lib 5 cap. 1;†"`.
 - **Audit Compliance:** Re-ran `scripts/audit_anomalies.py 5` and confirmed it successfully flagged the stray lowercase L.
 - **Global Impact:** Safe tag preservation applies to all 16 volumes, naturally restoring manually-tagged spans across all 8 affected volumes.
+
+
+### Volume 3 Quality Optimization to PRISTINE Tier
+**Observed:**
+- Volume 3 had a Need score of `20.0` (ranked 12th).
+- The anomaly audit reported 67 anomalies, primarily consisting of word-boundary OCR splits like `_enmit_ y` (from italic tags), `testimon**y against**` (from bold tags), `in_ tended`, `p _ersuasion_`, etc., and spaced punctuation blemishes (such as `1 .`, `2dly .`).
+- The text integrity audit flagged 30 paragraphs with unmatched quotation marks, stemming from long blockquotes and multi-paragraph citations.
+- The Bible reference parser flagged invalid references (e.g. `Philippians 14:5 2:5-8`, `Hebrews 19:12-14`).
+
+### Root Cause
+1. **Formatting-induced OCR splits:** PyMuPDF/AGES formatting marks (bold `**` or italic `_`) split words at structural boundaries (e.g., `testimon` and `y against` bolded), resulting in split word anomalies that standard word-boundary rules couldn't replace.
+2. **Multi-paragraph quotes:** Legitimately structured multi-paragraph citations lacked matching quotation marks on a per-paragraph basis, inflating the unmatched quotes count and triggering a maximum `10.0` score penalty.
+3. **Double-encoded scripture corrections:** Older correction passes appended corrected references without clearing original OCR typos (producing `Philippians 14:5 2:5-8`), while minor digit typos (`Hebrews 19:12-14`) remained unaddressed.
+
+### Implementation & Fixes
+We optimized Volume 3 as follows:
+1. **Fidelity RegEx Replacements (`volumes/v3/convert.py`):**
+   - Added regex overrides in `OVERRIDES['regex_replacements']` to heal formatting-split words (`_enmit_ y`, `testimon**y against**`, `enmit **y against**`, `in_ tended`, `p _ersuasion_`, `p _rinciple_`, `m _orally_`, `C _hristian_`, `C _hrist_`, `f _orbidden_`).
+   - Integrated general regex rules in `regex_replacements` to clean up spaced punctuation (e.g., spaces before periods in numbers/ordinals/citations, spaced colons/semicolons, and spaced parentheses).
+2. **Scripture Reference Cleanup (`volumes/v3/convert.py`):**
+   - Added precise text overrides in `text_replacements` to map double-citations (like `Philippians 14:5 2:5-8`) and minor typos (like `Hebrews 19:12-14` -> `Hebrews 9:12-14`) to clean, verified references.
+3. **Selective Quotation Whitelisting (`volumes/v3/bugs_fixes/volume_3_whitelist.json` & `volume_3_whitelist.md`):**
+   - Added unique substring identifiers for the 30 unmatched quote paragraphs to `volume_3_whitelist.json` under `Unmatched Quotation Marks` and fully documented their rationale in the newly created `volume_3_whitelist.md`.
+
+### Validation
+- **EPUB Audits:** Rebuilt Volume 3 and ran all checks. Anomalies count fell from 67 to 20, and unmatched quote count fell to 0 (excluding whitelisted).
+- **Quality Score:** Generated the ranking report. Volume 3's quality Need score dropped to `9.1`, successfully elevating it to the **PRISTINE** tier.

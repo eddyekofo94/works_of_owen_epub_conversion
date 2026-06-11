@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-11T21:02:15Z
+Generated: 2026-06-11T21:27:03Z
 
 ## Summary
 
@@ -21,10 +21,10 @@ Generated: 2026-06-11T21:02:15Z
 | 9 | 9 | 54.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | 65 | FULL |
 | 10 | 1 | 44.5 | adobe-garamond-pro | 3 |  99.93 |  99.73 |  100.0 |   99.8 | 0 | 19 | FULL |
 | 11 | 16 | 36.9 | gentium-plus-2 | 5 |  99.94 |  100.0 |  100.0 |  99.94 | 1 | 56 | FULL |
-| 12 | 3 | 20.0 | adobe-garamond-pro | 1 |  99.97 |  99.87 |  100.0 |  99.95 | 0 | 30 | FULL |
-| 13 | 7 | 19.6 | sabon-next-lt | 1 |  99.76 |  100.0 |  100.0 |   99.5 | 0 | 0 | PRISTINE |
-| 14 | 15 | 18.8 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 15 | 5 | 14.1 | minion-pro | 1 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
+| 12 | 7 | 19.6 | sabon-next-lt | 1 |  99.76 |  100.0 |  100.0 |   99.5 | 0 | 0 | PRISTINE |
+| 13 | 15 | 18.8 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
+| 14 | 5 | 14.1 | minion-pro | 1 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
+| 15 | 3 | 9.1 | adobe-garamond-pro | 1 |  99.97 |  99.87 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
 | 16 | 2 | 3.0 | gentium-plus-2 | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
 
 ### Hebrews Commentary (7 Volumes)
@@ -419,28 +419,7 @@ Generated: 2026-06-11T21:02:15Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 3 — Need: 20.0 (👌 Fair) — Rank 19
-
-- **Body font:** adobe-garamond-pro
-- **Source type:** epub2
-- **Treatises:** 1
-- **QA level:** FULL
-- **convert.py:** Yes (163 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.97
-- **Greek coverage:** 99.87
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.95
-- **Latin tagging:** 33.75
-- **Latin translation:** 74.38
-- **Citations:** total=25, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 39
-- **Unmatched quotes:** 30
-- **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
-
-### Volume 7 — Need: 19.6 (✅ Good) — Rank 20
+### Volume 7 — Need: 19.6 (✅ Good) — Rank 19
 
 - **Body font:** sabon-next-lt
 - **Source type:** epub2
@@ -461,7 +440,7 @@ Generated: 2026-06-11T21:02:15Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 15 — Need: 18.8 (✅ Good) — Rank 21
+### Volume 15 — Need: 18.8 (✅ Good) — Rank 20
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -482,7 +461,7 @@ Generated: 2026-06-11T21:02:15Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 5 — Need: 14.1 (✅ Good) — Rank 22
+### Volume 5 — Need: 14.1 (✅ Good) — Rank 21
 
 - **Body font:** minion-pro
 - **Source type:** epub2
@@ -500,6 +479,27 @@ Generated: 2026-06-11T21:02:15Z
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 10
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 3 — Need: 9.1 (✅ Good) — Rank 22
+
+- **Body font:** adobe-garamond-pro
+- **Source type:** epub2
+- **Treatises:** 1
+- **QA level:** PRISTINE
+- **convert.py:** Yes (181 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.97
+- **Greek coverage:** 99.87
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.90
+- **Latin tagging:** 66.44
+- **Latin translation:** 81.51
+- **Citations:** total=25, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 20
 - **Unmatched quotes:** 0
 - **Recommended:** 
 

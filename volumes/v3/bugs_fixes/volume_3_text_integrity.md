@@ -4,7 +4,7 @@
 - Warnings: 1
 - PDF pages: 789
 - EPUB text files: 45
-- EPUB paragraphs/headings: 2503
+- EPUB paragraphs/headings: 2528
 
 ## Coverage
 
@@ -13,12 +13,12 @@
 - Approximate PDF-to-EPUB coverage ratio: 0.9997
 - Pages checked: 758
 - Weak page matches: 0
-- Dense source windows checked: 35182
+- Dense source windows checked: 35165
 - Missing dense source-window pages: 20
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 765
-- Top-of-page windows skipped as unstable: 30
+- Top-of-page windows skipped as unstable: 20
 - Missing top-of-page body windows: 1
 - Bottom-of-page body windows checked: 746
 - Bottom-of-page windows skipped as unstable: 0
@@ -26,9 +26,9 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2109
+- Body paragraphs checked: 2134
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 316
+- Structural starts excluded from split warnings: 332
 - Short fragments: 14
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 4115
-- EPUB Latin words: 4276
-- EPUB Tagged Latin words: 1443
-- Latin word coverage ratio: 0.9995
-- Latin word tagging ratio: 0.3375
-- Latin clauses checked: 152
+- PDF Latin words: 1982
+- EPUB Latin words: 2086
+- EPUB Tagged Latin words: 1386
+- Latin word coverage ratio: 0.999
+- Latin word tagging ratio: 0.6644
+- Latin clauses checked: 148
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 320
+- Tagged Latin runs checked: 292
 - Translated Latin runs: 238
-- Latin translation ratio: 0.7438
+- Latin translation ratio: 0.8151
 
 ## Warnings
 
@@ -130,29 +130,29 @@
 
 ## Untagged Latin Word Samples
 
-- word: nor; epub: 472; tagged: 8
-- word: jesus; epub: 365; tagged: 2
-- word: thereunto; epub: 152; tagged: 2
-- word: yea; epub: 134; tagged: 1
-- word: immediate; epub: 139; tagged: 9
-- word: whereas; epub: 106; tagged: 0
-- word: hereunto; epub: 81; tagged: 0
-- word: distinct; epub: 71; tagged: 3
-- word: endeavor; epub: 69; tagged: 1
-- word: mere; epub: 58; tagged: 0
+- word: communicate; epub: 25; tagged: 0
+- word: hate; epub: 13; tagged: 0
+- word: abhor; epub: 12; tagged: 0
+- word: profligate; epub: 12; tagged: 0
+- word: adhere; epub: 12; tagged: 0
+- word: obstinate; epub: 10; tagged: 0
+- word: metaphor; epub: 10; tagged: 0
+- word: inferior; epub: 10; tagged: 0
+- word: forego; epub: 9; tagged: 0
+- word: obviate; epub: 9; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: commensurate thereunto
-- phrase: Jesus anathema
 - phrase: Malus bonum
 - phrase: est pessimus
-- phrase: immediate operator
 - phrase: de facto
 - phrase: Solis ad occasum, quum frigidus
 - phrase: Sancto, † Athanas
 - phrase: frustra praestantissimus sapientiae
 - phrase: solitus est, si recludantur tyrannorum
+- phrase: aspici laniatus et ictus; quando, ut corpora verberibus, ita saevitia
+- phrase: malis consultis, animus dilaceretur
+- phrase: et origo Trinitatis
 
 ## Limits
 
