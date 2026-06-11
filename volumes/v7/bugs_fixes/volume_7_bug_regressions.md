@@ -30,7 +30,7 @@
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 1 | 7 | OK |
+| Repeated phrase hits | 0 | 7 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
@@ -76,10 +76,6 @@
 
 - page: 3; sample: contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews
 - page: 7; sample: law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the
-
-### Repeated phrase hits
-
-- file: combined_text; text: the grace and duty of being spiritually minded
 
 ### Lowercase page fragments
 

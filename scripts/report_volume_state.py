@@ -73,6 +73,7 @@ def gather_volume_data(vol: int) -> dict:
     bug_reg = _read_json(bugs / f"volume_{vol}_bug_regressions.json")
     anom = _read_json(bugs / f"volume_{vol}_anomalies.json")
     unmatched_q_json = _read_json(bugs / f"volume_{vol}_unmatched_quotes.json")
+    whitelist = _read_json(bugs / f"volume_{vol}_whitelist.json")
 
     # metadata from shared.py
     try:
@@ -123,6 +124,7 @@ def gather_volume_data(vol: int) -> dict:
         "total_citations": total_citations,
         "unresolved_citations": unresolved_citations,
         "unmatched_quotes": unmatched_q_json.get("unmatched_quotes_count"),
+        "ignored_warnings": whitelist.get("text_integrity", {}).get("ignored_warnings", []),
     }
 
     # audit report
@@ -250,6 +252,7 @@ def gather_volume_data(vol: int) -> dict:
 
 def score_volume(d: dict) -> float:
     score = 0.0
+    ignored_warnings = d.get("ignored_warnings", [])
 
     if d["qa_level"] == "NONE":
         score += 40.0  # big penalty for no QA at all
@@ -280,25 +283,28 @@ def score_volume(d: dict) -> float:
     is_hebrews = str(d["vol"]).lower().startswith('h')
     if not is_hebrews:
         # Latin coverage
-        lat_cov = d.get("latin_coverage")
-        if lat_cov is not None:
-            score += min((1.0 - lat_cov) * 2000, 10.0)
-        elif d["qa_level"] != "NONE":
-            score += 5.0
+        if "low_latin_word_coverage" not in ignored_warnings:
+            lat_cov = d.get("latin_coverage")
+            if lat_cov is not None:
+                score += min((1.0 - lat_cov) * 2000, 10.0)
+            elif d["qa_level"] != "NONE":
+                score += 5.0
 
         # Latin tagging
-        lat_tag = d.get("latin_tagging")
-        if lat_tag is not None:
-            score += min((1.0 - lat_tag) * 10, 5.0)
-        elif d["qa_level"] != "NONE":
-            score += 2.0
+        if "low_latin_tagging" not in ignored_warnings:
+            lat_tag = d.get("latin_tagging")
+            if lat_tag is not None:
+                score += min((1.0 - lat_tag) * 10, 5.0)
+            elif d["qa_level"] != "NONE":
+                score += 2.0
 
         # Latin translation
-        lat_trans = d.get("latin_translation")
-        if lat_trans is not None:
-            score += min((1.0 - lat_trans) * 10, 5.0)
-        elif d["qa_level"] != "NONE":
-            score += 2.0
+        if "low_latin_translation_coverage" not in ignored_warnings:
+            lat_trans = d.get("latin_translation")
+            if lat_trans is not None:
+                score += min((1.0 - lat_trans) * 10, 5.0)
+            elif d["qa_level"] != "NONE":
+                score += 2.0
 
     # Unresolved citations ratio penalty
     total_cite = d.get("total_citations", 0)

@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-11T16:12:14Z
+Generated: 2026-06-11T18:18:23Z
 
 ## Summary
 
@@ -21,11 +21,11 @@ Generated: 2026-06-11T16:12:14Z
 | 9 | 9 | 54.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | 65 | FULL |
 | 10 | 1 | 44.5 | adobe-garamond-pro | 3 |  99.93 |  99.73 |  100.0 |   99.8 | 0 | 19 | FULL |
 | 11 | 16 | 36.9 | gentium-plus-2 | 5 |  99.94 |  100.0 |  100.0 |  99.94 | 1 | 56 | FULL |
-| 12 | 7 | 31.6 | sabon-next-lt | 1 |  99.76 |  100.0 |  100.0 |   99.5 | 0 | 0 | PRISTINE |
-| 13 | 3 | 27.6 | adobe-garamond-pro | 1 |  99.97 |  99.87 |  100.0 |  99.95 | 0 | 30 | FULL |
+| 12 | 3 | 20.0 | adobe-garamond-pro | 1 |  99.97 |  99.87 |  100.0 |  99.95 | 0 | 30 | FULL |
+| 13 | 7 | 19.6 | sabon-next-lt | 1 |  99.76 |  100.0 |  100.0 |   99.5 | 0 | 0 | PRISTINE |
 | 14 | 15 | 18.8 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
 | 15 | 5 | 14.1 | minion-pro | 1 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
-| 16 | 2 | 13.0 | gentium-plus-2 | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
+| 16 | 2 | 3.0 | gentium-plus-2 | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
 
 ### Hebrews Commentary (7 Volumes)
 
@@ -356,28 +356,7 @@ Generated: 2026-06-11T16:12:14Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 7 — Need: 31.6 (👌 Fair) — Rank 16
-
-- **Body font:** sabon-next-lt
-- **Source type:** epub2
-- **Treatises:** 1
-- **QA level:** PRISTINE
-- **convert.py:** Yes (175 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
-- **Word coverage:** 99.76
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.50
-- **Latin tagging:** 14.22
-- **Latin translation:** 22.45
-- **Citations:** total=4, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume h1 — Need: 31.2 (👌 Fair) — Rank 17
+### Volume h1 — Need: 31.2 (👌 Fair) — Rank 16
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** epub2
@@ -398,7 +377,7 @@ Generated: 2026-06-11T16:12:14Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h6 — Need: 30.8 (👌 Fair) — Rank 18
+### Volume h6 — Need: 30.8 (👌 Fair) — Rank 17
 
 - **Body font:** baskerville
 - **Source type:** epub2
@@ -419,7 +398,7 @@ Generated: 2026-06-11T16:12:14Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h7 — Need: 28.3 (👌 Fair) — Rank 19
+### Volume h7 — Need: 28.3 (👌 Fair) — Rank 18
 
 - **Body font:** sabon-next-lt
 - **Source type:** epub2
@@ -440,7 +419,7 @@ Generated: 2026-06-11T16:12:14Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 3 — Need: 27.6 (👌 Fair) — Rank 20
+### Volume 3 — Need: 20.0 (👌 Fair) — Rank 19
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** epub2
@@ -460,6 +439,27 @@ Generated: 2026-06-11T16:12:14Z
 - **Suspected anomalies:** 39
 - **Unmatched quotes:** 30
 - **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
+
+### Volume 7 — Need: 19.6 (✅ Good) — Rank 20
+
+- **Body font:** sabon-next-lt
+- **Source type:** epub2
+- **Treatises:** 1
+- **QA level:** PRISTINE
+- **convert.py:** Yes (175 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.76
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.50
+- **Latin tagging:** 14.22
+- **Latin translation:** 22.45
+- **Citations:** total=4, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
 
 ### Volume 15 — Need: 18.8 (✅ Good) — Rank 21
 
@@ -503,7 +503,7 @@ Generated: 2026-06-11T16:12:14Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 2 — Need: 13.0 (✅ Good) — Rank 23
+### Volume 2 — Need: 3.0 (✅ Good) — Rank 23
 
 - **Body font:** gentium-plus-2
 - **Source type:** epub2

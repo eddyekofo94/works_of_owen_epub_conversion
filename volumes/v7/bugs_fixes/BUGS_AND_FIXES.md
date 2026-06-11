@@ -112,12 +112,13 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-11T16:04:55.337913+00:00
+**Last run:** 2026-06-11T18:12:46.443930+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_7_audit.json`
@@ -137,11 +138,7 @@ Reports:
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 1 |
-
-Warnings requiring triage:
-
-- `repeated_phrases`: Potential repeated phrases detected
+| Repeated phrase hits | 0 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -156,10 +153,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-11T16:05:34.763669+00:00
+**Last run:** 2026-06-11T18:13:25.875528+00:00
 **Status:** PASS (0 warnings)
 
 Reports:

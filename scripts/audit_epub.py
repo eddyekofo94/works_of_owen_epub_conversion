@@ -681,8 +681,11 @@ def clean_text(text: str) -> str:
 
 
 def html_to_text(raw: str) -> str:
-    no_tags = HTML_TAG_RE.sub(" ", raw)
+    body_match = re.search(r"<body\b[^>]*>(.*?)</body>", raw, re.I | re.S)
+    content = body_match.group(1) if body_match else raw
+    no_tags = HTML_TAG_RE.sub(" ", content)
     return clean_text(no_tags)
+
 
 
 def norm_join(base_dir: str, href: str) -> str:
