@@ -1,11 +1,11 @@
 ---
 name: pristine-healer
-description: Automates the workflow to elevate a John Owen volume to PRISTINE status. Triggered by #pristine [n] or #pristine.
+description: Automates the workflow to elevate a John Owen volume to green status (Need score < 20.0). Triggered by #pristine [n] or #pristine.
 ---
 
 # Pristine Healer Skill
 
-This skill automates the workflow to elevate a John Owen volume to the `PRISTINE` quality tier (Need score < 20.0, 0 unresolved citations, 0 warnings, 0 regressions, all pytests passing).
+This skill automates the workflow to elevate a John Owen volume to green status (Need score < 20.0, 0 unresolved citations, 0 warnings, 0 regressions, all pytests passing).
 
 ## Command Syntax
 
