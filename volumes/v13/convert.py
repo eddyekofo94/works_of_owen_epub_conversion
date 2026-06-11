@@ -269,6 +269,10 @@ OVERRIDES = {
         # Repair OCR typo in body text
         'Late Treaties of Mr': 'Late Treatise of Mr',
         'Eccleslastical': 'Ecclesiastical',
+        'Objects of the the same': 'Objects of the same',
+        'principles of of human': 'principles of human',
+        'increase and and love': 'increase and love',
+        'put in in bar': 'put in bar',
     },
 }
 

@@ -1,33 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub",
-  "generated_at": "2026-06-09T10:50:54.564962+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-11T20:16:24.474149+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 2,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 3
-    },
-    {
-      "code": "orphan_endnotes",
-      "message": "Some endnote anchors have no matching noteref",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn57",
-        "EPUB/endnotes.xhtml#fn58",
-        "EPUB/endnotes.xhtml#fn59",
-        "EPUB/endnotes.xhtml#fn60",
-        "EPUB/endnotes.xhtml#fn61",
-        "EPUB/endnotes.xhtml#fn62",
-        "EPUB/endnotes.xhtml#fn63"
-      ]
-    }
-  ],
+  "warnings": [],
   "info": {
-    "file_count": 121,
-    "epub_size_bytes": 4649431,
+    "file_count": 126,
+    "epub_size_bytes": 6653243,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -36,15 +17,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 112,
-    "spine_count": 84,
+    "manifest_count": 117,
+    "spine_count": 85,
     "xhtml_count": 86,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 21,
+    "font_count": 26,
     "language": {
-      "greek_chars": 5566,
+      "greek_chars": 5778,
       "greek_untagged_chars": 0,
       "hebrew_chars": 87,
       "hebrew_untagged_chars": 0,
@@ -53,19 +34,11 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 132,
-      "unique_noteref_targets": 129,
-      "endnote_anchor_count": 136,
+      "noteref_count": 220,
+      "unique_noteref_targets": 220,
+      "endnote_anchor_count": 220,
       "missing_endnote_targets": [],
-      "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn57",
-        "EPUB/endnotes.xhtml#fn58",
-        "EPUB/endnotes.xhtml#fn59",
-        "EPUB/endnotes.xhtml#fn60",
-        "EPUB/endnotes.xhtml#fn61",
-        "EPUB/endnotes.xhtml#fn62",
-        "EPUB/endnotes.xhtml#fn63"
-      ]
+      "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
@@ -75,11 +48,11 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 3,
+      "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 1,
-      "overlong_heading_body_files": 2,
+      "chapter_heading_in_paragraph_files": 2,
+      "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
@@ -101,23 +74,7 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "repeated_phrase": [
-          {
-            "file": "combined_text",
-            "text": "eshcol a cluster of the fruit of canaan",
-            "count": 2
-          },
-          {
-            "file": "combined_text",
-            "text": "a review of the true nature of schism",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 3 a review of the charger's preface",
-            "count": 1
-          }
-        ],
+        "repeated_phrase": [],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],
@@ -126,20 +83,15 @@
         "page_reference_split": [],
         "chapter_heading_in_paragraph": [
           {
+            "file": "EPUB/ch016.xhtml",
+            "text": "Chapter 4"
+          },
+          {
             "file": "EPUB/ch020.xhtml",
             "text": "Chapter 11"
           }
         ],
-        "overlong_heading_body": [
-          {
-            "file": "EPUB/ch049.xhtml",
-            "text": "[Inconsistent expressions of Parker in regard to the power of the magistrate and the rights of conscience — The design of his discourse to prove the magistrate's authority to gover"
-          },
-          {
-            "file": "EPUB/ch050.xhtml",
-            "text": "[Alleged power of the magistrate over the conscience in matters of morality refuted — Distinction between moral virtue and grace — Meaning of the terms — Four propositions of Parke"
-          }
-        ],
+        "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
         "fragmented_hebrew_span_run": [],
         "scripture_blockquote": [],
@@ -178,7 +130,7 @@
           },
           {
             "file": "EPUB/ch022.xhtml",
-            "text": "who is herein followed by not a few of the Papists. Hence saith Biel., \"Accipitur"
+            "text": "who is herein followed by not a few of the Papists. Hence saith Biel., \""
           },
           {
             "file": "EPUB/ch025.xhtml",

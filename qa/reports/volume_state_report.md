@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-11T19:57:33Z
+Generated: 2026-06-11T20:19:18Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-11T19:57:33Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 13 | 77.3 | baskerville | 5 |  90.14 |  95.21 |  100.0 |   90.4 | 0 | 70 | FULL |
+| 1 | 13 | 81.9 | baskerville | 5 |  99.57 |  99.22 |  100.0 |  99.35 | 0 | 70 | FULL |
 | 2 | 11 | 77.1 | minion-pro | 1 |  97.68 |   99.7 |  100.0 |  99.55 | 5 | 99 | FULL |
 | 3 | 14 | 76.7 | brill-font | 2 |  98.45 |  99.17 |  100.0 |  98.83 | 5 | 30 | FULL |
 | 4 | 12 | 71.7 | arno-pro | 3 |  99.91 |   99.8 |  99.55 |   99.8 | 0 | 114 | FULL |
@@ -41,24 +41,24 @@ Generated: 2026-06-11T19:57:33Z
 
 ## Per-Volume Details
 
-### Volume 13 — Need: 77.3 (❌ Poor) — Rank 1
+### Volume 13 — Need: 81.9 (❌ Poor) — Rank 1
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
 - **Treatises:** 5
 - **QA level:** FULL
-- **convert.py:** Yes (281 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=2, footnotes=None
-- **Word coverage:** 90.14
-- **Greek coverage:** 95.21
+- **convert.py:** Yes (285 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.57
+- **Greek coverage:** 99.22
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 90.40
-- **Latin tagging:** 3.93
-- **Latin translation:** 88.46
+- **Latin coverage:** 99.35
+- **Latin tagging:** 53.26
+- **Latin translation:** 42.30
 - **Citations:** total=18, unresolved=0
-- **Splits:** 9
-- **Regressions:** 1
-- **Suspected anomalies:** 76
+- **Splits:** 29
+- **Regressions:** 0
+- **Suspected anomalies:** 134
 - **Unmatched quotes:** 70
 - **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
 

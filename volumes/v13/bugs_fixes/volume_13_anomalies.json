@@ -1,13 +1,13 @@
 {
-  "volume": 13,
-  "total_words_audited": 303081,
-  "total_anomalies_count": 76,
+  "volume": "13",
+  "total_words_audited": 297303,
+  "total_anomalies_count": 134,
   "anomalies": {
     "Hyphenation Anomalies": [
       {
         "target": "pole-star",
         "description": "Splittable word (rejoins to valid word 'polestar')",
-        "chapter": "Chapter 2 - Of the same among the Jews, and of the duty of that people distinct from their chu...",
+        "chapter": "Chapter 2.",
         "contexts": [
           "... men to deflect from the golden rule and heavenly pole-star in the investigation of the truth, especially in ..."
         ]
@@ -15,7 +15,7 @@
       {
         "target": "fore-named",
         "description": "Splittable word (rejoins to valid word 'forenamed')",
-        "chapter": "Chapter 2 - Of the same among the Jews, and of the duty of that people distinct from their chu...",
+        "chapter": "Chapter 2.",
         "contexts": [
           "... cessarily to be handled in my observations on the fore-named treatise, I shall omit until more leisure and an ..."
         ]
@@ -23,7 +23,7 @@
       {
         "target": "fore-cited",
         "description": "Splittable word (rejoins to valid word 'forecited')",
-        "chapter": "Chapter 2 - Of the same among the Jews, and of the duty of that people distinct from their chu...",
+        "chapter": "Chapter 2.",
         "contexts": [
           "... y, I conceive that the usual answers given to the fore-cited places, when objected, are not sufficient. Take a ..."
         ]
@@ -31,7 +31,7 @@
       {
         "target": "bed-chamber",
         "description": "Splittable word (rejoins to valid word 'bedchamber')",
-        "chapter": "Chapter 6 - What assurance men extraordinarily called can give to others that they are so call...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... rdinarily to be known, \u2014 as Elisha discovered the bed-chamber discourse of the king of Syria (not that by virtu ..."
         ]
@@ -39,7 +39,7 @@
       {
         "target": "fore-named",
         "description": "Splittable word (rejoins to valid word 'forenamed')",
-        "chapter": "Chapter 7 - The second way whereby a man may be called extraordinarily.",
+        "chapter": "Chapter 7.",
         "contexts": [
           "... himself thereunto called of God, by virtue of the fore-named and other the like rules? Truly, for my part (und ..."
         ]
@@ -47,7 +47,7 @@
       {
         "target": "new-fangledness",
         "description": "Splittable word (rejoins to valid word 'newfangledness')",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... rue shepherd, but have promiscuously followed the new-fangledness and heretical errors of every time-serving starve ..."
         ]
@@ -55,7 +55,7 @@
       {
         "target": "time-serving",
         "description": "Splittable word (rejoins to valid word 'timeserving')",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... the new-fangledness and heretical errors of every time-serving starver of souls. Whence proceedeth all that mise ..."
         ]
@@ -63,7 +63,7 @@
       {
         "target": "Sabbath-breakers",
         "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... e could see the many swearers, and drunkards, and Sabbath-breakers, etc., in this nation, guilty only of this crime! ..."
         ]
@@ -71,7 +71,7 @@
       {
         "target": "God-fearing",
         "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... must not be condemned because they may be abused. God-fearing men will remember Korah, knowing, as one says wel ..."
         ]
@@ -129,7 +129,7 @@
       {
         "target": "non-submission",
         "description": "Splittable word (rejoins to valid word 'nonsubmission')",
-        "chapter": "Chapter 2 - The nature of schism to be determined from Scripture only \u2014 This principle by some...",
+        "chapter": "Chapter 2.",
         "contexts": [
           "... istributions of power, are the church intended. A non-submission to their rules and constitutions is the schism we ..."
         ]
@@ -137,7 +137,7 @@
       {
         "target": "Self-justiciaries",
         "description": "Capitalized hyphenation with unrecognized right particle",
-        "chapter": "Chapter 4 - Several acceptations in the Scripture of the name \"church\" \u2014 Of the church catholi...",
+        "chapter": "Chapter 4.",
         "contexts": [
           "... acles no evidence of holiness \u2014 Partly ignorant \u2014 Self-justiciaries \u2014 Idolatrous \u2014 Worshippers of the beast. TO begi ...",
           "... ill be useless. 3. Add to these all hypocritical self-justiciaries, who seek for a righteousness as it were by the w ..."
@@ -146,7 +146,7 @@
       {
         "target": "Jabesh-gilead",
         "description": "Capitalized hyphenation with unrecognized left particle",
-        "chapter": "Chapter 4 - Several acceptations in the Scripture of the name \"church\" \u2014 Of the church catholi...",
+        "chapter": "Chapter 4.",
         "contexts": [
           "... hose that Nahash would have exacted on the men of Jabesh-gilead; which were but the loss of one eye, with an abid ..."
         ]
@@ -154,7 +154,7 @@
       {
         "target": "non-submission",
         "description": "Splittable word (rejoins to valid word 'nonsubmission')",
-        "chapter": "Chapter 5 - Of the catholic church visible \u2014 Of the nature thereof \u2014 In what sense the univers...",
+        "chapter": "Chapter 5.",
         "contexts": [
           "... eriors and governors; and so seeking to justify a non-submission to any of their constitutions in the things of th ..."
         ]
@@ -162,7 +162,7 @@
       {
         "target": "law-making",
         "description": "Splittable word (rejoins to valid word 'lawmaking')",
-        "chapter": "Chapter 5 - Of the catholic church visible \u2014 Of the nature thereof \u2014 In what sense the univers...",
+        "chapter": "Chapter 5.",
         "contexts": [
           "... reasons I have to call into question the power of law-making for the whole society of Christians in the world, ..."
         ]
@@ -178,7 +178,7 @@
       {
         "target": "co-partnership",
         "description": "Splittable word (rejoins to valid word 'copartnership')",
-        "chapter": "Chapter 2 - AN ANSWER TO THE APPENDIX OF MR. C.'S CHARGE.",
+        "chapter": "Chapter 2.",
         "contexts": [
           "... esent difference, upon the general account of the co-partnership with me of the most inquiring men in this generat ..."
         ]
@@ -186,7 +186,7 @@
       {
         "target": "non-assistance",
         "description": "Splittable word (rejoins to valid word 'nonassistance')",
-        "chapter": "Chapter 10 - INDEPENDENCY NO SCHISM.",
+        "chapter": "Chapter 10",
         "contexts": [
           "... . The present pretended want of capacity from the non-assistance of the magistrate, whilst perfect liberty for ref ..."
         ]
@@ -349,7 +349,7 @@
       {
         "target": "birth-right",
         "description": "Splittable word (rejoins to valid word 'birthright')",
-        "chapter": "Posthumous.",
+        "chapter": "The State of the Kingdom With Respect to the Present Bill Again",
         "contexts": [
           "... om corporations (humbly conceived contrary to the birth-right privilege of every Englishman unconvicted of any ..."
         ]
@@ -359,7 +359,7 @@
       {
         "target": "t )",
         "description": "Spaced closing parenthesis",
-        "chapter": "Chapter 1 - Of the administration of holy things among the patriarchs before the law.",
+        "chapter": "Chapter 1.",
         "contexts": [
           "... distinct families (which sometimes were very great ), politics and economics being of the same extent, ..."
         ]
@@ -367,7 +367,7 @@
       {
         "target": "Ans .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... ies of faction and schism in the church of God.\" Ans . That (under correction) I conceive the law layeth ..."
         ]
@@ -375,7 +375,7 @@
       {
         "target": "s )",
         "description": "Spaced closing parenthesis",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... rform; (2.) Children (as they report of Athanasius ) might baptize; (3.) Every common Christian might ..."
         ]
@@ -391,7 +391,7 @@
       {
         "target": "arising ;",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 6 - Romanists' charge of schism on the account of separation from the church, catholic...",
+        "chapter": "Chapter 6.",
         "contexts": [
           "... grace, and the acceptance of the obedience thence arising ; \u2014 that there is any justification at all, consist ..."
         ]
@@ -399,7 +399,7 @@
       {
         "target": "denied ;",
         "description": "Spaced punctuation (space before character)",
-        "chapter": "Chapter 8 - Of the church of England \u2014 The charge of schism in the name thereof proposed and c...",
+        "chapter": "Chapter 8.",
         "contexts": [
           "... erated, false doctrine broached, the resurrection denied ; \u2014 and yet Paul advises no man to separate from it ..."
         ]
@@ -423,7 +423,7 @@
       {
         "target": "3 .",
         "description": "Spaced period (space before period)",
-        "chapter": "Chapter 4 - OF THE NATURE OF SCHISM.",
+        "chapter": "Chapter 4.",
         "contexts": [
           "... which he is pleased to make parallel unto them. 3 . Grant all this, yet this proves nothing to the ca ..."
         ]
@@ -496,7 +496,7 @@
       {
         "target": "..",
         "description": "Duplicate period (double dot)",
-        "chapter": "Posthumous.",
+        "chapter": "The Present Distresses on Nonconformists Examined.",
         "contexts": [
           "... owards persons who do not decline a trial is known.. 8. But besides all that hath been spoken as unto ..."
         ]
@@ -504,21 +504,54 @@
     ],
     "OCR & Bracket Residues": [
       {
+        "target": "dis]qualifications",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "A Survey of the First Chapter.",
+        "contexts": [
+          "... servance as he judgeth himself to fall under the [dis]qualifications mentioned, and when he hath done so declare that ..."
+        ]
+      },
+      {
         "target": "subsist[ing",
         "description": "OCR residue containing stray opening bracket/paren",
-        "chapter": "Posthumous.",
+        "chapter": "The State of the Kingdom With Respect to the Present Bill Again",
         "contexts": [
           "... nalties, or that they may not [be prevented from] subsist[ing] elsewhere. In the meantime, all trust will fail ..."
         ]
       }
     ],
-    "Mixed-Case Capitalization Errors": [],
+    "Mixed-Case Capitalization Errors": [
+      {
+        "target": "particuIar",
+        "description": "Mixed-case capitalization error",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... ses; and those again subdivided into parochial or particuIar congregations. Now, the union of this church cons ..."
+        ]
+      },
+      {
+        "target": "ChurchPeace",
+        "description": "Mixed-case capitalization error",
+        "chapter": "A Brief Vindication of the Nonconformists From the Charge of Sc",
+        "contexts": [
+          "... f a nameless author, concerning Evangelical Love, ChurchPeace, and Unity; and together with some concessions o ..."
+        ]
+      },
+      {
+        "target": "MiI",
+        "description": "Mixed-case capitalization error",
+        "chapter": "A Survey of a Discourse Concerning Eccleslastical Polity.",
+        "contexts": [
+          "... nullos habeo scriptos, sic memini tamen.\" [Plaut. MiI. Glor., 1:1, 42.] Although the particular insta ..."
+        ]
+      }
+    ],
     "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [
       {
         "target": "12.",
         "description": "List sequence starts at 12 instead of 1",
-        "chapter": "Chapter 1 - Of the administration of holy things among the patriarchs before the law.",
+        "chapter": "Chapter 1.",
         "contexts": [
           "... ution, yet do I not thence conclude, with Aquin. 12. ae. quest. 3. a 1. (if I noted right at the read ..."
         ]
@@ -526,19 +559,19 @@
       {
         "target": "3. ... 10.",
         "description": "List sequence jump (skipped from 3 to 10)",
-        "chapter": "Chapter 4 - Several acceptations in the Scripture of the name \"church\" \u2014 Of the church catholi...",
+        "chapter": "Chapter 4.",
         "contexts": []
       },
       {
         "target": "3. ... 22.",
         "description": "List sequence jump (skipped from 3 to 22)",
-        "chapter": "Chapter 4 - Several acceptations in the Scripture of the name \"church\" \u2014 Of the church catholi...",
+        "chapter": "Chapter 4.",
         "contexts": []
       },
       {
         "target": "29.",
         "description": "List sequence starts at 29 instead of 1",
-        "chapter": "Chapter 5 - Of the catholic church visible \u2014 Of the nature thereof \u2014 In what sense the univers...",
+        "chapter": "Chapter 5.",
         "contexts": [
           "... ald. Thes. de Ecclesiastes Nom. et. Defin. Thes. 29. There being, then, in the world a great multitude ..."
         ]
@@ -546,7 +579,7 @@
       {
         "target": "3. ... 7.",
         "description": "List sequence jump (skipped from 3 to 7)",
-        "chapter": "Chapter 5 - Of the catholic church visible \u2014 Of the nature thereof \u2014 In what sense the univers...",
+        "chapter": "Chapter 5.",
         "contexts": []
       },
       {
@@ -559,12 +592,6 @@
         "target": "4. ... 15.",
         "description": "List sequence jump (skipped from 4 to 15)",
         "chapter": "A Brief Vindication of the Nonconformists From the Charge of Sc",
-        "contexts": []
-      },
-      {
-        "target": "10. ... 23.",
-        "description": "List sequence jump (skipped from 10 to 23)",
-        "chapter": "A Survey of the Sixth Chapter.",
         "contexts": []
       },
       {
@@ -592,33 +619,473 @@
         ]
       }
     ],
-    "Invalid Bible References": [
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
       {
-        "target": "Philippians 50",
-        "description": "Invalid Bible reference (chapter 50 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 3 - Containing a digression concerning the name of \"priests,\" the right of Christians ...",
+        "target": "THE glass of our lives seems to run and keep pace with the extremity of time. The end of those \"ends of the world\" which...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Preface (The Duty of Pastors and People Distinguished)",
         "contexts": [
-          "... on the sacrifice and service of your faith, etc., Philippians 50:17 2:17. Now, these and sundry other services acc ..."
+          "THE glass of our lives seems to run and keep pace with the extremity of time. The end of those \"ends of the world\" which..."
         ]
       },
       {
-        "target": "Jude 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 1 for Jude)",
-        "chapter": "Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...",
+        "target": "We are so parts of him, of his mystical body, that we and he become thereby, as it were, one Christ: \"For as the body is...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 3.",
         "contexts": [
-          "... 6; to edify one another in their most holy faith, Jude 20; to speak to themselves in psalms, and hymns, and ..."
+          "We are so parts of him, of his mystical body, that we and he become thereby, as it were, one Christ: \"For as the body is..."
         ]
       },
       {
-        "target": "Jude 19",
-        "description": "Invalid Bible reference (chapter 19 exceeds max 1 for Jude)",
+        "target": "[2.] By virtue of this union there is such an analogy between that which Christ hath done for us as a priest and what he...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "[2.] By virtue of this union there is such an analogy between that which Christ hath done for us as a priest and what he..."
+        ]
+      },
+      {
+        "target": "so Hebrews 13:15, \"Let us offer the sacrifice of praise to God,\" \u2014 that is, the \"fruit of our lips.\" Secondly, Of good w...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "so Hebrews 13:15, \"Let us offer the sacrifice of praise to God,\" \u2014 that is, the \"fruit of our lips.\" Secondly, Of good w..."
+        ]
+      },
+      {
+        "target": "But if these preachers themselves do not belong unto the covenant of grace, as God oftentimes, out of his care for his f...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "But if these preachers themselves do not belong unto the covenant of grace, as God oftentimes, out of his care for his f..."
+        ]
+      },
+      {
+        "target": "Obj. 2. \"Men are apt to pride themselves in their gifts, and flatter themselves in their performances, so that let them ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "Obj. 2. \"Men are apt to pride themselves in their gifts, and flatter themselves in their performances, so that let them ..."
+        ]
+      },
+      {
+        "target": "Chapter 4:7, \"We have this treasure in earthen vessels, that the excellency of the power may be of God, and not of us.\" ...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Eshcol; a Cluster of the Fruit of Canaan.",
+        "contexts": [
+          "Chapter 4:7, \"We have this treasure in earthen vessels, that the excellency of the power may be of God, and not of us.\" ..."
+        ]
+      },
+      {
+        "target": "RULE IV. Sedulous care and endeavoring for the preservation of unity, both in particular and in general Philippians 2:1-...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Eshcol; a Cluster of the Fruit of Canaan.",
+        "contexts": [
+          "RULE IV. Sedulous care and endeavoring for the preservation of unity, both in particular and in general Philippians 2:1-..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] having the same love, being of one accord, of one mind. Let nothing be done through strife or vain-glory;...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Eshcol; a Cluster of the Fruit of Canaan.",
+        "contexts": [
+          "[[BLOCKQUOTE]] having the same love, being of one accord, of one mind. Let nothing be done through strife or vain-glory;..."
+        ]
+      },
+      {
+        "target": "RULE VII. Mutually to bear with each other's infirmities, weakness, tenderness, failings, in meekness, patience, pity, a...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Eshcol; a Cluster of the Fruit of Canaan.",
+        "contexts": [
+          "RULE VII. Mutually to bear with each other's infirmities, weakness, tenderness, failings, in meekness, patience, pity, a..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] meekness, long-suffering; forbearing one another, and forgiving one another, if any man have a quarrel ag...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Eshcol; a Cluster of the Fruit of Canaan.",
+        "contexts": [
+          "[[BLOCKQUOTE]] meekness, long-suffering; forbearing one another, and forgiving one another, if any man have a quarrel ag..."
+        ]
+      },
+      {
+        "target": "The evidence which remains of an indulgence in the best of them \u03c4\u1fc7 \u1f00\u03bc\u03b5\u03c4\u03c1\u03af\u1fb3 \u03c4\u1fc6\u03c2 \u1f00\u03bd\u03b8\u03bf\u03bb\u03ba\u1fc6\u03c2, in this business especially, de...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 1.",
+        "contexts": [
+          "The evidence which remains of an indulgence in the best of them \u03c4\u1fc7 \u1f00\u03bc\u03b5\u03c4\u03c1\u03af\u1fb3 \u03c4\u1fc6\u03c2 \u1f00\u03bd\u03b8\u03bf\u03bb\u03ba\u1fc6\u03c2, in this business especially, de..."
+        ]
+      },
+      {
+        "target": "3. Here is no mention of any subtraction of obedience from bishops or rulers, in what degree soever, no exhortation to r...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "3. Here is no mention of any subtraction of obedience from bishops or rulers, in what degree soever, no exhortation to r..."
+        ]
+      },
+      {
+        "target": "He speaks only of those whom Christ loved antecedently to his dying for them, whereof his love to them was the cause: wh...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 4.",
+        "contexts": [
+          "He speaks only of those whom Christ loved antecedently to his dying for them, whereof his love to them was the cause: wh..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Ecclesia universalis, est communio, seu societas omnium coetuum\" (I had rather he had said, and he had d...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Ecclesia universalis, est communio, seu societas omnium coetuum\" (I had rather he had said, and he had d..."
+        ]
+      },
+      {
+        "target": "Christum servatorem habere se profitentur, uno in evangelio propositum, iisdem promissionibus compreheusum, quas obsigna...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "Christum servatorem habere se profitentur, uno in evangelio propositum, iisdem promissionibus compreheusum, quas obsigna..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Laus ei qui manifestavit humilitatem suam, celavit inter nos divinitatem suam permeantem donec coepit in...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Laus ei qui manifestavit humilitatem suam, celavit inter nos divinitatem suam permeantem donec coepit in..."
+        ]
+      },
+      {
+        "target": "Bagdad was a city built not long before by the Saracens, wherein, it is probable, there were not at that time any Christ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "Bagdad was a city built not long before by the Saracens, wherein, it is probable, there were not at that time any Christ..."
+        ]
+      },
+      {
+        "target": "In the late practice of men, that expression of the \"catholic church hath been an \"individuum vagum,\" few knowing what t...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "In the late practice of men, that expression of the \"catholic church hath been an \"individuum vagum,\" few knowing what t..."
+        ]
+      },
+      {
+        "target": "An organical political body is a thing of another nature. A politic body or commonwealth united under some form of rule ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "An organical political body is a thing of another nature. A politic body or commonwealth united under some form of rule ..."
+        ]
+      },
+      {
+        "target": "[As] for the aggravations of the sin of schism from some ancient writers, \u2014 Austin and Optatus, men interested in the co...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 6.",
+        "contexts": [
+          "[As] for the aggravations of the sin of schism from some ancient writers, \u2014 Austin and Optatus, men interested in the co..."
+        ]
+      },
+      {
+        "target": "In all his treatises on schism, Owen adheres with steadiness and decision to his profession as an Independent. He makes,...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Prefatory Note (A Review of the True Nature of Schism)",
+        "contexts": [
+          "In all his treatises on schism, Owen adheres with steadiness and decision to his profession as an Independent. He makes,..."
+        ]
+      },
+      {
+        "target": "2. The professed design of the whole is to prove \"Independency,\" as he is pleased to call it, \u2014 which what it is he decl...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 1",
+        "contexts": [
+          "2. The professed design of the whole is to prove \"Independency,\" as he is pleased to call it, \u2014 which what it is he decl..."
+        ]
+      },
+      {
+        "target": "Such particulars as seem to be of any importance to our business in hand may be remarked as we pass through it. Page 1, ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "Such particulars as seem to be of any importance to our business in hand may be remarked as we pass through it. Page 1, ..."
+        ]
+      },
+      {
+        "target": "2. That none were truly baptized, or entered members of the church of Christ, but by some minister of their party.\" Thes...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 3.",
+        "contexts": [
+          "2. That none were truly baptized, or entered members of the church of Christ, but by some minister of their party.\" Thes..."
+        ]
+      },
+      {
+        "target": "1. \"That he hath disproved that sense or precise signification of the word in Scripture;'' how well, let the reader judg...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "1. \"That he hath disproved that sense or precise signification of the word in Scripture;'' how well, let the reader judg..."
+        ]
+      },
+      {
+        "target": "Exceptions are, in the next place, attempted to be put in to my assertion, that there is no example in the Scripture of ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "Exceptions are, in the next place, attempted to be put in to my assertion, that there is no example in the Scripture of ..."
+        ]
+      },
+      {
+        "target": "He concludes this chapter with an exception to my assertion, that \"if the catholic church be a political body, it must h...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 7.",
+        "contexts": [
+          "He concludes this chapter with an exception to my assertion, that \"if the catholic church be a political body, it must h..."
+        ]
+      },
+      {
+        "target": "2. Jesus Christ is a visible head, yea, sometimes more, 'visus,' seen of men whilst on earth; though now for a time, in ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 7.",
+        "contexts": [
+          "2. Jesus Christ is a visible head, yea, sometimes more, 'visus,' seen of men whilst on earth; though now for a time, in ..."
+        ]
+      },
+      {
+        "target": "2. As to the worship established in this nation by law (he means the way of worship, for the substantials of it we are a...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 10",
+        "contexts": [
+          "2. As to the worship established in this nation by law (he means the way of worship, for the substantials of it we are a..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"I am punctually of the same mind still,\" p. 40 [p. 226 ]. Yet had said in his first book, p. 46 [p. 43],...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
         "chapter": "An Answer to a Late Treatise About the Nature of Schism.",
         "contexts": [
-          "... etween us. Of schism, Acts 20:30, Hebrews 10:25, Jude 19, there is no mention; nor are those places interp ...",
-          "... upon? and doth not the apostle make use of them? Jude 19 hath been so far spoken unto already that it may ..."
+          "[[BLOCKQUOTE]] \"I am punctually of the same mind still,\" p. 40 [p. 226 ]. Yet had said in his first book, p. 46 [p. 43],..."
+        ]
+      },
+      {
+        "target": "2. Authority from the church,\" \u2014 if he do not equivocate.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "An Answer to a Late Treatise About the Nature of Schism.",
+        "contexts": [
+          "2. Authority from the church,\" \u2014 if he do not equivocate."
+        ]
+      },
+      {
+        "target": "3. To assure a man that he is extraordinarily called, he gives three ways: \"1. Immediate revelation;",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "An Answer to a Late Treatise About the Nature of Schism.",
+        "contexts": [
+          "3. To assure a man that he is extraordinarily called, he gives three ways: \"1. Immediate revelation;"
+        ]
+      },
+      {
+        "target": "3. Some outward acts of providence;\" \u2014 the two last whereof are mediate calls, p. 30 [p. 29.] All that is here remarked ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "An Answer to a Late Treatise About the Nature of Schism.",
+        "contexts": [
+          "3. Some outward acts of providence;\" \u2014 the two last whereof are mediate calls, p. 30 [p. 29.] All that is here remarked ..."
+        ]
+      },
+      {
+        "target": "1. \"The church government from which I desire not to wander is the presbyterial.''",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "An Answer to a Late Treatise About the Nature of Schism.",
+        "contexts": [
+          "1. \"The church government from which I desire not to wander is the presbyterial.''"
+        ]
+      },
+      {
+        "target": "Let this reverend author make what use of it he please, I cannot but again tell him that these things become neither him...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "An Answer to a Late Treatise About the Nature of Schism.",
+        "contexts": [
+          "Let this reverend author make what use of it he please, I cannot but again tell him that these things become neither him..."
+        ]
+      },
+      {
+        "target": "\"Is it that they fear the reproaches of the people, which some few of the most eminent persons among them have found the...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Brief Vindication of the Nonconformists From the Charge of Sc",
+        "contexts": [
+          "\"Is it that they fear the reproaches of the people, which some few of the most eminent persons among them have found the..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] look on our churches as true churches, and that they may lawfully communicate with us in prayers and sacr...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Brief Vindication of the Nonconformists From the Charge of Sc",
+        "contexts": [
+          "[[BLOCKQUOTE]] look on our churches as true churches, and that they may lawfully communicate with us in prayers and sacr..."
+        ]
+      },
+      {
+        "target": "Owen in the following work confines himself to a refutation of the slavish and extravagant notions respecting magistrati...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Prefatory Note (A Review of the True Nature of Schism)",
+        "contexts": [
+          "Owen in the following work confines himself to a refutation of the slavish and extravagant notions respecting magistrati..."
+        ]
+      },
+      {
+        "target": "But yet if any should, by a surprisal, indulge themselves herein, and one should seriously inquire what it is that stirr...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "A Survey of a Discourse Concerning Eccleslastical Polity.",
+        "contexts": [
+          "But yet if any should, by a surprisal, indulge themselves herein, and one should seriously inquire what it is that stirr..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Egregiam verb laudem et spolia ampla! [AEn., 4:93.]",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Survey of a Discourse Concerning Eccleslastical Polity.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Egregiam verb laudem et spolia ampla! [AEn., 4:93.]"
+        ]
+      },
+      {
+        "target": "There are two or three heads which the remainder of this prefatory discourse may be reduced unto: First, a magnificent p...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "A Survey of a Discourse Concerning Eccleslastical Polity.",
+        "contexts": [
+          "There are two or three heads which the remainder of this prefatory discourse may be reduced unto: First, a magnificent p..."
+        ]
+      },
+      {
+        "target": "Thus, in the title of the book he asserts \"the power of the magistrate over the consciences of men;\" elsewhere [he] conf...",
+        "description": "Paragraph has unmatched double quotes (count: 27)",
+        "chapter": "A Survey of the First Chapter.",
+        "contexts": [
+          "Thus, in the title of the book he asserts \"the power of the magistrate over the consciences of men;\" elsewhere [he] conf..."
+        ]
+      },
+      {
+        "target": "As we formerly said, Nonconformists, who are unacquainted with the mysteries of things of this nature, must needs desire...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Survey of the First Chapter.",
+        "contexts": [
+          "As we formerly said, Nonconformists, who are unacquainted with the mysteries of things of this nature, must needs desire..."
+        ]
+      },
+      {
+        "target": "First, then, the very name of virtue, in the sense wherein it is commonly used and received, comes from the schools of p...",
+        "description": "Paragraph has unmatched double quotes (count: 55)",
+        "chapter": "A Survey of the Second Chapter.",
+        "contexts": [
+          "First, then, the very name of virtue, in the sense wherein it is commonly used and received, comes from the schools of p..."
+        ]
+      },
+      {
+        "target": "Secondly, I cannot think we have here a complete representation of Christian religion, nor an induction of all its parti...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Survey of the Second Chapter.",
+        "contexts": [
+          "Secondly, I cannot think we have here a complete representation of Christian religion, nor an induction of all its parti..."
+        ]
+      },
+      {
+        "target": "It is farther added, that the \"conversion of such a one is more hopeless than the vilest and most notorious sinner's; an...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "A Survey of the Second Chapter.",
+        "contexts": [
+          "It is farther added, that the \"conversion of such a one is more hopeless than the vilest and most notorious sinner's; an..."
+        ]
+      },
+      {
+        "target": "If it be the instances that are new, I wish again I knew what were more in them than the actual and occasional exercise ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "A Survey of the Second Chapter.",
+        "contexts": [
+          "If it be the instances that are new, I wish again I knew what were more in them than the actual and occasional exercise ..."
+        ]
+      },
+      {
+        "target": "But upon the whole matter our author affirms, \"That in all ages of the world, God hath left the management of his outwar...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "A Survey of the Third Chapter.",
+        "contexts": [
+          "But upon the whole matter our author affirms, \"That in all ages of the world, God hath left the management of his outwar..."
+        ]
+      },
+      {
+        "target": "Particular applications to the manners, customs, usages of places, times, countries, \u2014 which is the proper field of huma...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "contexts": [
+          "Particular applications to the manners, customs, usages of places, times, countries, \u2014 which is the proper field of huma..."
+        ]
+      },
+      {
+        "target": "And when God had given out his institutions and the whole order of his worship, it being fixed in the church accordingly...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "contexts": [
+          "And when God had given out his institutions and the whole order of his worship, it being fixed in the church accordingly..."
+        ]
+      },
+      {
+        "target": "The other part of the objection which he proposeth to himself is laid down by him in these words: \"If Jesus Christ have ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "contexts": [
+          "The other part of the objection which he proposeth to himself is laid down by him in these words: \"If Jesus Christ have ..."
+        ]
+      },
+      {
+        "target": "The ensuing paragraphs about \"Christian liberty, adding to the commands of God, and Popery,\" are of the same nature with...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "contexts": [
+          "The ensuing paragraphs about \"Christian liberty, adding to the commands of God, and Popery,\" are of the same nature with..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Philand. If the prince establish any religion, whatever it be, you must by your oath obey it.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Philand. If the prince establish any religion, whatever it be, you must by your oath obey it."
+        ]
+      },
+      {
+        "target": "Theoph. The poorest wretch that is may be supreme governor of his own heart; princes rule the public and external action...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "contexts": [
+          "Theoph. The poorest wretch that is may be supreme governor of his own heart; princes rule the public and external action..."
+        ]
+      },
+      {
+        "target": "SIR, I HAVE considered the discourses sent me, published lately, about Indulgence and Toleration. At their first view, I...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Indulgence and Toleration Considered.",
+        "contexts": [
+          "SIR, I HAVE considered the discourses sent me, published lately, about Indulgence and Toleration. At their first view, I..."
+        ]
+      },
+      {
+        "target": "Dum pluit in terras, ut possint sole reducto Exercere diem.\" \u2014 [AEn. x., 804-808.] Their reason will be better attended ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Indulgence and Toleration Considered.",
+        "contexts": [
+          "Dum pluit in terras, ut possint sole reducto Exercere diem.\" \u2014 [AEn. x., 804-808.] Their reason will be better attended ..."
+        ]
+      },
+      {
+        "target": "IN the execution of an act entitled, \"An Act against Seditious Conventicles'' (whereof large experience hath manifested ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Present Distresses on Nonconformists Examined.",
+        "contexts": [
+          "IN the execution of an act entitled, \"An Act against Seditious Conventicles'' (whereof large experience hath manifested ..."
         ]
       }
-    ],
-    "List Formatting Inconsistencies": []
+    ]
   }
 }

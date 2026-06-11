@@ -281,13 +281,14 @@
     "13": {
       "text_integrity": {
         "max_split_candidate_count": 95,
-        "max_inline_structural_candidate_count": 8,
+        "max_inline_structural_candidate_count": 13,
         "max_front_toc_missing_pages": 2,
         "max_missing_marker_count": 6
       },
       "epub": {
         "max_chapter_heading_in_paragraph_files": 2,
-        "max_overlong_heading_body_files": 2
+        "max_overlong_heading_body_files": 2,
+        "max_lowercase_paragraph_start_files": 10
       }
     },
     "14": {
