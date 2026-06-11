@@ -12,175 +12,72 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 29,
+      "observed": 0,
       "budget": 95,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "ays of mercy and grace which are necessary to carry you along through all your engagements, until you arrive at the haven of everlasting glory, where you would be. I rest your most",
-          "next": "obliged servant in Jesus Christ, our common Master"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "obliged servant in Jesus Christ, our common Master",
-          "next": "John Owen"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "From these and the like places it appears to me, that, —",
-          "next": "There is a general obligation on all Christians to promote the conversion and instruction of sinners, and men erring from the right way."
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "At least, we may deduce from them, by the way of analogy, that, —",
-          "next": "Whatsoever necessary truth is revealed to any out of the word of God, not before known, he ought to have an uncontradicted liberty of declaring that truth, provided that he use suc"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "Whence.it appears, that, —",
-          "next": "Truth revealed unto any carries along with it an unmovable persuasion of conscience (which is powerfully obligatory) that it ought to be published and spoken to others."
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "ved, yet a right belief whereof is necessary to salvation; and, farther, out of the same word shall discover unto him the wickedness of that apostasy, and the means to remove it, —",
-          "next": "I demand whether that man, without expecting any call from the fomenters and maintainers of those errors with which the church at that time is only not destroyed, may not preach, p"
-        },
-        {
-          "file": "EPUB/ch012.xhtml",
-          "previous": " easily discernible both what the people of God, distinct from their pastors, in a well-ordered church, may do in this kind whereof we treat, and how. In general, then, I assert, —",
-          "next": "That, for the improving of knowledge, the increasing of Christian charity, for the furtherance of a strict and holy communion of that spiritual love and amity which ought to be amo"
-        },
-        {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "ll, they have not an equal respect unto all God's ordinances. Wherefore, that the coming together in this sort may be for the better, and not for the worse, observe these things: —",
-          "next": "Now, for what gifts (that are, as before, freely bestowed) whose exercise is permitted unto such men so assembled; I mean in a private family, or two or three met ὁμοθμυαδόν , in o"
-        },
-        {
-          "file": "EPUB/ch012.xhtml",
-          "previous": ", with opening my desire for the increasing of knowledge among the people, of which I take this to be an effectual means, yet I will give brief answers to the several objections: —",
-          "next": "Objection 1. \"Then this seems to favor all allowance of licentious conventicles, which in all places the laws have condemned, and learned men in all ages have abhorred, as the semi"
-        },
-        {
-          "file": "EPUB/ch015.xhtml",
-          "previous": "To The Reader",
-          "next": "THERE are, Christian reader, certain principles in church affairs generally consented unto by all men aiming at reformation and the furtherance of the power of godliness therein, h"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 13,
+      "observed": 0,
       "budget": 13,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch009.xhtml",
-          "text": "Now, three ways may a man receive, and be assured that he hath received, this divine mission, or know that he is called of God to the preaching of the word; I mean not that persuasion of divine concurrence which is necessary also for them that are partakers of"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Motives to the observance of this rule are: — 1. The name wherein they speak and administer, 2 Corinthians 5:20. 2. The work which they do, 1 Corinthians 3:9; 2 Corinthians 6:1; Timothy 4:16. 3. The return that they make, Hebrews 8:1 8:17. 4. The regard that t"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Explication III. The greatness of the work (for which who is sufficient? 2 Corinthians 2:16); — the strength of the opposition which lies against it, 1 Corinthians 16:9; Revelation 12:12; 2 Timothy 4:3-5; — the concernment of men's souls therein, Acts 20:26-28"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Let motives hereunto be, — 1. God's command. 2. Our own preservation from sin and protection from punishment, that with others we be not infected and plagued. 3. Christ's delight in the purity of his ordinances. 4. His distinguishing love to his saints; provid"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Now, to a right performance of this duty, and in the discharge of it, are required, — 1. A due valuation, strong desire, and high esteem of the church's prosperity, in every member of it, Psalm 122:6. 2. Bowels of compassion as a fruit of love; to be sensible "
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Motives to this duty are: — 1. The love of God unto us, 1 John 3:16. 2. The glory of the gospel, exceedingly exalted thereby, Titus 3:8,14; Matthew 5:7. 3. The union whereinto we are brought in Christ, with the common inheritance promised to us all. 4. The tes"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Now, to a close adhering to the church wherein we walk in fellowship, in all conditions whatsoever, without dismission attained upon just and equitable grounds, for the embracing of communion in some other churches. Motives are, — 1. The eminency and excellenc"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Motives hereunto are, — 1. Christ's example; 2. Scripture precepts; 3. God's not accepting persons; 4. Joint participation of the same common faith, hope, etc; 5. The unprofitableness of all causes of outward differences in the things of God."
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "Now, admonition is twofold: — 1. Authoritative, by the way of power; 2. Fraternal, by the way of love. The first, again, is twofold: —"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "These and the like things being duly weighed, let every brother, with Christian courage, admonish from the word every one whom he judgeth to walk disorderly in any particular whatsoever, not to suffer sin upon him, being ready to receive content and satisfacti"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
-      "observed": 25,
+      "observed": 15,
       "budget": 25,
       "status": "ok",
       "samples": [
         {
-          "phrase": "brief vindication of the nonconformists from the charge of schism",
+          "phrase": "not fear the lord god hath spoken who can but",
           "count": 3
         },
         {
-          "phrase": "an account of the grounds and reasons on which protestant",
+          "phrase": "fear the lord god hath spoken who can but prophesy",
           "count": 3
         },
         {
-          "phrase": "account of the grounds and reasons on which protestant dissenters",
+          "phrase": "remember them which have the rule over you who have",
           "count": 3
         },
         {
-          "phrase": "of the grounds and reasons on which protestant dissenters desire",
+          "phrase": "them which have the rule over you who have spoken",
           "count": 3
         },
         {
-          "phrase": "the lion hath roared who will not fear the lord",
+          "phrase": "which have the rule over you who have spoken unto",
           "count": 3
         },
         {
-          "phrase": "lion hath roared who will not fear the lord god",
+          "phrase": "have the rule over you who have spoken unto you",
           "count": 3
         },
         {
-          "phrase": "hath roared who will not fear the lord god hath",
+          "phrase": "the rule over you who have spoken unto you the",
           "count": 3
         },
         {
-          "phrase": "roared who will not fear the lord god hath spoken",
+          "phrase": "rule over you who have spoken unto you the word",
           "count": 3
         },
         {
-          "phrase": "who will not fear the lord god hath spoken who",
+          "phrase": "over you who have spoken unto you the word of",
           "count": 3
         },
         {
-          "phrase": "will not fear the lord god hath spoken who can",
+          "phrase": "you who have spoken unto you the word of god",
           "count": 3
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 2,
+      "observed": 0,
       "budget": 2,
       "status": "ok",
-      "samples": [
-        {
-          "page": 3,
-          "hit_ratio": 0.25,
-          "sample": "contents of the duty of pastors and people distinguished preface of the administration of holy things among the patriarchs before the law of the same among the jews"
-        },
-        {
-          "page": 8,
-          "hit_ratio": 0.5,
-          "sample": "an answer etc brief vindication of the nonconformists from the charge of schism prefatory note by the editor brief vindication etc truth and innocence vindicated prefatory note by"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Reference continuation splits",
@@ -233,7 +130,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []

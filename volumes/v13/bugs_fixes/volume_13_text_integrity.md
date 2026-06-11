@@ -1,44 +1,44 @@
 # Text Integrity Audit: Volume 13
 
 - Status: **WARN**
-- Warnings: 13
+- Warnings: 6
 - PDF pages: 749
 - EPUB text files: 84
 - EPUB paragraphs/headings: 2253
 
 ## Coverage
 
-- PDF content tokens: 250067
+- PDF content tokens: 247367
 - EPUB content tokens: 250552
-- Approximate PDF-to-EPUB coverage ratio: 0.9957
-- Pages checked: 737
-- Weak page matches: 8
-- Dense source windows checked: 33508
+- Approximate PDF-to-EPUB coverage ratio: 0.9994
+- Pages checked: 725
+- Weak page matches: 3
+- Dense source windows checked: 33423
 - Missing dense source-window pages: 40
-- Front CONTENTS pages checked: 6
-- Missing front CONTENTS pages: 2
+- Front CONTENTS pages checked: 0
+- Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 720
 - Top-of-page windows skipped as unstable: 8
-- Missing top-of-page body windows: 2
+- Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 679
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 1
+- Missing bottom-of-page body windows: 0
 
 ## Paragraphs
 
 - Body paragraphs checked: 1810
-- Possible faulty paragraph splits: 29
-- Structural starts excluded from split warnings: 112
+- Possible faulty paragraph splits: 0
+- Structural starts excluded from split warnings: 111
 - Short fragments: 37
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 13
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 4
 - Roman heading candidates: 4
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
-- Repeated word windows: 25
+- Repeated word windows: 15
 - PDF enumerator markers: 80
 - EPUB enumerator markers: 92
 - Missing enumerator marker forms: 0
@@ -46,9 +46,9 @@
 
 ## Greek / Hebrew
 
-- PDF Greek words: 1046
+- PDF Greek words: 1038
 - EPUB Greek words: 1058
-- Greek word coverage ratio: 0.9922
+- Greek word coverage ratio: 1.0
 - PDF Hebrew words: 12
 - EPUB Hebrew words: 12
 - Hebrew word coverage ratio: 1.0
@@ -59,12 +59,12 @@
 
 ## Latin
 
-- PDF Latin words: 3056
-- EPUB Latin words: 3102
-- EPUB Tagged Latin words: 1652
-- Latin word coverage ratio: 0.9935
-- Latin word tagging ratio: 0.5326
-- Latin clauses checked: 210
+- PDF Latin words: 3026
+- EPUB Latin words: 3101
+- EPUB Tagged Latin words: 1651
+- Latin word coverage ratio: 0.9954
+- Latin word tagging ratio: 0.5324
+- Latin clauses checked: 208
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 409
 - Translated Latin runs: 173
@@ -74,70 +74,23 @@
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
-- page: 3; sample: contents of the duty of pastors and people distinguished preface of the administration of
-- page: 4; sample: of schism aggravations of the evil of schism from the authority of the ancients
-- page: 5; sample: of schism the ground of sin and disorder objections against the former discourse proposed
-- page: 6; sample: their apostasy proved by instances their grand argument in this case proposed answered consequences
-- page: 7; sample: of elijah the last objection waived inferences upon the whole review of the true
-- page: 8; sample: an answer etc brief vindication of the nonconformists from the charge of schism prefatory
-- page: 9; sample: alleged evils from the free exercise of conscience charges of parker against noncomformists mischief
-- page: 11; sample: the duty of pastors and people distinguished or brief discourse touching the administration of
-- page: 12; sample: and independency he afterwards changed his views on church government but in the work
-- page: 14; sample: to the truly noble and my ever honored friend sir edward scot of scot's
-
-## Missing Front CONTENTS Pages
-
-- page: 3; hit_ratio: 0.25; sample: contents of the duty of pastors and people distinguished preface of the administration of holy things among the patriarchs before the law of the same among the jews
-- page: 8; hit_ratio: 0.5; sample: an answer etc brief vindication of the nonconformists from the charge of schism prefatory note by the editor brief vindication etc truth and innocence vindicated prefatory note by
-
-## Missing Top-Of-Page Body Windows
-
-- page: 8; sample: An Answer, etc., A BRIEF VINDICATION OF THE NONCONFORMISTS FROM
-- page: 14; sample: TO THE TRULY NOBLE AND MY EVER HONORED FRIEND, SIR EDWARD SCOT,
-
-## Missing Bottom-Of-Page Body Windows
-
-- page: 9; sample: PREFATORY NOTE BY THE EDITOR, The Grounds and Reasons, etc.,
-
-## Possible Paragraph Splits
-
-- file: EPUB/ch003.xhtml; previous: ays of mercy and grace which are necessary to carry you along through all your engagements, until you arrive at the haven of everlasting glory, where you would be. I rest your most; next: obliged servant in Jesus Christ, our common Master
-- file: EPUB/ch003.xhtml; previous: obliged servant in Jesus Christ, our common Master; next: John Owen
-- file: EPUB/ch011.xhtml; previous: From these and the like places it appears to me, that, —; next: There is a general obligation on all Christians to promote the conversion and instruction of sinners, and men erring from the right way.
-- file: EPUB/ch011.xhtml; previous: At least, we may deduce from them, by the way of analogy, that, —; next: Whatsoever necessary truth is revealed to any out of the word of God, not before known, he ought to have an uncontradicted liberty of declaring that truth, provided that he use suc
-- file: EPUB/ch011.xhtml; previous: Whence.it appears, that, —; next: Truth revealed unto any carries along with it an unmovable persuasion of conscience (which is powerfully obligatory) that it ought to be published and spoken to others.
-- file: EPUB/ch011.xhtml; previous: ved, yet a right belief whereof is necessary to salvation; and, farther, out of the same word shall discover unto him the wickedness of that apostasy, and the means to remove it, —; next: I demand whether that man, without expecting any call from the fomenters and maintainers of those errors with which the church at that time is only not destroyed, may not preach, p
-- file: EPUB/ch012.xhtml; previous: easily discernible both what the people of God, distinct from their pastors, in a well-ordered church, may do in this kind whereof we treat, and how. In general, then, I assert, —; next: That, for the improving of knowledge, the increasing of Christian charity, for the furtherance of a strict and holy communion of that spiritual love and amity which ought to be amo
-- file: EPUB/ch012.xhtml; previous: ll, they have not an equal respect unto all God's ordinances. Wherefore, that the coming together in this sort may be for the better, and not for the worse, observe these things: —; next: Now, for what gifts (that are, as before, freely bestowed) whose exercise is permitted unto such men so assembled; I mean in a private family, or two or three met ὁμοθμυαδόν , in o
-- file: EPUB/ch012.xhtml; previous: , with opening my desire for the increasing of knowledge among the people, of which I take this to be an effectual means, yet I will give brief answers to the several objections: —; next: Objection 1. "Then this seems to favor all allowance of licentious conventicles, which in all places the laws have condemned, and learned men in all ages have abhorred, as the semi
-- file: EPUB/ch015.xhtml; previous: To The Reader; next: THERE are, Christian reader, certain principles in church affairs generally consented unto by all men aiming at reformation and the furtherance of the power of godliness therein, h
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch009.xhtml; text: Now, three ways may a man receive, and be assured that he hath received, this divine mission, or know that he is called of God to the preaching of the word; I mean not that persuasion of divine concurrence which is necessary also for the...
-- file: EPUB/ch016.xhtml; text: Motives to the observance of this rule are: — 1. The name wherein they speak and administer, 2 Corinthians 5:20. 2. The work which they do, 1 Corinthians 3:9; 2 Corinthians 6:1; Timothy 4:16. 3. The return that they make, Hebrews 8:1 8:1...
-- file: EPUB/ch016.xhtml; text: Explication III. The greatness of the work (for which who is sufficient? 2 Corinthians 2:16); — the strength of the opposition which lies against it, 1 Corinthians 16:9; Revelation 12:12; 2 Timothy 4:3-5; — the concernment of men's souls...
-- file: EPUB/ch016.xhtml; text: Let motives hereunto be, — 1. God's command. 2. Our own preservation from sin and protection from punishment, that with others we be not infected and plagued. 3. Christ's delight in the purity of his ordinances. 4. His distinguishing lov...
-- file: EPUB/ch016.xhtml; text: Now, to a right performance of this duty, and in the discharge of it, are required, — 1. A due valuation, strong desire, and high esteem of the church's prosperity, in every member of it, Psalm 122:6. 2. Bowels of compassion as a fruit o...
-- file: EPUB/ch016.xhtml; text: Motives to this duty are: — 1. The love of God unto us, 1 John 3:16. 2. The glory of the gospel, exceedingly exalted thereby, Titus 3:8,14; Matthew 5:7. 3. The union whereinto we are brought in Christ, with the common inheritance promise...
-- file: EPUB/ch016.xhtml; text: Now, to a close adhering to the church wherein we walk in fellowship, in all conditions whatsoever, without dismission attained upon just and equitable grounds, for the embracing of communion in some other churches. Motives are, — 1. The...
-- file: EPUB/ch016.xhtml; text: Motives hereunto are, — 1. Christ's example; 2. Scripture precepts; 3. God's not accepting persons; 4. Joint participation of the same common faith, hope, etc; 5. The unprofitableness of all causes of outward differences in the things of...
-- file: EPUB/ch016.xhtml; text: Now, admonition is twofold: — 1. Authoritative, by the way of power; 2. Fraternal, by the way of love. The first, again, is twofold: —
-- file: EPUB/ch016.xhtml; text: These and the like things being duly weighed, let every brother, with Christian courage, admonish from the word every one whom he judgeth to walk disorderly in any particular whatsoever, not to suffer sin upon him, being ready to receive...
+- page: 21; sample: priesthood by divine institution yet do not thence conclude with aquin 1a 2ae quest
+- page: 31; sample: the law of nature being pre supposed we find them farther speaking often one
+- page: 46; sample: or no may better serve to illustrate plutarch's discourse of socrates demon than any
+- page: 50; sample: and jesuits pretending falsely by their impostures to the power of miracle working though
+- page: 58; sample: they may interest themselves in holy soul concerning affairs both in respect of their
+- page: 68; sample: is an ignorant congregation of which thanks to our prelates pluralists non residents homilies
+- page: 76; sample: eshcol cluster of the fruit of canaan rules of walking in fellowship with reference
+- page: 77; sample: election appointment acceptation submission galatians acts thessalonians acts corinthians which do not gire them
+- page: 82; sample: saith he it altogether for our sakes for our sakes no doubt this is
+- page: 87; sample: commandment and is peculiarly the law of christ john thessalonians john the state and
 
 ## Suspicious Large-Number Starts
 
@@ -173,16 +126,16 @@
 
 ## Repeated Windows
 
-- phrase: brief vindication of the nonconformists from the charge of schism; count: 3
-- phrase: an account of the grounds and reasons on which protestant; count: 3
-- phrase: account of the grounds and reasons on which protestant dissenters; count: 3
-- phrase: of the grounds and reasons on which protestant dissenters desire; count: 3
-- phrase: the lion hath roared who will not fear the lord; count: 3
-- phrase: lion hath roared who will not fear the lord god; count: 3
-- phrase: hath roared who will not fear the lord god hath; count: 3
-- phrase: roared who will not fear the lord god hath spoken; count: 3
-- phrase: who will not fear the lord god hath spoken who; count: 3
-- phrase: will not fear the lord god hath spoken who can; count: 3
+- phrase: not fear the lord god hath spoken who can but; count: 3
+- phrase: fear the lord god hath spoken who can but prophesy; count: 3
+- phrase: remember them which have the rule over you who have; count: 3
+- phrase: them which have the rule over you who have spoken; count: 3
+- phrase: which have the rule over you who have spoken unto; count: 3
+- phrase: have the rule over you who have spoken unto you; count: 3
+- phrase: the rule over you who have spoken unto you the; count: 3
+- phrase: rule over you who have spoken unto you the word; count: 3
+- phrase: over you who have spoken unto you the word of; count: 3
+- phrase: you who have spoken unto you the word of god; count: 3
 
 ## Missing Word Samples
 
@@ -193,15 +146,15 @@
 ## Excess Word Samples
 
 - word: ii; pdf: 15; epub: 31
-- word: volume; pdf: 6; epub: 18
+- word: prefatory; pdf: 14; epub: 30
+- word: volume; pdf: 5; epub: 18
+- word: editor; pdf: 0; epub: 12
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 0; epub: 9
 - word: historical; pdf: 0; epub: 8
+- word: citizens; pdf: 8; epub: 15
+- word: bill; pdf: 6; epub: 13
 - word: modern; pdf: 5; epub: 12
-- word: greek; pdf: 2; epub: 9
-- word: footnotes; pdf: 0; epub: 7
-- word: bill; pdf: 7; epub: 13
-- word: conventicle; pdf: 5; epub: 11
 
 ## Untagged Latin Word Samples
 

@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub",
-  "generated_at": "2026-06-11T20:16:24.474149+00:00",
+  "generated_at": "2026-06-11T23:44:05.447405+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 126,
-    "epub_size_bytes": 6653243,
+    "epub_size_bytes": 6653195,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
