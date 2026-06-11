@@ -1,91 +1,87 @@
 # Text Integrity Audit: Volume 11
 
 - Status: **WARN**
-- Warnings: 15
+- Warnings: 11
 - PDF pages: 815
 - EPUB text files: 31
-- EPUB paragraphs/headings: 2077
+- EPUB paragraphs/headings: 2521
 
 ## Coverage
 
-- PDF content tokens: 303982
-- EPUB content tokens: 297400
-- Approximate PDF-to-EPUB coverage ratio: 0.9762
+- PDF content tokens: 303980
+- EPUB content tokens: 297636
+- Approximate PDF-to-EPUB coverage ratio: 0.9768
 - Pages checked: 809
-- Weak page matches: 4
-- Dense source windows checked: 36957
+- Weak page matches: 1
+- Dense source windows checked: 37106
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 2
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 791
-- Top-of-page windows skipped as unstable: 28
-- Missing top-of-page body windows: 1
+- Top-of-page windows skipped as unstable: 12
+- Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 791
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 10
+- Missing bottom-of-page body windows: 3
 
 ## Paragraphs
 
-- Body paragraphs checked: 1771
-- Possible faulty paragraph splits: 14
-- Structural starts excluded from split warnings: 276
-- Short fragments: 23
+- Body paragraphs checked: 2149
+- Possible faulty paragraph splits: 40
+- Structural starts excluded from split warnings: 295
+- Short fragments: 30
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 8
+- Inline structural marker candidates: 7
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 4
-- Roman heading candidates: 1
-- Overlong heading candidates: 1
+- Suspicious large-number starts: 2
+- Roman heading candidates: 2
+- Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 263
-- EPUB enumerator markers: 267
+- EPUB enumerator markers: 264
 - Missing enumerator marker forms: 3
 - Enumerator sequence candidates: 1
 
 ## Greek / Hebrew
 
 - PDF Greek words: 2084
-- EPUB Greek words: 2080
-- Greek word coverage ratio: 0.9931
+- EPUB Greek words: 2079
+- Greek word coverage ratio: 0.997
 - PDF Hebrew words: 0
 - EPUB Hebrew words: 0
 - Hebrew word coverage ratio: 1.0
 - Greek clauses checked: 117
-- Missing Greek clauses: 1
+- Missing Greek clauses: 0
 - Hebrew clauses checked: 0
 - Missing Hebrew clauses: 0
 
 ## Latin
 
-- PDF Latin words: 7075
-- EPUB Latin words: 7005
-- EPUB Tagged Latin words: 355
-- Latin word coverage ratio: 0.9864
-- Latin word tagging ratio: 0.0507
-- Latin clauses checked: 416
+- PDF Latin words: 4459
+- EPUB Latin words: 4467
+- EPUB Tagged Latin words: 3269
+- Latin word coverage ratio: 0.9955
+- Latin word tagging ratio: 0.7318
+- Latin clauses checked: 404
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 34
-- Translated Latin runs: 25
-- Latin translation ratio: 0.7353
+- Tagged Latin runs checked: 796
+- Translated Latin runs: 249
+- Latin translation ratio: 0.3128
 
 ## Warnings
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
@@ -101,74 +97,57 @@
 - page: 11; sample: the argument and of the first part of this treatise chapter the improvement of
 - page: 12; sample: promises more particularly and more largely insisted on chapter arguments against the doctrine considered
 
-## Missing Top-Of-Page Body Windows
-
-- page: 19; sample: WITH SOME DIGRESSIONS CONCERNING 1. The Immediate effects of the Death of Christ.
-
 ## Missing Bottom-Of-Page Body Windows
 
 - page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
-- page: 18; sample: In a Full Answer to the Discourse of Mr. JOHN GOODWIN against it, in his Book Entituled REdemption .Redeemed.
-- page: 53; sample: aujtai~v ajkoai~v th~v ejnqe>ou sofi>av ejpakou~sai kathxiwme>nwn, thnikau~ta th~v ajqe>ou pla>nhv th<n ajrch<n ejla>mzanen hJ su>stasiv,
-- page: 68; sample: ko>smou panto<v swthri>av, (as was Jesus Christ). And it is added: Eij ga<r oJ basileu~sin ejpegeiro>menov, kola>sewv a]xiov dikai>wv
-- page: 77; sample: prosene>gkontav ta< dw~ra th~v ejpiskoph~v ajpoza>lwmen. Maka>rioi oJi proodoiporh>santev preszu>teroi, — namely, because they were in
-- page: 79; sample: and for the first epistle, it is directed not only to the church of Corinth, chap. 1, verse 2, but also pa~si toi~v ejpikaloume>noiv to< o]noma tou~
 - page: 172; sample: good thoughts and actings whatsoever. ( Romans 7:8-24; 2 Corinthians 3:5.)
 - page: 268; sample: pleasure? ( John 1:16; 1 Corinthians 12:13; Ephesians 1:23, 2:20- 22, 4:15, 16; Galatians 2:20; Colossians 1:17-19, 2:19.) What is it,
-- page: 586; sample: him be brought forth to this purpose time will show. But if he be able to make JO Qeo>v ejstin oJ ejnergw~n ejn uJmi~n, "God is working in you to will
-- page: 793; sample: chap. 6:4, where it is said that they were a[pax fwtisqe>ntev, "once enlightened;" whence he thus argues: —
 
 ## Possible Paragraph Splits
 
-- file: EPUB/ch005.xhtml; previous: ak to deal so harshly with some of them with whom he hath to do. And it is still feared that "Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo." 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
+- file: EPUB/ch001.xhtml; previous: BY; next: John Owen
+- file: EPUB/ch001.xhtml; previous: John Owen; next: SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL
+- file: EPUB/ch001.xhtml; previous: SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL; next: OXFORD, PRINTED BY LEON. LICHFIELD PRINTER TO THE UNIVERSITY, FOR TIM. ROBINSON.
+- file: EPUB/ch005.xhtml; previous: k to deal so harshly with some of them with whom he hath to do. And it is still feared that "Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo ." 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
 - file: EPUB/ch005.xhtml; previous: st of a crooked and perverse generation, knowing that it is but yet a little while, and he that shall come will come, and will not tarry. Yea, come, Lord Jesus, come. So prays your; next: unworthy fellow-laborer and brother in our dear Lord Jesus
 - file: EPUB/ch005.xhtml; previous: unworthy fellow-laborer and brother in our dear Lord Jesus; next: John Owen
-- file: EPUB/ch006.xhtml; previous: o make the matter more clear, cap. 13, he disputes, that " Auxilium sine quo nullus perseverat, et per quod quilibet perseverat, est Spiritus Sanctus, divina bonitas et voluntas. "; next: Every cause of bringing sinful man to God is called by them "auxilium.' In these three, "Spiritus Sanctus, divina bonitas, et voluntas," he compriseth the chief causes of persevera
-- file: EPUB/ch008.xhtml; previous: of many in these days — The great offense given and taken thereby, with the provision made for its removal — The nature of that offense and temptation thence arising considered _—; next: Answer to some arguings of Mr. G., chap. 9, from thence against the truth proposed — The use of trials and shakings — Grounds of believers' assurance that they are so — The same fa
-- file: EPUB/ch010.xhtml; previous: n, at least before their calling, are as liable to be deceived or seduced as other men. This is their own confession; and Paul says that they were sometimes deceived, [Titus 3:3] "; next: Ans. An exception, doubtless, unworthy him that makes it; who, had he not resolved to say all that ever had been said by any to the business in hand, would scarcely, I presume, hav
-- file: EPUB/ch011.xhtml; previous: rt, that they shall not depart from me,' may be as well rendered, ' That they may not depart from me;' and so it is said in the verse foregoing, ' That they may fear me for ever.'"; next: Ans. Suppose the words may be thus rendered, what inconvenience will ensue? Either way they evidently and beyond exception design out the end aimed at by God; and when God intends
-- file: EPUB/ch013.xhtml; previous: e;' in which words of 'hearing' and 'following' him he intimateth or includeth their perseverance, as appeareth by the words immediately following, 'And I give them eternal life.'"; next: Ans. This, I confess, is to the purpose, if it be true; but being so contrary to what hath been (I had almost said universally) received concerning the mind of Christ in this place
-- file: EPUB/ch014.xhtml; previous: ever, and yet every present member thereof lose his interest and part in him; yea, the abiding of the Spirit in the apostles themselves was not absolutely promised, [John 15:10] "; next: Ans. 1. The design of this discourse is to prove that this promise is not made to believers in general, or those who through the word are brought to believe in Christ in all genera
-- file: EPUB/ch014.xhtml; previous: also. That the sealing mentioned depends upon the faith of the sealed is evident, because it is said, 'In whom also, after ye believed, ye were sealed with the Spirit of promise.'"; next: Ans. I dare say there is no honest man that would take it well at the hand of Mr. Goodwin, or any else, that should attempt, by distinctions, or any other way, to alleviate or take
+- file: EPUB/ch006.xhtml; previous: ople, making it become new Rome, so that the bishop of the church there was to enjoy equal privileges with him whose lot was fallen in the old imperial city. Rut our doctor adds, —; next: Sect. 5, " Illud ex Judaeorum exemplari transcripsisse apostoli videntur; cum Mosaica id lege cautum esset, ut judices et ministri in qualibet civitate ordinarentur , [Deuteronomy
+- file: EPUB/ch006.xhtml; previous: To the same purpose, and with the same confident persuasion, he speaks, Epist. ad Ephesians, [cap. 9]: —; next: Ρύσεται ὑμᾶς Ιησοῦς Χριστὸς , ὁ ζεμελιώσας ὑμᾶς ἐπὶ τὴν πέτραν , ὠς λίθους ἐκλεκτοὺς εὐαρμολογουμένους εἰς οἰκοδομὴν ζείας Πατρὸς , ἀναφερομένους εἰς τὰ ὕψη διὰ Χριστοῦ , τοῦ ὑπὲρ
+- file: EPUB/ch006.xhtml; previous: nt with all that are baptized, yet he is never mixed with any that are not worthy; that is, he dwells not with any that obtain not salvation," Basil, Lib. de Spir. Sanc. cap. 16; —; next: Νῦν μὲν γὰρ εἰ καὶ μὴ ἀνακέκραται τοῖς ἀναξίοις ? ἀλλὰ οῦν παρεῖναι δοκεῖ πῶς τοῖς ἅπαξ ἐσφραγισμένοις . By that seeming presence of the Holy Ghost with hypocrites that are baptize
+- file: EPUB/ch006.xhtml; previous: of Prosper, De Ingrat., I shall transcribe the 10th chapter, to present to the reader the substance and pith of that treatise, as also the state of the controversy in those days: —; next: — "Quam sans tides sit vestra patescat, Gratia qua Christi populus sumus, hoc cohibetur Limite vobiscum, et formam hanc adscribitis illi: Ut cunctos vocet ilia quidem, invitetque;
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch010.xhtml; text: All these things, to the falling of a hair or the withering of a [blade of] grass, hath he determined from of old. Now, this divine fore-appointment of all things the Scripture assigns sometimes to the knowledge and understanding, someti...
-- file: EPUB/ch010.xhtml; text: I shall only add that, — 1. When Mr. Goodwin shall make good that order and series of decrees here by him mentioned from the Scripture, or with solid reason from the nature of the things themselves, suitably to the properties of Him whos...
-- file: EPUB/ch012.xhtml; text: Gospel promises, then, are, — 1. The free and gracious dispensations, and, 2. discoveries of God's good-will and love, to, 3. sinners, 4. through Christ, 5. in a covenant of grace; 6. wherein, upon his truth and faithfulness, he engageth...
-- file: EPUB/ch013.xhtml; text: The former argument confirmed by an induction of particular instances — [Joshua 1:5] opened — The concernment of all believers in that promise proved by the apostle, Hebrews 42:5. — The general interest of all believers in all the promis...
+- file: EPUB/ch003.xhtml; text: Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -18; [Romans 11:29]...
+- file: EPUB/ch013.xhtml; text: The latter I at present only intend. Saith he, 1. "I know them;" 2. "I give them eternal life;" 3. "They shall never perish;" 4. "No man shall pluck them out of my hand;" 5. "My Father is omnipotent, and hath a sovereignty over all, and ...
+- file: EPUB/ch015.xhtml; text: Their quickening is everywhere ascribed to the Spirit that is given unto them; there is not a quickening, a life-giving power, in a quality, a created thing. In the state of nature, besides gracious dispensations and habits in the soul i...
+- file: EPUB/ch019.xhtml; text: Sect. 12, "If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they render them unsavory, useless, and vain; but the principle...
 - file: EPUB/ch022.xhtml; text: As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, — and Christ himself, in the rules and laws that he hath given for the govern...
 - file: EPUB/ch022.xhtml; text: That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine fro...
 - file: EPUB/ch022.xhtml; text: The proposition is ready at hand in the words, "He that is born of God doth not, cannot commit sin." The reason of the proposition confirming the truth thereof is twofold: — 1. Because he is born of God; 2. Because His seed, whereof he i...
-- file: EPUB/ch023.xhtml; text: Mr. G.'s seventh argument, about the tendency of the doctrine of the saints' apostasy as to their consolation, proposed, considered — What that doctrine offereth for the consolation of the saints stated — The impossibility of its affordi...
 
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch006.xhtml; text: 29. Whatever be the judgment of our doctor concerning this man (as some there are of whom a learned bishop in this nation long ago complained, that they are still opening their mouths against Calvin, who helped them to m
 - file: EPUB/ch006.xhtml; text: 24. It seems, moreover, that those bishops and deacons in those days, as was observed, were appointed to the office by and with the consent of the people, or whole body of the church; no loss do these words import, Συνευ
-- file: EPUB/ch006.xhtml; text: 23. Deln epistola ista Antiocheme ecclesiae reddita, vet.
 - file: EPUB/ch006.xhtml; text: 30. Paulus tandem et Silas Syriam et Cilieiam peragrantes, ver. 41, cap. 16:4, δόγματα κεκριμένα ὑπὸ τῶν ἀποστόλων , singulis elvitatibus observanda tradiderunt, ut quae ad hanc Antiochiae metropolin, ut totidem subordin
 
 ## Roman Heading Candidates
 
 - file: EPUB/ch007.xhtml; text: M. Pacho secured possession of another copy in 1847, which afterwards came under the examination of Mr. Cureton.
-
-## Overlong Heading Candidates
-
-- file: EPUB/ch004.xhtml; tag: h3; text: HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that "no man knoweth love or hatred by all that is before him." The great variety wherein G...
+- file: EPUB/ch015.xhtml; text: II. 1. The first signal issue and effect which is ascribed to this indwelling of the Spirit is union; not a personal union with himself, which is impossible.
 
 ## Short Fragments
 
+- file: EPUB/ch001.xhtml; text: OR, THE
+- file: EPUB/ch001.xhtml; text: BY
+- file: EPUB/ch001.xhtml; text: John Owen
+- file: EPUB/ch001.xhtml; text: ANNO DOM: 1654.
 - file: EPUB/ch004.xhtml; text: TO
 - file: EPUB/ch005.xhtml; text: John Owen
-- file: EPUB/ch006.xhtml; text: De Correptione et Gratia, cap. 14,
+- file: EPUB/ch006.xhtml; text: Saith he,
+- file: EPUB/ch006.xhtml; text: Well, what then?
+- file: EPUB/ch006.xhtml; text: Doubtless; for, —
 - file: EPUB/ch006.xhtml; text: And cap. 12,
-- file: EPUB/ch006.xhtml; text: And a little after:
-- file: EPUB/ch006.xhtml; text: And farther in the same chapter,
-- file: EPUB/ch006.xhtml; text: And again,
-- file: EPUB/ch006.xhtml; text: And,
-- file: EPUB/ch006.xhtml; text: He concludes,
-- file: EPUB/ch006.xhtml; text: Prosper, ad cap. 7 Gal.:
 
 ## Missing Enumerator Markers
 
@@ -210,17 +189,11 @@
 
 - word: psalms; pdf: 1; epub: 56
 - word: digital; pdf: 0; epub: 10
-- word: modern; pdf: 4; epub: 13
-- word: hebrew; pdf: 2; epub: 9
-- word: footnotes; pdf: 0; epub: 6
-
-## Missing Greek Word Samples
-
-- word: ὅπερ; pdf: 3; epub: 1
-
-## Missing Greek Clauses
-
-- page: 68; word_count: 34; sample: κυριος ανευ του πατρος ουδεν ποιει ου δυναμαι γαρ φησι ποιειν εμαυτου
+- word: theological; pdf: 2; epub: 11
+- word: historical; pdf: 2; epub: 10
+- word: modern; pdf: 4; epub: 11
+- word: footnotes; pdf: 0; epub: 7
+- word: hebrew; pdf: 2; epub: 8
 
 ## Missing Latin Word Samples
 
@@ -228,28 +201,29 @@
 
 ## Untagged Latin Word Samples
 
-- word: nor; epub: 450; tagged: 0
-- word: jesus; epub: 217; tagged: 0
-- word: yea; epub: 211; tagged: 0
-- word: et; epub: 170; tagged: 20
-- word: thereunto; epub: 134; tagged: 0
-- word: non; epub: 140; tagged: 14
-- word: whereunto; epub: 101; tagged: 0
-- word: persevere; epub: 95; tagged: 0
-- word: de; epub: 82; tagged: 7
-- word: sum; epub: 75; tagged: 0
+- word: ergo; epub: 25; tagged: 5
+- word: perpetrate; epub: 10; tagged: 0
+- word: salmasius; epub: 9; tagged: 0
+- word: ingenerate; epub: 9; tagged: 0
+- word: nowhere; epub: 9; tagged: 0
+- word: vedelius; epub: 8; tagged: 0
+- word: relate; epub: 8; tagged: 0
+- word: predestinate; epub: 8; tagged: 0
+- word: co-operate; epub: 8; tagged: 0
+- word: alas; epub: 8; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: put his law in their inward parts, and write it in their hearts;
-- phrase: in loving-kindness and in mercies,
-- phrase: in its proper place. What he adds in the last place, namely,
-- phrase: abide in me, and I in you.
-- phrase: is in the other, in equivalent terms, called
-- phrase: Ye believe in God, believe also in me,
-- phrase: blessed with all spiritual blessings in heavenly places in him
-- phrase: though brought in illatively, in respect of what was said before,
-- phrase: in him, that is, in his flesh, dwelt no good,
+- phrase: Imputatio Fidei
+- phrase: Vindiciae Evangelicae
+- phrase: catena patrum
+- phrase: Sancti Sanciti," etc.; Thomas
+- phrase: Sancta sanctis
+- phrase: actum agere
+- phrase: velut amnis
+- phrase: super notas aluere ripas
+- phrase: profundo Pindarus
+- phrase: monstrum horrendum
 
 ## Limits
 

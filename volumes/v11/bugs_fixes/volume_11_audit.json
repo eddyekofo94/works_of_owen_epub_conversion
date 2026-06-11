@@ -1,14 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-06-09T10:49:02.885614+00:00",
+  "generated_at": "2026-06-11T19:45:27.312995+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
   "errors": [],
   "warnings": [],
   "info": {
-    "file_count": 61,
-    "epub_size_bytes": 5081809,
+    "file_count": 67,
+    "epub_size_bytes": 7029403,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -17,15 +17,15 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 52,
-    "spine_count": 31,
+    "manifest_count": 58,
+    "spine_count": 32,
     "xhtml_count": 33,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 20,
     "language": {
-      "greek_chars": 11105,
+      "greek_chars": 11107,
       "greek_untagged_chars": 0,
       "hebrew_chars": 0,
       "hebrew_untagged_chars": 0,
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 137,
-      "unique_noteref_targets": 128,
-      "endnote_anchor_count": 128,
+      "noteref_count": 226,
+      "unique_noteref_targets": 226,
+      "endnote_anchor_count": 226,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -52,7 +52,7 @@
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
-      "overlong_heading_body_files": 1,
+      "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
       "glued_ordinal_files": 0,
@@ -63,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 8,
+      "lowercase_paragraph_start_files": 9,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -82,12 +82,7 @@
         "unprocessed_ages_marker": [],
         "page_reference_split": [],
         "chapter_heading_in_paragraph": [],
-        "overlong_heading_body": [
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that \"no man knoweth love or"
-          }
-        ],
+        "overlong_heading_body": [],
         "fragmented_greek_span_run": [],
         "fragmented_hebrew_span_run": [],
         "scripture_blockquote": [],
@@ -110,7 +105,11 @@
           },
           {
             "file": "EPUB/ch006.xhtml",
-            "text": "cant et fructum afferant, et fructus eorum maneat, quis audeat dicere 'Forsitan n"
+            "text": "for his terming him a grammarian; yet, indeed, of him (such was the hard entertai"
+          },
+          {
+            "file": "EPUB/ch008.xhtml",
+            "text": "the spiritual peace and salvation of their souls, as naturally men are to forbear"
           },
           {
             "file": "EPUB/ch010.xhtml",
@@ -121,12 +120,12 @@
             "text": "and in [1 John 4:10] \"Herein is love, not that we loved God, but that he loved us"
           },
           {
-            "file": "EPUB/ch015.xhtml",
-            "text": "and verse 22, \"Let them be one, even as we, are one.\" And that ye may not think t"
+            "file": "EPUB/ch014.xhtml",
+            "text": "and then he concludes again, as the issue of his debate, verse 9, \"So then they w"
           },
           {
-            "file": "EPUB/ch017.xhtml",
-            "text": "of perseverance in reference to the"
+            "file": "EPUB/ch015.xhtml",
+            "text": "and verse 22, \"Let them be one, even as we, are one.\" And that ye may not think t"
           },
           {
             "file": "EPUB/ch019.xhtml",

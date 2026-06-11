@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-11T18:18:23Z
+Generated: 2026-06-11T19:57:33Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-11T18:18:23Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 11 | 80.8 | minion-pro | 1 |  97.62 |  99.31 |  100.0 |  98.64 | 4 | 99 | FULL |
-| 2 | 13 | 77.3 | baskerville | 5 |  90.14 |  95.21 |  100.0 |   90.4 | 0 | 70 | FULL |
+| 1 | 13 | 77.3 | baskerville | 5 |  90.14 |  95.21 |  100.0 |   90.4 | 0 | 70 | FULL |
+| 2 | 11 | 77.1 | minion-pro | 1 |  97.68 |   99.7 |  100.0 |  99.55 | 5 | 99 | FULL |
 | 3 | 14 | 76.7 | brill-font | 2 |  98.45 |  99.17 |  100.0 |  98.83 | 5 | 30 | FULL |
 | 4 | 12 | 71.7 | arno-pro | 3 |  99.91 |   99.8 |  99.55 |   99.8 | 0 | 114 | FULL |
 | 5 | 10 | 71.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | 77 | FULL |
@@ -41,28 +41,7 @@ Generated: 2026-06-11T18:18:23Z
 
 ## Per-Volume Details
 
-### Volume 11 — Need: 80.8 (❌ Poor) — Rank 1
-
-- **Body font:** minion-pro
-- **Source type:** ages_pdf
-- **Treatises:** 1
-- **QA level:** FULL
-- **convert.py:** Yes (97 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 97.62
-- **Greek coverage:** 99.31
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 98.64
-- **Latin tagging:** 5.07
-- **Latin translation:** 73.53
-- **Citations:** total=52, unresolved=4
-- **Splits:** 14
-- **Regressions:** 1
-- **Suspected anomalies:** 134
-- **Unmatched quotes:** 99
-- **Recommended:** ❓ Resolve unmatched quotation marks; translate_unresolved_citations; 🔍 Review OCR anomalies
-
-### Volume 13 — Need: 77.3 (❌ Poor) — Rank 2
+### Volume 13 — Need: 77.3 (❌ Poor) — Rank 1
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
@@ -82,6 +61,27 @@ Generated: 2026-06-11T18:18:23Z
 - **Suspected anomalies:** 76
 - **Unmatched quotes:** 70
 - **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
+
+### Volume 11 — Need: 77.1 (❌ Poor) — Rank 2
+
+- **Body font:** minion-pro
+- **Source type:** ages_pdf
+- **Treatises:** 1
+- **QA level:** FULL
+- **convert.py:** Yes (141 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 97.68
+- **Greek coverage:** 99.70
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.55
+- **Latin tagging:** 73.18
+- **Latin translation:** 31.28
+- **Citations:** total=52, unresolved=5
+- **Splits:** 40
+- **Regressions:** 1
+- **Suspected anomalies:** 211
+- **Unmatched quotes:** 99
+- **Recommended:** ❓ Resolve unmatched quotation marks; translate_unresolved_citations; 🔍 Review OCR anomalies
 
 ### Volume 14 — Need: 76.7 (❌ Poor) — Rank 3
 

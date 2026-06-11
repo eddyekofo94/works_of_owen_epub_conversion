@@ -2285,13 +2285,24 @@ ENGLISH_WORDS = {
     'trinitarians', 'antitrinitarian', 'antitrinitarians',
     # Additional common English words that end in Latin suffixes
     'nor', 'jesus', 'yea', 'whereas', 'distinct', 'endeavor', 'endeavours', 'endeavour',
-    'thereunto', 'whereunto', 'hereunto', 'thereto', 'churchstate', 'churchcommunion'
+    'thereunto', 'whereunto', 'hereunto', 'thereto', 'churchstate', 'churchcommunion',
+    'persevere', 'poor', 'tenor', 'regenerate', 'immediate', 'plea', 'unregenerate', 
+    'mere', 'ignatius', 'ignatian', 'ignati',
+    'estate', 'debate', 'vigor', 'abraham', 'minor', 'rate', 'major', 'color', 
+    'hitherto', 'mediator', 'separate', 'whereinto', 'elsewhere', 'dishonor', 
+    'adam', 'savor', 'eli', 'creator', 'prior', 'senior', 'junior', 'sincere', 
+    'severe', 'dogma', 'drama', 'schema', 'camera', 'data', 'agenda', 'formula', 
+    'moses', 'noah', 'isaac', 'jacob', 'joseph', 'aaron', 'solomon', 'david',
+    'thereinto', 'hereinto', 'everywhere', 'intimate', 'demonstrate', 'thesis',
+    'epist', 'blondellus', 'terror', 'hypothesis', 'vindicate', 'medium', 'judas', 
+    'desperate', 'achaia', 'frustrate', 'anywhere', 'eusebius', 'philippi', 'syria', 
+    'degenerate', 'reprobate', 'alter'
 }
 
 SHARED_WORDS = {
     'in', 'is', 'an', 'a', 'ad', 'me', 'etc', 'post', 'cap', 'lib', 'sub', 'rem', 're', 
     'res', 'am', 'as', 'os', 'or', 'do', 'no', 'si', 'vel', 'ac', 'inter', 'pro', 'per', 'ab', 
-    'ex', 'id', 'ii', 'eo', 'ea', 'sine', 'art', 'sect', 'sec'
+    'ex', 'id', 'ii', 'eo', 'ea', 'sine', 'art', 'sect', 'sec', 'sum'
 }
 
 # Common Latin endings (suffixes)

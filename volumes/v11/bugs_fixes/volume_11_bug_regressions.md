@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 14 | 150 | OK |
-| Inline structural marker candidates | 8 | 8 | OK |
+| Possible faulty paragraph splits | 40 | 150 | OK |
+| Inline structural marker candidates | 7 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -21,7 +21,7 @@
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
-| Missing Greek clauses | 1 | 16 | OK |
+| Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -38,7 +38,7 @@
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
 | Chapter headings rendered as paragraphs | 0 | 1 | OK |
-| Overlong headings containing body prose | 1 | 1 | OK |
+| Overlong headings containing body prose | 0 | 1 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
 | Fragmented Hebrew span-run files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 8 | 1 | REGRESSION |
+| Lowercase page fragments | 9 | 1 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,18 +66,18 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch005.xhtml; previous: ak to deal so harshly with some of them with whom he hath to do. And it is still feared that "Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo." 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
+- file: EPUB/ch001.xhtml; previous: BY; next: John Owen
+- file: EPUB/ch001.xhtml; previous: John Owen; next: SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL
+- file: EPUB/ch001.xhtml; previous: SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL; next: OXFORD, PRINTED BY LEON. LICHFIELD PRINTER TO THE UNIVERSITY, FOR TIM. ROBINSON.
+- file: EPUB/ch005.xhtml; previous: k to deal so harshly with some of them with whom he hath to do. And it is still feared that "Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo ." 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
 - file: EPUB/ch005.xhtml; previous: st of a crooked and perverse generation, knowing that it is but yet a little while, and he that shall come will come, and will not tarry. Yea, come, Lord Jesus, come. So prays your; next: unworthy fellow-laborer and brother in our dear Lord Jesus
-- file: EPUB/ch005.xhtml; previous: unworthy fellow-laborer and brother in our dear Lord Jesus; next: John Owen
-- file: EPUB/ch006.xhtml; previous: o make the matter more clear, cap. 13, he disputes, that " Auxilium sine quo nullus perseverat, et per quod quilibet perseverat, est Spiritus Sanctus, divina bonitas et voluntas. "; next: Every cause of bringing sinful man to God is called by them "auxilium.' In these three, "Spiritus Sanctus, divina bonitas, et voluntas," he compriseth the chief causes of persevera
-- file: EPUB/ch008.xhtml; previous:  of many in these days — The great offense given and taken thereby, with the provision made for its removal — The nature of that offense and temptation thence arising considered _—; next: Answer to some arguings of Mr. G., chap. 9, from thence against the truth proposed — The use of trials and shakings — Grounds of believers' assurance that they are so — The same fa
 
 ### Inline structural marker candidates
 
-- file: EPUB/ch010.xhtml; text: All these things, to the falling of a hair or the withering of a [blade of] grass, hath he determined from of old. Now, this divine fore-appointment of all things the Scripture assigns sometimes to the knowledge and unde
-- file: EPUB/ch010.xhtml; text: I shall only add that, — 1. When Mr. Goodwin shall make good that order and series of decrees here by him mentioned from the Scripture, or with solid reason from the nature of the things themselves, suitably to the prope
-- file: EPUB/ch012.xhtml; text: Gospel promises, then, are, — 1. The free and gracious dispensations, and, 2. discoveries of God's good-will and love, to, 3. sinners, 4. through Christ, 5. in a covenant of grace; 6. wherein, upon his truth and faithful
-- file: EPUB/ch013.xhtml; text: The former argument confirmed by an induction of particular instances — [Joshua 1:5] opened — The concernment of all believers in that promise proved by the apostle, Hebrews 42:5. — The general interest of all believers 
+- file: EPUB/ch003.xhtml; text: Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -1
+- file: EPUB/ch013.xhtml; text: The latter I at present only intend. Saith he, 1. "I know them;" 2. "I give them eternal life;" 3. "They shall never perish;" 4. "No man shall pluck them out of my hand;" 5. "My Father is omnipotent, and hath a sovereign
+- file: EPUB/ch015.xhtml; text: Their quickening is everywhere ascribed to the Spirit that is given unto them; there is not a quickening, a life-giving power, in a quality, a created thing. In the state of nature, besides gracious dispensations and hab
+- file: EPUB/ch019.xhtml; text: Sect. 12, "If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they render them unsavory, useless, and vain; 
 - file: EPUB/ch022.xhtml; text: As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, — and Christ himself, in the rules and laws that he hath giv
 
 ### Repeated word windows
@@ -94,22 +94,10 @@
 - marker: (2.)
 - marker: (3.)
 
-### Low Greek word coverage
-
-- {'word': 'ὅπερ', 'pdf': 3, 'epub': 1}
-
-### Missing Greek clauses
-
-- page: 68; sample: κυριος ανευ του πατρος ουδεν ποιει ου δυναμαι γαρ φησι ποιειν εμαυτου
-
-### Overlong headings containing body prose
-
-- file: EPUB/ch004.xhtml; text: HIS HIGHNESS OLIVER, LORD-PROTECTOR OF THE COMMONWEALTH OF ENGLAND, SCOTLAND, AND IRELAND, WITH THE DOMINIONS THEREOF. SIR, THE wise man tells us that "no man knoweth love or
-
 ### Lowercase page fragments
 
 - file: EPUB/ch005.xhtml; text: unworthy fellow-laborer and brother in our dear Lord Jesus
-- file: EPUB/ch006.xhtml; text: cant et fructum afferant, et fructus eorum maneat, quis audeat dicere 'Forsitan n
+- file: EPUB/ch006.xhtml; text: for his terming him a grammarian; yet, indeed, of him (such was the hard entertai
+- file: EPUB/ch008.xhtml; text: the spiritual peace and salvation of their souls, as naturally men are to forbear
 - file: EPUB/ch010.xhtml; text: it is said of him,
 - file: EPUB/ch012.xhtml; text: and in [1 John 4:10] "Herein is love, not that we loved God, but that he loved us
-- file: EPUB/ch015.xhtml; text: and verse 22, "Let them be one, even as we, are one." And that ye may not think t

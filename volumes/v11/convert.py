@@ -72,7 +72,26 @@ _V11_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><b>Chapter XVII.</b> <a href="ch024.xhtml">A review of passages in Scripture alleged against the perseverance of the saints</a></p>
 </section>'''
 
+def post_extract_hook(intermediate: dict) -> dict:
+    """Post-extraction adjustments for Volume 11."""
+    # Move the prefix text of ch003 to the end of ch002
+    ch002 = next((c for c in intermediate.get('chapters', []) if c['cid'] == 'ch002'), None)
+    ch003 = next((c for c in intermediate.get('chapters', []) if c['cid'] == 'ch003'), None)
+    if ch002 and ch003:
+        prefix_to_move = (
+            'Goodwin;" and Mr. John Pawson, in a sermon under the title of "A Vindication of Free Grace."\n\n'
+            'In 1658 Goodwin replied to most of these publications in a quarto of five hundred pages, entitled "Triumviri," etc. In regard to the following treatise, "he returns," says Owen, in an epistle dedicatory to his work on the Divine Original of the Scriptures, "a scoffing reply to so much of it as was written in a quarter of an hour."'
+        )
+        if ch003['raw_text'].startswith(prefix_to_move):
+            # Append to ch002 (keeping space or newline)
+            ch002['raw_text'] = ch002['raw_text'].rstrip() + " " + prefix_to_move
+            # Remove from ch003
+            ch003['raw_text'] = ch003['raw_text'][len(prefix_to_move):].lstrip()
+    return intermediate
+
+
 OVERRIDES = {
+    'post_extract_hook': post_extract_hook,
     'contents_page_overrides': _V11_CONTENTS_PAGE,
     'front_matter_overrides': {
         'Contents': _V11_CONTENTS_PAGE,
@@ -85,6 +104,30 @@ OVERRIDES = {
         # Repair missing apostrophe where it appears in body text
         "Saints Perseverance": "Saints' Perseverance",
         "saints perseverance": "saints' perseverance",
+        "packed in in a": "packed in a",
+        "Noah is is said": "Noah it is said",
+        "upon it it should": "upon it, it should",
+        "intercedes for for believers": "intercedes for, for believers",
+        "cometh in in the": "cometh in the",
+        "without it it will": "without it, it will",
+        "whom it is is tempted": "whom it is, is tempted",
+        "walk in in reference": "walk in, in reference",
+        "tendency of it it is": "tendency of it, it is",
+        "put in in our behalf": "put in, in our behalf",
+        "brought in in this place": "brought in, in this place",
+        # OCR and hyphenation errors
+        "Hebrews 42:5": "Hebrews 13:5",
+        "John 41:31": "John 12:31",
+        "figurasLaudatur": "figuras laudatur",
+        "semiPelagians": "semi-Pelagians",
+        "solvi[to]": "solvite",
+        "Pela-gins": "Pelagius",
+        "exer-citatus": "exercitatus",
+        "Calvinis-mum": "Calvinismum",
+        "multitu-dinis": "multitudinis",
+        "praedestina-tionis": "praedestinationis",
+        "I-chabod": "Ichabod",
+        "interveni-nces": "interveniences",
     },
 }
 
@@ -95,3 +138,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

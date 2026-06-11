@@ -282,7 +282,7 @@ The new engine:
 | 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 Quotes 26 |
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? Quotes 65 |
 | 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 Quotes 77 |
-| 11 | v11 | Populated | FULL | Cov 97.62 Greek 99.31 Heb 100.00 Lat 98.64 Unres 4 Quotes 99 |
+| 11 | v11 | Populated | FULL | Cov 97.68 Greek 99.70 Heb 100.00 Lat 99.55 Unres 5 Quotes 99 |
 | 12 | v12 | Populated | FULL | Cov 99.91 Greek 99.80 Heb 99.55 Lat 99.80 Quotes 114 |
 | 13 | v13 | Populated | FULL | Cov 90.14 Greek 95.21 Heb 100.00 Lat 90.40 Quotes 70 |
 | 14 | v14 | Populated | FULL | Cov 98.45 Greek 99.17 Heb 100.00 Lat 98.83 Unres 5 Quotes 30 |

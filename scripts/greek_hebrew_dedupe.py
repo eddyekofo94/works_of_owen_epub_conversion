@@ -27,10 +27,15 @@ def _remove_adjacent_line_overlaps(text):
         return text
 
     def words_with_spans(value):
-        return [
-            (m.group(0).lower(), m.start(), m.end())
-            for m in re.finditer(r"[A-Za-z0-9:;,''\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", value)
-        ]
+        toks = []
+        for m in re.finditer(r"[A-Za-z0-9:;,''\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+", value):
+            start = m.start()
+            left_bracket = value.rfind('<', 0, start)
+            right_bracket = value.rfind('>', 0, start)
+            if left_bracket > right_bracket:
+                continue # skip words inside HTML tags
+            toks.append((m.group(0).lower(), start, m.end()))
+        return toks
 
     lines = text.split('\n')
     out = []
