@@ -4,13 +4,13 @@
   "meta": {
     "pages": 11,
     "chapters_count": 30,
-    "extracted_at": "2026-06-11T02:07:28.631120"
+    "extracted_at": "2026-06-11T15:18:38.392010"
   },
   "chapters": [
     {
       "cid": "ch001",
       "title": "GENERAL PREFACE BY THE EDITOR",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -21,7 +21,7 @@
     {
       "cid": "ch002",
       "title": "The Epistle Dedicatory",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -32,7 +32,7 @@
     {
       "cid": "ch003",
       "title": "Prefatory Notices",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -43,7 +43,7 @@
     {
       "cid": "ch004",
       "title": "PART I: CONCERNING THE EPISTLE TO THE HEBREWS",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": true,
@@ -54,7 +54,7 @@
     {
       "cid": "ch005",
       "title": "I. —The canonical authority of the Epistle to the Hebrews",
-      "level": 1,
+      "level": 3,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -65,7 +65,7 @@
     {
       "cid": "ch006",
       "title": "II. —Of the penman of the Epistle to the Hebrews",
-      "level": 1,
+      "level": 3,
       "page_start": 1,
       "page_end": 2,
       "is_treatise": false,
@@ -76,7 +76,7 @@
     {
       "cid": "ch007",
       "title": "III. —The time [and occasion] of the writing of the Epistle to the Hebrews",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -87,7 +87,7 @@
     {
       "cid": "ch008",
       "title": "IV. —The language wherein the Epistle to the Hebrews was originally written",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -98,7 +98,7 @@
     {
       "cid": "ch009",
       "title": "V. —Testimonies cited by the apostle out of the Old Testament",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -109,7 +109,7 @@
     {
       "cid": "ch010",
       "title": "VI. —Oneness of the church",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 3,
       "is_treatise": false,
@@ -120,7 +120,7 @@
     {
       "cid": "ch011",
       "title": "VII. —Of the Judaical distribution of the Old Testament",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 3,
       "is_treatise": false,
@@ -131,7 +131,7 @@
     {
       "cid": "ch012",
       "title": "PART II: CONCERNING THE MESSIAH",
-      "level": 1,
+      "level": 2,
       "page_start": 3,
       "page_end": 4,
       "is_treatise": true,
@@ -142,7 +142,7 @@
     {
       "cid": "ch013",
       "title": "VIII. —The first dissertation concerning the Messiah, proving him to be promised of old",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": true,
@@ -153,7 +153,7 @@
     {
       "cid": "ch014",
       "title": "IX. —Promises of the Messiah vindicated X. —Appearances of the Son of God under the old te",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 5,
       "is_treatise": false,
@@ -164,7 +164,7 @@
     {
       "cid": "ch015",
       "title": "X. -- Appearances of the Son of God Under the Old Testament",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 5,
       "is_treatise": false,
@@ -175,7 +175,7 @@
     {
       "cid": "ch016",
       "title": "XI. —Faith of the ancient church of the Jews concerning the Messiah",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 6,
       "is_treatise": true,
@@ -186,7 +186,7 @@
     {
       "cid": "ch017",
       "title": "XII. —[Second dissertation]—The promised Messiah long since come",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 6,
       "is_treatise": false,
@@ -197,7 +197,7 @@
     {
       "cid": "ch018",
       "title": "XIII. —Other testimonies proving the Messiah to be come",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 7,
       "is_treatise": false,
@@ -208,7 +208,7 @@
     {
       "cid": "ch019",
       "title": "XIV. —Daniel's prophecy vindicated",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 7,
       "is_treatise": false,
@@ -219,7 +219,7 @@
     {
       "cid": "ch020",
       "title": "XV. —Computation of Daniel's weeks",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 8,
       "is_treatise": false,
@@ -230,7 +230,7 @@
     {
       "cid": "ch021",
       "title": "XVI. —Jewish traditions about the coming of the Messiah",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -241,7 +241,7 @@
     {
       "cid": "ch022",
       "title": "XVII. —The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 9,
       "is_treatise": false,
@@ -252,7 +252,7 @@
     {
       "cid": "ch023",
       "title": "XVIII. —Jews' objections against Christian religion answered",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -263,7 +263,7 @@
     {
       "cid": "ch024",
       "title": "PART III: CONCERNING THE INSTITUTIONS OF THE JEWISH CHURCH REFERRED TO IN THE EPISTLE",
-      "level": 1,
+      "level": 2,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": true,
@@ -274,7 +274,7 @@
     {
       "cid": "ch025",
       "title": "XIX. —State and ordinances of the church before the giving of the law",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -285,7 +285,7 @@
     {
       "cid": "ch026",
       "title": "XX. —The law and precepts thereof",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 10,
       "is_treatise": false,
@@ -296,7 +296,7 @@
     {
       "cid": "ch027",
       "title": "XXI. —The sanction of the law in promises and threatenings",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -307,7 +307,7 @@
     {
       "cid": "ch028",
       "title": "XXII. —Of the tabernacle and ark",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -318,7 +318,7 @@
     {
       "cid": "ch029",
       "title": "XXIII. —Of the office of the priesthood",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -329,7 +329,7 @@
     {
       "cid": "ch030",
       "title": "XXIV. —Sacrifices of the old law",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,

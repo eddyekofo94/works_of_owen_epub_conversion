@@ -4,13 +4,13 @@
   "meta": {
     "pages": 12,
     "chapters_count": 46,
-    "extracted_at": "2026-06-11T01:43:22.329079"
+    "extracted_at": "2026-06-11T15:26:10.623703"
   },
   "chapters": [
     {
       "cid": "ch001",
       "title": "CHAPTER 8",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -21,7 +21,7 @@
     {
       "cid": "ch002",
       "title": "Hebrews 8:1",
-      "level": 1,
+      "level": 3,
       "page_start": 1,
       "page_end": 2,
       "is_treatise": false,
@@ -32,7 +32,7 @@
     {
       "cid": "ch003",
       "title": "Hebrews 8:2",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -43,7 +43,7 @@
     {
       "cid": "ch004",
       "title": "Hebrews 8:3",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -54,7 +54,7 @@
     {
       "cid": "ch005",
       "title": "Hebrews 8:4",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 3,
       "is_treatise": false,
@@ -65,7 +65,7 @@
     {
       "cid": "ch006",
       "title": "Hebrews 8:5",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 3,
       "is_treatise": false,
@@ -76,7 +76,7 @@
     {
       "cid": "ch007",
       "title": "Hebrews 8:6",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 3,
       "is_treatise": false,
@@ -87,7 +87,7 @@
     {
       "cid": "ch008",
       "title": "Hebrews 8: 7",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 4,
       "is_treatise": false,
@@ -98,7 +98,7 @@
     {
       "cid": "ch009",
       "title": "Hebrews 8: 8",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -109,7 +109,7 @@
     {
       "cid": "ch010",
       "title": "Hebrews 8: 9",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -120,7 +120,7 @@
     {
       "cid": "ch011",
       "title": "Hebrews 8: 10–12",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -131,7 +131,7 @@
     {
       "cid": "ch012",
       "title": "Hebrews 8: 13",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 5,
       "is_treatise": false,
@@ -142,7 +142,7 @@
     {
       "cid": "ch013",
       "title": "CHAPTER 9",
-      "level": 1,
+      "level": 2,
       "page_start": 5,
       "page_end": 5,
       "is_treatise": false,
@@ -153,7 +153,7 @@
     {
       "cid": "ch014",
       "title": "Hebrews 9: 1",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 5,
       "is_treatise": false,
@@ -164,7 +164,7 @@
     {
       "cid": "ch015",
       "title": "Hebrews 9: 2",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 6,
       "is_treatise": false,
@@ -175,7 +175,7 @@
     {
       "cid": "ch016",
       "title": "Hebrews 9: 3–5",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 6,
       "is_treatise": false,
@@ -186,7 +186,7 @@
     {
       "cid": "ch017",
       "title": "Hebrews 9: 6, 7",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 6,
       "is_treatise": false,
@@ -197,7 +197,7 @@
     {
       "cid": "ch018",
       "title": "Hebrews 9:8",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 6,
       "is_treatise": false,
@@ -208,7 +208,7 @@
     {
       "cid": "ch019",
       "title": "Hebrews 9: 9, 10",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 6,
       "is_treatise": false,
@@ -219,7 +219,7 @@
     {
       "cid": "ch020",
       "title": "Hebrews 9: 11",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 6,
       "is_treatise": false,
@@ -230,7 +230,7 @@
     {
       "cid": "ch021",
       "title": "Hebrews 9:12",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 7,
       "is_treatise": false,
@@ -241,7 +241,7 @@
     {
       "cid": "ch022",
       "title": "Hebrews 9: 13, 14",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 7,
       "is_treatise": false,
@@ -252,7 +252,7 @@
     {
       "cid": "ch023",
       "title": "Hebrews 9:15",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 7,
       "is_treatise": false,
@@ -263,7 +263,7 @@
     {
       "cid": "ch024",
       "title": "Hebrews 9: 16, 17",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 7,
       "is_treatise": false,
@@ -274,7 +274,7 @@
     {
       "cid": "ch025",
       "title": "Hebrews 9: 18–22",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 8,
       "is_treatise": false,
@@ -285,7 +285,7 @@
     {
       "cid": "ch026",
       "title": "Hebrews 9: 23",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -296,7 +296,7 @@
     {
       "cid": "ch027",
       "title": "Hebrews 9: 24",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -307,7 +307,7 @@
     {
       "cid": "ch028",
       "title": "Hebrews 9: 25",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 9,
       "is_treatise": false,
@@ -318,7 +318,7 @@
     {
       "cid": "ch029",
       "title": "Hebrews 9:26",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -329,7 +329,7 @@
     {
       "cid": "ch030",
       "title": "Hebrews 9: 27, 28",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -340,7 +340,7 @@
     {
       "cid": "ch031",
       "title": "CHAPTER 10",
-      "level": 1,
+      "level": 2,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -351,7 +351,7 @@
     {
       "cid": "ch032",
       "title": "Hebrews 10: 1",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -362,7 +362,7 @@
     {
       "cid": "ch033",
       "title": "Hebrews 10: 2, 3",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -373,7 +373,7 @@
     {
       "cid": "ch034",
       "title": "Hebrews 10:4",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 10,
       "is_treatise": false,
@@ -384,7 +384,7 @@
     {
       "cid": "ch035",
       "title": "Hebrews 10: 5–10",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -395,7 +395,7 @@
     {
       "cid": "ch036",
       "title": "Hebrews 10: 11–14",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -406,7 +406,7 @@
     {
       "cid": "ch037",
       "title": "Hebrews 10: 15–18",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -417,7 +417,7 @@
     {
       "cid": "ch038",
       "title": "Hebrews 10: 19–23",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -428,7 +428,7 @@
     {
       "cid": "ch039",
       "title": "Hebrews 10:24",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -439,7 +439,7 @@
     {
       "cid": "ch040",
       "title": "Hebrews 10: 25",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 11,
       "is_treatise": false,
@@ -450,7 +450,7 @@
     {
       "cid": "ch041",
       "title": "Hebrews 10: 26, 27",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -461,7 +461,7 @@
     {
       "cid": "ch042",
       "title": "Hebrews 10: 28, 29",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -472,7 +472,7 @@
     {
       "cid": "ch043",
       "title": "Hebrews 10: 30, 31",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -483,7 +483,7 @@
     {
       "cid": "ch044",
       "title": "Hebrews 10: 32–34",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -494,7 +494,7 @@
     {
       "cid": "ch045",
       "title": "Hebrews 10: 35, 36",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -505,7 +505,7 @@
     {
       "cid": "ch046",
       "title": "Hebrews 10: 37–39",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,

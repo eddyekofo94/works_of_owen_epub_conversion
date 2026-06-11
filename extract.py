@@ -398,6 +398,36 @@ def extract_epub2_volume(vol_num, overrides: dict = None,
         for np in ncx_root.findall("./ncx:navMap/ncx:navPoint", ncx_ns):
             parse_nav_point(np)
             
+        # Adjust flat levels of EPUB2 nav points to be hierarchical (Level 2 for parents, Level 3 for children)
+        seen_first_level2 = False
+        for np in nav_points:
+            title_str = np["title"].strip()
+            title_upper = title_str.upper()
+            is_parent = False
+            if title_upper.startswith("PART ") or title_upper.startswith("VOLUME "):
+                is_parent = True
+            elif title_upper.startswith("CHAPTER ") and not title_upper.startswith("CHAPTERS "):
+                is_parent = True
+            elif title_upper in (
+                "GENERAL PREFACE BY THE EDITOR",
+                "THE EPISTLE DEDICATORY",
+                "PREFATORY NOTICES",
+                "AN ADVERTISEMENT UNTO THE READER",
+                "SUMMARY OF OBSERVATIONS DRAWN FROM THE EXPOSITION OF THE EPISTLE"
+            ):
+                is_parent = True
+
+            if is_parent:
+                np["level"] = 2
+                seen_first_level2 = True
+            else:
+                if seen_first_level2:
+                    np["level"] = 3
+                else:
+                    # Keep as Level 2 (top level) if we haven't seen a parent block yet,
+                    # to prevent these chapters from being skipped or orphaned.
+                    np["level"] = 2
+                    
         # Resolve target files and anchors for each navPoint
         for np in nav_points:
             src_parts = np["src"].split('#')

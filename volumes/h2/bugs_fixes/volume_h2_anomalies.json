@@ -1,0 +1,1162 @@
+{
+  "volume": "h2",
+  "total_words_audited": 302739,
+  "total_anomalies_count": 154,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "Poti-pherah",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": [
+          "... gypt, Gen. 41:45, \"Joseph married the daughter of Poti-pherah, \u05db\u05b9\u05bc\u05d4\u05b5\u05df \u05d0\u05b9\u05df,\"\u2014\"priest of On,\" that is, of Heliopo ..."
+        ]
+      },
+      {
+        "target": "pre-ordination",
+        "description": "Splittable word (rejoins to valid word 'preordination')",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": [
+          "... them to be conceived that is consistent with the pre-ordination of the incarnation without respect to sin and red ...",
+          "... are the creation, the permission of the fall, the pre-ordination of Christ, and others in him, unto grace and glor ...",
+          "... nto this order, there cannot be a priority in the pre-ordination of Christ unto the decree of the permission of th ..."
+        ]
+      },
+      {
+        "target": "pre-ordain",
+        "description": "Splittable word (rejoins to valid word 'preordain')",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": [
+          "... red or represented by them. Wherefore God did not pre-ordain the priesthood of Christ with respect unto the ob ...",
+          "... entrance of sin. It is true, indeed, Christ was pre-ordained, or [rather] the Son of God was so, to be incar ...",
+          "... e was \"manifested in these last times.\" As he was pre-ordained to be incarnate, so he was to be so of the bles ..."
+        ]
+      },
+      {
+        "target": "pre-ordained",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": [
+          "... entrance of sin. It is true, indeed, Christ was pre-ordained, or [rather] the Son of God was so, to be incarna ...",
+          "... e was \"manifested in these last times.\" As he was pre-ordained to be incarnate, so he was to be so of the blesse ..."
+        ]
+      },
+      {
+        "target": "re-formed",
+        "description": "Splittable word (rejoins to valid word 'reformed')",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": [
+          "... . Only, it is granted that we are both formed and re-formed immediately in his image; for as he was and is, i ..."
+        ]
+      },
+      {
+        "target": "peace-making",
+        "description": "Splittable word (rejoins to valid word 'peacemaking')",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": [
+          "... \u05c1\u05dc\u05d5\u05b9\u05dd \u05ea\u05b4\u05bc\u05d4\u05b0\u05d9\u05b6\u05d4 \u05d1\u05b6\u05bc\u05d9\u05df \u05e9\u05b0\u05c1\u05e0\u05b5\u05d9\u05d4\u05b6\u05dd. The counsel about peace-making between God and man was \"between them both;\" that ..."
+        ]
+      },
+      {
+        "target": "well-head",
+        "description": "Splittable word (rejoins to valid word 'wellhead')",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": [
+          "... ake atonement for them. And so are we come to the well-head or the fountain of salvation. Here lieth the imme ..."
+        ]
+      },
+      {
+        "target": "law-maker",
+        "description": "Splittable word (rejoins to valid word 'lawmaker')",
+        "chapter": "XXIX. \u2014The necessity of the priesthood of Christ on the supposition of sin and grace",
+        "contexts": [
+          "... unto him which ought not to be done unto any wise law-maker or governor among men. Nor will it follow that be ..."
+        ]
+      },
+      {
+        "target": "pre-required",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": [
+          "... icacy from thence, but only as it was a condition pre-required thereunto.\" (5.) \"This expiation of our sins con ..."
+        ]
+      },
+      {
+        "target": "law-giving",
+        "description": "Splittable word (rejoins to valid word 'lawgiving')",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": [
+          "... acts the kingly power of Christ, as, namely, his law-giving, his universal protection of his people, his rule ..."
+        ]
+      },
+      {
+        "target": "pre-required",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": [
+          "... ice of Christ respects God so much as a condition pre-required unto the forgiveness of sin. But he will have it ..."
+        ]
+      },
+      {
+        "target": "re-introduction",
+        "description": "Splittable word (rejoins to valid word 'reintroduction')",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "... od. 20:11. Upon its first institution, and on the re-introduction of its observation, it is so called. But it is a ..."
+        ]
+      },
+      {
+        "target": "Baal-meon",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "... ben, building the cities formerly called Nebo and Baal-meon, changed their names, because they were the names ..."
+        ]
+      },
+      {
+        "target": "north-western",
+        "description": "Splittable word (rejoins to valid word 'northwestern')",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "... e conductors of their first great colonies in the north-western parts of the world; for to fancy that Tuisco is t ..."
+        ]
+      },
+      {
+        "target": "non-observance",
+        "description": "Splittable word (rejoins to valid word 'nonobservance')",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "... er the obligation of a hebdomadal rest. And their non-observance of it was their sin, not firstly, directly, and i ..."
+        ]
+      },
+      {
+        "target": "Sabbath-keeping",
+        "description": "Splittable word (rejoins to valid word 'Sabbathkeeping')",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": [
+          "... maining for the people of God: \"There remaineth a Sabbath-keeping for the people of God; for he that is entered int ...",
+          "... rks, introduced, he calls it a \"sabbatism,\" or a \"sabbath-keeping.\" He doth not do this only and separately, averri ...",
+          "... comprise the spiritual rest aimed at, and also a sabbath-keeping, or observation of a sabbath rest,\u2014manifests his ..."
+        ]
+      },
+      {
+        "target": "re-introduction",
+        "description": "Splittable word (rejoins to valid word 'reintroduction')",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": [
+          "... thereby; so that it cannot be retained without a re-introduction of that covenant and the righteousness thereof. A ..."
+        ]
+      },
+      {
+        "target": "re-introduction",
+        "description": "Splittable word (rejoins to valid word 'reintroduction')",
+        "chapter": "VI. \u2014The practical observance of the Lord's Day",
+        "contexts": [
+          "... t the day before, cannot be insisted on without a re-introduction of the seventh day precisely, to whose observatio ..."
+        ]
+      },
+      {
+        "target": "PRE-EMINENT",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "CHAPTERS 1, 2: Pre-eminent dignity of Christ, both absolutely and comparatively\u2014His superiority to a",
+        "contexts": [
+          "### CHAPTERS 1, 2 ### PRE-EMINENT DIGNITY OF CHRIST, BOTH ABSOLUTELY AND COMPARATIV ..."
+        ]
+      },
+      {
+        "target": "hold-fast",
+        "description": "Splittable word (rejoins to valid word 'holdfast')",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... of trial, to be sure that our anchor have a good hold-fast in heaven. 23. After the most sincere performance ..."
+        ]
+      },
+      {
+        "target": "re-introduction",
+        "description": "Splittable word (rejoins to valid word 'reintroduction')",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... d no right to minister at the material altar, the re-introduction of such altars is inconsistent with the perpetual ..."
+        ]
+      },
+      {
+        "target": "co-workers",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... mployeth in any work, are therein \u03c3\u03c5\u03bd\u03b5\u03c1\u03b3\u03bf\u1f76 \u0398\u03b5\u03bf\u1fe6,\u2014\"co-workers with God.\" 13. Let those that are employed in the ..."
+        ]
+      },
+      {
+        "target": "stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'stoutheartedness')",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... ke in a sense of sorrow in affliction is, through stout-heartedness, to despise the chastening of the Lord. 3. The so ..."
+        ]
+      },
+      {
+        "target": "pre-eminences",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... his general assembly is one of the most excellent pre-eminences of the gospel above the law. 8. Jesus Christ alon ..."
+        ]
+      },
+      {
+        "target": "non-exclusive",
+        "description": "Splittable word (rejoins to valid word 'nonexclusive')",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... t of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the te ..."
+        ]
+      },
+      {
+        "target": "non-transferable",
+        "description": "Splittable word (rejoins to valid word 'nontransferable')",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... ed fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this e-book ..."
+        ]
+      },
+      {
+        "target": "hold-fast",
+        "description": "Splittable word (rejoins to valid word 'holdfast')",
+        "chapter": "CHAPTERS 4:14\u201316, 5\u20138\" Superiority of Christ as priest to the Levitical priesthood, from the analogy",
+        "contexts": [
+          "... of trial, to be sure that our anchor have a good hold-fast in heaven. 23. After the most sincere performance ..."
+        ]
+      },
+      {
+        "target": "re-introduction",
+        "description": "Splittable word (rejoins to valid word 'reintroduction')",
+        "chapter": "CHAPTERS 4:14\u201316, 5\u20138\" Superiority of Christ as priest to the Levitical priesthood, from the analogy",
+        "contexts": [
+          "... d no right to minister at the material altar, the re-introduction of such altars is inconsistent with the perpetual ..."
+        ]
+      },
+      {
+        "target": "co-workers",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": [
+          "... mployeth in any work, are therein \u03c3\u03c5\u03bd\u03b5\u03c1\u03b3\u03bf\u1f76 \u0398\u03b5\u03bf\u1fe6,\u2014\"co-workers with God.\" 13. Let those that are employed in the ..."
+        ]
+      },
+      {
+        "target": "stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'stoutheartedness')",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": [
+          "... ke in a sense of sorrow in affliction is, through stout-heartedness, to despise the chastening of the Lord. 3. The so ..."
+        ]
+      },
+      {
+        "target": "pre-eminences",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": [
+          "... his general assembly is one of the most excellent pre-eminences of the gospel above the law. 8. Jesus Christ alon ..."
+        ]
+      },
+      {
+        "target": "non-exclusive",
+        "description": "Splittable word (rejoins to valid word 'nonexclusive')",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": [
+          "... t of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the te ..."
+        ]
+      },
+      {
+        "target": "non-transferable",
+        "description": "Splittable word (rejoins to valid word 'nontransferable')",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": [
+          "... ed fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this e-book ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [
+      {
+        "target": "ePub",
+        "description": "Mixed-case capitalization error",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": [
+          "... e express written permission of Monergism Books. ePub, .mobi & .pdf Editions July 2019 Requests for inf ..."
+        ]
+      },
+      {
+        "target": "ePub",
+        "description": "Mixed-case capitalization error",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": [
+          "... e express written permission of Monergism Books. ePub, .mobi & .pdf Editions July 2019 Requests for inf ..."
+        ]
+      }
+    ],
+    "Unresolved Citation References": [
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": [
+          "... , tibique hinc decumam partem pr\u00e6d\u00e6 voveo,\" Liv., lib. v. cap. xxi. The like instances occur in other aut ...",
+          "... \u1f00\u03ba\u03c1\u03bf\u03b8\u03af\u03bd\u03b9\u03b1 \u03c4\u03b1\u1fe6\u03c4\u03b1 \u03ba\u03b1\u03c4\u03b1\u03b3\u03b9\u03b5\u1fd6\u03bd \u03b8\u03b5\u1ff6\u03bd \u1f41\u03c4\u03b5\u1ff3\u03b4\u03ae. And again, lib. viii. cap. cxxi., \u03a0\u03c1\u1ff6\u03c4\u03b1 \u03bc\u03ad\u03bd \u03bd\u03c5\u03bd \u03c4\u03bf\u1fd6\u03c3\u03b9 \u03b8\u03b5\u03bf\u1fd6\u03c3\u03b9 \u1f10\u03be\u03b5\u1fd6\u03bb\u03bf ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": [
+          "... by Aquinas, p. 3, q. 3; Bonaventura in Sentent., lib. iii. dist. i. ar. 2, q. 1, and others. Immediately on ...",
+          "... in opposed by Calvin, Instit. lib. ii. cap. xii., lib. iii. cap. xi.; by Wigandus de Osiandrismo, p. 23; and ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": [
+          "... by Aquinas, p. 3, q. 3; Bonaventura in Sentent., lib. iii. dist. i. ar. 2, q. 1, and others. Immediately ...",
+          "... And he also was herein opposed by Calvin, Instit. lib. ii. cap. xii., lib. iii. cap. xi.; by Wigandus de O ...",
+          "... in opposed by Calvin, Instit. lib. ii. cap. xii., lib. iii. cap. xi.; by Wigandus de Osiandrismo, p. 23; a ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXVII. \u2014The original of the priesthood of Christ in the counsel of God",
+        "contexts": [
+          "... m who maintained them, Sand. Hist. Eccles. Enucl. lib. iii. It was the 22d verse which they principally insi ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXIX. \u2014The necessity of the priesthood of Christ on the supposition of sin and grace",
+        "contexts": [
+          "... unto others, and is not merely for itself, Ethic. lib. v. cap. i. ii. Particular justice is either distrib ...",
+          "... torod. Institut. cap. xxxi.; Volk. de Ver. Relig. lib. v. cap. xxi.; Crellius, Lib. de Deo, cap. xxviii.; ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXIX. \u2014The necessity of the priesthood of Christ on the supposition of sin and grace",
+        "contexts": [
+          "... is expressed by Socinus, Pr\u00e6lec. Theol. cap. xvi. lib. i., de Jesu Christo Servator., lib. iii. cap. i.; C ...",
+          "... ol. cap. xvi. lib. i., de Jesu Christo Servator., lib. iii. cap. i.; Catech. Racov., cap. viii. quest. 19; ...",
+          "... re express to this purpose, De Christo Servatore, lib. i. cap. ii., \"Qu\u00e6rente aliquo, qui fiat, ut mortem ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... thout disturbance or affront from the enemy, Liv. lib. v. And the family ceremonies, in the sacrifice of a ...",
+          "... nsferred unto the consuls. See Dion. Halicarnass. lib. v. So Livy: \"Rerum deinde divinarum habita cura: et ...",
+          "... rk their enchantments by. See Fuller. Miscellan., lib. v. cap. xi. Hottinger, with most probability, conje ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... st, or the whole of it was an abomination. Philo, lib. iii. de Vita Mosis, admits all the people afresh to t ...",
+          "... \u03b9\u03bb\u03b5\u1f7a\u03c2 \u03ba\u03b1\u1f76 \u03c0\u03c1\u1f78\u03c2 \u03c4\u03bf\u1f7a\u03c2 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03ba\u03cd\u03c1\u03b9\u03bf\u03c2, Aristot. Polit. lib. iii.;\u2014\"The king was general, judge, and lord of thing ...",
+          "... had all the power. See Elmacin. Histor. Saracen. lib. iii. cap. ii. It might have so fallen out with those ..."
+        ]
+      },
+      {
+        "target": "lib. x",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... oom of Amphiaraus. So he speaks to them, Thebaid. lib. x.: 189:\u2014 \u2014\u2014\"Non h\u00e6 nostro de pectore voces: Ille ...",
+          "... \u03c3\u03b1\u03b3\u03bf\u03c1\u03b5\u03cd\u03bf\u03bd\u03c4\u03b1\u03b9, \u03ba\u03b1\u1f76 \u0392\u03bf\u03c1\u03c3\u03b9\u03c0\u03c0\u03b7\u03bd\u03bf\u1f76, \u03ba\u03b1\u1f76 \u1f04\u03bb\u03bb\u03bf\u03b9 \u03c0\u03bb\u03b5\u03af\u03bf\u03c5\u03c2, lib. xvi. cap. i.;\u2014\"Some were called Orcheni, and some B ...",
+          "... a kind of priest that attended unto sacrificing, lib. xvii.; and he says that one Ch\u00e6remon, who went alon ..."
+        ]
+      },
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... st, or the whole of it was an abomination. Philo, lib. iii. de Vita Mosis, admits all the people afresh to ...",
+          "... gum desiderium esset, regem sacrificulum creant,\" lib. ii. cap. ii. And the king of the \"sacra\" at Athens h ...",
+          "... \u03b9\u03bb\u03b5\u1f7a\u03c2 \u03ba\u03b1\u1f76 \u03c0\u03c1\u1f78\u03c2 \u03c4\u03bf\u1f7a\u03c2 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03ba\u03cd\u03c1\u03b9\u03bf\u03c2, Aristot. Polit. lib. iii.;\u2014\"The king was general, judge, and lord of thin ..."
+        ]
+      },
+      {
+        "target": "lib. xvi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... \u03c3\u03b1\u03b3\u03bf\u03c1\u03b5\u03cd\u03bf\u03bd\u03c4\u03b1\u03b9, \u03ba\u03b1\u1f76 \u0392\u03bf\u03c1\u03c3\u03b9\u03c0\u03c0\u03b7\u03bd\u03bf\u1f76, \u03ba\u03b1\u1f76 \u1f04\u03bb\u03bb\u03bf\u03b9 \u03c0\u03bb\u03b5\u03af\u03bf\u03c5\u03c2, lib. xvi. cap. i.;\u2014\"Some were called Orcheni, and some Bor ...",
+          "... a kind of priest that attended unto sacrificing, lib. xvii.; and he says that one Ch\u00e6remon, who went along ..."
+        ]
+      },
+      {
+        "target": "lib. ix",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... l. de Rerum Incantor. p. 85; Rhodigni. Var. Lec., lib. ix. cap. xxiii.; Sixtus Senensis, Biblioth. Tit. Cur ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... st, or the whole of it was an abomination. Philo, lib. iii. de Vita Mosis, admits all the people afresh to ...",
+          "... gum desiderium esset, regem sacrificulum creant,\" lib. ii. cap. ii. And the king of the \"sacra\" at Athens ...",
+          "... \u03b9\u03bb\u03b5\u1f7a\u03c2 \u03ba\u03b1\u1f76 \u03c0\u03c1\u1f78\u03c2 \u03c4\u03bf\u1f7a\u03c2 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03ba\u03cd\u03c1\u03b9\u03bf\u03c2, Aristot. Polit. lib. iii.;\u2014\"The king was general, judge, and lord of thi ..."
+        ]
+      },
+      {
+        "target": "lib. xvii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "... a kind of priest that attended unto sacrificing, lib. xvii.; and he says that one Ch\u00e6remon, who went along w ..."
+        ]
+      },
+      {
+        "target": "lib. iv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "... ir bacchanals to cry out, \"Evoi, Sabboi,\" Sympos. lib. iv. cap. xv.; which things are ridiculous. Lactantiu ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "... r well observes and well proves, Emendat. Tempor. lib. iii., Canon. Isagog. lib. iii. p. 213: \"Omnem festivi ...",
+          "... roves, Emendat. Tempor. lib. iii., Canon. Isagog. lib. iii. p. 213: \"Omnem festivitatem Judaicam, non solum ...",
+          "... er day, but still for the same reason: Epist. cx. lib. iii., \u0394\u03b5\u03c5\u03c4\u03b5\u03c1\u03cc\u03c0\u03c1\u03c9\u03c4\u03bf\u03bd \u03b5\u1f34\u03c1\u03b7\u03c4\u03b1\u03b9, \u1f10\u03c0\u03b5\u03b9\u03b4\u1f74 \u03b4\u03b5\u03cd\u03c4\u03b5\u03c1\u03bf\u03bd \u03bc\u1f72\u03bd \u1f26\u03bd \u03c4 ..."
+        ]
+      },
+      {
+        "target": "Epist. cx",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "... th on another day, but still for the same reason: Epist. cx. lib. iii., \u0394\u03b5\u03c5\u03c4\u03b5\u03c1\u03cc\u03c0\u03c1\u03c9\u03c4\u03bf\u03bd \u03b5\u1f34\u03c1\u03b7\u03c4\u03b1\u03b9, \u1f10\u03c0\u03b5\u03b9\u03b4\u1f74 \u03b4\u03b5\u03cd\u03c4\u03b5\u03c1\u03bf ..."
+        ]
+      },
+      {
+        "target": "lib. vi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "... arius numerus legitimus et plenus est,\" Institut. lib. vii. cap. xiv. Procopius Gaz\u00e6us on the Pentateuch ha ...",
+          "... \u03b5\u03c5\u03c4\u03b5\u03c1\u03cc\u03c0\u03c1\u03c9\u03c4\u03bf\u03bd. So he, both in his Emendat. Tempor. lib. vi., and Isagog. Canon. p. 218. And this is subscrib ...",
+          "... inter nos, monumentum haberent,\" De Invent. Rer. lib. vi. cap. v. And indeed, among sundry of the ancients ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "... , that our learned Selden, de Jur. Gen. apud Heb. lib. iii. cap. xii.\u2013xiv., contends for it as the common an ..."
+        ]
+      },
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "... , that our learned Selden, de Jur. Gen. apud Heb. lib. iii. cap. xii.\u2013xiv., contends for it as the common a ...",
+          "... whole world,\" De Opificio Mundi, et de Vita Mos. lib. ii. To the same purpose speaks Josephus, lib. ii. co ...",
+          "... os. lib. ii. To the same purpose speaks Josephus, lib. ii. cont. Apion. And the words of Abarbanel are suff ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "... , that our learned Selden, de Jur. Gen. apud Heb. lib. iii. cap. xii.\u2013xiv., contends for it as the common ...",
+          "... whole world,\" De Opificio Mundi, et de Vita Mos. lib. ii. To the same purpose speaks Josephus, lib. ii. c ...",
+          "... os. lib. ii. To the same purpose speaks Josephus, lib. ii. cont. Apion. And the words of Abarbanel are suf ..."
+        ]
+      },
+      {
+        "target": "lib. vii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "... iloponus, \u03c0\u03b5\u03c1\u1f76 \u03ba\u03bf\u03c3\u03bc\u03bf\u03c0\u03bf\u03b9\u0390\u03b1\u03c2, or de Creation. Mund. lib. vii. cap. xiv.: \u1f18\u03ba\u03b5\u1fd6\u03bd\u03bf \u03b3\u03b5 \u03bc\u1f74\u03bd \u03c3\u03c5\u03bc\u03c0\u03b5\u03c6\u03ce\u03bd\u03b7\u03c4\u03b1\u03b9 \u03c0\u1fb6\u03c3\u03b9\u03bd \u1f00\u03bd\u03b8\u03c1 ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": [
+          "... ruling sky.\" The like he affirms in his Ethics, lib. v. cap. vii., defining it to be that which \u03c0\u03b1\u03bd\u03c4\u03b1\u03c7\u03bf\u1fe6 ...",
+          "... he faculties of our souls. Hence Julian in Cyril. lib. v. con. Jul. joins the first and fourth precept tog ..."
+        ]
+      },
+      {
+        "target": "lib. xix",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": [
+          "... of Varro, who was \"disertissimus nepotum Romuli,\" lib. xix. de Civit. Dei. Yea, and some of the most learned ..."
+        ]
+      },
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": [
+          "... nkind was God's prescription unto them. So Tully, lib. ii. de Legib. cap. iv., \"Hanc video sapientissimorum ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": [
+          "... . Bellarmine contends expressly, de Cult. Sanct., lib. iii. cap. xi., that \"Jus divinum requirebat ut unus d ..."
+        ]
+      },
+      {
+        "target": "lib. vii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": [
+          "... lib. i. in iv. Evangel.; Clemens Alex., Stromat. lib. vii. cap. vii.; Origen, lib. viii. con. Cels.; Tertul ...",
+          "... mens Alex., Stromat. lib. vii. cap. vii.; Origen, lib. viii. con. Cels.; Tertul. de Coron. Milit. cap. iii. ...",
+          "... ut suited to those times, Can. 66, and Constitut. lib. vii. cap. xxiv., the observation both of the Saturday ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "VI. \u2014The practical observance of the Lord's Day",
+        "contexts": [
+          "... ce of the Code; of Charles the Great, Capitular., lib. i. cap. lxxxi., lib. v. cap. clxxxviii. The sum of ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "VI. \u2014The practical observance of the Lord's Day",
+        "contexts": [
+          "... arles the Great, Capitular., lib. i. cap. lxxxi., lib. v. cap. clxxxviii. The sum of them all is contained ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "5. ... 8.",
+        "description": "List sequence jump (skipped from 5 to 8)",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 14.",
+        "description": "List sequence jump (skipped from 2 to 14)",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 17.",
+        "description": "List sequence jump (skipped from 11 to 17)",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 11.",
+        "description": "List sequence jump (skipped from 9 to 11)",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 13.",
+        "description": "List sequence jump (skipped from 11 to 13)",
+        "chapter": "XXVI. \u2014Of the origin of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 17.",
+        "description": "List sequence jump (skipped from 2 to 17)",
+        "chapter": "XXVII. \u2014The original of the priesthood of Christ in the counsel of God",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 14.",
+        "description": "List sequence jump (skipped from 1 to 14)",
+        "chapter": "XXVII. \u2014The original of the priesthood of Christ in the counsel of God",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 14.",
+        "description": "List sequence jump (skipped from 9 to 14)",
+        "chapter": "XXVII. \u2014The original of the priesthood of Christ in the counsel of God",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 11.",
+        "description": "List sequence jump (skipped from 9 to 11)",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 18.",
+        "description": "List sequence jump (skipped from 9 to 18)",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 19.",
+        "description": "List sequence jump (skipped from 9 to 19)",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 15.",
+        "description": "List sequence jump (skipped from 3 to 15)",
+        "chapter": "XXIX. \u2014The necessity of the priesthood of Christ on the supposition of sin and grace",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 21.",
+        "description": "List sequence jump (skipped from 15 to 21)",
+        "chapter": "XXIX. \u2014The necessity of the priesthood of Christ on the supposition of sin and grace",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 22.",
+        "description": "List sequence jump (skipped from 14 to 22)",
+        "chapter": "XXIX. \u2014The necessity of the priesthood of Christ on the supposition of sin and grace",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 10.",
+        "description": "List sequence jump (skipped from 8 to 10)",
+        "chapter": "XXXI. \u2014The nature of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 13.",
+        "description": "List sequence jump (skipped from 8 to 13)",
+        "chapter": "XXXI. \u2014The nature of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 10.",
+        "description": "List sequence jump (skipped from 5 to 10)",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 19.",
+        "description": "List sequence jump (skipped from 13 to 19)",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 10.",
+        "description": "List sequence jump (skipped from 6 to 10)",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 13.",
+        "description": "List sequence jump (skipped from 8 to 13)",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 17.",
+        "description": "List sequence jump (skipped from 7 to 17)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 14.",
+        "description": "List sequence jump (skipped from 3 to 14)",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 16.",
+        "description": "List sequence jump (skipped from 4 to 16)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 15.",
+        "description": "List sequence jump (skipped from 11 to 15)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 12.",
+        "description": "List sequence jump (skipped from 8 to 12)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 16.",
+        "description": "List sequence jump (skipped from 13 to 16)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "17. ... 20.",
+        "description": "List sequence jump (skipped from 17 to 20)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 20.",
+        "description": "List sequence jump (skipped from 16 to 20)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 34.",
+        "description": "List sequence jump (skipped from 1 to 34)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 46.",
+        "description": "List sequence jump (skipped from 14 to 46)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "19. ... 49.",
+        "description": "List sequence jump (skipped from 19 to 49)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 53.",
+        "description": "List sequence jump (skipped from 16 to 53)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 16.",
+        "description": "List sequence jump (skipped from 8 to 16)",
+        "chapter": "IV. \u2014Of the Judaical Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 17.",
+        "description": "List sequence jump (skipped from 12 to 17)",
+        "chapter": "IV. \u2014Of the Judaical Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 19.",
+        "description": "List sequence jump (skipped from 2 to 19)",
+        "chapter": "IV. \u2014Of the Judaical Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 15.",
+        "description": "List sequence jump (skipped from 7 to 15)",
+        "chapter": "IV. \u2014Of the Judaical Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 20.",
+        "description": "List sequence jump (skipped from 9 to 20)",
+        "chapter": "IV. \u2014Of the Judaical Sabbath",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 6.",
+        "description": "List sequence jump (skipped from 4 to 6)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 13.",
+        "description": "List sequence jump (skipped from 7 to 13)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 30.",
+        "description": "List sequence jump (skipped from 1 to 30)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 10.",
+        "description": "List sequence jump (skipped from 3 to 10)",
+        "chapter": "VI. \u2014The practical observance of the Lord's Day",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 6.",
+        "description": "List sequence jump (skipped from 4 to 6)",
+        "chapter": "CHAPTERS 1, 2: Pre-eminent dignity of Christ, both absolutely and comparatively\u2014His superiority to a",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 9.",
+        "description": "List sequence jump (skipped from 2 to 9)",
+        "chapter": "CHAPTERS 1, 2: Pre-eminent dignity of Christ, both absolutely and comparatively\u2014His superiority to a",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 10.",
+        "description": "List sequence jump (skipped from 8 to 10)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 9.",
+        "description": "List sequence jump (skipped from 7 to 9)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 5.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 8.",
+        "description": "List sequence jump (skipped from 6 to 8)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 15.",
+        "description": "List sequence jump (skipped from 12 to 15)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "CHAPTERS 3, 4:1\u201313: Christ's superiority to Moses, the agent in founding the old dispensation",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 10.",
+        "description": "List sequence jump (skipped from 8 to 10)",
+        "chapter": "CHAPTERS 4:14\u201316, 5\u20138\" Superiority of Christ as priest to the Levitical priesthood, from the analogy",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 9.",
+        "description": "List sequence jump (skipped from 7 to 9)",
+        "chapter": "CHAPTERS 4:14\u201316, 5\u20138\" Superiority of Christ as priest to the Levitical priesthood, from the analogy",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 5.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "CHAPTERS 9, 10:1\u201318: Superiority of Christ's priesthood from the superior value of his sacrifice",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "CHAPTERS 9, 10:1\u201318: Superiority of Christ's priesthood from the superior value of his sacrifice",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 8.",
+        "description": "List sequence jump (skipped from 6 to 8)",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 15.",
+        "description": "List sequence jump (skipped from 12 to 15)",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "CHAPTERS 10:19\u201339, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Jude 6",
+        "description": "Invalid Bible reference (chapter 6 exceeds max 1 for Jude)",
+        "chapter": "XXVIII. \u2014Federal transactions between the Father and the Son",
+        "contexts": [
+          "... ng on the recovery of man, Heb. 2:16; 2 Pet. 2:4; Jude 6. [2.] In the projection or provision of the way i ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "\"Tu, genitor, cape sacra manu patriosque penates;",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": [
+          "\"Tu, genitor, cape sacra manu patriosque penates;"
+        ]
+      },
+      {
+        "target": "Abluero.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXV. \u2014The office of priesthood",
+        "contexts": [
+          "Abluero.\""
+        ]
+      },
+      {
+        "target": "In this controversy he expressly engageth, in Respon. ad Grotium, cap. x. part. 56, p. 543: (1.) Pontificiam Christi dig...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": [
+          "In this controversy he expressly engageth, in Respon. ad Grotium, cap. x. part. 56, p. 543: (1.) Pontificiam Christi dig..."
+        ]
+      },
+      {
+        "target": "He yet proceeds:\u2014(1.) Accedit quod cum Christus sacerdos dicitur et quidem talis qui seipsum obtulerit, et mors ipsius, ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXII. \u2014The nature of the priesthood of Christ",
+        "contexts": [
+          "He yet proceeds:\u2014(1.) Accedit quod cum Christus sacerdos dicitur et quidem talis qui seipsum obtulerit, et mors ipsius, ..."
+        ]
+      },
+      {
+        "target": "15. But because we have resolved on a particular examination of all that can be pretended in this matter on the behalf o...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": [
+          "15. But because we have resolved on a particular examination of all that can be pretended in this matter on the behalf o..."
+        ]
+      },
+      {
+        "target": "17. But he proceeds to give countenance unto what he hath asserted: (1.) Itaque quemadmodum oblationis vox, ut infra cla...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": [
+          "17. But he proceeds to give countenance unto what he hath asserted: (1.) Itaque quemadmodum oblationis vox, ut infra cla..."
+        ]
+      },
+      {
+        "target": "(1.) Ex quo apparet peccatis etiam illorum quos pontifices Aaronici expiare debebant, tentationes atque afflictiones nos...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXIII. \u2014Of the acts of the priesthood of Christ, their object, with the time and place of its",
+        "contexts": [
+          "(1.) Ex quo apparet peccatis etiam illorum quos pontifices Aaronici expiare debebant, tentationes atque afflictiones nos..."
+        ]
+      },
+      {
+        "target": "\u2014\u2014\"Non h\u00e6 nostro de pectore voces:",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "\u2014\u2014\"Non h\u00e6 nostro de pectore voces:"
+        ]
+      },
+      {
+        "target": "Vestra fides, ipso non discordante, subegit.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXXIV. \u2014Prefigurations of the priesthood and sacrifice of Christ",
+        "contexts": [
+          "Vestra fides, ipso non discordante, subegit.\""
+        ]
+      },
+      {
+        "target": "speaking in contradiction, as he thought, unto them. And so Horace mentions their \"tricesima sabbata;\" which were no oth...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "I. \u2014Differences concerning a day of sacred rest\u2014Principles directing to the observance of it\u2014Th",
+        "contexts": [
+          "speaking in contradiction, as he thought, unto them. And so Horace mentions their \"tricesima sabbata;\" which were no oth..."
+        ]
+      },
+      {
+        "target": "\"Septima qu\u00e6que dies turpi damnata veterno,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "\"Septima qu\u00e6que dies turpi damnata veterno,"
+        ]
+      },
+      {
+        "target": "Ut delassati mollis imago Dei.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "Ut delassati mollis imago Dei.\""
+        ]
+      },
+      {
+        "target": "\"Aut ego sum causatus aves, aut omina dira",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "\"Aut ego sum causatus aves, aut omina dira"
+        ]
+      },
+      {
+        "target": "Saturni sacra me tenuisse die;\"\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "Saturni sacra me tenuisse die;\"\u2014"
+        ]
+      },
+      {
+        "target": "\u2014\u2014\"Nec te peregrina morentur",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "\u2014\u2014\"Nec te peregrina morentur"
+        ]
+      },
+      {
+        "target": "Sabbata,\" Remed. Amoris, v. 219;\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "Sabbata,\" Remed. Amoris, v. 219;\u2014"
+        ]
+      },
+      {
+        "target": "\"Romanas autem soliti contemnere leges,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "\"Romanas autem soliti contemnere leges,"
+        ]
+      },
+      {
+        "target": "Tradidit arcano quodcunque volumine Moses;\"\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "Tradidit arcano quodcunque volumine Moses;\"\u2014"
+        ]
+      },
+      {
+        "target": "\"O utinam nunquam Jud\u00e6a victa fuisset",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "\"O utinam nunquam Jud\u00e6a victa fuisset"
+        ]
+      },
+      {
+        "target": "Victoresque suos natio victa premit.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "II. \u2014Of the original of the Sabbath",
+        "contexts": [
+          "Victoresque suos natio victa premit.\""
+        ]
+      },
+      {
+        "target": "\"Natura humanis omnia sunt paria.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": [
+          "\"Natura humanis omnia sunt paria."
+        ]
+      },
+      {
+        "target": "Magnu' comest, ut aves enecat accipiter.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "III. \u2014Of the causes of the Sabbath",
+        "contexts": [
+          "Magnu' comest, ut aves enecat accipiter.\""
+        ]
+      },
+      {
+        "target": "2. The renovation of all things by Jesus Christ is prophesied of and foretold as a new creation of all, even of the heav...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "V. \u2014Of the Lord's Day",
+        "contexts": [
+          "2. The renovation of all things by Jesus Christ is prophesied of and foretold as a new creation of all, even of the heav..."
+        ]
+      },
+      {
+        "target": "\"Panditur extemplo foribus domus atra revulsis:",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "VI. \u2014The practical observance of the Lord's Day",
+        "contexts": [
+          "\"Panditur extemplo foribus domus atra revulsis:"
+        ]
+      },
+      {
+        "target": "Pallida.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "VI. \u2014The practical observance of the Lord's Day",
+        "contexts": [
+          "Pallida.\""
+        ]
+      }
+    ]
+  }
+}

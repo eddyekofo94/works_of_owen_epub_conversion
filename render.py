@@ -1390,6 +1390,11 @@ def render_volume(vol_num: int, overrides: dict = None,
                 conv_mode = 'BODY_START'
                 conv_drop_cap = True
             conv_fm_style = 'blurb'
+        elif ch_dict.get('front_matter_style') is None:
+            if conv_mode == 'FRONT_MATTER':
+                conv_mode = 'BODY_START'
+                conv_drop_cap = True
+            conv_fm_style = 'blurb'
 
         raw_text = ch_dict.get('raw_text', '')
         titlepage_override = config.get('treatise_title_overrides', {}).get(ch_dict['title'])

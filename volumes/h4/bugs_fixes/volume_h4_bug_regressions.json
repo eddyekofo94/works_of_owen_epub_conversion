@@ -1,0 +1,526 @@
+{
+  "volume": "h4",
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h4/bugs_fixes/volume_h4_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h4/bugs_fixes/volume_h4_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h4/bugs_fixes/volume_h4_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h4/bugs_fixes/volume_h4_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 40,
+      "budget": 61,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "men of one age: Eccles. 1:4, \"One generation passeth away, and another generation cometh,\"—that is, the men of one age. See Deut. 32:7. So is γενεή , as in Homer's Iliad, vi. 146:—",
+          "next": "Οἵη περ θύλλων γενεὴ , τοιήδε καὶ ἀνδρῶν ."
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "oice of God, if you will choose so to do, take heed of that which would certainly be a hinderance thereof.' Thus dealeth the apostle with the Hebrews; and herein teacheth us that,—",
+          "next": "Obs. V. The formal reason of all our obedience consists in its relation to the voice or authority of God."
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "whereon they invited unto a feast all the priests that ministered. But most frequently they so express a present opportunity or season. So the Greeks use σήμερον , as in Anacreon,—",
+          "next": "Σήμερον μέλει μοι · τὸ δὲ αὔριον τίς οἷδε ;—"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "Σήμερον μέλει μοι · τὸ δὲ αὔριον τίς οἷδε ;—",
+          "next": "\"My care is for to-day\" (the present season); \"who knows to-morrow\" (or the time to come)?"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": " fall out). \"Sufficient unto the day\" (the present time and season) \"is the evil thereof.\" To the same purpose do they use \"hodie\" in the Latin tongue, as in these common sayings,—",
+          "next": "\" Sera nimis vita est crastina , viv' hodie:\""
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "And,—",
+          "next": "\" Qui non est hodie, cras minus aptus erit;\" with many other sayings of the like importance. This, then, is the sense and meaning of the word absolutely considered. The apostle exh"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "another observation which the words opened will afford unto us, arising from the season, which the apostle presseth upon their consideration in that word \"to-day.\" And it is that,—",
+          "next": "Obs. XI. Especial seasons of grace for obedience are in an especial manner to be observed and improved."
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "int conspiracy as it were of all the persons of that age. These are they who were guilty of the sin here reported. And we may observe from this expression and remembrance of them,—",
+          "next": "Obs. XII. That the examples of our forefathers are of use and concernment unto us, and objects of our deepest consideration."
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": " sins, so that at least they are prevalent in them. Hence the apostle chargeth national sins on the Cretians, from the testimony of Epimenides, who had observed them amongst them;—",
+          "next": "Κρῆτες ἀεὶ ψεῦσται , κακὰ θήρια , γάστερες ἀργαί ,"
+        },
+        {
+          "file": "EPUB/ch001.xhtml",
+          "previous": "Κρῆτες ἀεὶ ψεῦσται , κακὰ θήρια , γάστερες ἀργαί ,",
+          "next": "Tit. 1:12, \"The Cretians are alway liars, evil beasts, slow bellies.\" Lying, dissimulation, cruelty, and sloth, were the sins of that nation from one generation to another, childre"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 16,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "text": "1. What from the nature of the things themselves, which are suited unto the various states, conditions, and apprehensions of the minds of men; 2. What from the manner of their expression, on which a character of divine wisdom is impressed; 3. What from the aut"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "text": "1. What from the nature of the things themselves, which are suited unto the various states, conditions, and apprehensions of the minds of men; 2. What from the manner of their expression, on which a character of divine wisdom is impressed; 3. What from the aut"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "text": "1. That those that preach it are sent of God; 2. That what is preached be according to the analogy of faith; 3. That it be drawn from the written word; 4. That it be delivered in the name and authority of God."
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "text": "1. That those that preach it are sent of God; 2. That what is preached be according to the analogy of faith; 3. That it be drawn from the written word; 4. That it be delivered in the name and authority of God."
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "To complete our profession, yea, to constitute our ὁμολογία , there is required that we make a solemn declaration of our subjection unto the gospel in these things. And this is made two ways. (1.) By works. (2.) By words."
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "text": "To complete our profession, yea, to constitute our ὁμολογία , there is required that we make a solemn declaration of our subjection unto the gospel in these things. And this is made two ways. (1.) By works. (2.) By words."
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "text": "Ἔχομεν ἀρχιερέα . \"We have an high priest.\" The apostle introduceth this for another purpose. Yet withal he lets the Hebrews know that in the gospel state there is no loss of privilege in any thing as to what the church enjoyed under the law of Moses. They had"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "text": "Ἔχομεν ἀρχιερέα . \"We have an high priest.\" The apostle introduceth this for another purpose. Yet withal he lets the Hebrews know that in the gospel state there is no loss of privilege in any thing as to what the church enjoyed under the law of Moses. They had"
+        },
+        {
+          "file": "EPUB/ch019.xhtml",
+          "text": "1. Frequency in offending; 2. Greatness of offences; 3. Instability in promises and engagements. These are things apt to give provocations beyond what ordinary moderation and meekness can bear withal, especially where they are accompanied with a disregard of t"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "1. Frequency in offending; 2. Greatness of offences; 3. Instability in promises and engagements. These are things apt to give provocations beyond what ordinary moderation and meekness can bear withal, especially where they are accompanied with a disregard of t"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "if ye will hear his voice harden not your hearts",
+          "count": 11
+        },
+        {
+          "phrase": "it is said to-day if ye will hear his voice",
+          "count": 10
+        },
+        {
+          "phrase": "any of you should seem to come short of it",
+          "count": 10
+        },
+        {
+          "phrase": "although the works were finished from the foundation of the",
+          "count": 10
+        },
+        {
+          "phrase": "the works were finished from the foundation of the world",
+          "count": 10
+        },
+        {
+          "phrase": "to-day if ye will hear his voice harden not your",
+          "count": 9
+        },
+        {
+          "phrase": "thought it not robbery to be equal with god but",
+          "count": 8
+        },
+        {
+          "phrase": "became obedient unto death even the death of the cross",
+          "count": 8
+        },
+        {
+          "phrase": "unto us was the gospel preached even as unto them",
+          "count": 8
+        },
+        {
+          "phrase": "not as the word of men but as it is",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "page": 2,
+          "word_count": 3,
+          "sample": "כְּקֹלוֹ קוֹל יְהוֹהָ"
+        }
+      ]
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 0,
+      "budget": 7,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

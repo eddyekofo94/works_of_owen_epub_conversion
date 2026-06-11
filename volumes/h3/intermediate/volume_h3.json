@@ -4,13 +4,13 @@
   "meta": {
     "pages": 10,
     "chapters_count": 23,
-    "extracted_at": "2026-06-11T01:43:21.102128"
+    "extracted_at": "2026-06-11T15:14:17.331182"
   },
   "chapters": [
     {
       "cid": "ch001",
       "title": "CHAPTER 1",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -21,7 +21,7 @@
     {
       "cid": "ch002",
       "title": "Hebrews 1: 1, 2",
-      "level": 1,
+      "level": 3,
       "page_start": 1,
       "page_end": 2,
       "is_treatise": false,
@@ -32,7 +32,7 @@
     {
       "cid": "ch003",
       "title": "Hebrews 1:3",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -43,7 +43,7 @@
     {
       "cid": "ch004",
       "title": "Hebrews 1:4",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -54,7 +54,7 @@
     {
       "cid": "ch005",
       "title": "Hebrews 1:5",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -65,7 +65,7 @@
     {
       "cid": "ch006",
       "title": "Hebrews 1:6",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 3,
       "is_treatise": false,
@@ -76,7 +76,7 @@
     {
       "cid": "ch007",
       "title": "Hebrews 1:7",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 3,
       "is_treatise": false,
@@ -87,7 +87,7 @@
     {
       "cid": "ch008",
       "title": "Hebrews 1:8-9",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 3,
       "is_treatise": false,
@@ -98,7 +98,7 @@
     {
       "cid": "ch009",
       "title": "Hebrews 1: 10–12",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 4,
       "is_treatise": false,
@@ -109,7 +109,7 @@
     {
       "cid": "ch010",
       "title": "Hebrews 1: 13",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -120,7 +120,7 @@
     {
       "cid": "ch011",
       "title": "Hebrews 1:14",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -131,7 +131,7 @@
     {
       "cid": "ch012",
       "title": "CHAPTER 2",
-      "level": 1,
+      "level": 2,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -142,7 +142,7 @@
     {
       "cid": "ch013",
       "title": "Hebrews 2:1",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 5,
       "is_treatise": false,
@@ -153,7 +153,7 @@
     {
       "cid": "ch014",
       "title": "Hebrews 2: 2–4",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 6,
       "is_treatise": false,
@@ -164,7 +164,7 @@
     {
       "cid": "ch015",
       "title": "Hebrews 2: 5–9",
-      "level": 1,
+      "level": 3,
       "page_start": 6,
       "page_end": 7,
       "is_treatise": false,
@@ -175,7 +175,7 @@
     {
       "cid": "ch016",
       "title": "Hebrews 2: 10",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 8,
       "is_treatise": false,
@@ -186,7 +186,7 @@
     {
       "cid": "ch017",
       "title": "Hebrews 2: 11–13",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -197,7 +197,7 @@
     {
       "cid": "ch018",
       "title": "Hebrews 2: 14, 15",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -208,7 +208,7 @@
     {
       "cid": "ch019",
       "title": "Hebrews 2: 16",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -219,7 +219,7 @@
     {
       "cid": "ch020",
       "title": "Hebrews 2: 17, 18",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 9,
       "is_treatise": false,
@@ -230,7 +230,7 @@
     {
       "cid": "ch021",
       "title": "CHAPTER 3",
-      "level": 1,
+      "level": 2,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -241,7 +241,7 @@
     {
       "cid": "ch022",
       "title": "Hebrews 3:1-2",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -252,7 +252,7 @@
     {
       "cid": "ch023",
       "title": "Hebrews 3: 3–6",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,

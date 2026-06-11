@@ -1,0 +1,1712 @@
+{
+  "volume": "h6",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h6/input/volume_h6.epub",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h6/output/volume_h6.epub",
+  "generated_at": "2026-06-11T13:33:36.125968+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 12,
+    "source": "epub2"
+  },
+  "epub": {
+    "spine_text_files": 53,
+    "paragraph_count": 7185
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 242437,
+    "epub_content_tokens": 481968,
+    "coverage_ratio": 0.9998,
+    "missing_word_samples": [
+      {
+        "word": "καθʼ",
+        "pdf": 17,
+        "epub": 0
+      },
+      {
+        "word": "κατʼ",
+        "pdf": 12,
+        "epub": 0
+      },
+      {
+        "word": "ουδʼ",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "τουτʼ",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "διʼ",
+        "pdf": 4,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "the",
+        "pdf": 24168,
+        "epub": 48005
+      },
+      {
+        "word": "of",
+        "pdf": 16392,
+        "epub": 32527
+      },
+      {
+        "word": "and",
+        "pdf": 10286,
+        "epub": 20442
+      },
+      {
+        "word": "in",
+        "pdf": 6992,
+        "epub": 13865
+      },
+      {
+        "word": "is",
+        "pdf": 5731,
+        "epub": 11347
+      },
+      {
+        "word": "it",
+        "pdf": 5617,
+        "epub": 11182
+      },
+      {
+        "word": "to",
+        "pdf": 3967,
+        "epub": 7880
+      },
+      {
+        "word": "was",
+        "pdf": 3647,
+        "epub": 7268
+      },
+      {
+        "word": "he",
+        "pdf": 3080,
+        "epub": 6081
+      },
+      {
+        "word": "as",
+        "pdf": 2786,
+        "epub": 5534
+      },
+      {
+        "word": "for",
+        "pdf": 2683,
+        "epub": 5346
+      },
+      {
+        "word": "by",
+        "pdf": 2532,
+        "epub": 5038
+      },
+      {
+        "word": "be",
+        "pdf": 2480,
+        "epub": 4922
+      },
+      {
+        "word": "his",
+        "pdf": 2468,
+        "epub": 4844
+      },
+      {
+        "word": "all",
+        "pdf": 2241,
+        "epub": 4443
+      },
+      {
+        "word": "not",
+        "pdf": 2178,
+        "epub": 4338
+      },
+      {
+        "word": "but",
+        "pdf": 2036,
+        "epub": 4043
+      },
+      {
+        "word": "or",
+        "pdf": 1673,
+        "epub": 3320
+      },
+      {
+        "word": "so",
+        "pdf": 1561,
+        "epub": 3095
+      },
+      {
+        "word": "are",
+        "pdf": 1480,
+        "epub": 2943
+      },
+      {
+        "word": "covenant",
+        "pdf": 1427,
+        "epub": 2858
+      },
+      {
+        "word": "things",
+        "pdf": 1306,
+        "epub": 2591
+      },
+      {
+        "word": "we",
+        "pdf": 1103,
+        "epub": 2181
+      },
+      {
+        "word": "on",
+        "pdf": 1065,
+        "epub": 2107
+      },
+      {
+        "word": "had",
+        "pdf": 953,
+        "epub": 1891
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 11,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 0,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_usable": 0,
+    "skipped_top_window_count": 0,
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_usable": 0,
+    "skipped_bottom_window_count": 0,
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 7006,
+    "split_candidate_count": 40,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "And some directions we may take from the wisdom of the apostle in this management of his present subject, in our preaching or teaching of spiritual things; for,—",
+        "next": "Obs. I. When the nature and weight of the matter treated of, or the variety of arguments wherein it is concerned, do require that our discourse of it should be drawn forth unto a l"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "is sufferings; and in this place, the declaration of his glory in his priestly office. The same glory and advancement hath respect unto various acts and powers in the Lord Christ:—",
+        "next": "Ἐκάθισεν . [1.] The manner of his enjoyment of this dignity and glory is expressed in the word ἐκάθισεν , \"he sat down.\" Hereof there was nothing typical in the legal high priest, "
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "anifestation of the glorious presence of God. With respect hereunto our Saviour hath taught us to call on \"our Father which is in heaven.\" And from the words we may observe, that,—",
+        "next": "Obs. III. The principal glory of the priestly office of Christ depends on the glorious exaltation of his person.—To this end is it here pleaded by the apostle, and thereby he evinc"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": " doth also communicate all good things from God unto us; for the whole administration of things sacred between God and the church is committed unto him. And we must observe, that,—",
+        "next": "Obs. I. The Lord Christ, in the height of his glory, condescends to discharge the office of a public minister in the behalf of the church.—We are not to bound our faith on Christ a"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "This was \"the true tabernacle, which the Lord pitched,\" and whereof Christ is the \"minister.\" And we may observe,—",
+        "next": "Obs. II. That all spiritually sacred and holy things are laid up in Christ.—All the utensils of holy worship of old, all means of sacred light and purification, were all placed and"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "s of the heavenly things themselves,\" which are all laid up in Christ, \"the true tabernacle.\" They are all enclosed in him, and it will be in vain to seek for them elsewhere. For,—",
+        "next": "Obs. III. He hath the ministration of all these holy things committed unto him.—He is the minister both of the sanctuary and tabernacle, and of all things contained in them. Herein"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "nd the \"minchoth\" were offerings of dead things, as of corn, oil, meats, and drinks. To offer all these was the office of the priesthood ordained. And we are taught thereby, that,—",
+        "next": "Obs. II. There is no approach unto God without continual respect unto sacrifice and atonement. The principal end of sacrifices was to make atonement for sin.—And so necessary was t"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "4. The matter of it, \"somewhat to offer:\"—",
+        "next": "Ὅθεν . 1. The note of inference is ὅθεν , \"wherefore.\" It is frequently used by the apostle in this epistle, when he proves his present assertions, from the old institutions of the"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "hat which was past; and here he only shows how necessary it was that he should have himself to offer, and so to offer himself, as he had done. And from these words we may observe,—",
+        "next": "Obs. III. That there was no salvation to be had for us, no, not by Jesus Christ himself, without his sacrifice and oblation.—\"It was of necessity that he should have somewhat to of"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Obs. V. The Lord Christ being to save the church in the way of office, he was not to be spared in any thing necessary thereunto.—And in conformity unto him,—",
+        "next": "Obs. VI. Whatever state or condition we are called unto, what is necessary unto that state is indispensably required of us.—So are holiness and obedience required unto a state of r"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "e omitted,—'If really it were so;' for therein is force granted unto the concession that the apostle here makes: 'Truly it must be so.' \"If he were on earth,\" includes two things:—",
+        "next": "Ἦν ἐπὶ γῆς . 1. His continuance and abode on the earth:—If he were not exalted into heaven in the discharge of his office; if he were not at the right hand of God; if he were not e"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": " doth also communicate all good things from God unto us; for the whole administration of things sacred between God and the church is committed unto him. And we must observe, that,—",
+        "next": "Obs. I. The Lord Christ, in the height of his glory, condescends to discharge the office of a public minister in the behalf of the church.—We are not to bound our faith on Christ a"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "This was \"the true tabernacle, which the Lord pitched,\" and whereof Christ is the \"minister.\" And we may observe,—",
+        "next": "Obs. II. That all spiritually sacred and holy things are laid up in Christ.—All the utensils of holy worship of old, all means of sacred light and purification, were all placed and"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "s of the heavenly things themselves,\" which are all laid up in Christ, \"the true tabernacle.\" They are all enclosed in him, and it will be in vain to seek for them elsewhere. For,—",
+        "next": "Obs. III. He hath the ministration of all these holy things committed unto him.—He is the minister both of the sanctuary and tabernacle, and of all things contained in them. Herein"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "nd the \"minchoth\" were offerings of dead things, as of corn, oil, meats, and drinks. To offer all these was the office of the priesthood ordained. And we are taught thereby, that,—",
+        "next": "Obs. II. There is no approach unto God without continual respect unto sacrifice and atonement. The principal end of sacrifices was to make atonement for sin.—And so necessary was t"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "4. The matter of it, \"somewhat to offer:\"—",
+        "next": "Ὅθεν . 1. The note of inference is ὅθεν , \"wherefore.\" It is frequently used by the apostle in this epistle, when he proves his present assertions, from the old institutions of the"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "hat which was past; and here he only shows how necessary it was that he should have himself to offer, and so to offer himself, as he had done. And from these words we may observe,—",
+        "next": "Obs. III. That there was no salvation to be had for us, no, not by Jesus Christ himself, without his sacrifice and oblation.—\"It was of necessity that he should have somewhat to of"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "Obs. V. The Lord Christ being to save the church in the way of office, he was not to be spared in any thing necessary thereunto.—And in conformity unto him,—",
+        "next": "Obs. VI. Whatever state or condition we are called unto, what is necessary unto that state is indispensably required of us.—So are holiness and obedience required unto a state of r"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "e omitted,—'If really it were so;' for therein is force granted unto the concession that the apostle here makes: 'Truly it must be so.' \"If he were on earth,\" includes two things:—",
+        "next": "Ἦν ἐπὶ γῆς . 1. His continuance and abode on the earth:—If he were not exalted into heaven in the discharge of his office; if he were not at the right hand of God; if he were not e"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " the mount that which was heavenly, and he was to make an example or shadow of it; then they that ministered therein \"served only unto the example and shadow of heavenly things.\" '",
+        "next": "In the words may be observed, 1. The persons spoken of; \"who.\""
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " this latter sense it is here used; and I would choose to render it by a \"resemblance.\" It is less than δεῖγμα , \"simile,\" \"quiddam,\"—an obscure representation. Hence it is added,—",
+        "next": "Καὶ σκιᾷ . Καὶ σκιᾷ , \"and the shadow.\" Some suppose a \"shadow\" is taken artificially, and opposed unto an express image or complete delineation of any thing, by a similitude taken"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " words: 'The whole ministry of the priests of old was in and about earthly things, which had in them only a resemblance and shadow of things above.' And we may observe by the way,—",
+        "next": "Obs. I. God alone limits the signification and use of all his own institutions.—We ought not to derogate from them, nor to take any thing out of them which God hath put into them; "
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "(2.) The words of the testimony itself:—",
+        "next": "Κεχρημάτισται ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " and the utmost diligence was to be used about it; whence the divine oracle was given out in a way of charge and admonition, as we have well rendered the word. And we may observe,—",
+        "next": "Obs. IV. That our utmost care and diligence in the consideration of the mind of God are required in all that we do about his worship.—There is nothing wherein men for the most part"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "5. The measure and degree of this excellency; \"By how much also:\" all which must be spoken unto, for the opening of the words:—",
+        "next": "Νυνὶ δέ . 1. The introduction of the assertion is by the particles νυνὶ δέ ,—\"but now.\" Νῦν , \"now,\" is a note of time, of the present time. But there are instances where these adv"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "apostle expresseth himself, treating of the same subject, Rom. 3:26: \"To declare ἐν τῷ νῦν καιρῷ ,\" \"at this instant season,\" now the gospel is preached, \"his righteousness.\" For,—",
+        "next": "Obs. I. God, in his infinite wisdom, gives proper times and seasons unto all his dispensations unto and towards the church.—So the accomplishment of these things was in \"the fulnes"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " the angels are said to minister unto God, Dan. 7:10; that is, to do all things according unto his will, and at his command. So had the Lord Christ a ministry. And we may observe,—",
+        "next": "Obs. II. That the whole office of Christ was designed unto the accomplishment of the will and dispensation of the grace of God.—For these ends was his ministry committed unto him. "
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " unto the benefits which we receive by the mediation of Christ. His office was committed unto him of God, even the Father; and his will did he do in the discharge of it. Yet also,—",
+        "next": "Obs. III. The condescension of the Son of God to undertake the office of the ministry on our behalf is unspeakable, and for ever to be admired.—Especially will it appear so to be, "
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "oly discharge of his whole office. Thus did he obtain this ministry, and not by any legal constitution, succession, or carnal rite, as did the priests of old. And we may see that,—",
+        "next": "Obs. V. The exaltation of the human nature of Christ into the office of this glorious ministry depended solely on the sovereign wisdom, grace, and love of God.—When the human natur"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "e Levitical priests was good and useful in its time and season; this of our Lord Jesus Christ so differed from it as to be better than it, and more excellent; πολλῷ ἄμεινον . And,—",
+        "next": "Ὅσῳ . 5. There is added hereunto the degree of this pre-eminence, so far as it is intended in this place and the present argument, in the word ὅσῳ ,—\"by how much.\" 'So much more ex"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "roversy with the Jews did depend, he could not give it too much evidence, nor too full a confirmation. And as unto what concerns ourselves at present, we are taught thereby, that,—",
+        "next": "Obs. VI. It is our duty and our safety to acquiesce universally and absolutely in the ministry of Jesus Christ.—That which he was so designed unto, in the infinite wisdom and grace"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "3. The proof or demonstration of the nature of this covenant as unto its excellency, it was \"established on better promises:\"—",
+        "next": "Μεσίτης . 1. His office is that of a mediator,— μεσίτης , one that interposed between God and man, for the doing of all those things whereby a covenant might be established between"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "These things, among others, were necessary unto a full and complete mediator of the new covenant, such as Christ was. And,—",
+        "next": "Obs. VII. The provision of this mediator between God and man was an effect of infinite wisdom and grace; yea, it was the greatest and most glorious external effect of them that eve"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "escription of this mediator: (1.) That he was a mediator of a covenant; (2.) That this covenant was better than another which respect is had unto, whereof he was not the mediator:—",
+        "next": "Διαθήκης . (1.) He was the mediator of a \"covenant.\" And two things are supposed herein:—"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": ", and absolutely the best that God ever gave, or will give unto the church. And what they are we must consider in our progress. And sundry things may be observed from these words:—",
+        "next": "Obs. VIII. There is infinite grace in every divine covenant, inasmuch as it is established on promises.—Infinite condescension it is in God, that he will enter into covenant with d"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": ", confirmed with the oath of God, were not promises of eternal life, is to overthrow the whole Bible, both Old Testament and New. And we may observe from the foregoing discourses,—",
+        "next": "Obs. X. That although one state of the church hath had great advantages and privileges above another, yet no state hath had whereof to complain, whilst they observed the terms pres"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "(3.) What is affirmed of it, as the affirmation is included in a negative supposition: It was not blameless, it is not blameless:—",
+        "next": "Γάρ . (1.) The conjunction, γάρ , \"for,\" showeth that the apostle intends the confirmation of what he had before discoursed. But he seems not to refer only unto what he had immedia"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " the new, represented in God; being only the second part of his counsel or purpose \"which he had purposed in himself before the foundation of the world.\" And we may hence observe,—",
+        "next": "Obs. I. That whatever God had done before for the church, yet he ceased not, in his wisdom and grace, until he had made it partaker of the best and most blessed condition whereof i"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": " the mount that which was heavenly, and he was to make an example or shadow of it; then they that ministered therein \"served only unto the example and shadow of heavenly things.\" '",
+        "next": "In the words may be observed, 1. The persons spoken of; \"who.\""
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": " this latter sense it is here used; and I would choose to render it by a \"resemblance.\" It is less than δεῖγμα , \"simile,\" \"quiddam,\"—an obscure representation. Hence it is added,—",
+        "next": "Καὶ σκιᾷ . Καὶ σκιᾷ , \"and the shadow.\" Some suppose a \"shadow\" is taken artificially, and opposed unto an express image or complete delineation of any thing, by a similitude taken"
+      }
+    ],
+    "structural_start_exclusions": 485,
+    "short_fragment_count": 403,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Ἐπὶ τοῖς λεγομένοις ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Τῆς μεγαλωσύνης ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Ἐν οὐρανοῖς ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Καὶ τῆς σκηνῆς τῆς ἀληθινῆς ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Δῶρά τε καὶ θυσίας ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Τὶ ὁ προσενέγκῃ ."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Καὶ τῆς σκηνῆς τῆς ἀληθινῆς ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Δῶρά τε καὶ θυσίας ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Τὶ ὁ προσενέγκῃ ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Ὑποδείγματι ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Τῶν ἐπονρανίων ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Κεχρημάτισται ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Λειτονργίας ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Διαφορωτέρας ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Κρεἰττονος δια · θήκης ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Ἐπὶ κρείττοσιν ἐπαγγελίαις ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Ἡ πρώτη ἐκείνη ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Εἰ ἄμεμπτος ἦν ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Οὐκ ἂν δευτέρας ἐζητεῖτο τόπος ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Ὑποδείγματι ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Τῶν ἐπονρανίων ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Κεχρημάτισται ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Λειτονργίας ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Διαφορωτέρας ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Κρεἰττονος δια · θήκης ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Ἐπὶ κρείττοσιν ἐπαγγελίαις ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Ἡ πρώτη ἐκείνη ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Εἰ ἄμεμπτος ἦν ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Οὐκ ἂν δευτέρας ἐζητεῖτο τόπος ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Ἡμέραι ἔρχονται ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Διαθήκη καινή ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Πατράσιν αὐτῶν ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Κἀγὼ ἠμέλησα αὐτῶν ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Λέγει Κύριος ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Λέγει Κύριος ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Τῷ οἴκῳ Ἰσραήλ ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Μετὰ τὰς ἡμερας ἐκείνας ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Καὶ ἔσομαι αὐτοῖς εἰς Θεόν ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "And we may observe,—"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Καὶ αὐτοὶ ἔσονταί μοι εἰς λαόν ."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 40,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Πᾶς ἀρχιερεύς . In the first, 1. The universality of the expression is to be observed: Πᾶς ἀρχιερεύς ,—\"Every high priest.\" By the context, this universal is cast under a limitation with respect unto the law: \"Every high priest\" that is \"made\" or \"appointed by"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Πᾶς ἀρχιερεύς . In the first, 1. The universality of the expression is to be observed: Πᾶς ἀρχιερεύς ,—\"Every high priest.\" By the context, this universal is cast under a limitation with respect unto the law: \"Every high priest\" that is \"made\" or \"appointed by"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "In the words may be observed, 1. The persons spoken of; \"who.\""
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "In the words may be observed, 1. The persons spoken of; \"who.\""
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "In the promise itself we may consider, 1. Whom it is made unto, 2. What it is that is promised:—"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Τὸ δέ . There are in the words, (1.) The notation of the subject, τὸ δέ ,—\"but that,\" or 'that, whatever it be.' The general rule gives evidence unto the former inference, 'Whatever it be that waxeth old.'"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "In the promise itself we may consider, 1. Whom it is made unto, 2. What it is that is promised:—"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Τὸ δέ . There are in the words, (1.) The notation of the subject, τὸ δέ ,—\"but that,\" or 'that, whatever it be.' The general rule gives evidence unto the former inference, 'Whatever it be that waxeth old.'"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Our translation thus rendering the words, avoids the ambiguity mentioned in the Vulgar Latin. \"First of all there was a tabernacle made.\" But whereas our rendering is also obscure, \"the first\" being mentioned, where only one thing went before,—which yet includ"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "Our translation thus rendering the words, avoids the ambiguity mentioned in the Vulgar Latin. \"First of all there was a tabernacle made.\" But whereas our rendering is also obscure, \"the first\" being mentioned, where only one thing went before,—which yet includ"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "There are in the words themselves, 1. The subject spoken of, ἥτις , \"which.\""
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "There are in the words themselves, 1. The subject spoken of, ἥτις , \"which.\""
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "To make evident the force of his argument in general, we must observe, 1. That what he had proved before he takes here for granted, on the one side and the other. And this was, that all the Levitical services and ordinances were in themselves carnal, and had c"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "There are in the words considerable, 1. The subject treated of, in opposition unto that before spoken unto; and that is, \"the blood of Christ.\""
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "He designeth, 1. To prove yet further the necessity of the death of Christ, as he was the mediator of the new testament, both as it had the nature of a testament and that also of a solemn covenant."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "To make evident the force of his argument in general, we must observe, 1. That what he had proved before he takes here for granted, on the one side and the other. And this was, that all the Levitical services and ordinances were in themselves carnal, and had c"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "There are in the words considerable, 1. The subject treated of, in opposition unto that before spoken unto; and that is, \"the blood of Christ.\""
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "He designeth, 1. To prove yet further the necessity of the death of Christ, as he was the mediator of the new testament, both as it had the nature of a testament and that also of a solemn covenant."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "There are in the words, 1. A note of inference, or dependence on the former discourse; \"therefore.\""
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "In the words there is, 1. The subject spoken of; that is \"Christ.\""
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "A double description is here given of this place; 1. As unto its nature; 2. As unto its use:—"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "To sum up the substance of this whole controversy: The sacrifice or offering of Christ was, 1. By himself alone, through the eternal Spirit."
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "There are in the words, 1. A note of inference, or dependence on the former discourse; \"therefore.\""
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "In the words there is, 1. The subject spoken of; that is \"Christ.\""
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "A double description is here given of this place; 1. As unto its nature; 2. As unto its use:—"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "To sum up the substance of this whole controversy: The sacrifice or offering of Christ was, 1. By himself alone, through the eternal Spirit."
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "In the FIRST, we may consider, 1. The note of connection and of the introduction of the reason insisted on."
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "And these things are called τὰ ἁγαθά , \"these good things,\" 1. Because they are absolutely so, without any alloy or mixture. All other things in this world, however in some respect, and as unto some peculiar end, they may be said to be good, yet are they not s"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "There are in the words, (1.) The effect denied."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "In the FIRST, we may consider, 1. The note of connection and of the introduction of the reason insisted on."
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "And these things are called τὰ ἁγαθά , \"these good things,\" 1. Because they are absolutely so, without any alloy or mixture. All other things in this world, however in some respect, and as unto some peculiar end, they may be said to be good, yet are they not s"
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "There are in the words, (1.) The effect denied."
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "In the testimony he produceth we may consider, 1. The manner of its introduction, respecting the reason of what is asserted; \"Wherefore.\""
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "In the words we may consider, 1. How the Son expressed his mind in this matter: \"He saith,\" \"I said.\" When or on what consideration he so expressed himself; it was then: \"Then I said.\""
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "Γάρ . The apostle, 1. Gives the great reason of this state of things with reference unto the Lord Christ in the discharge of his office, namely, that he did not repeat his offering, as the priests under the law did theirs, every year, and every day; and that h"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "In the first we have, 1. A note of inference, or deduction of the following exhortation from what was before discoursed; οὖν , \"therefore.\""
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "Πρόσφατος . (1.) That it is πρόσφατος , \"new:\" [1.] Because it was but newly made and prepared; [2.] Because it belongs unto the new covenant; [3.] Because it admits of no decays, but is always new, as unto its efficacy and use, as in the day of its first prep"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "Obs. X. Universal, internal sincerity of heart is required of all those that draw nigh unto God in his holy worship.—It is so, (1.) From the nature of God; (2.) From the nature of the worship itself; (3.) From the conscience of the worshippers, which can have "
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "Ἐῤῥαντισμένοι τὰς καρδίας . And this is the first thing in particular, namely, the way or means of the removal of this evil conscience; which is by sprinkling of our hearts. The expression is taken from the sprinkling of blood upon the offering of the sacrific"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "In the testimony he produceth we may consider, 1. The manner of its introduction, respecting the reason of what is asserted; \"Wherefore.\""
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 6,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "12. Quibus ipse Deus causam seu modum ac rationem hujus rei aperit, quae ingenti illius gratia ac misericordia populo exhibenda continetur . Hac futurum dicit ut populus tanto ardore sibi serviat, suásque leges observet."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "12. Quibus ipse Deus causam seu modum ac rationem hujus rei aperit, quae ingenti illius gratia ac misericordia populo exhibenda continetur . Hac futurum dicit ut populus tanto ardore sibi serviat, suásque leges observet."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "11. 2. What are the especial services he performed, in answer unto those of the legal high priest, and their preference above them, ver. 12."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "11. 2. What are the especial services he performed, in answer unto those of the legal high priest, and their preference above them, ver. 12."
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "12. 2. The consequence on the part of Christ, by whom it was offered, ver. 12, 13."
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": "12. 2. The consequence on the part of Christ, by whom it was offered, ver. 12, 13."
+      }
+    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 1250,
+    "epub_marker_count": 2487,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 29,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p73",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 191,
+        "epub": 547,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p76",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p106",
+            "context": "(1.) Lest the length and difficulty of his preceding discourse should have any way discomposed their minds, or wearied them in their attention, so as that they could not well retain th"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p108",
+            "context": "nd use, whereunto it is principally applied (for it hath also other significations). For, (1.) It is taken for that which is chief and principal in any matter, business, or cause. Κεφάλαιον ὅλου τοῦ πράγματος , Isoc.;—\"The head of the whole business.\" Κεφάλαιον δὴ παιδείας"
+          }
+        ]
+      },
+      {
+        "marker": "(10.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch015.xhtml#p2250",
+            "context": "(10.) The ground was originally blessed of God, to bring forth food for man, for the preservation of his life in that state and condition wherein he was to live unto God according unto"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p2733",
+            "context": "(10.) The ground was originally blessed of God, to bring forth food for man, for the preservation of his life in that state and condition wherein he was to live unto God according unto"
+          }
+        ]
+      },
+      {
+        "marker": "(11.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch015.xhtml#p2251",
+            "context": "(11.) When the whole church was ready to perish for want of water, a rock was smitten with the rod of Moses, which brought water out of it unto their refreshment. God taught them thereb"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p2734",
+            "context": "(11.) When the whole church was ready to perish for want of water, a rock was smitten with the rod of Moses, which brought water out of it unto their refreshment. God taught them thereb"
+          }
+        ]
+      },
+      {
+        "marker": "(1st.)",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p453",
+            "context": "(1st.) This was the foundation of the faith of the church of Israel in all generations. Their faith in God was not confined unto the outward things they enjoyed, but [rested] on Christ i"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p794",
+            "context": "(1st.) This was the foundation of the faith of the church of Israel in all generations. Their faith in God was not confined unto the outward things they enjoyed, but [rested] on Christ i"
+          },
+          {
+            "location": "EPUB/ch034.xhtml#p5454",
+            "context": "57; and \"there shall be no more death.\" Satan and Antichrist shall be destroyed two ways: (1st.) Initially and gradually. (2dly.) Absolutely and completely. The first they are in all ages of the church, from the time of Christ's glorious ascension into heaven. They were then"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 192,
+        "epub": 549,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p76",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p107",
+            "context": "(2.) Because of the importance of the matter in hand. He is treating of the very head of all the differences between the law and the gospel, between those who adhered unto Mosaical ins"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p109",
+            "context": "(2.) It is taken for the sum and substance of what hath been spoken or declared, reduced into a short scheme: Ὠς δὲ ἐν κεφαλαίῳ εἰπεῖν ,—\"Ut summatim dicam,\" Demosthenes. And so some r"
+          }
+        ]
+      },
+      {
+        "marker": "(2dly.)",
+        "pdf": 1,
+        "epub": 10,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p455",
+            "context": "(2dly.) Consider the progress of these heavenly things; that is, of Jesus Christ, and all the effects of his mediation in grace and glory."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p524",
+            "context": "ises and threatenings of reward and punishment; the first of grace, the other of justice. (2dly.) The expression of these promises and threatenings in external signs; the first in the tree of life, the latter in that of the knowledge of good and evil. By these did God establis"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p796",
+            "context": "(2dly.) Consider the progress of these heavenly things; that is, of Jesus Christ, and all the effects of his mediation in grace and glory."
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 91,
+        "epub": 242,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p123",
+            "context": "(3.) That the office of the priesthood of Christ is confined unto the church, unto believers. Theirs he is, and for them alone doth he administer before God in this office."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p144",
+            "context": "(3.) He is able to render the persons and duties of believers accepted in the sight of God. To present them unto God is the great remaining duty of his office. That they be so, is thei"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p417",
+            "context": "(3.) Some do so from their use, openly denying their continuance in the church of God."
+          }
+        ]
+      },
+      {
+        "marker": "(3dly.)",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch012.xhtml#p1978",
+            "context": "(3dly.) It was a fixed seat of all divine worship, wherein the truth and purity of it were to be preserved. Had the observation of the ordinances of divine service been left unto the memo"
+          },
+          {
+            "location": "EPUB/ch014.xhtml#p2093",
+            "context": "(3dly.) It was a fixed seat of all divine worship, wherein the truth and purity of it were to be preserved. Had the observation of the ordinances of divine service been left unto the memo"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 39,
+        "epub": 108,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p506",
+            "context": "(4.) A mediator must be a middle person between both parties entering into covenant; and if they be of different natures, a perfect, complete mediator ought to partake of each of their"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p631",
+            "context": "(4.) Into this estate and condition God brought them by a solemn covenant, confirmed by mutual consent between him and them. The tenor, force, and solemn ratification of this covenant,"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p665",
+            "context": "(4.) From the nature of the whole ministry of the law, which was the \"ministration of death\" and \"condemnation,\" 2 Cor. 3:7, 9; which declared the desert of every sin to be death, and"
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 20,
+        "epub": 58,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p507",
+            "context": "(5.) A mediator must be one who voluntarily and of his own accord undertaketh the work of mediation. This is required of every one who will effectually mediate between any persons at v"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p632",
+            "context": "(5.) This covenant thus made, with these ends and promises, did never save nor condemn any man eternally. All that lived under the administration of it did attain eternal life, or peri"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p666",
+            "context": "(5.) From the darkness of their own minds, in the means, ways, and causes of deliverance from all these things. It is true, they had a promise before of life and salvation, which was n"
+          }
+        ]
+      },
+      {
+        "marker": "(6.)",
+        "pdf": 6,
+        "epub": 22,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p508",
+            "context": "(6.) In this voluntary undertaking to be a mediator, two things were required:—"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p633",
+            "context": "(6.) Hereon occasionally fell out the ruin of that people; \"their table became a snare unto them, and that which should have been for their welfare became a trap,\" according to the pre"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p667",
+            "context": "(6.) It was increased by the yoke of a multitude of laws, rites, and ceremonies, imposed on them; which made the whole of their worship a burden unto them, and insupportable, Acts 15:1"
+          }
+        ]
+      },
+      {
+        "marker": "(7.)",
+        "pdf": 3,
+        "epub": 10,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p511",
+            "context": "(7.) It is required of this mediator, as such, that he give assurance to and undertake for the parties mutually concerned, as to the accomplishment of the terms of the covenant, undert"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p852",
+            "context": "(7.) It is required of this mediator, as such, that he give assurance to and undertake for the parties mutually concerned, as to the accomplishment of the terms of the covenant, undert"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p1257",
+            "context": "(7.) Though there are no conditions properly so called of the whole grace of the covenant, yet there are conditions in the covenant, taking that term, in a large sense, for that which"
+          }
+        ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p1258",
+            "context": "(8.) The benefits of the covenant are of two sorts:"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p1684",
+            "context": "(8.) The benefits of the covenant are of two sorts:"
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p2248",
+            "context": "(8.) The cherubim, or angels under that denomination, were the ministers of God in executing the curse and punishment on man when, after his sin, he was driven out of the garden of God"
+          }
+        ]
+      },
+      {
+        "marker": "(9.)",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p1261",
+            "context": "(9.) Although διαθήκη , the word here used, may signify and be rightly rendered a \"covenant,\" in the same manner as בְּרִית doth, yet that which is intended is properly a \"testament,\""
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p1687",
+            "context": "(9.) Although διαθήκη , the word here used, may signify and be rightly rendered a \"covenant,\" in the same manner as בְּרִית doth, yet that which is intended is properly a \"testament,\""
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p2249",
+            "context": "(9.) Yet was this mystery so great,—namely, that which was represented by these types,—that the angels themselves were to bow down to look into it, 1 Pet. 1:12. So are they here repres"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 84,
+        "epub": 262,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p76",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p128",
+            "context": "Ἐκάθισεν . [1.] The manner of his enjoyment of this dignity and glory is expressed in the word ἐκάθισεν , \"he sat down.\" Hereof there was nothing typical in the legal high priest, who never sat d"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p161",
+            "context": "s epistle. Τῶν ἁγίων , from ἅγια , of the neuter gender, may have a double signification: [1.] Of holy things in general;"
+          }
+        ]
+      },
+      {
+        "marker": "[10.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch034.xhtml#p5266",
+            "context": "[10.] This body was visibly taken up into heaven, and there resides; which, considering the ends thereof, is the great encouragement of faith, and the life of our hope."
+          },
+          {
+            "location": "EPUB/ch035.xhtml#p5854",
+            "context": "[10.] This body was visibly taken up into heaven, and there resides; which, considering the ends thereof, is the great encouragement of faith, and the life of our hope."
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p73",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[1st.]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p456",
+            "context": "[1st.] The idea, the original pattern or exemplar of them, was in the mind, the counsel, the wisdom, and will of God, Eph. 1:5, 8, 9."
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p797",
+            "context": "[1st.] The idea, the original pattern or exemplar of them, was in the mind, the counsel, the wisdom, and will of God, Eph. 1:5, 8, 9."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 84,
+        "epub": 262,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p76",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p129",
+            "context": "Ἐν δεξιᾷ . [2.] The dignity itself consists in the place of his residence, where he sat down; and this was ἐν δεξιᾷ , \"at the right hand.\" See the exposition hereof, chap. 1:3."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p162",
+            "context": "[2.] Of holy places:—"
+          }
+        ]
+      },
+      {
+        "marker": "[2dly.]",
+        "pdf": 0,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p457",
+            "context": "[2dly.] Hereof God made various accidental representations, preparatory for the full expression of the glorious eternal idea of his mind. So he did in the appearance of Christ in the form"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p525",
+            "context": "[2dly.] By his acceptance of the commands concerning the tree of life, and that of the knowledge of good and evil, as the signs and pledges of this covenant. So was it established as a co"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p798",
+            "context": "[2dly.] Hereof God made various accidental representations, preparatory for the full expression of the glorious eternal idea of his mind. So he did in the appearance of Christ in the form"
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 39,
+        "epub": 111,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p130",
+            "context": "Τοῦ θρόνου . [3.] This right hand is said to be τοῦ θρόνου τῆς μεγαλωσύνης . There is frequent mention in the Scripture of the throne of God. A throne is \"insigne regium,\"—an ensign of royal power."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p173",
+            "context": "[3.] Most expositors take \"the tabernacle,\" as they do \"the sanctuary,\" for heaven itself. And they would have the word \"true,\" by a zeugma, to belong unto the sanctuary as well as unt"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p293",
+            "context": "[3.] Most expositors take \"the tabernacle,\" as they do \"the sanctuary,\" for heaven itself. And they would have the word \"true,\" by a zeugma, to belong unto the sanctuary as well as unt"
+          }
+        ]
+      },
+      {
+        "marker": "[3dly.]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p458",
+            "context": "[3dly.] He gave a substantial representation of the eternal idea of his wisdom and grace in the incarnation of the Son, in whom the fulness of the Godhead dwelt substantially, and in the"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p799",
+            "context": "[3dly.] He gave a substantial representation of the eternal idea of his wisdom and grace in the incarnation of the Son, in whom the fulness of the Godhead dwelt substantially, and in the"
+          }
+        ]
+      },
+      {
+        "marker": "[4.]",
+        "pdf": 11,
+        "epub": 33,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p132",
+            "context": "[4.] This throne is here said to be τῆς μεγαλωσύνης , of \"Majesty,\" or \"glorious greatness and power;\" that is, of God himself, for his essential glory and power are intended. \"The rig"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p175",
+            "context": "[4.] I say, therefore, that by this \"true tabernacle,\" the human nature of the Lord Christ himself is intended. Hereof he is the minister; herein doth he minister before God above. For"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p295",
+            "context": "[4.] I say, therefore, that by this \"true tabernacle,\" the human nature of the Lord Christ himself is intended. Hereof he is the minister; herein doth he minister before God above. For"
+          }
+        ]
+      },
+      {
+        "marker": "[5.]",
+        "pdf": 5,
+        "epub": 13,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p134",
+            "context": "[5.] Thus is he said to be ἐν οὐρανοῖς ,—\"in the heavens;\" as in the other place ἐν ὑψηλοῖς , \"in the highest,\"—that is, heavens. And by \"the heavens\" here, not these visible, aspectab"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p1143",
+            "context": "[5.] There is ascribed unto this covenant such an efficacy of grace, as nothing but almighty power can make good and accomplish. The grace here mentioned in the promises of it, directs"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p1569",
+            "context": "[5.] There is ascribed unto this covenant such an efficacy of grace, as nothing but almighty power can make good and accomplish. The grace here mentioned in the promises of it, directs"
+          }
+        ]
+      },
+      {
+        "marker": "[6.]",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p1144",
+            "context": "[6.] The reward promised in this covenant is God himself: \"I am thy reward.\" And who but God can ordain himself to be our reward?"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p1570",
+            "context": "[6.] The reward promised in this covenant is God himself: \"I am thy reward.\" And who but God can ordain himself to be our reward?"
+          },
+          {
+            "location": "EPUB/ch034.xhtml#p5262",
+            "context": "[6.] This body or human nature, thus prepared for Christ, was exposed unto all sorts of temptations from outward causes. But yet it was so sanctified by the perfection of grace, and fo"
+          }
+        ]
+      },
+      {
+        "marker": "[7.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch034.xhtml#p5263",
+            "context": "[7.] This body was liable unto death; which being the sentence and sanction of the law with respect unto the first and all following sins, (all and every one of them,) was to be underg"
+          },
+          {
+            "location": "EPUB/ch035.xhtml#p5851",
+            "context": "[7.] This body was liable unto death; which being the sentence and sanction of the law with respect unto the first and all following sins, (all and every one of them,) was to be underg"
+          }
+        ]
+      },
+      {
+        "marker": "[8.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch034.xhtml#p5264",
+            "context": "[8.] As it was subject unto death, and died actually, so it was meet to be raised again from death. And herein consisted the great pledge and evidence that our dead bodies may be and s"
+          },
+          {
+            "location": "EPUB/ch035.xhtml#p5852",
+            "context": "[8.] As it was subject unto death, and died actually, so it was meet to be raised again from death. And herein consisted the great pledge and evidence that our dead bodies may be and s"
+          }
+        ]
+      },
+      {
+        "marker": "[9.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch034.xhtml#p5265",
+            "context": "[9.] This body and soul being capable of a real separation, and being actually separated by death, though not for any long continuance, yet no less truly and really than they who have"
+          },
+          {
+            "location": "EPUB/ch035.xhtml#p5853",
+            "context": "[9.] This body and soul being capable of a real separation, and being actually separated by death, though not for any long continuance, yet no less truly and really than they who have"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 8,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "ises and threatenings of reward and punishment; the first of grace, the other of justice. (2dly.) The expression of these promises and threatenings in external signs; the first in the tree of life, the latter in that of the knowledge of good and evil. By these did God establis"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "marker": "[2dly.]",
+        "family": "bracket_ordinal",
+        "context": "[2dly.] By his acceptance of the commands concerning the tree of life, and that of the knowledge of good and evil, as the signs and pledges of this covenant. So was it established as a co"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "ises and threatenings of reward and punishment; the first of grace, the other of justice. (2dly.) The expression of these promises and threatenings in external signs; the first in the tree of life, the latter in that of the knowledge of good and evil. By these did God establis"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "marker": "[2dly.]",
+        "family": "bracket_ordinal",
+        "context": "[2dly.] By his acceptance of the commands concerning the tree of life, and that of the knowledge of good and evil, as the signs and pledges of this covenant. So was it established as a co"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "(2dly.) Although the temple, with its glorious fabric and excellent order, added much unto the outward beauty and splendour of the sacred worship, yet was it no more but a large exemplifi"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "(2dly.) It was the pledge and means of God's residence or dwelling among them, which expresseth the peculiar manner of his presence, mentioned in general before. The tabernacle was God's"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "(2dly.) Although the temple, with its glorious fabric and excellent order, added much unto the outward beauty and splendour of the sacred worship, yet was it no more but a large exemplifi"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "(2dly.) It was the pledge and means of God's residence or dwelling among them, which expresseth the peculiar manner of his presence, mentioned in general before. The tabernacle was God's"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the entrance of the high priest into the holy place",
+      "count": 12
+    },
+    {
+      "phrase": "in the volume of the book it is written of",
+      "count": 10
+    },
+    {
+      "phrase": "the volume of the book it is written of me",
+      "count": 10
+    },
+    {
+      "phrase": "in him dwelleth all the fulness of the godhead bodily",
+      "count": 8
+    },
+    {
+      "phrase": "that the blood of bulls and of goats should take",
+      "count": 8
+    },
+    {
+      "phrase": "the blood of bulls and of goats should take away",
+      "count": 8
+    },
+    {
+      "phrase": "blood of bulls and of goats should take away sins",
+      "count": 8
+    },
+    {
+      "phrase": "the offering of the body of jesus christ once for",
+      "count": 8
+    },
+    {
+      "phrase": "offering of the body of jesus christ once for all",
+      "count": 8
+    },
+    {
+      "phrase": "will be unto them god and they shall be to",
+      "count": 8
+    },
+    {
+      "phrase": "when the high priest entered into the most holy place",
+      "count": 8
+    },
+    {
+      "phrase": "the entrance of the high priest into the most holy",
+      "count": 8
+    },
+    {
+      "phrase": "entrance of the high priest into the most holy place",
+      "count": 8
+    },
+    {
+      "phrase": "he taketh away the first that he may establish the",
+      "count": 8
+    },
+    {
+      "phrase": "taketh away the first that he may establish the second",
+      "count": 8
+    },
+    {
+      "phrase": "almost all things are by the law purged with blood",
+      "count": 8
+    },
+    {
+      "phrase": "by one offering he hath perfected for ever them that",
+      "count": 8
+    },
+    {
+      "phrase": "one offering he hath perfected for ever them that are",
+      "count": 8
+    },
+    {
+      "phrase": "offering he hath perfected for ever them that are sanctified",
+      "count": 8
+    },
+    {
+      "phrase": "the expiation of sin and the salvation of the church",
+      "count": 8
+    },
+    {
+      "phrase": "into heaven to appear in the presence of god for",
+      "count": 6
+    },
+    {
+      "phrase": "heaven to appear in the presence of god for us",
+      "count": 6
+    },
+    {
+      "phrase": "to appear in the presence of god for us and",
+      "count": 6
+    },
+    {
+      "phrase": "is not entered into the holy places made with hands",
+      "count": 6
+    },
+    {
+      "phrase": "him dwelleth all the fulness of the godhead bodily col",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 4349,
+    "epub_greek_word_count": 8602,
+    "pdf_greek_unique_words": 1092,
+    "epub_greek_unique_words": 1092,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 459,
+    "epub_hebrew_word_count": 910,
+    "pdf_hebrew_unique_words": 358,
+    "epub_hebrew_unique_words": 358,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 141,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 46,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 2956,
+    "epub_latin_word_count": 5819,
+    "epub_tagged_latin_word_count": 2396,
+    "pdf_latin_unique_words": 908,
+    "epub_latin_unique_words": 915,
+    "epub_tagged_unique_words": 638,
+    "latin_word_coverage_ratio": 0.9993,
+    "latin_tagging_ratio": 0.4118,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "mediator",
+        "epub": 299,
+        "tagged": 6
+      },
+      {
+        "word": "sinai",
+        "epub": 140,
+        "tagged": 4
+      },
+      {
+        "word": "cor",
+        "epub": 122,
+        "tagged": 0
+      },
+      {
+        "word": "testator",
+        "epub": 122,
+        "tagged": 0
+      },
+      {
+        "word": "abraham",
+        "epub": 108,
+        "tagged": 0
+      },
+      {
+        "word": "elsewhere",
+        "epub": 106,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 106,
+        "tagged": 0
+      },
+      {
+        "word": "mere",
+        "epub": 99,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 81,
+        "tagged": 0
+      },
+      {
+        "word": "isa",
+        "epub": 77,
+        "tagged": 0
+      },
+      {
+        "word": "num",
+        "epub": 57,
+        "tagged": 0
+      },
+      {
+        "word": "vii",
+        "epub": 50,
+        "tagged": 0
+      },
+      {
+        "word": "adam",
+        "epub": 50,
+        "tagged": 0
+      },
+      {
+        "word": "expiate",
+        "epub": 48,
+        "tagged": 0
+      },
+      {
+        "word": "viii",
+        "epub": 47,
+        "tagged": 2
+      },
+      {
+        "word": "whereinto",
+        "epub": 46,
+        "tagged": 2
+      },
+      {
+        "word": "sum",
+        "epub": 42,
+        "tagged": 2
+      },
+      {
+        "word": "communicate",
+        "epub": 38,
+        "tagged": 0
+      },
+      {
+        "word": "undergo",
+        "epub": 34,
+        "tagged": 0
+      },
+      {
+        "word": "severe",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "terror",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "sam",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "poor",
+        "epub": 26,
+        "tagged": 0
+      },
+      {
+        "word": "everywhere",
+        "epub": 26,
+        "tagged": 0
+      },
+      {
+        "word": "intimate",
+        "epub": 26,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 154,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 674,
+    "translated_latin_runs_count": 53,
+    "latin_translation_ratio": 0.0786,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "autem dicendo"
+      },
+      {
+        "phrase": "super ea quae dicuntur"
+      },
+      {
+        "phrase": "Beza, \"majestatis illius;\" or, \"throni virtutis magnificandi"
+      },
+      {
+        "phrase": "ratio est posita"
+      },
+      {
+        "phrase": "in affectibus. Rerum repetitio et congregatio, quae"
+      },
+      {
+        "phrase": "a quibusdam Latinorum enumeratio, et memoriam judicis"
+      },
+      {
+        "phrase": "et totam simul causam ante oculos"
+      },
+      {
+        "phrase": "et etiam si per singula minus"
+      },
+      {
+        "phrase": "quae repetemus quam"
+      },
+      {
+        "phrase": "dicenda sunt, et (quod Graeco verbo"
+      },
+      {
+        "phrase": "negotii et muneris publici, ut avaritiae pellatur etiam minima suspicio"
+      },
+      {
+        "phrase": "or \"domus sanctuarii"
+      },
+      {
+        "phrase": "munera,\" \"donaria,\" \"dona"
+      },
+      {
+        "phrase": "scriptor divinus ex eo quod Christus"
+      },
+      {
+        "phrase": "non, ut loquitur Grotius"
+      },
+      {
+        "phrase": "quasi de"
+      },
+      {
+        "phrase": "super terram"
+      },
+      {
+        "phrase": "Beza, \"manentibus illis sacerdotibus;\" \"quum"
+      },
+      {
+        "phrase": "sacerdotibus existentibus,\" \"cum"
+      },
+      {
+        "phrase": "De facto"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

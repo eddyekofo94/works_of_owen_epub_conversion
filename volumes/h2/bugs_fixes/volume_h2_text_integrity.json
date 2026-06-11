@@ -1,0 +1,1836 @@
+{
+  "volume": "h2",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h2/input/volume_h2.epub",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h2/output/volume_h2.epub",
+  "generated_at": "2026-06-11T13:32:06.965720+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "missing_latin_clauses",
+      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 12,
+    "source": "epub2"
+  },
+  "epub": {
+    "spine_text_files": 33,
+    "paragraph_count": 4483
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 228529,
+    "epub_content_tokens": 259430,
+    "coverage_ratio": 0.9981,
+    "missing_word_samples": [
+      {
+        "word": "quæ",
+        "pdf": 44,
+        "epub": 0
+      },
+      {
+        "word": "hæc",
+        "pdf": 20,
+        "epub": 0
+      },
+      {
+        "word": "naturæ",
+        "pdf": 8,
+        "epub": 0
+      },
+      {
+        "word": "cœlo",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "judæis",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "nostræ",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "præterea",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "pœna",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "cœlum",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "hebræos",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "quædam",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "cœlis",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "prosopopœia",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "cætera",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "fœdus",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "fœderis",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "fœdera",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "æn",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "καθʼ",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "pœnas",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "præstet",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "quæst",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "sæpe",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "prophetæ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "præscripta",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "quae",
+        "pdf": 1,
+        "epub": 45
+      },
+      {
+        "word": "trials",
+        "pdf": 30,
+        "epub": 58
+      },
+      {
+        "word": "encouragement",
+        "pdf": 28,
+        "epub": 51
+      },
+      {
+        "word": "haec",
+        "pdf": 0,
+        "epub": 20
+      },
+      {
+        "word": "afflictions",
+        "pdf": 17,
+        "epub": 33
+      },
+      {
+        "word": "mercies",
+        "pdf": 17,
+        "epub": 32
+      },
+      {
+        "word": "preserve",
+        "pdf": 16,
+        "epub": 30
+      },
+      {
+        "word": "persecution",
+        "pdf": 15,
+        "epub": 29
+      },
+      {
+        "word": "dangerous",
+        "pdf": 14,
+        "epub": 27
+      },
+      {
+        "word": "evils",
+        "pdf": 13,
+        "epub": 25
+      },
+      {
+        "word": "chastisements",
+        "pdf": 12,
+        "epub": 24
+      },
+      {
+        "word": "comfort",
+        "pdf": 13,
+        "epub": 24
+      },
+      {
+        "word": "ministers",
+        "pdf": 10,
+        "epub": 21
+      },
+      {
+        "word": "watch",
+        "pdf": 12,
+        "epub": 22
+      },
+      {
+        "word": "theological",
+        "pdf": 1,
+        "epub": 11
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "1-3",
+        "pdf": 0,
+        "epub": 9
+      },
+      {
+        "word": "chastisement",
+        "pdf": 9,
+        "epub": 17
+      },
+      {
+        "word": "convinced",
+        "pdf": 9,
+        "epub": 17
+      },
+      {
+        "word": "safety",
+        "pdf": 9,
+        "epub": 17
+      },
+      {
+        "word": "hearers",
+        "pdf": 8,
+        "epub": 16
+      },
+      {
+        "word": "sorrow",
+        "pdf": 8,
+        "epub": 16
+      },
+      {
+        "word": "historical",
+        "pdf": 5,
+        "epub": 13
+      },
+      {
+        "word": "5-8",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "naturae",
+        "pdf": 0,
+        "epub": 8
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 11,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 0,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_usable": 0,
+    "skipped_top_window_count": 0,
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_usable": 0,
+    "skipped_bottom_window_count": 0,
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 4350,
+    "split_candidate_count": 40,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": " curious, partly diabolical, by the instigation of the false gods whom they ministered unto. Homer puts them together, as they came afterwards mostly to be the same, Iliad. A. 62:—",
+        "next": "Ἀλλ ʼ ἄγε δή τινα μάντιν ἐρείομεν , ἤ ἱερῆα"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Ἀλλ ʼ ἄγε δή τινα μάντιν ἐρείομεν , ἤ ἱερῆα",
+        "next": "Ἤ καὶ ὁνειροπόλον ·—"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Ἤ καὶ ὁνειροπόλον ·—",
+        "next": "\"A prophet, or a priest, or an interpreter of dreams.\""
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": " would abstain from their sacred offices after the shedding of blood, until they were, one way or other, purified to their own satisfaction. So in the poet, Virg. AEneid. ii. 717:—",
+        "next": "\"Tu, genitor, cape sacra manu patriosque penates;"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Mc, bello e tanto digressum et caede recenti,",
+        "next": "Attrectare nefas, donec me flumine vivo"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Attrectare nefas, donec me flumine vivo",
+        "next": "Abluero.\""
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "siderable suffrage of learned men, setting aside particular conjectures, which never received entertainment beyond the minds of their authors. And these may be reduced unto three:—",
+        "next": "All agree that the glory of God is the utmost and supreme end that he intendeth in all his decrees. Although they are free acts of his will and wisdom, yet, on the supposition of t"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " which was to be represented in the creature to be made in their image. These things being premised, we may take a view of the pursuit and management of his particular exceptions:—",
+        "next": "\" Atque quod ad primum attinet; quinam scilicet illi fuerint, quos sit Deus allocutus; primo dicere possumus non necessarium esse, propter hujusmodi locutionum formas, multa indivi"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "l adhere unto and defend; which way of dealing in sacred things of so great importance is very perverse and froward. Thus our author, here relinquishing this conjecture, proceeds:—",
+        "next": "\" Sed demus esto, Deum hic aliquos compellasse, quaeramus quinam isti fuerint. Aiunt adversarii hos omnino debuisse esse sermonis et rationis capaces. Quomodo enim Deus alloqueretu"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ec loqui nec intelligere possint; sed hoc non satis firmum est. Nam scimus Deum saepe etiam cum sensu et ratione carentibus colloquium instituere; ut in Esa . 1, 'Audite, coeli.' \"",
+        "next": "Rather than this man would omit any cavil, he will make use of such as are sapless and ridiculous. God doth not here speak unto others that are not himself, but by speaking as he d"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "nto the words of God in the circumstance of the creation of man, and it will appear shamefully ridiculous. Wherefore he trusteth not unto this subterfuge, but proceeds to another:—",
+        "next": "\" Sed demus etiam hoc, istos Deo praesentes fuisse rationales, quid postea ? Addunt hos non fuisse creaturas, quia Deus non soleat in suum consilium adhibere creaturas ; oportet er"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "mage of another. A design of conforming one to another, with its dependence on that other, is required hereunto; so was man made in the image of God alone. But he further excepts:—",
+        "next": "\" Sed quid tum, si omnia demus, Deum non creaturis praesentibus , neque illis esse allocutum his verbis? Sequitur ne eum qui locutus est cum illis quos allocutus est ejusdem esse n"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "t one nature whereof they are equally partakers. All these pretences, therefore, are at last deserted by our author, who betakes himself unto that which is inconsistent with them:—",
+        "next": "\"Sed excipient fortasse, Mosem non tantum hoc significare, Deum esse allocutum praesentes illos, sed eos in societatem operis vocasse, et creationis participes fecisse? 'Faciamus,'"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ught elsewhere, the interpretation of this place is facile and plain, according to the analogy thereof. But that one person alone is intended in these words, he proceeds to prove:—",
+        "next": "\" Primo enim hoc omnibus linguis usitatum est, ut numero plurali, cum de se cum de aliis etiam singularibus passim sine discrimine utantur, sic Christus cum de se solo loqueretur ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "et loquendi usu vulgari apparet, posse verbum plurale de uno solo , recte intelligi et dici. Ergo etiamsi Deus hic dicat ' Faciamus,' tamen tantundem est, ac si dicerat 'Faciam.' \"",
+        "next": "What he saith is so usual in all languages, that one speaking of himself should speak in the plural number, having respect unto no more than himself, nor letting any others into a "
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "re, attained to a proof that the word may be so used as he pretends; which, with these men, is enough to secure them from the force of any Scripture testimony. He adds, therefore:—",
+        "next": "\" Secundo, Non solum posse, sed omnino necessarium esse, ut hic 'Faciamus ,' singulare denotet individuum, inde probatur, quia si illa vox multitudinem in se includeret, nunquam au"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " given. But supposing that he hath sufficiently evinced his intention, he proceeds to give a reason of the use of this kind of speech, where one is spoken of in the plural number:—",
+        "next": "\"Quae sit autem causa cur liceat per pluralem numerum significare unum, et quando hoc soleat fieri, variae afferri solent causae. Quidam censent fieri honoris gratia, ut de eminent"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": ". First, therefore, he lays his exception to the whole matter, and affirms that it is not wisdom, but prudence, that speaks these words, and is the subject of the whole discourse:—",
+        "next": "\" Quod ad primum attinet, ne illud quidem indubitatum est, verba praescripta a sapientia dici. Si enim versio Pagnini, Merceri, et textus Hebraicus consulatur , apparebit verba ill"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "than לִי גְבוּרָה , \"I have\" (or \"am\") \"understanding,\" and \"I have strength.\" This plea, therefore, evinceth nothing but the boldness of them that use it. He proceeds to another:—",
+        "next": "\" Deinde hic sapientiam pro substantiva et persona esse accipiendam, non aliunde probari potest aut solet, quam quod hic loqui et clamare dicitur, atque actiones quaedam ei attribu"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "this, founded in the fiction of persons, is a ready way to turn the whole Bible into an allegory,—which may be done with as much ease and probability of truth. He further excepts:—",
+        "next": "\" Quod secundo loco contendunt, hic nihil figurate, sed omnia proprie dici, nimis absurdum est. Nam etiamsi daremus hic sapientiam esse personam quandam, quam ipsi λόγον appellant;"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "After an interposition of some things nothing unto the purpose, he yet puts in three more exceptions unto this testimony to the eternal personal existence of this Wisdom; as,—",
+        "next": "\" Praeterea haec sapientia de qua agit Solomon, loquitur, docet, instituit homines. At Jesus Christus postremis tantum diebus , teste apostolo ad Heb. 1, locutus est hominibus; erg"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " is, to instruct men in public places, which he did formerly by his Spirit, and in the days of his flesh in his own person,—the Son of God cannot be intended. Yet he further adds:—",
+        "next": "\" Postremo de sapientia ista, non dicitur quod sit ab aeterno genita; sed tantum ut in Hebraeo habetur a seculo formata; quod longe aliud significat, quam ab aeterno gigni. Et pote"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "n Jesus Christ; and his next attempt is to prove that these words, Ps. 22:16, \"They pierced my hands and my feet,\" had no respect unto him. To this purpose doth he here discourse:—",
+        "next": "\" Ea quae hic dicuntur si litera urgeatur, nunquam in Jesu Christo completa sunt. Nam ejus divinitati haec non competere, clarum est. Jam vero, ne cum natus quidem ex Maria est , h"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "s the making of a covenant by striking hands, though with respect unto another ceremony. Some derive the word \"a porcâ foede caesâ;\" for a hog was clean in the devil's sacrifices:—",
+        "next": "\"Caesâ jungebant foedera porcâ.\"—Virg. AEn., viii , 641."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "———",
+        "next": "A DIGRESSION"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "A DIGRESSION",
+        "next": "Concerning the sufferings of Christ, whether they were of the same kind with what sinners should have suffered, or whether he suffered the same that we should have done."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "conceal, and then consider their proofs in particular. This is Valentinus Smalcius , in his book De Regno Christ. cap. xxiii., which is, De Christi Sacerdotio , whose words ensue:—",
+        "next": "\" Deinde considerandum etiam est"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "ppeared in the defence of this cause, and who seems to have put the newest gloss upon it. This is Lud. Woolzogen., in his Compend. Relig. Christianae, sect. 51, whose words ensue:—",
+        "next": "\" Praeterea etiam hoc nobis paucis attingendum est quod sacerdotale Christi munus non bene intelligant illi qui statuunt Christum sacrificium expiatorium pro peccatis nostris in cr"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "fices; which when the apostle neglecteth, he declares his intention to be quite otherwise. Let us consider the testimonies he produceth in the confirmation of this bold assertion:—",
+        "next": "\"Docet id, ut supra vidimus, locus ipsius sub finem cap. ii., atque imprimis ver. ult., ubi modum explicat, quo Christus, tanquam pontifex in iis quae apud Deum, peccata populi exp"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "first object of all the sacerdotal actings of Christ, or in answer unto the testimonies alleged that God a one is so. But he hath yet somewhat more to add, and therefore proceeds:—",
+        "next": "\" Animadvertendum autem est in loco utroque, sed apertius in posteriori ob"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "Christo apud homines, tamen quia ad sacrificia sacerdotiumque alludit dicere, se habere gloriationem, seu quod glorietur in Christo Jesu τὰ πρὸς Θεόν , ' in iis quae apud Deum .' \"",
+        "next": "Ans. This observation doth no way impeach the force of the testimony produced by Grotius. He intended no more by that expression, Τὰ πρὸς τὸν Θεόν , but to declare in the words of "
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ther by lot or suffrage,—the two original ways of all elections,—such as they judged meet for that purpose. So Virgil would have Laocoon designed to be a priest to Neptune by lot:—",
+        "next": "\"Laocoon, ductus Neptuno sorte sacerdos.\""
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "And in Statius it was by the choice of the people that Theodamas was made the priest of Apollo in the room of Amphiaraus. So he speaks to them, Thebaid. lib. x.: 189:—",
+        "next": "——\" Non hae nostro de pectore voces:"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "Ille canit, cui me famulari, et sumere vittas",
+        "next": "Vestra fides, ipso non discordante, subegit.\""
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "t obscurity. I rather judge that there was never an ordinary concurrence of both these offices in the same persons, though it sometimes so fell out on extraordinary occasions; as,—",
+        "next": "\"Rex Anius, rex idem hominum Phoebique sacerdos.\""
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "BY",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "John Owen",
+        "next": "D.D"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "D.D",
+        "next": "———"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "———",
+        "next": "Διὰ δυσφημίας καὶ εὐφημίας —2 COR. 6:8."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "TO THE CHRISTIAN READER,",
+        "next": "THERE are two great concerns of that religion whose name thou bearest,—the profession of its truth, and the practice or exercise of its power. And these are mutually assistant unto"
+      }
+    ],
+    "structural_start_exclusions": 101,
+    "short_fragment_count": 44,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Ἤ καὶ ὁνειροπόλον ·—"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Abluero.\""
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "12."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "13."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "15."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "16."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "5."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "A DIGRESSION"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "7."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "8."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "9."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "\" Deinde considerandum etiam est"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "4."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "AEn. ii. 201."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "11."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "BY"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "D.D"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Search the Scriptures.—JOHN 5:39."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "TO THE CHRISTIAN READER,"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "January 11, 1671"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "And Martial, —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Ut delassati mollis imago Dei .\""
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "And out of Homer,—"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "He adds also out of Linus:—"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Saturni sacra me tenuisse die;\"—"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "——\"Nec te peregrina morentur"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Sabbata,\" Remed. Amoris, v. 219;—"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "And Artis Amator . lib. i. 416,—"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Pompeii bellis , imperioque Titi;"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "55."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "17."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "4."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "5."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Coelo ostenduntur ."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Pallida.\""
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Μόνῳ τῷ Θεῷ δόξα ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "MONERGISM BOOKS"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "John Owen"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 7,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "That the Lord Christ is called a priest on some account or other, and is so, these men cannot deny, and therefore on all occasions they do in words expressly confess it. But their endeavour is, to persuade us that little or nothing is signified by that appella"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "VER. 13.—1. The authority of God the Father in the exaltation of Jesus Christ as the head and mediator of the church, is greatly to be regarded by believers. 2. The exaltation of Christ is the great pledge of the acceptance of the work of mediation performed i"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "VER. 17.—1. God is not displeased with any thing in his people but sin. 2. Public sins, sins in societies, are great provocations of God. 3. God sometimes will make men who have been wickedly exemplary in sin righteously exemplary in their punishment. 4. Great"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "VER. 11.—1. An interest in the gospel consisteth not in an outward profession of it, but in a real participation of those things wherein the perfection of its state doth consist. 2. The pre-eminence of the gospel state above the legal is spiritual and undiscer"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "VER. 26.—1. It was inconsistent with the wisdom, goodness, grace, and love of God, that Christ should often suffer in that way which was necessary to the offering of himself, namely, by his death and blood-shedding. 2. It was impossible, from the dignity of hi"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "VER. 11.—1. An interest in the gospel consisteth not in an outward profession of it, but in a real participation of those things wherein the perfection of its state doth consist. 2. The pre-eminence of the gospel state above the legal is spiritual and undiscer"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "VER. 26.—1. It was inconsistent with the wisdom, goodness, grace, and love of God, that Christ should often suffer in that way which was necessary to the offering of himself, namely, by his death and blood-shedding. 2. It was impossible, from the dignity of hi"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 9,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "14. Let us, therefore, now consider the arguments or reasons in particular which they plead who maintain this assertion. The principal of them were invented and made use of by some of the ancient schoolmen; and others ha"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "48. The sum of what they all plead is, that there is no such thing as justice in God, requiring that sin be punished; that the cause and fountain of punishment in God is anger, wrath, or fury; that these denote free acts"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "20. Reasons for so doing."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "10. It remaineth that we consider the pretences and pleas of our adversaries in the defence of their opinion. It is that, I confess, which they have no concernment in for its own sake, being only a necessary consequent o"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "11. It is no matter at all whom we fix upon to call to an account herein. Their wits are barren in a peculiar manner on this subject, so that they all say the same things, one after another, without any considerable vari"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "20. I had sundry reasons why I chose to insist on a particular examination of these discourses of Crellius; for it is confessed that none among our adversaries have handled those things with more diligence and subtilty t"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "22. The Jews call them משכותאי ,—that is, \"Sabbatarians;\" which must be from some observation of the Sabbath in a distinct manner or for different reasons from themselves. Buxtorf and our late learned lexicographer rende"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "10. III. Be sure to bring good and right principles unto the performance of the duty of keeping a day of rest holy unto the Lord. Some of these I shall name, as confirmed expressly in, or drawn evidently from, the preced"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "12. The proper grammatical sense of the words themselves is duly to be inquired into and pondered."
+      }
+    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 2,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch023.xhtml",
+        "tag": "h2",
+        "text": "THE OBLIGATION, ADVANTAGE, AND NECESSITY, OF STEADFAST ADHERENCE TO THE GOSPEL INFERRED AND URGED FROM THE PRECEDING DOCTRINES, AND FROM THE TRIUMPHS OF FAITH AS EXEMPLIFIED BY THE SAINTS"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "tag": "h2",
+        "text": "THE OBLIGATION, ADVANTAGE, AND NECESSITY, OF STEADFAST ADHERENCE TO THE GOSPEL INFERRED AND URGED FROM THE PRECEDING DOCTRINES, AND FROM THE TRIUMPHS OF FAITH AS EXEMPLIFIED BY THE SAINTS"
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 632,
+    "epub_marker_count": 647,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 24,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p52",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 52,
+        "epub": 143,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p55",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p98",
+            "context": "ffice there was by virtue of especial institution. And these two things belonged to them:—(1.) That they were sacrificers; and, (2.) That they only were so: which answers all that I intend to evince from this discourse, namely, that a priest is a sacrificer. Whereas, theref"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p151",
+            "context": "(1.) That God made all his works \"good,\" that is, perfect in their kind, before the incarnation, we have his own testimony. He saw and pronounced of the whole that it was טוֹב מְאֹד ,"
+          }
+        ]
+      },
+      {
+        "marker": "(10.)",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch010.xhtml#p870",
+            "context": "sanguinis fusionem facta, et cum summo salutis nostrae perficiendae desiderio conjuncta , (10.) homines a Deo vi decreti ipsius , ipsiusque virtute, quam eum in finem Christo concessit, liberationem a poenis obtinent."
+          },
+          {
+            "location": "EPUB/ch010.xhtml#p881",
+            "context": "(10.) The manner of the expiation of sin by the sacrifice of Christ, here at large described by Crellius, is absurd, dissonant from reason, and contradictory to the Scripture in itself,"
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p1024",
+            "context": "(10.) On the other extreme, whether the seventh day from the creation of the world, or the last day of the week, be to be observed precisely under the new testament, by virtue of the fo"
+          }
+        ]
+      },
+      {
+        "marker": "(11.)",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch010.xhtml#p871",
+            "context": "(11.) Indicare nempe hac loquutione Spiritus Sanctus voluit remissionem peccatorum quam Christus in coelis apud Patrem degens nobis praestet, a Deo ejusque benignitate primo proficisci,"
+          },
+          {
+            "location": "EPUB/ch010.xhtml#p882",
+            "context": "(11.) This is that, it seems, which the Holy Ghost would intimate by these expressions, of Christ's being a priest, of his offering himself to God an expiatory sacrifice, of our redempt"
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p1025",
+            "context": "(11.) Whether on the supposition of a non-obligation in the law unto the observance of the seventh day precisely, and of a new day to be observed weekly under the new testament, as the"
+          }
+        ]
+      },
+      {
+        "marker": "(12.)",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch010.xhtml#p872",
+            "context": "(12.) Itaque ut id exprimat non modo Christi in coelos ingressum atque ad Deum accessum , per quem factum est ut ad dextram ipsius consideret, et plenam peccata nobis remittendi potesta"
+          },
+          {
+            "location": "EPUB/ch010.xhtml#p883",
+            "context": "(12.) In the mention of those things whereby God should at least seem to be moved to grant unto us the pardon and remission of sin, Crellius utterly omits the death of Christ, reckoning"
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p1026",
+            "context": "(12.) Whether of the fourth commandment as unto one day in seven, or only as unto some part or portion of time, or whether without any respect unto that command, as purely ceremonial: f"
+          }
+        ]
+      },
+      {
+        "marker": "(13.)",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch010.xhtml#p872",
+            "context": "eus aliqua ratione moveretur ad remissionem peccatorum nobis vi decreti sui concedendam , (13.) Et sic inter hanc et illam actus quidam ipsius Dei, propitium se nobis exhibentis, et nos a poena liberantis interveniret; cum tamen ipse Christus potestate sibi, a Deo, et olim j"
+          },
+          {
+            "location": "EPUB/ch010.xhtml#p884",
+            "context": "(13.) The sum of what remains of his discourse amounts to this, \"That although in what Christ did for us there is an appearance as though God, upon the consideration of what was done by"
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p1027",
+            "context": "(13.) If a day be so to be observed, it is inquired on what ground, or by what authority, there is an alteration made from the day observed under the old testament unto that now in use,"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 52,
+        "epub": 142,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p55",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p98",
+            "context": "institution. And these two things belonged to them:—(1.) That they were sacrificers; and, (2.) That they only were so: which answers all that I intend to evince from this discourse, namely, that a priest is a sacrificer. Whereas, therefore, it is in prophecy foretold that t"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p152",
+            "context": "(2.) It is merely supposed that it was necessary that divine omnipotency should be expressed unto the utmost of its perfection. It was enough that it was manifested and declared in the"
+          }
+        ]
+      },
+      {
+        "marker": "(3)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch009.xhtml#p700",
+            "context": "testatem aliunde accepisse, et, quicquid beneficii ab ipso ut rege nostro proficiscitur , (3) id totum Deo qui hanc ei potestatem largitus fuerit, ascribendum esse ."
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 41,
+        "epub": 105,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p153",
+            "context": "(3.) It is not possible that any effect in itself infinite should be produced by the power of God: for then would there be two infinites,—the producing and the produced; and consequent"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p160",
+            "context": "(3.) The ground of this reason lies in a pretence, that whatever any creature was capable of, not in, by, or from itself, but by the power of God, that God was obliged to do in it and"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p179",
+            "context": "(3.) Therefore should he have been the immediate head and ruler of angels and men, had they all persisted in their original integrity and innocency, Col. 1:16; for the representation o"
+          }
+        ]
+      },
+      {
+        "marker": "(4)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p559",
+            "context": "eat-offering out of his flock, or he fell under the curse of the deceiver, Mal. 1:13, 14. (4) The act of adduction itself belonged unto the holy service, with a testification of a desire, in a way of faith and obedience, to have it offered unto God. These things, indeed, w"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 24,
+        "epub": 59,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p154",
+            "context": "(4.) The perfection of the universe, or universality of beings, is to be regulated by their state, condition, and end. And this they had in their first creation, without any respect un"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p161",
+            "context": "(4.) It is a presumptuous imagination, to talk of the grace of union being due unto our nature in any condition. Why is it not so unto the nature of angels? or did our nature originall"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p267",
+            "context": "(4.) Personal divine actions: Verses 20, 21, \"I lead in the way of righteousness, in the midst of the paths of judgment: that I may cause those that love me to inherit substance; and I"
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 12,
+        "epub": 36,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p155",
+            "context": "(5.) That the conjunction of the last creature unto the First Principle, by way of personal union, was necessary unto the good of the universe, is a fancy that every one may embrace an"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p162",
+            "context": "(5.) That there should be an advance made both of the glory of God and the good of the creature itself by the entrance of sin, is an effect of infinite wisdom and grace. Nor did God pe"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p268",
+            "context": "(5.) Personal properties; as eternity, verses 23-25, \"I was set up from everlasting, from the beginning, or ever the earth was;\" wisdom, verse 14, \"Counsel is mine, and sound wisdom; I"
+          }
+        ]
+      },
+      {
+        "marker": "(6.)",
+        "pdf": 6,
+        "epub": 20,
+        "examples": [
+          {
+            "location": "EPUB/ch009.xhtml#p617",
+            "context": "(6.) \"Hence it follows that believers are the first proper objects of the discharge of the duties of this office, or of all the sacerdotal actings of Christ;\" for they consist in the h"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p629",
+            "context": "rist; for to him he offered himself, and with him he made atonement for sin. And thereon, (6.) This office of Christ is distinct from his kingly office, and not in any of its proper acts or adjuncts coincident therewithal. All which assertions have been before declared and"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p636",
+            "context": "(6.) Quia ad eam perpetuo tuendam et curam ejus gerendam, hoc est, ad omnia ea quae ad illam spectant administranda et ad exitum in nobis perducenda a Deo constitutus est; quasi summum"
+          }
+        ]
+      },
+      {
+        "marker": "(7.)",
+        "pdf": 2,
+        "epub": 12,
+        "examples": [
+          {
+            "location": "EPUB/ch009.xhtml#p618",
+            "context": "(7.) \"This priestly office of Christ is upon the matter the same with his kingly office;\" or it is the exerting and exercise of his kingly power with love, care, and compassion; so cal"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p674",
+            "context": "accedunt opportunum praestare, et afflictis prompte succurrere, Heb. 2:17, 18, 4:15, 16. (7.) Annon etiam Christi regis est populo suo ad thronum ipsius confugienti succurrere, et afflictis opem ferre?\""
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p685",
+            "context": "s docebit unde ea Paulus Christo e mortuis resuscitato demum ait impleta, Act. 13:32, 33. (7.) Nam tum demum Deus secundum promissa sua regem dedit populo suo et Jesum constituit Dominum et Christum ; seu quod idem est, Filium Dei in potentia , Act. 2:36, Rom. 1:4. Et idem"
+          }
+        ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 2,
+        "epub": 9,
+        "examples": [
+          {
+            "location": "EPUB/ch009.xhtml#p619",
+            "context": "(8.) \"Whereas his intercession doth belong unto this office of his, and is expressly assigned unto him as a high priest, it is nothing but a note, evidence, or expression, to teach us"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p686",
+            "context": "5. (8.) Ex istis verbis demonstrat praestantiam Christi supra angelos quam, ad dextram Majestatis in excelsis collocatus, est aceptus. Quod si sacerdotium Christi a regia dignitate prorsu"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p695",
+            "context": "(8.) From what hath been spoken, it is easy to know what is to be returned unto the conclusion that he makes of this argument; for the words produced in testimony are not spoken immedi"
+          }
+        ]
+      },
+      {
+        "marker": "(9.)",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch010.xhtml#p870",
+            "context": "(9.) per sanguinis fusionem facta, et cum summo salutis nostrae perficiendae desiderio conjuncta , (10.) homines a Deo vi decreti ipsius , ipsiusque virtute, quam eum in finem Christo"
+          },
+          {
+            "location": "EPUB/ch010.xhtml#p880",
+            "context": "(9.) This oblation of Christ is said to be \"per sanguinis fusionem,\"—\"by the shedding of his blood;\" but how or in what sense? The words are used to keep unto some seeming compliance w"
+          },
+          {
+            "location": "EPUB/ch015.xhtml#p1023",
+            "context": "(9.) Whether, under the new testament, all religious observation of days be so taken away as that there is no divine obligation remaining for the observance of any one day at all, but"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 9,
+        "epub": 25,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p55",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p364",
+            "context": "(1.) The infinite, sovereign wisdom of God, even the Father, exerted itself,—[1.] In passing by the angels in their fallen condition, and fixing on the recovery of man, Heb. 2:16; 2 Pet. 2:4; Jude 6. [2.] In the projection or provision of the way in general to"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p372",
+            "context": "which he undertook. Those also which concerned his person immediately were of two sorts:—[1.] Such as concerned his assistance in his work;"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p52",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 9,
+        "epub": 25,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p55",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p364",
+            "context": "their fallen condition, and fixing on the recovery of man, Heb. 2:16; 2 Pet. 2:4; Jude 6. [2.] In the projection or provision of the way in general to bring about the salvation of man, by the interposition of his Son, with what he did and suffered in the pursuit hereof, Act"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p373",
+            "context": "[2.] Such as concerned his acceptance and glory after his work."
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 5,
+        "epub": 14,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p365",
+            "context": "[3.] In the disposal of all things in that way in such a holy and glorious order, as that marks and footsteps of infinite divine wisdom should be imprinted on every part and passage of"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p413",
+            "context": "eature on God, which consisted in his moral obedience unto him according to the law; and, [3.] It was introductory of a state of things utterly opposite unto the universal rectitude of the nature of God. Only the right of God to rule the sinning creature unto his own glory"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p525",
+            "context": "[3.] On this supposition all the circumstances insisted on by our apostle as exceedingly observable to his purpose,—namely, that our Lord was of the tribe of Judah, and not of Levi; th"
+          }
+        ]
+      },
+      {
+        "marker": "[4.]",
+        "pdf": 1,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p526",
+            "context": "[4.] It utterly enervates that invincible argument whereby the apostle proves the necessary cessation of the law and legal or Mosaical institutions; for he builds on this supposition,"
+          },
+          {
+            "location": "EPUB/ch009.xhtml#p658",
+            "context": "[3.] He possessed actually his kingly power, sitting at the right hand of God; and [4.] There carrieth on the perpetual exercise of his priesthood by intercession. Wherefore there is nothing in these words that should tacitly intimate an inclusion of any act of the k"
+          },
+          {
+            "location": "EPUB/ch020.xhtml#p1650",
+            "context": "[4.] Labour in works of charity and necessity, such as to visit the sick, to relieve the poor, to help the distressed, to relieve or assist creatures ready to perish, to supply cattle"
+          }
+        ]
+      },
+      {
+        "marker": "[5.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p527",
+            "context": "[5.] He is expressly said to be a priest \"after the order of Melchisedec.\" But this Melchizedek was a priest properly so called. He therefore must be so who is a priest according to th"
+          },
+          {
+            "location": "EPUB/ch020.xhtml#p1651",
+            "context": "[5.] For sports and such like recreations, and their use on this day, I refer the reader to laws of sundry emperors and nations concerning them. See of Constant. Leg. Omnes cap. de Fer"
+          }
+        ]
+      },
+      {
+        "marker": "[6.]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p528",
+            "context": "[6.] This conception would utterly enervate the sense of the general argument that the apostle manageth towards these Hebrews, as well as that especial one about the cessation of the l"
+          }
+        ]
+      },
+      {
+        "marker": "[7.]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch008.xhtml#p529",
+            "context": "[7.] Add unto all these particular instances unto the contrary, that this Socinian fiction of the Lord Christ being not a priest, but only called so, by reason of some similitude betwe"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the necessity of the priesthood of christ on the supposition",
+      "count": 4
+    },
+    {
+      "phrase": "necessity of the priesthood of christ on the supposition of",
+      "count": 4
+    },
+    {
+      "phrase": "of the priesthood of christ on the supposition of sin",
+      "count": 4
+    },
+    {
+      "phrase": "the priesthood of christ on the supposition of sin and",
+      "count": 4
+    },
+    {
+      "phrase": "priesthood of christ on the supposition of sin and grace",
+      "count": 4
+    },
+    {
+      "phrase": "and god blessed the seventh day and sanctified it because",
+      "count": 4
+    },
+    {
+      "phrase": "god blessed the seventh day and sanctified it because that",
+      "count": 4
+    },
+    {
+      "phrase": "blessed the seventh day and sanctified it because that in",
+      "count": 4
+    },
+    {
+      "phrase": "the seventh day and sanctified it because that in it",
+      "count": 4
+    },
+    {
+      "phrase": "seventh day and sanctified it because that in it he",
+      "count": 4
+    },
+    {
+      "phrase": "day and sanctified it because that in it he had",
+      "count": 4
+    },
+    {
+      "phrase": "and sanctified it because that in it he had rested",
+      "count": 4
+    },
+    {
+      "phrase": "sanctified it because that in it he had rested from",
+      "count": 4
+    },
+    {
+      "phrase": "it because that in it he had rested from all",
+      "count": 4
+    },
+    {
+      "phrase": "because that in it he had rested from all his",
+      "count": 4
+    },
+    {
+      "phrase": "that in it he had rested from all his work",
+      "count": 4
+    },
+    {
+      "phrase": "the works were finished from the foundation of the world",
+      "count": 4
+    },
+    {
+      "phrase": "the world in six days and resting on the seventh",
+      "count": 4
+    },
+    {
+      "phrase": "it is the duty of ministers of the gospel to",
+      "count": 4
+    },
+    {
+      "phrase": "original of the priesthood of christ in the counsel of",
+      "count": 3
+    },
+    {
+      "phrase": "of the priesthood of christ in the counsel of god",
+      "count": 3
+    },
+    {
+      "phrase": "superiority of christ's priesthood from the superior value of his",
+      "count": 3
+    },
+    {
+      "phrase": "of christ's priesthood from the superior value of his sacrifice",
+      "count": 3
+    },
+    {
+      "phrase": "the obligation advantage and necessity of steadfast adherence to the",
+      "count": 3
+    },
+    {
+      "phrase": "obligation advantage and necessity of steadfast adherence to the gospel",
+      "count": 3
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 1359,
+    "epub_greek_word_count": 1365,
+    "pdf_greek_unique_words": 695,
+    "epub_greek_unique_words": 695,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 738,
+    "epub_hebrew_word_count": 739,
+    "pdf_hebrew_unique_words": 531,
+    "epub_hebrew_unique_words": 531,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 89,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 71,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 7384,
+    "epub_latin_word_count": 7719,
+    "epub_tagged_latin_word_count": 5452,
+    "pdf_latin_unique_words": 2384,
+    "epub_latin_unique_words": 2459,
+    "epub_tagged_unique_words": 2023,
+    "latin_word_coverage_ratio": 0.974,
+    "latin_tagging_ratio": 0.7063,
+    "missing_latin_word_samples": [
+      {
+        "word": "cœlo",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "judæis",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "præterea",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "pœna",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "cœlum",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "hebræos",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "quædam",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "cœlis",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "prosopopœia",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "cætera",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "fœdus",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "fœderis",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "fœdera",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "pœnas",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "præscripta",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "æterno",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "æternum",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "judæi",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "æternam",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "pœnis",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "cæteris",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "præstantiam",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "fœdere",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "præcepti",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "judæorum",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "untagged_latin_word_samples": [
+      {
+        "word": "mere",
+        "epub": 76,
+        "tagged": 2
+      },
+      {
+        "word": "immediate",
+        "epub": 68,
+        "tagged": 2
+      },
+      {
+        "word": "mediator",
+        "epub": 65,
+        "tagged": 0
+      },
+      {
+        "word": "abraham",
+        "epub": 57,
+        "tagged": 0
+      },
+      {
+        "word": "isa",
+        "epub": 54,
+        "tagged": 1
+      },
+      {
+        "word": "elsewhere",
+        "epub": 51,
+        "tagged": 0
+      },
+      {
+        "word": "crellius",
+        "epub": 48,
+        "tagged": 2
+      },
+      {
+        "word": "adam",
+        "epub": 46,
+        "tagged": 1
+      },
+      {
+        "word": "undergo",
+        "epub": 31,
+        "tagged": 0
+      },
+      {
+        "word": "terror",
+        "epub": 31,
+        "tagged": 0
+      },
+      {
+        "word": "sincere",
+        "epub": 30,
+        "tagged": 0
+      },
+      {
+        "word": "cor",
+        "epub": 30,
+        "tagged": 1
+      },
+      {
+        "word": "sinai",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "incarnate",
+        "epub": 24,
+        "tagged": 0
+      },
+      {
+        "word": "sum",
+        "epub": 26,
+        "tagged": 3
+      },
+      {
+        "word": "governor",
+        "epub": 22,
+        "tagged": 2
+      },
+      {
+        "word": "socinus",
+        "epub": 21,
+        "tagged": 2
+      },
+      {
+        "word": "tenor",
+        "epub": 18,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 26,
+        "tagged": 10
+      },
+      {
+        "word": "targum",
+        "epub": 16,
+        "tagged": 0
+      },
+      {
+        "word": "everywhere",
+        "epub": 16,
+        "tagged": 0
+      },
+      {
+        "word": "estate",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "manna",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "superior",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "num",
+        "epub": 14,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 664,
+    "missing_latin_clause_count": 58,
+    "missing_latin_clauses": [
+      {
+        "page": 3,
+        "word_count": 7,
+        "sample": "in mundum non ad præstandum humano generi"
+      },
+      {
+        "page": 3,
+        "word_count": 6,
+        "sample": "sed ad præbenda bonorum actuum exempla"
+      },
+      {
+        "page": 3,
+        "word_count": 48,
+        "sample": "si ex hoc loquendi formula numerus et natura dei venanda et colligenda"
+      },
+      {
+        "page": 3,
+        "word_count": 11,
+        "sample": "qui loquebatur sed loquebatur præsentibus aliis hinc autem non immediate sequitur"
+      },
+      {
+        "page": 3,
+        "word_count": 11,
+        "sample": "pluribus adhuc consequentiis opus est nimirum quærendum statim est quinam illi"
+      },
+      {
+        "page": 3,
+        "word_count": 5,
+        "sample": "omnium præstantissimum creaturus introducitur a"
+      },
+      {
+        "page": 3,
+        "word_count": 5,
+        "sample": "sophoclis qui in œdipo coloneo"
+      },
+      {
+        "page": 3,
+        "word_count": 16,
+        "sample": "indubitatum est verba præscripta a sapientia dici si enim versio pagnini merceri"
+      },
+      {
+        "page": 3,
+        "word_count": 8,
+        "sample": "et verba præscripta ab intelligentia proferantur sequitur locum"
+      },
+      {
+        "page": 3,
+        "word_count": 4,
+        "sample": "loquendi formulis prosopopœiam non"
+      },
+      {
+        "page": 3,
+        "word_count": 15,
+        "sample": "ab æterno genita sed tantum ut in hebræo habetur a seculo formata"
+      },
+      {
+        "page": 3,
+        "word_count": 5,
+        "sample": "quam ab æterno gigni et"
+      },
+      {
+        "page": 4,
+        "word_count": 4,
+        "sample": "cicero pro cœlio cap"
+      },
+      {
+        "page": 4,
+        "word_count": 13,
+        "sample": "æternam meriti nihilominus ad vitam æternam perveniamus non est germanum responsum quia"
+      },
+      {
+        "page": 4,
+        "word_count": 11,
+        "sample": "natura sed esse effectus ipsius voluntatis præterea eam justitiam quam adversarii"
+      },
+      {
+        "page": 4,
+        "word_count": 5,
+        "sample": "infligendi pœnam et non infligendi"
+      },
+      {
+        "page": 4,
+        "word_count": 29,
+        "sample": "ac justitiam dei nonnunquam eum ad peccata punienda movere eorum nempe quibus"
+      },
+      {
+        "page": 4,
+        "word_count": 7,
+        "sample": "enim nocenti debetur pœna sed is eam"
+      },
+      {
+        "page": 6,
+        "word_count": 8,
+        "sample": "id sacrificium christi in cœlis peragitur ideo quod"
+      },
+      {
+        "page": 6,
+        "word_count": 4,
+        "sample": "hoc in cœlis perpetuo"
+      },
+      {
+        "page": 6,
+        "word_count": 6,
+        "sample": "atque ad nos a pœna liberandos"
+      },
+      {
+        "page": 6,
+        "word_count": 8,
+        "sample": "christum plenissimam habere pœnas peccatorum a nobis auferendi"
+      },
+      {
+        "page": 6,
+        "word_count": 4,
+        "sample": "scriptor ad hebræos cap"
+      },
+      {
+        "page": 6,
+        "word_count": 5,
+        "sample": "cui alias potestate æqualis est"
+      },
+      {
+        "page": 6,
+        "word_count": 5,
+        "sample": "ipso prærogativa atque eminentia indicatur"
+      },
+      {
+        "page": 6,
+        "word_count": 10,
+        "sample": "facile ob tantam christi præstantiam ac gloriam qua ipsum deus"
+      },
+      {
+        "page": 6,
+        "word_count": 4,
+        "sample": "divina ad hebræos epistola"
+      },
+      {
+        "page": 6,
+        "word_count": 7,
+        "sample": "sacrificii christi cætera vero sacrificiorum nostrorum spiritualium"
+      },
+      {
+        "page": 6,
+        "word_count": 4,
+        "sample": "sub veteri fœdere olim"
+      },
+      {
+        "page": 6,
+        "word_count": 14,
+        "sample": "christo summam in cis præstantiam tribui tamen minus ei tribui quam res"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 1181,
+    "translated_latin_runs_count": 140,
+    "latin_translation_ratio": 0.1185,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "sacerdotio fungi,\" or \"munus"
+      },
+      {
+        "phrase": "is \"sacerdotio fungor"
+      },
+      {
+        "phrase": "in sacris operari"
+      },
+      {
+        "phrase": "officio fungi"
+      },
+      {
+        "phrase": "pontificatus, sacerdotium"
+      },
+      {
+        "phrase": "Veii: \"Tuo"
+      },
+      {
+        "phrase": "instinctus, pergo ad delendam"
+      },
+      {
+        "phrase": "hinc decumam"
+      },
+      {
+        "phrase": "praedae voveo,\" Liv"
+      },
+      {
+        "phrase": "tanto digressum et"
+      },
+      {
+        "phrase": "nefas, donec"
+      },
+      {
+        "phrase": "scrutator majestatis absorbetur"
+      },
+      {
+        "phrase": "is \"naturae humanae"
+      },
+      {
+        "phrase": "victima, sacrificium mactatum"
+      },
+      {
+        "phrase": "mactatio, jugulatio, occisio"
+      },
+      {
+        "phrase": "Albertus Magnus, Scotus, Rupertus"
+      },
+      {
+        "phrase": "Wigandus de Osiandrismo"
+      },
+      {
+        "phrase": "Cassianus de"
+      },
+      {
+        "phrase": "Quo factum est"
+      },
+      {
+        "phrase": "Dominum nostrum Jesum Christum"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

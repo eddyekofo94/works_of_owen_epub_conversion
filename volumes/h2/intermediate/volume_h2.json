@@ -4,13 +4,13 @@
   "meta": {
     "pages": 12,
     "chapters_count": 26,
-    "extracted_at": "2026-06-11T01:43:20.759469"
+    "extracted_at": "2026-06-11T15:20:38.557684"
   },
   "chapters": [
     {
       "cid": "ch001",
       "title": "PART IV: CONCERNING THE SACERDOTAL OFFICE OF CHRIST",
-      "level": 1,
+      "level": 2,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": true,
@@ -21,7 +21,7 @@
     {
       "cid": "ch002",
       "title": "XXV. —The office of priesthood",
-      "level": 1,
+      "level": 3,
       "page_start": 1,
       "page_end": 1,
       "is_treatise": false,
@@ -32,7 +32,7 @@
     {
       "cid": "ch003",
       "title": "XXVI. —Of the origin of the priesthood of Christ",
-      "level": 1,
+      "level": 3,
       "page_start": 1,
       "page_end": 2,
       "is_treatise": false,
@@ -43,7 +43,7 @@
     {
       "cid": "ch004",
       "title": "XXVII. —The original of the priesthood of Christ in the counsel of God",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 2,
       "is_treatise": false,
@@ -54,7 +54,7 @@
     {
       "cid": "ch005",
       "title": "XXVIII. —Federal transactions between the Father and the Son",
-      "level": 1,
+      "level": 3,
       "page_start": 2,
       "page_end": 3,
       "is_treatise": false,
@@ -65,7 +65,7 @@
     {
       "cid": "ch006",
       "title": "XXIX. —The necessity of the priesthood of Christ on the supposition of sin and grace",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 3,
       "is_treatise": false,
@@ -76,7 +76,7 @@
     {
       "cid": "ch007",
       "title": "XXX. —The necessity of the priesthood of Christ on the supposition of sin and grace",
-      "level": 1,
+      "level": 3,
       "page_start": 3,
       "page_end": 4,
       "is_treatise": false,
@@ -87,7 +87,7 @@
     {
       "cid": "ch008",
       "title": "XXXI. —The nature of the priesthood of Christ",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 4,
       "is_treatise": false,
@@ -98,7 +98,7 @@
     {
       "cid": "ch009",
       "title": "XXXII. —The nature of the priesthood of Christ",
-      "level": 1,
+      "level": 3,
       "page_start": 4,
       "page_end": 5,
       "is_treatise": false,
@@ -109,7 +109,7 @@
     {
       "cid": "ch010",
       "title": "XXXIII. —Of the acts of the priesthood of Christ, their object, with the time and place of its",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 5,
       "is_treatise": false,
@@ -120,7 +120,7 @@
     {
       "cid": "ch011",
       "title": "XXXIV. —Prefigurations of the priesthood and sacrifice of Christ",
-      "level": 1,
+      "level": 3,
       "page_start": 5,
       "page_end": 6,
       "is_treatise": false,
@@ -131,7 +131,7 @@
     {
       "cid": "ch012",
       "title": "An advertisement unto the reader",
-      "level": 1,
+      "level": 2,
       "page_start": 6,
       "page_end": 7,
       "is_treatise": false,
@@ -142,7 +142,7 @@
     {
       "cid": "ch013",
       "title": "PART V: CONCERNING A DAY OF SACRED REST",
-      "level": 1,
+      "level": 2,
       "page_start": 7,
       "page_end": 7,
       "is_treatise": true,
@@ -153,7 +153,7 @@
     {
       "cid": "ch014",
       "title": "To the Reader",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 7,
       "is_treatise": false,
@@ -164,7 +164,7 @@
     {
       "cid": "ch015",
       "title": "I. —Differences concerning a day of sacred rest—Principles directing to the observance of it—Th",
-      "level": 1,
+      "level": 3,
       "page_start": 7,
       "page_end": 8,
       "is_treatise": false,
@@ -175,7 +175,7 @@
     {
       "cid": "ch016",
       "title": "II. —Of the original of the Sabbath",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 8,
       "is_treatise": false,
@@ -186,7 +186,7 @@
     {
       "cid": "ch017",
       "title": "III. —Of the causes of the Sabbath",
-      "level": 1,
+      "level": 3,
       "page_start": 8,
       "page_end": 9,
       "is_treatise": false,
@@ -197,7 +197,7 @@
     {
       "cid": "ch018",
       "title": "IV. —Of the Judaical Sabbath",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 9,
       "is_treatise": false,
@@ -208,7 +208,7 @@
     {
       "cid": "ch019",
       "title": "V. —Of the Lord's Day",
-      "level": 1,
+      "level": 3,
       "page_start": 9,
       "page_end": 10,
       "is_treatise": false,
@@ -219,7 +219,7 @@
     {
       "cid": "ch020",
       "title": "VI. —The practical observance of the Lord's Day",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -230,7 +230,7 @@
     {
       "cid": "ch021",
       "title": "SUMMARY OF OBSERVATIONS DRAWN FROM THE EXPOSITION OF THE EPISTLE",
-      "level": 1,
+      "level": 2,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -241,7 +241,7 @@
     {
       "cid": "ch022",
       "title": "CHAPTERS 1, 2: Pre-eminent dignity of Christ, both absolutely and comparatively—His superiority to a",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 10,
       "is_treatise": false,
@@ -252,7 +252,7 @@
     {
       "cid": "ch023",
       "title": "CHAPTERS 3, 4:1–13: Christ's superiority to Moses, the agent in founding the old dispensation",
-      "level": 1,
+      "level": 3,
       "page_start": 10,
       "page_end": 11,
       "is_treatise": false,
@@ -263,7 +263,7 @@
     {
       "cid": "ch024",
       "title": "CHAPTERS 4:14–16, 5–8\" Superiority of Christ as priest to the Levitical priesthood, from the analogy",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -274,7 +274,7 @@
     {
       "cid": "ch025",
       "title": "CHAPTERS 9, 10:1–18: Superiority of Christ's priesthood from the superior value of his sacrifice",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,
@@ -285,7 +285,7 @@
     {
       "cid": "ch026",
       "title": "CHAPTERS 10:19–39, 11: The obligation, advantage, and necessity of steadfast adherence to the gospel",
-      "level": 1,
+      "level": 3,
       "page_start": 11,
       "page_end": 11,
       "is_treatise": false,

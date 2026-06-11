@@ -294,12 +294,12 @@ The new engine:
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
 | h1 | h1 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Unres 34 |
-| h2 | h2 | Empty | NONE | No QA reports |
-| h3 | h3 | Empty | NONE | No QA reports |
-| h4 | h4 | Empty | NONE | No QA reports |
-| h5 | h5 | Empty | NONE | No QA reports |
-| h6 | h6 | Empty | NONE | No QA reports |
-| h7 | h7 | Populated | NONE | No QA reports |
+| h2 | h2 | Empty | FULL | Cov 99.81 Greek 100.00 Heb 100.00 Unres 41 |
+| h3 | h3 | Empty | STANDARD | Audit + text integrity |
+| h4 | h4 | Empty | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Unres 13 |
+| h5 | h5 | Empty | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Unres 6 |
+| h6 | h6 | Empty | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 4 |
+| h7 | h7 | Populated | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 2 |
 
 ## Agent-Driven Skills & Slash Commands
 
