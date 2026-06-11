@@ -272,6 +272,10 @@ AUTHOR_ABBREV_MAP = {
     "fuller":      "Nicholas Fuller",
     "azarias":     "Azariah de' Rossi",
     "justinian":   "Justinian I (Roman Law)",
+    "themist":     "Themistius",
+    "themistius":  "Themistius",
+    "ammian":      "Ammianus Marcellinus",
+    "ammianus":    "Ammianus Marcellinus",
 }
 
 # ── Canonical Author Normalization ──────────────────────────────────────────
@@ -335,6 +339,8 @@ CANONICAL_AUTHOR_MAP = {
     "menoch":      "menochius",
     "pighio":      "pighius",
     "morin":       "morinus",
+    "themistius":  "themist",
+    "ammianus":    "ammian",
 }
 
 # ── Work abbreviation → full citation data ───────────────────────────────────
@@ -900,6 +906,8 @@ WORK_MAP = {
     ("irenaeus", "haer"):         {"full_title": "Against Heresies", "latin_title": "Adversus Haereses", "std_ref": ["ANF 1"], "pg": "PG 7"},
     ("livy", "hist"):             {"full_title": "History of Rome", "latin_title": "Ab Urbe Condita", "std_ref": ["Ab Urbe Condita"]},
     ("livy", "lib"):              {"full_title": "History of Rome", "latin_title": "Ab Urbe Condita", "std_ref": ["Ab Urbe Condita"]},
+    ("themist", "orat"):          {"full_title": "Orations", "latin_title": "Orationes", "std_ref": ["Themistii Orationes"]},
+    ("ammian", "hist"):           {"full_title": "Roman History", "latin_title": "Res Gestae", "std_ref": ["Loeb Class. Lib."]},
 }
 
 # ── Detection regex ──────────────────────────────────────────────────────────
@@ -1090,6 +1098,8 @@ def build_citation_note(
             (r'\bmiscellan\w*\b', 'fuller', 'miscellan'),
             (r'\bcyrop\w*\b', 'xenophon', 'cyrop'),
             (r'\bre\s+binah\b', 'azarias', 're binah'),
+            (r'\bthemist\w*\b', 'themist', 'orat'),
+            (r'\bursicinus\b|\bsicinus\b|\bursinus\b', 'ammian', 'hist'),
             (r'\bsanct\w*\s+spir\w*\b', 'nazianz', 'spir'),
             (r'\bepist\w*\s+ad\s+evagrium\b|\bad\s+evagrium\b|\bevagrius\b', 'hieronym', 'epist'),
             (r'\brecapitulat\w*\b', 'irenaeus', 'haer'),

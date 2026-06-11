@@ -1,77 +1,23 @@
 {
-  "volume": 7,
+  "volume": "7",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/input/owen-v7.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
-  "generated_at": "2026-06-09T10:48:33.155021+00:00",
-  "status": "warn",
-  "warning_count": 12,
-  "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "front_matter_toc_loss",
-      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "top_of_page_text_loss",
-      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "bottom_of_page_text_loss",
-      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "paragraph_split_candidates",
-      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
-    },
-    {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
-      "code": "roman_heading_candidates",
-      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
-    },
-    {
-      "code": "enumerator_sequence_candidates",
-      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
-    },
-    {
-      "code": "repeated_windows",
-      "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "low_latin_tagging",
-      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
-    },
-    {
-      "code": "low_latin_translation_coverage",
-      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
-    }
-  ],
+  "generated_at": "2026-06-11T16:05:34.763669+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
     "page_count": 683
   },
   "epub": {
     "spine_text_files": 63,
-    "paragraph_count": 2333
+    "paragraph_count": 2407
   },
   "word_coverage": {
-    "pdf_content_tokens": 230677,
-    "epub_content_tokens": 230772,
-    "coverage_ratio": 0.9971,
+    "pdf_content_tokens": 230676,
+    "epub_content_tokens": 230986,
+    "coverage_ratio": 0.9976,
     "missing_word_samples": [
-      {
-        "word": "london",
-        "pdf": 3,
-        "epub": 0
-      },
       {
         "word": "editor",
         "pdf": 3,
@@ -85,19 +31,29 @@
         "epub": 10
       },
       {
-        "word": "modern",
+        "word": "theological",
+        "pdf": 0,
+        "epub": 9
+      },
+      {
+        "word": "historical",
         "pdf": 1,
-        "epub": 10
+        "epub": 9
       },
       {
         "word": "greek",
         "pdf": 3,
-        "epub": 11
+        "epub": 10
       },
       {
-        "word": "hebrew",
+        "word": "modern",
         "pdf": 1,
         "epub": 8
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
       },
       {
         "word": "edition",
@@ -105,77 +61,21 @@
         "epub": 10
       },
       {
-        "word": "footnotes",
-        "pdf": 0,
-        "epub": 6
+        "word": "hebrew",
+        "pdf": 1,
+        "epub": 7
       }
     ]
   },
   "page_coverage": {
     "pages_checked": 679,
-    "weak_page_count": 3,
-    "weak_pages": [
-      {
-        "page": 3,
-        "hit_ratio": 0.333,
-        "sample": "contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in"
-      },
-      {
-        "page": 8,
-        "hit_ratio": 0.333,
-        "sample": "the nature of apostasy from the profession of the gospel and the punishment of apostates declared in an exposition of hebrews 4-6 with an"
-      },
-      {
-        "page": 607,
-        "hit_ratio": 0.0,
-        "sample": "treatise of the dominion of sin and grace wherein sin's reign is discovered in whom it is and in whom it is not how"
-      }
-    ]
+    "weak_page_count": 0,
+    "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32118,
-    "missing_dense_window_pages": 40,
+    "dense_windows_checked": 32091,
+    "missing_dense_window_pages": 30,
     "missing_dense_windows": [
-      {
-        "page": 3,
-        "sample": "contents of nature and causes of apostasy from the gospel prefatory note by the"
-      },
-      {
-        "page": 4,
-        "sample": "of apostasy from the truth and decays in the practice of evangelical holiness directions"
-      },
-      {
-        "page": 5,
-        "sample": "and what they are to be accompanied withal etc what of god or in"
-      },
-      {
-        "page": 6,
-        "sample": "growth in our spiritual affections as unto this assimilation decays in spiritual affections with"
-      },
-      {
-        "page": 24,
-        "sample": "the nature and causes of apostasy from the gospel chapter the nature of apostasy"
-      },
-      {
-        "page": 31,
-        "sample": "were differenced from them as that they had such things as did accompany salvation"
-      },
-      {
-        "page": 37,
-        "sample": "holy ghost in miraculous operations so expressly chap elsewhere δωρεα so far as can"
-      },
-      {
-        "page": 39,
-        "sample": "on the earth but he gave the gospel church state by that spirit which"
-      },
-      {
-        "page": 45,
-        "sample": "respect unto its blessed effects psalm acts james on this account the psalmist assures"
-      },
-      {
-        "page": 59,
-        "sample": "description of himself nahum god is jealous and the lord revengeth the lord revengeth"
-      },
       {
         "page": 64,
         "sample": "our apostle speaks romans considering nothing in god but mercy and long suffering and"
@@ -191,6 +91,10 @@
       {
         "page": 95,
         "sample": "continued for sundry ages afterward and for the latter or pela gianism it secretly"
+      },
+      {
+        "page": 100,
+        "sample": "whether greek or latin before st austin's time agreed in doctrine with the determinations"
       },
       {
         "page": 134,
@@ -211,10 +115,6 @@
       {
         "page": 221,
         "sample": "an habitual course in any sin is utterly inconsistent with evangelical obedience john yea"
-      },
-      {
-        "page": 242,
-        "sample": "and compassion unto the souls of menlhow few do take heed to themselves and"
       },
       {
         "page": 245,
@@ -318,24 +218,12 @@
   "top_of_page_integrity": {
     "top_windows_checked": 679,
     "top_windows_usable": 667,
-    "skipped_top_window_count": 16,
+    "skipped_top_window_count": 12,
     "skipped_top_windows": [
       {
         "page": 14,
         "window": "pleasures of it with readiness for the cross are all so overgrown and almost",
         "sample": "pleasures of it, with readiness for the cross, are all [so] overgrown, and almost worn out amongst men, that they can hardly be discerned where",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 25,
-        "window": "tou pax swtisqe ntav wtjen at ydiwm m'l ˆb'z ˆwnh those who one time",
-        "sample": "Tou<v a[pax swtisqe>ntav. Wtjen] at;ydiWm[}m'l] ˆb'z] ˆWnh; — \"Those who one time,\" or \"once descended unto baptism;\" of which intepretation we",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 38,
-        "window": "by christ after his ascension thither and exaltation there is principally here regarded he",
-        "sample": "by Christ, after his ascension thither and exaltation there, is principally here regarded. He therefore is this hJ dwrea< hJ ejpoura>niov, the \"heavenly",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -351,12 +239,6 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 70,
-        "window": "paradeigmati sai not willing to make her public example that is by bringing of",
-        "sample": "paradeigmati>sai, — \"Not willing to make her a public example;\" that is, by bringing of her forth unto a shameful punishment, for the terror of",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 78,
         "window": "besides the lives of the generality of them who adhere unto the communion of",
         "sample": "Besides, the lives of the generality of them who adhere unto the communion of that church, [and] of the most who preside therein, are",
@@ -366,12 +248,6 @@
         "page": 223,
         "window": "dereliction of the gospel on this account with respect unto the inwardness spirituality and",
         "sample": "[2.] A dereliction of the gospel on this account, with respect unto the inwardness, spirituality, and extent of its commands, is much increased",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 332,
-        "window": "unto this spirit there is fro nhma ascribed which as we have intimated is",
-        "sample": "2. Unto this Spirit there is fro>nhma ascribed, which, as we have intimated, is translated with great variety. Fro>nhsiv is the principal",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -417,195 +293,117 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 3,
-    "missing_top_windows": [
-      {
-        "page": 3,
-        "window": "contents of nature and causes of apostasy from the gospel",
-        "sample": "CONTENTS OF . NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL."
-      },
-      {
-        "page": 24,
-        "window": "the nature and causes of apostasy from the gospel",
-        "sample": "THE NATURE AND CAUSES OF APOSTASY FROM THE GOSPEL."
-      },
-      {
-        "page": 183,
-        "window": "39-41 and that of the apostles acts 25-27 and is expounded",
-        "sample": "12:39-41, and that of the apostles, Acts 28:25-27, and is expounded,"
-      }
-    ]
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 647,
-    "bottom_windows_usable": 632,
+    "bottom_windows_usable": 631,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 2,
-    "missing_bottom_windows": [
-      {
-        "page": 2,
-        "window": "this edition of first published by johnstone hunter 1850-53",
-        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
-      },
-      {
-        "page": 617,
-        "window": "ejpiqumi av romans continual working and provision to",
-        "sample": "ejpiqumi>av, Romans 13:14, — a continual working and provision to"
-      }
-    ]
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1972,
-    "split_candidate_count": 9,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "3. To those who pretend to perfection in this life. The causes of this kind of apostasy are mentioned,",
-        "next": "VIII."
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,",
-        "next": "XI."
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "To The Reader",
-        "next": "SOME brief account of the occasion and design of the ensuing discourse I judge due unto the reader, that, upon a prospect of them, he may either proceed in its perusal or desist, a"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "observe, that upon the destruction of Babylon, it is said that \"in her was found the blood of prophets, and of saints, and of all that were slain upon the earth,\" Revelation 18:24,",
-        "next": "— that is, for the gospel and the profession thereof. Whoever, therefore, offereth violence unto the life of any on the account of their profession of the gospel and religion of Ch"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": " the fullness of wisdom in spiritual things; 3. their value as perfective of our present condition; and, 4. as constituting in the future enjoyment of them our eternal blessedness,",
-        "next": "XIX."
-      },
-      {
-        "file": "EPUB/ch030.xhtml",
-        "previous": "em solid relief but the consideration and faith of things invisible and eternal. So the apostle declares this state of things, 2 Corinthians 4:16-18 (the words before insisted on),",
-        "next": "He lays all sorts of afflictions in one scale, and, on the consideration of them, declares them to be \"light\" and \"but for a moment.\" Then he lays glory in the other scale, and fin"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": " him by our affections, it is despised by him; he owns us not. As \"if a man would give all the substance of his house for love, it would utterly be contemned,\" Song of Solomon 8:7,",
-        "next": "— it is not to be bought or purchased with riches; so if a man would give to God an the substance of his house without love, it would in like manner be despised. And however, on th"
-      },
-      {
-        "file": "EPUB/ch050.xhtml",
-        "previous": "ls in the affections, when there is a neglect of the means by which it is mortified, when a reservation is made in favor of any known sin, and when hardness of heart is manifested,",
-        "next": "III."
-      },
-      {
-        "file": "EPUB/ch054.xhtml",
-        "previous": "(4thly.) They will receive in the warnings which are given them by the word preached, especially if their particular case be touched on or laid open",
-        "next": "(5thly.) They will have no quiet, rest, or self-approbation, until they come thoroughly off unto a healing and recovery, such as that described, Hosea 14:1-4. Thus it may be with s"
-      }
-    ],
-    "structural_start_exclusions": 241,
-    "short_fragment_count": 18,
+    "paragraphs_checked": 2042,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 265,
+    "short_fragment_count": 22,
     "short_fragments": [
       {
-        "file": "EPUB/ch004.xhtml",
+        "file": "EPUB/ch001.xhtml",
+        "text": "SEARCH THE SCRIPTURES — JOHN 5:39."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "LONDON: 1676."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
         "text": "I."
       },
       {
-        "file": "EPUB/ch004.xhtml",
+        "file": "EPUB/ch003.xhtml",
         "text": "II."
       },
       {
-        "file": "EPUB/ch004.xhtml",
+        "file": "EPUB/ch003.xhtml",
         "text": "VIII."
       },
       {
-        "file": "EPUB/ch004.xhtml",
+        "file": "EPUB/ch003.xhtml",
         "text": "III."
       },
       {
         "file": "EPUB/ch004.xhtml",
-        "text": "XI."
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
         "text": "To The Reader"
       },
       {
-        "file": "EPUB/ch006.xhtml",
+        "file": "EPUB/ch005.xhtml",
         "text": "And, —"
       },
       {
-        "file": "EPUB/ch006.xhtml",
+        "file": "EPUB/ch005.xhtml",
         "text": "Ans."
       },
       {
-        "file": "EPUB/ch014.xhtml",
+        "file": "EPUB/ch013.xhtml",
         "text": "Verse 20,"
       },
       {
-        "file": "EPUB/ch018.xhtml",
+        "file": "EPUB/ch017.xhtml",
         "text": "I answer, —"
       },
       {
-        "file": "EPUB/ch023.xhtml",
+        "file": "EPUB/ch022.xhtml",
         "text": "XIX."
       },
       {
-        "file": "EPUB/ch028.xhtml",
+        "file": "EPUB/ch027.xhtml",
         "text": "I answer, —"
       },
       {
-        "file": "EPUB/ch050.xhtml",
+        "file": "EPUB/ch047.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "D.D. LONDON: 1688"
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
         "text": "III."
       },
       {
-        "file": "EPUB/ch050.xhtml",
+        "file": "EPUB/ch049.xhtml",
         "text": "III."
       },
       {
-        "file": "EPUB/ch050.xhtml",
-        "text": "- ED."
-      },
-      {
-        "file": "EPUB/ch053.xhtml",
+        "file": "EPUB/ch052.xhtml",
         "text": "I answer briefly three things: —"
       },
       {
-        "file": "EPUB/ch055.xhtml",
+        "file": "EPUB/ch054.xhtml",
         "text": "I shall mention some of them: —"
       },
       {
-        "file": "EPUB/ch056.xhtml",
+        "file": "EPUB/ch055.xhtml",
         "text": "The law is taken two ways: —"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "text": "I shall name some of them: —"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "text": "END OF VOL. 7."
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 5,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "text": "An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —"
-      },
-      {
-        "file": "EPUB/ch033.xhtml",
-        "text": "It is the spiritual mind alone that can reconcile those things which are prescribed to us as our duty towards God. \"To delight and rejoice in him always, to triumph in the remembrance of him, to draw nigh unto him with boldness and confidence,\" are on the one "
-      },
-      {
-        "file": "EPUB/ch050.xhtml",
-        "text": "The reason of the assurance that sin shall have no more dominion over believers is, that they are \"not under the law, but under grace;\" because, — whereas, 1. the law gives no strength against sin, 2. confers no spiritual liberty, and, 3. supplies no motives t"
-      },
-      {
-        "file": "EPUB/ch057.xhtml",
-        "text": "I shall name some of them: — 1. Such a soul can have no solid peace, because it hath not satisfaction what state it doth belong unto. 2. It cannot receive refreshment by gospel consolations in any condition, for its just fears of the dominion of sin will defea"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -615,15 +413,15 @@
     "roman_heading_candidate_count": 3,
     "roman_heading_candidates": [
       {
-        "file": "EPUB/ch047.xhtml",
+        "file": "EPUB/ch046.xhtml",
         "text": "I. 1. That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —"
       },
       {
-        "file": "EPUB/ch050.xhtml",
+        "file": "EPUB/ch049.xhtml",
         "text": "I. As to the nature of this dominion, —"
       },
       {
-        "file": "EPUB/ch050.xhtml",
+        "file": "EPUB/ch049.xhtml",
         "text": "II. As to the evidence of this dominion, —"
       }
     ],
@@ -637,7 +435,7 @@
     "epub_marker_count": 399,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 8,
+    "excess_marker_count": 7,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -645,7 +443,7 @@
         "epub": 1,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p78",
+            "location": "EPUB/structural_guide.xhtml#p80",
             "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           }
         ]
@@ -656,15 +454,15 @@
         "epub": 82,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p81",
+            "location": "EPUB/structural_guide.xhtml#p83",
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p171",
+            "location": "EPUB/ch005.xhtml#p172",
             "context": "(1.) The apostle, designing to express the fearful state and judgment of these persons, describes them by such things as may fully evidence it to be, as unavoidable, so righteous and e"
           },
           {
-            "location": "EPUB/ch006.xhtml#p193",
+            "location": "EPUB/ch005.xhtml#p195",
             "context": "Ans. (1.) It is ordinary to have the same thing twice expressed, in various words, to quicken the sense of them; and it is necessary it should be so, when there are divers respects unto the"
           }
         ]
@@ -675,15 +473,15 @@
         "epub": 81,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p81",
+            "location": "EPUB/structural_guide.xhtml#p83",
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p172",
+            "location": "EPUB/ch005.xhtml#p173",
             "context": "(2.) That all these privileges do consist in certain especial operations of the Holy Ghost, which were peculiar unto the dispensation of the gospel, such as they neither were nor could"
           },
           {
-            "location": "EPUB/ch006.xhtml#p194",
+            "location": "EPUB/ch005.xhtml#p196",
             "context": "(2.) The following clause may be exegetical of this, declaring more fully and plainly what is here intended; which is usual also in the Scripture: so that nothing is cogent from this c"
           }
         ]
@@ -691,18 +489,18 @@
       {
         "marker": "[1.]",
         "pdf": 40,
-        "epub": 42,
+        "epub": 43,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p81",
+            "location": "EPUB/structural_guide.xhtml#p83",
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p174",
+            "location": "EPUB/ch005.xhtml#p175",
             "context": "[1.] That they had such things as did accompany sal vation, — that is, such as salvation is inseparable from. None of these things, therefore, had he ascribed unto those whom he descri"
           },
           {
-            "location": "EPUB/ch006.xhtml#p223",
+            "location": "EPUB/ch005.xhtml#p227",
             "context": "[1.] The nature and properties of God are declared therein. God being the only good, the only fountain and cause of all goodness, and in whose enjoyment all rest and blessedness do con"
           }
         ]
@@ -710,18 +508,10 @@
       {
         "marker": "[1]",
         "pdf": 0,
-        "epub": 3,
+        "epub": 1,
         "examples": [
           {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from"
-          },
-          {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "entirely distinct from the original authorial/historical footnotes and reset starting at [1] for each chapter. Enhanced Original Footnotes 1, 2, ... : Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Lati"
-          },
-          {
-            "location": "EPUB/structural_guide.xhtml#p78",
+            "location": "EPUB/structural_guide.xhtml#p80",
             "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           }
         ]
@@ -732,27 +522,16 @@
         "epub": 41,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p81",
+            "location": "EPUB/structural_guide.xhtml#p83",
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p175",
+            "location": "EPUB/ch005.xhtml#p176",
             "context": "[2.] He describes them by their duties of obedience and fruits of faith."
           },
           {
-            "location": "EPUB/ch006.xhtml#p224",
+            "location": "EPUB/ch005.xhtml#p228",
             "context": "[2.] It is exceeding good in the revelation of the glorious mystery of the Trinity, therein alone contained. This is that mystery the knowledge whereof is the only means to have a righ"
-          }
-        ]
-      },
-      {
-        "marker": "[2]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
           }
         ]
       },
@@ -762,16 +541,16 @@
         "epub": 24,
         "examples": [
           {
-            "location": "EPUB/ch006.xhtml#p177",
+            "location": "EPUB/ch005.xhtml#p178",
             "context": "[3.] He adds, that in the preservation of those there mentioned the faithfulness of God was concerned: \"God is not unrighteous to forget.\" For they were such he intended as were intere"
           },
           {
-            "location": "EPUB/ch006.xhtml#p225",
+            "location": "EPUB/ch005.xhtml#p229",
             "context": "[3.] It is so in the revelation of the whole mystery of the incarnation of the Son of God, with all the effects of infinite wisdom and grace thereunto belonging. What a satisfactory go"
           },
           {
-            "location": "EPUB/ch006.xhtml#p236",
-            "context": "[3.] The word only thus tasted of will work on men a change and reformation of their lives, with a readiness unto the performance of many duties, 2 Peter 2:18, 20; Mark 6:20. And, —"
+            "location": "EPUB/ch005.xhtml#p240",
+            "context": "[3.] The word only thus tasted of will work on men a change and reformation of their lives, with a readiness unto the performance of many duties, 2 Peter 2:18,20; Mark 6:20. And, —"
           }
         ]
       }
@@ -779,13 +558,13 @@
     "orphan_candidate_count": 2,
     "orphan_candidates": [
       {
-        "file": "EPUB/ch031.xhtml",
+        "file": "EPUB/ch030.xhtml",
         "marker": "(2.)",
         "family": "paren_decimal",
         "context": "(2.) WE have treated in general before of the proper objects of our spiritual thoughts as unto our present duty. That which we were last engaged in is an especial instance in heavenly"
       },
       {
-        "file": "EPUB/ch031.xhtml",
+        "file": "EPUB/ch030.xhtml",
         "marker": "[3.]",
         "family": "bracket_decimal",
         "context": "[3.] Again; meditate and think of the glory of heaven so as to compare it with the opposite state of death and eternal misery. Few men care to think much of hell, and the everlasting t"
@@ -899,7 +678,7 @@
     "epub_greek_word_count": 325,
     "pdf_greek_unique_words": 167,
     "epub_greek_unique_words": 167,
-    "greek_word_coverage_ratio": 0.9969,
+    "greek_word_coverage_ratio": 1.0,
     "pdf_hebrew_word_count": 26,
     "epub_hebrew_word_count": 26,
     "pdf_hebrew_unique_words": 26,
@@ -917,59 +696,19 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 2349,
-    "epub_latin_word_count": 2382,
-    "epub_tagged_latin_word_count": 40,
-    "pdf_latin_unique_words": 424,
-    "epub_latin_unique_words": 430,
-    "epub_tagged_unique_words": 33,
-    "latin_word_coverage_ratio": 0.9962,
-    "latin_tagging_ratio": 0.0168,
+    "pdf_latin_word_count": 1211,
+    "epub_latin_word_count": 1245,
+    "epub_tagged_latin_word_count": 177,
+    "pdf_latin_unique_words": 413,
+    "epub_latin_unique_words": 418,
+    "epub_tagged_unique_words": 145,
+    "latin_word_coverage_ratio": 0.995,
+    "latin_tagging_ratio": 0.1422,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
-        "word": "nor",
-        "epub": 395,
-        "tagged": 0
-      },
-      {
-        "word": "yea",
-        "epub": 184,
-        "tagged": 0
-      },
-      {
-        "word": "jesus",
-        "epub": 159,
-        "tagged": 0
-      },
-      {
-        "word": "thereunto",
-        "epub": 95,
-        "tagged": 0
-      },
-      {
-        "word": "endeavor",
-        "epub": 89,
-        "tagged": 0
-      },
-      {
-        "word": "whereas",
-        "epub": 84,
-        "tagged": 0
-      },
-      {
-        "word": "hereunto",
-        "epub": 60,
-        "tagged": 0
-      },
-      {
         "word": "sincere",
         "epub": 52,
-        "tagged": 0
-      },
-      {
-        "word": "whereunto",
-        "epub": 41,
         "tagged": 0
       },
       {
@@ -1008,24 +747,19 @@
         "tagged": 0
       },
       {
-        "word": "distinct",
-        "epub": 23,
-        "tagged": 0
-      },
-      {
         "word": "profligate",
         "epub": 22,
-        "tagged": 0
-      },
-      {
-        "word": "savor",
-        "epub": 20,
         "tagged": 0
       },
       {
         "word": "iii",
         "epub": 19,
         "tagged": 0
+      },
+      {
+        "word": "savor",
+        "epub": 20,
+        "tagged": 1
       },
       {
         "word": "forego",
@@ -1035,7 +769,7 @@
       {
         "word": "meditate",
         "epub": 16,
-        "tagged": 0
+        "tagged": 1
       },
       {
         "word": "alas",
@@ -1051,30 +785,123 @@
         "word": "estate",
         "epub": 13,
         "tagged": 0
+      },
+      {
+        "word": "undergo",
+        "epub": 13,
+        "tagged": 0
+      },
+      {
+        "word": "pleas",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "communicate",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "terror",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "degenerate",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "rate",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "hate",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "abraham",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "vigor",
+        "epub": 10,
+        "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 20,
+    "latin_clauses_checked": 18,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 9,
-    "translated_latin_runs_count": 5,
-    "latin_translation_ratio": 0.5556,
+    "tagged_latin_runs_count": 49,
+    "translated_latin_runs_count": 11,
+    "latin_translation_ratio": 0.2245,
     "untranslated_latin_samples": [
       {
-        "phrase": "But ye are not in the flesh, but in the Spirit."
+        "phrase": "Erasmus, ‡  \"Fieri non"
       },
       {
-        "phrase": "the word of Christ might dwell in them richly in all wisdom,"
+        "phrase": "etiam donum"
       },
       {
-        "phrase": "God is love; and he that dwelleth in love dwelleth in God, and God in him,"
+        "phrase": "facti sunt Spiritus Sancti"
       },
       {
-        "phrase": "having no joy in its prevalency, but grief, being planted in this respect"
+        "phrase": "nihilominus bonum Dei verbum"
+      },
+      {
+        "phrase": "verbum pulchrum"
+      },
+      {
+        "phrase": "seculi futuri"
+      },
+      {
+        "phrase": "seculi venturi"
+      },
+      {
+        "phrase": "Et prolapsi sunt"
+      },
+      {
+        "phrase": "Rursus renovari ad poenitentiam"
+      },
+      {
+        "phrase": "Ut denuo renoventur ad resipiscentiam"
+      },
+      {
+        "phrase": "sibimetipsis Filium Dei"
+      },
+      {
+        "phrase": "Et ostentui"
+      },
+      {
+        "phrase": "Erasmus, \"Ludibrio"
+      },
+      {
+        "phrase": "Beza, \"Ignominiae"
+      },
+      {
+        "phrase": "Ad exemplum Judsaeorum"
+      },
+      {
+        "phrase": "de Poenitentia"
+      },
+      {
+        "phrase": "verbum dictum"
+      },
+      {
+        "phrase": "Tatianus, Athenaguras"
+      },
+      {
+        "phrase": "Latius excisae"
+      },
+      {
+        "phrase": "contagio gentis"
       }
     ]
   },

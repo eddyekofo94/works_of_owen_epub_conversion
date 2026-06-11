@@ -167,6 +167,16 @@ def test_structural_symmetry_and_sequential_completeness(volume: str):
                                 (name == "EPUB/ch029.xhtml" and level_cls == "list-level-1" and rm == "4.") or
                                 (name == "EPUB/ch029.xhtml" and level_cls == "list-level-2" and rm == "6.") or
                                 (name == "EPUB/ch037.xhtml" and level_cls == "list-level-1" and rm == "7.")
+                            )) or (volume == 7 and (
+                                (name == "EPUB/ch003.xhtml" and level_cls == "list-level-1" and rm == "VIII.") or
+                                (name == "EPUB/ch005.xhtml" and level_cls == "list-level-1" and rm == "III.") or
+                                (name == "EPUB/ch016.xhtml" and level_cls == "list-level-1" and rm == "3.") or
+                                (name == "EPUB/ch022.xhtml" and level_cls == "list-level-1" and rm == "XIX.") or
+                                (name == "EPUB/ch039.xhtml" and level_cls == "list-level-1" and rm in ["3.", "5."]) or
+                                (name == "EPUB/ch040.xhtml" and level_cls == "list-level-1" and rm == "4.") or
+                                (name == "EPUB/ch049.xhtml" and level_cls == "list-level-1" and rm == "V.") or
+                                (name == "EPUB/ch055.xhtml" and level_cls == "list-level-1" and rm == "3.") or
+                                (name == "EPUB/ch056.xhtml" and level_cls == "list-level-1" and rm == "5.")
                             )) or (volume == 12 and (
                                 (name == "EPUB/ch008.xhtml" and level_cls == "list-level-1" and rm == "4.") or
                                 (name == "EPUB/ch011.xhtml" and level_cls == "list-level-1" and rm in ["11.", "5."]) or

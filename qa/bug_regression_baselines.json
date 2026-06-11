@@ -322,6 +322,15 @@
         "max_lowercase_paragraph_start_files": 1
       }
     },
+    "7": {
+      "text_integrity": {
+        "max_inline_structural_candidate_count": 2,
+        "max_front_toc_missing_pages": 2
+      },
+      "epub": {
+        "max_lowercase_paragraph_start_files": 6
+      }
+    },
     "h1": {
       "text_integrity": {
         "max_split_candidate_count": 40,

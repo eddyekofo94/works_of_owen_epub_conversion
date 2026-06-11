@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
-  "generated_at": "2026-06-09T10:47:55.845208+00:00",
+  "generated_at": "2026-06-11T16:04:55.337913+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -13,8 +13,8 @@
     }
   ],
   "info": {
-    "file_count": 93,
-    "epub_size_bytes": 4670456,
+    "file_count": 99,
+    "epub_size_bytes": 6607435,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +23,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 84,
-    "spine_count": 63,
+    "manifest_count": 90,
+    "spine_count": 64,
     "xhtml_count": 65,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 20,
     "language": {
       "greek_chars": 1980,
       "greek_untagged_chars": 0,
@@ -40,9 +40,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 31,
-      "unique_noteref_targets": 31,
-      "endnote_anchor_count": 31,
+      "noteref_count": 91,
+      "unique_noteref_targets": 91,
+      "endnote_anchor_count": 91,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -69,7 +69,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 4,
+      "lowercase_paragraph_start_files": 6,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -112,20 +112,28 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch018.xhtml",
+            "file": "EPUB/ch017.xhtml",
             "text": "may be applied unto the men of this persuasion: either they alone know the state"
           },
           {
-            "file": "EPUB/ch027.xhtml",
+            "file": "EPUB/ch026.xhtml",
             "text": "and this he doth as the \"liberal deviseth liberal things,\" verse 8. From his own"
           },
           {
-            "file": "EPUB/ch030.xhtml",
+            "file": "EPUB/ch029.xhtml",
             "text": "and chapter 4:15,16, \"We have not an high priest that cannot be touched with the"
           },
           {
-            "file": "EPUB/ch035.xhtml",
+            "file": "EPUB/ch033.xhtml",
+            "text": "l"
+          },
+          {
+            "file": "EPUB/ch034.xhtml",
             "text": "for hereby our minds, that were created in a state of blessed adherence unto God,"
+          },
+          {
+            "file": "EPUB/ch053.xhtml",
+            "text": "that is, comparatively, as unto the fervency and sincerity of the duty required o"
           }
         ],
         "noteref_leading_space": [],

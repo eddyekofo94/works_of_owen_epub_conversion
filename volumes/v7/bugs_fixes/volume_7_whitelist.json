@@ -6,7 +6,158 @@
       "S atan",
       "l st",
       "T he",
-      "u that"
+      "u that",
+      "them)is"
+    ],
+    "Hyphenation Anomalies": [
+      "Adul-lam",
+      "Spiritual-mindedness",
+      "ale-house",
+      "cross-ways",
+      "evil-doer",
+      "fire-ball",
+      "hand-breadth",
+      "here-withal",
+      "new-fangledness",
+      "non-proficiency",
+      "over-earnest",
+      "over-fullness",
+      "over-valuation",
+      "pre-admonition",
+      "pre-admonitions",
+      "stout-hearted",
+      "stout-heartedness",
+      "three-fold",
+      "top-stone",
+      "un-commanded",
+      "un-humbled",
+      "where-into"
+    ],
+    "Punctuation Spacing Blemishes": [
+      "..",
+      "1 .",
+      "1st ,",
+      "1st .",
+      "2 .",
+      "2dly ,",
+      "2dly .",
+      "3 .",
+      "4 .",
+      "5 .",
+      "6 .",
+      "7 .",
+      "Ans .",
+      "First ,",
+      "Lord ;",
+      "and ,",
+      "flatteries :",
+      "hereafter .",
+      "ignorant ,",
+      "no .",
+      "seasons .",
+      "self .",
+      "sin .",
+      "st ."
+    ],
+    "Mixed-Case Capitalization Errors": [
+      "menlHow"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "1. ... 3.",
+      "3. ... 5.",
+      "I. ... III.",
+      "II.",
+      "II. ... XIX.",
+      "III."
+    ],
+    "Unmatched Quotation Marks": [
+      "(1.) In extraordinary, outward judgments upon open, profligate sinners, especially the enemies of his church and glory.",
+      "1. The gift of God, \u03b4\u03c9\u03c1\u03b5\u03ac, is either \u03b4\u03cc\u03c3\u03b9\u03c2, \"donatio,\" or \u03b4\u03ce\u03c1\u03b7\u03bc\u03b1, \"donum.\" Sometimes it is taken for the grant or giving",
+      "4. They are the way and means whereby the soul applies itself unto all sinful objects and actings. Hence are they called",
+      "But the fixing of spiritual affections on spiritual objects is perfective of our present state and condition; not that w",
+      "But there are yet other instances of the proneness of men in foregoing the faith that the church was retrieved unto at t",
+      "By grace our minds are renewed, \u2014 that is, changed and delivered from this frame; but they are so partially only. The pr",
+      "Others there are, sincere, broken-hearted believers, [who,] scared at the rock of presumption on which they see so many",
+      "The FIRST thing in the description is, that they were \u1f05\u03c0\u03b1\u03be \u03c6\u03c9\u03c4\u03b9\u03c3\u03b8\u03ad\u03bd\u03c4\u03b5\u03c2, \"once enlightened.\" Saith the Syriac translation",
+      "Unto this pride, as inseparable from it, we may adjoin that vanity and curiosity that are in the minds of men. These are",
+      "We judge no men, no party of men, as to their eternal state and condition, upon the account of their outward profession",
+      "who shall deliver me from this body of death?\" Yea, they groan under a sense of it every day, nor is any thing such a tr",
+      "\u039a\u03b1\u1f76 \u03bc\u03b5\u03c4\u03cc\u03c7\u03bf\u03c5\u03c2 \u03b3\u03b5\u03bd\u03b7\u03b8\u03ad\u03bd\u03c4\u03b1\u03c2 \u03a0\u03bd\u03b5\u03cd\u03bc\u03b1\u03c4\u03bf\u03c2 \u1f01\u03b3\u03af\u03bf\u03c5. \"Et participes facti sunt Spiritus Sancti,\" Vulg. Lat.; \u2014 \"And are made partake",
+      "\u03a4\u03ad\u03bb\u03b5\u03b9\u03bf\u03b9 \u03b3\u03af\u03bd\u03b5\u03c3\u03b8\u03b5 \u03c4\u03b1\u1fd6\u03c2 \u03c6\u03c1\u03b5\u03c3\u1f76, Be ye complete, perfect,\" well instructed in your minds, fully initiated into the doctrines"
+    ]
+  },
+  "text_integrity": {
+    "weak_pages": [
+      3,
+      7,
+      24
+    ],
+    "front_matter_toc_loss": [
+      3,
+      7
+    ],
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      24,
+      31,
+      37,
+      39,
+      45,
+      59
+    ],
+    "top_of_page_text_loss": [
+      3,
+      24,
+      183
+    ],
+    "bottom_of_page_text_loss": [
+      2
+    ],
+    "inline_structural_markers": [
+      "To those who confine the whole of obedience to morality",
+      "Special trials and temptations; and 3. Heavenly and eternal realities",
+      "It is the spiritual mind alone that can reconcile those things",
+      "The reason of the assurance that sin shall have no more dominion over believers",
+      "whereas, 1. the law gives no strength against sin"
+    ],
+    "paragraph_splits": [
+      "To The Reader",
+      "\u0391\u03b4\u03cd\u03bd\u03b1\u03c4\u03bf\u03bd \u03b3\u1f70\u03c1 \u03c4\u03bf\u1f7a\u03c2",
+      "Hebrews 1:3, 11:3, where it denotes",
+      "In the preaching of the gospel, it is necessary to propose",
+      "Sin and conscience are stubborn in their conflict",
+      "The gospel, \u2014 that is, the doctrines of it",
+      "\u2014 that is, for the gospel and the profession thereof",
+      "XIX.",
+      "It is an ancient complaint, that spiritual things",
+      "Whosoever shall sincerely engage in this duty",
+      "He lays all sorts of afflictions in one scale",
+      "A desire of increase and adding thereunto",
+      "The FIRST was, The habitual frame",
+      "\u2014 it is not to be bought or purchased with riches",
+      "When men find, or may find, their affections yet quick",
+      "BY THE LATE PIOUS AND LEARNED",
+      "John Owen",
+      "D.D. LONDON: 1688",
+      "III.",
+      "The first is, the daily exercise of faith on Christ",
+      "I have nothing to offer to free them from this evidence",
+      "(5thly.) They will have no quiet"
+    ],
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "repeated_windows",
+      "roman_heading_candidates",
+      "enumerator_sequence_candidates",
+      "weak_page_coverage",
+      "dense_source_window_loss",
+      "front_matter_toc_loss",
+      "top_of_page_text_loss",
+      "bottom_of_page_text_loss"
     ]
   }
 }

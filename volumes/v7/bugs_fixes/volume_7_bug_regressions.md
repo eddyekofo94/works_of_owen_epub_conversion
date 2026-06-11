@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 7
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_7_audit.json`
 - Text integrity audit: `volume_7_text_integrity.json`
 
@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 9 | 61 | OK |
-| Inline structural marker candidates | 5 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 0 | 61 | OK |
+| Inline structural marker candidates | 0 | 2 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 2 | 0 | REGRESSION |
+| Missing front CONTENTS pages | 2 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -19,7 +19,7 @@
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
-| Low Greek word coverage | 0 | 0 | OK |
+| Low Greek word coverage | 1 | 0 | OK |
 | Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
@@ -56,29 +56,13 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 4 | 0 | REGRESSION |
+| Lowercase page fragments | 6 | 6 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
 | I WILL/I AM mangles | 0 | 0 | OK |
 
 ## Triage Samples
-
-### Possible faulty paragraph splits
-
-- file: EPUB/ch004.xhtml; previous: 3. To those who pretend to perfection in this life. The causes of this kind of apostasy are mentioned,; next: VIII.
-- file: EPUB/ch004.xhtml; previous: Apostasy from purity of worship is exhibited, in the neglect of what God has appointed, and by additions which he has not appointed, in the ordinances of the gospel,; next: XI.
-- file: EPUB/ch005.xhtml; previous: To The Reader; next: SOME brief account of the occasion and design of the ensuing discourse I judge due unto the reader, that, upon a prospect of them, he may either proceed in its perusal or desist, a
-- file: EPUB/ch015.xhtml; previous: observe, that upon the destruction of Babylon, it is said that "in her was found the blood of prophets, and of saints, and of all that were slain upon the earth," Revelation 18:24,; next: — that is, for the gospel and the profession thereof. Whoever, therefore, offereth violence unto the life of any on the account of their profession of the gospel and religion of Ch
-- file: EPUB/ch023.xhtml; previous:  the fullness of wisdom in spiritual things; 3. their value as perfective of our present condition; and, 4. as constituting in the future enjoyment of them our eternal blessedness,; next: XIX.
-
-### Inline structural marker candidates
-
-- file: EPUB/ch021.xhtml; text: An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —
-- file: EPUB/ch022.xhtml; text: An inquiry follows into the objects of spiritual thoughts; which are, — 1. The dispensations of Providence; 2. Special trials and temptations; and 3. Heavenly and eternal realities. In regard to the latter, —
-- file: EPUB/ch033.xhtml; text: It is the spiritual mind alone that can reconcile those things which are prescribed to us as our duty towards God. "To delight and rejoice in him always, to triumph in the remembrance of him, to draw nigh unto him with b
-- file: EPUB/ch050.xhtml; text: The reason of the assurance that sin shall have no more dominion over believers is, that they are "not under the law, but under grace;" because, — whereas, 1. the law gives no strength against sin, 2. confers no spiritua
-- file: EPUB/ch057.xhtml; text: I shall name some of them: — 1. Such a soul can have no solid peace, because it hath not satisfaction what state it doth belong unto. 2. It cannot receive refreshment by gospel consolations in any condition, for its just
 
 ### Repeated word windows
 
@@ -99,7 +83,8 @@
 
 ### Lowercase page fragments
 
-- file: EPUB/ch018.xhtml; text: may be applied unto the men of this persuasion: either they alone know the state
-- file: EPUB/ch027.xhtml; text: and this he doth as the "liberal deviseth liberal things," verse 8. From his own
-- file: EPUB/ch030.xhtml; text: and chapter 4:15,16, "We have not an high priest that cannot be touched with the
-- file: EPUB/ch035.xhtml; text: for hereby our minds, that were created in a state of blessed adherence unto God,
+- file: EPUB/ch017.xhtml; text: may be applied unto the men of this persuasion: either they alone know the state
+- file: EPUB/ch026.xhtml; text: and this he doth as the "liberal deviseth liberal things," verse 8. From his own
+- file: EPUB/ch029.xhtml; text: and chapter 4:15,16, "We have not an high priest that cannot be touched with the
+- file: EPUB/ch033.xhtml; text: l
+- file: EPUB/ch034.xhtml; text: for hereby our minds, that were created in a state of blessed adherence unto God,

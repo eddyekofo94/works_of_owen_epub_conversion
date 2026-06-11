@@ -6758,6 +6758,9 @@ BODY_TRANSLATIONS = {
     "caedemque ac cruorem, coelestum, inferorum iras": (
         "<b>Modern Citation:</b> Livy, <i>History of Rome</i> (Ab Urbe Condita Libri), Book 10, Chapter 28, Section 13.<br/><b>Translation Summary:</b> Decius devoted himself to death, praying that he might carry away before him &ldquo;fear and flight, slaughter and blood, the anger of the celestial and infernal gods.&rdquo;"
     ),
+    "Ανελευθέρους τε δὴ οῦν οὕτως εὑρίσκοντες": (
+        "<b>Modern Citation:</b> Themistius, <i>Oration 1</i>, 2a-b.<br/><b>Modern Translation:</b> &ldquo;When they find them to be thus illiberal, covetous, rapacious, abusive, quarrelsome, braggarts, deceitful, and treacherous, they will not think that they have these blemishes from nature or from their former low way of life, but they will blame philosophy for them.&rdquo;"
+    ),
 }
 
 GLOSSARY_TERMS = {
