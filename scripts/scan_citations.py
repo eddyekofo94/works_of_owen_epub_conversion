@@ -43,8 +43,9 @@ from patristic_refs import (
 from translation_db import BODY_TRANSLATIONS
 
 
-def load_volume(vol_num: int) -> dict | None:
-    base = os.path.join(_ROOT, 'volumes', f'v{vol_num}', 'intermediate')
+def load_volume(vol_num) -> dict | None:
+    from shared import get_volume_dir
+    base = os.path.join(get_volume_dir(vol_num), 'intermediate')
     path = os.path.join(base, f'volume_{vol_num}.json')
     if not os.path.exists(path):
         return None

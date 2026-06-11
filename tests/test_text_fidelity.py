@@ -39,22 +39,29 @@ from converter import clean_text, reconstruct_paragraphs
 BASE_DIR = Path(__file__).parent.parent
 
 
-def _requested_volumes() -> list[int]:
+def _requested_volumes() -> list[str]:
     raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "1").strip()
     if raw.lower() == "all":
-        return [
-            int(path.name[1:])
-            for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*"))
-            if (path / "output" / f"volume_{path.name[1:]}.epub").exists()
-        ]
-    return [int(part) for part in raw.replace(",", " ").split() if part]
+        vols = []
+        for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*")):
+            v_num = path.name[1:]
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        for path in sorted((BASE_DIR / "volumes").glob("h[0-9]*")):
+            v_num = path.name
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        return vols
+    return [part for part in raw.replace(",", " ").split() if part]
 
 
-def _epub_path(volume: int) -> Path:
-    return BASE_DIR / "volumes" / f"v{volume}" / "output" / f"volume_{volume}.epub"
+def _epub_path(volume: str) -> Path:
+    from shared import get_volume_dir
+    volume_dir = get_volume_dir(volume)
+    return volume_dir / "output" / f"volume_{volume}.epub"
 
 
-def _all_xhtml_text(volume: int) -> str:
+def _all_xhtml_text(volume: str) -> str:
     """Return concatenated plain text from all EPUB chapter files."""
     ep = _epub_path(volume)
     if not ep.exists():
@@ -711,7 +718,7 @@ def test_no_empty_bracket_noise_in_epub(volume: int):
 
 
 @pytest.mark.parametrize("volume", VOLUMES)
-def test_paragraphs_do_not_start_lowercase_unless_continuation(volume: int):
+def test_paragraphs_do_not_start_lowercase_unless_continuation(volume: str):
     """
     A paragraph starting with a lowercase letter usually signals a bad paragraph
     split: the previous paragraph's sentence was broken mid-sentence.
@@ -740,7 +747,8 @@ def test_paragraphs_do_not_start_lowercase_unless_continuation(volume: int):
 
     # Budget: volume 1 has ~9 known continuation paragraphs that start lowercase.
     # Keep the threshold tight enough to catch new regressions (allow up to 15, and 20 for volume 3).
-    limit = 35 if volume in (6, 10) else (20 if volume in (3, 12) else 15)
+    v_num = int(volume) if str(volume).isdigit() else volume
+    limit = 35 if v_num in (6, 10) else (20 if v_num in (3, 12) else 15)
     assert len(hits) <= limit, (
         f"Volume {volume}: {len(hits)} paragraph(s) start with a lowercase letter "
         f"(possible bad paragraph split):\n"

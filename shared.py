@@ -67,6 +67,14 @@ VOLUME_SUBTITLES = {
     14: "True and False Religion",
     15: "Church Purity and Unity",
     16: "The Church and the Bible",
+    # Hebrews volumes subtitles:
+    "h1": "Preliminary Exercitations (Part 1)",
+    "h2": "Preliminary Exercitations (Part 2)",
+    "h3": "Exposition of Hebrews 1:1 – 3:6",
+    "h4": "Exposition of Hebrews 3:7 – 5:14",
+    "h5": "Exposition of Hebrews 6:1 – 7:28",
+    "h6": "Exposition of Hebrews 8:1 – 10:39",
+    "h7": "Exposition of Hebrews 11:1 – 13:25",
 }
 
 # Global Volume Configuration
@@ -531,6 +539,42 @@ HEBREWS_VOLUME_CONFIG = {
         'treatises': ['Exposition of Hebrews, 11:1 - 13:25']
     },
 }
+
+def get_volume_dir(vol_num) -> Path:
+    """Return the absolute Path to the volume's directory under volumes/."""
+    root = Path(__file__).parent.resolve()
+    v_str = str(vol_num).lower()
+    if v_str.startswith('h'):
+        return root / "volumes" / v_str
+    else:
+        try:
+            val = int(v_str)
+            return root / "volumes" / f"v{val}"
+        except ValueError:
+            if v_str.startswith('v'):
+                return root / "volumes" / v_str
+            return root / "volumes" / f"v{vol_num}"
+
+def get_volume_label(vol_num) -> str:
+    """Return a descriptive label for the volume."""
+    v_str = str(vol_num).lower()
+    if v_str.startswith('h'):
+        return f"Hebrews Volume {v_str[1:]}"
+    else:
+        val = v_str[1:] if v_str.startswith('v') else v_str
+        return f"Volume {val}"
+
+# Dynamically populate VOLUME_CONFIG with string keys, 'vN' prefixes, and Hebrews configs
+for _vol_num in list(VOLUME_CONFIG.keys()):
+    if isinstance(_vol_num, int):
+        VOLUME_CONFIG[str(_vol_num)] = VOLUME_CONFIG[_vol_num]
+        VOLUME_CONFIG[f"v{_vol_num}"] = VOLUME_CONFIG[_vol_num]
+        VOLUME_CONFIG[f"V{_vol_num}"] = VOLUME_CONFIG[_vol_num]
+
+for _vol_num, _cfg in HEBREWS_VOLUME_CONFIG.items():
+    VOLUME_CONFIG[f"h{_vol_num}"] = _cfg
+    VOLUME_CONFIG[f"H{_vol_num}"] = _cfg
+    VOLUME_CONFIG[str(_vol_num)] = _cfg # For fallback inside Hebrews contexts if needed
 
 # ============================================================================
 # CHARACTER NORMALIZATION — Gideon/AGES Legacy Artifacts

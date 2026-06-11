@@ -108,22 +108,30 @@ def _polish_treatise_title_page_html(html: str, seen_footnote_refs=None) -> str:
 
 def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str:
     """Ensure generated/extracted volume title pages carry edition metadata."""
-    if 'class="title-page"' not in html:
+    v_str = str(vol_num).lower()
+    is_hebrews = v_str.startswith('h')
+    
+    if 'class="title-page"' not in html and not is_hebrews:
         return html
+        
     publisher = _escape_xml(config.get('publisher') or 'Eduardus Ekofius')
     editors = config.get('editors') or ['William H. Goold']
     editor = _escape_xml(editors[0])
-    subtitle = _escape_xml(VOLUME_SUBTITLES.get(vol_num, ''))
-    if re.search(r'THE\s+WORKS\s+OF(?:<br\s*/?>|\s)+JOHN\s+OWEN', html, re.I):
-        subtitle_html = f'<p class="title-volume-subtitle">{subtitle}</p>' if subtitle else ''
+    
+    subtitle_key = v_str if is_hebrews else (int(v_str[1:]) if v_str.startswith('v') else int(vol_num))
+    subtitle = _escape_xml(VOLUME_SUBTITLES.get(subtitle_key, ''))
+    subtitle_html = f'<p class="title-volume-subtitle">{subtitle}</p>' if subtitle else ''
+    
+    if is_hebrews:
+        vol_clean = v_str[1:]
         return f'''<section class="title-page volume-title-page" epub:type="titlepage">
 <div class="emblem-container">
 <img class="title-emblem-seal" src="images/emblem_seal.png" alt="Emblem Seal of Dr. John Owen"/>
 </div>
-<p class="title-work-top">The Works of</p>
-<h1 class="title-author-main">John Owen</h1>
+<p class="title-work-top">An Exposition of the Epistle to the</p>
+<h1 class="title-author-main">Hebrews</h1>
 <div class="title-divider-double" aria-hidden="true"></div>
-<p class="title-volume-number">Volume {vol_num}</p>
+<p class="title-volume-number">Volume {vol_clean}</p>
 {subtitle_html}
 <div class="title-meta-divider" aria-hidden="true"></div>
 <div class="title-meta">
@@ -133,6 +141,27 @@ def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str
 <p class="edition-year">MMXXVI</p>
 </div>
 </section>'''
+
+    vol_clean = v_str[1:] if v_str.startswith('v') else v_str
+    if re.search(r'THE\s+WORKS\s+OF(?:<br\s*/?>|\s)+JOHN\s+OWEN', html, re.I):
+        return f'''<section class="title-page volume-title-page" epub:type="titlepage">
+<div class="emblem-container">
+<img class="title-emblem-seal" src="images/emblem_seal.png" alt="Emblem Seal of Dr. John Owen"/>
+</div>
+<p class="title-work-top">The Works of</p>
+<h1 class="title-author-main">John Owen</h1>
+<div class="title-divider-double" aria-hidden="true"></div>
+<p class="title-volume-number">Volume {vol_clean}</p>
+{subtitle_html}
+<div class="title-meta-divider" aria-hidden="true"></div>
+<div class="title-meta">
+<p class="editor">Edited by {editor}</p>
+<p class="publisher-brand">{publisher}</p>
+<p class="publisher-loc">Parentis-en-Born</p>
+<p class="edition-year">MMXXVI</p>
+</div>
+</section>'''
+
     meta_bits = []
     if 'Edited by' not in html and 'EDITED BY' not in html:
         meta_bits.append(f'<p class="editor">Edited by {editor}</p>')

@@ -289,6 +289,18 @@ The new engine:
 | 15 | v15 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.68 |
 | 16 | v16 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.94 Unres 1 Quotes 56 |
 
+## Hebrews Commentary Script Status
+
+| Volume | convert.py | OVERRIDES | QA Level | Notes |
+|---|---|---|---|---|
+| h1 | h1 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Unres 34 |
+| h2 | h2 | Empty | NONE | No QA reports |
+| h3 | h3 | Empty | NONE | No QA reports |
+| h4 | h4 | Empty | NONE | No QA reports |
+| h5 | h5 | Empty | NONE | No QA reports |
+| h6 | h6 | Empty | NONE | No QA reports |
+| h7 | h7 | Populated | NONE | No QA reports |
+
 ## Agent-Driven Skills & Slash Commands
 
 For agent-driven workflows, three packaged skills are available to automate testing, report generation, and volume healing.

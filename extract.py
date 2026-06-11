@@ -125,7 +125,7 @@ PAGE_H = 626
 # STAGE 1 ENTRY POINT — extract_volume()
 # ================================================================
 
-def extract_volume(vol_num: int, overrides: dict = None,
+def extract_volume(vol_num, overrides: dict = None,
                    progress_callback=None) -> dict:
     """Run Stage 1 for a single Owen volume: PDF → JSON intermediate.
 
@@ -135,14 +135,18 @@ def extract_volume(vol_num: int, overrides: dict = None,
     overrides: optional per-volume config additions (see volumes/vN/convert.py).
     """
     import pymupdf4llm
-    from shared import merge_volume_config
+    from shared import merge_volume_config, get_volume_dir
     from render import (
         detect_page_type, is_toc_continuation_page,
         format_title_page, build_toc_page_xhtml,
     )
 
     config = merge_volume_config(vol_num, overrides)
-    vol_dir = _EXTRACT_DIR / 'volumes' / f'v{vol_num}'
+    vol_dir = get_volume_dir(vol_num)
+    
+    if config.get('source_type') == 'epub2':
+        return extract_epub2_volume(vol_num, overrides=overrides, progress_callback=progress_callback)
+
     pdf_path = vol_dir / 'input' / f'owen-v{vol_num}.pdf'
     thml_path = vol_dir / 'intermediate' / f'volume_{vol_num}.thml.xml'
     out_json = vol_dir / 'intermediate' / f'volume_{vol_num}.json'
@@ -264,13 +268,314 @@ def extract_volume(vol_num: int, overrides: dict = None,
     return intermediate
 
 
+def clean_html_to_markdown(soup_segment) -> str:
+    """Convert a BeautifulSoup tag or list of elements into Markdown-like text."""
+    from bs4 import Comment, NavigableString
+    markdown_lines = []
+    
+    for elem in soup_segment:
+        if isinstance(elem, Comment):
+            continue
+        if isinstance(elem, NavigableString):
+            text = str(elem).strip()
+            if text:
+                markdown_lines.append(text)
+            continue
+            
+        tag = elem.name
+        if tag in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
+            text = elem.get_text().strip()
+            if text:
+                level = int(tag[1])
+                markdown_lines.append(f"\n\n{'#' * level} {text}\n\n")
+        elif tag == 'blockquote':
+            text = elem.get_text().strip()
+            if text:
+                lines = [f"> {line.strip()}" for line in text.split('\n') if line.strip()]
+                markdown_lines.append("\n\n" + "\n".join(lines) + "\n\n")
+        elif tag in ('ul', 'ol'):
+            for li in elem.find_all('li', recursive=False):
+                li_text = li.get_text().strip()
+                if li_text:
+                    markdown_lines.append(f"\n- {li_text}")
+            markdown_lines.append("\n")
+        elif tag == 'p':
+            p_html = ""
+            for child in elem.children:
+                if isinstance(child, NavigableString):
+                    p_html += str(child)
+                elif child.name in ('b', 'strong'):
+                    p_html += f"**{child.get_text()}**"
+                elif child.name in ('i', 'em'):
+                    p_html += f"*{child.get_text()}*"
+                else:
+                    p_html += child.get_text()
+            p_text = re.sub(r'\s+', ' ', p_html).strip()
+            if p_text:
+                markdown_lines.append(f"\n\n{p_text}\n\n")
+        elif tag == 'hr':
+            markdown_lines.append("\n\n---\n\n")
+        else:
+            text = elem.get_text().strip()
+            if text:
+                markdown_lines.append(text)
+                
+    raw_markdown = "".join(markdown_lines)
+    raw_markdown = re.sub(r'\n{3,}', '\n\n', raw_markdown)
+    return raw_markdown.strip()
+
+
+def extract_epub2_volume(vol_num, overrides: dict = None,
+                         progress_callback=None) -> dict:
+    """Run Stage 1 for a Hebrews volume: EPUB2 -> JSON intermediate.
+    
+    Reads from volumes/hN/input/volume_hN.epub and outputs to volumes/hN/intermediate/volume_hN.json.
+    """
+    import zipfile
+    from xml.etree import ElementTree
+    from bs4 import BeautifulSoup
+    from shared import merge_volume_config, get_volume_dir
+    
+    config = merge_volume_config(vol_num, overrides)
+    vol_dir = get_volume_dir(vol_num)
+    epub_path = vol_dir / 'input' / f'volume_{vol_num}.epub'
+    out_json = vol_dir / 'intermediate' / f'volume_{vol_num}.json'
+    
+    print(f'[extract] Volume {vol_num}: opening {epub_path.name}')
+    
+    if not epub_path.exists():
+        raise FileNotFoundError(f"Source EPUB2 file not found: {epub_path}")
+        
+    with zipfile.ZipFile(epub_path) as z:
+        # 1. Read container.xml to find OPF path
+        container_xml = z.read("META-INF/container.xml")
+        root = ElementTree.fromstring(container_xml)
+        ns_container = {"c": "urn:oasis:names:tc:opendocument:xmlns:container"}
+        opf_path = root.find(".//c:rootfile", ns_container).attrib["full-path"]
+        
+        opf_dir = os.path.dirname(opf_path)
+        opf_content = z.read(opf_path)
+        opf_root = ElementTree.fromstring(opf_content)
+        
+        # 2. Parse OPF manifest and spine
+        ns_opf = {"opf": "http://www.idpf.org/2007/opf", "dc": "http://purl.org/dc/elements/1.1/"}
+        manifest_items = {}
+        for item in opf_root.findall(".//opf:item", ns_opf):
+            manifest_items[item.attrib["id"]] = item.attrib["href"]
+            
+        spine_itemrefs = []
+        for itemref in opf_root.findall(".//opf:itemref", ns_opf):
+            spine_itemrefs.append(itemref.attrib["idref"])
+            
+        spine_files = []
+        for idref in spine_itemrefs:
+            href = manifest_items[idref]
+            path = os.path.join(opf_dir, href) if opf_dir else href
+            spine_files.append(path)
+            
+        # 3. Locate and parse NCX
+        ncx_id = opf_root.find(".//opf:spine", ns_opf).attrib["toc"]
+        ncx_href = manifest_items[ncx_id]
+        ncx_path = os.path.join(opf_dir, ncx_href) if opf_dir else ncx_href
+        
+        ncx_content = z.read(ncx_path)
+        ncx_root = ElementTree.fromstring(ncx_content)
+        
+        ncx_ns = {"ncx": "http://www.daisy.org/z3986/2005/ncx/"}
+        nav_points = []
+        
+        def parse_nav_point(elem, level=1):
+            title = elem.find("./ncx:navLabel/ncx:text", ncx_ns).text
+            src = elem.find("./ncx:content", ncx_ns).attrib["src"]
+            nav_points.append({
+                "title": title.strip() if title else "",
+                "src": src,
+                "level": level
+            })
+            for sub in elem.findall("./ncx:navPoint", ncx_ns):
+                parse_nav_point(sub, level + 1)
+                
+        for np in ncx_root.findall("./ncx:navMap/ncx:navPoint", ncx_ns):
+            parse_nav_point(np)
+            
+        # Resolve target files and anchors for each navPoint
+        for np in nav_points:
+            src_parts = np["src"].split('#')
+            file_href = src_parts[0]
+            anchor = src_parts[1] if len(src_parts) > 1 else None
+            file_path = os.path.join(opf_dir, file_href) if opf_dir else file_href
+            np["file_path"] = file_path
+            np["anchor"] = anchor
+            
+        # 4. Extract chapters
+        chapter_dicts = []
+        _FM_PROSE_KEYWORDS = [
+            'PREFACE', 'PREFATORY NOTE', 'PREFATORY', 'ANALYSIS',
+            'TO THE READER', 'ADVERTISEMENT', 'GENERAL PREFACE',
+            'DEDICATORY', 'DEDICATION'
+        ]
+        
+        total_ch = len(nav_points)
+        for i, np in enumerate(nav_points):
+            if progress_callback:
+                progress_callback(i, total_ch, f"Extracting Chapter {i+1}/{total_ch}")
+                
+            title = np["title"]
+            file_path = np["file_path"]
+            anchor = np["anchor"]
+            level = np["level"]
+            
+            # Boundary calculation
+            next_file_path = None
+            next_anchor = None
+            if i + 1 < len(nav_points):
+                next_file_path = nav_points[i+1]["file_path"]
+                next_anchor = nav_points[i+1]["anchor"]
+                
+            content = z.read(file_path).decode('utf-8')
+            soup = BeautifulSoup(content, 'xml')
+            
+            body_children = list(soup.find('body').children) if soup.find('body') else list(soup.children)
+            
+            start_idx = 0
+            if anchor:
+                start_elem = soup.find(id=anchor)
+                if not start_elem:
+                    start_elem = soup.find(attrs={"name": anchor})
+                    
+                if start_elem:
+                    parent = start_elem.parent
+                    while parent and parent.name not in ('body', 'html', '[document]'):
+                        start_elem = parent
+                        parent = start_elem.parent
+                    try:
+                        start_idx = list(parent.children).index(start_elem)
+                    except ValueError:
+                        start_idx = 0
+                        
+            extracted_elements = []
+            current_file_idx = spine_files.index(file_path)
+            
+            end_file_idx = current_file_idx
+            if next_file_path and next_file_path in spine_files:
+                end_file_idx = spine_files.index(next_file_path)
+                
+            for idx in range(current_file_idx, end_file_idx + 1):
+                f_path = spine_files[idx]
+                if idx > current_file_idx:
+                    f_content = z.read(f_path).decode('utf-8')
+                    f_soup = BeautifulSoup(f_content, 'xml')
+                    f_children = list(f_soup.find('body').children) if f_soup.find('body') else list(f_soup.children)
+                    f_start_idx = 0
+                else:
+                    f_children = body_children
+                    f_start_idx = start_idx
+                    
+                f_end_idx = len(f_children)
+                if idx == end_file_idx and next_anchor:
+                    end_content = z.read(next_file_path).decode('utf-8')
+                    end_soup = BeautifulSoup(end_content, 'xml')
+                    end_elem = end_soup.find(id=next_anchor)
+                    if not end_elem:
+                        end_elem = end_soup.find(attrs={"name": next_anchor})
+                    if end_elem:
+                        local_end_elem = f_children[0].parent.find(id=next_anchor)
+                        if not local_end_elem:
+                            local_end_elem = f_children[0].parent.find(attrs={"name": next_anchor})
+                        if local_end_elem:
+                            parent = local_end_elem.parent
+                            while parent and parent != f_children[0].parent:
+                                local_end_elem = parent
+                                parent = local_end_elem.parent
+                            try:
+                                f_end_idx = list(parent.children).index(local_end_elem)
+                            except ValueError:
+                                f_end_idx = len(f_children)
+                                
+                for j in range(f_start_idx, f_end_idx):
+                    extracted_elements.append(f_children[j])
+                    
+            raw_text = clean_html_to_markdown(extracted_elements)
+            
+            title_upper = title.upper()
+            fm_style = 'prose' if any(kw in title_upper for kw in _FM_PROSE_KEYWORDS) else None
+            
+            is_treatise = False
+            for t_title in config.get('treatises', []):
+                if t_title.lower() in title.lower() or title.lower() in t_title.lower():
+                    is_treatise = True
+                    break
+            if 'PART ' in title_upper or 'BOOK ' in title_upper:
+                is_treatise = True
+                
+            cid = f"ch{i+1:03d}"
+            
+            chapter_dicts.append({
+                'cid': cid,
+                'title': title,
+                'level': level,
+                'page_start': current_file_idx,
+                'page_end': end_file_idx,
+                'is_treatise': is_treatise,
+                'is_endnotes': False,
+                'front_matter_style': fm_style,
+                'raw_text': raw_text,
+            })
+            
+        front_matter_items = []
+        if "titlepage.xhtml" in z.namelist():
+            tp_content = z.read("titlepage.xhtml").decode('utf-8')
+            tp_soup = BeautifulSoup(tp_content, 'xml')
+            tp_body = tp_soup.find('body')
+            tp_html = "".join(str(c) for c in tp_body.children) if tp_body else tp_content
+            front_matter_items.append({
+                'type': 'title_page',
+                'file_name': 'titlepage.xhtml',
+                'title': 'Title Page',
+                'page': 0,
+                'html': tp_html,
+            })
+            
+        # Add a placeholder Contents page
+        front_matter_items.append({
+            'type': 'toc',
+            'file_name': 'contents.xhtml',
+            'title': 'Contents',
+            'page': 0,
+            'html': '<h1>Contents</h1>',
+        })
+            
+        intermediate = {
+            'volume': vol_num,
+            'title': config.get('title', f'An Exposition of the Epistle to the Hebrews, Volume {vol_num}'),
+            'meta': {
+                'pages': len(spine_files),
+                'chapters_count': len(chapter_dicts),
+                'extracted_at': datetime.now().isoformat(),
+            },
+            'chapters': chapter_dicts,
+            'footnotes': {},
+            'front_matter_items': front_matter_items,
+        }
+        
+        out_json.parent.mkdir(parents=True, exist_ok=True)
+        with open(out_json, 'w', encoding='utf-8') as f:
+            json.dump(intermediate, f, ensure_ascii=False, indent=2)
+            
+        print(f'[extract] Written: {out_json}')
+        if progress_callback:
+            progress_callback(total_ch, total_ch, f"Completed extracting Volume {vol_num}")
+            
+        return intermediate
+
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="Stage 1: PDF → JSON intermediate for Owen volumes")
-    parser.add_argument("volumes", nargs="*", type=int, help="Volume number(s) to extract")
-    parser.add_argument("--all", action="store_true", help="Extract all 16 volumes")
+    parser.add_argument("volumes", nargs="*", help="Volume identifier(s) to extract (e.g. 1, h1)")
+    parser.add_argument("--all", action="store_true", help="Extract all volumes")
     args = parser.parse_args()
 
-    vols = list(range(1, 17)) if args.all else (args.volumes or [1])
+    vols = list(range(1, 17)) if args.all else (args.volumes or ['1'])
     for v in vols:
         extract_volume(v)

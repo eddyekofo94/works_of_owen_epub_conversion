@@ -646,8 +646,11 @@ class Audit:
             import json
             epub_path = Path(self.epub_path)
             vol_dir = epub_path.parent.parent
-            vol_name = vol_dir.name  # e.g., "v3"
-            volume = int(vol_name[1:])
+            vol_name = vol_dir.name  # e.g., "v3" or "h1"
+            if vol_name.startswith('v') and vol_name[1:].isdigit():
+                volume = int(vol_name[1:])
+            else:
+                volume = vol_name
             whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
             if whitelist_path.exists():
                 wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
@@ -946,7 +949,7 @@ def update_bug_log(result: dict[str, Any], json_path: Path, md_path: Path) -> Pa
 
 
 def infer_report_stem(epub_path: Path) -> str:
-    match = re.search(r"volume_(\d+)\.epub$", epub_path.name)
+    match = re.search(r"volume_([vh]?\d+)\.epub$", epub_path.name)
     if match:
         return f"volume_{match.group(1)}"
     return epub_path.stem

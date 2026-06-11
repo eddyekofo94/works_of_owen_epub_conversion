@@ -396,13 +396,14 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def load_budget(volume: int, baseline_path: Path) -> dict[str, Any]:
+def load_budget(volume: str, baseline_path: Path) -> dict[str, Any]:
     data = load_json(baseline_path)
     return deep_merge(data["default"], data.get("volumes", {}).get(str(volume), {}))
 
 
-def report_paths(root: Path, volume: int) -> tuple[Path, Path, Path, Path]:
-    bug_dir = root / "volumes" / f"v{volume}" / "bugs_fixes"
+def report_paths(root: Path, volume: str) -> tuple[Path, Path, Path, Path]:
+    from shared import get_volume_dir
+    bug_dir = get_volume_dir(volume) / "bugs_fixes"
     return (
         bug_dir / f"volume_{volume}_audit.json",
         bug_dir / f"volume_{volume}_text_integrity.json",
@@ -527,25 +528,32 @@ def write_result(result: dict[str, Any]) -> None:
     out_md.write_text(render_markdown(result), encoding="utf-8")
 
 
-def parse_volumes(args: list[str]) -> list[int]:
-    if len(args) == 1 and args[0].lower() == "all":
-        return list(range(1, 17))
-    return [int(arg) for arg in args]
+def parse_volumes(args: list[str]) -> list[str]:
+    OWEN_VOLUMES = [str(i) for i in range(1, 17)]
+    HEBREWS_VOLUMES = [f"h{i}" for i in range(1, 8)]
+    ALL_VOLUMES = OWEN_VOLUMES + HEBREWS_VOLUMES
+    if len(args) == 1 and args[0].lower() in ("all", "--all"):
+        return ALL_VOLUMES
+    return args
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Summarize known bug-class regressions from Owen audit reports")
-    parser.add_argument("volumes", nargs="*", type=int, help="Volume number(s); default all if --all is set")
-    parser.add_argument("--all", action="store_true", help="Process all 16 volumes")
+    parser.add_argument("volumes", nargs="*", type=str, help="Volume number(s)/identifier(s) (e.g. 1, h1)")
+    parser.add_argument("--all", action="store_true", help="Process all volumes")
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--baseline", type=Path, default=BASELINE_PATH)
     parser.add_argument("--strict", action="store_true", help="Return non-zero when regressions are present")
     args = parser.parse_args()
 
+    OWEN_VOLUMES = [str(i) for i in range(1, 17)]
+    HEBREWS_VOLUMES = [f"h{i}" for i in range(1, 8)]
+    ALL_VOLUMES = OWEN_VOLUMES + HEBREWS_VOLUMES
+
     if args.all:
-        vol_list = list(range(1, 17))
+        vol_list = ALL_VOLUMES
     elif args.volumes:
-        vol_list = args.volumes
+        vol_list = parse_volumes(args.volumes)
     else:
         parser.print_help()
         return 1

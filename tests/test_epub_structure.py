@@ -33,22 +33,29 @@ BASE_DIR = Path(__file__).parent.parent
 APPLE_BOOKS_NAV_MAX_CHARS = 100
 
 
-def _requested_volumes() -> list[int]:
+def _requested_volumes() -> list[str]:
     raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "1").strip()
     if raw.lower() == "all":
-        return [
-            int(path.name[1:])
-            for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*"))
-            if (path / "output" / f"volume_{path.name[1:]}.epub").exists()
-        ]
-    return [int(part) for part in raw.replace(",", " ").split() if part]
+        vols = []
+        for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*")):
+            v_num = path.name[1:]
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        for path in sorted((BASE_DIR / "volumes").glob("h[0-9]*")):
+            v_num = path.name
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        return vols
+    return [part for part in raw.replace(",", " ").split() if part]
 
 
-def _epub_path(volume: int) -> Path:
-    return BASE_DIR / "volumes" / f"v{volume}" / "output" / f"volume_{volume}.epub"
+def _epub_path(volume: str) -> Path:
+    from shared import get_volume_dir
+    volume_dir = get_volume_dir(volume)
+    return volume_dir / "output" / f"volume_{volume}.epub"
 
 
-def _load_epub(volume: int) -> dict[str, str]:
+def _load_epub(volume: str) -> dict[str, str]:
     ep = _epub_path(volume)
     if not ep.exists():
         pytest.skip(f"EPUB for volume {volume} not found at {ep}")

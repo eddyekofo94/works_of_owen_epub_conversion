@@ -24,19 +24,23 @@ if str(ROOT) not in sys.path:
 
 from scripts.cli_utils import bold, cyan, dim, green, magenta, red, yellow
 
+from shared import get_volume_dir, get_volume_label
+
 PYTHON = sys.executable
-OWEN_VOLUMES = list(range(1, 17))
+OWEN_VOLUMES = [str(i) for i in range(1, 17)]
+HEBREWS_VOLUMES = [f"h{i}" for i in range(1, 8)]
+ALL_VOLUMES = OWEN_VOLUMES + HEBREWS_VOLUMES
 
 QA_LEVELS = {"PRISTINE": 4, "FULL": 3, "STANDARD": 2, "BASIC": 1, "NONE": 0}
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
-def _vol_path(vol: int) -> Path:
-    return ROOT / "volumes" / f"v{vol}"
+def _vol_path(vol) -> Path:
+    return get_volume_dir(vol)
 
 
-def _bugs_path(vol: int) -> Path:
+def _bugs_path(vol) -> Path:
     return _vol_path(vol) / "bugs_fixes"
 
 
@@ -186,11 +190,12 @@ def gather_volume_data(vol: int) -> dict:
         unres = data.get("unresolved_citations", 0)
         unmatched_quotes = data.get("unmatched_quotes")
 
+        is_hebrews = str(vol).lower().startswith('h')
         is_pristine = (
             cov is not None and cov >= 0.995 and
             greek_cov is not None and greek_cov >= 0.990 and
             hebrew_cov is not None and hebrew_cov >= 0.990 and
-            latin_cov is not None and latin_cov >= 0.990 and
+            (is_hebrews or (latin_cov is not None and latin_cov >= 0.990)) and
             unres == 0 and
             (unmatched_quotes is None or unmatched_quotes == 0)
         )
@@ -271,26 +276,29 @@ def score_volume(d: dict) -> float:
     if hc is not None:
         score += min((1.0 - hc) * 3000, 15.0)
 
-    # Latin coverage
-    lat_cov = d.get("latin_coverage")
-    if lat_cov is not None:
-        score += min((1.0 - lat_cov) * 2000, 10.0)
-    elif d["qa_level"] != "NONE":
-        score += 5.0
+    # Latin scoring (skipped for Hebrews)
+    is_hebrews = str(d["vol"]).lower().startswith('h')
+    if not is_hebrews:
+        # Latin coverage
+        lat_cov = d.get("latin_coverage")
+        if lat_cov is not None:
+            score += min((1.0 - lat_cov) * 2000, 10.0)
+        elif d["qa_level"] != "NONE":
+            score += 5.0
 
-    # Latin tagging
-    lat_tag = d.get("latin_tagging")
-    if lat_tag is not None:
-        score += min((1.0 - lat_tag) * 10, 5.0)
-    elif d["qa_level"] != "NONE":
-        score += 2.0
+        # Latin tagging
+        lat_tag = d.get("latin_tagging")
+        if lat_tag is not None:
+            score += min((1.0 - lat_tag) * 10, 5.0)
+        elif d["qa_level"] != "NONE":
+            score += 2.0
 
-    # Latin translation
-    lat_trans = d.get("latin_translation")
-    if lat_trans is not None:
-        score += min((1.0 - lat_trans) * 10, 5.0)
-    elif d["qa_level"] != "NONE":
-        score += 2.0
+        # Latin translation
+        lat_trans = d.get("latin_translation")
+        if lat_trans is not None:
+            score += min((1.0 - lat_trans) * 10, 5.0)
+        elif d["qa_level"] != "NONE":
+            score += 2.0
 
     # Unresolved citations ratio penalty
     total_cite = d.get("total_citations", 0)
@@ -344,12 +352,26 @@ def _score_color(score: float) -> str:
     return red(f"{score:>6.1f}")
 
 
-def _format_table(ranked: list[dict]) -> str:
-    lines: list[str] = []
-    sep = dim("\u2500" * 78)
+def vol_sort_key(vol_id):
+    v_str = str(vol_id).lower()
+    if v_str.startswith('h'):
+        try:
+            return (1, int(v_str[1:]))
+        except ValueError:
+            return (1, v_str)
+    else:
+        v_num = v_str[1:] if v_str.startswith('v') else v_str
+        try:
+            return (0, int(v_num))
+        except ValueError:
+            return (0, v_str)
 
+
+def render_single_stdout_table(sub_ranked: list[dict], title: str) -> str:
+    lines = []
+    sep = dim("\u2500" * 78)
     now_str = datetime.now().strftime('%Y-%m-%d %H:%M')
-    title_text = f"Owen Volumes — QA State Ranking  {now_str}"
+    title_text = f"{title} — QA State Ranking  {now_str}"
     pad = max(0, (78 - len(title_text)) // 2)
     lines.append("")
     lines.append(f"{' ' * pad}{bold(title_text)}")
@@ -362,7 +384,7 @@ def _format_table(ranked: list[dict]) -> str:
     lines.append(header)
     lines.append(dim("\u2500" * 78))
 
-    for i, d in enumerate(ranked, 1):
+    for i, d in enumerate(sub_ranked, 1):
         vol = d["vol"]
         score = d["score"]
 
@@ -404,6 +426,21 @@ def _format_table(ranked: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def _format_table(ranked: list[dict]) -> str:
+    works_ranked = [d for d in ranked if not str(d["vol"]).lower().startswith('h')]
+    hebrews_ranked = [d for d in ranked if str(d["vol"]).lower().startswith('h')]
+
+    lines = []
+    if works_ranked:
+        works_by_need = sorted(works_ranked, key=lambda x: (-x["score"], vol_sort_key(x["vol"])))
+        lines.append(render_single_stdout_table(works_by_need, "Works of John Owen (16 Volumes)"))
+    if hebrews_ranked:
+        hebrews_by_need = sorted(hebrews_ranked, key=lambda x: (-x["score"], vol_sort_key(x["vol"])))
+        lines.append(render_single_stdout_table(hebrews_by_need, "Hebrews Commentary (7 Volumes)"))
+
+    return "\n".join(lines)
+
+
 # ── markdown report ──────────────────────────────────────────────────────────
 
 def _actions_to_text(actions: list[str]) -> str:
@@ -432,23 +469,48 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
     lines.append("")
     lines.append("**Need** (0–100): lower is better. Combines coverage, Greek/Hebrew/Latin health, unresolved citations, splits, warnings, and QA completeness into a single score. Volumes ranked worst first.")
     lines.append("")
-    lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |")
-    lines.append("|------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|")
 
-    for i, d in enumerate(ranked, 1):
-        lines.append(
-            f"| {i} | {d['vol']} | {d['score']} "
-            f"| {d['font']} | {d['treatises']} "
-            f"| {_fmt(_maybe_pct(d.get('coverage')), 6)} "
-            f"| {_fmt(_maybe_pct(d.get('greek_coverage')), 6)} "
-            f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')), 6)} "
-            f"| {_fmt(_maybe_pct(d.get('latin_coverage')), 6)} "
-            f"| {d.get('unresolved_citations', '?')} "
-            f"| {d.get('unmatched_quotes', '?')} "
-            f"| {d['qa_level']} |"
-        )
+    works_ranked = [d for d in ranked if not str(d["vol"]).lower().startswith('h')]
+    hebrews_ranked = [d for d in ranked if str(d["vol"]).lower().startswith('h')]
 
-    lines.append("")
+    if works_ranked:
+        works_by_need = sorted(works_ranked, key=lambda x: (-x["score"], vol_sort_key(x["vol"])))
+        lines.append("### Works of John Owen (16 Volumes)")
+        lines.append("")
+        lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |")
+        lines.append("|------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|")
+        for i, d in enumerate(works_by_need, 1):
+            lines.append(
+                f"| {i} | {d['vol']} | {d['score']} "
+                f"| {d['font']} | {d['treatises']} "
+                f"| {_fmt(_maybe_pct(d.get('coverage')), 6)} "
+                f"| {_fmt(_maybe_pct(d.get('greek_coverage')), 6)} "
+                f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')), 6)} "
+                f"| {_fmt(_maybe_pct(d.get('latin_coverage')), 6)} "
+                f"| {d.get('unresolved_citations', '?')} "
+                f"| {d.get('unmatched_quotes', '?')} "
+                f"| {d['qa_level']} |"
+            )
+        lines.append("")
+
+    if hebrews_ranked:
+        hebrews_by_need = sorted(hebrews_ranked, key=lambda x: (-x["score"], vol_sort_key(x["vol"])))
+        lines.append("### Hebrews Commentary (7 Volumes)")
+        lines.append("")
+        lines.append("| Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Unres | Quotes | QA Level |")
+        lines.append("|------|-----|------|------|-----------|----------|-------|--------|-------|--------|----------|")
+        for i, d in enumerate(hebrews_by_need, 1):
+            lines.append(
+                f"| {i} | {d['vol']} | {d['score']} "
+                f"| {d['font']} | {d['treatises']} "
+                f"| {_fmt(_maybe_pct(d.get('coverage')), 6)} "
+                f"| {_fmt(_maybe_pct(d.get('greek_coverage')), 6)} "
+                f"| {_fmt(_maybe_pct(d.get('hebrew_coverage')), 6)} "
+                f"| {d.get('unresolved_citations', '?')} "
+                f"| {d.get('unmatched_quotes', '?')} "
+                f"| {d['qa_level']} |"
+            )
+        lines.append("")
     lines.append("## Per-Volume Details")
     lines.append("")
 
@@ -536,7 +598,11 @@ def write_json_report(ranked: list[dict], path: Path) -> None:
 
 def _table_line(d: dict) -> str:
     v = d["vol"]
-    convert = f"v{v}" if d["has_convert_py"] else "—"
+    v_str = str(v).lower()
+    if v_str.startswith('h'):
+        convert = v_str if d["has_convert_py"] else "—"
+    else:
+        convert = f"v{v}" if d["has_convert_py"] else "—"
     overrides = "Populated" if d["text_replacements"] > 0 else ("Empty" if d["has_convert_py"] else "—")
     ql = d["qa_level"]
     notes = ""
@@ -560,54 +626,71 @@ def _table_line(d: dict) -> str:
         lat_s = f"{_pct(lat)}" if lat is not None else "?"
         unres_s = f" Unres {unres}" if unres else ""
         unmatched_s = f" Quotes {unmatched}" if unmatched else ""
-        notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s} Lat {lat_s}{unres_s}{unmatched_s}"
+        
+        is_hebrews = v_str.startswith('h')
+        if is_hebrews:
+            notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s}{unres_s}{unmatched_s}"
+        else:
+            notes = f"Cov {cov_s} Greek {greek_s} Heb {hebrew_s} Lat {lat_s}{unres_s}{unmatched_s}"
 
     return f"| {v} | {convert} | {overrides} | {ql} | {notes} |"
+
+
+def _update_section_table(text: str, heading: str, new_table_rows: list[str]) -> str:
+    lines = text.split("\n")
+    try:
+        heading_idx = next(i for i, ln in enumerate(lines) if heading in ln)
+    except StopIteration:
+        return text
+
+    table_start_idx = None
+    for i in range(heading_idx + 1, len(lines)):
+        if lines[i].strip().startswith("|"):
+            table_start_idx = i
+            break
+        if lines[i].strip().startswith("#"):
+            break
+
+    if table_start_idx is None:
+        return text
+
+    table_end_idx = table_start_idx
+    while table_end_idx < len(lines) and lines[table_end_idx].strip().startswith("|"):
+        table_end_idx += 1
+
+    new_lines = lines[:table_start_idx] + new_table_rows + lines[table_end_idx:]
+    return "\n".join(new_lines)
 
 
 def update_readme(ranked: list[dict]) -> None:
     readme_path = ROOT / "README.md"
     text = readme_path.read_text(encoding="utf-8")
 
-    old_header = "| Volume | convert.py | OVERRIDES | Notes |"
-    new_header = "| Volume | convert.py | OVERRIDES | QA Level | Notes |"
+    works_ranked = [d for d in ranked if not str(d["vol"]).lower().startswith('h')]
+    hebrews_ranked = [d for d in ranked if str(d["vol"]).lower().startswith('h')]
 
-    # If already updated with new_header, find and replace rows
-    if new_header in text:
-        needle = new_header
-    elif old_header in text:
-        needle = old_header
-    else:
-        print(f"  {yellow('Could not find Per-Volume table in README — skipping')}")
-        return
+    if works_ranked:
+        sorted_works = sorted(works_ranked, key=lambda x: vol_sort_key(x["vol"]))
+        works_rows = [
+            "| Volume | convert.py | OVERRIDES | QA Level | Notes |",
+            "|---|---|---|---|---|",
+        ]
+        for d in sorted_works:
+            works_rows.append(_table_line(d))
+        text = _update_section_table(text, "## Per-Volume Script Status", works_rows)
 
-    old_lines = text.split("\n")
+    if hebrews_ranked:
+        sorted_hebrews = sorted(hebrews_ranked, key=lambda x: vol_sort_key(x["vol"]))
+        hebrews_rows = [
+            "| Volume | convert.py | OVERRIDES | QA Level | Notes |",
+            "|---|---|---|---|---|",
+        ]
+        for d in sorted_hebrews:
+            hebrews_rows.append(_table_line(d))
+        text = _update_section_table(text, "## Hebrews Commentary Script Status", hebrews_rows)
 
-    # Find the header line
-    try:
-        start_idx = next(i for i, ln in enumerate(old_lines) if needle in ln)
-    except StopIteration:
-        print(f"  {yellow('Could not locate table header in README — skipping')}")
-        return
-
-    # Find end: next blank line after the table
-    end_idx = start_idx + 1
-    while end_idx < len(old_lines) and old_lines[end_idx].strip().startswith("|"):
-        end_idx += 1
-
-    # Build new table (sorted by volume ascending for README)
-    sorted_by_vol = sorted(ranked, key=lambda x: x["vol"])
-    sep = "|---|---|---|---|---|"
-    new_rows = [
-        new_header,
-        sep,
-    ]
-    for d in sorted_by_vol:
-        new_rows.append(_table_line(d))
-
-    new_lines = old_lines[:start_idx] + new_rows + old_lines[end_idx:]
-    readme_path.write_text("\n".join(new_lines), encoding="utf-8")
-    print(f"  {green('README.md table updated')}")
+    readme_path.write_text(text, encoding="utf-8")
+    print(f"  {green('README.md tables updated')}")
 
 
 # ── audit missing ────────────────────────────────────────────────────────────
@@ -695,12 +778,12 @@ def main() -> int:
         description="Inventory and rank QA state for all Owen volumes",
     )
     parser.add_argument(
-        "--volumes", type=int, nargs="*",
-        help="Volume numbers",
+        "--volumes", type=str, nargs="*",
+        help="Volume numbers/identifiers (e.g. 1, h1)",
     )
     parser.add_argument(
         "--all", action="store_true",
-        help="Process all 16 volumes",
+        help="Process all volumes",
     )
     parser.add_argument(
         "--audit-missing", action="store_true",
@@ -712,7 +795,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    volumes = OWEN_VOLUMES if args.all else (args.volumes or OWEN_VOLUMES)
+    volumes = ALL_VOLUMES if args.all else (args.volumes or ALL_VOLUMES)
 
     if args.audit_missing:
         print(f"{bold('Running audits for missing reports...')}")
@@ -730,7 +813,8 @@ def main() -> int:
     # Score and rank (worst first)
     for d in all_data:
         d["score"] = score_volume(d)
-    ranked = sorted(all_data, key=lambda x: (-x["score"], x["vol"]))
+        
+    ranked = sorted(all_data, key=lambda x: (-x["score"], vol_sort_key(x["vol"])))
 
     # Outputs
     print(_format_table(ranked))

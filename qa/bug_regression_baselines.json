@@ -321,6 +321,17 @@
       "epub": {
         "max_lowercase_paragraph_start_files": 1
       }
+    },
+    "h1": {
+      "text_integrity": {
+        "max_split_candidate_count": 40,
+        "max_inline_structural_candidate_count": 6,
+        "max_repeated_window_count": 25
+      },
+      "epub": {
+        "max_lowercase_paragraph_start_files": 1,
+        "max_structural_bold_leak_files": 1
+      }
     }
   }
 }

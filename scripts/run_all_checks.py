@@ -32,21 +32,42 @@ PYTHON = sys.executable
 OWEN_VOLUME_RANGE = range(1, 17)
 
 
-def resolve_volumes(args: list[str]) -> list[int]:
-    if not args:
-        return list(OWEN_VOLUME_RANGE)
-    if len(args) == 1 and args[0].lower() in ("all", "--all"):
-        return list(OWEN_VOLUME_RANGE)
-    seen: set[int] = set()
-    result: list[int] = []
-    for arg in args:
+def vol_sort_key(vol_id):
+    v_str = str(vol_id).lower()
+    if v_str.startswith('h'):
         try:
-            vol = int(arg)
+            return (1, int(v_str[1:]))
         except ValueError:
-            continue
-        if vol in OWEN_VOLUME_RANGE and vol not in seen:
-            seen.add(vol)
-            result.append(vol)
+            return (1, v_str)
+    else:
+        v_num = v_str[1:] if v_str.startswith('v') else v_str
+        try:
+            return (0, int(v_num))
+        except ValueError:
+            return (0, v_str)
+
+
+def resolve_volumes(args: list[str]) -> list[str]:
+    OWEN_VOLUMES = [str(i) for i in range(1, 17)]
+    HEBREWS_VOLUMES = [f"h{i}" for i in range(1, 8)]
+    ALL_VOLUMES = OWEN_VOLUMES + HEBREWS_VOLUMES
+    if not args:
+        return OWEN_VOLUMES
+    if len(args) == 1 and args[0].lower() in ("all", "--all"):
+        return ALL_VOLUMES
+    seen = set()
+    result = []
+    for arg in args:
+        v_str = arg.lower()
+        if v_str.startswith('h'):
+            if v_str in HEBREWS_VOLUMES and v_str not in seen:
+                seen.add(v_str)
+                result.append(v_str)
+        else:
+            v_num = v_str[1:] if v_str.startswith('v') else v_str
+            if v_num in [str(i) for i in range(1, 17)] and v_num not in seen:
+                seen.add(v_num)
+                result.append(v_num)
     return result
 
 
@@ -77,11 +98,13 @@ def _fmt_dur(secs: float) -> str:
     return f"{m}m{s:02d}s" if m < 60 else f"{m // 60}h{m % 60}m"
 
 
-def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
+def run_volume_pipeline(vol_num: str, no_rebuild: bool = False) -> dict:
+    from shared import get_volume_dir
     start = datetime.now()
-    bugs_dir = ROOT / "volumes" / f"v{vol_num}" / "bugs_fixes"
+    vol_dir = get_volume_dir(vol_num)
+    bugs_dir = vol_dir / "bugs_fixes"
     bugs_dir.mkdir(parents=True, exist_ok=True)
-    epub_path = ROOT / "volumes" / f"v{vol_num}" / "output" / f"volume_{vol_num}.epub"
+    epub_path = vol_dir / "output" / f"volume_{vol_num}.epub"
 
     summary: dict = {
         "volume": vol_num,
@@ -94,18 +117,18 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     }
 
     if not no_rebuild:
-        vol_script = ROOT / "volumes" / f"v{vol_num}" / "convert.py"
+        vol_script = vol_dir / "convert.py"
         if vol_script.exists():
-            print(f"  [{vol_num}] volumes/v{vol_num}/convert.py ...", end=" ", flush=True)
+            print(f"  [{vol_num}] volumes/{vol_dir.name}/convert.py ...", end=" ", flush=True)
             code, out = _run(
                 [PYTHON, str(vol_script)],
-                f"v{vol_num} convert.py",
+                f"{vol_num} convert.py",
             )
         else:
             print(f"  [{vol_num}] converter.py ...", end=" ", flush=True)
             code, out = _run(
                 [PYTHON, str(ROOT / "converter.py"), str(vol_num)],
-                f"v{vol_num} converter",
+                f"{vol_num} converter",
             )
         ok = code == 0
         print(status_icon(ok))
@@ -123,7 +146,7 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     print(f"  [{vol_num}] audit_epub.py ...", end=" ", flush=True)
     code, out = _run(
         [PYTHON, str(ROOT / "scripts" / "audit_epub.py"), str(epub_path)],
-        f"v{vol_num} epub audit",
+        f"{vol_num} epub audit",
     )
     ok = code == 0
     print(status_icon(ok))
@@ -141,16 +164,18 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     print(f"  [{vol_num}] audit_text_integrity.py ...", end=" ", flush=True)
     code, out = _run(
         [PYTHON, str(ROOT / "scripts" / "audit_text_integrity.py"), str(vol_num)],
-        f"v{vol_num} text integrity",
+        f"{vol_num} text integrity",
     )
     ok = code == 0
     print(status_icon(ok))
     tj = _read_json(bugs_dir / f"volume_{vol_num}_text_integrity.json")
     wc = tj.get("word_coverage", {})
+    cov_ratio = wc.get("coverage_ratio")
+    cov_pct = cov_ratio * 100 if isinstance(cov_ratio, (int, float)) else "?"
     pi = tj.get("paragraph_integrity", {})
     summary["text_integrity"] = {
         "ok": ok,
-        "word_coverage": wc.get("latin_word_coverage_pct", "?"),
+        "word_coverage": cov_pct,
         "splits": pi.get("split_candidate_count", 0),
         "warning_details": tj.get("warnings", []),
         "output": out,
@@ -159,7 +184,7 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     print(f"  [{vol_num}] audit_bug_regressions.py ...", end=" ", flush=True)
     code, out = _run(
         [PYTHON, str(ROOT / "scripts" / "audit_bug_regressions.py"), str(vol_num)],
-        f"v{vol_num} bug regressions",
+        f"{vol_num} bug regressions",
     )
     ok = code == 0
     print(status_icon(ok))
@@ -179,7 +204,7 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     print(f"  [{vol_num}] audit_anomalies.py ...", end=" ", flush=True)
     code, out = _run(
         [PYTHON, str(ROOT / "scripts" / "audit_anomalies.py"), str(vol_num)],
-        f"v{vol_num} anomalies audit",
+        f"{vol_num} anomalies audit",
     )
     ok = code == 0
     print(status_icon(ok))
@@ -194,7 +219,7 @@ def run_volume_pipeline(vol_num: int, no_rebuild: bool = False) -> dict:
     return summary
 
 
-def run_pytest(volumes: list[int]) -> dict:
+def run_pytest(volumes: list[str]) -> dict:
     test_files = sorted((ROOT / "tests").glob("test_*.py"))
     vol_str = "all" if len(volumes) >= 16 else " ".join(str(v) for v in volumes)
     env = {**os.environ, "OWEN_REGRESSION_VOLUMES": vol_str, "PYTHONPATH": str(ROOT)}
@@ -222,7 +247,7 @@ def run_pytest(volumes: list[int]) -> dict:
         return {"ok": False, "summary": "pytest not found", "output": "", "elapsed": 0}
 
 
-def _collect_issues_for_volume(vol_num: int, result: dict) -> list[tuple[str, str, str, str]]:
+def _collect_issues_for_volume(vol_num: str, result: dict) -> list[tuple[str, str, str, str]]:
     """Return [(kind_label, code, message, extra_context), ...] for one volume."""
     issues: list[tuple[str, str, str, str]] = []
 
@@ -333,7 +358,7 @@ def _fmt_text_integrity_extra(tj: dict, code: str) -> str:
     return ""
 
 
-def _print_volume_issues(vol_num: int, result: dict) -> None:
+def _print_volume_issues(vol_num: str, result: dict) -> None:
     """Print numbered issues for a single volume inline after its pipeline."""
     issues = _collect_issues_for_volume(vol_num, result)
     if not issues:
@@ -365,7 +390,7 @@ def _print_volume_issues(vol_num: int, result: dict) -> None:
     print(f"  {dim('\u2500' * 72)}")
 
 
-def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
+def print_summary(results: dict[str, dict], pytest_result: dict) -> None:
     sep = dim("\u2500" * 72)
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     print(f"\n{bold('=' * 72)}")
@@ -374,7 +399,7 @@ def print_summary(results: dict[int, dict], pytest_result: dict) -> None:
 
     any_fail = False
 
-    for vol in sorted(results):
+    for vol in sorted(results, key=vol_sort_key):
         r = results[vol]
         dur = _fmt_dur(r.get("elapsed", 0))
         all_ok = (
@@ -444,7 +469,7 @@ def main() -> int:
     )
     parser.add_argument(
         "volumes", nargs="*",
-        help="Volume numbers (default: all 16)",
+        help="Volume numbers/identifiers (default: all 16 Works)",
     )
     parser.add_argument(
         "--no-rebuild", action="store_true",
@@ -452,11 +477,15 @@ def main() -> int:
     )
     parser.add_argument(
         "--all", action="store_true",
-        help="Process all 16 volumes",
+        help="Process all volumes",
     )
     args = parser.parse_args()
 
-    volumes = list(OWEN_VOLUME_RANGE) if args.all else resolve_volumes(args.volumes)
+    OWEN_VOLUMES = [str(i) for i in range(1, 17)]
+    HEBREWS_VOLUMES = [f"h{i}" for i in range(1, 8)]
+    ALL_VOLUMES = OWEN_VOLUMES + HEBREWS_VOLUMES
+
+    volumes = ALL_VOLUMES if args.all else resolve_volumes(args.volumes)
     if not volumes:
         print("No valid volumes specified.", file=sys.stderr)
         return 1
@@ -465,7 +494,7 @@ def main() -> int:
     rebuild_note = dim("  (--no-rebuild)") if args.no_rebuild else ""
     print(f"Full check for volume(s): {bold(vol_list)}{rebuild_note}")
 
-    results: dict[int, dict] = {}
+    results: dict[str, dict] = {}
     for v in volumes:
         print(f"\n{cyan(f'=== Volume {v} ===')}")
         results[v] = run_volume_pipeline(v, no_rebuild=args.no_rebuild)

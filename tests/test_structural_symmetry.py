@@ -6,20 +6,27 @@ import pytest
 
 BASE_DIR = Path(__file__).parent.parent
 
-def _requested_volumes() -> list[int]:
+def _requested_volumes() -> list[str]:
     raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "1").strip()
     if raw.lower() == "all":
-        return [
-            int(path.name[1:])
-            for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*"))
-            if (path / "output" / f"volume_{path.name[1:]}.epub").exists()
-        ]
-    return [int(part) for part in raw.replace(",", " ").split() if part]
+        vols = []
+        for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*")):
+            v_num = path.name[1:]
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        for path in sorted((BASE_DIR / "volumes").glob("h[0-9]*")):
+            v_num = path.name
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        return vols
+    return [part for part in raw.replace(",", " ").split() if part]
 
-def _epub_path(volume: int) -> Path:
-    return BASE_DIR / "volumes" / f"v{volume}" / "output" / f"volume_{volume}.epub"
+def _epub_path(volume: str) -> Path:
+    from shared import get_volume_dir
+    volume_dir = get_volume_dir(volume)
+    return volume_dir / "output" / f"volume_{volume}.epub"
 
-def _load_epub(volume: int) -> dict[str, str]:
+def _load_epub(volume: str) -> dict[str, str]:
     ep = _epub_path(volume)
     if not ep.exists():
         pytest.skip(f"EPUB for volume {volume} not found at {ep}")
@@ -49,13 +56,17 @@ def roman_to_int(s: str) -> int:
     return val
 
 @pytest.mark.parametrize("volume", VOLUMES)
-def test_structural_symmetry_and_sequential_completeness(volume: int):
+def test_structural_symmetry_and_sequential_completeness(volume: str):
     """
     Enforces the Laws of Structural Symmetry and Sequential Completeness:
     1. Sibling Symmetry Rule: Sibling list items at a given level must share the same class.
     2. Sequential Completeness Rule: List runs must be mathematically consecutive and start at 1.
     """
+    if str(volume).lower().startswith('h'):
+        pytest.skip("Hebrews volumes are EPUB2-sourced and do not require layout-based sequence symmetry checks.")
+        
     files = _load_epub(volume)
+    volume = int(volume) if str(volume).isdigit() else volume
     failures = []
 
     for name, html in sorted(files.items()):

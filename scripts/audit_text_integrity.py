@@ -1696,26 +1696,84 @@ def font_config_check(volume: int, root: Path) -> dict[str, Any]:
     }
 
 
-def infer_paths(volume: int, root: Path) -> tuple[Path, Path, Path]:
-    vol_dir = root / "volumes" / f"v{volume}"
+def extract_epub2_pages(epub2_path: Path) -> tuple[list[str], dict[str, Any]]:
+    import os
+    from bs4 import BeautifulSoup
+    from xml.etree import ElementTree
+    
+    pages = []
+    with zipfile.ZipFile(epub2_path) as z:
+        container_xml = z.read("META-INF/container.xml")
+        root = ElementTree.fromstring(container_xml)
+        ns_container = {"c": "urn:oasis:names:tc:opendocument:xmlns:container"}
+        opf_path = root.find(".//c:rootfile", ns_container).attrib["full-path"]
+        
+        opf_dir = os.path.dirname(opf_path)
+        opf_content = z.read(opf_path)
+        opf_root = ElementTree.fromstring(opf_content)
+        
+        ns_opf = {"opf": "http://www.idpf.org/2007/opf"}
+        manifest_items = {}
+        for item in opf_root.findall(".//opf:item", ns_opf):
+            manifest_items[item.attrib["id"]] = item.attrib["href"]
+            
+        spine_itemrefs = []
+        for itemref in opf_root.findall(".//opf:itemref", ns_opf):
+            spine_itemrefs.append(itemref.attrib["idref"])
+            
+        for idref in spine_itemrefs:
+            href = manifest_items[idref]
+            path = os.path.join(opf_dir, href) if opf_dir else href
+            content = z.read(path).decode('utf-8')
+            soup = BeautifulSoup(content, 'xml')
+            
+            # extract text paragraphs/headings
+            text_blocks = []
+            for el in soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'blockquote']):
+                t = el.get_text().strip()
+                if t:
+                    text_blocks.append(t)
+            pages.append("\n\n".join(text_blocks))
+            
+    meta = {
+        "page_count": len(pages),
+        "source": "epub2",
+    }
+    return pages, meta
+
+
+def infer_paths(volume: str, root: Path) -> tuple[Path, Path, Path]:
+    from shared import get_volume_dir
+    vol_dir = get_volume_dir(volume)
+    is_hebrews = str(volume).lower().startswith('h')
+    if is_hebrews:
+        src_path = vol_dir / "input" / f"volume_{volume}.epub"
+    else:
+        src_path = vol_dir / "input" / f"owen-v{volume}.pdf"
     return (
-        vol_dir / "input" / f"owen-v{volume}.pdf",
+        src_path,
         vol_dir / "output" / f"volume_{volume}.epub",
         vol_dir / "bugs_fixes",
     )
 
 
-def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
-    root = pdf_path.parents[3]  # volumes/vN/input/owen-vN.pdf → project root
-    pdf_pages, pdf_meta = extract_pdf_pages(pdf_path)
+def run_audit(volume: str, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
+    root = Path(__file__).resolve().parent.parent  # project root
+    is_hebrews = str(volume).lower().startswith('h')
+    
+    if is_hebrews:
+        pdf_pages, pdf_meta = extract_epub2_pages(pdf_path)
+    else:
+        pdf_pages, pdf_meta = extract_pdf_pages(pdf_path)
+        
     paragraphs, epub_meta = extract_epub_paragraphs(epub_path)
 
     # Dynamically apply volume-specific text replacements to pdf_pages and paragraphs
     try:
         import importlib.util
-        convert_py = pdf_path.parent.parent / "convert.py"
+        convert_py = epub_path.parent.parent / "convert.py"
         if convert_py.exists():
-            spec = importlib.util.spec_from_file_location(f"convert_v{volume}", convert_py)
+            spec = importlib.util.spec_from_file_location(f"convert_{volume}", convert_py)
             if spec and spec.loader:
                 module = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(module)
@@ -1744,10 +1802,43 @@ def run_audit(volume: int, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
 
     word_coverage = compare_word_coverage(pdf_text, epub_text)
     page_scan = page_coverage(pdf_pages, epub_text)
-    dense_scan = dense_source_window_integrity(pdf_pages, epub_text)
-    front_toc_scan = front_matter_toc_integrity(pdf_pages, epub_text)
-    top_scan = top_of_page_integrity(pdf_path, epub_text)
-    bottom_scan = bottom_of_page_integrity(pdf_path, epub_text)
+    
+    if is_hebrews:
+        dense_scan = {
+            "dense_windows_checked": 0,
+            "missing_dense_window_pages": 0,
+            "missing_dense_windows": [],
+        }
+        front_toc_scan = {
+            "front_toc_pages_checked": 0,
+            "missing_front_toc_pages": 0,
+            "missing_front_toc_samples": [],
+        }
+        top_scan = {
+            "top_windows_usable": 0,
+            "skipped_top_window_count": 0,
+            "missing_top_window_count": 0,
+            "missing_top_windows": [],
+        }
+        bottom_scan = {
+            "bottom_windows_usable": 0,
+            "skipped_bottom_window_count": 0,
+            "missing_bottom_window_count": 0,
+            "missing_bottom_windows": [],
+        }
+        enum_scan = {
+            "pdf_marker_count": 0,
+            "epub_marker_count": 0,
+            "missing_marker_count": 0,
+            "orphan_candidate_count": 0,
+            "enumerator_sequence_candidates": [],
+        }
+    else:
+        dense_scan = dense_source_window_integrity(pdf_pages, epub_text)
+        front_toc_scan = front_matter_toc_integrity(pdf_pages, epub_text)
+        top_scan = top_of_page_integrity(pdf_path, epub_text)
+        bottom_scan = bottom_of_page_integrity(pdf_path, epub_text)
+        enum_scan = enumerator_integrity(pdf_pages, paragraphs)
     para_scan = paragraph_integrity(paragraphs)
     enum_scan = enumerator_integrity(pdf_pages, paragraphs)
     repeats = repeated_windows(epub_text)
@@ -2345,15 +2436,19 @@ def update_bug_log(result: dict[str, Any], json_path: Path, md_path: Path) -> Pa
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Audit textual integrity between an Owen PDF and EPUB")
-    parser.add_argument("volumes", nargs="*", type=int, help="Owen volume number(s)")
-    parser.add_argument("--all", action="store_true", help="Audit all 16 volumes")
+    parser.add_argument("volumes", nargs="*", type=str, help="Owen volume number(s)/identifier(s) (e.g. 1, h1)")
+    parser.add_argument("--all", action="store_true", help="Audit all volumes")
     parser.add_argument("--pdf", type=Path, default=None, help="Override source PDF path")
     parser.add_argument("--epub", type=Path, default=None, help="Override generated EPUB path")
     parser.add_argument("--out-dir", type=Path, default=None, help="Override report output directory")
     parser.add_argument("--no-bug-log", action="store_true", help="Do not update BUGS_AND_FIXES.md")
     args = parser.parse_args(argv)
 
-    vol_list = list(range(1, 17)) if args.all else (args.volumes or [])
+    OWEN_VOLUMES = [str(i) for i in range(1, 17)]
+    HEBREWS_VOLUMES = [f"h{i}" for i in range(1, 8)]
+    ALL_VOLUMES = OWEN_VOLUMES + HEBREWS_VOLUMES
+
+    vol_list = ALL_VOLUMES if args.all else (args.volumes or [])
     if not vol_list:
         parser.print_help()
         return 1

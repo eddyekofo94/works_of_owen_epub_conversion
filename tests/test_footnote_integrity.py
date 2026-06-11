@@ -68,26 +68,35 @@ ALLOWED_FOOTNOTE_ANOMALIES = {
 }
 
 
-def _requested_volumes() -> list[int]:
+def _requested_volumes() -> list[str]:
     raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "1").strip()
     if raw.lower() == "all":
-        return [
-            int(path.name[1:])
-            for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*"))
-            if (path / "output" / f"volume_{path.name[1:]}.epub").exists()
-        ]
-    return [int(part) for part in raw.replace(",", " ").split() if part]
+        vols = []
+        for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*")):
+            v_num = path.name[1:]
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        for path in sorted((BASE_DIR / "volumes").glob("h[0-9]*")):
+            v_num = path.name
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        return vols
+    return [part for part in raw.replace(",", " ").split() if part]
 
 
-def _epub_path(volume: int) -> Path:
-    return BASE_DIR / "volumes" / f"v{volume}" / "output" / f"volume_{volume}.epub"
+def _epub_path(volume: str) -> Path:
+    from shared import get_volume_dir
+    volume_dir = get_volume_dir(volume)
+    return volume_dir / "output" / f"volume_{volume}.epub"
 
 
-def _intermediate_path(volume: int) -> Path:
-    return BASE_DIR / "volumes" / f"v{volume}" / "intermediate" / f"volume_{volume}.json"
+def _intermediate_path(volume: str) -> Path:
+    from shared import get_volume_dir
+    volume_dir = get_volume_dir(volume)
+    return volume_dir / "intermediate" / f"volume_{volume}.json"
 
 
-def _load_epub_files(volume: int) -> dict[str, str]:
+def _load_epub_files(volume: str) -> dict[str, str]:
     """Return {name: decoded_text} for all XHTML files in the EPUB."""
     ep = _epub_path(volume)
     if not ep.exists():

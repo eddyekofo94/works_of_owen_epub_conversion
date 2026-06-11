@@ -596,13 +596,15 @@ def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
 
 def main():
     parser = argparse.ArgumentParser(description="Audit a volume's intermediate JSON for OCR, hyphenation, and punctuation anomalies.")
-    parser.add_argument("volume", type=int, help="Volume number (e.g., 12)")
+    parser.add_argument("volume", help="Volume number/ID (e.g., 12, h1)")
     args = parser.parse_args()
 
-    vol_num = args.volume
-    here = Path(__file__).resolve().parent
-    root = here.parent
-    vol_dir = root / "volumes" / f"v{vol_num}"
+    vol_num = str(args.volume)
+    if vol_num.startswith('v') and vol_num[1:].isdigit():
+        vol_num = vol_num[1:]
+        
+    from shared import get_volume_dir
+    vol_dir = get_volume_dir(vol_num)
     vol_json_path = vol_dir / "intermediate" / f"volume_{vol_num}.json"
     output_md_path = vol_dir / "bugs_fixes" / f"volume_{vol_num}_anomalies.md"
     output_json_path = vol_dir / "bugs_fixes" / f"volume_{vol_num}_anomalies.json"

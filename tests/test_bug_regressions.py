@@ -76,12 +76,17 @@ def load_baselines():
 def requested_volumes():
     raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "1").strip()
     if raw.lower() == "all":
-        return [
-            int(path.name[1:])
-            for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*"))
-            if (path / "output" / f"volume_{path.name[1:]}.epub").exists()
-        ]
-    return [int(part) for part in raw.replace(",", " ").split() if part]
+        vols = []
+        for path in sorted((BASE_DIR / "volumes").glob("v[0-9]*")):
+            v_num = path.name[1:]
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        for path in sorted((BASE_DIR / "volumes").glob("h[0-9]*")):
+            v_num = path.name
+            if (path / "output" / f"volume_{v_num}.epub").exists():
+                vols.append(v_num)
+        return vols
+    return [part for part in raw.replace(",", " ").split() if part]
 
 
 def budget_for(volume):
@@ -92,11 +97,19 @@ def budget_for(volume):
 
 
 def paths_for(volume):
-    volume_dir = BASE_DIR / "volumes" / f"v{volume}"
-    return (
-        volume_dir / "input" / f"owen-v{volume}.pdf",
-        volume_dir / "output" / f"volume_{volume}.epub",
-    )
+    from shared import get_volume_dir
+    volume_dir = get_volume_dir(volume)
+    is_hebrews = str(volume).lower().startswith('h')
+    if is_hebrews:
+        return (
+            volume_dir / "input" / f"volume_{volume}.epub",
+            volume_dir / "output" / f"volume_{volume}.epub",
+        )
+    else:
+        return (
+            volume_dir / "input" / f"owen-v{volume}.pdf",
+            volume_dir / "output" / f"volume_{volume}.epub",
+        )
 
 
 def test_primary_font_selection_uses_real_internal_family_names():
@@ -158,7 +171,8 @@ def test_font_assets_exist_and_otf_metadata_is_readable():
 
 @lru_cache(maxsize=None)
 def volume_intermediate(volume):
-    path = BASE_DIR / "volumes" / f"v{volume}" / "intermediate" / f"volume_{volume}.json"
+    from shared import get_volume_dir
+    path = get_volume_dir(volume) / "intermediate" / f"volume_{volume}.json"
     if not path.exists():
         pytest.skip(f"Intermediate JSON for volume {volume} not found at {path}")
     return json.loads(path.read_text(encoding="utf-8"))
@@ -2774,13 +2788,18 @@ def test_latin_inline_translations():
 import importlib.util
 
 ALL_JSON_VOLUMES = [
-    int(path.name[1:])
+    path.name[1:]
     for path in sorted(Path(__file__).parent.parent.glob("volumes/v[0-9]*"))
     if (path / "intermediate" / f"volume_{path.name[1:]}.json").exists()
+] + [
+    path.name
+    for path in sorted(Path(__file__).parent.parent.glob("volumes/h[0-9]*"))
+    if (path / "intermediate" / f"volume_{path.name}.json").exists()
 ]
 
 def get_volume_overrides(volume):
-    convert_path = Path(__file__).parent.parent / "volumes" / f"v{volume}" / "convert.py"
+    from shared import get_volume_dir
+    convert_path = get_volume_dir(volume) / "convert.py"
     if not convert_path.exists():
         return {}
     spec = importlib.util.spec_from_file_location(f"volume_{volume}_convert", convert_path)
@@ -2795,7 +2814,7 @@ def get_volume_overrides(volume):
 def test_no_unwhitelisted_split_word_anomalies_in_json(volume):
     """Ensure that the intermediate JSON files do not contain any unwhitelisted split-word OCR anomalies."""
     from scripts.audit_anomalies import check_ocr_residues, load_dictionary, is_whitelisted, clean_text
-    from shared import _repair_owen_ocr_errors
+    from shared import _repair_owen_ocr_errors, get_volume_dir
     
     # 1. Load intermediate JSON
     data = volume_intermediate(volume)
@@ -2805,7 +2824,7 @@ def test_no_unwhitelisted_split_word_anomalies_in_json(volume):
     
     # 3. Load whitelist
     whitelist = {}
-    vol_dir = BASE_DIR / "volumes" / f"v{volume}"
+    vol_dir = get_volume_dir(volume)
     whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
     if whitelist_path.exists():
         whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))

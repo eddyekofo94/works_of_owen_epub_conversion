@@ -87,6 +87,18 @@ def is_greek_prose(text: str) -> bool:
     return len(greek_words) >= 4
 
 def get_available_volumes():
+    raw = os.environ.get("OWEN_REGRESSION_VOLUMES", "").strip()
+    if raw:
+        if raw.lower() == "all":
+            vols = []
+            for path in sorted(VOLUMES_DIR.glob("v[0-9]*")):
+                v_num = int(path.name[1:])
+                if (path / "intermediate" / f"volume_{v_num}.json").exists():
+                    vols.append(v_num)
+            return vols
+        else:
+            return [int(part) for part in raw.replace(",", " ").split() if part.isdigit()]
+
     vols = []
     for d in VOLUMES_DIR.glob("v*"):
         if d.is_dir() and d.name[1:].isdigit():

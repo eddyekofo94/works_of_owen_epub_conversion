@@ -1,6 +1,6 @@
 [
   {
-    "vol": 2,
+    "vol": "2",
     "rank": 1,
     "score": 87.9,
     "need": 87.9,
@@ -20,7 +20,7 @@
     "regressions": 0,
     "anomalies_count": 56,
     "unmatched_quotes": 43,
-    "font": "libertinus",
+    "font": "gentium-plus-2",
     "treatises": 3,
     "has_convert_py": true,
     "text_replacements": 1,
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "vol": 11,
+    "vol": "11",
     "rank": 2,
     "score": 80.8,
     "need": 80.8,
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "vol": 13,
+    "vol": "13",
     "rank": 3,
     "score": 77.3,
     "need": 77.3,
@@ -92,7 +92,7 @@
     ]
   },
   {
-    "vol": 14,
+    "vol": "14",
     "rank": 4,
     "score": 76.7,
     "need": 76.7,
@@ -123,7 +123,7 @@
     ]
   },
   {
-    "vol": 12,
+    "vol": "12",
     "rank": 5,
     "score": 71.7,
     "need": 71.7,
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "vol": 10,
+    "vol": "10",
     "rank": 6,
     "score": 71.5,
     "need": 71.5,
@@ -184,7 +184,7 @@
     ]
   },
   {
-    "vol": 7,
+    "vol": "7",
     "rank": 7,
     "score": 68.3,
     "need": 68.3,
@@ -205,7 +205,7 @@
     "anomalies_count": 99,
     "unmatched_quotes": 13,
     "font": "sabon-next-lt",
-    "treatises": 3,
+    "treatises": 1,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": [
@@ -215,7 +215,7 @@
     ]
   },
   {
-    "vol": 4,
+    "vol": "4",
     "rank": 8,
     "score": 65.7,
     "need": 65.7,
@@ -235,8 +235,8 @@
     "regressions": 6,
     "anomalies_count": 109,
     "unmatched_quotes": 27,
-    "font": "cardo",
-    "treatises": 4,
+    "font": "libertinus",
+    "treatises": 1,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": [
@@ -246,7 +246,7 @@
     ]
   },
   {
-    "vol": 6,
+    "vol": "6",
     "rank": 9,
     "score": 63.9,
     "need": 63.9,
@@ -267,7 +267,7 @@
     "anomalies_count": 94,
     "unmatched_quotes": 31,
     "font": "baskerville",
-    "treatises": 4,
+    "treatises": 1,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": [
@@ -276,7 +276,7 @@
     ]
   },
   {
-    "vol": 8,
+    "vol": "8",
     "rank": 10,
     "score": 58.9,
     "need": 58.9,
@@ -307,7 +307,7 @@
     ]
   },
   {
-    "vol": 9,
+    "vol": "9",
     "rank": 11,
     "score": 54.6,
     "need": 54.6,
@@ -337,8 +337,194 @@
     ]
   },
   {
-    "vol": 1,
+    "vol": "h5",
     "rank": 12,
+    "score": 51.2,
+    "need": 51.2,
+    "grade": "needs_work",
+    "qa_level": "NONE",
+    "coverage": null,
+    "greek_coverage": null,
+    "hebrew_coverage": null,
+    "latin_coverage": null,
+    "latin_tagging": null,
+    "latin_translation": null,
+    "total_citations": 8,
+    "unresolved_citations": 6,
+    "splits": null,
+    "warnings": null,
+    "errors": null,
+    "regressions": null,
+    "anomalies_count": null,
+    "unmatched_quotes": null,
+    "font": "minion-pro",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 0,
+    "recommended_actions": [
+      "run_epub_audit",
+      "run_text_integrity_audit",
+      "run_bug_regression_report"
+    ]
+  },
+  {
+    "vol": "h4",
+    "rank": 13,
+    "score": 50.3,
+    "need": 50.3,
+    "grade": "needs_work",
+    "qa_level": "NONE",
+    "coverage": null,
+    "greek_coverage": null,
+    "hebrew_coverage": null,
+    "latin_coverage": null,
+    "latin_tagging": null,
+    "latin_translation": null,
+    "total_citations": 19,
+    "unresolved_citations": 13,
+    "splits": null,
+    "warnings": null,
+    "errors": null,
+    "regressions": null,
+    "anomalies_count": null,
+    "unmatched_quotes": null,
+    "font": "libertinus",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 0,
+    "recommended_actions": [
+      "run_epub_audit",
+      "run_text_integrity_audit",
+      "run_bug_regression_report"
+    ]
+  },
+  {
+    "vol": "h3",
+    "rank": 14,
+    "score": 50.2,
+    "need": 50.2,
+    "grade": "needs_work",
+    "qa_level": "NONE",
+    "coverage": null,
+    "greek_coverage": null,
+    "hebrew_coverage": null,
+    "latin_coverage": null,
+    "latin_tagging": null,
+    "latin_translation": null,
+    "total_citations": 22,
+    "unresolved_citations": 15,
+    "splits": null,
+    "warnings": null,
+    "errors": null,
+    "regressions": null,
+    "anomalies_count": null,
+    "unmatched_quotes": null,
+    "font": "adobe-garamond-pro",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 0,
+    "recommended_actions": [
+      "run_epub_audit",
+      "run_text_integrity_audit",
+      "run_bug_regression_report"
+    ]
+  },
+  {
+    "vol": "h6",
+    "rank": 15,
+    "score": 50.0,
+    "need": 50.0,
+    "grade": "needs_work",
+    "qa_level": "NONE",
+    "coverage": null,
+    "greek_coverage": null,
+    "hebrew_coverage": null,
+    "latin_coverage": null,
+    "latin_tagging": null,
+    "latin_translation": null,
+    "total_citations": 6,
+    "unresolved_citations": 4,
+    "splits": null,
+    "warnings": null,
+    "errors": null,
+    "regressions": null,
+    "anomalies_count": null,
+    "unmatched_quotes": null,
+    "font": "baskerville",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 0,
+    "recommended_actions": [
+      "run_epub_audit",
+      "run_text_integrity_audit",
+      "run_bug_regression_report"
+    ]
+  },
+  {
+    "vol": "h7",
+    "rank": 16,
+    "score": 47.5,
+    "need": 47.5,
+    "grade": "needs_work",
+    "qa_level": "NONE",
+    "coverage": null,
+    "greek_coverage": null,
+    "hebrew_coverage": null,
+    "latin_coverage": null,
+    "latin_tagging": null,
+    "latin_translation": null,
+    "total_citations": 4,
+    "unresolved_citations": 2,
+    "splits": null,
+    "warnings": null,
+    "errors": null,
+    "regressions": null,
+    "anomalies_count": null,
+    "unmatched_quotes": null,
+    "font": "sabon-next-lt",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": [
+      "run_epub_audit",
+      "run_text_integrity_audit",
+      "run_bug_regression_report"
+    ]
+  },
+  {
+    "vol": "h2",
+    "rank": 17,
+    "score": 47.1,
+    "need": 47.1,
+    "grade": "needs_work",
+    "qa_level": "NONE",
+    "coverage": null,
+    "greek_coverage": null,
+    "hebrew_coverage": null,
+    "latin_coverage": null,
+    "latin_tagging": null,
+    "latin_translation": null,
+    "total_citations": 87,
+    "unresolved_citations": 41,
+    "splits": null,
+    "warnings": null,
+    "errors": null,
+    "regressions": null,
+    "anomalies_count": null,
+    "unmatched_quotes": null,
+    "font": "gentium-plus-2",
+    "treatises": 3,
+    "has_convert_py": true,
+    "text_replacements": 0,
+    "recommended_actions": [
+      "run_epub_audit",
+      "run_text_integrity_audit",
+      "run_bug_regression_report"
+    ]
+  },
+  {
+    "vol": "1",
+    "rank": 18,
     "score": 44.5,
     "need": 44.5,
     "grade": "needs_work",
@@ -358,7 +544,7 @@
     "anomalies_count": 48,
     "unmatched_quotes": 19,
     "font": "adobe-garamond-pro",
-    "treatises": 4,
+    "treatises": 3,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": [
@@ -367,8 +553,8 @@
     ]
   },
   {
-    "vol": 16,
-    "rank": 13,
+    "vol": "16",
+    "rank": 19,
     "score": 36.9,
     "need": 36.9,
     "grade": "fair",
@@ -397,8 +583,38 @@
     ]
   },
   {
-    "vol": 3,
-    "rank": 14,
+    "vol": "h1",
+    "rank": 20,
+    "score": 31.2,
+    "need": 31.2,
+    "grade": "fair",
+    "qa_level": "FULL",
+    "coverage": 99.99,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 100.0,
+    "latin_tagging": 35.61,
+    "latin_translation": 6.9,
+    "total_citations": 58,
+    "unresolved_citations": 34,
+    "splits": 40,
+    "warnings": 1,
+    "errors": 0,
+    "regressions": 0,
+    "anomalies_count": 440,
+    "unmatched_quotes": null,
+    "font": "adobe-garamond-pro",
+    "treatises": 3,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": [
+      "translate_unresolved_citations",
+      "review_ocr_anomalies"
+    ]
+  },
+  {
+    "vol": "3",
+    "rank": 21,
     "score": 27.6,
     "need": 27.6,
     "grade": "fair",
@@ -417,7 +633,7 @@
     "regressions": 0,
     "anomalies_count": 39,
     "unmatched_quotes": 30,
-    "font": "minion-pro",
+    "font": "adobe-garamond-pro",
     "treatises": 1,
     "has_convert_py": true,
     "text_replacements": 1,
@@ -427,8 +643,8 @@
     ]
   },
   {
-    "vol": 15,
-    "rank": 15,
+    "vol": "15",
+    "rank": 22,
     "score": 18.8,
     "need": 18.8,
     "grade": "good",
@@ -454,8 +670,8 @@
     "recommended_actions": []
   },
   {
-    "vol": 5,
-    "rank": 16,
+    "vol": "5",
+    "rank": 23,
     "score": 14.1,
     "need": 14.1,
     "grade": "good",
@@ -474,8 +690,8 @@
     "regressions": 0,
     "anomalies_count": 10,
     "unmatched_quotes": 0,
-    "font": "brill-font",
-    "treatises": 2,
+    "font": "minion-pro",
+    "treatises": 1,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []

@@ -58,7 +58,7 @@ from scripts.epub_builder import (
 )
 
 from shared import (
-    VOLUME_CONFIG, VOLUME_SUBTITLES,
+    VOLUME_CONFIG, VOLUME_SUBTITLES, get_volume_dir,
     EPUB_STYLESHEET, generate_font_styles,
     select_primary_font, SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, PROXIMA_NOVA_FILES, GFS_PORSON_FILES,
     CARDO_FILES, GENTIUM_PLUS_FILES, tag_latin_words,
@@ -706,10 +706,17 @@ def _split_raw_title_body(raw_text: str) -> tuple[str, str]:
 def find_cover(vol_num):
     """Find cover image for a volume."""
     covers_dir = os.path.join(_RENDER_DIR, 'covers')
-    for ext in ('.jpeg', '.jpg', '.png'):
-        path = os.path.join(covers_dir, f'v{vol_num}{ext}')
-        if os.path.exists(path):
-            return path
+    v_str = str(vol_num).lower()
+    if v_str.startswith('h'):
+        for ext in ('.png', '.jpg', '.jpeg'):
+            path = os.path.join(covers_dir, 'hb', f'hb{v_str[1:]}{ext}')
+            if os.path.exists(path):
+                return path
+    else:
+        for ext in ('.jpeg', '.jpg', '.png'):
+            path = os.path.join(covers_dir, f'v{vol_num}{ext}')
+            if os.path.exists(path):
+                return path
     return None
 
 
@@ -979,7 +986,7 @@ def load_volume_intermediate(vol_num: int, config: dict, intermediate: dict = No
     from scripts.analysis_parser import _repair_analysis_spillover_chapters
     from shared import _repair_owen_ocr_errors
     
-    vol_dir = _RENDER_DIR / 'volumes' / f'v{vol_num}'
+    vol_dir = get_volume_dir(vol_num)
     json_path = vol_dir / 'intermediate' / f'volume_{vol_num}.json'
     
     if intermediate is None:
@@ -1317,7 +1324,7 @@ def render_volume(vol_num: int, overrides: dict = None,
     
     config = merge_volume_config(vol_num, overrides)
 
-    vol_dir = _RENDER_DIR / 'volumes' / f'v{vol_num}'
+    vol_dir = get_volume_dir(vol_num)
     out_dir = vol_dir / 'output'
     out_dir.mkdir(parents=True, exist_ok=True)
     epub_path = str(out_dir / f'volume_{vol_num}.epub')
