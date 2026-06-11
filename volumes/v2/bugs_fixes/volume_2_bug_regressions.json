@@ -1,5 +1,5 @@
 {
-  "volume": 2,
+  "volume": "2",
   "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/bugs_fixes/volume_2_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/bugs_fixes/volume_2_text_integrity.json",
@@ -12,73 +12,17 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 13,
+      "observed": 0,
       "budget": 209,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "CHRISTIAN READER,",
-          "next": "IT is now six years past since I was brought under an engagement of promise for the publishing of some meditations on the subject which thou wilt find handled in the ensuing treati"
-        },
-        {
-          "file": "EPUB/ch002.xhtml",
-          "previous": "To The Reader",
-          "next": "ALPHONSUS, king of Spain, is said to have found food and physic in reading Livy; and Ferdinand, king of Sicily, in reading Quintus Curtius Rufus : but thou hast here nobler enterta"
-        },
-        {
-          "file": "EPUB/ch002.xhtml",
-          "previous": "Reader, I am Thy servant in Christ Jesus",
-          "next": "Daniel Burgess"
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "der three divisions: — his _personal grace,_ III. — VI.; and under this branch are two long digressions, designed to unfold the glory and loveliness of Christ; _— purchased grace_,",
-          "next": "VII."
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "previous": " And you have distinct mention of the love of the Splint, Romans 15:30. The apostle also peculiarly directs his supplication to him in that solemn benediction, 2 Corinthians 13:14,",
-          "next": "And such benedictions are originally supplications. He is likewise entitled unto all instituted worship, from the appointment of the administration of baptism in his name, Matthew "
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": " art, then, in this, upon a most sure bottom. If thou believest and receives the Father as love, he will infallibly be so to thee, though others may fall under his severity. But, —",
-          "next": "Obj. 3. \"I cannot find my heart making returns of love unto God. Could I find my soul set upon him, I could then believe his soul delighted in me.\""
-        },
-        {
-          "file": "EPUB/ch021.xhtml",
-          "previous": "(2ndly.) The Son has ordained and appointed it as mediator. John 15:16, \"'I have ordained you, that ye should bring forth fruit' of obedience, and that it should remain.\" And, —",
-          "next": "(3rdly.) The holy Ghost appoints and ordains believers to works of obedience and holiness, and to work holiness in others. So, in particular, Acts 13:2, he appoints and designs men"
-        },
-        {
-          "file": "EPUB/ch021.xhtml",
-          "previous": "ur walking in the light of faith does glory arise to the Father. The fruits of his love, of his grace, of his kindness, are seen upon us; and God is glorified in our behalf. And, —",
-          "next": "[2ndly.] The Son is gloried thereby. It is the will of God that as all men honor the Father, so should they honor the Son, John 5:23. And how is this done? By believing in him, Joh"
-        },
-        {
-          "file": "EPUB/ch023.xhtml",
-          "previous": "(1st.) Unto a present place, name, and room, in the house of God, and all the privileges and administrations thereof",
-          "next": "(2ndly.) To a future fullness of the great inheritance of glory, — of a kingdom purchased for that whole family whereof they are by Jesus Christ: —"
-        },
-        {
-          "file": "EPUB/ch026.xhtml",
-          "previous": "nce on him. He distributes as he will; — who should not be content with his portion? what claim can any lay to that which he distributeth as he will? which is farther manifested, —",
-          "next": "[3rdly.] By his being said to give when and what he bestows. They \"spake with other tongues, as the Spirit gave them utterance,\" Acts 2:4. He gave them to them; that is, freely: wh"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 1,
+      "observed": 0,
       "budget": 1,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch005.xhtml",
-          "text": "Part I. — The fact of communion with God is asserted, CHAP. I Passages in Scripture are quoted to show that special mention is made of communion with all the persons of the Trinity, II. Communion with the FATHER is described, III. and practical inferences dedu"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -111,40 +55,29 @@
           "count": 6
         },
         {
+          "phrase": "there are diversities of operations but it is the same",
+          "count": 5
+        },
+        {
+          "phrase": "are diversities of operations but it is the same god",
+          "count": 5
+        },
+        {
           "phrase": "it pleased the father that in him should all fullness",
           "count": 5
         },
         {
           "phrase": "to be propitiation through faith in his blood to declare",
           "count": 5
-        },
-        {
-          "phrase": "be propitiation through faith in his blood to declare his",
-          "count": 5
-        },
-        {
-          "phrase": "propitiation through faith in his blood to declare his righteousness",
-          "count": 5
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 2,
+      "observed": 0,
       "budget": 2,
       "status": "ok",
-      "samples": [
-        {
-          "page": 3,
-          "hit_ratio": 0.5,
-          "sample": "contents of vol of communion with god the father son and holy ghost prefatory note by the editor preface note to the reader by burgess part chapter that"
-        },
-        {
-          "page": 6,
-          "hit_ratio": 0.5,
-          "sample": "of the powers of the world to come unction by the spirit isaiah the various teachings of the holy ghost how the spirit of adoption and of supplication"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Reference continuation splits",
@@ -197,7 +130,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -469,7 +402,7 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 10,
+      "observed": 11,
       "budget": 15,
       "status": "ok",
       "samples": [
@@ -480,6 +413,10 @@
         {
           "file": "EPUB/ch013.xhtml",
           "text": "which, in the phrase of another evangelist, is, \"White as snow, so as no fuller o"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "is spoken to the Jews, who had advantages to learn the natural tendency of that g"
         },
         {
           "file": "EPUB/ch017.xhtml",
@@ -507,11 +444,7 @@
         },
         {
           "file": "EPUB/ch040.xhtml",
-          "text": "compared with Numbers 21:6. Philippians 14:5 2:5,6, \"Let this mind be in you, whi"
-        },
-        {
-          "file": "EPUB/ch041.xhtml",
-          "text": "his name whereby he was to be called, was Jesus; that is, a Savior. And thereby w"
+          "text": "compared with Numbers 21:6. Philippians 2:5,6, \"Let this mind be in you, which wa"
         }
       ]
     },

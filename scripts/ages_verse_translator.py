@@ -98,6 +98,10 @@ def _translate_ages_marker(code_str: str) -> str:
         book_n = int(code_str[:-4])
         ch_n = int(code_str[-4:-2])
         v_n = int(code_str[-2:])
+        # Correct AGES database corruption for Philippians chapter 2:
+        # Chapter is incorrectly stored as 3 * Verse - 1.
+        if book_n == 50 and ch_n > 4 and ch_n == 3 * v_n - 1:
+            ch_n = 2
     except ValueError:
         return f'[{code_str}]'
 

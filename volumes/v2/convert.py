@@ -129,6 +129,20 @@ OVERRIDES = {
         'Sherloclc': 'Sherlock',
         'Sherlok': 'Sherlock',
         'soul. e is': 'soul. He is',
+        '"ejusdem doloris socii.\'': '"ejusdem doloris socii."',
+        'love of the Splint': 'love of the Spirit',
+        'I a will': 'I will',
+        'John 24:19': 'Joshua 24:19',
+        '1 John 14:21': 'John 14:21',
+
+        # Punctuation spacing fixes
+        'Daniel Burgess . [f1]': 'Daniel Burgess. [f1]',
+        'Part II . —': 'Part II. —',
+        'distinguish,,': 'distinguish,',
+        'Answer . ': 'Answer. ',
+        'Objection . ': 'Objection. ',
+        'Obj . ': 'Obj. ',
+        '**1** . "How': '**1**. "How',
 
         # Volume 2 Biographical Expansions (Idempotent)
         'been Sherlock\'s': 'been William Sherlock\'s',

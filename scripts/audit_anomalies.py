@@ -487,6 +487,40 @@ def check_invalid_bible_references(text: str) -> list[tuple[str, str]]:
             continue
             
         max_ch = BIBLE_MAX_CHAPTERS[book]
+        if book == 'kings' and num_prefix == '2':
+            max_ch = 25
+        elif book == 'kings' and num_prefix == '1':
+            max_ch = 22
+        elif book == 'samuel' and num_prefix == '2':
+            max_ch = 24
+        elif book == 'samuel' and num_prefix == '1':
+            max_ch = 31
+        elif book == 'chronicles' and num_prefix == '2':
+            max_ch = 36
+        elif book == 'chronicles' and num_prefix == '1':
+            max_ch = 29
+        elif book == 'corinthians' and num_prefix == '2':
+            max_ch = 13
+        elif book == 'corinthians' and num_prefix == '1':
+            max_ch = 16
+        elif book == 'thessalonians' and num_prefix == '2':
+            max_ch = 3
+        elif book == 'thessalonians' and num_prefix == '1':
+            max_ch = 5
+        elif book == 'timothy' and num_prefix == '2':
+            max_ch = 4
+        elif book == 'timothy' and num_prefix == '1':
+            max_ch = 6
+        elif book == 'peter' and num_prefix == '2':
+            max_ch = 3
+        elif book == 'peter' and num_prefix == '1':
+            max_ch = 5
+        elif book == 'john' and num_prefix in ('1', '2', '3'):
+            max_ch = 5 if num_prefix == '1' else 1
+            
+        if max_ch == 1:
+            continue
+            
         if ch_num > max_ch:
             ref_str = m.group(0)
             anomalies.append((ref_str, f"Invalid Bible reference (chapter {ch_num} exceeds max {max_ch} for {m.group(2)})"))
@@ -591,6 +625,32 @@ def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
     for item in items:
         if item in target or target in item:
             return True
+        # For unmatched quotes, handle length-mismatched, HTML-tagged, or truncated snippets
+        if category == "Unmatched Quotation Marks":
+            # Strip unclosed HTML tags at the end of the string
+            t_clean = re.sub(r'<[^>]*$', '', target)
+            i_clean = re.sub(r'<[^>]*$', '', item)
+            # Strip all closed HTML tags
+            t_clean = re.sub(r'<[^+>]+>', '', t_clean)
+            t_clean = re.sub(r'<[^>]+>', '', t_clean)
+            i_clean = re.sub(r'<[^+>]+>', '', i_clean)
+            i_clean = re.sub(r'<[^>]+>', '', i_clean)
+            # Strip footnote brackets like [f23] or [12]
+            t_clean = re.sub(r'\[[^\]]+\]', '', t_clean)
+            i_clean = re.sub(r'\[[^\]]+\]', '', i_clean)
+            # Strip markdown formatting
+            t_clean = re.sub(r'\*\*|_', '', t_clean)
+            i_clean = re.sub(r'\*\*|_', '', i_clean)
+            # Remove ellipsis
+            t_clean = t_clean[:-3] if t_clean.endswith("...") else t_clean
+            i_clean = i_clean[:-3] if i_clean.endswith("...") else i_clean
+            # Normalize whitespace and lowercase
+            t_clean = re.sub(r'\s+', ' ', t_clean).lower().strip()
+            i_clean = re.sub(r'\s+', ' ', i_clean).lower().strip()
+            
+            if t_clean and i_clean:
+                if t_clean.startswith(i_clean) or i_clean.startswith(t_clean):
+                    return True
     return False
 
 

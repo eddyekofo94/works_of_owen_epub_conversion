@@ -6728,6 +6728,36 @@ BODY_TRANSLATIONS = {
     "Illud vero saeculo gratulor, repertos homines qui neutiquam in controversiis subtilibus tantum ponunt quantum in vera vitae emendatione, et quotidiano ad sanctitatem profectu.": (
         "<b>Modern Citation:</b> Hugo Grotius, <i>Epistle to Johannes Crellius</i>.<br/><b>Translation:</b> &ldquo;But I congratulate the age that men have been found who place by no means so much in subtle controversies as in the true amendment of life and a daily progress toward holiness.&rdquo;"
     ),
+    "Quintus Curtius Rufus": (
+        "<b>Modern Citation:</b> Roman historian of the 1st century AD, known for his history of Alexander the Great."
+    ),
+    "permista deliciis auxilia": (
+        "<b>Modern Citation:</b> Pliny the Elder, <i>Natural History</i>, Book 22, Chapter 24, Section 49.<br/><b>Translation:</b> &ldquo;remedies mixed with pleasures.&rdquo; Pliny uses the phrase to describe how nature provides plants that serve both as food and medicine."
+    ),
+    "pauci sacras Scripturas, plures nomina rerum, plurimi nomina magistrorum sequuntur": (
+        "<b>Modern Translation:</b> &ldquo;few follow the sacred Scriptures, more follow the names of things, and most follow the names of teachers.&rdquo; (A contemporary critique quoted by Daniel Burgess)."
+    ),
+    "paucissimae lectionis mancipia": (
+        "<b>Modern Translation:</b> &ldquo;slaves of very little reading&rdquo; or &ldquo;people of extremely narrow reading.&rdquo;"
+    ),
+    "contra antidotum insanire": (
+        "<b>Modern Citation:</b> Augustine of Hippo, <i>Confessions</i>, Book 5, Chapter 10, Section 18.<br/><b>Translation:</b> &ldquo;to rage against the antidote.&rdquo; Augustine uses this phrase to describe his former Manichaean state, rejecting Christian truth which is the antidote to spiritual disease."
+    ),
+    "ejusdem doloris socii": (
+        "<b>Modern Translation:</b> &ldquo;companions in the same pain [or suffering].&rdquo;"
+    ),
+    "communitas homini cum Deo": (
+        "<b>Modern Citation:</b> Cicero, <i>De Natura Deorum</i> (On the Nature of the Gods), Book 2, Chapter 62.<br/><b>Translation:</b> &ldquo;fellowship of man with God.&rdquo;"
+    ),
+    "prima Veritas": (
+        "<b>Modern Translation:</b> &ldquo;first Truth&rdquo; or &ldquo;prime Truth.&rdquo;"
+    ),
+    "Cyrop. lib. iii.": (
+        "<b>Modern Citation:</b> Xenophon, <i>Cyropaedia</i> (The Education of Cyrus), Book 3, Chapter 1, Section 36.<br/><b>Translation Summary:</b> Tigranes, asked by Cyrus what he would give to get his wife back, says: &ldquo;I would purchase her liberty with my life [literally, the price of my soul].&rdquo;"
+    ),
+    "caedemque ac cruorem, coelestum, inferorum iras": (
+        "<b>Modern Citation:</b> Livy, <i>History of Rome</i> (Ab Urbe Condita Libri), Book 10, Chapter 28, Section 13.<br/><b>Translation Summary:</b> Decius devoted himself to death, praying that he might carry away before him &ldquo;fear and flight, slaughter and blood, the anger of the celestial and infernal gods.&rdquo;"
+    ),
 }
 
 GLOSSARY_TERMS = {

@@ -1088,6 +1088,7 @@ def build_citation_note(
             (r'\bcontra\s+apion\w*\b', 'josephus', 'contra apionem'),
             (r'\bisaac\b', 'isaac', 'ad lindan'),
             (r'\bmiscellan\w*\b', 'fuller', 'miscellan'),
+            (r'\bcyrop\w*\b', 'xenophon', 'cyrop'),
             (r'\bre\s+binah\b', 'azarias', 're binah'),
             (r'\bsanct\w*\s+spir\w*\b', 'nazianz', 'spir'),
             (r'\bepist\w*\s+ad\s+evagrium\b|\bad\s+evagrium\b|\bevagrius\b', 'hieronym', 'epist'),

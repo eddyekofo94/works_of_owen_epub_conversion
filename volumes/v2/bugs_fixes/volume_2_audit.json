@@ -1,20 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v2/output/volume_2.epub",
-  "generated_at": "2026-06-09T10:44:38.793361+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-11T14:59:29.597221+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 1
-    }
-  ],
+  "warnings": [],
   "info": {
     "file_count": 86,
-    "epub_size_bytes": 7902634,
+    "epub_size_bytes": 7904044,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -40,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 131,
-      "unique_noteref_targets": 131,
-      "endnote_anchor_count": 131,
+      "noteref_count": 162,
+      "unique_noteref_targets": 162,
+      "endnote_anchor_count": 162,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -69,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 10,
+      "lowercase_paragraph_start_files": 11,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -125,6 +119,10 @@
             "text": "which, in the phrase of another evangelist, is, \"White as snow, so as no fuller o"
           },
           {
+            "file": "EPUB/ch016.xhtml",
+            "text": "is spoken to the Jews, who had advantages to learn the natural tendency of that g"
+          },
+          {
             "file": "EPUB/ch017.xhtml",
             "text": "he rejoices in him who was to take away the curse, by being made a curse for us."
           },
@@ -150,11 +148,7 @@
           },
           {
             "file": "EPUB/ch040.xhtml",
-            "text": "compared with Numbers 21:6. Philippians 14:5 2:5,6, \"Let this mind be in you, whi"
-          },
-          {
-            "file": "EPUB/ch041.xhtml",
-            "text": "his name whereby he was to be called, was Jesus; that is, a Savior. And thereby w"
+            "text": "compared with Numbers 21:6. Philippians 2:5,6, \"Let this mind be in you, which wa"
           }
         ],
         "noteref_leading_space": [],
