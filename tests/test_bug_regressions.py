@@ -2835,12 +2835,13 @@ def test_no_unwhitelisted_split_word_anomalies_in_json(volume):
     # 5. Check each chapter for split word anomalies
     unwhitelisted_anomalies = []
     for ch_idx, ch in enumerate(data.get("chapters", [])):
-        raw_text = clean_text(ch.get("raw_text", "") or "")
+        raw_text = ch.get("raw_text", "") or ""
         if not raw_text:
             continue
             
         # Apply OCR corrections before checking
         raw_text = _repair_owen_ocr_errors(raw_text, config=overrides)
+        raw_text = clean_text(raw_text)
         
         hits = check_ocr_residues(raw_text, dict_words)
         for target, desc in hits:
