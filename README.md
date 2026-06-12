@@ -329,7 +329,7 @@ The new engine:
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? Quotes 65 |
 | 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 Quotes 77 |
 | 11 | v11 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 |
-| 12 | v12 | Populated | FULL | Cov 99.91 Greek 99.80 Heb 99.55 Lat 99.80 Quotes 114 |
+| 12 | v12 | Populated | FULL | Cov 99.92 Greek 99.92 Heb 99.55 Lat 99.76 Quotes 114 |
 | 13 | v13 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
 | 14 | v14 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
 | 15 | v15 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.68 |
