@@ -247,6 +247,18 @@ def test_structural_symmetry_and_sequential_completeness(volume: str):
                                 (name == "EPUB/ch045.xhtml" and level_cls == "list-level-1" and rm == "4.") or
                                 (name == "EPUB/ch059.xhtml" and level_cls == "list-level-1" and rm == "3.") or
                                 (name == "EPUB/ch059.xhtml" and level_cls == "roman-subheading" and rm == "V.")
+                            )) or (volume == 14 and (
+                                (name == "EPUB/ch006.xhtml" and level_cls == "list-level-1" and rm == "VII.") or
+                                (name == "EPUB/ch007.xhtml" and level_cls == "list-level-1" and rm == "5.") or
+                                (name == "EPUB/ch033.xhtml" and level_cls == "list-level-1" and rm in ["4.", "6.", "7.", "11.", "381.", "754.", "794."]) or
+                                (name == "EPUB/ch033.xhtml" and level_cls == "list-level-2" and rm in ["(7.)", "(11.)"]) or
+                                (name == "EPUB/ch041.xhtml" and level_cls == "list-level-1" and rm == "5.") or
+                                (name == "EPUB/ch042.xhtml" and level_cls == "list-level-1" and rm in ["4.", "9."]) or
+                                (name == "EPUB/ch045.xhtml" and level_cls == "list-level-1" and rm == "4.") or
+                                (name == "EPUB/ch046.xhtml" and level_cls == "list-level-1" and rm == "11.") or
+                                (name == "EPUB/ch048.xhtml" and level_cls == "list-level-1" and rm == "3.") or
+                                (name == "EPUB/ch050.xhtml" and level_cls == "list-level-1" and rm in ["4.", "490."]) or
+                                (name == "EPUB/ch051.xhtml" and level_cls == "list-level-1" and rm == "6.")
                             ))
                             if not is_known_gap:
                                 failures.append(

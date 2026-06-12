@@ -261,13 +261,13 @@ def tag_unicode_ranges(text):
     # 4. Merge adjacent same-language spans separated only by optional whitespace.
     # Pattern: </span>SPACE<span same-lang> → SPACE  (space stays inside merged span)
     # Repeat until stable to handle chains of 3+ adjacent spans.
-    _el_join = re.compile(r'</span>(\s*)<span lang="el" xml:lang="el">')
-    _he_join = re.compile(r'</span>(\s*)<span lang="he" xml:lang="he" dir="rtl">')
+    _el_join = re.compile(r'(<span lang="el" xml:lang="el">[^<]*)</span>(\s*)<span lang="el" xml:lang="el">')
+    _he_join = re.compile(r'(<span lang="he" xml:lang="he" dir="rtl">[^<]*)</span>(\s*)<span lang="he" xml:lang="he" dir="rtl">')
     prev = None
     while prev != text:
         prev = text
-        text = _el_join.sub(r'\1', text)
-        text = _he_join.sub(r'\1', text)
+        text = _el_join.sub(r'\1\2', text)
+        text = _he_join.sub(r'\1\2', text)
 
     def _split_hebrew_inside_greek(m):
         content = m.group(1)

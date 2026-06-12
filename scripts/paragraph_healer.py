@@ -112,7 +112,7 @@ def _repair_unbalanced_bracket_splits(text):
 
 
 _DOC_STRUCTURE_TOKENS_RE = re.compile(
-    r'^\[\[(?:CHAPTER|PART|SUBTITLE|DIGRESSION|BLOCKQUOTE)\]\]'
+    r'^\[\[(?:CHAPTER|PART|SUBTITLE|DIGRESSION)\]\]'
 )
 
 

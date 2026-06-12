@@ -88,10 +88,28 @@ AUTHOR_ABBREV_MAP = {
     # Gregory of Nazianzus
     "nazianz":     "Gregory of Nazianzus",
     "greg":        "Gregory of Nazianzus",
+    # Gregory the Great
+    "gregory the great": "Gregory the Great (Gregorius Magnus)",
     # Gregory of Nyssa
     "nyssen":      "Gregory of Nyssa",
     # Lactantius
     "lactant":     "Lactantius",
+    # Bede
+    "beda":        "Bede",
+    "bede":        "Bede",
+    # Andradius
+    "andrad":      "Andradius",
+    "andradius":   "Andradius",
+    # Cochlaeus
+    "cochlaeus":   "Cochlaeus",
+    "cochlae":     "Cochlaeus",
+    # Pighius
+    "pighius":     "Albertus Pighius",
+    "pigh":        "Albertus Pighius",
+    # Hosius
+    "hosius":      "Stanislaus Hosius",
+    # Clemens
+    "clemens":     "Clement of Alexandria",
     # Theodoret
     "theodoret":   "Theodoret of Cyrrhus",
     # Socrates (Church historian)
@@ -300,6 +318,7 @@ CANONICAL_AUTHOR_MAP = {
     "tertullian":  "tertull",
     "iren":        "irenaeus",
     "greg":        "nazianz",
+    "gregory the great": "gregory_great",
     "aristot":     "aristotle",
     "aquinas":     "aquin",
     "damascen":    "damasc",
@@ -308,6 +327,11 @@ CANONICAL_AUTHOR_MAP = {
     "syrus":       "ephraim",
     "fulg":        "fulgent",
     "clement":     "clem",
+    "clemens":     "clem",
+    "beda":        "bede",
+    "andrad":      "andradius",
+    "cochlae":     "cochlaeus",
+    "pigh":        "pighius",
     "sozom":       "sozomen",
     "rufin":       "rufinus",
     "plin":        "pliny",
@@ -510,13 +534,15 @@ WORK_MAP = {
     ("iren", "lib"):         {"full_title": "Against Heresies",
                                "latin_title": "Adversus Haereses",
                                "std_ref": ["ANF 1"], "pg": "PG 7"},
-    # Tertullian works
     ("tertull", "adv marc"): {"full_title": "Against Marcion",
                                "latin_title": "Adversus Marcionem",
                                "std_ref": ["ANF 3:269–474"], "pl": "PL 2"},
     ("tertull", "de praes"): {"full_title": "Prescriptions Against Heretics",
                                "latin_title": "De Praescriptione Haereticorum",
                                "std_ref": ["ANF 3:243–265"], "pl": "PL 2"},
+    ("tertull", "de idol"):  {"full_title": "On Idolatry",
+                               "latin_title": "De Idololatria",
+                               "std_ref": ["ANF 3:61–76"], "pl": "PL 2"},
     # Socrates Scholasticus
     ("socrat", "hist eccles"): {"full_title": "Ecclesiastical History",
                                  "latin_title": "Historia Ecclesiastica",
@@ -917,6 +943,16 @@ WORK_MAP = {
     ("prosper", "epist ad rufi"): {"full_title": "Letter to Rufinus", "latin_title": "Epistola ad Rufinum", "pl": "PL 51"},
     ("gregory_great", "moralia"): {"full_title": "Morals on the Book of Job", "latin_title": "Moralia in Job", "pl": "PL 75/76"},
     ("gregory_great", "moral"):   {"full_title": "Morals on the Book of Job", "latin_title": "Moralia in Job", "pl": "PL 75/76"},
+    ("gregory_great", "epist"):   {"full_title": "Registrum Epistolarum (Letters)", "latin_title": "Registrum Epistolarum", "std_ref": ["NPNF2, 12–13"]},
+    ("bede", "hist"):             {"full_title": "Ecclesiastical History of the English People", "latin_title": "Historia Ecclesiastica Gentis Anglorum"},
+    ("andradius", "explic"):      {"full_title": "Orthodoxae Explicationes (Orthodox Explanations)", "latin_title": "Orthodoxarum Explicationum Libri Decem"},
+    ("andradius", "defens"):      {"full_title": "Defense of the Council of Trent", "latin_title": "Defensio Tridentinae Fidei"},
+    ("cochlaeus", "de author"):   {"full_title": "On the Authority of the Church and Scripture", "latin_title": "De Auctoritate Ecclesiae et Scripturae"},
+    ("cochlaeus", "de authoritate"): {"full_title": "On the Authority of the Church and Scripture", "latin_title": "De Auctoritate Ecclesiae et Scripturae"},
+    ("pighius", "hierarch"):      {"full_title": "Hierarchiae Ecclesiasticae Assertio (Defense of the Ecclesiastical Hierarchy)", "latin_title": "Hierarchiae Ecclesiasticae Assertio"},
+    ("pighius", "ecclesiast"):    {"full_title": "Hierarchiae Ecclesiasticae Assertio (Defense of the Ecclesiastical Hierarchy)", "latin_title": "Hierarchiae Ecclesiasticae Assertio"},
+    ("hosius", "de auth"):        {"full_title": "On the Authority of Scripture", "latin_title": "De Auctoritate Scripturae"},
+    ("hosius", "de authoritat"):  {"full_title": "On the Authority of Scripture", "latin_title": "De Auctoritate Scripturae"},
     ("bradwardine", "de causa dei"): {"full_title": "On the Cause of God against Pelagius", "latin_title": "De Causa Dei contra Pelagium"},
     ("suarez", "de perpetuitat"): {"full_title": "On the Perpetuity or Loss of Grace", "latin_title": "De Perpetuitate vel Amissione Gratiae"},
 }
@@ -1118,7 +1154,7 @@ def build_citation_note(
             (r'\b(greg|nazian).*\borat\w*\b', 'nazianz', 'orat'),
             (r'\bde\s+verbo\s+dei\b', 'bellar', 'de verbo dei'),
             (r'\bex\s+mortuis\b|\bprior\s+omnium\b|\bmystagog\w*\b', 'irenaeus', 'haer'),
-            (r'\b(?:adv(?:er)?|con(?:tra)?|ad)?\s*cels\w*\b', 'origen', 'con cels'),
+            (r'\b(?:adv(?:er)?|con(?:tra)?|ad)?\s*cels?\w*\b', 'origen', 'con cels'),
             (r'\banthropomorph\w*\b', 'theodoret', 'hist eccles'),
             (r'\brend\s+and\s+divide\s+the\s+glorious\s+body\b|\bmischief\s+of\s+schism\b', 'irenaeus', 'haer'),
             (r'\bconcio\w*\b', 'livy', 'hist'),
@@ -1127,6 +1163,10 @@ def build_citation_note(
             (r'\bmoral\w*\b', 'gregory_great', 'moralia'),
             (r'\b(?:bradwardin|causa\s+dei|de\s+cau\b|petri\s+navicula\s+dormiat|pervigil\s+laborabat)\b', 'bradwardine', 'de causa dei'),
             (r'\b(?:suarez|perpetuitat\w*|amissione|amis\b)\b', 'suarez', 'de perpetuitat'),
+            (r'\bde\s+idol\b', 'tertull', 'de idol'),
+            (r'\bgregory\b.*\bepist\b|\bepist\b.*\bgregory\b', 'gregory_great', 'epist'),
+            (r'\bgregory\b.*\blib\s+\d+\b', 'gregory_great', 'epist'),
+            (r'\bhosius\b.*\bde\s+auth\w*\b', 'hosius', 'de auth'),
         ]
         for pattern, inferred_author, inferred_work in inferences:
             if re.search(pattern, ctx_to_check, re.I):

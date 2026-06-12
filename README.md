@@ -241,6 +241,22 @@ To prevent whitelists (`volume_N_whitelist.json`) from accumulating obsolete, un
 2. **Obsolete Item Reporting:** Any whitelist item that does not suppress an active issue is flagged as "unused" in the JSON reports and triggers a console warning.
 3. **Build Gates:** The `test_no_unused_whitelist_entries` regression test automatically parses these reports and fails the test suite if a volume contains redundant/unused whitelist entries, requiring developers to keep whitelists minimal and clean.
 
+### Tracing Whitelist Match Scopes (Greediness & Usage)
+
+To trace exactly which raw issues are being silenced by every whitelist entry (and identify greedy entries that silence multiple distinct anomalies), run the whitelist auditor:
+
+```bash
+# Audit a single volume's whitelist matches and write a detailed trace report
+.venv/bin/python3 scripts/audit_whitelists.py 14
+
+# Audit whitelists across all volumes that contain one
+.venv/bin/python3 scripts/audit_whitelists.py --all
+```
+
+This generates:
+- `volumes/vN/bugs_fixes/volume_N_whitelist_audit.md`: A detailed Markdown report tracing every entry, its match count, and the exact match context.
+- `volumes/vN/bugs_fixes/volume_N_whitelist_audit.json`: A machine-readable copy of the trace data.
+
 ### Running Without Whitelists
 
 To check for false-positive whitelists or hidden anomalies, bypass all whitelists by passing `--no-whitelist`:
@@ -309,13 +325,13 @@ The new engine:
 | 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.73 |
 | 6 | v6 | Populated | FULL | Cov 99.26 Greek 100.00 Heb 100.00 Lat 99.01 Quotes 31 |
 | 7 | v7 | Populated | PRISTINE | Cov 99.76 Greek 100.00 Heb 100.00 Lat 99.50 |
-| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 Quotes 25 |
+| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 6 Quotes 25 |
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? Quotes 65 |
 | 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 Quotes 77 |
 | 11 | v11 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 |
 | 12 | v12 | Populated | FULL | Cov 99.91 Greek 99.80 Heb 99.55 Lat 99.80 Quotes 114 |
 | 13 | v13 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
-| 14 | v14 | Populated | FULL | Cov 98.45 Greek 99.17 Heb 100.00 Lat 98.83 Unres 5 Quotes 30 |
+| 14 | v14 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
 | 15 | v15 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.68 |
 | 16 | v16 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.94 Unres 1 Quotes 56 |
 
@@ -398,6 +414,7 @@ Owen/
 │   ├── audit_epub.py           # EPUB structural audit
 │   ├── audit_text_integrity.py # Text faithfulness audit
 │   ├── audit_bug_regressions.py # Known bug regression report
+│   ├── audit_whitelists.py      # Whitelist match trace & greediness audit
 │   └── report_volume_state.py  # Ranked QA state report
 ├── tests/
 │   ├── test_bug_regressions.py
