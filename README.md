@@ -318,14 +318,8 @@ Provides `#report` commands to generate or update volume-specific markdown and J
 ### 3. Volume Healer Skill (`volume-healer.skill`)
 Provides `#heal` commands to automatically heal bugs, resolve citations, correct spelling errors, and verify the progression.
 
-*   `#heal worst` — Scans rankings, checks out a new branch (`heal-v[n]`), runs pre-audit, plans the repair, executes automated fixes, verifies via tests, and reports before-and-after progression.
+*   `#heal worst` (or `#heal` without arguments) — Scans the collection by running `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`, identifies the volume with the absolute highest (worst) Need score (even if all are already PRISTINE), checks out a new branch (`heal-v[n]`), runs pre-audit, plans the repair, executes automated fixes, verifies via tests, and reports before-and-after progression.
 *   `#heal [n]` — Runs the healing pipeline for a specific volume `n`.
-
-### 4. Pristine Healer Skill (`pristine-healer.skill`)
-Provides `#pristine` commands to elevate any volume to the green `PRISTINE` quality tier.
-
-*   `#pristine [n]` — Switch to master, create a `volume-[n]-pristine` branch, fix bugs, anomalies, citation/translations, run checks, create double-copy whitelists, and push to remote.
-*   `#pristine` — Scans rankings, picks the worst non-PRISTINE volume, and runs the healing pipeline on it.
 
 
 ## What the Converter Does

@@ -1,6 +1,6 @@
 ---
 name: volume-healer
-description: Automates the process of identifying the worst quality volume, branching, pre-auditing, creating a detailed repair plan, executing repairs, verifying results, and reporting quality progression. Use when the user issues #heal worst or #heal [n] commands.
+description: Automates the process of identifying the worst quality volume (highest Need score), branching, pre-auditing, creating a detailed repair plan, executing repairs, verifying results, and reporting quality progression. Use when the user issues #heal worst, #heal, or #heal [n] commands.
 ---
 
 # Volume Healer
@@ -11,15 +11,16 @@ This skill automates the end-to-end quality healing workflow for a John Owen vol
 
 The skill is triggered by the `#heal` command:
 
-- `#heal worst` (or `#heal` without arguments): Identify the worst volume by Need score, then run the full healing pipeline.
+- `#heal worst` (or `#heal` without arguments): Identify the worst volume by running `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`, locating the volume with the highest (worst) Need score, even if all volumes are already in the PRISTINE tier (Need < 20), and running the full healing pipeline on it.
 - `#heal [n]`: Run the full healing pipeline for a specific volume `n`.
 
 ## Workflow
 
 ### 1. Identify Target Volume
-- If `#heal worst` is requested:
-  - Run the volume state report: `.venv/bin/python3 scripts/report_volume_state.py --all`
-  - Read the generated JSON report `qa/reports/volume_state_report.json` to find the volume with the highest `Need` score (the worst quality).
+- If `#heal worst` (or `#heal` without arguments) is requested:
+  - Run the volume state report: `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`
+  - Read the generated JSON report `qa/reports/volume_state_report.json` to find the volume with the highest (worst) `Need` score.
+  - **CRITICAL**: The worst volume is defined as the volume with the absolute highest `Need` score (typically Rank 1 in the report). Do NOT select the volume closest to entering the PRISTINE tier (lowest Need score among non-pristine volumes, e.g., Volume 16). You must target the highest Need score volume, even if all volumes are already in the PRISTINE tier (Need < 20).
 - If `#heal [n]` is requested:
   - Target volume `n` directly.
 
