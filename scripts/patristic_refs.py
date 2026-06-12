@@ -276,6 +276,10 @@ AUTHOR_ABBREV_MAP = {
     "themistius":  "Themistius",
     "ammian":      "Ammianus Marcellinus",
     "ammianus":    "Ammianus Marcellinus",
+    "lombard":     "Peter Lombard",
+    "gregory_great": "Gregory the Great (Gregorius Magnus)",
+    "bradwardine": "Thomas Bradwardine (Doctor Profundus)",
+    "suarez":      "Francisco Suárez",
 }
 
 # ── Canonical Author Normalization ──────────────────────────────────────────
@@ -341,6 +345,7 @@ CANONICAL_AUTHOR_MAP = {
     "morin":       "morinus",
     "themistius":  "themist",
     "ammianus":    "ammian",
+    "bradwardin":  "bradwardine",
 }
 
 # ── Work abbreviation → full citation data ───────────────────────────────────
@@ -908,6 +913,12 @@ WORK_MAP = {
     ("livy", "lib"):              {"full_title": "History of Rome", "latin_title": "Ab Urbe Condita", "std_ref": ["Ab Urbe Condita"]},
     ("themist", "orat"):          {"full_title": "Orations", "latin_title": "Orationes", "std_ref": ["Themistii Orationes"]},
     ("ammian", "hist"):           {"full_title": "Roman History", "latin_title": "Res Gestae", "std_ref": ["Loeb Class. Lib."]},
+    ("lombard", "sent"):          {"full_title": "Sentences", "latin_title": "Sententiae", "pl": "PL 192"},
+    ("prosper", "epist ad rufi"): {"full_title": "Letter to Rufinus", "latin_title": "Epistola ad Rufinum", "pl": "PL 51"},
+    ("gregory_great", "moralia"): {"full_title": "Morals on the Book of Job", "latin_title": "Moralia in Job", "pl": "PL 75/76"},
+    ("gregory_great", "moral"):   {"full_title": "Morals on the Book of Job", "latin_title": "Moralia in Job", "pl": "PL 75/76"},
+    ("bradwardine", "de causa dei"): {"full_title": "On the Cause of God against Pelagius", "latin_title": "De Causa Dei contra Pelagium"},
+    ("suarez", "de perpetuitat"): {"full_title": "On the Perpetuity or Loss of Grace", "latin_title": "De Perpetuitate vel Amissione Gratiae"},
 }
 
 # ── Detection regex ──────────────────────────────────────────────────────────
@@ -1111,6 +1122,11 @@ def build_citation_note(
             (r'\banthropomorph\w*\b', 'theodoret', 'hist eccles'),
             (r'\brend\s+and\s+divide\s+the\s+glorious\s+body\b|\bmischief\s+of\s+schism\b', 'irenaeus', 'haer'),
             (r'\bconcio\w*\b', 'livy', 'hist'),
+            (r'\blombard\b|\bsent\b|\bsen\s+d\b', 'lombard', 'sent'),
+            (r'\b(?:congruere|hujus\s+viri)\b.*\bepist\w*\s+ad\s+rusti\b', 'prosper', 'epist ad rufi'),
+            (r'\bmoral\w*\b', 'gregory_great', 'moralia'),
+            (r'\b(?:bradwardin|causa\s+dei|de\s+cau\b|petri\s+navicula\s+dormiat|pervigil\s+laborabat)\b', 'bradwardine', 'de causa dei'),
+            (r'\b(?:suarez|perpetuitat\w*|amissione|amis\b)\b', 'suarez', 'de perpetuitat'),
         ]
         for pattern, inferred_author, inferred_work in inferences:
             if re.search(pattern, ctx_to_check, re.I):

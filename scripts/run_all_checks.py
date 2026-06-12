@@ -238,7 +238,7 @@ def run_pytest(volumes: list[str], no_whitelist: bool = False) -> dict:
 
     start = datetime.now()
     try:
-        cmd = [PYTHON, "-m", "pytest", "-v", "-p", "no:faker"]
+        cmd = [PYTHON, "-m", "pytest", "-v", "-p", "no:faker", "--ignore=scratch"]
         if no_whitelist:
             cmd.append("--no-whitelist")
         cmd.extend(str(f) for f in test_files)

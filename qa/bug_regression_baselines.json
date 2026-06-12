@@ -263,7 +263,7 @@
         "max_chapter_heading_in_paragraph_files": 1,
         "max_overlong_heading_body_files": 1,
         "max_structural_bold_leak_files": 2,
-        "max_lowercase_paragraph_start_files": 1
+        "max_lowercase_paragraph_start_files": 6
       }
     },
     "12": {

@@ -1551,6 +1551,11 @@ def render_volume(vol_num: int, overrides: dict = None,
                 clean_text, map_start, map_end = clean_and_map(body_html)
                 dirty = False
 
+            # Fast pre-filter to reject phrases whose words are not present in clean_text
+            words_to_check = [w.strip("'\".,;:!?()").lower() for w in phrase.split() if any(c.isalnum() for c in w)]
+            if words_to_check and not all(w in clean_text.lower() for w in words_to_check):
+                continue
+
             first_char = phrase[0]
             last_char = phrase[-1]
             lb = ""

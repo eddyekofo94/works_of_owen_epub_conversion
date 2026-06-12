@@ -1,6 +1,6 @@
 {
   "volume": "11",
-  "status": "warn",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_bug_regressions.json",
@@ -12,145 +12,24 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 40,
+      "observed": 0,
       "budget": 150,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "BY",
-          "next": "John Owen"
-        },
-        {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "John Owen",
-          "next": "SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL"
-        },
-        {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL",
-          "next": "OXFORD, PRINTED BY LEON. LICHFIELD PRINTER TO THE UNIVERSITY, FOR TIM. ROBINSON."
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3",
-          "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "st of a crooked and perverse generation, knowing that it is but yet a little while, and he that shall come will come, and will not tarry. Yea, come, Lord Jesus, come. So prays your",
-          "next": "unworthy fellow-laborer and brother in our dear Lord Jesus"
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
-          "previous": "unworthy fellow-laborer and brother in our dear Lord Jesus",
-          "next": "John Owen"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "ople, making it become new Rome, so that the bishop of the church there was to enjoy equal privileges with him whose lot was fallen in the old imperial city. Rut our doctor adds, —",
-          "next": "Sect. 5, \" Illud ex Judaeorum exemplari transcripsisse apostoli videntur; cum Mosaica id lege cautum esset, ut judices et ministri in qualibet civitate ordinarentur , [Deuteronomy "
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "To the same purpose, and with the same confident persuasion, he speaks, Epist. ad Ephesians, [cap. 9]: —",
-          "next": "Ρύσεται ὑμᾶς Ιησοῦς Χριστὸς , ὁ ζεμελιώσας ὑμᾶς ἐπὶ τὴν πέτραν , ὠς λίθους ἐκλεκτοὺς εὐαρμολογουμένους εἰς οἰκοδομὴν ζείας Πατρὸς , ἀναφερομένους εἰς τὰ ὕψη διὰ Χριστοῦ , τοῦ ὑπὲρ "
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "nt with all that are baptized, yet he is never mixed with any that are not worthy; that is, he dwells not with any that obtain not salvation,\" Basil, Lib. de Spir. Sanc. cap. 16; —",
-          "next": "Νῦν μὲν γὰρ εἰ καὶ μὴ ἀνακέκραται τοῖς ἀναξίοις ? ἀλλὰ οῦν παρεῖναι δοκεῖ πῶς τοῖς ἅπαξ ἐσφραγισμένοις . By that seeming presence of the Holy Ghost with hypocrites that are baptize"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "of Prosper, De Ingrat., I shall transcribe the 10th chapter, to present to the reader the substance and pith of that treatise, as also the state of the controversy in those days: —",
-          "next": "— \"Quam sans tides sit vestra patescat, Gratia qua Christi populus sumus, hoc cohibetur Limite vobiscum, et formam hanc adscribitis illi: Ut cunctos vocet ilia quidem, invitetque; "
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 7,
+      "observed": 0,
       "budget": 8,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch003.xhtml",
-          "text": "Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -18; [Romans 11:29] [Isaiah 40:27] -31, 44"
-        },
-        {
-          "file": "EPUB/ch013.xhtml",
-          "text": "The latter I at present only intend. Saith he, 1. \"I know them;\" 2. \"I give them eternal life;\" 3. \"They shall never perish;\" 4. \"No man shall pluck them out of my hand;\" 5. \"My Father is omnipotent, and hath a sovereignty over all, and he taketh care of them,"
-        },
-        {
-          "file": "EPUB/ch015.xhtml",
-          "text": "Their quickening is everywhere ascribed to the Spirit that is given unto them; there is not a quickening, a life-giving power, in a quality, a created thing. In the state of nature, besides gracious dispensations and habits in the soul inclining it to that whi"
-        },
-        {
-          "file": "EPUB/ch019.xhtml",
-          "text": "Sect. 12, \"If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they render them unsavory, useless, and vain; but the principles of this doctrine are "
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "text": "As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, — and Christ himself, in the rules and laws that he hath given for the government thereof, did suppo"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "text": "That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "text": "The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: — 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
-      "observed": 25,
+      "observed": 0,
       "budget": 25,
       "status": "ok",
-      "samples": [
-        {
-          "phrase": "both to will and to do of his good pleasure",
-          "count": 9
-        },
-        {
-          "phrase": "law in their inward parts and write it in their",
-          "count": 5
-        },
-        {
-          "phrase": "in their inward parts and write it in their hearts",
-          "count": 5
-        },
-        {
-          "phrase": "all things work together for good to them that love",
-          "count": 4
-        },
-        {
-          "phrase": "he wrought in christ when he raised him from the",
-          "count": 4
-        },
-        {
-          "phrase": "wrought in christ when he raised him from the dead",
-          "count": 4
-        },
-        {
-          "phrase": "will put my law in their inward parts and write",
-          "count": 4
-        },
-        {
-          "phrase": "put my law in their inward parts and write it",
-          "count": 4
-        },
-        {
-          "phrase": "my law in their inward parts and write it in",
-          "count": 4
-        },
-        {
-          "phrase": "in them both to will and to do of his",
-          "count": 4
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Missing front CONTENTS pages",
@@ -182,68 +61,10 @@
     },
     {
       "label": "Missing enumerator markers",
-      "observed": 3,
+      "observed": 0,
       "budget": 5,
       "status": "ok",
-      "samples": [
-        {
-          "marker": "(1.)",
-          "pdf": 63,
-          "epub": 62,
-          "examples": [
-            {
-              "location": "pdf:p10",
-              "context": "Union with Christ by the indwelling of the same Spirit in him and us — This proved from, (1.) Scriptural declarations of it — 2 Peter 1:4, how we are made partakers of the divine nature — Union expressed by eating the flesh and drinking the blood of Christ — <43065"
-            },
-            {
-              "location": "pdf:p10",
-              "context": "d from the indwelling Spirit, supportment — The way whereby the Spirit gives supportment: (1.) By bringing to mind the things spoken by Christ for their consolation John 14:16, 17. 26 — (2.) By renewing his graces in them as to strength — The benefits issuing and fl"
-            },
-            {
-              "location": "pdf:p82",
-              "context": "hurch at Philippi, with the bishops and deacons. Two things do here trouble our doctor: — (1.) The mention of more bishops than one at Philippi; (2.) The knitting together of bishops and deacons, as the only two orders in the church, bringing down episcopacy one degree at l"
-            }
-          ]
-        },
-        {
-          "marker": "(2.)",
-          "pdf": 65,
-          "epub": 62,
-          "examples": [
-            {
-              "location": "pdf:p10",
-              "context": "disciples, John 17:2l — The union of the persons in the Trinity with themselves — (2.) Scriptural illustrations for the manifestation of union — The union of head and members, what it is, and wherein it doth consist — Of the union between husband and wife, and our u"
-            },
-            {
-              "location": "pdf:p10",
-              "context": "ng to mind the things spoken by Christ for their consolation John 14:16, 17. 26 — (2.) By renewing his graces in them as to strength — The benefits issuing and flowing from thence — Restraint given by the indwelling Spirit and how — The continuance of the Spirit wit"
-            },
-            {
-              "location": "pdf:p11",
-              "context": "n the form of it, which is considered — (l.) In the principle setting it on work, faith — (2.) In the manner of doing it, eyeing both precepts and promises — (3.) The end aimed at in it, the glory of God as a rewarder, Hebrews 11:6; Romans 4:4 — The principl"
-            }
-          ]
-        },
-        {
-          "marker": "(3.)",
-          "pdf": 24,
-          "epub": 23,
-          "examples": [
-            {
-              "location": "pdf:p11",
-              "context": "g it on work, faith — (2.) In the manner of doing it, eyeing both precepts and promises — (3.) The end aimed at in it, the glory of God as a rewarder, Hebrews 11:6; Romans 4:4 — The principle in us whence it proceeds, which is the new man, the Spirit, proved"
-            },
-            {
-              "location": "pdf:p302",
-              "context": "s be forgiven, as conversion is on condition they be converted, or do convert themselves. (3.) This promise being by the prophet and apostle insisted on as containing the grace whereby, eminently and peculiarly, the new covenant is distinguished from that which was abolishe"
-            },
-            {
-              "location": "pdf:p314",
-              "context": ", both on the part of God and on ours, whatever is needful for confirmation thereof. And, (3.) Because that himself is the great subject of all these promises, and in him (it being of his own purchase and procuring, he \"having obtained eternal redemption for us,\" He"
-            }
-          ]
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Low-density chapter failures",
@@ -268,7 +89,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -529,25 +350,13 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 9,
-      "budget": 1,
-      "status": "regression",
+      "observed": 6,
+      "budget": 6,
+      "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch005.xhtml",
-          "text": "unworthy fellow-laborer and brother in our dear Lord Jesus"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "text": "for his terming him a grammarian; yet, indeed, of him (such was the hard entertai"
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "text": "the spiritual peace and salvation of their souls, as naturally men are to forbear"
-        },
-        {
           "file": "EPUB/ch010.xhtml",
-          "text": "it is said of him,"
+          "text": "which how it can be done by a naked engagement for the resurrection of them that"
         },
         {
           "file": "EPUB/ch012.xhtml",

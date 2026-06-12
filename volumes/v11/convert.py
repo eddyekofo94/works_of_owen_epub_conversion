@@ -87,6 +87,61 @@ def post_extract_hook(intermediate: dict) -> dict:
             ch002['raw_text'] = ch002['raw_text'].rstrip() + " " + prefix_to_move
             # Remove from ch003
             ch003['raw_text'] = ch003['raw_text'][len(prefix_to_move):].lstrip()
+
+    # Heal the split in ch006 (Preface)
+    ch006 = next((c for c in intermediate.get('chapters', []) if c['cid'] == 'ch006'), None)
+    if ch006:
+        target_ch006 = 'quam si grammaticum appellaret")\n\nfor his terming'
+        repl_ch006 = 'quam si grammaticum appellaret") for his terming'
+        if target_ch006 in ch006['raw_text']:
+            ch006['raw_text'] = ch006['raw_text'].replace(target_ch006, repl_ch006)
+
+        target_ch006_2 = 'gubernabantur,"\n\nare to be understood'
+        repl_ch006_2 = 'gubernabantur," are to be understood'
+        if target_ch006_2 in ch006['raw_text']:
+            ch006['raw_text'] = ch006['raw_text'].replace(target_ch006_2, repl_ch006_2)
+
+        target_ch006_3 = 'ponente ut\n\ncant et fructum'
+        repl_ch006_3 = 'ponente ut eant et fructum'
+        if target_ch006_3 in ch006['raw_text']:
+            ch006['raw_text'] = ch006['raw_text'].replace(target_ch006_3, repl_ch006_3)
+
+        target_ch006_4 = 'per aliquod tempus omnino;"\n\nfarther asserting'
+        repl_ch006_4 = 'per aliquod tempus omnino;" farther asserting'
+        if target_ch006_4 in ch006['raw_text']:
+            ch006['raw_text'] = ch006['raw_text'].replace(target_ch006_4, repl_ch006_4)
+
+        target_ch006_5 = 'exurge,"\n\nspeaking to the pope,'
+        repl_ch006_5 = 'exurge," speaking to the pope,'
+        if target_ch006_5 in ch006['raw_text']:
+            ch006['raw_text'] = ch006['raw_text'].replace(target_ch006_5, repl_ch006_5)
+
+    # Heal the split in ch008 (Chapter 1)
+    ch008 = next((c for c in intermediate.get('chapters', []) if c['cid'] == 'ch008'), None)
+    if ch008:
+        target_ch008 = 'destructive to [f17]\n\nthe spiritual peace'
+        repl_ch008 = 'destructive to [f17] the spiritual peace'
+        if target_ch008 in ch008['raw_text']:
+            ch008['raw_text'] = ch008['raw_text'].replace(target_ch008, repl_ch008)
+
+    # Heal the split in ch010 (Chapter 3)
+    ch010 = next((c for c in intermediate.get('chapters', []) if c['cid'] == 'ch010'), None)
+    if ch010:
+        target_ch010 = 'Isaiah 40:11,\n\nit is said of him,'
+        repl_ch010 = 'Isaiah 40:11, it is said of him,'
+        if target_ch010 in ch010['raw_text']:
+            ch010['raw_text'] = ch010['raw_text'].replace(target_ch010, repl_ch010)
+
+        target_ch010_2 = 'lost;"\n\nall which he takes'
+        repl_ch010_2 = 'lost;" all which he takes'
+        if target_ch010_2 in ch010['raw_text']:
+            ch010['raw_text'] = ch010['raw_text'].replace(target_ch010_2, repl_ch010_2)
+
+        target_ch010_3 = 'Colossians 1:11, 12.)\n\nis very far'
+        repl_ch010_3 = 'Colossians 1:11, 12.) is very far'
+        if target_ch010_3 in ch010['raw_text']:
+            ch010['raw_text'] = ch010['raw_text'].replace(target_ch010_3, repl_ch010_3)
+
     return intermediate
 
 

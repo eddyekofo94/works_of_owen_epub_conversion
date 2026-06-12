@@ -1,15 +1,487 @@
 {
   "anomalies": {
+    "Hyphenation Anomalies": [
+      "thorough-paced",
+      "Pseudo-Clemens",
+      "co-operatione",
+      "co-operate",
+      "in-tendment",
+      "saint-ship",
+      "wire-drawn",
+      "gun-shot",
+      "man-like",
+      "bride-chamber",
+      "pre-approbation",
+      "pre-approving",
+      "pre-ordain",
+      "fore-appointment",
+      "dung-hill",
+      "pre-approves",
+      "pre-ordinated",
+      "way-lay",
+      "fore-purpose",
+      "pre-ordained",
+      "non-execution",
+      "non-producing",
+      "in-dissolvable",
+      "un-changeableness",
+      "arg-uing",
+      "com-pareth",
+      "non-rejection",
+      "in-generate",
+      "after-reckoning",
+      "day-star",
+      "cedar-wood",
+      "child-like",
+      "un-handsomely",
+      "ethico-physica",
+      "consider-ation",
+      "Anti-synod",
+      "fore-determination",
+      "pre-occupation",
+      "non-futurition",
+      "ethico-physical",
+      "con-sidered",
+      "ground-work",
+      "subduc-tion"
+    ],
+    "Punctuation Spacing Blemishes": [
+      "REdemption .",
+      "existimaverimus ,",
+      "23 .",
+      "that .",
+      ",,",
+      "(  P",
+      "them :",
+      "place :",
+      "unumquodque ,",
+      "2 .",
+      "conference .",
+      "1 .",
+      "concernment .",
+      "presence .",
+      "receive .",
+      "Obj .",
+      "necessary .",
+      "2dly .",
+      "3dly .",
+      "1st .",
+      "4thly .",
+      "lst .",
+      "..",
+      "the .",
+      "that ,",
+      "unchangeableness .",
+      "most .",
+      "is ,",
+      "incongruous ,",
+      "ergo .",
+      "upon .",
+      "say ,",
+      "like .",
+      "difficultly ."
+    ],
     "OCR & Bracket Residues": [
-      "e pectore",
-      "ab illa",
-      "e contra",
-      "con sidered",
-      "blind eyes",
       "P ositive",
+      "ab illa",
+      "blind eyes",
+      "con sidered",
+      "e contra",
+      "e pectore",
+      "f read",
       "h towards",
-      "t the",
-      "f read"
+      "t the"
+    ],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [
+      "2.",
+      "1. ... 9.",
+      "2. ... 23.",
+      "23. ... 30.",
+      "2. ... 417.",
+      "2. ... 5.",
+      "1. ... 6.",
+      "2. ... 4.",
+      "4. ... 7.",
+      "3. ... 8.",
+      "3. ... 9.",
+      "2. ... 75.",
+      "1. ... 3.",
+      "2. ... 20.",
+      "3. ... 12.",
+      "4. ... 31.",
+      "1. ... 7.",
+      "3. ... 23."
+    ],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      "The latter topic, occupying about a third part of his work, naturally arose out of the former, when he sought to prove t...",
+      "[[BLOCKQUOTE]] \" — Agylleus Hercules non mole minor, — Sed non ille rigor, patriumque in corpore robur. Luxuriant artus,...",
+      "Varro, lib. 4 De Ling. Lat., tells us that pertinacia is a continuance or going on in that wherein one ought not to cont...",
+      "Lib. 5 cap. 28, salth he, \"Quemadmodum quidam de nostris dixit, propter martyrium in Deum adjudicatus ad bestias; quonia...",
+      "[[BLOCKQUOTE]] \"Lectori pio et attento considerandum relinquimus quantum sit illis epistolis tribuendum. Non enim dubita...",
+      "A Egaei pelagi se recipere, ibique recta sursmn versus Septentrionem ascendere, et praecipuas civitates in littore sitas...",
+      "That in the judgment of Clemens no more were instituted in the church is no less evident. And this carries the convictio...",
+      "[[BLOCKQUOTE]] \"Ad hanc imaginem, apostolos ecclesias ubique disponendas curasse, et in omnibus plantationibus suis, min...",
+      "30. Paulus tandem et Silas Syriam et Cilieiam peragrantes, ver. 41, cap. 16:4, δόγματα κεκριμένα ὑπὸ τῶν ἀποστόλων, sing...",
+      "[[BLOCKQUOTE]] \"Eis,\" saith he, \"non solum justitiam, verum etiam in ilia perseverantiam dedisse monstravit. Christo eni...",
+      "Every cause of bringing sinful man to God is called by them \"auxilium.' In these three, \"Spiritus Sanctus, divina bonita...",
+      "[[BLOCKQUOTE]] \"Secundo,' saith he, \"ratione speciali, propter conditionem status humanae naturae, quae quidem liter Per...",
+      "Hammond published a rejoinder, in his \"Answer to Animadversions on the Dissertations touching Ignatius' Epistles,' etc.",
+      "The most important contributions to this controversy followed, and with them for a time it ceased. Daille, in 1666, publ...",
+      "To this end are they often exposed to winnowings of fierce winds, and shakings by more dreadful blasts than any breaths ...",
+      "Fourthly, Whereas [1 John 3:7] \"Little children, let no man deceive you, he that doeth righteousness is righteous,\" is p...",
+      "That the other term, to wit, \"perseverance,\" may be more briefly explicated, I shall take the shortest path. For perseve...",
+      "The habit of grace wherewith such believers are endued is infused, not acquired by a frequency of acts in themselves. Th...",
+      "First, then, for the doctrine of the saints' perseverance, how it stands stated in Mr. Goodwin's thoughts, and what he w...",
+      "The sum of the doctrine he is so enamored of he gives us, chap. 9 sect. 21, p. 115. \"Longa est fabula, longae ambages;\" ...",
+      "Ans. When I first cast an eye on this discourse of Mr. Goodwin, I confess I was surprised to as high a degree of admirat...",
+      "4. Through him, his being given unto us, \"made unto us of God righteousness,\" becoming \"the Lord our righteousness,\" ( [...",
+      "This is the \"foundation\" of doing them good, which \"standeth sure;\" as the apostle makes use of it to the same purpose, ...",
+      "One of these testimonies, even that mentioned in the first place, [Malachi 3:6] from whence this argument doth arise, is...",
+      "Thirdly, The discourse of this section hath a contribution of strength, such as it is, from a squaring of the love of Go...",
+      "Fourthly, From the absoluteness and independency of his will, whereof they are the acts and emanations, Romans 9:15-21. ...",
+      "Ans. First, That to \"know\" is sometimes taken in Scripture for to approve may be granted; but that the word here used mu...",
+      "Ans. The imposing of conditions and provisos upon the decrees and purposes of God, of which himself gives not the least ...",
+      "But Mr. Goodwin proceeds to object against himself, sect. 46, \"But some, it may be, will farther object against the inte...",
+      "2. That it is altogether unlikely that, in one and the same series of divine actions, there should not be the same fixed...",
+      "The sum of Mr. Goodwin's exposition of this place is this: The \"foundation of God\" is the gospel or the doctrine of it; ...",
+      "He is the servant of the Father in the accomplishment of that work for which the Spirit was put upon him. And verse 19, ...",
+      "The apostle Paul, setting out the covenant which God ratified in the blood of Christ, which shall never be broken, takes...",
+      "He is the \"surety of this testament,'' Hebrews 7:22; the \"mediator of this better covenant, established upon better prom...",
+      "(2.) That we may be kept and preserved meet for communion with him as our God, and for the enjoyment of him as our rewar...",
+      "[1.] His power or sufficiency. Upon the engagement of the name of God on \"his people's behalf, Moses carefully pleads th...",
+      "To trust in the Lord is the voluntary, free act of the creature. To be necessitated unto this act and in the performance...",
+      "Ans. God forbid! Shall those promises which are branches of the everlasting covenant of grace, called \"better promises\" ...",
+      "1. The persons here intimated are such as are under the power and enjoyment of the grace and kindness mentioned in verse...",
+      "Ans. But what tittle is there, I pray you, in the whole context to intimate any such thing? what insinuation of any such...",
+      "21. \"We are blessed with all spiritual blessings in Christ,\" [Ephesians 1:3] Surely the Holy Spirit himself, so often pr...",
+      "II. Farther to secure their continuance with God, he procureth the Holy Spirit for them, as was showed before. But becau...",
+      "The import, then, of this promise is the same with that of the promises insisted on before, with especial reference to t...",
+      "2. This no way suits Mr. Goodwin's interpretation of the place formerly mentioned and insisted on. If it be, as was said...",
+      "4. We refuse the answer suggested by Mr. Goodwin, \"That sealing depends\" (that is, in his sense) \"upon believing, as to ...",
+      "22. Others, indeed, make some progress in a disciplinary knowledge of the doctrines of the Scriptures, and can accuratel...",
+      "On this account, also, doth he press to universal holiness: [1 Corinthians 3:16] 17, \"Know ye not that ye are the temple...",
+      "This, then, is that which I say: The truth of what hath formerly been spoken concerning the manner of the Spirit's abode...",
+      "(2.) The manner of doing it, which consists in a due spiritual regard to the will of God in those ways whereby he calls ...",
+      "Let us now suppose a man to have attained some assurance of the love of God, and, \"justified by faith,\" to have \"peace w...",
+      "When men shall be taught that God takes no more care of his children in his family, but that the devil may enter in amon...",
+      "Presuppose, indeed, the saints of God to be dogs and swine, wholly sensual and unregenerate, that is, no saints, and our...",
+      "1st . [As for his oblation], it imports him as one who, in his death, hath made an end of the controversy between God an...",
+      "1. It is not the \"weakness of the flesh,\" or the feebleness and disability of our natural man to act in, or go through w...",
+      "Answer to that first argument — Doctrine may pretend to give God the glory of being no accepter of persons, and yet be f...",
+      "Prosopolepsia, or accepting of persons, is an evil in judgment, when he who is to determine in causes of righteousness h...",
+      "Ans. What weight Mr. Goodwin, with all those with whom, as to his undertaking under consideration, he is in fellowship, ...",
+      "Will it please you if it should require them to be persuaded, but not fully persuaded; to believe it, but with little an...",
+      "His 5th section is as followeth: \"If it be said that the said exhortations are means of the saints' persevering in this ...",
+      "4. The things which accompany perseverance import a continuance in faith and love to the end. If, then, the wills of the...",
+      "He saith, then, \"This cannot be proved, because the saints live and die oftentimes in opposition and disobedience unto t...",
+      "3. Doth God work upon the will as a distinct faculty alone of itself, without suiting his operations to the other facult...",
+      "He proceeds, then, sect. 6, and says, \"Secondly, Neither can the latter of the said consequences stand. God doth not mak...",
+      "But if Mr. Goodwin think that, in this controversy, \"physical\" and \"necessary,\" as applied to effects, are ἰσοδυναμοῦντα...",
+      "But he adds, \"That in none of the places cited is there any promise of perseverance is evident to him that shall duly co...",
+      "Sect. 12, \"If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the en...",
+      "Therefore, secondly, Evident it is that such promises made, and made known unto the saints, by which they are made incap...",
+      "Supposing all that Mr. Goodwin observes from this text, and that the reason of the fear here enjoined is taken from the ...",
+      "Ans. We know that the \"fear of the LORD is the beginning of wisdom,'' and the \"fear of the LORD and his goodness\" is a g...",
+      "Thirdly, To an objection framed from [1 John 4:18] that \"perfect love casteth out fear,\" he tells us, first, \"That it ma...",
+      "Ans. To let pass Mr. Goodwin's proverb with its application (it being very facile to return it to its author, there bein...",
+      "3. What was the iudgment of the primitive Christians, as in others, so in and about this head of Christian religion, is ...",
+      "I am not willing to wring this nose too far, lest blood should follow. The lives of many atheists and pagans are preferr...",
+      "Unbelief is, in our judgment, sufficient of itself to exclude any one from the kingdom of God. But yet withal, in our ju...",
+      "Ans. That the grammatical sense of the word imports \"a reiteration of some generation or other,\" is only said. Ανά hath ...",
+      "Our new birth is called our \"regeneration,'' or \"new generation,\" in allusion to our natural birth, not as a repetition ...",
+      "To proceed with that place of Scripture which I laid as the foundation of this discourse: The general way of lust's deal...",
+      "1. This neither doth nor can grow to be the habitual frame of their hearts; because, as the apostle telleth us, \"they ar...",
+      "Sect. 39, 40, he seeks to alleviate the instance commonly given of our Savior Christ, who though assured of the end, and...",
+      "Mr. Goodwin, chap. 10 sect. 21-24, pp. 189-192, gathers up sundry exceptions from the Remonstrants, which (as they also ...",
+      "Ans. The fellowship John invited believers unto, and to continue in (as hath often been observed), with him and the sain...",
+      "That the proud and presumptuous conceits of men are like to have no other issue or effect than the betraying of their so...",
+      "In the ensuing discourse, Mr. Goodwin informs us of these two things: — First, What rule he proceeds by in judging of th...",
+      "Ans. If this be all that Mr. Goodwin hath to say for the removal of this answer, that cuts the throat of his argument if...",
+      "Sect. 4. \"Again; that which God here threateneth against that double or twofold iniquity of backsliding is opposed to th...",
+      "[[BLOCKQUOTE]] \"The next passage we shall insist upon to evince the possibility of a final defection in the saints opene...",
+      "2. That in persons thus wrought upon, there is, or may be, such an assent, upon light and conviction, to the truths prop...",
+      "1. \"Whatsoever is meant by this 'heavenly gift,' certain is it that by 'tasting' is not meant any light or superficial i...",
+      "2. \"And besides, the very word itself, to taste, ordinarily in Scripture imports a real communion with, or participation...",
+      "Ans. 1. The first reason intimated is, \"That they are said to be πρόσκαιροι,\" a term given them, plainly, to distinguish...",
+      "[[BLOCKQUOTE]] \"1. If the said expressions import nothing but what hypocrites, and that 'in sensu composito,' that is, w...",
+      "and defile themselves daily with the pollutions of the world. This consequence, according to the principles and known te...",
+      "Ans. But he that hath been so far prevailed upon by the preaching of the word as to relinquish and renounce the practice..."
+    ]
+  },
+  "text_integrity": {
+    "skipped_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "weak_pages": [],
+    "dense_source_window_loss": [],
+    "bottom_of_page_text_loss": [
+      "This Edition of first published by Johnstone & Hunter, 1850-53",
+      "good thoughts and actings whatsoever. ( Romans 7:8-24; 2 Corinthians 3:5.)",
+      "pleasure? ( John 1:16; 1 Corinthians 12:13; Ephesians 1:23, 2:20- 22, 4:15, 16; Galatians 2:20; Colossians 1:17-19, 2:19.) What is it,"
+    ],
+    "top_of_page_text_loss": [],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "BY",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "John Owen",
+        "next": "SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL",
+        "next": "OXFORD, PRINTED BY LEON. LICHFIELD PRINTER TO THE UNIVERSITY, FOR TIM. ROBINSON."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3",
+        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "st of a crooked and perverse generation, knowing that it is but yet a little while, and he that shall come will come, and will not tarry. Yea, come, Lord Jesus, come. So prays your",
+        "next": "unworthy fellow-laborer and brother in our dear Lord Jesus"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "unworthy fellow-laborer and brother in our dear Lord Jesus",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "ople, making it become new Rome, so that the bishop of the church there was to enjoy equal privileges with him whose lot was fallen in the old imperial city. Rut our doctor adds, —",
+        "next": "Sect. 5, \" Illud ex Judaeorum exemplari transcripsisse apostoli videntur; cum Mosaica id lege cautum esset, ut judices et ministri in qualibet civitate ordinarentur , [Deuteronomy "
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "To the same purpose, and with the same confident persuasion, he speaks, Epist. ad Ephesians, [cap. 9]: —",
+        "next": "Ρύσεται ὑμᾶς Ιησοῦς Χριστὸς , ὁ ζεμελιώσας ὑμᾶς ἐπὶ τὴν πέτραν , ὠς λίθους ἐκλεκτοὺς εὐαρμολογουμένους εἰς οἰκοδομὴν ζείας Πατρὸς , ἀναφερομένους εἰς τὰ ὕψη διὰ Χριστοῦ , τοῦ ὑπὲρ "
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "nt with all that are baptized, yet he is never mixed with any that are not worthy; that is, he dwells not with any that obtain not salvation,\" Basil, Lib. de Spir. Sanc. cap. 16; —",
+        "next": "Νῦν μὲν γὰρ εἰ καὶ μὴ ἀνακέκραται τοῖς ἀναξίοις ? ἀλλὰ οῦν παρεῖναι δοκεῖ πῶς τοῖς ἅπαξ ἐσφραγισμένοις . By that seeming presence of the Holy Ghost with hypocrites that are baptize"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "of Prosper, De Ingrat., I shall transcribe the 10th chapter, to present to the reader the substance and pith of that treatise, as also the state of the controversy in those days: —",
+        "next": "— \"Quam sans tides sit vestra patescat, Gratia qua Christi populus sumus, hoc cohibetur Limite vobiscum, et formam hanc adscribitis illi: Ut cunctos vocet ilia quidem, invitetque; "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": " of many in these days — The great offense given and taken thereby, with the provision made for its removal — The nature of that offense and temptation thence arising considered _—",
+        "next": "Answer to some arguings of Mr. G., chap. 9, from thence against the truth proposed — The use of trials and shakings — Grounds of believers' assurance that they are so — The same fa"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "tically insinuates into their understandings and affections, for their establishment, is an exurgency of that description of himself which he gives, verse 28: from his eternity , —",
+        "next": "He is \"the everlasting God;\" from his power, — He is \"the Creator of the ends of the earth;\" from his unchangeableness, — \"He fainteth not,\" he waxeth not weary, and therefore ther"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "soluteness evinced — Proved from Isaiah 46:9-11; Psalm 33:9-11; Hebrews 6:17, 18, etc. — These places explained — The same truth by sundry reasons and arguments farther confirmed —",
+        "next": "Purpose in God of the continuance of his love and favor to believers manifested by an induction of instances out of Scripture; the first from Romans 8:28 proposed, and farther clea"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "postle's discourse manifested — The progress of Mr. G.'s exposition of this place considered — Whether men love God antecedently to his predestination and their effectual calling —",
+        "next": "To pre-ordain and pre-ordinate different — No assurance granted of the consolation professed to be intended — The great uncertainty of the dependence of the acts of God's grace men"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " intended — The great uncertainty of the dependence of the acts of God's grace mentioned on one another — The efficacy of every one of them resolved finally into the wills of men —",
+        "next": "Whether calling according to God's purpose supposeth a saving answer given to that call — The affirmative proved, and exceptions given thereto removed — What obstructions persons c"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "n, at least before their calling, are as liable to be deceived or seduced as other men. This is their own confession; and Paul says that they were sometimes deceived, [Titus 3:3] \"",
+        "next": "Ans. An exception, doubtless, unworthy him that makes it; who, had he not resolved to say all that ever had been said by any to the business in hand, would scarcely, I presume, hav"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "lance of our deliverance by Christ? These evident assertions ate as express and flat contradictions to the evident intendment of the Holy Ghost as any man is able to invent. But, —",
+        "next": "Mr. Goodwin hath many deductions out of the former \"sure and evident\" premises, to prove that this is not a promise of absolute and final perseverance (it is a strange perseverance"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "rt, that they shall not depart from me,' may be as well rendered, ' That they may not depart from me;' and so it is said in the verse foregoing, ' That they may fear me for ever.'\"",
+        "next": "Ans. Suppose the words may be thus rendered, what inconvenience will ensue? Either way they evidently and beyond exception design out the end aimed at by God; and when God intends "
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "e;' in which words of 'hearing' and 'following' him he intimateth or includeth their perseverance, as appeareth by the words immediately following, 'And I give them eternal life.'\"",
+        "next": "Ans. This, I confess, is to the purpose, if it be true; but being so contrary to what hath been (I had almost said universally) received concerning the mind of Christ in this place"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": " ever, and yet every present member thereof lose his interest and part in him; yea, the abiding of the Spirit in the apostles themselves was not absolutely promised, [John 15:10] \"",
+        "next": "Ans. 1. The design of this discourse is to prove that this promise is not made to believers in general, or those who through the word are brought to believe in Christ in all genera"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "also. That the sealing mentioned depends upon the faith of the sealed is evident, because it is said, 'In whom also, after ye believed, ye were sealed with the Spirit of promise.'\"",
+        "next": "Ans. I dare say there is no honest man that would take it well at the hand of Mr. Goodwin, or any else, that should attempt, by distinctions, or any other way, to alleviate or take"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "of the argument from thence — The saints' perseverance fully confirmed — Romans 8:33, 34 at large explained — Mr. G.'s interpretation of the place in all the parts of it confuted —",
+        "next": "Vain supposals groundlessly interserted into the apostle's discourse —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "Vain supposals groundlessly interserted into the apostle's discourse —",
+        "next": "What Christ intercedes for, for believers farther manifested — The sum of what is assigned to the intercession of Christ by Mr. G. — How far it is all from yielding the least conso"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "G.'s arguments against the doctrine of the saints' perseverance — His sixth argument about the usefulness of the doctrine under consideration to the work of the ministry proposed —",
+        "next": "His proof of the minor proposition considered and answered — Many pretenders to promote godliness by false doctrines — Mr. G.'s common interest in this argument — His proofs of the"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "s arguing discovered — The doctrine by him opposed mistaken, ignorantly or wilfully — Objections proposed by Mr. G. to himself to he answered — The objection as proposed disowned —",
+        "next": "Certainty of the love of God, in what sense a motive to obedience — The doctrine of apostasy denies the unchangeableness of God's love to believers placeth qualifications in the ro"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "ifications in the room of persons — How the doctrine of perseverance promiseth the continuance of the love of God to believers — Certainty of reward encouraging to regular action —",
+        "next": "Promises made to persons qualified, not suspended upon those qualifications — Means appointed of God for the accomplishment of a determined end certain — Means not always condition"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "her discussed — The power ascribed by Mr. G. to men for the strengthening and making willing the Spirit in them considered — The aptness of the saints to perform, what and whence —",
+        "next": "The opposition they have in them thereunto — Gospel obedience, how easy — The conclusion —"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "The opposition they have in them thereunto — Gospel obedience, how easy — The conclusion —",
+        "next": "Answer to chap. 13 of his book proposed."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "Besides what he relateth of his conquest of it in other places, he addeth, —",
+        "next": "That \"the saints, notwithstanding the possibility of their final falling away, have, or may have, such an assurance of the perpetuity of their standing in the grace and favor of Go"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": " with him. If he can beat us, not only from Scripture, but from all our spiritual sense and experience, doubtless it is to no purpose to contend any longer with him. Hence, then, —",
+        "next": "He inferreth that \"to abstain from sinning,\" — that is, sinning customarily and against conscience, so as to endanger the loss of the favor of God, — \"is no such great mastery, no "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "Mr. G.'s entrance and preface to his arguments from the apostasy of the saints considered — The weakness of his first argument — The import of _it —",
+        "next": "Answer to that first argument — Doctrine may pretend to give God the glory of being no accepter of persons, and yet be false — Justification by works of that rank and order — Accep"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "ife, seeking any thing at the hand of God, but was of another mind, if he understood his own supplications. To what is here urged against this catholic faith of believers, I say, —",
+        "next": "That exhortations are the means of perseverance, inasmuch as by them, in their place and kind, and with them, the Spirit of God effectually works this perseverance, or the matter o"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "hreatenings is attempted to be proved by an induction of observations, which, being the sum of all that is spoken to this head, must be transcribed at large, and is as followeth: —",
+        "next": "Sect. 12, \"If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they r"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "all moral operations — [Romans 7:19] -22, opened — The second, that sin cannot reign in a regenerate person — The third, that regenerate _persons sin not with their whole consent —",
+        "next": "Answer to the argument at the entrance proposed — Believers never sin with their whole consent and wills — Mr. G.'s attempt to remove the answer — His exceptions considered and rem"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "elievers how concerned in comminations —_ Threatenings proper to unbelievers for their sins — Farther objections proposed and removed — Of the progress of lust in tempting to sin —",
+        "next": "The effect of lust in temptations — Difference between regenerate and unregenerate persons as to the tempting of lust: 1. In respect of universality;"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "Whether believers may sin out of malice and with deliberation — Of the state of believers who upon their sin may be excommunicated — Whether the body of Christ may be dismembered —",
+        "next": "What body of Christ it is that is intended — Mr. G.'s thoughts to this purpose examined — Mr. G.'s discourse of the way whereby Christ keeps or may keep his members examined — Memb"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "nce between regenerate and unregenerate persons in their being drawn away by lust — Farther description of him who is drawn away by lust, and of the difference formerly mentioned —",
+        "next": "Of lust's enticing — How far this may befall regenerate men — To do sin, Romans 7, what it intendeth — Lust conceiving, wherein it consists — Of the bringing forth of sin, and how "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "motions and suggestions within you, and you shall be filled with him;' that is, 'Ye shall find him moving and assisting you upon all occasions at a higher and more glorious rate.'\"",
+        "next": "Ans. 1. What this \"joining of our wills to the will of the Spirit\" is was in part manifested before. The \"will of the Spirit\" is that we be mortified. His motions hereunto are his "
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": " The first, of his knowledge of the general course of the Scriptures — Of the experience of his own heart — And his observations of the ways of others — Of his rational abilities —",
+        "next": "Ezekiel 18:24, 25, proposed to consideration — Mr. G.'s sense of this place — The words opened — Observations for the opening of the text — The words farther weighed — An entrance "
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "previous": "y that all who died in the wilderness of the children of Israel went to hell and came short of eternal life, and yet they all fell there because of their iniquities. But he adds, —",
+        "next": "Sect. 4. \"Again; that which God here threateneth against that double or twofold iniquity of backsliding is opposed to that life which is promised to repentance and perseverance in "
+      }
+    ],
+    "inline_structural_markers": [
+      "Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -18; [Romans 11:29] [Isaiah 40:27] -31, 44",
+      "The latter I at present only intend. Saith he, 1. \"I know them;\" 2. \"I give them eternal life;\" 3. \"They shall never perish;\" 4. \"No man shall pluck them out of my hand;\" 5. \"My Father is omnipotent, and hath a sovereignty over all, and he taketh care of them,",
+      "Their quickening is everywhere ascribed to the Spirit that is given unto them; there is not a quickening, a life-giving power, in a quality, a created thing. In the state of nature, besides gracious dispensations and habits in the soul inclining it to that whi",
+      "Sect. 12, \"If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they render them unsavory, useless, and vain; but the principles of this doctrine are ",
+      "As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, — and Christ himself, in the rules and laws that he hath given for the government thereof, did suppo",
+      "That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to",
+      "The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: — 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
+    ],
+    "repeated_windows": [
+      "both to will and to do of his good pleasure",
+      "law in their inward parts and write it in their",
+      "in their inward parts and write it in their hearts",
+      "all things work together for good to them that love",
+      "he wrought in christ when he raised him from the",
+      "wrought in christ when he raised him from the dead",
+      "will put my law in their inward parts and write",
+      "put my law in their inward parts and write it",
+      "my law in their inward parts and write it in",
+      "in them both to will and to do of his",
+      "to will and to do of his own good pleasure",
+      "depart and the hills be removed but my kindness shall",
+      "the knowledge of his glory in the face of jesus",
+      "knowledge of his glory in the face of jesus christ",
+      "dono perseverantes esse non possint verum etiam ut per hoc",
+      "perseverantes esse non possint verum etiam ut per hoc donum",
+      "esse non possint verum etiam ut per hoc donum non",
+      "non possint verum etiam ut per hoc donum non nisi",
+      "possint verum etiam ut per hoc donum non nisi perseverantes",
+      "verum etiam ut per hoc donum non nisi perseverantes sint",
+      "for if they had been of us they would no",
+      "if they had been of us they would no doubt",
+      "they had been of us they would no doubt have",
+      "had been of us they would no doubt have continued",
+      "been of us they would no doubt have continued with"
+    ],
+    "ignored_warnings": [
+      "low_latin_translation_coverage",
+      "suspicious_large_number_starts",
+      "roman_heading_candidates",
+      "enumerator_sequence_candidates",
+      "dense_source_window_loss"
     ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-06-11T19:45:27.312995+00:00",
+  "generated_at": "2026-06-12T10:26:09.968203+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 67,
-    "epub_size_bytes": 7029403,
+    "epub_size_bytes": 7029524,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 226,
-      "unique_noteref_targets": 226,
-      "endnote_anchor_count": 226,
+      "noteref_count": 228,
+      "unique_noteref_targets": 228,
+      "endnote_anchor_count": 228,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -63,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 9,
+      "lowercase_paragraph_start_files": 6,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -100,20 +100,8 @@
         "spaced_caps": [],
         "lowercase_paragraph_start": [
           {
-            "file": "EPUB/ch005.xhtml",
-            "text": "unworthy fellow-laborer and brother in our dear Lord Jesus"
-          },
-          {
-            "file": "EPUB/ch006.xhtml",
-            "text": "for his terming him a grammarian; yet, indeed, of him (such was the hard entertai"
-          },
-          {
-            "file": "EPUB/ch008.xhtml",
-            "text": "the spiritual peace and salvation of their souls, as naturally men are to forbear"
-          },
-          {
             "file": "EPUB/ch010.xhtml",
-            "text": "it is said of him,"
+            "text": "which how it can be done by a naked engagement for the resurrection of them that"
           },
           {
             "file": "EPUB/ch012.xhtml",
@@ -144,5 +132,12 @@
     },
     "nav_link_count": 34,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
-  }
+  },
+  "unused_whitelist_epub_warnings": [
+    "low_latin_translation_coverage",
+    "suspicious_large_number_starts",
+    "roman_heading_candidates",
+    "enumerator_sequence_candidates",
+    "dense_source_window_loss"
+  ]
 }

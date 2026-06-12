@@ -372,31 +372,43 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
 def extract_pdf_pages(pdf_path: Path, no_whitelist: bool = False) -> tuple[list[str], dict[str, Any]]:
     pages: list[str] = []
 
-    # Infer volume number from path
-    vol_dir = pdf_path.parent.parent
+    # Infer volume number robustly from filename or directory path
+    volume = None
+    m = re.search(r'(?:volume_|v)(\d+)', pdf_path.name, re.I)
+    if m:
+        volume = int(m.group(1))
+    else:
+        for p in [pdf_path.parent, pdf_path.parent.parent]:
+            if p.name.lower().startswith('v') and p.name[1:].isdigit():
+                volume = int(p.name[1:])
+                break
+
     skipped_pages = []
-    try:
-        volume = int(vol_dir.name[1:])
-        if not no_whitelist:
-            whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
-            if whitelist_path.exists():
+    skipped_detected = []
+    if volume is not None and not no_whitelist:
+        root = Path(__file__).resolve().parent.parent
+        vol_dir = root / "volumes" / f"v{volume}"
+        whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+        if whitelist_path.exists():
+            try:
                 import json
                 wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
                 skipped_pages = wl.get("text_integrity", {}).get("skipped_pages", [])
-    except Exception:
-        pass
+            except Exception:
+                pass
 
     with fitz.open(pdf_path) as doc:
         for page in doc:
             page_num_1indexed = page.number + 1
             if page_num_1indexed in skipped_pages:
                 pages.append("")
+                skipped_detected.append(page_num_1indexed)
                 continue
             blocks = page.get_text("dict")["blocks"]
             page_content = []
             for b in blocks:
                 if b["type"] != 0:
-                    continue
+                     continue
                 for line in b["lines"]:
                     line_text = []
                     for span in line["spans"]:
@@ -412,7 +424,7 @@ def extract_pdf_pages(pdf_path: Path, no_whitelist: bool = False) -> tuple[list[
             if is_source_footnotes_page(page_text):
                 break
             pages.append(page_text)
-    return pages, {"page_count": len(pages)}
+    return pages, {"page_count": len(pages), "skipped_detected": skipped_detected}
 
 
 def compare_word_coverage(pdf_text: str, epub_text: str) -> dict[str, Any]:
@@ -1863,7 +1875,7 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
 
     # Track used text_integrity whitelist items
     used_text_integrity = {
-        "skipped_pages": set(),
+        "skipped_pages": set(pdf_meta.get("skipped_detected", [])),
         "weak_pages": set(),
         "dense_source_window_loss": set(),
         "bottom_of_page_text_loss": set(),

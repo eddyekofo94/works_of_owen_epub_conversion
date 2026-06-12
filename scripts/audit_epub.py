@@ -486,7 +486,7 @@ class Audit:
                 for match in lc_para_starts
                 for attrs in [match.group("attrs")]
                 if not re.search(
-                    r'class="[^"]*\b(?:title-line|title-connector|descriptive|quote-block|greek-title)\b',
+                    r'class="[^"]*\b(?:title-line|title-connector|descriptive|quote-block|greek-title|signature-intro)\b',
                     attrs,
                     re.I,
                 )
