@@ -12,7 +12,7 @@ This skill automates the workflow to elevate a John Owen volume to green status 
 The skill is triggered by the `#pristine` command:
 
 -   `#pristine [n]`: Elevate volume `n` to `PRISTINE` quality.
--   `#pristine`: Scans the collection, identifies the volume with the worst (highest) quality `Need` score, and automatically runs the healing workflow on it.
+-   `#pristine`: Scans the collection, identifies the volume with the worst (highest) quality `Need` score (i.e. the highest score in the report, typically Rank 1, such as Volume 11), and automatically runs the healing workflow on it. Do not pick the one with the lowest Need score among non-pristine volumes.
 
 ## Workflow
 
@@ -47,5 +47,6 @@ The skill is triggered by the `#pristine` command:
 
 If `#pristine` is called without a volume number:
 1.  Execute `.venv/bin/python3 scripts/report_volume_state.py --no-readme` to obtain the latest collection rankings.
-2.  Locate the worst non-PRISTINE volume (highest Need score).
-3.  Launch the `#pristine [worst_volume_number]` workflow.
+2.  Locate the worst non-PRISTINE volume (the one with the HIGHEST Need score, which is Rank 1 at the top of the report table, such as Volume 11).
+    - **CRITICAL WARNING**: Do NOT select the volume closest to entering the PRISTINE tier (the one with the lowest Need score among non-pristine volumes, like Volume 16). You MUST target the worst quality volume (highest Need score) to lift it.
+3.  Launch the `#pristine [worst_volume_number]` workflow on that worst volume (e.g. Volume 11).
