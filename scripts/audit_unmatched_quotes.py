@@ -21,7 +21,9 @@ def highlight_quotes(text: str) -> str:
 
 def count_quotes(text: str) -> int:
     """Count double quotes in the text."""
-    return len(re.findall(r'["“”]', text))
+    # Strip HTML tags to avoid counting double quotes inside attribute values (e.g. lang="la")
+    clean_text = re.sub(r'<[^>]+>', '', text)
+    return len(re.findall(r'["“”]', clean_text))
 
 def main():
     parser = argparse.ArgumentParser(description="Audit and output unclosed/unmatched quotation marks for a given volume.")

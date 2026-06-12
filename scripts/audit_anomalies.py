@@ -533,8 +533,10 @@ def check_unmatched_quotes(text: str) -> list[tuple[str, str]]:
     anomalies = []
     paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
     for para in paragraphs:
+        # Strip HTML tags to avoid counting double quotes inside attribute values (e.g. lang="la")
+        clean_para = re.sub(r'<[^>]+>', '', para)
         # Count all straight and curly double quotes
-        quotes_count = len(re.findall(r'["“”]', para))
+        quotes_count = len(re.findall(r'["“”]', clean_para))
         if quotes_count % 2 != 0:
             snippet = para[:120] + "..." if len(para) > 120 else para
             snippet_clean = snippet.replace('\n', ' ')

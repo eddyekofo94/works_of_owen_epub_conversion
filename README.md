@@ -309,10 +309,10 @@ The new engine:
 | 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.73 |
 | 6 | v6 | Populated | FULL | Cov 99.26 Greek 100.00 Heb 100.00 Lat 99.01 Quotes 31 |
 | 7 | v7 | Populated | PRISTINE | Cov 99.76 Greek 100.00 Heb 100.00 Lat 99.50 |
-| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 Quotes 26 |
+| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 10 Quotes 25 |
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? Quotes 65 |
 | 10 | v10 | Populated | FULL | Cov 99.47 Greek 99.75 Heb 100.00 Lat ? Unres 4 Quotes 77 |
-| 11 | v11 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 Quotes 99 |
+| 11 | v11 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 |
 | 12 | v12 | Populated | FULL | Cov 99.91 Greek 99.80 Heb 99.55 Lat 99.80 Quotes 114 |
 | 13 | v13 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
 | 14 | v14 | Populated | FULL | Cov 98.45 Greek 99.17 Heb 100.00 Lat 98.83 Unres 5 Quotes 30 |

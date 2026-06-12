@@ -5,7 +5,7 @@ Some of these may be legitimate (e.g., multi-paragraph quotes where only the las
 while others may indicate dropped words, OCR defects, or punctuation errors.
 
 - **Total Paragraphs Checked:** 3210
-- **Unmatched Paragraphs Found:** 26
+- **Unmatched Paragraphs Found:** 25
 
 ---
 
@@ -58,22 +58,14 @@ The penal constitutions of the Judaical polity (for so they were, which yet I ur
 ---
 
 ### 7. Chapter: *Of Toleration;* (Paragraph 18)
-* **Quotation Marks Count:** 9
+* **Quotation Marks Count:** 5
 * **Paragraph Text (Quotes Highlighted):**
 
 The word here used to express his sin, is **"**נֹקֵב, signifying also to pierce, and is twice so rendered — Isaiah 36:6; Hebrews 3:14. Desperate expressions, piercing the honor and glory of the Most High willingly and willfully, were doubtless his death-deserving crime. It is the same word that Balak used to Balaam, when he would have persuaded him to a deliberate cursing and pouring out of imprecations on the people of God, Numbers 23:13, 14. A resolved piercing of the name and glory of God, with cursed reproaches, is the crime here sentenced to death. The schoolmen tell us, that to complete blasphemy, the perverse affection of the heart, in detestation of the goodness of God, joined with the reproaches of his name, is required. [f141] Which, how remote it is from error of any sort (I mean within the compass of them whereof we speak), being a pure misapprehension of the understanding, embraced (though falsely) for the honor of God, I suppose is easily conceived; and so, consequently, that the argument for the death of a person erring, because he came off no easier of old who blasphemed, is **"**a baculo ad angulum.**"** If any shall say that blasphemy is of a larger extent and more general acceptation in the Scripture, I shall not deny it; but yet that that kind of blasphemy which was punishable with violent death, was comprehensive of any inferior crime, I suppose cannot be proved. However, blasphemy in the Scripture is never taken in any place, that I can remember, for a man's maintaining his own error; but for his reviling and speaking evil of the truth which he receiveth not: and so Paul before his conversion was a blasphemer. (Acts 18:6, 26:11; 1 Timothy 1:13.) Now, if men to whom forbearance is indulged in by-paths of their own, shall make it their work to cast dirt on the better ways of truth, it is to me very questionable whether they do not offend against that prime dictate of nature for the preservation of human society, **"**<span lang=**"**la**"** xml:lang=**"**la**"**>Quod tibi fieri non vis, alteri ne feceris;</span>**"** and for such I will be no advocate. Neither can, indeed, the law of blasphemy be impartially urged by us in any case of heresy whatsoever. For —
 
 ---
 
-### 8. Chapter: *The Steadfastness of the Promises, and the Sinfulness of Stagge* (Paragraph 1)
-* **Quotation Marks Count:** 19
-* **Paragraph Text (Quotes Highlighted):**
-
-<section class=**"**treatise-title-page**"** epub:type=**"**titlepage**"**> <p class=**"**title-line -major**"**>SERMON 4.</p> <p class=**"**title-line -medium**"**>THE STEADFASTNESS OF THE PROMISES, AND</p> <p class=**"**title-line -medium**"**>THE SINFULNESS OF STAGGERING.</p> <p class=**"**title-line -medium**"**>**"**He staggered not at the promise of God through unbelief.**"**</p> <p class=**"**title-line -medium**"**>—</ **"**>Romans 4:20.</p> </section> IN the first chapters of this epistle, the apostle, from Scripture and the constant practice of all sorts of men of all ages, Jews and Gentiles, wise and barbarians, proves all the world, and every individual therein, to **"**have sinned and come short of the glory of God;**"** — and not only so, but that it was utterly impossible that, by their own strength, or by virtue of any assistance communicated, or privileges enjoyed, they should ever attain to a righteousness of their own that might be acceptable unto God.
-
----
-
-### 9. Chapter: *The Steadfastness of the Promises, and the Sinfulness of Stagge* (Paragraph 2)
+### 8. Chapter: *The Steadfastness of the Promises, and the Sinfulness of Stagge* (Paragraph 2)
 * **Quotation Marks Count:** 1
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -81,7 +73,7 @@ Hereupon he concludes that discourse with these two positive assertions: — Fir
 
 ---
 
-### 10. Chapter: *The Steadfastness of the Promises, and the Sinfulness of Stagge* (Paragraph 125)
+### 9. Chapter: *The Steadfastness of the Promises, and the Sinfulness of Stagge* (Paragraph 125)
 * **Quotation Marks Count:** 17
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -89,7 +81,7 @@ When God will do good for Zion, he requires that his remembrancers give him no r
 
 ---
 
-### 11. Chapter: *The Shaking and Translating of Heaven and Earth* (Paragraph 132)
+### 10. Chapter: *The Shaking and Translating of Heaven and Earth* (Paragraph 132)
 * **Quotation Marks Count:** 1
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -97,7 +89,7 @@ When God will do good for Zion, he requires that his remembrancers give him no r
 
 ---
 
-### 12. Chapter: *The Shaking and Translating of Heaven and Earth* (Paragraph 133)
+### 11. Chapter: *The Shaking and Translating of Heaven and Earth* (Paragraph 133)
 * **Quotation Marks Count:** 1
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -105,7 +97,7 @@ When God will do good for Zion, he requires that his remembrancers give him no r
 
 ---
 
-### 13. Chapter: *The Branch of the Lord the Beauty of Zion: Or, the Glory of the* (Paragraph 146)
+### 12. Chapter: *The Branch of the Lord the Beauty of Zion: Or, the Glory of the* (Paragraph 146)
 * **Quotation Marks Count:** 7
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -113,7 +105,7 @@ When God will do good for Zion, he requires that his remembrancers give him no r
 
 ---
 
-### 14. Chapter: *Advantage of the Kingdom of Christ* (Paragraph 2)
+### 13. Chapter: *Advantage of the Kingdom of Christ* (Paragraph 2)
 * **Quotation Marks Count:** 1
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -121,7 +113,7 @@ When God will do good for Zion, he requires that his remembrancers give him no r
 
 ---
 
-### 15. Chapter: *Advantage of the Kingdom of Christ* (Paragraph 29)
+### 14. Chapter: *Advantage of the Kingdom of Christ* (Paragraph 29)
 * **Quotation Marks Count:** 3
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -129,7 +121,7 @@ When the beginning of the saints' departure from under the dominion of Antichris
 
 ---
 
-### 16. Chapter: *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.* (Paragraph 47)
+### 15. Chapter: *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.* (Paragraph 47)
 * **Quotation Marks Count:** 1
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -137,7 +129,7 @@ See Nehemiah 4:1-6. And ever the nearer any nation is to this people, the greate
 
 ---
 
-### 17. Chapter: *The Glory and Interest of Nations Professing the Gospel.* (Paragraph 82)
+### 16. Chapter: *The Glory and Interest of Nations Professing the Gospel.* (Paragraph 82)
 * **Quotation Marks Count:** 5
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -145,15 +137,15 @@ See Nehemiah 4:1-6. And ever the nearer any nation is to this people, the greate
 
 ---
 
-### 18. Chapter: *How We May Bring Our Hearts to Bear Reproofs.* (Paragraph 1)
-* **Quotation Marks Count:** 25
+### 17. Chapter: *How We May Bring Our Hearts to Bear Reproofs.* (Paragraph 1)
+* **Quotation Marks Count:** 15
 * **Paragraph Text (Quotes Highlighted):**
 
 <section class=**"**treatise-title-page**"** epub:type=**"**titlepage**"**> <p class=**"**title-line -major**"**>SERMON 13.</p> <p class=**"**title-line -medium**"**>HOW WE MAY BRING OUR HEARTS</p> <p class=**"**title-line -medium**"**>TO BEAR REPROOFS.</p> </section> Let the righteous smite me, it shall be a kindness; and let him reprove me, it shall be an excellent oil, which shall not break my head: for yet my prayer also shall be in their calamities.**"** — Psalm 141:5. IT is generally agreed by expositors that this psalm, as that foregoing, with two of those that follow, was composed by David in the time of his banishment, or flight, from the court of Saul. The state wherein he describeth himself to have been, the matter of his pleas and prayers contained in them, with sundry express circumstances regarding that season, and his condition therein, do manifest that to have been the time of their composure. That the psalmist was now in some distress, whereof he was deeply sensible, is evident from that vehemency of his spirit which he expresseth in the reiteration of his request or supplication, verse 1; and by his desire that his prayer might come before the Lord as incense; and the lifting up of his hands as the evening sacrifice, verse 2. The Jewish expositors guess, not improbably, that in that allusion he had regard unto his present exclusion from the holy services of the tabernacle; which in other places he deeply complains of. For the matter of his prayer, in this beginning of the psalm (for I shall not look beyond the text), it respecteth himself, and his deportment under his present condition; which he desireth may be harmless and holy, — becoming himself, and useful unto others. And whereas he was two ways liable to miscarry, — first, By too high an exasperation of spirit against his oppressors and persecutors; and, secondly, By a fraudulent and pusillanimous compliance with them in their wicked courses; which are the two extremes that men are apt sinfully to run into in such conditions, — he prays earnestly to be delivered from them both. The first he hath respect unto, verse 3, **"**Set a watch, O Lord, before my mouth; keep the door of my lips;**"** — namely, that he might not, under those great provocations which were given him, break forth into an unseemly intemperance of speech against his unjust oppressors; which sometimes fierce and unreasonable cruelties will wrest from very sedate and moderate spirits. But it was the desire of this holy psalmist, as, in like cases, it should be ours, that his heart might be always preserved in such a frame, under the conduct of the Spirit of God, as not to be surprised into an expression of distempered passion in any of his words or sayings. The other he regards in his earnest supplication to be delivered from it, verse 4, **"**Incline not my heart to any evil thing, to practice wicked works with men that work iniquity; and let me not eat of their dainties.**"** There are two parts of his request unto the purpose intended. First, That, by the power of God's grace influencing his mind and soul, his heart might not be inclined unto any communion or society with his wicked adversaries in their wickedness. Secondly, That he might be preserved from a liking of, or a longing after, those things which are the baits and allurements whereby men are apt to be drawn into societies and conspiracies with the workers of iniquity: **"**And let me not eat of their dainties.**"** See Proverbs 1:10-14. For he here describeth the condition of men prospering for a season in a course of wickedness; — they first jointly give up themselves unto the practice of iniquity, and then together solace themselves in those satisfactions of their lusts which their power and interest in the world do furnish them withal. These are the **"**dainties**"** of which an impotent longing and desire do betray the minds of unstable persons unto a compliance with ways of sin and folly; for I look on these **"**dainties**"** to comprise whatever **"**the lust of the eyes, the lust of the flesh,**"** or **"**the pride of life,**"** can afford. All these David prays to be delivered from any inclination unto, especially when they are made the allurements of a course of sin. In the enjoyment of these dainties, it is the common practice of wicked men to soothe up, approve of, and mutually encourage one another in the way and course wherein they are engaged. And this completes that goodly felicity which in this world so many aspire unto, and whereof alone they are capable. The whole of it is but a society in perishing sensual enjoyments, without control, and with mutual applauses from one another.
 
 ---
 
-### 19. Chapter: *Except. III.* (Paragraph 1)
+### 18. Chapter: *Except. III.* (Paragraph 1)
 * **Quotation Marks Count:** 3
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -161,7 +153,7 @@ See Nehemiah 4:1-6. And ever the nearer any nation is to this people, the greate
 
 ---
 
-### 20. Chapter: *Except. IV.* (Paragraph 1)
+### 19. Chapter: *Except. IV.* (Paragraph 1)
 * **Quotation Marks Count:** 3
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -169,7 +161,7 @@ See Nehemiah 4:1-6. And ever the nearer any nation is to this people, the greate
 
 ---
 
-### 21. Chapter: *Except.* (Paragraph 33)
+### 20. Chapter: *Except.* (Paragraph 33)
 * **Quotation Marks Count:** 7
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -177,7 +169,7 @@ Secondly. **"**We cannot,**"** say the Papists again, **"**know the Scripture to
 
 ---
 
-### 22. Chapter: *Except.* (Paragraph 35)
+### 21. Chapter: *Except.* (Paragraph 35)
 * **Quotation Marks Count:** 1
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -185,7 +177,7 @@ Secondly. **"**We cannot,**"** say the Papists again, **"**know the Scripture to
 
 ---
 
-### 23. Chapter: *Except.* (Paragraph 63)
+### 22. Chapter: *Except.* (Paragraph 63)
 * **Quotation Marks Count:** 17
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -193,7 +185,7 @@ Secondly. **"**We cannot,**"** say the Papists again, **"**know the Scripture to
 
 ---
 
-### 24. Chapter: *Except.* (Paragraph 72)
+### 23. Chapter: *Except.* (Paragraph 72)
 * **Quotation Marks Count:** 5
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -201,7 +193,7 @@ And, be sure, leave not off till thou find thy faith raised from so low a bottom
 
 ---
 
-### 25. Chapter: *The Chamber of Imagery in the Church of Rome Laid Open.* (Paragraph 107)
+### 24. Chapter: *The Chamber of Imagery in the Church of Rome Laid Open.* (Paragraph 107)
 * **Quotation Marks Count:** 11
 * **Paragraph Text (Quotes Highlighted):**
 
@@ -209,7 +201,7 @@ But Christ dealt not so with his apostles, though he were Lord of all, when he s
 
 ---
 
-### 26. Chapter: *Prefatory Note (Sermon 7 — Advantage of the Kingdom of Christ)* (Paragraph 3)
+### 25. Chapter: *Prefatory Note (Sermon 7 — Advantage of the Kingdom of Christ)* (Paragraph 3)
 * **Quotation Marks Count:** 3
 * **Paragraph Text (Quotes Highlighted):**
 
