@@ -2824,10 +2824,11 @@ def test_no_unwhitelisted_split_word_anomalies_in_json(volume):
     
     # 3. Load whitelist
     whitelist = {}
-    vol_dir = get_volume_dir(volume)
-    whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
-    if whitelist_path.exists():
-        whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+    if os.environ.get("OWEN_NO_WHITELIST") != "1":
+        vol_dir = get_volume_dir(volume)
+        whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+        if whitelist_path.exists():
+            whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
         
     # 4. Get volume-specific overrides to apply before checking
     overrides = get_volume_overrides(volume)
@@ -2860,6 +2861,61 @@ def test_no_unwhitelisted_split_word_anomalies_in_json(volume):
             for item in unwhitelisted_anomalies
         )
         pytest.fail(f"Found unwhitelisted split word OCR anomalies in Volume {volume} JSON intermediate:\n{msg}")
+
+
+@pytest.mark.parametrize("volume", ALL_JSON_VOLUMES)
+def test_no_unused_whitelist_entries(volume):
+    """Ensure that all entries in the whitelist are actually used (no dead/unneeded entries)."""
+    if os.environ.get("OWEN_NO_WHITELIST") == "1":
+        pytest.skip("Bypassing whitelist usage check since --no-whitelist is active.")
+        
+    from shared import get_volume_dir
+    vol_dir = get_volume_dir(volume)
+    bugs_dir = vol_dir / "bugs_fixes"
+    
+    audit_json_path = bugs_dir / f"volume_{volume}_audit.json"
+    text_json_path = bugs_dir / f"volume_{volume}_text_integrity.json"
+    anom_json_path = bugs_dir / f"volume_{volume}_anomalies.json"
+    
+    # Check if we should run this test (needs the reports to be generated first)
+    if not (audit_json_path.exists() and text_json_path.exists() and anom_json_path.exists()):
+        pytest.skip(f"Audit report JSON files for Volume {volume} do not exist. Run scripts/run_all_checks.py first.")
+        
+    audit_data = json.loads(audit_json_path.read_text(encoding="utf-8"))
+    text_data = json.loads(text_json_path.read_text(encoding="utf-8"))
+    anom_data = json.loads(anom_json_path.read_text(encoding="utf-8"))
+    
+    unused_anomalies = anom_data.get("unused_whitelist_anomalies", {})
+    unused_text_integrity = text_data.get("unused_whitelist_text_integrity", {})
+    unused_epub_warnings = audit_data.get("unused_whitelist_epub_warnings", [])
+    
+    # An ignored_warnings entry is only unused if it is unused in BOTH audit_epub and audit_text_integrity
+    ti_unused_warnings = unused_text_integrity.get("ignored_warnings", [])
+    really_unused_warnings = [w for w in unused_epub_warnings if w in ti_unused_warnings]
+    
+    failures = []
+    if unused_anomalies:
+        for cat, items in unused_anomalies.items():
+            for item in items:
+                failures.append(f"Unused anomalies whitelist: Category '{cat}', Item: '{item}'")
+                
+    if unused_text_integrity:
+        for cat, items in unused_text_integrity.items():
+            if cat == "ignored_warnings":
+                continue # Handled below
+            for item in items:
+                failures.append(f"Unused text_integrity whitelist: Category '{cat}', Item: {item}")
+                
+    if really_unused_warnings:
+        for item in really_unused_warnings:
+            failures.append(f"Unused ignored_warnings whitelist: '{item}'")
+            
+    if failures:
+        pytest.fail(
+            f"Volume {volume} whitelist contains unused entries (not suppressing any current issues):\n"
+            + "\n".join(f"  - {f}" for f in failures)
+        )
+
 
 
 

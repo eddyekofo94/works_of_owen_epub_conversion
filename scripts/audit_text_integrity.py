@@ -1861,46 +1861,103 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
             except Exception as e:
                 print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
+    # Track used text_integrity whitelist items
+    used_text_integrity = {
+        "skipped_pages": set(),
+        "weak_pages": set(),
+        "dense_source_window_loss": set(),
+        "bottom_of_page_text_loss": set(),
+        "top_of_page_text_loss": set(),
+        "paragraph_splits": set(),
+        "inline_structural_markers": set(),
+        "repeated_windows": set(),
+        "ignored_warnings": set()
+    }
+
     # Filter weak pages
     skipped_pages = whitelist.get("text_integrity", {}).get("skipped_pages", [])
     whitelisted_weak_pages = whitelist.get("text_integrity", {}).get("weak_pages", [])
-    page_scan["weak_pages"] = [
-        wp for wp in page_scan.get("weak_pages", [])
-        if wp["page"] not in whitelisted_weak_pages and wp["page"] not in skipped_pages
-    ]
+    filtered_weak_pages = []
+    for wp in page_scan.get("weak_pages", []):
+        matched = False
+        if wp["page"] in skipped_pages:
+            used_text_integrity["skipped_pages"].add(wp["page"])
+            matched = True
+        if wp["page"] in whitelisted_weak_pages:
+            used_text_integrity["weak_pages"].add(wp["page"])
+            matched = True
+        if not matched:
+            filtered_weak_pages.append(wp)
+    page_scan["weak_pages"] = filtered_weak_pages
     page_scan["weak_page_count"] = len(page_scan["weak_pages"])
 
     # Filter missing dense windows
     whitelisted_dense_windows = whitelist.get("text_integrity", {}).get("dense_source_window_loss", [])
-    dense_scan["missing_dense_windows"] = [
-        dw for dw in dense_scan.get("missing_dense_windows", [])
-        if dw["page"] not in skipped_pages and not (dw["page"] in whitelisted_dense_windows or any(
-            isinstance(dw_wl, str) and (dw_wl in dw["sample"] or dw["sample"] in dw_wl)
-            for dw_wl in whitelisted_dense_windows
-        ))
-    ]
+    filtered_dense_windows = []
+    for dw in dense_scan.get("missing_dense_windows", []):
+        matched = False
+        if dw["page"] in skipped_pages:
+            used_text_integrity["skipped_pages"].add(dw["page"])
+            matched = True
+        else:
+            for dw_wl in whitelisted_dense_windows:
+                if dw_wl == dw["page"]:
+                    used_text_integrity["dense_source_window_loss"].add(dw_wl)
+                    matched = True
+                    break
+                elif isinstance(dw_wl, str) and (dw_wl in dw["sample"] or dw["sample"] in dw_wl):
+                    used_text_integrity["dense_source_window_loss"].add(dw_wl)
+                    matched = True
+                    break
+        if not matched:
+            filtered_dense_windows.append(dw)
+    dense_scan["missing_dense_windows"] = filtered_dense_windows
     dense_scan["missing_dense_window_pages"] = len(dense_scan["missing_dense_windows"])
 
     # Filter bottom windows
     whitelisted_bottom_windows = whitelist.get("text_integrity", {}).get("bottom_of_page_text_loss", [])
-    bottom_scan["missing_bottom_windows"] = [
-        bw for bw in bottom_scan.get("missing_bottom_windows", [])
-        if bw["page"] not in skipped_pages and not (bw["page"] in whitelisted_bottom_windows or any(
-            isinstance(bw_wl, str) and (bw_wl in bw["sample"] or bw["sample"] in bw_wl)
-            for bw_wl in whitelisted_bottom_windows
-        ))
-    ]
+    filtered_bottom_windows = []
+    for bw in bottom_scan.get("missing_bottom_windows", []):
+        matched = False
+        if bw["page"] in skipped_pages:
+            used_text_integrity["skipped_pages"].add(bw["page"])
+            matched = True
+        else:
+            for bw_wl in whitelisted_bottom_windows:
+                if bw_wl == bw["page"]:
+                    used_text_integrity["bottom_of_page_text_loss"].add(bw_wl)
+                    matched = True
+                    break
+                elif isinstance(bw_wl, str) and (bw_wl in bw["sample"] or bw["sample"] in bw_wl):
+                    used_text_integrity["bottom_of_page_text_loss"].add(bw_wl)
+                    matched = True
+                    break
+        if not matched:
+            filtered_bottom_windows.append(bw)
+    bottom_scan["missing_bottom_windows"] = filtered_bottom_windows
     bottom_scan["missing_bottom_window_count"] = len(bottom_scan["missing_bottom_windows"])
 
     # Filter top windows
     whitelisted_top_windows = whitelist.get("text_integrity", {}).get("top_of_page_text_loss", [])
-    top_scan["missing_top_windows"] = [
-        tw for tw in top_scan.get("missing_top_windows", [])
-        if tw["page"] not in skipped_pages and not (tw["page"] in whitelisted_top_windows or any(
-            isinstance(tw_wl, str) and (tw_wl in tw["sample"] or tw["sample"] in tw_wl)
-            for tw_wl in whitelisted_top_windows
-        ))
-    ]
+    filtered_top_windows = []
+    for tw in top_scan.get("missing_top_windows", []):
+        matched = False
+        if tw["page"] in skipped_pages:
+            used_text_integrity["skipped_pages"].add(tw["page"])
+            matched = True
+        else:
+            for tw_wl in whitelisted_top_windows:
+                if tw_wl == tw["page"]:
+                    used_text_integrity["top_of_page_text_loss"].add(tw_wl)
+                    matched = True
+                    break
+                elif isinstance(tw_wl, str) and (tw_wl in tw["sample"] or tw["sample"] in tw_wl):
+                    used_text_integrity["top_of_page_text_loss"].add(tw_wl)
+                    matched = True
+                    break
+        if not matched:
+            filtered_top_windows.append(tw)
+    top_scan["missing_top_windows"] = filtered_top_windows
     top_scan["missing_top_window_count"] = len(top_scan["missing_top_windows"])
 
     # Filter splits
@@ -1913,10 +1970,13 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
                 if (wl_sp.get("previous", "") in sc["previous"] or sc["previous"] in wl_sp.get("previous", "")) and \
                    (wl_sp.get("next", "") in sc["next"] or sc["next"] in wl_sp.get("next", "")):
                     is_wl = True
+                    import json as j
+                    used_text_integrity["paragraph_splits"].add(j.dumps(wl_sp, sort_keys=True))
                     break
             elif isinstance(wl_sp, str):
                 if wl_sp in sc["previous"] or wl_sp in sc["next"]:
                     is_wl = True
+                    used_text_integrity["paragraph_splits"].add(wl_sp)
                     break
         if not is_wl:
             filtered_splits.append(sc)
@@ -1925,18 +1985,32 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
 
     # Filter inline structural markers
     whitelisted_inline_markers = whitelist.get("text_integrity", {}).get("inline_structural_markers", [])
-    para_scan["inline_structural_candidates"] = [
-        im for im in para_scan.get("inline_structural_candidates", [])
-        if not any(im_wl in im["text"] or im["text"] in im_wl for im_wl in whitelisted_inline_markers)
-    ]
+    filtered_inline_markers = []
+    for im in para_scan.get("inline_structural_candidates", []):
+        matched = False
+        for im_wl in whitelisted_inline_markers:
+            if im_wl in im["text"] or im["text"] in im_wl:
+                used_text_integrity["inline_structural_markers"].add(im_wl)
+                matched = True
+                break
+        if not matched:
+            filtered_inline_markers.append(im)
+    para_scan["inline_structural_candidates"] = filtered_inline_markers
     para_scan["inline_structural_candidate_count"] = len(para_scan["inline_structural_candidates"])
 
     # Filter repeated windows
     whitelisted_repeats = whitelist.get("text_integrity", {}).get("repeated_windows", [])
-    repeats = [
-        rep for rep in repeats
-        if not any(rep_wl in rep.get("phrase", "") or rep.get("phrase", "") in rep_wl for rep_wl in whitelisted_repeats)
-    ]
+    filtered_repeats = []
+    for rep in repeats:
+        matched = False
+        for rep_wl in whitelisted_repeats:
+            if rep_wl in rep.get("phrase", "") or rep.get("phrase", "") in rep_wl:
+                used_text_integrity["repeated_windows"].add(rep_wl)
+                matched = True
+                break
+        if not matched:
+            filtered_repeats.append(rep)
+    repeats = filtered_repeats
 
     warnings = []
     if word_coverage["coverage_ratio"] < 0.86:
@@ -2102,7 +2176,38 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
 
     # Filter general warnings by code
     whitelisted_warnings = whitelist.get("text_integrity", {}).get("ignored_warnings", [])
-    warnings = [w for w in warnings if w["code"] not in whitelisted_warnings]
+    filtered_warnings = []
+    for w in warnings:
+        if w["code"] in whitelisted_warnings:
+            used_text_integrity["ignored_warnings"].add(w["code"])
+        else:
+            filtered_warnings.append(w)
+    warnings = filtered_warnings
+
+    # Calculate unused whitelist entries
+    unused_text_integrity = {}
+    if whitelist and "text_integrity" in whitelist:
+        ti_whitelist = whitelist["text_integrity"]
+        for key in ["skipped_pages", "weak_pages", "dense_source_window_loss", 
+                    "bottom_of_page_text_loss", "top_of_page_text_loss", 
+                    "paragraph_splits", "inline_structural_markers", 
+                    "repeated_windows", "ignored_warnings"]:
+            items = ti_whitelist.get(key, [])
+            unused = []
+            for item in items:
+                import json as j
+                lookup_item = j.dumps(item, sort_keys=True) if isinstance(item, dict) else item
+                if lookup_item not in used_text_integrity[key]:
+                    unused.append(item)
+            if unused:
+                unused_text_integrity[key] = unused
+
+    if unused_text_integrity:
+        print(f"\n[Warning] Unused whitelist entries found in volume_{volume}_whitelist.json:")
+        for cat, items in unused_text_integrity.items():
+            print(f"  Category '{cat}':")
+            for item in items:
+                print(f"    - {item}")
 
     return {
         "volume": volume,
@@ -2131,6 +2236,7 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
         "ages_artifact_check": ages_artifacts,
         "analysis_extraction_check": analysis_quality,
         "font_config_check": font_check,
+        "unused_whitelist_text_integrity": unused_text_integrity,
         "limits": {
             "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review.",
         },

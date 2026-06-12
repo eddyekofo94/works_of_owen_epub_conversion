@@ -620,13 +620,17 @@ def check_list_consistency(text: str) -> list[tuple[str, str]]:
 
 def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
     items = whitelist.get("anomalies", {}).get(category, [])
+    if "used_items" not in whitelist:
+        whitelist["used_items"] = set()
     if target in items:
+        whitelist["used_items"].add(("anomalies", category, target))
         return True
     for item in items:
+        matched = False
         if item in target or target in item:
-            return True
+            matched = True
         # For unmatched quotes, handle length-mismatched, HTML-tagged, or truncated snippets
-        if category == "Unmatched Quotation Marks":
+        elif category == "Unmatched Quotation Marks":
             # Strip unclosed HTML tags at the end of the string
             t_clean = re.sub(r'<[^>]*$', '', target)
             i_clean = re.sub(r'<[^>]*$', '', item)
@@ -650,7 +654,10 @@ def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
             
             if t_clean and i_clean:
                 if t_clean.startswith(i_clean) or i_clean.startswith(t_clean):
-                    return True
+                    matched = True
+        if matched:
+            whitelist["used_items"].add(("anomalies", category, item))
+            return True
     return False
 
 
@@ -901,6 +908,17 @@ def main():
                 f.write("\n")
             f.write("---\n\n")
 
+    # Calculate unused whitelist entries
+    unused_anomalies = {}
+    if whitelist and "anomalies" in whitelist:
+        used_tuples = whitelist.get("used_items", set())
+        for category, items in whitelist["anomalies"].items():
+            for item in items:
+                if ("anomalies", category, item) not in used_tuples:
+                    if category not in unused_anomalies:
+                        unused_anomalies[category] = []
+                    unused_anomalies[category].append(item)
+
     # Write JSON Report
     print(f"Writing JSON report to {output_json_path}...")
     with open(output_json_path, "w", encoding="utf-8") as f:
@@ -908,9 +926,16 @@ def main():
             "volume": vol_num,
             "total_words_audited": total_scanned_words,
             "total_anomalies_count": total_anomalies,
-            "anomalies": deduped_categories
+            "anomalies": deduped_categories,
+            "unused_whitelist_anomalies": unused_anomalies
         }, f, indent=2)
 
+    if unused_anomalies:
+        print(f"\n[Warning] Unused whitelist entries found in volume_{vol_num}_whitelist.json:")
+        for cat, items in unused_anomalies.items():
+            print(f"  Category '{cat}':")
+            for item in items:
+                print(f"    - '{item}'")
     print(f"\n======================================================================")
     print(f" AUDIT COMPLETE: VOLUME {vol_num}")
     print(f" Total suspected anomalies: {total_anomalies}")

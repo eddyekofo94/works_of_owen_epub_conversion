@@ -3740,3 +3740,31 @@ We optimized Volume 3 as follows:
 ### Validation
 - **EPUB Audits:** Rebuilt Volume 3 and ran all checks. Anomalies count fell from 67 to 20, and unmatched quote count fell to 0 (excluding whitelisted).
 - **Quality Score:** Generated the ranking report. Volume 3's quality Need score dropped to `9.1`, successfully elevating it to the **PRISTINE** tier.
+
+
+### Whitelist System Hardening & `--no-whitelist` Mode
+**Observed:**
+- The existing audit scripts (`audit_epub.py`, `audit_text_integrity.py`, `audit_anomalies.py`) supported a `--no-whitelist` flag to bypass suppression lists, but this behavior was not accessible or respected when running the `pytest` regression suite.
+- Whitelists (`volume_N_whitelist.json`) could accumulate "dead" or obsolete entries (leftovers from older OCR passes or copy-paste shortcuts) without detection.
+
+### Root Cause
+1. **Lack of CLI Integration in Pytest:** Pytest lacked a registered option to toggle whitelist loading globally, meaning tests like `test_no_unwhitelisted_split_word_anomalies_in_json` always applied whitelists, preventing developers from auditing false positives.
+2. **Missing Usage Tracking:** The audit tools did not keep track of which whitelisted warnings/anomalies were actually matched and applied during a run, leaving dead suppression items undetected.
+
+### Implementation & Fixes
+We hardened the whitelist mechanism through the following updates:
+1. **Pytest CLI & Environment Integration (`tests/conftest.py` & `tests/test_bug_regressions.py`):**
+   - Created [conftest.py](file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/tests/conftest.py) to register the `--no-whitelist` option for `pytest`. On activation, it sets `os.environ["OWEN_NO_WHITELIST"] = "1"`.
+   - Updated `test_no_unwhitelisted_split_word_anomalies_in_json` in [test_bug_regressions.py](file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/tests/test_bug_regressions.py) to skip loading volume whitelist JSON files if the `OWEN_NO_WHITELIST` environment variable is active.
+   - Updated `run_pytest` in [run_all_checks.py](file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/scripts/run_all_checks.py) to forward `--no-whitelist` to the subprocess execution of pytest.
+2. **Whitelist Usage Tracking (`scripts/audit_anomalies.py`, `scripts/audit_text_integrity.py`, `scripts/audit_epub.py`):**
+   - Modified `is_whitelisted` in [audit_anomalies.py](file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/scripts/audit_anomalies.py) to add matched items to a `"used_items"` set in the whitelist dict, outputting unused entries under `unused_whitelist_anomalies` in JSON and printing console warnings.
+   - Added tracking in [audit_text_integrity.py](file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/scripts/audit_text_integrity.py) for all `text_integrity` categories (skipped pages, weak pages, top/bottom page losses, paragraph splits, structural markers, repeats, ignored warnings), exporting unused entries to JSON and printing warnings.
+   - Updated [audit_epub.py](file:///Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/scripts/audit_epub.py) to track which warnings are filtered out by `ignored_warnings`, exporting them under `unused_whitelist_epub_warnings` to JSON and printing warnings.
+3. **Dead Whitelist Regression Test (`tests/test_bug_regressions.py`):**
+   - Implemented `test_no_unused_whitelist_entries` to parse the audit outputs for each volume and fail the build if any volume contains redundant/unused whitelist entries (with ignored warnings cross-checked between both audits), ensuring whitelist cleanliness. Skips execution automatically in `--no-whitelist` mode.
+
+### Validation
+- **Pytest Integration:** Ran `pytest --no-whitelist` for Volume 13 split-word check and verified it correctly caught previously whitelisted anomalies.
+- **Unused Whitelist Checks:** Ran `audit_anomalies.py 13` and verified it cleanly outputted the unused elements from `volume_13_whitelist.json`.
+

@@ -642,6 +642,7 @@ class Audit:
         self.info["apple_options"] = expected
 
     def result(self) -> dict[str, Any]:
+        unused_ignored_warnings = []
         try:
             from pathlib import Path
             import json
@@ -657,7 +658,23 @@ class Audit:
                 if whitelist_path.exists():
                     wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
                     ignored_warnings = wl.get("text_integrity", {}).get("ignored_warnings", [])
-                    self.warnings = [w for w in self.warnings if w["code"] not in ignored_warnings]
+                    used_ignored_warnings = set()
+                    filtered_warnings = []
+                    for w in self.warnings:
+                        if w["code"] in ignored_warnings:
+                            used_ignored_warnings.add(w["code"])
+                        else:
+                            filtered_warnings.append(w)
+                    self.warnings = filtered_warnings
+                    unused_ignored_warnings = [c for c in ignored_warnings if c not in used_ignored_warnings]
+                    
+                    if unused_ignored_warnings:
+                        # Only warn for warnings that are not used in the EPUB audit and also not used in the text integrity audit.
+                        # Since we cannot easily coordinate between them, we will print it here, but later run_all_checks.py can do a cross-check.
+                        print(f"\n[Warning] Unused whitelist entries found in volume_{volume}_whitelist.json (EPUB Audit):")
+                        print(f"  Category 'ignored_warnings' (EPUB):")
+                        for item in unused_ignored_warnings:
+                            print(f"    - {item}")
         except Exception:
             pass
 
@@ -670,6 +687,7 @@ class Audit:
             "errors": self.errors,
             "warnings": self.warnings,
             "info": self.info,
+            "unused_whitelist_epub_warnings": unused_ignored_warnings,
         }
 
 

@@ -231,15 +231,19 @@ def run_volume_pipeline(vol_num: str, no_rebuild: bool = False, no_whitelist: bo
     return summary
 
 
-def run_pytest(volumes: list[str]) -> dict:
+def run_pytest(volumes: list[str], no_whitelist: bool = False) -> dict:
     test_files = sorted((ROOT / "tests").glob("test_*.py"))
     vol_str = "all" if len(volumes) >= 16 else " ".join(str(v) for v in volumes)
     env = {**os.environ, "OWEN_REGRESSION_VOLUMES": vol_str, "PYTHONPATH": str(ROOT)}
 
     start = datetime.now()
     try:
+        cmd = [PYTHON, "-m", "pytest", "-v", "-p", "no:faker"]
+        if no_whitelist:
+            cmd.append("--no-whitelist")
+        cmd.extend(str(f) for f in test_files)
         r = subprocess.run(
-            [PYTHON, "-m", "pytest", "-v", "-p", "no:faker"] + [str(f) for f in test_files],
+            cmd,
             capture_output=True, text=True, timeout=7200, env=env,
         )
         lines = (r.stdout + r.stderr).strip().split("\n")
@@ -517,7 +521,7 @@ def main() -> int:
         _print_volume_issues(v, results[v])
 
     print(f"\n{cyan('=== Pytest ===')}")
-    pt = run_pytest(volumes)
+    pt = run_pytest(volumes, no_whitelist=args.no_whitelist)
     print(pt["summary"] or pt["output"])
 
     print_summary(results, pt)

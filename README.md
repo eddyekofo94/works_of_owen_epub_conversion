@@ -228,6 +228,36 @@ updated automatically on each run (use `--no-readme` to skip).
 # Skip README update
 .venv/bin/python3 scripts/report_volume_state.py --no-readme
 ```
+## Whitelist Verification & --no-whitelist Mode
+
+To prevent whitelists (`volume_N_whitelist.json`) from accumulating obsolete, unneeded, or "dead" entries over time, the project includes an automated whitelist tracking and enforcement mechanism.
+
+### Whitelist Enforcement Mechanism
+
+1. **Active Usage Tracking:** During audit execution, all scripts track which whitelisted items are actually matched and used:
+   - `scripts/audit_anomalies.py`: Tracks matched spelling/punctuation/OCR anomalies.
+   - `scripts/audit_text_integrity.py`: Tracks matched page-skips, weak pages, text window losses, splits, markers, repeats, and warnings.
+   - `scripts/audit_epub.py`: Tracks matched warning suppression codes.
+2. **Obsolete Item Reporting:** Any whitelist item that does not suppress an active issue is flagged as "unused" in the JSON reports and triggers a console warning.
+3. **Build Gates:** The `test_no_unused_whitelist_entries` regression test automatically parses these reports and fails the test suite if a volume contains redundant/unused whitelist entries, requiring developers to keep whitelists minimal and clean.
+
+### Running Without Whitelists
+
+To check for false-positive whitelists or hidden anomalies, bypass all whitelists by passing `--no-whitelist`:
+
+```bash
+# Run full check pipeline without whitelists
+.venv/bin/python3 scripts/run_all_checks.py 3 --no-whitelist
+
+# Run individual audits without whitelists
+.venv/bin/python3 scripts/audit_epub.py volumes/v3/output/volume_3.epub --no-whitelist
+.venv/bin/python3 scripts/audit_text_integrity.py 3 --no-whitelist
+.venv/bin/python3 scripts/audit_anomalies.py 3 --no-whitelist
+
+# Run pytest regression tests without whitelists (skips unused checks)
+.venv/bin/python3 -m pytest tests/ --no-whitelist
+```
+
 ## Academic Translation & Citation Audit
 
 This project implements a proactive, collection-wide **Academic Translation & Citation Audit** to locate and annotate classical Latin, Greek, and Hebrew prose or verse quotes. This process ensures that the EPUB outputs are of the highest academic standard, complete with interactive pop-up translation footnotes in standard rendering engines.
