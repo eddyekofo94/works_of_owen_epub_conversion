@@ -1,0 +1,3091 @@
+{
+  "volume": "h1",
+  "total_words_audited": 478821,
+  "total_anomalies_count": 440,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "key-stone",
+        "description": "Splittable word (rejoins to valid word 'keystone')",
+        "chapter": "GENERAL PREFACE BY THE EDITOR",
+        "contexts": [
+          "... the church as the sun is to the world.\" It is the key-stone which locks the arch of revealed truth into symme ..."
+        ]
+      },
+      {
+        "target": "master-work",
+        "description": "Splittable word (rejoins to valid word 'masterwork')",
+        "chapter": "GENERAL PREFACE BY THE EDITOR",
+        "contexts": [
+          "... der speaks of his work on the Holy Spirit as his \"master-work;\" Mr Wilberforce especially recommended his treat ..."
+        ]
+      },
+      {
+        "target": "gazing-stock",
+        "description": "Splittable word (rejoins to valid word 'gazingstock')",
+        "chapter": "III. \u2014The time [and occasion] of the writing of the Epistle to the Hebrews",
+        "contexts": [
+          "... ght of afflictions; partly, whilst ye were made a gazing-stock, both by reproaches and afflictions; and partly, ..."
+        ]
+      },
+      {
+        "target": "Syro-Chaldaic",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "IV. \u2014The language wherein the Epistle to the Hebrews was originally written",
+        "contexts": [
+          "... ould write in Greek. The opinion of De Rossi that Syro-Chaldaic was almost exclusively used in that country has y ..."
+        ]
+      },
+      {
+        "target": "pre-eminences",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": [
+          "... and are very vain in counting the privileges and pre-eminences it had above all others; which are elsewhere exam ..."
+        ]
+      },
+      {
+        "target": "child-bearing",
+        "description": "Splittable word (rejoins to valid word 'childbearing')",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... of man in his labour, or the sorrows of women in child-bearing, taken away? is the earth itself freed from the e ..."
+        ]
+      },
+      {
+        "target": "non-necessity",
+        "description": "Splittable word (rejoins to valid word 'nonnecessity')",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... against those sufferings of the Messiah, from the non-necessity of them with reference unto the sin of Adam. They ..."
+        ]
+      },
+      {
+        "target": "Ezion-geber",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... \" also. Hence Ben Uzziel renders \u05e2\u05b6\u05e6\u05b0\u05d9\u05b9\u05df \u05e0\u05b8\u05bc\u05d1\u05b6\u05e8, \"Ezion-geber,\" the name of a city, Deut. 2:8, \u05db\u05e8\u05da \u05ea\u05e8\u05e0\u05d2\u05d5\u05dc\u05d0, \"Th ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... sense of their ancient masters, from the story of Bar-Cosba, whom, after they had accepted of for their Messi ..."
+        ]
+      },
+      {
+        "target": "Bar-Cochba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... of for their Messiah, from this place they called Bar-Cochba, Akiba applying this prediction of \u05db\u05bc\u05d5\u05b9\u05db\u05b8\u05d1, or th ..."
+        ]
+      },
+      {
+        "target": "Beth-lehem",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... of the sins of Israel. 48. Mic. 5:2, \"But thou, Beth-lehem Ephratah, though thou be little among the thousan ..."
+        ]
+      },
+      {
+        "target": "child-bearing",
+        "description": "Splittable word (rejoins to valid word 'childbearing')",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... of man in his labour, or the sorrows of women in child-bearing, taken away? is the earth itself freed from the e ..."
+        ]
+      },
+      {
+        "target": "non-necessity",
+        "description": "Splittable word (rejoins to valid word 'nonnecessity')",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... against those sufferings of the Messiah, from the non-necessity of them with reference unto the sin of Adam. They ..."
+        ]
+      },
+      {
+        "target": "Ezion-geber",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... \" also. Hence Ben Uzziel renders \u05e2\u05b6\u05e6\u05b0\u05d9\u05b9\u05df \u05e0\u05b8\u05bc\u05d1\u05b6\u05e8, \"Ezion-geber,\" the name of a city, Deut. 2:8, \u05db\u05e8\u05da \u05ea\u05e8\u05e0\u05d2\u05d5\u05dc\u05d0, \"Th ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... sense of their ancient masters, from the story of Bar-Cosba, whom, after they had accepted of for their Messi ...",
+          "... ected by them\u2014General reason thereof. 6. Story of Bar-Cosba, and Rabbi Akiba\u2014Miracles to be wrought by the Me ...",
+          "... e Messiah. 7. State of the Jews after the days of Bar-Cosba\u2014Faith of their forefathers utterly renounced. 8. ..."
+        ]
+      },
+      {
+        "target": "Bar-Cochba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... of for their Messiah, from this place they called Bar-Cochba, Akiba applying this prediction of \u05db\u05bc\u05d5\u05b9\u05db\u05b8\u05d1, or th ...",
+          "... ob; whereon they changed his name, and called him Bar-Cochba, or \"The son of the Star;\" or, as some say, that ..."
+        ]
+      },
+      {
+        "target": "Beth-lehem",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... of the sins of Israel. 48. Mic. 5:2, \"But thou, Beth-lehem Ephratah, though thou be little among the thousan ..."
+        ]
+      },
+      {
+        "target": "tri-personality",
+        "description": "Splittable word (rejoins to valid word 'tripersonality')",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... am, and he calls them, \"My Lord,\" would prove the tri-personality of the Deity: \u05d4\u05e0\u05d4 \u05e7\u05e6\u05ea \u05d0\u05de\u05e8\u05d5 \u05db\u05d9 \u05d4\u05e9\u05dd \u05d2\u05f3 \u05d0\u05e0\u05e9\u05d9\u05dd \u05d4\u05d5\u05d0 \u05d0\u05d7 ..."
+        ]
+      },
+      {
+        "target": "Beth-el",
+        "description": "Splittable word (rejoins to valid word 'Bethel')",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... , and made supplication unto him: he found him in Beth-el, and there he spake with us; even the LORD God of ..."
+        ]
+      },
+      {
+        "target": "fore-cited",
+        "description": "Splittable word (rejoins to valid word 'forecited')",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... , as they acknowledge in the Talmud, in the place fore-cited. This man, therefore, a magician and a bloody mur ..."
+        ]
+      },
+      {
+        "target": "self-fulness",
+        "description": "Splittable word (rejoins to valid word 'selffulness')",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... actual, chap. 1\u20133. Until, therefore, this pride, self-fulness, and ignorance of themselves, be taken from them ..."
+        ]
+      },
+      {
+        "target": "tri-personality",
+        "description": "Splittable word (rejoins to valid word 'tripersonality')",
+        "chapter": "X. -- Appearances of the Son of God Under the Old Testament",
+        "contexts": [
+          "... am, and he calls them, \"My Lord,\" would prove the tri-personality of the Deity: \u05d4\u05e0\u05d4 \u05e7\u05e6\u05ea \u05d0\u05de\u05e8\u05d5 \u05db\u05d9 \u05d4\u05e9\u05dd \u05d2\u05f3 \u05d0\u05e0\u05e9\u05d9\u05dd \u05d4\u05d5\u05d0 \u05d0\u05d7 ..."
+        ]
+      },
+      {
+        "target": "Beth-el",
+        "description": "Splittable word (rejoins to valid word 'Bethel')",
+        "chapter": "X. -- Appearances of the Son of God Under the Old Testament",
+        "contexts": [
+          "... , and made supplication unto him: he found him in Beth-el, and there he spake with us; even the LORD God of ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... ected by them\u2014General reason thereof. 6. Story of Bar-Cosba, and Rabbi Akiba\u2014Miracles to be wrought by the Me ...",
+          "... e Messiah. 7. State of the Jews after the days of Bar-Cosba\u2014Faith of their forefathers utterly renounced. 8. ...",
+          "... ast them on a second shipwreck in the business of Bar-Cosba, who, pretending himself to be their Messiah, sen ..."
+        ]
+      },
+      {
+        "target": "Bar-Cochba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... ob; whereon they changed his name, and called him Bar-Cochba, or \"The son of the Star;\" or, as some say, that ..."
+        ]
+      },
+      {
+        "target": "fore-cited",
+        "description": "Splittable word (rejoins to valid word 'forecited')",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... , as they acknowledge in the Talmud, in the place fore-cited. This man, therefore, a magician and a bloody mur ..."
+        ]
+      },
+      {
+        "target": "self-fulness",
+        "description": "Splittable word (rejoins to valid word 'selffulness')",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... actual, chap. 1\u20133. Until, therefore, this pride, self-fulness, and ignorance of themselves, be taken from them ..."
+        ]
+      },
+      {
+        "target": "law-giver",
+        "description": "Splittable word (rejoins to valid word 'lawgiver')",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... f the whole, he gives a tolerable account, \"Nor a law-giver from between his feet:\" \u05de\u05d7\u05e7\u05e7 \u05e1\u05d5\u05e4\u05e8 \u05e9\u05d9\u05d7\u05d5\u05e7 \u05e2\u05dc \u05e1\u05e4\u05e8;\u2014\" ...",
+          "... should have \u05e9\u05b5\u05c1\u05d1\u05b6\u05d8 and \u05de\u05b0\u05d7\u05b9\u05e7\u05b5\u05e7, a \"sceptre\" and \"law-giver,\" or a writer of laws for others' observation. Th ...",
+          "... because some fix the departure of the sceptre and law-giver unto the removal of the sanhedrin, it may not be ..."
+        ]
+      },
+      {
+        "target": "after-birth",
+        "description": "Splittable word (rejoins to valid word 'afterbirth')",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... to signify \"a son,\" from \u05e9\u05dc\u05d9\u05d4, which denotes the \"after-birth,\" or membrane wherein the child is wrapped in the ..."
+        ]
+      },
+      {
+        "target": "law-giver",
+        "description": "Splittable word (rejoins to valid word 'lawgiver')",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "... f the whole, he gives a tolerable account, \"Nor a law-giver from between his feet:\" \u05de\u05d7\u05e7\u05e7 \u05e1\u05d5\u05e4\u05e8 \u05e9\u05d9\u05d7\u05d5\u05e7 \u05e2\u05dc \u05e1\u05e4\u05e8;\u2014\" ...",
+          "... should have \u05e9\u05b5\u05c1\u05d1\u05b6\u05d8 and \u05de\u05b0\u05d7\u05b9\u05e7\u05b5\u05e7, a \"sceptre\" and \"law-giver,\" or a writer of laws for others' observation. Th ...",
+          "... because some fix the departure of the sceptre and law-giver unto the removal of the sanhedrin, it may not be ..."
+        ]
+      },
+      {
+        "target": "after-birth",
+        "description": "Splittable word (rejoins to valid word 'afterbirth')",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "... to signify \"a son,\" from \u05e9\u05dc\u05d9\u05d4, which denotes the \"after-birth,\" or membrane wherein the child is wrapped in the ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": [
+          "... ted to make a Messiah themselves, even the famous Bar-Cosba; which proved the means and cause of their utter ..."
+        ]
+      },
+      {
+        "target": "Ha-emunoth",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": [
+          "... e meaning of the word. So Rab. Saadias Haggaon in Ha-emunoth, cap. viii.: \u05e9\u05de\u05dc\u05ea \u05d9\u05db\u05e8\u05ea \u05db\u05e9\u05d4\u05d9\u05d0 \u05d4\u05e8\u05d9\u05d2\u05d4 \u05d0\u05d9\u05e0\u05e0\u05d4 \u05db\u05d0\u05de\u05e8\u05ea \u05db\u05d9 ..."
+        ]
+      },
+      {
+        "target": "re-collection",
+        "description": "Splittable word (rejoins to valid word 'recollection')",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": [
+          "... hurch, the restitution of the worship of God, the re-collection and recognition of the sacred oracles, was begun, ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XIV. \u2014Daniel's prophecy vindicated",
+        "contexts": [
+          "... ted to make a Messiah themselves, even the famous Bar-Cosba; which proved the means and cause of their utter ..."
+        ]
+      },
+      {
+        "target": "Ha-emunoth",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XIV. \u2014Daniel's prophecy vindicated",
+        "contexts": [
+          "... e meaning of the word. So Rab. Saadias Haggaon in Ha-emunoth, cap. viii.: \u05e9\u05de\u05dc\u05ea \u05d9\u05db\u05e8\u05ea \u05db\u05e9\u05d4\u05d9\u05d0 \u05d4\u05e8\u05d9\u05d2\u05d4 \u05d0\u05d9\u05e0\u05e0\u05d4 \u05db\u05d0\u05de\u05e8\u05ea \u05db\u05d9 ..."
+        ]
+      },
+      {
+        "target": "re-collection",
+        "description": "Splittable word (rejoins to valid word 'recollection')",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... hurch, the restitution of the worship of God, the re-collection and recognition of the sacred oracles, was begun, ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... o great importance. Hence some of them adhered to Bar-Cosba for the Messiah, a bloody rebel; and some of them ..."
+        ]
+      },
+      {
+        "target": "fore-past",
+        "description": "Splittable word (rejoins to valid word 'forepast')",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... way of mercy and grace, never to call over their fore-past iniquities any more, so the prophets that treated ..."
+        ]
+      },
+      {
+        "target": "Bar-Cochba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... n, that we should go over the tragical stories of Bar-Cochba, Moses Cretensis, David el David, and such other ..."
+        ]
+      },
+      {
+        "target": "Beth-lehem",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... \u05d5\u05bc\u05de\u05d5\u05b9\u05e6\u05b8\u05d0\u05b9\u05ea\u05b8\u05d9\u05d5 \u05de\u05b4\u05e7\u05b6\u05bc\u05d3\u05b6\u05dd \u05de\u05b4\u05d9\u05de\u05b5\u05d9 \u05e2\u05d5\u05b9\u05dc\u05b8\u05dd;\u2014\"And thou, Beth-lehem Ephratah, is it\" (or, \"it is\") \"little for thee t ...",
+          "... words: \u05d5\u05b0\u05d0\u05b7\u05ea\u05b8\u05bc\u05d4 \u05d1\u05b5\u05bc\u05d9\u05ea\u05be\u05dc\u05b6\u05d7\u05b6\u05dd \u05d0\u05b6\u05e4\u05b0\u05e8\u05b8\u05ea\u05b8\u05d4,\u2014\"And thou, Beth-lehem Ephratah;\" which are rendered in the evangelist, ...",
+          "... to Judah. So that here there is no discrepancy. \"Beth-lehem Ephratah,\" and \"Bethlehem in the land of Judah,\" ..."
+        ]
+      },
+      {
+        "target": "Shear-jashub",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... or the wife of the prophet, who was the mother of Shear-jashub, then present with his father, or any virgin then ...",
+          "... ent unto the king with his message, took with him Shear-jashub his son, verse 3. This certainly was for some esp ..."
+        ]
+      },
+      {
+        "target": "Maher-shalal",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... e wife of the prophet, and the son promised to be Maher-shalal-hash-baz, whose birth is mentioned in the next ch ..."
+        ]
+      },
+      {
+        "target": "super-institution",
+        "description": "Splittable word (rejoins to valid word 'superinstitution')",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... en them the law of ordinances of old. And in this super-institution of new ordinances of worship, thereby superseding ..."
+        ]
+      },
+      {
+        "target": "under-went",
+        "description": "Splittable word (rejoins to valid word 'underwent')",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... by him after the violent and cruel death which he under-went for our sakes; for he took his life again, and ra ..."
+        ]
+      },
+      {
+        "target": "Bar-Cosba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XVI. \u2014Jewish traditions about the coming of the Messiah",
+        "contexts": [
+          "... o great importance. Hence some of them adhered to Bar-Cosba for the Messiah, a bloody rebel; and some of them ..."
+        ]
+      },
+      {
+        "target": "fore-past",
+        "description": "Splittable word (rejoins to valid word 'forepast')",
+        "chapter": "XVI. \u2014Jewish traditions about the coming of the Messiah",
+        "contexts": [
+          "... way of mercy and grace, never to call over their fore-past iniquities any more, so the prophets that treated ..."
+        ]
+      },
+      {
+        "target": "Bar-Cochba",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... n, that we should go over the tragical stories of Bar-Cochba, Moses Cretensis, David el David, and such other ..."
+        ]
+      },
+      {
+        "target": "Beth-lehem",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... \u05d5\u05bc\u05de\u05d5\u05b9\u05e6\u05b8\u05d0\u05b9\u05ea\u05b8\u05d9\u05d5 \u05de\u05b4\u05e7\u05b6\u05bc\u05d3\u05b6\u05dd \u05de\u05b4\u05d9\u05de\u05b5\u05d9 \u05e2\u05d5\u05b9\u05dc\u05b8\u05dd;\u2014\"And thou, Beth-lehem Ephratah, is it\" (or, \"it is\") \"little for thee t ...",
+          "... words: \u05d5\u05b0\u05d0\u05b7\u05ea\u05b8\u05bc\u05d4 \u05d1\u05b5\u05bc\u05d9\u05ea\u05be\u05dc\u05b6\u05d7\u05b6\u05dd \u05d0\u05b6\u05e4\u05b0\u05e8\u05b8\u05ea\u05b8\u05d4,\u2014\"And thou, Beth-lehem Ephratah;\" which are rendered in the evangelist, ...",
+          "... to Judah. So that here there is no discrepancy. \"Beth-lehem Ephratah,\" and \"Bethlehem in the land of Judah,\" ..."
+        ]
+      },
+      {
+        "target": "Shear-jashub",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... or the wife of the prophet, who was the mother of Shear-jashub, then present with his father, or any virgin then ...",
+          "... ent unto the king with his message, took with him Shear-jashub his son, verse 3. This certainly was for some esp ..."
+        ]
+      },
+      {
+        "target": "Maher-shalal",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... e wife of the prophet, and the son promised to be Maher-shalal-hash-baz, whose birth is mentioned in the next ch ..."
+        ]
+      },
+      {
+        "target": "super-institution",
+        "description": "Splittable word (rejoins to valid word 'superinstitution')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... en them the law of ordinances of old. And in this super-institution of new ordinances of worship, thereby superseding ..."
+        ]
+      },
+      {
+        "target": "under-went",
+        "description": "Splittable word (rejoins to valid word 'underwent')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... by him after the violent and cruel death which he under-went for our sakes; for he took his life again, and ra ..."
+        ]
+      },
+      {
+        "target": "non-accomplishment",
+        "description": "Splittable word (rejoins to valid word 'nonaccomplishment')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ll the objections of the Jews, from the pretended non-accomplishment of these promises. 5. Thirdly, Whereas spiritual ...",
+          "... ld prove the Messiah not yet to be come, from the non-accomplishment of the promises that relate unto his coming and k ..."
+        ]
+      },
+      {
+        "target": "sea-shore",
+        "description": "Splittable word (rejoins to valid word 'seashore')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... sky in multitude, and as the sand which is by the sea-shore innumerable.\" (Gen. 15:5, 22:17.) \"These all died ...",
+          "... their several generations were as the sand of the sea-shore, or as the stars for multitude, they were incorpo ..."
+        ]
+      },
+      {
+        "target": "Beth-shemesh",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... God's glory,\u2014for which cause he smote the men of Beth-shemesh upon their looking into the ark, 1 Sam. 6:19: God ..."
+        ]
+      },
+      {
+        "target": "shew-bread",
+        "description": "Splittable word (rejoins to valid word 'shewbread')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... eople, Num. 6:23. 8. That every [Sabbath] day the shew-bread be renewed, Exod. 25:30. 9. That incense be offer ..."
+        ]
+      },
+      {
+        "target": "child-birth",
+        "description": "Splittable word (rejoins to valid word 'childbirth')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... fer sacrifice, Lev. 14:10. 39. That a woman after child-birth offer sacrifice, Lev. 12:6\u20138. 40. That the tenth ..."
+        ]
+      },
+      {
+        "target": "man-slayer",
+        "description": "Splittable word (rejoins to valid word 'manslayer')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ut. 21:1\u20139. 11. That six cities of refuge for the man-slayer be appointed, and the ways to them be prepared, D ..."
+        ]
+      },
+      {
+        "target": "breast-plate",
+        "description": "Splittable word (rejoins to valid word 'breastplate')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... f the sides of the ark, Exod. 25:15. 28. That the breast-plate in the high priest's garment be not loosed from t ..."
+        ]
+      },
+      {
+        "target": "maid-servant",
+        "description": "Splittable word (rejoins to valid word 'maidservant')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... reat him hardly, Lev. 25:39\u201355. 35. That a Jewish maid-servant be not sold to another; 36. That the three things ..."
+        ]
+      },
+      {
+        "target": "bond-woman",
+        "description": "Splittable word (rejoins to valid word 'bondwoman')",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... in war be not sold; 38. That she be not used as a bond-woman, Deut. 21:10\u201314. 39. That we covet not, Exod. 20: ..."
+        ]
+      },
+      {
+        "target": "non-accomplishment",
+        "description": "Splittable word (rejoins to valid word 'nonaccomplishment')",
+        "chapter": "XVIII. \u2014Jews' objections against Christian religion answered",
+        "contexts": [
+          "... ll the objections of the Jews, from the pretended non-accomplishment of these promises. 5. Thirdly, Whereas spiritual ...",
+          "... ld prove the Messiah not yet to be come, from the non-accomplishment of the promises that relate unto his coming and k ..."
+        ]
+      },
+      {
+        "target": "sea-shore",
+        "description": "Splittable word (rejoins to valid word 'seashore')",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... sky in multitude, and as the sand which is by the sea-shore innumerable.\" (Gen. 15:5, 22:17.) \"These all died ...",
+          "... their several generations were as the sand of the sea-shore, or as the stars for multitude, they were incorpo ..."
+        ]
+      },
+      {
+        "target": "Beth-shemesh",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... God's glory,\u2014for which cause he smote the men of Beth-shemesh upon their looking into the ark, 1 Sam. 6:19: God ..."
+        ]
+      },
+      {
+        "target": "shew-bread",
+        "description": "Splittable word (rejoins to valid word 'shewbread')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... eople, Num. 6:23. 8. That every [Sabbath] day the shew-bread be renewed, Exod. 25:30. 9. That incense be offer ...",
+          "... erein was the candlestick, and the table, and the shew-bread; which is called the sanctuary. And after the sec ...",
+          "... r \"diadem,\" was put only on the ark, the table of shew-bread, and the altar of incense; intending expressions ..."
+        ]
+      },
+      {
+        "target": "child-birth",
+        "description": "Splittable word (rejoins to valid word 'childbirth')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... fer sacrifice, Lev. 14:10. 39. That a woman after child-birth offer sacrifice, Lev. 12:6\u20138. 40. That the tenth ..."
+        ]
+      },
+      {
+        "target": "man-slayer",
+        "description": "Splittable word (rejoins to valid word 'manslayer')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... ut. 21:1\u20139. 11. That six cities of refuge for the man-slayer be appointed, and the ways to them be prepared, D ..."
+        ]
+      },
+      {
+        "target": "breast-plate",
+        "description": "Splittable word (rejoins to valid word 'breastplate')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... f the sides of the ark, Exod. 25:15. 28. That the breast-plate in the high priest's garment be not loosed from t ..."
+        ]
+      },
+      {
+        "target": "maid-servant",
+        "description": "Splittable word (rejoins to valid word 'maidservant')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... reat him hardly, Lev. 25:39\u201355. 35. That a Jewish maid-servant be not sold to another; 36. That the three things ..."
+        ]
+      },
+      {
+        "target": "bond-woman",
+        "description": "Splittable word (rejoins to valid word 'bondwoman')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... in war be not sold; 38. That she be not used as a bond-woman, Deut. 21:10\u201314. 39. That we covet not, Exod. 20: ..."
+        ]
+      },
+      {
+        "target": "Man-stealers",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... :\u2014(1.) Adulterers; (2.) Strikers of parents; (3.) Man-stealers; (4.) Old men exemplarily rebellious against the ..."
+        ]
+      },
+      {
+        "target": "gold-work",
+        "description": "Splittable word (rejoins to valid word 'goldwork')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... it,\" round about) \u05d6\u05b5\u05e8, \"a diadem,\" or a fringe of gold-work, such as encompassed diadems or crowns. And this ..."
+        ]
+      },
+      {
+        "target": "Kirjath-jearim",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... Gath, then to Ekron, 1 Sam. 5; thence returned to Kirjath-jearim, 1 Sam. 6, to the house of Abinadab, 1 Sam. 7; th ..."
+        ]
+      },
+      {
+        "target": "Obed-edom",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... use of Abinadab, 1 Sam. 7; thence to the house of Obed-edom, 2 Sam. 6; thence to Mount Zion in Jerusalem, int ..."
+        ]
+      },
+      {
+        "target": "Peace-offerings",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... le burnt-offering, verses 18, 25; 4. Shelamim, or peace-offerings, verse 28; 5. Terumoth and Tenuphoth, heave and w ...",
+          "... t ancient kind of sacrifice. 30. \u05d6\u05b6\u05d1\u05b7\u05d7 \u05e9\u05b0\u05c1\u05dc\u05b8\u05de\u05b4\u05d9\u05dd, peace-offerings. 31. Reason of the name. 32. Matter of this offer ...",
+          "... rations;\" 6. \u05d6\u05b6\u05d1\u05b7\u05d7 \u05e9\u05b0\u05c1\u05dc\u05b8\u05de\u05b4\u05d9\u05dd, \"zebach shelamim,\" \"peace-offerings.\" So are they rendered by ours, how rightly we sh ..."
+        ]
+      },
+      {
+        "target": "non-exclusive",
+        "description": "Splittable word (rejoins to valid word 'nonexclusive')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... t of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the te ..."
+        ]
+      },
+      {
+        "target": "non-transferable",
+        "description": "Splittable word (rejoins to valid word 'nontransferable')",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... ed fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this e-book ..."
+        ]
+      },
+      {
+        "target": "Man-stealers",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": [
+          "... :\u2014(1.) Adulterers; (2.) Strikers of parents; (3.) Man-stealers; (4.) Old men exemplarily rebellious against the ..."
+        ]
+      },
+      {
+        "target": "shew-bread",
+        "description": "Splittable word (rejoins to valid word 'shewbread')",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": [
+          "... erein was the candlestick, and the table, and the shew-bread; which is called the sanctuary. And after the sec ...",
+          "... r \"diadem,\" was put only on the ark, the table of shew-bread, and the altar of incense; intending expressions ..."
+        ]
+      },
+      {
+        "target": "gold-work",
+        "description": "Splittable word (rejoins to valid word 'goldwork')",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": [
+          "... it,\" round about) \u05d6\u05b5\u05e8, \"a diadem,\" or a fringe of gold-work, such as encompassed diadems or crowns. And this ..."
+        ]
+      },
+      {
+        "target": "Kirjath-jearim",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": [
+          "... Gath, then to Ekron, 1 Sam. 5; thence returned to Kirjath-jearim, 1 Sam. 6, to the house of Abinadab, 1 Sam. 7; th ..."
+        ]
+      },
+      {
+        "target": "Obed-edom",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": [
+          "... use of Abinadab, 1 Sam. 7; thence to the house of Obed-edom, 2 Sam. 6; thence to Mount Zion in Jerusalem, int ..."
+        ]
+      },
+      {
+        "target": "shew-bread",
+        "description": "Splittable word (rejoins to valid word 'shewbread')",
+        "chapter": "XXIII. \u2014Of the office of the priesthood",
+        "contexts": [
+          "... sanctuary, Heb. 9:6, about the daily incense, the shew-bread, the candlesticks and lamps, even all the service ..."
+        ]
+      },
+      {
+        "target": "shew-bread",
+        "description": "Splittable word (rejoins to valid word 'shewbread')",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... e sanctuary, at the altar of incense and table of shew-bread; thirdly, Those of the most holy place, before th ...",
+          "... 1; 2. The two wave loaves, verse 17; 3. The daily shew-bread, chap. 24:5. But whereas we have showed that the ..."
+        ]
+      },
+      {
+        "target": "Peace-offerings",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... t ancient kind of sacrifice. 30. \u05d6\u05b6\u05d1\u05b7\u05d7 \u05e9\u05b0\u05c1\u05dc\u05b8\u05de\u05b4\u05d9\u05dd, peace-offerings. 31. Reason of the name. 32. Matter of this offer ...",
+          "... rations;\" 6. \u05d6\u05b6\u05d1\u05b7\u05d7 \u05e9\u05b0\u05c1\u05dc\u05b8\u05de\u05b4\u05d9\u05dd, \"zebach shelamim,\" \"peace-offerings.\" So are they rendered by ours, how rightly we sh ...",
+          "... . \u05d0\u05b8\u05e9\u05b8\u05c1\u05dd, \"the trespass-offering;\" 4. \u05e9\u05b0\u05c1\u05dc\u05b8\u05de\u05b4\u05d9\u05dd, \"peace-offerings;\" and in part also the \u05de\u05b4\u05dc\u05bc\u05d5\u05bc\u05d0\u05b4\u05d9\u05dd, or \"consecrati ..."
+        ]
+      },
+      {
+        "target": "non-exclusive",
+        "description": "Splittable word (rejoins to valid word 'nonexclusive')",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... t of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the te ..."
+        ]
+      },
+      {
+        "target": "non-transferable",
+        "description": "Splittable word (rejoins to valid word 'nontransferable')",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... ed fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this e-book ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [
+      {
+        "target": "ePub",
+        "description": "Mixed-case capitalization error",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... e express written permission of Monergism Books. ePub, .mobi & .pdf Editions July 2019 Requests for inf ..."
+        ]
+      },
+      {
+        "target": "ePub",
+        "description": "Mixed-case capitalization error",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... e express written permission of Monergism Books. ePub, .mobi & .pdf Editions July 2019 Requests for inf ..."
+        ]
+      }
+    ],
+    "Unresolved Citation References": [
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... rda necessitas Leti corripuit gradum,\" Hor. Car. lib. i. Od. iii. 29,\u2014 is a better allusion to the origi ...",
+          "... almud, Tractat. Sabbat., cited in Sepher Ikharim, lib. iv. cap. xiii. And this principle Maimonides carrie ...",
+          "... seph Albo, in Seher Itharim, expressly concludes, lib. i. cap. xi., that \"all the punishments relating unt ..."
+        ]
+      },
+      {
+        "target": "lib. iv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... almud, Tractat. Sabbat., cited in Sepher Ikharim, lib. iv. cap. xiii. And this principle Maimonides carries ..."
+        ]
+      },
+      {
+        "target": "lib. x",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... ak elsewhere to the same purpose. In Neve Shalom, lib. x. cap. ix., they term it \u05d8\u05d5\u05de\u05d0\u05ea \u05e0\u05d7\u05e9, the \"defilemen ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... rda necessitas Leti corripuit gradum,\" Hor. Car. lib. i. Od. iii. 29,\u2014 is a better allusion to the origi ...",
+          "... almud, Tractat. Sabbat., cited in Sepher Ikharim, lib. iv. cap. xiii. And this principle Maimonides carrie ...",
+          "... seph Albo, in Seher Itharim, expressly concludes, lib. i. cap. xi., that \"all the punishments relating unt ..."
+        ]
+      },
+      {
+        "target": "lib. iv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... almud, Tractat. Sabbat., cited in Sepher Ikharim, lib. iv. cap. xiii. And this principle Maimonides carries ..."
+        ]
+      },
+      {
+        "target": "lib. x",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... ak elsewhere to the same purpose. In Neve Shalom, lib. x. cap. ix., they term it \u05d8\u05d5\u05de\u05d0\u05ea \u05e0\u05d7\u05e9, the \"defilemen ..."
+        ]
+      },
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... gressus cum patriarchis et prophetis,\" adv. Marc. lib. ii.;\u2014\"Christ always dealt\" (with men) \"in the name o ...",
+          "... y matter which they looked for by him, De Resur., lib. ii. cap. xxi. \"Non est,\" saith he, \"tantum miraculum ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... gressus cum patriarchis et prophetis,\" adv. Marc. lib. ii.;\u2014\"Christ always dealt\" (with men) \"in the name ...",
+          "... built.\" Cartwright, in his Mellificium Hebraicum, lib. i. cap. ix., reporting this story out of Buxtorf, a ...",
+          "... y matter which they looked for by him, De Resur., lib. ii. cap. xxi. \"Non est,\" saith he, \"tantum miraculu ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "... o caput rerum, summamque imperii fore,\" Tit. Liv. lib. v. And the tempering of the clay of Rome with the w ..."
+        ]
+      },
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "X. -- Appearances of the Son of God Under the Old Testament",
+        "contexts": [
+          "... gressus cum patriarchis et prophetis,\" adv. Marc. lib. ii.;\u2014\"Christ always dealt\" (with men) \"in the name o ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... built.\" Cartwright, in his Mellificium Hebraicum, lib. i. cap. ix., reporting this story out of Buxtorf, a ...",
+          "... y matter which they looked for by him, De Resur., lib. ii. cap. xxi. \"Non est,\" saith he, \"tantum miraculu ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... o caput rerum, summamque imperii fore,\" Tit. Liv. lib. v. And the tempering of the clay of Rome with the w ..."
+        ]
+      },
+      {
+        "target": "lib. ii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "... y matter which they looked for by him, De Resur., lib. ii. cap. xxi. \"Non est,\" saith he, \"tantum miraculum ..."
+        ]
+      },
+      {
+        "target": "lib. iv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... ira and Stada. I shall not reply that Damascenus, lib. iv., placeth a Panther and Barpanther on the genealo ..."
+        ]
+      },
+      {
+        "target": "lib. viii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... ed in the Talmud, the Lord Jesus is not intended, lib. viii. cap. v., he asserts that Jesus the son of Panthi ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": [
+          "... rpose. The words of the author of Sepher Ikharim, lib. iii. cap. x., are remarkable: \u05d5\u05d0\u05d9 \u05d0\u05d9\u05e4\u05e9\u05e8 \u05e9\u05dc\u05d0 \u05d9\u05e7\u05d5\u05dd \u05db\u05de\u05d5\u05d4 ..."
+        ]
+      },
+      {
+        "target": "lib. iv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ira and Stada. I shall not reply that Damascenus, lib. iv., placeth a Panther and Barpanther on the genealo ..."
+        ]
+      },
+      {
+        "target": "lib. viii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ed in the Talmud, the Lord Jesus is not intended, lib. viii. cap. v., he asserts that Jesus the son of Panthi ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... rpose. The words of the author of Sepher Ikharim, lib. iii. cap. x., are remarkable: \u05d5\u05d0\u05d9 \u05d0\u05d9\u05e4\u05e9\u05e8 \u05e9\u05dc\u05d0 \u05d9\u05e7\u05d5\u05dd \u05db\u05de\u05d5\u05d4 ..."
+        ]
+      },
+      {
+        "target": "lib. vi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ed in the Talmud, the Lord Jesus is not intended, lib. viii. cap. v., he asserts that Jesus the son of Pant ...",
+          "... en unto the Persian Sea. So doth Pliny evidently, lib. vi. cap. xxvi., \"Mesopotamia tota Assyriorum fuit vi ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ed in the Talmud, the Lord Jesus is not intended, lib. viii. cap. v., he asserts that Jesus the son of Pan ...",
+          "... en unto the Persian Sea. So doth Pliny evidently, lib. vi. cap. xxvi., \"Mesopotamia tota Assyriorum fuit v ...",
+          "... Pliny mentioneth Ura upon the banks of Euphrates, lib. v. cap. xxiv., \"Fertur Euphrates usque ad Uram.\" Bu ..."
+        ]
+      },
+      {
+        "target": "lib. xv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... ore likely to be the place mentioned by Ammianus, lib. xv., where he says that the Romans in six days came ...",
+          "... d in Horeb.\" Strabo calls this very mount \u03a3\u03b9\u03bd\u03bd\u1fb6\u03bd, lib. xvi.; and Justin says of Moses, \"Montem Sinan occupa ..."
+        ]
+      },
+      {
+        "target": "lib. xvi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "... d in Horeb.\" Strabo calls this very mount \u03a3\u03b9\u03bd\u03bd\u1fb6\u03bd, lib. xvi.; and Justin says of Moses, \"Montem Sinan occupat ..."
+        ]
+      },
+      {
+        "target": "lib. vi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... en unto the Persian Sea. So doth Pliny evidently, lib. vi. cap. xxvi., \"Mesopotamia tota Assyriorum fuit vi ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... en unto the Persian Sea. So doth Pliny evidently, lib. vi. cap. xxvi., \"Mesopotamia tota Assyriorum fuit v ...",
+          "... Pliny mentioneth Ura upon the banks of Euphrates, lib. v. cap. xxiv., \"Fertur Euphrates usque ad Uram.\" Bu ...",
+          "... word the learned Fuller contends for, Miscellan. lib. v. cap. vii. The manner of their present observatio ..."
+        ]
+      },
+      {
+        "target": "lib. xv",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... ore likely to be the place mentioned by Ammianus, lib. xv., where he says that the Romans in six days came ...",
+          "... d in Horeb.\" Strabo calls this very mount \u03a3\u03b9\u03bd\u03bd\u1fb6\u03bd, lib. xvi.; and Justin says of Moses, \"Montem Sinan occupa ..."
+        ]
+      },
+      {
+        "target": "lib. xvi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... d in Horeb.\" Strabo calls this very mount \u03a3\u03b9\u03bd\u03bd\u1fb6\u03bd, lib. xvi.; and Justin says of Moses, \"Montem Sinan occupat ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... rews call \u05e9\u05b9\u05c1\u05d7\u05b7\u05d3, \"shochad.\" So Plato, [De Repub. lib. iii.],\u2014 \u0394\u1ff6\u03c1\u03b1 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03c0\u03b5\u03af\u03b8\u03b5\u03b9, \u03b4\u03b5\u0342\u03c1\u02bc \u03b1\u1f30\u03b4\u03bf\u03af\u03bf\u03c5\u03c2 \u03b2\u03b1\u03c3\u03b9\u03bb\u1fc6\u03b1\u03c2\u00b7 ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... rews call \u05e9\u05b9\u05c1\u05d7\u05b7\u05d3, \"shochad.\" So Plato, [De Repub. lib. iii.],\u2014 \u0394\u1ff6\u03c1\u03b1 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03c0\u03b5\u03af\u03b8\u03b5\u03b9, \u03b4\u03b5\u0342\u03c1\u02bc \u03b1\u1f30\u03b4\u03bf\u03af\u03bf\u03c5\u03c2 \u03b2\u03b1\u03c3\u03b9\u03bb\u1fc6\u03b1\u03c2 ...",
+          "... Bacchus. Whence is that of the poet, [Ovid. Fast. lib. i. 357]:\u2014 \"Rode, caper, vitem: tamen hinc, cum sta ..."
+        ]
+      },
+      {
+        "target": "lib. vi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "... nd of sacrifices amongst men, as Plato expressly, lib. vi. de Legib.; but we know the contrary from Gen. 4, ..."
+        ]
+      },
+      {
+        "target": "lib. iii",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... rews call \u05e9\u05b9\u05c1\u05d7\u05b7\u05d3, \"shochad.\" So Plato, [De Repub. lib. iii.],\u2014 \u0394\u1ff6\u03c1\u03b1 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03c0\u03b5\u03af\u03b8\u03b5\u03b9, \u03b4\u03b5\u0342\u03c1\u02bc \u03b1\u1f30\u03b4\u03bf\u03af\u03bf\u03c5\u03c2 \u03b2\u03b1\u03c3\u03b9\u03bb\u1fc6\u03b1\u03c2\u00b7 ..."
+        ]
+      },
+      {
+        "target": "lib. i",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... rews call \u05e9\u05b9\u05c1\u05d7\u05b7\u05d3, \"shochad.\" So Plato, [De Repub. lib. iii.],\u2014 \u0394\u1ff6\u03c1\u03b1 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03c0\u03b5\u03af\u03b8\u03b5\u03b9, \u03b4\u03b5\u0342\u03c1\u02bc \u03b1\u1f30\u03b4\u03bf\u03af\u03bf\u03c5\u03c2 \u03b2\u03b1\u03c3\u03b9\u03bb\u1fc6\u03b1\u03c2 ...",
+          "... Bacchus. Whence is that of the poet, [Ovid. Fast. lib. i. 357]:\u2014 \"Rode, caper, vitem: tamen hinc, cum sta ..."
+        ]
+      },
+      {
+        "target": "lib. vi",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "... nd of sacrifices amongst men, as Plato expressly, lib. vi. de Legib.; but we know the contrary from Gen. 4, ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "2. ... 14.",
+        "description": "List sequence jump (skipped from 2 to 14)",
+        "chapter": "Prefatory Notices",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "I. \u2014The canonical authority of the Epistle to the Hebrews",
+        "contexts": [
+          "... anonical authority of the Epistle to the Hebrews. 2. Notation of the word \u05e7\u05b8\u05e0\u05b6\u05d4, \"kaneh;\" a measuring ...",
+          "... brews canonical. 11. Opposed by heretics of old. 12. Not received into the Latin church until the days ...",
+          "... \u2014Answer. 21. Countenance to old heresies\u2014Answer. 22. General heads of arguments to prove its canonical ..."
+        ]
+      },
+      {
+        "target": "11. ... 21.",
+        "description": "List sequence jump (skipped from 11 to 21)",
+        "chapter": "I. \u2014The canonical authority of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 29.",
+        "description": "List sequence jump (skipped from 7 to 29)",
+        "chapter": "I. \u2014The canonical authority of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 3.",
+        "description": "List sequence jump (skipped from 1 to 3)",
+        "chapter": "I. \u2014The canonical authority of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "II. \u2014Of the penman of the Epistle to the Hebrews",
+        "contexts": [
+          "... y are not actually inspired, subject to mistakes. 2. St Paul the writer of this Epistle\u2014The hesitation ...",
+          "... ise. 11. St Paul, in what sense \u1f30\u03b4\u03b9\u03ce\u03c4\u03b7\u03c2 \u03c4\u1ff7 \u03bb\u03cc\u03b3\u1ff3. 12. His eloquence and skill. 13. Causes of the differ ...",
+          "... the Hebrews in their dispersion\u2014\u0394\u03b9\u03b1\u03c3\u03c0\u03bf\u03c1\u03ac, what. 22. St Paul wrote an Epistle unto the same persons to ..."
+        ]
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "II. \u2014Of the penman of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 14.",
+        "description": "List sequence jump (skipped from 3 to 14)",
+        "chapter": "II. \u2014Of the penman of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 10.",
+        "description": "List sequence jump (skipped from 6 to 10)",
+        "chapter": "II. \u2014Of the penman of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 13.",
+        "description": "List sequence jump (skipped from 5 to 13)",
+        "chapter": "II. \u2014Of the penman of the Epistle to the Hebrews",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "III. \u2014The time [and occasion] of the writing of the Epistle to the Hebrews",
+        "contexts": [
+          "... the Hebrews\u2014The use of the right stating thereof. 2. After his release out of prison\u2014Before the death ...",
+          "... it. This, therefore, we shall now inquire into. 2. Some general intimations we have, in the Epistle ..."
+        ]
+      },
+      {
+        "target": "5. ... 14.",
+        "description": "List sequence jump (skipped from 5 to 14)",
+        "chapter": "IV. \u2014The language wherein the Epistle to the Hebrews was originally written",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 12.",
+        "description": "List sequence jump (skipped from 1 to 12)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 12.",
+        "description": "List sequence jump (skipped from 7 to 12)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 12.",
+        "description": "List sequence jump (skipped from 6 to 12)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 6.",
+        "description": "List sequence jump (skipped from 4 to 6)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 14.",
+        "description": "List sequence jump (skipped from 7 to 14)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 12.",
+        "description": "List sequence jump (skipped from 8 to 12)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 20.",
+        "description": "List sequence jump (skipped from 9 to 20)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 11.",
+        "description": "List sequence jump (skipped from 7 to 11)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 13.",
+        "description": "List sequence jump (skipped from 5 to 13)",
+        "chapter": "V. \u2014Testimonies cited by the apostle out of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 11.",
+        "description": "List sequence jump (skipped from 1 to 11)",
+        "chapter": "VI. \u2014Oneness of the church",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 6.",
+        "description": "List sequence jump (skipped from 4 to 6)",
+        "chapter": "VI. \u2014Oneness of the church",
+        "contexts": []
+      },
+      {
+        "target": "4.",
+        "description": "List sequence starts at 4 instead of 1",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": [
+          "... THE JUDAICAL DISTRIBUTION OF THE OLD TESTAMENT 1\u20134. Of the Judaical distribution of the Old Testament ...",
+          "... and nature of their oral law and traditions. 12\u201314. The whole disproved. 15\u201320. Agreement of the Jews ...",
+          "... of the first sort 34, of the latter 379;\u2014in all 634. Besides, they observe the number of the verses at ..."
+        ]
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 14.",
+        "description": "List sequence jump (skipped from 11 to 14)",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 20.",
+        "description": "List sequence jump (skipped from 14 to 20)",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 12.",
+        "description": "List sequence jump (skipped from 7 to 12)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 19.",
+        "description": "List sequence jump (skipped from 6 to 19)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 28.",
+        "description": "List sequence jump (skipped from 2 to 28)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "17. ... 31.",
+        "description": "List sequence jump (skipped from 17 to 31)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 32.",
+        "description": "List sequence jump (skipped from 4 to 32)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 34.",
+        "description": "List sequence jump (skipped from 12 to 34)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 18.",
+        "description": "List sequence jump (skipped from 15 to 18)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 20.",
+        "description": "List sequence jump (skipped from 2 to 20)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 19.",
+        "description": "List sequence jump (skipped from 11 to 19)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 26.",
+        "description": "List sequence jump (skipped from 5 to 26)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 28.",
+        "description": "List sequence jump (skipped from 4 to 28)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 12.",
+        "description": "List sequence jump (skipped from 7 to 12)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 19.",
+        "description": "List sequence jump (skipped from 6 to 19)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 28.",
+        "description": "List sequence jump (skipped from 2 to 28)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "17. ... 31.",
+        "description": "List sequence jump (skipped from 17 to 31)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 32.",
+        "description": "List sequence jump (skipped from 4 to 32)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 34.",
+        "description": "List sequence jump (skipped from 12 to 34)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 18.",
+        "description": "List sequence jump (skipped from 15 to 18)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 20.",
+        "description": "List sequence jump (skipped from 2 to 20)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 19.",
+        "description": "List sequence jump (skipped from 11 to 19)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 26.",
+        "description": "List sequence jump (skipped from 5 to 26)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 28.",
+        "description": "List sequence jump (skipped from 4 to 28)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 14.",
+        "description": "List sequence jump (skipped from 11 to 14)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 20.",
+        "description": "List sequence jump (skipped from 15 to 20)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 23.",
+        "description": "List sequence jump (skipped from 3 to 23)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 14.",
+        "description": "List sequence jump (skipped from 11 to 14)",
+        "chapter": "X. -- Appearances of the Son of God Under the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 20.",
+        "description": "List sequence jump (skipped from 15 to 20)",
+        "chapter": "X. -- Appearances of the Son of God Under the Old Testament",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 18.",
+        "description": "List sequence jump (skipped from 15 to 18)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 23.",
+        "description": "List sequence jump (skipped from 3 to 23)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 10.",
+        "description": "List sequence jump (skipped from 5 to 10)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 9.",
+        "description": "List sequence jump (skipped from 7 to 9)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 16.",
+        "description": "List sequence jump (skipped from 13 to 16)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 33.",
+        "description": "List sequence jump (skipped from 2 to 33)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 13.",
+        "description": "List sequence jump (skipped from 11 to 13)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 10.",
+        "description": "List sequence jump (skipped from 5 to 10)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 9.",
+        "description": "List sequence jump (skipped from 7 to 9)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 16.",
+        "description": "List sequence jump (skipped from 13 to 16)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 33.",
+        "description": "List sequence jump (skipped from 2 to 33)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 13.",
+        "description": "List sequence jump (skipped from 11 to 13)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 15.",
+        "description": "List sequence jump (skipped from 12 to 15)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 17.",
+        "description": "List sequence jump (skipped from 11 to 17)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": []
+      },
+      {
+        "target": "17. ... 20.",
+        "description": "List sequence jump (skipped from 17 to 20)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 21.",
+        "description": "List sequence jump (skipped from 9 to 21)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 15.",
+        "description": "List sequence jump (skipped from 12 to 15)",
+        "chapter": "XIV. \u2014Daniel's prophecy vindicated",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 17.",
+        "description": "List sequence jump (skipped from 11 to 17)",
+        "chapter": "XIV. \u2014Daniel's prophecy vindicated",
+        "contexts": []
+      },
+      {
+        "target": "17. ... 20.",
+        "description": "List sequence jump (skipped from 17 to 20)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 21.",
+        "description": "List sequence jump (skipped from 9 to 21)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 17.",
+        "description": "List sequence jump (skipped from 14 to 17)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 18.",
+        "description": "List sequence jump (skipped from 12 to 18)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 36.",
+        "description": "List sequence jump (skipped from 4 to 36)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "19. ... 67.",
+        "description": "List sequence jump (skipped from 19 to 67)",
+        "chapter": "XV. \u2014Computation of Daniel's weeks",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 13.",
+        "description": "List sequence jump (skipped from 10 to 13)",
+        "chapter": "XVI. \u2014Jewish traditions about the coming of the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 17.",
+        "description": "List sequence jump (skipped from 14 to 17)",
+        "chapter": "XVI. \u2014Jewish traditions about the coming of the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 18.",
+        "description": "List sequence jump (skipped from 12 to 18)",
+        "chapter": "XVI. \u2014Jewish traditions about the coming of the Messiah",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 36.",
+        "description": "List sequence jump (skipped from 4 to 36)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "19. ... 67.",
+        "description": "List sequence jump (skipped from 19 to 67)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 10.",
+        "description": "List sequence jump (skipped from 7 to 10)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 15.",
+        "description": "List sequence jump (skipped from 12 to 15)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 19.",
+        "description": "List sequence jump (skipped from 16 to 19)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 19.",
+        "description": "List sequence jump (skipped from 3 to 19)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 19.",
+        "description": "List sequence jump (skipped from 1 to 19)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 17.",
+        "description": "List sequence jump (skipped from 4 to 17)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 12.",
+        "description": "List sequence jump (skipped from 3 to 12)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 14.",
+        "description": "List sequence jump (skipped from 12 to 14)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 15.",
+        "description": "List sequence jump (skipped from 10 to 15)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 18.",
+        "description": "List sequence jump (skipped from 16 to 18)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 17.",
+        "description": "List sequence jump (skipped from 7 to 17)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "23. ... 25.",
+        "description": "List sequence jump (skipped from 23 to 25)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 32.",
+        "description": "List sequence jump (skipped from 1 to 32)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 34.",
+        "description": "List sequence jump (skipped from 6 to 34)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 18.",
+        "description": "List sequence jump (skipped from 10 to 18)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 8.",
+        "description": "List sequence jump (skipped from 4 to 8)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 12.",
+        "description": "List sequence jump (skipped from 7 to 12)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 11.",
+        "description": "List sequence jump (skipped from 9 to 11)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 20.",
+        "description": "List sequence jump (skipped from 6 to 20)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 9.",
+        "description": "List sequence jump (skipped from 6 to 9)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 19.",
+        "description": "List sequence jump (skipped from 8 to 19)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 14.",
+        "description": "List sequence jump (skipped from 9 to 14)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 16.",
+        "description": "List sequence jump (skipped from 12 to 16)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 17.",
+        "description": "List sequence jump (skipped from 8 to 17)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 6.",
+        "description": "List sequence jump (skipped from 1 to 6)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 9.",
+        "description": "List sequence jump (skipped from 4 to 9)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 17.",
+        "description": "List sequence jump (skipped from 14 to 17)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 18.",
+        "description": "List sequence jump (skipped from 11 to 18)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 19.",
+        "description": "List sequence jump (skipped from 11 to 19)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 19.",
+        "description": "List sequence jump (skipped from 13 to 19)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "19. ... 23.",
+        "description": "List sequence jump (skipped from 19 to 23)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 14.",
+        "description": "List sequence jump (skipped from 5 to 14)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 18.",
+        "description": "List sequence jump (skipped from 7 to 18)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "20. ... 24.",
+        "description": "List sequence jump (skipped from 20 to 24)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 25.",
+        "description": "List sequence jump (skipped from 15 to 25)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 8.",
+        "description": "List sequence jump (skipped from 1 to 8)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 7.",
+        "description": "List sequence jump (skipped from 4 to 7)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 26.",
+        "description": "List sequence jump (skipped from 7 to 26)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 15.",
+        "description": "List sequence jump (skipped from 7 to 15)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "18. ... 27.",
+        "description": "List sequence jump (skipped from 18 to 27)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 14.",
+        "description": "List sequence jump (skipped from 11 to 14)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 16.",
+        "description": "List sequence jump (skipped from 3 to 16)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 28.",
+        "description": "List sequence jump (skipped from 16 to 28)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 13.",
+        "description": "List sequence jump (skipped from 6 to 13)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "20. ... 29.",
+        "description": "List sequence jump (skipped from 20 to 29)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 30.",
+        "description": "List sequence jump (skipped from 10 to 30)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "20. ... 31.",
+        "description": "List sequence jump (skipped from 20 to 31)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 32.",
+        "description": "List sequence jump (skipped from 8 to 32)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 33.",
+        "description": "List sequence jump (skipped from 4 to 33)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 10.",
+        "description": "List sequence jump (skipped from 7 to 10)",
+        "chapter": "XVIII. \u2014Jews' objections against Christian religion answered",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 15.",
+        "description": "List sequence jump (skipped from 12 to 15)",
+        "chapter": "XVIII. \u2014Jews' objections against Christian religion answered",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 19.",
+        "description": "List sequence jump (skipped from 16 to 19)",
+        "chapter": "XVIII. \u2014Jews' objections against Christian religion answered",
+        "contexts": []
+      },
+      {
+        "target": "3.",
+        "description": "List sequence starts at 3 instead of 1",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "... ebrews\u2014Principal heads of them mentioned therein. 3. The call of Abraham, Heb. 11:8\u201319. 4. The name Ab ...",
+          "... he fatal period of changes in the Jewish church. 13. Institution of the passover. 14. The time of its ...",
+          "... ales to God\u2014Price of the redemption of children. 23. Close of God's first dispensation towards that ch ..."
+        ]
+      },
+      {
+        "target": "3. ... 19.",
+        "description": "List sequence jump (skipped from 3 to 19)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 10.",
+        "description": "List sequence jump (skipped from 7 to 10)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 19.",
+        "description": "List sequence jump (skipped from 1 to 19)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 17.",
+        "description": "List sequence jump (skipped from 4 to 17)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 12.",
+        "description": "List sequence jump (skipped from 3 to 12)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 14.",
+        "description": "List sequence jump (skipped from 12 to 14)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 15.",
+        "description": "List sequence jump (skipped from 10 to 15)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 18.",
+        "description": "List sequence jump (skipped from 16 to 18)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 17.",
+        "description": "List sequence jump (skipped from 7 to 17)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "23. ... 25.",
+        "description": "List sequence jump (skipped from 23 to 25)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 32.",
+        "description": "List sequence jump (skipped from 1 to 32)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 34.",
+        "description": "List sequence jump (skipped from 6 to 34)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 18.",
+        "description": "List sequence jump (skipped from 10 to 18)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 8.",
+        "description": "List sequence jump (skipped from 4 to 8)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 12.",
+        "description": "List sequence jump (skipped from 7 to 12)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 11.",
+        "description": "List sequence jump (skipped from 9 to 11)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 20.",
+        "description": "List sequence jump (skipped from 6 to 20)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 19.",
+        "description": "List sequence jump (skipped from 3 to 19)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 9.",
+        "description": "List sequence jump (skipped from 6 to 9)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 19.",
+        "description": "List sequence jump (skipped from 8 to 19)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 14.",
+        "description": "List sequence jump (skipped from 9 to 14)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 16.",
+        "description": "List sequence jump (skipped from 12 to 16)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 17.",
+        "description": "List sequence jump (skipped from 8 to 17)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 6.",
+        "description": "List sequence jump (skipped from 1 to 6)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 9.",
+        "description": "List sequence jump (skipped from 4 to 9)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "14. ... 17.",
+        "description": "List sequence jump (skipped from 14 to 17)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 18.",
+        "description": "List sequence jump (skipped from 11 to 18)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 19.",
+        "description": "List sequence jump (skipped from 11 to 19)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 19.",
+        "description": "List sequence jump (skipped from 13 to 19)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "19. ... 23.",
+        "description": "List sequence jump (skipped from 19 to 23)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 14.",
+        "description": "List sequence jump (skipped from 5 to 14)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 18.",
+        "description": "List sequence jump (skipped from 7 to 18)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "20. ... 24.",
+        "description": "List sequence jump (skipped from 20 to 24)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 25.",
+        "description": "List sequence jump (skipped from 15 to 25)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 8.",
+        "description": "List sequence jump (skipped from 1 to 8)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 7.",
+        "description": "List sequence jump (skipped from 4 to 7)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 26.",
+        "description": "List sequence jump (skipped from 7 to 26)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 15.",
+        "description": "List sequence jump (skipped from 7 to 15)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "18. ... 27.",
+        "description": "List sequence jump (skipped from 18 to 27)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 14.",
+        "description": "List sequence jump (skipped from 11 to 14)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 16.",
+        "description": "List sequence jump (skipped from 3 to 16)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "16. ... 28.",
+        "description": "List sequence jump (skipped from 16 to 28)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 13.",
+        "description": "List sequence jump (skipped from 6 to 13)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "20. ... 29.",
+        "description": "List sequence jump (skipped from 20 to 29)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 30.",
+        "description": "List sequence jump (skipped from 10 to 30)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "20. ... 31.",
+        "description": "List sequence jump (skipped from 20 to 31)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 32.",
+        "description": "List sequence jump (skipped from 8 to 32)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 33.",
+        "description": "List sequence jump (skipped from 4 to 33)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 12.",
+        "description": "List sequence jump (skipped from 9 to 12)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 11.",
+        "description": "List sequence jump (skipped from 6 to 11)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 13.",
+        "description": "List sequence jump (skipped from 9 to 13)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 17.",
+        "description": "List sequence jump (skipped from 15 to 17)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 28.",
+        "description": "List sequence jump (skipped from 7 to 28)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 29.",
+        "description": "List sequence jump (skipped from 2 to 29)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 30.",
+        "description": "List sequence jump (skipped from 4 to 30)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 10.",
+        "description": "List sequence jump (skipped from 7 to 10)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 18.",
+        "description": "List sequence jump (skipped from 13 to 18)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 12.",
+        "description": "List sequence jump (skipped from 4 to 12)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 13.",
+        "description": "List sequence jump (skipped from 8 to 13)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 14.",
+        "description": "List sequence jump (skipped from 1 to 14)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 26.",
+        "description": "List sequence jump (skipped from 13 to 26)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 27.",
+        "description": "List sequence jump (skipped from 5 to 27)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 29.",
+        "description": "List sequence jump (skipped from 15 to 29)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "18. ... 32.",
+        "description": "List sequence jump (skipped from 18 to 32)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 33.",
+        "description": "List sequence jump (skipped from 8 to 33)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 35.",
+        "description": "List sequence jump (skipped from 2 to 35)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 39.",
+        "description": "List sequence jump (skipped from 4 to 39)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 42.",
+        "description": "List sequence jump (skipped from 6 to 42)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 12.",
+        "description": "List sequence jump (skipped from 9 to 12)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 11.",
+        "description": "List sequence jump (skipped from 6 to 11)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "9. ... 13.",
+        "description": "List sequence jump (skipped from 9 to 13)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 17.",
+        "description": "List sequence jump (skipped from 15 to 17)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 28.",
+        "description": "List sequence jump (skipped from 7 to 28)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 29.",
+        "description": "List sequence jump (skipped from 2 to 29)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 30.",
+        "description": "List sequence jump (skipped from 4 to 30)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 10.",
+        "description": "List sequence jump (skipped from 7 to 10)",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 18.",
+        "description": "List sequence jump (skipped from 13 to 18)",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 12.",
+        "description": "List sequence jump (skipped from 4 to 12)",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 19.",
+        "description": "List sequence jump (skipped from 13 to 19)",
+        "chapter": "XXII. \u2014Of the tabernacle and ark",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "XXIII. \u2014Of the office of the priesthood",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 12.",
+        "description": "List sequence jump (skipped from 4 to 12)",
+        "chapter": "XXIII. \u2014Of the office of the priesthood",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "XXIII. \u2014Of the office of the priesthood",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 13.",
+        "description": "List sequence jump (skipped from 8 to 13)",
+        "chapter": "XXIII. \u2014Of the office of the priesthood",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 12.",
+        "description": "List sequence jump (skipped from 7 to 12)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 14.",
+        "description": "List sequence jump (skipped from 1 to 14)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "13. ... 26.",
+        "description": "List sequence jump (skipped from 13 to 26)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 27.",
+        "description": "List sequence jump (skipped from 5 to 27)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "7. ... 28.",
+        "description": "List sequence jump (skipped from 7 to 28)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "15. ... 29.",
+        "description": "List sequence jump (skipped from 15 to 29)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "18. ... 32.",
+        "description": "List sequence jump (skipped from 18 to 32)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 8.",
+        "description": "List sequence jump (skipped from 4 to 8)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 33.",
+        "description": "List sequence jump (skipped from 8 to 33)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 35.",
+        "description": "List sequence jump (skipped from 2 to 35)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 39.",
+        "description": "List sequence jump (skipped from 4 to 39)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 42.",
+        "description": "List sequence jump (skipped from 6 to 42)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Samuel 34",
+        "description": "Invalid Bible reference (chapter 34 exceeds max 31 for Samuel)",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": [
+          "... e Scripture, assigning unto Joshua 14, Judges 14, Samuel 34, Kings 35, Isaiah 26, Jeremiah 31, Ezekiel 29, th ..."
+        ]
+      },
+      {
+        "target": "Kings 35",
+        "description": "Invalid Bible reference (chapter 35 exceeds max 22 for Kings)",
+        "chapter": "VII. \u2014Of the Judaical distribution of the Old Testament",
+        "contexts": [
+          "... , assigning unto Joshua 14, Judges 14, Samuel 34, Kings 35, Isaiah 26, Jeremiah 31, Ezekiel 29, the lesser P ..."
+        ]
+      },
+      {
+        "target": "Jude 6",
+        "description": "Invalid Bible reference (chapter 6 exceeds max 1 for Jude)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "... place of their first habitation, which they left, Jude 6, was the highest heaven, the most glorious recept ..."
+        ]
+      },
+      {
+        "target": "Jude 6",
+        "description": "Invalid Bible reference (chapter 6 exceeds max 1 for Jude)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "... place of their first habitation, which they left, Jude 6, was the highest heaven, the most glorious recept ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "12. It is of more importance that this Epistle was a long time, though not rejected by, yet not received in the church o...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "I. \u2014The canonical authority of the Epistle to the Hebrews",
+        "contexts": [
+          "12. It is of more importance that this Epistle was a long time, though not rejected by, yet not received in the church o..."
+        ]
+      },
+      {
+        "target": "22. Now, it is plainly in this testimony asserted, that St Paul wrote a peculiar epistle unto them unto whom St Peter wr...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "II. \u2014Of the penman of the Epistle to the Hebrews",
+        "contexts": [
+          "22. Now, it is plainly in this testimony asserted, that St Paul wrote a peculiar epistle unto them unto whom St Peter wr..."
+        ]
+      },
+      {
+        "target": "\"Post ignem aetheria domo",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "\"Post ignem aetheria domo"
+        ]
+      },
+      {
+        "target": "Leti corripuit gradum,\" Hor. Car. lib. i. Od. iii. 29,\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "Leti corripuit gradum,\" Hor. Car. lib. i. Od. iii. 29,\u2014"
+        ]
+      },
+      {
+        "target": "[As] for the serpent that tempted Eve, who is here threatened as the head of all the evil that ensued thereon, they conf...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "[As] for the serpent that tempted Eve, who is here threatened as the head of all the evil that ensued thereon, they conf..."
+        ]
+      },
+      {
+        "target": "4. Concerning the promises made unto Abraham we have spoken before. The next mention of the Messiah in the Targum is on ...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "4. Concerning the promises made unto Abraham we have spoken before. The next mention of the Messiah in the Targum is on ..."
+        ]
+      },
+      {
+        "target": "\"Shake thyself from dust, arise,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "\"Shake thyself from dust, arise,"
+        ]
+      },
+      {
+        "target": "Brings to my soul redemption.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "PART II: CONCERNING THE MESSIAH",
+        "contexts": [
+          "Brings to my soul redemption.\""
+        ]
+      },
+      {
+        "target": "\"Post ignem aetheria domo",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "\"Post ignem aetheria domo"
+        ]
+      },
+      {
+        "target": "Leti corripuit gradum,\" Hor. Car. lib. i. Od. iii. 29,\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "Leti corripuit gradum,\" Hor. Car. lib. i. Od. iii. 29,\u2014"
+        ]
+      },
+      {
+        "target": "[As] for the serpent that tempted Eve, who is here threatened as the head of all the evil that ensued thereon, they conf...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "VIII. \u2014The first dissertation concerning the Messiah, proving him to be promised of old",
+        "contexts": [
+          "[As] for the serpent that tempted Eve, who is here threatened as the head of all the evil that ensued thereon, they conf..."
+        ]
+      },
+      {
+        "target": "4. Concerning the promises made unto Abraham we have spoken before. The next mention of the Messiah in the Targum is on ...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "4. Concerning the promises made unto Abraham we have spoken before. The next mention of the Messiah in the Targum is on ..."
+        ]
+      },
+      {
+        "target": "\"Shake thyself from dust, arise,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "\"Shake thyself from dust, arise,"
+        ]
+      },
+      {
+        "target": "Brings to my soul redemption.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "IX. \u2014Promises of the Messiah vindicated X. \u2014Appearances of the Son of God under the old te",
+        "contexts": [
+          "Brings to my soul redemption.\""
+        ]
+      },
+      {
+        "target": "3. Now, this determination of time inquired after was first made by Jacob, Gen. 49:8\u201310, accompanied with a signal demon...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "3. Now, this determination of time inquired after was first made by Jacob, Gen. 49:8\u201310, accompanied with a signal demon..."
+        ]
+      },
+      {
+        "target": "\"Adde quod eunuchus nulla pietate movetur",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "\"Adde quod eunuchus nulla pietate movetur"
+        ]
+      },
+      {
+        "target": "In similes, animosque ligant consortia damni.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "In similes, animosque ligant consortia damni.\""
+        ]
+      },
+      {
+        "target": "\"Mercy from eunuchs is removed away;",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "\"Mercy from eunuchs is removed away;"
+        ]
+      },
+      {
+        "target": "When misery is known their common fate.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "When misery is known their common fate.\""
+        ]
+      },
+      {
+        "target": "14. This evasion being of no use, something more satisfactory must be inquired after, something wherein the glory of the...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "14. This evasion being of no use, something more satisfactory must be inquired after, something wherein the glory of the..."
+        ]
+      },
+      {
+        "target": "As \u05d7\u05b6\u05de\u05b0\u05d3\u05b7\u05bc\u05ea here is put in statu constructo by \u05d2\u05bc\u05d5\u05b9\u05d9\u05b4\u05dd, and the verb from thence put in the plural number, so 2 Sam. 10:...",
+        "description": "Paragraph has unmatched double quotes (count: 35)",
+        "chapter": "XI. \u2014Faith of the ancient church of the Jews concerning the Messiah",
+        "contexts": [
+          "As \u05d7\u05b6\u05de\u05b0\u05d3\u05b7\u05bc\u05ea here is put in statu constructo by \u05d2\u05bc\u05d5\u05b9\u05d9\u05b4\u05dd, and the verb from thence put in the plural number, so 2 Sam. 10:..."
+        ]
+      },
+      {
+        "target": "3. Now, this determination of time inquired after was first made by Jacob, Gen. 49:8\u201310, accompanied with a signal demon...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "3. Now, this determination of time inquired after was first made by Jacob, Gen. 49:8\u201310, accompanied with a signal demon..."
+        ]
+      },
+      {
+        "target": "\"Adde quod eunuchus nulla pietate movetur",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "\"Adde quod eunuchus nulla pietate movetur"
+        ]
+      },
+      {
+        "target": "In similes, animosque ligant consortia damni.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "In similes, animosque ligant consortia damni.\""
+        ]
+      },
+      {
+        "target": "\"Mercy from eunuchs is removed away;",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "\"Mercy from eunuchs is removed away;"
+        ]
+      },
+      {
+        "target": "When misery is known their common fate.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XII. \u2014[Second dissertation]\u2014The promised Messiah long since come",
+        "contexts": [
+          "When misery is known their common fate.\""
+        ]
+      },
+      {
+        "target": "14. This evasion being of no use, something more satisfactory must be inquired after, something wherein the glory of the...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": [
+          "14. This evasion being of no use, something more satisfactory must be inquired after, something wherein the glory of the..."
+        ]
+      },
+      {
+        "target": "As \u05d7\u05b6\u05de\u05b0\u05d3\u05b7\u05bc\u05ea here is put in statu constructo by \u05d2\u05bc\u05d5\u05b9\u05d9\u05b4\u05dd, and the verb from thence put in the plural number, so 2 Sam. 10:...",
+        "description": "Paragraph has unmatched double quotes (count: 35)",
+        "chapter": "XIII. \u2014Other testimonies proving the Messiah to be come",
+        "contexts": [
+          "As \u05d7\u05b6\u05de\u05b0\u05d3\u05b7\u05bc\u05ea here is put in statu constructo by \u05d2\u05bc\u05d5\u05b9\u05d9\u05b4\u05dd, and the verb from thence put in the plural number, so 2 Sam. 10:..."
+        ]
+      },
+      {
+        "target": "38. The contexture of the words in our translation seems to have some difficulty: Exod. 19:12, \"Whosoever toucheth the m...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "XVII. \u2014The third general dissertation, proving Jesus of Nazareth to be the only true and promis",
+        "contexts": [
+          "38. The contexture of the words in our translation seems to have some difficulty: Exod. 19:12, \"Whosoever toucheth the m..."
+        ]
+      },
+      {
+        "target": "38. The contexture of the words in our translation seems to have some difficulty: Exod. 19:12, \"Whosoever toucheth the m...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "XIX. \u2014State and ordinances of the church before the giving of the law",
+        "contexts": [
+          "38. The contexture of the words in our translation seems to have some difficulty: Exod. 19:12, \"Whosoever toucheth the m..."
+        ]
+      },
+      {
+        "target": "14. The original division of the people, after the days of Jacob, was, first, into \u05e9\u05b0\u05c1\u05d1\u05b8\u05d8\u05b4\u05d9\u05dd, \"tribes;\" whereof at first...",
+        "description": "Paragraph has unmatched double quotes (count: 35)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "14. The original division of the people, after the days of Jacob, was, first, into \u05e9\u05b0\u05c1\u05d1\u05b8\u05d8\u05b4\u05d9\u05dd, \"tribes;\" whereof at first..."
+        ]
+      },
+      {
+        "target": "\"Munera (crede mihi) capiunt hominesque Deosque:",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "\"Munera (crede mihi) capiunt hominesque Deosque:"
+        ]
+      },
+      {
+        "target": "Placatur donis Juppiter ipse datis.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "Placatur donis Juppiter ipse datis.\""
+        ]
+      },
+      {
+        "target": "\"Rode, caper, vitem: tamen hinc, cum stabis ad aram,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "\"Rode, caper, vitem: tamen hinc, cum stabis ad aram,"
+        ]
+      },
+      {
+        "target": "In tua quod spargi cornua possit, erit;\"\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "In tua quod spargi cornua possit, erit;\"\u2014"
+        ]
+      },
+      {
+        "target": "\"The vines cropt by the goat yet wine suffice",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "\"The vines cropt by the goat yet wine suffice"
+        ]
+      },
+      {
+        "target": "To sprinkle him when made a sacrifice;\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "To sprinkle him when made a sacrifice;\""
+        ]
+      },
+      {
+        "target": "\"Money I want, a sacred swine to buy;",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "\"Money I want, a sacred swine to buy;"
+        ]
+      },
+      {
+        "target": "I would be consecrate before I die.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "I would be consecrate before I die.\""
+        ]
+      },
+      {
+        "target": "\"Adolescens, quibus hic pretiis porci veneunt sacres, sinceri?",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "\"Adolescens, quibus hic pretiis porci veneunt sacres, sinceri?"
+        ]
+      },
+      {
+        "target": "Nam ego quidem insanum esse te certe scio;\"\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "Nam ego quidem insanum esse te certe scio;\"\u2014"
+        ]
+      },
+      {
+        "target": "\"Let offerings and sacrifices burn",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "\"Let offerings and sacrifices burn"
+        ]
+      },
+      {
+        "target": "At evening and at sacred light's return.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XX. \u2014The law and precepts thereof",
+        "contexts": [
+          "At evening and at sacred light's return.\""
+        ]
+      },
+      {
+        "target": "14. The original division of the people, after the days of Jacob, was, first, into \u05e9\u05b0\u05c1\u05d1\u05b8\u05d8\u05b4\u05d9\u05dd, \"tribes;\" whereof at first...",
+        "description": "Paragraph has unmatched double quotes (count: 35)",
+        "chapter": "XXI. \u2014The sanction of the law in promises and threatenings",
+        "contexts": [
+          "14. The original division of the people, after the days of Jacob, was, first, into \u05e9\u05b0\u05c1\u05d1\u05b8\u05d8\u05b4\u05d9\u05dd, \"tribes;\" whereof at first..."
+        ]
+      },
+      {
+        "target": "\"Munera (crede mihi) capiunt hominesque Deosque:",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "\"Munera (crede mihi) capiunt hominesque Deosque:"
+        ]
+      },
+      {
+        "target": "Placatur donis Juppiter ipse datis.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "Placatur donis Juppiter ipse datis.\""
+        ]
+      },
+      {
+        "target": "\"Rode, caper, vitem: tamen hinc, cum stabis ad aram,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "\"Rode, caper, vitem: tamen hinc, cum stabis ad aram,"
+        ]
+      },
+      {
+        "target": "In tua quod spargi cornua possit, erit;\"\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "In tua quod spargi cornua possit, erit;\"\u2014"
+        ]
+      },
+      {
+        "target": "\"The vines cropt by the goat yet wine suffice",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "\"The vines cropt by the goat yet wine suffice"
+        ]
+      },
+      {
+        "target": "To sprinkle him when made a sacrifice;\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "To sprinkle him when made a sacrifice;\""
+        ]
+      },
+      {
+        "target": "\"Money I want, a sacred swine to buy;",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "\"Money I want, a sacred swine to buy;"
+        ]
+      },
+      {
+        "target": "I would be consecrate before I die.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "I would be consecrate before I die.\""
+        ]
+      },
+      {
+        "target": "\"Adolescens, quibus hic pretiis porci veneunt sacres, sinceri?",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "\"Adolescens, quibus hic pretiis porci veneunt sacres, sinceri?"
+        ]
+      },
+      {
+        "target": "Nam ego quidem insanum esse te certe scio;\"\u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "Nam ego quidem insanum esse te certe scio;\"\u2014"
+        ]
+      },
+      {
+        "target": "\"Let offerings and sacrifices burn",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "\"Let offerings and sacrifices burn"
+        ]
+      },
+      {
+        "target": "At evening and at sacred light's return.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "XXIV. \u2014Sacrifices of the old law",
+        "contexts": [
+          "At evening and at sacred light's return.\""
+        ]
+      }
+    ]
+  }
+}

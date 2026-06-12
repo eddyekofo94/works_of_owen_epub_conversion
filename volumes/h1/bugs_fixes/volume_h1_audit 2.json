@@ -1,0 +1,136 @@
+{
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h1/output/volume_h1.epub",
+  "generated_at": "2026-06-11T00:09:28.684567+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 1,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "possible_beta_code_residue",
+      "message": "Possible Beta Code residue detected",
+      "files": 2
+    }
+  ],
+  "info": {
+    "file_count": 73,
+    "epub_size_bytes": 6692321,
+    "opf_path": "EPUB/content.opf",
+    "opf_version": "3.0",
+    "titles": [
+      "An Exposition of the Epistle to the Hebrews, Volume 1"
+    ],
+    "creators": [
+      "John Owen"
+    ],
+    "manifest_count": 64,
+    "spine_count": 38,
+    "xhtml_count": 39,
+    "nav_files": [
+      "EPUB/nav.xhtml"
+    ],
+    "font_count": 20,
+    "language": {
+      "greek_chars": 14863,
+      "greek_untagged_chars": 0,
+      "hebrew_chars": 36153,
+      "hebrew_untagged_chars": 0,
+      "files_with_untagged_greek": 0,
+      "files_with_untagged_hebrew": 0,
+      "hebrew_integrity_failures": 0
+    },
+    "footnotes": {
+      "noteref_count": 146,
+      "unique_noteref_targets": 146,
+      "endnote_anchor_count": 146,
+      "missing_endnote_targets": [],
+      "orphan_endnotes": []
+    },
+    "content_scan": {
+      "boilerplate_hits": 0,
+      "beta_code_files": 2,
+      "escaped_lang_tag_files": 0,
+      "literal_footnote_marker_files": 0,
+      "empty_bracket_noise_files": 0,
+      "missing_chapter_initialization_files": 0,
+      "noteref_without_class": 0,
+      "repeated_phrase_count": 0,
+      "unprocessed_ages_marker_files": 0,
+      "page_reference_split_files": 0,
+      "chapter_heading_in_paragraph_files": 0,
+      "overlong_heading_body_files": 0,
+      "fragmented_greek_span_run_files": 0,
+      "fragmented_hebrew_span_run_files": 0,
+      "glued_ordinal_files": 0,
+      "structural_bold_leak_files": 1,
+      "repeated_structural_marker_files": 0,
+      "scholastic_bold_leak_files": 0,
+      "inline_scholastic_label_files": 0,
+      "trailing_scholastic_label_files": 0,
+      "digression_not_h3_files": 0,
+      "spaced_caps_files": 0,
+      "lowercase_paragraph_start_files": 1,
+      "noteref_leading_space_files": 0,
+      "greek_span_legacy_accent_files": 0,
+      "i_will_mangle_files": 0,
+      "samples": {
+        "boilerplate": [],
+        "beta_code": [
+          {
+            "file": "EPUB/ch020.xhtml",
+            "text": "Aj"
+          },
+          {
+            "file": "EPUB/ch022.xhtml",
+            "text": "Aj"
+          }
+        ],
+        "escaped_lang_tag": [],
+        "untagged_greek": [],
+        "untagged_hebrew": [],
+        "hebrew_integrity": [],
+        "repeated_phrase": [],
+        "literal_footnote_marker": [],
+        "empty_bracket_noise": [],
+        "noteref_without_class": [],
+        "missing_chapter_initialization": [],
+        "unprocessed_ages_marker": [],
+        "page_reference_split": [],
+        "chapter_heading_in_paragraph": [],
+        "overlong_heading_body": [],
+        "fragmented_greek_span_run": [],
+        "fragmented_hebrew_span_run": [],
+        "scripture_blockquote": [],
+        "orphan_scripture_bracket": [],
+        "glued_ordinal": [],
+        "structural_bold_leak": [
+          {
+            "file": "EPUB/ch002.xhtml",
+            "text": "ONE OF HIS MAJESTY'S MOST HONOURABLE PRIVY COUNCIL, AND PRINCIPAL SECRETARY OF STATE, ETC."
+          }
+        ],
+        "repeated_structural_marker": [],
+        "scholastic_bold_leak": [],
+        "inline_scholastic_label": [],
+        "trailing_scholastic_label": [],
+        "digression_not_h3": [],
+        "cross_chapter_continuation": [],
+        "nav_overlong_entry": [],
+        "nav_duplicate_text": [],
+        "spaced_caps": [],
+        "lowercase_paragraph_start": [
+          {
+            "file": "EPUB/ch001.xhtml",
+            "text": "p. lxxxiv. There is not much to be added in regard to the history of the work. In"
+          }
+        ],
+        "noteref_leading_space": [],
+        "greek_span_legacy_accent": [],
+        "quote_prose_join": [],
+        "i_will_mangle": []
+      }
+    },
+    "nav_link_count": 40,
+    "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
+  }
+}

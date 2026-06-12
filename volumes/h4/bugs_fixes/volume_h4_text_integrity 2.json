@@ -1,0 +1,1461 @@
+{
+  "volume": "h4",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h4/input/volume_h4.epub",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h4/output/volume_h4.epub",
+  "generated_at": "2026-06-11T13:32:40.521042+00:00",
+  "status": "warn",
+  "warning_count": 8,
+  "warnings": [
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "missing_hebrew_clauses",
+      "message": "Some dense Hebrew passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "missing_latin_clauses",
+      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 13,
+    "source": "epub2"
+  },
+  "epub": {
+    "spine_text_files": 39,
+    "paragraph_count": 4622
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 257295,
+    "epub_content_tokens": 474915,
+    "coverage_ratio": 0.9996,
+    "missing_word_samples": [
+      {
+        "word": "quæ",
+        "pdf": 9,
+        "epub": 0
+      },
+      {
+        "word": "αλλʼ",
+        "pdf": 9,
+        "epub": 0
+      },
+      {
+        "word": "καθʼ",
+        "pdf": 7,
+        "epub": 0
+      },
+      {
+        "word": "αφʼ",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "œcumenius",
+        "pdf": 5,
+        "epub": 0
+      },
+      {
+        "word": "κατʼ",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "substantiæ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "διʼ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "nostræ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "æternæ",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "the",
+        "pdf": 19920,
+        "epub": 36577
+      },
+      {
+        "word": "of",
+        "pdf": 15212,
+        "epub": 28027
+      },
+      {
+        "word": "and",
+        "pdf": 12409,
+        "epub": 22921
+      },
+      {
+        "word": "in",
+        "pdf": 7828,
+        "epub": 14337
+      },
+      {
+        "word": "is",
+        "pdf": 6528,
+        "epub": 12110
+      },
+      {
+        "word": "to",
+        "pdf": 6353,
+        "epub": 11717
+      },
+      {
+        "word": "it",
+        "pdf": 4944,
+        "epub": 9128
+      },
+      {
+        "word": "he",
+        "pdf": 3239,
+        "epub": 6112
+      },
+      {
+        "word": "as",
+        "pdf": 3085,
+        "epub": 5698
+      },
+      {
+        "word": "his",
+        "pdf": 3101,
+        "epub": 5700
+      },
+      {
+        "word": "be",
+        "pdf": 2865,
+        "epub": 5364
+      },
+      {
+        "word": "for",
+        "pdf": 2503,
+        "epub": 4686
+      },
+      {
+        "word": "not",
+        "pdf": 2394,
+        "epub": 4368
+      },
+      {
+        "word": "are",
+        "pdf": 2284,
+        "epub": 4226
+      },
+      {
+        "word": "or",
+        "pdf": 2327,
+        "epub": 4248
+      },
+      {
+        "word": "by",
+        "pdf": 2175,
+        "epub": 4033
+      },
+      {
+        "word": "was",
+        "pdf": 2167,
+        "epub": 4018
+      },
+      {
+        "word": "but",
+        "pdf": 1942,
+        "epub": 3585
+      },
+      {
+        "word": "all",
+        "pdf": 1913,
+        "epub": 3544
+      },
+      {
+        "word": "our",
+        "pdf": 1755,
+        "epub": 3339
+      },
+      {
+        "word": "we",
+        "pdf": 1737,
+        "epub": 3278
+      },
+      {
+        "word": "so",
+        "pdf": 1833,
+        "epub": 3323
+      },
+      {
+        "word": "him",
+        "pdf": 1349,
+        "epub": 2528
+      },
+      {
+        "word": "us",
+        "pdf": 1165,
+        "epub": 2206
+      },
+      {
+        "word": "on",
+        "pdf": 1113,
+        "epub": 2096
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 12,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 0,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_usable": 0,
+    "skipped_top_window_count": 0,
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_usable": 0,
+    "skipped_bottom_window_count": 0,
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 4487,
+    "split_candidate_count": 40,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "men of one age: Eccles. 1:4, \"One generation passeth away, and another generation cometh,\"—that is, the men of one age. See Deut. 32:7. So is γενεή , as in Homer's Iliad, vi. 146:—",
+        "next": "Οἵη περ θύλλων γενεὴ , τοιήδε καὶ ἀνδρῶν ."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "oice of God, if you will choose so to do, take heed of that which would certainly be a hinderance thereof.' Thus dealeth the apostle with the Hebrews; and herein teacheth us that,—",
+        "next": "Obs. V. The formal reason of all our obedience consists in its relation to the voice or authority of God."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "whereon they invited unto a feast all the priests that ministered. But most frequently they so express a present opportunity or season. So the Greeks use σήμερον , as in Anacreon,—",
+        "next": "Σήμερον μέλει μοι · τὸ δὲ αὔριον τίς οἷδε ;—"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Σήμερον μέλει μοι · τὸ δὲ αὔριον τίς οἷδε ;—",
+        "next": "\"My care is for to-day\" (the present season); \"who knows to-morrow\" (or the time to come)?"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": " fall out). \"Sufficient unto the day\" (the present time and season) \"is the evil thereof.\" To the same purpose do they use \"hodie\" in the Latin tongue, as in these common sayings,—",
+        "next": "\" Sera nimis vita est crastina , viv' hodie:\""
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "And,—",
+        "next": "\" Qui non est hodie, cras minus aptus erit;\" with many other sayings of the like importance. This, then, is the sense and meaning of the word absolutely considered. The apostle exh"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "another observation which the words opened will afford unto us, arising from the season, which the apostle presseth upon their consideration in that word \"to-day.\" And it is that,—",
+        "next": "Obs. XI. Especial seasons of grace for obedience are in an especial manner to be observed and improved."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "int conspiracy as it were of all the persons of that age. These are they who were guilty of the sin here reported. And we may observe from this expression and remembrance of them,—",
+        "next": "Obs. XII. That the examples of our forefathers are of use and concernment unto us, and objects of our deepest consideration."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": " sins, so that at least they are prevalent in them. Hence the apostle chargeth national sins on the Cretians, from the testimony of Epimenides, who had observed them amongst them;—",
+        "next": "Κρῆτες ἀεὶ ψεῦσται , κακὰ θήρια , γάστερες ἀργαί ,"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Κρῆτες ἀεὶ ψεῦσται , κακὰ θήρια , γάστερες ἀργαί ,",
+        "next": "Tit. 1:12, \"The Cretians are alway liars, evil beasts, slow bellies.\" Lying, dissimulation, cruelty, and sloth, were the sins of that nation from one generation to another, childre"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ght of nature. Plato says expressly, Εἰς τετάρτην γενεὰν διαβιβάζει τὴν τιμωρίαν ,—\"Punishment falls on the fourth generation.\" And they had the substance of it from their oracle:—",
+        "next": "Ἀλλὰ κακῶς ῥέξασι δίκας τέλος οὐχὶ χρονιστὸν"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Ἀλλὰ κακῶς ῥέξασι δίκας τέλος οὐχὶ χρονιστὸν",
+        "next": "Ἤδε παραίτατον · εἰ καὶ διὸς ἔκγονοι εἶεν"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Ἤδε παραίτατον · εἰ καὶ διὸς ἔκγονοι εἶεν",
+        "next": "Κ ʼ αὐτῇς γὰρ κεφαλῇσι , καὶ ἐν σφετεροίσι τεκέσσιν"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Κ ʼ αὐτῇς γὰρ κεφαλῇσι , καὶ ἐν σφετεροίσι τεκέσσιν",
+        "next": "Εἰλείται · καὶ πῆμα δόμοις , ἐπὶ πήμασι , βαίνει ."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "So is that saying common in the same case, Iliad. Υ ʼ 308:—",
+        "next": "Καὶ παίδων παῖδες , τοί κεν μετόπισθε γένωνται ."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "red for the posterity of the obedient, provided they are found in the way of their forefathers. These things render them and their ways objects of our consideration. For moreover,—",
+        "next": "Obs. XIII. It is a dangerous condition, for children to boast of the privilege of their fathers, and to imitate their sins."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ruin. See Matt. 23:29-32. And let their example deter others from countenancing themselves in privileges of any kind whilst they come short of personal faith and obedience. Again,—",
+        "next": "Obs. XIV. A multitude joining in any sin gives it thereby a great aggravation."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Now, let us consider hence some further observations:—",
+        "next": "Obs. XV. The sinful actings of men against those who deal with them in the name of God, and about the works or will of God, are principally against God himself."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ncerned, as to account all that is done against them to be done against himself. Christ is hungry with them, and thirsty with them, and in prison with them, Matt. 25:35-40. Again,—",
+        "next": "Obs. XVI. Unbelief manifesting itself in a time of trial is a most provoking sin."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Again, observe that,—",
+        "next": "Obs. XVII. There is commonly a day, a time, wherein unbelief ariseth to its height in provocation."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "hey \"tempted God;\" that is, by their unbelief they provoked him and stirred him up to anger and indignation. And from the discovery of the nature of this sin we may observe, that,—",
+        "next": "Obs. XVIII. To distrust God, to disbelieve his promises, whilst a way of duty lies before us, after we have had experiences of his goodness, power, and wisdom, in his dealing with "
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "2dly. In point of efficacy for their end. Things seen and beheld have naturally a more effectual influence on the minds of men than those which they only hear of or are told them:—",
+        "next": "\"Segnius irritant animos demissa per aures,"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "\"Segnius irritant animos demissa per aures,",
+        "next": "Quam quae sunt oculis subjecta fidelibus.\"—Hor . ad Pison., 180."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ַדְחֵפֹת , \"to thrustings down,\" until he be utterly thrust down. Saith the Targum, \"The angel of death shall hunt him until he thrust him down into hell.\" The heathen owned this:—",
+        "next": "\" Quo fugis , Encelade? quascunque accesseris oras ,"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "\" Quo fugis , Encelade? quascunque accesseris oras ,",
+        "next": "Sub Jove semper eris .\""
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "aths that he was to walk in, by that respect which he would have unto them in the works of his providence. This, then, I say, we should inquire after and wisely consider; because,—",
+        "next": "Obs. XXI. The greater evidence that God gives of his power and goodness in any of his works, the louder is his voice in them, and the greater is the sin of them that neglect them; "
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ing of their punishment. Now, we can never know what appears of God in his works, unless by a due consideration of them we endeavour to understand them or his mind in them. Again,—",
+        "next": "Obs. XXII. Because the end of all God's works, of his mighty works of providence towards a person, a church, or nation, is to bring them to faith and repentance; which is also anot"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": " as I have showed, is every man's faith, repentance, and obedience; which how they have been improved in us by them we may do well to consider. Again, observe from the words that,—",
+        "next": "Obs. XXIII. God is pleased ofttimes to grant great outward means unto those in whom he will not work effectually by his grace."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Furthermore, from the exposition before premised we may observe, that,—",
+        "next": "Obs. XXIV. No privilege, no outward means of grace, no other advantage whatever, will secure men in a course of sinning from the wrath and justice of God."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ld join in with the hand of secular advantage, yet the guilty shall not go unpunished. And one reason hereof lies in another proposition that ariseth from the words, namely, that,—",
+        "next": "Obs. XXV. There are determinate bounds fixed unto God's patience and forbearance towards obstinate sinners."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "gs:—(1.) The judgment or mind of God concerning the greatness of their sin, with all its aggravations; and, (2.) His determinate will of punishing them. Hence we may observe that,—",
+        "next": "Obs. XXVI. The heart of God is greatly concerned in the sins of men, especially of those who on any account are his people, and so esteemed."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ys of sin, so they disliked the ways of God because they knew them not, and from both rushed into all manner of miscarriages and provocations. We are hence instructed first, that,—",
+        "next": "Obs. XXVII. In all the sins of men God principally regards the principle; that is, the heart, or what is in it."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "be not upright with him, but false and guileful, let them pretend what they will, and act what they please, all is utterly disregarded and despised. So saith he, Hom. Il. ί . 312,—",
+        "next": "Ἐχθρὸς γάρ μοι κεῖνος , ὁμῶς Ἀϊδάο πύλῃσιν ,"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Ἐχθρὸς γάρ μοι κεῖνος , ὁμῶς Ἀϊδάο πύλῃσιν ,",
+        "next": "Ὅς χ ʼ ἕτερον μὲν κεύθει , ἐνὶ φρεσὶν , ἄλλο δὲ βάζει ·—"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "Ὅς χ ʼ ἕτερον μὲν κεύθει , ἐνὶ φρεσὶν , ἄλλο δὲ βάζει ·—",
+        "next": "\"I hate him like the gates of hell, who, pretending fairly to me, reserves other things in his mind.\""
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": " be so with God, before whose eyes all the hearts of men lie open and naked, whose glory and property it is to be καρδιογνώστης ,—the judge, searcher, knower of all hearts? Again,—",
+        "next": "Obs. XXVIII. The error of the heart in the preferring the ways of sin before obedience, with its promises and rewards, is the root of all great provoking sins and rebellions agains"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": " shall not the Searcher of hearts find it out? Orthodox liars, swearers, drunkards, adulterers, oppressors, persecutors, are an unspeakable burden unto the patience of God. Again,—",
+        "next": "Obs. XXIX. A constant persistency in a course of sin is the utmost, highest, and last aggravation of sin."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "one, but that sundry concerns of it will again occur unto us, both in this and the next chapter. Some few observations from the last clause of the words we may yet touch upon; as,—",
+        "next": "Obs. XXXI. When God expresseth great indignation in himself against sin, it is to teach men the greatness of sin in themselves."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "re is much of love, tenderness, and care in all these expressions of anger, wrath, and displeasure. So he is pleased to teach us, and such teachings do we stand in need of. Again,—",
+        "next": "Obs. XXXII. God gives the same firmitude and stability unto his threatenings that he doth unto his promises."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "ainst them for their punishment, and that eternal. Let men take heed of this great self-deceiving; and let not men be mockers in this matter, lest their bands be made strong; for,—",
+        "next": "Obs. XXXIII. When men have provoked God by their impenitency to decree their punishment irrevocably, they will find severity in the execution."
+      }
+    ],
+    "structural_start_exclusions": 503,
+    "short_fragment_count": 76,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "And,—"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Sub Jove semper eris .\""
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Ἀπὸ Θεοῦ ζῶντος ."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Ἁμαρτίας ."
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Σκληρυνθῇ ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Ἀπὸ Θεοῦ ζῶντος ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Ἁμαρτίας ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Σκληρυνθῇ ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Κῶλα ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Membra natant.\""
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Δἰ ἀπιστίαν ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Μόνῳ τῷ Θεῷ δόξα ."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Κῶλα ."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Membra natant.\""
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Δἰ ἀπιστίαν ."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Μόνῳ τῷ Θεῷ δόξα ."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Οἱ πιστεύσαντες ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Οἱ πιστεύσαντες ."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Ἀπὸ τῶν ἔργων αὐτοῦ ."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Εἰς τὴν κατάπαυσιν αὐτοῦ ."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "Ἀπὸ τῶν ἔργων αὐτοῦ ."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "Εἰς τὴν κατάπαυσιν αὐτοῦ ."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "Τὸν Υἱὸν τοῦ Θεοῦ ."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Τὸν Υἱὸν τοῦ Θεοῦ ."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Μόνῳ τῷ Θεῷ δόξα ."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Μόνῳ τῷ Θεῷ δόξα ."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Ἐξ ἀνθρώπων ."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Ἐπεὶ καὶ αὐτός ."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "Ἐξ ἀνθρώπων ."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "Ἐπεὶ καὶ αὐτός ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Ἀλλ ʼ ὁ λαλήσας πρὸς αὐτόν ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Προσενέγκας ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Δεήσεις καὶ ἱκετηρίας ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Μετὰ κραυγῆς ἰσχυρᾶς καὶ δακρύων ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Τὴν ὑπακοήν ."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "Ἀφ ʼ ὧν ἔπαθε ."
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "Ἀλλ ʼ ὁ λαλήσας πρὸς αὐτόν ."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Προσενέγκας ."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Δεήσεις καὶ ἱκετηρίας ."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Μετὰ κραυγῆς ἰσχυρᾶς καὶ δακρύων ."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 16,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "1. What from the nature of the things themselves, which are suited unto the various states, conditions, and apprehensions of the minds of men; 2. What from the manner of their expression, on which a character of divine wisdom is impressed; 3. What from the aut"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "1. What from the nature of the things themselves, which are suited unto the various states, conditions, and apprehensions of the minds of men; 2. What from the manner of their expression, on which a character of divine wisdom is impressed; 3. What from the aut"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "1. That those that preach it are sent of God; 2. That what is preached be according to the analogy of faith; 3. That it be drawn from the written word; 4. That it be delivered in the name and authority of God."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "1. That those that preach it are sent of God; 2. That what is preached be according to the analogy of faith; 3. That it be drawn from the written word; 4. That it be delivered in the name and authority of God."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "To complete our profession, yea, to constitute our ὁμολογία , there is required that we make a solemn declaration of our subjection unto the gospel in these things. And this is made two ways. (1.) By works. (2.) By words."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "To complete our profession, yea, to constitute our ὁμολογία , there is required that we make a solemn declaration of our subjection unto the gospel in these things. And this is made two ways. (1.) By works. (2.) By words."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Ἔχομεν ἀρχιερέα . \"We have an high priest.\" The apostle introduceth this for another purpose. Yet withal he lets the Hebrews know that in the gospel state there is no loss of privilege in any thing as to what the church enjoyed under the law of Moses. They had"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Ἔχομεν ἀρχιερέα . \"We have an high priest.\" The apostle introduceth this for another purpose. Yet withal he lets the Hebrews know that in the gospel state there is no loss of privilege in any thing as to what the church enjoyed under the law of Moses. They had"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "1. Frequency in offending; 2. Greatness of offences; 3. Instability in promises and engagements. These are things apt to give provocations beyond what ordinary moderation and meekness can bear withal, especially where they are accompanied with a disregard of t"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "1. Frequency in offending; 2. Greatness of offences; 3. Instability in promises and engagements. These are things apt to give provocations beyond what ordinary moderation and meekness can bear withal, especially where they are accompanied with a disregard of t"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "We cannot learn it but through the suffering of those things which will assuredly befall us on the account thereof. So was it with the Lord Christ. I intend not here the difficulties we meet withal in mortifying the internal lusts and corruptions of nature; fo"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "We cannot learn it but through the suffering of those things which will assuredly befall us on the account thereof. So was it with the Lord Christ. I intend not here the difficulties we meet withal in mortifying the internal lusts and corruptions of nature; fo"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "1. How great a matter it is to have sinners made partakers of eternal redemption; 2. How great, how infinite was that wisdom, that love and grace, which contrived it and brought it about; 3. How great and terrible will be the ruin of them by whom this salvatio"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "1. What is preparatory thereunto; 2. Actual hearing, or attendance on the word preached; 3. What is afterwards required to render our hearing useful and effectual. Which I shall speak unto in one or two instances under each head:—"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "1. How great a matter it is to have sinners made partakers of eternal redemption; 2. How great, how infinite was that wisdom, that love and grace, which contrived it and brought it about; 3. How great and terrible will be the ruin of them by whom this salvatio"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "1. What is preparatory thereunto; 2. Actual hearing, or attendance on the word preached; 3. What is afterwards required to render our hearing useful and effectual. Which I shall speak unto in one or two instances under each head:—"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 711,
+    "epub_marker_count": 1293,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 19,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p57",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 92,
+        "epub": 270,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p60",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p131",
+            "context": "2. The quality or nature of their sin, which consisted in two things;—(1.) Provocation, \"As in the provocation;\""
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p133",
+            "context": "3. The aggravation of their sin;—(1.) From the place where it was committed,—it was \"in the wilderness;\""
+          }
+        ]
+      },
+      {
+        "marker": "(1st.)",
+        "pdf": 5,
+        "epub": 10,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p499",
+            "context": "Now this privative unbelief is twofold:—(1st.) In refusing to believe when it is required; (2dly.) In rejecting the faith after it hath been received."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p500",
+            "context": "(1st.) The first is, when the object of faith, or that which is to be believed, is according unto the mind of God, and in the way of his appointment proposed unto men; when sufficient ev"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p711",
+            "context": "Now this privative unbelief is twofold:—(1st.) In refusing to believe when it is required; (2dly.) In rejecting the faith after it hath been received."
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 92,
+        "epub": 270,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p60",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p132",
+            "context": "(2.) Temptation of God, \"And in the day of temptation . they tempted me and proved me.\""
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p134",
+            "context": "(2.) From the means of the contrary which they had to have preserved them from it,—they saw the works of God, \"And saw my works;\""
+          }
+        ]
+      },
+      {
+        "marker": "(2dly.)",
+        "pdf": 5,
+        "epub": 14,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p499",
+            "context": "ow this privative unbelief is twofold:—(1st.) In refusing to believe when it is required; (2dly.) In rejecting the faith after it hath been received."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p505",
+            "context": "(2dly.) There is an unbelief that consists in a rejection of the truth of the gospel after that it hath been admitted, acknowledged, and professed. Some, after they have been convinced of"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p711",
+            "context": "ow this privative unbelief is twofold:—(1st.) In refusing to believe when it is required; (2dly.) In rejecting the faith after it hath been received."
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 35,
+        "epub": 114,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p135",
+            "context": "(3.) From the duration and continuance of their sinning, and the means of the contrary, \"Forty years.\""
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p140",
+            "context": "(3.) In its effects, \"They did not know his ways.\""
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p143",
+            "context": "(3.) The punishment of the sin itself, expressed negatively, \"If they shall enter into my rest;\" that is, they shall not do so. And this also hath a double aggravation:—[1.] From the a"
+          }
+        ]
+      },
+      {
+        "marker": "(3dly.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch014.xhtml#p2560",
+            "context": "(3dly.) His attendants in this his passage through the heavens are also described unto us, Ps. 68:17, 18: \"The chariots of God are twenty thousand, even thousands of angels: the LORD is a"
+          },
+          {
+            "location": "EPUB/ch017.xhtml#p2810",
+            "context": "(3dly.) His attendants in this his passage through the heavens are also described unto us, Ps. 68:17, 18: \"The chariots of God are twenty thousand, even thousands of angels: the LORD is a"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 10,
+        "epub": 31,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p242",
+            "context": "(4.) Unto whom such a day is lost, they also themselves are lost. It is God's last dealing with them. If this be neglected, if this be despised, he hath done with them. He says unto th"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p963",
+            "context": "(4.) Of safety: an end is proposed to be aimed at, and that deliverance from sin, death, hell, and vengeance everlasting; with the attainment of rest, peace, and blessedness, in the en"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p987",
+            "context": "(4.) Because their last provocation was with direct respect unto the promise, which we have at large insisted on from Num. 14, \"So we see that they could not enter in, because of unbel"
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 4,
+        "epub": 12,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p1226",
+            "context": "(5.) The nature of this fear, as discovering itself in its effects, consists principally in a sedulous watchfulness against all sin, by a diligent use of the means appointed of God for"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p1308",
+            "context": "ip which were granted unto it or imposed upon it, to direct them unto the promise. Hence, (5.) The declaration of the promise of entering into Canaan, and the rest of God therein, became in an especial manner the preaching of the gospel unto them, namely,—[1.] Because it wa"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p1451",
+            "context": "(5.) The nature of this fear, as discovering itself in its effects, consists principally in a sedulous watchfulness against all sin, by a diligent use of the means appointed of God for"
+          }
+        ]
+      },
+      {
+        "marker": "(6.)",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p1227",
+            "context": "(6.) A constant watchfulness against all carnal confidence and security. \"Thou standest by faith,\" saith the apostle; \"be not high-minded, but fear,\" Rom. 11:20. And whence doth he der"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p1452",
+            "context": "(6.) A constant watchfulness against all carnal confidence and security. \"Thou standest by faith,\" saith the apostle; \"be not high-minded, but fear,\" Rom. 11:20. And whence doth he der"
+          },
+          {
+            "location": "EPUB/ch019.xhtml#p3152",
+            "context": "(5.) Temporal afflictions; and, (6.) A quiet or troublesome departure out of this world;—but in all a reserve is still to be made for the sovereignty of God and his grace."
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 42,
+        "epub": 146,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p60",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p143",
+            "context": "er into my rest;\" that is, they shall not do so. And this also hath a double aggravation:—[1.] From the act denied; they should not \"enter,\"—not so much as enter:"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p211",
+            "context": "t the Lord Christ unto the church. And they are to be considered in a threefold capacity:—[1.] Merely personal, as those individual men; unto which concernment all their moral good and evil did belong. In this sense what they did or acted had no respect unto Christ, nor is"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p57",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[1st.]",
+        "pdf": 0,
+        "epub": 8,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p509",
+            "context": "[1st.] If it be notional it will also be practical. If men once reject their profession of the truth of the gospel, quenching their light into it and understanding of it, their practice"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p511",
+            "context": "spel after it hath been received and professed. And this also may be considered two ways:—[1st.] Initially, as to some degrees of it; [2dly.] As it may be finished and completed. Of these our apostle treateth severally and distinctly. Of the former in this place, and Heb. 4:1"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p511",
+            "context": "rein a prevention of the latter: and therefore concerning it we must consider two things:—[1st.] Wherein it consists, or what are the ways of its entrance into and prevailing upon the minds of men."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 42,
+        "epub": 146,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p60",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p144",
+            "context": "[2.] From the object; that was the rest of God,—\"They shall not enter into my rest.\""
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p212",
+            "context": "[2.] As to the offices they bare in the church and among the people, as they were prophets, captains, kings, or priests. In this respect they had their present use in the worship of Go"
+          }
+        ]
+      },
+      {
+        "marker": "[2dly.]",
+        "pdf": 0,
+        "epub": 10,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p510",
+            "context": "[2dly.] It may be practical only. So is it in them who \"profess that they know God, but in works deny him, being abominable, and disobedient, and unto every good work reprobate,\" Tit. 1:1"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p511",
+            "context": "ed. And this also may be considered two ways:—[1st.] Initially, as to some degrees of it; [2dly.] As it may be finished and completed. Of these our apostle treateth severally and distinctly. Of the former in this place, and Heb. 4:11-13, chap. 12:15, 16; of the latter, chap. 6"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p512",
+            "context": "[2dly.] By what means it renders the heart evil when it is brought under the power thereof."
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 13,
+        "epub": 54,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p212",
+            "context": "use in the worship of God and government of that people according to the law. But herein, [3.] In the discharge of their offices and present duties, they were designed of God to represent in a way of prefiguration the Lord Christ and his offices, who was to come. They were"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p245",
+            "context": "[3.] God may leave unto such persons the outward dispensation of the means of grace, and yet withhold that efficacy of his Spirit which alone can render them useful to the souls of men"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p310",
+            "context": "[3.] When men turn aside and seek for unwarrantable assistances against their difficulties. So did this people,—they made a calf to supply the absence of Moses; and were contriving a r"
+          }
+        ]
+      },
+      {
+        "marker": "[3dly.]",
+        "pdf": 0,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p537",
+            "context": "[3dly.] It works by and consists in a growing diffidence of the promises and threatenings of the gospel. The great work and duty of faith is to influence the soul unto universal obedience"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p544",
+            "context": "[3dly.] It accumulates the heart with a dreadful guilt of ingratitude against God, which before profession it was incapable of. When a person hath been brought unto the knowledge of the g"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p749",
+            "context": "[3dly.] It works by and consists in a growing diffidence of the promises and threatenings of the gospel. The great work and duty of faith is to influence the soul unto universal obedience"
+          }
+        ]
+      },
+      {
+        "marker": "[4.]",
+        "pdf": 4,
+        "epub": 15,
+        "examples": [
+          {
+            "location": "EPUB/ch001.xhtml#p311",
+            "context": "[4.] When men disbelieve plain and direct promises merely on the account of the difficulties that lie against their accomplishment. This reflects unspeakable dishonour on the veracity"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p484",
+            "context": "[4.] Consider them so as to oppose them. And this consisteth in these things:—1st. In being always ready armed and standing on your guard, Eph. 6:13; Mark 13:37; 2 Sam. 23:7."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p696",
+            "context": "[4.] Consider them so as to oppose them. And this consisteth in these things:—1st. In being always ready armed and standing on your guard, Eph. 6:13; Mark 13:37; 2 Sam. 23:7."
+          }
+        ]
+      },
+      {
+        "marker": "[5.]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p1356",
+            "context": "[5.] The expression of faith by eating and drinking, which is frequent in Scripture, as before intimated, gives further light into the spiritual incorporation that we inquire after. Th"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p1581",
+            "context": "[5.] The expression of faith by eating and drinking, which is frequent in Scripture, as before intimated, gives further light into the spiritual incorporation that we inquire after. Th"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 3,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) They are said also to have tempted God: \"In the temptation; when your fathers tempted me.\" Wherein their provocation did consist, and what was the sin which is so expressed, we ha"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "marker": "[2.]",
+        "family": "bracket_decimal",
+        "context": "[2.] The next thing in the words is that especial evil which the apostle cautions the Hebrews against, as that which a heart made evil by the prevalency of unbelief would tend unto, an"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "marker": "[2.]",
+        "family": "bracket_decimal",
+        "context": "[2.] The next thing in the words is that especial evil which the apostle cautions the Hebrews against, as that which a heart made evil by the prevalency of unbelief would tend unto, an"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "if ye will hear his voice harden not your hearts",
+      "count": 11
+    },
+    {
+      "phrase": "it is said to-day if ye will hear his voice",
+      "count": 10
+    },
+    {
+      "phrase": "any of you should seem to come short of it",
+      "count": 10
+    },
+    {
+      "phrase": "although the works were finished from the foundation of the",
+      "count": 10
+    },
+    {
+      "phrase": "the works were finished from the foundation of the world",
+      "count": 10
+    },
+    {
+      "phrase": "to-day if ye will hear his voice harden not your",
+      "count": 9
+    },
+    {
+      "phrase": "thought it not robbery to be equal with god but",
+      "count": 8
+    },
+    {
+      "phrase": "became obedient unto death even the death of the cross",
+      "count": 8
+    },
+    {
+      "phrase": "unto us was the gospel preached even as unto them",
+      "count": 8
+    },
+    {
+      "phrase": "not as the word of men but as it is",
+      "count": 8
+    },
+    {
+      "phrase": "as the word of men but as it is in",
+      "count": 8
+    },
+    {
+      "phrase": "the word of men but as it is in truth",
+      "count": 8
+    },
+    {
+      "phrase": "word of men but as it is in truth the",
+      "count": 8
+    },
+    {
+      "phrase": "of men but as it is in truth the word",
+      "count": 8
+    },
+    {
+      "phrase": "men but as it is in truth the word of",
+      "count": 8
+    },
+    {
+      "phrase": "but as it is in truth the word of god",
+      "count": 8
+    },
+    {
+      "phrase": "is discerner of the thoughts and intents of the heart",
+      "count": 8
+    },
+    {
+      "phrase": "in my wrath if they shall enter into my rest",
+      "count": 7
+    },
+    {
+      "phrase": "for us that they without us should not be made",
+      "count": 7
+    },
+    {
+      "phrase": "us that they without us should not be made perfect",
+      "count": 7
+    },
+    {
+      "phrase": "in his wrath that they should not enter into his",
+      "count": 6
+    },
+    {
+      "phrase": "his wrath that they should not enter into his rest",
+      "count": 6
+    },
+    {
+      "phrase": "we hold the beginning of our confidence steadfast unto the",
+      "count": 6
+    },
+    {
+      "phrase": "hold the beginning of our confidence steadfast unto the end",
+      "count": 6
+    },
+    {
+      "phrase": "should be corrupted from the simplicity that is in christ",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 4466,
+    "epub_greek_word_count": 8476,
+    "pdf_greek_unique_words": 1382,
+    "epub_greek_unique_words": 1382,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 767,
+    "epub_hebrew_word_count": 1277,
+    "pdf_hebrew_unique_words": 617,
+    "epub_hebrew_unique_words": 617,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 223,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 86,
+    "missing_hebrew_clause_count": 1,
+    "missing_hebrew_clauses": [
+      {
+        "page": 2,
+        "word_count": 3,
+        "sample": "כְּקֹלוֹ קוֹל יְהוֹהָ"
+      }
+    ]
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 3077,
+    "epub_latin_word_count": 5805,
+    "epub_tagged_latin_word_count": 2413,
+    "pdf_latin_unique_words": 1088,
+    "epub_latin_unique_words": 1122,
+    "epub_tagged_unique_words": 718,
+    "latin_word_coverage_ratio": 0.9925,
+    "latin_tagging_ratio": 0.4157,
+    "missing_latin_word_samples": [
+      {
+        "word": "œcumenius",
+        "pdf": 5,
+        "epub": 0
+      }
+    ],
+    "untagged_latin_word_samples": [
+      {
+        "word": "cor",
+        "epub": 254,
+        "tagged": 10
+      },
+      {
+        "word": "isa",
+        "epub": 194,
+        "tagged": 2
+      },
+      {
+        "word": "elsewhere",
+        "epub": 115,
+        "tagged": 0
+      },
+      {
+        "word": "abraham",
+        "epub": 103,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 91,
+        "tagged": 0
+      },
+      {
+        "word": "mere",
+        "epub": 88,
+        "tagged": 0
+      },
+      {
+        "word": "terror",
+        "epub": 78,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 68,
+        "tagged": 0
+      },
+      {
+        "word": "num",
+        "epub": 67,
+        "tagged": 2
+      },
+      {
+        "word": "poor",
+        "epub": 58,
+        "tagged": 2
+      },
+      {
+        "word": "severe",
+        "epub": 51,
+        "tagged": 4
+      },
+      {
+        "word": "everywhere",
+        "epub": 46,
+        "tagged": 0
+      },
+      {
+        "word": "undergo",
+        "epub": 42,
+        "tagged": 0
+      },
+      {
+        "word": "sum",
+        "epub": 39,
+        "tagged": 3
+      },
+      {
+        "word": "whereinto",
+        "epub": 38,
+        "tagged": 2
+      },
+      {
+        "word": "sincere",
+        "epub": 34,
+        "tagged": 0
+      },
+      {
+        "word": "intimate",
+        "epub": 34,
+        "tagged": 0
+      },
+      {
+        "word": "nowhere",
+        "epub": 28,
+        "tagged": 0
+      },
+      {
+        "word": "sam",
+        "epub": 27,
+        "tagged": 0
+      },
+      {
+        "word": "separate",
+        "epub": 29,
+        "tagged": 2
+      },
+      {
+        "word": "epist",
+        "epub": 25,
+        "tagged": 0
+      },
+      {
+        "word": "estate",
+        "epub": 27,
+        "tagged": 2
+      },
+      {
+        "word": "erasmus",
+        "epub": 36,
+        "tagged": 14
+      },
+      {
+        "word": "viii",
+        "epub": 23,
+        "tagged": 2
+      },
+      {
+        "word": "sinai",
+        "epub": 22,
+        "tagged": 2
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 162,
+    "missing_latin_clause_count": 4,
+    "missing_latin_clauses": [
+      {
+        "page": 13,
+        "word_count": 4,
+        "sample": "in cœlo et terra"
+      },
+      {
+        "page": 13,
+        "word_count": 4,
+        "sample": "cœlestis a deo constitutus"
+      },
+      {
+        "page": 13,
+        "word_count": 4,
+        "sample": "nam et pœnas peccatorum"
+      },
+      {
+        "page": 13,
+        "word_count": 9,
+        "sample": "et vitam æternam largitur spiritus nostros in manus suas"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 792,
+    "translated_latin_runs_count": 65,
+    "latin_translation_ratio": 0.0821,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "ut ad iram eum provocetis tanquam"
+      },
+      {
+        "phrase": "offensus fui,\" \"incensus fui"
+      },
+      {
+        "phrase": "exsecratus sum"
+      },
+      {
+        "phrase": "filia vocis"
+      },
+      {
+        "phrase": "curvicervicum pecus"
+      },
+      {
+        "phrase": "exacerbo,\" \"provoco"
+      },
+      {
+        "phrase": "exacerbatio,\" \"provocatio"
+      },
+      {
+        "phrase": "etsi,\" \"etiamsi"
+      },
+      {
+        "phrase": "mihi generatio ista"
+      },
+      {
+        "phrase": "me.\" \"Pertuli eam, sed non sine taedio"
+      },
+      {
+        "phrase": "Proximus fui"
+      },
+      {
+        "phrase": "ad ripam animo hostili"
+      },
+      {
+        "phrase": "aetas\" or \"seculum"
+      },
+      {
+        "phrase": "is \"erro,\" \"vagabundus"
+      },
+      {
+        "phrase": "deceptor,\" \"seductor"
+      },
+      {
+        "phrase": "causa procatarctica"
+      },
+      {
+        "phrase": "causa proegoumena"
+      },
+      {
+        "phrase": "territa monstris"
+      },
+      {
+        "phrase": "Sera nimis vita est crastina"
+      },
+      {
+        "phrase": "cras minus aptus"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

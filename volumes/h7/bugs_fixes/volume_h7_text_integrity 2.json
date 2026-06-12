@@ -1,0 +1,1612 @@
+{
+  "volume": "h7",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h7/input/volume_h7.epub",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h7/output/volume_h7.epub",
+  "generated_at": "2026-06-11T13:33:58.984466+00:00",
+  "status": "warn",
+  "warning_count": 8,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "reference_continuation_splits",
+      "message": "Some scripture or chapter references are split across paragraph boundaries"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 11,
+    "source": "epub2"
+  },
+  "epub": {
+    "spine_text_files": 65,
+    "paragraph_count": 6533
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 195683,
+    "epub_content_tokens": 364227,
+    "coverage_ratio": 0.9998,
+    "missing_word_samples": [
+      {
+        "word": "διʼ",
+        "pdf": 9,
+        "epub": 0
+      },
+      {
+        "word": "τουτʼ",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "αφʼ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "απʼ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "ουδʼ",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "the",
+        "pdf": 16495,
+        "epub": 30767
+      },
+      {
+        "word": "of",
+        "pdf": 11999,
+        "epub": 22292
+      },
+      {
+        "word": "and",
+        "pdf": 8355,
+        "epub": 15524
+      },
+      {
+        "word": "in",
+        "pdf": 6222,
+        "epub": 11580
+      },
+      {
+        "word": "is",
+        "pdf": 5078,
+        "epub": 9415
+      },
+      {
+        "word": "it",
+        "pdf": 4126,
+        "epub": 7636
+      },
+      {
+        "word": "to",
+        "pdf": 3825,
+        "epub": 7138
+      },
+      {
+        "word": "as",
+        "pdf": 2424,
+        "epub": 4458
+      },
+      {
+        "word": "for",
+        "pdf": 2037,
+        "epub": 3814
+      },
+      {
+        "word": "be",
+        "pdf": 1987,
+        "epub": 3752
+      },
+      {
+        "word": "was",
+        "pdf": 2096,
+        "epub": 3785
+      },
+      {
+        "word": "his",
+        "pdf": 2035,
+        "epub": 3680
+      },
+      {
+        "word": "all",
+        "pdf": 1872,
+        "epub": 3487
+      },
+      {
+        "word": "are",
+        "pdf": 1767,
+        "epub": 3317
+      },
+      {
+        "word": "by",
+        "pdf": 1783,
+        "epub": 3267
+      },
+      {
+        "word": "not",
+        "pdf": 1735,
+        "epub": 3210
+      },
+      {
+        "word": "or",
+        "pdf": 1484,
+        "epub": 2788
+      },
+      {
+        "word": "but",
+        "pdf": 1482,
+        "epub": 2748
+      },
+      {
+        "word": "we",
+        "pdf": 1409,
+        "epub": 2669
+      },
+      {
+        "word": "so",
+        "pdf": 1368,
+        "epub": 2517
+      },
+      {
+        "word": "our",
+        "pdf": 981,
+        "epub": 1862
+      },
+      {
+        "word": "on",
+        "pdf": 853,
+        "epub": 1609
+      },
+      {
+        "word": "an",
+        "pdf": 845,
+        "epub": 1540
+      },
+      {
+        "word": "had",
+        "pdf": 718,
+        "epub": 1325
+      },
+      {
+        "word": "us",
+        "pdf": 669,
+        "epub": 1271
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 10,
+    "weak_page_count": 1,
+    "weak_pages": [
+      {
+        "page": 2,
+        "hit_ratio": 0.333,
+        "sample": "an exposition of the epistle to the hebrews vol by john owen table of contents chapter hebrews hebrews hebrews hebrews hebrews hebrews hebrews hebrews"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 0,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_usable": 0,
+    "skipped_top_window_count": 0,
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_usable": 0,
+    "skipped_bottom_window_count": 0,
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 6323,
+    "split_candidate_count": 40,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "In these ways, and by these means, \"faith is the substance of things hoped for;\" and,—",
+        "next": "Obs. I. No faith will carry us through the difficulties of our profession, from oppositions within and without, giving us constancy and perseverance therein unto the end, but that "
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "hat it makes a life on things invisible. It is not only conversant about them, but mixeth itself with them, making them the spiritual nourishment of the soul, 2 Cor. 4:16-18. And,—",
+        "next": "Obs. III. The glory of our religion is, that it depends on, and is resolved into invisible things. They are far more excellent and glorious than any thing that sense can behold or "
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "sion under trouble and persecution; with a discovery of the nature and end of the ensuing instances, with their suitableness unto his purpose. And we may observe in general, that,—",
+        "next": "Obs. V. It is faith alone that takes believers out of this world whilst they are in it, that exalts them above it whilst they are under its rage; that enables them to live upon thi"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "ony is assigned to faith alone; as for other reasons, so because all those other things were fruits of their faith, whose acceptance with God depended thereon. And we may observe,—",
+        "next": "Obs. III. It is faith alone which from the beginning of the world (or from the giving of the first promise) was the means and way of obtaining acceptance with God.—There hath been "
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ne; and some assigned such a beginning unto it, as it had been better it never had any. Nothing but an assent unto divine revelation can give us a clear understanding hereof. And,—",
+        "next": "Obs. II. Then doth faith put forth its power in our minds in a due manner, when it gives us clear and distinct apprehensions of the things we do believe. Faith that gives not under"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ished,\" perfected, completely framed. Being originally, as unto the matter of them, created out of nothing, in the six days' work they were completely finished and perfected. And,—",
+        "next": "Obs. III. As God's first work was, so all his works shall be perfect.—He undertakes nothing but what he will finish and complete in beauty and order. And not only the original prod"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " , that is, ὥστε , \"so that.\" 'By faith alone we understand that the worlds were made; namely, \"so as that the things which are seen were not made of things which do appear.\" And,—",
+        "next": "Obs. IV. The aids of reason, with the due consideration of the nature, use, and end of all things, ought to be admitted of, to confirm our minds in the persuasion of the original c"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "at, it may be, gathered \"raptim,\"—without choice or judgment of what was most meet to be offered unto God. And it is for ever dedicated as a rule for the church in all ages, that,—",
+        "next": "Obs. II. We are to serve God with the best that we have, the best that is in our power, with the best of our spiritual abilities; which God afterwards fully confirmed."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "ypocritically, he did it not in a mere attendance unto the outward duty; but it was kindled in his own heart by the Holy Spirit, before it was fired on the altar from heaven. For,—",
+        "next": "Obs. III. God gives no consequential approbation of any duties of believers, but where the principle of a living faith goes previously in their performance."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "4. As to the consequences of Abel's faith,—",
+        "next": "The first consequent of this efficacy of faith in Abel is, that \"he obtained witness that he was righteous.\""
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "tance of them, as that they can undergo any persecutions on the account thereof. This provokes the world; this was the rise, this is the progress of persecution. And we may learn,—",
+        "next": "Obs. V. That those whom God approves must expect that the world will disapprove them, and ruin them if it can."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "ould safely carry them through all the difficulties they had to conflict withal in their profession, unto the glory of God and their own eternal salvation. And we may learn, that,—",
+        "next": "Obs. IX. Whatever troubles faith may engage us into in the profession of it, with obedience according to the mind of God, it will bring us safely off from them all at last (yea, th"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "es 16, 17. The apostle seems to intimate some such thing in the old world upon the disappearance of Enoch: they made great search after him, but \"he was not found.\" And therefore,—",
+        "next": "Διότι μετέθηκεν αὐτὸν ὁ Θεός ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "t he was made partaker of all the glory which was allotted unto the heavenly state before the ascension of Christ; concerning which see our discourse of the Person of Christ. But,—",
+        "next": "Obs. I. Whatever be the outward different events of faith in believers in this world, they are all alike accepted with God, approved by him, and shall all equally enjoy the eternal"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "such signal pledges of his favour upon, as zealously to contend against the world in giving witness to his ways, his worship, and his kingdom, or the rule of Christ over all. And,—",
+        "next": "Obs. IV. It is a part of our testimony, to declare and witness that vengeance is prepared for ungodly persecutors, and all sorts of impenitent sinners, however they are and may be "
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "And we may observe from the whole, that,—",
+        "next": "Obs. VI. It is an effect of divine wisdom, as to dispose the works of his providence and the accomplishment of his promises unto an ordinary established rule, declared in his word,"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "neration of the righteous in their cause from the foundation of the world, take part with Cain against Abel, and forego our testimony unto the righteousness of God in Christ. And,—",
+        "next": "Obs. I. Where God hath put an impossibility upon any thing, it is in vain for men to attempt it. From the days of Cain multitudes have been designing to please God without faith,—a"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "t it. From the days of Cain multitudes have been designing to please God without faith,—all in vain; like them that would have built a tower whose top should reach to heaven. And,—",
+        "next": "Obs. II. It is of the highest importance to examine well into the sincerity of our faith, whether it be of the true kind or no, seeing thereon depends the acceptance of our persons"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "thing but an assent unto the being of God absolutely considered, which is altogether fruitless in the generality of mankind, is a vain notion, unsuited unto his design. Wherefore,—",
+        "next": "Obs. III. God himself, in his self-sufficiency and his all-sufficiency, meet to act towards poor sinners in a way of bounty, is the first motive or encouragement unto, and the last"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "d all that is here proposed and required, is consistent neither with the scope of the place, the design of the apostle, nor any expression in the text rightly understood. Observe,—",
+        "next": "Obs. VI. It is the most proper act of faith, to come and cleave unto God as a rewarder in the way of grace and bounty, as proposing himself for our reward."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "or, but by divine revelation; especially considering that the thing itself revealed was in itself strange, direful, and unto human reason every way incredible. And we may observe,—",
+        "next": "Obs. I. It is a high commendation to faith, to believe things, on the word of God, that in themselves and all second causes are invisible, and seem impossible, Rom. 4:17-21."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "3. Of this warning of God given unto Noah,—",
+        "next": "Πίστει . (1.) The first effect, as we observed, respected the first part of the warning, which was a threatening of total destruction. He was \"moved with fear.\" And here faith in i"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "n the Scripture used for the whole worship of God, and all the obedience required of us; because it is a continual motive unto it, and a means of a due performance of it. So then,—",
+        "next": "Obs. V. A reverential fear of God, as threatening vengeance unto impenitent sinners, is a fruit of saving faith, and acceptable unto God. See the exposition on chap. 4:1."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "eparation of materials, all their disposition into a fabric by divine direction, and the finishing of them in their order, are comprised in this word. And we may observe about it,—",
+        "next": "Κιβωτόν . [1.] That the preparing, building, and finishing of this vessel, meet to swim in the water,—which, from the Hebrew חֵּבָה , the Greeks rendered κιβωτός , the Latins arca,"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "And we may hence further observe,—",
+        "next": "Obs. IX. That all these things tend unto the commendation of the faith of Noah. Neither the difficulty, nor the length of the work itself, nor his want of success in preaching, as "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "4. Of this faith of Noah, and the fruits of it in fear and obedience,—",
+        "next": "Εἰς σωτηρίαν τοῦ οἴκου αὐτοῦ ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "eby they were separated from the perishing infidels, and were really and actually delivered from the destruction that befell them; as Noah and his family were in the ark. So then,—",
+        "next": "Obs. XI. The visible, professing church shall never fall into such an apostasy, nor be so totally destroyed, but that God will preserve a remnant, for a seed to future generations,"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "orld, by approving of the vengeance that befell them, though very severe. So shall the saints judge and condemn fallen angels at the last day, 1 Cor. 6:3. And we may observe, that—",
+        "next": "Obs. XII. Those whom God calleth unto, fitteth for, and employeth in any work, are therein συνεργοὶ Θεοῦ , \"co-workers with God,\" 1 Cor. 3:9; 2 Cor. 6:1: so as that what God doth h"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "tified when he offered Isaac,\" who was personally justified long before; so also was Noah, by the testimony of God himself, before he was warned to build an ark. And we may learn,—",
+        "next": "Obs. XV. That all right unto spiritual privileges and mercies is by gratuitous adoption."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "did relinquish all these things,—cast out their insinuations into his affections, and break the cords of delight and interest which they cast upon him. And we may see herein that,—",
+        "next": "Obs. I. It becomes the infinite greatness and all-satisfactory goodness of God, at the very first revelation of himself unto any of his creatures, to require of them a renunciation"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "of their right was unto that time wherein it was typical of the heavenly inheritance: that now ceasing for ever, there can be no especial title unto it revived. And we see herein,—",
+        "next": "Obs. X. That it is faith alone that gives the soul satisfaction in future rewards in the midst of present difficulties and distresses.—So it did to Abraham, who, in the whole cours"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": " rewards in the midst of present difficulties and distresses.—So it did to Abraham, who, in the whole course of his pilgrimage, attained nothing of this promised inheritance. And,—",
+        "next": "Obs. XI. The assurance given us by divine promises is sufficient to encourage us unto the most difficult course of obedience."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "xposed unto dangers; wherefore he had nothing to trust unto or rest upon but divine protection alone. So are his state and protection described, Ps. 105:12-15. And we may observe,—",
+        "next": "Obs. I. That when faith enables men to live unto God as unto their eternal concernments, it will enable them to trust unto him in all the difficulties, dangers, and hazards of this"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " nor how to trust in God in a due manner. It was not so with Abraham; his faith acted itself uniformly with respect unto the providences as well as the promises of God. Wherefore,—",
+        "next": "Obs. II. If we design to have an interest in the blessing of Abraham, we must walk in the steps of the faith of Abraham.—Firm affiance in the promises for grace, mercy, and eternal"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "d. With the expectation hereof did Abraham and the following patriarchs support, refresh, and satisfy themselves, in the midst of all the toil and labour of their pilgrimage. For,—",
+        "next": "Obs. I. A certain expectation of the heavenly reward, grounded on the promises and covenant of God, is sufficient to support and encourage the souls of believers under all their tr"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "God in his wisdom and power to make the heavenly state of believers immutable and eternal, subject to no change, no alteration, no opposition, is the foundation of this city. For,—",
+        "next": "Obs. III. All stability, all perpetuity in every state, here and hereafter, ariseth from the purpose of God, and is resolved thereinto."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "the habitation of God himself, with all that enjoy his presence, and the polity or order which is therein. And this is the most ineffable effect of infinite wisdom and power. And,—",
+        "next": "Obs. IV. This is that which recommends unto us the city of God, the heavenly state, that it is, as the work of God alone, so the principal effect of his wisdom and power."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "gaged himself to be his God after this life, as our Saviour expounds it, should have no faith of eternal life, is to deny the faith of God and the church. And we may observe, that—",
+        "next": "Obs. V. A constant expectation of an eternal reward argues a vigorous exercise of faith, and a sedulous attendance unto all duties of obedience; for without these it will not be ra"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "hich I have seen on the one side and the other are light, and easily answered. But there are those which are cogent to convince that it is the faith of Sarah that is intended For,—",
+        "next": "Καὶ αὐτὴ Σάῤῥα ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ng awakened by that reproof, and receiving a fuller evidence that it was the Lord which spake to her, she recovered herself, and rested by faith in his power and truth. Wherefore,—",
+        "next": "Obs. I. Faith may be sorely shaken and tossed with difficulties, at their first appearance, lying in the way of the promise, which yet at last it shall overcome.—And there be many "
+      }
+    ],
+    "structural_start_exclusions": 155,
+    "short_fragment_count": 379,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Πίστις ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Ἐλπιζομένων ."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Οὐ βλεπομένων ."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Οἱ πρεσβύτεροι ."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Ἐμαρτυρήθησαν ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Κατηρτίσθαι ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Ῥήματι Θεοῦ ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Τὰ βλεπόμενα ."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Εἰς τὸ μὴ γεγονέναι ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Τοῦ μὴ ἰδεῖν θάνατον ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Καὶ οὐχ εὑρίσκετο ."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Διότι μετέθηκεν αὐτὸν ὁ Θεός ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Εὐαρεστῆσαι ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Προσερχό · μενον τῷ Θεῷ ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Μισθαποδότης γίνεται ."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Τοῖς ἐκζητοῦσιν αὐτόν ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Χρηματισθείς ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "And we may hence further observe,—"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Εἰς σωτηρίαν τοῦ οἴκου αὐτοῦ ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Κατέκρινεν τὸν κόσμον ."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Τῆς κατὰ πίστιν δικαιοσύνης ."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "Ἐξελθεῖν ."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "Μὴ ἐπιστάμενος ."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Εἰς τὴν γῆν ."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Ὡς ἀλλοτρίακ ."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Μετὰ Ἰσαὰκ καὶ Ἰακώβ ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Τοὺς θεμελίους ἔχουσαν ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Καὶ αὐτὴ Σάῤῥα ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Εἰς καταβολὴν σπέρματος ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Τὸν ἐπαγγειλάμενον ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Καὶ ταῦτα νενεκρωμένου ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Οὗτοι πάντες ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Ἀπέθανον κατὰ πίστιν ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Μὴ λαβόντες τὰς ἐπαγγελίας ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Πόῤῥωθεν αὐτὰς ἰδόντες ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Ἀσπασάμενοι ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Ὁμολογήσαντες ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Εἰ μὲν ἐκείνης ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Ἀφ ʼ ἧς ἐξῆλθον ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Εἰ ἐμνημόνευον ."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 40,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "Of this Enoch it is affirmed, 1. That he was \"translated;\" 2. The end of that translation is declared, \"that he should not see death;\" 3. The consequent of it, \"he was not found;\" 4. The efficient cause of that translation, and the reason of that consequent, h"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "In the field of conjectures used on this occasion, I judge it probable, (1.) That his rapture was visible, in the sight of many that feared God, who were to be witnesses of it unto the world, that it might be his ordinance for the conviction of sinners, and th"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "There is in the words, 1. The person spoken of or instanced in; which is Noah."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Δι ʼ ἧς . (2.) Lastly, There is a double consequent of this faith of Noah and his obedience therein; [1.] With respect unto the world, \"he condemned it;\" [2.] With respect unto himself, he \"became heir of the righteousness which is by faith.\" Both these are as"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "There is in the words, 1. A supposition that these pilgrims had originally a country of their own whereunto they did belong."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "This preparation, therefore, of a city denotes, (1.) An eternal act of the will and wisdom of God, in designing heaven and glory unto the elect."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "What was the faith of Abraham in particular, how his thoughts wrought in him, is not expressed in the original story: yet are two things plain therein; [1.] That he was not cast into any distraction of mind, any disorderly passions, complaints, or repinings; ["
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Obs. V. We may also consider, that, 1. If we are children of Abraham, we have no reason to expect an exemption from the greatest trials, that the same faith which was in him is able to conflict withal."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "There is in the words, 1. A supposition that these pilgrims had originally a country of their own whereunto they did belong."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "This preparation, therefore, of a city denotes, (1.) An eternal act of the will and wisdom of God, in designing heaven and glory unto the elect."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "What was the faith of Abraham in particular, how his thoughts wrought in him, is not expressed in the original story: yet are two things plain therein; [1.] That he was not cast into any distraction of mind, any disorderly passions, complaints, or repinings; ["
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Obs. V. We may also consider, that, 1. If we are children of Abraham, we have no reason to expect an exemption from the greatest trials, that the same faith which was in him is able to conflict withal."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "To clear the meaning of the words, we must observe, (1.) That no man makes sin, as sin, under its formal notion, to be the object of his desires, nor can be said to have or possess the fruition of it."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "We must therefore inquire, (1.) What this \"recompence of reward\" is; and, (2.) How Moses had \"respect unto it.\""
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "To clear the meaning of the words, we must observe, (1.) That no man makes sin, as sin, under its formal notion, to be the object of his desires, nor can be said to have or possess the fruition of it."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "We must therefore inquire, (1.) What this \"recompence of reward\" is; and, (2.) How Moses had \"respect unto it.\""
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "There is in the words themselves, 1. A note of inference from the preceding discourse, intimating the influence which it hath into what follows: \"Wherefore;\"—'Seeing it is thus with us in respect unto them who went before us, whose faith is recorded for our us"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "There is in the words themselves, 1. A note of inference from the preceding discourse, intimating the influence which it hath into what follows: \"Wherefore;\"—'Seeing it is thus with us in respect unto them who went before us, whose faith is recorded for our us"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "It is so, (1.) By the way of motive; for if he, who in himself and in his own person was infinitely above all opposition of sinners, as the apostle states the case, Phil. 2:5-8, yet for our sakes would undergo and conflict with them all, it is all the reason i"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "In the words we may consider, 1. The connection of them unto those foregoing."
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "There is in the words, 1. A supposition of a state without chastisement; 2. An application of the rule unto that state, \"All sons are chastised;\" 3. An inference from both, that such persons are \"bastards, and not sons:\" whereunto we must add the force of this"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": "It is so, (1.) By the way of motive; for if he, who in himself and in his own person was infinitely above all opposition of sinners, as the apostle states the case, Phil. 2:5-8, yet for our sakes would undergo and conflict with them all, it is all the reason i"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "In the words we may consider, 1. The connection of them unto those foregoing."
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "There is in the words, 1. A supposition of a state without chastisement; 2. An application of the rule unto that state, \"All sons are chastised;\" 3. An inference from both, that such persons are \"bastards, and not sons:\" whereunto we must add the force of this"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "In the first we have, 1. The duty prescribed; which is \"peace.\""
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "In the first we have, 1. The duty prescribed; which is \"peace.\""
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "There is in the words, 1. The evils to be watched against, in the way and manner before declared."
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "Ψηλαφωμένῳ ὄρει . FIRST, They came to, 1. \"The mount that might be touched.\" This mount was Sinai, in the wilderness of Horeb, which was in the deserts of Arabia. So saith our apostle, \"mount Sinai in Arabia ,\" Gal. 4:25. And the apostle mentions this in the f"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "We must consider, then, 1. What believers are said to come unto; and, 2. How they do so come unto it, or wherein their coming unto it doth consist."
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "Θεοῦ . (2.) This was the city of God. The state of the church under the new testament is so. As it hath the safety, beauty, and order of a city, so it is the city of God; the only city which he takes peculiarly to be his own in this world. It is his, [1.] On t"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "Ζῶντος . (3.) The apostle adds a property of God of great consideration in this matter. It is the city of the living God;—that is, [1.] Of the true and only God;"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "In the words there are, 1. A note of inference; \"wherefore.\""
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "There is in the words, 1. The evils to be watched against, in the way and manner before declared."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Ψηλαφωμένῳ ὄρει . FIRST, They came to, 1. \"The mount that might be touched.\" This mount was Sinai, in the wilderness of Horeb, which was in the deserts of Arabia. So saith our apostle, \"mount Sinai in Arabia ,\" Gal. 4:25. And the apostle mentions this in the f"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "We must consider, then, 1. What believers are said to come unto; and, 2. How they do so come unto it, or wherein their coming unto it doth consist."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Θεοῦ . (2.) This was the city of God. The state of the church under the new testament is so. As it hath the safety, beauty, and order of a city, so it is the city of God; the only city which he takes peculiarly to be his own in this world. It is his, [1.] On t"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Ζῶντος . (3.) The apostle adds a property of God of great consideration in this matter. It is the city of the living God;—that is, [1.] Of the true and only God;"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "In the words there are, 1. A note of inference; \"wherefore.\""
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "In the first clause of the verse there is, 1. The object of the duty enjoined; that is, \"those that are bound,\" or \"in bonds.\""
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "In the first place, we have a proposal, 1. Of a state of life; that is, \"Marriage.\""
+      }
+    ],
+    "reference_continuation_split_count": 2,
+    "reference_continuation_splits": [
+      {
+        "file": "EPUB/ch034.xhtml",
+        "previous": "All this he \"patiently endured,\" as the sense of the word was declared on the foregoing verse.",
+        "next": "4."
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "previous": "All this he \"patiently endured,\" as the sense of the word was declared on the foregoing verse.",
+        "next": "4."
+      }
+    ],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 1214,
+    "epub_marker_count": 2246,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 25,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p85",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 115,
+        "epub": 439,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p88",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p126",
+            "context": "(1.) \"Things hoped for,\" in general, are things good, promised, future, expected on unfailing grounds. The things, therefore, here intended as \"hoped for,\" are all the things that are"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p140",
+            "context": "ription of this faith, that it is \"the evidence of things not seen.\" And we must inquire, (1.) What are the things that are not seen; (2.) How faith is the evidence of them; (3.) How it conduceth, in its being so, unto patience, constancy, and perseverance in profession."
+          }
+        ]
+      },
+      {
+        "marker": "(1st.)",
+        "pdf": 2,
+        "epub": 18,
+        "examples": [
+          {
+            "location": "EPUB/ch004.xhtml#p221",
+            "context": "3dly. There is therefore in the words, (1st.) A negation of any pre-existing material cause unto the creation of these worlds: (2dly.) An assignation of the only efficient cause of it, which is the power of God; which things"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p393",
+            "context": "(1st.) To seek God, is to do so according to some rule, guiding us both what way we are to go, and what we are to expect with him and from him. Those that sought him without such a rule,"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p904",
+            "context": "2:39, 13:32, Rom. 4:14, 16, 20, Gal. 3:17; sometimes \"the promises,\" Rom. 9:4, 15:8. For, (1st.) It was originally one single promise only, as given unto Adam. (2dly.) The grace that is in it is one and the same. (3dly.) The principal subject of them all is one, namely, Chris"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 115,
+        "epub": 439,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p88",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p132",
+            "context": "(2.) There are several things whereby faith gives a present subsistence unto things future, and so hoped for:—"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p140",
+            "context": "nce of things not seen.\" And we must inquire, (1.) What are the things that are not seen; (2.) How faith is the evidence of them; (3.) How it conduceth, in its being so, unto patience, constancy, and perseverance in profession."
+          }
+        ]
+      },
+      {
+        "marker": "(2dly.)",
+        "pdf": 2,
+        "epub": 22,
+        "examples": [
+          {
+            "location": "EPUB/ch004.xhtml#p221",
+            "context": ", (1st.) A negation of any pre-existing material cause unto the creation of these worlds: (2dly.) An assignation of the only efficient cause of it, which is the power of God; which things are rather supposed than asserted in the words: (3dly.) Respect unto the order of the cre"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p394",
+            "context": "(2dly.) This rule neither is, nor ever was, nor can be, any other but the rule of God's covenant with us, and the revelation made of himself therein. In the state of original righteousnes"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p904",
+            "context": "om. 9:4, 15:8. For, (1st.) It was originally one single promise only, as given unto Adam. (2dly.) The grace that is in it is one and the same. (3dly.) The principal subject of them all is one, namely, Christ himself. But here is mention of \"promises,\" (1st.) Because the same p"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 70,
+        "epub": 263,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p140",
+            "context": "uire, (1.) What are the things that are not seen; (2.) How faith is the evidence of them; (3.) How it conduceth, in its being so, unto patience, constancy, and perseverance in profession."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p153",
+            "context": "(3.) Faith, in its being thus \"the evidence of things not seen,\" is the great means of the preservation of believers in constant, patient profession of the gospel, against all oppositi"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p204",
+            "context": "(3.) In what manner; so as \"that the things which are seen,\" etc."
+          }
+        ]
+      },
+      {
+        "marker": "(3dly.)",
+        "pdf": 1,
+        "epub": 10,
+        "examples": [
+          {
+            "location": "EPUB/ch004.xhtml#p221",
+            "context": ", which is the power of God; which things are rather supposed than asserted in the words: (3dly.) Respect unto the order of the creation of all things, in bringing them unto their perfection. Now this was, that all the things which we now behold, in their order, glory, and bea"
+          },
+          {
+            "location": "EPUB/ch007.xhtml#p395",
+            "context": "(3dly.) This seeking of God is progressive, and hath various degrees. For there is, [1st.] Antecedent unto it, God's finding of us in a way of sovereign grace and mercy. So \"he is found o"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p904",
+            "context": "le promise only, as given unto Adam. (2dly.) The grace that is in it is one and the same. (3dly.) The principal subject of them all is one, namely, Christ himself. But here is mention of \"promises,\" (1st.) Because the same promise was several times renewed unto Abraham, so as"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 39,
+        "epub": 137,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p252",
+            "context": "Πίστει . (4.) He offered it \"by faith.\" Now faith herein respects, [1.] The institution of the worship; and, [2.] The heart or mind of the worshippers."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p275",
+            "context": "(4.) Hereon God manifested his approbation of the one and his disapprobation of the other; which provoked Cain to exercise his rage and malice unto the death of his brother. Their wors"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p305",
+            "context": "(4.) If any one shall ask why Enoch was not joined with Elijah, who was afterwards in like manner translated, at his appearance with the Lord Christ in his transfiguration, but Moses r"
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 20,
+        "epub": 50,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p622",
+            "context": "(5.) The blessing of the promised Seed was confined and appropriated unto Sarah no less than unto Abraham: Gen. 17:16, \"I will bless her. yea, I will bless her, and she shall be a moth"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p859",
+            "context": "(5.) In these temptations from God, which are always outward, and about men's outward concerns, God acts three ways:"
+          },
+          {
+            "location": "EPUB/ch012.xhtml#p1015",
+            "context": "(5.) The blessing of the promised Seed was confined and appropriated unto Sarah no less than unto Abraham: Gen. 17:16, \"I will bless her. yea, I will bless her, and she shall be a moth"
+          }
+        ]
+      },
+      {
+        "marker": "(6.)",
+        "pdf": 7,
+        "epub": 18,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p866",
+            "context": "(6.) This temptation of Abraham is said to be far his trial. And it is so carried in the story, as if God had done it for his own satisfaction in the faith and love of Abraham; for so"
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1259",
+            "context": "(6.) This temptation of Abraham is said to be far his trial. And it is so carried in the story, as if God had done it for his own satisfaction in the faith and love of Abraham; for so"
+          },
+          {
+            "location": "EPUB/ch019.xhtml#p1723",
+            "context": "(6.) I doubt not but that Moses first entered himself at the head of them. Hence it is said that God led them through the sea by the right hand of Moses, Isa. 63:11-13;—he entering bef"
+          }
+        ]
+      },
+      {
+        "marker": "(7.)",
+        "pdf": 3,
+        "epub": 8,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p867",
+            "context": "(7.) The time of this trial of Abraham is marked in the story: \"It came to pass after these things,\" Gen. 22:1. That which is the most remarkable is, that it was after the casting out"
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1260",
+            "context": "(7.) The time of this trial of Abraham is marked in the story: \"It came to pass after these things,\" Gen. 22:1. That which is the most remarkable is, that it was after the casting out"
+          },
+          {
+            "location": "EPUB/ch046.xhtml#p3986",
+            "context": "(7.) The voice of words."
+          }
+        ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch048.xhtml#p5026",
+            "context": "(8.) Fervent prayer for supplies of grace enabling us thereunto: with sundry others of a like nature. And if we judge not this duty of such importance as to be constant in the use of t"
+          },
+          {
+            "location": "EPUB/ch050.xhtml#p5089",
+            "context": "(8.) Fervent prayer for supplies of grace enabling us thereunto: with sundry others of a like nature. And if we judge not this duty of such importance as to be constant in the use of t"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 56,
+        "epub": 212,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p88",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p127",
+            "context": "[1.] With respect unto the degrees and measures of our participation of them. Believers live in the hope of increase of grace, because it is promised."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p133",
+            "context": "[1.] By mixing itself with the promises wherein they are contained. Divine promises do not only declare the good things promised,—namely, that there are such things which God will best"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p85",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[1st.]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p395",
+            "context": "(3dly.) This seeking of God is progressive, and hath various degrees. For there is, [1st.] Antecedent unto it, God's finding of us in a way of sovereign grace and mercy. So \"he is found of them that sought him not,\" Isa. 65:1. And if he had not so sought us, we should n"
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 56,
+        "epub": 212,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p88",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p128",
+            "context": "[2.] Absolutely, as unto the grace of perseverance in grace, which is future until its full accomplishment. As unto the things of future glory, see what hath been discoursed on chap. 6"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p134",
+            "context": "[2.] By giving unto the soul a taste of their goodness, yea, making them the food thereof; which they cannot be unless they are really present unto it. We do by it, not only \"taste tha"
+          }
+        ]
+      },
+      {
+        "marker": "[2dly.]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p395",
+            "context": "ought after him; for \"herein is love, not that we loved God, but that he loved us\" first. [2dly.] In itself, it takes in our first conversion unto God. To seek God, is to seek his grace and favour in Christ Jesus, to seek his kingdom and righteousness, to turn and adhere unto"
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 30,
+        "epub": 101,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p135",
+            "context": "[3.] It gives an experience of their power, as unto all the ends which they are promised for. Their use and end in general is to change and transform the whole soul into the image of G"
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p145",
+            "context": "[3.] Such as are so on the account of their distance from us in time and place; such are all the future glories of heaven, 2 Cor. 4:18."
+          },
+          {
+            "location": "EPUB/ch002.xhtml#p152",
+            "context": "[3.] Faith brings into the soul an experience of their power and efficacy, whereby it is cast into the mould of them, or made conformable unto them, Rom. 6:17; Eph. 4:21-23. This gives"
+          }
+        ]
+      },
+      {
+        "marker": "[3dly.]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/ch007.xhtml#p395",
+            "context": "k his kingdom and righteousness, to turn and adhere unto him in faith and love unfeigned. [3dly.] A diligent attendance unto all the ways of duty and obedience which he hath prescribed unto us. \"Hearken to me, ye that follow after righteousness, ye that seek the LORD,\" Isa. 51"
+          }
+        ]
+      },
+      {
+        "marker": "[4.]",
+        "pdf": 17,
+        "epub": 47,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p136",
+            "context": "[4.] It really communicates unto us, or we do receive by it, the first-fruits of them all. They are present and do subsist, even the greatest, most glorious and heavenly of them, in be"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p699",
+            "context": "[4.] Faith of the resurrection of their bodies after death, that their entire persons, which had undergone the pilgrimage of this life, might be stated in eternal rest. For, on this th"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p801",
+            "context": "[4.] This country is said to be heavenly; which the land of Canaan and the city of Jerusalem are never said to be, but are opposed unto heaven, or that which is above."
+          }
+        ]
+      },
+      {
+        "marker": "[5.]",
+        "pdf": 7,
+        "epub": 21,
+        "examples": [
+          {
+            "location": "EPUB/ch002.xhtml#p137",
+            "context": "[5.] It doth it by giving a representation of their beauty and glory unto the minds of them that believe, whereby they behold them as if they were present. So Abraham by faith saw the"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p894",
+            "context": "[5.] This expression is used in the Scripture sometimes for as much as peculiarly and entirely beloved, above all others, Prov. 4:3; and there is great respect had hereunto."
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1287",
+            "context": "[5.] This expression is used in the Scripture sometimes for as much as peculiarly and entirely beloved, above all others, Prov. 4:3; and there is great respect had hereunto."
+          }
+        ]
+      },
+      {
+        "marker": "[6.]",
+        "pdf": 3,
+        "epub": 8,
+        "examples": [
+          {
+            "location": "EPUB/ch019.xhtml#p1687",
+            "context": "[6.] This lamb was so slain as that it was a sacrifice, verse 27,—\"It is the sacrifice of the LORD'S passover;\" and \"Christ our passover was sacrificed for us,\" 1 Cor. 5:7."
+          },
+          {
+            "location": "EPUB/ch025.xhtml#p2050",
+            "context": "[6.] This lamb was so slain as that it was a sacrifice, verse 27,—\"It is the sacrifice of the LORD'S passover;\" and \"Christ our passover was sacrificed for us,\" 1 Cor. 5:7."
+          },
+          {
+            "location": "EPUB/ch046.xhtml#p4122",
+            "context": "[6.] Their πολίτευμα , or \"city conversation,\" is in heaven, Phil. 3:20."
+          }
+        ]
+      },
+      {
+        "marker": "[7.]",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch019.xhtml#p1688",
+            "context": "[7.] The lamb being slain, was to be roasted, verses 8, 9; which signified the fiery wrath that Christ was to undergo for our deliverance."
+          },
+          {
+            "location": "EPUB/ch025.xhtml#p2051",
+            "context": "[7.] The lamb being slain, was to be roasted, verses 8, 9; which signified the fiery wrath that Christ was to undergo for our deliverance."
+          },
+          {
+            "location": "EPUB/ch046.xhtml#p4330",
+            "context": "Σείω . [7.] Yea, take the words in any sense, and they are applicable unto the first coming of Christ, and the promulgation of the gospel. For take them literally, and in a natural sense, and"
+          }
+        ]
+      },
+      {
+        "marker": "[8.]",
+        "pdf": 1,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch019.xhtml#p1689",
+            "context": "[8.] That not a bone of him should be broken, verse 46, was expressly to declare the manner of the death of Christ, John 19:33-36."
+          },
+          {
+            "location": "EPUB/ch025.xhtml#p2052",
+            "context": "[8.] That not a bone of him should be broken, verse 46, was expressly to declare the manner of the death of Christ, John 19:33-36."
+          },
+          {
+            "location": "EPUB/ch046.xhtml#p4331",
+            "context": "[8.] But, as we observed before, it is the dealing of God with the church, and the alterations which he would make in the state thereof, concerning which the apostle treats. It is ther"
+          }
+        ]
+      },
+      {
+        "marker": "[9.]",
+        "pdf": 0,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch019.xhtml#p1690",
+            "context": "[9.] The eating of him, which was also enjoined, and that wholly and entirely, verses 8, 9, was to instruct the church in the spiritual food of the flesh and blood of Christ, in the co"
+          },
+          {
+            "location": "EPUB/ch025.xhtml#p2053",
+            "context": "[9.] The eating of him, which was also enjoined, and that wholly and entirely, verses 8, 9, was to instruct the church in the spiritual food of the flesh and blood of Christ, in the co"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 4,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch027.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "(2dly.) It hath this advantage, because it hath a remaining interest in all the faculties of our souls. It is not in us as a disease that attempts and weakens one single part of the body,"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "olute perfection in this life. This we are always to aim at, and pray for, 1 Thess. 5:23. (2dly.) We ought actually to lay it aside in such a measure and degree, as that it may not be a prevalent hinderance unto us in any of the duties of Christian obedience. For it may have v"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "(2dly.) It hath this advantage, because it hath a remaining interest in all the faculties of our souls. It is not in us as a disease that attempts and weakens one single part of the body,"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "marker": "(2dly.)",
+        "family": "paren_ordinal",
+        "context": "olute perfection in this life. This we are always to aim at, and pray for, 1 Thess. 5:23. (2dly.) We ought actually to lay it aside in such a measure and degree, as that it may not be a prevalent hinderance unto us in any of the duties of Christian obedience. For it may have v"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "run with patience the race that is set before us",
+      "count": 7
+    },
+    {
+      "phrase": "seed all the nations of the earth should be blessed",
+      "count": 6
+    },
+    {
+      "phrase": "made mention of the departing of the children of israel",
+      "count": 6
+    },
+    {
+      "phrase": "the two states of the law and the gospel with",
+      "count": 6
+    },
+    {
+      "phrase": "every weight and the sin that doth so easily beset",
+      "count": 6
+    },
+    {
+      "phrase": "weight and the sin that doth so easily beset us",
+      "count": 6
+    },
+    {
+      "phrase": "entreated that the word should not be spoken to them",
+      "count": 6
+    },
+    {
+      "phrase": "that the word should not be spoken to them any",
+      "count": 6
+    },
+    {
+      "phrase": "the word should not be spoken to them any more",
+      "count": 6
+    },
+    {
+      "phrase": "that which is well-pleasing in his sight through jesus christ",
+      "count": 6
+    },
+    {
+      "phrase": "seeing we also are compassed about with so great cloud",
+      "count": 5
+    },
+    {
+      "phrase": "we also are compassed about with so great cloud of",
+      "count": 5
+    },
+    {
+      "phrase": "also are compassed about with so great cloud of witnesses",
+      "count": 5
+    },
+    {
+      "phrase": "let us run with patience the race that is set",
+      "count": 5
+    },
+    {
+      "phrase": "us run with patience the race that is set before",
+      "count": 5
+    },
+    {
+      "phrase": "is set down at the right hand of the throne",
+      "count": 5
+    },
+    {
+      "phrase": "set down at the right hand of the throne of",
+      "count": 5
+    },
+    {
+      "phrase": "down at the right hand of the throne of god",
+      "count": 5
+    },
+    {
+      "phrase": "that in his seed all the nations of the earth",
+      "count": 4
+    },
+    {
+      "phrase": "in his seed all the nations of the earth should",
+      "count": 4
+    },
+    {
+      "phrase": "his seed all the nations of the earth should be",
+      "count": 4
+    },
+    {
+      "phrase": "her is any thing too hard for the lord gen",
+      "count": 4
+    },
+    {
+      "phrase": "confessed that they were strangers and pilgrims on the earth",
+      "count": 4
+    },
+    {
+      "phrase": "than which nothing can be more remote from the mind",
+      "count": 4
+    },
+    {
+      "phrase": "which nothing can be more remote from the mind of",
+      "count": 4
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 3856,
+    "epub_greek_word_count": 7119,
+    "pdf_greek_unique_words": 1318,
+    "epub_greek_unique_words": 1318,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 343,
+    "epub_hebrew_word_count": 609,
+    "pdf_hebrew_unique_words": 301,
+    "epub_hebrew_unique_words": 301,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 155,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 44,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 2125,
+    "epub_latin_word_count": 3898,
+    "epub_tagged_latin_word_count": 836,
+    "pdf_latin_unique_words": 676,
+    "epub_latin_unique_words": 685,
+    "epub_tagged_unique_words": 336,
+    "latin_word_coverage_ratio": 1.0,
+    "latin_tagging_ratio": 0.2145,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "abraham",
+        "epub": 406,
+        "tagged": 2
+      },
+      {
+        "word": "cor",
+        "epub": 175,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 122,
+        "tagged": 0
+      },
+      {
+        "word": "isa",
+        "epub": 104,
+        "tagged": 2
+      },
+      {
+        "word": "terror",
+        "epub": 88,
+        "tagged": 0
+      },
+      {
+        "word": "immediate",
+        "epub": 82,
+        "tagged": 2
+      },
+      {
+        "word": "poor",
+        "epub": 77,
+        "tagged": 0
+      },
+      {
+        "word": "vii",
+        "epub": 71,
+        "tagged": 0
+      },
+      {
+        "word": "undergo",
+        "epub": 70,
+        "tagged": 0
+      },
+      {
+        "word": "sinai",
+        "epub": 68,
+        "tagged": 4
+      },
+      {
+        "word": "viii",
+        "epub": 57,
+        "tagged": 0
+      },
+      {
+        "word": "elsewhere",
+        "epub": 55,
+        "tagged": 2
+      },
+      {
+        "word": "mere",
+        "epub": 52,
+        "tagged": 0
+      },
+      {
+        "word": "mediator",
+        "epub": 48,
+        "tagged": 0
+      },
+      {
+        "word": "severe",
+        "epub": 36,
+        "tagged": 0
+      },
+      {
+        "word": "intimate",
+        "epub": 34,
+        "tagged": 0
+      },
+      {
+        "word": "gate",
+        "epub": 32,
+        "tagged": 0
+      },
+      {
+        "word": "grotius",
+        "epub": 33,
+        "tagged": 4
+      },
+      {
+        "word": "beza",
+        "epub": 42,
+        "tagged": 15
+      },
+      {
+        "word": "nowhere",
+        "epub": 22,
+        "tagged": 0
+      },
+      {
+        "word": "sincere",
+        "epub": 24,
+        "tagged": 2
+      },
+      {
+        "word": "sum",
+        "epub": 24,
+        "tagged": 2
+      },
+      {
+        "word": "gospel-state",
+        "epub": 22,
+        "tagged": 0
+      },
+      {
+        "word": "obstinate",
+        "epub": 21,
+        "tagged": 0
+      },
+      {
+        "word": "schlichtingius",
+        "epub": 25,
+        "tagged": 4
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 41,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 324,
+    "translated_latin_runs_count": 29,
+    "latin_translation_ratio": 0.0895,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "sperandarum substantia rerum"
+      },
+      {
+        "phrase": "is, \"quae sperantur"
+      },
+      {
+        "phrase": "Beza, ‡  \"illud quo"
+      },
+      {
+        "phrase": "argumentum illud quod"
+      },
+      {
+        "phrase": "Illud ex quo"
+      },
+      {
+        "phrase": "testimonium consequuti,\" \"adepti;\" \"testimonio ornati"
+      },
+      {
+        "phrase": "aedificata, constructa, ornata, praeparata, creata, condita"
+      },
+      {
+        "phrase": "secula,\" \"seculum,\" \"mundum"
+      },
+      {
+        "phrase": "ut ex invisibilibus visibilia"
+      },
+      {
+        "phrase": "quae cernimus,\" \"quae cernuntur"
+      },
+      {
+        "phrase": "Ex nihilo nihil"
+      },
+      {
+        "phrase": "plurimam hostiam"
+      },
+      {
+        "phrase": "Hostiam majoris pretii,\" Beza"
+      },
+      {
+        "phrase": "testimonium consecutus est"
+      },
+      {
+        "phrase": "testimonio est ornatus"
+      },
+      {
+        "phrase": "placere,\" \"beneplacere"
+      },
+      {
+        "phrase": "promeretur Deus"
+      },
+      {
+        "phrase": "responso accepto"
+      },
+      {
+        "phrase": "Responsa deorum,\" \"responsa Aruspicum"
+      },
+      {
+        "phrase": "Divinitus admonitus"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

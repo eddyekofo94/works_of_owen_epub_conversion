@@ -1,0 +1,1638 @@
+{
+  "volume": "h1",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h1/input/volume_h1.epub",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h1/output/volume_h1.epub",
+  "generated_at": "2026-06-11T00:09:45.554166+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 11,
+    "source": "epub2"
+  },
+  "epub": {
+    "spine_text_files": 37,
+    "paragraph_count": 4365
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 238094,
+    "epub_content_tokens": 412563,
+    "coverage_ratio": 0.9999,
+    "missing_word_samples": [
+      {
+        "word": "κατʼ",
+        "pdf": 10,
+        "epub": 0
+      },
+      {
+        "word": "παρʼ",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "επʼ",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "him",
+        "pdf": 1177,
+        "epub": 2143
+      },
+      {
+        "word": "messiah",
+        "pdf": 919,
+        "epub": 1789
+      },
+      {
+        "word": "first",
+        "pdf": 686,
+        "epub": 1246
+      },
+      {
+        "word": "jews",
+        "pdf": 630,
+        "epub": 1146
+      },
+      {
+        "word": "time",
+        "pdf": 489,
+        "epub": 901
+      },
+      {
+        "word": "people",
+        "pdf": 413,
+        "epub": 797
+      },
+      {
+        "word": "place",
+        "pdf": 429,
+        "epub": 796
+      },
+      {
+        "word": "world",
+        "pdf": 386,
+        "epub": 719
+      },
+      {
+        "word": "man",
+        "pdf": 351,
+        "epub": 646
+      },
+      {
+        "word": "come",
+        "pdf": 333,
+        "epub": 626
+      },
+      {
+        "word": "years",
+        "pdf": 321,
+        "epub": 612
+      },
+      {
+        "word": "lev",
+        "pdf": 285,
+        "epub": 567
+      },
+      {
+        "word": "sin",
+        "pdf": 281,
+        "epub": 553
+      },
+      {
+        "word": "name",
+        "pdf": 295,
+        "epub": 553
+      },
+      {
+        "word": "said",
+        "pdf": 275,
+        "epub": 526
+      },
+      {
+        "word": "promised",
+        "pdf": 260,
+        "epub": 501
+      },
+      {
+        "word": "here",
+        "pdf": 277,
+        "epub": 516
+      },
+      {
+        "word": "deut",
+        "pdf": 243,
+        "epub": 478
+      },
+      {
+        "word": "verse",
+        "pdf": 242,
+        "epub": 476
+      },
+      {
+        "word": "concerning",
+        "pdf": 283,
+        "epub": 514
+      },
+      {
+        "word": "called",
+        "pdf": 262,
+        "epub": 491
+      },
+      {
+        "word": "up",
+        "pdf": 274,
+        "epub": 502
+      },
+      {
+        "word": "moses",
+        "pdf": 273,
+        "epub": 499
+      },
+      {
+        "word": "exod",
+        "pdf": 228,
+        "epub": 450
+      },
+      {
+        "word": "coming",
+        "pdf": 236,
+        "epub": 456
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 10,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 0,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_usable": 0,
+    "skipped_top_window_count": 0,
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_usable": 0,
+    "skipped_bottom_window_count": 0,
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 4203,
+    "split_candidate_count": 40,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "EXERCITATIONS ON THE EPISTLE TO THE HEBREWS",
+        "next": "GENERAL PREFACE"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "GENERAL PREFACE",
+        "next": "IT has been matter of thankfulness for many generations of the Christian church, that Dr Owen was led to concentrate all his rare endowments and vast resources on the exposition of"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "NOTE IN REGARD TO THE PREFACES",
+        "next": "IN previous reprints of this work, instead of the prefaces which the author himself had written for the different parts of the work as they issued from the press, one general prefa"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "TO THE RIGHT HONOURABLE",
+        "next": "SIR WILLIAM MORRICE, KNIGHT,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "SIR WILLIAM MORRICE, KNIGHT,",
+        "next": "ONE OF HIS MAJESTY'S MOST HONOURABLE PRIVY COUNCIL, AND PRINCIPAL SECRETARY OF STATE, ETC."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "SIR,",
+        "next": "THE dedication of books unto persons of worth and honour hath secured itself from the impeachment of censure, by taking sanctuary in the usage of all times and ages. Herein, theref"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "mstances (needless to be repeated) seems to render an account of the reason of my particular address unto you in this manner necessary. This, therefore, I shall give, but briefly:—",
+        "next": "\" Ne longo sermone morer tua tempora .\""
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "irmation of them, is left to the judgment of persons indifferent and unprejudiced; the manner of their handling is submitted unto yours, which is highly and singularly esteemed by,",
+        "next": "Sir,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Sir,",
+        "next": "Your most humble and obliged servant,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "Your most humble and obliged servant,",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "John Owen",
+        "next": "March 20, 1667."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "I.—TO THE CHRISTIAN READER",
+        "next": "CHRISTIAN READER,"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "CHRISTIAN READER,",
+        "next": "IF thou intendest to engage any part of thy time in the perusal of the ensuing Discourses and Exposition, it may not be amiss to take along with thee the consideration of some thin"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "John Owen",
+        "next": "———"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "———",
+        "next": "II.—THE PREFACE"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "II.—THE PREFACE",
+        "next": "THE general concernments of this Epistle have all of them been discussed and cleared in the preceding Exercitations and Discourses. The things and matters confirmed in them we ther"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "———",
+        "next": "III.—TO THE CHRISTIAN READER"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "III.—TO THE CHRISTIAN READER",
+        "next": "CHRISTIAN READER,"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "CHRISTIAN READER,",
+        "next": "THERE are but few things that I shall here detain thee in the consideration of, and those such as are necessary, if thou intendest the perusal of the ensuing Discourses. What princ"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "John Owen",
+        "next": "September 30, 1673."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "———",
+        "next": "IV.—THE PREFACE TO THE READER"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "IV.—THE PREFACE TO THE READER",
+        "next": "I HAVE so fully, in my former discourses on this subject, declared the general design, scope, and end of this Epistle, the proper way and means of its interpretation, with the meth"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "———",
+        "next": "V.—THE PREFACE TO THE READER"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "previous": "V.—THE PREFACE TO THE READER",
+        "next": "ALTHOUGH the Lord took the reverend and learned author of the ensuing Exposition unto himself before it could be published, yet, he having finished it before his death, and made it"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "3. And this also is the first and proper signification of the Greek word κανών , \"canon.\" So the scholiast on that of Aristophanes,",
+        "next": "Καὶ κανόνας ἐξοίσουσι , καὶ πήχεις ἐπῶν , tells us that κανών is κυρίως τὸ ἐπάνω τῆς τρυτάνης ὂν καὶ εἰς ἰσότητα ταύτην ἄγον , \"properly that which is over the scales, bringing the"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": " excellency, of truth, have invented such dispositions of words as might compass the ends they aimed at. And great effects by this means were produced; as by him whom men admired,—",
+        "next": "—\"Pleni moderantem frena theatri .\""
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "——————",
+        "next": "SUBSIDIARY NOTE ON EXERCITATION I"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "SUBSIDIARY NOTE ON EXERCITATION I",
+        "next": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "BY THE EDITOR",
+        "next": "IT will be seen that Dr Owen, in his proof of the canonical authority of the Epistle to the Hebrews, relies chiefly upon internal evidence. After a definition of canonicity, accord"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "us in the churches before Tertullian was born; is ascribed by himself unto Barnabas; and some passages in it are said by him to be corrupted by one Theodotus long before his time.3",
+        "next": "From the uncertainty of these conjectures, with the evidence of reason and circumstances whereby they are disproved, two things we seem to have obtained;—first, That no objection o"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "——————",
+        "next": "SUBSIDIARY NOTE ON EXERCITATION II"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "SUBSIDIARY NOTE ON EXERCITATION II",
+        "next": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "BY THE EDITOR",
+        "next": "THE progress of discussion on the interesting question in Biblical literature with which the preceding Exercitation is occupied, would form matter of a very long historical excursi"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "NOTE ON EXERCITATION III",
+        "next": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "BY THE EDITOR",
+        "next": "IT is generally agreed that the Epistle was written before the destruction of Jerusalem. Mill, Wetstein, Tillemont, Calmet, and Lardner, hold that it was written in the year"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "——————",
+        "next": "SUBSIDIARY NOTE ON EXERCITATION IV"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "SUBSIDIARY NOTE ON EXERCITATION IV",
+        "next": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "BY THE EDITOR",
+        "next": "ON the point discussed in the previous Exercitation, a difference of an early date exists among critics. Clement of Alexandria held that \"Paul wrote to the Hebrews in the Hebrew la"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "——————",
+        "next": "SUBSIDIARY NOTE ON EXERCITATION V"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "SUBSIDIARY NOTE ON EXERCITATION V",
+        "next": "BY THE EDITOR"
+      }
+    ],
+    "structural_start_exclusions": 85,
+    "short_fragment_count": 174,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "GENERAL PREFACE"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "EDINBURGH, March 1854"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "NOTE IN REGARD TO THE PREFACES"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "TO THE RIGHT HONOURABLE"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "SIR WILLIAM MORRICE, KNIGHT,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "SIR,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Sir,"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "March 20, 1667."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "I.—TO THE CHRISTIAN READER"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "CHRISTIAN READER,"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "II.—THE PREFACE"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "III.—TO THE CHRISTIAN READER"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "CHRISTIAN READER,"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "September 30, 1673."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "IV.—THE PREFACE TO THE READER"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "LONDON, April 17, 1680."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "V.—THE PREFACE TO THE READER"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "SUBSIDIARY NOTE ON EXERCITATION I"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "15."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "20."
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "SUBSIDIARY NOTE ON EXERCITATION II"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "NOTE ON EXERCITATION III"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "SUBSIDIARY NOTE ON EXERCITATION IV"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "21."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "SUBSIDIARY NOTE ON EXERCITATION V"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "BY THE EDITOR"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "SUPPLEMENTARY NOTE"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "\"Post ignem aetheria domo"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Subductum, Macies et nova Febrium"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Terris incubuit cohors;"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Semotique prius tarda necessitas"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "34."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "37."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 6,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "1. CLEMENT of Rome, in the judgment of Erasmus and Patrick Young; 2. TERTULLIAN, according to Sixtus Senensis ; 3. BARNABAS, according to Tertullian, Schmidt, Cameron, Twesten, Ullman, Wieseler; 4. LUKE, according to Origen, S. Crell, Grotius, and Koehler; 5. "
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "1. That it was written to Gentile Christians; 2. To Jewish believers out of Palestine; 3. To Jewish believers in Palestine; and, 4. To Jewish believers in Palestine, but more especially in Jerusalem or Caesarea."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "1, 2. Ordinances and institutions of the Jewish church referred to and unfolded in the Epistle to the Hebrews—Principal heads of them mentioned therein. 3. The call of Abraham, Heb. 11:8-19. 4. The name Abram; signification of it—Changed into Abraham; its sign"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "1, 2. Ordinances and institutions of the Jewish church referred to and unfolded in the Epistle to the Hebrews—Principal heads of them mentioned therein. 3. The call of Abraham, Heb. 11:8-19. 4. The name Abram; signification of it—Changed into Abraham; its sign"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "1. The priest; 2. The whole congregation jointly; 3. The ruler; 4. Any of the people of the land: so that none were excluded from the privilege and benefit of this sacrifice."
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "1. The priest; 2. The whole congregation jointly; 3. The ruler; 4. Any of the people of the land: so that none were excluded from the privilege and benefit of this sacrifice."
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 51,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "14. Not rejected by any of that church; 15. Only not publicly approved—The church of Rome not the sole proposer of books canonical."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "34. Tradition concerning the authority of this Epistle—Not justly liable to any exceptions— 35. From the author; 36. Circumstances; 37. Subject-matter; 38. Style. 39. Testimonies. 40. Conclusion."
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "96. These quotations are numerous, and are arranged by Moses Stuart into four classes, according to the degree of their correspondence with the original Epistle from which they were taken. They prove more than the existe"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "96. Clement, in the 36th chapter of his epistle, introduces a quotation from Scripture under the common formula that bespeaks an appeal to divine authority: Γέγραπται γὰρ οὕτως · Ὁποιῶν τοὺς ἀγγέλους αὑτοῦ πνεύματα , καὶ"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "23. And it seems likewise to be written before the martyrdom of James at Jerusalem, in that he affirms that the church of the Hebrews had \"not yet resisted unto blood,\" chap. 12:4; it being very probable that together wi"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "61. The most recent authority, Dr Davidson, remarks, \"If the letter was written by Paul, it could only have proceeded from him during the first two years of his imprisonment noticed at the close of the Acts. It preceded "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "14. Eusebius says, \"Paul wrote to the Hebrews in his vernacular language, and, according to report, either Luke or Clement\" (i.e., of Rome) \"translated it,\" Euseb. iii."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "38. Jerome remarks, \"He had written as a Hebrew to Hebrews, in the Hebrew tongue,\" and \"this Epistle was translated into Greek; so that the colouring of the style was made different in this way from that of Paul's.\" The "
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "14. Εὐλογῶν εὐλογήσω σε , καὶ πληθύνων πληθυνῶ σε ·—\"Blessing I will bless thee, and multiplying I will multiply thee.\" From Gen. 22:17. The LXX., Πληθυνῶ τὸ σπέρμα σου ,—\"I will multiply thy seed.\""
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "20. Τοῦτο τὸ αἷμα τῆς διαθήκης , ἧς ἐνετείλατο πρὸς ὑμᾶς ὁ Θεός ·—\"This is the blood of the covenant which God hath enjoined unto you.\" From Exod. 24:8. The sense of the Hebrew text is alluded unto, not the words absolut"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "44. Before the Epistle was written, there was time for another generation to arise, to whom the language might apply with sufficient accuracy, \"Ye have not yet resisted unto blood.\""
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "25. Sense of the Jews upon it manifested; 26, 27. Examined."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "34. This deliverer, the Messiah—Denotation of the word—The person who."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "32. Entanglements of the Jews from this testimony. 33, 34. Four things promised, not agreeing to Hezekiah—Answer of Jarchi, Kimchi , Aben Ezra. 35. The name mentioned, whose— שַׂר־שָׁלוֹם , who."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "25. Sense of the Jews upon it manifested; 26, 27. Examined."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "34. This deliverer, the Messiah—Denotation of the word—The person who."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "32. Entanglements of the Jews from this testimony. 33, 34. Four things promised, not agreeing to Hezekiah—Answer of Jarchi, Kimchi , Aben Ezra. 35. The name mentioned, whose— שַׂר־שָׁלוֹם , who."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "36. Conclusion."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "36. That which, above all things, manifests the folly and irreligion of the imagination of the Jews about the person and work of the Messiah is the event. The true Messiah is long since come, hath accomplished the work a"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "36. Conclusion."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "36. That which, above all things, manifests the folly and irreligion of the imagination of the Jews about the person and work of the Messiah is the event. The true Messiah is long since come, hath accomplished the work a"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "10. We may add hereunto what is recorded concerning the adorning of this house. Not to mention the pillars of brass, with their chapiters, whose magnificence was wonderful, and workmanship inimitable; the molten sea with"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "10. We may add hereunto what is recorded concerning the adorning of this house. Not to mention the pillars of brass, with their chapiters, whose magnificence was wonderful, and workmanship inimitable; the molten sea with"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "11. For as the Christian church is in both places signified by the 'holy city,' Apoc. 11:2, with Dan. 9:26; and straits of time said in both places to go before the last afflictions, Apoc. 11:5-7, with Dan. 9:25; so the "
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "42. There are yet some arguments that remain, to the same purpose with those foregoing; but before we proceed unto them, it will be necessary to consider the computation of the times, which we are here directed unto by t"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "11. For as the Christian church is in both places signified by the 'holy city,' Apoc. 11:2, with Dan. 9:26; and straits of time said in both places to go before the last afflictions, Apoc. 11:5-7, with Dan. 9:25; so the "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "42. There are yet some arguments that remain, to the same purpose with those foregoing; but before we proceed unto them, it will be necessary to consider the computation of the times, which we are here directed unto by t"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "14. Tradition of the birth of the Messiah before the destruction of the second temple. 15, 16. Tradition of the school of Elias about the world's continuance—Answers of the Jews unto our arguments, by way of concession. "
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "28. Greatness of the sign promised. 29, 30. No other virgin and son designed but Jesus Christ and his mother—The prophecy cleared in this instance. 31. In what sense the birth of the Messiah was a sign of present deliver"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "76. One argument more, taken from the success that the doctrine of Jesus hath had in the world, shall close this discourse. What was his outward condition in this world we acknowledge, and the Jews triumph in. The povert"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "14. Tradition of the birth of the Messiah before the destruction of the second temple. 15, 16. Tradition of the school of Elias about the world's continuance—Answers of the Jews unto our arguments, by way of concession. "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "28. Greatness of the sign promised. 29, 30. No other virgin and son designed but Jesus Christ and his mother—The prophecy cleared in this instance. 31. In what sense the birth of the Messiah was a sign of present deliver"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "76. One argument more, taken from the success that the doctrine of Jesus hath had in the world, shall close this discourse. What was his outward condition in this world we acknowledge, and the Jews triumph in. The povert"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "46. When Moses used these words, \"I exceedingly fear and quake,\" Heb. 12:21."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "16. That oil be not put to the gift of a woman suspected to have gone astray; 17. Nor frankincense, Num. 5:15."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "48. Nor the priest when he is defiled, Lev. 22:3; 49. Nor the daughter of the priest which is married to a stranger, Lev. 22:12."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "75. That the priests enter not the sanctuary with long hair; 76. Nor with torn garments, Lev. 10:6, 21:10."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "36. That he shave not his head; 37. That he defile not himself for the dead; 38. That he enter not an house where any is dead, Num. 6:5-7."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "18. That we oppress not our neighbour; 19. Nor take his goods by violence, Lev. 19:13."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "20. That no man deny his neighbour's goods that are with him; 21. That none swear falsely concerning any thing deposited with him, Lev. 19:12, 13."
+      }
+    ],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "II. Some ascribe it directly and exclusively to Paul;"
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 372,
+    "epub_marker_count": 630,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 29,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p56",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 48,
+        "epub": 140,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p118",
+            "context": "opinion of the necessary observation of Mosaical rites; and these also were of two sorts:—(1.) Such as, from a pure reverence of their original institutions, either being not fully instructed in their liberty, or, by reason of prejudices, not readily admitting the consequen"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p120",
+            "context": "was tendered unto them in the preaching of the gospel; and these also were of two sorts:—(1.) Such as, although they had not embraced the faith, yet were free and willing to attend unto the doctrine of it, \"searching the Scriptures\" for a discovery of its truth, and in the"
+          }
+        ]
+      },
+      {
+        "marker": "(10.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3768",
+            "context": "(10.) Offering to Moloch;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4122",
+            "context": "(10.) Offering to Moloch;"
+          }
+        ]
+      },
+      {
+        "marker": "(11.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3769",
+            "context": "(11.) A familiar spirit of Ob;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4123",
+            "context": "(11.) A familiar spirit of Ob;"
+          }
+        ]
+      },
+      {
+        "marker": "(12.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3770",
+            "context": "(12.) Of Jideoni;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4124",
+            "context": "(12.) Of Jideoni;"
+          }
+        ]
+      },
+      {
+        "marker": "(13.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3771",
+            "context": "(13.) On impostors;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4125",
+            "context": "(13.) On impostors;"
+          }
+        ]
+      },
+      {
+        "marker": "(14.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3772",
+            "context": "(14.) On seducers;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4126",
+            "context": "(14.) On seducers;"
+          }
+        ]
+      },
+      {
+        "marker": "(15.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3773",
+            "context": "(15.) On enchanters or magicians;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4127",
+            "context": "(15.) On enchanters or magicians;"
+          }
+        ]
+      },
+      {
+        "marker": "(16.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3774",
+            "context": "(16.) Profaners of the Sabbath;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4128",
+            "context": "(16.) Profaners of the Sabbath;"
+          }
+        ]
+      },
+      {
+        "marker": "(17.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3775",
+            "context": "(17.) Cursers of fathers or mothers;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4129",
+            "context": "(17.) Cursers of fathers or mothers;"
+          }
+        ]
+      },
+      {
+        "marker": "(18.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3776",
+            "context": "(18.) The dissolute and stubborn son;—concerning all which it is expressly said that they shall be stoned."
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4130",
+            "context": "(18.) The dissolute and stubborn son;—concerning all which it is expressly said that they shall be stoned."
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 48,
+        "epub": 140,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p119",
+            "context": "(2.) Such as urged their observation as indispensably necessary to our justification before God, Acts 15:1; Gal. 3, 4. The first sort of these the apostles bare with in all meekness, y"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p121",
+            "context": "(2.) Such as, being hardened in their infidelity, blasphemed, scoffed at, and persecuted the gospel, with all that professed it, Acts 13:45, 50, 17:5, 18:6; 1 Thess. 2:15, 16; Rom. 11:"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 32,
+        "epub": 97,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p173",
+            "context": "(3.) The wisdom, righteousness, and faithfulness of God, in the removal of the old covenant, with all the services thereunto belonging, are herein abundantly vindicated. This is the st"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p259",
+            "context": "(2.) Γνώμη , the sentence or subject-matter treated of; and, (3.) Προαίρεσις , the purpose and design of the writer: and they are all of great importance, and to be considered by us in this matter. But because others of like moment may be added"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p266",
+            "context": "(3.) God's way in teaching the church of the old testament, with the use and end of all the operose pedagogy of Moses, manifesting it to be full of wisdom, grace, and love, is here ful"
+          }
+        ]
+      },
+      {
+        "marker": "(4)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch020.xhtml#p2153",
+            "context": "(4) As all of the two tribes came not up to Jerusalem at the return from the captivity of Babylon, so very great numbers of the ten tribes appear so to have done; which being added to"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p2400",
+            "context": "(4) As all of the two tribes came not up to Jerusalem at the return from the captivity of Babylon, so very great numbers of the ten tribes appear so to have done; which being added to"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 20,
+        "epub": 64,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p174",
+            "context": "(4.) The work of the apostle, in these chapters, is to show the harmony between the law and the gospel, their different ends and uses; to take off all seeming repugnancy and contradict"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p267",
+            "context": "(4.) The grounds, reasons, causes, and manner, of that great alteration which God wrought and caused in his worship, by taking down the ancient glorious fabric of it, which had been se"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p349",
+            "context": "insisted on to disprove our assertion; (3.) Testimony given unto it in other scriptures; (4.) Considerations taken from the writing itself, compared with other acknowledged writings of the same author; (5.) The general suffrage of antiquity, or ecclesiastical tradition; (6"
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 12,
+        "epub": 37,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p175",
+            "context": "(5.) Herein a glorious account is given of the representation that was made of the person and incarnation of Christ, with the whole office of his mediation, according as it was granted"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p349",
+            "context": "en from the writing itself, compared with other acknowledged writings of the same author; (5.) The general suffrage of antiquity, or ecclesiastical tradition; (6.) Reasons taken from sundry circumstances relating unto the Epistle itself. Now, as all these evidences are not"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p400",
+            "context": "(5.) Sundry particulars towards and in the close of the Epistle openly proclaim Paul to have been the writer of it; as,—[1.] The mention that he makes of his \"bonds,\" and the \"compassi"
+          }
+        ]
+      },
+      {
+        "marker": "(6.)",
+        "pdf": 7,
+        "epub": 20,
+        "examples": [
+          {
+            "location": "EPUB/ch003.xhtml#p176",
+            "context": "(6.) Directions are given herein unto all unto whom the gospel is preached, or by whom it is professed, how to behave themselves as unto what God requireth of them, expressed in clear"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p349",
+            "context": "of the same author; (5.) The general suffrage of antiquity, or ecclesiastical tradition; (6.) Reasons taken from sundry circumstances relating unto the Epistle itself. Now, as all these evidences are not of the same nature, nor of equal force, so some of them will be found"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p437",
+            "context": "(6.) An adjective used to express a generic quality, instead of a noun, chap. 6:17, 12:13, 21; Rom. 1:19, 2:4, 3:1, 7:3, 9:22."
+          }
+        ]
+      },
+      {
+        "marker": "(7.)",
+        "pdf": 5,
+        "epub": 11,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p438",
+            "context": "(7.) The use of paronomasia, so common with Paul, chap. 7:12, 13, 9:16, 8:13."
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p1558",
+            "context": "the world, neither themselves nor any else knowing unto what tribe they did belong; and, (7.) This hath been in things no way relating to the worship of God, or their church-state, or their spiritual good;"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p1599",
+            "context": "(7.) To itself; for it is, by his own confession, promised that the Messiah should come to the temple that is promised to be filled with glory, but the other third temple that he fanci"
+          }
+        ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 3,
+        "epub": 7,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p439",
+            "context": "(8.) The habit of sudden digression: chap. 3:2, going off at the word house; chap. 12:18-29, at the words voice, speaketh, shook; chap. 12:5, at the word chastening; 2 Cor. 2:14, 3:1;"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p1559",
+            "context": "(8.) Their scribes were not formerly of the tribe of Judah, and their later rabbins wholly of an uncertain extraction. So that this pretence proves nothing but the misery of their pres"
+          },
+          {
+            "location": "EPUB/ch017.xhtml#p1722",
+            "context": "(8.) Their scribes were not formerly of the tribe of Judah, and their later rabbins wholly of an uncertain extraction. So that this pretence proves nothing but the misery of their pres"
+          }
+        ]
+      },
+      {
+        "marker": "(9.)",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3767",
+            "context": "(9.) Idolatry;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4121",
+            "context": "(9.) Idolatry;"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 7,
+        "epub": 19,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p171",
+            "context": "[1.] The wisdom and grace of God in the constitution and making of the covenant at Sinai; in the institution of all the worship and divine services thereunto belonging; in the holy fab"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p385",
+            "context": "[1.] The long-sufferance, patience, or forbearance of God, is either absolute, toward man in general; or special, in reference unto some sort of men, or some kind of sins or provocatio"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p56",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 7,
+        "epub": 19,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p172",
+            "context": "[2.] There is therefore, in these chapters, an absolute, infallible interpretation of the whole Law; without which it would be a sealed book, and of no use unto us. But as the intentio"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p386",
+            "context": "[2.] And thus was this particular \"long-suffering of God\" towards the Jews, whilst the gospel was preached unto them before their final desolation, \"salvation,\" in that God \"spared\" th"
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 3,
+        "epub": 8,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p387",
+            "context": "[3.] And this is declared by St Paul in this Epistle. Not that this is formally and in terms the main doctrine of the Epistle, but that really and effectually he acquaints them with th"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p402",
+            "context": "[3.] The constant sign and token of Paul's epistles, which himself had publicly signified to be so, 2 Thess. 3:17, is subjoined unto this, \"Grace be with you all.\" That originally this"
+          },
+          {
+            "location": "EPUB/ch020.xhtml#p2264",
+            "context": "ia ;\" and it may thus seem to be differenced from the same word in all other places. But, [3.] Indeed the meaning of the wise man is evident, and it is a virgin that he intended by the word, and דֶרֶךְ גֶּבֶר בְּעַלְמָה is the way that a man taketh to corrupt a virgin, and"
+          }
+        ]
+      },
+      {
+        "marker": "[4.]",
+        "pdf": 2,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch020.xhtml#p2308",
+            "context": "[4.] Contrary to the context, distinguishing the people of the Jews from him that was to suffer by them, among them, and for them, verses 3-6:"
+          },
+          {
+            "location": "EPUB/ch022.xhtml#p2555",
+            "context": "[4.] Contrary to the context, distinguishing the people of the Jews from him that was to suffer by them, among them, and for them, verses 3-6:"
+          },
+          {
+            "location": "EPUB/ch026.xhtml#p3752",
+            "context": "[4.] A wife's daughter's daughter;"
+          }
+        ]
+      },
+      {
+        "marker": "[5.]",
+        "pdf": 2,
+        "epub": 4,
+        "examples": [
+          {
+            "location": "EPUB/ch020.xhtml#p2309",
+            "context": "[5.] Contrary to every particular assertion and passage in the whole prophecy, no one of them being applicable unto the body of the people. And all these things are so manifest unto ev"
+          },
+          {
+            "location": "EPUB/ch022.xhtml#p2556",
+            "context": "[5.] Contrary to every particular assertion and passage in the whole prophecy, no one of them being applicable unto the body of the people. And all these things are so manifest unto ev"
+          },
+          {
+            "location": "EPUB/ch026.xhtml#p3753",
+            "context": "[5.] A wife's son's daughter;"
+          }
+        ]
+      },
+      {
+        "marker": "[6.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3754",
+            "context": "[6.] A wife's mother;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4108",
+            "context": "[6.] A wife's mother;"
+          }
+        ]
+      },
+      {
+        "marker": "[7.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3755",
+            "context": "[7.] The mother of her father;"
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4109",
+            "context": "[7.] The mother of her father;"
+          }
+        ]
+      },
+      {
+        "marker": "[8.]",
+        "pdf": 1,
+        "epub": 2,
+        "examples": [
+          {
+            "location": "EPUB/ch026.xhtml#p3756",
+            "context": "[8.] The mother of her father-in-law."
+          },
+          {
+            "location": "EPUB/ch027.xhtml#p4110",
+            "context": "[8.] The mother of her father-in-law."
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the mighty god the everlasting father the prince of peace",
+      "count": 8
+    },
+    {
+      "phrase": "and mount sinai was altogether on smoke because the lord",
+      "count": 6
+    },
+    {
+      "phrase": "mount sinai was altogether on smoke because the lord descended",
+      "count": 6
+    },
+    {
+      "phrase": "sinai was altogether on smoke because the lord descended upon",
+      "count": 6
+    },
+    {
+      "phrase": "was altogether on smoke because the lord descended upon it",
+      "count": 6
+    },
+    {
+      "phrase": "altogether on smoke because the lord descended upon it in",
+      "count": 6
+    },
+    {
+      "phrase": "on smoke because the lord descended upon it in fire",
+      "count": 6
+    },
+    {
+      "phrase": "smoke because the lord descended upon it in fire and",
+      "count": 6
+    },
+    {
+      "phrase": "because the lord descended upon it in fire and the",
+      "count": 6
+    },
+    {
+      "phrase": "brightness of his glory and the express image of his",
+      "count": 6
+    },
+    {
+      "phrase": "of his glory and the express image of his person",
+      "count": 6
+    },
+    {
+      "phrase": "will shake the heavens and the earth and the sea",
+      "count": 6
+    },
+    {
+      "phrase": "shake the heavens and the earth and the sea and",
+      "count": 6
+    },
+    {
+      "phrase": "the heavens and the earth and the sea and the",
+      "count": 6
+    },
+    {
+      "phrase": "heavens and the earth and the sea and the dry",
+      "count": 6
+    },
+    {
+      "phrase": "and the earth and the sea and the dry land",
+      "count": 6
+    },
+    {
+      "phrase": "the earth and the sea and the dry land and",
+      "count": 6
+    },
+    {
+      "phrase": "earth and the sea and the dry land and will",
+      "count": 6
+    },
+    {
+      "phrase": "and the sea and the dry land and will shake",
+      "count": 6
+    },
+    {
+      "phrase": "the sea and the dry land and will shake all",
+      "count": 6
+    },
+    {
+      "phrase": "sea and the dry land and will shake all nations",
+      "count": 6
+    },
+    {
+      "phrase": "the glory of this latter house shall be greater than",
+      "count": 6
+    },
+    {
+      "phrase": "glory of this latter house shall be greater than of",
+      "count": 6
+    },
+    {
+      "phrase": "of this latter house shall be greater than of the",
+      "count": 6
+    },
+    {
+      "phrase": "this latter house shall be greater than of the former",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 2121,
+    "epub_greek_word_count": 2741,
+    "pdf_greek_unique_words": 1030,
+    "epub_greek_unique_words": 1030,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 3554,
+    "epub_hebrew_word_count": 6773,
+    "pdf_hebrew_unique_words": 2152,
+    "epub_hebrew_unique_words": 2152,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 120,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 357,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 4593,
+    "epub_latin_word_count": 7931,
+    "epub_tagged_latin_word_count": 2824,
+    "pdf_latin_unique_words": 1584,
+    "epub_latin_unique_words": 1589,
+    "epub_tagged_unique_words": 1048,
+    "latin_word_coverage_ratio": 1.0,
+    "latin_tagging_ratio": 0.3561,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "abraham",
+        "epub": 365,
+        "tagged": 2
+      },
+      {
+        "word": "targum",
+        "epub": 200,
+        "tagged": 2
+      },
+      {
+        "word": "isa",
+        "epub": 197,
+        "tagged": 2
+      },
+      {
+        "word": "num",
+        "epub": 188,
+        "tagged": 8
+      },
+      {
+        "word": "cyrus",
+        "epub": 146,
+        "tagged": 4
+      },
+      {
+        "word": "adam",
+        "epub": 139,
+        "tagged": 4
+      },
+      {
+        "word": "elsewhere",
+        "epub": 106,
+        "tagged": 5
+      },
+      {
+        "word": "kimchi",
+        "epub": 96,
+        "tagged": 4
+      },
+      {
+        "word": "sinai",
+        "epub": 83,
+        "tagged": 0
+      },
+      {
+        "word": "poor",
+        "epub": 71,
+        "tagged": 2
+      },
+      {
+        "word": "mere",
+        "epub": 68,
+        "tagged": 2
+      },
+      {
+        "word": "rabbi",
+        "epub": 89,
+        "tagged": 27
+      },
+      {
+        "word": "sam",
+        "epub": 61,
+        "tagged": 0
+      },
+      {
+        "word": "cor",
+        "epub": 58,
+        "tagged": 0
+      },
+      {
+        "word": "darius",
+        "epub": 84,
+        "tagged": 30
+      },
+      {
+        "word": "sixty-two",
+        "epub": 52,
+        "tagged": 0
+      },
+      {
+        "word": "mincha",
+        "epub": 52,
+        "tagged": 0
+      },
+      {
+        "word": "sum",
+        "epub": 49,
+        "tagged": 0
+      },
+      {
+        "word": "nowhere",
+        "epub": 43,
+        "tagged": 1
+      },
+      {
+        "word": "jarchi",
+        "epub": 46,
+        "tagged": 4
+      },
+      {
+        "word": "intimate",
+        "epub": 41,
+        "tagged": 1
+      },
+      {
+        "word": "estate",
+        "epub": 38,
+        "tagged": 0
+      },
+      {
+        "word": "eusebius",
+        "epub": 42,
+        "tagged": 6
+      },
+      {
+        "word": "armillus",
+        "epub": 38,
+        "tagged": 2
+      },
+      {
+        "word": "date",
+        "epub": 35,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 191,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 870,
+    "translated_latin_runs_count": 60,
+    "latin_translation_ratio": 0.069,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Egregium est opus hoc"
+      },
+      {
+        "phrase": "testis de auctoris singulari"
+      },
+      {
+        "phrase": "atque industria quam ad illud conficiendum"
+      },
+      {
+        "phrase": "Ne longo"
+      },
+      {
+        "phrase": "tua tempora"
+      },
+      {
+        "phrase": "as de facto"
+      },
+      {
+        "phrase": "as Enjedinus, Socinus, ‡  Smalcius, ‡  Crellius"
+      },
+      {
+        "phrase": "Pascitur in vivis livor, post fata"
+      },
+      {
+        "phrase": "Crellius, Grotius"
+      },
+      {
+        "phrase": "is genitivus adjuncti"
+      },
+      {
+        "phrase": "Paulus Samosatenus"
+      },
+      {
+        "phrase": "ecclesiam suam, non in rumoribus Africorum, sed in praescripto Legis, in Prophetarum praedictis, in Psalmorum cantibus; hoc est, in omnibus canonicis sanctorum librorum auctoritatibus"
+      },
+      {
+        "phrase": "libros certo"
+      },
+      {
+        "phrase": "sunt quos"
+      },
+      {
+        "phrase": "Non sine causa tam salubri vigilantia"
+      },
+      {
+        "phrase": "ecclesiasticus constitutus est"
+      },
+      {
+        "phrase": "certi prophetarum et apostolorum libri"
+      },
+      {
+        "phrase": "Hoc etiam"
+      },
+      {
+        "phrase": "fratri et consacerdoti nostro Bonifacio, vel aliis earum partium episcopis, pro confirmando isto"
+      },
+      {
+        "phrase": "quia a patribus ista accepimus legenda"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

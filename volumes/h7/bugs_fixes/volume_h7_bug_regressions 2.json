@@ -1,0 +1,533 @@
+{
+  "volume": "h7",
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h7/bugs_fixes/volume_h7_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h7/bugs_fixes/volume_h7_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h7/bugs_fixes/volume_h7_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h7/bugs_fixes/volume_h7_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [
+      "reference_continuation_splits"
+    ],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 40,
+      "budget": 61,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "In these ways, and by these means, \"faith is the substance of things hoped for;\" and,—",
+          "next": "Obs. I. No faith will carry us through the difficulties of our profession, from oppositions within and without, giving us constancy and perseverance therein unto the end, but that "
+        },
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "hat it makes a life on things invisible. It is not only conversant about them, but mixeth itself with them, making them the spiritual nourishment of the soul, 2 Cor. 4:16-18. And,—",
+          "next": "Obs. III. The glory of our religion is, that it depends on, and is resolved into invisible things. They are far more excellent and glorious than any thing that sense can behold or "
+        },
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "sion under trouble and persecution; with a discovery of the nature and end of the ensuing instances, with their suitableness unto his purpose. And we may observe in general, that,—",
+          "next": "Obs. V. It is faith alone that takes believers out of this world whilst they are in it, that exalts them above it whilst they are under its rage; that enables them to live upon thi"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "ony is assigned to faith alone; as for other reasons, so because all those other things were fruits of their faith, whose acceptance with God depended thereon. And we may observe,—",
+          "next": "Obs. III. It is faith alone which from the beginning of the world (or from the giving of the first promise) was the means and way of obtaining acceptance with God.—There hath been "
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "ne; and some assigned such a beginning unto it, as it had been better it never had any. Nothing but an assent unto divine revelation can give us a clear understanding hereof. And,—",
+          "next": "Obs. II. Then doth faith put forth its power in our minds in a due manner, when it gives us clear and distinct apprehensions of the things we do believe. Faith that gives not under"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": "ished,\" perfected, completely framed. Being originally, as unto the matter of them, created out of nothing, in the six days' work they were completely finished and perfected. And,—",
+          "next": "Obs. III. As God's first work was, so all his works shall be perfect.—He undertakes nothing but what he will finish and complete in beauty and order. And not only the original prod"
+        },
+        {
+          "file": "EPUB/ch004.xhtml",
+          "previous": " , that is, ὥστε , \"so that.\" 'By faith alone we understand that the worlds were made; namely, \"so as that the things which are seen were not made of things which do appear.\" And,—",
+          "next": "Obs. IV. The aids of reason, with the due consideration of the nature, use, and end of all things, ought to be admitted of, to confirm our minds in the persuasion of the original c"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "at, it may be, gathered \"raptim,\"—without choice or judgment of what was most meet to be offered unto God. And it is for ever dedicated as a rule for the church in all ages, that,—",
+          "next": "Obs. II. We are to serve God with the best that we have, the best that is in our power, with the best of our spiritual abilities; which God afterwards fully confirmed."
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "ypocritically, he did it not in a mere attendance unto the outward duty; but it was kindled in his own heart by the Holy Spirit, before it was fired on the altar from heaven. For,—",
+          "next": "Obs. III. God gives no consequential approbation of any duties of believers, but where the principle of a living faith goes previously in their performance."
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "4. As to the consequences of Abel's faith,—",
+          "next": "The first consequent of this efficacy of faith in Abel is, that \"he obtained witness that he was righteous.\""
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 40,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "Of this Enoch it is affirmed, 1. That he was \"translated;\" 2. The end of that translation is declared, \"that he should not see death;\" 3. The consequent of it, \"he was not found;\" 4. The efficient cause of that translation, and the reason of that consequent, h"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "In the field of conjectures used on this occasion, I judge it probable, (1.) That his rapture was visible, in the sight of many that feared God, who were to be witnesses of it unto the world, that it might be his ordinance for the conviction of sinners, and th"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "text": "There is in the words, 1. The person spoken of or instanced in; which is Noah."
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "text": "Δι ʼ ἧς . (2.) Lastly, There is a double consequent of this faith of Noah and his obedience therein; [1.] With respect unto the world, \"he condemned it;\" [2.] With respect unto himself, he \"became heir of the righteousness which is by faith.\" Both these are as"
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "There is in the words, 1. A supposition that these pilgrims had originally a country of their own whereunto they did belong."
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "This preparation, therefore, of a city denotes, (1.) An eternal act of the will and wisdom of God, in designing heaven and glory unto the elect."
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "What was the faith of Abraham in particular, how his thoughts wrought in him, is not expressed in the original story: yet are two things plain therein; [1.] That he was not cast into any distraction of mind, any disorderly passions, complaints, or repinings; ["
+        },
+        {
+          "file": "EPUB/ch011.xhtml",
+          "text": "Obs. V. We may also consider, that, 1. If we are children of Abraham, we have no reason to expect an exemption from the greatest trials, that the same faith which was in him is able to conflict withal."
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "There is in the words, 1. A supposition that these pilgrims had originally a country of their own whereunto they did belong."
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "text": "This preparation, therefore, of a city denotes, (1.) An eternal act of the will and wisdom of God, in designing heaven and glory unto the elect."
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "run with patience the race that is set before us",
+          "count": 7
+        },
+        {
+          "phrase": "seed all the nations of the earth should be blessed",
+          "count": 6
+        },
+        {
+          "phrase": "made mention of the departing of the children of israel",
+          "count": 6
+        },
+        {
+          "phrase": "the two states of the law and the gospel with",
+          "count": 6
+        },
+        {
+          "phrase": "every weight and the sin that doth so easily beset",
+          "count": 6
+        },
+        {
+          "phrase": "weight and the sin that doth so easily beset us",
+          "count": 6
+        },
+        {
+          "phrase": "entreated that the word should not be spoken to them",
+          "count": 6
+        },
+        {
+          "phrase": "that the word should not be spoken to them any",
+          "count": 6
+        },
+        {
+          "phrase": "the word should not be spoken to them any more",
+          "count": 6
+        },
+        {
+          "phrase": "that which is well-pleasing in his sight through jesus christ",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 2,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch034.xhtml",
+          "previous": "All this he \"patiently endured,\" as the sense of the word was declared on the foregoing verse.",
+          "next": "4."
+        },
+        {
+          "file": "EPUB/ch036.xhtml",
+          "previous": "All this he \"patiently endured,\" as the sense of the word was declared on the foregoing verse.",
+          "next": "4."
+        }
+      ]
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 0,
+      "budget": 7,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

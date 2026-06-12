@@ -1,0 +1,107 @@
+{
+  "volume": 5,
+  "total_words_audited": 228810,
+  "total_anomalies_count": 10,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [
+      {
+        "target": "s detailed",
+        "description": "Split word anomaly (isolated letter 's')",
+        "chapter": "Prefatory Note (The Doctrine of Justification by Faith)",
+        "contexts": [
+          "... e is impossible, useless, and pernicious, receive s detailed confutation, 12; thirdly, from the difference bet ..."
+        ]
+      },
+      {
+        "target": "s ex",
+        "description": "Split word anomaly (isolated letter 's')",
+        "chapter": "General Considerations,",
+        "contexts": [
+          "... sequium meum cum omnibus quae tu egisti, et pssus s ex tam perfecta charitate et obedientia. Et cum divi ...",
+          "... of God by the gospel, \"from faith to faith,\" it is expressly contradictory to his whole discourse, chap ...",
+          "... h believeth in Jesus. Where is boasting then? It is excluded. By what law? Of works? Nay; but by the law ..."
+        ]
+      },
+      {
+        "target": "be1ieveth",
+        "description": "Spliced alphanumeric word (contains inline numbers)",
+        "chapter": "Chapter 1 - Justifying Faith",
+        "contexts": [
+          "... ieve on him whom he has sent;\" verse 47, \"He that be1ieveth on me has everlasting life;\" chapter \"He that bel ..."
+        ]
+      },
+      {
+        "target": "s proposed",
+        "description": "Split word anomaly (isolated letter 's')",
+        "chapter": "Chapter 1 - Justifying Faith",
+        "contexts": [
+          "... Wherefore, our first inquiry is concerning what was proposed in the second place, \u2014 namely, What is on our par ...",
+          "... aith is in general an assent unto the truth that is proposed unto us upon divine testimony. And hereby, as it ...",
+          "... ce and mercy of God, through the blood of Christ, s proposed in the promises of the gospel; \u2014 that is, they di ..."
+        ]
+      },
+      {
+        "target": "s declared",
+        "description": "Split word anomaly (isolated letter 's')",
+        "chapter": "Chapter 8 - Imputation of the Sins of the Church Unto Christ",
+        "contexts": [
+          "... what I intend to prove in the present discourse is declared fully therein. Thus, therefore, he speaks: \"How, ...",
+          "... as a vine and its branches, John 15:1,2. And it is declared by the relation that was between Adam and his pos ...",
+          "... s it wholly into the immutability of his counsel, s declared by his promise and oath, chapter 6:18,19: so that ..."
+        ]
+      },
+      {
+        "target": "name)y",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Chapter 18 - the Nature of Justification",
+        "contexts": [
+          "... reignty and freedom of the grace of God herein, \u2014 name)y, that we are justified freely by his grace, \u2014 and ..."
+        ]
+      },
+      {
+        "target": "p)ace",
+        "description": "OCR residue containing stray closing bracket/paren",
+        "chapter": "Chapter 18 - the Nature of Justification",
+        "contexts": [
+          "... t., cap. 4. And the words of Chrysostom upon this p)ace, unto the same purpose, have been cited before at ..."
+        ]
+      },
+      {
+        "target": "s to",
+        "description": "Split word anomaly (isolated letter 's')",
+        "chapter": "Evidences of the Faith of God\u00ecs Elect",
+        "contexts": [
+          "... efficacy which they have on the souls of believer s to assure them of this truth. In this record, so sol ...",
+          "... ners may be saved, or what they shall do themselves to be saved: \"What shall we do? to be saved?\" \"What ...",
+          "... powerfully efficacious unto its end. As such it is to be received, or it is rejected. It is not enough ..."
+        ]
+      }
+    ],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [
+      {
+        "target": "John 22",
+        "description": "Invalid Bible reference (chapter 22 exceeds max 21 for John)",
+        "chapter": "General Considerations,",
+        "contexts": [
+          "... elieve that Jesus is the Christ, the Son of God,\" John 22:30,31. Unto this end every thing is recorded by ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "Isaiah 13:6, 7; \u2014 \"When the day of judgment or of death shall come, all hands will be dissolved\" (that is, faint or fall...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "General Considerations,",
+        "contexts": [
+          "Isaiah 13:6, 7; \u2014 \"When the day of judgment or of death shall come, all hands will be dissolved\" (that is, faint or fall..."
+        ]
+      }
+    ]
+  }
+}

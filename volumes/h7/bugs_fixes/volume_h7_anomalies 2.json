@@ -1,0 +1,1624 @@
+{
+  "volume": "h7",
+  "total_words_audited": 425175,
+  "total_anomalies_count": 230,
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      {
+        "target": "gazing-stock",
+        "description": "Splittable word (rejoins to valid word 'gazingstock')",
+        "chapter": "Hebrews 11:2",
+        "contexts": [
+          "... ign; for he applies it unto them who were made a \"gazing-stock, both by reproaches and afflictions,\" chap. 10:33 ..."
+        ]
+      },
+      {
+        "target": "co-workers",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Hebrews 11:7",
+        "contexts": [
+          "... mployeth in any work, are therein \u03c3\u03c5\u03bd\u03b5\u03c1\u03b3\u03bf\u1f76 \u0398\u03b5\u03bf\u1fe6, \"co-workers with God,\" 1 Cor. 3:9; 2 Cor. 6:1: so as that wha ..."
+        ]
+      },
+      {
+        "target": "foot-breadth",
+        "description": "Splittable word (rejoins to valid word 'footbreadth')",
+        "chapter": "Hebrews 11:9",
+        "contexts": [
+          "... as an inheritor, for he had no inheritance, not a foot-breadth in that place, Acts 7:5; not as a constant inhabi ..."
+        ]
+      },
+      {
+        "target": "child-bearing",
+        "description": "Splittable word (rejoins to valid word 'childbearing')",
+        "chapter": "Hebrews 11:10",
+        "contexts": [
+          "... those who retain it, express the effect also, in child-bearing. \u1f29\u03b3\u03ae\u03c3\u03b1\u03c4\u03bf. Vulg., \"credidit,\" she \"believed.\" So ..."
+        ]
+      },
+      {
+        "target": "free-woman",
+        "description": "Splittable word (rejoins to valid word 'freewoman')",
+        "chapter": "Hebrews 11:10",
+        "contexts": [
+          "... t mention of her faith was necessary. She was the free-woman from whence the church sprang, Gal. 4:22, 23. And ..."
+        ]
+      },
+      {
+        "target": "sea-shore",
+        "description": "Splittable word (rejoins to valid word 'seashore')",
+        "chapter": "Hebrews 11:10",
+        "contexts": [
+          "... sky in multitude, and as the sand which is by the sea-shore, innumerable. The things contained in this verse ...",
+          "... of the heaven, and as the sand which is upon the sea-shore.\" Wherefore the belief hereof belonged unto that ...",
+          "... id that they should be as many as the sand by the sea-shore; but as that is \"innumerable,\" so should they als ..."
+        ]
+      },
+      {
+        "target": "child-bearing",
+        "description": "Splittable word (rejoins to valid word 'childbearing')",
+        "chapter": "Hebrews 11:11",
+        "contexts": [
+          "... those who retain it, express the effect also, in child-bearing. \u1f29\u03b3\u03ae\u03c3\u03b1\u03c4\u03bf. Vulg., \"credidit,\" she \"believed.\" So ..."
+        ]
+      },
+      {
+        "target": "free-woman",
+        "description": "Splittable word (rejoins to valid word 'freewoman')",
+        "chapter": "Hebrews 11:11",
+        "contexts": [
+          "... t mention of her faith was necessary. She was the free-woman from whence the church sprang, Gal. 4:22, 23. And ..."
+        ]
+      },
+      {
+        "target": "sea-shore",
+        "description": "Splittable word (rejoins to valid word 'seashore')",
+        "chapter": "Hebrews 11:12",
+        "contexts": [
+          "... sky in multitude, and as the sand which is by the sea-shore, innumerable. The things contained in this verse ...",
+          "... of the heaven, and as the sand which is upon the sea-shore.\" Wherefore the belief hereof belonged unto that ...",
+          "... id that they should be as many as the sand by the sea-shore; but as that is \"innumerable,\" so should they als ..."
+        ]
+      },
+      {
+        "target": "Beth-el",
+        "description": "Splittable word (rejoins to valid word 'Bethel')",
+        "chapter": "Hebrews 11:20",
+        "contexts": [
+          "... , and made supplication unto him: he found him in Beth-el, and there he spake with us.\" In comparison hereo ..."
+        ]
+      },
+      {
+        "target": "law-making",
+        "description": "Splittable word (rejoins to valid word 'lawmaking')",
+        "chapter": "Hebrews 11:20",
+        "contexts": [
+          "... me and reputation, for wisdom, righteousness, and law-making, were great among the nations. He might therefore ..."
+        ]
+      },
+      {
+        "target": "door-post",
+        "description": "Splittable word (rejoins to valid word 'doorpost')",
+        "chapter": "Hebrews 11:20",
+        "contexts": [
+          "... and strike it on the two side-posts and the upper door-post of their houses. And this was to be a token unto ..."
+        ]
+      },
+      {
+        "target": "Beth-el",
+        "description": "Splittable word (rejoins to valid word 'Bethel')",
+        "chapter": "Hebrews 11:21",
+        "contexts": [
+          "... , and made supplication unto him: he found him in Beth-el, and there he spake with us.\" In comparison hereo ..."
+        ]
+      },
+      {
+        "target": "law-making",
+        "description": "Splittable word (rejoins to valid word 'lawmaking')",
+        "chapter": "Hebrews 11:22",
+        "contexts": [
+          "... me and reputation, for wisdom, righteousness, and law-making, were great among the nations. He might therefore ..."
+        ]
+      },
+      {
+        "target": "door-post",
+        "description": "Splittable word (rejoins to valid word 'doorpost')",
+        "chapter": "Hebrews 11:28",
+        "contexts": [
+          "... and strike it on the two side-posts and the upper door-post of their houses. And this was to be a token unto ..."
+        ]
+      },
+      {
+        "target": "faint-hearted",
+        "description": "Splittable word (rejoins to valid word 'fainthearted')",
+        "chapter": "Hebrews 11:30",
+        "contexts": [
+          "... order in the law, that those who were fearful and faint-hearted should be discharged from engaging in this work o ..."
+        ]
+      },
+      {
+        "target": "sheep-skin",
+        "description": "Splittable word (rejoins to valid word 'sheepskin')",
+        "chapter": "Hebrews 11:30",
+        "contexts": [
+          "... ld interpretations of it. \u039c\u1fc6\u03bb\u03bf\u03bd is \"a sheep.\" \"In sheep-skins.\" \u1f18\u03bd \u03b1\u1f30\u03b3\u03b5\u03af\u03bf\u03b9\u03c2 \u03b4\u03ad\u03c1\u03bc\u03b1\u03c3\u03b9\u03bd. The Syriac transposeth ...",
+          "... p and goats;\" without necessity, for \u03bc\u03b7\u03bb\u03c9\u03c4\u03ae is \"a sheep-skin.\" \u1f59\u03c3\u03c4\u03b5\u03c1\u03bf\u03cd\u03bc\u03b5\u03bd\u03bf\u03b9. Vulg., \"egentes;\" Syr., \u05d5\u05b7\u05e1\u05b0\u05e0\u05b4\u05d9\u05e7 ...",
+          "... .) As unto what they did, \"they wandered about in sheep-skins and goat-skins.\" \u03a0\u03b5\u03c1\u03b9\u1fc6\u03bb\u03b8\u03bf\u03bd. [1.] They \"wandered ..."
+        ]
+      },
+      {
+        "target": "Evilly-entreated",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Hebrews 11:30",
+        "contexts": [
+          "... \"Tormented,\" say we, as I suppose not properly. \"Evilly-entreated,\" vexed with evils. Ver. 37.\u2014They were stoned, t ...",
+          "... at-skins, being destitute, afflicted, tormented, [evilly-entreated.] Two sorts of persons and two sorts of sufferin ...",
+          "... xpressions, \"destitute, afflicted, tormented,\" or evilly-entreated. [1.] He useth many words to express the variety ..."
+        ]
+      },
+      {
+        "target": "faint-hearted",
+        "description": "Splittable word (rejoins to valid word 'fainthearted')",
+        "chapter": "Hebrews 11:33",
+        "contexts": [
+          "... order in the law, that those who were fearful and faint-hearted should be discharged from engaging in this work o ..."
+        ]
+      },
+      {
+        "target": "sheep-skin",
+        "description": "Splittable word (rejoins to valid word 'sheepskin')",
+        "chapter": "Hebrews 11: 35\u201337",
+        "contexts": [
+          "... ld interpretations of it. \u039c\u1fc6\u03bb\u03bf\u03bd is \"a sheep.\" \"In sheep-skins.\" \u1f18\u03bd \u03b1\u1f30\u03b3\u03b5\u03af\u03bf\u03b9\u03c2 \u03b4\u03ad\u03c1\u03bc\u03b1\u03c3\u03b9\u03bd. The Syriac transposeth ...",
+          "... p and goats;\" without necessity, for \u03bc\u03b7\u03bb\u03c9\u03c4\u03ae is \"a sheep-skin.\" \u1f59\u03c3\u03c4\u03b5\u03c1\u03bf\u03cd\u03bc\u03b5\u03bd\u03bf\u03b9. Vulg., \"egentes;\" Syr., \u05d5\u05b7\u05e1\u05b0\u05e0\u05b4\u05d9\u05e7 ...",
+          "... .) As unto what they did, \"they wandered about in sheep-skins and goat-skins.\" \u03a0\u03b5\u03c1\u03b9\u1fc6\u03bb\u03b8\u03bf\u03bd. [1.] They \"wandered ..."
+        ]
+      },
+      {
+        "target": "Evilly-entreated",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Hebrews 11: 35\u201337",
+        "contexts": [
+          "... \"Tormented,\" say we, as I suppose not properly. \"Evilly-entreated,\" vexed with evils. Ver. 37.\u2014They were stoned, t ...",
+          "... at-skins, being destitute, afflicted, tormented, [evilly-entreated.] Two sorts of persons and two sorts of sufferin ...",
+          "... xpressions, \"destitute, afflicted, tormented,\" or evilly-entreated. [1.] He useth many words to express the variety ..."
+        ]
+      },
+      {
+        "target": "faint-hearted",
+        "description": "Splittable word (rejoins to valid word 'fainthearted')",
+        "chapter": "Hebrews 12: 1",
+        "contexts": [
+          "... is bold and courageous, falls in contention with faint-hearted persons.\" And the apostle treating before of a ra ..."
+        ]
+      },
+      {
+        "target": "Stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'Stoutheartedness')",
+        "chapter": "Hebrews 12: 1",
+        "contexts": [
+          "... God hath no especial hand or design: or, (2dly.) Stout-heartedness; it may be they are but in smaller things, as we ..."
+        ]
+      },
+      {
+        "target": "faint-hearted",
+        "description": "Splittable word (rejoins to valid word 'fainthearted')",
+        "chapter": "Hebrews 12: 3",
+        "contexts": [
+          "... is bold and courageous, falls in contention with faint-hearted persons.\" And the apostle treating before of a ra ..."
+        ]
+      },
+      {
+        "target": "Stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'Stoutheartedness')",
+        "chapter": "Hebrews: 12: 5",
+        "contexts": [
+          "... God hath no especial hand or design: or, (2dly.) Stout-heartedness; it may be they are but in smaller things, as we ..."
+        ]
+      },
+      {
+        "target": "stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'stoutheartedness')",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": [
+          "... ke in a sense of sorrow in affliction, is through stout-heartedness to \"despise the chastening of the Lord;\" the evil ..."
+        ]
+      },
+      {
+        "target": "stout-heartedness",
+        "description": "Splittable word (rejoins to valid word 'stoutheartedness')",
+        "chapter": "Hebrews 12:11",
+        "contexts": [
+          "... ke in a sense of sorrow in affliction, is through stout-heartedness to \"despise the chastening of the Lord;\" the evil ..."
+        ]
+      },
+      {
+        "target": "Jehovah-shammah",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "... th God in his own city. The name of this city is \"Jehovah-shammah,\u2014The LORD is there,\" Ezek. 48:35. (4.) The privi ..."
+        ]
+      },
+      {
+        "target": "pre-eminencies",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "... his general assembly is one of the most excellent pre-eminencies of the gospel above the law.\u2014A mystery it was of ..."
+        ]
+      },
+      {
+        "target": "co-heirs",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "... l the privileges of the first-born; that is, made co-heirs with Christ and heirs of God, or of the whole hea ..."
+        ]
+      },
+      {
+        "target": "shame-facedness",
+        "description": "Splittable word (rejoins to valid word 'shamefacedness')",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "... ament, where it signifies \"pudor\" or \"modestia,\"\u2014\"shame-facedness\" or \"modesty,\" 1 Tim. 2:9; but nowhere else. It i ..."
+        ]
+      },
+      {
+        "target": "Jehovah-shammah",
+        "description": "Capitalized hyphenation with unrecognized right particle",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "... th God in his own city. The name of this city is \"Jehovah-shammah,\u2014The LORD is there,\" Ezek. 48:35. (4.) The privi ..."
+        ]
+      },
+      {
+        "target": "pre-eminencies",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "... his general assembly is one of the most excellent pre-eminencies of the gospel above the law.\u2014A mystery it was of ..."
+        ]
+      },
+      {
+        "target": "co-heirs",
+        "description": "Hyphenated word with unrecognized particles on both sides",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "... l the privileges of the first-born; that is, made co-heirs with Christ and heirs of God, or of the whole hea ..."
+        ]
+      },
+      {
+        "target": "shame-facedness",
+        "description": "Splittable word (rejoins to valid word 'shamefacedness')",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "... ament, where it signifies \"pudor\" or \"modestia,\"\u2014\"shame-facedness\" or \"modesty,\" 1 Tim. 2:9; but nowhere else. It i ..."
+        ]
+      },
+      {
+        "target": "over-past",
+        "description": "Splittable word (rejoins to valid word 'overpast')",
+        "chapter": "Hebrews 13: 1",
+        "contexts": [
+          "... ss, and feed them there, until the indignation be over-past. But in the state of the church wherein it was wh ..."
+        ]
+      },
+      {
+        "target": "over-valuation",
+        "description": "Splittable word (rejoins to valid word 'overvaluation')",
+        "chapter": "Hebrews 13: 1",
+        "contexts": [
+          "... e shall see afterwards, and fixeth the soul in an over-valuation of earthly things; which is directly opposite unt ..."
+        ]
+      },
+      {
+        "target": "over-past",
+        "description": "Splittable word (rejoins to valid word 'overpast')",
+        "chapter": "Hebrews 13: 2",
+        "contexts": [
+          "... ss, and feed them there, until the indignation be over-past. But in the state of the church wherein it was wh ..."
+        ]
+      },
+      {
+        "target": "over-valuation",
+        "description": "Splittable word (rejoins to valid word 'overvaluation')",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... e shall see afterwards, and fixeth the soul in an over-valuation of earthly things; which is directly opposite unt ..."
+        ]
+      },
+      {
+        "target": "re-union",
+        "description": "Splittable word (rejoins to valid word 'reunion')",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... eby the human nature of Christ was quickened by a re-union of its essential parts, soul and body. And the wo ..."
+        ]
+      },
+      {
+        "target": "well-spring",
+        "description": "Splittable word (rejoins to valid word 'wellspring')",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... f God were necessarily to ensue. Now the head and well-spring of the whole dispensation of grace, lies in the b ..."
+        ]
+      },
+      {
+        "target": "Maran-atha",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... every one who says not amen hereunto, be anathema Maran-atha. This the apostle hath brought his discourse unt ..."
+        ]
+      },
+      {
+        "target": "non-exclusive",
+        "description": "Splittable word (rejoins to valid word 'nonexclusive')",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... t of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the te ..."
+        ]
+      },
+      {
+        "target": "non-transferable",
+        "description": "Splittable word (rejoins to valid word 'nontransferable')",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... ed fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this e-book ..."
+        ]
+      },
+      {
+        "target": "re-union",
+        "description": "Splittable word (rejoins to valid word 'reunion')",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": [
+          "... eby the human nature of Christ was quickened by a re-union of its essential parts, soul and body. And the wo ..."
+        ]
+      },
+      {
+        "target": "well-spring",
+        "description": "Splittable word (rejoins to valid word 'wellspring')",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": [
+          "... f God were necessarily to ensue. Now the head and well-spring of the whole dispensation of grace, lies in the b ..."
+        ]
+      },
+      {
+        "target": "Maran-atha",
+        "description": "Capitalized hyphenation with unrecognized left particle",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": [
+          "... every one who says not amen hereunto, be anathema Maran-atha. This the apostle hath brought his discourse unt ..."
+        ]
+      },
+      {
+        "target": "non-exclusive",
+        "description": "Splittable word (rejoins to valid word 'nonexclusive')",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": [
+          "... t of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the te ..."
+        ]
+      },
+      {
+        "target": "non-transferable",
+        "description": "Splittable word (rejoins to valid word 'nontransferable')",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": [
+          "... ed fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this e-book ..."
+        ]
+      }
+    ],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [
+      {
+        "target": "ePub",
+        "description": "Mixed-case capitalization error",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... e express written permission of Monergism Books. ePub, .mobi & .pdf Editions September 2019 Requests fo ..."
+        ]
+      },
+      {
+        "target": "ePub",
+        "description": "Mixed-case capitalization error",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": [
+          "... e express written permission of Monergism Books. ePub, .mobi & .pdf Editions September 2019 Requests fo ..."
+        ]
+      }
+    ],
+    "Unresolved Citation References": [
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "... omptu; adversus omnes alios hostile odium.\"\u2014Hist. lib. v. And the satirist: \"Non monstrare vias eadem nis ..."
+        ]
+      },
+      {
+        "target": "lib. v",
+        "description": "Unresolved patristic/classical citation reference (no translation found)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": [
+          "... omptu; adversus omnes alios hostile odium.\"\u2014Hist. lib. v. And the satirist: \"Non monstrare vias eadem nis ..."
+        ]
+      }
+    ],
+    "Structural Nesting Sequence Jumps": [
+      {
+        "target": "1. ... 19.",
+        "description": "List sequence jump (skipped from 1 to 19)",
+        "chapter": "Hebrews 11: 1",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "Hebrews 11: 1",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 18.",
+        "description": "List sequence jump (skipped from 12 to 18)",
+        "chapter": "Hebrews 11: 1",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11:2",
+        "contexts": [
+          "... it hath had in those of old in whom it was. Ver. 2.\u2014\u1f18\u03bd \u03c4\u03b1\u03cd\u03c4\u1fc3 \u03b3\u1f70\u03c1 \u1f10\u03bc\u03b1\u03c1\u03c4\u03c5\u03c1\u03ae\u03b8\u03b7\u03c3\u03b1\u03bd \u03bf\u1f31 \u03c0\u03c1\u03b5\u03c3\u03b2\u03cd\u03c4\u03b5\u03c1\u03bf\u03b9. \u1f18\u03bd \u03c4\u03b1 ...",
+          "... if it were on purpose to obscure the text. Ver. 2.\u2014For by it the elders obtained a good report: [or, ...",
+          "... ust be declared, 1. Who were the elders intended. 2. How they were testified unto, or from whom they o ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11:4",
+        "contexts": [
+          "... ribution of the ages of the church that he makes. 2. He was the first that expressed his faith in duti ...",
+          "... rned with this testimony.\" See of the word, verse 2. \u1f18\u03c0\u1f76 \u03c4\u03bf\u1fd6\u03c2 \u03b4\u03ce\u03c1\u03bf\u03b9\u03c2 \u03b1\u1f50\u03c4\u03bf\u1fe6, \"muneribus ejus,\" \"de don ...",
+          "... d that under the considerations mentioned before. 2. It is affirmed of him, that he \"offered sacrifice ..."
+        ]
+      },
+      {
+        "target": "5.",
+        "description": "List sequence starts at 5 instead of 1",
+        "chapter": "Hebrews 11:5",
+        "contexts": [
+          "... eth in him in the second place, after Abel. Ver. 5.\u2014\u03a0\u03af\u03c3\u03c4\u03b5\u03b9 \u1f18\u03bd\u1f7c\u03c7 \u03bc\u03b5\u03c4\u03b5\u03c4\u03ad\u03b8\u03b7 \u03c4\u03bf\u1fe6 \u03bc\u1f74 \u1f30\u03b4\u03b5\u1fd6\u03bd \u03b8\u03ac\u03bd\u03b1\u03c4\u03bf\u03bd, \u03ba\u03b1\u1f76 \u03bf\u1f50 ...",
+          "... \u03c9\u03c2 \u03b1\u1f50\u03c4\u03bf\u1fe6 \u03bc\u03b5\u03bc\u03b1\u03c1\u03c4\u03cd\u03c1\u03b7\u03c4\u03b1\u03b9 \u03b5\u1f50\u03b7\u03c1\u03b5\u03c3\u03c4\u03b7\u03ba\u03ad\u03bd\u03b1\u03b9 \u03c4\u1ff7 \u0398\u03b5\u1ff7. Ver. 5.\u2014By faith Enoch was translated that he should not ...",
+          "... ld Testament is unto his faith and holiness, Gen. 5. That in the New, is unto his being a prophet, and ..."
+        ]
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "Hebrews 11:6",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "Hebrews 11:6",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11:7",
+        "contexts": [
+          "... person spoken of or instanced in; which is Noah. 2. What is affirmed of him; that he was \"warned of G ...",
+          "... Internal, in himself; he was \"moved with fear:\" (2.) External, in obedience; he \"built an ark.\" 4. Th ...",
+          "... his so doing: (1.) The saving of his own family; (2.) The condemnation of the world; (3.) His own beco ..."
+        ]
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "Hebrews 11:7",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "Hebrews 11:7",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 12.",
+        "description": "List sequence jump (skipped from 6 to 12)",
+        "chapter": "Hebrews 11:7",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 4.",
+        "description": "List sequence jump (skipped from 2 to 4)",
+        "chapter": "Hebrews 11:8",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 15.",
+        "description": "List sequence jump (skipped from 4 to 15)",
+        "chapter": "Hebrews 11:9",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 15.",
+        "description": "List sequence jump (skipped from 2 to 15)",
+        "chapter": "Hebrews 11:9",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11:10",
+        "contexts": [
+          "... ing for somewhat more than at present he enjoyed. 2. What he so looked for, which is \"a city;\" in oppo ...",
+          "... .) From the nature of it, it \"hath foundations;\" (2.) From the builder and framer of it, which is \"God ...",
+          "... f Canaan, and Jerusalem the metropolis thereof. (2.) It is not suitable unto God's dealing with Abrah ..."
+        ]
+      },
+      {
+        "target": "1. ... 15.",
+        "description": "List sequence jump (skipped from 1 to 15)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 18.",
+        "description": "List sequence jump (skipped from 1 to 18)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 13.",
+        "description": "List sequence jump (skipped from 4 to 13)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 18.",
+        "description": "List sequence jump (skipped from 12 to 18)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 14.",
+        "description": "List sequence jump (skipped from 3 to 14)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "III. ... V.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "Hebrews 11:10",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 15.",
+        "description": "List sequence jump (skipped from 1 to 15)",
+        "chapter": "Hebrews 11:11",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 15.",
+        "description": "List sequence jump (skipped from 1 to 15)",
+        "chapter": "Hebrews 11:13",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11:15",
+        "contexts": [
+          "... a country of their own whereunto they did belong. 2. An assertion, first, That they left this country ...",
+          "... ountry \"on the other side of the flood,\" Josh. 24:2. Wherefore respect may be had either unto Ur of th ...",
+          "... Euphrates, where he first dwelt. \u1f08\u03c6\u02bc \u1f27\u03c2 \u1f10\u03be\u1fc6\u03bb\u03b8\u03bf\u03bd. 2. From this country they went out; they left it, th ..."
+        ]
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11:16",
+        "contexts": []
+      },
+      {
+        "target": "III. ... V.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "Hebrews 11:16",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11: 17\u201319",
+        "contexts": [
+          "... on whose faith is instanced in, which is Abraham. 2. The circumstance of time, and occasion of this ex ...",
+          "... person of Isaac, he was \"his only-begotten son;\" (2.) From the consideration of his own person, in tha ...",
+          "... by fire, blood, and torments, in their old age. 2. The occasion and season of this exercise of the f ..."
+        ]
+      },
+      {
+        "target": "1. ... 18.",
+        "description": "List sequence jump (skipped from 1 to 18)",
+        "chapter": "Hebrews 11: 17\u201319",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 13.",
+        "description": "List sequence jump (skipped from 4 to 13)",
+        "chapter": "Hebrews 11: 17\u201319",
+        "contexts": []
+      },
+      {
+        "target": "12. ... 18.",
+        "description": "List sequence jump (skipped from 12 to 18)",
+        "chapter": "Hebrews 11: 17\u201319",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 14.",
+        "description": "List sequence jump (skipped from 3 to 14)",
+        "chapter": "Hebrews 11: 17\u201319",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11: 17\u201319",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 19.",
+        "description": "List sequence jump (skipped from 11 to 19)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 10.",
+        "description": "List sequence jump (skipped from 5 to 10)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 17.",
+        "description": "List sequence jump (skipped from 1 to 17)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 14.",
+        "description": "List sequence jump (skipped from 1 to 14)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 13.",
+        "description": "List sequence jump (skipped from 2 to 13)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 10.",
+        "description": "List sequence jump (skipped from 3 to 10)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 14.",
+        "description": "List sequence jump (skipped from 10 to 14)",
+        "chapter": "Hebrews 11:20",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 11.",
+        "description": "List sequence jump (skipped from 4 to 11)",
+        "chapter": "Hebrews 11:23",
+        "contexts": []
+      },
+      {
+        "target": "11. ... 19.",
+        "description": "List sequence jump (skipped from 11 to 19)",
+        "chapter": "Hebrews 11:23",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 11: 24\u201326",
+        "contexts": [
+          "... lived and acted and did all his works by faith. 2. Of his great work, which was the typical redempti ...",
+          "... fact, whereby his faith was evidenced, verse 24. 2. The interpretation of what he so did, by the natu ...",
+          "... commonly called \"the son of Pharaoh's daughter.\" 2. How and by what means he came to know that he was ..."
+        ]
+      },
+      {
+        "target": "5. ... 10.",
+        "description": "List sequence jump (skipped from 5 to 10)",
+        "chapter": "Hebrews 11: 24\u201326",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11:27",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 17.",
+        "description": "List sequence jump (skipped from 1 to 17)",
+        "chapter": "Hebrews 11:28",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 14.",
+        "description": "List sequence jump (skipped from 1 to 14)",
+        "chapter": "Hebrews 11:29",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 13.",
+        "description": "List sequence jump (skipped from 2 to 13)",
+        "chapter": "Hebrews 11:29",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 10.",
+        "description": "List sequence jump (skipped from 3 to 10)",
+        "chapter": "Hebrews 11:29",
+        "contexts": []
+      },
+      {
+        "target": "10. ... 14.",
+        "description": "List sequence jump (skipped from 10 to 14)",
+        "chapter": "Hebrews 11:29",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 11.",
+        "description": "List sequence jump (skipped from 3 to 11)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 11.",
+        "description": "List sequence jump (skipped from 5 to 11)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 8.",
+        "description": "List sequence jump (skipped from 2 to 8)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 17.",
+        "description": "List sequence jump (skipped from 2 to 17)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 18.",
+        "description": "List sequence jump (skipped from 1 to 18)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 13.",
+        "description": "List sequence jump (skipped from 3 to 13)",
+        "chapter": "Hebrews 11:30",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 11.",
+        "description": "List sequence jump (skipped from 3 to 11)",
+        "chapter": "Hebrews 11:31",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 11.",
+        "description": "List sequence jump (skipped from 5 to 11)",
+        "chapter": "Hebrews 11:31",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 8.",
+        "description": "List sequence jump (skipped from 2 to 8)",
+        "chapter": "Hebrews 11:31",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 18.",
+        "description": "List sequence jump (skipped from 2 to 18)",
+        "chapter": "Hebrews 11:32",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 17.",
+        "description": "List sequence jump (skipped from 2 to 17)",
+        "chapter": "Hebrews 11:33",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 18.",
+        "description": "List sequence jump (skipped from 1 to 18)",
+        "chapter": "Hebrews 11: 34, 35",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 17.",
+        "description": "List sequence jump (skipped from 2 to 17)",
+        "chapter": "CHAPTER 12",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 12: 1",
+        "contexts": [
+          "... unto running or contending in a race for a prize. 2. That the allusions being plain and familiar, as w ...",
+          "... whose faith is recorded for our use and example.' 2. An exhortation unto patient perseverance in the p ...",
+          "... in the world, or shall be so to the end of it. (2.) That which is proposed unto us is, [1.] That we ..."
+        ]
+      },
+      {
+        "target": "3. ... 13.",
+        "description": "List sequence jump (skipped from 3 to 13)",
+        "chapter": "Hebrews 12: 1",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 6.",
+        "description": "List sequence jump (skipped from 1 to 6)",
+        "chapter": "Hebrews 12: 1",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "Hebrews 12: 1",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 10.",
+        "description": "List sequence jump (skipped from 8 to 10)",
+        "chapter": "Hebrews 12: 1",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 11.",
+        "description": "List sequence jump (skipped from 3 to 11)",
+        "chapter": "Hebrews 12: 1",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 18.",
+        "description": "List sequence jump (skipped from 6 to 18)",
+        "chapter": "Hebrews 12: 1",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 6.",
+        "description": "List sequence jump (skipped from 1 to 6)",
+        "chapter": "Hebrews 12: 2",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 8.",
+        "description": "List sequence jump (skipped from 3 to 8)",
+        "chapter": "Hebrews 12: 2",
+        "contexts": []
+      },
+      {
+        "target": "8. ... 10.",
+        "description": "List sequence jump (skipped from 8 to 10)",
+        "chapter": "Hebrews 12: 2",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 12: 3",
+        "contexts": [
+          "... He had all glory and power in his own hand.' And, 2. As to the event of his sufferings, he is set down ...",
+          "... and destructive of it; \"that ye be not wearied.\" 2. The way whereby we may fall into this evil; and t ...",
+          "... (1.) As unto the excellency of his person; and, (2.) As unto his sufferings in one peculiar way, of \" ..."
+        ]
+      },
+      {
+        "target": "3. ... 11.",
+        "description": "List sequence jump (skipped from 3 to 11)",
+        "chapter": "Hebrews 12: 3",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews: 12: 5",
+        "contexts": [
+          "... , 1. The connection of them unto those foregoing. 2. The introduction of a new argument, by a referenc ...",
+          "... in the Scripture for our preservation from them. 2. The introduction of his argument is by reference ...",
+          "... y, it is because of our unbelief, Heb. 3:7, 15. (2.) The word which was spoken so long before by Solo ..."
+        ]
+      },
+      {
+        "target": "6.",
+        "description": "List sequence starts at 6 instead of 1",
+        "chapter": "Hebrews 12: 6",
+        "contexts": [
+          "... he receiveth;\" which is the better reading. Ver. 6.\u2014For whom the Lord loveth he chasteneth, and scour ...",
+          "... . See chap. 33:12, 13, 34:18, 19, 23, 31\u201333, 42:4\u20136. \u1f4b\u03bd \u1f00\u03b3\u03b1\u03c0\u1fb6\u0323 \u039a\u03cd\u03c1\u03b9\u03bf\u03c2 \u03c0\u03b1\u03b9\u03b4\u03b5\u03cd\u03b5\u03b9. First, In the first p ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 12:8",
+        "contexts": [
+          "... 1. A supposition of a state without chastisement; 2. An application of the rule unto that state, \"All ...",
+          "... ncerning themselves. \u1f2e\u03c2 \u03bc\u03ad\u03c4\u03bf\u03c7\u03bf\u03b9 \u03b3\u03b5\u03b3\u03cc\u03bd\u03b1\u03c3\u03b9 \u03c0\u03ac\u03bd\u03c4\u03b5\u03c2. 2. To confirm his inference, the apostle adds the su ..."
+        ]
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": [
+          "... er of spirits,\" he could not imagine. \u03a0\u03b1\u03b9\u03b4\u03b5\u03c5\u03c4\u03ac\u03c2. 2. That they were chasteners: \"They chastened us.\" T ...",
+          "... . So \"a few days,\" is a few of our own days. Or, (2.) It may respect the advantage which is to be obta ...",
+          "... own? Shall the potsherd contend with its maker? 2. It is supposed from the foregoing verses, that th ..."
+        ]
+      },
+      {
+        "target": "6. ... 18.",
+        "description": "List sequence jump (skipped from 6 to 18)",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 14.",
+        "description": "List sequence jump (skipped from 2 to 14)",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": []
+      },
+      {
+        "target": "III. ... V.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Hebrews 12:11",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "Hebrews 12: 12, 13",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 12: 14",
+        "contexts": [
+          "... e have, 1. The duty prescribed; which is \"peace.\" 2. The manner of the attaining it, or the way of the ...",
+          "... ons, disorders, troubles, and wars in the world. (2.) Usefulness. That we may have peace in a due mann ...",
+          "... ther to the Jews nor to the Gentiles,\" 1 Cor. 10:32. These are the ways and means whereby we must \"ea ..."
+        ]
+      },
+      {
+        "target": "III. ... V.",
+        "description": "List sequence jump (skipped from 3 to 5)",
+        "chapter": "Hebrews 12: 14",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 14.",
+        "description": "List sequence jump (skipped from 2 to 14)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 20.",
+        "description": "List sequence jump (skipped from 1 to 20)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 18.",
+        "description": "List sequence jump (skipped from 4 to 18)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 19.",
+        "description": "List sequence jump (skipped from 2 to 19)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 13.",
+        "description": "List sequence jump (skipped from 3 to 13)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 7.",
+        "description": "List sequence jump (skipped from 4 to 7)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 12.",
+        "description": "List sequence jump (skipped from 3 to 12)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 10.",
+        "description": "List sequence jump (skipped from 4 to 10)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 20.",
+        "description": "List sequence jump (skipped from 6 to 20)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 9.",
+        "description": "List sequence jump (skipped from 1 to 9)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 20.",
+        "description": "List sequence jump (skipped from 1 to 20)",
+        "chapter": "Hebrews 12: 16-17",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 18.",
+        "description": "List sequence jump (skipped from 4 to 18)",
+        "chapter": "Hebrews 12: 16-17",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 19.",
+        "description": "List sequence jump (skipped from 2 to 19)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 13.",
+        "description": "List sequence jump (skipped from 3 to 13)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 7.",
+        "description": "List sequence jump (skipped from 4 to 7)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 4.",
+        "description": "List sequence jump (skipped from 1 to 4)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 12.",
+        "description": "List sequence jump (skipped from 3 to 12)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 10.",
+        "description": "List sequence jump (skipped from 4 to 10)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "6. ... 20.",
+        "description": "List sequence jump (skipped from 6 to 20)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 5.",
+        "description": "List sequence jump (skipped from 1 to 5)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 6.",
+        "description": "List sequence jump (skipped from 3 to 6)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 9.",
+        "description": "List sequence jump (skipped from 1 to 9)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 6.",
+        "description": "List sequence jump (skipped from 1 to 6)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 19.",
+        "description": "List sequence jump (skipped from 4 to 19)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 6.",
+        "description": "List sequence jump (skipped from 1 to 6)",
+        "chapter": "CHAPTER 13",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 12.",
+        "description": "List sequence jump (skipped from 2 to 12)",
+        "chapter": "CHAPTER 13",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 19.",
+        "description": "List sequence jump (skipped from 4 to 19)",
+        "chapter": "CHAPTER 13",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 12.",
+        "description": "List sequence jump (skipped from 3 to 12)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 9.",
+        "description": "List sequence jump (skipped from 1 to 9)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 11.",
+        "description": "List sequence jump (skipped from 1 to 11)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 19.",
+        "description": "List sequence jump (skipped from 2 to 19)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 13.",
+        "description": "List sequence jump (skipped from 2 to 13)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 10.",
+        "description": "List sequence jump (skipped from 3 to 10)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "IX. ... XI.",
+        "description": "List sequence jump (skipped from 9 to 11)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 13: 3",
+        "contexts": [
+          "... ; that is, \"those that are bound,\" or \"in bonds.\" 2. The duty itself; which is, to be \"mindful of them ...",
+          "... brutish, raging, persecuting world. \u039c\u03b9\u03bc\u03bd\u03ae\u03c3\u03ba\u03b5\u03c3\u03b8\u03b5. 2. The duty enjoined with respect unto those that ar ...",
+          "... anger. This the apostle commends in Phil. 4:10. (2.) Compassion; included in the manner of the duty f ..."
+        ]
+      },
+      {
+        "target": "1. ... 9.",
+        "description": "List sequence jump (skipped from 1 to 9)",
+        "chapter": "Hebrews 13: 3",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 11.",
+        "description": "List sequence jump (skipped from 1 to 11)",
+        "chapter": "Hebrews 13: 4",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "Hebrews 13: 4",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 19.",
+        "description": "List sequence jump (skipped from 2 to 19)",
+        "chapter": "Hebrews 13: 4",
+        "contexts": []
+      },
+      {
+        "target": "IX. ... XI.",
+        "description": "List sequence jump (skipped from 9 to 11)",
+        "chapter": "Hebrews 13: 4",
+        "contexts": []
+      },
+      {
+        "target": "2.",
+        "description": "List sequence starts at 2 instead of 1",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... on. There is in the words, 1. A duty prescribed: 2. An enforcement of it from its reason and cause: 3 ...",
+          "... \"Let your conversation be without covetousness;\" (2.) Positively, \"Be content with such things as ye h ...",
+          "... e must inquire, [1.] What is our \"conversation.\" [2.] How it ought to be \"without covetousness.\" \u1f49 \u03c4\u03c1 ..."
+        ]
+      },
+      {
+        "target": "2. ... 13.",
+        "description": "List sequence jump (skipped from 2 to 13)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "3. ... 10.",
+        "description": "List sequence jump (skipped from 3 to 10)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 12.",
+        "description": "List sequence jump (skipped from 5 to 12)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 15.",
+        "description": "List sequence jump (skipped from 4 to 15)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 10.",
+        "description": "List sequence jump (skipped from 1 to 10)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 16.",
+        "description": "List sequence jump (skipped from 1 to 16)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": []
+      },
+      {
+        "target": "17.",
+        "description": "List sequence starts at 17 instead of 1",
+        "chapter": "Hebrews 13: 7",
+        "contexts": [
+          "... od by them that are sent to preach it, Rom. 10:14\u201317. The duty prescribed hath a threefold object, or ..."
+        ]
+      },
+      {
+        "target": "12.",
+        "description": "List sequence starts at 12 instead of 1",
+        "chapter": "Hebrews 13: 8",
+        "contexts": [
+          "... in other places. See the exposition on chap. 1:10\u201312. By \"yesterday,\" some understand the time of the ..."
+        ]
+      },
+      {
+        "target": "5. ... 7.",
+        "description": "List sequence jump (skipped from 5 to 7)",
+        "chapter": "Hebrews 13: 8",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 5.",
+        "description": "List sequence jump (skipped from 2 to 5)",
+        "chapter": "Hebrews 13: 9\u201317",
+        "contexts": []
+      },
+      {
+        "target": "4. ... 15.",
+        "description": "List sequence jump (skipped from 4 to 15)",
+        "chapter": "Hebrews 13: 9\u201317",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "Hebrews 13: 9\u201317",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 10.",
+        "description": "List sequence jump (skipped from 1 to 10)",
+        "chapter": "Hebrews 13: 9\u201317",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 16.",
+        "description": "List sequence jump (skipped from 1 to 16)",
+        "chapter": "Hebrews 13: 9\u201317",
+        "contexts": []
+      },
+      {
+        "target": "1. ... 10.",
+        "description": "List sequence jump (skipped from 1 to 10)",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": []
+      },
+      {
+        "target": "2. ... 16.",
+        "description": "List sequence jump (skipped from 2 to 16)",
+        "chapter": "Hebrews 13: 18\u201325",
+        "contexts": []
+      }
+    ],
+    "Invalid Bible References": [
+      {
+        "target": "Jude 14",
+        "description": "Invalid Bible reference (chapter 14 exceeds max 1 for Jude)",
+        "chapter": "Hebrews 11:5",
+        "contexts": [
+          "... unto his being a prophet, and what he prophesied, Jude 14, 15. But it is probable that all the holy fathers ..."
+        ]
+      },
+      {
+        "target": "Jude 13",
+        "description": "Invalid Bible reference (chapter 13 exceeds max 1 for Jude)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "... ion of the law is called \"blackness of darkness,\" Jude 13. \u039a\u03b1\u1f76 \u03b8\u03c5\u03ad\u03bb\u03bb\u1fc3. 5. Hereunto the apostle adds, \"and ..."
+        ]
+      },
+      {
+        "target": "Jude 13",
+        "description": "Invalid Bible reference (chapter 13 exceeds max 1 for Jude)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "... ion of the law is called \"blackness of darkness,\" Jude 13. \u039a\u03b1\u1f76 \u03b8\u03c5\u03ad\u03bb\u03bb\u1fc3. 5. Hereunto the apostle adds, \"and ..."
+        ]
+      },
+      {
+        "target": "Jude 3",
+        "description": "Invalid Bible reference (chapter 3 exceeds max 1 for Jude)",
+        "chapter": "Hebrews 13: 5, 6",
+        "contexts": [
+          "... 4:3\u20136; and that \"once delivered unto the saints,\" Jude 3, in the revelation made of it by Christ and the a ..."
+        ]
+      },
+      {
+        "target": "Jude 3",
+        "description": "Invalid Bible reference (chapter 3 exceeds max 1 for Jude)",
+        "chapter": "Hebrews 13: 9\u201317",
+        "contexts": [
+          "... 4:3\u20136; and that \"once delivered unto the saints,\" Jude 3, in the revelation made of it by Christ and the a ..."
+        ]
+      }
+    ],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "Obs. IV. The church, in all its distresses, is ten thousand times more honourable than any other society of men in the w...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Hebrews 11:20",
+        "contexts": [
+          "Obs. IV. The church, in all its distresses, is ten thousand times more honourable than any other society of men in the w..."
+        ]
+      },
+      {
+        "target": "Obs. IV. The church, in all its distresses, is ten thousand times more honourable than any other society of men in the w...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Hebrews 11: 24\u201326",
+        "contexts": [
+          "Obs. IV. The church, in all its distresses, is ten thousand times more honourable than any other society of men in the w..."
+        ]
+      },
+      {
+        "target": "6. It may be observed, that as the apostle obliged not himself unto the order of time in naming the foregoing witnesses,...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Hebrews 11:30",
+        "contexts": [
+          "6. It may be observed, that as the apostle obliged not himself unto the order of time in naming the foregoing witnesses,..."
+        ]
+      },
+      {
+        "target": "6. It may be observed, that as the apostle obliged not himself unto the order of time in naming the foregoing witnesses,...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Hebrews 11: 35\u201337",
+        "contexts": [
+          "6. It may be observed, that as the apostle obliged not himself unto the order of time in naming the foregoing witnesses,..."
+        ]
+      },
+      {
+        "target": "(2.) The next evil cautioned against, is the \"springing up of the root of bitterness.\" And we must inquire, [1.] What is...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Hebrews 12: 9, 10",
+        "contexts": [
+          "(2.) The next evil cautioned against, is the \"springing up of the root of bitterness.\" And we must inquire, [1.] What is..."
+        ]
+      },
+      {
+        "target": "(2.) The next evil cautioned against, is the \"springing up of the root of bitterness.\" And we must inquire, [1.] What is...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "(2.) The next evil cautioned against, is the \"springing up of the root of bitterness.\" And we must inquire, [1.] What is..."
+        ]
+      },
+      {
+        "target": "And this command hath respect unto the double solemn charge given of God unto the church; the first on the closing of th...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Hebrews 12: 15",
+        "contexts": [
+          "And this command hath respect unto the double solemn charge given of God unto the church; the first on the closing of th..."
+        ]
+      },
+      {
+        "target": "And this command hath respect unto the double solemn charge given of God unto the church; the first on the closing of th...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "And this command hath respect unto the double solemn charge given of God unto the church; the first on the closing of th..."
+        ]
+      },
+      {
+        "target": "\"Non monstrare vias eadem nisi sacra colenti,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "\"Non monstrare vias eadem nisi sacra colenti,"
+        ]
+      },
+      {
+        "target": "Quaesitum ad fontem solos deducere verpos.\"\u2014Juv. Sat. xiv. 103.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Hebrews 12: 18\u201329",
+        "contexts": [
+          "Quaesitum ad fontem solos deducere verpos.\"\u2014Juv. Sat. xiv. 103."
+        ]
+      },
+      {
+        "target": "\"Non monstrare vias eadem nisi sacra colenti,",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": [
+          "\"Non monstrare vias eadem nisi sacra colenti,"
+        ]
+      },
+      {
+        "target": "Quaesitum ad fontem solos deducere verpos.\"\u2014Juv. Sat. xiv. 103.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Hebrews 13: 1",
+        "contexts": [
+          "Quaesitum ad fontem solos deducere verpos.\"\u2014Juv. Sat. xiv. 103."
+        ]
+      }
+    ]
+  }
+}

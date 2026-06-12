@@ -1,0 +1,16 @@
+{
+  "volume": 15,
+  "total_words_audited": 265555,
+  "total_anomalies_count": 0,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  }
+}
