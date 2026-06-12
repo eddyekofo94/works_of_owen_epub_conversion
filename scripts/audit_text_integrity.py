@@ -369,7 +369,7 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
     return paragraphs, meta
 
 
-def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
+def extract_pdf_pages(pdf_path: Path, no_whitelist: bool = False) -> tuple[list[str], dict[str, Any]]:
     pages: list[str] = []
 
     # Infer volume number from path
@@ -377,11 +377,12 @@ def extract_pdf_pages(pdf_path: Path) -> tuple[list[str], dict[str, Any]]:
     skipped_pages = []
     try:
         volume = int(vol_dir.name[1:])
-        whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
-        if whitelist_path.exists():
-            import json
-            wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
-            skipped_pages = wl.get("text_integrity", {}).get("skipped_pages", [])
+        if not no_whitelist:
+            whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+            if whitelist_path.exists():
+                import json
+                wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
+                skipped_pages = wl.get("text_integrity", {}).get("skipped_pages", [])
     except Exception:
         pass
 
@@ -1757,14 +1758,14 @@ def infer_paths(volume: str, root: Path) -> tuple[Path, Path, Path]:
     )
 
 
-def run_audit(volume: str, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
+def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool = False) -> dict[str, Any]:
     root = Path(__file__).resolve().parent.parent  # project root
     is_hebrews = str(volume).lower().startswith('h')
     
     if is_hebrews:
         pdf_pages, pdf_meta = extract_epub2_pages(pdf_path)
     else:
-        pdf_pages, pdf_meta = extract_pdf_pages(pdf_path)
+        pdf_pages, pdf_meta = extract_pdf_pages(pdf_path, no_whitelist=no_whitelist)
         
     paragraphs, epub_meta = extract_epub_paragraphs(epub_path)
 
@@ -1851,13 +1852,14 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path) -> dict[str, Any]:
     latin_clause_fid = latin_clause_fidelity(pdf_pages, epub_text)
     latin_trans_cov = latin_translation_coverage(paragraphs)
     whitelist = {}
-    whitelist_path = pdf_path.parent.parent / "bugs_fixes" / f"volume_{volume}_whitelist.json"
-    if whitelist_path.exists():
-        try:
-            import json
-            whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
-        except Exception as e:
-            print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
+    if not no_whitelist:
+        whitelist_path = pdf_path.parent.parent / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+        if whitelist_path.exists():
+            try:
+                import json
+                whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
     # Filter weak pages
     skipped_pages = whitelist.get("text_integrity", {}).get("skipped_pages", [])
@@ -2442,6 +2444,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--epub", type=Path, default=None, help="Override generated EPUB path")
     parser.add_argument("--out-dir", type=Path, default=None, help="Override report output directory")
     parser.add_argument("--no-bug-log", action="store_true", help="Do not update BUGS_AND_FIXES.md")
+    parser.add_argument("--no-whitelist", action="store_true", help="Run checks without loading or applying whitelists")
     args = parser.parse_args(argv)
 
     OWEN_VOLUMES = [str(i) for i in range(1, 17)]
@@ -2471,7 +2474,7 @@ def main(argv: list[str] | None = None) -> int:
                 return 1
             continue
 
-        result = run_audit(volume, pdf_path, epub_path)
+        result = run_audit(volume, pdf_path, epub_path, no_whitelist=args.no_whitelist)
         stem = f"volume_{volume}"
         json_path, md_path = write_reports(result, out_dir, stem)
         bug_log = None if args.no_bug_log else update_bug_log(result, json_path, md_path)

@@ -98,7 +98,7 @@ def _fmt_dur(secs: float) -> str:
     return f"{m}m{s:02d}s" if m < 60 else f"{m // 60}h{m % 60}m"
 
 
-def run_volume_pipeline(vol_num: str, no_rebuild: bool = False) -> dict:
+def run_volume_pipeline(vol_num: str, no_rebuild: bool = False, no_whitelist: bool = False) -> dict:
     from shared import get_volume_dir
     start = datetime.now()
     vol_dir = get_volume_dir(vol_num)
@@ -144,8 +144,12 @@ def run_volume_pipeline(vol_num: str, no_rebuild: bool = False) -> dict:
             return summary
 
     print(f"  [{vol_num}] audit_epub.py ...", end=" ", flush=True)
+    cmd = [PYTHON, str(ROOT / "scripts" / "audit_epub.py")]
+    if no_whitelist:
+        cmd.append("--no-whitelist")
+    cmd.append(str(epub_path))
     code, out = _run(
-        [PYTHON, str(ROOT / "scripts" / "audit_epub.py"), str(epub_path)],
+        cmd,
         f"{vol_num} epub audit",
     )
     ok = code == 0
@@ -162,8 +166,12 @@ def run_volume_pipeline(vol_num: str, no_rebuild: bool = False) -> dict:
     }
 
     print(f"  [{vol_num}] audit_text_integrity.py ...", end=" ", flush=True)
+    cmd = [PYTHON, str(ROOT / "scripts" / "audit_text_integrity.py")]
+    if no_whitelist:
+        cmd.append("--no-whitelist")
+    cmd.append(str(vol_num))
     code, out = _run(
-        [PYTHON, str(ROOT / "scripts" / "audit_text_integrity.py"), str(vol_num)],
+        cmd,
         f"{vol_num} text integrity",
     )
     ok = code == 0
@@ -202,8 +210,12 @@ def run_volume_pipeline(vol_num: str, no_rebuild: bool = False) -> dict:
     }
 
     print(f"  [{vol_num}] audit_anomalies.py ...", end=" ", flush=True)
+    cmd = [PYTHON, str(ROOT / "scripts" / "audit_anomalies.py")]
+    if no_whitelist:
+        cmd.append("--no-whitelist")
+    cmd.append(str(vol_num))
     code, out = _run(
-        [PYTHON, str(ROOT / "scripts" / "audit_anomalies.py"), str(vol_num)],
+        cmd,
         f"{vol_num} anomalies audit",
     )
     ok = code == 0
@@ -479,6 +491,10 @@ def main() -> int:
         "--all", action="store_true",
         help="Process all volumes",
     )
+    parser.add_argument(
+        "--no-whitelist", action="store_true",
+        help="Run audits and checks without loading or applying whitelists",
+    )
     args = parser.parse_args()
 
     OWEN_VOLUMES = [str(i) for i in range(1, 17)]
@@ -497,7 +513,7 @@ def main() -> int:
     results: dict[str, dict] = {}
     for v in volumes:
         print(f"\n{cyan(f'=== Volume {v} ===')}")
-        results[v] = run_volume_pipeline(v, no_rebuild=args.no_rebuild)
+        results[v] = run_volume_pipeline(v, no_rebuild=args.no_rebuild, no_whitelist=args.no_whitelist)
         _print_volume_issues(v, results[v])
 
     print(f"\n{cyan('=== Pytest ===')}")

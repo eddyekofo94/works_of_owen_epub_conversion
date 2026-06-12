@@ -657,6 +657,7 @@ def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
 def main():
     parser = argparse.ArgumentParser(description="Audit a volume's intermediate JSON for OCR, hyphenation, and punctuation anomalies.")
     parser.add_argument("volume", help="Volume number/ID (e.g., 12, h1)")
+    parser.add_argument("--no-whitelist", action="store_true", help="Run checks without loading or applying whitelists")
     args = parser.parse_args()
 
     vol_num = str(args.volume)
@@ -681,12 +682,13 @@ def main():
         data = json.load(f)
 
     whitelist = {}
-    whitelist_path = vol_dir / "bugs_fixes" / f"volume_{vol_num}_whitelist.json"
-    if whitelist_path.exists():
-        try:
-            whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
-        except Exception as e:
-            print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
+    if not args.no_whitelist:
+        whitelist_path = vol_dir / "bugs_fixes" / f"volume_{vol_num}_whitelist.json"
+        if whitelist_path.exists():
+            try:
+                whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
     # Load config overrides if available to apply repairs before auditing
     config = {}

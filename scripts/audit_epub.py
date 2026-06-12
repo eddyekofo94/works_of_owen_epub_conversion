@@ -73,9 +73,10 @@ BETA_CODE_RESIDUE_RE = re.compile(
 
 
 class Audit:
-    def __init__(self, epub_path: Path, out_dir: Path | None = None) -> None:
+    def __init__(self, epub_path: Path, out_dir: Path | None = None, no_whitelist: bool = False) -> None:
         self.epub_path = epub_path
         self.out_dir = out_dir
+        self.no_whitelist = no_whitelist
         self.errors: list[dict[str, Any]] = []
         self.warnings: list[dict[str, Any]] = []
         self.info: dict[str, Any] = {}
@@ -651,11 +652,12 @@ class Audit:
                 volume = int(vol_name[1:])
             else:
                 volume = vol_name
-            whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
-            if whitelist_path.exists():
-                wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
-                ignored_warnings = wl.get("text_integrity", {}).get("ignored_warnings", [])
-                self.warnings = [w for w in self.warnings if w["code"] not in ignored_warnings]
+            if not self.no_whitelist:
+                whitelist_path = vol_dir / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+                if whitelist_path.exists():
+                    wl = json.loads(whitelist_path.read_text(encoding="utf-8"))
+                    ignored_warnings = wl.get("text_integrity", {}).get("ignored_warnings", [])
+                    self.warnings = [w for w in self.warnings if w["code"] not in ignored_warnings]
         except Exception:
             pass
 
@@ -969,9 +971,10 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--no-bug-log", action="store_true", help="Do not update BUGS_AND_FIXES.md")
     parser.add_argument("--fail-on-warning", action="store_true", help="Exit non-zero when warnings are present")
+    parser.add_argument("--no-whitelist", action="store_true", help="Run checks without loading or applying whitelists")
     args = parser.parse_args(argv)
 
-    audit = Audit(args.epub)
+    audit = Audit(args.epub, no_whitelist=args.no_whitelist)
     result = audit.run()
     out_dir = args.out_dir or infer_output_dir(args.epub)
     json_path, md_path = write_reports(result, out_dir, infer_report_stem(args.epub))
