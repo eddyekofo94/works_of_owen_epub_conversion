@@ -187,7 +187,15 @@ OVERRIDES = {
         'To affirm, on the other side, — (1.)': 'To affirm, on the other side, —\n\n(1.)',
         '; (2.) That he hath': ';\n\n(2.) That he hath',
         '; and, (4.) That he sits': ';\n\n(4.) That he sits',
-        '(8.) By this prerogative of certain predictions': '(3.) By this prerogative of certain predictions',
+        r'(\(8\.\)) By this prerogative of certain predictions': '(3.) By this prerogative of certain predictions',
+        r"(family of Christ\.')(?!\s*(?:\[f285\]|FNREFTOKEN|<a))": r"\1 [f285]",
+        "on that subject [f445]": "on that subject [f446]",
+        r"(another apology\.)(?!\s*(?:\[f489\]|FNREFTOKEN|<a))": r"\1[f489]",
+        "hosae iin re": "hac in re",
+        "Statorii mgenium": "Statorii ingenium",
+        "ne ja,": "ne jam,",
+        "definite time Ans.": "definite time? Ans.",
+        "**Ques. 1.** _What is God_ **Ans.**": "**Ques. 1.** _What is God?_ **Ans.**",
     },
     'regex_replacements': {
         r'divines,\s*—\s*Bull,\s*Waterland,\s*Horsley,\s*Magee,\s*Fuller,\s*Pye\s+Smith,\s*and\s*Wardlaw,\s*—\s*by':

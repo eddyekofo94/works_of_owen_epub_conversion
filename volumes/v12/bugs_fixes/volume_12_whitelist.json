@@ -15,5 +15,11 @@
       "B hath",
       "seal et"
     ]
+  },
+  "text_integrity": {
+    "ignored_warnings": [
+      "possible_beta_code_residue",
+      "repeated_phrases"
+    ]
   }
 }

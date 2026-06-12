@@ -271,7 +271,7 @@
         "max_split_candidate_count": 285,
         "max_inline_structural_candidate_count": 6,
         "max_front_toc_missing_pages": 3,
-        "max_missing_marker_count": 1
+        "max_missing_marker_count": 2
       },
       "epub": {
         "max_lowercase_paragraph_start_files": 20,

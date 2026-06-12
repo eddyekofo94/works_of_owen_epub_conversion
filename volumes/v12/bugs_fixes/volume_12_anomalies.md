@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 319583
-* **Total Suspected Anomalies Found:** 95
+* **Total Words Audited:** 319669
+* **Total Suspected Anomalies Found:** 185
 
 Add corrections to `text_replacements` inside `volumes/v12/convert.py` to fix these.
 
@@ -15,8 +15,9 @@ Add corrections to `text_replacements` inside `volumes/v12/convert.py` to fix th
 * **Mixed-Case Capitalization Errors:** 3 items
 * **Unresolved Citation References:** 0 items
 * **Structural Nesting Sequence Jumps:** 19 items
-* **Invalid Bible References:** 27 items
+* **Invalid Bible References:** 4 items
 * **List Formatting Inconsistencies:** 0 items
+* **Unmatched Quotation Marks:** 113 items
 
 ---
 
@@ -163,6 +164,7 @@ No anomalies found in this category.
 * **Chapter:** *Chapter 22.*
 * **Contexts:**
   * ... principally to the person, God-man, who offered. **2dly .** The free will of his human nature was in it also; ...
+  * ... free will of his human nature was in it also; so **2dly .** The free will of his human nature was in it also; ...
 
 ### 24. `comeliness ;`
 * **Description:** Spaced punctuation (space before character)
@@ -448,170 +450,25 @@ No anomalies found in this category.
 
 ## Invalid Bible References
 
-### 1. `Philippians 14`
-* **Description:** Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)
-* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
-* **Contexts:**
-  * ... 8; Acts 20:28; Romans 1:3, 4, 9:5; Galatians 4:4; **Philippians 14**:5 2:5-8; 1 Timothy 3:16; 1 John 1:1, 2; Revelatio ...
-
-### 2. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
-* **Contexts:**
-  * ... John 1:14; Galatians 4:4, 5; Hebrews 2:14, 16,17; **Philippians 17**:6 2:6-8.) for these, and these only, are the thin ...
-
-### 3. `Zephaniah 23`
+### 1. `Zephaniah 23`
 * **Description:** Invalid Bible reference (chapter 23 exceeds max 3 for Zephaniah)
 * **Chapter:** *Chapter 3.*
 * **Contexts:**
-  * ... oned, but no corporeal similitude. Vide 1:28, and **Zephaniah 23**:14 (to which may be added many more places), wher ...
+  * ... t no corporeal similitude. Vide Ezekiel 1:28, and **Zephaniah 23**:14 (to which may be added many more places), wher ...
 
-### 4. `2 Kings 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 22 for Kings)
-* **Chapter:** *Chapter 5.*
-* **Contexts:**
-  * ... The accomplishment of it you have in the story, **2 Kings 23**:17. Did Josiah act freely? was his proceeding at ...
-
-### 5. `Colossians 5`
+### 2. `Colossians 5`
 * **Description:** Invalid Bible reference (chapter 5 exceeds max 4 for Colossians)
 * **Chapter:** *Examination.*
 * **Contexts:**
   * ... , John 1:18; 1 Corinthians 2:7; Ephesians 3:8-11; **Colossians 5**. 2, 3; 1 Timothy 3:16. 2. Because man in his.fal ...
 
-### 6. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Examination.*
-* **Contexts:**
-  * ... he "thought it not robbery to be equal with God," **Philippians 17**:6 2:6. It is of God the Father that this is spoke ...
-
-### 7. `Philippians 20`
-* **Description:** Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)
-* **Chapter:** *Examination.*
-* **Contexts:**
-  * ... n the discovery of the rise and occasion of them, **Philippians 20**:7 2:7-9. He who was in the form of God, and equal ...
-
-### 8. `Philippians 20`
-* **Description:** Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 8.*
-* **Contexts:**
-  * ... 2:16; Luke 1:35; Hebrews 9:14; Acts 3:15, 20:28; **Philippians 20**:7 2:7; 1 Corinthians 2:8, etc.; and by arguments ...
-
-### 9. `Philippians 26`
-* **Description:** Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 8.*
-* **Contexts:**
-  * ... he had it by a gift of the Father, Matthew 28:18; **Philippians 26**:9 2:9; 1 Corinthians 15:27; John 5:19, John 10:25 ...
-  * ... r were needful; which is mentioned, Matthew 28:18 **Philippians 26**:9 2:9, 1 Corinthians 15:27: which is by no means ...
-
-### 10. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 9.*
-* **Contexts:**
-  * ... aside for a season, that here he desires of God, **Philippians 17**:6 2:6-11. He glorified his Father by manifesting ...
-  * ... akedly to be imposed on us. Let Proverbs 8:22-31, **Philippians 17**:6 2:6-11, be consulted, as parallel to this place ...
-
-### 11. `Jude 4`
-* **Description:** Invalid Bible reference (chapter 4 exceeds max 1 for Jude)
-* **Chapter:** *Chapter 10.*
-* **Contexts:**
-  * ... etc., Jeremiah 23:6; Zechariah 2:8; 1 John 5:20; **Jude 4**; Titus 2:13; Revelation 1:8, 4:8; Acts 20:28; 1 J ...
-
-### 12. `Ephesians 11`
+### 3. `Ephesians 11`
 * **Description:** Invalid Bible reference (chapter 11 exceeds max 6 for Ephesians)
 * **Chapter:** *Chapter 11.*
 * **Contexts:**
   * ... oken in his Prolegomena to the Gospels; and urges **Ephesians 11**:10, 13, 3:9, 4:24, to prove the sense proposed. ...
 
-### 13. `Jude 5`
-* **Description:** Invalid Bible reference (chapter 5 exceeds max 1 for Jude)
-* **Chapter:** *Chapter 12.*
-* **Contexts:**
-  * ... ive mentioned. About that which they urge out of **Jude 5** I shall not contend. The testimony from thence re ...
-
-### 14. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 13.*
-* **Contexts:**
-  * ... ey speak, incarnate? Ans. From these, John 1:14; **Philippians 17**:6 2:6, 7; 1 Timothy 3:16; Hebrews 2:16; 1 John 4: ...
-  * ... ere Christ is said to be equal to God, John 5:18, **Philippians 17**:6 2:6? A. That Christ is equal to God doth no wa ...
-  * ... he interpretation of Erasmus, by Beza, annot., in **Philippians 17**:6 2:6, 7; of Ochinus and Laelius Socinus, by Zanc ...
-
-### 15. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 14.*
-* **Contexts:**
-  * ... st Christ's being equal with God, from John 5:18, **Philippians 17**:6 2:6, 7, hath been already removed, and the plac ...
-
-### 16. `Philippians 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 19.*
-* **Contexts:**
-  * ... alted to his kingdom?" — to which he answers from **Philippians 23**:8 2:8-10 in both places; intimating that Christ w ...
-
-### 17. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 19.*
-* **Contexts:**
-  * ... ne who thinks it no robbery to be equal with him, **Philippians 17**:6 2:6; the "fellow of the LORD of hosts," Zechari ...
-  * ... nature is "equal with God," that is, the Father, **Philippians 17**:6 2:6; but in respect of his mediation he is not ...
-
-### 18. `Philippians 26`
-* **Description:** Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 19.*
-* **Contexts:**
-  * ... h," Matthew 28:18, and "a name above every name," **Philippians 26**:9 2:9, giving him an excellency, an ἀξία, as he i ...
-
-### 19. `Philippians 20`
-* **Description:** Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 25.*
-* **Contexts:**
-  * ... siah, the servant of the Father, Isaiah 42:1, 19, **Philippians 20**:7 2:7, 8, "shall deal prudently," and prosper in ...
-
-### 20. `Philippians 26`
-* **Description:** Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 25.*
-* **Contexts:**
-  * ... ove every name, that at the name of Jesus," etc., **Philippians 26**:9 2:9, 10. The next verse is, — [[BLOCKQUOTE]] " ...
-
-### 21. `2 Kings 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 22 for Kings)
-* **Chapter:** *Chapter 25.*
-* **Contexts:**
-  * ... s of any is the most common sense of the word. So **2 Kings 23**:35, "Jehoiakim exacted the silver and the gold of ...
-
-### 22. `2 Kings 25`
-* **Description:** Invalid Bible reference (chapter 25 exceeds max 22 for Kings)
-* **Chapter:** *Chapter 25.*
-* **Contexts:**
-  * ... designed his death, up to death by the Chaldeans, **2 Kings 25**:18-21. Their riches, whereby they hoped to redeem ...
-  * ... rave with the wicked. Nor were those mentioned in **2 Kings 25**:18-21, that were slain by the king of Babe], as i ...
-
-### 23. `Philippians 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 26.*
-* **Contexts:**
-  * ... be "obedient unto death, the death of the cross," **Philippians 23**:8 2:8, that shameful and ignominious death. And w ...
-
-### 24. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 27.*
-* **Contexts:**
-  * ... pressible exinanition and eclipsing of his glory, **Philippians 17**:6 2:6, 7, [[BLOCKQUOTE]] "Being in the form of G ...
-  * ... d, he humbled himself to the death of the cross," **Philippians 17**:6 2:6-8. And so, by his own voluntary consent, h ...
-
-### 25. `Philippians 20`
-* **Description:** Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)
-* **Chapter:** *Chapter 27.*
-* **Contexts:**
-  * ... f, Christ takes upon him "the form of a servant," **Philippians 20**:7 2:7: and this is his perpetual profession, "I c ...
-
-### 26. `Jude 4`
-* **Description:** Invalid Bible reference (chapter 4 exceeds max 1 for Jude)
-* **Chapter:** *Chapter 31.*
-* **Contexts:**
-  * ... on 13:8; being "of old ordained to condemnation," **Jude 4**; being as "natural brute beasts, made to be taken ...
-
-### 27. `Titus 16`
+### 4. `Titus 16`
 * **Description:** Invalid Bible reference (chapter 16 exceeds max 3 for Titus)
 * **Chapter:** *Of the Death of Christ, and of Justification:*
 * **Contexts:**
@@ -622,4 +479,686 @@ No anomalies found in this category.
 ## List Formatting Inconsistencies
 
 No anomalies found in this category.
+
+## Unmatched Quotation Marks
+
+### 1. `From thence whence in the thoughts of some I am most likely to suffer, as to my own resolves, I am most secure. It is in...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *The Heads and Governors of the Colleges and Halls,*
+* **Contexts:**
+  * **From thence whence in the thoughts of some I am most likely to suffer, as to my own resolves, I am most secure. It is in...**
+
+### 2. `3. Some passages in his Annotations."`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *The Heads and Governors of the Colleges and Halls,*
+* **Contexts:**
+  * **3. Some passages in his Annotations."**
+
+### 3. `The first open breach they made in Poland was in the year 1562 (something having been attempted before), most of the lea...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *The Preface to the Reader.*
+* **Contexts:**
+  * **The first open breach they made in Poland was in the year 1562 (something having been attempted before), most of the lea...**
+
+### 4. `[[BLOCKQUOTE]] "I profess myself to believe in one God the Father, and in one Lord Jesus Christ, his Son, and in one Hol...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *The Preface to the Reader.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "I profess myself to believe in one God the Father, and in one Lord Jesus Christ, his Son, and in one Hol...**
+
+### 5. `The assembly of states was called against the Muscovians. The nobility desiring a conference between the ministers of th...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *The Preface to the Reader.*
+* **Contexts:**
+  * **The assembly of states was called against the Muscovians. The nobility desiring a conference between the ministers of th...**
+
+### 6. `In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and live...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *The Preface to the Reader.*
+* **Contexts:**
+  * **In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and live...**
+
+### 7. `3. As these are admirable men, so the way he takes for their satisfaction is admirable also; that is, by "asserting noth...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
+* **Contexts:**
+  * **3. As these are admirable men, so the way he takes for their satisfaction is admirable also; that is, by "asserting noth...**
+
+### 8. `His first is of God's being infinite and incomprehensible. This he condemns, name and thing, — that is, he says "he is f...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
+* **Contexts:**
+  * **His first is of God's being infinite and incomprehensible. This he condemns, name and thing, — that is, he says "he is f...**
+
+### 9. `That God is a simple act is the next thing excepted against and decried, name and thing; in the room whereof, that he is...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
+* **Contexts:**
+  * **That God is a simple act is the next thing excepted against and decried, name and thing; in the room whereof, that he is...**
+
+### 10. `It being the great thing we have to aim at, namely, that "we may know Jesus Christ, and the fellowship of his sufferings...`
+* **Description:** Paragraph has unmatched double quotes (count: 49)
+* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
+* **Contexts:**
+  * **It being the great thing we have to aim at, namely, that "we may know Jesus Christ, and the fellowship of his sufferings...**
+
+### 11. `Mr B. closeth his preface with a commendation of the Scriptures, their excellency and divinity, with the eminent success...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Mr Biddle's Preface Briefly Examined.*
+* **Contexts:**
+  * **Mr B. closeth his preface with a commendation of the Scriptures, their excellency and divinity, with the eminent success...**
+
+### 12. `(2.) By anger, wrath, zeal, fury, the effects of anger are denoted: Romans 3:5, "Is God unrighteous who taketh vengeance...`
+* **Description:** Paragraph has unmatched double quotes (count: 17)
+* **Chapter:** *Chapter 4.*
+* **Contexts:**
+  * **(2.) By anger, wrath, zeal, fury, the effects of anger are denoted: Romans 3:5, "Is God unrighteous who taketh vengeance...**
+
+### 13. `Scarce a word but is expressive of some future contingent thing, if the free actions of men be so before they are wrough...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Chapter 5.*
+* **Contexts:**
+  * **Scarce a word but is expressive of some future contingent thing, if the free actions of men be so before they are wrough...**
+
+### 14. `The immortality we ascribe to man in innocency is only an assured preservation by the power of God from actual dying, no...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **The immortality we ascribe to man in innocency is only an assured preservation by the power of God from actual dying, no...**
+
+### 15. `1. He who was made "very good" and "upright," in a moral consideration, had the original righteousness pleaded for; for ...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **1. He who was made "very good" and "upright," in a moral consideration, had the original righteousness pleaded for; for ...**
+
+### 16. `1. "Because the sin spoken of is voluntary, therefore it is not original,'' will not be granted.`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **1. "Because the sin spoken of is voluntary, therefore it is not original,'' will not be granted.**
+
+### 17. `[[BLOCKQUOTE]] "Q. 6. Did not Jesus Christ approve himself to be God by his miracles; and did he not those miracles by a...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Q. 6. Did not Jesus Christ approve himself to be God by his miracles; and did he not those miracles by a...**
+
+### 18. `A. John 5:19, 20, 30, 14:10." The inference which alone appears from hence is of the same nature with them that are gone...`
+* **Description:** Paragraph has unmatched double quotes (count: 15)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **A. John 5:19, 20, 30, 14:10." The inference which alone appears from hence is of the same nature with them that are gone...**
+
+### 19. `Jonas Schlichtingius, amongst them all, seems to do most of himself. I shall therefore add his testimony, to show their ...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **Jonas Schlichtingius, amongst them all, seems to do most of himself. I shall therefore add his testimony, to show their ...**
+
+### 20. `Very good; unless this abominable figment may pass current, Christ was not the Son of God. Let the reader observe, by th...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **Very good; unless this abominable figment may pass current, Christ was not the Son of God. Let the reader observe, by th...**
+
+### 21. `2. The only-begotten Son of God is his natural Son, begotten of his essence, and there is no other reason of this appell...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **2. The only-begotten Son of God is his natural Son, begotten of his essence, and there is no other reason of this appell...**
+
+### 22. `But the most learned man's exposition of this place is admirable. "Jesus," saith he, "is many ways said to be the ' Son ...`
+* **Description:** Paragraph has unmatched double quotes (count: 37)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **But the most learned man's exposition of this place is admirable. "Jesus," saith he, "is many ways said to be the ' Son ...**
+
+### 23. `[[BLOCKQUOTE]] "Q. Howbeit, is not Christ dignified, as with the title of Lord, so also with that of God, in the Scriptu...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Q. Howbeit, is not Christ dignified, as with the title of Lord, so also with that of God, in the Scriptu...**
+
+### 24. `To escape the dint of this sword, Mr B. nextly queries: "Q. Was he so the God of Thomas as that he himself in the meanti...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **To escape the dint of this sword, Mr B. nextly queries: "Q. Was he so the God of Thomas as that he himself in the meanti...**
+
+### 25. `A. John 20:17; Revelation 3:12."  True, he who, being partaker of the divine essence, in the form of God, was Thomas' Go...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **A. John 20:17; Revelation 3:12."  True, he who, being partaker of the divine essence, in the form of God, was Thomas' Go...**
+
+### 26. `2. In calling these properties of the several natures in Christ "adverse'' or "contrary," they would insinuate a conside...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **2. In calling these properties of the several natures in Christ "adverse'' or "contrary," they would insinuate a conside...**
+
+### 27. `2. If by natures constituting persons they mean those who, antecedently to their union, have actually done so, we grant ...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **2. If by natures constituting persons they mean those who, antecedently to their union, have actually done so, we grant ...**
+
+### 28. `2. If our catechists have no more to say, to the illustration given of the union of the two natures in the person of Chr...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **2. If our catechists have no more to say, to the illustration given of the union of the two natures in the person of Chr...**
+
+### 29. `2. Though eternity has no beginning, and the sense of these words cannot be, "In the beginning of eternity," yet eternit...`
+* **Description:** Paragraph has unmatched double quotes (count: 15)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **2. Though eternity has no beginning, and the sense of these words cannot be, "In the beginning of eternity," yet eternit...**
+
+### 30. `2. He uses the same manner of speech which signifieth the mediate cause; for he saith "The world was made by him." Lastl...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **2. He uses the same manner of speech which signifieth the mediate cause; for he saith "The world was made by him." Lastl...**
+
+### 31. `A. A twofold sense may be given of them: — First, that human kind was reformed by Christ, and as it were made again, bec...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **A. A twofold sense may be given of them: — First, that human kind was reformed by Christ, and as it were made again, bec...**
+
+### 32. `But that these words, "I am," are to be supplied in that manner as if himself had added to them, "I am the light of the ...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Chapter 8.*
+* **Contexts:**
+  * **But that these words, "I am," are to be supplied in that manner as if himself had added to them, "I am the light of the ...**
+
+### 33. `2. Here is no mention of the מִקֶּדֶם, "beginning;" and those who in the latter words reject the Vulgar edition cannot h...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 9.*
+* **Contexts:**
+  * **2. Here is no mention of the מִקֶּדֶם, "beginning;" and those who in the latter words reject the Vulgar edition cannot h...**
+
+### 34. `Grotius on this place, according to his wont, outgoes his companions one step at least (as he was a bold man at conjectu...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Chapter 9.*
+* **Contexts:**
+  * **Grotius on this place, according to his wont, outgoes his companions one step at least (as he was a bold man at conjectu...**
+
+### 35. `Doubtless the thought of any such thing was as remote from the heart of the holy man as this gloss is from the sense of ...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 9.*
+* **Contexts:**
+  * **Doubtless the thought of any such thing was as remote from the heart of the holy man as this gloss is from the sense of ...**
+
+### 36. `Grotius takes no notice of Christ in this place, yea, he seems evidently to exclude him from being here intended. His fi...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 9.*
+* **Contexts:**
+  * **Grotius takes no notice of Christ in this place, yea, he seems evidently to exclude him from being here intended. His fi...**
+
+### 37. `Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei."`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 9.*
+* **Contexts:**
+  * **Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei."**
+
+### 38. `Q. What dost thou answer to this second testimony A. The place of Zechariah they thus cite: "This saith the LORD of host...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 10.*
+* **Contexts:**
+  * **Q. What dost thou answer to this second testimony A. The place of Zechariah they thus cite: "This saith the LORD of host...**
+
+### 39. `Even at the light of this most evident testimony, the eyes of Grotius dazzled that he could not see the truth. His note ...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 10.*
+* **Contexts:**
+  * **Even at the light of this most evident testimony, the eyes of Grotius dazzled that he could not see the truth. His note ...**
+
+### 40. `4. There is no analogy between that of the prophet, of the "apple of God's eye," and this here spoken of. Uncontrollably...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Chapter 10.*
+* **Contexts:**
+  * **4. There is no analogy between that of the prophet, of the "apple of God's eye," and this here spoken of. Uncontrollably...**
+
+### 41. `2. The latter part of the verse he thus illustrates, or rather obscures: Τὰ πάντα δἰ αὐτοῦ, intellige omnia quae ad nova...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 11.*
+* **Contexts:**
+  * **2. The latter part of the verse he thus illustrates, or rather obscures: Τὰ πάντα δἰ αὐτοῦ, intellige omnia quae ad nova...**
+
+### 42. `2 Peter 3:5." Prove it by any one instance; or, if that may not be done, beg no more in a matter of this importance. In ...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 11.*
+* **Contexts:**
+  * **2 Peter 3:5." Prove it by any one instance; or, if that may not be done, beg no more in a matter of this importance. In ...**
+
+### 43. `4. The word φέρων, neither in its native signification nor in the use of it in the Scripture, gives any countenance to t...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 12.*
+* **Contexts:**
+  * **4. The word φέρων, neither in its native signification nor in the use of it in the Scripture, gives any countenance to t...**
+
+### 44. `The intendment and design of the apostle in this place being evidently to exhort believers to self-denial, mutual love, ...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Chapter 13.*
+* **Contexts:**
+  * **The intendment and design of the apostle in this place being evidently to exhort believers to self-denial, mutual love, ...**
+
+### 45. `Επιστεύθη ἐν κόσμῳ. "Id est, in magna mundi parte, Romans 1:8, Colossians 1:6." But then, I pray, what difference is bet...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 13.*
+* **Contexts:**
+  * **Επιστεύθη ἐν κόσμῳ. "Id est, in magna mundi parte, Romans 1:8, Colossians 1:6." But then, I pray, what difference is bet...**
+
+### 46. `That Jesus Christ is the husband and spouse of the church will not be denied, Ephesians 5:25, Revelation 21:9; but he wh...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Chapter 14.*
+* **Contexts:**
+  * **That Jesus Christ is the husband and spouse of the church will not be denied, Ephesians 5:25, Revelation 21:9; but he wh...**
+
+### 47. `[[BLOCKQUOTE]] "Dixit Rabbi Tanchum, Quomodo omne mem quod est in medio vocis aperture est, et istud לְםַרְבֵּה, Isaiah ...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 14.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Dixit Rabbi Tanchum, Quomodo omne mem quod est in medio vocis aperture est, et istud לְםַרְבֵּה, Isaiah ...**
+
+### 48. `[[BLOCKQUOTE]] Quaesivit Deus sanctus benedictus facere Ezechiam Messiam, et Sennacheribum Gog et Magog. Dixit proprieta...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 14.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] Quaesivit Deus sanctus benedictus facere Ezechiam Messiam, et Sennacheribum Gog et Magog. Dixit proprieta...**
+
+### 49. `1. Verse 5, the apostle, speaking of the heathens and their opinion of the Deity, says, "There be," that is, to them, in...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 14.*
+* **Contexts:**
+  * **1. Verse 5, the apostle, speaking of the heathens and their opinion of the Deity, says, "There be," that is, to them, in...**
+
+### 50. `Grotius' annotation on this place is worth our observation, as having somewhat new and peculiar in it. "Κύριον τῆς δόξης...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 14.*
+* **Contexts:**
+  * **Grotius' annotation on this place is worth our observation, as having somewhat new and peculiar in it. "Κύριον τῆς δόξης...**
+
+### 51. `[[BLOCKQUOTE]] "Q. How many Holy Spirits of Christians are there? —`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Q. How many Holy Spirits of Christians are there? —**
+
+### 52. `A. 'One Spirit,' Ephesians 4:4." I must take leave to put one question to Mr B, that we may the better know the mind and...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **A. 'One Spirit,' Ephesians 4:4." I must take leave to put one question to Mr B, that we may the better know the mind and...**
+
+### 53. `[[BLOCKQUOTE]] "Wherein consists the prerogative of that Holy Spirit above other spirits? —`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Wherein consists the prerogative of that Holy Spirit above other spirits? —**
+
+### 54. `A. 1.Corinthians 2:10, 11." The prerogative of that Holy Spirit of whom we speak is that of God above his creatures, rat...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **A. 1.Corinthians 2:10, 11." The prerogative of that Holy Spirit of whom we speak is that of God above his creatures, rat...**
+
+### 55. `Thirdly, He dwelleth in us, as God in a temple, Romans 8:9, 1 Corinthians 3:16; thereby sanctifying us, 1 Corinthians 6:...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **Thirdly, He dwelleth in us, as God in a temple, Romans 8:9, 1 Corinthians 3:16; thereby sanctifying us, 1 Corinthians 6:...**
+
+### 56. `[[BLOCKQUOTE]] "Whence is the Holy Ghost sent? —`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Whence is the Holy Ghost sent? —**
+
+### 57. `A. 1.Peter 1:12, 'Down from heaven.'"`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **A. 1.Peter 1:12, 'Down from heaven.'"**
+
+### 58. `2. Our Savior, Christ, says here, "He shall not speak of himself;' but he nowhere says, "He shall not impart of his own ...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Examination.*
+* **Contexts:**
+  * **2. Our Savior, Christ, says here, "He shall not speak of himself;' but he nowhere says, "He shall not impart of his own ...**
+
+### 59. `[[BLOCKQUOTE]] "Doth not Christ forgive sins? —`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 17.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Doth not Christ forgive sins? —**
+
+### 60. `A. 'Christ forgave you,' Colossians 3:13." That Christ forgives sins is taken for granted; and yet forgiveness of sin is...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 17.*
+* **Contexts:**
+  * **A. 'Christ forgave you,' Colossians 3:13." That Christ forgives sins is taken for granted; and yet forgiveness of sin is...**
+
+### 61. `But yet as Mr B. eats his word as to Moses, and after he had affirmed that he saw the face of God, says he only saw the ...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 18.*
+* **Contexts:**
+  * **But yet as Mr B. eats his word as to Moses, and after he had affirmed that he saw the face of God, says he only saw the ...**
+
+### 62. `All the difficulty of this question ariseth from these words, "Like Moses;" and the sense by Mr B. put upon them, — how ...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Chapter 18.*
+* **Contexts:**
+  * **All the difficulty of this question ariseth from these words, "Like Moses;" and the sense by Mr B. put upon them, — how ...**
+
+### 63. `2. What is added to this question will be of an easy despatch. The word "law' may be considered generally, as to the nat...`
+* **Description:** Paragraph has unmatched double quotes (count: 23)
+* **Chapter:** *Chapter 18.*
+* **Contexts:**
+  * **2. What is added to this question will be of an easy despatch. The word "law' may be considered generally, as to the nat...**
+
+### 64. `2. If the law wants perfection, it is in respect of its essential parts, or its integral parts, or in respect of degrees...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 18.*
+* **Contexts:**
+  * **2. If the law wants perfection, it is in respect of its essential parts, or its integral parts, or in respect of degrees...**
+
+### 65. `1. The first is in reference to the sixth commandment, "Thou shalt not kill." This the Pharisees so interpreted as that ...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 18.*
+* **Contexts:**
+  * **1. The first is in reference to the sixth commandment, "Thou shalt not kill." This the Pharisees so interpreted as that ...**
+
+### 66. `Q. Were those better promises of God touching eternal life and immortality hidden in the dark and not brought to light u...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 18.*
+* **Contexts:**
+  * **Q. Were those better promises of God touching eternal life and immortality hidden in the dark and not brought to light u...**
+
+### 67. `2. From the command, and the natural and eternal obligation of it, in these repeated words, Τῷ Θεῷ προκύνησον.  It is th...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 19.*
+* **Contexts:**
+  * **2. From the command, and the natural and eternal obligation of it, in these repeated words, Τῷ Θεῷ προκύνησον.  It is th...**
+
+### 68. `This Franken seems to have been a subtile fellow, who, denying with Socinus that Christ was God, saw evidently that it w...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 19.*
+* **Contexts:**
+  * **This Franken seems to have been a subtile fellow, who, denying with Socinus that Christ was God, saw evidently that it w...**
+
+### 69. `The next argument of Franken, whereby he brought his adversary to another absurdity, had its rise from a distinction giv...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 19.*
+* **Contexts:**
+  * **The next argument of Franken, whereby he brought his adversary to another absurdity, had its rise from a distinction giv...**
+
+### 70. `How the whole nation of the Socinians have since consented into this notion of their master, I need not manifest. It is ...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Mr Biddle's Eleventh Chapter Examined.*
+* **Contexts:**
+  * **How the whole nation of the Socinians have since consented into this notion of their master, I need not manifest. It is ...**
+
+### 71. `Ans . That Christ is a high priest there also we grant; that he is so there only, there is not one word in the place cit...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Mr Biddle's Eleventh Chapter Examined.*
+* **Contexts:**
+  * **Ans . That Christ is a high priest there also we grant; that he is so there only, there is not one word in the place cit...**
+
+### 72. `Περικαθάρματα are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them fo...`
+* **Description:** Paragraph has unmatched double quotes (count: 29)
+* **Chapter:** *Chapter 22.*
+* **Contexts:**
+  * **Περικαθάρματα are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them fo...**
+
+### 73. `(2.) The apostle instances, in particular, by what means the law could not do this great work of "making the comers ther...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Chapter 22.*
+* **Contexts:**
+  * **(2.) The apostle instances, in particular, by what means the law could not do this great work of "making the comers ther...**
+
+### 74. `[1.] It is for the good of them that may be like-minded with him that is punished, that they may be deterred, affrighted...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 23.*
+* **Contexts:**
+  * **[1.] It is for the good of them that may be like-minded with him that is punished, that they may be deterred, affrighted...**
+
+### 75. `[2.] It is for the good of others, that they may not be hurt in the like kind as some were by the sin of him who is puni...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 23.*
+* **Contexts:**
+  * **[2.] It is for the good of others, that they may not be hurt in the like kind as some were by the sin of him who is puni...**
+
+### 76. `2. "To meet," or "to make to meet" properly, which is the first and most clear sense of the word. It is often used for t...`
+* **Description:** Paragraph has unmatched double quotes (count: 23)
+* **Chapter:** *Chapter 24.*
+* **Contexts:**
+  * **2. "To meet," or "to make to meet" properly, which is the first and most clear sense of the word. It is often used for t...**
+
+### 77. `First, then, that the words cannot be interpreted "to pray or intercede'' is evident from the contexture, wherein it is ...`
+* **Description:** Paragraph has unmatched double quotes (count: 15)
+* **Chapter:** *Chapter 24.*
+* **Contexts:**
+  * **First, then, that the words cannot be interpreted "to pray or intercede'' is evident from the contexture, wherein it is ...**
+
+### 78. `[1.] The first is "innovatio obligationis," the "innovation of the obligation," wherein we were detained and bound over ...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Chapter 24.*
+* **Contexts:**
+  * **[1.] The first is "innovatio obligationis," the "innovation of the obligation," wherein we were detained and bound over ...**
+
+### 79. `1. For the words themselves: יַצְכִּיל, with the Vulgar Latin, he renders "intelliget," "shall understand." The word sig...`
+* **Description:** Paragraph has unmatched double quotes (count: 21)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **1. For the words themselves: יַצְכִּיל, with the Vulgar Latin, he renders "intelliget," "shall understand." The word sig...**
+
+### 80. `"Ita asperget gentes multas. In Hebraeo, 'Sic asperget,' ut re-spondeat illi, sicut,' quod praecessit. Multos ex gentibu...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **"Ita asperget gentes multas. In Hebraeo, 'Sic asperget,' ut re-spondeat illi, sicut,' quod praecessit. Multos ex gentibu...**
+
+### 81. `An entrance is made in these words into the account that the prophet intends to give why so few believed in Christ, the ...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **An entrance is made in these words into the account that the prophet intends to give why so few believed in Christ, the ...**
+
+### 82. `Jeremiah shall serve God in his prophetical office whilst he is young. 'And as a root out of a dry ground;' — He shall b...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **Jeremiah shall serve God in his prophetical office whilst he is young. 'And as a root out of a dry ground;' — He shall b...**
+
+### 83. `All these things he saith the Jews shall say after the taking of the city."`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **All these things he saith the Jews shall say after the taking of the city."**
+
+### 84. `2. The words used to express this cause of wounding are two, and both emphatical. The filet is פָשַׁע: "He was wounded מ...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **2. The words used to express this cause of wounding are two, and both emphatical. The filet is פָשַׁע: "He was wounded מ...**
+
+### 85. `This, then, being the reading of the words, "He was wounded or tormented for our sins," the sense as relating to Jesus C...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **This, then, being the reading of the words, "He was wounded or tormented for our sins," the sense as relating to Jesus C...**
+
+### 86. `Verse 7, "He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter,...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **Verse 7, "He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter,...**
+
+### 87. `[[BLOCKQUOTE]] "De carcere et de judicio ablatus est. Id est, liberatus tandem. Judicium vocat hoc, quia specie judicii ...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "De carcere et de judicio ablatus est. Id est, liberatus tandem. Judicium vocat hoc, quia specie judicii ...**
+
+### 88. `"Generationem ejus quis enarrabit? Quis numerare poterit dies vitae ejus? Id est, erit valde longsevus.`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **"Generationem ejus quis enarrabit? Quis numerare poterit dies vitae ejus? Id est, erit valde longsevus.**
+
+### 89. `3. "For he was cut off out of the land of the living." Οτι αἴρεται ἀπὸ τῆς ἡ ζωὴ αὐτοῦ — "His life was taken from the ea...`
+* **Description:** Paragraph has unmatched double quotes (count: 15)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **3. "For he was cut off out of the land of the living." Οτι αἴρεται ἀπὸ τῆς ἡ ζωὴ αὐτοῦ — "His life was taken from the ea...**
+
+### 90. `A farther fruit of the travail of the Lord Christ, in his conquest over all oppositions, in the victory he obtained, the...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 25.*
+* **Contexts:**
+  * **A farther fruit of the travail of the Lord Christ, in his conquest over all oppositions, in the victory he obtained, the...**
+
+### 91. `2dly. His soul. was made an offering for sin," Isaiah 53:10; and his "soul was heavy unto death," Matthew 26:37, 38.`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 26.*
+* **Contexts:**
+  * **2dly. His soul. was made an offering for sin," Isaiah 53:10; and his "soul was heavy unto death," Matthew 26:37, 38.**
+
+### 92. `He was to do that which the old sacrifices could not do, as hath been declared: "For it was not possible that the blood ...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 27.*
+* **Contexts:**
+  * **He was to do that which the old sacrifices could not do, as hath been declared: "For it was not possible that the blood ...**
+
+### 93. `[2.] That in this "body," or human nature, he should be a "servant,'' or yield obedience. Hence God calls him his servan...`
+* **Description:** Paragraph has unmatched double quotes (count: 17)
+* **Chapter:** *Chapter 27.*
+* **Contexts:**
+  * **[2.] That in this "body," or human nature, he should be a "servant,'' or yield obedience. Hence God calls him his servan...**
+
+### 94. `Neither is the church of God at all beholding to some late expositors, who, to show their skill in the Hebrew doctors, w...`
+* **Description:** Paragraph has unmatched double quotes (count: 15)
+* **Chapter:** *Chapter 28.*
+* **Contexts:**
+  * **Neither is the church of God at all beholding to some late expositors, who, to show their skill in the Hebrew doctors, w...**
+
+### 95. `We are bought by Christ, saith the apostle: Ηγοράσθητε, "Ye are bought," 1 Corinthians 6:20. But this buying may be take...`
+* **Description:** Paragraph has unmatched double quotes (count: 23)
+* **Chapter:** *Chapter 28.*
+* **Contexts:**
+  * **We are bought by Christ, saith the apostle: Ηγοράσθητε, "Ye are bought," 1 Corinthians 6:20. But this buying may be take...**
+
+### 96. `They are persons "whose names are not written in the book of life of the Lamb," Revelation 13:8; being "of old ordained ...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Chapter 31.*
+* **Contexts:**
+  * **They are persons "whose names are not written in the book of life of the Lamb," Revelation 13:8; being "of old ordained ...**
+
+### 97. `Yea, when he had been "lifted up' to "draw all men unto him," John 3:14, John 12:32, and, being ascended, had broken dow...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Chapter 31.*
+* **Contexts:**
+  * **Yea, when he had been "lifted up' to "draw all men unto him," John 3:14, John 12:32, and, being ascended, had broken dow...**
+
+### 98. `2. It is called "destruction," and "perdition," and "everlasting destruction," 1 Thessalonians 5:3; 2 Peter 3:7; 2 Thess...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Chapter 35.*
+* **Contexts:**
+  * **2. It is called "destruction," and "perdition," and "everlasting destruction," 1 Thessalonians 5:3; 2 Peter 3:7; 2 Thess...**
+
+### 99. `God threatens men with death and destruction, and describes that death and destruction to consist in the abiding under h...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Chapter 35.*
+* **Contexts:**
+  * **God threatens men with death and destruction, and describes that death and destruction to consist in the abiding under h...**
+
+### 100. `[[BLOCKQUOTE]] "Credere in Jesum Christum nihil aliud est quam Jesu Christo confidere, et idcirco ex ejus praescripto vi...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Credere in Jesum Christum nihil aliud est quam Jesu Christo confidere, et idcirco ex ejus praescripto vi...**
+
+### 101. `Deo obtemperemus," etc. — Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. The...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **Deo obtemperemus," etc. — Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. The...**
+
+### 102. `[[BLOCKQUOTE]] "Diligenter cavere debemus ne vitae sanctitatem et innocentiam, justificationem nostram coram Deo esse cr...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Diligenter cavere debemus ne vitae sanctitatem et innocentiam, justificationem nostram coram Deo esse cr...**
+
+### 103. `justificationem nobis non contingere decrevit Deus." — Socin. Synop. Justificat. 2:p. 14. "Id a nobis revera exegit, ut ...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **justificationem nobis non contingere decrevit Deus." — Socin. Synop. Justificat. 2:p. 14. "Id a nobis revera exegit, ut ...**
+
+### 104. `[[BLOCKQUOTE]] "Justificatio est cum nos Deus pro justis habet, quod ea ratione facit, cum nobis et peccata remittit, et...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Justificatio est cum nos Deus pro justis habet, quod ea ratione facit, cum nobis et peccata remittit, et...**
+
+### 105. `[[BLOCKQUOTE]] "Dicent ergo Arminiani, nos hic justificationem sumere pro sensu et notitia justificationis: ideoque homi...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Dicent ergo Arminiani, nos hic justificationem sumere pro sensu et notitia justificationis: ideoque homi...**
+
+### 106. `(1.) est actus Dei absolventis terminatus in conscientia hominis, citati et tracti ad tribunale tremendi judicis; qui ac...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **(1.) est actus Dei absolventis terminatus in conscientia hominis, citati et tracti ad tribunale tremendi judicis; qui ac...**
+
+### 107. `[[BLOCKQUOTE]] "The words of one that writes this way are these: — "'Here two things may be observed: — "'1. What we asc...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "The words of one that writes this way are these: — "'Here two things may be observed: — "'1. What we asc...**
+
+### 108. `[[BLOCKQUOTE]] "This man," says he, seems to judge that the name of complete justification is proper to that in conscien...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "This man," says he, seems to judge that the name of complete justification is proper to that in conscien...**
+
+### 109. `[[BLOCKQUOTE]] "1. Not all, not the same measure of sanctification for one as for another; not faith for all for whom he...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "1. Not all, not the same measure of sanctification for one as for another; not faith for all for whom he...**
+
+### 110. `So he. The expression of our dying with Christ is fallen upon again, p. 226; of which he desires leave to speak as confi...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **So he. The expression of our dying with Christ is fallen upon again, p. 226; of which he desires leave to speak as confi...**
+
+### 111. `Seventhly, I profess that we are absolved, pardoned, and justified, for Christ's sake, and therefore that Christ is reck...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Of the Death of Christ, and of Justification:*
+* **Contexts:**
+  * **Seventhly, I profess that we are absolved, pardoned, and justified, for Christ's sake, and therefore that Christ is reck...**
+
+### 112. `Ος τὰς ἀμαρτίας ἡμῶν αὐτὸς ἀνήνεγκεν, etc. Ανήεγκεν hic est abstulit, quod sequentia ostendunt, quomodo idem verbum sumi...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *A Second Consideration of the Annotations of Hugo Grotius.*
+* **Contexts:**
+  * **Ος τὰς ἀμαρτίας ἡμῶν αὐτὸς ἀνήνεγκεν, etc. Ανήεγκεν hic est abstulit, quod sequentia ostendunt, quomodo idem verbum sumi...**
+
+### 113. `The sum of what is to this purpose by me affirmed is, that in the Annotations on the Old and New Testament, Grotius hath...`
+* **Description:** Paragraph has unmatched double quotes (count: 17)
+* **Chapter:** *A Second Consideration of the Annotations of Hugo Grotius.*
+* **Contexts:**
+  * **The sum of what is to this purpose by me affirmed is, that in the Annotations on the Old and New Testament, Grotius hath...**
+
+---
 

@@ -1,34 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T10:50:04.399943+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-12T17:44:59.715072+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 3,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "possible_beta_code_residue",
-      "message": "Possible Beta Code residue detected",
-      "files": 1
-    },
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 2
-    },
-    {
-      "code": "orphan_endnotes",
-      "message": "Some endnote anchors have no matching noteref",
-      "examples": [
-        "EPUB/endnotes.xhtml#fn285",
-        "EPUB/endnotes.xhtml#fn446",
-        "EPUB/endnotes.xhtml#fn489"
-      ]
-    }
-  ],
+  "warnings": [],
   "info": {
     "file_count": 97,
-    "epub_size_bytes": 8445009,
+    "epub_size_bytes": 8445150,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -54,15 +34,11 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 1084,
-      "unique_noteref_targets": 1083,
-      "endnote_anchor_count": 1086,
+      "noteref_count": 1088,
+      "unique_noteref_targets": 1087,
+      "endnote_anchor_count": 1087,
       "missing_endnote_targets": [],
-      "orphan_endnotes": [
-        "EPUB/endnotes.xhtml#fn285",
-        "EPUB/endnotes.xhtml#fn446",
-        "EPUB/endnotes.xhtml#fn489"
-      ]
+      "orphan_endnotes": []
     },
     "content_scan": {
       "boilerplate_hits": 0,
@@ -72,7 +48,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 2,
+      "repeated_phrase_count": 1,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
@@ -83,11 +59,11 @@
       "structural_bold_leak_files": 0,
       "repeated_structural_marker_files": 0,
       "scholastic_bold_leak_files": 0,
-      "inline_scholastic_label_files": 2,
+      "inline_scholastic_label_files": 0,
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 15,
+      "lowercase_paragraph_start_files": 0,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -96,7 +72,7 @@
         "beta_code": [
           {
             "file": "EPUB/endnotes.xhtml",
-            "text": "ja"
+            "text": "Aj"
           }
         ],
         "escaped_lang_tag": [],
@@ -107,11 +83,6 @@
           {
             "file": "combined_text",
             "text": "of the death of christ and of justification",
-            "count": 2
-          },
-          {
-            "file": "combined_text",
-            "text": "a review of the annotations of hugo grotius",
             "count": 1
           }
         ],
@@ -131,64 +102,14 @@
         "structural_bold_leak": [],
         "repeated_structural_marker": [],
         "scholastic_bold_leak": [],
-        "inline_scholastic_label": [
-          {
-            "file": "EPUB/ch020.xhtml",
-            "text": "e Ans."
-          },
-          {
-            "file": "EPUB/ch049.xhtml",
-            "text": "d Ans."
-          }
-        ],
+        "inline_scholastic_label": [],
         "trailing_scholastic_label": [],
         "digression_not_h3": [],
         "cross_chapter_continuation": [],
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/ch003.xhtml",
-            "text": "who is your unworthy fellow-laborer"
-          },
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "and whose blasphemy comes not at all short of it. The first is of"
-          },
-          {
-            "file": "EPUB/ch005.xhtml",
-            "text": "for if we once let go those forms of sound words learned from the apostles, and t"
-          },
-          {
-            "file": "EPUB/ch006.xhtml",
-            "text": "so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, \"Who hath f"
-          },
-          {
-            "file": "EPUB/ch014.xhtml",
-            "text": "is so far from proving that the image of God wherein man was created did consist"
-          },
-          {
-            "file": "EPUB/ch017.xhtml",
-            "text": "etc."
-          },
-          {
-            "file": "EPUB/ch018.xhtml",
-            "text": "and, verse 53,"
-          },
-          {
-            "file": "EPUB/ch020.xhtml",
-            "text": "to which is added that of Revelation 4:8; chap. 4:8,"
-          },
-          {
-            "file": "EPUB/ch031.xhtml",
-            "text": "but that I find him in his next query repeating that expression, \"Like unto me,\""
-          },
-          {
-            "file": "EPUB/ch032.xhtml",
-            "text": "and, verse 13, joint worship is given to him who sits upon the throne and to the"
-          }
-        ],
+        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
@@ -197,5 +118,6 @@
     },
     "nav_link_count": 64,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
-  }
+  },
+  "unused_whitelist_epub_warnings": []
 }

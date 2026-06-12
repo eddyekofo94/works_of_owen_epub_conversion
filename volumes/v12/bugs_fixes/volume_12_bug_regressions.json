@@ -1,5 +1,5 @@
 {
-  "volume": 12,
+  "volume": "12",
   "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_text_integrity.json",
@@ -172,8 +172,8 @@
     },
     {
       "label": "Missing enumerator markers",
-      "observed": 1,
-      "budget": 1,
+      "observed": 2,
+      "budget": 2,
       "status": "ok",
       "samples": [
         {
@@ -192,6 +192,17 @@
             {
               "location": "pdf:p133",
               "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
+            }
+          ]
+        },
+        {
+          "marker": "(8.)",
+          "pdf": 1,
+          "epub": 0,
+          "examples": [
+            {
+              "location": "pdf:p178",
+              "context": "f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
             }
           ]
         }
@@ -234,16 +245,10 @@
     },
     {
       "label": "Missing Greek clauses",
-      "observed": 1,
+      "observed": 0,
       "budget": 16,
       "status": "ok",
-      "samples": [
-        {
-          "page": 793,
-          "word_count": 16,
-          "sample": "μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Missing Hebrew clauses",
@@ -305,18 +310,13 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 2,
+      "observed": 1,
       "budget": 7,
       "status": "ok",
       "samples": [
         {
           "file": "combined_text",
           "text": "of the death of christ and of justification",
-          "count": 2
-        },
-        {
-          "file": "combined_text",
-          "text": "a review of the annotations of hugo grotius",
           "count": 1
         }
       ]
@@ -329,7 +329,7 @@
       "samples": [
         {
           "file": "EPUB/endnotes.xhtml",
-          "text": "ja"
+          "text": "Aj"
         }
       ]
     },
@@ -454,19 +454,10 @@
     },
     {
       "label": "Inline scholastic labels",
-      "observed": 2,
+      "observed": 0,
       "budget": 2,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch020.xhtml",
-          "text": "e Ans."
-        },
-        {
-          "file": "EPUB/ch049.xhtml",
-          "text": "d Ans."
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Trailing scholastic labels",
@@ -512,51 +503,10 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 15,
+      "observed": 0,
       "budget": 20,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch003.xhtml",
-          "text": "who is your unworthy fellow-laborer"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "and whose blasphemy comes not at all short of it. The first is of"
-        },
-        {
-          "file": "EPUB/ch005.xhtml",
-          "text": "for if we once let go those forms of sound words learned from the apostles, and t"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "text": "so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, \"Who hath f"
-        },
-        {
-          "file": "EPUB/ch014.xhtml",
-          "text": "is so far from proving that the image of God wherein man was created did consist"
-        },
-        {
-          "file": "EPUB/ch017.xhtml",
-          "text": "etc."
-        },
-        {
-          "file": "EPUB/ch018.xhtml",
-          "text": "and, verse 53,"
-        },
-        {
-          "file": "EPUB/ch020.xhtml",
-          "text": "to which is added that of Revelation 4:8; chap. 4:8,"
-        },
-        {
-          "file": "EPUB/ch031.xhtml",
-          "text": "but that I find him in his next query repeating that expression, \"Like unto me,\""
-        },
-        {
-          "file": "EPUB/ch032.xhtml",
-          "text": "and, verse 13, joint worship is given to him who sits upon the throne and to the"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Noteref leading spaces",

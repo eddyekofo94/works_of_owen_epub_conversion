@@ -15,13 +15,13 @@
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 1 | 1 | OK |
+| Missing enumerator markers | 2 | 2 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
 | Low Hebrew word coverage | 0 | 0 | OK |
-| Missing Greek clauses | 1 | 16 | OK |
+| Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
 | Flat ANALYSIS chapters | 0 | 0 | OK |
@@ -30,7 +30,7 @@
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 2 | 7 | OK |
+| Repeated phrase hits | 1 | 7 | OK |
 | Possible Beta Code residue files | 1 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
@@ -49,14 +49,14 @@
 | Structural bold leaks | 0 | 0 | OK |
 | Repeated structural markers | 0 | 0 | OK |
 | Scholastic bold leaks | 0 | 0 | OK |
-| Inline scholastic labels | 2 | 2 | OK |
+| Inline scholastic labels | 0 | 2 | OK |
 | Trailing scholastic labels | 0 | 0 | OK |
 | DIGRESSION headings not h3 | 0 | 0 | OK |
 | Cross-chapter continuation before heading | 0 | 0 | OK |
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 15 | 20 | OK |
+| Lowercase page fragments | 0 | 20 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -93,29 +93,12 @@
 ### Missing enumerator markers
 
 - marker: (1.)
-
-### Missing Greek clauses
-
-- page: 793; sample: μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι
+- marker: (8.)
 
 ### Repeated phrase hits
 
 - file: combined_text; text: of the death of christ and of justification
-- file: combined_text; text: a review of the annotations of hugo grotius
 
 ### Possible Beta Code residue files
 
-- file: EPUB/endnotes.xhtml; text: ja
-
-### Inline scholastic labels
-
-- file: EPUB/ch020.xhtml; text: e Ans.
-- file: EPUB/ch049.xhtml; text: d Ans.
-
-### Lowercase page fragments
-
-- file: EPUB/ch003.xhtml; text: who is your unworthy fellow-laborer
-- file: EPUB/ch004.xhtml; text: and whose blasphemy comes not at all short of it. The first is of
-- file: EPUB/ch005.xhtml; text: for if we once let go those forms of sound words learned from the apostles, and t
-- file: EPUB/ch006.xhtml; text: so chap. 21:6, 22:13. Which also is fully asserted, Romans 11:35, 36, "Who hath f
-- file: EPUB/ch014.xhtml; text: is so far from proving that the image of God wherein man was created did consist
+- file: EPUB/endnotes.xhtml; text: Aj

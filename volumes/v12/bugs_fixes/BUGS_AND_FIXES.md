@@ -22,6 +22,11 @@
 | 16 | Chapter 3 summary layout formatting & drape typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
 | 17 | Chapter 49 summary formatting & CONCENRING typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
 | 18 | Biographical double-tagging and missing prefatory biographies | render.py, technical_glossary.py, biography_db.py, convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 19 | List sequence gap mapping (8.) -> (3.) | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 20 | Missing footnote/endnote references [f285], [f446], [f489] | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 21 | Latin OCR typos in footnote 84 | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 22 | Spaced scholastic labels in ch020 and ch049 | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 23 | Legitimate false positive warnings whitelisted | volume_12_whitelist.json | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
 
 
 
@@ -115,6 +120,26 @@ See previous sessions.
 - Mapped short surnames (such as "Beza", "Crellius", "Bull", "Waterland", etc.) directly to their respective biographies in the central database, keeping the original names in Owen's main text intact while ensuring they are correctly tagged.
 - Removed the inline main-text name expansion replacements from `volumes/v12/convert.py` to keep Owen's original author names unchanged in the text.
 
+### 19. List Sequence Gap Mapping (Awaiting Validation)
+**Problem:** A list sequence gap existed in Chapter 8 where `(8.)` was used instead of `(3.)` after `(2.)`.
+**Fix:** Added a text replacement mapping `(8.)` to `(3.)` under the relevant context.
+
+### 20. Missing Footnote/Endnote References [f285], [f446], [f489] (Awaiting Validation)
+**Problem:** Endnotes `fn285`, `fn446`, and `fn489` were defined in `endnotes.xhtml` but lacked corresponding `[fNNN]` references in the main body text, rendering them orphaned and unreachable.
+**Fix:** Added context-targeted, lookahead-protected regexes in `convert.py` to insert `[f285]`, `[f446]`, and `[f489]` markers into their correct positions in the body text. Updated the test baseline `ALLOWED_FOOTNOTE_ANOMALIES` in `test_footnote_integrity.py` to remove these orphans and set `mismatch_delta` to `1`.
+
+### 21. Latin OCR Typos in Footnote 84 (Awaiting Validation)
+**Problem:** Typographical errors existed in the Latin text of footnote 84: `hosae iin re` (instead of `hac in re`), `Statorii mgenium` (instead of `Statorii ingenium`), and `ne ja,` (instead of `ne jam,`).
+**Fix:** Added string replacements in `convert.py` to fix the Latin typos. The correction of `ne ja,` also resolved the `possible_beta_code_residue` warning for `ja`.
+
+### 22. Spaced Scholastic Labels in ch020 and ch049 (Awaiting Validation)
+**Problem:** Non-standard inline scholastic labels existed (`time Ans.` and `What is God Ans.`) which triggered warnings.
+**Fix:** Corrected to `time? Ans.` and `What is God? Ans.` using text overrides in `convert.py`, format-cleaning them.
+
+### 23. Legitimate False Positive Warnings Whitelisted (Awaiting Validation)
+**Problem:** Mechanical warnings were flagged: `possible_beta_code_residue` for `Aj` (legitimate abbreviation of Sophocles' *Ajax*) in `endnotes.xhtml`, and `repeated_phrases` for `"of the death of christ and of justification"` (actual title of the treatise).
+**Fix:** Added the warnings to `volume_12_whitelist.json` and documented them in `volume_12_whitelist.md`.
+
 ---
 
 ## Remaining Work
@@ -155,12 +180,18 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T10:50:04.399943+00:00
+**Last run:** 2026-06-12T17:44:59.715072+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub`
-**Status:** WARN (0 errors, 3 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_12_audit.json`
@@ -175,18 +206,12 @@ Reports:
 | NAV links | 64 |
 | Greek chars / untagged | 14115 / 0 |
 | Hebrew chars / untagged | 1448 / 0 |
-| Noteref links / endnote anchors | 1084 / 1086 |
+| Noteref links / endnote anchors | 1088 / 1087 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 1 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 2 |
-
-Warnings requiring triage:
-
-- `possible_beta_code_residue`: Possible Beta Code residue detected
-- `repeated_phrases`: Potential repeated phrases detected
-- `orphan_endnotes`: Some endnote anchors have no matching noteref
+| Repeated phrase hits | 1 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -207,11 +232,17 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T10:50:49.485692+00:00
-**Status:** WARN (13 warnings)
+**Last run:** 2026-06-12T17:45:44.468617+00:00
+**Status:** WARN (11 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -221,40 +252,40 @@ Reports:
 |-------|--------|
 | PDF pages | 822 |
 | EPUB text files | 61 |
-| EPUB paragraphs/headings | 3619 |
-| Approximate PDF-to-EPUB word coverage | 0.9991 |
+| EPUB paragraphs/headings | 3651 |
+| Approximate PDF-to-EPUB word coverage | 0.9992 |
 | Weak page matches | 0 |
-| Dense source windows checked | 32925 |
+| Dense source windows checked | 33993 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
 | Top-of-page body windows checked | 793 |
-| Top-of-page windows skipped as unstable | 47 |
-| Missing top-of-page body windows | 3 |
+| Top-of-page windows skipped as unstable | 8 |
+| Missing top-of-page body windows | 2 |
 | Bottom-of-page body windows checked | 740 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 13 |
+| Missing bottom-of-page body windows | 2 |
 | Possible faulty paragraph splits | 40 |
-| Structural starts excluded from split warnings | 443 |
-| Short fragments | 53 |
+| Structural starts excluded from split warnings | 444 |
+| Short fragments | 50 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 3 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 4 |
+| Suspicious large-number starts | 3 |
 | Roman heading candidates | 0 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 450 |
-| EPUB enumerator markers | 460 |
-| Missing enumerator marker forms | 1 |
+| EPUB enumerator markers | 461 |
+| Missing enumerator marker forms | 2 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 2590 / 2593 |
-| Greek word coverage ratio | 0.998 |
+| PDF Greek words / EPUB Greek words | 2590 / 2590 |
+| Greek word coverage ratio | 0.9992 |
 | PDF Hebrew words / EPUB Hebrew words | 222 / 221 |
 | Hebrew word coverage ratio | 0.9955 |
-| Missing Greek clauses | 1 |
+| Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -268,8 +299,6 @@ Warnings requiring triage:
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 

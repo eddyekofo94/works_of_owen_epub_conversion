@@ -1,10 +1,10 @@
 {
-  "volume": 12,
+  "volume": "12",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-09T10:50:49.485692+00:00",
+  "generated_at": "2026-06-12T17:45:44.468617+00:00",
   "status": "warn",
-  "warning_count": 13,
+  "warning_count": 11,
   "warnings": [
     {
       "code": "dense_source_window_loss",
@@ -43,14 +43,6 @@
       "message": "Repeated word windows may indicate ghost-layer duplication"
     },
     {
-      "code": "missing_greek_clauses",
-      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
-    },
-    {
-      "code": "low_latin_tagging",
-      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
-    },
-    {
       "code": "missing_latin_clauses",
       "message": "Some dense Latin passages from the PDF are missing from the EPUB"
     },
@@ -60,16 +52,17 @@
     }
   ],
   "pdf": {
-    "page_count": 822
+    "page_count": 822,
+    "skipped_detected": []
   },
   "epub": {
     "spine_text_files": 61,
-    "paragraph_count": 3619
+    "paragraph_count": 3651
   },
   "word_coverage": {
     "pdf_content_tokens": 270734,
-    "epub_content_tokens": 272543,
-    "coverage_ratio": 0.9991,
+    "epub_content_tokens": 272616,
+    "coverage_ratio": 0.9992,
     "missing_word_samples": [
       {
         "word": "pre",
@@ -126,7 +119,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32925,
+    "dense_windows_checked": 33993,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -239,7 +232,7 @@
       },
       {
         "page": 145,
-        "sample": "σωματι σημηναι αδυνατον και το τελειον τω ατελει καταλαβεσθαι ου δυνατον και το αιδιον"
+        "sample": "καταληφθηναι ου δυναται εννοουμαις τατ εννοουμαι εξειπειν ου δυνατον τουτο εστιν θεος and calicratides"
       },
       {
         "page": 146,
@@ -270,10 +263,6 @@
         "sample": "unto the man genesis where did god put man afiter he was created genesis"
       },
       {
-        "page": 187,
-        "sample": "things corinthians revelation of the holy ghost the same is alarmed genesis job psalm"
-      },
-      {
         "page": 194,
         "sample": "aside all the places of scripture where it is positively and punctual asserted that"
       },
@@ -286,8 +275,12 @@
         "sample": "were sometimes darkness but now are ye light in the lord chap for god"
       },
       {
-        "page": 209,
-        "sample": "and james testify only that he was made in the image of god at"
+        "page": 220,
+        "sample": "examination the aim and design of our catechist in this chapter being to despoil"
+      },
+      {
+        "page": 223,
+        "sample": "of his way being then his only begotten son full of grace and truth"
       }
     ]
   },
@@ -306,54 +299,12 @@
   "top_of_page_integrity": {
     "top_windows_checked": 820,
     "top_windows_usable": 793,
-    "skipped_top_window_count": 47,
+    "skipped_top_window_count": 8,
     "skipped_top_windows": [
-      {
-        "page": 135,
-        "window": "all things are disposed of by the virtue of one infinite mind and plutarch",
-        "sample": "— \"All things are disposed of by the virtue of one infinite mind.\" And Plutarch, expressing the same thing, says he is nou~v kaqaro<v kai<",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 140,
-        "window": "face of the city it is confessed that it is very frequently translated pro",
-        "sample": "face of\") \"the city.\" It is confessed that it is very frequently translated pro>swpon by the LXX., as it is very variously translated by them;",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 145,
-        "window": "ou te ga ajnqrwpo morfov oj qeo ou te qeoeide ajnqrw pinon sw ma",
-        "sample": "Ou]te ga<r ajnqrwpo>morfov oJ Qeo<v ou]te qeoeide<v ajnqrw>pinon sw~ma, Phil de Opificio Mundi; — \"Neither hath God a human form, nor",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 146,
-        "window": "separate god from mortals and think not thyself of flesh like him and posidonius",
-        "sample": "\"Separate God from mortals, and think not thyself, of flesh, like him.\" And Posidonius plainly in Stobaeus as above: O Qeo<v ejsti pneu~ma",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 152,
-        "window": "timwri av fainome nhv dia fainome nhn ojligwri an desire joined with grief of",
-        "sample": "timwri>av fainome>nhv dia< fainome>nhn ojligwri>an, — \" desire joined with grief of that which appears to be revenge, for an appearing neglect or",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
       {
         "page": 201,
         "window": "as for his righteousness and holiness which as was said before because he was",
         "sample": "2. [As] for his righteousness and holiness, which, as was said before, because he was made upright, in the image of God, we ascribe unto him,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 210,
-        "window": "de diabo lou qa natov eijsh lqen eijv to ko smon peria zousi de",
-        "sample": "de< diabo>lou qa>natov eijsh~lqen eijv to<n ko>smon peria>zousi de< aujto<n oiJ th~v ejkei>nou meri>dov o]ntev. The opposition that is put",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 217,
-        "window": "render ejf by quoniam because or for that as our english translation doth the",
-        "sample": "render ejf w=| by quoniam, \"because,\" or \"for that,\" as our English translation doth, the argument is no less evident for original sin than if they",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -363,117 +314,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 297,
-        "window": "existence of christ before his nativity pri abraa gene sqai antequam esset saith he",
-        "sample": "existence of Christ before his nativity. \"Pri<n abraa<m gene>sqai, antequam esset,\" saith he, \"before he was;\" and he gives many instances to",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 333,
-        "window": "in the places they point unto ejkei nov in every one of them is",
-        "sample": "5. In the places they point unto, ejkei~nov in every one of them is referred to the next and immediate antecedent, as will be evident to our reader upon",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 371,
-        "window": "nqrwpov and scatov ada but that he was made ejn ojmoiw mati tou ada",
-        "sample": "a]nqrwpov and e]scatov Ada>m, but that he was made ejn oJmoiw>mati tou~ Ada>m is not said.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 373,
-        "window": "fqh ajgge loiv was seen of angels and so hath his witnesses in heaven",
-        "sample": "3. w]fqh ajgge>loiv, was \"seen of angels,\" and so hath his witnesses in heaven and earth; for when he came first into the world, all the angels",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 374,
-        "window": "or to glory anelh fqh is as much as nw ejlh fqh he was",
-        "sample": "or \"to glory.\" Anelh>fqh is as much as a]nw ejlh>fqh, \"he was taken up\" (ejn for eijv) \"into glory.\"",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 387,
-        "window": "pa ntwn qeo eujloghto eijv tou ajiw nov ajmh the words are most emphatically",
-        "sample": "pa>ntwn Qeo<v eujloghto<v eijv tou<v ajiw~nov ajmh>n The words are most emphatically expressive of the eternal deity of Christ, in contradistinction",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 424,
-        "window": "oujdei ejw rake pw pote john now the spirit doth not know the",
-        "sample": "oujdei<v eJw>rake pw>pote, John 1:18 Now the Spirit doth not know the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 427,
-        "window": "to all this in word it may be added that he is person the",
-        "sample": "8. To all this, in a word, it may be added that he is a person, the denial whereof is the only krhsfu>geton of the Socinians. They acknowledge",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 436,
-        "window": "they say potentia dei this we confess but we say he is not potentia",
-        "sample": "they say, potentia Dei. This we confess; but we say he is not potentia ejnerghtikh>, but uJpostatikh>, and that because we prove him to be God.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 451,
-        "window": "instantly upon his baptism luke tells you that he was plh rhv pneu matov",
-        "sample": "Instantly upon his baptism Luke tells you that he was plh>rhv Pneu>matov aJgi>ou, \"full of the Holy Ghost,\"",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 528,
-        "window": "are as the accursed things of the world and sacrifices for the people corinthians",
-        "sample": "are as the accursed things of the world, and sacrifices for the people,\" Corinthians 4:13; reading the words, w[sper kaqa>rmata, not wJv",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 533,
-        "window": "is evident from the event that they could not take away sin in most",
-        "sample": "is evident from the event that they could not take away sin. In most copies the words are, Epei< a}n ejpau>santo prosfero>menai. Those that add the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 545,
         "window": "and again the cause is put for the effect manger for the effect of",
         "sample": "And again, the cause [is put] for the effect, manger for the effect of it in punishment; and therefore we have translated the word \"vengeance,\"",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 546,
-        "window": "contra legem namely that it is ajnomi transgression of the law have it the",
-        "sample": "contra legem,\" — namely, that it is ajnomi>a, \"a transgression of the law.\" Have it the actual consent of the will or no, if it be a transgression of the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 559,
-        "window": "him for the iniquity of us all that is the lord prayed christ for",
-        "sample": "him for the iniquity of us all;\" that is, the LORD prayed Christ for the iniquities of us all. This sense of the word [æyGip]hi, in this place, Socinus",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 560,
-        "window": "that the word is often found in that sense so that it is no",
-        "sample": "1. That the word is often found in that sense, so that it is no new or Genesis 4:13, yni/[}, \"Mine",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 570,
-        "window": "shall not insist on the precise signification of the word ajnafe rw here used",
-        "sample": "I shall not insist on the precise signification of the word ajnafe>rw, here used, as though it expressed the outward manner of that suffering of Christ",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 580,
-        "window": "for the exposition of the words we agree that it is so he shall",
-        "sample": "For the exposition of the words, — 1. We agree that it is, \"So he shall sprinkle,\" an ajpo>dosiv, relating to the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 595,
-        "window": "the other word is hg næ the vulgate latin seems to look to the",
-        "sample": "The other word is hg,[}næ. The Vulgate Latin seems to look to the active use of the word, \"to answer,\" and therefore renders it \"voluit,\" \"he would,\" —",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -483,39 +326,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 633,
-        "window": "and though see no sufficient reason of relinquishing the usual interpretation of spe rmatov",
-        "sample": "And though I see no sufficient reason of relinquishing the usual interpretation of spe>rmatov Abraa<m ejpilamba>netai,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 644,
-        "window": "first the general nature of it consists in deliverance thence christ is called rjuo",
-        "sample": "FIRST. The general nature of it consists in deliverance. Thence Christ is called O rJuo>menov, \"The deliverer:\"",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 649,
-        "window": "parable of the lord and his servants matthew 23-35 he calls it to",
-        "sample": "parable of the lord and his servants, Matthew 18:23-35, he calls it to<",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 657,
         "window": "the third thing is that this deliverance from captivity be by the intervention of",
         "sample": "The THIRD thing is, that this deliverance from captivity be by the intervention of a price proper]y so called. That Christ did pay such a price",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 662,
-        "window": "free on the part of god in respect of his purpose and decree which",
-        "sample": "free on the part of God, in respect of his purpose and decree, which is called eklogh< ca>ritov,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 664,
-        "window": "grotius would have dikaiosu nh here to signify goodness and bounty which as we",
-        "sample": "Grotius would have dikaiosu>nh here to signify \"goodness\" and \"bounty;\" which as we deny not but that in some places in the Old",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -531,25 +344,13 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 675,
-        "window": "ajrgura pa mpolla de qu wn ejxilasa mhn pote aujto and so also doth",
-        "sample": "ajrgura~ pa>mpolla de< qu>wn ejxilasa>mhn pote< aujto>n. And so also doth Livy use the word \"reconcilio:\" \"Non movit modo talis oratio regem,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 693,
-        "window": "christ is so said to die ajnti hjmw that he is said in his",
-        "sample": "(4.) Christ is so said to die ajnti< hJmw~n, that he is said in his death to have \"our iniquity laid upon him,\" to \"bear our sins in his own body on the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 756,
-        "window": "another opportunity eij qeo qe lei kai zh sw and shall not now prevent",
-        "sample": "another opportunity, eij Qeo<v qe>lei kai< zh>sw, and shall not now prevent myself.",
+        "page": 757,
+        "window": "what sense maintain that the elect died and rose with christ see pp 82-84",
+        "sample": "what sense I maintain that the \"elect died and rose with Christ,\" see pp. 82-84 [pp. 472, 473].",
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 3,
+    "missing_top_window_count": 2,
     "missing_top_windows": [
       {
         "page": 11,
@@ -560,11 +361,6 @@
         "page": 136,
         "window": "chapter of the drape and bodily visible figure of god",
         "sample": "CHAPTER 3. Of the drape and bodily visible figure of God."
-      },
-      {
-        "page": 445,
-        "window": "exodus in the hebrew is µynip ala µynip panim el that which",
-        "sample": "Exodus 33:11, in the Hebrew is µyniP;Ala, µyniP;, panim el That which,"
       }
     ]
   },
@@ -573,77 +369,22 @@
     "bottom_windows_usable": 740,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 13,
+    "missing_bottom_window_count": 2,
     "missing_bottom_windows": [
-      {
-        "page": 145,
-        "window": "cwrei te qnhtw to qeo kai mh do kei omoion aujtw sarkiko kaqesta nai",
-        "sample": "Cwrei~te qnhtw~n to<n Qeo<n kai< mh< do>kei. Omoion aujtw~| sarkiko<n kaqesta>nai."
-      },
       {
         "page": 175,
         "window": "propositions that god hath so foretold the free actions of men",
         "sample": "propositions: — (1.) That God hath so foretold the free actions of men."
       },
       {
-        "page": 209,
-        "window": "ajfqarsi kai eijko na th ijdi av ijdio thtov ejpoi hsen aujto fqo nw",
-        "sample": "explained. The words are, Oti oJ Qeo<v e]ktise to<n a]nqrwton ejp ajfqarsi>a| kai< eijko>na th~v ijdi>av ijdio>thtov ejpoi>hsen aujto>n Fqo>nw|"
-      },
-      {
-        "page": 335,
-        "window": "they were created for him eijv aujto as it is said of the father",
-        "sample": "expressed in the enumeration foregoing or no; all things were created by him. They were created for him eijv aujto>n, as it is said of the Father,"
-      },
-      {
-        "page": 373,
-        "window": "fqh that is ajnelh fqh ejn do xh he was taken up into heaven",
-        "sample": "chap. 16:19, ajnelh>fqh, — that is, ajnelh>fqh ejn do>xh|, \"he was taken up into heaven,\""
-      },
-      {
-        "page": 399,
-        "window": "vocis aperture est et istud hber µæl isaiah clausum est",
-        "sample": "vocis aperture est, et istud hBer]µæl], Isaiah 9:6, clausum est?"
-      },
-      {
         "page": 438,
         "window": "timothy in whom we have redemption redemption for us",
         "sample": "1 Timothy 2:6, \"in whom we have redemption redemption for us,"
-      },
-      {
-        "page": 514,
-        "window": "the holy place aijwni an lu trwsin eujra menov after he had obtained eternal",
-        "sample": "chap. 9:12, \"He entered by his own blood into the holy place, aijwni>an lu>trwsin euJra>menov,\" — \"after he had obtained eternal"
-      },
-      {
-        "page": 526,
-        "window": "it by apolutrou and sometimes lutrw sasqai otherwise by rju omai and the like",
-        "sample": "the LXX. constantly render it by apolutrou~n and sometimes lutrw>sasqai, otherwise by rju>omai, and the like."
-      },
-      {
-        "page": 660,
-        "window": "mediator and as such he gave himself ajnti lutron price of redemption to god",
-        "sample": "1 Timothy 2:5, 6, gives us this fully. He is the mediator, and as such he gave himself ajnti>lutron, a price of redemption to God."
-      },
-      {
-        "page": 674,
-        "window": "word to the same purpose polla me pe mpwn ajnaqh mata crusa polla de",
-        "sample": "\"appease the anger of the goddess\" And Xenophon useth the word to the same purpose: Polla< me<n pe>mpwn ajnaqh>mata crusa~ polla< de<"
-      },
-      {
-        "page": 749,
-        "window": "reader will excuse me in what follows wv oujc ujpa rcwn ajlla timwrou menov",
-        "sample": "the reader will excuse me in what follows. Wv oujc uJpa>rcwn ajlla< timwrou>menov."
-      },
-      {
-        "page": 757,
-        "window": "para th tou ejle gcou gnoian or whether it be to ejk shmei ou",
-        "sample": "\"Malum omen!\" and the worse because of choice. Whether this proceed para< th<n tou~ ejle>gcou a]gnoian, or whether it be to< ejk shmei>ou"
       }
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3182,
+    "paragraphs_checked": 3211,
     "split_candidate_count": 40,
     "split_candidates": [
       {
@@ -802,14 +543,19 @@
         "next": "Ques. What are the testimonies of Scripture wherein they think that this pre-eternity of Christ is not indeed expressed, but yet may thence be proved?"
       },
       {
-        "file": "EPUB/ch020.xhtml",
-        "previous": " those which are answered by Socinus against Weik the Jesuit, whence most of their exceptions to these witnesses are transcribed. To the consideration of these they thus proceed: —",
-        "next": "Ques. What are those places of Scripture which seem to attribute something to Christ in a certain and definite time"
+        "file": "EPUB/ch019.xhtml",
+        "previous": "t is, from that time wherein God established a king among his people, which was done really in David, who was a Bethlehemite, and the author of the stock and family of Christ.' 285",
+        "next": "Ans. 1. Who necessitated our catechists to urge this place to prove the generation of Christ, when it is used only to prove his generation to be eternal, the thing itself being pro"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "is is all, the whole sum of what any of our adversaries, or rather the adversaries of Jesus Christ, have to object in their cause against these testimonies; whence we thus argue: —",
+        "next": "He who was begotten of God the Father with an eternal generation is eternal, and so, consequently, God; but so is Jesus Christ begotten of God the Father with an eternal generation"
       },
       {
         "file": "EPUB/ch020.xhtml",
-        "previous": "Ques. What are those places of Scripture which seem to attribute something to Christ in a certain and definite time",
-        "next": "Ans. They are of two sorts, whereof some respect the names, others the works, which they suppose in the Scriptures to be attributed to Christ."
+        "previous": " those which are answered by Socinus against Weik the Jesuit, whence most of their exceptions to these witnesses are transcribed. To the consideration of these they thus proceed: —",
+        "next": "Ques. What are those places of Scripture which seem to attribute something to Christ in a certain and definite time?"
       },
       {
         "file": "EPUB/ch022.xhtml",
@@ -840,15 +586,10 @@
         "file": "EPUB/ch023.xhtml",
         "previous": "s employment, that he was the servant of the Father, according as it was foretold that he should be, Isaiah 42:1, 19, and which he everywhere professed himself to be. He goes on, —",
         "next": "Εν ὁμοιώματι ἀνθρώπων γενόμενος . \" Cum similis esset hominibus, illis nempe primis, id est, peccati expers,\" 2 Corinthians 5:21; — \"Whereas he was like men, namely, those first; t"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "in a divine nature antecedently thereunto. The words are, \"For verily he took not on him the nature of angels; but he took on him the seed of Abraham.'' To this they answer, that —",
-        "next": "Herein not so much as any likeness of the incarnation, as they call it, doth appear; for this writer doth not say that \"Christ took\" (as some read it, and commonly they take it in "
       }
     ],
-    "structural_start_exclusions": 443,
-    "short_fragment_count": 53,
+    "structural_start_exclusions": 444,
+    "short_fragment_count": 50,
     "short_fragments": [
       {
         "file": "EPUB/ch003.xhtml",
@@ -884,15 +625,7 @@
       },
       {
         "file": "EPUB/ch017.xhtml",
-        "text": "etc."
-      },
-      {
-        "file": "EPUB/ch017.xhtml",
         "text": "He adds, 12th,"
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "text": "and, verse 53,"
       },
       {
         "file": "EPUB/ch019.xhtml",
@@ -975,10 +708,6 @@
         "text": "To this two things are required: —"
       },
       {
-        "file": "EPUB/ch039.xhtml",
-        "text": "etc."
-      },
-      {
         "file": "EPUB/ch041.xhtml",
         "text": "And, —"
       },
@@ -1009,6 +738,18 @@
       {
         "file": "EPUB/ch046.xhtml",
         "text": "His next question is: —"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "His next questions are, first, —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "THE first question is: —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Ques. Is prayer a Christian duty?"
       }
     ],
     "adjacent_duplicate_count": 0,
@@ -1032,15 +773,11 @@
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 4,
+    "suspicious_large_number_start_count": 3,
     "suspicious_large_number_starts": [
       {
         "file": "EPUB/ch011.xhtml",
         "text": "11. Crellius is something more candid, as he pretends, but indeed infected with the same venom with the other; for after he hath disputed for sundry pages to prove the foreknowledge of God, he concludes at last that for "
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "24. Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei.\" Again, \" Παρὰ σοί , refer ad illud εῖχον , et intellige, ut diximus, in decreto tuo .\" But what intends the learned man by those places of 1 Peter 1:"
       },
       {
         "file": "EPUB/ch039.xhtml",
@@ -1060,8 +797,8 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 450,
-    "epub_marker_count": 460,
-    "missing_marker_count": 1,
+    "epub_marker_count": 461,
+    "missing_marker_count": 2,
     "missing_markers": [
       {
         "marker": "(1.)",
@@ -1081,9 +818,20 @@
             "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
           }
         ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 1,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p178",
+            "context": "f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
+          }
+        ]
       }
     ],
-    "excess_marker_count": 5,
+    "excess_marker_count": 6,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -1106,12 +854,31 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p202",
+            "location": "EPUB/ch004.xhtml#p208",
             "context": "(2.) He was less exposed to the fury of the Papists, which he greatly feared (loving well the things of this world), than he would have been had he joined himself to any visible church"
           },
           {
-            "location": "EPUB/ch006.xhtml#p291",
+            "location": "EPUB/ch006.xhtml#p295",
             "context": "(2.) Mr B. pretending to give an account of the\" chiefest things pertaining to belief and practice,\" doth yet propose no question at all concerning many of the most important heads of"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 54,
+        "epub": 55,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p296",
+            "context": "(3.) What can be concluded of the mind of God in the Scripture, by cutting off any place or places of it from their dependence, connection, and tendency, catching at those words which"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p404",
+            "context": "(3.) I desire to know of Mr B. what the throne is made of that God sits on in the heavens, and how far the glistering of his glory doth extend, and whether that glistering of glory dot"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p554",
+            "context": "(3.) That he proves himself to be God by these his predictions."
           }
         ]
       },
@@ -1125,11 +892,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1060",
+            "location": "EPUB/ch018.xhtml#p1066",
             "context": "[1.] Will they say that this order is observed by the apostle, — that that which is first done is first expressed as to all particulars? What, then, becomes of their interpretation who"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1119",
+            "location": "EPUB/ch018.xhtml#p1124",
             "context": "[1.] Because Abraham was the father of many nations, Jews and proselytes, before the preaching of the gospel, as Genesis 15:5."
           }
         ]
@@ -1163,11 +930,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch018.xhtml#p1062",
+            "location": "EPUB/ch018.xhtml#p1068",
             "context": "[2.] The order of the words is most proper. John having asserted the deity of Christ, with some general concomitants and consequences of the dispensation wherein he undertakes to be a"
           },
           {
-            "location": "EPUB/ch018.xhtml#p1120",
+            "location": "EPUB/ch018.xhtml#p1125",
             "context": "[2.] It is false that Abram was not Abraham until after the ascension of Christ and preaching of the gospel to the Gentiles, He was made Abraham from his first enjoyment of his name an"
           }
         ]
@@ -1280,10 +1047,10 @@
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 2590,
-    "epub_greek_word_count": 2593,
+    "epub_greek_word_count": 2590,
     "pdf_greek_unique_words": 1207,
-    "epub_greek_unique_words": 1209,
-    "greek_word_coverage_ratio": 0.998,
+    "epub_greek_unique_words": 1207,
+    "greek_word_coverage_ratio": 0.9992,
     "pdf_hebrew_word_count": 222,
     "epub_hebrew_word_count": 221,
     "pdf_hebrew_unique_words": 157,
@@ -1294,68 +1061,32 @@
   },
   "greek_hebrew_clause_fidelity": {
     "greek_clauses_checked": 133,
-    "missing_greek_clause_count": 1,
-    "missing_greek_clauses": [
-      {
-        "page": 793,
-        "word_count": 16,
-        "sample": "μωρας δε ζητησεις και γενεαλογιας και ερεις και μαχας νομιχας περιιστασο εισι"
-      }
-    ],
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
     "hebrew_clauses_checked": 7,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 10596,
-    "epub_latin_word_count": 10668,
-    "epub_tagged_latin_word_count": 6309,
-    "pdf_latin_unique_words": 2940,
-    "epub_latin_unique_words": 2955,
-    "epub_tagged_unique_words": 2402,
-    "latin_word_coverage_ratio": 0.998,
-    "latin_tagging_ratio": 0.5914,
+    "pdf_latin_word_count": 8458,
+    "epub_latin_word_count": 8522,
+    "epub_tagged_latin_word_count": 6219,
+    "pdf_latin_unique_words": 2882,
+    "epub_latin_unique_words": 2897,
+    "epub_tagged_unique_words": 2368,
+    "latin_word_coverage_ratio": 0.9976,
+    "latin_tagging_ratio": 0.7298,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
-        "word": "nor",
-        "epub": 438,
-        "tagged": 15
-      },
-      {
-        "word": "jesus",
-        "epub": 397,
-        "tagged": 3
-      },
-      {
         "word": "grotius",
         "epub": 197,
-        "tagged": 20
-      },
-      {
-        "word": "mediator",
-        "epub": 148,
-        "tagged": 5
-      },
-      {
-        "word": "yea",
-        "epub": 139,
-        "tagged": 3
+        "tagged": 19
       },
       {
         "word": "socinus",
         "epub": 169,
-        "tagged": 40
-      },
-      {
-        "word": "abraham",
-        "epub": 93,
-        "tagged": 2
-      },
-      {
-        "word": "thereunto",
-        "epub": 73,
-        "tagged": 2
+        "tagged": 38
       },
       {
         "word": "annotator",
@@ -1363,89 +1094,119 @@
         "tagged": 1
       },
       {
-        "word": "mere",
-        "epub": 65,
-        "tagged": 2
-      },
-      {
-        "word": "elsewhere",
-        "epub": 63,
-        "tagged": 2
-      },
-      {
-        "word": "plea",
-        "epub": 56,
-        "tagged": 0
-      },
-      {
-        "word": "sum",
-        "epub": 58,
-        "tagged": 4
-      },
-      {
-        "word": "whereunto",
-        "epub": 53,
-        "tagged": 1
-      },
-      {
-        "word": "adam",
-        "epub": 49,
-        "tagged": 2
-      },
-      {
-        "word": "whereas",
-        "epub": 46,
-        "tagged": 5
-      },
-      {
-        "word": "distinct",
-        "epub": 36,
-        "tagged": 0
-      },
-      {
-        "word": "color",
-        "epub": 40,
-        "tagged": 5
-      },
-      {
         "word": "smalcius",
         "epub": 50,
-        "tagged": 16
-      },
-      {
-        "word": "tenor",
-        "epub": 34,
-        "tagged": 0
+        "tagged": 14
       },
       {
         "word": "undergo",
         "epub": 33,
-        "tagged": 1
+        "tagged": 0
       },
       {
         "word": "crellius",
         "epub": 37,
-        "tagged": 7
-      },
-      {
-        "word": "endeavor",
-        "epub": 30,
-        "tagged": 0
-      },
-      {
-        "word": "everywhere",
-        "epub": 31,
-        "tagged": 1
+        "tagged": 5
       },
       {
         "word": "nowhere",
         "epub": 25,
         "tagged": 0
+      },
+      {
+        "word": "jus",
+        "epub": 44,
+        "tagged": 21
+      },
+      {
+        "word": "thomas",
+        "epub": 23,
+        "tagged": 1
+      },
+      {
+        "word": "insinuate",
+        "epub": 20,
+        "tagged": 0
+      },
+      {
+        "word": "relate",
+        "epub": 19,
+        "tagged": 0
+      },
+      {
+        "word": "franciscus",
+        "epub": 21,
+        "tagged": 2
+      },
+      {
+        "word": "beza",
+        "epub": 16,
+        "tagged": 0
+      },
+      {
+        "word": "incarnate",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "transylvania",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "determinate",
+        "epub": 15,
+        "tagged": 1
+      },
+      {
+        "word": "erasmus",
+        "epub": 13,
+        "tagged": 0
+      },
+      {
+        "word": "volkelius",
+        "epub": 15,
+        "tagged": 3
+      },
+      {
+        "word": "create",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "counsellor",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "governor",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "accommodate",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "racovia",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "invocate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "iii",
+        "epub": 8,
+        "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 776,
+    "latin_clauses_checked": 762,
     "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
       {
@@ -1456,9 +1217,9 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 1617,
-    "translated_latin_runs_count": 668,
-    "latin_translation_ratio": 0.4131,
+    "tagged_latin_runs_count": 1581,
+    "translated_latin_runs_count": 669,
+    "latin_translation_ratio": 0.4231,
     "untranslated_latin_samples": [
       {
         "phrase": "HUGO GROTIUS"
@@ -1468,9 +1229,6 @@
       },
       {
         "phrase": "Faustus Socinus"
-      },
-      {
-        "phrase": "Statorius, ‡  junior"
       },
       {
         "phrase": "as \"quantilla causa"
@@ -1500,9 +1258,6 @@
         "phrase": "Tatianus, Cerdo"
       },
       {
-        "phrase": "Victor, as Eusebius"
-      },
-      {
         "phrase": "Asclepiodotus, Natalius"
       },
       {
@@ -1519,6 +1274,12 @@
       },
       {
         "phrase": "Cerinthus, ‡  Paulus Samosatenus, Marcus"
+      },
+      {
+        "phrase": "Valentinus, Calarbasus"
+      },
+      {
+        "phrase": "Photinus, Theodotus"
       }
     ]
   },
@@ -1533,6 +1294,12 @@
   "font_config_check": {
     "font_issue_count": 0,
     "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "possible_beta_code_residue",
+      "repeated_phrases"
+    ]
   },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."

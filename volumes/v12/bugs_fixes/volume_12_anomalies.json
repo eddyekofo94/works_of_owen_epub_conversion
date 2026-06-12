@@ -1,7 +1,7 @@
 {
-  "volume": 12,
-  "total_words_audited": 319583,
-  "total_anomalies_count": 95,
+  "volume": "12",
+  "total_words_audited": 319669,
+  "total_anomalies_count": 185,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [
@@ -186,7 +186,8 @@
         "description": "Spaced period (space before period)",
         "chapter": "Chapter 22.",
         "contexts": [
-          "... principally to the person, God-man, who offered. 2dly . The free will of his human nature was in it also; ..."
+          "... principally to the person, God-man, who offered. 2dly . The free will of his human nature was in it also; ...",
+          "... free will of his human nature was in it also; so 2dly . The free will of his human nature was in it also; ..."
         ]
       },
       {
@@ -539,35 +540,11 @@
     ],
     "Invalid Bible References": [
       {
-        "target": "Philippians 14",
-        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... 8; Acts 20:28; Romans 1:3, 4, 9:5; Galatians 4:4; Philippians 14:5 2:5-8; 1 Timothy 3:16; 1 John 1:1, 2; Revelatio ..."
-        ]
-      },
-      {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Mr Biddle's Preface Briefly Examined.",
-        "contexts": [
-          "... John 1:14; Galatians 4:4, 5; Hebrews 2:14, 16,17; Philippians 17:6 2:6-8.) for these, and these only, are the thin ..."
-        ]
-      },
-      {
         "target": "Zephaniah 23",
         "description": "Invalid Bible reference (chapter 23 exceeds max 3 for Zephaniah)",
         "chapter": "Chapter 3.",
         "contexts": [
-          "... oned, but no corporeal similitude. Vide 1:28, and Zephaniah 23:14 (to which may be added many more places), wher ..."
-        ]
-      },
-      {
-        "target": "2 Kings 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
-        "chapter": "Chapter 5.",
-        "contexts": [
-          "... The accomplishment of it you have in the story, 2 Kings 23:17. Did Josiah act freely? was his proceeding at ..."
+          "... t no corporeal similitude. Vide Ezekiel 1:28, and Zephaniah 23:14 (to which may be added many more places), wher ..."
         ]
       },
       {
@@ -579,178 +556,11 @@
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Examination.",
-        "contexts": [
-          "... he \"thought it not robbery to be equal with God,\" Philippians 17:6 2:6. It is of God the Father that this is spoke ..."
-        ]
-      },
-      {
-        "target": "Philippians 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
-        "chapter": "Examination.",
-        "contexts": [
-          "... n the discovery of the rise and occasion of them, Philippians 20:7 2:7-9. He who was in the form of God, and equal ..."
-        ]
-      },
-      {
-        "target": "Philippians 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 8.",
-        "contexts": [
-          "... 2:16; Luke 1:35; Hebrews 9:14; Acts 3:15, 20:28; Philippians 20:7 2:7; 1 Corinthians 2:8, etc.; and by arguments ..."
-        ]
-      },
-      {
-        "target": "Philippians 26",
-        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 8.",
-        "contexts": [
-          "... he had it by a gift of the Father, Matthew 28:18; Philippians 26:9 2:9; 1 Corinthians 15:27; John 5:19, John 10:25 ...",
-          "... r were needful; which is mentioned, Matthew 28:18 Philippians 26:9 2:9, 1 Corinthians 15:27: which is by no means ..."
-        ]
-      },
-      {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 9.",
-        "contexts": [
-          "... aside for a season, that here he desires of God, Philippians 17:6 2:6-11. He glorified his Father by manifesting ...",
-          "... akedly to be imposed on us. Let Proverbs 8:22-31, Philippians 17:6 2:6-11, be consulted, as parallel to this place ..."
-        ]
-      },
-      {
-        "target": "Jude 4",
-        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
-        "chapter": "Chapter 10.",
-        "contexts": [
-          "... etc., Jeremiah 23:6; Zechariah 2:8; 1 John 5:20; Jude 4; Titus 2:13; Revelation 1:8, 4:8; Acts 20:28; 1 J ..."
-        ]
-      },
-      {
         "target": "Ephesians 11",
         "description": "Invalid Bible reference (chapter 11 exceeds max 6 for Ephesians)",
         "chapter": "Chapter 11.",
         "contexts": [
           "... oken in his Prolegomena to the Gospels; and urges Ephesians 11:10, 13, 3:9, 4:24, to prove the sense proposed. ..."
-        ]
-      },
-      {
-        "target": "Jude 5",
-        "description": "Invalid Bible reference (chapter 5 exceeds max 1 for Jude)",
-        "chapter": "Chapter 12.",
-        "contexts": [
-          "... ive mentioned. About that which they urge out of Jude 5 I shall not contend. The testimony from thence re ..."
-        ]
-      },
-      {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 13.",
-        "contexts": [
-          "... ey speak, incarnate? Ans. From these, John 1:14; Philippians 17:6 2:6, 7; 1 Timothy 3:16; Hebrews 2:16; 1 John 4: ...",
-          "... ere Christ is said to be equal to God, John 5:18, Philippians 17:6 2:6? A. That Christ is equal to God doth no wa ...",
-          "... he interpretation of Erasmus, by Beza, annot., in Philippians 17:6 2:6, 7; of Ochinus and Laelius Socinus, by Zanc ..."
-        ]
-      },
-      {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 14.",
-        "contexts": [
-          "... st Christ's being equal with God, from John 5:18, Philippians 17:6 2:6, 7, hath been already removed, and the plac ..."
-        ]
-      },
-      {
-        "target": "Philippians 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 19.",
-        "contexts": [
-          "... alted to his kingdom?\" \u2014 to which he answers from Philippians 23:8 2:8-10 in both places; intimating that Christ w ..."
-        ]
-      },
-      {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 19.",
-        "contexts": [
-          "... ne who thinks it no robbery to be equal with him, Philippians 17:6 2:6; the \"fellow of the LORD of hosts,\" Zechari ...",
-          "... nature is \"equal with God,\" that is, the Father, Philippians 17:6 2:6; but in respect of his mediation he is not ..."
-        ]
-      },
-      {
-        "target": "Philippians 26",
-        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 19.",
-        "contexts": [
-          "... h,\" Matthew 28:18, and \"a name above every name,\" Philippians 26:9 2:9, giving him an excellency, an \u1f00\u03be\u03af\u03b1, as he i ..."
-        ]
-      },
-      {
-        "target": "Philippians 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 25.",
-        "contexts": [
-          "... siah, the servant of the Father, Isaiah 42:1, 19, Philippians 20:7 2:7, 8, \"shall deal prudently,\" and prosper in ..."
-        ]
-      },
-      {
-        "target": "Philippians 26",
-        "description": "Invalid Bible reference (chapter 26 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 25.",
-        "contexts": [
-          "... ove every name, that at the name of Jesus,\" etc., Philippians 26:9 2:9, 10. The next verse is, \u2014 [[BLOCKQUOTE]] \" ..."
-        ]
-      },
-      {
-        "target": "2 Kings 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
-        "chapter": "Chapter 25.",
-        "contexts": [
-          "... s of any is the most common sense of the word. So 2 Kings 23:35, \"Jehoiakim exacted the silver and the gold of ..."
-        ]
-      },
-      {
-        "target": "2 Kings 25",
-        "description": "Invalid Bible reference (chapter 25 exceeds max 22 for Kings)",
-        "chapter": "Chapter 25.",
-        "contexts": [
-          "... designed his death, up to death by the Chaldeans, 2 Kings 25:18-21. Their riches, whereby they hoped to redeem ...",
-          "... rave with the wicked. Nor were those mentioned in 2 Kings 25:18-21, that were slain by the king of Babe], as i ..."
-        ]
-      },
-      {
-        "target": "Philippians 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 26.",
-        "contexts": [
-          "... be \"obedient unto death, the death of the cross,\" Philippians 23:8 2:8, that shameful and ignominious death. And w ..."
-        ]
-      },
-      {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 27.",
-        "contexts": [
-          "... pressible exinanition and eclipsing of his glory, Philippians 17:6 2:6, 7, [[BLOCKQUOTE]] \"Being in the form of G ...",
-          "... d, he humbled himself to the death of the cross,\" Philippians 17:6 2:6-8. And so, by his own voluntary consent, h ..."
-        ]
-      },
-      {
-        "target": "Philippians 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
-        "chapter": "Chapter 27.",
-        "contexts": [
-          "... f, Christ takes upon him \"the form of a servant,\" Philippians 20:7 2:7: and this is his perpetual profession, \"I c ..."
-        ]
-      },
-      {
-        "target": "Jude 4",
-        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
-        "chapter": "Chapter 31.",
-        "contexts": [
-          "... on 13:8; being \"of old ordained to condemnation,\" Jude 4; being as \"natural brute beasts, made to be taken ..."
         ]
       },
       {
@@ -762,6 +572,913 @@
         ]
       }
     ],
-    "List Formatting Inconsistencies": []
-  }
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "From thence whence in the thoughts of some I am most likely to suffer, as to my own resolves, I am most secure. It is in...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "The Heads and Governors of the Colleges and Halls,",
+        "contexts": [
+          "From thence whence in the thoughts of some I am most likely to suffer, as to my own resolves, I am most secure. It is in..."
+        ]
+      },
+      {
+        "target": "3. Some passages in his Annotations.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Heads and Governors of the Colleges and Halls,",
+        "contexts": [
+          "3. Some passages in his Annotations.\""
+        ]
+      },
+      {
+        "target": "The first open breach they made in Poland was in the year 1562 (something having been attempted before), most of the lea...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "The first open breach they made in Poland was in the year 1562 (something having been attempted before), most of the lea..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"I profess myself to believe in one God the Father, and in one Lord Jesus Christ, his Son, and in one Hol...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"I profess myself to believe in one God the Father, and in one Lord Jesus Christ, his Son, and in one Hol..."
+        ]
+      },
+      {
+        "target": "The assembly of states was called against the Muscovians. The nobility desiring a conference between the ministers of th...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "The assembly of states was called against the Muscovians. The nobility desiring a conference between the ministers of th..."
+        ]
+      },
+      {
+        "target": "In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and live...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and live..."
+        ]
+      },
+      {
+        "target": "3. As these are admirable men, so the way he takes for their satisfaction is admirable also; that is, by \"asserting noth...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "3. As these are admirable men, so the way he takes for their satisfaction is admirable also; that is, by \"asserting noth..."
+        ]
+      },
+      {
+        "target": "His first is of God's being infinite and incomprehensible. This he condemns, name and thing, \u2014 that is, he says \"he is f...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "His first is of God's being infinite and incomprehensible. This he condemns, name and thing, \u2014 that is, he says \"he is f..."
+        ]
+      },
+      {
+        "target": "That God is a simple act is the next thing excepted against and decried, name and thing; in the room whereof, that he is...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "That God is a simple act is the next thing excepted against and decried, name and thing; in the room whereof, that he is..."
+        ]
+      },
+      {
+        "target": "It being the great thing we have to aim at, namely, that \"we may know Jesus Christ, and the fellowship of his sufferings...",
+        "description": "Paragraph has unmatched double quotes (count: 49)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "It being the great thing we have to aim at, namely, that \"we may know Jesus Christ, and the fellowship of his sufferings..."
+        ]
+      },
+      {
+        "target": "Mr B. closeth his preface with a commendation of the Scriptures, their excellency and divinity, with the eminent success...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Mr Biddle's Preface Briefly Examined.",
+        "contexts": [
+          "Mr B. closeth his preface with a commendation of the Scriptures, their excellency and divinity, with the eminent success..."
+        ]
+      },
+      {
+        "target": "(2.) By anger, wrath, zeal, fury, the effects of anger are denoted: Romans 3:5, \"Is God unrighteous who taketh vengeance...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "Chapter 4.",
+        "contexts": [
+          "(2.) By anger, wrath, zeal, fury, the effects of anger are denoted: Romans 3:5, \"Is God unrighteous who taketh vengeance..."
+        ]
+      },
+      {
+        "target": "Scarce a word but is expressive of some future contingent thing, if the free actions of men be so before they are wrough...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "Scarce a word but is expressive of some future contingent thing, if the free actions of men be so before they are wrough..."
+        ]
+      },
+      {
+        "target": "The immortality we ascribe to man in innocency is only an assured preservation by the power of God from actual dying, no...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Examination.",
+        "contexts": [
+          "The immortality we ascribe to man in innocency is only an assured preservation by the power of God from actual dying, no..."
+        ]
+      },
+      {
+        "target": "1. He who was made \"very good\" and \"upright,\" in a moral consideration, had the original righteousness pleaded for; for ...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Examination.",
+        "contexts": [
+          "1. He who was made \"very good\" and \"upright,\" in a moral consideration, had the original righteousness pleaded for; for ..."
+        ]
+      },
+      {
+        "target": "1. \"Because the sin spoken of is voluntary, therefore it is not original,'' will not be granted.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "1. \"Because the sin spoken of is voluntary, therefore it is not original,'' will not be granted."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Q. 6. Did not Jesus Christ approve himself to be God by his miracles; and did he not those miracles by a...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Q. 6. Did not Jesus Christ approve himself to be God by his miracles; and did he not those miracles by a..."
+        ]
+      },
+      {
+        "target": "A. John 5:19, 20, 30, 14:10.\" The inference which alone appears from hence is of the same nature with them that are gone...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Examination.",
+        "contexts": [
+          "A. John 5:19, 20, 30, 14:10.\" The inference which alone appears from hence is of the same nature with them that are gone..."
+        ]
+      },
+      {
+        "target": "Jonas Schlichtingius, amongst them all, seems to do most of himself. I shall therefore add his testimony, to show their ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Examination.",
+        "contexts": [
+          "Jonas Schlichtingius, amongst them all, seems to do most of himself. I shall therefore add his testimony, to show their ..."
+        ]
+      },
+      {
+        "target": "Very good; unless this abominable figment may pass current, Christ was not the Son of God. Let the reader observe, by th...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Examination.",
+        "contexts": [
+          "Very good; unless this abominable figment may pass current, Christ was not the Son of God. Let the reader observe, by th..."
+        ]
+      },
+      {
+        "target": "2. The only-begotten Son of God is his natural Son, begotten of his essence, and there is no other reason of this appell...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Examination.",
+        "contexts": [
+          "2. The only-begotten Son of God is his natural Son, begotten of his essence, and there is no other reason of this appell..."
+        ]
+      },
+      {
+        "target": "But the most learned man's exposition of this place is admirable. \"Jesus,\" saith he, \"is many ways said to be the ' Son ...",
+        "description": "Paragraph has unmatched double quotes (count: 37)",
+        "chapter": "Examination.",
+        "contexts": [
+          "But the most learned man's exposition of this place is admirable. \"Jesus,\" saith he, \"is many ways said to be the ' Son ..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Q. Howbeit, is not Christ dignified, as with the title of Lord, so also with that of God, in the Scriptu...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Q. Howbeit, is not Christ dignified, as with the title of Lord, so also with that of God, in the Scriptu..."
+        ]
+      },
+      {
+        "target": "To escape the dint of this sword, Mr B. nextly queries: \"Q. Was he so the God of Thomas as that he himself in the meanti...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "To escape the dint of this sword, Mr B. nextly queries: \"Q. Was he so the God of Thomas as that he himself in the meanti..."
+        ]
+      },
+      {
+        "target": "A. John 20:17; Revelation 3:12.\"  True, he who, being partaker of the divine essence, in the form of God, was Thomas' Go...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Examination.",
+        "contexts": [
+          "A. John 20:17; Revelation 3:12.\"  True, he who, being partaker of the divine essence, in the form of God, was Thomas' Go..."
+        ]
+      },
+      {
+        "target": "2. In calling these properties of the several natures in Christ \"adverse'' or \"contrary,\" they would insinuate a conside...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "2. In calling these properties of the several natures in Christ \"adverse'' or \"contrary,\" they would insinuate a conside..."
+        ]
+      },
+      {
+        "target": "2. If by natures constituting persons they mean those who, antecedently to their union, have actually done so, we grant ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "2. If by natures constituting persons they mean those who, antecedently to their union, have actually done so, we grant ..."
+        ]
+      },
+      {
+        "target": "2. If our catechists have no more to say, to the illustration given of the union of the two natures in the person of Chr...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "2. If our catechists have no more to say, to the illustration given of the union of the two natures in the person of Chr..."
+        ]
+      },
+      {
+        "target": "2. Though eternity has no beginning, and the sense of these words cannot be, \"In the beginning of eternity,\" yet eternit...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "2. Though eternity has no beginning, and the sense of these words cannot be, \"In the beginning of eternity,\" yet eternit..."
+        ]
+      },
+      {
+        "target": "2. He uses the same manner of speech which signifieth the mediate cause; for he saith \"The world was made by him.\" Lastl...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "2. He uses the same manner of speech which signifieth the mediate cause; for he saith \"The world was made by him.\" Lastl..."
+        ]
+      },
+      {
+        "target": "A. A twofold sense may be given of them: \u2014 First, that human kind was reformed by Christ, and as it were made again, bec...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "A. A twofold sense may be given of them: \u2014 First, that human kind was reformed by Christ, and as it were made again, bec..."
+        ]
+      },
+      {
+        "target": "But that these words, \"I am,\" are to be supplied in that manner as if himself had added to them, \"I am the light of the ...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "But that these words, \"I am,\" are to be supplied in that manner as if himself had added to them, \"I am the light of the ..."
+        ]
+      },
+      {
+        "target": "2. Here is no mention of the \u05de\u05b4\u05e7\u05b6\u05bc\u05d3\u05b6\u05dd, \"beginning;\" and those who in the latter words reject the Vulgar edition cannot h...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "2. Here is no mention of the \u05de\u05b4\u05e7\u05b6\u05bc\u05d3\u05b6\u05dd, \"beginning;\" and those who in the latter words reject the Vulgar edition cannot h..."
+        ]
+      },
+      {
+        "target": "Grotius on this place, according to his wont, outgoes his companions one step at least (as he was a bold man at conjectu...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "Grotius on this place, according to his wont, outgoes his companions one step at least (as he was a bold man at conjectu..."
+        ]
+      },
+      {
+        "target": "Doubtless the thought of any such thing was as remote from the heart of the holy man as this gloss is from the sense of ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "Doubtless the thought of any such thing was as remote from the heart of the holy man as this gloss is from the sense of ..."
+        ]
+      },
+      {
+        "target": "Grotius takes no notice of Christ in this place, yea, he seems evidently to exclude him from being here intended. His fi...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "Grotius takes no notice of Christ in this place, yea, he seems evidently to exclude him from being here intended. His fi..."
+        ]
+      },
+      {
+        "target": "Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "Simile loquendi genua Sic Legem fuisse ante mundum aiunt Hebraei.\""
+        ]
+      },
+      {
+        "target": "Q. What dost thou answer to this second testimony A. The place of Zechariah they thus cite: \"This saith the LORD of host...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "Q. What dost thou answer to this second testimony A. The place of Zechariah they thus cite: \"This saith the LORD of host..."
+        ]
+      },
+      {
+        "target": "Even at the light of this most evident testimony, the eyes of Grotius dazzled that he could not see the truth. His note ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "Even at the light of this most evident testimony, the eyes of Grotius dazzled that he could not see the truth. His note ..."
+        ]
+      },
+      {
+        "target": "4. There is no analogy between that of the prophet, of the \"apple of God's eye,\" and this here spoken of. Uncontrollably...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 10.",
+        "contexts": [
+          "4. There is no analogy between that of the prophet, of the \"apple of God's eye,\" and this here spoken of. Uncontrollably..."
+        ]
+      },
+      {
+        "target": "2. The latter part of the verse he thus illustrates, or rather obscures: \u03a4\u1f70 \u03c0\u03ac\u03bd\u03c4\u03b1 \u03b4\u1f30 \u03b1\u1f50\u03c4\u03bf\u1fe6, intellige omnia quae ad nova...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 11.",
+        "contexts": [
+          "2. The latter part of the verse he thus illustrates, or rather obscures: \u03a4\u1f70 \u03c0\u03ac\u03bd\u03c4\u03b1 \u03b4\u1f30 \u03b1\u1f50\u03c4\u03bf\u1fe6, intellige omnia quae ad nova..."
+        ]
+      },
+      {
+        "target": "2 Peter 3:5.\" Prove it by any one instance; or, if that may not be done, beg no more in a matter of this importance. In ...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 11.",
+        "contexts": [
+          "2 Peter 3:5.\" Prove it by any one instance; or, if that may not be done, beg no more in a matter of this importance. In ..."
+        ]
+      },
+      {
+        "target": "4. The word \u03c6\u03ad\u03c1\u03c9\u03bd, neither in its native signification nor in the use of it in the Scripture, gives any countenance to t...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 12.",
+        "contexts": [
+          "4. The word \u03c6\u03ad\u03c1\u03c9\u03bd, neither in its native signification nor in the use of it in the Scripture, gives any countenance to t..."
+        ]
+      },
+      {
+        "target": "The intendment and design of the apostle in this place being evidently to exhort believers to self-denial, mutual love, ...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "The intendment and design of the apostle in this place being evidently to exhort believers to self-denial, mutual love, ..."
+        ]
+      },
+      {
+        "target": "\u0395\u03c0\u03b9\u03c3\u03c4\u03b5\u03cd\u03b8\u03b7 \u1f10\u03bd \u03ba\u03cc\u03c3\u03bc\u1ff3. \"Id est, in magna mundi parte, Romans 1:8, Colossians 1:6.\" But then, I pray, what difference is bet...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "\u0395\u03c0\u03b9\u03c3\u03c4\u03b5\u03cd\u03b8\u03b7 \u1f10\u03bd \u03ba\u03cc\u03c3\u03bc\u1ff3. \"Id est, in magna mundi parte, Romans 1:8, Colossians 1:6.\" But then, I pray, what difference is bet..."
+        ]
+      },
+      {
+        "target": "That Jesus Christ is the husband and spouse of the church will not be denied, Ephesians 5:25, Revelation 21:9; but he wh...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "That Jesus Christ is the husband and spouse of the church will not be denied, Ephesians 5:25, Revelation 21:9; but he wh..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Dixit Rabbi Tanchum, Quomodo omne mem quod est in medio vocis aperture est, et istud \u05dc\u05b0\u05dd\u05b7\u05e8\u05b0\u05d1\u05b5\u05bc\u05d4, Isaiah ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Dixit Rabbi Tanchum, Quomodo omne mem quod est in medio vocis aperture est, et istud \u05dc\u05b0\u05dd\u05b7\u05e8\u05b0\u05d1\u05b5\u05bc\u05d4, Isaiah ..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] Quaesivit Deus sanctus benedictus facere Ezechiam Messiam, et Sennacheribum Gog et Magog. Dixit proprieta...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "[[BLOCKQUOTE]] Quaesivit Deus sanctus benedictus facere Ezechiam Messiam, et Sennacheribum Gog et Magog. Dixit proprieta..."
+        ]
+      },
+      {
+        "target": "1. Verse 5, the apostle, speaking of the heathens and their opinion of the Deity, says, \"There be,\" that is, to them, in...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "1. Verse 5, the apostle, speaking of the heathens and their opinion of the Deity, says, \"There be,\" that is, to them, in..."
+        ]
+      },
+      {
+        "target": "Grotius' annotation on this place is worth our observation, as having somewhat new and peculiar in it. \"\u039a\u03cd\u03c1\u03b9\u03bf\u03bd \u03c4\u1fc6\u03c2 \u03b4\u03cc\u03be\u03b7\u03c2...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 14.",
+        "contexts": [
+          "Grotius' annotation on this place is worth our observation, as having somewhat new and peculiar in it. \"\u039a\u03cd\u03c1\u03b9\u03bf\u03bd \u03c4\u1fc6\u03c2 \u03b4\u03cc\u03be\u03b7\u03c2..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Q. How many Holy Spirits of Christians are there? \u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Q. How many Holy Spirits of Christians are there? \u2014"
+        ]
+      },
+      {
+        "target": "A. 'One Spirit,' Ephesians 4:4.\" I must take leave to put one question to Mr B, that we may the better know the mind and...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Examination.",
+        "contexts": [
+          "A. 'One Spirit,' Ephesians 4:4.\" I must take leave to put one question to Mr B, that we may the better know the mind and..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Wherein consists the prerogative of that Holy Spirit above other spirits? \u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Wherein consists the prerogative of that Holy Spirit above other spirits? \u2014"
+        ]
+      },
+      {
+        "target": "A. 1.Corinthians 2:10, 11.\" The prerogative of that Holy Spirit of whom we speak is that of God above his creatures, rat...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Examination.",
+        "contexts": [
+          "A. 1.Corinthians 2:10, 11.\" The prerogative of that Holy Spirit of whom we speak is that of God above his creatures, rat..."
+        ]
+      },
+      {
+        "target": "Thirdly, He dwelleth in us, as God in a temple, Romans 8:9, 1 Corinthians 3:16; thereby sanctifying us, 1 Corinthians 6:...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "Thirdly, He dwelleth in us, as God in a temple, Romans 8:9, 1 Corinthians 3:16; thereby sanctifying us, 1 Corinthians 6:..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Whence is the Holy Ghost sent? \u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Whence is the Holy Ghost sent? \u2014"
+        ]
+      },
+      {
+        "target": "A. 1.Peter 1:12, 'Down from heaven.'\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Examination.",
+        "contexts": [
+          "A. 1.Peter 1:12, 'Down from heaven.'\""
+        ]
+      },
+      {
+        "target": "2. Our Savior, Christ, says here, \"He shall not speak of himself;' but he nowhere says, \"He shall not impart of his own ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Examination.",
+        "contexts": [
+          "2. Our Savior, Christ, says here, \"He shall not speak of himself;' but he nowhere says, \"He shall not impart of his own ..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Doth not Christ forgive sins? \u2014",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 17.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Doth not Christ forgive sins? \u2014"
+        ]
+      },
+      {
+        "target": "A. 'Christ forgave you,' Colossians 3:13.\" That Christ forgives sins is taken for granted; and yet forgiveness of sin is...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 17.",
+        "contexts": [
+          "A. 'Christ forgave you,' Colossians 3:13.\" That Christ forgives sins is taken for granted; and yet forgiveness of sin is..."
+        ]
+      },
+      {
+        "target": "But yet as Mr B. eats his word as to Moses, and after he had affirmed that he saw the face of God, says he only saw the ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 18.",
+        "contexts": [
+          "But yet as Mr B. eats his word as to Moses, and after he had affirmed that he saw the face of God, says he only saw the ..."
+        ]
+      },
+      {
+        "target": "All the difficulty of this question ariseth from these words, \"Like Moses;\" and the sense by Mr B. put upon them, \u2014 how ...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 18.",
+        "contexts": [
+          "All the difficulty of this question ariseth from these words, \"Like Moses;\" and the sense by Mr B. put upon them, \u2014 how ..."
+        ]
+      },
+      {
+        "target": "2. What is added to this question will be of an easy despatch. The word \"law' may be considered generally, as to the nat...",
+        "description": "Paragraph has unmatched double quotes (count: 23)",
+        "chapter": "Chapter 18.",
+        "contexts": [
+          "2. What is added to this question will be of an easy despatch. The word \"law' may be considered generally, as to the nat..."
+        ]
+      },
+      {
+        "target": "2. If the law wants perfection, it is in respect of its essential parts, or its integral parts, or in respect of degrees...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 18.",
+        "contexts": [
+          "2. If the law wants perfection, it is in respect of its essential parts, or its integral parts, or in respect of degrees..."
+        ]
+      },
+      {
+        "target": "1. The first is in reference to the sixth commandment, \"Thou shalt not kill.\" This the Pharisees so interpreted as that ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 18.",
+        "contexts": [
+          "1. The first is in reference to the sixth commandment, \"Thou shalt not kill.\" This the Pharisees so interpreted as that ..."
+        ]
+      },
+      {
+        "target": "Q. Were those better promises of God touching eternal life and immortality hidden in the dark and not brought to light u...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 18.",
+        "contexts": [
+          "Q. Were those better promises of God touching eternal life and immortality hidden in the dark and not brought to light u..."
+        ]
+      },
+      {
+        "target": "2. From the command, and the natural and eternal obligation of it, in these repeated words, \u03a4\u1ff7 \u0398\u03b5\u1ff7 \u03c0\u03c1\u03bf\u03ba\u03cd\u03bd\u03b7\u03c3\u03bf\u03bd.  It is th...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 19.",
+        "contexts": [
+          "2. From the command, and the natural and eternal obligation of it, in these repeated words, \u03a4\u1ff7 \u0398\u03b5\u1ff7 \u03c0\u03c1\u03bf\u03ba\u03cd\u03bd\u03b7\u03c3\u03bf\u03bd.  It is th..."
+        ]
+      },
+      {
+        "target": "This Franken seems to have been a subtile fellow, who, denying with Socinus that Christ was God, saw evidently that it w...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 19.",
+        "contexts": [
+          "This Franken seems to have been a subtile fellow, who, denying with Socinus that Christ was God, saw evidently that it w..."
+        ]
+      },
+      {
+        "target": "The next argument of Franken, whereby he brought his adversary to another absurdity, had its rise from a distinction giv...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 19.",
+        "contexts": [
+          "The next argument of Franken, whereby he brought his adversary to another absurdity, had its rise from a distinction giv..."
+        ]
+      },
+      {
+        "target": "How the whole nation of the Socinians have since consented into this notion of their master, I need not manifest. It is ...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
+        "contexts": [
+          "How the whole nation of the Socinians have since consented into this notion of their master, I need not manifest. It is ..."
+        ]
+      },
+      {
+        "target": "Ans . That Christ is a high priest there also we grant; that he is so there only, there is not one word in the place cit...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Mr Biddle's Eleventh Chapter Examined.",
+        "contexts": [
+          "Ans . That Christ is a high priest there also we grant; that he is so there only, there is not one word in the place cit..."
+        ]
+      },
+      {
+        "target": "\u03a0\u03b5\u03c1\u03b9\u03ba\u03b1\u03b8\u03ac\u03c1\u03bc\u03b1\u03c4\u03b1 are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them fo...",
+        "description": "Paragraph has unmatched double quotes (count: 29)",
+        "chapter": "Chapter 22.",
+        "contexts": [
+          "\u03a0\u03b5\u03c1\u03b9\u03ba\u03b1\u03b8\u03ac\u03c1\u03bc\u03b1\u03c4\u03b1 are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them fo..."
+        ]
+      },
+      {
+        "target": "(2.) The apostle instances, in particular, by what means the law could not do this great work of \"making the comers ther...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 22.",
+        "contexts": [
+          "(2.) The apostle instances, in particular, by what means the law could not do this great work of \"making the comers ther..."
+        ]
+      },
+      {
+        "target": "[1.] It is for the good of them that may be like-minded with him that is punished, that they may be deterred, affrighted...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 23.",
+        "contexts": [
+          "[1.] It is for the good of them that may be like-minded with him that is punished, that they may be deterred, affrighted..."
+        ]
+      },
+      {
+        "target": "[2.] It is for the good of others, that they may not be hurt in the like kind as some were by the sin of him who is puni...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 23.",
+        "contexts": [
+          "[2.] It is for the good of others, that they may not be hurt in the like kind as some were by the sin of him who is puni..."
+        ]
+      },
+      {
+        "target": "2. \"To meet,\" or \"to make to meet\" properly, which is the first and most clear sense of the word. It is often used for t...",
+        "description": "Paragraph has unmatched double quotes (count: 23)",
+        "chapter": "Chapter 24.",
+        "contexts": [
+          "2. \"To meet,\" or \"to make to meet\" properly, which is the first and most clear sense of the word. It is often used for t..."
+        ]
+      },
+      {
+        "target": "First, then, that the words cannot be interpreted \"to pray or intercede'' is evident from the contexture, wherein it is ...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Chapter 24.",
+        "contexts": [
+          "First, then, that the words cannot be interpreted \"to pray or intercede'' is evident from the contexture, wherein it is ..."
+        ]
+      },
+      {
+        "target": "[1.] The first is \"innovatio obligationis,\" the \"innovation of the obligation,\" wherein we were detained and bound over ...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Chapter 24.",
+        "contexts": [
+          "[1.] The first is \"innovatio obligationis,\" the \"innovation of the obligation,\" wherein we were detained and bound over ..."
+        ]
+      },
+      {
+        "target": "1. For the words themselves: \u05d9\u05b7\u05e6\u05b0\u05db\u05b4\u05bc\u05d9\u05dc, with the Vulgar Latin, he renders \"intelliget,\" \"shall understand.\" The word sig...",
+        "description": "Paragraph has unmatched double quotes (count: 21)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "1. For the words themselves: \u05d9\u05b7\u05e6\u05b0\u05db\u05b4\u05bc\u05d9\u05dc, with the Vulgar Latin, he renders \"intelliget,\" \"shall understand.\" The word sig..."
+        ]
+      },
+      {
+        "target": "\"Ita asperget gentes multas. In Hebraeo, 'Sic asperget,' ut re-spondeat illi, sicut,' quod praecessit. Multos ex gentibu...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "\"Ita asperget gentes multas. In Hebraeo, 'Sic asperget,' ut re-spondeat illi, sicut,' quod praecessit. Multos ex gentibu..."
+        ]
+      },
+      {
+        "target": "An entrance is made in these words into the account that the prophet intends to give why so few believed in Christ, the ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "An entrance is made in these words into the account that the prophet intends to give why so few believed in Christ, the ..."
+        ]
+      },
+      {
+        "target": "Jeremiah shall serve God in his prophetical office whilst he is young. 'And as a root out of a dry ground;' \u2014 He shall b...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "Jeremiah shall serve God in his prophetical office whilst he is young. 'And as a root out of a dry ground;' \u2014 He shall b..."
+        ]
+      },
+      {
+        "target": "All these things he saith the Jews shall say after the taking of the city.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "All these things he saith the Jews shall say after the taking of the city.\""
+        ]
+      },
+      {
+        "target": "2. The words used to express this cause of wounding are two, and both emphatical. The filet is \u05e4\u05b8\u05e9\u05b7\u05c1\u05e2: \"He was wounded \u05de...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "2. The words used to express this cause of wounding are two, and both emphatical. The filet is \u05e4\u05b8\u05e9\u05b7\u05c1\u05e2: \"He was wounded \u05de..."
+        ]
+      },
+      {
+        "target": "This, then, being the reading of the words, \"He was wounded or tormented for our sins,\" the sense as relating to Jesus C...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "This, then, being the reading of the words, \"He was wounded or tormented for our sins,\" the sense as relating to Jesus C..."
+        ]
+      },
+      {
+        "target": "Verse 7, \"He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter,...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "Verse 7, \"He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter,..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"De carcere et de judicio ablatus est. Id est, liberatus tandem. Judicium vocat hoc, quia specie judicii ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"De carcere et de judicio ablatus est. Id est, liberatus tandem. Judicium vocat hoc, quia specie judicii ..."
+        ]
+      },
+      {
+        "target": "\"Generationem ejus quis enarrabit? Quis numerare poterit dies vitae ejus? Id est, erit valde longsevus.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "\"Generationem ejus quis enarrabit? Quis numerare poterit dies vitae ejus? Id est, erit valde longsevus."
+        ]
+      },
+      {
+        "target": "3. \"For he was cut off out of the land of the living.\" \u039f\u03c4\u03b9 \u03b1\u1f34\u03c1\u03b5\u03c4\u03b1\u03b9 \u1f00\u03c0\u1f78 \u03c4\u1fc6\u03c2 \u1f21 \u03b6\u03c9\u1f74 \u03b1\u1f50\u03c4\u03bf\u1fe6 \u2014 \"His life was taken from the ea...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "3. \"For he was cut off out of the land of the living.\" \u039f\u03c4\u03b9 \u03b1\u1f34\u03c1\u03b5\u03c4\u03b1\u03b9 \u1f00\u03c0\u1f78 \u03c4\u1fc6\u03c2 \u1f21 \u03b6\u03c9\u1f74 \u03b1\u1f50\u03c4\u03bf\u1fe6 \u2014 \"His life was taken from the ea..."
+        ]
+      },
+      {
+        "target": "A farther fruit of the travail of the Lord Christ, in his conquest over all oppositions, in the victory he obtained, the...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "A farther fruit of the travail of the Lord Christ, in his conquest over all oppositions, in the victory he obtained, the..."
+        ]
+      },
+      {
+        "target": "2dly. His soul. was made an offering for sin,\" Isaiah 53:10; and his \"soul was heavy unto death,\" Matthew 26:37, 38.",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 26.",
+        "contexts": [
+          "2dly. His soul. was made an offering for sin,\" Isaiah 53:10; and his \"soul was heavy unto death,\" Matthew 26:37, 38."
+        ]
+      },
+      {
+        "target": "He was to do that which the old sacrifices could not do, as hath been declared: \"For it was not possible that the blood ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 27.",
+        "contexts": [
+          "He was to do that which the old sacrifices could not do, as hath been declared: \"For it was not possible that the blood ..."
+        ]
+      },
+      {
+        "target": "[2.] That in this \"body,\" or human nature, he should be a \"servant,'' or yield obedience. Hence God calls him his servan...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "Chapter 27.",
+        "contexts": [
+          "[2.] That in this \"body,\" or human nature, he should be a \"servant,'' or yield obedience. Hence God calls him his servan..."
+        ]
+      },
+      {
+        "target": "Neither is the church of God at all beholding to some late expositors, who, to show their skill in the Hebrew doctors, w...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Chapter 28.",
+        "contexts": [
+          "Neither is the church of God at all beholding to some late expositors, who, to show their skill in the Hebrew doctors, w..."
+        ]
+      },
+      {
+        "target": "We are bought by Christ, saith the apostle: \u0397\u03b3\u03bf\u03c1\u03ac\u03c3\u03b8\u03b7\u03c4\u03b5, \"Ye are bought,\" 1 Corinthians 6:20. But this buying may be take...",
+        "description": "Paragraph has unmatched double quotes (count: 23)",
+        "chapter": "Chapter 28.",
+        "contexts": [
+          "We are bought by Christ, saith the apostle: \u0397\u03b3\u03bf\u03c1\u03ac\u03c3\u03b8\u03b7\u03c4\u03b5, \"Ye are bought,\" 1 Corinthians 6:20. But this buying may be take..."
+        ]
+      },
+      {
+        "target": "They are persons \"whose names are not written in the book of life of the Lamb,\" Revelation 13:8; being \"of old ordained ...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Chapter 31.",
+        "contexts": [
+          "They are persons \"whose names are not written in the book of life of the Lamb,\" Revelation 13:8; being \"of old ordained ..."
+        ]
+      },
+      {
+        "target": "Yea, when he had been \"lifted up' to \"draw all men unto him,\" John 3:14, John 12:32, and, being ascended, had broken dow...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Chapter 31.",
+        "contexts": [
+          "Yea, when he had been \"lifted up' to \"draw all men unto him,\" John 3:14, John 12:32, and, being ascended, had broken dow..."
+        ]
+      },
+      {
+        "target": "2. It is called \"destruction,\" and \"perdition,\" and \"everlasting destruction,\" 1 Thessalonians 5:3; 2 Peter 3:7; 2 Thess...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Chapter 35.",
+        "contexts": [
+          "2. It is called \"destruction,\" and \"perdition,\" and \"everlasting destruction,\" 1 Thessalonians 5:3; 2 Peter 3:7; 2 Thess..."
+        ]
+      },
+      {
+        "target": "God threatens men with death and destruction, and describes that death and destruction to consist in the abiding under h...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 35.",
+        "contexts": [
+          "God threatens men with death and destruction, and describes that death and destruction to consist in the abiding under h..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Credere in Jesum Christum nihil aliud est quam Jesu Christo confidere, et idcirco ex ejus praescripto vi...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Credere in Jesum Christum nihil aliud est quam Jesu Christo confidere, et idcirco ex ejus praescripto vi..."
+        ]
+      },
+      {
+        "target": "Deo obtemperemus,\" etc. \u2014 Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. The...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "Deo obtemperemus,\" etc. \u2014 Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. The..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Diligenter cavere debemus ne vitae sanctitatem et innocentiam, justificationem nostram coram Deo esse cr...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Diligenter cavere debemus ne vitae sanctitatem et innocentiam, justificationem nostram coram Deo esse cr..."
+        ]
+      },
+      {
+        "target": "justificationem nobis non contingere decrevit Deus.\" \u2014 Socin. Synop. Justificat. 2:p. 14. \"Id a nobis revera exegit, ut ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "justificationem nobis non contingere decrevit Deus.\" \u2014 Socin. Synop. Justificat. 2:p. 14. \"Id a nobis revera exegit, ut ..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Justificatio est cum nos Deus pro justis habet, quod ea ratione facit, cum nobis et peccata remittit, et...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Justificatio est cum nos Deus pro justis habet, quod ea ratione facit, cum nobis et peccata remittit, et..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Dicent ergo Arminiani, nos hic justificationem sumere pro sensu et notitia justificationis: ideoque homi...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Dicent ergo Arminiani, nos hic justificationem sumere pro sensu et notitia justificationis: ideoque homi..."
+        ]
+      },
+      {
+        "target": "(1.) est actus Dei absolventis terminatus in conscientia hominis, citati et tracti ad tribunale tremendi judicis; qui ac...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "(1.) est actus Dei absolventis terminatus in conscientia hominis, citati et tracti ad tribunale tremendi judicis; qui ac..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"The words of one that writes this way are these: \u2014 \"'Here two things may be observed: \u2014 \"'1. What we asc...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"The words of one that writes this way are these: \u2014 \"'Here two things may be observed: \u2014 \"'1. What we asc..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"This man,\" says he, seems to judge that the name of complete justification is proper to that in conscien...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"This man,\" says he, seems to judge that the name of complete justification is proper to that in conscien..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"1. Not all, not the same measure of sanctification for one as for another; not faith for all for whom he...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"1. Not all, not the same measure of sanctification for one as for another; not faith for all for whom he..."
+        ]
+      },
+      {
+        "target": "So he. The expression of our dying with Christ is fallen upon again, p. 226; of which he desires leave to speak as confi...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "So he. The expression of our dying with Christ is fallen upon again, p. 226; of which he desires leave to speak as confi..."
+        ]
+      },
+      {
+        "target": "Seventhly, I profess that we are absolved, pardoned, and justified, for Christ's sake, and therefore that Christ is reck...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "Seventhly, I profess that we are absolved, pardoned, and justified, for Christ's sake, and therefore that Christ is reck..."
+        ]
+      },
+      {
+        "target": "\u039f\u03c2 \u03c4\u1f70\u03c2 \u1f00\u03bc\u03b1\u03c1\u03c4\u03af\u03b1\u03c2 \u1f21\u03bc\u1ff6\u03bd \u03b1\u1f50\u03c4\u1f78\u03c2 \u1f00\u03bd\u03ae\u03bd\u03b5\u03b3\u03ba\u03b5\u03bd, etc. \u0391\u03bd\u03ae\u03b5\u03b3\u03ba\u03b5\u03bd hic est abstulit, quod sequentia ostendunt, quomodo idem verbum sumi...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
+        "contexts": [
+          "\u039f\u03c2 \u03c4\u1f70\u03c2 \u1f00\u03bc\u03b1\u03c1\u03c4\u03af\u03b1\u03c2 \u1f21\u03bc\u1ff6\u03bd \u03b1\u1f50\u03c4\u1f78\u03c2 \u1f00\u03bd\u03ae\u03bd\u03b5\u03b3\u03ba\u03b5\u03bd, etc. \u0391\u03bd\u03ae\u03b5\u03b3\u03ba\u03b5\u03bd hic est abstulit, quod sequentia ostendunt, quomodo idem verbum sumi..."
+        ]
+      },
+      {
+        "target": "The sum of what is to this purpose by me affirmed is, that in the Annotations on the Old and New Testament, Grotius hath...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "A Second Consideration of the Annotations of Hugo Grotius.",
+        "contexts": [
+          "The sum of what is to this purpose by me affirmed is, that in the Annotations on the Old and New Testament, Grotius hath..."
+        ]
+      }
+    ]
+  },
+  "unused_whitelist_anomalies": {}
 }

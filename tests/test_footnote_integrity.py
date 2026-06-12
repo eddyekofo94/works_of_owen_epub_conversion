@@ -32,37 +32,36 @@ BASE_DIR = Path(__file__).parent.parent
 
 # Known, pre-existing PDF extraction-level baseline gaps
 ALLOWED_FOOTNOTE_ANOMALIES = {
-    5: {
+    '5': {
         'missing_asides': {'fn4'},
         'mismatch_delta': 1,
     },
-    8: {
+    '8': {
         'orphans': {'fn2', 'fn30', 'fn31', 'fn5', 'fn7'},
         'mismatch_delta': 5,
     },
-    9: {
+    '9': {
         'mismatch_delta': 2, # Two endnotes are referenced multiple times (valid)
     },
-    10: {
+    '10': {
         'missing_asides': {'fn254', 'fn389', 'fn396'},
         'mismatch_delta': 22, # Multiple references and missing asides
     },
-    11: {
+    '11': {
         'mismatch_delta': 2, # Two endnotes are referenced multiple times (valid)
     },
-    13: {
+    '13': {
         'orphans': {'fn57', 'fn58', 'fn59', 'fn60', 'fn61', 'fn62', 'fn63'},
         'mismatch_delta': 4, # Orphans and multiple references
     },
-    14: {
+    '14': {
         'orphans': {'fn49', 'fn50'},
         'mismatch_delta': 1,
     },
-    12: {
-        'orphans': {'fn285', 'fn446', 'fn489'},
-        'mismatch_delta': 2,
+    '12': {
+        'mismatch_delta': 1,
     },
-    15: {
+    '15': {
         'mismatch_delta': 1,
     }
 }
