@@ -18,15 +18,15 @@
 | 12 | `.noteref` color mismatch (`#0066cc` vs `#0000EE`) | shared.py | ✅ Fixed |
 | 13 | Duplicate `.footnote` CSS rules | shared.py | ✅ Fixed |
 | 14 | Structural Misalignment (Summary Head Fragmentation) | ThML Source | ❌ Open |
-| 15 | Untranslated Latin and Greek quotes | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 16 | Chapter 3 summary layout formatting & drape typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 17 | Chapter 49 summary formatting & CONCENRING typo | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 18 | Biographical double-tagging and missing prefatory biographies | render.py, technical_glossary.py, biography_db.py, convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 19 | List sequence gap mapping (8.) -> (3.) | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 20 | Missing footnote/endnote references [f285], [f446], [f489] | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 21 | Latin OCR typos in footnote 84 | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 22 | Spaced scholastic labels in ch020 and ch049 | convert.py | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
-| 23 | Legitimate false positive warnings whitelisted | volume_12_whitelist.json | ⚠️ IMPLEMENTED (AWAITING VALIDATION) |
+| 15 | Untranslated Latin and Greek quotes | convert.py | ✅ Fixed |
+| 16 | Chapter 3 summary layout formatting & drape typo | convert.py | ✅ Fixed |
+| 17 | Chapter 49 summary formatting & CONCENRING typo | convert.py | ✅ Fixed |
+| 18 | Biographical double-tagging and missing prefatory biographies | render.py, technical_glossary.py, biography_db.py, convert.py | ✅ Fixed |
+| 19 | List sequence gap mapping (8.) -> (3.) | convert.py | ✅ Fixed |
+| 20 | Missing footnote/endnote references [f285], [f446], [f489] | convert.py | ✅ Fixed |
+| 21 | Latin OCR typos in footnote 84 | convert.py | ✅ Fixed |
+| 22 | Spaced scholastic labels in ch020 and ch049 | convert.py | ✅ Fixed |
+| 23 | Legitimate false positive warnings whitelisted | volume_12_whitelist.json | ✅ Fixed |
 
 
 
@@ -186,10 +186,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-12T17:44:59.715072+00:00
+**Last run:** 2026-06-12T18:28:14.666778+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -238,10 +239,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-12T17:45:44.468617+00:00
+**Last run:** 2026-06-12T18:29:01.401312+00:00
 **Status:** WARN (11 warnings)
 
 Reports:

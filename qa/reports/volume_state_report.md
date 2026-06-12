@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-12T16:00:19Z
+Generated: 2026-06-12T19:21:03Z
 
 ## Summary
 
@@ -10,10 +10,10 @@ Generated: 2026-06-12T16:00:19Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 12 | 71.7 | arno-pro | 3 |  99.91 |   99.8 |  99.55 |   99.8 | 0 | 114 | FULL |
-| 2 | 10 | 71.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | 77 | FULL |
-| 3 | 4 | 65.7 | libertinus | 1 |  99.85 |  98.99 |  100.0 |  99.78 | 7 | 27 | FULL |
-| 4 | 6 | 63.9 | baskerville | 1 |  99.26 |  100.0 |  100.0 |  99.01 | 0 | 31 | FULL |
+| 1 | 10 | 71.5 | brill-font | 4 |  99.47 |  99.75 |  100.0 |      ? | 4 | 77 | FULL |
+| 2 | 4 | 65.7 | libertinus | 1 |  99.85 |  98.99 |  100.0 |  99.78 | 7 | 27 | FULL |
+| 3 | 6 | 63.9 | baskerville | 1 |  99.26 |  100.0 |  100.0 |  99.01 | 0 | 31 | FULL |
+| 4 | 12 | 61.6 | arno-pro | 3 |  99.92 |  99.92 |  99.55 |  99.76 | 0 | 114 | FULL |
 | 5 | 8 | 57.4 | gentium-plus-2 | 16 |  99.65 |  100.0 |  100.0 |      ? | 6 | 25 | FULL |
 | 6 | 9 | 54.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | 65 | FULL |
 | 7 | 1 | 44.5 | adobe-garamond-pro | 3 |  99.93 |  99.73 |  100.0 |   99.8 | 0 | 19 | FULL |
@@ -41,28 +41,7 @@ Generated: 2026-06-12T16:00:19Z
 
 ## Per-Volume Details
 
-### Volume 12 — Need: 71.7 (❌ Poor) — Rank 1
-
-- **Body font:** arno-pro
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** FULL
-- **convert.py:** Yes (237 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=3, footnotes=None
-- **Word coverage:** 99.91
-- **Greek coverage:** 99.80
-- **Hebrew coverage:** 99.55
-- **Latin coverage:** 99.80
-- **Latin tagging:** 59.14
-- **Latin translation:** 41.31
-- **Citations:** total=70, unresolved=0
-- **Splits:** 40
-- **Regressions:** 0
-- **Suspected anomalies:** 95
-- **Unmatched quotes:** 114
-- **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
-
-### Volume 10 — Need: 71.5 (❌ Poor) — Rank 2
+### Volume 10 — Need: 71.5 (❌ Poor) — Rank 1
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -83,7 +62,7 @@ Generated: 2026-06-12T16:00:19Z
 - **Unmatched quotes:** 77
 - **Recommended:** ❓ Resolve unmatched quotation marks; translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 4 — Need: 65.7 (❌ Poor) — Rank 3
+### Volume 4 — Need: 65.7 (❌ Poor) — Rank 2
 
 - **Body font:** libertinus
 - **Source type:** epub2
@@ -104,7 +83,7 @@ Generated: 2026-06-12T16:00:19Z
 - **Unmatched quotes:** 27
 - **Recommended:** ❓ Resolve unmatched quotation marks; translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 6 — Need: 63.9 (❌ Poor) — Rank 4
+### Volume 6 — Need: 63.9 (❌ Poor) — Rank 3
 
 - **Body font:** baskerville
 - **Source type:** epub2
@@ -123,6 +102,27 @@ Generated: 2026-06-12T16:00:19Z
 - **Regressions:** 0
 - **Suspected anomalies:** 94
 - **Unmatched quotes:** 31
+- **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
+
+### Volume 12 — Need: 61.6 (❌ Poor) — Rank 4
+
+- **Body font:** arno-pro
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** FULL
+- **convert.py:** Yes (245 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.92
+- **Greek coverage:** 99.92
+- **Hebrew coverage:** 99.55
+- **Latin coverage:** 99.76
+- **Latin tagging:** 72.98
+- **Latin translation:** 42.31
+- **Citations:** total=70, unresolved=0
+- **Splits:** 40
+- **Regressions:** 0
+- **Suspected anomalies:** 185
+- **Unmatched quotes:** 114
 - **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
 
 ### Volume 8 — Need: 57.4 (🩷 Needs work) — Rank 5
