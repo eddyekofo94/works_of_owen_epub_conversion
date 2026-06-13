@@ -113,10 +113,8 @@
   },
   "text_integrity": {
     "ignored_warnings": [
-      "low_latin_word_coverage",
       "low_latin_tagging",
       "low_latin_translation_coverage",
-      "paragraph_split_candidates",
       "inline_structural_markers",
       "roman_heading_candidates",
       "enumerator_sequence_candidates",

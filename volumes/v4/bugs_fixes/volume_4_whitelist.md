@@ -6,10 +6,8 @@ This document describes and explains all whitelisted items for Volume 4, includi
 
 The following warning types are whitelisted for Volume 4:
 
-*   **`low_latin_word_coverage`**: Latin phrases in Owen's works are part of the original historical text. We preserve 17th-century orthography and do not modernise it.
 *   **`low_latin_tagging`**: Many standard Latin words and phrases (like *de facto*, *inhabitation*, *abba*) are part of standard theological/scholarly discourse and do not require individual language tags or are already handled in contexts.
 *   **`low_latin_translation_coverage`**: Untranslated Latin quotes are either common/historical theological phrases or are left as authentic to the original text.
-*   **`paragraph_split_candidates`**: Grammatically valid breaks before lists, blockquotes, and Scripture selections that are flagged by the automated healer script.
 *   **`inline_structural_markers`**: Spurious detections of inline structural markers.
 *   **`roman_heading_candidates`**: Spurious detections of Roman headings.
 *   **`enumerator_sequence_candidates`**: Spurious detections of list enumerators.
