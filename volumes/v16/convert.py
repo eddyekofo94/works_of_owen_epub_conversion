@@ -92,6 +92,7 @@ _V16_THREE_DISCOURSES_TITLE_PAGE = '''<section class="treatise-title-page" epub:
 </section>'''
 
 def post_extract_hook(intermediate: dict) -> dict:
+    import re
     chapters = intermediate.get('chapters', [])
     
     # Clean up Prefatory Note titles
@@ -158,6 +159,12 @@ def post_extract_hook(intermediate: dict) -> dict:
         text = text.replace('We ἁςε ρενδερεδ ιτ ηερε, "Φυρτηερμορε τηεν." Ιτ ις τὸ λοιπὸν οῦν, — "φορ what remains', 'We have rendered it here, "Furthermore then." It is τὸ λοιπὸν οὖν, — "for what remains')
         text = text.replace('praecedens omnes." †', 'praecedens omnes." †.')
         text = text.replace('lapsi fuissent ." †', 'lapsi fuissent ." †.')
+        # Paragraph splits healing (heal false splits caused by line breaks after em-dashes)
+        text = re.sub(
+            r'([a-zA-Z0-9.,;:!?()\'’"”])\s*—\r?\n\r?\n([A-Z“](?!D\b))',
+            r'\1 — \2',
+            text
+        )
         text = text.replace('See Euseb. Chron. ad an. Christi\n\n136.', 'See Euseb. Chron. ad an. Christi 136.')
         text = text.replace(
             'informs us of it: Apol. 2 ad Anton. Pium., Καὶ γὰρ',
@@ -269,6 +276,14 @@ OVERRIDES = {
         'Ecclesiastes 266.': 'Ecclesiazusae 266.',
         'De Ecclesiastes lib. 3': 'De Ecclesia lib. 3',
         'De Corona, οδ >,': 'De Corona, οδʹ,',
+        'Philippians 5 7, 8.': 'Philippians 2:7, 8.',
+        '"praesum, praesideo,\'': '"praesum, praesideo",',
+        '—\'Every one"': '— "Every one"',
+        '"Let all things be done unto edifying,\'\'': '"Let all things be done unto edifying,"',
+        'and say," "Mentitur': 'and say, "Mentitur',
+        'magnified ־על־כָּל־שִׁמְך אִמְרָתֶך" over all': 'magnified ־על־כָּל־שִׁמְך אִמְרָתֶך over all',
+        'work and efficacy. Whatever': 'work and efficacy." Whatever',
+        'προλήψεις, "presumptions, about them': 'προλήψεις, "presumptions," about them',
         
         # Latin OCR corrections
         'testimomo': 'testimonio',

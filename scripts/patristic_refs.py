@@ -1046,9 +1046,9 @@ def _find_author_in_context(plain_context: str) -> str | None:
                 matched_word = m.group(0).lower().rstrip('.')
                 if matched_word in {
                     'horrid', 'horror', 'horrible', 'horridly', 'horrors',
-                    'just', 'justice', 'justify', 'justified', 'justifies', 'justifying', 'justification', 'justly',
-                    'glass', 'glasses'
-                }:
+                    'justice', 'justify', 'justified', 'justifies', 'justifying', 'justification', 'justly',
+                    'glasses'
+                } or (matched_word == 'just' and not m.group(0).endswith('.')) or (matched_word == 'glass' and not m.group(0).endswith('.')):
                     continue
                 best_pos = m.start()
                 best_key = abbrev
@@ -1202,6 +1202,7 @@ def build_citation_note(
             (r'\bhosius\b.*\bde\s+auth\w*\b', 'hosius', 'de auth'),
             (r'\bantiq\w*\s+rom\b', 'dionysius', 'antiq'),
             (r'\bde\s+grat\w*\s+et\s+lib\w*\s+arbit\w*\b', 'bellar', 'de grat'),
+            (r'\bde\s+ecclesia\b', 'bellar', 'de eccles'),
             (r'\b(?:loc|loci|lee)\s+theol\w*\b', 'canus', 'loc theol'),
             (r'\b_?(?:holy\s+one|spirit\s+himself)_?\b.*\bde\s+spir\w*\s+sanc', 'didymus', 'de spir sanc'),
             (r'\bliv\b|\bliv\.', 'livy', 'hist'),

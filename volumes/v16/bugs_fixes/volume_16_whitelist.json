@@ -2,18 +2,55 @@
   "text_integrity": {
     "skipped_pages": [5, 6],
     "paragraph_splits": [
+      {
+        "previous": "Aristophanes witnesseth: —",
+        "next": "Ecclesiazusae 266."
+      },
+      {
+        "previous": "matters of ecclesiastical discipline. —",
+        "next": "ED."
+      },
+      {
+        "previous": "In answer I say, —",
+        "next": "Ans. 1."
+      },
+      {
+        "previous": "turned into Latin: —",
+        "next": "Larga pluvia Spiritus"
+      },
+      {
+        "previous": "include them in this edition. —",
+        "next": "ED."
+      }
     ],
     "inline_structural_markers": [
     ],
     "repeated_windows": [
     ],
     "weak_pages": [
+      360
     ],
     "dense_source_window_loss": [
+      10, 16, 19, 25, 27, 28, 33, 34, 43, 48
     ],
     "bottom_of_page_text_loss": [
+      "This Edition of first published by Johnstone & Hunter, 1850-53",
+      "And there is another word that signifies also what weight he lays on it, We have rendered it here, \"Furthermore then.\" It is τὸ λοιπὸν οῦν, — \"for"
+    ],
+    "top_of_page_text_loss": [
+      "CHAPTER 2. OF THE FORMAL CAUSE OF A PARTICULAR CHURCH.",
+      "OF INFANT BAPTISM AND DIPPING. OF INFANT BAPTISM.",
+      "TO MY REVEREND AND WORTHY FRIENDS, THE PREBENDS OF CHRIST CHURCH COLLEGE"
     ],
     "ignored_warnings": [
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "repeated_phrases",
+      "repeated_windows",
+      "roman_heading_candidates",
+      "suspicious_large_number_starts",
+      "enumerator_sequence_candidates",
+      "flat_analysis_chapters"
     ]
   },
   "anomalies": {

@@ -1,20 +1,14 @@
 {
-  "epub": "volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-09T21:54:03.888512+00:00",
-  "status": "warn",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
+  "generated_at": "2026-06-13T23:53:59.465740+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 6
-    }
-  ],
+  "warnings": [],
   "info": {
     "file_count": 114,
-    "epub_size_bytes": 5995192,
+    "epub_size_bytes": 5994540,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -40,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 257,
-      "unique_noteref_targets": 257,
-      "endnote_anchor_count": 257,
+      "noteref_count": 259,
+      "unique_noteref_targets": 259,
+      "endnote_anchor_count": 259,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -54,7 +48,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 6,
+      "repeated_phrase_count": 1,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
@@ -83,32 +77,7 @@
         "repeated_phrase": [
           {
             "file": "combined_text",
-            "text": "of the formal cause of a particular church",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "of marrying after divorce in case of adultery",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "reflections on a slanderous libel against dr owen",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "the prebends of christ church college in oxford",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "sermon 6 the obligation to increase in godliness",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "sermon 11 the humiliation and condescension of christ",
+            "text": "they will not see but they shall see",
             "count": 1
           }
         ],
@@ -144,5 +113,14 @@
     },
     "nav_link_count": 85,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
-  }
+  },
+  "unused_whitelist_epub_warnings": [
+    "low_latin_tagging",
+    "low_latin_translation_coverage",
+    "repeated_windows",
+    "roman_heading_candidates",
+    "suspicious_large_number_starts",
+    "enumerator_sequence_candidates",
+    "flat_analysis_chapters"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "volume": 16,
+  "volume": "16",
   "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
@@ -12,93 +12,17 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 36,
+      "observed": 0,
       "budget": 36,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch002.xhtml",
-          "previous": "th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —",
-          "next": "Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "But the different consideration lies in these things, —",
-          "next": "That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "(4.) If such churches do not, can not, will not reform themselves: then, —",
-          "next": "It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": ", magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —",
-          "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiazusae 266."
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —",
-          "next": "And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": " from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: —",
-          "next": "CLEMENS, Epist. ad Corinth., affirms that the apostles themselves appointed approved persons unto the office of the ministry, συνευδοκησάσης τῆς ἐκκλησίας πάσης , \"by (or with) the"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "n to the pastoral office, yet I must say that where they are not all duly attended unto, the institution of Christ is neglected, and the order of the church infringed. Wherefore, —",
-          "next": "The plea of the communication of all authority for office, and of office itself, solely by a flux of power from the first ordainers, through the hands of their pretended successors"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": "unto; and, 5. Whereas, in the wisdom of the Holy Ghost, distinct works did require distinct offices for their discharge (all which we have proved already), our inquiry hereon is, —",
-          "next": "Whether the same Holy Spirit hath not distinguished this office of elders into these two sorts, — -namely, those who are called unto teaching and rule also, and those who are calle"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": "l of them but one are accompanied with the modesty of granting that divers sorts of elders are here intended; which, without more than ordinary confidence, cannot be denied. But, —",
-          "next": "Some, by \"elders that rule well,\" do understand bishops that are diocesans; and by \"those that labor in the word and doctrine,\" ordinary preaching presbyters; which plainly gives t"
-        },
-        {
-          "file": "EPUB/ch013.xhtml",
-          "previous": "2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —",
-          "next": "If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 6,
+      "observed": 0,
       "budget": 12,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "Hence it appears that there are none excluded from an entrance into the church-state but such as are either, — (1.) Grossly ignorant; or, (2.) Persecutors or reproachers of those that are good, or of the ways of God wherein they walk; or, (3.) Idolaters; or, ("
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the carnal baptized posterity of those who d"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "text": "Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1, 15. 3. Humble waiting on God for the re"
-        },
-        {
-          "file": "EPUB/ch013.xhtml",
-          "text": "The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humiliation for it. [3.] The "
-        },
-        {
-          "file": "EPUB/ch058.xhtml",
-          "text": "The industry of learned men of old, and of late Jews and Christians, has been well exercised in the interpretation and reconciliation of them: by one or other a fair and probable account is given of them all. Where we cannot reach the utmost depth of truth, it"
-        },
-        {
-          "file": "EPUB/ch063.xhtml",
-          "text": "Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: \"Write it.\" It is a certain vision. 2. It is evident: \"Make it plain upon tables, that he may run that readeth it.\" 3. It is determined: \"The vision is yet for an appointed ti"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -292,38 +216,13 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 6,
+      "observed": 1,
       "budget": 7,
       "status": "ok",
       "samples": [
         {
           "file": "combined_text",
-          "text": "of the formal cause of a particular church",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "of marrying after divorce in case of adultery",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "reflections on a slanderous libel against dr owen",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "the prebends of christ church college in oxford",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "sermon 6 the obligation to increase in godliness",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "sermon 11 the humiliation and condescension of christ",
+          "text": "they will not see but they shall see",
           "count": 1
         }
       ]

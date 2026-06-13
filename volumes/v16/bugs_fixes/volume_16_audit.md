@@ -1,8 +1,8 @@
 # EPUB Audit: volume_16.epub
 
-- Status: **WARN**
+- Status: **PASS**
 - Errors: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
@@ -21,25 +21,17 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 1224
 - Untagged Hebrew chars: 0
-- Noteref links: 257
-- Endnote anchors: 257
+- Noteref links: 259
+- Endnote anchors: 259
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 6
-
-## Warnings
-
-- `repeated_phrases`: Potential repeated phrases detected
+- Repeated phrase hits: 1
 
 ## Samples
 
 ### repeated_phrase
 
-- `combined_text`: of the formal cause of a particular church
-- `combined_text`: of marrying after divorce in case of adultery
-- `combined_text`: reflections on a slanderous libel against dr owen
-- `combined_text`: the prebends of christ church college in oxford
-- `combined_text`: sermon 6 the obligation to increase in godliness
+- `combined_text`: they will not see but they shall see

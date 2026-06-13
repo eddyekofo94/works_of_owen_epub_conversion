@@ -1,87 +1,31 @@
 {
-  "volume": 16,
+  "volume": "16",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/input/owen-v16.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-09T11:41:20.519722+00:00",
+  "generated_at": "2026-06-13T23:54:34.625600+00:00",
   "status": "warn",
-  "warning_count": 14,
+  "warning_count": 1,
   "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "top_of_page_text_loss",
-      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "bottom_of_page_text_loss",
-      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "paragraph_split_candidates",
-      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
-    },
-    {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
-      "code": "roman_heading_candidates",
-      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
-    },
-    {
-      "code": "overlong_heading_candidates",
-      "message": "Some chapter headings are long enough to suggest swallowed body text"
-    },
-    {
-      "code": "enumerator_sequence_candidates",
-      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
-    },
-    {
-      "code": "repeated_windows",
-      "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "low_latin_tagging",
-      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
-    },
-    {
-      "code": "low_latin_translation_coverage",
-      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
-    },
-    {
-      "code": "flat_analysis_chapters",
-      "message": "1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.",
-      "sample": [
-        {
-          "file": "EPUB/ch042.xhtml",
-          "paragraph_count": 3,
-          "structural_line_count": 1,
-          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
-        }
-      ]
     }
   ],
   "pdf": {
-    "page_count": 672
+    "page_count": 672,
+    "skipped_detected": [
+      5,
+      6
+    ]
   },
   "epub": {
     "spine_text_files": 82,
-    "paragraph_count": 2751
+    "paragraph_count": 2720
   },
   "word_coverage": {
     "pdf_content_tokens": 217248,
-    "epub_content_tokens": 219087,
-    "coverage_ratio": 0.9994,
+    "epub_content_tokens": 219129,
+    "coverage_ratio": 0.9995,
     "missing_word_samples": [
       {
         "word": "pre",
@@ -144,59 +88,13 @@
   },
   "page_coverage": {
     "pages_checked": 660,
-    "weak_page_count": 1,
-    "weak_pages": [
-      {
-        "page": 360,
-        "hit_ratio": 0.0,
-        "sample": "of the divine original authority self-evidencing light and power of the scriptures with an answer to that inquiry how we know the scriptures to"
-      }
-    ]
+    "weak_page_count": 0,
+    "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 27889,
-    "missing_dense_window_pages": 40,
+    "dense_windows_checked": 28227,
+    "missing_dense_window_pages": 30,
     "missing_dense_windows": [
-      {
-        "page": 10,
-        "sample": "the true nature of gospel church and its government the second part wherein these"
-      },
-      {
-        "page": 16,
-        "sample": "chimera of some men's brains it is not in rerum natura for if catholic"
-      },
-      {
-        "page": 19,
-        "sample": "separation is proper and inseparable adjunct thereof the apostle speaks of church member-ship corinthians"
-      },
-      {
-        "page": 25,
-        "sample": "not be tolerated at least not approved in well governed kingdom or commonwealth of"
-      },
-      {
-        "page": 27,
-        "sample": "covetous oppressors and the like who shall not inherit the kingdom of god corinthians"
-      },
-      {
-        "page": 28,
-        "sample": "even deride the necessity of the same things in present church members or the"
-      },
-      {
-        "page": 33,
-        "sample": "the things ascribed unto those who are to be esteemed the proper subject matter"
-      },
-      {
-        "page": 34,
-        "sample": "for themselves but possession which being malae fidei ill obtained and ill continued will"
-      },
-      {
-        "page": 43,
-        "sample": "chapter of the formal cause of particular church the way or means whereby such"
-      },
-      {
-        "page": 48,
-        "sample": "useful unto the ends of church edification jointly giving up themselves unto the lord"
-      },
       {
         "page": 56,
         "sample": "and originally unto with an interest in all church privileges to be actually possessed"
@@ -270,10 +168,6 @@
         "sample": "things abused and corrupted by them in church officers took their occasional rise from"
       },
       {
-        "page": 136,
-        "sample": "office being one and the same the same persons being both pastors and teachers"
-      },
-      {
         "page": 143,
         "sample": "to corrupt this order into an episcopal pre eminence which degenerated more and more"
       },
@@ -298,10 +192,6 @@
         "sample": "ordinary preaching presbyters which plainly gives them the advantage of pre eminence reverence and"
       },
       {
-        "page": 162,
-        "sample": "other trouble galatians let us do good unto all μαλιστα δε προς τους οικειους"
-      },
-      {
         "page": 183,
         "sample": "they hold and possess in the body about these things is church rule to"
       },
@@ -316,6 +206,14 @@
       {
         "page": 227,
         "sample": "effectual is plainly evident of what use significabit and capias''10 may be in this"
+      },
+      {
+        "page": 241,
+        "sample": "case be about such right or wrong in pretended fraud over reaching or the"
+      },
+      {
+        "page": 244,
+        "sample": "the catholic church with all church communion whatever for some churches especially that of"
       }
     ]
   },
@@ -328,14 +226,8 @@
   "top_of_page_integrity": {
     "top_windows_checked": 668,
     "top_windows_usable": 630,
-    "skipped_top_window_count": 34,
+    "skipped_top_window_count": 15,
     "skipped_top_windows": [
-      {
-        "page": 20,
-        "window": "ajpi stoiv that is visible unbelievers of any sort or kind for what participation",
-        "sample": "ajpi>stoiv, — that is, visible unbelievers of any sort or kind: \"for what participation, metoch<, hath righteousness with unrighteousness? what",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
       {
         "page": 41,
         "window": "especially by an indulgence unto that loose and careless kind of education in conformity",
@@ -361,51 +253,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 138,
-        "window": "conjunction kai and between pastors and teachers doth no less distinguish them the one",
-        "sample": "conjunction kai>, \"and,\" between \"pastors\" and \"teachers,\" doth no less distinguish them the one from the other than the tou<v and tou<v de> before",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 157,
-        "window": "principally maxime oij kopiw ntev µy igewoyh who labor painfully labor to weariness travail",
-        "sample": "principally;\" \"maxime;\" oiJ kopiw~ntev µy[igewOYh', — \"who labor painfully,\" labor to weariness, travail in the word and doctrine.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 162,
-        "window": "other trouble galatians let us do good unto all ma lista de",
-        "sample": "other trouble. Galatians 6:10, \"Let us do good unto all, ma>lista de<",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 164,
-        "window": "grant that kopia the word here used signifies to labor with pains and diligence",
-        "sample": "1. I grant that kopia~n, the word here used, signifies to labor with pains and diligence, \"ad ultimum virinum, usque ad fatigationem,\" — unto the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 165,
-        "window": "kopiw ntav ejn ujmi them that labor among you who are the rulers and",
-        "sample": "kopiw~ntav ejn uJmi~n,\" — \" them that labor among you,\" who are the rulers and instructors.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 167,
-        "window": "there is in one rule required with diligence he is oj proi sta menov",
-        "sample": "4. There is in one \"rule\" required \"with diligence.\" He is oJ proi`sta>menov, a \"ruler;\" and it is required of him that he attend unto his",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 168,
         "window": "such as are general or common with respect unto occasions from verse to the",
         "sample": "[3.] Such as are general or common, with respect unto occasions, from verse 8 to the end of the chapter. Hence the same duty is doubly",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 169,
-        "window": "number jo dida skwn oj parakalw oj proi sta menov he that teacheth he",
-        "sample": "number: JO dida>skwn, oJ parakalw~n, oJ proi`sta>menov? — \"He that teacheth, he that exhorteth, he that ruleth.\"",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -433,27 +283,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 387,
-        "window": "that which he speaks of is profhtei grafh the prophecy of scripture or written",
-        "sample": "That which he speaks of is profhtei>a grafh~v, the \"prophecy of Scripture,\" or written prophecy.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 390,
-        "window": "private conceptions or self-fancied enthusiasms of the things they spake to this interpretation assents",
-        "sample": "private conceptions, or self-fancied enthusiasms, of the things they spake. To this interpretation assents Grotius, And ejphlu>sewv for ejpilu>sewv",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 398,
         "window": "considered in itself before the accession of the testimony pretended to be necessary to",
         "sample": "considered in itself, before the accession of the testimony pretended [to be] necessary to give it an authority over us. Hitherto, then, have we",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 407,
-        "window": "that it will discover itself even light and heat and power person then who",
-        "sample": "that it will discover itself — even light, and heat, and power. A person, then, who was truly zeo>pneustov, was to be attended unto because he",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -463,63 +295,15 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 421,
-        "window": "the word now because this perverse disposition of mind possessing the to hjgemoniko of",
-        "sample": "the Word. Now, because this perverse disposition of mind, possessing the to< hJgemoniko>n of the soul, influences the will also into an aversation and",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 434,
         "window": "god which none of them that are not utterly brutish do not wrestle withal",
         "sample": "God — which none of them that are not utterly brutish do not wrestle withal, and which all of them are not able in the least to assoil [acquit]",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 452,
-        "window": "the bytik yriq of which sort are above eight hundred in the hebrew bibles",
-        "sample": "2. The bytiK]W yriq], of which sort are above eight hundred in the Hebrew Bibles, are various lections, partly gathered by some Judaical Rabbins out",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 454,
-        "window": "chapter of the purity of the originals the aujto grafa of the scripture",
-        "sample": "CHAPTER 2. Of the purity of the originals — The aujto>grafa of the Scripture",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 456,
-        "window": "ejktupou mena transcribed copies given out to faithful men timothy whilst the infallible spirit",
-        "sample": "ejktupou>mena, \"transcribed copies,\" given out to \"faithful men,\" Timothy 2:1, whilst the infallible Spirit yet continued his guidance in an",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 464,
-        "window": "professes that when he was jew he saw wra in book of his grandfather's",
-        "sample": "professes that when he was a Jew, he saw Wra}K; in a book of his grandfather's. Buxtorf affirms one to have been the Ketib, the other the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 471,
         "window": "by giving evidence of being intended as expository of difficulties having been moved and",
         "sample": "(4.) [By giving] evidence of being intended as expository of difficulties, having been moved and assoiled by some of the ancients upon the places,",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 477,
-        "window": "qui linguam hebraeam tanquam omnium aliarum ajrce tupon absolutissimum plane ab initio scriptam confirmant",
-        "sample": "qui linguam Hebraeam, tanquam omnium aliarum ajrce>tupon absolutissimum, plane ab initio scriptam confirmant; quandoquidem qui",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 484,
-        "window": "the wonted manner eij aujtoi kai oij pai dev ujmw ujgiai nete eu coi",
-        "sample": "the wonted manner, Eij aujtoi< kai< oiJ pai~dev uJmw~n uJgiai>nete, eu+ a[n e]coi? ejgw< kai< ta< strateu>mata uJgiai>nomen? he could not assure them",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 512,
-        "window": "chapter of the bytik yriq their nature and original the difference is in",
-        "sample": "CHAPTER 7. Of the bytik]W yriq], their nature and original — The difference is in",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -535,244 +319,21 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 3,
-    "missing_top_windows": [
-      {
-        "page": 43,
-        "window": "chapter of the formal cause of particular church",
-        "sample": "CHAPTER 2. OF THE FORMAL CAUSE OF A PARTICULAR CHURCH."
-      },
-      {
-        "page": 333,
-        "window": "of infant baptism and dipping of infant baptism",
-        "sample": "OF INFANT BAPTISM AND DIPPING. OF INFANT BAPTISM."
-      },
-      {
-        "page": 363,
-        "window": "to my reverend and worthy friends the prebends of christ church college",
-        "sample": "TO MY REVEREND AND WORTHY FRIENDS, THE PREBENDS OF CHRIST CHURCH COLLEGE"
-      }
-    ]
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 620,
     "bottom_windows_usable": 602,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 5,
-    "missing_bottom_windows": [
-      {
-        "page": 2,
-        "window": "this edition of first published by johnstone hunter 1850-53",
-        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
-      },
-      {
-        "page": 365,
-        "window": "jews have given us their deuterw seiv in their mishna and gemara these kept",
-        "sample": "of it (which how vast and extensive it is no man knows; — for the Jews have given us their deuterw>seiv in their Mishna and Gemara; these kept"
-      },
-      {
-        "page": 372,
-        "window": "the hebrew is ejk tw ajduna twn though they look diverse ways there is",
-        "sample": "Rabbins; and the other, that without them the understanding of the Hebrew is ejk tw~n ajduna>twn: though they look diverse ways, there is a"
-      },
-      {
-        "page": 398,
-        "window": "bounds of their habitation zhtei to ku rion eji rage yhlafh seian aujto kai",
-        "sample": "determined the times before appointed, and the bounds of their habitation,\" zhtei~n to<n Ku>rion eji a]rage yhlafh>seian aujto<n kai<"
-      },
-      {
-        "page": 593,
-        "window": "it we have rendered it here furthermore then it is to loipo ou for",
-        "sample": "And there is another word that signifies also what weight he lays on it, We have rendered it here, \"Furthermore then.\" It is to< loipo<n ou+n, — \"for"
-      }
-    ]
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2395,
-    "split_candidate_count": 36,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch002.xhtml",
-        "previous": "th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —",
-        "next": "Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g"
-      },
-      {
-        "file": "EPUB/ch003.xhtml",
-        "previous": "But the different consideration lies in these things, —",
-        "next": "That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "(4.) If such churches do not, can not, will not reform themselves: then, —",
-        "next": "It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": ", magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —",
-        "next": "— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiazusae 266."
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": "hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —",
-        "next": "And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": " from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: —",
-        "next": "CLEMENS, Epist. ad Corinth., affirms that the apostles themselves appointed approved persons unto the office of the ministry, συνευδοκησάσης τῆς ἐκκλησίας πάσης , \"by (or with) the"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": "n to the pastoral office, yet I must say that where they are not all duly attended unto, the institution of Christ is neglected, and the order of the church infringed. Wherefore, —",
-        "next": "The plea of the communication of all authority for office, and of office itself, solely by a flux of power from the first ordainers, through the hands of their pretended successors"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "unto; and, 5. Whereas, in the wisdom of the Holy Ghost, distinct works did require distinct offices for their discharge (all which we have proved already), our inquiry hereon is, —",
-        "next": "Whether the same Holy Spirit hath not distinguished this office of elders into these two sorts, — -namely, those who are called unto teaching and rule also, and those who are calle"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "l of them but one are accompanied with the modesty of granting that divers sorts of elders are here intended; which, without more than ordinary confidence, cannot be denied. But, —",
-        "next": "Some, by \"elders that rule well,\" do understand bishops that are diocesans; and by \"those that labor in the word and doctrine,\" ordinary preaching presbyters; which plainly gives t"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —",
-        "next": "If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule"
-      },
-      {
-        "file": "EPUB/ch016.xhtml",
-        "previous": "s published in 1721, but seems to have been previously given to the world. It is of use in explaining and defending Congregational usages in matters of ecclesiastical discipline. —",
-        "next": "ED."
-      },
-      {
-        "file": "EPUB/ch018.xhtml",
-        "previous": "ave not, it may be, duly weighed either what jurisdiction, properly so called, is, or how great an evil it is to cast a reproach upon the right ways of the Lord. In answer I say, —",
-        "next": "Ans. 1. Excommunication itself, whatever men may suppose, is no proper act of jurisdiction; for jurisdiction in any sense is an adjunct of office, and the acts of it are acts of of"
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "en their right hand and their left, to deal with infants any otherwise but in and according to the covenant of their parents; and that he doth so, see Romans 5:14. Hence I argue, —",
-        "next": "Those who, by God's appointment, and by virtue of the law of their creation, are, and must of necessity be, included in the covenant of their parents, have the same right with them"
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "and interest in its promises, wherever it be, gives right unto the administration of its initial seal, that is, to baptism, as Peter expressly declares, Acts 2:38, 39. Wherefore, —",
-        "next": "The right of the infant seed of believers unto baptism, as the initial seal of the covenant, stands on the foundation of the faithfulness of Christ as the messenger of the covenant"
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "previous": "This argument may be thus further cleared and improved: —",
-        "next": "Christ is \"the messenger of the covenant,\" Malachi 3:1, — that is, the covenant of God with Abraham, Genesis 17:7; for, —"
-      },
-      {
-        "file": "EPUB/ch032.xhtml",
-        "previous": "The passages are these: —",
-        "next": "Adversus Haereses, lib. 2, cap. 22, sect. 4: \" Magister ergo existens, magistri quoque habebat aetatem, non reprobans nec supergrediens hominem, neque solvens suam legem in se huma"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "d the manner of the Word's coming forth from God, an answer shall now, on that sole foundation, be returned to the inquiry laid down. And this I shall do in the ensuing position: —",
-        "next": "The authority of God, the supreme Lord of all, the first and only absolute Truth, whose word is truth — speaking in and by the penmen of the Scriptures — evinced singly in and by t"
-      },
-      {
-        "file": "EPUB/ch047.xhtml",
-        "previous": "irit, whereby we are enabled to believe the Scripture, on the account whereof we may say that we receive the Scripture to be the word of God — or upon the testimony of the Spirit —",
-        "next": "I shall a little inquire, what it is, and wherein it doth consist."
-      },
-      {
-        "file": "EPUB/ch047.xhtml",
-        "previous": "ugh distinguished in their formal conceptions. I have been much affected with those verses of Dante, the Italian poet, which somebody hath thus, word for word, turned into Latin: —",
-        "next": "— \" Larga pluvia Spiritus sancti quae, est diffusa Super veteres, et super novas membranas , Est syllogismus qui eam mihi conclusit Acute adeo ut prae illa Omnis demonstratio mihi "
-      },
-      {
-        "file": "EPUB/ch048.xhtml",
-        "previous": "his day — that of themselves they miserably grope up and down in the dark, and are never able to come to any satisfaction, neither as to what is present nor as to what is to come —",
-        "next": "I could manifest, from the state, office, and condition of conscience, the indelible προλήψεις , \"presumptions, about them, that are in the hearts of all by nature. The whole histo"
-      },
-      {
-        "file": "EPUB/ch051.xhtml",
-        "previous": "ove eight hundred in the Hebrew Bibles, are various lections, partly gathered by some Judaical Rabbins out of ancient copies, partly their critical amendments. 57 And, therefore, —",
-        "next": "After these various lections, as they are esteemed, are presented unto us in their own proper order, wherein they stand in the great Bibles (not surely to increase the bulk of dive"
-      },
-      {
-        "file": "EPUB/ch051.xhtml",
-        "previous": "3. That there are such alterations befallen the original as, in many places, may be rectified by the translations that have been made of old. 59 And therefore, —",
-        "next": "Various lections may be observed and gathered out of those translations, by considering how they read in their copies, and wherein they differed from those which we now enjoy. 60"
-      },
-      {
-        "file": "EPUB/ch051.xhtml",
-        "previous": " critical conjecturing, amend them, and restore the native lections that were lost; though in general, without the authority of copies, this may not be allowed. 61 And therefore, —",
-        "next": "A collection of various readings out of Grotius, consisting for the most part in such conjectures, is in the Appendix presented unto us."
-      },
-      {
-        "file": "EPUB/ch054.xhtml",
-        "previous": "n) against the truth of it from the Prolegomena and Appendix to the Biblia Polyglotta , [Translated: \"Polyglot Bible\"] at the entrance of our discourse proposed to consideration: —",
-        "next": "To speak somewhat of them in general, I must crave leave to say, — and it being but the representation of men's avowed judgments, I hope I may say without offense, — that together "
-      },
-      {
-        "file": "EPUB/ch056.xhtml",
-        "previous": " Now, because his discourse seems evidently to discover the vanity of this pretense, that the Hebrew vowels are an arbitrary invention from their number, I have here inserted it: —",
-        "next": "Apert sounds are either Simple. Vowels."
-      },
-      {
-        "file": "EPUB/ch056.xhtml",
-        "previous": "ogether with the gravity or acuteness of the tone which is made by them; according to which there are at least eight simple vowels, that are by us easily distinguishable, namely, —",
-        "next": "E magis acutum as in he, me, she, ye, etc."
-      },
-      {
-        "file": "EPUB/ch056.xhtml",
-        "previous": "entally distinguishable from one another, with reference to the quantity of time required to their prolation, whereby the same vowel becomes sometimes long [and sometimes] short: —",
-        "next": "Long. Mete, sterne. So E min. acut Short. Met, stem."
-      },
-      {
-        "file": "EPUB/ch058.xhtml",
-        "previous": "-two cells or private chambers, that there should be twelve of each tribe fit for that work, are all of them incredible. 113 See Scal. ad Euseb. fol. 123; Wouwer Syntag. cap. 11. —",
-        "next": "Some of the Jews say that they made the translation out of a corrupt Chaldee paraphrase; and to me this seems not unlikely. Josephus, Austin, Philo, Jerome, Zonaras, affirm that th"
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "previous": "That which I would principally think of use for myself and you in this psalm is this, —",
-        "next": "That it is a wise thing, a thing of great counsel and advice, to make God our refuge in the time of greatest distress, terror, disorder, and wickedness, that can be in the world. T"
-      },
-      {
-        "file": "EPUB/ch065.xhtml",
-        "previous": "t scattered away before the wind. 'A long-continued title, a long prescription of time in the same state of things, certainly that will secure us from the fear of a dissolution.' —",
-        "next": "There is not an empire at this day in the world that hath had a life so long as man had before the flood; and if a prescription of eight or nine hundred years could not preserve me"
-      },
-      {
-        "file": "EPUB/ch069.xhtml",
-        "previous": "The show of their countenance doth witness against them; and they declare their sin as Sodom, they hide it not. Woe unto their soul! for they have rewarded evil unto themselves.\" —",
-        "next": "Isaiah 3:8, 9. 117 First, HERE is a confluence of sins delighted in."
-      },
-      {
-        "file": "EPUB/ch069.xhtml",
-        "previous": "d, to provoke the eyes of his glory. You may range all sins under these two heads — men's tongues and their doings; for their tongues and their doings have been against the Lord. —",
-        "next": "There is a particularly ruining provocation, when men set their tongues against the Lord. It a great sign, of he approaching, ruin of a people and nation when men set their tongues"
-      },
-      {
-        "file": "EPUB/ch069.xhtml",
-        "previous": "What are the sins that have a special opposition unto the eyes of God's glory as it denotes his holiness? I answer, —",
-        "next": "All sorts of uncleanness, — adultery, fornication. Uncleanness is in a peculiar manner opposed unto the holiness of God. We are to inquire whether there have been any overspreading"
-      },
-      {
-        "file": "EPUB/ch071.xhtml",
-        "previous": "I shall show you how it was; and then give you a word of use: —",
-        "next": "What, then, did Christ do in his condescension? Pray remember it, for it is the principal object of your faith, and the life of your souls. This was that which he did: The person o"
-      },
-      {
-        "file": "EPUB/ch073.xhtml",
-        "previous": "These are some of the causes of God's hiding his face from us: —",
-        "next": "Love of the world, frowardness, or a non-compliance with the calls of providence, formality in spiritual duties, and a not filling up our testimony against the world. And we have s"
-      },
-      {
-        "file": "EPUB/ch075.xhtml",
-        "previous": "he \"Remarks,\" we have failed to ascertain. The three discourses subjoined are not of much importance, but as they have already appeared in print, we include them in this edition. —",
-        "next": "ED."
-      }
-    ],
+    "paragraphs_checked": 2364,
+    "split_candidate_count": 0,
+    "split_candidates": [],
     "structural_start_exclusions": 280,
     "short_fragment_count": 24,
     "short_fragments": [
@@ -809,12 +370,12 @@
         "text": "QUESTION 2."
       },
       {
-        "file": "EPUB/ch027.xhtml",
+        "file": "EPUB/ch026.xhtml",
         "text": "QUESTION 2."
       },
       {
-        "file": "EPUB/ch032.xhtml",
-        "text": "The passages are these: —"
+        "file": "EPUB/ch027.xhtml",
+        "text": "ANSWER."
       },
       {
         "file": "EPUB/ch044.xhtml",
@@ -875,33 +436,8 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 6,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch004.xhtml",
-        "text": "Hence it appears that there are none excluded from an entrance into the church-state but such as are either, — (1.) Grossly ignorant; or, (2.) Persecutors or reproachers of those that are good, or of the ways of God wherein they walk; or, (3.) Idolaters; or, ("
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "text": "The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the carnal baptized posterity of those who d"
-      },
-      {
-        "file": "EPUB/ch006.xhtml",
-        "text": "Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1, 15. 3. Humble waiting on God for the re"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "text": "The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humiliation for it. [3.] The "
-      },
-      {
-        "file": "EPUB/ch058.xhtml",
-        "text": "The industry of learned men of old, and of late Jews and Christians, has been well exercised in the interpretation and reconciliation of them: by one or other a fair and probable account is given of them all. Where we cannot reach the utmost depth of truth, it"
-      },
-      {
-        "file": "EPUB/ch063.xhtml",
-        "text": "Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: \"Write it.\" It is a certain vision. 2. It is evident: \"Make it plain upon tables, that he may run that readeth it.\" 3. It is determined: \"The vision is yet for an appointed ti"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -924,14 +460,8 @@
         "text": "L. One, none, note, etc. — oe velca. O rotund."
       }
     ],
-    "overlong_heading_candidate_count": 1,
-    "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch024.xhtml",
-        "tag": "h3",
-        "text": "QUESTION 1. WHETHER persons who have engaged unto reformation and another way of divine worship, according to the word of God, as they believe, may lawfully go unto and attend on the us of the prayer book in divine worship?"
-      }
-    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": []
   },
@@ -967,7 +497,7 @@
             "context": "(1.) I was none of them, and cannot tell;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p189",
+            "location": "EPUB/ch004.xhtml#p187",
             "context": "(1.) There is required unto it a competent knowledge of the doctrines and mystery of the gospel, especially concerning the person and offices of Christ. The confession hereof was the g"
           }
         ]
@@ -986,7 +516,7 @@
             "context": "(2.) They did agree in my judgment well enough, if they could have thought so; and further I am not concerned in the difference.\" — P. 433. The author of the anonymous memoir prefixed"
           },
           {
-            "location": "EPUB/ch004.xhtml#p190",
+            "location": "EPUB/ch004.xhtml#p188",
             "context": "(2.) There is required unto it a professed subjection of soul and conscience unto the authority of Christ in the church, Matthew 28:18-20; 2 Corinthians 8:5. This in general is perform"
           }
         ]
@@ -1001,11 +531,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p225",
+            "location": "EPUB/ch004.xhtml#p222",
             "context": "[1.] In not valuing aright the great privilege of having their children and servants under the inspection, care, and blessing of the church;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p233",
+            "location": "EPUB/ch004.xhtml#p230",
             "context": "[1.] Flee from idols, and are ready to confirm their testimony against them with suffering;"
           }
         ]
@@ -1031,11 +561,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch004.xhtml#p226",
+            "location": "EPUB/ch004.xhtml#p223",
             "context": "[2.] In not instilling into them a sense of it, with the duties that are expected from them on the account of their relation unto the church;"
           },
           {
-            "location": "EPUB/ch004.xhtml#p234",
+            "location": "EPUB/ch004.xhtml#p231",
             "context": "[2.] Make profession of the truth of the gospel of the doctrine of Christ, especially as unto his person and offices; are,"
           }
         ]
@@ -1182,56 +712,16 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 4904,
-    "epub_latin_word_count": 4986,
-    "epub_tagged_latin_word_count": 2011,
-    "pdf_latin_unique_words": 1580,
-    "epub_latin_unique_words": 1588,
-    "epub_tagged_unique_words": 1138,
-    "latin_word_coverage_ratio": 0.9994,
-    "latin_tagging_ratio": 0.4033,
+    "pdf_latin_word_count": 3225,
+    "epub_latin_word_count": 3298,
+    "epub_tagged_latin_word_count": 1945,
+    "pdf_latin_unique_words": 1517,
+    "epub_latin_unique_words": 1525,
+    "epub_tagged_unique_words": 1106,
+    "latin_word_coverage_ratio": 0.9991,
+    "latin_tagging_ratio": 0.5898,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "nor",
-        "epub": 430,
-        "tagged": 7
-      },
-      {
-        "word": "jesus",
-        "epub": 166,
-        "tagged": 0
-      },
-      {
-        "word": "yea",
-        "epub": 116,
-        "tagged": 2
-      },
-      {
-        "word": "distinct",
-        "epub": 101,
-        "tagged": 1
-      },
-      {
-        "word": "whereas",
-        "epub": 99,
-        "tagged": 2
-      },
-      {
-        "word": "poor",
-        "epub": 98,
-        "tagged": 2
-      },
-      {
-        "word": "thereunto",
-        "epub": 93,
-        "tagged": 1
-      },
-      {
-        "word": "whereunto",
-        "epub": 65,
-        "tagged": 1
-      },
       {
         "word": "prolegomena",
         "epub": 49,
@@ -1240,47 +730,12 @@
       {
         "word": "morinus",
         "epub": 51,
-        "tagged": 4
-      },
-      {
-        "word": "church-state",
-        "epub": 46,
-        "tagged": 1
-      },
-      {
-        "word": "hereunto",
-        "epub": 46,
-        "tagged": 2
+        "tagged": 3
       },
       {
         "word": "cappellus",
         "epub": 37,
         "tagged": 3
-      },
-      {
-        "word": "mere",
-        "epub": 37,
-        "tagged": 3
-      },
-      {
-        "word": "endeavor",
-        "epub": 32,
-        "tagged": 1
-      },
-      {
-        "word": "abraham",
-        "epub": 33,
-        "tagged": 5
-      },
-      {
-        "word": "immediate",
-        "epub": 28,
-        "tagged": 0
-      },
-      {
-        "word": "plea",
-        "epub": 25,
-        "tagged": 2
       },
       {
         "word": "elias",
@@ -1298,7 +753,7 @@
         "tagged": 4
       },
       {
-        "word": "sum",
+        "word": "communicate",
         "epub": 17,
         "tagged": 0
       },
@@ -1308,36 +763,102 @@
         "tagged": 15
       },
       {
-        "word": "communicate",
-        "epub": 17,
+        "word": "door",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "innate",
+        "epub": 13,
+        "tagged": 0
+      },
+      {
+        "word": "magistrate",
+        "epub": 13,
+        "tagged": 0
+      },
+      {
+        "word": "tiberias",
+        "epub": 16,
+        "tagged": 3
+      },
+      {
+        "word": "excommunicate",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "irenaeus",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "undergo",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "erasmus",
+        "epub": 12,
         "tagged": 1
       },
       {
-        "word": "elsewhere",
-        "epub": 16,
+        "word": "nowhere",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "tract",
+        "epub": 11,
+        "tagged": 1
+      },
+      {
+        "word": "masora",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "barnabas",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "relate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "obstinate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "pleas",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "forego",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "buxtorfius",
+        "epub": 10,
         "tagged": 1
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 221,
+    "latin_clauses_checked": 214,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 586,
-    "translated_latin_runs_count": 300,
-    "latin_translation_ratio": 0.5119,
+    "tagged_latin_runs_count": 560,
+    "translated_latin_runs_count": 294,
+    "latin_translation_ratio": 0.525,
     "untranslated_latin_samples": [
-      {
-        "phrase": "undergo; whereas"
-      },
-      {
-        "phrase": "nor communicate"
-      },
-      {
-        "phrase": "church-state, whereinto"
-      },
       {
         "phrase": "successor, as Ali"
       },
@@ -1346,9 +867,6 @@
       },
       {
         "phrase": "Orat. De Corona"
-      },
-      {
-        "phrase": "senate nor"
       },
       {
         "phrase": "praeceptis Dominicis et Deum"
@@ -1388,6 +906,18 @@
       },
       {
         "phrase": "per universas provincias tenetur"
+      },
+      {
+        "phrase": "Bulgarus Hugolinus"
+      },
+      {
+        "phrase": "in Bononia, Paris"
+      },
+      {
+        "phrase": "in alieno fundo"
+      },
+      {
+        "phrase": "is \"praesum, praesideo"
       }
     ]
   },
@@ -1409,6 +939,11 @@
   "font_config_check": {
     "font_issue_count": 0,
     "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "repeated_phrases"
+    ]
   },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."

@@ -1,23 +1,13 @@
 {
-  "volume": 16,
-  "total_words_audited": 258379,
-  "total_anomalies_count": 10,
+  "volume": "16",
+  "total_words_audited": 258441,
+  "total_anomalies_count": 55,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [],
     "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],
-    "Unresolved Citation References": [
-      {
-        "target": "lib. 3 cap. 2",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Chapter 1 - the Subject-matter of the Church.",
-        "contexts": [
-          "... titution of a church in its members,\" De Ecclesia lib. 3 cap. 2. 4. They must be such as do make an open profess ...",
-          "... ith none in this matter. Bellarmine, De Ecclesia lib. 3 cap. 2, gives an account out of Augustine, and that trul ..."
-        ]
-      }
-    ],
+    "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [
       {
         "target": "4.",
@@ -69,32 +59,402 @@
         ]
       }
     ],
-    "Invalid Bible References": [
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
       {
-        "target": "Philippians 5",
-        "description": "Invalid Bible reference (chapter 5 exceeds max 4 for Philippians)",
+        "target": "On the ground of some statements in the following treatise, which was published in 1889, it has been gravely argued that...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Prefatory Note (The True Nature of a Gospel Church and Its Government)",
+        "contexts": [
+          "On the ground of some statements in the following treatise, which was published in 1889, it has been gravely argued that..."
+        ]
+      },
+      {
+        "target": "(2.) They did agree in my judgment well enough, if they could have thought so; and further I am not concerned in the dif...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Prefatory Note (The True Nature of a Gospel Church and Its Government)",
+        "contexts": [
+          "(2.) They did agree in my judgment well enough, if they could have thought so; and further I am not concerned in the dif..."
+        ]
+      },
+      {
+        "target": "Mr Orme admits that \"he seems to contend for a distinct office of ruling elder, or for elders who are called to rule and...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Prefatory Note (The True Nature of a Gospel Church and Its Government)",
+        "contexts": [
+          "Mr Orme admits that \"he seems to contend for a distinct office of ruling elder, or for elders who are called to rule and..."
+        ]
+      },
+      {
+        "target": "1. The foundation part of a visible church is the credible profession of faith and holiness, wherein the Lord Jesus Chri...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Preface (The True Nature of a Gospel Church and Its Government)",
+        "contexts": [
+          "1. The foundation part of a visible church is the credible profession of faith and holiness, wherein the Lord Jesus Chri..."
+        ]
+      },
+      {
+        "target": "(4.) A collation of extraordinary gifts, as of infallibility in teaching, of working miracles, speaking with tongues, an...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 3 - of the Polity, Rule, or Discipline of the Church in",
+        "contexts": [
+          "(4.) A collation of extraordinary gifts, as of infallibility in teaching, of working miracles, speaking with tongues, an..."
+        ]
+      },
+      {
+        "target": "He is a great stranger unto these things who knoweth not that among the Greeks, especially the Athenians, from whom the ...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Chapter 4 - the Officers of the Church.",
+        "contexts": [
+          "He is a great stranger unto these things who knoweth not that among the Greeks, especially the Athenians, from whom the ..."
+        ]
+      },
+      {
+        "target": "1. The name \u03b4\u03b9\u03b4\u03ac\u03c3\u03ba\u03b1\u03bb\u03bf\u03c2; is not used in the New Testament but for a teacher with authority. The apostle John tells us tha...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
+        "contexts": [
+          "1. The name \u03b4\u03b9\u03b4\u03ac\u03c3\u03ba\u03b1\u03bb\u03bf\u03c2; is not used in the New Testament but for a teacher with authority. The apostle John tells us tha..."
+        ]
+      },
+      {
+        "target": "1. In the primitive church, about the end of the second century, before there was the least attempt to introduce new off...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 6 - of the Office of Teachers in the Church, or an Inqu",
+        "contexts": [
+          "1. In the primitive church, about the end of the second century, before there was the least attempt to introduce new off..."
+        ]
+      },
+      {
+        "target": "2. The use of it in other places of the New Testament is constantly distinctive, whether applied to things or persons: A...",
+        "description": "Paragraph has unmatched double quotes (count: 25)",
+        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
+        "contexts": [
+          "2. The use of it in other places of the New Testament is constantly distinctive, whether applied to things or persons: A..."
+        ]
+      },
+      {
+        "target": "There are, therefore, two sorts of duties confessedly here mentioned and commanded; \u2014 the first is, ruling well; the oth...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
+        "contexts": [
+          "There are, therefore, two sorts of duties confessedly here mentioned and commanded; \u2014 the first is, ruling well; the oth..."
+        ]
+      },
+      {
+        "target": "Our argument from hence is this: There is in the church \u1f41 \u03c0\u03c1\u03bf\u03ca\u03c3\u03c4\u03ac\u03bc\u03b5\u03bd\u03bf\u03c2, \"one that ruleth.\" \u03a0\u03c1\u03bf\u03ca\u03c3\u03c4\u03b7\u03bc\u03b9, is \"to rule with a...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "Chapter 7 - of the Rule of the Church, or of Ruling Elders.",
+        "contexts": [
+          "Our argument from hence is this: There is in the church \u1f41 \u03c0\u03c1\u03bf\u03ca\u03c3\u03c4\u03ac\u03bc\u03b5\u03bd\u03bf\u03c2, \"one that ruleth.\" \u03a0\u03c1\u03bf\u03ca\u03c3\u03c4\u03b7\u03bc\u03b9, is \"to rule with a..."
+        ]
+      },
+      {
+        "target": "2. It is a vain apprehension, to suppose that one or two teaching officers in a church, who are obliged to \"give themsel...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 8 - the Nature of Church Polity or Rule, With the Duty",
+        "contexts": [
+          "2. It is a vain apprehension, to suppose that one or two teaching officers in a church, who are obliged to \"give themsel..."
+        ]
+      },
+      {
+        "target": "1. Prayer, without which it can no way be administered in the name of our Lord Jesus Christ. The administration of any s...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 10 - of Excommunication.",
+        "contexts": [
+          "1. Prayer, without which it can no way be administered in the name of our Lord Jesus Christ. The administration of any s..."
+        ]
+      },
+      {
+        "target": "Lastly, The nature and end of this judgment or Sentence being corrective, not vindictive, \u2014 for healing, not destruction...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 10 - of Excommunication.",
+        "contexts": [
+          "Lastly, The nature and end of this judgment or Sentence being corrective, not vindictive, \u2014 for healing, not destruction..."
+        ]
+      },
+      {
+        "target": "1. \"Trouble may arise from the thing itself; for there being an exercise of authority or jurisdiction in it over the per...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 10 - of Excommunication.",
+        "contexts": [
+          "1. \"Trouble may arise from the thing itself; for there being an exercise of authority or jurisdiction in it over the per..."
+        ]
+      },
+      {
+        "target": "2. \"The persons to be excommunicated may be great, and of great interest in the world, so as that if they receive a prov...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 10 - of Excommunication.",
+        "contexts": [
+          "2. \"The persons to be excommunicated may be great, and of great interest in the world, so as that if they receive a prov..."
+        ]
+      },
+      {
+        "target": "2. The Pharisees inquired of our Savior about such a divorce as was absolute, and gave liberty of marriage after it; for...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Of Marrying After Divorce in Case of Adultery.",
+        "contexts": [
+          "2. The Pharisees inquired of our Savior about such a divorce as was absolute, and gave liberty of marriage after it; for..."
+        ]
+      },
+      {
+        "target": "Mr Tombs tells us, \"This proves not infant baptism, because though it be granted that in Justin Martyr, and others of th...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
         "chapter": "A Vindication of Two Passages in Irenaeus Against the Exception",
         "contexts": [
-          "... f, \u2014 'Took upon him the form of a servant,' etc., Philippians 5 7, 8. \"By all which reasons,\" saith Mr Tombs, \"I ..."
+          "Mr Tombs tells us, \"This proves not infant baptism, because though it be granted that in Justin Martyr, and others of th..."
         ]
       },
       {
-        "target": "2 Kings 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "target": "I. One of the first charges I meet withal, upon the first head, is page 9, that I was one of them who promised Cromwell ...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Reflections on a Slanderous Libel",
+        "contexts": [
+          "I. One of the first charges I meet withal, upon the first head, is page 9, that I was one of them who promised Cromwell ..."
+        ]
+      },
+      {
+        "target": "OF THE   DIVINE ORIGINAL, AUTHORITY,   SELF-EVIDENCING LIGHT,   AND POWER OF THE   SCRIPTURES;   WITH AN ANSWER TO THAT ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Treatises Concerning the Scriptures.",
+        "contexts": [
+          "OF THE   DIVINE ORIGINAL, AUTHORITY,   SELF-EVIDENCING LIGHT,   AND POWER OF THE   SCRIPTURES;   WITH AN ANSWER TO THAT ..."
+        ]
+      },
+      {
+        "target": "It is concerning the last of these only that at present I shall deliver my thoughts unto you; and that because we begin ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "The Prebends of Christ Church College in Oxford,",
+        "contexts": [
+          "It is concerning the last of these only that at present I shall deliver my thoughts unto you; and that because we begin ..."
+        ]
+      },
+      {
+        "target": "Here that most stupendous fabric that was ever raised by ink and paper, termed well by a learned man, \"Magnificentissimu...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "The Prebends of Christ Church College in Oxford,",
+        "contexts": [
+          "Here that most stupendous fabric that was ever raised by ink and paper, termed well by a learned man, \"Magnificentissimu..."
+        ]
+      },
+      {
+        "target": "Of this saith the apostle, \u03a4\u03bf\u1fe6\u03c4\u03bf \u03c0\u03c1\u1ff6\u03c4\u03bf\u03bd \u03b3\u03b9\u03bd\u03ce\u03c3\u03ba\u03bf\u03bd\u03c4\u03b5\u03c2? \u2014 \"Knowing, judging, and determining this in the first place: \"this...",
+        "description": "Paragraph has unmatched double quotes (count: 29)",
+        "chapter": "Chapter 1.",
+        "contexts": [
+          "Of this saith the apostle, \u03a4\u03bf\u1fe6\u03c4\u03bf \u03c0\u03c1\u1ff6\u03c4\u03bf\u03bd \u03b3\u03b9\u03bd\u03ce\u03c3\u03ba\u03bf\u03bd\u03c4\u03b5\u03c2? \u2014 \"Knowing, judging, and determining this in the first place: \"this..."
+        ]
+      },
+      {
+        "target": "Whatever that be, it returns an answer to this important question, \"Why, or on what account, do you believe the Scriptur...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "Whatever that be, it returns an answer to this important question, \"Why, or on what account, do you believe the Scriptur..."
+        ]
+      },
+      {
+        "target": "THERE is a tendency to acquiesce in the general verdict against our author for the part he took in the controversy with ...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Prefatory Note",
+        "contexts": [
+          "THERE is a tendency to acquiesce in the general verdict against our author for the part he took in the controversy with ..."
+        ]
+      },
+      {
+        "target": "But that which makes the greatest cry at present is the corruption of Psalm 22:17, where, instead of \u05db\u05b8\u05bc\u05d0\u05b2\u05e8\u05d5\u05bc, which the...",
+        "description": "Paragraph has unmatched double quotes (count: 33)",
+        "chapter": "Chapter 2.",
+        "contexts": [
+          "But that which makes the greatest cry at present is the corruption of Psalm 22:17, where, instead of \u05db\u05b8\u05bc\u05d0\u05b2\u05e8\u05d5\u05bc, which the..."
+        ]
+      },
+      {
+        "target": "2. In the days of the Chaldee paraphrast, when the prophecies of the humiliation and death of their Messiah were only no...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "2. In the days of the Chaldee paraphrast, when the prophecies of the humiliation and death of their Messiah were only no..."
+        ]
+      },
+      {
+        "target": "He speaks not at all of the \u05e7\u05b0\u05e8\u05b4\u05d9 \u05d5\u05bc\u05db\u05b0\u05ea\u05b4\u05d9\u05d1, but merely of the anomalous pointing of words, in a various way from the gen...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 7.",
+        "contexts": [
+          "He speaks not at all of the \u05e7\u05b0\u05e8\u05b4\u05d9 \u05d5\u05bc\u05db\u05b0\u05ea\u05b4\u05d9\u05d1, but merely of the anomalous pointing of words, in a various way from the gen..."
+        ]
+      },
+      {
+        "target": "Whether the SYRIAC translation be any fitter for this use, any one who shall be pleased to consider and weigh it will ea...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "Whether the SYRIAC translation be any fitter for this use, any one who shall be pleased to consider and weigh it will ea..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Vulgatam translationem Graecam non esse LXX. interpretum, contra, quam olim existimatum fuit. \"Translati...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Vulgatam translationem Graecam non esse LXX. interpretum, contra, quam olim existimatum fuit. \"Translati..."
+        ]
+      },
+      {
+        "target": "Why then, observe, that when God brings both silver and dross, both good and bad, into the same furnace, it is the highe...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Sermon 1 - the Furnace of Divine Wrath.",
+        "contexts": [
+          "Why then, observe, that when God brings both silver and dross, both good and bad, into the same furnace, it is the highe..."
+        ]
+      },
+      {
+        "target": "1. How do they act in the world? Why, consider that, as to their duties which they omit, and as to the wickednesses whic...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
+        "contexts": [
+          "1. How do they act in the world? Why, consider that, as to their duties which they omit, and as to the wickednesses whic..."
+        ]
+      },
+      {
+        "target": "That which I would principally think of use for myself and you in this psalm is this, \u2014 That it is a wise thing, a thing...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 2 - the Wisdom of Making the Lord Our Refuge.",
+        "contexts": [
+          "That which I would principally think of use for myself and you in this psalm is this, \u2014 That it is a wise thing, a thing..."
+        ]
+      },
+      {
+        "target": "The prophet doth distribute all things that can be said to God when we are reproved under these two heads; \u2014 one of them...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 3 - Faith's Answer to Divine Reproofs.",
+        "contexts": [
+          "The prophet doth distribute all things that can be said to God when we are reproved under these two heads; \u2014 one of them..."
+        ]
+      },
+      {
+        "target": "1. The first thing in waiting is looking unto God, eyeing of God. So David expresses it in the Psalms: \"As the eyes, of ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Sermon 4 - Spiritual Strength; - Its Reality, Decay, & Renovati",
+        "contexts": [
+          "1. The first thing in waiting is looking unto God, eyeing of God. So David expresses it in the Psalms: \"As the eyes, of ..."
+        ]
+      },
+      {
+        "target": "Carry this about with you as a note of remembrance, that God in dealing about those things hath put a \"once more upon th...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
+        "contexts": [
+          "Carry this about with you as a note of remembrance, that God in dealing about those things hath put a \"once more upon th..."
+        ]
+      },
+      {
+        "target": "1. It consists in a general, earnest intension upon the occasions of life and the temptations of life. When a nation is ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
+        "contexts": [
+          "1. It consists in a general, earnest intension upon the occasions of life and the temptations of life. When a nation is ..."
+        ]
+      },
+      {
+        "target": "3. A people are then secure when God's warnings among them are despised. I am persuaded that, such is the goodness and t...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
+        "contexts": [
+          "3. A people are then secure when God's warnings among them are despised. I am persuaded that, such is the goodness and t..."
+        ]
+      },
+      {
+        "target": "I shall now speak a few words, in the SECOND place, unto the reasons why in such approaching dissolutions all professors...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
+        "contexts": [
+          "I shall now speak a few words, in the SECOND place, unto the reasons why in such approaching dissolutions all professors..."
+        ]
+      },
+      {
+        "target": "standeth before the door.\" This was the coming of Christ in the great and terrible judgment wherein he executed vengeanc...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon 5 - Holiness Urged From the Liability of All Things to D",
+        "contexts": [
+          "standeth before the door.\" This was the coming of Christ in the great and terrible judgment wherein he executed vengeanc..."
+        ]
+      },
+      {
+        "target": "What is this thing the apostle makes this entrance into? It is, \"How ye ought to walk and to please God,\" saith he. And ...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
         "chapter": "Sermon 6 - the Obligation to Increase in Godliness,",
         "contexts": [
-          "... t;\" \u2014 sometimes it is called a walking after God: 2 Kings 23:3, \"The king made a covenant to walk after the LO ..."
+          "What is this thing the apostle makes this entrance into? It is, \"How ye ought to walk and to please God,\" saith he. And ..."
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "target": "I will add a little more, for the further opening of the words. There is in them a summary declaration of the causes of ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon 9 - National Sins and National Judgments.",
+        "contexts": [
+          "I will add a little more, for the further opening of the words. There is in them a summary declaration of the causes of ..."
+        ]
+      },
+      {
+        "target": "3. The last aggravation whereby men provoke the eyes of God's glory is when they declare their sin as Sodom.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 9 - National Sins and National Judgments.",
+        "contexts": [
+          "3. The last aggravation whereby men provoke the eyes of God's glory is when they declare their sin as Sodom.\""
+        ]
+      },
+      {
+        "target": "Secondly, With respect unto their state and condition towards men. He speaks of \"merciful men,\" \u2014 men of benignity, men ...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 10 - the Death of the Righteous.",
+        "contexts": [
+          "Secondly, With respect unto their state and condition towards men. He speaks of \"merciful men,\" \u2014 men of benignity, men ..."
+        ]
+      },
+      {
+        "target": "1. \"No man layeth it to heart.\" And, 2. \"None considering that they are taken away from the evil to come.\" The meaning o...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 10 - the Death of the Righteous.",
+        "contexts": [
+          "1. \"No man layeth it to heart.\" And, 2. \"None considering that they are taken away from the evil to come.\" The meaning o..."
+        ]
+      },
+      {
+        "target": "(1.) When Christ humbled himself, he did not leave, he did not relinquish, he did not forego, his divine nature. He did ...",
+        "description": "Paragraph has unmatched double quotes (count: 29)",
         "chapter": "Sermon 11 - the Humiliation and Condescension of Christ.",
         "contexts": [
-          "... and thought it not robbery to be equal with God,\" Philippians 17:6 2:6. He was \"in the form of God.\" God hath no i ..."
+          "(1.) When Christ humbled himself, he did not leave, he did not relinquish, he did not forego, his divine nature. He did ..."
+        ]
+      },
+      {
+        "target": "1. Such a prolixity in handling of particulars, or the introduction of less necessary considerations or of such as may m...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 12 - Enoch's Walk With God.",
+        "contexts": [
+          "1. Such a prolixity in handling of particulars, or the introduction of less necessary considerations or of such as may m..."
+        ]
+      },
+      {
+        "target": "3. I shall not need to insist upon the explication of the metaphor of \"walking with God,\" or walking before him, which i...",
+        "description": "Paragraph has unmatched double quotes (count: 47)",
+        "chapter": "Sermon 12 - Enoch's Walk With God.",
+        "contexts": [
+          "3. I shall not need to insist upon the explication of the metaphor of \"walking with God,\" or walking before him, which i..."
+        ]
+      },
+      {
+        "target": "(2.) It is in a wrestling condition. This was the character of Jacob above all the patriarchs, \u2014 he was the great wrestl...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 13 - a Fast Sermon: - Christian Duty Under the Hidings O",
+        "contexts": [
+          "(2.) It is in a wrestling condition. This was the character of Jacob above all the patriarchs, \u2014 he was the great wrestl..."
         ]
       }
-    ],
-    "List Formatting Inconsistencies": []
-  }
+    ]
+  },
+  "unused_whitelist_anomalies": {}
 }

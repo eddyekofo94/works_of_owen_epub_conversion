@@ -1,42 +1,42 @@
 # Text Integrity Audit: Volume 16
 
 - Status: **WARN**
-- Warnings: 14
+- Warnings: 1
 - PDF pages: 672
 - EPUB text files: 82
-- EPUB paragraphs/headings: 2751
+- EPUB paragraphs/headings: 2720
 
 ## Coverage
 
 - PDF content tokens: 217248
-- EPUB content tokens: 219087
-- Approximate PDF-to-EPUB coverage ratio: 0.9994
+- EPUB content tokens: 219129
+- Approximate PDF-to-EPUB coverage ratio: 0.9995
 - Pages checked: 660
-- Weak page matches: 1
-- Dense source windows checked: 27889
-- Missing dense source-window pages: 40
+- Weak page matches: 0
+- Dense source windows checked: 28227
+- Missing dense source-window pages: 30
 - Front CONTENTS pages checked: 1
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 630
-- Top-of-page windows skipped as unstable: 34
-- Missing top-of-page body windows: 3
+- Top-of-page windows skipped as unstable: 15
+- Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 602
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 5
+- Missing bottom-of-page body windows: 0
 
 ## Paragraphs
 
-- Body paragraphs checked: 2395
-- Possible faulty paragraph splits: 36
+- Body paragraphs checked: 2364
+- Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 280
 - Short fragments: 24
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 6
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 2
 - Roman heading candidates: 1
-- Overlong heading candidates: 1
+- Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 509
@@ -59,82 +59,33 @@
 
 ## Latin
 
-- PDF Latin words: 4904
-- EPUB Latin words: 4986
-- EPUB Tagged Latin words: 2011
-- Latin word coverage ratio: 0.9994
-- Latin word tagging ratio: 0.4033
-- Latin clauses checked: 221
+- PDF Latin words: 3225
+- EPUB Latin words: 3298
+- EPUB Tagged Latin words: 1945
+- Latin word coverage ratio: 0.9991
+- Latin word tagging ratio: 0.5898
+- Latin clauses checked: 214
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 586
-- Translated Latin runs: 300
-- Latin translation ratio: 0.5119
+- Tagged Latin runs checked: 560
+- Translated Latin runs: 294
+- Latin translation ratio: 0.525
 
 ## Warnings
 
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
-- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
-- `flat_analysis_chapters`: 1 ANALYSIS chapter(s) appear under-structured — fewer outline markers than expected. Check extraction quality for these chapters.
 
 ## Missing Dense Source Windows
 
-- page: 10; sample: the true nature of gospel church and its government the second part wherein these
-- page: 16; sample: chimera of some men's brains it is not in rerum natura for if catholic
-- page: 19; sample: separation is proper and inseparable adjunct thereof the apostle speaks of church member-ship corinthians
-- page: 25; sample: not be tolerated at least not approved in well governed kingdom or commonwealth of
-- page: 27; sample: covetous oppressors and the like who shall not inherit the kingdom of god corinthians
-- page: 28; sample: even deride the necessity of the same things in present church members or the
-- page: 33; sample: the things ascribed unto those who are to be esteemed the proper subject matter
-- page: 34; sample: for themselves but possession which being malae fidei ill obtained and ill continued will
-- page: 43; sample: chapter of the formal cause of particular church the way or means whereby such
-- page: 48; sample: useful unto the ends of church edification jointly giving up themselves unto the lord
-
-## Missing Top-Of-Page Body Windows
-
-- page: 43; sample: CHAPTER 2. OF THE FORMAL CAUSE OF A PARTICULAR CHURCH.
-- page: 333; sample: OF INFANT BAPTISM AND DIPPING. OF INFANT BAPTISM.
-- page: 363; sample: TO MY REVEREND AND WORTHY FRIENDS, THE PREBENDS OF CHRIST CHURCH COLLEGE
-
-## Missing Bottom-Of-Page Body Windows
-
-- page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
-- page: 365; sample: of it (which how vast and extensive it is no man knows; — for the Jews have given us their deuterw>seiv in their Mishna and Gemara; these kept
-- page: 372; sample: Rabbins; and the other, that without them the understanding of the Hebrew is ejk tw~n ajduna>twn: though they look diverse ways, there is a
-- page: 398; sample: determined the times before appointed, and the bounds of their habitation," zhtei~n to<n Ku>rion eji a]rage yhlafh>seian aujto<n kai<
-- page: 593; sample: And there is another word that signifies also what weight he lays on it, We have rendered it here, "Furthermore then." It is to< loipo<n ou+n, — "for
-
-## Possible Paragraph Splits
-
-- file: EPUB/ch002.xhtml; previous: th, while teaching, is the duty of the pastor; and on this point Owen was no more chargeable with inconsistency as an Independent than other eminent men of the same denomination, —; next: Thomas Hooker, Cotton Mather, and Timothy Dwight, — who contend for the office of the ruling elder. Some Presbyterians would homologate implicitly the exposition which our author g
-- file: EPUB/ch003.xhtml; previous: But the different consideration lies in these things, —; next: That the mystical church doth never fail, neither is diminished by any shocks of temptation or suffering that, in their visible profession, any of them undergo; whereas visible chu
-- file: EPUB/ch004.xhtml; previous: (4.) If such churches do not, can not, will not reform themselves: then, —; next: It is the duty of every man who takes care of his own present edification and the future salvation of his soul peaceably to withdraw from the communion of such churches, and to joi
-- file: EPUB/ch007.xhtml; previous: , magistrate, or ruler, by suffrage or common consent of those concerned. And this was usually done with making bare the hand and arm with lifting up, as Aristophanes witnesseth: —; next: — Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα . — Ecclesiazusae 266.
-- file: EPUB/ch007.xhtml; previous: hose who in their conjunction into it by their own consent are every way equal, there can but three things be required unto the actual constitution of rule and office among them: —; next: And the first is, That there be some among them that are fitted and qualified for the discharge of such an office in a peculiar manner above others. This is previous unto all gover
-- file: EPUB/ch007.xhtml; previous: from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: —; next: CLEMENS, Epist. ad Corinth., affirms that the apostles themselves appointed approved persons unto the office of the ministry, συνευδοκησάσης τῆς ἐκκλησίας πάσης , "by (or with) the
-- file: EPUB/ch007.xhtml; previous: n to the pastoral office, yet I must say that where they are not all duly attended unto, the institution of Christ is neglected, and the order of the church infringed. Wherefore, —; next: The plea of the communication of all authority for office, and of office itself, solely by a flux of power from the first ordainers, through the hands of their pretended successors
-- file: EPUB/ch010.xhtml; previous: unto; and, 5. Whereas, in the wisdom of the Holy Ghost, distinct works did require distinct offices for their discharge (all which we have proved already), our inquiry hereon is, —; next: Whether the same Holy Spirit hath not distinguished this office of elders into these two sorts, — -namely, those who are called unto teaching and rule also, and those who are calle
-- file: EPUB/ch010.xhtml; previous: l of them but one are accompanied with the modesty of granting that divers sorts of elders are here intended; which, without more than ordinary confidence, cannot be denied. But, —; next: Some, by "elders that rule well," do understand bishops that are diocesans; and by "those that labor in the word and doctrine," ordinary preaching presbyters; which plainly gives t
-- file: EPUB/ch013.xhtml; previous: 2. But whereas the inquiry is made concerning sins either in their own nature or in their circumstances great and of disreputation unto the church, I answer, —; next: If repentance be evidenced unto the consciences of the rulers of the church to be sincere, and proportionable unto the offense in its outward demonstration, according unto the rule
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch004.xhtml; text: Hence it appears that there are none excluded from an entrance into the church-state but such as are either, — (1.) Grossly ignorant; or, (2.) Persecutors or reproachers of those that are good, or of the ways of God wherein they walk; or...
-- file: EPUB/ch004.xhtml; text: The neglect of this duty brings inconceivable prejudice unto churches, and if continued in will prove their ruin; for they are not to be preserved, propagated, and continued, at the easy rate of a constant supply by the carnal baptized p...
-- file: EPUB/ch006.xhtml; text: Unto the attaining of this wisdom are required, — 1. Fervent prayer for it, James 1:5. 2. Diligent study of the Scripture, to find out and understand the rules given by Christ unto this purpose, Ezra 7:10; 2 Timothy 2:1, 15. 3. Humble wa...
-- file: EPUB/ch013.xhtml; text: The whole of what we plead for is here exemplified; as, — [1.] The cause of excommunication, which is a scandalous sin unrepented of. [2.] The preparation for its execution, which is the church's sense of the sin and scandal, with humili...
-- file: EPUB/ch058.xhtml; text: The industry of learned men of old, and of late Jews and Christians, has been well exercised in the interpretation and reconciliation of them: by one or other a fair and probable account is given of them all. Where we cannot reach the ut...
-- file: EPUB/ch063.xhtml; text: Then we have the adjuncts of this vision, which I will but name: — 1. It is certain: "Write it." It is a certain vision. 2. It is evident: "Make it plain upon tables, that he may run that readeth it." 3. It is determined: "The vision is ...
+- page: 56; sample: and originally unto with an interest in all church privileges to be actually possessed
+- page: 59; sample: any causal influence into the communication of office power but what is of the
+- page: 62; sample: meet to be employed in any part of the church government and according as
+- page: 65; sample: apostles rebuked by the apostles in all others matthew 1-4 luke 24-26 peter 1-5
+- page: 68; sample: that one of them do in the management of all church affairs preside to
+- page: 71; sample: it is devoured and destroyed acts etc peter cant jeremiah ezekiel genesis psalm john
+- page: 76; sample: an authority is included in this office is evident from the names ascribed unto
+- page: 77; sample: all are committed to them colossians timothy timothy acts peter hebrews they that must
+- page: 78; sample: unto an office as in the case of uzziah invading the priesthood chronicles 16-21
+- page: 82; sample: as he was able to be church officer he had the choice and consent
 
 ## Suspicious Large-Number Starts
 
@@ -144,10 +95,6 @@
 ## Roman Heading Candidates
 
 - file: EPUB/ch056.xhtml; text: L. One, none, note, etc. — oe velca. O rotund.
-
-## Overlong Heading Candidates
-
-- file: EPUB/ch024.xhtml; tag: h3; text: QUESTION 1. WHETHER persons who have engaged unto reformation and another way of divine worship, according to the word of God, as they believe, may lawfully go unto and attend on the us of the prayer book in divine worship?
 
 ## Short Fragments
 
@@ -159,8 +106,8 @@
 - file: EPUB/ch016.xhtml; text: ED.
 - file: EPUB/ch021.xhtml; text: I.
 - file: EPUB/ch026.xhtml; text: QUESTION 2.
-- file: EPUB/ch027.xhtml; text: QUESTION 2.
-- file: EPUB/ch032.xhtml; text: The passages are these: —
+- file: EPUB/ch026.xhtml; text: QUESTION 2.
+- file: EPUB/ch027.xhtml; text: ANSWER.
 
 ## Enumerator Sequence Candidates
 
@@ -199,29 +146,29 @@
 
 ## Untagged Latin Word Samples
 
-- word: nor; epub: 430; tagged: 7
-- word: jesus; epub: 166; tagged: 0
-- word: yea; epub: 116; tagged: 2
-- word: distinct; epub: 101; tagged: 1
-- word: whereas; epub: 99; tagged: 2
-- word: poor; epub: 98; tagged: 2
-- word: thereunto; epub: 93; tagged: 1
-- word: whereunto; epub: 65; tagged: 1
 - word: prolegomena; epub: 49; tagged: 1
-- word: morinus; epub: 51; tagged: 4
+- word: morinus; epub: 51; tagged: 3
+- word: cappellus; epub: 37; tagged: 3
+- word: elias; epub: 30; tagged: 9
+- word: keri; epub: 20; tagged: 1
+- word: grotius; epub: 23; tagged: 4
+- word: communicate; epub: 17; tagged: 0
+- word: arias; epub: 31; tagged: 15
+- word: door; epub: 14; tagged: 0
+- word: innate; epub: 13; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: undergo; whereas
-- phrase: nor communicate
-- phrase: church-state, whereinto
 - phrase: successor, as Ali
 - phrase: Erasmus, ‡ Vatablus, Beza
 - phrase: Orat. De Corona
-- phrase: senate nor
 - phrase: praeceptis Dominicis et Deum
 - phrase: se ad sacrilegi sacerdotis sacrificia miscere; quando ipsa
 - phrase: vel eligendi dignos
+- phrase: vel indignos recusandi, quod et ipsum videmus de divina authoritate descendere
+- phrase: Quod postea secundum divina magisteria observatur in Actis Apostolorum, quando in ordinando in locum Judae apostolo, Petrus
+- phrase: Petrus in medio discentium, fuit autem turba homlnum forte centum viginti
+- phrase: hoc in episcoporum tantum et sacerdotum, sed in diaconorum ordinationibus
 
 ## Flat ANALYSIS Chapters
 
