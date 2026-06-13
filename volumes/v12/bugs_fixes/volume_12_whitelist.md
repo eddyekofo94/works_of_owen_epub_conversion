@@ -19,3 +19,12 @@ The following strings represent either legitimate Latin words/abbreviations or a
 * `s subsisting`, `b si`, `u the`, `w him`, `b from`, `B hath`: Legitimate text fragments, or historical spelling/bracket variants.
 * `qui et`, `e manibus`, `E verbo`, `Pater noster`, `e lacu`, `seal et`: Correct Latin phrases or historical orthographical choices that trigger anomaly alerts but are authentic to the source.
 * `blind eyes`: Legitimate English text that triggers mechanical alert thresholds.
+
+### Category: `Structural Nesting Sequence Jumps`
+* **Reasoning**: These are legitimate numbering or citations inside the text (e.g. references like `Book 12`, `cap. 13 fol. 15`, `Ezekiel 5:13`, `Hebrews 9:12`, etc.) that trigger false positive sequence jump warnings because they resemble list item markers but are actually part of the running prose.
+
+### Category: `Unmatched Quotation Marks`
+* **Reasoning**: These represent multi-paragraph blockquotes or catechism dialogue runs where a opening quote starts in one paragraph and closing quotes are placed in later paragraphs, causing the single-paragraph quote audit to flag them. All of these occurrences are structurally correct in context.
+
+### Category: `Text Integrity Exclusions`
+* **Reasoning**: Standard false positives due to deliberate editorial expansions (e.g., expanding initials to full names), styling enhancements (bold list headers `**(1.)**`), and standard signature blocks that do not require line-joining.

@@ -1,37 +1,7 @@
 [
   {
-    "vol": "12",
-    "rank": 1,
-    "score": 61.6,
-    "need": 61.6,
-    "grade": "poor",
-    "qa_level": "FULL",
-    "coverage": 99.92,
-    "greek_coverage": 99.92,
-    "hebrew_coverage": 99.55,
-    "latin_coverage": 99.76,
-    "latin_tagging": 72.98,
-    "latin_translation": 42.31,
-    "total_citations": 70,
-    "unresolved_citations": 0,
-    "splits": 40,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 185,
-    "unmatched_quotes": 114,
-    "font": "arno-pro",
-    "treatises": 3,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": [
-      "resolve_unmatched_quotes",
-      "review_ocr_anomalies"
-    ]
-  },
-  {
     "vol": "8",
-    "rank": 2,
+    "rank": 1,
     "score": 56.6,
     "need": 56.6,
     "grade": "needs_work",
@@ -62,7 +32,7 @@
   },
   {
     "vol": "9",
-    "rank": 3,
+    "rank": 2,
     "score": 54.6,
     "need": 54.6,
     "grade": "needs_work",
@@ -92,7 +62,7 @@
   },
   {
     "vol": "1",
-    "rank": 4,
+    "rank": 3,
     "score": 44.5,
     "need": 44.5,
     "grade": "needs_work",
@@ -122,7 +92,7 @@
   },
   {
     "vol": "16",
-    "rank": 5,
+    "rank": 4,
     "score": 36.9,
     "need": 36.9,
     "grade": "fair",
@@ -152,7 +122,7 @@
   },
   {
     "vol": "h2",
-    "rank": 6,
+    "rank": 5,
     "score": 36.3,
     "need": 36.3,
     "grade": "fair",
@@ -182,7 +152,7 @@
   },
   {
     "vol": "h5",
-    "rank": 7,
+    "rank": 6,
     "score": 34.1,
     "need": 34.1,
     "grade": "fair",
@@ -212,7 +182,7 @@
   },
   {
     "vol": "h3",
-    "rank": 8,
+    "rank": 7,
     "score": 32.1,
     "need": 32.1,
     "grade": "fair",
@@ -242,7 +212,7 @@
   },
   {
     "vol": "h6",
-    "rank": 9,
+    "rank": 8,
     "score": 30.8,
     "need": 30.8,
     "grade": "fair",
@@ -272,7 +242,7 @@
   },
   {
     "vol": "h1",
-    "rank": 10,
+    "rank": 9,
     "score": 30.2,
     "need": 30.2,
     "grade": "fair",
@@ -302,7 +272,7 @@
   },
   {
     "vol": "h4",
-    "rank": 11,
+    "rank": 10,
     "score": 28.7,
     "need": 28.7,
     "grade": "fair",
@@ -332,7 +302,7 @@
   },
   {
     "vol": "h7",
-    "rank": 12,
+    "rank": 11,
     "score": 28.3,
     "need": 28.3,
     "grade": "fair",
@@ -362,7 +332,7 @@
   },
   {
     "vol": "4",
-    "rank": 13,
+    "rank": 12,
     "score": 28.1,
     "need": 28.1,
     "grade": "fair",
@@ -389,7 +359,7 @@
   },
   {
     "vol": "7",
-    "rank": 14,
+    "rank": 13,
     "score": 19.6,
     "need": 19.6,
     "grade": "good",
@@ -416,7 +386,7 @@
   },
   {
     "vol": "15",
-    "rank": 15,
+    "rank": 14,
     "score": 18.8,
     "need": 18.8,
     "grade": "good",
@@ -443,7 +413,7 @@
   },
   {
     "vol": "10",
-    "rank": 16,
+    "rank": 15,
     "score": 14.4,
     "need": 14.4,
     "grade": "good",
@@ -470,7 +440,7 @@
   },
   {
     "vol": "5",
-    "rank": 17,
+    "rank": 16,
     "score": 14.1,
     "need": 14.1,
     "grade": "good",
@@ -491,6 +461,33 @@
     "unmatched_quotes": 0,
     "font": "brill-font",
     "treatises": 2,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "12",
+    "rank": 17,
+    "score": 13.1,
+    "need": 13.1,
+    "grade": "good",
+    "qa_level": "PRISTINE",
+    "coverage": 99.94,
+    "greek_coverage": 99.92,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.76,
+    "latin_tagging": 72.98,
+    "latin_translation": 42.63,
+    "total_citations": 70,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "anomalies_count": 8,
+    "unmatched_quotes": 0,
+    "font": "arno-pro",
+    "treatises": 3,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []

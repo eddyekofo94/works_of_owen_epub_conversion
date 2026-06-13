@@ -745,6 +745,23 @@ def _remove_duplicate_scripture_tail(text):
                 ):
                     run += 1
                 if run >= 2:
+                    # Guard: verify the gap between consecutive references in the run
+                    # does not contain substantive prose (indicating a true prose sentence/quote instead of a bare list).
+                    is_valid_duplicate = True
+                    for r_idx in range(run - 1):
+                        gap_start = norm_refs[j + r_idx][2]
+                        gap_end = norm_refs[j + r_idx + 1][1]
+                        gap_text = text[gap_start:gap_end]
+                        # Find all alphanumeric/greek/hebrew words in the gap
+                        words_in_gap = re.findall(r'[A-Za-z\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+', gap_text)
+                        allowed_words = {'and', 'or', 'et', 'cf', 'see', 'ibid', 'to', 'ff', 'sq', 'ad', 'v', 'ver', 'verse', 'verses', 'ch', 'chap', 'chapter'}
+                        substantive_words = [w for w in words_in_gap if w.lower() not in allowed_words]
+                        if len(substantive_words) > 0:
+                            is_valid_duplicate = False
+                            break
+                    if not is_valid_duplicate:
+                        continue
+
                     cut_start = norm_refs[j][1]
                     cut_end = norm_refs[j + run - 1][2]
                     while cut_start > 0 and text[cut_start - 1] in ' \t':

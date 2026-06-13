@@ -19,10 +19,10 @@
 
 - Greek chars: 14115
 - Untagged Greek chars: 0
-- Hebrew chars: 1448
+- Hebrew chars: 1456
 - Untagged Hebrew chars: 0
-- Noteref links: 1088
-- Endnote anchors: 1087
+- Noteref links: 1089
+- Endnote anchors: 1088
 - Boilerplate hits: 0
 - Possible Beta Code files: 1
 - Escaped language-tag files: 0

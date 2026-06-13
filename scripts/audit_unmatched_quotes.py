@@ -94,8 +94,11 @@ def main():
                 # Check if it is whitelisted
                 # Match by checking if the whitelist item is contained in the paragraph
                 is_whitelisted = False
+                import re
                 for w_item in whitelisted_quotes:
-                    if w_item in para or para in w_item:
+                    w_clean = re.sub(r'\*\*|_', '', w_item).rstrip(".\"\' ")
+                    p_clean = re.sub(r'\*\*|_', '', para).rstrip(".\"\' ")
+                    if w_clean in p_clean or p_clean in w_clean:
                         is_whitelisted = True
                         break
                 

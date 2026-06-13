@@ -27,6 +27,7 @@
 | 21 | Latin OCR typos in footnote 84 | convert.py | ✅ Fixed |
 | 22 | Spaced scholastic labels in ch020 and ch049 | convert.py | ✅ Fixed |
 | 23 | Legitimate false positive warnings whitelisted | volume_12_whitelist.json | ✅ Fixed |
+| 24 | Duplicate scripture reference tail false positive | scripts/text_cleaner.py | ✅ Fixed |
 
 
 
@@ -96,7 +97,7 @@ See previous sessions.
 **Problem:** Summary lists (e.g., Roman numerals I., II., etc.) are incorrectly promoted to standalone chapters (`div1` tags), fragmenting the logical hierarchy.
 **Status:** Pending surgical consolidation and merging of fragmented heads back into parent chapters.
 
-### 15. Untranslated Latin and Greek Quotes (Awaiting Validation)
+### 15. Untranslated Latin and Greek Quotes (Fixed)
 **Problem:** Several large Latin and Greek passages in Chapter 3 (the Seidelius quote, the Hermes Trismegistus/Mercurius quote, the Calicratides quote, and the Seneca quote) and Chapter 49 (quotes by Crellius, Socinus, Rutherford, Smalcius, Schlichting, etc.) were left untranslated. Also, a previous too-broad search-and-replace correction for `remain` -> `veniam` caused cross-contamination, corrupting English occurrences of `remain` across multiple chapters.
 **Fix:**
 - Added translations for all untranslated passages as `[Translated: “...”]` blocks immediately following the original language runs.
@@ -104,15 +105,15 @@ See previous sessions.
 - Fixed OCR typos: `Cicerco` -> `Cicero`, `sub ape` -> `sub spe`, `ilium` -> `illum`, `putaut` -> `putant`, `Fragm, de Jus. tificat.` -> `Fragm. de Justificat.`, `Pater quam inepte` -> `Patet quam inepte`, `pater denique quam` -> `patet denique quam`, `adversari. orum` -> `adversariorum`, `efiiciens` -> `efficiens`.
 - Wrapped translations in lookahead guards `(?!\s*\[Translated:)` to prevent double-translation during Stage 1 and Stage 2 pipeline runs.
 
-### 16. Chapter 3 Summary Formatting and drape Typo (Awaiting Validation)
+### 16. Chapter 3 Summary Formatting and drape Typo (Fixed)
 **Problem:** Chapter 3's summary was split by the parser, sandwiching a raw paragraph (`MR BIDDLE'S question: —`) between two `[[SUMMARY]]` tokens, which rendered as a broken list block. Also contained the OCR typo `drape` instead of `shape`.
 **Fix:** Added a regex correction in `volumes/v12/convert.py` to format the summary under two clean, consecutive `[[SUMMARY]]` markers and corrected `drape` to `shape`.
 
-### 17. Chapter 49 Summary Formatting and CONCENRING Typo (Awaiting Validation)
+### 17. Chapter 49 Summary Formatting and CONCENRING Typo (Fixed)
 **Problem:** Chapter 49's summary had a typo `CONCENRING` instead of `CONCERNING` and a stray closing bracket `]` at the end of the text.
 **Fix:** Added a regex replacement to correct `CONCENRING` to `CONCERNING` and remove the stray bracket.
 
-### 18. Biographical Double-Tagging and Missing Prefatory Biographies (Awaiting Validation)
+### 18. Biographical Double-Tagging and Missing Prefatory Biographies (Fixed)
 **Problem:** Space-separated name suffix overlaps (such as "Andrew Fuller" and "Fuller", or "George Bull" and "Bull") were being double-tagged. When the longer name matched and was replaced with its footnote, the shorter surname prefix/suffix was still matched and tagged on the same word, resulting in overlapping pop-up footnotes (e.g. `Andrew Fuller‡‡`). Additionally, several historical figures mentioned in the Volume 12 Prefatory Note (Estwick, Poole, Cheynell, Moscorovius, Schomann, Pezold, Bossuet, Ménage, Sandius) did not have biographies in the database.
 **Fix:**
 - Implemented temporary placeholder shielding for both biographical and glossary footnotes during rendering (similar to translation notes). Once a term is matched, it is replaced with a temporary placeholder (e.g. `__BIOG_PH_{n}__` or `__GLOSS_PH_{n}__`), preventing any nested substrings or suffixes from matching subsequently. The placeholders are restored to their full HTML formatting at the end of the scanning phase.
@@ -120,25 +121,29 @@ See previous sessions.
 - Mapped short surnames (such as "Beza", "Crellius", "Bull", "Waterland", etc.) directly to their respective biographies in the central database, keeping the original names in Owen's main text intact while ensuring they are correctly tagged.
 - Removed the inline main-text name expansion replacements from `volumes/v12/convert.py` to keep Owen's original author names unchanged in the text.
 
-### 19. List Sequence Gap Mapping (Awaiting Validation)
+### 19. List Sequence Gap Mapping (Fixed)
 **Problem:** A list sequence gap existed in Chapter 8 where `(8.)` was used instead of `(3.)` after `(2.)`.
 **Fix:** Added a text replacement mapping `(8.)` to `(3.)` under the relevant context.
 
-### 20. Missing Footnote/Endnote References [f285], [f446], [f489] (Awaiting Validation)
+### 20. Missing Footnote/Endnote References [f285], [f446], [f489] (Fixed)
 **Problem:** Endnotes `fn285`, `fn446`, and `fn489` were defined in `endnotes.xhtml` but lacked corresponding `[fNNN]` references in the main body text, rendering them orphaned and unreachable.
 **Fix:** Added context-targeted, lookahead-protected regexes in `convert.py` to insert `[f285]`, `[f446]`, and `[f489]` markers into their correct positions in the body text. Updated the test baseline `ALLOWED_FOOTNOTE_ANOMALIES` in `test_footnote_integrity.py` to remove these orphans and set `mismatch_delta` to `1`.
 
-### 21. Latin OCR Typos in Footnote 84 (Awaiting Validation)
+### 21. Latin OCR Typos in Footnote 84 (Fixed)
 **Problem:** Typographical errors existed in the Latin text of footnote 84: `hosae iin re` (instead of `hac in re`), `Statorii mgenium` (instead of `Statorii ingenium`), and `ne ja,` (instead of `ne jam,`).
 **Fix:** Added string replacements in `convert.py` to fix the Latin typos. The correction of `ne ja,` also resolved the `possible_beta_code_residue` warning for `ja`.
 
-### 22. Spaced Scholastic Labels in ch020 and ch049 (Awaiting Validation)
+### 22. Spaced Scholastic Labels in ch020 and ch049 (Fixed)
 **Problem:** Non-standard inline scholastic labels existed (`time Ans.` and `What is God Ans.`) which triggered warnings.
 **Fix:** Corrected to `time? Ans.` and `What is God? Ans.` using text overrides in `convert.py`, format-cleaning them.
 
-### 23. Legitimate False Positive Warnings Whitelisted (Awaiting Validation)
+### 23. Legitimate False Positive Warnings Whitelisted (Fixed)
 **Problem:** Mechanical warnings were flagged: `possible_beta_code_residue` for `Aj` (legitimate abbreviation of Sophocles' *Ajax*) in `endnotes.xhtml`, and `repeated_phrases` for `"of the death of christ and of justification"` (actual title of the treatise).
 **Fix:** Added the warnings to `volume_12_whitelist.json` and documented them in `volume_12_whitelist.md`.
+
+### 24. Duplicate Scripture Reference Tail False Positive (Fixed)
+**Problem:** In chapters containing a Latin quote followed by its English translation referencing multiple scriptures in the same order, the deduplication engine `_remove_duplicate_scripture_tail` would match the scripture reference sequence, flag it as a duplicate tail list, and delete everything from the start of the second reference run to the end. This deleted the intervening English prose and the Hebrew word `תַבְנִית` in Chapter 23.
+**Fix:** Added a gap validation loop to `_remove_duplicate_scripture_tail` inside `scripts/text_cleaner.py`. It inspects the gaps between consecutive scripture references in the matched sequence. If it contains substantive words (words not in a whitelist of connector/citation abbreviations like `and`, `or`, `et`, `cf`), the sequence is recognized as a legitimate prose sentence rather than a duplicate list and is preserved.
 
 ---
 
@@ -187,11 +192,19 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-12T18:28:14.666778+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub`
+**Last run:** 2026-06-13T13:56:54.176888+00:00
+**EPUB:** `volumes/v12/output/volume_12.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -206,8 +219,8 @@ Reports:
 | Embedded fonts | 20 |
 | NAV links | 64 |
 | Greek chars / untagged | 14115 / 0 |
-| Hebrew chars / untagged | 1448 / 0 |
-| Noteref links / endnote anchors | 1088 / 1087 |
+| Hebrew chars / untagged | 1456 / 0 |
+| Noteref links / endnote anchors | 1089 / 1088 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 1 |
 | Escaped language-tag files | 0 |
@@ -240,11 +253,19 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-12T18:29:01.401312+00:00
-**Status:** WARN (11 warnings)
+**Last run:** 2026-06-13T13:57:43.548140+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -255,23 +276,23 @@ Reports:
 | PDF pages | 822 |
 | EPUB text files | 61 |
 | EPUB paragraphs/headings | 3651 |
-| Approximate PDF-to-EPUB word coverage | 0.9992 |
+| Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 0 |
-| Dense source windows checked | 33993 |
-| Missing dense source-window pages | 40 |
+| Dense source windows checked | 34266 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
 | Top-of-page body windows checked | 793 |
 | Top-of-page windows skipped as unstable | 8 |
-| Missing top-of-page body windows | 2 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 740 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 2 |
-| Possible faulty paragraph splits | 40 |
-| Structural starts excluded from split warnings | 444 |
+| Missing bottom-of-page body windows | 0 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 445 |
 | Short fragments | 50 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 3 |
+| Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 3 |
@@ -285,24 +306,10 @@ Reports:
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 2590 / 2590 |
 | Greek word coverage ratio | 0.9992 |
-| PDF Hebrew words / EPUB Hebrew words | 222 / 221 |
-| Hebrew word coverage ratio | 0.9955 |
+| PDF Hebrew words / EPUB Hebrew words | 222 / 222 |
+| Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `missing_enumerator_markers`: Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

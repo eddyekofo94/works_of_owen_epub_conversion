@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 40 | 285 | OK |
-| Inline structural marker candidates | 3 | 6 | OK |
+| Possible faulty paragraph splits | 0 | 285 | OK |
+| Inline structural marker candidates | 0 | 6 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 1 | 3 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -20,7 +20,7 @@
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
 | Low Greek word coverage | 0 | 0 | OK |
-| Low Hebrew word coverage | 0 | 0 | OK |
+| Low Hebrew word coverage | 1 | 0 | OK |
 | Missing Greek clauses | 0 | 16 | OK |
 | Missing Hebrew clauses | 0 | 0 | OK |
 | Residual AGES source artifacts | 0 | 0 | OK |
@@ -63,20 +63,6 @@
 | I WILL/I AM mangles | 0 | 0 | OK |
 
 ## Triage Samples
-
-### Possible faulty paragraph splits
-
-- file: EPUB/ch003.xhtml; previous: gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace; next: who is your unworthy fellow-laborer
-- file: EPUB/ch003.xhtml; previous: who is your unworthy fellow-laborer; next: John Owen
-- file: EPUB/ch003.xhtml; previous: John Owen; next: OXON. CH. CH. COLL., April 1 [1655.]
-- file: EPUB/ch004.xhtml; previous: of old opposed the doctrine of the Trinity, especially of the deity of Christ, his person and natures, may be referred to three heads, and of them and their ways this is the sum: —; next: The first sort of them may be reckoned to be those who are commonly esteemed to be followers of Simon Magus, known chiefly by the names of Gnostics and Valentinians. These, with th
-- file: EPUB/ch004.xhtml; previous: ince of Transylvania, who had then cast David into prison for his blasphemy. 58 To give a little account, by the way, of the end of this man, with his contempt of the Lord Jesus: —; next: In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and lived until the end of November. 59 That he was cast into prison
-
-### Inline structural marker candidates
-
-- file: EPUB/ch040.xhtml; text: He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —
-- file: EPUB/ch047.xhtml; text: I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is e
-- file: EPUB/ch047.xhtml; text: These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our 
 
 ### Repeated word windows
 

@@ -12,81 +12,17 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 40,
+      "observed": 0,
       "budget": 285,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "gst you, that, according to your several degrees, you would take it into your patronage or use, affording him in his daily labors the benefit of your prayers at the throne of grace",
-          "next": "who is your unworthy fellow-laborer"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "who is your unworthy fellow-laborer",
-          "next": "John Owen"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "John Owen",
-          "next": "OXON. CH. CH. COLL., April 1 [1655.]"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "of old opposed the doctrine of the Trinity, especially of the deity of Christ, his person and natures, may be referred to three heads, and of them and their ways this is the sum: —",
-          "next": "The first sort of them may be reckoned to be those who are commonly esteemed to be followers of Simon Magus, known chiefly by the names of Gnostics and Valentinians. These, with th"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "ince of Transylvania, who had then cast David into prison for his blasphemy. 58 To give a little account, by the way, of the end of this man, with his contempt of the Lord Jesus: —",
-          "next": "In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and lived until the end of November. 59 That he was cast into prison"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "glad.), and that of the Athenians, by the advice of Epimenides Θεοῖς Ασίας καὶ Ευρώπης καὶ Λιβύης , Θεῷ ἀγνώστῳ καὶ Ξένῳ both of them being suitable to the counsel of Pythagoras: —",
-          "next": "Αθανάτους μὲν πρῶτα θεοὺς νόμῳ ὡς διάκειται Τίμα καὶ σέβου ὅρκον ἔπειθ ἥρωας ἀγανούς Τούς τε καταχθονίους οέβε δαίμονας ἕννομα ῥέζων Let them be sure to worship all sorts, that the"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": " comprehended, compounded; he believes there is no trinity of persons in the Godhead, — that Christ is not the eternal Son of God. The following parts of it are of the same kind: —",
-          "next": "The eternal procession of the Holy Ghost is nextly rejected. The Holy Ghost being constantly termed the \"Spirit of God,\" the \"Spirit of the Father,\" and the \"Spirit of the Son\" (be"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "Some things I shall remark upon that discourse, and shut up these considerations of his preface: —",
-          "next": "For his own success, he tells us \"That being otherwise of no great abilities, yet searching the Scriptures impartially, he hath detected many errors, and hath presented the reader "
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "Let us all, then, supply our catechumens, in the room of Mr B.'s, with this question, expressly leading to the things inquired after: —",
-          "next": "What says the Scripture concerning the essence and presence of God? is it confined and limited to a certain place, or is he infinitely and equally present everywhere?"
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "nt, ipsum se colere , afrmant, verum hoc sibi placere, ut Jupiter nominetur,\" lib. 1:cap. 2.); which, as Servius on the place observes, he had taken from Aratus, whose words are: —",
-          "next": "Εκ διὸς ἀρχώμεσθα τὸν οὐδὲ ποτ ἄνδρες ἐῶμεν Αῤῥητον μεσταὶ δὲ διὸς πᾶσαι μὲν ἁγυιαὶ Πᾶσαι δ ἀνθρώπων ἀγοραὶ μεστὴ δὲ θάλασσα Καὶ λιμένες πάντη δὲ διὸς κεχρήμεθα πάντες — giving a f"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 3,
+      "observed": 0,
       "budget": 6,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch040.xhtml",
-          "text": "He suffered, — [1.] In his person; [2.] In his name; [3.] In his friends; [4.] In his goods; as the curse of the law extended to all, and that universally in all these: —"
-        },
-        {
-          "file": "EPUB/ch047.xhtml",
-          "text": "I answer, The words there are used in a law sense, and are declarative of the righteousness of God in rewarding the keepers of the law of nature, or the moral law, according to the law of the covenant of works. This is evident from the whole design of the apos"
-        },
-        {
-          "file": "EPUB/ch047.xhtml",
-          "text": "These Mr B. would oppose, and from the assertion of the one argue to the destruction of the other, though they sweetly and eminently comply in our communion with God. The other righteousness was before evinced. Even our sanctification also is called our righte"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -238,7 +174,7 @@
     },
     {
       "label": "Low Hebrew word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
