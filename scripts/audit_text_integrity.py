@@ -330,7 +330,7 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
                     for child in el:
                         if etree.QName(child).localname not in _BLOCK_TAGS:
                             # Strip noteref texts from child
-                            child_copy = etree.fromstring(etree.tostring(child))
+                            child_copy = etree.fromstring(etree.tostring(child, with_tail=False))
                             for sub_el in child_copy.iter():
                                 if "noteref" in sub_el.get("class", ""):
                                     sub_el.text = ""
@@ -339,7 +339,7 @@ def extract_epub_paragraphs(epub_path: Path) -> tuple[list[Paragraph], dict[str,
                     text = clean_text(" ".join(shallow))
                 else:
                     # Strip noteref texts from el
-                    el_copy = etree.fromstring(etree.tostring(el))
+                    el_copy = etree.fromstring(etree.tostring(el, with_tail=False))
                     for sub_el in el_copy.iter():
                         if "noteref" in sub_el.get("class", ""):
                             sub_el.text = ""

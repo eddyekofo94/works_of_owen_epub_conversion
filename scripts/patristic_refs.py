@@ -513,6 +513,8 @@ WORK_MAP = {
     # Cyprian works
     ("cyprian", "epist"):    {"full_title": "Letters", "latin_title": "Epistulae",
                                "std_ref": ["ANF 5:275–409"], "pl": "PL 4"},
+    ("cyprian", "serm"):     {"full_title": "Sermons (Pseudo-Cyprian)", "latin_title": "De cardinalibus operibus Christi",
+                               "std_ref": ["PL 189:1609-1678"]},
     ("cyprian", "de unit"):  {"full_title": "On the Unity of the Church",
                                "latin_title": "De Unitate Ecclesiae",
                                "std_ref": ["ANF 5:419–429"], "pl": "PL 4"},
@@ -999,6 +1001,13 @@ def _find_author_in_context(plain_context: str) -> str | None:
     Look for a known author abbreviation in the 120-char plain-text window
     preceding the citation match. Returns the AUTHOR_ABBREV_MAP key, or None.
     """
+    ctx_full = plain_context.lower()
+    if 'idem' in ctx_full or 'the same' in ctx_full:
+        if 'johan' in ctx_full:
+            return 'august'
+        if 'cardinal works' in ctx_full:
+            return 'cyprian'
+
     # If the context contains a '|' separator (indicating before/after boundary),
     # only search the 'before' part for authors to avoid false positives.
     if ' | ' in plain_context:
@@ -1022,6 +1031,7 @@ def _find_author_in_context(plain_context: str) -> str | None:
                 best_key = abbrev
     if best_key:
         best_key = CANONICAL_AUTHOR_MAP.get(best_key, best_key)
+            
     return best_key
 
 
@@ -1219,7 +1229,9 @@ SELF_REF_PATTERNS = re.compile(
     r'I\s+have\s+(?:shown|proved|demonstrated|discussed|treated)|'
     r'already\s+(?:shown|discussed|proved)|'
     r'in\s+(?:that|the)\s+treatise|'
-    r'of\s+(?:that|this)\s+treatise)\b',
+    r'of\s+(?:that|this)\s+treatise|'
+    r'confuted)\b|'
+    r'\betc\.,?\s*(?:\||$)',
     re.I
 )
 

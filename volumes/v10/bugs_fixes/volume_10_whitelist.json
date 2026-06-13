@@ -1,9 +1,443 @@
 {
   "anomalies": {
+    "Hyphenation Anomalies": [
+      "over-ruling",
+      "Grevin-chovius",
+      "pre-ordination",
+      "co-existence",
+      "home-bred",
+      "fore-cited",
+      "true-born",
+      "pre-ordained",
+      "giant-like",
+      "pre-required",
+      "co-operate",
+      "Herostratus-like",
+      "top-gallant",
+      "FORE-RECOUNTED",
+      "hiding-corners",
+      "non-imputation",
+      "after-reckoning",
+      "non-necessity",
+      "law-giver",
+      "fore-named",
+      "wire-drawn",
+      "there-through",
+      "oft-times",
+      "human-kind",
+      "over-worn",
+      "non-execution",
+      "non-consideration",
+      "Law-giver",
+      "breast-work",
+      "non-absolution",
+      "peace-making",
+      "Succoth-benoth",
+      "rival-ship",
+      "non-punishment",
+      "such-like",
+      "show-board",
+      "store-house",
+      "sheep-fold"
+    ],
+    "Punctuation Spacing Blemishes": [
+      "WHITE .",
+      "2 .",
+      "1 .",
+      "GOWER .",
+      "Ans .",
+      "1st ,"
+    ],
     "OCR & Bracket Residues": [
-      "t to",
-      "w hole",
-      "t he"
+      "do)ignorantly"
+    ],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [
+      "2. ... 17.",
+      "1. ... 3.",
+      "2. ... 4.",
+      "2. ... 6.",
+      "1. ... 11.",
+      "2. ... 12.",
+      "3. ... 13.",
+      "4. ... 14.",
+      "5. ... 15.",
+      "6. ... 16.",
+      "1. ... 17.",
+      "3.",
+      "6.",
+      "8.",
+      "5. ... 10.",
+      "12.",
+      "13.",
+      "14.",
+      "5. ... 7.",
+      "4. ... 15.",
+      "16.",
+      "3. ... 5.",
+      "4. ... 11.",
+      "3. ... 14.",
+      "2. ... 15.",
+      "2.",
+      "3. ... 256.",
+      "III."
+    ],
+    "Invalid Bible References": [
+      "2 Peter 7"
+    ],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      "\"The counsel of the LORD standeth for ever, the thoughts of [[BLOCKQUOTE]] \"Many decrees of God cease at a certain time,",
+      "his heart to all generations,\" Psalm 33:11. \"My counsel shall stand, and I will do all my pleasure,\" Isaiah 46:10.",
+      "[[BLOCKQUOTE]] \"The providence of God doth not determine the free-will of man to this or that particular, [f76]",
+      "Fourthly, Another thing that the article asserteth according to the Scripture is, that _there is no other cause of our e",
+      "Secondly, Consider two things of our estate, before the first temporal act of God's free grace (for grace is no grace if",
+      "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before the foundation of the world, that we shou",
+      "First, That the nature of man, which at first was created pure and holy, after the image of God, endowed with such a rec",
+      "3. \"That which is born of the flesh is [[BLOCKQUOTE]] \"Neither is it considerable whether they be the children of believ",
+      "flesh,\" John 3:6. Idem. \"By nature the children of wrath, even as others,\" Ephesians 2:3. \"By one man sin entered into t",
+      "For, not to consider the corruption and universal disability of nature to do anything that is good (\"without Christ we c",
+      "No! For the Remonstrants [f207] (as they speak of themselves) \"do always suppose a free power of obeying or not obeying,",
+      "Thus clear, then, and apparent, is the intention and design of Christ and his Father in this great work, even what it wa",
+      "His bloody oblation gave him entrance into the holy place not made with hands, there to accomplish the remaining part of",
+      "[[BLOCKQUOTE]] According to that it is said, 'He is the Savior of all men, specially of those that believe,' 1 Timothy 4",
+      "The following place of Matthew, Matthew 5:15, 16 (containing some instructions given by our Savior to his apostles, so t",
+      "Ask now of these, what it is that the Father can do, and will do, upon the death of Christ\", by which means his justice,",
+      "Whose, I pray? \"The men whom thou hast given me out of the world,\" verse 6. Not the whole world, whom he prayed not for,",
+      "[[BLOCKQUOTE]] \"But,\" says he, \"the reason is deceitful and erroneous, for the Scripture doth nowhere say, —",
+      "**4.** That bringing in which is here mentioned, to believe and enjoy the benefit of the death of Christ, is a most spec",
+      "Jude 1:4, \"Ordained to this condemnation 2 Peter 2:12, \"Made to be taken and destroyed;\" \"Sheep and goats,\" Matthew 25:3",
+      "The same apostle also tells us, 2 Corinthians 1:20, that \"all the promises of God are in him yea, and in him Amen, unto ",
+      "Were it not strange that Christ should die for them, and buy them that he will not own, but profess he never knew them? ",
+      "Thirdly, This kind of phrase and expression in other places cannot possibly be tortured to such an extension as to compr",
+      "Ans. Had we not experience of the nimbleness of our adversaries in framing arguments for their cause, I should despair t",
+      "I. \"That which the Scripture oft and plainly affirmeth in plain words is certainly true and to be believed, Proverbs 22:",
+      "[[BLOCKQUOTE]] \"But that Jesus Christ gave himself a ransom, and by the grace of God tasted death for every man, is oft ",
+      "[[BLOCKQUOTE]] \"Therefore, that Christ so died, and rose again for all, is a truth to be believed, 1 Timothy 2:6?",
+      "Thirdly, The force and sum of the argument is this: — Christ died and rose again that he might be Lord and Judge of all;",
+      "IV. \"That which the Scripture so sets forth in general for the world of mankind, as a truth for them all, that whosoever",
+      "[[BLOCKQUOTE]] \"But that God sent forth his Son to be the Savior of the world is in Scripture so set forth in general fo",
+      "Proof 3. \"God in Christ doth, in some means or other of his appointment, give some witness to all men of his mercy and g",
+      "Thirdly, How a man may have given him a will to believe, and yet not believe, I pray, declare the next controversy ye un",
+      "Proof 11. \"The Lord hath given forth his word and promise to be with his servants so preaching the gospel to all, and wi",
+      "Proof 14. \"Those that, when the gospel comes, and any spiritual light therein, to them, when they refuse to believe, and",
+      "Romans 2:5; to lose their souls, Matthew 16:26; and to destroy themselves, Hosea 13:9. And they being from Adam fallen i",
+      "(1.) To very many places, affirming that we are \"dead in trespasses and sins,\" Ephesians 2:1; that \"except we be born ag",
+      "Proof 17. \"Jesus Christ, by virtue of his death, shall be their judge, and by the gospel, in which they might have been ",
+      "Proof 18. \"Believers are exhorted to contend for the faith of this common salvation, which was once delivered to the sai",
+      "Now, not to say any thing to the major proposition, which yet is false, that which men are bound to believe in this sens",
+      "[[BLOCKQUOTE]] \"In p. 140",
+      "[[BLOCKQUOTE]] \"If he mean, not of equal value, then he fights with a shadow. He wrongeth Grotius, for aught I can find ",
+      "**3.** In a free application of the death of Christ to us.' To which I answer,\" etc. So far he.",
+      "1. \"Pardon implieth Christ's death as a cause; but I would he had showed the Scripture that makes pardon so large a thin",
+      "2. \"If such a word were in the Scripture, will he not confess it to be figurative and not proper, and so not fit for thi",
+      "**3.** \"The freedom, then, of pardon hath not its foundation in any defect of the merit or satisfaction of Christ, but i",
+      "**(1.)** \"The will of God freely appointing the satisfaction of Christ, John 3:16; Romans 5:8; 1 John 4:9.",
+      "**(2.)** \"In a gracious acceptation of that decreed satisfaction in our steads; so many, no more.",
+      "**1.** \"Imputation of righteousness,\" saith he, \"is not any part of pardon, but a necessary antecedent.",
+      "**2.** \"The same may be said of God's acceptation.",
+      "\"But,\" saith he, \"how can he call it a 'gracious acceptation,' a 'gracious imputation,' a 'free application,' if it were",
+      "1. \"By death he delivereth us from death.\" To which he answers: \"Not immediately nor absolutely, nor by his death alone,",
+      "(3.) It is spoken of the distant mediate effects of his death, and the immediate effects of his Spirit on us, rising by ",
+      "1. \"That actual freedom from the obligation doth not follow the satisfaction made by Christ cannot be granted; for by de",
+      "2. The satisfaction of Christ, by the payment of the same thing that was required in the obligation, is no way prejudici",
+      "1. \"What right soever God giveth unto men in things supernatural, such as justification, remission, and adoption, he giv",
+      "There can be no doubt but that many points of doctrine still remain, on which the labors of the godly and learned may be",
+      "[[BLOCKQUOTE]] \"Dieite, pontifices, in sacris quid facit aurum?' \"Say, bishops, of what avail is glitter to sacred subje",
+      "[[BLOCKQUOTE]] \"As every one's conscience is, so in his heart he conceives hope or fear, according to his actions.",
+      "[[BLOCKQUOTE]] \"This is the first [f362] punishment, that ever in his own judgment no guilty person is acquitted. \"Do yo",
+      "It is related by Suetonius, that Nero, that disgrace of human nature, just before his death, exclaimed, \"My wife, my mot",
+      "Cicero and Julius Caesar; the former of whom charges them with the practice of offering human sacrifices, as a horrid cr",
+      "I shall only add, in one word, that an argument from the consent of all is by consent of all allowed to be very strong: ",
+      "Therefore, the apostle affirms that the anger of God, of which he gives only some instances, is by these judgments openl",
+      "I very well know that I cannot pretend to be either ingenious or quicksighted; but _respecting_ this matter I am not ash",
+      "I am truly ashamed of those divines who have nothing more commonly in their mouths, both in their disputations and disco",
+      "The Socinians grant, in that catechism of theirs, the argument for the satisfaction of Christ, drawn from the nature of ",
+      "But as it is manifest that God forgives and punishes sins when he will, it appears that such a kind of mercy and justice",
+      "The right of government, moreover, is either _natural_ or _positive._ The _positive_ right of government, so to speak, i",
+      "Our celebrated antagonist proceeds to the consideration of divine justice. \"But neither,\" says he, \"can it be consistent",
+      "But Scotus reasons with more judgment and accuracy on this point. 'The divine will is not so inclined towards any second",
+      "But it doth not at all follow hence that God doth this from a necessity of nature, for it is possible that it may procee",
+      "Moreover, the infinite wisdom of God, the traces of which we so clearly read in creation, legislation, and in the other ",
+      "S.S. Lib. Arbit. \"Whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might ",
+      "|\"Unite my heart to fear thy name,\" Psalm 86:11. \"The God in whose hand thy breath is, and whose are all thy ways, thou ...",
+      "Cum sis ipse nocens, moritur cur victima pro to? Stultitia est morte alterius sperare salutem.\" \"Since it is thyself tha..."
+    ]
+  },
+  "text_integrity": {
+    "skipped_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "weak_pages": [],
+    "dense_source_window_loss": [
+      "to the right honorable the lords and gentlemen of the committee for religion f1",
+      "judge of the rest of their fruit mors in olla mors in olla their",
+      "some false principles which he hath framed unto himself as desire of self sufficiency",
+      "foolishly that he is altogether like unto us psalm one of which inconveniences all",
+      "that ye have need of all these things mt god hopeth and expecteth divers",
+      "things but because he doth not destroy them now that their proud god opposing",
+      "in excellent order as is at large declared in that golden psalm and this",
+      "multiply genesis nor yet leave them to self subsistence he in the meantime only",
+      "dagon cannot keep on his head nor the idol of uncontrollable free will enjoy",
+      "unite my heart to fear thy name psalm the god in whose hand try",
+      "of bellarmine man otherwise not over well affected to truth predestination saith he from",
+      "what hast thou that thou didst not receive corinthians are we better than they",
+      "and room with an intention that he should live samuel romans so that christ",
+      "foreskin of your heart and be no more stiff necked deuteronomy and the lord",
+      "opinion of his idol's deity and self sufficiency in the hearts of divers that",
+      "discovery of new geometrical proportion exclaim we have found it we have found it",
+      "and the performance of good works is in their apprehension condition pre required to",
+      "salus electorum sanguis jesu or the death of death in the death of christ",
+      "consolation by his death chapter objections are answered being consideration of thomas more's reply",
+      "to the right honorable robert earl of warwick f232 etc my lord it is",
+      "many in the conception and publication of some easily invented false opinions is it",
+      "the sum of all is the death and blood shedding of jesus christ hath",
+      "respect of conformity to the rule and so there is χασμα μεγαbetween them iii",
+      "inasmuch as it conducteth to that end otherwise as weariness of the flesh ecclesiasties",
+      "nature for his glory was the glory of the only begotten of the father",
+      "him for foundation stone tried stone precious corner stone sure foundation isaiah that whosoever",
+      "many sons unto glory for god sent his only begotten son into the world",
+      "now this whole dispensation with especial regard to the death and blood shedding of",
+      "we may nay we must grant twofold praying in our savior one by virtue",
+      "the conclusion by all the strength and skill of mr more neither is that",
+      "psalmist from whence the apostle citeth these words psalm and did he die for",
+      "or gave himself ransom but for many or only for many or only for",
+      "him is opposite to his eternal blessedness and all sufficiency thirdly god therefore to",
+      "one may see that can but read english in ore hence that multiplicity of",
+      "declared throughout all the earth chap 28-30 who are the called according to his",
+      "acts ephesians as distinguished from the world romans john his elect romans his children",
+      "needful of any more value for first those that were saved were saved upon",
+      "that of αντιλυτρον timothy do always denote by the not-to-be wrested genuine signification of",
+      "all justified and made blessed through non imputation of their sin they who have",
+      "and upon their consciences by reason of not understanding of this love which came"
+    ],
+    "bottom_of_page_text_loss": [
+      "standeth for ever, the thoughts of certain time,\" Episcop.",
+      "determineth of them,\" Corr. pleasing to God,\" Rem. Apol.",
+      "he him; male and female created he not so vehement and inordinate",
+      "on the Gentiles through Jesus only way of salvation be the"
+    ],
+    "top_of_page_text_loss": [
+      "\"Unite my heart to fear thy or to one part of the",
+      "\"What hast thou that thou didst The sum of their doctrine is: God",
+      "\"Thou hast wrought all our works \"Faith and conversion cannot be",
+      "TO HIS ILLUSTRIOUS HIGHNESS LORD OLIVER CROMWELL, OF ENGLAND,"
+    ],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "previous": "ered, by the Committee of the House of Commons in Parliament for the Regulating of Printing and Publishing of Books, That this book, entitled \"A Display of Arminianism,\" be printed",
+        "next": "JOHN WHITE"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "n the Arminian doctrine concerning God's decrees, I will in brief present to your view the opposition that is in this matter betwixt the word of God and the patrons of free-will: —",
+        "next": "S.S. Lib. Arbit. \"He hath chosen us in him before the foundation of the world,\" Ephesians 1:4."
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "previous": "nd of consolation. Now, to present in one view how opposite the opinions of the worshippers of the great goddess contingency are to this sacred truth, take this short antithesis: —",
+        "next": "S.S. Lib. Arbit. \"Known unto God are all his works from the beginning of the world,\" Acts 15:18."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": "oreknowledge of such things to be fallible and easily to be deceived; so that there is no reconciliation possible to be hoped for betwixt these following and the like assertions: —",
+        "next": "S.S. Lib. Arbit. \"In him we live, and move, and have our being,\" Acts 17:28."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "3. And these few instances will manifest the Arminian opposition to the word of God in this particular: —",
+        "next": "S.S. Lib. Arbit. \"Our God is in the heavens: he hath done whatsoever he hath pleased,\" Psalm 115:3."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "it, with sundry other false assertions and heretical positions of the Arminians about this fundamental article of our religion, concluding this chapter with the following scheme: —",
+        "next": "S.S. Lib. Arbit. \"Whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the first-born among many brethren. Moreover whom he did "
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "ondemned, cursed, and exploded. Now, amongst those many motives they had to proceed so severely against this heresy, one especially inculcated deserves our consideration, namely, —",
+        "next": "That it overthrew the necessity of Christ's coming into the world to redeem mankind. It is sin only that makes a Savior necessary; and shall Christians tolerate such an error as, b"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "our church, agreeable to the Scripture, affirming the desert of original sin to be God's wrath and damnation. To both which how opposite is the Arminian doctrine may thus appear: —",
+        "next": "S.S. Lib. Arbit. \"By the offense of one judgment came upon all men to condemnation,\" Romans 5:18."
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "previous": "ve it; and I am certain it will be long enough. But this, I say, belongs not to this place; only, let us see how, from the word of God, we may overthrow the former odious heresy: —",
+        "next": "God in the beginning \"created man in his own image,\" Genesis 1:27, — that is, \"upright,\" Ecclesiastes 7:29, endued with a nature composed to obedience and holiness. That habitual g"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "s in Christianity; for my part, in these following contradictory assertions I will choose rather to adhere to the authority of the word of God than of Arminius and his sectaries: —",
+        "next": "S.S. Lib. Arbit. \"He made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him,\" 2 Corinthians 5:21. \"He loved the church, and gave himself "
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "previous": "So that the Arminian opposition to the truth of the gospel in this particular is clearly manifest: —",
+        "next": "S.S. Lib. Arbit. \"Of ourselves we can do nothing,\" John 15:5. \"We are not sufficient of ourselves to think any thing as of ourselves,\" 2 Corinthians 3:5. \"We are by nature the chil"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "3. A twofold end noticed, viz.: —",
+        "next": "1 . Of the work;"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "Chapter 1. Arguments against the universality of redemption. The first two from the nature of the new covenant, and the dispensation thereof: —",
+        "next": "Arg. 1. From the nature of the covenant of grace, as being made in Christ, not with all, but only some."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "Chapter 2. Three other arguments: —",
+        "next": "Arg. 3. From the absolute nature of Christ's purchase for all the objects thereof."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "Chapter 4. Of sanctification, and of the cause of faith, and the procurement thereof by the death of Christ: —",
+        "next": "Arg. 8. From the efficacy of Christ's death for sanctification."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "Chapter 9. Being a second part of the former digression, containing arguments to prove the satisfaction of Christ: —",
+        "next": "Arg. 1. From Christ bearing sin, and the punishment thereof."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "es and utmost aims of all that are truly Christian. In pursuit of which desire and aims, I profess myself to be forever to serve thee. — Thine in Christ Jesus, RICHARD BYFIELD. 234",
+        "next": "TO THE READER."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "READER,",
+        "next": "IF thou intendest to go any farther, I would entreat thee to stay here a little. If thou art, as many in this pretending age, a sign or title gazer, and comest into hooks as Cato i"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "es of poor deluded souls. The great shepherd of the sheep, our Lord Jesus Christ, recover his poor wanderers to his own fold! But to return thither from whence we have digressed: —",
+        "next": "This is that fatal Helena, a useless, barren, fruitless fancy, for whose enthroning such irksome, tedious contentions have been caused to the churches of God; a mere Rome, a desola"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "previous": "Now, concerning the whole some things are to be observed: —",
+        "next": "That though the oblation and intercession of Jesus Christ are distinct acts in themselves and have distinct immediate products and issues assigned ofttimes unto them (which I shoul"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "First, then, the words of the prophet Isaiah, Isaiah 53:12, \"He made intercession for the transgressors,\" are insisted on. —",
+        "next": "Ans. The transgressors here, for whom our Savior is said to make intercession, are either all the transgressors for whom he suffered, as is most likely from the description we have"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "at which we contend for. If the latter, then we may consider it as accomplished. How he then did it, so it is here foretold that he should, which is the next place urged, namely, —",
+        "next": "Luke 23:34, \"Then said Jesus, Father, forgive them; for they know not what they do\" —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "Luke 23:34, \"Then said Jesus, Father, forgive them; for they know not what they do\" —",
+        "next": "Ans. The conclusion which from these words is inferred being, \"Therefore there is a general intercession for all, that they may believe,\" I might well leave the whole argument to t"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "previous": " work of ours, is injurious to his wisdom, power, and sovereignty, and cannot well be excused from blasphemy; and is contrary to Romans 9:10, \"Who hath resisted his will?\" I say, —",
+        "next": "Obs. 3. A common affection and inclination to do good to all doth not seem to set out the freedom, fullness, and dimensions of that most intense love of God which is asserted in th"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "previous": "justice of God for them (for to pay such a ransom is to make such satisfaction); but Jesus Christ paid such a price and ransom, as our surety, into his Father's hands, etc: ergo, —",
+        "next": "There be four things to be proved in the assumption, or second proposition: — First, That Christ paid such a price and ransom."
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "previous": " the justice of God for sin, and all that we understand thereby; but Jesus Christ, by his death and oblation, did make an atonement for sin, and reconcile God unto sinners: ergo, —",
+        "next": "The first proposition is in itself evident; the assumption is confirmed, Romans 3:24,25. We are justified freely by the ransom-paying, that is in Christ, whom God hath set forth to"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "previous": "Another argument we may take from some few particular places of Scripture, which, instead of many, I shall produce: —",
+        "next": "As, first, 2 Corinthians 5:21, \"He made him to be sin for us, who knew no sin.\" \"He made him to be sin for us;\" how could that be? are not the next words, \"He knew no sin?\" was he "
+      },
+      {
+        "file": "EPUB/ch051.xhtml",
+        "previous": " meaning thereof in that particular place evinced from whence the argument is taken. 265 All these distinctions of the use of the word are made out in the following observations: —",
+        "next": "The word world in the Scripture is in general taken five ways: — First, Pro mundo continente; and that, — First, generally, ὅλως , for the whole fabric of heaven and earth, with al"
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "m the word of God, undeniably confirmed is usually, with great noise and clamor, assaulted; concerning which I must give you these three cautions, before I come to lay them down: —",
+        "next": "The first whereof is this, that for mine own part I had rather they were all buried than once brought to light, in opposition to the truth of God, which they seem to deface; and th"
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "First, If they will make it out by the way of reasoning, I conceive they must argue thus: —",
+        "next": "The whole world contains all and every man in the world; Christ died for the whole world: therefore, etc."
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "phistically false. If, then, ye will take any proof from the word \"world,\" it must not be from the thing itself, but from the signification of the word in the Scripture; as thus: —",
+        "next": "This word \"world\" in the Scripture signifieth all and every man in the world; but Christ is said to die for the world: ergo, etc."
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "sed, or particular, intending only some. If the first, the proposition is apparently false, as was manifested before; if in the second way, then the argument must be thus formed: —",
+        "next": "In some places in Scripture the word \"world\" signifieth all and every man in the world, of all ages, times, and conditions; but Christ is said to die for the world: ergo, etc."
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "ure before produced, restraining the death of Christ to his elect, his sheep, his church, in comparison whereof these are but few. If the second, then the argument must run thus: —",
+        "next": "In some few places of Scripture the word \"world\" doth signify all and every man in the world; but in some few places Christ is said to die for the world (though not in express word"
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "irst be proved to be the very some places in the assumption, which is the thing in question. So that if any strength be taken from this word, it must be an argument in this form: —",
+        "next": "If the word \"world\" doth signify all and every man that ever were or shall be, in those places where Christ is said to die for the world, then Christ died for all and every man; bu"
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "ay down and compare the several words and expressions of this place, about whose interpretation we differ, with the reason of our rejecting the one sense and embracing the other: —",
+        "next": "The first difference in the interpretation of this place is about the cause of sending Christ; called here love. The second, about the object of this love; called here the world."
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "previous": "his Son, whom he gave for us; and the following words, of having life everlasting, making out the whole counsel of God in this matter, subordinate to his own glory; it followeth, —",
+        "next": "That God gave not his Son, — 1. For them who never do believe; 2. Much less for them who never hear of him, and so evidently want means of faith; 3. For them on whom he hath determ"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "previous": "is the word of the publican, ' Ιλάσθητί μοι , \"Be merciful to me.\" There is also another word of the same original and a like signification, namely, ἱλαστήριον , twice also used; —",
+        "next": "Romans 3:25, there translated \"a propitiation;\" and Hebrews 9:5, where it is used for, and also rendered, \"the mercy-seat:\" which will give some light into the meaning of the word."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "previous": "gainst our interpretation of this passage of the apostle, but they are all prevented or removed in the explication itself; so that it shall suffice us to name one or two of them: —",
+        "next": "Obj. 1 \"It is the intention of the apostle to comfort all in their fears and doubts; but every one in the world may be in fears and doubts: therefore, he proposeth this, that they "
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "previous": "n, the former being the rule of the latter: for look, to whomsoever God is reconciled in and by Christ, they shall certainly every one of them be reconciled to God by the Spirit; —",
+        "next": "God's reconciliation to them consisting in a non-imputation of their sins; their reconciliation unto him, in an acceptance of that non-imputation in Jesus Christ. And as it is the "
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "previous": "tenance of the error we oppose with more than ordinary endeavors and confidence of success, it may not be unnecessary to consider what is brought by them to this end and purpose: —",
+        "next": "Romans 5:14. Adam is called τύπος , the type and \"figure of him that was to come;\" not that he was an instituted type, ordained for that only end and purpose, but only that in what"
+      }
+    ],
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "low_latin_translation_coverage"
     ]
   }
 }

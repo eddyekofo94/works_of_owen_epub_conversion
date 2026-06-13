@@ -322,7 +322,7 @@ def check_unresolved_citations(text: str, cid: str) -> list[tuple[str, str]]:
             if build_citation_note(cite_str, combined_context) is not None:
                 resolved = True
                 
-        is_self_ref = bool(SELF_REF_PATTERNS.search(context_before))
+        is_self_ref = bool(SELF_REF_PATTERNS.search(combined_context))
         
         if not resolved and not is_self_ref:
             anomalies.append((cite_str, "Unresolved patristic/classical citation reference (no translation found)"))

@@ -87,7 +87,7 @@ def scan_volume(vol_num: int, data: dict) -> list[dict]:
                     already_resolved = True
 
             # Self-reference: Owen citing his own work
-            is_self_ref = bool(SELF_REF_PATTERNS.search(context_before))
+            is_self_ref = bool(SELF_REF_PATTERNS.search(combined_context))
 
             author_key = _find_author_in_context(combined_context)
             author_name = AUTHOR_ABBREV_MAP.get(author_key, '') if author_key else ''

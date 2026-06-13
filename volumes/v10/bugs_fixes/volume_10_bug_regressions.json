@@ -1,5 +1,5 @@
 {
-  "volume": 10,
+  "volume": "10",
   "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/bugs_fixes/volume_10_text_integrity.json",
@@ -12,61 +12,10 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 158,
+      "observed": 0,
       "budget": 165,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch002.xhtml",
-          "previous": "ered, by the Committee of the House of Commons in Parliament for the Regulating of Printing and Publishing of Books, That this book, entitled \"A Display of Arminianism,\" be printed",
-          "next": "JOHN WHITE"
-        },
-        {
-          "file": "EPUB/ch006.xhtml",
-          "previous": "to particular contingent events, Isaiah 48:14. Yea, it is an ordinary thing with the Lord to confirm the certainty of those things that are yet for to come from his own decree; as,",
-          "next": "Isaiah 14:24,25; — \"It is certain the Assyrian shall be broken, because the Lord hath purposed it;\" which were a weak kind of reasoning, if his purpose might be altered. Nay \"He is"
-        },
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": "omination? Even actions in themselves sinful are not; though not as sinful, yet in some other regard, as punishments of others. \"Behold,\" saith Nathan to David, in the name of God,",
-          "next": "So, also, when wicked robbers had nefariously spoiled Job of all his substance, the holy man concludeth, \"The LORD gave, and the LORD hath taken away,\" Job 1:21. Now, if the workin"
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "His powerful overruling of all events, both necessary, free, and contingent, and disposing of them to certain ends for the manifestation of his glory. So Joseph tells his brethren,",
-          "next": "Fourthly, His determining and restraining second causes to such and such effects:"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "his revealed will to walk in his statutes, and keep his laws; upon this he also promiseth that he will so effect all things, that of some this shall be performed: Ezekiel 36:26,27,",
-          "next": "So that the self-same obedience of the people of God is here the object of his will, taken in either acceptation. And yet the precept of God is not here, as some learned men suppos"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": "uld be saved,\" chapter 2:47. From both which places it is evident that God bestoweth faith only on them whom he hath pre-ordained to eternal life; but most clearly, Romans 8:29,30,",
-          "next": "St Austin interpreted this place by adding in every link of the chain, \"Only those.\" However, the words directly import a precedency of predestination before the bestowing of other"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": "them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.\" So that \"nothing shall be able to separate us from the love of God,",
-          "next": "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before the foundation of the world, that we should be holy,\" Ephesians 1:4."
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "hought so by the wisdom of God himself; but our sin even compelled that good and wise Creator to hate and curse the work of his own hands. \"Cursed is the ground,\" saith he to Adam,",
-          "next": "Hence was that heavy burden of \"vanity,\" that \"bondage of corruption,\" under which to this day \"the whole creation groaneth and travaileth in pain\" until it be delivered, Romans 8:"
-        },
-        {
-          "file": "EPUB/ch014.xhtml",
-          "previous": " are dead,\" Ephesians 2:1,2, begetting us anew, John 1:13, making us in all things such as he would have us to be, is contained in that promise of the new covenant, Jeremiah 32:40,",
-          "next": "and is no way repugnant to the holy Scripture, declaring our duty to be all this that the Lord would have us. And now, let all men judge whether, against so many and clear testimon"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "previous": "ess than the least of all the saints of God, and unworthy the name which yet he is bold to subscribe himself by, — Your honor's most obliged servant in the service of Jesus Christ,",
-          "next": "THERE are two rotten pillars on which the fabric of late Arminianism (an egg of the old Pelagianism, which we had well hoped had been long since chilled, but is sit upon and broode"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
@@ -91,16 +40,16 @@
           "text": "Let now any one tell me what the reprobates, in this life, lie under more? And do not all the elect, until their actual reconciliation, in and by Christ, lie under the very same? for, — (1.) Are not their prayers an abomination to the Lord? can they without fa"
         },
         {
-          "file": "EPUB/ch057.xhtml",
-          "text": "Now, fourthly, after all this, and not before, it lies upon a believer to assure his soul, according as he finds the fruit of the death of Christ in him and towards him, of the goodwill and eternal love of God to him in sending his Son to die for him in partic"
+          "file": "EPUB/ch052.xhtml",
+          "text": "That God gave not his Son, — 1. For them who never do believe; 2. Much less for them who never hear of him, and so evidently want means of faith; 3. For them on whom he hath determined not to bestow effectual grace, that they might believe."
         },
         {
-          "file": "EPUB/ch064.xhtml",
-          "text": "Wherefore, to clear the whole, I shall, — 1. Give you in the passages opposed; and, 2. Vindicate them from mutual opposition, with what is besides charged on them."
+          "file": "EPUB/ch058.xhtml",
+          "text": "Where you have assigned, 1. The cause of Christ's death, — his love to us; 2. The object of it, — us, or believers; 3. The manner how he redeemed us, even by commutation."
         },
         {
           "file": "EPUB/ch073.xhtml",
-          "text": "To evince the main assertion, I shall, — 1. Show the nature and quality of this right; 2. The bottom or foundation of it; and, 3. Prove the thesis. 1. By right I understand jus in general. Now, \"Jus est quod justum est,\" Aug. in Psalm cxliv, sub. fin; — \"That "
+          "text": "To evince the main assertion, I shall, — 1. Show the nature and quality of this right; 2. The bottom or foundation of it; and, 3. Prove the thesis."
         }
       ]
     },
@@ -154,16 +103,10 @@
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 1,
+      "observed": 0,
       "budget": 4,
       "status": "ok",
-      "samples": [
-        {
-          "page": 3,
-          "hit_ratio": 0.5,
-          "sample": "contents of θεομαχια αττεξουσιαστικη display of arminianism prefatory note by the editor epistle dedicatory to the christian reader θεμοχιας αυτεξουσιαστικης specimen of the two main ends aimed at"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Reference continuation splits",
@@ -216,7 +159,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []
@@ -295,41 +238,10 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 6,
+      "observed": 0,
       "budget": 7,
       "status": "ok",
-      "samples": [
-        {
-          "file": "combined_text",
-          "text": "chapter 8 objections against the former proposal answered",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 1 arguments against the universality of redemption",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "an entrance to the answer unto particular arguments",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 4 answer to the second general argument",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 5 the last argument from scripture answered",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 7 the removal of other remaining objections",
-          "count": 1
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Possible Beta Code residue files",
@@ -513,49 +425,13 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 17,
+      "observed": 1,
       "budget": 35,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch010.xhtml",
-          "text": "which is in Christ Jesus,\" Romans 8:29,30,39. \"He hath chosen us in him before th"
-        },
-        {
-          "file": "EPUB/ch014.xhtml",
-          "text": "and is no way repugnant to the holy Scripture, declaring our duty to be all this"
-        },
-        {
           "file": "EPUB/ch021.xhtml",
           "text": "of the whole work is prefixed to it. We have not felt at liberty to adopt the num"
-        },
-        {
-          "file": "EPUB/ch024.xhtml",
-          "text": "which last words express also the very aim and end of Christ in giving himself fo"
-        },
-        {
-          "file": "EPUB/ch026.xhtml",
-          "text": "with that redoubled voice which afterward came from the excellent glory, \"This is"
-        },
-        {
-          "file": "EPUB/ch027.xhtml",
-          "text": "calling it everywhere his Father's work that he did, or his Father's will which h"
-        },
-        {
-          "file": "EPUB/ch031.xhtml",
-          "text": "which doubtless he inferreth from that law, Leviticus 19:18,"
-        },
-        {
-          "file": "EPUB/ch034.xhtml",
-          "text": "that is, at that hour \" when all that are in their graves shall hear his voice an"
-        },
-        {
-          "file": "EPUB/ch035.xhtml",
-          "text": "and, because sons, our deliverance from the law, and thereby our freedom from the"
-        },
-        {
-          "file": "EPUB/ch039.xhtml",
-          "text": "for if these things be not made known and revealed to all and every one that is c"
         }
       ]
     },
