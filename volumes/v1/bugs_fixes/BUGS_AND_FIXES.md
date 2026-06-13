@@ -940,12 +940,19 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T10:44:05.326157+00:00
+**Last run:** 2026-06-13T21:04:53.354509+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -960,16 +967,12 @@ Reports:
 | NAV links | 87 |
 | Greek chars / untagged | 4080 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
-| Noteref links / endnote anchors | 337 / 337 |
+| Noteref links / endnote anchors | 346 / 346 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 5 |
-
-Warnings requiring triage:
-
-- `repeated_phrases`: Potential repeated phrases detected
+| Repeated phrase hits | 0 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -1125,11 +1128,18 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-09T10:44:34.386593+00:00
-**Status:** WARN (10 warnings)
+**Last run:** 2026-06-13T21:05:23.783225+00:00
+**Status:** WARN (1 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1139,24 +1149,24 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 84 |
-| EPUB paragraphs/headings | 2705 |
+| EPUB paragraphs/headings | 2712 |
 | Approximate PDF-to-EPUB word coverage | 0.9993 |
-| Weak page matches | 5 |
-| Dense source windows checked | 27414 |
-| Missing dense source-window pages | 40 |
+| Weak page matches | 0 |
+| Dense source windows checked | 27529 |
+| Missing dense source-window pages | 30 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 4 |
 | Top-of-page body windows checked | 586 |
-| Top-of-page windows skipped as unstable | 13 |
+| Top-of-page windows skipped as unstable | 6 |
 | Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 2 |
-| Possible faulty paragraph splits | 8 |
-| Structural starts excluded from split warnings | 115 |
-| Short fragments | 11 |
+| Missing bottom-of-page body windows | 0 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 126 |
+| Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 5 |
+| Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -1168,8 +1178,8 @@ Reports:
 | EPUB enumerator markers | 320 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
-| PDF Greek words / EPUB Greek words | 811 / 811 |
-| Greek word coverage ratio | 0.9973 |
+| PDF Greek words / EPUB Greek words | 811 / 810 |
+| Greek word coverage ratio | 0.9987 |
 | PDF Hebrew words / EPUB Hebrew words | 20 / 20 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
@@ -1177,16 +1187,7 @@ Reports:
 
 Warnings requiring triage:
 
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

@@ -1,0 +1,83 @@
+{
+  "text_integrity": {
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "front_matter_toc_loss",
+      "roman_heading_candidates",
+      "repeated_windows"
+    ],
+    "weak_pages": [
+      3,
+      4,
+      5,
+      6,
+      533
+    ],
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      21,
+      51
+    ],
+    "paragraph_splits": [
+      "veniret utriusque diversitas",
+      "(3rdly,) By sending his Holy Spirit",
+      "(1st,) That the Word ceased",
+      "Christian Reader,",
+      "present with the Lord,\" 2 Corinthians 5:2, 4, 8",
+      "To The Reader",
+      "Your servant in the work of the Lord"
+    ]
+  },
+  "anomalies": {
+    "Hyphenation Anomalies": [
+      "Spiritual-mindedness",
+      "Bar-jona",
+      "pole-star",
+      "over-valuation",
+      "day-star",
+      "merchant-man",
+      "days-man",
+      "re-collected",
+      "re-collection",
+      "hundred-fold",
+      "two-fold",
+      "re-stipulation",
+      "TWO-FOLD"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "13.",
+      "4. ... 7.",
+      "III.",
+      "10."
+    ],
+    "Unmatched Quotation Marks": [
+      "He (Christ) meant the universal church",
+      "Non enim aliter nos discere poteramus",
+      "factores autem sermonum ejus facti",
+      "The first of these is the constant doctrine of the whole ancient church",
+      "We have no means — no corporeal, no intellectual instrument",
+      "1. \"Objectum reale et formale fidei\"",
+      "3. \"Lumen praeparans, elevans, disponens subjectum\"",
+      "The solemn ordinary worship of the church",
+      "There was in his words both a profession of his own faith",
+      "III. The third thing proposed to declare the use of the person of Christ",
+      "This is that \"Holy One\" which",
+      "Through the blood of this everlasting covenant",
+      "2. The minds of men are apt by their troubles",
+      "4. The sight of the glory of Christ is the spring and cause of our everlasting blessedness",
+      "1. Infinite wisdom is one of the most glorious properties of the divine nature",
+      "Our constant exercise in meditation on this glory of Christ",
+      "This, therefore, is the present case: — Where there are prevailing sinful distemper",
+      "Gracious acceptation: \"Receive us graciously.\"",
+      "Dr. Owen had at that time the charge of the parish of Fordham"
+    ]
+  }
+}

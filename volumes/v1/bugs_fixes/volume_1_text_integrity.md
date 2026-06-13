@@ -1,37 +1,37 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 10
+- Warnings: 1
 - PDF pages: 633
 - EPUB text files: 84
-- EPUB paragraphs/headings: 2705
+- EPUB paragraphs/headings: 2712
 
 ## Coverage
 
-- PDF content tokens: 205010
-- EPUB content tokens: 205874
+- PDF content tokens: 205009
+- EPUB content tokens: 206028
 - Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 622
-- Weak page matches: 5
-- Dense source windows checked: 27414
-- Missing dense source-window pages: 40
+- Weak page matches: 0
+- Dense source windows checked: 27529
+- Missing dense source-window pages: 30
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 4
 - Top-of-page body windows checked: 586
-- Top-of-page windows skipped as unstable: 13
+- Top-of-page windows skipped as unstable: 6
 - Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 534
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 2
+- Missing bottom-of-page body windows: 0
 
 ## Paragraphs
 
-- Body paragraphs checked: 2255
-- Possible faulty paragraph splits: 8
-- Structural starts excluded from split warnings: 115
-- Short fragments: 11
+- Body paragraphs checked: 2264
+- Possible faulty paragraph splits: 0
+- Structural starts excluded from split warnings: 126
+- Short fragments: 12
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 5
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
@@ -47,8 +47,8 @@
 ## Greek / Hebrew
 
 - PDF Greek words: 811
-- EPUB Greek words: 811
-- Greek word coverage ratio: 0.9973
+- EPUB Greek words: 810
+- Greek word coverage ratio: 0.9987
 - PDF Hebrew words: 20
 - EPUB Hebrew words: 20
 - Hebrew word coverage ratio: 1.0
@@ -59,42 +59,33 @@
 
 ## Latin
 
-- PDF Latin words: 3423
-- EPUB Latin words: 3463
-- EPUB Tagged Latin words: 1149
-- Latin word coverage ratio: 0.998
-- Latin word tagging ratio: 0.3318
-- Latin clauses checked: 150
+- PDF Latin words: 1776
+- EPUB Latin words: 1816
+- EPUB Tagged Latin words: 1098
+- Latin word coverage ratio: 0.9977
+- Latin word tagging ratio: 0.6046
+- Latin clauses checked: 146
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 288
-- Translated Latin runs: 163
-- Latin translation ratio: 0.566
+- Tagged Latin runs checked: 272
+- Translated Latin runs: 164
+- Latin translation ratio: 0.6029
 
 ## Warnings
 
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
-- page: 3; sample: contents of χριστολογια or declaration of the glorious mystery of the person of christ
-- page: 4; sample: person of christ which is love its truth and reality vindicated chapter the nature
-- page: 5; sample: the accomplishment of the work of mediation in this world representations of the glory
-- page: 6; sample: of the holy trinity of the works of god and first of those that
-- page: 9; sample: embraces the most comprehensive view of this vitally-important subject his exposition of psalm exhibits
-- page: 10; sample: learned puritan we are informed by dr steven that his exposition of the epistle
-- page: 11; sample: owen whose name towers into just pre eminence among all his venerable compeers in
-- page: 21; sample: individuals since the reformation next to calvin's institutions we would have deemed it our
-- page: 44; sample: πατρος και του υιου και του αγιου πνευματος πιστευομενης ομοτιμου της αξιας και συναιδιου
-- page: 51; sample: imago id est verbum dei ad eum qui est ad imaginem hoc est hominem
+- page: 53; sample: declaration of the glorious mystery of the person of christ chapter peter's confession matthew
+- page: 56; sample: lively stones also as this apostle assures us epist they must be like unto
+- page: 76; sample: of the same mystery is elsewhere testified unto hebrews god has spoken unto us
+- page: 78; sample: so the apostle expresseth it hebrews god who at sundry times and in divers
+- page: 83; sample: of his person by whom they are performed john if any man sin we
+- page: 90; sample: place no small portion of divine blessedness self existence in its own immense being
+- page: 101; sample: glory and the firmament always showed his handy work the invisible things of his
+- page: 105; sample: image of the other for he and the father are one and one and
+- page: 106; sample: unto his divine person as the son of the father the only begotten the
+- page: 117; sample: most frequently expressed by the knowledge of him john corinthians ephesians philippians john peter
 
 ## Missing Front CONTENTS Pages
 
@@ -102,30 +93,6 @@
 - page: 4; hit_ratio: 0.5; sample: chapter the especial principle of obedience unto the person of christ which is love its truth and reality vindicated chapter the nature operations and causes of divine love
 - page: 5; hit_ratio: 0.5; sample: the glory of christ in his exaltation after the accomplishment of the work of mediation in this world representations of the glory of christ under the old testament
 - page: 6; hit_ratio: 0.25; sample: of the holy trinity of the works of god and first of those that are internal and immanent of the works of god that outwardly are of him
-
-## Missing Bottom-Of-Page Body Windows
-
-- page: 26; sample: oijkodomh>sw mou th<n ejhkklhsi>an, kai< pu>lai a[|dou ouj katiscu>sousin aujth~v".
-- page: 293; sample: of God. Such are "ejnsa>rkwsiv", "incarnation;" "ejnswma>twsiv", "embodying," "ejnanqrw>phsiv", "inhumanation;" "hJ despotikh<
-
-## Possible Paragraph Splits
-
-- file: EPUB/ch004.xhtml; previous: veniret utriusque diversitas, ut unus idemque sit filius, qui se, et secundum quod verus est homo, Patre dicit minorem, et secundum quod verus est Deus Patrise profitetur aequalem"; next: — "Human nature is assumed into the society of the Creator, not that he should be the inhabitant, and that the habitation," (that is, by an inhabitation in the effects of his power
-- file: EPUB/ch011.xhtml; previous: ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church; next: (3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the "mouth of his holy prophets, which have be
-- file: EPUB/ch011.xhtml; previous: was so to prophet of the church always as to tender manifold instructions unto the perishing, unbelieving world. Hence is he said to lighten "every man that comets into the world,"; next: John 1:9, by one way or other communicating to them some notices of God and his will; for his light shineth in, or irradiates darkness itself — that darkness which is come on the m
-- file: EPUB/ch022.xhtml; previous: (1st,) That the Word ceased to be what it was, and was substantially turned into flesh; next: (2ndly,) That continuing to be what it was, it was made to be also what before it was not.
-- file: EPUB/ch027.xhtml; previous: Christian Reader,; next: To design of the ensuing Discourse is to declare some part of that glory of our Lord Jesus Christ which is revealed in the Scripture, and proposed as the principal object of our fa
-- file: EPUB/ch039.xhtml; previous: Yea, whilst we are in this tabernacle, we groan earnestly, as being burdened, because we are not "absent from the body, and present with the Lord," 2 Corinthians 5:2, 4, 8; next: The more we grow in faith and spiritual light, the more sensible are we of our present burdens, and the more vehemently do we groan for deliverance into the perfect liberty of the
-- file: EPUB/ch042.xhtml; previous: To The Reader; next: The design of this preface is not to commend either the author or the matter contained in this little book. Let every reader do as he finds cause.
-- file: EPUB/ch048.xhtml; previous: Your servant in the work of the Lord; next: J.O.
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch013.xhtml; text: In the confirmation hereof it will appear what judgment ought to be passed on that inquiry — which, after the uninterrupted profession of the catholic church for so many ages of a faith unto the contrary, is begun to be made by some amon...
-- file: EPUB/ch031.xhtml; text: That which we inquire after at present, is, the glory of Christ herein, and how we may behold that glory. And there are three things wherein we may take a prospect of it. 1. In his susception of this office. 2. In his discharge of it. 3....
-- file: EPUB/ch031.xhtml; text: In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love.
-- file: EPUB/ch040.xhtml; text: Two things we must here speak unto. 1. Why does the Lord Christ, at any time, thus hide himself in his glory from the faith of believers, that they cannot behold him? 2. How we may perceive and know that he does so withdraw himself from ...
-- file: EPUB/ch045.xhtml; text: The second thing proposed is, that notwithstanding all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great perplexities, and...
 
 ## Roman Heading Candidates
 
@@ -137,25 +104,25 @@
 - file: EPUB/ch009.xhtml; text: All this himself instructs us in.
 - file: EPUB/ch011.xhtml; text: This must be declared.
 - file: EPUB/ch027.xhtml; text: Christian Reader,
+- file: EPUB/ch029.xhtml; text: For, —
 - file: EPUB/ch035.xhtml; text: The sum is,
 - file: EPUB/ch037.xhtml; text: And, —
 - file: EPUB/ch041.xhtml; text: END.
 - file: EPUB/ch042.xhtml; text: To The Reader
 - file: EPUB/ch045.xhtml; text: END OF PART 2.
-- file: EPUB/ch048.xhtml; text: J.O.
 
 ## Repeated Windows
 
 - phrase: the glory of god in the face of jesus christ; count: 12
 - phrase: unto us child is born unto us son is given; count: 6
 - phrase: of the glory of god in the face of jesus; count: 6
+- phrase: loss for the excellency of the knowledge of christ jesus; count: 5
+- phrase: for the excellency of the knowledge of christ jesus my; count: 5
+- phrase: the excellency of the knowledge of christ jesus my lord; count: 5
 - phrase: us child is born unto us son is given and; count: 5
 - phrase: the brightness of his glory and the express image of; count: 5
 - phrase: brightness of his glory and the express image of his; count: 5
 - phrase: of his glory and the express image of his person; count: 5
-- phrase: are changed into the same image from glory to glory; count: 5
-- phrase: both which are in heaven and which are on earth; count: 5
-- phrase: the only-begotten son who is in the bosom of the; count: 5
 
 ## Missing Word Samples
 
@@ -174,16 +141,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: nor; epub: 352; tagged: 5
-- word: jesus; epub: 254; tagged: 7
-- word: yea; epub: 97; tagged: 1
-- word: immediate; epub: 97; tagged: 2
-- word: distinct; epub: 86; tagged: 1
-- word: thereunto; epub: 73; tagged: 3
-- word: mere; epub: 66; tagged: 0
-- word: hereunto; epub: 63; tagged: 2
-- word: whereas; epub: 60; tagged: 0
-- word: adam; epub: 52; tagged: 3
+- word: incarnate; epub: 36; tagged: 0
+- word: communicate; epub: 26; tagged: 1
+- word: contemplate; epub: 16; tagged: 0
+- word: undergo; epub: 15; tagged: 0
+- word: meditate; epub: 15; tagged: 0
+- word: iii; epub: 14; tagged: 0
+- word: door; epub: 12; tagged: 0
+- word: william; epub: 9; tagged: 0
+- word: nestorius; epub: 8; tagged: 0
+- word: beam; epub: 8; tagged: 0
 
 ## Untranslated Latin Samples
 
@@ -192,11 +159,11 @@
 - phrase: operis absentibus
 - phrase: Salus Electorum Sauguis
 - phrase: quam conspici
-- phrase: contemplate a separate
 - phrase: Quod si super unum illum Petrum tantum
 - phrase: totam eclesiam
 - phrase: quid dicturus
 - phrase: et apostolorum
+- phrase: Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum
 
 ## Limits
 

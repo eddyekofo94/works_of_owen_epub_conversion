@@ -1,20 +1,14 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-09T10:44:05.326157+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-13T21:04:53.354509+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 5
-    }
-  ],
+  "warnings": [],
   "info": {
     "file_count": 120,
-    "epub_size_bytes": 6460823,
+    "epub_size_bytes": 6461633,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -40,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 337,
-      "unique_noteref_targets": 337,
-      "endnote_anchor_count": 337,
+      "noteref_count": 346,
+      "unique_noteref_targets": 346,
+      "endnote_anchor_count": 346,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -54,10 +48,10 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 5,
+      "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
-      "chapter_heading_in_paragraph_files": 1,
+      "chapter_heading_in_paragraph_files": 2,
       "overlong_heading_body_files": 0,
       "fragmented_greek_span_run_files": 0,
       "fragmented_hebrew_span_run_files": 0,
@@ -69,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 7,
+      "lowercase_paragraph_start_files": 0,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -80,33 +74,7 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "repeated_phrase": [
-          {
-            "file": "combined_text",
-            "text": "chapter 14 motives unto the love of christ",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "meditations and discourses on the glory of christ",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 8 of the state of corrupted nature",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 10 of the person of jesus christ",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 14 of the two-fold estate of christ",
-            "count": 1
-          }
-        ],
+        "repeated_phrase": [],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],
@@ -117,6 +85,10 @@
           {
             "file": "EPUB/ch003.xhtml",
             "text": "Chapter 1"
+          },
+          {
+            "file": "EPUB/ch049.xhtml",
+            "text": "Chapter 7"
           }
         ],
         "overlong_heading_body": [],
@@ -135,36 +107,7 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/ch004.xhtml",
-            "text": "factores"
-          },
-          {
-            "file": "EPUB/ch008.xhtml",
-            "text": "as he also proclaims the same delight in him, from heaven, in the days of his fle"
-          },
-          {
-            "file": "EPUB/ch016.xhtml",
-            "text": "and verse 23, \"My Father will love him, and we will come unto him, and make our a"
-          },
-          {
-            "file": "EPUB/ch022.xhtml",
-            "text": "and in sundry other places. The assumption, the taking of our human nature to be"
-          },
-          {
-            "file": "EPUB/ch030.xhtml",
-            "text": "against him he lifted up himself; — which was the beginning of his transgression."
-          },
-          {
-            "file": "EPUB/ch039.xhtml",
-            "text": "whereunto we shall speak immediately. And if this were so excellent a privilege a"
-          },
-          {
-            "file": "EPUB/ch040.xhtml",
-            "text": "and the Psalmist, \"How long, LORD? wilt thou hide thyself for ever?\" Psalm 89:46."
-          }
-        ],
+        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
@@ -173,5 +116,12 @@
     },
     "nav_link_count": 87,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
-  }
+  },
+  "unused_whitelist_epub_warnings": [
+    "low_latin_tagging",
+    "low_latin_translation_coverage",
+    "front_matter_toc_loss",
+    "roman_heading_candidates",
+    "repeated_windows"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "volume": 1,
+  "volume": "1",
   "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
@@ -12,79 +12,17 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 8,
+      "observed": 0,
       "budget": 125,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "veniret utriusque diversitas, ut unus idemque sit filius, qui se, et secundum quod verus est homo, Patre dicit minorem, et secundum quod verus est Deus Patrise profitetur aequalem\"",
-          "next": "— \"Human nature is assumed into the society of the Creator, not that he should be the inhabitant, and that the habitation,\" (that is, by an inhabitation in the effects of his power"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "ls was subordinate unto him; and whatever instruction was thereby given unto the church in the mind and will of God, it was immediately from him, as the great prophet of the church",
-          "next": "(3rdly,) By sending his Holy Spirit to inspire, act, and guide the prophets, by whom God would reveal himself. God spoke unto them by the \"mouth of his holy prophets, which have be"
-        },
-        {
-          "file": "EPUB/ch011.xhtml",
-          "previous": "was so to prophet of the church always as to tender manifold instructions unto the perishing, unbelieving world. Hence is he said to lighten \"every man that comets into the world,\"",
-          "next": "John 1:9, by one way or other communicating to them some notices of God and his will; for his light shineth in, or irradiates darkness itself — that darkness which is come on the m"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "previous": "(1st,) That the Word ceased to be what it was, and was substantially turned into flesh",
-          "next": "(2ndly,) That continuing to be what it was, it was made to be also what before it was not."
-        },
-        {
-          "file": "EPUB/ch027.xhtml",
-          "previous": "Christian Reader,",
-          "next": "To design of the ensuing Discourse is to declare some part of that glory of our Lord Jesus Christ which is revealed in the Scripture, and proposed as the principal object of our fa"
-        },
-        {
-          "file": "EPUB/ch039.xhtml",
-          "previous": "Yea, whilst we are in this tabernacle, we groan earnestly, as being burdened, because we are not \"absent from the body, and present with the Lord,\" 2 Corinthians 5:2, 4, 8",
-          "next": "The more we grow in faith and spiritual light, the more sensible are we of our present burdens, and the more vehemently do we groan for deliverance into the perfect liberty of the "
-        },
-        {
-          "file": "EPUB/ch042.xhtml",
-          "previous": "To The Reader",
-          "next": "The design of this preface is not to commend either the author or the matter contained in this little book. Let every reader do as he finds cause."
-        },
-        {
-          "file": "EPUB/ch048.xhtml",
-          "previous": "Your servant in the work of the Lord",
-          "next": "J.O."
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 5,
+      "observed": 0,
       "budget": 16,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch013.xhtml",
-          "text": "In the confirmation hereof it will appear what judgment ought to be passed on that inquiry — which, after the uninterrupted profession of the catholic church for so many ages of a faith unto the contrary, is begun to be made by some amongst us — namely, Of wha"
-        },
-        {
-          "file": "EPUB/ch031.xhtml",
-          "text": "That which we inquire after at present, is, the glory of Christ herein, and how we may behold that glory. And there are three things wherein we may take a prospect of it. 1. In his susception of this office. 2. In his discharge of it. 3. In the event and conse"
-        },
-        {
-          "file": "EPUB/ch031.xhtml",
-          "text": "In the susception of this office we may behold the glory of Christ, — I. In his condescension; II. In his love."
-        },
-        {
-          "file": "EPUB/ch040.xhtml",
-          "text": "Two things we must here speak unto. 1. Why does the Lord Christ, at any time, thus hide himself in his glory from the faith of believers, that they cannot behold him? 2. How we may perceive and know that he does so withdraw himself from us, so that, however we"
-        },
-        {
-          "file": "EPUB/ch045.xhtml",
-          "text": "The second thing proposed is, that notwithstanding all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great perplexities, and endanger their eternal"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -105,6 +43,18 @@
           "count": 6
         },
         {
+          "phrase": "loss for the excellency of the knowledge of christ jesus",
+          "count": 5
+        },
+        {
+          "phrase": "for the excellency of the knowledge of christ jesus my",
+          "count": 5
+        },
+        {
+          "phrase": "the excellency of the knowledge of christ jesus my lord",
+          "count": 5
+        },
+        {
           "phrase": "us child is born unto us son is given and",
           "count": 5
         },
@@ -118,18 +68,6 @@
         },
         {
           "phrase": "of his glory and the express image of his person",
-          "count": 5
-        },
-        {
-          "phrase": "are changed into the same image from glory to glory",
-          "count": 5
-        },
-        {
-          "phrase": "both which are in heaven and which are on earth",
-          "count": 5
-        },
-        {
-          "phrase": "the only-begotten son who is in the bosom of the",
           "count": 5
         }
       ]
@@ -292,36 +230,10 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 5,
+      "observed": 0,
       "budget": 8,
       "status": "ok",
-      "samples": [
-        {
-          "file": "combined_text",
-          "text": "chapter 14 motives unto the love of christ",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "meditations and discourses on the glory of christ",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 8 of the state of corrupted nature",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 10 of the person of jesus christ",
-          "count": 1
-        },
-        {
-          "file": "combined_text",
-          "text": "chapter 14 of the two-fold estate of christ",
-          "count": 1
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Possible Beta Code residue files",
@@ -367,13 +279,17 @@
     },
     {
       "label": "Chapter headings rendered as paragraphs",
-      "observed": 1,
+      "observed": 2,
       "budget": 3,
       "status": "ok",
       "samples": [
         {
           "file": "EPUB/ch003.xhtml",
           "text": "Chapter 1"
+        },
+        {
+          "file": "EPUB/ch049.xhtml",
+          "text": "Chapter 7"
         }
       ]
     },
@@ -505,39 +421,10 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 7,
+      "observed": 0,
       "budget": 38,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "factores"
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "text": "as he also proclaims the same delight in him, from heaven, in the days of his fle"
-        },
-        {
-          "file": "EPUB/ch016.xhtml",
-          "text": "and verse 23, \"My Father will love him, and we will come unto him, and make our a"
-        },
-        {
-          "file": "EPUB/ch022.xhtml",
-          "text": "and in sundry other places. The assumption, the taking of our human nature to be"
-        },
-        {
-          "file": "EPUB/ch030.xhtml",
-          "text": "against him he lifted up himself; — which was the beginning of his transgression."
-        },
-        {
-          "file": "EPUB/ch039.xhtml",
-          "text": "whereunto we shall speak immediately. And if this were so excellent a privilege a"
-        },
-        {
-          "file": "EPUB/ch040.xhtml",
-          "text": "and the Psalmist, \"How long, LORD? wilt thou hide thyself for ever?\" Psalm 89:46."
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Noteref leading spaces",
