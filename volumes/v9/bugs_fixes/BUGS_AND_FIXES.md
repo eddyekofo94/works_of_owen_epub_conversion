@@ -145,11 +145,13 @@ Reports:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-13T18:54:37.002916+00:00
-**Status:** WARN (13 warnings)
+**Last run:** 2026-06-13T20:29:15.364904+00:00
+**Status:** WARN (10 warnings)
 
 Reports:
 - `volume_9_text_integrity.json`
@@ -172,7 +174,7 @@ Reports:
 | Bottom-of-page body windows checked | 697 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 2 |
-| Possible faulty paragraph splits | 2 |
+| Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 406 |
 | Short fragments | 38 |
 | Adjacent duplicate paragraphs | 0 |
@@ -202,14 +204,11 @@ Warnings requiring triage:
 - `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

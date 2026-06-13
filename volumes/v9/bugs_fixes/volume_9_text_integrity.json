@@ -2,9 +2,9 @@
   "volume": "9",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/input/owen-v9.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
-  "generated_at": "2026-06-13T18:54:37.002916+00:00",
+  "generated_at": "2026-06-13T20:29:15.364904+00:00",
   "status": "warn",
-  "warning_count": 13,
+  "warning_count": 10,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -27,10 +27,6 @@
       "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
     },
     {
-      "code": "paragraph_split_candidates",
-      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
-    },
-    {
       "code": "suspicious_large_number_starts",
       "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
     },
@@ -49,14 +45,6 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "low_latin_tagging",
-      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
-    },
-    {
-      "code": "low_latin_translation_coverage",
-      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
@@ -583,19 +571,8 @@
   },
   "paragraph_integrity": {
     "paragraphs_checked": 3023,
-    "split_candidate_count": 2,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch007.xhtml",
-        "previous": "unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —",
-        "next": "Use 1. We shall begin with the consideration of God himself, even the Father; and that declaration of his love, kindness, tenderness, readiness, and willingness to receive poor bel"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "previous": "-place established; — there he gives his presence in his worship and ordinances, wherein he is delighted. \"Because of thy temple at Jerusalem shall kings bring presents unto thee,\"",
-        "next": "Psalm 68:29. Here is the temple, Christ, and then, the worship of Christ: for their sake it shall be done. When vengeance is recompensed upon an opposing people, it is the vengeanc"
-      }
-    ],
+    "split_candidate_count": 0,
+    "split_candidates": [],
     "structural_start_exclusions": 406,
     "short_fragment_count": 38,
     "short_fragments": [

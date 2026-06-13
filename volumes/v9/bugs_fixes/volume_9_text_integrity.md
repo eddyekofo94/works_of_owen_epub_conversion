@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 9
 
 - Status: **WARN**
-- Warnings: 13
+- Warnings: 10
 - PDF pages: 778
 - EPUB text files: 102
 - EPUB paragraphs/headings: 3511
@@ -27,7 +27,7 @@
 ## Paragraphs
 
 - Body paragraphs checked: 3023
-- Possible faulty paragraph splits: 2
+- Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 406
 - Short fragments: 38
 - Adjacent duplicate paragraphs: 0
@@ -77,14 +77,11 @@
 - `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
@@ -122,11 +119,6 @@
 
 - page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
 - page: 4; sample: Ministerial Endowments The Work Of The Spirit. The Duty Of A Pastor.
-
-## Possible Paragraph Splits
-
-- file: EPUB/ch007.xhtml; previous: unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —; next: Use 1. We shall begin with the consideration of God himself, even the Father; and that declaration of his love, kindness, tenderness, readiness, and willingness to receive poor bel
-- file: EPUB/ch021.xhtml; previous: -place established; — there he gives his presence in his worship and ordinances, wherein he is delighted. "Because of thy temple at Jerusalem shall kings bring presents unto thee,"; next: Psalm 68:29. Here is the temple, Christ, and then, the worship of Christ: for their sake it shall be done. When vengeance is recompensed upon an opposing people, it is the vengeanc
 
 ## Suspicious Large-Number Starts
 
