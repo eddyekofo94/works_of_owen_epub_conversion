@@ -1,0 +1,45 @@
+{
+  "volume": "9",
+  "whitelisted_items": [
+    {
+      "type": "missing_front_toc_pages",
+      "pages": [3, 4, 5, 6],
+      "reason": "Replaced by custom table of contents layout in convert.py. Configured via max_front_toc_missing_pages: 4 in qa/bug_regression_baselines.json."
+    },
+    {
+      "type": "footnote_mismatch_delta",
+      "delta": 1,
+      "reason": "Exactly one endnote is referenced multiple times in the EPUB chapters. Configured in ALLOWED_FOOTNOTE_ANOMALIES in test_footnote_integrity.py."
+    },
+    {
+      "type": "structural_sequence_gaps",
+      "gaps": [
+        {
+          "file": "EPUB/ch029.xhtml",
+          "level_cls": "list-level-1",
+          "marker": "III.",
+          "reason": "Sermon 24: Predecessor was I. and skipped II. in original printed/OCR text."
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "level_cls": "list-level-1",
+          "marker": "IV.",
+          "reason": "Sermon 25: Predecessor was II. and skipped III. in original printed/OCR text."
+        },
+        {
+          "file": "EPUB/ch090.xhtml",
+          "level_cls": "list-level-1",
+          "marker": "3.",
+          "reason": "Discourse 20: Predecessor was 1. and skipped 2. in original printed/OCR text."
+        },
+        {
+          "file": "EPUB/ch091.xhtml",
+          "level_cls": "list-level-1",
+          "marker": "3.",
+          "reason": "Discourse 21: Predecessor was 1. and skipped 2. in original printed/OCR text."
+        }
+      ],
+      "reason": "Genuine printed/OCR sequence gaps in source text. Configured in is_known_gap in test_structural_symmetry.py."
+    }
+  ]
+}
