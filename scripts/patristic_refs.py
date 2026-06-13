@@ -112,6 +112,7 @@ AUTHOR_ABBREV_MAP = {
     "clemens":     "Clement of Alexandria",
     # Theodoret
     "theodoret":   "Theodoret of Cyrrhus",
+    "theod":       "Theodoret of Cyrrhus",
     # Socrates (Church historian)
     "socrat":      "Socrates Scholasticus",
     # Cyril of Alexandria
@@ -298,6 +299,7 @@ AUTHOR_ABBREV_MAP = {
     "gregory_great": "Gregory the Great (Gregorius Magnus)",
     "bradwardine": "Thomas Bradwardine (Doctor Profundus)",
     "suarez":      "Francisco Suárez",
+    "thuanus":     "Jacques Auguste de Thou (Thuanus)",
 }
 
 # ── Canonical Author Normalization ──────────────────────────────────────────
@@ -350,6 +352,7 @@ CANONICAL_AUTHOR_MAP = {
     "rainold":     "rainolds",
     "scultet":     "scultetus",
     "dio":         "dio cassius",
+    "theod":       "theodoret",
     "die cassius": "dio cassius",
     "huls":        "hulsius",
     "galatin":     "galatinus",
@@ -611,11 +614,21 @@ WORK_MAP = {
                                "std_ref": ["NPNF2, 12:115–205"], "pl": "PL 54"},
     ("leo", "epist"):        {"full_title": "Letters", "latin_title": "Epistulae",
                                "std_ref": ["NPNF2, 12:1–114"], "pl": "PL 54"},
+    # Cicero
+    "cicero":      "Cicero",
+    # Cicero
+    ("cicero", "de leg"):    {"full_title": "On the Laws", "latin_title": "De Legibus",
+                               "std_ref": ["Loeb Classical Library"]},
+    ("cicero", "leg"):       {"full_title": "On the Laws", "latin_title": "De Legibus",
+                               "std_ref": ["Loeb Classical Library"]},
     # Horace
     ("hor", "sat"):          {"full_title": "Satires", "latin_title": "Satirae",
                                "std_ref": ["Loeb Classical Library"]},
     ("hor", "ep"):           {"full_title": "Epistles", "latin_title": "Epistulae",
                                "std_ref": ["Loeb Classical Library"]},
+    # Thuanus
+    ("thuanus", "hist"):     {"full_title": "History of His Own Time", "latin_title": "Historiae sui temporis",
+                               "std_ref": ["London 1733 (7 vols.)"]},
     # Seneca
     ("seneca", "ep"):        {"full_title": "Letters to Lucilius",
                                "latin_title": "Epistulae Morales ad Lucilium",
@@ -1030,6 +1043,13 @@ def _find_author_in_context(plain_context: str) -> str | None:
         pattern = re.compile(rf'\b{re.escape(abbrev)}\w*\.?', re.I)
         for m in pattern.finditer(ctx):
             if m.start() > best_pos:
+                matched_word = m.group(0).lower().rstrip('.')
+                if matched_word in {
+                    'horrid', 'horror', 'horrible', 'horridly', 'horrors',
+                    'just', 'justice', 'justify', 'justified', 'justifies', 'justifying', 'justification', 'justly',
+                    'glass', 'glasses'
+                }:
+                    continue
                 best_pos = m.start()
                 best_key = abbrev
     if best_key:
@@ -1185,6 +1205,8 @@ def build_citation_note(
             (r'\b(?:loc|loci|lee)\s+theol\w*\b', 'canus', 'loc theol'),
             (r'\b_?(?:holy\s+one|spirit\s+himself)_?\b.*\bde\s+spir\w*\s+sanc', 'didymus', 'de spir sanc'),
             (r'\bliv\b|\bliv\.', 'livy', 'hist'),
+            (r'\bhist\w*\s+rom\w*\b', 'dio cassius', 'hist'),
+            (r'\b(?:blasphemies|massacre|parisian)\b.*\bhist\b', 'thuanus', 'hist'),
         ]
         for pattern, inferred_author, inferred_work in inferences:
             if re.search(pattern, ctx_to_check, re.I):

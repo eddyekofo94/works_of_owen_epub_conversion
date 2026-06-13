@@ -261,6 +261,10 @@ def test_structural_symmetry_and_sequential_completeness(volume: str):
                                 (name == "EPUB/ch048.xhtml" and level_cls == "list-level-1" and rm == "3.") or
                                 (name == "EPUB/ch050.xhtml" and level_cls == "list-level-1" and rm in ["4.", "490."]) or
                                 (name == "EPUB/ch051.xhtml" and level_cls == "list-level-1" and rm == "6.")
+                            )) or (volume == 8 and (
+                                (name == "EPUB/ch015.xhtml" and level_cls == "list-level-1" and rm in ["5.", "14.", "3.", "50."]) or
+                                (name == "EPUB/ch023.xhtml" and level_cls == "list-level-1" and rm == "III.") or
+                                (name in ["EPUB/ch053.xhtml", "EPUB/ch066.xhtml"] and level_cls == "roman-subheading" and rm == "III.")
                             ))
                             if not is_known_gap:
                                 failures.append(

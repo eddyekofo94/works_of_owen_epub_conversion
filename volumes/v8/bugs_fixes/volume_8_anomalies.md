@@ -2,21 +2,22 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 306814
-* **Total Suspected Anomalies Found:** 199
+* **Total Words Audited:** 306937
+* **Total Suspected Anomalies Found:** 191
 
 Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix these.
 
 ## Summary by Category
 
 * **Hyphenation Anomalies:** 47 items
-* **Punctuation Spacing Blemishes:** 94 items
+* **Punctuation Spacing Blemishes:** 95 items
 * **OCR & Bracket Residues:** 0 items
 * **Mixed-Case Capitalization Errors:** 0 items
-* **Unresolved Citation References:** 8 items
+* **Unresolved Citation References:** 0 items
 * **Structural Nesting Sequence Jumps:** 36 items
-* **Invalid Bible References:** 14 items
+* **Invalid Bible References:** 2 items
 * **List Formatting Inconsistencies:** 0 items
+* **Unmatched Quotation Marks:** 11 items
 
 ---
 
@@ -346,13 +347,13 @@ Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix the
 * **Chapter:** *A Vision of Unchangeable, Free Mercy, in Sending the Means of G*
 * **Contexts:**
   * ... the martyrs of Jesus that suffered amongst them! **2dly ,** After some continuance. So the Church of Laodicea ...
-  * ... s and glorious fancies, became head of that fatal **2dly ,** After some continuance. So the Church of Laodicea ...
+  * ... and glorious fancies, became head of that fatal **2dly ,** After some continuance. So the Church of Laodicea ...
 
 ### 7. `3dly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *A Vision of Unchangeable, Free Mercy, in Sending the Means of G*
 * **Contexts:**
-  * ... not professedly found in any party amongst us. **3dly ,** Which was worst of all, they had centred in their ...
+  * ... ot professedly found in any party amongst us. **3dly ,** Which was worst of all, they had centred in their ...
 
 ### 8. `old :`
 * **Description:** Spaced punctuation (space before character)
@@ -382,19 +383,19 @@ Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *A Vision of Unchangeable, Free Mercy, in Sending the Means of G*
 * **Contexts:**
-  * ... s example. These things being presupposed, — Use **1 .** Let no flesh glory in themselves, but let every m ...
+  * ... example. These things being presupposed, — Use **1 .** Let no flesh glory in themselves, but let every m ...
 
-### 13. `e )`
+### 13. `e  )`
 * **Description:** Spaced closing parenthesis
 * **Chapter:** *A Vision of Unchangeable, Free Mercy, in Sending the Means of G*
 * **Contexts:**
-  * ... g how this vial was poured out upon the very thron**e )**, and then let us all be ashamed and confounded in ...
+  * ... g how this vial was poured out upon the very throne ), and then let us all be ashamed and confounded in ...
 
-### 14. `s )`
+### 14. `s  )`
 * **Description:** Spaced closing parenthesis
 * **Chapter:** *A Country Essay*
 * **Contexts:**
-  * ... nasius and others in the east deposed by the Arian**s )**. Now, who would not have thought, that his standi ...
+  * ... nasius and others in the east deposed by the Arians ). Now, who would not have thought, that his standi ...
 
 ### 15. `you ,`
 * **Description:** Spaced punctuation (space before character)
@@ -582,7 +583,7 @@ Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Shaking and Translating of Heaven and Earth*
 * **Contexts:**
-  * ... hristian consideration this following position: — **Observation .** The Lord Jesus Christ, by his mighty power, in th ...
+  * ... ristian consideration this following position: — **Observation .** The Lord Jesus Christ, by his mighty power, in th ...
 
 ### 45. `3dly .`
 * **Description:** Spaced period (space before period)
@@ -596,290 +597,296 @@ Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix the
 * **Contexts:**
   * ... r;" and all because they discern not the season. **4thly .** Sinful negligence. You are no way able to do the ...
 
-### 47. `me ;`
+### 47. `( s`
+* **Description:** Spaced opening parenthesis
+* **Chapter:** *The Shaking and Translating of Heaven and Earth*
+* **Contexts:**
+  * ... camores," (1 Kings 10:27) — though not for dust?" **( s**tones, and cedars as sycamores," (1 Kings 10:27) — ...
+
+### 48. `me ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
 * **Contexts:**
   * ... g out, "If it be possible, let this cup pass from **me ;**" but he recollects himself, and says, "I am conte ...
 
-### 48. `pieces .`
+### 49. `pieces .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
 * **Contexts:**
   * ... hidden, against which they dash themselves all to **pieces .** I say, then, Christ, as the foundation of this ho ...
 
-### 49. `them ;`
+### 50. `them ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Advantage of the Kingdom of Christ*
 * **Contexts:**
   * ... as were the residue of their types, every one of **them ;** — yea, the most glorious enjoyments whatsoever wh ...
 
-### 50. `dismission :`
+### 51. `dismission :`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Laboring Saint's Dismission to Rest.*
 * **Contexts:**
   * ... n the most useful employments, must receive their **dismission :** — be their work of never so great importance, be ...
 
-### 51. `world :`
+### 52. `world :`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Laboring Saint's Dismission to Rest.*
 * **Contexts:**
   * ... nd of his life and pilgrimage. 2. The end of the **world :** "Go thy ways to the end of the world: till then t ...
 
-### 52. `therein :`
+### 53. `therein :`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
 * **Contexts:**
   * ... hand. And these three things he mentions of them **therein :** — (1.) Their rise; (2.) Nature; (3.) Destructi ...
 
-### 53. `5thly .`
+### 54. `5thly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
 * **Contexts:**
   * ... rience what will be the issue of such allowance. **5thly .** I shall only propose one thing more to your consi ...
 
-### 54. `1st .`
+### 55. `1st .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
 * **Contexts:**
   * ... the present, these brief directions following: — **1st .** Labor to be fully persuaded in your own minds, th ...
 
-### 55. `2dly .`
+### 56. `2dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
 * **Contexts:**
   * ... ion of them whom God will spew out of his mouth. **2dly .** Know that error and falsehood have no fight or ti ...
 
-### 56. `3dly .`
+### 57. `3dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
 * **Contexts:**
   * ... nor morally they are a disturbance unto others. **3dly .** Know that in things of practice, so of persuasion ...
 
-### 57. `Zion ;`
+### 58. `Zion ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.*
 * **Contexts:**
   * ... ven in is the work of God. "The Lord hath founded **Zion ;**" — Zion , that is, his church, his people, his ch ...
 
-### 58. `Zion ,`
+### 59. `Zion ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.*
 * **Contexts:**
   * ... the work of God. "The Lord hath founded Zion ;" — **Zion ,** that is, his church, his people, his chosen ones, ...
 
-### 59. `founded ,`
+### 60. `founded ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.*
 * **Contexts:**
-  * ... ordinances of worship. This God "hath founded;"—**founded ,** or established, strengthened, that it shall not b ...
+  * ... rdinances of worship. This God "hath founded;" — **founded ,** or established, strengthened, that it shall not b ...
 
-### 60. `Joseph ;`
+### 61. `Joseph ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.*
 * **Contexts:**
   * ... that there rise not up a generation that know not **Joseph ;** — that knew us not in the days of our distress an ...
 
-### 61. `1 .`
+### 62. `1 .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *God's Work in Founding Zion, and His Peopleìs Duty Thereupon.*
 * **Contexts:**
   * ... n part touched before; I shall add but two more. **1 .** Discontentment with our peculiar lot and portion ...
 
-### 62. `supposition :`
+### 63. `supposition :`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... hetical propositions, or promissory assertions on **supposition :** — "If you abide with the Lord, he will be with yo ...
 
-### 63. `General ;`
+### 64. `General ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... ntial dispensations. And this is twofold: — (1.) **General ;** — ordering, disposing, guiding, ruling all things ...
 
-### 64. `say ,`
+### 65. `say ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... ffice as an instance in every kind. But you will **say ,** How shall we inquire of God? The nations had the ...
 
-### 65. `First .`
+### 66. `First .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
-  * ... ngs are, then, principally to be inquired into: — **First .** What it is for God to be with any people. Secondl ...
+  * ... gs are, then, principally to be inquired into: — **First .** What it is for God to be with any people. Secondl ...
 
-### 66. `Secondly .`
+### 67. `Secondly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... First . What it is for God to be with any people. **Secondly .** What it is for a people to be or abide with God. ...
 
-### 67. `peace .`
+### 68. `peace .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... f Christ: our being with God is in him who is our **peace .** Two cannot walk together, unless they be agreed, ...
 
-### 68. `1st .`
+### 69. `1st .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... few things that are signally required thereunto. **1st .** That they inquire of God, ask counsel at his hand ...
 
-### 69. `3dly .`
+### 70. `3dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *God's Presence With a People the Spring of Their Prosperity.*
 * **Contexts:**
   * ... sting of him in reference to special protection. **3dly .** A third thing I should fix upon is, a people's un ...
 
-### 70. `1st ,`
+### 71. `1st ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... offense, in these few ensuing considerations: — **1st ,** Then, I shall willingly lay this down for a princ ...
 
-### 71. `3dly ,`
+### 72. `3dly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... om owning the portion and inheritance of Christ! **3dly ,** It cannot be denied, but that many of them who do ...
 
-### 72. `4thly ,`
+### 73. `4thly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... miscarriages of others, have most of their own. **4thly ,** That differences of judgments, in civil affairs o ...
 
-### 73. `5thly ,`
+### 74. `5thly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... on such accounts, it is because they will be so. **5thly ,** This hath ever been the way of the men of the wor ...
 
-### 74. `6thly ,`
+### 75. `6thly ,`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... power of grace, harden themselves to their ruin. **6thly ,** This remnant of Christ, with whom his presence is ...
 
-### 75. `2dly .`
+### 76. `2dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... hat is here expressed as to the type and figure; **2dly .** What is here intended as to the substance of the ...
 
-### 76. `1st .`
+### 77. `1st .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... ended as to the substance of the mercy promised. **1st .** For the figure; by the "glory" and "defense," a d ...
   * ... uation pleaded for be cast? To this I answer, — **1st .** Some do say so, and plead thus, it cannot be deni ...
 
-### 77. `will .`
+### 78. `will .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... as is their deportment towards this remnant, such **will .**their issue be. But what shall this remnant do? Wh ...
 
-### 78. `3dly .`
+### 79. `3dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Glory and Interest of Nations Professing the Gospel.*
 * **Contexts:**
   * ... ," they will flourish again in peace and beauty. **3dly .** Let not Satan cheat you of your duty by this triv ...
 
-### 79. `Observation .`
+### 80. `Observation .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *How We May Bring Our Hearts to Bear Reproofs.*
 * **Contexts:**
-  * ... n may be comprised in this general observation: — **Observation .** Reproofs, though accompanied with some sharpness, ...
+  * ... may be comprised in this general observation: — **Observation .** Reproofs, though accompanied with some sharpness, ...
 
-### 80. `1st .`
+### 81. `1st .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *How We May Bring Our Hearts to Bear Reproofs.*
 * **Contexts:**
   * ... nsidered, that it may not be unuseful unto us: — **1st .** The circumstances of the reprover; as, first, Whe ...
 
-### 81. `2dly .`
+### 82. `2dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *How We May Bring Our Hearts to Bear Reproofs.*
 * **Contexts:**
   * ... are reproved for that whereof we are not guilty. **2dly .** Consider aright the difference between a reproof ...
 
-### 82. `3dly .`
+### 83. `3dly .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *How We May Bring Our Hearts to Bear Reproofs.*
 * **Contexts:**
   * ... and if it be false, it is, moreover, a calumny. **3dly .** Where a man, in such cases, is fully justified by ...
 
-### 83. `1 .`
+### 84. `1 .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Testimony of the Church Is Not the Only Nor the Chief Reaso*
 * **Contexts:**
   * ... agree with them; 2. In some we differ from them. **1 .** In some we agree. (1.) That the scripture of the ...
 
-### 84. `testimony .`
+### 85. `testimony .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *The Testimony of the Church Is Not the Only Nor the Chief Reaso*
 * **Contexts:**
   * ... manifest itself to us, even without the church's **testimony .** The reason of the consequence is, because faith ...
 
-### 85. `Ans .`
+### 86. `Ans .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Except. III.*
 * **Contexts:**
   * ... g, together with the apostles', they were built. **Ans .** The preaching [of] the truth, or writing it, make ...
 
-### 86. `Ans .`
+### 87. `Ans .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Except. IV.*
 * **Contexts:**
   * ... g, together with the apostles', they were built. **Ans .** The preaching [of] the truth, or writing it, make ...
 
-### 87. `V .`
+### 88. `V .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Except.*
 * **Contexts:**
   * ... church, because she says she is the church. Arg. **V .** If we are to believe the divinity of the Scriptur ...
 
-### 88. `1st .`
+### 89. `1st .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Except.*
 * **Contexts:**
   * ... aith, and comfort, and obedience, all at once: — **1st .** It is destructive to our faith. It leaves us no f ...
 
-### 89. `2d .`
+### 90. `2d .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Except.*
 * **Contexts:**
   * ... eived them, when the rest are, because she hath. **2d .** It is as destructive to our comfort. When our gre ...
 
-### 90. `3d .`
+### 91. `3d .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Except.*
 * **Contexts:**
   * ... tainties for the very foundation of their faith. **3d .** It is as destructive to our obedience as to eithe ...
 
-### 91. `the :`
+### 92. `the :`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Prefatory Note (Sermon 7 — Advantage of the Kingdom of Christ)*
 * **Contexts:**
   * ... n had been agitated with stormy discussions about **the :**Exclusion Bill. The Whig party were bent on preven ...
 
-### 92. `privileges ;`
+### 93. `privileges ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *An Humble Testimony Unto the Goodness and Severity of God in Hi*
 * **Contexts:**
   * ... ot repent nor reform their ways. First. By their **privileges ;** — that they were the only church and people of Go ...
 
-### 93. `sorts :`
+### 94. `sorts :`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *An Humble Testimony Unto the Goodness and Severity of God in Hi*
 * **Contexts:**
   * ... and ready to seize on us?" And they are of three **sorts :** — First. Such as are absolute, decretory, and uni ...
 
-### 94. `therein ;`
+### 95. `therein ;`
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *An Humble Testimony Unto the Goodness and Severity of God in Hi*
 * **Contexts:**
@@ -897,65 +904,7 @@ No anomalies found in this category.
 
 ## Unresolved Citation References
 
-### 1. `lib. ii`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... nd worship due to the Creator, Rainold. de Idol., **lib. ii**. cap. 1, sect. 1. " Idololatria est circa omne i ...
-  * ... olatry, say the Papists, Bell, de Ecclea Triumph, **lib. ii**. cap. 24; Greg. de Valen. de Idol, lib. i. cap. 1 ...
-  * ... rnment do and ought to enjoy. So Cicero tells us, **lib. ii**., De Leg., "Suosque deos, aut novos, aut alienige ...
-
-### 2. `lib. i`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... nd worship due to the Creator, Rainold. de Idol., **lib. i**i. cap. 1, sect. 1. " Idololatria est circa omne ...
-  * ... servitutem exhibent, quae debertur Deo, " August, **lib. i**. de Trinit. cap. 6 — " They are idolaters who giv ...
-  * ... olatry, say the Papists, Bell, de Ecclea Triumph, **lib. i**i. cap. 24; Greg. de Valen. de Idol, **lib. i**. cap. ...
-
-### 3. `lib. 5`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... things no way conducing to monarchy," Hist. Rom., **lib. 5**2:36. Hence, doubtless, was that opposition which ...
-
-### 4. `Epist. lii`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... And long after these, Gregory of Rome, lib. ii. **Epist. lii**., tells us, " Nova et inaudita est ista praedicat ...
-
-### 5. `lib. iv`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... "Yea, to be the first-born of the devil," Euseb., **lib. iv**. cap. 14. Ignatius's epistles are full of the li ...
-  * ... hodox professors of the Deity of Christ, Socrat., **lib. iv**. cap 27. 5. Lastly, add unto all that hath been ...
-  * ... hut up Pagans' temples, Euseb. de Vita Constant., **lib. iv**. cap. 23, 24; and demolished some of the most fil ...
-
-### 6. `lib. iii`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... e building fall on us where Cerinthus is," Iren., **lib. iii**. cap. 3; Euseb. Ecclesiastes Hist., **lib. iii**. cap ...
-  * ... en., **lib. iii**. cap. 3; Euseb. Ecclesiastes Hist., **lib. iii**. cap. 28. Marcion meeting Polycarpus, and asking ...
-  * ... Irenaeus says, he would have no words with them, **lib. iii**. cap. 3. Tertullian's books testify for him at la ...
-
-### 7. `lib. v`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *Of Toleration;*
-* **Contexts:**
-  * ... y — first fastened on the Jews by Tacitus, Hist., **lib. v**. cap. 1, in these words, "Effigiem animalis, quo ...
-  * ... inians, and Eunomians, Sozom. Ecclesiastes Hist., **lib. v**ii.. cap. 1. Many more the like examples might be ...
-  * ... e two years, was slain with his children, Euseb., **lib. v**ii. cap. 1. Valerian, being taken by Sapores king ...
-
-### 8. `lib. 53`
-* **Description:** Unresolved patristic/classical citation reference (no translation found)
-* **Chapter:** *An Humble Testimony Unto the Goodness and Severity of God in Hi*
-* **Contexts:**
-  * ... had spread themselves over all the nation, Hist., **lib. 53**:Nor is it otherwise among us at present; though n ...
-
----
+No anomalies found in this category.
 
 ## Structural Nesting Sequence Jumps
 
@@ -1179,95 +1128,91 @@ No anomalies found in this category.
 
 ## Invalid Bible References
 
-### 1. `Jude 4`
-* **Description:** Invalid Bible reference (chapter 4 exceeds max 1 for Jude)
-* **Chapter:** *A Vision of Unchangeable, Free Mercy, in Sending the Means of G*
-* **Contexts:**
-  * ... have fulfilled, John 12:37-41; in men described, **Jude 4**, and 1 Peter 2:8. But here we must strike sail, t ...
-
-### 2. `Obadiah 9`
-* **Description:** Invalid Bible reference (chapter 9 exceeds max 1 for Obadiah)
-* **Chapter:** *A Memorial of the Deliverance of Essex County, and Committee.*
-* **Contexts:**
-  * ... Teman (Genesis 36:15; Jeremiah 49:7; Habakkuk 1:9 **Obadiah 9**.) was a city of the Edomites, whose land the peop ...
-
-### 3. `2 Kings 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 22 for Kings)
-* **Chapter:** *Righteous Zeal Encouraged by Divine Protection.*
-* **Contexts:**
-  * ... this Manasseh, he recalls his thoughts of mercy, **2 Kings 23**:26, 27. The deposing of divine and human things i ...
-
-### 4. `Joel 51`
+### 1. `Joel 51`
 * **Description:** Invalid Bible reference (chapter 51 exceeds max 3 for Joel)
 * **Chapter:** *The Shaking and Translating of Heaven and Earth*
 * **Contexts:**
   * ... Jeremiah 15:9, 51:25. (Isaiah 13:13; Psalm 68:8; **Joel 51**:10; Revelation 8:12; Matthew 24:29; Luke 21:25; I ...
 
-### 5. `Obadiah 4`
-* **Description:** Invalid Bible reference (chapter 4 exceeds max 1 for Obadiah)
-* **Chapter:** *The Shaking and Translating of Heaven and Earth*
-* **Contexts:**
-  * ... on 8:12; Matthew 24:29; Luke 21:25; Isaiah 60:20; **Obadiah 4**; Revelation 8:13, 40:12, 20:11.) Furthermore, to ...
-
-### 6. `Jude 4`
-* **Description:** Invalid Bible reference (chapter 4 exceeds max 1 for Jude)
-* **Chapter:** *The Shaking and Translating of Heaven and Earth*
-* **Contexts:**
-  * ... n of the sense and matter thereof. (Hebrews 11:5; **Jude 4**:1; Galatians 1:6; Hebrews 6:18, 7:12.) Understand ...
-
-### 7. `Obadiah 21`
-* **Description:** Invalid Bible reference (chapter 21 exceeds max 1 for Obadiah)
-* **Chapter:** *The Shaking and Translating of Heaven and Earth*
-* **Contexts:**
-  * ... administrations. (Psalm 45:6, 45:13; Isaiah 9:7; **Obadiah 21**) So is Christ described as a king in the midst of ...
-
-### 8. `Hosea 52`
+### 2. `Hosea 52`
 * **Description:** Invalid Bible reference (chapter 52 exceeds max 14 for Hosea)
 * **Chapter:** *The Shaking and Translating of Heaven and Earth*
 * **Contexts:**
   * ... ah 37:31; Jeremiah 30:9; Ezekiel 34:27, 37:24,25; **Hosea 52**:5; Amos 9:11.) and in answer to millions of praye ...
-
-### 9. `2 Kings 24`
-* **Description:** Invalid Bible reference (chapter 24 exceeds max 22 for Kings)
-* **Chapter:** *Advantage of the Kingdom of Christ*
-* **Contexts:**
-  * ... appoints Zedekiah a titulary governor under him. (**2 Kings 24**:1-3) But the wrath of God being to come upon them ...
-  * ... es with Egypt, rebels against him (Jeremiah 37:1; **2 Kings 24**:17; 2 Chronicles 36:10) by whose appointment alon ...
-
-### 10. `Obadiah 14`
-* **Description:** Invalid Bible reference (chapter 14 exceeds max 1 for Obadiah)
-* **Chapter:** *Advantage of the Kingdom of Christ*
-* **Contexts:**
-  * ... destroy the residue, when at any time straitened, **Obadiah 14**:1. How many in the late trial rejoiced in the str ...
-
-### 11. `Philippians 20`
-* **Description:** Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)
-* **Chapter:** *Advantage of the Kingdom of Christ*
-* **Contexts:**
-  * ... , 22, 13:55, 8:19; John 4:28, 29; Isaiah 53:2, 3; **Philippians 20**:7 2:7,8, etc.) Thus lays he the foundation of the ...
-
-### 12. `Obadiah 12`
-* **Description:** Invalid Bible reference (chapter 12 exceeds max 1 for Obadiah)
-* **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
-* **Contexts:**
-  * ... abound. In such a day Edom will appear an enemy, (**Obadiah 12**, 13; Isaiah 7:1.) and Ephraim with the son of Rem ...
-
-### 13. `Jude 14`
-* **Description:** Invalid Bible reference (chapter 14 exceeds max 1 for Jude)
-* **Chapter:** *An Humble Testimony Unto the Goodness and Severity of God in Hi*
-* **Contexts:**
-  * ... st recorded of them are in the prophecy of Enoch, **Jude 14**,15. And they have been since continued in all age ...
-  * ... e coming of God to take vengeance on ungodly men, **Jude 14**,15. And this message was scoffed at, as is eviden ...
-
-### 14. `2 Kings 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 22 for Kings)
-* **Chapter:** *An Humble Testimony Unto the Goodness and Severity of God in Hi*
-* **Contexts:**
-  * ... onish captivity, as an account is given us of it, **2 Kings 23**:25-27, "Like unto him was there no king before hi ...
 
 ---
 
 ## List Formatting Inconsistencies
 
 No anomalies found in this category.
+
+## Unmatched Quotation Marks
+
+### 1. `[[BLOCKQUOTE]] "Die Venetia, 14 Martii, 1650. "The question being propounded, That thanks be given to the ministers that...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Preface.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Die Venetia, 14 Martii, 1650. "The question being propounded, That thanks be given to the ministers that...**
+
+### 2. `(2.) Take heed of resting upon and trusting to the privilege, however excellent and glorious, of the outward enjoyment o...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *A Vision of Unchangeable, Free Mercy, in Sending the Means of G*
+* **Contexts:**
+  * **(2.) Take heed of resting upon and trusting to the privilege, however excellent and glorious, of the outward enjoyment o...**
+
+### 3. `Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
+* **Contexts:**
+  * **Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no...**
+
+### 4. `[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...**
+
+### 5. `(1.) I will sup with him;" — I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
+* **Contexts:**
+  * **(1.) I will sup with him;" — I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con...**
+
+### 6. `Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
+* **Contexts:**
+  * **Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu...**
+
+### 7. `[[BLOCKQUOTE]] "And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Advantage of the Kingdom of Christ*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ...**
+
+### 8. `This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
+* **Contexts:**
+  * **This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...**
+
+### 9. `Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Except. IV.*
+* **Contexts:**
+  * **Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...**
+
+### 10. `SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...**
+
+### 11. `In publico discrimine omnis homo miles est."`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **In publico discrimine omnis homo miles est."**
+
+---
 

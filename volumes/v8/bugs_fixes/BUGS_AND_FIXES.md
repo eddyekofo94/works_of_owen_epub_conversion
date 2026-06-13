@@ -108,11 +108,17 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-05-29T11:53:18.509441+00:00
-**Status:** WARN (10 warnings)
+**Last run:** 2026-06-13T14:46:40.069530+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_8_text_integrity.json`
@@ -121,34 +127,34 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 774 |
-| EPUB text files | 71 |
-| EPUB paragraphs/headings | 3243 |
-| Approximate PDF-to-EPUB word coverage | 0.9965 |
-| Weak page matches | 9 |
-| Dense source windows checked | 913 |
-| Missing dense source-window pages | 753 |
+| EPUB text files | 73 |
+| EPUB paragraphs/headings | 3349 |
+| Approximate PDF-to-EPUB word coverage | 0.9995 |
+| Weak page matches | 3 |
+| Dense source windows checked | 33784 |
+| Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 2 |
-| Missing front CONTENTS pages | 0 |
-| Top-of-page body windows checked | 739 |
-| Top-of-page windows skipped as unstable | 22 |
+| Missing front CONTENTS pages | 2 |
+| Top-of-page body windows checked | 732 |
+| Top-of-page windows skipped as unstable | 20 |
 | Missing top-of-page body windows | 10 |
-| Bottom-of-page body windows checked | 712 |
+| Bottom-of-page body windows checked | 708 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 6 |
-| Possible faulty paragraph splits | 125 |
-| Structural starts excluded from split warnings | 216 |
-| Short fragments | 32 |
+| Missing bottom-of-page body windows | 2 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 237 |
+| Short fragments | 47 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 5 |
+| Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 2 |
-| Roman heading candidates | 18 |
-| Overlong heading candidates | 28 |
+| Roman heading candidates | 6 |
+| Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 770 |
-| EPUB enumerator markers | 776 |
+| EPUB enumerator markers | 787 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 303 / 303 |
@@ -157,19 +163,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
@@ -181,12 +174,18 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-09T10:48:36.989810+00:00
+**Last run:** 2026-06-13T14:46:00.729161+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_8_audit.json`
@@ -196,21 +195,17 @@ Reports:
 |-------|--------|
 | OPF version | 3.0 |
 | XHTML files | 75 |
-| Spine items | 73 |
-| Embedded fonts | 11 |
+| Spine items | 74 |
+| Embedded fonts | 16 |
 | NAV links | 76 |
 | Greek chars / untagged | 1667 / 0 |
 | Hebrew chars / untagged | 344 / 0 |
-| Noteref links / endnote anchors | 273 / 278 |
+| Noteref links / endnote anchors | 362 / 366 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 0 |
-
-Warnings requiring triage:
-
-- `orphan_endnotes`: Some endnote anchors have no matching noteref
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->

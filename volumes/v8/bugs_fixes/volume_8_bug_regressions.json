@@ -1,6 +1,6 @@
 {
-  "volume": 8,
-  "status": "warn",
+  "volume": "8",
+  "status": "pass",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/bugs_fixes/volume_8_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/bugs_fixes/volume_8_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/bugs_fixes/volume_8_bug_regressions.json",
@@ -12,89 +12,17 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 125,
+      "observed": 0,
       "budget": 127,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch001.xhtml",
-          "previous": "ndiscriminate courtesy. There is a curious record which we may quote, as showing that the Parliament exercised some measure of discrimination in voting thanks on these occasions: —",
-          "next": "There are no means of ascertaining what ministers actually preached on the occasion here referred to. The ministers who had been appointed to preach were Mr. Owen, Mr. John Simson,"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "difications which appear in the Congregationalism of Owen, are conspicuous elements in the first scheme of ecclesiastical polity which he ever broached. See also his \"Review of the",
-          "next": "JUSTITIAM FORTITER, ἴσως , ἐπιεικῶς , ἀπροσωπολήπτως"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "JUSTITIAM FORTITER, ἴσως , ἐπιεικῶς , ἀπροσωπολήπτως",
-          "next": "Αρχὴν IN ECCLESIASTICIS ἀνιεροτυραννικὴν DISSOLUTAM, RITUS PONTIFICIOS, NOVITIOS, ANTICHRISTIANOS ABOLITOS; PRIVILEGIA PLEBIS CHRISTIANAE POSTLIMINIO RESTITUTA;"
-        },
-        {
-          "file": "EPUB/ch003.xhtml",
-          "previous": "S, EX ORDINE COMMUNIUM IN SUPREMA CURIA PARLIAM, CONGREGATIS, CONCIONEM HANC SACRAM, HUMILEM ILLAM QUIDEM, IPSORUM TAMEN VOTO JUSSUQUE PRIUS CORAM IPSIS HABITAM, NUNC LUCE DONATAM,",
-          "next": "Die Mecurij 29 Aprilis, 1646."
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "ce fourteen generations. They alone were in Goshen, and all the world besides in thick darkness; — the dew of heaven was on them as the fleece, when else all the earth was dry. God",
-          "next": "The prerogative of the Jews was chiefly in this, that to them were committed the oracles of God, Romans 3:1. To them pertained"
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "The prerogative of the Jews was chiefly in this, that to them were committed the oracles of God, Romans 3:1. To them pertained",
-          "next": "But when the fullness (Galatians 4:4; John 12:32; Acts 17:30; Mark 16:15; Malachi 3:4; Proverbs 8:31) of time came, the Son of God being sent in the likeness of sinful flesh, drew "
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "previous": "in with another reckoning, and make them know that all things without Christ are but as ciphers without a figure, — of no value. In all their banquets, where Christ is not a guest,",
-          "next": "— their palaces, where Christ is not, are but habitations of ziim and ochim, dragons and unclean beasts; — their prosperity is putting them into full pasture, that they may be fatt"
-        },
-        {
-          "file": "EPUB/ch008.xhtml",
-          "previous": "arrant in itself, can never obtain any from its success. The rule of the goodness of any cause is the eternal law of reason, with the legal rights and interests of men.\" See Owen's",
-          "next": "SIR, ALMIGHTY GOD having made you the instrument of that deliverance and peace which in the county of Essex we do enjoy, next to his own goodness, the remembrance thereof is due un"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": "e word signifies, — and the wounding of the dragon, that great and crooked afflicter, Pharaoh, is remembered, and urged for a motive to a new needed deliverance. So Psalm 74:13,14,",
-          "next": "Leviathan, — the same dragon, oppressing, persecuting Pharaoh, — thou brakest his heads, his counsels, armies, power; and gavest him for meat, that the people for forty years toget"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "previous": "Use. The use of this we are led unto, Isaiah 43:16-18,",
-          "next": "Let former mercies be an anchor of hope in time of present distresses."
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 5,
+      "observed": 0,
       "budget": 0,
-      "status": "regression",
-      "samples": [
-        {
-          "file": "EPUB/ch010.xhtml",
-          "text": "\"A prayer of Habakkuk the prophet upon Shigionoth. O LORD, I have heard thy speech, and was afraid: O LORD, revive thy work in the midst of the years, make known; in wrath remember mercy. God came from Teman, and the Holy One from mount Paran. Selah. His glory"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "text": "Observation 2. Prophets' discoveries of fearful judgments must be attended with fervent prayers. That messenger hath done but half his business who delivers his errand, but returns not an answer. He that brings God's message of threats unto his people, must re"
-        },
-        {
-          "file": "EPUB/ch010.xhtml",
-          "text": "The reasons of this are taken, — 1. From their envy; 2. From their carnal fear; — the two principles whereby they are acted in reference to the saints of God."
-        },
-        {
-          "file": "EPUB/ch014.xhtml",
-          "text": "Now, the Lord will do this, — 1. Because of his own engagement. 2. For our encouragement. And that is twofold. (1.) Of truth and fidelity. (2.) Of honor and glory."
-        },
-        {
-          "file": "EPUB/ch038.xhtml",
-          "text": "Now, because you wait on God for direction in reference to the propagation of the gospel, and the preventing that which is contrary to sound doctrine and godliness, I shall, — [1.] Show you very briefly what God has promised concerning magistrates to this end;"
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -107,49 +35,60 @@
           "count": 5
         },
         {
-          "phrase": "the only nor the chief reason of our believing the",
-          "count": 5
-        },
-        {
-          "phrase": "only nor the chief reason of our believing the scripture",
-          "count": 5
-        },
-        {
-          "phrase": "nor the chief reason of our believing the scripture to",
-          "count": 5
-        },
-        {
-          "phrase": "the chief reason of our believing the scripture to be",
-          "count": 5
-        },
-        {
-          "phrase": "chief reason of our believing the scripture to be the",
-          "count": 5
-        },
-        {
-          "phrase": "reason of our believing the scripture to be the word",
-          "count": 5
-        },
-        {
-          "phrase": "of our believing the scripture to be the word of",
-          "count": 5
-        },
-        {
-          "phrase": "our believing the scripture to be the word of god",
-          "count": 5
-        },
-        {
           "phrase": "the removing of those things that are shaken as of",
           "count": 5
+        },
+        {
+          "phrase": "removing of those things that are shaken as of things",
+          "count": 5
+        },
+        {
+          "phrase": "of those things that are shaken as of things that",
+          "count": 5
+        },
+        {
+          "phrase": "those things that are shaken as of things that are",
+          "count": 5
+        },
+        {
+          "phrase": "things that are shaken as of things that are made",
+          "count": 5
+        },
+        {
+          "phrase": "that are shaken as of things that are made that",
+          "count": 5
+        },
+        {
+          "phrase": "are shaken as of things that are made that those",
+          "count": 5
+        },
+        {
+          "phrase": "shaken as of things that are made that those things",
+          "count": 5
+        },
+        {
+          "phrase": "the testimony of the church is not the only nor",
+          "count": 4
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 0,
-      "budget": 0,
+      "observed": 2,
+      "budget": 2,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "page": 3,
+          "hit_ratio": 0.5,
+          "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in sending the means of grace to undeserving sinners prefatory note by the editor sermon"
+        },
+        {
+          "page": 4,
+          "hit_ratio": 0.25,
+          "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power sermon god's work in founding zion and his people's duty thereupon sermon god's presence"
+        }
+      ]
     },
     {
       "label": "Reference continuation splits",
@@ -393,15 +332,10 @@
     },
     {
       "label": "Structural bold leaks",
-      "observed": 1,
+      "observed": 0,
       "budget": 0,
-      "status": "regression",
-      "samples": [
-        {
-          "file": "EPUB/ch015.xhtml",
-          "text": "Si quid novisti rectius istis, Candidus imperti; si non, his utere mecum."
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Repeated structural markers",
@@ -468,23 +402,10 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 3,
+      "observed": 0,
       "budget": 2,
-      "status": "regression",
-      "samples": [
-        {
-          "file": "EPUB/ch038.xhtml",
-          "text": "looks wholly this way. Taste of the nature and intendment of the whole: \"And the"
-        },
-        {
-          "file": "EPUB/ch056.xhtml",
-          "text": "hitherto itself? Nay, can it be consistent with common sense, that the Scripture"
-        },
-        {
-          "file": "EPUB/ch060.xhtml",
-          "text": "the four evangelists, or Paul's Epistles by him? And if the present church prove"
-        }
-      ]
+      "status": "ok",
+      "samples": []
     },
     {
       "label": "Noteref leading spaces",

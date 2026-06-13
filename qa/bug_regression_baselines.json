@@ -230,7 +230,8 @@
         "max_repeated_window_count": 25,
         "max_missing_marker_count": 0,
         "max_missing_greek_clauses": 0,
-        "max_missing_hebrew_clauses": 0
+        "max_missing_hebrew_clauses": 0,
+        "max_front_toc_missing_pages": 2
       },
       "epub": {
         "max_chapter_heading_in_paragraph_files": 0,

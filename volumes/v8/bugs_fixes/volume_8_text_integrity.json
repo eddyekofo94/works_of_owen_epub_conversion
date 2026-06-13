@@ -1,63 +1,23 @@
 {
-  "volume": 8,
+  "volume": "8",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/input/owen-v8.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-05-29T11:53:18.509441+00:00",
-  "status": "warn",
-  "warning_count": 10,
-  "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "top_of_page_text_loss",
-      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "bottom_of_page_text_loss",
-      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "paragraph_split_candidates",
-      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
-    },
-    {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
-      "code": "roman_heading_candidates",
-      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
-    },
-    {
-      "code": "overlong_heading_candidates",
-      "message": "Some chapter headings are long enough to suggest swallowed body text"
-    },
-    {
-      "code": "repeated_windows",
-      "message": "Repeated word windows may indicate ghost-layer duplication"
-    }
-  ],
+  "generated_at": "2026-06-13T14:46:40.069530+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
-    "page_count": 774
+    "page_count": 774,
+    "skipped_detected": []
   },
   "epub": {
-    "spine_text_files": 71,
-    "paragraph_count": 3243
+    "spine_text_files": 73,
+    "paragraph_count": 3349
   },
   "word_coverage": {
-    "pdf_content_tokens": 257154,
-    "epub_content_tokens": 259134,
-    "coverage_ratio": 0.9965,
+    "pdf_content_tokens": 253566,
+    "epub_content_tokens": 256961,
+    "coverage_ratio": 0.9995,
     "missing_word_samples": [
       {
         "word": "eminence",
@@ -67,67 +27,90 @@
     ],
     "excess_word_samples": [
       {
+        "word": "note",
+        "pdf": 22,
+        "epub": 47
+      },
+      {
+        "word": "prefatory",
+        "pdf": 17,
+        "epub": 40
+      },
+      {
+        "word": "dedicatory",
+        "pdf": 1,
+        "epub": 12
+      },
+      {
         "word": "digital",
         "pdf": 0,
-        "epub": 6
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 0,
+        "epub": 9
+      },
+      {
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
+      },
+      {
+        "word": "modern",
+        "pdf": 1,
+        "epub": 8
+      },
+      {
+        "word": "greek",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 4,
+        "epub": 10
       }
     ]
   },
   "page_coverage": {
     "pages_checked": 764,
-    "weak_page_count": 9,
+    "weak_page_count": 3,
     "weak_pages": [
       {
-        "page": 12,
+        "page": 3,
         "hit_ratio": 0.333,
-        "sample": "12 agree with either of the two forms of church government which were then competing for national favor and the sanction of the state"
+        "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in sending the means of grace to undeserving sinners prefatory note"
       },
       {
-        "page": 90,
+        "page": 4,
         "hit_ratio": 0.333,
-        "sample": "90 their deliverance at rumford on september 28 1648 owen preached to them another discourse from the same text both discourses were published as"
-      },
-      {
-        "page": 117,
-        "hit_ratio": 0.333,
-        "sample": "117 verse he stood and measured the earth he beheld and drove asunder the nations and the everlasting mountains were scattered the perpetual hills"
-      },
-      {
-        "page": 201,
-        "hit_ratio": 0.333,
-        "sample": "201 of toleration and the duty of the magistrate about religion the times are busy and we must be brief prefaces for the most"
-      },
-      {
-        "page": 373,
-        "hit_ratio": 0.333,
-        "sample": "373 the general uses of what hath been said are three the heads whereof shall name use see the eminent privilege of them which"
-      },
-      {
-        "page": 483,
-        "hit_ratio": 0.333,
-        "sample": "483 hath founded zion he bore it good-will hath taken care of the interest of his church and people the words may be taken"
+        "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power sermon god's work in founding zion and his people's duty"
       },
       {
         "page": 587,
         "hit_ratio": 0.333,
-        "sample": "587 sermon 14 the testimony of the church is not the only nor the chief reason of our believing the scripture to be the"
-      },
-      {
-        "page": 646,
-        "hit_ratio": 0.333,
-        "sample": "646 and as there is great appearance of divine permission of such state of things at present amongst us so if they be managed"
-      },
-      {
-        "page": 725,
-        "hit_ratio": 0.333,
-        "sample": "725 deal with him as if he had done so which must be by universal destruction he would not repent of the evil he"
+        "sample": "sermon the testimony of the church is not the only nor the chief reason of our believing the scripture to be the word of"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 913,
-    "missing_dense_window_pages": 753,
+    "dense_windows_checked": 33784,
+    "missing_dense_window_pages": 40,
     "missing_dense_windows": [
+      {
+        "page": 3,
+        "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in"
+      },
+      {
+        "page": 4,
+        "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power"
+      },
       {
         "page": 5,
         "sample": "preface the two following volumes contain it is believed the most complete collection of"
@@ -138,168 +121,171 @@
       },
       {
         "page": 10,
-        "sample": "10 sermon vision of unchangeable free mercy in sending the means of grace to"
+        "sample": "this sermon was delivered is mentioned in the life of owen frown the title-page"
       },
       {
         "page": 11,
-        "sample": "11 previous month hopton and astley the last generals who kept the field in"
-      },
-      {
-        "page": 12,
-        "sample": "12 agree with either of the two forms of church government which were then"
-      },
-      {
-        "page": 13,
-        "sample": "13 amplissimo senatui inclytissimo populi anglicani conventui ob prisca anglo-britannorum jura strenue et fideliter"
-      },
-      {
-        "page": 14,
-        "sample": "14 die mecurij 29 aprilis 1646 ordered by the commons assembled in parliament that"
-      },
-      {
-        "page": 15,
-        "sample": "15 sermon vision of unchangeable free mercy in sending the means of grace to"
+        "sample": "and declamation which constitutes genuine oratory bogue and bennett have remarked those who are"
       },
       {
         "page": 16,
-        "sample": "16 especially such as concern the gospel and church of christ are carried along"
-      },
-      {
-        "page": 17,
-        "sample": "17 thirdly to show that the bulk of this people are as yet in"
+        "sample": "nations this is the day of england's visitation the day spring from on high"
       },
       {
         "page": 18,
-        "sample": "18 for the most part was the lord's way of proceeding with the prophets"
-      },
-      {
-        "page": 19,
-        "sample": "19 will not hold our savior calling that vision which his disciples had at"
-      },
-      {
-        "page": 20,
-        "sample": "20 better have gone to the parthians then the only state in the world"
+        "sample": "text now the several advancements of all these ways in dignity and pre eminence"
       },
       {
         "page": 21,
-        "sample": "21 ii the sending of the gospel to any nation place or persons rather"
-      },
-      {
-        "page": 22,
-        "sample": "22 but omitting these things shall tie my discourse to that which chiefly aimed"
-      },
-      {
-        "page": 23,
-        "sample": "23 the adoption and the glory the covenants and the giving of the law"
-      },
-      {
-        "page": 24,
-        "sample": "24 good of souls why this also as said before is from some peculiarly"
-      },
-      {
-        "page": 25,
-        "sample": "25 malachi with him is neither variableness nor shadow of turning james 17 all"
-      },
-      {
-        "page": 26,
-        "sample": "26 to some people to some nations the gospel is sent god calls them"
-      },
-      {
-        "page": 27,
-        "sample": "27 secondly his purpose of leaving some inexcusable matthew 11 21 acts 13 46"
-      },
-      {
-        "page": 28,
-        "sample": "28 zechariah of opposition what hinderances lay in the way cyrus must come to"
-      },
-      {
-        "page": 29,
-        "sample": "29 of what he had determined if man in those days had gone about"
-      },
-      {
-        "page": 30,
-        "sample": "30 purchased by yesterday's anguish and fear that was but being sick at sea"
-      },
-      {
-        "page": 31,
-        "sample": "31 lay more or greater obstacles against the gospel than another there is nothing"
-      },
-      {
-        "page": 32,
-        "sample": "32 the world lift up its head above its fellows and this right hath"
-      },
-      {
-        "page": 33,
-        "sample": "33 others renders the same reason and supreme cause of both of which no"
+        "sample": "men in the world want help like them that want the gospel come and"
       },
       {
         "page": 34,
-        "sample": "34 the gospel comes with the first light shines to them that sit in"
-      },
-      {
-        "page": 35,
-        "sample": "35 works than being under that covenant to do any thing that might cause"
-      },
-      {
-        "page": 36,
-        "sample": "36 doubtless no no nation in the world drank deeper of that cup of"
-      },
-      {
-        "page": 37,
-        "sample": "37 rebellion against jesus christ 43 which spread itself over most of the churches"
-      },
-      {
-        "page": 38,
-        "sample": "38 if wisdom learning pretended gravity counterfeit holiness real policy were of any value"
-      },
-      {
-        "page": 39,
-        "sample": "39 darkness drinking deep of the cup of abominations mingled for it by the"
+        "sample": "but that this should be regular unto men living μετα λογου in justin martyr's"
       },
       {
         "page": 40,
-        "sample": "40 which have deceived some men not of the worst and made them think"
-      },
-      {
-        "page": 41,
-        "sample": "41 to bring england again unto him this closing with popery was the sting"
-      },
-      {
-        "page": 42,
-        "sample": "42 3dly which was worst of all they had centred in their bosoms an"
-      },
-      {
-        "page": 43,
-        "sample": "43 england make this honorable audience make us all to know these three things"
-      },
-      {
-        "page": 44,
-        "sample": "44 lord what shall say it is it is the free grace of my"
+        "sample": "to break the peace is nothing to an under hand combination with some formidable"
       },
       {
         "page": 45,
-        "sample": "45 cut down the tree of this nation and to scatter its branches from"
+        "sample": "this shall not follow all those gospel supplanting sins we find in holy writ"
       },
       {
-        "page": 46,
-        "sample": "46 blessings rob him of his glory and if we rest at the cistern"
+        "page": 48,
+        "sample": "only by the gospel austin refused to delight in cicero's hortensius because there was"
       },
       {
-        "page": 47,
-        "sample": "47 abraham genesis 15 wanting child complains what will the lord do for me"
+        "page": 61,
+        "sample": "men would not use an over zealous speed upon every small difference to characterize"
+      },
+      {
+        "page": 64,
+        "sample": "only must entreat every one that shall cast candid eye on this unwillingly exposed"
+      },
+      {
+        "page": 74,
+        "sample": "livery but fool's coat who almost would not admire at such new discovered antipodes"
+      },
+      {
+        "page": 90,
+        "sample": "reason with the legal rights and interests of men see owen's reflections on slanderous"
+      },
+      {
+        "page": 94,
+        "sample": "to the worthy and honored sir william masham sir william rowe with the rest"
+      },
+      {
+        "page": 95,
+        "sample": "the former what god wrought in you hath the pre eminence of what he"
+      },
+      {
+        "page": 106,
+        "sample": "shut out their supplications hence that confidence of the prophet psalm thou shalt arise"
+      },
+      {
+        "page": 108,
+        "sample": "heavens the earth was full of his praise teman genesis jeremiah obadiah was city"
+      },
+      {
+        "page": 114,
+        "sample": "entered their land with his own inheritance to cast out those malae fidei possessores"
+      },
+      {
+        "page": 117,
+        "sample": "as no people god's justly nation disturbing purposes are the bottom of their deserved"
+      },
+      {
+        "page": 121,
+        "sample": "pastorless churches dying martyrs harborless children of parents inheriting the promise wilderness wandering saints"
+      },
+      {
+        "page": 122,
+        "sample": "in heaven before they began it god was gone over the mulberry trees samuel"
+      },
+      {
+        "page": 126,
+        "sample": "of faith makes all things nigh even within us romans 6-8 some glasses will"
+      },
+      {
+        "page": 127,
+        "sample": "already cast out and fetch the rest from heaven bring the first fruits of"
+      },
+      {
+        "page": 128,
+        "sample": "such season the remembrance of the slaughter of the first born of egypt was"
+      },
+      {
+        "page": 145,
+        "sample": "isaiah whoso is wise will ponder them and they shall understand the loving kindness"
+      },
+      {
+        "page": 151,
+        "sample": "because he would have his people wholly wrapt up in his all sufficiency not"
+      },
+      {
+        "page": 158,
+        "sample": "enjoined it the argument to this effect is stated with great point and ability"
+      },
+      {
+        "page": 159,
+        "sample": "justice nor the facts of history ed die mercurii januarii ordered by the commons"
+      },
+      {
+        "page": 160,
+        "sample": "to the right honorable the commons of england assembled in parliament sirs it hath"
+      },
+      {
+        "page": 166,
+        "sample": "calamities have we been exercised withal for sundry years what pharaoh like spirits have"
+      },
+      {
+        "page": 169,
+        "sample": "daniel you seldom see fabric of human invented worship but either the foundation or"
+      },
+      {
+        "page": 179,
+        "sample": "be accomplished fear when once magistrates begin to listen after quid sequitur's and so"
+      },
+      {
+        "page": 183,
+        "sample": "boldness heartily desire committee of your honorable house might sit once week to relieve"
+      },
+      {
+        "page": 187,
+        "sample": "because of his own engagement and that is twofold of truth and fidelity of"
+      },
+      {
+        "page": 201,
+        "sample": "ofttimes is heavy lies on their shoulders though non toleration sound like negation yet"
+      },
+      {
+        "page": 202,
+        "sample": "church of scotland affirmative precepts must be produced for non toleration that is the"
       }
     ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 2,
     "front_toc_windows_checked": 8,
-    "missing_front_toc_pages": 0,
-    "missing_front_toc_samples": []
+    "missing_front_toc_pages": 2,
+    "missing_front_toc_samples": [
+      {
+        "page": 3,
+        "hit_ratio": 0.5,
+        "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in sending the means of grace to undeserving sinners prefatory note by the editor sermon"
+      },
+      {
+        "page": 4,
+        "hit_ratio": 0.25,
+        "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power sermon god's work in founding zion and his people's duty thereupon sermon god's presence"
+      }
+    ]
   },
   "top_of_page_integrity": {
     "top_windows_checked": 767,
-    "top_windows_usable": 739,
-    "skipped_top_window_count": 22,
+    "top_windows_usable": 732,
+    "skipped_top_window_count": 20,
     "skipped_top_windows": [
       {
         "page": 26,
@@ -338,12 +324,6 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 202,
-        "window": "matter are ijsodunamou nta is deep affirmation and therefore it sufficeth not men to",
-        "sample": "matter are ijsodunamou~nta is a deep affirmation. And, therefore, it sufficeth not men to say that they have consulted the mind of God, and",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 217,
         "window": "the other main reason was that hereby the gods whom they owned and worshipped",
         "sample": "[2.] The other main reason was, That hereby the gods, whom they owned and worshipped, were dishonored and provoked to plague them. That this",
@@ -377,12 +357,6 @@
         "page": 306,
         "window": "as the apostle here applies part of the prophecy of haggai so that prophecy",
         "sample": "[1.] As the apostle here applies a part of the prophecy of Haggai, so that prophecy, even in the next words, gives light into the meaning of the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 311,
-        "window": "the word here translated removal is meta qesiv whence that is come to pass",
-        "sample": "The word here translated \"removal\" is meta>qesiv: whence that is come to pass I dare not positively say. This, doubtless, is a common fault amongst",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -447,19 +421,19 @@
         "sample": "TO THE RIGHT HONORABLE THE COMMONS OF ENGLAND,"
       },
       {
+        "page": 174,
+        "window": "psalm verily have cleansed my heart in under the hand of god",
+        "sample": "Psalm 72:13, \"Verily I have cleansed my heart in under the hand of God;"
+      },
+      {
         "page": 187,
         "window": "because of his own engagement and that is twofold",
         "sample": "1. Because of his own engagement. And that is twofold."
       },
       {
         "page": 216,
-        "window": "acts 16 21 they teach customs which was plausibly pretended",
+        "window": "acts they teach customs which was plausibly pretended",
         "sample": "Acts 16:21, \"They teach customs which was plausibly pretended."
-      },
-      {
-        "page": 239,
-        "window": "chronicles 17 30 14 judah who accordingly performed this duty",
-        "sample": "2 Chronicles 17:6, 30:14, Judah who accordingly performed this duty,"
       },
       {
         "page": 297,
@@ -490,10 +464,10 @@
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 731,
-    "bottom_windows_usable": 712,
+    "bottom_windows_usable": 708,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 6,
+    "missing_bottom_window_count": 2,
     "missing_bottom_windows": [
       {
         "page": 2,
@@ -502,238 +476,17 @@
       },
       {
         "page": 117,
-        "window": "as both the words here used and µl wo perpetuity and everlasting do in",
-        "sample": "where the people were, but to continue firm to the world's end, as both the words here used, d[æ and µl;wO[ , \"perpetuity\" and \"everlasting,\" do in"
-      },
-      {
-        "page": 165,
-        "window": "indigencies so there is ojrgh teqhsaurisme nh romans stored",
-        "sample": "indigencies; so there is ojrgh< teqhsaurisme>nh, Romans 2:5, — stored,"
-      },
-      {
-        "page": 234,
-        "window": "of the council of chalcedon cap vi mhdei ceirotonei sqw ajpolelume nov let none",
-        "sample": "churches, was seen of old. Hence that caution or canon of the Council of Chalcedon, cap. vi., Mhdei<v ceirotonei>sqw ajpolelume>nov, \"Let none"
-      },
-      {
-        "page": 373,
-        "window": "hj do xa eijv tou aijw nav jamh",
-        "sample": "w=| hJ do>xa eijv tou<v aijw~nav. jAmh>n."
-      },
-      {
-        "page": 646,
-        "window": "proposed and represented unto men as the principal object of their faith and love",
-        "sample": "person and grace, is to be proposed and represented unto men as the principal object of their faith and love."
+        "window": "end as both the words here used עַדand עוֹלָם perpetuity and everlasting do in",
+        "sample": "where the people were, but to continue firm to the world's end, as both the words here used, עַדand עוֹלָם, \"perpetuity\" and \"everlasting,\" do in"
       }
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2797,
-    "split_candidate_count": 125,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch001.xhtml",
-        "previous": "ndiscriminate courtesy. There is a curious record which we may quote, as showing that the Parliament exercised some measure of discrimination in voting thanks on these occasions: —",
-        "next": "There are no means of ascertaining what ministers actually preached on the occasion here referred to. The ministers who had been appointed to preach were Mr. Owen, Mr. John Simson,"
-      },
-      {
-        "file": "EPUB/ch003.xhtml",
-        "previous": "difications which appear in the Congregationalism of Owen, are conspicuous elements in the first scheme of ecclesiastical polity which he ever broached. See also his \"Review of the",
-        "next": "JUSTITIAM FORTITER, ἴσως , ἐπιεικῶς , ἀπροσωπολήπτως"
-      },
-      {
-        "file": "EPUB/ch003.xhtml",
-        "previous": "JUSTITIAM FORTITER, ἴσως , ἐπιεικῶς , ἀπροσωπολήπτως",
-        "next": "Αρχὴν IN ECCLESIASTICIS ἀνιεροτυραννικὴν DISSOLUTAM, RITUS PONTIFICIOS, NOVITIOS, ANTICHRISTIANOS ABOLITOS; PRIVILEGIA PLEBIS CHRISTIANAE POSTLIMINIO RESTITUTA;"
-      },
-      {
-        "file": "EPUB/ch003.xhtml",
-        "previous": "S, EX ORDINE COMMUNIUM IN SUPREMA CURIA PARLIAM, CONGREGATIS, CONCIONEM HANC SACRAM, HUMILEM ILLAM QUIDEM, IPSORUM TAMEN VOTO JUSSUQUE PRIUS CORAM IPSIS HABITAM, NUNC LUCE DONATAM,",
-        "next": "Die Mecurij 29 Aprilis, 1646."
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "ce fourteen generations. They alone were in Goshen, and all the world besides in thick darkness; — the dew of heaven was on them as the fleece, when else all the earth was dry. God",
-        "next": "The prerogative of the Jews was chiefly in this, that to them were committed the oracles of God, Romans 3:1. To them pertained"
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "The prerogative of the Jews was chiefly in this, that to them were committed the oracles of God, Romans 3:1. To them pertained",
-        "next": "But when the fullness (Galatians 4:4; John 12:32; Acts 17:30; Mark 16:15; Malachi 3:4; Proverbs 8:31) of time came, the Son of God being sent in the likeness of sinful flesh, drew "
-      },
-      {
-        "file": "EPUB/ch004.xhtml",
-        "previous": "in with another reckoning, and make them know that all things without Christ are but as ciphers without a figure, — of no value. In all their banquets, where Christ is not a guest,",
-        "next": "— their palaces, where Christ is not, are but habitations of ziim and ochim, dragons and unclean beasts; — their prosperity is putting them into full pasture, that they may be fatt"
-      },
-      {
-        "file": "EPUB/ch008.xhtml",
-        "previous": "arrant in itself, can never obtain any from its success. The rule of the goodness of any cause is the eternal law of reason, with the legal rights and interests of men.\" See Owen's",
-        "next": "SIR, ALMIGHTY GOD having made you the instrument of that deliverance and peace which in the county of Essex we do enjoy, next to his own goodness, the remembrance thereof is due un"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "e word signifies, — and the wounding of the dragon, that great and crooked afflicter, Pharaoh, is remembered, and urged for a motive to a new needed deliverance. So Psalm 74:13,14,",
-        "next": "Leviathan, — the same dragon, oppressing, persecuting Pharaoh, — thou brakest his heads, his counsels, armies, power; and gavest him for meat, that the people for forty years toget"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "Use. The use of this we are led unto, Isaiah 43:16-18,",
-        "next": "Let former mercies be an anchor of hope in time of present distresses."
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "e them effectual. There is no flying from his armies, for they are every where, and himself with them. Who would not fear this King of nations? He that contends with him shall find",
-        "next": "No flying, no hiding, no contending. Worms kill Herod; a fly choked Adrian, etc."
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "abitants of those lasting hills, being many of them high and mighty ones, (Numbers 12:3 12:33.) like perpetual mountains; they being given in possession to the sons of Israel, even",
-        "next": "Observation 10. God takes an exact foreview of his people's portion and inheritance."
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "hty God with his people. The story of it you have in the Book of Numbers, (Numbers 25:1, 31:1.) as it was prophetically foretold by Moses concerning other nations, Exodus 15:14-16,",
-        "next": "God filled those nations with anguish, sorrow, and amazement, at the protection he granted his people."
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "its subject and object, — the person believing and the thing believed. There needs no ascending into heaven, or descending; the word of faith makes all things nigh, even within us,",
-        "next": "He that believes in Christ, by that believing receives Christ, John 1:12; Romans 10:6-8. Some glasses will present things at a great distance very near; faith looking through the g"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "edingly \"that there was come a man to seek the welfare of the children of Israel,\" Nehemiah 2:10. This is the season of that dispensation which you have mentioned, Isaiah 65:13-15,",
-        "next": "The reasons of this are taken, — 1. From their envy; 2. From their carnal fear; — the two principles whereby they are acted in reference to the saints of God."
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "formances. I shall hold out one or two; it will be worth your while to search for others yourselves. He that digs for a mine finds many a piece of gold by the way. Isaiah 41:14-16,",
-        "next": "To make a worm a thrashing instrument with teeth, to cause that instrument to beat mountains and hills into chaff, that chaff to be blown away with the wind, that that worm may rej"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "(2.) To convince the unbelieving world itself of his power, providence, and love to them that put their trust in him, that they may be found to cry,",
-        "next": "When the Egyptian magicians see real miracles, beyond all their juggling pretences, they cry out, \"This is the finger of God,\" Exodus 8:19."
-      },
-      {
-        "file": "EPUB/ch012.xhtml",
-        "previous": "public appearance on this occasion by a government whose measures of vindictive retaliation against the Puritans are notorious. Asty's explanation of the fact has obvious weight: —",
-        "next": "The only public expression of displeasure at this sermon was given in 1683, about a month before the grave closed over its author. In the school quadrangle of the University, — not"
-      },
-      {
-        "file": "EPUB/ch013.xhtml",
-        "previous": "ea,\" — the providence of God must be served, according to the discovery made of his own unchangeable will, and not the mutable interests and passions of the sons of men. For verily",
-        "next": "The contradictions of sinners against all that walk in the paths of righteousness and peace, with the supportment which their spirits may receive (as being promised) who pursue tho"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "niel 3:20. You seldom see a fabric of humaninvented worship, but either the foundation or top-stone is laid in the blood of God's people. \"The wisdom\" (religion, or way of worship)",
-        "next": "— when the other is \"earthly, sensual, devilish, bringing along envying, strife, confusion, and every evil work,\" verse 16. Persecution and blood is the genuine product of all inve"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "How weary was David when he cried out in such a condition,",
-        "next": "Long had he waited for a desired issue of his perplexed state, and had perhaps oftentimes been frustrated of his hope of drawing to a period of his miseries; and now, finding one d"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "God, should fail of their accomplishment It is not with them as it was with that wicked king of Israel, who, being disappointed of peace and deliverance in his own time, cries out,",
-        "next": "The season of deliverance suited not his expectation; therefore he quite throweth off the Lord and his protection: — not unlike many among ourselves, whose desires and expectations"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "God is attended with fire, darkness, and tempest, because we cannot so easily see him, we are ready to leave him. Now, this the Lord usually doth in the execution of his judgments,",
-        "next": "His righteousness, his kindness, is like a great mountain that is easy to be seen, — a man cannot overlook it, unless he willfully shut his eyes; but his judgments are like the gre"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "ave been their swelling conceptions! What, then, is it that prevails upon men to break through so many disappointments against the Lord as they do? — doubtless that of Isaiah 23:9,",
-        "next": "God gives up men unto it, that he may leave no earthly glory or honor without pollution or contempt. And therefore hath opposition in our days been turned upon so many hands, that "
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": " ye judges of the earth; serve the Lord with fear, and rejoice with trembling,\" Psalm 10, 11. See whence your assistance cometh; see where lie the hills of your salvation, and say,",
-        "next": "It is God alone who is \"a sun and shield: his ways do good to the upright in heart.\" Behold, here is a way to encompass England with a brazen wall: let the rulers of it walk in rig"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "ordial for all your distempers, — Return not to former provoking ways, and he will make you\" a fenced brasen wall.\" And so I come to the third thing which I proposed to consider, —",
-        "next": "The words may be considered either as a prediction depending on God's prescience of what will be; or a commination from his just judgment of what shall be."
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": "ing them from that sin by the might of his Spirit and grace. That alone is effectual grace which is actual. \"He suffers them to walk in their own ways.\" And this the Lord may do, —",
-        "next": "(1st.) In respect of them judicially, — they deserve to be forsaken: Ahab is left to fill up the measure of his iniquities, — \"Add iniquity to iniquity,\" Psalm 69:27. (2dly.) In re"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "AND",
-        "next": "THE times are busy, and we must be brief. Prefaces for the most part are at all times needless, — these, troublesome. Mine shall only be, that ἄνευ προοιμίων καὶ παθῶν , \"without e"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "elf withal! Perplexed he was in his spirit to see the untoward revengefulness of that sort of people; insomuch that he writes expressly to them, being assembled in council at Tyre,",
-        "next": "At length an Arian priest curries favor with his sister Constantia: she gets him into the esteem of her brother: after some insinuations of his, new edicts, new synods, new recalli"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "rovide, or grant being provided, the use of such places under his protection as may, in all or any kind, be suited and fitted for that end and purpose. And the ground of this is, —",
-        "next": "(1st.) From the right which the gospel of Christ hath to be received amongst men, according to his own appointment; whether that be the appointment of Christ or not, amongst us is "
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "Now, being in my family, in my private house, the assistance of those in authority is due, —",
-        "next": "(1st.) In respect of them without."
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "This, at least, reacheth to all we have ascribed to them. All is but bowing the knee of magistracy at the name of Jesus. Hence are these positions: —",
-        "next": "And in the neglect of any of these that takes place, which is threatened, Isaiah 9:12, two or three consectaries, added hereunto, shall close this part of the magistrate's power, o"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "ng out false and idolatrous worship — he is to remove; as the Papists' images, altars, pictures, and the like; Turks' mosques; prelates' service-book. Now these are of two sorts: —",
-        "next": "(1st.) Such things as, in their whole use and nature, serve only for the carrying on of worship in itself wholly false, and merely invented; as altars, images, crosses. (2dly.) Suc"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "previous": "onomy 12:1-3, with the commendation of those kings of Judah who accordingly performed this duty, 2 Chronicles 17:6 , 30:14, are enough to confirm it, and to bottom this position: —",
-        "next": "Let Papists, who are idolaters, and Socinians, who are anthropolatrae, plead for themselves."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": " thing you are to believe for, is the interest of your own souls in the covenant of grace by Christ. As to this, I shall only point unto that promise of the covenant, Hebrews 8:12,",
-        "next": "The second is the establishment of the kingdom of Christ, in despite of all opposition And for this, amongst innumerable [passages], take that of Isaiah 9:11."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": " is no more contest amongst men. That nothing may be wanting to win our belief to the promises of God, he hath taken this course also, — he hath sworn to their truth, Hebrews 6:13,",
-        "next": "He confirms his promise by an oath. \"O felices nos, quorum causa Deus jurat; O infelices, si nec juranti Deo credimus!\" When Christ came, \"in whom all the promises of God are yea a"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "hat is God Almighty, before whom nothing can stand, when he will accomplish his word. And that this was a bottom of great confidence to Abraham, the apostle tells you, Romans 4:21,",
-        "next": "When God is engaged by his word, his ability is especially to be eyed. The soul is apt to ask, How can this be? It is impossible it should be so to me."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "is admiration be lessened when he should hear that the first thing they intended and agreed upon was, to cover the innocent blood of forty-one 154 [1641], contrary to that promise,",
-        "next": "Isaiah 26:21; and nextly, to establish Catholic religion, or the kingdom of Babel, in the whole nation, in opposition to the engaged truth, and, in our days, visibly manifested pow"
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "previous": "His doubting was a provocation. And our Savior expresses no less, in that bitter reproof to his disciples upon their wavering, Matthew 17:17,",
-        "next": "— that is, in this unbelieving frame. Poor souls are apt to admire the patience of God in other matters, — that he spared them in such and such sins, at such and such times of dang"
-      },
-      {
-        "file": "EPUB/ch023.xhtml",
-        "previous": "ey be the political heights of the nations or the grandeur of potentates, let the Scripture be judge; I mean, when used in this sense of shaking, or establishment, Isaiah 51:15,16,",
-        "next": "By a repetition of what he hath done, he establisheth his people in expectation of what he will do. And, —"
-      }
-    ],
-    "structural_start_exclusions": 216,
-    "short_fragment_count": 32,
+    "paragraphs_checked": 2893,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 237,
+    "short_fragment_count": 47,
     "short_fragments": [
       {
         "file": "EPUB/ch001.xhtml",
@@ -748,8 +501,28 @@
         "text": "The uses of it follow."
       },
       {
+        "file": "EPUB/ch004.xhtml",
+        "text": "These things being presupposed, —"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Reader,"
+      },
+      {
         "file": "EPUB/ch005.xhtml",
         "text": "Power is powerful to persuade."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Sir"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "COGGESHALL, ESSEX, OCTOBER 5, 1648"
       },
       {
         "file": "EPUB/ch010.xhtml",
@@ -761,15 +534,19 @@
       },
       {
         "file": "EPUB/ch010.xhtml",
-        "text": "The verse hath two parts."
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
         "text": "Now, of this observe, —"
       },
       {
         "file": "EPUB/ch013.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
         "text": "COGGESHALL, Feb. 38."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "Now, the Lord will do this, —"
       },
       {
         "file": "EPUB/ch015.xhtml",
@@ -816,6 +593,10 @@
         "text": "COGGESHALL, May 1, 1649"
       },
       {
+        "file": "EPUB/ch027.xhtml",
+        "text": "So, then, observe, —"
+      },
+      {
         "file": "EPUB/ch029.xhtml",
         "text": "Tuesday, October 28, 1651."
       },
@@ -828,6 +609,10 @@
         "text": "Now, the reasons of this are, —"
       },
       {
+        "file": "EPUB/ch031.xhtml",
+        "text": "I shall speak a word, —"
+      },
+      {
         "file": "EPUB/ch034.xhtml",
         "text": "OXON, CHR. CH., April 2."
       },
@@ -837,58 +622,37 @@
       },
       {
         "file": "EPUB/ch039.xhtml",
+        "text": "ED."
+      },
+      {
+        "file": "EPUB/ch039.xhtml",
         "text": "Wednesday, 17th of September 1656."
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "ED."
       },
       {
         "file": "EPUB/ch040.xhtml",
         "text": "Wednesday, 17th of September 1656."
       },
       {
+        "file": "EPUB/ch041.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "John Owen"
+      },
+      {
         "file": "EPUB/ch045.xhtml",
         "text": "Nov. 17, 1656."
-      },
-      {
-        "file": "EPUB/ch050.xhtml",
-        "text": "To this I answer, —"
-      },
-      {
-        "file": "EPUB/ch060.xhtml",
-        "text": "And, —"
-      },
-      {
-        "file": "EPUB/ch060.xhtml",
-        "text": "Iniquit., p. 636."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "I answer, —"
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 5,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch010.xhtml",
-        "text": "\"A prayer of Habakkuk the prophet upon Shigionoth. O LORD, I have heard thy speech, and was afraid: O LORD, revive thy work in the midst of the years, make known; in wrath remember mercy. God came from Teman, and the Holy One from mount Paran. Selah. His glory"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "text": "Observation 2. Prophets' discoveries of fearful judgments must be attended with fervent prayers. That messenger hath done but half his business who delivers his errand, but returns not an answer. He that brings God's message of threats unto his people, must re"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "text": "The reasons of this are taken, — 1. From their envy; 2. From their carnal fear; — the two principles whereby they are acted in reference to the saints of God."
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "text": "Now, the Lord will do this, — 1. Because of his own engagement. 2. For our encouragement. And that is twofold. (1.) Of truth and fidelity. (2.) Of honor and glory."
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "text": "Now, because you wait on God for direction in reference to the propagation of the gospel, and the preventing that which is contrary to sound doctrine and godliness, I shall, — [1.] Show you very briefly what God has promised concerning magistrates to this end;"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -904,23 +668,23 @@
         "text": "11. And when this knack was once found out of promoting a sect by imperial favor, it is admirable to consider how those good princes, Constantine and his sons, were abused, misled, enraged, engaged into mutual dissension"
       }
     ],
-    "roman_heading_candidate_count": 18,
+    "roman_heading_candidate_count": 6,
     "roman_heading_candidates": [
       {
         "file": "EPUB/ch023.xhtml",
-        "text": "III. The last head remaineth under two particulars: —"
+        "text": "I. In the first I shall consider, — 1. What are the things that are shaken; 2. What is their shaking; 3. What their removal, being shaken."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "III. The last head remaineth under two particulars: — 1. What are \"the things that cannot be shaken?\" 2. What is their remaining?"
       },
       {
         "file": "EPUB/ch035.xhtml",
         "text": "I. In the first I shall consider two things: — 1. The person dismissed: \"Thou;\" 2. The dismission itself: \"Go thou thy ways.\""
       },
       {
-        "file": "EPUB/ch038.xhtml",
-        "text": "II. The cause of this perturbation of mind and spirit was from the visions of his head: \"The visions of his head troubled him.\""
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "text": "III. There is the means that Daniel used for redress in that sad condition whereunto he was brought by the consideration of this vision: \"He drew near to one of them that stood by, and asked him the truth of all this.\""
+        "file": "EPUB/ch053.xhtml",
+        "text": "II. As to the first of these, we may observe, —"
       },
       {
         "file": "EPUB/ch060.xhtml",
@@ -928,248 +692,126 @@
       },
       {
         "file": "EPUB/ch066.xhtml",
-        "text": "I. The time when the things mentioned did fall out, and wherein our Savior passed his judgment on them."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
         "text": "II. The providential accidents spoken of are two, and of two sorts."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "III. In the interpretation and application made of these severe accidents by our Savior, in his divine wisdom, we may observe, —"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "I. When doth a church, a nation, a people, or city, so abound in sin, as to be immediately and directly concerned in his divine warning; and what, in particular, is the case of the nation wherein we live, and our own the"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "II. Of what sort are those desolating judgments, which, in one way and sense or another, are impendent with respect unto such a church or nation, and, consequently, unto ourselves, at this season?"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "III. What warnings, calls, and indications of divine displeasure, and the approach of calamitous distresses, doth God usually grant, and what he hath given, and is giving unto us at present?"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "IV. What is the equity, and wherein it doth consist, of the divine constitution here attested by our blessed Savior, that in such a case repentance and reformation, and nothing else, shall save and deliver a church, a pe"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "V. Whereas this rule is so holy, just, and equal, whence is it that all sorts of men are so unwilling to comply with it, even in the utmost extremity, when all other hopes do fail and perish; and whence is it so amongst "
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "VI. What is required unto that reformation which may save any nation — this wherein we live — from desolating calamities when they are deserved?"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "VII. From what causes at present such a reformation may be expected, and by what means it may be begun and accomplished, so as to prevent our utter ruin?"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "VIII. What is the duty, what ought to be the frame of mind in true believers, what their walk and work, in such a season, that, in case all means of delivery do fail, they may be found of Christ in peace at his coming; f"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "IV. That which, in the next place, we are to speak unto is, \"The equity of this divine constitution, — that, in the ordinary way of God's rule and dispensation of his providence, repentance and reformation shall turn awa"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "text": "VI. I shall, therefore, in the next place, to bring all things nearer home, inquire, \"What is the nature of that repentance and reformation which at this time God requires of us all, that we may not perish in his sore di"
       }
     ],
-    "overlong_heading_candidate_count": 28,
-    "overlong_heading_candidates": [
-      {
-        "file": "EPUB/ch004.xhtml",
-        "tag": "h4",
-        "text": "II. The sending of the gospel to any one nation rather than another, as the means of life and salvation, is of the mere free grace and good pleasure of God."
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "tag": "h4",
-        "text": "III. The opposition which men cleaving to the Lord in all his ways shall find, with the issue and success of it: \"They shall fight against thee; but shall not prevail.\""
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "tag": "h4",
-        "text": "II. The sum of what is usually drawn from holy writ against such forbearance as I suppose may be asserted, and for the punishing heretics with capital punishments, being briefly discussed, I proceed, in the next place, to such other general observations as may"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "tag": "h4",
-        "text": "III. I have only showed the weakness of those grounds which some men make the bottom of their testimonies against the toleration of any thing but what themselves conceive to be truth; as also, taken away the chief of those arguments upon which such a proceedin"
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "tag": "h4",
-        "text": "IV. Protection, as to peace and quietness in the use of the ordinances of the Lord Jesus Christ, from violent disturbers, either from without or within, is also incumbent on him."
-      },
-      {
-        "file": "EPUB/ch015.xhtml",
-        "tag": "h4",
-        "text": "VI. It is the duty of the magistrate not to allow any public places for (in his judgment) false and abominable worship; as also, to demolish all outward appearances and demonstrations of such superstitious, idolatrous, and unacceptable service."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "tag": "h4",
-        "text": "I. The promise here mentioned is principally that which Abraham believing, it was said eminently that \"it was accounted to him for righteousness.\" So the apostle tells us, verse 5 of this chapter."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "tag": "h4",
-        "text": "II. What is it to stagger at the promise? \"He staggered not,\" οὐ διεκρίθη , \"he disputed not.\" Διακρίνομαι is, properly, to make use of our own judgment and reason in discerning of things, of what sort they be."
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "tag": "h4",
-        "text": "II. The actings of God's providence, in carrying on the interest of Christ, are and shall be exceedingly unsuited to the reasonings and expectations of the most of men."
-      },
-      {
-        "file": "EPUB/ch035.xhtml",
-        "tag": "h4",
-        "text": "III. The third thing (that we may make haste) is his state and condition during the time which he lies under this dismission, in these words, \"For thou shalt rest.\""
-      },
-      {
-        "file": "EPUB/ch035.xhtml",
-        "tag": "h4",
-        "text": "IV. The last thing in the text is the utmost issue of all these dispensations, both as to his foregoing labor and his present dismission, and following rest: \" Thou shalt stand in thy lot,\" etc."
-      },
-      {
-        "file": "EPUB/ch042.xhtml",
-        "tag": "h4",
-        "text": "II. The issues of God's dispensations amongst his people shall be so evident and glorious, that every one, any one, though never so weak, if not blinded by prejudice, shall be able to give a convincing answer concerning them to the inquiries of men."
-      },
-      {
-        "file": "EPUB/ch042.xhtml",
-        "tag": "h4",
-        "text": "III. _The great design of God, in his mighty works, and dispensations in_ _the world, is the establishment of his people, and their proper interest, in_ _their several generations._ Give me leave to say, it is not for this or that form _of government,_ or civi"
-      },
-      {
-        "file": "EPUB/ch042.xhtml",
-        "tag": "h4",
-        "text": "IV. It is the duty of God's poor preserved remnant, laying aside all other aims and contrivances, to betake themselves to the work of God, founding Zion, and preserving the common interest of his people."
-      },
-      {
-        "file": "EPUB/ch042.xhtml",
-        "tag": "h4",
-        "text": "IV. _It is the duty of God's preserved remnant, laying aside all other aims_ _and contrivances, to betake themselves to the work of God, founding Zion,_ _and preserving the common interest of his people._ \"God hath founded Zion, and the poor of the people shal"
-      },
-      {
-        "file": "EPUB/ch053.xhtml",
-        "tag": "h4",
-        "text": "III. But now, suppose we are willing to receive them, it will be inquired, in the last place, What considerations may further us in their due improvement, and what directions may be given thereunto?"
-      },
-      {
-        "file": "EPUB/ch055.xhtml",
-        "tag": "h4",
-        "text": "III. That, therefore, the testimony of the church is not the only sufficient ground (nor indeed a sufficient one at all) of our believing the divinity of the Scripture, I shall prove by several arguments."
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "tag": "h4",
-        "text": "I. Section I. It is a general notion of truth, that _the Lord Christ, in his_ _person and grace, is to be proposed and represented unto men as the_ _principal object of their faith and love._ He himself, in his Divine Person, is absolutely invisible unto us; a"
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "tag": "h4",
-        "text": "II. The same is fallen out amongst them with reference unto the church, and all the principal concerns of it; — having lost or renounced the things which belong unto its primitive constitution, they have erected a deformed image in their stead; as I shall mani"
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "tag": "h4",
-        "text": "III. In the farther opening of this Chamber of Imagery, we shall yet, if it be possible, see greater abominations; at least, that which doth next ensue is scarce inferior unto any of them that went before."
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "tag": "h4",
-        "text": "X. From these generals I shall proceed unto more particular instances; and those, for the most part, in important principles of religion, wherein Christian faith and practice are most concerned: and I shall begin with that which is of signal advantage unto the"
-      },
-      {
-        "file": "EPUB/ch064.xhtml",
-        "tag": "h4",
-        "text": "II. In the agitation which shook the country in consequence of this attempt, \"a whole year,\" says Macaulay, \"elapsed, — an eventful year, which has left lasting traces in our manners and language..."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "tag": "h4",
-        "text": "IV. Here is a sure rule given us of the interpretation of _severe providences_ _in_ such a season as that here intended; — such, I mean, as we have had amongst us, in _plague,_ and _fire,_ and _blood;_ and such as we have the signs and tokens of at this time i"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "tag": "h4",
-        "text": "I. Our first inquiry must, therefore, be, — \"When is a people or nation so filled with sin, or when doth sin so abound among them, as, in conjunction with the things afterward to be insisted on, to render their salvation or deliverance impossible, without repe"
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "tag": "h4",
-        "text": "II. Our second inquiry is, \"Of what sort those judgments are, which, in a time of great provocation, are to be looked on as impendent, and ready to seize on us?\" And they are of three sorts : — First."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "tag": "h4",
-        "text": "III. Our third inquiry is, \"What evidences we have at present, or what warnings we have had, of approaching judgments?\" for this also belongs unto the indispensable necessity of repentance and reformation, upon the approaching of troubles."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "tag": "h4",
-        "text": "VII. Our next inquiry is, \"Whence or from what causes such a reformation may be expected as may be useful unto the turning away of impendent judgments?\" And these causes are either supreme or subordinate."
-      },
-      {
-        "file": "EPUB/ch066.xhtml",
-        "tag": "h4",
-        "text": "VIII. \"What if all these means do fail? — what if all expectations from them be in vain? what is incumbent on them in particular who are really sensible of these things, — namely, of the abounding of provoking sins, and the near approach of deserved judgments?"
-      }
-    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
     "pdf_marker_count": 770,
-    "epub_marker_count": 776,
+    "epub_marker_count": 787,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 0,
-    "excess_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 136,
+        "epub": 137,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p131",
+            "context": "(1.) Revelations merely by word ( (Isaiah 1:1) or some other more internal species, (Amos 1:1) without any outward sensible appearance; which, for the most part, was the Lord's way of"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p159",
+            "context": "3. To open the third thing proposed, I shall show, — (1.) That all this variety is according to God's determinate purpose, and answereth thereunto; (2.) The particular purposes from whence this variety proceedeth."
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 135,
+        "epub": 136,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p132",
+            "context": "(2.) Revelations accompanied with some sensible apparitions, and that either, —"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p159",
+            "context": "That all this variety is according to God's determinate purpose, and answereth thereunto; (2.) The particular purposes from whence this variety proceedeth."
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 84,
+        "epub": 85,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p133",
+            "context": "[1.] Of things; as usually, among the prophets, rods and pots, (Jeremiah 1:11,13) wheels and trees, (Ezekiel 1:5-7; Zechariah 1:8, 3:9,10, etc.; Daniel 7:8,9) lamps, axes, vessels, ram"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p163",
+            "context": "[1.] For the not sending of the means of grace unto any people, whereby they hear not the joyful sound of the gospel, but have in all ages followed dumb idols, as many do unto this day"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 83,
+        "epub": 84,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p134",
+            "context": "[2.] Of persons; and those, according to the variety of them, of three sorts."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p165",
+            "context": "[2.] To some people, to some nations, the gospel is sent. God calls them to repentance and acknowledgment of the truth, — as in my text, Macedonia: and England, the day wherein we brea"
+          }
+        ]
+      }
+    ],
     "orphan_candidate_count": 0,
     "orphan_candidates": []
   },
   "repeated_windows": [
     {
       "phrase": "not the only nor the chief reason of our believing",
-      "count": 5
-    },
-    {
-      "phrase": "the only nor the chief reason of our believing the",
-      "count": 5
-    },
-    {
-      "phrase": "only nor the chief reason of our believing the scripture",
-      "count": 5
-    },
-    {
-      "phrase": "nor the chief reason of our believing the scripture to",
-      "count": 5
-    },
-    {
-      "phrase": "the chief reason of our believing the scripture to be",
-      "count": 5
-    },
-    {
-      "phrase": "chief reason of our believing the scripture to be the",
-      "count": 5
-    },
-    {
-      "phrase": "reason of our believing the scripture to be the word",
-      "count": 5
-    },
-    {
-      "phrase": "of our believing the scripture to be the word of",
-      "count": 5
-    },
-    {
-      "phrase": "our believing the scripture to be the word of god",
       "count": 5
     },
     {
@@ -1229,6 +871,38 @@
       "count": 4
     },
     {
+      "phrase": "the only nor the chief reason of our believing the",
+      "count": 4
+    },
+    {
+      "phrase": "only nor the chief reason of our believing the scripture",
+      "count": 4
+    },
+    {
+      "phrase": "nor the chief reason of our believing the scripture to",
+      "count": 4
+    },
+    {
+      "phrase": "the chief reason of our believing the scripture to be",
+      "count": 4
+    },
+    {
+      "phrase": "chief reason of our believing the scripture to be the",
+      "count": 4
+    },
+    {
+      "phrase": "reason of our believing the scripture to be the word",
+      "count": 4
+    },
+    {
+      "phrase": "of our believing the scripture to be the word of",
+      "count": 4
+    },
+    {
+      "phrase": "our believing the scripture to be the word of god",
+      "count": 4
+    },
+    {
       "phrase": "and that he be desired to print his sermon and",
       "count": 4
     },
@@ -1259,6 +933,222 @@
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
   },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 1750,
+    "epub_latin_word_count": 1806,
+    "epub_tagged_latin_word_count": 633,
+    "pdf_latin_unique_words": 859,
+    "epub_latin_unique_words": 866,
+    "epub_tagged_unique_words": 431,
+    "latin_word_coverage_ratio": 0.9914,
+    "latin_tagging_ratio": 0.3505,
+    "missing_latin_word_samples": [
+      {
+        "word": "joshua’s",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "untagged_latin_word_samples": [
+      {
+        "word": "magistrate",
+        "epub": 72,
+        "tagged": 1
+      },
+      {
+        "word": "iii",
+        "epub": 43,
+        "tagged": 2
+      },
+      {
+        "word": "alas",
+        "epub": 26,
+        "tagged": 1
+      },
+      {
+        "word": "dissent",
+        "epub": 19,
+        "tagged": 0
+      },
+      {
+        "word": "ere",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
+        "word": "door",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "de",
+        "epub": 26,
+        "tagged": 12
+      },
+      {
+        "word": "hate",
+        "epub": 13,
+        "tagged": 0
+      },
+      {
+        "word": "protector",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "macedonia",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "obstinate",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "seas",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "determinate",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "stream",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "abhor",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "hist",
+        "epub": 15,
+        "tagged": 5
+      },
+      {
+        "word": "asa",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "vii",
+        "epub": 12,
+        "tagged": 3
+      },
+      {
+        "word": "inferior",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "pleas",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "pilate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "palestina",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "relate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "adhere",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "manna",
+        "epub": 7,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 70,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 193,
+    "translated_latin_runs_count": 63,
+    "latin_translation_ratio": 0.3264,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "INCLYTISSIMO POPULI ANGLICANI CONVENTUI"
+      },
+      {
+        "phrase": "PRISCA ANGLO-BRITANNORUM JURA"
+      },
+      {
+        "phrase": "PATRIAM (NEFARUS QUORUNDAM MOLITONIBUS"
+      },
+      {
+        "phrase": "PESSUNDATAM) ELECUPERATAM"
+      },
+      {
+        "phrase": "DISSOLUTAM, RITUS PONTIFICIOS, NOVITIOS, ANTICHRISTIANOS ABOLITOS; PRIVILEGIA PLEBIS CHRISTIANAE POSTLIMINIO RESTITUTA"
+      },
+      {
+        "phrase": "INNUMERIS, CONSILIO, BELLO, DOMI, FORAS"
+      },
+      {
+        "phrase": "POTITAM; TOTO"
+      },
+      {
+        "phrase": "MERITISSIMO CELEBERRIMO, TOTI"
+      },
+      {
+        "phrase": "INSULAE AETERNA MEMORIA RECOLENDO, VIRIS ILLUSTRIBUS, CLARISSIMUS, SELECTISSIMIS"
+      },
+      {
+        "phrase": "COMMUNIUM IN SUPREMA CURIA PARLIAM, CONGREGATIS"
+      },
+      {
+        "phrase": "IPSORUM TAMEN VOTO"
+      },
+      {
+        "phrase": "PRIUS CORAM IPSIS HABITAM, NUNC"
+      },
+      {
+        "phrase": "homo, et ego homo, audiamus"
+      },
+      {
+        "phrase": "cum ecclesia malignantium"
+      },
+      {
+        "phrase": "limbus patrum"
+      },
+      {
+        "phrase": "Sancta Clara"
+      },
+      {
+        "phrase": "atri janua ditis"
+      },
+      {
+        "phrase": "culpa, quae"
+      },
+      {
+        "phrase": "is \"amor et deliciae humani generis"
+      },
+      {
+        "phrase": "unum magnum"
+      }
+    ]
+  },
   "ages_artifact_check": {
     "ages_artifact_count": 0,
     "ages_artifacts": []
@@ -1270,6 +1160,11 @@
   "font_config_check": {
     "font_issue_count": 0,
     "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "orphan_endnotes"
+    ]
   },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."

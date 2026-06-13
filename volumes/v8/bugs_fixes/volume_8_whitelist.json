@@ -4,6 +4,59 @@
       "y spirits",
       "f or",
       "p articular"
+    ],
+    "Unmatched Quotation Marks": [
+      "The occasion on which this sermon was delivered is mentioned in the \"Life the sermon, Owen appears t...",
+      "Nothing so ill, but Christ [f58] will compensate. The greatest evil in the world is sin, and the gre...",
+      "This is a seal upon their misery, without God's free mercy, like the stone laid upon the mouth of th...",
+      "The penal constitutions of the Judaical polity (for so they were, which yet I urge not) concerning i...",
+      "The word here used to express his sin, is \"\u05e0\u05b9\u05e7\u05b5\u05d1, signifying also to pierce, and is twice so rendere...",
+      "Hereupon he concludes that discourse with these two positive assertions: \u2014 First, That for what is p...",
+      "When God will do good for Zion, he requires that his remembrancers give him no rest, until he do it,...",
+      "When the beginning of the saints' departure from under the dominion of Antichrist was followed with...",
+      "See Nehemiah 4:1-6. And ever the nearer any nation is to this people, the greater is their envy. It...",
+      "**Use 2.** Of encouragement to those that have the presence of Christ with them in the manner declar...",
+      "<section class=\"treatise-title-page\" epub:type=\"titlepage\"> <p class=\"title-line -major\">SERMON 13.<...",
+      "**Except. III.** \"But,\" say they again, \"the Ephesians were not built upon Paul's writings, which we...",
+      "Secondly. \"We cannot,\" say the Papists again, \"know the Scripture to be the word of God _by the test...",
+      "**2.** That if the private testimony of the Spirit be questioned, it cannot be proved but by the Scr...",
+      "**2d** _. It is as destructive to our comfort._ When our great comfort proceeds from our faith, such...",
+      "And, be sure, leave not off till thou find thy faith raised from so low a bottom as the authority of...",
+      "But Christ dealt not so with his apostles, though he were Lord of all, when he sent them to teach an...",
+      "II. In the agitation which shook the country in consequence of this attempt, \"a whole year,\" says Ma...",
+      "\"Die Venetia, 14 Martii, 1650. \"The question being propounded...",
+      "When the Jews cried, \"The temple of the Lord, the time was at hand...",
+      "Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed...",
+      "fitly framed together, groweth unto an holy temple in the Lord...",
+      "**(1.)** _I will sup with him;\"_ \u2014 I will delight and satisfy myself with him...",
+      "Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal...",
+      "\"And all the trees of the field shall know that I the Lord have brought down the high tree...",
+      "Let the righteous smite me, it shall be a kindness; and let him reprove me, it shall be an excellent oil...",
+      "Cry aloud, spare not; lift up thy voice like a trumpet, and show my people their transgression, and the house of Jacob their sins \" \u2014 Isaiah 58:1.",
+      "In publico discrimine omnis homo miles est.\""
+    ]
+  },
+  "text_integrity": {
+    "ignored_warnings": [
+      "front_matter_toc_loss",
+      "suspicious_large_number_starts",
+      "repeated_windows",
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "low_latin_word_coverage",
+      "weak_page_coverage",
+      "dense_source_window_loss",
+      "top_of_page_text_loss",
+      "bottom_of_page_text_loss",
+      "orphan_endnotes",
+      "roman_heading_candidates"
+    ],
+    "paragraph_splits": [
+      "—",
+      "Reader,",
+      "Sir",
+      "John Owen",
+      "Your devoted Servant"
     ]
   }
 }

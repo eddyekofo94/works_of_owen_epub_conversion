@@ -122,6 +122,13 @@ OVERRIDES = {
         'Cromwel ': 'Cromwell ',
         'Cromwel,': 'Cromwell,',
         'Cromwel.': 'Cromwell.',
+        'Hist. Rom., lib. 5 2:36.': 'Hist. Rom., lib. 52, 36.',
+        'Theod. Ecclesiastes Hist.': 'Theod. Eccles. Hist.',
+        'In In Isaiah 8:20': 'In Isaiah 8:20',
+        'Latin, esse,, essentia': 'Latin, esse, essentia',
+        'Holy Ghost," Holy Ghost,"': 'Holy Ghost,"',
+        'refer it to the church; for he did not receive testimony from men, John 5:34 refer it to the church; for he did not receive testimony from men, John 5:34,': 'refer it to the church; for he did not receive testimony from men, John 5:34,',
+        'Lamb of God, which taketh away the sin of the world," John 1:29,36; Lamb of God, which taketh away the sin of the world," John 1:29,36;': 'Lamb of God, which taketh away the sin of the world," John 1:29,36;',
     },
 }
 

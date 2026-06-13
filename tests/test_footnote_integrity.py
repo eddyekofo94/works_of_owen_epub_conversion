@@ -37,8 +37,8 @@ ALLOWED_FOOTNOTE_ANOMALIES = {
         'mismatch_delta': 1,
     },
     '8': {
-        'orphans': {'fn2', 'fn30', 'fn31', 'fn5', 'fn7'},
-        'mismatch_delta': 5,
+        'orphans': {'fn30', 'fn31', 'fn5', 'fn7'},
+        'mismatch_delta': 4,
     },
     '9': {
         'mismatch_delta': 2, # Two endnotes are referenced multiple times (valid)

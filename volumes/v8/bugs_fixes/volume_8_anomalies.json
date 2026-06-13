@@ -1,7 +1,7 @@
 {
-  "volume": 8,
-  "total_words_audited": 306814,
-  "total_anomalies_count": 199,
+  "volume": "8",
+  "total_words_audited": 306937,
+  "total_anomalies_count": 191,
   "anomalies": {
     "Hyphenation Anomalies": [
       {
@@ -431,7 +431,7 @@
         "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
         "contexts": [
           "... the martyrs of Jesus that suffered amongst them! 2dly , After some continuance. So the Church of Laodicea ...",
-          "... s and glorious fancies, became head of that fatal 2dly , After some continuance. So the Church of Laodicea ..."
+          "... and glorious fancies, became head of that fatal 2dly , After some continuance. So the Church of Laodicea ..."
         ]
       },
       {
@@ -439,7 +439,7 @@
         "description": "Spaced punctuation (space before character)",
         "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
         "contexts": [
-          "... not professedly found in any party amongst us. 3dly , Which was worst of all, they had centred in their ..."
+          "... ot professedly found in any party amongst us. 3dly , Which was worst of all, they had centred in their ..."
         ]
       },
       {
@@ -479,11 +479,11 @@
         "description": "Spaced period (space before period)",
         "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
         "contexts": [
-          "... s example. These things being presupposed, \u2014 Use 1 . Let no flesh glory in themselves, but let every m ..."
+          "... example. These things being presupposed, \u2014 Use 1 . Let no flesh glory in themselves, but let every m ..."
         ]
       },
       {
-        "target": "e )",
+        "target": "e  )",
         "description": "Spaced closing parenthesis",
         "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
         "contexts": [
@@ -491,7 +491,7 @@
         ]
       },
       {
-        "target": "s )",
+        "target": "s  )",
         "description": "Spaced closing parenthesis",
         "chapter": "A Country Essay",
         "contexts": [
@@ -743,7 +743,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "The Shaking and Translating of Heaven and Earth",
         "contexts": [
-          "... hristian consideration this following position: \u2014 Observation . The Lord Jesus Christ, by his mighty power, in th ..."
+          "... ristian consideration this following position: \u2014 Observation . The Lord Jesus Christ, by his mighty power, in th ..."
         ]
       },
       {
@@ -760,6 +760,14 @@
         "chapter": "The Shaking and Translating of Heaven and Earth",
         "contexts": [
           "... r;\" and all because they discern not the season. 4thly . Sinful negligence. You are no way able to do the ..."
+        ]
+      },
+      {
+        "target": "( s",
+        "description": "Spaced opening parenthesis",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... camores,\" (1 Kings 10:27) \u2014 though not for dust?\" ( stones, and cedars as sycamores,\" (1 Kings 10:27) \u2014 ..."
         ]
       },
       {
@@ -863,7 +871,7 @@
         "description": "Spaced punctuation (space before character)",
         "chapter": "God's Work in Founding Zion, and His People\u00ecs Duty Thereupon.",
         "contexts": [
-          "... ordinances of worship. This God \"hath founded;\"\u2014founded , or established, strengthened, that it shall not b ..."
+          "... rdinances of worship. This God \"hath founded;\" \u2014 founded , or established, strengthened, that it shall not b ..."
         ]
       },
       {
@@ -911,7 +919,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "God's Presence With a People the Spring of Their Prosperity.",
         "contexts": [
-          "... ngs are, then, principally to be inquired into: \u2014 First . What it is for God to be with any people. Secondl ..."
+          "... gs are, then, principally to be inquired into: \u2014 First . What it is for God to be with any people. Secondl ..."
         ]
       },
       {
@@ -1024,7 +1032,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
         "contexts": [
-          "... n may be comprised in this general observation: \u2014 Observation . Reproofs, though accompanied with some sharpness, ..."
+          "... may be comprised in this general observation: \u2014 Observation . Reproofs, though accompanied with some sharpness, ..."
         ]
       },
       {
@@ -1150,82 +1158,7 @@
     ],
     "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],
-    "Unresolved Citation References": [
-      {
-        "target": "lib. ii",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... nd worship due to the Creator, Rainold. de Idol., lib. ii. cap. 1, sect. 1. \" Idololatria est circa omne i ...",
-          "... olatry, say the Papists, Bell, de Ecclea Triumph, lib. ii. cap. 24; Greg. de Valen. de Idol, lib. i. cap. 1 ...",
-          "... rnment do and ought to enjoy. So Cicero tells us, lib. ii., De Leg., \"Suosque deos, aut novos, aut alienige ..."
-        ]
-      },
-      {
-        "target": "lib. i",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... nd worship due to the Creator, Rainold. de Idol., lib. ii. cap. 1, sect. 1. \" Idololatria est circa omne ...",
-          "... servitutem exhibent, quae debertur Deo, \" August, lib. i. de Trinit. cap. 6 \u2014 \" They are idolaters who giv ...",
-          "... olatry, say the Papists, Bell, de Ecclea Triumph, lib. ii. cap. 24; Greg. de Valen. de Idol, lib. i. cap. ..."
-        ]
-      },
-      {
-        "target": "lib. 5",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... things no way conducing to monarchy,\" Hist. Rom., lib. 52:36. Hence, doubtless, was that opposition which ..."
-        ]
-      },
-      {
-        "target": "Epist. lii",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... And long after these, Gregory of Rome, lib. ii. Epist. lii., tells us, \" Nova et inaudita est ista praedicat ..."
-        ]
-      },
-      {
-        "target": "lib. iv",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... \"Yea, to be the first-born of the devil,\" Euseb., lib. iv. cap. 14. Ignatius's epistles are full of the li ...",
-          "... hodox professors of the Deity of Christ, Socrat., lib. iv. cap 27. 5. Lastly, add unto all that hath been ...",
-          "... hut up Pagans' temples, Euseb. de Vita Constant., lib. iv. cap. 23, 24; and demolished some of the most fil ..."
-        ]
-      },
-      {
-        "target": "lib. iii",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... e building fall on us where Cerinthus is,\" Iren., lib. iii. cap. 3; Euseb. Ecclesiastes Hist., lib. iii. cap ...",
-          "... en., lib. iii. cap. 3; Euseb. Ecclesiastes Hist., lib. iii. cap. 28. Marcion meeting Polycarpus, and asking ...",
-          "... Irenaeus says, he would have no words with them, lib. iii. cap. 3. Tertullian's books testify for him at la ..."
-        ]
-      },
-      {
-        "target": "lib. v",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "Of Toleration;",
-        "contexts": [
-          "... y \u2014 first fastened on the Jews by Tacitus, Hist., lib. v. cap. 1, in these words, \"Effigiem animalis, quo ...",
-          "... inians, and Eunomians, Sozom. Ecclesiastes Hist., lib. vii.. cap. 1. Many more the like examples might be ...",
-          "... e two years, was slain with his children, Euseb., lib. vii. cap. 1. Valerian, being taken by Sapores king ..."
-        ]
-      },
-      {
-        "target": "lib. 53",
-        "description": "Unresolved patristic/classical citation reference (no translation found)",
-        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
-        "contexts": [
-          "... had spread themselves over all the nation, Hist., lib. 53:Nor is it otherwise among us at present; though n ..."
-        ]
-      }
-    ],
+    "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [
       {
         "target": "2.",
@@ -1498,59 +1431,11 @@
     ],
     "Invalid Bible References": [
       {
-        "target": "Jude 4",
-        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
-        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
-        "contexts": [
-          "... have fulfilled, John 12:37-41; in men described, Jude 4, and 1 Peter 2:8. But here we must strike sail, t ..."
-        ]
-      },
-      {
-        "target": "Obadiah 9",
-        "description": "Invalid Bible reference (chapter 9 exceeds max 1 for Obadiah)",
-        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
-        "contexts": [
-          "... Teman (Genesis 36:15; Jeremiah 49:7; Habakkuk 1:9 Obadiah 9.) was a city of the Edomites, whose land the peop ..."
-        ]
-      },
-      {
-        "target": "2 Kings 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
-        "chapter": "Righteous Zeal Encouraged by Divine Protection.",
-        "contexts": [
-          "... this Manasseh, he recalls his thoughts of mercy, 2 Kings 23:26, 27. The deposing of divine and human things i ..."
-        ]
-      },
-      {
         "target": "Joel 51",
         "description": "Invalid Bible reference (chapter 51 exceeds max 3 for Joel)",
         "chapter": "The Shaking and Translating of Heaven and Earth",
         "contexts": [
           "... Jeremiah 15:9, 51:25. (Isaiah 13:13; Psalm 68:8; Joel 51:10; Revelation 8:12; Matthew 24:29; Luke 21:25; I ..."
-        ]
-      },
-      {
-        "target": "Obadiah 4",
-        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Obadiah)",
-        "chapter": "The Shaking and Translating of Heaven and Earth",
-        "contexts": [
-          "... on 8:12; Matthew 24:29; Luke 21:25; Isaiah 60:20; Obadiah 4; Revelation 8:13, 40:12, 20:11.) Furthermore, to ..."
-        ]
-      },
-      {
-        "target": "Jude 4",
-        "description": "Invalid Bible reference (chapter 4 exceeds max 1 for Jude)",
-        "chapter": "The Shaking and Translating of Heaven and Earth",
-        "contexts": [
-          "... n of the sense and matter thereof. (Hebrews 11:5; Jude 4:1; Galatians 1:6; Hebrews 6:18, 7:12.) Understand ..."
-        ]
-      },
-      {
-        "target": "Obadiah 21",
-        "description": "Invalid Bible reference (chapter 21 exceeds max 1 for Obadiah)",
-        "chapter": "The Shaking and Translating of Heaven and Earth",
-        "contexts": [
-          "... administrations. (Psalm 45:6, 45:13; Isaiah 9:7; Obadiah 21) So is Christ described as a king in the midst of ..."
         ]
       },
       {
@@ -1560,58 +1445,99 @@
         "contexts": [
           "... ah 37:31; Jeremiah 30:9; Ezekiel 34:27, 37:24,25; Hosea 52:5; Amos 9:11.) and in answer to millions of praye ..."
         ]
-      },
-      {
-        "target": "2 Kings 24",
-        "description": "Invalid Bible reference (chapter 24 exceeds max 22 for Kings)",
-        "chapter": "Advantage of the Kingdom of Christ",
-        "contexts": [
-          "... appoints Zedekiah a titulary governor under him. (2 Kings 24:1-3) But the wrath of God being to come upon them ...",
-          "... es with Egypt, rebels against him (Jeremiah 37:1; 2 Kings 24:17; 2 Chronicles 36:10) by whose appointment alon ..."
-        ]
-      },
-      {
-        "target": "Obadiah 14",
-        "description": "Invalid Bible reference (chapter 14 exceeds max 1 for Obadiah)",
-        "chapter": "Advantage of the Kingdom of Christ",
-        "contexts": [
-          "... destroy the residue, when at any time straitened, Obadiah 14:1. How many in the late trial rejoiced in the str ..."
-        ]
-      },
-      {
-        "target": "Philippians 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
-        "chapter": "Advantage of the Kingdom of Christ",
-        "contexts": [
-          "... , 22, 13:55, 8:19; John 4:28, 29; Isaiah 53:2, 3; Philippians 20:7 2:7,8, etc.) Thus lays he the foundation of the ..."
-        ]
-      },
-      {
-        "target": "Obadiah 12",
-        "description": "Invalid Bible reference (chapter 12 exceeds max 1 for Obadiah)",
-        "chapter": "Christ's Kingdom and the Magistrate's Power.",
-        "contexts": [
-          "... abound. In such a day Edom will appear an enemy, (Obadiah 12, 13; Isaiah 7:1.) and Ephraim with the son of Rem ..."
-        ]
-      },
-      {
-        "target": "Jude 14",
-        "description": "Invalid Bible reference (chapter 14 exceeds max 1 for Jude)",
-        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
-        "contexts": [
-          "... st recorded of them are in the prophecy of Enoch, Jude 14,15. And they have been since continued in all age ...",
-          "... e coming of God to take vengeance on ungodly men, Jude 14,15. And this message was scoffed at, as is eviden ..."
-        ]
-      },
-      {
-        "target": "2 Kings 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
-        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
-        "contexts": [
-          "... onish captivity, as an account is given us of it, 2 Kings 23:25-27, \"Like unto him was there no king before hi ..."
-        ]
       }
     ],
-    "List Formatting Inconsistencies": []
-  }
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "[[BLOCKQUOTE]] \"Die Venetia, 14 Martii, 1650. \"The question being propounded, That thanks be given to the ministers that...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Preface.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Die Venetia, 14 Martii, 1650. \"The question being propounded, That thanks be given to the ministers that..."
+        ]
+      },
+      {
+        "target": "(2.) Take heed of resting upon and trusting to the privilege, however excellent and glorious, of the outward enjoyment o...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "A Vision of Unchangeable, Free Mercy, in Sending the Means of G",
+        "contexts": [
+          "(2.) Take heed of resting upon and trusting to the privilege, however excellent and glorious, of the outward enjoyment o..."
+        ]
+      },
+      {
+        "target": "Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ..."
+        ]
+      },
+      {
+        "target": "(1.) I will sup with him;\" \u2014 I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "(1.) I will sup with him;\" \u2014 I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con..."
+        ]
+      },
+      {
+        "target": "Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+        "contexts": [
+          "Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Advantage of the Kingdom of Christ",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ..."
+        ]
+      },
+      {
+        "target": "This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n..."
+        ]
+      },
+      {
+        "target": "Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Except. IV.",
+        "contexts": [
+          "Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr..."
+        ]
+      },
+      {
+        "target": "SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT..."
+        ]
+      },
+      {
+        "target": "In publico discrimine omnis homo miles est.\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "In publico discrimine omnis homo miles est.\""
+        ]
+      }
+    ]
+  },
+  "unused_whitelist_anomalies": {}
 }
