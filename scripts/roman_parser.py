@@ -96,6 +96,8 @@ def _split_roman_section_opening(text):
     if not match:
         return None
     rest = (match.group('rest') or '').strip()
+    if re.match(r'^(?:and|or|&)\s+[IVXLCDM]+', rest, re.I):
+        return None
     if len(re.findall(r'\w+', rest)) < 12:
         return None
     heading = match.group("roman")

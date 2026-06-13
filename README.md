@@ -321,11 +321,11 @@ The new engine:
 | 1 | v1 | Populated | FULL | Cov 99.93 Greek 99.73 Heb 100.00 Lat 99.80 Quotes 19 |
 | 2 | v2 | Populated | PRISTINE | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
 | 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.90 |
-| 4 | v4 | Populated | FULL | Cov 99.85 Greek 98.99 Heb 100.00 Lat 99.78 Unres 7 Quotes 27 |
+| 4 | v4 | Populated | PRISTINE | Cov 99.87 Greek 99.57 Heb 100.00 Lat 99.45 |
 | 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.73 |
 | 6 | v6 | Populated | FULL | Cov 99.26 Greek 100.00 Heb 100.00 Lat 99.01 Quotes 31 |
 | 7 | v7 | Populated | PRISTINE | Cov 99.76 Greek 100.00 Heb 100.00 Lat 99.50 |
-| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 6 Quotes 25 |
+| 8 | v8 | Populated | FULL | Cov 99.65 Greek 100.00 Heb 100.00 Lat ? Unres 4 Quotes 25 |
 | 9 | v9 | Empty | FULL | Cov 99.61 Greek 100.00 Heb 100.00 Lat ? Quotes 65 |
 | 10 | v10 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.43 |
 | 11 | v11 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 |
@@ -339,10 +339,10 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| h1 | h1 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Unres 34 |
-| h2 | h2 | Empty | FULL | Cov 99.81 Greek 100.00 Heb 100.00 Unres 41 |
+| h1 | h1 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Unres 30 |
+| h2 | h2 | Empty | FULL | Cov 99.81 Greek 100.00 Heb 100.00 Unres 39 |
 | h3 | h3 | Empty | STANDARD | Audit + text integrity |
-| h4 | h4 | Empty | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Unres 13 |
+| h4 | h4 | Empty | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Unres 9 |
 | h5 | h5 | Empty | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Unres 6 |
 | h6 | h6 | Empty | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 4 |
 | h7 | h7 | Populated | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 2 |

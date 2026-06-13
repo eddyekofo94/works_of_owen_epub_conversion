@@ -162,7 +162,16 @@ _V4_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><b>Chapter VIII.</b> <a href="ch064.xhtml">Of the Gifts of the Spirit With Respect Unto Doctrine, Worship, & Rule</a></p>
 </section>'''
 
+def post_extract_hook(intermediate: dict) -> dict:
+    """Post-extraction adjustments for Volume 4."""
+    for ch in intermediate.get('chapters', []):
+        if ch['cid'] == 'ch048':
+            ch['raw_text'] = ch['raw_text'].replace('13:112 Epist. 13:11', '13:11')
+    return intermediate
+
+
 OVERRIDES = {
+    'post_extract_hook': post_extract_hook,
     'contents_page_overrides': _V4_CONTENTS_PAGE,
     'exclude_chapters': [
         'The Works of John Owen Vol. 4',
@@ -180,6 +189,24 @@ OVERRIDES = {
         # Repair OCR chapter-title typo so it renders correctly in the body
         'Spiritual Glfts': 'Spiritual Gifts',
         'Glfts': 'Gifts',
+        '13:112 Epist. 13:11': '13:11',
+        'com-prebends': 'comprehends',
+        'hac-tenus': 'hactenus',
+        'limi-rations': 'limitations',
+        'ma-nagery': 'managery',
+        'a0y': 'any',
+        'Co1ossians': 'Colossians',
+        'pIeasure': 'pleasure',
+        'shalI': 'shall',
+        '2 ndly .': '2ndly.',
+        '4 thly .': '4thly.',
+        '5 thly .': '5thly.',
+        '2dly .': '2dly.',
+        '3dly .': '3dly.',
+        '1st..': '1st.',
+        '2dly..': '2dly.',
+        'perfect,,': 'perfect,',
+        'them,,': 'them,',
     },
 }
 

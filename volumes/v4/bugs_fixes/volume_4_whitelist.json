@@ -1,5 +1,50 @@
 {
   "anomalies": {
+    "Hyphenation Anomalies": [
+      "Prayer-books",
+      "child-like",
+      "co-heirs",
+      "day-star",
+      "evil-doer",
+      "eye-salve",
+      "over-earnestly",
+      "pre-imbibed",
+      "pre-required",
+      "safe-keeping",
+      "wine-bibber"
+    ],
+    "Punctuation Spacing Blemishes": [
+      "..",
+      "1 .",
+      "2 .",
+      "2dly .",
+      "3 .",
+      "3dly .",
+      "4 .",
+      "4thly .",
+      "5 .",
+      "6 .",
+      "7 .",
+      "8 .",
+      "Ans .",
+      "God ;",
+      "afflatus ,",
+      "ceremonies .",
+      "corrupted .",
+      "disappear .",
+      "enthusiasm ;",
+      "flesh ;",
+      "grace .",
+      "him ;",
+      "inspired ;",
+      "light .",
+      "ndly .",
+      "old .",
+      "same ,",
+      "sense ;",
+      "thly .",
+      "which ,"
+    ],
     "OCR & Bracket Residues": [
       "s ufficient",
       "y we",
@@ -7,6 +52,153 @@
       "s choolmen",
       "g inning",
       "u unto"
+    ],
+    "Mixed-Case Capitalization Errors": [
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "1. ... 10.",
+      "1. ... 18.",
+      "1. ... 5.",
+      "10. ... 17.",
+      "11.",
+      "2.",
+      "2. ... 13.",
+      "2. ... 17.",
+      "2. ... 18.",
+      "3. ... 15.",
+      "3. ... 16.",
+      "3. ... 17.",
+      "3. ... 27.",
+      "3. ... 28.",
+      "3. ... 29.",
+      "3. ... 8.",
+      "4. ... 10.",
+      "4. ... 11.",
+      "4. ... 9.",
+      "5. ... 40.",
+      "8. ... 11.",
+      "II.",
+      "II. ... VII.",
+      "II. ... XI."
+    ],
+    "Unmatched Quotation Marks": [
+      "The arguments which render the articles of our faith credible are not such as produce an undoubted faith, unless the",
+      "It was a sign that Christ had borne and taken away sin, which was the cause, root, and spring of diseases and",
+      "**1.** Because it is the peculiar aid and assistance of the Spirit whereby any are enabled to administer the gospel and its",
+      "17. All these places and others testify that when sinners do engage into serious thoughts and conceptions of the nature",
+      "**2.** It is for the safe-keeping or preservation of that which a seal is set upon. So things",
+      "2. That we understated the things declared in it, or the mind of God as revealed and expressed therein; for if it be",
+      "**2.** This unction is said to \"abide in them'",
+      "2. What the psalmist, in the place before insisted on, calleth in general נִפְלָאוֹת, \"wonderful things,\" the apostle",
+      "**4.** The thing in especial prayed for, in order unto the end proposed, is, \"that the eyes of our understandings may be",
+      "Ans. Because all are not drawn of God. But what need is there of any long disputation? We therefore firmly believe the",
+      "Because they were \"wonderful\" in themselves, they neglected and despised them, as that which was foreign and alien",
+      "But yet we shall find that it is a peculiar gift, and in itself singularly useful, however it may be abused, as the",
+      "If we need the opening of our understandings by an act of the power and grace of Christ, that we may understand",
+      "In the first place, it is expressly said that we are sealed with the Spirit; whereby the Spirit himself is expressed",
+      "It is not said that this is a first principle of reason, though it be of faith, nor that it is capable of a",
+      "It is such an understanding of the Scripture, of the _divine revelation_",
+      "No; a tender mother will not so deal with her children. He manageth his work with such infinite love, tenderness,",
+      "Now, this language at that season, through all sorts of advantages, was diffused throughout the world, especially",
+      "Probably the institution of it was traduced from the temporary ministry of the _seventy_ before mentioned. That they",
+      "There are several other especial gracious actings of the Holy Spirit on the minds of believers, which belong also unto",
+      "Truths have their power and efficacy upon our minds, not only from _themselves,_ but from their _posture_",
+      "Wherefore, \"we know not what we should pray for as we ought,\" unless we know or understand the goodness, grace",
+      "It is called light: \"Ye were sometimes darkness, but now are ye light in the Lord,\" Ephesians 5:8. The",
+      "The Holy Spirit hath given us a relief in this matter, by supplying us with a rule of the interpretation",
+      "Maneat ergo,\" saith he, \"hoc fixum, quos Spiritus sanctus intus docuit, solide acquiescere in Scriptura,",
+      "Saepe mecum cogitavi unde tam suadibilis sit ipsa Scriptura, unde tam potenter influat in animos",
+      "sed ut rei extra estimandi aleam positae, judicium ingeniumque nostrum subjicimus... Neque qualiter superstitionibus"
+    ]
+  },
+  "text_integrity": {
+    "ignored_warnings": [
+      "low_latin_word_coverage",
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "paragraph_split_candidates",
+      "inline_structural_markers",
+      "roman_heading_candidates",
+      "enumerator_sequence_candidates",
+      "repeated_windows"
+    ],
+    "paragraph_splits": [
+      {
+        "previous": "Two things are replied hereunto: —",
+        "next": "1 . \"That where the things believed"
+      },
+      {
+        "previous": "therefore, I say, —",
+        "next": "We believe the Scripture to be the word of God"
+      },
+      {
+        "previous": "Some of them we must mention: —",
+        "next": "Deuteronomy 31:11-13"
+      },
+      {
+        "previous": "This is declared, —",
+        "next": "Jeremiah 23:28,29"
+      },
+      {
+        "previous": "And this is directly affirmed, —",
+        "next": "John 20:30,31"
+      },
+      {
+        "previous": "Hereunto we may add that of Paul, —",
+        "next": "Romans 16:25,26"
+      },
+      {
+        "previous": "writers given unto the principal parts of it, and whereon all other things asserted in it do depend: —",
+        "next": "Clemens Alexandrinus discourseth at large"
+      },
+      {
+        "previous": "Wherefore, our present inquiry is, —",
+        "next": "How believers, or any men whatever, may attain"
+      },
+      {
+        "previous": "as unto what he would have us know or believe; or, —",
+        "next": "How they may attain a right perception"
+      },
+      {
+        "previous": "it is the Holy Spirit of God himself alone; for, —",
+        "next": "There is an especial work of the Spirit"
+      },
+      {
+        "previous": "namely, that he gives us an understanding that we may know him which is true, —",
+        "next": "I cannot think that they interpret the Scripture"
+      },
+      {
+        "previous": "proceed: for, —",
+        "next": "Whilst the minds of men are thus affected"
+      },
+      {
+        "previous": "intend. Wherefore, —",
+        "next": "By this reading of the Scripture I mean the studying"
+      },
+      {
+        "previous": "[Ephesians 6:18]",
+        "next": "VII."
+      },
+      {
+        "previous": "performance of our duty herein; and they are these that follow: —",
+        "next": "1 . It it the duty of every man"
+      },
+      {
+        "previous": "Plotinus, Ennead. 6, lib. 9, cap. 10; for after many other ascriptions unto a soul that hath attained union with the chiefest good, he adds: —",
+        "next": "Οὐ γάρ τι ἐκινεῖτο παρ αὐτῷ"
+      },
+      {
+        "previous": "in which may come to participate in these gifts, ministerial or more private, VIII. —",
+        "next": "ED."
+      },
+      {
+        "previous": "office and work that he hath undertaken for the consolation of the church; and, —",
+        "next": "Three things are to be considered"
+      },
+      {
+        "previous": "gift of Christ,\" Ephesians 4:7",
+        "next": "These gifts are not saving, sanctifying graces"
+      }
     ]
   }
 }

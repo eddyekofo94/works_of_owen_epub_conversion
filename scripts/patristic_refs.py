@@ -159,7 +159,7 @@ AUTHOR_ABBREV_MAP = {
     # Bernard of Clairvaux
     "bernard":     "Bernard of Clairvaux",
     # Constantine
-    "constant":    "Constantine I",
+    "constantine": "Constantine I",
     # Ephraim Syrus (Ephrem the Syrian)
     "ephraim":     "Ephraim Syrus (Ephrem the Syrian)",
     "ephrem":      "Ephraim Syrus (Ephrem the Syrian)",
@@ -957,6 +957,9 @@ WORK_MAP = {
     ("hosius", "de authoritat"):  {"full_title": "On the Authority of Scripture", "latin_title": "De Auctoritate Scripturae"},
     ("bradwardine", "de causa dei"): {"full_title": "On the Cause of God against Pelagius", "latin_title": "De Causa Dei contra Pelagium"},
     ("suarez", "de perpetuitat"): {"full_title": "On the Perpetuity or Loss of Grace", "latin_title": "De Perpetuitate vel Amissione Gratiae"},
+    ("didymus", "de spir sanc"):  {"full_title": "On the Holy Spirit", "latin_title": "De Spiritu Sancto", "pl": "PL 39"},
+    ("canus", "lee theol"):       {"full_title": "Loci Theologici", "latin_title": "Loci Theologici", "std_ref": ["Salamanca, 1563"]},
+    ("damasc", "lib"):            {"full_title": "Exact Exposition of the Orthodox Faith", "latin_title": "De Fide Orthodoxa", "std_ref": ["NPNF2, 9"], "pg": "PG 94"},
 }
 
 # ── Detection regex ──────────────────────────────────────────────────────────
@@ -1177,6 +1180,11 @@ def build_citation_note(
             (r'\bgregory\b.*\bepist\b|\bepist\b.*\bgregory\b', 'gregory_great', 'epist'),
             (r'\bgregory\b.*\blib\s+\d+\b', 'gregory_great', 'epist'),
             (r'\bhosius\b.*\bde\s+auth\w*\b', 'hosius', 'de auth'),
+            (r'\bantiq\w*\s+rom\b', 'dionysius', 'antiq'),
+            (r'\bde\s+grat\w*\s+et\s+lib\w*\s+arbit\w*\b', 'bellar', 'de grat'),
+            (r'\b(?:loc|loci|lee)\s+theol\w*\b', 'canus', 'loc theol'),
+            (r'\b_?(?:holy\s+one|spirit\s+himself)_?\b.*\bde\s+spir\w*\s+sanc', 'didymus', 'de spir sanc'),
+            (r'\bliv\b|\bliv\.', 'livy', 'hist'),
         ]
         for pattern, inferred_author, inferred_work in inferences:
             if re.search(pattern, ctx_to_check, re.I):

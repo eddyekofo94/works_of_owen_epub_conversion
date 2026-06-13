@@ -107,33 +107,65 @@ def _prepare_analysis_raw_text(raw_text: str) -> str:
 
 
 def _repair_analysis_spillover_chapters(intermediate: dict) -> dict:
-    """Move prose accidentally captured before ANALYSIS back to the prior chapter.
-
-    AGES occasionally cuts a front-matter paragraph at the page where the
-    ANALYSIS title begins, producing one chapter that starts with the previous
-    sentence tail and only later says "ANALYSIS".  Rendering can repair this
-    without rewriting the cached JSON.
-    """
+    """Move prose accidentally captured before headings back to the prior chapter."""
     chapters = intermediate.get('chapters') or []
     for index, chapter in enumerate(chapters):
-        if index == 0 or 'ANALYSIS' not in (chapter.get('title') or '').upper():
+        if index == 0:
             continue
         raw_text = chapter.get('raw_text') or ''
         if not raw_text or raw_text.lstrip().startswith('[['):
             continue
-        match = re.search(r'\bANALYSIS\.?\s*', raw_text, re.I)
-        if not match or match.start() < 80:
-            continue
-        spill = raw_text[:match.start()].strip()
-        analysis_body = raw_text[match.end():].strip()
-        if not spill or not analysis_body:
-            continue
+        title = (chapter.get('title') or '').strip()
+        title_upper = title.upper()
+        
+        # 1. Special case: ANALYSIS
+        if 'ANALYSIS' in title_upper:
+            match = re.search(r'\bANALYSIS\.?\s*', raw_text, re.I)
+            if match and match.start() >= 80:
+                spill = raw_text[:match.start()].strip()
+                analysis_body = raw_text[match.end():].strip()
+                if spill and analysis_body:
+                    previous = chapters[index - 1]
+                    previous_raw = (previous.get('raw_text') or '').rstrip()
+                    separator = ' ' if previous_raw and not re.search(r'[.!?]["”\')\]]?\s*$', previous_raw) else '\n\n'
+                    previous['raw_text'] = f'{previous_raw}{separator}{spill}'.strip()
+                    chapter['raw_text'] = f'[[SUBTITLE]] ANALYSIS.\n\n{analysis_body}'
+                    continue
 
-        previous = chapters[index - 1]
-        previous_raw = (previous.get('raw_text') or '').rstrip()
-        separator = ' ' if previous_raw and not re.search(r'[.!?]["”\')\]]?\s*$', previous_raw) else '\n\n'
-        previous['raw_text'] = f'{previous_raw}{separator}{spill}'.strip()
-        chapter['raw_text'] = f'[[SUBTITLE]] ANALYSIS.\n\n{analysis_body}'
+        # 2. General case: Title page/heading matches title of the chapter
+        title_clean = re.sub(r'^chapter\s+(?:\d+|[ivxlcdm]+)\s*-\s*', '', title_upper, flags=re.I)
+        title_clean = re.sub(r'^prefatory note\s*\(.*\)\s*', '', title_clean, flags=re.I)
+        title_clean = title_clean.strip()
+        if not title_clean or len(title_clean) < 5:
+            continue
+            
+        idx = raw_text.upper().find(title_clean)
+        if idx > 20:
+            spill = raw_text[:idx]
+            body = raw_text[idx:]
+            
+            # Safeguards
+            if '<section' in spill or 'epub:type="titlepage"' in spill:
+                continue
+                
+            spill_clean = re.sub(r'<[^>]+>', '', spill).strip()
+            if not spill_clean:
+                continue
+                
+            previous = chapters[index - 1]
+            previous_raw = (previous.get('raw_text') or '').rstrip()
+            
+            is_continuation = False
+            if spill_clean[0].islower():
+                is_continuation = True
+            elif previous_raw and not re.search(r'[.!?\u201d\"\'\s]$', previous_raw):
+                is_continuation = True
+                
+            if is_continuation:
+                separator = ' ' if previous_raw and not re.search(r'[.!?][\u201d\"\'\s]*$', previous_raw) else '\n\n'
+                previous['raw_text'] = f'{previous_raw}{separator}{spill.strip()}'.strip()
+                chapter['raw_text'] = body.strip()
+
     return intermediate
 
 

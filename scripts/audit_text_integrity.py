@@ -1051,6 +1051,7 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         if (
             "list-item" not in para.classes.split()
             and "catechism-item" not in para.classes.split()
+            and "syllabus-anchor" not in para.classes.split()
             and has_inline_structural_marker(text, para.html)
         ):
             inline_structural_candidates.append({
@@ -1671,7 +1672,11 @@ def font_config_check(volume: int, root: Path) -> dict[str, Any]:
     try:
         sys.path.insert(0, str(root))
         import shared as _shared  # type: ignore
-        cfg = _shared.VOLUME_CONFIG.get(volume, {})
+        try:
+            vol_key = int(volume)
+        except ValueError:
+            vol_key = volume
+        cfg = _shared.VOLUME_CONFIG.get(vol_key, {})
         body_font = cfg.get('body_font', '')
         if body_font:
             font_dir = root / 'fonts' / body_font

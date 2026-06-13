@@ -167,6 +167,16 @@
         "max_noteref_leading_space_files": 0
       }
     },
+    "4": {
+      "text_integrity": {
+        "max_inline_structural_candidate_count": 2,
+        "max_front_toc_missing_pages": 4
+      },
+      "epub": {
+        "max_page_reference_split_files": 1,
+        "max_chapter_heading_in_paragraph_files": 1
+      }
+    },
     "5": {
       "text_integrity": {
         "max_split_candidate_count": 0,

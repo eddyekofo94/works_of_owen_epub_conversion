@@ -1,10 +1,10 @@
 {
-  "volume": 4,
+  "volume": "4",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/input/owen-v4.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-06-09T10:46:33.475758+00:00",
+  "generated_at": "2026-06-13T09:06:30.361598+00:00",
   "status": "warn",
-  "warning_count": 12,
+  "warning_count": 5,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -25,52 +25,25 @@
     {
       "code": "bottom_of_page_text_loss",
       "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "paragraph_split_candidates",
-      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
-    },
-    {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
-      "code": "overlong_heading_candidates",
-      "message": "Some chapter headings are long enough to suggest swallowed body text"
-    },
-    {
-      "code": "enumerator_sequence_candidates",
-      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
-    },
-    {
-      "code": "repeated_windows",
-      "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "low_latin_tagging",
-      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
-    },
-    {
-      "code": "low_latin_translation_coverage",
-      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
-    "page_count": 650
+    "page_count": 650,
+    "skipped_detected": []
   },
   "epub": {
     "spine_text_files": 70,
-    "paragraph_count": 2109
+    "paragraph_count": 2124
   },
   "word_coverage": {
-    "pdf_content_tokens": 219414,
-    "epub_content_tokens": 220016,
-    "coverage_ratio": 0.9985,
+    "pdf_content_tokens": 219413,
+    "epub_content_tokens": 220142,
+    "coverage_ratio": 0.9987,
     "missing_word_samples": [
       {
         "word": "self",
         "pdf": 7,
-        "epub": 2
+        "epub": 3
       },
       {
         "word": "14-17",
@@ -92,7 +65,7 @@
       {
         "word": "chapter",
         "pdf": 48,
-        "epub": 92
+        "epub": 91
       },
       {
         "word": "psalms",
@@ -105,24 +78,34 @@
         "epub": 10
       },
       {
-        "word": "modern",
+        "word": "theological",
+        "pdf": 1,
+        "epub": 10
+      },
+      {
+        "word": "historical",
         "pdf": 4,
-        "epub": 13
+        "epub": 12
       },
       {
         "word": "greek",
         "pdf": 8,
-        "epub": 16
+        "epub": 15
+      },
+      {
+        "word": "modern",
+        "pdf": 4,
+        "epub": 11
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
       },
       {
         "word": "edition",
         "pdf": 3,
         "epub": 9
-      },
-      {
-        "word": "footnotes",
-        "pdf": 0,
-        "epub": 6
       }
     ]
   },
@@ -146,14 +129,14 @@
         "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of"
       },
       {
-        "page": 8,
-        "hit_ratio": 0.333,
-        "sample": "the reason of faith or an answer unto that inquiry wherefore we believe the scripture to be the word of god with the causes"
-      },
-      {
         "page": 150,
         "hit_ratio": 0.333,
         "sample": "συηεσις πνευματικη or the causes ways and means of understanding the mind of god as revealed in his word with assurance therein and declaration"
+      },
+      {
+        "page": 158,
+        "hit_ratio": 0.333,
+        "sample": "συνεσις πνευματικη chapter usurpation of the church of rome with reference unto the interpretation of the scripture or right understanding of the mind of"
       },
       {
         "page": 277,
@@ -163,7 +146,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 28298,
+    "dense_windows_checked": 28430,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -243,6 +226,10 @@
         "sample": "neither do we nor can we rationally answer by it unto this question why"
       },
       {
+        "page": 89,
+        "sample": "trahimur et accendimur tslis ergo est persuasio quae rationes non requirat talis notitia cui"
+      },
+      {
         "page": 95,
         "sample": "inquiry is what he requireth it unto it is to this law to this"
       },
@@ -253,10 +240,6 @@
       {
         "page": 102,
         "sample": "and excellency for all the ends of faith and obedience psalm 7-9 and not"
-      },
-      {
-        "page": 105,
-        "sample": "chapter the nature of divine revelations their self evidencing power considered particularly that of"
       },
       {
         "page": 112,
@@ -279,8 +262,8 @@
         "sample": "afterward converted by the preaching of the word acts or they will produce only"
       },
       {
-        "page": 146,
-        "sample": "but what need is there of a0y long disputation we therefore firmly believe the"
+        "page": 147,
+        "sample": "be divinely assisted melchior canns lee theol lib cap disputes expressly to this purpose"
       },
       {
         "page": 152,
@@ -311,20 +294,20 @@
         "sample": "speaks in that place and from which he elsewhere plainly dis tinguisheth his giving"
       },
       {
-        "page": 214,
-        "sample": "seeing all were so and were always to be so 2ndly it brings in"
-      },
-      {
         "page": 216,
         "sample": "of them essentially in his person as god man as vested with his offices"
       },
       {
         "page": 219,
-        "sample": "me understanding and shall keep thy law psalm so the apostle speaks to timothy"
+        "sample": "their minds are deeply affected with their natural ignorance they cannot perceive spiritual things"
       },
       {
         "page": 221,
         "sample": "things of god as he ought daniel hosea psalm although men may bear themselves"
+      },
+      {
+        "page": 225,
+        "sample": "may teach us humility and self abasement for we are by nature children of"
       }
     ]
   },
@@ -358,18 +341,12 @@
   "top_of_page_integrity": {
     "top_windows_checked": 646,
     "top_windows_usable": 622,
-    "skipped_top_window_count": 28,
+    "skipped_top_window_count": 14,
     "skipped_top_windows": [
       {
         "page": 5,
         "window": "book vii discourse of the work of the holy spirit in prayer",
         "sample": "[BOOK VII.] A DISCOURSE OF THE WORK OF THE HOLY SPIRIT IN PRAYER.",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 18,
-        "window": "of his will polumerw by sundry parts and degrees yet so that every age",
-        "sample": "of his will polumerw~v, by sundry parts and degrees; yet so that every age and season had light enough to guide them in the whole obedience",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -379,21 +356,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 117,
-        "window": "any tekmh rion any infallible token evidencing him to be the author of that",
-        "sample": "any tekmh>rion, any \"infallible token,\" evidencing him to be the author of that revelation. Men who are not ashamed of their Christianity will not be",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 214,
         "window": "1st this takes away the distinction between the extraordinary and ordinary gifts of the",
         "sample": "[1st.] This takes away the distinction between the extraordinary and ordinary gifts of the Spirit, so fully asserted in the Scripture, as we",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 247,
-        "window": "tina dusno hta some things hard to be understood and tina dusermh neuta some",
-        "sample": "(1.) tina< dusno>hta, some things \"hard to be understood;\" and, (2.) Tina< dusermh>neuta, some things \"hard to be uttered or",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -403,45 +368,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 267,
-        "window": "paraqh kh kalh parakataqh kh good and sacred depositum unto the ministry of the",
-        "sample": "paraqh>kh, kalh< parakataqh>kh, \"a good and sacred depositum\" unto the ministry of the church, to be kept inviolate, 1 Timothy 6:20; 2",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 269,
-        "window": "in them peculiarly is it grafh zeo pneustov writing by divine inspiration timothy and",
-        "sample": "(1.) In them peculiarly is it grafh< zeo>pneustov, a \"writing by divine inspiration,\" 2 Timothy 3:16; and hw;hoy] rp,se, the \"book of writing of",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 326,
         "window": "because he is the author of all grace in and unto them on whom",
         "sample": "[2.] Because he is the author of all grace in and unto them on whom he is poured out; so God is called the \"God of all grace,\" because he is the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 327,
-        "window": "and they called them ijkethri ouv zallou branches of supplication or prayer and they",
-        "sample": "And they called them iJkethri>ouv zallou>v, \"branches of supplication,\" or prayer. And they constantly called those prayers which they made",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 338,
-        "window": "ejndunamw santi me cristw to christ that enableth me that is by his spirit",
-        "sample": "ejndunamw>santi> me Cristw~|, \"To Christ that enableth me;\" that is, by his Spirit of power: for without the Spirit of adoption we have not the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 340,
-        "window": "by enabling them to exercise those graces and express those affections in vocal prayer",
-        "sample": "2. By enabling them to exercise those graces and express those affections in vocal prayer; for cra>zon denotes not only crying, but an earnestness of",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 366,
-        "window": "said ujperentugca nein which implies an additional supply unto what is in ourselves",
-        "sample": "said uJperentugca>nein, which implies an additional supply unto what is in ourselves.",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -475,33 +404,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 414,
-        "window": "peri aujto strefo menov ejstw pa nth kai oi on sta siv geno menov",
-        "sample": "peri< aujto<n strefo>menov, eJstw<v pa>nth kai< oi=on sta>siv geno<menov? —",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 419,
         "window": "rough garment to deceive which went not alone but was accompanied with all such",
         "sample": "\"rough garment to deceive;\" which went not alone, but [was] accompanied with all such appearing austerities as might beget an opinion of sanctity",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 456,
-        "window": "and spring of all their comforts saith he will pray the father and he",
-        "sample": "and spring of all their comforts? Saith he, \"I will pray the Father, and he shall give you a]llon para>klhton,\" verse 16; that is, \"another to be your",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 498,
-        "window": "let these things therefore be fixed in the first place namely that the to",
-        "sample": "Let these things, therefore, be fixed in the first place, — namely, that the to< cri>sma, the unction which believers receive from the Holy One, is the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
-        "page": 521,
-        "window": "by paroxu nw which is so to grieve as also to irritate and provoke",
-        "sample": "by paroxu>nw? which is so to grieve as also to irritate and provoke to anger and indignation, because it hath respect unto the rebellions of the",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -511,15 +416,9 @@
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
-        "page": 591,
-        "window": "discerning of spirits is the next gift of the spirit here enumerated allw de",
-        "sample": "Discerning of spirits is the next gift of the Spirit here enumerated: ]Allw| de< diakri>seiv pneuma>twn, — \"To another discerning of spirits,\" the",
-        "reason": "font-encoded Greek/Hebrew window"
-      },
-      {
         "page": 621,
-        "window": "that it is pro to katartismo tw ajgi wn that is for the gathering",
-        "sample": "[1.] That it is pro<v to<n katartismo<n tw~n aJgi>wn, — that is, for the gathering of the saints into complete church-order. The subject-matter of",
+        "window": "that it is προς τον καταρτισμον των αγιων that is for the gathering of",
+        "sample": "[1.] That it is πρὸς τὸν καταρτισμὸν τῶν ἁγίων, — that is, for the gathering of the saints into complete church-order. The subject-matter of",
         "reason": "font-encoded Greek/Hebrew window"
       },
       {
@@ -543,7 +442,7 @@
     "bottom_windows_usable": 605,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 10,
+    "missing_bottom_window_count": 4,
     "missing_bottom_windows": [
       {
         "page": 2,
@@ -556,208 +455,108 @@
         "sample": "testimony may rationally be supposed to be so far influenced by self- interest as to be of little validity."
       },
       {
-        "page": 93,
-        "window": "itself the scripture the writing th grafh and not merely the things written or",
-        "sample": "let it be observed, that what we assert respects the revelation itself, the Scripture, the writing, th<n grafh>n, and not merely the things written or"
-      },
-      {
-        "page": 150,
-        "window": "out of thy law psalm give me understanding and shall live 19b9144 psalm",
-        "sample": "out of thy law. — Psalm 119:18. Give me understanding, and I shall live. — <19B9144>Psalm 119:144."
+        "page": 158,
+        "window": "of other men's rights and malae fidei possesoribus so when the philistines contended for",
+        "sample": "them according as might be expected from unjust invaders of other men's rights and malae fidei possesoribus. So when the Philistines contended for"
       },
       {
         "page": 219,
         "window": "understanding and shall keep thy law psalm so the apostle speaks to timothy",
         "sample": "understanding, and I shall keep thy law,\" Psalm 119:34. So the apostle speaks to Timothy,"
-      },
-      {
-        "page": 365,
-        "window": "verse and there he is said simply ejntugca nein but the spirit here is",
-        "sample": "its proper place, as a consequent and fruit of his death and resurrection, verse 35. And there he is said simply ejntugca>nein? but the Spirit here is"
-      },
-      {
-        "page": 413,
-        "window": "ejrh mw katasta sei gege nhtai ajtremei th aujtou oujsi oujdamou ajpokli nwn oujde",
-        "sample": "aJrpasqei<v h{ ejnqousia>sav hJsuch~ ejn ejrh>mw| katasta>sei gege>nhtai ajtremei~, th~| aujtou~ oujsi>a| oujdamou~ ajpokli>nwn, oujde<"
-      },
-      {
-        "page": 513,
-        "window": "mention made of it corinthians dou to ajrjrjazw na tou pneu matov the earnest",
-        "sample": "expressed in every place where there is mention made of it: 2 Corinthians 1:22, Dou<v to<n ajrjrJazw~na tou~ Pneu>matov? — \"The earnest"
-      },
-      {
-        "page": 532,
-        "window": "of their communication they are called merismoi tou pneu matov ajgi ou hebrews distributions",
-        "sample": "Again; with respect unto the manner of their communication, they are called merismoi< tou~ Pneu>matov aJgi>ou, Hebrews 2:4, \"distributions,\""
-      },
-      {
-        "page": 621,
-        "window": "eijv oijkodomh tou sw matov tou cristou unto the edification of the body of",
-        "sample": "[3.] Both these are directed unto one general issue. It is all eijv oijkodomh<n tou~ sw>matov tou~ Cristou~, — \"unto the edification of the body of"
       }
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1765,
-    "split_candidate_count": 9,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,",
-        "next": "IV."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,",
-        "next": "V."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,",
-        "next": "VI."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "previous": "The manner of prayer is farther considered with special reference to [Ephesians 6:18]",
-        "next": "VII."
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "previous": "In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,",
-        "next": "III."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "(1.) Extraordinary gifts constituted extraordinary officers — apostles, evangelists, and prophets,",
-        "next": "III."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": "ction, from its original acquisition, from the immediate cause of its actual communication, from its own nature, from the variety of offices in it, and from the end designed by it,",
-        "next": "VI."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "previous": " the Spirit is promised, administered, and continued; the plain assertions of Scripture; the indispensable necessity for them; and from the actual enjoyment and experience of them,",
-        "next": "VII."
-      },
-      {
-        "file": "EPUB/ch057.xhtml",
-        "previous": "e, another a hand, another a foot, in the body, by virtue of peculiar gifts: for \"unto every one of us is given grace according to the measure of the gift of Christ,\" Ephesians 4:7",
-        "next": "These gifts are not saving, sanctifying graces; those were not so in themselves which made the most glorious and astonishing appearance in the world, and which were most eminently "
-      }
-    ],
-    "structural_start_exclusions": 295,
-    "short_fragment_count": 20,
+    "paragraphs_checked": 1786,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 298,
+    "short_fragment_count": 18,
     "short_fragments": [
       {
-        "file": "EPUB/ch005.xhtml",
+        "file": "EPUB/ch004.xhtml",
         "text": "May 11, 1677."
       },
       {
-        "file": "EPUB/ch010.xhtml",
-        "text": "Isaiah 8:19, 20,"
+        "file": "EPUB/ch009.xhtml",
+        "text": "Some of them we must mention: —"
       },
       {
-        "file": "EPUB/ch016.xhtml",
+        "file": "EPUB/ch009.xhtml",
+        "text": "Isaiah 8:19,20,"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
         "text": "I."
       },
       {
-        "file": "EPUB/ch029.xhtml",
+        "file": "EPUB/ch028.xhtml",
         "text": "I."
       },
       {
-        "file": "EPUB/ch029.xhtml",
+        "file": "EPUB/ch028.xhtml",
         "text": "II."
       },
       {
-        "file": "EPUB/ch029.xhtml",
-        "text": "IV."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "text": "V."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "text": "VI."
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
+        "file": "EPUB/ch028.xhtml",
         "text": "VII."
       },
       {
-        "file": "EPUB/ch035.xhtml",
+        "file": "EPUB/ch034.xhtml",
         "text": "I answer, —"
       },
       {
-        "file": "EPUB/ch044.xhtml",
+        "file": "EPUB/ch036.xhtml",
+        "text": "I say, therefore, —"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
         "text": "I."
       },
       {
-        "file": "EPUB/ch044.xhtml",
+        "file": "EPUB/ch043.xhtml",
         "text": "II."
       },
       {
-        "file": "EPUB/ch044.xhtml",
+        "file": "EPUB/ch043.xhtml",
         "text": "III."
       },
       {
         "file": "EPUB/ch044.xhtml",
-        "text": "III."
+        "text": "OF THE SECOND TREATISE."
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "ED."
       },
       {
         "file": "EPUB/ch045.xhtml",
-        "text": "III."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "text": "VI."
-      },
-      {
-        "file": "EPUB/ch045.xhtml",
-        "text": "VII."
-      },
-      {
-        "file": "EPUB/ch046.xhtml",
         "text": "NATH. MATHER. 19 October 27,1692."
       },
       {
-        "file": "EPUB/ch058.xhtml",
+        "file": "EPUB/ch057.xhtml",
         "text": "And, —"
       },
       {
-        "file": "EPUB/ch060.xhtml",
+        "file": "EPUB/ch059.xhtml",
         "text": "Such were, —"
+      },
+      {
+        "file": "EPUB/ch063.xhtml",
+        "text": "END OF VOL 4."
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 6,
+    "inline_structural_candidate_count": 2,
     "inline_structural_candidates": [
       {
-        "file": "EPUB/ch016.xhtml",
-        "text": "2. Into the especial nature of the Spirit's work in enlightening us into a knowledge of the mind of God in Scripture. Its nature is first considered by a reference to several scriptural expressions descriptive of it, such as \"opening the eyes,\" \"translating ou"
+        "file": "EPUB/ch010.xhtml",
+        "text": "Now, there are greater and more evident impressions of divine excellencies left on the written word, from the infinite wisdom of the Author of it, than any that are communicated unto the works of God, of what sort soever. Hence David, comparing the works and t"
       },
       {
-        "file": "EPUB/ch024.xhtml",
-        "text": "Nor do I believe that any one who doth and can thus pray as he ought, in a conscientious study of the word, shall ever be left unto the final prevalency of any pernicious error or the ignorance of any fundamental truth. None utterly miscarry in the seeking aft"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "text": "I say, therefore, — 1. That the things insisted on are in some degree and measure necessary unto all acceptable prayer. The Scripture assigns them thereunto, and believers find them so by their own experience. For we discourse not about prayer as it is the wor"
-      },
-      {
-        "file": "EPUB/ch044.xhtml",
-        "text": "Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference to [2 Corinthians 1:22] 5:5, [Ephesians"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "text": "What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the church."
-      },
-      {
-        "file": "EPUB/ch062.xhtml",
-        "text": "Designing to treat of the spiritual gifts bestowed on the ministry of the church, I have thus far diverted unto the consideration of the ministry itself as it is a gift of Christ, and shall shut it up with a few corollaries, As, 1. Where there is any office er"
+        "file": "EPUB/ch043.xhtml",
+        "text": "In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively, III. And some of his operations in them as such, and of the benefits which they in consequence enjoy, are specified. His opera"
       }
     ],
     "reference_continuation_split_count": 0,
@@ -766,25 +565,24 @@
     "citation_continuation_splits": [],
     "suspicious_large_number_start_count": 0,
     "suspicious_large_number_starts": [],
-    "roman_heading_candidate_count": 0,
-    "roman_heading_candidates": [],
-    "overlong_heading_candidate_count": 1,
-    "overlong_heading_candidates": [
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
       {
-        "file": "EPUB/ch047.xhtml",
-        "tag": "h3",
-        "text": "The Holy Ghost the comforter of the church by way of office — How he is the church's advocate — John 14:16; 1 John 2:1, 2; John 16:8-11 opened."
+        "file": "EPUB/ch042.xhtml",
+        "text": "II. and XI. The discourse on Spiritual Gifts, though comparatively short, is the second part of the main.body of the whole work on the Spirit; and, from various allusions to it in other works of the author, he seems to t"
       }
     ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": []
   },
   "enumerator_integrity": {
     "pdf_marker_count": 416,
-    "epub_marker_count": 429,
+    "epub_marker_count": 426,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 7,
+    "excess_marker_count": 6,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -792,7 +590,7 @@
         "epub": 1,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p88",
+            "location": "EPUB/structural_guide.xhtml#p90",
             "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           }
         ]
@@ -803,15 +601,15 @@
         "epub": 99,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p91",
+            "location": "EPUB/structural_guide.xhtml#p93",
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p161",
+            "location": "EPUB/ch006.xhtml#p164",
             "context": "1. And in our believing, or our faith, two things are to be considered: — (1.) What it is that we do believe; and, (2.) Wherefore we do so believe it."
           },
           {
-            "location": "EPUB/ch008.xhtml#p194",
+            "location": "EPUB/ch007.xhtml#p196",
             "context": "(1.) As it takes on itself to speak in the name and authority of God, and delivers nothing, commands nothing, but what becomes his infinite holiness, wisdom, and goodness; so it makes"
           }
         ]
@@ -822,15 +620,15 @@
         "epub": 98,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p91",
+            "location": "EPUB/structural_guide.xhtml#p93",
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p161",
+            "location": "EPUB/ch006.xhtml#p164",
             "context": "or our faith, two things are to be considered: — (1.) What it is that we do believe; and, (2.) Wherefore we do so believe it."
           },
           {
-            "location": "EPUB/ch008.xhtml#p198",
+            "location": "EPUB/ch007.xhtml#p200",
             "context": "(2.) The second end of this doctrine is, to direct mankind in their proper course of living unto God, and attaining that rest and blessedness whereof they are capable, and which they c"
           }
         ]
@@ -841,15 +639,15 @@
         "epub": 33,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p91",
+            "location": "EPUB/structural_guide.xhtml#p93",
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch008.xhtml#p207",
+            "location": "EPUB/ch007.xhtml#p209",
             "context": "And, to evidence the force that is in this consideration, I shall briefly represent, [1.] Who they were that gave and do give this testimony, in some especial instances; [2.] What they gave this testimony unto; [3.] How, or by what means, they did so: —"
           },
           {
-            "location": "EPUB/ch008.xhtml#p208",
+            "location": "EPUB/ch007.xhtml#p210",
             "context": "[1.] And, in the first place, the testimony of those by whom the several books of the Scripture were written is to be considered. They all of them, severally and jointly, witnessed tha"
           }
         ]
@@ -857,18 +655,10 @@
       {
         "marker": "[1]",
         "pdf": 0,
-        "epub": 3,
+        "epub": 1,
         "examples": [
           {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from"
-          },
-          {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "entirely distinct from the original authorial/historical footnotes and reset starting at [1] for each chapter. Enhanced Original Footnotes 1, 2, ... : Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Lati"
-          },
-          {
-            "location": "EPUB/structural_guide.xhtml#p88",
+            "location": "EPUB/structural_guide.xhtml#p90",
             "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
           }
         ]
@@ -879,27 +669,16 @@
         "epub": 33,
         "examples": [
           {
-            "location": "EPUB/structural_guide.xhtml#p91",
+            "location": "EPUB/structural_guide.xhtml#p93",
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch008.xhtml#p207",
+            "location": "EPUB/ch007.xhtml#p209",
             "context": "ent, [1.] Who they were that gave and do give this testimony, in some especial instances; [2.] What they gave this testimony unto; [3.] How, or by what means, they did so: —"
           },
           {
-            "location": "EPUB/ch008.xhtml#p216",
+            "location": "EPUB/ch007.xhtml#p218",
             "context": "[2.] What it was they gave testimony unto is duly to be considered; and this was, not only that the book of the Scripture was good, holy, and true, in all the contents of it, but that"
-          }
-        ]
-      },
-      {
-        "marker": "[2]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/colophon.xhtml#p17",
-            "context": "Bracketed Footnotes [1], [2], ... : These represent modern editorial translations of inline Latin, Greek, and Hebrew phrases and verified modern patristic citations. They are kept entirely distinct from the o"
           }
         ]
       }
@@ -907,7 +686,7 @@
     "orphan_candidate_count": 1,
     "orphan_candidates": [
       {
-        "file": "EPUB/ch021.xhtml",
+        "file": "EPUB/ch020.xhtml",
         "marker": "(2.)",
         "family": "paren_decimal",
         "context": "(2.) Moreover, the effect of this work of the Holy Spirit on the minds of men doth evidence of what nature it is, And this, also, is variously expressed; as, —"
@@ -1021,7 +800,7 @@
     "epub_greek_word_count": 712,
     "pdf_greek_unique_words": 435,
     "epub_greek_unique_words": 434,
-    "greek_word_coverage_ratio": 0.9899,
+    "greek_word_coverage_ratio": 0.9957,
     "pdf_hebrew_word_count": 99,
     "epub_hebrew_word_count": 99,
     "pdf_hebrew_unique_words": 84,
@@ -1039,105 +818,25 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 3199,
-    "epub_latin_word_count": 3226,
-    "epub_tagged_latin_word_count": 102,
-    "pdf_latin_unique_words": 809,
-    "epub_latin_unique_words": 811,
-    "epub_tagged_unique_words": 81,
-    "latin_word_coverage_ratio": 0.9978,
-    "latin_tagging_ratio": 0.0316,
+    "pdf_latin_word_count": 1455,
+    "epub_latin_word_count": 1478,
+    "epub_tagged_latin_word_count": 844,
+    "pdf_latin_unique_words": 758,
+    "epub_latin_unique_words": 759,
+    "epub_tagged_unique_words": 517,
+    "latin_word_coverage_ratio": 0.9945,
+    "latin_tagging_ratio": 0.571,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "nor",
-        "epub": 488,
-        "tagged": 0
-      },
-      {
-        "word": "jesus",
-        "epub": 175,
-        "tagged": 0
-      },
-      {
-        "word": "thereunto",
-        "epub": 160,
-        "tagged": 0
-      },
-      {
-        "word": "whereas",
-        "epub": 139,
-        "tagged": 0
-      },
-      {
-        "word": "immediate",
-        "epub": 137,
-        "tagged": 0
-      },
-      {
-        "word": "yea",
-        "epub": 114,
-        "tagged": 0
-      },
-      {
-        "word": "hereunto",
-        "epub": 76,
-        "tagged": 0
-      },
-      {
-        "word": "distinct",
-        "epub": 52,
-        "tagged": 0
-      },
-      {
-        "word": "elsewhere",
-        "epub": 51,
-        "tagged": 0
-      },
-      {
-        "word": "whereunto",
-        "epub": 47,
-        "tagged": 0
-      },
-      {
-        "word": "mere",
-        "epub": 44,
-        "tagged": 0
-      },
-      {
-        "word": "endeavor",
-        "epub": 41,
-        "tagged": 0
-      },
-      {
-        "word": "et",
-        "epub": 44,
-        "tagged": 9
-      },
-      {
-        "word": "abba",
-        "epub": 31,
-        "tagged": 0
-      },
       {
         "word": "advocate",
         "epub": 31,
         "tagged": 0
       },
       {
-        "word": "non",
-        "epub": 27,
+        "word": "abba",
+        "epub": 31,
         "tagged": 1
-      },
-      {
-        "word": "poor",
-        "epub": 23,
-        "tagged": 0
-      },
-      {
-        "word": "de",
-        "epub": 19,
-        "tagged": 0
       },
       {
         "word": "communicate",
@@ -1145,24 +844,9 @@
         "tagged": 0
       },
       {
-        "word": "abraham",
-        "epub": 17,
-        "tagged": 0
-      },
-      {
         "word": "iii",
         "epub": 16,
-        "tagged": 0
-      },
-      {
-        "word": "est",
-        "epub": 17,
         "tagged": 1
-      },
-      {
-        "word": "sed",
-        "epub": 16,
-        "tagged": 0
       },
       {
         "word": "adhere",
@@ -1170,8 +854,103 @@
         "tagged": 0
       },
       {
-        "word": "everywhere",
+        "word": "obstinate",
         "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "forego",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "vii",
+        "epub": 12,
+        "tagged": 1
+      },
+      {
+        "word": "subordinate",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "nowhere",
+        "epub": 11,
+        "tagged": 0
+      },
+      {
+        "word": "analysis",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "inferior",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "hate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "sedate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "relate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "viii",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "inveterate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "superior",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "innate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "dream",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "commensurate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "samaria",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "abhor",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "illustrate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "regulate",
+        "epub": 5,
         "tagged": 0
       }
     ]
@@ -1182,15 +961,69 @@
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 9,
-    "translated_latin_runs_count": 7,
-    "latin_translation_ratio": 0.7778,
+    "tagged_latin_runs_count": 214,
+    "translated_latin_runs_count": 117,
+    "latin_translation_ratio": 0.5467,
     "untranslated_latin_samples": [
       {
-        "phrase": "continuing in the Son, and in the Father."
+        "phrase": "de facto"
       },
       {
-        "phrase": "witnesses in Jerusalem, and in all Judea, and in Samaria, and unto the uttermost part of the earth;"
+        "phrase": "Pietate et religione atque"
+      },
+      {
+        "phrase": "una sapientia"
+      },
+      {
+        "phrase": "deorum hnmortalium"
+      },
+      {
+        "phrase": "omnia regi"
+      },
+      {
+        "phrase": "orator?] Orat. de"
+      },
+      {
+        "phrase": "De Civitate Dei"
+      },
+      {
+        "phrase": "hoc fixum, quos Spiritus sanctus intus"
+      },
+      {
+        "phrase": "acquiescere in Scriptura, et"
+      },
+      {
+        "phrase": "demonstrationi et rationibus subjici eam fas"
+      },
+      {
+        "phrase": "quam tamen meretur apud nos"
+      },
+      {
+        "phrase": "Spiritus testimonio consequi. Etsi enim reverentiam sua sibi ultro majestate"
+      },
+      {
+        "phrase": "tunc tamen"
+      },
+      {
+        "phrase": "quum per Spiritum obsignata est cordibus nostria Illius ergo veritate illuminati, jam non"
+      },
+      {
+        "phrase": "aliorum judicio credimus a Deo"
+      },
+      {
+        "phrase": "Scripturam; sed supra humanum judicium, certo certius constituimus (non secus"
+      },
+      {
+        "phrase": "si ipsius Dei"
+      },
+      {
+        "phrase": "intueremur) hominum ministerio, ab ipsissimo Dei"
+      },
+      {
+        "phrase": "Non argumenta, non"
+      },
+      {
+        "phrase": "quaerimus, quibus judicium nostrum"
       }
     ]
   },
@@ -1205,6 +1038,12 @@
   "font_config_check": {
     "font_issue_count": 0,
     "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "low_latin_word_coverage",
+      "paragraph_split_candidates"
+    ]
   },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."

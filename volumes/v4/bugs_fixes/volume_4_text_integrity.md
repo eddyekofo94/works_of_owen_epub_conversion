@@ -1,46 +1,46 @@
 # Text Integrity Audit: Volume 4
 
 - Status: **WARN**
-- Warnings: 12
+- Warnings: 5
 - PDF pages: 650
 - EPUB text files: 70
-- EPUB paragraphs/headings: 2109
+- EPUB paragraphs/headings: 2124
 
 ## Coverage
 
-- PDF content tokens: 219414
-- EPUB content tokens: 220016
-- Approximate PDF-to-EPUB coverage ratio: 0.9985
+- PDF content tokens: 219413
+- EPUB content tokens: 220142
+- Approximate PDF-to-EPUB coverage ratio: 0.9987
 - Pages checked: 641
 - Weak page matches: 6
-- Dense source windows checked: 28298
+- Dense source windows checked: 28430
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 4
 - Top-of-page body windows checked: 622
-- Top-of-page windows skipped as unstable: 28
+- Top-of-page windows skipped as unstable: 14
 - Missing top-of-page body windows: 1
 - Bottom-of-page body windows checked: 605
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 10
+- Missing bottom-of-page body windows: 4
 
 ## Paragraphs
 
-- Body paragraphs checked: 1765
-- Possible faulty paragraph splits: 9
-- Structural starts excluded from split warnings: 295
-- Short fragments: 20
+- Body paragraphs checked: 1786
+- Possible faulty paragraph splits: 0
+- Structural starts excluded from split warnings: 298
+- Short fragments: 18
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 6
+- Inline structural marker candidates: 2
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
-- Roman heading candidates: 0
-- Overlong heading candidates: 1
+- Roman heading candidates: 1
+- Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 416
-- EPUB enumerator markers: 429
+- EPUB enumerator markers: 426
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 1
 
@@ -48,7 +48,7 @@
 
 - PDF Greek words: 713
 - EPUB Greek words: 712
-- Greek word coverage ratio: 0.9899
+- Greek word coverage ratio: 0.9957
 - PDF Hebrew words: 99
 - EPUB Hebrew words: 99
 - Hebrew word coverage ratio: 1.0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 3199
-- EPUB Latin words: 3226
-- EPUB Tagged Latin words: 102
-- Latin word coverage ratio: 0.9978
-- Latin word tagging ratio: 0.0316
+- PDF Latin words: 1455
+- EPUB Latin words: 1478
+- EPUB Tagged Latin words: 844
+- Latin word coverage ratio: 0.9945
+- Latin word tagging ratio: 0.571
 - Latin clauses checked: 114
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 9
-- Translated Latin runs: 7
-- Latin translation ratio: 0.7778
+- Tagged Latin runs checked: 214
+- Translated Latin runs: 117
+- Latin translation ratio: 0.5467
 
 ## Warnings
 
@@ -77,13 +77,6 @@
 - `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
-- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
@@ -113,56 +106,34 @@
 
 - page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
 - page: 44; sample: testimony may rationally be supposed to be so far influenced by self- interest as to be of little validity.
-- page: 93; sample: let it be observed, that what we assert respects the revelation itself, the Scripture, the writing, th<n grafh>n, and not merely the things written or
-- page: 150; sample: out of thy law. — Psalm 119:18. Give me understanding, and I shall live. — <19B9144>Psalm 119:144.
+- page: 158; sample: them according as might be expected from unjust invaders of other men's rights and malae fidei possesoribus. So when the Philistines contended for
 - page: 219; sample: understanding, and I shall keep thy law," Psalm 119:34. So the apostle speaks to Timothy,
-- page: 365; sample: its proper place, as a consequent and fruit of his death and resurrection, verse 35. And there he is said simply ejntugca>nein? but the Spirit here is
-- page: 413; sample: aJrpasqei<v h{ ejnqousia>sav hJsuch~ ejn ejrh>mw| katasta>sei gege>nhtai ajtremei~, th~| aujtou~ oujsi>a| oujdamou~ ajpokli>nwn, oujde<
-- page: 513; sample: expressed in every place where there is mention made of it: 2 Corinthians 1:22, Dou<v to<n ajrjrJazw~na tou~ Pneu>matov? — "The earnest
-- page: 532; sample: Again; with respect unto the manner of their communication, they are called merismoi< tou~ Pneu>matov aJgi>ou, Hebrews 2:4, "distributions,"
-- page: 621; sample: [3.] Both these are directed unto one general issue. It is all eijv oijkodomh<n tou~ sw>matov tou~ Cristou~, — "unto the edification of the body of
-
-## Possible Paragraph Splits
-
-- file: EPUB/ch029.xhtml; previous: Its general nature is considered, — prayer having been defined to be a spiritual faculty of exercising Christian graces in the way of vocal requests and supplications to God,; next: IV.
-- file: EPUB/ch029.xhtml; previous: on of our spiritual wants; acquainting us with the promises of grace and mercy for our relief; and leading us to express desires for any blessing in order to right and proper ends,; next: V.
-- file: EPUB/ch029.xhtml; previous: planting holy and gracious desires after the objects sought; giving us delight in God as the object of prayer; and keeping us intent on Christ, as the way and ground of acceptance,; next: VI.
-- file: EPUB/ch029.xhtml; previous: The manner of prayer is farther considered with special reference to [Ephesians 6:18]; next: VII.
-- file: EPUB/ch044.xhtml; previous: In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively,; next: III.
-- file: EPUB/ch045.xhtml; previous: (1.) Extraordinary gifts constituted extraordinary officers — apostles, evangelists, and prophets,; next: III.
-- file: EPUB/ch045.xhtml; previous: ction, from its original acquisition, from the immediate cause of its actual communication, from its own nature, from the variety of offices in it, and from the end designed by it,; next: VI.
-- file: EPUB/ch045.xhtml; previous: the Spirit is promised, administered, and continued; the plain assertions of Scripture; the indispensable necessity for them; and from the actual enjoyment and experience of them,; next: VII.
-- file: EPUB/ch057.xhtml; previous: e, another a hand, another a foot, in the body, by virtue of peculiar gifts: for "unto every one of us is given grace according to the measure of the gift of Christ," Ephesians 4:7; next: These gifts are not saving, sanctifying graces; those were not so in themselves which made the most glorious and astonishing appearance in the world, and which were most eminently
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch016.xhtml; text: 2. Into the especial nature of the Spirit's work in enlightening us into a knowledge of the mind of God in Scripture. Its nature is first considered by a reference to several scriptural expressions descriptive of it, such as "opening the...
-- file: EPUB/ch024.xhtml; text: Nor do I believe that any one who doth and can thus pray as he ought, in a conscientious study of the word, shall ever be left unto the final prevalency of any pernicious error or the ignorance of any fundamental truth. None utterly misc...
-- file: EPUB/ch037.xhtml; text: I say, therefore, — 1. That the things insisted on are in some degree and measure necessary unto all acceptable prayer. The Scripture assigns them thereunto, and believers find them so by their own experience. For we discourse not about ...
-- file: EPUB/ch044.xhtml; text: Among the special benefits indicated are, — 1. The unction of the Spirit, 5; 2. sealing of the Spirit, expounded in a brief comment on [Ephesians 1:13] 4:30, VI.; and, 3. The Spirit as an earnest, considered in reference to [2 Corinthian...
-- file: EPUB/ch052.xhtml; text: What remains is, to inquire, — 1. What benefit or advantage we have by this unction; 2. How this belongs unto our consolation, seeing the Holy Spirit is thus bestowed on us as he is promised to be the comforter of the church.
-- file: EPUB/ch062.xhtml; text: Designing to treat of the spiritual gifts bestowed on the ministry of the church, I have thus far diverted unto the consideration of the ministry itself as it is a gift of Christ, and shall shut it up with a few corollaries, As, 1. Where...
+- file: EPUB/ch010.xhtml; text: Now, there are greater and more evident impressions of divine excellencies left on the written word, from the infinite wisdom of the Author of it, than any that are communicated unto the works of God, of what sort soever. Hence David, co...
+- file: EPUB/ch043.xhtml; text: In regard to his effects on believers, it is first proved that his effectual consolations are the privilege of believers exclusively, III. And some of his operations in them as such, and of the benefits which they in consequence enjoy, a...
 
-## Overlong Heading Candidates
+## Roman Heading Candidates
 
-- file: EPUB/ch047.xhtml; tag: h3; text: The Holy Ghost the comforter of the church by way of office — How he is the church's advocate — John 14:16; 1 John 2:1, 2; John 16:8-11 opened.
+- file: EPUB/ch042.xhtml; text: II. and XI. The discourse on Spiritual Gifts, though comparatively short, is the second part of the main.body of the whole work on the Spirit; and, from various allusions to it in other works of the author, he seems to t
 
 ## Short Fragments
 
-- file: EPUB/ch005.xhtml; text: May 11, 1677.
-- file: EPUB/ch010.xhtml; text: Isaiah 8:19, 20,
-- file: EPUB/ch016.xhtml; text: I.
-- file: EPUB/ch029.xhtml; text: I.
-- file: EPUB/ch029.xhtml; text: II.
-- file: EPUB/ch029.xhtml; text: IV.
-- file: EPUB/ch029.xhtml; text: V.
-- file: EPUB/ch029.xhtml; text: VI.
-- file: EPUB/ch029.xhtml; text: VII.
-- file: EPUB/ch035.xhtml; text: I answer, —
+- file: EPUB/ch004.xhtml; text: May 11, 1677.
+- file: EPUB/ch009.xhtml; text: Some of them we must mention: —
+- file: EPUB/ch009.xhtml; text: Isaiah 8:19,20,
+- file: EPUB/ch015.xhtml; text: I.
+- file: EPUB/ch028.xhtml; text: I.
+- file: EPUB/ch028.xhtml; text: II.
+- file: EPUB/ch028.xhtml; text: VII.
+- file: EPUB/ch034.xhtml; text: I answer, —
+- file: EPUB/ch036.xhtml; text: I say, therefore, —
+- file: EPUB/ch043.xhtml; text: I.
 
 ## Enumerator Sequence Candidates
 
-- file: EPUB/ch021.xhtml; marker: (2.); family: paren_decimal; context: (2.) Moreover, the effect of this work of the Holy Spirit on the minds of men doth evidence of what nature it is, And this, also, is variously expressed; as, —
+- file: EPUB/ch020.xhtml; marker: (2.); family: paren_decimal; context: (2.) Moreover, the effect of this work of the Holy Spirit on the minds of men doth evidence of what nature it is, And this, also, is variously expressed; as, —
 
 ## Repeated Windows
 
@@ -179,38 +150,48 @@
 
 ## Missing Word Samples
 
-- word: self; pdf: 7; epub: 2
+- word: self; pdf: 7; epub: 3
 - word: 14-17; pdf: 4; epub: 0
 - word: editor; pdf: 4; epub: 1
 - word: 16-18; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
-- word: chapter; pdf: 48; epub: 92
+- word: chapter; pdf: 48; epub: 91
 - word: psalms; pdf: 7; epub: 30
 - word: digital; pdf: 0; epub: 10
-- word: modern; pdf: 4; epub: 13
-- word: greek; pdf: 8; epub: 16
+- word: theological; pdf: 1; epub: 10
+- word: historical; pdf: 4; epub: 12
+- word: greek; pdf: 8; epub: 15
+- word: modern; pdf: 4; epub: 11
+- word: footnotes; pdf: 0; epub: 7
 - word: edition; pdf: 3; epub: 9
-- word: footnotes; pdf: 0; epub: 6
 
 ## Untagged Latin Word Samples
 
-- word: nor; epub: 488; tagged: 0
-- word: jesus; epub: 175; tagged: 0
-- word: thereunto; epub: 160; tagged: 0
-- word: whereas; epub: 139; tagged: 0
-- word: immediate; epub: 137; tagged: 0
-- word: yea; epub: 114; tagged: 0
-- word: hereunto; epub: 76; tagged: 0
-- word: distinct; epub: 52; tagged: 0
-- word: elsewhere; epub: 51; tagged: 0
-- word: whereunto; epub: 47; tagged: 0
+- word: advocate; epub: 31; tagged: 0
+- word: abba; epub: 31; tagged: 1
+- word: communicate; epub: 18; tagged: 0
+- word: iii; epub: 16; tagged: 1
+- word: adhere; epub: 15; tagged: 0
+- word: obstinate; epub: 15; tagged: 0
+- word: forego; epub: 14; tagged: 0
+- word: vii; epub: 12; tagged: 1
+- word: subordinate; epub: 11; tagged: 0
+- word: nowhere; epub: 11; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: continuing in the Son, and in the Father.
-- phrase: witnesses in Jerusalem, and in all Judea, and in Samaria, and unto the uttermost part of the earth;
+- phrase: de facto
+- phrase: Pietate et religione atque
+- phrase: una sapientia
+- phrase: deorum hnmortalium
+- phrase: omnia regi
+- phrase: orator?] Orat. de
+- phrase: De Civitate Dei
+- phrase: hoc fixum, quos Spiritus sanctus intus
+- phrase: acquiescere in Scriptura, et
+- phrase: demonstrationi et rationibus subjici eam fas
 
 ## Limits
 

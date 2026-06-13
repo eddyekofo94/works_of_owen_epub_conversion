@@ -1,20 +1,14 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-06-09T10:45:58.693519+00:00",
-  "status": "warn",
+  "epub": "volumes/v4/output/volume_4.epub",
+  "generated_at": "2026-06-13T09:04:45.951249+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 10
-    }
-  ],
+  "warnings": [],
   "info": {
-    "file_count": 99,
-    "epub_size_bytes": 4606370,
+    "file_count": 102,
+    "epub_size_bytes": 5976781,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +17,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 90,
-    "spine_count": 70,
+    "manifest_count": 93,
+    "spine_count": 71,
     "xhtml_count": 72,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 13,
+    "font_count": 16,
     "language": {
       "greek_chars": 4062,
       "greek_untagged_chars": 0,
@@ -40,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 41,
-      "unique_noteref_targets": 40,
-      "endnote_anchor_count": 40,
+      "noteref_count": 112,
+      "unique_noteref_targets": 112,
+      "endnote_anchor_count": 112,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -54,7 +48,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 10,
+      "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 1,
       "chapter_heading_in_paragraph_files": 1,
@@ -69,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 8,
+      "lowercase_paragraph_start_files": 0,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -80,58 +74,7 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "repeated_phrase": [
-          {
-            "file": "combined_text",
-            "text": "chapter 5 divine revelation itself the only foundation",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 2 zechariah 12 10 opened and vindicated",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 3 galatians 4 6 opened and vindicated",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 5 the work of the holy spirit",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 7 the nature of prayer in general",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 9 duties inferred from the preceding discourse",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 6 the spirit a seal and how",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 7 the spirit an earnest and how",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 1 spiritual gifts their names and signification",
-            "count": 1
-          },
-          {
-            "file": "combined_text",
-            "text": "chapter 6 of ordinary gifts of the spirit",
-            "count": 1
-          }
-        ],
+        "repeated_phrase": [],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],
@@ -139,13 +82,13 @@
         "unprocessed_ages_marker": [],
         "page_reference_split": [
           {
-            "file": "EPUB/ch043.xhtml",
+            "file": "EPUB/ch042.xhtml",
             "text": "p. 249."
           }
         ],
         "chapter_heading_in_paragraph": [
           {
-            "file": "EPUB/ch006.xhtml",
+            "file": "EPUB/ch005.xhtml",
             "text": "CHAPTER I"
           }
         ],
@@ -165,40 +108,7 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/ch007.xhtml",
-            "text": "or the things delivered in the Scripture and farther declared by Christ, which be"
-          },
-          {
-            "file": "EPUB/ch009.xhtml",
-            "text": "nor is there any of the divines of that church which diment herein. We do not, th"
-          },
-          {
-            "file": "EPUB/ch011.xhtml",
-            "text": "for \"of his own will doth God beget us with the word of truth,\" James 1:18."
-          },
-          {
-            "file": "EPUB/ch013.xhtml",
-            "text": "saith Stapleton; — \"The secret testimony of the Spirit is altogether necessary, t"
-          },
-          {
-            "file": "EPUB/ch021.xhtml",
-            "text": "for men are very apt to please themselves with the working and improvement of the"
-          },
-          {
-            "file": "EPUB/ch055.xhtml",
-            "text": "should receive strong consolation in all their distresses, when they flee for ref"
-          },
-          {
-            "file": "EPUB/ch059.xhtml",
-            "text": "whereas those who pretend to be their successors, if they will speak the truth, m"
-          },
-          {
-            "file": "EPUB/ch060.xhtml",
-            "text": "this gift of healing being a token and pledge thereof. This sign did our Savior g"
-          }
-        ],
+        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
@@ -207,5 +117,15 @@
     },
     "nav_link_count": 73,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
-  }
+  },
+  "unused_whitelist_epub_warnings": [
+    "low_latin_word_coverage",
+    "low_latin_tagging",
+    "low_latin_translation_coverage",
+    "paragraph_split_candidates",
+    "inline_structural_markers",
+    "roman_heading_candidates",
+    "enumerator_sequence_candidates",
+    "repeated_windows"
+  ]
 }

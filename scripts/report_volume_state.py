@@ -78,7 +78,11 @@ def gather_volume_data(vol: int) -> dict:
     # metadata from shared.py
     try:
         from shared import VOLUME_CONFIG
-        cfg = VOLUME_CONFIG.get(vol, {})
+        try:
+            vol_key = int(vol)
+        except ValueError:
+            vol_key = vol
+        cfg = VOLUME_CONFIG.get(vol_key, {})
     except ImportError:
         cfg = {}
 
