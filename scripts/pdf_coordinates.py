@@ -234,9 +234,17 @@ def _join_blockquote_lines(lines):
         if not stripped:
             continue
         if joined.endswith('-'):
-            candidate = joined + stripped
-            if any(term.lower() == candidate.lower() for term in OWEN_HARD_HYPHENS):
-                joined += ' ' + stripped
+            # Word-level hard-hyphen check
+            m_prev = re.search(r'([A-Za-z0-9\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+)-$', joined)
+            m_next = re.match(r'^([A-Za-z0-9\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+)', stripped)
+            
+            is_hard = False
+            if m_prev and m_next:
+                word_candidate = m_prev.group(1) + '-' + m_next.group(1)
+                is_hard = any(term.lower() == word_candidate.lower() for term in OWEN_HARD_HYPHENS)
+                
+            if is_hard:
+                joined += stripped
             else:
                 joined = joined[:-1] + stripped
         else:

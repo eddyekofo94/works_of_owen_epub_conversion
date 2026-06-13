@@ -2578,6 +2578,66 @@ FOOTNOTE_TRANSLATIONS = {
 }
 
 BODY_TRANSLATIONS = {
+    "saepius morti proximus": (
+        "<b>Modern Translation:</b> &ldquo;oftentimes close to death.&rdquo;"
+    ),
+    "Vindiciae Evangelicae": (
+        "<b>Modern Translation:</b> <i>Vindiciae Evangelicae</i> (Gospel Vindications), the title of John Owen's 1655 work refuting Socinianism."
+    ),
+    "as a \"causa sine qua non": (
+        "<b>Modern Translation:</b> &ldquo;as an indispensable condition [cause without which not].&rdquo;"
+    ),
+    "probatum est": (
+        "<b>Modern Translation:</b> &ldquo;it has been proved [verified].&rdquo;"
+    ),
+    "mihi plaudo": (
+        "<b>Modern Translation:</b> &ldquo;I applaud myself.&rdquo;"
+    ),
+    "ingentia decora": (
+        "<b>Modern Translation:</b> &ldquo;great virtues [distinctions].&rdquo;"
+    ),
+    "actus primo primi": (
+        "<b>Modern Translation:</b> &ldquo;acts that are first of the first.&rdquo; In scholastic theology, this refers to the initial, pre-deliberate, or instinctive motions of the soul."
+    ),
+    "Cogitatio morosa cum": (
+        "<b>Modern Translation:</b> &ldquo;lingering thoughts with [morose delectation with].&rdquo; A scholastic term for dwelling on sinful thoughts with pleasure."
+    ),
+    "sub ratione boni": (
+        "<b>Modern Translation:</b> &ldquo;under the aspect of good.&rdquo; The scholastic principle that the will only chooses what is apprehended as good."
+    ),
+    "juris\" or \"facti": (
+        "<b>Modern Translation:</b> &ldquo;of law&rdquo; or &ldquo;of fact.&rdquo;"
+    ),
+    "profundus fuit": (
+        "<b>Modern Translation:</b> &ldquo;it was deep.&rdquo;"
+    ),
+    "sub molibus et fluctibus": (
+        "<b>Modern Translation:</b> &ldquo;under the weights and waves.&rdquo;"
+    ),
+    "Deprecationum mearum": (
+        "<b>Modern Translation:</b> &ldquo;of my supplications.&rdquo;"
+    ),
+    "Gratiosus fuit": (
+        "<b>Modern Translation:</b> &ldquo;He was gracious [merciful].&rdquo;"
+    ),
+    "Condonatio ipsa": (
+        "<b>Modern Translation:</b> &ldquo;forgiveness itself [actual condonation].&rdquo;"
+    ),
+    "Propter legem tuam": (
+        "<b>Modern Translation:</b> &ldquo;For the sake of thy law.&rdquo; The Vulgate translation of the Hebrew in Psalm 130:4 (representing a textual variant read by the Septuagint ἕνεκα τοῦ νόμου σου)."
+    ),
+    "Ut sis terribilis": (
+        "<b>Modern Translation:</b> &ldquo;That thou mayest be dreadful [terrible].&rdquo; Jerome's Vulgate translation of Psalm 130:4."
+    ),
+    "Quo fugis": (
+        "<b>Modern Translation:</b> &ldquo;Whither do you flee?&rdquo;"
+    ),
+    "accesseris oras": (
+        "<b>Modern Translation:</b> &ldquo;shores you may reach.&rdquo;"
+    ),
+    "semper eris": (
+        "<b>Modern Translation:</b> &ldquo;you will always be.&rdquo;"
+    ),
     "Qualiacumque voles Judaei somia vendant.": (
         "<b>Modern Translation:</b> &ldquo;Jews will sell you whatever dreams you like [for the tiniest copper coin].&rdquo; &mdash; Juvenal, <i>Satires</i>, 6.547 (where the text reads <i>somia</i> for <i>somnia</i>, &ldquo;dreams&rdquo;)."
     ),

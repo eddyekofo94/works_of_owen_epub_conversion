@@ -23,7 +23,8 @@ HEBREW_UNICODE_RE = re.compile(r'[\u0590-\u05FF]')
 OWEN_HARD_HYPHENS = {
     'Spiritual-mindedness', 'spiritually-minded', 'heavenly-mindedness',
     'self-denial', 'faith-fulness', 'church-state', 'fellow-creature',
-    'well-pleased', 'good-will', 'soul-satisfying'
+    'well-pleased', 'good-will', 'soul-satisfying', 'will-worship',
+    'self-macerations', 'self-reasonings', 'self-endeavors', 'peace-ruining'
 }
 
 

@@ -369,16 +369,25 @@ def reconstruct_paragraphs(text):
         # De-hyphenation: strip trailing hyphen, merge with no space
         if current and current[-1].endswith('-'):
             prev_tail = current[-1]
-            candidate = prev_tail + stripped
             # Blemish fix: numeric range hyphens (e.g. "1:19-" / "19-") must be
             # preserved as-is — they are verse/chapter range delimiters, NOT
             # word-break hyphens.  "Romans 1:19-\n21" → "Romans 1:19-21".
             if re.search(r'\d+-$', prev_tail):
                 current[-1] = prev_tail + stripped
                 continue
+
+            # Word-level hard-hyphen check
+            m_prev = re.search(r'([A-Za-z0-9\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+)-$', prev_tail)
+            m_next = re.match(r'^([A-Za-z0-9\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+)', stripped)
+            
+            is_hard = False
+            if m_prev and m_next:
+                word_candidate = m_prev.group(1) + '-' + m_next.group(1)
+                is_hard = any(term.lower() == word_candidate.lower() for term in OWEN_HARD_HYPHENS)
+
             # If the resulting word is a known hard-hyphenated term, keep the hyphen (Issue 1)
-            if any(term.lower() == candidate.lower() for term in OWEN_HARD_HYPHENS):
-                current[-1] = prev_tail + " " + stripped
+            if is_hard:
+                current[-1] = prev_tail + stripped
             else:
                 current[-1] = prev_tail[:-1] + stripped
             continue
@@ -836,6 +845,12 @@ def _remove_adjacent_repeated_word_runs(text):
                 useful = [w for w in first if len(w) > 2 or ':' in w]
                 if len(useful) < 2:
                     continue
+                
+                 # Guard against false-positive collapses of grammatical/quote repetitions
+                gap = text[words[i + size - 1][2]:words[i + size][1]]
+                if any(c in gap for c in (',', ';', ':', '.', '?', '!', '—', '–', '(', ')', '[', ']', '"', "'", '“', '”', '‘', '’')):
+                    continue
+
                 cut_start = words[i + size][1]
                 cut_end = words[i + (size * 2) - 1][2]
                 while cut_start > 0 and text[cut_start - 1] in ' \t':

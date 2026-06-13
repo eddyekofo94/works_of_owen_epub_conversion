@@ -154,6 +154,17 @@ OVERRIDES = {
         'unto it it hath not': 'unto it, it hath not',
         'in in the business': 'in the business',
         'in in secret': 'is in secret',
+        'Proper-ties': 'Properties',
+        'fiuctibus': 'fluctibus',
+        'legera': 'legem',
+        'axe come in': 'are come in',
+        'east into': 'cast into',
+        'suaxum': 'suarum',
+        'seasonlHow': 'season! How',
+        'Adam)were': 'Adam) were',
+        'the]east': 'the least',
+        'the]ate': 'the late',
+        'cries to Samuel, "Come in, thou blessed of the Lord; "I have': 'cries to Samuel, "Come in, thou blessed of the Lord; I have',
     },
 }
 
