@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-13T18:40:49Z
+Generated: 2026-06-13T18:56:40Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-13T18:40:49Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 9 | 54.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |      ? | 0 | 65 | FULL |
+| 1 | 9 | 56.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |  99.33 | 0 | 65 | FULL |
 | 2 | 1 | 44.5 | adobe-garamond-pro | 4 |  99.93 |  99.73 |  100.0 |   99.8 | 0 | 19 | FULL |
 | 3 | 16 | 37.2 | gentium-plus-2 | 5 |  99.94 |  100.0 |  100.0 |  99.94 | 2 | 56 | FULL |
 | 4 | 4 | 28.1 | cardo | 4 |  99.87 |  99.57 |  100.0 |  99.45 | 0 | 0 | PRISTINE |
@@ -41,7 +41,7 @@ Generated: 2026-06-13T18:40:49Z
 
 ## Per-Volume Details
 
-### Volume 9 — Need: 54.6 (🩷 Needs work) — Rank 1
+### Volume 9 — Need: 56.6 (🩷 Needs work) — Rank 1
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -52,13 +52,13 @@ Generated: 2026-06-13T18:40:49Z
 - **Word coverage:** 99.61
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** ?
-- **Latin tagging:** ?
-- **Latin translation:** ?
+- **Latin coverage:** 99.33
+- **Latin tagging:** 14.17
+- **Latin translation:** 6.98
 - **Citations:** total=0, unresolved=0
-- **Splits:** 186
-- **Regressions:** 5
-- **Suspected anomalies:** 158
+- **Splits:** 2
+- **Regressions:** 3
+- **Suspected anomalies:** 217
 - **Unmatched quotes:** 65
 - **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
 

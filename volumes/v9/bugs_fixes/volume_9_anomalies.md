@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 309031
-* **Total Suspected Anomalies Found:** 158
+* **Total Words Audited:** 309143
+* **Total Suspected Anomalies Found:** 217
 
 Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix these.
 
@@ -15,8 +15,9 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Mixed-Case Capitalization Errors:** 0 items
 * **Unresolved Citation References:** 0 items
 * **Structural Nesting Sequence Jumps:** 45 items
-* **Invalid Bible References:** 12 items
+* **Invalid Bible References:** 0 items
 * **List Formatting Inconsistencies:** 0 items
+* **Unmatched Quotation Marks:** 71 items
 
 ---
 
@@ -325,7 +326,7 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 6.*
 * **Contexts:**
-  * ... he lays at the bottom of all their deliverance. **3dly .** For trial and examination: Psalm 11:4, 5, His e ...
+  * ... he lays at the bottom of all their deliverance. **3dly .** For trial and examination: Psalm 11:4, 5, His ey ...
 
 ### 14. `..`
 * **Description:** Duplicate period (double dot)
@@ -435,7 +436,7 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Sermon 16.*
 * **Contexts:**
-  * ... rch." Their voice was, "Down with it! even to the **ground !**" Poor creatures! they dashed themselves against t ...
+  * ... oice was, "Down with it! down with it even to the **ground !**" Poor creatures! they dashed themselves against t ...
 
 ### 31. `Ah !`
 * **Description:** Spaced punctuation (space before character)
@@ -447,7 +448,7 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 16.*
 * **Contexts:**
-  * ... owing narration, to afford us this observation: — **Observation .** The care of Salem, of Zion, lies at the bottom of ...
+  * ... wing narration, to afford us this observation: — **Observation .** The care of Salem, of Zion, lies at the bottom of ...
   * ... 2. And these also have their particular mention. **Observation .** In the deliverance of his people, God hath a spec ...
 
 ### 33. `them ?`
@@ -460,13 +461,13 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 18.*
 * **Contexts:**
-  * ... the gospel, or any duty of it. And that is this:— **Use .** Get an experience of the power of the gospel, and ...
+  * ... he gospel, or any duty of it. And that is this:— **Use .** Get an experience of the power of the gospel, and ...
 
 ### 35. `Observation .`
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 19.*
 * **Contexts:**
-  * ... ak to you, from the words thus opened, is this: — **Observation .** In the most overwhelming, calamitous distresses t ...
+  * ... k to you, from the words thus opened, is this: — **Observation .** In the most overwhelming, calamitous distresses t ...
 
 ### 36. `2dly .`
 * **Description:** Spaced period (space before period)
@@ -508,7 +509,7 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 23.*
 * **Contexts:**
-  * ... bservation I shall make from the words is this: — **Observation .** In the most calamitous season, in the greatest in ...
+  * ... servation I shall make from the words is this: — **Observation .** In the most calamitous season, in the greatest in ...
 
 ### 43. `1st .`
 * **Description:** Spaced period (space before period)
@@ -546,14 +547,14 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced period (space before period)
 * **Chapter:** *Sermon 24.*
 * **Contexts:**
-  * ... upt actings of the affections of the heart; and, **3dly .** A frame of soul suited unto them. These are the t ...
+  * ... rupt actings of the affections of the heart; and, **3dly .** A frame of soul suited unto them. These are the t ...
   * ... e corrupt desires and actings of our affections. **3dly .** And both these, if indulged in any measure, will ...
 
 ### 49. `..`
 * **Description:** Duplicate period (double dot)
 * **Chapter:** *Sermon 24.*
 * **Contexts:**
-  * **..**. hese are the things I intend by secret sins: — 1st**..** The vain imaginations of the mind. The Holy Ghost **..**.
+  * **..**. ese are the things I intend by secret sins: — 1st**..** The vain imaginations of the mind. The Holy Ghost **..**.
 
 ### 50. `Observation .`
 * **Description:** Spaced period (space before period)
@@ -619,7 +620,7 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Duplicate period (double dot)
 * **Chapter:** *Discourse 3.*
 * **Contexts:**
-  * **..**. perties that make this a great act of faith: — 1st**..** The state is invisible. The soul is going into a **..**.
+  * **..**. erties that make this a great act of faith: — 1st**..** The state is invisible. The soul is going into a **..**.
 
 ### 61. `darkness ;`
 * **Description:** Spaced punctuation (space before character)
@@ -649,7 +650,7 @@ Add corrections to `text_replacements` inside `volumes/v9/convert.py` to fix the
 * **Description:** Spaced punctuation (space before character)
 * **Chapter:** *Discourse 20.*
 * **Contexts:**
-  * ... ng the frame of our souls into his own likeness. **Again :** 2. The love of Christ, if we are affected with it ...
+  * ... ng the frame of our souls into his own likeness. **Again :** 2. The love of Christ, if we are affected with i ...
 
 ---
 
@@ -963,81 +964,439 @@ No anomalies found in this category.
 
 ## Invalid Bible References
 
-### 1. `2 Kings 23`
-* **Description:** Invalid Bible reference (chapter 23 exceeds max 22 for Kings)
-* **Chapter:** *Sermon - Seasonable Words for English Protestants.*
-* **Contexts:**
-  * ... nst them; — reformation shall not save them." See **2 Kings 23**:25, 26, where there is an account given of the gr ...
-
-### 2. `Philippians 38`
-* **Description:** Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 7.*
-* **Contexts:**
-  * ... s in us "to will and to do of his good pleasure," **Philippians 38**:13 2:13. Whatever a man doth, which God works no ...
-
-### 3. `Philippians 14`
-* **Description:** Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 9.*
-* **Contexts:**
-  * ... ," saith the apostle, "that was in Jesus Christ," **Philippians 14**:5 2:5. What mind was this? He describes it in the ...
-
-### 4. `Philippians 20`
-* **Description:** Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 17.*
-* **Contexts:**
-  * ... Christ, that "he made himself of no reputation," **Philippians 20**:7 2:7, 8. He forewent all the esteem he might ha ...
-
-### 5. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 18.*
-* **Contexts:**
-  * ... e describe the greatness and glory of his person, **Philippians 17**:6 2:6-8, "He made himself," says he, "of no reput ...
-
-### 6. `Philippians 44`
-* **Description:** Invalid Bible reference (chapter 44 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 23.*
-* **Contexts:**
-  * ... f all the saints of God that they be so likewise, **Philippians 44**:15 2:15, "Be harmless in the midst of a crooked a ...
-
-### 7. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 3.*
-* **Contexts:**
-  * ... he was able to give ministers. See that at large, **Philippians 17**:6 2:6-11. It was his humbling himself unto the d ...
-
-### 8. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 6*
-* **Contexts:**
-  * ... preeminence above all other loves whatsoever. In **Philippians 17**:6 2:6-8, it is there set forth, where he unites t ...
-
-### 9. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 8.*
-* **Contexts:**
-  * ... n nature with grace: — [1.] In his divine glory. **Philippians 17**:6 2:6, "Who being in the form of God, thought it ...
-
-### 10. `Philippians 14`
-* **Description:** Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)
-* **Chapter:** *Sermon 8.*
-* **Contexts:**
-  * ... that the same mind may be in us that was in him, **Philippians 14**:5 2:5; the same meekness, humility, self-denial, ...
-
-### 11. `Philippians 14`
-* **Description:** Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)
-* **Chapter:** *Discourse 3.*
-* **Contexts:**
-  * ... n his death. The apostle doth propose it unto us, **Philippians 14**:5 2:5, 6, etc., [[BLOCKQUOTE]] "Let this mind be ...
-
-### 12. `Philippians 17`
-* **Description:** Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)
-* **Chapter:** *Discourse 6.*
-* **Contexts:**
-  * ... s, and washed us from our sins in his own blood." **Philippians 17**:6 2:6-8, [[BLOCKQUOTE]] "Who, being in the form ...
-
----
+No anomalies found in this category.
 
 ## List Formatting Inconsistencies
 
 No anomalies found in this category.
+
+## Unmatched Quotation Marks
+
+### 1. `3. A strange and wonderful surprisal, notwithstanding this, in sovereign grace and power: "Israel hath not been forsaken...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon - Seasonable Words for English Protestants.*
+* **Contexts:**
+  * **3. A strange and wonderful surprisal, notwithstanding this, in sovereign grace and power: "Israel hath not been forsaken...**
+
+### 2. `The first is, that, in this state, if God gives time and space, there is encouragement enough left to make our applicati...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Sermon - Seasonable Words for English Protestants.*
+* **Contexts:**
+  * **The first is, that, in this state, if God gives time and space, there is encouragement enough left to make our applicati...**
+
+### 3. `[[SUMMARY]] THE STRENGTH OF FAITH. "He staggered not at the promise of God through unbelief; but was strong in faith, gi...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 1.*
+* **Contexts:**
+  * **[[SUMMARY]] THE STRENGTH OF FAITH. "He staggered not at the promise of God through unbelief; but was strong in faith, gi...**
+
+### 4. `When the Jews treated with our Savior about salvation, they ask him, "What shall we do, that we might work the work of G...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Sermon 1.*
+* **Contexts:**
+  * **When the Jews treated with our Savior about salvation, they ask him, "What shall we do, that we might work the work of G...**
+
+### 5. `The word here used is the same with that of David, Psalm 32:1, "Blessed is the man whose sin is covered." And in sundry ...`
+* **Description:** Paragraph has unmatched double quotes (count: 31)
+* **Chapter:** *Sermon 1.*
+* **Contexts:**
+  * **The word here used is the same with that of David, Psalm 32:1, "Blessed is the man whose sin is covered." And in sundry ...**
+
+### 6. `Are we afraid that if we put ourselves upon him, into his hand, he will kill us, we shall die? He gives us this last pos...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 2.*
+* **Contexts:**
+  * **Are we afraid that if we put ourselves upon him, into his hand, he will kill us, we shall die? He gives us this last pos...**
+
+### 7. `[2.] There is a tempest; — in reference whereunto Christ is here said to be "a covert." A tempest, in the Scripture, rep...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 2.*
+* **Contexts:**
+  * **[2.] There is a tempest; — in reference whereunto Christ is here said to be "a covert." A tempest, in the Scripture, rep...**
+
+### 8. `[4.] There is weariness; — and in respect hereof Christ is said to be "the shadow of a great rock.'' Weariness of travel...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 2.*
+* **Contexts:**
+  * **[4.] There is weariness; — and in respect hereof Christ is said to be "the shadow of a great rock.'' Weariness of travel...**
+
+### 9. `1. The first thing in general observable from these words is, that in the spiritual worship of the gospel the whole bles...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 3.*
+* **Contexts:**
+  * **1. The first thing in general observable from these words is, that in the spiritual worship of the gospel the whole bles...**
+
+### 10. `Favor being procured, a way of entrance is also to be provided; otherwise poor souls might say, "There is water, indeed,...`
+* **Description:** Paragraph has unmatched double quotes (count: 23)
+* **Chapter:** *Sermon 3.*
+* **Contexts:**
+  * **Favor being procured, a way of entrance is also to be provided; otherwise poor souls might say, "There is water, indeed,...**
+
+### 11. `[2.] The second thing that we are to humble ourselves unto in the law of grace is, a firm persuasion, exerting itself ef...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Sermon 7.*
+* **Contexts:**
+  * **[2.] The second thing that we are to humble ourselves unto in the law of grace is, a firm persuasion, exerting itself ef...**
+
+### 12. `The argument to carnal reason would lie quite contrary. "If we are not under the law, — that is, the condemning power of...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 7.*
+* **Contexts:**
+  * **The argument to carnal reason would lie quite contrary. "If we are not under the law, — that is, the condemning power of...**
+
+### 13. `God called him, to be at his disposal universally, by faith to come to it, following him, he knew not for what, nor whit...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 8.*
+* **Contexts:**
+  * **God called him, to be at his disposal universally, by faith to come to it, following him, he knew not for what, nor whit...**
+
+### 14. `Humble walking with God is the great duty and most valuable concernment of believers. "What doth the Lord thy God requir...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 9.*
+* **Contexts:**
+  * **Humble walking with God is the great duty and most valuable concernment of believers. "What doth the Lord thy God requir...**
+
+### 15. `Sometimes the persons by whom he doth them, keep them from understanding. "Shall these men save us?' — these whom they l...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Sermon 11.*
+* **Contexts:**
+  * **Sometimes the persons by whom he doth them, keep them from understanding. "Shall these men save us?' — these whom they l...**
+
+### 16. `2dly . On the account of some way or ways wherein they may have been unadvisedly, or through temptation, or want of seek...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Sermon 11.*
+* **Contexts:**
+  * **2dly . On the account of some way or ways wherein they may have been unadvisedly, or through temptation, or want of seek...**
+
+### 17. `I know how obnoxious this observation is to a sad objection: — " Call you these days of light and knowledge? Say you tha...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 11.*
+* **Contexts:**
+  * **I know how obnoxious this observation is to a sad objection: — " Call you these days of light and knowledge? Say you tha...**
+
+### 18. `been diffused? Is it increased or more scattered abroad? Is not the contrary true?"`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 11.*
+* **Contexts:**
+  * **been diffused? Is it increased or more scattered abroad? Is not the contrary true?"**
+
+### 19. `Hath Christ for many years now been in an especial manner come amongst us? Do these alterations relate to him and his in...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 12.*
+* **Contexts:**
+  * **Hath Christ for many years now been in an especial manner come amongst us? Do these alterations relate to him and his in...**
+
+### 20. `[[SUMMARY]] "The stout-hearted are spoiled, they have slept their sleep; and none of the men of might have found their h...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **[[SUMMARY]] "The stout-hearted are spoiled, they have slept their sleep; and none of the men of might have found their h...**
+
+### 21. `I might farther observe, from both these things together, that among the people of God alone is the residence of his glo...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **I might farther observe, from both these things together, that among the people of God alone is the residence of his glo...**
+
+### 22. `1. To the reading: The "stout-hearted;" or, the "strong in heart," the "mighty in heart," (so in the original;) — men of...`
+* **Description:** Paragraph has unmatched double quotes (count: 33)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **1. To the reading: The "stout-hearted;" or, the "strong in heart," the "mighty in heart," (so in the original;) — men of...**
+
+### 23. `1. Because these very qualifications, of a stout heart, strong hands, and former success, are apt of themselves, if dest...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **1. Because these very qualifications, of a stout heart, strong hands, and former success, are apt of themselves, if dest...**
+
+### 24. `Use 1. Be not moved at the most formidable enemies that may arise against you in the ways of God. "It was told the house...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **Use 1. Be not moved at the most formidable enemies that may arise against you in the ways of God. "It was told the house...**
+
+### 25. `It is true he said so; and by this observation you have an answer to the Scripture. For though he said so, he lied befor...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 16.*
+* **Contexts:**
+  * **It is true he said so; and by this observation you have an answer to the Scripture. For though he said so, he lied befor...**
+
+### 26. `2dly. The decree of God signifies "sententia lata," "a determinate sentence,' that God hath pronounced against any perso...`
+* **Description:** Paragraph has unmatched double quotes (count: 15)
+* **Chapter:** *Sermon 20.*
+* **Contexts:**
+  * **2dly. The decree of God signifies "sententia lata," "a determinate sentence,' that God hath pronounced against any perso...**
+
+### 27. `[4.] There is this in it also, That if there be need of power, God can put it forth, that power which carried Abraham th...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 20.*
+* **Contexts:**
+  * **[4.] There is this in it also, That if there be need of power, God can put it forth, that power which carried Abraham th...**
+
+### 28. `He tells you, verse 2, that it is the "day of his trouble;" that "his sores run in the night and cease not; his soul ref...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Sermon 20.*
+* **Contexts:**
+  * **He tells you, verse 2, that it is the "day of his trouble;" that "his sores run in the night and cease not; his soul ref...**
+
+### 29. `Hath God forgotten to be gracious? hath he in anger shut up his tender mercies?" In this grand and overwhelming distress...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Sermon 20.*
+* **Contexts:**
+  * **Hath God forgotten to be gracious? hath he in anger shut up his tender mercies?" In this grand and overwhelming distress...**
+
+### 30. `The reason why it was a new commandment was, because there was no quickening, enlivening example of it, to express the p...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 21.*
+* **Contexts:**
+  * **The reason why it was a new commandment was, because there was no quickening, enlivening example of it, to express the p...**
+
+### 31. `May be they are joints; that is, either officers or principal members, who, by reason of their gifts, yield a supply to ...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Sermon 21.*
+* **Contexts:**
+  * **May be they are joints; that is, either officers or principal members, who, by reason of their gifts, yield a supply to ...**
+
+### 32. `as he spake by the mouth of his holy prophets, which have been since the world began: that we should be saved from our e...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 23.*
+* **Contexts:**
+  * **as he spake by the mouth of his holy prophets, which have been since the world began: that we should be saved from our e...**
+
+### 33. `IV. What may be the reasons why the Lord should deal thus severely with a poor people, after they have walked with him, ...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 24.*
+* **Contexts:**
+  * **IV. What may be the reasons why the Lord should deal thus severely with a poor people, after they have walked with him, ...**
+
+### 34. `(2.) A second reason is, "inordinate cleaving to the things of the world at a most undue season. It may be it would not ...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Sermon 24.*
+* **Contexts:**
+  * **(2.) A second reason is, "inordinate cleaving to the things of the world at a most undue season. It may be it would not ...**
+
+### 35. `Thirdly, The way of their introduction: "They shall come." Fourthly, The time and season of it: "They shall come in the ...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 26.*
+* **Contexts:**
+  * **Thirdly, The way of their introduction: "They shall come." Fourthly, The time and season of it: "They shall come in the ...**
+
+### 36. `Again; the apostle, in speaking unto Timothy, speaks unto us also, to us all, "This know ye also." It is the great conce...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 26.*
+* **Contexts:**
+  * **Again; the apostle, in speaking unto Timothy, speaks unto us also, to us all, "This know ye also." It is the great conce...**
+
+### 37. `5. There shall be great tokens of God's wrath from heaven: 'Signs in the heavens, the sun, moon, and stars.'" The Lord C...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 26.*
+* **Contexts:**
+  * **5. There shall be great tokens of God's wrath from heaven: 'Signs in the heavens, the sun, moon, and stars.'" The Lord C...**
+
+### 38. `(3.) As to the manner of it, it ought to be done expressly in words that we should say to God. I do not give instruction...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 28.*
+* **Contexts:**
+  * **(3.) As to the manner of it, it ought to be done expressly in words that we should say to God. I do not give instruction...**
+
+### 39. `I put all my trust and confidence in thy faithfulness, power, and sovereignty, to be dealt withal according to the terms...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 28.*
+* **Contexts:**
+  * **I put all my trust and confidence in thy faithfulness, power, and sovereignty, to be dealt withal according to the terms...**
+
+### 40. `But now man is "medium participationis;" — he hath an angelical nature from above that cannot die, and a nature from ben...`
+* **Description:** Paragraph has unmatched double quotes (count: 23)
+* **Chapter:** *Sermon 29.*
+* **Contexts:**
+  * **But now man is "medium participationis;" — he hath an angelical nature from above that cannot die, and a nature from ben...**
+
+### 41. `(1.) The first is that which he gives us, Philippians 1:23, "Having a desire to depart, and to be with Christ." Επιθυμία...`
+* **Description:** Paragraph has unmatched double quotes (count: 21)
+* **Chapter:** *Sermon 29.*
+* **Contexts:**
+  * **(1.) The first is that which he gives us, Philippians 1:23, "Having a desire to depart, and to be with Christ." Επιθυμία...**
+
+### 42. `Some can tell you by experience, that, having made it their business with all their strength and study to live in that f...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 29.*
+* **Contexts:**
+  * **Some can tell you by experience, that, having made it their business with all their strength and study to live in that f...**
+
+### 43. `2. The second duty in such a season is, for every one of us privately to inquire of Jesus Christ, in prayer and supplica...`
+* **Description:** Paragraph has unmatched double quotes (count: 19)
+* **Chapter:** *Discourse 11.*
+* **Contexts:**
+  * **2. The second duty in such a season is, for every one of us privately to inquire of Jesus Christ, in prayer and supplica...**
+
+### 44. `Consider the condition of Abraham, and you will see what reason there was for God to give himself that title in this ren...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Sermon 2.*
+* **Contexts:**
+  * **Consider the condition of Abraham, and you will see what reason there was for God to give himself that title in this ren...**
+
+### 45. `This is the first thing that my text doth suggest unto me, — namely, that the ministry is the gift of Christ. And having...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Sermon 3.*
+* **Contexts:**
+  * **This is the first thing that my text doth suggest unto me, — namely, that the ministry is the gift of Christ. And having...**
+
+### 46. `What is all this great preparation now for? what is it the apostle ushers in upon this theater of glory? Nothing less th...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Sermon 3.*
+* **Contexts:**
+  * **What is all this great preparation now for? what is it the apostle ushers in upon this theater of glory? Nothing less th...**
+
+### 47. `To whom is this promise made? It is made unto the gospel church. In the verse foregoing, "The Redeemer shall come to Zio...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Sermon 4.*
+* **Contexts:**
+  * **To whom is this promise made? It is made unto the gospel church. In the verse foregoing, "The Redeemer shall come to Zio...**
+
+### 48. `Christ will say to such at the last day, "How came ye in hither?`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Sermon 4.*
+* **Contexts:**
+  * **Christ will say to such at the last day, "How came ye in hither?**
+
+### 49. `2. Authority is required. What is authority in a preaching ministry? It is a consequent of unction, and not of office. T...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Sermon 5.*
+* **Contexts:**
+  * **2. Authority is required. What is authority in a preaching ministry? It is a consequent of unction, and not of office. T...**
+
+### 50. `2. The love of Christ was manifested in his suffering in that condition. You know what he suffered, and what he suffered...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 6*
+* **Contexts:**
+  * **2. The love of Christ was manifested in his suffering in that condition. You know what he suffered, and what he suffered...**
+
+### 51. `By way of use. — Seeing the things of Christ are good things in themselves, and believers discern their goodness and the...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 7.*
+* **Contexts:**
+  * **By way of use. — Seeing the things of Christ are good things in themselves, and believers discern their goodness and the...**
+
+### 52. `Secondly. Observe from the words, that it is the duty of believers to be making things concerning Jesus Christ: "Things ...`
+* **Description:** Paragraph has unmatched double quotes (count: 13)
+* **Chapter:** *Sermon 7.*
+* **Contexts:**
+  * **Secondly. Observe from the words, that it is the duty of believers to be making things concerning Jesus Christ: "Things ...**
+
+### 53. `(3.) In the power and heavenliness of his doctrine. Many other instances may be given, but things may be gathered to the...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Sermon 8.*
+* **Contexts:**
+  * **(3.) In the power and heavenliness of his doctrine. Many other instances may be given, but things may be gathered to the...**
+
+### 54. `III. To the appellation that is here given unto Christ, — "O most Mighty, גִּבּוֹר, from גָּבַר, one that prevails in ev...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 9.*
+* **Contexts:**
+  * **III. To the appellation that is here given unto Christ, — "O most Mighty, גִּבּוֹר, from גָּבַר, one that prevails in ev...**
+
+### 55. `To betake ourselves to the ark, is to betake ourselves to the fountain of our peace. And so Psalm 2:12, "If God's wrath ...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Sermon 10.*
+* **Contexts:**
+  * **To betake ourselves to the ark, is to betake ourselves to the fountain of our peace. And so Psalm 2:12, "If God's wrath ...**
+
+### 56. `(2.) But now, it would not have advantaged either Noah or his sons to have an ark prepared for them, unless they had a d...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 10.*
+* **Contexts:**
+  * **(2.) But now, it would not have advantaged either Noah or his sons to have an ark prepared for them, unless they had a d...**
+
+### 57. `God hath made special promises to such as are thus concerned: Zephaniah 3:18, "I will gather them," saith he. Whom will ...`
+* **Description:** Paragraph has unmatched double quotes (count: 17)
+* **Chapter:** *Sermon 11.*
+* **Contexts:**
+  * **God hath made special promises to such as are thus concerned: Zephaniah 3:18, "I will gather them," saith he. Whom will ...**
+
+### 58. `(3.) Faith, in such a case and condition, will bring to mind, and make effectual upon our souls, the examples of them th...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Sermon 11.*
+* **Contexts:**
+  * **(3.) Faith, in such a case and condition, will bring to mind, and make effectual upon our souls, the examples of them th...**
+
+### 59. `[[BLOCKQUOTE]] "When I have performed my whole work upon mount Zion,' saith God, "then," etc., Isaiah 10:12.`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Sermon 13.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "When I have performed my whole work upon mount Zion,' saith God, "then," etc., Isaiah 10:12.**
+
+### 60. `3. It is peculiarly eucharistical. There is a peculiar thanksgiving that ought to attend this ordinance. It is called "T...`
+* **Description:** Paragraph has unmatched double quotes (count: 11)
+* **Chapter:** *Discourse 2.*
+* **Contexts:**
+  * **3. It is peculiarly eucharistical. There is a peculiar thanksgiving that ought to attend this ordinance. It is called "T...**
+
+### 61. `[[BLOCKQUOTE]] "For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption," — "...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Discourse 3.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption," — "...**
+
+### 62. `going; nor my body see corruption." What was his faith as to the future issue of things? That he expresses, verse 11, "T...`
+* **Description:** Paragraph has unmatched double quotes (count: 7)
+* **Chapter:** *Discourse 3.*
+* **Contexts:**
+  * **going; nor my body see corruption." What was his faith as to the future issue of things? That he expresses, verse 11, "T...**
+
+### 63. `[[BLOCKQUOTE]] "The Lord God will help me; therefore shall I not be confounded: therefore have I set my face like a flin...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Discourse 3.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "The Lord God will help me; therefore shall I not be confounded: therefore have I set my face like a flin...**
+
+### 64. `my cause? I have a cause to plead, who is the master of it?" "I am engaged in a great cause," saith he, "and I am greatl...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Discourse 3.*
+* **Contexts:**
+  * **my cause? I have a cause to plead, who is the master of it?" "I am engaged in a great cause," saith he, "and I am greatl...**
+
+### 65. `I will not insist on these typical preparations, but only say, it sufficiently proves the general thesis, that there oug...`
+* **Description:** Paragraph has unmatched double quotes (count: 9)
+* **Chapter:** *Discourse 5.*
+* **Contexts:**
+  * **I will not insist on these typical preparations, but only say, it sufficiently proves the general thesis, that there oug...**
+
+### 66. `Brethren, let us be able by faith, not only to look through these outward signs to that which makes the representation i...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Discourse 11.*
+* **Contexts:**
+  * **Brethren, let us be able by faith, not only to look through these outward signs to that which makes the representation i...**
+
+### 67. `[[BLOCKQUOTE]] "Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt-offering and sin-offerin...`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Discourse 13.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] "Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt-offering and sin-offerin...**
+
+### 68. `[[BLOCKQUOTE]] Then said I, Lo, I come: in the volume of the book it is written of me," etc.`
+* **Description:** Paragraph has unmatched double quotes (count: 1)
+* **Chapter:** *Discourse 13.*
+* **Contexts:**
+  * **[[BLOCKQUOTE]] Then said I, Lo, I come: in the volume of the book it is written of me," etc.**
+
+### 69. `(2dly.) There were sufferings positive in his soul, when he was made sin and a curse for us, and had a sense of the wrat...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Discourse 13.*
+* **Contexts:**
+  * **(2dly.) There were sufferings positive in his soul, when he was made sin and a curse for us, and had a sense of the wrat...**
+
+### 70. `You will say, then, "What is the special object of this special faith?' Truly that which the apostle tells us here; — it...`
+* **Description:** Paragraph has unmatched double quotes (count: 3)
+* **Chapter:** *Discourse 18.*
+* **Contexts:**
+  * **You will say, then, "What is the special object of this special faith?' Truly that which the apostle tells us here; — it...**
+
+### 71. `2. This love of Christ passes the comprehension and knowledge of angels; and therefore Peter tells us, 1 Peter 1:12, spe...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Discourse 21.*
+* **Contexts:**
+  * **2. This love of Christ passes the comprehension and knowledge of angels; and therefore Peter tells us, 1 Peter 1:12, spe...**
+
+---
 

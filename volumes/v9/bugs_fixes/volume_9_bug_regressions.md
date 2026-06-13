@@ -8,10 +8,10 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 186 | 61 | REGRESSION |
-| Inline structural marker candidates | 5 | 1 | REGRESSION |
+| Possible faulty paragraph splits | 2 | 61 | OK |
+| Inline structural marker candidates | 0 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 0 | 0 | OK |
+| Missing front CONTENTS pages | 4 | 4 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 11 | 0 | REGRESSION |
+| Lowercase page fragments | 2 | 0 | REGRESSION |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,27 +66,23 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch002.xhtml; previous: celebrated and much-respected preacher in London, — a kind of Latimer among the Nonconformists of his time. He died in 1713, and his funeral sermon was preached by Matthew Henry: —; next: the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks; — now, that city. and country are crying, 'Watchman, what of the night? ?' — now, that the three fr
-- file: EPUB/ch003.xhtml; previous: This was not now the case of Israel and Judah. It proved afterward to be their case, as the apostle describes it, 1 Thessalonians 2:15, 16,; next: How come? They have filled their measure, reached to their bounds; — "wrath is come upon them to the uttermost." I hope, I pray, that this is not, that this may not be, the state o
-- file: EPUB/ch003.xhtml; previous:  but let all mankind do what they will, he will not pass it by without some severe, desolating judgment. Such was their case even at this time; — you may see in 2 Chronicles 36:16,; next: It was impossible that the judgment of God should be turned away from them. In this state God saith, "Pray not for this people; my heart shall not be toward them," (until he had br
-- file: EPUB/ch003.xhtml; previous:  are absolutely resolved upon sovereign grace and mercy: and without relief from thence, I shall only say, as to the proof of the proposition, what the prophet saith, Isaiah 34:16,; next: To omit all the considerations and all the proof I intended, that sovereign grace and mercy must be our relief, if ever we be relieved, I proceed unto the second thing; which is, —
-- file: EPUB/ch006.xhtml; previous: e first place. Eternal life is promised by God, who cannot lie, Titus 1:2; that is, who is so faithful, as that it is utterly impossible he should deceive any. So Hebrews 6:17, 18,; next: The design of God is, that we may receive encouragement in our flying for refuge to the hope set before us, — that is, in believing. What doth he propose to this end? Why, his own 
-
-### Inline structural marker candidates
-
-- file: EPUB/ch011.xhtml; text: Now, surely, if God hath this delight in us in our walking before him, is it not expected that our delight should be in him in our obedience? It suits not my present business to go over the testimonies of Scripture, wher
-- file: EPUB/ch021.xhtml; text: The latter containeth, — 1. A doctrinal observation for the use of the church, from the whole, verse 7. 2. The reasons and confirmation of the doctrine so laid down, taken from the power and righteousness of God in the a
-- file: EPUB/ch021.xhtml; text: They shall have no better issue, because, — (1.) The Lord will take away their stout hearts, whereby they are supported; (2.) He will take away their strong hands, whereby they are confirmed: and when hearts and hands ar
-- file: EPUB/ch024.xhtml; text: His estate is doubly expressed: — 1. From the place where he was, — " From the end of the earth;" and, 2. From the condition he was in, — " His heart was overwhelmed." And in the course he steered there are two things al
-- file: EPUB/ch029.xhtml; text: There is a twofold hardening from God's fear: — 1. There is a total hardening; and, 2. A partial hardening: — 1. There is a total hardening, like that mentioned, Isaiah 6:10,
+- file: EPUB/ch007.xhtml; previous: unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —; next: Use 1. We shall begin with the consideration of God himself, even the Father; and that declaration of his love, kindness, tenderness, readiness, and willingness to receive poor bel
+- file: EPUB/ch021.xhtml; previous: -place established; — there he gives his presence in his worship and ordinances, wherein he is delighted. "Because of thy temple at Jerusalem shall kings bring presents unto thee,"; next: Psalm 68:29. Here is the temple, Christ, and then, the worship of Christ: for their sake it shall be done. When vengeance is recompensed upon an opposing people, it is the vengeanc
 
 ### Repeated word windows
 
-- phrase: as often as ye eat this bread and drink this
-- phrase: often as ye eat this bread and drink this cup
+- phrase: discourse discourse discourse discourse discourse discourse discourse discourse discourse discourse
 - phrase: loved us and washed us from our sins in his
 - phrase: us and washed us from our sins in his own
 - phrase: and washed us from our sins in his own blood
+- phrase: is so filled with sin against the holy one of
+
+### Missing front CONTENTS pages
+
+- page: 3; sample: contents of vol part sermon published prefatory note by the editor seasonable words for english protestants part sermons published prefatory note by the editor the strength of faith
+- page: 4; sample: discourse seeing the act of closing with christ is secret and hidden and the special times and seasons of our conversion unto god are unknown unto most what
+- page: 5; sample: the excellency of christ the use and advantage of faith in time of public calamity the use of faith under reproaches and persecutions the use of faith if
+- page: 6; sample: also he took the cup when he had supped saying this cup is the new testament in my blood this do ye as oft as ye drink it
 
 ### Chapter headings rendered as paragraphs
 
@@ -103,7 +99,4 @@
 ### Lowercase page fragments
 
 - file: EPUB/ch002.xhtml; text: the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;
-- file: EPUB/ch027.xhtml; text: as he spake by the mouth of his holy prophets, which have been since the world be
-- file: EPUB/ch028.xhtml; text: that is, of the whole church, alive and dead, that they might be his. He took the
-- file: EPUB/ch030.xhtml; text: saith he, "if the Lord be with us, why then is all this befallen us?" — "Whence i
-- file: EPUB/ch033.xhtml; text: that is, as a God who is omnipotent, who made all things, and is faithful in the
+- file: EPUB/ch067.xhtml; text: of Stoke Newington

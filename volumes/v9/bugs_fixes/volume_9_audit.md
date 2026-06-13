@@ -8,11 +8,11 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 131
-- Manifest items: 122
-- Spine items: 102
+- Files: 134
+- Manifest items: 125
+- Spine items: 103
 - XHTML files: 104
-- Embedded fonts: 13
+- Embedded fonts: 16
 - NAV links: 105
 
 ## Content Checks
@@ -21,8 +21,8 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 223
 - Untagged Hebrew chars: 0
-- Noteref links: 97
-- Endnote anchors: 95
+- Noteref links: 126
+- Endnote anchors: 125
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
@@ -47,7 +47,4 @@
 ### lowercase_paragraph_start
 
 - `EPUB/ch002.xhtml`: the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;
-- `EPUB/ch027.xhtml`: as he spake by the mouth of his holy prophets, which have been since the world be
-- `EPUB/ch028.xhtml`: that is, of the whole church, alive and dead, that they might be his. He took the
-- `EPUB/ch030.xhtml`: saith he, "if the Lord be with us, why then is all this befallen us?" — "Whence i
-- `EPUB/ch033.xhtml`: that is, as a God who is omnipotent, who made all things, and is faithful in the
+- `EPUB/ch067.xhtml`: of Stoke Newington

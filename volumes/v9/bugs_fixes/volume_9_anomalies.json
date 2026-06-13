@@ -1,7 +1,7 @@
 {
-  "volume": 9,
-  "total_words_audited": 309031,
-  "total_anomalies_count": 158,
+  "volume": "9",
+  "total_words_audited": 309143,
+  "total_anomalies_count": 217,
   "anomalies": {
     "Hyphenation Anomalies": [
       {
@@ -402,7 +402,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 6.",
         "contexts": [
-          "... he lays at the bottom of all their deliverance. 3dly . For trial and examination: Psalm 11:4, 5, His e ..."
+          "... he lays at the bottom of all their deliverance. 3dly . For trial and examination: Psalm 11:4, 5, His ey ..."
         ]
       },
       {
@@ -546,7 +546,7 @@
         "description": "Spaced punctuation (space before character)",
         "chapter": "Sermon 16.",
         "contexts": [
-          "... rch.\" Their voice was, \"Down with it! even to the ground !\" Poor creatures! they dashed themselves against t ..."
+          "... oice was, \"Down with it! down with it even to the ground !\" Poor creatures! they dashed themselves against t ..."
         ]
       },
       {
@@ -562,7 +562,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 16.",
         "contexts": [
-          "... owing narration, to afford us this observation: \u2014 Observation . The care of Salem, of Zion, lies at the bottom of ...",
+          "... wing narration, to afford us this observation: \u2014 Observation . The care of Salem, of Zion, lies at the bottom of ...",
           "... 2. And these also have their particular mention. Observation . In the deliverance of his people, God hath a spec ..."
         ]
       },
@@ -579,7 +579,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 18.",
         "contexts": [
-          "... the gospel, or any duty of it. And that is this:\u2014 Use . Get an experience of the power of the gospel, and ..."
+          "... he gospel, or any duty of it. And that is this:\u2014 Use . Get an experience of the power of the gospel, and ..."
         ]
       },
       {
@@ -587,7 +587,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 19.",
         "contexts": [
-          "... ak to you, from the words thus opened, is this: \u2014 Observation . In the most overwhelming, calamitous distresses t ..."
+          "... k to you, from the words thus opened, is this: \u2014 Observation . In the most overwhelming, calamitous distresses t ..."
         ]
       },
       {
@@ -643,7 +643,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 23.",
         "contexts": [
-          "... bservation I shall make from the words is this: \u2014 Observation . In the most calamitous season, in the greatest in ..."
+          "... servation I shall make from the words is this: \u2014 Observation . In the most calamitous season, in the greatest in ..."
         ]
       },
       {
@@ -693,7 +693,7 @@
         "description": "Spaced period (space before period)",
         "chapter": "Sermon 24.",
         "contexts": [
-          "... upt actings of the affections of the heart; and, 3dly . A frame of soul suited unto them. These are the t ...",
+          "... rupt actings of the affections of the heart; and, 3dly . A frame of soul suited unto them. These are the t ...",
           "... e corrupt desires and actings of our affections. 3dly . And both these, if indulged in any measure, will ..."
         ]
       },
@@ -702,7 +702,7 @@
         "description": "Duplicate period (double dot)",
         "chapter": "Sermon 24.",
         "contexts": [
-          "... hese are the things I intend by secret sins: \u2014 1st.. The vain imaginations of the mind. The Holy Ghost ..."
+          "... ese are the things I intend by secret sins: \u2014 1st.. The vain imaginations of the mind. The Holy Ghost ..."
         ]
       },
       {
@@ -790,7 +790,7 @@
         "description": "Duplicate period (double dot)",
         "chapter": "Discourse 3.",
         "contexts": [
-          "... perties that make this a great act of faith: \u2014 1st.. The state is invisible. The soul is going into a ..."
+          "... erties that make this a great act of faith: \u2014 1st.. The state is invisible. The soul is going into a ..."
         ]
       },
       {
@@ -830,7 +830,7 @@
         "description": "Spaced punctuation (space before character)",
         "chapter": "Discourse 20.",
         "contexts": [
-          "... ng the frame of our souls into his own likeness. Again : 2. The love of Christ, if we are affected with it ..."
+          "... ng the frame of our souls into his own likeness. Again : 2. The love of Christ, if we are affected with i ..."
         ]
       }
     ],
@@ -1216,104 +1216,578 @@
         ]
       }
     ],
-    "Invalid Bible References": [
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
       {
-        "target": "2 Kings 23",
-        "description": "Invalid Bible reference (chapter 23 exceeds max 22 for Kings)",
+        "target": "3. A strange and wonderful surprisal, notwithstanding this, in sovereign grace and power: \"Israel hath not been forsaken...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
         "chapter": "Sermon - Seasonable Words for English Protestants.",
         "contexts": [
-          "... nst them; \u2014 reformation shall not save them.\" See 2 Kings 23:25, 26, where there is an account given of the gr ..."
+          "3. A strange and wonderful surprisal, notwithstanding this, in sovereign grace and power: \"Israel hath not been forsaken..."
         ]
       },
       {
-        "target": "Philippians 38",
-        "description": "Invalid Bible reference (chapter 38 exceeds max 4 for Philippians)",
-        "chapter": "Sermon 7.",
+        "target": "The first is, that, in this state, if God gives time and space, there is encouragement enough left to make our applicati...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon - Seasonable Words for English Protestants.",
         "contexts": [
-          "... s in us \"to will and to do of his good pleasure,\" Philippians 38:13 2:13. Whatever a man doth, which God works no ..."
+          "The first is, that, in this state, if God gives time and space, there is encouragement enough left to make our applicati..."
         ]
       },
       {
-        "target": "Philippians 14",
-        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
-        "chapter": "Sermon 9.",
+        "target": "[[SUMMARY]] THE STRENGTH OF FAITH. \"He staggered not at the promise of God through unbelief; but was strong in faith, gi...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 1.",
         "contexts": [
-          "... ,\" saith the apostle, \"that was in Jesus Christ,\" Philippians 14:5 2:5. What mind was this? He describes it in the ..."
+          "[[SUMMARY]] THE STRENGTH OF FAITH. \"He staggered not at the promise of God through unbelief; but was strong in faith, gi..."
         ]
       },
       {
-        "target": "Philippians 20",
-        "description": "Invalid Bible reference (chapter 20 exceeds max 4 for Philippians)",
-        "chapter": "Sermon 17.",
+        "target": "When the Jews treated with our Savior about salvation, they ask him, \"What shall we do, that we might work the work of G...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Sermon 1.",
         "contexts": [
-          "... Christ, that \"he made himself of no reputation,\" Philippians 20:7 2:7, 8. He forewent all the esteem he might ha ..."
+          "When the Jews treated with our Savior about salvation, they ask him, \"What shall we do, that we might work the work of G..."
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Sermon 18.",
+        "target": "The word here used is the same with that of David, Psalm 32:1, \"Blessed is the man whose sin is covered.\" And in sundry ...",
+        "description": "Paragraph has unmatched double quotes (count: 31)",
+        "chapter": "Sermon 1.",
         "contexts": [
-          "... e describe the greatness and glory of his person, Philippians 17:6 2:6-8, \"He made himself,\" says he, \"of no reput ..."
+          "The word here used is the same with that of David, Psalm 32:1, \"Blessed is the man whose sin is covered.\" And in sundry ..."
         ]
       },
       {
-        "target": "Philippians 44",
-        "description": "Invalid Bible reference (chapter 44 exceeds max 4 for Philippians)",
-        "chapter": "Sermon 23.",
+        "target": "Are we afraid that if we put ourselves upon him, into his hand, he will kill us, we shall die? He gives us this last pos...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 2.",
         "contexts": [
-          "... f all the saints of God that they be so likewise, Philippians 44:15 2:15, \"Be harmless in the midst of a crooked a ..."
+          "Are we afraid that if we put ourselves upon him, into his hand, he will kill us, we shall die? He gives us this last pos..."
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "target": "[2.] There is a tempest; \u2014 in reference whereunto Christ is here said to be \"a covert.\" A tempest, in the Scripture, rep...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 2.",
+        "contexts": [
+          "[2.] There is a tempest; \u2014 in reference whereunto Christ is here said to be \"a covert.\" A tempest, in the Scripture, rep..."
+        ]
+      },
+      {
+        "target": "[4.] There is weariness; \u2014 and in respect hereof Christ is said to be \"the shadow of a great rock.'' Weariness of travel...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 2.",
+        "contexts": [
+          "[4.] There is weariness; \u2014 and in respect hereof Christ is said to be \"the shadow of a great rock.'' Weariness of travel..."
+        ]
+      },
+      {
+        "target": "1. The first thing in general observable from these words is, that in the spiritual worship of the gospel the whole bles...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
         "chapter": "Sermon 3.",
         "contexts": [
-          "... he was able to give ministers. See that at large, Philippians 17:6 2:6-11. It was his humbling himself unto the d ..."
+          "1. The first thing in general observable from these words is, that in the spiritual worship of the gospel the whole bles..."
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "target": "Favor being procured, a way of entrance is also to be provided; otherwise poor souls might say, \"There is water, indeed,...",
+        "description": "Paragraph has unmatched double quotes (count: 23)",
+        "chapter": "Sermon 3.",
+        "contexts": [
+          "Favor being procured, a way of entrance is also to be provided; otherwise poor souls might say, \"There is water, indeed,..."
+        ]
+      },
+      {
+        "target": "[2.] The second thing that we are to humble ourselves unto in the law of grace is, a firm persuasion, exerting itself ef...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Sermon 7.",
+        "contexts": [
+          "[2.] The second thing that we are to humble ourselves unto in the law of grace is, a firm persuasion, exerting itself ef..."
+        ]
+      },
+      {
+        "target": "The argument to carnal reason would lie quite contrary. \"If we are not under the law, \u2014 that is, the condemning power of...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 7.",
+        "contexts": [
+          "The argument to carnal reason would lie quite contrary. \"If we are not under the law, \u2014 that is, the condemning power of..."
+        ]
+      },
+      {
+        "target": "God called him, to be at his disposal universally, by faith to come to it, following him, he knew not for what, nor whit...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 8.",
+        "contexts": [
+          "God called him, to be at his disposal universally, by faith to come to it, following him, he knew not for what, nor whit..."
+        ]
+      },
+      {
+        "target": "Humble walking with God is the great duty and most valuable concernment of believers. \"What doth the Lord thy God requir...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 9.",
+        "contexts": [
+          "Humble walking with God is the great duty and most valuable concernment of believers. \"What doth the Lord thy God requir..."
+        ]
+      },
+      {
+        "target": "Sometimes the persons by whom he doth them, keep them from understanding. \"Shall these men save us?' \u2014 these whom they l...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon 11.",
+        "contexts": [
+          "Sometimes the persons by whom he doth them, keep them from understanding. \"Shall these men save us?' \u2014 these whom they l..."
+        ]
+      },
+      {
+        "target": "2dly . On the account of some way or ways wherein they may have been unadvisedly, or through temptation, or want of seek...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Sermon 11.",
+        "contexts": [
+          "2dly . On the account of some way or ways wherein they may have been unadvisedly, or through temptation, or want of seek..."
+        ]
+      },
+      {
+        "target": "I know how obnoxious this observation is to a sad objection: \u2014 \" Call you these days of light and knowledge? Say you tha...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 11.",
+        "contexts": [
+          "I know how obnoxious this observation is to a sad objection: \u2014 \" Call you these days of light and knowledge? Say you tha..."
+        ]
+      },
+      {
+        "target": "been diffused? Is it increased or more scattered abroad? Is not the contrary true?\"",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 11.",
+        "contexts": [
+          "been diffused? Is it increased or more scattered abroad? Is not the contrary true?\""
+        ]
+      },
+      {
+        "target": "Hath Christ for many years now been in an especial manner come amongst us? Do these alterations relate to him and his in...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 12.",
+        "contexts": [
+          "Hath Christ for many years now been in an especial manner come amongst us? Do these alterations relate to him and his in..."
+        ]
+      },
+      {
+        "target": "[[SUMMARY]] \"The stout-hearted are spoiled, they have slept their sleep; and none of the men of might have found their h...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "[[SUMMARY]] \"The stout-hearted are spoiled, they have slept their sleep; and none of the men of might have found their h..."
+        ]
+      },
+      {
+        "target": "I might farther observe, from both these things together, that among the people of God alone is the residence of his glo...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "I might farther observe, from both these things together, that among the people of God alone is the residence of his glo..."
+        ]
+      },
+      {
+        "target": "1. To the reading: The \"stout-hearted;\" or, the \"strong in heart,\" the \"mighty in heart,\" (so in the original;) \u2014 men of...",
+        "description": "Paragraph has unmatched double quotes (count: 33)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "1. To the reading: The \"stout-hearted;\" or, the \"strong in heart,\" the \"mighty in heart,\" (so in the original;) \u2014 men of..."
+        ]
+      },
+      {
+        "target": "1. Because these very qualifications, of a stout heart, strong hands, and former success, are apt of themselves, if dest...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "1. Because these very qualifications, of a stout heart, strong hands, and former success, are apt of themselves, if dest..."
+        ]
+      },
+      {
+        "target": "Use 1. Be not moved at the most formidable enemies that may arise against you in the ways of God. \"It was told the house...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "Use 1. Be not moved at the most formidable enemies that may arise against you in the ways of God. \"It was told the house..."
+        ]
+      },
+      {
+        "target": "It is true he said so; and by this observation you have an answer to the Scripture. For though he said so, he lied befor...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 16.",
+        "contexts": [
+          "It is true he said so; and by this observation you have an answer to the Scripture. For though he said so, he lied befor..."
+        ]
+      },
+      {
+        "target": "2dly. The decree of God signifies \"sententia lata,\" \"a determinate sentence,' that God hath pronounced against any perso...",
+        "description": "Paragraph has unmatched double quotes (count: 15)",
+        "chapter": "Sermon 20.",
+        "contexts": [
+          "2dly. The decree of God signifies \"sententia lata,\" \"a determinate sentence,' that God hath pronounced against any perso..."
+        ]
+      },
+      {
+        "target": "[4.] There is this in it also, That if there be need of power, God can put it forth, that power which carried Abraham th...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 20.",
+        "contexts": [
+          "[4.] There is this in it also, That if there be need of power, God can put it forth, that power which carried Abraham th..."
+        ]
+      },
+      {
+        "target": "He tells you, verse 2, that it is the \"day of his trouble;\" that \"his sores run in the night and cease not; his soul ref...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Sermon 20.",
+        "contexts": [
+          "He tells you, verse 2, that it is the \"day of his trouble;\" that \"his sores run in the night and cease not; his soul ref..."
+        ]
+      },
+      {
+        "target": "Hath God forgotten to be gracious? hath he in anger shut up his tender mercies?\" In this grand and overwhelming distress...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Sermon 20.",
+        "contexts": [
+          "Hath God forgotten to be gracious? hath he in anger shut up his tender mercies?\" In this grand and overwhelming distress..."
+        ]
+      },
+      {
+        "target": "The reason why it was a new commandment was, because there was no quickening, enlivening example of it, to express the p...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 21.",
+        "contexts": [
+          "The reason why it was a new commandment was, because there was no quickening, enlivening example of it, to express the p..."
+        ]
+      },
+      {
+        "target": "May be they are joints; that is, either officers or principal members, who, by reason of their gifts, yield a supply to ...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Sermon 21.",
+        "contexts": [
+          "May be they are joints; that is, either officers or principal members, who, by reason of their gifts, yield a supply to ..."
+        ]
+      },
+      {
+        "target": "as he spake by the mouth of his holy prophets, which have been since the world began: that we should be saved from our e...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 23.",
+        "contexts": [
+          "as he spake by the mouth of his holy prophets, which have been since the world began: that we should be saved from our e..."
+        ]
+      },
+      {
+        "target": "IV. What may be the reasons why the Lord should deal thus severely with a poor people, after they have walked with him, ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 24.",
+        "contexts": [
+          "IV. What may be the reasons why the Lord should deal thus severely with a poor people, after they have walked with him, ..."
+        ]
+      },
+      {
+        "target": "(2.) A second reason is, \"inordinate cleaving to the things of the world at a most undue season. It may be it would not ...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Sermon 24.",
+        "contexts": [
+          "(2.) A second reason is, \"inordinate cleaving to the things of the world at a most undue season. It may be it would not ..."
+        ]
+      },
+      {
+        "target": "Thirdly, The way of their introduction: \"They shall come.\" Fourthly, The time and season of it: \"They shall come in the ...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 26.",
+        "contexts": [
+          "Thirdly, The way of their introduction: \"They shall come.\" Fourthly, The time and season of it: \"They shall come in the ..."
+        ]
+      },
+      {
+        "target": "Again; the apostle, in speaking unto Timothy, speaks unto us also, to us all, \"This know ye also.\" It is the great conce...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 26.",
+        "contexts": [
+          "Again; the apostle, in speaking unto Timothy, speaks unto us also, to us all, \"This know ye also.\" It is the great conce..."
+        ]
+      },
+      {
+        "target": "5. There shall be great tokens of God's wrath from heaven: 'Signs in the heavens, the sun, moon, and stars.'\" The Lord C...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 26.",
+        "contexts": [
+          "5. There shall be great tokens of God's wrath from heaven: 'Signs in the heavens, the sun, moon, and stars.'\" The Lord C..."
+        ]
+      },
+      {
+        "target": "(3.) As to the manner of it, it ought to be done expressly in words that we should say to God. I do not give instruction...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 28.",
+        "contexts": [
+          "(3.) As to the manner of it, it ought to be done expressly in words that we should say to God. I do not give instruction..."
+        ]
+      },
+      {
+        "target": "I put all my trust and confidence in thy faithfulness, power, and sovereignty, to be dealt withal according to the terms...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 28.",
+        "contexts": [
+          "I put all my trust and confidence in thy faithfulness, power, and sovereignty, to be dealt withal according to the terms..."
+        ]
+      },
+      {
+        "target": "But now man is \"medium participationis;\" \u2014 he hath an angelical nature from above that cannot die, and a nature from ben...",
+        "description": "Paragraph has unmatched double quotes (count: 23)",
+        "chapter": "Sermon 29.",
+        "contexts": [
+          "But now man is \"medium participationis;\" \u2014 he hath an angelical nature from above that cannot die, and a nature from ben..."
+        ]
+      },
+      {
+        "target": "(1.) The first is that which he gives us, Philippians 1:23, \"Having a desire to depart, and to be with Christ.\" \u0395\u03c0\u03b9\u03b8\u03c5\u03bc\u03af\u03b1...",
+        "description": "Paragraph has unmatched double quotes (count: 21)",
+        "chapter": "Sermon 29.",
+        "contexts": [
+          "(1.) The first is that which he gives us, Philippians 1:23, \"Having a desire to depart, and to be with Christ.\" \u0395\u03c0\u03b9\u03b8\u03c5\u03bc\u03af\u03b1..."
+        ]
+      },
+      {
+        "target": "Some can tell you by experience, that, having made it their business with all their strength and study to live in that f...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 29.",
+        "contexts": [
+          "Some can tell you by experience, that, having made it their business with all their strength and study to live in that f..."
+        ]
+      },
+      {
+        "target": "2. The second duty in such a season is, for every one of us privately to inquire of Jesus Christ, in prayer and supplica...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Discourse 11.",
+        "contexts": [
+          "2. The second duty in such a season is, for every one of us privately to inquire of Jesus Christ, in prayer and supplica..."
+        ]
+      },
+      {
+        "target": "Consider the condition of Abraham, and you will see what reason there was for God to give himself that title in this ren...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Sermon 2.",
+        "contexts": [
+          "Consider the condition of Abraham, and you will see what reason there was for God to give himself that title in this ren..."
+        ]
+      },
+      {
+        "target": "This is the first thing that my text doth suggest unto me, \u2014 namely, that the ministry is the gift of Christ. And having...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Sermon 3.",
+        "contexts": [
+          "This is the first thing that my text doth suggest unto me, \u2014 namely, that the ministry is the gift of Christ. And having..."
+        ]
+      },
+      {
+        "target": "What is all this great preparation now for? what is it the apostle ushers in upon this theater of glory? Nothing less th...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Sermon 3.",
+        "contexts": [
+          "What is all this great preparation now for? what is it the apostle ushers in upon this theater of glory? Nothing less th..."
+        ]
+      },
+      {
+        "target": "To whom is this promise made? It is made unto the gospel church. In the verse foregoing, \"The Redeemer shall come to Zio...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Sermon 4.",
+        "contexts": [
+          "To whom is this promise made? It is made unto the gospel church. In the verse foregoing, \"The Redeemer shall come to Zio..."
+        ]
+      },
+      {
+        "target": "Christ will say to such at the last day, \"How came ye in hither?",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Sermon 4.",
+        "contexts": [
+          "Christ will say to such at the last day, \"How came ye in hither?"
+        ]
+      },
+      {
+        "target": "2. Authority is required. What is authority in a preaching ministry? It is a consequent of unction, and not of office. T...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon 5.",
+        "contexts": [
+          "2. Authority is required. What is authority in a preaching ministry? It is a consequent of unction, and not of office. T..."
+        ]
+      },
+      {
+        "target": "2. The love of Christ was manifested in his suffering in that condition. You know what he suffered, and what he suffered...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
         "chapter": "Sermon 6",
         "contexts": [
-          "... preeminence above all other loves whatsoever. In Philippians 17:6 2:6-8, it is there set forth, where he unites t ..."
+          "2. The love of Christ was manifested in his suffering in that condition. You know what he suffered, and what he suffered..."
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
+        "target": "By way of use. \u2014 Seeing the things of Christ are good things in themselves, and believers discern their goodness and the...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 7.",
+        "contexts": [
+          "By way of use. \u2014 Seeing the things of Christ are good things in themselves, and believers discern their goodness and the..."
+        ]
+      },
+      {
+        "target": "Secondly. Observe from the words, that it is the duty of believers to be making things concerning Jesus Christ: \"Things ...",
+        "description": "Paragraph has unmatched double quotes (count: 13)",
+        "chapter": "Sermon 7.",
+        "contexts": [
+          "Secondly. Observe from the words, that it is the duty of believers to be making things concerning Jesus Christ: \"Things ..."
+        ]
+      },
+      {
+        "target": "(3.) In the power and heavenliness of his doctrine. Many other instances may be given, but things may be gathered to the...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
         "chapter": "Sermon 8.",
         "contexts": [
-          "... n nature with grace: \u2014 [1.] In his divine glory. Philippians 17:6 2:6, \"Who being in the form of God, thought it ..."
+          "(3.) In the power and heavenliness of his doctrine. Many other instances may be given, but things may be gathered to the..."
         ]
       },
       {
-        "target": "Philippians 14",
-        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
-        "chapter": "Sermon 8.",
+        "target": "III. To the appellation that is here given unto Christ, \u2014 \"O most Mighty, \u05d2\u05b4\u05bc\u05d1\u05bc\u05d5\u05b9\u05e8, from \u05d2\u05b8\u05bc\u05d1\u05b7\u05e8, one that prevails in ev...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 9.",
         "contexts": [
-          "... that the same mind may be in us that was in him, Philippians 14:5 2:5; the same meekness, humility, self-denial, ..."
+          "III. To the appellation that is here given unto Christ, \u2014 \"O most Mighty, \u05d2\u05b4\u05bc\u05d1\u05bc\u05d5\u05b9\u05e8, from \u05d2\u05b8\u05bc\u05d1\u05b7\u05e8, one that prevails in ev..."
         ]
       },
       {
-        "target": "Philippians 14",
-        "description": "Invalid Bible reference (chapter 14 exceeds max 4 for Philippians)",
+        "target": "To betake ourselves to the ark, is to betake ourselves to the fountain of our peace. And so Psalm 2:12, \"If God's wrath ...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Sermon 10.",
+        "contexts": [
+          "To betake ourselves to the ark, is to betake ourselves to the fountain of our peace. And so Psalm 2:12, \"If God's wrath ..."
+        ]
+      },
+      {
+        "target": "(2.) But now, it would not have advantaged either Noah or his sons to have an ark prepared for them, unless they had a d...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 10.",
+        "contexts": [
+          "(2.) But now, it would not have advantaged either Noah or his sons to have an ark prepared for them, unless they had a d..."
+        ]
+      },
+      {
+        "target": "God hath made special promises to such as are thus concerned: Zephaniah 3:18, \"I will gather them,\" saith he. Whom will ...",
+        "description": "Paragraph has unmatched double quotes (count: 17)",
+        "chapter": "Sermon 11.",
+        "contexts": [
+          "God hath made special promises to such as are thus concerned: Zephaniah 3:18, \"I will gather them,\" saith he. Whom will ..."
+        ]
+      },
+      {
+        "target": "(3.) Faith, in such a case and condition, will bring to mind, and make effectual upon our souls, the examples of them th...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Sermon 11.",
+        "contexts": [
+          "(3.) Faith, in such a case and condition, will bring to mind, and make effectual upon our souls, the examples of them th..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"When I have performed my whole work upon mount Zion,' saith God, \"then,\" etc., Isaiah 10:12.",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Sermon 13.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"When I have performed my whole work upon mount Zion,' saith God, \"then,\" etc., Isaiah 10:12."
+        ]
+      },
+      {
+        "target": "3. It is peculiarly eucharistical. There is a peculiar thanksgiving that ought to attend this ordinance. It is called \"T...",
+        "description": "Paragraph has unmatched double quotes (count: 11)",
+        "chapter": "Discourse 2.",
+        "contexts": [
+          "3. It is peculiarly eucharistical. There is a peculiar thanksgiving that ought to attend this ordinance. It is called \"T..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption,\" \u2014 \"...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
         "chapter": "Discourse 3.",
         "contexts": [
-          "... n his death. The apostle doth propose it unto us, Philippians 14:5 2:5, 6, etc., [[BLOCKQUOTE]] \"Let this mind be ..."
+          "[[BLOCKQUOTE]] \"For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption,\" \u2014 \"..."
         ]
       },
       {
-        "target": "Philippians 17",
-        "description": "Invalid Bible reference (chapter 17 exceeds max 4 for Philippians)",
-        "chapter": "Discourse 6.",
+        "target": "going; nor my body see corruption.\" What was his faith as to the future issue of things? That he expresses, verse 11, \"T...",
+        "description": "Paragraph has unmatched double quotes (count: 7)",
+        "chapter": "Discourse 3.",
         "contexts": [
-          "... s, and washed us from our sins in his own blood.\" Philippians 17:6 2:6-8, [[BLOCKQUOTE]] \"Who, being in the form ..."
+          "going; nor my body see corruption.\" What was his faith as to the future issue of things? That he expresses, verse 11, \"T..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"The Lord God will help me; therefore shall I not be confounded: therefore have I set my face like a flin...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Discourse 3.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"The Lord God will help me; therefore shall I not be confounded: therefore have I set my face like a flin..."
+        ]
+      },
+      {
+        "target": "my cause? I have a cause to plead, who is the master of it?\" \"I am engaged in a great cause,\" saith he, \"and I am greatl...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Discourse 3.",
+        "contexts": [
+          "my cause? I have a cause to plead, who is the master of it?\" \"I am engaged in a great cause,\" saith he, \"and I am greatl..."
+        ]
+      },
+      {
+        "target": "I will not insist on these typical preparations, but only say, it sufficiently proves the general thesis, that there oug...",
+        "description": "Paragraph has unmatched double quotes (count: 9)",
+        "chapter": "Discourse 5.",
+        "contexts": [
+          "I will not insist on these typical preparations, but only say, it sufficiently proves the general thesis, that there oug..."
+        ]
+      },
+      {
+        "target": "Brethren, let us be able by faith, not only to look through these outward signs to that which makes the representation i...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Discourse 11.",
+        "contexts": [
+          "Brethren, let us be able by faith, not only to look through these outward signs to that which makes the representation i..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] \"Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt-offering and sin-offerin...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Discourse 13.",
+        "contexts": [
+          "[[BLOCKQUOTE]] \"Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt-offering and sin-offerin..."
+        ]
+      },
+      {
+        "target": "[[BLOCKQUOTE]] Then said I, Lo, I come: in the volume of the book it is written of me,\" etc.",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Discourse 13.",
+        "contexts": [
+          "[[BLOCKQUOTE]] Then said I, Lo, I come: in the volume of the book it is written of me,\" etc."
+        ]
+      },
+      {
+        "target": "(2dly.) There were sufferings positive in his soul, when he was made sin and a curse for us, and had a sense of the wrat...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Discourse 13.",
+        "contexts": [
+          "(2dly.) There were sufferings positive in his soul, when he was made sin and a curse for us, and had a sense of the wrat..."
+        ]
+      },
+      {
+        "target": "You will say, then, \"What is the special object of this special faith?' Truly that which the apostle tells us here; \u2014 it...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Discourse 18.",
+        "contexts": [
+          "You will say, then, \"What is the special object of this special faith?' Truly that which the apostle tells us here; \u2014 it..."
+        ]
+      },
+      {
+        "target": "2. This love of Christ passes the comprehension and knowledge of angels; and therefore Peter tells us, 1 Peter 1:12, spe...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Discourse 21.",
+        "contexts": [
+          "2. This love of Christ passes the comprehension and knowledge of angels; and therefore Peter tells us, 1 Peter 1:12, spe..."
         ]
       }
-    ],
-    "List Formatting Inconsistencies": []
-  }
+    ]
+  },
+  "unused_whitelist_anomalies": {}
 }

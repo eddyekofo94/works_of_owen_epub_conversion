@@ -41,7 +41,7 @@ ALLOWED_FOOTNOTE_ANOMALIES = {
         'mismatch_delta': 4,
     },
     '9': {
-        'mismatch_delta': 2, # Two endnotes are referenced multiple times (valid)
+        'mismatch_delta': 1, # One endnote is referenced multiple times (valid)
     },
     '10': {
         'missing_asides': {'fn254', 'fn389', 'fn396'},
