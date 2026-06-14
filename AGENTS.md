@@ -126,6 +126,7 @@ Owen/
     ├── input/                   # PDF symlink
     ├── intermediate/            # volume_N.json (Stage 1 output) + volume_N.thml.xml
     ├── output/                  # Generated EPUB
+    ├── reports/                 # Timestamped quality reports (pre/post-heal archival logs)
     └── bugs_fixes/              # Per-volume issue log
 ```
 
@@ -529,6 +530,7 @@ Automates the volume repair and quality healing process.
 - Executes repairs (OCR fixes, patristic citations resolution, split healing).
 - Verifies EPUB building, checks, and test suite.
 - Re-runs state report and outputs before-and-after quality progression.
+- **Report Archiving:** Auditing runs automatically copy and archive the latest generated reports (JSON and Markdown formats) with a timestamp under `volumes/v[n]/reports/YYYYMMDD_HHMMSS/` for historical tracking.
 
 ## Citation System — Agent Briefing (June 2026)
 

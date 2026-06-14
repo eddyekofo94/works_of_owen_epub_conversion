@@ -227,6 +227,19 @@ def run_volume_pipeline(vol_num: str, no_rebuild: bool = False, no_whitelist: bo
         "output": out,
     }
 
+    # Copy latest reports to volumes/vN/reports/YYYYMMDD_HHMMSS/
+    try:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        reports_dir = vol_dir / "reports" / timestamp
+        reports_dir.mkdir(parents=True, exist_ok=True)
+        import shutil
+        for p in bugs_dir.glob(f"volume_{vol_num}_*"):
+            if p.suffix in (".json", ".md"):
+                shutil.copy2(p, reports_dir / p.name)
+        print(f"  [{vol_num}] Copied reports to volumes/{vol_dir.name}/reports/{timestamp}/")
+    except Exception as e:
+        print(f"  [{vol_num}] Failed to archive reports: {e}")
+
     summary["elapsed"] = (datetime.now() - start).total_seconds()
     return summary
 

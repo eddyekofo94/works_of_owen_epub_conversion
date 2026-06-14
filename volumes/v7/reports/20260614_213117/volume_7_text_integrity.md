@@ -8,8 +8,8 @@
 
 ## Coverage
 
-- PDF content tokens: 230677
-- EPUB content tokens: 230999
+- PDF content tokens: 230676
+- EPUB content tokens: 230998
 - Approximate PDF-to-EPUB coverage ratio: 0.9976
 - Pages checked: 679
 - Weak page matches: 0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 512
-- EPUB Latin words: 520
-- EPUB Tagged Latin words: 169
-- Latin word coverage ratio: 0.9883
-- Latin word tagging ratio: 0.325
+- PDF Latin words: 820
+- EPUB Latin words: 849
+- EPUB Tagged Latin words: 175
+- Latin word coverage ratio: 0.9927
+- Latin word tagging ratio: 0.2061
 - Latin clauses checked: 18
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 45
+- Tagged Latin runs checked: 48
 - Translated Latin runs: 11
-- Latin translation ratio: 0.2444
+- Latin translation ratio: 0.2292
 
 ## Missing Dense Source Windows
 
@@ -142,16 +142,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: accommodate; epub: 6; tagged: 0
-- word: abhor; epub: 6; tagged: 0
-- word: horror; epub: 5; tagged: 0
-- word: armor; epub: 5; tagged: 0
-- word: temperate; epub: 5; tagged: 0
-- word: premium; epub: 4; tagged: 0
-- word: emphasis; epub: 4; tagged: 0
-- word: create; epub: 4; tagged: 0
-- word: laodicea; epub: 4; tagged: 0
-- word: ephesus; epub: 4; tagged: 0
+- word: adhere; epub: 29; tagged: 0
+- word: inordinate; epub: 26; tagged: 0
+- word: profligate; epub: 22; tagged: 0
+- word: iii; epub: 19; tagged: 0
+- word: forego; epub: 18; tagged: 0
+- word: meditate; epub: 16; tagged: 1
+- word: alas; epub: 15; tagged: 0
+- word: stream; epub: 14; tagged: 0
+- word: undergo; epub: 13; tagged: 0
+- word: pleas; epub: 12; tagged: 0
 
 ## Untranslated Latin Samples
 

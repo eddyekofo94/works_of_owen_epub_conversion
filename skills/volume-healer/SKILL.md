@@ -36,11 +36,11 @@ The skill is triggered by the `#heal` command:
   ```
 
 ### 3. Run Pre-Audit (Before State)
-- Run the full check pipeline for the volume to gather initial baseline metrics:
+- Run the full check pipeline for the volume to gather initial baseline metrics (this automatically archives a timestamped copy of all reports under `volumes/v[n]/reports/YYYYMMDD_HHMMSS/` for history tracking):
   ```bash
   .venv/bin/python3 scripts/run_all_checks.py [n]
   ```
-- Gather baseline metrics from `volumes/v[n]/bugs_fixes/`:
+- Gather baseline metrics from the latest timestamped report folder under `volumes/v[n]/reports/YYYYMMDD_HHMMSS/` (or from `volumes/v[n]/bugs_fixes/`):
   - Word coverage and language coverages in `volume_[n]_text_integrity.json`
   - Total and unresolved citations in `volume_[n]_bug_regressions.json` (or scan using `scripts/scan_citations.py --vol [n]`)
   - Suspected OCR anomalies in `volume_[n]_anomalies.json`
@@ -66,7 +66,7 @@ The skill is triggered by the `#heal` command:
   ```bash
   .venv/bin/python3 volumes/v[n]/convert.py
   ```
-- Run the full checks suite to ensure no regressions and verify bug regression budget:
+- Run the full checks suite to ensure no regressions and verify bug regression budget (which archives a post-heal timestamped copy of all reports under `volumes/v[n]/reports/YYYYMMDD_HHMMSS/`):
   ```bash
   .venv/bin/python3 scripts/run_all_checks.py [n]
   ```

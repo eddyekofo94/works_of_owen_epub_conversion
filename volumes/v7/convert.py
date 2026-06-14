@@ -133,6 +133,8 @@ OVERRIDES = {
         'A Treatise Of The Dominion of Sin and Grace': _V7_DOMINION_TITLE_PAGE,
     },
     'text_replacements': {
+        'them)is': 'them) is',
+        'menlHow': 'men! How',
         'it it be under the power': 'if it be under the power',
         'delight in in the': 'delight in, in the',
         'yet to to be': 'yet to be',

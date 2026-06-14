@@ -2,7 +2,7 @@
   "volume": "7",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/input/owen-v7.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
-  "generated_at": "2026-06-14T19:32:42.689896+00:00",
+  "generated_at": "2026-06-14T19:31:13.206386+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -15,8 +15,8 @@
     "paragraph_count": 2395
   },
   "word_coverage": {
-    "pdf_content_tokens": 230677,
-    "epub_content_tokens": 230999,
+    "pdf_content_tokens": 230676,
+    "epub_content_tokens": 230998,
     "coverage_ratio": 0.9976,
     "missing_word_samples": [
       {
@@ -701,139 +701,139 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 512,
-    "epub_latin_word_count": 520,
-    "epub_tagged_latin_word_count": 169,
-    "pdf_latin_unique_words": 337,
-    "epub_latin_unique_words": 337,
-    "epub_tagged_unique_words": 137,
-    "latin_word_coverage_ratio": 0.9883,
-    "latin_tagging_ratio": 0.325,
+    "pdf_latin_word_count": 820,
+    "epub_latin_word_count": 849,
+    "epub_tagged_latin_word_count": 175,
+    "pdf_latin_unique_words": 369,
+    "epub_latin_unique_words": 373,
+    "epub_tagged_unique_words": 143,
+    "latin_word_coverage_ratio": 0.9927,
+    "latin_tagging_ratio": 0.2061,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
-        "word": "accommodate",
-        "epub": 6,
+        "word": "adhere",
+        "epub": 29,
         "tagged": 0
       },
       {
-        "word": "abhor",
-        "epub": 6,
+        "word": "inordinate",
+        "epub": 26,
         "tagged": 0
       },
       {
-        "word": "horror",
-        "epub": 5,
+        "word": "profligate",
+        "epub": 22,
         "tagged": 0
       },
       {
-        "word": "armor",
-        "epub": 5,
+        "word": "iii",
+        "epub": 19,
         "tagged": 0
       },
       {
-        "word": "temperate",
-        "epub": 5,
+        "word": "forego",
+        "epub": 18,
         "tagged": 0
       },
       {
-        "word": "premium",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "emphasis",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "create",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "laodicea",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "ephesus",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "proportionate",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "abate",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "importunate",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "whereto",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "whoso",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "alienate",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "elisha",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "habituate",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "william",
-        "epub": 3,
-        "tagged": 0
-      },
-      {
-        "word": "captivate",
-        "epub": 3,
-        "tagged": 0
-      },
-      {
-        "word": "beza",
-        "epub": 4,
+        "word": "meditate",
+        "epub": 16,
         "tagged": 1
       },
       {
-        "word": "beam",
-        "epub": 3,
+        "word": "alas",
+        "epub": 15,
         "tagged": 0
       },
       {
-        "word": "humor",
-        "epub": 3,
+        "word": "stream",
+        "epub": 14,
         "tagged": 0
       },
       {
-        "word": "ingenerate",
-        "epub": 3,
+        "word": "undergo",
+        "epub": 13,
         "tagged": 0
       },
       {
-        "word": "malefactor",
-        "epub": 3,
+        "word": "pleas",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "communicate",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "hate",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "door",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "analysis",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "apostate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "dream",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "succor",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "contemplate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "inferior",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "obstinate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "innate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "animate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "nowhere",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "tract",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "insinuate",
+        "epub": 6,
         "tagged": 0
       }
     ]
@@ -844,9 +844,9 @@
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 45,
+    "tagged_latin_runs_count": 48,
     "translated_latin_runs_count": 11,
-    "latin_translation_ratio": 0.2444,
+    "latin_translation_ratio": 0.2292,
     "untranslated_latin_samples": [
       {
         "phrase": "Erasmus, ‡  \"Fieri non"

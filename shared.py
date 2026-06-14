@@ -2297,7 +2297,12 @@ ENGLISH_WORDS = {
     'thereinto', 'hereinto', 'everywhere', 'intimate', 'demonstrate', 'thesis',
     'epist', 'blondellus', 'terror', 'hypothesis', 'vindicate', 'medium', 'judas', 
     'desperate', 'achaia', 'frustrate', 'anywhere', 'eusebius', 'philippi', 'syria', 
-    'degenerate', 'reprobate', 'alter'
+    'degenerate', 'reprobate', 'alter',
+    # English words of Latin origin that end in Latin suffixes and are frequently mis-flagged
+    'adhere', 'inordinate', 'profligate', 'forego', 'meditate', 'alas', 'stream', 'undergo',
+    'pleas', 'communicate', 'hate', 'door', 'analysis', 'apostate', 'dream', 'succor',
+    'contemplate', 'inferior', 'obstinate', 'innate', 'animate', 'nowhere', 'tract', 'insinuate',
+    'magistrate', 'dissent', 'ere'
 }
 
 SHARED_WORDS = {
@@ -2321,6 +2326,9 @@ def is_latin_word(word):
     if word_clean in SHARED_WORDS:
         return 'shared'
     if word_clean in ENGLISH_WORDS:
+        return False
+    # Ignore Roman numerals of length >= 3
+    if len(word_clean) >= 3 and re.match(r'^m{0,4}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3})$', word_clean):
         return False
     if word_clean in LATIN_DICTIONARY:
         return True
