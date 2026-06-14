@@ -9,7 +9,7 @@
 ## Coverage
 
 - PDF content tokens: 253566
-- EPUB content tokens: 256961
+- EPUB content tokens: 256938
 - Approximate PDF-to-EPUB coverage ratio: 0.9995
 - Pages checked: 764
 - Weak page matches: 3

@@ -74,6 +74,6 @@ Suspicious transitions that represent correct paragraph breaks in context:
 
 ## 3. Ignored Warnings
 The following warnings are ignored as they represent false positives or benign features:
-* `low_latin_tagging` / `low_latin_translation_coverage`: Latin vocabulary checks flag common English words or names (like `sincere`, `poor`, `Damasus`).
+* `low_latin_tagging` / `low_latin_translation_coverage`: Latin vocabulary checks flag common English words or names (like `sincere`, `poor`, `Damasus`) and minor spelling variations. Actual Latin textual coverage is very high (>99%).
 * `repeated_windows`: Flags `"the grace and duty of being spiritually minded"`, which is the legitimate title of the second treatise and naturally repeated.
 * `roman_heading_candidates` / `enumerator_sequence_candidates`: Owen's list jumps are authentic and verified against the print edition.

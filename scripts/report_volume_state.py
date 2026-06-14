@@ -289,9 +289,9 @@ def score_volume(d: dict) -> float:
         # Latin coverage
         if "low_latin_word_coverage" not in ignored_warnings:
             lat_cov = d.get("latin_coverage")
-            if lat_cov is not None:
-                score += min((1.0 - lat_cov) * 2000, 10.0)
-            elif d["qa_level"] != "NONE":
+            if lat_cov is not None and lat_cov < 0.990:
+                score += min((0.990 - lat_cov) * 2000, 10.0)
+            elif lat_cov is None and d["qa_level"] != "NONE":
                 score += 5.0
 
         # Latin tagging

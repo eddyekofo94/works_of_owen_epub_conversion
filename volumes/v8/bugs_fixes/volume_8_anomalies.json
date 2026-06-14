@@ -1,7 +1,7 @@
 {
   "volume": "8",
-  "total_words_audited": 306937,
-  "total_anomalies_count": 191,
+  "total_words_audited": 306909,
+  "total_anomalies_count": 185,
   "anomalies": {
     "Hyphenation Anomalies": [
       {
@@ -1466,35 +1466,11 @@
         ]
       },
       {
-        "target": "Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no...",
-        "description": "Paragraph has unmatched double quotes (count: 1)",
-        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
-        "contexts": [
-          "Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no..."
-        ]
-      },
-      {
         "target": "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...",
         "description": "Paragraph has unmatched double quotes (count: 1)",
         "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
         "contexts": [
           "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ..."
-        ]
-      },
-      {
-        "target": "(1.) I will sup with him;\" \u2014 I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con...",
-        "description": "Paragraph has unmatched double quotes (count: 7)",
-        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
-        "contexts": [
-          "(1.) I will sup with him;\" \u2014 I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con..."
-        ]
-      },
-      {
-        "target": "Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu...",
-        "description": "Paragraph has unmatched double quotes (count: 1)",
-        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
-        "contexts": [
-          "Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu..."
         ]
       },
       {
@@ -1506,35 +1482,11 @@
         ]
       },
       {
-        "target": "This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...",
-        "description": "Paragraph has unmatched double quotes (count: 5)",
-        "chapter": "Christ's Kingdom and the Magistrate's Power.",
-        "contexts": [
-          "This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n..."
-        ]
-      },
-      {
-        "target": "Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...",
-        "description": "Paragraph has unmatched double quotes (count: 19)",
-        "chapter": "Except. IV.",
-        "contexts": [
-          "Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr..."
-        ]
-      },
-      {
         "target": "SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...",
         "description": "Paragraph has unmatched double quotes (count: 1)",
         "chapter": "Sermon 16.",
         "contexts": [
           "SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT..."
-        ]
-      },
-      {
-        "target": "In publico discrimine omnis homo miles est.\"",
-        "description": "Paragraph has unmatched double quotes (count: 1)",
-        "chapter": "Sermon 16.",
-        "contexts": [
-          "In publico discrimine omnis homo miles est.\""
         ]
       }
     ]

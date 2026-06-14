@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 306937
-* **Total Suspected Anomalies Found:** 191
+* **Total Words Audited:** 306909
+* **Total Suspected Anomalies Found:** 185
 
 Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix these.
 
@@ -17,7 +17,7 @@ Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix the
 * **Structural Nesting Sequence Jumps:** 36 items
 * **Invalid Bible References:** 2 items
 * **List Formatting Inconsistencies:** 0 items
-* **Unmatched Quotation Marks:** 11 items
+* **Unmatched Quotation Marks:** 5 items
 
 ---
 
@@ -1160,59 +1160,23 @@ No anomalies found in this category.
 * **Contexts:**
   * **(2.) Take heed of resting upon and trusting to the privilege, however excellent and glorious, of the outward enjoyment o...**
 
-### 3. `Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no...`
-* **Description:** Paragraph has unmatched double quotes (count: 1)
-* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
-* **Contexts:**
-  * **Thirdly. Materials themselves will not serve: they must be fitly framed, and wisely disposed, or they will be a heap, no...**
-
-### 4. `[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...`
+### 3. `[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...`
 * **Description:** Paragraph has unmatched double quotes (count: 1)
 * **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
 * **Contexts:**
   * **[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...**
 
-### 5. `(1.) I will sup with him;" — I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con...`
-* **Description:** Paragraph has unmatched double quotes (count: 7)
-* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
-* **Contexts:**
-  * **(1.) I will sup with him;" — I will delight and satisfy myself with him. Jesus Christ takes abundance of delight and con...**
-
-### 6. `Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu...`
-* **Description:** Paragraph has unmatched double quotes (count: 1)
-* **Chapter:** *The Branch of the Lord the Beauty of Zion: Or, the Glory of the*
-* **Contexts:**
-  * **Use 2. Learn hence the vanity of resting upon outward church privileges, if we are not withal interested in this spiritu...**
-
-### 7. `[[BLOCKQUOTE]] "And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ...`
+### 4. `[[BLOCKQUOTE]] "And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ...`
 * **Description:** Paragraph has unmatched double quotes (count: 1)
 * **Chapter:** *Advantage of the Kingdom of Christ*
 * **Contexts:**
   * **[[BLOCKQUOTE]] "And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ...**
 
-### 8. `This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...`
-* **Description:** Paragraph has unmatched double quotes (count: 5)
-* **Chapter:** *Christ's Kingdom and the Magistrate's Power.*
-* **Contexts:**
-  * **This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...**
-
-### 9. `Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...`
-* **Description:** Paragraph has unmatched double quotes (count: 19)
-* **Chapter:** *Except. IV.*
-* **Contexts:**
-  * **Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...**
-
-### 10. `SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...`
+### 5. `SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...`
 * **Description:** Paragraph has unmatched double quotes (count: 1)
 * **Chapter:** *Sermon 16.*
 * **Contexts:**
   * **SERMON 16.   AN HUMBLE TESTIMONY   UNTO THE GOODNESS AND SEVERITY OF GOD   IN HIS DEALING WITH SINFUL CHURCHES   AND NAT...**
-
-### 11. `In publico discrimine omnis homo miles est."`
-* **Description:** Paragraph has unmatched double quotes (count: 1)
-* **Chapter:** *Sermon 16.*
-* **Contexts:**
-  * **In publico discrimine omnis homo miles est."**
 
 ---
 

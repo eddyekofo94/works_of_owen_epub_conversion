@@ -2,7 +2,7 @@
   "volume": "8",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/input/owen-v8.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-06-13T14:46:40.069530+00:00",
+  "generated_at": "2026-06-14T19:15:24.898926+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -16,7 +16,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 253566,
-    "epub_content_tokens": 256961,
+    "epub_content_tokens": 256938,
     "coverage_ratio": 0.9995,
     "missing_word_samples": [
       {
