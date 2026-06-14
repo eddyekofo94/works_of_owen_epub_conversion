@@ -116,11 +116,23 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-14T19:15:24.898926+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-14T23:07:35.466109+00:00
+**Status:** WARN (2 warnings)
 
 Reports:
 - `volume_8_text_integrity.json`
@@ -132,8 +144,8 @@ Reports:
 | EPUB text files | 73 |
 | EPUB paragraphs/headings | 3349 |
 | Approximate PDF-to-EPUB word coverage | 0.9995 |
-| Weak page matches | 3 |
-| Dense source windows checked | 33784 |
+| Weak page matches | 4 |
+| Dense source windows checked | 33466 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 2 |
 | Missing front CONTENTS pages | 2 |
@@ -145,7 +157,7 @@ Reports:
 | Missing bottom-of-page body windows | 2 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 237 |
-| Short fragments | 47 |
+| Short fragments | 53 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
@@ -166,6 +178,11 @@ Reports:
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
+Warnings requiring triage:
+
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
+
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
 
@@ -185,10 +202,22 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-14T19:14:37.130421+00:00
+**Last run:** 2026-06-14T23:06:54.493089+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub`
 **Status:** PASS (0 errors, 0 warnings)
 

@@ -118,7 +118,17 @@ OVERRIDES = {
         'Preface.': _V8_SERMONS_TITLE_PAGE,
         'Sermon 14.': _V8_SERMON14_TITLE_PAGE,
     },
+    'regex_replacements': {
+        r'\b\s+([.,;:?!])': r'\1',
+        r'\(\s+': '(',
+        r'\b\s+\)': ')',
+    },
     'text_replacements': {
+        'will so indulge to y spirits': 'will so indulge to your spirits',
+        'p articular': 'particular',
+        'p _articular_': '_particular_',
+        'Joel 51:10': 'Joel 2:10',
+        'Hosea 52:5': 'Hosea 3:5',
         'Cromwel ': 'Cromwell ',
         'Cromwel,': 'Cromwell,',
         'Cromwel.': 'Cromwell.',
@@ -129,6 +139,15 @@ OVERRIDES = {
         'Holy Ghost," Holy Ghost,"': 'Holy Ghost,"',
         'refer it to the church; for he did not receive testimony from men, John 5:34 refer it to the church; for he did not receive testimony from men, John 5:34,': 'refer it to the church; for he did not receive testimony from men, John 5:34,',
         'Lamb of God, which taketh away the sin of the world," John 1:29,36; Lamb of God, which taketh away the sin of the world," John 1:29,36;': 'Lamb of God, which taketh away the sin of the world," John 1:29,36;',
+        # Remove incorrect structural tokens from Latin dedicatory epistle to avoid split fragments and false headings
+        '[[SUBTITLE]] AMPLISSIMO': 'AMPLISSIMO',
+        '[[CHAPTER]] SENATUI,': 'SENATUI,',
+        '[[SUMMARY]] INCLYTISSIMO': 'INCLYTISSIMO',
+        '[[SUBTITLE]] OB': 'OB',
+        '[[SUMMARY]] PRISCA': 'PRISCA',
+        '[[SUBTITLE]] ADMINISTRATAM;': 'ADMINISTRATAM;',
+        '[[SUBTITLE]] POTISSIMUM': 'POTISSIMUM',
+        '[[SUBTITLE]] D.D.C. JOANNES OWEN.': 'D.D.C. JOANNES OWEN.',
     },
 }
 

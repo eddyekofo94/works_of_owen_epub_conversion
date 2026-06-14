@@ -119,10 +119,22 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-14T19:32:03.692805+00:00
+**Last run:** 2026-06-14T23:06:10.910751+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -166,11 +178,23 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-14T19:32:42.689896+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-14T23:06:49.947574+00:00
+**Status:** WARN (2 warnings)
 
 Reports:
 - `volume_7_text_integrity.json`
@@ -181,9 +205,9 @@ Reports:
 | PDF pages | 683 |
 | EPUB text files | 63 |
 | EPUB paragraphs/headings | 2395 |
-| Approximate PDF-to-EPUB word coverage | 0.9976 |
+| Approximate PDF-to-EPUB word coverage | 0.9977 |
 | Weak page matches | 0 |
-| Dense source windows checked | 32134 |
+| Dense source windows checked | 32084 |
 | Missing dense source-window pages | 31 |
 | Front CONTENTS pages checked | 5 |
 | Missing front CONTENTS pages | 2 |
@@ -194,7 +218,7 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 260 |
+| Structural starts excluded from split warnings | 255 |
 | Short fragments | 22 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
@@ -215,6 +239,11 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

@@ -2297,12 +2297,37 @@ ENGLISH_WORDS = {
     'thereinto', 'hereinto', 'everywhere', 'intimate', 'demonstrate', 'thesis',
     'epist', 'blondellus', 'terror', 'hypothesis', 'vindicate', 'medium', 'judas', 
     'desperate', 'achaia', 'frustrate', 'anywhere', 'eusebius', 'philippi', 'syria', 
-    'degenerate', 'reprobate', 'alter',
+    'degenerate', 'reprobate', 'alter', 'neighbor', 'advocate', 'palate', 'fervor', 
+    'inveterate', 'protector', 'macedonia', 'pilate', 'beza', 'damasus',
     # English words of Latin origin that end in Latin suffixes and are frequently mis-flagged
     'adhere', 'inordinate', 'profligate', 'forego', 'meditate', 'alas', 'stream', 'undergo',
     'pleas', 'communicate', 'hate', 'door', 'analysis', 'apostate', 'dream', 'succor',
     'contemplate', 'inferior', 'obstinate', 'innate', 'animate', 'nowhere', 'tract', 'insinuate',
-    'magistrate', 'dissent', 'ere'
+    'magistrate', 'dissent', 'ere', 'accommodate', 'abhor', 'horror', 'armor', 'temperate',
+    'premium', 'emphasis', 'create', 'laodicea', 'ephesus', 'proportionate', 'abate',
+    'importunate', 'whereto', 'whoso', 'alienate', 'elisha', 'habituate', 'william',
+    'captivate', 'beam', 'humor', 'ingenerate', 'malefactor',
+    # More English words / proper nouns that end in Latin suffixes to avoid false-positive Latin classification
+    'hist', 'seas', 'determinate', 'palestina', 'relate', 'manna', 'dictate', 'ago', 'governor', 
+    'asia', 'cyrus', 'emperor', 'tibni', 'omri', 'propagate', 'lazarus', 'superior', 'cautionate', 
+    'gate', 'sedate', 'basis', 'conqueror', 'jeroboam', 'senate', 'prejudicate',
+    'precipitate', 'illustrate', 'interfere', 'delicate', 'potentate', 'tolerate', 'athanasius', 'valor', 
+    'extricate', 'desolate', 'josephus', 'facto', 'date', 'splendor', 'translate', 'successor', 'officiate', 
+    'bithynia', 'irenaeus', 'subordinate', 'vita', 'associate', 'christianos', 'augustus',
+    'appropriate', 'inviolate', 'participate', 'delineate', 'inmate', 'operate', 'cognate', 'aggravate', 
+    'dedicate', 'enervate', 'elevate', 'antithesis', 'anathema', 'decorum', 'novatianus', 'hegesippus', 
+    'episcopius', 'anchor', 'moderate', 'demas', 'dam', 'dram', 'levi', 'sardis', 'jericho', 'erasmus',
+    # Proper names and possessives commonly mis-flagged as Latin suffix matches
+    'pela', 'esau', 'esaus', 'medusa', 'medusas', 'asa', 'asas', 'nero', 'neros',
+    'cicero', 'ciceros', 'hydra', 'hydras', 'elisha', 'elishas', 'joshua', 'joshuas',
+    'elis', 'gallio', 'gallios', 'dalva',
+    # Greek Beta Code transliterated words (often mis-flagged as Latin)
+    'kai', 'dwrea', 'kalo', 'duna', 'ajnakaini', 'ejautoi', 'paradeigmati', 'nhma',
+    'ajgi', 'fwtismo', 'tina', 'meto', 'parapeso', 'meta', 'yijo', 'noia', 'ajnakainismo',
+    'ton', 'tous', 'logon', 'logos', 'pneuma', 'christos', 'kurios', 'theos', 'theou',
+    'patros', 'qeo', 'qeou', 'de', 'te', 'fro', 'menoi', 'ejpourani', 'fwti', 'sai',
+    'kei', 'tai', 'rhma', 'ejpi', 'ejpoura', 'kuri', 'ajpotomi', 'kate', 'sontai',
+    'sarko', 'ejkklhsiastiko', 'usa', 'se'
 }
 
 SHARED_WORDS = {
@@ -2326,6 +2351,20 @@ def is_latin_word(word):
     if word_clean in SHARED_WORDS:
         return 'shared'
     if word_clean in ENGLISH_WORDS:
+        return False
+    # Ignore Beta Code Greek words with 'q' but no 'u' (representing Greek theta 'θ')
+    if 'q' in word_clean and 'qu' not in word_clean:
+        return False
+    # Ignore Greek Beta Code patterns (which often match Latin suffixes)
+    if len(word_clean) >= 3 and word_clean.endswith(('oi', 'ai', 'ei', 'ao', 'eo', 'oo')):
+        return False
+    if re.search(r'[aeiou]j(?:[^aeiouy]|$)', word_clean):
+        return False
+    if word_clean.startswith('rj') or re.search(r'rh[^aeiouy]', word_clean):
+        return False
+    if 'w' in word_clean or 'k' in word_clean:
+        return False
+    if 'oi' in word_clean or 'ai' in word_clean or ('ou' in word_clean and word_clean != 'prout'):
         return False
     # Ignore Roman numerals of length >= 3
     if len(word_clean) >= 3 and re.match(r'^m{0,4}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3})$', word_clean):

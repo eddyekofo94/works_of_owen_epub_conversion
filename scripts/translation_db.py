@@ -6886,6 +6886,195 @@ INLINE_TRANSLATIONS = {
     ),
     "Nec sibi plebs blandiatur, quasi immunis esse a contagio delicti possit cum sacerdote peccatore communicans": (
         "“Nor let the people flatter themselves, as if they could be immune from the contagion of sin when communicating with a sinful priest”"
+    ),
+    # Volume 8 dedicatory epistle and other Latin phrases
+    "INCLYTISSIMO POPULI ANGLICANI CONVENTUI": (
+        "“To the most illustrious assembly of the English people”"
+    ),
+    "PRISCA ANGLO-BRITANNORUM JURA": (
+        "“The ancient rights of the Anglo-Britons”"
+    ),
+    "PATRIAM (NEFARUS QUORUNDAM MOLITONIBUS": (
+        "“Our country (by the nefarious machinations of some”"
+    ),
+    "PESSUNDATAM) ELECUPERATAM": (
+        "“almost ruined) recovered”"
+    ),
+    "DISSOLUTAM, RITUS PONTIFICIOS, NOVITIOS, ANTICHRISTIANOS ABOLITOS; PRIVILEGIA PLEBIS CHRISTIANAE POSTLIMINIO RESTITUTA": (
+        "“dissolved, Popish, novel, and anti-Christian rites abolished; the privileges of the Christian people restored by postliminy”"
+    ),
+    "INNUMERIS, CONSILIO, BELLO, DOMI, FORAS": (
+        "“innumerable [blessings], in counsel, war, at home, and abroad”"
+    ),
+    "POTITAM; TOTO": (
+        "“obtained; throughout the whole”"
+    ),
+    "MERITISSIMO CELEBERRIMO, TOTI": (
+        "“most deservedly celebrated, to all”"
+    ),
+    "INSULAE AETERNA MEMORIA RECOLENDO, VIRIS ILLUSTRIBUS, CLARISSIMUS, SELECTISSIMIS": (
+        "“the island to be remembered in eternal memory, to the illustrious, most renowned, and choice men”"
+    ),
+    "COMMUNIUM IN SUPREMA CURIA PARLIAM, CONGREGATIS": (
+        "“of the Commons assembled in the High Court of Parliament”"
+    ),
+    "IPSORUM TAMEN VOTO": (
+        "“yet by their own desire”"
+    ),
+    "PRIUS CORAM IPSIS HABITAM, NUNC": (
+        "“previously delivered before them, now”"
+    ),
+    "homo, et ego homo, audiamus": (
+        "“a man, and I a man, let us hear”"
+    ),
+    "cum ecclesia malignantium": (
+        "“with the church of the malignant”"
+    ),
+    "limbus patrum": (
+        "“limbo of the fathers”"
+    ),
+    "Sancta Clara": (
+        "“Saint Clara”"
+    ),
+    "atri janua ditis": (
+        "“the door of dark Pluto”"
+    ),
+    "culpa, quae": (
+        "“fault, which”"
+    ),
+    "is \"amor et deliciae humani generis": (
+        "“he is the 'love and delight of mankind'”"
+    ),
+    "unum magnum": (
+        "“one great thing”"
+    ),
+    # Volume 7 Latin phrases (mostly Hebrews 6:4-6 variants)
+    "Fieri non": (
+        "“It is impossible”"
+    ),
+    "etiam donum": (
+        "“also the gift”"
+    ),
+    "facti sunt Spiritus Sancti": (
+        "“they were made [partakers] of the Holy Spirit”"
+    ),
+    "nihilominus bonum": (
+        "“nevertheless good”"
+    ),
+    "verbum pulchrum": (
+        "“the good word”"
+    ),
+    "seculi futuri": (
+        "“of the world to come”"
+    ),
+    "seculi venturi": (
+        "“of the world to come”"
+    ),
+    "Et prolapsi sunt": (
+        "“And they have fallen away”"
+    ),
+    "Rursus renovari ad poenitentiam": (
+        "“To be renewed again unto repentance”"
+    ),
+    "Ut denuo renoventur ad resipiscentiam": (
+        "“That they be renewed again unto repentance”"
+    ),
+    "sibimetipsis Filium": (
+        "“to themselves the Son”"
+    ),
+    "Et ostentui": (
+        "“And to open shame”"
+    ),
+    "Ludibrio": (
+        "“to mockery”"
+    ),
+    "Ignominiae": (
+        "“to ignominy”"
+    ),
+    "Ad exemplum Judaeorum": (
+        "“According to the example of the Jews”"
+    ),
+    "Ad exemplum Judsaeorum": (
+        "“According to the example of the Jews”"
+    ),
+    "verbum dictum": (
+        "“the word spoken”"
+    ),
+    "Tatianus, Athenagoras": (
+        "“Tatian, Athenagoras”"
+    ),
+    "Tatianus, Athenaguras": (
+        "“Tatian, Athenagoras”"
+    ),
+    "Latius excisae": (
+        "“more widely cut off”"
+    ),
+    "contagio gentis": (
+        "“the contagion of the nation”"
+    ),
+    "suos natio victa": (
+        "“the conquered nation [subdues] its own [conquerors]”"
+    ),
+    # Additional Volume 8 Latin phrases
+    "unum necessarium": (
+        "“one thing necessary”"
+    ),
+    "is \"ipsissima veritas": (
+        "“is the very truth”"
+    ),
+    "Si quid novisti rectius istis, Candidus imperti, si non": (
+        "“If you know anything better than these rules, candidly impart it; if not, use these with me”"
+    ),
+    "volo, sed paucis": (
+        "“I wish, but in few words”"
+    ),
+    "vivendi ut velis": (
+        "“living as you wish”"
+    ),
+    "et saxis grandibus": (
+        "“and with great stones”"
+    ),
+    "Tantum religio": (
+        "“So much [evil] religion”"
+    ),
+    "suadere malorum": (
+        "“to persuade to evil”"
+    ),
+    "quid ego verba audiam, facta cum": (
+        "“why should I hear words, when [I see] deeds”"
+    ),
+    "ad furcas et": (
+        "“to the gallows and”"
+    ),
+    "qui fixo": (
+        "“who with fixed”"
+    ),
+    "ad faciendum populum": (
+        "“to make an impression on the people”"
+    ),
+    "a baculo ad angulum": (
+        "“from the staff to the corner”"
+    ),
+    "is \"contraria factis": (
+        "“is contrary to deeds”"
+    ),
+    "Cedo alteram et alteram": (
+        "“Give another and another”"
+    ),
+    "Principiis obsta": (
+        "“Resist the beginnings”"
+    ),
+    "saepe praelio victi, bello nunquam": (
+        "“often defeated in battle, never in war”"
+    ),
+    "Veni, vidi, vici": (
+        "“I came, I saw, I conquered”"
+    ),
+    "et gaudia vulnus": (
+        "“and joy a wound”"
+    ),
+    "interea temporis": (
+        "“in the meantime”"
     )
 }
 

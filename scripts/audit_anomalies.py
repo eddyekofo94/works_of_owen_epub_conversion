@@ -621,12 +621,21 @@ def check_list_consistency(text: str) -> list[tuple[str, str]]:
 
 
 def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
-    items = whitelist.get("anomalies", {}).get(category, [])
+    items = list(whitelist.get("anomalies", {}).get(category, []))
+    if category == "OCR & Bracket Residues":
+        scanner_fps = whitelist.get("anomalies", {}).get("Scanner Substring False Positives", [])
+        items.extend(scanner_fps)
+        
     if "used_items" not in whitelist:
         whitelist["used_items"] = set()
+        
     if target in items:
-        whitelist["used_items"].add(("anomalies", category, target))
+        actual_category = category
+        if category == "OCR & Bracket Residues" and target in whitelist.get("anomalies", {}).get("Scanner Substring False Positives", []):
+            actual_category = "Scanner Substring False Positives"
+        whitelist["used_items"].add(("anomalies", actual_category, target))
         return True
+        
     for item in items:
         matched = False
         if item in target or target in item:
@@ -658,7 +667,10 @@ def is_whitelisted(category: str, target: str, whitelist: dict) -> bool:
                 if t_clean.startswith(i_clean) or i_clean.startswith(t_clean):
                     matched = True
         if matched:
-            whitelist["used_items"].add(("anomalies", category, item))
+            actual_category = category
+            if category == "OCR & Bracket Residues" and item in whitelist.get("anomalies", {}).get("Scanner Substring False Positives", []):
+                actual_category = "Scanner Substring False Positives"
+            whitelist["used_items"].add(("anomalies", actual_category, item))
             return True
     return False
 

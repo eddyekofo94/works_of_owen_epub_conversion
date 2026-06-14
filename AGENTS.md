@@ -7,6 +7,7 @@
 > - **Always work on the latest development branch:** Keep your branch up to date and push/pull regularly.
 > - **Virtualenv & CLI:** Use the local virtual environment `.venv/` inside the repository root. Do NOT reference global virtual environments. Use `./owen` (the directory-agnostic CLI wrapper) to run tests, audits, and builds.
 > - **Clean Root Directory (MANDATORY):** You must keep the root workspace folder pristine. DO NOT create one-off text files, shell scripts, Python utility scripts, or logs in the root directory. ALL temporary or diagnostic work MUST be placed in `scratch/`. ALL persistent helper scripts MUST be placed in `scripts/`. If you accidentally create a file in the root directory during your session, you MUST CLEAN IT UP before concluding your work.
+> - **Report Saving Location (MANDATORY):** Always save audit reports, whitelist audits, and other session-generated reports under the respective volume directory and under the "reports/" folder (e.g., volumes/vN/reports/volume_N_whitelist_audit.md). Do not save audit reports or session logs directly in the root directory or bugs_fixes/ folder.
 
 This repository is currently focused on the 16-volume Owen Works conversion. The Hebrews commentary is intentionally out of scope until the Owen volumes are stable and validated.
 

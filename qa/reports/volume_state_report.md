@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-14T19:11:43Z
+Generated: 2026-06-14T21:14:13Z
 
 ## Summary
 
@@ -13,8 +13,8 @@ Generated: 2026-06-14T19:11:43Z
 | 1 | 16 | 17.5 | gentium-plus-2 | 5 |  99.95 |  100.0 |  100.0 |  99.91 | 0 | 56 | FULL |
 | 2 | 9 | 15.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |  99.33 | 0 | 0 | PRISTINE |
 | 3 | 15 | 12.4 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 4 | 8 | 12.0 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |  99.14 | 0 | 0 | PRISTINE |
-| 5 | 7 | 9.6 | sabon-next-lt | 3 |  99.76 |  100.0 |  100.0 |  99.27 | 0 | 0 | PRISTINE |
+| 4 | 8 | 12.0 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |  99.84 | 0 | 0 | PRISTINE |
+| 5 | 7 | 9.6 | sabon-next-lt | 3 |  99.76 |  100.0 |  100.0 |  99.74 | 0 | 0 | PRISTINE |
 | 6 | 5 | 8.7 | brill-font | 2 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
 | 7 | 12 | 8.3 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 8 | 3 | 7.1 | minion-pro | 1 |  99.97 |  99.87 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
@@ -262,9 +262,9 @@ Generated: 2026-06-14T19:11:43Z
 - **Word coverage:** 99.95
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.14
-- **Latin tagging:** 35.05
-- **Latin translation:** 32.64
+- **Latin coverage:** 99.84
+- **Latin tagging:** 43.10
+- **Latin translation:** 37.06
 - **Citations:** total=38, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
@@ -278,14 +278,14 @@ Generated: 2026-06-14T19:11:43Z
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** PRISTINE
-- **convert.py:** Yes (175 lines, 1 text_replacements)
+- **convert.py:** Yes (177 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.76
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.27
-- **Latin tagging:** 20.61
-- **Latin translation:** 22.92
+- **Latin coverage:** 99.74
+- **Latin tagging:** 40.36
+- **Latin translation:** 26.67
 - **Citations:** total=4, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
