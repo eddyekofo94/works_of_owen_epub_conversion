@@ -2422,8 +2422,13 @@ EPUB_STYLESHEET = r"""
 body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    overflow-wrap: break-word;   /* CSS3 standard */
-    word-break: break-word;      /* Legacy WebKit fallback */
+    text-align: justify !important;
+    text-justify: inter-word;
+    -webkit-hyphens: auto !important;
+    -epub-hyphens: auto !important;
+    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
     line-height: 1.65;
     margin: 0.4em 0.5em !important;
     color: #111;
@@ -2435,8 +2440,15 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    -webkit-hyphens: auto;
-    hyphens: auto;
+    text-align: justify !important;
+    text-justify: inter-word;
+    -webkit-hyphens: auto !important;
+    -epub-hyphens: auto !important;
+    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    orphans: 2;
+    widows: 2;
 }
 
 [lang="el"], [lang="el"] * {
@@ -3092,7 +3104,13 @@ div.owen-branch blockquote {
 p {
     text-indent: 1.1em;
     margin: 0;
-    text-align: justify;
+    text-align: justify !important;
+    text-justify: inter-word;
+    -webkit-hyphens: auto !important;
+    -epub-hyphens: auto !important;
+    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
     orphans: 2;
     widows: 2;
 }

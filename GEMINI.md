@@ -17,7 +17,13 @@ Inject this CSS into every XHTML `<head>` using `!important` to override legacy 
 body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  word-break: break-word;
+  text-align: justify !important;
+  text-justify: inter-word;
+  -webkit-hyphens: auto !important;
+  -epub-hyphens: auto !important;
+  hyphens: auto !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
   line-height: 1.65;
   margin: 0.4em 0.5em !important;
 }
@@ -25,8 +31,15 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {
   font-family: "[PRIMARY]", "SBL BibLit", "Gentium Plus", serif !important;
 }
 p {
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  text-align: justify !important;
+  text-justify: inter-word;
+  -webkit-hyphens: auto !important;
+  -epub-hyphens: auto !important;
+  hyphens: auto !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  orphans: 2;
+  widows: 2;
 }
 [lang="el"], [lang="el"] * {
   font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
