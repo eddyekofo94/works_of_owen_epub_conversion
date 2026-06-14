@@ -2,43 +2,29 @@
   "volume": "4",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/input/owen-v4.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v4/output/volume_4.epub",
-  "generated_at": "2026-06-13T10:14:33.562874+00:00",
-  "status": "warn",
-  "warning_count": 5,
-  "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "front_matter_toc_loss",
-      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "top_of_page_text_loss",
-      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "bottom_of_page_text_loss",
-      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
-    }
-  ],
+  "generated_at": "2026-06-14T16:16:42.138872+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
     "page_count": 650,
-    "skipped_detected": []
+    "skipped_detected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
   },
   "epub": {
     "spine_text_files": 70,
-    "paragraph_count": 2124
+    "paragraph_count": 2128
   },
   "word_coverage": {
-    "pdf_content_tokens": 219413,
-    "epub_content_tokens": 220142,
-    "coverage_ratio": 0.9987,
+    "pdf_content_tokens": 218690,
+    "epub_content_tokens": 220162,
+    "coverage_ratio": 0.9995,
     "missing_word_samples": [
       {
         "word": "self",
@@ -49,11 +35,6 @@
         "word": "14-17",
         "pdf": 4,
         "epub": 0
-      },
-      {
-        "word": "editor",
-        "pdf": 4,
-        "epub": 1
       },
       {
         "word": "16-18",
@@ -98,245 +79,47 @@
         "epub": 11
       },
       {
+        "word": "edition",
+        "pdf": 2,
+        "epub": 9
+      },
+      {
         "word": "footnotes",
         "pdf": 0,
         "epub": 7
       },
       {
-        "word": "edition",
-        "pdf": 3,
-        "epub": 9
+        "word": "vii",
+        "pdf": 6,
+        "epub": 12
+      },
+      {
+        "word": "note",
+        "pdf": 5,
+        "epub": 11
+      },
+      {
+        "word": "vi",
+        "pdf": 5,
+        "epub": 11
       }
     ]
   },
   "page_coverage": {
-    "pages_checked": 641,
-    "weak_page_count": 6,
-    "weak_pages": [
-      {
-        "page": 3,
-        "hit_ratio": 0.333,
-        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject"
-      },
-      {
-        "page": 4,
-        "hit_ratio": 0.333,
-        "sample": "question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures"
-      },
-      {
-        "page": 5,
-        "hit_ratio": 0.0,
-        "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of"
-      },
-      {
-        "page": 150,
-        "hit_ratio": 0.333,
-        "sample": "συηεσις πνευματικη or the causes ways and means of understanding the mind of god as revealed in his word with assurance therein and declaration"
-      },
-      {
-        "page": 158,
-        "hit_ratio": 0.333,
-        "sample": "συνεσις πνευματικη chapter usurpation of the church of rome with reference unto the interpretation of the scripture or right understanding of the mind of"
-      },
-      {
-        "page": 277,
-        "hit_ratio": 0.333,
-        "sample": "god hath hereby given an account of the beginning progress trials faith obedience and whole proceedings of the church in the pursuit of the"
-      }
-    ]
+    "pages_checked": 637,
+    "weak_page_count": 0,
+    "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 28430,
-    "missing_dense_window_pages": 40,
-    "missing_dense_windows": [
-      {
-        "page": 3,
-        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason"
-      },
-      {
-        "page": 4,
-        "sample": "question stated the principal sufficient cause of the understanding which believers have in the"
-      },
-      {
-        "page": 5,
-        "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note"
-      },
-      {
-        "page": 6,
-        "sample": "given as comforter or the object of his acting in this office inhabitation of"
-      },
-      {
-        "page": 8,
-        "sample": "be the word of god with the causes and nature of that faith wherewith"
-      },
-      {
-        "page": 17,
-        "sample": "and power this they do undeniably and infallibly psalm romans 19-21 yet it is"
-      },
-      {
-        "page": 19,
-        "sample": "own counsels as it is expressed psalm and although this fell not out without"
-      },
-      {
-        "page": 20,
-        "sample": "of curse unto the contrary malachi 4-6 so the writings of the new testament"
-      },
-      {
-        "page": 21,
-        "sample": "is the only repository of all divine supernatural revelation psalm isaiah timothy the pretenses"
-      },
-      {
-        "page": 22,
-        "sample": "in the ministry of the word see matthew corinthians 18-20 ephesians 11-15 timothy the"
-      },
-      {
-        "page": 27,
-        "sample": "been so instructed by them whom they have sufficient reason to give credit unto"
-      },
-      {
-        "page": 29,
-        "sample": "inhabiteth eternity whose name is holy chap believe in the lord your god chronicles"
-      },
-      {
-        "page": 35,
-        "sample": "wisdom before all the world deuteronomy 6-8 now we shall not need to consider"
-      },
-      {
-        "page": 51,
-        "sample": "witnesses wherewith we are compassed about chap giving testimony unto what we do believe"
-      },
-      {
-        "page": 54,
-        "sample": "and rose again according to the scriptures chap and this they did by virtue"
-      },
-      {
-        "page": 56,
-        "sample": "when they apprehended it would bring in decay of their trade acts 23-41 what"
-      },
-      {
-        "page": 64,
-        "sample": "were accused to have followed cunningly devised fables they appealed unto moses and the"
-      },
-      {
-        "page": 65,
-        "sample": "power in and by his word is appealed unto corinthians corinthians but yet in"
-      },
-      {
-        "page": 79,
-        "sample": "neither do we nor can we rationally answer by it unto this question why"
-      },
-      {
-        "page": 89,
-        "sample": "trahimur et accendimur tslis ergo est persuasio quae rationes non requirat talis notitia cui"
-      },
-      {
-        "page": 95,
-        "sample": "inquiry is what he requireth it unto it is to this law to this"
-      },
-      {
-        "page": 97,
-        "sample": "but is it of this authority and efficacy in itself see luke 27-31 then"
-      },
-      {
-        "page": 102,
-        "sample": "and excellency for all the ends of faith and obedience psalm 7-9 and not"
-      },
-      {
-        "page": 112,
-        "sample": "or his word which he hath magnified above all his name psalm that is"
-      },
-      {
-        "page": 116,
-        "sample": "the word incomparably before them psalm 1-3 7-9 etc and these do manifest the"
-      },
-      {
-        "page": 124,
-        "sample": "it hath fixed in the hearts of multitudes of its enemies psalm it evidences"
-      },
-      {
-        "page": 131,
-        "sample": "are not from themselves nor of their own invention timothy 14-17 and this is"
-      },
-      {
-        "page": 136,
-        "sample": "afterward converted by the preaching of the word acts or they will produce only"
-      },
-      {
-        "page": 147,
-        "sample": "be divinely assisted melchior canns lee theol lib cap disputes expressly to this purpose"
-      },
-      {
-        "page": 152,
-        "sample": "scripture are adduced involving minute discussion of psalm corinthians 13-18 isaiah luke ephesians 17-19"
-      },
-      {
-        "page": 156,
-        "sample": "infallible conduct in these things but probably the near ap preach of the daily-expected"
-      },
-      {
-        "page": 158,
-        "sample": "συνεσις πνευματικη chapter usurpation of the church of rome with reference unto the interpretation"
-      },
-      {
-        "page": 177,
-        "sample": "for them again unto the same purpose with great fervency ephesians 14-19 all the"
-      },
-      {
-        "page": 190,
-        "sample": "their faith ye need no such teaching because of the unction which ye have"
-      },
-      {
-        "page": 208,
-        "sample": "by opening of our eyes psalm the enlightening of the eyes of our understanding"
-      },
-      {
-        "page": 211,
-        "sample": "speaks in that place and from which he elsewhere plainly dis tinguisheth his giving"
-      },
-      {
-        "page": 216,
-        "sample": "of them essentially in his person as god man as vested with his offices"
-      },
-      {
-        "page": 219,
-        "sample": "their minds are deeply affected with their natural ignorance they cannot perceive spiritual things"
-      },
-      {
-        "page": 221,
-        "sample": "things of god as he ought daniel hosea psalm although men may bear themselves"
-      },
-      {
-        "page": 225,
-        "sample": "may teach us humility and self abasement for we are by nature children of"
-      }
-    ]
+    "dense_windows_checked": 28429,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
   },
   "front_matter_toc_integrity": {
-    "front_toc_pages_checked": 4,
-    "front_toc_windows_checked": 16,
-    "missing_front_toc_pages": 4,
-    "missing_front_toc_samples": [
-      {
-        "page": 3,
-        "hit_ratio": 0.25,
-        "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what"
-      },
-      {
-        "page": 4,
-        "hit_ratio": 0.5,
-        "sample": "question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god"
-      },
-      {
-        "page": 5,
-        "hit_ratio": 0.25,
-        "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work"
-      },
-      {
-        "page": 6,
-        "hit_ratio": 0.5,
-        "sample": "unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised"
-      }
-    ]
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
   },
   "top_of_page_integrity": {
     "top_windows_checked": 646,
@@ -428,43 +211,16 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 1,
-    "missing_top_windows": [
-      {
-        "page": 35,
-        "window": "wisdom before all the world deuteronomy 6-8 now we shall not need to consider",
-        "sample": "wisdom before all the world, Deuteronomy 4:6-8. Now, we shall not need to consider what were the first attempts of other nations in"
-      }
-    ]
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 611,
     "bottom_windows_usable": 605,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 4,
-    "missing_bottom_windows": [
-      {
-        "page": 2,
-        "window": "this edition of first published by johnstone hunter 1850-53",
-        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
-      },
-      {
-        "page": 44,
-        "window": "to be so far influenced by self interest as to be of little validity",
-        "sample": "testimony may rationally be supposed to be so far influenced by self- interest as to be of little validity."
-      },
-      {
-        "page": 158,
-        "window": "of other men's rights and malae fidei possesoribus so when the philistines contended for",
-        "sample": "them according as might be expected from unjust invaders of other men's rights and malae fidei possesoribus. So when the Philistines contended for"
-      },
-      {
-        "page": 219,
-        "window": "understanding and shall keep thy law psalm so the apostle speaks to timothy",
-        "sample": "understanding, and I shall keep thy law,\" Psalm 119:34. So the apostle speaks to Timothy,"
-      }
-    ]
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
   },
   "paragraph_integrity": {
     "paragraphs_checked": 1786,
@@ -605,11 +361,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p164",
+            "location": "EPUB/ch006.xhtml#p167",
             "context": "1. And in our believing, or our faith, two things are to be considered: — (1.) What it is that we do believe; and, (2.) Wherefore we do so believe it."
           },
           {
-            "location": "EPUB/ch007.xhtml#p196",
+            "location": "EPUB/ch007.xhtml#p199",
             "context": "(1.) As it takes on itself to speak in the name and authority of God, and delivers nothing, commands nothing, but what becomes his infinite holiness, wisdom, and goodness; so it makes"
           }
         ]
@@ -624,11 +380,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p164",
+            "location": "EPUB/ch006.xhtml#p167",
             "context": "or our faith, two things are to be considered: — (1.) What it is that we do believe; and, (2.) Wherefore we do so believe it."
           },
           {
-            "location": "EPUB/ch007.xhtml#p200",
+            "location": "EPUB/ch007.xhtml#p203",
             "context": "(2.) The second end of this doctrine is, to direct mankind in their proper course of living unto God, and attaining that rest and blessedness whereof they are capable, and which they c"
           }
         ]
@@ -643,11 +399,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p209",
+            "location": "EPUB/ch007.xhtml#p212",
             "context": "And, to evidence the force that is in this consideration, I shall briefly represent, [1.] Who they were that gave and do give this testimony, in some especial instances; [2.] What they gave this testimony unto; [3.] How, or by what means, they did so: —"
           },
           {
-            "location": "EPUB/ch007.xhtml#p210",
+            "location": "EPUB/ch007.xhtml#p213",
             "context": "[1.] And, in the first place, the testimony of those by whom the several books of the Scripture were written is to be considered. They all of them, severally and jointly, witnessed tha"
           }
         ]
@@ -673,11 +429,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p209",
+            "location": "EPUB/ch007.xhtml#p212",
             "context": "ent, [1.] Who they were that gave and do give this testimony, in some especial instances; [2.] What they gave this testimony unto; [3.] How, or by what means, they did so: —"
           },
           {
-            "location": "EPUB/ch007.xhtml#p218",
+            "location": "EPUB/ch007.xhtml#p221",
             "context": "[2.] What it was they gave testimony unto is duly to be considered; and this was, not only that the book of the Scripture was good, holy, and true, in all the contents of it, but that"
           }
         ]
@@ -712,15 +468,15 @@
     },
     {
       "phrase": "to be the word of god with faith divine and",
+      "count": 8
+    },
+    {
+      "phrase": "be the word of god with faith divine and supernatural",
       "count": 7
     },
     {
       "phrase": "mind and will of god as revealed in the scripture",
       "count": 7
-    },
-    {
-      "phrase": "be the word of god with faith divine and supernatural",
-      "count": 6
     },
     {
       "phrase": "believe the scripture to be the word of god in",
@@ -767,40 +523,40 @@
       "count": 4
     },
     {
+      "phrase": "moses and the prophets neither will they be persuaded though",
+      "count": 4
+    },
+    {
+      "phrase": "and the prophets neither will they be persuaded though one",
+      "count": 4
+    },
+    {
+      "phrase": "the prophets neither will they be persuaded though one rose",
+      "count": 4
+    },
+    {
+      "phrase": "prophets neither will they be persuaded though one rose from",
+      "count": 4
+    },
+    {
+      "phrase": "neither will they be persuaded though one rose from the",
+      "count": 4
+    },
+    {
+      "phrase": "will they be persuaded though one rose from the dead",
+      "count": 4
+    },
+    {
       "phrase": "us to believe the scripture to be the word of",
-      "count": 4
-    },
-    {
-      "phrase": "believe the scripture to be the word of god and",
-      "count": 4
-    },
-    {
-      "phrase": "faith whereby we believe the scripture to be the word",
-      "count": 4
-    },
-    {
-      "phrase": "lest the light of the glorious gospel of christ who",
-      "count": 4
-    },
-    {
-      "phrase": "the light of the glorious gospel of christ who is",
-      "count": 4
-    },
-    {
-      "phrase": "light of the glorious gospel of christ who is the",
-      "count": 4
-    },
-    {
-      "phrase": "of the glorious gospel of christ who is the image",
       "count": 4
     }
   ],
   "greek_hebrew_word_coverage": {
-    "pdf_greek_word_count": 713,
-    "epub_greek_word_count": 712,
-    "pdf_greek_unique_words": 435,
-    "epub_greek_unique_words": 434,
-    "greek_word_coverage_ratio": 0.9957,
+    "pdf_greek_word_count": 712,
+    "epub_greek_word_count": 714,
+    "pdf_greek_unique_words": 434,
+    "epub_greek_unique_words": 435,
+    "greek_word_coverage_ratio": 1.0,
     "pdf_hebrew_word_count": 99,
     "epub_hebrew_word_count": 99,
     "pdf_hebrew_unique_words": 84,
@@ -818,13 +574,13 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1455,
+    "pdf_latin_word_count": 1449,
     "epub_latin_word_count": 1478,
     "epub_tagged_latin_word_count": 844,
-    "pdf_latin_unique_words": 758,
+    "pdf_latin_unique_words": 755,
     "epub_latin_unique_words": 759,
     "epub_tagged_unique_words": 517,
-    "latin_word_coverage_ratio": 0.9945,
+    "latin_word_coverage_ratio": 0.9959,
     "latin_tagging_ratio": 0.571,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [

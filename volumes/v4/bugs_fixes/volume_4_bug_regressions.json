@@ -12,61 +12,10 @@
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 20,
+      "observed": 0,
       "budget": 61,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch007.xhtml",
-          "previous": " in brief, that it is required that we believe the Scriptures to be the word of God with faith divine and supernatural, which cannot be deceived. Two things are replied hereunto: —",
-          "next": "1 . \"That where the things believed are divine and supernatural, so is the faith whereby we believe them or give our assent unto them. Let the motives and arguments whereon we give"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "ered therein, because what hath been unto this day gainsaid unto it or excepted against it hath been of little weight or consideration. Unto this great inquiry, therefore, I say, —",
-          "next": "We believe the Scripture to be the word of God with divine faith for its own sake only; or, our faith is resolved into the authority and truth of God only as revealing himself unto"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "Some of them we must mention: —",
-          "next": "Deuteronomy 31:11-13, \"When all Israel is come to appear before the LORD thy God in the place which he shall choose, thou shalt read this law before all Israel in their hearing. Ga"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "nd testimony, this written word, to be the word of God, and believe it so to be, and distinguish it from every other pretended divine revelation that is not so? This is declared, —",
-          "next": "Jeremiah 23:28,29, \"The prophet that hath a dream, let him tell a dream; and he that hath my word, let him speak my word faithfully. What is the chaff to the wheat? saith the LORD."
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "he whole entire formal reason of believing; for if it have not this, something necessary unto believing would be wanting, though that were enjoyed. And this is directly affirmed, —",
-          "next": "John 20:30,31, \"Many other signs truly did Jesus in the presence of his disciples, which are not written in this book: but these are written, that ye might believe that Jesus is th"
-        },
-        {
-          "file": "EPUB/ch009.xhtml",
-          "previous": "Hereunto we may add that of Paul, —",
-          "next": "Romans 16:25,26, \"According to the revelation of the mystery, which was kept secret since the world began, but now is made manifest, and by the scriptures of the prophets, accordin"
-        },
-        {
-          "file": "EPUB/ch012.xhtml",
-          "previous": "onfirm the judgment of others, I shall add the suffrage of ancient and modern writers given unto the principal parts of it, and whereon all other things asserted in it do depend: —",
-          "next": "Clemens Alexandrinus discourseth at large unto this purpose, Strom. 7 cap. 16, Ἔχομεν γὰρ τὴν ἀρχὴν τῆς διδασκαλίας τὸν Κύριον , διά τε τῶν προφητῶν , διὰ τῶν μακαρίων ἀποστόλων , "
-        },
-        {
-          "file": "EPUB/ch017.xhtml",
-          "previous": " as that his obedience may be the obedience of faith, nor can upon good grounds die in peace, since the just shall live by his own faith alone. Wherefore, our present inquiry is, —",
-          "next": "How believers, or any men whatever, may attain a right understanding in their own minds of the meaning and sense of the Scriptures, as to the doctrine or truths contained in them, "
-        },
-        {
-          "file": "EPUB/ch017.xhtml",
-          "previous": "s of the meaning and sense of the Scriptures, as to the doctrine or truths contained in them, in answer unto the design of God, as unto what he would have us know or believe; or, —",
-          "next": "How they may attain a right perception of the mind of God in the Scripture, and what he intends in the revelation of it, in opposition unto ignorance, errors, mistakes, and all fal"
-        },
-        {
-          "file": "EPUB/ch017.xhtml",
-          "previous": " the first of these, or the principal efficient cause of the due knowledge and understanding of the will of God in the Scripture, it is the Holy Spirit of God himself alone; for, —",
-          "next": "There is an especial work of the Spirit of God on the minds of men, communicating spiritual wisdom, light, and understanding unto them, necessary unto their discerning and apprehen"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Inline structural marker candidates",
@@ -108,15 +57,15 @@
         },
         {
           "phrase": "to be the word of god with faith divine and",
+          "count": 8
+        },
+        {
+          "phrase": "be the word of god with faith divine and supernatural",
           "count": 7
         },
         {
           "phrase": "mind and will of god as revealed in the scripture",
           "count": 7
-        },
-        {
-          "phrase": "be the word of god with faith divine and supernatural",
-          "count": 6
         },
         {
           "phrase": "believe the scripture to be the word of god in",
@@ -134,31 +83,10 @@
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 4,
+      "observed": 0,
       "budget": 4,
       "status": "ok",
-      "samples": [
-        {
-          "page": 3,
-          "hit_ratio": 0.25,
-          "sample": "contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what"
-        },
-        {
-          "page": 4,
-          "hit_ratio": 0.5,
-          "sample": "question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god"
-        },
-        {
-          "page": 5,
-          "hit_ratio": 0.25,
-          "sample": "book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work"
-        },
-        {
-          "page": 6,
-          "hit_ratio": 0.5,
-          "sample": "unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Reference continuation splits",
@@ -211,7 +139,7 @@
     },
     {
       "label": "Low Greek word coverage",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
       "status": "ok",
       "samples": []

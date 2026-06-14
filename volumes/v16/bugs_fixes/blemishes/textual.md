@@ -1,4 +1,4 @@
-# Imptant
+# Important
 fix bugs, now I don't want partial fixes, I want thorough revisiting of algorithms/regex and audits why are these bugs here and how can they be
 fixed or rewritten that these bugs are not leaking on other volumes also
 

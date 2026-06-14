@@ -1,28 +1,28 @@
 # Text Integrity Audit: Volume 4
 
-- Status: **WARN**
-- Warnings: 5
+- Status: **PASS**
+- Warnings: 0
 - PDF pages: 650
 - EPUB text files: 70
-- EPUB paragraphs/headings: 2124
+- EPUB paragraphs/headings: 2128
 
 ## Coverage
 
-- PDF content tokens: 219413
-- EPUB content tokens: 220142
-- Approximate PDF-to-EPUB coverage ratio: 0.9987
-- Pages checked: 641
-- Weak page matches: 6
-- Dense source windows checked: 28430
-- Missing dense source-window pages: 40
-- Front CONTENTS pages checked: 4
-- Missing front CONTENTS pages: 4
+- PDF content tokens: 218690
+- EPUB content tokens: 220162
+- Approximate PDF-to-EPUB coverage ratio: 0.9995
+- Pages checked: 637
+- Weak page matches: 0
+- Dense source windows checked: 28429
+- Missing dense source-window pages: 0
+- Front CONTENTS pages checked: 0
+- Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 622
 - Top-of-page windows skipped as unstable: 14
-- Missing top-of-page body windows: 1
+- Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 605
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 4
+- Missing bottom-of-page body windows: 0
 
 ## Paragraphs
 
@@ -46,9 +46,9 @@
 
 ## Greek / Hebrew
 
-- PDF Greek words: 713
-- EPUB Greek words: 712
-- Greek word coverage ratio: 0.9957
+- PDF Greek words: 712
+- EPUB Greek words: 714
+- Greek word coverage ratio: 1.0
 - PDF Hebrew words: 99
 - EPUB Hebrew words: 99
 - Hebrew word coverage ratio: 1.0
@@ -59,55 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 1455
+- PDF Latin words: 1449
 - EPUB Latin words: 1478
 - EPUB Tagged Latin words: 844
-- Latin word coverage ratio: 0.9945
+- Latin word coverage ratio: 0.9959
 - Latin word tagging ratio: 0.571
 - Latin clauses checked: 114
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 214
 - Translated Latin runs: 117
 - Latin translation ratio: 0.5467
-
-## Warnings
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-
-## Missing Dense Source Windows
-
-- page: 3; sample: contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason
-- page: 4; sample: question stated the principal sufficient cause of the understanding which believers have in the
-- page: 5; sample: book vii discourse of the work of the holy spirit in prayer prefatory note
-- page: 6; sample: given as comforter or the object of his acting in this office inhabitation of
-- page: 8; sample: be the word of god with the causes and nature of that faith wherewith
-- page: 17; sample: and power this they do undeniably and infallibly psalm romans 19-21 yet it is
-- page: 19; sample: own counsels as it is expressed psalm and although this fell not out without
-- page: 20; sample: of curse unto the contrary malachi 4-6 so the writings of the new testament
-- page: 21; sample: is the only repository of all divine supernatural revelation psalm isaiah timothy the pretenses
-- page: 22; sample: in the ministry of the word see matthew corinthians 18-20 ephesians 11-15 timothy the
-
-## Missing Front CONTENTS Pages
-
-- page: 3; hit_ratio: 0.25; sample: contents πηευματολογια or discourse concerning the holy spirit continued book vi part the reason of faith prefatory note by the editor preface the subject stated preliminary remarks what
-- page: 4; hit_ratio: 0.5; sample: question stated the principal sufficient cause of the understanding which believers have in the mind and will of god as revealed in the scriptures the spirit of god
-- page: 5; hit_ratio: 0.25; sample: book vii discourse of the work of the holy spirit in prayer prefatory note by the editor preface to the reader the use of prayer and the work
-- page: 6; hit_ratio: 0.5; sample: unto whom the holy spirit is promised and given as comforter or the object of his acting in this office inhabitation of the spirit the first thing promised
-
-## Missing Top-Of-Page Body Windows
-
-- page: 35; sample: wisdom before all the world, Deuteronomy 4:6-8. Now, we shall not need to consider what were the first attempts of other nations in
-
-## Missing Bottom-Of-Page Body Windows
-
-- page: 2; sample: This Edition of first published by Johnstone & Hunter, 1850-53
-- page: 44; sample: testimony may rationally be supposed to be so far influenced by self- interest as to be of little validity.
-- page: 158; sample: them according as might be expected from unjust invaders of other men's rights and malae fidei possesoribus. So when the Philistines contended for
-- page: 219; sample: understanding, and I shall keep thy law," Psalm 119:34. So the apostle speaks to Timothy,
 
 ## Inline Structural Marker Candidates
 
@@ -141,9 +102,9 @@
 - phrase: to believe the scripture to be the word of god; count: 16
 - phrase: believe the scripture to be the word of god with; count: 9
 - phrase: the mind and will of god as revealed in the; count: 9
-- phrase: to be the word of god with faith divine and; count: 7
+- phrase: to be the word of god with faith divine and; count: 8
+- phrase: be the word of god with faith divine and supernatural; count: 7
 - phrase: mind and will of god as revealed in the scripture; count: 7
-- phrase: be the word of god with faith divine and supernatural; count: 6
 - phrase: believe the scripture to be the word of god in; count: 6
 - phrase: of the mind and will of god as revealed in; count: 6
 - phrase: of the holy spirit in the illumination of our minds; count: 5
@@ -152,7 +113,6 @@
 
 - word: self; pdf: 7; epub: 3
 - word: 14-17; pdf: 4; epub: 0
-- word: editor; pdf: 4; epub: 1
 - word: 16-18; pdf: 3; epub: 1
 
 ## Excess Word Samples
@@ -164,8 +124,9 @@
 - word: historical; pdf: 4; epub: 12
 - word: greek; pdf: 8; epub: 15
 - word: modern; pdf: 4; epub: 11
+- word: edition; pdf: 2; epub: 9
 - word: footnotes; pdf: 0; epub: 7
-- word: edition; pdf: 3; epub: 9
+- word: vii; pdf: 6; epub: 12
 
 ## Untagged Latin Word Samples
 

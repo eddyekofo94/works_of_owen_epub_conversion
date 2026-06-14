@@ -28,6 +28,7 @@ VOL = 4
 # ---------------------------------------------------------------------------
 
 _V4_HS_CONTINUED_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="greek-title"><span lang="el" xml:lang="el">ΠΝΕΥΜΑΤΟΛΟΓΙΑ</span></p>
 <p class="title-line-major">A Discourse</p>
 <p class="title-connector">Concerning the</p>
 <p class="title-line-major">Holy Spirit:</p>
@@ -38,15 +39,19 @@ _V4_HS_CONTINUED_TITLE_PAGE = '''<section class="treatise-title-page" epub:type=
 
 _V4_REASON_OF_FAITH_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
 <p class="title-line-major">The Reason of Faith;</p>
-<p class="title-connector">or, an Answer Unto That Inquiry,</p>
-<p class="title-line-medium">Wherefore We Believe the Scripture</p>
-<p class="title-line-medium">to Be the Word of God</p>
-<p class="title-connector">with the Sure Foundation of Our Faith Therein Asserted and Explained.</p>
+<p class="title-connector">Or,</p>
+<p class="title-line-medium">An Answer Unto That Inquiry,</p>
+<p class="title-line-medium">"Wherefore We Believe the Scripture to Be the Word of God;"</p>
+<p class="title-connector">With</p>
+<p class="title-line-medium">The Causes and Nature of That Faith Wherewith We Do So:</p>
+<p class="title-connector">Wherein</p>
+<p class="descriptive">The Grounds Whereon the Holy Scripture Is Believed to Be the Word of God with Faith Divine and Supernatural Are Declared and Vindicated.</p>
 <p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth." — Romans 1:16.</p></div>
+<div class="quote-block"><p>"If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead." — Luke 16:31.</p></div>
 </section>'''
 
 _V4_CAUSES_WAYS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<p class="greek-title"><span lang="el" xml:lang="el">ΣΥΝΕΣΙΣ ΠΝΕΥΜΑΤΙΚΗ</span></p>
 <p class="title-line-medium">The Causes, Ways, and Means</p>
 <p class="title-connector">of</p>
 <p class="title-line-medium">Understanding the Mind of God</p>

@@ -144,10 +144,12 @@ See previous sessions.
 
 ---
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-13T09:04:45.951249+00:00
+**Last run:** 2026-06-14T16:17:43.199041+00:00
 **EPUB:** `volumes/v4/output/volume_4.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -162,7 +164,7 @@ Reports:
 | Spine items | 71 |
 | Embedded fonts | 16 |
 | NAV links | 73 |
-| Greek chars / untagged | 4062 / 0 |
+| Greek chars / untagged | 4079 / 0 |
 | Hebrew chars / untagged | 698 / 0 |
 | Noteref links / endnote anchors | 112 / 112 |
 | AGES boilerplate hits | 0 |
@@ -195,11 +197,17 @@ Reports:
 
 
 
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-13T10:14:33.562874+00:00
-**Status:** WARN (5 warnings)
+**Last run:** 2026-06-14T16:16:42.138872+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_4_text_integrity.json`
@@ -209,19 +217,19 @@ Reports:
 |-------|--------|
 | PDF pages | 650 |
 | EPUB text files | 70 |
-| EPUB paragraphs/headings | 2124 |
-| Approximate PDF-to-EPUB word coverage | 0.9987 |
-| Weak page matches | 6 |
-| Dense source windows checked | 28430 |
-| Missing dense source-window pages | 40 |
-| Front CONTENTS pages checked | 4 |
-| Missing front CONTENTS pages | 4 |
+| EPUB paragraphs/headings | 2128 |
+| Approximate PDF-to-EPUB word coverage | 0.9995 |
+| Weak page matches | 0 |
+| Dense source windows checked | 28429 |
+| Missing dense source-window pages | 0 |
+| Front CONTENTS pages checked | 0 |
+| Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 622 |
 | Top-of-page windows skipped as unstable | 14 |
-| Missing top-of-page body windows | 1 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 605 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 4 |
+| Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 298 |
 | Short fragments | 18 |
@@ -238,20 +246,12 @@ Reports:
 | EPUB enumerator markers | 426 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 1 |
-| PDF Greek words / EPUB Greek words | 713 / 712 |
-| Greek word coverage ratio | 0.9957 |
+| PDF Greek words / EPUB Greek words | 712 / 714 |
+| Greek word coverage ratio | 1.0 |
 | PDF Hebrew words / EPUB Hebrew words | 99 / 99 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

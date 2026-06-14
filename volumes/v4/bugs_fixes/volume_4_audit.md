@@ -17,7 +17,7 @@
 
 ## Content Checks
 
-- Greek chars: 4062
+- Greek chars: 4079
 - Untagged Greek chars: 0
 - Hebrew chars: 698
 - Untagged Hebrew chars: 0
