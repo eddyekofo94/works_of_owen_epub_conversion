@@ -2,20 +2,21 @@
   "volume": "7",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/input/owen-v7.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
-  "generated_at": "2026-06-11T18:13:25.875528+00:00",
+  "generated_at": "2026-06-14T16:57:37.919187+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
   "pdf": {
-    "page_count": 683
+    "page_count": 683,
+    "skipped_detected": []
   },
   "epub": {
     "spine_text_files": 63,
-    "paragraph_count": 2407
+    "paragraph_count": 2395
   },
   "word_coverage": {
     "pdf_content_tokens": 230676,
-    "epub_content_tokens": 230986,
+    "epub_content_tokens": 230998,
     "coverage_ratio": 0.9976,
     "missing_word_samples": [
       {
@@ -73,8 +74,8 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32091,
-    "missing_dense_window_pages": 30,
+    "dense_windows_checked": 32134,
+    "missing_dense_window_pages": 31,
     "missing_dense_windows": [
       {
         "page": 64,
@@ -95,10 +96,6 @@
       {
         "page": 100,
         "sample": "whether greek or latin before st austin's time agreed in doctrine with the determinations"
-      },
-      {
-        "page": 134,
-        "sample": "is in them the wisdom of god the wisdom of god in mystery corinthians"
       },
       {
         "page": 177,
@@ -195,6 +192,14 @@
       {
         "page": 571,
         "sample": "the conduct of the spirit of his mind hence was his self denial his"
+      },
+      {
+        "page": 582,
+        "sample": "much fine gold sweeter also than honey and the honey comb psalm for wisdom"
+      },
+      {
+        "page": 586,
+        "sample": "in your minds your vexations and dis quietments your passions breaking forth sometimes into"
       }
     ]
   },
@@ -305,10 +310,10 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2042,
+    "paragraphs_checked": 2032,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 265,
+    "structural_start_exclusions": 260,
     "short_fragment_count": 22,
     "short_fragments": [
       {
@@ -696,54 +701,24 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1211,
-    "epub_latin_word_count": 1245,
-    "epub_tagged_latin_word_count": 177,
-    "pdf_latin_unique_words": 413,
-    "epub_latin_unique_words": 418,
-    "epub_tagged_unique_words": 145,
-    "latin_word_coverage_ratio": 0.995,
-    "latin_tagging_ratio": 0.1422,
+    "pdf_latin_word_count": 820,
+    "epub_latin_word_count": 849,
+    "epub_tagged_latin_word_count": 175,
+    "pdf_latin_unique_words": 369,
+    "epub_latin_unique_words": 373,
+    "epub_tagged_unique_words": 143,
+    "latin_word_coverage_ratio": 0.9927,
+    "latin_tagging_ratio": 0.2061,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "sincere",
-        "epub": 52,
-        "tagged": 0
-      },
-      {
-        "word": "immediate",
-        "epub": 37,
-        "tagged": 0
-      },
-      {
-        "word": "poor",
-        "epub": 34,
-        "tagged": 0
-      },
       {
         "word": "adhere",
         "epub": 29,
         "tagged": 0
       },
       {
-        "word": "elsewhere",
-        "epub": 26,
-        "tagged": 0
-      },
-      {
-        "word": "severe",
-        "epub": 26,
-        "tagged": 0
-      },
-      {
         "word": "inordinate",
         "epub": 26,
-        "tagged": 0
-      },
-      {
-        "word": "mere",
-        "epub": 25,
         "tagged": 0
       },
       {
@@ -755,11 +730,6 @@
         "word": "iii",
         "epub": 19,
         "tagged": 0
-      },
-      {
-        "word": "savor",
-        "epub": 20,
-        "tagged": 1
       },
       {
         "word": "forego",
@@ -782,11 +752,6 @@
         "tagged": 0
       },
       {
-        "word": "estate",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
         "word": "undergo",
         "epub": 13,
         "tagged": 0
@@ -802,33 +767,73 @@
         "tagged": 0
       },
       {
-        "word": "terror",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "degenerate",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
-        "word": "rate",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
         "word": "hate",
         "epub": 10,
         "tagged": 0
       },
       {
-        "word": "abraham",
-        "epub": 10,
+        "word": "door",
+        "epub": 9,
         "tagged": 0
       },
       {
-        "word": "vigor",
-        "epub": 10,
+        "word": "analysis",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "apostate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "dream",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "succor",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "contemplate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "inferior",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "obstinate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "innate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "animate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "nowhere",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "tract",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "insinuate",
+        "epub": 6,
         "tagged": 0
       }
     ]
@@ -839,9 +844,9 @@
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 49,
+    "tagged_latin_runs_count": 48,
     "translated_latin_runs_count": 11,
-    "latin_translation_ratio": 0.2245,
+    "latin_translation_ratio": 0.2292,
     "untranslated_latin_samples": [
       {
         "phrase": "Erasmus, ‡  \"Fieri non"
@@ -917,6 +922,7 @@
     "font_issue_count": 0,
     "font_issues": []
   },
+  "unused_whitelist_text_integrity": {},
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

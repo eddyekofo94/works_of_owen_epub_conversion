@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-14T16:30:55Z
+Generated: 2026-06-14T16:59:55Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-14T16:30:55Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 7 | 19.6 | sabon-next-lt | 3 |  99.76 |  100.0 |  100.0 |   99.5 | 0 | 0 | PRISTINE |
+| 1 | 7 | 19.6 | sabon-next-lt | 3 |  99.76 |  100.0 |  100.0 |  99.27 | 0 | 0 | PRISTINE |
 | 2 | 16 | 19.3 | gentium-plus-2 | 5 |  99.95 |  100.0 |  100.0 |  99.91 | 0 | 56 | FULL |
 | 3 | 15 | 18.8 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
 | 4 | 9 | 15.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |  99.33 | 0 | 0 | PRISTINE |
@@ -199,9 +199,9 @@ Generated: 2026-06-14T16:30:55Z
 - **Word coverage:** 99.76
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.50
-- **Latin tagging:** 14.22
-- **Latin translation:** 22.45
+- **Latin coverage:** 99.27
+- **Latin tagging:** 20.61
+- **Latin translation:** 22.92
 - **Citations:** total=4, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0

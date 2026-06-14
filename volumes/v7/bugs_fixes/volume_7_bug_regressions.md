@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 6 | 6 | OK |
+| Lowercase page fragments | 1 | 6 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -79,8 +79,4 @@
 
 ### Lowercase page fragments
 
-- file: EPUB/ch017.xhtml; text: may be applied unto the men of this persuasion: either they alone know the state
-- file: EPUB/ch026.xhtml; text: and this he doth as the "liberal deviseth liberal things," verse 8. From his own
-- file: EPUB/ch029.xhtml; text: and chapter 4:15,16, "We have not an high priest that cannot be touched with the
 - file: EPUB/ch033.xhtml; text: l
-- file: EPUB/ch034.xhtml; text: for hereby our minds, that were created in a state of blessed adherence unto God,

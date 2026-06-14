@@ -1,6 +1,6 @@
 {
   "volume": "7",
-  "total_words_audited": 278460,
+  "total_words_audited": 278479,
   "total_anomalies_count": 0,
   "anomalies": {
     "Hyphenation Anomalies": [],
@@ -12,5 +12,6 @@
     "Invalid Bible References": [],
     "List Formatting Inconsistencies": [],
     "Unmatched Quotation Marks": []
-  }
+  },
+  "unused_whitelist_anomalies": {}
 }

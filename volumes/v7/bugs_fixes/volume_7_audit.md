@@ -34,8 +34,4 @@
 
 ### lowercase_paragraph_start
 
-- `EPUB/ch017.xhtml`: may be applied unto the men of this persuasion: either they alone know the state
-- `EPUB/ch026.xhtml`: and this he doth as the "liberal deviseth liberal things," verse 8. From his own
-- `EPUB/ch029.xhtml`: and chapter 4:15,16, "We have not an high priest that cannot be touched with the
 - `EPUB/ch033.xhtml`: l
-- `EPUB/ch034.xhtml`: for hereby our minds, that were created in a state of blessed adherence unto God,

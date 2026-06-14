@@ -56,11 +56,8 @@ Quotations containing translation snippets or blockquotes where the matching quo
 ## 2. Text Integrity Exclusions
 
 ### Weak/Missing Pages & Front Matter TOC Loss
-* **Pages 3, 7, 24**: These are early/introductory pages containing the Table of Contents, Analysis, and Title page. Since we override them or exclude them in the converter (`volumes/v7/convert.py`) using custom HTML overrides, they are naturally missing from the main sequential flow matching.
-* **Pages 31, 37, 39, 45, 59**: These pages contain Greek phrases (e.g. `δωρεα`) or complex bible citations that lead to minor mismatch warnings in dense page-window scans. The text itself is fully present in the EPUB.
-
-### Top/Bottom-of-Page Text Loss
-* **Page 2, 3, 24, 183**: Minor header/footer lines or transitional page breaks that are skipped or overriden as front matter.
+* **Page 3**: This is an early/introductory page containing the Table of Contents. Since we override it or exclude it in the converter (`volumes/v7/convert.py`) using custom HTML overrides, it is naturally missing from the main sequential flow matching.
+* **Pages 31, 37, 39, 45**: These pages contain Greek phrases (e.g. `δωρεα`) or complex bible citations that lead to minor mismatch warnings in dense page-window scans. The text itself is fully present in the EPUB.
 
 ### Inline Structural Markers
 These are authentic inline enumerators inside prose paragraphs that should not start new block-level paragraphs:
@@ -73,7 +70,7 @@ These are authentic inline enumerators inside prose paragraphs that should not s
 Suspicious transitions that represent correct paragraph breaks in context:
 * `To The Reader`
 * Greek quotes (`Αδύνατον γὰρ τοὺς`)
-* Multi-part list items and headings (e.g. `III.`, `XIX.`, `(5thly.)`, `John Owen`, `D.D. LONDON: 1688`).
+* Multi-part list items and headings (e.g. `III.`, `XIX.`, `(5thly.)`, `John Owen`).
 
 ## 3. Ignored Warnings
 The following warnings are ignored as they represent false positives or benign features:

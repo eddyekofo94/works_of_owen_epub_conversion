@@ -4,17 +4,17 @@
 - Warnings: 0
 - PDF pages: 683
 - EPUB text files: 63
-- EPUB paragraphs/headings: 2407
+- EPUB paragraphs/headings: 2395
 
 ## Coverage
 
 - PDF content tokens: 230676
-- EPUB content tokens: 230986
+- EPUB content tokens: 230998
 - Approximate PDF-to-EPUB coverage ratio: 0.9976
 - Pages checked: 679
 - Weak page matches: 0
-- Dense source windows checked: 32091
-- Missing dense source-window pages: 30
+- Dense source windows checked: 32134
+- Missing dense source-window pages: 31
 - Front CONTENTS pages checked: 5
 - Missing front CONTENTS pages: 2
 - Top-of-page body windows checked: 667
@@ -26,9 +26,9 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2042
+- Body paragraphs checked: 2032
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 265
+- Structural starts excluded from split warnings: 260
 - Short fragments: 22
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 1211
-- EPUB Latin words: 1245
-- EPUB Tagged Latin words: 177
-- Latin word coverage ratio: 0.995
-- Latin word tagging ratio: 0.1422
+- PDF Latin words: 820
+- EPUB Latin words: 849
+- EPUB Tagged Latin words: 175
+- Latin word coverage ratio: 0.9927
+- Latin word tagging ratio: 0.2061
 - Latin clauses checked: 18
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 49
+- Tagged Latin runs checked: 48
 - Translated Latin runs: 11
-- Latin translation ratio: 0.2245
+- Latin translation ratio: 0.2292
 
 ## Missing Dense Source Windows
 
@@ -77,11 +77,11 @@
 - page: 82; sample: expose the doctrine of it and the law of obedience con rained in it
 - page: 95; sample: continued for sundry ages afterward and for the latter or pela gianism it secretly
 - page: 100; sample: whether greek or latin before st austin's time agreed in doctrine with the determinations
-- page: 134; sample: is in them the wisdom of god the wisdom of god in mystery corinthians
 - page: 177; sample: the truth as occasions are offered vi the hand of satan is in this
 - page: 183; sample: 39-41 and that of the apostles acts 25-27 and is expounded romans when things
 - page: 201; sample: severity it may be of self conceitedness and hypocrisy who shall reflect any great
 - page: 221; sample: an habitual course in any sin is utterly inconsistent with evangelical obedience john yea
+- page: 245; sample: whole ministry the temple of the lord the temple of the lord the temple
 
 ## Missing Front CONTENTS Pages
 
@@ -142,16 +142,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: sincere; epub: 52; tagged: 0
-- word: immediate; epub: 37; tagged: 0
-- word: poor; epub: 34; tagged: 0
 - word: adhere; epub: 29; tagged: 0
-- word: elsewhere; epub: 26; tagged: 0
-- word: severe; epub: 26; tagged: 0
 - word: inordinate; epub: 26; tagged: 0
-- word: mere; epub: 25; tagged: 0
 - word: profligate; epub: 22; tagged: 0
 - word: iii; epub: 19; tagged: 0
+- word: forego; epub: 18; tagged: 0
+- word: meditate; epub: 16; tagged: 1
+- word: alas; epub: 15; tagged: 0
+- word: stream; epub: 14; tagged: 0
+- word: undergo; epub: 13; tagged: 0
+- word: pleas; epub: 12; tagged: 0
 
 ## Untranslated Latin Samples
 

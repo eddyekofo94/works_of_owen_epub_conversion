@@ -88,9 +88,7 @@
   },
   "text_integrity": {
     "weak_pages": [
-      3,
-      7,
-      24
+      3
     ],
     "front_matter_toc_loss": [
       3,
@@ -105,8 +103,7 @@
       31,
       37,
       39,
-      45,
-      59
+      45
     ],
     "top_of_page_text_loss": [
       3,
@@ -120,8 +117,7 @@
       "To those who confine the whole of obedience to morality",
       "Special trials and temptations; and 3. Heavenly and eternal realities",
       "It is the spiritual mind alone that can reconcile those things",
-      "The reason of the assurance that sin shall have no more dominion over believers",
-      "whereas, 1. the law gives no strength against sin"
+      "The reason of the assurance that sin shall have no more dominion over believers"
     ],
     "paragraph_splits": [
       "To The Reader",
@@ -141,7 +137,6 @@
       "When men find, or may find, their affections yet quick",
       "BY THE LATE PIOUS AND LEARNED",
       "John Owen",
-      "D.D. LONDON: 1688",
       "III.",
       "The first is, the daily exercise of faith on Christ",
       "I have nothing to offer to free them from this evidence",
@@ -153,11 +148,8 @@
       "repeated_windows",
       "roman_heading_candidates",
       "enumerator_sequence_candidates",
-      "weak_page_coverage",
       "dense_source_window_loss",
-      "front_matter_toc_loss",
-      "top_of_page_text_loss",
-      "bottom_of_page_text_loss"
+      "front_matter_toc_loss"
     ]
   }
 }
