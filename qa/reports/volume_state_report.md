@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-15T10:41:46Z
+Generated: 2026-06-15T11:10:58Z
 
 ## Summary
 
@@ -257,14 +257,14 @@ Generated: 2026-06-15T10:41:46Z
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** PRISTINE
-- **convert.py:** Yes (173 lines, 1 text_replacements)
+- **convert.py:** Yes (209 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.77
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
 - **Latin coverage:** 99.66
-- **Latin tagging:** 51.19
-- **Latin translation:** 71.43
+- **Latin tagging:** 63.73
+- **Latin translation:** 100.00
 - **Citations:** total=4, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
