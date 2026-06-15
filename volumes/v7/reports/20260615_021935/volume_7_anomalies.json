@@ -1,6 +1,6 @@
 {
-  "volume": "8",
-  "total_words_audited": 306901,
+  "volume": "7",
+  "total_words_audited": 278475,
   "total_anomalies_count": 0,
   "anomalies": {
     "Hyphenation Anomalies": [],

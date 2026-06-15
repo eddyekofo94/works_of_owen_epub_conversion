@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-14T21:14:13Z
+Generated: 2026-06-15T00:29:28Z
 
 ## Summary
 
@@ -11,10 +11,10 @@ Generated: 2026-06-14T21:14:13Z
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
 | 1 | 16 | 17.5 | gentium-plus-2 | 5 |  99.95 |  100.0 |  100.0 |  99.91 | 0 | 56 | FULL |
-| 2 | 9 | 15.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |  99.33 | 0 | 0 | PRISTINE |
-| 3 | 15 | 12.4 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 4 | 8 | 12.0 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |  99.84 | 0 | 0 | PRISTINE |
-| 5 | 7 | 9.6 | sabon-next-lt | 3 |  99.76 |  100.0 |  100.0 |  99.74 | 0 | 0 | PRISTINE |
+| 2 | 7 | 16.9 | sabon-next-lt | 3 |  99.77 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
+| 3 | 9 | 15.6 | cardo | 3 |  99.61 |  100.0 |  100.0 |  99.33 | 0 | 0 | PRISTINE |
+| 4 | 15 | 12.4 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
+| 5 | 8 | 9.9 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
 | 6 | 5 | 8.7 | brill-font | 2 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
 | 7 | 12 | 8.3 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 8 | 3 | 7.1 | minion-pro | 1 |  99.97 |  99.87 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
@@ -209,7 +209,28 @@ Generated: 2026-06-14T21:14:13Z
 - **Unmatched quotes:** 56
 - **Recommended:** ❓ Resolve unmatched quotation marks; 🔍 Review OCR anomalies
 
-### Volume 9 — Need: 15.6 (✅ Good) — Rank 9
+### Volume 7 — Need: 16.9 (✅ Good) — Rank 9
+
+- **Body font:** sabon-next-lt
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** PRISTINE
+- **convert.py:** Yes (169 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.77
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.66
+- **Latin tagging:** 51.19
+- **Latin translation:** 71.43
+- **Citations:** total=4, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 9 — Need: 15.6 (✅ Good) — Rank 10
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -230,7 +251,7 @@ Generated: 2026-06-14T21:14:13Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 15 — Need: 12.4 (✅ Good) — Rank 10
+### Volume 15 — Need: 12.4 (✅ Good) — Rank 11
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -251,42 +272,21 @@ Generated: 2026-06-14T21:14:13Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 8 — Need: 12.0 (✅ Good) — Rank 11
+### Volume 8 — Need: 9.9 (✅ Good) — Rank 12
 
 - **Body font:** gentium-plus-2
 - **Source type:** ages_pdf
 - **Treatises:** 16
 - **QA level:** PRISTINE
-- **convert.py:** Yes (141 lines, 1 text_replacements)
+- **convert.py:** Yes (161 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.95
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.84
-- **Latin tagging:** 43.10
-- **Latin translation:** 37.06
+- **Latin coverage:** 99.80
+- **Latin tagging:** 56.09
+- **Latin translation:** 64.67
 - **Citations:** total=38, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 185
-- **Unmatched quotes:** 0
-- **Recommended:** 🔍 Review OCR anomalies
-
-### Volume 7 — Need: 9.6 (✅ Good) — Rank 12
-
-- **Body font:** sabon-next-lt
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** PRISTINE
-- **convert.py:** Yes (177 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.76
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.74
-- **Latin tagging:** 40.36
-- **Latin translation:** 26.67
-- **Citations:** total=4, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 0

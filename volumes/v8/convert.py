@@ -125,6 +125,7 @@ OVERRIDES = {
     },
     'text_replacements': {
         'will so indulge to y spirits': 'will so indulge to your spirits',
+        'Giles-inthe': 'Giles-in-the',
         'p articular': 'particular',
         'p _articular_': '_particular_',
         'Joel 51:10': 'Joel 2:10',

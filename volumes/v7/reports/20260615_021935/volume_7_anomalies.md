@@ -1,11 +1,11 @@
-# Text Integrity & Anomaly Audit Report: Volume 8
+# Text Integrity & Anomaly Audit Report: Volume 7
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 306901
+* **Total Words Audited:** 278475
 * **Total Suspected Anomalies Found:** 0
 
-Add corrections to `text_replacements` inside `volumes/v8/convert.py` to fix these.
+Add corrections to `text_replacements` inside `volumes/v7/convert.py` to fix these.
 
 ## Summary by Category
 

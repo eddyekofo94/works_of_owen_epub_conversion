@@ -4,6 +4,10 @@ This document lists and explains all whitelisted items for Volume 8 of the John 
 
 ## 1. Anomalies
 
+### Scanner Substring False Positives
+The following entries are scanner false positives where the anomaly detector's substring matching flags legitimate English words:
+* `f or`: Matches inside legitimate substrings like "of or", "for or", "difference of or opposition".
+
 ### Hyphenation Anomalies
 The following hyphenated words are authentic to Owen's 17th-century orthography and should not be modernized or split:
 * e.g., `Sabbath-breaker`, `evil-doer`, `top-stone`, `eye-salve`, `under-propping`, `stout-hearted`, `shittim-wood`. All 42 items in the JSON whitelist have been verified against the print edition.
@@ -19,8 +23,11 @@ Authentic outline sequence discontinuities and list starters from Owen's printed
 * e.g., `1. ... 3.`, `1. ... 4.`, `2. ... 5.`, `3. ... 6.`, `I. ... IX.`, and other outline markers representing the sermon collection divisions and Owen's complex outline structures.
 
 ### Unmatched Quotation Marks
-The following 24 paragraphs contain unmatched double quotes because they are part of multi-paragraph blockquotes (where only the final paragraph has a closing quote), contain nested quotes or citations with unusual structures, or contain inline Hebrew/Latin quotes:
+The following 27 paragraphs contain unmatched double quotes because they are part of multi-paragraph blockquotes (where only the final paragraph has a closing quote), contain nested quotes or citations with unusual structures, or contain inline Hebrew/Latin quotes:
+* `Die Venetia, 14 Martii, 1650. "The question being propounded`
 * `(2.) Take heed of resting upon and trusting to the privilege`
+* `fitly framed together, groweth unto an holy temple`
+* `"And all the trees of the field shall know`
 * `SERMON 16.   AN HUMBLE TESTIMONY`
 * `The occasion on which this sermon was delivered is mentioned in the "Life the sermon, Owen appears t...`
 * `Nothing so ill, but Christ [f58] will compensate. The greatest evil in the world is sin, and the gre...`

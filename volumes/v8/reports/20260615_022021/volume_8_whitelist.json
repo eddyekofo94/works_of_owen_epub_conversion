@@ -1,9 +1,14 @@
 {
   "anomalies": {
     "OCR & Bracket Residues": [],
-    "Scanner Substring False Positives": [],
+    "Scanner Substring False Positives": [
+      "f or"
+    ],
     "Unmatched Quotation Marks": [
+      "Die Venetia, 14 Martii, 1650. \"The question being propounded",
       "(2.) Take heed of resting upon and trusting to the privilege",
+      "fitly framed together, groweth unto an holy temple",
+      "\"And all the trees of the field shall know",
       "SERMON 16.   AN HUMBLE TESTIMONY",
       "The occasion on which this sermon was delivered is mentioned in the \"Life the sermon, Owen appears t...",
       "Nothing so ill, but Christ [f58] will compensate. The greatest evil in the world is sin, and the gre...",

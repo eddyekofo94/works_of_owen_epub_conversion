@@ -131,10 +131,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-14T23:06:10.910751+00:00
+**Last run:** 2026-06-15T00:18:51.053473+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -190,10 +191,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-14T23:06:49.947574+00:00
+**Last run:** 2026-06-15T00:19:31.857839+00:00
 **Status:** WARN (2 warnings)
 
 Reports:

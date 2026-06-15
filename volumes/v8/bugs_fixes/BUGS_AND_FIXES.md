@@ -128,10 +128,11 @@ See previous sessions.
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-14T23:07:35.466109+00:00
+**Last run:** 2026-06-15T00:20:17.217310+00:00
 **Status:** WARN (2 warnings)
 
 Reports:
@@ -214,10 +215,11 @@ Warnings requiring triage:
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-14T23:06:54.493089+00:00
+**Last run:** 2026-06-15T00:19:36.505564+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub`
 **Status:** PASS (0 errors, 0 warnings)
 

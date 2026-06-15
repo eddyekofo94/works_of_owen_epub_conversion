@@ -4,6 +4,11 @@ This document lists and explains all whitelisted items for Volume 7 of the John 
 
 ## 1. Anomalies
 
+### Scanner Substring False Positives
+The following entries are scanner false positives where the anomaly detector's substring matching flags legitimate English words:
+* `r own`: Matches inside common phrases such as "their own" or "our own".
+* `l st`: Matches inside words/phrases such as "spiritual strength", "real state", or "final state".
+
 ### Hyphenation Anomalies
 The following hyphenated words are authentic to Owen's 17th-century orthography and should not be modernized or split:
 * `Spiritual-mindedness`

@@ -1,7 +1,10 @@
 {
   "anomalies": {
     "OCR & Bracket Residues": [],
-    "Scanner Substring False Positives": [],
+    "Scanner Substring False Positives": [
+      "r own",
+      "l st"
+    ],
     "Hyphenation Anomalies": [
       "Spiritual-mindedness",
       "ale-house",
