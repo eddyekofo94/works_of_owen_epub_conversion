@@ -198,10 +198,13 @@ Reports:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-15T01:04:53.169689+00:00
+**Last run:** 2026-06-15T10:59:53.691594+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -226,14 +229,14 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 255 |
+| Structural starts excluded from split warnings | 257 |
 | Short fragments | 22 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
-| Roman heading candidates | 3 |
+| Roman heading candidates | 0 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |

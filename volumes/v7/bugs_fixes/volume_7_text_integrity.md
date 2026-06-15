@@ -26,16 +26,16 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2032
+- Body paragraphs checked: 2029
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 255
+- Structural starts excluded from split warnings: 257
 - Short fragments: 22
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
-- Roman heading candidates: 3
+- Roman heading candidates: 0
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
@@ -61,14 +61,14 @@
 
 - PDF Latin words: 291
 - EPUB Latin words: 295
-- EPUB Tagged Latin words: 151
+- EPUB Tagged Latin words: 188
 - Latin word coverage ratio: 0.9966
-- Latin word tagging ratio: 0.5119
+- Latin word tagging ratio: 0.6373
 - Latin clauses checked: 18
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 42
-- Translated Latin runs: 30
-- Latin translation ratio: 0.7143
+- Tagged Latin runs checked: 51
+- Translated Latin runs: 51
+- Latin translation ratio: 1.0
 
 ## Missing Dense Source Windows
 
@@ -87,12 +87,6 @@
 
 - page: 3; hit_ratio: 0.25; sample: contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews
 - page: 7; hit_ratio: 0.25; sample: law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the
-
-## Roman Heading Candidates
-
-- file: EPUB/ch046.xhtml; text: I. 1. That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —
-- file: EPUB/ch049.xhtml; text: I. As to the nature of this dominion, —
-- file: EPUB/ch049.xhtml; text: II. As to the evidence of this dominion, —
 
 ## Short Fragments
 
@@ -140,19 +134,6 @@
 - word: footnotes; pdf: 0; epub: 7
 - word: edition; pdf: 4; epub: 10
 - word: hebrew; pdf: 1; epub: 7
-
-## Untranslated Latin Samples
-
-- phrase: sui juris
-- phrase: amor patriae
-- phrase: immensam cupido
-- phrase: Ammianus Marcellinus
-- phrase: animae vehicula
-- phrase: Nemo moritur
-- phrase: Apostata est osor sui ordinis
-- phrase: Deos et coeli Numina vobis
-- phrase: Prudentia, sapientia, intelligentia
-- phrase: cogitatio, discretio, id quod Spiritus
 
 ## Limits
 

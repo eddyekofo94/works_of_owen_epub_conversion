@@ -27,22 +27,20 @@
     ],
     "Punctuation Spacing Blemishes": [
       "..",
-      "1 .",
       "1st ,",
       "1st .",
-      "2 .",
-      "2dly ,",
-      "2dly .",
-      "3 .",
-      "4 .",
-      "5 .",
-      "6 .",
-      "7 .",
-      "First ,",
       "Lord ;",
       "and ,",
       "flatteries :",
-      "ignorant ,"
+      "ignorant ,",
+      "cupido .",
+      "vehicula ,",
+      "morbi ,",
+      "ordinis ;",
+      "datum ,",
+      "sapit ,",
+      "naturae ,",
+      "fatuus ,"
     ],
     "Mixed-Case Capitalization Errors": [],
     "Structural Nesting Sequence Jumps": [
@@ -125,21 +123,14 @@
       "III.",
       "The first is, the daily exercise of faith on Christ",
       "I have nothing to offer to free them from this evidence",
-      "(5thly.) They will have no quiet",
-      "set up their banners for tokens, we know not; for, \u2014",
-      "proposed as the foundation of the present discourse; as, \u2014",
-      "Affections thus led unto and fixed on spiritual and heavenly things",
-      "An habitual suitableness unto spiritual things",
-      "When sin hath in any instance possessed the imagination"
+      "(5thly.) They will have no quiet"
     ],
     "ignored_warnings": [
       "repeated_windows",
-      "roman_heading_candidates",
       "enumerator_sequence_candidates",
       "dense_source_window_loss",
       "front_matter_toc_loss",
-      "low_latin_tagging",
-      "low_latin_translation_coverage"
+      "low_latin_tagging"
     ]
   }
 }

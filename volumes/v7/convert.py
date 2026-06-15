@@ -118,6 +118,25 @@ _V7_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><b>Chapter VI.</b> <a href="ch057.xhtml">Practical directions how to be preserved from the dominion of sin</a></p>
 </section>'''
 
+def html_postprocess_hook(html, ch_context):
+    title = ch_context.get('title', '')
+    
+    # Priority 4: Promote Roman Heading Candidates
+    if 'Chapter XX' in title or 'ch046' in ch_context.get('cid', ''):
+        old_str = '<p class="list-item list-level-1"><b>I. 1.</b> That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —</p>'
+        new_str = '<h2 class="roman-subheading"><b>I. 1.</b> That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —</h2>'
+        html = html.replace(old_str, new_str)
+        
+    elif 'Prefatory Note' in title and 'Dominion' in title or 'ch049' in ch_context.get('cid', ''):
+        old_str1 = '<p class="list-item list-level-1"><b>I.</b> As to the <i>nature</i> of this dominion, —</p>'
+        new_str1 = '<h3 class="roman-subheading"><b>I.</b> As to the <i>nature</i> of this dominion, —</h3>'
+        old_str2 = '<p class="list-item list-level-1"><b>II.</b> As to the evidence of this dominion, —</p>'
+        new_str2 = '<h3 class="roman-subheading"><b>II.</b> As to the evidence of this dominion, —</h3>'
+        html = html.replace(old_str1, new_str1).replace(old_str2, new_str2)
+        
+    return html
+
+
 OVERRIDES = {
     'contents_page_overrides': _V7_CONTENTS_PAGE,
     'front_matter_overrides': {
@@ -136,6 +155,9 @@ OVERRIDES = {
         r'\b\s+([.,;:?!])': r'\1',
         r'\(\s+': '(',
         r'\b\s+\)': ')',
+        # Collapse double periods and spaced periods inside list markers (Priority 2 & 3)
+        r'\*\*(\w+)(\.?)\*\*(\s*)_._': r'**\1.**',
+        r'\.{2,}': '.',
     },
     'text_replacements': {
         'sal_ vation': 'salvation',
@@ -161,7 +183,21 @@ OVERRIDES = {
         'the r own': 'their own',
         ',,': ',',
         '..': '.',
+        # Latin tagging (Priority 1) — Regex protected from nested wrapping
+        r'(\bsui juris\b(?!</span>))': '<span lang="la">sui juris</span>',
+        r'(\bamor patriae, laudumque immensam cupido\b(?!</span>))': '<span lang="la">amor patriae, laudumque immensam cupido</span>',
+        r'(\bAmmianus Marcellinus\b(?!</span>))': '<span lang="la">Ammianus Marcellinus</span>',
+        r'(\banimae vehicula\b(?!</span>))': '<span lang="la">animae vehicula</span>',
+        r'(\bNemo moritur in declinatione morbi\b(?!</span>))': '<span lang="la">Nemo moritur in declinatione morbi</span>',
+        r'(\bApostata est osor sui ordinis\b(?!</span>))': '<span lang="la">Apostata est osor sui ordinis</span>',
+        r'(\bSolis nosse Deos et coeli Numina vobis Aut solis nescire datum\b(?!</span>))': '<span lang="la">Solis nosse Deos et coeli Numina vobis Aut solis nescire datum</span>',
+        r'(\bPrudentia, sapientia, intelligentia, mens, cogitatio, discretio, id quod Spiritus sapit\b(?!</span>))': '<span lang="la">Prudentia, sapientia, intelligentia, mens, cogitatio, discretio, id quod Spiritus sapit</span>',
+        r'(\bvox naturae clamantis ad Dominum naturae\b(?!</span>))': '<span lang="la">vox naturae clamantis ad Dominum naturae</span>',
+        r'(\bignis fatuus\b(?!</span>))': '<span lang="la">ignis fatuus</span>',
+        # OCR fix (Priority 6)
+        'con rained': 'constrained',
     },
+    'html_postprocess_hook': html_postprocess_hook,
 }
 
 

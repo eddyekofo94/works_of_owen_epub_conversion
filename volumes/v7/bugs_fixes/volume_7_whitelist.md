@@ -28,9 +28,8 @@ The following hyphenated words are authentic to Owen's 17th-century orthography 
 
 ### Punctuation Spacing Blemishes
 Benign spacing artifacts in the original print that do not hinder legibility:
-* Spaced punctuation (e.g., `and ,`, `ignorant ,`, `Lord ;`, `flatteries :`).
-* Spaced numbers in lists or outlines (e.g., `1 .`, `2 .`, `3 .`, `4 .`, `5 .`, `6 .`, `7 .`, `1st .`, `2dly .`).
-* Double periods (`..`) resulting from abbreviation formatting.
+* Spaced punctuation (e.g., `and ,`, `ignorant ,`, `Lord ;`, `flatteries :`, `1st ,`).
+* Double periods (`..`) resulting from abbreviation formatting, or tag-stripping residues (e.g., `1st .`, `cupido .`, `vehicula ,`, `morbi ,`, `ordinis ;`, `datum ,`, `sapit ,`, `naturae ,`, `fatuus ,`).
 
 ### Structural Nesting Sequence Jumps
 Authentic outline sequence discontinuities from Owen's printed structure:
@@ -81,13 +80,11 @@ Suspicious transitions that represent correct paragraph breaks in context:
 * `To The Reader`
 * Greek quotes (`Αδύνατον γὰρ τοὺς`)
 * Multi-part list items and headings (e.g., `III.`, `XIX.`, `(5thly.)`, `John Owen`, and other outline markers).
-* Spaced punctuation split checks (`set up their banners for tokens, we know not; for, —` and `proposed as the foundation of the present discourse; as, —`).
-* Outline paragraph transitions starting with `"Affections thus led unto"`, `"An habitual suitableness"`, and `"When sin hath in any instance"`.
 * All paragraph splits listed in the JSON whitelist have been verified against the print edition.
 
 ## 3. Ignored Warnings
 The following warnings are ignored as they represent false positives or benign features:
 * `repeated_windows`: Flags `"the grace and duty of being spiritually minded"`, which is the legitimate title of the second treatise and naturally repeated.
-* `roman_heading_candidates` / `enumerator_sequence_candidates`: Owen's list jumps are authentic and verified against the print edition.
+* `enumerator_sequence_candidates`: Owen's list jumps are authentic and verified against the print edition.
 * `dense_source_window_loss` / `front_matter_toc_loss`: Handled via custom HTML overrides.
-* `low_latin_tagging` / `low_latin_translation_coverage`: Technical Debt. Latin tagging is at 51.2%, translation at 71.4%. Common English words inflate the untagged count. Adding targeted `<span lang="la">` tags and translation footnotes for genuinely Latin phrases would improve these metrics over time.
+* `low_latin_tagging`: Technical Debt. Latin tagging is at 63.7%. Common English words inflate the untagged count. Adding targeted `<span lang="la">` tags and translation footnotes for genuinely Latin phrases would improve these metrics over time.

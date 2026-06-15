@@ -6821,6 +6821,37 @@ BODY_TRANSLATIONS = {
     "Ανελευθέρους τε δὴ οῦν οὕτως εὑρίσκοντες": (
         "<b>Modern Citation:</b> Themistius, <i>Oration 1</i>, 2a-b.<br/><b>Modern Translation:</b> &ldquo;When they find them to be thus illiberal, covetous, rapacious, abusive, quarrelsome, braggarts, deceitful, and treacherous, they will not think that they have these blemishes from nature or from their former low way of life, but they will blame philosophy for them.&rdquo;"
     ),
+    # Volume 7 Added Translations
+    "sui juris": (
+        "<b>Modern Translation:</b> &ldquo;of one's own right&rdquo; or &ldquo;independent [subject to one's own laws].&rdquo;"
+    ),
+    "amor patriae, laudumque immensam cupido": (
+        "<b>Modern Citation:</b> Virgil, <i>Aeneid</i>, Book 6, line 823.<br/><b>Translation:</b> &ldquo;love of country, and an immense desire for praise.&rdquo;"
+    ),
+    "Ammianus Marcellinus": (
+        "<b>Modern Citation:</b> Ammianus Marcellinus, Roman historian (c. 330–397)."
+    ),
+    "animae vehicula": (
+        "<b>Modern Translation:</b> &ldquo;vehicles of the soul.&rdquo;"
+    ),
+    "Nemo moritur in declinatione morbi": (
+        "<b>Modern Translation:</b> &ldquo;No one dies in the declension of his disease.&rdquo;"
+    ),
+    "Apostata est osor sui ordinis": (
+        "<b>Modern Translation:</b> &ldquo;An apostate is a hater of his own order.&rdquo;"
+    ),
+    "Solis nosse Deos et coeli Numina vobis Aut solis nescire datum": (
+        "<b>Modern Citation:</b> Lucan, <i>Pharsalia</i>, Book 1, lines 452–453.<br/><b>Translation:</b> &ldquo;To you alone it is given to know the gods and the deities of heaven, or to you alone to know them not.&rdquo;"
+    ),
+    "Prudentia, sapientia, intelligentia, mens, cogitatio, discretio, id quod Spiritus sapit": (
+        "<b>Modern Translation:</b> &ldquo;Prudence, wisdom, understanding, mind, thought, discernment, that which the Spirit savors.&rdquo;"
+    ),
+    "vox naturae clamantis ad Dominum naturae": (
+        "<b>Modern Translation:</b> &ldquo;the voice of nature crying out to the Lord of nature.&rdquo;"
+    ),
+    "ignis fatuus": (
+        "<b>Modern Translation:</b> &ldquo;foolish fire [will-o'-the-wisp].&rdquo;"
+    ),
 }
 
 GLOSSARY_TERMS = {

@@ -2,7 +2,7 @@
   "volume": "7",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/input/owen-v7.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub",
-  "generated_at": "2026-06-15T01:04:53.169689+00:00",
+  "generated_at": "2026-06-15T10:59:53.691594+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -315,10 +315,10 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2032,
+    "paragraphs_checked": 2029,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 255,
+    "structural_start_exclusions": 257,
     "short_fragment_count": 22,
     "short_fragments": [
       {
@@ -420,21 +420,8 @@
     "citation_continuation_splits": [],
     "suspicious_large_number_start_count": 0,
     "suspicious_large_number_starts": [],
-    "roman_heading_candidate_count": 3,
-    "roman_heading_candidates": [
-      {
-        "file": "EPUB/ch046.xhtml",
-        "text": "I. 1. That spiritual life whereof we are made partakers in this world is threefold, or there are three gospel privileges or graces so expressed: —"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "I. As to the nature of this dominion, —"
-      },
-      {
-        "file": "EPUB/ch049.xhtml",
-        "text": "II. As to the evidence of this dominion, —"
-      }
-    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
     "overlong_heading_candidate_count": 0,
     "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
@@ -708,12 +695,12 @@
   "latin_word_coverage": {
     "pdf_latin_word_count": 291,
     "epub_latin_word_count": 295,
-    "epub_tagged_latin_word_count": 151,
+    "epub_tagged_latin_word_count": 188,
     "pdf_latin_unique_words": 240,
     "epub_latin_unique_words": 243,
-    "epub_tagged_unique_words": 124,
+    "epub_tagged_unique_words": 127,
     "latin_word_coverage_ratio": 0.9966,
-    "latin_tagging_ratio": 0.5119,
+    "latin_tagging_ratio": 0.6373,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": []
   },
@@ -723,47 +710,10 @@
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 42,
-    "translated_latin_runs_count": 30,
-    "latin_translation_ratio": 0.7143,
-    "untranslated_latin_samples": [
-      {
-        "phrase": "sui juris"
-      },
-      {
-        "phrase": "amor patriae"
-      },
-      {
-        "phrase": "immensam cupido"
-      },
-      {
-        "phrase": "Ammianus Marcellinus"
-      },
-      {
-        "phrase": "animae vehicula"
-      },
-      {
-        "phrase": "Nemo moritur"
-      },
-      {
-        "phrase": "Apostata est osor sui ordinis"
-      },
-      {
-        "phrase": "Deos et coeli Numina vobis"
-      },
-      {
-        "phrase": "Prudentia, sapientia, intelligentia"
-      },
-      {
-        "phrase": "cogitatio, discretio, id quod Spiritus"
-      },
-      {
-        "phrase": "naturae clamantis ad Dominum naturae"
-      },
-      {
-        "phrase": "ignis fatuus"
-      }
-    ]
+    "tagged_latin_runs_count": 51,
+    "translated_latin_runs_count": 51,
+    "latin_translation_ratio": 1.0,
+    "untranslated_latin_samples": []
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,
