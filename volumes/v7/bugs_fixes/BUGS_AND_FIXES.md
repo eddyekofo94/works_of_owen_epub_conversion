@@ -201,10 +201,17 @@ Reports:
 
 
 
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-15T10:59:53.691594+00:00
+**Last run:** 2026-06-15T18:48:27.443653+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -215,13 +222,13 @@ Reports:
 |-------|--------|
 | PDF pages | 683 |
 | EPUB text files | 63 |
-| EPUB paragraphs/headings | 2395 |
-| Approximate PDF-to-EPUB word coverage | 0.9977 |
+| EPUB paragraphs/headings | 2421 |
+| Approximate PDF-to-EPUB word coverage | 0.9995 |
 | Weak page matches | 0 |
-| Dense source windows checked | 32084 |
-| Missing dense source-window pages | 31 |
+| Dense source windows checked | 32146 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 5 |
-| Missing front CONTENTS pages | 2 |
+| Missing front CONTENTS pages | 1 |
 | Top-of-page body windows checked | 667 |
 | Top-of-page windows skipped as unstable | 12 |
 | Missing top-of-page body windows | 0 |

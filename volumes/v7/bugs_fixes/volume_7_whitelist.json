@@ -73,8 +73,7 @@
       25
     ],
     "front_matter_toc_loss": [
-      3,
-      7
+      3
     ],
     "dense_source_window_loss": [
       3,
@@ -82,14 +81,43 @@
       5,
       6,
       24,
+      25,
+      26,
       31,
       37,
       39,
-      45
+      42,
+      45,
+      64,
+      82,
+      93,
+      95,
+      100,
+      103,
+      183,
+      201,
+      221,
+      261,
+      272,
+      278,
+      283,
+      290,
+      314,
+      327,
+      377,
+      388,
+      397,
+      451,
+      455,
+      456,
+      519,
+      523,
+      532,
+      559,
+      571,
+      582
     ],
     "top_of_page_text_loss": [
-      3,
-      24,
       183
     ],
     "bottom_of_page_text_loss": [
@@ -128,7 +156,6 @@
     "ignored_warnings": [
       "repeated_windows",
       "enumerator_sequence_candidates",
-      "dense_source_window_loss",
       "front_matter_toc_loss",
       "low_latin_tagging"
     ]

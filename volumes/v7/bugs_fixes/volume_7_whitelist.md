@@ -59,14 +59,57 @@ The following paragraphs contain unmatched quotation marks due to multi-paragrap
 ## 2. Text Integrity Exclusions
 
 ### Weak/Missing Pages & Front Matter TOC Loss
-* **Pages 3, 7**: Front matter tables of contents that are overridden in the converter (`volumes/v7/convert.py`) with a custom HTML table of contents (`_V7_CONTENTS_PAGE`).
-* **Pages 3, 4, 5, 6, 24, 31, 37, 39, 45**: Dense source windows on introductory/TOC pages and pages with complex Greek phrases or scripture citations that trigger mismatch warnings in dense page scans.
-* **Page 25**: Heavily polyglot Greek/Hebrew page.
+* **Page 3**: Front matter table of contents page that is overridden in the converter (`volumes/v7/convert.py`) with a custom HTML table of contents (`_V7_CONTENTS_PAGE`). It has a lower text hit ratio against raw PDF text.
+* **Page 25**: Heavily polyglot Greek/Latin page with lower text hit ratio due to font-encoding differences.
+
+### Dense Source Window Loss
+The following 40 pages have dense source window losses that are benign or false positives:
+* **Introductory, Preface & TOC Pages** (where structure differs from normal page flow):
+  * **Pages 3, 4, 5, 6**: Front matter table of contents page boundaries.
+  * **Page 24**: First page of Chapter 1 containing title header layout.
+* **Polyglot & Translation Insertion Pages** (where inline translation notes like `[Translated: ...]` disrupt contiguous word matching):
+  * **Page 25**: Latin and Greek definitions (`Qui semel fuerint illuminati`, `Γευσαμένους τε τῆς δωρεᾶς...`).
+  * **Page 26**: Greek phrase and Latin translations (`Rursum crucifigentes sibimetipsis Filium Dei`).
+  * **Page 31**: Short Greek phrase and citation.
+  * **Page 37**: Inline Greek/Latin citation definitions (`δωρεά`, `illustrati`).
+  * **Page 39**: Greek words layout.
+  * **Page 42**: Greek definitions and Latin translations (`Ρῆμα` / `verbum dictum`).
+  * **Page 45**: Greek citation block.
+  * **Page 93**: Patristic bibliography names (`Tatianus, Athenaguras`).
+  * **Page 100**: Historical patristic citations with biographical tags (`St Austin`).
+  * **Page 103**: Blockquote Latin quote with inline translation (`Latius excisae serpit contagio gentis`).
+* **Orthography, Hyphenation, and Tokenization Mismatches** (where line-breaks or compound words cause spelling variations):
+  * **Page 64**: Tokenization variation of compound `long-suffering` / `longsuffering`.
+  * **Page 82**: Typo correction in EPUB (`contained` replacing OCR `conrained`), which differs from raw PDF words `con rained`.
+  * **Page 95**: Line-break hyphenation `pela-gianism` in PDF successfully healed to `Pelagianism` in EPUB.
+  * **Page 201**: Line-break hyphenation `self-conceitedness` in EPUB.
+  * **Page 221**: Line-break hyphenation boundary.
+  * **Page 261**: Line-break hyphenation `self-denial` in EPUB.
+  * **Page 278**: Line-break hyphenation `worldly-mindedness` in EPUB.
+  * **Page 314**: Line-break hyphenation `self-abasement` in EPUB.
+  * **Page 327**: Spelling variant `misspense` in PDF vs EPUB.
+  * **Page 377**: Line-break hyphenation `self-reflection` in EPUB.
+  * **Page 388**: Line-break hyphenation `self-exaltation` in EPUB.
+  * **Page 559**: Line-break hyphenation `self-abasement` in EPUB.
+  * **Page 571**: Line-break hyphenation `self-denial` in EPUB.
+  * **Page 582**: Compound word representation `honey comb` vs `honeycomb`.
+* **Scripture Citations & Dense Formatting** (dense clusters of numbers or abbreviated book names):
+  * **Page 183**: Dense list of scripture citations (`39-41`, `Acts 25-27`).
+  * **Page 272**: Proper name or date formatting (`first day's meeting`).
+  * **Page 283**: Scripture list abbreviations (`Hebrews`).
+  * **Page 290**: Word-spacing or citation layout.
+  * **Page 397**: Dense citation list.
+  * **Page 451**: Dense scripture quotation formatting.
+  * **Page 455**: Minor alphanumeric layout.
+  * **Page 456**: Layout of divine attributes.
+  * **Page 519**: Formatting around prophet Ezekiel's parables.
+  * **Page 523**: Scripture references (`Isaiah 11-17`, `Micah 6-8`).
+  * **Page 532**: Layout boundary for scripture citation.
 
 ### Top and Bottom of Page Text Loss
 * **Page 183 (top_of_page)**: Likely a chapter-boundary page where top-line text didn't align perfectly with the dense window scanner.
-* **Pages 3, 24 (top_of_page)**: Header/metadata page boundaries.
-* **Page 2, 103 (bottom_of_page)**: Imprint page and page with bottom Latin quote where text loss is expected/benign.
+* **Page 2 (bottom_of_page)**: Imprint page where bottom text represents publisher detail which is intentionally omitted in primary flow.
+* **Page 103 (bottom_of_page)**: Page ending with blockquote Latin quote where bottom-of-page text scanner failed due to font-encoding differences.
 
 ### Inline Structural Markers
 These are authentic inline enumerators inside prose paragraphs that should not start new block-level paragraphs:

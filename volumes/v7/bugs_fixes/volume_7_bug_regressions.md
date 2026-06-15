@@ -11,7 +11,7 @@
 | Possible faulty paragraph splits | 0 | 61 | OK |
 | Inline structural marker candidates | 0 | 2 | OK |
 | Repeated word windows | 25 | 25 | OK |
-| Missing front CONTENTS pages | 2 | 2 | OK |
+| Missing front CONTENTS pages | 1 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
@@ -66,13 +66,12 @@
 
 ### Repeated word windows
 
-- phrase: the good word of god and the powers of the
-- phrase: good word of god and the powers of the world
-- phrase: word of god and the powers of the world to
-- phrase: of god and the powers of the world to come
-- phrase: the knowledge of his glory in the face of jesus
+- phrase: the temple of the lord the temple of the lord
+- phrase: temple of the lord the temple of the lord the
+- phrase: of the lord the temple of the lord the temple
+- phrase: the lord the temple of the lord the temple of
+- phrase: lord the temple of the lord the temple of the
 
 ### Missing front CONTENTS pages
 
 - page: 3; sample: contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews
-- page: 7; sample: law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the

@@ -4,19 +4,19 @@
 - Warnings: 0
 - PDF pages: 683
 - EPUB text files: 63
-- EPUB paragraphs/headings: 2395
+- EPUB paragraphs/headings: 2421
 
 ## Coverage
 
-- PDF content tokens: 230676
-- EPUB content tokens: 231094
-- Approximate PDF-to-EPUB coverage ratio: 0.9977
+- PDF content tokens: 230684
+- EPUB content tokens: 231845
+- Approximate PDF-to-EPUB coverage ratio: 0.9995
 - Pages checked: 679
 - Weak page matches: 0
-- Dense source windows checked: 32084
-- Missing dense source-window pages: 31
+- Dense source windows checked: 32146
+- Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 5
-- Missing front CONTENTS pages: 2
+- Missing front CONTENTS pages: 1
 - Top-of-page body windows checked: 667
 - Top-of-page windows skipped as unstable: 12
 - Missing top-of-page body windows: 0
@@ -70,23 +70,9 @@
 - Translated Latin runs: 51
 - Latin translation ratio: 1.0
 
-## Missing Dense Source Windows
-
-- page: 25; sample: της δωρεας της επουρανιου vulg lat gustaverant etiam donum coeleste etiam for et others
-- page: 26; sample: τον υιον του θεου rursum crucifigentes sibimetipsis filium dei και παραδειγματιζοντας vulg et ostentui
-- page: 42; sample: what sense they taste of it ρημα is properly verbum dictum word spoken and
-- page: 64; sample: our apostle speaks romans considering nothing in god but mercy and long suffering and
-- page: 76; sample: crying out the temple of the lord the temple of the lord the temple
-- page: 82; sample: expose the doctrine of it and the law of obedience con rained in it
-- page: 93; sample: writings of justin martyr irenaeus clemens origen tatianus athenaguras tertullian lactantius and others but
-- page: 95; sample: continued for sundry ages afterward and for the latter or pela gianism it secretly
-- page: 100; sample: whether greek or latin before st austin's time agreed in doctrine with the determinations
-- page: 103; sample: success or progress in the world but latius excisae serpit contagio gentis victoresque suos
-
 ## Missing Front CONTENTS Pages
 
 - page: 3; hit_ratio: 0.25; sample: contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews
-- page: 7; hit_ratio: 0.25; sample: law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the
 
 ## Short Fragments
 
@@ -108,20 +94,16 @@
 
 ## Repeated Windows
 
+- phrase: the temple of the lord the temple of the lord; count: 8
+- phrase: temple of the lord the temple of the lord the; count: 6
+- phrase: of the lord the temple of the lord the temple; count: 6
+- phrase: the lord the temple of the lord the temple of; count: 6
+- phrase: lord the temple of the lord the temple of the; count: 6
 - phrase: the good word of god and the powers of the; count: 4
 - phrase: good word of god and the powers of the world; count: 4
 - phrase: word of god and the powers of the world to; count: 4
 - phrase: of god and the powers of the world to come; count: 4
 - phrase: the knowledge of his glory in the face of jesus; count: 4
-- phrase: knowledge of his glory in the face of jesus christ; count: 4
-- phrase: they received not the love of the truth that they; count: 3
-- phrase: received not the love of the truth that they might; count: 3
-- phrase: not the love of the truth that they might be; count: 3
-- phrase: the love of the truth that they might be saved; count: 3
-
-## Missing Word Samples
-
-- word: editor; pdf: 3; epub: 1
 
 ## Excess Word Samples
 

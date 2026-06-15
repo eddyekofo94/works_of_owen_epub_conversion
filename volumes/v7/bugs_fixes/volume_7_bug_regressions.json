@@ -31,6 +31,26 @@
       "status": "ok",
       "samples": [
         {
+          "phrase": "the temple of the lord the temple of the lord",
+          "count": 8
+        },
+        {
+          "phrase": "temple of the lord the temple of the lord the",
+          "count": 6
+        },
+        {
+          "phrase": "of the lord the temple of the lord the temple",
+          "count": 6
+        },
+        {
+          "phrase": "the lord the temple of the lord the temple of",
+          "count": 6
+        },
+        {
+          "phrase": "lord the temple of the lord the temple of the",
+          "count": 6
+        },
+        {
           "phrase": "the good word of god and the powers of the",
           "count": 4
         },
@@ -49,32 +69,12 @@
         {
           "phrase": "the knowledge of his glory in the face of jesus",
           "count": 4
-        },
-        {
-          "phrase": "knowledge of his glory in the face of jesus christ",
-          "count": 4
-        },
-        {
-          "phrase": "they received not the love of the truth that they",
-          "count": 3
-        },
-        {
-          "phrase": "received not the love of the truth that they might",
-          "count": 3
-        },
-        {
-          "phrase": "not the love of the truth that they might be",
-          "count": 3
-        },
-        {
-          "phrase": "the love of the truth that they might be saved",
-          "count": 3
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
-      "observed": 2,
+      "observed": 1,
       "budget": 2,
       "status": "ok",
       "samples": [
@@ -82,11 +82,6 @@
           "page": 3,
           "hit_ratio": 0.25,
           "sample": "contents of nature and causes of apostasy from the gospel prefatory note by the editor the nature of apostasy from the gospel declared in an exposition of hebrews"
-        },
-        {
-          "page": 7,
-          "hit_ratio": 0.25,
-          "sample": "law doth not destroy the dominion of sin and how grace dethrones sin and gives dominion over it the practical observations drawn from end application made of the"
         }
       ]
     },
