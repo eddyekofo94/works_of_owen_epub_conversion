@@ -132,10 +132,13 @@ See previous sessions.
 
 
 
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-15T00:18:51.053473+00:00
+**Last run:** 2026-06-15T01:04:12.706648+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v7/output/volume_7.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -192,11 +195,14 @@ Reports:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-15T00:19:31.857839+00:00
-**Status:** WARN (2 warnings)
+**Last run:** 2026-06-15T01:04:53.169689+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_7_text_integrity.json`
@@ -241,11 +247,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

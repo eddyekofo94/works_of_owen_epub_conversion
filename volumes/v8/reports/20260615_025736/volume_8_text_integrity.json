@@ -1,0 +1,1152 @@
+{
+  "volume": "8",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/input/owen-v8.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
+  "generated_at": "2026-06-15T00:57:31.986580+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
+  "pdf": {
+    "page_count": 774,
+    "skipped_detected": []
+  },
+  "epub": {
+    "spine_text_files": 73,
+    "paragraph_count": 3338
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 253552,
+    "epub_content_tokens": 257196,
+    "coverage_ratio": 0.9995,
+    "missing_word_samples": [
+      {
+        "word": "eminence",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "translated",
+        "pdf": 8,
+        "epub": 52
+      },
+      {
+        "word": "note",
+        "pdf": 22,
+        "epub": 47
+      },
+      {
+        "word": "prefatory",
+        "pdf": 17,
+        "epub": 40
+      },
+      {
+        "word": "dedicatory",
+        "pdf": 1,
+        "epub": 12
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 0,
+        "epub": 9
+      },
+      {
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
+      },
+      {
+        "word": "modern",
+        "pdf": 1,
+        "epub": 8
+      },
+      {
+        "word": "greek",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 4,
+        "epub": 10
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 764,
+    "weak_page_count": 4,
+    "weak_pages": [
+      {
+        "page": 3,
+        "hit_ratio": 0.333,
+        "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in sending the means of grace to undeserving sinners prefatory note"
+      },
+      {
+        "page": 4,
+        "hit_ratio": 0.333,
+        "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power sermon god's work in founding zion and his people's duty"
+      },
+      {
+        "page": 13,
+        "hit_ratio": 0.0,
+        "sample": "amplissimo senatui inclytissimo populi anglicani conventui ob prisca anglo-britannorum jura strenue et fideliter asserta libertatem patriam nefarus quorundam molitonibus paene pessundatam elecuperatam justitiam fortiter"
+      },
+      {
+        "page": 587,
+        "hit_ratio": 0.333,
+        "sample": "sermon the testimony of the church is not the only nor the chief reason of our believing the scripture to be the word of"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 33464,
+    "missing_dense_window_pages": 40,
+    "missing_dense_windows": [
+      {
+        "page": 3,
+        "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in"
+      },
+      {
+        "page": 4,
+        "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power"
+      },
+      {
+        "page": 5,
+        "sample": "preface the two following volumes contain it is believed the most complete collection of"
+      },
+      {
+        "page": 6,
+        "sample": "time been given to the public the other volume embraces all the posthumous sermons"
+      },
+      {
+        "page": 10,
+        "sample": "this sermon was delivered is mentioned in the life of owen frown the title-page"
+      },
+      {
+        "page": 11,
+        "sample": "and declamation which constitutes genuine oratory bogue and bennett have remarked those who are"
+      },
+      {
+        "page": 13,
+        "sample": "amplissimo senatui inclytissimo populi anglicani conventui ob prisca anglo-britannorum jura strenue et fideliter asserta"
+      },
+      {
+        "page": 16,
+        "sample": "nations this is the day of england's visitation the day spring from on high"
+      },
+      {
+        "page": 17,
+        "sample": "they were of two sorts revelations merely by word isaiah or some other more"
+      },
+      {
+        "page": 18,
+        "sample": "text now the several advancements of all these ways in dignity and pre eminence"
+      },
+      {
+        "page": 21,
+        "sample": "men in the world want help like them that want the gospel come and"
+      },
+      {
+        "page": 33,
+        "sample": "tu es homo et ego homo audiamus dicentem homo tu quis to send pardon"
+      },
+      {
+        "page": 34,
+        "sample": "but that this should be regular unto men living μετα λογου in justin martyr's"
+      },
+      {
+        "page": 40,
+        "sample": "to break the peace is nothing to an under hand combination with some formidable"
+      },
+      {
+        "page": 41,
+        "sample": "person so he were no puritan and had money patet atri janua ditis the"
+      },
+      {
+        "page": 45,
+        "sample": "this shall not follow all those gospel supplanting sins we find in holy writ"
+      },
+      {
+        "page": 48,
+        "sample": "only by the gospel austin refused to delight in cicero's hortensius because there was"
+      },
+      {
+        "page": 52,
+        "sample": "wiles to save himself from the hunters but the cat knew unum magnum one"
+      },
+      {
+        "page": 61,
+        "sample": "men would not use an over zealous speed upon every small difference to characterize"
+      },
+      {
+        "page": 62,
+        "sample": "call sectarism am persuaded is ipsissima veritas the very truth itself to which they"
+      },
+      {
+        "page": 64,
+        "sample": "only must entreat every one that shall cast candid eye on this unwillingly exposed"
+      },
+      {
+        "page": 71,
+        "sample": "give the increase si quid novisti rectius istis candidus imperti si non his utere"
+      },
+      {
+        "page": 74,
+        "sample": "livery but fool's coat who almost would not admire at such new discovered antipodes"
+      },
+      {
+        "page": 75,
+        "sample": "is colored with fair pretences but quid ego verba audiam facta cum video it"
+      },
+      {
+        "page": 76,
+        "sample": "side if by toleration you mean potestatem vivendi ut velis as the stoics defined"
+      },
+      {
+        "page": 78,
+        "sample": "way do yet ad faciendum populum continually in pulpits and other public places inveigh"
+      },
+      {
+        "page": 85,
+        "sample": "the cause of the other may be an argument baculo ad angulum it is"
+      },
+      {
+        "page": 87,
+        "sample": "new pretenses cedo alteram et alteram one stripe sometimes makes way for another and"
+      },
+      {
+        "page": 90,
+        "sample": "reason with the legal rights and interests of men see owen's reflections on slanderous"
+      },
+      {
+        "page": 92,
+        "sample": "raising of their empire that they were saepe praelio victi bello nunquam so naked"
+      },
+      {
+        "page": 94,
+        "sample": "to the worthy and honored sir william masham sir william rowe with the rest"
+      },
+      {
+        "page": 95,
+        "sample": "the former what god wrought in you hath the pre eminence of what he"
+      },
+      {
+        "page": 103,
+        "sample": "soundest joys but when it hath the deepest sorrows habent et gaudia vulnus when"
+      },
+      {
+        "page": 105,
+        "sample": "the people's bondage under the chaldeans whence junius renders the words interea temporis noting"
+      },
+      {
+        "page": 106,
+        "sample": "shut out their supplications hence that confidence of the prophet psalm thou shalt arise"
+      },
+      {
+        "page": 108,
+        "sample": "heavens the earth was full of his praise teman genesis jeremiah obadiah was city"
+      },
+      {
+        "page": 114,
+        "sample": "entered their land with his own inheritance to cast out those malae fidei possessores"
+      },
+      {
+        "page": 117,
+        "sample": "as no people god's justly nation disturbing purposes are the bottom of their deserved"
+      },
+      {
+        "page": 121,
+        "sample": "pastorless churches dying martyrs harborless children of parents inheriting the promise wilderness wandering saints"
+      },
+      {
+        "page": 122,
+        "sample": "in heaven before they began it god was gone over the mulberry trees samuel"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 2,
+    "front_toc_windows_checked": 8,
+    "missing_front_toc_pages": 2,
+    "missing_front_toc_samples": [
+      {
+        "page": 3,
+        "hit_ratio": 0.5,
+        "sample": "contents of vol preface by the editor sermon vision of unchangeable free mercy in sending the means of grace to undeserving sinners prefatory note by the editor sermon"
+      },
+      {
+        "page": 4,
+        "hit_ratio": 0.25,
+        "sample": "sermon the laboring saint's dismission to rest sermon christ's kingdom and the magistrate's power sermon god's work in founding zion and his people's duty thereupon sermon god's presence"
+      }
+    ]
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 767,
+    "top_windows_usable": 732,
+    "skipped_top_window_count": 20,
+    "skipped_top_windows": [
+      {
+        "page": 26,
+        "window": "to some people to some nations the gospel is sent god calls them to",
+        "sample": "[2.] To some people, to some nations, the gospel is sent. God calls them to repentance and acknowledgment of the truth, — as in my text, Macedonia:",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 127,
+        "window": "from the intendment of all mercies they are for every believer all things are",
+        "sample": "[2.] From the intendment of all mercies. They are for every believer. All things are theirs, — \"world, life, death, things present, things to come,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 149,
+        "window": "sinners must be brought to great extremities to make them desire the blood of",
+        "sample": "[1.] Sinners must be brought to great extremities, to make them desire the blood of Jesus; — weary and thirsty, before rock-water come. Thirst is a",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 154,
+        "window": "for the multitude an enraged headless lawless godless multitude gathered out of inns taverns",
+        "sample": "[2.] For the multitude, — an enraged, headless, lawless, godless multitude, gathered out of inns, taverns, alehouses, stables, highways, and the like",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 182,
+        "window": "of religion not only in opinion but practice also are we here under vile",
+        "sample": "[1.] Of religion. Not only in opinion, but practice also, are we here under a vile return. We are become the lions, and the very same thoughts [are]",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 183,
+        "window": "oppression how detestable crime it is in the eyes of the almighty what effects",
+        "sample": "[1.] Oppression. How detestable a crime it is in the eyes of the Almighty, — what effects it hath upon men, \"making wise men mad!\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 217,
+        "window": "the other main reason was that hereby the gods whom they owned and worshipped",
+        "sample": "[2.] The other main reason was, That hereby the gods, whom they owned and worshipped, were dishonored and provoked to plague them. That this",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 240,
+        "window": "if any persons whatsoever under any pretense whatsoever shall offer violence or disturbance to",
+        "sample": "[2.] If any persons whatsoever, under any pretense whatsoever, shall offer violence or disturbance to the professors of the true worship of God, so",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 247,
+        "window": "4thly if the magistrate be judge of spiritual offenses and it be left to",
+        "sample": "[4thly.] If the magistrate be judge of spiritual offenses, and it be left to him to determine and execute judgment, in such proportion as he shall think",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 271,
+        "window": "by often averring and affirming of the same thing when man says the same",
+        "sample": "[1.] By often averring and affirming of the same thing. When a man says the same thing again and again, it is a sign that he speaks the truth, or, at",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 284,
+        "window": "and nextly though they will give their power to the beast and fight against",
+        "sample": "[2.] And nextly, though they will give their power to the beast, and fight against the Lamb, — consenting in this, who agree in nothing else in the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 306,
+        "window": "as the apostle here applies part of the prophecy of haggai so that prophecy",
+        "sample": "[1.] As the apostle here applies a part of the prophecy of Haggai, so that prophecy, even in the next words, gives light into the meaning of the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 327,
+        "window": "the work which he had discovered to be approaching was instantly hastened and gone",
+        "sample": "[2.] The work which he had discovered to be approaching was instantly hastened and gone in hand withal, verse 23, \"At the beginning of thy",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 336,
+        "window": "be encouraged under all those perplexities and troubles which you are or may be",
+        "sample": "[2.] Be encouraged under all those perplexities and troubles which you are or may be wrapped in. Lift up the hands that hang down, and let the feeble",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 351,
+        "window": "in respect of its fabric and building in respect of its state and condition",
+        "sample": "[1.] In respect of its fabric and building; [2.] In respect of its state and condition.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 406,
+        "window": "presses with more color and violence upon men under mercies than that temptation to",
+        "sample": "presses with more color and violence upon men under mercies, than that [temptation] to a neglect of walking and holding communion with God in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 463,
+        "window": "show you very briefly what god has promised concerning magistrates to this end",
+        "sample": "[1.] Show you very briefly what God has promised concerning magistrates to this end;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 508,
+        "window": "if it be possible keep up spirit of love and forbearance among yourselves love",
+        "sample": "[3.] If it be possible, keep up a spirit of love and forbearance among yourselves; \"love thinketh no evil.\" Do not impose designs on one another,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 537,
+        "window": "and not that of any other men or frame of things that is through",
+        "sample": "and not [that] of any other men, or frame of things, that is, through the mighty power of God, triumphant in these nations. They are to God as the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 577,
+        "window": "if the reproof be false in matter of fact wherein that is charged on",
+        "sample": "[2.] If the reproof be false in matter of fact, wherein that is charged on us, and reproved in us, whereof we are no ways guilty, three things are to be",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 10,
+    "missing_top_windows": [
+      {
+        "page": 94,
+        "window": "to the worthy and honored sir william masham sir william rowe",
+        "sample": "TO THE WORTHY AND HONORED SIR WILLIAM MASHAM, SIR WILLIAM ROWE,"
+      },
+      {
+        "page": 160,
+        "window": "to the right honorable the commons of england",
+        "sample": "TO THE RIGHT HONORABLE THE COMMONS OF ENGLAND,"
+      },
+      {
+        "page": 174,
+        "window": "psalm verily have cleansed my heart in under the hand of god",
+        "sample": "Psalm 72:13, \"Verily I have cleansed my heart in under the hand of God;"
+      },
+      {
+        "page": 187,
+        "window": "because of his own engagement and that is twofold",
+        "sample": "1. Because of his own engagement. And that is twofold."
+      },
+      {
+        "page": 216,
+        "window": "acts they teach customs which was plausibly pretended",
+        "sample": "Acts 16:21, \"They teach customs which was plausibly pretended."
+      },
+      {
+        "page": 297,
+        "window": "to the right honorable the commons of england",
+        "sample": "TO THE RIGHT HONORABLE, THE COMMONS OF ENGLAND,"
+      },
+      {
+        "page": 313,
+        "window": "revelation 14-17 as also chapter and midst of their kingdom",
+        "sample": "Revelation 1:14-17, as also chapter 4 and midst of their kingdom,"
+      },
+      {
+        "page": 341,
+        "window": "to his excellency the lord general cromwell etc",
+        "sample": "TO HIS EXCELLENCY, THE LORD GENERAL CROMWELL, ETC."
+      },
+      {
+        "page": 412,
+        "window": "to the honourable and my very worthy friend colonel henry cromwell",
+        "sample": "TO THE HONOURABLE AND MY VERY WORTHY FRIEND, COLONEL HENRY CROMWELL."
+      },
+      {
+        "page": 541,
+        "window": "to the right honourable the commons of england",
+        "sample": "TO THE RIGHT HONOURABLE, THE COMMONS OF ENGLAND,"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 731,
+    "bottom_windows_usable": 708,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 2,
+    "missing_bottom_windows": [
+      {
+        "page": 2,
+        "window": "this edition of first published by johnstone hunter 1850-53",
+        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
+      },
+      {
+        "page": 117,
+        "window": "end as both the words here used עַדand עוֹלָם perpetuity and everlasting do in",
+        "sample": "where the people were, but to continue firm to the world's end, as both the words here used, עַדand עוֹלָם, \"perpetuity\" and \"everlasting,\" do in"
+      }
+    ]
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2890,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 237,
+    "short_fragment_count": 47,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Editor."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "Die Mecurij 29 Aprilis, 1646."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "The uses of it follow."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "These things being presupposed, —"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Reader,"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "Power is powerful to persuade."
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Sir"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "COGGESHALL, ESSEX, OCTOBER 5, 1648"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "We shall treat of them in order."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Aesch. apud Justin., Apol."
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "Now, of this observe, —"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "COGGESHALL, Feb. 38."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "Now, the Lord will do this, —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "AND"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "All in these ensuing observations"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "Now, who must these be?"
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Die Veneris, 1 Martii, 1649."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "HEN. SCOBELL, Cler. Perl."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "March 8, 1649."
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "The causes of forgetfulness are, —"
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "— ED."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "Die Veneris, April 20, 1649."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "HEN. SCOBELI., Clare. Parl."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "COGGESHALL, May 1, 1649"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "So, then, observe, —"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "Tuesday, October 28, 1651."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "HEN. SCONELL, Cler. Parl."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Now, the reasons of this are, —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "I shall speak a word, —"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "OXON, CHR. CH., April 2."
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "Neither, —"
+      },
+      {
+        "file": "EPUB/ch039.xhtml",
+        "text": "ED."
+      },
+      {
+        "file": "EPUB/ch039.xhtml",
+        "text": "Wednesday, 17th of September 1656."
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "ED."
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "Wednesday, 17th of September 1656."
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "Nov. 17, 1656."
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 2,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "14. Ignatius's epistles are full of the like expressions. Irenaeus says, he would have no words with them, lib. iii. cap. 3. Tertullian's books testify for him at large, with what keenness of spirit he pursued the hereti"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "11. And when this knack was once found out of promoting a sect by imperial favor, it is admirable to consider how those good princes, Constantine and his sons, were abused, misled, enraged, engaged into mutual dissension"
+      }
+    ],
+    "roman_heading_candidate_count": 6,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "I. In the first I shall consider, — 1. What are the things that are shaken; 2. What is their shaking; 3. What their removal, being shaken."
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "III. The last head remaineth under two particulars: — 1. What are \"the things that cannot be shaken?\" 2. What is their remaining?"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "I. In the first I shall consider two things: — 1. The person dismissed: \"Thou;\" 2. The dismission itself: \"Go thou thy ways.\""
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "II. As to the first of these, we may observe, —"
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "V. Application: —"
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "II. The providential accidents spoken of are two, and of two sorts."
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 770,
+    "epub_marker_count": 788,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 136,
+        "epub": 138,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p120",
+            "context": "(1.) Revelations merely by word ( (1.) Revelations merely by word (Isaiah 1:1) or some other more internal species, (Amos 1:1) without any outward sensible appearance; which, for the m"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p120",
+            "context": "(1.) Revelations merely by word ( (1.) Revelations merely by word (Isaiah 1:1) or some other more internal species, (Amos 1:1) without any outward sensible appearance; which, for the most part, was the Lord's way of pr"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 135,
+        "epub": 136,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p121",
+            "context": "(2.) Revelations accompanied with some sensible apparitions, and that either, —"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p148",
+            "context": "That all this variety is according to God's determinate purpose, and answereth thereunto; (2.) The particular purposes from whence this variety proceedeth."
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 84,
+        "epub": 85,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p122",
+            "context": "[1.] Of things; as usually, among the prophets, rods and pots, (Jeremiah 1:11,13) wheels and trees, (Ezekiel 1:5-7; Zechariah 1:8, 3:9,10, etc.; Daniel 7:8,9) lamps, axes, vessels, ram"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p152",
+            "context": "[1.] For the not sending of the means of grace unto any people, whereby they hear not the joyful sound of the gospel, but have in all ages followed dumb idols, as many do unto this day"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p59",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 83,
+        "epub": 84,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p62",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p123",
+            "context": "[2.] Of persons; and those, according to the variety of them, of three sorts."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p154",
+            "context": "[2.] To some people, to some nations, the gospel is sent. God calls them to repentance and acknowledgment of the truth, — as in my text, Macedonia: and England, the day wherein we brea"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "not the only nor the chief reason of our believing",
+      "count": 5
+    },
+    {
+      "phrase": "the removing of those things that are shaken as of",
+      "count": 5
+    },
+    {
+      "phrase": "removing of those things that are shaken as of things",
+      "count": 5
+    },
+    {
+      "phrase": "of those things that are shaken as of things that",
+      "count": 5
+    },
+    {
+      "phrase": "those things that are shaken as of things that are",
+      "count": 5
+    },
+    {
+      "phrase": "things that are shaken as of things that are made",
+      "count": 5
+    },
+    {
+      "phrase": "that are shaken as of things that are made that",
+      "count": 5
+    },
+    {
+      "phrase": "are shaken as of things that are made that those",
+      "count": 5
+    },
+    {
+      "phrase": "shaken as of things that are made that those things",
+      "count": 5
+    },
+    {
+      "phrase": "the testimony of the church is not the only nor",
+      "count": 4
+    },
+    {
+      "phrase": "testimony of the church is not the only nor the",
+      "count": 4
+    },
+    {
+      "phrase": "of the church is not the only nor the chief",
+      "count": 4
+    },
+    {
+      "phrase": "the church is not the only nor the chief reason",
+      "count": 4
+    },
+    {
+      "phrase": "church is not the only nor the chief reason of",
+      "count": 4
+    },
+    {
+      "phrase": "is not the only nor the chief reason of our",
+      "count": 4
+    },
+    {
+      "phrase": "the only nor the chief reason of our believing the",
+      "count": 4
+    },
+    {
+      "phrase": "only nor the chief reason of our believing the scripture",
+      "count": 4
+    },
+    {
+      "phrase": "nor the chief reason of our believing the scripture to",
+      "count": 4
+    },
+    {
+      "phrase": "the chief reason of our believing the scripture to be",
+      "count": 4
+    },
+    {
+      "phrase": "chief reason of our believing the scripture to be the",
+      "count": 4
+    },
+    {
+      "phrase": "reason of our believing the scripture to be the word",
+      "count": 4
+    },
+    {
+      "phrase": "of our believing the scripture to be the word of",
+      "count": 4
+    },
+    {
+      "phrase": "our believing the scripture to be the word of god",
+      "count": 4
+    },
+    {
+      "phrase": "and that he be desired to print his sermon and",
+      "count": 4
+    },
+    {
+      "phrase": "that he be desired to print his sermon and that",
+      "count": 4
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 303,
+    "epub_greek_word_count": 303,
+    "pdf_greek_unique_words": 236,
+    "epub_greek_unique_words": 236,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 54,
+    "epub_hebrew_word_count": 54,
+    "pdf_hebrew_unique_words": 41,
+    "epub_hebrew_unique_words": 41,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 12,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 4,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 989,
+    "epub_latin_word_count": 1006,
+    "epub_tagged_latin_word_count": 567,
+    "pdf_latin_unique_words": 698,
+    "epub_latin_unique_words": 711,
+    "epub_tagged_unique_words": 397,
+    "latin_word_coverage_ratio": 0.998,
+    "latin_tagging_ratio": 0.5636,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "vice-chancellor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "masham",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "commensurate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "apud",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "indicate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "passionate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "haereticidium",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "alexandria",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "extirpate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "persia",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "satiate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "obviate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "quis",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "thomas",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "cassius",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "colere",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "oppressor",
+        "epub": 3,
+        "tagged": 1
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 58,
+    "missing_latin_clause_count": 1,
+    "missing_latin_clauses": [
+      {
+        "page": 13,
+        "word_count": 10,
+        "sample": "amplissimo senatui inclytissimo populi anglicani conventui ob prisca anglo-britannorum jura"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 166,
+    "translated_latin_runs_count": 107,
+    "latin_translation_ratio": 0.6446,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Christus in petra"
+      },
+      {
+        "phrase": "quid sequitur"
+      },
+      {
+        "phrase": "Quid meruere"
+      },
+      {
+        "phrase": "Delicta puniri"
+      },
+      {
+        "phrase": "Bonum totius"
+      },
+      {
+        "phrase": "Quoniam Christiani"
+      },
+      {
+        "phrase": "anima mea cum Philosophia"
+      },
+      {
+        "phrase": "bono animo"
+      },
+      {
+        "phrase": "Volenti non"
+      },
+      {
+        "phrase": "novos, sed ne advenas, nisi"
+      },
+      {
+        "phrase": "fundi Christiani calamitas"
+      },
+      {
+        "phrase": "alienigenas coli"
+      },
+      {
+        "phrase": "DEUS CHISTIANORUM"
+      },
+      {
+        "phrase": "animalis, quo"
+      },
+      {
+        "phrase": "penetrali sacravere"
+      },
+      {
+        "phrase": "sacerdotis genitalia"
+      },
+      {
+        "phrase": "Hosius, Staphylus"
+      },
+      {
+        "phrase": "is \"causa facilis"
+      },
+      {
+        "phrase": "Paulus Diaconus"
+      },
+      {
+        "phrase": "Servetus in Geneva"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "paragraph_splits": [
+      "AMPLISSIMO",
+      "SENATUI,",
+      "INCLYTISSIMO",
+      "OB",
+      "ADMINISTRATAM;",
+      "POTISSIMUM",
+      "D.D.C. JOANNES OWEN.",
+      "PATRIAM (NEFARUS QUORUNDAM"
+    ],
+    "ignored_warnings": [
+      "orphan_endnotes"
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

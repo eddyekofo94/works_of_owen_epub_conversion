@@ -129,11 +129,13 @@ See previous sessions.
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-15T00:20:17.217310+00:00
-**Status:** WARN (2 warnings)
+**Last run:** 2026-06-15T01:09:51.288016+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_8_text_integrity.json`
@@ -143,10 +145,10 @@ Reports:
 |-------|--------|
 | PDF pages | 774 |
 | EPUB text files | 73 |
-| EPUB paragraphs/headings | 3349 |
+| EPUB paragraphs/headings | 3338 |
 | Approximate PDF-to-EPUB word coverage | 0.9995 |
 | Weak page matches | 4 |
-| Dense source windows checked | 33466 |
+| Dense source windows checked | 33464 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 2 |
 | Missing front CONTENTS pages | 2 |
@@ -158,7 +160,7 @@ Reports:
 | Missing bottom-of-page body windows | 2 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 237 |
-| Short fragments | 53 |
+| Short fragments | 47 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
@@ -169,7 +171,7 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 770 |
-| EPUB enumerator markers | 787 |
+| EPUB enumerator markers | 788 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 303 / 303 |
@@ -178,11 +180,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
@@ -216,10 +213,12 @@ Warnings requiring triage:
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-15T00:19:36.505564+00:00
+**Last run:** 2026-06-15T01:09:09.192346+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub`
 **Status:** PASS (0 errors, 0 warnings)
 

@@ -1,0 +1,28 @@
+{
+  "volume": "7",
+  "total_words_audited": 278474,
+  "total_anomalies_count": 1,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [
+      {
+        "target": "l st",
+        "description": "Split word anomaly (isolated letter 'l')",
+        "chapter": "Chapter 9.",
+        "contexts": [
+          "... ute sovereignty, as will hold their souls firm anal steadfast in the highest storms of temptation that m ...",
+          "... Satan, and he will fall under a double defeat: \u2014 l st. His temptations will be repelled by the proper w ...",
+          "... ithout any due thoughts of their future and eternal state; but as unto others, what comfort or satisfact ..."
+        ]
+      }
+    ],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {}
+}

@@ -128,6 +128,7 @@ OVERRIDES = {
         'Giles-inthe': 'Giles-in-the',
         'p articular': 'particular',
         'p _articular_': '_particular_',
+        'f or': 'for',
         'Joel 51:10': 'Joel 2:10',
         'Hosea 52:5': 'Hosea 3:5',
         'Cromwel ': 'Cromwell ',
