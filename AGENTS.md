@@ -505,15 +505,25 @@ Executes the full check pipeline for the specified volume(s) and runs the entire
 
 ### `#report [n]`
 
-Generates or updates volume-specific reports.
+Generates a comprehensive Need score reduction plan for the specified volume(s).
 
 **Command Syntax:**
-- `#report 1`: Generate report for volume 1.
-- `#report 1 2 5`: Generate reports for multiple volumes.
-- `#report all`: Generate reports for all 16 volumes.
+- `#report`: Auto-detect the Owen volume with the highest Need score and generate its plan.
+- `#report 16`: Generate plan for volume 16.
+- `#report 7 16`: Generate plans for multiple volumes.
+- `#report all`: Generate plans for all 16 Owen volumes.
 
 **What it does:**
-- Executes `generate_v1_report.py [n]` to write detailed summaries to `volumes/vN/bugs_fixes/VOLUME_N_REPORT.md`.
+- Reads existing audit, text integrity, anomalies, whitelist, and state report data.
+- Computes the full Need score breakdown with component-by-component penalty analysis.
+- Identifies root causes for each non-zero penalty component.
+- Detects compound word merges by searching the JSON intermediate for known patterns.
+- Categorizes dense source window losses by type (polyglot, scripture refs, compound merge, structural, OCR).
+- Generates specific `text_replacements` and whitelist update suggestions.
+- Writes a prioritized action checklist with expected Need reduction per step.
+
+**Output location:**
+- `volumes/vN/plans/vN_need_reduction_plan.md`
 
 ### `#heal worst` / `#heal [n]`
 

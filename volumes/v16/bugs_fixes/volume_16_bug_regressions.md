@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 0 | 36 | OK |
+| Possible faulty paragraph splits | 0 | 0 | OK |
 | Inline structural marker candidates | 0 | 12 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |

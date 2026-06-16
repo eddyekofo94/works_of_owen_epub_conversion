@@ -13,7 +13,7 @@
     {
       "label": "Possible faulty paragraph splits",
       "observed": 0,
-      "budget": 36,
+      "budget": 0,
       "status": "ok",
       "samples": []
     },

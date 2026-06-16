@@ -197,11 +197,13 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-13T23:53:59.465740+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub`
+**Last run:** 2026-06-16T00:10:41.825178+00:00
+**EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -217,7 +219,7 @@ Reports:
 | NAV links | 85 |
 | Greek chars / untagged | 6044 / 0 |
 | Hebrew chars / untagged | 1224 / 0 |
-| Noteref links / endnote anchors | 259 / 259 |
+| Noteref links / endnote anchors | 260 / 260 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -291,11 +293,15 @@ Reports:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-13T23:54:34.625600+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-06-16T00:11:16.905718+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_16_text_integrity.json`
@@ -308,8 +314,8 @@ Reports:
 | EPUB paragraphs/headings | 2720 |
 | Approximate PDF-to-EPUB word coverage | 0.9995 |
 | Weak page matches | 0 |
-| Dense source windows checked | 28227 |
-| Missing dense source-window pages | 30 |
+| Dense source windows checked | 28208 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 1 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 630 |
@@ -340,10 +346,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

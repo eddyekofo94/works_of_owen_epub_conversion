@@ -318,7 +318,22 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
+| 1 | v1 | Populated | PRISTINE | Cov 99.93 Greek 99.87 Heb 100.00 Lat 99.77 |
+| 2 | v2 | Populated | PRISTINE | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
+| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.90 |
+| 4 | v4 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.59 |
+| 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.73 |
+| 6 | v6 | Populated | PRISTINE | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
 | 7 | v7 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.66 |
+| 8 | v8 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 |
+| 9 | v9 | Empty | PRISTINE | Cov 99.61 Greek 100.00 Heb 100.00 Lat 99.33 |
+| 10 | v10 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.43 |
+| 11 | v11 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 |
+| 12 | v12 | Populated | PRISTINE | Cov 99.94 Greek 99.92 Heb 100.00 Lat 99.76 |
+| 13 | v13 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
+| 14 | v14 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
+| 15 | v15 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.68 |
+| 16 | v16 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.96 |
 
 ## Hebrews Commentary Script Status
 
@@ -354,12 +369,24 @@ Provides `#test` commands to execute audits, bug-regression reports, and pytest 
     *   `#test report` (all 16 volumes)
 
 ### 2. Report Generator Skill (`report-generator.skill`)
-Provides `#report` commands to generate or update volume-specific markdown and JSON reports.
+Provides `#report` commands to generate Need score reduction plans with root cause analysis and specific fix suggestions.
 
-*   `#report [n...]` — Generates reports at `volumes/v[n]/bugs_fixes/VOLUME_[n]_REPORT.md`.
-    *   `#report 1`
-    *   `#report 1 2 5`
-    *   `#report all` (all 16 volumes)
+*   `#report` — Auto-detect the Owen volume with the highest Need score and generate its plan.
+*   `#report [n]` — Generate a comprehensive plan for volume `n`.
+    *   `#report 16`
+*   `#report [n1] [n2] ...` — Generate plans for multiple volumes.
+    *   `#report 7 16`
+*   `#report all` — Generate plans for all 16 Owen volumes.
+
+Each plan includes:
+- Full Need score breakdown with penalty-by-component analysis
+- Scenario projections (current, whitelist anomalies, whitelist quotes, both)
+- Anomaly categorization (legitimate vs fixable)
+- Dense source window loss categorization (polyglot, scripture, compound, structural, OCR)
+- Compound word merge detection with specific `text_replacements` suggestions
+- Prioritized action checklist with expected Need reduction per step
+
+Output: `volumes/vN/plans/vN_need_reduction_plan.md`
 
 ### 3. Volume Healer Skill (`volume-healer.skill`)
 Provides `#heal` commands to automatically heal bugs, resolve citations, correct spelling errors, and verify the progression.
@@ -400,7 +427,8 @@ Owen/
 │   ├── audit_text_integrity.py # Text faithfulness audit
 │   ├── audit_bug_regressions.py # Known bug regression report
 │   ├── audit_whitelists.py      # Whitelist match trace & greediness audit
-│   └── report_volume_state.py  # Ranked QA state report
+│   ├── report_volume_state.py  # Ranked QA state report
+│   └── generate_need_reduction_plan.py  # Need score reduction plan generator
 ├── tests/
 │   ├── test_bug_regressions.py
 │   ├── test_epub_structure.py
@@ -426,6 +454,7 @@ Owen/
     ├── input/                  # PDF symlink (owen-vN.pdf)
     ├── intermediate/           # volume_N.json (Stage 1) + volume_N.thml.xml
     ├── output/                 # volume_N.epub (generated)
+    ├── plans/                  # Need reduction plans (generated)
     └── bugs_fixes/             # Audit and regression reports
 ```
 

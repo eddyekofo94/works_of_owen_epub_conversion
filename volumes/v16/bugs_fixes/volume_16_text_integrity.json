@@ -2,15 +2,10 @@
   "volume": "16",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/input/owen-v16.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-13T23:54:34.625600+00:00",
-  "status": "warn",
-  "warning_count": 1,
-  "warnings": [
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    }
-  ],
+  "generated_at": "2026-06-16T00:11:16.905718+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
     "page_count": 672,
     "skipped_detected": [
@@ -92,130 +87,9 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 28227,
-    "missing_dense_window_pages": 30,
-    "missing_dense_windows": [
-      {
-        "page": 56,
-        "sample": "and originally unto with an interest in all church privileges to be actually possessed"
-      },
-      {
-        "page": 59,
-        "sample": "any causal influence into the communication of office power but what is of the"
-      },
-      {
-        "page": 62,
-        "sample": "meet to be employed in any part of the church government and according as"
-      },
-      {
-        "page": 65,
-        "sample": "apostles rebuked by the apostles in all others matthew 1-4 luke 24-26 peter 1-5"
-      },
-      {
-        "page": 68,
-        "sample": "that one of them do in the management of all church affairs preside to"
-      },
-      {
-        "page": 71,
-        "sample": "it is devoured and destroyed acts etc peter cant jeremiah ezekiel genesis psalm john"
-      },
-      {
-        "page": 76,
-        "sample": "an authority is included in this office is evident from the names ascribed unto"
-      },
-      {
-        "page": 77,
-        "sample": "all are committed to them colossians timothy timothy acts peter hebrews they that must"
-      },
-      {
-        "page": 78,
-        "sample": "unto an office as in the case of uzziah invading the priesthood chronicles 16-21"
-      },
-      {
-        "page": 82,
-        "sample": "as he was able to be church officer he had the choice and consent"
-      },
-      {
-        "page": 89,
-        "sample": "the first sense by demosthenes orat de corona οδʹ the people confirmed my sayings"
-      },
-      {
-        "page": 93,
-        "sample": "worthy and reject the unworthy as cyprian speaks see matthew john galatians thessalonians john"
-      },
-      {
-        "page": 96,
-        "sample": "chosen so submitted unto be al so solemnly separated dedicated unto and confirmed in"
-      },
-      {
-        "page": 97,
-        "sample": "communication of office-power and privilege is by law constitution annexed is suited unto the"
-      },
-      {
-        "page": 98,
-        "sample": "or ordain bishop tertullian apol praesident probati quique seniores honorem istum non pretio sod"
-      },
-      {
-        "page": 100,
-        "sample": "the church he says diligenter de traditione divina et apostolica observatione servandum estet tenendum"
-      },
-      {
-        "page": 114,
-        "sample": "epist epist 14-17 the same he giveth in charge unto the elders of the"
-      },
-      {
-        "page": 134,
-        "sample": "things abused and corrupted by them in church officers took their occasional rise from"
-      },
-      {
-        "page": 143,
-        "sample": "to corrupt this order into an episcopal pre eminence which degenerated more and more"
-      },
-      {
-        "page": 145,
-        "sample": "by an expression derived from the keys that were sign of office power in"
-      },
-      {
-        "page": 151,
-        "sample": "them who did preside and rule over others in any kind only it may"
-      },
-      {
-        "page": 152,
-        "sample": "the apostles themselves and peter in particular epist it is evident that they have"
-      },
-      {
-        "page": 158,
-        "sample": "the word and doctrine that is who are not pastors or teachers elders that"
-      },
-      {
-        "page": 159,
-        "sample": "ordinary preaching presbyters which plainly gives them the advantage of pre eminence reverence and"
-      },
-      {
-        "page": 183,
-        "sample": "they hold and possess in the body about these things is church rule to"
-      },
-      {
-        "page": 184,
-        "sample": "joined unto the teaching elders in all acts and duties of church power for"
-      },
-      {
-        "page": 219,
-        "sample": "by the church in obedience unto the truth neither the subject matter treated of"
-      },
-      {
-        "page": 227,
-        "sample": "effectual is plainly evident of what use significabit and capias''10 may be in this"
-      },
-      {
-        "page": 241,
-        "sample": "case be about such right or wrong in pretended fraud over reaching or the"
-      },
-      {
-        "page": 244,
-        "sample": "the catholic church with all church communion whatever for some churches especially that of"
-      }
-    ]
+    "dense_windows_checked": 28208,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 1,
@@ -403,7 +277,7 @@
       },
       {
         "file": "EPUB/ch056.xhtml",
-        "text": "Bat, hat, cat, sam, dam ."
+        "text": "Bat, hat, cat, sam, dam."
       },
       {
         "file": "EPUB/ch056.xhtml",
@@ -712,14 +586,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 3225,
-    "epub_latin_word_count": 3298,
-    "epub_tagged_latin_word_count": 1945,
-    "pdf_latin_unique_words": 1517,
-    "epub_latin_unique_words": 1525,
-    "epub_tagged_unique_words": 1106,
-    "latin_word_coverage_ratio": 0.9991,
-    "latin_tagging_ratio": 0.5898,
+    "pdf_latin_word_count": 2673,
+    "epub_latin_word_count": 2732,
+    "epub_tagged_latin_word_count": 1742,
+    "pdf_latin_unique_words": 1382,
+    "epub_latin_unique_words": 1386,
+    "epub_tagged_unique_words": 1023,
+    "latin_word_coverage_ratio": 0.9996,
+    "latin_tagging_ratio": 0.6376,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -743,44 +617,19 @@
         "tagged": 9
       },
       {
-        "word": "keri",
-        "epub": 20,
-        "tagged": 1
-      },
-      {
         "word": "grotius",
         "epub": 23,
         "tagged": 4
       },
       {
-        "word": "communicate",
-        "epub": 17,
-        "tagged": 0
-      },
-      {
         "word": "arias",
         "epub": 31,
-        "tagged": 15
-      },
-      {
-        "word": "door",
-        "epub": 14,
-        "tagged": 0
-      },
-      {
-        "word": "innate",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
-        "word": "magistrate",
-        "epub": 13,
-        "tagged": 0
+        "tagged": 14
       },
       {
         "word": "tiberias",
         "epub": 16,
-        "tagged": 3
+        "tagged": 2
       },
       {
         "word": "excommunicate",
@@ -788,32 +637,12 @@
         "tagged": 0
       },
       {
-        "word": "irenaeus",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "undergo",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "erasmus",
-        "epub": 12,
-        "tagged": 1
-      },
-      {
-        "word": "nowhere",
+        "word": "masora",
         "epub": 10,
         "tagged": 0
       },
       {
-        "word": "tract",
-        "epub": 11,
-        "tagged": 1
-      },
-      {
-        "word": "masora",
+        "word": "buxtorfius",
         "epub": 10,
         "tagged": 0
       },
@@ -823,62 +652,101 @@
         "tagged": 0
       },
       {
-        "word": "relate",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "obstinate",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "pleas",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "forego",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "buxtorfius",
+        "word": "mishna",
         "epub": 10,
+        "tagged": 2
+      },
+      {
+        "word": "rabbi",
+        "epub": 10,
+        "tagged": 2
+      },
+      {
+        "word": "galatinus",
+        "epub": 11,
+        "tagged": 4
+      },
+      {
+        "word": "naphtali",
+        "epub": 8,
         "tagged": 1
+      },
+      {
+        "word": "thomas",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "delegate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "professor",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "aquila",
+        "epub": 6,
+        "tagged": 1
+      },
+      {
+        "word": "mentitur",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "glassius",
+        "epub": 7,
+        "tagged": 2
+      },
+      {
+        "word": "muis",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "azarias",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "magis",
+        "epub": 7,
+        "tagged": 2
+      },
+      {
+        "word": "alexandria",
+        "epub": 4,
+        "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 214,
+    "latin_clauses_checked": 197,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 560,
-    "translated_latin_runs_count": 294,
-    "latin_translation_ratio": 0.525,
+    "tagged_latin_runs_count": 506,
+    "translated_latin_runs_count": 284,
+    "latin_translation_ratio": 0.5613,
     "untranslated_latin_samples": [
-      {
-        "phrase": "successor, as Ali"
-      },
-      {
-        "phrase": "Erasmus, ‡  Vatablus, Beza"
-      },
-      {
-        "phrase": "Orat. De Corona"
-      },
       {
         "phrase": "praeceptis Dominicis et Deum"
       },
       {
-        "phrase": "se ad sacrilegi sacerdotis sacrificia miscere; quando ipsa"
+        "phrase": "ad sacrilegi sacerdotis sacrificia miscere; quando ipsa"
       },
       {
         "phrase": "vel eligendi dignos"
       },
       {
-        "phrase": "vel indignos recusandi, quod et ipsum videmus de divina authoritate descendere"
+        "phrase": "vel indignos recusandi, quod et ipsum videmus"
+      },
+      {
+        "phrase": "divina authoritate descendere"
       },
       {
         "phrase": "Quod postea secundum divina magisteria observatur in Actis Apostolorum, quando in ordinando in locum Judae apostolo, Petrus"
@@ -890,7 +758,10 @@
         "phrase": "hoc in episcoporum tantum et sacerdotum, sed in diaconorum ordinationibus"
       },
       {
-        "phrase": "apostolos animadvertimus de quo et ipso in actis eorum scrlptum est. 'Et"
+        "phrase": "apostolos animadvertimus"
+      },
+      {
+        "phrase": "quo et ipso in actis eorum scrlptum est. 'Et"
       },
       {
         "phrase": "discipulorum, et"
@@ -917,7 +788,10 @@
         "phrase": "in alieno fundo"
       },
       {
-        "phrase": "is \"praesum, praesideo"
+        "phrase": "Qui bene"
+      },
+      {
+        "phrase": "governano bene"
       }
     ]
   },
@@ -942,7 +816,8 @@
   },
   "unused_whitelist_text_integrity": {
     "ignored_warnings": [
-      "repeated_phrases"
+      "repeated_phrases",
+      "unmatched_quotes"
     ]
   },
   "limits": {

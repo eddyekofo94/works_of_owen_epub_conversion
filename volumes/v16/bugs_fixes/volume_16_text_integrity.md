@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 16
 
-- Status: **WARN**
-- Warnings: 1
+- Status: **PASS**
+- Warnings: 0
 - PDF pages: 672
 - EPUB text files: 82
 - EPUB paragraphs/headings: 2720
@@ -13,8 +13,8 @@
 - Approximate PDF-to-EPUB coverage ratio: 0.9995
 - Pages checked: 660
 - Weak page matches: 0
-- Dense source windows checked: 28227
-- Missing dense source-window pages: 30
+- Dense source windows checked: 28208
+- Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 1
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 630
@@ -59,33 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 3225
-- EPUB Latin words: 3298
-- EPUB Tagged Latin words: 1945
-- Latin word coverage ratio: 0.9991
-- Latin word tagging ratio: 0.5898
-- Latin clauses checked: 214
+- PDF Latin words: 2673
+- EPUB Latin words: 2732
+- EPUB Tagged Latin words: 1742
+- Latin word coverage ratio: 0.9996
+- Latin word tagging ratio: 0.6376
+- Latin clauses checked: 197
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 560
-- Translated Latin runs: 294
-- Latin translation ratio: 0.525
-
-## Warnings
-
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-
-## Missing Dense Source Windows
-
-- page: 56; sample: and originally unto with an interest in all church privileges to be actually possessed
-- page: 59; sample: any causal influence into the communication of office power but what is of the
-- page: 62; sample: meet to be employed in any part of the church government and according as
-- page: 65; sample: apostles rebuked by the apostles in all others matthew 1-4 luke 24-26 peter 1-5
-- page: 68; sample: that one of them do in the management of all church affairs preside to
-- page: 71; sample: it is devoured and destroyed acts etc peter cant jeremiah ezekiel genesis psalm john
-- page: 76; sample: an authority is included in this office is evident from the names ascribed unto
-- page: 77; sample: all are committed to them colossians timothy timothy acts peter hebrews they that must
-- page: 78; sample: unto an office as in the case of uzziah invading the priesthood chronicles 16-21
-- page: 82; sample: as he was able to be church officer he had the choice and consent
+- Tagged Latin runs checked: 506
+- Translated Latin runs: 284
+- Latin translation ratio: 0.5613
 
 ## Suspicious Large-Number Starts
 
@@ -150,25 +133,25 @@
 - word: morinus; epub: 51; tagged: 3
 - word: cappellus; epub: 37; tagged: 3
 - word: elias; epub: 30; tagged: 9
-- word: keri; epub: 20; tagged: 1
 - word: grotius; epub: 23; tagged: 4
-- word: communicate; epub: 17; tagged: 0
-- word: arias; epub: 31; tagged: 15
-- word: door; epub: 14; tagged: 0
-- word: innate; epub: 13; tagged: 0
+- word: arias; epub: 31; tagged: 14
+- word: tiberias; epub: 16; tagged: 2
+- word: excommunicate; epub: 12; tagged: 0
+- word: masora; epub: 10; tagged: 0
+- word: buxtorfius; epub: 10; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: successor, as Ali
-- phrase: Erasmus, ‡ Vatablus, Beza
-- phrase: Orat. De Corona
 - phrase: praeceptis Dominicis et Deum
-- phrase: se ad sacrilegi sacerdotis sacrificia miscere; quando ipsa
+- phrase: ad sacrilegi sacerdotis sacrificia miscere; quando ipsa
 - phrase: vel eligendi dignos
-- phrase: vel indignos recusandi, quod et ipsum videmus de divina authoritate descendere
+- phrase: vel indignos recusandi, quod et ipsum videmus
+- phrase: divina authoritate descendere
 - phrase: Quod postea secundum divina magisteria observatur in Actis Apostolorum, quando in ordinando in locum Judae apostolo, Petrus
 - phrase: Petrus in medio discentium, fuit autem turba homlnum forte centum viginti
 - phrase: hoc in episcoporum tantum et sacerdotum, sed in diaconorum ordinationibus
+- phrase: apostolos animadvertimus
+- phrase: quo et ipso in actis eorum scrlptum est. 'Et
 
 ## Flat ANALYSIS Chapters
 

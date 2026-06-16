@@ -12,6 +12,7 @@ This document lists and explains the whitelisted anomalies and ignored warnings 
 *   **`suspicious_large_number_starts`**: Legitimate numbered lists in sermons starting with larger numbers.
 *   **`enumerator_sequence_candidates`**: Non-sequential lists or list items that are authentic to the original treatise layout.
 *   **`flat_analysis_chapters`**: Short analysis sections containing very few headings, matching the original printed outline layout.
+*   **`unmatched_quotes`**: Legitimate 17th-century English theological prose convention where Owen opens quotation marks to introduce patristic, Scriptural, or opponent citations but never closes them.
 
 ## 2. Weak Pages & Skipped Pages
 
@@ -28,7 +29,7 @@ The following splits are whitelisted as they are correct layout splits, not line
 
 ## 4. Text Loss (Top/Bottom & Dense Windows)
 
-*   **`dense_source_window_loss` [10, 16, 19, 25, 27, 28, 33, 34, 43, 48]**: Pages where minor corrections (e.g., adding quotation marks to scriptural text, minor spelling corrections, hyphens, and Latin translation insertions) cause exact word-window matches to fail, though the content is fully present.
+*   **`dense_source_window_loss` [10, 16, 19, 25, 27, 28, 33, 34, 43, 48, 56, 59, 62, 65, 68, 71, 76, 77, 78, 82, 89, 93, 96, 97, 98, 100, 114, 134, 143, 145, 151, 152, 158, 159, 183, 184, 219, 227, 241, 244]**: Pages where minor corrections (e.g. compound word fixes like `office-power` or `church-communion`), Scripture references, patristic references, or minor punctuation/spacing differences break exact word-window matching, although the text is fully present in the EPUB.
 *   **`top_of_page_text_loss` [43, 333, 363]**: Headings and salutations at the top of pages that are styled differently in the EPUB (as headers or blocks).
 *   **`bottom_of_page_text_loss` [2, 593]**: Metadata info (page 2) and pages where a Greek phrase is corrected with standard breathing marks (`οὖν` vs `οῦν` on page 593), breaking exact matching.
 
@@ -36,7 +37,7 @@ The following splits are whitelisted as they are correct layout splits, not line
 
 These list item jumps represent either actual structures in the author's argument or false positives from citation numbers (like sermon titles or dates):
 
-*   **`3. ... 5.`, `2. ... 5.`, etc.**: Legitimate numbering variations or list item starts in sermon titles (e.g., Sermon 4, Sermon 8, Sermon 10, Sermon 11, Sermon 12, Sermon 13 starting points).
+*   **`3. ... 5.`, `2. ... 5.`, etc.** or **`4. ... (sermon 4)`, `8. ... (sermon 8)`, `10. ... (sermon 10)`, `11. ... (sermon 11)`, `12. ... (sermon 12)`, `13. ... (sermon 13)`**: Legitimate numbering variations or list item starts in sermon titles (e.g., Sermon 4, Sermon 8, Sermon 10, Sermon 11, Sermon 12, Sermon 13 starting points).
 
 ## 6. OCR & Bracket Residues
 
@@ -45,3 +46,8 @@ These list item jumps represent either actual structures in the author's argumen
 ## 7. Punctuation Spacing Blemishes
 
 *   **`..`**: Whitelisted minor double periods in specific abbreviations or quotes.
+
+## 8. Unmatched Quotation Marks
+
+*   All 49 unmatched quotation marks are authentic 17th-century theological prose quotation conventions where Owen opens a quote to debate opponents or cite Scripture/patristics and never closes it within the paragraph. Changing these would violate text integrity.
+
