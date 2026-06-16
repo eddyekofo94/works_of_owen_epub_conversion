@@ -2,29 +2,21 @@
   "volume": "9",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/input/owen-v9.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
-  "generated_at": "2026-06-13T20:29:15.364904+00:00",
+  "generated_at": "2026-06-16T00:42:42.984404+00:00",
   "status": "warn",
-  "warning_count": 10,
+  "warning_count": 8,
   "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "front_matter_toc_loss",
-      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
     },
     {
       "code": "top_of_page_text_loss",
       "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
     },
     {
-      "code": "bottom_of_page_text_loss",
-      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     },
     {
       "code": "suspicious_large_number_starts",
@@ -49,22 +41,24 @@
   ],
   "pdf": {
     "page_count": 778,
-    "skipped_detected": []
+    "skipped_detected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
   },
   "epub": {
     "spine_text_files": 102,
-    "paragraph_count": 3511
+    "paragraph_count": 3558
   },
   "word_coverage": {
-    "pdf_content_tokens": 254653,
-    "epub_content_tokens": 254435,
-    "coverage_ratio": 0.9961,
+    "pdf_content_tokens": 253685,
+    "epub_content_tokens": 254528,
+    "coverage_ratio": 0.9993,
     "missing_word_samples": [
-      {
-        "word": "editor",
-        "pdf": 5,
-        "epub": 1
-      },
       {
         "word": "sufficiency",
         "pdf": 3,
@@ -98,6 +92,11 @@
         "epub": 15
       },
       {
+        "word": "edition",
+        "pdf": 4,
+        "epub": 11
+      },
+      {
         "word": "footnotes",
         "pdf": 0,
         "epub": 7
@@ -111,227 +110,41 @@
         "word": "hebrew",
         "pdf": 7,
         "epub": 13
-      },
-      {
-        "word": "edition",
-        "pdf": 5,
-        "epub": 11
       }
     ]
   },
   "page_coverage": {
-    "pages_checked": 771,
-    "weak_page_count": 3,
-    "weak_pages": [
-      {
-        "page": 3,
-        "hit_ratio": 0.333,
-        "sample": "contents of vol part sermon published prefatory note by the editor seasonable words for english protestants part sermons published prefatory note by the editor"
-      },
-      {
-        "page": 4,
-        "hit_ratio": 0.333,
-        "sample": "discourse seeing the act of closing with christ is secret and hidden and the special times and seasons of our conversion unto god are"
-      },
-      {
-        "page": 5,
-        "hit_ratio": 0.333,
-        "sample": "the excellency of christ the use and advantage of faith in time of public calamity the use of faith under reproaches and persecutions the"
-      }
-    ]
+    "pages_checked": 767,
+    "weak_page_count": 0,
+    "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 31520,
-    "missing_dense_window_pages": 40,
+    "dense_windows_checked": 32000,
+    "missing_dense_window_pages": 4,
     "missing_dense_windows": [
       {
-        "page": 3,
-        "sample": "contents of vol part sermon published prefatory note by the editor seasonable words for"
+        "page": 370,
+        "sample": "sermon f26 god's withdrawing his presence the correction of his church lord why hast"
       },
       {
-        "page": 4,
-        "sample": "discourse seeing the act of closing with christ is secret and hidden and the"
+        "page": 372,
+        "sample": "is it to err from the ways of god the ways of god are"
       },
       {
-        "page": 5,
-        "sample": "the excellency of christ the use and advantage of faith in time of public"
+        "page": 373,
+        "sample": "with god which we are called unto ii what is it to have our"
       },
       {
-        "page": 6,
-        "sample": "lord's death till he come corinthians 23-26 discourses and if be lifted up from"
-      },
-      {
-        "page": 7,
-        "sample": "part sermon published prefatory note the following is the first of owen's posthumous sermons"
-      },
-      {
-        "page": 8,
-        "sample": "that city and country are crying watchman what of the night watchman what of"
-      },
-      {
-        "page": 10,
-        "sample": "unto idolatry secondly their idolatry the idolatry that there began consisted in image worship"
-      },
-      {
-        "page": 26,
-        "sample": "posthumous sermons part sermons published prefatory note under the second division of the posthumous"
-      },
-      {
-        "page": 29,
-        "sample": "affirmation is laid down the promises the promises of god the promises of god"
-      },
-      {
-        "page": 42,
-        "sample": "glorified as god as our god he that gives him that gives him what"
-      },
-      {
-        "page": 60,
-        "sample": "his goodwill and kindness his patience to us ward and we cannot but be"
-      },
-      {
-        "page": 73,
-        "sample": "god herein the apostle includes the whole mystery of his death and blood shedding"
-      },
-      {
-        "page": 101,
-        "sample": "he did as the lord commanded him exodus now surely this gave it beauty"
-      },
-      {
-        "page": 106,
-        "sample": "choice jewels of god's eternal love they are god's delight the first fruits of"
-      },
-      {
-        "page": 120,
-        "sample": "covenant on our part as genesis am god almighty or all sufficient that is"
-      },
-      {
-        "page": 132,
-        "sample": "walk with god nor the righteousness they sought after chapter but what is the"
-      },
-      {
-        "page": 149,
-        "sample": "these considerations first that god judgeth not as man judgeth man judgeth according to"
-      },
-      {
-        "page": 150,
-        "sample": "one place wherein the apostle disputes for it hebrews and add that wherewith hosea"
-      },
-      {
-        "page": 186,
-        "sample": "work of christ and that it was fruit of long suffering peter declares peter"
-      },
-      {
-        "page": 187,
-        "sample": "ways of holiness and godliness first of self searching and self judging in reference"
-      },
-      {
-        "page": 188,
-        "sample": "the apostle calls to in such dispensation corinthians self judging as to our state"
-      },
-      {
-        "page": 192,
-        "sample": "by practical experience they give never failing certainty of themselves now by holding communion"
-      },
-      {
-        "page": 193,
-        "sample": "own actings things that have self evidencing power may be hindered from exerting it"
-      },
-      {
-        "page": 200,
-        "sample": "smitten any more you will revolt more and more and to swear in his"
-      },
-      {
-        "page": 213,
-        "sample": "spiritual sense against the righteousness of christ the righteousness of christ is utterly strange"
-      },
-      {
-        "page": 218,
-        "sample": "of mind introduced how much self-confidence promoted by an over valuation of these things"
-      },
-      {
-        "page": 234,
-        "sample": "assert the same truth take proverbs but ye have set at nought all my"
-      },
-      {
-        "page": 243,
-        "sample": "the waters of the sanctuary searedness of conscience timothy having their conscience seared with"
-      },
-      {
-        "page": 249,
-        "sample": "sermon f13 human power defeated the stout-hearted are spoiled they have slept their sleep"
-      },
-      {
-        "page": 252,
-        "sample": "amongst them who cried down with them down with them even to the ground"
-      },
-      {
-        "page": 270,
-        "sample": "my church their voice was down with it down with it even to the"
-      },
-      {
-        "page": 273,
-        "sample": "sermon f16 the divine power of the gospel for am not ashamed of the"
-      },
-      {
-        "page": 276,
-        "sample": "of god unto salvation what is intended by the gospel the gospel is taken"
-      },
-      {
-        "page": 283,
-        "sample": "messiah but called him glutton wine bibber friend of publicans and sinners wherein then"
-      },
-      {
-        "page": 288,
-        "sample": "sermon f17 we are not to be ashamed of the professors of the gospel"
-      },
-      {
-        "page": 292,
-        "sample": "persecuted ones no god is not ashamed to be called their god their god"
-      },
-      {
-        "page": 298,
-        "sample": "sermon f19 god the saints rock from the end of the earth will cry"
-      },
-      {
-        "page": 300,
-        "sample": "so the psalmist tells us psalm prayer of the afflicted when he is overwhelmed"
-      },
-      {
-        "page": 312,
-        "sample": "sermon f20 from the end of the earth will cry unto thee when my"
-      },
-      {
-        "page": 316,
-        "sample": "of eli from the priesthood samuel but will he not return again no the"
+        "page": 376,
+        "sample": "hearts hardened thus partially from the fear of god the fear of god may"
       }
     ]
   },
   "front_matter_toc_integrity": {
-    "front_toc_pages_checked": 5,
-    "front_toc_windows_checked": 20,
-    "missing_front_toc_pages": 4,
-    "missing_front_toc_samples": [
-      {
-        "page": 3,
-        "hit_ratio": 0.25,
-        "sample": "contents of vol part sermon published prefatory note by the editor seasonable words for english protestants part sermons published prefatory note by the editor the strength of faith"
-      },
-      {
-        "page": 4,
-        "hit_ratio": 0.25,
-        "sample": "discourse seeing the act of closing with christ is secret and hidden and the special times and seasons of our conversion unto god are unknown unto most what"
-      },
-      {
-        "page": 5,
-        "hit_ratio": 0.5,
-        "sample": "the excellency of christ the use and advantage of faith in time of public calamity the use of faith under reproaches and persecutions the use of faith if"
-      },
-      {
-        "page": 6,
-        "hit_ratio": 0.5,
-        "sample": "also he took the cup when he had supped saying this cup is the new testament in my blood this do ye as oft as ye drink it"
-      }
-    ]
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
   },
   "top_of_page_integrity": {
     "top_windows_checked": 776,
@@ -501,7 +314,7 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 9,
+    "missing_top_window_count": 8,
     "missing_top_windows": [
       {
         "page": 151,
@@ -542,11 +355,6 @@
         "page": 622,
         "window": "sermon f65 the use of faith under reproaches and",
         "sample": "SERMON 11.F65 THE USE OF FAITH UNDER REPROACHES AND"
-      },
-      {
-        "page": 705,
-        "window": "are invited to feast upon the sacrifice the sacrifice is offered christ is the",
-        "sample": "are invited to feast upon the sacrifice. The sacrifice is offered; Christ is the sacrifice, — God's passover; God makes a feast upon it, and invites his"
       }
     ]
   },
@@ -555,27 +363,20 @@
     "bottom_windows_usable": 697,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 2,
-    "missing_bottom_windows": [
-      {
-        "page": 2,
-        "window": "this edition of first published by johnstone hunter 1850-53",
-        "sample": "This Edition of first published by Johnstone & Hunter, 1850-53"
-      },
-      {
-        "page": 4,
-        "window": "ministerial endowments the work of the spirit the duty of pastor",
-        "sample": "Ministerial Endowments The Work Of The Spirit. The Duty Of A Pastor."
-      }
-    ]
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3023,
+    "paragraphs_checked": 3071,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 406,
-    "short_fragment_count": 38,
+    "structural_start_exclusions": 408,
+    "short_fragment_count": 41,
     "short_fragments": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "What I shall speak to is this: —"
+      },
       {
         "file": "EPUB/ch008.xhtml",
         "text": "To this end, —"
@@ -618,6 +419,10 @@
       },
       {
         "file": "EPUB/ch024.xhtml",
+        "text": "His estate is doubly expressed: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
         "text": "I shall, —"
       },
       {
@@ -649,12 +454,20 @@
         "text": "That is the third way."
       },
       {
+        "file": "EPUB/ch029.xhtml",
+        "text": "They are two: —"
+      },
+      {
         "file": "EPUB/ch030.xhtml",
         "text": "To this I answer, —"
       },
       {
         "file": "EPUB/ch031.xhtml",
         "text": "One word of use, and I have done."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Use 6."
       },
       {
         "file": "EPUB/ch042.xhtml",
@@ -667,10 +480,6 @@
       {
         "file": "EPUB/ch053.xhtml",
         "text": "— Ed."
-      },
-      {
-        "file": "EPUB/ch056.xhtml",
-        "text": "Or,"
       },
       {
         "file": "EPUB/ch057.xhtml",
@@ -723,16 +532,17 @@
       {
         "file": "EPUB/ch076.xhtml",
         "text": "There is, —"
-      },
-      {
-        "file": "EPUB/ch093.xhtml",
-        "text": "Why, —"
       }
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 0,
-    "inline_structural_candidates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "I shall speak yet a little more particularly. You may consider in the words, 1. That which is mentioned in the last place; — the state of the people at this time: \"Their land was filled with sin against the Holy One of Israel.\""
+      }
+    ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -816,10 +626,10 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 834,
-    "epub_marker_count": 842,
+    "epub_marker_count": 841,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 7,
+    "excess_marker_count": 6,
     "excess_markers": [
       {
         "marker": "(1)",
@@ -842,11 +652,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch003.xhtml#p104",
+            "location": "EPUB/ch003.xhtml#p106",
             "context": "(1.) A land is so filled with sin, when all sorts of provoking sins do abound in it; — when there is no exception to be put into the indictment; — when there is no provoking sin that c"
           },
           {
-            "location": "EPUB/ch003.xhtml#p127",
+            "location": "EPUB/ch003.xhtml#p129",
             "context": "(1.) The first is, that he hath reserved a remnant among us that do make use of this space and season to apply themselves unto the throne of grace, and to cry mightily for mercy. God h"
           }
         ]
@@ -861,11 +671,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch003.xhtml#p105",
+            "location": "EPUB/ch003.xhtml#p107",
             "context": "(2.) A land is so filled with sin against the Holy One of Israel, when all sorts of persons in a land are guilty of provoking sins. Pray, mistake me not; I do not say all persons of al"
           },
           {
-            "location": "EPUB/ch003.xhtml#p129",
+            "location": "EPUB/ch003.xhtml#p131",
             "context": "(2.) It hath strength from this, that there is an invitation and encouragement given to the whole nation to join together in their cries to God this day for the same end and purpose. I"
           }
         ]
@@ -880,11 +690,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p184",
+            "location": "EPUB/ch006.xhtml#p187",
             "context": "[1.] There must be, what I spake of in the first place, an assent to the whole truth of the promises of God, upon this ground and bottom, — that he is able and faithful to accomplish t"
           },
           {
-            "location": "EPUB/ch006.xhtml#p208",
+            "location": "EPUB/ch006.xhtml#p211",
             "context": "[1.] A well-grounded, firm, unshaken assent to the truth of the promises; and so it is opposed to wavering, James 1:5, 6."
           }
         ]
@@ -910,31 +720,12 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch006.xhtml#p191",
+            "location": "EPUB/ch006.xhtml#p194",
             "context": "[2.] Over and above this, faith, in the Scripture, is expressed (and we find it by experience) to be the will's consent unto, and acceptance of, the Lord Jesus Christ as mediator, — he"
           },
           {
-            "location": "EPUB/ch006.xhtml#p209",
+            "location": "EPUB/ch006.xhtml#p212",
             "context": "[2.] A resolved, clear consent to receive and close with Christ, as tendered in the promise, for life; and so it is opposed to doubting, — that is, troublesome, disquieting, perplexing"
-          }
-        ]
-      },
-      {
-        "marker": "[4.]",
-        "pdf": 21,
-        "epub": 22,
-        "examples": [
-          {
-            "location": "EPUB/ch007.xhtml#p306",
-            "context": "les mentioned, whereunto we may be exposed: — [1.] The wind; [2.] A tempest; [3.] Dearth; [4.] Weariness. And unto all these is the man in the promise — the Lord Jesus Christ, the King that \"reigns in righteousness,\" verse 1 — suited as a supply in them, or against them."
-          },
-          {
-            "location": "EPUB/ch007.xhtml#p313",
-            "context": "[4.] There is weariness; —and in respect hereof Christ is said to be \"the shadow of a great rock.'' Weariness of travel and labor, through heat and drought, is insupportable. He that i"
-          },
-          {
-            "location": "EPUB/ch012.xhtml#p563",
-            "context": "[4.] We must humble ourselves to place our obedience on a new foot of account, and yet to pursue it with no less diligence than if it stood upon the old. Ephesians 2:8-10,"
           }
         ]
       }
@@ -1092,90 +883,25 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 597,
-    "epub_latin_word_count": 635,
-    "epub_tagged_latin_word_count": 90,
-    "pdf_latin_unique_words": 275,
-    "epub_latin_unique_words": 291,
-    "epub_tagged_unique_words": 83,
-    "latin_word_coverage_ratio": 0.9933,
-    "latin_tagging_ratio": 0.1417,
+    "pdf_latin_word_count": 269,
+    "epub_latin_word_count": 272,
+    "epub_tagged_latin_word_count": 68,
+    "pdf_latin_unique_words": 184,
+    "epub_latin_unique_words": 186,
+    "epub_tagged_unique_words": 66,
+    "latin_word_coverage_ratio": 0.9926,
+    "latin_tagging_ratio": 0.25,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "iii",
-        "epub": 33,
-        "tagged": 0
-      },
-      {
-        "word": "door",
-        "epub": 28,
-        "tagged": 0
-      },
-      {
-        "word": "alas",
-        "epub": 24,
-        "tagged": 2
-      },
-      {
-        "word": "undergo",
-        "epub": 16,
-        "tagged": 0
-      },
-      {
-        "word": "communicate",
-        "epub": 15,
-        "tagged": 0
-      },
       {
         "word": "ultimate",
         "epub": 14,
         "tagged": 0
       },
       {
-        "word": "relate",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
-        "word": "meditate",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
-        "word": "splendor",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
         "word": "incarnate",
         "epub": 9,
         "tagged": 0
-      },
-      {
-        "word": "ago",
-        "epub": 7,
-        "tagged": 0
-      },
-      {
-        "word": "hate",
-        "epub": 7,
-        "tagged": 0
-      },
-      {
-        "word": "emphasis",
-        "epub": 7,
-        "tagged": 0
-      },
-      {
-        "word": "abhor",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "determinate",
-        "epub": 7,
-        "tagged": 1
       },
       {
         "word": "abram",
@@ -1188,17 +914,7 @@
         "tagged": 0
       },
       {
-        "word": "stream",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
         "word": "steam",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
-        "word": "inordinate",
         "epub": 5,
         "tagged": 0
       },
@@ -1208,36 +924,76 @@
         "tagged": 0
       },
       {
-        "word": "sinai",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
-        "word": "william",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "premium",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
         "word": "assyria",
         "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "obviate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "folio",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "metaphor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "compassionate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "thomas",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "capernaum",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "possessor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "onesiphorus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "adequate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "disconsolate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "madam",
+        "epub": 3,
         "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 13,
+    "latin_clauses_checked": 7,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 43,
+    "tagged_latin_runs_count": 29,
     "translated_latin_runs_count": 3,
-    "latin_translation_ratio": 0.0698,
+    "latin_translation_ratio": 0.1034,
     "untranslated_latin_samples": [
       {
         "phrase": "Quis talia fando"
@@ -1249,19 +1005,16 @@
         "phrase": "Gloria est"
       },
       {
-        "phrase": "de aliquo fama cum"
+        "phrase": "aliquo fama cum"
       },
       {
         "phrase": "laus bonorum, incorrupta"
       },
       {
-        "phrase": "bene judicantium de excellenti"
+        "phrase": "bene judicantium"
       },
       {
         "phrase": "is \"peccata missa facere"
-      },
-      {
-        "phrase": "water break out in the wilderness, and streams in the desert,"
       },
       {
         "phrase": "Amici, dum vivimus, vivamus"
@@ -1271,18 +1024,6 @@
       },
       {
         "phrase": "Pontus, Galatia"
-      },
-      {
-        "phrase": "Digitus Dei est hoc"
-      },
-      {
-        "phrase": "I trembled in myself, that I might rest in the day of trouble."
-      },
-      {
-        "phrase": "is \"digitus Dei"
-      },
-      {
-        "phrase": "Nodus Deo"
       },
       {
         "phrase": "effeminate Sardanapalus"
@@ -1298,6 +1039,21 @@
       },
       {
         "phrase": "necessitate medii"
+      },
+      {
+        "phrase": "sententia lata"
+      },
+      {
+        "phrase": "Liberavi animam meam"
+      },
+      {
+        "phrase": "esse aliquid intus"
+      },
+      {
+        "phrase": "Mori nolo"
+      },
+      {
+        "phrase": "Bibliotheca Biblica"
       }
     ]
   },
@@ -1313,7 +1069,26 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {},
+  "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      29,
+      132,
+      149,
+      243,
+      252,
+      270,
+      276,
+      292
+    ],
+    "ignored_warnings": [
+      "low_latin_word_coverage"
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

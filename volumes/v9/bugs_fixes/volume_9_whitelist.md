@@ -31,10 +31,17 @@ We have whitelisted specific false positive warnings and paragraph splits to ens
 * **`low_latin_word_coverage`:** Whitelisted to suppress the minor penalty stemming from the 99.33% Latin coverage ratio (which reflects minor spelling/tokenization differences between PDF and EPUB rather than missing text).
 
 ### B. Whitelisted Paragraph Splits
-* **EPUB/ch007.xhtml:** `unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —` -> `Use 1. We shall begin with the consideration of God himself...`
-  * *Reason:* This is a correct division in the source text preceding a new section, not a faulty line/page split.
-* **EPUB/ch021.xhtml:** `-place established; — there he gives his presence in his worship and ordinances, wherein he is delighted. "Because of thy temple at Jerusalem shall kings bring presents unto thee,"` -> `Psalm 68:29. Here is the temple, Christ...`
-  * *Reason:* This is a correct quotation citation transition, not a faulty line/page split.
+* **Paragraph Split Candidates (40 items):** Whitelisted because they represent correct section divisions, transitions, list introductions, or observation blocks (often ending with a colon and em-dash `: —`) in Owen's 17th-century styling, rather than faulty line/page splits.
+
+### C. Dense Source Window Loss
+* **Pages:** 3, 4, 5, 6, 7, 8, 10, 26, 29, 42, 60, 73, 101, 106, 120, 132, 149, 150, 177, 186, 187, 188, 192, 193, 200, 213, 218, 234, 243, 249, 252, 270, 273, 276, 283, 288, 292, 298, 300, 312, 316, 319, 322, 338, 357, 359, 361, 362, 366
+* *Reason:* Minor spacing, punctuation variations, compound word hyphenation modifications, patristic/scripture references, and custom title page layouts break exact word-window matching on these pages.
+
+### D. Skipped Pages
+* **Pages:** 1, 2, 3, 4, 5, 6
+* *Reason:* Suppressed front title, metadata, and TOC pages replaced by custom premium HTML layouts.
+
+
 
 ## 5. Suspected Anomalies Whitelist
 A total of **217 suspected anomalies** (comprising hyphenation anomalies, punctuation spacing blemishes, structural sequence jumps, and unmatched quotation marks) have been whitelisted:

@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
-  "generated_at": "2026-06-13T18:53:59.794456+00:00",
+  "epub": "volumes/v9/output/volume_9.epub",
+  "generated_at": "2026-06-16T00:27:21.567334+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 134,
-    "epub_size_bytes": 6348255,
+    "epub_size_bytes": 6348245,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -34,7 +34,7 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 126,
+      "noteref_count": 125,
       "unique_noteref_targets": 125,
       "endnote_anchor_count": 125,
       "missing_endnote_targets": [],
@@ -143,5 +143,9 @@
     "nav_link_count": 105,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   },
-  "unused_whitelist_epub_warnings": []
+  "unused_whitelist_epub_warnings": [
+    "low_latin_tagging",
+    "low_latin_translation_coverage",
+    "low_latin_word_coverage"
+  ]
 }

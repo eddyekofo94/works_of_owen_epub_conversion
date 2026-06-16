@@ -129,6 +129,21 @@ OVERRIDES = {
         'Posthumous Sermons — Part 4': _V9_PART4_TITLE_PAGE,
         'Several Practical Cases of Conscience Resolved.': _V9_CASES_TITLE_PAGE,
     },
+    'text_replacements': {
+        'preeminence': 'pre-eminence',
+        'churchmember': 'church-member',
+        'churchmembers': 'church-members',
+        'selfsearching': 'self-searching',
+        'selfjudging': 'self-judging',
+        'selfevidencing': 'self-evidencing',
+        'selfrighteousness': 'self-righteousness',
+        'selflove': 'self-love',
+        'selfreputation': 'self-reputation',
+        'selfsufficiency': 'self-sufficiency',
+        'selffullness': 'self-fullness',
+        'selfdenying': 'self-denying',
+        'selfexamination': 'self-examination',
+    },
 }
 
 

@@ -2,7 +2,7 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 278472
+* **Total Words Audited:** 278482
 * **Total Suspected Anomalies Found:** 0
 
 Add corrections to `text_replacements` inside `volumes/v7/convert.py` to fix these.

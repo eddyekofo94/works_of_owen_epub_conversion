@@ -1,6 +1,42 @@
 {
   "volume": 8,
-  "total_paragraphs_checked": 3239,
-  "unmatched_quotes_count": 0,
-  "unmatched_paragraphs": []
+  "total_paragraphs_checked": 3228,
+  "unmatched_quotes_count": 5,
+  "unmatched_paragraphs": [
+    {
+      "chapter": "Preface.",
+      "paragraph_index": 13,
+      "quote_count": 3,
+      "text": "[[BLOCKQUOTE]] \"Die Venetia, 14 Martii, 1650. \"The question being propounded, That thanks be given to the ministers that preached yesterday before the Parliament, and the question being put, 'That that question be now put?' it passed with the negative.\"",
+      "highlighted_text": "[[BLOCKQUOTE]] **\"**Die Venetia, 14 Martii, 1650. **\"**The question being propounded, That thanks be given to the ministers that preached yesterday before the Parliament, and the question being put, 'That that question be now put?' it passed with the negative.**\"**"
+    },
+    {
+      "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
+      "paragraph_index": 22,
+      "quote_count": 1,
+      "text": "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for an habitation of God through the Spirit,\" Ephesians 2:20-22.",
+      "highlighted_text": "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for an habitation of God through the Spirit,**\"** Ephesians 2:20-22."
+    },
+    {
+      "chapter": "Advantage of the Kingdom of Christ",
+      "paragraph_index": 2,
+      "quote_count": 1,
+      "text": "[[BLOCKQUOTE]] \"And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted the low tree, have dried up the green tree, and have made the dry tree to flourish: I the Lord have spoken, and have done Ezekiel 17:24.",
+      "highlighted_text": "[[BLOCKQUOTE]] **\"**And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted the low tree, have dried up the green tree, and have made the dry tree to flourish: I the Lord have spoken, and have done Ezekiel 17:24."
+    },
+    {
+      "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+      "paragraph_index": 1,
+      "quote_count": 1,
+      "text": "<section class=\"treatise-title-page\" epub:type=\"titlepage\"> <p class=\"title-line title-line-major\">SERMON 13.</p> <p class=\"title-line title-line-medium\">HOW WE MAY BRING OUR HEARTS</p> <p class=\"title-line title-line-medium\">TO BEAR REPROOFS.</p> </section> Let the righteous smite me, it shall be a kindness; and let him reprove me, it shall be an excellent oil, which shall not break my head: for yet my prayer also shall be in their calamities.\" \u2014 Psalm 141:5.",
+      "highlighted_text": "<section class=**\"**treatise-title-page**\"** epub:type=**\"**titlepage**\"**> <p class=**\"**title-line title-line-major**\"**>SERMON 13.</p> <p class=**\"**title-line title-line-medium**\"**>HOW WE MAY BRING OUR HEARTS</p> <p class=**\"**title-line title-line-medium**\"**>TO BEAR REPROOFS.</p> </section> Let the righteous smite me, it shall be a kindness; and let him reprove me, it shall be an excellent oil, which shall not break my head: for yet my prayer also shall be in their calamities.**\"** \u2014 Psalm 141:5."
+    },
+    {
+      "chapter": "Sermon 16.",
+      "paragraph_index": 1,
+      "quote_count": 1,
+      "text": "<section class=\"treatise-title-page\" epub:type=\"titlepage\"> <p class=\"title-line title-line-major\">SERMON 16.</p> <p class=\"title-line title-line-medium\">AN HUMBLE TESTIMONY</p> <p class=\"title-line title-line-medium\">UNTO THE GOODNESS AND SEVERITY OF GOD</p> <p class=\"title-line title-line-medium\">IN HIS DEALING WITH SINFUL CHURCHES</p> <p class=\"title-line title-line-medium\">AND NATIONS;</p> <p class=\"title-line title-line-medium\">OR,</p> <p class=\"title-line title-line-medium\">THE ONLY WAY TO DELIVER A SINFUL NATION</p> <p class=\"title-line title-line-medium\">FROM UTTER RUIN BY IMPENDENT JUDGMENTS:</p> <p class=\"title-line title-line-medium\">IN A DISCOURSE ON THE WORDS OF OUR LORD JESUS</p> <p class=\"title-line title-line-medium\">CHRIST,</p> <p class=\"title-line title-line-medium\">LUKE 13:1-4.</p> </section> Cry aloud, spare not; lift up thy voice like a trumpet, and show my people their transgression, and the house of Jacob their sins \" \u2014 Isaiah 58:1.",
+      "highlighted_text": "<section class=**\"**treatise-title-page**\"** epub:type=**\"**titlepage**\"**> <p class=**\"**title-line title-line-major**\"**>SERMON 16.</p> <p class=**\"**title-line title-line-medium**\"**>AN HUMBLE TESTIMONY</p> <p class=**\"**title-line title-line-medium**\"**>UNTO THE GOODNESS AND SEVERITY OF GOD</p> <p class=**\"**title-line title-line-medium**\"**>IN HIS DEALING WITH SINFUL CHURCHES</p> <p class=**\"**title-line title-line-medium**\"**>AND NATIONS;</p> <p class=**\"**title-line title-line-medium**\"**>OR,</p> <p class=**\"**title-line title-line-medium**\"**>THE ONLY WAY TO DELIVER A SINFUL NATION</p> <p class=**\"**title-line title-line-medium**\"**>FROM UTTER RUIN BY IMPENDENT JUDGMENTS:</p> <p class=**\"**title-line title-line-medium**\"**>IN A DISCOURSE ON THE WORDS OF OUR LORD JESUS</p> <p class=**\"**title-line title-line-medium**\"**>CHRIST,</p> <p class=**\"**title-line title-line-medium**\"**>LUKE 13:1-4.</p> </section> Cry aloud, spare not; lift up thy voice like a trumpet, and show my people their transgression, and the house of Jacob their sins **\"** \u2014 Isaiah 58:1."
+    }
+  ]
 }

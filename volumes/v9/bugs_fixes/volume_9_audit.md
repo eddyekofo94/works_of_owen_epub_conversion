@@ -21,7 +21,7 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 223
 - Untagged Hebrew chars: 0
-- Noteref links: 126
+- Noteref links: 125
 - Endnote anchors: 125
 - Boilerplate hits: 0
 - Possible Beta Code files: 0

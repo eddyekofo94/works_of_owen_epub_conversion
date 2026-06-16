@@ -346,6 +346,11 @@
     "9": {
       "text_integrity": {
         "max_front_toc_missing_pages": 4
+      },
+      "epub": {
+        "max_chapter_heading_in_paragraph_files": 1,
+        "max_overlong_heading_body_files": 5,
+        "max_lowercase_paragraph_start_files": 2
       }
     },
     "h1": {

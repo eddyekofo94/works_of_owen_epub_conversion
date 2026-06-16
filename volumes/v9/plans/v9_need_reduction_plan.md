@@ -1,38 +1,38 @@
 # Volume 9 — Comprehensive Need Score Reduction Plan
 
-> Current Need: **15.6** | Grade: PRISTINE | QA Level: PRISTINE
+> Current Need: **24.4** | Grade: PRISTINE | QA Level: PRISTINE
 > Target Need: **≤ 2.0** (PRISTINE)
 
 ## Need Score Breakdown
 
 | Component | Value | Penalty | Capped? |
 |---|---|---|---|
-| Coverage | 99.61% | **15.6** | YES |
+| Coverage | 99.64% | **14.4** | YES |
 | Greek coverage | 100.0% | **0.0** | — |
 | Hebrew coverage | 100.0% | **0.0** | — |
 | Latin word coverage | whitelisted | **0.0** | — |
 | Latin tagging | whitelisted | **0.0** | — |
 | Latin translation | whitelisted | **0.0** | — |
 | Unresolved citations | 0/0 | **0.0** | — |
-| Splits | 0 | **0.0** | — |
+| Splits | 38 | **10.0** | YES |
 | Audit warnings | 0 | **0.0** | — |
 | Audit errors | 0 | **0.0** | — |
 | Anomalies | 0 | **0.0** | — |
 | Unmatched quotes | 0 | **0.0** | — |
-| **TOTAL** | | **15.6** | |
+| **TOTAL** | | **24.4** | |
 
 ### Scenario Projections
 
 | Scenario | Anomalies | Quotes | Coverage | Total |
 |---|---|---|---|---|
-| **Current state** | 0.0 | 0.0 | 15.6 | **15.6** |
-| **Whitelist anomalies only** | 0.0 | 0.0 | 15.6 | **15.6** |
-| **Whitelist quotes only** | 0.0 | 0.0 | 15.6 | **15.6** |
-| **Whitelist both anomalies + quotes** | 0.0 | 0.0 | 15.6 | **15.6** |
+| **Current state** | 0.0 | 0.0 | 14.4 | **24.4** |
+| **Whitelist anomalies only** | 0.0 | 0.0 | 14.4 | **14.4** |
+| **Whitelist quotes only** | 0.0 | 0.0 | 14.4 | **14.4** |
+| **Whitelist both anomalies + quotes** | 0.0 | 0.0 | 14.4 | **14.4** |
 
-The coverage gap alone contributes **15.6** points. 
+The coverage gap alone contributes **14.4** points. 
 Reducing this requires finding and fixing missing content in the EPUB.
-The dominant penalty is **Coverage** at **15.6** points.
+The dominant penalty is **Coverage** at **14.4** points.
 
 ## Anomaly Breakdown
 
@@ -50,50 +50,19 @@ The dominant penalty is **Coverage** at **15.6** points.
 
 ## Dense Source Window Losses
 
-**40 pages** with missing dense source windows.
+**9 pages** with missing dense source windows.
 
 | Page | Sample | Category | Action |
 |---|---|---|---|
-| 3 | contents of vol part sermon published prefatory note by the ... | structural | Whitelist |
-| 4 | discourse seeing the act of closing with christ is secret an... | patristic_latin | Whitelist |
-| 5 | the excellency of christ the use and advantage of faith in t... | patristic_latin | Whitelist |
-| 6 | lord's death till he come corinthians 23-26 discourses and i... | scripture_refs | Whitelist |
-| 7 | part sermon published prefatory note the following is the fi... | structural | Whitelist |
-| 8 | that city and country are crying watchman what of the night ... | structural | Whitelist |
-| 10 | unto idolatry secondly their idolatry the idolatry that ther... | patristic_latin | Whitelist |
-| 26 | posthumous sermons part sermons published prefatory note und... | structural | Whitelist |
-| 29 | affirmation is laid down the promises the promises of god th... | structural | Whitelist |
-| 42 | glorified as god as our god he that gives him that gives him... | structural | Whitelist |
-| 60 | his goodwill and kindness his patience to us ward and we can... | patristic_latin | Whitelist |
-| 73 | god herein the apostle includes the whole mystery of his dea... | patristic_latin | Whitelist |
-| 101 | he did as the lord commanded him exodus now surely this gave... | structural | Whitelist |
-| 106 | choice jewels of god's eternal love they are god's delight t... | structural | Whitelist |
-| 120 | covenant on our part as genesis am god almighty or all suffi... | structural | Whitelist |
-| 132 | walk with god nor the righteousness they sought after chapte... | patristic_latin | Whitelist |
-| 149 | these considerations first that god judgeth not as man judge... | structural | Whitelist |
-| 150 | one place wherein the apostle disputes for it hebrews and ad... | scripture_refs | Whitelist |
-| 186 | work of christ and that it was fruit of long suffering peter... | scripture_refs | Whitelist |
-| 187 | ways of holiness and godliness first of self searching and s... | patristic_latin | Whitelist |
-| 188 | the apostle calls to in such dispensation corinthians self j... | scripture_refs | Whitelist |
-| 192 | by practical experience they give never failing certainty of... | structural | Whitelist |
-| 193 | own actings things that have self evidencing power may be hi... | structural | Whitelist |
-| 200 | smitten any more you will revolt more and more and to swear ... | patristic_latin | Whitelist |
-| 213 | spiritual sense against the righteousness of christ the righ... | structural | Whitelist |
-| 218 | of mind introduced how much self-confidence promoted by an o... | structural | Whitelist |
-| 234 | assert the same truth take proverbs but ye have set at nough... | patristic_latin | Whitelist |
-| 243 | the waters of the sanctuary searedness of conscience timothy... | structural | Whitelist |
-| 249 | sermon f13 human power defeated the stout-hearted are spoile... | structural | Whitelist |
-| 252 | amongst them who cried down with them down with them even to... | structural | Whitelist |
-| 270 | my church their voice was down with it down with it even to ... | structural | Whitelist |
-| 273 | sermon f16 the divine power of the gospel for am not ashamed... | structural | Whitelist |
-| 276 | of god unto salvation what is intended by the gospel the gos... | structural | Whitelist |
-| 283 | messiah but called him glutton wine bibber friend of publica... | patristic_latin | Whitelist |
-| 288 | sermon f17 we are not to be ashamed of the professors of the... | structural | Whitelist |
-| 292 | persecuted ones no god is not ashamed to be called their god... | structural | Whitelist |
-| 298 | sermon f19 god the saints rock from the end of the earth wil... | structural | Whitelist |
-| 300 | so the psalmist tells us psalm prayer of the afflicted when ... | scripture_refs | Whitelist |
-| 312 | sermon f20 from the end of the earth will cry unto thee when... | structural | Whitelist |
-| 316 | of eli from the priesthood samuel but will he not return aga... | patristic_latin | Whitelist |
+| 177 | beauty and glory when isaiah saw him isaiah he cries out am ... | scripture_refs | Whitelist |
+| 319 | distresses that do befall us the psalmist doth so psalm he h... | scripture_refs | Whitelist |
+| 322 | sermon f21 gospel charity and above all these things put on ... | patristic_latin | Whitelist |
+| 338 | new creature therefore we are so expressly commanded by the ... | structural | Whitelist |
+| 357 | sermon f24 christian god's temple for ye are the temple of t... | structural | Whitelist |
+| 359 | us with his ordinances god took the first fruits as an ackno... | structural | Whitelist |
+| 361 | that were to be poured out upon christ and believers under h... | patristic_latin | Whitelist |
+| 362 | called the king of glory psalm lift up your heads ye everlas... | scripture_refs | Whitelist |
+| 366 | visible presence in the temple and tabernacle was the ark an... | patristic_latin | Whitelist |
 
 ## Compound Word Merging Fixes
 
@@ -134,11 +103,13 @@ Add these to `OVERRIDES['text_replacements']` in `convert.py`:
 
 ### `dense_source_window_loss` updates
 
-**New pages to add**: [3, 4, 5, 6, 7, 8, 10, 26, 29, 42, 60, 73, 101, 106, 120, 132, 149, 150, 186, 187, 188, 192, 193, 200, 213, 218, 234, 243, 249, 252, 270, 273, 276, 283, 288, 292, 298, 300, 312, 316]
+**Stale entries to remove**: [3, 4, 5, 6, 7, 8, 10, 26, 29, 42, 60, 73, 101, 106, 120, 132, 149, 150, 186, 187, 188, 192, 193, 200, 213, 218, 234, 243, 249, 252, 270, 273, 276, 283, 288, 292, 298, 300, 312, 316]
+
+**New pages to add**: [177, 319, 322, 338, 357, 359, 361, 362, 366]
 
 Updated whitelist:
 ```json
-"dense_source_window_loss": [3, 4, 5, 6, 7, 8, 10, 26, 29, 42, 60, 73, 101, 106, 120, 132, 149, 150, 186, 187, 188, 192, 193, 200, 213, 218, 234, 243, 249, 252, 270, 273, 276, 283, 288, 292, 298, 300, 312, 316]
+"dense_source_window_loss": [3, 4, 5, 6, 7, 8, 10, 26, 29, 42, 60, 73, 101, 106, 120, 132, 149, 150, 177, 186, 187, 188, 192, 193, 200, 213, 218, 234, 243, 249, 252, 270, 273, 276, 283, 288, 292, 298, 300, 312, 316, 319, 322, 338, 357, 359, 361, 362, 366]
 ```
 
 ## Action Checklist
@@ -161,10 +132,10 @@ After all changes:
 4. Audit anomalies: `.venv/bin/python3 scripts/audit_anomalies.py {vol}`
 5. Audit bug regressions: `.venv/bin/python3 scripts/audit_bug_regressions.py {vol}`
 6. Report state: `.venv/bin/python3 scripts/report_volume_state.py`
-7. Verify Need drops from 15.6 to target
+7. Verify Need drops from 24.4 to target
 
 ## What NOT To Do
 
 1. **Do NOT add `low_latin_word_coverage` to `ignored_warnings`** — Latin word coverage
-   is already 99.33% (above the 99% threshold). Whitelisting has zero effect.
+   is already 99.26% (above the 99% threshold). Whitelisting has zero effect.
 2. **Do NOT remove `low_latin_tagging` from `ignored_warnings`** — It would ADD penalty points.

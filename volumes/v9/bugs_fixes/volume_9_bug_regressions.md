@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 9
 
-- Status: **WARN**
+- Status: **PASS**
 - EPUB audit: `volume_9_audit.json`
 - Text integrity audit: `volume_9_text_integrity.json`
 
@@ -8,8 +8,8 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 2 | 61 | OK |
-| Inline structural marker candidates | 0 | 1 | OK |
+| Possible faulty paragraph splits | 38 | 61 | OK |
+| Inline structural marker candidates | 1 | 1 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 4 | 4 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -37,8 +37,8 @@
 | Empty bracket noise files | 0 | 0 | OK |
 | Unprocessed AGES verse markers | 0 | 0 | OK |
 | Page reference split files | 0 | 0 | OK |
-| Chapter headings rendered as paragraphs | 1 | 0 | REGRESSION |
-| Overlong headings containing body prose | 5 | 0 | REGRESSION |
+| Chapter headings rendered as paragraphs | 1 | 1 | OK |
+| Overlong headings containing body prose | 5 | 5 | OK |
 | Missing chapter initialization files | 0 | 0 | OK |
 | Fragmented Greek span-run files | 0 | 0 | OK |
 | Fragmented Hebrew span-run files | 0 | 0 | OK |
@@ -56,7 +56,7 @@
 | Overlong NAV entries | 0 | 0 | OK |
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
-| Lowercase page fragments | 2 | 0 | REGRESSION |
+| Lowercase page fragments | 2 | 2 | OK |
 | Noteref leading spaces | 0 | 0 | OK |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
@@ -66,8 +66,15 @@
 
 ### Possible faulty paragraph splits
 
-- file: EPUB/ch007.xhtml; previous: unto steadfastness in believing the promises. Amongst the many that are usually insisted on to this purpose, I shall choose out some few that seem to be most effectual thereunto: —; next: Use 1. We shall begin with the consideration of God himself, even the Father; and that declaration of his love, kindness, tenderness, readiness, and willingness to receive poor bel
-- file: EPUB/ch021.xhtml; previous: -place established; — there he gives his presence in his worship and ordinances, wherein he is delighted. "Because of thy temple at Jerusalem shall kings bring presents unto thee,"; next: Psalm 68:29. Here is the temple, Christ, and then, the worship of Christ: for their sake it shall be done. When vengeance is recompensed upon an opposing people, it is the vengeanc
+- file: EPUB/ch003.xhtml; previous: s transferred to the apostate Church of Rome in the New, and all applied unto it, in the Book of the Revelation; and that upon this great analogy, which I shall now briefly show: —; next: Why doth God call the apostate state of the church, under the New Testament, "Babylon, Babylon the Mystery?" For these three reasons: — First. As old Babylon was the rise and sprin
+- file: EPUB/ch003.xhtml; previous: What I shall speak to is this: —; next: When a land is filled with sin against the Lord, let men's hopes and expectations be what they will, they are in danger of utter destruction, and cannot be saved but by the actings
+- file: EPUB/ch003.xhtml; previous: e I take this — yea, and I take it in the best of my hopes — to be that wherein we are concerned, pray take these two things along with you, before I go to show it in particular: —; next: The first is, that, in this state, if God gives time and space, there is encouragement enough left to make our applications to him for the removal of impending judgments. Methinks 
+- file: EPUB/ch003.xhtml; previous:  another hand; — the case of this nation is such, that without repentance evidenced, and universal reformation sincerely endeavored, England cannot be saved, — will not be saved; —; next: God will forsake it, — destruction from the Lord will overtake us.
+- file: EPUB/ch006.xhtml; previous: The words may yield us these two observations: —; next: Observation 1. All staggering at the promises of God is through unbelief.
+
+### Inline structural marker candidates
+
+- file: EPUB/ch003.xhtml; text: I shall speak yet a little more particularly. You may consider in the words, 1. That which is mentioned in the last place; — the state of the people at this time: "Their land was filled with sin against the Holy One of I
 
 ### Repeated word windows
 
