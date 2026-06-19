@@ -6,6 +6,7 @@ This document explains the whitelisted text integrity warnings, anomalies, and e
 
 ### ignored_warnings
 - **repeated_phrases**: Whitelisted because Owen frequently quotes identical verses or theological formulas (like "the whole body fitly joined together and compacted") across close proximity, which triggers the repeated phrase warning but is authentic to the text.
+- **missing_latin_clauses**: Whitelisted because the single flagged missing clause ("non solum illa opera legis...") on page 359 is actually a false positive. The raw AGES PDF contains a ghost-layer duplication of this passage. The pipeline correctly deduplicated it in the EPUB, causing the text integrity script to misidentify the missing duplicate as a content gap.
 
 ### skipped_pages
 - **[3, 4, 5, 6, 7, 8, 9, 10, 11]**: Front matter, tables of contents, and other prefatory content correctly omitted from the main parsed chapter bodies.

@@ -213,11 +213,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-19T20:38:05.717214+00:00
-**Status:** WARN (8 warnings)
+**Last run:** 2026-06-19T21:19:23.149595+00:00
+**Status:** WARN (7 warnings)
 
 Reports:
 - `volume_5_text_integrity.json`
@@ -271,7 +272,6 @@ Warnings requiring triage:
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.

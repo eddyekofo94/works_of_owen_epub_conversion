@@ -2,9 +2,9 @@
   "volume": "5",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/input/owen-v5.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
-  "generated_at": "2026-06-19T20:38:05.717214+00:00",
+  "generated_at": "2026-06-19T21:19:23.149595+00:00",
   "status": "warn",
-  "warning_count": 8,
+  "warning_count": 7,
   "warnings": [
     {
       "code": "dense_source_window_loss",
@@ -29,10 +29,6 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "missing_latin_clauses",
-      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
     },
     {
       "code": "low_latin_translation_coverage",

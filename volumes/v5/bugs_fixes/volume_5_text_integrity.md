@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 5
 
 - Status: **WARN**
-- Warnings: 8
+- Warnings: 7
 - PDF pages: 576
 - EPUB text files: 39
 - EPUB paragraphs/headings: 2147
@@ -78,7 +78,6 @@
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows

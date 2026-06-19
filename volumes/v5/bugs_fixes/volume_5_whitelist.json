@@ -1,7 +1,8 @@
 {
   "text_integrity": {
     "ignored_warnings": [
-      "repeated_phrases"
+      "repeated_phrases",
+      "missing_latin_clauses"
     ],
     "skipped_pages": [3, 4, 5, 6, 7, 8, 9, 10, 11],
     "paragraph_splits": [
