@@ -1,0 +1,26 @@
+{
+  "volume": "15",
+  "total_words_audited": 265576,
+  "total_anomalies_count": 1,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "est ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Preface.",
+        "contexts": [
+          "... solam, unicam, ecclesiae pacem esse, quae Christi est ,\" saith Hilary. Suppose that men retain a form of ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {}
+}

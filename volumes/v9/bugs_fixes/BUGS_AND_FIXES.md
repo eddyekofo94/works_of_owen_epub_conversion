@@ -110,11 +110,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-16T00:27:21.567334+00:00
-**EPUB:** `volumes/v9/output/volume_9.epub`
+**Last run:** 2026-06-16T11:00:37.660711+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -155,10 +156,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-16T00:42:42.984404+00:00
+**Last run:** 2026-06-16T11:01:14.211783+00:00
 **Status:** WARN (8 warnings)
 
 Reports:

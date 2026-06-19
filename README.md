@@ -332,7 +332,7 @@ The new engine:
 | 12 | v12 | Populated | PRISTINE | Cov 99.94 Greek 99.92 Heb 100.00 Lat 99.76 |
 | 13 | v13 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
 | 14 | v14 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
-| 15 | v15 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.68 |
+| 15 | v15 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.46 |
 | 16 | v16 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.96 |
 
 ## Hebrews Commentary Script Status

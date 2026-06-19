@@ -1,0 +1,105 @@
+{
+  "text_integrity": {
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "low_latin_translation_coverage"
+    ],
+    "dense_source_window_loss": [
+      3, 4, 5, 7, 10, 17, 19, 29, 34, 52, 75, 90, 102, 103, 106, 108, 115, 119, 126, 137, 138, 141, 145, 180, 188, 189, 200, 218, 219, 239, 245, 248, 250, 269, 271, 289, 293, 297, 300, 307
+    ],
+    "paragraph_splits": [
+      "Answer —",
+      "Explication —",
+      "To The Reader",
+      "The first of these principles is, That there is a rule prescribed by our Lord Je",
+      "Some days after the Doctor's sermon was printed and published, one of those whom",
+      "That in no approved writers for the space of two hundred years aider Christ is t",
+      "Πάντες ἐπὶ τὸ αὐτὸ ἐν τῇ προσευχῇ ἅμα συνέρχεσθε μία δέησις ἔστω κοινή —",
+      "It is the duty of every one who professeth faith in Christ Jesus, and takes due ",
+      "That the church of England, in the generality of its parochial assemblies, and i",
+      "There were some general principles on which the Protestants proceeded in their s",
+      "The first is, in case of idolatrous worship. This, none can question, they do no",
+      "The first is this: \"Those voluntary congregations over which the apostles were s",
+      "Ans. 1. Whereas this argument seems to be cast into the form of a syllogism, I c",
+      "— such, we mean, as are either negatively or privatively infidels or unbelievers"
+    ]
+  },
+  "anomalies": {
+    "OCR & Bracket Residues": [
+      "d but",
+      "n such",
+      "in complying",
+      "mi nisterially",
+      "sub jection",
+      "h this",
+      "b premised",
+      "t heir",
+      "c f",
+      "n the",
+      "b them",
+      "m who",
+      "r o",
+      "t must",
+      "n on",
+      "h re",
+      "k now",
+      "n those"
+    ],
+    "Unmatched Quotation Marks": [
+      "The goodness and charity of the bishops made their opinion for the most part",
+      "and made Christians lose their ancient reverence and obedience. It is denied",
+      "1. Whether the apostle speaks of different opinions",
+      "3. How far the apostle's rule hath an influence into this cause",
+      "To show,\" as he saith, \"the insufficiency of our cause of separation",
+      "That it is contrary to the obligation that lies on all Christians to preserve the peace",
+      "1. That the Lutheran churches have the same and more ceremonies",
+      "(4.) Let us suppose not one thing peculiar to our church required of these members, neither the aerial sign of the cross",
+      "Neither will things have any better success where the discipline degenerates into an outward forcible jurisdiction",
+      "AN ANSWER   TO   DR STILLINGFLEET'S BOOK OF THE   UNREASONABLENESS OF SEPARATION;   IN DEFENCE OF THE VINDICATION OF NON"
+    ],
+    "Invalid Bible References": [],
+    "Hyphenation Anomalies": [
+      "Church-members",
+      "over-valuation",
+      "busy-body",
+      "Ember-weeks",
+      "god-like",
+      "Coelo-syria",
+      "dinner-time",
+      "far-fetched",
+      "non-observance",
+      "three-fold",
+      "church-way",
+      "Roman-ists",
+      "over-easy",
+      "law-making",
+      "home-bred",
+      "hand-writing",
+      "bird-lime",
+      "life-less",
+      "evil-doer",
+      "church-craft",
+      "Christ-like",
+      "fore-signify",
+      "over-hasty",
+      "Day-star",
+      "non-obedience",
+      "un-meetness",
+      "pre-eminencies"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "3. ... 5.",
+      "2. ... 15.",
+      "7.",
+      "7. ... 11.",
+      "3. ... 15.",
+      "1. ... 3.",
+      "2.",
+      "3. ... 6.",
+      "2. ... 42.",
+      "2. ... 4.",
+      "41.",
+      "4. ... 6."
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "volume": "15",
+  "summary": {
+    "total_entries": 13,
+    "exact_matches": 13,
+    "greedy_count": 0,
+    "unused_count": 0
+  },
+  "greedy_entries": [],
+  "unused_entries": [],
+  "anomaly_matches": {},
+  "split_matches": {
+    "{\"next\": \"\\u2014 such, we mean, as are either negatively\", \"previous\": \"world,\\\" Ephesians 2:12,\"}": [
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "o are yet \"without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world,\" Ephesians 2:12,",
+        "next": "\u2014 such, we mean, as are either negatively or privatively infidels or unbelievers, who have yet never heard the sound of the gospel, or do continue to refuse and reject it where it "
+      }
+    ],
+    "{\"next\": \"I THOUGHT to have wholly omitted\", \"previous\": \"To The Reader\"}": [
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "To The Reader",
+        "next": "I THOUGHT to have wholly omitted the consideration of that part of the discourse of Dr Stillingfleet, in his preface, which concerneth the furtherance and promotion of the designs "
+      }
+    ],
+    "{\"next\": \"The first of these principles is,\", \"previous\": \"perpetuate our divisions. And, \\u2014\"}": [
+      {
+        "file": "EPUB/ch023.xhtml",
+        "previous": "nd what they must establish, who shall persist in the management of this charge; that is, indeed, through want of love, in a design to heighten and perpetuate our divisions. And, \u2014",
+        "next": "The first of these principles is, That there is a rule prescribed by our Lord Jesus Christ unto all churches and believers, in a due attendance whereunto all the unity and peace wh"
+      }
+    ],
+    "{\"next\": \"Some days after the Doctor's sermon\", \"previous\": \"give a brief account of: \\u2014\"}": [
+      {
+        "file": "EPUB/ch023.xhtml",
+        "previous": "at all engaged in this contest, and the reasons whereon I undertook a harmless defense of our innocency, as to the charge of schism at this time, I shall give a brief account of: \u2014",
+        "next": "Some days after the Doctor's sermon was printed and published, one of those whom he supposeth we persuaded not to read it brought it unto me, and gave it me, with such a character "
+      }
+    ],
+    "{\"next\": \"That in no approved writers\", \"previous\": \"And that which we allege is, \\u2014\"}": [
+      {
+        "file": "EPUB/ch028.xhtml",
+        "previous": "hat succeeded unto those which were planted by the apostles themselves, and so may well be judged to have walked in the same way and order with them. And that which we allege is, \u2014",
+        "next": "That in no approved writers for the space of two hundred years after Christ is there any mention made of any other organical, visibly-professing church, but that only which is paro"
+      }
+    ],
+    "{\"next\": \"\\u03a0\\u03ac\\u03bd\\u03c4\\u03b5\\u03c2 \\u1f10\\u03c0\\u1f76 \\u03c4\\u1f78 \\u03b1\\u1f50\\u03c4\\u1f78\", \"previous\": \"Some instances hereof we may repeat: \\u2014\"}": [
+      {
+        "file": "EPUB/ch028.xhtml",
+        "previous": "al with them about. And this assembling together in the same place, \u2014 namely, of the whole church, \u2014 he doth frequently intimate and express. Some instances hereof we may repeat: \u2014",
+        "next": "\u03a0\u03ac\u03bd\u03c4\u03b5\u03c2 \u1f10\u03c0\u1f76 \u03c4\u1f78 \u03b1\u1f50\u03c4\u1f78 \u1f10\u03bd \u03c4\u1fc7 \u03c0\u03c1\u03bf\u03c3\u03b5\u03c5\u03c7\u1fc7 \u1f05\u03bc\u03b1 \u03c3\u03c5\u03bd\u03ad\u03c1\u03c7\u03b5\u03c3\u03b8\u03b5 \u03bc\u03af\u03b1 \u03b4\u03ad\u03b7\u03c3\u03b9\u03c2 \u1f14\u03c3\u03c4\u03c9 \u03ba\u03bf\u03b9\u03bd\u03ae \u2014 \"Meet all of you together in the same place; let there be one prayer in common of all,\" Epist. ad Magnes. ["
+      }
+    ],
+    "{\"next\": \"It is the duty of every one\", \"previous\": \"The proposition itself is this: \\u2014\"}": [
+      {
+        "file": "EPUB/ch031.xhtml",
+        "previous": "ences of believers are greatly concerned, I shall lay down one proposition wherein it is asserted in the sense I intend, and then fully confirm it The proposition itself is this: \u2014",
+        "next": "It is the duty of every one who professeth faith in Christ Jesus, and takes due care of his own eternal salvation, voluntarily and by his own choice to join himself unto some parti"
+      }
+    ],
+    "{\"next\": \"That the church of England\", \"previous\": \"And we say, \\u2014\"}": [
+      {
+        "file": "EPUB/ch034.xhtml",
+        "previous": "insist on what concerns doctrine and worship, which may afterward be spoken unto. But we shall confine ourselves here unto the consideration of gospel obedience only. And we say, \u2014",
+        "next": "That the church of England, in the generality of its parochial assemblies, and in itself, stands in need of reformation, by reason of the woful degeneracy of the generality of its "
+      }
+    ],
+    "{\"next\": \"There were some general principles\", \"previous\": \"is strengthened and confirmed by us: \\u2014\"}": [
+      {
+        "file": "EPUB/ch037.xhtml",
+        "previous": "y us, I shall, in the second place, as was before proposed, prove that the whole cause of the Protestants' separation from the church of Rome is strengthened and confirmed by us: \u2014",
+        "next": "There were some general principles on which the Protestants proceeded in their separation from the church of Rome, and which they constantly pleaded in justification thereof."
+      }
+    ],
+    "{\"next\": \"The first is, in case of idolatrous worship\", \"previous\": \"which he affirms to be three: \\u2014\"}": [
+      {
+        "file": "EPUB/ch037.xhtml",
+        "previous": "He proceeds to consider the cases wherein the Scripture allows of separation; which he affirms to be three: \u2014",
+        "next": "The first is, in case of idolatrous worship. This, none can question, they do not see, from whom yet we all separate as from idolaters."
+      }
+    ],
+    "{\"next\": \"The first is this: \\\"Those voluntary congregations\", \"previous\": \"He will prove it with two arguments: \\u2014\"}": [
+      {
+        "file": "EPUB/ch038.xhtml",
+        "previous": "flection on a dead man, I know not why, he replies, that this is \"not to the purpose, or rather, quite overthrows my hypothesis.\" But why so? He will prove it with two arguments: \u2014",
+        "next": "The first is this: \"Those voluntary congregations over which the apostles were set were no limited congregations of any one particular church; but those congregations over which th"
+      }
+    ],
+    "{\"next\": \"Ans. 1. Whereas this argument seems\", \"previous\": \"'voluntary congregations.'\\\"\"}": [
+      {
+        "file": "EPUB/ch038.xhtml",
+        "previous": "e those of which Justice Hobart speaks: and therefore it is plain he spake of all the churches which were under the care of the apostles, which he calls 'voluntary congregations.'\"",
+        "next": "Ans. 1. Whereas this argument seems to be cast into the form of a syllogism, I could easily manifest how asyllogistical it is, did I delight to contend with him or any else. But, \u2014"
+      }
+    ]
+  },
+  "warning_matches": {
+    "overlong_heading_candidates": [
+      "Some chapter headings are long enough to suggest swallowed body text"
+    ]
+  }
+}

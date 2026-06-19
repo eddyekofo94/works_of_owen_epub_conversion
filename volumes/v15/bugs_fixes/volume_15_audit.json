@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v15/output/volume_15.epub",
-  "generated_at": "2026-06-10T00:36:11.204062+00:00",
+  "generated_at": "2026-06-19T20:09:11.147955+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 143,
-    "epub_size_bytes": 6612312,
+    "epub_size_bytes": 6612753,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 137,
-      "unique_noteref_targets": 136,
-      "endnote_anchor_count": 136,
+      "noteref_count": 141,
+      "unique_noteref_targets": 140,
+      "endnote_anchor_count": 140,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -48,7 +48,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 1,
+      "repeated_phrase_count": 0,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 0,
@@ -63,7 +63,7 @@
       "trailing_scholastic_label_files": 0,
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
-      "lowercase_paragraph_start_files": 11,
+      "lowercase_paragraph_start_files": 0,
       "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
@@ -74,13 +74,7 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "repeated_phrase": [
-          {
-            "file": "combined_text",
-            "text": "chapter 7 no other church-state of divine institution",
-            "count": 1
-          }
-        ],
+        "repeated_phrase": [],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],
@@ -113,48 +107,7 @@
         "nav_overlong_entry": [],
         "nav_duplicate_text": [],
         "spaced_caps": [],
-        "lowercase_paragraph_start": [
-          {
-            "file": "EPUB/ch015.xhtml",
-            "text": "for until this be done, men are to be esteemed but as \"raging waves of the sea, f"
-          },
-          {
-            "file": "EPUB/ch018.xhtml",
-            "text": "because, as temporal commodities, so suits did increase. This judgment, though it"
-          },
-          {
-            "file": "EPUB/ch023.xhtml",
-            "text": "saith Hilary."
-          },
-          {
-            "file": "EPUB/ch037.xhtml",
-            "text": "unto whom of all sorts it is commanded that they should examine and try antichris"
-          },
-          {
-            "file": "EPUB/ch048.xhtml",
-            "text": "and that because \"there arose not a prophet afterwards in Israel like unto Moses,"
-          },
-          {
-            "file": "EPUB/ch051.xhtml",
-            "text": "and it is \"he that shall endure unto the end\" that shall be \"saved,\" Matthew 24:1"
-          },
-          {
-            "file": "EPUB/ch052.xhtml",
-            "text": "or profession, \"is made unto salvation;\" John 12:42-45. Now, this profession of t"
-          },
-          {
-            "file": "EPUB/ch058.xhtml",
-            "text": "and he rejecteth all that honor which is given him by those whose fear towards hi"
-          },
-          {
-            "file": "EPUB/ch060.xhtml",
-            "text": "so he doth plainly declare wherein the apostasy and sin itself should principally"
-          },
-          {
-            "file": "EPUB/ch064.xhtml",
-            "text": "so Deuteronomy 5:27. And hereby they had their solemn admission into their church"
-          }
-        ],
+        "lowercase_paragraph_start": [],
         "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
@@ -163,5 +116,8 @@
     },
     "nav_link_count": 110,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
-  }
+  },
+  "unused_whitelist_epub_warnings": [
+    "repeated_phrases"
+  ]
 }

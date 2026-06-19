@@ -1,26 +1,14 @@
 {
-  "volume": 15,
+  "volume": "15",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/input/owen-v15.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub",
-  "generated_at": "2026-06-10T00:36:51.121332+00:00",
+  "generated_at": "2026-06-19T20:19:17.234086+00:00",
   "status": "warn",
-  "warning_count": 8,
+  "warning_count": 3,
   "warnings": [
     {
       "code": "weak_page_coverage",
       "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
     },
     {
       "code": "overlong_heading_candidates",
@@ -29,31 +17,29 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "low_latin_tagging",
-      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
-    },
-    {
-      "code": "low_latin_translation_coverage",
-      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
-    "page_count": 683
+    "page_count": 683,
+    "skipped_detected": []
   },
   "epub": {
     "spine_text_files": 107,
-    "paragraph_count": 2435
+    "paragraph_count": 2416
   },
   "word_coverage": {
     "pdf_content_tokens": 221576,
-    "epub_content_tokens": 223303,
-    "coverage_ratio": 0.9994,
+    "epub_content_tokens": 223326,
+    "coverage_ratio": 0.9993,
     "missing_word_samples": [
       {
         "word": "pre",
         "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "theft",
+        "pdf": 5,
         "epub": 0
       },
       {
@@ -74,22 +60,12 @@
     ],
     "excess_word_samples": [
       {
-        "word": "churchstate",
-        "pdf": 0,
-        "epub": 19
-      },
-      {
         "word": "digital",
         "pdf": 0,
         "epub": 10
       },
       {
         "word": "theological",
-        "pdf": 0,
-        "epub": 9
-      },
-      {
-        "word": "churchcommunion",
         "pdf": 0,
         "epub": 9
       },
@@ -147,170 +123,9 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 29601,
-    "missing_dense_window_pages": 40,
-    "missing_dense_windows": [
-      {
-        "page": 3,
-        "sample": "righteousness and legal ceremonies contended for together the reason of it chapter the disciples"
-      },
-      {
-        "page": 4,
-        "sample": "worship prohibitions of additions produced considered applied chapter of the authority needful for the"
-      },
-      {
-        "page": 5,
-        "sample": "ignorance readiness to take offense remedies hereof pride false teachers chapter grounds and reasons"
-      },
-      {
-        "page": 7,
-        "sample": "discourse concerning liturgies and their imposition prefatory note it deserves attention that this pamphlet"
-      },
-      {
-        "page": 10,
-        "sample": "from the authority of the law maker the latter he utterly rejected as introduced"
-      },
-      {
-        "page": 17,
-        "sample": "de rom pontif lib cap but whereas they double the mumber of the sacred"
-      },
-      {
-        "page": 19,
-        "sample": "executed by persons variously called thereunto acording to his mind and will the only"
-      },
-      {
-        "page": 29,
-        "sample": "their religion as were then fallen out lib concione advocata cum solenne carmen precationis"
-      },
-      {
-        "page": 34,
-        "sample": "about such things as were not in rerum natura in the days wherein those"
-      },
-      {
-        "page": 52,
-        "sample": "may keep the commandments of the lord your god which command you chapter what"
-      },
-      {
-        "page": 75,
-        "sample": "with the occasions and reasons of the present differences and divisions about things sacred"
-      },
-      {
-        "page": 90,
-        "sample": "and power do make compliance with themselves in all their impositions and self interested"
-      },
-      {
-        "page": 102,
-        "sample": "in our hearts and made natural unto us by that one and self same"
-      },
-      {
-        "page": 103,
-        "sample": "profess and yet notwithstanding all this such cross entangled wheels are there in the"
-      },
-      {
-        "page": 106,
-        "sample": "9-11 he would not continue from generation to generation to scatter his pearls where"
-      },
-      {
-        "page": 108,
-        "sample": "judge by the fundamental principles and laws of their church communion but men ought"
-      },
-      {
-        "page": 115,
-        "sample": "them who first possessed the rule of such churches about their dignities pre eminencies"
-      },
-      {
-        "page": 119,
-        "sample": "where the calves were set up kings chronicles accordingly many of the most zealous"
-      },
-      {
-        "page": 126,
-        "sample": "should all or any of them immediately forfeit their church state so as to"
-      },
-      {
-        "page": 137,
-        "sample": "far easier thing to satisfy conscience with pretense of preserving church-unity by an acqui-escency"
-      },
-      {
-        "page": 138,
-        "sample": "fell out among them on account of pre eminences jurisdictions liturgies rites ceremonies violently"
-      },
-      {
-        "page": 141,
-        "sample": "about revealed truths nor different practice in sacred administrations but pride self interest love"
-      },
-      {
-        "page": 145,
-        "sample": "ordained or for which pastors and teachers are granted unto the church ephesians and"
-      },
-      {
-        "page": 180,
-        "sample": "to observe when imposed as necessary conditions of all church communion contrary to the"
-      },
-      {
-        "page": 188,
-        "sample": "who were recommended unto the church by the apostle john probably because they would"
-      },
-      {
-        "page": 189,
-        "sample": "and unskilful as to degrees in the word of truth romans philippians hebrews but"
-      },
-      {
-        "page": 200,
-        "sample": "advantages prompts them to pour out upon us for our non compliance with their"
-      },
-      {
-        "page": 218,
-        "sample": "are cast out and excluded from church communion with them by the unscriptural conditions"
-      },
-      {
-        "page": 219,
-        "sample": "to act obedientially towards him and ministerially towards others and were church actings considered"
-      },
-      {
-        "page": 239,
-        "sample": "to be supposed that diotrephes was alone in his desire of pre eminence nor"
-      },
-      {
-        "page": 245,
-        "sample": "christian nations but to give farther evidence hereunto shall consider the causes afore mentioned"
-      },
-      {
-        "page": 248,
-        "sample": "did the example of the apostolical churches acts 23-31 instances of such meetings may"
-      },
-      {
-        "page": 250,
-        "sample": "no intimation is given of any pre eminence or superiority amongst them of one"
-      },
-      {
-        "page": 269,
-        "sample": "quidem est nomen pacis et pulchra opinio unitatis sed quis ambigat earn solam unicam"
-      },
-      {
-        "page": 271,
-        "sample": "of force in the arguments pleaded for non compliance with arbitrary unnecessary impositions that"
-      },
-      {
-        "page": 289,
-        "sample": "to think of or to assert any other church state it was impossible that"
-      },
-      {
-        "page": 293,
-        "sample": "good in there is no benefit to be obtained by any church state whatever"
-      },
-      {
-        "page": 297,
-        "sample": "especial nature and condition of the evangelical church state such the relation of it"
-      },
-      {
-        "page": 300,
-        "sample": "the majesty of the name of the lord his god micah so did they"
-      },
-      {
-        "page": 307,
-        "sample": "have dominion over your faith but are helpers of your joy chap for we"
-      }
-    ]
+    "dense_windows_checked": 29353,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 4,
@@ -414,7 +229,7 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2000,
+    "paragraphs_checked": 1981,
     "split_candidate_count": 0,
     "split_candidates": [],
     "structural_start_exclusions": 243,
@@ -583,40 +398,14 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 2,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch026.xhtml",
-        "text": "Whereas, therefore, the Lord Christ, in the exercise of his right and power, on the grant of the Father of a perpetual visible kingdom in this world, and the discharge of his own promise, hath, — (1.) Appointed the ordinary offices, which he will have continue"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "text": "It might be easily demonstrated what great numbers [there are] amongst us, — [1.] Who have imbibed atheistical opinions, and either vent them or speak presumptuously, according unto their influence and tendency every day; [2.] Who are profane scoffers at all t"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 4,
-    "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch007.xhtml",
-        "text": "30. again, cap. 39:"
-      },
-      {
-        "file": "EPUB/ch029.xhtml",
-        "text": "42. Montanus fell into his dotage on the same account; so did Novatianus at Rome, Euseb., lib. 6 cap. 43, and Arius at Alexandria. Hence is that censure of them by Lactantius, lib. 4 cap. 30:"
-      },
-      {
-        "file": "EPUB/ch034.xhtml",
-        "text": "12. If the reader would have an account of the lives and manners of the first churches in their members, he may find it in Clem. Epist. ad Cor . pp. 2-4; Justin Mart. Apol. 2; Tertullian in his Algol. and lib. 2 ad Uxor."
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "text": "15. So in the excellent epistle of the churches of Vienne and Lyons unto the churches of Asia and Phrygia, concerning the persecutions that befell them, as they declare themselves to have been particular churches only, s"
-      }
-    ],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
     "roman_heading_candidate_count": 0,
     "roman_heading_candidates": [],
     "overlong_heading_candidate_count": 7,
@@ -688,11 +477,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p476",
+            "location": "EPUB/ch023.xhtml#p473",
             "context": "(1.) That the reasons and arguings of the Doctor in this matter, — the necessity of his cause compelling him thereunto, — are the same with those of the Papists about the apostasy of t"
           },
           {
-            "location": "EPUB/ch023.xhtml#p504",
+            "location": "EPUB/ch023.xhtml#p501",
             "context": "(1.) It is evident that there was an alteration made in the state of the church as to its officers; for it issued at last in popes, patriarchs, cardinals, metropolitan and diocesan bis"
           }
         ]
@@ -707,11 +496,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p477",
+            "location": "EPUB/ch023.xhtml#p474",
             "context": "(2.) But it may be pleaded, that although the churches following the first ages did insensibly degenerate from the purity and simplicity of gospel faith and worship, yet they neither d"
           },
           {
-            "location": "EPUB/ch023.xhtml#p505",
+            "location": "EPUB/ch023.xhtml#p502",
             "context": "(2.) The beginnings of this great alteration were small, nor at all perceived in the days wherein they were first acted. Nor is it agreed, nor, as far as I see, will it ever be agreed"
           }
         ]
@@ -726,11 +515,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p478",
+            "location": "EPUB/ch023.xhtml#p475",
             "context": "[1.] That as unto the original of any thing that looks like diocesan episcopacy, or the pastoral relation of one person of a distinct order from presbyters unto many particular complet"
           },
           {
-            "location": "EPUB/ch023.xhtml#p523",
+            "location": "EPUB/ch023.xhtml#p520",
             "context": "[1.] They did not think themselves obliged, they did not think meet, to abide within the bounds and limits of that reformation of the church which had been attempted before them, by me"
           }
         ]
@@ -756,11 +545,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p480",
+            "location": "EPUB/ch023.xhtml#p477",
             "context": "[2.] Why may not the churches be supposed to have departed from their original constitution, order, and rule, as well as from their first faith and worship? which they did gradually, i"
           },
           {
-            "location": "EPUB/ch023.xhtml#p524",
+            "location": "EPUB/ch023.xhtml#p521",
             "context": "[2.] They did not at once make what they had done themselves to be a fixed rule in these things, for themselves made many alterations in the service-book which they first composed; and"
           }
         ]
@@ -894,104 +683,19 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1575,
-    "epub_latin_word_count": 1596,
-    "epub_tagged_latin_word_count": 473,
-    "pdf_latin_unique_words": 601,
-    "epub_latin_unique_words": 605,
-    "epub_tagged_unique_words": 309,
-    "latin_word_coverage_ratio": 0.9968,
-    "latin_tagging_ratio": 0.2964,
+    "pdf_latin_word_count": 735,
+    "epub_latin_word_count": 741,
+    "epub_tagged_latin_word_count": 408,
+    "pdf_latin_unique_words": 463,
+    "epub_latin_unique_words": 465,
+    "epub_tagged_unique_words": 274,
+    "latin_word_coverage_ratio": 0.9946,
+    "latin_tagging_ratio": 0.5506,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
-        "word": "dissent",
-        "epub": 42,
-        "tagged": 1
-      },
-      {
-        "word": "separate",
-        "epub": 34,
-        "tagged": 0
-      },
-      {
-        "word": "immediate",
-        "epub": 33,
-        "tagged": 0
-      },
-      {
-        "word": "severe",
-        "epub": 32,
-        "tagged": 0
-      },
-      {
-        "word": "plea",
-        "epub": 31,
-        "tagged": 0
-      },
-      {
-        "word": "magistrate",
-        "epub": 30,
-        "tagged": 0
-      },
-      {
-        "word": "sincere",
-        "epub": 29,
-        "tagged": 0
-      },
-      {
-        "word": "communicate",
-        "epub": 26,
-        "tagged": 0
-      },
-      {
-        "word": "poor",
-        "epub": 25,
-        "tagged": 0
-      },
-      {
-        "word": "mere",
-        "epub": 24,
-        "tagged": 1
-      },
-      {
-        "word": "pleas",
-        "epub": 20,
-        "tagged": 0
-      },
-      {
-        "word": "asia",
-        "epub": 18,
-        "tagged": 1
-      },
-      {
-        "word": "elsewhere",
-        "epub": 16,
-        "tagged": 0
-      },
-      {
-        "word": "sum",
-        "epub": 15,
-        "tagged": 0
-      },
-      {
-        "word": "eusebius",
-        "epub": 18,
-        "tagged": 5
-      },
-      {
         "word": "alexandria",
         "epub": 13,
-        "tagged": 0
-      },
-      {
-        "word": "intimate",
-        "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "relate",
-        "epub": 12,
         "tagged": 0
       },
       {
@@ -1000,91 +704,134 @@
         "tagged": 0
       },
       {
-        "word": "whereinto",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "debate",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
-        "word": "adhere",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
-        "word": "everywhere",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
         "word": "polycarpus",
         "epub": 10,
         "tagged": 0
       },
       {
-        "word": "irenaeus",
-        "epub": 10,
+        "word": "regulate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "epiphanius",
+        "epub": 9,
+        "tagged": 1
+      },
+      {
+        "word": "cornelius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "smyrna",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "judea",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "phrygia",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "montanus",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "dionysius",
+        "epub": 5,
+        "tagged": 1
+      },
+      {
+        "word": "adequate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "clamor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "rumor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "congregate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "celebrate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "baronius",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "obviate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "perpetuate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "archippus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "arius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "novatus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "decius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "meletius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "pella",
+        "epub": 3,
         "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 62,
+    "latin_clauses_checked": 57,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 118,
-    "translated_latin_runs_count": 52,
-    "latin_translation_ratio": 0.4407,
+    "tagged_latin_runs_count": 103,
+    "translated_latin_runs_count": 63,
+    "latin_translation_ratio": 0.6117,
     "untranslated_latin_samples": [
       {
-        "phrase": "Musculus, Grotius"
-      },
-      {
-        "phrase": "Santesius, Pamelius"
-      },
-      {
-        "phrase": "Alcuinus, Amatorius, Rabanus"
-      },
-      {
-        "phrase": "Walafridus Strabo, Rupertus Titiensis, Berno, Radulphus Tangrensis"
-      },
-      {
-        "phrase": "Baronius, ad an. Christi"
-      },
-      {
-        "phrase": "De Nativitate"
-      },
-      {
-        "phrase": "ad Orthodoxos, Dionysius"
-      },
-      {
-        "phrase": "manibus expansis"
-      },
-      {
-        "phrase": "de facto"
-      },
-      {
-        "phrase": "in Asia or Africa"
-      },
-      {
-        "phrase": "Paulus Samosatenus"
-      },
-      {
-        "phrase": "Mendacium mendacio tegendum ne"
-      },
-      {
-        "phrase": "Spiritum Sanctum, et libere dicamus, defendamus, clamemus, et per eum qui"
-      },
-      {
         "phrase": "in aeternum juremus, pontificem Romanum esse antichristum"
-      },
-      {
-        "phrase": "Hegesippus in Eusebius"
       },
       {
         "phrase": "Ecclesia ut synagoga"
@@ -1100,6 +847,48 @@
       },
       {
         "phrase": "aliquid videri"
+      },
+      {
+        "phrase": "Hinc omnis"
+      },
+      {
+        "phrase": "Iliacos intra muros peccatur et extra"
+      },
+      {
+        "phrase": "Servilius Paulus"
+      },
+      {
+        "phrase": "spolianda trophaeis"
+      },
+      {
+        "phrase": "Samosatenus, Eudoxius, Gnapheus, Severus"
+      },
+      {
+        "phrase": "Demophilus, Anthorinus"
+      },
+      {
+        "phrase": "Lucius, Dioscorus, Aelurus, Sergius"
+      },
+      {
+        "phrase": "Futuri judicii praejudicium"
+      },
+      {
+        "phrase": "potentissimas literas:\" — \"Sub hoc"
+      },
+      {
+        "phrase": "Claudius Ephebus, Valerius, Bito, Fortunatus"
+      },
+      {
+        "phrase": "Minutius Fundanus"
+      },
+      {
+        "phrase": "Antoninus Plus"
+      },
+      {
+        "phrase": "Marcus ‡  Antoninus"
+      },
+      {
+        "phrase": "conscientia religionis, et disciplinae unitate, et"
       }
     ]
   },
@@ -1114,6 +903,14 @@
   "font_config_check": {
     "font_issue_count": 0,
     "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "paragraph_splits": [
+      "1 . Particular churches or congregations, with their order and rule, are of divi"
+    ],
+    "ignored_warnings": [
+      "repeated_phrases"
+    ]
   },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."

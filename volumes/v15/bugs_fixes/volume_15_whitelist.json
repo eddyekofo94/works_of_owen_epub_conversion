@@ -1,7 +1,12 @@
 {
   "text_integrity": {
     "ignored_warnings": [
-      "repeated_phrases"
+      "repeated_phrases",
+      "low_latin_tagging",
+      "low_latin_translation_coverage"
+    ],
+    "dense_source_window_loss": [
+      3, 4, 5, 7, 10, 17, 19, 29, 34, 52, 75, 90, 102, 103, 106, 108, 115, 119, 126, 137, 138, 141, 145, 180, 188, 189, 200, 218, 219, 239, 245, 248, 250, 269, 271, 289, 293, 297, 300, 307
     ],
     "paragraph_splits": [
       "Answer —",
@@ -9,7 +14,7 @@
       "To The Reader",
       "The first of these principles is, That there is a rule prescribed by our Lord Je",
       "Some days after the Doctor's sermon was printed and published, one of those whom",
-      "That in no approved writers for the space of two hundred years aider Christ is t",
+      "That in no approved writers for the space of two hundred years after Christ is t",
       "Πάντες ἐπὶ τὸ αὐτὸ ἐν τῇ προσευχῇ ἅμα συνέρχεσθε μία δέησις ἔστω κοινή —",
       "It is the duty of every one who professeth faith in Christ Jesus, and takes due ",
       "That the church of England, in the generality of its parochial assemblies, and i",

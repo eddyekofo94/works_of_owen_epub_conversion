@@ -6852,6 +6852,36 @@ BODY_TRANSLATIONS = {
     "ignis fatuus": (
         "<b>Modern Translation:</b> &ldquo;foolish fire [will-o'-the-wisp].&rdquo;"
     ),
+    "Musculus, Grotius": (
+        "<b>Translation:</b> 'Musculus, Grotius' (proper names)."
+    ),
+    "Santesius, Pamelius": (
+        "<b>Translation:</b> 'Santesius, Pamelius' (proper names)."
+    ),
+    "Alcuinus, Amatorius, Rabanus": (
+        "<b>Translation:</b> 'Alcuin, Amatorius, Rabanus' (proper names)."
+    ),
+    "Strabo, Rupertus Titiensis, Berno, Radulphus Tangrensis": (
+        "<b>Translation:</b> 'Strabo, Rupert of Deutz, Berno, Ralph of Tongres' (proper names)."
+    ),
+    "Baronius, ad an. Christi": (
+        "<b>Translation:</b> 'Baronius, to the year of Christ'."
+    ),
+    "ad Orthodoxos, Dionysius": (
+        "<b>Translation:</b> 'To the Orthodox, Dionysius'."
+    ),
+    "manibus expansis": (
+        "<b>Translation:</b> 'With outstretched hands'."
+    ),
+    "Paulus Samosatenus": (
+        "<b>Translation:</b> 'Paul of Samosata' (proper name)."
+    ),
+    "Mendacium mendacio tegendum ne": (
+        "<b>Translation:</b> 'A lie must be covered by a lie, lest [it rain through].' (A proverb, full version: <i>Mendacium mendacio tegendum ne perpluat</i>)."
+    ),
+    "Spiritum Sanctum, et libere dicamus, defendamus, clamemus, et per eum qui": (
+        "<b>Translation:</b> '[follow] the Holy Spirit, and let us freely say, defend, cry out, and swear by Him who [lives forever].' (A quotation from William Whitaker)."
+    )
 }
 
 GLOSSARY_TERMS = {
@@ -6859,8 +6889,8 @@ GLOSSARY_TERMS = {
         "<b>Editorial Note:</b> In 17th-century scholastic theology, 'subordination' within the Trinity refers to the <i>order of subsistence</i> (taxis) or origin—where the Father is the unbegotten origin (<i>fons divinitatis</i>) and the Son is eternally generated—and not to any inequality or inferiority in the divine essence or nature."
     ),
     "fons et origo Trinitatis": (
-        "<b>Translation:</b> 'The fount and origin of the Trinity', a theological phrase denoting the Father's role as the unbegotten source of the Son and the Spirit."
-    ),
+        "<b>Editorial Note:</b> 'The fount and origin of the Trinity', a theological phrase denoting the Father's role as the unbegotten source of the Son and the Spirit."
+    )
 }
 
 INLINE_TRANSLATIONS = {

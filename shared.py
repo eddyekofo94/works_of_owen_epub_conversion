@@ -1113,7 +1113,7 @@ ROMAN_ONLY_RE = re.compile(
 )
 PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
 CITATION_ABBREV_TRAIL_RE = re.compile(
-    r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|tractat|tractatus|homil|haer|dial|'
+    r'\b(?:cap|chap|lib|serm|sermo|epist|orat|tract|tractat|tractatus|homil|haer|haeres|cont|dial|'
     r'enchirid|distinct|q|a|p|pp|page|pages|sec|ad|m|aen|liv|hist)\.?\s*$'
     r'|'
     r'\b(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|Esth|Job|Ps|Prov|Eccl|Cant|'
@@ -1127,7 +1127,7 @@ CITATION_ABBREV_TRAIL_RE = re.compile(
     r'Plin|Arist|Plat|Justin|Iren|Alex|Alexand|Mart)\.\s*$'
     r'|'
     # Scholarly citation tails: "cap. 8," / "q. 81,"
-    r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|tractat|tractatus|homil|haer|dial|'
+    r'\b(?:cap|chap|lib|serm|sermo|epist|ep|orat|tract|tractat|tractatus|homil|haer|haeres|cont|dial|'
     r'enchirid|distinct|quest|art|dist|part|vol|q|a|m|p|pp|sec|ad|aen|liv|hist)'
     r'\.?\s+\d+(?:[-,;]\s*\d+)*,?\s*$'
     r'|'

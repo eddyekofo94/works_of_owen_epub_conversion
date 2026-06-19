@@ -1,0 +1,35 @@
+{
+  "volume": "15",
+  "total_words_audited": 265626,
+  "total_anomalies_count": 2,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "est ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Preface.",
+        "contexts": [
+          "... solam, unicam, ecclesiae pacem esse, quae Christi est ,\" Saith Hilary. Suppose that men retain a form of ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 5 - the State of the First Churches After the Apostles",
+        "contexts": [
+          "... \u03c9\u03bd \u1f00\u03bd\u03b4\u03c1\u1ff6\u03bd \u03c3\u03c5\u03bd\u03b5\u03c5\u03b4\u03bf\u03ba\u03b7\u03c3\u03ac\u03c3\u03b7\u03c2 \u03c4\u1fc6\u03c2 \u1f10\u03ba\u03ba\u03bb\u03b7\u03c3\u03af\u03b1\u03c2 \u03c0\u03ac\u03c3\u03b7\u03c2 \u03ba.\u03c4.\u03bb.. \u2014 \"Our apostles, therefore, knowing by our Lord ...",
+          "... \u03c9\u03c4\u03b9\u03c3\u03b8\u03ad\u03bd\u03c4\u03bf\u03c2 \u03ba\u03b1\u1f76 \u1f04\u03bb\u03bb\u03c9\u03bd \u03c0\u03b1\u03bd\u03c4\u03b1\u03c7\u03bf\u1fe6 \u03c0\u03ac\u03bd\u03c4\u03c9\u03bd \u03b5\u1f50\u03c4\u03cc\u03bd\u03c9\u03c2 \u03ba.\u03c4.\u03bb.. \u2014 \"Him who is thus baptized, who believeth, and ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {}
+}

@@ -115,7 +115,7 @@ _V15_CATECHISM_CSS = """
 # ---------------------------------------------------------------------------
 
 _V15_QA_RE = re.compile(
-    r'<p(?P<attrs>[^>]*)>\s*(?P<body>(?:Q(?:uestion)?|A(?:ns(?:wer)?)?)\..*?)</p>',
+    r'<p(?P<attrs>[^>]*)>\s*(?P<body>(?:<[^>]+>)*\s*(?:Q(?:uestion)?|A(?:ns(?:wer)?)?|Explication)\b.*?)</p>',
     re.S | re.I,
 )
 
@@ -128,16 +128,18 @@ def _postprocess_v15_catechism_html(html, chapter):
 
     def _style_qa(m):
         body = m.group('body').strip()
-        if re.match(r'Q(?:uestion)?\.', body, re.I):
-            return f'<p class="v15-catechism-question">{body}</p>'
-        elif re.match(r'A(?:ns(?:wer)?)?\.', body, re.I):
-            return f'<p class="v15-catechism-answer">{body}</p>'
+        text = re.sub(r'<[^>]+>', '', body)
+        if re.match(r'Q(?:uestion)?\b', text, re.I):
+            return f'<p class="catechism-item v15-catechism-question">{body}</p>'
+        elif re.match(r'(?:A(?:ns(?:wer)?)?|Explication)\b', text, re.I):
+            return f'<p class="catechism-item v15-catechism-answer">{body}</p>'
         return m.group(0)
 
     return _V15_QA_RE.sub(_style_qa, html)
 
 
 def post_extract_hook(intermediate: dict) -> dict:
+    import re
     # Process chapters for sequence split and OCR footnote corruptions
     for ch in intermediate.get('chapters', []):
         text = ch.get('raw_text', '')
@@ -159,6 +161,15 @@ def post_extract_hook(intermediate: dict) -> dict:
         text = text.replace('Philippians 44:15 2:15', 'Philippians 2:15')
         text = text.replace('Philippians 47:16 2:16', 'Philippians 2:16')
         
+        # Heal broken reference continuations causing suspicious large number starts
+        text = text.replace('Apol., cap.\n\n30. again', 'Apol., cap. 30. again')
+        text = text.replace('Epiphan. Haeres.\n\n42. Montanus', 'Epiphan. Haeres. 42. Montanus')
+        text = text.replace('lib. 3 cap.\n\n12. If the reader', 'lib. 3 cap. 12. If the reader')
+        text = text.replace('Euseb. lib. 4 cap.\n\n15. So in the excellent', 'Euseb. lib. 4 cap. 15. So in the excellent')
+
+        # Remove leaked AGES scripture tags (e.g. <490416>)
+        text = re.sub(r'<\d{6,}>', '', text)
+        
         # Unresolved citations fixes
         text = text.replace('Deorum [[BLOCKQUOTE]] comprecatio', 'Deorum comprecatio')
         text = text.replace('opinion with him, lib. 4 cap. 10.', 'opinion with him, Theodoret, lib. 4 cap. 10.')
@@ -179,6 +190,20 @@ def post_extract_hook(intermediate: dict) -> dict:
             'Speciosum quidem est nomen pacis, et pulchra opinio unitatis, sed quis ambigat earn solam, unicam, ecclesiae pacem esse, quae Christi est',
             '<span lang="la" xml:lang="la">Speciosum quidem est nomen pacis, et pulchra opinio unitatis, sed quis ambigat eam solam, unicam, ecclesiae pacem esse, quae Christi est</span>'
         )
+        # Capitalise 'saith Hilary' to prevent it from merging into the preceding blockquote paragraph
+        text = text.replace('saith Hilary. Suppose', 'Saith Hilary. Suppose')
+        
+        # Priority 2 OCR misreads
+        text = text.replace('theft the ', 'that the ')
+        text = text.replace('theft it ', 'that it ')
+        text = text.replace('theft sentence', 'that sentence')
+        text = text.replace('theft numbers', 'that numbers')
+        text = text.replace('parochisl', 'parochial')
+        text = text.replace('cougregational', 'congregational')
+        text = text.replace('ms infinite', 'his infinite')
+        text = text.replace('Hobart alarms', 'Hobart affirms')
+        text = text.replace('aider Christ', 'after Christ')
+        text = text.replace('afar the apostles', 'after the apostles')
         
         ch['raw_text'] = text
         
@@ -202,9 +227,21 @@ OVERRIDES = {
         'A Short Catechism': _V15_CATECHISM_TITLE_PAGE,
     },
     'text_replacements': {
+        # Compound word merging fixes (extract.py drops hyphen at line breaks)
+        'churchcommunion': 'church-communion',
+        'preeminence': 'pre-eminence',
+        'churchrule': 'church-rule',
+        'churchpower': 'church-power',
+        'churchaffairs': 'church-affairs',
+        # churchofficers must be processed before churchofficer because it is a superstring.
+        # Python 3.7+ preserves dict insertion order.
+        'churchofficers': 'church-officers',
+        'churchofficer': 'church-officer',
+        'churchorder': 'church-order',
+        'churchstate': 'church-state',
+        'churchsocieties': 'church-societies',
         # OCR corruption in JSON title and body
         'Axplanation': 'Explanation',
-        'Stillingfleet ': 'Stillingfleet ',  # preserve spacing
         # Repair possessive OCR artifact (shared with v14 pattern)
         "Stillingfleetìs": "Stillingfleet's",
         # Fix consecutive duplicate words
@@ -230,7 +267,6 @@ OVERRIDES = {
         'it ?': 'it?',
         'infected ?': 'infected?',
         'efficacy ;': 'efficacy;',
-        '..': '.',
     },
     'regex_replacements': {
         # Fix doubled punctuation sequence where word boundary would fail

@@ -1,0 +1,959 @@
+{
+  "volume": "15",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/input/owen-v15.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub",
+  "generated_at": "2026-06-16T10:46:55.458077+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 683,
+    "skipped_detected": []
+  },
+  "epub": {
+    "spine_text_files": 107,
+    "paragraph_count": 2419
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 221576,
+    "epub_content_tokens": 223304,
+    "coverage_ratio": 0.9994,
+    "missing_word_samples": [
+      {
+        "word": "pre",
+        "pdf": 6,
+        "epub": 0
+      },
+      {
+        "word": "self",
+        "pdf": 5,
+        "epub": 1
+      },
+      {
+        "word": "eminence",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "defence",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "churchstate",
+        "pdf": 0,
+        "epub": 19
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 0,
+        "epub": 9
+      },
+      {
+        "word": "historical",
+        "pdf": 1,
+        "epub": 9
+      },
+      {
+        "word": "greek",
+        "pdf": 6,
+        "epub": 13
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "modern",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "edition",
+        "pdf": 5,
+        "epub": 11
+      },
+      {
+        "word": "hebrew",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 675,
+    "weak_page_count": 3,
+    "weak_pages": [
+      {
+        "page": 115,
+        "hit_ratio": 0.333,
+        "sample": "empire so was the mystery of iniquity consummated for whereas the pope to secure his new acquisitions endeavored to empale the title and privileges"
+      },
+      {
+        "page": 224,
+        "hit_ratio": 0.333,
+        "sample": "an inquiry into the original nature institution power order and communion of evangelical churches the first part with an answer to the discourse of"
+      },
+      {
+        "page": 609,
+        "hit_ratio": 0.333,
+        "sample": "ephesians 20-22 ye are built upon the foundation of the apostles and prophets jesus christ himself being the chief corner-stone in whom all the"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 29537,
+    "missing_dense_window_pages": 1,
+    "missing_dense_windows": [
+      {
+        "page": 270,
+        "sample": "have power to appoint others will judge themselves to have liberty to refuse fifthly"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 4,
+    "front_toc_windows_checked": 16,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 680,
+    "top_windows_usable": 659,
+    "skipped_top_window_count": 13,
+    "skipped_top_windows": [
+      {
+        "page": 258,
+        "window": "the first reformers both bishops and others both those who underwent martyrdom at home",
+        "sample": "[3.] The first reformers, both bishops and others, both those who underwent martyrdom at home and those who lived in exile abroad,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 301,
+        "window": "by virtue of purchase he hath by the price of his most precious blood",
+        "sample": "[2.] By virtue of purchase: he hath by the price of his most precious blood purchased them unto his own power and disposal. He \"purchased",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 321,
+        "window": "that believers as they are internal spiritual real subjects of christ's kingdom may together",
+        "sample": "[1.] That believers, as they are internal, spiritual, real subjects of Christ's kingdom, may together act that faith and those graces whereby they are so,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 371,
+        "window": "of the epistle cap σπουδαζετε ουν πυκνοτερον συνερχεσθαι οταν γαρ συνεχως επι το αυτο",
+        "sample": "of the epistle [cap. 13]: Σπουδάζετε οῦν πυκνότερον συνέρχεσθαι ὅταν γὰρ συνεχῶς ἐπὶ τὸ αὐτὸ γένησθε καθαιροῦνται αἱ δυνάμεις",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 373,
+        "window": "they professed their faith or assent unto the truth of the doctrine of the",
+        "sample": "[1.] They professed their faith or assent unto the truth of the doctrine of the gospel;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 385,
+        "window": "present suitable objects unto all the acts and duties of it description and prescription",
+        "sample": "[1.] Present suitable objects unto all the acts and duties of it; [2.] A description and prescription of those acts and duties;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 410,
+        "window": "that although the being of this or that or any particular church in the",
+        "sample": "[1.] That although the being of this or that or any particular church in the world will not secure the salvation of any men, yet the adherence",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 411,
+        "window": "such church-state was constituted and appointed under the old testament founded in and on",
+        "sample": "[3.] Such a church-state was constituted and appointed under the Old Testament, founded in and on an especial covenant between God and the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 412,
+        "window": "he hath prescribed sundry duties unto us both as necessary and as evidences of",
+        "sample": "[6.] He hath prescribed sundry duties unto us, both as necessary and as evidences of our being his disciples, such as cannot be orderly performed",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 418,
+        "window": "on the duty of believers or of the church which is to choose call",
+        "sample": "[3.] On the duty of believers or of the church, which is to choose, call, and solemnly set apart unto the office of the ministry such as the Lord",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 444,
+        "window": "who live in constant neglect of all more private holy duties whether in their",
+        "sample": "[5.] Who live in a constant neglect of all more private holy duties, whether in their families or in personal retirement;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 557,
+        "window": "they believers will receive nothing practice nothing own nothing in his worship but what",
+        "sample": "They [believers] will receive nothing, practice nothing, own nothing in His worship, but what is of His appointment. They know that from the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 673,
+        "window": "are-admission unto the exercise and enjoyment of his former privileges in the fellowship of",
+        "sample": "[2.] Are-admission unto the exercise and enjoyment of his former privileges in the fellowship of the church; all with a spirit of meekness,",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 646,
+    "bottom_windows_usable": 615,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 1984,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 243,
+    "short_fragment_count": 102,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "Cels., lib. 8."
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "Yet, —"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": "I answer briefly, —"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "text": "Yea, but, —"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "I say, therefore, —"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "Or, —"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch040.xhtml",
+        "text": "OWEN ON COMMUNION WITH GOD."
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "That we:"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "That we: 1. worship him"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch051.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch052.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch055.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch055.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "Answer —"
+      },
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "Explication —"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "Answer —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 4,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "30. again, cap. 39:"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "42. Montanus fell into his dotage on the same account; so did Novatianus at Rome, Euseb., lib. 6 cap. 43, and Arius at Alexandria. Hence is that censure of them by Lactantius, lib. 4 cap. 30:"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "12. If the reader would have an account of the lives and manners of the first churches in their members, he may find it in Clem. Epist. ad Cor. pp. 2-4; Justin Mart. Apol. 2; Tertullian in his Algol. and lib. 2 ad Uxor. "
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "15. So in the excellent epistle of the churches of Vienne and Lyons unto the churches of Asia and Phrygia, concerning the persecutions that befell them, as they declare themselves to have been particular churches only, s"
+      }
+    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 7,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch049.xhtml",
+        "tag": "h3",
+        "text": "MAY NOT SUCH AN ESTATE OF FAITH AND PERFECTION IN OBEDIENCE BE ATTAINED IN THIS LIFE, AS WHEREIN BELIEVERS MAY BE FREED FROM ALL OBLIGATION UNTO THE OBSERVATION OF GOSPEL INSTITUTIONS?"
+      },
+      {
+        "file": "EPUB/ch056.xhtml",
+        "tag": "h3",
+        "text": "WHAT IS PRINCIPALLY TO BE ATTENDED UNTO BY US IN THE MANNER OF THE CELEBRATION OF THE WORSHIP OF GOD, AND OBSERVATION OF THE INSTITUTIONS AND ORDINANCES OF THE GOSPEL?"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "tag": "h3",
+        "text": "WHENCE MAY IT APPEAR THAT THE RIGHT AND DUE OBSERVATION OF INSTITUTED WORSHIP IS OF GREAT IMPORTANCE UNTO THE GLORY OF GOD, AND OF HIGH CONCERNMENT UNTO THE SOULS OF MEN?"
+      },
+      {
+        "file": "EPUB/ch065.xhtml",
+        "tag": "h3",
+        "text": "SEEING THE CHURCH IS A SOCIETY OR SPIRITUAL INCORPORATION OF PERSONS UNDER RULE, GOVERNMENT, OR DISCIPLINE, DECLARE WHO OR WHAT ARE THE RULERS, GOVERNORS, OR OFFICERS THEREIN UNDER JESUS CHRIST?"
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "tag": "h3",
+        "text": "SEEING THE CHURCH IS A SOCIETY OR SPIRITUAL INCORPORATION OF PERSONS UNDER RULE, GOVERNMENT, OR DISCIPLINE, DECLARE WHO OR WHAT ARE THE RULERS, GOVERNORS, OR OFFICERS THEREIN UNDER JESUS CHRIST?"
+      },
+      {
+        "file": "EPUB/ch071.xhtml",
+        "tag": "h3",
+        "text": "MAY A PERSON BE CALLED TO, OR BE EMPLOYED IN, A PART ONLY OF THE OFFICE OR WORK OF THE MINISTRY; OR MAY HE HOLD THE RELATION AND EXERCISE THE DUTY OF AN ELDER OR MINISTER UNTO MORE CHURCHES THAN ONE AT THE SAME TIME?"
+      },
+      {
+        "file": "EPUB/ch082.xhtml",
+        "tag": "h3",
+        "text": "MAY NOT THE CHURCH, IN THE SOLEMN WORSHIP OF GOD, AND CELEBRATION OF THE ORDINANCES OF THE GOSPEL, MAKE USE OF AND CONTENT ITSELF IN THE USE OF FORMS OF PRAYER IN AN UNKNOWN TONGUE COMPOSED BY OTHERS, AND PRESCRIBED UNTO THEM?"
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 402,
+    "epub_marker_count": 412,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p65",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 89,
+        "epub": 90,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p68",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p474",
+            "context": "(1.) That the reasons and arguings of the Doctor in this matter, — the necessity of his cause compelling him thereunto, — are the same with those of the Papists about the apostasy of t"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p502",
+            "context": "(1.) It is evident that there was an alteration made in the state of the church as to its officers; for it issued at last in popes, patriarchs, cardinals, metropolitan and diocesan bis"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 89,
+        "epub": 90,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p68",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p475",
+            "context": "(2.) But it may be pleaded, that although the churches following the first ages did insensibly degenerate from the purity and simplicity of gospel faith and worship, yet they neither d"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p503",
+            "context": "(2.) The beginnings of this great alteration were small, nor at all perceived in the days wherein they were first acted. Nor is it agreed, nor, as far as I see, will it ever be agreed"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 29,
+        "epub": 30,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p68",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p476",
+            "context": "[1.] That as unto the original of any thing that looks like diocesan episcopacy, or the pastoral relation of one person of a distinct order from presbyters unto many particular complet"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p521",
+            "context": "[1.] They did not think themselves obliged, they did not think meet, to abide within the bounds and limits of that reformation of the church which had been attempted before them, by me"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p65",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 29,
+        "epub": 30,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p68",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p478",
+            "context": "[2.] Why may not the churches be supposed to have departed from their original constitution, order, and rule, as well as from their first faith and worship? which they did gradually, i"
+          },
+          {
+            "location": "EPUB/ch023.xhtml#p522",
+            "context": "[2.] They did not at once make what they had done themselves to be a fixed rule in these things, for themselves made many alterations in the service-book which they first composed; and"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the whole body fitly joined together and compacted by that",
+      "count": 6
+    },
+    {
+      "phrase": "whole body fitly joined together and compacted by that which",
+      "count": 6
+    },
+    {
+      "phrase": "body fitly joined together and compacted by that which every",
+      "count": 6
+    },
+    {
+      "phrase": "fitly joined together and compacted by that which every joint",
+      "count": 6
+    },
+    {
+      "phrase": "joined together and compacted by that which every joint supplieth",
+      "count": 6
+    },
+    {
+      "phrase": "together and compacted by that which every joint supplieth according",
+      "count": 6
+    },
+    {
+      "phrase": "and compacted by that which every joint supplieth according to",
+      "count": 6
+    },
+    {
+      "phrase": "compacted by that which every joint supplieth according to the",
+      "count": 6
+    },
+    {
+      "phrase": "by that which every joint supplieth according to the effectual",
+      "count": 6
+    },
+    {
+      "phrase": "that which every joint supplieth according to the effectual working",
+      "count": 6
+    },
+    {
+      "phrase": "which every joint supplieth according to the effectual working in",
+      "count": 6
+    },
+    {
+      "phrase": "every joint supplieth according to the effectual working in the",
+      "count": 6
+    },
+    {
+      "phrase": "joint supplieth according to the effectual working in the measure",
+      "count": 6
+    },
+    {
+      "phrase": "supplieth according to the effectual working in the measure of",
+      "count": 6
+    },
+    {
+      "phrase": "according to the effectual working in the measure of every",
+      "count": 6
+    },
+    {
+      "phrase": "to the effectual working in the measure of every part",
+      "count": 6
+    },
+    {
+      "phrase": "the effectual working in the measure of every part maketh",
+      "count": 6
+    },
+    {
+      "phrase": "effectual working in the measure of every part maketh increase",
+      "count": 6
+    },
+    {
+      "phrase": "working in the measure of every part maketh increase of",
+      "count": 6
+    },
+    {
+      "phrase": "in the measure of every part maketh increase of the",
+      "count": 6
+    },
+    {
+      "phrase": "the measure of every part maketh increase of the body",
+      "count": 6
+    },
+    {
+      "phrase": "measure of every part maketh increase of the body unto",
+      "count": 6
+    },
+    {
+      "phrase": "of every part maketh increase of the body unto the",
+      "count": 6
+    },
+    {
+      "phrase": "every part maketh increase of the body unto the edifying",
+      "count": 6
+    },
+    {
+      "phrase": "part maketh increase of the body unto the edifying of",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 872,
+    "epub_greek_word_count": 873,
+    "pdf_greek_unique_words": 487,
+    "epub_greek_unique_words": 488,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 2,
+    "epub_hebrew_word_count": 2,
+    "pdf_hebrew_unique_words": 2,
+    "epub_hebrew_unique_words": 2,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 39,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 0,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 735,
+    "epub_latin_word_count": 741,
+    "epub_tagged_latin_word_count": 408,
+    "pdf_latin_unique_words": 463,
+    "epub_latin_unique_words": 465,
+    "epub_tagged_unique_words": 274,
+    "latin_word_coverage_ratio": 0.9946,
+    "latin_tagging_ratio": 0.5506,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "alexandria",
+        "epub": 13,
+        "tagged": 0
+      },
+      {
+        "word": "victor",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "polycarpus",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "regulate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "epiphanius",
+        "epub": 9,
+        "tagged": 1
+      },
+      {
+        "word": "cornelius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "smyrna",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "judea",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "phrygia",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "montanus",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "dionysius",
+        "epub": 5,
+        "tagged": 1
+      },
+      {
+        "word": "adequate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "clamor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "rumor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "congregate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "celebrate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "baronius",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "obviate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "perpetuate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "archippus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "arius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "novatus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "decius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "meletius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "pella",
+        "epub": 3,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 57,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 103,
+    "translated_latin_runs_count": 53,
+    "latin_translation_ratio": 0.5146,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Musculus, Grotius"
+      },
+      {
+        "phrase": "Santesius, Pamelius"
+      },
+      {
+        "phrase": "Alcuinus, Amatorius, Rabanus"
+      },
+      {
+        "phrase": "Strabo, Rupertus Titiensis, Berno, Radulphus Tangrensis"
+      },
+      {
+        "phrase": "Baronius, ad an. Christi"
+      },
+      {
+        "phrase": "ad Orthodoxos, Dionysius"
+      },
+      {
+        "phrase": "manibus expansis"
+      },
+      {
+        "phrase": "Paulus Samosatenus"
+      },
+      {
+        "phrase": "Mendacium mendacio tegendum ne"
+      },
+      {
+        "phrase": "Spiritum Sanctum, et libere dicamus, defendamus, clamemus, et per eum qui"
+      },
+      {
+        "phrase": "in aeternum juremus, pontificem Romanum esse antichristum"
+      },
+      {
+        "phrase": "Ecclesia ut synagoga"
+      },
+      {
+        "phrase": "quorum sine consilio nihil agebatur in ecclesia; quod qua negligentia"
+      },
+      {
+        "phrase": "nescio, nisi forte doctorum desidia"
+      },
+      {
+        "phrase": "magis superbia, dum soli"
+      },
+      {
+        "phrase": "aliquid videri"
+      },
+      {
+        "phrase": "Hinc omnis"
+      },
+      {
+        "phrase": "Iliacos intra muros peccatur et extra"
+      },
+      {
+        "phrase": "Servilius Paulus"
+      },
+      {
+        "phrase": "spolianda trophaeis"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      307
+    ],
+    "paragraph_splits": [
+      "1 . Particular churches or congregations, with their order and rule, are of divi"
+    ],
+    "ignored_warnings": [
+      "repeated_phrases"
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

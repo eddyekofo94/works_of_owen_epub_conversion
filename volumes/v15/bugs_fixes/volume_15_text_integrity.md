@@ -1,20 +1,20 @@
 # Text Integrity Audit: Volume 15
 
 - Status: **WARN**
-- Warnings: 8
+- Warnings: 3
 - PDF pages: 683
 - EPUB text files: 107
-- EPUB paragraphs/headings: 2435
+- EPUB paragraphs/headings: 2416
 
 ## Coverage
 
 - PDF content tokens: 221576
-- EPUB content tokens: 223303
-- Approximate PDF-to-EPUB coverage ratio: 0.9994
+- EPUB content tokens: 223326
+- Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 675
 - Weak page matches: 3
-- Dense source windows checked: 29601
-- Missing dense source-window pages: 40
+- Dense source windows checked: 29353
+- Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 659
@@ -26,15 +26,15 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2000
+- Body paragraphs checked: 1981
 - Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 243
 - Short fragments: 102
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 2
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 4
+- Suspicious large-number starts: 0
 - Roman heading candidates: 0
 - Overlong heading candidates: 7
 - Front-matter heading/body candidates: 0
@@ -59,52 +59,22 @@
 
 ## Latin
 
-- PDF Latin words: 1575
-- EPUB Latin words: 1596
-- EPUB Tagged Latin words: 473
-- Latin word coverage ratio: 0.9968
-- Latin word tagging ratio: 0.2964
-- Latin clauses checked: 62
+- PDF Latin words: 735
+- EPUB Latin words: 741
+- EPUB Tagged Latin words: 408
+- Latin word coverage ratio: 0.9946
+- Latin word tagging ratio: 0.5506
+- Latin clauses checked: 57
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 118
-- Translated Latin runs: 52
-- Latin translation ratio: 0.4407
+- Tagged Latin runs checked: 103
+- Translated Latin runs: 63
+- Latin translation ratio: 0.6117
 
 ## Warnings
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
-
-## Missing Dense Source Windows
-
-- page: 3; sample: righteousness and legal ceremonies contended for together the reason of it chapter the disciples
-- page: 4; sample: worship prohibitions of additions produced considered applied chapter of the authority needful for the
-- page: 5; sample: ignorance readiness to take offense remedies hereof pride false teachers chapter grounds and reasons
-- page: 7; sample: discourse concerning liturgies and their imposition prefatory note it deserves attention that this pamphlet
-- page: 10; sample: from the authority of the law maker the latter he utterly rejected as introduced
-- page: 17; sample: de rom pontif lib cap but whereas they double the mumber of the sacred
-- page: 19; sample: executed by persons variously called thereunto acording to his mind and will the only
-- page: 29; sample: their religion as were then fallen out lib concione advocata cum solenne carmen precationis
-- page: 34; sample: about such things as were not in rerum natura in the days wherein those
-- page: 52; sample: may keep the commandments of the lord your god which command you chapter what
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch026.xhtml; text: Whereas, therefore, the Lord Christ, in the exercise of his right and power, on the grant of the Father of a perpetual visible kingdom in this world, and the discharge of his own promise, hath, — (1.) Appointed the ordinary offices, whic...
-- file: EPUB/ch034.xhtml; text: It might be easily demonstrated what great numbers [there are] amongst us, — [1.] Who have imbibed atheistical opinions, and either vent them or speak presumptuously, according unto their influence and tendency every day; [2.] Who are pr...
-
-## Suspicious Large-Number Starts
-
-- file: EPUB/ch007.xhtml; text: 30. again, cap. 39:
-- file: EPUB/ch029.xhtml; text: 42. Montanus fell into his dotage on the same account; so did Novatianus at Rome, Euseb., lib. 6 cap. 43, and Arius at Alexandria. Hence is that censure of them by Lactantius, lib. 4 cap. 30:
-- file: EPUB/ch034.xhtml; text: 12. If the reader would have an account of the lives and manners of the first churches in their members, he may find it in Clem. Epist. ad Cor . pp. 2-4; Justin Mart. Apol. 2; Tertullian in his Algol. and lib. 2 ad Uxor.
-- file: EPUB/ch038.xhtml; text: 15. So in the excellent epistle of the churches of Vienne and Lyons unto the churches of Asia and Phrygia, concerning the persecutions that befell them, as they declare themselves to have been particular churches only, s
 
 ## Overlong Heading Candidates
 
@@ -145,16 +115,15 @@
 ## Missing Word Samples
 
 - word: pre; pdf: 6; epub: 0
+- word: theft; pdf: 5; epub: 0
 - word: self; pdf: 5; epub: 1
 - word: eminence; pdf: 4; epub: 0
 - word: defence; pdf: 3; epub: 1
 
 ## Excess Word Samples
 
-- word: churchstate; pdf: 0; epub: 19
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 0; epub: 9
-- word: churchcommunion; pdf: 0; epub: 9
 - word: historical; pdf: 1; epub: 9
 - word: greek; pdf: 6; epub: 13
 - word: footnotes; pdf: 0; epub: 7
@@ -164,29 +133,29 @@
 
 ## Untagged Latin Word Samples
 
-- word: dissent; epub: 42; tagged: 1
-- word: separate; epub: 34; tagged: 0
-- word: immediate; epub: 33; tagged: 0
-- word: severe; epub: 32; tagged: 0
-- word: plea; epub: 31; tagged: 0
-- word: magistrate; epub: 30; tagged: 0
-- word: sincere; epub: 29; tagged: 0
-- word: communicate; epub: 26; tagged: 0
-- word: poor; epub: 25; tagged: 0
-- word: mere; epub: 24; tagged: 1
+- word: alexandria; epub: 13; tagged: 0
+- word: victor; epub: 12; tagged: 0
+- word: polycarpus; epub: 10; tagged: 0
+- word: regulate; epub: 8; tagged: 0
+- word: epiphanius; epub: 9; tagged: 1
+- word: cornelius; epub: 7; tagged: 1
+- word: smyrna; epub: 6; tagged: 0
+- word: judea; epub: 5; tagged: 0
+- word: phrygia; epub: 5; tagged: 0
+- word: montanus; epub: 5; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: Musculus, Grotius
-- phrase: Santesius, Pamelius
-- phrase: Alcuinus, Amatorius, Rabanus
-- phrase: Walafridus Strabo, Rupertus Titiensis, Berno, Radulphus Tangrensis
-- phrase: Baronius, ad an. Christi
-- phrase: De Nativitate
-- phrase: ad Orthodoxos, Dionysius
-- phrase: manibus expansis
-- phrase: de facto
-- phrase: in Asia or Africa
+- phrase: in aeternum juremus, pontificem Romanum esse antichristum
+- phrase: Ecclesia ut synagoga
+- phrase: quorum sine consilio nihil agebatur in ecclesia; quod qua negligentia
+- phrase: nescio, nisi forte doctorum desidia
+- phrase: magis superbia, dum soli
+- phrase: aliquid videri
+- phrase: Hinc omnis
+- phrase: Iliacos intra muros peccatur et extra
+- phrase: Servilius Paulus
+- phrase: spolianda trophaeis
 
 ## Limits
 

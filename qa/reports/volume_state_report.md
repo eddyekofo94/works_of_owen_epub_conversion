@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-16T09:33:16Z
+Generated: 2026-06-19T20:30:16Z
 
 ## Summary
 
@@ -10,20 +10,20 @@ Generated: 2026-06-16T09:33:16Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 15 | 12.4 | sabon-next-lt | 3 |  99.94 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 2 | 5 | 8.7 | brill-font | 2 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
-| 3 | 12 | 8.3 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
-| 4 | 3 | 7.1 | minion-pro | 1 |  99.97 |  99.87 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
-| 5 | 1 | 6.7 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.77 | 0 | 0 | PRISTINE |
-| 6 | 11 | 5.5 | minion-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
-| 7 | 8 | 4.8 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
-| 8 | 10 | 4.4 | brill-font | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
-| 9 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
+| 1 | 5 | 8.7 | brill-font | 2 |  99.98 |  100.0 |  100.0 |  99.73 | 0 | 0 | PRISTINE |
+| 2 | 12 | 8.3 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
+| 3 | 3 | 7.1 | minion-pro | 1 |  99.97 |  99.87 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
+| 4 | 1 | 6.7 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.77 | 0 | 0 | PRISTINE |
+| 5 | 11 | 5.5 | minion-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 6 | 8 | 4.8 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
+| 7 | 10 | 4.4 | brill-font | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
+| 8 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
+| 9 | 15 | 3.0 | sabon-next-lt | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
 | 10 | 9 | 2.8 | cardo | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
 | 11 | 13 | 2.4 | baskerville | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
-| 12 | 4 | 2.0 | cardo | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
-| 13 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
-| 14 | 16 | 2.0 | gentium-plus-2 | 5 |  99.95 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
+| 12 | 16 | 2.1 | gentium-plus-2 | 5 |  99.95 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
+| 13 | 4 | 2.0 | cardo | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
+| 14 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
 | 15 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | PRISTINE |
 | 16 | 2 | 0.4 | libertinus | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
 
@@ -188,28 +188,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 15 — Need: 12.4 (✅ Good) — Rank 8
-
-- **Body font:** sabon-next-lt
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** PRISTINE
-- **convert.py:** Yes (250 lines, 2 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.94
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.68
-- **Latin tagging:** 29.64
-- **Latin translation:** 44.07
-- **Citations:** total=57, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 5 — Need: 8.7 (✅ Good) — Rank 9
+### Volume 5 — Need: 8.7 (✅ Good) — Rank 8
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -230,7 +209,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 12 — Need: 8.3 (✅ Good) — Rank 10
+### Volume 12 — Need: 8.3 (✅ Good) — Rank 9
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
@@ -251,7 +230,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 3 — Need: 7.1 (✅ Good) — Rank 11
+### Volume 3 — Need: 7.1 (✅ Good) — Rank 10
 
 - **Body font:** minion-pro
 - **Source type:** ages_pdf
@@ -272,7 +251,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 1 — Need: 6.7 (✅ Good) — Rank 12
+### Volume 1 — Need: 6.7 (✅ Good) — Rank 11
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** ages_pdf
@@ -293,7 +272,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 11 — Need: 5.5 (✅ Good) — Rank 13
+### Volume 11 — Need: 5.5 (✅ Good) — Rank 12
 
 - **Body font:** minion-pro
 - **Source type:** ages_pdf
@@ -314,7 +293,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 8 — Need: 4.8 (✅ Good) — Rank 14
+### Volume 8 — Need: 4.8 (✅ Good) — Rank 13
 
 - **Body font:** gentium-plus-2
 - **Source type:** ages_pdf
@@ -335,7 +314,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 5
 - **Recommended:** ❓ Resolve unmatched quotation marks
 
-### Volume 10 — Need: 4.4 (✅ Good) — Rank 15
+### Volume 10 — Need: 4.4 (✅ Good) — Rank 14
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -356,7 +335,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 14 — Need: 4.4 (✅ Good) — Rank 16
+### Volume 14 — Need: 4.4 (✅ Good) — Rank 15
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -374,6 +353,27 @@ Generated: 2026-06-16T09:33:16Z
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 15 — Need: 3.0 (✅ Good) — Rank 16
+
+- **Body font:** sabon-next-lt
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** PRISTINE
+- **convert.py:** Yes (286 lines, 2 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.93
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.46
+- **Latin tagging:** 55.06
+- **Latin translation:** 61.17
+- **Citations:** total=57, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 2
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
@@ -419,7 +419,28 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 4 — Need: 2.0 (✅ Good) — Rank 19
+### Volume 16 — Need: 2.1 (✅ Good) — Rank 19
+
+- **Body font:** gentium-plus-2
+- **Source type:** ages_pdf
+- **Treatises:** 5
+- **QA level:** PRISTINE
+- **convert.py:** Yes (383 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.95
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.96
+- **Latin tagging:** 63.76
+- **Latin translation:** 56.13
+- **Citations:** total=40, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 1
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 4 — Need: 2.0 (✅ Good) — Rank 20
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -440,7 +461,7 @@ Generated: 2026-06-16T09:33:16Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 7 — Need: 2.0 (✅ Good) — Rank 20
+### Volume 7 — Need: 2.0 (✅ Good) — Rank 21
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -455,27 +476,6 @@ Generated: 2026-06-16T09:33:16Z
 - **Latin tagging:** 63.73
 - **Latin translation:** 100.00
 - **Citations:** total=4, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 16 — Need: 2.0 (✅ Good) — Rank 21
-
-- **Body font:** gentium-plus-2
-- **Source type:** ages_pdf
-- **Treatises:** 5
-- **QA level:** PRISTINE
-- **convert.py:** Yes (383 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.95
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.96
-- **Latin tagging:** 63.76
-- **Latin translation:** 56.13
-- **Citations:** total=40, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 0
