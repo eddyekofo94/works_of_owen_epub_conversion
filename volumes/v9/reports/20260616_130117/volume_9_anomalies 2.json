@@ -1,6 +1,6 @@
 {
-  "volume": "5",
-  "total_words_audited": 228809,
+  "volume": "9",
+  "total_words_audited": 309155,
   "total_anomalies_count": 0,
   "anomalies": {
     "Hyphenation Anomalies": [],
@@ -13,17 +13,5 @@
     "List Formatting Inconsistencies": [],
     "Unmatched Quotation Marks": []
   },
-  "unused_whitelist_anomalies": {
-    "Hyphenation Anomalies": [
-      "sub-distinguished"
-    ],
-    "Structural Nesting Sequence Jumps": [
-      "3. ... 5."
-    ],
-    "Unmatched Quotation Marks": [
-      "Whence the prophet says in the psalm",
-      "A full comprehension of it no creature",
-      "3. \"Ex injuria; or,"
-    ]
-  }
+  "unused_whitelist_anomalies": {}
 }

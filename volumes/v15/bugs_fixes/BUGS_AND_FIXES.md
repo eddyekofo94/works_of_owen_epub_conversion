@@ -150,10 +150,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-19T20:09:11.147955+00:00
+**Last run:** 2026-06-19T20:34:15.184877+00:00
 **EPUB:** `volumes/v15/output/volume_15.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -170,7 +171,7 @@ Reports:
 | NAV links | 110 |
 | Greek chars / untagged | 4829 / 0 |
 | Hebrew chars / untagged | 10 / 0 |
-| Noteref links / endnote anchors | 141 / 140 |
+| Noteref links / endnote anchors | 149 / 148 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -225,10 +226,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-19T20:19:17.234086+00:00
+**Last run:** 2026-06-19T20:34:55.433281+00:00
 **Status:** WARN (3 warnings)
 
 Reports:

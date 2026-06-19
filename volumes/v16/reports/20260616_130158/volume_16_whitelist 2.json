@@ -1,0 +1,176 @@
+{
+  "text_integrity": {
+    "skipped_pages": [
+      5,
+      6
+    ],
+    "paragraph_splits": [
+      {
+        "previous": "Aristophanes witnesseth: —",
+        "next": "Ecclesiazusae 266."
+      },
+      {
+        "previous": "matters of ecclesiastical discipline. —",
+        "next": "ED."
+      },
+      {
+        "previous": "In answer I say, —",
+        "next": "Ans. 1."
+      },
+      {
+        "previous": "turned into Latin: —",
+        "next": "Larga pluvia Spiritus"
+      },
+      {
+        "previous": "include them in this edition. —",
+        "next": "ED."
+      }
+    ],
+    "inline_structural_markers": [],
+    "repeated_windows": [],
+    "weak_pages": [
+      360
+    ],
+    "dense_source_window_loss": [
+      10,
+      16,
+      19,
+      25,
+      27,
+      28,
+      33,
+      34,
+      43,
+      48,
+      56,
+      59,
+      62,
+      65,
+      68,
+      71,
+      76,
+      77,
+      78,
+      82,
+      89,
+      93,
+      96,
+      97,
+      98,
+      100,
+      114,
+      134,
+      143,
+      145,
+      151,
+      152,
+      158,
+      159,
+      183,
+      184,
+      219,
+      227,
+      241,
+      244
+    ],
+    "bottom_of_page_text_loss": [
+      "This Edition of first published by Johnstone & Hunter, 1850-53",
+      "And there is another word that signifies also what weight he lays on it, We have rendered it here, \"Furthermore then.\" It is τὸ λοιπὸν οῦν, — \"for"
+    ],
+    "top_of_page_text_loss": [
+      "CHAPTER 2. OF THE FORMAL CAUSE OF A PARTICULAR CHURCH.",
+      "OF INFANT BAPTISM AND DIPPING. OF INFANT BAPTISM.",
+      "TO MY REVEREND AND WORTHY FRIENDS, THE PREBENDS OF CHRIST CHURCH COLLEGE"
+    ],
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "low_latin_translation_coverage",
+      "repeated_phrases",
+      "repeated_windows",
+      "roman_heading_candidates",
+      "suspicious_large_number_starts",
+      "enumerator_sequence_candidates",
+      "flat_analysis_chapters"
+    ]
+  },
+  "anomalies": {
+    "OCR & Bracket Residues": [
+      "s ibly",
+      "t and",
+      "U as",
+      "e last",
+      "s may"
+    ],
+    "Punctuation Spacing Blemishes": [
+      ".."
+    ],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [
+      "3. ... 5.",
+      "2. ... 5.",
+      "3. ... 6.",
+      "2. ... 6.",
+      "1. ... 3.",
+      "6. ... 9.",
+      "1. ... 5.",
+      "7. ... 9.",
+      "4. ... (sermon 4)",
+      "8. ... (sermon 8)",
+      "10. ... (sermon 10)",
+      "11. ... (sermon 11)",
+      "12. ... (sermon 12)",
+      "13. ... (sermon 13)"
+    ],
+    "Unmatched Quotation Marks": [
+      "On the ground of some statements in the following treatise, which was published in 1889, i",
+      "(2.) They did agree in my judgment well enough, if they could have thought so; and further",
+      "Mr Orme admits that \"he seems to contend for a distinct office of ruling elder, or for eld",
+      "1. The foundation part of a visible church is the credible profession of faith and holines",
+      "(4.) A collation of extraordinary gifts, as of infallibility in teaching, of working mirac",
+      "He is a great stranger unto these things who knoweth not that among the Greeks, especially",
+      "1. The name διδάσκαλος; is not used in the New Testament but for a teacher with authority.",
+      "1. In the primitive church, about the end of the second century, before there was the leas",
+      "2. The use of it in other places of the New Testament is constantly distinctive, whether a",
+      "There are, therefore, two sorts of duties confessedly here mentioned and commanded; — the",
+      "Our argument from hence is this: There is in the church ὁ προϊστάμενος, \"one that ruleth.\"",
+      "**2.** It is a vain apprehension, to suppose that one or two teaching officers in a church",
+      "**1.** Prayer, without which it can no way be administered in the name of our Lord Jesus C",
+      "Lastly, The nature and end of this judgment or Sentence being corrective, not vindictive,",
+      "**1.** \"Trouble may arise from the _thing_ itself; for there being an exercise of authorit",
+      "**2.** \"The _persons_ to be excommunicated may be great, and of great interest in the worl",
+      "**2.** The Pharisees inquired of our Savior about such a divorce as was absolute, and gave",
+      "Mr Tombs tells us, \"This proves not infant baptism, because though it be granted that in J",
+      "**I.** One of the first charges I meet withal, upon the first head, is page 9, that I was",
+      "DIVINE ORIGINAL, AUTHORITY",
+      "It is concerning the last of these only that at present I shall deliver my thoughts unto y",
+      "Here that most stupendous fabric that was ever raised by ink and paper, termed well by a l",
+      "Of this saith the apostle, Τοῦτο πρῶτον γινώσκοντες? — \"Knowing, judging, and determining",
+      "Whatever that be, it returns an answer to this important question, \"Why, or on what accoun",
+      "THERE is a tendency to acquiesce in the general verdict against our author for the part he",
+      "But that which makes the greatest cry at present is the corruption of Psalm 22:17, where,",
+      "**2.** In the days of the Chaldee paraphrast, when the prophecies of the humiliation and d",
+      "He speaks not at all of the קְרִי וּכְתִיב, but merely of the anomalous pointing of words,",
+      "Whether the SYRIAC translation be any fitter for this use, any one who shall be pleased to",
+      "[[BLOCKQUOTE]] \"Vulgatam translationem Graecam non esse LXX. interpretum, contra, quam oli",
+      "Why then, observe, that when God brings both silver and dross, both good and bad, into the",
+      "**1.** How do they act in the world? Why, consider that, as to their duties which they omi",
+      "That which I would principally think of use for myself and you in this psalm is this, — Th",
+      "The prophet doth distribute all things that can be said to God when we are reproved under",
+      "**1.** The first thing in waiting is _looking unto God,_ eyeing of God. So David expresses",
+      "Carry this about with you as a note of remembrance, that God in dealing about those things",
+      "**1.** It consists in a general, earnest intension upon the occasions of life and the temp",
+      "3. A people are then secure when God's warnings among them are despised. I am persuaded th",
+      "I shall now speak a few words, in the SECOND place, unto the reasons why in such approachi",
+      "standeth before the door.\" This was the coming of Christ in the great and terrible judgmen",
+      "What is this thing the apostle makes this entrance into? It is, \"How ye ought to walk and",
+      "I will add a little more, for the further opening of the words. There is in them a summary",
+      "**3.** The last aggravation whereby men provoke the eyes of God's glory is when they decla",
+      "Secondly, With respect unto their state and condition towards men. He speaks of \"merciful",
+      "**1.** \"No man layeth it to heart.\" And, **2.** \"None considering that they are taken away",
+      "(1.) When Christ humbled himself, he did not leave, he did not relinquish, he did not fore",
+      "**1.** Such a prolixity in handling of particulars, or the introduction of less necessary",
+      "3. I shall not need to insist upon the explication of the metaphor of \"walking with God,\"",
+      "**(2.)** It is in a wrestling condition. This was the character of Jacob above all the pat"
+    ]
+  }
+}

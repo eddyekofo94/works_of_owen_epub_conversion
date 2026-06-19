@@ -1,15 +1,15 @@
-# Text Integrity & Anomaly Audit Report: Volume 5
+# Text Integrity & Anomaly Audit Report: Volume 16
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 228809
-* **Total Suspected Anomalies Found:** 0
+* **Total Words Audited:** 258474
+* **Total Suspected Anomalies Found:** 1
 
-Add corrections to `text_replacements` inside `volumes/v5/convert.py` to fix these.
+Add corrections to `text_replacements` inside `volumes/v16/convert.py` to fix these.
 
 ## Summary by Category
 
-* **Hyphenation Anomalies:** 0 items
+* **Hyphenation Anomalies:** 1 items
 * **Punctuation Spacing Blemishes:** 0 items
 * **OCR & Bracket Residues:** 0 items
 * **Mixed-Case Capitalization Errors:** 0 items
@@ -23,7 +23,13 @@ Add corrections to `text_replacements` inside `volumes/v5/convert.py` to fix the
 
 ## Hyphenation Anomalies
 
-No anomalies found in this category.
+### 1. `over-reaching`
+* **Description:** Splittable word (rejoins to valid word 'overreaching')
+* **Chapter:** *Chapter 10 - of Excommunication.*
+* **Contexts:**
+  * ... about such a right or wrong, in pretended fraud, **over-reaching**, or the like, as is determinable by civil laws, t ...
+
+---
 
 ## Punctuation Spacing Blemishes
 

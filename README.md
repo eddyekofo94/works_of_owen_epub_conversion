@@ -322,7 +322,7 @@ The new engine:
 | 2 | v2 | Populated | PRISTINE | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
 | 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.90 |
 | 4 | v4 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.59 |
-| 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.73 |
+| 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.68 |
 | 6 | v6 | Populated | PRISTINE | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
 | 7 | v7 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.66 |
 | 8 | v8 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 Quotes 5 |

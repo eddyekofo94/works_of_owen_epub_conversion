@@ -22,6 +22,9 @@
     ],
     "top_of_page_text_loss": [
       31
+    ],
+    "dense_source_window_loss": [
+      15, 16, 35, 77, 88, 89, 122, 126, 137, 151, 157, 173, 182, 207, 281, 292, 297, 307, 353, 358, 359, 365, 377, 393, 418, 431, 436, 442, 457, 469, 499, 513, 538
     ]
   },
   "anomalies": {
@@ -58,7 +61,11 @@
       "originally included no merit",
       "Si obedientia vitae Christi nobis",
       "injustus\", 1 Peter 3:18",
-      "This treatise, entitled Gospel Grounds and Evidences"
+      "This treatise, entitled Gospel Grounds and Evidences",
+      "Isaiah 13:6, 7; \u2014 \"When the day"
+    ],
+    "Invalid Bible References": [
+      "John 22"
     ]
   }
 }

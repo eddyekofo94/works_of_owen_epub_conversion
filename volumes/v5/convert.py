@@ -146,6 +146,10 @@ OVERRIDES = {
         'counsel, s declared': 'counsel, as declared',
         'believer s to': 'believers to',
         'Godìs': "God's",
+        'preeminence': 'pre-eminence',
+        'be1ieveth': 'believeth',
+        'name)y': 'namely',
+        'p)ace': 'place',
     },
     'treatise_title_overrides': {
         'The Doctrine of Justification By Faith,': _V5_JUSTIFICATION_TITLE_PAGE,

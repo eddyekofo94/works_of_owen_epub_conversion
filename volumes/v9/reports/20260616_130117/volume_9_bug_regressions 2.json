@@ -1,10 +1,10 @@
 {
-  "volume": "5",
+  "volume": "9",
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/bugs_fixes/volume_9_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -13,23 +13,19 @@
     {
       "label": "Possible faulty paragraph splits",
       "observed": 0,
-      "budget": 0,
+      "budget": 61,
       "status": "ok",
       "samples": []
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 2,
-      "budget": 6,
+      "observed": 1,
+      "budget": 1,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch002.xhtml",
-          "text": "Lastly, the concluding chapter is devoted to an explanation of the passages in Paul and James which are alleged to be at variance but which are proved to be in perfect harmony, 20. — Ed."
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of their own, and supererogatory of others"
+          "file": "EPUB/ch003.xhtml",
+          "text": "I shall speak yet a little more particularly. You may consider in the words, 1. That which is mentioned in the last place; — the state of the people at this time: \"Their land was filled with sin against the Holy One of Israel.\""
         }
       ]
     },
@@ -40,51 +36,51 @@
       "status": "ok",
       "samples": [
         {
-          "phrase": "of justification by the imputation of the righteousness of christ",
-          "count": 11
+          "phrase": "discourse discourse discourse discourse discourse discourse discourse discourse discourse discourse",
+          "count": 16
         },
         {
-          "phrase": "doctrine of justification by the imputation of the righteousness of",
-          "count": 10
+          "phrase": "loved us and washed us from our sins in his",
+          "count": 6
         },
         {
-          "phrase": "set forth to be propitiation through faith in his blood",
-          "count": 10
+          "phrase": "us and washed us from our sins in his own",
+          "count": 6
         },
         {
-          "phrase": "the doctrine of justification by the imputation of the righteousness",
-          "count": 9
+          "phrase": "and washed us from our sins in his own blood",
+          "count": 6
         },
         {
-          "phrase": "freely by his grace through the redemption that is in",
-          "count": 9
+          "phrase": "is so filled with sin against the holy one of",
+          "count": 5
         },
         {
-          "phrase": "justified freely by his grace through the redemption that is",
-          "count": 8
+          "phrase": "so filled with sin against the holy one of israel",
+          "count": 5
         },
         {
-          "phrase": "by his grace through the redemption that is in christ",
-          "count": 8
+          "phrase": "and the gates of hell shall not prevail against it",
+          "count": 5
         },
         {
-          "phrase": "his grace through the redemption that is in christ jesus",
-          "count": 8
+          "phrase": "who loved us and washed us from our sins in",
+          "count": 5
         },
         {
-          "phrase": "whom god has set forth to be propitiation through faith",
-          "count": 8
+          "phrase": "land is filled with sin against the holy one of",
+          "count": 4
         },
         {
-          "phrase": "god has set forth to be propitiation through faith in",
-          "count": 8
+          "phrase": "is filled with sin against the holy one of israel",
+          "count": 4
         }
       ]
     },
     {
       "label": "Missing front CONTENTS pages",
       "observed": 0,
-      "budget": 0,
+      "budget": 4,
       "status": "ok",
       "samples": []
     },
@@ -219,7 +215,7 @@
     {
       "label": "Repeated phrase hits",
       "observed": 0,
-      "budget": 3,
+      "budget": 7,
       "status": "ok",
       "samples": []
     },
@@ -267,17 +263,43 @@
     },
     {
       "label": "Chapter headings rendered as paragraphs",
-      "observed": 0,
-      "budget": 0,
+      "observed": 1,
+      "budget": 1,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch059.xhtml",
+          "text": "Chapter 4"
+        }
+      ]
     },
     {
       "label": "Overlong headings containing body prose",
-      "observed": 0,
-      "budget": 0,
+      "observed": 5,
+      "budget": 5,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "text": "\"To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. \"There appear unto me"
+        },
+        {
+          "file": "EPUB/ch044.xhtml",
+          "text": "DISCOURSE 7. 44 Question. When our own faith is weakened as to the hearing of our prayers — when we ourselves are hindered within ourselves from believing the answer of our pray"
+        },
+        {
+          "file": "EPUB/ch053.xhtml",
+          "text": "\"To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs"
+        },
+        {
+          "file": "EPUB/ch060.xhtml",
+          "text": "SERMON 7. 61 \"My heart is inditing a good matter: I speak of the things which I have made touching the King; my tongue is the pen of a ready writer. Thou art fairer than the chi"
+        },
+        {
+          "file": "EPUB/ch089.xhtml",
+          "text": "DISCOURSE 19. 86 \"I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son"
+        }
+      ]
     },
     {
       "label": "Missing chapter initialization files",
@@ -400,21 +422,17 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 3,
-      "budget": 8,
+      "observed": 2,
+      "budget": 2,
       "status": "ok",
       "samples": [
         {
-          "file": "EPUB/ch030.xhtml",
-          "text": "consciences of believers, unto their supportment and comfort under all their conf"
+          "file": "EPUB/ch002.xhtml",
+          "text": "the Lord; ' — nay, now, that it is neither day nor night, as the prophet speaks;"
         },
         {
-          "file": "EPUB/ch031.xhtml",
-          "text": "itself and all grace in due exercise in all ordinances of divine worship, private"
-        },
-        {
-          "file": "EPUB/ch032.xhtml",
-          "text": "will evidence itself, — not always, but on some occasions: and this is by bringin"
+          "file": "EPUB/ch067.xhtml",
+          "text": "of Stoke Newington"
         }
       ]
     },

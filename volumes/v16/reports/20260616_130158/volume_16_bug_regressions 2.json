@@ -1,10 +1,10 @@
 {
-  "volume": "5",
+  "volume": "16",
   "status": "pass",
-  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_audit.json",
-  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_text_integrity.json",
-  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.json",
-  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.md",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/bugs_fixes/volume_16_bug_regressions.md",
   "extra_warning_codes": {
     "text_integrity": [],
     "epub": []
@@ -19,19 +19,10 @@
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 2,
-      "budget": 6,
+      "observed": 0,
+      "budget": 12,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch002.xhtml",
-          "text": "Lastly, the concluding chapter is devoted to an explanation of the passages in Paul and James which are alleged to be at variance but which are proved to be in perfect harmony, 20. — Ed."
-        },
-        {
-          "file": "EPUB/ch004.xhtml",
-          "text": "All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of their own, and supererogatory of others"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Repeated word windows",
@@ -40,44 +31,44 @@
       "status": "ok",
       "samples": [
         {
-          "phrase": "of justification by the imputation of the righteousness of christ",
-          "count": 11
+          "phrase": "the various readings of ben asher and ben naphtali of",
+          "count": 4
         },
         {
-          "phrase": "doctrine of justification by the imputation of the righteousness of",
-          "count": 10
+          "phrase": "various readings of ben asher and ben naphtali of the",
+          "count": 4
         },
         {
-          "phrase": "set forth to be propitiation through faith in his blood",
-          "count": 10
+          "phrase": "of ben asher and ben naphtali of the eastern and",
+          "count": 4
         },
         {
-          "phrase": "the doctrine of justification by the imputation of the righteousness",
-          "count": 9
+          "phrase": "ben asher and ben naphtali of the eastern and western",
+          "count": 4
         },
         {
-          "phrase": "freely by his grace through the redemption that is in",
-          "count": 9
+          "phrase": "asher and ben naphtali of the eastern and western jews",
+          "count": 4
         },
         {
-          "phrase": "justified freely by his grace through the redemption that is",
-          "count": 8
+          "phrase": "will say unto me and what shall answer when am",
+          "count": 4
         },
         {
-          "phrase": "by his grace through the redemption that is in christ",
-          "count": 8
+          "phrase": "say unto me and what shall answer when am reproved",
+          "count": 4
         },
         {
-          "phrase": "his grace through the redemption that is in christ jesus",
-          "count": 8
+          "phrase": "let this mind be in you which was also in",
+          "count": 4
         },
         {
-          "phrase": "whom god has set forth to be propitiation through faith",
-          "count": 8
+          "phrase": "this mind be in you which was also in christ",
+          "count": 4
         },
         {
-          "phrase": "god has set forth to be propitiation through faith in",
-          "count": 8
+          "phrase": "mind be in you which was also in christ jesus",
+          "count": 4
         }
       ]
     },
@@ -174,10 +165,17 @@
     },
     {
       "label": "Flat ANALYSIS chapters",
-      "observed": 0,
-      "budget": 0,
+      "observed": 1,
+      "budget": 1,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch042.xhtml",
+          "paragraph_count": 3,
+          "structural_line_count": 1,
+          "note": "ANALYSIS chapter appears flat — fewer structural outline lines than expected.  Check extraction quality."
+        }
+      ]
     },
     {
       "label": "Missing configured fonts",
@@ -218,10 +216,16 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 0,
-      "budget": 3,
+      "observed": 1,
+      "budget": 7,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "combined_text",
+          "text": "they will not see but they shall see",
+          "count": 1
+        }
+      ]
     },
     {
       "label": "Possible Beta Code residue files",
@@ -400,23 +404,10 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 3,
-      "budget": 8,
+      "observed": 0,
+      "budget": 1,
       "status": "ok",
-      "samples": [
-        {
-          "file": "EPUB/ch030.xhtml",
-          "text": "consciences of believers, unto their supportment and comfort under all their conf"
-        },
-        {
-          "file": "EPUB/ch031.xhtml",
-          "text": "itself and all grace in due exercise in all ordinances of divine worship, private"
-        },
-        {
-          "file": "EPUB/ch032.xhtml",
-          "text": "will evidence itself, — not always, but on some occasions: and this is by bringin"
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Noteref leading spaces",

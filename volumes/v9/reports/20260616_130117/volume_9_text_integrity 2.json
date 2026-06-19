@@ -1,0 +1,1076 @@
+{
+  "volume": "9",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/input/owen-v9.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v9/output/volume_9.epub",
+  "generated_at": "2026-06-16T11:01:14.211783+00:00",
+  "status": "warn",
+  "warning_count": 8,
+  "warnings": [
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    }
+  ],
+  "pdf": {
+    "page_count": 778,
+    "skipped_detected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "epub": {
+    "spine_text_files": 102,
+    "paragraph_count": 3558
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 253685,
+    "epub_content_tokens": 254528,
+    "coverage_ratio": 0.9993,
+    "missing_word_samples": [
+      {
+        "word": "sufficiency",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "psalms",
+        "pdf": 8,
+        "epub": 19
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 2,
+        "epub": 11
+      },
+      {
+        "word": "historical",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "greek",
+        "pdf": 8,
+        "epub": 15
+      },
+      {
+        "word": "edition",
+        "pdf": 4,
+        "epub": 11
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "modern",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 7,
+        "epub": 13
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 767,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 32000,
+    "missing_dense_window_pages": 4,
+    "missing_dense_windows": [
+      {
+        "page": 370,
+        "sample": "sermon f26 god's withdrawing his presence the correction of his church lord why hast"
+      },
+      {
+        "page": 372,
+        "sample": "is it to err from the ways of god the ways of god are"
+      },
+      {
+        "page": 373,
+        "sample": "with god which we are called unto ii what is it to have our"
+      },
+      {
+        "page": 376,
+        "sample": "hearts hardened thus partially from the fear of god the fear of god may"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 776,
+    "top_windows_usable": 751,
+    "skipped_top_window_count": 27,
+    "skipped_top_windows": [
+      {
+        "page": 19,
+        "window": "when in the secret workings of god's providence there is an inclination in sinful",
+        "sample": "(4.) When, in the secret workings of God's providence, there is an inclination in a sinful people unto a compliance with them [those] from",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 43,
+        "window": "glory relates not only to the thing itself that is glorious but to the",
+        "sample": "[2.] Glory relates not only to the thing itself that is glorious, but to the estimation and opinion we have of it, — that is, δόξα; when that which is",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 100,
+        "window": "is attended with all his holy angels is the state place of this worship",
+        "sample": "is attended with all his holy angels, is the state [place?] of this worship. Hence is that glorious description given of it,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 117,
+        "window": "are there none who are acted in their obedience and duties not from inward",
+        "sample": "[2.] Are there none who are acted, in their obedience and duties, not from inward principles, and spiritualized faculties, but merely from outward",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 140,
+        "window": "this also is another thing we are to humble ourselves unto to be contented",
+        "sample": "[6.] This, also, is another thing we are to humble ourselves unto, — to be contented to have the sharpest afflictions accompanying and attending the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 153,
+        "window": "the infinite excellency and majesty of god and his great name this is the",
+        "sample": "[1.] The infinite excellency and majesty of God and his great name. This is the apostle's motive,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 162,
+        "window": "it is useless in the world shall freely say take away this humble walking",
+        "sample": "[3.] It is useless in the world. I shall freely say, Take away this humble walking, and all profession is a thing of nought; it doth no good at all in the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 184,
+        "window": "what are the ways and means whereby he doth so there are sundry things",
+        "sample": "[2.] What are the ways and means whereby he doth so: — [1.] There are sundry things on the account whereof Christ at his coming",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 205,
+        "window": "as to their separation in worship shall only point to that one place and",
+        "sample": "[5.] As to their separation in worship, I shall only point to that one place, and leave it,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 211,
+        "window": "begin the work the meaner poorer worse we are the more incumbent is it",
+        "sample": "begin the work. The meaner, poorer, worse we are, the more incumbent is it on us to rise and be doing. The water is moved, teaching [healing?] is in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 215,
+        "window": "2dly the outward form of moral duties that depend not merely on institution is",
+        "sample": "[2dly.] The outward form of moral duties, that depend not merely on institution, is the same. Such are praying, preaching, hearing. Abounding in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 244,
+        "window": "barrenness they shall never bear any fruit to god this was the curse that",
+        "sample": "[1.] Barrenness. They shall never bear any fruit to God. This was the curse that our Savior gave to the fig-tree, \"Never fruit grow on thee.\" Man",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 256,
+        "window": "he opposeth himself to the stoutness of their hearts and they yield themselves to",
+        "sample": "[1.] He opposeth himself to the stoutness of their hearts, and they \"yield themselves to the spoil.\" Where observe, first, The act itself: they \"yield",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 257,
+        "window": "its weakness condition of slumber and sleep is weak condition sleeping man is able",
+        "sample": "[1.] Its weakness. A condition of slumber and sleep is a weak condition. A sleeping man is able to do nothing. Jael can destroy a drowsy Sisera.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 267,
+        "window": "he fills them with folly and giddiness so taking away their counsel",
+        "sample": "[2.] He fills them with folly and giddiness; so taking away their counsel.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 269,
+        "window": "if he have any favor for them and so will not proceed in these",
+        "sample": "[4.] If he have any favor for them, and so will not proceed in these ways of revenge against them, which would end in their speedy ruin; he will give",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 316,
+        "window": "there is nothing contrary to his own nature in it there are things that",
+        "sample": "[1.] There is nothing contrary to his own nature in it. There are things that are contrary to the nature of God, and these things God cannot do. \"God",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "there will be an end put unto all other entangling disputes and dark thoughts",
+        "sample": "[1.] There will be an end put unto all other entangling disputes and dark thoughts, which overwhelm the mind: \"For now,\" saith the soul, \"it is",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 327,
+        "window": "in the exercise of it it will much answer the evidence that persons are",
+        "sample": "[1.] In the exercise of it, it will much answer the evidence that persons are interested in the mystical body of Christ. There are some whose vain",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 377,
+        "window": "want of due sense of surprisal into known sins want of due sense of",
+        "sample": "[3.] A want of a due sense of surprisal into known sins; [4.] A want of a due sense of the sins of others. Where these things",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 380,
+        "window": "eyes because men keep not thy law 19b9136 psalm confess think",
+        "sample": "eyes, because men keep not thy law,\" <19B9136>Psalm 119:136. I confess, I think",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 452,
+        "window": "there is another word of christ which very remarkably speaks just to the same",
+        "sample": "There is another word of Christ [which] very remarkably speaks just to the same purpose,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 521,
+        "window": "to undertake on our part to give us hearts that we shall love him",
+        "sample": "[2.] To undertake on our part to give us hearts that we shall love him and fear him; — to write the terms of the covenant on our part in our souls, so",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 535,
+        "window": "suppose all those he takes into covenant should fail him he can out of",
+        "sample": "[2.] Suppose all those he takes into covenant should fail him, \"he can out of stones raise up children unto Abraham;\" — he can bring up another",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 597,
+        "window": "it consists in the immeasurable unspeakable fullness of grace that was given to his",
+        "sample": "[2.] It consists in the immeasurable, unspeakable fullness of grace that was given to his human nature. It is what I have as much thought of as any one",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 649,
+        "window": "there is the grace of god which manifests itself in the aim and design",
+        "sample": "3. There is the grace of God, [which] manifests itself in the aim and design of God in all this matter. What did God aim at? It was \"that we might",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 749,
+        "window": "the way to apply the benefits and advantage of this great commutation to our",
+        "sample": "The way to apply the benefits and advantage of this great commutation to our souls, is in our minds, by faith, to [put our] seal to these acts of God.",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 8,
+    "missing_top_windows": [
+      {
+        "page": 151,
+        "window": "philippians have learned it saith he this was paul's frame",
+        "sample": "Philippians 4:11, \"I have learned it,\" saith he; This was Paul's frame,"
+      },
+      {
+        "page": 273,
+        "window": "sermon f16 the divine power of the gospel",
+        "sample": "SERMON 17. F16 THE DIVINE POWER OF THE GOSPEL."
+      },
+      {
+        "page": 370,
+        "window": "sermon f26 god's withdrawing his presence the correction of",
+        "sample": "SERMON 24. F26 GOD'S WITHDRAWING HIS PRESENCE, THE CORRECTION OF"
+      },
+      {
+        "page": 385,
+        "window": "sermon f27 the beauty and strength of zion",
+        "sample": "SERMON 25. F27 THE BEAUTY AND STRENGTH OF ZION."
+      },
+      {
+        "page": 419,
+        "window": "sermon f31 the christian's work of dying daily",
+        "sample": "SERMON 27. F31 THE CHRISTIAN'S WORK OF DYING DAILY."
+      },
+      {
+        "page": 441,
+        "window": "sermon f37 the evil and danger of offences",
+        "sample": "SERMON 30. F37 THE EVIL AND DANGER OF OFFENCES."
+      },
+      {
+        "page": 612,
+        "window": "sermon f64 the use and advantage of faith",
+        "sample": "SERMON 10.F64 THE USE AND ADVANTAGE OF FAITH"
+      },
+      {
+        "page": 622,
+        "window": "sermon f65 the use of faith under reproaches and",
+        "sample": "SERMON 11.F65 THE USE OF FAITH UNDER REPROACHES AND"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 714,
+    "bottom_windows_usable": 697,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 3071,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 408,
+    "short_fragment_count": 41,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "What I shall speak to is this: —"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "To this end, —"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "The grounds of it are: —"
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "The grounds hereof are, —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Come we now to the uses."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Use 1. Of trial or examination."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "Jehu's spirit spoiled his work."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "WE shall now proceed to the uses."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Use all diligence in this matter."
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "Use your day."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "I answer, In two things: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "His estate is doubly expressed: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "I shall, —"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "One word of use, and I have done."
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "There are divers reasons of it: —"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "Besides, —"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "We may observe here, —"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "In the words we have, —"
+      },
+      {
+        "file": "EPUB/ch028.xhtml",
+        "text": "That is the third way."
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "They are two: —"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "To this I answer, —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "One word of use, and I have done."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Use 6."
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "I answer plainly, —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "— Ed."
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "The Lord prosper it in your hands!"
+      },
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "What shall we pray for?"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "Truly, —"
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "This is the preface of the song."
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "You may consider it, —"
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "I say, —"
+      },
+      {
+        "file": "EPUB/ch061.xhtml",
+        "text": "The reasons are, —"
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "I would speak unto three things: —"
+      },
+      {
+        "file": "EPUB/ch066.xhtml",
+        "text": "I will name a few things: —"
+      },
+      {
+        "file": "EPUB/ch069.xhtml",
+        "text": "March 4, 1760."
+      },
+      {
+        "file": "EPUB/ch072.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "This question brings me to, —"
+      },
+      {
+        "file": "EPUB/ch076.xhtml",
+        "text": "There is, —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "I shall speak yet a little more particularly. You may consider in the words, 1. That which is mentioned in the last place; — the state of the people at this time: \"Their land was filled with sin against the Holy One of Israel.\""
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 1,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "18 I shall now give the reasons why we ought not in any thing to be ashamed of the gospel of Christ. I speak unto persons that are under a conviction that such and such things belong unto the gospel. If we are not, what "
+      }
+    ],
+    "roman_heading_candidate_count": 4,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "I. As to the former of these, —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "II. I shall now proceed to show when a corruption is habitually prevalent. And here is a large field before me, but I shall only speak some few things: 1. When a man doth choose, or willingly embrace, known occasions of "
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "text": "I. The subject treated of: —"
+      },
+      {
+        "file": "EPUB/ch071.xhtml",
+        "text": "III. We may see three things concerning ourselves: —"
+      }
+    ],
+    "overlong_heading_candidate_count": 9,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "tag": "h3",
+        "text": "\"To the Reader — Upon the desire of some interested in the publication of this sermon, I have perused it, and do communicate these my thoughts concerning it. \"There appear unto me in it those two things, which do above all others commend any sermon, or any oth"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "tag": "h1",
+        "text": "DISCOURSE 7. 44 Question. When our own faith is weakened as to the hearing of our prayers — when we ourselves are hindered within ourselves from believing the answer of our prayers, have no ground to expect we should be heard, or no ground to believe we are he"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "tag": "h3",
+        "text": "\"To The Reader, — The following Discourses were preached by that truly venerable divine in the last century, Dr John Owen: and, in order to be fully satisfied they are genuine, Mrs Cooke of Stoke Newington, by this means informs the reader that her pious grand"
+      },
+      {
+        "file": "EPUB/ch060.xhtml",
+        "tag": "h1",
+        "text": "SERMON 7. 61 \"My heart is inditing a good matter: I speak of the things which I have made touching the King; my tongue is the pen of a ready writer. Thou art fairer than the children of men; grace is poured into thy lips: therefore God hath blessed thee for ev"
+      },
+      {
+        "file": "EPUB/ch072.xhtml",
+        "tag": "h1",
+        "text": "DISCOURSE 2. 69 \"The cup of blessing which we bless, is it not the communion of the blood of Christ? The bread which we break, is it not the communion of the body of Christ?\" — 1 Corinthians 10:16."
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "tag": "h1",
+        "text": "DISCOURSE 3. 70 \"The cup of blessing which we bless, is it not the communion of the blood of Christ? The bread which we break, is it not the communion of the body of Christ?\" — 1 Corinthians 10:16."
+      },
+      {
+        "file": "EPUB/ch078.xhtml",
+        "tag": "h1",
+        "text": "DISCOURSE 8. 76 \"Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God; being put to death in the flesh, but quickened by the Spirit.\" — 1 Peter 3:18."
+      },
+      {
+        "file": "EPUB/ch080.xhtml",
+        "tag": "h1",
+        "text": "DISCOURSE 10. 78 \"Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world.\" — Matthew 28:20."
+      },
+      {
+        "file": "EPUB/ch089.xhtml",
+        "tag": "h1",
+        "text": "DISCOURSE 19. 86 \"I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.\" — Galatians 2:20."
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 834,
+    "epub_marker_count": 841,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p45",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 155,
+        "epub": 156,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p48",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p106",
+            "context": "(1.) A land is so filled with sin, when all sorts of provoking sins do abound in it; — when there is no exception to be put into the indictment; — when there is no provoking sin that c"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p129",
+            "context": "(1.) The first is, that he hath reserved a remnant among us that do make use of this space and season to apply themselves unto the throne of grace, and to cry mightily for mercy. God h"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 154,
+        "epub": 155,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p48",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p107",
+            "context": "(2.) A land is so filled with sin against the Holy One of Israel, when all sorts of persons in a land are guilty of provoking sins. Pray, mistake me not; I do not say all persons of al"
+          },
+          {
+            "location": "EPUB/ch003.xhtml#p131",
+            "context": "(2.) It hath strength from this, that there is an invitation and encouragement given to the whole nation to join together in their cries to God this day for the same end and purpose. I"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 81,
+        "epub": 82,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p48",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p187",
+            "context": "[1.] There must be, what I spake of in the first place, an assent to the whole truth of the promises of God, upon this ground and bottom, — that he is able and faithful to accomplish t"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p211",
+            "context": "[1.] A well-grounded, firm, unshaken assent to the truth of the promises; and so it is opposed to wavering, James 1:5, 6."
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p45",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 81,
+        "epub": 82,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p48",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p194",
+            "context": "[2.] Over and above this, faith, in the Scripture, is expressed (and we find it by experience) to be the will's consent unto, and acceptance of, the Lord Jesus Christ as mediator, — he"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p212",
+            "context": "[2.] A resolved, clear consent to receive and close with Christ, as tendered in the promise, for life; and so it is opposed to doubting, — that is, troublesome, disquieting, perplexing"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 4,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch013.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) I come now to show what it is to humble ourselves to the law of his providence."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) That which in the next place is considerable, is the proposing of the ingredients that lie in the motive to holiness, here expressed by the apostle, \"Seeing that these things shal"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) The second thing that God doth, in giving up an unhealed land unto barrenness, is his judicial hardening of them, or leaving them to hardness and impenitency, that so they may fil"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "marker": "[2.]",
+        "family": "bracket_decimal",
+        "context": "[2.] There are some distresses that, in their own nature, refuse all relief that you can tender them, but only what is derived from the fountain itself, — the nature of God. Zion's dis"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "discourse discourse discourse discourse discourse discourse discourse discourse discourse discourse",
+      "count": 16
+    },
+    {
+      "phrase": "loved us and washed us from our sins in his",
+      "count": 6
+    },
+    {
+      "phrase": "us and washed us from our sins in his own",
+      "count": 6
+    },
+    {
+      "phrase": "and washed us from our sins in his own blood",
+      "count": 6
+    },
+    {
+      "phrase": "is so filled with sin against the holy one of",
+      "count": 5
+    },
+    {
+      "phrase": "so filled with sin against the holy one of israel",
+      "count": 5
+    },
+    {
+      "phrase": "and the gates of hell shall not prevail against it",
+      "count": 5
+    },
+    {
+      "phrase": "who loved us and washed us from our sins in",
+      "count": 5
+    },
+    {
+      "phrase": "land is filled with sin against the holy one of",
+      "count": 4
+    },
+    {
+      "phrase": "is filled with sin against the holy one of israel",
+      "count": 4
+    },
+    {
+      "phrase": "although my house be not so with god yet he",
+      "count": 4
+    },
+    {
+      "phrase": "my house be not so with god yet he hath",
+      "count": 4
+    },
+    {
+      "phrase": "house be not so with god yet he hath made",
+      "count": 4
+    },
+    {
+      "phrase": "be not so with god yet he hath made with",
+      "count": 4
+    },
+    {
+      "phrase": "not so with god yet he hath made with me",
+      "count": 4
+    },
+    {
+      "phrase": "so with god yet he hath made with me an",
+      "count": 4
+    },
+    {
+      "phrase": "with god yet he hath made with me an everlasting",
+      "count": 4
+    },
+    {
+      "phrase": "god yet he hath made with me an everlasting covenant",
+      "count": 4
+    },
+    {
+      "phrase": "with me an everlasting covenant ordered in all things and",
+      "count": 4
+    },
+    {
+      "phrase": "me an everlasting covenant ordered in all things and sure",
+      "count": 4
+    },
+    {
+      "phrase": "dwell solitarily in the wood in the midst of carmel",
+      "count": 4
+    },
+    {
+      "phrase": "lord why hast thou caused us to err from thy",
+      "count": 4
+    },
+    {
+      "phrase": "why hast thou caused us to err from thy ways",
+      "count": 4
+    },
+    {
+      "phrase": "by your rejoicing which have in christ jesus our lord",
+      "count": 4
+    },
+    {
+      "phrase": "speak of the things which have made touching the king",
+      "count": 4
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 140,
+    "epub_greek_word_count": 140,
+    "pdf_greek_unique_words": 116,
+    "epub_greek_unique_words": 116,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 34,
+    "epub_hebrew_word_count": 34,
+    "pdf_hebrew_unique_words": 27,
+    "epub_hebrew_unique_words": 27,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 3,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 1,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 269,
+    "epub_latin_word_count": 272,
+    "epub_tagged_latin_word_count": 68,
+    "pdf_latin_unique_words": 184,
+    "epub_latin_unique_words": 186,
+    "epub_tagged_unique_words": 66,
+    "latin_word_coverage_ratio": 0.9926,
+    "latin_tagging_ratio": 0.25,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "ultimate",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "incarnate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "abram",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "celebrate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "steam",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "debtor",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "assyria",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "obviate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "folio",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "metaphor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "compassionate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "thomas",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "capernaum",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "possessor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "onesiphorus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "adequate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "disconsolate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "madam",
+        "epub": 3,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 7,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 29,
+    "translated_latin_runs_count": 3,
+    "latin_translation_ratio": 0.1034,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Quis talia fando"
+      },
+      {
+        "phrase": "anguis in herba"
+      },
+      {
+        "phrase": "Gloria est"
+      },
+      {
+        "phrase": "aliquo fama cum"
+      },
+      {
+        "phrase": "laus bonorum, incorrupta"
+      },
+      {
+        "phrase": "bene judicantium"
+      },
+      {
+        "phrase": "is \"peccata missa facere"
+      },
+      {
+        "phrase": "Amici, dum vivimus, vivamus"
+      },
+      {
+        "phrase": "Marcus ‡  Brutus"
+      },
+      {
+        "phrase": "Pontus, Galatia"
+      },
+      {
+        "phrase": "effeminate Sardanapalus"
+      },
+      {
+        "phrase": "robusti animo"
+      },
+      {
+        "phrase": "Accessere sobrii ad perdendum rempublicam"
+      },
+      {
+        "phrase": "necessitate praecepti"
+      },
+      {
+        "phrase": "necessitate medii"
+      },
+      {
+        "phrase": "sententia lata"
+      },
+      {
+        "phrase": "Liberavi animam meam"
+      },
+      {
+        "phrase": "esse aliquid intus"
+      },
+      {
+        "phrase": "Mori nolo"
+      },
+      {
+        "phrase": "Bibliotheca Biblica"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {},
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

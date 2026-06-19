@@ -164,10 +164,11 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-10T12:23:05.094509+00:00
+**Last run:** 2026-06-19T20:37:34.559007+00:00
 **EPUB:** `volumes/v5/output/volume_5.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -184,12 +185,12 @@ Reports:
 | NAV links | 42 |
 | Greek chars / untagged | 6350 / 0 |
 | Hebrew chars / untagged | 980 / 0 |
-| Noteref links / endnote anchors | 195 / 195 |
+| Noteref links / endnote anchors | 196 / 196 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 3 |
+| Repeated phrase hits | 0 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -211,10 +212,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-10T13:02:41.836473+00:00
+**Last run:** 2026-06-19T20:38:05.717214+00:00
 **Status:** WARN (8 warnings)
 
 Reports:
@@ -225,24 +227,24 @@ Reports:
 |-------|--------|
 | PDF pages | 576 |
 | EPUB text files | 39 |
-| EPUB paragraphs/headings | 2155 |
+| EPUB paragraphs/headings | 2147 |
 | Approximate PDF-to-EPUB word coverage | 0.9998 |
 | Weak page matches | 0 |
-| Dense source windows checked | 26785 |
-| Missing dense source-window pages | 33 |
+| Dense source windows checked | 26771 |
+| Missing dense source-window pages | 1 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 561 |
 | Top-of-page windows skipped as unstable | 8 |
-| Missing top-of-page body windows | 0 |
+| Missing top-of-page body windows | 1 |
 | Bottom-of-page body windows checked | 527 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 229 |
+| Structural starts excluded from split warnings | 228 |
 | Short fragments | 27 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 6 |
+| Inline structural marker candidates | 2 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -264,11 +266,11 @@ Reports:
 Warnings requiring triage:
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
 - `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
