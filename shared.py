@@ -97,6 +97,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'adobe-garamond-pro',
+        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'front_matter_skip': 3,
@@ -123,6 +124,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'libertinus',
+        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -137,6 +139,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'minion-pro',
+        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -149,6 +152,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'cardo',
+        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -164,6 +168,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'brill-font',
+        'heading_font': 'roboto',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -177,6 +182,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'baskerville',
+        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -192,6 +198,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'sabon-next-lt',
+        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -206,6 +213,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'palatino',
+        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'suppress_prefatory_note_heading': True,  # Bug #2: Apple Books shows nav title; body h2 is redundant
@@ -234,6 +242,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'im-fell-english',
+        'heading_font': 'cinzel',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'suppress_prefatory_note_heading': True,  # Bug #2
@@ -249,6 +258,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'eb-garamond',
+        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -264,6 +274,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'adobe-carlson-pro',
+        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -276,6 +287,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'arno-pro',
+        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -290,6 +302,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'itc-galliard',
+        'heading_font': 'roboto',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -306,6 +319,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'centaur',
+        'heading_font': 'cinzel',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -319,6 +333,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'new-caledonia-lt-std',
+        'heading_font': 'roboto',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -333,6 +348,7 @@ VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'georgia',
+        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -467,6 +483,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'cormorant-garamond',
+        'heading_font': 'cinzel',
+        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -481,6 +499,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'goudi',
+        'heading_font': 'montserrat',
+        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -495,6 +515,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'coelacanth',
+        'heading_font': 'cinzel',
+        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 1:1 - 3:6']
@@ -505,6 +527,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'playfair-display',
+        'heading_font': 'proxima-nova',
+        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 3:7 - 5:14']
@@ -515,6 +539,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'libre-caslon-text',
+        'heading_font': 'montserrat',
+        'heading_font': 'roboto',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 6:1 - 7:28']
@@ -525,6 +551,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'merriweather',
+        'heading_font': 'inter',
+        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 8:1 - 10:39']
@@ -535,6 +563,8 @@ HEBREWS_VOLUME_CONFIG = {
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
         'body_font': 'literata',
+        'heading_font': 'roboto',
+        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 11:1 - 13:25']
@@ -3734,23 +3764,9 @@ table { max-width: 100% !important; width: 100% !important; overflow-x: auto; di
 
 EPUB3_FONT_STYLES = r"""
 /* Injected font-face declarations and language-specific overrides */
-/* Primary body font: {primary_font} */
-@font-face {{
-    font-family: "{primary_font}";
-    font-weight: normal;
-    font-style: normal;
-    src: url("../Fonts/{primary_file}");
-}}
-{bold_face}
-{italic_face}
-{bold_italic_face}
-/* Proxima Nova — heading display font */
-@font-face {{
-    font-family: "Proxima Nova";
-    font-weight: normal;
-    font-style: normal;
-    src: url("../Fonts/Proxima Nova Regular.ttf");
-}}
+{primary_faces}
+
+{heading_faces}
 @font-face {{
     font-family: "Proxima Nova";
     font-weight: bold;
@@ -3875,7 +3891,7 @@ body, div, p, span {{
 }}
 /* Headings — Baskervville vintage serif display font (Issue 25) */
 h1, h2, h3, h4, h5, h6 {{
-    font-family: "Baskervville", "Owen Title", "Baskerville", "Hoefler Text", "Garamond", "{primary_font}", serif !important;
+    font-family: "{heading_font}", "Owen Title", "Baskerville", "Hoefler Text", "Garamond", "{primary_font}", serif !important;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
     text-align: left !important;
@@ -3906,84 +3922,65 @@ h4.roman-subheading, .roman-list-item, .roman-list-item b {{
 """
 
 
-def generate_font_styles(primary_font_name, primary_font_files):
-    """Generate per-XHTML inline <style> block with @font-face declarations.
-    
-    Font files are stored flat in Fonts/ (no subdirectories), so we use
-    os.path.basename() to flatten paths like 'Brill/Brill-Roman.ttf' → 'Brill-Roman.ttf'.
-    
-    Returns the complete <style> element content as a string.
-    """
-    # 1. Identify primary, bold, italic, and bold-italic files using robust heuristics
-    primary_file = None
-    bold_file = None
-    italic_file = None
-    bold_italic_file = None
-    
-    # Sort files so that explicitly-named Regular/Roman faces come first,
-    # ensuring they claim the primary slot ahead of Medium/Condensed/etc.
-    # Within each group sort by (length, name) for deterministic results.
-    def _font_sort_key(path):
-        n = os.path.basename(path).lower()
-        stem = os.path.splitext(n)[0]
-        is_explicitly_regular = ('regular' in n or 'roman' in n
-                                  or n.endswith('-r.') or n.endswith('_r.'))
-        return (0 if is_explicitly_regular else 1, len(n), n)
+def generate_font_styles(primary_font_name, primary_font_files, heading_font_name='Proxima Nova', heading_font_files=None):
+    def _build_faces(font_name, files):
+        if not files: return "", ""
+        def _font_sort_key(path):
+            n = os.path.basename(path).lower()
+            stem = os.path.splitext(n)[0]
+            is_explicitly_regular = ('regular' in n or 'roman' in n
+                                      or n.endswith('-r.') or n.endswith('_r.'))
+            return (0 if is_explicitly_regular else 1, len(n), n)
 
-    sorted_files = sorted(primary_font_files.values(), key=_font_sort_key)
+        sorted_files = sorted(files.values(), key=_font_sort_key)
+        bold_file = italic_file = bold_italic_file = primary_file = None
+        for font_file in sorted_files:
+            fname = os.path.basename(font_file).lower()
+            is_bold = 'bold' in fname or '-b.' in fname or '_b.' in fname or '-bd.' in fname or '_bd.' in fname
+            _stem = os.path.splitext(fname)[0]
+            is_italic = ('italic' in fname or 'ital' in fname or '-i.' in fname or '-it.' in fname or '_i.' in fname or '_it.' in fname or _stem.endswith('-it') or _stem.endswith('_it') or _stem.endswith('it'))
+            is_regular = 'regular' in fname or 'roman' in fname or '-r.' in fname or '_r.' in fname or (not is_bold and not is_italic)
+            
+            if is_bold and is_italic:
+                if not bold_italic_file: bold_italic_file = os.path.basename(font_file)
+            elif is_bold:
+                if not bold_file: bold_file = os.path.basename(font_file)
+            elif is_italic:
+                if not italic_file: italic_file = os.path.basename(font_file)
+            elif is_regular:
+                if not primary_file: primary_file = os.path.basename(font_file)
+        if not primary_file and files:
+            primary_file = os.path.basename(list(files.values())[0])
+            
+        faces = ""
+        if primary_file:
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: normal;\n    font-style: normal;\n    src: url("../Fonts/{primary_file}");\n}}\n'
+        if bold_file:
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: bold;\n    font-style: normal;\n    src: url("../Fonts/{bold_file}");\n}}\n'
+        if italic_file:
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: normal;\n    font-style: italic;\n    src: url("../Fonts/{italic_file}");\n}}\n'
+        if bold_italic_file:
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: bold;\n    font-style: italic;\n    src: url("../Fonts/{bold_italic_file}");\n}}\n'
+        return faces, primary_file
 
-    for font_file in sorted_files:
-        fname = os.path.basename(font_file).lower()
-
-        is_bold = 'bold' in fname or '-b.' in fname or '_b.' in fname or '-bd.' in fname or '_bd.' in fname
-        _ext = os.path.splitext(fname)[1]
-        _stem = os.path.splitext(fname)[0]
-        is_italic = (
-            'italic' in fname or 'ital' in fname
-            or '-i.' in fname or '-it.' in fname
-            or '_i.' in fname or '_it.' in fname
-            or _stem.endswith('-it') or _stem.endswith('_it')
-            or _stem.endswith('it')  # e.g. boldit, semiboldit
-        )
-        is_regular = 'regular' in fname or 'roman' in fname or '-r.' in fname or '_r.' in fname or (not is_bold and not is_italic)
-        
-        if is_bold and is_italic:
-            if not bold_italic_file: bold_italic_file = os.path.basename(font_file)
-        elif is_bold:
-            if not bold_file: bold_file = os.path.basename(font_file)
-        elif is_italic:
-            if not italic_file: italic_file = os.path.basename(font_file)
-        elif is_regular:
-            if not primary_file: primary_file = os.path.basename(font_file)
-
-    # Fallback for primary_file if no "Regular" found
-    if not primary_file and primary_font_files:
-        primary_file = os.path.basename(list(primary_font_files.values())[0])
+    primary_faces, primary_file = _build_faces(primary_font_name, primary_font_files)
     
-    bold_face = ''
-    if bold_file:
-        bold_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    font-style: normal;\n    src: url("../Fonts/{bold_file}");\n}}'
+    heading_font_files = heading_font_files or PROXIMA_NOVA_FILES
+    heading_faces, _ = _build_faces(heading_font_name, heading_font_files)
     
-    italic_face = ''
-    if italic_file:
-        italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: normal;\n    font-style: italic;\n    src: url("../Fonts/{italic_file}");\n}}'
-    
-    bold_italic_face = ''
-    if bold_italic_file:
-        bold_italic_face = f'@font-face {{\n    font-family: "{primary_font_name}";\n    font-weight: bold;\n    font-style: italic;\n    src: url("../Fonts/{bold_italic_file}");\n}}'
-    
+    # We remove the old manual logic completely.
     if 'cardo' in primary_font_name.lower():
         latin_font_stack = '"Gentium Plus", serif'
     else:
         latin_font_stack = '"Cardo", "Gentium Plus", serif'
     
     latin_styles = f'[lang="la"], [lang="la"] *, .latin, .latin * {{\n    font-family: {latin_font_stack} !important;\n}}'
-    
     return EPUB3_FONT_STYLES.format(
         primary_font=primary_font_name,
-        primary_file=primary_file,
-        bold_face=bold_face,
-        italic_face=italic_face,
-        bold_italic_face=bold_italic_face,
+        primary_faces=primary_faces,
+        
+        
+        heading_font=heading_font_name,
+        heading_faces=heading_faces,
         latin_styles=latin_styles,
     )

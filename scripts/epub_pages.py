@@ -693,7 +693,9 @@ def _inject_fonts_and_css(book, config: dict):
     
     body_font_name = config.get('body_font', 'SBL_BLit')
     primary_font = select_primary_font(body_font_name)
-    font_css = generate_font_styles(primary_font['name'], primary_font['files'])
+    heading_font_name = config.get('heading_font', 'proxima-nova')
+    heading_font = select_primary_font(heading_font_name)
+    font_css = generate_font_styles(primary_font['name'], primary_font['files'], heading_font['name'], heading_font['files'])
     extra_css = config.get('extra_css', '')
     full_css = EPUB_STYLESHEET + '\n' + font_css
     if extra_css:
@@ -717,18 +719,19 @@ def _inject_fonts_and_css(book, config: dict):
         return 'application/font-sfnt'
         
     # Primary font files
-    for _variant, _rel_path in primary_font.get('files', {}).items():
-        _fbase = os.path.basename(_rel_path)
-        if _fbase in font_fnames:
-            continue
-        _src = os.path.join(font_base, _rel_path)
-        if os.path.exists(_src):
-            book.add_item(epub.EpubItem(
-                uid=f'f_{_fbase.replace(".","_")}',
-                file_name=f'Fonts/{_fbase}', media_type=_font_media_type(_fbase),
-                content=open(_src, 'rb').read(),
-            ))
-            font_fnames.add(_fbase)
+    for _font_group in (primary_font, heading_font):
+        for _variant, _rel_path in _font_group.get('files', {}).items():
+            _fbase = os.path.basename(_rel_path)
+            if _fbase in font_fnames:
+                continue
+            _src = os.path.join(font_base, _rel_path)
+            if os.path.exists(_src):
+                book.add_item(epub.EpubItem(
+                    uid=f'f_{_fbase.replace(".","_")}',
+                    file_name=f'Fonts/{_fbase}', media_type=_font_media_type(_fbase),
+                    content=open(_src, 'rb').read(),
+                ))
+                font_fnames.add(_fbase)
             
     # Supplemental fonts
     for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES):
@@ -827,7 +830,7 @@ def _add_front_matter(book, vol_num: int, config: dict, primary_font: dict, styl
     
     for fm in intermediate.get('front_matter_items', []):
         if fm['title'] == _last_fm_title:
-            continue
+                continue
         _last_fm_title = fm['title']
         
         fm_item = epub.EpubHtml(
@@ -835,7 +838,7 @@ def _add_front_matter(book, vol_num: int, config: dict, primary_font: dict, styl
         )
         fm_html = fm['html']
         if fm_html is None:
-            continue
+                continue
             
         fm_overrides = config.get('front_matter_overrides', {})
         if fm['title'] in fm_overrides:
@@ -1102,7 +1105,7 @@ def _render_single_chapter(
     
     for phrase, trans in sorted_phrases:
         if phrase in seen_body_translations:
-            continue
+                continue
             
         if dirty:
             clean_text, map_start, map_end = clean_and_map(body_html)
@@ -1190,7 +1193,7 @@ def _render_single_chapter(
     sorted_biog_terms = sorted(BIOGRAPHICAL_DB.items(), key=lambda x: len(x[0]), reverse=True)
     for term, definition in sorted_biog_terms:
         if term in seen_biographical_terms:
-            continue
+                continue
             
         pattern = re.compile(
             rf'(?<![a-zA-Z0-9\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff\u0300-\u036f־-])'
@@ -1276,7 +1279,7 @@ def _finalize_epub_and_write(
         _fm_html = _fm.get('html')
         _fm_fn = _fm.get('file_name', '')
         if _fm_html is None:
-            continue
+                continue
         if _fm_title and _fm_title not in _nav_seen_titles and _fm_fn not in _nav_seen_files:
             _nav_prefix.append((1, _fm_title, _fm_fn))
             _nav_seen_titles.add(_fm_title)

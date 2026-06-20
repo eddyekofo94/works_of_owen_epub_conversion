@@ -1032,7 +1032,9 @@ def embed_fonts_and_stylesheet(book: epub.EpubBook, vol_num: int, config: dict) 
     
     body_font_name = config.get('body_font', 'SBL_BLit')
     primary_font = select_primary_font(body_font_name)
-    font_css = generate_font_styles(primary_font['name'], primary_font['files'])
+    heading_font_name = config.get('heading_font', 'proxima-nova')
+    heading_font = select_primary_font(heading_font_name)
+    font_css = generate_font_styles(primary_font['name'], primary_font['files'], heading_font['name'], heading_font['files'])
     extra_css = config.get('extra_css', '')
     full_css = EPUB_STYLESHEET + '\n' + font_css
     if extra_css:
@@ -1059,18 +1061,19 @@ def embed_fonts_and_stylesheet(book: epub.EpubBook, vol_num: int, config: dict) 
         return 'application/font-sfnt'
 
     # Primary font files (from select_primary_font dict)
-    for _variant, _rel_path in primary_font.get('files', {}).items():
-        _fbase = os.path.basename(_rel_path)
-        if _fbase in font_fnames:
-            continue
-        _src = os.path.join(font_base, _rel_path)
-        if os.path.exists(_src):
-            book.add_item(epub.EpubItem(
-                uid=f'f_{_fbase.replace(".","_")}',
-                file_name=f'Fonts/{_fbase}', media_type=_font_media_type(_fbase),
-                content=open(_src, 'rb').read(),
-            ))
-            font_fnames.add(_fbase)
+    for _font_group in (primary_font, heading_font):
+        for _variant, _rel_path in _font_group.get('files', {}).items():
+            _fbase = os.path.basename(_rel_path)
+            if _fbase in font_fnames:
+                continue
+            _src = os.path.join(font_base, _rel_path)
+            if os.path.exists(_src):
+                book.add_item(epub.EpubItem(
+                    uid=f'f_{_fbase.replace(".","_")}',
+                    file_name=f'Fonts/{_fbase}', media_type=_font_media_type(_fbase),
+                    content=open(_src, 'rb').read(),
+                ))
+                font_fnames.add(_fbase)
 
     # Supplemental biblical fonts, heading font, and the embedded title display face
     for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES):
