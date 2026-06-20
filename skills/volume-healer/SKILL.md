@@ -21,6 +21,7 @@ The skill is triggered by the `#heal` command:
   - Run the volume state report: `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`
   - Read the generated JSON report `qa/reports/volume_state_report.json` to find the volume with the highest (worst) `Need` score.
   - **CRITICAL**: The worst volume is defined as the volume with the absolute highest `Need` score (typically Rank 1 in the report). Do NOT select the volume closest to entering the PRISTINE tier (lowest Need score among non-pristine volumes, e.g., Volume 16). You must target the highest Need score volume, even if all volumes are already in the PRISTINE tier (Need < 20).
+  - **CRITICAL TARGET**: Do not settle for a Need score < 20. You must seek to polish the volume to the absolute lowest Need score possible, aiming for `< 1.0`. If you cannot reduce the Need score below 1.0, you must explicitly explain *why* it cannot be healed further in your final progression report (e.g., due to unresolvable PDF artifacts, whitelisted false positives, or missing source text).
 - If `#heal [n]` is requested:
   - Target volume `n` directly.
 

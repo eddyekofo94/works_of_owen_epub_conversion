@@ -174,14 +174,15 @@
   },
   "text_integrity": {
     "ignored_warnings": [
-      "possible_beta_code_residue",
-      "repeated_phrases",
       "front_matter_toc_loss",
       "suspicious_large_number_starts",
       "missing_enumerator_markers",
       "repeated_windows",
       "missing_latin_clauses",
-      "low_latin_translation_coverage"
+      "low_latin_translation_coverage",
+      "enumerator_sequence_candidates",
+      "possible_beta_code_residue",
+      "repeated_phrases"
     ],
     "paragraph_splits": [
       ": —",

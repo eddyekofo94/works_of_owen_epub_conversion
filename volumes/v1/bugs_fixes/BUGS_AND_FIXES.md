@@ -948,10 +948,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-14T16:04:03.706000+00:00
+**Last run:** 2026-06-20T13:20:52.839016+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 

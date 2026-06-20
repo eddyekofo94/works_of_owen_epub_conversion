@@ -200,10 +200,18 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-13T13:56:54.176888+00:00
+**Last run:** 2026-06-20T01:17:28.232898+00:00
 **EPUB:** `volumes/v12/output/volume_12.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -216,11 +224,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 63 |
 | Spine items | 62 |
-| Embedded fonts | 20 |
+| Embedded fonts | 21 |
 | NAV links | 64 |
 | Greek chars / untagged | 14115 / 0 |
 | Hebrew chars / untagged | 1456 / 0 |
-| Noteref links / endnote anchors | 1089 / 1088 |
+| Noteref links / endnote anchors | 1089 / 1089 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 1 |
 | Escaped language-tag files | 0 |
@@ -261,10 +269,18 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-13T13:57:43.548140+00:00
+**Last run:** 2026-06-20T01:17:27.250240+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -301,9 +317,9 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 450 |
-| EPUB enumerator markers | 461 |
-| Missing enumerator marker forms | 2 |
-| Enumerator sequence candidates | 0 |
+| EPUB enumerator markers | 459 |
+| Missing enumerator marker forms | 1 |
+| Enumerator sequence candidates | 1 |
 | PDF Greek words / EPUB Greek words | 2590 / 2590 |
 | Greek word coverage ratio | 0.9992 |
 | PDF Hebrew words / EPUB Hebrew words | 222 / 222 |
@@ -313,3 +329,6 @@ Reports:
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
+### 25. Spaced Punctuation Anomalies, Missing Enumerators, and Latin Typos (IMPLEMENTED, AWAITING VALIDATION)
+**Problem:** The text anomaly audit flagged several instances of spaced punctuation marks (`True ,`, `is ,`, `also .`, `ejus ;`, `est ,`, `fieri ,`, `not ,`), a mismatched footnote placement causing `t )`, missing enumerators `(1.)` and `(8.)`, and a missing Latin clause caused by an OCR typo `oppressus et affiictus`.
+**Fix:** Added regex replacements to `volumes/v12/convert.py` that handle spaced punctuation by matching internal markdown tags to safely remove extraneous spaces. Relocated the missing enumerators and the improperly nested footnote marker (`subject )`). Fixed the Latin typo `affiictus` to `afflictus`.

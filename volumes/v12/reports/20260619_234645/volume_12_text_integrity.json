@@ -1,0 +1,865 @@
+{
+  "volume": "12",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
+  "generated_at": "2026-06-19T21:46:39.771290+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
+  "pdf": {
+    "page_count": 822,
+    "skipped_detected": []
+  },
+  "epub": {
+    "spine_text_files": 61,
+    "paragraph_count": 3651
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 270734,
+    "epub_content_tokens": 272726,
+    "coverage_ratio": 0.9994,
+    "missing_word_samples": [
+      {
+        "word": "pre",
+        "pdf": 4,
+        "epub": 0
+      },
+      {
+        "word": "sod",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 4,
+        "epub": 13
+      },
+      {
+        "word": "psalms",
+        "pdf": 3,
+        "epub": 11
+      },
+      {
+        "word": "historical",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "modern",
+        "pdf": 7,
+        "epub": 14
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "onlybegotten",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 815,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 34266,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 3,
+    "front_toc_windows_checked": 12,
+    "missing_front_toc_pages": 1,
+    "missing_front_toc_samples": [
+      {
+        "page": 5,
+        "hit_ratio": 0.5,
+        "sample": "vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism written by biddle and the catechism"
+      }
+    ]
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 820,
+    "top_windows_usable": 793,
+    "skipped_top_window_count": 8,
+    "skipped_top_windows": [
+      {
+        "page": 201,
+        "window": "as for his righteousness and holiness which as was said before because he was",
+        "sample": "2. [As] for his righteousness and holiness, which, as was said before, because he was made upright, in the image of God, we ascribe unto him,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 296,
+        "window": "it is frivolous for if christ was before abram was made abraham we obtain",
+        "sample": "[3.] It is frivolous; for if Christ was before Abram was made Abraham, we obtain what we plead for, for he was made so when God gave him that",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 545,
+        "window": "and again the cause is put for the effect manger for the effect of",
+        "sample": "And again, the cause [is put] for the effect, manger for the effect of it in punishment; and therefore we have translated the word \"vengeance,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 620,
+        "window": "in his friends the shepherd was smitten and the sheep scattered zechariah all his",
+        "sample": "[3.] In his friends. The Shepherd was smitten, and the sheep scattered, Zechariah 13:7, — all his friends distressed, scattered, glad to flee for",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 657,
+        "window": "the third thing is that this deliverance from captivity be by the intervention of",
+        "sample": "The THIRD thing is, that this deliverance from captivity be by the intervention of a price proper]y so called. That Christ did pay such a price",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 666,
+        "window": "this is all the effect here assigned to the blood-shedding of jesus christ this",
+        "sample": "[4.] This is all the effect here assigned to the blood-shedding of Jesus Christ, this is the redemption we have thereby: \"He obtained of his Father",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 667,
+        "window": "it may refer to the open exposition and publication of him in the world",
+        "sample": "[4.] It may refer to the open exposition and publication of him in the world by the gospel; for, as we shall afterward show, the ensuing words hold out",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 757,
+        "window": "what sense maintain that the elect died and rose with christ see pp 82-84",
+        "sample": "what sense I maintain that the \"elect died and rose with Christ,\" see pp. 82-84 [pp. 472, 473].",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 785,
+    "bottom_windows_usable": 740,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 3211,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 445,
+    "short_fragment_count": 50,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "text": "JOHN BIDDLE."
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "Whereunto answers that in Cato: —"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "Ομοιον αὐτῷ σαρκικὸν καθεστάναι ."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Ans."
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "Ans. Genesis 1:1"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "EXAMINATION."
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Ans. Ephesians 4:5."
+      },
+      {
+        "file": "EPUB/ch017.xhtml",
+        "text": "He adds, 12th,"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "text": "Thus, then, they proceed: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "Their first question here is: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "Thus, then, they: —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "To this they say: —"
+      },
+      {
+        "file": "EPUB/ch026.xhtml",
+        "text": "Ans. Ephesians 4:4."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "EXAMINATION."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "His second question is,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "His last query is: —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "His first question is, —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Ans. Acts 3:20, 22."
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "The principles of it are sundry: —"
+      },
+      {
+        "file": "EPUB/ch031.xhtml",
+        "text": "Here the Racovians add: —"
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "Of both these places afterward."
+      },
+      {
+        "file": "EPUB/ch032.xhtml",
+        "text": "At present, —"
+      },
+      {
+        "file": "EPUB/ch034.xhtml",
+        "text": "Briefly, therefore, I shall do it."
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "Mr B.'s first question is, —"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "To which he subjoins, —"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "This seems to be the man's aim: —"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "He proceeds: —"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "To this two things are required: —"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "The first is, —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "This Socinus thus expresses: —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "Saith he: —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "(3.)"
+      },
+      {
+        "file": "EPUB/ch043.xhtml",
+        "text": "They add,"
+      },
+      {
+        "file": "EPUB/ch044.xhtml",
+        "text": "They say, then: —"
+      },
+      {
+        "file": "EPUB/ch046.xhtml",
+        "text": "His next question is: —"
+      },
+      {
+        "file": "EPUB/ch047.xhtml",
+        "text": "His next questions are, first, —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "THE first question is: —"
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Ques. Is prayer a Christian duty?"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 3,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "11. Crellius is something more candid, as he pretends, but indeed infected with the same venom with the other; for after he hath disputed for sundry pages to prove the foreknowledge of God, he concludes at last that for "
+      },
+      {
+        "file": "EPUB/ch039.xhtml",
+        "text": "52. The words of that verse are, —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "12. And that may be the sense of the word ἐπιλαμβάνεται , if not in the effect, yet in the cause, Hebrews 2:16."
+      }
+    ],
+    "roman_heading_candidate_count": 0,
+    "roman_heading_candidates": [],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 450,
+    "epub_marker_count": 461,
+    "missing_marker_count": 2,
+    "missing_markers": [
+      {
+        "marker": "(1.)",
+        "pdf": 110,
+        "epub": 109,
+        "examples": [
+          {
+            "location": "pdf:p51",
+            "context": "them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could not agree; so that all parties looked on him as their own, and were read"
+          },
+          {
+            "location": "pdf:p87",
+            "context": "t as to Mr B.'s faithfulness in their production, I have sundry exceptions to make; as, — (1.) That by his leading questions, and application of the Scripture to them, he hath utterly perverted the scope and intendment of the places urged. Whereas he pretends not to assert"
+          },
+          {
+            "location": "pdf:p133",
+            "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
+          }
+        ]
+      },
+      {
+        "marker": "(8.)",
+        "pdf": 1,
+        "epub": 0,
+        "examples": [
+          {
+            "location": "pdf:p178",
+            "context": "f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
+          }
+        ]
+      }
+    ],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p72",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 109,
+        "epub": 110,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p75",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p208",
+            "context": "(2.) He was less exposed to the fury of the Papists, which he greatly feared (loving well the things of this world), than he would have been had he joined himself to any visible church"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p294",
+            "context": "(2.) Mr B. pretending to give an account of the\" chiefest things pertaining to belief and practice,\" doth yet propose no question at all concerning many of the most important heads of"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 54,
+        "epub": 55,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p295",
+            "context": "(3.) What can be concluded of the mind of God in the Scripture, by cutting off any place or places of it from their dependence, connection, and tendency, catching at those words which"
+          },
+          {
+            "location": "EPUB/ch008.xhtml#p403",
+            "context": "(3.) I desire to know of Mr B. what the throne is made of that God sits on in the heavens, and how far the glistering of his glory doth extend, and whether that glistering of glory dot"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p553",
+            "context": "(3.) That he proves himself to be God by these his predictions."
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 21,
+        "epub": 22,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p75",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1065",
+            "context": "[1.] Will they say that this order is observed by the apostle, — that that which is first done is first expressed as to all particulars? What, then, becomes of their interpretation who"
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1123",
+            "context": "[1.] Because Abraham was the father of many nations, Jews and proselytes, before the preaching of the gospel, as Genesis 15:5."
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 3,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p72",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p103",
+            "context": "λέγοντι ἁπλῶς πιστεύσῃς, ἐὰν τὴν ἀπόδειξιν τῶν καταγγελλομένων ἀπὸ θείων μὴ λάβῃς γραφῶν [1]"
+          },
+          {
+            "location": "EPUB/ch001.xhtml#p105",
+            "context": "[1] \"Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.\" — Cyril of Jerusalem, Catechetical Lectures , Lecture 4, S"
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 21,
+        "epub": 22,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p75",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1067",
+            "context": "[2.] The order of the words is most proper. John having asserted the deity of Christ, with some general concomitants and consequences of the dispensation wherein he undertakes to be a"
+          },
+          {
+            "location": "EPUB/ch018.xhtml#p1124",
+            "context": "[2.] It is false that Abram was not Abraham until after the ascension of Christ and preaching of the gospel to the Gentiles, He was made Abraham from his first enjoyment of his name an"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "made of the seed of david according to the flesh",
+      "count": 5
+    },
+    {
+      "phrase": "that they which commit sin are worthy of death romans",
+      "count": 5
+    },
+    {
+      "phrase": "the lord hath laid on him the iniquity of us",
+      "count": 5
+    },
+    {
+      "phrase": "lord hath laid on him the iniquity of us all",
+      "count": 5
+    },
+    {
+      "phrase": "known unto god are all his works from the beginning",
+      "count": 4
+    },
+    {
+      "phrase": "unto god are all his works from the beginning of",
+      "count": 4
+    },
+    {
+      "phrase": "god are all his works from the beginning of the",
+      "count": 4
+    },
+    {
+      "phrase": "are all his works from the beginning of the world",
+      "count": 4
+    },
+    {
+      "phrase": "the son of god is come and hath given us",
+      "count": 4
+    },
+    {
+      "phrase": "son of god is come and hath given us an",
+      "count": 4
+    },
+    {
+      "phrase": "of god is come and hath given us an understanding",
+      "count": 4
+    },
+    {
+      "phrase": "the brightness of his father's glory and the express image",
+      "count": 4
+    },
+    {
+      "phrase": "brightness of his father's glory and the express image of",
+      "count": 4
+    },
+    {
+      "phrase": "of his father's glory and the express image of his",
+      "count": 4
+    },
+    {
+      "phrase": "his father's glory and the express image of his person",
+      "count": 4
+    },
+    {
+      "phrase": "psalm thou art my son this day have begotten thee",
+      "count": 4
+    },
+    {
+      "phrase": "the mighty god the everlasting father the prince of peace",
+      "count": 4
+    },
+    {
+      "phrase": "when thou shalt make his soul an offering for sin",
+      "count": 4
+    },
+    {
+      "phrase": "he had done no violence neither was any deceit in",
+      "count": 4
+    },
+    {
+      "phrase": "had done no violence neither was any deceit in his",
+      "count": 4
+    },
+    {
+      "phrase": "done no violence neither was any deceit in his mouth",
+      "count": 4
+    },
+    {
+      "phrase": "he was cut off out of the land of the",
+      "count": 4
+    },
+    {
+      "phrase": "was cut off out of the land of the living",
+      "count": 4
+    },
+    {
+      "phrase": "vindiciae evangelicae or the mystery of the gospel vindicated and",
+      "count": 3
+    },
+    {
+      "phrase": "evangelicae or the mystery of the gospel vindicated and socinianism",
+      "count": 3
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 2590,
+    "epub_greek_word_count": 2590,
+    "pdf_greek_unique_words": 1207,
+    "epub_greek_unique_words": 1207,
+    "greek_word_coverage_ratio": 0.9992,
+    "pdf_hebrew_word_count": 222,
+    "epub_hebrew_word_count": 222,
+    "pdf_hebrew_unique_words": 157,
+    "epub_hebrew_unique_words": 157,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 133,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 7,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 7649,
+    "epub_latin_word_count": 7683,
+    "epub_tagged_latin_word_count": 5731,
+    "pdf_latin_unique_words": 2739,
+    "epub_latin_unique_words": 2740,
+    "epub_tagged_unique_words": 2270,
+    "latin_word_coverage_ratio": 0.9976,
+    "latin_tagging_ratio": 0.7459,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "grotius",
+        "epub": 197,
+        "tagged": 16
+      },
+      {
+        "word": "socinus",
+        "epub": 169,
+        "tagged": 36
+      },
+      {
+        "word": "annotator",
+        "epub": 69,
+        "tagged": 1
+      },
+      {
+        "word": "smalcius",
+        "epub": 50,
+        "tagged": 12
+      },
+      {
+        "word": "crellius",
+        "epub": 37,
+        "tagged": 4
+      },
+      {
+        "word": "jus",
+        "epub": 44,
+        "tagged": 21
+      },
+      {
+        "word": "thomas",
+        "epub": 23,
+        "tagged": 1
+      },
+      {
+        "word": "franciscus",
+        "epub": 21,
+        "tagged": 1
+      },
+      {
+        "word": "incarnate",
+        "epub": 15,
+        "tagged": 0
+      },
+      {
+        "word": "transylvania",
+        "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "professor",
+        "epub": 11,
+        "tagged": 2
+      },
+      {
+        "word": "racovia",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "invocate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "blandrata",
+        "epub": 11,
+        "tagged": 3
+      },
+      {
+        "word": "eta",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "rabbi",
+        "epub": 11,
+        "tagged": 3
+      },
+      {
+        "word": "ostorodius",
+        "epub": 9,
+        "tagged": 2
+      },
+      {
+        "word": "vera",
+        "epub": 12,
+        "tagged": 5
+      },
+      {
+        "word": "mediate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "statorius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "schlichtingius",
+        "epub": 11,
+        "tagged": 5
+      },
+      {
+        "word": "anno",
+        "epub": 9,
+        "tagged": 3
+      },
+      {
+        "word": "servetus",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "zanchius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "laelius",
+        "epub": 9,
+        "tagged": 3
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 724,
+    "missing_latin_clause_count": 1,
+    "missing_latin_clauses": [
+      {
+        "page": 593,
+        "word_count": 6,
+        "sample": "oppressus et affiictus fuit et non"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 1550,
+    "translated_latin_runs_count": 697,
+    "latin_translation_ratio": 0.4497,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "HUGO GROTIUS"
+      },
+      {
+        "phrase": "Faustus Socinus"
+      },
+      {
+        "phrase": "as \"quantilla causa"
+      },
+      {
+        "phrase": "Valentinus Smalcius"
+      },
+      {
+        "phrase": "Nicolaus Arnoldus"
+      },
+      {
+        "phrase": "Maresius, ‡  professor"
+      },
+      {
+        "phrase": "Dionysius ‡  Petavius"
+      },
+      {
+        "phrase": "Socinus, Smalcius, Crellius"
+      },
+      {
+        "phrase": "Ptolemaeus, Valentinus secundus"
+      },
+      {
+        "phrase": "Epiphanius ‡  in Panario"
+      },
+      {
+        "phrase": "Tatianus, Cerdo"
+      },
+      {
+        "phrase": "Asclepiodotus, Natalius"
+      },
+      {
+        "phrase": "Macedonius, Nestorius"
+      },
+      {
+        "phrase": "Theodotus, Paulus, Photinus"
+      },
+      {
+        "phrase": "Valentinus, Calarbasus"
+      },
+      {
+        "phrase": "Photinus, Theodotus"
+      },
+      {
+        "phrase": "ignota loquor"
+      },
+      {
+        "phrase": "Georgius Blandrata, ‡  Petrus Statorius, ‡  Franciscus Lismaninus"
+      },
+      {
+        "phrase": "in Silesia, Moravia"
+      },
+      {
+        "phrase": "is, \"Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "possible_beta_code_residue",
+      "repeated_phrases"
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

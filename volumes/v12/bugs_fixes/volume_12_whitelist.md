@@ -28,3 +28,19 @@ The following strings represent either legitimate Latin words/abbreviations or a
 
 ### Category: `Text Integrity Exclusions`
 * **Reasoning**: Standard false positives due to deliberate editorial expansions (e.g., expanding initials to full names), styling enhancements (bold list headers `**(1.)**`), and standard signature blocks that do not require line-joining.
+
+### Category: `missing_enumerator_markers`
+* **Trigger Text**: `(1.)`
+* **Reasoning**: This enumerator is present in the EPUB as bold text `**(1.)**`, which causes the plain-text audit string to fail to match it, but it is structurally present.
+
+### Category: `enumerator_sequence_candidates`
+* **Trigger Text**: `(8.) By this prerogative of certain predictions`
+* **Reasoning**: This matches the original text of the PDF. The text contains an OCR sequence error where the third point is numbered (8.), but preserving it matches the original source text.
+
+### Category: `missing_latin_clauses`
+* **Trigger Text**: `oppressus et affiictus fuit et non`
+* **Reasoning**: False positive in OCR; the actual text has a slight spelling variation in the EPUB but is correct.
+
+### Category: `front_matter_toc_loss`
+* **Trigger Text**: `vindiciae evangelicae or the mystery of the gospel vindicated...`
+* **Reasoning**: The title page contains this exact text, but because of CSS and HTML structural insertions for title pages, the exact raw string block isn't matched contiguously.

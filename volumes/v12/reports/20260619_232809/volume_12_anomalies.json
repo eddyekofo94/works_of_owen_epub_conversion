@@ -1,0 +1,82 @@
+{
+  "volume": "12",
+  "total_words_audited": 319799,
+  "total_anomalies_count": 8,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "True ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "The Preface to the Reader.",
+        "contexts": [
+          "... God blessed for ever, and the Socinians tell us, \"True , but he is a God by office, not by nature,\" is it ..."
+        ]
+      },
+      {
+        "target": "is ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "... The conclusion which Mr B. guides unto from hence is , that God knew not that which he inquired after, a ..."
+        ]
+      },
+      {
+        "target": "also .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5.",
+        "contexts": [
+          "... t both in respect of the effect and of its causes also . Such was the soldier's piercing of the side of Ch ..."
+        ]
+      },
+      {
+        "target": "ejus ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 12.",
+        "contexts": [
+          "... ias vidisse gloriam Christi, sicut Abrahamus diem ejus ;\" \u2014 \"Isaiah saw his glory, as Abraham saw his day. ..."
+        ]
+      },
+      {
+        "target": "est ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 13.",
+        "contexts": [
+          "... pretation of. \"He took the seed of Abraham.\" \"Id est , Id agit ut vos Hebroaeos liberet a peccatis et me ..."
+        ]
+      },
+      {
+        "target": "t )",
+        "description": "Spaced closing parenthesis",
+        "chapter": "Chapter 25.",
+        "contexts": [
+          "... ning his dispute with a learned Jew on that subject ), yet it appears that by this they are confessedly ..."
+        ]
+      },
+      {
+        "target": "fieri ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 33.",
+        "contexts": [
+          "... ty in us; or, 2. Such as mention a perfection in \"fieri , \" but not in \"facto esse,\" as we speak, \u2014 a press ..."
+        ]
+      },
+      {
+        "target": "not ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Of the Death of Christ, and of Justification:",
+        "contexts": [
+          "... earance, which in their own proper place they had not , or gathering up their concessions to the adversar ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {}
+}

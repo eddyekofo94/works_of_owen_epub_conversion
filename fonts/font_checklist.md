@@ -116,35 +116,35 @@ Each font should be located in `fonts/<font_folder>/` so that the symlink in the
 Based on the current pipeline configuration (`shared.py`), here is the body font assignment for each volume:
 
 ### Owen Works (16 Volumes)
-| Volume | Subtitle/Content | Assigned Body Font |
-|---|---|---|
-| **Volume 1** | The Glory of Christ | `adobe-garamond-pro` |
-| **Volume 2** | Communion with God | `libertinus` |
-| **Volume 3** | The Holy Spirit | `minion-pro` |
-| **Volume 4** | The Work of the Spirit | `cardo` |
-| **Volume 5** | Faith and Its Evidences | `brill-font` |
-| **Volume 6** | Temptation and Sin | `baskerville` |
-| **Volume 7** | Sin and Grace | `sabon-next-lt` |
-| **Volume 8** | Sermons to the Nation | `palatino` |
-| **Volume 9** | Sermons to the Church | `im-fell-english` |
-| **Volume 10** | The Death of Christ | `eb-garamond` |
-| **Volume 11** | Continuing in the Faith | `adobe-carlson-pro` |
-| **Volume 12** | The Gospel Defended | `arno-pro` |
-| **Volume 13** | Ministry and Fellowship | `itc-galliard` |
-| **Volume 14** | True and False Religion | `centaur` |
-| **Volume 15** | Church Purity and Unity | `new-caledonia-lt-std` |
-| **Volume 16** | The Church and the Bible | `georgia` |
+| Volume | Subtitle/Content | Assigned Body Font | Assigned Heading Font |
+|---|---|---|---|
+| **Volume 1** | The Glory of Christ | `adobe-garamond-pro` | `proxima-nova` |
+| **Volume 2** | Communion with God | `libertinus` | `inter` |
+| **Volume 3** | The Holy Spirit | `minion-pro` | `inter` |
+| **Volume 4** | The Work of the Spirit | `cardo` | `montserrat` |
+| **Volume 5** | Faith and Its Evidences | `brill-font` | `roboto` |
+| **Volume 6** | Temptation and Sin | `baskerville` | `proxima-nova` |
+| **Volume 7** | Sin and Grace | `sabon-next-lt` | `montserrat` |
+| **Volume 8** | Sermons to the Nation | `palatino` | `proxima-nova` |
+| **Volume 9** | Sermons to the Church | `im-fell-english` | `cinzel` |
+| **Volume 10** | The Death of Christ | `eb-garamond` | `montserrat` |
+| **Volume 11** | Continuing in the Faith | `adobe-carlson-pro` | `proxima-nova` |
+| **Volume 12** | The Gospel Defended | `arno-pro` | `inter` |
+| **Volume 13** | Ministry and Fellowship | `itc-galliard` | `roboto` |
+| **Volume 14** | True and False Religion | `centaur` | `cinzel` |
+| **Volume 15** | Church Purity and Unity | `new-caledonia-lt-std` | `roboto` |
+| **Volume 16** | The Church and the Bible | `georgia` | `inter` |
 
 ### Hebrews Commentary (7 Volumes)
-| Volume | Content | Assigned Body Font |
-|---|---|---|
-| **Volume h1** | Preliminary Exercitations (Part 1) | `cormorant-garamond` |
-| **Volume h2** | Preliminary Exercitations (Part 2) | `goudi` |
-| **Volume h3** | Exposition of Hebrews 1:1 – 3:6 | `coelacanth` |
-| **Volume h4** | Exposition of Hebrews 3:7 – 5:14 | `playfair-display` |
-| **Volume h5** | Exposition of Hebrews 6:1 – 7:28 | `libre-caslon-text` |
-| **Volume h6** | Exposition of Hebrews 8:1 – 10:39 | `merriweather` |
-| **Volume h7** | Exposition of Hebrews 11:1 – 13:25 | `literata` |
+| Volume | Content | Assigned Body Font | Assigned Heading Font |
+|---|---|---|---|
+| **Volume h1** | Preliminary Exercitations (Part 1) | `cormorant-garamond` | `cinzel` |
+| **Volume h2** | Preliminary Exercitations (Part 2) | `goudi` | `montserrat` |
+| **Volume h3** | Exposition of Hebrews 1:1 – 3:6 | `bembo` | `cinzel` |
+| **Volume h4** | Exposition of Hebrews 3:7 – 5:14 | `playfair-display` | `proxima-nova` |
+| **Volume h5** | Exposition of Hebrews 6:1 – 7:28 | `libre-caslon-text` | `montserrat` |
+| **Volume h6** | Exposition of Hebrews 8:1 – 10:39 | `merriweather` | `inter` |
+| **Volume h7** | Exposition of Hebrews 11:1 – 13:25 | `literata` | `roboto` |
 
 ---
 

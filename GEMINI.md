@@ -32,6 +32,12 @@ body {
 body, div, p, span, h1, h2, h3, h4, h5, h6 {
   font-family: "[PRIMARY]", "SBL BibLit", "Gentium Plus", serif !important;
 }
+h1, h2, h3, h4, h5, h6 {
+  text-align: left !important;
+  -webkit-hyphens: none !important;
+  -epub-hyphens: none !important;
+  hyphens: none !important;
+}
 p {
   text-align: justify !important;
   text-justify: inter-word;

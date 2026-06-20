@@ -2,7 +2,7 @@
   "volume": "12",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-13T13:57:43.548140+00:00",
+  "generated_at": "2026-06-19T21:57:13.880598+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -626,25 +626,25 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 8457,
-    "epub_latin_word_count": 8521,
-    "epub_tagged_latin_word_count": 6219,
-    "pdf_latin_unique_words": 2880,
-    "epub_latin_unique_words": 2895,
-    "epub_tagged_unique_words": 2367,
+    "pdf_latin_word_count": 7649,
+    "epub_latin_word_count": 7683,
+    "epub_tagged_latin_word_count": 5731,
+    "pdf_latin_unique_words": 2739,
+    "epub_latin_unique_words": 2740,
+    "epub_tagged_unique_words": 2270,
     "latin_word_coverage_ratio": 0.9976,
-    "latin_tagging_ratio": 0.7298,
+    "latin_tagging_ratio": 0.7459,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
         "word": "grotius",
         "epub": 197,
-        "tagged": 19
+        "tagged": 16
       },
       {
         "word": "socinus",
         "epub": 169,
-        "tagged": 38
+        "tagged": 36
       },
       {
         "word": "annotator",
@@ -654,22 +654,12 @@
       {
         "word": "smalcius",
         "epub": 50,
-        "tagged": 14
-      },
-      {
-        "word": "undergo",
-        "epub": 33,
-        "tagged": 0
+        "tagged": 12
       },
       {
         "word": "crellius",
         "epub": 37,
-        "tagged": 5
-      },
-      {
-        "word": "nowhere",
-        "epub": 25,
-        "tagged": 0
+        "tagged": 4
       },
       {
         "word": "jus",
@@ -682,24 +672,9 @@
         "tagged": 1
       },
       {
-        "word": "insinuate",
-        "epub": 20,
-        "tagged": 0
-      },
-      {
-        "word": "relate",
-        "epub": 19,
-        "tagged": 0
-      },
-      {
         "word": "franciscus",
         "epub": 21,
-        "tagged": 2
-      },
-      {
-        "word": "beza",
-        "epub": 16,
-        "tagged": 0
+        "tagged": 1
       },
       {
         "word": "incarnate",
@@ -712,39 +687,9 @@
         "tagged": 0
       },
       {
-        "word": "determinate",
-        "epub": 15,
-        "tagged": 1
-      },
-      {
-        "word": "erasmus",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
-        "word": "volkelius",
-        "epub": 15,
-        "tagged": 3
-      },
-      {
-        "word": "create",
-        "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "counsellor",
-        "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "governor",
-        "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "accommodate",
+        "word": "professor",
         "epub": 11,
-        "tagged": 0
+        "tagged": 2
       },
       {
         "word": "racovia",
@@ -757,14 +702,69 @@
         "tagged": 0
       },
       {
-        "word": "iii",
+        "word": "blandrata",
+        "epub": 11,
+        "tagged": 3
+      },
+      {
+        "word": "eta",
         "epub": 8,
         "tagged": 0
+      },
+      {
+        "word": "rabbi",
+        "epub": 11,
+        "tagged": 3
+      },
+      {
+        "word": "ostorodius",
+        "epub": 9,
+        "tagged": 2
+      },
+      {
+        "word": "vera",
+        "epub": 12,
+        "tagged": 5
+      },
+      {
+        "word": "mediate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "statorius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "schlichtingius",
+        "epub": 11,
+        "tagged": 5
+      },
+      {
+        "word": "anno",
+        "epub": 9,
+        "tagged": 3
+      },
+      {
+        "word": "servetus",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "zanchius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "laelius",
+        "epub": 9,
+        "tagged": 3
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 762,
+    "latin_clauses_checked": 724,
     "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
       {
@@ -775,9 +775,9 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 1581,
-    "translated_latin_runs_count": 674,
-    "latin_translation_ratio": 0.4263,
+    "tagged_latin_runs_count": 1550,
+    "translated_latin_runs_count": 697,
+    "latin_translation_ratio": 0.4497,
     "untranslated_latin_samples": [
       {
         "phrase": "HUGO GROTIUS"
@@ -816,19 +816,10 @@
         "phrase": "Asclepiodotus, Natalius"
       },
       {
-        "phrase": "Paulus Samosatenus"
-      },
-      {
-        "phrase": "De Synodis"
-      },
-      {
         "phrase": "Macedonius, Nestorius"
       },
       {
         "phrase": "Theodotus, Paulus, Photinus"
-      },
-      {
-        "phrase": "Cerinthus, ‡  Paulus Samosatenus, Marcus"
       },
       {
         "phrase": "Valentinus, Calarbasus"
@@ -838,6 +829,15 @@
       },
       {
         "phrase": "ignota loquor"
+      },
+      {
+        "phrase": "Georgius Blandrata, ‡  Petrus Statorius, ‡  Franciscus Lismaninus"
+      },
+      {
+        "phrase": "in Silesia, Moravia"
+      },
+      {
+        "phrase": "is, \"Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino"
       }
     ]
   },

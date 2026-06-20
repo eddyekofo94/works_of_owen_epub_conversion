@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-19T21:19:26Z
+Generated: 2026-06-20T13:43:55Z
 
 ## Summary
 
@@ -10,18 +10,18 @@ Generated: 2026-06-19T21:19:26Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 12 | 8.3 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
+| 1 | 12 | 40.0 | arno-pro | 3 |      ? |      ? |      ? |      ? | 0 | 0 | NONE |
 | 2 | 3 | 7.1 | minion-pro | 1 |  99.97 |  99.87 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
 | 3 | 1 | 6.7 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.77 | 0 | 0 | PRISTINE |
 | 4 | 5 | 5.8 | brill-font | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 5 | 11 | 5.5 | minion-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
-| 6 | 8 | 4.8 | gentium-plus-2 | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
-| 7 | 10 | 4.4 | brill-font | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
-| 8 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
-| 9 | 15 | 3.0 | sabon-next-lt | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
-| 10 | 9 | 2.8 | cardo | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
-| 11 | 13 | 2.4 | baskerville | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
-| 12 | 16 | 2.1 | gentium-plus-2 | 5 |  99.95 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
+| 5 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 6 | 8 | 4.8 | palatino | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
+| 7 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
+| 8 | 14 | 4.4 | centaur | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
+| 9 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
+| 10 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
+| 11 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
+| 12 | 16 | 2.1 | georgia | 5 |  99.95 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
 | 13 | 4 | 2.0 | cardo | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
 | 14 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
 | 15 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | PRISTINE |
@@ -31,19 +31,40 @@ Generated: 2026-06-19T21:19:26Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|--------|----------|
-| 1 | h2 | 36.3 | gentium-plus-2 | 3 |  99.81 |  100.0 |  100.0 | 39 | None | FULL |
-| 2 | h5 | 34.1 | minion-pro | 1 |  99.93 |  100.0 |  100.0 | 6 | None | FULL |
-| 3 | h3 | 32.1 | adobe-garamond-pro | 1 |  99.97 |  100.0 |  100.0 | 13 | None | STANDARD |
-| 4 | h6 | 30.8 | baskerville | 1 |  99.98 |  100.0 |  100.0 | 4 | None | FULL |
-| 5 | h1 | 30.2 | adobe-garamond-pro | 3 |  99.99 |  100.0 |  100.0 | 30 | None | FULL |
-| 6 | h4 | 28.7 | libertinus | 1 |  99.96 |  100.0 |  100.0 | 9 | None | FULL |
-| 7 | h7 | 28.3 | sabon-next-lt | 1 |  99.98 |  100.0 |  100.0 | 2 | None | FULL |
+| 1 | h2 | 36.3 | goudi | 3 |  99.81 |  100.0 |  100.0 | 39 | None | FULL |
+| 2 | h5 | 34.1 | libre-caslon-text | 1 |  99.93 |  100.0 |  100.0 | 6 | None | FULL |
+| 3 | h3 | 32.1 | coelacanth | 1 |  99.97 |  100.0 |  100.0 | 13 | None | STANDARD |
+| 4 | h6 | 30.8 | merriweather | 1 |  99.98 |  100.0 |  100.0 | 4 | None | FULL |
+| 5 | h1 | 30.2 | cormorant-garamond | 3 |  99.99 |  100.0 |  100.0 | 30 | None | FULL |
+| 6 | h4 | 28.7 | playfair-display | 1 |  99.96 |  100.0 |  100.0 | 9 | None | FULL |
+| 7 | h7 | 28.3 | literata | 1 |  99.98 |  100.0 |  100.0 | 2 | None | FULL |
 
 ## Per-Volume Details
 
-### Volume h2 — Need: 36.3 (👌 Fair) — Rank 1
+### Volume 12 — Need: 40.0 (🩷 Needs work) — Rank 1
 
-- **Body font:** gentium-plus-2
+- **Body font:** arno-pro
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** NONE
+- **convert.py:** Yes (300 lines, 1 text_replacements)
+- **Audit:** errors=None, warnings=None, footnotes=None
+- **Word coverage:** ?
+- **Greek coverage:** ?
+- **Hebrew coverage:** ?
+- **Latin coverage:** ?
+- **Latin tagging:** ?
+- **Latin translation:** ?
+- **Citations:** total=70, unresolved=0
+- **Splits:** None
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 📋 Run EPUB audit; 📝 Run text integrity audit
+
+### Volume h2 — Need: 36.3 (👌 Fair) — Rank 2
+
+- **Body font:** goudi
 - **Source type:** epub2
 - **Treatises:** 3
 - **QA level:** FULL
@@ -62,9 +83,9 @@ Generated: 2026-06-19T21:19:26Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h5 — Need: 34.1 (👌 Fair) — Rank 2
+### Volume h5 — Need: 34.1 (👌 Fair) — Rank 3
 
-- **Body font:** minion-pro
+- **Body font:** libre-caslon-text
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** FULL
@@ -83,9 +104,9 @@ Generated: 2026-06-19T21:19:26Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h3 — Need: 32.1 (👌 Fair) — Rank 3
+### Volume h3 — Need: 32.1 (👌 Fair) — Rank 4
 
-- **Body font:** adobe-garamond-pro
+- **Body font:** coelacanth
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** STANDARD
@@ -104,9 +125,9 @@ Generated: 2026-06-19T21:19:26Z
 - **Unmatched quotes:** None
 - **Recommended:** 🐛 Run bug regression report; translate_unresolved_citations
 
-### Volume h6 — Need: 30.8 (👌 Fair) — Rank 4
+### Volume h6 — Need: 30.8 (👌 Fair) — Rank 5
 
-- **Body font:** baskerville
+- **Body font:** merriweather
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** FULL
@@ -125,9 +146,9 @@ Generated: 2026-06-19T21:19:26Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h1 — Need: 30.2 (👌 Fair) — Rank 5
+### Volume h1 — Need: 30.2 (👌 Fair) — Rank 6
 
-- **Body font:** adobe-garamond-pro
+- **Body font:** cormorant-garamond
 - **Source type:** epub2
 - **Treatises:** 3
 - **QA level:** FULL
@@ -146,9 +167,9 @@ Generated: 2026-06-19T21:19:26Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h4 — Need: 28.7 (👌 Fair) — Rank 6
+### Volume h4 — Need: 28.7 (👌 Fair) — Rank 7
 
-- **Body font:** libertinus
+- **Body font:** playfair-display
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** FULL
@@ -167,9 +188,9 @@ Generated: 2026-06-19T21:19:26Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h7 — Need: 28.3 (👌 Fair) — Rank 7
+### Volume h7 — Need: 28.3 (👌 Fair) — Rank 8
 
-- **Body font:** sabon-next-lt
+- **Body font:** literata
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** FULL
@@ -187,27 +208,6 @@ Generated: 2026-06-19T21:19:26Z
 - **Suspected anomalies:** 230
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
-
-### Volume 12 — Need: 8.3 (✅ Good) — Rank 8
-
-- **Body font:** arno-pro
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** PRISTINE
-- **convert.py:** Yes (296 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.94
-- **Greek coverage:** 99.92
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.76
-- **Latin tagging:** 72.98
-- **Latin translation:** 42.63
-- **Citations:** total=70, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 8
-- **Unmatched quotes:** 0
-- **Recommended:** 
 
 ### Volume 3 — Need: 7.1 (✅ Good) — Rank 9
 
@@ -274,7 +274,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 11 — Need: 5.5 (✅ Good) — Rank 12
 
-- **Body font:** minion-pro
+- **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
 - **Treatises:** 1
 - **QA level:** PRISTINE
@@ -295,7 +295,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 8 — Need: 4.8 (✅ Good) — Rank 13
 
-- **Body font:** gentium-plus-2
+- **Body font:** palatino
 - **Source type:** ages_pdf
 - **Treatises:** 16
 - **QA level:** FULL
@@ -316,7 +316,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 10 — Need: 4.4 (✅ Good) — Rank 14
 
-- **Body font:** brill-font
+- **Body font:** eb-garamond
 - **Source type:** ages_pdf
 - **Treatises:** 4
 - **QA level:** PRISTINE
@@ -337,7 +337,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 14 — Need: 4.4 (✅ Good) — Rank 15
 
-- **Body font:** brill-font
+- **Body font:** centaur
 - **Source type:** ages_pdf
 - **Treatises:** 2
 - **QA level:** PRISTINE
@@ -358,7 +358,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 15 — Need: 3.0 (✅ Good) — Rank 16
 
-- **Body font:** sabon-next-lt
+- **Body font:** new-caledonia-lt-std
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** PRISTINE
@@ -379,7 +379,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 9 — Need: 2.8 (✅ Good) — Rank 17
 
-- **Body font:** cardo
+- **Body font:** im-fell-english
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** PRISTINE
@@ -400,7 +400,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 13 — Need: 2.4 (✅ Good) — Rank 18
 
-- **Body font:** baskerville
+- **Body font:** itc-galliard
 - **Source type:** ages_pdf
 - **Treatises:** 5
 - **QA level:** PRISTINE
@@ -421,7 +421,7 @@ Generated: 2026-06-19T21:19:26Z
 
 ### Volume 16 — Need: 2.1 (✅ Good) — Rank 19
 
-- **Body font:** gentium-plus-2
+- **Body font:** georgia
 - **Source type:** ages_pdf
 - **Treatises:** 5
 - **QA level:** PRISTINE

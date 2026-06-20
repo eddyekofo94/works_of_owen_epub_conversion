@@ -40,9 +40,9 @@
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 450
-- EPUB enumerator markers: 461
-- Missing enumerator marker forms: 2
-- Enumerator sequence candidates: 0
+- EPUB enumerator markers: 459
+- Missing enumerator marker forms: 1
+- Enumerator sequence candidates: 1
 
 ## Greek / Hebrew
 
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 8457
-- EPUB Latin words: 8521
-- EPUB Tagged Latin words: 6219
+- PDF Latin words: 7649
+- EPUB Latin words: 7683
+- EPUB Tagged Latin words: 5731
 - Latin word coverage ratio: 0.9976
-- Latin word tagging ratio: 0.7298
-- Latin clauses checked: 762
+- Latin word tagging ratio: 0.7459
+- Latin clauses checked: 724
 - Missing Latin clauses: 1
-- Tagged Latin runs checked: 1581
-- Translated Latin runs: 674
-- Latin translation ratio: 0.4263
+- Tagged Latin runs checked: 1550
+- Translated Latin runs: 697
+- Latin translation ratio: 0.4497
 
 ## Missing Front CONTENTS Pages
 
@@ -96,7 +96,10 @@
 ## Missing Enumerator Markers
 
 - marker: (1.); pdf: 110; epub: 109; examples: [{'location': 'pdf:p51', 'context': 'them to Palaeologus. f75 By this course of behavior, the man had these two advantages: — (1.) He kept fair with all parties amongst them, and provoked not any by joining with them with whom they could...
-- marker: (8.); pdf: 1; epub: 0; examples: [{'location': 'pdf:p178', 'context': 'f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity;...
+
+## Enumerator Sequence Candidates
+
+- file: EPUB/ch011.xhtml; marker: (8.); family: paren_decimal; context: (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a
 
 ## Repeated Windows
 
@@ -128,16 +131,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: grotius; epub: 197; tagged: 19
-- word: socinus; epub: 169; tagged: 38
+- word: grotius; epub: 197; tagged: 16
+- word: socinus; epub: 169; tagged: 36
 - word: annotator; epub: 69; tagged: 1
-- word: smalcius; epub: 50; tagged: 14
-- word: undergo; epub: 33; tagged: 0
-- word: crellius; epub: 37; tagged: 5
-- word: nowhere; epub: 25; tagged: 0
+- word: smalcius; epub: 50; tagged: 12
+- word: crellius; epub: 37; tagged: 4
 - word: jus; epub: 44; tagged: 21
 - word: thomas; epub: 23; tagged: 1
-- word: insinuate; epub: 20; tagged: 0
+- word: franciscus; epub: 21; tagged: 1
+- word: incarnate; epub: 15; tagged: 0
+- word: transylvania; epub: 14; tagged: 0
 
 ## Missing Latin Clauses
 

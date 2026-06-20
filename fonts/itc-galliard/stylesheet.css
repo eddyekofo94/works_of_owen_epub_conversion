@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-BlackItalic.eot');
+    src: local('ITC Galliard Std Black Italic'), local('GalliardStd-BlackItalic'),
+        url('GalliardStd-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-BlackItalic.woff2') format('woff2'),
+        url('GalliardStd-BlackItalic.woff') format('woff'),
+        url('GalliardStd-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-Roman.eot');
+    src: local('ITC Galliard Std Roman'), local('GalliardStd-Roman'),
+        url('GalliardStd-Roman.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-Roman.woff2') format('woff2'),
+        url('GalliardStd-Roman.woff') format('woff'),
+        url('GalliardStd-Roman.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-Ultra.eot');
+    src: local('ITC Galliard Std Ultra'), local('GalliardStd-Ultra'),
+        url('GalliardStd-Ultra.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-Ultra.woff2') format('woff2'),
+        url('GalliardStd-Ultra.woff') format('woff'),
+        url('GalliardStd-Ultra.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-UltraItalic.eot');
+    src: local('ITC Galliard Std Ultra Italic'), local('GalliardStd-UltraItalic'),
+        url('GalliardStd-UltraItalic.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-UltraItalic.woff2') format('woff2'),
+        url('GalliardStd-UltraItalic.woff') format('woff'),
+        url('GalliardStd-UltraItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-Italic.eot');
+    src: local('ITC Galliard Std Italic'), local('GalliardStd-Italic'),
+        url('GalliardStd-Italic.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-Italic.woff2') format('woff2'),
+        url('GalliardStd-Italic.woff') format('woff'),
+        url('GalliardStd-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-Bold.eot');
+    src: local('ITC Galliard Std Bold'), local('GalliardStd-Bold'),
+        url('GalliardStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-Bold.woff2') format('woff2'),
+        url('GalliardStd-Bold.woff') format('woff'),
+        url('GalliardStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-Black.eot');
+    src: local('ITC Galliard Std Black'), local('GalliardStd-Black'),
+        url('GalliardStd-Black.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-Black.woff2') format('woff2'),
+        url('GalliardStd-Black.woff') format('woff'),
+        url('GalliardStd-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Galliard Std';
+    src: url('GalliardStd-BoldItalic.eot');
+    src: local('ITC Galliard Std Bold Italic'), local('GalliardStd-BoldItalic'),
+        url('GalliardStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('GalliardStd-BoldItalic.woff2') format('woff2'),
+        url('GalliardStd-BoldItalic.woff') format('woff'),
+        url('GalliardStd-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+

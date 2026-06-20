@@ -38,13 +38,11 @@ _V12_VINDICIAE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="t
 <p class="title-line-medium">The Racovian Catechism;</p>
 <p class="title-connector">With the Vindication of the Testimonies of Scripture concerning the Deity and Satisfaction of Jesus Christ from the perverse Expositions and Interpretations of them by Hugo Grotius, in his Annotations on the Bible.</p>
 <p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block" style="text-align: center;">
-<p lang="el" style="font-family: 'SBL Greek', 'Cardo', serif; font-size: 1.15em; line-height: 1.45; margin-bottom: 0.5em;">Μηδὲ ἐμοὶ τῷ ταῦτα λέγοντι ἁπλῶς πιστεύσῃς, ἐὰν τὴν ἀπόδειξιν τῶν καταγγελλομένων ἀπὸ θείων μὴ λάβῃς γραφῶν<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="#fn_cyril"><sup>[1]</sup></a></p>
+<div class="quote-block" style="text-align: center; margin: 1.5em auto; max-width: 80%;">
+<p lang="el" style="font-family: 'SBL Greek', 'Cardo', serif; font-size: 1.15em; line-height: 1.45; margin-bottom: 0.5em;">Μηδὲ ἐμοὶ τῷ ταῦτα λέγοντι ἁπλῶς πιστεύσῃς, ἐὰν τὴν ἀπόδειξιν τῶν καταγγελλομένων ἀπὸ θείων μὴ λάβῃς γραφῶν</p>
 <p class="title-source" style="font-size: 0.9em; margin-top: 0;">— CYRIL, HIEROS., Catech. 4.</p>
+<p style="font-size: 0.85em; margin-top: 1em; text-align: justify; text-align-last: center;">[“Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.” — Cyril of Jerusalem, <i>Catechetical Lectures</i>, Lecture 4, Section 17, NPNF 2, 7:23; PG 33.476]</p>
 </div>
-<aside epub:type="footnote" id="fn_cyril" class="footnote" role="doc-endnote">
-<p class="footnote"><span class="fn-link">[1]</span> “Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.” — Cyril of Jerusalem, <i>Catechetical Lectures</i>, Lecture 4, Section 17 [NPNF2, 7:23; PG 33.476].</p>
-</aside>
 </section>'''
 
 _V12_DEATH_JUSTIFICATION_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -156,19 +154,13 @@ OVERRIDES = {
     },
     'text_replacements': {
         'Plato de Legib.\n\n12. And that may be the sense': 'Plato de Legib. 12. And that may be the sense',
-        'true )': 'true)',
-        'True ,': 'True,',
         'of .our sins': 'of our sins',
         'enemies )': 'enemies)',
         'Ezekiel ( 5:13': 'Ezekiel (5:13',
-        'is ,': 'is,',
-        'also .': 'also.',
         '1 . His birth': '1. His birth',
         'and .personality': 'and personality',
         'came ,': 'came,',
         '2 . To translate': '2. To translate',
-        'ejus ;': 'ejus;',
-        'est ,': 'est,',
         'office . 2. The title': 'office. 2. The title',
         'Mohammedanism )': 'Mohammedanism)',
         'confess .that': 'confess that',
@@ -178,7 +170,6 @@ OVERRIDES = {
         '2dly . The': '2dly. The',
         'comeliness ;': 'comeliness;',
         'the .providence': 'the providence',
-        't )': 't)',
         'two .ways': 'two ways',
         '1st . The': '1st. The',
         '2dly . That': '2dly. That',
@@ -187,11 +178,9 @@ OVERRIDES = {
         'A . It is': 'A. It is',
         'spiritual .redemption': 'spiritual redemption',
         'there .is': 'there is',
-        'fieri ,': 'fieri,',
         'exact .perfection': 'exact perfection',
         'is not in us . \\"': 'is not in us.\\"',
         'curse of the law .for us': 'curse of the law for us',
-        'not ,': 'not,',
         'jus . But': 'jus. But',
         'labores necessaria . Mihi': 'labores necessaria. Mihi',
         'say)millions': 'say, millions',
@@ -238,7 +227,6 @@ OVERRIDES = {
         'To affirm, on the other side, — (1.)': 'To affirm, on the other side, —\n\n(1.)',
         '; (2.) That he hath': ';\n\n(2.) That he hath',
         '; and, (4.) That he sits': ';\n\n(4.) That he sits',
-        r'(\(8\.\)) By this prerogative of certain predictions': '(3.) By this prerogative of certain predictions',
         r"(family of Christ\.')(?!\s*(?:\[f285\]|FNREFTOKEN|<a))": r"\1 [f285]",
         "on that subject [f445]": "on that subject [f446]",
         r"(another apology\.)(?!\s*(?:\[f489\]|FNREFTOKEN|<a))": r"\1[f489]",
@@ -247,8 +235,24 @@ OVERRIDES = {
         "ne ja,": "ne jam,",
         "definite time Ans.": "definite time? Ans.",
         "**Ques. 1.** _What is God_ **Ans.**": "**Ques. 1.** _What is God?_ **Ans.**",
+        "True ,": "True,",
+        "is ,": "is,",
+        "also .": "also.",
+        "ejus ;": "ejus;",
+        "est ,": "est,",
+        "t )": "t)",
+        "fieri ,": "fieri,",
+        "not ,": "not,",
     },
     'regex_replacements': {
+        r'(True|is|fieri|not)\s*([_*])\s*,\s*\2': r'\1,',
+        r'also\s*([_*])\s*\.\s*\1': r'also.',
+        r'ejus([_*])\s+;': r'ejus\1;',
+        r'est\s+([_*])\s*,': r'est, \1',
+        r'subject\s*(\[f\d+\])\),': r'subject), \1',
+        r'these two advantages:\s*—\s*He kept fair': 'these two advantages: — (1.) He kept fair',
+        r'arrive unto\.\s*(\[f\d+\]\s*)?By this prerogative': r'arrive unto. \g<1>(8.) By this prerogative',
+        r'oppressus et affiictus fuit et non': 'oppressus et afflictus fuit et non',
         r'divines,\s*—\s*Bull,\s*Waterland,\s*Horsley,\s*Magee,\s*Fuller,\s*Pye\s+Smith,\s*and\s*Wardlaw,\s*—\s*by':
         'divines, — George Bull, Daniel Waterland, Samuel Horsley, William Magee, Andrew Fuller, John Pye Smith, and Ralph Wardlaw, — by',
         r',,': ',',

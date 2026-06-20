@@ -484,7 +484,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'cormorant-garamond',
         'heading_font': 'cinzel',
-        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -500,7 +499,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'goudi',
         'heading_font': 'montserrat',
-        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -516,7 +514,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'coelacanth',
         'heading_font': 'cinzel',
-        'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 1:1 - 3:6']
@@ -528,7 +525,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'playfair-display',
         'heading_font': 'proxima-nova',
-        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 3:7 - 5:14']
@@ -540,7 +536,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'libre-caslon-text',
         'heading_font': 'montserrat',
-        'heading_font': 'roboto',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 6:1 - 7:28']
@@ -552,7 +547,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'merriweather',
         'heading_font': 'inter',
-        'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 8:1 - 10:39']
@@ -564,7 +558,6 @@ HEBREWS_VOLUME_CONFIG = {
         'secondary_languages': ['el', 'he'],
         'body_font': 'literata',
         'heading_font': 'roboto',
-        'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 11:1 - 13:25']
@@ -1915,6 +1908,7 @@ FONT_FAMILY_MAP = {
     'goudi':                  'Goudy Old Style',
     'new-caledonia-lt-std':   'New Caledonia',
     'coelacanth':             'Coelacanth',
+    'bembo':                  'Bembo',
     'merriweather':           'Merriweather',
     'literata':               'Literata',
     # Heading-only fonts
@@ -2173,8 +2167,6 @@ def select_primary_font(body_font_name):
 
 SBL_SUPPLEMENTS = {
     'SBL_BLit.ttf': 'sbl-blit/SBL_BLit.ttf',
-    'SBL_grk.ttf': 'sbl-blit/SBL_grk.ttf',
-    'SBL_Hbrw.ttf': 'sbl-blit/SBL_Hbrw.ttf',
 }
 
 EZRA_SIL_FILES = {
@@ -2510,44 +2502,40 @@ EPUB_STYLESHEET = r"""
 body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    text-align: justify !important;
-    text-justify: inter-word;
-    -webkit-hyphens: auto !important;
-    -epub-hyphens: auto !important;
-    hyphens: auto !important;
-    word-break: normal !important;
-    overflow-wrap: break-word !important;
     line-height: 1.65;
-    margin: 0.4em 0.5em !important;
+    margin: 0.4em 0.5em; /* Apple Books margin */
     color: #111;
 }
 
+/* Base typography (lets Apple Books honour the reader's chosen font) */
 body, div, p, span, h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, "Times New Roman", serif;
-    /* No !important — lets Apple Books honour the reader's chosen font */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    text-align: left !important;
-    -webkit-hyphens: none !important;
-    -epub-hyphens: none !important;
-    hyphens: none !important;
+body, p {
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -epub-hyphens: auto;
+    hyphens: auto;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 p {
-    text-align: justify !important;
-    text-justify: inter-word;
-    -webkit-hyphens: auto !important;
-    -epub-hyphens: auto !important;
-    hyphens: auto !important;
-    word-break: normal !important;
-    overflow-wrap: break-word !important;
     orphans: 2;
     widows: 2;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    hyphens: none;
+}
+
 [lang="el"], [lang="el"] * {
-    font-family: "GFS Porson", "SBL Greek", "Cardo", "SBL BibLit", serif !important;
+    font-family: "SBL Greek", "GFS Porson", "Cardo", "SBL BibLit", serif !important;
     font-size: 1.15em;
 }
 
@@ -2600,28 +2588,28 @@ a.noteref-trans, .noteref-trans {
 
 /* Modern Translation Footnote Sub-Block */
 .footnote-modern-translation {
-    margin-top: 0.4em !important;
-    margin-bottom: 0.2em !important;
+    margin-top:0.4em;
+    margin-bottom:0.2em;
     font-size: 0.95em !important;
     color: #555 !important;
     border-left: 3px solid #d4af37 !important;
-    padding-left: 8px !important;
+    padding-left:8px;
     font-style: normal !important;
 }
 
 /* Modern Editorial Translations Page Header */
 .translation-notes-header {
-    margin-top: 3em !important;
+    margin-top:3em;
     border-top: 2px double #ccc !important;
-    padding-top: 1.5em !important;
-    margin-bottom: 1.5em !important;
+    padding-top:1.5em;
+    margin-bottom:1.5em;
 }
 
 .endnotes-section-title {
     font-family: 'Proxima Nova', sans-serif !important;
     font-size: 1.4em !important;
     color: #111 !important;
-    text-align: center !important;
+    text-align: center;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
 }
@@ -2633,16 +2621,16 @@ a.noteref-trans, .noteref-trans {
 
 /* Continuous Blockquotes */
 blockquote p {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-top:0;
+    margin-bottom:0;
     display: inline; /* Keep multiple <p> flowing as one prose block */
 }
 
 blockquote {
     display: block;
     border-left: 2.5px solid rgba(0, 0, 0, 0.08) !important;
-    padding-left: 1.2em !important;
-    margin: 1.2em 0 !important;
+    padding-left:1.2em;
+    margin:1.2em 0;
     font-size: 0.95em;
     text-align: left;
     line-height: 1.47;
@@ -2857,8 +2845,8 @@ blockquote {
     font-style: italic;
     color: #555;
     margin-bottom: 0.8em;
-    text-align: center !important;
-    text-indent: 0 !important;
+    text-align: center;
+    text-indent: 0;
 }
 .volume-title-page .publisher-brand {
     font-variant: small-caps;
@@ -2867,8 +2855,8 @@ blockquote {
     font-weight: 600;
     color: #111;
     margin: 0.4em auto 0.1em;
-    text-align: center !important;
-    text-indent: 0 !important;
+    text-align: center;
+    text-indent: 0;
 }
 .volume-title-page .publisher-loc {
     font-size: 0.76em;
@@ -2876,8 +2864,8 @@ blockquote {
     letter-spacing: 0.22em;
     color: #666;
     margin: 0.1em auto;
-    text-align: center !important;
-    text-indent: 0 !important;
+    text-align: center;
+    text-indent: 0;
 }
 .volume-title-page .edition-year {
     font-size: 0.88em;
@@ -2885,8 +2873,8 @@ blockquote {
     color: #b08d2d; /* Elegant Gold */
     font-weight: bold;
     margin-top: 0.4em;
-    text-align: center !important;
-    text-indent: 0 !important;
+    text-align: center;
+    text-indent: 0;
 }
 
 
@@ -2931,7 +2919,7 @@ h2.secondary, h3.secondary, h1.secondary {
     text-transform: uppercase;
     letter-spacing: 0.18em; /* Generous letter spacing */
     text-align: center;
-    margin: 2.4em 0 0.4em !important;
+    margin:2.4em 0 0.4em;
     line-height: 1.3;
     border: none;
     padding: 0;
@@ -2957,7 +2945,7 @@ h3.chapter-heading {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     line-height: 1.35;
-    margin: 1.4em 6% 0.6em !important;
+    margin:1.4em 6% 0.6em;
     text-indent: 0;
     color: #222;
 }
@@ -2970,7 +2958,7 @@ h4.chapter-subtitle {
     font-weight: bold;
     letter-spacing: 0.02em;
     line-height: 1.3;
-    margin: 0.4em 6% 1.2em !important;
+    margin:0.4em 6% 1.2em;
     text-indent: 0;
     color: #111;
 }
@@ -2981,13 +2969,13 @@ p.chapter-summary {
     font-style: italic;
     font-size: 0.92em;
     text-align: center;
-    margin: 1.4em 10% 2.2em !important;
+    margin:1.4em 10% 2.2em;
     text-indent: 0;
     line-height: 1.6;
     color: #444;
     border-top: 1.5px solid rgba(42, 85, 160, 0.12); /* Owen Blue top hairline */
     border-bottom: 1.5px solid rgba(42, 85, 160, 0.12); /* Owen Blue bottom hairline */
-    padding: 0.85em 0.5em !important;
+    padding:0.85em 0.5em;
 }
 
 .digression-heading {
@@ -3033,9 +3021,9 @@ p.chapter-summary {
 .list-item.list-level-3,
 .roman-list-item.list-level-2,
 .roman-list-item.list-level-3 {
-    margin-left: 0 !important;
+    margin-left:0;
     border-left: none !important;
-    padding-left: 0 !important;
+    padding-left:0;
 }
 
 /* --- Visual Nesting Containers --- */
@@ -3050,21 +3038,21 @@ div.owen-level-1 {
     margin-left: 0;
 }
 div.owen-level-2 {
-    margin-left: 0.75em !important;
+    margin-left:0.75em;
     border-left: 1.5px solid rgba(42, 85, 160, 0.12) !important;
-    padding-left: 0.6em !important;
+    padding-left:0.6em;
 }
 div.owen-level-3 {
-    margin-left: 0.75em !important;
+    margin-left:0.75em;
     border-left: none !important;
-    padding-left: 0 !important;
+    padding-left:0;
 }
 
 /* Nested blockquotes alignment */
 div.owen-branch blockquote {
-    margin-left: 0.8em !important;
+    margin-left:0.8em;
     border-left: 1.5px solid rgba(0, 0, 0, 0.06) !important;
-    padding-left: 0.8em !important;
+    padding-left:0.8em;
 }
 
 .roman-list-item b {
@@ -3125,7 +3113,7 @@ div.owen-branch blockquote {
     font-family: Georgia, "Times New Roman", serif;
     text-align: center;
     font-style: italic;
-    margin: 1.4em 8% !important;
+    margin:1.4em 8%;
     line-height: 1.6;
     text-indent: 0;
     color: #444;
@@ -3153,7 +3141,7 @@ div.owen-branch blockquote {
 }
 .abbreviations-table {
     width: 90% !important;
-    margin: 1.5em auto !important;
+    margin:1.5em auto;
     border-collapse: collapse !important;
     font-size: 0.95em !important;
 }
@@ -3166,16 +3154,16 @@ div.owen-branch blockquote {
 .abbr-code {
     font-weight: bold !important;
     color: #d4af37 !important;
-    padding: 0.6em 1em 0.6em 0.5em !important;
+    padding:0.6em 1em 0.6em 0.5em;
     white-space: nowrap !important;
     vertical-align: top !important;
     width: 25% !important;
 }
 .abbr-desc {
-    padding: 0.6em 0.5em 0.6em 1em !important;
+    padding:0.6em 0.5em 0.6em 1em;
     color: #444 !important;
-    line-height: 1.5 !important;
-    text-align: left !important;
+    line-height:1.5;
+    text-align: left;
 }
 
 /* Running prose body — for editorial prefaces, prefatory notes,
@@ -3199,15 +3187,6 @@ div.owen-branch blockquote {
 p {
     text-indent: 1.1em;
     margin: 0;
-    text-align: justify !important;
-    text-justify: inter-word;
-    -webkit-hyphens: auto !important;
-    -epub-hyphens: auto !important;
-    hyphens: auto !important;
-    word-break: normal !important;
-    overflow-wrap: break-word !important;
-    orphans: 2;
-    widows: 2;
 }
 
 p.first, p.noindent {
@@ -3280,7 +3259,7 @@ blockquote.sermon-opening-scripture {
     text-align: center;
     font-style: italic;
     margin: 1.2em 0;
-    text-indent: 0 !important;
+    text-indent: 0;
 }
 
 .small-caps {
@@ -3320,7 +3299,7 @@ sup {
 
 /* Consecutive noterefs: keep them visually separated */
 .noteref + .noteref {
-    margin-left: 0.22em !important;
+    margin-left:0.22em;
 }
 
 .noteref sup {
@@ -3360,7 +3339,7 @@ p.signature {
 
 /* Catechism formatting */
 .catechism-item {
-    text-indent: 0 !important;
+    text-indent: 0;
     margin-top: 1.2em;
     margin-bottom: 0.5em;
 }
@@ -3557,7 +3536,7 @@ aside[epub\:type~="endnote"] {
 .ContentsItem {
     margin: 1.2em 0;
     padding: 0;
-    text-indent: 0 !important;
+    text-indent: 0;
     text-align: left;
     color: #111;
     font-size: 0.95em;
@@ -3619,15 +3598,15 @@ aside[epub\:type~="endnote"] {
     padding-bottom: 0.2em;
 }
 .colophon-section p {
-    text-indent: 0 !important;
-    text-align: left !important;
-    margin: 0 0 0.5em 0 !important;
+    text-indent: 0;
+    text-align: left;
+    margin:0 0 0.5em 0;
     font-size: 0.95em;
 }
 .colophon-text {
-    text-indent: 0 !important;
-    text-align: left !important;
-    margin: 0 0 0.5em 0 !important;
+    text-indent: 0;
+    text-align: left;
+    margin:0 0 0.5em 0;
     font-size: 0.95em;
 }
 .colophon-metadata-list {
@@ -3743,12 +3722,12 @@ aside[epub\:type~="endnote"] {
     font-weight: bold;
     font-style: italic;
     color: #444;
-    text-align: left !important;
-    text-indent: 0 !important;
-    margin: 1.6em 0 1.2em !important;
+    text-align: left;
+    text-indent: 0;
+    margin:1.6em 0 1.2em;
     display: block;
     border: none !important;
-    padding: 0 !important;
+    padding:0;
 }
 /* mobile-first safety net */
 body { overflow-x: hidden; }
@@ -3797,14 +3776,14 @@ EPUB3_FONT_STYLES = r"""
     font-family: "SBL Greek";
     font-weight: normal;
     font-style: normal;
-    src: url("../Fonts/SBL_grk.ttf");
+    src: url("../Fonts/SBL_BLit.ttf");
 }}
 /* SBL Hebrew — fully pointed Hebrew */
 @font-face {{
     font-family: "SBL Hebrew";
     font-weight: normal;
     font-style: normal;
-    src: url("../Fonts/SBL_Hbrw.ttf");
+    src: url("../Fonts/SBL_BLit.ttf");
 }}
 /* Ezra SIL — BHS-style Hebrew fallback */
 @font-face {{
@@ -3894,10 +3873,10 @@ h1, h2, h3, h4, h5, h6 {{
     font-family: "{heading_font}", "Owen Title", "Baskerville", "Hoefler Text", "Garamond", "{primary_font}", serif !important;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
-    text-align: left !important;
-    -webkit-hyphens: none !important;
-    -epub-hyphens: none !important;
-    hyphens: none !important;
+    text-align: left;
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    hyphens: none;
 }}
 /* Roman list items and subheadings use body font, not heading font (Issue 24) */
 h4.roman-subheading, .roman-list-item, .roman-list-item b {{

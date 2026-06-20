@@ -1405,7 +1405,10 @@ def render_volume(vol_num: int, overrides: dict = None,
             title_block, body_text = _split_raw_title_body(raw_text)
             foreign_frags = _foreign_fragments_in_section(title_block or raw_text)
             overridden_title = _merge_titlepage_override(titlepage_override, foreign_frags)
-            if body_text:
+            # If body_text is short (< 2000 chars), it's a falsely truncated fragment
+            # of the title page, fully accounted for in the override. Drop it.
+            # If it's massive (e.g., Vol 15 has 55k chars), it's genuine text. Preserve it.
+            if body_text and len(body_text) > 2000:
                 raw_text = f"{overridden_title}\n\n{body_text}"
             else:
                 raw_text = overridden_title
