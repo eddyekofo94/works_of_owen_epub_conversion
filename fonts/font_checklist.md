@@ -101,3 +101,67 @@ Each font should be located in `fonts/<font_folder>/` so that the symlink in the
 | **Playfair Display** | ✅ Restored | Downloaded from web |
 | **Sabon Next LT** | ✅ Restored | Copied from Downloads (commercial) |
 | **Proxima Nova** | ✅ Restored | Copied from Downloads (commercial) |
+| **Inter** | ✅ Downloaded | Downloaded from Google Fonts |
+| **Roboto** | ✅ Downloaded | Downloaded from Google Fonts |
+| **Merriweather** | ✅ Downloaded | Downloaded from Google Fonts |
+| **Cinzel** | ✅ Downloaded | Downloaded from Google Fonts |
+| **Montserrat** | ✅ Downloaded | Downloaded from Google Fonts |
+| **EB Garamond** | ✅ Downloaded | Downloaded from Google Fonts |
+| **Literata** | ✅ Downloaded | Downloaded from Google Fonts |
+
+---
+
+## Volume Font Assignments
+
+Based on the current pipeline configuration (`shared.py`), here is the body font assignment for each volume:
+
+### Owen Works (16 Volumes)
+| Volume | Subtitle/Content | Assigned Body Font |
+|---|---|---|
+| **Volume 1** | The Glory of Christ | `adobe-garamond-pro` |
+| **Volume 2** | Communion with God | `libertinus` |
+| **Volume 3** | The Holy Spirit | `minion-pro` |
+| **Volume 4** | The Work of the Spirit | `cardo` |
+| **Volume 5** | Faith and Its Evidences | `brill-font` |
+| **Volume 6** | Temptation and Sin | `baskerville` |
+| **Volume 7** | Sin and Grace | `sabon-next-lt` |
+| **Volume 8** | Sermons to the Nation | `palatino` |
+| **Volume 9** | Sermons to the Church | `im-fell-english` |
+| **Volume 10** | The Death of Christ | `eb-garamond` |
+| **Volume 11** | Continuing in the Faith | `adobe-carlson-pro` |
+| **Volume 12** | The Gospel Defended | `arno-pro` |
+| **Volume 13** | Ministry and Fellowship | `itc-galliard` |
+| **Volume 14** | True and False Religion | `centaur` |
+| **Volume 15** | Church Purity and Unity | `new-caledonia-lt-std` |
+| **Volume 16** | The Church and the Bible | `georgia` |
+
+### Hebrews Commentary (7 Volumes)
+| Volume | Content | Assigned Body Font |
+|---|---|---|
+| **Volume h1** | Preliminary Exercitations (Part 1) | `cormorant-garamond` |
+| **Volume h2** | Preliminary Exercitations (Part 2) | `goudi` |
+| **Volume h3** | Exposition of Hebrews 1:1 – 3:6 | `coelacanth` |
+| **Volume h4** | Exposition of Hebrews 3:7 – 5:14 | `playfair-display` |
+| **Volume h5** | Exposition of Hebrews 6:1 – 7:28 | `libre-caslon-text` |
+| **Volume h6** | Exposition of Hebrews 8:1 – 10:39 | `merriweather` |
+| **Volume h7** | Exposition of Hebrews 11:1 – 13:25 | `literata` |
+
+---
+
+## Font Pairings & Combinations
+
+Below is the definitive list of typographic combinations mapped out for this project, tailored for digital/mobile reading and theological weight:
+
+| Body Font | Ideal Heading Font | Visual Aesthetic & Best Use |
+|---|---|---|
+| **Garamond** | Garamond Bold or Baskerville | *Classic & Warm.* General fiction, historical fiction, memoirs. |
+| **Caslon** | Caslon Bold/Semibold or Garamond Italic | *Historic Authority.* High literary fiction, historical narratives. |
+| **Sabon** | Sabon Bold, Futura, or Gill Sans | *Quiet Prestige.* Poetry, premium literary, geometric contrast. |
+| **Baskerville** | Baskerville Bold or Italic | *Intellectual & Crisp.* Contemporary literary, authoritative non-fiction. |
+| **Minion Pro** | Minion Bold or Myriad Pro | *Invisible Workhorse.* Clean, highly functional digital-first design. |
+| **Palatino** | Palatino Bold or Optima | *Open Proportions.* Generous spacing for older/younger readers. |
+| **Georgia** | Georgia Bold or Arial/Helvetica | *Screen-Optimized.* Digital literature, low-resolution constraints. |
+| **Bembo** | Trajan or Cinzel | *The Cathedral Aesthetic.* Uses Roman monumental capitals for a timeless, sacred appearance. |
+| **SBL BibLit** | SBL BibLit Bold | *The Academic Standard.* Kept uniform, clean, and strictly focused on the text's data. |
+| **Galliard** | Optima (or Classico) | *The Modern Liturgical.* Optima is a sans-serif with a humanist swell that pairs beautifully with historic serifs. |
+| **Merriweather** | Montserrat | *The Modern Digital First.* Clean, highly readable, and perfectly optimized for app-based reading environments. |

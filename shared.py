@@ -205,7 +205,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'gentium-plus-2',
+        'body_font': 'palatino',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'suppress_prefatory_note_heading': True,  # Bug #2: Apple Books shows nav title; body h2 is redundant
@@ -233,7 +233,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'cardo',
+        'body_font': 'im-fell-english',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'suppress_prefatory_note_heading': True,  # Bug #2
@@ -248,7 +248,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'brill-font',
+        'body_font': 'eb-garamond',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -263,7 +263,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'minion-pro',
+        'body_font': 'adobe-carlson-pro',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -289,7 +289,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'baskerville',
+        'body_font': 'itc-galliard',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -305,7 +305,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'brill-font',
+        'body_font': 'centaur',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -318,7 +318,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'sabon-next-lt',
+        'body_font': 'new-caledonia-lt-std',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -332,7 +332,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'gentium-plus-2',
+        'body_font': 'georgia',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -466,7 +466,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'adobe-garamond-pro',
+        'body_font': 'cormorant-garamond',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -480,7 +480,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'gentium-plus-2',
+        'body_font': 'goudi',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': [
@@ -494,7 +494,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'adobe-garamond-pro',
+        'body_font': 'coelacanth',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 1:1 - 3:6']
@@ -504,7 +504,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'libertinus',
+        'body_font': 'playfair-display',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 3:7 - 5:14']
@@ -514,7 +514,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'minion-pro',
+        'body_font': 'libre-caslon-text',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 6:1 - 7:28']
@@ -524,7 +524,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'baskerville',
+        'body_font': 'merriweather',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 8:1 - 10:39']
@@ -534,7 +534,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'sabon-next-lt',
+        'body_font': 'literata',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
         'treatises': ['Exposition of Hebrews, 11:1 - 13:25']
@@ -1876,6 +1876,17 @@ FONT_FAMILY_MAP = {
     'im-fell-english':        'IM Fell English',
     'libre-caslon-text':      'Libre Caslon Text',
     'playfair-display':       'Playfair Display',
+    'georgia':                'Georgia',
+    'palatino':               'Palatino',
+    'eb-garamond':            'EB Garamond',
+    'adobe-carlson-pro':      'Adobe Caslon Pro',
+    'centaur':                'Centaur',
+    'itc-galliard':           'ITC Galliard',
+    'goudi':                  'Goudy Old Style',
+    'new-caledonia-lt-std':   'New Caledonia',
+    'coelacanth':             'Coelacanth',
+    'merriweather':           'Merriweather',
+    'literata':               'Literata',
     # Heading-only fonts
     'proxima-nova':           'Proxima Nova',
     # Supplemental (not for body selection)
@@ -2484,6 +2495,13 @@ body {
 body, div, p, span, h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, "Times New Roman", serif;
     /* No !important — lets Apple Books honour the reader's chosen font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: left !important;
+    -webkit-hyphens: none !important;
+    -epub-hyphens: none !important;
+    hyphens: none !important;
 }
 
 p {
@@ -3860,6 +3878,10 @@ h1, h2, h3, h4, h5, h6 {{
     font-family: "Baskervville", "Owen Title", "Baskerville", "Hoefler Text", "Garamond", "{primary_font}", serif !important;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
+    text-align: left !important;
+    -webkit-hyphens: none !important;
+    -epub-hyphens: none !important;
+    hyphens: none !important;
 }}
 /* Roman list items and subheadings use body font, not heading font (Issue 24) */
 h4.roman-subheading, .roman-list-item, .roman-list-item b {{
