@@ -1,0 +1,66 @@
+{
+  "volume": "3",
+  "total_words_audited": 325790,
+  "total_anomalies_count": 1,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "sin :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 5 - Necessity of Holiness From Our Condition in This World.",
+        "contexts": [
+          "... bellious actings of the re mainders of indwelling sin : \u2014 (1.) In particular instances; (2.) In the who ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {
+    "Punctuation Spacing Blemishes": [
+      "y  ,",
+      "doctrine ,",
+      "1  .",
+      "man ,",
+      "quickening ,",
+      "penal ,",
+      "1st .",
+      "2dly   .",
+      "d   .",
+      "for ,",
+      "persuading ,",
+      "acted ,",
+      "end  .",
+      "Ans  .",
+      "idem  .",
+      "conviction ,",
+      "4thly   .",
+      "habit  .",
+      "1st   .",
+      "3dly   .",
+      "Ans  .",
+      "Assimilation  :",
+      "transgression  :",
+      "free  ;",
+      "first ,",
+      "n  )",
+      "sin  :",
+      "n  )"
+    ],
+    "OCR & Bracket Residues": [
+      "express[ed]"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "3. ... 7."
+    ],
+    "Unmatched Quotation Marks": [
+      "[[SUMMARY]] CORRUPTION OR DEPRAVATI"
+    ]
+  }
+}

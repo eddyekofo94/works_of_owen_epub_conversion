@@ -100,6 +100,16 @@ _V3_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 # ---------------------------------------------------------------------------
 import re
 
+def post_extract_hook(intermediate):
+    for ch in intermediate.get('chapters', []):
+        if 'raw_text' in ch:
+            ch['raw_text'] = re.sub(
+                r'—\s*\n\n(Schlichting\.|עָרָה|\*\*1\*\*|1\.|Psalm 31|That the will|There are two|Philippians 1|Sanctification, as|Sanctification is|It is the universal)',
+                r'— \1',
+                ch['raw_text']
+            )
+    return intermediate
+
 def html_postprocess_hook(html, ch_context):
     title = ch_context.get('title', '')
     if 'TO THE READERS' in title.upper():
@@ -147,6 +157,22 @@ OVERRIDES = {
         'Philippians 26:9 2:9, 10': 'Philippians 2:9, 10',
         'Philippians 38:13 2:13': 'Philippians 2:13',
         'Hebrews 19:12-14': 'Hebrews 9:12-14',
+        # Punctuation formatting fixes
+        '**1** .': '**1**.',
+        '_Ans_ .': '_Ans_.',
+        '_ad idem_ .': '_ad idem_.',
+        '_habit_ .': '_habit_.',
+        '_Assimilation_ :': '_Assimilation_:',
+        '_transgression_ :': '_transgression_:',
+        '_free_ ;': '_free_;',
+        '_own_ )': '_own_)',
+        '_sin_ )': '_sin_)',
+        'sin_ :': 'sin_:',
+        'end _._': 'end_._',
+        '**1st** _._': '**1st**_._',
+        '**2dly** _._': '**2dly**_._',
+        '**3dly** _._': '**3dly**_._',
+        '**4thly** _._': '**4thly**_._',
     },
     'regex_replacements': {
         r'\b_enmit_ y\b': 'enmity',
@@ -160,15 +186,8 @@ OVERRIDES = {
         r'\bC\s+(_?)hrist(_?)\b': r'\1Christ\2',
         r'\bf\s+(_?)orbidden(_?)\b': r'\1forbidden\2',
         r'\bin_?\s+tended\b': 'intended',
-        # Spaced punctuation fixes
-        r'\b(\d+)\s+\.': r'\1.',
-        r'\b(\d+)(st|nd|rd|th|dly|ly)\s+\.': r'\1\2.',
-        r'\b(end|Ans|idem|habit)\s+\.': r'\1.',
-        r'\b(Assimilation|transgression|sin)\s+:\s*—': r'\1: —',
-        r'\b(free)\s+;\s*': r'\1; ',
-        r'ow\*\*n\s+\)\*\*': 'own)**',
-        r'si\*\*n\s+\)\*\*': 'sin)**',
     },
+    'post_extract_hook': post_extract_hook,
     'html_postprocess_hook': html_postprocess_hook,
 }
 

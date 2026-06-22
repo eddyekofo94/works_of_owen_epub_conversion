@@ -866,11 +866,14 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-22T16:01:57.509713+00:00
-**EPUB:** `volumes/v3/output/volume_3.epub`
+**Last run:** 2026-06-22T22:47:47.333915+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -1048,10 +1051,13 @@ Validation:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-22T16:02:50.507438+00:00
+**Last run:** 2026-06-22T22:48:31.320456+00:00
 **Status:** WARN (1 warnings)
 
 Reports:
@@ -1062,21 +1068,21 @@ Reports:
 |-------|--------|
 | PDF pages | 789 |
 | EPUB text files | 45 |
-| EPUB paragraphs/headings | 2509 |
+| EPUB paragraphs/headings | 2537 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 35165 |
-| Missing dense source-window pages | 20 |
+| Dense source windows checked | 36494 |
+| Missing dense source-window pages | 21 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 765 |
 | Top-of-page windows skipped as unstable | 20 |
-| Missing top-of-page body windows | 1 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 746 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 332 |
+| Possible faulty paragraph splits | 4 |
+| Structural starts excluded from split warnings | 357 |
 | Short fragments | 13 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
@@ -1091,8 +1097,8 @@ Reports:
 | EPUB enumerator markers | 638 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 4 |
-| PDF Greek words / EPUB Greek words | 791 / 816 |
-| Greek word coverage ratio | 0.9987 |
+| PDF Greek words / EPUB Greek words | 791 / 815 |
+| Greek word coverage ratio | 1.0 |
 | PDF Hebrew words / EPUB Hebrew words | 235 / 235 |
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
@@ -1100,7 +1106,7 @@ Reports:
 
 Warnings requiring triage:
 
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
