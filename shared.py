@@ -2539,7 +2539,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [lang="el"], [lang="el"] * {
-    font-family: "SBL Greek", "GFS Porson", "Cardo", "SBL BibLit", serif !important;
+    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
     font-size: 1.15em;
 }
 
@@ -3890,8 +3890,8 @@ h4.roman-subheading, .roman-list-item, .roman-list-item b {{
     font-family: "{primary_font}", "SBL BibLit", serif !important;
 }}
 [lang="el"], [lang="el"] *, .greek, .greek * {{
-    font-family: "GFS Porson", "SBL Greek", "SBL BibLit", serif !important;
-    font-size: 1.05em;
+    font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
+    font-size: 1.15em;
 }}
 [lang="he"], [lang="he"] *, .hebrew, .hebrew * {{
     direction: rtl;
