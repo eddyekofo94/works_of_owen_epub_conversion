@@ -1,13 +1,13 @@
 # Volume 16 — Comprehensive Need Score Reduction Plan
 
-> Current Need: **2.0** | Grade: PRISTINE | QA Level: PRISTINE
+> Current Need: **2.5** | Grade: PRISTINE | QA Level: PRISTINE
 > Target Need: **≤ 2.0** (PRISTINE)
 
 ## Need Score Breakdown
 
 | Component | Value | Penalty | Capped? |
 |---|---|---|---|
-| Coverage | 99.95% | **2.0** | no |
+| Coverage | 99.94% | **2.4** | no |
 | Greek coverage | 100.0% | **0.0** | — |
 | Hebrew coverage | 100.0% | **0.0** | — |
 | Latin word coverage | 99.96%>=99% | **0.0** | — |
@@ -17,27 +17,27 @@
 | Splits | 0 | **0.0** | — |
 | Audit warnings | 0 | **0.0** | — |
 | Audit errors | 0 | **0.0** | — |
-| Anomalies | 0 | **0.0** | — |
+| Anomalies | 1 | **0.1** | no |
 | Unmatched quotes | 0 | **0.0** | — |
-| **TOTAL** | | **2.0** | |
+| **TOTAL** | | **2.5** | |
 
 ### Scenario Projections
 
 | Scenario | Anomalies | Quotes | Coverage | Total |
 |---|---|---|---|---|
-| **Current state** | 0.0 | 0.0 | 2.0 | **2.0** |
-| **Whitelist anomalies only** | 0.0 | 0.0 | 2.0 | **2.0** |
-| **Whitelist quotes only** | 0.0 | 0.0 | 2.0 | **2.0** |
-| **Whitelist both anomalies + quotes** | 0.0 | 0.0 | 2.0 | **2.0** |
+| **Current state** | 0.1 | 0.0 | 2.4 | **2.5** |
+| **Whitelist anomalies only** | 0.0 | 0.0 | 2.4 | **2.4** |
+| **Whitelist quotes only** | 0.1 | 0.0 | 2.4 | **2.5** |
+| **Whitelist both anomalies + quotes** | 0.0 | 0.0 | 2.4 | **2.4** |
 
-The coverage gap is only **2.0** points — very small. 
-The dominant penalty is **Coverage** at **2.0** points.
+The coverage gap is only **2.4** points — very small. 
+The dominant penalty is **Coverage** at **2.4** points.
 
 ## Anomaly Breakdown
 
 | Category | Count | Legitimate? | Fixable? |
 |---|---|---|---|
-| Hyphenation Anomalies | 0 | See analysis | See analysis |
+| Hyphenation Anomalies | 1 | See analysis | See analysis |
 | Punctuation Spacing Blemishes | 0 | See analysis | See analysis |
 | OCR & Bracket Residues | 0 | See analysis | See analysis |
 | Mixed-Case Capitalization Errors | 0 | See analysis | See analysis |
@@ -46,6 +46,9 @@ The dominant penalty is **Coverage** at **2.0** points.
 | Invalid Bible References | 0 | See analysis | See analysis |
 | List Formatting Inconsistencies | 0 | See analysis | See analysis |
 | Unmatched Quotation Marks | 0 | See analysis | See analysis |
+
+Anomalies penalty: **0.1** (1 anomalies × 0.1).
+White-list all legitimate anomaly categories to eliminate this penalty.
 
 ## Compound Word Merging Fixes
 
@@ -59,20 +62,11 @@ Add these to `OVERRIDES['text_replacements']` in `convert.py`:
 'churchcommunion': 'church-communion',
 'churchrule': 'church-rule',
 'subjectmatter': 'subject-matter',
-'churchofficer': 'church-officer',
-'churchmember': 'church-member',
-'churchprivileges': 'church-privileges',
 'churchgovernment': 'church-government',
 'churchaffairs': 'church-affairs',
-'churchofficers': 'church-officers',
-'churchpower': 'church-power',
-'churchmembers': 'church-members',
-'churchedification': 'church-edification',
-'churchorder': 'church-order',
-'churchassemblies': 'church-assemblies',
-'churchcovenant': 'church-covenant',
+'churchofficer': 'church-officer',
+'churchmember': 'church-member',
 'wellgoverned': 'well-governed',
-'overreaching': 'over-reaching',
 ```
 
 ## Missing Word Samples
@@ -111,16 +105,20 @@ Updated whitelist:
 
 ## Action Checklist
 
-### Step 1: Fix compound word merging (Impact: readability + coverage)
+### Step 1: White-list anomaly categories (Impact: −0.1 Need)
+
+Update the anomalies section in `volume_{vol}_whitelist.json` to cover all flagged categories.
+
+### Step 2: Fix compound word merging (Impact: readability + coverage)
 
 Add the `text_replacements` entries listed above to `convert.py`.
 
-### Step 2: Update dense source window whitelist
+### Step 3: Update dense source window whitelist
 
 Replace the `dense_source_window_loss` array in `volume_{vol}_whitelist.json`
 with the updated list shown above.
 
-### Step 3: Re-audit and verify
+### Step 4: Re-audit and verify
 
 After all changes:
 1. Re-render: `.venv/bin/python3 volumes/v{vol}/convert.py --render-only`
@@ -129,7 +127,7 @@ After all changes:
 4. Audit anomalies: `.venv/bin/python3 scripts/audit_anomalies.py {vol}`
 5. Audit bug regressions: `.venv/bin/python3 scripts/audit_bug_regressions.py {vol}`
 6. Report state: `.venv/bin/python3 scripts/report_volume_state.py`
-7. Verify Need drops from 2.0 to target
+7. Verify Need drops from 2.5 to target
 
 ## What NOT To Do
 

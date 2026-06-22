@@ -1,20 +1,14 @@
 {
   "epub": "volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-22T23:09:16.086215+00:00",
-  "status": "warn",
+  "generated_at": "2026-06-22T15:25:00.711496+00:00",
+  "status": "pass",
   "error_count": 0,
-  "warning_count": 1,
+  "warning_count": 0,
   "errors": [],
-  "warnings": [
-    {
-      "code": "repeated_phrases",
-      "message": "Potential repeated phrases detected",
-      "count": 1
-    }
-  ],
+  "warnings": [],
   "info": {
-    "file_count": 120,
-    "epub_size_bytes": 7406281,
+    "file_count": 118,
+    "epub_size_bytes": 7158175,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -23,13 +17,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 111,
+    "manifest_count": 109,
     "spine_count": 83,
     "xhtml_count": 84,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 22,
+    "font_count": 20,
     "language": {
       "greek_chars": 6044,
       "greek_untagged_chars": 0,
@@ -70,7 +64,7 @@
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
       "lowercase_paragraph_start_files": 0,
-      "noteref_leading_space_files": 9,
+      "noteref_leading_space_files": 0,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
       "samples": {
@@ -111,44 +105,7 @@
         "nav_duplicate_text": [],
         "spaced_caps": [],
         "lowercase_paragraph_start": [],
-        "noteref_leading_space": [
-          {
-            "file": "EPUB/ch007.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch008.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch010.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch014.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch032.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch052.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch055.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch056.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          },
-          {
-            "file": "EPUB/ch058.xhtml",
-            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
-          }
-        ],
+        "noteref_leading_space": [],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []

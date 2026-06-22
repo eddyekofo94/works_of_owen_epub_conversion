@@ -1,18 +1,9 @@
 {
   "volume": "16",
   "total_words_audited": 258474,
-  "total_anomalies_count": 1,
+  "total_anomalies_count": 0,
   "anomalies": {
-    "Hyphenation Anomalies": [
-      {
-        "target": "over-reaching",
-        "description": "Splittable word (rejoins to valid word 'overreaching')",
-        "chapter": "Chapter 10 - of Excommunication.",
-        "contexts": [
-          "... about such a right or wrong, in pretended fraud, over-reaching, or the like, as is determinable by civil laws, t ..."
-        ]
-      }
-    ],
+    "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [],
     "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],

@@ -6,7 +6,6 @@ This document lists and explains the whitelisted anomalies and ignored warnings 
 
 *   **`low_latin_tagging`**: Many short Latin legal/theological terms are woven naturally into 17th-century English prose and do not require separate `<span lang="la">` tags.
 *   **`low_latin_translation_coverage`**: Not all historical Latin citations or phrases require side-by-side translation database entries.
-*   **`repeated_phrases`**: The warning for "they will not see but they shall see" is a Scripture citation (Isaiah 26:11) that is naturally repeated in the text and is not a duplicate typo.
 *   **`repeated_windows`**: Natural repetitions in prose discussing specialized theological concepts (such as Ben Asher and Ben Naphtali readings).
 *   **`roman_heading_candidates`**: Occurrences where single letters (e.g., "L.") are flagged as Roman numerals.
 *   **`suspicious_large_number_starts`**: Legitimate numbered lists in sermons starting with larger numbers.
@@ -28,7 +27,6 @@ The following splits are whitelisted as they are correct layout splits, not line
 
 ## 4. Text Loss (Top/Bottom & Dense Windows)
 
-*   **`dense_source_window_loss` [10, 16, 19, 25, 27, 28, 33, 34, 43, 48, 56, 59, 62, 65, 68, 71, 76, 77, 78, 82, 89, 93, 96, 97, 98, 100, 114, 134, 143, 145, 151, 152, 158, 159, 183, 184, 219, 227, 241, 244]**: Pages where minor corrections (e.g. compound word fixes like `office-power` or `church-communion`), Scripture references, patristic references, or minor punctuation/spacing differences break exact word-window matching, although the text is fully present in the EPUB.
 *   **`top_of_page_text_loss` [43, 333, 363]**: Headings and salutations at the top of pages that are styled differently in the EPUB (as headers or blocks).
 *   **`bottom_of_page_text_loss` [2, 593]**: Metadata info (page 2) and pages where a Greek phrase is corrected with standard breathing marks (`οὖν` vs `οῦν` on page 593), breaking exact matching.
 
@@ -50,3 +48,6 @@ These list item jumps represent either actual structures in the author's argumen
 
 *   All 49 unmatched quotation marks are authentic 17th-century theological prose quotation conventions where Owen opens a quote to debate opponents or cite Scripture/patristics and never closes it within the paragraph. Changing these would violate text integrity.
 
+## 9. Hyphenation Anomalies
+
+*   **`over-reaching`**: A legitimate 17th-century historical spelling. We preserve the original hyphenation.

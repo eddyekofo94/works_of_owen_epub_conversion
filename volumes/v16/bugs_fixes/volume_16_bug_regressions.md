@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 16
 
-- Status: **PASS**
+- Status: **WARN**
 - EPUB audit: `volume_16_audit.json`
 - Text integrity audit: `volume_16_text_integrity.json`
 
@@ -57,7 +57,7 @@
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
 | Lowercase page fragments | 0 | 1 | OK |
-| Noteref leading spaces | 0 | 0 | OK |
+| Noteref leading spaces | 9 | 0 | REGRESSION |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
 | I WILL/I AM mangles | 0 | 0 | OK |
@@ -79,3 +79,11 @@
 ### Repeated phrase hits
 
 - file: combined_text; text: they will not see but they shall see
+
+### Noteref leading spaces
+
+- file: EPUB/ch007.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch008.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch010.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch014.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch032.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"

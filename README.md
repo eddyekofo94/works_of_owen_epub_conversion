@@ -318,9 +318,9 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| 1 | v1 | Populated | PRISTINE | Cov 99.93 Greek 99.87 Heb 100.00 Lat 99.77 |
+| 1 | v1 | Populated | PRISTINE | Cov 99.93 Greek 99.87 Heb 100.00 Lat 99.85 |
 | 2 | v2 | Populated | PRISTINE | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
-| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 99.87 Heb 100.00 Lat 99.90 |
+| 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 100.00 Heb 100.00 Lat 99.94 |
 | 4 | v4 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.59 |
 | 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.68 |
 | 6 | v6 | Populated | PRISTINE | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
@@ -333,7 +333,7 @@ The new engine:
 | 13 | v13 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
 | 14 | v14 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
 | 15 | v15 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.46 |
-| 16 | v16 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.96 |
+| 16 | v16 | Populated | PRISTINE | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.96 |
 
 ## Hebrews Commentary Script Status
 

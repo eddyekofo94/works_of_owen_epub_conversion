@@ -202,12 +202,14 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-22T15:41:00.125785+00:00
+**Last run:** 2026-06-22T23:09:16.086215+00:00
 **EPUB:** `volumes/v16/output/volume_16.epub`
-**Status:** PASS (0 errors, 0 warnings)
+**Status:** WARN (0 errors, 1 warnings)
 
 Reports:
 - `volume_16_audit.json`
@@ -218,7 +220,7 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 84 |
 | Spine items | 83 |
-| Embedded fonts | 20 |
+| Embedded fonts | 22 |
 | NAV links | 85 |
 | Greek chars / untagged | 6044 / 0 |
 | Hebrew chars / untagged | 1224 / 0 |
@@ -228,6 +230,10 @@ Reports:
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
 | Repeated phrase hits | 1 |
+
+Warnings requiring triage:
+
+- `repeated_phrases`: Potential repeated phrases detected
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -302,11 +308,13 @@ Reports:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-22T15:25:35.041620+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-22T23:09:51.964427+00:00
+**Status:** WARN (1 warnings)
 
 Reports:
 - `volume_16_text_integrity.json`
@@ -320,7 +328,7 @@ Reports:
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 0 |
 | Dense source windows checked | 28208 |
-| Missing dense source-window pages | 0 |
+| Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 1 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 630 |
@@ -351,6 +359,10 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

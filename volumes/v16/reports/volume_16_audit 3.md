@@ -1,18 +1,18 @@
 # EPUB Audit: volume_16.epub
 
-- Status: **WARN**
+- Status: **PASS**
 - Errors: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 120
-- Manifest items: 111
+- Files: 118
+- Manifest items: 109
 - Spine items: 83
 - XHTML files: 84
-- Embedded fonts: 22
+- Embedded fonts: 20
 - NAV links: 85
 
 ## Content Checks
@@ -30,20 +30,8 @@
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 1
 
-## Warnings
-
-- `repeated_phrases`: Potential repeated phrases detected
-
 ## Samples
 
 ### repeated_phrase
 
 - `combined_text`: they will not see but they shall see
-
-### noteref_leading_space
-
-- `EPUB/ch007.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
-- `EPUB/ch008.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
-- `EPUB/ch010.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
-- `EPUB/ch014.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
-- `EPUB/ch032.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
