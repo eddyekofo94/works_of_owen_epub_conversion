@@ -7,65 +7,68 @@
 
 - **Total Volumes Audited:** 16
 - **Total Footnotes Scanned:** 1909
-- **Total Body Paragraphs Scanned:** 28870
+- **Total Body Paragraphs Scanned:** 29389
 - **Total Potential Untranslated Footnotes:** 15
-- **Total Potential Untranslated Body Paragraphs:** 350
+- **Total Potential Untranslated Body Paragraphs:** 361
 
 ### Volume Coverage Baselines
 
 | Volume | Untranslated Footnotes | Untranslated Body Paragraphs | Total Remaining | Action Status |
 |---|---|---|---|---|
-| Volume 1 | 0 | 0 | 0 | ✅ 100% COMPLETE & VALIDATED |
-| Volume 2 | 2 | 18 | 20 | ⚠️ Requires Translation Sweep |
+| Volume 1 | 0 | 1 | 1 | ⚠️ Requires Translation Sweep |
+| Volume 2 | 2 | 23 | 25 | ⚠️ Requires Translation Sweep |
 | Volume 3 | 0 | 26 | 26 | ⚠️ Requires Translation Sweep |
-| Volume 4 | 0 | 27 | 27 | ⚠️ Requires Translation Sweep |
-| Volume 5 | 0 | 35 | 35 | ⚠️ Requires Translation Sweep |
-| Volume 6 | 0 | 33 | 33 | ⚠️ Requires Translation Sweep |
+| Volume 4 | 0 | 28 | 28 | ⚠️ Requires Translation Sweep |
+| Volume 5 | 0 | 36 | 36 | ⚠️ Requires Translation Sweep |
+| Volume 6 | 0 | 29 | 29 | ⚠️ Requires Translation Sweep |
 | Volume 7 | 0 | 8 | 8 | ⚠️ Requires Translation Sweep |
-| Volume 8 | 1 | 18 | 19 | ⚠️ Requires Translation Sweep |
+| Volume 8 | 1 | 17 | 18 | ⚠️ Requires Translation Sweep |
 | Volume 9 | 2 | 8 | 10 | ⚠️ Requires Translation Sweep |
-| Volume 10 | 5 | 34 | 39 | ⚠️ Requires Translation Sweep |
+| Volume 10 | 5 | 35 | 40 | ⚠️ Requires Translation Sweep |
 | Volume 11 | 0 | 31 | 31 | ⚠️ Requires Translation Sweep |
-| Volume 12 | 0 | 20 | 20 | ⚠️ Requires Translation Sweep |
-| Volume 13 | 1 | 17 | 18 | ⚠️ Requires Translation Sweep |
-| Volume 14 | 1 | 24 | 25 | ⚠️ Requires Translation Sweep |
+| Volume 12 | 0 | 22 | 22 | ⚠️ Requires Translation Sweep |
+| Volume 13 | 1 | 18 | 19 | ⚠️ Requires Translation Sweep |
+| Volume 14 | 1 | 26 | 27 | ⚠️ Requires Translation Sweep |
 | Volume 15 | 0 | 11 | 11 | ⚠️ Requires Translation Sweep |
-| Volume 16 | 3 | 40 | 43 | ⚠️ Requires Translation Sweep |
+| Volume 16 | 3 | 42 | 45 | ⚠️ Requires Translation Sweep |
 
 ## 2. Detailed Audit logs per Volume
 
 ### ── VOLUME 1 ──
 
-**Footnotes remaining:** 0 | **Body paragraphs remaining:** 0
+**Footnotes remaining:** 0 | **Body paragraphs remaining:** 1
+
+#### Potential Untranslated Body Paragraphs:
+- **[Chapter 11 - the Glory of Christ in the Recapitulation of All Things in Him.] P5** (HEBREW): `2. In this state of infinite, eternal being and goodness, antecedent unto any act of wisdom or power without himself to give existence unto other things, God was, and is, eternally in himself all that...`
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 2 ──
 
-**Footnotes remaining:** 2 | **Body paragraphs remaining:** 18
+**Footnotes remaining:** 2 | **Body paragraphs remaining:** 23
 
 #### Potential Untranslated Footnotes:
 - **Footnote 13** (LATIN): `"Magna etiam illa communitas est, quae conficitur ex beneficiis ultro citro, datis acceptis."—Cic. Off., lib. 1. c. 17.`
 - **Footnote 19** (LATIN): `"Tametsi omnia unus idemque Deus efficit, ut dicitur,—opera Trinitatis ad extra sunt indivisa, distinguuntur tamen personae discrimine in istis operibus."— Matthew 3:16; Acts 3:13: Genesis 19:24, 1:26; Matthew 28:19; 2 Corinthians 13:14.`
 
 #### Potential Untranslated Body Paragraphs:
-- **[Chapter 2 - That the saints have this communion distinctly with the Father, Son, and Spirit — ...] P18** (GREEK): `The like also is said of love. 1 John 2:15, "If any man love the world, the love of the Father is not in him;" that is, the love which we bear to him, not that which we receive from him. The Father is...`
-- **[Chapter 1 - Of the fellowship which the saints have with Jesus Christ the Son of God — That th...] P13** (HEBREW): `Whatever is sweet and delicious for taste, whatever savory and odoriferous, whatever is useful and medicinal, is in this garden. There is all manner of spiritual refreshments, of all kinds whatever, i...`
-- **[Chapter 2 - What it is wherein we have peculiar fellowship with the Lord Christ — This is in g...] P35** (GREEK): `3dly. The ἐνέργεια, or δραστικὴ τῆς φύσεως κίνησις, — the effectual working itself of each nature. And, lastly, the ἐνέργημα, or αποτέλεσμα, — the effect produced, which ariseth from all, and relates ...`
+- **[Chapter 2.] P18** (GREEK): `The like also is said of love. 1 John 2:15, "If any man love the world, the love of the Father is not in him;" that is, the love which we bear to him, not that which we receive from him. The Father is...`
+- **[Chapter 1] P13** (HEBREW): `Whatever is sweet and delicious for taste, whatever savory and odoriferous, whatever is useful and medicinal, is in this garden. There is all manner of spiritual refreshments, of all kinds whatever, i...`
+- **[Chapter 2] P34** (GREEK): `3dly. The ἐνέργεια, or δραστικὴ τῆς φύσεως κίνησις, — the effectual working itself of each nature. And, lastly, the ἐνέργημα, or αποτέλεσμα, — the effect produced, which ariseth from all, and relates ...`
 - **[Digression 1.] P53** (HEBREW): `1. "His head is as the most one gold," or, "His head gold, solid gold;" so some; — "made of pure gold;" so others; — χρυσίον κεφαλή, say the LXX, retaining part of both the Hebrew words, to כֶּתֶם פָז...`
-- **[Chapter 4 - Of communion with Christ in a conjugal relation in respect of consequential affect...] P48** (HEBREW): `In return hereunto, for the carrying on of the communion between them, the saints delight in Christ; he is their joy, their crown, their rejoicing, their life, food, health, strength, desire, righteou...`
-- **[Chapter 5 - Other consequential affections: — 1 On the part of Christ — He values his saints —...] P65** (GREEK): `This is that which our careful, tender husband would have done. So mention being made of his compassionateness and fellow-suffering with us, Hebrews 4:15, it is added, verse 16, that he administers χά...`
-- **[Chapter 1 - The foundation of our communion with the Holy ghost (John 16:1-7) opened at large ...] P31** (GREEK): `1st. For the fountain of his coming, it is mentioned, John 15:26, Παρὰ τοῦ Πατρὸς ἐκπορεύεται, "He proceedeth from the Father;" this is the fountain of this dispensation, he proceedeth from the Father...`
-- **[Chapter 1 - The foundation of our communion with the Holy ghost (John 16:1-7) opened at large ...] P47** (GREEK): `(3rdly.) He is said to be poured out or SHED on us, Titus 3:6, ἐξέχεεν ἐφ ἡμᾶς πλουσίως, — that Holy Ghost which he has richly poured out upon us, or shed on us abundantly. And this was the chief expr...`
-- **[Chapter 3 - Of the things wherein we have communion with the Holy Ghost — He brings to remembr...] P15** (GREEK): `2ndly. Voluntarily, — distributing to every one as he will; and therefore is this work done in so great variety, both as to the same person and divers. For the same person, full of joy sometimes in a ...`
-- **[Chapter 3 - Of the things wherein we have communion with the Holy Ghost — He brings to remembr...] P42** (HEBREW): `The Greek word is but the Hebrew "herabon" [עֵרָבוֹן]; which, as some conceive, came amongst them by the Syrian merchants, being a word of trade. It is by some rendered, in Latin, "pignus," a "pledge;...`
-- **[Chapter 4 - The general consequences in the hearts of believers of the effects of the Holy Gho...] P3** (GREEK): `1. Consolation is the first of these: "The disciples walked in the fear of the Lord, and in the consolation of the Holy Ghost," Acts 9:31, Τῇ παρακλήσει τοῦ ἁγίου Πνεύματος. He is ὁ παράκλητος, and he...`
-- **[Chapter 6 - Of particular communion with the Holy Ghost — Of preparation thereunto — Valuation...] P8** (GREEK): `There are two great evils, one of which does generally seize on men under their afflictions, and keep them from a due management of them. The apostle mentioneth them both, Hebrews 12:5 Μὴ ὀλιγώρει παι...`
-- **[Chapter 7 - The general ways of the saints' acting in communion with the Holy Ghost.] P12** (GREEK): `(1.) From the phrase, or manner of expression, with a double article, Τὸ Πνεῦμα τὸ ἄγιον, — "That Holy Spirit;" and also, —...`
-- **[A Vindication] P139** (GREEK): `Although there be nothing in the person of Christ but his divine and human nature, yet the person of Christ is neither his divine nature nor his human; for the human nature is, and ever was, of itself...`
-- **[To the Reader (A Brief Declaration and Vindication of the Doctrine of the Trinity)] P3** (GREEK): `Certainly, these tremendous mysteries are not by us willingly to be exposed, or prostituted to the cavils of every perverse querist and disputer; — those συζητηταὶ τοῦ αἰῶνος τούτου, learned researche...`
-- *...and 3 more body paragraphs.*
+- **[Chapter 4] P49** (HEBREW): `In return hereunto, for the carrying on of the communion between them, the saints delight in Christ; he is their joy, their crown, their rejoicing, their life, food, health, strength, desire, righteou...`
+- **[Chapter 5] P65** (GREEK): `This is that which our careful, tender husband would have done. So mention being made of his compassionateness and fellow-suffering with us, Hebrews 4:15, it is added, verse 16, that he administers χά...`
+- **[Chapter 1] P10** (GREEK): `Εγὼ τὴν ἀλήθειαν λέγω, — "I tell you the truth." "You have in your sad, misgiving hearts many misapprehensions of things. You think if I would abide with you, all these evils might be prevented; but, ...`
+- **[Chapter 1] P11** (GREEK): `2. The assertion itself follows: Συμφέρει ὑμῖν, ἵνα ἐγὼ ἀπέλθω, — It is expedient for you that I go away." There are two things in the words: — Christ's departure; and the usefulness of it to his disc...`
+- **[Chapter 1] P33** (GREEK): `1st. For the fountain of his coming, it is mentioned, John 15:26, Παρὰ τοῦ Πατρὸς ἐκπορεύεται, "He proceedeth from the Father;" this is the fountain of this dispensation, he proceedeth from the Father...`
+- **[Chapter 1] P49** (GREEK): `(3rdly.) He is said to be poured out or SHED on us, Titus 3:6, ἐξέχεεν ἐφ ἡμᾶς πλουσίως, — that Holy Ghost which he has richly poured out upon us, or shed on us abundantly. And this was the chief expr...`
+- **[Chapter 3] P15** (GREEK): `2ndly. Voluntarily, — distributing to every one as he will; and therefore is this work done in so great variety, both as to the same person and divers. For the same person, full of joy sometimes in a ...`
+- **[Chapter 3] P41** (HEBREW): `The Greek word is but the Hebrew "herabon" [עֵרָבוֹן]; which, as some conceive, came amongst them by the Syrian merchants, being a word of trade. It is by some rendered, in Latin, "pignus," a "pledge;...`
+- **[Chapter 4] P3** (GREEK): `1. Consolation is the first of these: "The disciples walked in the fear of the Lord, and in the consolation of the Holy Ghost," Acts 9:31, Τῇ παρακλήσει τοῦ ἁγίου Πνεύματος. He is ὁ παράκλητος, and he...`
+- **[Chapter 6] P8** (GREEK): `There are two great evils, one of which does generally seize on men under their afflictions, and keep them from a due management of them. The apostle mentioneth them both, Hebrews 12:5 Μὴ ὀλιγώρει παι...`
+- **[Chapter 7] P12** (GREEK): `(1.) From the phrase, or manner of expression, with a double article, Τὸ Πνεῦμα τὸ ἄγιον, — "That Holy Spirit;" and also, —...`
+- *...and 8 more body paragraphs.*
 
 
 ────────────────────────────────────────
@@ -97,35 +100,35 @@
 
 ### ── VOLUME 4 ──
 
-**Footnotes remaining:** 0 | **Body paragraphs remaining:** 27
+**Footnotes remaining:** 0 | **Body paragraphs remaining:** 28
 
 #### Potential Untranslated Body Paragraphs:
 - **[Chapter 6 - the Nature of Divine Revelations] P15** (GREEK): `As to the first, the apostle affirms that τὸ γνωστὸν τοῦ Θεοῦ φανερόν ἐστιν ἐν αὐτοῖς, Romans 1:19, — "that which may be known of God" (his essence, being, subsistence, his natural, necessary, essenti...`
-- **[Appendix.] P29** (GREEK): `The intention of his words is, that God, who alone is to be believed for himself, hath given us his word as the rule whereby we are to judge of all things. And this word is so to be believed as not to...`
-- **[Appendix.] P30** (GREEK): `In few words he declares the substance of what we have pleaded for. No more do we maintain in this cause but what Clemens cloth here assert, — namely, that we believe the Scripture for itself, as that...`
-- **[Appendix.] P31** (GREEK): `Οὕτως οῦν καὶ ἡμεῖς ἀπ αὐτῶν περὶ αὐτῶν τῶν γραφῶν τελείως ἀποδεικνύντες, ἐκ πίστεως τειθόμεθα ἀποδεικτικῶ — "For we would not attend or give credit simply to the definitions of men, seeing we have ri...`
-- **[Appendix.] P33** (GREEK): `Basilius speaks to the same purpose on Psalm 115: Πίστις, ἡ ὑπὲρ τὰς λογικὰς μεθάδους τὴν ψυχὴν εἰς συγκατάθεσιν ἕλκουσα. Πίστις, οὐκ ἡ γεωμετρικαῖς ἀνάγκαις, ἀλλ ἡ ταῖς τοῦ πνεύματος ἐνεργείαις ἐγγιν...`
-- **[Appendix.] P35** (GREEK): `Nemesius, De Homin., cap. 2: Η τῶν ζείων λογίων διδασκαλία, τὸ πιστὸν ἀφ ἑαυτῆς ἔχουσα διὰ τὸ ζεόπνευστον εῖναι? — "The doctrine of the divine oracles hath its credibility from itself, because of its ...`
-- **[Appendix.] P63** (LATIN): `And to show what he means by this internal argument and persuasion, he affirms elsewhere that [[BLOCKQUOTE]] "Deus ipse imprimis est, qui, Christianam doctrinam atque adeo Scripturam sacram veram esse...`
-- **[Chapter 2 - The general assertion confirmed with testimonies of the Scripture — Psalm 119:18 o...] P13** (HEBREW): `4. There is expressed in the words the act of God towards us, whereby he enableth us to behold, discern, and understand the wonderful effects of divine wisdom which are treasured up in the Scripture; ...`
-- **[Chapter 2 - The general assertion confirmed with testimonies of the Scripture — Psalm 119:18 o...] P24** (HEBREW): `The removal and destruction of this double veil by the Spirit and grace of the gospel is that which is prophesied of, Isaiah 25:7, "He will destroy in this mountain the face ־הלוֹט ־הלוֹט, of the cove...`
-- **[Chapter 2 - The general assertion confirmed with testimonies of the Scripture — Psalm 119:18 o...] P42** (GREEK): `3. Concerning these things so revealed in the word, the apostle prays for these Ephesians that they might know them; as also, he expresseth the way whereby alone they might be enabled so to do: Εἰς τὸ...`
-- **[Chapter 3 - Other testimonies pleaded in confirmation of the same truth — John 16:13 opened — ...] P57** (GREEK): `1. There is in the Scripture, with respect unto the mind and will of God revealed therein, with the mysteries of truth and grace, mention of γνῶσις and ἐπίγνωσις, — " knowledge" and "acknowledgment." ...`
-- **[Chapter 3 - Other testimonies pleaded in confirmation of the same truth — John 16:13 opened — ...] P62** (GREEK): `4. It doth not give πάντα πλοῦτον τῆς πληροφοφίας τῆς συνέσεως εἰς ἐπίγνωσιν τοῦ μυστηρίου τοῦ Θεοῦ, — "all riches of the full assurance of understanding, to the acknowledgment of the mystery of God,"...`
+- **[Appendix.] P30** (GREEK): `The intention of his words is, that God, who alone is to be believed for himself, hath given us his word as the rule whereby we are to judge of all things. And this word is so to be believed as not to...`
+- **[Appendix.] P31** (GREEK): `In few words he declares the substance of what we have pleaded for. No more do we maintain in this cause but what Clemens cloth here assert, — namely, that we believe the Scripture for itself, as that...`
+- **[Appendix.] P32** (GREEK): `Οὕτως οῦν καὶ ἡμεῖς ἀπ αὐτῶν περὶ αὐτῶν τῶν γραφῶν τελείως ἀποδεικνύντες, ἐκ πίστεως τειθόμεθα ἀποδεικτικῶ — "For we would not attend or give credit simply to the definitions of men, seeing we have ri...`
+- **[Appendix.] P34** (GREEK): `Basilius speaks to the same purpose on Psalm 115: Πίστις, ἡ ὑπὲρ τὰς λογικὰς μεθάδους τὴν ψυχὴν εἰς συγκατάθεσιν ἕλκουσα. Πίστις, οὐκ ἡ γεωμετρικαῖς ἀνάγκαις, ἀλλ ἡ ταῖς τοῦ πνεύματος ἐνεργείαις ἐγγιν...`
+- **[Appendix.] P36** (GREEK): `Nemesius, De Homin., cap. 2: Η τῶν ζείων λογίων διδασκαλία, τὸ πιστὸν ἀφ ἑαυτῆς ἔχουσα διὰ τὸ ζεόπνευστον εῖναι? — "The doctrine of the divine oracles hath its credibility from itself, because of its ...`
+- **[Appendix.] P64** (LATIN): `And to show what he means by this internal argument and persuasion, he affirms elsewhere that [[BLOCKQUOTE]] "Deus ipse imprimis est, qui, Christianam doctrinam atque adeo Scripturam sacram veram esse...`
+- **[Chapter 2.] P13** (HEBREW): `4. There is expressed in the words the act of God towards us, whereby he enableth us to behold, discern, and understand the wonderful effects of divine wisdom which are treasured up in the Scripture; ...`
+- **[Chapter 2.] P23** (HEBREW): `The removal and destruction of this double veil by the Spirit and grace of the gospel is that which is prophesied of, Isaiah 25:7, "He will destroy in this mountain the face ־הלוֹט ־הלוֹט, of the cove...`
+- **[Chapter 2.] P41** (GREEK): `3. Concerning these things so revealed in the word, the apostle prays for these Ephesians that they might know them; as also, he expresseth the way whereby alone they might be enabled so to do: Εἰς τὸ...`
+- **[Chapter 3.] P58** (GREEK): `1. There is in the Scripture, with respect unto the mind and will of God revealed therein, with the mysteries of truth and grace, mention of γνῶσις and ἐπίγνωσις, — " knowledge" and "acknowledgment." ...`
+- **[Chapter 3.] P63** (GREEK): `4. It doth not give πάντα πλοῦτον τῆς πληροφοφίας τῆς συνέσεως εἰς ἐπίγνωσιν τοῦ μυστηρίου τοῦ Θεοῦ, — "all riches of the full assurance of understanding, to the acknowledgment of the mystery of God,"...`
 - **[Chapter 8.] P12** (HEBREW): `(1.) In them peculiarly is it γραφὴ ζεόπνευστος, a "writing by divine inspiration," 2 Timothy 3:16; and סֵפֶר יְהֹוָה, the "book of writing of the LORD," Isaiah 34:16; with a singular privilege above ...`
 - **[Chapter 8.] P13** (GREEK): `It is the sense, therefore, of the Scripture which principally and for its own sake we inquire after and into; that divine sense which, as Justin Martyr speaks, is ὑπὲρ λόγον¸ ὐπὲρ νοῦν, καὶ ὑπὲρ πᾶσα...`
 - **[Chapter 2 - Zechariah 12:10 Opened and Vindicated.] P3** (HEBREW): `The Spirit here promised is the Spirit of God, "the Holy Spirit," with respect unto the especial end for which he is promised. And the manner of his administration in the accomplishment of the promise...`
-- *...and 12 more body paragraphs.*
+- *...and 13 more body paragraphs.*
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 5 ──
 
-**Footnotes remaining:** 0 | **Body paragraphs remaining:** 35
+**Footnotes remaining:** 0 | **Body paragraphs remaining:** 36
 
 #### Potential Untranslated Body Paragraphs:
-- **[General Considerations,] P181** (GREEK): `(2.) On the same ground the incarnation of the Son of God is rejected as ἀτόπων ἀτοπώτατον, — the most absurd conception that ever befell the minds of men. Now it is to no purpose to dispute with men ...`
+- **[General Considerations,] P180** (GREEK): `(2.) On the same ground the incarnation of the Son of God is rejected as ἀτόπων ἀτοπώτατον, — the most absurd conception that ever befell the minds of men. Now it is to no purpose to dispute with men ...`
 - **[Chapter 2 - the Nature of Justifying Faith] P10** (GREEK): `A. disallowing of Christ, the stone ὁ͂ν ἀπεδοκίμασαν οἱ οἰκοδομοῦντες, 1 Peter 2:7, — the "builders disapproved of," as not meet for that place and work whereunto it was designed, Acts 4:11, — this is...`
 - **[Chapter 3 - the Use of Faith in Justification] P9** (GREEK): `I confess that I lay not much weight on exceptions of this nature. For, First, Notwithstanding what is said herein, the Scripture is express, that "God justifieth us by faith." "It is one God which sh...`
 - **[Chapter 3 - the Use of Faith in Justification] P12** (GREEK): `Wherefore, so far as I can discern, they contribute nothing unto the real understanding of this truth, who deny faith to be the instrumental cause of our justification; and, on other grounds, assert i...`
@@ -135,37 +138,37 @@
 - **[Chapter 4 - of Justification] P18** (HEBREW): `But we may more distinctly consider the use of this word in the New Testament, as we have done that of חִצְדִּיק in the Old. And that which we inquire concerning is, — whether this word be used in the...`
 - **[Chapter 4 - of Justification] P20** (GREEK): `The place declares directly the nature of our justification before God, and puts the signification of the word out of question; for justification ensues as the whole effect of inherent righteousness a...`
 - **[Chapter 4 - of Justification] P44** (GREEK): `(3.) Men are said to be δίκιοι generally from inherent righteousness; and if the apostle had intended justification in this place, he would not have said ὁ δίκαιος, but ὁ δικαιωθείς. All which things ...`
-- **[Chapter 7 - Imputation, & the Nature of It] P55** (GREEK): `(1.) "Injuriarum," of wrongs: Εἰ δέ τι ἡδίκησέ σε? — If he has dealt unjustly with thee, or by thee, if he has so wronged thee as to render himself obnoxious unto punishment."...`
-- **[Chapter 8 - Imputation of the Sins of the Church Unto Christ] P99** (HEBREW): `The Hebrews have no other word to signify guilt or guilty but אָשָׁם and this they use both for sin, the guilt of it, the punishment due unto it, and a sacrifice for it. Speaking of the guilt of blood...`
+- **[Chapter 7 - Imputation, & the Nature of It] P52** (GREEK): `(1.) "Injuriarum," of wrongs: Εἰ δέ τι ἡδίκησέ σε? — If he has dealt unjustly with thee, or by thee, if he has so wronged thee as to render himself obnoxious unto punishment."...`
+- **[Chapter 8 - Imputation of the Sins of the Church Unto Christ] P100** (HEBREW): `The Hebrews have no other word to signify guilt or guilty but אָשָׁם and this they use both for sin, the guilt of it, the punishment due unto it, and a sacrifice for it. Speaking of the guilt of blood...`
 - **[Chapter 9 - the Formal Cause of Justification] P41** (HEBREW): `(3.) That which the Lord Christ paid for us is as truly paid as if we had paid it ourselves. So he speaks, Psalm 69:5, אָז אָשִׁיב אֲשֶׁר לאֹ־גָזֹלֲתִי....`
 - **[Chapter 12 - the Imputation of the Obedience of Christ] P94** (GREEK): `(3.) The righteousness and obedience here intended are opposed τῷ παραπτώματι, — to the offense: "By the offense of one." But the offense intended was an actual transgression of the law; so is παράστω...`
 - **[Chapter 14 - the Exclusion of All Sorts of Works] P12** (LATIN): `2. Some say the apostle only excludes the perfect works required by the law of innocence; which is a sense diametrically opposite unto that foregoing. But this best pleases the Socinians. "Paulus agit...`
-- *...and 20 more body paragraphs.*
+- *...and 21 more body paragraphs.*
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 6 ──
 
-**Footnotes remaining:** 0 | **Body paragraphs remaining:** 33
+**Footnotes remaining:** 0 | **Body paragraphs remaining:** 29
 
 #### Potential Untranslated Body Paragraphs:
-- **[Chapter 1.] P24** (GREEK): `(2.) The deeds of the body. The word is πράξις, which, indeed, denoteth the outward actions chiefly, "the works of the flesh," as they are called, τὰ ἔργα τῆς σακός, Galatians 5:19; which are there sa...`
-- **[Chapter 1.] P25** (GREEK): `Having, both in the seventh and the beginning of this chapter, treated of indwelling lust and sin as the fountain and principle of all sinful actions, he here mentions its destruction under the name o...`
+- **[Chapter 1.] P25** (GREEK): `(2.) The deeds of the body. The word is πράξις, which, indeed, denoteth the outward actions chiefly, "the works of the flesh," as they are called, τὰ ἔργα τῆς σακός, Galatians 5:19; which are there sa...`
+- **[Chapter 1.] P26** (GREEK): `Having, both in the seventh and the beginning of this chapter, treated of indwelling lust and sin as the fountain and principle of all sinful actions, he here mentions its destruction under the name o...`
 - **[Chapter 1.] P13** (GREEK): `Secondly, The apostle proposeth the way whereby he discovered this law in himself: Εὐρίσκω ἄρα τὸν νόμον, "I find then," or therefore, "a law."...`
 - **[Chapter 1.] P16** (GREEK): `Thirdly, The general frame of believers, notwithstanding the inhabitation of this law of sin, is here also expressed. They "would do good." This law is "present:" Θέλοντι ἐμοὶ ποιεῖν τὸ καλόν. The hab...`
-- **[Chapter 1.] P23** (GREEK): `Unto the second, or the actual willing of this or that good in particular, unto this "When I would do good," is opposed the presence of this law: "Evil is present with me," — Εμὸι τὸ κακὸν παράκειται ...`
+- **[Chapter 1.] P24** (GREEK): `Unto the second, or the actual willing of this or that good in particular, unto this "When I would do good," is opposed the presence of this law: "Evil is present with me," — Εμὸι τὸ κακὸν παράκειται ...`
 - **[Chapter 4.] P2** (GREEK): `Secondly. WE have seen the seat and subject of this law of sin. In the next place we might take a view of its nature in general, which also will manifest its power and efficacy; but this I shall not e...`
 - **[Chapter 6.] P31** (GREEK): `Sometimes it proposeth diversions, sometimes it causeth weariness, sometimes it finds out difficulties, sometimes it stirs up contrary affections, sometimes it begets prejudices, and one way or other ...`
 - **[Chapter 6.] P37** (GREEK): `He useth three words excellently expressing the soul's universal pursuit of this purpose of heart in cleaving unto God: First, saith he, Διώκω, verse 12, — "I follow after," prosecute; the word signif...`
 - **[Chapter 6.] P41** (GREEK): `2. It doth not only rebel and resist, but it assaults the soul. It sets upon the law of the mind and grace; which is the second part of its warring: 1 Peter 2:11, Στρατεύονται κατὰ τῆς ψυχῆς, — "They ...`
 - **[Chapter 6.] P44** (GREEK): `When we pursue an enemy, and he resists us, we do not cry out, "Who shall deliver us?" for we are the assailants; but, "Who shall rescue me?" is the cry of one who is set upon by an enemy. So it is he...`
 - **[The State and Condition of the Soul Represented in the Psalm] P4** (GREEK): `Some of the ancients, as Chrysostom, suppose this expression to relate unto the depths of the heart of the psalmist: Τί ἐστιν ἐκ βαθέων not from the mouth or tongue only, ἀλλ ἀπὸ καρδίας βαθυτάτης, — ...`
-- **[The State and Condition of the Soul Represented in the Psalm] P6** (HEBREW): `But the obvious sense of the place, and the constant use of the word, will not admit of this interpretation: "E profundis;" from עָמַק, "profundus fuit," is מַעֲמַקִּים in the plural number, "profundi...`
-- **[The State and Condition of the Soul Represented in the Psalm] P8** (HEBREW): `1. Providential, in respect of outward distresses, calamities, and afflictions: Psalm 69:1, 2, "Save me, O God; for the waters axe come in unto my soul. I stick in the mire of the deep, and there is n...`
-- **[The Duty and Actings of a Believer Under Distresses From a Sense of Sin] P3** (HEBREW): `In the application itself may be observed, — First, The anthropopathy of the expression. He prays that God would cause his ears to be attentive; after the manner of men who seriously attend to what is...`
+- **[The State and Condition of the Soul Represented in the Psalm] P8** (HEBREW): `1. Providential, in respect of outward distresses, calamities, and afflictions: Psalm 69:1, 2, "Save me, O God; for the waters are come in unto my soul. I stick in the mire of the deep, and there is n...`
 - **[Verse Third.] P10** (HEBREW): `What, then, saith he to JAH? אם־עֲוֹנוֹת תִשְׁמָר, — "If thou shouldest mark iniquities." שָׁמַר is to observe and keep as in safe custody; to keep, preserve, and watch diligently; so to remark and ob...`
-- *...and 18 more body paragraphs.*
+- **[The Words of the Verse Explained, & Their Meaning Opened.] P10** (HEBREW): `What, then, saith he to JAH? אם־עֲוֹנוֹת תִשְׁמָר, — "If thou shouldest mark iniquities." שָׁמַר is to observe and keep as in safe custody; to keep, preserve, and watch diligently; so to remark and ob...`
+- **[The Words Explained, and the Design or Scope of the Psalmist in Them Discovered.] P6** (HEBREW): `Now, it is constantly applied unto sin, and expresseth every thing that concurs to its pardon or forgiveness; as, — First, It expresseth the mind or will of pardoning, or God's gracious readiness to f...`
+- *...and 14 more body paragraphs.*
 
 
 ────────────────────────────────────────
@@ -175,42 +178,42 @@
 **Footnotes remaining:** 0 | **Body paragraphs remaining:** 8
 
 #### Potential Untranslated Body Paragraphs:
-- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P2** (GREEK): `INTENDING an inquiry into the nature, causes, and occasions of the present defection that is in the world from the truth, holiness, and worship of the gospel, I shall lay the foundation of my whole di...`
-- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P4** (HEBREW): `Syr., אֶלָא לָא מֶשְׁכְחִין, — "But they cannot." This respects the power of the persons themselves, and not the event of things; it may be not improperly as to the sense. Beza and Erasmus, "Fieri non...`
-- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P142** (HEBREW): `That which is said to be thus impossible with respect unto these persons is, πάλιν ἀνακαινίζειν εἰς υετάνοιαν, "to renew them again unto repentance." Μετάνοια in the New Testament, with respect unto G...`
+- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P3** (GREEK): `Αδύνατον γὰρ τοὺς ἅπαξ φωτισθέντας, γευσαμένους τε τῆς δωρεᾶς τῆς ἐπουρανίου, καὶ μετόχους γενηθέντας Πνεύματος ἁγίου, καὶ καλὸν γευσαμένους Θεοῦ ῥῆμα, δυνάμεις τε μέλλοντος αἰῶνος, καὶ παραπεσόντας, ...`
+- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P5** (HEBREW): `Syr., אֶלָא לָא מֶשְׁכְחִין, — "But they cannot." This respects the power of the persons themselves, and not the event of things; it may be not improperly as to the sense. Beza and Erasmus, "Fieri non...`
+- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P141** (HEBREW): `That which is said to be thus impossible with respect unto these persons is, πάλιν ἀνακαινίζειν εἰς υετάνοιαν, "to renew them again unto repentance." Μετάνοια in the New Testament, with respect unto G...`
+- **[Chapter 1 - the Nature of Apostasy From the Gospel Declared] P152** (GREEK): `In the preaching of the gospel, it is necessary to propose unto men, and to insist on, the severity of God in dealing with provoking sinners against it. And indeed the severity of God is principally, ...`
 - **[Chapter 2 - Partial Apostasy From the Gospel] P22** (GREEK): `Other instances of the like nature might be given. This is that μόρφωσις τῆς εὐσεζείας, or ἀληθείας τῆς κατ εὐσέζειαν, that figure and representation of evangelical truth and holiness wherewith these ...`
-- **[Chapter 8 - Apostasy From the Holiness of the Gospel] P52** (HEBREW): `This they will abide in and cherish; for their minds being habituated unto it, they find no great evil in it, nor do see any cogent reason why they should forego it. So was it with the young man with ...`
-- **[Chapter 1 - THE WORDS OF THE TEXT EXPLAINED: "To be spiritually minded is life and peace." Rom...] P2** (GREEK): `THE expression in our translation sounds differently from that in the original. "To be spiritually minded," say we. In the original it is φρόνημα τοῦ πνεύματος, as that in the former part of the verse...`
-- **[Chapter 1 - THE WORDS OF THE TEXT EXPLAINED: "To be spiritually minded is life and peace." Rom...] P14** (GREEK): `2. Unto this Spirit there is φρόνημα ascribed, which, as we have intimated, is translated with great variety. Φρόνησις is the principal power and act of the mind. It is its light, wisdom, prudence, kn...`
-- **[Chapter 1 - What sin is consistent with the state of grace, and what not — Sin's great design ...] P12** (GREEK): `Those who are otherwise minded know neither themselves, nor what sin is, nor wherein the grace of the gospel doth consist. There is the "flesh" remaining in every one, which "lusteth against the Spiri...`
+- **[Chapter 8 - Apostasy From the Holiness of the Gospel] P51** (HEBREW): `This they will abide in and cherish; for their minds being habituated unto it, they find no great evil in it, nor do see any cogent reason why they should forego it. So was it with the young man with ...`
+- **[Chapter 1.] P14** (GREEK): `2. Unto this Spirit there is φρόνημα ascribed, which, as we have intimated, is translated with great variety. Φρόνησις is the principal power and act of the mind. It is its light, wisdom, prudence, kn...`
+- **[Chapter 1.] P12** (GREEK): `Those who are otherwise minded know neither themselves, nor what sin is, nor wherein the grace of the gospel doth consist. There is the "flesh" remaining in every one, which "lusteth against the Spiri...`
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 8 ──
 
-**Footnotes remaining:** 1 | **Body paragraphs remaining:** 18
+**Footnotes remaining:** 1 | **Body paragraphs remaining:** 17
 
 #### Potential Untranslated Footnotes:
 - **Footnote 27** (LATIN): `-- Matthew 10:29; Job 14:5; Proverbs 16:33, 21:1,30, 19:21. "Nihil fit nisi omnipotens fieri velit, vel ipse faciendo, vel sinendo ut fiat." — Aug.`
 
 #### Potential Untranslated Body Paragraphs:
-- **[A Vision of Unchangeable, Free Mercy, in Sending the Means of G] P30** (GREEK): `3. The bringer of the message, — ἀνήρ τις ῆν Μακεδὼν ἑστὼς, he was a man of Macedonia in a vision. The Lord made an appearance unto him as of a man of Macedonia, discovering even to his bodily eyes a ...`
-- **[A Memorial of the Deliverance of Essex County, and Committee.] P125** (HEBREW): `(1.) For the inhabitants: He drove them asunder, וַיַתִר "and he made to leap" out of their old channels. Those nations knit and linked together amongst themselves, by leagues and civil society, he se...`
-- **[A Memorial of the Deliverance of Essex County, and Committee.] P221** (HEBREW): `Verse 8. "Was the LORD displeased against the rivers? was thine anger against the rivers? was thy wrath against the sea, that thou didst ride upon thine horses, and thy chariots of salvation?" "Was th...`
-- **[A Memorial of the Deliverance of Essex County, and Committee.] P232** (GREEK): `Τρέμει δ ὄρη, καὶ πελώριος Βυθὸς ζαλάσσης, κᾠρέων ὕψος μέγα, Οταν ἐπεβλέψῃ γοργὸν ὄμμα δεσπότου....`
+- **[A Memorial of the Deliverance of Essex County, and Committee.] P126** (HEBREW): `(1.) For the inhabitants: He drove them asunder, וַיַתִר "and he made to leap" out of their old channels. Those nations knit and linked together amongst themselves, by leagues and civil society, he se...`
+- **[A Memorial of the Deliverance of Essex County, and Committee.] P222** (HEBREW): `Verse 8. "Was the LORD displeased against the rivers? was thine anger against the rivers? was thy wrath against the sea, that thou didst ride upon thine horses, and thy chariots of salvation?" "Was th...`
+- **[A Memorial of the Deliverance of Essex County, and Committee.] P233** (GREEK): `Τρέμει δ ὄρη, καὶ πελώριος Βυθὸς ζαλάσσης, κᾠρέων ὕψος μέγα, Οταν ἐπεβλέψῃ γοργὸν ὄμμα δεσπότου....`
 - **[Righteous Zeal Encouraged by Divine Protection.] P12** (GREEK): `When God walks contrary to a people, it is not always in one path; he hath seven ways to do it, and will do it seven times, Leviticus 26:24. He strikes not always with one weapon, nor in one place. As...`
 - **[Of Toleration;] P3** (GREEK): `THE times are busy, and we must be brief. Prefaces for the most part are at all times needless, — these, troublesome. Mine shall only be, that ἄνευ προοιμίων καὶ παθῶν, "without either preface or sole...`
-- **[Of Toleration;] P88** (GREEK): `Τοὺς μισοῦντας τὸν Θεὸν, μισεῖν χρὴ καὶ ὑμᾶς, καὶ ἐπὶ τοῖς ἐχθροῖς αὐτοῦ ἐκτήκεσθαι? οὐ μὴν καὶ τύπτειν αὐτοὺς ἦ διώκειν, καθὼς τὰ ἔθνη τὰ μὴ εἰδότα τὸν Κύριον καὶ Θεὸν, ἀλλ ἐχθοὺς μὲν ἡγεῖσθαι καὶ χω...`
+- **[Of Toleration;] P18** (HEBREW): `The word here used to express his sin, is "נֹקֵב, signifying also to pierce, and is twice so rendered —...`
+- **[Of Toleration;] P94** (GREEK): `Τοὺς μισοῦντας τὸν Θεὸν, μισεῖν χρὴ καὶ ὑμᾶς, καὶ ἐπὶ τοῖς ἐχθροῖς αὐτοῦ ἐκτήκεσθαι? οὐ μὴν καὶ τύπτειν αὐτοὺς ἦ διώκειν, καθὼς τὰ ἔθνη τὰ μὴ εἰδότα τὸν Κύριον καὶ Θεὸν, ἀλλ ἐχθοὺς μὲν ἡγεῖσθαι καὶ χω...`
 - **[The Branch of the Lord the Beauty of Zion: Or, the Glory of the] P72** (GREEK): `[2dly.] In respect of outward manifestation. God first manifests and declares him, before he laid one stone in this building. Genesis 3:15, The seed, saith he, of the woman shall bruise the serpent's ...`
-- **[The Branch of the Lord the Beauty of Zion: Or, the Glory of the] P166** (GREEK): `Μόνῳ σοφῷ Θεῷ, διὰ Ιησοῦ Χριστοῦ, ῷ ἡ δόξα εἰς τοὺς αἰῶνας. Αμήν....`
+- **[The Branch of the Lord the Beauty of Zion: Or, the Glory of the] P168** (GREEK): `Μόνῳ σοφῷ Θεῷ, διὰ Ιησοῦ Χριστοῦ, ῷ ἡ δόξα εἰς τοὺς αἰῶνας. Αμήν....`
 - **[God's Work in Founding Zion, and His Peopleìs Duty Thereupon.] P10** (HEBREW): `2. "What shall ONE;" — that is, any one, or every one. The answer spoken of is either the duty of every one to give, or it will be so evident, that any one shall be able to give it. The word one, I co...`
 - **[God's Work in Founding Zion, and His Peopleìs Duty Thereupon.] P14** (HEBREW): `5. "Of the NATIONS;" — that is, of this or that nation, of any nation that shall send to make inquiry: גוֹי, "of the heathen," say some. Those commonly so called, or "the nations estranged from God," ...`
 - **[God's Work in Founding Zion, and His Peopleìs Duty Thereupon.] P36** (HEBREW): `(2.) What shall they do? They "shall trust in it;" וּבָה יֶחֶסוּ, "and in it they shall trust;" — that is, being "in it, they shall trust," confide, acquiesce, namely, in the Lord, who hath wrought th...`
-- **[God's Presence With a People the Spring of Their Prosperity.] P8** (GREEK): `2. God may be said to be with one in respect of personal union. So he was with, and only with, the man Jesus Christ, Acts 10:38, Θεὸς ῆν μετ αὐτοῦ, "God was with him;" that is, in personal union, the ...`
-- **[God's Presence With a People the Spring of Their Prosperity.] P35** (GREEK): `3. Observe, that our abiding with God, even in national administrations, is the proper effect of his presence with us in covenant dispensations; so that all, in the issue, is of mere mercy and grace: ...`
-- **[How We May Bring Our Hearts to Bear Reproofs.] P3** (HEBREW): `צַדִּיק יֶהֶלְמֵני צַדִּיק חֶסֶד — "the righteous," is any one opposed to the workers of iniquity, verse 4, — any righteous person whatever, — any one who is of the society and communion of the righte...`
-- *...and 3 more body paragraphs.*
+- **[God's Presence With a People the Spring of Their Prosperity.] P9** (GREEK): `2. God may be said to be with one in respect of personal union. So he was with, and only with, the man Jesus Christ, Acts 10:38, Θεὸς ῆν μετ αὐτοῦ, "God was with him;" that is, in personal union, the ...`
+- **[God's Presence With a People the Spring of Their Prosperity.] P37** (GREEK): `3. Observe, that our abiding with God, even in national administrations, is the proper effect of his presence with us in covenant dispensations; so that all, in the issue, is of mere mercy and grace: ...`
+- **[How We May Bring Our Hearts to Bear Reproofs.] P5** (HEBREW): `צַדִּיק יֶהֶלְמֵני צַדִּיק חֶסֶד — "the righteous," is any one opposed to the workers of iniquity, verse 4, — any righteous person whatever, — any one who is of the society and communion of the righte...`
+- *...and 2 more body paragraphs.*
 
 
 ────────────────────────────────────────
@@ -225,10 +228,10 @@
 
 #### Potential Untranslated Body Paragraphs:
 - **[Sermon 1.] P82** (HEBREW): `[1.] The Hebrew word כָּבוֹד, signifies "pondus," or "weight;" whereunto the apostle alludes when he speaks of "an eternal weight of glory," 2 Corinthians 4:17. This is the glory of the thing itself. ...`
-- **[Sermon 4] P22** (GREEK): `The consideration of this work made the apostle say, Πρὸς ταῦτα τίς ἱκανός; In a word, so far as possible it may be done, their state and condition is to be spread before the Lord in prayer, according...`
+- **[Sermon 4] P23** (GREEK): `The consideration of this work made the apostle say, Πρὸς ταῦτα τίς ἱκανός; In a word, so far as possible it may be done, their state and condition is to be spread before the Lord in prayer, according...`
 - **[Sermon 7.] P3** (HEBREW): `Amongst the many eminent qualifications of the obedience of believers, we shall find, in the issue, this to stand in the forefront, among the chiefest (the words in the original are, וְהַצְנֵעַ לֶכֶת)...`
 - **[Sermon 13.] P21** (HEBREW): `The apostle also makes this an effectual means of the improvement of holiness, — that the mind be taken off from the delightful contemplation of visible things, 2 Corinthians 4:18. Things will work to...`
-- **[Sermon 23.] P40** (HEBREW): `The word שֵׁבֶם, here used, sometimes is put for a scepter, wherewith kings rule; sometimes for a staff; and sometimes for a rod. It was the instrument, whatever it was, that shepherds used in those d...`
+- **[Sermon 23.] P42** (HEBREW): `The word שֵׁבֶם, here used, sometimes is put for a scepter, wherewith kings rule; sometimes for a staff; and sometimes for a rod. It was the instrument, whatever it was, that shepherds used in those d...`
 - **[Sermon 27.] P3** (GREEK): `THESE words have a great vehemency and emphasis in them, and discover an uncommon earnestness upon the spirit of the apostle when he wrote them; and indeed they carry a greater appearance of such a ve...`
 - **[Sermon 27.] P9** (HEBREW): `There is yet a third difficulty. The particle νὴ here is a note of an oath, or swearing; as much as בְּ in the Hebrew tongue; or in our language, "by;" yet sometimes it is used as a note of strong ass...`
 - **[Sermon 5.] P7** (GREEK): `How doth he do it? Verse 29, "Whereunto I also labor, striving according to his working, which worketh in me mightily." There is not one word in our translation that answers the emphasis of the origin...`
@@ -238,7 +241,7 @@
 
 ### ── VOLUME 10 ──
 
-**Footnotes remaining:** 5 | **Body paragraphs remaining:** 34
+**Footnotes remaining:** 5 | **Body paragraphs remaining:** 35
 
 #### Potential Untranslated Footnotes:
 - **Footnote 13** (LATIN): `- "Multa tamen arbitror Deum velle; quae non vellet, adeoque nec juste velle posset, nisi aliqua actio creaturae praecederet." — Ad Ames., p. 24.`
@@ -249,21 +252,21 @@
 
 #### Potential Untranslated Body Paragraphs:
 - **[Chapter 3 - of the Prescience or Foreknowledge of God] P14** (GREEK): `Thirdly, The Scripture (Psalm 44:21; Job 11:11; Daniel 2:47; Psalm 7:9, 26:2, 147:4; Luke 12:27; Matthew 10:29, 30; Psalm 139:2) is full of expressions to this purpose, — to wit, "That God [f52] knowe...`
-- **[Chapter 10 - of the Cause of Faith, Grace, and Righteousness.] P12** (GREEK): `The apostle labored; though it was not he, but "the grace of God that was with him," 1 Corinthians 15:10. He "worketh in us καὶ τὸ ζέλειν καὶ τὸ ἐνεργεῖν of his good pleasure," Philippians 38:13 2:13;...`
+- **[Chapter 10 - of the Cause of Faith, Grace, and Righteousness.] P13** (GREEK): `The apostle labored; though it was not he, but "the grace of God that was with him," 1 Corinthians 15:10. He "worketh in us καὶ τὸ ζέλειν καὶ τὸ ἐνεργεῖν of his good pleasure," Philippians 2:13; and y...`
 - **[Chapter 14 - of Our Conversion to God.] P26** (GREEK): `Τῷ Θεῷ ἀριστομεγίστῳ δόξα....`
 - **[Chapter 3 - of the Agent or Chief Author of the Work of Our Redemption] P12** (GREEK): `Hence the Father himself is sometimes called our Savior: 1 Timothy 1:1, "According to the commandment Θεοῦ σωτῆρος ἡμῶν," — "of God our Savior." Some copies, indeed, read it, Θεοῦ καὶ σωτῆρος ἡμῶν, — ...`
 - **[Chapter 3 - Particularly of the Immediate End of The Death of Christ] P15** (GREEK): `Whose, I pray? "The men whom thou hast given me out of the world," verse 6. Not the whole world, whom he prayed not for, verse 9. "I sanctify myself." Whereunto? "To the work I am now going about, eve...`
 - **[Chapter 9 - Being a Second Part of the Former Digression] P4** (HEBREW): `Thirdly, That he did this in our stead. For the first, that he took and bare our sins, ye have it, John 1:29, 'Ο αἴρων, [f264] etc., — "Who taketh away the sin of the world;" 1 Peter 2:24, 'Ος ἀνήνεγκ...`
 - **[Chapter 9 - Being a Second Part of the Former Digression] P7** (GREEK): `Now, this also our Savior himself maketh apparent, Matthew 20:28. He came δοῦναι τὴν ψυχὴν αὑτοῦ λύτρον ἀντὶ πολλῶς, — "to give himself a ransom for many." The word ἀντί always supposeth a commutation...`
 - **[Chapter 10 - of the Merit of Christ, With Arguments From Thence.] P1** (GREEK): `Arg. 14. A fourth thing ascribed to the death of Christ is MERIT, or that worth and value of his death whereby he purchased and procured unto us, and for us, all those good things which we find in the...`
-- **[Chapter 1 - Things Previously to Be Considered, to the Solution of Objections.] P39** (HEBREW): `Secondly, The word all is sometimes used for some of all sorts, Jeremiah 31:34. The word כוּלָם is by Paul rendered πάντες, Hebrews 8:11; so John 12:32; 1 Timothy 2:1-3; which is made apparent by the ...`
-- **[Chapter 1 - Things Previously to Be Considered, to the Solution of Objections.] P42** (GREEK): `Add, moreover, to what hath been said, that which is of no less an undeniable truth, — namely, that many things which are proper and peculiar to the children of God are oft and frequently assigned to ...`
-- **[Chapter 2 - An Entrance to the Answer Unto Particular Arguments.] P17** (GREEK): `Thirdly, Ινα πᾶς ὁ πιστεύων, is to us, "that every believer," and is declarative of the intention of God in sending or giving his Son, containing no distribution of the world beloved, but a direction ...`
-- **[Chapter 2 - An Entrance to the Answer Unto Particular Arguments.] P33** (GREEK): `The Third difference about these words is, concerning the means whereby this love of the Father, whose object is said to be the world is made out unto them. Now, this is by believing, ἵνα πᾶς ὁ πιστεύ...`
-- **[Chapter 3 - Confirmation of the First General Argument for Universal Redemption.] P22** (GREEK): `Now, all this will give us some light into the meaning of the word, and so, consequently, into the sense of this place, with the mind of the Holy Ghost therein. Ιλασμός and ἱλαστήριον, both translated...`
-- **[Chapter 3 - Confirmation of the First General Argument for Universal Redemption.] P25** (GREEK): `Secondly, Let us consider the phrase ὅλου τοῦ κόσμου, — "of the whole world." I shall not declare how the word world is in the Scripture πολύσημον, of divers significations; partly because I have in s...`
-- **[Chapter 3 - Confirmation of the First General Argument for Universal Redemption.] P37** (GREEK): `Thirdly, This kind of phrase and expression in other places cannot possibly be tortured to such an extension as to comprehend all and everyone, as was apparent from the places before alleged; to which...`
-- *...and 19 more body paragraphs.*
+- **[Chapter 1 - Things Previously to Be Considered, to the Solution of Objections.] P40** (HEBREW): `Secondly, The word all is sometimes used for some of all sorts, Jeremiah 31:34. The word כוּלָם is by Paul rendered πάντες, Hebrews 8:11; so John 12:32; 1 Timothy 2:1-3; which is made apparent by the ...`
+- **[Chapter 1 - Things Previously to Be Considered, to the Solution of Objections.] P43** (GREEK): `Add, moreover, to what hath been said, that which is of no less an undeniable truth, — namely, that many things which are proper and peculiar to the children of God are oft and frequently assigned to ...`
+- **[Chapter 2 - An Entrance to the Answer Unto Particular Arguments.] P23** (GREEK): `Thirdly, Ινα πᾶς ὁ πιστεύων, is to us, "that every believer," and is declarative of the intention of God in sending or giving his Son, containing no distribution of the world beloved, but a direction ...`
+- **[Chapter 2 - An Entrance to the Answer Unto Particular Arguments.] P41** (GREEK): `The Third difference about these words is, concerning the means whereby this love of the Father, whose object is said to be the world is made out unto them. Now, this is by believing, ἵνα πᾶς ὁ πιστεύ...`
+- **[Chapter 3 - Confirmation of the First General Argument for Universal Redemption.] P21** (GREEK): `(3.) The meaning and purport of the word "propitiation," which Christ is said to be for "us," and "the whole world," is next to be considered: — First, The word in the original is ἱλασμός, twice only ...`
+- **[Chapter 3 - Confirmation of the First General Argument for Universal Redemption.] P23** (GREEK): `Now, all this will give us some light into the meaning of the word, and so, consequently, into the sense of this place, with the mind of the Holy Ghost therein. Ιλασμός and ἱλαστήριον, both translated...`
+- **[Chapter 3 - Confirmation of the First General Argument for Universal Redemption.] P26** (GREEK): `Secondly, Let us consider the phrase ὅλου τοῦ κόσμου, — "of the whole world." I shall not declare how the word world is in the Scripture πολύσημον, of divers significations; partly because I have in s...`
+- *...and 20 more body paragraphs.*
 
 
 ────────────────────────────────────────
@@ -275,19 +278,19 @@
 #### Potential Untranslated Body Paragraphs:
 - **[A Preface to the Reader.] P20** (LATIN): `2. The main work of the writers of the first ages being to contend with heathenish idolaters, to convince them of their madness and folly; to write apologies for the worship of God in Christ in genera...`
 - **[A Preface to the Reader.] P21** (LATIN): `T. 2. "Itaque," saith he, "ut simpliciter fateor, legi haec onmia, et in mente mea plurima coacervans, accito notario vel mea, vel aliena dictavi, nec ordinis, nec verborum interdum nec sensuum memor....`
-- **[A Preface to the Reader.] P47** (LATIN): `_A_ Egaei pelagi se recipere, ibique recta sursmn versus Septentrionem ascendere, et praecipuas civitates in littore sitas usque ad Troadem perlustrare, cum tamen Romanum iter sit destinatum versus oc...`
-- **[A Preface to the Reader.] P55** (GREEK): `But perhaps some farther question may here arise (and which hath by sundry been already started) about the use of divers Latin words in these epistles, which, doubtless, cannot be handsomely laid on t...`
-- **[A Preface to the Reader.] P73** (GREEK): `Clemens in the very next words secures us from any thought that all things depended "a multitudinis solius arbitrio." His very next words are, Μόνον τὸ ποίμνοιν τοῦ Χριστοῦ εἰρηνευέτω, μετὰ τῶν καθεστ...`
-- **[A Preface to the Reader.] P81** (GREEK): `First, then, for the mention that is made of many presbyters in the church of Corinth, to whom Clemens, in the name of the church of Rome, exhorts to give all due respect, honor, obedience: He tells y...`
-- **[A Preface to the Reader.] P89** (LATIN): `9. Concerning two sundry different churches, where were distinct officers, in the same city, "Primo," saith he, "respondeo non usque quaque verum est, quod pro concesso sumitur, quamvis enim in una ec...`
-- **[A Preface to the Reader.] P109** (GREEK): `Let that be manifested to be such, from the appointment of Jesus Christ by his apostles, or de facto in the days of Ignatius, or before the contemperation of ecclesiastical affairs, occasionally or by...`
-- **[A Preface to the Reader.] P111** (LATIN): `Dissert. 4 cap. 5, the doctor tells us that [[BLOCKQUOTE]] "Septem ecclesiarum angeli, non tantura episcopl sed et metropolitae, i.e., archiepiscopi statuendi sunt, i.e., principalium urbium ἔξαρχοι a...`
-- **[A Preface to the Reader.] P130** (GREEK): `30. Paulus tandem et Silas Syriam et Cilieiam peragrantes, ver. 41, cap. 16:4, δόγματα κεκριμένα ὑπὸ τῶν ἀποστόλων, singulis elvitatibus observanda tradiderunt, ut quae ad hanc Antiochiae metropolin, ...`
-- **[A Preface to the Reader.] P137** (GREEK): `But to make all sure, the learned doctor will not so give over; but, sect. 11, he adds that the epigraph of the epistle to the Romans grants him the whole case; that is, Εκκλησίᾳ ἥτις προκάθηται ἐν τό...`
-- **[A Preface to the Reader.] P138** (GREEK): `Although I have spent some time in the consideration of men's conjectures of those suburbicarian churches, that, as is pretended, are here pointed to, and the rise of the bishop of Rome's jurisdiction...`
-- **[A Preface to the Reader.] P162** (GREEK): `Add to him his contemporary, CHRYSOSTOM. Ser. 3, in 2 Corinthians 1:21, 22: Ο δὲ βεζαιῶν ἡμᾶς σὺν ὑμῖν Χριστὸν, καὶ χρίσας ἠμᾶς Θεός?...`
-- **[A Preface to the Reader.] P163** (GREEK): `καὶ σφραγισάμενος ἡμᾶς καὶ δοὺς τὸν ἀῤῥαζῶνα τοῦ Πνεύματος ἐν ταῖς καρδίαις ἡμῶν....`
-- **[A Preface to the Reader.] P164** (GREEK): `Of these words of the apostle he gives the ensuing exposition: Πάλιν ἀπὸ τῶν παρελθόντων τὰ μέλλοντα βεζαιοῦται? εἰ γὰρ αὐτός ἐστιν ὁ βεζαιῶν ἡμᾶς εἰς Χριστὸν (τουτέστιν ὁ μή ἐῶν ἡμᾶς παρασαλεύεσθαι ἐ...`
+- **[A Preface to the Reader.] P45** (LATIN): `_A_ Egaei pelagi se recipere, ibique recta sursmn versus Septentrionem ascendere, et praecipuas civitates in littore sitas usque ad Troadem perlustrare, cum tamen Romanum iter sit destinatum versus oc...`
+- **[A Preface to the Reader.] P53** (GREEK): `But perhaps some farther question may here arise (and which hath by sundry been already started) about the use of divers Latin words in these epistles, which, doubtless, cannot be handsomely laid on t...`
+- **[A Preface to the Reader.] P70** (GREEK): `Clemens in the very next words secures us from any thought that all things depended "a multitudinis solius arbitrio." His very next words are, Μόνον τὸ ποίμνοιν τοῦ Χριστοῦ εἰρηνευέτω, μετὰ τῶν καθεστ...`
+- **[A Preface to the Reader.] P78** (GREEK): `First, then, for the mention that is made of many presbyters in the church of Corinth, to whom Clemens, in the name of the church of Rome, exhorts to give all due respect, honor, obedience: He tells y...`
+- **[A Preface to the Reader.] P86** (LATIN): `9. Concerning two sundry different churches, where were distinct officers, in the same city, "Primo," saith he, "respondeo non usque quaque verum est, quod pro concesso sumitur, quamvis enim in una ec...`
+- **[A Preface to the Reader.] P105** (GREEK): `Let that be manifested to be such, from the appointment of Jesus Christ by his apostles, or de facto in the days of Ignatius, or before the contemperation of ecclesiastical affairs, occasionally or by...`
+- **[A Preface to the Reader.] P107** (LATIN): `Dissert. 4 cap. 5, the doctor tells us that [[BLOCKQUOTE]] "Septem ecclesiarum angeli, non tantura episcopl sed et metropolitae, i.e., archiepiscopi statuendi sunt, i.e., principalium urbium ἔξαρχοι a...`
+- **[A Preface to the Reader.] P126** (GREEK): `30. Paulus tandem et Silas Syriam et Cilieiam peragrantes, ver. 41, cap. 16:4, δόγματα κεκριμένα ὑπὸ τῶν ἀποστόλων, singulis elvitatibus observanda tradiderunt, ut quae ad hanc Antiochiae metropolin, ...`
+- **[A Preface to the Reader.] P133** (GREEK): `But to make all sure, the learned doctor will not so give over; but, sect. 11, he adds that the epigraph of the epistle to the Romans grants him the whole case; that is, Εκκλησίᾳ ἥτις προκάθηται ἐν τό...`
+- **[A Preface to the Reader.] P134** (GREEK): `Although I have spent some time in the consideration of men's conjectures of those suburbicarian churches, that, as is pretended, are here pointed to, and the rise of the bishop of Rome's jurisdiction...`
+- **[A Preface to the Reader.] P153** (GREEK): `Νῦν μὲν γὰρ εἰ καὶ μὴ ἀνακέκραται τοῖς ἀναξίοις? ἀλλὰ οῦν παρεῖναι δοκεῖ πῶς τοῖς ἅπαξ ἐσφραγισμένοις. By that seeming presence of the Holy Ghost with hypocrites that are baptized professors, he evide...`
+- **[A Preface to the Reader.] P158** (GREEK): `Add to him his contemporary, CHRYSOSTOM. Ser. 3, in 2 Corinthians 1:21, 22: Ο δὲ βεζαιῶν ἡμᾶς σὺν ὑμῖν Χριστὸν, καὶ χρίσας ἠμᾶς Θεός?...`
+- **[A Preface to the Reader.] P159** (GREEK): `καὶ σφραγισάμενος ἡμᾶς καὶ δοὺς τὸν ἀῤῥαζῶνα τοῦ Πνεύματος ἐν ταῖς καρδίαις ἡμῶν....`
 - *...and 16 more body paragraphs.*
 
 
@@ -295,60 +298,60 @@
 
 ### ── VOLUME 12 ──
 
-**Footnotes remaining:** 0 | **Body paragraphs remaining:** 20
+**Footnotes remaining:** 0 | **Body paragraphs remaining:** 22
 
 #### Potential Untranslated Body Paragraphs:
-- **[Chapter 2.] P55** (HEBREW): `I shall promiscuously propose them, as they lie at hand or occur to my remembrance. For the Jews, Philo gives their judgment. "Hear," saith he, "of the wise God that which is most true, that God is in...`
-- **[Examination.] P136** (GREEK): `2. In two of the places cited, the words are not ἐφ ῷ, but ἐν ῷ, Romans 8:3, Hebrews 2:18....`
-- **[Chapter 9.] P22** (HEBREW): `2. Here is no mention of the מִקֶּדֶם, "beginning;" and those who in the latter words reject the Vulgar edition cannot honestly insist on the former from thence because it serves their turn. Yet how t...`
-- **[Chapter 9.] P73** (GREEK): `2. There is not the same reason of what is here asserted of Christ and what is said of the elect, 2 Timothy 1:9. Christ here positively says he had "εῖχον (glory) with his Father before the world was;...`
-- **[Chapter 10.] P81** (HEBREW): `1. That by this expression, "Who is, and who was, and who is to come," the apostle expresses that name of God, Ehejeh [אֶהְיֶה], Exodus 3:14, which, as the rabbins say, is of all seasons, and expressi...`
-- **[Chapter 11.] P60** (GREEK): `1. Grotius is not able to give me one instance in the whole New Testament where δἰ οῦ is taken for δἰ ὁ͂ν: and if it should be so anywhere, himself would confess that it must have some cogent circumst...`
-- **[Chapter 14.] P125** (GREEK): `I should but needlessly multiply words, particularly to animadvert on Grotius' annotations on this place. I do it only where he seems to add some new shifts to the interpretation of our adversaries, o...`
+- **[Chapter 2.] P57** (HEBREW): `I shall promiscuously propose them, as they lie at hand or occur to my remembrance. For the Jews, Philo gives their judgment. "Hear," saith he, "of the wise God that which is most true, that God is in...`
+- **[Chapter 3.] P31** (GREEK): `Likewise the heathens, who termed God νοῦν, and ψύχωσιν and πνεῦμα, and δυναμοποιόν or δύναμιν, had the same apprehensions of him. Thus discourses Mercurius ad Tatium, in Stobaeus, serm. 78: Θεὸν μὲν ...`
+- **[Chapter 3.] P33** (GREEK): `Θὔτε δέμας θνητοῖσιν ὁμοίϊος οὐδὲ νόημα....`
+- **[Examination.] P155** (GREEK): `2. In two of the places cited, the words are not ἐφ ῷ, but ἐν ῷ, Romans 8:3, Hebrews 2:18....`
+- **[Chapter 9.] P23** (HEBREW): `2. Here is no mention of the מִקֶּדֶם, "beginning;" and those who in the latter words reject the Vulgar edition cannot honestly insist on the former from thence because it serves their turn. Yet how t...`
+- **[Chapter 9.] P76** (GREEK): `2. There is not the same reason of what is here asserted of Christ and what is said of the elect, 2 Timothy 1:9. Christ here positively says he had "εῖχον (glory) with his Father before the world was;...`
+- **[Chapter 10.] P85** (HEBREW): `1. That by this expression, "Who is, and who was, and who is to come," the apostle expresses that name of God, Ehejeh [אֶהְיֶה], Exodus 3:14, which, as the rabbins say, is of all seasons, and expressi...`
+- **[Chapter 11.] P62** (GREEK): `1. Grotius is not able to give me one instance in the whole New Testament where δἰ οῦ is taken for δἰ ὁ͂ν: and if it should be so anywhere, himself would confess that it must have some cogent circumst...`
+- **[Chapter 14.] P137** (GREEK): `I should but needlessly multiply words, particularly to animadvert on Grotius' annotations on this place. I do it only where he seems to add some new shifts to the interpretation of our adversaries, o...`
 - **[Chapter 24.] P10** (HEBREW): `Secondly, "The LORD hath laid on him the iniquity of us all," עֲוֹן. How the iniquity of us? That is, the punishment of our iniquity. I shall offer three things to make good this interpretation: —...`
 - **[Chapter 24.] P11** (HEBREW): `1. That the word is often found in that sense, so that it is no new or uncouth thing that here it should be so: Genesis 4:13, עֲוֹנִי, "Mine iniquity is greater than I can bear;" it is the same word h...`
-- **[Chapter 25.] P28** (HEBREW): `1. To grant the first observation, as to the change of persons in the discourse, the word (שָׁמְמוּ, "shall be astonished") here used signifies not every slight admiration, by wondering upon any occas...`
-- **[Chapter 25.] P99** (HEBREW): `3. חֲבוּרָה in the prophet is μώλως in Peter, but "patience" in the annotator....`
-- **[Chapter 25.] P120** (HEBREW): `The other word is נַעֲגֶה. The Vulgate Latin seems to look to the active use of the word, "to answer," and therefore renders it "voluit," "he would," — he willingly submitted to it, or he undertook to...`
-- **[Chapter 25.] P131** (HEBREW): `2. "Who shall declare his generation?" — "Who shall speak it, or be able to speak it?" דּוֹרוֹ, "his generation." דוֹר is "aetas, generatio, seeculum." Gr....`
-- **[Chapter 25.] P151** (HEBREW): `1. The word חָפֵץ is nowhere used in that sense, nor will anywhere bear that interpretation. And though some active verbs in the Hebrew may be [f450] interpreted in a sense of permitting or suffering ...`
-- **[Chapter 25.] P153** (HEBREW): `Which way soever it be taken, it is peculiar to Christ; for neither did God ever make any one else an offering for sin, nor did ever any person but Christ make himself an offering, or had power so to ...`
-- *...and 5 more body paragraphs.*
+- **[Chapter 25.] P29** (HEBREW): `1. To grant the first observation, as to the change of persons in the discourse, the word (שָׁמְמוּ, "shall be astonished") here used signifies not every slight admiration, by wondering upon any occas...`
+- **[Chapter 25.] P101** (HEBREW): `3. חֲבוּרָה in the prophet is μώλως in Peter, but "patience" in the annotator....`
+- **[Chapter 25.] P122** (HEBREW): `The other word is נַעֲגֶה. The Vulgate Latin seems to look to the active use of the word, "to answer," and therefore renders it "voluit," "he would," — he willingly submitted to it, or he undertook to...`
+- **[Chapter 25.] P133** (HEBREW): `2. "Who shall declare his generation?" — "Who shall speak it, or be able to speak it?" דּוֹרוֹ, "his generation." דוֹר is "aetas, generatio, seeculum." Gr....`
+- *...and 7 more body paragraphs.*
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 13 ──
 
-**Footnotes remaining:** 1 | **Body paragraphs remaining:** 17
+**Footnotes remaining:** 1 | **Body paragraphs remaining:** 18
 
 #### Potential Untranslated Footnotes:
 - **Footnote 46** (LATIN): `"Si quis, aut privatus aut publicus, eorum decreto non stetit, sacrificiis interdicunt. Haec poena apud eos est gravissima. Quibus ira est interdictum, ii numero impiorum et sceleratorum habentur: iis omnes decedunt, aditum eorum sermonemque defugiunt, ne quid ex contagione incommodi accipiant; neque iis petentibus jus redditur, neque honos ullus communicatur. His autem omnibus Druidibus prsaeest unus, qui summam inter eos habet authoritatem. Hoc mortuo, si quis ex reliquis excellit dignitate, succedit: at si sunt plures pares, suffragio Druidum 753 allegitur, nonnunquam etiam armis de principetu contendunt." — Caes. lib. 6:13, de Bell. Gall.`
 
 #### Potential Untranslated Body Paragraphs:
-- **[Chapter 8 - Of the liberty and duty of gifted uncalled Christians in the exercise of divers ac...] P62** (GREEK): `Τῷ Θεῷ ἀριστομεγίστῳ δόζα....`
-- **[Chapter 2 - The nature of schism to be determined from Scripture only — This principle by some...] P7** (GREEK): `Chapter 11:18, "When ye come together in the church, ἀκούω σχίσματα ἐν ὑμῖν ὑπάρχειν," — "I hear that there be schisms among you."...`
-- **[Chapter 4 - Several acceptations in the Scripture of the name "church" — Of the church catholi...] P28** (GREEK): `Now, in the union of the church, in every sense, there is considerable both the "formalis ratio" of it, whence it is, what it is, and the way and means whereby it exerts itself and is useful and activ...`
-- **[Chapter 4 - Several acceptations in the Scripture of the name "church" — Of the church catholi...] P29** (GREEK): `He is the "Spirit of promise," Ephesians 1:13; promised by God to Christ, Acts 2:33, Επαγγελίαν τοῦ ἁγίου Πνεύματος λαζὼν παρὰ τοῦ Πατρός, and by him to us, John 14:16, 17; being of old the great prom...`
-- **[Chapter 5 - Of the catholic church visible — Of the nature thereof — In what sense the univers...] P21** (GREEK): `The Nicene council, which first made towards the confirmation of something like somewhat of what was afterward introduced in some places, pleaded only, as I said before, the τὰ ἀρχαῖα, old usage for i...`
-- **[Chapter 5 - Of the catholic church visible — Of the nature thereof — In what sense the univers...] P35** (GREEK): `Notwithstanding the profession of the gospel, he tells the Galatians that if they were bewitched to profess also the necessity of circumcision and keeping of the law for justification, Christ or the p...`
-- **[Chapter 5 - Of the catholic church visible — Of the nature thereof — In what sense the univers...] P54** (GREEK): `To the same purpose Justin Martyr: Οὐδὲ ἕν γὰρ ὅλως ἐστὶ τὸ γένος ἀνθρώπων εἴτε Βαρζάρων, εἴτε Ελλήνων, εἴτε ἁπλῶς ὡτινιοῦν ὀνόματι προσαγορευομένων, ἥ ἁμαξοζίων, ἥ ἀσίκων καλουμένων, ἥ ἐν σκηναῖς κτη...`
-- **[A Review of the True Nature of Schism,] P1** (GREEK): `D. CAWDREY,</p> <p class="title-line -medium">PREACHER OF THE WORD AT BILLING, IN</p> <p class="title-line -medium">NORTHAMPTONSHIRE.</p> </section> Δοῦλον Κυρίου οὐ δεῖ μάχεσθαι. — 2 Timothy 2:24 Δεῖ...`
-- **[An Answer to a Late Treaties of Mr. Cawdrey] P0** (GREEK): `<section class="treatise-title-page" epub:type="titlepage"> <p class="title-line -major">AN ANSWER</p> <p class="title-line -medium">TO</p> <p class="title-line -medium">A LATE TREATISE OF MR. CAWDREY...`
-- **[An Answer to a Late Treatise About the Nature of Schism.] P55** (GREEK): `Gifts, and consent or submission of the people, I affirm in both places to be sufficient to constitute a man a minister in extraordinary cases, — that is, when imposition of hands by a presbytery may ...`
+- **[Chapter 8.] P61** (GREEK): `Τῷ Θεῷ ἀριστομεγίστῳ δόζα....`
+- **[Chapter 2.] P8** (GREEK): `Chapter 11:18, "When ye come together in the church, ἀκούω σχίσματα ἐν ὑμῖν ὑπάρχειν," — "I hear that there be schisms among you."...`
+- **[Chapter 4.] P28** (GREEK): `Now, in the union of the church, in every sense, there is considerable both the "formalis ratio" of it, whence it is, what it is, and the way and means whereby it exerts itself and is useful and activ...`
+- **[Chapter 4.] P29** (GREEK): `He is the "Spirit of promise," Ephesians 1:13; promised by God to Christ, Acts 2:33, Επαγγελίαν τοῦ ἁγίου Πνεύματος λαζὼν παρὰ τοῦ Πατρός, and by him to us, John 14:16,17; being of old the great promi...`
+- **[Chapter 5.] P21** (GREEK): `The Nicene council, which first made towards the confirmation of something like somewhat of what was afterward introduced in some places, pleaded only, as I said before, the τὰ ἀρχαῖα, old usage for i...`
+- **[Chapter 5.] P35** (GREEK): `Notwithstanding the profession of the gospel, he tells the Galatians that if they were bewitched to profess also the necessity of circumcision and keeping of the law for justification, Christ or the p...`
+- **[Chapter 5.] P54** (GREEK): `To the same purpose Justin Martyr: Οὐδὲ ἕν γὰρ ὅλως ἐστὶ τὸ γένος ἀνθρώπων εἴτε Βαρζάρων, εἴτε Ελλήνων, εἴτε ἁπλῶς ὡτινιοῦν ὀνόματι προσαγορευομένων, ἥ ἁμαξοζίων, ἥ ἀσίκων καλουμένων, ἥ ἐν σκηναῖς κτη...`
+- **[A Review of the True Nature of Schism,] P1** (GREEK): `D. CAWDREY,</p> <p class="title-line title-line-medium">PREACHER OF THE WORD AT BILLING, IN</p> <p class="title-line title-line-medium">NORTHAMPTONSHIRE.</p> </section> Δοῦλον Κυρίου οὐ δεῖ μάχεσθαι. ...`
+- **[An Answer to a Late Treaties of Mr. Cawdrey] P0** (GREEK): `<section class="treatise-title-page" epub:type="titlepage"> <p class="title-line title-line-major">AN ANSWER</p> <p class="title-line title-line-medium">TO</p> <p class="title-line title-line-medium">...`
+- **[An Answer to a Late Treatise About the Nature of Schism.] P46** (GREEK): `— ὁδὲ ὁρῶν τοῦς νόμους Λίαν ἀκριζῶς, συκοφάντης φαίνεται....`
+- **[An Answer to a Late Treatise About the Nature of Schism.] P53** (GREEK): `Gifts, and consent or submission of the people, I affirm in both places to be sufficient to constitute a man a minister in extraordinary cases, — that is, when imposition of hands by a presbytery may ...`
 - **[Truth and Innocence Vindicated;] P1** (GREEK): `Οὐδὲν ἄτερ γραφῆς. — Χλεμενς Αλεξανδ....`
-- **[A Survey of a Discourse Concerning Eccleslastical Polity.] P57** (GREEK): `But, as I said, what will be the end of these things, namely, of mutual virulent reflections upon one another? Shall this "sword devour for ever? and will it not be bitterness in the latter end?" for,...`
-- **[A Survey of a Discourse Concerning Eccleslastical Polity.] P58** (GREEK): `Στρεπτὴ δὲ γλῶσς ἐστὶ βροτῶν, πολέες δ ἔνι μῦθοι, Παντοῖοι? ἐπέων δὲ πολὺς νομὸς ἔνθα καὶ ἔνθα....`
-- **[A Survey of a Discourse Concerning Eccleslastical Polity.] P59** (GREEK): `Οπποῖόν κ εἴπῃσθα ἔπος, τοῖόν κ ἐπακούσαις. [Il., 20:246-250] Great store there are of such words and expressions on every hand, and every provoked person, if he will not bind his passion to a rule of...`
-- **[A Survey of the Sixth Chapter.] P37** (GREEK): `Neither is this opinion of so late a date as our author and others would persuade their credulous followers. The full sense of it was spoken out roundly of old. So speaks the great Constantine (that a...`
-- *...and 2 more body paragraphs.*
+- **[A Survey of a Discourse Concerning Eccleslastical Polity.] P56** (GREEK): `Ἔστι γὰρ ἀμφοτέροισιν ὀνείδεα μυθήσασθαι Πολλὰ μὰλ οὐδ ἄν νηῦς ἑκατόζυγος ἄχθος ἄροιτο....`
+- **[A Survey of a Discourse Concerning Eccleslastical Polity.] P57** (GREEK): `Στρεπτὴ δὲ γλῶσς ἐστὶ βροτῶν, πολέες δ ἔνι μῦθοι, Παντοῖοι? ἐπέων δὲ πολὺς νομὸς ἔνθα καὶ ἔνθα....`
+- **[A Survey of a Discourse Concerning Eccleslastical Polity.] P58** (GREEK): `Οπποῖόν κ εἴπῃσθα ἔπος, τοῖόν κ ἐπακούσαις. [Il., 20:246-250] Great store there are of such words and expressions on every hand, and every provoked person, if he will not bind his passion to a rule of...`
+- *...and 3 more body paragraphs.*
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 14 ──
 
-**Footnotes remaining:** 1 | **Body paragraphs remaining:** 24
+**Footnotes remaining:** 1 | **Body paragraphs remaining:** 26
 
 #### Potential Untranslated Footnotes:
 - **Footnote 25** (GREEK): `This translation is accommodated from the original terms of the canon. To give the full meaning, the Greek quotation should be completed by the addition of the following words: ὡς εκείνην μεγαλύνεσθαι πράγμασι. — ED.`
@@ -356,20 +359,20 @@
 #### Potential Untranslated Body Paragraphs:
 - **[Chapter 14 - Mass.] P1** (HEBREW): `Sect. 22. THE title our author gives to his first head of observation is "Messach," on what account I know not, unless it be with respect to a ridiculous Hebrew etymology of the word, "missa;" as thou...`
 - **[Chapter 18 - Communion.] P9** (GREEK): `What think you, then, of Πίετε ἐξ αὐτοῦ πάντες, — "Drink ye all of it," that is, this cup? They think this to be a precept to be observed towards all those who come to this supper. What Christ did, th...`
-- **[Chapter 1.] P29** (GREEK): `Οπποῖόν κ εἴπῆσθα ἔπος, τοῖόν κ ἐπακούσαις, said wise Homer of old; and another to the same purpose, "He that speaks what he will, must hear what he would not." Is it actionable with you against a Pro...`
-- **[Chapter 1.] P35** (GREEK): `But if no more was by me expressed than your words, as used to your purpose, did justly deserve, pray be pleased to take notice that it is lawful for any man to speak the truth: and for my part, Εγὼ ὡ...`
-- **[Chapter 1.] P44** (GREEK): `First, you make a plea for "gentlemen" (not once named in my discourse), "that they must be allowed a sense of religion as well as ministers; that they have the body though not the cloak of religion, ...`
-- **[Chapter 4.] P82** (GREEK): `754. And one learned man in those days undertaking its defense (and, indeed, the only man of learning that ever did so until of late), they excommunicated and cursed him. This was Damascenus; concerni...`
-- **[Chapter 7.] P34** (GREEK): `This is that we say, — the Scripture, the Old and New Testament, is the principle of our faith. This is proved by itself to be of the Lord, who is its author; and if we cause it to depend on any thing...`
-- **[Chapter 7.] P52** (GREEK): `Do you know whose objections these are, and by whom they have been lately managed? Will you hear what Chrysostom answers? Saith he, Πάνυ γε τοῦτο ὑπὲρ ἡμῶν? εἰ μὲν γὰρ λογισμοῖς ἐλέγομεν πείθεσθαι, ἐκ...`
-- **[Chapter 8.] P4** (GREEK): `2. It is unmeet for any purpose, because it is not true. No one word from the Scripture can you produce in its confirmation; where yet if it be not revealed, it must pass as a very uncertain and frivo...`
-- **[Chapter 8.] P51** (GREEK): `Well said he of old, — Εὐήθειά μοι φαίνεται δηλουμένη Τὸ νοεῖν μὲν δεῖ, φυλάττεσθαι δ ἅ δεῖ....`
+- **[Chapter 1.] P13** (GREEK): `Φήμη δ οὔ τις πάμπαν ἀπόλλυται ἥν τινα πολλοὶ Λαοὶ φημίζουσιν....`
+- **[Chapter 1.] P33** (GREEK): `Οπποῖόν κ εἴπῆσθα ἔπος, τοῖόν κ ἐπακούσαις, said wise Homer of old; and another to the same purpose, "He that speaks what he will, must hear what he would not." Is it actionable with you against a Pro...`
+- **[Chapter 1.] P40** (GREEK): `But if no more was by me expressed than your words, as used to your purpose, did justly deserve, pray be pleased to take notice that it is lawful for any man to speak the truth: and for my part, Εγὼ ὡ...`
+- **[Chapter 1.] P50** (GREEK): `Εχθρὸς γάρ μοι κεῖνος ὁμῶς ἀΐδαο πύλῃσιν, Ος χ ἕτερον μὲν κεύθει ἐνὶ φρεσίν, ἅλλο δὲ βάζει....`
+- **[Chapter 4.] P84** (GREEK): `754. And one learned man in those days undertaking its defense (and, indeed, the only man of learning that ever did so until of late), they excommunicated and cursed him. This was Damascenus; concerni...`
+- **[Chapter 7.] P36** (GREEK): `Ἔχομεν, saith he, τὴν ἀρχὴν τῆς πίστεως, [f32] τὸν Κύριον, διά τε τῶν προφητῶν, διά τε τοῦ εὐαγγελίου, καὶ διὰ τῶν μακαρίων ἀποστόλων πολυτρόπως καὶ πολυμερῶς ἐξ ἀρχῆς εἰς τέλος ἡγούμενον τῆς γνώσεως....`
+- **[Chapter 7.] P37** (GREEK): `This is that we say, — the Scripture, the Old and New Testament, is the principle of our faith. This is proved by itself to be of the Lord, who is its author; and if we cause it to depend on any thing...`
+- **[Chapter 7.] P55** (GREEK): `Do you know whose objections these are, and by whom they have been lately managed? Will you hear what Chrysostom answers? Saith he, Πάνυ γε τοῦτο ὑπὲρ ἡμῶν? εἰ μὲν γὰρ λογισμοῖς ἐλέγομεν πείθεσθαι, ἐκ...`
+- **[Chapter 8.] P5** (GREEK): `2. It is unmeet for any purpose, because it is not true. No one word from the Scripture can you produce in its confirmation; where yet if it be not revealed, it must pass as a very uncertain and frivo...`
+- **[Chapter 8.] P53** (GREEK): `Εὐήθειά μοι φαίνεται δηλουμένη Τὸ νοεῖν μὲν δεῖ, φυλάττεσθαι δ ἅ δεῖ....`
 - **[Chapter 12.] P5** (GREEK): `But if, in the case in agitation between us, I should permit you without control to make what suppositions you please, and to make inferences from them which must be admitted for truth because logical...`
-- **[Chapter 16.] P33** (GREEK): `Δεικνὺς, saith he, ὅτι ταῦτα διατάττεται καὶ ἱερεῦσι καὶ μοναχοῖς οὐχὶ τοῖς βιωτικοῖς μόνον? ἐκ προοιμίων αὐτὸ δῆλον ἐποίησεν, οὕτω λέγων, Πᾶσα ψυχὴ ἐξουσίαις ὑπερεχούσαις ὑποτασσέσθω, κᾅν ἀπόστολος ῆ...`
-- **[Chapter 19.] P41** (GREEK): `What think you of 1 Samuel 3:1, Καὶ τὸ παιδάριον Σαμουὴλ ῆν λειτουργῶν τῷ Κυρίῳ ἐνώπιον Ηλι?> — "And the child Samuel was liturgying" (seeing you will have it so) "unto the LORD before Eli?" Do you th...`
-- **[Chapter 19.] P42** (HEBREW): `(3.) I told you before, but now begin to fear that you are too old to learn what you do not like, that the LXX. never translated זֶ־בח sacrifice," or to sacrifice, by λειτουργία or λειτουργῶ, nor inti...`
-- **[Chapter 21.] P16** (GREEK): `Secondly, They affirm, a hundred times over, that "images are religiously to be adored and worshipped;" that is, with divine worship. So, in the confession of the same Theodosius: Ομολογῶ καὶ συντίΖεμ...`
-- *...and 9 more body paragraphs.*
+- **[Chapter 16.] P36** (GREEK): `Δεικνὺς, saith he, ὅτι ταῦτα διατάττεται καὶ ἱερεῦσι καὶ μοναχοῖς οὐχὶ τοῖς βιωτικοῖς μόνον? ἐκ προοιμίων αὐτὸ δῆλον ἐποίησεν, οὕτω λέγων, Πᾶσα ψυχὴ ἐξουσίαις ὑπερεχούσαις ὑποτασσέσθω, κᾅν ἀπόστολος ῆ...`
+- **[Chapter 19.] P47** (GREEK): `What think you of 1 Samuel 3:1, Καὶ τὸ παιδάριον Σαμουὴλ ῆν λειτουργῶν τῷ Κυρίῳ ἐνώπιον Ηλι?> — "And the child Samuel was liturgying" (seeing you will have it so) "unto the LORD before Eli?" Do you th...`
+- *...and 11 more body paragraphs.*
 
 
 ────────────────────────────────────────
@@ -379,24 +382,24 @@
 **Footnotes remaining:** 0 | **Body paragraphs remaining:** 11
 
 #### Potential Untranslated Body Paragraphs:
-- **[The Preface.] P115** (GREEK): `(3.) He gives hereon that excellent rule: 'Η διαφωνία τῆς νηστείας τὴν ὁμόνοιαν τῆς πίστεως συνίστησιν — "The difference of fastings" (and consequently things of an alike nature) "commends the concord...`
+- **[The Preface.] P117** (GREEK): `(3.) He gives hereon that excellent rule: 'Η διαφωνία τῆς νηστείας τὴν ὁμόνοιαν τῆς πίστεως συνίστησιν — "The difference of fastings" (and consequently things of an alike nature) "commends the concord...`
 - **[Chapter 2 - the Especial Original of the Evangelical Church-state] P1** (GREEK): `OUR principal concernment at present is in the evangelical church-state, or the state of churches under the New Testament; for this is that about which there are many great and fierce contests among C...`
-- **[Chapter 4 - the Especial Nature of the Gospel Church-state Appointed by Christ] P45** (HEBREW): `Secondly, The very notation of the word doth determine the sense of it unto a particular congregation. Other things may in churches, as we shall see afterward, both in the rule and administration of t...`
-- **[Chapter 4 - the Especial Nature of the Gospel Church-state Appointed by Christ] P51** (GREEK): `(1.) From the proper signification of the phrase here used: Εὰν ἁμαρτήσῃ εἰς σέ — "If thy brother sin against thee." Doing of an injury is expressed by ἀδικέω, and to be injured by ἀποστερέομαι, 1 Cor...`
+- **[Chapter 4 - the Especial Nature of the Gospel Church-state Appointed by Christ] P46** (HEBREW): `Secondly, The very notation of the word doth determine the sense of it unto a particular congregation. Other things may in churches, as we shall see afterward, both in the rule and administration of t...`
+- **[Chapter 4 - the Especial Nature of the Gospel Church-state Appointed by Christ] P52** (GREEK): `(1.) From the proper signification of the phrase here used: Εὰν ἁμαρτήσῃ εἰς σέ — "If thy brother sin against thee." Doing of an injury is expressed by ἀδικέω, and to be injured by ἀποστερέομαι, 1 Cor...`
 - **[Chapter 5 - the State of the First Churches After the Apostles] P38** (GREEK): `6. I shall add no more from this excellent epistle, but only the account given in it of the first constitution of officers in the churches: Καὶ οἱ ἀπόστολοι ἡμῶν ἔγνωσαν διὰ τοῦ Κυρίου ἡμῶν Ιησοῦ Χρισ...`
-- **[Chapter 5 - the State of the First Churches After the Apostles] P53** (GREEK): `1. He declares the conversion of men unto the faith as the foundation of all their church order and worship: Οσοι ἆν πεισθῶσι καὶ πιστεύωσιν ἀληθῆ ταῦτα τὰ ὑφ ἡμῶν διδασκόμενα καὶ λεγόμενα εῖναι καὶ β...`
-- **[Chapter 5 - the State of the First Churches After the Apostles] P62** (GREEK): `3. When any was so baptized, they brought him unto the church which he was to be joined unto: Ημεῖς δὲ μετὰ τὸ οὕτως λοῦσαι τὸν πεπεισμένον καὶ συγκατατεθειμένον ἐπὶ τοῦς λεγομένους ἀδελφοὺς ἄγομεν ἔν...`
-- **[Chapter 5 - the State of the First Churches After the Apostles] P65** (GREEK): `4. He proceeds to declare the nature of their church meetings or assemblies, with the duties and worship of them. And he tells us, first, that they had frequent meetings among themselves: "They that h...`
-- **[Chapter 5 - the State of the First Churches After the Apostles] P72** (GREEK): `7. In the consecration of the sacramental elements, he observes that the president prayed at large, giving thanks to God: Εὐχαριστίαν ἑπὶ πολὺ ποιεῖται. So vain is the pretense of some, that in the pr...`
+- **[Chapter 5 - the State of the First Churches After the Apostles] P54** (GREEK): `1. He declares the conversion of men unto the faith as the foundation of all their church order and worship: Οσοι ἆν πεισθῶσι καὶ πιστεύωσιν ἀληθῆ ταῦτα τὰ ὑφ ἡμῶν διδασκόμενα καὶ λεγόμενα εῖναι καὶ β...`
+- **[Chapter 5 - the State of the First Churches After the Apostles] P63** (GREEK): `3. When any was so baptized, they brought him unto the church which he was to be joined unto: Ημεῖς δὲ μετὰ τὸ οὕτως λοῦσαι τὸν πεπεισμένον καὶ συγκατατεθειμένον ἐπὶ τοῦς λεγομένους ἀδελφοὺς ἄγομεν ἔν...`
+- **[Chapter 5 - the State of the First Churches After the Apostles] P66** (GREEK): `4. He proceeds to declare the nature of their church meetings or assemblies, with the duties and worship of them. And he tells us, first, that they had frequent meetings among themselves: "They that h...`
+- **[Chapter 5 - the State of the First Churches After the Apostles] P73** (GREEK): `7. In the consecration of the sacramental elements, he observes that the president prayed at large, giving thanks to God: Εὐχαριστίαν ἑπὶ πολὺ ποιεῖται. So vain is the pretense of some, that in the pr...`
 - **[Chapter 6 - Congregational Churches Alone Suited Unto the Ends of Christ in the Institution of His Church] P11** (GREEK): `We boast not ourselves of any attainments in this kind, — we know how short we come of that fervent love that flourished in the first churches; but this we say, that there is no way to recover it but ...`
-- **[Section 3.] P91** (GREEK): `Only he says, that from thence the sect of the Nazarenes took its original, which spread itself (afterward) in Coelo-syria, Decapolis, and Basanitis: Εκεῖθεν γὰρ ἡ ἀρχὴ γέγονε (speaking of that sect) ...`
+- **[Section 3.] P93** (GREEK): `Only he says, that from thence the sect of the Nazarenes took its original, which spread itself (afterward) in Coelo-syria, Decapolis, and Basanitis: Εκεῖθεν γὰρ ἡ ἀρχὴ γέγονε (speaking of that sect) ...`
 
 
 ────────────────────────────────────────
 
 ### ── VOLUME 16 ──
 
-**Footnotes remaining:** 3 | **Body paragraphs remaining:** 40
+**Footnotes remaining:** 3 | **Body paragraphs remaining:** 42
 
 #### Potential Untranslated Footnotes:
 - **Footnote 38** (GREEK): `Hebraea volumina nec in una dictione eorrupta invenies. Sant. Pag. ἰῶτα ἕν ἤ μία χεραία οὐ μὴ παρέλθῃ. ( Matthew 5:18.)`
@@ -405,21 +408,21 @@
 
 #### Potential Untranslated Body Paragraphs:
 - **[Preface (The True Nature of a Gospel Church and Its Government)] P24** (GREEK): `This is a society that Christ hath given power to, to choose a pastor and other officers of Christ's institution, and enjoy all ordinances, the word, sacraments, and prayer, as Christ hath appointed. ...`
-- **[Chapter 4 - the Officers of the Church.] P94** (GREEK): `6. Hereon the whole multitude ἔστησαν δύο, "appointed two;" that is, the ἄνδρες ἀδελφοί, the "men and brethren," unto whom Peter spoke, verse 16, did so....`
-- **[Chapter 4 - the Officers of the Church.] P124** (HEBREW): `1. The native signification of χειροτονέω, by virtue of its composition, is to "lift up" or "stretch forth the hands," or a hand. And hereunto the LXX. have respect, Isaiah 58:9, where they render אֶצ...`
-- **[Chapter 4 - the Officers of the Church.] P125** (GREEK): `Χειροτονεῖν is the same with τὰς χεῖρας αἴρειν, nor is it ever used in any other signification....`
-- **[Chapter 4 - the Officers of the Church.] P126** (GREEK): `2. The first constant use of it in things political or civil, and so consequently ecclesiastical, is to choose, elect, design, or create any person an officer, magistrate, or ruler, by suffrage or com...`
-- **[Chapter 4 - the Officers of the Church.] P128** (GREEK): `3. The word is but once more used in the New Testament, 2 Corinthians 8:19, where it plainly signifies election and choice of a person to an employment: Χειροτονηθεὶς ὑπό τῶν ἐκκλησιῶν συνέκδημος ἡμῶν...`
-- **[Chapter 4 - the Officers of the Church.] P158** (GREEK): `But from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: — CLEMENS, Epist. ...`
-- **[Chapter 4 - the Officers of the Church.] P159** (GREEK): `IGNATIUS, Epist. ad Philadelph., cap. 10, Πρέπον ἐστὶν ὑμῖν, ὡς ἐκκλησίᾳ Θεοῦ, χειροτονήσαι ἐπίσκοπον, writing to the fraternity of the church, — "It becomes you, as a church of God, to choose or (ord...`
-- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P39** (GREEK): `The testimonies whereby the truth of this assertion is confirmed are generally known and pleaded. I shall insist on some of them only, beginning with that which is of uncontrollable evidence, if it ha...`
-- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P71** (GREEK): `(1.) Κόπος, whence is κοπιὰω, is the labor of a minister, and so of any minister in his work of teaching and preaching the gospel: 1 Corinthians 3:8, Εκαστος δὲ τὸν ἴδιον μισθὸν λήψεται κατὰ τὸν ἴδιον...`
-- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P72** (GREEK): `—'Every one" (that is, every one employed in the ministry, whether to plant or to water, to convert men or to edify the church) "shall receive his own reward, according to his own labor." He that doth...`
-- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P96** (GREEK): `[1.] The whole ordinary public work of the church is distributed into προφητεία and διακονία, — "prophecy and ministry;" for the extraordinary gift of prophecy is not here intended, but only that of t...`
-- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P98** (GREEK): `[3.] In the distribution which ensues of prophecy into exhorting and teaching, and of ministry into showing mercy, rule, and giving, having stated these gifts in general, in the officers in general, m...`
-- **[Chapter 9 - of Deacons.] P36** (GREEK): `1. What is the meaning of the apostle where he affirms that the deacons, in the discharge of their office, βαθμὸν ἑαυτοῖς καλὸν περιποιοῦνται, 1 Timothy 3:13, "purchase (or procure) to themselves a go...`
-- **[Chapter 9 - of Deacons.] P38** (GREEK): `(1.) The office of presbytery is called καλὸν ἔργον, "a good work," nowhere καλὸς βαθμός, "a good degree."...`
-- *...and 25 more body paragraphs.*
+- **[Chapter 4 - the Officers of the Church.] P95** (GREEK): `6. Hereon the whole multitude ἔστησαν δύο, "appointed two;" that is, the ἄνδρες ἀδελφοί, the "men and brethren," unto whom Peter spoke, verse 16, did so....`
+- **[Chapter 4 - the Officers of the Church.] P125** (HEBREW): `1. The native signification of χειροτονέω, by virtue of its composition, is to "lift up" or "stretch forth the hands," or a hand. And hereunto the LXX. have respect, Isaiah 58:9, where they render אֶצ...`
+- **[Chapter 4 - the Officers of the Church.] P126** (GREEK): `Χειροτονεῖν is the same with τὰς χεῖρας αἴρειν, nor is it ever used in any other signification....`
+- **[Chapter 4 - the Officers of the Church.] P128** (GREEK): `— Ομως δὲ χειροτονητέον Εξωμισάσαις τὸν ἕτερον βραχίονα. — Ecclesiazusae 266....`
+- **[Chapter 4 - the Officers of the Church.] P130** (GREEK): `3. The word is but once more used in the New Testament, 2 Corinthians 8:19, where it plainly signifies election and choice of a person to an employment: Χειροτονηθεὶς ὑπό τῶν ἐκκλησιῶν συνέκδημος ἡμῶν...`
+- **[Chapter 4 - the Officers of the Church.] P159** (GREEK): `But from the beginning it was not so. And some few instances of the right of the people, and the exercise of it in the choice of their own pastors, may be touched on in our passage: — CLEMENS, Epist. ...`
+- **[Chapter 4 - the Officers of the Church.] P160** (GREEK): `IGNATIUS, Epist. ad Philadelph., cap. 10, Πρέπον ἐστὶν ὑμῖν, ὡς ἐκκλησίᾳ Θεοῦ, χειροτονήσαι ἐπίσκοπον, writing to the fraternity of the church, — "It becomes you, as a church of God, to choose or (ord...`
+- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P40** (GREEK): `The testimonies whereby the truth of this assertion is confirmed are generally known and pleaded. I shall insist on some of them only, beginning with that which is of uncontrollable evidence, if it ha...`
+- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P72** (GREEK): `(1.) Κόπος, whence is κοπιὰω, is the labor of a minister, and so of any minister in his work of teaching and preaching the gospel: 1 Corinthians 3:8, Ἕκαστος δὲ τὸν ἴδιον μισθὸν λήψεται κατὰ τὸν ἴδιον...`
+- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P73** (GREEK): `—'Every one" (that is, every one employed in the ministry, whether to plant or to water, to convert men or to edify the church) "shall receive his own reward, according to his own labor." He that doth...`
+- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P97** (GREEK): `[1.] The whole ordinary public work of the church is distributed into προφητεία and διακονία, — "prophecy and ministry;" for the extraordinary gift of prophecy is not here intended, but only that of t...`
+- **[Chapter 7 - of the Rule of the Church, or of Ruling Elders.] P99** (GREEK): `[3.] In the distribution which ensues of prophecy into exhorting and teaching, and of ministry into showing mercy, rule, and giving, having stated these gifts in general, in the officers in general, m...`
+- **[Chapter 9 - of Deacons.] P39** (GREEK): `1. What is the meaning of the apostle where he affirms that the deacons, in the discharge of their office, βαθμὸν ἑαυτοῖς καλὸν περιποιοῦνται, 1 Timothy 3:13, "purchase (or procure) to themselves a go...`
+- **[Chapter 9 - of Deacons.] P41** (GREEK): `(1.) The office of presbytery is called καλὸν ἔργον, "a good work," nowhere καλὸς βαθμός, "a good degree."...`
+- *...and 27 more body paragraphs.*
 
 
 ────────────────────────────────────────

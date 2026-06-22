@@ -151,19 +151,19 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
 
     # 2. Force paragraph break before scholastic labels that appear mid-paragraph
     def _split_before_label(m: re.Match) -> str:
-        return f'{m.group(1)}</p>\n<p class="scholastic-anchor"><b>{m.group("label")}</b> '
+        return f'{m.group(1)}</p>\n<p class="scholastic-anchor"><strong>{m.group("label")}</strong> '
 
     html = _SCHOLASTIC_ANCHOR_SPLIT_RE.sub(_split_before_label, html)
 
-    # 3. Clean up leading <b> tags around Obj./Ans. abbreviations to expose them as plain text
-    # e.g., <b>Ans.</b> 1. -> Ans. 1.
+    # 3. Clean up leading <strong> tags around Obj./Ans. abbreviations to expose them as plain text
+    # e.g., <strong>Ans.</strong> 1. -> Ans. 1.
     def _strip_b_tags(m: re.Match) -> str:
         label_word = m.group(2)
         digit_part = m.group(3)
         return f'{m.group(1)}{label_word} {digit_part} '
 
     _STRIP_B_RE = re.compile(
-        r'(<p(?:\s[^>]*)?>)\s*<b>\s*(Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?|Usus\.?|Application\.?)\s*</b>\s*(\d+\.?)\s*',
+        r'(<p(?:\s[^>]*)?>)\s*<strong>\s*(Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?|Usus\.?|Application\.?)\s*</strong>\s*(\d+\.?)\s*',
         re.I
     )
     html = _STRIP_B_RE.sub(_strip_b_tags, html)
@@ -178,14 +178,14 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
     html = re.sub(
         r'(<p(?:\s[^>]*)?>)\s*'
         r'(?P<label>' + _SCHOLASTIC_LABEL_RE + r')\s',
-        lambda m: f'{m.group(1)}<b class="scholastic-label">{_clean_scholastic_label(m.group("label"))}</b> ',
+        lambda m: f'{m.group(1)}<b class="scholastic-label">{_clean_scholastic_label(m.group("label"))}</strong> ',
         html,
         flags=re.I,
     )
 
     # 5. Standardize paragraph class to "scholastic-anchor" for all scholastic labels
     _SCHOLASTIC_ANCHOR_PARA_RE = re.compile(
-        r'<p\s+class="([^"]*)"([^>]*)>\s*(<b class="scholastic-label">.*?</b>)',
+        r'<p\s+class="([^"]*)"([^>]*)>\s*(<b class="scholastic-label">.*?</strong>)',
         re.I
     )
     def _add_anchor_class(m: re.Match) -> str:
@@ -210,7 +210,7 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
         return f'<p class="scholastic-anchor {subclass}">{m.group(1)}'
 
     html = re.sub(
-        r'<p>\s*(<b class="scholastic-label">.*?</b>)',
+        r'<p>\s*(<b class="scholastic-label">.*?</strong>)',
         _add_bare_anchor_class,
         html,
         flags=re.I
@@ -226,7 +226,7 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
         stripped = line.strip()
         
         m_label = re.search(
-            r'<p[^>]*class="[^"]*scholastic-anchor[^"]*"[^>]*>\s*<b class="scholastic-label">(Obj|Ans|Sol|Use|Usus|Application)\.\s*(\d+)\.</b>',
+            r'<p[^>]*class="[^"]*scholastic-anchor[^"]*"[^>]*>\s*<b class="scholastic-label">(Obj|Ans|Sol|Use|Usus|Application)\.\s*(\d+)\.</strong>',
             stripped,
             re.I
         )
@@ -238,7 +238,7 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
 
         if active_prefix and expected_idx is not None:
             m_digit = re.search(
-                r'(<p\s+class=")([^"]*)("[^>]*>\s*)<b>(\d+)\.</b>\s*(.*)',
+                r'(<p\s+class=")([^"]*)("[^>]*>\s*)<strong>(\d+)\.</strong>\s*(.*)',
                 line,
                 re.I
             )
@@ -255,7 +255,7 @@ def apply_scholastic_anchor_protocol(html: str) -> str:
 
                     rewritten_line = (
                         f'{m_digit.group(1)}{" ".join(filtered)}{m_digit.group(3)}'
-                        f'<b class="scholastic-label">{active_prefix.capitalize()}. {digit_val}.</b> {m_digit.group(5)}'
+                        f'<b class="scholastic-label">{active_prefix.capitalize()}. {digit_val}.</strong> {m_digit.group(5)}'
                     )
                     out.append(rewritten_line)
                     expected_idx += 1

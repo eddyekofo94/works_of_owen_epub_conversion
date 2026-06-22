@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 0 | 125 | OK |
+| Possible faulty paragraph splits | 15 | 125 | OK |
 | Inline structural marker candidates | 0 | 16 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 4 | 4 | OK |
@@ -64,13 +64,21 @@
 
 ## Triage Samples
 
+### Possible faulty paragraph splits
+
+- file: EPUB/ch004.xhtml; previous: ν καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς ".⁠; next: He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse
+- file: EPUB/ch004.xhtml; previous: a enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus".⁠; next: — "He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the
+- file: EPUB/ch004.xhtml; previous:  tertium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?"⁠; next: — "I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o
+- file: EPUB/ch004.xhtml; previous: To the same purpose. speaks Eusebius⁠ at large: Demonstratio Evang., lib. 5 cap. 2.⁠; next: Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.:)⁠ " Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, se
+- file: EPUB/ch004.xhtml; previous: φαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων ".⁠; next: The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre
+
 ### Repeated word windows
 
 - phrase: the glory of god in the face of jesus christ
 - phrase: unto us child is born unto us son is given
 - phrase: of the glory of god in the face of jesus
-- phrase: loss for the excellency of the knowledge of christ jesus
-- phrase: for the excellency of the knowledge of christ jesus my
+- phrase: us child is born unto us son is given and
+- phrase: the brightness of his glory and the express image of
 
 ### Missing front CONTENTS pages
 

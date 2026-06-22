@@ -207,7 +207,7 @@ def _apply_premium_chapter_endings(html: str) -> str:
             clean_txt = re.sub(r'<[^>]+>', '', matched_txt).strip()
             clean_txt = re.sub(r'[\*_]+', '', clean_txt).strip()
             clean_txt = re.sub(r'[^a-zA-Z\d\s]', '', clean_txt).strip()
-            formatted_marker = f'<p class="chapter-end-marker"><b>{clean_txt.upper()}.</b></p>'
+            formatted_marker = f'<p class="chapter-end-marker"><strong>{clean_txt.upper()}.</strong></p>'
             
             if prefix:
                 return f'<p{p_attrs}>{prefix}.</p>\n{formatted_marker}'

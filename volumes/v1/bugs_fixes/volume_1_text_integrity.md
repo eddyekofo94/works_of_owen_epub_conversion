@@ -1,15 +1,15 @@
 # Text Integrity Audit: Volume 1
 
 - Status: **WARN**
-- Warnings: 1
+- Warnings: 2
 - PDF pages: 633
 - EPUB text files: 84
-- EPUB paragraphs/headings: 2712
+- EPUB paragraphs/headings: 2710
 
 ## Coverage
 
 - PDF content tokens: 205009
-- EPUB content tokens: 206028
+- EPUB content tokens: 205907
 - Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 622
 - Weak page matches: 0
@@ -26,9 +26,9 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2264
-- Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 126
+- Body paragraphs checked: 2262
+- Possible faulty paragraph splits: 15
+- Structural starts excluded from split warnings: 128
 - Short fragments: 12
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
@@ -59,20 +59,21 @@
 
 ## Latin
 
-- PDF Latin words: 1776
-- EPUB Latin words: 1816
-- EPUB Tagged Latin words: 1098
-- Latin word coverage ratio: 0.9977
-- Latin word tagging ratio: 0.6046
-- Latin clauses checked: 146
+- PDF Latin words: 1378
+- EPUB Latin words: 1381
+- EPUB Tagged Latin words: 983
+- Latin word coverage ratio: 0.9985
+- Latin word tagging ratio: 0.7118
+- Latin clauses checked: 129
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 272
-- Translated Latin runs: 164
-- Latin translation ratio: 0.6029
+- Tagged Latin runs checked: 258
+- Translated Latin runs: 161
+- Latin translation ratio: 0.624
 
 ## Warnings
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 ## Missing Dense Source Windows
 
@@ -93,6 +94,19 @@
 - page: 4; hit_ratio: 0.5; sample: chapter the especial principle of obedience unto the person of christ which is love its truth and reality vindicated chapter the nature operations and causes of divine love
 - page: 5; hit_ratio: 0.5; sample: the glory of christ in his exaltation after the accomplishment of the work of mediation in this world representations of the glory of christ under the old testament
 - page: 6; hit_ratio: 0.25; sample: of the holy trinity of the works of god and first of those that are internal and immanent of the works of god that outwardly are of him
+
+## Possible Paragraph Splits
+
+- file: EPUB/ch004.xhtml; previous: ν καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς ".⁠; next: He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse
+- file: EPUB/ch004.xhtml; previous: a enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus".⁠; next: — "He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the
+- file: EPUB/ch004.xhtml; previous: tertium coelu, ineffabilia dicit, quomodo nos exprimere possumus paternae generationis arcanum, quod nec sentire potuimus nec audire? Quid te ista questionum tormenta delectant?"⁠; next: — "I inquire of you when and how the Son was begotten? Impossible it is to me to know the mystery of this generation. My mind faileth, my voice is silent — and not only mine, but o
+- file: EPUB/ch004.xhtml; previous: To the same purpose. speaks Eusebius⁠ at large: Demonstratio Evang., lib. 5 cap. 2.⁠; next: Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.:)⁠ " Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, se
+- file: EPUB/ch004.xhtml; previous: φαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων ".⁠; next: The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre
+- file: EPUB/ch004.xhtml; previous: the image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17.⁠; next: Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T
+- file: EPUB/ch004.xhtml; previous: ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας . Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων , διὰ τῆς ἰδίας πρὸς ἑκατέρους οἰκειότητος εις φιλίαν καὶ ὁμόνοιαν τοῦς ἀμφοτέρους συναγαγεῖν ".⁠; next: Words plainly divine; an illustrious testimony of the faith of the ancient church, and expressive of the principal mystery of the gospel! "Wherefore, as we said before, he united m
+- file: EPUB/ch004.xhtml; previous: And to the same purpose: (lib. 5 cap. 1:) "Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset".⁠; next: That which these passages give testimony unto, is what we have discoursed concerning the necessity of our redemption in and by the nature that sinned; and yet withal, that it shoul
+- file: EPUB/ch004.xhtml; previous: s, non aeriae, non alterius cujusquam putes esse naturae, sed ejus coujus est omnium caro; id est, quam ipse Deus, homini primo de terra plasmavit, et caeteris hominibus plasmat."⁠; next: — "So believe Christ the Son of God, that is, one person of the Trinity, to be the true God, that you doubt not but that his divinity was born" (thy eternal generation) "of the nat
+- file: EPUB/ch004.xhtml; previous: eccato ceciderat. Utraque operatus est filius Verbum Dei existens, a Patre descendens et incarnatus, et usque ad mortem descendens, et dispensationem consummans salutis nostrae ".⁠; next: — "Being the Son of God always with the Father, and being made man, he reconciled or gathered up in himself the long-continued exposing of men," (unto sin and judgment,) "bringing
 
 ## Roman Heading Candidates
 
@@ -116,13 +130,13 @@
 - phrase: the glory of god in the face of jesus christ; count: 12
 - phrase: unto us child is born unto us son is given; count: 6
 - phrase: of the glory of god in the face of jesus; count: 6
-- phrase: loss for the excellency of the knowledge of christ jesus; count: 5
-- phrase: for the excellency of the knowledge of christ jesus my; count: 5
-- phrase: the excellency of the knowledge of christ jesus my lord; count: 5
 - phrase: us child is born unto us son is given and; count: 5
 - phrase: the brightness of his glory and the express image of; count: 5
 - phrase: brightness of his glory and the express image of his; count: 5
 - phrase: of his glory and the express image of his person; count: 5
+- phrase: are changed into the same image from glory to glory; count: 5
+- phrase: both which are in heaven and which are on earth; count: 5
+- phrase: the only-begotten son who is in the bosom of the; count: 5
 
 ## Missing Word Samples
 
@@ -142,19 +156,18 @@
 ## Untagged Latin Word Samples
 
 - word: incarnate; epub: 36; tagged: 0
-- word: communicate; epub: 26; tagged: 1
-- word: contemplate; epub: 16; tagged: 0
-- word: undergo; epub: 15; tagged: 0
-- word: meditate; epub: 15; tagged: 0
-- word: iii; epub: 14; tagged: 0
-- word: door; epub: 12; tagged: 0
-- word: william; epub: 9; tagged: 0
 - word: nestorius; epub: 8; tagged: 0
-- word: beam; epub: 8; tagged: 0
+- word: consummate; epub: 8; tagged: 0
+- word: ultimate; epub: 8; tagged: 0
+- word: adequate; epub: 8; tagged: 0
+- word: invocate; epub: 7; tagged: 0
+- word: inanimate; epub: 6; tagged: 0
+- word: indicate; epub: 5; tagged: 0
+- word: thomas; epub: 5; tagged: 0
+- word: serm; epub: 5; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: bias — in an inveterate
 - phrase: quarto (Amsterdam
 - phrase: operis absentibus
 - phrase: Salus Electorum Sauguis
@@ -164,6 +177,7 @@
 - phrase: quid dicturus
 - phrase: et apostolorum
 - phrase: Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum
+- phrase: Unum hoc est
 
 ## Limits
 

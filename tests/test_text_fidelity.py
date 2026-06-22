@@ -515,7 +515,7 @@ def test_scholastic_labels_in_normal_sentence_are_not_bolded():
     assert '<b class="scholastic-label">A solution' not in html
     # "Use of scripture" — Use. starts a scholastic label only with a digit
     # (Use. 1.) or a period immediately after; bare "Use" as a prep phrase is safe
-    assert "<b>Use of scripture" not in html
+    assert "<strong>Use of scripture" not in html
 
 
 def test_scholastic_sequence_all_three_labels_bolded():
@@ -528,9 +528,9 @@ def test_scholastic_sequence_all_three_labels_bolded():
         "<p>Sol. This satisfies the demands of the law.</p>"
     )
 
-    assert '<b class="scholastic-label">Obj. 1.</b>' in html
-    assert '<b class="scholastic-label">Ans. 1.</b>' in html
-    assert '<b class="scholastic-label">Sol.</b>' in html
+    assert '<b class="scholastic-label">Obj. 1.</strong>' in html
+    assert '<b class="scholastic-label">Ans. 1.</strong>' in html
+    assert '<b class="scholastic-label">Sol.</strong>' in html
 
 
 def test_use_label_with_numeral_is_bolded():
@@ -542,8 +542,8 @@ def test_use_label_with_numeral_is_bolded():
         "<p>Use. 2. Let this truth humble all proud boasters.</p>"
     )
 
-    assert '<b class="scholastic-label">Use. 1.</b>' in html
-    assert '<b class="scholastic-label">Use. 2.</b>' in html
+    assert '<b class="scholastic-label">Use. 1.</strong>' in html
+    assert '<b class="scholastic-label">Use. 2.</strong>' in html
 
 
 def test_digression_heading_renders_as_h3():
@@ -848,10 +848,10 @@ def test_em_dash_flat_list_single_word_labels_absorbed():
     from render import _attach_em_dash_flat_list
     html = (
         '<p>I shall briefly observe four things therein: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> Sweetness.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Delight.</p>\n'
-        '<p class="list-item"><b>(3.)</b> Safety.</p>\n'
-        '<p class="list-item"><b>(4.)</b> Comfort.</p>'
+        '<p class="list-item"><strong>(1.)</strong> Sweetness.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Delight.</p>\n'
+        '<p class="list-item"><strong>(3.)</strong> Safety.</p>\n'
+        '<p class="list-item"><strong>(4.)</strong> Comfort.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, "Items should be absorbed into the body paragraph"
@@ -868,9 +868,9 @@ def test_em_dash_flat_list_semicolon_items_absorbed():
     from render import _attach_em_dash_flat_list
     html = (
         '<p>He does this, —</p>\n'
-        '<p class="list-item"><b>1st.</b> Powerfully, or effectually;</p>\n'
-        '<p class="list-item"><b>2ndly.</b> Voluntarily;</p>\n'
-        '<p class="list-item"><b>3rdly.</b> Freely.</p>'
+        '<p class="list-item"><strong>1st.</strong> Powerfully, or effectually;</p>\n'
+        '<p class="list-item"><strong>2ndly.</strong> Voluntarily;</p>\n'
+        '<p class="list-item"><strong>3rdly.</strong> Freely.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result
@@ -887,10 +887,10 @@ def test_em_dash_flat_list_short_phrase_run_absorbed():
     from render import _attach_em_dash_flat_list
     html = (
         '<p>For the first, there are four things in sin: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> The desert of it.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Man’s impotency by reason of it.</p>\n'
-        '<p class="list-item"><b>(3.)</b> The death of it.</p>\n'
-        '<p class="list-item"><b>(4.)</b> A new end put to it.</p>'
+        '<p class="list-item"><strong>(1.)</strong> The desert of it.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Man’s impotency by reason of it.</p>\n'
+        '<p class="list-item"><strong>(3.)</strong> The death of it.</p>\n'
+        '<p class="list-item"><strong>(4.)</strong> A new end put to it.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result
@@ -906,15 +906,15 @@ def test_em_dash_flat_list_twofold_account_pair_absorbed():
     from render import _attach_em_dash_flat_list
     html = (
         '<p>The desert of sin shines upon a twofold account: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Of the penalty he underwent.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Of the penalty he underwent.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result
     # The anchor paragraph gets class="syllabus-anchor" (added in a later session)
     assert (
-        'The desert of sin shines upon a twofold account: — <b>[1.]</b> '
-        'Of the person suffering for it. <b>[2.]</b> Of the penalty he underwent.</p>'
+        'The desert of sin shines upon a twofold account: — <strong>[1.]</strong> '
+        'Of the person suffering for it. <strong>[2.]</strong> Of the penalty he underwent.</p>'
     ) in result
 
 
@@ -930,8 +930,8 @@ def test_em_dash_flat_list_long_items_stay_block():
     )
     html = (
         '<p>He does this, —</p>\n'
-        f'<p class="list-item"><b>1st.</b> {long_item}</p>\n'
-        '<p class="list-item"><b>2ndly.</b> Voluntarily: and therefore this comfort '
+        f'<p class="list-item"><strong>1st.</strong> {long_item}</p>\n'
+        '<p class="list-item"><strong>2ndly.</strong> Voluntarily: and therefore this comfort '
         'is not extorted by any necessity but flows freely.</p>'
     )
     result = _attach_em_dash_flat_list(html)
@@ -947,10 +947,10 @@ def test_em_dash_flat_list_prefix_absorbed_before_long_expansion():
 
     html = (
         '<p>He does this, —</p>\n'
-        '<p class="list-item"><b>1st.</b> Powerfully, or effectually;</p>\n'
-        '<p class="list-item"><b>2ndly.</b> Voluntarily;</p>\n'
-        '<p class="list-item"><b>3rdly.</b> Freely.</p>\n'
-        '<p class="list-item"><b>1st.</b> Powerfully: and therefore does comfort '
+        '<p class="list-item"><strong>1st.</strong> Powerfully, or effectually;</p>\n'
+        '<p class="list-item"><strong>2ndly.</strong> Voluntarily;</p>\n'
+        '<p class="list-item"><strong>3rdly.</strong> Freely.</p>\n'
+        '<p class="list-item"><strong>1st.</strong> Powerfully: and therefore does comfort '
         'from the words and promises of Christ sometimes break in through all opposition '
         'into the saddest and darkest condition imaginable.</p>'
     )
@@ -958,11 +958,11 @@ def test_em_dash_flat_list_prefix_absorbed_before_long_expansion():
     result = _attach_em_dash_flat_list(html)
 
     assert (
-        'He does this, — <b>1st.</b> Powerfully, or effectually; '
-        '<b>2ndly.</b> Voluntarily; <b>3rdly.</b> Freely.</p>'
+        'He does this, — <strong>1st.</strong> Powerfully, or effectually; '
+        '<strong>2ndly.</strong> Voluntarily; <strong>3rdly.</strong> Freely.</p>'
     ) in result
     assert (
-        '<p class="list-item"><b>1st.</b> Powerfully: and therefore does comfort'
+        '<p class="list-item"><strong>1st.</strong> Powerfully: and therefore does comfort'
     ) in result
 
 
@@ -975,20 +975,20 @@ def test_em_dash_flat_list_two_item_prefix_attaches_before_expansion():
 
     html = (
         '<p>The whole may be reduced unto these two heads: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> A mutual resignation of themselves one to the other;</p>\n'
-        '<p class="list-item"><b>[2.]</b> Mutual, consequential, conjugal affections.</p>\n'
-        '<p class="list-item"><b>[1.]</b> There is a mutual resignation, or making over '
+        '<p class="list-item"><strong>[1.]</strong> A mutual resignation of themselves one to the other;</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Mutual, consequential, conjugal affections.</p>\n'
+        '<p class="list-item"><strong>[1.]</strong> There is a mutual resignation, or making over '
         'of their persons one to another.</p>'
     )
 
     result = _attach_em_dash_flat_list(html)
 
     assert (
-        'The whole may be reduced unto these two heads: — <b>[1.]</b> '
-        'A mutual resignation of themselves one to the other; <b>[2.]</b> '
+        'The whole may be reduced unto these two heads: — <strong>[1.]</strong> '
+        'A mutual resignation of themselves one to the other; <strong>[2.]</strong> '
         'Mutual, consequential, conjugal affections.</p>'
     ) in result
-    assert '<p class="list-item"><b>[1.]</b> There is a mutual resignation' in result
+    assert '<p class="list-item"><strong>[1.]</strong> There is a mutual resignation' in result
 
 
 def test_em_dash_flat_list_parallel_gloss_pair_attaches_before_expansion():
@@ -1000,32 +1000,32 @@ def test_em_dash_flat_list_parallel_gloss_pair_attaches_before_expansion():
 
     html = (
         '<p>There are two ways of expressing a fellow-feeling and suffering with another: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> Per benevolam condolentiam, — a "friendly grieving."</p>\n'
-        '<p class="list-item"><b>(2.)</b> Per gratiosam opitulationem, — a "gracious supply:" '
+        '<p class="list-item"><strong>(1.)</strong> Per benevolam condolentiam, — a "friendly grieving."</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Per gratiosam opitulationem, — a "gracious supply:" '
         'both are eminent in Christ: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> He grieves and labors with us. Zechariah 1:12,</p>'
+        '<p class="list-item"><strong>(1.)</strong> He grieves and labors with us. Zechariah 1:12,</p>'
     )
 
     result = _attach_em_dash_flat_list(html)
 
     assert (
         'There are two ways of expressing a fellow-feeling and suffering with another: — '
-        '<b>(1.)</b> Per benevolam condolentiam, — a "friendly grieving." '
-        '<b>(2.)</b> Per gratiosam opitulationem, — a "gracious supply:" '
+        '<strong>(1.)</strong> Per benevolam condolentiam, — a "friendly grieving." '
+        '<strong>(2.)</strong> Per gratiosam opitulationem, — a "gracious supply:" '
         'both are eminent in Christ: —</p>'
     ) in result
-    assert '<p class="list-item"><b>(1.)</b> He grieves and labors with us.' in result
+    assert '<p class="list-item"><strong>(1.)</strong> He grieves and labors with us.' in result
 
 
 def test_em_dash_binary_account_pair_attaches_before_expansion():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item"><b>(1.)</b> The desert of sin does clearly shine '
+        '<p class="list-item"><strong>(1.)</strong> The desert of sin does clearly shine '
         'in the cross of Christ upon a twofold account: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Of the penalty he underwent.</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it. '
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Of the penalty he underwent.</p>\n'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it. '
         'This the Scripture oftentimes very emphatically sets forth, and lays '
         'great weight upon the matter, as that which gives glory to the '
         'justice of God and assurance of pardon to the souls of men.</p>'
@@ -1034,26 +1034,26 @@ def test_em_dash_binary_account_pair_attaches_before_expansion():
     result = _attach_em_dash_flat_list(html)
 
     assert (
-        '<b>(1.)</b> The desert of sin does clearly shine in the cross of Christ '
-        'upon a twofold account: — <b>[1.]</b> Of the person suffering for it. '
-        '<b>[2.]</b> Of the penalty he underwent.</p>'
+        '<strong>(1.)</strong> The desert of sin does clearly shine in the cross of Christ '
+        'upon a twofold account: — <strong>[1.]</strong> Of the person suffering for it. '
+        '<strong>[2.]</strong> Of the penalty he underwent.</p>'
     ) in result
-    assert '<p class="list-item"><b>[1.]</b> Of the person suffering for it. This the Scripture' in result
+    assert '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it. This the Scripture' in result
 
 
 def test_orphaned_flat_list_marker_tail_joins_short_next_paragraph():
     from render import _join_orphaned_flat_list_marker_paragraphs
 
     html = (
-        '<p>may be referred to two heads: — <b>1.</b> Temptations. 2.</p>\n'
+        '<p>may be referred to two heads: — <strong>1.</strong> Temptations. 2.</p>\n'
         '<p>Afflictions.</p>'
     )
 
     result = _join_orphaned_flat_list_marker_paragraphs(html)
 
     assert result == (
-        '<p>may be referred to two heads: — <b>1.</b> Temptations. '
-        '<b>2.</b> Afflictions.</p>'
+        '<p>may be referred to two heads: — <strong>1.</strong> Temptations. '
+        '<strong>2.</strong> Afflictions.</p>'
     )
 
 
@@ -1073,12 +1073,12 @@ def test_inline_roman_section_splits_to_subheading_before_flat_list():
     )
 
     assert 'Intro sentence.</p>' in html
-    assert '<h4 class="roman-subheading"><b>III.</b></h4>' in html
+    assert '<h4 class="roman-subheading"><strong>III.</strong></h4>' in html
     assert (
         '<p class="syllabus-anchor">The THIRD part of our wisdom is to walk with God. '
         'Now, that one may walk with another, six things are required: — '
-        '<b>1.</b> Agreement. <b>2.</b> Acquaintance. <b>3.</b> A way. '
-        '<b>4.</b> Strength. <b>5.</b> Boldness. <b>6.</b> An aiming at the same end.</p>'
+        '<strong>1.</strong> Agreement. <strong>2.</strong> Acquaintance. <strong>3.</strong> A way. '
+        '<strong>4.</strong> Strength. <strong>5.</strong> Boldness. <strong>6.</strong> An aiming at the same end.</p>'
     ) in html
     assert (
         '<p>All these, with the wisdom of them, are hid in the Lord Jesus.</p>'
@@ -1106,18 +1106,18 @@ def test_owenian_list_levels_mark_exposition_and_nested_subpoints():
 
     assert (
         'For the first, there are four things in sin that clearly shine out '
-        'in the cross of Christ: — <b>(1.)</b> The desert of it. '
-        '<b>(2.)</b> Man\'s impotency by reason of it. <b>(3.)</b> The death '
-        'of it. <b>(4.)</b> A new end put to it.</p>'
+        'in the cross of Christ: — <strong>(1.)</strong> The desert of it. '
+        '<strong>(2.)</strong> Man\'s impotency by reason of it. <strong>(3.)</strong> The death '
+        'of it. <strong>(4.)</strong> A new end put to it.</p>'
     ) in html
     assert (
-        '<b>(1.)</b> The desert of sin does '
+        '<strong>(1.)</strong> The desert of sin does '
         'clearly shine in the cross of Christ upon a twofold account: — '
-        '<b>[1.]</b> Of the person suffering for it. <b>[2.]</b> Of the '
+        '<strong>[1.]</strong> Of the person suffering for it. <strong>[2.]</strong> Of the '
         'penalty he underwent.</p>'
     ) in html
     assert (
-        '<p class="list-item list-level-3"><b>[1.]</b> Of the person suffering '
+        '<p class="list-item list-level-3"><strong>[1.]</strong> Of the person suffering '
         'for it. This the Scripture oftentimes very emphatically sets forth, '
         'and lays great weight upon the matter, as that which gives glory to '
         'the justice of God.</p>'
@@ -1134,24 +1134,24 @@ def test_owenian_local_ordinals_get_deeper_reader_level():
         '2dly. Voluntarily: it flows freely from grace.'
     )
 
-    assert '<p class="list-item list-level-3"><b>1st.</b> Powerfully:' in html
-    assert '<p class="list-item list-level-3"><b>2dly.</b> Voluntarily:' in html
+    assert '<p class="list-item list-level-3"><strong>1st.</strong> Powerfully:' in html
+    assert '<p class="list-item list-level-3"><strong>2dly.</strong> Voluntarily:' in html
 
 
 def test_flat_syllabus_attaches_to_long_parent_list_item_anchor():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item"><b>1.</b> In respect of sin. There is a long '
+        '<p class="list-item"><strong>1.</strong> In respect of sin. There is a long '
         'expository paragraph before the syllabus anchor, because Owen can '
         'embed the next compact table of heads at the end of an existing '
         'numbered argument. For the first, there are four things in sin that '
         'clearly shine out in the cross of Christ: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> The desert of it.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Man\'s impotency by reason of it.</p>\n'
-        '<p class="list-item"><b>(3.)</b> The death of it.</p>\n'
-        '<p class="list-item"><b>(4.)</b> A new end put to it.</p>\n'
-        '<p class="list-item"><b>(1.)</b> The desert of sin does clearly shine '
+        '<p class="list-item"><strong>(1.)</strong> The desert of it.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Man\'s impotency by reason of it.</p>\n'
+        '<p class="list-item"><strong>(3.)</strong> The death of it.</p>\n'
+        '<p class="list-item"><strong>(4.)</strong> A new end put to it.</p>\n'
+        '<p class="list-item"><strong>(1.)</strong> The desert of sin does clearly shine '
         'in the cross of Christ upon a twofold account: —</p>'
     )
 
@@ -1159,12 +1159,12 @@ def test_flat_syllabus_attaches_to_long_parent_list_item_anchor():
 
     assert (
         'For the first, there are four things in sin that clearly shine out in '
-        'the cross of Christ: — <b>(1.)</b> The desert of it. <b>(2.)</b> '
-        'Man\'s impotency by reason of it. <b>(3.)</b> The death of it. '
-        '<b>(4.)</b> A new end put to it.</p>'
+        'the cross of Christ: — <strong>(1.)</strong> The desert of it. <strong>(2.)</strong> '
+        'Man\'s impotency by reason of it. <strong>(3.)</strong> The death of it. '
+        '<strong>(4.)</strong> A new end put to it.</p>'
     ) in result
     assert (
-        '<p class="list-item"><b>(1.)</b> The desert of sin does clearly shine'
+        '<p class="list-item"><strong>(1.)</strong> The desert of sin does clearly shine'
     ) in result
 
 
@@ -1244,17 +1244,17 @@ def test_prefatory_note_heading_present_in_treatise_volume():
 def test_verse_number_after_comma_not_bold():
     """
     "Psalm 110, 1." — the '1' is a verse number, not a list marker.
-    The bold-stripping rule must prevent it from rendering as <b>1.</b>.
+    The bold-stripping rule must prevent it from rendering as <strong>1.</strong>.
 
-    Pattern: digit(s) + comma + space + <b>digit(s)</b>  →  strip the <b>.
+    Pattern: digit(s) + comma + space + <strong>digit(s)</strong>  →  strip the <strong>.
     """
     from render import markdown_to_html
 
     # Construct a line that would trigger the list-item bold heuristic
     md = 'Serve the Lord with fear, and rejoice with trembling, Psalm 110, 11.'
     html, _, _ = markdown_to_html(md)
-    # "11" must not be wrapped in <b>
-    assert '<b>11' not in html and '<b>11.' not in html, (
+    # "11" must not be wrapped in <strong>
+    assert '<strong>11' not in html and '<strong>11.' not in html, (
         f"Verse number was falsely bolded. HTML: {html!r}"
     )
 
@@ -1265,7 +1265,7 @@ def test_verse_number_multi_digit_after_comma_not_bold():
 
     md = 'As it is written in Psalm 22, 12. Many bulls have compassed me.'
     html, _, _ = markdown_to_html(md)
-    assert '<b>12' not in html, f"Multi-digit verse number falsely bolded. HTML: {html!r}"
+    assert '<strong>12' not in html, f"Multi-digit verse number falsely bolded. HTML: {html!r}"
 
 
 # ---------------------------------------------------------------------------
@@ -1352,9 +1352,9 @@ def test_em_dash_flat_list_nine_word_item_absorbed():
 
     html = (
         '<p>Now, concerning this, observe, —</p>\n'
-        '<p class="list-item"><b>1.</b> That God hath done it.</p>\n'
-        '<p class="list-item"><b>2.</b> That he hath promised he will yet do it.</p>\n'
-        '<p class="list-item"><b>3.</b> Why he will so do.</p>'
+        '<p class="list-item"><strong>1.</strong> That God hath done it.</p>\n'
+        '<p class="list-item"><strong>2.</strong> That he hath promised he will yet do it.</p>\n'
+        '<p class="list-item"><strong>3.</strong> Why he will so do.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
@@ -1384,9 +1384,9 @@ def test_em_dash_flat_list_thirteen_word_item_stays_block():
     )
     html = (
         '<p>He does this in three ways, —</p>\n'
-        f'<p class="list-item"><b>1st.</b> {long_item}</p>\n'
-        '<p class="list-item"><b>2ndly.</b> Voluntarily: it flows freely from grace.</p>\n'
-        '<p class="list-item"><b>3rdly.</b> Freely and without constraint of any kind.</p>'
+        f'<p class="list-item"><strong>1st.</strong> {long_item}</p>\n'
+        '<p class="list-item"><strong>2ndly.</strong> Voluntarily: it flows freely from grace.</p>\n'
+        '<p class="list-item"><strong>3rdly.</strong> Freely and without constraint of any kind.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' in result, (
@@ -1483,15 +1483,15 @@ def test_signal_f_short_binary_label_still_flattens():
 
     html = (
         '<p>The desert of sin shines upon a twofold account: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Of the penalty he underwent.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Of the penalty he underwent.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
         "Short binary label pair must still flatten under tightened Signal F cap."
     )
-    assert '<b>[1.]</b> Of the person suffering for it.' in result
-    assert '<b>[2.]</b> Of the penalty he underwent.' in result
+    assert '<strong>[1.]</strong> Of the person suffering for it.' in result
+    assert '<strong>[2.]</strong> Of the penalty he underwent.' in result
 
 
 def test_signal_f_long_binary_exposition_stays_block():
@@ -1511,8 +1511,8 @@ def test_signal_f_long_binary_exposition_stays_block():
     )
     html = (
         '<p>This may be considered upon a twofold account: —</p>\n'
-        f'<p class="list-item"><b>[1.]</b> {item}</p>\n'
-        f'<p class="list-item"><b>[2.]</b> {item}</p>'
+        f'<p class="list-item"><strong>[1.]</strong> {item}</p>\n'
+        f'<p class="list-item"><strong>[2.]</strong> {item}</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' in result, (
@@ -1538,8 +1538,8 @@ def test_signal_f_border_case_at_twenty_words_flattens():
 
     html = (
         '<p>The matter may be stated upon a twofold account: —</p>\n'
-        f'<p class="list-item"><b>[1.]</b> {item_20w}</p>\n'
-        f'<p class="list-item"><b>[2.]</b> {item_20w}</p>'
+        f'<p class="list-item"><strong>[1.]</strong> {item_20w}</p>\n'
+        f'<p class="list-item"><strong>[2.]</strong> {item_20w}</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
@@ -1561,10 +1561,10 @@ def test_syllabus_anchor_class_added_to_plain_p_on_absorption():
 
     html = (
         '<p>I shall briefly observe four things therein: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> Sweetness.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Delight.</p>\n'
-        '<p class="list-item"><b>(3.)</b> Safety.</p>\n'
-        '<p class="list-item"><b>(4.)</b> Comfort.</p>'
+        '<p class="list-item"><strong>(1.)</strong> Sweetness.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Delight.</p>\n'
+        '<p class="list-item"><strong>(3.)</strong> Safety.</p>\n'
+        '<p class="list-item"><strong>(4.)</strong> Comfort.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'syllabus-anchor' in result, (
@@ -1584,10 +1584,10 @@ def test_syllabus_anchor_class_added_to_list_item_anchor_on_absorption():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item list-level-1"><b>(1.)</b> The desert of sin '
+        '<p class="list-item list-level-1"><strong>(1.)</strong> The desert of sin '
         'does clearly shine in the cross of Christ upon a twofold account: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Of the penalty he underwent.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Of the penalty he underwent.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'syllabus-anchor' in result, (
@@ -1611,8 +1611,8 @@ def test_syllabus_anchor_class_not_added_when_no_absorption():
     )
     html = (
         '<p>He works, —</p>\n'
-        f'<p class="list-item"><b>1st.</b> {long_item}</p>\n'
-        f'<p class="list-item"><b>2ndly.</b> {long_item}</p>'
+        f'<p class="list-item"><strong>1st.</strong> {long_item}</p>\n'
+        f'<p class="list-item"><strong>2ndly.</strong> {long_item}</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'syllabus-anchor' not in result, (
@@ -1634,21 +1634,21 @@ def test_long_list_item_anchor_with_count_pattern_allows_attachment():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item"><b>(1.)</b> The desert of sin does clearly shine '
+        '<p class="list-item"><strong>(1.)</strong> The desert of sin does clearly shine '
         'in the cross of Christ in this regard — it is set before us with great '
         'emphasis and solemnity — upon a twofold account of the greatest moment '
         'and consequence to the souls and consciences of men, namely these: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Of the penalty he underwent.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Of the penalty he underwent.</p>'
     )
     result = _attach_em_dash_flat_list(html)
-    assert '<b>[1.]</b> Of the person suffering for it.' in result
-    assert '<b>[2.]</b> Of the penalty he underwent.' in result
+    assert '<strong>[1.]</strong> Of the person suffering for it.' in result
+    assert '<strong>[2.]</strong> Of the penalty he underwent.' in result
     # The sub-list should be absorbed, not left as separate list-item paragraphs
     absorbed = (
         'twofold account of the greatest moment and consequence to the souls '
-        'and consciences of men, namely these: — <b>[1.]</b> Of the person '
-        'suffering for it. <b>[2.]</b> Of the penalty he underwent.'
+        'and consciences of men, namely these: — <strong>[1.]</strong> Of the person '
+        'suffering for it. <strong>[2.]</strong> Of the penalty he underwent.'
     )
     assert absorbed in result, (
         "Long count-pattern anchor (>45w) must still absorb its short flat sub-list."
@@ -1663,18 +1663,18 @@ def test_formula_tail_these_following_allows_attachment():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item"><b>(1.)</b> The chief graces are set before us '
+        '<p class="list-item"><strong>(1.)</strong> The chief graces are set before us '
         'in these following particulars: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Faith.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Hope.</p>\n'
-        '<p class="list-item"><b>[3.]</b> Love.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Faith.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Hope.</p>\n'
+        '<p class="list-item"><strong>[3.]</strong> Love.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
         "'these following' formula anchor must allow flat sub-list attachment."
     )
-    assert '<b>[1.]</b> Faith.' in result
-    assert '<b>[3.]</b> Love.' in result
+    assert '<strong>[1.]</strong> Faith.' in result
+    assert '<strong>[3.]</strong> Love.' in result
 
 
 def test_formula_tail_i_shall_observe_allows_attachment():
@@ -1685,10 +1685,10 @@ def test_formula_tail_i_shall_observe_allows_attachment():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item"><b>1.</b> Concerning this point I shall observe '
+        '<p class="list-item"><strong>1.</strong> Concerning this point I shall observe '
         'briefly: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> Agreement.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Acquaintance.</p>'
+        '<p class="list-item"><strong>(1.)</strong> Agreement.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Acquaintance.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
@@ -1704,10 +1704,10 @@ def test_formula_tail_may_be_considered_allows_attachment():
     from render import _attach_em_dash_flat_list
 
     html = (
-        '<p class="list-item"><b>(1.)</b> Two things in this matter may be '
+        '<p class="list-item"><strong>(1.)</strong> Two things in this matter may be '
         'considered: —</p>\n'
-        '<p class="list-item"><b>[1.]</b> Their original.</p>\n'
-        '<p class="list-item"><b>[2.]</b> Their continuance.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Their original.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> Their continuance.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
@@ -1725,14 +1725,14 @@ def test_long_anchor_under_80_words_without_pattern_allows_attachment():
 
     # Build an anchor that is 52 plain words (>45, <80, no count/formula tail)
     filler = ('and the grace of God is exceeding abundant toward us ' * 5).strip()
-    anchor_text = f'<b>1.</b> {filler}: —'
+    anchor_text = f'<strong>1.</strong> {filler}: —'
     wc = len(_re.sub(r'<[^>]+>', '', anchor_text).split())
     assert 45 < wc < 80, f"Anchor must be 46-79 words for this test, got {wc}"
 
     html = (
         f'<p class="list-item">{anchor_text}</p>\n'
-        '<p class="list-item"><b>(1.)</b> Mercy.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Grace.</p>'
+        '<p class="list-item"><strong>(1.)</strong> Mercy.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Grace.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, (
@@ -1751,14 +1751,14 @@ def test_anchor_over_80_words_without_pattern_blocks_attachment():
 
     # Build a list-item anchor that is 82 plain words (>80)
     filler = ('and the grace of God is exceeding abundant toward us ' * 8).strip()
-    anchor_text = f'<b>1.</b> {filler}: —'
+    anchor_text = f'<strong>1.</strong> {filler}: —'
     wc = len(_re.sub(r'<[^>]+>', '', anchor_text).split())
     assert wc > 80, f"Anchor must exceed 80 words for this test, got {wc}"
 
     html = (
         f'<p class="list-item">{anchor_text}</p>\n'
-        '<p class="list-item"><b>(1.)</b> Mercy.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Grace.</p>'
+        '<p class="list-item"><strong>(1.)</strong> Mercy.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Grace.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' in result, (
@@ -1792,7 +1792,7 @@ def test_signal_g_ordinal_continuation_attaches_to_preceding_inline_ordinal():
     )
     html = (
         f'<p>{preceding}</p>\n'
-        '<p class="list-item"><b>(3rdly.)</b> His excellency to endear, from his '
+        '<p class="list-item"><strong>(3rdly.)</strong> His excellency to endear, from his '
         'complete suitableness to all the wants of the souls of men: —</p>'
     )
     result = _attach_em_dash_flat_list(html)
@@ -1801,7 +1801,7 @@ def test_signal_g_ordinal_continuation_attaches_to_preceding_inline_ordinal():
         "Signal G must absorb (3rdly.) into the preceding paragraph that already "
         "contains inline (1st.) and (2ndly.) markers."
     )
-    assert '(3rdly.)' in result or '<b>(3rdly.)</b>' in result, (
+    assert '(3rdly.)' in result or '<strong>(3rdly.)</strong>' in result, (
         "The (3rdly.) marker must appear inline in the result."
     )
 
@@ -1815,7 +1815,7 @@ def test_signal_g_does_not_fire_without_preceding_inline_ordinal():
 
     html = (
         '<p>He considers the grace of Christ: —</p>\n'
-        '<p class="list-item"><b>(3rdly.)</b> His excellency to endear, from his '
+        '<p class="list-item"><strong>(3rdly.)</strong> His excellency to endear, from his '
         'complete suitableness to all the wants of the souls of men: —</p>'
     )
     result = _attach_em_dash_flat_list(html)
@@ -1840,7 +1840,7 @@ def test_split_ordinal_inline_expansions_splits_at_first_em_ordinal():
     from render import _split_ordinal_inline_expansions
 
     html = (
-        '<p class="list-item"><b>(3rdly.)</b> His excellency to endear, from his '
+        '<p class="list-item"><strong>(3rdly.)</strong> His excellency to endear, from his '
         'complete suitableness to all the wants of the souls of men: — '
         '(1st.) His fitness to save, — his being "hikanos", a fit Savior, '
         'suited to the work.</p>'
@@ -1855,7 +1855,7 @@ def test_split_ordinal_inline_expansions_splits_at_first_em_ordinal():
         "First item should end at 'men: —' (the split boundary)."
     )
     # Second item contains the expansion
-    assert '<b>(1st.)</b>' in result, (
+    assert '<strong>(1st.)</strong>' in result, (
         "Second item must carry a bold (1st.) marker."
     )
     assert 'hikanos' in result, (
@@ -1870,7 +1870,7 @@ def test_split_ordinal_inline_expansions_no_split_for_short_intro():
     """
     from render import _split_ordinal_inline_expansions
 
-    html = '<p class="list-item"><b>(3rdly.)</b> Brief: — (1st.) more text.</p>'
+    html = '<p class="list-item"><strong>(3rdly.)</strong> Brief: — (1st.) more text.</p>'
     result = _split_ordinal_inline_expansions(html)
     assert result == html, (
         "Short intro (< 8 words) must not trigger the ordinal expansion split."
@@ -1893,8 +1893,8 @@ def test_continuation_chain_last_item_joins_when_previous_ends_with_connector():
 
     html = (
         '<p>Two things are to be considered: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> What this work is, and</p>\n'
-        '<p class="list-item"><b>(2.)</b> How it is performed in us by the Holy '
+        '<p class="list-item"><strong>(1.)</strong> What this work is, and</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> How it is performed in us by the Holy '
         'Spirit, working effectually in every regenerate soul according to the '
         'counsel and purpose of God in election.</p>'
     )
@@ -1902,7 +1902,7 @@ def test_continuation_chain_last_item_joins_when_previous_ends_with_connector():
     assert 'class="list-item"' not in result, (
         "'and'-terminated item must commit the following long item to the flat run."
     )
-    assert '<b>(1.)</b>' in result and '<b>(2.)</b>' in result
+    assert '<strong>(1.)</strong>' in result and '<strong>(2.)</strong>' in result
 
 
 def test_continuation_chain_last_item_joins_when_previous_ends_with_comma():
@@ -1914,8 +1914,8 @@ def test_continuation_chain_last_item_joins_when_previous_ends_with_comma():
 
     html = (
         '<p>Three respects to be noted: —</p>\n'
-        '<p class="list-item"><b>1.</b> The first,</p>\n'
-        '<p class="list-item"><b>2.</b> The second and greater consideration, '
+        '<p class="list-item"><strong>1.</strong> The first,</p>\n'
+        '<p class="list-item"><strong>2.</strong> The second and greater consideration, '
         'being the full and complete satisfaction rendered to divine justice '
         'through the obedience and suffering of the Lord Christ in our stead.</p>'
     )
@@ -1936,15 +1936,15 @@ def test_semicolon_chain_last_item_joins_when_previous_ends_with_semicolon():
     from render import _attach_em_dash_flat_list
 
     anchor = (
-        '<b>(2.)</b> There are other properties of God which, though also otherwise '
+        '<strong>(2.)</strong> There are other properties of God which, though also otherwise '
         'discovered, yet are so clearly, eminently, and savingly only in Jesus Christ; as, —'
     )
     html = (
         f'<p class="list-item">{anchor}</p>\n'
-        '<p class="list-item"><b>[1.]</b> His vindictive justice in punishing sin;</p>\n'
-        '<p class="list-item"><b>[2.]</b> His patience, forbearance, and long-suffering towards sinners;</p>\n'
-        '<p class="list-item"><b>[3.]</b> His wisdom, in managing things for his own glory;</p>\n'
-        '<p class="list-item"><b>[4.]</b> His all-sufficiency, in himself and unto others. '
+        '<p class="list-item"><strong>[1.]</strong> His vindictive justice in punishing sin;</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> His patience, forbearance, and long-suffering towards sinners;</p>\n'
+        '<p class="list-item"><strong>[3.]</strong> His wisdom, in managing things for his own glory;</p>\n'
+        '<p class="list-item"><strong>[4.]</strong> His all-sufficiency, in himself and unto others. '
         'All these, though they may receive some lower and inferior manifestations out of '
         'Christ, yet they clearly shine only in him; so as that it may be our wisdom to be '
         'acquainted with them. Hebrews 1:3; of which before.</p>'
@@ -1953,13 +1953,13 @@ def test_semicolon_chain_last_item_joins_when_previous_ends_with_semicolon():
 
     # All four [n.] items must be absorbed into the (2.) anchor
     for marker in ('[1.]', '[2.]', '[3.]', '[4.]'):
-        assert f'<b>{marker}</b>' in result, f"{marker} must appear in the result"
+        assert f'<strong>{marker}</strong>' in result, f"{marker} must appear in the result"
 
     # No standalone list-item paragraphs should remain for [1.]-[4.]
     # (The anchor (2.) itself becomes the merged paragraph)
     remaining_items = [
         p for p in result.split('<p class="list-item">')[1:]
-        if any(f'<b>{m}</b>' in p for m in ('[1.]', '[2.]', '[3.]', '[4.]'))
+        if any(f'<strong>{m}</strong>' in p for m in ('[1.]', '[2.]', '[3.]', '[4.]'))
     ]
     assert not remaining_items, (
         "All four [n.] items must be absorbed inline; none should remain as "
@@ -1976,8 +1976,8 @@ def test_semicolon_chain_long_final_item_without_preceding_semicolon_stays_block
 
     html = (
         '<p>He works, —</p>\n'
-        '<p class="list-item"><b>1.</b> Something short.</p>\n'
-        '<p class="list-item"><b>2.</b> A very long scholastic expansion about '
+        '<p class="list-item"><strong>1.</strong> Something short.</p>\n'
+        '<p class="list-item"><strong>2.</strong> A very long scholastic expansion about '
         'the nature of divine wisdom as revealed through the person and work of '
         'Christ in his mediatorial office and covenant engagement.</p>'
     )
@@ -2004,11 +2004,11 @@ def test_all_non_final_semi_absorbs_when_all_items_end_with_semicolon():
 
     html = (
         '<p>He describes it in these words: —</p>\n'
-        '<p class="list-item"><b>1.</b> A sweet savor, as from spices, and flowers, '
+        '<p class="list-item"><strong>1.</strong> A sweet savor, as from spices, and flowers, '
         'and towers of perfume;</p>\n'
-        '<p class="list-item"><b>2.</b> Beauty and order, as spices set in rows or '
+        '<p class="list-item"><strong>2.</strong> Beauty and order, as spices set in rows or '
         'beds, as the words import;</p>\n'
-        '<p class="list-item"><b>3.</b> Eminency in that word, as sweet or well-grown, '
+        '<p class="list-item"><strong>3.</strong> Eminency in that word, as sweet or well-grown, '
         'great flowers.</p>'
     )
     result = _attach_em_dash_flat_list(html)
@@ -2018,7 +2018,7 @@ def test_all_non_final_semi_absorbs_when_all_items_end_with_semicolon():
     )
     # All three markers must appear in the merged paragraph
     for marker in ('1.', '2.', '3.'):
-        assert f'<b>{marker}</b>' in result, (
+        assert f'<strong>{marker}</strong>' in result, (
             f"Marker '{marker}' must appear in the merged output."
         )
 
@@ -2033,10 +2033,10 @@ def test_all_non_final_semi_does_not_fire_when_items_exceed_20w_cap():
     # Item 1 ends with ';' but is >20 words — bypass must not fire
     html = (
         '<p>There are several grounds for this observation: —</p>\n'
-        '<p class="list-item"><b>1.</b> The first ground is the eternal and '
+        '<p class="list-item"><strong>1.</strong> The first ground is the eternal and '
         'unchangeable love of God the Father toward his elect people chosen before '
         'the foundation of the world in Christ Jesus;</p>\n'
-        '<p class="list-item"><b>2.</b> The second ground, briefly stated.</p>'
+        '<p class="list-item"><strong>2.</strong> The second ground, briefly stated.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' in result, (
@@ -2111,13 +2111,13 @@ def test_signal_h_absorbs_preview_syllabus_with_medium_items():
 
     html = (
         '<p>In the words we consider, —</p>\n'
-        '<p class="list-item"><b>1.</b> The connection of them unto those foregoing, '
+        '<p class="list-item"><strong>1.</strong> The connection of them unto those foregoing, '
         'intimating the occasion of the introduction of this whole discourse.</p>\n'
-        '<p class="list-item"><b>2.</b> The subject described in them, or the persons '
+        '<p class="list-item"><strong>2.</strong> The subject described in them, or the persons '
         'spoken of, under sundry qualifications, which may be inquired into jointly '
         'and severally.</p>\n'
-        '<p class="list-item"><b>3.</b> What is supposed concerning them.</p>\n'
-        '<p class="list-item"><b>4.</b> What is affirmed of them on that supposition.</p>'
+        '<p class="list-item"><strong>3.</strong> What is supposed concerning them.</p>\n'
+        '<p class="list-item"><strong>4.</strong> What is affirmed of them on that supposition.</p>'
     )
     result = _attach_em_dash_flat_list(html)
 
@@ -2127,7 +2127,7 @@ def test_signal_h_absorbs_preview_syllabus_with_medium_items():
     )
     # All four markers must appear in the merged output
     for marker in ('1.', '2.', '3.', '4.'):
-        assert f'<b>{marker}</b>' in result, (
+        assert f'<strong>{marker}</strong>' in result, (
             f"Marker '{marker}' must appear in the merged paragraph."
         )
 
@@ -2141,11 +2141,11 @@ def test_signal_h_does_not_fire_when_item_exceeds_25w():
 
     html = (
         '<p>In the words we consider, —</p>\n'
-        '<p class="list-item"><b>1.</b> The connection of them unto those foregoing, '
+        '<p class="list-item"><strong>1.</strong> The connection of them unto those foregoing, '
         'intimating the occasion of the introduction of this whole discourse and also '
         'the full apostolic purpose and intention thereof, which he declares.</p>\n'
-        '<p class="list-item"><b>2.</b> What is supposed concerning them.</p>\n'
-        '<p class="list-item"><b>3.</b> What is affirmed of them on that supposition.</p>'
+        '<p class="list-item"><strong>2.</strong> What is supposed concerning them.</p>\n'
+        '<p class="list-item"><strong>3.</strong> What is affirmed of them on that supposition.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     # Item 1 is 29 words — exceeds Signal H cap; list must stay block
@@ -2165,8 +2165,8 @@ def test_signal_h_does_not_fire_for_two_item_list():
 
     html = (
         '<p>There are two points here, —</p>\n'
-        '<p class="list-item"><b>1.</b> The occasion of the apostle writing.</p>\n'
-        '<p class="list-item"><b>2.</b> The manner in which he addresses them.</p>'
+        '<p class="list-item"><strong>1.</strong> The occasion of the apostle writing.</p>\n'
+        '<p class="list-item"><strong>2.</strong> The manner in which he addresses them.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     # Signal H needs n ≥ 3, Signal F needs explicit "twofold/two things" keyword —
@@ -2500,8 +2500,8 @@ def test_scholastic_anchors_are_nested_in_owen_level_2():
 
     html = apply_scholastic_anchor_protocol(
         "<p>An answer unto an inquiry which may possibly arise...</p>\n"
-        "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 1.</b> There is no precedent...</p>\n"
-        "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 2.</b> In the invocation of Christ...</p>"
+        "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 1.</strong> There is no precedent...</p>\n"
+        "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 2.</strong> In the invocation of Christ...</p>"
     )
 
     # Verify that they are wrapped in a single owen-level-2 div
@@ -2552,37 +2552,37 @@ def test_dynamic_trigger_based_demotion():
 
     # Case A: Level 2 item ([1.]) introduces a sub-list of two things using bare decimals (1., 2.)
     html = (
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it, which consists in two things: —</p>\n'
-        '<p class="list-item"><b>1.</b> The dignity of the person.</p>\n'
-        '<p class="list-item"><b>2.</b> The greatness of the penalty.</p>\n'
-        '<p class="list-item"><b>[2.]</b> The next bracketed item.</p>'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it, which consists in two things: —</p>\n'
+        '<p class="list-item"><strong>1.</strong> The dignity of the person.</p>\n'
+        '<p class="list-item"><strong>2.</strong> The greatness of the penalty.</p>\n'
+        '<p class="list-item"><strong>[2.]</strong> The next bracketed item.</p>'
     )
     result = _add_owen_list_level_classes(html)
 
     # The bracketed items [1.] and [2.] are base level 2
-    assert 'class="list-item list-level-2"><b>[1.]</b>' in result
-    assert 'class="list-item list-level-2"><b>[2.]</b>' in result
+    assert 'class="list-item list-level-2"><strong>[1.]</strong>' in result
+    assert 'class="list-item list-level-2"><strong>[2.]</strong>' in result
 
     # The subordinate decimals 1. and 2. must be dynamically demoted to Level 3
-    assert 'class="list-item list-level-3"><b>1.</b>' in result
-    assert 'class="list-item list-level-3"><b>2.</b>' in result
+    assert 'class="list-item list-level-3"><strong>1.</strong>' in result
+    assert 'class="list-item list-level-3"><strong>2.</strong>' in result
 
     # Case B: A Level 1 item (4.) introduces two parenthesized items (1.), (2.) and then 5. resets sequence
     html2 = (
-        '<p class="list-item"><b>4.</b> Some outline point, for these two reasons: —</p>\n'
-        '<p class="list-item"><b>(1.)</b> First reason.</p>\n'
-        '<p class="list-item"><b>(2.)</b> Second reason.</p>\n'
-        '<p class="list-item"><b>5.</b> Next outline point.</p>'
+        '<p class="list-item"><strong>4.</strong> Some outline point, for these two reasons: —</p>\n'
+        '<p class="list-item"><strong>(1.)</strong> First reason.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Second reason.</p>\n'
+        '<p class="list-item"><strong>5.</strong> Next outline point.</p>'
     )
     result2 = _add_owen_list_level_classes(html2)
 
     # 4. and 5. are Level 1 (bare decimals)
-    assert 'class="list-item list-level-1"><b>4.</b>' in result2
-    assert 'class="list-item list-level-1"><b>5.</b>' in result2
+    assert 'class="list-item list-level-1"><strong>4.</strong>' in result2
+    assert 'class="list-item list-level-1"><strong>5.</strong>' in result2
 
     # (1.) and (2.) are Level 2 (parenthesized, subordinate)
-    assert 'class="list-item list-level-2"><b>(1.)</b>' in result2
-    assert 'class="list-item list-level-2"><b>(2.)</b>' in result2
+    assert 'class="list-item list-level-2"><strong>(1.)</strong>' in result2
+    assert 'class="list-item list-level-2"><strong>(2.)</strong>' in result2
 
 
 def test_blockquote_trailing_quote_preservation():
@@ -2617,7 +2617,7 @@ def test_flat_list_continuation_splits():
     )
     html, _, _ = markdown_to_html(md)
     # They should be joined into a single paragraph and bolded!
-    assert "reduced unto two heads, <b>1st</b>, Adoration; <b>2ndly</b>, Invocation." in html
+    assert "reduced unto two heads, <strong>1st</strong>, Adoration; <strong>2ndly</strong>, Invocation." in html
 
 
 def test_stray_quotes_before_scripture_reference():
@@ -2642,11 +2642,11 @@ def test_list_nesting_lookahead_termination():
     from scripts.owen_lists import _nest_owen_list_hierarchies
 
     html = (
-        '<p class="list-item list-level-1"><b>1.</b> First major point.</p>\n'
-        '<p class="list-item list-level-2"><b>(1)</b> Subpoint A.</p>\n'
-        '<p class="list-item list-level-2"><b>(2)</b> Subpoint B.</p>\n'
+        '<p class="list-item list-level-1"><strong>1.</strong> First major point.</p>\n'
+        '<p class="list-item list-level-2"><strong>(1)</strong> Subpoint A.</p>\n'
+        '<p class="list-item list-level-2"><strong>(2)</strong> Subpoint B.</p>\n'
         '<p>This is continuation prose that belongs to Level 1, not Level 2.</p>\n'
-        '<p class="list-item list-level-1"><b>2.</b> Second major point.</p>'
+        '<p class="list-item list-level-1"><strong>2.</strong> Second major point.</p>'
     )
     result = _nest_owen_list_hierarchies(html)
 
@@ -2668,24 +2668,24 @@ def test_nesting_precedence_fix():
     from scripts.owen_lists import _add_owen_list_level_classes
 
     html = (
-        '<p class="list-item"><b>1.</b> First major point.</p>\n'
-        '<p class="list-item"><b>[1.]</b> Of the person suffering for it, which consists in two things: —</p>\n'
-        '<p class="list-item"><b>1.</b> The dignity of the person.</p>\n'
-        '<p class="list-item"><b>2.</b> The greatness of the penalty.</p>\n'
-        '<p class="list-item"><b>2.</b> Second major point.</p>'
+        '<p class="list-item"><strong>1.</strong> First major point.</p>\n'
+        '<p class="list-item"><strong>[1.]</strong> Of the person suffering for it, which consists in two things: —</p>\n'
+        '<p class="list-item"><strong>1.</strong> The dignity of the person.</p>\n'
+        '<p class="list-item"><strong>2.</strong> The greatness of the penalty.</p>\n'
+        '<p class="list-item"><strong>2.</strong> Second major point.</p>'
     )
     result = _add_owen_list_level_classes(html)
     
     # First major point remains Level 1
-    assert 'class="list-item list-level-1"><b>1.</b> First major point.' in result
+    assert 'class="list-item list-level-1"><strong>1.</strong> First major point.' in result
     # Sub-point header remains Level 2
-    assert 'class="list-item list-level-2"><b>[1.]</b> Of the person suffering for it, which consists in two things: —' in result
+    assert 'class="list-item list-level-2"><strong>[1.]</strong> Of the person suffering for it, which consists in two things: —' in result
     # Dignity of the person should be Level 3
-    assert 'class="list-item list-level-3"><b>1.</b> The dignity of the person.' in result
+    assert 'class="list-item list-level-3"><strong>1.</strong> The dignity of the person.' in result
     # Greatness of penalty should be Level 3 (not promoted to Level 1!)
-    assert 'class="list-item list-level-3"><b>2.</b> The greatness of the penalty.' in result
+    assert 'class="list-item list-level-3"><strong>2.</strong> The greatness of the penalty.' in result
     # Second major point should be Level 1
-    assert 'class="list-item list-level-1"><b>2.</b> Second major point.' in result
+    assert 'class="list-item list-level-1"><strong>2.</strong> Second major point.' in result
 
 
 

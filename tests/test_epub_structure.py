@@ -125,7 +125,7 @@ def test_no_empty_paragraph_elements(volume: int):
 def test_no_raw_markdown_bold_in_xhtml(volume: int):
     """
     '**text**' is Markdown bold syntax.  It must never appear literally in
-    the output XHTML — it should have been converted to <b>text</b>.
+    the output XHTML — it should have been converted to <strong>text</strong>.
     """
     files = _load_epub(volume)
     failures: list[str] = []

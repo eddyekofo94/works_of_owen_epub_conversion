@@ -131,10 +131,12 @@ See previous sessions.
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-15T01:09:51.288016+00:00
+**Last run:** 2026-06-22T12:12:12.790978+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -215,11 +217,12 @@ Reports:
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-15T01:09:09.192346+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub`
+**Last run:** 2026-06-22T11:32:34.120604+00:00
+**EPUB:** `volumes/v8/output/volume_8.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -231,7 +234,7 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 75 |
 | Spine items | 74 |
-| Embedded fonts | 16 |
+| Embedded fonts | 14 |
 | NAV links | 76 |
 | Greek chars / untagged | 1667 / 0 |
 | Hebrew chars / untagged | 344 / 0 |

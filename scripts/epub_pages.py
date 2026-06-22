@@ -486,7 +486,7 @@ def build_toc_page_xhtml(pages):
                 if match:
                     label, desc = match.groups()
                     desc_safe = _html_escape(desc.strip())
-                    parts.append(f'<p class="contents-item"><b>{_html_escape(label)}</b> {desc_safe}</p>')
+                    parts.append(f'<p class="contents-item"><strong>{_html_escape(label)}</strong> {desc_safe}</p>')
                 else:
                     continuation = _html_escape(re.sub(r'\s+', ' ', full_text).strip())
                     if (
@@ -524,7 +524,7 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
     
     historical_info = (
         f"This digital volume reproduces the text of the authoritative 16-volume standard edition "
-        f"of the <i>Works of John Owen</i>, edited by the Reverend William H. Goold, originally "
+        f"of the <em>Works of John Owen</em>, edited by the Reverend William H. Goold, originally "
         f"published between 1850 and 1853 by Johnstone & Hunter in Edinburgh. The treatises "
         f"and sermons in this volume cover core elements of Reformed and Puritan theology, "
         f"dogmatics, and biblical exposition."
@@ -589,7 +589,7 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
     html = f"""<section class="colophon-page" epub:type="colophon">
   <h1 class="colophon-title">Publication Metadata</h1>
   
-  <p class="colophon-ornament">❧</p>
+  <div class="colophon-ornament">❧</div>
   
   <div class="colophon-section">
     <h2 class="colophon-section-title">Edition Details</h2>
@@ -599,7 +599,7 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
   <div class="colophon-section">
     <h2 class="colophon-section-title">Theological Glossary &amp; Biographical Notes</h2>
     <p class="colophon-text">
-      Throughout the text of this volume, archaic theological or historical terms (e.g., <i>Socinians</i>, <i>Pelagians</i>, <i>Sublapsarian</i>) are marked with a section sign (<sup>§</sup>), and key historical figures (e.g., <i>Calvin</i>, <i>Cyril</i>, <i>Charnock</i>) are marked with a double dagger (<sup>‡</sup>) upon their first occurrence in the book. Tapping these symbols opens contextual definitions and brief biographical details in a pop-up footnote.
+      Throughout the text of this volume, archaic theological or historical terms (e.g., <em>Socinians</em>, <em>Pelagians</em>, <em>Sublapsarian</em>) are marked with a section sign (§), and key historical figures (e.g., <em>Calvin</em>, <em>Cyril</em>, <em>Charnock</em>) are marked with a double dagger (‡) upon their first occurrence in the book. Tapping these symbols opens contextual definitions and brief biographical details in a pop-up footnote.
     </p>
   </div>
 
@@ -1152,7 +1152,7 @@ def _render_single_chapter(
             trans_counter += 1
             placeholder_counter += 1
             
-            fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a></sup>'
+            fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a>'
             local_notes.append({
                 'id': f"fntrans_{cid}_{trans_counter}",
                 'num': trans_counter,
@@ -1209,7 +1209,8 @@ def _render_single_chapter(
             matched_str = m.group(1)
             trailing_tags = m.group(2)
             trailing_punc = m.group(3)
-            fn_link = f'<sup><a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a></sup>'
+            # Double dagger symbol (‡) for biographical notes (Rule 11)
+            fn_link = f'<a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a>'
             local_biographical.append({
                 'id': f"fnbiog_{cid}_{biographical_counter}",
                 'term': term,

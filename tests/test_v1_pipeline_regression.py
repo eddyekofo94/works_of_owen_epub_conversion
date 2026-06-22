@@ -91,7 +91,7 @@ class TestCatechismALabel:
         plain = _plain(html)
         assert 'A brief view' in plain
         # No bold label wrapping the bare 'A.'
-        assert '<b>A.</b>' not in html
+        assert '<strong>A.</strong>' not in html
 
     def test_a_before_uppercase_in_body_prose_preserved(self):
         """Structural 'A. THE FIRST HEAD' must not be stripped."""
@@ -104,7 +104,7 @@ class TestCatechismALabel:
         md = "A. 3. God is a Spirit, infinite, eternal, and unchangeable."
         html = _html(md, catechism=True, mode="BODY_TEXT")
         # Label should be bold-wrapped
-        assert '<b>' in html and 'A.' in html
+        assert '<strong>' in html and 'A.' in html
 
     def test_catechism_context_does_not_bleed_across_chapters(self):
         """A chapter rendered WITHOUT catechism=True must not inherit the
@@ -115,7 +115,7 @@ class TestCatechismALabel:
         html2 = _html("A. general account of the controversy.", mode="BODY_TEXT")
         plain2 = _plain(html2)
         assert 'A general account' in plain2
-        assert '<b>A.</b>' not in html2
+        assert '<strong>A.</strong>' not in html2
 
 
 # ===========================================================================
@@ -236,7 +236,7 @@ class TestCatechismContextIsolation:
             catechism=False,
             mode="BODY_TEXT",
         )
-        assert '<b>A.</b>' not in html
+        assert '<strong>A.</strong>' not in html
         assert 'A glorious representation' in _plain(html)
 
     def test_catechism_config_true_wraps_in_catechism_item(self):
@@ -259,9 +259,9 @@ class TestListMergingSafety:
     def test_period_terminated_items_not_merged(self):
         from render import _merge_short_inline_lists
         html = (
-            '<p class="list-item"><b>1.</b> God is sovereign.</p>'
-            '<p class="list-item"><b>2.</b> God is holy.</p>'
-            '<p class="list-item"><b>3.</b> God is love.</p>'
+            '<p class="list-item"><strong>1.</strong> God is sovereign.</p>'
+            '<p class="list-item"><strong>2.</strong> God is holy.</p>'
+            '<p class="list-item"><strong>3.</strong> God is love.</p>'
         )
         result = _merge_short_inline_lists(html)
         # Must remain as three separate paragraphs
@@ -270,9 +270,9 @@ class TestListMergingSafety:
     def test_semicolon_terminated_items_are_merged(self):
         from render import _merge_short_inline_lists
         html = (
-            '<p class="list-item"><b>1.</b> In the Father;</p>'
-            '<p class="list-item"><b>2.</b> In the Son;</p>'
-            '<p class="list-item"><b>3.</b> In the Holy Spirit.</p>'
+            '<p class="list-item"><strong>1.</strong> In the Father;</p>'
+            '<p class="list-item"><strong>2.</strong> In the Son;</p>'
+            '<p class="list-item"><strong>3.</strong> In the Holy Spirit.</p>'
         )
         result = _merge_short_inline_lists(html)
         assert result.count('<p class="list-item">') == 1

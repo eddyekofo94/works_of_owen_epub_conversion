@@ -85,7 +85,7 @@ def test_structural_symmetry_and_sequential_completeness(volume: str):
             inner = (p_inner or h_inner or "").strip()
             
             # Find bold marker at the start of the block
-            marker_match = re.search(r'^\s*(?:<[^>]+>)*\s*<b>(?P<marker>[^<]+)</b>', inner)
+            marker_match = re.search(r'^\s*(?:<[^>]+>)*\s*<strong>(?P<marker>[^<]+)</strong>', inner)
             if not marker_match:
                 continue
                 

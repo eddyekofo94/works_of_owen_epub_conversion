@@ -26,39 +26,39 @@ VOL = 12
 # ---------------------------------------------------------------------------
 
 _V12_VINDICIAE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Vindiciae Evangelicae;</p>
-<p class="title-connector">Or, the</p>
-<p class="title-line-medium">Mystery of the Gospel Vindicated</p>
-<p class="title-connector">And</p>
-<p class="title-line-medium">Socinianism Examined,</p>
-<p class="title-connector">In the Consideration and Refutation of a</p>
-<p class="title-line-medium">Catechism,</p>
-<p class="title-connector">Published by John Biddle, M.A.;</p>
-<p class="title-connector">And the Catechism of Valentinus Smalcius, commonly called</p>
-<p class="title-line-medium">The Racovian Catechism;</p>
-<p class="title-connector">With the Vindication of the Testimonies of Scripture concerning the Deity and Satisfaction of Jesus Christ from the perverse Expositions and Interpretations of them by Hugo Grotius, in his Annotations on the Bible.</p>
-<p class="title-rule" aria-hidden="true"></p>
+<div class="title-line-major">Vindiciae Evangelicae;</div>
+<div class="title-connector">Or, the</div>
+<div class="title-line-medium">Mystery of the Gospel Vindicated</div>
+<div class="title-connector">And</div>
+<div class="title-line-medium">Socinianism Examined,</div>
+<div class="title-connector">In the Consideration and Refutation of a</div>
+<div class="title-line-medium">Catechism,</div>
+<div class="title-connector">Published by John Biddle, M.A.;</div>
+<div class="title-connector">And the Catechism of Valentinus Smalcius, commonly called</div>
+<div class="title-line-medium">The Racovian Catechism;</div>
+<div class="title-connector">With the Vindication of the Testimonies of Scripture concerning the Deity and Satisfaction of Jesus Christ from the perverse Expositions and Interpretations of them by Hugo Grotius, in his Annotations on the Bible.</div>
+<div class="title-rule" aria-hidden="true"></div>
 <div class="quote-block" style="text-align: center; margin: 1.5em auto; max-width: 80%;">
-<p lang="el" style="font-family: 'SBL Greek', 'Cardo', serif; font-size: 1.15em; line-height: 1.45; margin-bottom: 0.5em;">Μηδὲ ἐμοὶ τῷ ταῦτα λέγοντι ἁπλῶς πιστεύσῃς, ἐὰν τὴν ἀπόδειξιν τῶν καταγγελλομένων ἀπὸ θείων μὴ λάβῃς γραφῶν</p>
-<p class="title-source" style="font-size: 0.9em; margin-top: 0;">— CYRIL, HIEROS., Catech. 4.</p>
-<p style="font-size: 0.85em; margin-top: 1em; text-align: justify; text-align-last: center;">[“Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.” — Cyril of Jerusalem, <i>Catechetical Lectures</i>, Lecture 4, Section 17, NPNF 2, 7:23; PG 33.476]</p>
+<p lang="el" style="font-family: 'SBL Greek', 'Cardo', serif; font-size: 1.15em; line-height: 1.45; margin-bottom: 0.5em;">Μηδὲ ἐμοὶ τῷ ταῦτα λέγοντι ἁπλῶς πιστεύσῃς, ἐὰν τὴν ἀπόδειξιν τῶν καταγγελλομένων ἀπὸ θείων μὴ λάβῃς γραφῶν</div>
+<div class="title-source" style="font-size: 0.9em; margin-top: 0;">— CYRIL, HIEROS., Catech. 4.</div>
+<p style="font-size: 0.85em; margin-top: 1em; text-align: justify; text-align-last: center;">[“Believe not even me simply in these things, unless you receive the proof of what I declare from the divine Scriptures.” — Cyril of Jerusalem, <em>Catechetical Lectures</em>, Lecture 4, Section 17, NPNF 2, 7:23; PG 33.476]</div>
 </div>
 </section>'''
 
 _V12_DEATH_JUSTIFICATION_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">Of the Death of Christ,</p>
-<p class="title-connector">and of</p>
-<p class="title-line-major">Justification:</p>
-<p class="title-connector">Being a Full Answer to Mr Richard Baxter's Exceptions</p>
-<p class="title-connector">in His Treatise of</p>
-<p class="title-line-medium">Redemption.</p>
+<div class="title-line-medium">Of the Death of Christ,</div>
+<div class="title-connector">and of</div>
+<div class="title-line-major">Justification:</div>
+<div class="title-connector">Being a Full Answer to Mr Richard Baxter's Exceptions</div>
+<div class="title-connector">in His Treatise of</div>
+<div class="title-line-medium">Redemption.</div>
 </section>'''
 
 _V12_GROTIUS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">A Review of the Annotations of</p>
-<p class="title-line-major">Hugo Grotius,</p>
-<p class="title-connector">in Reference to the Doctrine of the</p>
-<p class="title-line-medium">Deity and Satisfaction of Christ.</p>
+<div class="title-line-medium">A Review of the Annotations of</div>
+<div class="title-line-major">Hugo Grotius,</div>
+<div class="title-connector">in Reference to the Doctrine of the</div>
+<div class="title-line-medium">Deity and Satisfaction of Christ.</div>
 </section>'''
 
 _V12_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
@@ -70,41 +70,41 @@ _V12_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch004.xhtml">Preface to the Reader</a></p>
 <p class="contents-item"><a href="ch005.xhtml">Mr Biddle's Preface to His Catechism</a></p>
 <p class="contents-item"><a href="ch006.xhtml">Mr Biddle's Preface Briefly Examined</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch007.xhtml">Mr Biddle's first chapter examined — Of the Scriptures</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch008.xhtml">Of the nature of God</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch009.xhtml">Of the shape and bodily visible figure of God</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch010.xhtml">Of the attribution of passions and affections, anger, fear, repentance, unto God — In what sense it is done in the Scripture</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch011.xhtml">Of God's prescience or foreknowledge</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch012.xhtml">Of the creation, and condition of man before and after the fall</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch015.xhtml">Of the person of Jesus Christ, and on what account he is the Son of God</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch018.xhtml">An entrance into the examination of the Racovian Catechism in the business of the deity of Christ — Their arguments against it answered; and testimonies of the eternity of Christ vindicated</a></p>
-<p class="contents-item"><b>Chapter IX.</b> <a href="ch019.xhtml">The pre-eternity of Christ farther evinced — Sundry texts of Scripture vindicated</a></p>
-<p class="contents-item"><b>Chapter X.</b> <a href="ch020.xhtml">Of the names of God given unto Christ</a></p>
-<p class="contents-item"><b>Chapter XI.</b> <a href="ch021.xhtml">Of the work of creation assigned to Jesus Christ, etc. — The confirmation of his eternal deity from thence</a></p>
-<p class="contents-item"><b>Chapter XII.</b> <a href="ch022.xhtml">All-ruling and disposing providence assigned unto Christ, and his eternal Godhead thence farther confirmed, with other testimonies thereof</a></p>
-<p class="contents-item"><b>Chapter XIII.</b> <a href="ch023.xhtml">Of the incarnation of Christ, and his pre-existence thereunto</a></p>
-<p class="contents-item"><b>Chapter XIV.</b> <a href="ch024.xhtml">Sundry other testimonies given to the deity of Christ vindicated</a></p>
-<p class="contents-item"><b>Chapter XV.</b> <a href="ch025.xhtml">Of the Holy Ghost, his deity, graces, and operations</a></p>
-<p class="contents-item"><b>Chapter XVI.</b> <a href="ch028.xhtml">Of salvation by Christ</a></p>
-<p class="contents-item"><b>Chapter XVII.</b> <a href="ch030.xhtml">Of the mediation of Christ</a></p>
-<p class="contents-item"><b>Chapter XVIII.</b> <a href="ch031.xhtml">Of Christ's prophetical office</a></p>
-<p class="contents-item"><b>Chapter XIX.</b> <a href="ch032.xhtml">Of the kingly office of Jesus Christ, and of the worship that is ascribed and due to him</a></p>
-<p class="contents-item"><b>Chapter XX.</b> <a href="ch033.xhtml">Of the priestly office of Christ — How he was a priest — When he entered on his office — And how he dischargeth it</a></p>
-<p class="contents-item"><b>Chapter XXI.</b> <a href="ch035.xhtml">Of the death of Christ, the causes, ends, and fruits thereof, with an entrance into the doctrine of his satisfaction thereby</a></p>
-<p class="contents-item"><b>Chapter XXII.</b> <a href="ch036.xhtml">The several considerations of the death of Christ as to the expiation of our sins thereby, and the satisfaction made therein — First, Of it as a price; secondly, As a sacrifice</a></p>
-<p class="contents-item"><b>Chapter XXIII.</b> <a href="ch037.xhtml">Of the death of Christ as it was a punishment, and the satisfaction made thereby</a></p>
-<p class="contents-item"><b>Chapter XXIV.</b> <a href="ch038.xhtml">Some particular testimonies evincing the death of Christ to be a punishment, properly so called</a></p>
-<p class="contents-item"><b>Chapter XXV.</b> <a href="ch039.xhtml">A digression concerning the 53d chapter of Isaiah, and the vindication of it from the perverse interpretation of HUGO GROTIUS</a></p>
-<p class="contents-item"><b>Chapter XXVI.</b> <a href="ch040.xhtml">Of the matter of the punishment that Christ underwent, or what he suffered</a></p>
-<p class="contents-item"><b>Chapter XXVII.</b> <a href="ch041.xhtml">Of the covenant between the Father and the Son, the ground and foundation of this dispensation of Christ’s being punished for us and in our stead</a></p>
-<p class="contents-item"><b>Chapter XXVIII.</b> <a href="ch042.xhtml">Of redemption by the death of Christ as it was a price or ransom</a></p>
-<p class="contents-item"><b>Chapter XXIX.</b> <a href="ch043.xhtml">Of reconciliation by the death of Christ as it is a sacrifice</a></p>
-<p class="contents-item"><b>Chapter XXX.</b> <a href="ch044.xhtml">The satisfaction of Christ, on the consideration of his death being a punishment, farther evinced, and vindicated from the exceptions of Smalcius</a></p>
-<p class="contents-item"><b>Chapter XXXI.</b> <a href="ch045.xhtml">Of election and universal grace — Of the resurrection of Christ from the dead</a></p>
-<p class="contents-item"><b>Chapter XXXII.</b> <a href="ch046.xhtml">Of justification and faith</a></p>
-<p class="contents-item"><b>Chapter XXXIII.</b> <a href="ch047.xhtml">Of keeping the commandments of God, and of perfection of obedience — How attainable in this life</a></p>
-<p class="contents-item"><b>Chapter XXXIV.</b> <a href="ch048.xhtml">Of prayer; and whether Christ prescribed a form of prayer to be used by believers; and of praying unto him and in his name under the old testament</a></p>
-<p class="contents-item"><b>Chapter XXXV.</b> <a href="ch049.xhtml">Of the resurrection of the dead and the state of the wicked at the last day</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch007.xhtml">Mr Biddle's first chapter examined — Of the Scriptures</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch008.xhtml">Of the nature of God</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch009.xhtml">Of the shape and bodily visible figure of God</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch010.xhtml">Of the attribution of passions and affections, anger, fear, repentance, unto God — In what sense it is done in the Scripture</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch011.xhtml">Of God's prescience or foreknowledge</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch012.xhtml">Of the creation, and condition of man before and after the fall</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch015.xhtml">Of the person of Jesus Christ, and on what account he is the Son of God</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch018.xhtml">An entrance into the examination of the Racovian Catechism in the business of the deity of Christ — Their arguments against it answered; and testimonies of the eternity of Christ vindicated</a></p>
+<p class="contents-item"><strong>Chapter IX.</strong> <a href="ch019.xhtml">The pre-eternity of Christ farther evinced — Sundry texts of Scripture vindicated</a></p>
+<p class="contents-item"><strong>Chapter X.</strong> <a href="ch020.xhtml">Of the names of God given unto Christ</a></p>
+<p class="contents-item"><strong>Chapter XI.</strong> <a href="ch021.xhtml">Of the work of creation assigned to Jesus Christ, etc. — The confirmation of his eternal deity from thence</a></p>
+<p class="contents-item"><strong>Chapter XII.</strong> <a href="ch022.xhtml">All-ruling and disposing providence assigned unto Christ, and his eternal Godhead thence farther confirmed, with other testimonies thereof</a></p>
+<p class="contents-item"><strong>Chapter XIII.</strong> <a href="ch023.xhtml">Of the incarnation of Christ, and his pre-existence thereunto</a></p>
+<p class="contents-item"><strong>Chapter XIV.</strong> <a href="ch024.xhtml">Sundry other testimonies given to the deity of Christ vindicated</a></p>
+<p class="contents-item"><strong>Chapter XV.</strong> <a href="ch025.xhtml">Of the Holy Ghost, his deity, graces, and operations</a></p>
+<p class="contents-item"><strong>Chapter XVI.</strong> <a href="ch028.xhtml">Of salvation by Christ</a></p>
+<p class="contents-item"><strong>Chapter XVII.</strong> <a href="ch030.xhtml">Of the mediation of Christ</a></p>
+<p class="contents-item"><strong>Chapter XVIII.</strong> <a href="ch031.xhtml">Of Christ's prophetical office</a></p>
+<p class="contents-item"><strong>Chapter XIX.</strong> <a href="ch032.xhtml">Of the kingly office of Jesus Christ, and of the worship that is ascribed and due to him</a></p>
+<p class="contents-item"><strong>Chapter XX.</strong> <a href="ch033.xhtml">Of the priestly office of Christ — How he was a priest — When he entered on his office — And how he dischargeth it</a></p>
+<p class="contents-item"><strong>Chapter XXI.</strong> <a href="ch035.xhtml">Of the death of Christ, the causes, ends, and fruits thereof, with an entrance into the doctrine of his satisfaction thereby</a></p>
+<p class="contents-item"><strong>Chapter XXII.</strong> <a href="ch036.xhtml">The several considerations of the death of Christ as to the expiation of our sins thereby, and the satisfaction made therein — First, Of it as a price; secondly, As a sacrifice</a></p>
+<p class="contents-item"><strong>Chapter XXIII.</strong> <a href="ch037.xhtml">Of the death of Christ as it was a punishment, and the satisfaction made thereby</a></p>
+<p class="contents-item"><strong>Chapter XXIV.</strong> <a href="ch038.xhtml">Some particular testimonies evincing the death of Christ to be a punishment, properly so called</a></p>
+<p class="contents-item"><strong>Chapter XXV.</strong> <a href="ch039.xhtml">A digression concerning the 53d chapter of Isaiah, and the vindication of it from the perverse interpretation of HUGO GROTIUS</a></p>
+<p class="contents-item"><strong>Chapter XXVI.</strong> <a href="ch040.xhtml">Of the matter of the punishment that Christ underwent, or what he suffered</a></p>
+<p class="contents-item"><strong>Chapter XXVII.</strong> <a href="ch041.xhtml">Of the covenant between the Father and the Son, the ground and foundation of this dispensation of Christ’s being punished for us and in our stead</a></p>
+<p class="contents-item"><strong>Chapter XXVIII.</strong> <a href="ch042.xhtml">Of redemption by the death of Christ as it was a price or ransom</a></p>
+<p class="contents-item"><strong>Chapter XXIX.</strong> <a href="ch043.xhtml">Of reconciliation by the death of Christ as it is a sacrifice</a></p>
+<p class="contents-item"><strong>Chapter XXX.</strong> <a href="ch044.xhtml">The satisfaction of Christ, on the consideration of his death being a punishment, farther evinced, and vindicated from the exceptions of Smalcius</a></p>
+<p class="contents-item"><strong>Chapter XXXI.</strong> <a href="ch045.xhtml">Of election and universal grace — Of the resurrection of Christ from the dead</a></p>
+<p class="contents-item"><strong>Chapter XXXII.</strong> <a href="ch046.xhtml">Of justification and faith</a></p>
+<p class="contents-item"><strong>Chapter XXXIII.</strong> <a href="ch047.xhtml">Of keeping the commandments of God, and of perfection of obedience — How attainable in this life</a></p>
+<p class="contents-item"><strong>Chapter XXXIV.</strong> <a href="ch048.xhtml">Of prayer; and whether Christ prescribed a form of prayer to be used by believers; and of praying unto him and in his name under the old testament</a></p>
+<p class="contents-item"><strong>Chapter XXXV.</strong> <a href="ch049.xhtml">Of the resurrection of the dead and the state of the wicked at the last day</a></p>
 
 <h2 class="contents-treatise-title">OF THE DEATH OF CHRIST, AND OF JUSTIFICATION</h2>
 <p class="contents-item"><a href="ch050.xhtml">Of the Death of Christ, and of Justification (Answer to Richard Baxter)</a></p>
@@ -240,11 +240,20 @@ OVERRIDES = {
         "also .": "also.",
         "ejus ;": "ejus;",
         "est ,": "est,",
-        "t )": "t)",
-        "fieri ,": "fieri,",
-        "not ,": "not,",
+        "h/s subsisting": "his subsisting",
+        "abest, b si": "abest, si",
+        "even u the": "even the",
+        "allo w him": "allow him",
+        "kne w him": "knew him",
+        "delivered b from": "delivered from",
+        "Mr B hath": "Mr B. hath",
+        "seal et": "sed et",
     },
     'regex_replacements': {
+        r'\s*(\[f\d+\])\s*([.,;:?!)\]])': r'\2\1',
+        r'([a-zA-Z0-9])\s+([.,;:?)\]])': r'\1\2',
+        r'\s*_\._': '.',
+        r'((?:\*\*|_)+)\s+([.,;:?!)\]])': r'\1\2',
         r'(True|is|fieri|not)\s*([_*])\s*,\s*\2': r'\1,',
         r'also\s*([_*])\s*\.\s*\1': r'also.',
         r'ejus([_*])\s+;': r'ejus\1;',
@@ -253,6 +262,11 @@ OVERRIDES = {
         r'these two advantages:\s*—\s*He kept fair': 'these two advantages: — (1.) He kept fair',
         r'arrive unto\.\s*(\[f\d+\]\s*)?By this prerogative': r'arrive unto. \g<1>(8.) By this prerogative',
         r'oppressus et affiictus fuit et non': 'oppressus et afflictus fuit et non',
+        r'h/s subsisting': 'his subsisting',
+        r'at\s*\]east': 'at least',
+        r'\[f187\] b si sit prudentia: nos to,': '[f187] si sit prudentia: nos te,',
+        r'\[f384\] b from': '[f384] from',
+        r'yet\s*\]mow': 'yet know',
         r'divines,\s*—\s*Bull,\s*Waterland,\s*Horsley,\s*Magee,\s*Fuller,\s*Pye\s+Smith,\s*and\s*Wardlaw,\s*—\s*by':
         'divines, — George Bull, Daniel Waterland, Samuel Horsley, William Magee, Andrew Fuller, John Pye Smith, and Ralph Wardlaw, — by',
         r',,': ',',

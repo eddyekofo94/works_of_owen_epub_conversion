@@ -167,7 +167,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'brill-font',
+        'body_font': 'palatino',
         'heading_font': 'roboto',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -212,7 +212,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'palatino',
+        'body_font': 'brill-font',
         'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -347,7 +347,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'georgia',
+        'body_font': 'coelacanth',
         'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -2132,7 +2132,8 @@ def select_primary_font(body_font_name):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     font_dir = os.path.join(base_dir, 'fonts', body_font_name)
 
-    if not os.path.isdir(font_dir):
+    system_fonts = {'palatino', 'georgia', 'times new roman', 'baskerville', 'hoefler text'}
+    if not os.path.isdir(font_dir) and body_font_name.lower() not in system_fonts:
         print(
             f"[WARN] Font directory not found for '{body_font_name}' "
             f"(looked in fonts/{body_font_name}/). Falling back to sbl-blit.",
@@ -2167,6 +2168,8 @@ def select_primary_font(body_font_name):
 
 SBL_SUPPLEMENTS = {
     'SBL_BLit.ttf': 'sbl-blit/SBL_BLit.ttf',
+    'SBL_grk.ttf': 'sbl-blit/SBL_grk.ttf',
+    'SBL_Hbrw.ttf': 'sbl-blit/SBL_Hbrw.ttf',
 }
 
 EZRA_SIL_FILES = {
@@ -2202,6 +2205,7 @@ GENTIUM_PLUS_FILES = {
 
 # Distinctly Latin words for tagging
 LATIN_DICTIONARY = {
+    'grotius', 'socinus', 'smalcius', 'crellius', 'annotator', 'jus', 'thomas', 'franciscus', 'incarnate', 'transylvania',
     'et', 'est', 'non', 'ut', 'ad', 'cum', 'qui', 'quae', 'quod', 'quibus', 'sub', 'pro', 'per', 
     'ab', 'ex', 'sine', 'de', 'sunt', 'esse', 'fuit', 'deus', 'dominus', 'christus', 'jesu', 
     'patris', 'filii', 'spiritus', 'sancti', 'gratia', 'fide', 'scriptura', 'ecclesia', 'vero', 
@@ -2502,9 +2506,15 @@ EPUB_STYLESHEET = r"""
 body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     line-height: 1.65;
     margin: 0.4em 0.5em; /* Apple Books margin */
     color: #111;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* Base typography (lets Apple Books honour the reader's chosen font) */
@@ -2512,23 +2522,17 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, "Times New Roman", serif;
 }
 
-body, p {
-    text-align: justify;
-    text-justify: inter-word;
-    -webkit-hyphens: auto;
-    -epub-hyphens: auto;
-    hyphens: auto;
-    word-break: normal;
-    overflow-wrap: break-word;
-}
-
 p {
+    text-align: justify;
+    -epub-text-align-last: left;
+    text-align-last: left;
     orphans: 2;
     widows: 2;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    text-align: left;
     -webkit-hyphens: none;
     -epub-hyphens: none;
     hyphens: none;
@@ -2552,38 +2556,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Interactive Owen Blue Palette (#2a55a0) */
-a, .noteref, a.footnote-ref, a.fn-link {
-    color: #2a55a0 !important;
-    text-decoration: none;
-}
-
-.noteref {
+a[epub\:type="noteref"], .noteref {
     display: inline !important;
     vertical-align: super;
-    font-size: 0.85rem;   /* root-relative to remain consistent inside headings */
-    padding: 0.1em 0.15em;
+    font-size: 0.70rem;   /* root-relative to remain consistent inside headings */
+    line-height: 0;
+    padding: 0.1em 0.15em 0.1em 0.4em !important; /* Left padding provides 0.25em separation */
+    white-space: nowrap;
 }
 
 .noteref-glossary, .noteref-biographical {
-    display: inline !important;
-    vertical-align: super;
-    font-size: 0.85rem;
     padding: 0.1em 0.2em;
 }
 
-/* Interactive Owen Blue Palette (#2a55a0) */
+/* Interactive Owen Blue Palette (#2a55a0) overrides for trans/glossary */
 a.noteref-trans, .noteref-trans {
-    display: inline !important;
     color: #b8860b !important;
-    text-decoration: none;
-    vertical-align: super;
-    font-size: 0.85rem;
-    padding: 0.1em 0.2em;
     font-weight: bold;
+    padding: 0.1em 0.2em;
 }
-.noteref-trans sup {
-    font-size: 0.95em;
-    line-height: 1;
+
+/* Prevent <sup> tags inside .noteref from double-shrinking the root-relative 0.70rem */
+.noteref sup {
+    font-size: 1em;
+    line-height: inherit;
+    vertical-align: baseline;
+}
+
+a, .noteref, a.footnote-ref, a.fn-link {
+    color: #2a55a0 !important;
+    text-decoration: none;
 }
 
 /* Modern Translation Footnote Sub-Block */
@@ -3273,10 +3275,12 @@ sup {
 }
 
 .footnote {
-    font-size: 0.88em;
-    text-indent: 0;
-    margin: 0.4em 0;        /* Slightly more space between footnotes on mobile */
-    line-height: 1.55;
+    font-size: 1.0em !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 1.5em 0 0.8em 0 !important;
+    text-indent: 0 !important;
+    display: block;
 }
 
 /* Proper TOC Alignment */
@@ -3393,7 +3397,8 @@ p.signature {
     text-align: center;
     text-indent: 0;
 }
-.treatise-title-page p {
+.treatise-title-page p,
+.treatise-title-page div {
     text-align: center;
     text-indent: 0;
     margin: 0.42em 0;
@@ -3449,6 +3454,8 @@ p.signature {
 
 aside[epub\:type~="footnote"] {
     display: block;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 aside[epub\:type~="endnote"] {
@@ -3776,14 +3783,14 @@ EPUB3_FONT_STYLES = r"""
     font-family: "SBL Greek";
     font-weight: normal;
     font-style: normal;
-    src: url("../Fonts/SBL_BLit.ttf");
+    src: url("../Fonts/SBL_grk.ttf");
 }}
 /* SBL Hebrew — fully pointed Hebrew */
 @font-face {{
     font-family: "SBL Hebrew";
     font-weight: normal;
     font-style: normal;
-    src: url("../Fonts/SBL_BLit.ttf");
+    src: url("../Fonts/SBL_Hbrw.ttf");
 }}
 /* Ezra SIL — BHS-style Hebrew fallback */
 @font-face {{
@@ -3903,7 +3910,15 @@ h4.roman-subheading, .roman-list-item, .roman-list-item b {{
 
 def generate_font_styles(primary_font_name, primary_font_files, heading_font_name='Proxima Nova', heading_font_files=None):
     def _build_faces(font_name, files):
-        if not files: return "", ""
+        if not files:
+            # Inject system fonts using local() if directory is empty
+            faces = ""
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: normal;\n    font-style: normal;\n    src: local("{font_name}");\n}}\n'
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: bold;\n    font-style: normal;\n    src: local("{font_name}-Bold"), local("{font_name} Bold");\n}}\n'
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: normal;\n    font-style: italic;\n    src: local("{font_name}-Italic"), local("{font_name} Italic");\n}}\n'
+            faces += f'@font-face {{\n    font-family: "{font_name}";\n    font-weight: bold;\n    font-style: italic;\n    src: local("{font_name}-BoldItalic"), local("{font_name} Bold Italic");\n}}\n'
+            return faces, ""
+            
         def _font_sort_key(path):
             n = os.path.basename(path).lower()
             stem = os.path.splitext(n)[0]

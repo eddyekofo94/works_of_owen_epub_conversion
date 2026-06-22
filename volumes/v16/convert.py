@@ -17,78 +17,78 @@ from shared import run_volume_cli
 VOL = 16
 
 _V16_GOSPEL_CHURCH_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">The True Nature</p>
-<p class="title-connector">of a</p>
-<p class="title-line-major">Gospel Church</p>
-<p class="title-connector">and</p>
-<p class="title-line-major">Its Government:</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="descriptive">Wherein these following particulars are distinctly handled:</p>
-<p class="descriptive">The Subject-Matter of the Church; The Formal Cause of a Particular Church; The Polity, Rule, or Discipline, of the Church in General; The Officers of the Church; The Duty of Pastors of Churches; The Office of Teachers in the Church; The Rule of the Church, or of Ruling Elders; The Nature of Church Polity or Rule, with the Duty of Elders; Of Deacons; Of Excommunication; Of the Communion of Churches.</p>
+<div class="title-line-medium">The True Nature</div>
+<div class="title-connector">of a</div>
+<div class="title-line-major">Gospel Church</div>
+<div class="title-connector">and</div>
+<div class="title-line-major">Its Government:</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="descriptive">Wherein these following particulars are distinctly handled:</div>
+<div class="descriptive">The Subject-Matter of the Church; The Formal Cause of a Particular Church; The Polity, Rule, or Discipline, of the Church in General; The Officers of the Church; The Duty of Pastors of Churches; The Office of Teachers in the Church; The Rule of the Church, or of Ruling Elders; The Nature of Church Polity or Rule, with the Duty of Elders; Of Deacons; Of Excommunication; Of the Communion of Churches.</div>
 </section>'''
 
 _V16_LETTER_DISCOURSE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">A Letter</p>
-<p class="title-connector">concerning the matter of the present</p>
-<p class="title-line-major">Excommunications.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-line-medium">A Discourse</p>
-<p class="title-connector">concerning the</p>
-<p class="title-line-major">Administration of Church Censures.</p>
+<div class="title-line-medium">A Letter</div>
+<div class="title-connector">concerning the matter of the present</div>
+<div class="title-line-major">Excommunications.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-line-medium">A Discourse</div>
+<div class="title-connector">concerning the</div>
+<div class="title-line-major">Administration of Church Censures.</div>
 </section>'''
 
 _V16_ANSWER_TWO_QUESTIONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">An Answer Unto</p>
-<p class="title-line-major">Two Questions:</p>
-<p class="title-connector">with</p>
-<p class="title-line-medium">Twelve Arguments against any Conformity to</p>
-<p class="title-line-medium">Worship not of Divine Institution.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-source">"Should ye not hear the words which the Lord hath cried by the former prophets?" — Zechariah 7:7.<br/>
-"Happy is he that condemneth not himself in that thing which he alloweth." — Romans 14:22.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-line-medium">Of Marrying after Divorce in case of Adultery.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-line-medium">Of Infant Baptism and Dipping.</p>
+<div class="title-line-medium">An Answer Unto</div>
+<div class="title-line-major">Two Questions:</div>
+<div class="title-connector">with</div>
+<div class="title-line-medium">Twelve Arguments against any Conformity to</div>
+<div class="title-line-medium">Worship not of Divine Institution.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">"Should ye not hear the words which the Lord hath cried by the former prophets?" — Zechariah 7:7.<br/>
+"Happy is he that condemneth not himself in that thing which he alloweth." — Romans 14:22.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-line-medium">Of Marrying after Divorce in case of Adultery.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-line-medium">Of Infant Baptism and Dipping.</div>
 </section>'''
 
 _V16_TREATISES_SCRIPTURES_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Treatises</p>
-<p class="title-connector">Concerning</p>
-<p class="title-line-major">The Scriptures.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-line-medium">I. The Divine Original of the Scripture.</p>
-<p class="title-line-medium">II. Integrity and Purity of the Hebrew and Greek Text.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-source">"Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me." — John 5:39.</p>
+<div class="title-line-major">Treatises</div>
+<div class="title-connector">Concerning</div>
+<div class="title-line-major">The Scriptures.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-line-medium">I. The Divine Original of the Scripture.</div>
+<div class="title-line-medium">II. Integrity and Purity of the Hebrew and Greek Text.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">"Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me." — John 5:39.</div>
 </section>'''
 
 _V16_HEBREW_GREEK_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">Of the</p>
-<p class="title-line-major">Integrity and Purity</p>
-<p class="title-connector">of the</p>
-<p class="title-line-medium">Hebrew and Greek Text of the Scripture;</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="descriptive">With Considerations on the Prolegomena and Appendix to the Late</p>
-<p class="descriptive">Biblia Polyglotta.</p>
+<div class="title-line-medium">Of the</div>
+<div class="title-line-major">Integrity and Purity</div>
+<div class="title-connector">of the</div>
+<div class="title-line-medium">Hebrew and Greek Text of the Scripture;</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="descriptive">With Considerations on the Prolegomena and Appendix to the Late</div>
+<div class="descriptive">Biblia Polyglotta.</div>
 </section>'''
 
 _V16_POSTHUMOUS_SERMONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Posthumous Sermons:</p>
-<p class="title-connector">Or,</p>
-<p class="title-line-medium">Thirteen Sermons</p>
-<p class="title-connector">Preached on</p>
-<p class="title-line-medium">Various Occasions.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-source">First published in 1756.</p>
+<div class="title-line-major">Posthumous Sermons:</div>
+<div class="title-connector">Or,</div>
+<div class="title-line-medium">Thirteen Sermons</div>
+<div class="title-connector">Preached on</div>
+<div class="title-line-medium">Various Occasions.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">First published in 1756.</div>
 </section>'''
 
 _V16_THREE_DISCOURSES_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Three Discourses</p>
-<p class="title-connector">Suitable to</p>
-<p class="title-line-medium">The Lord's Supper.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-source">Delivered in 1669 and 1674.</p>
+<div class="title-line-major">Three Discourses</div>
+<div class="title-connector">Suitable to</div>
+<div class="title-line-medium">The Lord's Supper.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">Delivered in 1669 and 1674.</div>
 </section>'''
 
 def post_extract_hook(intermediate: dict) -> dict:
@@ -206,7 +206,7 @@ def post_extract_hook(intermediate: dict) -> dict:
         # Fix line breaks around TOC items split across pages
         html = html.replace('The great and</p>\n<p class="contents-desc">incomparable care', 'The great and incomparable care')
         html = html.replace('renovation.</p>\n<p class="contents-desc">Isaiah 40:31,</p>', 'renovation. — Isaiah 40:31,</p>')
-        html = html.replace('Perilous Times. —</p>\n<p class="contents-item"><b>2 </b> Timothy 3:1-5,</p>', 'Perilous Times. — 2 Timothy 3:1-5,</p>')
+        html = html.replace('Perilous Times. —</p>\n<p class="contents-item"><strong>2 </strong> Timothy 3:1-5,</p>', 'Perilous Times. — 2 Timothy 3:1-5,</p>')
         html = html.replace('Peter 3:11,</p>', '2 Peter 3:11,</p>')
         fm['html'] = html
 

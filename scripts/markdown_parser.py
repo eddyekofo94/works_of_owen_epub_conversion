@@ -251,7 +251,7 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
         match = _roman_head_match(content_clean)
         if not match:
             return _render_heading_content(content_clean)
-        roman_html = f'<b>{_html_escape(match.group("roman"))}</b>'
+        roman_html = f'<strong>{_html_escape(match.group("roman"))}</strong>'
         rest = (match.group('rest') or '').strip()
         if not rest:
             return roman_html
@@ -288,9 +288,9 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
                 if part_match:
                     lead = _html_escape(part_match.group(1).rstrip('.'))
                     rest = _render_heading_content(part_match.group(2).strip())
-                    html_parts.append(f'<p class="analysis-part"><b>{lead}.</b> {rest}</p>')
+                    html_parts.append(f'<p class="analysis-part"><strong>{lead}.</strong> {rest}</p>')
                 else:
-                    html_parts.append(f'<p class="analysis-part"><b>{_escaped}</b></p>')
+                    html_parts.append(f'<p class="analysis-part"><strong>{_escaped}</strong></p>')
                 state.fm_prose_started = False
                 state.pending_drop_cap = False
                 return True
@@ -299,7 +299,7 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
                 if roman_match:
                     numeral = _html_escape(roman_match.group(1))
                     rest = _render_heading_content(roman_match.group(2).strip())
-                    html_parts.append(f'<p class="roman-list-item"><b>{numeral}</b> {rest}</p>')
+                    html_parts.append(f'<p class="roman-list-item"><strong>{numeral}</strong> {rest}</p>')
                 else:
                     html_parts.append(f'<p class="roman-list-item">{_escaped}</p>')
                 state.fm_prose_started = False
@@ -325,7 +325,7 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
                 html_parts.append(f'<h3 class="secondary">{_escaped}</h3>')
             state.fm_prose_started = False
         else:
-            html_parts.append(f'<p class="front-matter-body"><b>{_escaped}</b></p>')
+            html_parts.append(f'<p class="front-matter-body"><strong>{_escaped}</strong></p>')
         state.pending_drop_cap = False
         return True
 
@@ -533,7 +533,7 @@ def _clean_and_format_paragraph(para: str, state: ParserState, config: Optional[
             if front_matter_style != "prose":
                 html_parts.append(
                     f'<p class="front-matter-body">'
-                    f'<b>{tag_unicode_ranges(_html_escape(content_no_refs))}</b>'
+                    f'<strong>{tag_unicode_ranges(_html_escape(content_no_refs))}</strong>'
                     f'</p>'
                 )
                 state.pending_drop_cap = False
@@ -829,12 +829,12 @@ def _render_block_container(text_html: str, h_tag: Optional[str], subtitle_md: O
                 )
                 if _is_signature:
                     paragraph_html = re.sub(r'\s*[\u0370-\u03FF\u1F00-\u1FFF].*$', '', paragraph_html)
-                    m_sig = re.match(r'^((?:<i>|<b>)*W\.\s*H\.\s*G\.(?:</i>|</b>)*)\s+((?:<i>|<b>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</i>|</b>)*)\s*$', paragraph_html)
+                    m_sig = re.match(r'^((?:<em>|<strong>)*W\.\s*H\.\s*G\.(?:</em>|</strong>)*)\s+((?:<em>|<strong>)*[A-Z][a-z]+,.*18\d{2}\.?(?:</em>|</strong>)*)\s*$', paragraph_html)
                     if m_sig:
                         paragraph_html = f'{m_sig.group(1)}<br/>{m_sig.group(2)}'
                     
                     m_study = re.match(
-                        r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+'
+                        r'^((?:<em>|<strong>)*[A-Z]\.[A-Z]\.(?:</em>|</strong>)*)\s+'
                         r'(From\s+my\s+study\b.*?),\s*'
                         r'([A-Z][a-z]+(?:\s+the\s+last)?,\s*\[?\d{4}\]?\.?)$',
                         paragraph_html,
@@ -843,7 +843,7 @@ def _render_block_container(text_html: str, h_tag: Optional[str], subtitle_md: O
                     if m_study:
                         paragraph_html = f'{m_study.group(1)}<br/>{m_study.group(2)}<br/>{m_study.group(3)}'
                     else:
-                        m_study2 = re.match(r'^((?:<i>|<b>)*[A-Z]\.[A-Z]\.(?:</i>|</b>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
+                        m_study2 = re.match(r'^((?:<em>|<strong>)*[A-Z]\.[A-Z]\.(?:</em>|</strong>)*)\s+(From\s+my\s+study.*)$', paragraph_html, re.I)
                         if m_study2:
                             paragraph_html = f'{m_study2.group(1)}<br/>{m_study2.group(2)}'
                     
@@ -854,7 +854,7 @@ def _render_block_container(text_html: str, h_tag: Optional[str], subtitle_md: O
                 if state.current_mode == "FRONT_MATTER":
                     if front_matter_style == "prose":
                         _emb_sig = re.search(
-                            r'(,\s*|\.\s*)(<i><b>|<b><i>|<i>|<b>)([A-Z][A-Z\s]+)(</b></i>|</i></b>|</i>|</b>)\s*\.?\s*(<a[^>]*noteref[^>]*>.*?</a>)?\s*$',
+                            r'(,\s*|\.\s*)(<em><strong>|<strong><em>|<em>|<strong>)([A-Z][A-Z\s]+)(</strong></em>|</em></strong>|</em>|</strong>)\s*\.?\s*(<a[^>]*noteref[^>]*>.*?</a>)?\s*$',
                             paragraph_html,
                         )
                         if _emb_sig:
@@ -882,10 +882,10 @@ def _render_block_container(text_html: str, h_tag: Optional[str], subtitle_md: O
                     p_class = ""
                     if state.pending_drop_cap and state.current_mode == "BODY_START":
                         is_subpoint = re.match(
-                            r'^(?:<b>)?(?:\([0-9IVXLCDM]+\.?\)|[0-9]+\.|[IVXLCDM]+\.|Ans\.|Sol\.|Obj\.|Objection|Answer|Solution|Use\s+\d+)', 
+                            r'^(?:<strong>)?(?:\([0-9IVXLCDM]+\.?\)|[0-9]+\.|[IVXLCDM]+\.|Ans\.|Sol\.|Obj\.|Objection|Answer|Solution|Use\s+\d+)', 
                             paragraph_html, re.I
                         )
-                        starts_with_letter = re.match(r'^(?:<b>)?[A-Z]', paragraph_html, re.I)
+                        starts_with_letter = re.match(r'^(?:<strong>)?[A-Z]', paragraph_html, re.I)
                         
                         if not is_subpoint and starts_with_letter:
                             p_class = ' class="first"'
@@ -894,13 +894,13 @@ def _render_block_container(text_html: str, h_tag: Optional[str], subtitle_md: O
                     
                     if not p_class:
                         is_qa = (
-                            re.match(r'^(?:<b>)?(?:Q\.|Ques\.|Ans\.)', paragraph_html, re.I)
+                            re.match(r'^(?:<strong>)?(?:Q\.|Ques\.|Ans\.)', paragraph_html, re.I)
                             or (
                                 state.is_catechism_context
-                                and re.match(r'^(?:<b>)?A\.', paragraph_html, re.I)
+                                and re.match(r'^(?:<strong>)?A\.', paragraph_html, re.I)
                             )
                         )
-                        is_proof = re.match(rf'^(?:<b>)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', paragraph_html, re.I)
+                        is_proof = re.match(rf'^(?:<strong>)?(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b', paragraph_html, re.I)
                         roman_plain_match = _roman_head_match(plain_for_class)
                         is_combined_roman_decimal = bool(_roman_decimal_marker_match(plain_for_class))
                         is_continued_roman_outline = False
@@ -930,7 +930,7 @@ def _render_block_container(text_html: str, h_tag: Optional[str], subtitle_md: O
                             state.roman_list_expected = roman_number + 1
                         elif STRUCTURAL_START_RE.match(plain_for_class):
                              p_class = ' class="list-item"'
-                        elif re.match(r'^(?:<b>)?Part\s+[IVXLCDM]+\.', paragraph_html, re.I):
+                        elif re.match(r'^(?:<strong>)?Part\s+[IVXLCDM]+\.', paragraph_html, re.I):
                              p_class = ' class="list-item"'
                             
                         html_parts.append(f'<p{p_class}>{paragraph_html}</p>')
@@ -1078,40 +1078,40 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
             return f"**{m.group(1)}**"
 
         text_html = re.sub(r'(?<!\*)\b(\d+\.)\*\*(?=\s+)', _repair_bold_marker, text_html)
-        text_html = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text_html)
-        text_html = re.sub(r'(?<!\*)_(.+?)_(?!\*)', r'<i>\1</i>', text_html)
+        text_html = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text_html)
+        text_html = re.sub(r'(?<!\*)_(.+?)_(?!\*)', r'<em>\1</em>', text_html)
         text_html = re.sub(rf'\s*\*\*\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', ' ', text_html, flags=re.I)
 
-        text_html = re.sub(r'<b>(Q\.\s*)</b>(\d+\.)\*\*', r'<b>\1\2</b>', text_html)
-        text_html = re.sub(r'<b>(A\.\s*)</b>(\d+\.)\*\*', r'<b>\1\2</b>', text_html)
-        text_html = re.sub(r'<b>(Q\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
-        text_html = re.sub(r'<b>(A\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
-        text_html = re.sub(r'<b>(Ques\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
-        text_html = re.sub(r'<b>(Ans\.\s*\d+\.)</b>\s+', r'<b>\1</b> ', text_html)
-        text_html = re.sub(r'<b>(Ans\.)</b>\s+', r'<b>\1</b> ', text_html)
-        text_html = re.sub(r'<b>(Ques\.)</b>\s+', r'<b>\1</b> ', text_html)
-        text_html = re.sub(r'^<b>([IVXLCDM]+\.)</b>\s+(\d+\.)\s+', r'<b>\1 \2</b> ', text_html)
-        text_html = re.sub(r'<b>([QA])\.</b>\s*,\s*', r'<b>\1.</b> ', text_html)
+        text_html = re.sub(r'<strong>(Q\.\s*)</strong>(\d+\.)\*\*', r'<strong>\1\2</strong>', text_html)
+        text_html = re.sub(r'<strong>(A\.\s*)</strong>(\d+\.)\*\*', r'<strong>\1\2</strong>', text_html)
+        text_html = re.sub(r'<strong>(Q\.\s*\d+\.)</strong>\s+', r'<strong>\1</strong> ', text_html)
+        text_html = re.sub(r'<strong>(A\.\s*\d+\.)</strong>\s+', r'<strong>\1</strong> ', text_html)
+        text_html = re.sub(r'<strong>(Ques\.\s*\d+\.)</strong>\s+', r'<strong>\1</strong> ', text_html)
+        text_html = re.sub(r'<strong>(Ans\.\s*\d+\.)</strong>\s+', r'<strong>\1</strong> ', text_html)
+        text_html = re.sub(r'<strong>(Ans\.)</strong>\s+', r'<strong>\1</strong> ', text_html)
+        text_html = re.sub(r'<strong>(Ques\.)</strong>\s+', r'<strong>\1</strong> ', text_html)
+        text_html = re.sub(r'^<strong>([IVXLCDM]+\.)</strong>\s+(\d+\.)\s+', r'<strong>\1 \2</strong> ', text_html)
+        text_html = re.sub(r'<strong>([QA])\.</strong>\s*,\s*', r'<strong>\1.</strong> ', text_html)
 
         text_html = re.sub(
-            r'^(<b>A\.</b>\s+)([^<]{6,180}?[.!?;])\s+<b>A\.</b>\s+\2',
+            r'^(<strong>A\.</strong>\s+)([^<]{6,180}?[.!?;])\s+<strong>A\.</strong>\s+\2',
             r'\1\2',
             text_html,
             flags=re.I,
         )
         text_html = emphasize_structural_prefix(text_html)
-        text_html = re.sub(r'^<b>([IVXLCDM]+\.)</b>\s+(?:<b>)?(\d+\.)(?:</b>)?\s+', r'<b>\1 \2</b> ', text_html)
-        text_html = re.sub(r'(\b(?:verse|verses|chap|chapter)\.?\s*)<b>(\d+[.;]?)</b>', r'\1\2', text_html, flags=re.I)
-        text_html = re.sub(r'(\b\d+:\d+(?:[-,]\s*\d+)*,\s*)<b>(\d+[.;]?)</b>', r'\1\2', text_html)
-        text_html = re.sub(r'<b>(\d+(?:st|nd|rd|th))</b>(\s+(?:Psalm|Psalms)\b)', r'\1\2', text_html)
+        text_html = re.sub(r'^<strong>([IVXLCDM]+\.)</strong>\s+(?:<strong>)?(\d+\.)(?:</strong>)?\s+', r'<strong>\1 \2</strong> ', text_html)
+        text_html = re.sub(r'(\b(?:verse|verses|chap|chapter)\.?\s*)<strong>(\d+[.;]?)</strong>', r'\1\2', text_html, flags=re.I)
+        text_html = re.sub(r'(\b\d+:\d+(?:[-,]\s*\d+)*,\s*)<strong>(\d+[.;]?)</strong>', r'\1\2', text_html)
+        text_html = re.sub(r'<strong>(\d+(?:st|nd|rd|th))</strong>(\s+(?:Psalm|Psalms)\b)', r'\1\2', text_html)
 
         _prev_plain = state.recent_plain[-1] if state.recent_plain else ''
         if (
-            re.match(r'^<b>\d+[.;]?</b>\s', text_html)
+            re.match(r'^<strong>\d+[.;]?</strong>\s', text_html)
             and re.search(r'(?:\b\d+:\d+(?:[-,]\s*\d+)*|\b\d+)\s*,\s*$', _prev_plain)
             and not _TRANSITIONAL_WORD_RE.match(_prev_plain.strip())
         ):
-            text_html = re.sub(r'^<b>(\d+[.;]?)</b>\s', r'\1 ', text_html)
+            text_html = re.sub(r'^<strong>(\d+[.;]?)</strong>\s', r'\1 ', text_html)
 
         text_html = tag_unicode_ranges(text_html)
         from render import _restore_footnote_placeholders
@@ -1122,8 +1122,8 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
         text_html = re.sub(r'\.+', '.', text_html)
         text_html = re.sub(r', \.', r'.', text_html)
 
-        text_html = re.sub(r'<b>([QA])\.</b>\s+(\d+)\.', r'<b>\1. \2.</b>', text_html)
-        text_html = re.sub(r'<b>(Ques|Ans)\.</b>\s+(\d+)\.', r'<b>\1. \2.</b>', text_html)
+        text_html = re.sub(r'<strong>([QA])\.</strong>\s+(\d+)\.', r'<strong>\1. \2.</strong>', text_html)
+        text_html = re.sub(r'<strong>(Ques|Ans)\.</strong>\s+(\d+)\.', r'<strong>\1. \2.</strong>', text_html)
 
         _render_block_container(
             text_html=text_html,

@@ -2,7 +2,7 @@
   "volume": "8",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/input/owen-v8.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-06-15T01:09:51.288016+00:00",
+  "generated_at": "2026-06-22T12:12:12.790978+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -16,7 +16,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 253552,
-    "epub_content_tokens": 257196,
+    "epub_content_tokens": 257195,
     "coverage_ratio": 0.9995,
     "missing_word_samples": [
       {
@@ -945,13 +945,13 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 989,
-    "epub_latin_word_count": 1006,
+    "epub_latin_word_count": 1005,
     "epub_tagged_latin_word_count": 567,
     "pdf_latin_unique_words": 698,
-    "epub_latin_unique_words": 711,
+    "epub_latin_unique_words": 710,
     "epub_tagged_unique_words": 397,
     "latin_word_coverage_ratio": 0.998,
-    "latin_tagging_ratio": 0.5636,
+    "latin_tagging_ratio": 0.5642,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -1054,8 +1054,8 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 166,
-    "translated_latin_runs_count": 107,
-    "latin_translation_ratio": 0.6446,
+    "translated_latin_runs_count": 108,
+    "latin_translation_ratio": 0.6506,
     "untranslated_latin_samples": [
       {
         "phrase": "Christus in petra"

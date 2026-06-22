@@ -8,11 +8,11 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 105
-- Manifest items: 96
+- Files: 103
+- Manifest items: 94
 - Spine items: 74
 - XHTML files: 75
-- Embedded fonts: 16
+- Embedded fonts: 14
 - NAV links: 76
 
 ## Content Checks

@@ -30,38 +30,38 @@ VOL = 2
 # ---------------------------------------------------------------------------
 
 _V2_COMMUNION_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Communion with God</p>
-<p class="title-connector">the Father, Son, and Holy Ghost,</p>
-<p class="title-connector">Each Person Distinctly, in</p>
-<p class="title-line-medium">Love, Grace, and Consolation;</p>
-<p class="title-connector">or, the</p>
-<p class="title-line-medium">Saint's Fellowship with the Father,</p>
-<p class="title-line-medium">Son, and Holy Ghost,</p>
-<p class="title-connector">Unfolded.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Truly our fellowship is with the Father, and with his Son Jesus Christ." — 1 John 1:3.</p></div>
+<div class="title-line-major">Communion with God</div>
+<div class="title-connector">the Father, Son, and Holy Ghost,</div>
+<div class="title-connector">Each Person Distinctly, in</div>
+<div class="title-line-medium">Love, Grace, and Consolation;</div>
+<div class="title-connector">or, the</div>
+<div class="title-line-medium">Saint's Fellowship with the Father,</div>
+<div class="title-line-medium">Son, and Holy Ghost,</div>
+<div class="title-connector">Unfolded.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"Truly our fellowship is with the Father, and with his Son Jesus Christ." — 1 John 1:3.</div></div>
 </section>'''
 
 _V2_VINDICATION_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Vindication</p>
-<p class="title-connector">of Some Passages in a Discourse Concerning</p>
-<p class="title-line-medium">Communion with God,</p>
-<p class="title-connector">from the Exceptions of</p>
-<p class="title-line-medium">William Sherlock.</p>
+<div class="title-line-major">A Vindication</div>
+<div class="title-connector">of Some Passages in a Discourse Concerning</div>
+<div class="title-line-medium">Communion with God,</div>
+<div class="title-connector">from the Exceptions of</div>
+<div class="title-line-medium">William Sherlock.</div>
 </section>'''
 
 _V2_TRINITY_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Brief Declaration</p>
-<p class="title-connector">and</p>
-<p class="title-line-major">Vindication</p>
-<p class="title-connector">of the Doctrine of the</p>
-<p class="title-line-medium">Holy Trinity;</p>
-<p class="title-connector">as also of the</p>
-<p class="title-line-medium">Person and Satisfaction of Christ:</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="descriptive">Accommodated to the Capacity and Use of Such as May Be in Danger to Be Seduced, and the Direction of Plain Believers.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost." — Matthew 28:19.</p></div>
+<div class="title-line-major">A Brief Declaration</div>
+<div class="title-connector">and</div>
+<div class="title-line-major">Vindication</div>
+<div class="title-connector">of the Doctrine of the</div>
+<div class="title-line-medium">Holy Trinity;</div>
+<div class="title-connector">as also of the</div>
+<div class="title-line-medium">Person and Satisfaction of Christ:</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="descriptive">Accommodated to the Capacity and Use of Such as May Be in Danger to Be Seduced, and the Direction of Plain Believers.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost." — Matthew 28:19.</div></div>
 </section>'''
 
 _V2_CONTENTS_PAGE = """<section class="contents-page" epub:type="toc">
@@ -74,32 +74,32 @@ _V2_CONTENTS_PAGE = """<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch004.xhtml">Prefatory Note</a></p>
 <p class="contents-item"><a href="ch005.xhtml">Analysis.</a></p>
 <h3 class="contents-part-title">Part I</h3>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch007.xhtml">That the saints have communion with God — 1 John 1:3 considered to that purpose — ...</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch008.xhtml">That the saints have this communion distinctly with the Father, Son, and Spirit — ...</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch009.xhtml">Of the peculiar and distinct communion which the saints have with the Father — Obs...</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch010.xhtml">Inferences on the former doctrine concerning communion with the Father in love.</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch007.xhtml">That the saints have communion with God — 1 John 1:3 considered to that purpose — ...</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch008.xhtml">That the saints have this communion distinctly with the Father, Son, and Spirit — ...</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch009.xhtml">Of the peculiar and distinct communion which the saints have with the Father — Obs...</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch010.xhtml">Inferences on the former doctrine concerning communion with the Father in love.</a></p>
 <h3 class="contents-part-title">Part II. — Of Communion With the Son Jesus Christ</h3>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch012.xhtml">Of the fellowship which the saints have with Jesus Christ the Son of God — That th...</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch013.xhtml">What it is wherein we have peculiar fellowship with the Lord Christ — This is in g...</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch014.xhtml">Of the way and manner whereby the saints hold communion with the Lord Christ as to...</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch012.xhtml">Of the fellowship which the saints have with Jesus Christ the Son of God — That th...</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch013.xhtml">What it is wherein we have peculiar fellowship with the Lord Christ — This is in g...</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch014.xhtml">Of the way and manner whereby the saints hold communion with the Lord Christ as to...</a></p>
 <p class="contents-item"><a href="ch015.xhtml">Digression 1.</a></p>
 <p class="contents-item"><a href="ch016.xhtml">Digression 2.</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch017.xhtml">Of communion with Christ in a conjugal relation in respect of consequential affect...</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch018.xhtml">Other consequential affections: — 1 On the part of Christ — He values his saints —...</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch019.xhtml">Of communion with Christ in purchased grace — considered in respect of its rise an...</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch020.xhtml">The nature of purchased grace; referred to three heads: —</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch021.xhtml">How the saints hold communion with Christ as to their acceptation with God — What ...</a></p>
-<p class="contents-item"><b>Chapter IX.</b> <a href="ch022.xhtml">Of communion with Christ in holiness — The several acts ascribed unto the Lord Chr...</a></p>
-<p class="contents-item"><b>Chapter X.</b> <a href="ch023.xhtml">Of communion with Christ in privileges — Of adoption; the nature of it, the conseq...</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch017.xhtml">Of communion with Christ in a conjugal relation in respect of consequential affect...</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch018.xhtml">Other consequential affections: — 1 On the part of Christ — He values his saints —...</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch019.xhtml">Of communion with Christ in purchased grace — considered in respect of its rise an...</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch020.xhtml">The nature of purchased grace; referred to three heads: —</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch021.xhtml">How the saints hold communion with Christ as to their acceptation with God — What ...</a></p>
+<p class="contents-item"><strong>Chapter IX.</strong> <a href="ch022.xhtml">Of communion with Christ in holiness — The several acts ascribed unto the Lord Chr...</a></p>
+<p class="contents-item"><strong>Chapter X.</strong> <a href="ch023.xhtml">Of communion with Christ in privileges — Of adoption; the nature of it, the conseq...</a></p>
 <h3 class="contents-part-title">Part III. — Of Communion With the Holy Ghost.</h3>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch025.xhtml">The foundation of our communion with the Holy ghost (John 16:1-7) opened at large ...</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch026.xhtml">Of the acting of the Holy Ghost in us, being bestowed on us — He worketh effectual...</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch027.xhtml">Of the things wherein we have communion with the Holy Ghost — He brings to remembr...</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch028.xhtml">The general consequences in the hearts of believers of the effects of the Holy Gho...</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch029.xhtml">Some observations and inferences from discourses foregoing concerning the Spirit —...</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch030.xhtml">Of particular communion with the Holy Ghost — Of preparation thereunto — Valuation...</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch031.xhtml">The general ways of the saints' acting in communion with the Holy Ghost.</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch032.xhtml">Particular directions for communion with the Holy Ghost.</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch025.xhtml">The foundation of our communion with the Holy ghost (John 16:1-7) opened at large ...</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch026.xhtml">Of the acting of the Holy Ghost in us, being bestowed on us — He worketh effectual...</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch027.xhtml">Of the things wherein we have communion with the Holy Ghost — He brings to remembr...</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch028.xhtml">The general consequences in the hearts of believers of the effects of the Holy Gho...</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch029.xhtml">Some observations and inferences from discourses foregoing concerning the Spirit —...</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch030.xhtml">Of particular communion with the Holy Ghost — Of preparation thereunto — Valuation...</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch031.xhtml">The general ways of the saints' acting in communion with the Holy Ghost.</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch032.xhtml">Particular directions for communion with the Holy Ghost.</a></p>
 
 <h2 class="contents-treatise-title">II. A VINDICATION OF SOME PASSAGES IN A DISCOURSE CONCERNING COMMUNION</h2>
 <p class="contents-item"><a href="ch034.xhtml">Prefatory Note</a></p>

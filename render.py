@@ -297,9 +297,9 @@ def tag_unicode_ranges(text):
 
 def emphasize_structural_prefix(text):
     """Bold visible paragraph/list markers that survive the PDF extraction."""
-    if not text or text.startswith('<b>'):
+    if not text or text.startswith('<strong>'):
         return text
-    return STRUCTURAL_PREFIX_HTML_RE.sub(r'<b>\g<marker></b>\g<space>', text, count=1)
+    return STRUCTURAL_PREFIX_HTML_RE.sub(r'<strong>\g<marker></strong>\g<space>', text, count=1)
 
 
 def _detect_signature(plain: str, is_front_matter: bool) -> bool:
@@ -361,7 +361,7 @@ def _detect_signature(plain: str, is_front_matter: bool) -> bool:
 
 
 RENDERED_INLINE_STRUCTURAL_RE = re.compile(
-    r'(?P<marker><b>(?:'
+    r'(?P<marker><strong>(?:'
     r'(?!\d{4}\.)\d{1,3}\.|'
     r'\[(?:\d+\.?|\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\]\.?|'
     r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
@@ -369,7 +369,7 @@ RENDERED_INLINE_STRUCTURAL_RE = re.compile(
     r'\((?:\d+\.?|\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\)|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?'
-    r')</b>\s+)'
+    r')</strong>\s+)'
 )
 PLAIN_INLINE_STRUCTURAL_HTML_RE = re.compile(
     r'(?P<marker>(?<![:\d-])(?!\d{4}\.)\d{1,3}\.\s+)'
@@ -459,9 +459,9 @@ def _attach_colon_introduced_list(html: str) -> str:
     # Case B: list-item whose bold marker is NOT parenthesised (e.g. "4." not "(1.)")
     # and whose next sibling IS a parenthesised sub-item "(N.)"
     html = _re.sub(
-        r'(<p class="list-item">(?!<b>\())'   # intro: list-item, marker not starting "(…"
+        r'(<p class="list-item">(?!<strong>\())'   # intro: list-item, marker not starting "(…"
         r'((?:(?!</p>).)*:)\s*</p>'            # content ending ':'
-        r'\s*<p class="list-item">(<b>\([^)]+\)</b>)', # next sibling starting with parenthesized bold marker
+        r'\s*<p class="list-item">(<strong>\([^)]+\)</strong>)', # next sibling starting with parenthesized bold marker
         r'\1\2 \3',
         html,
         flags=_re.S,
@@ -476,8 +476,8 @@ def _attach_colon_introduced_list(html: str) -> str:
 def _join_orphaned_flat_list_marker_paragraphs(html: str) -> str:
     """Join paragraphs where a flat-list ordinal marker is orphaned at end of a <p>.
 
-    E.g. '<p>heads: — <b>1.</b> Temptations. 2.</p>\\n<p>Afflictions.</p>'
-    →    '<p>heads: — <b>1.</b> Temptations. <b>2.</b> Afflictions.</p>'
+    E.g. '<p>heads: — <strong>1.</strong> Temptations. 2.</p>\\n<p>Afflictions.</p>'
+    →    '<p>heads: — <strong>1.</strong> Temptations. <strong>2.</strong> Afflictions.</p>'
     """
     import re as _re
     pattern = _re.compile(
@@ -485,7 +485,7 @@ def _join_orphaned_flat_list_marker_paragraphs(html: str) -> str:
         _re.S,
     )
     def _replacer(m: '_re.Match') -> str:
-        return f'{m.group(1)}{m.group(2)} <b>{m.group(3)}</b> {m.group(4)}</p>'
+        return f'{m.group(1)}{m.group(2)} <strong>{m.group(3)}</strong> {m.group(4)}</p>'
     return pattern.sub(_replacer, html)
 
 
@@ -496,7 +496,7 @@ def _split_ordinal_inline_expansions(html: str) -> str:
     """Split a list-item containing an embedded '— (ordinal)' expansion.
 
     Only fires when the intro before '—' is ≥ 8 plain words.
-    E.g. '<p class="list-item"><b>(3rdly.)</b> His excellency…men: — (1st.) fitness…</p>'
+    E.g. '<p class="list-item"><strong>(3rdly.)</strong> His excellency…men: — (1st.) fitness…</p>'
     →    two separate list-item paragraphs, second one with bolded (1st.) marker.
     """
     import re as _re
@@ -510,7 +510,7 @@ def _split_ordinal_inline_expansions(html: str) -> str:
         _re.I | _re.S,
     )
     _LIST_ITEM_FULL_RE = _re.compile(
-        r'^(<p class="list-item">)(<b>[^<]{1,30}</b>\s*)(.*)(</p>)$',
+        r'^(<p class="list-item">)(<strong>[^<]{1,30}</strong>\s*)(.*)(</p>)$',
         _re.S,
     )
 
@@ -532,7 +532,7 @@ def _split_ordinal_inline_expansions(html: str) -> str:
         ordinal = sm.group(2)                        # '(1st.)'
         remainder = body[sm.start(2) + len(ordinal):]  # ' His fitness…'
         out.append(f'{tag_open}{intro_html}</p>')
-        out.append(f'{tag_open}<b>{ordinal}</b>{remainder}</p>')
+        out.append(f'{tag_open}<strong>{ordinal}</strong>{remainder}</p>')
     return '\n'.join(out)
 
 
@@ -1605,7 +1605,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 trans_counter += 1
                 placeholder_counter += 1
 
-                fn_link = f'<sup><a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a></sup>'
+                fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a>'
                 local_notes.append({
                     'id': f"fntrans_{cid}_{trans_counter}",
                     'num': trans_counter,
@@ -1669,7 +1669,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 trailing_tags = m.group(2)
                 trailing_punc = m.group(3)
                 # Double dagger symbol (‡) for biographical notes (Rule 11)
-                fn_link = f'<sup><a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a></sup>'
+                fn_link = f'<a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a>'
                 local_biographical.append({
                     'id': f"fnbiog_{cid}_{biographical_counter}",
                     'term': term,

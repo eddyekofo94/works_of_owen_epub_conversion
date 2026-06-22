@@ -28,46 +28,46 @@ VOL = 6
 # ---------------------------------------------------------------------------
 
 _V6_MORTIFICATION_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">Of the</p>
-<p class="title-line-major">Mortification of Sin</p>
-<p class="title-connector">in Believers;</p>
-<p class="title-line-medium">The Necessity, Nature, and Means of It:</p>
-<p class="title-connector">with a Short Discourse of the</p>
-<p class="title-line-medium">Dominion of Sin and Grace.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live." — Romans 8:13.</p></div>
+<div class="title-line-medium">Of the</div>
+<div class="title-line-major">Mortification of Sin</div>
+<div class="title-connector">in Believers;</div>
+<div class="title-line-medium">The Necessity, Nature, and Means of It:</div>
+<div class="title-connector">with a Short Discourse of the</div>
+<div class="title-line-medium">Dominion of Sin and Grace.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live." — Romans 8:13.</div></div>
 </section>'''
 
 _V6_TEMPTATION_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Of Temptation:</p>
-<p class="title-line-medium">The Nature and Power of It;</p>
-<p class="title-line-medium">The Danger of Entering into It;</p>
-<p class="title-connector">and the</p>
-<p class="title-line-medium">Means of Preventing That Danger.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak." — Matthew 26:41.</p></div>
+<div class="title-line-major">Of Temptation:</div>
+<div class="title-line-medium">The Nature and Power of It;</div>
+<div class="title-line-medium">The Danger of Entering into It;</div>
+<div class="title-connector">and the</div>
+<div class="title-line-medium">Means of Preventing That Danger.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak." — Matthew 26:41.</div></div>
 </section>'''
 
 _V6_INDWELLING_SIN_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">The Nature, Power, Deceit,</p>
-<p class="title-connector">and</p>
-<p class="title-line-medium">Prevalency</p>
-<p class="title-connector">of the Remainders of</p>
-<p class="title-line-major">Indwelling Sin</p>
-<p class="title-connector">in Believers.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"For I know that in me (that is, in my flesh,) dwelleth no good thing: for to will is present with me; but how to perform that which is good I find not." — Romans 7:18.</p></div>
+<div class="title-line-medium">The Nature, Power, Deceit,</div>
+<div class="title-connector">and</div>
+<div class="title-line-medium">Prevalency</div>
+<div class="title-connector">of the Remainders of</div>
+<div class="title-line-major">Indwelling Sin</div>
+<div class="title-connector">in Believers.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"For I know that in me (that is, in my flesh,) dwelleth no good thing: for to will is present with me; but how to perform that which is good I find not." — Romans 7:18.</div></div>
 </section>'''
 
 _V6_PSALM_130_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">A Practical Exposition</p>
-<p class="title-connector">upon</p>
-<p class="title-line-major">Psalm 130;</p>
-<p class="title-connector">or, the</p>
-<p class="title-line-medium">Nature and Encouragement of Trust in God</p>
-<p class="title-connector">in Depths of Affliction, Sin, and Desertion.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Out of the depths have I cried unto thee, O Lord." — Psalm 130:1.</p></div>
+<div class="title-line-medium">A Practical Exposition</div>
+<div class="title-connector">upon</div>
+<div class="title-line-major">Psalm 130;</div>
+<div class="title-connector">or, the</div>
+<div class="title-line-medium">Nature and Encouragement of Trust in God</div>
+<div class="title-connector">in Depths of Affliction, Sin, and Desertion.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"Out of the depths have I cried unto thee, O Lord." — Psalm 130:1.</div></div>
 </section>'''
 _V6_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <h1 class="contents-volume-title">CONTENTS OF VOLUME 6.</h1>
@@ -75,65 +75,65 @@ _V6_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <h2 class="contents-treatise-title">I. OF THE MORTIFICATION OF SIN IN BELIEVERS</h2>
 <p class="contents-item"><a href="ch002.xhtml">Prefatory Note</a></p>
 <p class="contents-item"><a href="ch003.xhtml">Preface</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch004.xhtml">The foundation of the whole ensuing discourse (Romans 8:13)</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch005.xhtml">The necessity of mortification</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch006.xhtml">The means of mortification: the Spirit</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch007.xhtml">The vigor and comfort of our spiritual life depend on mortification</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch008.xhtml">The first main case of conscience: a lust perplexing</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch009.xhtml">The nature of mortification: what it is not, and what it is</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch010.xhtml">General rules: no mortification without an interest in Christ</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch011.xhtml">The second general rule: without universal sincerity, no lust will be mortified</a></p>
-<p class="contents-item"><b>Chapter IX.</b> <a href="ch012.xhtml">Particular directions: first, consider the dangerous symptoms of any lust</a></p>
-<p class="contents-item"><b>Chapter X.</b> <a href="ch013.xhtml">Get a clear sense of the guilt of the perplexing lust</a></p>
-<p class="contents-item"><b>Chapter XI.</b> <a href="ch014.xhtml">Load thy conscience with the guilt of it</a></p>
-<p class="contents-item"><b>Chapter XII.</b> <a href="ch015.xhtml">Thoughtfulness of the majesty and holiness of God</a></p>
-<p class="contents-item"><b>Chapter XIII.</b> <a href="ch016.xhtml">Speak no peace to the heart until God speaks it</a></p>
-<p class="contents-item"><b>Chapter XIV.</b> <a href="ch017.xhtml">The great direction: act faith on Christ</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch004.xhtml">The foundation of the whole ensuing discourse (Romans 8:13)</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch005.xhtml">The necessity of mortification</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch006.xhtml">The means of mortification: the Spirit</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch007.xhtml">The vigor and comfort of our spiritual life depend on mortification</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch008.xhtml">The first main case of conscience: a lust perplexing</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch009.xhtml">The nature of mortification: what it is not, and what it is</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch010.xhtml">General rules: no mortification without an interest in Christ</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch011.xhtml">The second general rule: without universal sincerity, no lust will be mortified</a></p>
+<p class="contents-item"><strong>Chapter IX.</strong> <a href="ch012.xhtml">Particular directions: first, consider the dangerous symptoms of any lust</a></p>
+<p class="contents-item"><strong>Chapter X.</strong> <a href="ch013.xhtml">Get a clear sense of the guilt of the perplexing lust</a></p>
+<p class="contents-item"><strong>Chapter XI.</strong> <a href="ch014.xhtml">Load thy conscience with the guilt of it</a></p>
+<p class="contents-item"><strong>Chapter XII.</strong> <a href="ch015.xhtml">Thoughtfulness of the majesty and holiness of God</a></p>
+<p class="contents-item"><strong>Chapter XIII.</strong> <a href="ch016.xhtml">Speak no peace to the heart until God speaks it</a></p>
+<p class="contents-item"><strong>Chapter XIV.</strong> <a href="ch017.xhtml">The great direction: act faith on Christ</a></p>
 
 <h2 class="contents-treatise-title">II. OF TEMPTATION: THE NATURE AND POWER OF IT</h2>
 <p class="contents-item"><a href="ch019.xhtml">Preface</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch020.xhtml">The foundation laid in Matthew 26:41</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch021.xhtml">What it is to "enter into temptation"</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch022.xhtml">The great doctrine: entering into temptation is a highly dangerous state</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch023.xhtml">Particular cases proposed: the first case resolved</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch024.xhtml">The second case proposed: directions to those who are entered into temptation</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch025.xhtml">Of watching that we enter not into temptation</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch026.xhtml">Several acts of watchfulness: watch the heart</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch027.xhtml">Watch against temptation by constant abiding in the hour of trial</a></p>
-<p class="contents-item"><b>Chapter IX.</b> <a href="ch028.xhtml">General exhortation to watchfulness</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch020.xhtml">The foundation laid in Matthew 26:41</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch021.xhtml">What it is to "enter into temptation"</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch022.xhtml">The great doctrine: entering into temptation is a highly dangerous state</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch023.xhtml">Particular cases proposed: the first case resolved</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch024.xhtml">The second case proposed: directions to those who are entered into temptation</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch025.xhtml">Of watching that we enter not into temptation</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch026.xhtml">Several acts of watchfulness: watch the heart</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch027.xhtml">Watch against temptation by constant abiding in the hour of trial</a></p>
+<p class="contents-item"><strong>Chapter IX.</strong> <a href="ch028.xhtml">General exhortation to watchfulness</a></p>
 
 <h2 class="contents-treatise-title">III. INDWELLING SIN IN BELIEVERS</h2>
 <p class="contents-item"><a href="ch030.xhtml">Prefatory Note</a></p>
 <p class="contents-item"><a href="ch031.xhtml">Preface</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch032.xhtml">Indwelling sin treated of in Romans 7:21</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch033.xhtml">Indwelling sin a law: in what sense</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch034.xhtml">The seat or subject of the law of sin: the heart</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch035.xhtml">Indwelling sin enmity against God</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch036.xhtml">Nature of sin farther discovered as enmity</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch037.xhtml">The work of this enmity: it lusteth</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch038.xhtml">The captivating power of indwelling sin</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch039.xhtml">Indwelling sin proved powerful from its deceit</a></p>
-<p class="contents-item"><b>Chapter IX.</b> <a href="ch040.xhtml">Deceit in drawing off the mind from duties</a></p>
-<p class="contents-item"><b>Chapter X.</b> <a href="ch041.xhtml">Deceit in drawing off the mind from particular duties</a></p>
-<p class="contents-item"><b>Chapter XI.</b> <a href="ch042.xhtml">The working of sin to entangle the affections</a></p>
-<p class="contents-item"><b>Chapter XII.</b> <a href="ch043.xhtml">The conception of sin through its deceit</a></p>
-<p class="contents-item"><b>Chapter XIII.</b> <a href="ch044.xhtml">Several ways whereby conceived sin is obstructed</a></p>
-<p class="contents-item"><b>Chapter XIV.</b> <a href="ch045.xhtml">The power of sin demonstrated by its effects in believers</a></p>
-<p class="contents-item"><b>Chapter XV.</b> <a href="ch046.xhtml">Decays in degrees of grace caused by indwelling sin</a></p>
-<p class="contents-item"><b>Chapter XVI.</b> <a href="ch047.xhtml">The strength of indwelling sin in persons unregenerate</a></p>
-<p class="contents-item"><b>Chapter XVII.</b> <a href="ch048.xhtml">Strength of sin evidenced from its resistance to the law</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch032.xhtml">Indwelling sin treated of in Romans 7:21</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch033.xhtml">Indwelling sin a law: in what sense</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch034.xhtml">The seat or subject of the law of sin: the heart</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch035.xhtml">Indwelling sin enmity against God</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch036.xhtml">Nature of sin farther discovered as enmity</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch037.xhtml">The work of this enmity: it lusteth</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch038.xhtml">The captivating power of indwelling sin</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch039.xhtml">Indwelling sin proved powerful from its deceit</a></p>
+<p class="contents-item"><strong>Chapter IX.</strong> <a href="ch040.xhtml">Deceit in drawing off the mind from duties</a></p>
+<p class="contents-item"><strong>Chapter X.</strong> <a href="ch041.xhtml">Deceit in drawing off the mind from particular duties</a></p>
+<p class="contents-item"><strong>Chapter XI.</strong> <a href="ch042.xhtml">The working of sin to entangle the affections</a></p>
+<p class="contents-item"><strong>Chapter XII.</strong> <a href="ch043.xhtml">The conception of sin through its deceit</a></p>
+<p class="contents-item"><strong>Chapter XIII.</strong> <a href="ch044.xhtml">Several ways whereby conceived sin is obstructed</a></p>
+<p class="contents-item"><strong>Chapter XIV.</strong> <a href="ch045.xhtml">The power of sin demonstrated by its effects in believers</a></p>
+<p class="contents-item"><strong>Chapter XV.</strong> <a href="ch046.xhtml">Decays in degrees of grace caused by indwelling sin</a></p>
+<p class="contents-item"><strong>Chapter XVI.</strong> <a href="ch047.xhtml">The strength of indwelling sin in persons unregenerate</a></p>
+<p class="contents-item"><strong>Chapter XVII.</strong> <a href="ch048.xhtml">Strength of sin evidenced from its resistance to the law</a></p>
 
 <h2 class="contents-treatise-title">IV. A PRACTICAL EXPOSITION UPON PSALM 130</h2>
 <p class="contents-item"><a href="ch050.xhtml">Prefatory Note</a></p>
 <p class="contents-item"><a href="ch051.xhtml">To the Reader</a></p>
 <p class="contents-item"><a href="ch052.xhtml">A Paraphrase on the Psalm</a></p>
 <p class="contents-item"><a href="ch053.xhtml">General Scope of the Whole Psalm</a></p>
-<p class="contents-item"><b>Verses 1, 2.</b> <a href="ch054.xhtml">The State and Condition of the Soul</a></p>
+<p class="contents-item"><strong>Verses 1, 2.</strong> <a href="ch054.xhtml">The State and Condition of the Soul</a></p>
 <p class="contents-item"><a href="ch055.xhtml">Spiritual Depths and Distresses</a></p>
-<p class="contents-item"><b>Verse 3.</b> <a href="ch060.xhtml">The Words Explained</a></p>
-<p class="contents-item"><b>Verse 4.</b> <a href="ch065.xhtml">The Words Explained: Gospel Forgiveness</a></p>
-<p class="contents-item"><b>Verses 5, 6.</b> <a href="ch102.xhtml">The Soul's Waiting in Distresses</a></p>
-<p class="contents-item"><b>Verses 7, 8.</b> <a href="ch106.xhtml">Plenteous Redemption</a></p>
+<p class="contents-item"><strong>Verse 3.</strong> <a href="ch060.xhtml">The Words Explained</a></p>
+<p class="contents-item"><strong>Verse 4.</strong> <a href="ch065.xhtml">The Words Explained: Gospel Forgiveness</a></p>
+<p class="contents-item"><strong>Verses 5, 6.</strong> <a href="ch102.xhtml">The Soul's Waiting in Distresses</a></p>
+<p class="contents-item"><strong>Verses 7, 8.</strong> <a href="ch106.xhtml">Plenteous Redemption</a></p>
 </section>'''
 
 OVERRIDES = {

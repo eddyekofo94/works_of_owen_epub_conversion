@@ -1,14 +1,14 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-06-15T01:09:09.192346+00:00",
+  "epub": "volumes/v8/output/volume_8.epub",
+  "generated_at": "2026-06-22T11:32:34.120604+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
   "errors": [],
   "warnings": [],
   "info": {
-    "file_count": 105,
-    "epub_size_bytes": 6381842,
+    "file_count": 103,
+    "epub_size_bytes": 5187861,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -17,13 +17,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 96,
+    "manifest_count": 94,
     "spine_count": 74,
     "xhtml_count": 75,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 16,
+    "font_count": 14,
     "language": {
       "greek_chars": 1667,
       "greek_untagged_chars": 0,

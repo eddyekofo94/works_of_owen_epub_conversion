@@ -41,112 +41,112 @@ VOL = 13
 # ---------------------------------------------------------------------------
 
 _V13_DUTY_PASTORS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">The Duty of</p>
-<p class="title-line-major">Pastors and People</p>
-<p class="title-line-major">Distinguished:</p>
-<p class="title-connector">with a Further Vindication of the</p>
-<p class="title-line-medium">Petitionary Confession of Faith</p>
-<p class="title-connector">Against the Exceptions of</p>
-<p class="title-line-medium">Mr D. Cawdrey.</p>
+<div class="title-line-medium">The Duty of</div>
+<div class="title-line-major">Pastors and People</div>
+<div class="title-line-major">Distinguished:</div>
+<div class="title-connector">with a Further Vindication of the</div>
+<div class="title-line-medium">Petitionary Confession of Faith</div>
+<div class="title-connector">Against the Exceptions of</div>
+<div class="title-line-medium">Mr D. Cawdrey.</div>
 </section>'''
 
 _V13_ESHCOL_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Eshcol:</p>
-<p class="title-connector">A Cluster of the Fruit of Canaan,</p>
-<p class="title-connector">Brought to the Borders of Israel;</p>
-<p class="title-connector">or, the</p>
-<p class="title-line-medium">Present State of the Gospel-Church</p>
-<p class="title-line-medium">of Christ</p>
-<p class="title-connector">Considered.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"And they came unto the brook of Eshcol, and cut down from thence a branch with one cluster of grapes." — Numbers 13:23.</p></div>
+<div class="title-line-major">Eshcol:</div>
+<div class="title-connector">A Cluster of the Fruit of Canaan,</div>
+<div class="title-connector">Brought to the Borders of Israel;</div>
+<div class="title-connector">or, the</div>
+<div class="title-line-medium">Present State of the Gospel-Church</div>
+<div class="title-line-medium">of Christ</div>
+<div class="title-connector">Considered.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"And they came unto the brook of Eshcol, and cut down from thence a branch with one cluster of grapes." — Numbers 13:23.</div></div>
 </section>'''
 
 _V13_SCHISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Of Schism:</p>
-<p class="title-line-medium">The True Nature of It</p>
-<p class="title-connector">Discovered and Considered,</p>
-<p class="title-connector">with Reference to the</p>
-<p class="title-line-medium">Present Differences in Religion.</p>
+<div class="title-line-major">Of Schism:</div>
+<div class="title-line-medium">The True Nature of It</div>
+<div class="title-connector">Discovered and Considered,</div>
+<div class="title-connector">with Reference to the</div>
+<div class="title-line-medium">Present Differences in Religion.</div>
 </section>'''
 
 _V13_REVIEW_SCHISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Review</p>
-<p class="title-connector">of the</p>
-<p class="title-line-medium">True Nature of Schism;</p>
-<p class="title-connector">with a Vindication of the</p>
-<p class="title-line-medium">Congregational Churches in England</p>
-<p class="title-connector">from the Imputation Thereof.</p>
+<div class="title-line-major">A Review</div>
+<div class="title-connector">of the</div>
+<div class="title-line-medium">True Nature of Schism;</div>
+<div class="title-connector">with a Vindication of the</div>
+<div class="title-line-medium">Congregational Churches in England</div>
+<div class="title-connector">from the Imputation Thereof.</div>
 </section>'''
 
 _V13_ANSWER_CAWDREY_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">An Answer to a Late Treatise</p>
-<p class="title-connector">of</p>
-<p class="title-line-major">Mr Cawdrey</p>
-<p class="title-connector">About the Nature of Schism.</p>
+<div class="title-line-medium">An Answer to a Late Treatise</div>
+<div class="title-connector">of</div>
+<div class="title-line-major">Mr Cawdrey</div>
+<div class="title-connector">About the Nature of Schism.</div>
 </section>'''
 
 _V13_VINDICATION_NONCONFORMISTS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">A Brief Vindication</p>
-<p class="title-connector">of the</p>
-<p class="title-line-major">Nonconformists</p>
-<p class="title-connector">from the Charge of Schism.</p>
+<div class="title-line-medium">A Brief Vindication</div>
+<div class="title-connector">of the</div>
+<div class="title-line-major">Nonconformists</div>
+<div class="title-connector">from the Charge of Schism.</div>
 </section>'''
 
 _V13_TRUTH_INNOCENCE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Truth and Innocence</p>
-<p class="title-line-major">Vindicated;</p>
-<p class="title-connector">in a Survey of a Discourse Concerning</p>
-<p class="title-line-medium">Ecclesiastical Polity,</p>
-<p class="title-connector">and the Authority of the</p>
-<p class="title-line-medium">Civil Magistrate Over the Consciences</p>
-<p class="title-line-medium">of Men in Matters of Religion.</p>
+<div class="title-line-major">Truth and Innocence</div>
+<div class="title-line-major">Vindicated;</div>
+<div class="title-connector">in a Survey of a Discourse Concerning</div>
+<div class="title-line-medium">Ecclesiastical Polity,</div>
+<div class="title-connector">and the Authority of the</div>
+<div class="title-line-medium">Civil Magistrate Over the Consciences</div>
+<div class="title-line-medium">of Men in Matters of Religion.</div>
 </section>'''
 
 _V13_TWO_QUESTIONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">Two Questions Concerning</p>
-<p class="title-line-medium">the Power of the</p>
-<p class="title-line-major">Supreme Magistrate</p>
-<p class="title-connector">About Religion,</p>
-<p class="title-connector">and the Worship of God.</p>
+<div class="title-line-medium">Two Questions Concerning</div>
+<div class="title-line-medium">the Power of the</div>
+<div class="title-line-major">Supreme Magistrate</div>
+<div class="title-connector">About Religion,</div>
+<div class="title-connector">and the Worship of God.</div>
 </section>'''
 
 _V13_INDULGENCE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">Indulgence and Toleration</p>
-<p class="title-line-major">Considered:</p>
-<p class="title-connector">in a Letter unto a Person of Honour.</p>
+<div class="title-line-major">Indulgence and Toleration</div>
+<div class="title-line-major">Considered:</div>
+<div class="title-connector">in a Letter unto a Person of Honour.</div>
 </section>'''
 
 _V13_PEACE_OFFERING_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Peace-offering,</p>
-<p class="title-connector">in an Apology and Humble Plea for</p>
-<p class="title-line-medium">Indulgence and Liberty of Conscience.</p>
+<div class="title-line-major">A Peace-offering,</div>
+<div class="title-connector">in an Apology and Humble Plea for</div>
+<div class="title-line-medium">Indulgence and Liberty of Conscience.</div>
 </section>'''
 
 _V13_GROUNDS_REASONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">I. An Account of the Grounds and Reasons</p>
-<p class="title-connector">on Which</p>
-<p class="title-line-medium">Protestant Dissenters Desire Their</p>
-<p class="title-line-medium">Relief.</p>
+<div class="title-line-medium">I. An Account of the Grounds and Reasons</div>
+<div class="title-connector">on Which</div>
+<div class="title-line-medium">Protestant Dissenters Desire Their</div>
+<div class="title-line-medium">Relief.</div>
 </section>'''
 
 _V13_PRESENT_DISTRESSES_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">II. The Case of</p>
-<p class="title-line-major">Present Distresses</p>
-<p class="title-connector">on Nonconformists</p>
-<p class="title-line-medium">Examined.</p>
+<div class="title-line-medium">II. The Case of</div>
+<div class="title-line-major">Present Distresses</div>
+<div class="title-connector">on Nonconformists</div>
+<div class="title-line-medium">Examined.</div>
 </section>'''
 
 _V13_STATE_KINGDOM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">I. The State of the Kingdom</p>
-<p class="title-connector">with Respect to the</p>
-<p class="title-line-medium">Present Bill Against Nonconformists.</p>
+<div class="title-line-medium">I. The State of the Kingdom</div>
+<div class="title-connector">with Respect to the</div>
+<div class="title-line-medium">Present Bill Against Nonconformists.</div>
 </section>'''
 
 _V13_WORD_OF_ADVICE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">II. A Word of Advice</p>
-<p class="title-connector">to the</p>
-<p class="title-line-major">Citizens of London.</p>
+<div class="title-line-medium">II. A Word of Advice</div>
+<div class="title-connector">to the</div>
+<div class="title-line-major">Citizens of London.</div>
 </section>'''
 
 _V13_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
@@ -156,14 +156,14 @@ _V13_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch002.xhtml">Prefatory Note by the Editor</a></p>
 <p class="contents-item"><a href="ch003.xhtml">Epistle Dedicatory to Sir Edward Scot</a></p>
 <p class="contents-item"><a href="ch004.xhtml">Preface to the Reader</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch005.xhtml">Of the administration of holy things among the patriarchs before the law</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch006.xhtml">Of the same among the Jews, and of the duty of that people distinct from their church-state</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch007.xhtml">Containing a digression concerning the name of "priests," the right of Christians to that title, etc.</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch008.xhtml">Of the duty of God's people in cases extraordinary concerning his worship</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch009.xhtml">Of the several ways of extraordinary calling to the teaching of others</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch010.xhtml">What assurance men extraordinarily called can give to others that they are so called</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch011.xhtml">The second way whereby a man may be called extraordinarily</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch012.xhtml">Of the liberty and duty of gifted uncalled Christians in the exercise of divers acts of God's worship</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch005.xhtml">Of the administration of holy things among the patriarchs before the law</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch006.xhtml">Of the same among the Jews, and of the duty of that people distinct from their church-state</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch007.xhtml">Containing a digression concerning the name of "priests," the right of Christians to that title, etc.</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch008.xhtml">Of the duty of God's people in cases extraordinary concerning his worship</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch009.xhtml">Of the several ways of extraordinary calling to the teaching of others</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch010.xhtml">What assurance men extraordinarily called can give to others that they are so called</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch011.xhtml">The second way whereby a man may be called extraordinarily</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch012.xhtml">Of the liberty and duty of gifted uncalled Christians in the exercise of divers acts of God's worship</a></p>
 
 <h2 class="contents-treatise-title">ESHCOL: A CLUSTER OF THE FRUIT OF CANAAN</h2>
 <p class="contents-item"><a href="ch014.xhtml">Prefatory Note by the Editor</a></p>
@@ -172,28 +172,28 @@ _V13_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 
 <h2 class="contents-treatise-title">OF SCHISM: THE TRUE NATURE OF IT STATED</h2>
 <p class="contents-item"><a href="ch018.xhtml">Prefatory Note by the Editor</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch019.xhtml">Aggravations of the evil of schism, from the authority of the ancients</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch020.xhtml">The nature of schism to be determined from Scripture only</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch021.xhtml">Objections against the former discourse proposed to consideration</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch022.xhtml">Several acceptations in the Scripture of the name "church" — Of the church catholic, etc.</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch023.xhtml">Of the catholic church visible — Of the nature thereof</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch024.xhtml">Romanists' charge of schism on the account of separation from the church catholic examined</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch025.xhtml">Of a particular church; its nature — Frequently mentioned in Scripture</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch026.xhtml">Of the church of England — The charge of schism in the name thereof proposed and considered</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch019.xhtml">Aggravations of the evil of schism, from the authority of the ancients</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch020.xhtml">The nature of schism to be determined from Scripture only</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch021.xhtml">Objections against the former discourse proposed to consideration</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch022.xhtml">Several acceptations in the Scripture of the name "church" — Of the church catholic, etc.</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch023.xhtml">Of the catholic church visible — Of the nature thereof</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch024.xhtml">Romanists' charge of schism on the account of separation from the church catholic examined</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch025.xhtml">Of a particular church; its nature — Frequently mentioned in Scripture</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch026.xhtml">Of the church of England — The charge of schism in the name thereof proposed and considered</a></p>
 
 <h2 class="contents-treatise-title">A REVIEW OF THE TRUE NATURE OF SCHISM</h2>
 <p class="contents-item"><a href="ch028.xhtml">Prefatory Note by the Editor</a></p>
 <p class="contents-item"><a href="ch029.xhtml">To the Reader</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch030.xhtml">Introductory observations</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch031.xhtml">An answer to the appendix of Mr. Cawdrey's charge</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch032.xhtml">A review of the charger's preface</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch033.xhtml">Of the nature of schism</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch034.xhtml">The scripture meaning of schism farther considered</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch035.xhtml">Of the church catholic visible, and separation from it</a></p>
-<p class="contents-item"><b>Chapter VII.</b> <a href="ch036.xhtml">Of the congregational church-state and separation</a></p>
-<p class="contents-item"><b>Chapter VIII.</b> <a href="ch037.xhtml">Of Independentism and Donatism</a></p>
-<p class="contents-item"><b>Chapter IX.</b> <a href="ch038.xhtml">Of the charge of schism against congregational churches</a></p>
-<p class="contents-item"><b>Chapter X.</b> <a href="ch039.xhtml">Independency no schism</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch030.xhtml">Introductory observations</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch031.xhtml">An answer to the appendix of Mr. Cawdrey's charge</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch032.xhtml">A review of the charger's preface</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch033.xhtml">Of the nature of schism</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch034.xhtml">The scripture meaning of schism farther considered</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch035.xhtml">Of the church catholic visible, and separation from it</a></p>
+<p class="contents-item"><strong>Chapter VII.</strong> <a href="ch036.xhtml">Of the congregational church-state and separation</a></p>
+<p class="contents-item"><strong>Chapter VIII.</strong> <a href="ch037.xhtml">Of Independentism and Donatism</a></p>
+<p class="contents-item"><strong>Chapter IX.</strong> <a href="ch038.xhtml">Of the charge of schism against congregational churches</a></p>
+<p class="contents-item"><strong>Chapter X.</strong> <a href="ch039.xhtml">Independency no schism</a></p>
 
 <h2 class="contents-treatise-title">AN ANSWER TO A LATE TREATISE ABOUT THE NATURE OF SCHISM</h2>
 <p class="contents-item"><a href="ch041.xhtml">Prefatory Note by the Editor</a></p>
@@ -206,18 +206,18 @@ _V13_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <h2 class="contents-treatise-title">TRUTH AND INNOCENCE VINDICATED</h2>
 <p class="contents-item"><a href="ch047.xhtml">Prefatory Note by the Editor</a></p>
 <p class="contents-item"><a href="ch048.xhtml">A Survey of a Discourse Concerning Ecclesiastical Polity</a></p>
-<p class="contents-item"><b>Chapter I.</b> <a href="ch049.xhtml">A survey of the first chapter</a></p>
-<p class="contents-item"><b>Chapter II.</b> <a href="ch050.xhtml">A survey of the second chapter</a></p>
-<p class="contents-item"><b>Chapter III.</b> <a href="ch051.xhtml">A survey of the third chapter</a></p>
-<p class="contents-item"><b>Chapter IV.</b> <a href="ch052.xhtml">A survey of the fourth chapter</a></p>
-<p class="contents-item"><b>Chapter V.</b> <a href="ch053.xhtml">A survey of the fifth chapter</a></p>
-<p class="contents-item"><b>Chapter VI.</b> <a href="ch054.xhtml">A survey of the sixth chapter</a></p>
+<p class="contents-item"><strong>Chapter I.</strong> <a href="ch049.xhtml">A survey of the first chapter</a></p>
+<p class="contents-item"><strong>Chapter II.</strong> <a href="ch050.xhtml">A survey of the second chapter</a></p>
+<p class="contents-item"><strong>Chapter III.</strong> <a href="ch051.xhtml">A survey of the third chapter</a></p>
+<p class="contents-item"><strong>Chapter IV.</strong> <a href="ch052.xhtml">A survey of the fourth chapter</a></p>
+<p class="contents-item"><strong>Chapter V.</strong> <a href="ch053.xhtml">A survey of the fifth chapter</a></p>
+<p class="contents-item"><strong>Chapter VI.</strong> <a href="ch054.xhtml">A survey of the sixth chapter</a></p>
 
 <h2 class="contents-treatise-title">TWO QUESTIONS CONCERNING THE POWER OF THE SUPREME MAGISTRATE</h2>
 <p class="contents-item"><a href="ch056.xhtml">Prefatory Note by the Editor</a></p>
-<p class="contents-item"><b>Question I.</b> <a href="ch057.xhtml">First question considered</a></p>
-<p class="contents-item"><b>Question II.</b> <a href="ch058.xhtml">Second question considered</a></p>
-<p class="contents-item"><b>Question III.</b> <a href="ch059.xhtml">Third question considered</a></p>
+<p class="contents-item"><strong>Question I.</strong> <a href="ch057.xhtml">First question considered</a></p>
+<p class="contents-item"><strong>Question II.</strong> <a href="ch058.xhtml">Second question considered</a></p>
+<p class="contents-item"><strong>Question III.</strong> <a href="ch059.xhtml">Third question considered</a></p>
 
 <h2 class="contents-treatise-title">INDULGENCE AND TOLERATION CONSIDERED</h2>
 <p class="contents-item"><a href="ch061.xhtml">Prefatory Note by the Editor</a></p>

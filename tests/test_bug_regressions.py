@@ -331,12 +331,12 @@ def test_bracketed_word_ordinal_marker_splits_to_new_paragraph():
     )
 
     assert '[SECONDLY]' in html
-    assert '<b>[SECONDLY],</b>' in html
-    assert re.search(r'</p>\s*(?:<div[^>]*>\s*)*<p class="list-item list-level-3"><b>\[SECONDLY\],</b>', html)
+    assert '<strong>[SECONDLY],</strong>' in html
+    assert re.search(r'</p>\s*(?:<div[^>]*>\s*)*<p class="list-item list-level-3"><strong>\[SECONDLY\],</strong>', html)
 
 
 def test_inline_bold_decimal_markers_split_after_emphasized_semicolon():
-    # Items 1 and 2 end with ';' inside <i> tags — plain text ends with ';'
+    # Items 1 and 2 end with ';' inside <em> tags — plain text ends with ';'
     # so the new semicolon-based rule merges all 3 into one continuous paragraph.
     html, _, _ = markdown_to_html(
         '**1.** Of _sanctifying grace;_ **2.** Of _especial gifts;_ '
@@ -346,9 +346,9 @@ def test_inline_bold_decimal_markers_split_after_emphasized_semicolon():
     assert html.count('class="list-item ') == 1, (
         "Items ending with ';' must be merged into one continuous paragraph"
     )
-    assert '<b>1.</b> Of <i>sanctifying grace;</i>' in html
-    assert '<b>2.</b> Of <i>especial gifts;</i>' in html
-    assert '<b>3.</b> Of peculiar <i>evangelical privileges.</i>' in html
+    assert '<strong>1.</strong> Of <em>sanctifying grace;</em>' in html
+    assert '<strong>2.</strong> Of <em>especial gifts;</em>' in html
+    assert '<strong>3.</strong> Of peculiar <em>evangelical privileges.</em>' in html
 
 
 def test_chapter_summary_continuations_stop_at_body_opener():
@@ -374,7 +374,7 @@ def test_secondly_the_opener_is_not_swallowed_by_summary():
 
     summary = re.search(r'<p class="chapter-summary">(.*?)</p>', html, re.S).group(1)
     assert "Secondly" not in summary
-    assert re.search(r'<p class="list-item list-level-1"><b>Secondly,</b> THE human nature', html)
+    assert re.search(r'<p class="list-item list-level-1"><strong>Secondly,</strong> THE human nature', html)
 
 
 def test_greek_synopsis_line_continues_chapter_summary():
@@ -532,7 +532,7 @@ def test_summary_continuation_is_rendered_as_one_summary_paragraph():
     assert "(2.) Exinanition, 2 Corinthians 8:9;" in summary
     assert "2. Believers&#x27; estimation of Christ: —" in summary
     assert "</p> <p" not in summary
-    assert '<h4 class="roman-subheading"><b>II.</b></h4>' in html
+    assert '<h4 class="roman-subheading"><strong>II.</strong></h4>' in html
     assert 'Christ values his saints' in html
 
 
@@ -551,14 +551,14 @@ def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
     )
 
     # (1.) and (2.) merge — (1.) ends with ';'
-    assert '<b>(1.)</b> For their sanctification;' in html
-    assert '<b>(2.)</b> For their consolation:' in html
+    assert '<strong>(1.)</strong> For their sanctification;' in html
+    assert '<strong>(2.)</strong> For their consolation:' in html
     assert html.count('class="list-item ') == 2, (
         "Expected (1.)+(2.) to merge and [1].+[2.] to merge → 2 paragraphs total"
     )
-    assert '<p class="list-item list-level-2"><b>(1.)</b>' in html
-    assert '<p class="list-item list-level-3"><b>[1].</b>' in html
-    assert '(2.)<b> For their consolation' not in html
+    assert '<p class="list-item list-level-2"><strong>(1.)</strong>' in html
+    assert '<p class="list-item list-level-3"><strong>[1].</strong>' in html
+    assert '(2.)<strong> For their consolation' not in html
 
 
 def test_quote_wrapped_structural_markers_are_unwrapped_and_bolded():
@@ -571,9 +571,9 @@ def test_quote_wrapped_structural_markers_are_unwrapped_and_bolded():
     assert '"2dly' not in html
     assert '" [1st' not in html
     assert '" [2dly' not in html
-    assert '<p class="list-item list-level-3"><b>2dly.</b> Our holiness' in html
-    assert '<b>[1st.]</b> It is the glory of the Father' in html
-    assert '<b>[2dly.]</b> The Son is gloried thereby' in html
+    assert '<p class="list-item list-level-3"><strong>2dly.</strong> Our holiness' in html
+    assert '<strong>[1st.]</strong> It is the glory of the Father' in html
+    assert '<strong>[2dly.]</strong> The Son is gloried thereby' in html
 
 
 def test_sermon_fragmented_ordinal_marker_is_normalized():
@@ -584,8 +584,8 @@ def test_sermon_fragmented_ordinal_marker_is_normalized():
 
     assert '**[**' not in cleaned
     assert '**[3dly.]**' in cleaned
-    assert '<p class="list-item list-level-3"><b>[3dly.]</b> Whereas in these dispensations' in html
-    assert '[ <i>3dly</i> .]' not in html
+    assert '<p class="list-item list-level-3"><strong>[3dly.]</strong> Whereas in these dispensations' in html
+    assert '[ <em>3dly</em> .]' not in html
 
 
 def test_sermon_prefatory_dates_are_not_inline_structural_markers():
@@ -636,7 +636,7 @@ def test_scholastic_quoted_objection_opener_moves_inside_blockquote():
         'should not be accepted?"'
     )
 
-    assert '<p class="list-item list-level-1"><b>Objection 1.</b> But some may say,</p>' in html
+    assert '<p class="list-item list-level-1"><strong>Objection 1.</strong> But some may say,</p>' in html
     assert (
         '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">&quot;Alas! how shall I hold '
         'communion with the Father in love? I know not at all whether he loves '
@@ -673,7 +673,7 @@ def test_contents_pages_split_parts_and_chapters_with_clean_labels():
         '<h2>CONTENTS OF VOL. 2.</h2>'
         '<h2>NOTE TO THE READER BY D. BURGESS</h2>'
         '<p class="contents-item">Part 2.</p>'
-        '<p class="contents-item"><b>Chapter 1</b> . First chapter. Chapter 2 . Second chapter, from</p>'
+        '<p class="contents-item"><strong>Chapter 1</strong> . First chapter. Chapter 2 . Second chapter, from</p>'
         '<p class="contents-item">the grace of union — continuation. Digression 1. A useful aside.</p>'
         '<p class="contents-item">A VINDICATION OF SOME PASSAGES IN A DISCOURSE</p>'
         '</section>'
@@ -686,7 +686,7 @@ def test_contents_pages_split_parts_and_chapters_with_clean_labels():
     assert '<span class="contents-label">Chapter 2.</span> Second chapter, from the grace of union' in html
     assert '<span class="contents-label">Digression 1.</span> A useful aside.' in html
     assert '<h2 class="contents-treatise-title">A VINDICATION OF SOME PASSAGES IN A DISCOURSE</h2>' in html
-    assert 'Chapter 1</b> .' not in html
+    assert 'Chapter 1</strong> .' not in html
     assert 'Chapter 2 .' not in html
     assert 'class="ContentsItem"' not in html
 
@@ -726,7 +726,7 @@ def test_issues_37_to_40_textual_todo_regressions_are_guarded():
     html = epub_xhtml_text(1)
 
     assert "anything he has done ill. For what he so does" in html
-    assert '<b>ill.</b> For what he so does' not in html
+    assert '<strong>ill.</strong> For what he so does' not in html
     assert (
         '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">"Behold my servant, whom I uphold; '
         'mine elect, in whom my soul delighteth;" (Isaiah 42:1;)</p></blockquote>'
@@ -743,7 +743,7 @@ def test_issue_39_combined_roman_decimal_marker_stays_inline():
         "I. 1. What he did preparatory unto his death, which was the first thing proposed unto consideration."
     )
 
-    assert '<p class="list-item list-level-1"><b>I. 1.</b> What he did preparatory' in html
+    assert '<p class="list-item list-level-1"><strong>I. 1.</strong> What he did preparatory' in html
 
 
 def test_issue_32_pdf_page_384_reference_run_is_not_jumbled():
@@ -784,7 +784,7 @@ def test_issue_34_numbered_answer_anchor_is_normalized_and_bolded():
     html = apply_scholastic_anchor_protocol(f"<p>{cleaned}</p>")
 
     assert cleaned == "Ans. 1. There is no precedent nor example"
-    assert '<b class="scholastic-label">Ans. 1.</b> There is no precedent nor example' in html
+    assert '<b class="scholastic-label">Ans. 1.</strong> There is no precedent nor example' in html
 
 
 def test_spaced_scholastic_labels_are_repaired_globally():
@@ -806,8 +806,8 @@ def test_objection_and_use_labels_are_bolded_as_scholastic_anchors():
         "<p>Use. 1. You that are yet in the flower of your days.</p>"
     )
 
-    assert '<b class="scholastic-label">Objection 1.</b> But some may say' in html
-    assert '<b class="scholastic-label">Use. 1.</b> You that are yet' in html
+    assert '<b class="scholastic-label">Objection 1.</strong> But some may say' in html
+    assert '<b class="scholastic-label">Use. 1.</strong> You that are yet' in html
 
 
 def test_question_followed_by_scripture_tail_stays_in_same_paragraph():
@@ -954,8 +954,8 @@ def test_issue_33_shared_treatise_starter_pages_are_not_title_styled_in_epub(vol
     )
     assert '<section class="treatise-title-page"' not in greater_chapter
     assert 'class="catechism-item catechism-question"' in greater_chapter
-    assert "<b>Ques. 1.</b> What is Christian religion?" in greater_chapter
-    assert "<b>Ans.</b> The only way" in greater_chapter
+    assert "<strong>Ques. 1.</strong> What is Christian religion?" in greater_chapter
+    assert "<strong>Ans.</strong> The only way" in greater_chapter
 
     christologia_title = next(
         html for html in files.values()
@@ -1041,17 +1041,17 @@ def test_v1_catechism_questions_and_answers_are_grouped_and_bolded(volume):
 
     assert ".v1-catechism-pair" in css
     assert "front-matter-prose" not in lesser
-    assert '<div class="v1-catechism-pair">\n<p class="catechism-item catechism-question"><b>Ques.</b> Whence is all truth' in lesser
-    assert '<p class="catechism-item catechism-answer"><b>Ans.</b> From the holy Scripture' in lesser
-    assert '<p class="catechism-item catechism-answer"><b>A.</b> An eternal, infinite' in lesser
-    assert '<p class="catechism-item catechism-question"><b>Q. 2.</b> What is repentance?</p>' in lesser
-    assert '<p class="catechism-item catechism-answer"><b>A.</b> A forsaking of all sin, with godly sorrow for what we have committed. — Chapter 20.</p>' in lesser
+    assert '<div class="v1-catechism-pair">\n<p class="catechism-item catechism-question"><strong>Ques.</strong> Whence is all truth' in lesser
+    assert '<p class="catechism-item catechism-answer"><strong>Ans.</strong> From the holy Scripture' in lesser
+    assert '<p class="catechism-item catechism-answer"><strong>A.</strong> An eternal, infinite' in lesser
+    assert '<p class="catechism-item catechism-question"><strong>Q. 2.</strong> What is repentance?</p>' in lesser
+    assert '<p class="catechism-item catechism-answer"><strong>A.</strong> A forsaking of all sin, with godly sorrow for what we have committed. — Chapter 20.</p>' in lesser
     assert '<p>- Chapter 20.</p>' not in lesser
     assert '<p>- Chapter 21.</p>' not in lesser
     assert "know.?" not in lesser
 
-    assert '<div class="v1-catechism-pair">\n<p class="catechism-item catechism-question"><b>Ques. 1.</b> What is Christian religion?</p>' in greater_chapter_1
-    assert '<p class="catechism-item catechism-answer"><b>A.</b> From the holy' in greater_chapter_1
+    assert '<div class="v1-catechism-pair">\n<p class="catechism-item catechism-question"><strong>Ques. 1.</strong> What is Christian religion?</p>' in greater_chapter_1
+    assert '<p class="catechism-item catechism-answer"><strong>A.</strong> From the holy' in greater_chapter_1
 
     combined = "\n".join(files.values())
     # These sentences start with "A" in the prose.
@@ -1064,7 +1064,7 @@ def test_v1_catechism_questions_and_answers_are_grouped_and_bolded(volume):
     for sample in false_answer_samples:
         rest = sample[2:]  # strip "A " prefix to get the body text
         assert sample in combined
-        assert f'<p class="catechism-item"><b>A.</b> {rest}' not in combined
+        assert f'<p class="catechism-item"><strong>A.</strong> {rest}' not in combined
         assert f'<p class="catechism-item">A. {rest}' not in combined
 
 
@@ -1158,16 +1158,16 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
         if "<title>Chapter 9 — Honor Due to the Person of Christ</title>" in html
     )
     assert '<p class="syllabus-anchor">' in chapter_9
-    assert 'The respect which we have in all acts of religion unto the person of Christ may be reduced unto these four heads: <b>I.</b> Honor. <b>II.</b> Obedience. <b>III.</b> Conformity. <b>IV.</b> The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory. And hereunto the whole of our religion, as it is Christian or evangelical, may be reduced.</p>' in chapter_9
-    assert '<h4 class="roman-subheading"><b>I.</b> Honor.</h4>' not in chapter_9
-    assert '<h4 class="roman-subheading"><b>I.</b></h4>' in chapter_9
+    assert 'The respect which we have in all acts of religion unto the person of Christ may be reduced unto these four heads: <strong>I.</strong> Honor. <strong>II.</strong> Obedience. <strong>III.</strong> Conformity. <strong>IV.</strong> The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory. And hereunto the whole of our religion, as it is Christian or evangelical, may be reduced.</p>' in chapter_9
+    assert '<h4 class="roman-subheading"><strong>I.</strong> Honor.</h4>' not in chapter_9
+    assert '<h4 class="roman-subheading"><strong>I.</strong></h4>' in chapter_9
     assert 'The person of Christ is the object of divine honor and worship.' in chapter_9
 
     chapter_7 = next(
         html for html in files.values()
         if "<title>Chapter 7 — Power and Efficacy Communicated Unto the Office of Christ</title>" in html
     )
-    assert '<h4 class="roman-subheading"><b>I.</b></h4>' in chapter_7
+    assert '<h4 class="roman-subheading"><strong>I.</strong></h4>' in chapter_7
     assert 'The first of these is, that he should have a nature provided for him,' in chapter_7
 
 
@@ -1180,8 +1180,8 @@ def test_list_item_announcer_syllabus_is_flattened():
         "(1.) No truth whatever brings any spiritual light unto the mind, but by virtue thereof."
     )
     html, _, _ = markdown_to_html(md)
-    assert '<p class="list-item list-level-1 syllabus-anchor"><b>1.</b> There are two things wherein the glory of truth does consist. <b>(1.)</b> Its light. <b>(2.)</b> Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ.</p>' in html
-    assert '<b>(1.)</b> No truth whatever' in html
+    assert '<p class="list-item list-level-1 syllabus-anchor"><strong>1.</strong> There are two things wherein the glory of truth does consist. <strong>(1.)</strong> Its light. <strong>(2.)</strong> Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ.</p>' in html
+    assert '<strong>(1.)</strong> No truth whatever' in html
 
 
 @pytest.mark.parametrize("volume", VOLUMES)
@@ -1193,9 +1193,9 @@ def test_issue_29_scholarly_citation_splits_do_not_recur_in_epub(volume):
     bad_patterns = [
         re.compile(r'\b(?:cap|chap|lib|q|a|m|p)\.,\s*\d'),
         re.compile(r'\b(?:cap|chap|lib|q|a|m|p)\.\s*,\s*\d'),
-        re.compile(r'De Trinitate,\s*lib\.\s*5\s*cap\.\s*</p>\s*<p[^>]*>\s*(?:<b>)?9\.', re.I | re.S),
+        re.compile(r'De Trinitate,\s*lib\.\s*5\s*cap\.\s*</p>\s*<p[^>]*>\s*(?:<strong>)?9\.', re.I | re.S),
         re.compile(r'See Aquin\.\s*22\s*q\.\s*81,\s*</p>\s*<p[^>]*>\s*a\.\s*3', re.I | re.S),
-        re.compile(r'\bChapter,?\s*</p>\s*<p[^>]*>\s*(?:<b>)?8\.', re.I | re.S),
+        re.compile(r'\bChapter,?\s*</p>\s*<p[^>]*>\s*(?:<strong>)?8\.', re.I | re.S),
     ]
 
     failures = []
@@ -1506,7 +1506,7 @@ def test_issue_21_multi_volume_known_cases():
     paragraph — no orphan paragraph that opens with just the second initial.
 
     Without the fix, D./V. at the start of a paragraph are promoted to bold
-    list-item markers: <p class="list-item"><b>D.</b> Kimchi …>.  After the fix
+    list-item markers: <p class="list-item"><strong>D.</strong> Kimchi …>.  After the fix
     they are absorbed into the preceding paragraph as plain inline text.
     """
     cases = [
@@ -1515,13 +1515,13 @@ def test_issue_21_multi_volume_known_cases():
             "men who are of the greatest note amongst them in these latter days, as R.\n\n"
             "D. Kimchi, Aben Ezra, Abrabanel, Lipman.",
             # The orphan pattern matches either a list-item bold marker or a bare <p>
-            r'<p[^>]*>(?:\s*<b>)?D\.',
+            r'<p[^>]*>(?:\s*<strong>)?D\.',
         ),
         # v14: "Mr J.\n\nV. C." → single paragraph
         (
             "happily ensue after so various tumults in the kingdom. By Mr J.\n\n"
             "V. C., a friend to men of all religions, 1661.",
-            r'<p[^>]*>(?:\s*<b>)?V\.',
+            r'<p[^>]*>(?:\s*<strong>)?V\.',
         ),
     ]
     for md, orphan_pattern in cases:
@@ -1601,7 +1601,7 @@ def test_issue_23_blockquote_p_margin_is_compact():
 def _build_list_html(*items):
     """Build consecutive <p class="list-item"> elements from (marker, content) pairs."""
     return ''.join(
-        f'<p class="list-item"><b>{mk}</b> {ct}</p>'
+        f'<p class="list-item"><strong>{mk}</strong> {ct}</p>'
         for mk, ct in items
     )
 
@@ -1679,14 +1679,14 @@ def test_issue_19_heterogeneous_run_splits_correctly():
 # ---------------------------------------------------------------------------
 # Issue 19.d – last item of inline run lacks a bold marker
 # When "5. To depart." is split from a merged paragraph, it may arrive as a
-# plain <p class="list-item"> with no <b> wrapper.  The regex must not create
+# plain <p class="list-item"> with no <strong> wrapper.  The regex must not create
 # nested <p> tags by falling through to the old 'item_contents' fallback.
 # ---------------------------------------------------------------------------
 
 def _build_roman_list_html(*items):
     """Build consecutive <p class="roman-list-item"> elements from (marker, content) pairs."""
     return ''.join(
-        f'<p class="roman-list-item"><b>{mk}</b> {ct}</p>'
+        f'<p class="roman-list-item"><strong>{mk}</strong> {ct}</p>'
         for mk, ct in items
     )
 
@@ -1694,10 +1694,10 @@ def _build_roman_list_html(*items):
 def test_issue_19d_last_item_without_bold_marker_no_nested_p():
     """A list-item paragraph that has no bold marker must not produce nested <p> tags."""
     html = (
-        '<p class="list-item"><b>1.</b> To proceed;</p>'
-        '<p class="list-item"><b>2.</b> To come, or come upon;</p>'
-        '<p class="list-item"><b>3.</b> To fall on men;</p>'
-        '<p class="list-item"><b>4.</b> To rest; and,</p>'
+        '<p class="list-item"><strong>1.</strong> To proceed;</p>'
+        '<p class="list-item"><strong>2.</strong> To come, or come upon;</p>'
+        '<p class="list-item"><strong>3.</strong> To fall on men;</p>'
+        '<p class="list-item"><strong>4.</strong> To rest; and,</p>'
         '<p class="list-item">5. To depart.</p>'
     )
     result = _merge_short_inline_lists(html)
@@ -1740,10 +1740,10 @@ def test_issue_19_roman_list_semicolon_run_merges():
 def test_issue_19_roman_list_does_not_merge_with_arabic_run():
     """A roman-list-item run and a list-item run must not be merged together."""
     html = (
-        '<p class="roman-list-item"><b>I.</b> First;</p>'
-        '<p class="roman-list-item"><b>II.</b> Second.</p>'
-        '<p class="list-item"><b>1.</b> One;</p>'
-        '<p class="list-item"><b>2.</b> Two.</p>'
+        '<p class="roman-list-item"><strong>I.</strong> First;</p>'
+        '<p class="roman-list-item"><strong>II.</strong> Second.</p>'
+        '<p class="list-item"><strong>1.</strong> One;</p>'
+        '<p class="list-item"><strong>2.</strong> Two.</p>'
     )
     result = _merge_short_inline_lists(html)
     # Each class merges independently; classes must not bleed into each other
@@ -1864,8 +1864,8 @@ def test_list_items_joined_by_and_merge():
     """'(1.) ... and' followed by '(2.) ...' must merge into one paragraph
     because the trailing 'and' is a grammatical connector, not a sentence end."""
     html = (
-        '<p class="list-item"><b>(1.)</b> What this work is, and</p>'
-        '<p class="list-item"><b>(2.)</b> How it is performed.</p>'
+        '<p class="list-item"><strong>(1.)</strong> What this work is, and</p>'
+        '<p class="list-item"><strong>(2.)</strong> How it is performed.</p>'
     )
     result = _merge_short_inline_lists(html)
     assert result.count('<p class="list-item">') == 1
@@ -1875,8 +1875,8 @@ def test_list_items_joined_by_and_merge():
 def test_list_items_joined_by_or_merge():
     """Items joined by 'or' behave the same as 'and'."""
     html = (
-        '<p class="list-item"><b>1.</b> Whether it be true or</p>'
-        '<p class="list-item"><b>2.</b> Whether it be false.</p>'
+        '<p class="list-item"><strong>1.</strong> Whether it be true or</p>'
+        '<p class="list-item"><strong>2.</strong> Whether it be false.</p>'
     )
     result = _merge_short_inline_lists(html)
     assert result.count('<p class="list-item">') == 1
@@ -1892,9 +1892,9 @@ def test_connector_merge_does_not_swallow_following_item():
     the contiguous 'and'-connected pair and then starts a fresh sub-run.
     """
     html = (
-        '<p class="list-item"><b>(1.)</b> What this work is, and</p>'
-        '<p class="list-item"><b>(2.)</b> How it is performed.</p>'
-        '<p class="list-item"><b>(1.)</b> In general; herein we must consider the agent.</p>'
+        '<p class="list-item"><strong>(1.)</strong> What this work is, and</p>'
+        '<p class="list-item"><strong>(2.)</strong> How it is performed.</p>'
+        '<p class="list-item"><strong>(1.)</strong> In general; herein we must consider the agent.</p>'
     )
     result = _merge_short_inline_lists(html)
     # Pair (1.)+(2.) → 1 merged paragraph; third (1.) → 1 separate paragraph
@@ -1909,8 +1909,8 @@ def test_list_items_period_terminated_still_stay_separate():
     when surrounded by items with 'and'/'or' — guard only fires when a
     NON-FINAL item ends with a connector."""
     html = (
-        '<p class="list-item"><b>1.</b> God is sovereign.</p>'
-        '<p class="list-item"><b>2.</b> God is holy.</p>'
+        '<p class="list-item"><strong>1.</strong> God is sovereign.</p>'
+        '<p class="list-item"><strong>2.</strong> God is holy.</p>'
     )
     result = _merge_short_inline_lists(html)
     assert result.count('<p class="list-item">') == 2
@@ -1958,14 +1958,14 @@ def test_bold_list_anchor_preserved_after_for_comma():
     """
     md = "For,\n\n1. It will herein appear, that the grace of God is sufficient."
     html, _, _ = markdown_to_html(md, current_mode="BODY_TEXT")
-    assert '<b>1.' in html, "The list anchor '1.' must be bold after 'For,'"
+    assert '<strong>1.' in html, "The list anchor '1.' must be bold after 'For,'"
 
 
 def test_bold_list_anchor_preserved_after_i_say_comma():
     """'1.' should remain bold when the preceding paragraph ends with 'I say,'."""
     md = "And unto the objection I say,\n\n1. Nothing is more fully evident in Scripture."
     html, _, _ = markdown_to_html(md, current_mode="BODY_TEXT")
-    assert '<b>1.' in html, "The list anchor '1.' must be bold after 'I say,'"
+    assert '<strong>1.' in html, "The list anchor '1.' must be bold after 'I say,'"
 
 
 def test_bold_verse_continuation_number_still_unbolded():
@@ -1974,7 +1974,7 @@ def test_bold_verse_continuation_number_still_unbolded():
     """
     md = "Rom. 5:12, 14,\n\n9. This is a verse number continuation."
     html, _, _ = markdown_to_html(md, current_mode="BODY_TEXT")
-    assert '<b>9.' not in html, "Verse-range continuation '9.' must not be bold"
+    assert '<strong>9.' not in html, "Verse-range continuation '9.' must not be bold"
 
 
 # ---------------------------------------------------------------------------
@@ -2049,11 +2049,11 @@ def test_contents_last_chapter_before_next_treatise_heading():
         '<section class="contents-page" epub:type="toc">'
         '<h1 class="contents-volume-title">CONTENTS OF VOLUME 1.</h1>'
         '<h2>CRISTOLOGIA</h2>'
-        '<p class="contents-item"><b>Chapter 19</b>. The Exaltation of Christ.</p>'
-        '<p class="contents-item"><b>Chapter 20</b>. The Exercise of the Mediatory Office.</p>'
+        '<p class="contents-item"><strong>Chapter 19</strong>. The Exaltation of Christ.</p>'
+        '<p class="contents-item"><strong>Chapter 20</strong>. The Exercise of the Mediatory Office.</p>'
         '<h2>MEDITATIONS AND DISCOURSES ON THE GLORY OF CHRIST.</h2>'
-        '<p class="contents-item"><b>1. — </b> The Explication of the Text.</p>'
-        '<p class="contents-item"><b>2. — </b> The Glory of the Person of Christ.</p>'
+        '<p class="contents-item"><strong>1. — </strong> The Explication of the Text.</p>'
+        '<p class="contents-item"><strong>2. — </strong> The Glory of the Person of Christ.</p>'
         '</section>'
     )
     result = _polish_contents_page_html(html)
@@ -2092,7 +2092,7 @@ def test_front_matter_prose_list_anchors_are_bold():
     """
     md = "There are three reasons,\n\n1. The first is this.\n\n2. The second is that."
     html, _, _ = markdown_to_html(md, current_mode="FRONT_MATTER", front_matter_style="prose")
-    assert '<b>1.' in html or '<b>1.</b>' in html, "List anchor '1.' must be bold in front-matter prose"
+    assert '<strong>1.' in html or '<strong>1.</strong>' in html, "List anchor '1.' must be bold in front-matter prose"
 
 
 def test_general_preface_v1_renders_without_standalone_for_comma():
@@ -2169,8 +2169,8 @@ def test_issue_48_colon_para_merges_onto_first_list_item():
     """A <p> ending ':' immediately before <p class="list-item"> must be merged."""
     html = (
         '<p>And of them two things may be considered:</p>\n'
-        '<p class="list-item"><b>(1.)</b> Their original; '
-        '<b>(2.)</b> The design of their accomplishment.</p>'
+        '<p class="list-item"><strong>(1.)</strong> Their original; '
+        '<strong>(2.)</strong> The design of their accomplishment.</p>'
     )
     result = _attach_colon_introduced_list(html)
     assert result.startswith('<p class="list-item">And of them two things'), (
@@ -2185,8 +2185,8 @@ def test_issue_48_list_item_class_preserved_for_downstream_merge():
     so that _merge_short_inline_lists can handle the full run."""
     html = (
         '<p>As follows:</p>\n'
-        '<p class="list-item"><b>(1.)</b> First; </p>\n'
-        '<p class="list-item"><b>(2.)</b> Second.</p>'
+        '<p class="list-item"><strong>(1.)</strong> First; </p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Second.</p>'
     )
     attached = _attach_colon_introduced_list(html)
     # The intro "As follows:" must now open a list-item paragraph
@@ -2199,14 +2199,14 @@ def test_issue_48_list_item_class_preserved_for_downstream_merge():
     )
     merged = _merge_short_inline_lists(attached)
     # Rule B should merge both items since (1.) ends with ';'
-    assert '<b>(2.)</b>' in merged, "Second item must still be present after full pipeline"
+    assert '<strong>(2.)</strong>' in merged, "Second item must still be present after full pipeline"
 
 
 def test_issue_48_no_match_when_para_ends_with_non_colon():
     """A paragraph that does NOT end with ':' must not trigger the merge."""
     html = (
         '<p>This is a regular paragraph.</p>\n'
-        '<p class="list-item"><b>(1.)</b> An item.</p>'
+        '<p class="list-item"><strong>(1.)</strong> An item.</p>'
     )
     result = _attach_colon_introduced_list(html)
     # Original structure must be unchanged
@@ -2216,8 +2216,8 @@ def test_issue_48_no_match_when_para_ends_with_non_colon():
 def test_issue_48_existing_list_item_not_treated_as_intro():
     """A <p class="list-item"> ending in ':' must NOT swallow the next list-item."""
     html = (
-        '<p class="list-item"><b>(1.)</b> First heading:</p>\n'
-        '<p class="list-item"><b>(2.)</b> Second item.</p>'
+        '<p class="list-item"><strong>(1.)</strong> First heading:</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Second item.</p>'
     )
     result = _attach_colon_introduced_list(html)
     # The list-item should be left intact (it matches the exclusion clause)
@@ -2266,9 +2266,9 @@ def test_issue_48a_single_word_roman_rule_a_guard():
     preserve the newline separators between them (Issue 48.a root cause)."""
     html = (
         '<p>four heads:</p>\n'
-        '<p class="roman-list-item"><b>I.</b> Honor.</p>\n'
-        '<p class="roman-list-item"><b>II.</b> Obedience.</p>\n'
-        '<p class="roman-list-item"><b>III.</b> Conformity.</p>\n'
+        '<p class="roman-list-item"><strong>I.</strong> Honor.</p>\n'
+        '<p class="roman-list-item"><strong>II.</strong> Obedience.</p>\n'
+        '<p class="roman-list-item"><strong>III.</strong> Conformity.</p>\n'
         '<p>After.</p>'
     )
     result = _merge_short_inline_lists(html)
@@ -2506,13 +2506,13 @@ def test_comma_introduced_flat_syllabus_absorbed():
     from render import _attach_em_dash_flat_list
     html = (
         '<p>reduced unto two heads,</p>\n'
-        '<p class="list-item"><b>1st,</b> Adoration;</p>\n'
-        '<p class="list-item"><b>2ndly,</b> Invocation.</p>'
+        '<p class="list-item"><strong>1st,</strong> Adoration;</p>\n'
+        '<p class="list-item"><strong>2ndly,</strong> Invocation.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' not in result, "Items should be absorbed flat"
     assert result.count("<p") == 1, "Should collapse to a single paragraph"
-    assert "reduced unto two heads, <b>1st,</b> Adoration; <b>2ndly,</b> Invocation.</p>" in result
+    assert "reduced unto two heads, <strong>1st,</strong> Adoration; <strong>2ndly,</strong> Invocation.</p>" in result
 
 
 def test_closed_sentence_gate_prevents_false_positives():
@@ -2526,8 +2526,8 @@ def test_closed_sentence_gate_prevents_false_positives():
     # 1. Plain prose ending in period with no explicit counts/formula: stays separate block
     html = (
         '<p>This was a great doctrine of the church.</p>\n'
-        '<p class="list-item"><b>1.</b> First item here.</p>\n'
-        '<p class="list-item"><b>2.</b> Second item here.</p>'
+        '<p class="list-item"><strong>1.</strong> First item here.</p>\n'
+        '<p class="list-item"><strong>2.</strong> Second item here.</p>'
     )
     result = _attach_em_dash_flat_list(html)
     assert 'class="list-item"' in result, "Plain period-ending prose must not flatten"
@@ -2536,13 +2536,13 @@ def test_closed_sentence_gate_prevents_false_positives():
     # 2. Period-ending prose with exact count match (announced two, got two items): allowed to flatten
     html_exact = (
         '<p>The apostle here proposes two things.</p>\n'
-        '<p class="list-item"><b>(1.)</b> The person of Christ.</p>\n'
-        '<p class="list-item"><b>(2.)</b> The work of Christ.</p>'
+        '<p class="list-item"><strong>(1.)</strong> The person of Christ.</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> The work of Christ.</p>'
     )
     result_exact = _attach_em_dash_flat_list(html_exact)
     assert 'class="list-item"' not in result_exact, "Exact count match list after period should flatten"
     assert result_exact.count("<p") == 1
-    assert "proposes two things. <b>(1.)</b> The person of Christ. <b>(2.)</b> The work of Christ.</p>" in result_exact
+    assert "proposes two things. <strong>(1.)</strong> The person of Christ. <strong>(2.)</strong> The work of Christ.</p>" in result_exact
 
 
 def test_apply_premium_salutations():
@@ -2555,7 +2555,7 @@ def test_apply_premium_salutations():
     assert res1 == '<p class="prefatory-salutation">Christian Reader,</p>'
 
     # 2. Wrapped in bold/italic tags
-    html2 = '<p class="front-matter-prose"><i><b>To the Christian Reader,</b></i></p>'
+    html2 = '<p class="front-matter-prose"><em><strong>To the Christian Reader,</strong></em></p>'
     res2 = _apply_premium_salutations(html2)
     assert res2 == '<p class="prefatory-salutation">To the Christian Reader,</p>'
 
@@ -2580,14 +2580,14 @@ def test_apply_premium_chapter_endings():
     from render import _apply_premium_chapter_endings
 
     # 1. Standalone ending in bold
-    html1 = '<p><b>END OF PART 2.</b></p>'
+    html1 = '<p><strong>END OF PART 2.</strong></p>'
     res1 = _apply_premium_chapter_endings(html1)
-    assert res1 == '<p class="chapter-end-marker"><b>END OF PART 2.</b></p>'
+    assert res1 == '<p class="chapter-end-marker"><strong>END OF PART 2.</strong></p>'
 
     # 2. Trailing ending in paragraph
     html2 = '<p>This concludes the meditations. **THE END.**</p>'
     res2 = _apply_premium_chapter_endings(html2)
-    assert '<p class="chapter-end-marker"><b>THE END.</b></p>' in res2
+    assert '<p class="chapter-end-marker"><strong>THE END.</strong></p>' in res2
     assert '<p>This concludes the meditations.</p>' in res2
 
 

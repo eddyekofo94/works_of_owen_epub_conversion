@@ -1233,7 +1233,7 @@ def build_citation_note(
     expanded_loc = _expand_location_string(matched_text)
     author_full = AUTHOR_ABBREV_MAP.get(author_key, author_key.capitalize())
     title_html = (
-        f"<i>{work_data['full_title']}</i>"
+        f"<em>{work_data['full_title']}</em>"
         + (f" ({work_data['latin_title']})" if work_data.get('latin_title') else "")
     )
     refs = []
@@ -1244,9 +1244,9 @@ def build_citation_note(
     if work_data.get('pg'):
         refs.append(work_data['pg'])
     ref_str = f" [{'; '.join(refs)}]" if refs else ""
-    note_str = f"<b>Modern Citation:</b> {author_full}, {title_html}, {expanded_loc}{ref_str}."
+    note_str = f"<strong>Modern Citation:</strong> {author_full}, {title_html}, {expanded_loc}{ref_str}."
     if work_data.get('notes'):
-        note_str += f" <i>{work_data['notes']}</i>"
+        note_str += f" <em>{work_data['notes']}</em>"
     return note_str
 
 
@@ -1271,7 +1271,7 @@ SELF_REF_PATTERNS = re.compile(
 # Detects a footnote sup already attached to a citation (already resolved)
 _ALREADY_ANNOTATED_RE = re.compile(
     r'(?:lib|serm(?:o)?|epist|ep|orat|tract|homil|haer|dial|adv)\.'
-    r'[^<]{0,40}<sup',
+    r'[^<]{0,40}<a[^>]*class="noteref',
     re.I
 )
 
@@ -1311,7 +1311,7 @@ def expand_inline_citations(
 
     # Pre-compute which citation strings are already "owned" by BODY_TRANSLATIONS.
     # _apply_translations() resolved LONGER phrases that CONTAIN these citation
-    # strings as substrings; the text still appears in the HTML (with <sup> at the
+    # strings as substrings; the text still appears in the HTML (with <a> at the
     # end of the full phrase), so our regex would find it again. We must skip those.
     _bt_covered: set[str] = set()
     for _phrase in _bt:
@@ -1333,7 +1333,7 @@ def expand_inline_citations(
         cite_norm = re.sub(r'\s+', ' ', cite_str.strip().lower())
         if cite_norm in _bt_covered:
             continue
-        # Skip if immediately followed by our own <sup> (already annotated)
+        # Skip if immediately followed by our own <a> (already annotated)
         tail = html[m.end():m.end() + 30]
         if _OUR_SUP_RE.search(tail):
             continue
@@ -1362,8 +1362,8 @@ def expand_inline_citations(
         trans_counter += 1
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
-            f'<sup><a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a></sup>'
+            f'<a class="noteref noteref-trans" epub:type="noteref" '
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a>'
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end
@@ -1405,8 +1405,8 @@ def expand_inline_citations(
         trans_counter += 1
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
-            f'<sup><a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a></sup>'
+            f'<a class="noteref noteref-trans" epub:type="noteref" '
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a>'
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end

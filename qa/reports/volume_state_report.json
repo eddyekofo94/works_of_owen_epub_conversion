@@ -1,37 +1,7 @@
 [
   {
-    "vol": "12",
-    "rank": 1,
-    "score": 40.0,
-    "need": 40.0,
-    "grade": "needs_work",
-    "qa_level": "NONE",
-    "coverage": null,
-    "greek_coverage": null,
-    "hebrew_coverage": null,
-    "latin_coverage": null,
-    "latin_tagging": null,
-    "latin_translation": null,
-    "total_citations": 70,
-    "unresolved_citations": 0,
-    "splits": null,
-    "warnings": null,
-    "errors": null,
-    "regressions": 0,
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "arno-pro",
-    "treatises": 3,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": [
-      "run_epub_audit",
-      "run_text_integrity_audit"
-    ]
-  },
-  {
     "vol": "h2",
-    "rank": 2,
+    "rank": 1,
     "score": 36.3,
     "need": 36.3,
     "grade": "fair",
@@ -61,7 +31,7 @@
   },
   {
     "vol": "h5",
-    "rank": 3,
+    "rank": 2,
     "score": 34.1,
     "need": 34.1,
     "grade": "fair",
@@ -91,7 +61,7 @@
   },
   {
     "vol": "h3",
-    "rank": 4,
+    "rank": 3,
     "score": 32.1,
     "need": 32.1,
     "grade": "fair",
@@ -121,7 +91,7 @@
   },
   {
     "vol": "h6",
-    "rank": 5,
+    "rank": 4,
     "score": 30.8,
     "need": 30.8,
     "grade": "fair",
@@ -151,7 +121,7 @@
   },
   {
     "vol": "h1",
-    "rank": 6,
+    "rank": 5,
     "score": 30.2,
     "need": 30.2,
     "grade": "fair",
@@ -181,7 +151,7 @@
   },
   {
     "vol": "h4",
-    "rank": 7,
+    "rank": 6,
     "score": 28.7,
     "need": 28.7,
     "grade": "fair",
@@ -211,7 +181,7 @@
   },
   {
     "vol": "h7",
-    "rank": 8,
+    "rank": 7,
     "score": 28.3,
     "need": 28.3,
     "grade": "fair",
@@ -238,6 +208,33 @@
       "translate_unresolved_citations",
       "review_ocr_anomalies"
     ]
+  },
+  {
+    "vol": "12",
+    "rank": 8,
+    "score": 12.4,
+    "need": 12.4,
+    "grade": "good",
+    "qa_level": "PRISTINE",
+    "coverage": 99.94,
+    "greek_coverage": 99.92,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.76,
+    "latin_tagging": 74.61,
+    "latin_translation": 45.0,
+    "total_citations": 70,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "anomalies_count": 1,
+    "unmatched_quotes": 0,
+    "font": "arno-pro",
+    "treatises": 3,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
   },
   {
     "vol": "3",

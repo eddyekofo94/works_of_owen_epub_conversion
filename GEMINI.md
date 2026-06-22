@@ -19,33 +19,29 @@ Inject this CSS into every XHTML `<head>` using `!important` to override legacy 
 body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  text-align: justify !important;
-  text-justify: inter-word;
-  -webkit-hyphens: auto !important;
-  -epub-hyphens: auto !important;
-  hyphens: auto !important;
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
+  text-rendering: optimizeLegibility;
   line-height: 1.65;
   margin: 0.4em 0.5em !important;
+  overflow-x: hidden;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  text-align: justify;
+  text-justify: inter-word;
 }
 body, div, p, span, h1, h2, h3, h4, h5, h6 {
   font-family: "[PRIMARY]", "SBL BibLit", "Gentium Plus", serif !important;
 }
 h1, h2, h3, h4, h5, h6 {
-  text-align: left !important;
   -webkit-hyphens: none !important;
   -epub-hyphens: none !important;
   hyphens: none !important;
 }
 p {
-  text-align: justify !important;
-  text-justify: inter-word;
+  text-align: justify;
+  -epub-text-align-last: left;
+  text-align-last: left;
   -webkit-hyphens: auto !important;
-  -epub-hyphens: auto !important;
   hyphens: auto !important;
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
   orphans: 2;
   widows: 2;
 }
@@ -69,14 +65,21 @@ a, .noteref {
   text-decoration: none;
 }
 .noteref {
+  display: inline-block !important;
   vertical-align: super;
-  font-size: 0.85rem;
-  padding: 0.1em 0.2em; /* Easy-tap */
+  font-size: 0.70rem;
+  line-height: 0;
+  padding: 0.1em 0.15em;
+  margin-left: 0.25em !important;
+  white-space: nowrap;
 }
 .footnote {
-  font-size: 0.9em;
-  text-indent: 0;
-  margin: 0.3em 0;
+  font-size: 1.0em !important;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 1.5em 0 0.8em 0 !important; /* 1.5em top padding forces clearance */
+  text-indent: 0 !important;
+  display: block;
 }
 a.fn-link {
   color: #2a55a0 !important;
@@ -94,7 +97,11 @@ blockquote {
   padding-left: 1.2em !important;
   margin: 1.2em 0 !important;
 }
-aside[epub\:type~="footnote"] { display: block; }
+aside[epub\:type~="footnote"] {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 aside[epub\:type~="endnote"] {
   margin-bottom: 0.8em;
   padding-left: 1.8em;

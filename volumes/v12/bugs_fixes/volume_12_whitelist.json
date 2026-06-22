@@ -1,47 +1,5 @@
 {
   "anomalies": {
-    "Punctuation Spacing Blemishes": [
-      "e )",
-      "s  )",
-      "1 .",
-      "m  )",
-      "disobedient .",
-      "2 .",
-      "office .",
-      "e  )",
-      "m  )",
-      "Ans .",
-      "1  )",
-      "2dly .",
-      "1st .",
-      "2dly .",
-      "A .",
-      "us .",
-      "law .",
-      "jus .",
-      "necessaria ."
-    ],
-    "Structural Nesting Sequence Jumps": [
-      "15.",
-      "3.",
-      "1. ... 4.",
-      "2. ... 6.",
-      "6. ... 9.",
-      "1. ... 3.",
-      "2. ... 4.",
-      "1. ... 3.",
-      "1. ... 4.",
-      "1. ... 3.",
-      "2. ... 4.",
-      "4.",
-      "2. ... 4.",
-      "2. ... 14.",
-      "12.",
-      "2. ... 4.",
-      "13.",
-      "1. ... 3.",
-      "4. ... 11."
-    ],
     "Unmatched Quotation Marks": [
       "From thence whence in the thoughts of some I am most likely to suffer, as to my own resolves, I am most secure. It is in...",
       "3. Some passages in his Annotations.\"",
@@ -50,7 +8,7 @@
       "The assembly of states was called against the Muscovians. The nobility desiring a conference between the ministers of th...",
       "In the year 1579, in the beginning of the month of June, he was cast into prison by the prince of Transylvania, and live...",
       "3. As these are admirable men, so the way he takes for their satisfaction is admirable also; that is, by \"asserting noth...",
-      "His first is of God's being infinite and incomprehensible. This he condemns, name and thing, — that is, he says \"he is f...",
+      "His first is of God's being infinite and incomprehensible. This he condemns, name and thing, \u2014 that is, he says \"he is f...",
       "That God is a simple act is the next thing excepted against and decried, name and thing; in the room whereof, that he is...",
       "It being the great thing we have to aim at, namely, that \"we may know Jesus Christ, and the fellowship of his sufferings...",
       "Mr B. closeth his preface with a commendation of the Scriptures, their excellency and divinity, with the eminent success...",
@@ -67,15 +25,15 @@
       "But the most learned man's exposition of this place is admirable. \"Jesus,\" saith he, \"is many ways said to be the ' Son ...",
       "[[BLOCKQUOTE]] \"Q. Howbeit, is not Christ dignified, as with the title of Lord, so also with that of God, in the Scriptu...",
       "To escape the dint of this sword, Mr B. nextly queries: \"Q. Was he so the God of Thomas as that he himself in the meanti...",
-      "A. John 20:17; Revelation 3:12.\" [f257] True, he who, being partaker of the divine essence, in the form of God, was Thomas' Go...",
+      "A. John 20:17; Revelation 3:12.\"  True, he who, being partaker of the divine essence, in the form of God, was Thomas' Go...",
       "2. In calling these properties of the several natures in Christ \"adverse'' or \"contrary,\" they would insinuate a conside...",
       "2. If by natures constituting persons they mean those who, antecedently to their union, have actually done so, we grant ...",
       "2. If our catechists have no more to say, to the illustration given of the union of the two natures in the person of Chr...",
       "2. Though eternity has no beginning, and the sense of these words cannot be, \"In the beginning of eternity,\" yet eternit...",
       "2. He uses the same manner of speech which signifieth the mediate cause; for he saith \"The world was made by him.\" Lastl...",
-      "A. A twofold sense may be given of them: — First, that human kind was reformed by Christ, and as it were made again, bec...",
+      "A. A twofold sense may be given of them: \u2014 First, that human kind was reformed by Christ, and as it were made again, bec...",
       "But that these words, \"I am,\" are to be supplied in that manner as if himself had added to them, \"I am the light of the ...",
-      "2. Here is no mention of the מִקֶּדֶם, \"beginning;\" and those who in the latter words reject the Vulgar edition cannot h...",
+      "2. Here is no mention of the \u05de\u05b4\u05e7\u05b6\u05bc\u05d3\u05b6\u05dd, \"beginning;\" and those who in the latter words reject the Vulgar edition cannot h...",
       "Grotius on this place, according to his wont, outgoes his companions one step at least (as he was a bold man at conjectu...",
       "Doubtless the thought of any such thing was as remote from the heart of the holy man as this gloss is from the sense of ...",
       "Grotius takes no notice of Christ in this place, yea, he seems evidently to exclude him from being here intended. His fi...",
@@ -83,169 +41,287 @@
       "Q. What dost thou answer to this second testimony A. The place of Zechariah they thus cite: \"This saith the LORD of host...",
       "Even at the light of this most evident testimony, the eyes of Grotius dazzled that he could not see the truth. His note ...",
       "4. There is no analogy between that of the prophet, of the \"apple of God's eye,\" and this here spoken of. Uncontrollably...",
-      "2. The latter part of the verse he thus illustrates, or rather obscures: Τὰ πάντα δἰ αὐτοῦ, intellige omnia quae ad nova...",
+      "2. The latter part of the verse he thus illustrates, or rather obscures: \u03a4\u1f70 \u03c0\u03ac\u03bd\u03c4\u03b1 \u03b4\u1f30 \u03b1\u1f50\u03c4\u03bf\u1fe6, intellige omnia quae ad nova...",
       "2 Peter 3:5.\" Prove it by any one instance; or, if that may not be done, beg no more in a matter of this importance. In ...",
-      "4. The word φέρων, neither in its native signification nor in the use of it in the Scripture, gives any countenance to t...",
+      "4. The word \u03c6\u03ad\u03c1\u03c9\u03bd, neither in its native signification nor in the use of it in the Scripture, gives any countenance to t...",
       "The intendment and design of the apostle in this place being evidently to exhort believers to self-denial, mutual love, ...",
-      "Επιστεύθη ἐν κόσμῳ. \"Id est, in magna mundi parte, Romans 1:8, Colossians 1:6.\" But then, I pray, what difference is bet...",
+      "\u0395\u03c0\u03b9\u03c3\u03c4\u03b5\u03cd\u03b8\u03b7 \u1f10\u03bd \u03ba\u03cc\u03c3\u03bc\u1ff3. \"Id est, in magna mundi parte, Romans 1:8, Colossians 1:6.\" But then, I pray, what difference is bet...",
       "That Jesus Christ is the husband and spouse of the church will not be denied, Ephesians 5:25, Revelation 21:9; but he wh...",
-      "[[BLOCKQUOTE]] \"Dixit Rabbi Tanchum, Quomodo omne mem quod est in medio vocis aperture est, et istud לְםַרְבֵּה, Isaiah ...",
+      "[[BLOCKQUOTE]] \"Dixit Rabbi Tanchum, Quomodo omne mem quod est in medio vocis aperture est, et istud \u05dc\u05b0\u05dd\u05b7\u05e8\u05b0\u05d1\u05b5\u05bc\u05d4, Isaiah ...",
       "[[BLOCKQUOTE]] Quaesivit Deus sanctus benedictus facere Ezechiam Messiam, et Sennacheribum Gog et Magog. Dixit proprieta...",
       "1. Verse 5, the apostle, speaking of the heathens and their opinion of the Deity, says, \"There be,\" that is, to them, in...",
-      "Grotius' annotation on this place is worth our observation, as having somewhat new and peculiar in it. \"Κύριον τῆς δόξης...",
-      "[[BLOCKQUOTE]] \"Q. How many Holy Spirits of Christians are there? —",
+      "Grotius' annotation on this place is worth our observation, as having somewhat new and peculiar in it. \"\u039a\u03cd\u03c1\u03b9\u03bf\u03bd \u03c4\u1fc6\u03c2 \u03b4\u03cc\u03be\u03b7\u03c2...",
+      "[[BLOCKQUOTE]] \"Q. How many Holy Spirits of Christians are there? \u2014",
       "A. 'One Spirit,' Ephesians 4:4.\" I must take leave to put one question to Mr B, that we may the better know the mind and...",
-      "[[BLOCKQUOTE]] \"Wherein consists the prerogative of that Holy Spirit above other spirits? —",
+      "[[BLOCKQUOTE]] \"Wherein consists the prerogative of that Holy Spirit above other spirits? \u2014",
       "A. 1.Corinthians 2:10, 11.\" The prerogative of that Holy Spirit of whom we speak is that of God above his creatures, rat...",
       "Thirdly, He dwelleth in us, as God in a temple, Romans 8:9, 1 Corinthians 3:16; thereby sanctifying us, 1 Corinthians 6:...",
-      "[[BLOCKQUOTE]] \"Whence is the Holy Ghost sent? —",
+      "[[BLOCKQUOTE]] \"Whence is the Holy Ghost sent? \u2014",
       "A. 1.Peter 1:12, 'Down from heaven.'\"",
       "2. Our Savior, Christ, says here, \"He shall not speak of himself;' but he nowhere says, \"He shall not impart of his own ...",
-      "[[BLOCKQUOTE]] \"Doth not Christ forgive sins? —",
+      "[[BLOCKQUOTE]] \"Doth not Christ forgive sins? \u2014",
       "A. 'Christ forgave you,' Colossians 3:13.\" That Christ forgives sins is taken for granted; and yet forgiveness of sin is...",
       "But yet as Mr B. eats his word as to Moses, and after he had affirmed that he saw the face of God, says he only saw the ...",
-      "All the difficulty of this question ariseth from these words, \"Like Moses;\" and the sense by Mr B. put upon them, — how ...",
+      "All the difficulty of this question ariseth from these words, \"Like Moses;\" and the sense by Mr B. put upon them, \u2014 how ...",
       "2. What is added to this question will be of an easy despatch. The word \"law' may be considered generally, as to the nat...",
       "2. If the law wants perfection, it is in respect of its essential parts, or its integral parts, or in respect of degrees...",
       "1. The first is in reference to the sixth commandment, \"Thou shalt not kill.\" This the Pharisees so interpreted as that ...",
       "Q. Were those better promises of God touching eternal life and immortality hidden in the dark and not brought to light u...",
-      "2. From the command, and the natural and eternal obligation of it, in these repeated words, Τῷ Θεῷ προκύνησον. [f387] It is th...",
+      "2. From the command, and the natural and eternal obligation of it, in these repeated words, \u03a4\u1ff7 \u0398\u03b5\u1ff7 \u03c0\u03c1\u03bf\u03ba\u03cd\u03bd\u03b7\u03c3\u03bf\u03bd.  It is th...",
       "This Franken seems to have been a subtile fellow, who, denying with Socinus that Christ was God, saw evidently that it w...",
       "The next argument of Franken, whereby he brought his adversary to another absurdity, had its rise from a distinction giv...",
       "How the whole nation of the Socinians have since consented into this notion of their master, I need not manifest. It is ...",
-      "Ans . That Christ is a high priest there also we grant; that he is so there only, there is not one word in the place cit...",
-      "Περικαθάρματα are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them fo...",
+      "Ans. That Christ is a high priest there also we grant; that he is so there only, there is not one word in the place cite...",
+      "\u03a0\u03b5\u03c1\u03b9\u03ba\u03b1\u03b8\u03ac\u03c1\u03bc\u03b1\u03c4\u03b1 are things publicly devoted to destruction, as it were to turn away anger from others, coming upon them fo...",
       "(2.) The apostle instances, in particular, by what means the law could not do this great work of \"making the comers ther...",
       "[1.] It is for the good of them that may be like-minded with him that is punished, that they may be deterred, affrighted...",
       "[2.] It is for the good of others, that they may not be hurt in the like kind as some were by the sin of him who is puni...",
       "2. \"To meet,\" or \"to make to meet\" properly, which is the first and most clear sense of the word. It is often used for t...",
       "First, then, that the words cannot be interpreted \"to pray or intercede'' is evident from the contexture, wherein it is ...",
       "[1.] The first is \"innovatio obligationis,\" the \"innovation of the obligation,\" wherein we were detained and bound over ...",
-      "1. For the words themselves: יַצְכִּיל, with the Vulgar Latin, he renders \"intelliget,\" \"shall understand.\" The word sig...",
+      "1. For the words themselves: \u05d9\u05b7\u05e6\u05b0\u05db\u05b4\u05bc\u05d9\u05dc, with the Vulgar Latin, he renders \"intelliget,\" \"shall understand.\" The word sig...",
       "\"Ita asperget gentes multas. In Hebraeo, 'Sic asperget,' ut re-spondeat illi, sicut,' quod praecessit. Multos ex gentibu...",
       "An entrance is made in these words into the account that the prophet intends to give why so few believed in Christ, the ...",
-      "Jeremiah shall serve God in his prophetical office whilst he is young. 'And as a root out of a dry ground;' — He shall b...",
+      "Jeremiah shall serve God in his prophetical office whilst he is young. 'And as a root out of a dry ground;' \u2014 He shall b...",
       "All these things he saith the Jews shall say after the taking of the city.\"",
-      "2. The words used to express this cause of wounding are two, and both emphatical. The filet is פָשַׁע: \"He was wounded מ...",
+      "2. The words used to express this cause of wounding are two, and both emphatical. The filet is \u05e4\u05b8\u05e9\u05b7\u05c1\u05e2: \"He was wounded \u05de...",
       "This, then, being the reading of the words, \"He was wounded or tormented for our sins,\" the sense as relating to Jesus C...",
       "Verse 7, \"He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter,...",
       "[[BLOCKQUOTE]] \"De carcere et de judicio ablatus est. Id est, liberatus tandem. Judicium vocat hoc, quia specie judicii ...",
       "\"Generationem ejus quis enarrabit? Quis numerare poterit dies vitae ejus? Id est, erit valde longsevus.",
-      "3. \"For he was cut off out of the land of the living.\" Οτι αἴρεται ἀπὸ τῆς ἡ ζωὴ αὐτοῦ — \"His life was taken from the ea...",
+      "3. \"For he was cut off out of the land of the living.\" \u039f\u03c4\u03b9 \u03b1\u1f34\u03c1\u03b5\u03c4\u03b1\u03b9 \u1f00\u03c0\u1f78 \u03c4\u1fc6\u03c2 \u1f21 \u03b6\u03c9\u1f74 \u03b1\u1f50\u03c4\u03bf\u1fe6 \u2014 \"His life was taken from the ea...",
       "A farther fruit of the travail of the Lord Christ, in his conquest over all oppositions, in the victory he obtained, the...",
       "He was to do that which the old sacrifices could not do, as hath been declared: \"For it was not possible that the blood ...",
       "[2.] That in this \"body,\" or human nature, he should be a \"servant,'' or yield obedience. Hence God calls him his servan...",
       "Neither is the church of God at all beholding to some late expositors, who, to show their skill in the Hebrew doctors, w...",
-      "We are bought by Christ, saith the apostle: Ηγοράσθητε, \"Ye are bought,\" 1 Corinthians 6:20. But this buying may be take...",
+      "We are bought by Christ, saith the apostle: \u0397\u03b3\u03bf\u03c1\u03ac\u03c3\u03b8\u03b7\u03c4\u03b5, \"Ye are bought,\" 1 Corinthians 6:20. But this buying may be take...",
       "They are persons \"whose names are not written in the book of life of the Lamb,\" Revelation 13:8; being \"of old ordained ...",
       "Yea, when he had been \"lifted up' to \"draw all men unto him,\" John 3:14, John 12:32, and, being ascended, had broken dow...",
       "2. It is called \"destruction,\" and \"perdition,\" and \"everlasting destruction,\" 1 Thessalonians 5:3; 2 Peter 3:7; 2 Thess...",
       "God threatens men with death and destruction, and describes that death and destruction to consist in the abiding under h...",
       "[[BLOCKQUOTE]] \"Credere in Jesum Christum nihil aliud est quam Jesu Christo confidere, et idcirco ex ejus praescripto vi...",
-      "Deo obtemperemus,\" etc. — Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. The...",
+      "Deo obtemperemus,\" etc. \u2014 Cat. Rac. cap. 9 de fide; Volkel. de Vera Relig., lib. 4 cap. 3 p. 179, 180; Smalc. Refut. The...",
       "[[BLOCKQUOTE]] \"Diligenter cavere debemus ne vitae sanctitatem et innocentiam, justificationem nostram coram Deo esse cr...",
-      "justificationem nobis non contingere decrevit Deus.\" — Socin. Synop. Justificat. 2:p. 14. \"Id a nobis revera exegit, ut ...",
+      "justificationem nobis non contingere decrevit Deus.\" \u2014 Socin. Synop. Justificat. 2:p. 14. \"Id a nobis revera exegit, ut ...",
       "[[BLOCKQUOTE]] \"Justificatio est cum nos Deus pro justis habet, quod ea ratione facit, cum nobis et peccata remittit, et...",
       "[[BLOCKQUOTE]] \"Dicent ergo Arminiani, nos hic justificationem sumere pro sensu et notitia justificationis: ideoque homi...",
       "(1.) est actus Dei absolventis terminatus in conscientia hominis, citati et tracti ad tribunale tremendi judicis; qui ac...",
-      "[[BLOCKQUOTE]] \"The words of one that writes this way are these: — \"'Here two things may be observed: — \"'1. What we asc...",
+      "[[BLOCKQUOTE]] \"The words of one that writes this way are these: \u2014 \"'Here two things may be observed: \u2014 \"'1. What we asc...",
       "[[BLOCKQUOTE]] \"This man,\" says he, seems to judge that the name of complete justification is proper to that in conscien...",
       "[[BLOCKQUOTE]] \"1. Not all, not the same measure of sanctification for one as for another; not faith for all for whom he...",
       "So he. The expression of our dying with Christ is fallen upon again, p. 226; of which he desires leave to speak as confi...",
       "Seventhly, I profess that we are absolved, pardoned, and justified, for Christ's sake, and therefore that Christ is reck...",
-      "Ος τὰς ἀμαρτίας ἡμῶν αὐτὸς ἀνήνεγκεν, etc. Ανήεγκεν hic est abstulit, quod sequentia ostendunt, quomodo idem verbum sumi...",
+      "\u039f\u03c2 \u03c4\u1f70\u03c2 \u1f00\u03bc\u03b1\u03c1\u03c4\u03af\u03b1\u03c2 \u1f21\u03bc\u1ff6\u03bd \u03b1\u1f50\u03c4\u1f78\u03c2 \u1f00\u03bd\u03ae\u03bd\u03b5\u03b3\u03ba\u03b5\u03bd, etc. \u0391\u03bd\u03ae\u03b5\u03b3\u03ba\u03b5\u03bd hic est abstulit, quod sequentia ostendunt, quomodo idem verbum sumi...",
       "The sum of what is to this purpose by me affirmed is, that in the Annotations on the Old and New Testament, Grotius hath..."
     ],
-    "OCR & Bracket Residues": [
-      "s subsisting",
-      "b si",
-      "u the",
-      "w him",
+    "Structural Nesting Sequence Jumps": [
+      "15.",
+      "3.",
+      "1. ... 4.",
+      "2. ... 6.",
+      "6. ... 9.",
+      "1. ... 3.",
+      "2. ... 4.",
+      "4.",
+      "2. ... 14.",
+      "12.",
+      "13.",
+      "4. ... 11."
+    ],
+    "Scanner Substring False Positives": [
       "blind eyes",
-      "b from",
       "qui et",
       "e manibus",
       "E verbo",
       "Pater noster",
-      "e lacu",
-      "B hath",
-      "seal et"
-    ]
+      "e lacu"
+    ],
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [
+      "s subsisting"
+    ],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": []
   },
   "text_integrity": {
     "ignored_warnings": [
-      "front_matter_toc_loss",
-      "suspicious_large_number_starts",
-      "missing_enumerator_markers",
-      "repeated_windows",
-      "missing_latin_clauses",
-      "low_latin_translation_coverage",
-      "enumerator_sequence_candidates",
       "possible_beta_code_residue",
-      "repeated_phrases"
+      "repeated_phrases",
+      "missing_enumerator_markers"
+    ],
+    "excess_words": [
+      "digital",
+      "psalms",
+      "theological",
+      "historical",
+      "modern",
+      "footnotes",
+      "onlybegotten"
     ],
     "paragraph_splits": [
-      ": —",
-      ", —",
-      "that —",
-      "unworthy fellow-laborer",
-      "John Owen",
-      "Ans."
-    ],
-    "dense_source_window_loss": [
-      "evincing the death of christ to be punishment properly so called digression concerning the",
-      "vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism",
-      "first among that splendid catena of divines bull waterland horsley magee fuller pye smith",
-      "son and of the spirit and similar doctrines biddle had well nigh fallen martyr",
-      "to the right worshipful his reverend learned and worthy friends and brethren the heads",
-      "hammond's answer to my animadversions on his dissertations about episcopacy mr baxter's objections against",
-      "he became the patron of all the antitrini tarians of all sorts throughout poland",
-      "at morden anno and there acquitted with testimonial 15a but in the year at",
-      "and cunning as beza says of him 18a incredibly furnished for contradiction and sophism",
-      "going into poland in the year 52a the story of this puccius because it",
-      "the kings of this world do or have done thes francisei david de adorat",
-      "all which and the like concern meats of the man and his business in",
-      "there were three persons in the deity non statu sed gradu non subsistentia sod",
-      "himself and his work by redemptus baranzano the priest in these words deo virglnique",
-      "different words the same thing was intended and that υποστασιςwith the greeks was not",
-      "is it with god his name is am am that am exodus which is",
-      "expressed but the same thing still intended 119a or being made so the scripture",
-      "of divine worship to the deity 122a to be born to bleed and die",
-      "christ's being our surety of christ's paying our debt of our sins ira fated",
-      "are filled with troubles terrors arrows from him etc job psalm isaiah etc and",
-      "his discoveries his own but borrowed of socinus ep ad squarcialupum we have not",
-      "that their use and service though the pre eminence be given to them sounds",
-      "vindiciae evangelicae chapter mr biddle's first chapter examined of the scriptures mr biddle having",
-      "fit one part of the place wherein they are and the whole the whole",
-      "chapter of the drape and bodily visible figure of god mr biddle's question is",
-      "large account in epiphanius tom lib haer as also in theodoret lib ecclesiastes hist",
-      "καταληφθηναι ου δυναται εννοουμαις τατ εννοουμαι εξειπειν ου δυνατον τουτο εστιν θεος and calicratides",
-      "testimonies that to this purpose might be produced out of plato aristotle cicerco epictetus",
-      "no need of us or our sacrifices psalm 8-10 job 6-8 can man be",
-      "those divine perfections which the living all seeing god hath described himself by but",
-      "all that he pleaseth are future 179a the creation itself and all things that",
-      "saying they are things future and contingent 187a you grant them to be among",
-      "in the several transactions and concernments of our lives nullum numen abest 187b si",
-      "unto the man genesis where did god put man afiter he was created genesis",
-      "aside all the places of scripture where it is positively and punctual asserted that",
-      "to be deprived of in that estate he had the immortality mentioned or power",
-      "were sometimes darkness but now are ye light in the lord chap for god",
-      "examination the aim and design of our catechist in this chapter being to despoil",
-      "of his way being then his only begotten son full of grace and truth",
-      "christ was personally united that wrought all these works answer me to these things"
-    ],
-    "top_of_page_text_loss": [
-      "TO THE RIGHT WORSHIPFUL, HIS REVEREND, LEARNED, AND WORTHY FRIENDS AND BRETHREN,",
-      "CHAPTER 3. Of the drape and bodily visible figure of God."
-    ],
-    "bottom_of_page_text_loss": [
-      "propositions: — (1.) That God hath so foretold the free actions of men.",
-      "1 Timothy 2:6, \"in whom we have redemption redemption for us,"
-    ],
-    "repeated_windows": [],
-    "front_matter_toc_loss": [
-      "vindiciae evangelicae or the mystery of the gospel vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism written by biddle and the catechism"
-    ],
-    "missing_enumerator_markers": []
+      {
+        "previous": "the benefit of your prayers at the throne of grace",
+        "next": "who is your unworthy fellow-laborer"
+      },
+      {
+        "previous": "who is your unworthy fellow-laborer",
+        "next": "John Owen"
+      },
+      {
+        "previous": "John Owen",
+        "next": "OXON. CH. CH. COLL., April 1 [1655.]"
+      },
+      {
+        "previous": "ads, and of them and their ways this is the sum: \u2014",
+        "next": "The first sort of them may be reckoned to be those"
+      },
+      {
+        "previous": "f this man, with his contempt of the Lord Jesus: \u2014",
+        "next": "In the year 1579, in the beginning of the month of"
+      },
+      {
+        "previous": "hem being suitable to the counsel of Pythagoras: \u2014",
+        "next": "\u0391\u03b8\u03b1\u03bd\u03ac\u03c4\u03bf\u03c5\u03c2 \u03bc\u1f72\u03bd \u03c0\u03c1\u1ff6\u03c4\u03b1 \u03b8\u03b5\u03bf\u1f7a\u03c2 \u03bd\u03cc\u03bc\u1ff3 \u1f61\u03c2 \u03b4\u03b9\u03ac\u03ba\u03b5\u03b9\u03c4\u03b1\u03b9 \u03a4\u03af\u03bc\u03b1 \u03ba"
+      },
+      {
+        "previous": " The following parts of it are of the same kind: \u2014",
+        "next": "The eternal procession of the Holy Ghost is nextly"
+      },
+      {
+        "previous": "and shut up these considerations of his preface: \u2014",
+        "next": "For his own success, he tells us \"That being other"
+      },
+      {
+        "previous": " expressly leading to the things inquired after: \u2014",
+        "next": "What says the Scripture concerning the essence and"
+      },
+      {
+        "previous": "rves, he had taken from Aratus, whose words are: \u2014",
+        "next": "\u0395\u03ba \u03b4\u03b9\u1f78\u03c2 \u1f00\u03c1\u03c7\u03ce\u03bc\u03b5\u03c3\u03b8\u03b1 \u03c4\u1f78\u03bd \u03bf\u1f50\u03b4\u1f72 \u03c0\u03bf\u03c4 \u1f04\u03bd\u03b4\u03c1\u03b5\u03c2 \u1f10\u1ff6\u03bc\u03b5\u03bd \u0391\u1fe4\u1fe5\u03b7\u03c4\u03bf"
+      },
+      {
+        "previous": "t of any other, though a spherical shape. Again, \u2014",
+        "next": "Whatever is incorporeal is destitute of shape; wha"
+      },
+      {
+        "previous": "tich of Xenophanes in Clemens Alexan., Strom. 5: \u2014",
+        "next": "\u0395\u1f30\u03c2 \u0398\u03b5\u1f78\u03c2 \u1f14\u03bd \u03c4\u03b5 \u03b8\u03b5\u03bf\u1fd6\u03c3\u03b9 \u03ba\u03b1\u1f76 \u1f00\u03bd\u03b8\u03c1\u03ce\u03c0\u03bf\u03b9\u03c3\u03b9 \u03bc\u03ad\u03b3\u03b9\u03c3\u03c4\u03bf\u03c2 ."
+      },
+      {
+        "previous": "schylus, in the same place of Clemens, Strom. 5: \u2014",
+        "next": "\u03a7\u03c9\u03c1\u03b5\u1fd6\u03c4\u03b5 \u03b8\u03bd\u03b7\u03c4\u1ff6\u03bd \u03c4\u1f78\u03bd \u0398\u03b5\u1f78\u03bd \u03ba\u03b1\u1f76 \u03bc\u1f74 \u03b4\u03cc\u03ba\u03b5\u03b9 ."
+      },
+      {
+        "previous": "and meaning he thus expresseth his apprehension: \u2014",
+        "next": "Ques. Are there not, according to the perpetual te"
+      },
+      {
+        "previous": "on (the engine whereby he works) is thus framed: \u2014",
+        "next": "As for our free actions which are neither past nor"
+      },
+      {
+        "previous": "ndicated to be farther confirmed. For the first: \u2014",
+        "next": "In the proof of the assertion proposed Mr B. finds"
+      },
+      {
+        "previous": "nts some to be his remembrancers. But to return: \u2014",
+        "next": "This is the aspect of almost one-half of the place"
+      },
+      {
+        "previous": "that which is more directly under consideration: \u2014",
+        "next": "The sole foundation of Mr B.'s insinuation, that G"
+      },
+      {
+        "previous": "of our employment. Thus, then, it may be framed: \u2014",
+        "next": "Ques. Doth not God know all things, whether past, "
+      },
+      {
+        "previous": "made by Mr B. Let this, then, be our conclusion: \u2014",
+        "next": "God perfectly knows all the free actions of men be"
+      },
+      {
+        "previous": "sum of the argument insisted on amounts to this: \u2014",
+        "next": "Those things which God foretells that they shall c"
+      },
+      {
+        "previous": "itively give in to our inquiries: \u2014 First, then, \u2014",
+        "next": "Ques. 1. In what state and condition was man at fi"
+      },
+      {
+        "previous": "Their first question and answer are: \u2014",
+        "next": "Ques. Declare now to me what I ought to know conce"
+      },
+      {
+        "previous": "to be; which, with us, all Christians embrace. 259",
+        "next": "Ans. That Jesus Christ was a true man, in his natu"
+      },
+      {
+        "previous": " by no means be esteemed a pure (or mere) man. 260",
+        "next": "Ans. 1. But I have abundantly demonstrated that Ch"
+      },
+      {
+        "previous": " is necessary that the human nature should do. 263",
+        "next": "Ans. 1. In what sense it may be said that Christ, "
+      },
+      {
+        "previous": "e beginning of the gospel that is intended! But, \u2014",
+        "next": "Be it agreed that the word \"beginning\" is to be un"
+      },
+      {
+        "previous": "t we plead from John 1. The places I intend are: \u2014",
+        "next": "John 3:13, \"And no man hath ascended up to heaven,"
+      },
+      {
+        "previous": "\"Before Abraham was, I am,\" that they insist on: \u2014",
+        "next": "In this place the pre-eternity of Christ is not on"
+      },
+      {
+        "previous": "Thus, then, they proceed: \u2014",
+        "next": "Ques. What are the testimonies of Scripture wherei"
+      },
+      {
+        "previous": "the author of the stock and family of Christ.' 285",
+        "next": "Ans. 1. Who necessitated our catechists to urge th"
+      },
+      {
+        "previous": "against these testimonies; whence we thus argue: \u2014",
+        "next": "He who was begotten of God the Father with an eter"
+      },
+      {
+        "previous": "To the consideration of these they thus proceed: \u2014",
+        "next": "Ques. What are those places of Scripture which see"
+      },
+      {
+        "previous": " power of Jesus Christ, they seek thus to elude: \u2014",
+        "next": "The word here,\" all things,\" doth not, no more tha"
+      },
+      {
+        "previous": " he therefore is the Lord Jehovah. But they say, \u2014",
+        "next": "From those words it cannot be proved that Christ w"
+      },
+      {
+        "previous": "ve to their cause; and herein they thus proceed: \u2014",
+        "next": "Ques. From what testimonies of Scripture do they e"
+      },
+      {
+        "previous": "\" for us and in our behalf. Hence we thus plead: \u2014",
+        "next": "He that was \"in the form of God,\" and \"equal with "
+      },
+      {
+        "previous": " revealed to Moses, Moses revealing it to Aaron, \u2014",
+        "next": "Aaron receiving his message from Moses as other pr"
+      },
+      {
+        "previous": " everywhere professed himself to be. He goes on, \u2014",
+        "next": "\u0395\u03bd \u1f41\u03bc\u03bf\u03b9\u03ce\u03bc\u03b1\u03c4\u03b9 \u1f00\u03bd\u03b8\u03c1\u03ce\u03c0\u03c9\u03bd \u03b3\u03b5\u03bd\u03cc\u03bc\u03b5\u03bd\u03bf\u03c2 . \" Cum similis es"
+      },
+      {
+        "previous": "the seed of Abraham.'' To this they answer, that \u2014",
+        "next": "Herein not so much as any likeness of the incarnat"
+      }
+    ]
   }
 }

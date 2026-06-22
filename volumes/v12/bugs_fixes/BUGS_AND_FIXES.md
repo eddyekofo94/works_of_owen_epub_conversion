@@ -208,10 +208,12 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-20T01:17:28.232898+00:00
+**Last run:** 2026-06-20T17:46:09.703435+00:00
 **EPUB:** `volumes/v12/output/volume_12.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -224,7 +226,7 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 63 |
 | Spine items | 62 |
-| Embedded fonts | 21 |
+| Embedded fonts | 19 |
 | NAV links | 64 |
 | Greek chars / untagged | 14115 / 0 |
 | Hebrew chars / untagged | 1456 / 0 |
@@ -277,11 +279,18 @@ Reports:
 
 
 
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-20T01:17:27.250240+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-20T17:46:55.542669+00:00
+**Status:** WARN (9 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -294,16 +303,16 @@ Reports:
 | EPUB paragraphs/headings | 3651 |
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 0 |
-| Dense source windows checked | 34266 |
-| Missing dense source-window pages | 0 |
+| Dense source windows checked | 34243 |
+| Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
 | Top-of-page body windows checked | 793 |
 | Top-of-page windows skipped as unstable | 8 |
-| Missing top-of-page body windows | 0 |
+| Missing top-of-page body windows | 2 |
 | Bottom-of-page body windows checked | 740 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 0 |
+| Missing bottom-of-page body windows | 2 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 445 |
 | Short fragments | 50 |
@@ -326,6 +335,18 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

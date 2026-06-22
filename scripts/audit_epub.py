@@ -51,7 +51,7 @@ LEADING_CHAPTER_SUBTITLE_RE = re.compile(
     re.I | re.S,
 )
 LEADING_CHAPTER_FRONT_LIST_RE = re.compile(
-    r'^\s*<p>\s*(?:<b>)?\d{1,2}\.(?:</b>)?\s+[^<]{8,180}</p>',
+    r'^\s*<p>\s*(?:<strong>)?\d{1,2}\.(?:</strong>)?\s+[^<]{8,180}</p>',
     re.I | re.S,
 )
 
@@ -415,13 +415,13 @@ class Audit:
                 add_sample(samples["glued_ordinal"], path, glued_hits[0])
                 totals["glued_ordinal_files"] += 1
 
-            # Structural bold leaks: entire <p> is bold (>85% of text is in <b>)
+            # Structural bold leaks: entire <p> is bold (>85% of text is in <strong>)
             p_blocks = re.findall(r"<p[^>]*>(.*?)</p>", raw, re.I | re.S)
             for pb in p_blocks[:300]:  # limit to first 300 paragraphs for speed
                 pb_plain = HTML_TAG_RE.sub("", pb).strip()
                 if len(pb_plain) < 40:
                     continue
-                bold_text = "".join(re.findall(r"<b[^>]*>(.*?)</b>", pb, re.I | re.S))
+                bold_text = "".join(re.findall(r"<b[^>]*>(.*?)</strong>", pb, re.I | re.S))
                 bold_plain = HTML_TAG_RE.sub("", bold_text).strip()
                 if re.search(r"\b(?:servant|J\.\s*OWEN|W\.\s*H\.\s*G\.)\b", pb_plain, re.I):
                     continue
@@ -438,7 +438,7 @@ class Audit:
 
             # Scholastic bold leaks: >3 bold words after Obj./Ans./Use label
             schol_leak_hits = re.findall(
-                r"<b[^>]*>(?:Obj(?:ection)?|Ans(?:wer)?|Use\s+\d+|Usus\s+\d+)\.[^<]{30,}</b>",
+                r"<b[^>]*>(?:Obj(?:ection)?|Ans(?:wer)?|Use\s+\d+|Usus\s+\d+)\.[^<]{30,}</strong>",
                 raw, re.I
             )
             if schol_leak_hits:

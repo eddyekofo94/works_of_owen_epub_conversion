@@ -17,6 +17,24 @@ def _escape_xml(text):
 
 def _make_xhtml(title, body_html, css_href='style/main.css'):
     safe_title = _escape_xml(title)
+    
+    # Match the opening, inner text, and closing of the aside
+    def wrap_footnote(match):
+        opening = match.group(1)
+        inner = match.group(2)
+        closing = match.group(3)
+        
+        # STRIP logic: Find the </a> tag and remove any following whitespace or \xa0
+        inner = re.sub(r'(</a>|</span>)[\s\xa0]+', r'\1', inner.strip())
+        
+        # Prevent double-wrapping
+        if '<p class="footnote"' in inner or '<div' in inner:
+            return match.group(0)
+            
+        return f'{opening}\n<p class="footnote" style="line-height: 1.30 !important;">{inner}</p>\n{closing}'
+
+    body_html = re.sub(r'(<aside[^>]*epub:type="[^"]*footnote[^"]*"[^>]*>)(.*?)(</aside>)', wrap_footnote, body_html, flags=re.DOTALL)
+
     return (
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<!DOCTYPE html>\n'
@@ -120,7 +138,7 @@ def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str
     
     subtitle_key = v_str if is_hebrews else (int(v_str[1:]) if v_str.startswith('v') else int(vol_num))
     subtitle = _escape_xml(VOLUME_SUBTITLES.get(subtitle_key, ''))
-    subtitle_html = f'<p class="title-volume-subtitle">{subtitle}</p>' if subtitle else ''
+    subtitle_html = f'<div class="title-volume-subtitle">{subtitle}</div>' if subtitle else ''
     
     if is_hebrews:
         vol_clean = v_str[1:]
@@ -128,17 +146,17 @@ def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str
 <div class="emblem-container">
 <img class="title-emblem-seal" src="images/emblem_seal.png" alt="Emblem Seal of Dr. John Owen"/>
 </div>
-<p class="title-work-top">An Exposition of the Epistle to the</p>
+<div class="title-work-top">An Exposition of the Epistle to the</div>
 <h1 class="title-author-main">Hebrews</h1>
 <div class="title-divider-double" aria-hidden="true"></div>
-<p class="title-volume-number">Volume {vol_clean}</p>
+<div class="title-volume-number">Volume {vol_clean}</div>
 {subtitle_html}
 <div class="title-meta-divider" aria-hidden="true"></div>
 <div class="title-meta">
-<p class="editor">Edited by {editor}</p>
-<p class="publisher-brand">{publisher}</p>
-<p class="publisher-loc">Parentis-en-Born</p>
-<p class="edition-year">MMXXVI</p>
+<div class="editor">Edited by {editor}</div>
+<div class="publisher-brand">{publisher}</div>
+<div class="publisher-loc">Parentis-en-Born</div>
+<div class="edition-year">MMXXVI</div>
 </div>
 </section>'''
 
@@ -148,28 +166,28 @@ def _polish_volume_title_page_html(html: str, vol_num: int, config: dict) -> str
 <div class="emblem-container">
 <img class="title-emblem-seal" src="images/emblem_seal.png" alt="Emblem Seal of Dr. John Owen"/>
 </div>
-<p class="title-work-top">The Works of</p>
+<div class="title-work-top">The Works of</div>
 <h1 class="title-author-main">John Owen</h1>
 <div class="title-divider-double" aria-hidden="true"></div>
-<p class="title-volume-number">Volume {vol_clean}</p>
+<div class="title-volume-number">Volume {vol_clean}</div>
 {subtitle_html}
 <div class="title-meta-divider" aria-hidden="true"></div>
 <div class="title-meta">
-<p class="editor">Edited by {editor}</p>
-<p class="publisher-brand">{publisher}</p>
-<p class="publisher-loc">Parentis-en-Born</p>
-<p class="edition-year">MMXXVI</p>
+<div class="editor">Edited by {editor}</div>
+<div class="publisher-brand">{publisher}</div>
+<div class="publisher-loc">Parentis-en-Born</div>
+<div class="edition-year">MMXXVI</div>
 </div>
 </section>'''
 
     meta_bits = []
     if 'Edited by' not in html and 'EDITED BY' not in html:
-        meta_bits.append(f'<p class="editor">Edited by {editor}</p>')
+        meta_bits.append(f'<div class="editor">Edited by {editor}</div>')
     if publisher not in html:
-        meta_bits.append(f'<p class="publisher-brand">{publisher}</p>')
-        meta_bits.append('<p class="publisher-loc">Parentis-en-Born</p>')
+        meta_bits.append(f'<div class="publisher-brand">{publisher}</div>')
+        meta_bits.append('<div class="publisher-loc">Parentis-en-Born</div>')
     if '2026' not in html and 'MMXXVI' not in html:
-        meta_bits.append('<p class="edition-year">MMXXVI</p>')
+        meta_bits.append('<div class="edition-year">MMXXVI</div>')
     if not meta_bits:
         return html
     meta = '<div class="title-meta">' + ''.join(meta_bits) + '</div>'
@@ -406,7 +424,7 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
             
         parts.append(
             f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="fn{fnum}">'
-            f'<p class="footnote">'
+            f'<p class="footnote" style="line-height: 1.30 !important;">'
             f'<span class="fn-link">{fnum}</span> '
             f'{fn_text}'
             f'</p>'
@@ -426,7 +444,7 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
             symbol = '†' if note_type == 'translation' else '*'
             parts.append(
                 f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
+                f'<p class="footnote" style="line-height: 1.30 !important;">'
                 f'<span class="fn-link">{symbol}</span> '
                 f'<span class="original-phrase">{tag_unicode_ranges(_html_escape(note["phrase"]))}</span>: '
                 f'{note["translation"]}'
@@ -444,7 +462,7 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
         for note in glossary_notes:
             parts.append(
                 f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
+                f'<p class="footnote" style="line-height: 1.30 !important;">'
                 f'<span class="fn-link">§</span> '
                 f'<strong>{note["term"]}</strong>: '
                 f'{note["definition"]}'
@@ -462,7 +480,7 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
         for note in biographical_notes:
             parts.append(
                 f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
-                f'<p class="footnote">'
+                f'<p class="footnote" style="line-height: 1.30 !important;">'
                 f'<span class="fn-link">‡</span> '
                 f'<strong>{note["term"]}</strong>: '
                 f'{note["definition"]}'
@@ -473,5 +491,3 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
     parts.append('</section>')
     html = ''.join(parts)
     return _make_xhtml('Footnotes', html)
-
-

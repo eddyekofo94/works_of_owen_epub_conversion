@@ -122,10 +122,10 @@ Based on the current pipeline configuration (`shared.py`), here is the body font
 | **Volume 2** | Communion with God | `libertinus` | `inter` |
 | **Volume 3** | The Holy Spirit | `minion-pro` | `inter` |
 | **Volume 4** | The Work of the Spirit | `cardo` | `montserrat` |
-| **Volume 5** | Faith and Its Evidences | `brill-font` | `roboto` |
+| **Volume 5** | Faith and Its Evidences | `palatino` | `roboto` |
 | **Volume 6** | Temptation and Sin | `baskerville` | `proxima-nova` |
 | **Volume 7** | Sin and Grace | `sabon-next-lt` | `montserrat` |
-| **Volume 8** | Sermons to the Nation | `palatino` | `proxima-nova` |
+| **Volume 8** | Sermons to the Nation | `brill-font` | `proxima-nova` |
 | **Volume 9** | Sermons to the Church | `im-fell-english` | `cinzel` |
 | **Volume 10** | The Death of Christ | `eb-garamond` | `montserrat` |
 | **Volume 11** | Continuing in the Faith | `adobe-carlson-pro` | `proxima-nova` |
@@ -133,7 +133,7 @@ Based on the current pipeline configuration (`shared.py`), here is the body font
 | **Volume 13** | Ministry and Fellowship | `itc-galliard` | `roboto` |
 | **Volume 14** | True and False Religion | `centaur` | `cinzel` |
 | **Volume 15** | Church Purity and Unity | `new-caledonia-lt-std` | `roboto` |
-| **Volume 16** | The Church and the Bible | `georgia` | `inter` |
+| **Volume 16** | The Church and the Bible | `coelacanth` | `inter` |
 
 ### Hebrews Commentary (7 Volumes)
 | Volume | Content | Assigned Body Font | Assigned Heading Font |
@@ -146,22 +146,3 @@ Based on the current pipeline configuration (`shared.py`), here is the body font
 | **Volume h6** | Exposition of Hebrews 8:1 – 10:39 | `merriweather` | `inter` |
 | **Volume h7** | Exposition of Hebrews 11:1 – 13:25 | `literata` | `roboto` |
 
----
-
-## Font Pairings & Combinations
-
-Below is the definitive list of typographic combinations mapped out for this project, tailored for digital/mobile reading and theological weight:
-
-| Body Font | Ideal Heading Font | Visual Aesthetic & Best Use |
-|---|---|---|
-| **Garamond** | Garamond Bold or Baskerville | *Classic & Warm.* General fiction, historical fiction, memoirs. |
-| **Caslon** | Caslon Bold/Semibold or Garamond Italic | *Historic Authority.* High literary fiction, historical narratives. |
-| **Sabon** | Sabon Bold, Futura, or Gill Sans | *Quiet Prestige.* Poetry, premium literary, geometric contrast. |
-| **Baskerville** | Baskerville Bold or Italic | *Intellectual & Crisp.* Contemporary literary, authoritative non-fiction. |
-| **Minion Pro** | Minion Bold or Myriad Pro | *Invisible Workhorse.* Clean, highly functional digital-first design. |
-| **Palatino** | Palatino Bold or Optima | *Open Proportions.* Generous spacing for older/younger readers. |
-| **Georgia** | Georgia Bold or Arial/Helvetica | *Screen-Optimized.* Digital literature, low-resolution constraints. |
-| **Bembo** | Trajan or Cinzel | *The Cathedral Aesthetic.* Uses Roman monumental capitals for a timeless, sacred appearance. |
-| **SBL BibLit** | SBL BibLit Bold | *The Academic Standard.* Kept uniform, clean, and strictly focused on the text's data. |
-| **Galliard** | Optima (or Classico) | *The Modern Liturgical.* Optima is a sans-serif with a humanist swell that pairs beautifully with historic serifs. |
-| **Merriweather** | Montserrat | *The Modern Digital First.* Clean, highly readable, and perfectly optimized for app-based reading environments. |

@@ -200,11 +200,13 @@ This allows the Stage 2 flat-list flattener to correctly identify both runs as f
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-16T11:01:18.489921+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub`
+**Last run:** 2026-06-22T15:41:00.125785+00:00
+**EPUB:** `volumes/v16/output/volume_16.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -216,11 +218,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 84 |
 | Spine items | 83 |
-| Embedded fonts | 16 |
+| Embedded fonts | 20 |
 | NAV links | 85 |
 | Greek chars / untagged | 6044 / 0 |
 | Hebrew chars / untagged | 1224 / 0 |
-| Noteref links / endnote anchors | 260 / 260 |
+| Noteref links / endnote anchors | 261 / 261 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -299,10 +301,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-16T11:01:53.099852+00:00
+**Last run:** 2026-06-22T15:25:35.041620+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -313,8 +316,8 @@ Reports:
 |-------|--------|
 | PDF pages | 672 |
 | EPUB text files | 82 |
-| EPUB paragraphs/headings | 2720 |
-| Approximate PDF-to-EPUB word coverage | 0.9995 |
+| EPUB paragraphs/headings | 2726 |
+| Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 0 |
 | Dense source windows checked | 28208 |
 | Missing dense source-window pages | 0 |

@@ -135,7 +135,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         _re.I,
     )
     _LIST_ITEM_RE = _re.compile(
-        r'<p class="(list-item|roman-list-item)">(<b>[^<]{1,30}</b>\s*)?(.*?)</p>',
+        r'<p class="(list-item|roman-list-item)">(<strong>[^<]{1,30}</strong>\s*)?(.*?)</p>',
         _re.S,
     )
     # Ordinal markers: (1st.), (2ndly.), 3rdly., etc.
@@ -610,7 +610,7 @@ def _add_owen_list_level_classes(html: str) -> str:
             if 'list-item' in classes_list or 'roman-list-item' in classes_list:
                 cls = 'roman-list-item' if 'roman-list-item' in classes_list else 'list-item'
                 inner = p_match.group('inner')
-                marker_match = re.match(r'\s*(<b>[^<]{1,40}</b>)', inner, re.S)
+                marker_match = re.match(r'\s*(<strong>[^<]{1,40}</strong>)', inner, re.S)
                 marker_raw = marker_match.group(1) if marker_match else ''
                 
                 # Determine base level and family
@@ -844,7 +844,7 @@ def _nest_owen_list_hierarchies(html: str) -> str:
 # Issue 19: Inline list merging
 # ---------------------------------------------------------------------------
 _LIST_ITEM_CONTENT_RE = re.compile(
-    r'<p class="(list-item|roman-list-item)">(<b>[^<]{1,30}</b>\s*)?(.*?)</p>',
+    r'<p class="(list-item|roman-list-item)">(<strong>[^<]{1,30}</strong>\s*)?(.*?)</p>',
     re.S,
 )
 

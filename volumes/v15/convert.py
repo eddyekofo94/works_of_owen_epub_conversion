@@ -43,48 +43,48 @@ VOL = 15
 # ---------------------------------------------------------------------------
 
 _V15_LITURGIES_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Discourse</p>
-<p class="title-connector">Concerning</p>
-<p class="title-line-medium">Liturgies,</p>
-<p class="title-connector">and Their Imposition.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"God is a Spirit: and they that worship him must worship him in spirit and in truth." — John 4:24.</p></div>
+<div class="title-line-major">A Discourse</div>
+<div class="title-connector">Concerning</div>
+<div class="title-line-medium">Liturgies,</div>
+<div class="title-connector">and Their Imposition.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"God is a Spirit: and they that worship him must worship him in spirit and in truth." — John 4:24.</div></div>
 </section>'''
 
 _V15_EVANGELICAL_LOVE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Discourse</p>
-<p class="title-connector">Concerning</p>
-<p class="title-line-medium">Evangelical Love,</p>
-<p class="title-line-medium">Church Peace, and Unity;</p>
-<p class="title-connector">with the Occasions and Reasons of</p>
-<p class="title-line-medium">Present Differences and Divisions</p>
-<p class="title-connector">About Things Sacred and Religious.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"<span lang="la" xml:lang="la">Speciosum quidem nomen est pacis, et pulchra opinio unitatis; sed quis ambigat eam solam unicam ecclesiae pacem esse quae Christi est</span>."</p></div>
+<div class="title-line-major">A Discourse</div>
+<div class="title-connector">Concerning</div>
+<div class="title-line-medium">Evangelical Love,</div>
+<div class="title-line-medium">Church Peace, and Unity;</div>
+<div class="title-connector">with the Occasions and Reasons of</div>
+<div class="title-line-medium">Present Differences and Divisions</div>
+<div class="title-connector">About Things Sacred and Religious.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"<span lang="la" xml:lang="la">Speciosum quidem nomen est pacis, et pulchra opinio unitatis; sed quis ambigat eam solam unicam ecclesiae pacem esse quae Christi est</span>."</div></div>
 </section>'''
 
 _V15_INQUIRY_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">An Inquiry</p>
-<p class="title-connector">into the Original, Nature, Institution, Power,</p>
-<p class="title-connector">Order, and Communion of</p>
-<p class="title-line-major">Evangelical Churches.</p>
+<div class="title-line-medium">An Inquiry</div>
+<div class="title-connector">into the Original, Nature, Institution, Power,</div>
+<div class="title-connector">Order, and Communion of</div>
+<div class="title-line-major">Evangelical Churches.</div>
 </section>'''
 
 _V15_STILLINGFLEET_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-medium">An Answer</p>
-<p class="title-connector">to</p>
-<p class="title-line-medium">Dr Stillingfleet's Book</p>
-<p class="title-connector">of the</p>
-<p class="title-line-major">Unreasonableness of Separation.</p>
+<div class="title-line-medium">An Answer</div>
+<div class="title-connector">to</div>
+<div class="title-line-medium">Dr Stillingfleet's Book</div>
+<div class="title-connector">of the</div>
+<div class="title-line-major">Unreasonableness of Separation.</div>
 </section>'''
 
 _V15_CATECHISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Short Catechism</p>
-<p class="title-connector">for the Instruction of the Ignorant</p>
-<p class="title-connector">in the Necessary Principles of</p>
-<p class="title-line-medium">Christian Religion.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Train up a child in the way he should go: and when he is old, he will not depart from it." — Proverbs 22:6.</p></div>
+<div class="title-line-major">A Short Catechism</div>
+<div class="title-connector">for the Instruction of the Ignorant</div>
+<div class="title-connector">in the Necessary Principles of</div>
+<div class="title-line-medium">Christian Religion.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"Train up a child in the way he should go: and when he is old, he will not depart from it." — Proverbs 22:6.</div></div>
 </section>'''
 
 # ---------------------------------------------------------------------------

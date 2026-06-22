@@ -84,7 +84,7 @@ def _render_simple_roman_heading_content(raw_content):
     match = _roman_head_match(raw_content)
     if not match:
         return tag_unicode_ranges(_html_escape(_clean_heading_text(raw_content)))
-    roman_html = f'<b>{_html_escape(match.group("roman"))}</b>'
+    roman_html = f'<strong>{_html_escape(match.group("roman"))}</strong>'
     rest = _clean_heading_text(match.group('rest') or '')
     if not rest:
         return roman_html

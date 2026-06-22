@@ -9,7 +9,7 @@
 ## Coverage
 
 - PDF content tokens: 253552
-- EPUB content tokens: 257196
+- EPUB content tokens: 257195
 - Approximate PDF-to-EPUB coverage ratio: 0.9995
 - Pages checked: 764
 - Weak page matches: 4
@@ -60,15 +60,15 @@
 ## Latin
 
 - PDF Latin words: 989
-- EPUB Latin words: 1006
+- EPUB Latin words: 1005
 - EPUB Tagged Latin words: 567
 - Latin word coverage ratio: 0.998
-- Latin word tagging ratio: 0.5636
+- Latin word tagging ratio: 0.5642
 - Latin clauses checked: 58
 - Missing Latin clauses: 1
 - Tagged Latin runs checked: 166
-- Translated Latin runs: 107
-- Latin translation ratio: 0.6446
+- Translated Latin runs: 108
+- Latin translation ratio: 0.6506
 
 ## Missing Dense Source Windows
 

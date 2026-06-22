@@ -210,8 +210,8 @@ def test_scholastic_anchor_handles_answer_with_numeral():
         "<p>Ans. 2. Further, the satisfaction of Christ is not the same as personal obedience.</p>"
     )
 
-    assert '<b class="scholastic-label">Ans. 1.</b>' in html
-    assert '<b class="scholastic-label">Ans. 2.</b>' in html
+    assert '<b class="scholastic-label">Ans. 1.</strong>' in html
+    assert '<b class="scholastic-label">Ans. 2.</strong>' in html
 
 
 def test_scholastic_anchor_does_not_bold_objection_inside_blockquote():
@@ -228,7 +228,7 @@ def test_scholastic_anchor_does_not_bold_objection_inside_blockquote():
         "</blockquote>"
     )
 
-    assert '<b class="scholastic-label">Objection 1.</b>' in html
+    assert '<b class="scholastic-label">Objection 1.</strong>' in html
 
 
 def test_solution_label_is_bolded_correctly():
@@ -240,8 +240,8 @@ def test_solution_label_is_bolded_correctly():
         "<p>Sol. 1. The first solution is that imputation is forensic.</p>"
     )
 
-    assert '<b class="scholastic-label">Sol.</b>' in html
-    assert '<b class="scholastic-label">Sol. 1.</b>' in html
+    assert '<b class="scholastic-label">Sol.</strong>' in html
+    assert '<b class="scholastic-label">Sol. 1.</strong>' in html
 
 
 # ===========================================================================
@@ -320,7 +320,7 @@ def test_bare_a_dot_is_treated_as_qa_in_catechism_context():
     html, _, _ = markdown_to_html(qa_text, config={'is_catechism_context': True})
     # The Q paragraph gets class="catechism-item" with bolded label
     assert 'class="catechism-item"' in html
-    assert '<b>Q. 1.</b>' in html
+    assert '<strong>Q. 1.</strong>' in html
 
 
 def test_catechism_context_resets_per_chapter_no_bleed():

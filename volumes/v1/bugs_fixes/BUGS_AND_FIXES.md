@@ -950,10 +950,15 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-20T13:20:52.839016+00:00
+**Last run:** 2026-06-22T21:10:01.751671+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -1139,11 +1144,15 @@ Reports:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-14T16:04:38.934669+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-06-22T18:33:10.687902+00:00
+**Status:** WARN (2 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1153,7 +1162,7 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 84 |
-| EPUB paragraphs/headings | 2712 |
+| EPUB paragraphs/headings | 2710 |
 | Approximate PDF-to-EPUB word coverage | 0.9993 |
 | Weak page matches | 0 |
 | Dense source windows checked | 27529 |
@@ -1166,8 +1175,8 @@ Reports:
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 126 |
+| Possible faulty paragraph splits | 15 |
+| Structural starts excluded from split warnings | 128 |
 | Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
@@ -1192,6 +1201,7 @@ Reports:
 Warnings requiring triage:
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

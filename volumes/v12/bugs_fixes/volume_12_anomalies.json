@@ -1,11 +1,22 @@
 {
   "volume": "12",
-  "total_words_audited": 319799,
-  "total_anomalies_count": 0,
+  "total_words_audited": 319796,
+  "total_anomalies_count": 1,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [],
-    "OCR & Bracket Residues": [],
+    "OCR & Bracket Residues": [
+      {
+        "target": "w him",
+        "description": "Split word anomaly (isolated letter 'w')",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "... a mere man to all eternity, and no more. They allow him no more, as to his essence, than that wherein he ...",
+          "... nifesteth, \"He was in the world, and the world knew him not,\" and John 12:19, or also future immortality, ...",
+          "... \" \"to his own,\" for then \"his own,\" \u03bf\u1f31 \u1f34\u03b4\u03b9\u03bf\u03b9, \"knew him not.\" So that there is not the least color or pre ..."
+        ]
+      }
+    ],
     "Mixed-Case Capitalization Errors": [],
     "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [],

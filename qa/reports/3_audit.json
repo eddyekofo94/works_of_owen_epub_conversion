@@ -1,6 +1,6 @@
 {
   "epub": "3",
-  "generated_at": "2026-06-11T21:21:41.896061+00:00",
+  "generated_at": "2026-06-22T16:01:13.331384+00:00",
   "status": "fail",
   "error_count": 1,
   "warning_count": 0,
@@ -12,5 +12,6 @@
     }
   ],
   "warnings": [],
-  "info": {}
+  "info": {},
+  "unused_whitelist_epub_warnings": []
 }

@@ -865,10 +865,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-11T21:25:40.027373+00:00
+**Last run:** 2026-06-22T16:01:57.509713+00:00
 **EPUB:** `volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -881,11 +882,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 47 |
 | Spine items | 46 |
-| Embedded fonts | 20 |
+| Embedded fonts | 21 |
 | NAV links | 48 |
 | Greek chars / untagged | 4328 / 0 |
 | Hebrew chars / untagged | 1655 / 0 |
-| Noteref links / endnote anchors | 311 / 311 |
+| Noteref links / endnote anchors | 312 / 312 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -1046,10 +1047,11 @@ Validation:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-11T21:26:24.729681+00:00
+**Last run:** 2026-06-22T16:02:50.507438+00:00
 **Status:** WARN (1 warnings)
 
 Reports:
@@ -1060,7 +1062,7 @@ Reports:
 |-------|--------|
 | PDF pages | 789 |
 | EPUB text files | 45 |
-| EPUB paragraphs/headings | 2528 |
+| EPUB paragraphs/headings | 2509 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
 | Dense source windows checked | 35165 |
@@ -1075,7 +1077,7 @@ Reports:
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 332 |
-| Short fragments | 14 |
+| Short fragments | 13 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |

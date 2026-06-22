@@ -70,7 +70,7 @@ INLINE_STRUCTURAL_RE = re.compile(
     r"[0-9]+(?:st|nd|rd|th)\b\s*[,.;]\s+|[0-9]+(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?\s+)"
 )
 INLINE_RENDERED_STRUCTURAL_RE = re.compile(
-    r"<b>\s*(?P<marker>"
+    r"<strong>\s*(?P<marker>"
     r"[0-9]{1,2}\.|"
     r"\([0-9]{1,2}\.?\)|"
     r"\[[0-9]{1,2}(?:st|nd|rd|th|dly|ly)?[,.]?\]\.?|"
@@ -79,7 +79,7 @@ INLINE_RENDERED_STRUCTURAL_RE = re.compile(
     r"[IVXLCDM]{2,}\.|"
     r"[0-9]{1,2}(?:st|nd|rd|th)\b\s*[,.;]|"
     r"[0-9]{1,2}(?:(?:st|nd|rd|th)ly|dly|ly)\b\s*[,.]?"
-    r")\s*</b>",
+    r")\s*</strong>",
     re.I,
 )
 SCRIPTURE_TRAIL_RE = re.compile(
@@ -1696,7 +1696,9 @@ def font_config_check(volume: int, root: Path) -> dict[str, Any]:
                     f for f in font_dir.iterdir()
                     if f.suffix.lower() in ('.otf', '.ttf')
                 ]
-                if not font_files:
+                # If directory is empty, but it's a known system font, do not complain
+                system_fonts = {'palatino', 'georgia', 'times new roman', 'baskerville', 'hoefler text'}
+                if not font_files and body_font.lower() not in system_fonts:
                     issues.append({
                         "volume": volume,
                         "configured_font": body_font,

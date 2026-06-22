@@ -334,25 +334,25 @@ All of these classes are defined in `shared.py`'s `EPUB_STYLESHEET` and apply wi
 
 ```html
 <section class="treatise-title-page" epub:type="titlepage">
-<p class="greek-title">Χριστολογία</p>           <!-- if has Greek title -->
-<p class="title-line-major">Main Title Here</p>
-<p class="title-connector">Or,</p>
-<p class="title-line-medium">Subtitle or Declaration Here</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-source">Scripture Reference, Chapter X.</p>
+<div class="greek-title">Χριστολογία</div>           <!-- if has Greek title -->
+<div class="title-line-major">Main Title Here</div>
+<div class="title-connector">Or,</div>
+<div class="title-line-medium">Subtitle or Declaration Here</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">Scripture Reference, Chapter X.</div>
 </section>
 ```
 
 For multi-part treatises (no Greek, connector-heavy structure):
 ```html
 <section class="treatise-title-page v1-applied-glory-title" epub:type="titlepage">
-<p class="title-line title-line-medium">Part Title</p>
-<p class="title-connector">Concerning</p>
-<p class="title-line title-line-major">Main Subject;</p>
-<p class="title-connector">Applied Unto</p>
-<p class="title-line title-line-medium">Further Specification</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="title-source">In N Chapters, from John XVII. 24.</p>
+<div class="title-line title-line-medium">Part Title</div>
+<div class="title-connector">Concerning</div>
+<div class="title-line title-line-major">Main Subject;</div>
+<div class="title-connector">Applied Unto</div>
+<div class="title-line title-line-medium">Further Specification</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">In N Chapters, from John XVII. 24.</div>
 </section>
 ```
 

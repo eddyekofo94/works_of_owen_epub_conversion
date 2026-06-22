@@ -28,40 +28,40 @@ VOL = 10
 # ---------------------------------------------------------------------------
 
 _V10_ARMINIANISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Display of Arminianism:</p>
-<p class="title-connector">Being a Discovery of the Old</p>
-<p class="title-line-medium">Pelagian Idol, Free-Will,</p>
-<p class="title-connector">with the New Goddess</p>
-<p class="title-line-medium">Contingency,</p>
-<p class="title-connector">Advancing Themselves into the Throne of God in Heaven, and Deposing His Sacred Providence from the Government of the World.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"Known unto God are all his works from the beginning of the world." — Acts 15:18.</p></div>
+<div class="title-line-major">A Display of Arminianism:</div>
+<div class="title-connector">Being a Discovery of the Old</div>
+<div class="title-line-medium">Pelagian Idol, Free-Will,</div>
+<div class="title-connector">with the New Goddess</div>
+<div class="title-line-medium">Contingency,</div>
+<div class="title-connector">Advancing Themselves into the Throne of God in Heaven, and Deposing His Sacred Providence from the Government of the World.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"Known unto God are all his works from the beginning of the world." — Acts 15:18.</div></div>
 </section>'''
 
 _V10_DEATH_OF_DEATH_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">The Death of Death</p>
-<p class="title-connector">in the</p>
-<p class="title-line-major">Death of Christ:</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="descriptive">A Treatise in Which the Whole Controversy about Universal Redemption Is Fully Discussed; the Reality and Efficacy of the Satisfaction of Christ Vindicated; and the Doctrine of Particular Redemption Confirmed and Established.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<div class="quote-block"><p>"He shall see of the travail of his soul, and shall be satisfied." — Isaiah 53:11.</p></div>
+<div class="title-line-major">The Death of Death</div>
+<div class="title-connector">in the</div>
+<div class="title-line-major">Death of Christ:</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="descriptive">A Treatise in Which the Whole Controversy about Universal Redemption Is Fully Discussed; the Reality and Efficacy of the Satisfaction of Christ Vindicated; and the Doctrine of Particular Redemption Confirmed and Established.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block"><p>"He shall see of the travail of his soul, and shall be satisfied." — Isaiah 53:11.</div></div>
 </section>'''
 
 _V10_DEATH_OF_CHRIST_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">The Death of Christ;</p>
-<p class="title-connector">the Price He Paid,</p>
-<p class="title-connector">and the Purchase He Made.</p>
+<div class="title-line-major">The Death of Christ;</div>
+<div class="title-connector">the Price He Paid,</div>
+<div class="title-connector">and the Purchase He Made.</div>
 </section>'''
 
 _V10_DIVINE_JUSTICE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<p class="title-line-major">A Dissertation</p>
-<p class="title-connector">on</p>
-<p class="title-line-medium">Divine Justice;</p>
-<p class="title-connector">or, the Claims of</p>
-<p class="title-line-medium">Vindicatory Justice.</p>
-<p class="title-rule" aria-hidden="true"></p>
-<p class="descriptive">Wherein the Necessity of Punishing Sin Is Asserted, the Satisfaction of Christ Founded Thereon, and the Remission of Sins Through Him Vindicated.</p>
+<div class="title-line-major">A Dissertation</div>
+<div class="title-connector">on</div>
+<div class="title-line-medium">Divine Justice;</div>
+<div class="title-connector">or, the Claims of</div>
+<div class="title-line-medium">Vindicatory Justice.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="descriptive">Wherein the Necessity of Punishing Sin Is Asserted, the Satisfaction of Christ Founded Thereon, and the Remission of Sins Through Him Vindicated.</div>
 </section>'''
 
 _V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
@@ -72,7 +72,7 @@ _V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch003.xhtml">To the Committee for Religion</a></p>
 <p class="contents-item"><a href="ch004.xhtml">To the Christian Reader</a></p>
 <div style="font-size: 0.9em; line-height: 1.6; margin-left: 1.5em; color: #444; margin-bottom: 1.5em;">
-  <b>Chapters:</b>
+  <strong>Chapters:</strong>
   <a href="ch005.xhtml">1. Arminian Ends</a> | 
   <a href="ch006.xhtml">2. Divine Decrees</a> | 
   <a href="ch007.xhtml">3. Prescience of God</a> | 
@@ -94,25 +94,25 @@ _V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch021.xhtml">Analysis of the Work</a></p>
 <p class="contents-item"><a href="ch022.xhtml">To Robert, Earl of Warwick</a></p>
 
-<p class="contents-item"><b>Book I.</b> <a href="ch023.xhtml">Redemption, Its Agents and Work</a></p>
+<p class="contents-item"><strong>Book I.</strong> <a href="ch023.xhtml">Redemption, Its Agents and Work</a></p>
 <p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
   Chapters: 
   <a href="ch024.xhtml">1</a> | <a href="ch025.xhtml">2</a> | <a href="ch026.xhtml">3</a> | <a href="ch027.xhtml">4</a> | <a href="ch028.xhtml">5</a> | <a href="ch029.xhtml">6</a> | <a href="ch030.xhtml">7</a> | <a href="ch031.xhtml">8</a>
 </p>
 
-<p class="contents-item"><b>Book II.</b> <a href="ch032.xhtml">The End of the Death of Christ Stated</a></p>
+<p class="contents-item"><strong>Book II.</strong> <a href="ch032.xhtml">The End of the Death of Christ Stated</a></p>
 <p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
   Chapters: 
   <a href="ch033.xhtml">1</a> | <a href="ch034.xhtml">2</a> | <a href="ch035.xhtml">3</a> | <a href="ch036.xhtml">4</a> | <a href="ch037.xhtml">5</a>
 </p>
 
-<p class="contents-item"><b>Book III.</b> <a href="ch038.xhtml">Arguments Against Universal Redemption</a></p>
+<p class="contents-item"><strong>Book III.</strong> <a href="ch038.xhtml">Arguments Against Universal Redemption</a></p>
 <p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
   Chapters: 
   <a href="ch039.xhtml">1</a> | <a href="ch040.xhtml">2</a> | <a href="ch041.xhtml">3</a> | <a href="ch042.xhtml">4</a> | <a href="ch043.xhtml">5</a> | <a href="ch044.xhtml">6</a> | <a href="ch045.xhtml">7</a> | <a href="ch046.xhtml">8</a> | <a href="ch047.xhtml">9</a> | <a href="ch048.xhtml">10</a> | <a href="ch049.xhtml">11</a>
 </p>
 
-<p class="contents-item"><b>Book IV.</b> <a href="ch050.xhtml">Objections Answered and Ancient Testimonies</a></p>
+<p class="contents-item"><strong>Book IV.</strong> <a href="ch050.xhtml">Objections Answered and Ancient Testimonies</a></p>
 <p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;">
   Chapters: 
   <a href="ch051.xhtml">1</a> | <a href="ch052.xhtml">2</a> | <a href="ch053.xhtml">3</a> | <a href="ch054.xhtml">4</a> | <a href="ch055.xhtml">5</a> | <a href="ch056.xhtml">6</a> | <a href="ch057.xhtml">7</a> | <a href="ch058.xhtml">Ancient Testimonies</a>
@@ -122,7 +122,7 @@ _V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch061.xhtml">Prefatory Note</a></p>
 <p class="contents-item"><a href="ch062.xhtml">To the Reader</a></p>
 <div style="font-size: 0.9em; line-height: 1.6; margin-left: 1.5em; color: #444; margin-bottom: 1.5em;">
-  <b>Chapters:</b>
+  <strong>Chapters:</strong>
   <a href="ch063.xhtml">1. Occasion</a> | 
   <a href="ch064.xhtml">2. Entrance</a> | 
   <a href="ch065.xhtml">3. Grotius and Baxter</a> | 
@@ -144,7 +144,7 @@ _V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item"><a href="ch079.xhtml">To Lord Oliver Cromwell</a></p>
 <p class="contents-item"><a href="ch080.xhtml">Preface to the Reader</a></p>
 <div style="font-size: 0.9em; line-height: 1.6; margin-left: 1.5em; color: #444; margin-bottom: 1.5em;">
-  <b>Chapters:</b>
+  <strong>Chapters:</strong>
   <a href="ch081.xhtml">1. Design</a> | 
   <a href="ch082.xhtml">2. Universal Justice</a> | 
   <a href="ch083.xhtml">3. Vindicatory Justice</a> | 
