@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 319796
-* **Total Suspected Anomalies Found:** 1
+* **Total Words Audited:** 319803
+* **Total Suspected Anomalies Found:** 0
 
 Add corrections to `text_replacements` inside `volumes/v12/convert.py` to fix these.
 
@@ -11,7 +11,7 @@ Add corrections to `text_replacements` inside `volumes/v12/convert.py` to fix th
 
 * **Hyphenation Anomalies:** 0 items
 * **Punctuation Spacing Blemishes:** 0 items
-* **OCR & Bracket Residues:** 1 items
+* **OCR & Bracket Residues:** 0 items
 * **Mixed-Case Capitalization Errors:** 0 items
 * **Unresolved Citation References:** 0 items
 * **Structural Nesting Sequence Jumps:** 0 items
@@ -31,15 +31,7 @@ No anomalies found in this category.
 
 ## OCR & Bracket Residues
 
-### 1. `w him`
-* **Description:** Split word anomaly (isolated letter 'w')
-* **Chapter:** *Chapter 8.*
-* **Contexts:**
-  * ... a mere man to all eternity, and no more. They allo**w him** no more, as to his essence, than that wherein he ...
-  * ... nifesteth, "He was in the world, and the world kne**w him** not," and John 12:19, or also future immortality, ...
-  * ... " "to his own," for then "his own," οἱ ἴδιοι, "kne**w him** not." So that there is not the least color or pre ...
-
----
+No anomalies found in this category.
 
 ## Mixed-Case Capitalization Errors
 

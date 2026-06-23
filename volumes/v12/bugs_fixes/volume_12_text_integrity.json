@@ -2,45 +2,13 @@
   "volume": "12",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-20T17:46:55.542669+00:00",
+  "generated_at": "2026-06-23T23:00:24.316605+00:00",
   "status": "warn",
-  "warning_count": 9,
+  "warning_count": 1,
   "warnings": [
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    },
-    {
-      "code": "front_matter_toc_loss",
-      "message": "Some early CONTENTS pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "top_of_page_text_loss",
-      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "bottom_of_page_text_loss",
-      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
-    },
-    {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
-      "code": "enumerator_sequence_candidates",
-      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
-    },
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "missing_latin_clauses",
-      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
-    },
-    {
-      "code": "low_latin_translation_coverage",
-      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
     }
   ],
   "pdf": {
@@ -112,169 +80,8 @@
   },
   "dense_source_window_integrity": {
     "dense_windows_checked": 34243,
-    "missing_dense_window_pages": 40,
-    "missing_dense_windows": [
-      {
-        "page": 4,
-        "sample": "evincing the death of christ to be punishment properly so called digression concerning the"
-      },
-      {
-        "page": 5,
-        "sample": "vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism"
-      },
-      {
-        "page": 6,
-        "sample": "first among that splendid catena of divines bull waterland horsley magee fuller pye smith"
-      },
-      {
-        "page": 7,
-        "sample": "son and of the spirit and similar doctrines biddle had well nigh fallen martyr"
-      },
-      {
-        "page": 11,
-        "sample": "to the right worshipful his reverend learned and worthy friends and brethren the heads"
-      },
-      {
-        "page": 17,
-        "sample": "hammond's answer to my animadversions on his dissertations about episcopacy mr baxter's objections against"
-      },
-      {
-        "page": 29,
-        "sample": "he became the patron of all the antitrini tarians of all sorts throughout poland"
-      },
-      {
-        "page": 30,
-        "sample": "at morden anno and there acquitted with testimonial 15a but in the year at"
-      },
-      {
-        "page": 32,
-        "sample": "and cunning as beza says of him 18a incredibly furnished for contradiction and sophism"
-      },
-      {
-        "page": 41,
-        "sample": "going into poland in the year 52a the story of this puccius because it"
-      },
-      {
-        "page": 48,
-        "sample": "the kings of this world do or have done thes francisei david de adorat"
-      },
-      {
-        "page": 55,
-        "sample": "all which and the like concern meats of the man and his business in"
-      },
-      {
-        "page": 59,
-        "sample": "there were three persons in the deity non statu sed gradu non subsistentia sod"
-      },
-      {
-        "page": 63,
-        "sample": "himself and his work by redemptus baranzano the priest in these words deo virglnique"
-      },
-      {
-        "page": 94,
-        "sample": "different words the same thing was intended and that υποστασιςwith the greeks was not"
-      },
-      {
-        "page": 100,
-        "sample": "is it with god his name is am am that am exodus which is"
-      },
-      {
-        "page": 104,
-        "sample": "expressed but the same thing still intended 119a or being made so the scripture"
-      },
-      {
-        "page": 105,
-        "sample": "of divine worship to the deity 122a to be born to bleed and die"
-      },
-      {
-        "page": 110,
-        "sample": "christ's being our surety of christ's paying our debt of our sins ira fated"
-      },
-      {
-        "page": 113,
-        "sample": "are filled with troubles terrors arrows from him etc job psalm isaiah etc and"
-      },
-      {
-        "page": 116,
-        "sample": "his discoveries his own but borrowed of socinus ep ad squarcialupum we have not"
-      },
-      {
-        "page": 118,
-        "sample": "that their use and service though the pre eminence be given to them sounds"
-      },
-      {
-        "page": 120,
-        "sample": "vindiciae evangelicae chapter mr biddle's first chapter examined of the scriptures mr biddle having"
-      },
-      {
-        "page": 128,
-        "sample": "fit one part of the place wherein they are and the whole the whole"
-      },
-      {
-        "page": 136,
-        "sample": "chapter of the drape and bodily visible figure of god mr biddle's question is"
-      },
-      {
-        "page": 137,
-        "sample": "ever so used it is in metaphorical and borrowed sense or at east there"
-      },
-      {
-        "page": 144,
-        "sample": "large account in epiphanius tom lib haer as also in theodoret lib ecclesiastes hist"
-      },
-      {
-        "page": 145,
-        "sample": "καταληφθηναι ου δυναται εννοουμαις τατ εννοουμαι εξειπειν ου δυνατον τουτο εστιν θεος and calicratides"
-      },
-      {
-        "page": 146,
-        "sample": "testimonies that to this purpose might be produced out of plato aristotle cicerco epictetus"
-      },
-      {
-        "page": 154,
-        "sample": "no need of us or our sacrifices psalm 8-10 job 6-8 can man be"
-      },
-      {
-        "page": 162,
-        "sample": "those divine perfections which the living all seeing god hath described himself by but"
-      },
-      {
-        "page": 169,
-        "sample": "all that he pleaseth are future 179a the creation itself and all things that"
-      },
-      {
-        "page": 174,
-        "sample": "saying they are things future and contingent 187a you grant them to be among"
-      },
-      {
-        "page": 175,
-        "sample": "in the several transactions and concernments of our lives nullum numen abest 187b si"
-      },
-      {
-        "page": 184,
-        "sample": "unto the man genesis where did god put man afiter he was created genesis"
-      },
-      {
-        "page": 194,
-        "sample": "aside all the places of scripture where it is positively and punctual asserted that"
-      },
-      {
-        "page": 197,
-        "sample": "to be deprived of in that estate he had the immortality mentioned or power"
-      },
-      {
-        "page": 199,
-        "sample": "were sometimes darkness but now are ye light in the lord chap for god"
-      },
-      {
-        "page": 220,
-        "sample": "examination the aim and design of our catechist in this chapter being to despoil"
-      },
-      {
-        "page": 223,
-        "sample": "of his way being then his only begotten son full of grace and truth"
-      }
-    ]
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 3,
@@ -1045,7 +852,9 @@
   "unused_whitelist_text_integrity": {
     "ignored_warnings": [
       "possible_beta_code_residue",
-      "repeated_phrases"
+      "repeated_phrases",
+      "low_latin_tagging",
+      "low_latin_word_coverage"
     ]
   },
   "limits": {

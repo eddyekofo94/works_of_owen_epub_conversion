@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 12
 
 - Status: **WARN**
-- Warnings: 9
+- Warnings: 1
 - PDF pages: 822
 - EPUB text files: 61
 - EPUB paragraphs/headings: 3651
@@ -14,7 +14,7 @@
 - Pages checked: 815
 - Weak page matches: 0
 - Dense source windows checked: 34243
-- Missing dense source-window pages: 40
+- Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 3
 - Missing front CONTENTS pages: 1
 - Top-of-page body windows checked: 793
@@ -72,28 +72,7 @@
 
 ## Warnings
 
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
-
-## Missing Dense Source Windows
-
-- page: 4; sample: evincing the death of christ to be punishment properly so called digression concerning the
-- page: 5; sample: vindicated and socinianism examined in the consideration and confutation of catechism called scripture catechism
-- page: 6; sample: first among that splendid catena of divines bull waterland horsley magee fuller pye smith
-- page: 7; sample: son and of the spirit and similar doctrines biddle had well nigh fallen martyr
-- page: 11; sample: to the right worshipful his reverend learned and worthy friends and brethren the heads
-- page: 17; sample: hammond's answer to my animadversions on his dissertations about episcopacy mr baxter's objections against
-- page: 29; sample: he became the patron of all the antitrini tarians of all sorts throughout poland
-- page: 30; sample: at morden anno and there acquitted with testimonial 15a but in the year at
-- page: 32; sample: and cunning as beza says of him 18a incredibly furnished for contradiction and sophism
-- page: 41; sample: going into poland in the year 52a the story of this puccius because it
 
 ## Missing Front CONTENTS Pages
 

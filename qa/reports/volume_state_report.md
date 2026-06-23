@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-23T11:10:25Z
+Generated: 2026-06-23T23:00:28Z
 
 ## Summary
 
@@ -10,12 +10,12 @@ Generated: 2026-06-23T11:10:25Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 12 | 12.4 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
-| 2 | 1 | 11.6 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
-| 3 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 4 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
-| 5 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
-| 6 | 8 | 4.8 | brill-font | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
+| 1 | 1 | 11.6 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
+| 2 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
+| 3 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
+| 4 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 5 | 8 | 4.8 | brill-font | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
+| 6 | 12 | 4.8 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 7 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
 | 8 | 14 | 4.4 | centaur | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
 | 9 | 16 | 4.4 | coelacanth | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
@@ -188,28 +188,7 @@ Generated: 2026-06-23T11:10:25Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 12 — Need: 12.4 (✅ Good) — Rank 8
-
-- **Body font:** arno-pro
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** PRISTINE
-- **convert.py:** Yes (314 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.94
-- **Greek coverage:** 99.92
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.76
-- **Latin tagging:** 74.61
-- **Latin translation:** 45.00
-- **Citations:** total=70, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 1
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 1 — Need: 11.6 (✅ Good) — Rank 9
+### Volume 1 — Need: 11.6 (✅ Good) — Rank 8
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** ages_pdf
@@ -230,7 +209,7 @@ Generated: 2026-06-23T11:10:25Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 5 — Need: 5.8 (✅ Good) — Rank 10
+### Volume 5 — Need: 5.8 (✅ Good) — Rank 9
 
 - **Body font:** palatino
 - **Source type:** ages_pdf
@@ -251,7 +230,7 @@ Generated: 2026-06-23T11:10:25Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 3 — Need: 5.6 (✅ Good) — Rank 11
+### Volume 3 — Need: 5.6 (✅ Good) — Rank 10
 
 - **Body font:** minion-pro
 - **Source type:** ages_pdf
@@ -272,7 +251,7 @@ Generated: 2026-06-23T11:10:25Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 11 — Need: 5.5 (✅ Good) — Rank 12
+### Volume 11 — Need: 5.5 (✅ Good) — Rank 11
 
 - **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
@@ -293,7 +272,7 @@ Generated: 2026-06-23T11:10:25Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 8 — Need: 4.8 (✅ Good) — Rank 13
+### Volume 8 — Need: 4.8 (✅ Good) — Rank 12
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -313,6 +292,27 @@ Generated: 2026-06-23T11:10:25Z
 - **Suspected anomalies:** 3
 - **Unmatched quotes:** 5
 - **Recommended:** ❓ Resolve unmatched quotation marks
+
+### Volume 12 — Need: 4.8 (✅ Good) — Rank 13
+
+- **Body font:** arno-pro
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** PRISTINE
+- **convert.py:** Yes (317 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.94
+- **Greek coverage:** 99.92
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.76
+- **Latin tagging:** 74.61
+- **Latin translation:** 45.00
+- **Citations:** total=70, unresolved=0
+- **Splits:** 0
+- **Regressions:** 1
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
 
 ### Volume 10 — Need: 4.4 (✅ Good) — Rank 14
 

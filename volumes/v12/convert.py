@@ -153,6 +153,9 @@ OVERRIDES = {
         'A Review of the Annotations of Hugo Grotius.': _V12_GROTIUS_TITLE_PAGE,
     },
     'text_replacements': {
+        # Compound word merging fixes (extract.py drops hyphen at line breaks)
+        'subjectmatter': 'subject-matter',
+        'preeminence': 'pre-eminence',
         'Plato de Legib.\n\n12. And that may be the sense': 'Plato de Legib. 12. And that may be the sense',
         'of .our sins': 'of our sins',
         'enemies )': 'enemies)',
