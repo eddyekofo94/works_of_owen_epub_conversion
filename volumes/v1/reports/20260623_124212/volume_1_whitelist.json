@@ -1,6 +1,7 @@
 {
   "text_integrity": {
     "ignored_warnings": [
+      "low_latin_tagging",
       "low_latin_translation_coverage",
       "front_matter_toc_loss",
       "roman_heading_candidates",

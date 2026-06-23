@@ -2,7 +2,7 @@
   "volume": "1",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-23T10:51:31.699925+00:00",
+  "generated_at": "2026-06-22T15:25:26.624715+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -20,10 +20,26 @@
     "paragraph_count": 2710
   },
   "word_coverage": {
-    "pdf_content_tokens": 205054,
-    "epub_content_tokens": 206095,
+    "pdf_content_tokens": 205009,
+    "epub_content_tokens": 205907,
     "coverage_ratio": 0.9993,
-    "missing_word_samples": [],
+    "missing_word_samples": [
+      {
+        "word": "pre",
+        "pdf": 6,
+        "epub": 2
+      },
+      {
+        "word": "eminence",
+        "pdf": 5,
+        "epub": 1
+      },
+      {
+        "word": "mindedness",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
     "excess_word_samples": [
       {
         "word": "digital",
@@ -63,20 +79,48 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 27440,
-    "missing_dense_window_pages": 20,
+    "dense_windows_checked": 27529,
+    "missing_dense_window_pages": 30,
     "missing_dense_windows": [
       {
-        "page": 16,
-        "sample": "duties to be under the influence of the sentiment prodesse quam conspici to promote"
+        "page": 53,
+        "sample": "declaration of the glorious mystery of the person of christ chapter peter's confession matthew"
       },
       {
-        "page": 26,
-        "sample": "whole church aedificar quid dicturus what will you say es de johanne et apostolorum"
+        "page": 56,
+        "sample": "lively stones also as this apostle assures us epist they must be like unto"
       },
       {
-        "page": 27,
-        "sample": "not prevail against it for unum hoc est this is one thing immobile fundamentum"
+        "page": 76,
+        "sample": "of the same mystery is elsewhere testified unto hebrews god has spoken unto us"
+      },
+      {
+        "page": 78,
+        "sample": "so the apostle expresseth it hebrews god who at sundry times and in divers"
+      },
+      {
+        "page": 83,
+        "sample": "of his person by whom they are performed john if any man sin we"
+      },
+      {
+        "page": 90,
+        "sample": "place no small portion of divine blessedness self existence in its own immense being"
+      },
+      {
+        "page": 101,
+        "sample": "glory and the firmament always showed his handy work the invisible things of his"
+      },
+      {
+        "page": 105,
+        "sample": "image of the other for he and the father are one and one and"
+      },
+      {
+        "page": 106,
+        "sample": "unto his divine person as the son of the father the only begotten the"
+      },
+      {
+        "page": 117,
+        "sample": "most frequently expressed by the knowledge of him john corinthians ephesians philippians john peter"
       },
       {
         "page": 148,
@@ -112,7 +156,7 @@
       },
       {
         "page": 289,
-        "sample": "should all fullness dwell so that in all things he might have the pre-eminence"
+        "sample": "things he might have the pre eminence colossians and shall herein wholly avoid the"
       },
       {
         "page": 297,
@@ -140,11 +184,23 @@
       },
       {
         "page": 363,
-        "sample": "the other yea they have all one breath so that man hath no pre-eminence"
+        "sample": "so that man hath no pre eminence above beast all go unto one place"
       },
       {
         "page": 374,
         "sample": "as one of old complained to the same purpose upon his perusal of plato's"
+      },
+      {
+        "page": 375,
+        "sample": "they taste of its goodness by any of its first fruits in their own"
+      },
+      {
+        "page": 379,
+        "sample": "face of jesus christ corinthians otherwise we know it not we see it not"
+      },
+      {
+        "page": 389,
+        "sample": "know that god is love in the revelation hereof christ has the pre eminence"
       }
     ]
   },
@@ -437,10 +493,6 @@
       "count": 6
     },
     {
-      "phrase": "shall we dare to say that the gates of hell",
-      "count": 5
-    },
-    {
       "phrase": "us child is born unto us son is given and",
       "count": 5
     },
@@ -513,15 +565,19 @@
       "count": 4
     },
     {
-      "phrase": "for if you think the whole church was built upon",
+      "phrase": "thou art the christ the son of the living god",
       "count": 4
     },
     {
-      "phrase": "if you think the whole church was built upon that",
+      "phrase": "his glory the glory as of the only-begotten of the",
       "count": 4
     },
     {
-      "phrase": "you think the whole church was built upon that one",
+      "phrase": "glory the glory as of the only-begotten of the father",
+      "count": 4
+    },
+    {
+      "phrase": "the mighty god the everlasting father the prince of peace",
       "count": 4
     }
   ],
@@ -551,9 +607,9 @@
     "pdf_latin_word_count": 1378,
     "epub_latin_word_count": 1381,
     "epub_tagged_latin_word_count": 983,
-    "pdf_latin_unique_words": 677,
-    "epub_latin_unique_words": 678,
-    "epub_tagged_unique_words": 495,
+    "pdf_latin_unique_words": 679,
+    "epub_latin_unique_words": 680,
+    "epub_tagged_unique_words": 497,
     "latin_word_coverage_ratio": 0.9985,
     "latin_tagging_ratio": 0.7118,
     "missing_latin_word_samples": [],
@@ -677,35 +733,38 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 258,
-    "translated_latin_runs_count": 162,
-    "latin_translation_ratio": 0.6279,
+    "translated_latin_runs_count": 161,
+    "latin_translation_ratio": 0.624,
     "untranslated_latin_samples": [
       {
         "phrase": "quarto (Amsterdam"
       },
       {
-        "phrase": "operis absentibus [by us being absent from the press]"
+        "phrase": "operis absentibus"
       },
       {
-        "phrase": "Salus Electorum Sanguis"
+        "phrase": "Salus Electorum Sauguis"
       },
       {
         "phrase": "quam conspici"
       },
       {
-        "phrase": "Quod si super unum illum Petrum tantum [For if you think the whole church was built upon that one Peter alone...]"
+        "phrase": "Quod si super unum illum Petrum tantum"
       },
       {
-        "phrase": "quid dicturus [what will you say]"
+        "phrase": "totam eclesiam"
       },
       {
-        "phrase": "et apostolorum [and of the apostles]"
+        "phrase": "quid dicturus"
       },
       {
-        "phrase": "Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum [Shall we dare to say that the gates of hell will not prevail against Peter alone?]"
+        "phrase": "et apostolorum"
       },
       {
-        "phrase": "Unum hoc est [This is one thing]"
+        "phrase": "Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum"
+      },
+      {
+        "phrase": "Unum hoc est"
       },
       {
         "phrase": "fundamentum, una haec est"
@@ -736,9 +795,6 @@
       },
       {
         "phrase": "millena millia angelorum et archangelorum, cum"
-      },
-      {
-        "phrase": "pleni peccatis"
       }
     ]
   },
@@ -754,7 +810,11 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {},
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "low_latin_tagging"
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

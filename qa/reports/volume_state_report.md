@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-23T10:37:37Z
+Generated: 2026-06-23T11:10:25Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-06-23T10:37:37Z
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
 | 1 | 12 | 12.4 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
-| 2 | 1 | 8.7 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
+| 2 | 1 | 11.6 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
 | 3 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
 | 4 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
 | 5 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
@@ -209,7 +209,7 @@ Generated: 2026-06-23T10:37:37Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 1 — Need: 8.7 (✅ Good) — Rank 9
+### Volume 1 — Need: 11.6 (✅ Good) — Rank 9
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** ages_pdf

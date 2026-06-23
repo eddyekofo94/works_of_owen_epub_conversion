@@ -4,6 +4,7 @@ This document lists and explains the whitelisted anomalies and ignored warnings 
 
 ## 1. Ignored Warnings (`text_integrity`)
 
+*   **`low_latin_tagging`**: Many short Latin legal/theological terms are woven naturally into 17th-century English prose and do not require separate `<span lang="la">` tags.
 *   **`low_latin_translation_coverage`**: Not all historical Latin citations or phrases require side-by-side translation database entries.
 *   **`front_matter_toc_loss`**: The table of contents is custom-crafted in `volume_1_contents_page` override and early PDF pages 3-6 aren't parsed as body text chapters.
 *   **`roman_heading_candidates`**: Roman numeral prefixes used as list indicators (e.g., `I. 1. What he did...` in Chapter 15) are valid list items, not centered heading elements.

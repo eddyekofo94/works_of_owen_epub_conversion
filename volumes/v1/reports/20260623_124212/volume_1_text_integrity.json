@@ -2,7 +2,7 @@
   "volume": "1",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-23T10:51:31.699925+00:00",
+  "generated_at": "2026-06-23T10:42:08.372341+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -754,7 +754,11 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {},
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "low_latin_tagging"
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

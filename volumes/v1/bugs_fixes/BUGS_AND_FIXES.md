@@ -957,11 +957,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-23T00:46:15.142485+00:00
-**EPUB:** `volumes/v1/output/volume_1.epub`
+**Last run:** 2026-06-23T10:50:59.357078+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub`
 **Status:** WARN (0 errors, 1 warnings)
 
 Reports:
@@ -1156,10 +1158,12 @@ Warnings requiring triage:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-23T00:46:45.519873+00:00
+**Last run:** 2026-06-23T10:51:31.699925+00:00
 **Status:** WARN (1 warnings)
 
 Reports:

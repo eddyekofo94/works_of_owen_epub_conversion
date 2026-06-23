@@ -1,6 +1,6 @@
 {
   "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-23T10:50:59.357078+00:00",
+  "generated_at": "2026-06-23T10:41:35.995161+00:00",
   "status": "warn",
   "error_count": 0,
   "warning_count": 1,
@@ -14,7 +14,7 @@
   ],
   "info": {
     "file_count": 120,
-    "epub_size_bytes": 6462270,
+    "epub_size_bytes": 6462269,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -130,6 +130,7 @@
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   },
   "unused_whitelist_epub_warnings": [
+    "low_latin_tagging",
     "low_latin_translation_coverage",
     "front_matter_toc_loss",
     "roman_heading_candidates",
