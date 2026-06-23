@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-22T23:23:07Z
+Generated: 2026-06-23T10:37:37Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-22T23:23:07Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 1 | 14.2 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
-| 2 | 12 | 12.4 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
+| 1 | 12 | 12.4 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
+| 2 | 1 | 8.7 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
 | 3 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
 | 4 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
 | 5 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
@@ -188,28 +188,7 @@ Generated: 2026-06-22T23:23:07Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 1 — Need: 14.2 (✅ Good) — Rank 8
-
-- **Body font:** adobe-garamond-pro
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** PRISTINE
-- **convert.py:** Yes (577 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.93
-- **Greek coverage:** 99.87
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.85
-- **Latin tagging:** 71.18
-- **Latin translation:** 62.40
-- **Citations:** total=49, unresolved=0
-- **Splits:** 15
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 12 — Need: 12.4 (✅ Good) — Rank 9
+### Volume 12 — Need: 12.4 (✅ Good) — Rank 8
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
@@ -227,6 +206,27 @@ Generated: 2026-06-22T23:23:07Z
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 1
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 1 — Need: 8.7 (✅ Good) — Rank 9
+
+- **Body font:** adobe-garamond-pro
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** PRISTINE
+- **convert.py:** Yes (593 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=1, footnotes=None
+- **Word coverage:** 99.93
+- **Greek coverage:** 99.87
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.85
+- **Latin tagging:** 71.18
+- **Latin translation:** 62.79
+- **Citations:** total=49, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
 - **Unmatched quotes:** 0
 - **Recommended:** 
 

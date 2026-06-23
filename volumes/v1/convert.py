@@ -514,6 +514,22 @@ OVERRIDES = {
         'Q. 2 . What': 'Q. 2. What',
         'comets into the world': 'cometh into the world',
         'glory of artist': 'glory of Christ',
+        
+        # OCR fixes for truncated words
+        'pre -eminence': 'pre-eminence',
+        'pre- eminence': 'pre-eminence',
+        'heavenly -mindedness': 'heavenly-mindedness',
+        'heavenly- mindedness': 'heavenly-mindedness',
+
+        # Latin translations
+        'Salus Electorum Sauguis': 'Salus Electorum Sanguis [The Blood of Jesus, the Salvation of the Elect]',
+        'operis absentibus': 'operis absentibus [by us being absent from the press]',
+        'Quod si super unum illum Petrum tantum': 'Quod si super unum illum Petrum tantum [For if you think the whole church was built upon that one Peter alone...]',
+        'totam eclesiam': 'totam ecclesiam [the whole church]',
+        'quid dicturus': 'quid dicturus [what will you say]',
+        'et apostolorum': 'et apostolorum [and of the apostles]',
+        'Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum': 'Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum [Shall we dare to say that the gates of hell will not prevail against Peter alone?]',
+        'Unum hoc est': 'Unum hoc est [This is one thing]',
     },
     'regex_replacements': {
         r'\bknow\.\?': 'know?',
@@ -533,7 +549,7 @@ OVERRIDES = {
 
         # Paragraph Splits Healing (Issue #heal)
         r'subscribed by other names as well as his own,\s*—\s*John Nesbitt': 'subscribed by other names as well as his own, — John Nesbitt',
-        r'seeking in his duties to be under the influence of the sentiment,\s*—\s*_Prodesse quam conspici\._': 'seeking in his duties to be under the influence of the sentiment, — _Prodesse quam conspici._',
+        r'seeking in his duties to be under the influence of the sentiment,\s*—\s*_Prodesse quam conspici\._': 'seeking in his duties to be under the influence of the sentiment, — _Prodesse quam conspici._ [To be useful rather than to be seen]',
         r'lighten\s+".*?world,\s*"\s*,?\s*John\s+1:9': 'lighten "every man that cometh into the world," John 1:9',
         r'Genesis 3:15;\s*Psalm 2:7-9,\s*\[\[BLOCKQUOTE\]\]\s*Psalms 68:17, 18': 'Genesis 3:15; Psalm 2:7-9, Psalms 68:17, 18',
         r'That is his name,\s*".*?"\s*—\s*Psalms?\s+102:27': 'That is his name, "אַתָה הוּא" — Psalm 102:27',
