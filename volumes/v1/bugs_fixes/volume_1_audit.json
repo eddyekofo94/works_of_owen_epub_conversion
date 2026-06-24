@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-23T23:49:41.370000+00:00",
+  "epub": "volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-06-24T01:55:25.304701+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 120,
-    "epub_size_bytes": 6462248,
+    "epub_size_bytes": 6462219,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -25,7 +25,7 @@
     ],
     "font_count": 20,
     "language": {
-      "greek_chars": 4080,
+      "greek_chars": 4091,
       "greek_untagged_chars": 0,
       "hebrew_chars": 157,
       "hebrew_untagged_chars": 0,
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 346,
-      "unique_noteref_targets": 346,
-      "endnote_anchor_count": 346,
+      "noteref_count": 345,
+      "unique_noteref_targets": 345,
+      "endnote_anchor_count": 345,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -48,7 +48,7 @@
       "empty_bracket_noise_files": 0,
       "missing_chapter_initialization_files": 0,
       "noteref_without_class": 0,
-      "repeated_phrase_count": 0,
+      "repeated_phrase_count": 2,
       "unprocessed_ages_marker_files": 0,
       "page_reference_split_files": 0,
       "chapter_heading_in_paragraph_files": 2,
@@ -74,7 +74,18 @@
         "untagged_greek": [],
         "untagged_hebrew": [],
         "hebrew_integrity": [],
-        "repeated_phrase": [],
+        "repeated_phrase": [
+          {
+            "file": "combined_text",
+            "text": "be declared divine works but nevertheless sacred letters",
+            "count": 2
+          },
+          {
+            "file": "combined_text",
+            "text": "thousands of thousands of angels and archangels with",
+            "count": 2
+          }
+        ],
         "literal_footnote_marker": [],
         "empty_bracket_noise": [],
         "noteref_without_class": [],
@@ -119,6 +130,7 @@
   },
   "unused_whitelist_epub_warnings": [
     "low_latin_translation_coverage",
+    "low_latin_tagging",
     "front_matter_toc_loss",
     "roman_heading_candidates",
     "repeated_windows"

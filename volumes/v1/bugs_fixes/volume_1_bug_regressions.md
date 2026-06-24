@@ -30,7 +30,7 @@
 | Untagged Greek characters | 0 | 55 | OK |
 | Untagged Hebrew characters | 0 | 0 | OK |
 | Hebrew integrity failures | 0 | 0 | OK |
-| Repeated phrase hits | 0 | 8 | OK |
+| Repeated phrase hits | 2 | 8 | OK |
 | Possible Beta Code residue files | 0 | 2 | OK |
 | Escaped language-tag files | 0 | 0 | OK |
 | Literal footnote marker files | 0 | 0 | OK |
@@ -78,6 +78,11 @@
 - page: 4; sample: chapter the especial principle of obedience unto the person of christ which is love its truth and reality vindicated chapter the nature operations and causes of divine love
 - page: 5; sample: the glory of christ in his exaltation after the accomplishment of the work of mediation in this world representations of the glory of christ under the old testament
 - page: 6; sample: of the holy trinity of the works of god and first of those that are internal and immanent of the works of god that outwardly are of him
+
+### Repeated phrase hits
+
+- file: combined_text; text: be declared divine works but nevertheless sacred letters
+- file: combined_text; text: thousands of thousands of angels and archangels with
 
 ### Chapter headings rendered as paragraphs
 

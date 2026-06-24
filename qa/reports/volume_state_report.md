@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-24T00:16:59Z
+Generated: 2026-06-24T01:58:08Z
 
 ## Summary
 
@@ -10,21 +10,21 @@ Generated: 2026-06-24T00:16:59Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 1 | 9.6 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
-| 2 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 3 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
-| 4 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
-| 5 | 8 | 4.8 | brill-font | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 5 | FULL |
-| 6 | 12 | 4.8 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
-| 7 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
-| 8 | 14 | 4.4 | centaur | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
-| 9 | 16 | 4.4 | coelacanth | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
-| 10 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
-| 11 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
-| 12 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
-| 13 | 4 | 2.0 | cardo | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
-| 14 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
-| 15 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | PRISTINE |
+| 1 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
+| 2 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
+| 3 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 4 | 12 | 4.8 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
+| 5 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
+| 6 | 14 | 4.4 | centaur | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
+| 7 | 16 | 4.4 | coelacanth | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
+| 8 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
+| 9 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
+| 10 | 8 | 2.7 | brill-font | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 11 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
+| 12 | 4 | 2.0 | cardo | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
+| 13 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
+| 14 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | PRISTINE |
+| 15 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.98 |  100.0 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
 | 16 | 2 | 0.4 | libertinus | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
 
 ### Hebrews Commentary (7 Volumes)
@@ -188,28 +188,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 1 — Need: 9.6 (✅ Good) — Rank 8
-
-- **Body font:** adobe-garamond-pro
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** PRISTINE
-- **convert.py:** Yes (595 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.93
-- **Greek coverage:** 99.87
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.85
-- **Latin tagging:** 71.18
-- **Latin translation:** 62.79
-- **Citations:** total=49, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 5 — Need: 5.8 (✅ Good) — Rank 9
+### Volume 5 — Need: 5.8 (✅ Good) — Rank 8
 
 - **Body font:** palatino
 - **Source type:** ages_pdf
@@ -230,7 +209,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 3 — Need: 5.6 (✅ Good) — Rank 10
+### Volume 3 — Need: 5.6 (✅ Good) — Rank 9
 
 - **Body font:** minion-pro
 - **Source type:** ages_pdf
@@ -251,7 +230,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 11 — Need: 5.5 (✅ Good) — Rank 11
+### Volume 11 — Need: 5.5 (✅ Good) — Rank 10
 
 - **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
@@ -272,28 +251,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 8 — Need: 4.8 (✅ Good) — Rank 12
-
-- **Body font:** brill-font
-- **Source type:** ages_pdf
-- **Treatises:** 16
-- **QA level:** FULL
-- **convert.py:** Yes (162 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.95
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.80
-- **Latin tagging:** 56.42
-- **Latin translation:** 65.06
-- **Citations:** total=38, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 3
-- **Unmatched quotes:** 5
-- **Recommended:** ❓ Resolve unmatched quotation marks
-
-### Volume 12 — Need: 4.8 (✅ Good) — Rank 13
+### Volume 12 — Need: 4.8 (✅ Good) — Rank 11
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
@@ -314,7 +272,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 10 — Need: 4.4 (✅ Good) — Rank 14
+### Volume 10 — Need: 4.4 (✅ Good) — Rank 12
 
 - **Body font:** eb-garamond
 - **Source type:** ages_pdf
@@ -335,7 +293,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 14 — Need: 4.4 (✅ Good) — Rank 15
+### Volume 14 — Need: 4.4 (✅ Good) — Rank 13
 
 - **Body font:** centaur
 - **Source type:** ages_pdf
@@ -356,7 +314,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 16 — Need: 4.4 (✅ Good) — Rank 16
+### Volume 16 — Need: 4.4 (✅ Good) — Rank 14
 
 - **Body font:** coelacanth
 - **Source type:** ages_pdf
@@ -377,7 +335,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 15 — Need: 3.0 (✅ Good) — Rank 17
+### Volume 15 — Need: 3.0 (✅ Good) — Rank 15
 
 - **Body font:** new-caledonia-lt-std
 - **Source type:** ages_pdf
@@ -398,7 +356,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 9 — Need: 2.8 (✅ Good) — Rank 18
+### Volume 9 — Need: 2.8 (✅ Good) — Rank 16
 
 - **Body font:** im-fell-english
 - **Source type:** ages_pdf
@@ -419,7 +377,28 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 13 — Need: 2.4 (✅ Good) — Rank 19
+### Volume 8 — Need: 2.7 (✅ Good) — Rank 17
+
+- **Body font:** brill-font
+- **Source type:** ages_pdf
+- **Treatises:** 16
+- **QA level:** PRISTINE
+- **convert.py:** Yes (177 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.95
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.80
+- **Latin tagging:** 56.47
+- **Latin translation:** 65.06
+- **Citations:** total=38, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 7
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 13 — Need: 2.4 (✅ Good) — Rank 18
 
 - **Body font:** itc-galliard
 - **Source type:** ages_pdf
@@ -440,7 +419,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 4 — Need: 2.0 (✅ Good) — Rank 20
+### Volume 4 — Need: 2.0 (✅ Good) — Rank 19
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -461,7 +440,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 7 — Need: 2.0 (✅ Good) — Rank 21
+### Volume 7 — Need: 2.0 (✅ Good) — Rank 20
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -482,7 +461,7 @@ Generated: 2026-06-24T00:16:59Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 6 — Need: 1.6 (✅ Good) — Rank 22
+### Volume 6 — Need: 1.6 (✅ Good) — Rank 21
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
@@ -497,6 +476,27 @@ Generated: 2026-06-24T00:16:59Z
 - **Latin tagging:** 16.42
 - **Latin translation:** 73.81
 - **Citations:** total=0, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 1 — Need: 0.8 (✅ Good) — Rank 22
+
+- **Body font:** adobe-garamond-pro
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** PRISTINE
+- **convert.py:** Yes (606 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.98
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.90
+- **Latin tagging:** 71.16
+- **Latin translation:** 62.79
+- **Citations:** total=49, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 0

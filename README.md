@@ -318,14 +318,14 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| 1 | v1 | Populated | PRISTINE | Cov 99.93 Greek 99.87 Heb 100.00 Lat 99.85 |
+| 1 | v1 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.90 |
 | 2 | v2 | Populated | PRISTINE | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
 | 3 | v3 | Populated | PRISTINE | Cov 99.97 Greek 100.00 Heb 100.00 Lat 99.94 |
 | 4 | v4 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.59 |
 | 5 | v5 | Populated | PRISTINE | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.68 |
 | 6 | v6 | Populated | PRISTINE | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
 | 7 | v7 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.66 |
-| 8 | v8 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 Quotes 5 |
+| 8 | v8 | Populated | PRISTINE | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 |
 | 9 | v9 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.26 |
 | 10 | v10 | Populated | PRISTINE | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.43 |
 | 11 | v11 | Populated | PRISTINE | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.80 |

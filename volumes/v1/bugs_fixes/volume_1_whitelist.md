@@ -58,4 +58,15 @@ These paragraphs contain an odd number of double quotation marks due to nested s
 ## 5. Weak Pages & Dense Source Window Loss
 
 *   **Weak Pages `[3, 4, 5, 6, 533]`**: Pages 3-6 represent front matter/contents pages which do not contain main body text and thus have no strong match. Page 533 is a blank page or back-matter transition page in the PDF.
-*   **Dense Windows Loss `[3, 4, 5, 6, 7, 9, 10, 21, 26, 27, 51, 53, 56, 76, 78, 83, 90, 101, 105, 106, 117, 148, 150, 188, 194, 203, 223, 239, 269, 297, 319, 328, 332, 341, 356, 374, 375, 379, 402, 406]`**: Early PDF pages and specific pages containing publisher's introductory materials, editorial prefaces, indexes, or footnotes that do not map directly to EPUB chapters.
+*   **Dense Windows Loss `[3, 4, 5, 6, 7, 9, 10, 21, 26, 27, 34, 35, 51, 53, 56, 76, 78, 83, 90, 101, 105, 106, 117, 148, 150, 188, 194, 203, 223, 239, 269, 297, 319, 328, 332, 341, 356, 374, 375, 379]`**: Early PDF pages and specific pages containing publisher's introductory materials, editorial prefaces, indexes, or footnotes that do not map directly to EPUB chapters.
+
+## 6. Punctuation Spacing Blemishes
+
+*   **`Ans .`**: Legitimate catechism answer abbreviation separated by a space in original text.
+*   **`2 .`**: Spaced period in numbered list from original text formatting.
+
+## 7. Additional Whitelisted Items
+
+*   **`1. ... 5.`** (Chapter 5): Structural list sequence jump that occurs in the source.
+*   **`1. ... 3.`** (The Lesser Catechism): Structural list sequence jump that occurs in the source.
+*   **`With respect unto them...`**: Contains a genuine doubled quotation mark artifact from the original text `" Philippians`.

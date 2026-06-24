@@ -1,22 +1,22 @@
 # Text Integrity Audit: Volume 1
 
-- Status: **PASS**
-- Warnings: 0
+- Status: **WARN**
+- Warnings: 1
 - PDF pages: 633
 - EPUB text files: 84
-- EPUB paragraphs/headings: 2710
+- EPUB paragraphs/headings: 2701
 
 ## Coverage
 
-- PDF content tokens: 205054
-- EPUB content tokens: 206074
-- Approximate PDF-to-EPUB coverage ratio: 0.9993
-- Pages checked: 622
+- PDF content tokens: 191907
+- EPUB content tokens: 206243
+- Approximate PDF-to-EPUB coverage ratio: 0.9998
+- Pages checked: 581
 - Weak page matches: 0
-- Dense source windows checked: 27538
-- Missing dense source-window pages: 0
-- Front CONTENTS pages checked: 4
-- Missing front CONTENTS pages: 4
+- Dense source windows checked: 26767
+- Missing dense source-window pages: 30
+- Front CONTENTS pages checked: 0
+- Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 586
 - Top-of-page windows skipped as unstable: 6
 - Missing top-of-page body windows: 0
@@ -26,7 +26,7 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2262
+- Body paragraphs checked: 2263
 - Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 126
 - Short fragments: 12
@@ -39,43 +39,53 @@
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
-- PDF enumerator markers: 310
+- PDF enumerator markers: 295
 - EPUB enumerator markers: 320
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 0
 
 ## Greek / Hebrew
 
-- PDF Greek words: 811
-- EPUB Greek words: 810
-- Greek word coverage ratio: 0.9987
-- PDF Hebrew words: 20
+- PDF Greek words: 716
+- EPUB Greek words: 811
+- Greek word coverage ratio: 1.0
+- PDF Hebrew words: 18
 - EPUB Hebrew words: 20
 - Hebrew word coverage ratio: 1.0
-- Greek clauses checked: 38
+- Greek clauses checked: 33
 - Missing Greek clauses: 0
 - Hebrew clauses checked: 1
 - Missing Hebrew clauses: 0
 
 ## Latin
 
-- PDF Latin words: 1378
-- EPUB Latin words: 1381
-- EPUB Tagged Latin words: 983
-- Latin word coverage ratio: 0.9985
-- Latin word tagging ratio: 0.7118
-- Latin clauses checked: 129
+- PDF Latin words: 993
+- EPUB Latin words: 1380
+- EPUB Tagged Latin words: 982
+- Latin word coverage ratio: 0.999
+- Latin word tagging ratio: 0.7116
+- Latin clauses checked: 91
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 258
 - Translated Latin runs: 162
 - Latin translation ratio: 0.6279
 
-## Missing Front CONTENTS Pages
+## Warnings
 
-- page: 3; hit_ratio: 0.0; sample: contents of χριστολογια or declaration of the glorious mystery of the person of christ prefatory note preface chapter peter's confession matthew conceits of the papists thereon the substance
-- page: 4; hit_ratio: 0.5; sample: chapter the especial principle of obedience unto the person of christ which is love its truth and reality vindicated chapter the nature operations and causes of divine love
-- page: 5; hit_ratio: 0.5; sample: the glory of christ in his exaltation after the accomplishment of the work of mediation in this world representations of the glory of christ under the old testament
-- page: 6; hit_ratio: 0.25; sample: of the holy trinity of the works of god and first of those that are internal and immanent of the works of god that outwardly are of him
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+
+## Missing Dense Source Windows
+
+- page: 402; sample: known or as it may be thence earned my present business is only to
+- page: 406; sample: 2-6 isaiah 1-4 zechariah john 1-3 philippians 6-8 hebrews 1-3 14-16 revelation secondly by
+- page: 411; sample: made her as the chariots of ammi nadib song of solomon it so fell
+- page: 419; sample: in him unto any of the creatures is an act of self humiliation and
+- page: 433; sample: brightness wherewith this glory shines in heaven the all satisfying sweetness which the view
+- page: 434; sample: unto it sweet savor of the love of christ see song of solomon 2-4
+- page: 451; sample: its holiness and the severity of the curse wherewith it was attended his fulfil1ing
+- page: 480; sample: bring in spiritual refreshment unto believing refreshment unto believing soul and it will do
+- page: 483; sample: of sight those are the two spiritual powers of our sou1s by the one
+- page: 487; sample: on the right hand that cannot see him chap which way soever we turn
 
 ## Roman Heading Candidates
 
@@ -109,12 +119,16 @@
 
 ## Excess Word Samples
 
+- word: thousands; pdf: 6; epub: 27
+- word: theological; pdf: 1; epub: 11
 - word: digital; pdf: 0; epub: 10
-- word: theological; pdf: 2; epub: 11
+- word: preface; pdf: 7; epub: 16
+- word: super; pdf: 4; epub: 12
+- word: modern; pdf: 3; epub: 11
 - word: historical; pdf: 2; epub: 10
-- word: modern; pdf: 4; epub: 11
-- word: footnotes; pdf: 0; epub: 7
-- word: hebrew; pdf: 3; epub: 9
+- word: text; pdf: 8; epub: 15
+- word: dr; pdf: 7; epub: 14
+- word: dare; pdf: 5; epub: 12
 
 ## Untagged Latin Word Samples
 
@@ -140,7 +154,7 @@
 - phrase: et apostolorum [and of the apostles]
 - phrase: Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum [Shall we dare to say that the gates of hell will not prevail against Peter alone?]
 - phrase: Unum hoc est [This is one thing]
-- phrase: fundamentum, una haec est
+- phrase: fundamentum, una haec est [foundation, this is one]
 
 ## Limits
 

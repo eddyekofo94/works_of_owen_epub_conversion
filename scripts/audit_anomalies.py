@@ -747,7 +747,7 @@ def main():
     for ch_idx, ch in enumerate(data.get("chapters", [])):
         title = ch.get("title", f"Chapter {ch_idx}")
         raw_text = ch.get("raw_text", "") or ""
-        raw_text = _repair_owen_ocr_errors(raw_text, config=config)
+        # raw_text = _repair_owen_ocr_errors(raw_text, config=config)
         raw_text = clean_text(raw_text)
         if not raw_text:
             continue

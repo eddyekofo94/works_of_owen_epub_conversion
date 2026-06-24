@@ -83,7 +83,7 @@ def main():
         if not raw_text:
             continue
 
-        raw_text = _repair_owen_ocr_errors(raw_text, config=config)
+        # raw_text = _repair_owen_ocr_errors(raw_text, config=config)
 
 
         paragraphs = [p.strip() for p in raw_text.split('\n\n') if p.strip()]

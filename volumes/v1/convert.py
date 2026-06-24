@@ -287,7 +287,7 @@ _V1_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 
 <p class="contents-general-preface"><a href="ch001.xhtml">General Preface</a></p>
 
-<h2 class="contents-treatise-title">CHRISTOLOGIA: OR, A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST</h2>
+<h2 class="contents-treatise-title"><span lang="el" xml:lang="el">ΧΡΙΣΤΟΛΟΓΙΑ:</span> OR, A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST</h2>
 <p class="contents-item"><a href="ch003.xhtml">Prefatory Note</a></p>
 <p class="contents-item"><a href="ch004.xhtml">Preface</a></p>
 <p class="contents-item"><strong>Chapter I.</strong> <a href="ch005.xhtml">Peter’s Confession; Matthew 16:16</a></p>
@@ -532,6 +532,17 @@ OVERRIDES = {
         'et apostolorum': 'et apostolorum [and of the apostles]',
         'Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum': 'Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum [Shall we dare to say that the gates of hell will not prevail against Peter alone?]',
         'Unum hoc est': 'Unum hoc est [This is one thing]',
+        'Quomodo igitur': 'Quomodo igitur [How therefore]',
+        'sciri a quoquam': 'sciri a quoquam [be known by anyone]',
+        'narrari, opera divina; sed tamen sacrae literae': 'narrari, opera divina; sed tamen sacrae literae [be declared, divine works; but nevertheless sacred letters]',
+        'Fide, ad Gratianum': 'Fide, ad Gratianum [Faith, to Gratian]',
+        'atque impudentissimus est, qui scrutari': 'atque impudentissimus est, qui scrutari [and most impudent is he, who searches]',
+        'suum. Millia millium, et': 'suum. Millia millium, et [his. Thousands of thousands, and]',
+        'millena millia angelorum et archangelorum, cum': 'millena millia angelorum et archangelorum, cum [thousands of thousands of angels and archangels, with]',
+        'pleni peccatis': 'pleni peccatis [full of sins]',
+        'fundamentum, una haec est': 'fundamentum, una haec est [foundation, this is one]',
+        'Petra, Petri': 'Petra, Petri [Rock, Peter\'s]',
+        'Scrutator majestatis absorbetur a gloria': 'Scrutator majestatis absorbetur a gloria [The searcher of majesty is swallowed up by glory]',
     },
     'regex_replacements': {
         r'\bknow\.\?': 'know?',
@@ -571,9 +582,9 @@ OVERRIDES = {
     'treatise_title_overrides': {
         # All v1 treatise title pages defined here — do NOT put these in render.py or shared.py.
         # Title strings must match the exact chapter title from volumes/v1/intermediate/volume_1.json.
-        'Christologia — a Declaration of the Glorious Mystery': _V1_CHRISTOLOGIA_TITLE_PAGE,
+        'Christologia - a Declaration of the Glorious Mystery': _V1_CHRISTOLOGIA_TITLE_PAGE,
         'Meditations and Discourses On The Glory of Christ': _V1_MEDITATIONS_TITLE_PAGE,
-        'Part 2 — Meditations and Discourses Concerning The Glory of Christ': _V1_PART_2_TITLE_PAGE,
+        'Part 2 - Meditations and Discourses Concerning The Glory of Christ': _V1_PART_2_TITLE_PAGE,
         'Two Short Catechisms:': _V1_TWO_CATECHISMS_TITLE_PAGE,
     },
     # Volume 1: Tag Greek abbreviations that fall below the 3-codepoint minimum
