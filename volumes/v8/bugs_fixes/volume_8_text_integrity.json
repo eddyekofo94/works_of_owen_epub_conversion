@@ -2,7 +2,7 @@
   "volume": "8",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/input/owen-v8.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-06-22T12:12:12.790978+00:00",
+  "generated_at": "2026-06-24T01:06:14.128826+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -12,7 +12,7 @@
   },
   "epub": {
     "spine_text_files": 73,
-    "paragraph_count": 3338
+    "paragraph_count": 3339
   },
   "word_coverage": {
     "pdf_content_tokens": 253552,
@@ -492,7 +492,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2890,
+    "paragraphs_checked": 2891,
     "split_candidate_count": 0,
     "split_candidates": [],
     "structural_start_exclusions": 237,
@@ -945,13 +945,13 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 989,
-    "epub_latin_word_count": 1005,
+    "epub_latin_word_count": 1004,
     "epub_tagged_latin_word_count": 567,
     "pdf_latin_unique_words": 698,
-    "epub_latin_unique_words": 710,
+    "epub_latin_unique_words": 709,
     "epub_tagged_unique_words": 397,
     "latin_word_coverage_ratio": 0.998,
-    "latin_tagging_ratio": 0.5642,
+    "latin_tagging_ratio": 0.5647,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {

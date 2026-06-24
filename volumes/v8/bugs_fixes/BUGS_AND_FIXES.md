@@ -133,10 +133,14 @@ See previous sessions.
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-22T12:12:12.790978+00:00
+**Last run:** 2026-06-24T01:06:14.128826+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -147,7 +151,7 @@ Reports:
 |-------|--------|
 | PDF pages | 774 |
 | EPUB text files | 73 |
-| EPUB paragraphs/headings | 3338 |
+| EPUB paragraphs/headings | 3339 |
 | Approximate PDF-to-EPUB word coverage | 0.9995 |
 | Weak page matches | 4 |
 | Dense source windows checked | 33464 |
@@ -218,10 +222,14 @@ Reports:
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-22T11:32:34.120604+00:00
+**Last run:** 2026-06-24T01:05:33.013188+00:00
 **EPUB:** `volumes/v8/output/volume_8.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -234,7 +242,7 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 75 |
 | Spine items | 74 |
-| Embedded fonts | 14 |
+| Embedded fonts | 20 |
 | NAV links | 76 |
 | Greek chars / untagged | 1667 / 0 |
 | Hebrew chars / untagged | 344 / 0 |

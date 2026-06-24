@@ -4,7 +4,7 @@
 - Warnings: 0
 - PDF pages: 774
 - EPUB text files: 73
-- EPUB paragraphs/headings: 3338
+- EPUB paragraphs/headings: 3339
 
 ## Coverage
 
@@ -26,7 +26,7 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2890
+- Body paragraphs checked: 2891
 - Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 237
 - Short fragments: 47
@@ -60,10 +60,10 @@
 ## Latin
 
 - PDF Latin words: 989
-- EPUB Latin words: 1005
+- EPUB Latin words: 1004
 - EPUB Tagged Latin words: 567
 - Latin word coverage ratio: 0.998
-- Latin word tagging ratio: 0.5642
+- Latin word tagging ratio: 0.5647
 - Latin clauses checked: 58
 - Missing Latin clauses: 1
 - Tagged Latin runs checked: 166

@@ -1,31 +1,41 @@
 {
   "volume": "8",
-  "total_words_audited": 306904,
-  "total_anomalies_count": 3,
+  "total_words_audited": 306929,
+  "total_anomalies_count": 7,
   "anomalies": {
     "Hyphenation Anomalies": [],
-    "Punctuation Spacing Blemishes": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "sorts :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "An Humble Testimony Unto the Goodness and Severity of God in Hi",
+        "contexts": [
+          "... and ready to seize on us?\" And they are of three sorts : \u2014 First. Such as are absolute, decretory, and uni ..."
+        ]
+      }
+    ],
     "OCR & Bracket Residues": [],
     "Mixed-Case Capitalization Errors": [],
     "Unresolved Citation References": [],
     "Structural Nesting Sequence Jumps": [],
-    "Invalid Bible References": [],
+    "Invalid Bible References": [
+      {
+        "target": "Hosea 52",
+        "description": "Invalid Bible reference (chapter 52 exceeds max 14 for Hosea)",
+        "chapter": "The Shaking and Translating of Heaven and Earth",
+        "contexts": [
+          "... ah 37:31; Jeremiah 30:9; Ezekiel 34:27, 37:24,25; Hosea 52:5; Amos 9:11.) and in answer to millions of praye ..."
+        ]
+      }
+    ],
     "List Formatting Inconsistencies": [],
     "Unmatched Quotation Marks": [
       {
-        "target": "[[BLOCKQUOTE]] \"Die Venetia, 14 Martii, 1650. \"The question being propounded, That thanks be given to the ministers that...",
-        "description": "Paragraph has unmatched double quotes (count: 3)",
-        "chapter": "Preface.",
+        "target": "Now, wicked men's prosperity hath assured bounds: \"The wickedness of the wicked shall come to an end.\" There is a time w...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "A Memorial of the Deliverance of Essex County, and Committee.",
         "contexts": [
-          "[[BLOCKQUOTE]] \"Die Venetia, 14 Martii, 1650. \"The question being propounded, That thanks be given to the ministers that..."
-        ]
-      },
-      {
-        "target": "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ...",
-        "description": "Paragraph has unmatched double quotes (count: 1)",
-        "chapter": "The Branch of the Lord the Beauty of Zion: Or, the Glory of the",
-        "contexts": [
-          "[[BLOCKQUOTE]] fitly framed together, groweth unto an holy temple in the Lord: in whom ye also are builded together for ..."
+          "Now, wicked men's prosperity hath assured bounds: \"The wickedness of the wicked shall come to an end.\" There is a time w..."
         ]
       },
       {
@@ -35,8 +45,37 @@
         "contexts": [
           "[[BLOCKQUOTE]] \"And all the trees of the field shall know that I the Lord have brought down the high tree, have exalted ..."
         ]
+      },
+      {
+        "target": "This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Christ's Kingdom and the Magistrate's Power.",
+        "contexts": [
+          "This, undoubtedly, they may attain, and it doth belong to them. Now, certainly, this is in that part of it which comes n..."
+        ]
+      },
+      {
+        "target": "This the psalmist had a special regard unto; who, casting his eye towards another communion and society, which he longed...",
+        "description": "Paragraph has unmatched double quotes (count: 21)",
+        "chapter": "How We May Bring Our Hearts to Bear Reproofs.",
+        "contexts": [
+          "This the psalmist had a special regard unto; who, casting his eye towards another communion and society, which he longed..."
+        ]
+      },
+      {
+        "target": "Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr...",
+        "description": "Paragraph has unmatched double quotes (count: 19)",
+        "chapter": "Except. IV.",
+        "contexts": [
+          "Lastly. If we descend to the times of the New Testament, we shall find the same there. When our Savior Christ himself pr..."
+        ]
       }
     ]
   },
-  "unused_whitelist_anomalies": {}
+  "unused_whitelist_anomalies": {
+    "Unmatched Quotation Marks": [
+      "SERMON 16.   AN HUMBLE TESTIMONY",
+      "<section class=\"treatise-title-page\" epub:type=\"titlepage\"> <p class=\"title-line -major\">SERMON 13.<..."
+    ]
+  }
 }

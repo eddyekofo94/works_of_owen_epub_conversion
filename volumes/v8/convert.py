@@ -109,7 +109,14 @@ _V8_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
 <p class="contents-item" style="margin-top: -0.8em; margin-bottom: 1.2em; font-size: 0.85em; color: #555; padding-left: 1.5em;"><a href="ch064.xhtml">Prefatory Note</a> | <a href="ch065.xhtml">To the Reader</a></p>
 </section>'''
 
+def _post_extract_hook(intermediate):
+    import re
+    for ch in intermediate['chapters']:
+        ch['raw_text'] = re.sub(r'to the full,\s*["“”]\s*["“”]\s*Genesis', r'to the full," Genesis', ch['raw_text'])
+    return intermediate
+
 OVERRIDES = {
+    'post_extract_hook': _post_extract_hook,
     'contents_page_overrides': _V8_CONTENTS_PAGE,
     'front_matter_overrides': {
         'Contents': _V8_CONTENTS_PAGE,
@@ -122,6 +129,16 @@ OVERRIDES = {
         r'\b\s+([.,;:?!])': r'\1',
         r'\(\s+': '(',
         r'\b\s+\)': ')',
+        r'\[\[BLOCKQUOTE\]\]\s*["“”]Die Venetia, 14 Martii, 1650\.\s*["“”]The question': r'[[BLOCKQUOTE]] Die Venetia, 14 Martii, 1650. "The question',
+        r'(?<!["“”])\bfitly framed together, groweth': r'"fitly framed together, groweth',
+        r'to the full,\s*["“”]\s*["“”]\s*(?:<\d+>)?Genesis 15:16\.': r'to the full," Genesis 15:16.',
+        r'and have done\s*(?:<\d+>)?Ezekiel 17:24\.': r'and have done," Ezekiel 17:24.',
+        r'(?i)(?<!["“”])\bLet the righteous rather smite me\b': r'"Let the righteous rather smite me',
+        r'(?i)(?<!["“”])\bLet the righteous smite me, it shall be\b': r'"Let the righteous smite me, it shall be',
+        r'(?i)(?<!["“”])\bCry aloud, spare not; lift up thy voice\b': r'"Cry aloud, spare not; lift up thy voice',
+        r'to the full,\s*["“”]\s*["“”]\s*(?:<\d+>)?Genesis': r'to the full," Genesis',
+        r'Holy Ghost,["“”]\s*Holy Ghost,["“”]': r'Holy Ghost,"',
+        r'Lamb of God, which taketh away the sin of the world,["“”]\s*(?:<\d+>)?John 1:29,\s*36;\s*Lamb of God, which taketh away the sin of the world,["“”]\s*(?:<\d+>)?John 1:29,\s*36;': r'Lamb of God, which taketh away the sin of the world," John 1:29,36;',
     },
     'text_replacements': {
         'will so indulge to y spirits': 'will so indulge to your spirits',
@@ -138,9 +155,7 @@ OVERRIDES = {
         'Theod. Ecclesiastes Hist.': 'Theod. Eccles. Hist.',
         'In In Isaiah 8:20': 'In Isaiah 8:20',
         'Latin, esse,, essentia': 'Latin, esse, essentia',
-        'Holy Ghost," Holy Ghost,"': 'Holy Ghost,"',
         'refer it to the church; for he did not receive testimony from men, John 5:34 refer it to the church; for he did not receive testimony from men, John 5:34,': 'refer it to the church; for he did not receive testimony from men, John 5:34,',
-        'Lamb of God, which taketh away the sin of the world," John 1:29,36; Lamb of God, which taketh away the sin of the world," John 1:29,36;': 'Lamb of God, which taketh away the sin of the world," John 1:29,36;',
         # Remove incorrect structural tokens from Latin dedicatory epistle to avoid split fragments and false headings
         '[[SUBTITLE]] AMPLISSIMO': 'AMPLISSIMO',
         '[[CHAPTER]] SENATUI,': 'SENATUI,',

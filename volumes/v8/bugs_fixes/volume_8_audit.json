@@ -1,14 +1,14 @@
 {
   "epub": "volumes/v8/output/volume_8.epub",
-  "generated_at": "2026-06-22T11:32:34.120604+00:00",
+  "generated_at": "2026-06-24T01:05:33.013188+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
   "errors": [],
   "warnings": [],
   "info": {
-    "file_count": 103,
-    "epub_size_bytes": 5187861,
+    "file_count": 109,
+    "epub_size_bytes": 8676921,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -17,13 +17,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 94,
+    "manifest_count": 100,
     "spine_count": 74,
     "xhtml_count": 75,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 14,
+    "font_count": 20,
     "language": {
       "greek_chars": 1667,
       "greek_untagged_chars": 0,
@@ -69,7 +69,7 @@
       "digression_not_h3_files": 0,
       "spaced_caps_files": 0,
       "lowercase_paragraph_start_files": 0,
-      "noteref_leading_space_files": 0,
+      "noteref_leading_space_files": 1,
       "greek_span_legacy_accent_files": 0,
       "i_will_mangle_files": 0,
       "samples": {
@@ -104,7 +104,12 @@
         "nav_duplicate_text": [],
         "spaced_caps": [],
         "lowercase_paragraph_start": [],
-        "noteref_leading_space": [],
+        "noteref_leading_space": [
+          {
+            "file": "EPUB/ch015.xhtml",
+            "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+          }
+        ],
         "greek_span_legacy_accent": [],
         "quote_prose_join": [],
         "i_will_mangle": []

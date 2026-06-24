@@ -8,11 +8,11 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 103
-- Manifest items: 94
+- Files: 109
+- Manifest items: 100
 - Spine items: 74
 - XHTML files: 75
-- Embedded fonts: 14
+- Embedded fonts: 20
 - NAV links: 76
 
 ## Content Checks
@@ -29,3 +29,9 @@
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 0
+
+## Samples
+
+### noteref_leading_space
+
+- `EPUB/ch015.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
