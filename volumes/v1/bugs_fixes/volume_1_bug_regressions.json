@@ -230,16 +230,10 @@
     },
     {
       "label": "Repeated phrase hits",
-      "observed": 1,
+      "observed": 0,
       "budget": 8,
       "status": "ok",
-      "samples": [
-        {
-          "file": "combined_text",
-          "text": "to be useful rather than to be seen",
-          "count": 2
-        }
-      ]
+      "samples": []
     },
     {
       "label": "Possible Beta Code residue files",

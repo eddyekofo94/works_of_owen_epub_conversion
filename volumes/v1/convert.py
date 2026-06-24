@@ -516,6 +516,8 @@ OVERRIDES = {
         'glory of artist': 'glory of Christ',
         
         # OCR fixes for truncated words
+        'preeminence': 'pre-eminence',
+        'officepower': 'office-power',
         'pre -eminence': 'pre-eminence',
         'pre- eminence': 'pre-eminence',
         'heavenly -mindedness': 'heavenly-mindedness',
@@ -549,7 +551,7 @@ OVERRIDES = {
 
         # Paragraph Splits Healing (Issue #heal)
         r'subscribed by other names as well as his own,\s*—\s*John Nesbitt': 'subscribed by other names as well as his own, — John Nesbitt',
-        r'seeking in his duties to be under the influence of the sentiment,\s*—\s*_Prodesse quam conspici\._': 'seeking in his duties to be under the influence of the sentiment, — _Prodesse quam conspici._ [To be useful rather than to be seen]',
+        r'seeking in his duties to be under the influence of the sentiment,\s*—\s*_Prodesse quam conspici\._': 'seeking in his duties to be under the influence of the sentiment, — _Prodesse quam conspici._',
         r'lighten\s+".*?world,\s*"\s*,?\s*John\s+1:9': 'lighten "every man that cometh into the world," John 1:9',
         r'Genesis 3:15;\s*Psalm 2:7-9,\s*\[\[BLOCKQUOTE\]\]\s*Psalms 68:17, 18': 'Genesis 3:15; Psalm 2:7-9, Psalms 68:17, 18',
         r'That is his name,\s*".*?"\s*—\s*Psalms?\s+102:27': 'That is his name, "אַתָה הוּא" — Psalm 102:27',

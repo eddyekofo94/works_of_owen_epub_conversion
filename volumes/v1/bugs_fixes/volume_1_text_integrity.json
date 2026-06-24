@@ -2,15 +2,10 @@
   "volume": "1",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-06-23T10:51:31.699925+00:00",
-  "status": "warn",
-  "warning_count": 1,
-  "warnings": [
-    {
-      "code": "dense_source_window_loss",
-      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
-    }
-  ],
+  "generated_at": "2026-06-23T23:50:12.356465+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
     "page_count": 633,
     "skipped_detected": []
@@ -21,7 +16,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 205054,
-    "epub_content_tokens": 206095,
+    "epub_content_tokens": 206074,
     "coverage_ratio": 0.9993,
     "missing_word_samples": [],
     "excess_word_samples": [
@@ -63,90 +58,9 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 27440,
-    "missing_dense_window_pages": 20,
-    "missing_dense_windows": [
-      {
-        "page": 16,
-        "sample": "duties to be under the influence of the sentiment prodesse quam conspici to promote"
-      },
-      {
-        "page": 26,
-        "sample": "whole church aedificar quid dicturus what will you say es de johanne et apostolorum"
-      },
-      {
-        "page": 27,
-        "sample": "not prevail against it for unum hoc est this is one thing immobile fundamentum"
-      },
-      {
-        "page": 148,
-        "sample": "the son of god has not life chap v5 if we are wanting herein"
-      },
-      {
-        "page": 150,
-        "sample": "for when he brought the first begotten into the world he said προσκυνησατωσαν αυτω"
-      },
-      {
-        "page": 188,
-        "sample": "all the people shall say amen deut and on the other hand he prays"
-      },
-      {
-        "page": 194,
-        "sample": "the spirit as he is the only begotten of the father he is the"
-      },
-      {
-        "page": 203,
-        "sample": "divine goodness how great is his goodness how great is his beauty zechariah nothing"
-      },
-      {
-        "page": 223,
-        "sample": "one whose benignity is ready to exercise loving kindness on all occasions which is"
-      },
-      {
-        "page": 239,
-        "sample": "own glory in and by their own immediate proper ends proverbs revelation power which"
-      },
-      {
-        "page": 269,
-        "sample": "and obedience absolute and universal into condition of self sufficiency of domination and rule"
-      },
-      {
-        "page": 289,
-        "sample": "should all fullness dwell so that in all things he might have the pre-eminence"
-      },
-      {
-        "page": 297,
-        "sample": "of one into another such notions of these things some fancied of old eutyches'8"
-      },
-      {
-        "page": 319,
-        "sample": "residence of god in glory and majesty chap there on the throne of god"
-      },
-      {
-        "page": 328,
-        "sample": "and worship have we communion by faith whilst we are here below hebrews that"
-      },
-      {
-        "page": 332,
-        "sample": "figure of christ on his forehead exodus he has made atonement for them in"
-      },
-      {
-        "page": 341,
-        "sample": "by god the father unto his only begotten son no other being able to"
-      },
-      {
-        "page": 356,
-        "sample": "so as to abide one foot breadth above the earth we tread upon the"
-      },
-      {
-        "page": 363,
-        "sample": "the other yea they have all one breath so that man hath no pre-eminence"
-      },
-      {
-        "page": 374,
-        "sample": "as one of old complained to the same purpose upon his perusal of plato's"
-      }
-    ]
+    "dense_windows_checked": 27538,
+    "missing_dense_window_pages": 0,
+    "missing_dense_windows": []
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 4,

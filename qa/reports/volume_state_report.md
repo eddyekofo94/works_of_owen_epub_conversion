@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-23T23:00:28Z
+Generated: 2026-06-24T00:16:59Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-23T23:00:28Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 1 | 11.6 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
+| 1 | 1 | 9.6 | adobe-garamond-pro | 4 |  99.93 |  99.87 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
 | 2 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
 | 3 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
 | 4 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
@@ -188,14 +188,14 @@ Generated: 2026-06-23T23:00:28Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 1 — Need: 11.6 (✅ Good) — Rank 8
+### Volume 1 — Need: 9.6 (✅ Good) — Rank 8
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** ages_pdf
 - **Treatises:** 4
 - **QA level:** PRISTINE
-- **convert.py:** Yes (593 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
+- **convert.py:** Yes (595 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.93
 - **Greek coverage:** 99.87
 - **Hebrew coverage:** 100.00
@@ -309,7 +309,7 @@ Generated: 2026-06-23T23:00:28Z
 - **Latin translation:** 45.00
 - **Citations:** total=70, unresolved=0
 - **Splits:** 0
-- **Regressions:** 1
+- **Regressions:** 0
 - **Suspected anomalies:** 0
 - **Unmatched quotes:** 0
 - **Recommended:** 

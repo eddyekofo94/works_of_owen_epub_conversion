@@ -959,12 +959,16 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-23T10:50:59.357078+00:00
+**Last run:** 2026-06-23T23:49:41.370000+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub`
-**Status:** WARN (0 errors, 1 warnings)
+**Status:** PASS (0 errors, 0 warnings)
 
 Reports:
 - `volume_1_audit.json`
@@ -984,11 +988,7 @@ Reports:
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 1 |
-
-Warnings requiring triage:
-
-- `repeated_phrases`: Potential repeated phrases detected
+| Repeated phrase hits | 0 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -1160,11 +1160,16 @@ Warnings requiring triage:
 
 
 
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-23T10:51:31.699925+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-06-23T23:50:12.356465+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1177,8 +1182,8 @@ Reports:
 | EPUB paragraphs/headings | 2710 |
 | Approximate PDF-to-EPUB word coverage | 0.9993 |
 | Weak page matches | 0 |
-| Dense source windows checked | 27440 |
-| Missing dense source-window pages | 20 |
+| Dense source windows checked | 27538 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 4 |
 | Top-of-page body windows checked | 586 |
@@ -1209,10 +1214,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

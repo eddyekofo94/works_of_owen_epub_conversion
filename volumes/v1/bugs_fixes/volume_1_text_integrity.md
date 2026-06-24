@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 1
 
-- Status: **WARN**
-- Warnings: 1
+- Status: **PASS**
+- Warnings: 0
 - PDF pages: 633
 - EPUB text files: 84
 - EPUB paragraphs/headings: 2710
@@ -9,12 +9,12 @@
 ## Coverage
 
 - PDF content tokens: 205054
-- EPUB content tokens: 206095
+- EPUB content tokens: 206074
 - Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 622
 - Weak page matches: 0
-- Dense source windows checked: 27440
-- Missing dense source-window pages: 20
+- Dense source windows checked: 27538
+- Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 4
 - Top-of-page body windows checked: 586
@@ -69,23 +69,6 @@
 - Tagged Latin runs checked: 258
 - Translated Latin runs: 162
 - Latin translation ratio: 0.6279
-
-## Warnings
-
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-
-## Missing Dense Source Windows
-
-- page: 16; sample: duties to be under the influence of the sentiment prodesse quam conspici to promote
-- page: 26; sample: whole church aedificar quid dicturus what will you say es de johanne et apostolorum
-- page: 27; sample: not prevail against it for unum hoc est this is one thing immobile fundamentum
-- page: 148; sample: the son of god has not life chap v5 if we are wanting herein
-- page: 150; sample: for when he brought the first begotten into the world he said προσκυνησατωσαν αυτω
-- page: 188; sample: all the people shall say amen deut and on the other hand he prays
-- page: 194; sample: the spirit as he is the only begotten of the father he is the
-- page: 203; sample: divine goodness how great is his goodness how great is his beauty zechariah nothing
-- page: 223; sample: one whose benignity is ready to exercise loving kindness on all occasions which is
-- page: 239; sample: own glory in and by their own immediate proper ends proverbs revelation power which
 
 ## Missing Front CONTENTS Pages
 

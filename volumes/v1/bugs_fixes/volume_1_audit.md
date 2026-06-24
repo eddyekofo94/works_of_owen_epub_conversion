@@ -1,8 +1,8 @@
 # EPUB Audit: volume_1.epub
 
-- Status: **WARN**
+- Status: **PASS**
 - Errors: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
@@ -28,17 +28,9 @@
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
-- Repeated phrase hits: 1
-
-## Warnings
-
-- `repeated_phrases`: Potential repeated phrases detected
+- Repeated phrase hits: 0
 
 ## Samples
-
-### repeated_phrase
-
-- `combined_text`: to be useful rather than to be seen
 
 ### chapter_heading_in_paragraph
 
