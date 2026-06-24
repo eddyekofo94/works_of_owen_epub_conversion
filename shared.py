@@ -2662,8 +2662,7 @@ blockquote {
 
 /* Title Page Majesty (Puritan / Vintage Style) */
 .titlepage,
-.title-page,
-.treatise-title-page {
+.title-page {
     font-family: "Owen Title", "Baskervville", "Baskerville", "Hoefler Text", "Garamond", "Times New Roman", serif !important;
     text-align: center;
     padding: 8% 6% 8%;
@@ -2675,8 +2674,7 @@ blockquote {
     min-height: 90vh;
 }
 .titlepage .ornament,
-.title-page .ornament,
-.treatise-title-page .ornament {
+.title-page .ornament {
     display: block;
     text-align: center;
     font-size: 1.2em;
@@ -2686,8 +2684,7 @@ blockquote {
     text-indent: 0;
 }
 .titlepage h1,
-.title-page h1,
-.treatise-title-page h1 {
+.title-page h1 {
     font-variant: small-caps;
     font-size: 2.1em;
     line-height: 1.15;
@@ -2697,8 +2694,7 @@ blockquote {
     text-align: center;
 }
 .titlepage h2,
-.title-page h2,
-.treatise-title-page h2 {
+.title-page h2 {
     font-weight: bold;
     font-size: 1.3em;
     line-height: 1.35;
@@ -2707,8 +2703,7 @@ blockquote {
     text-align: center;
 }
 .titlepage h3,
-.title-page h3,
-.treatise-title-page h3 {
+.title-page h3 {
     text-align: center;
     font-size: 1.1em;
     line-height: 1.35;
@@ -2716,8 +2711,7 @@ blockquote {
     font-weight: bold;
 }
 .titlepage h4,
-.title-page h4,
-.treatise-title-page h4 {
+.title-page h4 {
     font-size: 0.9em;
     font-weight: normal;
     text-transform: uppercase;
@@ -2726,8 +2720,7 @@ blockquote {
     text-align: center;
 }
 .titlepage h5,
-.title-page h5,
-.treatise-title-page h5 {
+.title-page h5 {
     font-size: 0.72em;       /* Was 0.15em — literally 2px on a phone. Made readable. */
     font-weight: normal;
     text-transform: uppercase;
@@ -2746,8 +2739,7 @@ blockquote {
     text-align: center;
 }
 .titlepage .descriptive,
-.title-page .descriptive,
-.treatise-title-page .descriptive {
+.title-page .descriptive {
     text-align: center;
     font-style: italic;
     line-height: 1.5;
@@ -3350,7 +3342,7 @@ p.signature {
 
 /* Inner Treatise Title Pages (e.g. Christologia) */
 .treatise-title-page {
-    text-align: center;
+    text-align: center !important;
     padding: 4% 5% 5%;
     max-width: 42em;
     margin: 0 auto;
@@ -3364,7 +3356,7 @@ p.signature {
     page-break-inside: avoid;
 }
 .treatise-title-page .greek-title {
-    text-align: center;
+    text-align: center !important;
     font-size: 1.25em;
     margin: 0 0 1.25em;
     text-indent: 0;
@@ -3381,7 +3373,7 @@ p.signature {
     font-weight: bold;
     letter-spacing: 0.12em;
     font-style: normal;
-    text-align: center;
+    text-align: center !important;
     text-indent: 0;
 }
 .treatise-title-page h2,
@@ -3394,12 +3386,12 @@ p.signature {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-style: normal;
-    text-align: center;
+    text-align: center !important;
     text-indent: 0;
 }
 .treatise-title-page p,
 .treatise-title-page div {
-    text-align: center;
+    text-align: center !important;
     text-indent: 0;
     margin: 0.42em 0;
     line-height: 1.4;
@@ -3413,6 +3405,7 @@ p.signature {
     font-style: normal;
     font-weight: bold;
     letter-spacing: 0.18em;
+    text-align: center !important;
 }
 .treatise-title-page .descriptive {
     font-style: normal;
@@ -3420,6 +3413,7 @@ p.signature {
     margin: 0.85em auto;
     max-width: 34em;
     line-height: 1.35;
+    text-align: center !important;
 }
 .treatise-title-page .quote-block {
     text-align: left;

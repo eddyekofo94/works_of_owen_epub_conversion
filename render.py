@@ -1075,8 +1075,15 @@ def embed_fonts_and_stylesheet(book: epub.EpubBook, vol_num: int, config: dict) 
                 ))
                 font_fnames.add(_fbase)
 
-    # Supplemental biblical fonts, heading font, and the embedded title display face
-    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES):
+    # Supplemental biblical fonts and the embedded title display face
+    fallback_fonts = [TITLE_PAGE_FONTS]
+    langs = config.get('secondary_languages', [])
+    if 'el' in langs or 'he' in langs:
+        fallback_fonts.append(SBL_SUPPLEMENTS)
+    if 'he' in langs:
+        fallback_fonts.append(EZRA_SIL_FILES)
+        
+    for _font_dict in fallback_fonts:
         for _fname, _fpath in _font_dict.items():
             _fbase = os.path.basename(_fpath)
             if _fbase in font_fnames:
