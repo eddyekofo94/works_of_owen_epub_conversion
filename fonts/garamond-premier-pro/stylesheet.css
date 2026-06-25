@@ -1,0 +1,390 @@
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-Bd.eot');
+    src: local('Garamond Premiere Pro Bold'), local('GaramondPremrPro-Bd'),
+        url('GaramondPremrPro-Bd.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-Bd.woff2') format('woff2'),
+        url('GaramondPremrPro-Bd.woff') format('woff'),
+        url('GaramondPremrPro-Bd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro.eot');
+    src: local('Garamond Premiere Pro Regular'), local('GaramondPremrPro'),
+        url('GaramondPremrPro.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro.woff2') format('woff2'),
+        url('GaramondPremrPro.woff') format('woff'),
+        url('GaramondPremrPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-BdCapt.eot');
+    src: local('Garamond Premiere Pro Bold Caption'), local('GaramondPremrPro-BdCapt'),
+        url('GaramondPremrPro-BdCapt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdCapt.woff2') format('woff2'),
+        url('GaramondPremrPro-BdCapt.woff') format('woff'),
+        url('GaramondPremrPro-BdCapt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premier Pro';
+    src: url('GaramondPremrPro-BdIt.eot');
+    src: local('Garamond Premier Pro Bold Italic'), local('GaramondPremrPro-BdIt'),
+        url('GaramondPremrPro-BdIt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdIt.woff2') format('woff2'),
+        url('GaramondPremrPro-BdIt.woff') format('woff'),
+        url('GaramondPremrPro-BdIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-Disp.eot');
+    src: local('Garamond Premiere Pro Display'), local('GaramondPremrPro-Disp'),
+        url('GaramondPremrPro-Disp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-Disp.woff2') format('woff2'),
+        url('GaramondPremrPro-Disp.woff') format('woff'),
+        url('GaramondPremrPro-Disp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-BdItSubh.eot');
+    src: local('Garamond Premiere Pro Bold Italic Subhead'), local('GaramondPremrPro-BdItSubh'),
+        url('GaramondPremrPro-BdItSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdItSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-BdItSubh.woff') format('woff'),
+        url('GaramondPremrPro-BdItSubh.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-BdItDisp.eot');
+    src: local('Garamond Premiere Pro Bold Italic Display'), local('GaramondPremrPro-BdItDisp'),
+        url('GaramondPremrPro-BdItDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdItDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-BdItDisp.woff') format('woff'),
+        url('GaramondPremrPro-BdItDisp.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-Capt.eot');
+    src: local('Garamond Premiere Pro Caption'), local('GaramondPremrPro-Capt'),
+        url('GaramondPremrPro-Capt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-Capt.woff2') format('woff2'),
+        url('GaramondPremrPro-Capt.woff') format('woff'),
+        url('GaramondPremrPro-Capt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-BdDisp.eot');
+    src: local('Garamond Premiere Pro Bold Display'), local('GaramondPremrPro-BdDisp'),
+        url('GaramondPremrPro-BdDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-BdDisp.woff') format('woff'),
+        url('GaramondPremrPro-BdDisp.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-BdSubh.eot');
+    src: local('Garamond Premiere Pro Bold Subhead'), local('GaramondPremrPro-BdSubh'),
+        url('GaramondPremrPro-BdSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-BdSubh.woff') format('woff'),
+        url('GaramondPremrPro-BdSubh.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-BdItCapt.eot');
+    src: local('Garamond Premiere Pro Bold Italic Caption'), local('GaramondPremrPro-BdItCapt'),
+        url('GaramondPremrPro-BdItCapt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-BdItCapt.woff2') format('woff2'),
+        url('GaramondPremrPro-BdItCapt.woff') format('woff'),
+        url('GaramondPremrPro-BdItCapt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-MedCapt.eot');
+    src: local('Garamond Premiere Pro Medium Caption'), local('GaramondPremrPro-MedCapt'),
+        url('GaramondPremrPro-MedCapt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedCapt.woff2') format('woff2'),
+        url('GaramondPremrPro-MedCapt.woff') format('woff'),
+        url('GaramondPremrPro-MedCapt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premier Pro';
+    src: url('GaramondPremrPro-It.eot');
+    src: local('Garamond Premier Pro Italic'), local('GaramondPremrPro-It'),
+        url('GaramondPremrPro-It.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-It.woff2') format('woff2'),
+        url('GaramondPremrPro-It.woff') format('woff'),
+        url('GaramondPremrPro-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-ItSubh.eot');
+    src: local('Garamond Premiere Pro Italic Subhead'), local('GaramondPremrPro-ItSubh'),
+        url('GaramondPremrPro-ItSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-ItSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-ItSubh.woff') format('woff'),
+        url('GaramondPremrPro-ItSubh.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-ItCapt.eot');
+    src: local('Garamond Premiere Pro Italic Caption'), local('GaramondPremrPro-ItCapt'),
+        url('GaramondPremrPro-ItCapt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-ItCapt.woff2') format('woff2'),
+        url('GaramondPremrPro-ItCapt.woff') format('woff'),
+        url('GaramondPremrPro-ItCapt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-ItDisp.eot');
+    src: local('Garamond Premiere Pro Italic Display'), local('GaramondPremrPro-ItDisp'),
+        url('GaramondPremrPro-ItDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-ItDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-ItDisp.woff') format('woff'),
+        url('GaramondPremrPro-ItDisp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-LtDisp.eot');
+    src: local('Garamond Premiere Pro Light Display'), local('GaramondPremrPro-LtDisp'),
+        url('GaramondPremrPro-LtDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-LtDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-LtDisp.woff') format('woff'),
+        url('GaramondPremrPro-LtDisp.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-LtItDisp.eot');
+    src: local('Garamond Premiere Pro Light Italic Display'), local('GaramondPremrPro-LtItDisp'),
+        url('GaramondPremrPro-LtItDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-LtItDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-LtItDisp.woff') format('woff'),
+        url('GaramondPremrPro-LtItDisp.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-Med.eot');
+    src: local('Garamond Premiere Pro Medium'), local('GaramondPremrPro-Med'),
+        url('GaramondPremrPro-Med.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-Med.woff2') format('woff2'),
+        url('GaramondPremrPro-Med.woff') format('woff'),
+        url('GaramondPremrPro-Med.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-MedDisp.eot');
+    src: local('Garamond Premiere Pro Medium Display'), local('GaramondPremrPro-MedDisp'),
+        url('GaramondPremrPro-MedDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-MedDisp.woff') format('woff'),
+        url('GaramondPremrPro-MedDisp.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-SmbdItSubh.eot');
+    src: local('Garamond Premiere Pro Semibold Italic Subhead'), local('GaramondPremrPro-SmbdItSubh'),
+        url('GaramondPremrPro-SmbdItSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-SmbdItSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-SmbdItSubh.woff') format('woff'),
+        url('GaramondPremrPro-SmbdItSubh.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-MedItDisp.eot');
+    src: local('Garamond Premiere Pro Medium Italic Display'), local('GaramondPremrPro-MedItDisp'),
+        url('GaramondPremrPro-MedItDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedItDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-MedItDisp.woff') format('woff'),
+        url('GaramondPremrPro-MedItDisp.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-SmbdItDisp.eot');
+    src: local('Garamond Premiere Pro Semibold Italic Display'), local('GaramondPremrPro-SmbdItDisp'),
+        url('GaramondPremrPro-SmbdItDisp.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-SmbdItDisp.woff2') format('woff2'),
+        url('GaramondPremrPro-SmbdItDisp.woff') format('woff'),
+        url('GaramondPremrPro-SmbdItDisp.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-SmbdItCapt.eot');
+    src: local('Garamond Premiere Pro Semibold Italic Caption'), local('GaramondPremrPro-SmbdItCapt'),
+        url('GaramondPremrPro-SmbdItCapt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-SmbdItCapt.woff2') format('woff2'),
+        url('GaramondPremrPro-SmbdItCapt.woff') format('woff'),
+        url('GaramondPremrPro-SmbdItCapt.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-MedSubh.eot');
+    src: local('Garamond Premiere Pro Medium Subhead'), local('GaramondPremrPro-MedSubh'),
+        url('GaramondPremrPro-MedSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-MedSubh.woff') format('woff'),
+        url('GaramondPremrPro-MedSubh.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premier Pro';
+    src: url('GaramondPremrPro-MedIt.eot');
+    src: local('Garamond Premier Pro Medium Italic'), local('GaramondPremrPro-MedIt'),
+        url('GaramondPremrPro-MedIt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedIt.woff2') format('woff2'),
+        url('GaramondPremrPro-MedIt.woff') format('woff'),
+        url('GaramondPremrPro-MedIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-MedItCapt.eot');
+    src: local('Garamond Premiere Pro Medium Italic Caption'), local('GaramondPremrPro-MedItCapt'),
+        url('GaramondPremrPro-MedItCapt.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedItCapt.woff2') format('woff2'),
+        url('GaramondPremrPro-MedItCapt.woff') format('woff'),
+        url('GaramondPremrPro-MedItCapt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-MedItSubh.eot');
+    src: local('Garamond Premiere Pro Medium Italic Subhead'), local('GaramondPremrPro-MedItSubh'),
+        url('GaramondPremrPro-MedItSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-MedItSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-MedItSubh.woff') format('woff'),
+        url('GaramondPremrPro-MedItSubh.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-SmbdSubh.eot');
+    src: local('Garamond Premiere Pro Semibold Subhead'), local('GaramondPremrPro-SmbdSubh'),
+        url('GaramondPremrPro-SmbdSubh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-SmbdSubh.woff2') format('woff2'),
+        url('GaramondPremrPro-SmbdSubh.woff') format('woff'),
+        url('GaramondPremrPro-SmbdSubh.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond Premiere Pro';
+    src: url('GaramondPremrPro-Subh.eot');
+    src: local('Garamond Premiere Pro Subhead'), local('GaramondPremrPro-Subh'),
+        url('GaramondPremrPro-Subh.eot?#iefix') format('embedded-opentype'),
+        url('GaramondPremrPro-Subh.woff2') format('woff2'),
+        url('GaramondPremrPro-Subh.woff') format('woff'),
+        url('GaramondPremrPro-Subh.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

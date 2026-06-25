@@ -123,7 +123,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'libertinus',
+        'body_font': 'hoefler-text',
         'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -138,7 +138,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'minion-pro',
+        'body_font': 'arno-pro',
         'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -151,7 +151,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'cardo',
+        'body_font': 'palatino',
         'heading_font': 'montserrat',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -167,8 +167,8 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'palatino',
-        'heading_font': 'roboto',
+        'body_font': 'garamond-premier-pro',
+        'heading_font': 'new-caledonia-lt-std',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
         'treatises': [
@@ -212,7 +212,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'brill-font',
+        'body_font': 'cardo',
         'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -286,7 +286,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'arno-pro',
+        'body_font': 'centaur',
         'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -318,7 +318,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'centaur',
+        'body_font': 'brill-font',
         'heading_font': 'cinzel',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -347,7 +347,7 @@ VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'coelacanth',
+        'body_font': 'georgia',
         'heading_font': 'inter',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'ages_pdf',
@@ -482,7 +482,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'cormorant-garamond',
+        'body_font': 'minion-pro',
         'heading_font': 'cinzel',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
@@ -512,7 +512,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'coelacanth',
+        'body_font': 'bembo',
         'heading_font': 'cinzel',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
@@ -523,7 +523,7 @@ HEBREWS_VOLUME_CONFIG = {
         'authors': ['John Owen'],
         'editors': ['William H. Goold'],
         'secondary_languages': ['el', 'he'],
-        'body_font': 'playfair-display',
+        'body_font': 'libertinus',
         'heading_font': 'proxima-nova',
         'publisher': 'Eduardus Ekofius',
         'source_type': 'epub2',
@@ -2507,7 +2507,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    line-height: 1.65;
+    line-height: 1.35 !important;
     margin: 0.4em 0.5em; /* Apple Books margin */
     color: #111;
     overflow-x: hidden;
@@ -2523,6 +2523,8 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+    font-size: 1em !important;
+    line-height: 1.35 !important;
     text-align: justify;
     -epub-text-align-last: left;
     text-align-last: left;
@@ -2540,7 +2542,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [lang="el"], [lang="el"] * {
     font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
-    font-size: 1.15em;
+    font-size: 1.05em;
 }
 
 [lang="he"], [lang="he"] * {
@@ -2559,9 +2561,9 @@ h1, h2, h3, h4, h5, h6 {
 a[epub\:type="noteref"], .noteref {
     display: inline !important;
     vertical-align: super;
-    font-size: 0.70rem;   /* root-relative to remain consistent inside headings */
+    font-size: 0.80rem;   /* slightly larger, root-relative */
     line-height: 0;
-    padding: 0.1em 0.15em 0.1em 0.4em !important; /* Left padding provides 0.25em separation */
+    padding: 0.1em 0.15em 0.1em 0.05em !important; /* tighter against previous word */
     white-space: nowrap;
 }
 
@@ -2581,6 +2583,7 @@ a.noteref-trans, .noteref-trans {
     font-size: 1em;
     line-height: inherit;
     vertical-align: baseline;
+    display: inline !important;
 }
 
 a, .noteref, a.footnote-ref, a.fn-link {
@@ -3450,6 +3453,17 @@ aside[epub\:type~="footnote"] {
     display: block;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.footnote {
+    font-size: 1.0em !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+    margin: 0 !important;
+    padding: 1.5em 0 0.8em 0 !important; /* 1.5em top padding forces clearance */
+    text-indent: 0 !important;
+    display: block;
 }
 
 aside[epub\:type~="endnote"] {

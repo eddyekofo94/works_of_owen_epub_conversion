@@ -1,0 +1,292 @@
+{
+  "epub": "volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-06-14T16:03:54.014668+00:00",
+  "status": "warn",
+  "error_count": 0,
+  "warning_count": 45,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "orphan_class",
+      "message": "Class '.ContentsItem' defined in CSS but never used in XHTML",
+      "class": "ContentsItem"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.analysis-part' defined in CSS but never used in XHTML",
+      "class": "analysis-part"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.author' defined in CSS but never used in XHTML",
+      "class": "author"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.by' defined in CSS but never used in XHTML",
+      "class": "by"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.chapter-subtitle' defined in CSS but never used in XHTML",
+      "class": "chapter-subtitle"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.chapter-summary' defined in CSS but never used in XHTML",
+      "class": "chapter-summary"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.contents-desc' defined in CSS but never used in XHTML",
+      "class": "contents-desc"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.contents-frontmatter-line' defined in CSS but never used in XHTML",
+      "class": "contents-frontmatter-line"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.contents-label' defined in CSS but never used in XHTML",
+      "class": "contents-label"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.contents-section-title' defined in CSS but never used in XHTML",
+      "class": "contents-section-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.digression-heading' defined in CSS but never used in XHTML",
+      "class": "digression-heading"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.footnote-ref' defined in CSS but never used in XHTML",
+      "class": "footnote-ref"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.front-matter-body' defined in CSS but never used in XHTML",
+      "class": "front-matter-body"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.front-matter-title' defined in CSS but never used in XHTML",
+      "class": "front-matter-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.g' defined in CSS but never used in XHTML",
+      "class": "g"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.greek' defined in CSS but never used in XHTML",
+      "class": "greek"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.hebrew' defined in CSS but never used in XHTML",
+      "class": "hebrew"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.latin' defined in CSS but never used in XHTML",
+      "class": "latin"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.noindent' defined in CSS but never used in XHTML",
+      "class": "noindent"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.ornament' defined in CSS but never used in XHTML",
+      "class": "ornament"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.primary' defined in CSS but never used in XHTML",
+      "class": "primary"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.publisher' defined in CSS but never used in XHTML",
+      "class": "publisher"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scholastic-anchor' defined in CSS but never used in XHTML",
+      "class": "scholastic-anchor"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scholastic-anchor-child' defined in CSS but never used in XHTML",
+      "class": "scholastic-anchor-child"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scholastic-anchor-parent' defined in CSS but never used in XHTML",
+      "class": "scholastic-anchor-parent"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scholastic-label' defined in CSS but never used in XHTML",
+      "class": "scholastic-label"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.scripture-ref-introduction' defined in CSS but never used in XHTML",
+      "class": "scripture-ref-introduction"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.separator' defined in CSS but never used in XHTML",
+      "class": "separator"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.sermon-opening-scripture' defined in CSS but never used in XHTML",
+      "class": "sermon-opening-scripture"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.signature' defined in CSS but never used in XHTML",
+      "class": "signature"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.small-caps' defined in CSS but never used in XHTML",
+      "class": "small-caps"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.subtitle' defined in CSS but never used in XHTML",
+      "class": "subtitle"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.titlepage' defined in CSS but never used in XHTML",
+      "class": "titlepage"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.toc-line' defined in CSS but never used in XHTML",
+      "class": "toc-line"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.toc-page' defined in CSS but never used in XHTML",
+      "class": "toc-page"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.toc-title' defined in CSS but never used in XHTML",
+      "class": "toc-title"
+    },
+    {
+      "code": "orphan_class",
+      "message": "Class '.verse' defined in CSS but never used in XHTML",
+      "class": "verse"
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'SBL Greek' does not match embedded font metadata family values ['SBL BibLit']",
+      "font_family": "SBL Greek",
+      "file": "EPUB/Fonts/SBL_grk.ttf",
+      "metadata": {
+        "family": "SBL BibLit",
+        "subfamily": "Regular",
+        "full_name": "SBL BibLit",
+        "postscript": "SBLBibLit"
+      }
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'SBL Hebrew' does not match embedded font metadata family values ['SBL BibLit']",
+      "font_family": "SBL Hebrew",
+      "file": "EPUB/Fonts/SBL_Hbrw.ttf",
+      "metadata": {
+        "family": "SBL BibLit",
+        "subfamily": "Regular",
+        "full_name": "SBL BibLit",
+        "postscript": "SBLBibLit"
+      }
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'Baskervville' does not match embedded font metadata family values ['Baskerville BT']",
+      "font_family": "Baskervville",
+      "file": "EPUB/Fonts/BaskervilleBT.ttf",
+      "metadata": {
+        "family": "Baskerville BT",
+        "subfamily": "Roman",
+        "full_name": "Baskerville BT",
+        "postscript": "BaskervilleBT-Roman"
+      }
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'Baskervville' does not match embedded font metadata family values ['Baskerville BT']",
+      "font_family": "Baskervville",
+      "file": "EPUB/Fonts/BaskervilleItalicBT.ttf",
+      "metadata": {
+        "family": "Baskerville BT",
+        "subfamily": "Italic",
+        "full_name": "Baskerville Italic BT",
+        "postscript": "BaskervilleBT-Italic"
+      }
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'Owen Title' does not match embedded font metadata family values ['Baskerville BT']",
+      "font_family": "Owen Title",
+      "file": "EPUB/Fonts/BaskervilleBT.ttf",
+      "metadata": {
+        "family": "Baskerville BT",
+        "subfamily": "Roman",
+        "full_name": "Baskerville BT",
+        "postscript": "BaskervilleBT-Roman"
+      }
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'Owen Title' does not match embedded font metadata family values ['Baskerville BT']",
+      "font_family": "Owen Title",
+      "file": "EPUB/Fonts/BaskervilleBT.ttf",
+      "metadata": {
+        "family": "Baskerville BT",
+        "subfamily": "Roman",
+        "full_name": "Baskerville BT",
+        "postscript": "BaskervilleBT-Roman"
+      }
+    },
+    {
+      "code": "font_family_metadata_mismatch",
+      "message": "@font-face family 'Owen Title' does not match embedded font metadata family values ['Baskerville BT']",
+      "font_family": "Owen Title",
+      "file": "EPUB/Fonts/BaskervilleItalicBT.ttf",
+      "metadata": {
+        "family": "Baskerville BT",
+        "subfamily": "Italic",
+        "full_name": "Baskerville Italic BT",
+        "postscript": "BaskervilleBT-Italic"
+      }
+    },
+    {
+      "code": "undefined_font_family",
+      "message": "Font family 'inherit' used in CSS but has no @font-face and is not web-safe",
+      "font_family": "inherit"
+    }
+  ],
+  "info": {
+    "css_file_count": 1,
+    "css_classes_defined": 130,
+    "xhtml_classes_used": 93,
+    "xhtml_files_scanned": 86,
+    "font_face_count": 23,
+    "embedded_font_count": 20
+  }
+}

@@ -20,7 +20,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  line-height: 1.65;
+  line-height: 1.35 !important;
   margin: 0.4em 0.5em !important;
   overflow-x: hidden;
   overflow-wrap: break-word !important;
@@ -37,6 +37,8 @@ h1, h2, h3, h4, h5, h6 {
   hyphens: none !important;
 }
 p {
+  font-size: 1em !important;
+  line-height: 1.35 !important;
   text-align: justify;
   -epub-text-align-last: left;
   text-align-last: left;
@@ -47,7 +49,7 @@ p {
 }
 [lang="el"], [lang="el"] * {
   font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
-  font-size: 1.15em;
+  font-size: 1.05em;
 }
 [lang="he"], [lang="he"] * {
   direction: rtl;
@@ -67,10 +69,9 @@ a, .noteref {
 .noteref {
   display: inline-block !important;
   vertical-align: super;
-  font-size: 0.70rem;
+  font-size: 0.80rem;
   line-height: 0;
-  padding: 0.1em 0.15em;
-  margin-left: 0.25em !important;
+  padding: 0.1em 0.15em 0.1em 0.05em;
   white-space: nowrap;
 }
 .footnote {
