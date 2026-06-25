@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-24T22:36:30Z
+Generated: 2026-06-25T22:32:34Z
 
 ## Summary
 
@@ -10,22 +10,22 @@ Generated: 2026-06-24T22:36:30Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 5 | 5.8 | palatino | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
-| 2 | 3 | 5.6 | minion-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
+| 1 | 5 | 5.8 | garamond-premier-pro | 2 |  99.98 |  100.0 |  100.0 |  99.68 | 0 | 0 | PRISTINE |
+| 2 | 3 | 5.6 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
 | 3 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
-| 4 | 12 | 4.8 | arno-pro | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
+| 4 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 5 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
-| 6 | 14 | 4.4 | centaur | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
-| 7 | 16 | 4.4 | coelacanth | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
+| 6 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
+| 7 | 16 | 4.4 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
 | 8 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
 | 9 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
-| 10 | 8 | 2.7 | brill-font | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 10 | 8 | 2.7 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
 | 11 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
-| 12 | 4 | 2.0 | cardo | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
+| 12 | 4 | 2.0 | palatino | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
 | 13 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
 | 14 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | PRISTINE |
 | 15 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.98 |  100.0 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
-| 16 | 2 | 0.4 | libertinus | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
+| 16 | 2 | 0.4 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
 
 ### Hebrews Commentary (7 Volumes)
 
@@ -33,10 +33,10 @@ Generated: 2026-06-24T22:36:30Z
 |------|-----|------|------|-----------|----------|-------|--------|-------|--------|----------|
 | 1 | h2 | 36.3 | goudi | 3 |  99.81 |  100.0 |  100.0 | 39 | None | FULL |
 | 2 | h5 | 34.1 | libre-caslon-text | 1 |  99.93 |  100.0 |  100.0 | 6 | None | FULL |
-| 3 | h3 | 32.1 | coelacanth | 1 |  99.97 |  100.0 |  100.0 | 13 | None | STANDARD |
+| 3 | h3 | 32.1 | bembo | 1 |  99.97 |  100.0 |  100.0 | 13 | None | STANDARD |
 | 4 | h6 | 30.8 | merriweather | 1 |  99.98 |  100.0 |  100.0 | 4 | None | FULL |
-| 5 | h1 | 30.2 | cormorant-garamond | 3 |  99.99 |  100.0 |  100.0 | 30 | None | FULL |
-| 6 | h4 | 28.7 | playfair-display | 1 |  99.96 |  100.0 |  100.0 | 9 | None | FULL |
+| 5 | h1 | 30.2 | minion-pro | 3 |  99.99 |  100.0 |  100.0 | 30 | None | FULL |
+| 6 | h4 | 28.7 | libertinus | 1 |  99.96 |  100.0 |  100.0 | 9 | None | FULL |
 | 7 | h7 | 28.3 | literata | 1 |  99.98 |  100.0 |  100.0 | 2 | None | FULL |
 
 ## Per-Volume Details
@@ -85,7 +85,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume h3 — Need: 32.1 (👌 Fair) — Rank 3
 
-- **Body font:** coelacanth
+- **Body font:** bembo
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** STANDARD
@@ -127,7 +127,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume h1 — Need: 30.2 (👌 Fair) — Rank 5
 
-- **Body font:** cormorant-garamond
+- **Body font:** minion-pro
 - **Source type:** epub2
 - **Treatises:** 3
 - **QA level:** FULL
@@ -148,7 +148,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume h4 — Need: 28.7 (👌 Fair) — Rank 6
 
-- **Body font:** playfair-display
+- **Body font:** libertinus
 - **Source type:** epub2
 - **Treatises:** 1
 - **QA level:** FULL
@@ -190,7 +190,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 5 — Need: 5.8 (✅ Good) — Rank 8
 
-- **Body font:** palatino
+- **Body font:** garamond-premier-pro
 - **Source type:** ages_pdf
 - **Treatises:** 2
 - **QA level:** PRISTINE
@@ -211,7 +211,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 3 — Need: 5.6 (✅ Good) — Rank 9
 
-- **Body font:** minion-pro
+- **Body font:** arno-pro
 - **Source type:** ages_pdf
 - **Treatises:** 1
 - **QA level:** PRISTINE
@@ -253,7 +253,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 12 — Need: 4.8 (✅ Good) — Rank 11
 
-- **Body font:** arno-pro
+- **Body font:** centaur
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** PRISTINE
@@ -295,7 +295,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 14 — Need: 4.4 (✅ Good) — Rank 13
 
-- **Body font:** centaur
+- **Body font:** brill-font
 - **Source type:** ages_pdf
 - **Treatises:** 2
 - **QA level:** PRISTINE
@@ -316,7 +316,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 16 — Need: 4.4 (✅ Good) — Rank 14
 
-- **Body font:** coelacanth
+- **Body font:** georgia
 - **Source type:** ages_pdf
 - **Treatises:** 5
 - **QA level:** PRISTINE
@@ -379,7 +379,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 8 — Need: 2.7 (✅ Good) — Rank 17
 
-- **Body font:** brill-font
+- **Body font:** cardo
 - **Source type:** ages_pdf
 - **Treatises:** 16
 - **QA level:** PRISTINE
@@ -421,7 +421,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 4 — Need: 2.0 (✅ Good) — Rank 19
 
-- **Body font:** cardo
+- **Body font:** palatino
 - **Source type:** ages_pdf
 - **Treatises:** 4
 - **QA level:** PRISTINE
@@ -505,7 +505,7 @@ Generated: 2026-06-24T22:36:30Z
 
 ### Volume 2 — Need: 0.4 (✅ Good) — Rank 23
 
-- **Body font:** libertinus
+- **Body font:** hoefler-text
 - **Source type:** ages_pdf
 - **Treatises:** 3
 - **QA level:** PRISTINE
