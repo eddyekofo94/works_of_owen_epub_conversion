@@ -232,11 +232,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-26T09:12:05.123798+00:00
-**Status:** WARN (6 warnings)
+**Last run:** 2026-06-26T14:38:50.797246+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_5_text_integrity.json`
@@ -250,12 +251,12 @@ Reports:
 | Approximate PDF-to-EPUB word coverage | 0.9999 |
 | Weak page matches | 0 |
 | Dense source windows checked | 26913 |
-| Missing dense source-window pages | 7 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 561 |
 | Top-of-page windows skipped as unstable | 8 |
-| Missing top-of-page body windows | 1 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 527 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
@@ -281,15 +282,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

@@ -59,11 +59,11 @@
 
 ## Latin
 
-- PDF Latin words: 1628
-- EPUB Latin words: 1703
+- PDF Latin words: 1612
+- EPUB Latin words: 1687
 - EPUB Tagged Latin words: 1315
 - Latin word coverage ratio: 0.9994
-- Latin word tagging ratio: 0.7722
+- Latin word tagging ratio: 0.7795
 - Latin clauses checked: 142
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 289
@@ -134,15 +134,15 @@
 ## Untagged Latin Word Samples
 
 - word: metaphor; epub: 10; tagged: 0
-- word: obviate; epub: 9; tagged: 0
 - word: operator; epub: 9; tagged: 0
 - word: incarnate; epub: 9; tagged: 0
 - word: pelagius; epub: 9; tagged: 0
 - word: crellius; epub: 6; tagged: 0
-- word: adequate; epub: 6; tagged: 0
 - word: balaam; epub: 6; tagged: 0
 - word: denominate; epub: 6; tagged: 0
 - word: ultimate; epub: 6; tagged: 0
+- word: nicodemus; epub: 5; tagged: 0
+- word: afflatus; epub: 5; tagged: 0
 
 ## Untranslated Latin Samples
 

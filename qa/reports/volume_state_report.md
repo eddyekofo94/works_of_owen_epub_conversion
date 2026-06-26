@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-26T09:22:44Z
+Generated: 2026-06-26T15:11:50Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-26T09:22:44Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 3 | 5.6 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
+| 1 | 3 | 5.5 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
 | 2 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
 | 3 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 4 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
@@ -188,7 +188,7 @@ Generated: 2026-06-26T09:22:44Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 3 — Need: 5.6 (✅ Good) — Rank 8
+### Volume 3 — Need: 5.5 (✅ Good) — Rank 8
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
@@ -200,7 +200,7 @@ Generated: 2026-06-26T09:22:44Z
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
 - **Latin coverage:** 99.94
-- **Latin tagging:** 77.22
+- **Latin tagging:** 77.95
 - **Latin translation:** 83.04
 - **Citations:** total=25, unresolved=0
 - **Splits:** 4
@@ -515,7 +515,7 @@ Generated: 2026-06-26T09:22:44Z
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
 - **Latin coverage:** 99.71
-- **Latin tagging:** 83.21
+- **Latin tagging:** 84.02
 - **Latin translation:** 75.63
 - **Citations:** total=44, unresolved=0
 - **Splits:** 0

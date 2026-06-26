@@ -2344,6 +2344,7 @@ ENGLISH_WORDS = {
     'premium', 'emphasis', 'create', 'laodicea', 'ephesus', 'proportionate', 'abate',
     'importunate', 'whereto', 'whoso', 'alienate', 'elisha', 'habituate', 'william',
     'captivate', 'beam', 'humor', 'ingenerate', 'malefactor',
+    'obviate', 'adequate', 'genius',
     # More English words / proper nouns that end in Latin suffixes to avoid false-positive Latin classification
     'hist', 'seas', 'determinate', 'palestina', 'relate', 'manna', 'dictate', 'ago', 'governor', 
     'asia', 'cyrus', 'emperor', 'tibni', 'omri', 'propagate', 'lazarus', 'superior', 'cautionate', 
@@ -2354,6 +2355,7 @@ ENGLISH_WORDS = {
     'appropriate', 'inviolate', 'participate', 'delineate', 'inmate', 'operate', 'cognate', 'aggravate', 
     'dedicate', 'enervate', 'elevate', 'antithesis', 'anathema', 'decorum', 'novatianus', 'hegesippus', 
     'episcopius', 'anchor', 'moderate', 'demas', 'dam', 'dram', 'levi', 'sardis', 'jericho', 'erasmus',
+    'onesimus',
     # Proper names and possessives commonly mis-flagged as Latin suffix matches
     'pela', 'esau', 'esaus', 'medusa', 'medusas', 'asa', 'asas', 'nero', 'neros',
     'cicero', 'ciceros', 'hydra', 'hydras', 'elisha', 'elishas', 'joshua', 'joshuas',

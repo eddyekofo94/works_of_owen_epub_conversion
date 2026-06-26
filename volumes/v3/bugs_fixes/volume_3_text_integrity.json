@@ -2,7 +2,7 @@
   "volume": "3",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-22T22:48:31.320456+00:00",
+  "generated_at": "2026-06-26T14:40:40.983695+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -660,24 +660,19 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1628,
-    "epub_latin_word_count": 1703,
+    "pdf_latin_word_count": 1612,
+    "epub_latin_word_count": 1687,
     "epub_tagged_latin_word_count": 1315,
-    "pdf_latin_unique_words": 917,
-    "epub_latin_unique_words": 961,
+    "pdf_latin_unique_words": 913,
+    "epub_latin_unique_words": 958,
     "epub_tagged_unique_words": 773,
     "latin_word_coverage_ratio": 0.9994,
-    "latin_tagging_ratio": 0.7722,
+    "latin_tagging_ratio": 0.7795,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
         "word": "metaphor",
         "epub": 10,
-        "tagged": 0
-      },
-      {
-        "word": "obviate",
-        "epub": 9,
         "tagged": 0
       },
       {
@@ -697,11 +692,6 @@
       },
       {
         "word": "crellius",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "adequate",
         "epub": 6,
         "tagged": 0
       },
