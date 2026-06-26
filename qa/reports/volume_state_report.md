@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-26T15:11:50Z
+Generated: 2026-06-26T15:41:33Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-26T15:11:50Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 3 | 5.5 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
-| 2 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 1 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 2 | 3 | 5.4 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
 | 3 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 4 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
 | 5 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
@@ -188,28 +188,7 @@ Generated: 2026-06-26T15:11:50Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 3 — Need: 5.5 (✅ Good) — Rank 8
-
-- **Body font:** arno-pro
-- **Source type:** ages_pdf
-- **Treatises:** 1
-- **QA level:** PRISTINE
-- **convert.py:** Yes (200 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.97
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.94
-- **Latin tagging:** 77.95
-- **Latin translation:** 83.04
-- **Citations:** total=25, unresolved=0
-- **Splits:** 4
-- **Regressions:** 0
-- **Suspected anomalies:** 1
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 11 — Need: 5.5 (✅ Good) — Rank 9
+### Volume 11 — Need: 5.5 (✅ Good) — Rank 8
 
 - **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
@@ -225,6 +204,27 @@ Generated: 2026-06-26T15:11:50Z
 - **Latin translation:** 31.28
 - **Citations:** total=52, unresolved=0
 - **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 3 — Need: 5.4 (✅ Good) — Rank 9
+
+- **Body font:** arno-pro
+- **Source type:** ages_pdf
+- **Treatises:** 1
+- **QA level:** PRISTINE
+- **convert.py:** Yes (204 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.97
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.94
+- **Latin tagging:** 77.95
+- **Latin translation:** 83.04
+- **Citations:** total=25, unresolved=0
+- **Splits:** 4
 - **Regressions:** 0
 - **Suspected anomalies:** 0
 - **Unmatched quotes:** 0

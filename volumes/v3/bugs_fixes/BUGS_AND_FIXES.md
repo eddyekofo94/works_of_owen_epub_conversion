@@ -1055,10 +1055,11 @@ Validation:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-26T14:40:40.983695+00:00
+**Last run:** 2026-06-26T15:41:25.210209+00:00
 **Status:** WARN (1 warnings)
 
 Reports:
@@ -1073,7 +1074,7 @@ Reports:
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
 | Dense source windows checked | 36494 |
-| Missing dense source-window pages | 21 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 765 |

@@ -2,7 +2,7 @@
   "volume": "3",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-26T15:41:25.210209+00:00",
+  "generated_at": "2026-06-22T22:48:31.320456+00:00",
   "status": "warn",
   "warning_count": 1,
   "warnings": [
@@ -165,8 +165,93 @@
   },
   "dense_source_window_integrity": {
     "dense_windows_checked": 36494,
-    "missing_dense_window_pages": 0,
-    "missing_dense_windows": []
+    "missing_dense_window_pages": 21,
+    "missing_dense_windows": [
+      {
+        "page": 191,
+        "sample": "to come as to put an end unto that whole church state wherein his"
+      },
+      {
+        "page": 193,
+        "sample": "in that holy obedience which he requires at our hands luke our savior enjoining"
+      },
+      {
+        "page": 202,
+        "sample": "immediate actings of the holy ghost are not spoken of him absolutely nor ascribed"
+      },
+      {
+        "page": 226,
+        "sample": "death and חֶבְלֵי־מָוֶת are the cords of death see psalm and the sorrows of"
+      },
+      {
+        "page": 233,
+        "sample": "of holiness because in him there was an all fullness of the graces of"
+      },
+      {
+        "page": 240,
+        "sample": "for by our lord jesus christ there is no church state amongst them nor"
+      },
+      {
+        "page": 243,
+        "sample": "whose name he doth accomplish it john howbeit when the spirit of truth is"
+      },
+      {
+        "page": 271,
+        "sample": "wrought in us consists doth always certainly and infallibly produce the reformation of life"
+      },
+      {
+        "page": 284,
+        "sample": "disposition is where one degree of the same kind disposeth the subject unto farther"
+      },
+      {
+        "page": 303,
+        "sample": "and heresies are again revived among us by crew of socinianized arminians we may"
+      },
+      {
+        "page": 326,
+        "sample": "unto them that believe the effectual working of his grace in the conversion of"
+      },
+      {
+        "page": 339,
+        "sample": "own kind whereby men inflame themselves isaiah waxing worse and worse and the particular"
+      },
+      {
+        "page": 364,
+        "sample": "2d in an especial manner from the great sin of despising god which ends"
+      },
+      {
+        "page": 373,
+        "sample": "are rejected inexcusable so isaiah 3-5 proverbs chronicles 14-16 2d that the effect of"
+      },
+      {
+        "page": 407,
+        "sample": "with the effects of it deuteronomy the lord thy god will circumcise thine heart"
+      },
+      {
+        "page": 410,
+        "sample": "chapter the manner of conversion explained in the instance of augustine f133 the outward"
+      },
+      {
+        "page": 463,
+        "sample": "so it is extreme pride and cursed self confidence for them to undertake to"
+      },
+      {
+        "page": 472,
+        "sample": "is that which our apostle so commendeth in the thessalonians epist namely the exceeding"
+      },
+      {
+        "page": 490,
+        "sample": "say that as great winds and storms do sometimes contribute to the fruit bearing"
+      },
+      {
+        "page": 498,
+        "sample": "worketh faith in us and then preserveth it when it is wrought on to"
+      },
+      {
+        "page": 506,
+        "sample": "grow up in some into penances vows uncommanded abstinences and various self macerations with"
+      }
+    ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 0,
@@ -575,19 +660,24 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1612,
-    "epub_latin_word_count": 1687,
+    "pdf_latin_word_count": 1628,
+    "epub_latin_word_count": 1703,
     "epub_tagged_latin_word_count": 1315,
-    "pdf_latin_unique_words": 913,
-    "epub_latin_unique_words": 958,
+    "pdf_latin_unique_words": 917,
+    "epub_latin_unique_words": 961,
     "epub_tagged_unique_words": 773,
     "latin_word_coverage_ratio": 0.9994,
-    "latin_tagging_ratio": 0.7795,
+    "latin_tagging_ratio": 0.7722,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
         "word": "metaphor",
         "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "obviate",
+        "epub": 9,
         "tagged": 0
       },
       {
@@ -607,6 +697,11 @@
       },
       {
         "word": "crellius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "adequate",
         "epub": 6,
         "tagged": 0
       },
@@ -781,11 +876,7 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {
-    "ignored_warnings": [
-      "dense_source_window_loss"
-    ]
-  },
+  "unused_whitelist_text_integrity": {},
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

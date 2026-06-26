@@ -173,6 +173,10 @@ OVERRIDES = {
         '**2dly** _._': '**2dly**_._',
         '**3dly** _._': '**3dly**_._',
         '**4thly** _._': '**4thly**_._',
+        # Compound word merging fixes (extract.py drops hyphen at line breaks)
+        'preeminence': 'pre-eminence',
+        'selfabasement': 'self-abasement',
+        'selfdenial': 'self-denial',
     },
     'regex_replacements': {
         r'\b_enmit_ y\b': 'enmity',

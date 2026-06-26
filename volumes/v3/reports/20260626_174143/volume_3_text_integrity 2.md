@@ -14,7 +14,7 @@
 - Pages checked: 758
 - Weak page matches: 0
 - Dense source windows checked: 36494
-- Missing dense source-window pages: 0
+- Missing dense source-window pages: 21
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 765
@@ -59,11 +59,11 @@
 
 ## Latin
 
-- PDF Latin words: 1612
-- EPUB Latin words: 1687
+- PDF Latin words: 1628
+- EPUB Latin words: 1703
 - EPUB Tagged Latin words: 1315
 - Latin word coverage ratio: 0.9994
-- Latin word tagging ratio: 0.7795
+- Latin word tagging ratio: 0.7722
 - Latin clauses checked: 142
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 289
@@ -73,6 +73,19 @@
 ## Warnings
 
 - `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+
+## Missing Dense Source Windows
+
+- page: 191; sample: to come as to put an end unto that whole church state wherein his
+- page: 193; sample: in that holy obedience which he requires at our hands luke our savior enjoining
+- page: 202; sample: immediate actings of the holy ghost are not spoken of him absolutely nor ascribed
+- page: 226; sample: death and חֶבְלֵי־מָוֶת are the cords of death see psalm and the sorrows of
+- page: 233; sample: of holiness because in him there was an all fullness of the graces of
+- page: 240; sample: for by our lord jesus christ there is no church state amongst them nor
+- page: 243; sample: whose name he doth accomplish it john howbeit when the spirit of truth is
+- page: 271; sample: wrought in us consists doth always certainly and infallibly produce the reformation of life
+- page: 284; sample: disposition is where one degree of the same kind disposeth the subject unto farther
+- page: 303; sample: and heresies are again revived among us by crew of socinianized arminians we may
 
 ## Possible Paragraph Splits
 
@@ -121,15 +134,15 @@
 ## Untagged Latin Word Samples
 
 - word: metaphor; epub: 10; tagged: 0
+- word: obviate; epub: 9; tagged: 0
 - word: operator; epub: 9; tagged: 0
 - word: incarnate; epub: 9; tagged: 0
 - word: pelagius; epub: 9; tagged: 0
 - word: crellius; epub: 6; tagged: 0
+- word: adequate; epub: 6; tagged: 0
 - word: balaam; epub: 6; tagged: 0
 - word: denominate; epub: 6; tagged: 0
 - word: ultimate; epub: 6; tagged: 0
-- word: nicodemus; epub: 5; tagged: 0
-- word: afflatus; epub: 5; tagged: 0
 
 ## Untranslated Latin Samples
 
