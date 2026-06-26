@@ -2,15 +2,10 @@
   "volume": "3",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-26T15:41:25.210209+00:00",
-  "status": "warn",
-  "warning_count": 1,
-  "warnings": [
-    {
-      "code": "paragraph_split_candidates",
-      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
-    }
-  ],
+  "generated_at": "2026-06-26T16:52:07.335278+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
     "page_count": 789,
     "skipped_detected": [
@@ -47,11 +42,11 @@
   },
   "epub": {
     "spine_text_files": 45,
-    "paragraph_count": 2537
+    "paragraph_count": 2535
   },
   "word_coverage": {
     "pdf_content_tokens": 267300,
-    "epub_content_tokens": 276284,
+    "epub_content_tokens": 276298,
     "coverage_ratio": 0.9997,
     "missing_word_samples": [
       {
@@ -164,7 +159,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 36494,
+    "dense_windows_checked": 36457,
     "missing_dense_window_pages": 0,
     "missing_dense_windows": []
   },
@@ -312,30 +307,9 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2144,
-    "split_candidate_count": 4,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch027.xhtml",
-        "previous": "em. We might, therefore, hence give direction in some inquiries, which, indeed, deserve a larger discussion if our present design would admit of it. One only I shall instance in: —",
-        "next": "May a person who is yet unregenerate pray for the Spirit of regeneration to effect that work in him; for whereas, as such, he is promised only unto the elect, such a person, not kn"
-      },
-      {
-        "file": "EPUB/ch030.xhtml",
-        "previous": "y is increased. This the apostle instructs us in at large, 1 Corinthians 10:6-11. Now, both these concur in the example of holiness that is given us in the person of Christ; for, —",
-        "next": "It is by all confessed that examples are most effectual ways of instruction, and, if seasonably proposed, do secretly solicit the mind unto imitation, and almost unavoidably inclin"
-      },
-      {
-        "file": "EPUB/ch037.xhtml",
-        "previous": "on, which is declared to be one end of the oblation of Christ, chapter 1:3. So where he is said to \"wash us from our sins in his own blood,\" — namely, as shed and offered for us, —",
-        "next": "Revelation 1:5, it is not only the expiation of guilt, but the purification of filth, that is intended."
-      },
-      {
-        "file": "EPUB/ch038.xhtml",
-        "previous": "mediately controlled by impetuous lusts and affections, which darken its directions and silence its commands. Hence is the common saying not so common as what is signified by it, —",
-        "next": "—— \"Video meliora proboque, Deteriora sequor .\"——[Ovid. Metam., lib. 7:20.] Hence the whole soul is filled with fierce contradictions and conflicts, Vanity, instability, folly, sen"
-      }
-    ],
+    "paragraphs_checked": 2142,
+    "split_candidate_count": 0,
+    "split_candidates": [],
     "structural_start_exclusions": 357,
     "short_fragment_count": 13,
     "short_fragments": [
@@ -457,7 +431,7 @@
           },
           {
             "location": "EPUB/ch006.xhtml#p150",
-            "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who was a liar from the beginning; and \" Malus bonum cure simulat, tune est pessimus .\""
+            "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who was a liar from the beginning; and \" Malus bonum cum [Translated: Translation: \"When"
           },
           {
             "location": "EPUB/ch008.xhtml#p271",
@@ -575,14 +549,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1612,
-    "epub_latin_word_count": 1687,
-    "epub_tagged_latin_word_count": 1315,
-    "pdf_latin_unique_words": 913,
-    "epub_latin_unique_words": 958,
-    "epub_tagged_unique_words": 773,
+    "pdf_latin_word_count": 1614,
+    "epub_latin_word_count": 1689,
+    "epub_tagged_latin_word_count": 1317,
+    "pdf_latin_unique_words": 914,
+    "epub_latin_unique_words": 959,
+    "epub_tagged_unique_words": 774,
     "latin_word_coverage_ratio": 0.9994,
-    "latin_tagging_ratio": 0.7795,
+    "latin_tagging_ratio": 0.7798,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -704,15 +678,9 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 289,
-    "translated_latin_runs_count": 240,
-    "latin_translation_ratio": 0.8304,
+    "translated_latin_runs_count": 242,
+    "latin_translation_ratio": 0.8374,
     "untranslated_latin_samples": [
-      {
-        "phrase": "Malus bonum"
-      },
-      {
-        "phrase": "est pessimus"
-      },
       {
         "phrase": "Solis ad occasum, quum frigidus"
       },
@@ -766,6 +734,12 @@
       },
       {
         "phrase": "Trinitatis ad extra sunt indivisa"
+      },
+      {
+        "phrase": "Vicarium Christi"
+      },
+      {
+        "phrase": "Christo vicariam"
       }
     ]
   },
@@ -781,11 +755,7 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {
-    "ignored_warnings": [
-      "dense_source_window_loss"
-    ]
-  },
+  "unused_whitelist_text_integrity": {},
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

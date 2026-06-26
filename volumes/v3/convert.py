@@ -108,6 +108,16 @@ def post_extract_hook(intermediate):
                 r'— \1',
                 ch['raw_text']
             )
+            ch['raw_text'] = re.sub(
+                r'person of Christ; for,\s*—\s*\n\nIt is by all confessed',
+                r'person of Christ; for, — It is by all confessed',
+                ch['raw_text']
+            )
+            ch['raw_text'] = re.sub(
+                r'offered for us,\s*—\s*\n\nRevelation 1:5, it is not only',
+                r'offered for us, — Revelation 1:5, it is not only',
+                ch['raw_text']
+            )
     return intermediate
 
 def html_postprocess_hook(html, ch_context):
@@ -145,6 +155,32 @@ OVERRIDES = {
         'A Discourse Concerning the Holy Spirit:': _V3_HOLY_SPIRIT_TITLE_PAGE,
     },
     'text_replacements': {
+        '1 .': '1.',
+        '2dly .': '2dly.',
+        '3dly .': '3dly.',
+        '4thly .': '4thly.',
+        'Ans .': 'Ans.',
+        'end .': 'end.',
+        'idem .': 'idem.',
+        'habit .': 'habit.',
+        'Assimilation :': 'Assimilation:',
+        'transgression :': 'transgression:',
+        'free ;': 'free;',
+        'n )': 'n)',
+        'sin :': 'sin:',
+        'spirits ;': 'spirits;',
+        'received .': 'received.',
+        'Jehovah .': 'Jehovah.',
+        'of ,': 'of,',
+        'sacrifice .': 'sacrifice.',
+        'our .': 'our.',
+        'easy ,': 'easy,',
+        '..': '.',
+        'holiness .': 'holiness.',
+        
+        # Latin Translations and OCR Fixes
+        'Malus bonum cure simulat, tune est pessimus': 'Malus bonum cum simulat, tunc est pessimus',
+
         'VII1TUES': 'VIRTUES',
         'Pelaglan': 'Pelagian',
         'Socimanism': 'Socinianism',

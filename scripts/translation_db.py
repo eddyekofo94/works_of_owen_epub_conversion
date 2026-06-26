@@ -6906,6 +6906,14 @@ GLOSSARY_TERMS = {
 }
 
 INLINE_TRANSLATIONS = {
+    # Volume 3 Latin Translations
+    "Malus bonum cum": (
+        "<strong>Translation:</strong> &ldquo;When a bad man pretends to be good&rdquo;"
+    ),
+    "tunc est pessimus": (
+        "<strong>Translation:</strong> &ldquo;then he is the worst&rdquo;"
+    ),
+
     "Albertus Pighius": (
         "<strong>Translation:</strong> &ldquo;Albert Pighius&rdquo;"
     ),

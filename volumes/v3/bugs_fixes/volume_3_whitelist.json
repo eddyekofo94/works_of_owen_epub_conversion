@@ -1,16 +1,5 @@
 {
   "anomalies": {
-    "Punctuation Spacing Blemishes": [
-      "spirits ;",
-      "received .",
-      "Jehovah .",
-      "of ,",
-      "sacrifice .",
-      "our .",
-      "easy ,",
-      "..",
-      "holiness ."
-    ],
     "OCR & Bracket Residues": [
       "express[ed"
     ],
@@ -87,6 +76,7 @@
     ],
     "weak_pages": [],
     "dense_source_window_loss": [
+      37,
       41,
       59,
       60,
@@ -125,30 +115,44 @@
       463,
       472,
       490,
-      498,
-      506
+      498
     ],
     "bottom_of_page_text_loss": [],
     "paragraph_splits": [
       {
         "file": "EPUB/ch010.xhtml",
-        "previous": "iritual good of them on whom they are bestowed, but the edification of others, \u2014 for \"the manifestation of the Spirit is given unto every man to profit withal,\" 1 Corinthians 12:7,",
-        "next": "\u2014 yet there is that excellency and worth in them, and that use may be made of them, as to turn greatly to the advantage of them that receive them; for although they are not grace,"
+        "previous": "the manifestation of the Spirit is given unto every man",
+        "next": "\u2014 yet there is that excellency"
       },
       {
         "file": "EPUB/ch015.xhtml",
-        "previous": "wn bounds or limits, and so the Spirit was given unto the Lord Christ only; for \"unto every one of us is given grace according to the measure of the gift of Christ,\" Ephesians 4:7,",
-        "next": "\u2014 that is, in what measure he pleaseth to communicate and distribute it."
+        "previous": "is given grace according to the measure",
+        "next": "\u2014 that is, in what measure he pleaseth"
       },
       {
         "file": "EPUB/ch022.xhtml",
-        "previous": "ace, causing the soul with delight and complacency to cleave to God and his ways. This removes and takes away the enmity before described, with the effects of it: Deuteronomy 30:6,",
-        "next": "This circumcision of the heart consists in the \"putting off the body of the sins of the flesh,\" as the apostle speaks, Colossians 2:11. He \"crucifies the flesh, with the affections"
+        "previous": "away the enmity before described, with the effects of it: Deuteronomy 30:6,",
+        "next": "This circumcision of the heart consists"
       },
       {
         "file": "EPUB/ch029.xhtml",
-        "previous": "unt of his veracity, divine power, righteousness, and holiness, why shall this be esteemed, \"a fanatical fixing of the imagination?\" If it be so, it was so in Abraham, our example,",
-        "next": "Romans 4:19-21. But this blasphemous figment, designed to the overthrow of the way of life and salvation by Jesus Christ, shall be elsewhere more fully examined. God, as was said,"
+        "previous": "If it be so, it was so in Abraham, our example,",
+        "next": "Romans 4:19-21. But this blasphemous figment"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "One only I shall instance in:",
+        "next": "May a person who is yet unregenerate"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "previous": "what is signified by it,",
+        "next": "\"Video meliora proboque"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "the beginning; and \" Malus bonum cum [Translated: Translation: \"When a bad man pretends to be good\"] simulat, tunc est pessimus .\" [Translated: Translation: \"then he is the worst\"];",
+        "next": "These things, therefore, can have here no place."
       }
     ],
     "inline_structural_markers": [
@@ -186,8 +190,19 @@
     ],
     "ignored_warnings": [
       "low_latin_translation_coverage",
-      "enumerator_sequence_candidates",
-      "dense_source_window_loss"
+      "enumerator_sequence_candidates"
+    ],
+    "untranslated_latin": [
+      "Solis ad occasum, quum frigidus",
+      "Sancto, † Athanas",
+      "frustra praestantissimus sapientiae",
+      "solitus est, si recludantur tyrannorum",
+      "aspici laniatus et ictus; quando, ut corpora verberibus, ita saevitia",
+      "malis consultis, animus dilaceretur",
+      "et origo Trinitatis",
+      "motus primo-primus",
+      "opera naturae",
+      "opera gratiae procuratae"
     ]
   }
 }

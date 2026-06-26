@@ -8,7 +8,7 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 4 | 176 | OK |
+| Possible faulty paragraph splits | 0 | 176 | OK |
 | Inline structural marker candidates | 0 | 14 | OK |
 | Repeated word windows | 0 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 0 | OK |
@@ -63,10 +63,3 @@
 | I WILL/I AM mangles | 0 | 0 | OK |
 
 ## Triage Samples
-
-### Possible faulty paragraph splits
-
-- file: EPUB/ch027.xhtml; previous: em. We might, therefore, hence give direction in some inquiries, which, indeed, deserve a larger discussion if our present design would admit of it. One only I shall instance in: —; next: May a person who is yet unregenerate pray for the Spirit of regeneration to effect that work in him; for whereas, as such, he is promised only unto the elect, such a person, not kn
-- file: EPUB/ch030.xhtml; previous: y is increased. This the apostle instructs us in at large, 1 Corinthians 10:6-11. Now, both these concur in the example of holiness that is given us in the person of Christ; for, —; next: It is by all confessed that examples are most effectual ways of instruction, and, if seasonably proposed, do secretly solicit the mind unto imitation, and almost unavoidably inclin
-- file: EPUB/ch037.xhtml; previous: on, which is declared to be one end of the oblation of Christ, chapter 1:3. So where he is said to "wash us from our sins in his own blood," — namely, as shed and offered for us, —; next: Revelation 1:5, it is not only the expiation of guilt, but the purification of filth, that is intended.
-- file: EPUB/ch038.xhtml; previous: mediately controlled by impetuous lusts and affections, which darken its directions and silence its commands. Hence is the common saying not so common as what is signified by it, —; next: —— "Video meliora proboque, Deteriora sequor ."——[Ovid. Metam., lib. 7:20.] Hence the whole soul is filled with fierce contradictions and conflicts, Vanity, instability, folly, sen
