@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 11
 
-- Status: **PASS**
-- Warnings: 0
+- Status: **WARN**
+- Warnings: 6
 - PDF pages: 815
 - EPUB text files: 31
 - EPUB paragraphs/headings: 2497
@@ -9,11 +9,11 @@
 ## Coverage
 
 - PDF content tokens: 296711
-- EPUB content tokens: 298649
+- EPUB content tokens: 298657
 - Approximate PDF-to-EPUB coverage ratio: 0.9996
 - Pages checked: 794
 - Weak page matches: 7
-- Dense source windows checked: 32243
+- Dense source windows checked: 32185
 - Missing dense source-window pages: 9
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -70,6 +70,15 @@
 - Translated Latin runs: 269
 - Latin translation ratio: 0.3466
 
+## Warnings
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+
 ## Missing Dense Source Windows
 
 - page: 23; sample: very perplexing if attention be paid to the catena patrum the succession of authors
@@ -78,7 +87,7 @@
 - page: 41; sample: rigor patriumque in corpore robur luxuriant artus effusaque sanguine laxo membra natant stat theb
 - page: 46; sample: says res severa est verum gaudium its extreme in excess is pertinacy if these
 - page: 92; sample: esset ut judices et ministri in qualibet civitate ordinarentur deuteronomy illi vero in rebus
-- page: 135; sample: of judging professors to be true believers matthew considered what is the rule of
+- page: 135; sample: uprightness and what is required thereunto john considered of the rule of self-judging with
 - page: 139; sample: gracious promises wherein their refreshments and reserves under such temptations do lie romans corinthians
 - page: 143; sample: in believing the holy ghost so plentifully witnesseth peter nor do live up to
 
@@ -103,7 +112,7 @@
 
 ## Inline Structural Marker Candidates
 
-- file: EPUB/ch003.xhtml; text: Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6]; [James 1:16] James 1:16-18; [Ro...
+- file: EPUB/ch003.xhtml; text: Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] Malachi 3:6; [James 1:16] James ...
 
 ## Suspicious Large-Number Starts
 

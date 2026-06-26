@@ -129,11 +129,13 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-26T18:41:46.221661+00:00
-**EPUB:** `volumes/v11/output/volume_11.epub`
+**Last run:** 2026-06-26T20:23:43.372912+00:00
+**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -149,7 +151,7 @@ Reports:
 | NAV links | 34 |
 | Greek chars / untagged | 11107 / 0 |
 | Hebrew chars / untagged | 0 / 0 |
-| Noteref links / endnote anchors | 229 / 229 |
+| Noteref links / endnote anchors | 230 / 230 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -188,10 +190,13 @@ Reports:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-26T18:46:30.552289+00:00
+**Last run:** 2026-06-26T20:24:34.113879+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -202,24 +207,24 @@ Reports:
 |-------|--------|
 | PDF pages | 815 |
 | EPUB text files | 31 |
-| EPUB paragraphs/headings | 2506 |
-| Approximate PDF-to-EPUB word coverage | 0.9993 |
-| Weak page matches | 0 |
-| Dense source windows checked | 36970 |
-| Missing dense source-window pages | 0 |
+| EPUB paragraphs/headings | 2497 |
+| Approximate PDF-to-EPUB word coverage | 0.9996 |
+| Weak page matches | 7 |
+| Dense source windows checked | 32243 |
+| Missing dense source-window pages | 9 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 791 |
 | Top-of-page windows skipped as unstable | 12 |
-| Missing top-of-page body windows | 0 |
+| Missing top-of-page body windows | 3 |
 | Bottom-of-page body windows checked | 791 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 293 |
-| Short fragments | 30 |
+| Missing bottom-of-page body windows | 4 |
+| Possible faulty paragraph splits | 3 |
+| Structural starts excluded from split warnings | 272 |
+| Short fragments | 29 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 0 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 2 |

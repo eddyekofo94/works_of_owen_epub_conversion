@@ -101,6 +101,7 @@ Read `GEMINI.md` before changing converter behavior or project documentation. In
 This project uses a standard Git branching model.
 
 - **Branch creation:** Create local development branches from `master` using standard `git checkout -b <branch-name>`.
+- **Merging:** NEVER merge to `master` unless explicitly instructed to do so by the user. Keep work in local development branches.
 - **Remote:** `git@github.com:eddyekofo94/works_of_owen_epub_conversion.git`
 
 

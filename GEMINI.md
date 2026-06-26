@@ -2,6 +2,7 @@
 
 ## Workflow & Documentation
 - **Validation Requirement:** NEVER update the status of an issue or task as "Finished", "Fixed", or "Done" in any changelog or status log (e.g., `BUGS_AND_FIXES.md`) unless the change has been explicitly validated and approved by the user. Use "IMPLEMENTED (AWAITING VALIDATION)".
+- **Merge Requirement:** NEVER merge branches to `master` unless explicitly instructed to do so by the user. Keep work in local development branches.
 - **Engineering Log:** Detailed technical post-mortems and architectural deep-dives must be recorded in `ENGINEERING_LOG.md` for all complex issues (Issue 40+).
 - **Reporting:** Always provide a summary of the implemented fix and wait for a validation directive before marking the item as resolved in the project documentation.
 - **PRISTINE Tier / Green Section Target (<20 Need Score):** Whenever a volume is selected for improvements, the agent must systematically resolve warnings, errors, missing translations, and unresolved citations to bring the quality `Need` score under `20.0` (aiming for `PRISTINE` status).

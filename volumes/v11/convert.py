@@ -187,6 +187,10 @@ OVERRIDES = {
         "praedestina-tionis": "praedestinationis",
         "I-chabod": "Ichabod",
         "interveni-nces": "interveniences",
+        "[1 John 3:7] 1 John 3:7": "[1 John 3:7]",
+        "[1 Corinthians 3:16] 1 Corinthians 3:16": "[1 Corinthians 3:16]",
+        "[1 John 4:18] 1 John 4:18": "[1 John 4:18]",
+        "[Malachi 3:6] Malachi 3:6": "[Malachi 3:6]",
     },
 }
 

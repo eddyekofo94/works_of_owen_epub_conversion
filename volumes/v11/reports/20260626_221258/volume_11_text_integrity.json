@@ -2,10 +2,35 @@
   "volume": "11",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/input/owen-v11.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-06-26T20:24:34.113879+00:00",
-  "status": "pass",
-  "warning_count": 0,
-  "warnings": [],
+  "generated_at": "2026-06-26T20:12:53.507769+00:00",
+  "status": "warn",
+  "warning_count": 6,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    }
+  ],
   "pdf": {
     "page_count": 815,
     "skipped_detected": [
@@ -32,7 +57,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 296711,
-    "epub_content_tokens": 298649,
+    "epub_content_tokens": 298657,
     "coverage_ratio": 0.9996,
     "missing_word_samples": [
       {
@@ -136,7 +161,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32243,
+    "dense_windows_checked": 32185,
     "missing_dense_window_pages": 9,
     "missing_dense_windows": [
       {
@@ -165,7 +190,7 @@
       },
       {
         "page": 135,
-        "sample": "of judging professors to be true believers matthew considered what is the rule of"
+        "sample": "uprightness and what is required thereunto john considered of the rule of self-judging with"
       },
       {
         "page": 139,
@@ -455,7 +480,7 @@
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch003.xhtml",
-        "text": "Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6]; [James 1:16] James 1:16-18; [Romans 11:29] Romans 11:2"
+        "text": "Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] Malachi 3:6; [James 1:16] James 1:16-18; [Romans 11:29]"
       }
     ],
     "reference_continuation_split_count": 0,
@@ -906,9 +931,6 @@
       "As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, — and Christ himself, in the rules and laws that he hath given for the government thereof, did suppo",
       "That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to",
       "The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: — 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
-    ],
-    "ignored_warnings": [
-      "repeated_windows"
     ]
   },
   "limits": {
