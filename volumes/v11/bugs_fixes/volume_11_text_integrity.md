@@ -12,26 +12,26 @@
 - EPUB content tokens: 298649
 - Approximate PDF-to-EPUB coverage ratio: 0.9996
 - Pages checked: 794
-- Weak page matches: 7
+- Weak page matches: 0
 - Dense source windows checked: 32243
-- Missing dense source-window pages: 9
+- Missing dense source-window pages: 15
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 791
 - Top-of-page windows skipped as unstable: 12
-- Missing top-of-page body windows: 3
+- Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 791
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 4
+- Missing bottom-of-page body windows: 0
 
 ## Paragraphs
 
 - Body paragraphs checked: 2125
-- Possible faulty paragraph splits: 3
+- Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 272
 - Short fragments: 29
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 1
+- Inline structural marker candidates: 0
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 2
@@ -72,38 +72,16 @@
 
 ## Missing Dense Source Windows
 
-- page: 23; sample: very perplexing if attention be paid to the catena patrum the succession of authors
-- page: 27; sample: could have prevailed with or emboldened me thereunto sancta sanctis the things treat of
-- page: 40; sample: monte decurrens velut amnis imbres quem super notas aluere ripas fervet immensusque ruit profundo
-- page: 41; sample: rigor patriumque in corpore robur luxuriant artus effusaque sanguine laxo membra natant stat theb
-- page: 46; sample: says res severa est verum gaudium its extreme in excess is pertinacy if these
-- page: 92; sample: esset ut judices et ministri in qualibet civitate ordinarentur deuteronomy illi vero in rebus
+- page: 127; sample: hereunto was that of the pelagians and semi pelagians which austin opposed in sundry
+- page: 128; sample: much of ancient candid truth in opposition to the pelagians and semi pelagians preserved
+- page: 129; sample: it its principles and causes its relation to the good will of the father
+- page: 131; sample: note by the editor see page f7 to remove from the preceding preface the
 - page: 135; sample: of judging professors to be true believers matthew considered what is the rule of
+- page: 136; sample: unchangeableness and faithfulness of god jude corinthians isaiah jeremiah 31-34 isaiah hebrews 10-12 corinthians
+- page: 137; sample: was known upon the earth revelation jude matthew thessalonians peter 20-22 timothy john hebrews
 - page: 139; sample: gracious promises wherein their refreshments and reserves under such temptations do lie romans corinthians
-- page: 143; sample: in believing the holy ghost so plentifully witnesseth peter nor do live up to
-
-## Missing Top-Of-Page Body Windows
-
-- page: 40; sample: "Monte decurrens velut amnis, imbres Quem super notas aluere ripas,
-- page: 182; sample: resurrection, Revelation 20:6. ( Revelation 2:5, 3:2; Isaiah 57:17, 18; Hosea 14:4; Isaiah 59:21; John 14:16; 1 John 3:9, 1:8;
-- page: 447; sample: understanding" itself, 2 Timothy 2:7, 1 John 5:20; sometimes "light in the Lord," Ephesians 5:8. Notwithstanding all the advantages
-
-## Missing Bottom-Of-Page Body Windows
-
-- page: 48; sample: "Quicunque," saith he, "non tentatur, hoc necessario est a deo, quod non tentatur. Sicut 11 <a> pars 13 <i> primi probat; et per 22
-- page: 158; sample: them with the increase of God? ( Ephesians 1:23; Colossians 2:19; Ephesians 4:16; 1 Thessalonians 3:12; Philippians 1:6; 1
-- page: 314; sample: with him to the soul. ( John 1:16; Colossians 1:18, 19, 2:19, etc.; Romans 8:32.) Then, I say, —
-- page: 636; sample: considered — Galatians 5:21; Ephesians 5:5, 6; 1 Corinthians 6:9, 10 — Believers how concerned in comminations —
-
-## Possible Paragraph Splits
-
-- file: EPUB/ch005.xhtml; previous: ilochus] who, spurned by faithless Lycambes [attacked his enemies]"] gener, Aut acer hostis Bupalo ." [Translated: Translation: "a fierce enemy to Bupalus" (Horace, Epodes 6.14)] 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
-- file: EPUB/ch005.xhtml; previous: nslation: "I grant him genius, I grant him eloquence and industry"] fidem et veritatem utinam coluisset ." [Translated: Translation: "would that he had cultivated [better things]"]; next: The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t
-- file: EPUB/ch022.xhtml; previous: perations — [Romans 7:19] Romans 7:19-22, opened — The second, that sin cannot reign in a regenerate person — The third, that regenerate _persons sin not with their whole consent —; next: Answer to the argument at the entrance proposed — Believers never sin with their whole consent and wills — Mr. G.'s attempt to remove the answer — His exceptions considered and rem
-
-## Inline Structural Marker Candidates
-
-- file: EPUB/ch003.xhtml; text: Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6]; [James 1:16] James 1:16-18; [Ro...
+- page: 140; sample: do give the least hint to such an assertion romans psalm isaiah 7-10 peter
+- page: 141; sample: corinthians ephesians romans john the temptation arising from the apostasy of hypocrites is neither
 
 ## Suspicious Large-Number Starts
 

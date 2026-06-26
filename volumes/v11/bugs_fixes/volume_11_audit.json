@@ -1,6 +1,6 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-06-26T20:23:43.372912+00:00",
+  "epub": "volumes/v11/output/volume_11.epub",
+  "generated_at": "2026-06-26T22:10:57.116071+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 57,
-    "epub_size_bytes": 4489733,
+    "epub_size_bytes": 4489734,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -109,16 +109,17 @@
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   },
   "unused_whitelist_epub_warnings": [
-    "low_latin_translation_coverage",
-    "suspicious_large_number_starts",
-    "roman_heading_candidates",
-    "enumerator_sequence_candidates",
-    "weak_page_coverage",
+    "weak_pages",
     "dense_source_window_loss",
     "top_of_page_text_loss",
     "bottom_of_page_text_loss",
-    "paragraph_split_candidates",
+    "paragraph_splits",
     "inline_structural_markers",
-    "repeated_windows"
+    "repeated_windows",
+    "suspicious_large_number_starts",
+    "roman_heading_candidates",
+    "missing_enumerator_markers",
+    "enumerator_sequence_candidates",
+    "low_latin_translation_coverage"
   ]
 }

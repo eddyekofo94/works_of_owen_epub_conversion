@@ -40,7 +40,7 @@ _V11_PERSEVERANCE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type
 <div class="title-connector">and</div>
 <div class="title-line-medium">Sanctification Considered and Proved.</div>
 <div class="title-rule" aria-hidden="true"></div>
-<div class="quote-block"><p>"Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ." — Philippians 1:6.</div></div>
+<div class="quote-block"><p>"Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ." — Philippians 1:6.</p></div>
 </section>'''
 
 _V11_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
@@ -141,6 +141,10 @@ def post_extract_hook(intermediate: dict) -> dict:
         repl_ch010_3 = 'Colossians 1:11, 12.) is very far'
         if target_ch010_3 in ch010['raw_text']:
             ch010['raw_text'] = ch010['raw_text'].replace(target_ch010_3, repl_ch010_3)
+    # Fix is_treatise flags
+    for ch in intermediate.get('chapters', []):
+        if ch['title'] == 'The Doctrine of the Saints Perseverance':
+            ch['is_treatise'] = True
 
     return intermediate
 

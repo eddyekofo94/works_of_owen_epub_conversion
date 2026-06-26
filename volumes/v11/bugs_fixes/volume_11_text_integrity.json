@@ -2,7 +2,7 @@
   "volume": "11",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/input/owen-v11.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-06-26T20:24:34.113879+00:00",
+  "generated_at": "2026-06-26T22:23:39.315366+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -96,84 +96,72 @@
   },
   "page_coverage": {
     "pages_checked": 794,
-    "weak_page_count": 7,
-    "weak_pages": [
-      {
-        "page": 309,
-        "hit_ratio": 0.333,
-        "sample": "disciples matthew who intended in that promise not judas the accomplishment of the promise the testimony of peter martyr considered the conclusion of the"
-      },
-      {
-        "page": 335,
-        "hit_ratio": 0.0,
-        "sample": "chapter particular promises illustrated the former argument confirmed by an induction of particular instances joshua opened the concernment of all believers in that promise"
-      },
-      {
-        "page": 388,
-        "hit_ratio": 0.333,
-        "sample": "corinthians ephesians and are all of them born in condition of wrath ephesians shall crave leave little to insist on this instance and to"
-      },
-      {
-        "page": 396,
-        "hit_ratio": 0.333,
-        "sample": "grace being given bounded and directed by the gospel it is safeguarded from abuse by that which god calls his own wisdom 4thly it"
-      },
-      {
-        "page": 466,
-        "hit_ratio": 0.333,
-        "sample": "lusts distempered affections worldly aims to put in themselves upon him there he is spirit of grace can he bear graceless corruption to be"
-      },
-      {
-        "page": 541,
-        "hit_ratio": 0.333,
-        "sample": "in us acts of the will morally good that confirmed from scripture conclusion from thence of the terms physical moral and necessary and their"
-      },
-      {
-        "page": 636,
-        "hit_ratio": 0.333,
-        "sample": "chapter argument against the doctrine from the sins of believers mr fifth argument for the apostasy of true believers the weight of this argument"
-      }
-    ]
+    "weak_page_count": 0,
+    "weak_pages": []
   },
   "dense_source_window_integrity": {
     "dense_windows_checked": 32243,
-    "missing_dense_window_pages": 9,
+    "missing_dense_window_pages": 15,
     "missing_dense_windows": [
       {
-        "page": 23,
-        "sample": "very perplexing if attention be paid to the catena patrum the succession of authors"
+        "page": 127,
+        "sample": "hereunto was that of the pelagians and semi pelagians which austin opposed in sundry"
       },
       {
-        "page": 27,
-        "sample": "could have prevailed with or emboldened me thereunto sancta sanctis the things treat of"
+        "page": 128,
+        "sample": "much of ancient candid truth in opposition to the pelagians and semi pelagians preserved"
       },
       {
-        "page": 40,
-        "sample": "monte decurrens velut amnis imbres quem super notas aluere ripas fervet immensusque ruit profundo"
+        "page": 129,
+        "sample": "it its principles and causes its relation to the good will of the father"
       },
       {
-        "page": 41,
-        "sample": "rigor patriumque in corpore robur luxuriant artus effusaque sanguine laxo membra natant stat theb"
-      },
-      {
-        "page": 46,
-        "sample": "says res severa est verum gaudium its extreme in excess is pertinacy if these"
-      },
-      {
-        "page": 92,
-        "sample": "esset ut judices et ministri in qualibet civitate ordinarentur deuteronomy illi vero in rebus"
+        "page": 131,
+        "sample": "note by the editor see page f7 to remove from the preceding preface the"
       },
       {
         "page": 135,
         "sample": "of judging professors to be true believers matthew considered what is the rule of"
       },
       {
+        "page": 136,
+        "sample": "unchangeableness and faithfulness of god jude corinthians isaiah jeremiah 31-34 isaiah hebrews 10-12 corinthians"
+      },
+      {
+        "page": 137,
+        "sample": "was known upon the earth revelation jude matthew thessalonians peter 20-22 timothy john hebrews"
+      },
+      {
         "page": 139,
         "sample": "gracious promises wherein their refreshments and reserves under such temptations do lie romans corinthians"
       },
       {
+        "page": 140,
+        "sample": "do give the least hint to such an assertion romans psalm isaiah 7-10 peter"
+      },
+      {
+        "page": 141,
+        "sample": "corinthians ephesians romans john the temptation arising from the apostasy of hypocrites is neither"
+      },
+      {
+        "page": 142,
+        "sample": "things as they are in themselves are low weak and confused corinthians james yet"
+      },
+      {
         "page": 143,
         "sample": "in believing the holy ghost so plentifully witnesseth peter nor do live up to"
+      },
+      {
+        "page": 144,
+        "sample": "in the beginning of its confidence to the end job psalm 5-9 isaiah 28-81"
+      },
+      {
+        "page": 145,
+        "sample": "thing of the greatest evidence and clearness as corinthians galatians neither is any thing"
+      },
+      {
+        "page": 147,
+        "sample": "glorious attributes there is an actual permanency or sameness hebrews nothing in him is"
       }
     ]
   },
@@ -261,74 +249,21 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 3,
-    "missing_top_windows": [
-      {
-        "page": 40,
-        "window": "monte decurrens velut amnis imbres quem super notas aluere ripas",
-        "sample": "\"Monte decurrens velut amnis, imbres Quem super notas aluere ripas,"
-      },
-      {
-        "page": 182,
-        "window": "resurrection revelation revelation isaiah hosea isaiah john john",
-        "sample": "resurrection, Revelation 20:6. ( Revelation 2:5, 3:2; Isaiah 57:17, 18; Hosea 14:4; Isaiah 59:21; John 14:16; 1 John 3:9, 1:8;"
-      },
-      {
-        "page": 447,
-        "window": "understanding itself timothy john sometimes light in the lord ephesians notwithstanding all the advantages",
-        "sample": "understanding\" itself, 2 Timothy 2:7, 1 John 5:20; sometimes \"light in the Lord,\" Ephesians 5:8. Notwithstanding all the advantages"
-      }
-    ]
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 799,
     "bottom_windows_usable": 791,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 4,
-    "missing_bottom_windows": [
-      {
-        "page": 48,
-        "window": "tentatur hoc necessario est deo quod non tentatur sicut pars primi probat et per",
-        "sample": "\"Quicunque,\" saith he, \"non tentatur, hoc necessario est a deo, quod non tentatur. Sicut 11 <a> pars 13 <i> primi probat; et per 22"
-      },
-      {
-        "page": 158,
-        "window": "them with the increase of god ephesians colossians ephesians thessalonians philippians",
-        "sample": "them with the increase of God? ( Ephesians 1:23; Colossians 2:19; Ephesians 4:16; 1 Thessalonians 3:12; Philippians 1:6; 1"
-      },
-      {
-        "page": 314,
-        "window": "with him to the soul john colossians etc romans then say",
-        "sample": "with him to the soul. ( John 1:16; Colossians 1:18, 19, 2:19, etc.; Romans 8:32.) Then, I say, —"
-      },
-      {
-        "page": 636,
-        "window": "considered galatians ephesians corinthians believers how concerned in comminations",
-        "sample": "considered — Galatians 5:21; Ephesians 5:5, 6; 1 Corinthians 6:9, 10 — Believers how concerned in comminations —"
-      }
-    ]
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
   },
   "paragraph_integrity": {
     "paragraphs_checked": 2125,
-    "split_candidate_count": 3,
-    "split_candidates": [
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "ilochus] who, spurned by faithless Lycambes [attacked his enemies]\"] gener, Aut acer hostis Bupalo .\" [Translated: Translation: \"a fierce enemy to Bupalus\" (Horace, Epodes 6.14)] 3",
-        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
-      },
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "nslation: \"I grant him genius, I grant him eloquence and industry\"] fidem et veritatem utinam coluisset .\" [Translated: Translation: \"would that he had cultivated [better things]\"]",
-        "next": "The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "perations — [Romans 7:19] Romans 7:19-22, opened — The second, that sin cannot reign in a regenerate person — The third, that regenerate _persons sin not with their whole consent —",
-        "next": "Answer to the argument at the entrance proposed — Believers never sin with their whole consent and wills — Mr. G.'s attempt to remove the answer — His exceptions considered and rem"
-      }
-    ],
+    "split_candidate_count": 0,
+    "split_candidates": [],
     "structural_start_exclusions": 272,
     "short_fragment_count": 29,
     "short_fragments": [
@@ -451,13 +386,8 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 1,
-    "inline_structural_candidates": [
-      {
-        "file": "EPUB/ch003.xhtml",
-        "text": "Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6]; [James 1:16] James 1:16-18; [Romans 11:29] Romans 11:2"
-      }
-    ],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -858,57 +788,32 @@
   },
   "unused_whitelist_text_integrity": {
     "dense_source_window_loss": [
-      148,
-      150,
-      151,
-      154,
-      155,
-      156,
-      157,
-      162,
-      166
-    ],
-    "paragraph_splits": [
-      {
-        "file": "EPUB/ch005.xhtml",
-        "previous": "k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3",
-        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
-      },
-      {
-        "file": "EPUB/ch010.xhtml",
-        "previous": "n, at least before their calling, are as liable to be deceived or seduced as other men. This is their own confession; and Paul says that they were sometimes deceived, [Titus 3:3] \"",
-        "next": "Ans. An exception, doubtless, unworthy him that makes it; who, had he not resolved to say all that ever had been said by any to the business in hand, would scarcely, I presume, hav"
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "previous": " ever, and yet every present member thereof lose his interest and part in him; yea, the abiding of the Spirit in the apostles themselves was not absolutely promised, [John 15:10] \"",
-        "next": "Ans. 1. The design of this discourse is to prove that this promise is not made to believers in general, or those who through the word are brought to believe in Christ in all genera"
-      },
-      {
-        "file": "EPUB/ch022.xhtml",
-        "previous": "all moral operations — [Romans 7:19] -22, opened — The second, that sin cannot reign in a regenerate person — The third, that regenerate _persons sin not with their whole consent —",
-        "next": "Answer to the argument at the entrance proposed — Believers never sin with their whole consent and wills — Mr. G.'s attempt to remove the answer — His exceptions considered and rem"
-      },
-      {
-        "file": "EPUB/ch024.xhtml",
-        "previous": " The first, of his knowledge of the general course of the Scriptures — Of the experience of his own heart — And his observations of the ways of others — Of his rational abilities —",
-        "next": "Ezekiel 18:24, 25, proposed to consideration — Mr. G.'s sense of this place — The words opened — Observations for the opening of the text — The words farther weighed — An entrance "
-      },
-      {
-        "file": "EPUB/ch024.xhtml",
-        "previous": "y that all who died in the wilderness of the children of Israel went to hell and came short of eternal life, and yet they all fell there because of their iniquities. But he adds, —",
-        "next": "Sect. 4. \"Again; that which God here threateneth against that double or twofold iniquity of backsliding is opposed to that life which is promised to repentance and perseverance in "
-      }
-    ],
-    "inline_structural_markers": [
-      "Five leading arguments are adduced in proof of the perseverance of the saints: — It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -18; [Romans 11:29] [Isaiah 40:27] -31, 44",
-      "The latter I at present only intend. Saith he, 1. \"I know them;\" 2. \"I give them eternal life;\" 3. \"They shall never perish;\" 4. \"No man shall pluck them out of my hand;\" 5. \"My Father is omnipotent, and hath a sovereignty over all, and he taketh care of them,",
-      "As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, — and Christ himself, in the rules and laws that he hath given for the government thereof, did suppo",
-      "That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to",
-      "The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: — 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
     ],
     "ignored_warnings": [
-      "repeated_windows"
+      "weak_pages",
+      "top_of_page_text_loss",
+      "bottom_of_page_text_loss",
+      "paragraph_splits",
+      "inline_structural_markers",
+      "repeated_windows",
+      "missing_enumerator_markers",
+      "low_latin_tagging",
+      "low_latin_word_coverage"
     ]
   },
   "limits": {
