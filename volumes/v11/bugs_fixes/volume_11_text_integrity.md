@@ -4,17 +4,17 @@
 - Warnings: 0
 - PDF pages: 815
 - EPUB text files: 31
-- EPUB paragraphs/headings: 2512
+- EPUB paragraphs/headings: 2506
 
 ## Coverage
 
 - PDF content tokens: 296711
-- EPUB content tokens: 297636
+- EPUB content tokens: 297645
 - Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 794
 - Weak page matches: 0
-- Dense source windows checked: 36986
-- Missing dense source-window pages: 40
+- Dense source windows checked: 36970
+- Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 791
@@ -26,10 +26,10 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2140
+- Body paragraphs checked: 2135
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 295
-- Short fragments: 28
+- Structural starts excluded from split warnings: 293
+- Short fragments: 30
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
@@ -59,29 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 4448
-- EPUB Latin words: 4467
-- EPUB Tagged Latin words: 3268
-- Latin word coverage ratio: 0.998
-- Latin word tagging ratio: 0.7316
-- Latin clauses checked: 404
+- PDF Latin words: 3955
+- EPUB Latin words: 3959
+- EPUB Tagged Latin words: 3042
+- Latin word coverage ratio: 0.9985
+- Latin word tagging ratio: 0.7684
+- Latin clauses checked: 387
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 796
-- Translated Latin runs: 249
-- Latin translation ratio: 0.3128
-
-## Missing Dense Source Windows
-
-- page: 18; sample: the doctrine of the saints perseverance explained and confirmed or the certain permanency of
-- page: 19; sample: them asserted and some animadversions on dr his dissertations on that subject by john
-- page: 21; sample: respecting his connection with the fifth monarchy men on the former point many good
-- page: 24; sample: as immutable under which head the following passages are considered malachi james 16-18 romans
-- page: 25; sample: and lastly that it is affirmed in eight passages of scripture ezekiel matthew 32-35
-- page: 35; sample: them with the like unworthy aims of self advancement may without evil surmising when
-- page: 36; sample: to the sore judgment and ever-to-be bewailed condition before mentioned it hath not been
-- page: 38; sample: its own principles discovering the fountain and well head of all the streams that
-- page: 52; sample: ephesians 25-27 galatians philippians thessalonians timothy titus hebrews peter 2-5 john jude revelation so
-- page: 64; sample: aegaei pelagi se recipere ibique recta sursmn versus septentrionem ascendere et praecipuas civitates in
+- Tagged Latin runs checked: 776
+- Translated Latin runs: 269
+- Latin translation ratio: 0.3466
 
 ## Suspicious Large-Number Starts
 
@@ -100,11 +87,11 @@
 - file: EPUB/ch001.xhtml; text: John Owen
 - file: EPUB/ch001.xhtml; text: ANNO DOM: 1654.
 - file: EPUB/ch004.xhtml; text: TO
+- file: EPUB/ch004.xhtml; text: John Owen
+- file: EPUB/ch004.xhtml; text: ######
 - file: EPUB/ch005.xhtml; text: John Owen
 - file: EPUB/ch006.xhtml; text: Saith he,
 - file: EPUB/ch006.xhtml; text: Well, what then?
-- file: EPUB/ch006.xhtml; text: Doubtless; for, —
-- file: EPUB/ch006.xhtml; text: And cap. 12,
 
 ## Enumerator Sequence Candidates
 
@@ -141,26 +128,26 @@
 - word: ergo; epub: 25; tagged: 5
 - word: perpetrate; epub: 10; tagged: 0
 - word: salmasius; epub: 9; tagged: 0
-- word: ingenerate; epub: 9; tagged: 0
-- word: nowhere; epub: 9; tagged: 0
 - word: vedelius; epub: 8; tagged: 0
-- word: relate; epub: 8; tagged: 0
 - word: predestinate; epub: 8; tagged: 0
 - word: co-operate; epub: 8; tagged: 0
-- word: alas; epub: 8; tagged: 0
+- word: pelagius; epub: 8; tagged: 2
+- word: alexandria; epub: 9; tagged: 3
+- word: estimate; epub: 6; tagged: 0
+- word: synodalia; epub: 6; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: Imputatio Fidei
-- phrase: Vindiciae Evangelicae
-- phrase: catena patrum
-- phrase: Sancti Sanciti," etc.; Thomas
-- phrase: Sancta sanctis
-- phrase: actum agere
-- phrase: velut amnis
-- phrase: super notas aluere ripas
-- phrase: profundo Pindarus
-- phrase: monstrum horrendum
+- phrase: primi, Deus necessario
+- phrase: actum voluntatis circa
+- phrase: quia tunc per decimum primi non tentaretur, ergo
+- phrase: decimum ipsum tentari non
+- phrase: catholicam asserendum est
+- phrase: infusas esse necessarium ad perseverandum in bono usque in finem auxilium
+- phrase: scilicet donum perseverantiae
+- phrase: Illud quod natura sua est
+- phrase: ad hoc quod figatur in uno
+- phrase: in gratia habituali
 
 ## Limits
 

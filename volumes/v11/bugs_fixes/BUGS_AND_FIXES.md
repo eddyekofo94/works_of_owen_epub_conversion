@@ -127,11 +127,13 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-12T10:26:09.968203+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub`
+**Last run:** 2026-06-26T18:41:46.221661+00:00
+**EPUB:** `volumes/v11/output/volume_11.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -143,11 +145,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 33 |
 | Spine items | 32 |
-| Embedded fonts | 20 |
+| Embedded fonts | 10 |
 | NAV links | 34 |
 | Greek chars / untagged | 11107 / 0 |
 | Hebrew chars / untagged | 0 / 0 |
-| Noteref links / endnote anchors | 228 / 228 |
+| Noteref links / endnote anchors | 229 / 229 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -182,10 +184,14 @@ Reports:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-12T10:27:02.307974+00:00
+**Last run:** 2026-06-26T18:46:30.552289+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -196,11 +202,11 @@ Reports:
 |-------|--------|
 | PDF pages | 815 |
 | EPUB text files | 31 |
-| EPUB paragraphs/headings | 2512 |
+| EPUB paragraphs/headings | 2506 |
 | Approximate PDF-to-EPUB word coverage | 0.9993 |
 | Weak page matches | 0 |
-| Dense source windows checked | 36986 |
-| Missing dense source-window pages | 40 |
+| Dense source windows checked | 36970 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 791 |
@@ -210,8 +216,8 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 295 |
-| Short fragments | 28 |
+| Structural starts excluded from split warnings | 293 |
+| Short fragments | 30 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |

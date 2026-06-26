@@ -231,7 +231,48 @@
       17
     ],
     "weak_pages": [],
-    "dense_source_window_loss": [],
+    "dense_source_window_loss": [
+      18,
+      19,
+      21,
+      24,
+      25,
+      35,
+      36,
+      38,
+      52,
+      64,
+      76,
+      83,
+      96,
+      100,
+      107,
+      108,
+      111,
+      114,
+      126,
+      127,
+      128,
+      129,
+      131,
+      136,
+      137,
+      140,
+      141,
+      142,
+      144,
+      145,
+      147,
+      148,
+      150,
+      151,
+      154,
+      155,
+      156,
+      157,
+      162,
+      166
+    ],
     "bottom_of_page_text_loss": [
       "This Edition of first published by Johnstone & Hunter, 1850-53",
       "good thoughts and actings whatsoever. ( Romans 7:8-24; 2 Corinthians 3:5.)",
@@ -239,6 +280,21 @@
     ],
     "top_of_page_text_loss": [],
     "paragraph_splits": [
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "Your Highness's most humble and most faithful servant",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "John Owen",
+        "next": "TO THE RIGHT WORSHIPFUL, HIS REVERND, LEARNED AND WORTHY FRIENDS AND BRETHREN"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "TO THE RIGHT WORSHIPFUL, HIS REVERND, LEARNED AND WORTHY FRIENDS AND BRETHREN",
+        "next": "######"
+      },
       {
         "file": "EPUB/ch001.xhtml",
         "previous": "BY",
@@ -480,8 +536,7 @@
       "low_latin_translation_coverage",
       "suspicious_large_number_starts",
       "roman_heading_candidates",
-      "enumerator_sequence_candidates",
-      "dense_source_window_loss"
+      "enumerator_sequence_candidates"
     ]
   }
 }

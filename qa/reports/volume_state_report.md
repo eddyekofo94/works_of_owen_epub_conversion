@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-26T18:32:17Z
+Generated: 2026-06-26T18:46:34Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-26T18:32:17Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 11 | 5.5 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
+| 1 | 11 | 5.1 | adobe-carlson-pro | 1 |  99.93 |  100.0 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
 | 2 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 3 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
 | 4 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
@@ -188,20 +188,20 @@ Generated: 2026-06-26T18:32:17Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 11 — Need: 5.5 (✅ Good) — Rank 8
+### Volume 11 — Need: 5.1 (✅ Good) — Rank 8
 
 - **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
 - **Treatises:** 1
 - **QA level:** PRISTINE
-- **convert.py:** Yes (196 lines, 1 text_replacements)
+- **convert.py:** Yes (200 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.93
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.80
-- **Latin tagging:** 73.16
-- **Latin translation:** 31.28
+- **Latin coverage:** 99.85
+- **Latin tagging:** 76.84
+- **Latin translation:** 34.66
 - **Citations:** total=52, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0

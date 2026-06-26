@@ -6906,6 +6906,70 @@ GLOSSARY_TERMS = {
 }
 
 INLINE_TRANSLATIONS = {
+    # Volume 11 Latin Translations (Batch 2)
+    "hostis Bupalo": (
+        "<strong>Translation:</strong> &ldquo;a fierce enemy to Bupalus&rdquo; (Horace, Epodes 6.14)"
+    ),
+    "An, si quis afro": (
+        "<strong>Translation:</strong> &ldquo;Or, if someone with a black [tooth]...&rdquo;"
+    ),
+    "Inultus ut flebo": (
+        "<strong>Translation:</strong> &ldquo;shall I weep unavenged [like a child]?&rdquo;"
+    ),
+    "Do illi ingenium, do eloquentiam et industriam": (
+        "<strong>Translation:</strong> &ldquo;I grant him genius, I grant him eloquence and industry&rdquo;"
+    ),
+    "utinam coluisset": (
+        "<strong>Translation:</strong> &ldquo;would that he had cultivated [better things]&rdquo;"
+    ),
+    "Res severa est verum gaudium": (
+        "<strong>Translation:</strong> &ldquo;True joy is a serious matter&rdquo; (Seneca)"
+    ),
+    "In ratione bene considerata stabilis et perpetua permansio": (
+        "<strong>Translation:</strong> &ldquo;a stable and perpetual abiding in a well-considered reason&rdquo; (Cicero's definition of perseverance)"
+    ),
+    "perseverantiae nullam rem absolutam": (
+        "<strong>Translation:</strong> &ldquo;that perseverance is not an absolute thing&rdquo;"
+    ),
+    "non tentatur, hoc necessario est": (
+        "<strong>Translation:</strong> &ldquo;is not tempted, this necessarily is&rdquo;"
+    ),
+    "quod non tentatur. Sicut": (
+        "<strong>Translation:</strong> &ldquo;because he is not tempted. Just as&rdquo;"
+    ),
+
+    # Volume 11 Latin Translations
+    "catena patrum": (
+        "<strong>Translation:</strong> &ldquo;chain of the fathers&rdquo; (a collection of patristic excerpts)"
+    ),
+    "Sancti Sanciti,\" etc.; Thomas": (
+        "<strong>Translation:</strong> &ldquo;Holy things established,&rdquo; etc."
+    ),
+    "Sancta sanctis": (
+        "<strong>Translation:</strong> &ldquo;Holy things for the holy&rdquo;"
+    ),
+    "actum agere": (
+        "<strong>Translation:</strong> &ldquo;to do what has already been done&rdquo; (i.e., to labor in vain)"
+    ),
+    "velut amnis": (
+        "<strong>Translation:</strong> &ldquo;like a river&rdquo;"
+    ),
+    "super notas aluere ripas": (
+        "<strong>Translation:</strong> &ldquo;they have overflowed their known banks&rdquo;"
+    ),
+    "profundo Pindarus": (
+        "<strong>Translation:</strong> &ldquo;Pindar in his profound verse&rdquo;"
+    ),
+    "monstrum horrendum": (
+        "<strong>Translation:</strong> &ldquo;a horrible monster&rdquo;"
+    ),
+    "sanguine laxo Membra": (
+        "<strong>Translation:</strong> &ldquo;limbs relaxed in blood&rdquo;"
+    ),
+    "cornua; Qualis Lycambae spretus infido": (
+        "<strong>Translation:</strong> &ldquo;horns; like he [Archilochus] who, spurned by faithless Lycambes [attacked his enemies]&rdquo;"
+    ),
+
     # Volume 3 Latin Translations
     "Malus bonum cum": (
         "<strong>Translation:</strong> &ldquo;When a bad man pretends to be good&rdquo;"

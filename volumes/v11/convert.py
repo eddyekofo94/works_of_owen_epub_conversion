@@ -156,6 +156,10 @@ OVERRIDES = {
         'The Doctrine of the Saints Perseverance': _V11_PERSEVERANCE_TITLE_PAGE,
     },
     'text_replacements': {
+        # Compound word merging fixes (extract.py drops hyphen at line breaks)
+        'preeminence': 'pre-eminence',
+        'churchofficers': 'church-officers',
+        'churchofficer': 'church-officer',
         # Repair missing apostrophe where it appears in body text
         "Saints Perseverance": "Saints' Perseverance",
         "saints perseverance": "saints' perseverance",
