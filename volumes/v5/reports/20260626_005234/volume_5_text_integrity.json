@@ -2,7 +2,7 @@
   "volume": "5",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/input/owen-v5.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
-  "generated_at": "2026-06-26T09:12:05.123798+00:00",
+  "generated_at": "2026-06-25T22:52:33.344073+00:00",
   "status": "warn",
   "warning_count": 6,
   "warnings": [
@@ -51,20 +51,10 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 193209,
-    "epub_content_tokens": 194290,
+    "epub_content_tokens": 194214,
     "coverage_ratio": 0.9999,
     "missing_word_samples": [],
     "excess_word_samples": [
-      {
-        "word": "translated",
-        "pdf": 3,
-        "epub": 19
-      },
-      {
-        "word": "translation",
-        "pdf": 10,
-        "epub": 25
-      },
       {
         "word": "digital",
         "pdf": 0,
@@ -118,33 +108,9 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 26913,
-    "missing_dense_window_pages": 7,
+    "dense_windows_checked": 27043,
+    "missing_dense_window_pages": 1,
     "missing_dense_windows": [
-      {
-        "page": 29,
-        "sample": "can be so pain at least in materia probabili but that man ordinarily versed"
-      },
-      {
-        "page": 31,
-        "sample": "compliance wherewithal so albertus pighius himself complained of them controv dissimulate non possumus hanc"
-      },
-      {
-        "page": 36,
-        "sample": "johan polandus lib methodus in adjuvandis morientibus domine jesus conjunge obsecro obsequium meum cum"
-      },
-      {
-        "page": 37,
-        "sample": "should stand and ambrose to the same purpose nemo ergo sibi arroget nemo de"
-      },
-      {
-        "page": 62,
-        "sample": "these expressions hebrews 5-10 the discourse of albertus pighius to this purpose though often"
-      },
-      {
-        "page": 98,
-        "sample": "for the substance of it so did albertus pighius and the antitagma coloniense as"
-      },
       {
         "page": 473,
         "sample": "may be assured of their salvation tantum religio potuit suadere malorum so will men"
@@ -365,12 +331,17 @@
     "suspicious_large_number_starts": [],
     "roman_heading_candidate_count": 0,
     "roman_heading_candidates": [],
-    "overlong_heading_candidate_count": 1,
+    "overlong_heading_candidate_count": 2,
     "overlong_heading_candidates": [
       {
         "file": "EPUB/ch012.xhtml",
         "tag": "h3",
         "text": "IMPUTATION OF THE SINS OF THE CHURCH UNTO CHRIST — GROUNDS OF IT — THE NATURE OF HIS SURETISHIP — CAUSES OF THE NEW COVENANT — CHRIST AND THE CHURCH ONE MYSTICAL PERSON — CONSEQUENTS THEREOF"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "tag": "h3",
+        "text": "THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY. — 3:4CHAP. 3,4,5,10; 1 CORINTHIANS 1:30; 2 Corinthians 5:212 CORINTHIANS 5:21; GALATIANS 2:16; EPHESIANS 2:8-10; PHILIPPIANS 3:8,9.)"
       }
     ],
     "frontmatter_heading_body_candidate_count": 0,
@@ -611,13 +582,13 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 3124,
-    "epub_latin_word_count": 3127,
+    "epub_latin_word_count": 3119,
     "epub_tagged_latin_word_count": 2602,
     "pdf_latin_unique_words": 1282,
-    "epub_latin_unique_words": 1285,
+    "epub_latin_unique_words": 1284,
     "epub_tagged_unique_words": 1083,
     "latin_word_coverage_ratio": 0.9971,
-    "latin_tagging_ratio": 0.8321,
+    "latin_tagging_ratio": 0.8342,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -760,68 +731,68 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 591,
-    "translated_latin_runs_count": 447,
-    "latin_translation_ratio": 0.7563,
+    "translated_latin_runs_count": 392,
+    "latin_translation_ratio": 0.6633,
     "untranslated_latin_samples": [
       {
-        "phrase": "propitiatio est"
+        "phrase": "Articulus stantis"
       },
       {
-        "phrase": "quam sanctae, quam"
+        "phrase": "cadentis ecclesiae"
       },
       {
-        "phrase": "quam purae ab omni"
+        "phrase": "nulla pietatis"
       },
       {
-        "phrase": "Unum bonum est, quod beatae vitae causa et firmamentum est, sibi fidere"
+        "phrase": "nullo laudato prioris vitae exemplo commendatos; imo ut"
       },
       {
-        "phrase": "nemo unquam"
+        "phrase": "videmus, per vagabundos, et contentionum zeli carnalis plenos"
       },
       {
-        "phrase": "landamur, et"
+        "phrase": "alios ex castris, aulis, ganeis, prolatam esse. Scrupuli ab excellenti viro propositi"
       },
       {
-        "phrase": "gloriamur, quod non"
+        "phrase": "in \"materia probabili"
       },
       {
-        "phrase": "non a nobis haberemus"
+        "phrase": "Albertus Pighius"
       },
       {
-        "phrase": "sine quibus non"
+        "phrase": "Dissimulate non possumus"
       },
       {
-        "phrase": "incertior sum multo, quam dudum"
+        "phrase": "vel primam doctrinae Christianae"
       },
       {
-        "phrase": "esse sed perfidiae; peccata deleri"
+        "phrase": "quaestionibus, et definitionibus, secundum quas nonnulli magno supercilio primam in omnibus"
       },
       {
-        "phrase": "solum nobis peccata condonentur"
+        "phrase": "pretio ut in aliqua"
       },
       {
-        "phrase": "sed in nobis constitutum\", Enchirid"
+        "phrase": "Casparus Ulenbergius"
       },
       {
-        "phrase": "Verba delictorum meorum"
+        "phrase": "salvari nisi"
       },
       {
-        "phrase": "Delictorum meorum?' nisi quia pro delictis nostris"
+        "phrase": "ergo dum"
       },
       {
-        "phrase": "precatur; et delicta nostra delicta sua"
+        "phrase": "sola morte fiduciam tuam"
       },
       {
-        "phrase": "ut videlicet satisfactio unius omnibus imputetur, sicut omnium peccata unus"
+        "phrase": "in nulla alia re fiduciam"
       },
       {
-        "phrase": "Mercaturam quandam docere nos Paulus videtur. Abundatis"
+        "phrase": "morte totum"
       },
       {
-        "phrase": "vos pecunia, et estis"
+        "phrase": "Et si Dominus"
       },
       {
-        "phrase": "quaedam commutatio"
+        "phrase": "Domini nostri"
       }
     ]
   },
@@ -838,9 +809,23 @@
     "font_issues": []
   },
   "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      35,
+      137,
+      157,
+      207,
+      281,
+      292,
+      307,
+      353,
+      365,
+      418,
+      436,
+      457,
+      513
+    ],
     "ignored_warnings": [
-      "repeated_phrases",
-      "low_latin_tagging"
+      "repeated_phrases"
     ]
   },
   "limits": {

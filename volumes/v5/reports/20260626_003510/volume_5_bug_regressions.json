@@ -1,6 +1,6 @@
 {
   "volume": "5",
-  "status": "pass",
+  "status": "warn",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/bugs_fixes/volume_5_bug_regressions.json",
@@ -400,17 +400,47 @@
     },
     {
       "label": "Lowercase page fragments",
-      "observed": 0,
+      "observed": 3,
       "budget": 8,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "consciences of believers, unto their supportment and comfort under all their conf"
+        },
+        {
+          "file": "EPUB/ch031.xhtml",
+          "text": "itself and all grace in due exercise in all ordinances of divine worship, private"
+        },
+        {
+          "file": "EPUB/ch032.xhtml",
+          "text": "will evidence itself, — not always, but on some occasions: and this is by bringin"
+        }
+      ]
     },
     {
       "label": "Noteref leading spaces",
-      "observed": 0,
+      "observed": 4,
       "budget": 0,
-      "status": "ok",
-      "samples": []
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+        }
+      ]
     },
     {
       "label": "Greek span legacy accents",

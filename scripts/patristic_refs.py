@@ -1367,7 +1367,7 @@ def expand_inline_citations(
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end
-        while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’ ':
+        while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’':
             actual_end += 1
         trans_notes.append({
             'id': fn_id,
@@ -1410,7 +1410,7 @@ def expand_inline_citations(
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end
-        while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’ ':
+        while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’':
             actual_end += 1
         trans_notes.append({
             'id': fn_id,

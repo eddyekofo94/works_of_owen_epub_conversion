@@ -119,13 +119,12 @@ See previous sessions.
 - Added the OCR text replacement `'Bellar., lib 5 cap. l;': 'Bellar., lib 5 cap. 1;'` to `text_replacements` in `volumes/v5/convert.py` to fix the OCR error in the raw text. This corrects the typo and places the footnote marker after the chapter number (`cap. 1;†`).
 - Added a new audit check `3c` to `check_ocr_residues` in `scripts/audit_anomalies.py` to flag stray lowercase `l`s following citation abbreviations.
 - Overrode the `_html_escape` function in `scripts/markdown_parser.py` with a custom implementation that safely restores escaped HTML tags (like `<span>` and `<a>`) using a regex parser with lambda replacement. This preserves the manual language tags and inline links from the intermediate JSON intermediates across all affected volumes.
-121: 
-122: ### 18. Missing Text in Romans 11:33-36 and Unmatched Quotes Verification Tool (Awaiting Validation)
-123: **Problem:** In Volume 5, Chapter 4, a citation of Romans 11:33-36 was truncated due to a physical print/OCR omission in the source AGES PDF (page 76), leaving out the word `"out!"` and the closing double quotation mark. Additionally, there was no comprehensive tool to audit and present unclosed/unmatched double quotes with full paragraph contexts to allow humans or agents to easily determine where quotes are missing or should close.
-124: **Fix:**
-125: - Added the text override `'How unsearchable are his judgments, and his ways past finding Romans 11:33-36.': 'How unsearchable are his judgments, and his ways past finding out!" Romans 11:33-36.'` to `text_replacements` in `volumes/v5/convert.py`.
-126: - Created a persistent helper script `scripts/audit_unmatched_quotes.py` which scans the intermediate JSON of any volume, counts double quotes in each paragraph, and outputs a detailed Markdown report (`volumes/vN/bugs_fixes/volume_N_unmatched_quotes.md`) containing the full text of paragraphs with odd quote counts, with all double quotes visually highlighted.
-127: - Ran the audit script across all 16 volumes to generate baseline unmatched quote reports.
+### 18. Missing Text in Romans 11:33-36 and Unmatched Quotes Verification Tool (Awaiting Validation)
+**Problem:** In Volume 5, Chapter 4, a citation of Romans 11:33-36 was truncated due to a physical print/OCR omission in the source AGES PDF (page 76), leaving out the word `"out!"` and the closing double quotation mark. Additionally, there was no comprehensive tool to audit and present unclosed/unmatched double quotes with full paragraph contexts to allow humans or agents to easily determine where quotes are missing or should close.
+**Fix:**
+- Added the text override `'How unsearchable are his judgments, and his ways past finding Romans 11:33-36.': 'How unsearchable are his judgments, and his ways past finding out!" Romans 11:33-36.'` to `text_replacements` in `volumes/v5/convert.py`.
+- Created a persistent helper script `scripts/audit_unmatched_quotes.py` which scans the intermediate JSON of any volume, counts double quotes in each paragraph, and outputs a detailed Markdown report (`volumes/vN/bugs_fixes/volume_N_unmatched_quotes.md`) containing the full text of paragraphs with odd quote counts, with all double quotes visually highlighted.
+- Ran the audit script across all 16 volumes to generate baseline unmatched quote reports.
 
 
 ## Remaining Work
@@ -165,10 +164,16 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-19T20:37:34.559007+00:00
+**Last run:** 2026-06-26T09:11:33.759733+00:00
 **EPUB:** `volumes/v5/output/volume_5.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -181,11 +186,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 41 |
 | Spine items | 40 |
-| Embedded fonts | 20 |
+| Embedded fonts | 14 |
 | NAV links | 42 |
 | Greek chars / untagged | 6350 / 0 |
 | Hebrew chars / untagged | 980 / 0 |
-| Noteref links / endnote anchors | 196 / 196 |
+| Noteref links / endnote anchors | 207 / 207 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -214,11 +219,24 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-19T21:19:23.149595+00:00
-**Status:** WARN (7 warnings)
+**Last run:** 2026-06-26T09:12:05.123798+00:00
+**Status:** WARN (6 warnings)
 
 Reports:
 - `volume_5_text_integrity.json`
@@ -229,10 +247,10 @@ Reports:
 | PDF pages | 576 |
 | EPUB text files | 39 |
 | EPUB paragraphs/headings | 2147 |
-| Approximate PDF-to-EPUB word coverage | 0.9998 |
+| Approximate PDF-to-EPUB word coverage | 0.9999 |
 | Weak page matches | 0 |
-| Dense source windows checked | 26771 |
-| Missing dense source-window pages | 1 |
+| Dense source windows checked | 26913 |
+| Missing dense source-window pages | 7 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 561 |
@@ -242,15 +260,15 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 228 |
+| Structural starts excluded from split warnings | 229 |
 | Short fragments | 27 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 2 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
-| Roman heading candidates | 1 |
-| Overlong heading candidates | 2 |
+| Roman heading candidates | 0 |
+| Overlong heading candidates | 1 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 434 |
@@ -269,7 +287,6 @@ Warnings requiring triage:
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py

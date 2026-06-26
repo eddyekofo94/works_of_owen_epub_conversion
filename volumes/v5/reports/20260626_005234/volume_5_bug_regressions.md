@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 5
 
-- Status: **PASS**
+- Status: **WARN**
 - EPUB audit: `volume_5_audit.json`
 - Text integrity audit: `volume_5_text_integrity.json`
 
@@ -57,7 +57,7 @@
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
 | Lowercase page fragments | 0 | 8 | OK |
-| Noteref leading spaces | 0 | 0 | OK |
+| Noteref leading spaces | 4 | 0 | REGRESSION |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
 | I WILL/I AM mangles | 0 | 0 | OK |
@@ -76,3 +76,10 @@
 - phrase: set forth to be propitiation through faith in his blood
 - phrase: the doctrine of justification by the imputation of the righteousness
 - phrase: freely by his grace through the redemption that is in
+
+### Noteref leading spaces
+
+- file: EPUB/ch004.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch012.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch013.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"
+- file: EPUB/ch022.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"

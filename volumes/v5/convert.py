@@ -94,6 +94,7 @@ OVERRIDES = {
         'consequent of it, yet': 'consequents of it, yet',
         'get the main weight': 'yet the main weight',
         'may books published': 'many books published',
+        'has everlasting life;" chapter "He that believeth': 'has everlasting life;" chapter 7:38, "He that believeth',
         'artificial seasonings': 'artificial reasonings',
         'seasonings of carnal minds': 'reasonings of carnal minds',
         'well enough, find sufficiently': 'well enough, and sufficiently',
@@ -126,8 +127,6 @@ OVERRIDES = {
         r'(Romans 3:24, 25,\n\n— they will offer violence)': 'Romans 3:24, 25, — they will offer violence',
 
         # Volume 5 OCR, Bible reference, and split corrections
-        'Answer .': 'Answer.',
-        'Ans .': 'Ans.',
         'Christi..Item': 'Christi. Item',
         'cap. l;': 'cap. 1;',
         'John 22:30, 31': 'John 20:30, 31',
@@ -150,6 +149,16 @@ OVERRIDES = {
         'be1ieveth': 'believeth',
         'name)y': 'namely',
         'p)ace': 'place',
+        '<p class="descriptive">The second way whereby true faith does evidence itself in the souls and</p> </section> consciences of believers,': '</section>\\n\\nThe second way whereby true faith does evidence itself in the souls and consciences of believers,',
+        '<p class="descriptive">Thirdly, Faith will evidence itself by a diligent, constant endeavor to keep</p> </section> itself and all grace': '</section>\\n\\nThirdly, Faith will evidence itself by a diligent, constant endeavor to keep itself and all grace',
+        '<p class="descriptive">I come, in the next place, to instance in a peculiar way whereby true faith</p> </section> will evidence itself, — not always': '</section>\\n\\nI come, in the next place, to instance in a peculiar way whereby true faith will evidence itself, — not always',
+        'III. There is a justification of convinced sinners on their believing.': '[[ROMAN_HEAD]] III. There is a justification of convinced sinners on their believing.',
+    },
+    'regex_replacements': {
+        r'Answer \.': 'Answer.',
+        r'Ans \.': 'Ans.',
+        r'A\. full comprehension': '"A full comprehension',
+        r'THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST\. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY\..*?PHILIPPIANS 3:8,9\.\)': 'THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY.',
     },
     'treatise_title_overrides': {
         'The Doctrine of Justification By Faith,': _V5_JUSTIFICATION_TITLE_PAGE,

@@ -1,20 +1,20 @@
 # Text Integrity Audit: Volume 5
 
 - Status: **WARN**
-- Warnings: 6
+- Warnings: 7
 - PDF pages: 576
 - EPUB text files: 39
 - EPUB paragraphs/headings: 2147
 
 ## Coverage
 
-- PDF content tokens: 193209
-- EPUB content tokens: 194290
+- PDF content tokens: 193208
+- EPUB content tokens: 194213
 - Approximate PDF-to-EPUB coverage ratio: 0.9999
 - Pages checked: 562
 - Weak page matches: 0
-- Dense source windows checked: 26913
-- Missing dense source-window pages: 7
+- Dense source windows checked: 27043
+- Missing dense source-window pages: 1
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 561
@@ -26,17 +26,17 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 1856
+- Body paragraphs checked: 1854
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 229
+- Structural starts excluded from split warnings: 228
 - Short fragments: 27
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 2
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 0
-- Roman heading candidates: 0
-- Overlong heading candidates: 1
+- Roman heading candidates: 1
+- Overlong heading candidates: 2
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 434
@@ -60,33 +60,28 @@
 ## Latin
 
 - PDF Latin words: 3124
-- EPUB Latin words: 3127
+- EPUB Latin words: 3119
 - EPUB Tagged Latin words: 2602
 - Latin word coverage ratio: 0.9971
-- Latin word tagging ratio: 0.8321
+- Latin word tagging ratio: 0.8342
 - Latin clauses checked: 330
 - Missing Latin clauses: 1
 - Tagged Latin runs checked: 591
-- Translated Latin runs: 447
-- Latin translation ratio: 0.7563
+- Translated Latin runs: 392
+- Latin translation ratio: 0.6633
 
 ## Warnings
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 - `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 ## Missing Dense Source Windows
 
-- page: 29; sample: can be so pain at least in materia probabili but that man ordinarily versed
-- page: 31; sample: compliance wherewithal so albertus pighius himself complained of them controv dissimulate non possumus hanc
-- page: 36; sample: johan polandus lib methodus in adjuvandis morientibus domine jesus conjunge obsecro obsequium meum cum
-- page: 37; sample: should stand and ambrose to the same purpose nemo ergo sibi arroget nemo de
-- page: 62; sample: these expressions hebrews 5-10 the discourse of albertus pighius to this purpose though often
-- page: 98; sample: for the substance of it so did albertus pighius and the antitagma coloniense as
 - page: 473; sample: may be assured of their salvation tantum religio potuit suadere malorum so will men
 
 ## Missing Top-Of-Page Body Windows
@@ -98,9 +93,14 @@
 - file: EPUB/ch002.xhtml; text: Lastly, the concluding chapter is devoted to an explanation of the passages in Paul and James which are alleged to be at variance but which are proved to be in perfect harmony, 20. — Ed.
 - file: EPUB/ch004.xhtml; text: All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of their own, and s...
 
+## Roman Heading Candidates
+
+- file: EPUB/ch014.xhtml; text: III. There is a justification of convinced sinners on their believing.
+
 ## Overlong Heading Candidates
 
 - file: EPUB/ch012.xhtml; tag: h3; text: IMPUTATION OF THE SINS OF THE CHURCH UNTO CHRIST — GROUNDS OF IT — THE NATURE OF HIS SURETISHIP — CAUSES OF THE NEW COVENANT — CHRIST AND THE CHURCH ONE MYSTICAL PERSON — CONSEQUENTS THEREOF
+- file: EPUB/ch022.xhtml; tag: h3; text: THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY. — 3:4CHAP. 3,4,5,10; 1 CORINTHIANS 1:30; 2 Corinthians 5:212 CORINTHIANS 5:21; GALATIANS 2:16; EPHESIANS 2:8-10; PHILIPPIANS 3:8,9.)
 
 ## Short Fragments
 
@@ -130,8 +130,6 @@
 
 ## Excess Word Samples
 
-- word: translated; pdf: 3; epub: 19
-- word: translation; pdf: 10; epub: 25
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 3; epub: 12
 - word: historical; pdf: 4; epub: 12
@@ -140,6 +138,7 @@
 - word: footnotes; pdf: 0; epub: 7
 - word: hebrew; pdf: 4; epub: 10
 - word: edition; pdf: 2; epub: 8
+- word: section; pdf: 0; epub: 6
 
 ## Untagged Latin Word Samples
 
@@ -160,16 +159,16 @@
 
 ## Untranslated Latin Samples
 
-- phrase: propitiatio est
-- phrase: quam sanctae, quam
-- phrase: quam purae ab omni
-- phrase: Unum bonum est, quod beatae vitae causa et firmamentum est, sibi fidere
-- phrase: nemo unquam
-- phrase: landamur, et
-- phrase: gloriamur, quod non
-- phrase: non a nobis haberemus
-- phrase: sine quibus non
-- phrase: incertior sum multo, quam dudum
+- phrase: Articulus stantis
+- phrase: cadentis ecclesiae
+- phrase: nulla pietatis
+- phrase: nullo laudato prioris vitae exemplo commendatos; imo ut
+- phrase: videmus, per vagabundos, et contentionum zeli carnalis plenos
+- phrase: alios ex castris, aulis, ganeis, prolatam esse. Scrupuli ab excellenti viro propositi
+- phrase: in "materia probabili
+- phrase: Albertus Pighius
+- phrase: Dissimulate non possumus
+- phrase: vel primam doctrinae Christianae
 
 ## Limits
 

@@ -21,11 +21,20 @@
 - Untagged Greek chars: 0
 - Hebrew chars: 980
 - Untagged Hebrew chars: 0
-- Noteref links: 207
-- Endnote anchors: 207
+- Noteref links: 196
+- Endnote anchors: 196
 - Boilerplate hits: 0
 - Possible Beta Code files: 0
 - Escaped language-tag files: 0
 - Empty bracket noise files: 0
 - Missing chapter initialization files: 0
 - Repeated phrase hits: 0
+
+## Samples
+
+### noteref_leading_space
+
+- `EPUB/ch004.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
+- `EPUB/ch012.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
+- `EPUB/ch013.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
+- `EPUB/ch022.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"

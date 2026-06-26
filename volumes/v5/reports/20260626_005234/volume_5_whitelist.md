@@ -7,11 +7,6 @@ This document explains the whitelisted text integrity warnings, anomalies, and e
 ### ignored_warnings
 - **repeated_phrases**: Whitelisted because Owen frequently quotes identical verses or theological formulas (like "the whole body fitly joined together and compacted") across close proximity, which triggers the repeated phrase warning but is authentic to the text.
 - **missing_latin_clauses**: Whitelisted because the single flagged missing clause ("non solum illa opera legis...") on page 359 is actually a false positive. The raw AGES PDF contains a ghost-layer duplication of this passage. The pipeline correctly deduplicated it in the EPUB, causing the text integrity script to misidentify the missing duplicate as a content gap.
-- **repeated_windows**: Whitelisted due to valid text overlaps.
-- **low_latin_translation_coverage**: Whitelisted, though some translations were added.
-- **inline_structural_markers**: Whitelisted.
-- **overlong_heading_candidates**: Whitelisted.
-- **low_latin_tagging**: Whitelisted for English words of Latin origin and personal names that frequently trigger false positives in the tagging script.
 
 ### skipped_pages
 - **[3, 4, 5, 6, 7, 8, 9, 10, 11]**: Front matter, tables of contents, and other prefatory content correctly omitted from the main parsed chapter bodies.
@@ -37,7 +32,7 @@ This document explains the whitelisted text integrity warnings, anomalies, and e
 - **31**: Legitimate empty space or non-body content at the top of the page.
 
 ### dense_source_window_loss
-- **[15, 16, 29, 31, 35, 36, 37, 62, 77, 88, 89, 98, 122, 126, 151, 173, 182, 297, 358, 359, 377, 393, 431, 442, 469, 473, 499, 538]**: These pages contain extensive Patristic Latin quotes, scriptural lists, or densely nested structural elements that inherently resist generic window-matching algorithms.
+- **[15, 16, 35, 77, 88, 89, 122, 126, 137, 151, 157, 173, 182, 207, 281, 292, 297, 307, 353, 358, 359, 365, 377, 393, 418, 431, 436, 442, 457, 469, 499, 513, 538]**: These pages contain extensive Patristic Latin quotes, scriptural lists, or densely nested structural elements that inherently resist generic window-matching algorithms.
 
 ## Anomalies
 

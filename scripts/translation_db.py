@@ -2578,6 +2578,18 @@ FOOTNOTE_TRANSLATIONS = {
 }
 
 BODY_TRANSLATIONS = {
+    # Volume 5 Latin Translations
+    "sub molibus iniquitatum suarum": "under the weight of their own iniquities",
+    "vitam suam": "his life",
+    "illam undique flagitiis coopertam": "it covered on every side with disgraceful deeds",
+    "et tam multa peccata undique": "and so many sins on every side",
+    "enim prope totam vitam humanam circumlatrari peccatis; accusari": "for almost the whole of human life is besieged by sins; it is accused",
+    "conscientias cogitationius suis; non inveniri cor castum": "consciences by their own thoughts; a pure heart is not to be found",
+    "ergo omnium cor": "therefore the heart of all",
+    "misericordi Domini": "of the merciful Lord",
+    "Quae autem est": "But what is",
+    "Quoniam apud": "Since with",
+    "non solum illa opera legis quae sunt in veteribus sacramentis et nunc": "not only those works of the law which consist in the old sacraments, and now",
     "saepius morti proximus": (
         "<strong>Modern Translation:</strong> &ldquo;oftentimes close to death.&rdquo;"
     ),
@@ -6894,6 +6906,54 @@ GLOSSARY_TERMS = {
 }
 
 INLINE_TRANSLATIONS = {
+    "Albertus Pighius": (
+        "<strong>Translation:</strong> &ldquo;Albert Pighius&rdquo;"
+    ),
+    "Casparus Ulenbergius": (
+        "<strong>Translation:</strong> &ldquo;Caspar Ulenberg&rdquo;"
+    ),
+    "Polandus, lib. Methodus in adjuvandis morientibus": (
+        "<strong>Translation:</strong> &ldquo;Polanus, in his book Methodus in adjuvandis morientibus [A Method for Assisting the Dying]&rdquo;"
+    ),
+    "egisti, et passus": (
+        "<strong>Translation:</strong> &ldquo;you have done, and suffered&rdquo;"
+    ),
+    "Nemo ergo sibi": (
+        "<strong>Translation:</strong> &ldquo;Let no one therefore for himself&rdquo;"
+    ),
+    "meritis glorietur, nemo": (
+        "<strong>Translation:</strong> &ldquo;boast in merits, let no one&rdquo;"
+    ),
+    "speremus per Dominum": (
+        "<strong>Translation:</strong> &ldquo;let us hope through the Lord&rdquo;"
+    ),
+    "illo veniam": (
+        "<strong>Translation:</strong> &ldquo;from him pardon&rdquo;"
+    ),
+    "illo indulgentiam postulabo. Quaenam": (
+        "<strong>Translation:</strong> &ldquo;from him I will demand indulgence. For what&rdquo;"
+    ),
+    "alia peccatoribus": (
+        "<strong>Translation:</strong> &ldquo;other things to sinners&rdquo;"
+    ),
+    "Credisne te non posse salvari nisi per mortem Christi? Respondet infirmus, 'Etiam\". Tum dicit illi, Age ergo dum superest in te anima, in hac sola morte fiduciam tuam constitue; in nulla alia re fiduciam habe huic morti te totum committe, hac sola te totum contege totum immisce te in hac morte, in hac morte totum te involve. Et si Dominus te voluerit judicare, dic, 'Domine, mortem Domini nostri Jesus Christi objicio inter me et tuum judicium, aliter tecum non contendo'. Et si tibi eixerit quia peccator es, dic, 'Mortem Domini nostri Jesus Christi pono inter me et peccte mea'. Si dixerit tibi quot meruisti damnationem; dic, 'Domine, mortem Domini nostri Jesus Christi obtendo inter te et mala merita mea, ipsiusque merita offero pro merito quod ego debuissem habere nec habeo'. Si dixerit quod tibi est iratus, dic, 'Domine, mortem Domini Jesu Christi oppono inter me et iram tuam;'": (
+        "<strong>Translation:</strong> &ldquo;Dost thou believe that thou canst not be saved but by the death of Christ? The sick man answers, 'Yes.' Then he says unto him, 'Go to, then, whilst thy soul abideth in thee, put all thy confidence in this death alone; place thy trust in no other thing; commit thyself wholly to this death, cover thyself wholly with this alone, cast thyself wholly on this death, wrap thyself wholly in this death. And if God will judge thee, say, Lord, I place the death of our Lord Jesus Christ between me and thy judgment; otherwise I will not contend, or enter into judgment, with thee. And if he shall say unto thee that thou art a sinner, say, I place the death of our Lord Jesus Christ between me and my sins. If he shall say unto thee that thou hast deserved damnation, say, Lord, I put the death of our Lord Jesus Christ between thee and all my sins; and I offer his merits for my own, which I should have, and have not. If he say that he is angry with thee, say, Lord, I place the death of our Lord Jesus Christ between me and thine anger.'&rdquo;"
+    ),
+    "Precibus aut pretio ut in aliqua parte haereant.": (
+        "<strong>Translation:</strong> &ldquo;By prayers or by price, that they may stick in some part.&rdquo;"
+    ),
+    "Articulus stantis aut cadentis ecclesiae.": (
+        "<strong>Translation:</strong> &ldquo;The article by which the church stands or falls.&rdquo;"
+    ),
+    "nulla pietatis commendatione, nullo laudato prioris vitae exemplo commendatos; imo ut plerumque videmus, per vagabundos, et contentionum zeli carnalis plenos homines, alios ex castris, aulis, ganeis, prolatam esse. Scrupuli ab excellenti viro propositi, inter oper. Socin.": (
+        "<strong>Translation:</strong> &ldquo;Recommended by no commendation of piety, by no praised example of their former life; nay rather, as we mostly see, that it was brought forth by vagabonds, and men full of the carnal zeal of contentions, others from camps, courts, and brothels. Scruples proposed by an excellent man, among the works of Socinus.&rdquo;"
+    ),
+    "Dissimulate non possumus, hanc vel primam doctrinae Christianae partem (de justificatione) obscuram magis quam illustratam a scholasticis, spinosis plerisque quaestionibus, et definitionibus, secundum quas nonnulli magno supercilio primam in omnibus autoritatem arrogantes": (
+        "<strong>Translation:</strong> &ldquo;We cannot dissemble, that this very first part of Christian doctrine (concerning justification) has been more obscured than illustrated by the scholastics, by most thorny questions, and definitions, according to which some, with great haughtiness arrogating the highest authority in all things...&rdquo;"
+    ),
+    "materia probabili": (
+        "<strong>Translation:</strong> &ldquo;probable matter&rdquo;"
+    ),
     "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S.": (
         "“To the most distinguished and renowned George Blandrata, physician-in-chief and intimate counselor of Stephen, the most unconquered king of Poland, etc., his lord and patron to be cherished with perpetual respect; and it is subscribed, Your most devoted client in the Lord Jesus, F. S.”"
     ),
