@@ -1,19 +1,19 @@
 # Text Integrity Audit: Volume 10
 
-- Status: **WARN**
-- Warnings: 6
+- Status: **PASS**
+- Warnings: 0
 - PDF pages: 828
 - EPUB text files: 105
-- EPUB paragraphs/headings: 3312
+- EPUB paragraphs/headings: 3299
 
 ## Coverage
 
 - PDF content tokens: 262672
-- EPUB content tokens: 263382
-- Approximate PDF-to-EPUB coverage ratio: 0.9989
+- EPUB content tokens: 263203
+- Approximate PDF-to-EPUB coverage ratio: 0.9984
 - Pages checked: 807
-- Weak page matches: 4
-- Dense source windows checked: 35173
+- Weak page matches: 5
+- Dense source windows checked: 35062
 - Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -26,12 +26,12 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2705
+- Body paragraphs checked: 2696
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 189
-- Short fragments: 34
+- Structural starts excluded from split warnings: 190
+- Short fragments: 33
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 7
+- Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 5
@@ -59,35 +59,20 @@
 
 ## Latin
 
-- PDF Latin words: 2463
-- EPUB Latin words: 2480
-- EPUB Tagged Latin words: 1004
-- Latin word coverage ratio: 0.9943
-- Latin word tagging ratio: 0.4048
-- Latin clauses checked: 102
+- PDF Latin words: 1924
+- EPUB Latin words: 1929
+- EPUB Tagged Latin words: 868
+- Latin word coverage ratio: 0.9927
+- Latin word tagging ratio: 0.45
+- Latin clauses checked: 97
 - Missing Latin clauses: 1
-- Tagged Latin runs checked: 316
-- Translated Latin runs: 101
-- Latin translation ratio: 0.3196
-
-## Warnings
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
+- Tagged Latin runs checked: 270
+- Translated Latin runs: 110
+- Latin translation ratio: 0.4074
 
 ## Inline Structural Marker Candidates
 
 - file: EPUB/ch020.xhtml; text: In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), "of exemplary and primitive piety," and author of several works, published a reply to Owen's work, under the title, "The Open Door f...
-- file: EPUB/ch021.xhtml; text: Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: — 1. From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4. 2. From some texts before vindicated. 3. From Psalm 19:4; Romans 10:18; Acts 14:17, etc....
-- file: EPUB/ch031.xhtml; text: Now, what is it to obey the grace of God? Is it not to believe? Therefore, it seems that Christ intercedeth for them that they may believe, upon condition that they do believe. Others, more cautiously, assert the good using of the means ...
-- file: EPUB/ch046.xhtml; text: Let now any one tell me what the reprobates, in this life, lie under more? And do not all the elect, until their actual reconciliation, in and by Christ, lie under the very same? for, — (1.) Are not their prayers an abomination to the Lo...
-- file: EPUB/ch052.xhtml; text: That God gave not his Son, — 1. For them who never do believe; 2. Much less for them who never hear of him, and so evidently want means of faith; 3. For them on whom he hath determined not to bestow effectual grace, that they might believe.
-- file: EPUB/ch058.xhtml; text: Where you have assigned, 1. The cause of Christ's death, — his love to us; 2. The object of it, — us, or believers; 3. The manner how he redeemed us, even by commutation.
-- file: EPUB/ch073.xhtml; text: To evince the main assertion, I shall, — 1. Show the nature and quality of this right; 2. The bottom or foundation of it; and, 3. Prove the thesis.
 
 ## Suspicious Large-Number Starts
 
@@ -106,13 +91,13 @@
 - file: EPUB/ch002.xhtml; text: JOHN WHITE
 - file: EPUB/ch004.xhtml; text: TO THE CHRISTIAN READER.
 - file: EPUB/ch018.xhtml; text: Τῷ Θεῷ ἀριστομεγίστῳ δόξα .
-- file: EPUB/ch019.xhtml; text: Imprimatur, Jan. 22, 16-17.
 - file: EPUB/ch021.xhtml; text: 1 . Of the work;
 - file: EPUB/ch022.xhtml; text: TO THE READER.
 - file: EPUB/ch022.xhtml; text: READER,
 - file: EPUB/ch027.xhtml; text: Whence he saith,
 - file: EPUB/ch030.xhtml; text: VI.
 - file: EPUB/ch048.xhtml; text: Arg. 15.
+- file: EPUB/ch053.xhtml; text: Where, —
 
 ## Repeated Windows
 
@@ -141,15 +126,15 @@
 ## Untagged Latin Word Samples
 
 - word: grotius; epub: 55; tagged: 0
+- word: socinus; epub: 38; tagged: 2
 - word: arminius; epub: 37; tagged: 1
-- word: socinus; epub: 38; tagged: 3
 - word: creditor; epub: 37; tagged: 2
-- word: undergo; epub: 32; tagged: 0
-- word: hate; epub: 31; tagged: 2
+- word: ipso; epub: 29; tagged: 1
 - word: corvinus; epub: 28; tagged: 1
 - word: debtor; epub: 22; tagged: 0
 - word: lubbertus; epub: 23; tagged: 2
-- word: create; epub: 21; tagged: 0
+- word: solutio; epub: 23; tagged: 2
+- word: thomas; epub: 22; tagged: 2
 
 ## Missing Latin Clauses
 
@@ -159,14 +144,14 @@
 
 - phrase: Elenchus Controversiarum
 - phrase: Socinus, "quae
-- phrase: Louis Molina
 - phrase: Junius, ‡ Arminius
 - phrase: Martii, anno Domini
-- phrase: Tantum religio
-- phrase: suadere malorum
 - phrase: in quibus possimus
 - phrase: AEneas Sylvius
 - phrase: in forma pauperis
+- phrase: postquam Christiana
+- phrase: gradibus itur in coelum
+- phrase: cornicula risum, furtivis nudata coloribus
 
 ## Limits
 

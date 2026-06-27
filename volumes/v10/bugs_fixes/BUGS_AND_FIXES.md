@@ -126,11 +126,12 @@ See previous sessions.
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-13T00:20:01.740129+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub`
+**Last run:** 2026-06-27T17:45:05.162567+00:00
+**EPUB:** `volumes/v10/output/volume_10.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -142,11 +143,11 @@ Reports:
 | OPF version | 3.0 |
 | XHTML files | 107 |
 | Spine items | 106 |
-| Embedded fonts | 20 |
+| Embedded fonts | 8 |
 | NAV links | 108 |
 | Greek chars / untagged | 4477 / 0 |
 | Hebrew chars / untagged | 113 / 0 |
-| Noteref links / endnote anchors | 619 / 619 |
+| Noteref links / endnote anchors | 620 / 620 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -174,11 +175,15 @@ Reports:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-13T00:20:46.261251+00:00
-**Status:** WARN (6 warnings)
+**Last run:** 2026-06-27T17:56:28.155137+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_10_text_integrity.json`
@@ -188,10 +193,10 @@ Reports:
 |-------|--------|
 | PDF pages | 828 |
 | EPUB text files | 105 |
-| EPUB paragraphs/headings | 3312 |
-| Approximate PDF-to-EPUB word coverage | 0.9989 |
-| Weak page matches | 4 |
-| Dense source windows checked | 35173 |
+| EPUB paragraphs/headings | 3299 |
+| Approximate PDF-to-EPUB word coverage | 0.9984 |
+| Weak page matches | 5 |
+| Dense source windows checked | 35062 |
 | Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
@@ -202,10 +207,10 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 189 |
-| Short fragments | 34 |
+| Structural starts excluded from split warnings | 190 |
+| Short fragments | 33 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 7 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 5 |
@@ -223,15 +228,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
-- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
-- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
-- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

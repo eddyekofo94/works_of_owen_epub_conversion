@@ -1,14 +1,14 @@
 {
-  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
-  "generated_at": "2026-06-13T00:20:01.740129+00:00",
+  "epub": "volumes/v10/output/volume_10.epub",
+  "generated_at": "2026-06-27T17:45:05.162567+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
   "errors": [],
   "warnings": [],
   "info": {
-    "file_count": 141,
-    "epub_size_bytes": 8732890,
+    "file_count": 129,
+    "epub_size_bytes": 4913685,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -17,13 +17,13 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 132,
+    "manifest_count": 120,
     "spine_count": 106,
     "xhtml_count": 107,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
-    "font_count": 20,
+    "font_count": 8,
     "language": {
       "greek_chars": 4477,
       "greek_untagged_chars": 0,
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 619,
-      "unique_noteref_targets": 619,
-      "endnote_anchor_count": 619,
+      "noteref_count": 620,
+      "unique_noteref_targets": 620,
+      "endnote_anchor_count": 620,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },

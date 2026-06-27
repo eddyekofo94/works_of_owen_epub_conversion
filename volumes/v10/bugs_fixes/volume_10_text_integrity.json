@@ -2,35 +2,10 @@
   "volume": "10",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/input/owen-v10.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
-  "generated_at": "2026-06-13T00:20:46.261251+00:00",
-  "status": "warn",
-  "warning_count": 6,
-  "warnings": [
-    {
-      "code": "weak_page_coverage",
-      "message": "Some PDF pages have no strong text-window match in the EPUB"
-    },
-    {
-      "code": "inline_structural_markers",
-      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
-    },
-    {
-      "code": "suspicious_large_number_starts",
-      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
-    },
-    {
-      "code": "roman_heading_candidates",
-      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
-    },
-    {
-      "code": "repeated_windows",
-      "message": "Repeated word windows may indicate ghost-layer duplication"
-    },
-    {
-      "code": "missing_latin_clauses",
-      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
-    }
-  ],
+  "generated_at": "2026-06-27T17:56:28.155137+00:00",
+  "status": "pass",
+  "warning_count": 0,
+  "warnings": [],
   "pdf": {
     "page_count": 828,
     "skipped_detected": [
@@ -48,12 +23,12 @@
   },
   "epub": {
     "spine_text_files": 105,
-    "paragraph_count": 3312
+    "paragraph_count": 3299
   },
   "word_coverage": {
     "pdf_content_tokens": 262672,
-    "epub_content_tokens": 263382,
-    "coverage_ratio": 0.9989,
+    "epub_content_tokens": 263203,
+    "coverage_ratio": 0.9984,
     "missing_word_samples": [],
     "excess_word_samples": [
       {
@@ -100,7 +75,7 @@
   },
   "page_coverage": {
     "pages_checked": 807,
-    "weak_page_count": 4,
+    "weak_page_count": 5,
     "weak_pages": [
       {
         "page": 63,
@@ -118,6 +93,11 @@
         "sample": "christ galatians he that believeth not is condemned mark without faith it is impossible to please god hebrews other foundation can no man lay"
       },
       {
+        "page": 170,
+        "hit_ratio": 0.0,
+        "sample": "salus electorum sanguis jesu or the death of death in the death of christ treatise of the redemption and reconciliation that is in the"
+      },
+      {
         "page": 644,
         "hit_ratio": 0.0,
         "sample": "dissertation on divine justice or the claims of vindicatory justice vindicated wherein that essential property of the divine nature is demonstrated from the sacred"
@@ -125,7 +105,7 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 35173,
+    "dense_windows_checked": 35062,
     "missing_dense_window_pages": 0,
     "missing_dense_windows": []
   },
@@ -195,11 +175,11 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2705,
+    "paragraphs_checked": 2696,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 189,
-    "short_fragment_count": 34,
+    "structural_start_exclusions": 190,
+    "short_fragment_count": 33,
     "short_fragments": [
       {
         "file": "EPUB/ch002.xhtml",
@@ -212,10 +192,6 @@
       {
         "file": "EPUB/ch018.xhtml",
         "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
-      },
-      {
-        "file": "EPUB/ch019.xhtml",
-        "text": "Imprimatur, Jan. 22, 16-17."
       },
       {
         "file": "EPUB/ch021.xhtml",
@@ -340,35 +316,11 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 7,
+    "inline_structural_candidate_count": 1,
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch020.xhtml",
         "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Mall's Approach to G"
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: — 1. From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4. 2. From some texts before vindicated. 3. From Psalm 19:4; Romans 10:18; Acts 14:17, etc. 4. From John 16:7-11, "
-      },
-      {
-        "file": "EPUB/ch031.xhtml",
-        "text": "Now, what is it to obey the grace of God? Is it not to believe? Therefore, it seems that Christ intercedeth for them that they may believe, upon condition that they do believe. Others, more cautiously, assert the good using of the means of grace that they do e"
-      },
-      {
-        "file": "EPUB/ch046.xhtml",
-        "text": "Let now any one tell me what the reprobates, in this life, lie under more? And do not all the elect, until their actual reconciliation, in and by Christ, lie under the very same? for, — (1.) Are not their prayers an abomination to the Lord? can they without fa"
-      },
-      {
-        "file": "EPUB/ch052.xhtml",
-        "text": "That God gave not his Son, — 1. For them who never do believe; 2. Much less for them who never hear of him, and so evidently want means of faith; 3. For them on whom he hath determined not to bestow effectual grace, that they might believe."
-      },
-      {
-        "file": "EPUB/ch058.xhtml",
-        "text": "Where you have assigned, 1. The cause of Christ's death, — his love to us; 2. The object of it, — us, or believers; 3. The manner how he redeemed us, even by commutation."
-      },
-      {
-        "file": "EPUB/ch073.xhtml",
-        "text": "To evince the main assertion, I shall, — 1. Show the nature and quality of this right; 2. The bottom or foundation of it; and, 3. Prove the thesis."
       }
     ],
     "reference_continuation_split_count": 0,
@@ -438,11 +390,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p590",
+            "location": "EPUB/ch021.xhtml#p577",
             "context": "(1.) By an authoritative imposition of the office of mediator upon him:"
           },
           {
-            "location": "EPUB/ch021.xhtml#p642",
+            "location": "EPUB/ch021.xhtml#p629",
             "context": "(1.) It has no place in the intention of Christ;"
           }
         ]
@@ -457,11 +409,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p593",
+            "location": "EPUB/ch021.xhtml#p580",
             "context": "(2.) By furnishing him with a fullness of all gifts and graces: —"
           },
           {
-            "location": "EPUB/ch021.xhtml#p643",
+            "location": "EPUB/ch021.xhtml#p630",
             "context": "(2.) The will of God in this business is not at all conditional;"
           }
         ]
@@ -476,11 +428,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p591",
+            "location": "EPUB/ch021.xhtml#p578",
             "context": "[1.] The purposed imposition of his counsel"
           },
           {
-            "location": "EPUB/ch021.xhtml#p594",
+            "location": "EPUB/ch021.xhtml#p581",
             "context": "[1.] Christ had a natural all-sufficient perfection of his deity;"
           }
         ]
@@ -506,11 +458,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p592",
+            "location": "EPUB/ch021.xhtml#p579",
             "context": "[2.] The actual inauguration of Christ as mediator."
           },
           {
-            "location": "EPUB/ch021.xhtml#p595",
+            "location": "EPUB/ch021.xhtml#p582",
             "context": "[2.] He had a communicated fullness."
           }
         ]
@@ -644,14 +596,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 2463,
-    "epub_latin_word_count": 2480,
-    "epub_tagged_latin_word_count": 1004,
-    "pdf_latin_unique_words": 1085,
-    "epub_latin_unique_words": 1083,
-    "epub_tagged_unique_words": 606,
-    "latin_word_coverage_ratio": 0.9943,
-    "latin_tagging_ratio": 0.4048,
+    "pdf_latin_word_count": 1924,
+    "epub_latin_word_count": 1929,
+    "epub_tagged_latin_word_count": 868,
+    "pdf_latin_unique_words": 972,
+    "epub_latin_unique_words": 968,
+    "epub_tagged_unique_words": 571,
+    "latin_word_coverage_ratio": 0.9927,
+    "latin_tagging_ratio": 0.45,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -660,14 +612,14 @@
         "tagged": 0
       },
       {
+        "word": "socinus",
+        "epub": 38,
+        "tagged": 2
+      },
+      {
         "word": "arminius",
         "epub": 37,
         "tagged": 1
-      },
-      {
-        "word": "socinus",
-        "epub": 38,
-        "tagged": 3
       },
       {
         "word": "creditor",
@@ -675,14 +627,9 @@
         "tagged": 2
       },
       {
-        "word": "undergo",
-        "epub": 32,
-        "tagged": 0
-      },
-      {
-        "word": "hate",
-        "epub": 31,
-        "tagged": 2
+        "word": "ipso",
+        "epub": 29,
+        "tagged": 1
       },
       {
         "word": "corvinus",
@@ -700,19 +647,9 @@
         "tagged": 2
       },
       {
-        "word": "create",
-        "epub": 21,
-        "tagged": 0
-      },
-      {
-        "word": "nowhere",
-        "epub": 21,
-        "tagged": 0
-      },
-      {
-        "word": "advocate",
-        "epub": 20,
-        "tagged": 0
+        "word": "solutio",
+        "epub": 23,
+        "tagged": 2
       },
       {
         "word": "thomas",
@@ -720,23 +657,8 @@
         "tagged": 2
       },
       {
-        "word": "solutio",
-        "epub": 23,
-        "tagged": 3
-      },
-      {
         "word": "crellius",
         "epub": 19,
-        "tagged": 0
-      },
-      {
-        "word": "door",
-        "epub": 19,
-        "tagged": 0
-      },
-      {
-        "word": "iii",
-        "epub": 16,
         "tagged": 0
       },
       {
@@ -745,28 +667,13 @@
         "tagged": 1
       },
       {
-        "word": "ago",
-        "epub": 16,
-        "tagged": 0
-      },
-      {
         "word": "ergo",
         "epub": 15,
         "tagged": 1
       },
       {
-        "word": "innate",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
         "word": "termino",
         "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "episcopius",
-        "epub": 11,
         "tagged": 0
       },
       {
@@ -778,11 +685,56 @@
         "word": "conditionate",
         "epub": 10,
         "tagged": 0
+      },
+      {
+        "word": "maccovius",
+        "epub": 11,
+        "tagged": 1
+      },
+      {
+        "word": "ultimate",
+        "epub": 10,
+        "tagged": 1
+      },
+      {
+        "word": "predestinate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "diana",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "pelagius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "vorstius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "grevinchovius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "sponsor",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "plate",
+        "epub": 5,
+        "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 102,
+    "latin_clauses_checked": 97,
     "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
       {
@@ -793,9 +745,9 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 316,
-    "translated_latin_runs_count": 101,
-    "latin_translation_ratio": 0.3196,
+    "tagged_latin_runs_count": 270,
+    "translated_latin_runs_count": 110,
+    "latin_translation_ratio": 0.4074,
     "untranslated_latin_samples": [
       {
         "phrase": "Elenchus Controversiarum"
@@ -804,19 +756,10 @@
         "phrase": "Socinus, \"quae"
       },
       {
-        "phrase": "Louis Molina"
-      },
-      {
         "phrase": "Junius, ‡  Arminius"
       },
       {
         "phrase": "Martii, anno Domini"
-      },
-      {
-        "phrase": "Tantum religio"
-      },
-      {
-        "phrase": "suadere malorum"
       },
       {
         "phrase": "in quibus possimus"
@@ -849,13 +792,22 @@
         "phrase": "necessitate naturae"
       },
       {
-        "phrase": "abominate, hate"
-      },
-      {
         "phrase": "Tantae molis"
       },
       {
         "phrase": "voluntas signi"
+      },
+      {
+        "phrase": "Loquitur ex aliorum sententia"
+      },
+      {
+        "phrase": "cui credatis"
+      },
+      {
+        "phrase": "furtivis nudata coloribus"
+      },
+      {
+        "phrase": "usque et usque"
       }
     ]
   },

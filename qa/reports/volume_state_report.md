@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-26T22:57:23Z
+Generated: 2026-06-27T17:56:32Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-26T22:57:23Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
-| 2 | 10 | 4.4 | eb-garamond | 4 |  99.89 |  100.0 |  100.0 |  99.43 | 0 | 0 | PRISTINE |
+| 1 | 10 | 6.4 | eb-garamond | 4 |  99.84 |  100.0 |  100.0 |  99.27 | 0 | 0 | PRISTINE |
+| 2 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
 | 3 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
 | 4 | 16 | 4.4 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
 | 5 | 3 | 3.4 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
@@ -33,11 +33,11 @@ Generated: 2026-06-26T22:57:23Z
 |------|-----|------|------|-----------|----------|-------|--------|-------|--------|----------|
 | 1 | h2 | 36.3 | goudi | 3 |  99.81 |  100.0 |  100.0 | 39 | None | FULL |
 | 2 | h5 | 34.1 | libre-caslon-text | 1 |  99.93 |  100.0 |  100.0 | 6 | None | FULL |
-| 3 | h3 | 32.1 | bembo | 1 |  99.97 |  100.0 |  100.0 | 13 | None | STANDARD |
-| 4 | h6 | 30.8 | merriweather | 1 |  99.98 |  100.0 |  100.0 | 4 | None | FULL |
-| 5 | h1 | 30.2 | minion-pro | 3 |  99.99 |  100.0 |  100.0 | 30 | None | FULL |
-| 6 | h4 | 28.7 | libertinus | 1 |  99.96 |  100.0 |  100.0 | 9 | None | FULL |
-| 7 | h7 | 28.3 | literata | 1 |  99.98 |  100.0 |  100.0 | 2 | None | FULL |
+| 3 | h6 | 30.8 | merriweather | 1 |  99.98 |  100.0 |  100.0 | 4 | None | FULL |
+| 4 | h1 | 30.2 | minion-pro | 3 |  99.99 |  100.0 |  100.0 | 30 | None | FULL |
+| 5 | h4 | 28.7 | libertinus | 1 |  99.96 |  100.0 |  100.0 | 9 | None | FULL |
+| 6 | h7 | 28.3 | literata | 1 |  99.98 |  100.0 |  100.0 | 2 | None | FULL |
+| 7 | h3 | 22.1 | bembo | 1 |  99.97 |  100.0 |  100.0 | 13 | None | FULL |
 
 ## Per-Volume Details
 
@@ -83,28 +83,7 @@ Generated: 2026-06-26T22:57:23Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h3 — Need: 32.1 (👌 Fair) — Rank 3
-
-- **Body font:** bembo
-- **Source type:** epub2
-- **Treatises:** 1
-- **QA level:** STANDARD
-- **convert.py:** Yes (62 lines, 0 text_replacements)
-- **Audit:** errors=0, warnings=1, footnotes=None
-- **Word coverage:** 99.97
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 100.00
-- **Latin tagging:** 41.91
-- **Latin translation:** 10.19
-- **Citations:** total=22, unresolved=13
-- **Splits:** 40
-- **Regressions:** None
-- **Suspected anomalies:** None
-- **Unmatched quotes:** None
-- **Recommended:** 🐛 Run bug regression report; translate_unresolved_citations
-
-### Volume h6 — Need: 30.8 (👌 Fair) — Rank 4
+### Volume h6 — Need: 30.8 (👌 Fair) — Rank 3
 
 - **Body font:** merriweather
 - **Source type:** epub2
@@ -125,7 +104,7 @@ Generated: 2026-06-26T22:57:23Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h1 — Need: 30.2 (👌 Fair) — Rank 5
+### Volume h1 — Need: 30.2 (👌 Fair) — Rank 4
 
 - **Body font:** minion-pro
 - **Source type:** epub2
@@ -146,7 +125,7 @@ Generated: 2026-06-26T22:57:23Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h4 — Need: 28.7 (👌 Fair) — Rank 6
+### Volume h4 — Need: 28.7 (👌 Fair) — Rank 5
 
 - **Body font:** libertinus
 - **Source type:** epub2
@@ -167,7 +146,7 @@ Generated: 2026-06-26T22:57:23Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h7 — Need: 28.3 (👌 Fair) — Rank 7
+### Volume h7 — Need: 28.3 (👌 Fair) — Rank 6
 
 - **Body font:** literata
 - **Source type:** epub2
@@ -188,7 +167,49 @@ Generated: 2026-06-26T22:57:23Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 12 — Need: 4.8 (✅ Good) — Rank 8
+### Volume h3 — Need: 22.1 (👌 Fair) — Rank 7
+
+- **Body font:** bembo
+- **Source type:** epub2
+- **Treatises:** 1
+- **QA level:** FULL
+- **convert.py:** Yes (62 lines, 0 text_replacements)
+- **Audit:** errors=0, warnings=1, footnotes=None
+- **Word coverage:** 99.97
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 100.00
+- **Latin tagging:** 41.91
+- **Latin translation:** 10.19
+- **Citations:** total=22, unresolved=13
+- **Splits:** 40
+- **Regressions:** 2
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** None
+- **Recommended:** translate_unresolved_citations
+
+### Volume 10 — Need: 6.4 (✅ Good) — Rank 8
+
+- **Body font:** eb-garamond
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** PRISTINE
+- **convert.py:** Yes (280 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.84
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.27
+- **Latin tagging:** 45.00
+- **Latin translation:** 40.74
+- **Citations:** total=20, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 12 — Need: 4.8 (✅ Good) — Rank 9
 
 - **Body font:** centaur
 - **Source type:** ages_pdf
@@ -203,27 +224,6 @@ Generated: 2026-06-26T22:57:23Z
 - **Latin tagging:** 74.61
 - **Latin translation:** 45.00
 - **Citations:** total=70, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 10 — Need: 4.4 (✅ Good) — Rank 9
-
-- **Body font:** eb-garamond
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** PRISTINE
-- **convert.py:** Yes (280 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.89
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.43
-- **Latin tagging:** 40.48
-- **Latin translation:** 31.96
-- **Citations:** total=20, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 0

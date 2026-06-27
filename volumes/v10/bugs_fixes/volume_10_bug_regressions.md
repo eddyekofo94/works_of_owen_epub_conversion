@@ -9,7 +9,7 @@
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
 | Possible faulty paragraph splits | 0 | 165 | OK |
-| Inline structural marker candidates | 7 | 8 | OK |
+| Inline structural marker candidates | 1 | 8 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 4 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -67,10 +67,6 @@
 ### Inline structural marker candidates
 
 - file: EPUB/ch020.xhtml; text: In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), "of exemplary and primitive piety," and author of several works, published a reply to Owen's work, under the title,
-- file: EPUB/ch021.xhtml; text: Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: — 1. From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4. 2. From some texts before vindicated. 3. From Psalm 19:4; Romans 10:18;
-- file: EPUB/ch031.xhtml; text: Now, what is it to obey the grace of God? Is it not to believe? Therefore, it seems that Christ intercedeth for them that they may believe, upon condition that they do believe. Others, more cautiously, assert the good us
-- file: EPUB/ch046.xhtml; text: Let now any one tell me what the reprobates, in this life, lie under more? And do not all the elect, until their actual reconciliation, in and by Christ, lie under the very same? for, — (1.) Are not their prayers an abom
-- file: EPUB/ch052.xhtml; text: That God gave not his Son, — 1. For them who never do believe; 2. Much less for them who never hear of him, and so evidently want means of faith; 3. For them on whom he hath determined not to bestow effectual grace, that
 
 ### Repeated word windows
 
