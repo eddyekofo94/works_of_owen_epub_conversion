@@ -1,0 +1,123 @@
+{
+  "volume": "3",
+  "total_words_audited": 325796,
+  "total_anomalies_count": 12,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "y ,",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Analysis.",
+        "contexts": [
+          "... rsion. Regeneration is then considered positivel y , as implying all the moral operation which means c ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 3 - Corruption or Depravation of the Mind by Sin.",
+        "contexts": [
+          "... rinciples and precepts of the law of nature. 2dly.. Such as flow immediately from the sovereign will ..."
+        ]
+      },
+      {
+        "target": "d .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - Life and Death, Natural and Spiritual, Compared.",
+        "contexts": [
+          "... e unto them they are preserved from many sins. 2 d . In an especial manner from the great sin of despi ...",
+          "... h ends commonly in that which is unpardonable. 3 d . They are hereby made useful unto others, and many ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 4 - Life and Death, Natural and Spiritual, Compared.",
+        "contexts": [
+          "... s, and many ends of God's glory in the world. 4th.. They are kept in God's way, wherein they may grad ..."
+        ]
+      },
+      {
+        "target": "d .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
+        "contexts": [
+          "... h 5:3-5; Proverbs 29:1; 2 Chronicles 36:14-16. 2 d . That the effect of regeneration or conversion unt ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
+        "contexts": [
+          "... hat he requires. Hence two things do ensue: \u2014 1st.. That the use of those means unto men in the state ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 6 - the Manner of Conversion Explained in the Instance of Augustine",
+        "contexts": [
+          "... he curse of the law, and not of its command. 2dly.. God is pleased to exercise a prerogative and sove ...",
+          "... ng; but these two things in general are so: \u2014 1st.. Such a conviction of sin, \u2014 that is, of a state o ...",
+          "... they are invited so to do. See Isaiah 32:2. 2dly.. A due apprehension and resolved judgment that the ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.",
+        "contexts": [
+          "... tainly ruinous and destructive to ourselves. 2dly.. Whether there be in men unregenerate, not renewed ...",
+          "... ctive of the grace of our Lord Jesus Christ. 3dly.. Whether the freedom of will that is in believers ...",
+          "... ts burden, and some way ready unto its duty. 2dly.. It gives an insight into the beauty, the excellen ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 7 - of the Acts and Duties of Holiness.",
+        "contexts": [
+          "... insisted on, and reduced unto three heads: \u2014 1st.. There are many places wherein we are said to be l ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 8 - Mortification of Sin, the Nature and Causes of It.",
+        "contexts": [
+          "... of the flesh and of the mind,\" chapter 2:3. 3dly.. There are the effects, fruits, and products of th ...",
+          "... pirit of God, which we have before described. 1st.. They are opposed in their principle; for \"the fle ...",
+          "... he old and new man are opposed and contrary. 2dly.. In their actings. The lusting of the flesh and th ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 3 - Holiness Necessary From the Commands of God.",
+        "contexts": [
+          "... \u2014 namely, secrecy, businesses, and societies. 1st.. Carry this along with you into your secret retire ...",
+          "... ecure us in all places and on all occasions. 2dly.. Let us carry it into our businesses, and the exer ...",
+          "... such thoughts, which will prove your relief. 3dly.. Carry it with you into your companies and societi ..."
+        ]
+      },
+      {
+        "target": "..",
+        "description": "Duplicate period (double dot)",
+        "chapter": "Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.",
+        "contexts": [
+          "... emains with us whether it be our duty or no. 3dly.. The whole rule of duties given by the most improv ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {}
+}

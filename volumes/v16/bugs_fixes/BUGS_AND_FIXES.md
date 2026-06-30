@@ -310,11 +310,12 @@ Warnings requiring triage:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-22T23:09:51.964427+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-06-30T16:31:24.126952+00:00
+**Status:** WARN (2 warnings)
 
 Reports:
 - `volume_16_text_integrity.json`
@@ -327,7 +328,7 @@ Reports:
 | EPUB paragraphs/headings | 2726 |
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 0 |
-| Dense source windows checked | 28208 |
+| Dense source windows checked | 28875 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 1 |
 | Missing front CONTENTS pages | 0 |
@@ -341,7 +342,7 @@ Reports:
 | Structural starts excluded from split warnings | 280 |
 | Short fragments | 24 |
 | Adjacent duplicate paragraphs | 0 |
-| Inline structural marker candidates | 0 |
+| Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 2 |
@@ -363,6 +364,7 @@ Reports:
 Warnings requiring triage:
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

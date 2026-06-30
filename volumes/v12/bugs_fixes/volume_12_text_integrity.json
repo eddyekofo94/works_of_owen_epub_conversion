@@ -2,10 +2,14 @@
   "volume": "12",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-23T23:00:24.316605+00:00",
+  "generated_at": "2026-06-30T16:28:19.330742+00:00",
   "status": "warn",
-  "warning_count": 1,
+  "warning_count": 2,
   "warnings": [
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
@@ -21,7 +25,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 270735,
-    "epub_content_tokens": 272727,
+    "epub_content_tokens": 272103,
     "coverage_ratio": 0.9994,
     "missing_word_samples": [
       {
@@ -79,9 +83,14 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 34243,
-    "missing_dense_window_pages": 0,
-    "missing_dense_windows": []
+    "dense_windows_checked": 34305,
+    "missing_dense_window_pages": 1,
+    "missing_dense_windows": [
+      {
+        "page": 226,
+        "sample": "christ was personally united that wrought all these works answer me to these things"
+      }
+    ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 3,
@@ -622,26 +631,16 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 7650,
-    "epub_latin_word_count": 7684,
-    "epub_tagged_latin_word_count": 5733,
-    "pdf_latin_unique_words": 2739,
-    "epub_latin_unique_words": 2740,
-    "epub_tagged_unique_words": 2270,
-    "latin_word_coverage_ratio": 0.9976,
-    "latin_tagging_ratio": 0.7461,
+    "pdf_latin_word_count": 7130,
+    "epub_latin_word_count": 7146,
+    "epub_tagged_latin_word_count": 5642,
+    "pdf_latin_unique_words": 2710,
+    "epub_latin_unique_words": 2711,
+    "epub_tagged_unique_words": 2251,
+    "latin_word_coverage_ratio": 0.9975,
+    "latin_tagging_ratio": 0.7895,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "grotius",
-        "epub": 197,
-        "tagged": 16
-      },
-      {
-        "word": "socinus",
-        "epub": 169,
-        "tagged": 36
-      },
       {
         "word": "annotator",
         "epub": 69,
@@ -649,23 +648,13 @@
       },
       {
         "word": "smalcius",
-        "epub": 50,
+        "epub": 47,
         "tagged": 12
-      },
-      {
-        "word": "crellius",
-        "epub": 37,
-        "tagged": 4
       },
       {
         "word": "jus",
         "epub": 44,
         "tagged": 21
-      },
-      {
-        "word": "thomas",
-        "epub": 23,
-        "tagged": 1
       },
       {
         "word": "franciscus",
@@ -681,11 +670,6 @@
         "word": "transylvania",
         "epub": 14,
         "tagged": 0
-      },
-      {
-        "word": "professor",
-        "epub": 11,
-        "tagged": 2
       },
       {
         "word": "racovia",
@@ -756,11 +740,36 @@
         "word": "laelius",
         "epub": 9,
         "tagged": 3
+      },
+      {
+        "word": "seidelius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "puccius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "franzius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "niemojevius",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "photinus",
+        "epub": 8,
+        "tagged": 3
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 723,
+    "latin_clauses_checked": 717,
     "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
       {
@@ -772,8 +781,8 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 1549,
-    "translated_latin_runs_count": 697,
-    "latin_translation_ratio": 0.45,
+    "translated_latin_runs_count": 700,
+    "latin_translation_ratio": 0.4519,
     "untranslated_latin_samples": [
       {
         "phrase": "HUGO GROTIUS"
@@ -824,9 +833,6 @@
         "phrase": "Photinus, Theodotus"
       },
       {
-        "phrase": "ignota loquor"
-      },
-      {
         "phrase": "Georgius Blandrata, ‡  Petrus Statorius, ‡  Franciscus Lismaninus"
       },
       {
@@ -834,6 +840,9 @@
       },
       {
         "phrase": "is, \"Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino"
+      },
+      {
+        "phrase": "Marcellus Squarcialupus"
       }
     ]
   },
@@ -850,6 +859,9 @@
     "font_issues": []
   },
   "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      145
+    ],
     "ignored_warnings": [
       "possible_beta_code_residue",
       "repeated_phrases",

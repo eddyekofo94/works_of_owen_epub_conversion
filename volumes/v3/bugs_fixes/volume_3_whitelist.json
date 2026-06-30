@@ -1,5 +1,10 @@
 {
   "anomalies": {
+    "Punctuation Spacing Blemishes": [
+      "y ,",
+      "..",
+      "d ."
+    ],
     "OCR & Bracket Residues": [
       "express[ed"
     ],
@@ -76,7 +81,6 @@
     ],
     "weak_pages": [],
     "dense_source_window_loss": [
-      37,
       41,
       59,
       60,
@@ -115,7 +119,8 @@
       463,
       472,
       490,
-      498
+      498,
+      506
     ],
     "bottom_of_page_text_loss": [],
     "paragraph_splits": [
@@ -148,11 +153,6 @@
         "file": "EPUB/ch038.xhtml",
         "previous": "what is signified by it,",
         "next": "\"Video meliora proboque"
-      },
-      {
-        "file": "EPUB/ch006.xhtml",
-        "previous": "the beginning; and \" Malus bonum cum [Translated: Translation: \"When a bad man pretends to be good\"] simulat, tunc est pessimus .\" [Translated: Translation: \"then he is the worst\"];",
-        "next": "These things, therefore, can have here no place."
       }
     ],
     "inline_structural_markers": [

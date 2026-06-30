@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-30T09:37:20Z
+Generated: 2026-06-30T17:27:17Z
 
 ## Summary
 
@@ -10,19 +10,19 @@ Generated: 2026-06-30T09:37:20Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | FULL |
-| 2 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | FULL |
-| 3 | 16 | 4.4 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | FULL |
-| 4 | 3 | 3.4 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | FULL |
-| 5 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | FULL |
-| 6 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | FULL |
-| 7 | 10 | 2.8 | eb-garamond | 4 |  99.93 |  100.0 |  100.0 |  99.58 | 0 | 0 | FULL |
-| 8 | 8 | 2.7 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | FULL |
-| 9 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | FULL |
-| 10 | 4 | 2.0 | palatino | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | FULL |
-| 11 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
-| 12 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
-| 13 | 11 | 1.6 | adobe-carlson-pro | 1 |  99.96 |  100.0 |  100.0 |  99.85 | 0 | 0 | FULL |
+| 1 | 13 | 29.4 | itc-galliard | 5 |  99.89 |  97.44 |  100.0 |  95.58 | 0 | 0 | FULL |
+| 2 | 9 | 24.4 | im-fell-english | 3 |  99.64 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
+| 3 | 11 | 12.6 | adobe-carlson-pro | 1 |  99.96 |  100.0 |  100.0 |  99.84 | 0 | 0 | FULL |
+| 4 | 10 | 6.5 | eb-garamond | 4 |  99.84 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
+| 5 | 14 | 5.2 | brill-font | 2 |  99.87 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
+| 6 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.75 | 0 | 0 | FULL |
+| 7 | 16 | 4.4 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | FULL |
+| 8 | 3 | 3.3 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | FULL |
+| 9 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.44 | 0 | 0 | FULL |
+| 10 | 8 | 2.7 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | FULL |
+| 11 | 4 | 2.0 | palatino | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | FULL |
+| 12 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
+| 13 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
 | 14 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.98 |  100.0 |  100.0 |   99.9 | 0 | 0 | FULL |
 | 15 | 2 | 0.4 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | FULL |
 | 16 | 5 | 0.4 | garamond-premier-pro | 2 |  99.99 |  100.0 |  100.0 |  99.71 | 0 | 0 | FULL |
@@ -125,7 +125,28 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h4 — Need: 28.7 (👌 Fair) — Rank 5
+### Volume 13 — Need: 29.4 (👌 Fair) — Rank 5
+
+- **Body font:** itc-galliard
+- **Source type:** ages_pdf
+- **Treatises:** 5
+- **QA level:** FULL
+- **convert.py:** Yes (330 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.89
+- **Greek coverage:** 97.44
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 95.58
+- **Latin tagging:** 69.44
+- **Latin translation:** 46.44
+- **Citations:** total=18, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume h4 — Need: 28.7 (👌 Fair) — Rank 6
 
 - **Body font:** libertinus
 - **Source type:** epub2
@@ -146,7 +167,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h7 — Need: 28.3 (👌 Fair) — Rank 6
+### Volume h7 — Need: 28.3 (👌 Fair) — Rank 7
 
 - **Body font:** literata
 - **Source type:** epub2
@@ -167,7 +188,28 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h3 — Need: 22.1 (👌 Fair) — Rank 7
+### Volume 9 — Need: 24.4 (👌 Fair) — Rank 8
+
+- **Body font:** im-fell-english
+- **Source type:** ages_pdf
+- **Treatises:** 3
+- **QA level:** FULL
+- **convert.py:** Yes (155 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.64
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.15
+- **Latin tagging:** 28.81
+- **Latin translation:** 10.34
+- **Citations:** total=0, unresolved=0
+- **Splits:** 51
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume h3 — Need: 22.1 (👌 Fair) — Rank 9
 
 - **Body font:** bembo
 - **Source type:** epub2
@@ -188,7 +230,70 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 12 — Need: 4.8 (✅ Good) — Rank 8
+### Volume 11 — Need: 12.6 (✅ Good) — Rank 10
+
+- **Body font:** adobe-carlson-pro
+- **Source type:** ages_pdf
+- **Treatises:** 1
+- **QA level:** FULL
+- **convert.py:** Yes (208 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.96
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.84
+- **Latin tagging:** 78.32
+- **Latin translation:** 35.05
+- **Citations:** total=52, unresolved=0
+- **Splits:** 2
+- **Regressions:** 0
+- **Suspected anomalies:** 206
+- **Unmatched quotes:** 0
+- **Recommended:** 🔍 Review OCR anomalies
+
+### Volume 10 — Need: 6.5 (✅ Good) — Rank 11
+
+- **Body font:** eb-garamond
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** FULL
+- **convert.py:** Yes (338 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.84
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.15
+- **Latin tagging:** 59.70
+- **Latin translation:** 57.78
+- **Citations:** total=20, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 1
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 14 — Need: 5.2 (✅ Good) — Rank 12
+
+- **Body font:** brill-font
+- **Source type:** ages_pdf
+- **Treatises:** 2
+- **QA level:** FULL
+- **convert.py:** Yes (220 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.87
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.66
+- **Latin tagging:** 67.02
+- **Latin translation:** 52.05
+- **Citations:** total=62, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 12 — Need: 4.8 (✅ Good) — Rank 13
 
 - **Body font:** centaur
 - **Source type:** ages_pdf
@@ -199,9 +304,9 @@ Generated: 2026-06-30T09:37:20Z
 - **Word coverage:** 99.94
 - **Greek coverage:** 99.92
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.76
-- **Latin tagging:** 74.61
-- **Latin translation:** 45.00
+- **Latin coverage:** 99.75
+- **Latin tagging:** 78.95
+- **Latin translation:** 45.19
 - **Citations:** total=70, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
@@ -209,28 +314,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 14 — Need: 4.4 (✅ Good) — Rank 9
-
-- **Body font:** brill-font
-- **Source type:** ages_pdf
-- **Treatises:** 2
-- **QA level:** FULL
-- **convert.py:** Yes (220 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.89
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.67
-- **Latin tagging:** 59.34
-- **Latin translation:** 48.70
-- **Citations:** total=62, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 16 — Need: 4.4 (✅ Good) — Rank 10
+### Volume 16 — Need: 4.4 (✅ Good) — Rank 14
 
 - **Body font:** georgia
 - **Source type:** ages_pdf
@@ -242,8 +326,8 @@ Generated: 2026-06-30T09:37:20Z
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
 - **Latin coverage:** 99.96
-- **Latin tagging:** 63.81
-- **Latin translation:** 56.52
+- **Latin tagging:** 65.93
+- **Latin translation:** 56.72
 - **Citations:** total=40, unresolved=0
 - **Splits:** 0
 - **Regressions:** 1
@@ -251,7 +335,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 3 — Need: 3.4 (✅ Good) — Rank 11
+### Volume 3 — Need: 3.3 (✅ Good) — Rank 15
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
@@ -263,8 +347,8 @@ Generated: 2026-06-30T09:37:20Z
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
 - **Latin coverage:** 99.94
-- **Latin tagging:** 77.98
-- **Latin translation:** 83.74
+- **Latin tagging:** 79.17
+- **Latin translation:** 84.21
 - **Citations:** total=25, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
@@ -272,7 +356,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 15 — Need: 3.0 (✅ Good) — Rank 12
+### Volume 15 — Need: 3.0 (✅ Good) — Rank 16
 
 - **Body font:** new-caledonia-lt-std
 - **Source type:** ages_pdf
@@ -283,8 +367,8 @@ Generated: 2026-06-30T09:37:20Z
 - **Word coverage:** 99.93
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.46
-- **Latin tagging:** 55.06
+- **Latin coverage:** 99.44
+- **Latin tagging:** 56.06
 - **Latin translation:** 61.17
 - **Citations:** total=57, unresolved=0
 - **Splits:** 0
@@ -293,49 +377,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 9 — Need: 2.8 (✅ Good) — Rank 13
-
-- **Body font:** im-fell-english
-- **Source type:** ages_pdf
-- **Treatises:** 3
-- **QA level:** FULL
-- **convert.py:** Yes (155 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.93
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.26
-- **Latin tagging:** 25.00
-- **Latin translation:** 10.34
-- **Citations:** total=0, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 10 — Need: 2.8 (✅ Good) — Rank 14
-
-- **Body font:** eb-garamond
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** FULL
-- **convert.py:** Yes (338 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.93
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.58
-- **Latin tagging:** 60.51
-- **Latin translation:** 59.50
-- **Citations:** total=20, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 8 — Need: 2.7 (✅ Good) — Rank 15
+### Volume 8 — Need: 2.7 (✅ Good) — Rank 17
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -356,28 +398,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 13 — Need: 2.4 (✅ Good) — Rank 16
-
-- **Body font:** itc-galliard
-- **Source type:** ages_pdf
-- **Treatises:** 5
-- **QA level:** FULL
-- **convert.py:** Yes (330 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.94
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.54
-- **Latin tagging:** 53.24
-- **Latin translation:** 42.30
-- **Citations:** total=18, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 4 — Need: 2.0 (✅ Good) — Rank 17
+### Volume 4 — Need: 2.0 (✅ Good) — Rank 18
 
 - **Body font:** palatino
 - **Source type:** ages_pdf
@@ -398,7 +419,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 7 — Need: 2.0 (✅ Good) — Rank 18
+### Volume 7 — Need: 2.0 (✅ Good) — Rank 19
 
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
@@ -419,7 +440,7 @@ Generated: 2026-06-30T09:37:20Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 6 — Need: 1.6 (✅ Good) — Rank 19
+### Volume 6 — Need: 1.6 (✅ Good) — Rank 20
 
 - **Body font:** baskerville
 - **Source type:** ages_pdf
@@ -434,27 +455,6 @@ Generated: 2026-06-30T09:37:20Z
 - **Latin tagging:** 16.42
 - **Latin translation:** 73.81
 - **Citations:** total=0, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 11 — Need: 1.6 (✅ Good) — Rank 20
-
-- **Body font:** adobe-carlson-pro
-- **Source type:** ages_pdf
-- **Treatises:** 1
-- **QA level:** FULL
-- **convert.py:** Yes (208 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.96
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.85
-- **Latin tagging:** 76.78
-- **Latin translation:** 34.66
-- **Citations:** total=52, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0
 - **Suspected anomalies:** 0

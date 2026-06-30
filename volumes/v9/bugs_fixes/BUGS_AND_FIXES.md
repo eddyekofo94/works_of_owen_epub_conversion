@@ -157,11 +157,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-16T11:01:14.211783+00:00
-**Status:** WARN (8 warnings)
+**Last run:** 2026-06-30T16:25:42.310503+00:00
+**Status:** WARN (14 warnings)
 
 Reports:
 - `volume_9_text_integrity.json`
@@ -171,20 +172,20 @@ Reports:
 |-------|--------|
 | PDF pages | 778 |
 | EPUB text files | 102 |
-| EPUB paragraphs/headings | 3558 |
-| Approximate PDF-to-EPUB word coverage | 0.9993 |
-| Weak page matches | 0 |
-| Dense source windows checked | 32000 |
-| Missing dense source-window pages | 4 |
-| Front CONTENTS pages checked | 0 |
-| Missing front CONTENTS pages | 0 |
+| EPUB paragraphs/headings | 3555 |
+| Approximate PDF-to-EPUB word coverage | 0.9964 |
+| Weak page matches | 3 |
+| Dense source windows checked | 32010 |
+| Missing dense source-window pages | 40 |
+| Front CONTENTS pages checked | 5 |
+| Missing front CONTENTS pages | 4 |
 | Top-of-page body windows checked | 751 |
 | Top-of-page windows skipped as unstable | 27 |
 | Missing top-of-page body windows | 8 |
 | Bottom-of-page body windows checked | 697 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
+| Missing bottom-of-page body windows | 2 |
+| Possible faulty paragraph splits | 51 |
 | Structural starts excluded from split warnings | 408 |
 | Short fragments | 41 |
 | Adjacent duplicate paragraphs | 0 |
@@ -209,14 +210,20 @@ Reports:
 
 Warnings requiring triage:
 
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `front_matter_toc_loss`: Some early CONTENTS pages have no strong text-window match in the EPUB
 - `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 - `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `low_latin_tagging`: A significant portion of Latin words in the EPUB are not wrapped in language spans
+- `low_latin_translation_coverage`: Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

@@ -203,11 +203,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-26T22:23:39.315366+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-30T16:27:27.963818+00:00
+**Status:** WARN (1 warnings)
 
 Reports:
 - `volume_11_text_integrity.json`
@@ -220,8 +221,8 @@ Reports:
 | EPUB paragraphs/headings | 2497 |
 | Approximate PDF-to-EPUB word coverage | 0.9996 |
 | Weak page matches | 0 |
-| Dense source windows checked | 32243 |
-| Missing dense source-window pages | 15 |
+| Dense source windows checked | 32433 |
+| Missing dense source-window pages | 20 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 791 |
@@ -230,7 +231,7 @@ Reports:
 | Bottom-of-page body windows checked | 791 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
+| Possible faulty paragraph splits | 2 |
 | Structural starts excluded from split warnings | 272 |
 | Short fragments | 29 |
 | Adjacent duplicate paragraphs | 0 |
@@ -252,6 +253,10 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

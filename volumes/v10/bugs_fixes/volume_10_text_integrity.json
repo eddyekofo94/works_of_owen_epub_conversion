@@ -2,10 +2,39 @@
   "volume": "10",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/input/owen-v10.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
-  "generated_at": "2026-06-30T01:01:38.948164+00:00",
-  "status": "pass",
-  "warning_count": 0,
-  "warnings": [],
+  "generated_at": "2026-06-30T16:26:30.469688+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "missing_latin_clauses",
+      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
+    }
+  ],
   "pdf": {
     "page_count": 828,
     "skipped_detected": [
@@ -23,12 +52,12 @@
   },
   "epub": {
     "spine_text_files": 105,
-    "paragraph_count": 3315
+    "paragraph_count": 3299
   },
   "word_coverage": {
     "pdf_content_tokens": 262672,
-    "epub_content_tokens": 263548,
-    "coverage_ratio": 0.9993,
+    "epub_content_tokens": 263166,
+    "coverage_ratio": 0.9984,
     "missing_word_samples": [],
     "excess_word_samples": [
       {
@@ -75,7 +104,7 @@
   },
   "page_coverage": {
     "pages_checked": 807,
-    "weak_page_count": 2,
+    "weak_page_count": 5,
     "weak_pages": [
       {
         "page": 63,
@@ -83,16 +112,36 @@
         "sample": "unite my heart to fear thy name psalm the god in whose hand try breath is and whose are all try ways thou hast"
       },
       {
+        "page": 91,
+        "hit_ratio": 0.0,
+        "sample": "what hast thou that thou didst not receive corinthians are we better than they no in no wise romans but we are predestinated to"
+      },
+      {
         "page": 143,
         "hit_ratio": 0.0,
         "sample": "christ galatians he that believeth not is condemned mark without faith it is impossible to please god hebrews other foundation can no man lay"
+      },
+      {
+        "page": 170,
+        "hit_ratio": 0.0,
+        "sample": "salus electorum sanguis jesu or the death of death in the death of christ treatise of the redemption and reconciliation that is in the"
+      },
+      {
+        "page": 644,
+        "hit_ratio": 0.0,
+        "sample": "dissertation on divine justice or the claims of vindicatory justice vindicated wherein that essential property of the divine nature is demonstrated from the sacred"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 35209,
-    "missing_dense_window_pages": 0,
-    "missing_dense_windows": []
+    "dense_windows_checked": 35125,
+    "missing_dense_window_pages": 1,
+    "missing_dense_windows": [
+      {
+        "page": 21,
+        "sample": "differences we all at this day grieve to behold tantum religio potuit suadere malorum"
+      }
+    ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 0,
@@ -160,10 +209,10 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2697,
+    "paragraphs_checked": 2696,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 188,
+    "structural_start_exclusions": 189,
     "short_fragment_count": 33,
     "short_fragments": [
       {
@@ -177,6 +226,10 @@
       {
         "file": "EPUB/ch018.xhtml",
         "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "1 . Of the work;"
       },
       {
         "file": "EPUB/ch022.xhtml",
@@ -268,10 +321,6 @@
       },
       {
         "file": "EPUB/ch083.xhtml",
-        "text": "Also, Orpheus in the hymns, —"
-      },
-      {
-        "file": "EPUB/ch083.xhtml",
         "text": "Hence, these common sayings, —"
       },
       {
@@ -305,18 +354,30 @@
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch020.xhtml",
-        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Man's Approach to Go"
+        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Mall's Approach to G"
       }
     ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 2,
+    "suspicious_large_number_start_count": 5,
     "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch013.xhtml",
+        "text": "36. To abide argueth a continued, uninterrupted act."
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "96. All which assertions, how contrary they are to the express word of God, I shall now demonstrate."
+      },
       {
         "file": "EPUB/ch058.xhtml",
         "text": "13. [A.D. 350]: —"
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "117. And again, Aristotle says, \"It is a very strong proof, if all shall agree in what we shall say.\" And in that observation another author concurs: \"The things that are commonly agreed on are worthy of credit.\" And her"
       },
       {
         "file": "EPUB/ch085.xhtml",
@@ -363,11 +424,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p588",
+            "location": "EPUB/ch021.xhtml#p577",
             "context": "(1.) By an authoritative imposition of the office of mediator upon him:"
           },
           {
-            "location": "EPUB/ch021.xhtml#p640",
+            "location": "EPUB/ch021.xhtml#p629",
             "context": "(1.) It has no place in the intention of Christ;"
           }
         ]
@@ -382,11 +443,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p591",
+            "location": "EPUB/ch021.xhtml#p580",
             "context": "(2.) By furnishing him with a fullness of all gifts and graces: —"
           },
           {
-            "location": "EPUB/ch021.xhtml#p641",
+            "location": "EPUB/ch021.xhtml#p630",
             "context": "(2.) The will of God in this business is not at all conditional;"
           }
         ]
@@ -401,11 +462,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p589",
+            "location": "EPUB/ch021.xhtml#p578",
             "context": "[1.] The purposed imposition of his counsel"
           },
           {
-            "location": "EPUB/ch021.xhtml#p592",
+            "location": "EPUB/ch021.xhtml#p581",
             "context": "[1.] Christ had a natural all-sufficient perfection of his deity;"
           }
         ]
@@ -431,11 +492,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p590",
+            "location": "EPUB/ch021.xhtml#p579",
             "context": "[2.] The actual inauguration of Christ as mediator."
           },
           {
-            "location": "EPUB/ch021.xhtml#p593",
+            "location": "EPUB/ch021.xhtml#p582",
             "context": "[2.] He had a communicated fullness."
           }
         ]
@@ -570,15 +631,25 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 1417,
-    "epub_latin_word_count": 1418,
-    "epub_tagged_latin_word_count": 858,
+    "epub_latin_word_count": 1412,
+    "epub_tagged_latin_word_count": 843,
     "pdf_latin_unique_words": 927,
-    "epub_latin_unique_words": 927,
-    "epub_tagged_unique_words": 550,
-    "latin_word_coverage_ratio": 0.9958,
-    "latin_tagging_ratio": 0.6051,
+    "epub_latin_unique_words": 923,
+    "epub_tagged_unique_words": 554,
+    "latin_word_coverage_ratio": 0.9915,
+    "latin_tagging_ratio": 0.597,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
+      {
+        "word": "ejusdem",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
+        "word": "tantidem",
+        "epub": 12,
+        "tagged": 0
+      },
       {
         "word": "mediate",
         "epub": 3,
@@ -588,11 +659,6 @@
         "word": "apella",
         "epub": 4,
         "tagged": 1
-      },
-      {
-        "word": "intermediate",
-        "epub": 3,
-        "tagged": 0
       },
       {
         "word": "clamor",
@@ -670,6 +736,11 @@
         "tagged": 1
       },
       {
+        "word": "intermediate",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
         "word": "apollo",
         "epub": 3,
         "tagged": 1
@@ -683,14 +754,23 @@
   },
   "latin_clause_fidelity": {
     "latin_clauses_checked": 95,
-    "missing_latin_clause_count": 0,
-    "missing_latin_clauses": []
+    "missing_latin_clause_count": 1,
+    "missing_latin_clauses": [
+      {
+        "page": 170,
+        "word_count": 5,
+        "sample": "salus electorum sanguis jesu or"
+      }
+    ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 279,
-    "translated_latin_runs_count": 166,
-    "latin_translation_ratio": 0.595,
+    "tagged_latin_runs_count": 270,
+    "translated_latin_runs_count": 156,
+    "latin_translation_ratio": 0.5778,
     "untranslated_latin_samples": [
+      {
+        "phrase": "Junius, ‡  Arminius"
+      },
       {
         "phrase": "traharis; Per tamen adversi gradieris cornua Tauri"
       },
@@ -710,6 +790,9 @@
         "phrase": "pro mundo contento"
       },
       {
+        "phrase": "ultimate, or intermediate"
+      },
+      {
         "phrase": "finis convertuntur"
       },
       {
@@ -717,6 +800,9 @@
       },
       {
         "phrase": "hic responsor"
+      },
+      {
+        "phrase": "Bormus, Corvinus"
       },
       {
         "phrase": "Amyraldus, ‡  Camero"
@@ -740,16 +826,7 @@
         "phrase": "Ego illud expiabam"
       },
       {
-        "phrase": "solutio tantidem"
-      },
-      {
         "phrase": "Delicta puniri"
-      },
-      {
-        "phrase": "bonum universi"
-      },
-      {
-        "phrase": "Decii, Menoeceus, Euryalus"
       }
     ]
   },
@@ -765,7 +842,11 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {},
+  "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      "and upon their consciences by reason of not understanding of this love which came"
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

@@ -2,7 +2,7 @@
   "volume": "3",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/input/owen-v3.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v3/output/volume_3.epub",
-  "generated_at": "2026-06-26T16:52:07.335278+00:00",
+  "generated_at": "2026-06-30T16:38:20.058033+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -46,7 +46,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 267300,
-    "epub_content_tokens": 276298,
+    "epub_content_tokens": 276284,
     "coverage_ratio": 0.9997,
     "missing_word_samples": [
       {
@@ -159,7 +159,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 36457,
+    "dense_windows_checked": 36494,
     "missing_dense_window_pages": 0,
     "missing_dense_windows": []
   },
@@ -431,7 +431,7 @@
           },
           {
             "location": "EPUB/ch006.xhtml#p150",
-            "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who was a liar from the beginning; and \" Malus bonum cum [Translated: Translation: \"When"
+            "context": "(1.) wrested from the devil, and were no small part of his punishment and torment; or (2.) were designed by him with an intention to prejudice the glory of Christ by his testimony, who was a liar from the beginning; and \" Malus bonum cum simulat, tunc est pessimus .\""
           },
           {
             "location": "EPUB/ch008.xhtml#p271",
@@ -549,14 +549,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1614,
-    "epub_latin_word_count": 1689,
-    "epub_tagged_latin_word_count": 1317,
-    "pdf_latin_unique_words": 914,
-    "epub_latin_unique_words": 959,
-    "epub_tagged_unique_words": 774,
+    "pdf_latin_word_count": 1575,
+    "epub_latin_word_count": 1647,
+    "epub_tagged_latin_word_count": 1304,
+    "pdf_latin_unique_words": 900,
+    "epub_latin_unique_words": 944,
+    "epub_tagged_unique_words": 766,
     "latin_word_coverage_ratio": 0.9994,
-    "latin_tagging_ratio": 0.7798,
+    "latin_tagging_ratio": 0.7917,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -575,27 +575,12 @@
         "tagged": 0
       },
       {
-        "word": "pelagius",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "crellius",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
         "word": "balaam",
         "epub": 6,
         "tagged": 0
       },
       {
         "word": "denominate",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "ultimate",
         "epub": 6,
         "tagged": 0
       },
@@ -640,11 +625,6 @@
         "tagged": 0
       },
       {
-        "word": "plato",
-        "epub": 4,
-        "tagged": 1
-      },
-      {
         "word": "ananias",
         "epub": 3,
         "tagged": 0
@@ -672,14 +652,14 @@
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 142,
+    "latin_clauses_checked": 140,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 289,
-    "translated_latin_runs_count": 242,
-    "latin_translation_ratio": 0.8374,
+    "tagged_latin_runs_count": 285,
+    "translated_latin_runs_count": 240,
+    "latin_translation_ratio": 0.8421,
     "untranslated_latin_samples": [
       {
         "phrase": "Solis ad occasum, quum frigidus"

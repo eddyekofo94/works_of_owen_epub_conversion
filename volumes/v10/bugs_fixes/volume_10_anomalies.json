@@ -1,7 +1,7 @@
 {
   "volume": "10",
-  "total_words_audited": 313662,
-  "total_anomalies_count": 0,
+  "total_words_audited": 313843,
+  "total_anomalies_count": 1,
   "anomalies": {
     "Hyphenation Anomalies": [],
     "Punctuation Spacing Blemishes": [],
@@ -11,7 +11,34 @@
     "Structural Nesting Sequence Jumps": [],
     "Invalid Bible References": [],
     "List Formatting Inconsistencies": [],
-    "Unmatched Quotation Marks": []
+    "Unmatched Quotation Marks": [
+      {
+        "target": "\"That which is born of the flesh is [[BLOCKQUOTE]] \"Neither is it considerable whether they be the children of believers...",
+        "description": "Paragraph has unmatched double quotes (count: 5)",
+        "chapter": "Chapter 7 - of Original Sin and the Corruption of Nature.",
+        "contexts": [
+          "\"That which is born of the flesh is [[BLOCKQUOTE]] \"Neither is it considerable whether they be the children of believers..."
+        ]
+      }
+    ]
   },
-  "unused_whitelist_anomalies": {}
+  "unused_whitelist_anomalies": {
+    "Punctuation Spacing Blemishes": [
+      "2 .",
+      "1 ."
+    ],
+    "OCR & Bracket Residues": [
+      "do)ignorantly"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "1. ... 3.",
+      "3. ... 256."
+    ],
+    "Invalid Bible References": [
+      "2 Peter 7"
+    ],
+    "Unmatched Quotation Marks": [
+      "3. \"That which is born of the flesh is [[BLOCKQUOTE]] \"Neither is it considerable whether they be the children of believ"
+    ]
+  }
 }

@@ -2,7 +2,7 @@
   "volume": "14",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v14/input/owen-v14.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v14/output/volume_14.epub",
-  "generated_at": "2026-06-12T16:04:28.886913+00:00",
+  "generated_at": "2026-06-30T16:30:02.320989+00:00",
   "status": "warn",
   "warning_count": 9,
   "warnings": [
@@ -49,12 +49,12 @@
   },
   "epub": {
     "spine_text_files": 70,
-    "paragraph_count": 1709
+    "paragraph_count": 1708
   },
   "word_coverage": {
     "pdf_content_tokens": 230479,
-    "epub_content_tokens": 231220,
-    "coverage_ratio": 0.9989,
+    "epub_content_tokens": 231140,
+    "coverage_ratio": 0.9987,
     "missing_word_samples": [
       {
         "word": "pre",
@@ -97,7 +97,7 @@
   },
   "page_coverage": {
     "pages_checked": 653,
-    "weak_page_count": 3,
+    "weak_page_count": 4,
     "weak_pages": [
       {
         "page": 3,
@@ -113,11 +113,16 @@
         "page": 6,
         "hit_ratio": 0.333,
         "sample": "communion heroes of the ass's head whose worship was objected to jews and christians the church of rome no safe guide prefatory note by"
+      },
+      {
+        "page": 574,
+        "hit_ratio": 0.333,
+        "sample": "the church of rome no safe guide or reasons to prove that no rational man who takes due care of his own eternal salvation"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 31142,
+    "dense_windows_checked": 31217,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
@@ -131,14 +136,6 @@
       {
         "page": 10,
         "sample": "to the reader reader the treatise entitled fiat lux which thou wilt find examined"
-      },
-      {
-        "page": 14,
-        "sample": "them being not in those days in rerum natura way of handling religion he"
-      },
-      {
-        "page": 31,
-        "sample": "are not now in rerum natura knowing what will ensue to their disadvantage on"
       },
       {
         "page": 36,
@@ -190,7 +187,7 @@
       },
       {
         "page": 150,
-        "sample": "that ever had real subsistence in rerum natura besides who appointed them to be"
+        "sample": "he forbids them to make and he en forceth his command upon them from"
       },
       {
         "page": 169,
@@ -223,6 +220,10 @@
       {
         "page": 209,
         "sample": "and the multitude of them scattered abroad they were presently divided again and again"
+      },
+      {
+        "page": 223,
+        "sample": "times for quid ego verba audiam facta cum video your protestation comes too late"
       },
       {
         "page": 234,
@@ -279,6 +280,10 @@
       {
         "page": 358,
         "sample": "of these your crying out the church the church the church cannot err makes"
+      },
+      {
+        "page": 362,
+        "sample": "your church to have been subject unuto in point of faith manners and worship"
       }
     ]
   },
@@ -332,7 +337,7 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1377,
+    "paragraphs_checked": 1376,
     "split_candidate_count": 0,
     "split_candidates": [],
     "structural_start_exclusions": 147,
@@ -409,7 +414,7 @@
       },
       {
         "file": "EPUB/ch033.xhtml",
-        "text": "Do you think it so easy for you, \" Cornicum oculos, configere,\" as Cicero tells us an attorney, one Cn. Flavius, thought to do, in going beyond all that the great lawyers had done before him, Orat. pro Muraena , 11. We cannot yet be persuaded that you are so g"
+        "text": "Do you think it so easy for you, \" Cornicum oculos, configere ,\" as Cicero tells us an attorney, one Cn. Flavius, thought to do, in going beyond all that the great lawyers had done before him, Orat. pro Muraena , 11. We cannot yet be persuaded that you are so "
       },
       {
         "file": "EPUB/ch041.xhtml",
@@ -432,7 +437,7 @@
       },
       {
         "file": "EPUB/ch033.xhtml",
-        "text": "30. And he hath done well to record them, that they might be preserved \" in perpetuam rei memoriam ,\" that we might learn what your great father exercised himself about, —"
+        "text": "30. And he hath done well to record them, that they might be preserved \"in perpetuam rei memoriam,\" that we might learn what your great father exercised himself about, —"
       },
       {
         "file": "EPUB/ch033.xhtml",
@@ -516,11 +521,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch057.xhtml#p1497",
+            "location": "EPUB/ch057.xhtml#p1496",
             "context": "[1.] All believers are commanded themselves to examine and try all false teachers, prophets, and spirits that are not of God, doctrines subverting the faith, and endangering the souls"
           },
           {
-            "location": "EPUB/ch060.xhtml#p1605",
+            "location": "EPUB/ch060.xhtml#p1604",
             "context": "[1.] Let the king and parliament secure the protestant religion, as it is the public interest of the nation, against all attempts of the Papacy for its destruction, with proper laws, a"
           }
         ]
@@ -546,11 +551,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch057.xhtml#p1498",
+            "location": "EPUB/ch057.xhtml#p1497",
             "context": "[2.] They are directed unto the way, means, and rule whereby they must make this trial, and come unto the final determination in their own minds, Isaiah 8:20; 2 Peter 1:19; 2 Timothy 3"
           },
           {
-            "location": "EPUB/ch060.xhtml#p1606",
+            "location": "EPUB/ch060.xhtml#p1605",
             "context": "[2.] Let the wisdom and power of the nation, in the supreme and subordinate magistrates, be exerted in the rule of all persons and causes, civil and criminal, by one and the same law o"
           }
         ]
@@ -697,14 +702,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 4240,
-    "epub_latin_word_count": 4282,
-    "epub_tagged_latin_word_count": 2541,
-    "pdf_latin_unique_words": 2126,
-    "epub_latin_unique_words": 2138,
-    "epub_tagged_unique_words": 1518,
-    "latin_word_coverage_ratio": 0.9967,
-    "latin_tagging_ratio": 0.5934,
+    "pdf_latin_word_count": 3526,
+    "epub_latin_word_count": 3536,
+    "epub_tagged_latin_word_count": 2370,
+    "pdf_latin_unique_words": 1965,
+    "epub_latin_unique_words": 1969,
+    "epub_tagged_unique_words": 1447,
+    "latin_word_coverage_ratio": 0.9966,
+    "latin_tagging_ratio": 0.6702,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -718,34 +723,9 @@
         "tagged": 0
       },
       {
-        "word": "dissent",
-        "epub": 24,
-        "tagged": 0
-      },
-      {
-        "word": "emperor",
-        "epub": 23,
-        "tagged": 0
-      },
-      {
-        "word": "pleas",
-        "epub": 22,
-        "tagged": 0
-      },
-      {
-        "word": "ago",
-        "epub": 21,
-        "tagged": 0
-      },
-      {
-        "word": "adhere",
-        "epub": 20,
-        "tagged": 0
-      },
-      {
         "word": "anno",
         "epub": 22,
-        "tagged": 5
+        "tagged": 4
       },
       {
         "word": "credo",
@@ -758,58 +738,13 @@
         "tagged": 0
       },
       {
-        "word": "dream",
-        "epub": 14,
-        "tagged": 0
-      },
-      {
-        "word": "tract",
-        "epub": 14,
-        "tagged": 0
-      },
-      {
         "word": "baronius",
         "epub": 18,
         "tagged": 4
       },
       {
-        "word": "successor",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
-        "word": "nowhere",
-        "epub": 13,
-        "tagged": 0
-      },
-      {
-        "word": "iii",
-        "epub": 13,
-        "tagged": 1
-      },
-      {
-        "word": "insinuate",
-        "epub": 12,
-        "tagged": 0
-      },
-      {
         "word": "aen",
         "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "vii",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "forego",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "door",
-        "epub": 10,
         "tagged": 0
       },
       {
@@ -818,42 +753,107 @@
         "tagged": 0
       },
       {
-        "word": "thomas",
-        "epub": 11,
-        "tagged": 1
-      },
-      {
         "word": "claudius",
         "epub": 11,
         "tagged": 1
       },
       {
-        "word": "viii",
+        "word": "orator",
         "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "delegate",
+        "epub": 9,
+        "tagged": 0
+      },
+      {
+        "word": "fugatius",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "damianus",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "misdemeanor",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "alexandria",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "epiphanius",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "africa",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "fate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "chancellor",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "lactantius",
+        "epub": 7,
+        "tagged": 1
+      },
+      {
+        "word": "arimathea",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "exterior",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "prevaricate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "exterminate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "beda",
+        "epub": 5,
         "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 312,
-    "missing_latin_clause_count": 2,
+    "latin_clauses_checked": 293,
+    "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
       {
         "page": 259,
-        "word_count": 24,
-        "sample": "deos suos venerabantur vel pannum rubrum in hastam elevatum quod narratur de"
-      },
-      {
-        "page": 520,
-        "word_count": 5,
-        "sample": "in rerum natura is as"
+        "word_count": 12,
+        "sample": "lappis vel viva animalia ut quondam aegyptii quam eorum qui frustum panis"
       }
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 694,
-    "translated_latin_runs_count": 338,
-    "latin_translation_ratio": 0.487,
+    "tagged_latin_runs_count": 659,
+    "translated_latin_runs_count": 343,
+    "latin_translation_ratio": 0.5205,
     "untranslated_latin_samples": [
       {
         "phrase": "ultima Papae"
@@ -877,9 +877,6 @@
         "phrase": "Hor, ad Pis"
       },
       {
-        "phrase": "Ephesus, Smyrna, Laodicea, Alexandria"
-      },
-      {
         "phrase": "Erugo mera,\" [Hor"
       },
       {
@@ -895,10 +892,7 @@
         "phrase": "quaesiveris extra"
       },
       {
-        "phrase": "probatum est"
-      },
-      {
-        "phrase": "An a vobis verbum Dei"
+        "phrase": "An a vobis verbum"
       },
       {
         "phrase": "an ad vos solos"
@@ -914,6 +908,12 @@
       },
       {
         "phrase": "verbo venia"
+      },
+      {
+        "phrase": "Quod antiquissimum id verissimum"
+      },
+      {
+        "phrase": "Nauclerus, Baronius"
       }
     ]
   },

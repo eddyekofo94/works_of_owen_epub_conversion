@@ -201,11 +201,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-30T01:01:38.948164+00:00
-**Status:** PASS (0 warnings)
+**Last run:** 2026-06-30T16:26:30.469688+00:00
+**Status:** WARN (7 warnings)
 
 Reports:
 - `volume_10_text_integrity.json`
@@ -215,11 +216,11 @@ Reports:
 |-------|--------|
 | PDF pages | 828 |
 | EPUB text files | 105 |
-| EPUB paragraphs/headings | 3315 |
-| Approximate PDF-to-EPUB word coverage | 0.9993 |
-| Weak page matches | 2 |
-| Dense source windows checked | 35209 |
-| Missing dense source-window pages | 0 |
+| EPUB paragraphs/headings | 3299 |
+| Approximate PDF-to-EPUB word coverage | 0.9984 |
+| Weak page matches | 5 |
+| Dense source windows checked | 35125 |
+| Missing dense source-window pages | 1 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 776 |
@@ -229,13 +230,13 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 188 |
+| Structural starts excluded from split warnings | 189 |
 | Short fragments | 33 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 2 |
+| Suspicious large-number starts | 5 |
 | Roman heading candidates | 1 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
@@ -250,6 +251,16 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
+
+Warnings requiring triage:
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

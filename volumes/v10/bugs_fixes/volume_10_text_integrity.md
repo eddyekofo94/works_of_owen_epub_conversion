@@ -1,20 +1,20 @@
 # Text Integrity Audit: Volume 10
 
-- Status: **PASS**
-- Warnings: 0
+- Status: **WARN**
+- Warnings: 7
 - PDF pages: 828
 - EPUB text files: 105
-- EPUB paragraphs/headings: 3315
+- EPUB paragraphs/headings: 3299
 
 ## Coverage
 
 - PDF content tokens: 262672
-- EPUB content tokens: 263548
-- Approximate PDF-to-EPUB coverage ratio: 0.9993
+- EPUB content tokens: 263166
+- Approximate PDF-to-EPUB coverage ratio: 0.9984
 - Pages checked: 807
-- Weak page matches: 2
-- Dense source windows checked: 35209
-- Missing dense source-window pages: 0
+- Weak page matches: 5
+- Dense source windows checked: 35125
+- Missing dense source-window pages: 1
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 776
@@ -26,15 +26,15 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2697
+- Body paragraphs checked: 2696
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 188
+- Structural starts excluded from split warnings: 189
 - Short fragments: 33
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 2
+- Suspicious large-number starts: 5
 - Roman heading candidates: 1
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
@@ -60,15 +60,29 @@
 ## Latin
 
 - PDF Latin words: 1417
-- EPUB Latin words: 1418
-- EPUB Tagged Latin words: 858
-- Latin word coverage ratio: 0.9958
-- Latin word tagging ratio: 0.6051
+- EPUB Latin words: 1412
+- EPUB Tagged Latin words: 843
+- Latin word coverage ratio: 0.9915
+- Latin word tagging ratio: 0.597
 - Latin clauses checked: 95
-- Missing Latin clauses: 0
-- Tagged Latin runs checked: 279
-- Translated Latin runs: 166
-- Latin translation ratio: 0.595
+- Missing Latin clauses: 1
+- Tagged Latin runs checked: 270
+- Translated Latin runs: 156
+- Latin translation ratio: 0.5778
+
+## Warnings
+
+- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
+
+## Missing Dense Source Windows
+
+- page: 21; sample: differences we all at this day grieve to behold tantum religio potuit suadere malorum
 
 ## Inline Structural Marker Candidates
 
@@ -76,7 +90,10 @@
 
 ## Suspicious Large-Number Starts
 
+- file: EPUB/ch013.xhtml; text: 36. To abide argueth a continued, uninterrupted act.
+- file: EPUB/ch014.xhtml; text: 96. All which assertions, how contrary they are to the express word of God, I shall now demonstrate.
 - file: EPUB/ch058.xhtml; text: 13. [A.D. 350]: —
+- file: EPUB/ch084.xhtml; text: 117. And again, Aristotle says, "It is a very strong proof, if all shall agree in what we shall say." And in that observation another author concurs: "The things that are commonly agreed on are worthy of credit." And her
 - file: EPUB/ch085.xhtml; text: 389 It remains, then, that we should now consider, in the third place, what testimony God has given, and is still giving, to this essential attribute of his in the works of providence. This Paul takes notice of, Romans 1
 
 ## Roman Heading Candidates
@@ -88,13 +105,13 @@
 - file: EPUB/ch002.xhtml; text: JOHN WHITE
 - file: EPUB/ch004.xhtml; text: TO THE CHRISTIAN READER.
 - file: EPUB/ch018.xhtml; text: Τῷ Θεῷ ἀριστομεγίστῳ δόξα .
+- file: EPUB/ch021.xhtml; text: 1 . Of the work;
 - file: EPUB/ch022.xhtml; text: TO THE READER.
 - file: EPUB/ch022.xhtml; text: READER,
 - file: EPUB/ch027.xhtml; text: Whence he saith,
 - file: EPUB/ch030.xhtml; text: VI.
 - file: EPUB/ch048.xhtml; text: Arg. 15.
 - file: EPUB/ch053.xhtml; text: Where, —
-- file: EPUB/ch057.xhtml; text: Universalists.
 
 ## Repeated Windows
 
@@ -122,29 +139,33 @@
 
 ## Untagged Latin Word Samples
 
+- word: ejusdem; epub: 17; tagged: 0
+- word: tantidem; epub: 12; tagged: 0
 - word: mediate; epub: 3; tagged: 0
 - word: apella; epub: 4; tagged: 1
-- word: intermediate; epub: 3; tagged: 0
 - word: clamor; epub: 3; tagged: 0
 - word: rumor; epub: 3; tagged: 0
 - word: expiate; epub: 3; tagged: 0
 - word: diatriba; epub: 3; tagged: 0
 - word: suetonius; epub: 3; tagged: 0
 - word: scotus; epub: 4; tagged: 1
-- word: francis; epub: 3; tagged: 0
+
+## Missing Latin Clauses
+
+- page: 170; word_count: 5; sample: salus electorum sanguis jesu or
 
 ## Untranslated Latin Samples
 
+- phrase: Junius, ‡ Arminius
 - phrase: traharis; Per tamen adversi gradieris cornua Tauri
 - phrase: ora Leonis
 - phrase: tam astutum esse
 - phrase: materiam vestris, qui scribitis, sequam Viribus; et versate diu, quid
 - phrase: Judaeus Apella
 - phrase: pro mundo contento
+- phrase: ultimate, or intermediate
 - phrase: finis convertuntur
 - phrase: copia verborum
-- phrase: hic responsor
-- phrase: Amyraldus, ‡ Camero
 
 ## Limits
 

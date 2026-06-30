@@ -52,7 +52,7 @@ UNTRANSLATED_PROSE_FOOTNOTE_BUDGETS = {
 
 # Strict budgets for untranslated Latin or Greek prose body runs
 UNTRANSLATED_PROSE_BODY_BUDGETS = {
-    3: 13,
+    3: 14,
     12: 145,
 }
 

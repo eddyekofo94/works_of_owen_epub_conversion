@@ -874,10 +874,12 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-26T16:43:19.365918+00:00
+**Last run:** 2026-06-30T16:37:36.504505+00:00
 **EPUB:** `volumes/v3/output/volume_3.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -1068,10 +1070,12 @@ Validation:
 
 
 
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-26T16:52:07.335278+00:00
+**Last run:** 2026-06-30T16:38:20.058033+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -1085,7 +1089,7 @@ Reports:
 | EPUB paragraphs/headings | 2535 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 36457 |
+| Dense source windows checked | 36494 |
 | Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |

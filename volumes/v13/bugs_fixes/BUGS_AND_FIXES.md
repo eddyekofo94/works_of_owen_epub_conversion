@@ -161,11 +161,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-11T23:44:52.540349+00:00
-**Status:** WARN (6 warnings)
+**Last run:** 2026-06-30T16:29:12.500701+00:00
+**Status:** WARN (8 warnings)
 
 Reports:
 - `volume_13_text_integrity.json`
@@ -175,9 +176,9 @@ Reports:
 |-------|--------|
 | PDF pages | 749 |
 | EPUB text files | 84 |
-| EPUB paragraphs/headings | 2253 |
-| Approximate PDF-to-EPUB word coverage | 0.9994 |
-| Weak page matches | 3 |
+| EPUB paragraphs/headings | 2220 |
+| Approximate PDF-to-EPUB word coverage | 0.9989 |
+| Weak page matches | 4 |
 | Dense source windows checked | 33423 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 0 |
@@ -190,7 +191,7 @@ Reports:
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 111 |
-| Short fragments | 37 |
+| Short fragments | 32 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
 | Reference continuation splits | 0 |
@@ -201,14 +202,14 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 15 |
 | PDF enumerator markers | 80 |
-| EPUB enumerator markers | 92 |
+| EPUB enumerator markers | 90 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 2 |
-| PDF Greek words / EPUB Greek words | 1038 / 1058 |
-| Greek word coverage ratio | 1.0 |
+| PDF Greek words / EPUB Greek words | 1038 / 1030 |
+| Greek word coverage ratio | 0.9744 |
 | PDF Hebrew words / EPUB Hebrew words | 12 / 12 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 0 |
+| Missing Greek clauses | 1 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
@@ -219,6 +220,8 @@ Warnings requiring triage:
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

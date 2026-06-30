@@ -227,11 +227,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-19T20:34:55.433281+00:00
-**Status:** WARN (3 warnings)
+**Last run:** 2026-06-30T16:30:46.105045+00:00
+**Status:** WARN (5 warnings)
 
 Reports:
 - `volume_15_text_integrity.json`
@@ -241,11 +242,11 @@ Reports:
 |-------|--------|
 | PDF pages | 683 |
 | EPUB text files | 107 |
-| EPUB paragraphs/headings | 2416 |
+| EPUB paragraphs/headings | 2414 |
 | Approximate PDF-to-EPUB word coverage | 0.9993 |
 | Weak page matches | 3 |
-| Dense source windows checked | 29353 |
-| Missing dense source-window pages | 0 |
+| Dense source windows checked | 29388 |
+| Missing dense source-window pages | 1 |
 | Front CONTENTS pages checked | 4 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 659 |
@@ -253,7 +254,7 @@ Reports:
 | Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 615 |
 | Bottom-of-page windows skipped as unstable | 0 |
-| Missing bottom-of-page body windows | 0 |
+| Missing bottom-of-page body windows | 1 |
 | Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 243 |
 | Short fragments | 102 |
@@ -280,6 +281,8 @@ Reports:
 Warnings requiring triage:
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 

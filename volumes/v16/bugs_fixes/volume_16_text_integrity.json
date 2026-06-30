@@ -2,13 +2,17 @@
   "volume": "16",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/input/owen-v16.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v16/output/volume_16.epub",
-  "generated_at": "2026-06-22T23:09:51.964427+00:00",
+  "generated_at": "2026-06-30T16:31:24.126952+00:00",
   "status": "warn",
-  "warning_count": 1,
+  "warning_count": 2,
   "warnings": [
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
     }
   ],
   "pdf": {
@@ -24,7 +28,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 217248,
-    "epub_content_tokens": 219113,
+    "epub_content_tokens": 218983,
     "coverage_ratio": 0.9994,
     "missing_word_samples": [
       {
@@ -39,21 +43,6 @@
       }
     ],
     "excess_word_samples": [
-      {
-        "word": "translated",
-        "pdf": 14,
-        "epub": 55
-      },
-      {
-        "word": "polyglot",
-        "pdf": 0,
-        "epub": 18
-      },
-      {
-        "word": "montanus",
-        "pdf": 12,
-        "epub": 23
-      },
       {
         "word": "digital",
         "pdf": 0,
@@ -92,16 +81,12 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 28208,
+    "dense_windows_checked": 28875,
     "missing_dense_window_pages": 40,
     "missing_dense_windows": [
       {
         "page": 10,
         "sample": "the true nature of gospel church and its government the second part wherein these"
-      },
-      {
-        "page": 16,
-        "sample": "chimera of some men's brains it is not in rerum natura for if catholic"
       },
       {
         "page": 19,
@@ -125,7 +110,7 @@
       },
       {
         "page": 34,
-        "sample": "for themselves but possession which being malae fidei ill obtained and ill continued will"
+        "sample": "things as to deny that the members of the church ought to be visibly"
       },
       {
         "page": 43,
@@ -254,6 +239,10 @@
       {
         "page": 244,
         "sample": "the catholic church with all church communion whatever for some churches especially that of"
+      },
+      {
+        "page": 250,
+        "sample": "doth consist and in the due observation whereof all that church order which the"
       }
     ]
   },
@@ -476,8 +465,13 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 0,
-    "inline_structural_candidates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "He is a great stranger unto these things who knoweth not that among the Greeks, especially the Athenians, from whom the use of this word is borrowed or taken, χειροτονία was an act ὅλης τῆς ἐκκλησίας \"of the whole assembly\" of the people in the choice of their"
+      }
+    ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -705,14 +699,6 @@
       "count": 3
     },
     {
-      "phrase": "the prolegomena and appendix to the biblia polyglotta translated polyglot",
-      "count": 3
-    },
-    {
-      "phrase": "prolegomena and appendix to the biblia polyglotta translated polyglot bible",
-      "count": 3
-    },
-    {
       "phrase": "readings of ben asher and ben naphtali of the eastern",
       "count": 3
     },
@@ -726,6 +712,14 @@
     },
     {
       "phrase": "is hid from the lord and my judgment is passed",
+      "count": 3
+    },
+    {
+      "phrase": "hid from the lord and my judgment is passed over",
+      "count": 3
+    },
+    {
+      "phrase": "from the lord and my judgment is passed over from",
       "count": 3
     }
   ],
@@ -752,24 +746,24 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 2673,
-    "epub_latin_word_count": 2730,
-    "epub_tagged_latin_word_count": 1742,
-    "pdf_latin_unique_words": 1382,
-    "epub_latin_unique_words": 1385,
-    "epub_tagged_unique_words": 1023,
+    "pdf_latin_word_count": 2606,
+    "epub_latin_word_count": 2624,
+    "epub_tagged_latin_word_count": 1730,
+    "pdf_latin_unique_words": 1365,
+    "epub_latin_unique_words": 1368,
+    "epub_tagged_unique_words": 1018,
     "latin_word_coverage_ratio": 0.9996,
-    "latin_tagging_ratio": 0.6381,
+    "latin_tagging_ratio": 0.6593,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
         "word": "prolegomena",
-        "epub": 49,
+        "epub": 48,
         "tagged": 1
       },
       {
         "word": "morinus",
-        "epub": 51,
+        "epub": 50,
         "tagged": 3
       },
       {
@@ -779,18 +773,8 @@
       },
       {
         "word": "elias",
-        "epub": 30,
-        "tagged": 9
-      },
-      {
-        "word": "grotius",
         "epub": 23,
-        "tagged": 4
-      },
-      {
-        "word": "arias",
-        "epub": 31,
-        "tagged": 14
+        "tagged": 9
       },
       {
         "word": "tiberias",
@@ -838,17 +822,7 @@
         "tagged": 1
       },
       {
-        "word": "thomas",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
         "word": "delegate",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "professor",
         "epub": 6,
         "tagged": 0
       },
@@ -886,6 +860,26 @@
         "word": "alexandria",
         "epub": 4,
         "tagged": 0
+      },
+      {
+        "word": "matthias",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "eustathius",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "verbum",
+        "epub": 5,
+        "tagged": 1
+      },
+      {
+        "word": "verbo",
+        "epub": 4,
+        "tagged": 0
       }
     ]
   },
@@ -896,8 +890,8 @@
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 506,
-    "translated_latin_runs_count": 286,
-    "latin_translation_ratio": 0.5652,
+    "translated_latin_runs_count": 287,
+    "latin_translation_ratio": 0.5672,
     "untranslated_latin_samples": [
       {
         "phrase": "praeceptis Dominicis et Deum"

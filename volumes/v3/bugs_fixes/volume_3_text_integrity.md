@@ -9,11 +9,11 @@
 ## Coverage
 
 - PDF content tokens: 267300
-- EPUB content tokens: 276298
+- EPUB content tokens: 276284
 - Approximate PDF-to-EPUB coverage ratio: 0.9997
 - Pages checked: 758
 - Weak page matches: 0
-- Dense source windows checked: 36457
+- Dense source windows checked: 36494
 - Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 1614
-- EPUB Latin words: 1689
-- EPUB Tagged Latin words: 1317
+- PDF Latin words: 1575
+- EPUB Latin words: 1647
+- EPUB Tagged Latin words: 1304
 - Latin word coverage ratio: 0.9994
-- Latin word tagging ratio: 0.7798
-- Latin clauses checked: 142
+- Latin word tagging ratio: 0.7917
+- Latin clauses checked: 140
 - Missing Latin clauses: 0
-- Tagged Latin runs checked: 289
-- Translated Latin runs: 242
-- Latin translation ratio: 0.8374
+- Tagged Latin runs checked: 285
+- Translated Latin runs: 240
+- Latin translation ratio: 0.8421
 
 ## Short Fragments
 
@@ -112,13 +112,13 @@
 - word: metaphor; epub: 10; tagged: 0
 - word: operator; epub: 9; tagged: 0
 - word: incarnate; epub: 9; tagged: 0
-- word: pelagius; epub: 9; tagged: 0
-- word: crellius; epub: 6; tagged: 0
 - word: balaam; epub: 6; tagged: 0
 - word: denominate; epub: 6; tagged: 0
-- word: ultimate; epub: 6; tagged: 0
 - word: nicodemus; epub: 5; tagged: 0
 - word: afflatus; epub: 5; tagged: 0
+- word: commensurate; epub: 4; tagged: 0
+- word: didymus; epub: 4; tagged: 0
+- word: sancto; epub: 5; tagged: 1
 
 ## Untranslated Latin Samples
 

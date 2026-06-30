@@ -12,5 +12,19 @@
     "Invalid Bible References": [],
     "List Formatting Inconsistencies": [],
     "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {
+    "Mixed-Case Capitalization Errors": [
+      "ChurchPeace"
+    ],
+    "Unmatched Quotation Marks": [
+      "We are so parts of him, of his mystical body, that we and he become thereby, as it were, one Christ: \"For as the body is one",
+      "Obscurius dixerunt prophetae de Christo",
+      "l. That they were the only church of Christ",
+      "1 . There is no necessity; for,\" saith he, \"he confesses the commonwealth",
+      "SIR, I HAVE considered the discourses sent me",
+      "I rest your most; obliged servant in Jesus Christ, our common Master",
+      "Chapter 4:7, \"We have this treasure"
+    ]
   }
 }

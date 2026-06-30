@@ -2,10 +2,15 @@
   "volume": "11",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/input/owen-v11.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-06-26T22:23:39.315366+00:00",
-  "status": "pass",
-  "warning_count": 0,
-  "warnings": [],
+  "generated_at": "2026-06-30T16:27:27.963818+00:00",
+  "status": "warn",
+  "warning_count": 1,
+  "warnings": [
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    }
+  ],
   "pdf": {
     "page_count": 815,
     "skipped_detected": [
@@ -32,7 +37,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 296711,
-    "epub_content_tokens": 298649,
+    "epub_content_tokens": 298492,
     "coverage_ratio": 0.9996,
     "missing_word_samples": [
       {
@@ -51,16 +56,6 @@
         "word": "psalms",
         "pdf": 1,
         "epub": 56
-      },
-      {
-        "word": "translated",
-        "pdf": 12,
-        "epub": 34
-      },
-      {
-        "word": "translation",
-        "pdf": 11,
-        "epub": 32
       },
       {
         "word": "digital",
@@ -100,8 +95,8 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32243,
-    "missing_dense_window_pages": 15,
+    "dense_windows_checked": 32433,
+    "missing_dense_window_pages": 20,
     "missing_dense_windows": [
       {
         "page": 127,
@@ -162,6 +157,26 @@
       {
         "page": 147,
         "sample": "glorious attributes there is an actual permanency or sameness hebrews nothing in him is"
+      },
+      {
+        "page": 148,
+        "sample": "notwithstanding the seeming contrary engagement of romans from what proportion or analogy this argument"
+      },
+      {
+        "page": 150,
+        "sample": "shall hereafter be fully declared hebrews samuel peter kings corinthians matthew mark kings hosea"
+      },
+      {
+        "page": 151,
+        "sample": "are incompatible with truth or grace psalm 34-36 job kings ezekiel titus but if"
+      },
+      {
+        "page": 152,
+        "sample": "account in love without dissimulation romans doubtless the disciples of christ were bound to"
+      },
+      {
+        "page": 153,
+        "sample": "be deceived the works of the flesh being manifest galatians and he that worketh"
       }
     ]
   },
@@ -262,8 +277,19 @@
   },
   "paragraph_integrity": {
     "paragraphs_checked": 2125,
-    "split_candidate_count": 0,
-    "split_candidates": [],
+    "split_candidate_count": 2,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido who, spurned by faithless Lycambes [attacked his enemies]\"] gener, Aut acer hostis Bupalo .\" 3",
+        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "l never promote the praise nor adorn the truth of God. For what remains concerning him, \" Do illi ingenium, do eloquentiam et industriam ; fidem et veritatem utinam coluisset .\" \"]",
+        "next": "The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t"
+      }
+    ],
     "structural_start_exclusions": 272,
     "short_fragment_count": 29,
     "short_fragments": [
@@ -559,14 +585,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 3955,
-    "epub_latin_word_count": 3962,
-    "epub_tagged_latin_word_count": 3042,
-    "pdf_latin_unique_words": 1825,
-    "epub_latin_unique_words": 1827,
-    "epub_tagged_unique_words": 1447,
-    "latin_word_coverage_ratio": 0.9985,
-    "latin_tagging_ratio": 0.7678,
+    "pdf_latin_word_count": 3856,
+    "epub_latin_word_count": 3860,
+    "epub_tagged_latin_word_count": 3023,
+    "pdf_latin_unique_words": 1801,
+    "epub_latin_unique_words": 1801,
+    "epub_tagged_unique_words": 1439,
+    "latin_word_coverage_ratio": 0.9984,
+    "latin_tagging_ratio": 0.7832,
     "missing_latin_word_samples": [
       {
         "word": "semi",
@@ -575,11 +601,6 @@
       }
     ],
     "untagged_latin_word_samples": [
-      {
-        "word": "ergo",
-        "epub": 25,
-        "tagged": 5
-      },
       {
         "word": "perpetrate",
         "epub": 10,
@@ -596,19 +617,9 @@
         "tagged": 0
       },
       {
-        "word": "predestinate",
-        "epub": 8,
-        "tagged": 0
-      },
-      {
         "word": "co-operate",
         "epub": 8,
         "tagged": 0
-      },
-      {
-        "word": "pelagius",
-        "epub": 8,
-        "tagged": 2
       },
       {
         "word": "alexandria",
@@ -641,27 +652,12 @@
         "tagged": 1
       },
       {
-        "word": "arminius",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
         "word": "phinehas",
         "epub": 5,
         "tagged": 0
       },
       {
-        "word": "socinus",
-        "epub": 6,
-        "tagged": 1
-      },
-      {
         "word": "proviso",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
-        "word": "facile",
         "epub": 5,
         "tagged": 0
       },
@@ -671,19 +667,9 @@
         "tagged": 0
       },
       {
-        "word": "professor",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
         "word": "clamor",
         "epub": 4,
         "tagged": 0
-      },
-      {
-        "word": "grotius",
-        "epub": 5,
-        "tagged": 1
       },
       {
         "word": "geneva",
@@ -699,18 +685,58 @@
         "word": "fulgentius",
         "epub": 5,
         "tagged": 1
+      },
+      {
+        "word": "behavior",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "deliberate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "necessitate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "abba",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "varro",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "manere",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "apostolus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "alio",
+        "epub": 3,
+        "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 387,
+    "latin_clauses_checked": 383,
     "missing_latin_clause_count": 0,
     "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
     "tagged_latin_runs_count": 776,
-    "translated_latin_runs_count": 269,
-    "latin_translation_ratio": 0.3466,
+    "translated_latin_runs_count": 272,
+    "latin_translation_ratio": 0.3505,
     "untranslated_latin_samples": [
       {
         "phrase": "primi, Deus necessario"
@@ -802,7 +828,30 @@
       14,
       15,
       16,
-      17
+      17,
+      23,
+      27,
+      40,
+      46,
+      100
+    ],
+    "bottom_of_page_text_loss": [
+      48
+    ],
+    "top_of_page_text_loss": [
+      40
+    ],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "ilochus] who, spurned by faithless Lycambes [attacked his enemies]\"] gener, Aut acer hostis Bupalo .\" [Translated: Translation: \"a fierce enemy to Bupalus\" (Horace, Epodes 6.14)] 3",
+        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "nslation: \"I grant him genius, I grant him eloquence and industry\"] fidem et veritatem utinam coluisset .\" [Translated: Translation: \"would that he had cultivated [better things]\"]",
+        "next": "The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t"
+      }
     ],
     "ignored_warnings": [
       "weak_pages",

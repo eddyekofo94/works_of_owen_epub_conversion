@@ -1,18 +1,18 @@
 # Text Integrity Audit: Volume 13
 
 - Status: **WARN**
-- Warnings: 6
+- Warnings: 8
 - PDF pages: 749
 - EPUB text files: 84
-- EPUB paragraphs/headings: 2253
+- EPUB paragraphs/headings: 2220
 
 ## Coverage
 
 - PDF content tokens: 247367
-- EPUB content tokens: 250552
-- Approximate PDF-to-EPUB coverage ratio: 0.9994
+- EPUB content tokens: 249604
+- Approximate PDF-to-EPUB coverage ratio: 0.9989
 - Pages checked: 725
-- Weak page matches: 3
+- Weak page matches: 4
 - Dense source windows checked: 33423
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 0
@@ -26,10 +26,10 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 1810
+- Body paragraphs checked: 1782
 - Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 111
-- Short fragments: 37
+- Short fragments: 32
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 0
 - Reference continuation splits: 0
@@ -40,35 +40,35 @@
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 15
 - PDF enumerator markers: 80
-- EPUB enumerator markers: 92
+- EPUB enumerator markers: 90
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 2
 
 ## Greek / Hebrew
 
 - PDF Greek words: 1038
-- EPUB Greek words: 1058
-- Greek word coverage ratio: 1.0
+- EPUB Greek words: 1030
+- Greek word coverage ratio: 0.9744
 - PDF Hebrew words: 12
 - EPUB Hebrew words: 12
 - Hebrew word coverage ratio: 1.0
 - Greek clauses checked: 59
-- Missing Greek clauses: 0
+- Missing Greek clauses: 1
 - Hebrew clauses checked: 0
 - Missing Hebrew clauses: 0
 
 ## Latin
 
-- PDF Latin words: 3026
-- EPUB Latin words: 3101
-- EPUB Tagged Latin words: 1651
-- Latin word coverage ratio: 0.9954
-- Latin word tagging ratio: 0.5324
-- Latin clauses checked: 208
-- Missing Latin clauses: 0
-- Tagged Latin runs checked: 409
-- Translated Latin runs: 173
-- Latin translation ratio: 0.423
+- PDF Latin words: 2127
+- EPUB Latin words: 2055
+- EPUB Tagged Latin words: 1427
+- Latin word coverage ratio: 0.9558
+- Latin word tagging ratio: 0.6944
+- Latin clauses checked: 197
+- Missing Latin clauses: 11
+- Tagged Latin runs checked: 379
+- Translated Latin runs: 176
+- Latin translation ratio: 0.4644
 
 ## Warnings
 
@@ -78,6 +78,8 @@
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
+- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 ## Missing Dense Source Windows
 
@@ -111,13 +113,13 @@
 - file: EPUB/ch002.xhtml; text: M AY 11, 1644.
 - file: EPUB/ch002.xhtml; text: JOSEPH CARYL.
 - file: EPUB/ch003.xhtml; text: John Owen
-- file: EPUB/ch007.xhtml; text: and again,
 - file: EPUB/ch007.xhtml; text: Whence I conclude, —
-- file: EPUB/ch011.xhtml; text: to which add that of the apostle,
 - file: EPUB/ch011.xhtml; text: Whence.it appears, that, —
 - file: EPUB/ch012.xhtml; text: Τῷ Θεῷ ἀριστομεγίστῳ δόζα .
 - file: EPUB/ch015.xhtml; text: To The Reader
 - file: EPUB/ch016.xhtml; text: 2 Thessalonians 3:1,2,
+- file: EPUB/ch016.xhtml; text: 1 Timothy 1:16-18,
+- file: EPUB/ch016.xhtml; text: Song of Solomon 6:4,
 
 ## Enumerator Sequence Candidates
 
@@ -145,29 +147,46 @@
 
 ## Excess Word Samples
 
-- word: ii; pdf: 15; epub: 31
 - word: prefatory; pdf: 14; epub: 30
-- word: volume; pdf: 5; epub: 18
 - word: editor; pdf: 0; epub: 12
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 0; epub: 9
+- word: volume; pdf: 5; epub: 13
 - word: historical; pdf: 0; epub: 8
-- word: citizens; pdf: 8; epub: 15
-- word: bill; pdf: 6; epub: 13
 - word: modern; pdf: 5; epub: 12
+- word: greek; pdf: 2; epub: 9
+- word: footnotes; pdf: 0; epub: 7
+- word: edition; pdf: 2; epub: 8
+
+## Missing Greek Clauses
+
+- page: 263; word_count: 5; sample: δουλον κυριου ου δει μαχεσθαι
 
 ## Untagged Latin Word Samples
 
-- word: magistrate; epub: 232; tagged: 1
-- word: dissent; epub: 70; tagged: 0
-- word: relate; epub: 21; tagged: 0
-- word: door; epub: 17; tagged: 0
-- word: ago; epub: 16; tagged: 0
-- word: pleas; epub: 15; tagged: 0
-- word: iii; epub: 14; tagged: 0
-- word: tract; epub: 14; tagged: 0
-- word: nowhere; epub: 14; tagged: 0
-- word: superior; epub: 15; tagged: 1
+- word: populi; epub: 8; tagged: 0
+- word: apollos; epub: 7; tagged: 0
+- word: regulate; epub: 7; tagged: 0
+- word: metropolis; epub: 6; tagged: 0
+- word: cenchrea; epub: 6; tagged: 0
+- word: judea; epub: 6; tagged: 0
+- word: prelate; epub: 5; tagged: 0
+- word: rigor; epub: 5; tagged: 0
+- word: demonstrandum; epub: 5; tagged: 0
+- word: aen; epub: 6; tagged: 1
+
+## Missing Latin Clauses
+
+- page: 389; word_count: 6; sample: christianorum merito sane illicita si illicitis
+- page: 389; word_count: 4; sample: merito damnanda si quis
+- page: 389; word_count: 5; sample: ea queritur eo titulo quo
+- page: 389; word_count: 5; sample: factionibus querela est in cujus
+- page: 389; word_count: 13; sample: aliquando convenimus hoc sumus congregati quod et dispersi hoc universi quod et
+- page: 389; word_count: 4; sample: quum probi cum boni
+- page: 389; word_count: 11; sample: cum pii cum casti congregantur non est factio dicenda sed curia
+- page: 437; word_count: 11; sample: non partum studiis agimur sed sumsimus arma consiliis inimica tuis discordia
+- page: 682; word_count: 8; sample: religione eapita quae plurimum habere videntur obscuritatis tantis
+- page: 682; word_count: 5; sample: quam ubi cogitur assensus hugo
 
 ## Untranslated Latin Samples
 
@@ -175,12 +194,12 @@
 - phrase: Sixtus Senensis
 - phrase: in causa facili
 - phrase: bonum oritur ex integris
-- phrase: prophetae de Christo quam de ecclesia: puto propterea quia
+- phrase: ecclesia: puto propterea quia
 - phrase: contra ecclesiam
-- phrase: facturos esse particulas; et de Christo non tantam
-- phrase: habituros, de ecclesia magnas
+- phrase: facturos esse particulas; et
+- phrase: Christo non tantam
+- phrase: ecclesia magnas
 - phrase: non qua itur, sed qua eundum est
-- phrase: Consuetudo sine veritate est vetustas erroris
 
 ## Limits
 

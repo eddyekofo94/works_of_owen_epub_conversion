@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 16
 
 - Status: **WARN**
-- Warnings: 1
+- Warnings: 2
 - PDF pages: 672
 - EPUB text files: 82
 - EPUB paragraphs/headings: 2726
@@ -9,11 +9,11 @@
 ## Coverage
 
 - PDF content tokens: 217248
-- EPUB content tokens: 219113
+- EPUB content tokens: 218983
 - Approximate PDF-to-EPUB coverage ratio: 0.9994
 - Pages checked: 660
 - Weak page matches: 0
-- Dense source windows checked: 28208
+- Dense source windows checked: 28875
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 1
 - Missing front CONTENTS pages: 0
@@ -31,7 +31,7 @@
 - Structural starts excluded from split warnings: 280
 - Short fragments: 24
 - Adjacent duplicate paragraphs: 0
-- Inline structural marker candidates: 0
+- Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
 - Suspicious large-number starts: 2
@@ -59,33 +59,38 @@
 
 ## Latin
 
-- PDF Latin words: 2673
-- EPUB Latin words: 2730
-- EPUB Tagged Latin words: 1742
+- PDF Latin words: 2606
+- EPUB Latin words: 2624
+- EPUB Tagged Latin words: 1730
 - Latin word coverage ratio: 0.9996
-- Latin word tagging ratio: 0.6381
+- Latin word tagging ratio: 0.6593
 - Latin clauses checked: 197
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 506
-- Translated Latin runs: 286
-- Latin translation ratio: 0.5652
+- Translated Latin runs: 287
+- Latin translation ratio: 0.5672
 
 ## Warnings
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `inline_structural_markers`: Some list or roman markers appear embedded in prose instead of starting their own paragraph
 
 ## Missing Dense Source Windows
 
 - page: 10; sample: the true nature of gospel church and its government the second part wherein these
-- page: 16; sample: chimera of some men's brains it is not in rerum natura for if catholic
 - page: 19; sample: separation is proper and inseparable adjunct thereof the apostle speaks of church member-ship corinthians
 - page: 25; sample: not be tolerated at least not approved in well governed kingdom or commonwealth of
 - page: 27; sample: covetous oppressors and the like who shall not inherit the kingdom of god corinthians
 - page: 28; sample: even deride the necessity of the same things in present church members or the
 - page: 33; sample: the things ascribed unto those who are to be esteemed the proper subject matter
-- page: 34; sample: for themselves but possession which being malae fidei ill obtained and ill continued will
+- page: 34; sample: things as to deny that the members of the church ought to be visibly
 - page: 43; sample: chapter of the formal cause of particular church the way or means whereby such
 - page: 48; sample: useful unto the ends of church edification jointly giving up themselves unto the lord
+- page: 56; sample: and originally unto with an interest in all church privileges to be actually possessed
+
+## Inline Structural Marker Candidates
+
+- file: EPUB/ch007.xhtml; text: He is a great stranger unto these things who knoweth not that among the Greeks, especially the Athenians, from whom the use of this word is borrowed or taken, χειροτονία was an act ὅλης τῆς ἐκκλησίας "of the whole assembly" of the people...
 
 ## Suspicious Large-Number Starts
 
@@ -134,9 +139,6 @@
 
 ## Excess Word Samples
 
-- word: translated; pdf: 14; epub: 55
-- word: polyglot; pdf: 0; epub: 18
-- word: montanus; pdf: 12; epub: 23
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 1; epub: 10
 - word: historical; pdf: 3; epub: 11
@@ -146,16 +148,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: prolegomena; epub: 49; tagged: 1
-- word: morinus; epub: 51; tagged: 3
+- word: prolegomena; epub: 48; tagged: 1
+- word: morinus; epub: 50; tagged: 3
 - word: cappellus; epub: 37; tagged: 3
-- word: elias; epub: 30; tagged: 9
-- word: grotius; epub: 23; tagged: 4
-- word: arias; epub: 31; tagged: 14
+- word: elias; epub: 23; tagged: 9
 - word: tiberias; epub: 16; tagged: 2
 - word: excommunicate; epub: 12; tagged: 0
 - word: masora; epub: 10; tagged: 0
 - word: buxtorfius; epub: 10; tagged: 0
+- word: barnabas; epub: 9; tagged: 0
+- word: mishna; epub: 10; tagged: 2
 
 ## Untranslated Latin Samples
 

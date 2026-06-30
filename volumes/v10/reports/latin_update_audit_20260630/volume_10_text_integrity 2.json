@@ -1,0 +1,873 @@
+{
+  "volume": "10",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/input/owen-v10.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
+  "generated_at": "2026-06-30T00:54:09.062839+00:00",
+  "status": "warn",
+  "warning_count": 2,
+  "warnings": [
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    }
+  ],
+  "pdf": {
+    "page_count": 828,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "epub": {
+    "spine_text_files": 105,
+    "paragraph_count": 3315
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 262672,
+    "epub_content_tokens": 263663,
+    "coverage_ratio": 0.9993,
+    "missing_word_samples": [],
+    "excess_word_samples": [
+      {
+        "word": "translated",
+        "pdf": 11,
+        "epub": 27
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 11,
+        "epub": 20
+      },
+      {
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
+      },
+      {
+        "word": "modern",
+        "pdf": 5,
+        "epub": 12
+      },
+      {
+        "word": "chapters",
+        "pdf": 5,
+        "epub": 12
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 3,
+        "epub": 9
+      },
+      {
+        "word": "edition",
+        "pdf": 2,
+        "epub": 8
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 807,
+    "weak_page_count": 2,
+    "weak_pages": [
+      {
+        "page": 63,
+        "hit_ratio": 0.333,
+        "sample": "unite my heart to fear thy name psalm the god in whose hand try breath is and whose are all try ways thou hast"
+      },
+      {
+        "page": 143,
+        "hit_ratio": 0.0,
+        "sample": "christ galatians he that believeth not is condemned mark without faith it is impossible to please god hebrews other foundation can no man lay"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 35016,
+    "missing_dense_window_pages": 9,
+    "missing_dense_windows": [
+      {
+        "page": 15,
+        "sample": "historical evolution of these consequences spanheim in his elenchus controversiarum ascribes the origin of"
+      },
+      {
+        "page": 18,
+        "sample": "of religion to whom the work is dedicated ed martii anno domini it is"
+      },
+      {
+        "page": 22,
+        "sample": "these are not things in quibus possimus dissentire salva pace ac charitate as austin"
+      },
+      {
+        "page": 24,
+        "sample": "in the world the chief cause take to be that which aeneas sylvius gave"
+      },
+      {
+        "page": 30,
+        "sample": "fifth his gradibus itur in coelum corrupted nature is still ready either nefariously with"
+      },
+      {
+        "page": 31,
+        "sample": "shall find how movet cornicula risum furtivis nudata coloribus seventhly they do not only"
+      },
+      {
+        "page": 174,
+        "sample": "in the preparation of the subjoined analysis which is mostly taken from it analysis"
+      },
+      {
+        "page": 192,
+        "sample": "do some stay here but his gradibus itur in coelum heaven itself is broke"
+      },
+      {
+        "page": 194,
+        "sample": "consequents be asserted movet cornicula risum furtivis nudata coloribus it hath not the least"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 822,
+    "top_windows_usable": 776,
+    "skipped_top_window_count": 7,
+    "skipped_top_windows": [
+      {
+        "page": 176,
+        "window": "by furnishing him with fullness of all gifts and graces christ had natural all-sufficient",
+        "sample": "(2.) By furnishing him with a fullness of all gifts and graces: — [1.] Christ had a natural all-sufficient perfection of his deity;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 215,
+        "window": "the actual inauguration or solemn admission of christ into his office committing all judgment",
+        "sample": "[2.] The actual inauguration or solemn admission of Christ into his office; \"committing all judgment unto the Son,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "if it be answered god bestows faith on some not on others reply is",
+        "sample": "[If it be answered], \"God bestows faith on some, not on others,\" I reply, Is this distinguishing grace purchased for those some comparatively, in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 338,
+        "window": "people of israel were certainly in all remarkable things that happened unto them typical",
+        "sample": "people of Israel were certainly, in all remarkable things that happened unto them, typical of the church of God; as the apostle at large [declares],",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 473,
+        "window": "of the truth known and professed upon any motives and inducements whatsoever which he",
+        "sample": "of the truth known and professed, upon any motives and inducements whatsoever; which he assureth [them] to be no less than a total casting off",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 540,
+        "window": "as elect who by the benefit of his death do become believers and so",
+        "sample": "as elect, who, by the benefit of his death, do become believers, and so obtain assurance that he died for them. [As] for such of those that are",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 545,
+        "window": "viii augustine de cor et grat cap per hunt mediato-rem deus ostendit eos quos",
+        "sample": "VIII. AUGUSTINE, de Cor. et Grat. cap. 40: [A.D. 420]: — \"Per hunt Mediato-rem Deus ostendit eos, quos ejus sanguine redemit, facere se ex",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 750,
+    "bottom_windows_usable": 704,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2697,
+    "split_candidate_count": 1,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "cussed, chapter twelve, where you shall find how, \"movet cornicula risum, furtivis nudata coloribus .\" [Translated: \"the little crow moves laughter, stripped of its stolen colors\"]",
+        "next": "Seventhly, They do not only claim to their new-made deity a saving power, but also affirm that he is very active and operative in the great work of saving our souls, —"
+      }
+    ],
+    "structural_start_exclusions": 189,
+    "short_fragment_count": 33,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "JOHN WHITE"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "TO THE CHRISTIAN READER."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "TO THE READER."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "READER,"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Whence he saith,"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "VI."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Arg. 15."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "Where, —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Universalists."
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Scriptural Redemption."
+      },
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "Idem, de Ingrat., cap. 9.: —"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "COGGESHALL, APRIL 25, 1648."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "May 15th, [1650.]"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "Thus far he."
+      },
+      {
+        "file": "EPUB/ch065.xhtml",
+        "text": "To all which I say, —"
+      },
+      {
+        "file": "EPUB/ch068.xhtml",
+        "text": "Of Grotius' judgment herein."
+      },
+      {
+        "file": "EPUB/ch072.xhtml",
+        "text": "Here two things may be observed: —"
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "text": "Right also is twofold: —"
+      },
+      {
+        "file": "EPUB/ch074.xhtml",
+        "text": "Much every way."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "If the second, —"
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "Dublin Castle, December 20, 1649."
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "Also, Orpheus in the hymns, —"
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "Hence, these common sayings, —"
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "And these: —"
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "— ῶ πάτερ πάρειμί σοι , etc."
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "And verse 8:"
+      },
+      {
+        "file": "EPUB/ch086.xhtml",
+        "text": "We go on to the third argument."
+      },
+      {
+        "file": "EPUB/ch089.xhtml",
+        "text": "He thus proceeds: —"
+      },
+      {
+        "file": "EPUB/ch091.xhtml",
+        "text": "Our opponent thus proceeds: —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Man's Approach to Go"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 2,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "13. [A.D. 350]: —"
+      },
+      {
+        "file": "EPUB/ch085.xhtml",
+        "text": "389 It remains, then, that we should now consider, in the third place, what testimony God has given, and is still giving, to this essential attribute of his in the works of providence. This Paul takes notice of, Romans 1"
+      }
+    ],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "V. CYRIL of Jerusalem, Cataches."
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 185,
+    "epub_marker_count": 196,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p53",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 45,
+        "epub": 46,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p56",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p588",
+            "context": "(1.) By an authoritative imposition of the office of mediator upon him:"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p640",
+            "context": "(1.) It has no place in the intention of Christ;"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 45,
+        "epub": 47,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p56",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p591",
+            "context": "(2.) By furnishing him with a fullness of all gifts and graces: —"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p641",
+            "context": "(2.) The will of God in this business is not at all conditional;"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 14,
+        "epub": 15,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p56",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p589",
+            "context": "[1.] The purposed imposition of his counsel"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p592",
+            "context": "[1.] Christ had a natural all-sufficient perfection of his deity;"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p53",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 14,
+        "epub": 15,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p56",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p590",
+            "context": "[2.] The actual inauguration of Christ as mediator."
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p593",
+            "context": "[2.] He had a communicated fullness."
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "that we might be made the righteousness of god in",
+      "count": 13
+    },
+    {
+      "phrase": "we might be made the righteousness of god in him",
+      "count": 13
+    },
+    {
+      "phrase": "made him to be sin for us who knew no",
+      "count": 8
+    },
+    {
+      "phrase": "him to be sin for us who knew no sin",
+      "count": 8
+    },
+    {
+      "phrase": "hath set forth to be propitiation through faith in his",
+      "count": 7
+    },
+    {
+      "phrase": "set forth to be propitiation through faith in his blood",
+      "count": 7
+    },
+    {
+      "phrase": "propitiation through faith in his blood to declare his righteousness",
+      "count": 7
+    },
+    {
+      "phrase": "to be sin for us who knew no sin that",
+      "count": 7
+    },
+    {
+      "phrase": "known unto god are all his works from the beginning",
+      "count": 6
+    },
+    {
+      "phrase": "even so father for so it seemed good in thy",
+      "count": 6
+    },
+    {
+      "phrase": "so father for so it seemed good in thy sight",
+      "count": 6
+    },
+    {
+      "phrase": "us that we might be made the righteousness of god",
+      "count": 6
+    },
+    {
+      "phrase": "whom god hath set forth to be propitiation through faith",
+      "count": 6
+    },
+    {
+      "phrase": "god hath set forth to be propitiation through faith in",
+      "count": 6
+    },
+    {
+      "phrase": "forth to be propitiation through faith in his blood to",
+      "count": 6
+    },
+    {
+      "phrase": "to be propitiation through faith in his blood to declare",
+      "count": 6
+    },
+    {
+      "phrase": "be propitiation through faith in his blood to declare his",
+      "count": 6
+    },
+    {
+      "phrase": "through faith in his blood to declare his righteousness for",
+      "count": 6
+    },
+    {
+      "phrase": "faith in his blood to declare his righteousness for the",
+      "count": 6
+    },
+    {
+      "phrase": "in his blood to declare his righteousness for the remission",
+      "count": 6
+    },
+    {
+      "phrase": "his blood to declare his righteousness for the remission of",
+      "count": 6
+    },
+    {
+      "phrase": "blood to declare his righteousness for the remission of sins",
+      "count": 6
+    },
+    {
+      "phrase": "be sin for us who knew no sin that we",
+      "count": 6
+    },
+    {
+      "phrase": "sin for us who knew no sin that we might",
+      "count": 6
+    },
+    {
+      "phrase": "for us who knew no sin that we might be",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 822,
+    "epub_greek_word_count": 845,
+    "pdf_greek_unique_words": 464,
+    "epub_greek_unique_words": 482,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 18,
+    "epub_hebrew_word_count": 18,
+    "pdf_hebrew_unique_words": 16,
+    "epub_hebrew_unique_words": 16,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 40,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 0,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 1497,
+    "epub_latin_word_count": 1502,
+    "epub_tagged_latin_word_count": 862,
+    "pdf_latin_unique_words": 947,
+    "epub_latin_unique_words": 948,
+    "epub_tagged_unique_words": 553,
+    "latin_word_coverage_ratio": 0.996,
+    "latin_tagging_ratio": 0.5739,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "plate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "candor",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "facile",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "annihilate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "transgressor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "saumur",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "pontius",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "invalidate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "seneca",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "ratio",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "durandus",
+        "epub": 5,
+        "tagged": 1
+      },
+      {
+        "word": "iphigenia",
+        "epub": 6,
+        "tagged": 2
+      },
+      {
+        "word": "rugiani",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "professor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "venator",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "languor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "extenuate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "plato",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "cato",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "collate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "mediate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "apella",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "intermediate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "clamor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "rumor",
+        "epub": 3,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 95,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 279,
+    "translated_latin_runs_count": 142,
+    "latin_translation_ratio": 0.509,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "exhibitum et mortuum"
+      },
+      {
+        "phrase": "truncus ficulnus"
+      },
+      {
+        "phrase": "aquilas columbae"
+      },
+      {
+        "phrase": "populo ut"
+      },
+      {
+        "phrase": "quas fecere fabulas"
+      },
+      {
+        "phrase": "Cui bono"
+      },
+      {
+        "phrase": "Gratum opus agricolis"
+      },
+      {
+        "phrase": "eo devenere rata ecclesiae"
+      },
+      {
+        "phrase": "generis fiducia §  vestri"
+      },
+      {
+        "phrase": "ampullas et sesquipedalia verba"
+      },
+      {
+        "phrase": "ignota loquor"
+      },
+      {
+        "phrase": "tantarum in munere laudum"
+      },
+      {
+        "phrase": "comas, et pocula"
+      },
+      {
+        "phrase": "vocate Deum, et"
+      },
+      {
+        "phrase": "hoc novum"
+      },
+      {
+        "phrase": "brevibus Gyaris, et carcere dignum, Si vis esse aliquis: probitas laudatur et"
+      },
+      {
+        "phrase": "is \"immanis, truculentus, diabolo, Tiberio tetrior (horresco"
+      },
+      {
+        "phrase": "mandatum est dedecus"
+      },
+      {
+        "phrase": "Quid dignum tanto"
+      },
+      {
+        "phrase": "viam teneas"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      "acts ephesians as distinguished from the world romans john his elect romans his children",
+      "declared throughout all the earth chap 28-30 who are the called according to his",
+      "foolishly that he is altogether like unto us psalm one of which inconveniences all",
+      "him is opposite to his eternal blessedness and all sufficiency thirdly god therefore to",
+      "needful of any more value for first those that were saved were saved upon",
+      "one may see that can but read english in ore hence that multiplicity of",
+      "or gave himself ransom but for many or only for many or only for",
+      "psalmist from whence the apostle citeth these words psalm and did he die for",
+      "their abettors incapable of our church communion the sacred bond of peace compasseth only"
+    ],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch056.xhtml",
+        "previous": "; which, if ever the Lord call me to, I hope very clearly to demonstrate: for the present, it belongs not immediately to the business in hand, and therefore I leave it, coming to —",
+        "next": "Proof 2. \"Jesus Christ, the Son of God, came into the world to save the world, John 12:47; to save sinners, 1 Timothy 1:15; to take away our sins, and destroy the works of the devi"
+      }
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

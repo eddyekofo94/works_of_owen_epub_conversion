@@ -1,20 +1,20 @@
 # Text Integrity Audit: Volume 15
 
 - Status: **WARN**
-- Warnings: 3
+- Warnings: 5
 - PDF pages: 683
 - EPUB text files: 107
-- EPUB paragraphs/headings: 2416
+- EPUB paragraphs/headings: 2414
 
 ## Coverage
 
 - PDF content tokens: 221576
-- EPUB content tokens: 223326
+- EPUB content tokens: 223285
 - Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 675
 - Weak page matches: 3
-- Dense source windows checked: 29353
-- Missing dense source-window pages: 0
+- Dense source windows checked: 29388
+- Missing dense source-window pages: 1
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 659
@@ -22,11 +22,11 @@
 - Missing top-of-page body windows: 0
 - Bottom-of-page body windows checked: 615
 - Bottom-of-page windows skipped as unstable: 0
-- Missing bottom-of-page body windows: 0
+- Missing bottom-of-page body windows: 1
 
 ## Paragraphs
 
-- Body paragraphs checked: 1981
+- Body paragraphs checked: 1980
 - Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 243
 - Short fragments: 102
@@ -59,11 +59,11 @@
 
 ## Latin
 
-- PDF Latin words: 735
-- EPUB Latin words: 741
-- EPUB Tagged Latin words: 408
-- Latin word coverage ratio: 0.9946
-- Latin word tagging ratio: 0.5506
+- PDF Latin words: 719
+- EPUB Latin words: 726
+- EPUB Tagged Latin words: 407
+- Latin word coverage ratio: 0.9944
+- Latin word tagging ratio: 0.5606
 - Latin clauses checked: 57
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 103
@@ -73,8 +73,18 @@
 ## Warnings
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `bottom_of_page_text_loss`: Some last body lines near the bottom of PDF pages are not found in the EPUB
 - `overlong_heading_candidates`: Some chapter headings are long enough to suggest swallowed body text
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+## Missing Dense Source Windows
+
+- page: 315; sample: many nations in the coming of christ whereunto this church state was subservient the
+
+## Missing Bottom-Of-Page Body Windows
+
+- page: 224; sample: the good way, and walk therein, and ye find rest for your souls" — Jeremiah 6:16.
 
 ## Overlong Heading Candidates
 

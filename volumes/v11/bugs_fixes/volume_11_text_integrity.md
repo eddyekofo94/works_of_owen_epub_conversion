@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 11
 
-- Status: **PASS**
-- Warnings: 0
+- Status: **WARN**
+- Warnings: 1
 - PDF pages: 815
 - EPUB text files: 31
 - EPUB paragraphs/headings: 2497
@@ -9,12 +9,12 @@
 ## Coverage
 
 - PDF content tokens: 296711
-- EPUB content tokens: 298649
+- EPUB content tokens: 298492
 - Approximate PDF-to-EPUB coverage ratio: 0.9996
 - Pages checked: 794
 - Weak page matches: 0
-- Dense source windows checked: 32243
-- Missing dense source-window pages: 15
+- Dense source windows checked: 32433
+- Missing dense source-window pages: 20
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
 - Top-of-page body windows checked: 791
@@ -27,7 +27,7 @@
 ## Paragraphs
 
 - Body paragraphs checked: 2125
-- Possible faulty paragraph splits: 0
+- Possible faulty paragraph splits: 2
 - Structural starts excluded from split warnings: 272
 - Short fragments: 29
 - Adjacent duplicate paragraphs: 0
@@ -59,16 +59,20 @@
 
 ## Latin
 
-- PDF Latin words: 3955
-- EPUB Latin words: 3962
-- EPUB Tagged Latin words: 3042
-- Latin word coverage ratio: 0.9985
-- Latin word tagging ratio: 0.7678
-- Latin clauses checked: 387
+- PDF Latin words: 3856
+- EPUB Latin words: 3860
+- EPUB Tagged Latin words: 3023
+- Latin word coverage ratio: 0.9984
+- Latin word tagging ratio: 0.7832
+- Latin clauses checked: 383
 - Missing Latin clauses: 0
 - Tagged Latin runs checked: 776
-- Translated Latin runs: 269
-- Latin translation ratio: 0.3466
+- Translated Latin runs: 272
+- Latin translation ratio: 0.3505
+
+## Warnings
+
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 ## Missing Dense Source Windows
 
@@ -82,6 +86,11 @@
 - page: 139; sample: gracious promises wherein their refreshments and reserves under such temptations do lie romans corinthians
 - page: 140; sample: do give the least hint to such an assertion romans psalm isaiah 7-10 peter
 - page: 141; sample: corinthians ephesians romans john the temptation arising from the apostasy of hypocrites is neither
+
+## Possible Paragraph Splits
+
+- file: EPUB/ch005.xhtml; previous: do. And it is still feared that "Parata tollit cornua; Qualis Lycambae spretus infido who, spurned by faithless Lycambes [attacked his enemies]"] gener, Aut acer hostis Bupalo ." 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
+- file: EPUB/ch005.xhtml; previous: l never promote the praise nor adorn the truth of God. For what remains concerning him, " Do illi ingenium, do eloquentiam et industriam ; fidem et veritatem utinam coluisset ." "]; next: The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t
 
 ## Suspicious Large-Number Starts
 
@@ -118,8 +127,6 @@
 ## Excess Word Samples
 
 - word: psalms; pdf: 1; epub: 56
-- word: translated; pdf: 12; epub: 34
-- word: translation; pdf: 11; epub: 32
 - word: digital; pdf: 0; epub: 10
 - word: theological; pdf: 2; epub: 11
 - word: historical; pdf: 2; epub: 10
@@ -133,16 +140,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: ergo; epub: 25; tagged: 5
 - word: perpetrate; epub: 10; tagged: 0
 - word: salmasius; epub: 9; tagged: 0
 - word: vedelius; epub: 8; tagged: 0
-- word: predestinate; epub: 8; tagged: 0
 - word: co-operate; epub: 8; tagged: 0
-- word: pelagius; epub: 8; tagged: 2
 - word: alexandria; epub: 9; tagged: 3
 - word: estimate; epub: 6; tagged: 0
 - word: synodalia; epub: 6; tagged: 0
+- word: iota; epub: 5; tagged: 0
+- word: smyrna; epub: 5; tagged: 0
+- word: cilicia; epub: 6; tagged: 1
 
 ## Untranslated Latin Samples
 

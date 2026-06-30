@@ -4,16 +4,16 @@
 - Warnings: 9
 - PDF pages: 661
 - EPUB text files: 70
-- EPUB paragraphs/headings: 1709
+- EPUB paragraphs/headings: 1708
 
 ## Coverage
 
 - PDF content tokens: 230479
-- EPUB content tokens: 231220
-- Approximate PDF-to-EPUB coverage ratio: 0.9989
+- EPUB content tokens: 231140
+- Approximate PDF-to-EPUB coverage ratio: 0.9987
 - Pages checked: 653
-- Weak page matches: 3
-- Dense source windows checked: 31142
+- Weak page matches: 4
+- Dense source windows checked: 31217
 - Missing dense source-window pages: 40
 - Front CONTENTS pages checked: 4
 - Missing front CONTENTS pages: 3
@@ -26,7 +26,7 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 1377
+- Body paragraphs checked: 1376
 - Possible faulty paragraph splits: 0
 - Structural starts excluded from split warnings: 147
 - Short fragments: 15
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 4240
-- EPUB Latin words: 4282
-- EPUB Tagged Latin words: 2541
-- Latin word coverage ratio: 0.9967
-- Latin word tagging ratio: 0.5934
-- Latin clauses checked: 312
-- Missing Latin clauses: 2
-- Tagged Latin runs checked: 694
-- Translated Latin runs: 338
-- Latin translation ratio: 0.487
+- PDF Latin words: 3526
+- EPUB Latin words: 3536
+- EPUB Tagged Latin words: 2370
+- Latin word coverage ratio: 0.9966
+- Latin word tagging ratio: 0.6702
+- Latin clauses checked: 293
+- Missing Latin clauses: 1
+- Tagged Latin runs checked: 659
+- Translated Latin runs: 343
+- Latin translation ratio: 0.5205
 
 ## Warnings
 
@@ -87,13 +87,13 @@
 - page: 4; sample: note by the editor to the reader chap an answer to the preface or
 - page: 5; sample: proposals from protestant principles tending unto moderation and unity farther vindication of the second
 - page: 10; sample: to the reader reader the treatise entitled fiat lux which thou wilt find examined
-- page: 14; sample: them being not in those days in rerum natura way of handling religion he
-- page: 31; sample: are not now in rerum natura knowing what will ensue to their disadvantage on
 - page: 36; sample: close and safe all the long-billed birds that he hoped to lime twig by
 - page: 39; sample: we say plainly that she fell by she fell by apostasy from many of
 - page: 40; sample: ask of this or that age or of the first of the first certainly
 - page: 49; sample: sense but hic nigrae succus loliginis haec est aerugo mera hor sat suppose they
 - page: 58; sample: chapter motive matter and method of our author's book what remains of our author's
+- page: 83; sample: impossible to be kept if christ be not our law maker and director of
+- page: 85; sample: imitation of that which was useful of the rest which they reject they reject
 
 ## Missing Front CONTENTS Pages
 
@@ -109,14 +109,14 @@
 ## Inline Structural Marker Candidates
 
 - file: EPUB/ch030.xhtml; text: And I know that, concerning all your dispute and arguings in these pages, you may say what Lucian doth about his "true story:" Γράφω τοίνυν περὶ ῶν μήτ εῖδον , μήτ ἔπαθον , μήτε παρ ἄλλων ἐπυθόμην ? — "You write about the things which yo...
-- file: EPUB/ch033.xhtml; text: Do you think it so easy for you, " Cornicum oculos, configere," as Cicero tells us an attorney, one Cn. Flavius, thought to do, in going beyond all that the great lawyers had done before him, Orat. pro Muraena , 11. We cannot yet be pers...
+- file: EPUB/ch033.xhtml; text: Do you think it so easy for you, " Cornicum oculos, configere ," as Cicero tells us an attorney, one Cn. Flavius, thought to do, in going beyond all that the great lawyers had done before him, Orat. pro Muraena , 11. We cannot yet be per...
 - file: EPUB/ch041.xhtml; text: Some few observations upon this discourse of yours will farther manifest the absurdity of that consequence which you feign not to have been taken notice of in the "Animadversions;" for which you had no cause, but that you might easily di...
 - file: EPUB/ch044.xhtml; text: Our Savior gave them equal commission to teach all nations; told them that as his Father had sent him so he sent them; that he had chosen them twelve, but that one of them was a devil, — never that one of them should be pope. Their insti...
 
 ## Suspicious Large-Number Starts
 
 - file: EPUB/ch031.xhtml; text: 27. In the explication of your distinction of "congruity" and "condignity," how woefully are you divided! as also in the application of it. There is no end of your altercations about it, the terms of it being horrid, unc
-- file: EPUB/ch033.xhtml; text: 30. And he hath done well to record them, that they might be preserved " in perpetuam rei memoriam ," that we might learn what your great father exercised himself about, —
+- file: EPUB/ch033.xhtml; text: 30. And he hath done well to record them, that they might be preserved "in perpetuam rei memoriam," that we might learn what your great father exercised himself about, —
 - file: EPUB/ch033.xhtml; text: 11. And that of Basil condemned Engenius as one " a fide devium et pertinacem haereticum," sess. 34; — "an erroneous person and obstinate heretic." Other instances of the like nature might be called over, manifesting tha
 
 ## Short Fragments
@@ -167,19 +167,18 @@
 
 - word: celsus; epub: 44; tagged: 0
 - word: prelate; epub: 26; tagged: 0
-- word: dissent; epub: 24; tagged: 0
-- word: emperor; epub: 23; tagged: 0
-- word: pleas; epub: 22; tagged: 0
-- word: ago; epub: 21; tagged: 0
-- word: adhere; epub: 20; tagged: 0
-- word: anno; epub: 22; tagged: 5
+- word: anno; epub: 22; tagged: 4
 - word: credo; epub: 15; tagged: 0
 - word: eleutherius; epub: 15; tagged: 0
+- word: baronius; epub: 18; tagged: 4
+- word: aen; epub: 12; tagged: 0
+- word: lucius; epub: 10; tagged: 0
+- word: claudius; epub: 11; tagged: 1
+- word: orator; epub: 9; tagged: 0
 
 ## Missing Latin Clauses
 
-- page: 259; word_count: 24; sample: deos suos venerabantur vel pannum rubrum in hastam elevatum quod narratur de
-- page: 520; word_count: 5; sample: in rerum natura is as
+- page: 259; word_count: 12; sample: lappis vel viva animalia ut quondam aegyptii quam eorum qui frustum panis
 
 ## Untranslated Latin Samples
 
@@ -190,9 +189,9 @@
 - phrase: ancillam cum filio suo
 - phrase: loca nullius ante Trita solo
 - phrase: Hor, ad Pis
-- phrase: Ephesus, Smyrna, Laodicea, Alexandria
 - phrase: Erugo mera," [Hor
 - phrase: Petrus, tibi dabo
+- phrase: Operam et oleum perdidi
 
 ## Limits
 

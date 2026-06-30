@@ -2,8 +2,8 @@
 
 This report highlights potential OCR discrepancies, bad hyphenations (e.g., line-break remains), punctuation alignment issues, and casing anomalies.
 
-* **Total Words Audited:** 313662
-* **Total Suspected Anomalies Found:** 0
+* **Total Words Audited:** 313843
+* **Total Suspected Anomalies Found:** 1
 
 Add corrections to `text_replacements` inside `volumes/v10/convert.py` to fix these.
 
@@ -17,7 +17,7 @@ Add corrections to `text_replacements` inside `volumes/v10/convert.py` to fix th
 * **Structural Nesting Sequence Jumps:** 0 items
 * **Invalid Bible References:** 0 items
 * **List Formatting Inconsistencies:** 0 items
-* **Unmatched Quotation Marks:** 0 items
+* **Unmatched Quotation Marks:** 1 items
 
 ---
 
@@ -55,5 +55,11 @@ No anomalies found in this category.
 
 ## Unmatched Quotation Marks
 
-No anomalies found in this category.
+### 1. `"That which is born of the flesh is [[BLOCKQUOTE]] "Neither is it considerable whether they be the children of believers...`
+* **Description:** Paragraph has unmatched double quotes (count: 5)
+* **Chapter:** *Chapter 7 - of Original Sin and the Corruption of Nature.*
+* **Contexts:**
+  * **"That which is born of the flesh is [[BLOCKQUOTE]] "Neither is it considerable whether they be the children of believers...**
+
+---
 

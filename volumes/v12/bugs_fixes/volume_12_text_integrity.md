@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 12
 
 - Status: **WARN**
-- Warnings: 1
+- Warnings: 2
 - PDF pages: 822
 - EPUB text files: 61
 - EPUB paragraphs/headings: 3651
@@ -9,12 +9,12 @@
 ## Coverage
 
 - PDF content tokens: 270735
-- EPUB content tokens: 272727
+- EPUB content tokens: 272103
 - Approximate PDF-to-EPUB coverage ratio: 0.9994
 - Pages checked: 815
 - Weak page matches: 0
-- Dense source windows checked: 34243
-- Missing dense source-window pages: 0
+- Dense source windows checked: 34305
+- Missing dense source-window pages: 1
 - Front CONTENTS pages checked: 3
 - Missing front CONTENTS pages: 1
 - Top-of-page body windows checked: 793
@@ -59,20 +59,25 @@
 
 ## Latin
 
-- PDF Latin words: 7650
-- EPUB Latin words: 7684
-- EPUB Tagged Latin words: 5733
-- Latin word coverage ratio: 0.9976
-- Latin word tagging ratio: 0.7461
-- Latin clauses checked: 723
+- PDF Latin words: 7130
+- EPUB Latin words: 7146
+- EPUB Tagged Latin words: 5642
+- Latin word coverage ratio: 0.9975
+- Latin word tagging ratio: 0.7895
+- Latin clauses checked: 717
 - Missing Latin clauses: 1
 - Tagged Latin runs checked: 1549
-- Translated Latin runs: 697
-- Latin translation ratio: 0.45
+- Translated Latin runs: 700
+- Latin translation ratio: 0.4519
 
 ## Warnings
 
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
+
+## Missing Dense Source Windows
+
+- page: 226; sample: christ was personally united that wrought all these works answer me to these things
 
 ## Missing Front CONTENTS Pages
 
@@ -145,16 +150,16 @@
 
 ## Untagged Latin Word Samples
 
-- word: grotius; epub: 197; tagged: 16
-- word: socinus; epub: 169; tagged: 36
 - word: annotator; epub: 69; tagged: 1
-- word: smalcius; epub: 50; tagged: 12
-- word: crellius; epub: 37; tagged: 4
+- word: smalcius; epub: 47; tagged: 12
 - word: jus; epub: 44; tagged: 21
-- word: thomas; epub: 23; tagged: 1
 - word: franciscus; epub: 21; tagged: 1
 - word: incarnate; epub: 15; tagged: 0
 - word: transylvania; epub: 14; tagged: 0
+- word: racovia; epub: 9; tagged: 0
+- word: invocate; epub: 9; tagged: 0
+- word: blandrata; epub: 11; tagged: 3
+- word: eta; epub: 8; tagged: 0
 
 ## Missing Latin Clauses
 

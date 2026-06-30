@@ -326,13 +326,13 @@ The new engine:
 | 6 | v6 | Populated | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
 | 7 | v7 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.66 |
 | 8 | v8 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 |
-| 9 | v9 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.26 |
-| 10 | v10 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.58 |
-| 11 | v11 | Populated | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.85 |
-| 12 | v12 | Populated | FULL | Cov 99.94 Greek 99.92 Heb 100.00 Lat 99.76 |
-| 13 | v13 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
-| 14 | v14 | Populated | FULL | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
-| 15 | v15 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.46 |
+| 9 | v9 | Populated | FULL | Cov 99.64 Greek 100.00 Heb 100.00 Lat 99.15 |
+| 10 | v10 | Populated | FULL | Cov 99.84 Greek 100.00 Heb 100.00 Lat 99.15 |
+| 11 | v11 | Populated | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.84 |
+| 12 | v12 | Populated | FULL | Cov 99.94 Greek 99.92 Heb 100.00 Lat 99.75 |
+| 13 | v13 | Populated | FULL | Cov 99.89 Greek 97.44 Heb 100.00 Lat 95.58 |
+| 14 | v14 | Populated | FULL | Cov 99.87 Greek 100.00 Heb 100.00 Lat 99.66 |
+| 15 | v15 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.44 |
 | 16 | v16 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.96 |
 
 ## Hebrews Commentary Script Status

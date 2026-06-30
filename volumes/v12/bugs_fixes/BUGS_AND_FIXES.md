@@ -289,11 +289,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-23T23:00:24.316605+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-06-30T16:28:19.330742+00:00
+**Status:** WARN (2 warnings)
 
 Reports:
 - `volume_12_text_integrity.json`
@@ -306,8 +307,8 @@ Reports:
 | EPUB paragraphs/headings | 3651 |
 | Approximate PDF-to-EPUB word coverage | 0.9994 |
 | Weak page matches | 0 |
-| Dense source windows checked | 34243 |
-| Missing dense source-window pages | 0 |
+| Dense source windows checked | 34305 |
+| Missing dense source-window pages | 1 |
 | Front CONTENTS pages checked | 3 |
 | Missing front CONTENTS pages | 1 |
 | Top-of-page body windows checked | 793 |
@@ -341,6 +342,7 @@ Reports:
 
 Warnings requiring triage:
 
+- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.

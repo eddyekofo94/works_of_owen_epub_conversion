@@ -2,13 +2,21 @@
   "volume": "15",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/input/owen-v15.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v15/output/volume_15.epub",
-  "generated_at": "2026-06-19T20:34:55.433281+00:00",
+  "generated_at": "2026-06-30T16:30:46.105045+00:00",
   "status": "warn",
-  "warning_count": 3,
+  "warning_count": 5,
   "warnings": [
     {
       "code": "weak_page_coverage",
       "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "bottom_of_page_text_loss",
+      "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB"
     },
     {
       "code": "overlong_heading_candidates",
@@ -25,11 +33,11 @@
   },
   "epub": {
     "spine_text_files": 107,
-    "paragraph_count": 2416
+    "paragraph_count": 2414
   },
   "word_coverage": {
     "pdf_content_tokens": 221576,
-    "epub_content_tokens": 223326,
+    "epub_content_tokens": 223285,
     "coverage_ratio": 0.9993,
     "missing_word_samples": [
       {
@@ -112,7 +120,7 @@
       },
       {
         "page": 224,
-        "hit_ratio": 0.333,
+        "hit_ratio": 0.0,
         "sample": "an inquiry into the original nature institution power order and communion of evangelical churches the first part with an answer to the discourse of"
       },
       {
@@ -123,9 +131,14 @@
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 29353,
-    "missing_dense_window_pages": 0,
-    "missing_dense_windows": []
+    "dense_windows_checked": 29388,
+    "missing_dense_window_pages": 1,
+    "missing_dense_windows": [
+      {
+        "page": 315,
+        "sample": "many nations in the coming of christ whereunto this church state was subservient the"
+      }
+    ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 4,
@@ -225,11 +238,17 @@
     "bottom_windows_usable": 615,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 0,
-    "missing_bottom_windows": []
+    "missing_bottom_window_count": 1,
+    "missing_bottom_windows": [
+      {
+        "page": 224,
+        "window": "the good way and walk therein and ye find rest for your souls jeremiah",
+        "sample": "the good way, and walk therein, and ye find rest for your souls\" — Jeremiah 6:16."
+      }
+    ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1981,
+    "paragraphs_checked": 1980,
     "split_candidate_count": 0,
     "split_candidates": [],
     "structural_start_exclusions": 243,
@@ -477,11 +496,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p473",
+            "location": "EPUB/ch023.xhtml#p472",
             "context": "(1.) That the reasons and arguings of the Doctor in this matter, — the necessity of his cause compelling him thereunto, — are the same with those of the Papists about the apostasy of t"
           },
           {
-            "location": "EPUB/ch023.xhtml#p501",
+            "location": "EPUB/ch023.xhtml#p500",
             "context": "(1.) It is evident that there was an alteration made in the state of the church as to its officers; for it issued at last in popes, patriarchs, cardinals, metropolitan and diocesan bis"
           }
         ]
@@ -496,11 +515,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p474",
+            "location": "EPUB/ch023.xhtml#p473",
             "context": "(2.) But it may be pleaded, that although the churches following the first ages did insensibly degenerate from the purity and simplicity of gospel faith and worship, yet they neither d"
           },
           {
-            "location": "EPUB/ch023.xhtml#p502",
+            "location": "EPUB/ch023.xhtml#p501",
             "context": "(2.) The beginnings of this great alteration were small, nor at all perceived in the days wherein they were first acted. Nor is it agreed, nor, as far as I see, will it ever be agreed"
           }
         ]
@@ -515,11 +534,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p475",
+            "location": "EPUB/ch023.xhtml#p474",
             "context": "[1.] That as unto the original of any thing that looks like diocesan episcopacy, or the pastoral relation of one person of a distinct order from presbyters unto many particular complet"
           },
           {
-            "location": "EPUB/ch023.xhtml#p520",
+            "location": "EPUB/ch023.xhtml#p519",
             "context": "[1.] They did not think themselves obliged, they did not think meet, to abide within the bounds and limits of that reformation of the church which had been attempted before them, by me"
           }
         ]
@@ -545,11 +564,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch023.xhtml#p477",
+            "location": "EPUB/ch023.xhtml#p476",
             "context": "[2.] Why may not the churches be supposed to have departed from their original constitution, order, and rule, as well as from their first faith and worship? which they did gradually, i"
           },
           {
-            "location": "EPUB/ch023.xhtml#p521",
+            "location": "EPUB/ch023.xhtml#p520",
             "context": "[2.] They did not at once make what they had done themselves to be a fixed rule in these things, for themselves made many alterations in the service-book which they first composed; and"
           }
         ]
@@ -683,14 +702,14 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 735,
-    "epub_latin_word_count": 741,
-    "epub_tagged_latin_word_count": 408,
-    "pdf_latin_unique_words": 463,
-    "epub_latin_unique_words": 465,
-    "epub_tagged_unique_words": 274,
-    "latin_word_coverage_ratio": 0.9946,
-    "latin_tagging_ratio": 0.5506,
+    "pdf_latin_word_count": 719,
+    "epub_latin_word_count": 726,
+    "epub_tagged_latin_word_count": 407,
+    "pdf_latin_unique_words": 452,
+    "epub_latin_unique_words": 455,
+    "epub_tagged_unique_words": 273,
+    "latin_word_coverage_ratio": 0.9944,
+    "latin_tagging_ratio": 0.5606,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -749,11 +768,6 @@
         "tagged": 1
       },
       {
-        "word": "adequate",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
         "word": "clamor",
         "epub": 4,
         "tagged": 0
@@ -777,11 +791,6 @@
         "word": "baronius",
         "epub": 4,
         "tagged": 1
-      },
-      {
-        "word": "obviate",
-        "epub": 3,
-        "tagged": 0
       },
       {
         "word": "perpetuate",
@@ -817,6 +826,16 @@
         "word": "pella",
         "epub": 3,
         "tagged": 0
+      },
+      {
+        "word": "behavior",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "samaria",
+        "epub": 3,
+        "tagged": 1
       }
     ]
   },
@@ -905,6 +924,9 @@
     "font_issues": []
   },
   "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      34
+    ],
     "paragraph_splits": [
       "1 . Particular churches or congregations, with their order and rule, are of divi"
     ],

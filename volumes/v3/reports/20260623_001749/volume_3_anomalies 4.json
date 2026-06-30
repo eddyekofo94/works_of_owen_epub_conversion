@@ -1,0 +1,201 @@
+{
+  "volume": "3",
+  "total_words_audited": 325790,
+  "total_anomalies_count": 18,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "1 .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 1 - Peculiar Operations of the Holy Spirit Under the Old Testament Preparatory",
+        "contexts": [
+          "... hree ways revealed his will unto the prophets, \u2014 1 . By objects of their senses, as by audible voices; ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 3 - Corruption or Depravation of the Mind by Sin.",
+        "contexts": [
+          "... he commands of God: \u2014 1st. That they are equal; 2dly . That they are easy, or not grievous. The former ..."
+        ]
+      },
+      {
+        "target": "end .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
+        "contexts": [
+          "... ies of mind to make use of them unto their proper end . \" But they grant, at least some of them do, that ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
+        "contexts": [
+          "... objective allurement is not sufficient thereunto? Ans . It is acknowledged that in the work of conversion ..."
+        ]
+      },
+      {
+        "target": "idem .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
+        "contexts": [
+          "... o the will; for, \u2014 [1.] The opposition is not ad idem . The enmity and opposition that is acted by the wi ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - the Nature, Causes, and Means of Regeneration.",
+        "contexts": [
+          "... itself unto any end whereunto it may be applied. 2dly . An obstinate, stubborn opposition unto all things ..."
+        ]
+      },
+      {
+        "target": "4thly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 5 - the Filth of Sin Purged by the Spirit",
+        "contexts": [
+          "... And this we are directed unto, Hebrews 4:15, 16. 4thly . An acquiescency in the truth and faithfulness of ..."
+        ]
+      },
+      {
+        "target": "habit .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.",
+        "contexts": [
+          "... se three things: \u2014 1. Show what I mean by such a habit . 2. Prove that there is such a habit required unt ..."
+        ]
+      },
+      {
+        "target": "3dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.",
+        "contexts": [
+          "... line the mind unto them and prepare it for them. 3dly . It causeth the affections to cleave and adhere un ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 6 - the Positive Work of the Spirit in the Sanctification of Believers.",
+        "contexts": [
+          "... ve his Spirit, if thereby we are united to him.\" Ans . 1. If this be so, then indeed are we not beholden ..."
+        ]
+      },
+      {
+        "target": "Assimilation :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 8 - Mortification of Sin, the Nature and Causes of It.",
+        "contexts": [
+          "... f all true love, are, first, Adherence; secondly, Assimilation : \u2014 (First,) Adherence. Love in the Scripture is fr ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 8 - Mortification of Sin, the Nature and Causes of It.",
+        "contexts": [
+          "... r unmeet habitations for the Holy Spirit of God. 2dly . The manner of the actual operation of the Spirit ..."
+        ]
+      },
+      {
+        "target": "transgression :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 3 - Holiness Necessary From the Commands of God.",
+        "contexts": [
+          "... ence the minds of men who are inclined unto their transgression : \u2014 [1.] The first is, that the rewards and punish ..."
+        ]
+      },
+      {
+        "target": "free ;",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.",
+        "contexts": [
+          "... uced unto these heads: \u2014 1. To make his subjects free ; 2. To preserve them in safety, delivering their ..."
+        ]
+      },
+      {
+        "target": "2dly .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.",
+        "contexts": [
+          "... ave sufficiently proved in this whole discourse. 2dly . Very few of the precepts of it are certain, so as ..."
+        ]
+      },
+      {
+        "target": "n )",
+        "description": "Spaced closing parenthesis",
+        "chapter": "Chapter 4 - Necessity of Holiness From God's Sending Jesus Christ.",
+        "contexts": [
+          "... ure and the use of right reason (that is, their own ) as their guide; and some add the additional docum ..."
+        ]
+      },
+      {
+        "target": "sin :",
+        "description": "Spaced punctuation (space before character)",
+        "chapter": "Chapter 5 - Necessity of Holiness From Our Condition in This World.",
+        "contexts": [
+          "... bellious actings of the re mainders of indwelling sin : \u2014 (1.) In particular instances; (2.) In the who ..."
+        ]
+      },
+      {
+        "target": "n )",
+        "description": "Spaced closing parenthesis",
+        "chapter": "Chapter 5 - Necessity of Holiness From Our Condition in This World.",
+        "contexts": [
+          "... nfusion of the minds of men and of the power of sin ) do either proceed from them or are carried on by ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "unused_whitelist_anomalies": {
+    "Punctuation Spacing Blemishes": [
+      "y  ,",
+      "doctrine ,",
+      "1  .",
+      "man ,",
+      "quickening ,",
+      "penal ,",
+      "2dly   .",
+      "d   .",
+      "for ,",
+      "persuading ,",
+      "acted ,",
+      "end  .",
+      "Ans  .",
+      "idem  .",
+      "conviction ,",
+      "4thly   .",
+      "habit  .",
+      "1st   .",
+      "3dly   .",
+      "Ans  .",
+      "Assimilation  :",
+      "transgression  :",
+      "free  ;",
+      "first ,",
+      "n  )",
+      "sin  :",
+      "n  )"
+    ],
+    "OCR & Bracket Residues": [
+      "express[ed]"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "3. ... 7."
+    ],
+    "Unmatched Quotation Marks": [
+      "[[SUMMARY]] CORRUPTION OR DEPRAVATI"
+    ]
+  }
+}

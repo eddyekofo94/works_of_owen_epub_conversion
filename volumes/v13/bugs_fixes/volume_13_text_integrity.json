@@ -2,9 +2,9 @@
   "volume": "13",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/input/owen-v13.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub",
-  "generated_at": "2026-06-11T23:44:52.540349+00:00",
+  "generated_at": "2026-06-30T16:29:12.500701+00:00",
   "status": "warn",
-  "warning_count": 6,
+  "warning_count": 8,
   "warnings": [
     {
       "code": "weak_page_coverage",
@@ -29,19 +29,41 @@
     {
       "code": "repeated_windows",
       "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "missing_greek_clauses",
+      "message": "Some dense Greek passages from the PDF are missing from the EPUB"
+    },
+    {
+      "code": "missing_latin_clauses",
+      "message": "Some dense Latin passages from the PDF are missing from the EPUB"
     }
   ],
   "pdf": {
-    "page_count": 749
+    "page_count": 749,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
   },
   "epub": {
     "spine_text_files": 84,
-    "paragraph_count": 2253
+    "paragraph_count": 2220
   },
   "word_coverage": {
     "pdf_content_tokens": 247367,
-    "epub_content_tokens": 250552,
-    "coverage_ratio": 0.9994,
+    "epub_content_tokens": 249604,
+    "coverage_ratio": 0.9989,
     "missing_word_samples": [
       {
         "word": "self",
@@ -61,19 +83,9 @@
     ],
     "excess_word_samples": [
       {
-        "word": "ii",
-        "pdf": 15,
-        "epub": 31
-      },
-      {
         "word": "prefatory",
         "pdf": 14,
         "epub": 30
-      },
-      {
-        "word": "volume",
-        "pdf": 5,
-        "epub": 18
       },
       {
         "word": "editor",
@@ -91,19 +103,14 @@
         "epub": 9
       },
       {
+        "word": "volume",
+        "pdf": 5,
+        "epub": 13
+      },
+      {
         "word": "historical",
         "pdf": 0,
         "epub": 8
-      },
-      {
-        "word": "citizens",
-        "pdf": 8,
-        "epub": 15
-      },
-      {
-        "word": "bill",
-        "pdf": 6,
-        "epub": 13
       },
       {
         "word": "modern",
@@ -121,11 +128,6 @@
         "epub": 7
       },
       {
-        "word": "conventicle",
-        "pdf": 5,
-        "epub": 11
-      },
-      {
         "word": "edition",
         "pdf": 2,
         "epub": 8
@@ -139,12 +141,17 @@
   },
   "page_coverage": {
     "pages_checked": 725,
-    "weak_page_count": 3,
+    "weak_page_count": 4,
     "weak_pages": [
       {
         "page": 72,
         "hit_ratio": 0.0,
         "sample": "eshcol cluster of the fruit of canaan brought to the borders for the encouragement 0f the saints travelling thitherward with their faces towards zion"
+      },
+      {
+        "page": 389,
+        "hit_ratio": 0.0,
+        "sample": "brief vindication of the nonconformists from the charge of schism as it was managed against them in sermon preached before the lord mayor by"
       },
       {
         "page": 437,
@@ -153,7 +160,7 @@
       },
       {
         "page": 682,
-        "hit_ratio": 0.333,
+        "hit_ratio": 0.0,
         "sample": "peace-offering in an apology and humble plea for indulgence and liberty of conscience by sundry protestants differing in some things from the present establishment"
       }
     ]
@@ -396,11 +403,11 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1810,
+    "paragraphs_checked": 1782,
     "split_candidate_count": 0,
     "split_candidates": [],
     "structural_start_exclusions": 111,
-    "short_fragment_count": 37,
+    "short_fragment_count": 32,
     "short_fragments": [
       {
         "file": "EPUB/ch002.xhtml",
@@ -416,15 +423,7 @@
       },
       {
         "file": "EPUB/ch007.xhtml",
-        "text": "and again,"
-      },
-      {
-        "file": "EPUB/ch007.xhtml",
         "text": "Whence I conclude, —"
-      },
-      {
-        "file": "EPUB/ch011.xhtml",
-        "text": "to which add that of the apostle,"
       },
       {
         "file": "EPUB/ch011.xhtml",
@@ -499,20 +498,12 @@
         "text": "Truly, I think Mr."
       },
       {
-        "file": "EPUB/ch043.xhtml",
-        "text": "— TERTUL."
-      },
-      {
         "file": "EPUB/ch045.xhtml",
         "text": "I answer, —"
       },
       {
         "file": "EPUB/ch045.xhtml",
         "text": "I answer, —"
-      },
-      {
-        "file": "EPUB/ch046.xhtml",
-        "text": "LONDON: 1669."
       },
       {
         "file": "EPUB/ch050.xhtml",
@@ -521,10 +512,6 @@
       {
         "file": "EPUB/ch050.xhtml",
         "text": "That is,"
-      },
-      {
-        "file": "EPUB/ch053.xhtml",
-        "text": "he is God, and not man."
       },
       {
         "file": "EPUB/ch053.xhtml",
@@ -604,7 +591,7 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 80,
-    "epub_marker_count": 92,
+    "epub_marker_count": 90,
     "missing_marker_count": 0,
     "missing_markers": [],
     "excess_marker_count": 6,
@@ -630,11 +617,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p184",
+            "location": "EPUB/ch007.xhtml#p183",
             "context": "(1.) All faithful ministers of the gospel, inasmuch as they are ingrafted into Christ and are true believers, may, as all other true Christians, be called priests; but this inasmuch as"
           },
           {
-            "location": "EPUB/ch012.xhtml#p292",
+            "location": "EPUB/ch012.xhtml#p285",
             "context": "(1.) Every one might undertake so much in sacred duties as he fancies himself to be able to perform; (2.) Children (as they report of Athanasius 36 ) might baptize; (3.) Every common C"
           }
         ]
@@ -649,11 +636,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p187",
+            "location": "EPUB/ch007.xhtml#p186",
             "context": "(2.) We have an interest in this appellation of priests by virtue of our union with Christ. Being one with our high priest, we also are priests."
           },
           {
-            "location": "EPUB/ch012.xhtml#p292",
+            "location": "EPUB/ch012.xhtml#p285",
             "context": "one might undertake so much in sacred duties as he fancies himself to be able to perform; (2.) Children (as they report of Athanasius 36 ) might baptize; (3.) Every common Christian might administer the communion. But endless are the arguments that might be multiplied again"
           }
         ]
@@ -668,7 +655,7 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p190",
+            "location": "EPUB/ch007.xhtml#p189",
             "context": "[1.] Because being in him, and members of him, we are accounted to have done, in him and with him, whatsoever he hath done for us: We are \"dead with him,\" Romans 6:8; \"buried with him,"
           }
         ]
@@ -694,7 +681,7 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch007.xhtml#p191",
+            "location": "EPUB/ch007.xhtml#p190",
             "context": "[2.] By virtue of this union there is such an analogy between that which Christ hath done for us as a priest and what he worketh in us by his Holy Spirit, that those acts of ours come"
           }
         ]
@@ -780,10 +767,10 @@
   ],
   "greek_hebrew_word_coverage": {
     "pdf_greek_word_count": 1038,
-    "epub_greek_word_count": 1058,
+    "epub_greek_word_count": 1030,
     "pdf_greek_unique_words": 609,
-    "epub_greek_unique_words": 627,
-    "greek_word_coverage_ratio": 1.0,
+    "epub_greek_unique_words": 619,
+    "greek_word_coverage_ratio": 0.9744,
     "pdf_hebrew_word_count": 12,
     "epub_hebrew_word_count": 12,
     "pdf_hebrew_unique_words": 10,
@@ -794,159 +781,221 @@
   },
   "greek_hebrew_clause_fidelity": {
     "greek_clauses_checked": 59,
-    "missing_greek_clause_count": 0,
-    "missing_greek_clauses": [],
+    "missing_greek_clause_count": 1,
+    "missing_greek_clauses": [
+      {
+        "page": 263,
+        "word_count": 5,
+        "sample": "δουλον κυριου ου δει μαχεσθαι"
+      }
+    ],
     "hebrew_clauses_checked": 0,
     "missing_hebrew_clause_count": 0,
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 3026,
-    "epub_latin_word_count": 3101,
-    "epub_tagged_latin_word_count": 1651,
-    "pdf_latin_unique_words": 1427,
-    "epub_latin_unique_words": 1436,
-    "epub_tagged_unique_words": 974,
-    "latin_word_coverage_ratio": 0.9954,
-    "latin_tagging_ratio": 0.5324,
+    "pdf_latin_word_count": 2127,
+    "epub_latin_word_count": 2055,
+    "epub_tagged_latin_word_count": 1427,
+    "pdf_latin_unique_words": 1278,
+    "epub_latin_unique_words": 1239,
+    "epub_tagged_unique_words": 862,
+    "latin_word_coverage_ratio": 0.9558,
+    "latin_tagging_ratio": 0.6944,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
-        "word": "magistrate",
-        "epub": 232,
+        "word": "populi",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "apollos",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "regulate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "metropolis",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "cenchrea",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "judea",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "prelate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "rigor",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "demonstrandum",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "aen",
+        "epub": 6,
         "tagged": 1
       },
       {
-        "word": "dissent",
-        "epub": 70,
-        "tagged": 0
-      },
-      {
-        "word": "relate",
-        "epub": 21,
-        "tagged": 0
-      },
-      {
-        "word": "door",
-        "epub": 17,
-        "tagged": 0
-      },
-      {
-        "word": "ago",
-        "epub": 16,
-        "tagged": 0
-      },
-      {
-        "word": "pleas",
-        "epub": 15,
-        "tagged": 0
-      },
-      {
-        "word": "iii",
-        "epub": 14,
-        "tagged": 0
-      },
-      {
-        "word": "tract",
-        "epub": 14,
-        "tagged": 0
-      },
-      {
-        "word": "nowhere",
-        "epub": 14,
-        "tagged": 0
-      },
-      {
-        "word": "superior",
-        "epub": 15,
+        "word": "aquila",
+        "epub": 5,
         "tagged": 1
       },
       {
-        "word": "communicate",
-        "epub": 13,
+        "word": "priscilla",
+        "epub": 4,
         "tagged": 0
       },
       {
-        "word": "forego",
-        "epub": 13,
+        "word": "affectionate",
+        "epub": 4,
         "tagged": 0
       },
       {
-        "word": "undergo",
-        "epub": 12,
+        "word": "paroecia",
+        "epub": 4,
         "tagged": 0
       },
       {
-        "word": "thomas",
-        "epub": 12,
+        "word": "caecilianus",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "bohemia",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "mayor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "fate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "divino",
+        "epub": 4,
         "tagged": 1
       },
       {
-        "word": "inferior",
-        "epub": 11,
+        "word": "commensurate",
+        "epub": 3,
         "tagged": 0
       },
       {
-        "word": "neighbor",
-        "epub": 11,
+        "word": "galatia",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "africa",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "exterior",
+        "epub": 4,
         "tagged": 1
       },
       {
-        "word": "candor",
-        "epub": 10,
-        "tagged": 0
+        "word": "genus",
+        "epub": 4,
+        "tagged": 1
       },
       {
-        "word": "ere",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "governor",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "adhere",
-        "epub": 9,
-        "tagged": 0
-      },
-      {
-        "word": "vii",
-        "epub": 8,
-        "tagged": 0
-      },
-      {
-        "word": "determinate",
-        "epub": 8,
-        "tagged": 0
-      },
-      {
-        "word": "facile",
-        "epub": 8,
-        "tagged": 0
-      },
-      {
-        "word": "humor",
-        "epub": 8,
-        "tagged": 0
-      },
-      {
-        "word": "emperor",
-        "epub": 8,
+        "word": "patriarchate",
+        "epub": 3,
         "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 208,
-    "missing_latin_clause_count": 0,
-    "missing_latin_clauses": []
+    "latin_clauses_checked": 197,
+    "missing_latin_clause_count": 11,
+    "missing_latin_clauses": [
+      {
+        "page": 389,
+        "word_count": 6,
+        "sample": "christianorum merito sane illicita si illicitis"
+      },
+      {
+        "page": 389,
+        "word_count": 4,
+        "sample": "merito damnanda si quis"
+      },
+      {
+        "page": 389,
+        "word_count": 5,
+        "sample": "ea queritur eo titulo quo"
+      },
+      {
+        "page": 389,
+        "word_count": 5,
+        "sample": "factionibus querela est in cujus"
+      },
+      {
+        "page": 389,
+        "word_count": 13,
+        "sample": "aliquando convenimus hoc sumus congregati quod et dispersi hoc universi quod et"
+      },
+      {
+        "page": 389,
+        "word_count": 4,
+        "sample": "quum probi cum boni"
+      },
+      {
+        "page": 389,
+        "word_count": 11,
+        "sample": "cum pii cum casti congregantur non est factio dicenda sed curia"
+      },
+      {
+        "page": 437,
+        "word_count": 11,
+        "sample": "non partum studiis agimur sed sumsimus arma consiliis inimica tuis discordia"
+      },
+      {
+        "page": 682,
+        "word_count": 8,
+        "sample": "religione eapita quae plurimum habere videntur obscuritatis tantis"
+      },
+      {
+        "page": 682,
+        "word_count": 5,
+        "sample": "quam ubi cogitur assensus hugo"
+      },
+      {
+        "page": 682,
+        "word_count": 4,
+        "sample": "rogamus innocuum et cunctis"
+      }
+    ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 409,
-    "translated_latin_runs_count": 173,
-    "latin_translation_ratio": 0.423,
+    "tagged_latin_runs_count": 379,
+    "translated_latin_runs_count": 176,
+    "latin_translation_ratio": 0.4644,
     "untranslated_latin_samples": [
       {
         "phrase": "Medio tutissimus"
@@ -961,16 +1010,19 @@
         "phrase": "bonum oritur ex integris"
       },
       {
-        "phrase": "prophetae de Christo quam de ecclesia: puto propterea quia"
+        "phrase": "ecclesia: puto propterea quia"
       },
       {
         "phrase": "contra ecclesiam"
       },
       {
-        "phrase": "facturos esse particulas; et de Christo non tantam"
+        "phrase": "facturos esse particulas; et"
       },
       {
-        "phrase": "habituros, de ecclesia magnas"
+        "phrase": "Christo non tantam"
+      },
+      {
+        "phrase": "ecclesia magnas"
       },
       {
         "phrase": "non qua itur, sed qua eundum est"
@@ -986,9 +1038,6 @@
       },
       {
         "phrase": "peregrinatur, diversatur"
-      },
-      {
-        "phrase": "neighbor Cenchrea"
       },
       {
         "phrase": "fallor est"
@@ -1021,6 +1070,26 @@
   "font_config_check": {
     "font_issue_count": 0,
     "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "paragraph_splits": [
+      "kύριαι δόξαι in Christian religion",
+      "Dum pluit in terras, ut possint sole"
+    ],
+    "inline_structural_markers": [
+      "Now, three ways may a man receive",
+      "Motives to the observance of this rule are",
+      "Explication III. The greatness of the work",
+      "Let motives hereunto be",
+      "Now, to a right performance of this duty",
+      "Motives to this duty are",
+      "Now, to a close adhering to the church",
+      "Motives hereunto are",
+      "Now, admonition is twofold",
+      "These and the like things being duly weighed",
+      "Thus, in general, to take a view of some particular passages",
+      "The reasonableness of this gospel institution is manifested by the Holy Ghost"
+    ]
   },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
