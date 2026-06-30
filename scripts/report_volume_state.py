@@ -193,15 +193,24 @@ def gather_volume_data(vol: int) -> dict:
         greek_cov = data.get("greek_coverage")
         hebrew_cov = data.get("hebrew_coverage")
         latin_cov = data.get("latin_coverage")
+        latin_tag = data.get("latin_tagging")
+        latin_trans = data.get("latin_translation")
         unres = data.get("unresolved_citations", 0)
         unmatched_quotes = data.get("unmatched_quotes")
 
         is_hebrews = str(vol).lower().startswith('h')
+        
+        has_latin_quality = (
+            latin_cov is not None and latin_cov >= 0.990 and
+            latin_tag is not None and latin_tag >= 0.990 and
+            latin_trans is not None and latin_trans >= 0.990
+        )
+        
         is_pristine = (
             cov is not None and cov >= 0.995 and
             greek_cov is not None and greek_cov >= 0.990 and
             hebrew_cov is not None and hebrew_cov >= 0.990 and
-            (is_hebrews or (latin_cov is not None and latin_cov >= 0.990)) and
+            (is_hebrews or has_latin_quality) and
             unres == 0 and
             (unmatched_quotes is None or unmatched_quotes == 0)
         )

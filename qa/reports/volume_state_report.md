@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-27T17:56:32Z
+Generated: 2026-06-30T09:37:20Z
 
 ## Summary
 
@@ -10,22 +10,22 @@ Generated: 2026-06-27T17:56:32Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 10 | 6.4 | eb-garamond | 4 |  99.84 |  100.0 |  100.0 |  99.27 | 0 | 0 | PRISTINE |
-| 2 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | PRISTINE |
-| 3 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | PRISTINE |
-| 4 | 16 | 4.4 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | PRISTINE |
-| 5 | 3 | 3.4 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | PRISTINE |
-| 6 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | PRISTINE |
-| 7 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | PRISTINE |
-| 8 | 8 | 2.7 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | PRISTINE |
-| 9 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | PRISTINE |
-| 10 | 4 | 2.0 | palatino | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | PRISTINE |
-| 11 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | PRISTINE |
-| 12 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | PRISTINE |
-| 13 | 11 | 1.6 | adobe-carlson-pro | 1 |  99.96 |  100.0 |  100.0 |  99.85 | 0 | 0 | PRISTINE |
-| 14 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.98 |  100.0 |  100.0 |   99.9 | 0 | 0 | PRISTINE |
-| 15 | 2 | 0.4 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | PRISTINE |
-| 16 | 5 | 0.4 | garamond-premier-pro | 2 |  99.99 |  100.0 |  100.0 |  99.71 | 0 | 0 | PRISTINE |
+| 1 | 12 | 4.8 | centaur | 3 |  99.94 |  99.92 |  100.0 |  99.76 | 0 | 0 | FULL |
+| 2 | 14 | 4.4 | brill-font | 2 |  99.89 |  100.0 |  100.0 |  99.67 | 0 | 0 | FULL |
+| 3 | 16 | 4.4 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | FULL |
+| 4 | 3 | 3.4 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | FULL |
+| 5 | 15 | 3.0 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | FULL |
+| 6 | 9 | 2.8 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | FULL |
+| 7 | 10 | 2.8 | eb-garamond | 4 |  99.93 |  100.0 |  100.0 |  99.58 | 0 | 0 | FULL |
+| 8 | 8 | 2.7 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | FULL |
+| 9 | 13 | 2.4 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.54 | 0 | 0 | FULL |
+| 10 | 4 | 2.0 | palatino | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | FULL |
+| 11 | 7 | 2.0 | sabon-next-lt | 3 |  99.95 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
+| 12 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
+| 13 | 11 | 1.6 | adobe-carlson-pro | 1 |  99.96 |  100.0 |  100.0 |  99.85 | 0 | 0 | FULL |
+| 14 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.98 |  100.0 |  100.0 |   99.9 | 0 | 0 | FULL |
+| 15 | 2 | 0.4 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | FULL |
+| 16 | 5 | 0.4 | garamond-premier-pro | 2 |  99.99 |  100.0 |  100.0 |  99.71 | 0 | 0 | FULL |
 
 ### Hebrews Commentary (7 Volumes)
 
@@ -188,33 +188,12 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 10 — Need: 6.4 (✅ Good) — Rank 8
-
-- **Body font:** eb-garamond
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** PRISTINE
-- **convert.py:** Yes (280 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.84
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.27
-- **Latin tagging:** 45.00
-- **Latin translation:** 40.74
-- **Citations:** total=20, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume 12 — Need: 4.8 (✅ Good) — Rank 9
+### Volume 12 — Need: 4.8 (✅ Good) — Rank 8
 
 - **Body font:** centaur
 - **Source type:** ages_pdf
 - **Treatises:** 3
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (317 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.94
@@ -230,12 +209,12 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 14 — Need: 4.4 (✅ Good) — Rank 10
+### Volume 14 — Need: 4.4 (✅ Good) — Rank 9
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
 - **Treatises:** 2
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (220 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.89
@@ -251,12 +230,12 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 16 — Need: 4.4 (✅ Good) — Rank 11
+### Volume 16 — Need: 4.4 (✅ Good) — Rank 10
 
 - **Body font:** georgia
 - **Source type:** ages_pdf
 - **Treatises:** 5
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (383 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=1, footnotes=None
 - **Word coverage:** 99.94
@@ -272,12 +251,12 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 3 — Need: 3.4 (✅ Good) — Rank 12
+### Volume 3 — Need: 3.4 (✅ Good) — Rank 11
 
 - **Body font:** arno-pro
 - **Source type:** ages_pdf
 - **Treatises:** 1
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (240 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.97
@@ -293,12 +272,12 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 15 — Need: 3.0 (✅ Good) — Rank 13
+### Volume 15 — Need: 3.0 (✅ Good) — Rank 12
 
 - **Body font:** new-caledonia-lt-std
 - **Source type:** ages_pdf
 - **Treatises:** 3
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (286 lines, 2 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.93
@@ -314,12 +293,12 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 9 — Need: 2.8 (✅ Good) — Rank 14
+### Volume 9 — Need: 2.8 (✅ Good) — Rank 13
 
 - **Body font:** im-fell-english
 - **Source type:** ages_pdf
 - **Treatises:** 3
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (155 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.93
@@ -335,12 +314,33 @@ Generated: 2026-06-27T17:56:32Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
+### Volume 10 — Need: 2.8 (✅ Good) — Rank 14
+
+- **Body font:** eb-garamond
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** FULL
+- **convert.py:** Yes (338 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.93
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.58
+- **Latin tagging:** 60.51
+- **Latin translation:** 59.50
+- **Citations:** total=20, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
 ### Volume 8 — Need: 2.7 (✅ Good) — Rank 15
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
 - **Treatises:** 16
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (177 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.95
@@ -361,7 +361,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** itc-galliard
 - **Source type:** ages_pdf
 - **Treatises:** 5
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (330 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.94
@@ -382,7 +382,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** palatino
 - **Source type:** ages_pdf
 - **Treatises:** 4
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (224 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.95
@@ -403,7 +403,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** sabon-next-lt
 - **Source type:** ages_pdf
 - **Treatises:** 3
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (239 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.95
@@ -424,7 +424,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** baskerville
 - **Source type:** ages_pdf
 - **Treatises:** 4
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (258 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.96
@@ -445,7 +445,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
 - **Treatises:** 1
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (208 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.96
@@ -466,7 +466,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** adobe-garamond-pro
 - **Source type:** ages_pdf
 - **Treatises:** 4
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (606 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.98
@@ -487,7 +487,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** hoefler-text
 - **Source type:** ages_pdf
 - **Treatises:** 3
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (178 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.99
@@ -508,7 +508,7 @@ Generated: 2026-06-27T17:56:32Z
 - **Body font:** garamond-premier-pro
 - **Source type:** ages_pdf
 - **Treatises:** 2
-- **QA level:** PRISTINE
+- **QA level:** FULL
 - **convert.py:** Yes (175 lines, 1 text_replacements)
 - **Audit:** errors=0, warnings=0, footnotes=None
 - **Word coverage:** 99.99

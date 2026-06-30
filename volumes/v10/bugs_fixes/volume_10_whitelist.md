@@ -47,7 +47,6 @@ This document lists and explains all whitelisted items for Volume 10, in accorda
 
 ### Invalid Bible References
 
-- `2 Peter 7`: Legitimate bible reference format/variant from source.
 
 ### List Formatting Inconsistencies
 
@@ -59,11 +58,9 @@ This document lists and explains all whitelisted items for Volume 10, in accorda
 
 ### OCR & Bracket Residues
 
-- `do)ignorantly`: Legitimate historical orthography or spelling variation.
 
 ### Punctuation Spacing Blemishes
 
-- `1 .`: Legitimate historical orthography or spelling variation.
 - `1st ,`: Legitimate historical orthography or spelling variation.
 - `2 .`: Legitimate historical orthography or spelling variation.
 - `Ans .`: Legitimate historical orthography or spelling variation.
@@ -88,7 +85,6 @@ This document lists and explains all whitelisted items for Volume 10, in accorda
 - `3.`: Legitimate historical outline sequencing or argument jumps.
 - `3. ... 13.`: Legitimate historical outline sequencing or argument jumps.
 - `3. ... 14.`: Legitimate historical outline sequencing or argument jumps.
-- `3. ... 256.`: Legitimate historical outline sequencing or argument jumps.
 - `3. ... 5.`: Legitimate historical outline sequencing or argument jumps.
 - `4. ... 11.`: Legitimate historical outline sequencing or argument jumps.
 - `4. ... 14.`: Legitimate historical outline sequencing or argument jumps.
@@ -96,9 +92,7 @@ This document lists and explains all whitelisted items for Volume 10, in accorda
 - `5. ... 10.`: Legitimate historical outline sequencing or argument jumps.
 - `5. ... 15.`: Legitimate historical outline sequencing or argument jumps.
 - `5. ... 7.`: Legitimate historical outline sequencing or argument jumps.
-- `6.`: Legitimate historical outline sequencing or argument jumps.
 - `6. ... 16.`: Legitimate historical outline sequencing or argument jumps.
-- `8.`: Legitimate historical outline sequencing or argument jumps.
 - `III.`: Legitimate historical outline sequencing or argument jumps.
 
 ### Unmatched Quotation Marks
@@ -195,11 +189,12 @@ Pages: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 
 ### Dense Source Window Loss
 
+- `to the good pleasure of his will ephesians john acts titus timothy james etc`: Expected mismatch due to restoration of missing scripture chapter/verse markers that were dropped from PDF parsing.
+- `on the condition that they believe on him hence their system was termed hyothetic`: Expected mismatch due to intentional OCR correction of "hyothetic" to "hypothetic".
+
 - `acts ephesians as distinguished from the world romans john his elect romans his children`: False positive due to multi-column layout or tabular format.
-- `all justified and made blessed through non imputation of their sin they who have`: False positive due to multi-column layout or tabular format.
 - `and room with an intention that he should live samuel romans so that christ`: False positive due to multi-column layout or tabular format.
 - `and the performance of good works is in their apprehension condition pre required to`: False positive due to multi-column layout or tabular format.
-- `and upon their consciences by reason of not understanding of this love which came`: False positive due to multi-column layout or tabular format.
 - `consolation by his death chapter objections are answered being consideration of thomas more's reply`: False positive due to multi-column layout or tabular format.
 - `dagon cannot keep on his head nor the idol of uncontrollable free will enjoy`: False positive due to multi-column layout or tabular format.
 - `declared throughout all the earth chap 28-30 who are the called according to his`: False positive due to multi-column layout or tabular format.
@@ -225,7 +220,7 @@ Pages: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 - `respect of conformity to the rule and so there is χασμα μεγαbetween them iii`: False positive due to multi-column layout or tabular format.
 - `salus electorum sanguis jesu or the death of death in the death of christ`: False positive due to multi-column layout or tabular format.
 - `some false principles which he hath framed unto himself as desire of self sufficiency`: False positive due to multi-column layout or tabular format.
-- `that of αντιλυτρον timothy do always denote by the not-to-be wrested genuine signification of`: False positive due to multi-column layout or tabular format.
+
 - `that ye have need of all these things mt god hopeth and expecteth divers`: False positive due to multi-column layout or tabular format.
 - `the conclusion by all the strength and skill of mr more neither is that`: False positive due to multi-column layout or tabular format.
 - `the sum of all is the death and blood shedding of jesus christ hath`: False positive due to multi-column layout or tabular format.
@@ -234,7 +229,9 @@ Pages: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 - `to the right honorable the lords and gentlemen of the committee for religion f1`: False positive due to multi-column layout or tabular format.
 - `unite my heart to fear thy name psalm the god in whose hand try`: False positive due to multi-column layout or tabular format.
 - `we may nay we must grant twofold praying in our savior one by virtue`: False positive due to multi-column layout or tabular format.
-- `what hast thou that thou didst not receive corinthians are we better than they`: False positive due to multi-column layout or tabular format.
+
+- `man be born again he cannot see the kingdom of god john in that`: Expected mismatch due to restoration of missing scripture chapter/verse markers that were dropped from PDF parsing.
+- `work under the title the open door for mall's approach to god or vindication`: Expected mismatch due to intentional OCR correction of 'Mall's' to 'All's'.
 
 ### Bottom of Page Text Loss
 
@@ -252,6 +249,8 @@ Pages: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 
 ### Paragraph Splits
 
+- `EPUB: EPUB/ch056.xhtml`: Previous: `; which, if ever the Lord call me to, I hope very clearly to demonstrate: for the present, it belongs not immediately to the business in hand, and therefore I leave it, coming to —` | Next: `Proof 2. "Jesus Christ, the Son of God, came into the world to save the world, John 12:47; to save sinners, 1 Timothy 1:15; to take away our sins, and destroy the works of the devi`
+
 - `EPUB: EPUB/ch002.xhtml`: Previous: `ered, by the Committee of the House of Commons in Parliament for the Regulating of Printing and Publishing of Books, That this book, entitled "A Display of Arminianism," be printed` | Next: `JOHN WHITE`
 - `EPUB: EPUB/ch006.xhtml`: Previous: `n the Arminian doctrine concerning God's decrees, I will in brief present to your view the opposition that is in this matter betwixt the word of God and the patrons of free-will: —` | Next: `S.S. Lib. Arbit. "He hath chosen us in him before the foundation of the world," Ephesians 1:4.`
 - `EPUB: EPUB/ch007.xhtml`: Previous: `nd of consolation. Now, to present in one view how opposite the opinions of the worshippers of the great goddess contingency are to this sacred truth, take this short antithesis: —` | Next: `S.S. Lib. Arbit. "Known unto God are all his works from the beginning of the world," Acts 15:18.`
@@ -263,7 +262,7 @@ Pages: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 - `EPUB: EPUB/ch012.xhtml`: Previous: `ve it; and I am certain it will be long enough. But this, I say, belongs not to this place; only, let us see how, from the word of God, we may overthrow the former odious heresy: —` | Next: `God in the beginning "created man in his own image," Genesis 1:27, — that is, "upright," Ecclesiastes 7:29, endued with a nature composed to obedience and holiness. That habitual g`
 - `EPUB: EPUB/ch013.xhtml`: Previous: `s in Christianity; for my part, in these following contradictory assertions I will choose rather to adhere to the authority of the word of God than of Arminius and his sectaries: —` | Next: `S.S. Lib. Arbit. "He made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him," 2 Corinthians 5:21. "He loved the church, and gave himself `
 - `EPUB: EPUB/ch017.xhtml`: Previous: `So that the Arminian opposition to the truth of the gospel in this particular is clearly manifest: —` | Next: `S.S. Lib. Arbit. "Of ourselves we can do nothing," John 15:5. "We are not sufficient of ourselves to think any thing as of ourselves," 2 Corinthians 3:5. "We are by nature the chil`
-- `EPUB: EPUB/ch021.xhtml`: Previous: `3. A twofold end noticed, viz.: —` | Next: `1 . Of the work;`
+
 - `EPUB: EPUB/ch021.xhtml`: Previous: `Chapter 1. Arguments against the universality of redemption. The first two from the nature of the new covenant, and the dispensation thereof: —` | Next: `Arg. 1. From the nature of the covenant of grace, as being made in Christ, not with all, but only some.`
 - `EPUB: EPUB/ch021.xhtml`: Previous: `Chapter 2. Three other arguments: —` | Next: `Arg. 3. From the absolute nature of Christ's purchase for all the objects thereof.`
 - `EPUB: EPUB/ch021.xhtml`: Previous: `Chapter 4. Of sanctification, and of the cause of faith, and the procurement thereof by the death of Christ: —` | Next: `Arg. 8. From the efficacy of Christ's death for sanctification.`
@@ -292,6 +291,8 @@ Pages: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 - `EPUB: EPUB/ch053.xhtml`: Previous: `gainst our interpretation of this passage of the apostle, but they are all prevented or removed in the explication itself; so that it shall suffice us to name one or two of them: —` | Next: `Obj. 1 "It is the intention of the apostle to comfort all in their fears and doubts; but every one in the world may be in fears and doubts: therefore, he proposeth this, that they `
 - `EPUB: EPUB/ch053.xhtml`: Previous: `n, the former being the rule of the latter: for look, to whomsoever God is reconciled in and by Christ, they shall certainly every one of them be reconciled to God by the Spirit; —` | Next: `God's reconciliation to them consisting in a non-imputation of their sins; their reconciliation unto him, in an acceptance of that non-imputation in Jesus Christ. And as it is the `
 - `EPUB: EPUB/ch054.xhtml`: Previous: `tenance of the error we oppose with more than ordinary endeavors and confidence of success, it may not be unnecessary to consider what is brought by them to this end and purpose: —` | Next: `Romans 5:14. Adam is called τύπος , the type and "figure of him that was to come;" not that he was an instituted type, ordained for that only end and purpose, but only that in what`
+- `EPUB: EPUB/ch056.xhtml`: Previous: `; which, if ever the Lord call me to, I hope very clearly to demonstrate: for the present, it belongs not immediately to the business in hand, and therefore I leave it, coming to —` | Next: `Proof 2. "Jesus Christ, the Son of God, came into the world to save the world, John 12:47; to save sinners, 1 Timothy 1:15; to take away our sins, and destroy the works of the devi`
+- `EPUB: EPUB/ch005.xhtml`: Previous: `cussed, chapter twelve, where you shall find how, "movet cornicula risum, furtivis nudata coloribus` | Next: `Seventhly, They do not only claim to their new-made deity a saving power, but also affirm that he is very active and operative in the great work of saving our souls, —`
 
 ### Ignored Warnings
 

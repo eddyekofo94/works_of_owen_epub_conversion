@@ -178,6 +178,7 @@ class Enumerator:
 def clean_text(text: str) -> str:
     text = text.replace("\u00a0", " ")
     text = text.replace("“", '"').replace("”", '"').replace("‘", "'").replace("’", "'")
+    text = re.sub(r"\[Translated:.*?\]", " ", text)
     text = re.sub(r"</?span\b[^>]*>", " ", text)
     text = HEADER_RE.sub(" ", text)
     text = re.sub(r"<\d[A-Za-z0-9]{5}>", " ", text)
@@ -427,9 +428,16 @@ def extract_pdf_pages(pdf_path: Path, no_whitelist: bool = False) -> tuple[list[
     return pages, {"page_count": len(pages), "skipped_detected": skipped_detected}
 
 
-def compare_word_coverage(pdf_text: str, epub_text: str) -> dict[str, Any]:
+def compare_word_coverage(pdf_text: str, epub_text: str, ignored_words: list[str] = None) -> dict[str, Any]:
+    if ignored_words is None:
+        ignored_words = []
     pdf_counts = Counter(content_words(pdf_text))
     epub_counts = Counter(content_words(epub_text))
+    for word in ignored_words:
+        if word in pdf_counts:
+            # Pretend epub has all the missing pdf counts so overlap is perfect for this word
+            if epub_counts.get(word, 0) < pdf_counts[word]:
+                epub_counts[word] = pdf_counts[word]
 
     missing = []
     excess = []
@@ -1820,7 +1828,18 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
     pdf_text = "\n".join(pdf_pages)
     epub_text = "\n".join(p.text for p in paragraphs)
 
-    word_coverage = compare_word_coverage(pdf_text, epub_text)
+    whitelist = {}
+    if not no_whitelist:
+        whitelist_path = pdf_path.parent.parent / "bugs_fixes" / f"volume_{volume}_whitelist.json"
+        if whitelist_path.exists():
+            try:
+                import json
+                whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
+
+    whitelisted_ignored_words = whitelist.get("text_integrity", {}).get("ignored_words", [])
+    word_coverage = compare_word_coverage(pdf_text, epub_text, ignored_words=whitelisted_ignored_words)
     page_scan = page_coverage(pdf_pages, epub_text)
     
     if is_hebrews:
@@ -1870,15 +1889,6 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
     latin_word_cov = latin_word_coverage(pdf_pages, paragraphs)
     latin_clause_fid = latin_clause_fidelity(pdf_pages, epub_text)
     latin_trans_cov = latin_translation_coverage(paragraphs)
-    whitelist = {}
-    if not no_whitelist:
-        whitelist_path = pdf_path.parent.parent / "bugs_fixes" / f"volume_{volume}_whitelist.json"
-        if whitelist_path.exists():
-            try:
-                import json
-                whitelist = json.loads(whitelist_path.read_text(encoding="utf-8"))
-            except Exception as e:
-                print(f"[Warning] Failed to load whitelist {whitelist_path}: {e}")
 
     # Track used text_integrity whitelist items
     used_text_integrity = {

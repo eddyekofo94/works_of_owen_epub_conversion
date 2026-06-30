@@ -1,0 +1,843 @@
+{
+  "volume": "5",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/input/owen-v5.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
+  "generated_at": "2026-06-25T22:35:09.151907+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "inline_structural_markers",
+      "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "overlong_heading_candidates",
+      "message": "Some chapter headings are long enough to suggest swallowed body text"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    },
+    {
+      "code": "low_latin_translation_coverage",
+      "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py"
+    }
+  ],
+  "pdf": {
+    "page_count": 576,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "epub": {
+    "spine_text_files": 39,
+    "paragraph_count": 2147
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 193208,
+    "epub_content_tokens": 194213,
+    "coverage_ratio": 0.9999,
+    "missing_word_samples": [],
+    "excess_word_samples": [
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 3,
+        "epub": 12
+      },
+      {
+        "word": "historical",
+        "pdf": 4,
+        "epub": 12
+      },
+      {
+        "word": "greek",
+        "pdf": 5,
+        "epub": 12
+      },
+      {
+        "word": "modern",
+        "pdf": 3,
+        "epub": 10
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "hebrew",
+        "pdf": 4,
+        "epub": 10
+      },
+      {
+        "word": "edition",
+        "pdf": 2,
+        "epub": 8
+      },
+      {
+        "word": "section",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 562,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 27043,
+    "missing_dense_window_pages": 1,
+    "missing_dense_windows": [
+      {
+        "page": 473,
+        "sample": "may be assured of their salvation tantum religio potuit suadere malorum so will men"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 573,
+    "top_windows_usable": 561,
+    "skipped_top_window_count": 8,
+    "skipped_top_windows": [
+      {
+        "page": 109,
+        "window": "the state of adam and god's dealing with him therein is the best representation",
+        "sample": "[4.] The state of Adam, and God's dealing with him therein, is the best representation of the order and method of these things. As he was after the",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 115,
+        "window": "on these concessions we yet say two things that the whole nature of justifying",
+        "sample": "(3.) On these concessions we yet say two things: — [1.] That the whole nature of justifying faith does not consist merely in an",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 127,
+        "window": "all those wherein god is said to set forth and to make him be",
+        "sample": "[2.] All those wherein God is said to set forth and to make him be for us and unto us, what he is so, unto the justification of life.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 238,
+        "window": "as the pattern and exemplary cause of our predestination for we are predestinated to",
+        "sample": "[1.] As the pattern and exemplary cause of our predestination; for we are \"predestinated to be conformed unto the image of the Son of God, that he",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 262,
+        "window": "in order unto this end he made him under the law or gave the",
+        "sample": "[2.] In order unto this end, he made him under the law, or gave the law power over him, to demand of him and inflict on him the penalty which",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 515,
+        "window": "service of their lusts and regard it not unto whom may be applied that",
+        "sample": "service of their lusts, and regard it not; unto whom may be applied that [saying] of the prophet, \"Hear, ye despisers, and wonder, and perish.\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 555,
+        "window": "cautions us against hebrews and is that which god detests",
+        "sample": "cautions us against, Hebrews 4:12, 13, and [is that] which God detests,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 565,
+        "window": "constant clear view and judgment of their uncertainty emptiness and disability to give any",
+        "sample": "[1.] A constant, clear view and judgment of their uncertainty, emptiness, and disability to give any rest or satisfaction. Uncertain riches, uncertain",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 1,
+    "missing_top_windows": [
+      {
+        "page": 126,
+        "window": "verse he that be1ieveth on me has everlasting life chapter",
+        "sample": "verse 47, \"He that be1ieveth on me has everlasting life;\" chapter 7:38,"
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 550,
+    "bottom_windows_usable": 527,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 1854,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 228,
+    "short_fragment_count": 27,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "From my study, May the 30th, 1677"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "And again,"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Or that of the psalmist,"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Or,"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "Wherefore,"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "And afterwards:"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "— of his love;"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "—of his grace;"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "— of his wisdom;"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "— of his power;"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "The whole is expressed, John 14:6,"
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "text": "Ans. But, —"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "The words of Schlichtingius are:"
+      },
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "And afterward,"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "— AEn.6, 569."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "Unto the second, I say, —"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "Unto the third, I say, —"
+      },
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "Ans."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Isaac Chauncey"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "We may a little explain it: —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 2,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "Lastly, the concluding chapter is devoted to an explanation of the passages in Paul and James which are alleged to be at variance but which are proved to be in perfect harmony, 20. — Ed."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "All men in those days were either kept in bondage under endless fears and anxieties of mind upon the convictions of sin, or sent for relief unto indulgences, priestly pardons, penances, pilgrimages, works satisfactory of their own, and supererogatory of others"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch014.xhtml",
+        "text": "III. There is a justification of convinced sinners on their believing."
+      }
+    ],
+    "overlong_heading_candidate_count": 2,
+    "overlong_heading_candidates": [
+      {
+        "file": "EPUB/ch012.xhtml",
+        "tag": "h3",
+        "text": "IMPUTATION OF THE SINS OF THE CHURCH UNTO CHRIST — GROUNDS OF IT — THE NATURE OF HIS SURETISHIP — CAUSES OF THE NEW COVENANT — CHRIST AND THE CHURCH ONE MYSTICAL PERSON — CONSEQUENTS THEREOF"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "tag": "h3",
+        "text": "THE NATURE OF JUSTIFICATION AS DECLARED IN THE EPISTLES OF ST. PAUL, IN THAT UNTO THE ROMANS ESPECIALLY. — 3:4CHAP. 3,4,5,10; 1 CORINTHIANS 1:30; 2 Corinthians 5:212 CORINTHIANS 5:21; GALATIANS 2:16; EPHESIANS 2:8-10; PHILIPPIANS 3:8,9.)"
+      }
+    ],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 434,
+    "epub_marker_count": 444,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 6,
+    "excess_markers": [
+      {
+        "marker": "(1)",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p58",
+            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "(1.)",
+        "pdf": 99,
+        "epub": 100,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p61",
+            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p274",
+            "context": "(1.) The doctrine of the Trinity itself is denied, impugned, yea, derided by them; and that solely on this account. They plead that it is incomprehensible by reason; for there is in th"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p300",
+            "context": "(1.) That this relation is evident unto that spiritual wisdom whereby we are enabled, doctrinally and practically, to comprehend the harmony of the mystery of God, and the consistency"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 99,
+        "epub": 100,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p61",
+            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p276",
+            "context": "(2.) On the same ground the incarnation of the Son of God is rejected as ἀτόπων ἀτοπώτατον , — the most absurd conception that ever befell the minds of men. Now it is to no purpose to"
+          },
+          {
+            "location": "EPUB/ch004.xhtml#p301",
+            "context": "(2.) That it is made evident by the Scripture, wherein both these things — justification through the imputation of the righteousness of Christ, and the necessity of our personal obedie"
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 29,
+        "epub": 30,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p61",
+            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p380",
+            "context": "[1.] Without the due consideration and supposition of it, the true nature of faith can never be understood. For, as we have showed before, justification is God's way of the deliverance"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p388",
+            "context": "[1.] Displicency and sorrow that we have sinned. It is impossible that any one should be really convinced of sin in the way before declared, but that a dislike of sin, and of himself t"
+          }
+        ]
+      },
+      {
+        "marker": "[1]",
+        "pdf": 0,
+        "epub": 1,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p58",
+            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 29,
+        "epub": 30,
+        "examples": [
+          {
+            "location": "EPUB/structural_guide.xhtml#p61",
+            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p381",
+            "context": "[2.] The order, relation, and use of the law and the gospel do uncontrollably evince the necessity of this conviction previous unto believing. For that which any man has first to deal"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p389",
+            "context": "[2.] Fear of punishment due to sin. For conviction respects not only the instructive and receptive part of the law, whereby the being and nature of sin are discovered, but the sentence"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "of justification by the imputation of the righteousness of christ",
+      "count": 11
+    },
+    {
+      "phrase": "doctrine of justification by the imputation of the righteousness of",
+      "count": 10
+    },
+    {
+      "phrase": "set forth to be propitiation through faith in his blood",
+      "count": 10
+    },
+    {
+      "phrase": "the doctrine of justification by the imputation of the righteousness",
+      "count": 9
+    },
+    {
+      "phrase": "freely by his grace through the redemption that is in",
+      "count": 9
+    },
+    {
+      "phrase": "justified freely by his grace through the redemption that is",
+      "count": 8
+    },
+    {
+      "phrase": "by his grace through the redemption that is in christ",
+      "count": 8
+    },
+    {
+      "phrase": "his grace through the redemption that is in christ jesus",
+      "count": 8
+    },
+    {
+      "phrase": "whom god has set forth to be propitiation through faith",
+      "count": 8
+    },
+    {
+      "phrase": "god has set forth to be propitiation through faith in",
+      "count": 8
+    },
+    {
+      "phrase": "has set forth to be propitiation through faith in his",
+      "count": 8
+    },
+    {
+      "phrase": "through the redemption that is in christ jesus whom god",
+      "count": 7
+    },
+    {
+      "phrase": "the redemption that is in christ jesus whom god has",
+      "count": 7
+    },
+    {
+      "phrase": "redemption that is in christ jesus whom god has set",
+      "count": 7
+    },
+    {
+      "phrase": "that is in christ jesus whom god has set forth",
+      "count": 7
+    },
+    {
+      "phrase": "is in christ jesus whom god has set forth to",
+      "count": 7
+    },
+    {
+      "phrase": "in christ jesus whom god has set forth to be",
+      "count": 7
+    },
+    {
+      "phrase": "christ jesus whom god has set forth to be propitiation",
+      "count": 7
+    },
+    {
+      "phrase": "jesus whom god has set forth to be propitiation through",
+      "count": 7
+    },
+    {
+      "phrase": "that we might be made the righteousness of god in",
+      "count": 7
+    },
+    {
+      "phrase": "we might be made the righteousness of god in him",
+      "count": 7
+    },
+    {
+      "phrase": "that whosoever believeth in him should not perish but have",
+      "count": 6
+    },
+    {
+      "phrase": "being justified freely by his grace through the redemption that",
+      "count": 6
+    },
+    {
+      "phrase": "grace through the redemption that is in christ jesus whom",
+      "count": 6
+    },
+    {
+      "phrase": "that the righteousness of the law might be fulfilled in",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 1158,
+    "epub_greek_word_count": 1158,
+    "pdf_greek_unique_words": 553,
+    "epub_greek_unique_words": 553,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 123,
+    "epub_hebrew_word_count": 123,
+    "pdf_hebrew_unique_words": 99,
+    "epub_hebrew_unique_words": 99,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 49,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 14,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 3124,
+    "epub_latin_word_count": 3119,
+    "epub_tagged_latin_word_count": 2602,
+    "pdf_latin_unique_words": 1282,
+    "epub_latin_unique_words": 1284,
+    "epub_tagged_unique_words": 1083,
+    "latin_word_coverage_ratio": 0.9971,
+    "latin_tagging_ratio": 0.8342,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "socinus",
+        "epub": 29,
+        "tagged": 2
+      },
+      {
+        "word": "onesimus",
+        "epub": 10,
+        "tagged": 0
+      },
+      {
+        "word": "obviate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "reus",
+        "epub": 13,
+        "tagged": 5
+      },
+      {
+        "word": "adequate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "thomas",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "genius",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "schlichtingius",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "grotius",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "pelagius",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "subjectum",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "candor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "totum",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "congruo",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "glamor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "injuria",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "debtor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "bathsheba",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "serm",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "abrogate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "viator",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "habere",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "nam",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "hactenus",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "voluntaria",
+        "epub": 3,
+        "tagged": 1
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 330,
+    "missing_latin_clause_count": 1,
+    "missing_latin_clauses": [
+      {
+        "page": 359,
+        "word_count": 59,
+        "sample": "non solum illa opera legis quae sunt in veteribus sacramentis et nunc"
+      }
+    ]
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 591,
+    "translated_latin_runs_count": 392,
+    "latin_translation_ratio": 0.6633,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Articulus stantis"
+      },
+      {
+        "phrase": "cadentis ecclesiae"
+      },
+      {
+        "phrase": "nulla pietatis"
+      },
+      {
+        "phrase": "nullo laudato prioris vitae exemplo commendatos; imo ut"
+      },
+      {
+        "phrase": "videmus, per vagabundos, et contentionum zeli carnalis plenos"
+      },
+      {
+        "phrase": "alios ex castris, aulis, ganeis, prolatam esse. Scrupuli ab excellenti viro propositi"
+      },
+      {
+        "phrase": "in \"materia probabili"
+      },
+      {
+        "phrase": "Albertus Pighius"
+      },
+      {
+        "phrase": "Dissimulate non possumus"
+      },
+      {
+        "phrase": "vel primam doctrinae Christianae"
+      },
+      {
+        "phrase": "quaestionibus, et definitionibus, secundum quas nonnulli magno supercilio primam in omnibus"
+      },
+      {
+        "phrase": "pretio ut in aliqua"
+      },
+      {
+        "phrase": "Casparus Ulenbergius"
+      },
+      {
+        "phrase": "salvari nisi"
+      },
+      {
+        "phrase": "ergo dum"
+      },
+      {
+        "phrase": "sola morte fiduciam tuam"
+      },
+      {
+        "phrase": "in nulla alia re fiduciam"
+      },
+      {
+        "phrase": "morte totum"
+      },
+      {
+        "phrase": "Et si Dominus"
+      },
+      {
+        "phrase": "Domini nostri"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      35,
+      137,
+      157,
+      207,
+      281,
+      292,
+      307,
+      353,
+      365,
+      418,
+      436,
+      457,
+      513
+    ],
+    "ignored_warnings": [
+      "repeated_phrases"
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

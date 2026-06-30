@@ -127,10 +127,15 @@ See previous sessions.
 
 
 
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-27T17:45:05.162567+00:00
+**Last run:** 2026-06-30T00:52:12.476109+00:00
 **EPUB:** `volumes/v10/output/volume_10.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -179,10 +184,27 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-27T17:56:28.155137+00:00
+**Last run:** 2026-06-30T01:01:38.948164+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -193,10 +215,10 @@ Reports:
 |-------|--------|
 | PDF pages | 828 |
 | EPUB text files | 105 |
-| EPUB paragraphs/headings | 3299 |
-| Approximate PDF-to-EPUB word coverage | 0.9984 |
-| Weak page matches | 5 |
-| Dense source windows checked | 35062 |
+| EPUB paragraphs/headings | 3315 |
+| Approximate PDF-to-EPUB word coverage | 0.9993 |
+| Weak page matches | 2 |
+| Dense source windows checked | 35209 |
 | Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
@@ -207,13 +229,13 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 190 |
+| Structural starts excluded from split warnings | 188 |
 | Short fragments | 33 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 1 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 5 |
+| Suspicious large-number starts | 2 |
 | Roman heading candidates | 1 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |

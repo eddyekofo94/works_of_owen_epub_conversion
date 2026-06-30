@@ -2205,7 +2205,7 @@ GENTIUM_PLUS_FILES = {
 
 # Distinctly Latin words for tagging
 LATIN_DICTIONARY = {
-    'grotius', 'socinus', 'smalcius', 'crellius', 'annotator', 'jus', 'thomas', 'franciscus', 'incarnate', 'transylvania',
+    'grotius', 'socinus', 'smalcius', 'annotator', 'jus', 'thomas', 'franciscus', 'incarnate', 'transylvania',
     'et', 'est', 'non', 'ut', 'ad', 'cum', 'qui', 'quae', 'quod', 'quibus', 'sub', 'pro', 'per', 
     'ab', 'ex', 'sine', 'de', 'sunt', 'esse', 'fuit', 'deus', 'dominus', 'christus', 'jesu', 
     'patris', 'filii', 'spiritus', 'sancti', 'gratia', 'fide', 'scriptura', 'ecclesia', 'vero', 
@@ -2215,7 +2215,8 @@ LATIN_DICTIONARY = {
     'tertio', 'liber', 'caput', 'versus', 'sermo', 'epistola', 'tractatus', 'distinctio', 
     'quaestio', 'articulus', 'apud', 'vel', 'atque', 'ac', 'si', 'nunc', 'tunc', 'post', 'ante', 
     'inter', 'contra', 'super', 'ob', 'propter', 'modo', 'ratione', 'causa', 're', 'rem', 'res', 
-    'eorum', 'earum', 'suorum', 'suarum', 'illius', 'hujus', 'eo', 'ea', 'id', 'quos', 
+    'eorum', 'earum', 'suorum', 'suarum', 'illius', 'hujus', 'eo', 'ea', 'id', 'quos', 'ipso', 'solutio', 'ejusdem', 'tantidem', 'tantundem', 
+    'martii', 'anno', 'domini',
     'quas', 'quo', 'qua', 'unde', 'ubi', 'ibi', 'inde', 'dum', 'donec', 'antequam', 
     'priusquam', 'quasi', 'tamquam', 'velut', 'utrum', 'an', 'num', 'ne', 'nonne', 'imo', 'potius', 
     'solum', 'tantum', 'ergo', 'ideo', 'igitur', 'itaque', 'propterea', 'quocirca', 'simul', 
@@ -2344,7 +2345,7 @@ ENGLISH_WORDS = {
     'premium', 'emphasis', 'create', 'laodicea', 'ephesus', 'proportionate', 'abate',
     'importunate', 'whereto', 'whoso', 'alienate', 'elisha', 'habituate', 'william',
     'captivate', 'beam', 'humor', 'ingenerate', 'malefactor',
-    'obviate', 'adequate', 'genius',
+    'obviate', 'adequate', 'genius', 'creditor', 'debtor',
     # More English words / proper nouns that end in Latin suffixes to avoid false-positive Latin classification
     'hist', 'seas', 'determinate', 'palestina', 'relate', 'manna', 'dictate', 'ago', 'governor', 
     'asia', 'cyrus', 'emperor', 'tibni', 'omri', 'propagate', 'lazarus', 'superior', 'cautionate', 
@@ -2359,7 +2360,13 @@ ENGLISH_WORDS = {
     # Proper names and possessives commonly mis-flagged as Latin suffix matches
     'pela', 'esau', 'esaus', 'medusa', 'medusas', 'asa', 'asas', 'nero', 'neros',
     'cicero', 'ciceros', 'hydra', 'hydras', 'elisha', 'elishas', 'joshua', 'joshuas',
-    'elis', 'gallio', 'gallios', 'dalva',
+    'elis', 'gallio', 'gallios', 'dalva', 'grotius', 'socinus', 'arminius', 'corvinus',
+    'lubbertus', 'thomas', 'junius', 'crellius', 'piscator', 'vossius', 'maccovius',
+    'conditionate', 'ultimate', 'termino', 'predestinate', 'pelagius', 'diana',
+    'vorstius', 'grevinchovius', 'aquinas', 'sponsor', 'plate', 'candor', 'facile',
+    'annihilate', 'transgressor', 'saumur', 'pontius', 'invalidate', 'seneca', 'ratio',
+    'durandus', 'iphigenia', 'rugiani', 'professor', 'venator', 'languor', 'extenuate',
+    'plato', 'cato', 'collate',
     # Greek Beta Code transliterated words (often mis-flagged as Latin)
     'kai', 'dwrea', 'kalo', 'duna', 'ajnakaini', 'ejautoi', 'paradeigmati', 'nhma',
     'ajgi', 'fwtismo', 'tina', 'meto', 'parapeso', 'meta', 'yijo', 'noia', 'ajnakainismo',
@@ -2372,7 +2379,8 @@ ENGLISH_WORDS = {
 SHARED_WORDS = {
     'in', 'is', 'an', 'a', 'ad', 'me', 'etc', 'post', 'cap', 'lib', 'sub', 'rem', 're', 
     'res', 'am', 'as', 'os', 'or', 'do', 'no', 'si', 'vel', 'ac', 'inter', 'pro', 'per', 'ab', 
-    'ex', 'id', 'ii', 'eo', 'ea', 'sine', 'art', 'sect', 'sec', 'sum'
+    'ex', 'id', 'ii', 'eo', 'ea', 'sine', 'art', 'sect', 'sec', 'sum', 'ipso', 'ergo', 
+    'tantundem', 'solutio'
 }
 
 # Common Latin endings (suffixes)

@@ -1,0 +1,521 @@
+{
+  "volume": "h3",
+  "status": "warn",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h3/bugs_fixes/volume_h3_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h3/bugs_fixes/volume_h3_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h3/bugs_fixes/volume_h3_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/h3/bugs_fixes/volume_h3_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [
+      "font_config_missing"
+    ],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 40,
+      "budget": 61,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": " הנביאים האחרונים חגי זכריה ומלאכי נסתלקה רוח הקודש מישראל ;—'After the death of the latter prophets, Haggai, Zechariah, and Malachi, the Holy Spirit was taken away from Israel.' \"",
+          "next": "It is, then, confessed \"that God ceased to speak to the church in prophets, as to their oral teaching and writing, after the days of Malachi; which season of the want of vision, th"
+        },
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "efore mentions light in particular, because of an allusion to the light at first created by God, when of all other things, whereto there is no such allusion, he maketh no mention,\"",
+          "next": "Ans. [1.] The new creation granted by the men of this persuasion being only a moral suasion of the minds of men by the outward doctrine of the gospel, I know not what allusion can "
+        },
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "ρακτὴρ τῆς ὑποστάσεως αὐτοῦ , φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως αὑτοῦ , δι ʼ ἑαυτοῦ καθαρισμὸν ποιησάμενος τῶν ἁμαρτιῶν ἡμῶν , ἐκάθισεν ἐν δεξιᾷ τῆς μεγαλωσύνης ἐν ὑψηλοῖς ‚",
+          "next": "Δι ʼ ἑαυτοῦ is wanting in MS. T.; but the sense requires the words, and all other ancient copies retain them. Ἡμῶν is wanting in some copies; and one or two for ἐκάθισε have καθίζε"
+        },
+        {
+          "file": "EPUB/ch002.xhtml",
+          "previous": "ee: thy throne shall be established for ever.\" (1 Chron. 17:14, \"But I will settle him in mine house and in my kingdom for ever: and his throne shall be established for evermore.\")",
+          "next": "This is the whole divine oracle from whence the apostle takes the testimony under consideration; and the difficulty wherewith it is attended ariseth from hence, that it is not easy"
+        },
+        {
+          "file": "EPUB/ch003.xhtml",
+          "previous": "ρακτὴρ τῆς ὑποστάσεως αὐτοῦ , φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως αὑτοῦ , δι ʼ ἑαυτοῦ καθαρισμὸν ποιησάμενος τῶν ἁμαρτιῶν ἡμῶν , ἐκάθισεν ἐν δεξιᾷ τῆς μεγαλωσύνης ἐν ὑψηλοῖς ‚",
+          "next": "Δι ʼ ἑαυτοῦ is wanting in MS. T.; but the sense requires the words, and all other ancient copies retain them. Ἡμῶν is wanting in some copies; and one or two for ἐκάθισε have καθίζε"
+        },
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "ee: thy throne shall be established for ever.\" (1 Chron. 17:14, \"But I will settle him in mine house and in my kingdom for ever: and his throne shall be established for evermore.\")",
+          "next": "This is the whole divine oracle from whence the apostle takes the testimony under consideration; and the difficulty wherewith it is attended ariseth from hence, that it is not easy"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": " words immediately following are, 'If he shall offend against me, I will chastise him with the rod of men;' which words, being spoken of Solomon, can no way be applied unto Christ\"",
+          "next": "Ans. What is spoken of any type and of Christ jointly is not so spoken for any natural conveniency, similitude, or subordination, but because of God's institution, appointing the t"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": " words immediately following are, 'If he shall offend against me, I will chastise him with the rod of men;' which words, being spoken of Solomon, can no way be applied unto Christ\"",
+          "next": "Ans. What is spoken of any type and of Christ jointly is not so spoken for any natural conveniency, similitude, or subordination, but because of God's institution, appointing the t"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "Ver. 13.— Πρὸς τίνα δὲ τῶν ἀγγέλων εἴρηκέ ποτε · Κάθου ἐκ δεξιῶν μου , ἕως ἂν θῶ τοὺς ἐχθροὺς σου ὑποπόδιον τῶν ποδῶν σου ·",
+          "next": "There is no difference about the reading of these words. As they are here expressed by the apostle so are they in the translation of the LXX., and the original text is exactly rend"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": " למלך המשיח לימינו שנאמר נום יהיה לאדוני ,—\"In the world to come the holy blessed God shall place Messiah the king at his right hand, as it is said, 'The LORD said unto my Lord.' \"",
+          "next": "Thus, setting aside the mixture of their follies and impieties, wherein we are not concerned, we have a sufficient suffrage from the Jews themselves unto our assignation of this pr"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 8,
+      "budget": 1,
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch006.xhtml",
+          "text": "Wherefore he adds, (3.) what is direct to his pretension, \"That all the words, or things signified by them, in any testimony, which are firstly spoken of one, and then are, for some of the causes mentioned\" (that is, conveniency, similitude, or subordination),"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "text": "Wherefore he adds, (3.) what is direct to his pretension, \"That all the words, or things signified by them, in any testimony, which are firstly spoken of one, and then are, for some of the causes mentioned\" (that is, conveniency, similitude, or subordination),"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "Εἰ γάρ , \"si enim,\" \"etenim,\" \"and if,\" \"for if.\" Ὁ λόγος λαληθεὶς , \" sermo dictus ;\" נֶילְתָא דֵּאתְמֵלַלֵת , Syr., \" sermo qui dictus est,\" or \"pronuntiatus ,\" \"the word which was spoken or pronounced,\"—properly, as we shall see. Δι ʼ ἀγγέλων , Syr., כְּיַד"
+        },
+        {
+          "file": "EPUB/ch013.xhtml",
+          "text": "He further describes the gospel, (2.) From the way and means of its conveyance unto us. It was \"confirmed unto us by them that heard him.\" And herein also he prevents an objection that might arise in the minds of the Hebrews, inasmuch as they, at least the gre"
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "Εἰ γάρ , \"si enim,\" \"etenim,\" \"and if,\" \"for if.\" Ὁ λόγος λαληθεὶς , \" sermo dictus ;\" נֶילְתָא דֵּאתְמֵלַלֵת , Syr., \" sermo qui dictus est,\" or \"pronuntiatus ,\" \"the word which was spoken or pronounced,\"—properly, as we shall see. Δι ʼ ἀγγέλων , Syr., כְּיַד"
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "He further describes the gospel, (2.) From the way and means of its conveyance unto us. It was \"confirmed unto us by them that heard him.\" And herein also he prevents an objection that might arise in the minds of the Hebrews, inasmuch as they, at least the gre"
+        },
+        {
+          "file": "EPUB/ch014.xhtml",
+          "text": "In the proposition itself, 1. The subject of it, \"The world to come;\" with 2. Its limitation, \"Whereof we treat;\" and 3. The predicate, negatively expressed, \"Is not put in subjection to angels,\" are to be considered."
+        },
+        {
+          "file": "EPUB/ch015.xhtml",
+          "text": "In the proposition itself, 1. The subject of it, \"The world to come;\" with 2. Its limitation, \"Whereof we treat;\" and 3. The predicate, negatively expressed, \"Is not put in subjection to angels,\" are to be considered."
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "for whom are all things and by whom are all",
+          "count": 17
+        },
+        {
+          "phrase": "whom are all things and by whom are all things",
+          "count": 17
+        },
+        {
+          "phrase": "the brightness of his glory and the express image of",
+          "count": 14
+        },
+        {
+          "phrase": "brightness of his glory and the express image of his",
+          "count": 14
+        },
+        {
+          "phrase": "of his glory and the express image of his person",
+          "count": 14
+        },
+        {
+          "phrase": "unto which of the angels said he at any time",
+          "count": 13
+        },
+        {
+          "phrase": "will be to him father and he shall be to",
+          "count": 8
+        },
+        {
+          "phrase": "be to him father and he shall be to me",
+          "count": 8
+        },
+        {
+          "phrase": "to him father and he shall be to me son",
+          "count": 8
+        },
+        {
+          "phrase": "down at the right hand of the majesty on high",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 1,
+      "budget": 0,
+      "status": "regression",
+      "samples": [
+        {
+          "volume": "h3",
+          "configured_font": "bembo",
+          "expected_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/fonts/bembo",
+          "note": "Font directory fonts/bembo/ exists but contains no .otf or .ttf files.  Add the font files to fix this."
+        }
+      ]
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 0,
+      "budget": 7,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

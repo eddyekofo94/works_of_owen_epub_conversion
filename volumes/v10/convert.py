@@ -39,13 +39,26 @@ _V10_ARMINIANISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type=
 </section>'''
 
 _V10_DEATH_OF_DEATH_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
+<div class="title-line-major">Salus Electorum, Sanguis Jesu;</div>
+<div class="title-connector">Or,</div>
 <div class="title-line-major">The Death of Death</div>
 <div class="title-connector">in the</div>
 <div class="title-line-major">Death of Christ:</div>
 <div class="title-rule" aria-hidden="true"></div>
-<div class="descriptive">A Treatise in Which the Whole Controversy about Universal Redemption Is Fully Discussed; the Reality and Efficacy of the Satisfaction of Christ Vindicated; and the Doctrine of Particular Redemption Confirmed and Established.</div>
+<div class="descriptive">A Treatise of the Redemption and Reconciliation that is in the Blood of Christ; the Merit Thereof, and the Satisfaction Wrought Thereby. Wherein the Proper End of the Death of Christ is Asserted; the Immediate Effects and Fruits Thereof Assigned, with Their Extent in Respect of its Object; and the Whole Controversy about Universal Redemption Fully Discussed.</div>
 <div class="title-rule" aria-hidden="true"></div>
-<div class="quote-block"><p>"He shall see of the travail of his soul, and shall be satisfied." — Isaiah 53:11.</div></div>
+<div class="descriptive" style="text-align: left;">
+<strong>In Four Parts.</strong><br/>
+1. Declaring the eternal counsel and distinct actual concurrence of the Holy Trinity unto the work of redemption in the blood of Christ; with the covenanted intendment and accomplished end of God therein.<br/>
+2. Removing false and supposed ends of the death of Christ, with the distinctions invented to solve the manifold contradictions of the pretended universal atonement; rightly stating the controversy.<br/>
+3. Containing arguments against universal redemption from the word of God; with an assertion of the satisfaction and merit of Christ.<br/>
+4. Answering all considerable objections as yet brought to light, either by the Arminians or others (their late followers as to this point), in the behalf of universal redemption; with a large unfolding of all the texts of Scripture by any produced and wrested to that purpose.
+</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">"The Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many." — Matthew 20:28.</div>
+<div class="title-source">"In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace." — Ephesians 1:7.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">Imprimatur, Jan. 22, 1647. — JOHN CRANFORD.</div>
 </section>'''
 
 _V10_DEATH_OF_CHRIST_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -55,13 +68,21 @@ _V10_DEATH_OF_CHRIST_TITLE_PAGE = '''<section class="treatise-title-page" epub:t
 </section>'''
 
 _V10_DIVINE_JUSTICE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
-<div class="title-line-major">A Dissertation</div>
-<div class="title-connector">on</div>
-<div class="title-line-medium">Divine Justice;</div>
-<div class="title-connector">or, the Claims of</div>
-<div class="title-line-medium">Vindicatory Justice.</div>
+<div class="title-line-medium">A</div>
+<div class="title-line-major">Dissertation on Divine Justice:</div>
+<div class="title-connector">Or,</div>
+<div class="title-line-major">The Claims of Vindicatory Justice</div>
+<div class="title-line-medium">Vindicated;</div>
 <div class="title-rule" aria-hidden="true"></div>
-<div class="descriptive">Wherein the Necessity of Punishing Sin Is Asserted, the Satisfaction of Christ Founded Thereon, and the Remission of Sins Through Him Vindicated.</div>
+<div class="descriptive">Wherein that essential property of the divine nature is demonstrated from the sacred writings, and defended against Socinians, particularly the authors of the Racovian Catechism, John Crellius, and F. Socinus himself;</div>
+<div class="title-line-medium">Likewise the Necessary Exercise Thereof;</div>
+<div class="descriptive">Together with the indispensable necessity of the satisfaction of Christ for the salvation of sinners is established against the objections of certain very learned men, G. Twisse, G. Vossius, Samuel Rutherford, and others.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-line-medium">By John Owen,</div>
+<div class="title-line-medium">Dean of Christ Church College, Oxford.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="title-source">"Is God unrighteous who taketh vengeance? God forbid: for then how shall God judge the world?" — Romans 3:5, 6.</div>
+<div class="title-source">Oxford: Thomas Robinson. 1653.</div>
 </section>'''
 
 _V10_CONTENTS_PAGE = '''<section class="contents-page" epub:type="toc">
@@ -222,17 +243,35 @@ OVERRIDES = {
         'deos ?': 'deos?',
         'commentaries ;': 'commentaries;',
         'lash ?': 'lash?',
+        'which is mostly taken from it.\n\nANALYSIS.\n\nBOOK 1. declares': 'which is mostly taken from it.\n\nBOOK 1. declares',
         'wickedness ;': 'wickedness;',
         'universe ?': 'universe?',
         'viz.: — 1 . Of': 'viz.: — 1. Of',
         'natural sense; 2 . In': 'natural sense; 2. In',
         'Arg. 5 . From': 'Arg. 5. From',
         'Arg. 6 . From': 'Arg. 6. From',
+        'John in.\n\n36. To abide argueth': 'John 3:36.\n\nTo abide argueth',
+        'Rem. Apol., fol. 96. All which assertions': 'Rem. Apol., fol. 96.\n\nAll which assertions',
+        'Seneca, Ep.\n\n117. And again, Aristotle': 'Seneca, Ep. 117.\n\nAnd again, Aristotle',
+        'Ecclesiastes 12:12Ecclesiasties 12:12': 'Ecclesiastes 12:12',
+        'spritual': 'spiritual',
+        'satistfaction': 'satisfaction',
+        '_hyothetic': '_hypothetic',
+        "Mall's Approach": "Man's Approach",
+        '**1** . Of the work;': '**1**. Of the work;',
+        '**2** . In a natural sense.': '**2**. In a natural sense.',
+        '2 Peter 7 to 8: "': 'chap. vii. to xiii.; "',
+        'do)ignorantly': 'do) ignorantly',
     },
     'regex_replacements': {
         '(?s)unworthiest laborer in his vineyard, _J\\.O\\._\\s*<section class="treatise-title-page"[^>]*>.*?</section>': 'unworthiest laborer in his vineyard, _J.O._',
         'T\\. M\\[ore(\\.?)\\]': 'T. More\\1',
         r'fore-ordained\. 2\.\n\nHis prescience,': r'fore-ordained.\n\n2. His prescience,',
+        r'\n\n256\. \[f361\] Also,': r'\n\n[f361] Also,',
+        r'\n\n3\. chap\. 1, etc\.': r' 3. chap. 1, etc.',
+        r'book\n\n9\. "The Thracians': r'book 9.\n\n"The Thracians',
+        r'sect\.\n\n8\. But from': r'sect. 8.\n\nBut from',
+        r'John in\.\n\n3\. "That which': r'John 3:3.\n\n"That which',
     },
 }
 
@@ -264,6 +303,25 @@ def post_extract_hook(data):
             print("Successfully merged scripture paragraph split in Volume 10 Chapter 3!")
         else:
             print("WARNING: Scripture split text not found in Volume 10 Chapter 3!")
+
+    # 4. Inject missing page 91 text into Arminianism Chapter 6
+    for ch in chapters:
+        if ch.get('title', '').lower().startswith('chapter 6 - how the whole doctrine of predestination'):
+            marker = 'his own duty, he is endued, are pleasing to God," Rem. Apol.'
+            if marker in ch.get('raw_text', ''):
+                missing_text = '\n\n"What hast thou that thou didst not receive?" 1 Corinthians 4:7. "Are we better than they? No, in no wise," Romans 3:9.\n\n[[BLOCKQUOTE]] But we are "predestinated to the adoption of children by Jesus Christ, according to the good pleasure of his will," Ephesians 1:5; John 6:37-39, 10:3, 13:18, 17:6; Acts 13:48; Titus 1:1; 2 Timothy 2:19; James 1:17, 18, etc.\n\nThe sum of their doctrine is: God hath appointed the obedience of faith to be the means of salvation. If men fulfill this condition, he determineth to save them, which is their election; but if, after they have entered the way of godliness, they fall from it, they lose also their predestination. If they will return again, they are chosen anew; and if they can hold out to the end, then, and for that continuance, they are peremptorily elected, or post-destinated, after they are saved. Now, whether these positions may be gathered from those places of Scripture which deliver this doctrine, let any man judge.'
+                ch['raw_text'] = ch['raw_text'].replace(marker, marker + missing_text)
+                print("Successfully injected missing page 91 text into Volume 10 Chapter 6!")
+            break
+
+    # 5. Fix formatting of "Opusc. 6."
+    for ch in chapters:
+        old_opusc = 'Opusc.\n\n6. de Just. Div. sec. 1.'
+        new_opusc = 'Opusc. 6. de Just. Div. sec. 1.'
+        if old_opusc in ch.get('raw_text', ''):
+            ch['raw_text'] = ch['raw_text'].replace(old_opusc, new_opusc)
+            print("Successfully fixed Opusc. 6. list artifact!")
+            break
 
     return data
 

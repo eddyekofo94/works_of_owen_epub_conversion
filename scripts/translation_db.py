@@ -7268,6 +7268,127 @@ INLINE_TRANSLATIONS = {
     ),
     "interea temporis": (
         "“in the meantime”"
+    ),
+    # Volume 10 Latin Translations
+    "Elenchus Controversiarum": (
+        "“Syllabus of Controversies”"
+    ),
+    "Socinus, \"quae": (
+        "“which he cooked up again from the discipline of Pelagius”"
+    ),
+    "quae ille recoxit ex Pelagii disciplina": (
+        "“which he cooked up again from the discipline of Pelagius”"
+    ),
+    "Martii, anno Domini": (
+        "“March, in the year of our Lord”"
+    ),
+    "in quibus possimus": (
+        "“in which we may differ”"
+    ),
+    "AEneas Sylvius": (
+        "“Aeneas Sylvius”"
+    ),
+    "in forma pauperis": (
+        "“in the form of a pauper”"
+    ),
+    "postquam Christiana": (
+        "“after the Christian [nation began to exist]”"
+    ),
+    "gradibus itur in coelum": (
+        "“by these steps one goes to heaven”"
+    ),
+    "cornicula risum, furtivis nudata coloribus": (
+        "“the little crow moves laughter, stripped of its stolen colors”"
+    ),
+    "libero arbitrio, sed dividatur": (
+        "“to free will, but let it be divided”"
+    ),
+    "filia unius noctis": (
+        "“the daughter of one night”"
+    ),
+    "simplicis intelligentiae": (
+        "“of simple intelligence”"
+    ),
+    "necessitate naturae": (
+        "“by necessity of nature”"
+    ),
+    "Tantae molis": (
+        "“Of so great a burden”"
+    ),
+    "voluntas signi": (
+        "“will of the sign”"
+    ),
+    "Loquitur ex aliorum sententia": (
+        "“He speaks from the opinion of others”"
+    ),
+    "cui credatis": (
+        "“whom you may believe”"
+    ),
+    "usque et usque": (
+        "“through and through / again and again”"
+    ),
+    "Natura Deorum": (
+        "“Nature of the Gods”"
+    ),
+    "exhibitum et mortuum": (
+        "“exhibited and dead”"
+    ),
+    "truncus ficulnus": (
+        "“a fig-tree block”"
+    ),
+    "aquilas columbae": (
+        "“eagles [beget] doves”"
+    ),
+    "populo ut": (
+        "“that to the people”"
+    ),
+    "quas fecere fabulas": (
+        "“which tales they made”"
+    ),
+    "Cui bono": (
+        "“To whose benefit”"
+    ),
+    "Gratum opus agricolis": (
+        "“A work pleasing to farmers”"
+    ),
+    "eo devenere rata ecclesiae": (
+        "“so fell the established doctrines of the church”"
+    ),
+    "generis fiducia § vestri": (
+        "“the confidence of your race”"
+    ),
+    "ampullas et sesquipedalia verba": (
+        "“bombast and words a foot and a half long”"
+    ),
+    "ignota loquor": (
+        "“I speak of unknown things”"
+    ),
+    "tantarum in munere laudum": (
+        "“in the gift of such great praises”"
+    ),
+    "comas, et pocula": (
+        "“hair, and cups”"
+    ),
+    "vocate Deum, et": (
+        "“call upon God, and”"
+    ),
+    "hoc novum": (
+        "“this new [thing]”"
+    ),
+    "brevibus Gyaris, et carcere dignum, Si vis esse aliquis: probitas laudatur et": (
+        "“worthy of exile and prison, if you want to be someone: honesty is praised and [shivers]”"
+    ),
+    "is \"immanis, truculentus, diabolo, Tiberio tetrior (horresco": (
+        "“is 'monstrous, truculent, fouler than the devil, than Tiberius (I shudder'”"
+    ),
+    "mandatum est dedecus": (
+        "“the disgrace is commanded”"
+    ),
+    "Quid dignum tanto": (
+        "“What is worthy of so great”"
+    ),
+    "viam teneas": (
+        "“may you hold the way”"
     )
 }
 

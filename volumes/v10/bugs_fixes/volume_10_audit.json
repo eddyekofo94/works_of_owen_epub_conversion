@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v10/output/volume_10.epub",
-  "generated_at": "2026-06-27T17:45:05.162567+00:00",
+  "generated_at": "2026-06-30T00:52:12.476109+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 129,
-    "epub_size_bytes": 4913685,
+    "epub_size_bytes": 4915175,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -119,7 +119,12 @@
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   },
   "unused_whitelist_epub_warnings": [
+    "inline_structural_markers",
     "low_latin_tagging",
-    "low_latin_translation_coverage"
+    "low_latin_translation_coverage",
+    "repeated_windows",
+    "roman_heading_candidates",
+    "suspicious_large_number_starts",
+    "weak_page_coverage"
   ]
 }

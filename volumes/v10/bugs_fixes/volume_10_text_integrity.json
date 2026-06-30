@@ -2,7 +2,7 @@
   "volume": "10",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/input/owen-v10.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
-  "generated_at": "2026-06-27T17:56:28.155137+00:00",
+  "generated_at": "2026-06-30T01:01:38.948164+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -23,12 +23,12 @@
   },
   "epub": {
     "spine_text_files": 105,
-    "paragraph_count": 3299
+    "paragraph_count": 3315
   },
   "word_coverage": {
     "pdf_content_tokens": 262672,
-    "epub_content_tokens": 263203,
-    "coverage_ratio": 0.9984,
+    "epub_content_tokens": 263548,
+    "coverage_ratio": 0.9993,
     "missing_word_samples": [],
     "excess_word_samples": [
       {
@@ -75,7 +75,7 @@
   },
   "page_coverage": {
     "pages_checked": 807,
-    "weak_page_count": 5,
+    "weak_page_count": 2,
     "weak_pages": [
       {
         "page": 63,
@@ -83,29 +83,14 @@
         "sample": "unite my heart to fear thy name psalm the god in whose hand try breath is and whose are all try ways thou hast"
       },
       {
-        "page": 91,
-        "hit_ratio": 0.0,
-        "sample": "what hast thou that thou didst not receive corinthians are we better than they no in no wise romans but we are predestinated to"
-      },
-      {
         "page": 143,
         "hit_ratio": 0.0,
         "sample": "christ galatians he that believeth not is condemned mark without faith it is impossible to please god hebrews other foundation can no man lay"
-      },
-      {
-        "page": 170,
-        "hit_ratio": 0.0,
-        "sample": "salus electorum sanguis jesu or the death of death in the death of christ treatise of the redemption and reconciliation that is in the"
-      },
-      {
-        "page": 644,
-        "hit_ratio": 0.0,
-        "sample": "dissertation on divine justice or the claims of vindicatory justice vindicated wherein that essential property of the divine nature is demonstrated from the sacred"
       }
     ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 35062,
+    "dense_windows_checked": 35209,
     "missing_dense_window_pages": 0,
     "missing_dense_windows": []
   },
@@ -175,10 +160,10 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 2696,
+    "paragraphs_checked": 2697,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 190,
+    "structural_start_exclusions": 188,
     "short_fragment_count": 33,
     "short_fragments": [
       {
@@ -192,10 +177,6 @@
       {
         "file": "EPUB/ch018.xhtml",
         "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
-      },
-      {
-        "file": "EPUB/ch021.xhtml",
-        "text": "1 . Of the work;"
       },
       {
         "file": "EPUB/ch022.xhtml",
@@ -287,6 +268,10 @@
       },
       {
         "file": "EPUB/ch083.xhtml",
+        "text": "Also, Orpheus in the hymns, —"
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
         "text": "Hence, these common sayings, —"
       },
       {
@@ -320,30 +305,18 @@
     "inline_structural_candidates": [
       {
         "file": "EPUB/ch020.xhtml",
-        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Mall's Approach to G"
+        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Man's Approach to Go"
       }
     ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
     "citation_continuation_splits": [],
-    "suspicious_large_number_start_count": 5,
+    "suspicious_large_number_start_count": 2,
     "suspicious_large_number_starts": [
-      {
-        "file": "EPUB/ch013.xhtml",
-        "text": "36. To abide argueth a continued, uninterrupted act."
-      },
-      {
-        "file": "EPUB/ch014.xhtml",
-        "text": "96. All which assertions, how contrary they are to the express word of God, I shall now demonstrate."
-      },
       {
         "file": "EPUB/ch058.xhtml",
         "text": "13. [A.D. 350]: —"
-      },
-      {
-        "file": "EPUB/ch084.xhtml",
-        "text": "117. And again, Aristotle says, \"It is a very strong proof, if all shall agree in what we shall say.\" And in that observation another author concurs: \"The things that are commonly agreed on are worthy of credit.\" And her"
       },
       {
         "file": "EPUB/ch085.xhtml",
@@ -390,11 +363,11 @@
             "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p577",
+            "location": "EPUB/ch021.xhtml#p588",
             "context": "(1.) By an authoritative imposition of the office of mediator upon him:"
           },
           {
-            "location": "EPUB/ch021.xhtml#p629",
+            "location": "EPUB/ch021.xhtml#p640",
             "context": "(1.) It has no place in the intention of Christ;"
           }
         ]
@@ -409,11 +382,11 @@
             "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p580",
+            "location": "EPUB/ch021.xhtml#p591",
             "context": "(2.) By furnishing him with a fullness of all gifts and graces: —"
           },
           {
-            "location": "EPUB/ch021.xhtml#p630",
+            "location": "EPUB/ch021.xhtml#p641",
             "context": "(2.) The will of God in this business is not at all conditional;"
           }
         ]
@@ -428,11 +401,11 @@
             "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p578",
+            "location": "EPUB/ch021.xhtml#p589",
             "context": "[1.] The purposed imposition of his counsel"
           },
           {
-            "location": "EPUB/ch021.xhtml#p581",
+            "location": "EPUB/ch021.xhtml#p592",
             "context": "[1.] Christ had a natural all-sufficient perfection of his deity;"
           }
         ]
@@ -458,11 +431,11 @@
             "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
           },
           {
-            "location": "EPUB/ch021.xhtml#p579",
+            "location": "EPUB/ch021.xhtml#p590",
             "context": "[2.] The actual inauguration of Christ as mediator."
           },
           {
-            "location": "EPUB/ch021.xhtml#p582",
+            "location": "EPUB/ch021.xhtml#p593",
             "context": "[2.] He had a communicated fullness."
           }
         ]
@@ -596,218 +569,187 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 1924,
-    "epub_latin_word_count": 1929,
-    "epub_tagged_latin_word_count": 868,
-    "pdf_latin_unique_words": 972,
-    "epub_latin_unique_words": 968,
-    "epub_tagged_unique_words": 571,
-    "latin_word_coverage_ratio": 0.9927,
-    "latin_tagging_ratio": 0.45,
+    "pdf_latin_word_count": 1417,
+    "epub_latin_word_count": 1418,
+    "epub_tagged_latin_word_count": 858,
+    "pdf_latin_unique_words": 927,
+    "epub_latin_unique_words": 927,
+    "epub_tagged_unique_words": 550,
+    "latin_word_coverage_ratio": 0.9958,
+    "latin_tagging_ratio": 0.6051,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
-        "word": "grotius",
-        "epub": 55,
+        "word": "mediate",
+        "epub": 3,
         "tagged": 0
       },
       {
-        "word": "socinus",
-        "epub": 38,
-        "tagged": 2
-      },
-      {
-        "word": "arminius",
-        "epub": 37,
+        "word": "apella",
+        "epub": 4,
         "tagged": 1
       },
       {
-        "word": "creditor",
-        "epub": 37,
-        "tagged": 2
+        "word": "intermediate",
+        "epub": 3,
+        "tagged": 0
       },
       {
-        "word": "ipso",
-        "epub": 29,
+        "word": "clamor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "rumor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "expiate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "diatriba",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "suetonius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "scotus",
+        "epub": 4,
         "tagged": 1
       },
       {
-        "word": "corvinus",
-        "epub": 28,
+        "word": "francis",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "legislator",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "tremor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "phoebus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "philo",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "inanimate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "sicut",
+        "epub": 3,
         "tagged": 1
       },
       {
-        "word": "debtor",
-        "epub": 22,
-        "tagged": 0
-      },
-      {
-        "word": "lubbertus",
-        "epub": 23,
-        "tagged": 2
-      },
-      {
-        "word": "solutio",
-        "epub": 23,
-        "tagged": 2
-      },
-      {
-        "word": "thomas",
-        "epub": 22,
-        "tagged": 2
-      },
-      {
-        "word": "crellius",
-        "epub": 19,
-        "tagged": 0
-      },
-      {
-        "word": "piscator",
-        "epub": 17,
+        "word": "populus",
+        "epub": 3,
         "tagged": 1
       },
       {
-        "word": "ergo",
-        "epub": 15,
+        "word": "pontus",
+        "epub": 3,
         "tagged": 1
       },
       {
-        "word": "termino",
-        "epub": 12,
-        "tagged": 0
-      },
-      {
-        "word": "vossius",
-        "epub": 11,
-        "tagged": 0
-      },
-      {
-        "word": "conditionate",
-        "epub": 10,
-        "tagged": 0
-      },
-      {
-        "word": "maccovius",
-        "epub": 11,
+        "word": "apollo",
+        "epub": 3,
         "tagged": 1
       },
       {
-        "word": "ultimate",
-        "epub": 10,
+        "word": "diodorus",
+        "epub": 3,
         "tagged": 1
-      },
-      {
-        "word": "predestinate",
-        "epub": 8,
-        "tagged": 0
-      },
-      {
-        "word": "diana",
-        "epub": 7,
-        "tagged": 0
-      },
-      {
-        "word": "pelagius",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "vorstius",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "grevinchovius",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "sponsor",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
-        "word": "plate",
-        "epub": 5,
-        "tagged": 0
       }
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 97,
-    "missing_latin_clause_count": 1,
-    "missing_latin_clauses": [
-      {
-        "page": 170,
-        "word_count": 5,
-        "sample": "salus electorum sanguis jesu or"
-      }
-    ]
+    "latin_clauses_checked": 95,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 270,
-    "translated_latin_runs_count": 110,
-    "latin_translation_ratio": 0.4074,
+    "tagged_latin_runs_count": 279,
+    "translated_latin_runs_count": 166,
+    "latin_translation_ratio": 0.595,
     "untranslated_latin_samples": [
       {
-        "phrase": "Elenchus Controversiarum"
+        "phrase": "traharis; Per tamen adversi gradieris cornua Tauri"
       },
       {
-        "phrase": "Socinus, \"quae"
+        "phrase": "ora Leonis"
       },
       {
-        "phrase": "Junius, ‡  Arminius"
+        "phrase": "tam astutum esse"
       },
       {
-        "phrase": "Martii, anno Domini"
+        "phrase": "materiam vestris, qui scribitis, sequam Viribus; et versate diu, quid"
       },
       {
-        "phrase": "in quibus possimus"
+        "phrase": "Judaeus Apella"
       },
       {
-        "phrase": "AEneas Sylvius"
+        "phrase": "pro mundo contento"
       },
       {
-        "phrase": "in forma pauperis"
+        "phrase": "finis convertuntur"
       },
       {
-        "phrase": "postquam Christiana"
+        "phrase": "copia verborum"
       },
       {
-        "phrase": "gradibus itur in coelum"
+        "phrase": "hic responsor"
       },
       {
-        "phrase": "cornicula risum, furtivis nudata coloribus"
+        "phrase": "Amyraldus, ‡  Camero"
       },
       {
-        "phrase": "libero arbitrio, sed dividatur"
+        "phrase": "Testardus, Amyraldus"
       },
       {
-        "phrase": "filia unius noctis"
+        "phrase": "bona fide"
       },
       {
-        "phrase": "simplicis intelligentiae"
+        "phrase": "herbam amici"
       },
       {
-        "phrase": "necessitate naturae"
+        "phrase": "in causa facili"
       },
       {
-        "phrase": "Tantae molis"
+        "phrase": "simul et semel"
       },
       {
-        "phrase": "voluntas signi"
+        "phrase": "Ego illud expiabam"
       },
       {
-        "phrase": "Loquitur ex aliorum sententia"
+        "phrase": "solutio tantidem"
       },
       {
-        "phrase": "cui credatis"
+        "phrase": "Delicta puniri"
       },
       {
-        "phrase": "furtivis nudata coloribus"
+        "phrase": "bonum universi"
       },
       {
-        "phrase": "usque et usque"
+        "phrase": "Decii, Menoeceus, Euryalus"
       }
     ]
   },

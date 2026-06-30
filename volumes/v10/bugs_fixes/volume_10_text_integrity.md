@@ -4,16 +4,16 @@
 - Warnings: 0
 - PDF pages: 828
 - EPUB text files: 105
-- EPUB paragraphs/headings: 3299
+- EPUB paragraphs/headings: 3315
 
 ## Coverage
 
 - PDF content tokens: 262672
-- EPUB content tokens: 263203
-- Approximate PDF-to-EPUB coverage ratio: 0.9984
+- EPUB content tokens: 263548
+- Approximate PDF-to-EPUB coverage ratio: 0.9993
 - Pages checked: 807
-- Weak page matches: 5
-- Dense source windows checked: 35062
+- Weak page matches: 2
+- Dense source windows checked: 35209
 - Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -26,15 +26,15 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 2696
+- Body paragraphs checked: 2697
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 190
+- Structural starts excluded from split warnings: 188
 - Short fragments: 33
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 1
 - Reference continuation splits: 0
 - Citation continuation splits: 0
-- Suspicious large-number starts: 5
+- Suspicious large-number starts: 2
 - Roman heading candidates: 1
 - Overlong heading candidates: 0
 - Front-matter heading/body candidates: 0
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 1924
-- EPUB Latin words: 1929
-- EPUB Tagged Latin words: 868
-- Latin word coverage ratio: 0.9927
-- Latin word tagging ratio: 0.45
-- Latin clauses checked: 97
-- Missing Latin clauses: 1
-- Tagged Latin runs checked: 270
-- Translated Latin runs: 110
-- Latin translation ratio: 0.4074
+- PDF Latin words: 1417
+- EPUB Latin words: 1418
+- EPUB Tagged Latin words: 858
+- Latin word coverage ratio: 0.9958
+- Latin word tagging ratio: 0.6051
+- Latin clauses checked: 95
+- Missing Latin clauses: 0
+- Tagged Latin runs checked: 279
+- Translated Latin runs: 166
+- Latin translation ratio: 0.595
 
 ## Inline Structural Marker Candidates
 
@@ -76,10 +76,7 @@
 
 ## Suspicious Large-Number Starts
 
-- file: EPUB/ch013.xhtml; text: 36. To abide argueth a continued, uninterrupted act.
-- file: EPUB/ch014.xhtml; text: 96. All which assertions, how contrary they are to the express word of God, I shall now demonstrate.
 - file: EPUB/ch058.xhtml; text: 13. [A.D. 350]: —
-- file: EPUB/ch084.xhtml; text: 117. And again, Aristotle says, "It is a very strong proof, if all shall agree in what we shall say." And in that observation another author concurs: "The things that are commonly agreed on are worthy of credit." And her
 - file: EPUB/ch085.xhtml; text: 389 It remains, then, that we should now consider, in the third place, what testimony God has given, and is still giving, to this essential attribute of his in the works of providence. This Paul takes notice of, Romans 1
 
 ## Roman Heading Candidates
@@ -91,13 +88,13 @@
 - file: EPUB/ch002.xhtml; text: JOHN WHITE
 - file: EPUB/ch004.xhtml; text: TO THE CHRISTIAN READER.
 - file: EPUB/ch018.xhtml; text: Τῷ Θεῷ ἀριστομεγίστῳ δόξα .
-- file: EPUB/ch021.xhtml; text: 1 . Of the work;
 - file: EPUB/ch022.xhtml; text: TO THE READER.
 - file: EPUB/ch022.xhtml; text: READER,
 - file: EPUB/ch027.xhtml; text: Whence he saith,
 - file: EPUB/ch030.xhtml; text: VI.
 - file: EPUB/ch048.xhtml; text: Arg. 15.
 - file: EPUB/ch053.xhtml; text: Where, —
+- file: EPUB/ch057.xhtml; text: Universalists.
 
 ## Repeated Windows
 
@@ -125,33 +122,29 @@
 
 ## Untagged Latin Word Samples
 
-- word: grotius; epub: 55; tagged: 0
-- word: socinus; epub: 38; tagged: 2
-- word: arminius; epub: 37; tagged: 1
-- word: creditor; epub: 37; tagged: 2
-- word: ipso; epub: 29; tagged: 1
-- word: corvinus; epub: 28; tagged: 1
-- word: debtor; epub: 22; tagged: 0
-- word: lubbertus; epub: 23; tagged: 2
-- word: solutio; epub: 23; tagged: 2
-- word: thomas; epub: 22; tagged: 2
-
-## Missing Latin Clauses
-
-- page: 170; word_count: 5; sample: salus electorum sanguis jesu or
+- word: mediate; epub: 3; tagged: 0
+- word: apella; epub: 4; tagged: 1
+- word: intermediate; epub: 3; tagged: 0
+- word: clamor; epub: 3; tagged: 0
+- word: rumor; epub: 3; tagged: 0
+- word: expiate; epub: 3; tagged: 0
+- word: diatriba; epub: 3; tagged: 0
+- word: suetonius; epub: 3; tagged: 0
+- word: scotus; epub: 4; tagged: 1
+- word: francis; epub: 3; tagged: 0
 
 ## Untranslated Latin Samples
 
-- phrase: Elenchus Controversiarum
-- phrase: Socinus, "quae
-- phrase: Junius, ‡ Arminius
-- phrase: Martii, anno Domini
-- phrase: in quibus possimus
-- phrase: AEneas Sylvius
-- phrase: in forma pauperis
-- phrase: postquam Christiana
-- phrase: gradibus itur in coelum
-- phrase: cornicula risum, furtivis nudata coloribus
+- phrase: traharis; Per tamen adversi gradieris cornua Tauri
+- phrase: ora Leonis
+- phrase: tam astutum esse
+- phrase: materiam vestris, qui scribitis, sequam Viribus; et versate diu, quid
+- phrase: Judaeus Apella
+- phrase: pro mundo contento
+- phrase: finis convertuntur
+- phrase: copia verborum
+- phrase: hic responsor
+- phrase: Amyraldus, ‡ Camero
 
 ## Limits
 

@@ -318,7 +318,22 @@ The new engine:
 
 | Volume | convert.py | OVERRIDES | QA Level | Notes |
 |---|---|---|---|---|
-| 11 | v11 | Populated | PRISTINE | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.85 |
+| 1 | v1 | Populated | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Lat 99.90 |
+| 2 | v2 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
+| 3 | v3 | Populated | FULL | Cov 99.97 Greek 100.00 Heb 100.00 Lat 99.94 |
+| 4 | v4 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.59 |
+| 5 | v5 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.71 |
+| 6 | v6 | Populated | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
+| 7 | v7 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.66 |
+| 8 | v8 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 |
+| 9 | v9 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.26 |
+| 10 | v10 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.58 |
+| 11 | v11 | Populated | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.85 |
+| 12 | v12 | Populated | FULL | Cov 99.94 Greek 99.92 Heb 100.00 Lat 99.76 |
+| 13 | v13 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.54 |
+| 14 | v14 | Populated | FULL | Cov 99.89 Greek 100.00 Heb 100.00 Lat 99.67 |
+| 15 | v15 | Populated | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Lat 99.46 |
+| 16 | v16 | Populated | FULL | Cov 99.94 Greek 100.00 Heb 100.00 Lat 99.96 |
 
 ## Hebrews Commentary Script Status
 
@@ -326,7 +341,7 @@ The new engine:
 |---|---|---|---|---|
 | h1 | h1 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Unres 30 |
 | h2 | h2 | Empty | FULL | Cov 99.81 Greek 100.00 Heb 100.00 Unres 39 |
-| h3 | h3 | Empty | STANDARD | Audit + text integrity |
+| h3 | h3 | Empty | FULL | Cov 99.97 Greek 100.00 Heb 100.00 Unres 13 |
 | h4 | h4 | Empty | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Unres 9 |
 | h5 | h5 | Empty | FULL | Cov 99.93 Greek 100.00 Heb 100.00 Unres 6 |
 | h6 | h6 | Empty | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 4 |
