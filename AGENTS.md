@@ -94,7 +94,7 @@ Read `GEMINI.md` before changing converter behavior or project documentation. In
 - Complex issues, especially Issue 40 and later, need a post-mortem in `ENGINEERING_LOG.md`.
 - Preserve the holistic paragraph-healing behavior in `reconstruct_paragraphs()` and `get_pages_text()`.
 - **Text Integrity & Anomaly Triage Protocol:** When reviewing text anomalies flagged by `scripts/audit_anomalies.py` (such as hyphenation anomalies like `birth-place`, `free-will`, `co-essential`), **NEVER modernize 17th-century orthography**. All potential anomalies should be flagged for visibility, but **do not apply replacements to historical spellings or hyphenations if they were acceptable in the author's day**. Apply overrides strictly to clear OCR errors, line-break leftovers (like `Peta-vius`), and alphanumeric typos (like `iraFated`).
-
+- **No Duplicate Output Files (CRITICAL):** Never create space-versioned output files (e.g. `volume_N_audit 2.json`, `volume_N 3.epub`). Before writing any report, EPUB, plan, or generated file to a path that already exists, delete the existing file first (`os.remove(path)` / `Path(path).unlink(missing_ok=True)`) then write the new version. If a script cannot overwrite in place, it must use a deterministic timestamped subdirectory (the existing `volumes/vN/reports/YYYYMMDD_HHMMSS/` convention) rather than appending a number to the filename. This rule prevents the accumulation of stale duplicates — the repository has already been purged of ~1,500 such files.
 
 ## Git Repository — Branch Setup
 
