@@ -1,14 +1,14 @@
 {
   "epub": "volumes/v5/output/volume_5.epub",
-  "generated_at": "2026-06-26T09:11:33.759733+00:00",
+  "generated_at": "2026-06-30T23:14:58.113437+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
   "errors": [],
   "warnings": [],
   "info": {
-    "file_count": 69,
-    "epub_size_bytes": 5070329,
+    "file_count": 68,
+    "epub_size_bytes": 5073894,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -17,9 +17,9 @@
     "creators": [
       "John Owen"
     ],
-    "manifest_count": 60,
-    "spine_count": 40,
-    "xhtml_count": 41,
+    "manifest_count": 59,
+    "spine_count": 39,
+    "xhtml_count": 40,
     "nav_files": [
       "EPUB/nav.xhtml"
     ],
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 207,
-      "unique_noteref_targets": 207,
-      "endnote_anchor_count": 207,
+      "noteref_count": 345,
+      "unique_noteref_targets": 345,
+      "endnote_anchor_count": 345,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },
@@ -105,12 +105,14 @@
         "i_will_mangle": []
       }
     },
-    "nav_link_count": 42,
+    "nav_link_count": 41,
     "apple_options": "META-INF/com.apple.ibooks.display-options.xml"
   },
   "unused_whitelist_epub_warnings": [
-    "repeated_phrases",
     "missing_latin_clauses",
+    "repeated_windows",
+    "inline_structural_markers",
+    "overlong_heading_candidates",
     "low_latin_tagging"
   ]
 }

@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-06-30T17:27:17Z
+Generated: 2026-06-30T21:27:39Z
 
 ## Summary
 
@@ -25,7 +25,7 @@ Generated: 2026-06-30T17:27:17Z
 | 13 | 6 | 1.6 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
 | 14 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.98 |  100.0 |  100.0 |   99.9 | 0 | 0 | FULL |
 | 15 | 2 | 0.4 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | FULL |
-| 16 | 5 | 0.4 | garamond-premier-pro | 2 |  99.99 |  100.0 |  100.0 |  99.71 | 0 | 0 | FULL |
+| 16 | 5 | 0.4 | garamond-premier-pro | 2 |  99.99 |  100.0 |  100.0 |   99.7 | 0 | 0 | FULL |
 
 ### Hebrews Commentary (7 Volumes)
 
@@ -514,9 +514,9 @@ Generated: 2026-06-30T17:27:17Z
 - **Word coverage:** 99.99
 - **Greek coverage:** 100.00
 - **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.71
-- **Latin tagging:** 84.02
-- **Latin translation:** 75.63
+- **Latin coverage:** 99.70
+- **Latin tagging:** 85.53
+- **Latin translation:** 100.00
 - **Citations:** total=44, unresolved=0
 - **Splits:** 0
 - **Regressions:** 0

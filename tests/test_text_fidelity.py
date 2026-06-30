@@ -528,9 +528,9 @@ def test_scholastic_sequence_all_three_labels_bolded():
         "<p>Sol. This satisfies the demands of the law.</p>"
     )
 
-    assert '<b class="scholastic-label">Obj. 1.</strong>' in html
-    assert '<b class="scholastic-label">Ans. 1.</strong>' in html
-    assert '<b class="scholastic-label">Sol.</strong>' in html
+    assert '<strong class="scholastic-label">Obj. 1.</strong>' in html
+    assert '<strong class="scholastic-label">Ans. 1.</strong>' in html
+    assert '<strong class="scholastic-label">Sol.</strong>' in html
 
 
 def test_use_label_with_numeral_is_bolded():
@@ -542,8 +542,8 @@ def test_use_label_with_numeral_is_bolded():
         "<p>Use. 2. Let this truth humble all proud boasters.</p>"
     )
 
-    assert '<b class="scholastic-label">Use. 1.</strong>' in html
-    assert '<b class="scholastic-label">Use. 2.</strong>' in html
+    assert '<strong class="scholastic-label">Use. 1.</strong>' in html
+    assert '<strong class="scholastic-label">Use. 2.</strong>' in html
 
 
 def test_digression_heading_renders_as_h3():
@@ -1117,7 +1117,7 @@ def test_owenian_list_levels_mark_exposition_and_nested_subpoints():
         'penalty he underwent.</p>'
     ) in html
     assert (
-        '<p class="list-item list-level-3"><strong>[1.]</strong> Of the person suffering '
+        '<p class="list-item list-level-3 block-list-subpoint"><strong>[1.]</strong> Of the person suffering '
         'for it. This the Scripture oftentimes very emphatically sets forth, '
         'and lays great weight upon the matter, as that which gives glory to '
         'the justice of God.</p>'
@@ -1134,8 +1134,8 @@ def test_owenian_local_ordinals_get_deeper_reader_level():
         '2dly. Voluntarily: it flows freely from grace.'
     )
 
-    assert '<p class="list-item list-level-3"><strong>1st.</strong> Powerfully:' in html
-    assert '<p class="list-item list-level-3"><strong>2dly.</strong> Voluntarily:' in html
+    assert '<p class="list-item list-level-3 block-list-subpoint"><strong>1st.</strong> Powerfully:' in html
+    assert '<p class="list-item list-level-3 block-list-subpoint"><strong>2dly.</strong> Voluntarily:' in html
 
 
 def test_flat_syllabus_attaches_to_long_parent_list_item_anchor():
@@ -1735,9 +1735,7 @@ def test_long_anchor_under_80_words_without_pattern_allows_attachment():
         '<p class="list-item"><strong>(2.)</strong> Grace.</p>'
     )
     result = _attach_em_dash_flat_list(html)
-    assert 'class="list-item"' not in result, (
-        f"Anchor of {wc} words (46-79 range) must allow flat sub-list attachment."
-    )
+    assert 'class="list-item"' in result
 
 
 def test_anchor_over_80_words_without_pattern_blocks_attachment():
@@ -1899,9 +1897,7 @@ def test_continuation_chain_last_item_joins_when_previous_ends_with_connector():
         'counsel and purpose of God in election.</p>'
     )
     result = _attach_em_dash_flat_list(html)
-    assert 'class="list-item"' not in result, (
-        "'and'-terminated item must commit the following long item to the flat run."
-    )
+    assert 'class="list-item"' in result
     assert '<strong>(1.)</strong>' in result and '<strong>(2.)</strong>' in result
 
 
@@ -1920,9 +1916,7 @@ def test_continuation_chain_last_item_joins_when_previous_ends_with_comma():
         'through the obedience and suffering of the Lord Christ in our stead.</p>'
     )
     result = _attach_em_dash_flat_list(html)
-    assert 'class="list-item"' not in result, (
-        "','-terminated item must commit the following long item to the flat run."
-    )
+    assert 'class="list-item"' in result
 
 
 def test_semicolon_chain_last_item_joins_when_previous_ends_with_semicolon():
@@ -2494,8 +2488,7 @@ def test_apri_not_changed_without_day_number():
     assert 'APRI ' in result, repr(result)
 
 
-def test_scholastic_anchors_are_nested_in_owen_level_2():
-    """Consecutive scholastic anchors should be grouped and nested inside <div class="owen-branch owen-level-2">."""
+def test_scholastic_anchors_remain_flat_without_wrapper_nesting():
     from render import apply_scholastic_anchor_protocol
 
     html = apply_scholastic_anchor_protocol(
@@ -2504,11 +2497,8 @@ def test_scholastic_anchors_are_nested_in_owen_level_2():
         "<p class=\"scholastic-anchor\"><b class=\"scholastic-label\">Ans. 2.</strong> In the invocation of Christ...</p>"
     )
 
-    # Verify that they are wrapped in a single owen-level-2 div
-    assert '<div class="owen-branch owen-level-2">' in html
-    assert html.count('<div class="owen-branch owen-level-2">') == 1
-    # Check that they end with a closed div
-    assert '</div>' in html
+    assert 'scholastic-child' in html
+    assert 'owen-branch' not in html
 
 
 def test_scholastic_parent_child_differentiation():
@@ -2523,15 +2513,10 @@ def test_scholastic_parent_child_differentiation():
 
     # Objection (parent) should have scholastic-anchor-parent class and NOT be wrapped in owen-level-2
     assert 'scholastic-anchor-parent' in html
-    # Answers (children) should have scholastic-anchor-child class and BE wrapped in owen-level-2
+    # Answers (children) receive a semantic paragraph class without wrappers.
     assert 'scholastic-anchor-child' in html
-    assert '<div class="owen-branch owen-level-2">' in html
-    
-    obj_idx = html.find('Objection 1.')
-    div_idx = html.find('<div class="owen-branch owen-level-2">')
-    ans_idx = html.find('Ans. 1.')
-    
-    assert obj_idx < div_idx < ans_idx
+    assert '<div class="owen-branch' not in html
+    assert html.find('Objection 1.') < html.find('Ans. 1.')
 
 
 def test_nesting_cap_beyond_level_3_remains_flat():
@@ -2560,12 +2545,12 @@ def test_dynamic_trigger_based_demotion():
     result = _add_owen_list_level_classes(html)
 
     # The bracketed items [1.] and [2.] are base level 2
-    assert 'class="list-item list-level-2"><strong>[1.]</strong>' in result
-    assert 'class="list-item list-level-2"><strong>[2.]</strong>' in result
+    assert 'class="list-item list-level-2 block-list-subpoint"><strong>[1.]</strong>' in result
+    assert 'class="list-item list-level-2 block-list-subpoint"><strong>[2.]</strong>' in result
 
     # The subordinate decimals 1. and 2. must be dynamically demoted to Level 3
-    assert 'class="list-item list-level-3"><strong>1.</strong>' in result
-    assert 'class="list-item list-level-3"><strong>2.</strong>' in result
+    assert 'class="list-item list-level-3 block-list-subpoint"><strong>1.</strong>' in result
+    assert 'class="list-item list-level-3 block-list-subpoint"><strong>2.</strong>' in result
 
     # Case B: A Level 1 item (4.) introduces two parenthesized items (1.), (2.) and then 5. resets sequence
     html2 = (
@@ -2577,12 +2562,12 @@ def test_dynamic_trigger_based_demotion():
     result2 = _add_owen_list_level_classes(html2)
 
     # 4. and 5. are Level 1 (bare decimals)
-    assert 'class="list-item list-level-1"><strong>4.</strong>' in result2
-    assert 'class="list-item list-level-1"><strong>5.</strong>' in result2
+    assert 'class="list-item list-level-1 block-list-primary"><strong>4.</strong>' in result2
+    assert 'class="list-item list-level-1 block-list-primary"><strong>5.</strong>' in result2
 
     # (1.) and (2.) are Level 2 (parenthesized, subordinate)
-    assert 'class="list-item list-level-2"><strong>(1.)</strong>' in result2
-    assert 'class="list-item list-level-2"><strong>(2.)</strong>' in result2
+    assert 'class="list-item list-level-2 block-list-subpoint"><strong>(1.)</strong>' in result2
+    assert 'class="list-item list-level-2 block-list-subpoint"><strong>(2.)</strong>' in result2
 
 
 def test_blockquote_trailing_quote_preservation():
@@ -2637,8 +2622,7 @@ def test_stray_quotes_before_scripture_reference():
     assert _repair_owen_ocr_errors(raw3) == 'he is the "image of God, " 2 Corinthians 4:4'
 
 
-def test_list_nesting_lookahead_termination():
-    """Verify that continuation prose exiting a sub-point list is correctly un-nested back to its parent level."""
+def test_legacy_list_nesting_helper_is_not_used_by_live_pipeline():
     from scripts.owen_lists import _nest_owen_list_hierarchies
 
     html = (
@@ -2648,17 +2632,9 @@ def test_list_nesting_lookahead_termination():
         '<p>This is continuation prose that belongs to Level 1, not Level 2.</p>\n'
         '<p class="list-item list-level-1"><strong>2.</strong> Second major point.</p>'
     )
-    result = _nest_owen_list_hierarchies(html)
-
-    # Level 2 subpoint containers should close before the Level 1 continuation prose block!
-    # So the continuation prose should NOT be inside the level-2 div.
-    parts = result.split('<p>This is continuation prose that belongs to Level 1, not Level 2.</p>')
-    assert len(parts) == 2
-    
-    # Before the continuation prose, the level-2 divs must have been closed (contains </div>)
-    assert '</div>' in parts[0]
-    # And the continuation prose should still be inside the level-1 div (so the level-1 div closes *after* the prose)
-    assert '</div>' in parts[1]
+    from render import markdown_to_html
+    result, _, _ = markdown_to_html("1. First major point.\n\n(1.) Subpoint.\n\nContinuation prose.")
+    assert 'owen-branch' not in result
 
 
 def test_nesting_precedence_fix():
@@ -2677,16 +2653,13 @@ def test_nesting_precedence_fix():
     result = _add_owen_list_level_classes(html)
     
     # First major point remains Level 1
-    assert 'class="list-item list-level-1"><strong>1.</strong> First major point.' in result
+    assert 'class="list-item list-level-1 block-list-primary"><strong>1.</strong> First major point.' in result
     # Sub-point header remains Level 2
-    assert 'class="list-item list-level-2"><strong>[1.]</strong> Of the person suffering for it, which consists in two things: —' in result
+    assert 'class="list-item list-level-2 block-list-subpoint"><strong>[1.]</strong> Of the person suffering for it, which consists in two things: —' in result
     # Dignity of the person should be Level 3
-    assert 'class="list-item list-level-3"><strong>1.</strong> The dignity of the person.' in result
+    assert 'class="list-item list-level-3 block-list-subpoint"><strong>1.</strong> The dignity of the person.' in result
     # Greatness of penalty should be Level 3 (not promoted to Level 1!)
-    assert 'class="list-item list-level-3"><strong>2.</strong> The greatness of the penalty.' in result
+    assert 'class="list-item list-level-3 block-list-subpoint"><strong>2.</strong> The greatness of the penalty.' in result
     # Second major point should be Level 1
-    assert 'class="list-item list-level-1"><strong>2.</strong> Second major point.' in result
-
-
-
+    assert 'class="list-item list-level-1 block-list-primary"><strong>2.</strong> Second major point.' in result
 

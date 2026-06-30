@@ -22,7 +22,7 @@ from shared import (
 from scripts.owen_lists import *
 from scripts.owen_lists import (
     _attach_em_dash_flat_list, _add_owen_list_level_classes,
-    _merge_short_inline_lists, _nest_owen_list_hierarchies
+    _merge_short_inline_lists
 )
 
 
@@ -1144,8 +1144,7 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     result_html = _coalesce_adjacent_signatures(result_html)
     result_html = _merge_short_inline_lists(result_html)
     result_html = _add_owen_list_level_classes(result_html)
-    result_html = _nest_owen_list_hierarchies(result_html)
+    # Semantic list levels remain paragraph classes; wrapper inference used to
+    # capture unrelated continuation prose and blockquotes.
     return result_html, state.current_mode, state.pending_drop_cap
-
-
 

@@ -2,6 +2,9 @@
 
 Status: agent instruction and implementation design note.
 
+As of July 2026, blockquotes never inherit list depth. They have one mobile
+treatment and at most one non-cumulative `0.5em` desktop offset.
+
 Blockquotes in the Owen pipeline should represent real displayed quotations in
 the source, not merely paragraphs that mention Scripture or begin with a
 Scripture reference.

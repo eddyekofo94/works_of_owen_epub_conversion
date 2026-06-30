@@ -3960,4 +3960,17 @@ Prior to healing, Volume 4 had a quality Need score of `28.1` (Rank 1, worst amo
 - **Audit Verification:** Re-rendered and ran both audits. Both `scripts/audit_epub.py` and `scripts/audit_text_integrity.py` completed with a 100% clean **PASS** (0 errors, 0 warnings).
 - **Quality Score:** Volume 4's Need score dropped from `28.1` to `10.2`, successfully bringing it below the `20.0` target and promoting it to the **PRISTINE** quality tier.
 
+# 2026-07-01 — Scholastic anchor and Owenian list redesign
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+Removed live `.owen-branch` generation from list and scholastic processing.
+List semantics now remain on paragraphs as `block-list-primary` or
+`block-list-subpoint`; the run classifier uses named hard exclusions and a
+diagnostic score, with block rendering as the ambiguous fallback. Scholastic
+labels use strict parent/child vocabularies and correct `<strong>` markup; the
+old state machine that synthesized `Ans.` prefixes was deleted. The structural
+guide page was removed while retaining the abbreviations guide. Volume 12 was
+the sole rebuilt volume. Package audit passed with zero errors/warnings;
+text-integrity warnings remain documented in the session report.
 

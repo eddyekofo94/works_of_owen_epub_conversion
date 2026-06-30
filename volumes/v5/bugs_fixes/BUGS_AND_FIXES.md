@@ -170,10 +170,12 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-26T09:11:33.759733+00:00
+**Last run:** 2026-06-30T23:14:58.113437+00:00
 **EPUB:** `volumes/v5/output/volume_5.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -184,13 +186,13 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 41 |
-| Spine items | 40 |
+| XHTML files | 40 |
+| Spine items | 39 |
 | Embedded fonts | 14 |
-| NAV links | 42 |
+| NAV links | 41 |
 | Greek chars / untagged | 6350 / 0 |
 | Hebrew chars / untagged | 980 / 0 |
-| Noteref links / endnote anchors | 207 / 207 |
+| Noteref links / endnote anchors | 345 / 345 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -233,10 +235,15 @@ Reports:
 
 
 
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-26T14:38:50.797246+00:00
+**Last run:** 2026-06-30T23:16:21.932146+00:00
 **Status:** PASS (0 warnings)
 
 Reports:
@@ -246,11 +253,11 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 576 |
-| EPUB text files | 39 |
-| EPUB paragraphs/headings | 2147 |
+| EPUB text files | 38 |
+| EPUB paragraphs/headings | 2150 |
 | Approximate PDF-to-EPUB word coverage | 0.9999 |
 | Weak page matches | 0 |
-| Dense source windows checked | 26913 |
+| Dense source windows checked | 27043 |
 | Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
@@ -261,7 +268,7 @@ Reports:
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
 | Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 229 |
+| Structural starts excluded from split warnings | 235 |
 | Short fragments | 27 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 2 |
@@ -273,7 +280,7 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 434 |
-| EPUB enumerator markers | 444 |
+| EPUB enumerator markers | 434 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 1158 / 1158 |

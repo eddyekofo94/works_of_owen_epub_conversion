@@ -323,3 +323,8 @@ Minimum useful version:
 7. Print a short Markdown report plus JSON details.
 
 After that, add `qa/golden_pages.json` and make the audit script optionally inspect only those pages/files when a volume-specific page map exists.
+# Deferred reader-facing structural note
+
+A concise explanation of Owen's structural typography may be reconsidered only
+after the paragraph-role presentation is stable and user-validated. It is not
+currently injected into EPUB front matter.

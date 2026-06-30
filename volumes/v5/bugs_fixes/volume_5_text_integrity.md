@@ -3,17 +3,17 @@
 - Status: **PASS**
 - Warnings: 0
 - PDF pages: 576
-- EPUB text files: 39
-- EPUB paragraphs/headings: 2147
+- EPUB text files: 38
+- EPUB paragraphs/headings: 2150
 
 ## Coverage
 
 - PDF content tokens: 193209
-- EPUB content tokens: 194290
+- EPUB content tokens: 193947
 - Approximate PDF-to-EPUB coverage ratio: 0.9999
 - Pages checked: 562
 - Weak page matches: 0
-- Dense source windows checked: 26913
+- Dense source windows checked: 27043
 - Missing dense source-window pages: 0
 - Front CONTENTS pages checked: 0
 - Missing front CONTENTS pages: 0
@@ -26,9 +26,9 @@
 
 ## Paragraphs
 
-- Body paragraphs checked: 1856
+- Body paragraphs checked: 1869
 - Possible faulty paragraph splits: 0
-- Structural starts excluded from split warnings: 229
+- Structural starts excluded from split warnings: 235
 - Short fragments: 27
 - Adjacent duplicate paragraphs: 0
 - Inline structural marker candidates: 2
@@ -40,7 +40,7 @@
 - Front-matter heading/body candidates: 0
 - Repeated word windows: 25
 - PDF enumerator markers: 434
-- EPUB enumerator markers: 444
+- EPUB enumerator markers: 434
 - Missing enumerator marker forms: 0
 - Enumerator sequence candidates: 0
 
@@ -59,16 +59,16 @@
 
 ## Latin
 
-- PDF Latin words: 3094
-- EPUB Latin words: 3097
-- EPUB Tagged Latin words: 2602
-- Latin word coverage ratio: 0.9971
-- Latin word tagging ratio: 0.8402
-- Latin clauses checked: 330
+- PDF Latin words: 3013
+- EPUB Latin words: 3007
+- EPUB Tagged Latin words: 2573
+- Latin word coverage ratio: 0.997
+- Latin word tagging ratio: 0.8557
+- Latin clauses checked: 328
 - Missing Latin clauses: 1
-- Tagged Latin runs checked: 591
-- Translated Latin runs: 447
-- Latin translation ratio: 0.7563
+- Tagged Latin runs checked: 583
+- Translated Latin runs: 583
+- Latin translation ratio: 1.0
 
 ## Inline Structural Marker Candidates
 
@@ -107,46 +107,29 @@
 
 ## Excess Word Samples
 
-- word: translated; pdf: 3; epub: 19
-- word: translation; pdf: 10; epub: 25
-- word: digital; pdf: 0; epub: 10
-- word: theological; pdf: 3; epub: 12
 - word: historical; pdf: 4; epub: 12
-- word: greek; pdf: 5; epub: 12
-- word: modern; pdf: 3; epub: 10
+- word: digital; pdf: 0; epub: 8
+- word: theological; pdf: 3; epub: 10
 - word: footnotes; pdf: 0; epub: 7
-- word: hebrew; pdf: 4; epub: 10
-- word: edition; pdf: 2; epub: 8
+- word: modern; pdf: 3; epub: 9
+- word: section; pdf: 0; epub: 6
 
 ## Untagged Latin Word Samples
 
-- word: socinus; epub: 29; tagged: 2
 - word: reus; epub: 13; tagged: 5
-- word: thomas; epub: 6; tagged: 0
 - word: schlichtingius; epub: 5; tagged: 0
-- word: grotius; epub: 5; tagged: 0
-- word: pelagius; epub: 4; tagged: 0
 - word: subjectum; epub: 4; tagged: 0
-- word: candor; epub: 3; tagged: 0
 - word: totum; epub: 4; tagged: 1
 - word: congruo; epub: 4; tagged: 1
+- word: glamor; epub: 3; tagged: 0
+- word: injuria; epub: 3; tagged: 0
+- word: bathsheba; epub: 3; tagged: 0
+- word: serm; epub: 3; tagged: 0
+- word: fidejussor; epub: 3; tagged: 0
 
 ## Missing Latin Clauses
 
 - page: 359; word_count: 59; sample: non solum illa opera legis quae sunt in veteribus sacramentis et nunc
-
-## Untranslated Latin Samples
-
-- phrase: propitiatio est
-- phrase: quam sanctae, quam
-- phrase: quam purae ab omni
-- phrase: Unum bonum est, quod beatae vitae causa et firmamentum est, sibi fidere
-- phrase: nemo unquam
-- phrase: landamur, et
-- phrase: gloriamur, quod non
-- phrase: non a nobis haberemus
-- phrase: sine quibus non
-- phrase: incertior sum multo, quam dudum
 
 ## Limits
 

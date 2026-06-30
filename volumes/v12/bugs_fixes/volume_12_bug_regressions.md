@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 12
 
-- Status: **PASS**
+- Status: **WARN**
 - EPUB audit: `volume_12_audit.json`
 - Text integrity audit: `volume_12_text_integrity.json`
 
@@ -15,7 +15,7 @@
 | Reference continuation splits | 0 | 0 | OK |
 | Citation continuation splits | 0 | 0 | OK |
 | Adjacent duplicate paragraphs | 0 | 0 | OK |
-| Missing enumerator markers | 2 | 2 | OK |
+| Missing enumerator markers | 1 | 2 | OK |
 | Low-density chapter failures | 0 | 0 | OK |
 | Malformed transition budget failures | 0 | 0 | OK |
 | Fragmented sentence runs | 0 | 0 | OK |
@@ -57,7 +57,7 @@
 | Duplicate NAV labels | 0 | 0 | OK |
 | Spaced caps OCR | 0 | 0 | OK |
 | Lowercase page fragments | 0 | 20 | OK |
-| Noteref leading spaces | 0 | 0 | OK |
+| Noteref leading spaces | 1 | 0 | REGRESSION |
 | Greek span legacy accents | 0 | 0 | OK |
 | Long quote joined to prose | 0 | 0 | OK |
 | I WILL/I AM mangles | 0 | 0 | OK |
@@ -79,7 +79,6 @@
 ### Missing enumerator markers
 
 - marker: (1.)
-- marker: (8.)
 
 ### Repeated phrase hits
 
@@ -88,3 +87,7 @@
 ### Possible Beta Code residue files
 
 - file: EPUB/endnotes.xhtml; text: Aj
+
+### Noteref leading spaces
+
+- file: EPUB/ch027.xhtml; text: <a class="noteref noteref-trans" epub:type="noteref"

@@ -1,5 +1,64 @@
 import re
 
+
+def classify_flat_list_run(anchor: str, items: list[tuple[str, str]], *, chapter_title=None) -> dict:
+    """Classify a complete adjacent marker run and expose named evidence."""
+    plain = lambda value: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", value)).strip()
+    anchor_text = plain(anchor)
+    bodies = [plain(body) for _, body in items]
+    markers = [plain(marker).strip(" .") for marker, _ in items]
+    positives, exclusions, score = [], [], 0
+    count_words = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+                   "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+                   "twofold": 2, "threefold": 3, "fourfold": 4}
+    count_match = re.search(r"\b(" + "|".join(count_words) + r"|\d+)\b", anchor_text, re.I)
+    category = re.search(r"\b(?:things?|heads?|parts?|ways?|accounts?|regards?|sorts?|considerations?|observations?|particulars?|respects?|instances?)\b", anchor_text, re.I)
+    announced = (int(count_match.group(1)) if count_match.group(1).isdigit() else count_words.get(count_match.group(1).lower())) if count_match and category else None
+    formula = re.search(r"\b(?:there are|consists? in|reduced unto|may be referred to|I shall (?:briefly )?observe|as follows|are required|twofold account)\b", anchor_text, re.I)
+    if formula and formula.group(0).lower() == "there are" and not category:
+        formula = None
+
+    protected = re.search(r"<(?:blockquote|aside|a)\b|\[[^\]]*$", anchor, re.I)
+    if protected: exclusions.append("protected-context")
+    if re.search(r"\b(?:q|a|lib|cap|dist)\.\s*\d", " ".join(bodies), re.I): exclusions.append("citation-tail")
+    if re.search(r"\b(?:Genesis|Exodus|Psalm|Matthew|John|Romans|Corinthians|Hebrews)\s+\d+[:.]\d+", " ".join(bodies), re.I): exclusions.append("scripture-density")
+    sentence_counts = [len(re.findall(r"[.!?](?:\s|$)", body)) for body in bodies]
+    if any(n > 1 for n in sentence_counts): exclusions.append("multiple-sentences")
+    lengths = [len(body.split()) for body in bodies]
+    if any(length > 25 for length in lengths) or (len(items) <= 2 and any(length > 20 for length in lengths)):
+        exclusions.append("developed-item")
+    if re.search(r"\bwhereby\b", anchor_text, re.I): exclusions.append("expository-whereby")
+
+    family = "unknown"
+    parsed = []
+    for marker in markers:
+        clean = marker.strip("()[]")
+        match = re.search(r"\d+", clean)
+        parsed.append(int(match.group()) if match else None)
+    if all(v is not None for v in parsed):
+        family = "arabic"
+        if parsed != list(range(parsed[0], parsed[0] + len(parsed))): exclusions.append("inconsistent-sequence")
+        else: score += 2; positives.append("sequential-marker-family")
+    if category: score += 2; positives.append("count-category-formula")
+    if formula: score += 2; positives.append("introductory-formula")
+    if anchor_text.rstrip().endswith((":", "—", ",", ";")): score += 2; positives.append("introductory-punctuation")
+    if announced is not None and announced == len(items): score += 4; positives.append("announced-count-matches-run")
+    if lengths and max(lengths) <= 12: score += 2; positives.append("short-items")
+    period_parallel = len(items) >= 3 and all(body.rstrip('"\'').endswith('.') for body in bodies) and max(lengths, default=0) <= 25
+    if period_parallel:
+        score += 4; positives.append("parallel-period-ended-syllabus")
+    nonfinal = bodies[:-1]
+    if nonfinal and sum(x.rstrip('"\'').endswith((",", ";", ":")) or re.search(r"\b(?:and|or)$", x, re.I) is not None for x in nonfinal) >= max(1, len(nonfinal) - 1):
+        score += 2; positives.append("continuation-punctuation")
+    continuation_run = len(items) >= 3 and "continuation-punctuation" in positives
+    if lengths and not period_parallel and max(lengths) > max(8, min(lengths) * 3): score -= 3
+    contextual_intro = bool(category or formula or announced is not None or period_parallel or continuation_run)
+    role = "flat_syllabus" if not exclusions and contextual_intro and score >= 6 else "block_list"
+    return {"role": role, "score": score, "positive_reasons": positives,
+            "hard_exclusions": exclusions, "marker_family": family,
+            "run_length": len(items), "announced_count": announced,
+            "chapter_title": chapter_title}
+
 # ---------------------------------------------------------------------------
 # Issue #16 — em-dash / open-punctuation flat syllabus flattening
 # ---------------------------------------------------------------------------
@@ -309,10 +368,9 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         # ── is_case_2: first list-item ends '—' (nested sub-list anchor) ─────
         is_case_2 = False
         first_plain = _plain(para)
-        if first_plain.rstrip('\"\'').strip().endswith('—'):
-            is_li = bool(_re.match(r'<p class="(?:list-item|roman-list-item)">', stripped))
-            if is_li and _allows_attach(first_plain, is_list_item=True):
-                is_case_2 = True
+        is_li = bool(_re.match(r'<p class="(?:list-item|roman-list-item)">', stripped))
+        if is_li and _allows_attach(first_plain, is_list_item=True):
+            is_case_2 = True
 
         if is_case_2:
             preceding      = para
@@ -343,64 +401,16 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             pm = _LIST_ITEM_RE.match(paras[idx].strip())
             item_pairs.append((pm.group(2) or '', pm.group(3) or ''))
 
-        announced = _extract_count(preceding_plain)
-
         # ── determine flat prefix length ──────────────────────────────────────
         flat_prefix_len = 0
 
         for L in range(len(item_pairs), 1, -1):
             sub   = item_pairs[:L]
-            if not _is_sequential_sequence(sub):
-                continue
-            wcs   = [_wc(ct) for _, ct in sub]
-            nf    = sub[:-1]      # non-final items
-
-            # Signal F: exact announced count, ≤20 w each
-            if announced == L and all(wc <= _SIGNAL_F_CAP for wc in wcs):
-                flat_prefix_len = L
-                break
-
-            # Signal H: ≥3 items, all end '.', all ≤25 w
-            if (L >= 3
-                    and all(ct.rstrip('\"\'').strip().endswith('.') for _, ct in sub)
-                    and all(wc <= _SIGNAL_H_CAP for wc in wcs)):
-                flat_prefix_len = L
-                break
-
-            # all_non_final_semi: every non-final item ends ';', non-final ≤20 w
-            if (nf
-                    and all(ct.rstrip('\"\'').strip().endswith(';') for _, ct in nf)
-                    and all(wcs[k] <= _ALL_SEMI_CAP for k in range(len(nf)))):
-                flat_prefix_len = L
-                break
-
-            # Continuation comma: non-final item ends ',' → final joins
-            if nf and any(ct.rstrip('\"\'').strip().endswith(',') for _, ct in nf):
-                flat_prefix_len = L
-                break
-
-            # Continuation connector: non-final ends 'and'/'or' → final joins
-            if nf and any(
-                _re.search(r'\b(?:and|or)\s*$', ct.rstrip('\"\'').strip(), _re.I)
-                for _, ct in nf
-            ):
-                flat_prefix_len = L
-                break
-
-            # Standard hard cap
-            if any(wc > _HARD_CAP for wc in wcs):
-                continue
-
-            # Standard signals A/B/C/D
-            sig_a = any(ct.rstrip('\"\'').strip().endswith((';', ',')) for _, ct in nf)
-            sig_b = any(
-                _re.search(r'\b(?:and|or)\s*$', ct.rstrip('\"\'').strip(), _re.I)
-                for _, ct in sub
+            decision = classify_flat_list_run(
+                preceding, sub,
+                chapter_title=(config or {}).get("chapter_title"),
             )
-            sig_c = all(wc <= 3 for wc in wcs)
-            sig_d = L >= 3 and all(wc <= 7 for wc in wcs)
-
-            if sig_a or sig_b or sig_c or sig_d:
+            if decision["role"] == "flat_syllabus":
                 flat_prefix_len = L
                 break
 
@@ -685,7 +695,8 @@ def _add_owen_list_level_classes(html: str) -> str:
 
                 # Reconstruct the list item paragraph preserving other classes (like syllabus-anchor)
                 other_classes = [c for c in classes_list if c not in ('list-item', 'roman-list-item') and not c.startswith('list-level-')]
-                new_classes = [cls, f'list-level-{assigned_level}'] + other_classes
+                role_class = 'block-list-primary' if assigned_level == 1 else 'block-list-subpoint'
+                new_classes = [cls, f'list-level-{assigned_level}', role_class] + other_classes
                 block = f'<p class="{" ".join(new_classes)}">{inner}</p>'
                 
                 # Check if this list item itself acts as an introducing trigger for a sub-list
@@ -1006,4 +1017,3 @@ def _merge_short_inline_lists(html: str) -> str:
         i = j
 
     return ''.join(out)
-

@@ -322,7 +322,7 @@ The new engine:
 | 2 | v2 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.87 |
 | 3 | v3 | Populated | FULL | Cov 99.97 Greek 100.00 Heb 100.00 Lat 99.94 |
 | 4 | v4 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.59 |
-| 5 | v5 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.71 |
+| 5 | v5 | Populated | FULL | Cov 99.99 Greek 100.00 Heb 100.00 Lat 99.70 |
 | 6 | v6 | Populated | FULL | Cov 99.96 Greek 100.00 Heb 100.00 Lat 99.15 |
 | 7 | v7 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.66 |
 | 8 | v8 | Populated | FULL | Cov 99.95 Greek 100.00 Heb 100.00 Lat 99.80 |

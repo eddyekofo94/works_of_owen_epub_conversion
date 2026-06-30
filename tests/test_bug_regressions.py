@@ -332,7 +332,7 @@ def test_bracketed_word_ordinal_marker_splits_to_new_paragraph():
 
     assert '[SECONDLY]' in html
     assert '<strong>[SECONDLY],</strong>' in html
-    assert re.search(r'</p>\s*(?:<div[^>]*>\s*)*<p class="list-item list-level-3"><strong>\[SECONDLY\],</strong>', html)
+    assert re.search(r'</p>\s*<p class="list-item list-level-3 block-list-subpoint"><strong>\[SECONDLY\],</strong>', html)
 
 
 def test_inline_bold_decimal_markers_split_after_emphasized_semicolon():
@@ -374,7 +374,7 @@ def test_secondly_the_opener_is_not_swallowed_by_summary():
 
     summary = re.search(r'<p class="chapter-summary">(.*?)</p>', html, re.S).group(1)
     assert "Secondly" not in summary
-    assert re.search(r'<p class="list-item list-level-1"><strong>Secondly,</strong> THE human nature', html)
+    assert re.search(r'<p class="list-item list-level-1 block-list-primary"><strong>Secondly,</strong> THE human nature', html)
 
 
 def test_greek_synopsis_line_continues_chapter_summary():
@@ -556,8 +556,8 @@ def test_bracketed_and_parenthesized_markers_split_and_bold_cleanly():
     assert html.count('class="list-item ') == 2, (
         "Expected (1.)+(2.) to merge and [1].+[2.] to merge → 2 paragraphs total"
     )
-    assert '<p class="list-item list-level-2"><strong>(1.)</strong>' in html
-    assert '<p class="list-item list-level-3"><strong>[1].</strong>' in html
+    assert '<p class="list-item list-level-2 block-list-subpoint"><strong>(1.)</strong>' in html
+    assert '<p class="list-item list-level-3 block-list-subpoint"><strong>[1].</strong>' in html
     assert '(2.)<strong> For their consolation' not in html
 
 
@@ -571,7 +571,7 @@ def test_quote_wrapped_structural_markers_are_unwrapped_and_bolded():
     assert '"2dly' not in html
     assert '" [1st' not in html
     assert '" [2dly' not in html
-    assert '<p class="list-item list-level-3"><strong>2dly.</strong> Our holiness' in html
+    assert '<p class="list-item list-level-3 block-list-subpoint"><strong>2dly.</strong> Our holiness' in html
     assert '<strong>[1st.]</strong> It is the glory of the Father' in html
     assert '<strong>[2dly.]</strong> The Son is gloried thereby' in html
 
@@ -584,7 +584,7 @@ def test_sermon_fragmented_ordinal_marker_is_normalized():
 
     assert '**[**' not in cleaned
     assert '**[3dly.]**' in cleaned
-    assert '<p class="list-item list-level-3"><strong>[3dly.]</strong> Whereas in these dispensations' in html
+    assert '<p class="list-item list-level-3 block-list-subpoint"><strong>[3dly.]</strong> Whereas in these dispensations' in html
     assert '[ <em>3dly</em> .]' not in html
 
 
@@ -636,7 +636,7 @@ def test_scholastic_quoted_objection_opener_moves_inside_blockquote():
         'should not be accepted?"'
     )
 
-    assert '<p class="list-item list-level-1"><strong>Objection 1.</strong> But some may say,</p>' in html
+    assert '<p class="list-item list-level-1 block-list-primary"><strong>Objection 1.</strong> But some may say,</p>' in html
     assert (
         '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">&quot;Alas! how shall I hold '
         'communion with the Father in love? I know not at all whether he loves '
@@ -743,7 +743,7 @@ def test_issue_39_combined_roman_decimal_marker_stays_inline():
         "I. 1. What he did preparatory unto his death, which was the first thing proposed unto consideration."
     )
 
-    assert '<p class="list-item list-level-1"><strong>I. 1.</strong> What he did preparatory' in html
+    assert '<p class="list-item list-level-1 block-list-primary"><strong>I. 1.</strong> What he did preparatory' in html
 
 
 def test_issue_32_pdf_page_384_reference_run_is_not_jumbled():
@@ -784,7 +784,7 @@ def test_issue_34_numbered_answer_anchor_is_normalized_and_bolded():
     html = apply_scholastic_anchor_protocol(f"<p>{cleaned}</p>")
 
     assert cleaned == "Ans. 1. There is no precedent nor example"
-    assert '<b class="scholastic-label">Ans. 1.</strong> There is no precedent nor example' in html
+    assert '<strong class="scholastic-label">Ans. 1.</strong> There is no precedent nor example' in html
 
 
 def test_spaced_scholastic_labels_are_repaired_globally():
@@ -806,8 +806,8 @@ def test_objection_and_use_labels_are_bolded_as_scholastic_anchors():
         "<p>Use. 1. You that are yet in the flower of your days.</p>"
     )
 
-    assert '<b class="scholastic-label">Objection 1.</strong> But some may say' in html
-    assert '<b class="scholastic-label">Use. 1.</strong> You that are yet' in html
+    assert '<strong class="scholastic-label">Objection 1.</strong> But some may say' in html
+    assert '<strong class="scholastic-label">Use. 1.</strong> You that are yet' in html
 
 
 def test_question_followed_by_scripture_tail_stays_in_same_paragraph():
@@ -1171,7 +1171,7 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
     assert 'The first of these is, that he should have a nature provided for him,' in chapter_7
 
 
-def test_list_item_announcer_syllabus_is_flattened():
+def test_list_item_announcer_with_developed_item_stays_block():
     from render import markdown_to_html
     md = (
         "1. There are two things wherein the glory of truth does consist.\n\n"
@@ -1180,7 +1180,8 @@ def test_list_item_announcer_syllabus_is_flattened():
         "(1.) No truth whatever brings any spiritual light unto the mind, but by virtue thereof."
     )
     html, _, _ = markdown_to_html(md)
-    assert '<p class="list-item list-level-1 syllabus-anchor"><strong>1.</strong> There are two things wherein the glory of truth does consist. <strong>(1.)</strong> Its light. <strong>(2.)</strong> Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ.</p>' in html
+    assert 'syllabus-anchor' not in html
+    assert html.count('block-list-subpoint') == 3
     assert '<strong>(1.)</strong> No truth whatever' in html
 
 
@@ -2915,8 +2916,6 @@ def test_no_unused_whitelist_entries(volume):
             f"Volume {volume} whitelist contains unused entries (not suppressing any current issues):\n"
             + "\n".join(f"  - {f}" for f in failures)
         )
-
-
 
 
 

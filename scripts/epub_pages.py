@@ -818,14 +818,11 @@ def _add_front_matter(book, vol_num: int, config: dict, primary_font: dict, styl
         _make_xhtml, _polish_volume_title_page_html, _polish_treatise_title_page_html,
         generate_frontispiece_xhtml,
     )
-    from render import (
-        generate_structural_guide_html, generate_abbreviations_guide_html
-    )
+    from render import generate_abbreviations_guide_html
     
     front_matter_epub_items = []
     _last_fm_title = None
     copyright_added = False
-    added_structural_guide = False
     added_abbreviations_guide = False
     
     for fm in intermediate.get('front_matter_items', []):
@@ -875,15 +872,6 @@ def _add_front_matter(book, vol_num: int, config: dict, primary_font: dict, styl
             front_matter_epub_items.append(cop_item)
             copyright_added = True
             
-        if fm.get('type') == 'toc' and not added_structural_guide:
-            note_item = epub.EpubHtml(title='Note on Structural Formatting', file_name='structural_guide.xhtml', lang='en')
-            note_html = generate_structural_guide_html(vol_num)
-            note_item.set_content(_make_xhtml('Note on Structural Formatting', note_html).encode('utf-8'))
-            note_item.add_item(style_item)
-            book.add_item(note_item)
-            front_matter_epub_items.append(note_item)
-            added_structural_guide = True
-            
         if fm.get('type') == 'toc' and not added_abbreviations_guide:
             abbr_item = epub.EpubHtml(title='Abbreviations & Scholarly Citations', file_name='abbreviations_guide.xhtml', lang='en')
             abbr_html = generate_abbreviations_guide_html(vol_num)
@@ -893,14 +881,6 @@ def _add_front_matter(book, vol_num: int, config: dict, primary_font: dict, styl
             front_matter_epub_items.append(abbr_item)
             added_abbreviations_guide = True
             
-    if not added_structural_guide:
-        note_item = epub.EpubHtml(title='Note on Structural Formatting', file_name='structural_guide.xhtml', lang='en')
-        note_html = generate_structural_guide_html(vol_num)
-        note_item.set_content(_make_xhtml('Note on Structural Formatting', note_html).encode('utf-8'))
-        note_item.add_item(style_item)
-        book.add_item(note_item)
-        front_matter_epub_items.append(note_item)
-        
     if not added_abbreviations_guide:
         abbr_item = epub.EpubHtml(title='Abbreviations & Scholarly Citations', file_name='abbreviations_guide.xhtml', lang='en')
         abbr_html = generate_abbreviations_guide_html(vol_num)
@@ -1026,7 +1006,7 @@ def _render_single_chapter(
         body_html = _polish_analysis_html(body_html)
         
     body_html = re.sub(rf'\(\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', '(', body_html, flags=re.I)
-    body_html = apply_scholastic_anchor_protocol(body_html)
+    body_html = apply_scholastic_anchor_protocol(body_html, chapter_config)
     
     html_postprocess_hook = config.get('html_postprocess_hook')
     if html_postprocess_hook:
@@ -1344,4 +1324,3 @@ def _finalize_epub_and_write(
             
     _inject_apple_books_options(epub_path)
     return epub_path
-

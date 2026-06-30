@@ -32,7 +32,7 @@ from scripts.epub_pages import (
     _AGES_HEADERS,
     _TITLE_CONNECTORS
 )
-from scripts.scholastic_parser import apply_scholastic_anchor_protocol, _nest_scholastic_in_divs
+from scripts.scholastic_parser import apply_scholastic_anchor_protocol
 from scripts.polish import _apply_premium_signatures, _apply_premium_chapter_endings, _apply_premium_salutations
 from scripts.analysis_parser import (
     _polish_analysis_html,
@@ -941,6 +941,9 @@ def apply_inline_translations(body_html: str) -> str:
     """Scan and substitute centralized inline translations in body HTML."""
     from scripts.translation_db import INLINE_TRANSLATIONS
     for phrase, trans in INLINE_TRANSLATIONS.items():
+        # Remove "<strong>Translation:</strong> " or similar prefix to prevent "[Translated: Translation: ...]"
+        clean_trans = re.sub(r'(?:<[^>]+>)*Translation:(?:<[^>]+>)*\s*', '', trans, flags=re.IGNORECASE)
+        
         words = phrase.split()
         if not words:
             continue
@@ -950,7 +953,7 @@ def apply_inline_translations(body_html: str) -> str:
             re.DOTALL
         )
         if pattern.search(body_html):
-            body_html = pattern.sub(rf'\1\2 [Translated: {trans}]', body_html)
+            body_html = pattern.sub(rf'\1\2 [Translated: {clean_trans}]', body_html)
     return body_html
 
 
@@ -1173,7 +1176,6 @@ def build_and_add_front_matter(book: epub.EpubBook, vol_num: int, config: dict, 
     front_matter_epub_items = []
     _last_fm_title = None
     copyright_added = False
-    added_structural_guide = False
     added_abbreviations_guide = False
     
     for fm in intermediate.get('front_matter_items', []):
@@ -1226,20 +1228,6 @@ def build_and_add_front_matter(book: epub.EpubBook, vol_num: int, config: dict, 
             front_matter_epub_items.append(cop_item)
             copyright_added = True
 
-        # Dynamic insertion of the Note on Structural Formatting after TOC page
-        if fm.get('type') == 'toc' and not added_structural_guide:
-            note_item = epub.EpubHtml(
-                title='Note on Structural Formatting',
-                file_name='structural_guide.xhtml',
-                lang='en',
-            )
-            note_html = generate_structural_guide_html(vol_num)
-            note_item.set_content(_make_xhtml('Note on Structural Formatting', note_html).encode('utf-8'))
-            note_item.add_item(style_item)
-            book.add_item(note_item)
-            front_matter_epub_items.append(note_item)
-            added_structural_guide = True
-
         if fm.get('type') == 'toc' and not added_abbreviations_guide:
             abbr_item = epub.EpubHtml(
                 title='Abbreviations & Scholarly Citations',
@@ -1252,19 +1240,6 @@ def build_and_add_front_matter(book: epub.EpubBook, vol_num: int, config: dict, 
             book.add_item(abbr_item)
             front_matter_epub_items.append(abbr_item)
             added_abbreviations_guide = True
-
-    if not added_structural_guide:
-        note_item = epub.EpubHtml(
-            title='Note on Structural Formatting',
-            file_name='structural_guide.xhtml',
-            lang='en',
-        )
-        note_html = generate_structural_guide_html(vol_num)
-        note_item.set_content(_make_xhtml('Note on Structural Formatting', note_html).encode('utf-8'))
-        note_item.add_item(style_item)
-        book.add_item(note_item)
-        front_matter_epub_items.append(note_item)
-        added_structural_guide = True
 
     if not added_abbreviations_guide:
         abbr_item = epub.EpubHtml(

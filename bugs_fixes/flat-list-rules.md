@@ -2,6 +2,11 @@
 
 Status: agent instruction and implementation design note.
 
+As of July 2026, `classify_flat_list_run()` is the authoritative decision
+surface. It returns role, score, named positive evidence, hard exclusions,
+marker family, run length, announced count, and chapter title. Ambiguity always
+falls back to block paragraphs.
+
 This repository uses "flat list" in a specific Owenian sense. A flat list is
 not merely a short list. It is a compact syllabus that Owen attaches to an
 anchor sentence before he begins the real scholastic exposition.

@@ -2205,7 +2205,7 @@ GENTIUM_PLUS_FILES = {
 
 # Distinctly Latin words for tagging
 LATIN_DICTIONARY = {
-    'grotius', 'socinus', 'smalcius', 'annotator', 'jus', 'thomas', 'franciscus', 'incarnate', 'transylvania',
+    'jus', 'reus', 'subjectum', 'totum', 'congruo',
     'et', 'est', 'non', 'ut', 'ad', 'cum', 'qui', 'quae', 'quod', 'quibus', 'sub', 'pro', 'per', 
     'ab', 'ex', 'sine', 'de', 'sunt', 'esse', 'fuit', 'deus', 'dominus', 'christus', 'jesu', 
     'patris', 'filii', 'spiritus', 'sancti', 'gratia', 'fide', 'scriptura', 'ecclesia', 'vero', 
@@ -3033,33 +3033,24 @@ p.chapter-summary {
     padding-left:0;
 }
 
-/* --- Visual Nesting Containers --- */
-div.owen-branch {
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-    break-inside: auto !important;
-    page-break-inside: auto !important;
-    -webkit-column-break-inside: auto !important;
-}
-div.owen-level-1 {
+/* Paragraph-role structure: complete mobile defaults, optional desktop depth. */
+.block-list-primary, .block-list-subpoint, .scholastic-anchor {
     margin-left: 0;
+    padding-left: 0;
+    border-left: none;
 }
-div.owen-level-2 {
-    margin-left:0.75em;
-    border-left: 1.5px solid rgba(42, 85, 160, 0.12) !important;
-    padding-left:0.6em;
-}
-div.owen-level-3 {
-    margin-left:0.75em;
-    border-left: none !important;
-    padding-left:0;
-}
+.scholastic-anchor { text-align: left; text-indent: 0; }
+.scholastic-parent { margin-top: 1em; }
+.scholastic-parent + .scholastic-child,
+.scholastic-child + .scholastic-child { margin-top: 0.35em; }
 
-/* Nested blockquotes alignment */
-div.owen-branch blockquote {
-    margin-left:0.8em;
-    border-left: 1.5px solid rgba(0, 0, 0, 0.06) !important;
-    padding-left:0.8em;
+@media (min-width: 42em) {
+    .block-list-subpoint,
+    .list-item.list-level-2,
+    .list-item.list-level-3,
+    .roman-list-item.list-level-2,
+    .roman-list-item.list-level-3 { margin-left: 0.65em; }
+    blockquote { margin-left: 0.5em; margin-right: 0; }
 }
 
 .roman-list-item b {
@@ -3208,29 +3199,6 @@ p.scripture-ref-introduction {
     font-size: 0.92em;
     color: inherit;
     text-indent: 0;
-}
-
-/* Proof-text hierarchy: a blockquote immediately following a list-item should
-   appear visually subordinate to it, not jut left at body margin.
-
-   Without this rule, a list-item's text starts at ~2.1em (margin 1.25em +
-   border 2px + padding 0.7em) while the default blockquote sits at only 1.2em —
-   so the proof-text quote sticks out to the LEFT of the item it proves.
-
-   The selectors mirror the three list levels. list-level-1 items have no
-   left margin so 1.5em is enough; level-2 and level-3 need proportionally
-   more to clear the item's own indent. */
-p.list-item.list-level-1 + blockquote {
-    margin-left: 1.5em;
-    border-left-color: rgba(0, 0, 0, 0.12);
-}
-p.list-item.list-level-2 + blockquote {
-    margin-left: 2.7em;
-    border-left-color: rgba(0, 0, 0, 0.10);
-}
-p.list-item.list-level-3 + blockquote {
-    margin-left: 3.5em;
-    border-left-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Sermon opening scripture verse — the text the sermon expounds.

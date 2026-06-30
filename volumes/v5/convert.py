@@ -104,6 +104,11 @@ OVERRIDES = {
         'another writings of mine': 'any other writings of mine',
         'that is declared only': 'that it is declared only',
 
+        # Fix fragmented OCR errors in "Nemo ergo sibi" quote
+        'nemo de ostate se jactet': 'nemo de potestate se jactet',
+        'Dominum Jesus misericordiam': 'Dominum Jesum misericordiam',
+
+
         # Volume 5 Biographical Expansions (Idempotent)
         'charges of Bishop Horsley': 'charges of Samuel Horsley',
         'says Horsley,': 'says Samuel Horsley,',

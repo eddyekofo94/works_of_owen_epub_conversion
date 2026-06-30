@@ -188,6 +188,8 @@ class Audit:
             if not item_id or not href:
                 self.warn("manifest_item_incomplete", "Manifest item missing id or href")
                 continue
+            if href and href.endswith("structural_guide.xhtml"):
+                self.error("legacy_structural_guide", "Removed structural guide remains in the EPUB manifest")
             full_href = norm_join(self.opf_dir, href)
             props = item.get("properties", "")
             self.manifest[item_id] = {
@@ -390,6 +392,11 @@ class Audit:
                     add_sample(samples["overlong_heading_body"], path, oh_text[:180])
                     totals["overlong_heading_body_files"] += 1
                     break
+
+            if 'class="owen-branch' in raw:
+                self.error("legacy_owen_branch", "Legacy Owen wrapper found", path=path)
+            if re.search(r'<b\b[^>]*class="scholastic-label"[^>]*>.*?</strong>', raw, re.I | re.S):
+                self.error("malformed_scholastic_markup", "Mismatched scholastic label markup", path=path)
 
             # Fragmented Greek span runs: adjacent Greek spans with only whitespace between
             frag_greek = re.findall(

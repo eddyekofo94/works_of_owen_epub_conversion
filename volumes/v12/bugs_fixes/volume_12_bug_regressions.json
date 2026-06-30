@@ -1,6 +1,6 @@
 {
   "volume": "12",
-  "status": "pass",
+  "status": "warn",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/bugs_fixes/volume_12_bug_regressions.json",
@@ -108,14 +108,14 @@
     },
     {
       "label": "Missing enumerator markers",
-      "observed": 2,
+      "observed": 1,
       "budget": 2,
       "status": "ok",
       "samples": [
         {
           "marker": "(1.)",
           "pdf": 110,
-          "epub": 109,
+          "epub": 108,
           "examples": [
             {
               "location": "pdf:p51",
@@ -128,17 +128,6 @@
             {
               "location": "pdf:p133",
               "context": "ace in the heavens,\" though he \"glister\" never so much \"in glory\" there where he is. For, (1.) He must be extended as a body is, that so he may fill the place, and have parts as we have, if he be circumscribed in a certain place; which though our author thinks no absurdity,"
-            }
-          ]
-        },
-        {
-          "marker": "(8.)",
-          "pdf": 1,
-          "epub": 0,
-          "examples": [
-            {
-              "location": "pdf:p178",
-              "context": "f is as high a pitch of blasphemy as any creature in this world can possibly arrive unto. (8.) By this prerogative of certain predictions in reference to things to come, God vindicates his own deity; and from the want of it evinces the vanity of the idols of the Gentiles, a"
             }
           ]
         }
@@ -446,10 +435,15 @@
     },
     {
       "label": "Noteref leading spaces",
-      "observed": 0,
+      "observed": 1,
       "budget": 0,
-      "status": "ok",
-      "samples": []
+      "status": "regression",
+      "samples": [
+        {
+          "file": "EPUB/ch027.xhtml",
+          "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+        }
+      ]
     },
     {
       "label": "Greek span legacy accents",

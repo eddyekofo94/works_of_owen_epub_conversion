@@ -1,13 +1,10 @@
 {
   "text_integrity": {
     "ignored_warnings": [
-      "repeated_phrases",
       "missing_latin_clauses",
-      "low_latin_tagging",
       "repeated_windows",
       "inline_structural_markers",
-      "overlong_heading_candidates",
-      "low_latin_translation_coverage"
+      "overlong_heading_candidates"
     ],
     "skipped_pages": [
       3,
@@ -41,34 +38,7 @@
       126
     ],
     "dense_source_window_loss": [
-      15,
-      16,
-      29,
-      31,
-      35,
-      36,
-      37,
-      62,
-      77,
-      88,
-      89,
-      98,
-      122,
-      126,
-      151,
-      173,
-      182,
-      297,
-      358,
-      359,
-      377,
-      393,
-      431,
-      442,
-      469,
-      473,
-      499,
-      538
+      15, 16, 77, 88, 89, 122, 126, 151, 173, 182, 297, 358, 359, 377, 393, 431, 442, 469, 473, 499, 538
     ]
   },
   "anomalies": {
@@ -79,31 +49,26 @@
       "wire-draw",
       "dikaio-oo",
       "non-imputation",
-      "sub-distinguished",
       "non-solvent",
       "blood-guiltiness",
       "co-interest"
     ],
     "Structural Nesting Sequence Jumps": [
-      "2.",
+      "Galatians 3:2. But when",
       "5. ... 7.",
-      "3. ... 5.",
       "2. ... 4."
     ],
     "Unmatched Quotation Marks": [
-      "The first inquiry in this matter, in a way of duty, is after the proper relief",
-      "Credisne te non posse salvari",
-      "Whence the prophet says in the psalm",
+      "1. The first inquiry in this matter, in a way of duty",
+      "[[BLOCKQUOTE]] \"Credisne te non posse salvari",
       "The excellent words of Justin Martyr",
-      "A full comprehension of it no creature",
       "But the true and genuine signification of these words",
-      "3. \"Ex injuria; or,",
       "(1.) \"Injuriarum,\" of wrongs:",
       "In this state the apostle interposes himself",
       "(1.) The Lord Christ, our mediator and surety",
       "We shall take our fourth argument from the express exclusion",
-      "originally included no merit",
-      "Si obedientia vitae Christi nobis",
+      "(3.) Works of the law originally included no merit",
+      "[[BLOCKQUOTE]] \"Si obedientia vitae Christi nobis",
       "injustus\", 1 Peter 3:18",
       "This treatise, entitled Gospel Grounds and Evidences",
       "Isaiah 13:6, 7; \u2014 \"When the day"

@@ -210,15 +210,13 @@ def test_scholastic_anchor_handles_answer_with_numeral():
         "<p>Ans. 2. Further, the satisfaction of Christ is not the same as personal obedience.</p>"
     )
 
-    assert '<b class="scholastic-label">Ans. 1.</strong>' in html
-    assert '<b class="scholastic-label">Ans. 2.</strong>' in html
+    assert '<strong class="scholastic-label">Ans. 1.</strong>' in html
+    assert '<strong class="scholastic-label">Ans. 2.</strong>' in html
 
 
 def test_scholastic_anchor_does_not_bold_objection_inside_blockquote():
     """
-    An 'Objection' inside a blockquote context must still be treated as a
-    scholastic label when it begins a <p> — blockquotes contain scholastic
-    dialogue too.
+    A label inside a quotation is protected from structural inference.
     """
     from render import apply_scholastic_anchor_protocol
 
@@ -228,11 +226,11 @@ def test_scholastic_anchor_does_not_bold_objection_inside_blockquote():
         "</blockquote>"
     )
 
-    assert '<b class="scholastic-label">Objection 1.</strong>' in html
+    assert 'scholastic-label' not in html
 
 
 def test_solution_label_is_bolded_correctly():
-    """Sol. and Sol. 1. are both valid scholastic labels."""
+    """An unnumbered Sol. needs active parent context; numbered Sol. is safe."""
     from render import apply_scholastic_anchor_protocol
 
     html = apply_scholastic_anchor_protocol(
@@ -240,8 +238,8 @@ def test_solution_label_is_bolded_correctly():
         "<p>Sol. 1. The first solution is that imputation is forensic.</p>"
     )
 
-    assert '<b class="scholastic-label">Sol.</strong>' in html
-    assert '<b class="scholastic-label">Sol. 1.</strong>' in html
+    assert '<p>Sol. This difficulty' in html
+    assert '<strong class="scholastic-label">Sol. 1.</strong>' in html
 
 
 # ===========================================================================

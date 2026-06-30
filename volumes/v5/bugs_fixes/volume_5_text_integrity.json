@@ -2,7 +2,7 @@
   "volume": "5",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/input/owen-v5.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v5/output/volume_5.epub",
-  "generated_at": "2026-06-26T14:38:50.797246+00:00",
+  "generated_at": "2026-06-30T23:16:21.932146+00:00",
   "status": "pass",
   "warning_count": 0,
   "warnings": [],
@@ -21,47 +21,27 @@
     ]
   },
   "epub": {
-    "spine_text_files": 39,
-    "paragraph_count": 2147
+    "spine_text_files": 38,
+    "paragraph_count": 2150
   },
   "word_coverage": {
     "pdf_content_tokens": 193209,
-    "epub_content_tokens": 194290,
+    "epub_content_tokens": 193947,
     "coverage_ratio": 0.9999,
     "missing_word_samples": [],
     "excess_word_samples": [
-      {
-        "word": "translated",
-        "pdf": 3,
-        "epub": 19
-      },
-      {
-        "word": "translation",
-        "pdf": 10,
-        "epub": 25
-      },
-      {
-        "word": "digital",
-        "pdf": 0,
-        "epub": 10
-      },
-      {
-        "word": "theological",
-        "pdf": 3,
-        "epub": 12
-      },
       {
         "word": "historical",
         "pdf": 4,
         "epub": 12
       },
       {
-        "word": "greek",
-        "pdf": 5,
-        "epub": 12
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
       },
       {
-        "word": "modern",
+        "word": "theological",
         "pdf": 3,
         "epub": 10
       },
@@ -71,14 +51,9 @@
         "epub": 7
       },
       {
-        "word": "hebrew",
-        "pdf": 4,
-        "epub": 10
-      },
-      {
-        "word": "edition",
-        "pdf": 2,
-        "epub": 8
+        "word": "modern",
+        "pdf": 3,
+        "epub": 9
       },
       {
         "word": "section",
@@ -93,7 +68,7 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 26913,
+    "dense_windows_checked": 27043,
     "missing_dense_window_pages": 0,
     "missing_dense_windows": []
   },
@@ -169,10 +144,10 @@
     "missing_bottom_windows": []
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 1856,
+    "paragraphs_checked": 1869,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 229,
+    "structural_start_exclusions": 235,
     "short_fragment_count": 27,
     "short_fragments": [
       {
@@ -318,110 +293,11 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 434,
-    "epub_marker_count": 444,
+    "epub_marker_count": 434,
     "missing_marker_count": 0,
     "missing_markers": [],
-    "excess_marker_count": 6,
-    "excess_markers": [
-      {
-        "marker": "(1)",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p58",
-            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
-          }
-        ]
-      },
-      {
-        "marker": "(1.)",
-        "pdf": 99,
-        "epub": 100,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p61",
-            "context": "Level 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p274",
-            "context": "(1.) The doctrine of the Trinity itself is denied, impugned, yea, derided by them; and that solely on this account. They plead that it is incomprehensible by reason; for there is in th"
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p300",
-            "context": "(1.) That this relation is evident unto that spiritual wisdom whereby we are enabled, doctrinally and practically, to comprehend the harmony of the mystery of God, and the consistency"
-          }
-        ]
-      },
-      {
-        "marker": "(2.)",
-        "pdf": 99,
-        "epub": 100,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p61",
-            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p276",
-            "context": "(2.) On the same ground the incarnation of the Son of God is rejected as ἀτόπων ἀτοπώτατον , — the most absurd conception that ever befell the minds of men. Now it is to no purpose to"
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p301",
-            "context": "(2.) That it is made evident by the Scripture, wherein both these things — justification through the imputation of the righteousness of Christ, and the necessity of our personal obedie"
-          }
-        ]
-      },
-      {
-        "marker": "[1.]",
-        "pdf": 29,
-        "epub": 30,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p61",
-            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p380",
-            "context": "[1.] Without the due consideration and supposition of it, the true nature of faith can never be understood. For, as we have showed before, justification is God's way of the deliverance"
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p388",
-            "context": "[1.] Displicency and sorrow that we have sinned. It is impossible that any one should be really convinced of sin in the way before declared, but that a dislike of sin, and of himself t"
-          }
-        ]
-      },
-      {
-        "marker": "[1]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p58",
-            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
-          }
-        ]
-      },
-      {
-        "marker": "[2.]",
-        "pdf": 29,
-        "epub": 30,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p61",
-            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p381",
-            "context": "[2.] The order, relation, and use of the law and the gospel do uncontrollably evince the necessity of this conviction previous unto believing. For that which any man has first to deal"
-          },
-          {
-            "location": "EPUB/ch005.xhtml#p389",
-            "context": "[2.] Fear of punishment due to sin. For conviction respects not only the instructive and receptive part of the law, whereby the being and nature of sin are discovered, but the sentence"
-          }
-        ]
-      }
-    ],
+    "excess_marker_count": 0,
+    "excess_markers": [],
     "orphan_candidate_count": 0,
     "orphan_candidates": []
   },
@@ -550,30 +426,20 @@
     "missing_hebrew_clauses": []
   },
   "latin_word_coverage": {
-    "pdf_latin_word_count": 3094,
-    "epub_latin_word_count": 3097,
-    "epub_tagged_latin_word_count": 2602,
-    "pdf_latin_unique_words": 1278,
-    "epub_latin_unique_words": 1281,
-    "epub_tagged_unique_words": 1083,
-    "latin_word_coverage_ratio": 0.9971,
-    "latin_tagging_ratio": 0.8402,
+    "pdf_latin_word_count": 3013,
+    "epub_latin_word_count": 3007,
+    "epub_tagged_latin_word_count": 2573,
+    "pdf_latin_unique_words": 1263,
+    "epub_latin_unique_words": 1265,
+    "epub_tagged_unique_words": 1076,
+    "latin_word_coverage_ratio": 0.997,
+    "latin_tagging_ratio": 0.8557,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
-      {
-        "word": "socinus",
-        "epub": 29,
-        "tagged": 2
-      },
       {
         "word": "reus",
         "epub": 13,
         "tagged": 5
-      },
-      {
-        "word": "thomas",
-        "epub": 6,
-        "tagged": 0
       },
       {
         "word": "schlichtingius",
@@ -581,23 +447,8 @@
         "tagged": 0
       },
       {
-        "word": "grotius",
-        "epub": 5,
-        "tagged": 0
-      },
-      {
-        "word": "pelagius",
-        "epub": 4,
-        "tagged": 0
-      },
-      {
         "word": "subjectum",
         "epub": 4,
-        "tagged": 0
-      },
-      {
-        "word": "candor",
-        "epub": 3,
         "tagged": 0
       },
       {
@@ -621,17 +472,17 @@
         "tagged": 0
       },
       {
-        "word": "debtor",
-        "epub": 3,
-        "tagged": 0
-      },
-      {
         "word": "bathsheba",
         "epub": 3,
         "tagged": 0
       },
       {
         "word": "serm",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "fidejussor",
         "epub": 3,
         "tagged": 0
       },
@@ -673,7 +524,7 @@
     ]
   },
   "latin_clause_fidelity": {
-    "latin_clauses_checked": 330,
+    "latin_clauses_checked": 328,
     "missing_latin_clause_count": 1,
     "missing_latin_clauses": [
       {
@@ -684,71 +535,10 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 591,
-    "translated_latin_runs_count": 447,
-    "latin_translation_ratio": 0.7563,
-    "untranslated_latin_samples": [
-      {
-        "phrase": "propitiatio est"
-      },
-      {
-        "phrase": "quam sanctae, quam"
-      },
-      {
-        "phrase": "quam purae ab omni"
-      },
-      {
-        "phrase": "Unum bonum est, quod beatae vitae causa et firmamentum est, sibi fidere"
-      },
-      {
-        "phrase": "nemo unquam"
-      },
-      {
-        "phrase": "landamur, et"
-      },
-      {
-        "phrase": "gloriamur, quod non"
-      },
-      {
-        "phrase": "non a nobis haberemus"
-      },
-      {
-        "phrase": "sine quibus non"
-      },
-      {
-        "phrase": "incertior sum multo, quam dudum"
-      },
-      {
-        "phrase": "esse sed perfidiae; peccata deleri"
-      },
-      {
-        "phrase": "solum nobis peccata condonentur"
-      },
-      {
-        "phrase": "sed in nobis constitutum\", Enchirid"
-      },
-      {
-        "phrase": "Verba delictorum meorum"
-      },
-      {
-        "phrase": "Delictorum meorum?' nisi quia pro delictis nostris"
-      },
-      {
-        "phrase": "precatur; et delicta nostra delicta sua"
-      },
-      {
-        "phrase": "ut videlicet satisfactio unius omnibus imputetur, sicut omnium peccata unus"
-      },
-      {
-        "phrase": "Mercaturam quandam docere nos Paulus videtur. Abundatis"
-      },
-      {
-        "phrase": "vos pecunia, et estis"
-      },
-      {
-        "phrase": "quaedam commutatio"
-      }
-    ]
+    "tagged_latin_runs_count": 583,
+    "translated_latin_runs_count": 583,
+    "latin_translation_ratio": 1.0,
+    "untranslated_latin_samples": []
   },
   "ages_artifact_check": {
     "ages_artifact_count": 0,
@@ -762,12 +552,7 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {
-    "ignored_warnings": [
-      "repeated_phrases",
-      "low_latin_tagging"
-    ]
-  },
+  "unused_whitelist_text_integrity": {},
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

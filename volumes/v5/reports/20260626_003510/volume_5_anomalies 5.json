@@ -1,0 +1,63 @@
+{
+  "volume": "5",
+  "total_words_audited": 228857,
+  "total_anomalies_count": 4,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [
+      {
+        "target": "Answer .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 3 - the Use of Faith in Justification",
+        "contexts": [
+          "... d what belongs thereunto, or is derived from it. Answer . This exception derives from that common objection ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 4 - of Justification",
+        "contexts": [
+          "... merely to be freed from the punishment of sin.\" Ans . 1. All these reasons prove not that it is the sam ..."
+        ]
+      },
+      {
+        "target": "Ans .",
+        "description": "Spaced period (space before period)",
+        "chapter": "Chapter 12 - the Imputation of the Obedience of Christ",
+        "contexts": [
+          "... in the ensuing discourse, or answered elsewhere. Ans . This cause is of more importance, and more eviden ..."
+        ]
+      }
+    ],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "A. full comprehension of it no creature can in this world arise unto. Only, in the contemplation of faith, we may arrive...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "General Considerations,",
+        "contexts": [
+          "A. full comprehension of it no creature can in this world arise unto. Only, in the contemplation of faith, we may arrive..."
+        ]
+      }
+    ]
+  },
+  "unused_whitelist_anomalies": {
+    "Hyphenation Anomalies": [
+      "sub-distinguished"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "3. ... 5."
+    ],
+    "Unmatched Quotation Marks": [
+      "Whence the prophet says in the psalm",
+      "A full comprehension of it no creature",
+      "3. \"Ex injuria; or,"
+    ]
+  }
+}

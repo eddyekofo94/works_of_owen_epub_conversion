@@ -2,7 +2,7 @@
   "volume": "12",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/input/owen-v12.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v12/output/volume_12.epub",
-  "generated_at": "2026-06-30T16:28:19.330742+00:00",
+  "generated_at": "2026-06-30T22:35:46.633057+00:00",
   "status": "warn",
   "warning_count": 2,
   "warnings": [
@@ -20,13 +20,13 @@
     "skipped_detected": []
   },
   "epub": {
-    "spine_text_files": 61,
-    "paragraph_count": 3651
+    "spine_text_files": 60,
+    "paragraph_count": 3676
   },
   "word_coverage": {
     "pdf_content_tokens": 270735,
-    "epub_content_tokens": 272103,
-    "coverage_ratio": 0.9994,
+    "epub_content_tokens": 271853,
+    "coverage_ratio": 0.9993,
     "missing_word_samples": [
       {
         "word": "pre",
@@ -41,19 +41,14 @@
     ],
     "excess_word_samples": [
       {
-        "word": "digital",
-        "pdf": 0,
-        "epub": 10
-      },
-      {
-        "word": "theological",
-        "pdf": 4,
-        "epub": 13
-      },
-      {
         "word": "psalms",
         "pdf": 3,
         "epub": 11
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
       },
       {
         "word": "historical",
@@ -61,14 +56,19 @@
         "epub": 8
       },
       {
-        "word": "modern",
-        "pdf": 7,
-        "epub": 14
+        "word": "theological",
+        "pdf": 4,
+        "epub": 11
       },
       {
         "word": "footnotes",
         "pdf": 0,
         "epub": 7
+      },
+      {
+        "word": "modern",
+        "pdf": 7,
+        "epub": 13
       },
       {
         "word": "onlybegotten",
@@ -83,12 +83,12 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 34305,
+    "dense_windows_checked": 34293,
     "missing_dense_window_pages": 1,
     "missing_dense_windows": [
       {
-        "page": 226,
-        "sample": "christ was personally united that wrought all these works answer me to these things"
+        "page": 181,
+        "sample": "knowledge there must actually and formally be that he sits conjecturing at events to"
       }
     ]
   },
@@ -192,10 +192,10 @@
     ]
   },
   "paragraph_integrity": {
-    "paragraphs_checked": 3211,
+    "paragraphs_checked": 3246,
     "split_candidate_count": 0,
     "split_candidates": [],
-    "structural_start_exclusions": 445,
+    "structural_start_exclusions": 467,
     "short_fragment_count": 50,
     "short_fragments": [
       {
@@ -391,13 +391,13 @@
   },
   "enumerator_integrity": {
     "pdf_marker_count": 450,
-    "epub_marker_count": 459,
+    "epub_marker_count": 449,
     "missing_marker_count": 1,
     "missing_markers": [
       {
         "marker": "(1.)",
         "pdf": 110,
-        "epub": 109,
+        "epub": 108,
         "examples": [
           {
             "location": "pdf:p51",
@@ -414,88 +414,8 @@
         ]
       }
     ],
-    "excess_marker_count": 5,
-    "excess_markers": [
-      {
-        "marker": "(1)",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p72",
-            "context": ", and nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
-          }
-        ]
-      },
-      {
-        "marker": "(2.)",
-        "pdf": 109,
-        "epub": 110,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p75",
-            "context": "evel 2 — Nested Proofs & Subdivisions Marked by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch004.xhtml#p208",
-            "context": "(2.) He was less exposed to the fury of the Papists, which he greatly feared (loving well the things of this world), than he would have been had he joined himself to any visible church"
-          },
-          {
-            "location": "EPUB/ch006.xhtml#p294",
-            "context": "(2.) Mr B. pretending to give an account of the\" chiefest things pertaining to belief and practice,\" doth yet propose no question at all concerning many of the most important heads of"
-          }
-        ]
-      },
-      {
-        "marker": "[1.]",
-        "pdf": 21,
-        "epub": 22,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p75",
-            "context": "ed by parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch018.xhtml#p1065",
-            "context": "[1.] Will they say that this order is observed by the apostle, — that that which is first done is first expressed as to all particulars? What, then, becomes of their interpretation who"
-          },
-          {
-            "location": "EPUB/ch018.xhtml#p1123",
-            "context": "[1.] Because Abraham was the father of many nations, Jews and proselytes, before the preaching of the gospel, as Genesis 15:5."
-          }
-        ]
-      },
-      {
-        "marker": "[1]",
-        "pdf": 0,
-        "epub": 1,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p72",
-            "context": "nested rhetorical arguments. In early editions, these nested numeral systems (I, 1, (1), [1], 1st) frequently fell into typographical confusion, bewildering the reader in a labyrinthine maze of outlines."
-          }
-        ]
-      },
-      {
-        "marker": "[2.]",
-        "pdf": 21,
-        "epub": 22,
-        "examples": [
-          {
-            "location": "EPUB/structural_guide.xhtml#p75",
-            "context": "parenthesized Arabic numbers (e.g., (1.), (2.) ) or bracketed Arabic numbers (e.g., [1.], [2.] ). These represent secondary theological proofs and are indented with a subtle, thin vertical blue hairline on the left."
-          },
-          {
-            "location": "EPUB/ch018.xhtml#p1067",
-            "context": "[2.] The order of the words is most proper. John having asserted the deity of Christ, with some general concomitants and consequences of the dispensation wherein he undertakes to be a"
-          },
-          {
-            "location": "EPUB/ch018.xhtml#p1124",
-            "context": "[2.] It is false that Abram was not Abraham until after the ascension of Christ and preaching of the gospel to the Gentiles, He was made Abraham from his first enjoyment of his name an"
-          }
-        ]
-      }
-    ],
+    "excess_marker_count": 0,
+    "excess_markers": [],
     "orphan_candidate_count": 1,
     "orphan_candidates": [
       {
@@ -632,13 +552,13 @@
   },
   "latin_word_coverage": {
     "pdf_latin_word_count": 7130,
-    "epub_latin_word_count": 7146,
-    "epub_tagged_latin_word_count": 5642,
+    "epub_latin_word_count": 7145,
+    "epub_tagged_latin_word_count": 5582,
     "pdf_latin_unique_words": 2710,
-    "epub_latin_unique_words": 2711,
-    "epub_tagged_unique_words": 2251,
+    "epub_latin_unique_words": 2710,
+    "epub_tagged_unique_words": 2245,
     "latin_word_coverage_ratio": 0.9975,
-    "latin_tagging_ratio": 0.7895,
+    "latin_tagging_ratio": 0.7812,
     "missing_latin_word_samples": [],
     "untagged_latin_word_samples": [
       {
@@ -649,7 +569,12 @@
       {
         "word": "smalcius",
         "epub": 47,
-        "tagged": 12
+        "tagged": 8
+      },
+      {
+        "word": "faustus",
+        "epub": 24,
+        "tagged": 1
       },
       {
         "word": "jus",
@@ -662,6 +587,11 @@
         "tagged": 1
       },
       {
+        "word": "hugo",
+        "epub": 17,
+        "tagged": 0
+      },
+      {
         "word": "incarnate",
         "epub": 15,
         "tagged": 0
@@ -669,6 +599,16 @@
       {
         "word": "transylvania",
         "epub": 14,
+        "tagged": 0
+      },
+      {
+        "word": "blandrata",
+        "epub": 11,
+        "tagged": 1
+      },
+      {
+        "word": "laelius",
+        "epub": 9,
         "tagged": 0
       },
       {
@@ -682,11 +622,6 @@
         "tagged": 0
       },
       {
-        "word": "blandrata",
-        "epub": 11,
-        "tagged": 3
-      },
-      {
         "word": "eta",
         "epub": 8,
         "tagged": 0
@@ -695,6 +630,16 @@
         "word": "rabbi",
         "epub": 11,
         "tagged": 3
+      },
+      {
+        "word": "schlichtingius",
+        "epub": 11,
+        "tagged": 4
+      },
+      {
+        "word": "anno",
+        "epub": 9,
+        "tagged": 2
       },
       {
         "word": "ostorodius",
@@ -717,16 +662,6 @@
         "tagged": 1
       },
       {
-        "word": "schlichtingius",
-        "epub": 11,
-        "tagged": 5
-      },
-      {
-        "word": "anno",
-        "epub": 9,
-        "tagged": 3
-      },
-      {
         "word": "servetus",
         "epub": 6,
         "tagged": 0
@@ -735,11 +670,6 @@
         "word": "zanchius",
         "epub": 7,
         "tagged": 1
-      },
-      {
-        "word": "laelius",
-        "epub": 9,
-        "tagged": 3
       },
       {
         "word": "seidelius",
@@ -755,16 +685,6 @@
         "word": "franzius",
         "epub": 6,
         "tagged": 0
-      },
-      {
-        "word": "niemojevius",
-        "epub": 6,
-        "tagged": 0
-      },
-      {
-        "word": "photinus",
-        "epub": 8,
-        "tagged": 3
       }
     ]
   },
@@ -780,16 +700,10 @@
     ]
   },
   "latin_translation_coverage": {
-    "tagged_latin_runs_count": 1549,
-    "translated_latin_runs_count": 700,
-    "latin_translation_ratio": 0.4519,
+    "tagged_latin_runs_count": 1488,
+    "translated_latin_runs_count": 705,
+    "latin_translation_ratio": 0.4738,
     "untranslated_latin_samples": [
-      {
-        "phrase": "HUGO GROTIUS"
-      },
-      {
-        "phrase": "Faustus Socinus"
-      },
       {
         "phrase": "as \"quantilla causa"
       },
@@ -800,13 +714,7 @@
         "phrase": "Nicolaus Arnoldus"
       },
       {
-        "phrase": "Maresius, ‡  professor"
-      },
-      {
         "phrase": "Dionysius ‡  Petavius"
-      },
-      {
-        "phrase": "Socinus, Smalcius, Crellius"
       },
       {
         "phrase": "Ptolemaeus, Valentinus secundus"
@@ -843,6 +751,18 @@
       },
       {
         "phrase": "Marcellus Squarcialupus"
+      },
+      {
+        "phrase": "Paulus Alciatus, ‡  Valentinus Gentilis, Bernardus Ochinus"
+      },
+      {
+        "phrase": "Maresius, Becmannus"
+      },
+      {
+        "phrase": "Gregorius Pauli, ‡  Stanislaus, Lutonius Martinus Crovicius, Stanislaus Paclesius, Georgius Schomanus"
+      },
+      {
+        "phrase": "Miemoljevius, Hieronymus Philoponius"
       }
     ]
   },

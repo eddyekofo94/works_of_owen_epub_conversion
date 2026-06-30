@@ -8,6 +8,11 @@ This is for trying to solve the problem bellow:
 
 Status: master agent instruction and implementation standard.
 
+> **2026-07 redesign:** Paragraph-level semantic roles supersede every
+> `.owen-branch` wrapper and depth-based border rule described later in this
+> historical document. Mobile is flush at every level; desktop may indent
+> confirmed subpoints once by `0.65em`. Blockquotes remain independent.
+
 This file defines the structural reading model for Owen volumes. It supersedes
 one-off rules for flat lists, block lists, nested markers, and blockquotes.
 Future fixes should preserve this model unless the user explicitly changes the
@@ -160,7 +165,9 @@ Context overrides marker shape. For example:
 - `1st.`, `2dly.`, `3dly.` inside an argument are local subpoints, usually
   nested under their active parent item.
 
-To prevent "patchy" disconnected borders and margin jump-backs when a nested point spans multiple paragraphs or blockquotes, we wrap the entire scope of a subdivision in a nested `<div class="owen-branch owen-level-X">` container. 
+Do not wrap subdivisions in inferred containers. Use `block-list-primary` and
+`block-list-subpoint` paragraph classes; deeper semantic levels receive the
+same single desktop subpoint treatment.
 
 The vertical margins, padding, and vertical borders are shifted from the `<p>` tags to these `.owen-branch` parent containers, which creates a single, unbroken vertical hairline down the entire subdivision.
 

@@ -8,12 +8,12 @@
 
 - OPF: EPUB/content.opf
 - OPF version: 3.0
-- Files: 96
-- Manifest items: 87
-- Spine items: 62
-- XHTML files: 63
-- Embedded fonts: 19
-- NAV links: 64
+- Files: 87
+- Manifest items: 78
+- Spine items: 61
+- XHTML files: 62
+- Embedded fonts: 11
+- NAV links: 63
 
 ## Content Checks
 
@@ -39,3 +39,7 @@
 ### repeated_phrase
 
 - `combined_text`: of the death of christ and of justification
+
+### noteref_leading_space
+
+- `EPUB/ch027.xhtml`: <a class="noteref noteref-trans" epub:type="noteref"
