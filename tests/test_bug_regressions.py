@@ -1124,7 +1124,7 @@ def test_blockquote_geometry_renders_quotes_without_promoting_body_wraps(volume)
 
 
 @pytest.mark.parametrize("volume", VOLUMES)
-def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
+def test_roman_markers_render_justified_without_marker_escaping(volume):
     if volume != 1:
         pytest.skip("Roman heading samples are volume 1-specific")
     _, epub_path = paths_for(volume)
@@ -1150,7 +1150,7 @@ def test_roman_markers_render_left_aligned_without_marker_escaping(volume):
     assert "&lt;/b&gt;" not in roman_html
     assert re.search(r"\.roman-subheading\s*\{[^}]*text-align:\s*center;", css, re.S)
     assert re.search(r"\.roman-subheading\s*\{[^}]*font-weight:\s*normal;", css, re.S)
-    assert re.search(r"\.roman-list-item\s*\{[^}]*text-align:\s*left;", css, re.S)
+    assert re.search(r"\.roman-list-item\s*\{[^}]*text-align:\s*justify;", css, re.S)
     assert re.search(r"\.roman-list-item b\s*\{[^}]*display:\s*inline;", css, re.S)
 
     chapter_9 = next(
@@ -2916,7 +2916,6 @@ def test_no_unused_whitelist_entries(volume):
             f"Volume {volume} whitelist contains unused entries (not suppressing any current issues):\n"
             + "\n".join(f"  - {f}" for f in failures)
         )
-
 
 
 

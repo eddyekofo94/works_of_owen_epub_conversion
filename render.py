@@ -1031,7 +1031,7 @@ def initialize_epub_book(vol_num: int, title: str, config: dict) -> tuple[epub.E
 def embed_fonts_and_stylesheet(book: epub.EpubBook, vol_num: int, config: dict) -> tuple[epub.EpubItem, str]:
     """Embed primary and supplemental fonts, and add the main stylesheet to the book."""
     from shared import EPUB_STYLESHEET, generate_font_styles, select_primary_font
-    from shared import SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES
+    from shared import SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_EPUB_FILES, TITLE_PAGE_FONTS, CARDO_FILES, GENTIUM_PLUS_FILES
     
     body_font_name = config.get('body_font', 'SBL_BLit')
     primary_font = select_primary_font(body_font_name)
@@ -1078,8 +1078,14 @@ def embed_fonts_and_stylesheet(book: epub.EpubBook, vol_num: int, config: dict) 
                 ))
                 font_fnames.add(_fbase)
 
-    # Supplemental biblical fonts and the embedded title display face
-    fallback_fonts = [TITLE_PAGE_FONTS]
+    # Every font referenced by the shared stylesheet must be packaged.  Keep
+    # this list in sync with EPUB3_FONT_STYLES and the modular page builder.
+    fallback_fonts = [
+        TITLE_PAGE_FONTS,
+        PROXIMA_NOVA_EPUB_FILES,
+        CARDO_FILES,
+        GENTIUM_PLUS_FILES,
+    ]
     langs = config.get('secondary_languages', [])
     if 'el' in langs or 'he' in langs:
         fallback_fonts.append(SBL_SUPPLEMENTS)
@@ -1587,7 +1593,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 trans_counter += 1
                 placeholder_counter += 1
 
-                fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a>'
+                fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}"><sup>†</sup></a>'
                 local_notes.append({
                     'id': f"fntrans_{cid}_{trans_counter}",
                     'num': trans_counter,
@@ -1651,7 +1657,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 trailing_tags = m.group(2)
                 trailing_punc = m.group(3)
                 # Double dagger symbol (‡) for biographical notes (Rule 11)
-                fn_link = f'<a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a>'
+                fn_link = f'<a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}"><sup>‡</sup></a>'
                 local_biographical.append({
                     'id': f"fnbiog_{cid}_{biographical_counter}",
                     'term': term,

@@ -1514,3 +1514,17 @@ Warnings requiring triage:
 3. Programmed the front-matter loop in `render.py` to compile and insert `colophon.xhtml` directly before the TOC file (`contents_2.xhtml` / `toc`).
 4. Refactored the `_nav_prefix` navigation builder to pull directly from compiled front-matter spine items in visual order, aligning the TOC sidebar with the book's reading flow in Apple Books.
 5. Verified rebuilding Volume 1, passing all 111 regression tests, and getting 0 packaging warnings/errors.
+
+### 122. Master typography and enriched popup-footnote compliance (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Bare paragraphs forced a base font size; popup footnotes had conflicting left/justified rules; modern translation blocks did not receive Apple Books' inline line-height override or explicit justification/hyphenation; and symbolic noterefs used inconsistent markup. The stylesheet also referenced supplemental font files that the main render path did not package.
+
+**Fix:**
+1. Removed the bare paragraph font-size and standardized body/prose line-height at `1.4`.
+2. Consolidated popup notes into one justified, hyphenated `.footnote` rule and added the inline `1.30` line-height to enriched translation paragraphs.
+3. Updated `.footnote-modern-translation` to reader-size text, justified alignment, automatic hyphenation, relative-unit decoration, zero indentation, and direct primary-font injection.
+4. Applied inline-only noteref/sup positioning and wrapped translation, glossary, biographical, and patristic symbols in `<sup>`.
+5. Justified block exposition paragraphs, blockquotes, analysis prose, and catechism answers while retaining left alignment for short catechism questions.
+6. Synchronized rendered font packaging with every shared `@font-face` declaration, eliminating all missing-font-file audit errors.
+7. Added focused typography and font-packaging regression tests and rebuilt Volume 1.
+8. Raised noteref glyphs slightly from `top: -0.25em` to `top: -0.32em` while retaining `line-height: 0`, so the adjustment does not enlarge paragraph line boxes.
+9. Consolidated Greek sizing into one reader-relative `1.03em` rule and removed the later `1.15em` override that made Greek runs visibly oversized.

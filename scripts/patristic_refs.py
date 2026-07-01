@@ -1363,7 +1363,7 @@ def expand_inline_citations(
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
             f'<a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a>'
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>*</sup></a>'
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end
@@ -1406,7 +1406,7 @@ def expand_inline_citations(
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
             f'<a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}">*</a>'
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>*</sup></a>'
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end
