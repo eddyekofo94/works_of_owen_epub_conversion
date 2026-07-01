@@ -4,6 +4,36 @@ This log captures detailed technical analysis and architectural decisions for co
 
 ---
 
+### [Session: 2026-07-01] Latin Citation Marker Boundary Guards
+
+**Date:** 2026-07-01
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volumes tested:** 1
+
+### 1. Executive Summary
+This session addressed misplaced modern citation popup markers inside Latin/source text. The visible bug was `qui◇ nunquam` inside Leo the Great's Nativity quotation in Volume 1. While verifying the fix, related continuation failures were found in the same citation cluster, including source-title and range splits such as `De◇ Fide`, `13◇-20`, and `distinct. 10◇, a 4`.
+
+### 2. Root Cause Analysis
+1. A malformed `BODY_TRANSLATIONS` entry ended at `... materia nunquam deficit laudis; qui`, causing the renderer to place a citation marker inside the Leo quotation instead of at the source citation.
+2. Several overlapping citation-list entries in `translation_db.py` ended before a source item was complete, allowing markers to land before `a 4`, `Fide`, or `-20`.
+3. The patristic citation fallback matched numeric ranges too narrowly, so `cap. 13-20` could be treated as `cap. 13` plus trailing text.
+
+### 3. Implementation
+1. Removed the malformed Leo key and redundant partial citation-list keys from `scripts/translation_db.py`.
+2. Added renderer and EPUB-page guards that suppress citation-note anchors when the next visible text clearly continues the same Latin/source phrase.
+3. Added a matching guard to `scripts/patristic_refs.py` so fallback citations do not attach before source-title continuations such as `De`, `in`, `ad`, `cap`, `Fide`, `Johan`, and related terms.
+4. Updated patristic numeric parsing so ranges such as `13-20` remain a single citation unit.
+5. Added regression tests for the Leo truncation, source-title continuations, and citation ranges.
+
+### 4. Verification
+1. Rebuilt Volume 1 with `volumes/v1/convert.py --render-only`.
+2. Inspected `EPUB/ch004.xhtml` inside `volumes/v1/output/volume_1.epub`; confirmed `qui◇`, `De◇ Fide`, `13◇-20`, and `10◇, a 4` are absent.
+3. Verified the Leo source marker now attaches to `(Serm. 9, De Nativit.)◇` before the quote, and the quote remains uninterrupted through `laudis; qui nunquam sufficit`.
+4. Focused pytest suite passed: 15 tests.
+5. EPUB audit passed with 0 errors and 0 warnings; bug regression report passed. Text integrity remains WARN for existing dense-window and paragraph-split categories.
+
+---
+
 ### [Session: 2026-06-14] Volume 7 Need Score Reduction and Latin Penalty Alignment
 
 **Date:** 2026-06-14
@@ -3999,3 +4029,39 @@ fell from 9 missing-font errors to 0 errors. Focused typography, footnote,
 structure, and bug-regression tests passed (154 passed, 9 skipped). The EPUB
 audit passed with 0 errors and 0 warnings; existing text-integrity review queues
 remain unchanged and are recorded in the timestamped verification report.
+
+# 2026-07-01 — Latin translations moved out of body text
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The Latin translation feature had two incompatible responsibilities: it tried to
+improve reader comprehension while also modifying the main body string. Volume 1
+made the failure visible because `text_replacements` inserted bracketed English
+inside Latin source quotations, and the legacy inline translation pass could add
+`[Translated: ...]` directly to rendered XHTML.
+
+The renderer now treats Latin assistance as notes only. `†` is reserved for
+actual translation popups. Citation-only source identifications use the clearer
+`◇` marker and no longer borrow the translation marker. Whole Latin passages
+followed immediately by Owen's own English rendering are not given redundant
+translation notes; they may still receive citation-only notes when a modern
+source identification is known.
+
+The V1 override data was corrected so it performs OCR repair only, not
+translation insertion. The V1 intermediate JSON was regenerated from PDF to
+remove stale bracket pollution. The Lactantius `Quomodo igitur` source was added
+as a citation-only entry, and the Latin auto-tagger was tightened so a
+parenthetical citation and the following quoted Latin do not merge into one
+language span.
+
+For ongoing research, `scripts/audit_latin_research.py` now generates a
+volume-scoped report under `volumes/vN/reports/`, classifying Latin candidates as
+curated translations, likely author-translated passages, citation-known items,
+or items needing translation research. This keeps uncertain semantic/paraphrase
+detection out of the EPUB renderer while still exposing the research queue.
+
+Verification for Volume 1: full extract+render completed, EPUB audit passed with
+0 errors and 0 warnings, bug regression report passed, and focused pytest
+coverage for marker semantics and disabled inline translation injection passed.
+Text-integrity remains WARN due existing dense-window and paragraph-split review
+queues, now recorded in the timestamped verification report.

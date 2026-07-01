@@ -2478,7 +2478,11 @@ def tag_latin_words(text):
                                 elif k_is_lat is False:
                                     break
                                 k += 1
-                            if has_more_latin and re.match(r'^[^\w<>&]+$', next_token):
+                            if (
+                                has_more_latin
+                                and re.match(r'^[^\w<>&]+$', next_token)
+                                and not re.search(r'["“”]', next_token)
+                            ):
                                 run_tokens.append(labeled_tokens[j])
                                 j += 1
                             else:
@@ -2586,12 +2590,12 @@ a.noteref, a[epub\:type="noteref"] {
     white-space: nowrap !important;
 }
 
-.noteref-glossary, .noteref-biographical {
+.noteref-glossary, .noteref-biographical, .noteref-citation {
     padding: 0.1em 0.2em;
 }
 
-/* Translation markers use the same accessible Owen Blue as every interaction. */
-a.noteref-trans, .noteref-trans {
+/* Translation and source markers use the same accessible Owen Blue as every interaction. */
+a.noteref-trans, .noteref-trans, a.noteref-citation, .noteref-citation {
     color: #2a55a0 !important;
     font-weight: bold;
     padding: 0.1em 0.2em;

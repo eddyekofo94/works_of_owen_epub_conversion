@@ -50,6 +50,85 @@ def test_noteref_and_sup_use_inline_popup_safe_positioning():
     assert "line-height: 0 !important" in sup_rule
 
 
+def test_citation_marker_uses_information_symbol_not_asterisk():
+    from render import build_endnotes_chapter
+
+    html = build_endnotes_chapter(
+        {},
+        vol_num=1,
+        trans_notes=[{
+            "id": "fntrans_test_1",
+            "phrase": "Comment. in Psalm 66:",
+            "translation": "<strong>Modern Citation:</strong> Jerome, <em>Commentary on the Psalms</em>.",
+            "type": "citation",
+        }],
+    )
+
+    assert '<span class="fn-link">◇</span>' in html
+    assert '<span class="fn-link">*</span>' not in html
+
+
+def test_inline_translation_injection_is_disabled():
+    from render import apply_inline_translations
+
+    body = '<p><span lang="la" xml:lang="la">hostis Bupalo</span>.</p>'
+
+    assert apply_inline_translations(body) == body
+    assert "[Translated:" not in apply_inline_translations(body)
+
+
+def test_citation_anchor_rejects_truncated_latin_quote_key():
+    from render import _body_translation_anchor_is_safe
+    from scripts.translation_db import BODY_TRANSLATIONS
+
+    bad_leo_key = (
+        '"Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, '
+        'sed etiam ad humanan spectat naturam, quo dictum est per prophetam '
+        "—'generationem ejus quis enarrabit?' — (utramque enim substantiam "
+        'in unam convenisse personam, nisi fides credat, sermo non explicat; '
+        'et ideo materia nunquam deficit laudis; qui'
+    )
+    body = (
+        '<p><span lang="la" xml:lang="la">'
+        f'{bad_leo_key} nunquam sufficit copia laudatoris'
+        '</span></p>'
+    )
+    orig_end = body.index(' nunquam')
+
+    assert bad_leo_key not in BODY_TRANSLATIONS
+    assert not _body_translation_anchor_is_safe('citation', bad_leo_key, body, orig_end)
+
+
+def test_citation_anchor_rejects_source_title_continuation():
+    from render import _body_translation_anchor_is_safe
+    from scripts.patristic_refs import _citation_tail_continues_source_title
+    from scripts.translation_db import BODY_TRANSLATIONS
+
+    body = '<p>Cyril. Alexand., lib. 5 cap. 6, lib. 1. De Fide ad Regin.;</p>'
+    orig_end = body.index(' Fide')
+
+    assert not _body_translation_anchor_is_safe('citation', 'lib. 1. De', body, orig_end)
+    assert _citation_tail_continues_source_title(body, body.index('De'))
+    assert (
+        'Irenaeus, lib. 3, cap. 20, 21; Eusebius, Demonst. Evangel., '
+        'lib. 4 cap. 1-4, etc.; Cyril. Alexand., lib. 5 cap. 6, lib. 1. De'
+    ) not in BODY_TRANSLATIONS
+    assert (
+        'Rupertus, lib. 3, De Gloria et Honore Filii Hominis; '
+        'Albertus Magnus, in 3 distinct. 10'
+    ) not in BODY_TRANSLATIONS
+
+
+def test_patristic_citation_regex_keeps_numeric_ranges_together():
+    from scripts.patristic_refs import PATRISTIC_CITATION_RE
+
+    text = 'Augustine, De Trinit., lib. 13 cap. 13-20; Leo follows.'
+    match = PATRISTIC_CITATION_RE.search(text)
+
+    assert match
+    assert match.group(0) == 'lib. 13 cap. 13-20'
+
+
 def test_footnote_classes_are_justified_hyphenated_and_reader_sized():
     footnote_rule = _rule(r"\.footnote")
     translation_rule = _rule(r"\.footnote-modern-translation")

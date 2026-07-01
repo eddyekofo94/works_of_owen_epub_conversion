@@ -445,7 +445,7 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
         )
         for note in trans_notes:
             note_type = note.get('type', 'translation')
-            symbol = '†' if note_type == 'translation' else '*'
+            symbol = '†' if note_type == 'translation' else '◇'
             parts.append(
                 f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="{note["id"]}">'
                 f'<p class="footnote" style="line-height: 1.30 !important;">'

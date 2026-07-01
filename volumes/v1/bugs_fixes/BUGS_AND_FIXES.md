@@ -969,10 +969,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-24T01:55:25.304701+00:00
+**Last run:** 2026-07-01T11:46:33.940712+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -983,18 +986,18 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 86 |
-| Spine items | 85 |
-| Embedded fonts | 20 |
-| NAV links | 87 |
+| XHTML files | 85 |
+| Spine items | 84 |
+| Embedded fonts | 17 |
+| NAV links | 86 |
 | Greek chars / untagged | 4091 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
-| Noteref links / endnote anchors | 345 / 345 |
+| Noteref links / endnote anchors | 334 / 334 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
 | Empty bracket noise files | 0 |
-| Repeated phrase hits | 2 |
+| Repeated phrase hits | 0 |
 
 **Status note:** Automated audit findings are not user validation. Keep related fixes as `IMPLEMENTED (AWAITING VALIDATION)` until explicitly approved.
 <!-- AUTO_AUDIT_END -->
@@ -1176,11 +1179,14 @@ Reports:
 
 
 
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-24T01:57:55.984650+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-07-01T11:47:03.061232+00:00
+**Status:** WARN (2 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1189,12 +1195,12 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 633 |
-| EPUB text files | 84 |
-| EPUB paragraphs/headings | 2701 |
+| EPUB text files | 83 |
+| EPUB paragraphs/headings | 2714 |
 | Approximate PDF-to-EPUB word coverage | 0.9998 |
 | Weak page matches | 0 |
-| Dense source windows checked | 26767 |
-| Missing dense source-window pages | 30 |
+| Dense source windows checked | 26731 |
+| Missing dense source-window pages | 31 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 586 |
@@ -1203,8 +1209,8 @@ Reports:
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 126 |
+| Possible faulty paragraph splits | 9 |
+| Structural starts excluded from split warnings | 131 |
 | Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
@@ -1216,7 +1222,7 @@ Reports:
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 25 |
 | PDF enumerator markers | 295 |
-| EPUB enumerator markers | 320 |
+| EPUB enumerator markers | 310 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 0 |
 | PDF Greek words / EPUB Greek words | 716 / 811 |
@@ -1229,6 +1235,7 @@ Reports:
 Warnings requiring triage:
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
@@ -1528,3 +1535,20 @@ Warnings requiring triage:
 7. Added focused typography and font-packaging regression tests and rebuilt Volume 1.
 8. Raised noteref glyphs slightly from `top: -0.25em` to `top: -0.32em` while retaining `line-height: 0`, so the adjustment does not enlarge paragraph line boxes.
 9. Consolidated Greek sizing into one reader-relative `1.03em` rule and removed the later `1.15em` override that made Greek runs visibly oversized.
+
+### 123. Latin translation notes must not pollute body text (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Latin translation data was being injected directly into Owen's body text as bracketed English, producing repeated fragments such as `[How therefore] [How therefore]` inside a Latin quotation. Citation-only notes also used a hard-to-see `*` marker and could appear inside parenthetical source references, e.g. `Psalm 66:†`.
+
+**Root cause:** Volume 1 stored several Latin "translations" in `text_replacements`, so extraction/rendering treated the bracketed English as source text. The shared `apply_inline_translations()` path also appended `[Translated: ...]` directly to body HTML. Finally, body translation and citation notes shared the same noteref class and weak marker semantics.
+
+**Fix:**
+1. Disabled legacy inline bracket insertion; `apply_inline_translations()` now leaves body HTML unchanged.
+2. Removed V1 bracket-translation replacements, keeping only true OCR corrections such as `Salus Electorum Sauguis` -> `Salus Electorum Sanguis` and `totam eclesiam` -> `totam ecclesiam`.
+3. Split note semantics: `†` is reserved for actual translation notes, while citation-only popups use `◇`.
+4. Added conservative authorial-translation suppression so Latin followed by Owen's own English rendering is not given a redundant translation dagger.
+5. Added citation-only support for the Lactantius source behind the `Quomodo igitur` passage.
+6. Tightened Latin run tagging so source parentheticals and following Latin quotations are not swallowed into one span.
+7. Added `scripts/audit_latin_research.py` to generate volume-scoped Latin research reports listing curated translations, citation-only entries, likely Owen-translated passages, and items needing translation research.
+8. Rebuilt Volume 1 from extraction through EPUB render so the intermediate JSON no longer preserves stale bracket pollution.
+
+**Verification:** Volume 1 EPUB audit passed with 0 errors and 0 warnings. Text-integrity audit remains WARN with existing dense-window and paragraph-split review queues. Bug regression report passed. Focused pytest coverage for typography, marker semantics, disabled inline translation injection, and Latin tagging passed.
