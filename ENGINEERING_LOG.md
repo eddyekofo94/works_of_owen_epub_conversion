@@ -4095,3 +4095,124 @@ Verification for Volume 1: full extract+render completed, EPUB audit passed with
 coverage for marker semantics and disabled inline translation injection passed.
 Text-integrity remains WARN due existing dense-window and paragraph-split review
 queues, now recorded in the timestamped verification report.
+
+# 2026-07-01 — Scholastic syllabus classifier hardening for v1 #50/#51
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The v1 textual report showed that the earlier scholastic-anchor handling was
+only a partial solution: compact syllabus heads such as “From its effect; From
+its cause” were still rendered as block subpoints, while inline sequence
+starters such as “As, 1.” were not visually marked. The fix was made in the
+shared Owen list classifier rather than as a v1-only replacement.
+
+The classifier now follows a gates-first, scoring-second model. Hard exclusions
+still protect developed exposition, citation tails, scripture-density contexts,
+and `whereby` exposition, but explicit later syllabus statements after a
+`whereby` clause are allowed. Ambiguous two-item runs require multiple signals:
+sequential markers, compact items, first-item comma/semicolon/colon evidence,
+parallel phrasing, or an open punctuation anchor. Inline first markers are
+handled separately: a confirmed `1.` starter can be bolded without flattening
+the following `2.`/`3.` exposition blocks.
+
+The stale v1 `flat_list_exclude_chapters` override for Chapter 1 was removed so
+the global classifier can operate on Peter's confession. Regression coverage now
+guards #50 flat syllabus runs, inline-first `(1.)` + `(2.)` continuations before
+an exposition restart, and #51's “As, 1.” marker styling without flattening.
+
+Verification for Volume 1: render-only completed; EPUB audit passed with 0
+errors and 0 warnings; bug regression report passed; text-integrity remains
+WARN with one dense-source-window warning and 0 paragraph split / 0 inline
+structural marker warnings. Session reports and the existing-EPUB classifier
+diagnostic scan are archived under
+`volumes/v1/reports/20260701_161057_scholastic_syllabus/`.
+
+# 2026-07-01 — Scholastic Latin gloss syllabus context fix
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+A v1 Chapter 5 scholastic syllabus beginning “Wherefore three things are herein
+to be considered” still rendered as three block list paragraphs because the
+items were long definitional glosses with Scripture references. The existing
+flat-syllabus classifier correctly protected developed exposition in general,
+but it lacked a narrow positive model for Owen's Latin scholastic term → English
+gloss previews.
+
+The classifier now recognizes announced scholastic gloss runs when the anchor's
+count/category pair matches the adjacent marker run and every item begins with
+a Latin scholastic term or phrase before a gloss dash. That evidence suppresses
+the usual long-item, multi-sentence, and scripture-density exclusions only for
+that constrained shape. Count extraction was also tightened to choose the
+nearest count before the category noun, preventing preceding Scripture
+references such as `Romans 1:1-4` or `1 Corinthians 1:23, 24` from being read as
+the announced count. The flat-list attachment pass now normalizes adjacent
+paragraph tags before scanning, so parser output does not depend on newline
+placement between `<p>` elements.
+
+Verification for Volume 1: render-only completed; the target `Objectum /
+Medium / Lumen` run in `EPUB/ch009.xhtml` is now inline inside a
+`syllabus-anchor`; the following `1.` exposition remains a block list
+paragraph. Focused classifier tests passed. EPUB audit passed with 0 errors and
+0 warnings. Text-integrity remains WARN with the existing dense-source-window
+warning class and 0 faulty paragraph splits / 0 inline structural marker
+candidates. Session reports are archived under
+`volumes/v1/reports/20260701_owen_scholastic_gloss_flattening/`.
+
+# 2026-07-01 — Issue #52 broad syllabus-anchor audit and Roman heads fix
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The v1 textual report's “four heads” failure was not just a literal phrase
+problem. Owen introduces compact syllabi through many count/category and formula
+patterns, and the converter needs to repair only strong cases while the audits
+surface broader candidates for later agent triage and whitelisting.
+
+The shared flat-list classifier now recognizes a broader but still conservative
+set of strong syllabus formulas (`these following`, `are these`, `may be
+observed`, `following particulars`, etc.) and additional Owenian category nouns
+such as `acts`, `causes`, `effects`, `properties`, `propositions`, `ends`,
+`duties`, `directions`, and `uses`. Count detection now prefers the nearest
+count/category pair before the list, so a long anchor with earlier numerical
+material still correctly recognizes a later phrase such as “four heads.”
+
+The renderer now runs the same flat-syllabus absorber after the scholastic
+anchor protocol as well as during markdown rendering. The absorber was hardened
+to parse multi-class list paragraphs, to allow closed noteref links inside long
+anchors, and to bold only the markers being absorbed. That prevents false
+bolding of scripture continuations such as `Colossians 1:18, 19` while allowing
+the Chapter 18 Roman syllabus (“may be reduced unto these four heads”) to render
+inline. Single-item continuation was also tightened so an exposition item such
+as `5. The glory...` is not pulled into a preceding long list item merely because
+the previous paragraph ends with `But, —`.
+
+The text-integrity audit now emits a decision-ready
+`syllabus_anchor_candidates` queue under paragraph integrity. Each finding
+includes an action label (`converter_missed_flatten`, `audit_only_weak_anchor`,
+`likely_false_positive`, `needs_pdf_check`, or `whitelisted`), anchor context,
+item range, marker family, item count, classifier evidence, and a stable
+`whitelist_key`. Future false positives should be recorded in
+`text_integrity.syllabus_anchor_candidates` in the existing per-volume whitelist
+JSON and mirrored in the human-readable whitelist Markdown.
+
+Verification for Volume 1: render-only completed; Chapter 18's Roman
+`four heads` syllabus is now inline with `syllabus-anchor`; Chapter 9's original
+`four heads` regression remains covered; Chapter 33's `5. The glory...`
+exposition remains a separate block list item. EPUB audit passed with 0 errors
+and 0 warnings. Text-integrity remains WARN with 16 syllabus-anchor candidates
+queued for triage (15 `likely_false_positive`, 1 `audit_only_weak_anchor`, 0
+`converter_missed_flatten`), plus existing dense/top-window and paragraph-split
+warnings. Bug regression report passed. Session reports are archived under
+`volumes/v1/reports/20260701_231616_syllabus_anchor_issue_52/`.
+
+Addendum, 2026-07-02: The original textual #52 Chapter 9 case was still only
+partially flattened after the first pass: `I.` through `III.` were inline, but
+`IV.` remained a separate `roman-list-item`. The root cause was that inline
+sequence continuation detected Arabic markers but not Roman markers already
+inside a `syllabus-anchor`. `_INLINE_MARKER_RE` now recognizes Roman inline
+markers, and a regression covers a partial `I.`/`II.`/`III.` inline syllabus
+absorbing the final `IV.` item. Re-rendered `EPUB/ch013.xhtml` now contains the
+full #52 sequence in one `syllabus-anchor` paragraph:
+`I. Honor. II. Obedience. III. Conformity. IV. The use we make...`. Focused
+tests, EPUB audit, text-integrity audit, and bug-regression were rerun. Corrected
+reports are archived under
+`volumes/v1/reports/20260702_010629_issue_52_exact_four_heads/`.

@@ -1,0 +1,956 @@
+{
+  "volume": "1",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-07-01T14:09:45.661660+00:00",
+  "status": "warn",
+  "warning_count": 1,
+  "warnings": [
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    }
+  ],
+  "pdf": {
+    "page_count": 633,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      21,
+      26,
+      27,
+      34,
+      35,
+      51,
+      53,
+      56,
+      76,
+      78,
+      83,
+      90,
+      101,
+      105,
+      106,
+      117,
+      148,
+      150,
+      188,
+      194,
+      203,
+      223,
+      239,
+      269,
+      297,
+      319,
+      328,
+      332,
+      341,
+      356,
+      374,
+      375,
+      379,
+      533
+    ]
+  },
+  "epub": {
+    "spine_text_files": 83,
+    "paragraph_count": 2698
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 191893,
+    "epub_content_tokens": 205657,
+    "coverage_ratio": 0.9998,
+    "missing_word_samples": [],
+    "excess_word_samples": [
+      {
+        "word": "preface",
+        "pdf": 7,
+        "epub": 16
+      },
+      {
+        "word": "super",
+        "pdf": 4,
+        "epub": 12
+      },
+      {
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 1,
+        "epub": 9
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "text",
+        "pdf": 8,
+        "epub": 15
+      },
+      {
+        "word": "modern",
+        "pdf": 3,
+        "epub": 10
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "volume",
+        "pdf": 7,
+        "epub": 13
+      },
+      {
+        "word": "dr",
+        "pdf": 7,
+        "epub": 13
+      },
+      {
+        "word": "filius",
+        "pdf": 6,
+        "epub": 12
+      },
+      {
+        "word": "theology",
+        "pdf": 3,
+        "epub": 9
+      },
+      {
+        "word": "petra",
+        "pdf": 1,
+        "epub": 7
+      },
+      {
+        "word": "supra",
+        "pdf": 0,
+        "epub": 6
+      },
+      {
+        "word": "iron",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 581,
+    "weak_page_count": 0,
+    "weak_pages": []
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 26712,
+    "missing_dense_window_pages": 32,
+    "missing_dense_windows": [
+      {
+        "page": 382,
+        "sample": "the dark after what they cannot clearly discern acts among other cicero's book de"
+      },
+      {
+        "page": 402,
+        "sample": "known or as it may be thence earned my present business is only to"
+      },
+      {
+        "page": 406,
+        "sample": "2-6 isaiah 1-4 zechariah john 1-3 philippians 6-8 hebrews 1-3 14-16 revelation secondly by"
+      },
+      {
+        "page": 411,
+        "sample": "made her as the chariots of ammi nadib song of solomon it so fell"
+      },
+      {
+        "page": 419,
+        "sample": "in him unto any of the creatures is an act of self humiliation and"
+      },
+      {
+        "page": 433,
+        "sample": "brightness wherewith this glory shines in heaven the all satisfying sweetness which the view"
+      },
+      {
+        "page": 434,
+        "sample": "unto it sweet savor of the love of christ see song of solomon 2-4"
+      },
+      {
+        "page": 451,
+        "sample": "its holiness and the severity of the curse wherewith it was attended his fulfil1ing"
+      },
+      {
+        "page": 480,
+        "sample": "bring in spiritual refreshment unto believing refreshment unto believing soul and it will do"
+      },
+      {
+        "page": 483,
+        "sample": "of sight those are the two spiritual powers of our sou1s by the one"
+      },
+      {
+        "page": 487,
+        "sample": "on the right hand that cannot see him chap which way soever we turn"
+      },
+      {
+        "page": 517,
+        "sample": "see the description of these things philippians it is not possible say that we"
+      },
+      {
+        "page": 522,
+        "sample": "of iniquity shall be stopped for ever and the voice of the self avenger"
+      },
+      {
+        "page": 534,
+        "sample": "part meditations and discourses concerning the glory of christ chapter application of the foregoing"
+      },
+      {
+        "page": 555,
+        "sample": "which are proper for the season as namely spirituality heavenly-mindedness weanedness from the world"
+      },
+      {
+        "page": 559,
+        "sample": "and almost visible growth than willows by the water courses such shall be the"
+      },
+      {
+        "page": 565,
+        "sample": "warnings of the danger of spiritually decaying state and he has made great promises"
+      },
+      {
+        "page": 570,
+        "sample": "zeal humility contriteness of heart spiritual mindedness vigor of soul and delight in the"
+      },
+      {
+        "page": 572,
+        "sample": "invited to eat after feast being self full before but this loss of spiritual"
+      },
+      {
+        "page": 596,
+        "sample": "7-9 romans 33-36 malachi james judges samuel kings ezekiel matthew acts thessalonians daniel isaiah"
+      },
+      {
+        "page": 603,
+        "sample": "of god towards his church in three things first in causing 53and things to"
+      },
+      {
+        "page": 605,
+        "sample": "doing any thing that is well pleasing unto god by all which we are"
+      },
+      {
+        "page": 607,
+        "sample": "in the likeness of sinful flesh condemning sin sinful flesh condemning sin romans who"
+      },
+      {
+        "page": 613,
+        "sample": "due to our sin isaiah 4-6 john romans corinthians15 corinthians ephesians peter what was"
+      },
+      {
+        "page": 618,
+        "sample": "what is the church of christ the whole company of god's elect called elect"
+      },
+      {
+        "page": 623,
+        "sample": "purpose of heart to cleave unto him for the to cleave unto him for"
+      },
+      {
+        "page": 624,
+        "sample": "quickening of all graces purging act of all graces purging act frequent prayers alms"
+      },
+      {
+        "page": 625,
+        "sample": "gracious reception into the family of god as his children and co heirs with"
+      },
+      {
+        "page": 626,
+        "sample": "isaiah john corinthians romans hebrews corinthians galatians ephesians galatians romans acts galatians corinthians corinthians"
+      },
+      {
+        "page": 627,
+        "sample": "him confirmeth the promises of the covenant to all believers re stipulating of them"
+      },
+      {
+        "page": 629,
+        "sample": "14-20 corinthians 23-25 luke corinthians mark 22-24 corinthians john corinthians corinthians matthew matthew mark"
+      },
+      {
+        "page": 632,
+        "sample": "chapter of particular churches what are particular churches peculiar assemblies of professors in one"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 630,
+    "top_windows_usable": 586,
+    "skipped_top_window_count": 6,
+    "skipped_top_windows": [
+      {
+        "page": 51,
+        "window": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit",
+        "sample": "\"Imago, [id est, Verbum Dei, ] ad eum qui est d imaginem, [hoc est, hominem, ] venit, et quaerit imago eum qui est ad similitudinem sui,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 67,
+        "window": "minds of men with endless imaginations some denied him to have any real human",
+        "sample": "minds of men with endless imaginations. Some denied him to have any real human nature, but [alleged him] to have been a phantasm,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 113,
+        "window": "that manifestation which is made in christ they say of it as the israelites",
+        "sample": "that [manifestation] which is made in Christ, they say of it, as the Israelites did of manna, that came down from heaven, \"What is it?\" we",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 148,
+        "window": "with the same honor that is divine sacred religious and supreme to honor the",
+        "sample": "[1.] With the same honor; that is, divine, sacred, religious, and supreme. To honor the Father with other honor, is to dishonor him. When men design to",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 299,
+        "window": "he allowed it to be κατ αξιαν by way of dignity and honor for",
+        "sample": "[3.] He allowed it to be \"κατ ἀξίαν\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 559,
+        "window": "preserved in us by them are we made partakers of this divine nature peter",
+        "sample": "preserved in us; by them are we made partakers of this divine nature, Peter 1:4; and through them is it continued in us. Now [as to] promises of",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 575,
+    "bottom_windows_usable": 534,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2260,
+    "split_candidate_count": 0,
+    "split_candidates": [],
+    "structural_start_exclusions": 121,
+    "short_fragment_count": 12,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Edinburgh, August 1850"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "All this himself instructs us in."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "This must be declared."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Christian Reader,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "The sum is,"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "END."
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "END OF PART 2."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "Glory be to God on high!"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch033.xhtml",
+        "text": "I. 1. What he did, what obedience he yielded unto the law of God in the discharge of his office (with respect whereunto he said, \"Lo, I come to do thy will, O God; yea, thy law is in my heart\"), it was all on his own fre"
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 295,
+    "epub_marker_count": 310,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 8,
+    "excess_markers": [
+      {
+        "marker": "(1.)",
+        "pdf": 72,
+        "epub": 75,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p250",
+            "context": "He commends and sets forth the faith of Peter — (1.) From its effect; (2.) From its cause."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p251",
+            "context": "(1.) Its effect was, that it made him blessed in whom it was. For it is not only a blessed thing to believe and know Jesus Christ, as it is called life eternal; (John 17:3;) but it is"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p266",
+            "context": "The foundation of the church is twofold: (1.) Real; (2.) Doctrinal. And in both ways, Christ alone is the foundation. The real foundation of the church he is, by virtue of the mystical union of it unto him, with all the benef"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 72,
+        "epub": 75,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p250",
+            "context": "He commends and sets forth the faith of Peter — (1.) From its effect; (2.) From its cause."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p252",
+            "context": "(2.) The immediate cause of this faith is divine revelation. It is not the effect or product of our own abilities, the best of which are but flesh and blood. That faith which renders t"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p266",
+            "context": "The foundation of the church is twofold: (1.) Real; (2.) Doctrinal. And in both ways, Christ alone is the foundation. The real foundation of the church he is, by virtue of the mystical union of it unto him, with all the benefits whereof"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 33,
+        "epub": 35,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p282",
+            "context": "(3.) By some his human nature was opposed — for no stone did Satan leave unturned in the pursuit of his great design. And that which in all these things he aimed at, was the substituti"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p298",
+            "context": "(3.) Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p524",
+            "context": "(3.) The same may be said concerning his sacerdotal office, and all the acts of it. It was in and by the human nature that he offered himself a sacrifice for us. He had somewhat of his"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 12,
+        "epub": 13,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p299",
+            "context": "(4.) Professed love unto the person of Christ is traduced, as a mere fancy and vapor of distempered minds or weak imaginations"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p708",
+            "context": "(4.) That is so, unquestionably, which fixeth itself on undue objects, which, whatever is pretended, are neither Christ nor means of conveying our love unto him. Such is all that love"
+          },
+          {
+            "location": "EPUB/ch017.xhtml#p779",
+            "context": "(4.) This divine love is a love of friendship. The communion which we have with God therein is so intimate, and accompanied with such spiritual boldness, as gives it that denomination."
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 5,
+        "epub": 6,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p300",
+            "context": "(5.) The union of the Lord Christ and his church is asserted to be political only, with respect unto laws and rules of government. And many other things of an alike nature are asserted"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p709",
+            "context": "(5.) I acknowledge there have been great pretenses of such a love unto Christ as cannot be justified. Such is that which some of the devotionists of the Roman Church have endeavored ra"
+          },
+          {
+            "location": "EPUB/ch019.xhtml#p887",
+            "context": "y in life and death, (4.) Spiritual gifts, unto the edification of themselves and others, (5.) A blessed resurrection, (6.) Eternal glory."
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 20,
+        "epub": 21,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p493",
+            "context": "[1.] He was to be the prophet of the whole catholic church; that is, of act the elect of God, of all that shall be saved in all ages and places, from the beginning of the world unto th"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p518",
+            "context": "[1.] The extent of his power and rule gives evidence hereunto. It is over the whole creation of God. \"All power is given him in heaven and earth.\" Matthew 28:18. \"A11 things are put un"
+          },
+          {
+            "location": "EPUB/ch013.xhtml#p544",
+            "context": "[1.] With the same honor; that is, divine, sacred, religious, and supreme. To honor the Father with other honor, is to dishonor him. When men design to give glory and honor to God whic"
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 19,
+        "epub": 21,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p503",
+            "context": "[2.] The full comprehension of the mind and will of God, of the whole divine counsel concerning his glory in the sanctification and salvation of the church, could not at once reside in"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p521",
+            "context": "[2.] The rule of Christ, as king of the church, is internal and spiritual, over the minds, souls, and consciences of all that do believe. There is no one gracious acting of soul in any"
+          },
+          {
+            "location": "EPUB/ch013.xhtml#p545",
+            "context": "[2.] In the same manner, with the same faith, love, reverence, and obedience, always, in all things, in all acts and duties of religion whatever."
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 11,
+        "epub": 12,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p512",
+            "context": "[3.] The Spirit of God dwelling in him, in all the fullness of his graces and gifts, gave him an understanding peculiar unto himself; as above that of all creatures, so beneath the ess"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p712",
+            "context": "[3.] As it is described by those who applaud it, it is not suited unto the sober, sedate actings of the rational faculties of our souls. For whereas all that God requireth of us, is th"
+          },
+          {
+            "location": "EPUB/ch020.xhtml#p917",
+            "context": "[3.] The proposition of the effecting this work, being by way of consultation, represents it a signal effect of infinite wisdom. These expressions are used to lead us unto the contempl"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the glory of god in the face of jesus christ",
+      "count": 12
+    },
+    {
+      "phrase": "unto us child is born unto us son is given",
+      "count": 6
+    },
+    {
+      "phrase": "of the glory of god in the face of jesus",
+      "count": 6
+    },
+    {
+      "phrase": "us child is born unto us son is given and",
+      "count": 5
+    },
+    {
+      "phrase": "the brightness of his glory and the express image of",
+      "count": 5
+    },
+    {
+      "phrase": "brightness of his glory and the express image of his",
+      "count": 5
+    },
+    {
+      "phrase": "of his glory and the express image of his person",
+      "count": 5
+    },
+    {
+      "phrase": "are changed into the same image from glory to glory",
+      "count": 5
+    },
+    {
+      "phrase": "both which are in heaven and which are on earth",
+      "count": 5
+    },
+    {
+      "phrase": "the only-begotten son who is in the bosom of the",
+      "count": 5
+    },
+    {
+      "phrase": "only-begotten son who is in the bosom of the father",
+      "count": 5
+    },
+    {
+      "phrase": "down at the right hand of the majesty on high",
+      "count": 5
+    },
+    {
+      "phrase": "the knowledge of the glory of god in the face",
+      "count": 5
+    },
+    {
+      "phrase": "knowledge of the glory of god in the face of",
+      "count": 5
+    },
+    {
+      "phrase": "of the only-begotten of the father full of grace and",
+      "count": 5
+    },
+    {
+      "phrase": "the only-begotten of the father full of grace and truth",
+      "count": 5
+    },
+    {
+      "phrase": "of the glory of christ in this world by faith",
+      "count": 5
+    },
+    {
+      "phrase": "differences between our beholding the glory of christ by faith",
+      "count": 4
+    },
+    {
+      "phrase": "loss for the excellency of the knowledge of christ jesus",
+      "count": 4
+    },
+    {
+      "phrase": "for the excellency of the knowledge of christ jesus my",
+      "count": 4
+    },
+    {
+      "phrase": "the excellency of the knowledge of christ jesus my lord",
+      "count": 4
+    },
+    {
+      "phrase": "thou art the christ the son of the living god",
+      "count": 4
+    },
+    {
+      "phrase": "his glory the glory as of the only-begotten of the",
+      "count": 4
+    },
+    {
+      "phrase": "glory the glory as of the only-begotten of the father",
+      "count": 4
+    },
+    {
+      "phrase": "the mighty god the everlasting father the prince of peace",
+      "count": 4
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 716,
+    "epub_greek_word_count": 811,
+    "pdf_greek_unique_words": 405,
+    "epub_greek_unique_words": 460,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 18,
+    "epub_hebrew_word_count": 20,
+    "pdf_hebrew_unique_words": 18,
+    "epub_hebrew_unique_words": 20,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 33,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 1,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 962,
+    "epub_latin_word_count": 1341,
+    "epub_tagged_latin_word_count": 974,
+    "pdf_latin_unique_words": 501,
+    "epub_latin_unique_words": 661,
+    "epub_tagged_unique_words": 489,
+    "latin_word_coverage_ratio": 0.999,
+    "latin_tagging_ratio": 0.7263,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "incarnate",
+        "epub": 36,
+        "tagged": 0
+      },
+      {
+        "word": "nestorius",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "consummate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "invocate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "inanimate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "indicate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "serm",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "affectionate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "folio",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "orat",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "alexandria",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "fluctuate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "possessor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "irradiate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "maranatha",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "extra",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "obdurate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "divinitate",
+        "epub": 3,
+        "tagged": 1
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 91,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 258,
+    "translated_latin_runs_count": 139,
+    "latin_translation_ratio": 0.5388,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "quarto (Amsterdam"
+      },
+      {
+        "phrase": "nobis a praelo a capite"
+      },
+      {
+        "phrase": "operis absentibus"
+      },
+      {
+        "phrase": "Salus Electorum Sanguis"
+      },
+      {
+        "phrase": "quam conspici"
+      },
+      {
+        "phrase": "Quod si super unum illum Petrum tantum"
+      },
+      {
+        "phrase": "quid dicturus"
+      },
+      {
+        "phrase": "et apostolorum"
+      },
+      {
+        "phrase": "Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum"
+      },
+      {
+        "phrase": "Unum hoc est"
+      },
+      {
+        "phrase": "fundamentum, una haec est"
+      },
+      {
+        "phrase": "Petra, Petri"
+      },
+      {
+        "phrase": "Epiphanius, ‡  Haer"
+      },
+      {
+        "phrase": "Scrutator majestatis absorbetur a gloria"
+      },
+      {
+        "phrase": "Quomodo igitur"
+      },
+      {
+        "phrase": "sciri a quoquam"
+      },
+      {
+        "phrase": "narrari, opera divina; sed tamen sacrae literae"
+      },
+      {
+        "phrase": "Fide, ad Gratianum"
+      },
+      {
+        "phrase": "atque impudentissimus est, qui scrutari"
+      },
+      {
+        "phrase": "suum. Millia millium, et"
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "weak_pages": [
+      3,
+      4,
+      5,
+      6,
+      533
+    ],
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      21,
+      26,
+      27,
+      34,
+      35,
+      51,
+      53,
+      56,
+      76,
+      78,
+      83,
+      90,
+      101,
+      105,
+      106,
+      117,
+      148,
+      150,
+      188,
+      194,
+      203,
+      223,
+      239,
+      269,
+      297,
+      319,
+      328,
+      332,
+      341,
+      356,
+      374,
+      375,
+      379
+    ],
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "front_matter_toc_loss",
+      "repeated_phrases"
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

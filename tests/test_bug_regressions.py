@@ -1185,6 +1185,107 @@ def test_list_item_announcer_with_developed_item_stays_block():
     assert '<strong>(1.)</strong> No truth whatever' in html
 
 
+def test_issue_50_two_item_syllabus_runs_flatten_without_partial_anchor_false_breaks():
+    from render import _attach_em_dash_flat_list
+
+    html = (
+        '<p>He commends and sets forth the faith of Peter —</p>\n'
+        '<p class="list-item"><strong>(1.)</strong> From its effect;</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> From its cause.</p>'
+    )
+    result = _attach_em_dash_flat_list(html)
+    assert 'class="list-item"' not in result
+    assert (
+        'He commends and sets forth the faith of Peter — '
+        '<strong>(1.)</strong> From its effect; '
+        '<strong>(2.)</strong> From its cause.'
+    ) in result
+
+    html = (
+        '<p>And of them two things may be considered:</p>\n'
+        '<p class="list-item"><strong>(1.)</strong> Their original;</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> The design of their accomplishment.</p>'
+    )
+    result = _attach_em_dash_flat_list(html)
+    assert 'class="list-item"' not in result
+    assert '<strong>(1.)</strong> Their original; <strong>(2.)</strong> The design' in result
+
+
+def test_issue_50_inline_first_marker_absorbs_confirmed_second_marker_only():
+    from render import _attach_em_dash_flat_list
+
+    html = (
+        '<p>The foundation of the church is twofold: <strong>(1.)</strong> Real;</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> Doctrinal. And in both ways, Christ alone is the foundation.</p>'
+    )
+    result = _attach_em_dash_flat_list(html)
+    assert result.count('<p') == 1
+    assert 'class="syllabus-anchor"' in result
+    assert (
+        'twofold: <strong>(1.)</strong> Real; '
+        '<strong>(2.)</strong> Doctrinal. And in both ways'
+    ) in result
+
+
+def test_issue_51_inline_sequence_starter_is_bolded_without_flattening_exposition():
+    from render import _attach_em_dash_flat_list
+
+    html = (
+        '<p>As, 1. The instances which I shall give concerning the use and consideration '
+        'of the person of Christ in Christian religion are but few.</p>\n'
+        '<p class="list-item"><strong>2.</strong> I make no pretense of searching into the bottom or depths.</p>\n'
+        '<p class="list-item"><strong>3.</strong> I shall not, herein, respect them immediately.</p>'
+    )
+    result = _attach_em_dash_flat_list(html)
+    assert '<p>As, <strong>1.</strong> The instances' in result
+    assert result.count('class="list-item"') == 2
+    assert 'syllabus-anchor' not in result
+
+
+def test_syllabus_anchor_audit_emits_decision_ready_candidate():
+    paras = [
+        Paragraph(
+            file="EPUB/text/ch1.xhtml",
+            text="The whole may be reduced unto these three heads:",
+            tag="p",
+            index=1,
+            classes="",
+            html="<p>The whole may be reduced unto these three heads:</p>",
+        ),
+        Paragraph(
+            file="EPUB/text/ch1.xhtml",
+            text="I. The person considered.",
+            tag="p",
+            index=2,
+            classes="roman-list-item",
+            html='<p class="roman-list-item"><strong>I.</strong> The person considered.</p>',
+        ),
+        Paragraph(
+            file="EPUB/text/ch1.xhtml",
+            text="II. The office declared.",
+            tag="p",
+            index=3,
+            classes="roman-list-item",
+            html='<p class="roman-list-item"><strong>II.</strong> The office declared.</p>',
+        ),
+        Paragraph(
+            file="EPUB/text/ch1.xhtml",
+            text="III. The use applied.",
+            tag="p",
+            index=4,
+            classes="roman-list-item",
+            html='<p class="roman-list-item"><strong>III.</strong> The use applied.</p>',
+        ),
+    ]
+    result = paragraph_integrity(paras)
+    candidates = result["syllabus_anchor_candidates"]
+    assert result["syllabus_anchor_candidate_count"] == 1
+    assert candidates[0]["action"] == "converter_missed_flatten"
+    assert candidates[0]["marker_family"] == "roman"
+    assert candidates[0]["item_count"] == 3
+    assert candidates[0]["whitelist_key"].startswith("EPUB/text/ch1.xhtml#p1-syllabus-")
+
+
 @pytest.mark.parametrize("volume", VOLUMES)
 def test_issue_29_scholarly_citation_splits_do_not_recur_in_epub(volume):
     _, epub_path = paths_for(volume)
@@ -1567,17 +1668,24 @@ def test_issue_22_hebrew_keri_bracket_outside_span():
 # ---------------------------------------------------------------------------
 
 def test_issue_23_blockquote_css_is_compact():
-    """Blockquote margins must conform to GEMINI.md mandate: 1.2em top/bottom and 0 left/right."""
+    """Blockquote margins should be tight enough to avoid fragmented quote flow."""
     bq_match = re.search(r'blockquote\s*\{([^}]+)\}', EPUB_STYLESHEET, re.S)
     assert bq_match, "No blockquote rule found in EPUB_STYLESHEET"
     bq_rule = bq_match.group(1)
 
-    m = re.search(r'margin\s*:\s*([\d.]+)em\s+([\d.]+)(?:em)?', bq_rule)
-    assert m, f"Expected 'margin: Xem Yem' in blockquote rule; got:\n{bq_rule}"
-    top_bottom = float(m.group(1))
-    left_right = float(m.group(2))
-    assert top_bottom == 1.2
-    assert left_right == 0.0
+    m = re.search(
+        r'margin\s*:\s*([\d.]+)em\s+([\d.]+)em\s+([\d.]+)em\s+([\d.]+)',
+        bq_rule,
+    )
+    assert m, f"Expected 'margin: Wem Xem Yem Z' in blockquote rule; got:\n{bq_rule}"
+    top = float(m.group(1))
+    right = float(m.group(2))
+    bottom = float(m.group(3))
+    left = float(m.group(4))
+    assert top == 0.6
+    assert right == 0.2
+    assert bottom == 0.75
+    assert left == 0.0
 
 
 def test_issue_23_blockquote_p_margin_is_compact():
@@ -2913,8 +3021,3 @@ def test_no_unused_whitelist_entries(volume):
             f"Volume {volume} whitelist contains unused entries (not suppressing any current issues):\n"
             + "\n".join(f"  - {f}" for f in failures)
         )
-
-
-
-
-

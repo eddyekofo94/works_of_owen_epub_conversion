@@ -39,6 +39,12 @@ TEXT_CHECKS = [
         ("paragraph_integrity", "inline_structural_candidates"),
     ),
     (
+        "Syllabus-anchor candidates",
+        ("paragraph_integrity", "syllabus_anchor_candidate_count"),
+        ("text_integrity", "max_syllabus_anchor_candidate_count"),
+        ("paragraph_integrity", "syllabus_anchor_candidates"),
+    ),
+    (
         "Repeated word windows",
         ("repeated_windows",),
         ("text_integrity", "max_repeated_window_count"),

@@ -1509,6 +1509,7 @@ def render_volume(vol_num: int, overrides: dict = None,
             body_html = _polish_analysis_html(body_html)
         body_html = re.sub(rf'\(\s+(?=(?:[1-3]\s+)?{SCRIPTURE_BOOK_RE}\b)', '(', body_html, flags=re.I)
         body_html = apply_scholastic_anchor_protocol(body_html)
+        body_html = _attach_em_dash_flat_list(body_html, config=chapter_config)
         html_postprocess_hook = config.get('html_postprocess_hook')
         if html_postprocess_hook:
             ch_context = {**ch_dict, 'is_catechism_context': in_catechism_context}

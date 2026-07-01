@@ -974,10 +974,18 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-07-01T13:03:14.709619+00:00
+**Last run:** 2026-07-01T23:05:32.607717+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -1186,11 +1194,21 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-07-01T13:02:52.763965+00:00
-**Status:** WARN (1 warnings)
+**Last run:** 2026-07-01T23:06:08.855596+00:00
+**Status:** WARN (4 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1200,24 +1218,25 @@ Reports:
 |-------|--------|
 | PDF pages | 633 |
 | EPUB text files | 83 |
-| EPUB paragraphs/headings | 2714 |
-| Approximate PDF-to-EPUB word coverage | 0.9998 |
+| EPUB paragraphs/headings | 2691 |
+| Approximate PDF-to-EPUB word coverage | 0.9997 |
 | Weak page matches | 0 |
-| Dense source windows checked | 26712 |
-| Missing dense source-window pages | 32 |
+| Dense source windows checked | 26631 |
+| Missing dense source-window pages | 34 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 586 |
 | Top-of-page windows skipped as unstable | 6 |
-| Missing top-of-page body windows | 0 |
+| Missing top-of-page body windows | 1 |
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 129 |
+| Possible faulty paragraph splits | 1 |
+| Structural starts excluded from split warnings | 124 |
 | Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
+| Syllabus-anchor candidates | 16 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -1239,6 +1258,9 @@ Reports:
 Warnings requiring triage:
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `syllabus_anchor_candidates`: Some introduced scholastic syllabus runs appear unflattened or need triage
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
@@ -1555,3 +1577,11 @@ Warnings requiring triage:
 8. Rebuilt Volume 1 from extraction through EPUB render so the intermediate JSON no longer preserves stale bracket pollution.
 
 **Verification:** Volume 1 EPUB audit passed with 0 errors and 0 warnings. Text-integrity audit remains WARN with existing dense-window and paragraph-split review queues. Bug regression report passed. Focused pytest coverage for typography, marker semantics, disabled inline translation injection, and Latin tagging passed.
+
+### 124. Blockquote line-height polish (IMPLEMENTED — AWAITING VALIDATION)
+**Problem:** Displayed quotations could look too airy in Apple Books because the shared blockquote style used a looser line-height than ordinary body prose.
+
+**Fix:**
+1. Tightened shared blockquote prose from `line-height: 1.47` to `1.36`.
+2. Raised blockquote text size slightly from `0.95em` to `0.97em`, preserving visual distinction without making quotations feel under-sized.
+3. Added focused typography regression coverage for the blockquote spacing standard.

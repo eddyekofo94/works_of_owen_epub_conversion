@@ -513,3 +513,39 @@ Fixed
 
 #  TODO: (2026-06-01 21:18) 
 ## 50
+He commends and sets forth the faith of Peter —
+      (1.) From its effect;
+      (2.) From its cause.
+Fix:
+He commends and sets forth the faith of Peter — (1.) From its effect; (2.) From its cause. This is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+
+--
+ (1.) Their original;
+      (2.) The design of their accomplishment.
+Fix:
+(1.) Their original; (2.) The design of their accomplishment. This is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+
+--
+(1.) That he is "the image of the invisible God."
+      (2.) That he is "the firstborn of every creature;" things seeming very distant in themselves, but gloriously united and centering in his person.
+Fix:
+(1.) That he is "the image of the invisible God." (2.) That he is "the firstborn of every creature;" things seeming very distant in themselves, but gloriously united and centering in his person. This is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+
+--
+“The foundation of the church is twofold: (1.) Real;
+      (2.) Doctrinal. And in both ways, Christ alone is the foundation. The real foundation of the church he is, by virtue of the mystical union of it unto him, with all the benefits whereof, from thence and thereby, it is made partaker. For thence alone has it spiritual life, grace, mercy, perfection,”
+
+Fix:
+“The foundation of the church is twofold: (1.) Real; (2.) Doctrinal etc...
+If (1.) is flat the following (2.) should be inline as well, this is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+## 51
+As, 1. The instances which I shall give concerning the use and consideration of the person of
+Fix:
+The "1." should be bolded, it is a scholastic-anchor, are you able to catch these?
+
+## 52
+unto these four heads: I. Honor. II. Obedience. III. Conformity.
+      IV. The use we make of him, for the attaining and receiving of all Gospel privileges — all grace and glory. And hereunto the whole of our religion, as it is Christian or evangelical, may be reduced.
+Fix:
+Owen indicates four (4) heads, but the fourth is broken into a new line, this is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+Can the algorithm have this included and the audits should check for this? This is a scholastic-anchor issue, and we need to ensure that our parsing logic correctly identifies and formats these anchors to maintain the intended structure and readability of the text. This may involve implementing additional rules or checks to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.

@@ -28,6 +28,14 @@ def test_body_and_bare_paragraphs_leave_base_font_size_to_reader():
     assert "line-height: 1.4" in paragraph_rule
 
 
+def test_blockquote_prose_is_tighter_than_body_prose():
+    blockquote_rule = _rule(r"blockquote")
+
+    assert "font-size: 0.97em" in blockquote_rule
+    assert "line-height: 1.36" in blockquote_rule
+    assert "margin:0.6em 0.2em 0.75em 0" in blockquote_rule
+
+
 def test_greek_uses_one_subtle_reader_relative_size():
     greek_sizes = re.findall(
         r'\[lang="el"\][^{]*\{[^}]*font-size:\s*([^;]+);',

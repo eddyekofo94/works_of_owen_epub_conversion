@@ -2666,10 +2666,10 @@ blockquote {
     display: block;
     border-left: 2.5px solid rgba(0, 0, 0, 0.08) !important;
     padding-left:1.2em;
-    margin:1.2em 0;
-    font-size: 0.95em;
+    margin:0.6em 0.2em 0.75em 0;
+    font-size: 0.97em;
     text-align: justify;
-    line-height: 1.47;
+    line-height: 1.36;
 }
 
 /* Paragraph inside a <blockquote epub:type="z3998:quotation"> */

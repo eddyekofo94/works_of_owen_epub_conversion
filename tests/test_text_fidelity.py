@@ -1735,7 +1735,7 @@ def test_long_anchor_under_80_words_without_pattern_allows_attachment():
         '<p class="list-item"><strong>(2.)</strong> Grace.</p>'
     )
     result = _attach_em_dash_flat_list(html)
-    assert 'class="list-item"' in result
+    assert 'class="list-item ' in result
 
 
 def test_anchor_over_80_words_without_pattern_blocks_attachment():
@@ -2148,12 +2148,10 @@ def test_signal_h_does_not_fire_when_item_exceeds_25w():
     )
 
 
-def test_signal_h_does_not_fire_for_two_item_list():
+def test_two_point_explicit_syllabus_absorbs_two_item_list():
     """
-    Guard: Signal H requires ≥3 items. A two-item list where both items end
-    with '.' and are ≤25 words must NOT be absorbed by Signal H alone
-    (Signal F handles binary lists with explicit intro; without an explicit
-    binary intro keyword, a two-item list stays block).
+    Two-item lists may flatten when the anchor explicitly announces "two
+    points"; this is an Owen syllabus category, not merely Signal H.
     """
     from render import _attach_em_dash_flat_list
 
@@ -2163,11 +2161,8 @@ def test_signal_h_does_not_fire_for_two_item_list():
         '<p class="list-item"><strong>2.</strong> The manner in which he addresses them.</p>'
     )
     result = _attach_em_dash_flat_list(html)
-    # Signal H needs n ≥ 3, Signal F needs explicit "twofold/two things" keyword —
-    # "two points" doesn't match Signal F's pattern, so these stay block
-    assert 'class="list-item"' in result, (
-        "Two-item list must not be absorbed by Signal H (requires ≥3 items)."
-    )
+    assert 'class="list-item"' not in result
+    assert "There are two points here, — <strong>1.</strong> The occasion" in result
 
 
 # ---------------------------------------------------------------------------
@@ -2662,4 +2657,3 @@ def test_nesting_precedence_fix():
     assert 'class="list-item list-level-3 block-list-subpoint"><strong>2.</strong> The greatness of the penalty.' in result
     # Second major point should be Level 1
     assert 'class="list-item list-level-1 block-list-primary"><strong>2.</strong> Second major point.' in result
-

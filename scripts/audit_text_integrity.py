@@ -115,6 +115,34 @@ CITATION_ABBREV_START_RE = re.compile(
 )
 ROMAN_PROSE_START_RE = re.compile(r"^[IVXLCDM]+\.\s+\S+", re.I)
 ROMAN_PROSE_MARKER_RE = re.compile(r"^(?P<roman>[IVXLCDM]+)\.\s+(?P<rest>.+)", re.I)
+SYLLABUS_ANCHOR_STRONG_RE = re.compile(
+    r"\b(?:(?:two|three|four|five|six|seven|eight|nine|ten|twofold|threefold|fourfold|\d+)"
+    r".{0,120}\b(?:things?|heads?|parts?|ways?|points?|accounts?|regards?|sorts?|"
+    r"considerations?|observations?|particulars?|respects?|instances?|grounds?|branches?|"
+    r"acts?|causes?|effects?|properties?|arguments?|propositions?|ends?|duties?|"
+    r"directions?|inquiries|uses?)\b|"
+    r"(?:as follows?|these? following|following particulars?|"
+    r"(?:may|to) be (?:observed|noted|considered|mentioned)|"
+    r"I shall (?:briefly )?(?:observe|look at|consider|speak to|propose|mention)|"
+    r"are required|are these|namely these|namely, these|in particular|"
+    r"reduced unto|may be referred to|consists? in|proposes?))",
+    re.I,
+)
+SYLLABUS_ANCHOR_WEAK_RE = re.compile(
+    r"\b(?:several|sundry|divers|many|these|those|the following)\b.{0,120}"
+    r"\b(?:things?|heads?|parts?|ways?|points?|accounts?|regards?|sorts?|"
+    r"considerations?|observations?|particulars?|respects?|instances?|grounds?|"
+    r"branches?|acts?|causes?|effects?|properties?|arguments?|propositions?|"
+    r"ends?|duties?|directions?|inquiries|uses?)\b",
+    re.I,
+)
+SYLLABUS_MARKER_START_RE = re.compile(
+    r"^(?P<marker>"
+    r"\(?[0-9]{1,2}\.?\)|\[[0-9]{1,2}\.?\]\.?|[0-9]{1,2}\.|"
+    r"[IVXLCDM]+\.|[0-9]{1,2}(?:st|nd|rd|th|dly|ly)\b[,.]?"
+    r")\s+(?P<body>.+)",
+    re.I,
+)
 LIST_OR_LABEL_RE = re.compile(
     r"^(?:"
     r"[0-9]+\.\s+|"                         # 5. Mankind...
@@ -789,6 +817,114 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
     ]
     frontmatter_heading_re = re.compile(r"^(PREFACE|PREFATORY NOTE|ORIGINAL PREFACE)\.?\b", re.I)
 
+    def build_syllabus_anchor_candidates() -> list[dict[str, Any]]:
+        from scripts.owen_lists import classify_flat_list_run
+
+        def marker_family(marker: str) -> str:
+            clean = marker.strip(" .").strip("()[]")
+            if clean.isdigit():
+                return "arabic"
+            if re.fullmatch(r"[IVXLCDM]+", clean, re.I):
+                return "roman"
+            if re.search(r"(?:st|nd|rd|th|dly|ly)\b", clean, re.I):
+                return "ordinal"
+            return "unknown"
+
+        def marker_number(marker: str) -> int | None:
+            clean = marker.strip(" .").strip("()[]")
+            if clean.isdigit():
+                return int(clean)
+            if re.fullmatch(r"[IVXLCDM]+", clean, re.I):
+                return roman_to_int(clean)
+            match = re.search(r"\d+", clean)
+            return int(match.group(0)) if match else None
+
+        def compact_key(text: str) -> str:
+            words = re.findall(r"[a-z0-9]+", text.lower())[:12]
+            return "-".join(words)[:96] or "empty"
+
+        candidates = []
+        for idx, para in enumerate(body_paras[:-1]):
+            if "syllabus-anchor" in para.classes.split():
+                continue
+            anchor_text = para.text.strip()
+            strong_anchor = bool(SYLLABUS_ANCHOR_STRONG_RE.search(anchor_text))
+            weak_anchor = bool(SYLLABUS_ANCHOR_WEAK_RE.search(anchor_text))
+            if not (strong_anchor or weak_anchor):
+                continue
+            if not anchor_text.rstrip('"\'').endswith((".", ":", ";", ",", "-", "—")):
+                continue
+
+            run = []
+            cursor = idx + 1
+            while cursor < len(body_paras) and len(run) < 10:
+                item = body_paras[cursor]
+                if item.file != para.file:
+                    break
+                marker_match = SYLLABUS_MARKER_START_RE.match(item.text.strip())
+                item_classes = item.classes.split()
+                if not marker_match or not (
+                    "list-item" in item_classes
+                    or "roman-list-item" in item_classes
+                    or len(run) > 0
+                ):
+                    break
+                body = marker_match.group("body").strip()
+                if len(re.findall(r"\w+", body)) > 35:
+                    break
+                run.append((item, marker_match.group("marker"), body))
+                cursor += 1
+
+            if len(run) < 2:
+                continue
+
+            item_pairs = [(marker, body) for _, marker, body in run]
+            decision = classify_flat_list_run(anchor_text, item_pairs, chapter_title=para.file)
+            action = "converter_missed_flatten" if decision["role"] == "flat_syllabus" else "audit_only_weak_anchor"
+            if weak_anchor and not strong_anchor:
+                action = "audit_only_weak_anchor"
+            if decision["hard_exclusions"]:
+                action = "likely_false_positive"
+            if run[-1][0].index - para.index > len(run):
+                action = "needs_pdf_check"
+            first_marker_number = marker_number(run[0][1])
+            anchor_lead_number = None
+            anchor_lead_match = re.match(r"^\s*(?:\(?(\d{1,3})\.?\)?|\[?(\d{1,3})\.?\]?)", anchor_text)
+            if anchor_lead_match:
+                anchor_lead_number = int(anchor_lead_match.group(1) or anchor_lead_match.group(2))
+            if (
+                action == "converter_missed_flatten"
+                and first_marker_number
+                and first_marker_number > 1
+                and anchor_lead_number == first_marker_number - 1
+            ):
+                action = "likely_false_positive"
+
+            first_item = run[0][0]
+            last_item = run[-1][0]
+            candidates.append({
+                "key": f"{para.file}#p{para.index}-syllabus-{compact_key(anchor_text)}",
+                "action": action,
+                "file": para.file,
+                "anchor_index": para.index,
+                "item_range": f"p{first_item.index}-p{last_item.index}",
+                "anchor": anchor_text[-260:],
+                "items": [
+                    {
+                        "marker": marker,
+                        "text": body[:220],
+                    }
+                    for _, marker, body in run[:8]
+                ],
+                "marker_family": marker_family(run[0][1]),
+                "item_count": len(run),
+                "announced_count": decision.get("announced_count"),
+                "positive_reasons": decision.get("positive_reasons", []),
+                "hard_exclusions": decision.get("hard_exclusions", []),
+                "whitelist_key": f"{para.file}#p{para.index}-syllabus-{compact_key(anchor_text)}",
+            })
+        return candidates[:60]
+
     for para in paragraphs:
         if not re.search(r"/ch\d+\.xhtml$", para.file):
             continue
@@ -1069,6 +1205,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         if text:
             previous_body_text = text
 
+    syllabus_anchor_candidates = build_syllabus_anchor_candidates()
+
     return {
         "paragraphs_checked": len(body_paras),
         "split_candidate_count": len(split_candidates),
@@ -1092,6 +1230,8 @@ def paragraph_integrity(paragraphs: list[Paragraph]) -> dict[str, Any]:
         "overlong_heading_candidates": overlong_heading_candidates[:30],
         "frontmatter_heading_body_candidate_count": len(frontmatter_heading_body_candidates),
         "frontmatter_heading_body_candidates": frontmatter_heading_body_candidates[:20],
+        "syllabus_anchor_candidate_count": len(syllabus_anchor_candidates),
+        "syllabus_anchor_candidates": syllabus_anchor_candidates,
     }
 
 
@@ -1909,6 +2049,7 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
         "top_of_page_text_loss": set(),
         "paragraph_splits": set(),
         "inline_structural_markers": set(),
+        "syllabus_anchor_candidates": set(),
         "repeated_windows": set(),
         "ignored_warnings": set()
     }
@@ -2037,6 +2178,35 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
     para_scan["inline_structural_candidates"] = filtered_inline_markers
     para_scan["inline_structural_candidate_count"] = len(para_scan["inline_structural_candidates"])
 
+    # Filter syllabus-anchor candidates
+    whitelisted_syllabus_candidates = whitelist.get("text_integrity", {}).get("syllabus_anchor_candidates", [])
+    filtered_syllabus_candidates = []
+    whitelisted_syllabus_hits = []
+    for cand in para_scan.get("syllabus_anchor_candidates", []):
+        matched = False
+        for cand_wl in whitelisted_syllabus_candidates:
+            if isinstance(cand_wl, dict):
+                key = cand_wl.get("key") or cand_wl.get("whitelist_key")
+                anchor = cand_wl.get("anchor", "")
+                if key and key == cand.get("whitelist_key"):
+                    used_text_integrity["syllabus_anchor_candidates"].add(json.dumps(cand_wl, sort_keys=True))
+                    matched = True
+                elif anchor and (anchor in cand.get("anchor", "") or cand.get("anchor", "") in anchor):
+                    used_text_integrity["syllabus_anchor_candidates"].add(json.dumps(cand_wl, sort_keys=True))
+                    matched = True
+            elif isinstance(cand_wl, str):
+                if cand_wl == cand.get("whitelist_key") or cand_wl in cand.get("anchor", ""):
+                    used_text_integrity["syllabus_anchor_candidates"].add(cand_wl)
+                    matched = True
+            if matched:
+                whitelisted_syllabus_hits.append({**cand, "action": "whitelisted"})
+                break
+        if not matched:
+            filtered_syllabus_candidates.append(cand)
+    para_scan["whitelisted_syllabus_anchor_candidates"] = whitelisted_syllabus_hits
+    para_scan["syllabus_anchor_candidates"] = filtered_syllabus_candidates
+    para_scan["syllabus_anchor_candidate_count"] = len(filtered_syllabus_candidates)
+
     # Filter repeated windows
     whitelisted_repeats = whitelist.get("text_integrity", {}).get("repeated_windows", [])
     filtered_repeats = []
@@ -2096,6 +2266,11 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
         warnings.append({
             "code": "inline_structural_markers",
             "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+        })
+    if para_scan["syllabus_anchor_candidate_count"]:
+        warnings.append({
+            "code": "syllabus_anchor_candidates",
+            "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
         })
     if para_scan["reference_continuation_split_count"]:
         warnings.append({
@@ -2229,7 +2404,8 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
         ti_whitelist = whitelist["text_integrity"]
         for key in ["skipped_pages", "weak_pages", "dense_source_window_loss", 
                     "bottom_of_page_text_loss", "top_of_page_text_loss", 
-                    "paragraph_splits", "inline_structural_markers", 
+                    "paragraph_splits", "inline_structural_markers",
+                    "syllabus_anchor_candidates",
                     "repeated_windows", "ignored_warnings"]:
             items = ti_whitelist.get(key, [])
             unused = []
@@ -2340,6 +2516,7 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Short fragments: {pi['short_fragment_count']}",
         f"- Adjacent duplicate paragraphs: {pi['adjacent_duplicate_count']}",
         f"- Inline structural marker candidates: {pi['inline_structural_candidate_count']}",
+        f"- Syllabus-anchor candidates: {pi['syllabus_anchor_candidate_count']}",
         f"- Reference continuation splits: {pi['reference_continuation_split_count']}",
         f"- Citation continuation splits: {pi['citation_continuation_split_count']}",
         f"- Suspicious large-number starts: {pi['suspicious_large_number_start_count']}",
@@ -2393,6 +2570,18 @@ def render_markdown(result: dict[str, Any]) -> str:
     add_sample_section(lines, "Possible Paragraph Splits", pi["split_candidates"], ["file", "previous", "next"])
     add_sample_section(lines, "Adjacent Duplicate Paragraphs", pi["adjacent_duplicates"], ["file", "previous", "next"])
     add_sample_section(lines, "Inline Structural Marker Candidates", pi["inline_structural_candidates"], ["file", "text"])
+    add_sample_section(
+        lines,
+        "Syllabus Anchor Candidates",
+        pi["syllabus_anchor_candidates"],
+        ["action", "file", "anchor_index", "item_range", "marker_family", "item_count", "announced_count", "anchor", "items", "whitelist_key"],
+    )
+    add_sample_section(
+        lines,
+        "Whitelisted Syllabus Anchor Candidates",
+        pi.get("whitelisted_syllabus_anchor_candidates", []),
+        ["action", "file", "anchor_index", "item_range", "anchor", "whitelist_key"],
+    )
     add_sample_section(lines, "Reference Continuation Splits", pi["reference_continuation_splits"], ["file", "previous", "next"])
     add_sample_section(lines, "Citation Continuation Splits", pi["citation_continuation_splits"], ["file", "previous", "next"])
     add_sample_section(lines, "Suspicious Large-Number Starts", pi["suspicious_large_number_starts"], ["file", "text"])
@@ -2532,6 +2721,7 @@ def render_bug_log_section(result: dict[str, Any], json_path: Path, md_path: Pat
         f"| Short fragments | {pi['short_fragment_count']} |",
         f"| Adjacent duplicate paragraphs | {pi['adjacent_duplicate_count']} |",
         f"| Inline structural marker candidates | {pi['inline_structural_candidate_count']} |",
+        f"| Syllabus-anchor candidates | {pi['syllabus_anchor_candidate_count']} |",
         f"| Reference continuation splits | {pi['reference_continuation_split_count']} |",
         f"| Citation continuation splits | {pi['citation_continuation_split_count']} |",
         f"| Suspicious large-number starts | {pi['suspicious_large_number_start_count']} |",

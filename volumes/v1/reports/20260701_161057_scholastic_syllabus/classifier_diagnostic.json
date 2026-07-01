@@ -1,0 +1,240 @@
+{
+  "created_at": "2026-07-01T16:10:58",
+  "scope": "Existing generated EPUB scan; only v1 was rerendered in this session.",
+  "v1_exact_checks": {
+    "issue_50_peter_effect_cause_flat": {
+      "file": "EPUB/ch005.xhtml",
+      "needle": "He commends and sets forth the faith of Peter \u2014 <strong>(1.)</strong> From its effect; <strong>(2.)</strong> From its cause.</p>",
+      "found": true
+    },
+    "issue_50_foundation_twofold_flat": {
+      "file": "EPUB/ch005.xhtml",
+      "needle": "The foundation of the church is twofold: <strong>(1.)</strong> Real; <strong>(2.)</strong> Doctrinal.",
+      "found": true
+    },
+    "issue_50_counsels_original_design_flat": {
+      "file": "EPUB/ch008.xhtml",
+      "needle": "And of them two things may be considered: <strong>(1.)</strong> Their original; <strong>(2.)</strong> The design of their accomplishment.</p>",
+      "found": true
+    },
+    "issue_51_inline_one_bolded": {
+      "file": "EPUB/ch006.xhtml",
+      "needle": "As, <strong>1.</strong> The instances which I shall give concerning the use and consideration of the person of Christ",
+      "found": true
+    }
+  },
+  "volumes_scanned": [
+    {
+      "volume": "v1",
+      "epub": "volumes/v1/output/volume_1.epub",
+      "xhtml_files": 85,
+      "syllabus_anchor_count": 28,
+      "open_anchor_split_candidates": [
+        {
+          "file": "EPUB/ch039.xhtml",
+          "anchor": "on, or the sight which we shall have of the glory of Christ in heaven, is immediate, direct, intuitive; and therefore steady, even, and constant and it is so on a double account: \u2014",
+          "first_item": "Of the object which shall be proposed unto us;"
+        }
+      ],
+      "inline_first_split_candidates": [
+        {
+          "file": "EPUB/ch005.xhtml",
+          "anchor": "1. The faith of Peter in this confession \u2014 the faith of him that made it;"
+        },
+        {
+          "file": "EPUB/ch039.xhtml",
+          "anchor": "1. Of the object which shall be proposed unto us;"
+        },
+        {
+          "file": "EPUB/ch031.xhtml",
+          "anchor": "1. Show in general the greatness of his condescension;"
+        }
+      ]
+    },
+    {
+      "volume": "v10",
+      "epub": "volumes/v10/output/volume_10.epub",
+      "xhtml_files": 107,
+      "syllabus_anchor_count": 22,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v11",
+      "epub": "volumes/v11/output/volume_11.epub",
+      "xhtml_files": 33,
+      "syllabus_anchor_count": 23,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v12",
+      "epub": "volumes/v12/output/volume_12.epub",
+      "xhtml_files": 62,
+      "syllabus_anchor_count": 19,
+      "open_anchor_split_candidates": [
+        {
+          "file": "EPUB/ch018.xhtml",
+          "anchor": "A. Of this sort is, as they speak, his pre-eternity; which they endeavor to confirm with two sorts of scriptures: \u2014",
+          "first_item": "Such as wherein they suppose this pre-eternity is expressed;"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "anchor": "But that they may not be so rendered is evident, \u2014",
+          "first_item": "From the context, as before declared;"
+        }
+      ],
+      "inline_first_split_candidates": [
+        {
+          "file": "EPUB/ch038.xhtml",
+          "anchor": "Farther to clear this, I shall a little consider what act of God this was whereby he laid our iniquities on Christ; and these two things are considerable therein: 1. How it was typically prefigured;"
+        },
+        {
+          "file": "EPUB/ch040.xhtml",
+          "anchor": "(1.) Loss, or separation from God;"
+        },
+        {
+          "file": "EPUB/ch042.xhtml",
+          "anchor": "(1.) His love, his will, or purpose;"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "anchor": "1. Such as wherein they suppose this pre-eternity is expressed;"
+        },
+        {
+          "file": "EPUB/ch018.xhtml",
+          "anchor": "(1.) From the context, as before declared;"
+        },
+        {
+          "file": "EPUB/ch043.xhtml",
+          "anchor": "(1.) Of the Gentiles unto God;"
+        },
+        {
+          "file": "EPUB/ch020.xhtml",
+          "anchor": "1. It may be these words are not spoken of Christ, but of Israel;"
+        },
+        {
+          "file": "EPUB/ch039.xhtml",
+          "anchor": "(1.) As the words will not bear it, so,"
+        },
+        {
+          "file": "EPUB/ch024.xhtml",
+          "anchor": "(1.) that he is one of them in reference to whom he is said to be the firstborn, or,"
+        },
+        {
+          "file": "EPUB/ch017.xhtml",
+          "anchor": "(1.) That a virgin should conceive;"
+        }
+      ]
+    },
+    {
+      "volume": "v13",
+      "epub": "volumes/v13/output/volume_13.epub",
+      "xhtml_files": 86,
+      "syllabus_anchor_count": 25,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v14",
+      "epub": "volumes/v14/output/volume_14.epub",
+      "xhtml_files": 72,
+      "syllabus_anchor_count": 9,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v15",
+      "epub": "volumes/v15/output/volume_15.epub",
+      "xhtml_files": 109,
+      "syllabus_anchor_count": 22,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v16",
+      "epub": "volumes/v16/output/volume_16.epub",
+      "xhtml_files": 84,
+      "syllabus_anchor_count": 55,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v2",
+      "epub": "volumes/v2/output/volume_2.epub",
+      "xhtml_files": 52,
+      "syllabus_anchor_count": 42,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v3",
+      "epub": "volumes/v3/output/volume_3.epub",
+      "xhtml_files": 47,
+      "syllabus_anchor_count": 45,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v4",
+      "epub": "volumes/v4/output/volume_4.epub",
+      "xhtml_files": 72,
+      "syllabus_anchor_count": 38,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v5",
+      "epub": "volumes/v5/output/volume_5.epub",
+      "xhtml_files": 40,
+      "syllabus_anchor_count": 15,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": [
+        {
+          "file": "EPUB/ch032.xhtml",
+          "anchor": "(1.) What it does respect; and,"
+        },
+        {
+          "file": "EPUB/ch012.xhtml",
+          "anchor": "(1.) That which was peculiar unto himself;"
+        },
+        {
+          "file": "EPUB/ch010.xhtml",
+          "anchor": "(1.) Actually and completely justified before God in this world;"
+        }
+      ]
+    },
+    {
+      "volume": "v6",
+      "epub": "volumes/v6/output/volume_6.epub",
+      "xhtml_files": 114,
+      "syllabus_anchor_count": 25,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v7",
+      "epub": "volumes/v7/output/volume_7.epub",
+      "xhtml_files": 65,
+      "syllabus_anchor_count": 30,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v8",
+      "epub": "volumes/v8/output/volume_8.epub",
+      "xhtml_files": 75,
+      "syllabus_anchor_count": 59,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    },
+    {
+      "volume": "v9",
+      "epub": "volumes/v9/output/volume_9.epub",
+      "xhtml_files": 104,
+      "syllabus_anchor_count": 66,
+      "open_anchor_split_candidates": [],
+      "inline_first_split_candidates": []
+    }
+  ]
+}

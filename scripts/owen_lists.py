@@ -2,37 +2,143 @@ import re
 
 
 def classify_flat_list_run(anchor: str, items: list[tuple[str, str]], *, chapter_title=None) -> dict:
-    """Classify a complete adjacent marker run and expose named evidence."""
+    """Classify a complete adjacent marker run and expose named evidence.
+
+    The decision model is deliberately gates-first, scoring-second: hard
+    exclusions protect exposition and citation contexts; explicit Owen syllabus
+    anchors pass; ambiguous compact runs can pass by accumulating independent
+    evidence from item 1 and the adjacent marker run.
+    """
     plain = lambda value: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", value)).strip()
     anchor_text = plain(anchor)
+    anchor_count_text = re.sub(
+        r'(?<!\w)(?:\(?\d{1,3}\.?\)|\[\d{1,3}\.?\]|\d{1,3}\.)\s+',
+        ' ',
+        anchor_text,
+    )
     bodies = [plain(body) for _, body in items]
-    markers = [plain(marker).strip(" .") for marker, _ in items]
+    markers = [plain(marker).strip() for marker, _ in items]
     positives, exclusions, score = [], [], 0
+
+    def is_scholastic_gloss_item(body: str) -> bool:
+        lead = body.strip()
+        if not lead:
+            return False
+        dash_match = re.search(r"\s[—-]\s", lead[:180])
+        if not dash_match:
+            return False
+        term = lead[:dash_match.start()].strip(" \t\r\n\"'“”‘’,;:")
+        if not term:
+            return False
+        scholastic_terms = {
+            "actus", "causa", "deferens", "disponens", "elevans",
+            "fidei", "formale", "formalis", "lumen", "materiale",
+            "medium", "objectum", "praeparans", "reale", "subjectum",
+        }
+        term_words = re.findall(r"[A-Za-z][A-Za-z-]*", term.lower())
+        return bool(set(term_words) & scholastic_terms)
+
     count_words = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
                    "seven": 7, "eight": 8, "nine": 9, "ten": 10,
                    "twofold": 2, "threefold": 3, "fourfold": 4}
-    count_match = re.search(r"\b(" + "|".join(count_words) + r"|\d+)\b", anchor_text, re.I)
-    category = re.search(r"\b(?:things?|heads?|parts?|ways?|accounts?|regards?|sorts?|considerations?|observations?|particulars?|respects?|instances?)\b", anchor_text, re.I)
-    announced = (int(count_match.group(1)) if count_match.group(1).isdigit() else count_words.get(count_match.group(1).lower())) if count_match and category else None
-    formula = re.search(r"\b(?:there are|consists? in|reduced unto|may be referred to|I shall (?:briefly )?observe|as follows|are required|twofold account)\b", anchor_text, re.I)
+    count_pattern = r"(?:%s|\d+)" % "|".join(count_words)
+    category_pattern = (
+        r"(?:things?|heads?|parts?|ways?|points?|accounts?|regards?|sorts?|"
+        r"considerations?|observations?|particulars?|respects?|instances?|"
+        r"grounds?|branches?|acts?|causes?|effects?|properties?|arguments?|"
+        r"propositions?|ends?|duties?|directions?|inquiries|uses?)"
+    )
+    category_matches = list(re.finditer(rf"\b{category_pattern}\b", anchor_count_text, re.I))
+    category = category_matches[0] if category_matches else None
+    announced = None
+    for category_candidate in reversed(category_matches):
+        count_window = anchor_count_text[max(0, category_candidate.start() - 120):category_candidate.start()]
+        count_matches = list(re.finditer(rf"\b({count_pattern})\b", count_window, re.I))
+        if count_matches:
+            category = category_candidate
+            break
+    if category:
+        count_window = anchor_count_text[max(0, category.start() - 120):category.start()]
+        count_matches = list(re.finditer(rf"\b({count_pattern})\b", count_window, re.I))
+        if count_matches:
+            count_value = count_matches[-1].group(1).lower()
+            announced = int(count_value) if count_value.isdigit() else count_words.get(count_value)
+    formula = re.search(
+        r"\b(?:there are|consists? in|reduced unto|may be referred to|"
+        r"I shall (?:briefly )?(?:observe|look at|consider|speak to|propose|mention)|"
+        r"as follows?|these? following|following particulars?|"
+        r"(?:may|to) be (?:observed|noted|considered|mentioned)|"
+        r"are required|are these|namely these|namely, these|in particular|"
+        r"twofold account|sets? forth|proposes?)\b",
+        anchor_text,
+        re.I,
+    )
     if formula and formula.group(0).lower() == "there are" and not category:
         formula = None
+    scholastic_gloss_run = bool(
+        announced is not None
+        and announced == len(items)
+        and len(items) >= 2
+        and all(is_scholastic_gloss_item(body) for body in bodies)
+    )
 
-    protected = re.search(r"<(?:blockquote|aside|a)\b|\[[^\]]*$", anchor, re.I)
+    has_unclosed_link = anchor.lower().rfind("<a") > anchor.lower().rfind("</a>")
+    protected = re.search(r"<(?:blockquote|aside)\b|\[[^\]]*$", anchor, re.I) or has_unclosed_link
     if protected: exclusions.append("protected-context")
-    if re.search(r"\b(?:q|a|lib|cap|dist)\.\s*\d", " ".join(bodies), re.I): exclusions.append("citation-tail")
-    if re.search(r"\b(?:Genesis|Exodus|Psalm|Matthew|John|Romans|Corinthians|Hebrews)\s+\d+[:.]\d+", " ".join(bodies), re.I): exclusions.append("scripture-density")
     sentence_counts = [len(re.findall(r"[.!?](?:\s|$)", body)) for body in bodies]
-    if any(n > 1 for n in sentence_counts): exclusions.append("multiple-sentences")
     lengths = [len(body.split()) for body in bodies]
-    if any(length > 25 for length in lengths) or (len(items) <= 2 and any(length > 20 for length in lengths)):
-        exclusions.append("developed-item")
-    if re.search(r"\bwhereby\b", anchor_text, re.I): exclusions.append("expository-whereby")
+    first_len = lengths[0] if lengths else 0
+    nonfinal_lengths = lengths[:-1]
+    committed_chain = (
+        len(items) >= 3
+        and bodies[:-1]
+        and all(body.rstrip('"\'').endswith((",", ";", ":")) for body in bodies[:-1])
+    )
+    if re.search(r"\b(?:q|a|lib|cap|dist)\.\s*\d", " ".join(bodies), re.I):
+        exclusions.append("citation-tail")
+    if (
+        re.search(r"\b(?:Genesis|Exodus|Psalm|Matthew|John|Romans|Corinthians|Hebrews)\s+\d+[:.]\d+", " ".join(bodies), re.I)
+        and not committed_chain
+        and not scholastic_gloss_run
+    ):
+        exclusions.append("scripture-density")
+    if any(length > 25 for length in nonfinal_lengths) or (len(items) <= 2 and first_len > 20):
+        if not scholastic_gloss_run:
+            exclusions.append("developed-item")
+    if any(n > 1 for n in sentence_counts[:-1]):
+        if not scholastic_gloss_run:
+            exclusions.append("multiple-sentences")
+    if len(items) > 1 and sentence_counts and sentence_counts[-1] > 1 and not committed_chain:
+        if not scholastic_gloss_run:
+            exclusions.append("final-developed-continuation")
+    if len(items) <= 2 and lengths and lengths[-1] > 25:
+        exclusions.append("long-final-item")
+    proof_language_re = re.compile(
+        r"^\s*(?:for|because|whereby|therefore|wherefore|hence|whence|forasmuch|"
+        r"this\s+is|this\s+appears|this\s+evinces|the\s+reason)\b",
+        re.I,
+    )
+    if any(proof_language_re.search(body) and len(body.split()) > 14 for body in bodies[:-1]):
+        if not scholastic_gloss_run:
+            exclusions.append("proof-language")
+    whereby_match = re.search(r"\bwhereby\b", anchor_count_text, re.I)
+    late_syllabus_after_whereby = bool(
+        whereby_match
+        and re.search(
+            r'\b(?:two|three|four|five|six|seven|eight|nine|ten|twofold|'
+            r'threefold|fourfold)\b.{0,120}\b(?:things?|ways?|heads?|'
+            r'accounts?|regards?|parts?|points?|considerations?|instances?)\b',
+            anchor_count_text[whereby_match.end():],
+            re.I,
+        )
+    )
+    if whereby_match and not late_syllabus_after_whereby:
+        exclusions.append("expository-whereby")
 
     family = "unknown"
     parsed = []
     for marker in markers:
-        clean = marker.strip("()[]")
+        clean = marker.strip(" .").strip("()[]")
         match = re.search(r"\d+", clean)
         parsed.append(int(match.group()) if match else None)
     if all(v is not None for v in parsed):
@@ -43,16 +149,38 @@ def classify_flat_list_run(anchor: str, items: list[tuple[str, str]], *, chapter
     if formula: score += 2; positives.append("introductory-formula")
     if anchor_text.rstrip().endswith((":", "—", ",", ";")): score += 2; positives.append("introductory-punctuation")
     if announced is not None and announced == len(items): score += 4; positives.append("announced-count-matches-run")
-    if lengths and max(lengths) <= 12: score += 2; positives.append("short-items")
+    if scholastic_gloss_run: score += 6; positives.append("scholastic-gloss-run")
+    if first_len and first_len <= 12: score += 2; positives.append("compact-first-item")
+    if lengths and max(lengths) <= 20: score += 2; positives.append("compact-run")
     period_parallel = len(items) >= 3 and all(body.rstrip('"\'').endswith('.') for body in bodies) and max(lengths, default=0) <= 25
     if period_parallel:
         score += 4; positives.append("parallel-period-ended-syllabus")
     nonfinal = bodies[:-1]
     if nonfinal and sum(x.rstrip('"\'').endswith((",", ";", ":")) or re.search(r"\b(?:and|or)$", x, re.I) is not None for x in nonfinal) >= max(1, len(nonfinal) - 1):
         score += 2; positives.append("continuation-punctuation")
+    if bodies and bodies[0].rstrip('"\'').endswith((",", ";", ":")):
+        score += 3; positives.append("first-item-open-punctuation")
+    if len(items) == 2 and len(bodies) == 2:
+        first_words = [
+            re.sub(r"[^A-Za-z]+", "", body.split()[0]).lower()
+            for body in bodies
+            if body.split()
+        ]
+        if len(first_words) == 2 and first_words[0] == first_words[1] and first_words[0]:
+            score += 2; positives.append("parallel-opening-word")
     continuation_run = len(items) >= 3 and "continuation-punctuation" in positives
     if lengths and not period_parallel and max(lengths) > max(8, min(lengths) * 3): score -= 3
-    contextual_intro = bool(category or formula or announced is not None or period_parallel or continuation_run)
+    explicit_intro = bool(formula or announced is not None)
+    ambiguous_two_item_pass = (
+        len(items) == 2
+        and "sequential-marker-family" in positives
+        and (
+            ("first-item-open-punctuation" in positives and "compact-run" in positives)
+            or ("introductory-punctuation" in positives and "compact-first-item" in positives and score >= 8)
+            or ("parallel-opening-word" in positives and "compact-run" in positives and "introductory-punctuation" in positives)
+        )
+    )
+    contextual_intro = bool(explicit_intro or period_parallel or continuation_run or ambiguous_two_item_pass)
     role = "flat_syllabus" if not exclusions and contextual_intro and score >= 6 else "block_list"
     return {"role": role, "score": score, "positive_reasons": positives,
             "hard_exclusions": exclusions, "marker_family": family,
@@ -85,6 +213,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         return html
 
     import re as _re
+    html = _re.sub(r'(</p>)\s*(<p\b)', r'\1\n\2', html)
 
     def _parse_roman(s: str) -> int:
         s = s.upper().strip('.,:;()[]')
@@ -182,7 +311,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         r'\b(?:I\s+understand\s+)?(?:two|three|four|five|six|seven|'
         r'eight|nine|ten|twofold|threefold|fourfold|\d+)\b.{0,120}'
         r'\b(?:things?|ways?|heads?|accounts?|regards?|parts?|'
-        r'sorts?|considerations?|observations?|particulars?|'
+        r'points?|sorts?|considerations?|observations?|particulars?|'
         r'respects?|instances?)\b.{0,100}[—\-:,;.]\s*$',
         _re.I,
     )
@@ -194,7 +323,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         _re.I,
     )
     _LIST_ITEM_RE = _re.compile(
-        r'<p class="(list-item|roman-list-item)">(<strong>[^<]{1,30}</strong>\s*)?(.*?)</p>',
+        r'<p class="([^"]*\b(?:list-item|roman-list-item)\b[^"]*)">(<strong>[^<]{1,30}</strong>\s*)?(.*?)</p>',
         _re.S,
     )
     # Ordinal markers: (1st.), (2ndly.), 3rdly., etc.
@@ -207,6 +336,12 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
     _HAS_INLINE_ORDINAL_RE = _re.compile(
         r'\((?:1st|2nd(?:ly|dly)?|3rd(?:ly|dly)?|4th(?:ly)?|5th(?:ly)?)\.\)',
         _re.I,
+    )
+    _INLINE_MARKER_RE = _re.compile(
+        r'(?<![\w:>-])(?P<marker>'
+        r'\(?\d{1,3}\.?\)|\[\d{1,3}\.?\]|\d{1,3}\.|'
+        r'[IVXLCDM]{1,8}\.'
+        r')(?=\s+[A-Z"“])'
     )
 
     # ── helpers ───────────────────────────────────────────────────────────────
@@ -225,8 +360,16 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         text = _re.sub(r'^\s*\[\s*(?:[IVXLCDM]+|\d+)\.?\s*\]\s*', '', text, flags=_re.I)
         return text.strip()
 
+    def _without_inline_markers(text: str) -> str:
+        return _re.sub(
+            r'(?<!\w)(?:\(?\d{1,3}\.?\)|\[\d{1,3}\.?\]|\d{1,3}\.)\s+',
+            ' ',
+            text,
+        )
+
     def _extract_count(text: str) -> int:
         """Return announced count only when text matches _EXPLICIT_COUNT_RE."""
+        text = _without_inline_markers(text)
         if not _EXPLICIT_COUNT_RE.search(text):
             return 0
         cleaned = _strip_marker(text)
@@ -248,20 +391,36 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         plain = plain.strip()
         if not plain:
             return False
-        if _re.search(r'\bwhereby\b', plain, _re.I):
+        plain_for_whereby = _without_inline_markers(_strip_marker(plain))
+        whereby_match = _re.search(r'\bwhereby\b', plain_for_whereby, _re.I)
+        late_syllabus_after_whereby = bool(
+            whereby_match
+            and _re.search(
+                r'\b(?:two|three|four|five|six|seven|eight|nine|ten|twofold|'
+                r'threefold|fourfold)\b.{0,120}\b(?:things?|ways?|heads?|'
+                r'accounts?|regards?|parts?|points?|considerations?|instances?)\b',
+                plain_for_whereby[whereby_match.end():],
+                _re.I,
+            )
+        )
+        if whereby_match and not late_syllabus_after_whereby:
             return False
         if is_list_item:
             stripped = _strip_marker(plain)
             body_wc = len(stripped.split())
             if body_wc > _ANCHOR_LIMIT:
-                if not (_EXPLICIT_COUNT_RE.search(stripped) or _FORMULA_TAIL_RE.search(stripped)):
+                stripped_for_count = _without_inline_markers(stripped)
+                if not (_EXPLICIT_COUNT_RE.search(stripped_for_count) or _FORMULA_TAIL_RE.search(stripped_for_count)):
                     return False
             last = stripped.rstrip('\"\'').strip()
             if not last:
                 return False
             if last[-1] in ('—', ':'):
                 return True
-            return bool(_EXPLICIT_COUNT_RE.search(stripped) or _FORMULA_TAIL_RE.search(stripped))
+            if last[-1] in (',', ';') and body_wc <= 20:
+                return True
+            stripped_for_count = _without_inline_markers(stripped)
+            return bool(_EXPLICIT_COUNT_RE.search(stripped_for_count) or _FORMULA_TAIL_RE.search(stripped_for_count))
 
         last = plain.rstrip('\"\'').strip()
         if not last:
@@ -269,7 +428,8 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         if last[-1] in ('—', ',', ';', ':'):
             return True
         if last[-1] == '.':
-            return bool(_EXPLICIT_COUNT_RE.search(plain) or _FORMULA_TAIL_RE.search(plain))
+            plain_for_count = _without_inline_markers(plain)
+            return bool(_EXPLICIT_COUNT_RE.search(plain_for_count) or _FORMULA_TAIL_RE.search(plain_for_count))
         return False
 
     def _add_anchor_class(para_html: str) -> str:
@@ -285,11 +445,70 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             return '<p class="syllabus-anchor">' + para_html[3:]
         return para_html
 
+    def _bold_inline_markers(para_html: str) -> str:
+        def repl(match):
+            marker = match.group('marker')
+            if '<strong' in marker or '</strong>' in marker:
+                return marker
+            return f'<strong>{marker}</strong>'
+
+        open_end = para_html.find('>')
+        if open_end < 0:
+            return para_html
+        close_start = para_html.rfind('</p>')
+        if close_start < 0:
+            return para_html
+        head = para_html[:open_end + 1]
+        inner = para_html[open_end + 1:close_start]
+        tail = para_html[close_start:]
+        return head + _INLINE_MARKER_RE.sub(repl, inner) + tail
+
+    def _bold_inline_syllabus_markers(para_html: str) -> str:
+        if 'syllabus-anchor' not in para_html:
+            return para_html
+        return _bold_inline_markers(para_html)
+
     def _absorb(preceding: str, pairs: list, count: int) -> str:
-        parts = [((mk or '') + ' ' + ct).strip() for mk, ct in pairs[:count]]
+        def marker_html(marker: str) -> str:
+            if not marker:
+                return ''
+            if '<strong' in marker:
+                return marker
+            marker_text = _plain(marker).strip()
+            return f'<strong>{marker_text}</strong>' if marker_text else ''
+
+        parts = [((marker_html(mk) or '') + ' ' + ct).strip() for mk, ct in pairs[:count]]
         inline = _re.sub(r'\s+', ' ', ' '.join(parts))
         merged = _re.sub(r'</p>\s*$', ' ' + inline + '</p>', preceding, count=1)
         return _add_anchor_class(merged)
+
+    def _last_inline_marker(text: str) -> tuple[str, int]:
+        matches = list(_INLINE_MARKER_RE.finditer(text))
+        if not matches:
+            return ('unknown', 0)
+        return _get_marker_val_and_type(matches[-1].group('marker'))
+
+    def _continues_inline_sequence(preceding_plain: str, marker_html: str) -> bool:
+        prev_type, prev_val = _last_inline_marker(preceding_plain)
+        next_type, next_val = _get_marker_val_and_type(_plain(marker_html).strip())
+        return (
+            prev_type != 'unknown'
+            and next_type == prev_type
+            and prev_val > 0
+            and next_val == prev_val + 1
+        )
+
+    def _has_syllabus_context(plain_text: str) -> bool:
+        stripped = _without_inline_markers(_strip_marker(plain_text))
+        if _EXPLICIT_COUNT_RE.search(stripped) or _FORMULA_TAIL_RE.search(stripped):
+            return True
+        return bool(_re.search(
+            r'\b(?:two|three|four|five|six|seven|eight|nine|ten|twofold|'
+            r'threefold|fourfold)\b.{0,120}\b(?:things?|ways?|heads?|'
+            r'accounts?|regards?|parts?|points?|considerations?|instances?)\b',
+            stripped,
+            _re.I,
+        ))
 
     # ── main loop ─────────────────────────────────────────────────────────────
     paras = html.split('\n')
@@ -325,10 +544,24 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         if len(run_indices) == 1:
             pm = _LIST_ITEM_RE.match(stripped)
             mk_plain = _plain(pm.group(2) or '').strip() if pm else ''
+            prev_idx = next(
+                (k for k in range(len(out) - 1, -1, -1) if out[k].strip()), -1
+            )
+            if pm and prev_idx >= 0:
+                preceding_plain = _plain(out[prev_idx])
+                preceding_is_li = bool(_re.match(
+                    r'<p class="[^"]*\b(?:list-item|roman-list-item)\b', out[prev_idx].strip()
+                ))
+                continues_inline = _continues_inline_sequence(preceding_plain, pm.group(2) or '')
+                if continues_inline and (
+                    'syllabus-anchor' in out[prev_idx]
+                    or (_allows_attach(preceding_plain) and not preceding_is_li)
+                    or _has_syllabus_context(preceding_plain)
+                ):
+                    out[prev_idx] = _absorb(out[prev_idx], [(pm.group(2) or '', pm.group(3) or '')], 1)
+                    i = j
+                    continue
             if pm and _ORDINAL_MK_RE.match(mk_plain):
-                prev_idx = next(
-                    (k for k in range(len(out) - 1, -1, -1) if out[k].strip()), -1
-                )
                 if prev_idx >= 0 and _HAS_INLINE_ORDINAL_RE.search(_plain(out[prev_idx])):
                     # Ensure the next ordinal is a numerical continuation (Issue 91/107)
                     def _parse_val(marker_text: str) -> int:
@@ -368,8 +601,30 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         # ── is_case_2: first list-item ends '—' (nested sub-list anchor) ─────
         is_case_2 = False
         first_plain = _plain(para)
-        is_li = bool(_re.match(r'<p class="(?:list-item|roman-list-item)">', stripped))
-        if is_li and _allows_attach(first_plain, is_list_item=True):
+        is_li = bool(_re.match(r'<p class="[^"]*\b(?:list-item|roman-list-item)\b', stripped))
+        prev_for_case_idx = next(
+            (k for k in range(len(out) - 1, -1, -1) if out[k].strip()), -1
+        )
+        has_attachable_predecessor = False
+        if prev_for_case_idx >= 0:
+            prev_for_case = out[prev_for_case_idx]
+            prev_for_case_plain = _plain(prev_for_case)
+            prev_for_case_is_li = bool(_re.match(
+                r'<p class="[^"]*\b(?:list-item|roman-list-item)\b', prev_for_case.strip()
+            ))
+            has_attachable_predecessor = _allows_attach(
+                prev_for_case_plain,
+                is_list_item=prev_for_case_is_li,
+            )
+        first_is_explicit_syllabus_anchor = (
+            _has_syllabus_context(first_plain)
+            and first_plain.rstrip('"\'').strip().endswith(('—', ':', ',', ';', '.'))
+        )
+        if (
+            is_li
+            and (_allows_attach(first_plain, is_list_item=True) or first_is_explicit_syllabus_anchor)
+            and not has_attachable_predecessor
+        ):
             is_case_2 = True
 
         if is_case_2:
@@ -387,9 +642,16 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             preceding      = out[prev_idx]
             preceding_plain = _plain(preceding)
             is_prec_li = bool(_re.match(
-                r'<p class="(?:list-item|roman-list-item)">', preceding.strip()
+                r'<p class="[^"]*\b(?:list-item|roman-list-item)\b', preceding.strip()
             ))
             if not _allows_attach(preceding_plain, is_list_item=is_prec_li):
+                if item_pairs := [
+                    ((pm.group(2) or ''), (pm.group(3) or ''))
+                    for idx in run_indices[:1]
+                    if (pm := _LIST_ITEM_RE.match(paras[idx].strip()))
+                ]:
+                    if _continues_inline_sequence(preceding_plain, item_pairs[0][0]):
+                        out[prev_idx] = _bold_inline_markers(preceding)
                 out.append(para)
                 i += 1
                 continue
@@ -400,6 +662,22 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         for idx in candidate_idx:
             pm = _LIST_ITEM_RE.match(paras[idx].strip())
             item_pairs.append((pm.group(2) or '', pm.group(3) or ''))
+
+        if item_pairs and _continues_inline_sequence(preceding_plain, item_pairs[0][0]) and (
+            'syllabus-anchor' in preceding
+            or (_allows_attach(preceding_plain, is_list_item=(is_case_2 or is_prec_li)) and not (is_case_2 or is_prec_li))
+            or _has_syllabus_context(preceding_plain)
+        ):
+            new_preceding = _absorb(preceding, item_pairs, 1)
+            if is_case_2:
+                out.append(new_preceding)
+            else:
+                out[prev_idx] = new_preceding
+            remaining = [paras[idx] for idx in candidate_idx[1:]]
+            if remaining:
+                out.extend(_attach_em_dash_flat_list('\n'.join(remaining), config=config).split('\n'))
+            i = j
+            continue
 
         # ── determine flat prefix length ──────────────────────────────────────
         flat_prefix_len = 0
@@ -415,6 +693,12 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
                 break
 
         if flat_prefix_len == 0:
+            if (
+                not is_case_2
+                and item_pairs
+                and _continues_inline_sequence(preceding_plain, item_pairs[0][0])
+            ):
+                out[prev_idx] = _bold_inline_markers(preceding)
             out.append(para)
             remaining = run_indices[1:]
             if remaining:
@@ -424,44 +708,12 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             i = j
             continue
 
-        # Re-emit remaining expansion items (recurse)
+        # Re-emit remaining expansion items (recurse). Do not absorb additional
+        # sequential markers merely because their numbers continue; the
+        # classifier above already chose the valid flat prefix.
         remaining = [paras[idx] for idx in candidate_idx[flat_prefix_len:]]
-        remaining_to_absorb = []
-        remaining_to_recurse = []
-
-        # Find the type and value of the last item in the flattened prefix to act as a sequence anchor
-        last_type = 'unknown'
-        last_val = 0
-        if flat_prefix_len > 0:
-            last_mk_plain = _plain(item_pairs[flat_prefix_len - 1][0]).strip()
-            last_type, last_val = _get_marker_val_and_type(last_mk_plain)
-
-        if flat_prefix_len > 0 and remaining and last_type != 'unknown' and last_val > 0:
-            absorb_all = True
-            current_type = last_type
-            current_val = last_val
-            for idx in candidate_idx[flat_prefix_len:]:
-                curr_para = paras[idx].strip()
-                pm = _LIST_ITEM_RE.match(curr_para)
-                if pm:
-                    mk_plain = _plain(pm.group(2) or '').strip()
-                    m_type, m_val = _get_marker_val_and_type(mk_plain)
-                    # Must be the same marker family (type) and strictly sequential (+1)
-                    if m_type == current_type and m_val == current_val + 1:
-                        current_val = m_val
-                    else:
-                        absorb_all = False
-                        split_idx = candidate_idx.index(idx)
-                        remaining_to_absorb = [paras[k] for k in candidate_idx[flat_prefix_len:split_idx]]
-                        remaining_to_recurse = [paras[k] for k in candidate_idx[split_idx:]]
-                        break
-            if absorb_all:
-                remaining_to_absorb = remaining
-                remaining_to_recurse = []
-        else:
-            remaining_to_recurse = remaining
-
-        total_to_absorb = flat_prefix_len + len(remaining_to_absorb)
+        remaining_to_recurse = remaining
+        total_to_absorb = flat_prefix_len
 
         # ── absorb ───────────────────────────────────────────────────────────
         new_preceding = _absorb(preceding, item_pairs, total_to_absorb)

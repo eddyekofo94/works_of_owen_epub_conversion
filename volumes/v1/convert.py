@@ -559,9 +559,6 @@ OVERRIDES = {
         r'_first_\s+\.(?=\s+It\s+would\s+have\s+been)': '_first_.',
     },
     'list_item_merge_cap': 40,
-    'flat_list_exclude_chapters': [
-        "Chapter 1 — Peter's Confession",
-    ],
     # Volume 1 Hook: Specialized paragraph merging for Catechisms
     'paragraph_coalesce_hook': _coalesce_v1_catechism_paragraphs,
     'html_postprocess_hook': _postprocess_v1_html,
