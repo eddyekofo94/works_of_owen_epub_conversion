@@ -973,10 +973,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-07-01T12:50:06.814545+00:00
+**Last run:** 2026-07-01T13:03:14.709619+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -1184,10 +1185,11 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-07-01T12:50:37.269382+00:00
+**Last run:** 2026-07-01T13:02:52.763965+00:00
 **Status:** WARN (1 warnings)
 
 Reports:

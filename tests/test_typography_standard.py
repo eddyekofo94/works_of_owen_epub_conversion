@@ -138,6 +138,30 @@ def test_patristic_citation_regex_keeps_numeric_ranges_together():
     assert match.group(0) == 'lib. 13 cap. 13-20'
 
 
+def test_ephraim_biographical_marker_uses_full_patristic_name():
+    from scripts.biography_db import BIOGRAPHICAL_DB
+
+    assert "Ephraim" not in BIOGRAPHICAL_DB
+    assert "Ephraim Syrus" in BIOGRAPHICAL_DB
+    assert "Ephrem the Syrian" in BIOGRAPHICAL_DB
+
+
+def test_bare_ephraim_does_not_resolve_patristic_citation():
+    from scripts.patristic_refs import build_citation_note
+
+    assert build_citation_note("(cap. 2:)", "the tribe of Ephraim | more text", force_work_frag="cap") is None
+
+
+def test_ephraim_syrus_resolves_patristic_citation():
+    from scripts.patristic_refs import build_citation_note
+
+    note = build_citation_note("(cap. 2:)", "Ephraim Syrus teaches this | more text", force_work_frag="cap")
+
+    assert note is not None
+    assert "Ephraim Syrus" in note
+    assert "Adversus Scrutatores" in note
+
+
 def test_footnote_classes_are_justified_hyphenated_and_reader_sized():
     footnote_rule = _rule(r"\.footnote")
     translation_rule = _rule(r"\.footnote-modern-translation")

@@ -161,8 +161,8 @@ AUTHOR_ABBREV_MAP = {
     "bernard":     "Bernard of Clairvaux",
     # Constantine
     "constantine": "Constantine I",
-    # Ephraim Syrus (Ephrem the Syrian)
-    "ephraim":     "Ephraim Syrus (Ephrem the Syrian)",
+    # Ephraim Syrus (Ephrem the Syrian).  Bare "Ephraim" is biblical and too
+    # ambiguous for context author detection; use Syrus/Ephrem/Ephraem cues.
     "ephrem":      "Ephraim Syrus (Ephrem the Syrian)",
     "ephraem":     "Ephraim Syrus (Ephrem the Syrian)",
     "syrus":       "Ephraim Syrus (Ephrem the Syrian)",
