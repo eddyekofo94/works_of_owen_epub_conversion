@@ -687,8 +687,8 @@ def _inject_fonts_and_css(book, config: dict):
     from render import _RENDER_DIR
     from shared import (
         EPUB_STYLESHEET, generate_font_styles, select_primary_font,
-        SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES,
-        PROXIMA_NOVA_FILES, CARDO_FILES, GENTIUM_PLUS_FILES,
+        SBL_SUPPLEMENTS, EZRA_SIL_FILES, TITLE_PAGE_FONTS,
+        PROXIMA_NOVA_EPUB_FILES, CARDO_FILES, GENTIUM_PLUS_FILES,
     )
     
     body_font_name = config.get('body_font', 'SBL_BLit')
@@ -734,7 +734,7 @@ def _inject_fonts_and_css(book, config: dict):
                 font_fnames.add(_fbase)
             
     # Supplemental fonts
-    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_FILES, TITLE_PAGE_FONTS, GFS_PORSON_FILES, CARDO_FILES, GENTIUM_PLUS_FILES):
+    for _font_dict in (SBL_SUPPLEMENTS, EZRA_SIL_FILES, PROXIMA_NOVA_EPUB_FILES, TITLE_PAGE_FONTS, CARDO_FILES, GENTIUM_PLUS_FILES):
         for _fname, _fpath in _font_dict.items():
             _fbase = os.path.basename(_fpath)
             if _fbase in font_fnames:
@@ -1132,7 +1132,7 @@ def _render_single_chapter(
             trans_counter += 1
             placeholder_counter += 1
             
-            fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}">†</a>'
+            fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}"><sup>†</sup></a>'
             local_notes.append({
                 'id': f"fntrans_{cid}_{trans_counter}",
                 'num': trans_counter,
@@ -1190,7 +1190,7 @@ def _render_single_chapter(
             trailing_tags = m.group(2)
             trailing_punc = m.group(3)
             # Double dagger symbol (‡) for biographical notes (Rule 11)
-            fn_link = f'<a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}">‡</a>'
+            fn_link = f'<a class="noteref noteref-biographical" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fnbiog_{cid}_{biographical_counter}"><sup>‡</sup></a>'
             local_biographical.append({
                 'id': f"fnbiog_{cid}_{biographical_counter}",
                 'term': term,

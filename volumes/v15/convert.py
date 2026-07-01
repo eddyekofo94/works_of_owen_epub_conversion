@@ -104,7 +104,9 @@ _V15_CATECHISM_CSS = """
     margin: 0.1em 0 0.8em;
     padding-left: 1.2em;
     text-indent: 0 !important;
-    text-align: left;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 """
 
@@ -283,4 +285,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

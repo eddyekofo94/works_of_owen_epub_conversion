@@ -172,7 +172,7 @@ def apply_glossary_footnotes(body_html: str, cid: str, seen_glossary_terms: set,
             trailing_tags = m.group(2)
             trailing_punc = m.group(3)
             # Section sign symbol (§) for glossary notes (Rule 11)
-            fn_link = f'<a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}">§</a>'
+            fn_link = f'<a class="noteref noteref-glossary" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fngloss_{cid}_{glossary_counter}"><sup>§</sup></a>'
             local_glossary.append({
                 'id': f"fngloss_{cid}_{glossary_counter}",
                 'term': term,

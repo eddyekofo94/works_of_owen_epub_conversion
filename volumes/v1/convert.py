@@ -180,7 +180,7 @@ _V1_CATECHISM_CSS = """
 
 .v1-catechism-pair .catechism-item {
     margin: 0;
-    text-align: left;
+    text-align: justify;
     text-indent: 0 !important;
 }
 
@@ -188,6 +188,7 @@ _V1_CATECHISM_CSS = """
     color: #111;
     font-weight: 500;
     font-size: 0.98em;
+    text-align: left;
 }
 
 .v1-catechism-pair .catechism-question b {
@@ -201,6 +202,9 @@ _V1_CATECHISM_CSS = """
     color: #222;
     font-size: 0.96em;
     line-height: 1.55;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 .v1-catechism-pair .catechism-answer b {

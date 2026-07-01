@@ -3974,3 +3974,28 @@ guide page was removed while retaining the abbreviations guide. Volume 12 was
 the sole rebuilt volume. Package audit passed with zero errors/warnings;
 text-integrity warnings remain documented in the session report.
 
+# 2026-07-01 — Master typography and Apple Books popup alignment
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The shared stylesheet had diverged from `fonts/TYPOGRAPHY_STANDARDS.md`: bare
+paragraphs forced a base font size, duplicate footnote rules disagreed about
+alignment, symbolic note references did not consistently use `<sup>`, and
+enriched modern-translation paragraphs lacked Apple Books' required inline
+line-height override. The main render path also emitted `@font-face` URLs for
+nine supplemental faces without packaging those files.
+
+The stylesheet now leaves body and bare paragraph font size unset, uses a
+consistent 1.4 prose line height, justifies and hyphenates body/list/blockquote
+prose, and has one authoritative justified popup-footnote rule. Noteref anchors
+and their superscripts use inline-only positioning. Modern translation blocks
+receive the same 1.30 popup line-height, justification, hyphenation, reader-size
+text, and injected primary font as the original note. Translation, glossary,
+biographical, and patristic symbols now use superscript markup.
+
+Font packaging in `render.embed_fonts_and_stylesheet()` is synchronized with
+the declared shared font faces. Volume 1 now packages 17 required fonts; its CSS audit
+fell from 9 missing-font errors to 0 errors. Focused typography, footnote,
+structure, and bug-regression tests passed (154 passed, 9 skipped). The EPUB
+audit passed with 0 errors and 0 warnings; existing text-integrity review queues
+remain unchanged and are recorded in the timestamped verification report.

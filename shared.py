@@ -2188,6 +2188,13 @@ PROXIMA_NOVA_FILES = {
     'Proxima Nova Semibold.ttf': 'proxima-nova/Proxima Nova Semibold.ttf',
 }
 
+# EPUB heading subset. Light and Semibold are upright faces and must not be
+# misregistered as italic/bold-italic variants merely to fill CSS slots.
+PROXIMA_NOVA_EPUB_FILES = {
+    'Proxima Nova Regular.ttf': PROXIMA_NOVA_FILES['Proxima Nova Regular.ttf'],
+    'Proxima Nova Extrabold.ttf': PROXIMA_NOVA_FILES['Proxima Nova Extrabold.ttf'],
+}
+
 GFS_PORSON_FILES = {
     'GFSPorson.ttf': 'gfs-porson/GFSPorson.ttf',
 }
@@ -2517,7 +2524,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    line-height: 1.35 !important;
+    line-height: 1.4 !important;
     margin: 0.4em 0.5em; /* Apple Books margin */
     color: #111;
     overflow-x: hidden;
@@ -2525,6 +2532,9 @@ body {
     word-break: break-word;
     text-align: justify;
     text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -epub-hyphens: auto;
+    hyphens: auto;
 }
 
 /* Base typography (lets Apple Books honour the reader's chosen font) */
@@ -2533,8 +2543,7 @@ body, div, p, span, h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    font-size: 1em !important;
-    line-height: 1.35 !important;
+    line-height: 1.4 !important;
     text-align: justify;
     -epub-text-align-last: left;
     text-align-last: left;
@@ -2552,7 +2561,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [lang="el"], [lang="el"] * {
     font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
-    font-size: 1.05em;
+    font-size: 1.03em;
 }
 
 [lang="he"], [lang="he"] * {
@@ -2567,33 +2576,35 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
 }
 
-/* Interactive Owen Blue Palette (#2a55a0) */
-a[epub\:type="noteref"], .noteref {
+/* Inline footnote markers: preserve text flow and Apple Books tap targets. */
+a.noteref, a[epub\:type="noteref"] {
     display: inline !important;
-    vertical-align: super;
-    font-size: 0.80rem;   /* slightly larger, root-relative */
-    line-height: 0;
-    padding: 0.1em 0.15em 0.1em 0.05em !important; /* tighter against previous word */
-    white-space: nowrap;
+    color: #2a55a0 !important;
+    text-decoration: none !important;
+    padding: 0.1em 0.15em !important;
+    margin: 0 0.02em !important;
+    white-space: nowrap !important;
 }
 
 .noteref-glossary, .noteref-biographical {
     padding: 0.1em 0.2em;
 }
 
-/* Interactive Owen Blue Palette (#2a55a0) overrides for trans/glossary */
+/* Translation markers use the same accessible Owen Blue as every interaction. */
 a.noteref-trans, .noteref-trans {
-    color: #b8860b !important;
+    color: #2a55a0 !important;
     font-weight: bold;
     padding: 0.1em 0.2em;
 }
 
-/* Prevent <sup> tags inside .noteref from double-shrinking the root-relative 0.70rem */
-.noteref sup {
-    font-size: 1em;
-    line-height: inherit;
-    vertical-align: baseline;
+/* Shift the glyph without changing the surrounding line box. */
+a.noteref sup, a[epub\:type="noteref"] sup {
     display: inline !important;
+    font-size: 0.75rem !important;
+    vertical-align: baseline !important;
+    position: relative !important;
+    top: -0.32em !important;
+    line-height: 0 !important;
 }
 
 a, .noteref, a.footnote-ref, a.fn-link {
@@ -2603,13 +2614,19 @@ a, .noteref, a.footnote-ref, a.fn-link {
 
 /* Modern Translation Footnote Sub-Block */
 .footnote-modern-translation {
-    margin-top:0.4em;
-    margin-bottom:0.2em;
-    font-size: 0.95em !important;
+    font-size: 1.0em !important;
+    line-height: 1.30 !important;
+    text-align: justify !important;
+    -webkit-hyphens: auto !important;
+    -epub-hyphens: auto !important;
+    hyphens: auto !important;
+    margin: 0 !important;
+    padding: 0.8em 0 0.8em 0.9em !important;
     color: #555 !important;
-    border-left: 3px solid #d4af37 !important;
-    padding-left:8px;
+    border-left: 0.18em solid #d4af37 !important;
     font-style: normal !important;
+    text-indent: 0 !important;
+    display: block;
 }
 
 /* Modern Editorial Translations Page Header */
@@ -2647,7 +2664,7 @@ blockquote {
     padding-left:1.2em;
     margin:1.2em 0;
     font-size: 0.95em;
-    text-align: left;
+    text-align: justify;
     line-height: 1.47;
 }
 
@@ -3011,13 +3028,13 @@ p.chapter-summary {
 }
 
 .roman-list-item {
-    text-align: left;
+    text-align: justify;
     text-indent: 0;
     margin: 0.5em 0;         /* Was 0.65em — reduces whitespace between list entries */
 }
 
 .list-item {
-    text-align: left;
+    text-align: justify;
     text-indent: 0;
     margin: 0.45em 0;        /* Was 0.55em */
 }
@@ -3039,7 +3056,7 @@ p.chapter-summary {
     padding-left: 0;
     border-left: none;
 }
-.scholastic-anchor { text-align: left; text-indent: 0; }
+.scholastic-anchor { text-align: justify; text-indent: 0; }
 .scholastic-parent { margin-top: 1em; }
 .scholastic-parent + .scholastic-child,
 .scholastic-child + .scholastic-child { margin-top: 0.35em; }
@@ -3066,7 +3083,7 @@ p.chapter-summary {
 }
 
 .analysis-part {
-    text-align: left;
+    text-align: justify;
     text-indent: 0;
     margin: 1.2em 0 0.45em; /* Was 1.4em top — unnecessary height on mobile */
 }
@@ -3247,15 +3264,6 @@ sup {
     vertical-align: super;
 }
 
-.footnote {
-    font-size: 1.0em !important;
-    text-align: left !important;
-    margin: 0 !important;
-    padding: 1.5em 0 0.8em 0 !important;
-    text-indent: 0 !important;
-    display: block;
-}
-
 /* Proper TOC Alignment */
 .toc-line {
     display: flex;
@@ -3277,11 +3285,6 @@ sup {
 /* Consecutive noterefs: keep them visually separated */
 .noteref + .noteref {
     margin-left:0.22em;
-}
-
-.noteref sup {
-    font-size: 0.95em;
-    line-height: 1;
 }
 
 .doxology {
@@ -3435,9 +3438,11 @@ aside[epub\:type~="footnote"] {
 
 .footnote {
     font-size: 1.0em !important;
+    line-height: 1.30 !important;
     text-align: justify !important;
     hyphens: auto !important;
     -webkit-hyphens: auto !important;
+    -epub-hyphens: auto !important;
     margin: 0 !important;
     padding: 1.5em 0 0.8em 0 !important; /* 1.5em top padding forces clearance */
     text-indent: 0 !important;
@@ -3745,18 +3750,6 @@ EPUB3_FONT_STYLES = r"""
     font-style: normal;
     src: url("../Fonts/Proxima Nova Extrabold.ttf");
 }}
-@font-face {{
-    font-family: "Proxima Nova";
-    font-weight: normal;
-    font-style: italic;
-    src: url("../Fonts/Proxima Nova Light.ttf");
-}}
-@font-face {{
-    font-family: "Proxima Nova";
-    font-weight: bold;
-    font-style: italic;
-    src: url("../Fonts/Proxima Nova Semibold.ttf");
-}}
 /* SBL BibLit — universal biblical fallback */
 @font-face {{
     font-family: "SBL BibLit";
@@ -3784,13 +3777,6 @@ EPUB3_FONT_STYLES = r"""
     font-weight: normal;
     font-style: normal;
     src: url("../Fonts/SILEOT.ttf");
-}}
-/* GFS Porson — classical Greek font */
-@font-face {{
-    font-family: "GFS Porson";
-    font-weight: normal;
-    font-style: normal;
-    src: url("../Fonts/GFSPorson.ttf");
 }}
 /* Cardo — Latin font designed for classical scholarship */
 @font-face {{
@@ -3855,10 +3841,10 @@ EPUB3_FONT_STYLES = r"""
     font-style: italic;
     src: url("../Fonts/BaskervilleItalicBT.ttf");
 }}
-/* Body text — primary embedded font (Apple Books must respect this) */
-body, div, p, span {{
+/* Body and popup text — primary embedded font (Apple Books must respect this) */
+body, div, p, span, .footnote, .footnote-modern-translation {{
     font-family: "{primary_font}", "SBL BibLit", serif !important;
-    line-height: 1.7;
+    line-height: 1.4;
     -webkit-font-smoothing: antialiased;
 }}
 /* Headings — Baskervville vintage serif display font (Issue 25) */
@@ -3877,7 +3863,6 @@ h4.roman-subheading, .roman-list-item, .roman-list-item b {{
 }}
 [lang="el"], [lang="el"] *, .greek, .greek * {{
     font-family: "SBL Greek", "Cardo", "SBL BibLit", serif !important;
-    font-size: 1.15em;
 }}
 [lang="he"], [lang="he"] *, .hebrew, .hebrew * {{
     direction: rtl;

@@ -420,7 +420,11 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
         
         extra_html = ""
         if trans_info:
-            extra_html = f'<p class="footnote-modern-translation">{trans_info}</p>'
+            extra_html = (
+                '<p class="footnote-modern-translation" '
+                'style="line-height: 1.30 !important;">'
+                f'{trans_info}</p>'
+            )
             
         parts.append(
             f'<aside epub:type="footnote endnote" role="doc-footnote doc-endnote" id="fn{fnum}">'
