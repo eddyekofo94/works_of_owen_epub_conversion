@@ -2985,6 +2985,11 @@ BODY_TRANSLATIONS = {
         "Who, I pray, could live without milk, or who without blood? By your milk, O mother; by your blood, O son. "
         "Let milk be instead of ambrosia, and blood instead of sweet nectar; thus the perpetual wound and breast nourish me.&rdquo;"
     ),
+    "lib. 4, De Vera Sapient.:": (
+        "<strong>Modern Citation:</strong> Lactantius, "
+        "<em>Divine Institutes</em> (Divinae Institutiones), "
+        "Book 4, Chapter 8."
+    ),
     "Comment. in Psalm 66:": (
         "<strong>Modern Citation:</strong> Jerome, "
         "<em>Commentary on the Psalms</em> (Breviarium in Psalmos), "
@@ -4969,9 +4974,6 @@ BODY_TRANSLATIONS = {
     "Sunt opera nostra, id est, ut dictum fuit, obedientia quam Christo praestamus, licet nec efficiens nec meritoria, tamen causa est (ut vocant) sine qua non, justificationis coram Deo, tque aeternae nostrae": (
         "<strong>Modern Translation:</strong> They are our works, that is, as was said, the obedience which we offer to Christ, although neither efficient nor meritorious, yet it is the cause (as they call it) sine qua non, of justification before God, and of our eternal salvation. (Faustus Socinus, <em>De Justificatione</em>, General)"
     ),
-    "\"Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, sed etiam ad humanan spectat naturam, quo dictum est per prophetam —'generationem ejus quis enarrabit?' — (utramque enim substantiam in unam convenisse personam, nisi fides credat, sermo non explicat; et ideo materia nunquam deficit laudis; qui": (
-        "<strong>Modern Citation:</strong> Leo the Great, <em>Sermons</em>, Sermon 9, On the Nativity."
-    ),
     "And Epiphanius, Haer.29:": (
         "<strong>Modern Citation:</strong> Epiphanius of Salamis, <em>Panarion</em> (Adversus Haereses), 29 [PG 41.387]."
     ),
@@ -5396,12 +5398,6 @@ BODY_TRANSLATIONS = {
     "\"Pauca ideo de Christo,\" as Tertullian speaks;": (
         "<strong>Modern Citation:</strong> Tertullian (reference uncertain, possibly <em>De Praescriptione Haereticorum</em> or <em>De Carne Christi</em>)."
     ),
-    "Rupertus, lib. 3, De Gloria et Honore Filii Hominis; Albertus Magnus, in 3 distinct. 10": (
-        "<strong>Modern Citation:</strong> Rupert of Deutz, <em>De gloria et honore filii hominis super Matthaeum</em> (On the Glory and Honor of the Son of Man: Commentary on Matthew), Book 3; Albert the Great, <em>Commentary on the Sentences of Peter Lombard</em>, Book 3, Distinction 10."
-    ),
-    "Irenaeus, lib. 3, cap. 20, 21; Eusebius, Demonst. Evangel., lib. 4 cap. 1-4, etc.; Cyril. Alexand., lib. 5 cap. 6, lib. 1. De": (
-        "<strong>Modern Citation:</strong> Irenaeus, <em>Adversus Haereses</em>, Book 3, Chapters 20-21; Eusebius, <em>Demonstratio Evangelica</em>, Book 4, Chapters 1-4; Cyril of Alexandria, <em>Thesaurus</em> (or <em>De Trinitate</em>), Book 5, Chapter 6, and <em>De recta fide ad Reginas</em> (On the Right Faith, to the Princesses), Book 1."
-    ),
     "Confess. lib. 4. cap. 1;": (
         "<strong>Modern Citation:</strong> Augustine, <em>Confessions</em>, Book 4, Chapter 1."
     ),
@@ -5410,9 +5406,6 @@ BODY_TRANSLATIONS = {
     ),
     "Cyril. Alexand., lib. 5 cap. 6, lib. 1. De Fide ad Regin.; Chrysostom, Homil. 10 in Johan.": (
         "<strong>Modern Citation:</strong> Cyril of Alexandria, <em>Thesaurus</em> (or <em>De Trinitate</em>), Book 5, Chapter 6, and <em>De recta fide ad Reginas</em> (On the Right Faith, to the Princesses), Book 1; John Chrysostom, <em>Homilies on the Gospel of John</em>, Homily 10."
-    ),
-    "Chrysostom, Homil. 10 in Johan., et in cap. 8, ad Romans Serm. 18; Augustine, De Trinit., lib. 13 cap. 13": (
-        "<strong>Modern Citation:</strong> John Chrysostom, <em>Homilies on the Gospel of John</em>, Homily 10, and <em>Homilies on Romans</em>, Homily 18 (on Romans 8); Augustine, <em>De Trinitate</em> (On the Trinity), Book 13, Chapter 13."
     ),
     "Euseb. Preparat. Evang., lib. 1 cap. 3:": (
         "<strong>Modern Citation:</strong> Eusebius of Caesarea, <em>Praeparatio Evangelica</em> (Preparation for the Gospel), Book 1, Chapter 3."

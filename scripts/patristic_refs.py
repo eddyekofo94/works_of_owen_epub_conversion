@@ -161,8 +161,8 @@ AUTHOR_ABBREV_MAP = {
     "bernard":     "Bernard of Clairvaux",
     # Constantine
     "constantine": "Constantine I",
-    # Ephraim Syrus (Ephrem the Syrian)
-    "ephraim":     "Ephraim Syrus (Ephrem the Syrian)",
+    # Ephraim Syrus (Ephrem the Syrian).  Bare "Ephraim" is biblical and too
+    # ambiguous for context author detection; use Syrus/Ephrem/Ephraem cues.
     "ephrem":      "Ephraim Syrus (Ephrem the Syrian)",
     "ephraem":     "Ephraim Syrus (Ephrem the Syrian)",
     "syrus":       "Ephraim Syrus (Ephrem the Syrian)",
@@ -988,7 +988,8 @@ _ROMAN_SINGLE = r'[IVXLivxl](?![a-zA-Z])'       # single char not followed by le
 _ROMAN_NUM = rf'(?:{_ROMAN_MULTI}|{_ROMAN_SINGLE})'
 _DIGIT_NUM = r'\d+(?!:\d)(?:[-–]\d+)?'           # digit not followed by colon+digit
 _NUM_BASE = rf'(?:{_ROMAN_NUM}|{_DIGIT_NUM})'
-_MULTI_NUM = rf'{_NUM_BASE}(?:\s*[,;]\s*{_NUM_BASE})*'
+_NUM_RANGE = rf'{_NUM_BASE}(?:\s*[-–]\s*{_NUM_BASE})?'
+_MULTI_NUM = rf'{_NUM_RANGE}(?:\s*[,;]\s*{_NUM_RANGE})*'
 
 _STRONG_ABBREV = r'(?:lib|serm(?:o)?|epist|ep|orat|tract|homil|haer|dial|adv)'
 _WEAK_ABBREV   = r'(?:cap|chap|sect|t(?:om)?|col|vol)'
@@ -1010,6 +1011,25 @@ _TAG_RE = re.compile(r'<[^>]+>')
 
 def _strip_tags(html: str) -> str:
     return _TAG_RE.sub('', html)
+
+
+_CITATION_CONTINUATION_START_RE = re.compile(
+    r'^(?:de|in|ad|cap|chap|fide|regin|reginas|johan|joan|romans|psalm|homil|serm|epist)\b',
+    re.I,
+)
+
+
+def _citation_tail_continues_source_title(html: str, pos: int) -> bool:
+    """Return true when a detected citation is followed by more source-title text."""
+    from html import unescape
+
+    actual_end = pos
+    while actual_end < len(html) and html[actual_end] in ',.:;?!"\'”’':
+        actual_end += 1
+    tail = _strip_tags(html[actual_end:actual_end + 100])
+    tail = unescape(tail)
+    tail = re.sub(r'\s+', ' ', tail).strip()
+    return bool(_CITATION_CONTINUATION_START_RE.match(tail))
 
 
 def _find_author_in_context(plain_context: str) -> str | None:
@@ -1320,7 +1340,7 @@ def expand_inline_citations(
             _bt_covered.add(_norm)
 
     # Pattern: our own translation immediately after a citation
-    _OUR_SUP_RE = re.compile(r'<a[^>]*class="noteref noteref-trans"', re.I)
+    _OUR_SUP_RE = re.compile(r'<a[^>]*class="noteref noteref-(?:trans|citation)"', re.I)
 
     matches = []
     for m in PATRISTIC_CITATION_RE.finditer(html):
@@ -1354,6 +1374,8 @@ def expand_inline_citations(
 
     # Process in reverse to preserve string positions
     for start, end, cite_str, plain_ctx in reversed(matches):
+        if _citation_tail_continues_source_title(html, end):
+            continue
         note_body = build_citation_note(cite_str, plain_ctx)
         # Skip if the specific work could not be identified — a vague note
         # ("Eusebius, Book 7, Chapter 29") is worse than no note at all.
@@ -1362,8 +1384,8 @@ def expand_inline_citations(
         trans_counter += 1
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
-            f'<a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>*</sup></a>'
+            f'<a class="noteref noteref-citation" epub:type="noteref" '
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>◇</sup></a>'
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end
@@ -1399,14 +1421,16 @@ def expand_inline_citations(
         paren_matches.append((m.start(), m.end(), m.group(0), plain_ctx))
 
     for start, end, cite_str, plain_ctx in reversed(paren_matches):
+        if _citation_tail_continues_source_title(html, end):
+            continue
         note_body = build_citation_note(cite_str, plain_ctx, force_work_frag="cap")
         if note_body is None:
             continue
         trans_counter += 1
         fn_id = f"fntrans_{cid}_{trans_counter}"
         fn_link = (
-            f'<a class="noteref noteref-trans" epub:type="noteref" '
-            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>*</sup></a>'
+            f'<a class="noteref noteref-citation" epub:type="noteref" '
+            f'role="doc-noteref" href="endnotes.xhtml#{fn_id}"><sup>◇</sup></a>'
         )
         # Scan forward past any trailing punctuation to place footnote after it (Rule 11)
         actual_end = end

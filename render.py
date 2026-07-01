@@ -938,23 +938,75 @@ def generate_abbreviations_guide_html(vol_num: int) -> str:
 
 
 def apply_inline_translations(body_html: str) -> str:
-    """Scan and substitute centralized inline translations in body HTML."""
-    from scripts.translation_db import INLINE_TRANSLATIONS
-    for phrase, trans in INLINE_TRANSLATIONS.items():
-        # Remove "<strong>Translation:</strong> " or similar prefix to prevent "[Translated: Translation: ...]"
-        clean_trans = re.sub(r'(?:<[^>]+>)*Translation:(?:<[^>]+>)*\s*', '', trans, flags=re.IGNORECASE)
-        
-        words = phrase.split()
-        if not words:
-            continue
-        phrase_pat = r'\s+'.join(re.escape(w) for w in words)
-        pattern = re.compile(
-            rf'(<span\s+lang="la"[^>]*>\s*{phrase_pat}\s*</span>|{phrase_pat})(?!\s*(?:[\.,\?!:;\'"“”’]*\s*)?\[Translated:)([\.,\?!:;\'"“”’]*)',
-            re.DOTALL
-        )
-        if pattern.search(body_html):
-            body_html = pattern.sub(rf'\1\2 [Translated: {clean_trans}]', body_html)
+    """Legacy inline translations are disabled.
+
+    The old behavior injected ``[Translated: ...]`` directly into body text.
+    Latin translation data must now render only as popup/endnote content.
+    """
     return body_html
+
+
+def _translation_note_type(note_html: str) -> str:
+    """Return ``translation`` when the database entry contains actual translation text."""
+    if re.search(r'(?:<strong>\s*)?Translation(?:\s+Summary)?\s*:', note_html, re.I):
+        return 'translation'
+    if not re.search(r'(?:<strong>\s*)?(?:Modern Citation|Editorial Note)\s*:', note_html, re.I):
+        return 'translation'
+    return 'citation'
+
+
+def _owen_translation_follows(body_html: str, orig_end: int) -> bool:
+    """Conservatively detect an authorial English rendering after a Latin run."""
+    import html
+
+    tail = body_html[orig_end:orig_end + 900]
+    tail = re.sub(r'<[^>]+>', ' ', tail)
+    tail = html.unescape(tail)
+    tail = re.sub(r'\s+', ' ', tail).strip()
+    tail = re.sub(r'^[,.;:)\]\'"“”’\s]+', '', tail)
+    return bool(re.match(
+        r'(?i)^(?:'
+        r'(?:—|-)\s*["“][A-Z]|'
+        r'(?:that is|that is to say|which is|namely|or,? that is)\b'
+        r')',
+        tail,
+    ))
+
+
+def _body_translation_anchor_is_safe(note_type: str, phrase: str, body_html: str, orig_end: int) -> bool:
+    """Reject citation anchors that clearly land inside a continuing prose run."""
+    if note_type != 'citation':
+        return True
+
+    import html
+
+    tail = body_html[orig_end:orig_end + 160]
+    tail = re.sub(r'<[^>]+>', ' ', tail)
+    tail = html.unescape(tail)
+    tail = re.sub(r'\s+', ' ', tail).strip()
+    if re.match(
+        r'(?i)^(?:de|in|ad|cap|chap|fide|regin|reginas|johan|joan|romans|psalm|homil|serm|epist)\b',
+        tail,
+    ):
+        return False
+
+    phrase_visible = re.sub(r'<[^>]+>', ' ', phrase)
+    phrase_visible = re.sub(r'\s+', ' ', phrase_visible).strip()
+    if not phrase_visible or not phrase_visible[-1].isalpha():
+        return True
+
+    last_word = re.search(r"([A-Za-z][A-Za-z'’]*)$", phrase_visible)
+    if not last_word or not last_word.group(1)[0].islower():
+        return True
+
+    return not bool(re.match(r'^[a-z][a-zA-Z’\']*\b', tail))
+
+
+def body_translation_notes_enabled(config: dict | None = None) -> bool:
+    """Return whether the legacy phrase-driven body note inserter should run."""
+    if not config:
+        return False
+    return bool(config.get('enable_body_translation_notes', False))
 
 
 def replace_first_outside_tags_and_comments(body_html: str, pattern: re.Pattern, replace_fn) -> tuple[str, bool]:
@@ -1478,7 +1530,11 @@ def render_volume(vol_num: int, overrides: dict = None,
         from scripts.translation_db import BODY_TRANSLATIONS
         from scripts.patristic_refs import expand_inline_citations
         import html
-        sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+        body_notes_enabled = body_translation_notes_enabled(config)
+        sorted_phrases = (
+            sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+            if body_notes_enabled else []
+        )
         local_notes = []
         placeholders = {}
         placeholder_counter = 0
@@ -1579,7 +1635,7 @@ def render_volume(vol_num: int, overrides: dict = None,
                 orig_start = map_start[start_idx]
                 orig_end = map_end[end_idx - 1]
 
-                punc_match = re.match(r'^((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)([\.,\?!:;\'"“”’]*)', body_html[orig_end:])
+                punc_match = re.match(r'^((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)([\.,\?!:;\'"“”’)\]]*)', body_html[orig_end:])
                 if punc_match:
                     trailing_tags = punc_match.group(1)
                     trailing_punc = punc_match.group(2)
@@ -1590,16 +1646,26 @@ def render_volume(vol_num: int, overrides: dict = None,
 
                 matched_str = body_html[orig_start:orig_end]
 
+                note_type = _translation_note_type(trans)
+                if note_type == 'translation' and _owen_translation_follows(body_html, orig_end):
+                    seen_body_translations.add(phrase)
+                    continue
+                if not _body_translation_anchor_is_safe(note_type, phrase, body_html, orig_end):
+                    seen_body_translations.add(phrase)
+                    continue
+
                 trans_counter += 1
                 placeholder_counter += 1
 
-                fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}"><sup>†</sup></a>'
+                note_class = 'noteref-trans' if note_type == 'translation' else 'noteref-citation'
+                note_symbol = '†' if note_type == 'translation' else '◇'
+                fn_link = f'<a class="noteref {note_class}" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}"><sup>{note_symbol}</sup></a>'
                 local_notes.append({
                     'id': f"fntrans_{cid}_{trans_counter}",
                     'num': trans_counter,
                     'phrase': phrase,
                     'translation': trans,
-                    'type': 'translation'
+                    'type': note_type
                 })
 
                 placeholder_key = f"__BODY_TRANS_PH_{placeholder_counter}__"
@@ -1610,13 +1676,15 @@ def render_volume(vol_num: int, overrides: dict = None,
                 seen_body_translations.add(phrase)
                 dirty = True
 
-        # Call patristic citation resolution fallback while placeholders are active (prevents matching inline translated phrases)
-        body_html, citation_notes, trans_counter = expand_inline_citations(
-            body_html,
-            cid=cid,
-            trans_notes=local_notes,
-            trans_counter=trans_counter
-        )
+        if body_notes_enabled:
+            # Legacy citation fallback is disabled with the phrase matcher because
+            # it can only attach fragment-level body markers.
+            body_html, citation_notes, trans_counter = expand_inline_citations(
+                body_html,
+                cid=cid,
+                trans_notes=local_notes,
+                trans_counter=trans_counter
+            )
 
         if local_notes:
             all_translation_notes.extend(local_notes)
@@ -1681,6 +1749,26 @@ def render_volume(vol_num: int, overrides: dict = None,
         # Restore all translation placeholders, placing their footnote links after punctuation (Rule 11)
         for ph_key, (matched_str, trailing_tags, trailing_punc, fn_link) in placeholders.items():
             body_html = body_html.replace(ph_key, f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}")
+        body_html = re.sub(
+            r'\(([^()<>]{4,140}):\)(<a class="noteref noteref-citation")',
+            r'(\1.)\2',
+            body_html,
+        )
+        body_html = re.sub(
+            r'\(([^()]{4,220}):\)(<a class="noteref noteref-citation")',
+            r'(\1.)\2',
+            body_html,
+        )
+        body_html = re.sub(
+            r'\(([^()]{4,220}</span>):\)(<a class="noteref noteref-citation")',
+            r'(\1.)\2',
+            body_html,
+        )
+        body_html = re.sub(
+            r'\(([^()]{4,220})\.\.\)(<a class="noteref noteref-citation")',
+            r'(\1.)\2',
+            body_html,
+        )
 
         body = f'<section>{body_html}</section>'
         ch_item = epub.EpubHtml(

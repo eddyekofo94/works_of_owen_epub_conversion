@@ -59,7 +59,9 @@ BIOGRAPHICAL_DB = {
     "John of Damascus": "John of Damascus (c. 675–749), Syrian monk, priest, and Doctor of the Church, whose De Fide Orthodoxa systematically summarized Eastern patristic theology.",
     "Bernard": "Bernard of Clairvaux (1090–1153), French Cistercian abbot, reformer, and mystic, known for his monastic theology and role in reviving the Cistercian order.",
     "Constantine": "Constantine I (272–337 AD), first Roman emperor to convert to Christianity, who issued the Edict of Milan (313) and convoked the Council of Nicaea (325).",
-    "Ephraim": "Ephraim Syrus (Ephrem the Syrian) (c. 306–373), Syriac deacon, hymnwriter, and theologian, renowned for his theological poetry and defenses of the Trinity.",
+    "Ephraim Syrus": "Ephraim Syrus (Ephrem the Syrian) (c. 306–373), Syriac deacon, hymnwriter, and theologian, renowned for his theological poetry and defenses of the Trinity.",
+    "Ephrem the Syrian": "Ephraim Syrus (Ephrem the Syrian) (c. 306–373), Syriac deacon, hymnwriter, and theologian, renowned for his theological poetry and defenses of the Trinity.",
+    "Ephraem Syrus": "Ephraim Syrus (Ephrem the Syrian) (c. 306–373), Syriac deacon, hymnwriter, and theologian, renowned for his theological poetry and defenses of the Trinity.",
     "Fulgentius": "Fulgentius of Ruspe (468–533), Bishop of Ruspe in North Africa, a leading defender of Augustinian theology against semi-Pelagianism and Arianism.",
     "Clement of Alexandria": "Clement of Alexandria (c. 150–215), Christian theologian and head of the Catechetical School of Alexandria, who sought to harmonize Greek philosophy with Christian faith.",
     "Theophylact": "Theophylact of Ohrid (c. 1055–1107), Byzantine Archbishop of Ohrid, famed for his clear biblical commentaries which were highly regarded by both Catholic and Protestant reformers.",
@@ -324,5 +326,4 @@ BIOGRAPHICAL_DB = {
     "Marcionites": "Marcion of Sinope (c. 85–160 AD), an early heresiarch who rejected the Old Testament and the creator God of Judaism (the demiurge), teaching a docetic Christ sent by the supreme God of love.",
     "Marcionite": "Marcion of Sinope (c. 85–160 AD), an early heresiarch who rejected the Old Testament and the creator God of Judaism (the demiurge), teaching a docetic Christ sent by the supreme God of love."
 }
-
 

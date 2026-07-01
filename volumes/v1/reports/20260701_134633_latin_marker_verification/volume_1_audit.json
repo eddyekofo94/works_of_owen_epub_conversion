@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-07-01T13:03:14.709619+00:00",
+  "generated_at": "2026-07-01T11:46:33.940712+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -8,7 +8,7 @@
   "warnings": [],
   "info": {
     "file_count": 116,
-    "epub_size_bytes": 6281771,
+    "epub_size_bytes": 6294542,
     "opf_path": "EPUB/content.opf",
     "opf_version": "3.0",
     "titles": [
@@ -34,9 +34,9 @@
       "hebrew_integrity_failures": 0
     },
     "footnotes": {
-      "noteref_count": 223,
-      "unique_noteref_targets": 223,
-      "endnote_anchor_count": 223,
+      "noteref_count": 334,
+      "unique_noteref_targets": 334,
+      "endnote_anchor_count": 334,
       "missing_endnote_targets": [],
       "orphan_endnotes": []
     },

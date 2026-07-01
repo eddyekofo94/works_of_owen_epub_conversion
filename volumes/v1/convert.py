@@ -527,26 +527,10 @@ OVERRIDES = {
         'heavenly -mindedness': 'heavenly-mindedness',
         'heavenly- mindedness': 'heavenly-mindedness',
 
-        # Latin translations
-        'Salus Electorum Sauguis': 'Salus Electorum Sanguis [The Blood of Jesus, the Salvation of the Elect]',
-        'operis absentibus': 'operis absentibus [by us being absent from the press]',
-        'Quod si super unum illum Petrum tantum': 'Quod si super unum illum Petrum tantum [For if you think the whole church was built upon that one Peter alone...]',
-        'totam eclesiam': 'totam ecclesiam [the whole church]',
-        'quid dicturus': 'quid dicturus [what will you say]',
-        'et apostolorum': 'et apostolorum [and of the apostles]',
-        'Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum': 'Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum [Shall we dare to say that the gates of hell will not prevail against Peter alone?]',
-        'Unum hoc est': 'Unum hoc est [This is one thing]',
-        'Quomodo igitur': 'Quomodo igitur [How therefore]',
-        'sciri a quoquam': 'sciri a quoquam [be known by anyone]',
-        'narrari, opera divina; sed tamen sacrae literae': 'narrari, opera divina; sed tamen sacrae literae [be declared, divine works; but nevertheless sacred letters]',
-        'Fide, ad Gratianum': 'Fide, ad Gratianum [Faith, to Gratian]',
-        'atque impudentissimus est, qui scrutari': 'atque impudentissimus est, qui scrutari [and most impudent is he, who searches]',
-        'suum. Millia millium, et': 'suum. Millia millium, et [his. Thousands of thousands, and]',
-        'millena millia angelorum et archangelorum, cum': 'millena millia angelorum et archangelorum, cum [thousands of thousands of angels and archangels, with]',
-        'pleni peccatis': 'pleni peccatis [full of sins]',
-        'fundamentum, una haec est': 'fundamentum, una haec est [foundation, this is one]',
-        'Petra, Petri': 'Petra, Petri [Rock, Peter\'s]',
-        'Scrutator majestatis absorbetur a gloria': 'Scrutator majestatis absorbetur a gloria [The searcher of majesty is swallowed up by glory]',
+        # Latin OCR fixes only. English translations must be emitted as
+        # popup/endnote content, never injected into Owen's body text.
+        'Salus Electorum Sauguis': 'Salus Electorum Sanguis',
+        'totam eclesiam': 'totam ecclesiam',
     },
     'regex_replacements': {
         r'\bknow\.\?': 'know?',

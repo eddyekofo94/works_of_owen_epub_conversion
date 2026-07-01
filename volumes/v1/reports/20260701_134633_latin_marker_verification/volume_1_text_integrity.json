@@ -2,13 +2,17 @@
   "volume": "1",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
-  "generated_at": "2026-07-01T13:02:52.763965+00:00",
+  "generated_at": "2026-07-01T11:47:03.061232+00:00",
   "status": "warn",
-  "warning_count": 1,
+  "warning_count": 2,
   "warnings": [
     {
       "code": "dense_source_window_loss",
       "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
     }
   ],
   "pdf": {
@@ -150,13 +154,9 @@
     "weak_pages": []
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 26712,
-    "missing_dense_window_pages": 32,
+    "dense_windows_checked": 26731,
+    "missing_dense_window_pages": 31,
     "missing_dense_windows": [
-      {
-        "page": 382,
-        "sample": "the dark after what they cannot clearly discern acts among other cicero's book de"
-      },
       {
         "page": 402,
         "sample": "known or as it may be thence earned my present business is only to"
@@ -344,9 +344,55 @@
   },
   "paragraph_integrity": {
     "paragraphs_checked": 2276,
-    "split_candidate_count": 0,
-    "split_candidates": [],
-    "structural_start_exclusions": 129,
+    "split_candidate_count": 9,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς \". †",
+        "next": "He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "To the same purpose. speaks Eusebius ‡ at large: Demonstratio Evang., lib. 5 cap. 2. ◇",
+        "next": "Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.) ◇ \" Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, se"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "αὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων \". †",
+        "next": "The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "he image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. ◇",
+        "next": "Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας . Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων , διὰ τῆς ἰδίας πρὸς ἑκατέρους οἰκειότητος εις φιλίαν καὶ ὁμόνοιαν τοῦς ἀμφοτέρους συναγαγεῖν \". †",
+        "next": "Words plainly divine; an illustrious testimony of the faith of the ancient church, and expressive of the principal mystery of the gospel! \"Wherefore, as we said before, he united m"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "And to the same purpose: (lib. 5 cap. 1:) \"Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". †",
+        "next": "That which these passages give testimony unto, is what we have discoursed concerning the necessity of our redemption in and by the nature that sinned; and yet withal, that it shoul"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "[affirm] we know not; only we declare what we believe and adore. \"Neque sensus est ejus , neque phantsia, neque opinio, nec ratio, nec scientia\", says Dionys. De Divan. Nomine,1. ◇",
+        "next": "We have no means — no corporeal, no intellectual instrument or power — for the comprehension of him; nor has any other creature: \" Επεὶ αὐτὸ ὅπε ? ρ ἐστιν ὁ Θεὸς , οὐ μόνον προφῆτα"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "ion of this glory, will be carried above the perplexing prevailing sense of any of these evils, of a confluence of them all. \"Crus nil sentit in nervo, dum animus est in coelo .\" †",
+        "next": "It is a woeful kind of life, when men scramble for poor perishing reliefs in their distresses. This is the universal remedy and cure, — the only balsam for all our diseases. Whatev"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "previous": "was a man, as they were men; and otherwise, that he was at the greatest distance from them all as it is possible for one man to be from another, Socin. de Servant. lib. 3 cap. 3. ◇",
+        "next": "The falseness of this latter assertion, and the gross ignorance of the Scripture, under a pretense of subtlety, in them that make it, will evidently appear in our ensuing Discourse"
+      }
+    ],
+    "structural_start_exclusions": 131,
     "short_fragment_count": 12,
     "short_fragments": [
       {
@@ -857,7 +903,7 @@
         "phrase": "Petra, Petri"
       },
       {
-        "phrase": "Epiphanius, ‡  Haer"
+        "phrase": "Epiphanius, Haer"
       },
       {
         "phrase": "Scrutator majestatis absorbetur a gloria"

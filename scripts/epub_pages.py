@@ -621,7 +621,7 @@ def generate_copyright_xhtml(vol_num, config, primary_font_name):
     <ul>
       <li><strong>Original Historical Footnotes <code>1, 2, ...</code></strong>: Original historical footnotes remain intact, numbered sequentially. Where these footnotes contain untranslated Greek/Latin quotes or abbreviated patristic references, a dedicated modernization block has been appended directly beneath them showing full modern translations and standard academic source citations.</li>
       <li><strong>Word Translation Footnotes <code>†</code></strong>: Indicated by a superscript dagger, these represent modern editorial translations of foreign-language words and phrases (Latin, Greek, and Hebrew) appearing in the main text. They are kept entirely distinct from the original historical footnotes.</li>
-      <li><strong>Reference &amp; Citation Footnotes <code>*</code></strong>: Indicated by a superscript asterisk, these provide modern academic citations for inline patristic, classical, or scholastic references.</li>
+      <li><strong>Reference &amp; Citation Footnotes <code>◇</code></strong>: Indicated by a superscript hollow-diamond marker, these provide modern academic citations for inline patristic, classical, or scholastic references.</li>
       <li><strong>Theological Glossary <code>§</code></strong>: Indicated by a superscript section sign, these provide brief, contextual definitions of technical theological and historical terms upon their first mention in the book.</li>
       <li><strong>Biographical Notes <code>‡</code></strong>: Indicated by a superscript double dagger, these provide brief biographical details for key historical figures upon their first mention in the book.</li>
     </ul>
@@ -1030,7 +1030,11 @@ def _render_single_chapter(
     from scripts.translation_db import BODY_TRANSLATIONS
     from scripts.patristic_refs import expand_inline_citations
     
-    sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+    body_notes_enabled = render.body_translation_notes_enabled(config)
+    sorted_phrases = (
+        sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+        if body_notes_enabled else []
+    )
     local_notes = []
     placeholders = {}
     placeholder_counter = 0
@@ -1119,7 +1123,7 @@ def _render_single_chapter(
             orig_start = map_start[start_idx]
             orig_end = map_end[end_idx - 1]
             
-            punc_match = re.match(r'^((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)([\.,\?!:;\'"“”’]*)', body_html[orig_end:])
+            punc_match = re.match(r'^((?:</(?!p\b|li\b|ul\b|ol\b|div\b|blockquote\b|h[1-6]\b|section\b|aside\b|body\b|html\b|dt\b|dd\b|table\b|tr\b|td\b|th\b)[a-zA-Z]+>)*)([\.,\?!:;\'"“”’)\]]*)', body_html[orig_end:])
             if punc_match:
                 trailing_tags = punc_match.group(1)
                 trailing_punc = punc_match.group(2)
@@ -1129,16 +1133,25 @@ def _render_single_chapter(
             orig_end_with_punc = orig_end + len(trailing_tags) + len(trailing_punc)
             
             matched_str = body_html[orig_start:orig_end]
+            note_type = render._translation_note_type(trans)
+            if note_type == 'translation' and render._owen_translation_follows(body_html, orig_end):
+                seen_body_translations.add(phrase)
+                continue
+            if not render._body_translation_anchor_is_safe(note_type, phrase, body_html, orig_end):
+                seen_body_translations.add(phrase)
+                continue
             trans_counter += 1
             placeholder_counter += 1
             
-            fn_link = f'<a class="noteref noteref-trans" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}"><sup>†</sup></a>'
+            note_class = 'noteref-trans' if note_type == 'translation' else 'noteref-citation'
+            note_symbol = '†' if note_type == 'translation' else '◇'
+            fn_link = f'<a class="noteref {note_class}" epub:type="noteref" role="doc-noteref" href="endnotes.xhtml#fntrans_{cid}_{trans_counter}"><sup>{note_symbol}</sup></a>'
             local_notes.append({
                 'id': f"fntrans_{cid}_{trans_counter}",
                 'num': trans_counter,
                 'phrase': phrase,
                 'translation': trans,
-                'type': 'translation'
+                'type': note_type
             })
             
             placeholder_key = f"__BODY_TRANS_PH_{placeholder_counter}__"
@@ -1148,12 +1161,13 @@ def _render_single_chapter(
             seen_body_translations.add(phrase)
             dirty = True
             
-    body_html, citation_notes, trans_counter = expand_inline_citations(
-        body_html,
-        cid=cid,
-        trans_notes=local_notes,
-        trans_counter=trans_counter
-    )
+    if body_notes_enabled:
+        body_html, citation_notes, trans_counter = expand_inline_citations(
+            body_html,
+            cid=cid,
+            trans_notes=local_notes,
+            trans_counter=trans_counter
+        )
     
     if local_notes:
         all_translation_notes.extend(local_notes)
@@ -1212,6 +1226,26 @@ def _render_single_chapter(
 
     for ph_key, (matched_str, trailing_tags, trailing_punc, fn_link) in placeholders.items():
         body_html = body_html.replace(ph_key, f"{matched_str}{trailing_tags}{trailing_punc}{fn_link}")
+    body_html = re.sub(
+        r'\(([^()<>]{4,140}):\)(<a class="noteref noteref-citation")',
+        r'(\1.)\2',
+        body_html,
+    )
+    body_html = re.sub(
+        r'\(([^()]{4,220}):\)(<a class="noteref noteref-citation")',
+        r'(\1.)\2',
+        body_html,
+    )
+    body_html = re.sub(
+        r'\(([^()]{4,220}</span>):\)(<a class="noteref noteref-citation")',
+        r'(\1.)\2',
+        body_html,
+    )
+    body_html = re.sub(
+        r'\(([^()]{4,220})\.\.\)(<a class="noteref noteref-citation")',
+        r'(\1.)\2',
+        body_html,
+    )
         
     body = f'<section>{body_html}</section>'
     ch_item = epub.EpubHtml(title=ch_dict['title'], file_name=f'{cid}.xhtml', lang='en')

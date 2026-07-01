@@ -2669,19 +2669,16 @@ def test_bracket_spacing_cleanup():
 
 
 def test_latin_dedication_translation_matching():
-    """Verify that the Latin dedicatory inscription is matched and translated under the Volume 12 config, and is not double-replaced."""
+    """Legacy inline translations must not inject bracketed English into body text."""
     from render import apply_inline_translations
     
     text = 'whose inscription is, "Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S."'
     repaired = apply_inline_translations(text)
     
-    assert "[Translated:" in repaired
-    assert "George Blandrata, physician-in-chief and intimate counselor of Stephen" in repaired
-    
-    # Run a second time to ensure no double translation
+    assert repaired == text
+    assert "[Translated:" not in repaired
     repaired_twice = apply_inline_translations(repaired)
     assert repaired_twice == repaired
-    assert repaired_twice.count("[Translated:") == 1
 
 
 def test_latin_word_tagging():
@@ -2775,14 +2772,14 @@ def test_latin_ocr_repairs():
 
 
 def test_latin_inline_translations():
-    """Verify that inline translations are correctly injected without corrupting language span tags."""
+    """Inline translation data must not mutate Latin spans or append body brackets."""
     from render import apply_inline_translations
     
     body_html = '<p>whose inscription is, <span lang="la" xml:lang="la">Amplissimo clarissimoque viro Georgio Blandratae Stephani invictissimi regis Poloniae, etc., archiatro et conciliario intimo, domino, ae patrono suo perpetua observantia colendo; et subscribitur, Tibi in Domino Jesu deditissimus cliens tuus F. S.</span>.</p>'
     
     repaired = apply_inline_translations(body_html)
-    assert '[Translated: ' in repaired
-    assert '“To the most distinguished and renowned George Blandrata' in repaired
+    assert repaired == body_html
+    assert '[Translated: ' not in repaired
     assert '</span>.' in repaired
 
 
@@ -2916,7 +2913,6 @@ def test_no_unused_whitelist_entries(volume):
             f"Volume {volume} whitelist contains unused entries (not suppressing any current issues):\n"
             + "\n".join(f"  - {f}" for f in failures)
         )
-
 
 
 
