@@ -77,6 +77,15 @@ def test_inline_translation_injection_is_disabled():
     assert "[Translated:" not in apply_inline_translations(body)
 
 
+def test_legacy_body_translation_notes_default_off():
+    from render import body_translation_notes_enabled
+
+    assert not body_translation_notes_enabled()
+    assert not body_translation_notes_enabled({})
+    assert not body_translation_notes_enabled({"unrelated": True})
+    assert body_translation_notes_enabled({"enable_body_translation_notes": True})
+
+
 def test_citation_anchor_rejects_truncated_latin_quote_key():
     from render import _body_translation_anchor_is_safe
     from scripts.translation_db import BODY_TRANSLATIONS

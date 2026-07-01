@@ -972,10 +972,11 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-07-01T11:46:33.940712+00:00
+**Last run:** 2026-07-01T12:50:06.814545+00:00
 **EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -992,7 +993,7 @@ Reports:
 | NAV links | 86 |
 | Greek chars / untagged | 4091 / 0 |
 | Hebrew chars / untagged | 157 / 0 |
-| Noteref links / endnote anchors | 334 / 334 |
+| Noteref links / endnote anchors | 223 / 223 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -1182,11 +1183,12 @@ Reports:
 
 
 
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-07-01T11:47:03.061232+00:00
-**Status:** WARN (2 warnings)
+**Last run:** 2026-07-01T12:50:37.269382+00:00
+**Status:** WARN (1 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1199,8 +1201,8 @@ Reports:
 | EPUB paragraphs/headings | 2714 |
 | Approximate PDF-to-EPUB word coverage | 0.9998 |
 | Weak page matches | 0 |
-| Dense source windows checked | 26731 |
-| Missing dense source-window pages | 31 |
+| Dense source windows checked | 26712 |
+| Missing dense source-window pages | 32 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 586 |
@@ -1209,8 +1211,8 @@ Reports:
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 9 |
-| Structural starts excluded from split warnings | 131 |
+| Possible faulty paragraph splits | 0 |
+| Structural starts excluded from split warnings | 129 |
 | Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
@@ -1235,7 +1237,6 @@ Reports:
 Warnings requiring triage:
 
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

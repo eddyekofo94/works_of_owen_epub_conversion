@@ -1002,6 +1002,13 @@ def _body_translation_anchor_is_safe(note_type: str, phrase: str, body_html: str
     return not bool(re.match(r'^[a-z][a-zA-Z’\']*\b', tail))
 
 
+def body_translation_notes_enabled(config: dict | None = None) -> bool:
+    """Return whether the legacy phrase-driven body note inserter should run."""
+    if not config:
+        return False
+    return bool(config.get('enable_body_translation_notes', False))
+
+
 def replace_first_outside_tags_and_comments(body_html: str, pattern: re.Pattern, replace_fn) -> tuple[str, bool]:
     """Search for all matches of pattern, replacing the first occurrence that does not fall inside HTML tags or comments."""
     exclusion_spans = []
@@ -1523,7 +1530,11 @@ def render_volume(vol_num: int, overrides: dict = None,
         from scripts.translation_db import BODY_TRANSLATIONS
         from scripts.patristic_refs import expand_inline_citations
         import html
-        sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+        body_notes_enabled = body_translation_notes_enabled(config)
+        sorted_phrases = (
+            sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+            if body_notes_enabled else []
+        )
         local_notes = []
         placeholders = {}
         placeholder_counter = 0
@@ -1665,13 +1676,15 @@ def render_volume(vol_num: int, overrides: dict = None,
                 seen_body_translations.add(phrase)
                 dirty = True
 
-        # Call patristic citation resolution fallback while placeholders are active (prevents matching inline translated phrases)
-        body_html, citation_notes, trans_counter = expand_inline_citations(
-            body_html,
-            cid=cid,
-            trans_notes=local_notes,
-            trans_counter=trans_counter
-        )
+        if body_notes_enabled:
+            # Legacy citation fallback is disabled with the phrase matcher because
+            # it can only attach fragment-level body markers.
+            body_html, citation_notes, trans_counter = expand_inline_citations(
+                body_html,
+                cid=cid,
+                trans_notes=local_notes,
+                trans_counter=trans_counter
+            )
 
         if local_notes:
             all_translation_notes.extend(local_notes)

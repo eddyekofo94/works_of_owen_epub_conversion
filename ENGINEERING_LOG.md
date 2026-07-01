@@ -4,6 +4,36 @@ This log captures detailed technical analysis and architectural decisions for co
 
 ---
 
+### [Session: 2026-07-01] Legacy Body Foreign-Language Note Disable
+
+**Date:** 2026-07-01
+**Status:** IMPLEMENTED (AWAITING VALIDATION)
+**Volumes tested:** 1
+
+### 1. Executive Summary
+After review of repeated false positives, the phrase/key-driven body note system was disabled for user-facing output. The agreed replacement direction is a whole-quote/passages-only system: translate substantial Latin/Greek/Hebrew quotes only when Owen does not already translate or meaningfully paraphrase them, anchor one popup after the complete passage and its source citation when present, and include modern source references only at high confidence.
+
+### 2. Root Cause Analysis
+1. The existing body note system was built around matching arbitrary database phrases and citation fragments, not complete foreign-language quote units.
+2. This model allowed markers to land inside quoted material or inside sentence/citation flow, even after boundary guards were added.
+3. The user-facing requirement is quote-level annotation, so further patching of the fragment matcher would continue to fight the wrong abstraction.
+
+### 3. Implementation
+1. Added `body_translation_notes_enabled(config)` in `render.py`, defaulting to `False`.
+2. Gated both the `BODY_TRANSLATIONS` phrase matcher and the patristic inline citation fallback behind this switch in `render.py`.
+3. Applied the same gate in `scripts/epub_pages.py` for the single-chapter render path.
+4. Retained the translation/citation databases as research material for the future quote-level engine.
+5. Recorded design decisions in `.working/interviews/foreign-quote-notes/decisions.md`.
+
+### 4. Verification
+1. Rebuilt Volume 1 with `volumes/v1/convert.py --render-only`.
+2. Confirmed the generated chapter XHTML contains `0` `noteref-trans` anchors and `0` `noteref-citation` anchors.
+3. Spot-checked the Cyprian and Clement examples in `EPUB/ch004.xhtml`; the prior mid-quote `†` markers and mid-sentence `◇` marker are absent.
+4. Focused pytest suite passed: 16 tests.
+5. EPUB audit passed with 0 errors and 0 warnings; bug regression report passed. Text integrity remains WARN for existing dense-window coverage.
+
+---
+
 ### [Session: 2026-07-01] Latin Citation Marker Boundary Guards
 
 **Date:** 2026-07-01

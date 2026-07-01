@@ -1030,7 +1030,11 @@ def _render_single_chapter(
     from scripts.translation_db import BODY_TRANSLATIONS
     from scripts.patristic_refs import expand_inline_citations
     
-    sorted_phrases = sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+    body_notes_enabled = render.body_translation_notes_enabled(config)
+    sorted_phrases = (
+        sorted(BODY_TRANSLATIONS.items(), key=lambda x: len(x[0]), reverse=True)
+        if body_notes_enabled else []
+    )
     local_notes = []
     placeholders = {}
     placeholder_counter = 0
@@ -1157,12 +1161,13 @@ def _render_single_chapter(
             seen_body_translations.add(phrase)
             dirty = True
             
-    body_html, citation_notes, trans_counter = expand_inline_citations(
-        body_html,
-        cid=cid,
-        trans_notes=local_notes,
-        trans_counter=trans_counter
-    )
+    if body_notes_enabled:
+        body_html, citation_notes, trans_counter = expand_inline_citations(
+            body_html,
+            cid=cid,
+            trans_notes=local_notes,
+            trans_counter=trans_counter
+        )
     
     if local_notes:
         all_translation_notes.extend(local_notes)
