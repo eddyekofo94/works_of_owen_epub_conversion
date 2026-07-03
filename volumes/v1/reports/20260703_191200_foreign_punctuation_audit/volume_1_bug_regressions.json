@@ -1,0 +1,812 @@
+{
+  "volume": "1",
+  "status": "pass",
+  "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_audit.json",
+  "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_text_integrity.json",
+  "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.json",
+  "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/bugs_fixes/volume_1_bug_regressions.md",
+  "extra_warning_codes": {
+    "text_integrity": [],
+    "epub": []
+  },
+  "text_integrity_checks": [
+    {
+      "label": "Possible faulty paragraph splits",
+      "observed": 1,
+      "budget": 125,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch038.xhtml",
+          "previous": "he apostle declares in these words, \"To gather together in one all things which are in heaven, and which are on earth, even in him.\" And so he again expresseth it, Colossians 1:20,",
+          "next": "He would no longer keep them in two distinct families; but he would, in his infinite wisdom and goodness, gather them up into one common head, on whom they should have their immedi"
+        }
+      ]
+    },
+    {
+      "label": "Inline structural marker candidates",
+      "observed": 0,
+      "budget": 16,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Syllabus-anchor candidates",
+      "observed": 16,
+      "budget": 16,
+      "status": "ok",
+      "samples": [
+        {
+          "key": "EPUB/ch006.xhtml#p297-syllabus-1-it-is-scandalously-proposed-and-answered-of-what-use-is-the",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch006.xhtml",
+          "anchor_index": 297,
+          "item_range": "p298-p300",
+          "anchor": "at did not relate thereunto. Such bold inquiries, with futilous § answers annexed unto them, sufficiently manifest what acquaintance their authors have either with Christ himself, which in others they despise, or with his Gospel, which they pretend to embrace.",
+          "items": [
+            {
+              "marker": "(2.)",
+              "text": "A mock scheme of religion is framed, to represent the folly of them who design to learn the mind and will of God in and by him."
+            },
+            {
+              "marker": "(3.)",
+              "text": "Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
+            },
+            {
+              "marker": "(4.)",
+              "text": "Professed love unto the person of Christ is traduced, as a mere fancy and vapor of distempered minds or weak imaginations"
+            }
+          ],
+          "marker_family": "unknown",
+          "item_count": 3,
+          "announced_count": null,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula"
+          ],
+          "hard_exclusions": [
+            "developed-item"
+          ],
+          "whitelist_key": "EPUB/ch006.xhtml#p297-syllabus-1-it-is-scandalously-proposed-and-answered-of-what-use-is-the"
+        },
+        {
+          "key": "EPUB/ch010.xhtml#p455-syllabus-1-there-are-two-things-wherein-the-glory-of-truth-does-consist",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch010.xhtml",
+          "anchor_index": 455,
+          "item_range": "p456-p458",
+          "anchor": "1. There are two things wherein the glory of truth does consist.",
+          "items": [
+            {
+              "marker": "(1.)",
+              "text": "Its light."
+            },
+            {
+              "marker": "(2.)",
+              "text": "Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ."
+            },
+            {
+              "marker": "(1.)",
+              "text": "No truth whatever brings any spiritual light unto the mind, but by virtue thereof. \"In him is life, and the life is the light of men:\" John 1:4."
+            }
+          ],
+          "marker_family": "unknown",
+          "item_count": 3,
+          "announced_count": 2,
+          "positive_reasons": [
+            "count-category-formula",
+            "introductory-formula",
+            "compact-first-item"
+          ],
+          "hard_exclusions": [
+            "scripture-density",
+            "multiple-sentences",
+            "final-developed-continuation",
+            "inconsistent-sequence"
+          ],
+          "whitelist_key": "EPUB/ch010.xhtml#p455-syllabus-1-there-are-two-things-wherein-the-glory-of-truth-does-consist"
+        },
+        {
+          "key": "EPUB/ch014.xhtml#p612-syllabus-7-those-who-voluntarily-through-the-contempt-of-god-and-divine-grace",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch014.xhtml",
+          "anchor_index": 612,
+          "item_range": "p613-p615",
+          "anchor": "And nothing can be more derogatory unto the wisdom and holiness of God, than to imagine that he would grant other ways of salvation unto them who had rejected that only one which he had provided; which was by faith in Christ, as revealed in that first promise.",
+          "items": [
+            {
+              "marker": "8.",
+              "text": "From these considerations, which are all of them unquestionable principles of truth, two things are evident."
+            },
+            {
+              "marker": "(1.)",
+              "text": "That there was no way of the justification and salvation of sinners revealed and proposed from the foundation of the world, but only by Jesus Christ, as declared in the first promise."
+            },
+            {
+              "marker": "(2.)",
+              "text": "That there was no way for the participation of the benefits of that promise, or of his work of mediation, but by faith in him as so promised."
+            }
+          ],
+          "marker_family": "arabic",
+          "item_count": 3,
+          "announced_count": 81,
+          "positive_reasons": [
+            "count-category-formula"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "inconsistent-sequence"
+          ],
+          "whitelist_key": "EPUB/ch014.xhtml#p612-syllabus-7-those-who-voluntarily-through-the-contempt-of-god-and-divine-grace"
+        },
+        {
+          "key": "EPUB/ch014.xhtml#p613-syllabus-8-from-these-considerations-which-are-all-of-them-unquestionable-principles-of",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch014.xhtml",
+          "anchor_index": 613,
+          "item_range": "p614-p615",
+          "anchor": "8. From these considerations, which are all of them unquestionable principles of truth, two things are evident.",
+          "items": [
+            {
+              "marker": "(1.)",
+              "text": "That there was no way of the justification and salvation of sinners revealed and proposed from the foundation of the world, but only by Jesus Christ, as declared in the first promise."
+            },
+            {
+              "marker": "(2.)",
+              "text": "That there was no way for the participation of the benefits of that promise, or of his work of mediation, but by faith in him as so promised."
+            }
+          ],
+          "marker_family": "unknown",
+          "item_count": 2,
+          "announced_count": 2,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "announced-count-matches-run",
+            "parallel-opening-word"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "long-final-item"
+          ],
+          "whitelist_key": "EPUB/ch014.xhtml#p613-syllabus-8-from-these-considerations-which-are-all-of-them-unquestionable-principles-of"
+        },
+        {
+          "key": "EPUB/ch022.xhtml#p1048-syllabus-1-as-unto-original-efficiency-it-was-the-act-of-the-divine",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch022.xhtml",
+          "anchor_index": 1048,
+          "item_range": "p1049-p1050",
+          "anchor": "the immediate principle of all such operations. The wisdom, power, grace, and goodness exerted therein, are essential properties of the divine nature. Wherefore the acting of them originally belongs equally unto each person, equally participant of that nature.",
+          "items": [
+            {
+              "marker": "(1.)",
+              "text": "As unto authoritative designation, it was the act of the Father. Hence is he said to send \"his Son in the likeness of sinful flesh,\" Romans 8:3; Galatians 4:4."
+            },
+            {
+              "marker": "(2.)",
+              "text": "As unto the formation of the human nature, it was the peculiar act of the Spirit, Luke 1:35."
+            }
+          ],
+          "marker_family": "unknown",
+          "item_count": 2,
+          "announced_count": null,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "parallel-opening-word"
+          ],
+          "hard_exclusions": [
+            "scripture-density",
+            "developed-item",
+            "multiple-sentences"
+          ],
+          "whitelist_key": "EPUB/ch022.xhtml#p1048-syllabus-1-as-unto-original-efficiency-it-was-the-act-of-the-divine"
+        },
+        {
+          "key": "EPUB/ch022.xhtml#p1052-syllabus-2-this-assumption-was-the-only-immediate-act-of-the-divine-nature",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch022.xhtml",
+          "anchor_index": 1052,
+          "item_range": "p1053-p1056",
+          "anchor": "2. This assumption was the only immediate act of the divine nature on the human in the person of the Son. All those that follow, in subsistence, sustentation, with all others that are communicative, do ensue thereon.",
+          "items": [
+            {
+              "marker": "3.",
+              "text": "This assumption and the hypostatical union are distinct and different in the formal reason of them."
+            },
+            {
+              "marker": "(1.)",
+              "text": "Assumption is the immediate act of the divine nature in the person of the Son on the human; union is mediate, by virtue of that assumption."
+            },
+            {
+              "marker": "(2.)",
+              "text": "Assumption is unto personality; it is that act whereby the Son of God and our nature became one person. Union is an act or relation of the natures subsisting in that one person."
+            },
+            {
+              "marker": "(3.)",
+              "text": "Assumption respects the acting of the divine and the passion of the human nature; the one assumeth, the other is assumed."
+            }
+          ],
+          "marker_family": "arabic",
+          "item_count": 4,
+          "announced_count": null,
+          "positive_reasons": [
+            "count-category-formula"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "multiple-sentences",
+            "inconsistent-sequence"
+          ],
+          "whitelist_key": "EPUB/ch022.xhtml#p1052-syllabus-2-this-assumption-was-the-only-immediate-act-of-the-divine-nature"
+        },
+        {
+          "key": "EPUB/ch022.xhtml#p1054-syllabus-1-assumption-is-the-immediate-act-of-the-divine-nature-in-the",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch022.xhtml",
+          "anchor_index": 1054,
+          "item_range": "p1055-p1056",
+          "anchor": "(1.) Assumption is the immediate act of the divine nature in the person of the Son on the human; union is mediate, by virtue of that assumption.",
+          "items": [
+            {
+              "marker": "(2.)",
+              "text": "Assumption is unto personality; it is that act whereby the Son of God and our nature became one person. Union is an act or relation of the natures subsisting in that one person."
+            },
+            {
+              "marker": "(3.)",
+              "text": "Assumption respects the acting of the divine and the passion of the human nature; the one assumeth, the other is assumed."
+            }
+          ],
+          "marker_family": "unknown",
+          "item_count": 2,
+          "announced_count": null,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "parallel-opening-word"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "multiple-sentences"
+          ],
+          "whitelist_key": "EPUB/ch022.xhtml#p1054-syllabus-1-assumption-is-the-immediate-act-of-the-divine-nature-in-the"
+        },
+        {
+          "key": "EPUB/ch023.xhtml#p1144-syllabus-his-ascension-as-unto-change-of-place-from-earth-to-heaven-and",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch023.xhtml",
+          "anchor_index": 1144,
+          "item_range": "p1145-p1147",
+          "anchor": " as unto the outward manner of it, was one and the same, and at once accomplished; but as unto the end of it, which is the exercise of all his offices, it had various respects, various prefiguration, and is distinctly proposed unto us with reference unto them.",
+          "items": [
+            {
+              "marker": "(1.)",
+              "text": "In his ascension, as it was triumphant, three things may be considered:"
+            },
+            {
+              "marker": "1st",
+              "text": ", The manner of it, With its representation of old; 2ndly , The place whereinto he ascended; 3rdly , The end of it, or what was the work which he had to do thereon."
+            },
+            {
+              "marker": "[1.]",
+              "text": "As unto the manner of it, it was openly triumphant and glorious. So is it described, Ephesians 4:8,"
+            }
+          ],
+          "marker_family": "unknown",
+          "item_count": 3,
+          "announced_count": null,
+          "positive_reasons": [
+            "count-category-formula",
+            "compact-first-item",
+            "continuation-punctuation",
+            "first-item-open-punctuation"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "inconsistent-sequence"
+          ],
+          "whitelist_key": "EPUB/ch023.xhtml#p1144-syllabus-his-ascension-as-unto-change-of-place-from-earth-to-heaven-and"
+        },
+        {
+          "key": "EPUB/ch023.xhtml#p1145-syllabus-1-in-his-ascension-as-it-was-triumphant-three-things-may-be",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch023.xhtml",
+          "anchor_index": 1145,
+          "item_range": "p1146-p1147",
+          "anchor": "(1.) In his ascension, as it was triumphant, three things may be considered:",
+          "items": [
+            {
+              "marker": "1st",
+              "text": ", The manner of it, With its representation of old; 2ndly , The place whereinto he ascended; 3rdly , The end of it, or what was the work which he had to do thereon."
+            },
+            {
+              "marker": "[1.]",
+              "text": "As unto the manner of it, it was openly triumphant and glorious. So is it described, Ephesians 4:8,"
+            }
+          ],
+          "marker_family": "ordinal",
+          "item_count": 2,
+          "announced_count": 3,
+          "positive_reasons": [
+            "count-category-formula",
+            "introductory-formula",
+            "introductory-punctuation"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "inconsistent-sequence"
+          ],
+          "whitelist_key": "EPUB/ch023.xhtml#p1145-syllabus-1-in-his-ascension-as-it-was-triumphant-three-things-may-be"
+        },
+        {
+          "key": "EPUB/ch028.xhtml#p1344-syllabus-but-it-is-from-our-own-sloth-and-darkness-that-we-do",
+          "action": "audit_only_weak_anchor",
+          "file": "EPUB/ch028.xhtml",
+          "anchor_index": 1344,
+          "item_range": "p1345-p1346",
+          "anchor": "But it is from our own sloth and darkness that we do not enjoy more visits of this grace, and that the dawnings of glory do not more shine on our souls. Such things as these may excite us to diligence in the duty proposed unto us. And I shall inquire, —",
+          "items": [
+            {
+              "marker": "1.",
+              "text": "What is that glory of Christ which we do or may behold by faith?"
+            },
+            {
+              "marker": "2.",
+              "text": "How do we behold it?"
+            }
+          ],
+          "marker_family": "arabic",
+          "item_count": 2,
+          "announced_count": null,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "introductory-punctuation",
+            "compact-run"
+          ],
+          "hard_exclusions": [],
+          "whitelist_key": "EPUB/ch028.xhtml#p1344-syllabus-but-it-is-from-our-own-sloth-and-darkness-that-we-do"
+        }
+      ]
+    },
+    {
+      "label": "Repeated word windows",
+      "observed": 25,
+      "budget": 25,
+      "status": "ok",
+      "samples": [
+        {
+          "phrase": "the glory of god in the face of jesus christ",
+          "count": 12
+        },
+        {
+          "phrase": "unto us child is born unto us son is given",
+          "count": 6
+        },
+        {
+          "phrase": "of the glory of god in the face of jesus",
+          "count": 6
+        },
+        {
+          "phrase": "us child is born unto us son is given and",
+          "count": 5
+        },
+        {
+          "phrase": "the brightness of his glory and the express image of",
+          "count": 5
+        },
+        {
+          "phrase": "brightness of his glory and the express image of his",
+          "count": 5
+        },
+        {
+          "phrase": "of his glory and the express image of his person",
+          "count": 5
+        },
+        {
+          "phrase": "are changed into the same image from glory to glory",
+          "count": 5
+        },
+        {
+          "phrase": "both which are in heaven and which are on earth",
+          "count": 5
+        },
+        {
+          "phrase": "the only-begotten son who is in the bosom of the",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "label": "Missing front CONTENTS pages",
+      "observed": 0,
+      "budget": 4,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Reference continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Citation continuation splits",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Adjacent duplicate paragraphs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing enumerator markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low-density chapter failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Malformed transition budget failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented sentence runs",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Greek word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Low Hebrew word coverage",
+      "observed": 1,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Greek clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing Hebrew clauses",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Residual AGES source artifacts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Flat ANALYSIS chapters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing configured fonts",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ],
+  "epub_checks": [
+    {
+      "label": "EPUB packaging errors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Greek characters",
+      "observed": 0,
+      "budget": 55,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Untagged Hebrew characters",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Hebrew integrity failures",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated phrase hits",
+      "observed": 0,
+      "budget": 8,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Possible Beta Code residue files",
+      "observed": 0,
+      "budget": 2,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Escaped language-tag files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Literal footnote marker files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Empty bracket noise files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Unprocessed AGES verse markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Page reference split files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Chapter headings rendered as paragraphs",
+      "observed": 2,
+      "budget": 3,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch003.xhtml",
+          "text": "Chapter 1"
+        },
+        {
+          "file": "EPUB/ch049.xhtml",
+          "text": "Chapter 7"
+        }
+      ]
+    },
+    {
+      "label": "Overlong headings containing body prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Missing chapter initialization files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Greek span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Fragmented Hebrew span-run files",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Noteref links without spacing class",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scripture blockquote false positives",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Orphan scripture brackets",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Glued ordinal anchors",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Structural bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Repeated structural markers",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Scholastic bold leaks",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Inline scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Trailing scholastic labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "DIGRESSION headings not h3",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Cross-chapter continuation before heading",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Overlong NAV entries",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Duplicate NAV labels",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Spaced caps OCR",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Lowercase page fragments",
+      "observed": 7,
+      "budget": 38,
+      "status": "ok",
+      "samples": [
+        {
+          "file": "EPUB/ch004.xhtml",
+          "text": "factores"
+        },
+        {
+          "file": "EPUB/ch008.xhtml",
+          "text": "as he also proclaims the same delight in him, from heaven, in the days of his fle"
+        },
+        {
+          "file": "EPUB/ch016.xhtml",
+          "text": "and verse 23, \"My Father will love him, and we will come unto him, and make our a"
+        },
+        {
+          "file": "EPUB/ch022.xhtml",
+          "text": "and in sundry other places. The assumption, the taking of our human nature to be"
+        },
+        {
+          "file": "EPUB/ch030.xhtml",
+          "text": "against him he lifted up himself; — which was the beginning of his transgression."
+        },
+        {
+          "file": "EPUB/ch039.xhtml",
+          "text": "whereunto we shall speak immediately. And if this were so excellent a privilege a"
+        },
+        {
+          "file": "EPUB/ch040.xhtml",
+          "text": "and the Psalmist, \"How long, LORD? wilt thou hide thyself for ever?\" Psalm 89:46."
+        }
+      ]
+    },
+    {
+      "label": "Noteref leading spaces",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Greek span legacy accents",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "Long quote joined to prose",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    },
+    {
+      "label": "I WILL/I AM mangles",
+      "observed": 0,
+      "budget": 0,
+      "status": "ok",
+      "samples": []
+    }
+  ]
+}

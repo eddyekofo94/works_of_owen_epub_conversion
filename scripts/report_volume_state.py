@@ -51,6 +51,19 @@ def _read_json(path: Path) -> dict:
         return {}
 
 
+def _read_latest_volume_report(vol, filename: str, fallback: Path) -> dict:
+    reports_root = _vol_path(vol) / "reports"
+    candidates = []
+    if reports_root.exists():
+        candidates = list(reports_root.glob(f"*/{filename}"))
+    if candidates:
+        latest = max(candidates, key=lambda p: p.stat().st_mtime)
+        data = _read_json(latest)
+        if data:
+            return data
+    return _read_json(fallback)
+
+
 def _pct(val: float | None, decimals: int = 2) -> str:
     if val is None:
         return "?"
@@ -68,9 +81,9 @@ def _maybe_pct(val: float | None) -> str | None:
 def gather_volume_data(vol: int) -> dict:
     bugs = _bugs_path(vol)
 
-    audit = _read_json(bugs / f"volume_{vol}_audit.json")
-    text_int = _read_json(bugs / f"volume_{vol}_text_integrity.json")
-    bug_reg = _read_json(bugs / f"volume_{vol}_bug_regressions.json")
+    audit = _read_latest_volume_report(vol, f"volume_{vol}_audit.json", bugs / f"volume_{vol}_audit.json")
+    text_int = _read_latest_volume_report(vol, f"volume_{vol}_text_integrity.json", bugs / f"volume_{vol}_text_integrity.json")
+    bug_reg = _read_latest_volume_report(vol, f"volume_{vol}_bug_regressions.json", bugs / f"volume_{vol}_bug_regressions.json")
     anom = _read_json(bugs / f"volume_{vol}_anomalies.json")
     unmatched_q_json = _read_json(bugs / f"volume_{vol}_unmatched_quotes.json")
     whitelist = _read_json(bugs / f"volume_{vol}_whitelist.json")
@@ -102,6 +115,7 @@ def gather_volume_data(vol: int) -> dict:
     gh = text_int.get("greek_hebrew_word_coverage", {})
     lat_cov_info = text_int.get("latin_word_coverage", {})
     lat_trans_info = text_int.get("latin_translation_coverage", {})
+    modern_notes_info = text_int.get("modern_notes_quality", {})
 
     # citations from scan_citations.py
     total_citations = 0
@@ -127,6 +141,9 @@ def gather_volume_data(vol: int) -> dict:
         "anomalies_count": anom.get("total_anomalies_count"),
         "total_citations": total_citations,
         "unresolved_citations": unresolved_citations,
+        "unresolved_modern_references": modern_notes_info.get("unresolved_modern_references", 0),
+        "untranslated_substantial_foreign_passages": modern_notes_info.get("untranslated_substantial_foreign_passages", 0),
+        "unenriched_legacy_footnotes": modern_notes_info.get("unenriched_legacy_footnotes", 0),
         "unmatched_quotes": unmatched_q_json.get("unmatched_quotes_count"),
         "ignored_warnings": whitelist.get("text_integrity", {}).get("ignored_warnings", []),
     }
@@ -251,6 +268,12 @@ def gather_volume_data(vol: int) -> dict:
             actions.append("investigate_latin_extraction")
         if unresolved_citations > 0:
             actions.append("translate_unresolved_citations")
+        if data.get("unresolved_modern_references", 0) > 0:
+            actions.append("resolve_modern_references")
+        if data.get("untranslated_substantial_foreign_passages", 0) > 0:
+            actions.append("translate_substantial_foreign_passages")
+        if data.get("unenriched_legacy_footnotes", 0) > 0:
+            actions.append("enrich_legacy_footnotes")
     if not has_convert:
         actions.append("create_per_volume_script")
     anom_count = data.get("anomalies_count")
@@ -325,6 +348,10 @@ def score_volume(d: dict) -> float:
     if total_cite > 0:
         cite_ratio = unresolved_cite / total_cite
         score += cite_ratio * 15.0
+
+    score += min(d.get("unresolved_modern_references", 0) * 0.5, 8.0)
+    score += min(d.get("untranslated_substantial_foreign_passages", 0) * 1.0, 10.0)
+    score += min(d.get("unenriched_legacy_footnotes", 0) * 0.75, 10.0)
 
     # splits
     splits = d.get("splits")

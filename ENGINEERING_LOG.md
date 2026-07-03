@@ -4216,3 +4216,215 @@ full #52 sequence in one `syllabus-anchor` paragraph:
 tests, EPUB audit, text-integrity audit, and bug-regression were rerun. Corrected
 reports are archived under
 `volumes/v1/reports/20260702_010629_issue_52_exact_four_heads/`.
+
+# 2026-07-02 — Issue #53 closed blockquote boundary repair
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The v1 textual report identified a false blockquote in Chapter 18, where two
+real displayed Scripture quotations were rendered as one large blockquote that
+also swallowed the following body exposition beginning “and in sundry other
+places. The assumption...”. Stage 1 extraction was already correct: the JSON
+contained two `[[BLOCKQUOTE]]` markers followed by a normal prose paragraph.
+The fault was render-side paragraph healing.
+
+Two generic repair rules were too permissive. `_repair_mid_sentence_blockquote_splits()`
+allowed a paragraph that was itself a `[[BLOCKQUOTE]]` to absorb the next
+`[[BLOCKQUOTE]]` when the first quote ended in a citation marker rather than
+terminal punctuation. Then `_repair_lowercase_continuation_splits()` attached
+lowercase prose to the preceding blockquote. The fix preserves the mid-sentence
+plain-prose repair but prevents blockquote-to-blockquote merging in that path,
+and it only allows lowercase prose to continue a blockquote when the quote
+looks genuinely unfinished.
+
+The EPUB audit now populates the existing `quote_prose_join` content-scan
+category for this failure shape, including the exact “and in sundry other
+places / The assumption...” prose swallowed into a blockquote. Regression tests
+cover the v1 sample as two blockquotes plus a normal paragraph and cover the
+audit helper's detection of the pre-fix bad shape.
+
+Verification for Volume 1: render-only completed; `EPUB/ch022.xhtml` now
+contains the Hebrews quotation and Philippians quotation as separate blockquote
+elements, followed by normal paragraph prose. EPUB audit passed with 0 errors
+and 0 warnings; text-integrity remains WARN with existing broader v1 warnings.
+Focused blockquote regressions passed. A broader two-file pytest run also
+passed structural tests but failed on unrelated existing whitelist/anomaly
+hygiene across several volumes. Session reports are archived under
+`volumes/v1/reports/20260702_015419_textual_53/`.
+
+# 2026-07-02 — Issues #54-#56 scholastic-anchor hardening
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The v1 textual report exposed two opposite failures in the scholastic-anchor
+pipeline. First, a developed `2.` exposition in Chapter 18 was incorrectly
+flattened into the preceding `1.` item. Second, compact binary syllabi such as
+“There can be but two senses of these words” and “And we may consider, both”
+were left as block list paragraphs.
+
+The root cause was that the shared list logic still had overlapping heuristic
+paths. The main classifier already rejected the Chapter 18 `1.`/`2.` pair as
+developed exposition, but a later inline-sequence path treated ordinary prose
+with Scripture-reference numbers and “account” language as an announced
+syllabus context. That allowed `2.` to be absorbed despite the item length and
+developed syntax. The digit count matcher now ignores numbers inside Scripture
+coordinates such as `John 1:1` and `Isaiah 53:3`, preventing those references
+from masquerading as list counts. The classifier and attach pass also now
+recognize `both` as a binary count and `senses` as a valid compact syllabus
+category, with a narrow bare-binary gate for anchors that intentionally lack
+terminal punctuation.
+
+Issue #54 was a concrete v1 OCR duplicate around `John 17:24`, not a generic
+list issue, so it was handled as a volume-specific `text_replacements` entry in
+`volumes/v1/convert.py`.
+
+Regression coverage now guards the exact three reported shapes: John 17:24
+duplicate removal, developed `2.` remaining a block item, and both compact
+binary syllabus forms flattening while the following `(1.) In general...`
+exposition remains block.
+
+Verification for Volume 1: render-only completed; direct XHTML inspection
+confirmed the duplicate is gone, `2.` remains a block paragraph in
+`EPUB/ch022.xhtml`, and the two `#56` binary syllabi are inline. EPUB audit
+passed with 0 errors and 0 warnings. Text-integrity remains WARN with existing
+broader v1 warnings; it now reports the old `(1st,) That the Word ceased...`
+whitelist entry as unused because that split has been repaired. Session reports
+are archived under
+`volumes/v1/reports/20260702_021705_textual_54_56_scholastic/`.
+
+# 2026-07-03 — Final-stage modern reference and translation notes
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The legacy phrase-driven inline translation system remained disabled, but there
+was no replacement architecture that could audit quote-level decisions before
+reader-facing output. A new manifest layer now scans each volume before render,
+records candidate actions, writes JSON/Markdown reports under
+`volumes/vN/reports/<timestamp>/`, and only wires high-confidence items into
+EPUB output.
+
+The new `scripts/modern_notes.py` manifest distinguishes main-body generated
+translation popups (`†`), main-body generated modern reference popups (`◇`),
+and existing Arabic source-footnote enrichments. Existing source footnote
+markers are untouched; if a curated or high-confidence modern note belongs
+inside an existing footnote, the renderer adds it below the original footnote
+content rather than adding another marker in the body. Owen-translated or
+paraphrased foreign passages suppress duplicate translation notes and may still
+receive citation-only notes when a high-confidence modern reference can be
+isolated. Fragment-only citation keys such as bare `cap.` references and
+Bible-shaped `2 Epist. 1:21` keys are filtered out so the system does not revive
+the old scattered-marker behavior.
+
+The text-integrity audit now reports unresolved modern references, untranslated
+substantial foreign passages, and unenriched legacy footnotes from the latest
+manifest. The ranked QA state report now prefers latest archived per-volume
+reports under `volumes/vN/reports/` before falling back to `bugs_fixes/`, so
+Need scoring includes the final-stage modern-notes metrics without requiring
+session reports to be written into `bugs_fixes/`.
+
+Verification for Volume 1: render-only completed through
+`volumes/v1/convert.py --render-only`; EPUB audit passed with 0 errors and 0
+warnings; focused pytest coverage passed (`tests/test_modern_notes.py`,
+`tests/test_typography_standard.py`, `tests/test_footnote_integrity.py`); and
+the bug-regression gate passed for v1. Text-integrity remains WARN with broader
+existing v1 issues plus the new modern-notes queue counts: 3 unresolved modern
+references, 3 untranslated substantial foreign passages, and 0 unenriched
+legacy footnotes. The v1 Need score remains below the project target at 12.1.
+Session reports are archived under
+`volumes/v1/reports/20260703_004129_final_modern_notes_verify/`; the generated
+manifest is under `volumes/v1/reports/20260703_004143_modern_notes/`.
+
+# 2026-07-03 — Modern reference overlap deduplication
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The v1 modern-note renderer emitted duplicate reference markers where curated
+long citation keys overlapped shorter legacy citation keys. In the sample
+around Athanasius/Basil/Jerome/Augustine, the manifest contained both complete
+sentence-level references and shorter substrings such as `Epist. 78`,
+`Epist. 71`, `lib. 5`, and `cap. 8, 9`; the insertion pass recomputed offsets
+after each marker insertion, allowing later substring matches to survive.
+
+The render-side manifest consumer now selects all non-overlapping matches on the
+original clean chapter text before inserting any marker. Candidates are still
+considered longest-first, so the complete curated reference wins and overlapping
+shorter candidates are suppressed. Insertions are then applied in reverse
+document order, preserving offsets and preventing adjacent `◇◇` runs.
+
+Regression coverage in `tests/test_modern_notes.py` now guards the exact
+Athanasius/Basil overlap pattern. Verification for Volume 1: render-only
+completed; direct XHTML inspection of `EPUB/ch004.xhtml` shows one `◇` after
+`Epist. 78.`, one after `Epist. 71.`, and one after the complete
+Augustine/Gregory reference unit. EPUB audit passed with 0 errors and 0
+warnings; focused pytest passed; v1 bug regressions passed. Text-integrity
+remains WARN for existing broader v1 queues and reports modern-note counts of 3
+unresolved references, 3 untranslated substantial foreign passages, and 0
+unenriched legacy footnotes. Session reports are archived under
+`volumes/v1/reports/20260703_011315_modern_note_dedup_verify/`.
+
+# 2026-07-03 — V1 textual #59-60 punctuation and inline binary syllabus repair
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+Two small live-output blemishes remained in Volume 1. In `ch023.xhtml`, the
+Psalm title gloss rendered as `"צִֹירֵי המעְלוֹת", Songs of Degrees,"`,
+leaving the English gloss inside a stray closing quote. The corrected repair is
+HTML-level, not raw-text-level: `volumes/v1/convert.py` now keeps the quotation
+marks inside the Hebrew `lang="he"` span and outside the English gloss, yielding
+`<span lang="he" xml:lang="he" dir="rtl">"צִֹירֵי המעְלוֹת"</span>, Songs of
+Degrees,`.
+
+In `ch005.xhtml`, the sentence `The foundation of the church is twofold:
+(1.) Real; (2.) Doctrinal.` still split `(2.) Doctrinal` into its own block
+after the list-level classes had already been attached. The existing flat-list
+test covered a plain paragraph shape, but not the live post-level-class shape.
+`scripts/owen_lists.py` now treats an already-classed paragraph as a syllabus
+context only when it already contains an inline marker plus a nearby count word
+ending in open punctuation, preserving the closed-sentence guard for ordinary
+prose.
+
+Regression coverage was added for both exact cases. Volume 1 was rebuilt with
+`volumes/v1/convert.py --render-only`; direct XHTML inspection confirmed the
+quote blemish and binary-syllabus split are gone. EPUB audit passed with 0
+errors and 0 warnings. Text-integrity remains WARN because of existing broader
+queues, not these two samples. The v1 bug-regression report passes. Session
+reports are archived under
+`volumes/v1/reports/20260703_013451_textual_59_60/`.
+
+Follow-up audit hardening found the related `ch027.xhtml` punctuation defect
+`<span lang="el">ἰσάγγελοι</span>"like`. The v1 HTML postprocess now inserts
+the missing space before the English gloss, and `scripts/audit_epub.py` plus
+`scripts/audit_foreign_punctuation.py` now flag two high-confidence classes:
+foreign-script quote/gloss quote bleed and foreign-script closing quotes glued
+to an English word. These checks are intentionally narrower than every
+quote-adjacent Greek/Hebrew span because many of Owen's quoted translations are
+legitimate review-only cases.
+
+# 2026-07-03 — Scholastic comma/semicolon continuation rule
+
+Status: **IMPLEMENTED (AWAITING VALIDATION)**
+
+The scholastic/list renderer now treats comma and semicolon endings as a local
+syntactic continuation invariant. The pre-render inline structural splitter
+will not split before a marker when the preceding reader-visible text ends in
+`,` or `;`. The rendered sibling pass is authoritative: adjacent list-item
+paragraphs are merged pairwise when the previous item's last meaningful
+reader-visible character is comma or semicolon, ignoring old word caps only for
+that immediate next item. After each merge, the newly merged paragraph is
+rechecked before any further sibling is absorbed, so long runs are not flattened
+blindly.
+
+The punctuation helper strips HTML tags, noteref anchors, footnote markers,
+whitespace, and closing quotes/brackets before checking the terminal character.
+Focused regression coverage was added for the concrete v1 ascension sample,
+pairwise repeat behavior, and noteref/closing-mark stripping. A persistent
+diagnostic script, `scripts/audit_inline_continuation_breaks.py`, scans the
+generated EPUB XHTML for adjacent list-item blocks left split after comma or
+semicolon continuations.
+
+Verification for Volume 1: `volumes/v1/convert.py --render-only` completed;
+`tests/test_owen_structure_classifier.py` passed; `render.py`,
+`scripts/owen_lists.py`, and the new audit script passed syntax compilation;
+the new inline-continuation audit reported 0 findings. The verification report
+is archived under
+`volumes/v1/reports/20260703_215226_inline_continuation_breaks/`.

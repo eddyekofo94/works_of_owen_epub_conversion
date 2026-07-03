@@ -10,7 +10,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
+import zipfile
 from copy import deepcopy
 from pathlib import Path
 from typing import Any
@@ -448,6 +450,54 @@ def build_check_rows(
     return rows
 
 
+def html_to_plain_text(raw: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", raw)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def epub_text_haystack(epub_path: Path) -> str:
+    if not epub_path.is_file():
+        return ""
+    parts: list[str] = []
+    try:
+        with zipfile.ZipFile(epub_path) as zf:
+            for name in zf.namelist():
+                if name.endswith((".xhtml", ".html")):
+                    raw = zf.read(name).decode("utf-8", "replace")
+                    parts.append(raw)
+                    parts.append(html_to_plain_text(raw))
+    except zipfile.BadZipFile:
+        return ""
+    return "\n".join(parts).lower()
+
+
+def build_absent_sample_row(epub: dict[str, Any], text: dict[str, Any], budget: dict[str, Any]) -> dict[str, Any]:
+    samples = budget.get("absent_samples", [])
+    haystacks = {
+        "text_integrity": json.dumps(text, ensure_ascii=False).lower(),
+        "epub": epub_text_haystack(Path(epub.get("epub", ""))),
+    }
+    failures = []
+    for sample in samples:
+        audit_name = sample.get("audit")
+        needle = str(sample.get("text", "")).lower()
+        if not needle or audit_name not in haystacks:
+            continue
+        if needle in haystacks[audit_name]:
+            failures.append({
+                "audit": audit_name,
+                "text": sample.get("text", ""),
+                "reason": sample.get("reason", ""),
+            })
+    return {
+        "label": "Implemented absent samples",
+        "observed": len(failures),
+        "budget": 0,
+        "status": "regression" if failures else "ok",
+        "samples": failures,
+    }
+
+
 def build_result(volume: int, root: Path, baseline_path: Path) -> dict[str, Any]:
     epub_json, text_json, out_json, out_md = report_paths(root, volume)
     epub = load_json(epub_json)
@@ -456,10 +506,11 @@ def build_result(volume: int, root: Path, baseline_path: Path) -> dict[str, Any]
 
     text_rows = build_check_rows(text, budget, TEXT_CHECKS)
     epub_rows = build_check_rows(epub, budget, EPUB_CHECKS)
+    absent_sample_row = build_absent_sample_row(epub, text, budget)
 
     text_extra = sorted(warning_codes(text) - set(budget["text_integrity"]["allowed_warning_codes"]))
     epub_extra = sorted(warning_codes(epub) - set(budget["epub"]["allowed_warning_codes"]))
-    regressions = [row for row in text_rows + epub_rows if row["status"] == "regression"]
+    regressions = [row for row in text_rows + epub_rows + [absent_sample_row] if row["status"] == "regression"]
 
     return {
         "volume": volume,
@@ -474,6 +525,7 @@ def build_result(volume: int, root: Path, baseline_path: Path) -> dict[str, Any]
         },
         "text_integrity_checks": text_rows,
         "epub_checks": epub_rows,
+        "absent_sample_checks": [absent_sample_row],
     }
 
 
@@ -500,7 +552,7 @@ def render_markdown(result: dict[str, Any]) -> str:
         "|-------|----------|--------|--------|",
     ]
 
-    for row in result["text_integrity_checks"] + result["epub_checks"]:
+    for row in result["text_integrity_checks"] + result["epub_checks"] + result.get("absent_sample_checks", []):
         lines.append(
             f"| {row['label']} | {row['observed']} | {row['budget']} | {row['status'].upper()} |"
         )
@@ -514,7 +566,7 @@ def render_markdown(result: dict[str, Any]) -> str:
             lines.append(f"- EPUB: {', '.join(extras['epub'])}")
 
     lines.extend(["", "## Triage Samples", ""])
-    for row in result["text_integrity_checks"] + result["epub_checks"]:
+    for row in result["text_integrity_checks"] + result["epub_checks"] + result.get("absent_sample_checks", []):
         if row["status"] != "regression" and not row["samples"]:
             continue
         lines.extend([f"### {row['label']}", ""])

@@ -71,6 +71,64 @@ BETA_CODE_RESIDUE_RE = re.compile(
     r"|[><=~|{}\[\]jJ+]+[abgdezhqiklmnxoprstufcyvwABGDEZHQIKLMNXOPRSTUFCYVW])\b"
 )
 
+QUOTE_PROSE_JOIN_RE = re.compile(
+    r'(?:'
+    r'["”]\s+and\s+in\s+sundry\s+other\s+places\b|'
+    r'\bThe\s+assumption,\s+the\s+taking\s+of\s+our\s+human\s+nature\b'
+    r')',
+    re.I,
+)
+
+
+def blockquote_has_joined_prose(blockquote_html: str) -> bool:
+    """Detect displayed quotations that have swallowed following exposition."""
+    plain = WHITESPACE_RE.sub(" ", HTML_TAG_RE.sub("", blockquote_html)).strip()
+    return bool(QUOTE_PROSE_JOIN_RE.search(plain))
+
+
+FOREIGN_SPAN_GLOSS_QUOTE_BLEED_RE = re.compile(
+    r'(?P<span><span\s+[^>]*lang=["\'](?P<lang>el|he)["\'][^>]*>.*?</span>)'
+    r'["”]\s*,\s+(?!["“])(?P<gloss>[A-Z][^<"“”]{2,100},)["”]',
+    re.I | re.S,
+)
+FOREIGN_SPAN_QUOTE_WORD_GLUE_RE = re.compile(
+    r'(?P<span><span\s+[^>]*lang=["\'](?P<lang>el|he)["\'][^>]*>.*?</span>)'
+    r'(?P<quote>["”])(?=[A-Za-z])',
+    re.I | re.S,
+)
+
+
+def find_foreign_span_quote_bleeds(raw: str) -> list[dict[str, str]]:
+    """Find high-confidence quote/punctuation bleed around Greek/Hebrew spans.
+
+    This catches the specific class where a quoted foreign-script title is
+    followed by an unquoted English gloss that accidentally receives a closing
+    quote, e.g. ``<span lang="he">...</span>", Songs of Degrees,"``.
+    Legitimate patterns like ``<span>...</span>", "translation"`` are excluded
+    because the English gloss explicitly opens its own quotation.
+    """
+    hits: list[dict[str, str]] = []
+    for match in FOREIGN_SPAN_GLOSS_QUOTE_BLEED_RE.finditer(raw):
+        snippet = WHITESPACE_RE.sub(" ", match.group(0)).strip()
+        hits.append({
+            "lang": match.group("lang"),
+            "gloss": WHITESPACE_RE.sub(" ", match.group("gloss")).strip(),
+            "snippet": snippet[:240],
+        })
+    return hits
+
+
+def find_foreign_span_quote_word_glue(raw: str) -> list[dict[str, str]]:
+    """Find a closing quote after a foreign span glued to the next English word."""
+    hits: list[dict[str, str]] = []
+    for match in FOREIGN_SPAN_QUOTE_WORD_GLUE_RE.finditer(raw):
+        snippet = WHITESPACE_RE.sub(" ", raw[max(0, match.start() - 80):match.end() + 120]).strip()
+        hits.append({
+            "lang": match.group("lang"),
+            "snippet": snippet[:240],
+        })
+    return hits
+
 
 class Audit:
     def __init__(self, epub_path: Path, out_dir: Path | None = None, no_whitelist: bool = False) -> None:
@@ -268,6 +326,8 @@ class Audit:
             "noteref_leading_space": [],
             "greek_span_legacy_accent": [],
             "quote_prose_join": [],
+            "foreign_span_quote_bleed": [],
+            "foreign_span_quote_word_glue": [],
             "i_will_mangle": [],
         }
         noteref_targets: list[str] = []
@@ -421,6 +481,36 @@ class Audit:
             if glued_hits:
                 add_sample(samples["glued_ordinal"], path, glued_hits[0])
                 totals["glued_ordinal_files"] += 1
+
+            # Blockquotes that swallow following body exposition after a closed quote.
+            blockquotes = re.findall(r"<blockquote\b[^>]*>.*?</blockquote>", raw, re.I | re.S)
+            for bq in blockquotes:
+                if blockquote_has_joined_prose(bq):
+                    bq_text = WHITESPACE_RE.sub(" ", HTML_TAG_RE.sub("", bq)).strip()
+                    add_sample(samples["quote_prose_join"], path, bq_text[:220])
+                    totals["quote_prose_join_files"] += 1
+                    break
+
+            foreign_quote_bleeds = find_foreign_span_quote_bleeds(raw)
+            if foreign_quote_bleeds:
+                add_sample(
+                    samples["foreign_span_quote_bleed"],
+                    path,
+                    foreign_quote_bleeds[0]["snippet"],
+                    lang=foreign_quote_bleeds[0]["lang"],
+                    gloss=foreign_quote_bleeds[0]["gloss"],
+                )
+                totals["foreign_span_quote_bleed_files"] += 1
+
+            foreign_quote_word_glue = find_foreign_span_quote_word_glue(raw)
+            if foreign_quote_word_glue:
+                add_sample(
+                    samples["foreign_span_quote_word_glue"],
+                    path,
+                    foreign_quote_word_glue[0]["snippet"],
+                    lang=foreign_quote_word_glue[0]["lang"],
+                )
+                totals["foreign_span_quote_word_glue_files"] += 1
 
             # Structural bold leaks: entire <p> is bold (>85% of text is in <strong>)
             p_blocks = re.findall(r"<p[^>]*>(.*?)</p>", raw, re.I | re.S)
@@ -591,6 +681,9 @@ class Audit:
             "lowercase_paragraph_start_files": totals["lowercase_paragraph_start_files"],
             "noteref_leading_space_files": totals["noteref_leading_space_files"],
             "greek_span_legacy_accent_files": totals["greek_span_legacy_accent_files"],
+            "quote_prose_join_files": totals["quote_prose_join_files"],
+            "foreign_span_quote_bleed_files": totals["foreign_span_quote_bleed_files"],
+            "foreign_span_quote_word_glue_files": totals["foreign_span_quote_word_glue_files"],
             "i_will_mangle_files": totals["i_will_mangle_files"],
             "samples": samples,
         }
@@ -617,6 +710,18 @@ class Audit:
             self.error("noteref_targets_missing", "Some noteref targets do not have matching endnote anchors", examples=missing_endnotes)
         if orphan_endnotes:
             self.warn("orphan_endnotes", "Some endnote anchors have no matching noteref", examples=orphan_endnotes)
+        if totals["foreign_span_quote_bleed_files"]:
+            self.warn(
+                "foreign_span_quote_bleed",
+                "A Greek/Hebrew span appears to bleed quotation punctuation into a following English gloss",
+                files=totals["foreign_span_quote_bleed_files"],
+            )
+        if totals["foreign_span_quote_word_glue_files"]:
+            self.warn(
+                "foreign_span_quote_word_glue",
+                "A closing quote after a Greek/Hebrew span is glued to the next English word",
+                files=totals["foreign_span_quote_word_glue_files"],
+            )
 
     def check_nav_links(self, zf: zipfile.ZipFile) -> None:
         link_count = 0

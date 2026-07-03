@@ -247,6 +247,8 @@ All of this is indeneted on the pdf, though I would like for this to be the case
 Fix:
 “for we shall be “ἰσάγγελοι” like unto angels, or equal to them. ” is there a way to catch these?
 
+Status 2026-07-03: IMPLEMENTED (AWAITING VALIDATION). Added a v1 HTML postprocess repair for the rendered Greek quote/English gloss spacing and added foreign-span punctuation audit coverage for closing quotes glued to the next English word.
+
 “(namely, unto all that believe, as it is expounded, 1 Peter 2:7 ( 8); ”
 
 Fix:
@@ -549,3 +551,88 @@ unto these four heads: I. Honor. II. Obedience. III. Conformity.
 Fix:
 Owen indicates four (4) heads, but the fourth is broken into a new line, this is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
 Can the algorithm have this included and the audits should check for this? This is a scholastic-anchor issue, and we need to ensure that our parsing logic correctly identifies and formats these anchors to maintain the intended structure and readability of the text. This may involve implementing additional rules or checks to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+## 53
+“"Forasmuch as the children are partakers of flesh and blood, he also himself likewise took part of the same. For verily he took not on him the nature of angels, but he took on him the seed of Abraham;" Philippians 2:6, 7,  "Being in the form of God, he took upon him the form of a servant;" and in sundry other places. The assumption, the taking of our human nature to be his own, by an ineffable act of his power and grace, is clearly expressed. And to take it to be his own, his own nature, can be no otherwise but by giving it a subsistence in his own person; otherwise his own nature it is not, nor can be. Hence God is said to "purchase his church with his own blood," Acts 20:28. That relation and denomination of "his own," is from the single person of him whose it is. The latter is declared, John 1:14, "The Word was made flesh;" Romans 8:3, God sent "his own Son in the likeness of sinful flesh;" Galatians 4:4, "Made of a woman, made under the law[…]”
+
+Fix:
+This on the epub is a "block quote" but on the pdf it is not, it is a paragraph. We need to review the extraction logic for block quotes to ensure that they are correctly identified and formatted as such, and that any text that is not intended to be a block quote is not mistakenly formatted as one. This may involve checking for specific formatting cues in the source text that indicate block quotes, and ensuring that these are properly captured during extraction.
+If I am catching this I am sure there are plenty of other instances where this is happening, we need to do a thorough review of the extraction logic for block quotes to ensure that it is accurately capturing the intended formatting and structure of the text as it appears in the original source. This may involve implementing additional checks or rules to differentiate between block quotes and regular paragraphs, and ensuring that any text that is not intended to be a block quote is not mistakenly formatted as one.
+We need audits for this,
+
+“Forasmuch as the children are partakers of flesh and blood, he also
+himself likewise took part of the same. For verily he took not on
+him the nature of angels, but he took on him the seed of Abraham;”
+
+and:
+“Being in the form of God, he took upon him the form of a
+servant;”
+
+Are the onlu block quotes, the rest is not, we need to ensure that our extraction logic correctly identifies and formats these block quotes, and that any text that is not intended to be a block quote is not mistakenly formatted as one. This may involve checking for specific formatting cues in the source text that indicate block quotes, and ensuring that these are properly captured during extraction.
+
+#  TODO: (2026-07-02 02:08)
+## 54
+ So he prays for all them who are given him of his Father, that they may be where he is, to behold his glory, John 17:24 of his Father, that they may be where he is, to behold his glory, John 17:24.
+ Fix:
+ there seem to be duplicates, Does the audits catch this? We need to ensure that our extraction logic is accurately capturing the text without introducing duplicates or other errors. This may involve implementing additional checks or rules to verify the integrity of the extracted text and ensure that it matches the original source as closely as possible.
+
+## 55
+but are verified in human nature only, and the person on the account thereof. 2. Sometimes that is spoken of the person which belongs not distinctly and originally unto
+
+Fix:
+2. here should be block, why is it not?
+
+## 56
+(1st,) That the Word ceased to be what it was, and was substantially turned into flesh
+(2ndly,) That continuing to be what it was, it was made to be also what before it was not.
+
+Fix:
+(1st,) That the Word ceased to be what it was, and was substantially turned into flesh (2ndly,) That continuing to be what it was, it was made to be also what before it was not. This is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+Should be flat, the scholastic-anchor should be inline, and the text should be on the same line as the anchor. We need to ensure that our parsing logic correctly identifies and formats these anchors to maintain the intended structure and readability of the text. This may involve implementing additional rules or checks to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+--
+
+(1.) What this work is, and
+(2.) How it is performed.
+Fix:
+(1.) What this work is, and (2.) How it is performed. This is a false break, based on scholastic-anchor this is an inline-flat list. Can we have a thorough review on the whole scholastic-anchor rules?
+As you can see there are still plenty of issues with the scholastic-anchor rules, we need to ensure that our parsing logic is robust enough to handle all instances of these anchors and format them correctly without introducing false breaks or other formatting issues. This may involve implementing additional checks or rules to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+Why isn't the solution thorough, robust enough to catch all of these issues? We need to review the entire extraction and parsing logic for scholastic anchors to ensure that it is comprehensive and can handle all instances of these anchors without introducing false breaks or other formatting issues. This may involve implementing additional checks or rules to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+## 57
+I. 1. What he did,
+
+Fix:
+The Roman numeral should be centered here.
+
+## 58
+“nd constant and it is so on a double account: —
+1. Of the object which shall be proposed unto us;
+2. Of the visive power or faculty wherewith we shall be endued: from the imperfection of both which in this world ariseth the imperfection of our view of the glory of Christ by faith, as has been declared.”
+
+Fix:
+should be flat here
+
+“nd constant and it is so on a double account: — 1. Of the object which shall be proposed unto us; 2. Of the visive power or faculty wherewith we shall be endued: from the imperfection of both which in this world ariseth the imperfection of our view of the glory of Christ by faith, as has been declared.”
+
+#  TODO: (2026-07-03 01:21)
+
+## 59
+inclusively, whose titles are "צִֹירֵי המעְלוֹת", Songs of Degrees,"
+Fix:
+"Songs of Degrees," should be outside the quotes, it is a false break, it should be "inclusively, whose titles are "צִֹירֵי המעְלוֹת", Songs of Degrees," as on the pdf, we need to review the parsing logic for identifying and handling these types of references to ensure that they are correctly formatted without introducing false breaks. This may involve implementing additional rules or checks to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+Status 2026-07-03: IMPLEMENTED (AWAITING VALIDATION). Added a v1 HTML postprocess repair so the rendered phrase keeps the quotation marks inside the Hebrew span and outside the English gloss: `whose titles are <span lang="he" xml:lang="he" dir="rtl">"צִֹירֵי המעְלוֹת"</span>, Songs of Degrees, or rather ascents...`.
+
+## 60
+“The foundation of the church is twofold: (1.) Real;
+(2.) Doctrinal. And in both ways, Christ alone is the foundation. The real foundation of the church he is, by virtue of the mystical union of it unto him, with all the benefits whereof, from thence and thereby, it is made partaker. For thence alone ”
+
+Fix:
+“The foundation of the church is twofold: (1.) Real; (2.) Doctrinal.
+And in both ways, Christ alone is the foundation. The real foundation of the church he
+
+Note: I have asked to fix this many times but this is still not fixed. the semi-colon gives a good indication that the scholastic-anchor is inline, and the following text should be on the same line as the anchor. We need to ensure that our parsing logic correctly identifies and formats these anchors to maintain the intended structure and readability of the text. This may involve implementing additional rules or checks to recognize when text should be kept together as part of a single section or paragraph, rather than being split into multiple lines.
+
+Status 2026-07-03: IMPLEMENTED (AWAITING VALIDATION). The post-render flat-list pass now recognizes already-classed live list paragraphs where an inline counted opener such as `twofold: (1.) Real;` should absorb the following sequential `(2.)` item.

@@ -1,6 +1,31 @@
 import re
 
 
+def reader_visible_text(html_frag: str) -> str:
+    """Return reader-visible text for structural punctuation checks."""
+    import html as _html
+
+    text = re.sub(
+        r'<a\b[^>]*(?:epub:type="noteref"|class="[^"]*\bnoteref\b)[^>]*>.*?</a>',
+        '',
+        html_frag,
+        flags=re.I | re.S,
+    )
+    text = re.sub(r'<sup\b[^>]*>.*?</sup>', '', text, flags=re.I | re.S)
+    text = re.sub(r'\[(?:f\d+|\d{1,4})\]', '', text, flags=re.I)
+    text = re.sub(r'<[^>]+>', ' ', text)
+    text = _html.unescape(text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return re.sub(r'\s+([.,;:?!])', r'\1', text)
+
+
+def last_meaningful_visible_char(html_frag: str) -> str:
+    """Last reader-visible character, ignoring closing quotes/brackets."""
+    visible = reader_visible_text(html_frag).rstrip()
+    visible = visible.rstrip(' "\'”’)]}»›')
+    return visible[-1:] if visible else ''
+
+
 def classify_flat_list_run(anchor: str, items: list[tuple[str, str]], *, chapter_title=None) -> dict:
     """Classify a complete adjacent marker run and expose named evidence.
 
@@ -38,13 +63,14 @@ def classify_flat_list_run(anchor: str, items: list[tuple[str, str]], *, chapter
         term_words = re.findall(r"[A-Za-z][A-Za-z-]*", term.lower())
         return bool(set(term_words) & scholastic_terms)
 
-    count_words = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    count_words = {"both": 2, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
                    "seven": 7, "eight": 8, "nine": 9, "ten": 10,
                    "twofold": 2, "threefold": 3, "fourfold": 4}
-    count_pattern = r"(?:%s|\d+)" % "|".join(count_words)
+    digit_count_pattern = r"(?<![:\w])\d+(?![:\w])"
+    count_pattern = r"(?:%s|%s)" % ("|".join(count_words), digit_count_pattern)
     category_pattern = (
         r"(?:things?|heads?|parts?|ways?|points?|accounts?|regards?|sorts?|"
-        r"considerations?|observations?|particulars?|respects?|instances?|"
+        r"considerations?|observations?|particulars?|respects?|instances?|senses?|"
         r"grounds?|branches?|acts?|causes?|effects?|properties?|arguments?|"
         r"propositions?|ends?|duties?|directions?|inquiries|uses?)"
     )
@@ -66,6 +92,7 @@ def classify_flat_list_run(anchor: str, items: list[tuple[str, str]], *, chapter
     formula = re.search(
         r"\b(?:there are|consists? in|reduced unto|may be referred to|"
         r"I shall (?:briefly )?(?:observe|look at|consider|speak to|propose|mention)|"
+        r"(?:we|I)\s+may\s+consider,\s+both|"
         r"as follows?|these? following|following particulars?|"
         r"(?:may|to) be (?:observed|noted|considered|mentioned)|"
         r"are required|are these|namely these|namely, these|in particular|"
@@ -308,18 +335,23 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
 
     # ── patterns ─────────────────────────────────────────────────────────────
     _EXPLICIT_COUNT_RE = _re.compile(
-        r'\b(?:I\s+understand\s+)?(?:two|three|four|five|six|seven|'
-        r'eight|nine|ten|twofold|threefold|fourfold|\d+)\b.{0,120}'
+        r'\b(?:I\s+understand\s+)?(?:both|two|three|four|five|six|seven|'
+        r'eight|nine|ten|twofold|threefold|fourfold|(?<![:\w])\d+(?![:\w]))\b.{0,120}'
         r'\b(?:things?|ways?|heads?|accounts?|regards?|parts?|'
-        r'points?|sorts?|considerations?|observations?|particulars?|'
+        r'points?|sorts?|senses?|considerations?|observations?|particulars?|'
         r'respects?|instances?)\b.{0,100}[—\-:,;.]\s*$',
         _re.I,
     )
     _FORMULA_TAIL_RE = _re.compile(
         r'\b(?:these?\s+following|as\s+follows?|following\s+particulars?|'
         r'(?:may|to)\s+be\s+(?:observed|noted|considered|mentioned)|'
+        r'(?:we|I)\s+may\s+consider,\s+both|'
         r'I\s+shall\s+(?:observe|note|propose|mention|consider)|'
         r'in\s+particular|are\s+these|namely\s+these|namely,\s+these)\b.{0,60}[—\-:,;.]\s*$',
+        _re.I,
+    )
+    _BARE_BINARY_SYLLABUS_RE = _re.compile(
+        r'\b(?:(?:we|I)\s+may\s+consider,\s+both|two\s+senses\s+of\s+these\s+words)\s*$',
         _re.I,
     )
     _LIST_ITEM_RE = _re.compile(
@@ -374,8 +406,8 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             return 0
         cleaned = _strip_marker(text)
         m = _re.search(
-            r'\b(two|three|four|five|six|seven|eight|nine|ten|'
-            r'twofold|threefold|fourfold|\d+)\b',
+            r'\b(both|two|three|four|five|six|seven|eight|nine|ten|'
+            r'twofold|threefold|fourfold|(?<![:\w])\d+(?![:\w]))\b',
             cleaned, _re.I,
         )
         if not m:
@@ -383,7 +415,7 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         w = m.group(1).lower()
         if w.isdigit():
             return int(w)
-        return {'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
+        return {'both': 2, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6,
                 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
                 'twofold': 2, 'threefold': 3, 'fourfold': 4}.get(w, 0)
 
@@ -396,9 +428,9 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
         late_syllabus_after_whereby = bool(
             whereby_match
             and _re.search(
-                r'\b(?:two|three|four|five|six|seven|eight|nine|ten|twofold|'
+                r'\b(?:both|two|three|four|five|six|seven|eight|nine|ten|twofold|'
                 r'threefold|fourfold)\b.{0,120}\b(?:things?|ways?|heads?|'
-                r'accounts?|regards?|parts?|points?|considerations?|instances?)\b',
+                r'accounts?|regards?|parts?|points?|senses?|considerations?|instances?)\b',
                 plain_for_whereby[whereby_match.end():],
                 _re.I,
             )
@@ -407,6 +439,8 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             return False
         if is_list_item:
             stripped = _strip_marker(plain)
+            if _BARE_BINARY_SYLLABUS_RE.search(stripped):
+                return True
             body_wc = len(stripped.split())
             if body_wc > _ANCHOR_LIMIT:
                 stripped_for_count = _without_inline_markers(stripped)
@@ -422,6 +456,8 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
             stripped_for_count = _without_inline_markers(stripped)
             return bool(_EXPLICIT_COUNT_RE.search(stripped_for_count) or _FORMULA_TAIL_RE.search(stripped_for_count))
 
+        if _BARE_BINARY_SYLLABUS_RE.search(plain):
+            return True
         last = plain.rstrip('\"\'').strip()
         if not last:
             return False
@@ -500,12 +536,21 @@ def _attach_em_dash_flat_list(html: str, config: dict = None) -> str:
 
     def _has_syllabus_context(plain_text: str) -> bool:
         stripped = _without_inline_markers(_strip_marker(plain_text))
+        if _BARE_BINARY_SYLLABUS_RE.search(stripped):
+            return True
         if _EXPLICIT_COUNT_RE.search(stripped) or _FORMULA_TAIL_RE.search(stripped):
             return True
+        if _INLINE_MARKER_RE.search(plain_text) and _re.search(
+            r'\b(?:both|two|three|four|five|six|seven|eight|nine|ten|twofold|'
+            r'threefold|fourfold)\b.{0,80}[:;,—-]\s*$',
+            stripped,
+            _re.I,
+        ):
+            return True
         return bool(_re.search(
-            r'\b(?:two|three|four|five|six|seven|eight|nine|ten|twofold|'
+            r'\b(?:both|two|three|four|five|six|seven|eight|nine|ten|twofold|'
             r'threefold|fourfold)\b.{0,120}\b(?:things?|ways?|heads?|'
-            r'accounts?|regards?|parts?|points?|considerations?|instances?)\b',
+            r'accounts?|regards?|parts?|points?|senses?|considerations?|instances?)\b',
             stripped,
             _re.I,
         ))
@@ -1141,7 +1186,7 @@ def _merge_short_inline_lists(html: str) -> str:
     _RULE_B_WORD_LIMIT = 40      # cap to prevent merging long exposition paragraphs
 
     def _plain_text(html_frag: str) -> str:
-        return _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', html_frag)).strip()
+        return reader_visible_text(html_frag)
 
     def _content_word_count(plain: str) -> int:
         return len(plain.split())
@@ -1201,6 +1246,28 @@ def _merge_short_inline_lists(html: str) -> str:
                     r'\1', item, flags=_re.S,
                 )
                 item_contents.append(('', inner))
+
+        if len(item_contents) >= 2:
+            run_out = []
+            current_mk, current_ct = item_contents[0]
+            merged_pairwise = False
+            for next_mk, next_ct in item_contents[1:]:
+                if last_meaningful_visible_char(current_ct) in {',', ';'}:
+                    current_ct = (
+                        current_ct.rstrip()
+                        + ' '
+                        + (next_mk or '')
+                        + next_ct.lstrip()
+                    )
+                    merged_pairwise = True
+                    continue
+                run_out.append(f'<p class="{run_cls}">{current_mk}{current_ct}</p>')
+                current_mk, current_ct = next_mk, next_ct
+            run_out.append(f'<p class="{run_cls}">{current_mk}{current_ct}</p>')
+            if merged_pairwise:
+                out.append('\n'.join(run_out))
+                i = j
+                continue
 
         # ── Sibling Symmetry Guard: if any item in the run is a long paragraph
         #    exceeding _RULE_B_WORD_LIMIT, do not merge the run at all.

@@ -406,8 +406,10 @@ def _inject_apple_books_options(epub_path):
 
 def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num=None, trans_notes=None, glossary_notes=None, config=None, biographical_notes=None):
     from scripts.translation_db import FOOTNOTE_TRANSLATIONS
+    from scripts.modern_notes import footnote_enrichment_map
     from render import tag_unicode_ranges
     fn_map = {f.fnum: f for f in footnotes.values()}
+    manifest_enrichments = footnote_enrichment_map((config or {}).get("modern_notes_manifest", {}))
     parts = ['<section epub:type="footnotes" role="doc-endnotes" hidden="hidden">']
     for fnum in sorted(fn_map.keys()):
         fn = fn_map[fnum]
@@ -416,7 +418,7 @@ def build_endnotes_chapter(footnotes, style_item=None, valid_fnums=None, vol_num
         
         # Look up translation and modernized patristic citation
         trans_key = f"v{vol_num}_fn{fnum}" if vol_num else f"v3_fn{fnum}"
-        trans_info = FOOTNOTE_TRANSLATIONS.get(trans_key)
+        trans_info = manifest_enrichments.get(fnum) or FOOTNOTE_TRANSLATIONS.get(trans_key)
         
         extra_html = ""
         if trans_info:

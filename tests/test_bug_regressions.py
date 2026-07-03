@@ -746,6 +746,72 @@ def test_issue_39_combined_roman_decimal_marker_stays_inline():
     assert '<p class="list-item list-level-1 block-list-primary"><strong>I. 1.</strong> What he did preparatory' in html
 
 
+def test_tokenized_long_roman_opener_centers_numeral_only():
+    html, _, _ = markdown_to_html(
+        "[[ROMAN_HEAD]] I. He it is in whom our nature, which was debased as low as hell "
+        "by apostasy from God, is exalted above the whole creation.",
+        current_mode="BODY_START",
+        pending_drop_cap=True,
+    )
+
+    assert '<h4 class="roman-subheading"><strong>I.</strong></h4>' in html
+    assert '<p class="first">He it is in whom our nature' in html
+    assert '<p class="roman-list-item' not in html
+    assert '<h4 class="roman-subheading"><strong>I.</strong> He it is' not in html
+
+
+def test_tokenized_front_matter_roman_opener_uses_centered_fallback():
+    html, _, _ = markdown_to_html(
+        "[[ROMAN_HEAD]] I. He it is in whom our nature, which was debased as low as hell "
+        "by apostasy from God, is exalted above the whole creation.",
+        current_mode="FRONT_MATTER",
+        front_matter_style="prose",
+    )
+
+    assert '<h4 class="roman-subheading"><strong>I.</strong></h4>' in html
+    assert '<p class="front-matter-prose first">He it is in whom our nature' in html
+    assert '<p class="roman-list-item' not in html
+
+
+def test_for_comma_long_roman_opener_is_section_not_list():
+    html, _, _ = markdown_to_html(
+        "He is the only foundation. For,\n\n"
+        "I. He it is in whom our nature, which was debased as low as hell by apostasy "
+        "from God, is exalted above the whole creation.",
+        current_mode="FRONT_MATTER",
+        front_matter_style="prose",
+    )
+
+    assert '<h4 class="roman-subheading"><strong>I.</strong></h4>' in html
+    assert '<p class="front-matter-prose">He it is in whom our nature' in html
+    assert '<p class="roman-list-item' not in html
+
+
+def test_tokenized_compact_roman_syllabus_still_flattens():
+    html, _, _ = markdown_to_html(
+        "The respect may be reduced unto these two heads:\n\n"
+        "[[ROMAN_HEAD]] I. Honor.\n\n"
+        "[[ROMAN_HEAD]] II. Obedience.",
+        current_mode="BODY_TEXT",
+    )
+
+    assert '<p class="syllabus-anchor">The respect may be reduced unto these two heads: ' in html
+    assert '<strong>I.</strong> Honor. <strong>II.</strong> Obedience.' in html
+    assert 'roman-subheading' not in html
+
+
+def test_ill_abbreviation_is_not_promoted_to_roman_heading():
+    for sample in [
+        "ill. For what he so does is not allowed.",
+        "Ill. For what he so does is not allowed.",
+        "ILL. For what he so does is not allowed.",
+    ]:
+        html, _, _ = markdown_to_html(sample, current_mode="BODY_TEXT")
+        assert "roman-subheading" not in html
+        assert "roman-list-item" not in html
+        assert "For what he so does" in html
+
+
 def test_issue_32_pdf_page_384_reference_run_is_not_jumbled():
     fitz = pytest.importorskip("fitz")
     pymupdf4llm = pytest.importorskip("pymupdf4llm")
@@ -1227,6 +1293,79 @@ def test_issue_50_inline_first_marker_absorbs_confirmed_second_marker_only():
     ) in result
 
 
+def test_issue_60_classed_inline_first_marker_absorbs_confirmed_second_marker():
+    from render import _attach_em_dash_flat_list
+
+    html = (
+        '<p class="list-item list-level-1 block-list-primary">'
+        'The foundation of the church is twofold: <strong>(1.)</strong> Real;</p>\n'
+        '<p class="list-item list-level-2 block-list-subpoint">'
+        '<strong>(2.)</strong> Doctrinal. And in both ways, Christ alone is the foundation.</p>'
+    )
+    result = _attach_em_dash_flat_list(html)
+    assert result.count('<p') == 1
+    assert 'class="list-item list-level-1 block-list-primary syllabus-anchor"' in result
+    assert (
+        'twofold: <strong>(1.)</strong> Real; '
+        '<strong>(2.)</strong> Doctrinal. And in both ways'
+    ) in result
+
+
+def test_issue_59_v1_songs_of_degrees_gloss_drops_stray_closing_quote():
+    from volumes.v1.convert import _postprocess_v1_html
+
+    hebrew_sample = (
+        '<p>whose titles are "<span lang="he" xml:lang="he" dir="rtl">'
+        'צִֹירֵי המעְלוֹת</span>", Songs of Degrees," or rather ascents</p>'
+    )
+    greek_sample = (
+        '<p>for we shall be "<span lang="el" xml:lang="el">'
+        'ἰσάγγελοι</span>"like unto angels, or equal to them.</p>'
+    )
+    repaired = _postprocess_v1_html(hebrew_sample + greek_sample, {"title": "Chapter 19"})
+    assert 'are "<span lang="he"' not in repaired
+    assert 'Songs of Degrees,"' not in repaired
+    assert '</span>"like' not in repaired
+    assert (
+        'whose titles are <span lang="he" xml:lang="he" dir="rtl">'
+        '"צִֹירֵי המעְלוֹת"</span>, Songs of Degrees, or rather ascents'
+    ) in repaired
+    assert '<span lang="el" xml:lang="el">ἰσάγγελοι</span>" like unto angels' in repaired
+
+
+def test_foreign_span_quote_bleed_audit_catches_unquoted_english_gloss():
+    from scripts.audit_epub import find_foreign_span_quote_bleeds, find_foreign_span_quote_word_glue
+
+    bad = (
+        'whose titles are <span lang="he" xml:lang="he" dir="rtl">'
+        'צִֹירֵי המעְלוֹת</span>", Songs of Degrees," or rather ascents'
+    )
+    glued = (
+        'for we shall be "<span lang="el" xml:lang="el">'
+        'ἰσάγγελοι</span>"like unto angels, or equal to them.'
+    )
+    good = (
+        'whose titles are <span lang="he" xml:lang="he" dir="rtl">'
+        '"צִֹירֵי המעְלוֹת"</span>, Songs of Degrees, or rather ascents'
+    )
+    spaced = (
+        'for we shall be "<span lang="el" xml:lang="el">'
+        'ἰσάγγελοι</span>" like unto angels, or equal to them.'
+    )
+    translated = (
+        'The title is <span lang="he" xml:lang="he" dir="rtl">'
+        'שִׁיר יְדִידְֹת</span>", "A song of loves;" — that is'
+    )
+
+    hits = find_foreign_span_quote_bleeds(bad)
+    assert hits and hits[0]["gloss"] == "Songs of Degrees,"
+    assert find_foreign_span_quote_bleeds(good) == []
+    assert find_foreign_span_quote_bleeds(translated) == []
+    glue_hits = find_foreign_span_quote_word_glue(glued)
+    assert glue_hits and glue_hits[0]["lang"] == "el"
+    assert find_foreign_span_quote_word_glue(spaced) == []
+
+
 def test_issue_51_inline_sequence_starter_is_bolded_without_flattening_exposition():
     from render import _attach_em_dash_flat_list
 
@@ -1240,6 +1379,74 @@ def test_issue_51_inline_sequence_starter_is_bolded_without_flattening_expositio
     assert '<p>As, <strong>1.</strong> The instances' in result
     assert result.count('class="list-item"') == 2
     assert 'syllabus-anchor' not in result
+
+
+def test_issue_54_v1_john_17_24_duplicate_clause_removed():
+    from shared import _repair_owen_ocr_errors
+    from volumes.v1.convert import OVERRIDES
+
+    raw = (
+        "So he prays for all them who are given him of his Father, that they may be "
+        "where he is, to behold his glory, John 17:24 of his Father, that they may "
+        "be where he is, to behold his glory, John 17:24. It is not the essential glory."
+    )
+    cleaned = _repair_owen_ocr_errors(raw, config=OVERRIDES)
+
+    assert (
+        "So he prays for all them who are given him of his Father, that they may be "
+        "where he is, to behold his glory, John 17:24. It is not the essential glory."
+    ) in cleaned
+    assert "John 17:24 of his Father" not in cleaned
+
+
+def test_issue_55_developed_second_item_stays_block():
+    html, _, _ = markdown_to_html(
+        "Unto that variety of enunciations which is used in the Scripture concerning him; "
+        "which I shall name only, and conclude.\n\n"
+        "**1.** Some things are spoken of the person of Christ, wherein the enunciation "
+        "is verified with respect unto one nature only; as — \"The Word was with God, "
+        "and the Word was God,\" John 1:1; — \"Before Abraham was, I am,\" John 8:68, — "
+        "\"Upholding all things by the word of his power,\" Hebrews 1:3. These things "
+        "are all spoken of the person of Christ, but belong unto it on account of his "
+        "divine nature. So is it said of him, \"Unto us a child is born, unto us a son "
+        "is given,\" Isaiah 9:6; — \"A man of sorrows, and acquainted with grief,\" "
+        "Isaiah 53:3. They are spoken of the person of Christ, but are verified in "
+        "human nature only, and the person on the account thereof.\n\n"
+        "**2.** Sometimes that is spoken of the person which belongs not distinctly and "
+        "originally unto either nature, but doth belong unto him on the account of their "
+        "union in him, — which are the most direct enunciations concerning the person of Christ."
+    )
+
+    assert 'syllabus-anchor' not in html
+    assert html.count('block-list-primary') == 2
+    assert re.search(r'</p>\s*<p class="list-item list-level-1 block-list-primary"><strong>2\.</strong>', html)
+
+
+def test_issue_56_bare_binary_syllabus_anchors_flatten():
+    html, _, _ = markdown_to_html(
+        'There can be but two senses of these words\n\n'
+        '**(1st,)** That the Word ceased to be what it was, and was substantially turned into flesh\n\n'
+        '**(2ndly,)** That continuing to be what it was, it was made to be also what before it was not.'
+    )
+    assert 'class="list-item' not in html
+    assert (
+        'There can be but two senses of these words <strong>(1st,)</strong> '
+        'That the Word ceased to be what it was'
+    ) in html
+    assert '<strong>(2ndly,)</strong> That continuing to be what it was' in html
+
+    html, _, _ = markdown_to_html(
+        'And we may consider, both\n\n'
+        '**(1.)** What this work is, and\n\n'
+        '**(2.)** How it is performed.\n\n'
+        '**(1.)** In general; herein Christ exerteth and exerciseth all his love.'
+    )
+    assert html.count('class="list-item') == 1
+    assert (
+        'And we may consider, both <strong>(1.)</strong> What this work is, and '
+        '<strong>(2.)</strong> How it is performed.'
+    ) in html
+    assert re.search(r'<p class="list-item list-level-2 block-list-subpoint"><strong>\(1\.\)</strong> In general;', html)
 
 
 def test_syllabus_anchor_audit_emits_decision_ready_candidate():
@@ -1528,9 +1735,24 @@ def test_implemented_bug_samples_stay_absent(volume):
 
     text_result = text_integrity_result(volume)
     epub_result = epub_audit_result(volume)
+    _, epub_path = paths_for(volume)
+    epub_text = ""
+    if epub_path.exists():
+        epub_parts = []
+        with zipfile.ZipFile(epub_path) as zf:
+            for name in zf.namelist():
+                if name.endswith((".xhtml", ".html")):
+                    raw = zf.read(name).decode("utf-8", "replace")
+                    epub_parts.append(raw)
+                    epub_parts.append(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw)).strip())
+        epub_text = "\n".join(epub_parts).lower()
+
     haystacks = {
         "text_integrity": json.dumps(text_result, ensure_ascii=False).lower(),
-        "epub": json.dumps(epub_result, ensure_ascii=False).lower(),
+        "epub": "\n".join([
+            json.dumps(epub_result, ensure_ascii=False).lower(),
+            epub_text,
+        ]),
     }
 
     failures = []
@@ -2598,6 +2820,48 @@ def test_render_repair_mid_sentence_used_in_full_pipeline():
     assert '<blockquote' not in html, (
         "Mid-sentence break before blockquote must render as plain prose, not blockquote"
     )
+
+
+def test_closed_adjacent_blockquotes_do_not_swallow_following_prose():
+    """Issue 53: two displayed Scripture quotes must not absorb body exposition."""
+    html, _, _ = markdown_to_html(
+        'The first it does, Hebrews 2:14, 16,\n\n'
+        '[[BLOCKQUOTE]] "Forasmuch as the children are partakers of flesh and blood, '
+        'he also himself likewise took part of the same. For verily he took not on '
+        'him the nature of angels, but he took on him the seed of Abraham;" '
+        'Philippians 2:6, 7, [f6]\n\n'
+        '[[BLOCKQUOTE]] "Being in the form of God, he took upon him the form of a servant;"\n\n'
+        'and in sundry other places. The assumption, the taking of our human nature '
+        'to be his own, by an ineffable act of his power and grace, is clearly expressed.'
+    )
+
+    assert html.count('<blockquote') == 2
+    assert (
+        '<p>and in sundry other places. The assumption, the taking of our human nature '
+        'to be his own, by an ineffable act of his power and grace, is clearly expressed.</p>'
+    ) in html
+    blockquotes = re.findall(r'<blockquote\b[^>]*>.*?</blockquote>', html, re.S)
+    assert all('The assumption, the taking of our human nature' not in bq for bq in blockquotes)
+
+
+def test_quote_prose_join_audit_flags_issue_53_shape():
+    from scripts.audit_epub import blockquote_has_joined_prose
+
+    bad_blockquote = (
+        '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">'
+        '"Being in the form of God, he took upon him the form of a servant;" '
+        'and in sundry other places. The assumption, the taking of our human nature '
+        'to be his own, by an ineffable act of his power and grace, is clearly expressed.'
+        '</p></blockquote>'
+    )
+    good_blockquote = (
+        '<blockquote epub:type="z3998:quotation"><p class="blockquote-content">'
+        '"Being in the form of God, he took upon him the form of a servant;"'
+        '</p></blockquote>'
+    )
+
+    assert blockquote_has_joined_prose(bad_blockquote)
+    assert not blockquote_has_joined_prose(good_blockquote)
 
 
 # ---------------------------------------------------------------------------

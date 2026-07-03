@@ -146,6 +146,11 @@
         "audit": "epub",
         "text": "2 dly .",
         "reason": "Spaced ordinal OCR artifact must be normalized before rendering"
+      },
+      {
+        "audit": "epub",
+        "text": "(1 Peter 1:111 all diligence to search and attend unto, as did the prophets of old (1 Peter 1:11, 12)",
+        "reason": "V1 duplicated Scripture-reference OCR run must collapse to (1 Peter 1:11, 12)"
       }
     ]
   },

@@ -162,6 +162,17 @@ def _postprocess_v1_html(html, chapter):
         '<div class="contents-part-divider"><span class="divider-ornament">❦</span><h3 class="contents-part-title">PART II</h3></div>'
     )
 
+    # Keep the quote marks visually bound to the RTL Hebrew title, not to the
+    # following English gloss.
+    html = html.replace(
+        '"<span lang="he" xml:lang="he" dir="rtl">צִֹירֵי המעְלוֹת</span>", Songs of Degrees,"',
+        '<span lang="he" xml:lang="he" dir="rtl">"צִֹירֵי המעְלוֹת"</span>, Songs of Degrees,',
+    )
+    html = html.replace(
+        '<span lang="el" xml:lang="el">ἰσάγγελοι</span>"like unto angels',
+        '<span lang="el" xml:lang="el">ἰσάγγελοι</span>" like unto angels',
+    )
+
     return html
 
 
@@ -483,6 +494,7 @@ OVERRIDES = {
         '1 John 5:205:20': '1 John 5:20',
         'Romans 1:1Romans': 'Romans 1:1',
         'Matthew 4:1Matthew 4': 'Matthew 4:1',
+        'John 17:24 of his Father, that they may be where he is, to behold his glory, John 17:24': 'John 17:24',
         # Issue 46: "15:211 Corinthians" — verse fused with next book reference
         '1 Corinthians 15:211 Corinthians': '1 Corinthians 15:21',
         'considered?"': 'considered?',
@@ -512,7 +524,6 @@ OVERRIDES = {
         'Dr. S Clarke, in 1712': 'Dr. Samuel Clarke, in 1712',
         'In 1710, Whiston was expelled': 'In 1710, William Whiston was expelled',
         'Pierce and Hallet': 'James Peirce and Joseph Hallet',
-
         # Punctuation spacing and OCR blemishes
         'apostasy,,': 'apostasy,',
         'Q. 2 . What': 'Q. 2. What',
@@ -539,6 +550,7 @@ OVERRIDES = {
         # The ghost inserts "reparation and recovery from sin. So he affirms again, 1 Cor 15:21,"
         # between the verse ref and its actual continuation.  Strip the ghost clause.
         r'(1 Corinthians 15:21)\s+reparation and recovery from sin\.\s+So he affirms again,\s+1 Corinthians 15:21,': r'\1,',
+        r'\(1 Peter 1:111 all diligence to search and attend unto, as did the prophets of old \(1 Peter 1:11, 12\)': '(1 Peter 1:11, 12)',
         # Issue 49: Ch 20 (Chapter 17) para 45 — OCR dropped the terminal period.
         # "...essentially in himself" ends the sentence; must close with a period.
         # Negative lookahead prevents doubling if the period is ever added to the JSON.

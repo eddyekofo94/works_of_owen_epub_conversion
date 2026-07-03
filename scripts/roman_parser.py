@@ -1,6 +1,11 @@
 import re
 from html import escape as _html_escape
-from shared import ROMAN_ONLY_RE, ROMAN_LIST_TOKEN
+from shared import (
+    ROMAN_ONLY_RE,
+    ROMAN_LIST_TOKEN,
+    _ROMAN_EXCLUSION_LOOKAHEAD,
+    _ROMAN_NUMERAL_DOT_PATTERN,
+)
 
 def _clean_heading_text(text):
     """Remove stray markdown emphasis markers from extracted heading text."""
@@ -36,10 +41,13 @@ def _roman_head_match(text):
     # Roman-numeral letters (LXX, MT, OT, NT, DV, KJV, AV, NIV, ESV, NRSV).
     # Also exclude any Roman value > L (50) in body text — large values like LXX (70)
     # are virtually never section headings in Owen; they are abbreviations.
-    _EXCLUSION = r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])'
     m = re.match(
-        _EXCLUSION + r'^(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?(?:\s+(?P<rest>.*))?$',
+        _ROMAN_EXCLUSION_LOOKAHEAD
+        + r'^(?:\*\*)?(?P<roman>'
+        + _ROMAN_NUMERAL_DOT_PATTERN
+        + r')(?:\*\*)?(?:\s+(?P<rest>.*))?$',
         (text or '').strip(),
+        re.I,
     )
     if m and _roman_to_int(m.group('roman')) > 50:
         return None
@@ -71,8 +79,20 @@ def _is_roman_outline_entry(roman_text, previous_text, expected_roman_number):
     rest = (match.group('rest') or '').strip()
     if not rest:
         return False, None
+    strong_outline_start = bool(
+        roman_number == 1
+        and re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
+    )
+    loose_punctuation_start = bool(
+        roman_number == 1
+        and re.search(r'(?:[—-]|,)\s*$', previous_text)
+    )
+    compact_after_loose_start = (
+        loose_punctuation_start
+        and len(re.findall(r'\w+', rest)) <= 12
+    )
     if (
-        (_starts_roman_outline(previous_text, roman_number) or expected_roman_number == roman_number)
+        (strong_outline_start or compact_after_loose_start or expected_roman_number == roman_number)
         and _is_roman_list_item(rest)
     ):
         return True, roman_number + 1
@@ -122,16 +142,21 @@ def _coalesce_roman_list_paragraphs(paragraphs):
         if roman_match and i + 1 < len(paragraphs):
             roman_number = _roman_to_int(roman_match.group('roman'))
             previous_text = out[-1].strip() if out else ''
-            starts_list = (
+            strong_outline_start = (
                 roman_number == 1
-                and (
-                    re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
-                    or re.search(r'(?:[—-]|,)\s*$', previous_text)
-                )
+                and re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
+            )
+            loose_punctuation_start = (
+                roman_number == 1
+                and re.search(r'(?:[—-]|,)\s*$', previous_text)
+            )
+            compact_after_loose_start = (
+                loose_punctuation_start
+                and len(re.findall(r'\w+', paragraphs[i + 1])) <= 12
             )
             continues_list = expected_roman_number == roman_number
 
-            if (starts_list and _is_roman_list_item(paragraphs[i + 1])) or continues_list:
+            if ((strong_outline_start or compact_after_loose_start) and _is_roman_list_item(paragraphs[i + 1])) or continues_list:
                 out.append(f'{ROMAN_LIST_TOKEN} {roman_match.group("roman")} {paragraphs[i + 1].strip()}')
                 expected_roman_number = roman_number + 1
                 i += 2

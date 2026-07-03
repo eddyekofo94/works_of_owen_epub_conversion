@@ -1,0 +1,2282 @@
+{
+  "generated_at": "2026-07-03T17:10:04.696615+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
+  "status": "pass",
+  "foreign_span_context_count": 156,
+  "warning_count": 0,
+  "review_count": 95,
+  "counts": {
+    "info:foreign_term_followed_by_english_gloss_or_reference": 3,
+    "info:ordinary_foreign_span_context": 58,
+    "review:quote_closes_after_span": 5,
+    "review:quote_opens_outside_span": 4,
+    "review:quote_opens_outside_span_and_closes_after_span": 68,
+    "review:quote_opens_outside_span_with_punctuation_after": 18,
+    "severity:info": 61,
+    "severity:review": 95
+  },
+  "warnings": [],
+  "review_items": [
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "ο͂υτος εστιν ηε προς τον Πατερα αγουσα ηοσος",
+      "context": "hey have been — multiplied by other unto this purpose. I shall mention some few of them. \"ο͂υτος εστιν ηε προς τον Πατερα αγουσα ηοσος, ηε πετρα, ηε κλεις, <span lang=\"el\" xml:lang",
+      "html_context": "hey have been — multiplied by other unto this purpose. I shall mention some few of them. \"<span lang=\"el\" xml:lang=\"el\">ο͂υτος εστιν ηε προς τον Πατερα αγουσα ηοσος</span>, <span lang=\"el\" xml:lang=\"el\">ηε πετρα</span>, <span lang=\"el\" xml:lang=\"el\">ηε κλεις</span>, <span lang=\"el\" xml:lang"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη",
+      "context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_4\">◇ \"Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη, καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — <spa",
+      "html_context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_4\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη</span>, <span lang=\"el\" xml:lang=\"el\">καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη</span> — <spa"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς",
+      "context": ", καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς\".†<",
+      "html_context": "</span>, <span lang=\"el\" xml:lang=\"el\">καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς</span>\".<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_5\"><sup>†<"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν",
+      "context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_7\">◇ \"Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν\".†<",
+      "html_context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_7\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν</span>\".<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_8\"><sup>†<"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "οὐσία",
+      "context": "them. The Grecians themselves could not for a long season agree among themselves whether \"οὐσία\" and \"ὑπόστατις\" were of the same signification or no, (both of them denoting esse",
+      "html_context": "them. The Grecians themselves could not for a long season agree among themselves whether \"<span lang=\"el\" xml:lang=\"el\">οὐσία</span>\" and \"<span lang=\"el\" xml:lang=\"el\">ὑπόστατις</span>\" were of the same signification or no, (both of them denoting esse"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "πρόσωπον",
+      "context": "ut \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \"πρόσωπον\" by \"persona.\" Hereof Jerome<a class=\"noteref noteref-biographical\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnot",
+      "html_context": "ut \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \"<span lang=\"el\" xml:lang=\"el\">πρόσωπον</span>\" by \"persona.\" Hereof Jerome<a class=\"noteref noteref-biographical\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnot"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "ὁμοιούσιος",
+      "context": "words and terms, to express their minds with, which utterly reacted it. Hence were their \"ὁμοιούσιος, ἑτερούσιος, ἐξ οὐκ ὀ͂ντων\",<a class=\"noteref",
+      "html_context": "words and terms, to express their minds with, which utterly reacted it. Hence were their \"<span lang=\"el\" xml:lang=\"el\">ὁμοιούσιος</span>, <span lang=\"el\" xml:lang=\"el\">ἑτερούσιος</span>, <span lang=\"el\" xml:lang=\"el\">ἐξ οὐκ ὀ͂ντων</span>\",<a class=\"noteref"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ὑπόστατις",
+      "context": "reat occasion unto farther tumults. For it is evident that he distinguisheth not between \"ὑπόστατις\" and \"φύσις\", and therefore affirms, that the divine Word and humanity had \"<span",
+      "html_context": "reat occasion unto farther tumults. For it is evident that he distinguisheth not between \"<span lang=\"el\" xml:lang=\"el\">ὑπόστατις</span>\" and \"<span lang=\"el\" xml:lang=\"el\">φύσις</span>\", and therefore affirms, that the divine Word and humanity had \"<span"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "ὅτι κατ",
+      "context": "href=\"endnotes.xhtml#fnmodern_ch004_17\">◇ \"They are ignorant,\" saith he, \"ὅτι κατ' ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη\".<a class=\"noteref noteref-trans\" e",
+      "html_context": "href=\"endnotes.xhtml#fnmodern_ch004_17\"><sup>◇</sup></a> \"They are ignorant,\" saith he, \"<span lang=\"el\" xml:lang=\"el\">ὅτι κατ</span>' <span lang=\"el\" xml:lang=\"el\">ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη</span>\".<a class=\"noteref noteref-trans\" e"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων",
+      "context": ", did compose his one person, or that it was composed of them, they constantly affirmed. \"Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων, κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε τῆς καθ' ἡμᾶ",
+      "html_context": ", did compose his one person, or that it was composed of them, they constantly affirmed. \"<span lang=\"el\" xml:lang=\"el\">Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων</span>, <span lang=\"el\" xml:lang=\"el\">κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε τῆς καθ</span>' <span lang=\"el\" xml:lang=\"el\">ἡμᾶ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἔνωσιν φυσικὴν",
+      "context": "4_25\">◇ And the union which they intended by this composition they called \"ἔνωσιν φυσικὴν\", because it was of diverse natures, and \"ἕνωσιν κατὰ σύνθεσιν\", a union by compos",
+      "html_context": "4_25\"><sup>◇</sup></a> And the union which they intended by this composition they called \"<span lang=\"el\" xml:lang=\"el\">ἔνωσιν φυσικὴν</span>\", because it was of diverse natures, and \"<span lang=\"el\" xml:lang=\"el\">ἕνωσιν κατὰ σύνθεσιν</span>\", a union by compos"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ο ἄσαρκος σαρκοῦται",
+      "context": "s.xhtml#fnmodern_ch004_26\">† ineffable effect of divine wisdom and grace: \"Ο ἄσαρκος σαρκοῦται, ὁ λόγος παχύνεται, ὁ ἀόρατος ὁρᾶται, <span l",
+      "html_context": "s.xhtml#fnmodern_ch004_26\"><sup>†</sup></a> ineffable effect of divine wisdom and grace: \"<span lang=\"el\" xml:lang=\"el\">Ο ἄσαρκος σαρκοῦται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ λόγος παχύνεται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ ἀόρατος ὁρᾶται</span>, <span l"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_29\">◇ \"Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα, φωτίζει δὲ ὀφθαλμοὺς, ἁφὴν δὲ θερμαίνει, <sp",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_29\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα</span>, <span lang=\"el\" xml:lang=\"el\">φωτίζει δὲ ὀφθαλμοὺς</span>, <span lang=\"el\" xml:lang=\"el\">ἁφὴν δὲ θερμαίνει</span>, <sp"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οῦτος γοῦν ὁ λόγος ὁ Χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς",
+      "context": "e\">As the cause of all good unto us, he is on this account acknowledged by the ancients. \"Οῦτος γοῦν ὁ λόγος ὁ Χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς, ῆν γὰρ ἐν Θεῷ, καὶ τοῦ εῦ ἐ͂ιναι ἄιτιος. <sp",
+      "html_context": "e\">As the cause of all good unto us, he is on this account acknowledged by the ancients. \"<span lang=\"el\" xml:lang=\"el\">Οῦτος γοῦν ὁ λόγος ὁ Χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς</span>, <span lang=\"el\" xml:lang=\"el\">ῆν γὰρ ἐν Θεῷ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ εῦ ἐ͂ιναι ἄιτιος</span>. <sp"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Η μεν γὰρ τοῦ Θεοῦ εἰκὼν ὁ λόγος αὐτοῦ",
+      "context": "will of God unto us, as is fully proved. So speaks Clem. Alexandrin., Adhort. ad Gentes: \"Η μεν γὰρ τοῦ Θεοῦ εἰκὼν ὁ λόγος αὐτοῦ, καὶ υἱὸς τοῦ νοῦ γνήσιος, ὁ θεῖος λόγος φωτὸς ἀρχέτ",
+      "html_context": "will of God unto us, as is fully proved. So speaks Clem. Alexandrin., Adhort. ad Gentes: \"<span lang=\"el\" xml:lang=\"el\">Η μεν γὰρ τοῦ Θεοῦ εἰκὼν ὁ λόγος αὐτοῦ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ υἱὸς τοῦ νοῦ γνήσιος</span>, <span lang=\"el\" xml:lang=\"el\">ὁ θεῖος λόγος φωτὸς ἀρχέτ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "εἰκὼν δὲ τοῦ λόγου ὁ ἄνθρώπος",
+      "context": "υπον φῶς, εἰκὼν δὲ τοῦ λόγου ὁ ἄνθρώπος\". — \"The image of God is his own Word, the natural Son of the\" (eternal) \"Mind, the divine Word, the original Light of",
+      "html_context": "υπον φῶς</span>, <span lang=\"el\" xml:lang=\"el\">εἰκὼν δὲ τοῦ λόγου ὁ ἄνθρώπος</span>\". — \"The image of God is his own Word, the natural Son of the\" (eternal) \"Mind, the divine Word, the original Light of"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Πρόσωπον τοῦ Θεοῦ ὁ λόγος ῷ φωτίζεται ὁ Θεὸς καὶ γνωρίζεται",
+      "context": "Light; and the image of the Word is man.\" And the same author again, in his Paedagogus: \"Πρόσωπον τοῦ Θεοῦ ὁ λόγος ῷ φωτίζεται ὁ Θεὸς καὶ γνωρίζεται\" — \"The Word is the face, the countenance, the representation of God, in whom he is brought to light and made k",
+      "html_context": "Light; and the image of the Word is man.\" And the same author again, in his Paedagogus: \"<span lang=\"el\" xml:lang=\"el\">Πρόσωπον τοῦ Θεοῦ ὁ λόγος ῷ φωτίζεται ὁ Θεὸς καὶ γνωρίζεται</span>\" — \"The Word is the face, the countenance, the representation of God, in whom he is brought to light and made known.\"</"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_38\">◇ \"Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες, θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν, ὡς ἇν τῆς ἀνεκφράσ",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_38\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες</span>, <span lang=\"el\" xml:lang=\"el\">θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν</span>, <span lang=\"el\" xml:lang=\"el\">ὡς ἇν τῆς ἀνεκφράσ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "ῆν καὶ θεὸν εῖναι τε αὐτὸν καὶ λέγεσθαι τῆς πρὸς τὸ πρῶτον ἐξομοιώσεως χάριν",
+      "context": "του καὶ ἀπερινοήτου θεότητος μόνον ἐν αυτῷ φέροντα τὴν εἰκόνα δι' ῆν καὶ θεὸν εῖναι τε αὐτὸν καὶ λέγεσθαι τῆς πρὸς τὸ πρῶτον ἐξομοιώσεως χάριν\". — \"Wherefore, the holy oracles, speaking theologically, or teaching divine things, do rightly call him God begotten",
+      "html_context": "του καὶ ἀπερινοήτου θεότητος μόνον ἐν αυτῷ φέροντα τὴν εἰκόνα δι</span>' <span lang=\"el\" xml:lang=\"el\">ῆν καὶ θεὸν εῖναι τε αὐτὸν καὶ λέγεσθαι τῆς πρὸς τὸ πρῶτον ἐξομοιώσεως χάριν</span>\". — \"Wherefore, the holy oracles, speaking theologically, or teaching divine things, do rightly call him God begotten,\""
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "παιδαγωγὸς",
+      "context": "ose, one or more testimonies from him. Treating of Christ as the teacher of all men, his \"παιδαγωγὸς\", he affirms that he is \"Θεὸς ἐν ἀνθρώπου σχήματι\", \"God in the figure or form of",
+      "html_context": "ose, one or more testimonies from him. Treating of Christ as the teacher of all men, his \"<span lang=\"el\" xml:lang=\"el\">παιδαγωγὸς</span>\", he affirms that he is \"<span lang=\"el\" xml:lang=\"el\">Θεὸς ἐν ἀνθρώπου σχήματι</span>\", \"God in the figure or form of"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "σὺν καὶ τῷ σχήματι Θεοῦ",
+      "context": "ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς, σὺν καὶ τῷ σχήματι Θεοῦ\",†",
+      "html_context": "ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">σὺν καὶ τῷ σχήματι Θεοῦ</span>\",<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_40\"><sup>†"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οῦτος ἡμῖν εἰκῶν ἡ ἀκηλίδωτος",
+      "context": "who is in the Father, on the right hand of the Father, and in or with the form of God\". \"Οῦτος ἡμῖν εἰκῶν ἡ ἀκηλίδωτος, τούτῳ πάντι σθένει πειρατέον ἐξομοιοῦν τὴν ψυχήν\". <p class=\"front-matter-pro",
+      "html_context": "who is in the Father, on the right hand of the Father, and in or with the form of God\". \"<span lang=\"el\" xml:lang=\"el\">Οῦτος ἡμῖν εἰκῶν ἡ ἀκηλίδωτος</span>, <span lang=\"el\" xml:lang=\"el\">τούτῳ πάντι σθένει πειρατέον ἐξομοιοῦν τὴν ψυχήν</span>\".</p> <p class=\"front-matter-pro"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_41\">◇ \"Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν, οὐκ ἔστιν ἐπιστημονικός. Ο δὲ υἱος σοφία τε ἐστι κα",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_41\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν</span>, <span lang=\"el\" xml:lang=\"el\">οὐκ ἔστιν ἐπιστημονικός</span>. <span lang=\"el\" xml:lang=\"el\">Ο δὲ υἱος σοφία τε ἐστι κα"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς",
+      "context": "es.xhtml#fnmodern_ch004_45\">◇ This form of baptism teacheth us, say they, \"Πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς, καὶ τοῦ υἱοῦ, καὶ τοῦ ἁγίου πνεύματος, <span",
+      "html_context": "es.xhtml#fnmodern_ch004_45\"><sup>◇</sup></a> This form of baptism teacheth us, say they, \"<span lang=\"el\" xml:lang=\"el\">Πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ υἱοῦ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ ἁγίου πνεύματος</span>, <span"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ονομα δὲ κοινὸν τῶν τριῶν ἕν",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_46\">◇ \"Ονομα δὲ κοινὸν τῶν τριῶν ἕν, ἡ θεότης\". — \"The one name common to the three is the Deity:\" Gregor. Nazianzen,",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_46\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Ονομα δὲ κοινὸν τῶν τριῶν ἕν</span>, <span lang=\"el\" xml:lang=\"el\">ἡ θεότης</span>\". — \"The one name common to the three is the Deity:\" Gregor. Nazianzen,"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "κατὰ τὸν αὐτὸν",
+      "context": "e baptism of truth, although we are baptized and believe in the Father, Son, and Spirit, \"κατὰ τὸν αὐτὸν, οῖμαι, τρόπον καὶ λόγον, <span lang=\"el\" xml",
+      "html_context": "e baptism of truth, although we are baptized and believe in the Father, Son, and Spirit, \"<span lang=\"el\" xml:lang=\"el\">κατὰ τὸν αὐτὸν</span>, <span lang=\"el\" xml:lang=\"el\">οῖμαι</span>, <span lang=\"el\" xml:lang=\"el\">τρόπον καὶ λόγον</span>, <span lang=\"el\" xml"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ",
+      "context": "hall transcribe them from thence, as free from the injuries of his barbarous translator: \"Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ, εἰ γὰρ μὴ ἄνθρωπος ἐνίκησεν τὸν ἀντίπαλον τοῦ ἀνθρώπου, <span lang=\"el\" xml:lang=",
+      "html_context": "hall transcribe them from thence, as free from the injuries of his barbarous translator: \"<span lang=\"el\" xml:lang=\"el\">Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ</span>, <span lang=\"el\" xml:lang=\"el\">εἰ γὰρ μὴ ἄνθρωπος ἐνίκησεν τὸν ἀντίπαλον τοῦ ἀνθρώπου</span>, <span lang=\"el\" xml:lang="
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνακεφαλαιωσις",
+      "context": "ry by a recapitulation in Christ, as Irenaeus — his recapitulation being nothing but the \"ἀνακεφαλαιωσις\" mentioned by the apostle, Ephesians 1:10 — and he here affirms, that, unto this end, the Lord was made flesh; \"secundu",
+      "html_context": "ry by a recapitulation in Christ, as Irenaeus — his recapitulation being nothing but the \"<span lang=\"el\" xml:lang=\"el\">ἀνακεφαλαιωσις</span>\" mentioned by the apostle, Ephesians 1:10 — and he here affirms, that, unto this end, the Lord was made flesh; \"secundu"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ναί φήμι ὁ λὸγος ὁ τοῦ Θεοῦ ἄνθρωπος γενομένος",
+      "context": "on of our salvation.\" And Clemens Alexandrinus to the same purpose: (Adhort. ad Gentes.) \"Ναί φήμι ὁ λὸγος ὁ τοῦ Θεοῦ ἄνθρωπος γενομένος, ἵνα δὲ καὶ σὺ παρὰ ἀνθρώπου μάθῃς, πῆ ποτε ἄρα ἄνθρ",
+      "html_context": "on of our salvation.\" And Clemens Alexandrinus to the same purpose: (Adhort. ad Gentes.) \"<span lang=\"el\" xml:lang=\"el\">Ναί φήμι ὁ λὸγος ὁ τοῦ Θεοῦ ἄνθρωπος γενομένος</span>, <span lang=\"el\" xml:lang=\"el\">ἵνα δὲ καὶ σὺ παρὰ ἀνθρώπου μάθῃς</span>, <span lang=\"el\" xml:lang=\"el\">πῆ ποτε ἄρα ἄνθρ"
+    },
+    {
+      "file": "EPUB/ch005.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Σὺ εῖ Πέτρος",
+      "context": "on of the name Peter, yet the person so called was not the rock intended. The words are, \"Σὺ εῖ Πέτρος, καὶ ἐπὶ ταύτῃ τῇ πέτρᾳ\". Had he intended the person of Peter, he would have expre",
+      "html_context": "on of the name Peter, yet the person so called was not the rock intended. The words are, \"<span lang=\"el\" xml:lang=\"el\">Σὺ εῖ Πέτρος</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐπὶ ταύτῃ τῇ πέτρᾳ</span>\". Had he intended the person of Peter, he would have expre"
+    },
+    {
+      "file": "EPUB/ch005.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Επὶ τούτῳ τῷ πέτρῳ",
+      "context": "on thee will I build.\" At least the gender had not been altered, but he would have said, \"Επὶ τούτῳ τῷ πέτρῳ\", which would have given some color to this imagination. The exception which they lay hereunto, from the use of Cephas",
+      "html_context": "on thee will I build.\" At least the gender had not been altered, but he would have said, \"<span lang=\"el\" xml:lang=\"el\">Επὶ τούτῳ τῷ πέτρῳ</span>\", which would have given some color to this imagination. The exception which they lay hereunto, from the use of Cephas"
+    },
+    {
+      "file": "EPUB/ch007.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἔλεγχος οὐ βλεπομένων",
+      "context": "ssents unto, and rests in, things in their own nature absolutely incomprehensible. It is \"ἔλεγχος οὐ βλεπομένων\", (Hebrews 11:1,) — \"The evidence of things not seen\" that which makes evident, as by demonstration, those things which",
+      "html_context": "ssents unto, and rests in, things in their own nature absolutely incomprehensible. It is \"<span lang=\"el\" xml:lang=\"el\">ἔλεγχος οὐ βλεπομένων</span>\", (Hebrews 11:1,) — \"The evidence of things not seen\" that which makes evident, as by demonstration, those things which"
+    },
+    {
+      "file": "EPUB/ch008.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνακεφαλαίωσις",
+      "context": "tastasis pantoon\", the revivification, the restitution of all things, Acts 3:19, 21; the \"ἀνακεφαλαίωσις\", or the gathering all things in heaven and earth into a new head in Christ Jesus: Ephesians 1:10. For although, it may",
+      "html_context": "tastasis pantoon\", the revivification, the restitution of all things, Acts 3:19, 21; the \"<span lang=\"el\" xml:lang=\"el\">ἀνακεφαλαίωσις</span>\", or the gathering all things in heaven and earth into a new head in Christ Jesus: Ephesians 1:10. For although, it may"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "Επεὶ αὐτὸ ὅπε",
+      "context": "llectual instrument or power — for the comprehension of him; nor has any other creature: \"Επεὶ αὐτὸ ὅπε?ρ ἐστιν ὁ Θεὸς, οὐ μόνον προφῆται, <span lang",
+      "html_context": "llectual instrument or power — for the comprehension of him; nor has any other creature: \"<span lang=\"el\" xml:lang=\"el\">Επεὶ αὐτὸ ὅπε</span>?<span lang=\"el\" xml:lang=\"el\">ρ ἐστιν ὁ Θεὸς</span>, <span lang=\"el\" xml:lang=\"el\">οὐ μόνον προφῆται</span>, <span lang"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐν Πατρὶ",
+      "context": "item list-level-1 block-list-primary\">2. The Son is said not only to be \"ἐν Πατρὶ\", \"in the Father,\" in the unity of the same essence; but also \"πρὸς τὸν Πατέρα\" or",
+      "html_context": "item list-level-1 block-list-primary\"><strong>2.</strong> The Son is said not only to be \"<span lang=\"el\" xml:lang=\"el\">ἐν Πατρὶ</span>\", \"in the Father,\" in the unity of the same essence; but also \"<span lang=\"el\" xml:lang=\"el\">πρὸς τὸν Πατέρα</span>\" or"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Θεὸν",
+      "context": "\"Θεὸν\", \"with the Father,\" or \"with God,\" in the distinction of his person: \"The Word was with God, and the Word was God:\" Jo",
+      "html_context": "\"<span lang=\"el\" xml:lang=\"el\">Θεὸν</span>\", \"with the Father,\" or \"with God,\" in the distinction of his person: \"The Word was with God, and the Word was God:\" Jo"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀπαύγασμα τῆς δόξης",
+      "context": "wn at the right hand of the majesty on high;\" that is, in his whole person. Herein he is \"ἀπαύγασμα τῆς δόξης\", the effulgency, the resplendency of divine glory, that wherein the divine glory shines forth in an evident manifestat",
+      "html_context": "wn at the right hand of the majesty on high;\" that is, in his whole person. Herein he is \"<span lang=\"el\" xml:lang=\"el\">ἀπαύγασμα τῆς δόξης</span>\", the effulgency, the resplendency of divine glory, that wherein the divine glory shines forth in an evident manifestat"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐν προσώπῳ τοῦ Χηριστοῦ",
+      "context": "nd come unto the enjoyment of him. This we obtain only in the face or person of Christ — \"ἐν προσώπῳ τοῦ Χηριστοῦ\"; for in him that glory is represented unto us. This was the testimony which the apostles gave concerning him, w",
+      "html_context": "nd come unto the enjoyment of him. This we obtain only in the face or person of Christ — \"<span lang=\"el\" xml:lang=\"el\">ἐν προσώπῳ τοῦ Χηριστοῦ</span>\"; for in him that glory is represented unto us.</p> <p>This was the testimony which the apostles gave concerning him, w"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "λόγος τοῦ Θεοῦ",
+      "context": "And in its proper use, and unto its proper end, it is perfect and most sufficient. It is \"λόγος τοῦ Θεοῦ\" — \"the word of God;\" howbeit it is not \"λόγος οὐσιώδης\", the internal, essential",
+      "html_context": "And in its proper use, and unto its proper end, it is perfect and most sufficient. It is \"<span lang=\"el\" xml:lang=\"el\">λόγος τοῦ Θεοῦ</span>\" — \"the word of God;\" howbeit it is not \"<span lang=\"el\" xml:lang=\"el\">λόγος οὐσιώδης</span>\", the internal, essential"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "λόγος προφορικὸς",
+      "context": "Word of God — but \"λόγος προφορικὸς\", the external word spoken by him. It is not, therefore, nor can be, the image of God, either essential or representati",
+      "html_context": "Word of God — but \"<span lang=\"el\" xml:lang=\"el\">λόγος προφορικὸς</span>\", the external word spoken by him. It is not, therefore, nor can be, the image of God, either essential or representati"
+    },
+    {
+      "file": "EPUB/ch011.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Οὐ γὰρ δήπου ἀγγελων ἐπιλαμβάνεται",
+      "context": "th respect immediately unto the angels; and, therefore, he took not their nature on him. \"Οὐ γὰρ δήπου ἀγγελων ἐπιλαμβάνεται\" — \"He took not the nature of angels unto him;\" (Hebrews 2:16;) because he was not to be a mediator for them, a savior",
+      "html_context": "th respect immediately unto the angels; and, therefore, he took not their nature on him. \"<span lang=\"el\" xml:lang=\"el\">Οὐ γὰρ δήπου ἀγγελων ἐπιλαμβάνεται</span>\" — \"He took not the nature of angels unto him;\" (Hebrews 2:16;) because he was not to be a mediator for them, a savior"
+    },
+    {
+      "file": "EPUB/ch011.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "καρδιογνώστης",
+      "context": "> 1st, That he be \"καρδιογνώστης\" — that he have an actual inspection into all the frames, dispositions, thoughts, and internal acting, of all believers",
+      "html_context": "> <p class=\"list-item list-level-3 block-list-subpoint\"><strong>1st,</strong> That he be \"<span lang=\"el\" xml:lang=\"el\">καρδιογνώστης</span>\" — that he have an actual inspection into all the frames, dispositions, thoughts, and internal acting, of all believers"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "καθὼς",
+      "context": "Father with one kind of honor, and the Son with another. That were not to honor the Son \"καθὼς\", \"as\" we honor the Father, but in a way infinitely different from it. <p class=\"list-item list-level-3 block-list-",
+      "html_context": "Father with one kind of honor, and the Son with another. That were not to honor the Son \"<span lang=\"el\" xml:lang=\"el\">καθὼς</span>\", \"as\" we honor the Father, but in a way infinitely different from it.</p> <p class=\"list-item list-level-3 block-list-"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "הִשְׁתַחֲוָה",
+      "context": "xcellencies and the ascription of them unto him. It is expressed in the Old Testament by \"הִשְׁתַחֲוָה\"; that is, humbly to bow down ourselves or our souls unto God. The LXX render it constantly by \"<span lang=\"el\" xml:lan",
+      "html_context": "xcellencies and the ascription of them unto him. It is expressed in the Old Testament by \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">הִשְׁתַחֲוָה</span>\"; that is, humbly to bow down ourselves or our souls unto God. The LXX render it constantly by \"<span lang=\"el\" xml:lan"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι Θεοῦ",
+      "context": "ge unto the angels above. For when he brought the Firstbegotten into the world, he said, \"Προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι Θεοῦ\"; that is, \"השְׁתֲחֲווּ־לוֹ כָּל־אלֹהֲים\", \"Worship him, all ye gods,\" P",
+      "html_context": "ge unto the angels above. For when he brought the Firstbegotten into the world, he said, \"<span lang=\"el\" xml:lang=\"el\">Προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι Θεοῦ</span>\"; that is, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">השְׁתֲחֲווּ־לוֹ כָּל־אלֹהֲים</span>\", \"Worship him, all ye gods,\" P"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐπικαλούμενον",
+      "context": "ul into the hands of Jesus Christ by solemn invocation, Acts 7:59, \"They stoned Stephen, \"ἐπικαλούμενον\", solemnly invocating, and saying, Lord Jesus, receive my spirit.\" And having by faith and prayer left his own soul saf",
+      "html_context": "ul into the hands of Jesus Christ by solemn invocation, Acts 7:59, \"They stoned Stephen, \"<span lang=\"el\" xml:lang=\"el\">ἐπικαλούμενον</span>\", solemnly invocating, and saying, Lord Jesus, receive my spirit.\" And having by faith and prayer left his own soul saf"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐν ἀφθαρσίᾳ",
+      "context": "ery were in his heart. Hence the apostle prays for grace on them who love the Lord Jesus \"ἐν ἀφθαρσίᾳ\" — without dissimulation or doubling, without pretenses and aims at other ends, without a mixture of corrupt affections",
+      "html_context": "ery were in his heart. Hence the apostle prays for grace on them who love the Lord Jesus \"<span lang=\"el\" xml:lang=\"el\">ἐν ἀφθαρσίᾳ</span>\" — without dissimulation or doubling, without pretenses and aims at other ends, without a mixture of corrupt affections"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "בְּנֵי נֵכָר יְכחֲשׁו־לְי",
+      "context": "ed of him, that many who were strangers unto his grace should lie unto him, Psalm 18:44, \"בְּנֵי נֵכָר יְכחֲשׁו־לְי\" — feignedly submit, or yield feigned obedience unto him. So is it with them who profess love unto him, yet are enemies",
+      "html_context": "ed of him, that many who were strangers unto his grace should lie unto him, Psalm 18:44, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">בְּנֵי נֵכָר יְכחֲשׁו־לְי</span>\" — feignedly submit, or yield feigned obedience unto him. So is it with them who profess love unto him, yet are enemies"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "κατ",
+      "context": "m. He makes us \"accepted in the Beloved,\" Ephesians 1:6. He is the Beloved of the Father \"κατ' ἐξοχήν\"; as in all things he was to have the pre-eminence, Colossians 1:18. The l",
+      "html_context": "m. He makes us \"accepted in the Beloved,\" Ephesians 1:6. He is the Beloved of the Father \"<span lang=\"el\" xml:lang=\"el\">κατ</span>' <span lang=\"el\" xml:lang=\"el\">ἐξοχήν</span>\"; as in all things he was to have the pre-eminence, Colossians 1:18. The l"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "חֶמְדַּת כָּח־הַגּוֹים",
+      "context": "hets, were only means to excite love unto him, and desires after him. Hence is he called \"חֶמְדַּת כָּח־הַגּוֹים\", Haggai 2:7, \"The Desire of all nations\" — he alone who is desirable unto, and the only beloved of the church gathered",
+      "html_context": "hets, were only means to excite love unto him, and desires after him. Hence is he called \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">חֶמְדַּת כָּח־הַגּוֹים</span>\", Haggai 2:7, \"The Desire of all nations\" — he alone who is desirable unto, and the only beloved of the church gathered"
+    },
+    {
+      "file": "EPUB/ch017.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "שִׁיר יְדִידְֹת",
+      "context": "boldness of them who have neither the one nor the other. The title of the 45th Psalm is, \"שִׁיר יְדִידְֹת\", \"A song of loves;\" — that is, of the mutual love of Christ and the church. And unto this end — that our souls may be",
+      "html_context": "boldness of them who have neither the one nor the other. The title of the 45th Psalm is, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">שִׁיר יְדִידְֹת</span>\", \"A song of loves;\" — that is, of the mutual love of Christ and the church. And unto this end — that our souls may be"
+    },
+    {
+      "file": "EPUB/ch019.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "Τὴν δόξαν Κυρίου κατοπτριζόμενοι κ",
+      "context": "his mind, in the eye of faith, as it is represented unto him in the glass of the gospel: \"Τὴν δόξαν Κυρίου κατοπτριζόμενοι κ.τ. λ., 2 Corinthians 3:18. We behold his glor",
+      "html_context": "his mind, in the eye of faith, as it is represented unto him in the glass of the gospel: \"<span lang=\"el\" xml:lang=\"el\">Τὴν δόξαν Κυρίου κατοπτριζόμενοι κ</span>.<span lang=\"el\" xml:lang=\"el\">τ</span>. <span lang=\"el\" xml:lang=\"el\">λ</span>., 2 Corinthians 3:18. We behold his glor"
+    },
+    {
+      "file": "EPUB/ch020.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐξ ἑνὸς",
+      "context": "t. Thus \"he who sanctifieth and they who are sanctified are all of one,\" Hebrews 2:11, — \"ἐξ ἑνὸς\"; that is, \"φυράματος\" — of the same mass, of one nature and blood; whence he is n",
+      "html_context": "t. Thus \"he who sanctifieth and they who are sanctified are all of one,\" Hebrews 2:11, — \"<span lang=\"el\" xml:lang=\"el\">ἐξ ἑνὸς</span>\"; that is, \"<span lang=\"el\" xml:lang=\"el\">φυράματος</span>\" — of the same mass, of one nature and blood; whence he is n"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐξ οῦ",
+      "context": "by whom are all things, and we by him.\" The Father is the original fountain and spring,; \"ἐξ οῦ\", from whom — [from] whose original authority, love, goodness, and power — are all these things. That expression, \"from",
+      "html_context": "by whom are all things, and we by him.\" The Father is the original fountain and spring,; \"<span lang=\"el\" xml:lang=\"el\">ἐξ οῦ</span>\", from whom — [from] whose original authority, love, goodness, and power — are all these things. That expression, \"from"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "δι οῦ",
+      "context": "accomplished? \"There is one Lord,\" even Jesus Christ, a distinct person from the Father, \"δι οῦ\", \"by whom are all things.\" He works in the order of his subsistence, to execute, work, and accomplish all that origina",
+      "html_context": "accomplished? \"There is one Lord,\" even Jesus Christ, a distinct person from the Father, \"<span lang=\"el\" xml:lang=\"el\">δι οῦ</span>\", \"by whom are all things.\" He works in the order of his subsistence, to execute, work, and accomplish all that origina"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατοπτριζόμενοι",
+      "context": "same image, from glory to glory, even as by the Spirit of the Lord\" — we all beholding — \"κατοπτριζόμενοι\", not taking a transient glance of these things, but diligently inspecting them, as those do who, through a glass, desi",
+      "html_context": "same image, from glory to glory, even as by the Spirit of the Lord\" — we all beholding — \"<span lang=\"el\" xml:lang=\"el\">κατοπτριζόμενοι</span>\", not taking a transient glance of these things, but diligently inspecting them, as those do who, through a glass, desi"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Μεταμορφούμεθα",
+      "context": "en engaged. And what is the effect of the steady contemplation of this mystery by faith? \"Μεταμορφούμεθα\" — \"we are changed\" — made quite other creatures than we were — cast into the form, figure, and image of Jesus Christ t",
+      "html_context": "en engaged. And what is the effect of the steady contemplation of this mystery by faith? \"<span lang=\"el\" xml:lang=\"el\">Μεταμορφούμεθα</span>\" — \"we are changed\" — made quite other creatures than we were — cast into the form, figure, and image of Jesus Christ t"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ βούλησιν καὶ ἐυδοκίαν",
+      "context": "of the Son. Herein, as Damascen observes, the other persons had no concurrence, but only \"κατὰ βούλησιν καὶ ἐυδοκίαν\" — \"by counsel and approbation.\" 2. This assu",
+      "html_context": "of the Son. Herein, as Damascen observes, the other persons had no concurrence, but only \"<span lang=\"el\" xml:lang=\"el\">κατὰ βούλησιν καὶ ἐυδοκίαν</span>\" — \"by counsel and approbation.\"</p> <p class=\"list-item list-level-1 block-list-primary\"><strong>2.</strong> This assu"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀτρέπτως",
+      "context": "mans 9:5; Colossians 2:9; 1 John 3:16. This union the ancient church affirmed to be made \"ἀτρέπτως\", \"without any change\" in the person of the Son of God, which the divine nature is not subject unto; — \"<span lang=\"el\"",
+      "html_context": "mans 9:5; Colossians 2:9; 1 John 3:16. This union the ancient church affirmed to be made \"<span lang=\"el\" xml:lang=\"el\">ἀτρέπτως</span>\", \"without any change\" in the person of the Son of God, which the divine nature is not subject unto; — \"<span lang=\"el\""
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀσυγχύτως",
+      "context": "a distinction of natures, but \"without any division\" of them by separate subsistences; — \"ἀσυγχύτως\", \"without mixture\" or confusion; — \"ἀχωρίστως\", \"without separation\" or distance;",
+      "html_context": "a distinction of natures, but \"without any division\" of them by separate subsistences; — \"<span lang=\"el\" xml:lang=\"el\">ἀσυγχύτως</span>\", \"without mixture\" or confusion; — \"<span lang=\"el\" xml:lang=\"el\">ἀχωρίστως</span>\", \"without separation\" or distance;"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "οὐσιωδῶς",
+      "context": "and \"οὐσιωδῶς\", \"substantially,\" because it was of two substances or essences in the same person, in opposition unto all accidental u",
+      "html_context": "and \"<span lang=\"el\" xml:lang=\"el\">οὐσιωδῶς</span>\", \"substantially,\" because it was of two substances or essences in the same person, in opposition unto all accidental u"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐνσάρκωσις",
+      "context": "judged significant of this great mystery, or the incarnation of the Son of God. Such are \"ἐνσάρκωσις\", \"incarnation;\" \"ἐνσωμάτωσις\", \"embodying,\" \"ἐνανθρ",
+      "html_context": "judged significant of this great mystery, or the incarnation of the Son of God. Such are \"<span lang=\"el\" xml:lang=\"el\">ἐνσάρκωσις</span>\", \"incarnation;\" \"<span lang=\"el\" xml:lang=\"el\">ἐνσωμάτωσις</span>\", \"embodying,\" \"<span lang=\"el\" xml:lang=\"el\">ἐνανθρ"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "ἡ δεσποτικὴ ἐπιδημία",
+      "context": "ώπησις\", \"inhumanation;\" \"ἡ δεσποτικὴ ἐπιδημία, καὶ παρουσία, ἡ οἰκονομία\", to the same purp",
+      "html_context": "ώπησις</span>\", \"inhumanation;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ δεσποτικὴ ἐπιδημία</span>, <span lang=\"el\" xml:lang=\"el\">καὶ παρουσία</span>, <span lang=\"el\" xml:lang=\"el\">ἡ οἰκονομία</span>\", to the same purp"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἡ διὰ σαρκὸς ὁμιλία",
+      "context": "ose; \"ἡ διὰ σαρκὸς ὁμιλία\", \"his conversation in or by the flesh;\" \"ἡ διὰ ἀνθρωπότητος φανέρωσις\", \"his mani",
+      "html_context": "ose; \"<span lang=\"el\" xml:lang=\"el\">ἡ διὰ σαρκὸς ὁμιλία</span>\", \"his conversation in or by the flesh;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ διὰ ἀνθρωπότητος φανέρωσις</span>\", \"his mani"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἡ κένωσις",
+      "context": "festation by humanity;\" \"ἡ ἔλευσις\", \"the advent;\" \"ἡ κένωσις\", \"the exinanition\", or humiliation; \"ἡ τοῦ Χριστοῦ ἐπιφάνεια\", \"the appearance\" o",
+      "html_context": "festation by humanity;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ ἔλευσις</span>\", \"the advent;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ κένωσις</span>\", \"the exinanition\", or humiliation; \"<span lang=\"el\" xml:lang=\"el\">ἡ τοῦ Χριστοῦ ἐπιφάνεια</span>\", \"the appearance\" o"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἡ συγκατάβασις",
+      "context": "r manifestation \"of Christ;\" \"ἡ συγκατάβασις\", \"the condescension\". Most of these expressions are taken from the Scripture, and are used therein with respect unto t",
+      "html_context": "r manifestation \"of Christ;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ συγκατάβασις</span>\", \"the condescension\". Most of these expressions are taken from the Scripture, and are used therein with respect unto t"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "χάρις ἑνώσεως",
+      "context": "uth. That whereby it is most usually declared in the writings of the ancients, is \"χάρις ἑνώσεως\", \"gratia unionis\", the \"grace of union;\" — which form of words some manifesting t",
+      "html_context": "uth.</p> <p>That whereby it is most usually declared in the writings of the ancients, is \"<span lang=\"el\" xml:lang=\"el\">χάρις ἑνώσεως</span>\", \"<span lang=\"la\" xml:lang=\"la\">gratia unionis</span>\", the \"grace of union;\" — which form of words some manifesting t"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κρᾶσις",
+      "context": "as turned into wine; but this union hath no resemblance unto any of them. There is not a \"κρᾶσις\", \"a mixture,\" a contemperation<a class=\"noteref noteref-glossary\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnote",
+      "html_context": "as turned into wine; but this union hath no resemblance unto any of them. There is not a \"<span lang=\"el\" xml:lang=\"el\">κρᾶσις</span>\", \"a mixture,\" a contemperation<a class=\"noteref noteref-glossary\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnote"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ παράστασιν",
+      "context": "st-level-3 block-list-subpoint\">[1.] He said he was so present with him \"κατὰ παράστασιν\", or by inhabitation, as a man dwells in a house or a ship to rule it. He dwelt in him as his temple. So he dwells in a",
+      "html_context": "st-level-3 block-list-subpoint\"><strong>[1.]</strong> He said he was so present with him \"<span lang=\"el\" xml:lang=\"el\">κατὰ παράστασιν</span>\", or by inhabitation, as a man dwells in a house or a ship to rule it. He dwelt in him as his temple. So he dwells in a"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ σχέσιν",
+      "context": "list-level-3 block-list-subpoint\">[2.] He allowed an especial presence, \"κατὰ σχέσιν\", as some call it; that is, by such a union of affections as is between intimate friends. The soul of God rested always",
+      "html_context": "list-level-3 block-list-subpoint\"><strong>[2.]</strong> He allowed an especial presence, \"<span lang=\"el\" xml:lang=\"el\">κατὰ σχέσιν</span>\", as some call it; that is, by such a union of affections as is between intimate friends. The soul of God rested always"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατ ἀξίαν",
+      "context": "s=\"list-item list-level-3 block-list-subpoint\">[3.] He allowed it to be \"κατ ἀξίαν\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of God is als",
+      "html_context": "s=\"list-item list-level-3 block-list-subpoint\"><strong>[3.]</strong> He allowed it to be \"<span lang=\"el\" xml:lang=\"el\">κατ ἀξίαν</span>\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of God is als"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ ταυτοβουλίαν",
+      "context": "=\"list-item list-level-3 block-list-subpoint\">[4.] He asserted it to be \"κατὰ ταυτοβουλίαν\", or on the account of the consent and agreement that was between the will of God and the will of the man Christ Jesus.",
+      "html_context": "=\"list-item list-level-3 block-list-subpoint\"><strong>[4.]</strong> He asserted it to be \"<span lang=\"el\" xml:lang=\"el\">κατὰ ταυτοβουλίαν</span>\", or on the account of the consent and agreement that was between the will of God and the will of the man Christ Jesus."
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Καθ ὁμωνυμίαν",
+      "context": ":16, 17. [5.] \"Καθ ὁμωνυμίαν\", by an equivocal denomination, the name of the one person, namely, of the Son of God, being accommodated unto the othe",
+      "html_context": ":16, 17.</p> <p class=\"list-item list-level-3 block-list-subpoint\"><strong>[5.]</strong> \"<span lang=\"el\" xml:lang=\"el\">Καθ ὁμωνυμίαν</span>\", by an equivocal denomination, the name of the one person, namely, of the Son of God, being accommodated unto the othe"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνυπόστατος",
+      "context": "g>(1.) Immediate in the person of the Son. This is subsistence. In itself it is \"ἀνυπόστατος\", — that which hath not a subsistence of its own, which should give it individuation and distinction from the same natu",
+      "html_context": "g>(1.)</strong> Immediate in the person of the Son. This is subsistence. In itself it is \"<span lang=\"el\" xml:lang=\"el\">ἀνυπόστατος</span>\", — that which hath not a subsistence of its own, which should give it individuation and distinction from the same natu"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐναλλαγή",
+      "context": "im. See Romans 9:5; Matthew 22:42. These kinds of enunciations the ancients expressed by \"ἐναλλαγή\", \"alteration;\" \"ἀλλοίωσις\", \"permutation,\" \"κοινότη",
+      "html_context": "im. See Romans 9:5; Matthew 22:42. These kinds of enunciations the ancients expressed by \"<span lang=\"el\" xml:lang=\"el\">ἐναλλαγή</span>\", \"alteration;\" \"<span lang=\"el\" xml:lang=\"el\">ἀλλοίωσις</span>\", \"permutation,\" \"<span lang=\"el\" xml:lang=\"el\">κοινότη"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "τρόπος ἀντιδόσεως",
+      "context": "ς\", \"communion;\" \"τρόπος ἀντιδόσεως\", \"the manner of mutual position;\" \"κοινωνία ἰδιωμάτων\", \"the communication of pro",
+      "html_context": "ς</span>\", \"communion;\" \"<span lang=\"el\" xml:lang=\"el\">τρόπος ἀντιδόσεως</span>\", \"the manner of mutual position;\" \"<span lang=\"el\" xml:lang=\"el\">κοινωνία ἰδιωμάτων</span>\", \"the communication of pro"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνελήφθη ἐν δόξῃ",
+      "context": "everal degrees of ascent, he carrieth it within the veil, and leaves it there in glory — \"ἀνελήφθη ἐν δόξῃ\", 1 Timothy 3:16; God was manifest in the flesh, and \"received up into glory.\" This assumption of our Lord Jesus Christ",
+      "html_context": "everal degrees of ascent, he carrieth it within the veil, and leaves it there in glory — \"<span lang=\"el\" xml:lang=\"el\">ἀνελήφθη ἐν δόξῃ</span>\", 1 Timothy 3:16; God was manifest in the flesh, and \"received up into glory.\" This assumption of our Lord Jesus Christ"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνελήφθη ἐν δόξῃ",
+      "context": "into glory was upon his ascension, described Acts 1:9-11. \"He was taken up into heaven,\" \"ἀνελήφθη ἐν δόξῃ\", by an act of divine power; and he went into heaven, \"εἰσελθεῖν εἰς τὴν δόξαν\", i",
+      "html_context": "into glory was upon his ascension, described Acts 1:9-11. \"He was taken up into heaven,\" \"<span lang=\"el\" xml:lang=\"el\">ἀνελήφθη ἐν δόξῃ</span>\", by an act of divine power; and he went into heaven, \"<span lang=\"el\" xml:lang=\"el\">εἰσελθεῖν εἰς τὴν δόξαν</span>\", i"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "גְדִיבֵי עַמִים",
+      "context": "came unto him the queen of Sheba, the type of the Gentile converts and the church; when \"גְדִיבֵי עַמִים\", the \"voluntaries of the people,\" (those made willing in the day of his power, Psalm 110:3,) \"gathered themselves to t",
+      "html_context": "came unto him the queen of Sheba, the type of the Gentile converts and the church; when \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">גְדִיבֵי עַמִים</span>\", the \"voluntaries of the people,\" (those made willing in the day of his power, Psalm 110:3,) \"gathered themselves to t"
+    },
+    {
+      "file": "EPUB/ch027.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἰσάγγελοι",
+      "context": "have no more alliance unto that brutish nature which perisheth forever; for we shall be \"ἰσάγγελοι\" like unto angels, or equal to them. Our bodies shall no more be capable of those acts and operations which are now com",
+      "html_context": "have no more alliance unto that brutish nature which perisheth forever; for we shall be \"<span lang=\"el\" xml:lang=\"el\">ἰσάγγελοι</span>\" like unto angels, or equal to them. Our bodies shall no more be capable of those acts and operations which are now com"
+    },
+    {
+      "file": "EPUB/ch027.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Τὴν ἐπιθυμίαν ἔχων",
+      "context": "to be with Christ, which is far better\" than to abide here, Philippians 1:23. Saith he, \"Τὴν ἐπιθυμίαν ἔχων\", — not an ordinary desire, not that which worketh in me now and then; but a constant, habitual inclination, working in",
+      "html_context": "to be with Christ, which is far better\" than to abide here, Philippians 1:23. Saith he, \"<span lang=\"el\" xml:lang=\"el\">Τὴν ἐπιθυμίαν ἔχων</span>\", — not an ordinary desire, not that which worketh in me now and then; but a constant, habitual inclination, working in"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Τὴν δόξαν τὴν ἐμὴν",
+      "context": "e Church.The glory of Christ is the glory of the person of Christ So he calls it \"Τὴν δόξαν τὴν ἐμὴν\", John 17:24, \"That glory which is mine,\" which belongeth to me, unto my person. The person of Christ may be con",
+      "html_context": "e Church.</h3><p>The glory of Christ is the glory of the person of Christ So he calls it \"<span lang=\"el\" xml:lang=\"el\">Τὴν δόξαν τὴν ἐμὴν</span>\", John 17:24, \"That glory which is mine,\" which belongeth to me, unto my person.</p> <p>The person of Christ may be con"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "φωτισμὸν τῆς γνώσεως τῆς δόξης τοῦ Θεοῦ",
+      "context": "ist.\" Whatever obscure, imperfect notions we may have of them other ways, we cannot have \"φωτισμὸν τῆς γνώσεως τῆς δόξης τοῦ Θεοῦ\", \"the light of the\" illuminating, irradiating \"knowledge of the glory of God,\" which may enlighten our minds and sanct",
+      "html_context": "ist.\" Whatever obscure, imperfect notions we may have of them other ways, we cannot have \"<span lang=\"el\" xml:lang=\"el\">φωτισμὸν τῆς γνώσεως τῆς δόξης τοῦ Θεοῦ</span>\", \"the light of the\" illuminating, irradiating \"knowledge of the glory of God,\" which may enlighten our minds and sanct"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "εν̓ προσώπῳ",
+      "context": "ify your hearts, but only \"εν̓ προσώπῳ\", \"in the face\" or person \"of Jesus Christ:\" for he is \"the image of God,\" 2 Corinthians 4:4; \"the brightness of the Fa",
+      "html_context": "ify your hearts, but only \"<span lang=\"el\" xml:lang=\"el\">εν̓ προσώπῳ</span>\", \"in the face\" or person \"of Jesus Christ:\" for he is \"the image of God,\" 2 Corinthians 4:4; \"the brightness of the Fa"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "φάσκοντες εῖναι σοφοὶ",
+      "context": "them. Hereon they boasted themselves to be the only wise men in the world, Romans 1:22, \"φάσκοντες εῖναι σοφοὶ\", — they boasted that they were the wise. But we must abide in the judgement of the apostle concerning them in their in",
+      "html_context": "them. Hereon they boasted themselves to be the only wise men in the world, Romans 1:22, \"<span lang=\"el\" xml:lang=\"el\">φάσκοντες εῖναι σοφοὶ</span>\", — they boasted that they were the wise. But we must abide in the judgement of the apostle concerning them in their in"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "λογισμοὶ",
+      "context": "allibly into the knowledge of the divine nature. All they had of this kind was their own \"λογισμοὶ\", their reasonings or imaginations; whereby they commenced \"συζητητὰι τοῦ ἀιῶνος τούτου</",
+      "html_context": "allibly into the knowledge of the divine nature. All they had of this kind was their own \"<span lang=\"el\" xml:lang=\"el\">λογισμοὶ</span>\", their reasonings or imaginations; whereby they commenced \"<span lang=\"el\" xml:lang=\"el\">συζητητὰι τοῦ ἀιῶνος τούτου</"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ψηλαφᾷν",
+      "context": "vain, and their foolish heart was darkened,\" Romans 1:21. They did at best but endeavor \"ψηλαφᾷν\", \"to feel after God,\" as men do in the dark after what they cannot clearly discern, Acts 17:27. Among other, Cicero'<a",
+      "html_context": "vain, and their foolish heart was darkened,\" Romans 1:21. They did at best but endeavor \"<span lang=\"el\" xml:lang=\"el\">ψηλαφᾷν</span>\", \"to feel after God,\" as men do in the dark after what they cannot clearly discern, Acts 17:27. Among other, Cicero'<a"
+    },
+    {
+      "file": "EPUB/ch031.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κένωσις",
+      "context": "o from himself and his own mind alone. And that in general which is ascribed unto him is \"κένωσις\", exinanition, or self-emptying; he emptied himself. This the ancient church called his \"<span lang=\"el\" xml:lan",
+      "html_context": "o from himself and his own mind alone. And that in general which is ascribed unto him is \"<span lang=\"el\" xml:lang=\"el\">κένωσις</span>\", exinanition, or self-emptying; he emptied himself.</p> <p>This the ancient church called his \"<span lang=\"el\" xml:lan"
+    },
+    {
+      "file": "EPUB/ch038.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "אַתָה הוּא",
+      "context": "and happiness, whereunto nothing can be added. God is always the same. That is his name, \"אַתָה הוּא\" — Psalm 102:27, \"Thou art he,\" — always the same. All things that are, make no addition unto God, no change in his sta",
+      "html_context": "and happiness, whereunto nothing can be added. God is always the same. That is his name, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">אַתָה הוּא</span>\" — Psalm 102:27, \"Thou art he,\" — always the same. All things that are, make no addition unto God, no change in his sta"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "δἰ ἐσόπτρου ἐν αἰνίγματι",
+      "context": "xive. So the apostle declares, 1 Corinthians 13:12, \"Now we see through a glass darkly,\" \"δἰ ἐσόπτρου ἐν αἰνίγματι\"; — \"through\" or by \"a glass, in a riddle,\" a parable, a dark saying. There is a double figurative limitation put upon",
+      "html_context": "xive. So the apostle declares, 1 Corinthians 13:12, \"Now we see through a glass darkly,\" \"<span lang=\"el\" xml:lang=\"el\">δἰ ἐσόπτρου ἐν αἰνίγματι</span>\"; — \"through\" or by \"a glass, in a riddle,\" a parable, a dark saying. There is a double figurative limitation put upon"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "αἰνίγματι",
+      "context": "ion of our view of the glory of Christ by faith in this world, the apostle says it is in \"αἰνίγματι\", in \"a riddle.\" These \"αἰνίγματα\" the Psalmist calls \"<span lang=\"he\" xml:lang=\"h",
+      "html_context": "ion of our view of the glory of Christ by faith in this world, the apostle says it is in \"<span lang=\"el\" xml:lang=\"el\">αἰνίγματι</span>\", in \"a riddle.\" These \"<span lang=\"el\" xml:lang=\"el\">αἰνίγματα</span>\" the Psalmist calls \"<span lang=\"he\" xml:lang=\"h"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "מֵצִיץ",
+      "context": "itions. \"Behold, he standeth behind the wall, he looketh forth at the windows, showing\" (\"מֵצִיץ\", flourishing) \"himself through the lattice,\" Song of Solomon 2:9. There is a great interposition between him and us, a",
+      "html_context": "itions. \"Behold, he standeth behind the wall, he looketh forth at the windows, showing\" (\"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מֵצִיץ</span>\", flourishing) \"himself through the lattice,\" Song of Solomon 2:9. There is a great interposition between him and us, a"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀποκαραδοκία",
+      "context": "\"the day did break, and the shadows flee away,\" Song of Solomon 2:17; 4:6. There was an \"ἀποκαραδοκία\", as the apostle speaks, Romans 8:19, — a thrusting forth of the head with desire and expectation of the exhibition of",
+      "html_context": "\"the day did break, and the shadows flee away,\" Song of Solomon 2:17; 4:6. There was an \"<span lang=\"el\" xml:lang=\"el\">ἀποκαραδοκία</span>\", as the apostle speaks, Romans 8:19, — a thrusting forth of the head with desire and expectation of the exhibition of"
+    },
+    {
+      "file": "EPUB/ch045.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "וְקַח טוֹב",
+      "context": "trong> Gracious acceptation: \"Receive us graciously.\" The words in the original are only \"וְקַח טוֹב\". And receive good;\" but both the words being used variously, the sense eminently included in them is well expressed by",
+      "html_context": "trong> Gracious acceptation: \"Receive us graciously.\" The words in the original are only \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">וְקַח טוֹב</span>\". And receive good;\" but both the words being used variously, the sense eminently included in them is well expressed by"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "διεληλυθότα τοὺς οὐρανόυς",
+      "context": "an> The expression quoted by Dr Owen is founded upon the phrase in the original language, διεληλυθότα τοὺς οὐρανόυς \"having passed through,\" not \"into the heavens,\" as it stands in our version. ED. <p class=\"footnote-modern",
+      "html_context": "an> The expression quoted by Dr Owen is founded upon the phrase in the original language, <span lang=\"el\" xml:lang=\"el\">διεληλυθότα τοὺς οὐρανόυς</span> \"having passed through,\" not \"into the heavens,\" as it stands in our version. ED.</p> <p class=\"footnote-modern"
+    }
+  ],
+  "entries": [
+    {
+      "file": "EPUB/ch001.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΙΙΑ",
+      "context": "1740), and gratuitously circulated most of the impression His work which bears the title, ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΙΙΑ, etc., originally published at Oxford in 1661, must have been highly esteemed abroad, as it was reprinted at Bremen in",
+      "html_context": "1740), and gratuitously circulated most of the impression His work which bears the title, <span lang=\"el\" xml:lang=\"el\">ΘΕΟΛΟΓΟΥΜΕΝΑ ΠΑΝΤΟΔΑΙΙΑ</span>, etc., originally published at Oxford in 1661, must have been highly esteemed abroad, as it was reprinted at Bremen in"
+    },
+    {
+      "file": "EPUB/ch002.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ΧΡΙΣΤΟΛΟΓΙΑ:",
+      "context": "ΧΡΙΣΤΟΛΟΓΙΑ: Christologia<a class=\"noteref noteref-glossary\" epub:type=\"noteref\" role=\"doc-noter",
+      "html_context": "<section class=\"treatise-title-page\" epub:type=\"titlepage\"> <div class=\"greek-title\"><span lang=\"el\" xml:lang=\"el\">ΧΡΙΣΤΟΛΟΓΙΑ:</span></div> <div class=\"title-line-major\">Christologia<a class=\"noteref noteref-glossary\" epub:type=\"noteref\" role=\"doc-noter"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "ο͂υτος εστιν ηε προς τον Πατερα αγουσα ηοσος",
+      "context": "hey have been — multiplied by other unto this purpose. I shall mention some few of them. \"ο͂υτος εστιν ηε προς τον Πατερα αγουσα ηοσος, ηε πετρα, ηε κλεις, <span lang=\"el\" xml:lang",
+      "html_context": "hey have been — multiplied by other unto this purpose. I shall mention some few of them. \"<span lang=\"el\" xml:lang=\"el\">ο͂υτος εστιν ηε προς τον Πατερα αγουσα ηοσος</span>, <span lang=\"el\" xml:lang=\"el\">ηε πετρα</span>, <span lang=\"el\" xml:lang=\"el\">ηε κλεις</span>, <span lang=\"el\" xml:lang"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη",
+      "context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_4\">◇ \"Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη, καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — <spa",
+      "html_context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_4\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Ητε ὀνομαστὶ προθεσπισθεῖσα ἐκκλησία αὐτοῦ ἕστηκε κατὰ βάθους ἐῤῥιζωμένη</span>, <span lang=\"el\" xml:lang=\"el\">καὶ μέχρις οὐρανίων ἁψίδων εὐχηαῖς ὀσίων καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη</span> — <spa"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ἥν αὐτὸς ἀπεφήνατο λέξιν",
+      "context": "n lang=\"el\" xml:lang=\"el\">διὰ μίαν ἐκείνην, ἥν αὐτὸς ἀπεφήνατο λέξιν, εἴπων, Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν",
+      "html_context": "n lang=\"el\" xml:lang=\"el\">διὰ μίαν ἐκείνην</span>, <span lang=\"el\" xml:lang=\"el\">ἥν αὐτὸς ἀπεφήνατο λέξιν</span>, <span lang=\"el\" xml:lang=\"el\">εἴπων</span>, <span lang=\"el\" xml:lang=\"el\">Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς",
+      "context": ", καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς\".†<",
+      "html_context": "</span>, <span lang=\"el\" xml:lang=\"el\">καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς</span>\".<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_5\"><sup>†<"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν",
+      "context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_7\">◇ \"Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν\".†<",
+      "html_context": "ype=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_7\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν</span>\".<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_8\"><sup>†<"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "οὐσία",
+      "context": "them. The Grecians themselves could not for a long season agree among themselves whether \"οὐσία\" and \"ὑπόστατις\" were of the same signification or no, (both of them denoting esse",
+      "html_context": "them. The Grecians themselves could not for a long season agree among themselves whether \"<span lang=\"el\" xml:lang=\"el\">οὐσία</span>\" and \"<span lang=\"el\" xml:lang=\"el\">ὑπόστατις</span>\" were of the same signification or no, (both of them denoting esse"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "πρόσωπον",
+      "context": "ut \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \"πρόσωπον\" by \"persona.\" Hereof Jerome<a class=\"noteref noteref-biographical\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnot",
+      "html_context": "ut \"hypostasis\" and \"persona\". For the Latins rendered \"hypostasis\" by \"substantia,\" and \"<span lang=\"el\" xml:lang=\"el\">πρόσωπον</span>\" by \"persona.\" Hereof Jerome<a class=\"noteref noteref-biographical\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnot"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "ὁμοιούσιος",
+      "context": "words and terms, to express their minds with, which utterly reacted it. Hence were their \"ὁμοιούσιος, ἑτερούσιος, ἐξ οὐκ ὀ͂ντων\",<a class=\"noteref",
+      "html_context": "words and terms, to express their minds with, which utterly reacted it. Hence were their \"<span lang=\"el\" xml:lang=\"el\">ὁμοιούσιος</span>, <span lang=\"el\" xml:lang=\"el\">ἑτερούσιος</span>, <span lang=\"el\" xml:lang=\"el\">ἐξ οὐκ ὀ͂ντων</span>\",<a class=\"noteref"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ὑπόστατις",
+      "context": "reat occasion unto farther tumults. For it is evident that he distinguisheth not between \"ὑπόστατις\" and \"φύσις\", and therefore affirms, that the divine Word and humanity had \"<span",
+      "html_context": "reat occasion unto farther tumults. For it is evident that he distinguisheth not between \"<span lang=\"el\" xml:lang=\"el\">ὑπόστατις</span>\" and \"<span lang=\"el\" xml:lang=\"el\">φύσις</span>\", and therefore affirms, that the divine Word and humanity had \"<span"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "ὅτι κατ",
+      "context": "href=\"endnotes.xhtml#fnmodern_ch004_17\">◇ \"They are ignorant,\" saith he, \"ὅτι κατ' ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη\".<a class=\"noteref noteref-trans\" e",
+      "html_context": "href=\"endnotes.xhtml#fnmodern_ch004_17\"><sup>◇</sup></a> \"They are ignorant,\" saith he, \"<span lang=\"el\" xml:lang=\"el\">ὅτι κατ</span>' <span lang=\"el\" xml:lang=\"el\">ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη</span>\".<a class=\"noteref noteref-trans\" e"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων",
+      "context": ", did compose his one person, or that it was composed of them, they constantly affirmed. \"Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων, κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε τῆς καθ' ἡμᾶ",
+      "html_context": ", did compose his one person, or that it was composed of them, they constantly affirmed. \"<span lang=\"el\" xml:lang=\"el\">Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων</span>, <span lang=\"el\" xml:lang=\"el\">κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε τῆς καθ</span>' <span lang=\"el\" xml:lang=\"el\">ἡμᾶ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ἐκ τοῦ πεφηνότος",
+      "context": "ς ἀνθρώποτητος τελείως ἐχοῦσας κατὰ τὸν ἴδιον λόγον, καὶ ἐκ τοῦ πεφηνότος, ἐκ Θεοῦ κατὰ φύσιν υἱοῦ\",<a class=\"noteref noteref-trans\" epub:type=\"noteref\" rol",
+      "html_context": "ς ἀνθρώποτητος τελείως ἐχοῦσας κατὰ τὸν ἴδιον λόγον</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐκ τοῦ πεφηνότος</span>, <span lang=\"el\" xml:lang=\"el\">ἐκ Θεοῦ κατὰ φύσιν υἱοῦ</span>\",<a class=\"noteref noteref-trans\" epub:type=\"noteref\" rol"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἔνωσιν φυσικὴν",
+      "context": "4_25\">◇ And the union which they intended by this composition they called \"ἔνωσιν φυσικὴν\", because it was of diverse natures, and \"ἕνωσιν κατὰ σύνθεσιν\", a union by compos",
+      "html_context": "4_25\"><sup>◇</sup></a> And the union which they intended by this composition they called \"<span lang=\"el\" xml:lang=\"el\">ἔνωσιν φυσικὴν</span>\", because it was of diverse natures, and \"<span lang=\"el\" xml:lang=\"el\">ἕνωσιν κατὰ σύνθεσιν</span>\", a union by compos"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ο ἄσαρκος σαρκοῦται",
+      "context": "s.xhtml#fnmodern_ch004_26\">† ineffable effect of divine wisdom and grace: \"Ο ἄσαρκος σαρκοῦται, ὁ λόγος παχύνεται, ὁ ἀόρατος ὁρᾶται, <span l",
+      "html_context": "s.xhtml#fnmodern_ch004_26\"><sup>†</sup></a> ineffable effect of divine wisdom and grace: \"<span lang=\"el\" xml:lang=\"el\">Ο ἄσαρκος σαρκοῦται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ λόγος παχύνεται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ ἀόρατος ὁρᾶται</span>, <span l"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὁ ἄχρονος ἄρχεται",
+      "context": "ang=\"el\" xml:lang=\"el\">ὁ ἀναφὴς ψηλαφᾶται, ὁ ἄχρονος ἄρχεται, ὁ υἱὸς Θεοῦ ὑιὸς ἀνθρώπου γίνεται\",<a class=\"noteref noteref-trans\" epub:type=\"no",
+      "html_context": "ang=\"el\" xml:lang=\"el\">ὁ ἀναφὴς ψηλαφᾶται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ ἄχρονος ἄρχεται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ υἱὸς Θεοῦ ὑιὸς ἀνθρώπου γίνεται</span>\",<a class=\"noteref noteref-trans\" epub:type=\"no"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_29\">◇ \"Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα, φωτίζει δὲ ὀφθαλμοὺς, ἁφὴν δὲ θερμαίνει, <sp",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_29\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα</span>, <span lang=\"el\" xml:lang=\"el\">φωτίζει δὲ ὀφθαλμοὺς</span>, <span lang=\"el\" xml:lang=\"el\">ἁφὴν δὲ θερμαίνει</span>, <sp"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "αὔξει δὲ φυτὰ",
+      "context": "an lang=\"el\" xml:lang=\"el\">πιαίνει δὲ γῆν, αὔξει δὲ φυτὰ, κ.τ.λ.",
+      "html_context": "an lang=\"el\" xml:lang=\"el\">πιαίνει δὲ γῆν</span>, <span lang=\"el\" xml:lang=\"el\">αὔξει δὲ φυτὰ</span>, <span lang=\"el\" xml:lang=\"el\">κ</span>.<span lang=\"el\" xml:lang=\"el\">τ</span>.<span lang=\"el\" xml:lang=\"el\">λ</span>."
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο",
+      "context": "(cap. 6) Εἰ γοῦν ὥς ἐν ὑποθέσει λόγου, καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο, οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον, πάντων",
+      "html_context": "(cap. 6) <span lang=\"el\" xml:lang=\"el\">Εἰ γοῦν ὥς ἐν ὑποθέσει λόγου</span>, <span lang=\"el\" xml:lang=\"el\">καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο</span>, <span lang=\"el\" xml:lang=\"el\">οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον</span>, <span lang=\"el\" xml:lang=\"el\">πάντων"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οῦτος γοῦν ὁ λόγος ὁ Χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς",
+      "context": "e\">As the cause of all good unto us, he is on this account acknowledged by the ancients. \"Οῦτος γοῦν ὁ λόγος ὁ Χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς, ῆν γὰρ ἐν Θεῷ, καὶ τοῦ εῦ ἐ͂ιναι ἄιτιος. <sp",
+      "html_context": "e\">As the cause of all good unto us, he is on this account acknowledged by the ancients. \"<span lang=\"el\" xml:lang=\"el\">Οῦτος γοῦν ὁ λόγος ὁ Χριστὸς καὶ τοῦ εῖναι πάλαι ἡμᾶς</span>, <span lang=\"el\" xml:lang=\"el\">ῆν γὰρ ἐν Θεῷ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ εῦ ἐ͂ιναι ἄιτιος</span>. <sp"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ἀυτὸς οῦτος ὁ λόγος",
+      "context": "an lang=\"el\" xml:lang=\"el\">Νῦν δὲ ἐπεφάνη ἀνθρώποις, ἀυτὸς οῦτος ὁ λόγος, ὁ μόνος ἄμφω Θεός τε καὶ ἄνθρωπος, ἁπάντων ἡμῖν αἴτ",
+      "html_context": "an lang=\"el\" xml:lang=\"el\">Νῦν δὲ ἐπεφάνη ἀνθρώποις</span>, <span lang=\"el\" xml:lang=\"el\">ἀυτὸς οῦτος ὁ λόγος</span>, <span lang=\"el\" xml:lang=\"el\">ὁ μόνος ἄμφω Θεός τε καὶ ἄνθρωπος</span>, <span lang=\"el\" xml:lang=\"el\">ἁπάντων ἡμῖν αἴτ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Η μεν γὰρ τοῦ Θεοῦ εἰκὼν ὁ λόγος αὐτοῦ",
+      "context": "will of God unto us, as is fully proved. So speaks Clem. Alexandrin., Adhort. ad Gentes: \"Η μεν γὰρ τοῦ Θεοῦ εἰκὼν ὁ λόγος αὐτοῦ, καὶ υἱὸς τοῦ νοῦ γνήσιος, ὁ θεῖος λόγος φωτὸς ἀρχέτ",
+      "html_context": "will of God unto us, as is fully proved. So speaks Clem. Alexandrin., Adhort. ad Gentes: \"<span lang=\"el\" xml:lang=\"el\">Η μεν γὰρ τοῦ Θεοῦ εἰκὼν ὁ λόγος αὐτοῦ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ υἱὸς τοῦ νοῦ γνήσιος</span>, <span lang=\"el\" xml:lang=\"el\">ὁ θεῖος λόγος φωτὸς ἀρχέτ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "εἰκὼν δὲ τοῦ λόγου ὁ ἄνθρώπος",
+      "context": "υπον φῶς, εἰκὼν δὲ τοῦ λόγου ὁ ἄνθρώπος\". — \"The image of God is his own Word, the natural Son of the\" (eternal) \"Mind, the divine Word, the original Light of",
+      "html_context": "υπον φῶς</span>, <span lang=\"el\" xml:lang=\"el\">εἰκὼν δὲ τοῦ λόγου ὁ ἄνθρώπος</span>\". — \"The image of God is his own Word, the natural Son of the\" (eternal) \"Mind, the divine Word, the original Light of"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Πρόσωπον τοῦ Θεοῦ ὁ λόγος ῷ φωτίζεται ὁ Θεὸς καὶ γνωρίζεται",
+      "context": "Light; and the image of the Word is man.\" And the same author again, in his Paedagogus: \"Πρόσωπον τοῦ Θεοῦ ὁ λόγος ῷ φωτίζεται ὁ Θεὸς καὶ γνωρίζεται\" — \"The Word is the face, the countenance, the representation of God, in whom he is brought to light and made k",
+      "html_context": "Light; and the image of the Word is man.\" And the same author again, in his Paedagogus: \"<span lang=\"el\" xml:lang=\"el\">Πρόσωπον τοῦ Θεοῦ ὁ λόγος ῷ φωτίζεται ὁ Θεὸς καὶ γνωρίζεται</span>\" — \"The Word is the face, the countenance, the representation of God, in whom he is brought to light and made known.\"</"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_38\">◇ \"Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες, θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν, ὡς ἇν τῆς ἀνεκφράσ",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_38\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Οθεν εἰκότως οἱ χρησμοὶ θεολογοῦντες</span>, <span lang=\"el\" xml:lang=\"el\">θεὸν γενητὸν αὐτὸν ἀποφαίνουσιν</span>, <span lang=\"el\" xml:lang=\"el\">ὡς ἇν τῆς ἀνεκφράσ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "ῆν καὶ θεὸν εῖναι τε αὐτὸν καὶ λέγεσθαι τῆς πρὸς τὸ πρῶτον ἐξομοιώσεως χάριν",
+      "context": "του καὶ ἀπερινοήτου θεότητος μόνον ἐν αυτῷ φέροντα τὴν εἰκόνα δι' ῆν καὶ θεὸν εῖναι τε αὐτὸν καὶ λέγεσθαι τῆς πρὸς τὸ πρῶτον ἐξομοιώσεως χάριν\". — \"Wherefore, the holy oracles, speaking theologically, or teaching divine things, do rightly call him God begotten",
+      "html_context": "του καὶ ἀπερινοήτου θεότητος μόνον ἐν αυτῷ φέροντα τὴν εἰκόνα δι</span>' <span lang=\"el\" xml:lang=\"el\">ῆν καὶ θεὸν εῖναι τε αὐτὸν καὶ λέγεσθαι τῆς πρὸς τὸ πρῶτον ἐξομοιώσεως χάριν</span>\". — \"Wherefore, the holy oracles, speaking theologically, or teaching divine things, do rightly call him God begotten,\""
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "παιδαγωγὸς",
+      "context": "ose, one or more testimonies from him. Treating of Christ as the teacher of all men, his \"παιδαγωγὸς\", he affirms that he is \"Θεὸς ἐν ἀνθρώπου σχήματι\", \"God in the figure or form of",
+      "html_context": "ose, one or more testimonies from him. Treating of Christ as the teacher of all men, his \"<span lang=\"el\" xml:lang=\"el\">παιδαγωγὸς</span>\", he affirms that he is \"<span lang=\"el\" xml:lang=\"el\">Θεὸς ἐν ἀνθρώπου σχήματι</span>\", \"God in the figure or form of"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "πατρικῷ θελήματι διάκονος",
+      "context": "man;\" \"ἄχραντος, πατρικῷ θελήματι διάκονος, λόγος, Θεὸς, ὁ",
+      "html_context": "man;\" \"<span lang=\"el\" xml:lang=\"el\">ἄχραντος</span>, <span lang=\"el\" xml:lang=\"el\">πατρικῷ θελήματι διάκονος</span>, <span lang=\"el\" xml:lang=\"el\">λόγος</span>, <span lang=\"el\" xml:lang=\"el\">Θεὸς</span>, <span lang=\"el\" xml:lang=\"el\">ὁ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "σὺν καὶ τῷ σχήματι Θεοῦ",
+      "context": "ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς, σὺν καὶ τῷ σχήματι Θεοῦ\",†",
+      "html_context": "ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">σὺν καὶ τῷ σχήματι Θεοῦ</span>\",<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_40\"><sup>†"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Οῦτος ἡμῖν εἰκῶν ἡ ἀκηλίδωτος",
+      "context": "who is in the Father, on the right hand of the Father, and in or with the form of God\". \"Οῦτος ἡμῖν εἰκῶν ἡ ἀκηλίδωτος, τούτῳ πάντι σθένει πειρατέον ἐξομοιοῦν τὴν ψυχήν\". <p class=\"front-matter-pro",
+      "html_context": "who is in the Father, on the right hand of the Father, and in or with the form of God\". \"<span lang=\"el\" xml:lang=\"el\">Οῦτος ἡμῖν εἰκῶν ἡ ἀκηλίδωτος</span>, <span lang=\"el\" xml:lang=\"el\">τούτῳ πάντι σθένει πειρατέον ἐξομοιοῦν τὴν ψυχήν</span>\".</p> <p class=\"front-matter-pro"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_41\">◇ \"Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν, οὐκ ἔστιν ἐπιστημονικός. Ο δὲ υἱος σοφία τε ἐστι κα",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_41\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν</span>, <span lang=\"el\" xml:lang=\"el\">οὐκ ἔστιν ἐπιστημονικός</span>. <span lang=\"el\" xml:lang=\"el\">Ο δὲ υἱος σοφία τε ἐστι κα"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ",
+      "context": "ὶ ἐπιστ́μῃ, καὶ ἀλήθεια, καὶ, ὅσα ἄλλα τούτῳ συγγενῆ\".<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role",
+      "html_context": "ὶ ἐπιστ́μῃ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἀλήθεια</span>, <span lang=\"el\" xml:lang=\"el\">καὶ</span>, <span lang=\"el\" xml:lang=\"el\">ὅσα ἄλλα τούτῳ συγγενῆ</span>\".<a class=\"noteref noteref-trans\" epub:type=\"noteref\" role"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς",
+      "context": "es.xhtml#fnmodern_ch004_45\">◇ This form of baptism teacheth us, say they, \"Πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς, καὶ τοῦ υἱοῦ, καὶ τοῦ ἁγίου πνεύματος, <span",
+      "html_context": "es.xhtml#fnmodern_ch004_45\"><sup>◇</sup></a> This form of baptism teacheth us, say they, \"<span lang=\"el\" xml:lang=\"el\">Πιστεύειν εἰς τὸ ὄνομα τοῦ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ υἱοῦ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ ἁγίου πνεύματος</span>, <span"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "θεότητός τε καὶ δυνάμεως καὶ οὐσίας μιᾶς τοῦ πατρὸς",
+      "context": "lang=\"el\" xml:lang=\"el\">δηλαδὴ, θεότητός τε καὶ δυνάμεως καὶ οὐσίας μιᾶς τοῦ πατρὸς, καὶ τοῦ υἱοῦ, καὶ τοῦ ἁγίου πνεύματος πιστευομένης<",
+      "html_context": "lang=\"el\" xml:lang=\"el\">δηλαδὴ</span>, <span lang=\"el\" xml:lang=\"el\">θεότητός τε καὶ δυνάμεως καὶ οὐσίας μιᾶς τοῦ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ υἱοῦ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ τοῦ ἁγίου πνεύματος πιστευομένης<"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ συναϊδίου τῆς βασιλείας",
+      "context": "/span>, ὁμοτίμου τῆς ἀξιας, καὶ συναϊδίου τῆς βασιλείας, ἐν τρισὶ τελείαις ὑποστάσεσι\". — \"to believe in the name of the Father, and of th",
+      "html_context": "/span>, <span lang=\"el\" xml:lang=\"el\">ὁμοτίμου τῆς ἀξιας</span>, <span lang=\"el\" xml:lang=\"el\">καὶ συναϊδίου τῆς βασιλείας</span>, <span lang=\"el\" xml:lang=\"el\">ἐν τρισὶ τελείαις ὑποστάσεσι</span>\". — \"to believe in the name of the Father, and of th"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ονομα δὲ κοινὸν τῶν τριῶν ἕν",
+      "context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_46\">◇ \"Ονομα δὲ κοινὸν τῶν τριῶν ἕν, ἡ θεότης\". — \"The one name common to the three is the Deity:\" Gregor. Nazianzen,",
+      "html_context": "pe=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch004_46\"><sup>◇</sup></a> \"<span lang=\"el\" xml:lang=\"el\">Ονομα δὲ κοινὸν τῶν τριῶν ἕν</span>, <span lang=\"el\" xml:lang=\"el\">ἡ θεότης</span>\". — \"The one name common to the three is the Deity:\" Gregor. Nazianzen,"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "κατὰ τὸν αὐτὸν",
+      "context": "e baptism of truth, although we are baptized and believe in the Father, Son, and Spirit, \"κατὰ τὸν αὐτὸν, οῖμαι, τρόπον καὶ λόγον, <span lang=\"el\" xml",
+      "html_context": "e baptism of truth, although we are baptized and believe in the Father, Son, and Spirit, \"<span lang=\"el\" xml:lang=\"el\">κατὰ τὸν αὐτὸν</span>, <span lang=\"el\" xml:lang=\"el\">οῖμαι</span>, <span lang=\"el\" xml:lang=\"el\">τρόπον καὶ λόγον</span>, <span lang=\"el\" xml"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ἐνανθρωπήσαντος υἱοῦ",
+      "context": ":lang=\"el\">μία προσκύνεσις ἡ πατρὸς, καὶ ἐνανθρωπήσαντος υἱοῦ, καὶ ἁγίου πνεύματος;\" — \"so plainly, in my judgment, there is one and the same ad",
+      "html_context": ":lang=\"el\">μία προσκύνεσις ἡ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐνανθρωπήσαντος υἱοῦ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἁγίου πνεύματος</span>;\" — \"so plainly, in my judgment, there is one and the same ad"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὡ τριὰς ἁγία ἀριθμουμένη",
+      "context": "y call on God in and by the name of any divine person, or enumerate at once each person, (ὡ τριὰς ἁγία ἀριθμουμένη, τριὰς ἐν ἑνὶ ὀνόματι ἀριθμουμένη\",<a class=\"noteref noteref-trans\" epub:type=\"not",
+      "html_context": "y call on God in and by the name of any divine person, or enumerate at once each person, (<span lang=\"el\" xml:lang=\"el\">ὡ τριὰς ἁγία ἀριθμουμένη</span>, <span lang=\"el\" xml:lang=\"el\">τριὰς ἐν ἑνὶ ὀνόματι ἀριθμουμένη</span>\",<a class=\"noteref noteref-trans\" epub:type=\"not"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ",
+      "context": "hall transcribe them from thence, as free from the injuries of his barbarous translator: \"Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ, εἰ γὰρ μὴ ἄνθρωπος ἐνίκησεν τὸν ἀντίπαλον τοῦ ἀνθρώπου, <span lang=\"el\" xml:lang=",
+      "html_context": "hall transcribe them from thence, as free from the injuries of his barbarous translator: \"<span lang=\"el\" xml:lang=\"el\">Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ</span>, <span lang=\"el\" xml:lang=\"el\">εἰ γὰρ μὴ ἄνθρωπος ἐνίκησεν τὸν ἀντίπαλον τοῦ ἀνθρώπου</span>, <span lang=\"el\" xml:lang="
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "πάλιν τε",
+      "context": "\"el\">οὐκ ἆν δικαίως ἐνικήθη ὁ ἐχθρὸς, πάλιν τε, εἰ μὴ ὁ Θεὸς ἐδωρήσατο τὴν σωτηρίαν, οὺκ ἆν βεβαίως",
+      "html_context": "\"el\">οὐκ ἆν δικαίως ἐνικήθη ὁ ἐχθρὸς</span>, <span lang=\"el\" xml:lang=\"el\">πάλιν τε</span>, <span lang=\"el\" xml:lang=\"el\">εἰ μὴ ὁ Θεὸς ἐδωρήσατο τὴν σωτηρίαν</span>, <span lang=\"el\" xml:lang=\"el\">οὺκ ἆν βεβαίως"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ἐι μὴ συνηνώθη ὁ ἄνθρωπος τῷ Θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας",
+      "context": "ἔχοιμεν αὐτὴν, καὶ ἐι μὴ συνηνώθη ὁ ἄνθρωπος τῷ Θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας. Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων, διὰ",
+      "html_context": "ἔχοιμεν αὐτὴν</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐι μὴ συνηνώθη ὁ ἄνθρωπος τῷ Θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας</span>. <span lang=\"el\" xml:lang=\"el\">Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων</span>, <span lang=\"el\" xml:lang=\"el\">διὰ"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνακεφαλαιωσις",
+      "context": "ry by a recapitulation in Christ, as Irenaeus — his recapitulation being nothing but the \"ἀνακεφαλαιωσις\" mentioned by the apostle, Ephesians 1:10 — and he here affirms, that, unto this end, the Lord was made flesh; \"secundu",
+      "html_context": "ry by a recapitulation in Christ, as Irenaeus — his recapitulation being nothing but the \"<span lang=\"el\" xml:lang=\"el\">ἀνακεφαλαιωσις</span>\" mentioned by the apostle, Ephesians 1:10 — and he here affirms, that, unto this end, the Lord was made flesh; \"secundu"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "βρᾶβεῖον",
+      "context": "nobedientiam, replasmare et obtinere brabium (βρᾶβεῖον) victoriae; iterum autem impossibile erat ut salutem perciperet, <span lang=\"la\" x",
+      "html_context": "nobedientiam</span>, replasmare <span lang=\"la\" xml:lang=\"la\">et obtinere brabium</span> (<span lang=\"el\" xml:lang=\"el\">βρᾶβεῖον</span>) <span lang=\"la\" xml:lang=\"la\">victoriae; iterum autem</span> impossibile erat ut salutem perciperet, <span lang=\"la\" x"
+    },
+    {
+      "file": "EPUB/ch004.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Ναί φήμι ὁ λὸγος ὁ τοῦ Θεοῦ ἄνθρωπος γενομένος",
+      "context": "on of our salvation.\" And Clemens Alexandrinus to the same purpose: (Adhort. ad Gentes.) \"Ναί φήμι ὁ λὸγος ὁ τοῦ Θεοῦ ἄνθρωπος γενομένος, ἵνα δὲ καὶ σὺ παρὰ ἀνθρώπου μάθῃς, πῆ ποτε ἄρα ἄνθρ",
+      "html_context": "on of our salvation.\" And Clemens Alexandrinus to the same purpose: (Adhort. ad Gentes.) \"<span lang=\"el\" xml:lang=\"el\">Ναί φήμι ὁ λὸγος ὁ τοῦ Θεοῦ ἄνθρωπος γενομένος</span>, <span lang=\"el\" xml:lang=\"el\">ἵνα δὲ καὶ σὺ παρὰ ἀνθρώπου μάθῃς</span>, <span lang=\"el\" xml:lang=\"el\">πῆ ποτε ἄρα ἄνθρ"
+    },
+    {
+      "file": "EPUB/ch005.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "Σὺ εῖ Πέτρος",
+      "context": "on of the name Peter, yet the person so called was not the rock intended. The words are, \"Σὺ εῖ Πέτρος, καὶ ἐπὶ ταύτῃ τῇ πέτρᾳ\". Had he intended the person of Peter, he would have expre",
+      "html_context": "on of the name Peter, yet the person so called was not the rock intended. The words are, \"<span lang=\"el\" xml:lang=\"el\">Σὺ εῖ Πέτρος</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐπὶ ταύτῃ τῇ πέτρᾳ</span>\". Had he intended the person of Peter, he would have expre"
+    },
+    {
+      "file": "EPUB/ch005.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ἐπὶ σοὶ",
+      "context": "ssed it plainly, \"Σὺ εῖ πέτρος, καὶ ἐπὶ σοὶ, κ.τ.λ.\"",
+      "html_context": "ssed it plainly, \"<span lang=\"el\" xml:lang=\"el\">Σὺ εῖ πέτρος</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐπὶ σοὶ</span>, <span lang=\"el\" xml:lang=\"el\">κ</span>.<span lang=\"el\" xml:lang=\"el\">τ</span>.<span lang=\"el\" xml:lang=\"el\">λ</span>.\""
+    },
+    {
+      "file": "EPUB/ch005.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Επὶ τούτῳ τῷ πέτρῳ",
+      "context": "on thee will I build.\" At least the gender had not been altered, but he would have said, \"Επὶ τούτῳ τῷ πέτρῳ\", which would have given some color to this imagination. The exception which they lay hereunto, from the use of Cephas",
+      "html_context": "on thee will I build.\" At least the gender had not been altered, but he would have said, \"<span lang=\"el\" xml:lang=\"el\">Επὶ τούτῳ τῷ πέτρῳ</span>\", which would have given some color to this imagination. The exception which they lay hereunto, from the use of Cephas"
+    },
+    {
+      "file": "EPUB/ch007.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἔλεγχος οὐ βλεπομένων",
+      "context": "ssents unto, and rests in, things in their own nature absolutely incomprehensible. It is \"ἔλεγχος οὐ βλεπομένων\", (Hebrews 11:1,) — \"The evidence of things not seen\" that which makes evident, as by demonstration, those things which",
+      "html_context": "ssents unto, and rests in, things in their own nature absolutely incomprehensible. It is \"<span lang=\"el\" xml:lang=\"el\">ἔλεγχος οὐ βλεπομένων</span>\", (Hebrews 11:1,) — \"The evidence of things not seen\" that which makes evident, as by demonstration, those things which"
+    },
+    {
+      "file": "EPUB/ch008.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνακεφαλαίωσις",
+      "context": "tastasis pantoon\", the revivification, the restitution of all things, Acts 3:19, 21; the \"ἀνακεφαλαίωσις\", or the gathering all things in heaven and earth into a new head in Christ Jesus: Ephesians 1:10. For although, it may",
+      "html_context": "tastasis pantoon\", the revivification, the restitution of all things, Acts 3:19, 21; the \"<span lang=\"el\" xml:lang=\"el\">ἀνακεφαλαίωσις</span>\", or the gathering all things in heaven and earth into a new head in Christ Jesus: Ephesians 1:10. For although, it may"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "Επεὶ αὐτὸ ὅπε",
+      "context": "llectual instrument or power — for the comprehension of him; nor has any other creature: \"Επεὶ αὐτὸ ὅπε?ρ ἐστιν ὁ Θεὸς, οὐ μόνον προφῆται, <span lang",
+      "html_context": "llectual instrument or power — for the comprehension of him; nor has any other creature: \"<span lang=\"el\" xml:lang=\"el\">Επεὶ αὐτὸ ὅπε</span>?<span lang=\"el\" xml:lang=\"el\">ρ ἐστιν ὁ Θεὸς</span>, <span lang=\"el\" xml:lang=\"el\">οὐ μόνον προφῆται</span>, <span lang"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "οὔτε ἀρχηάγγελοι",
+      "context": "=\"el\" xml:lang=\"el\">αλλ' οὐδὲ ἄγγελοι εῖδον, οὔτε ἀρχηάγγελοι; αλλ' ἐὰν ἐρωτήσῃς αὐτοὺς, <span lang=\"el\" xm",
+      "html_context": "=\"el\" xml:lang=\"el\">αλλ</span>' <span lang=\"el\" xml:lang=\"el\">οὐδὲ ἄγγελοι εῖδον</span>, <span lang=\"el\" xml:lang=\"el\">οὔτε ἀρχηάγγελοι</span>; <span lang=\"el\" xml:lang=\"el\">αλλ</span>' <span lang=\"el\" xml:lang=\"el\">ἐὰν ἐρωτήσῃς αὐτοὺς</span>, <span lang=\"el\" xm"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "δόξα δὲ ἐν ὑψίστοις μόνον ᾄδόντας τῳ Θεῷ",
+      "context": "l:lang=\"el\">ακουσῃ περὶ μὲν τῆς οὐσίας οὐδὲν ἀποκρινομενους; δόξα δὲ ἐν ὑψίστοις μόνον ᾄδόντας τῳ Θεῷ; κᾆν παρὰ τῶν Χερουβὶμ ἤ τῶν Σεραφὶμ ἐπιθυμήσῃς τι μαθεῖν, <span lang=\"el\" xml:lan",
+      "html_context": "l:lang=\"el\">ακουσῃ περὶ μὲν τῆς οὐσίας οὐδὲν ἀποκρινομενους</span>; <span lang=\"el\" xml:lang=\"el\">δόξα δὲ ἐν ὑψίστοις μόνον ᾄδόντας τῳ Θεῷ</span>; <span lang=\"el\" xml:lang=\"el\">κᾆν παρὰ τῶν Χερουβὶμ ἤ τῶν Σεραφὶμ ἐπιθυμήσῃς τι μαθεῖν</span>, <span lang=\"el\" xml:lan"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ὁ͂τι πλήρης ὁ οὐρανὸς καὶ ἡ γῆ τῆς δόξης αὐτοῦ",
+      "context": "g=\"el\">τὸ μυστικὸν τοῦ ἁγιασμοῦ μέλος ἀκουσῃ, καὶ ὁ͂τι πλήρης ὁ οὐρανὸς καὶ ἡ γῆ τῆς δόξης αὐτοῦ.<sup",
+      "html_context": "g=\"el\">τὸ μυστικὸν τοῦ ἁγιασμοῦ μέλος ἀκουσῃ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ὁ͂τι πλήρης ὁ οὐρανὸς καὶ ἡ γῆ τῆς δόξης αὐτοῦ</span>.<a class=\"noteref noteref-citation\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnotes.xhtml#fnmodern_ch009_78\"><sup"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐν Πατρὶ",
+      "context": "item list-level-1 block-list-primary\">2. The Son is said not only to be \"ἐν Πατρὶ\", \"in the Father,\" in the unity of the same essence; but also \"πρὸς τὸν Πατέρα\" or",
+      "html_context": "item list-level-1 block-list-primary\"><strong>2.</strong> The Son is said not only to be \"<span lang=\"el\" xml:lang=\"el\">ἐν Πατρὶ</span>\", \"in the Father,\" in the unity of the same essence; but also \"<span lang=\"el\" xml:lang=\"el\">πρὸς τὸν Πατέρα</span>\" or"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Θεὸν",
+      "context": "\"Θεὸν\", \"with the Father,\" or \"with God,\" in the distinction of his person: \"The Word was with God, and the Word was God:\" Jo",
+      "html_context": "\"<span lang=\"el\" xml:lang=\"el\">Θεὸν</span>\", \"with the Father,\" or \"with God,\" in the distinction of his person: \"The Word was with God, and the Word was God:\" Jo"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀπαύγασμα τῆς δόξης",
+      "context": "wn at the right hand of the majesty on high;\" that is, in his whole person. Herein he is \"ἀπαύγασμα τῆς δόξης\", the effulgency, the resplendency of divine glory, that wherein the divine glory shines forth in an evident manifestat",
+      "html_context": "wn at the right hand of the majesty on high;\" that is, in his whole person. Herein he is \"<span lang=\"el\" xml:lang=\"el\">ἀπαύγασμα τῆς δόξης</span>\", the effulgency, the resplendency of divine glory, that wherein the divine glory shines forth in an evident manifestat"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐν προσώπῳ τοῦ Χηριστοῦ",
+      "context": "nd come unto the enjoyment of him. This we obtain only in the face or person of Christ — \"ἐν προσώπῳ τοῦ Χηριστοῦ\"; for in him that glory is represented unto us. This was the testimony which the apostles gave concerning him, w",
+      "html_context": "nd come unto the enjoyment of him. This we obtain only in the face or person of Christ — \"<span lang=\"el\" xml:lang=\"el\">ἐν προσώπῳ τοῦ Χηριστοῦ</span>\"; for in him that glory is represented unto us.</p> <p>This was the testimony which the apostles gave concerning him, w"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "λόγος τοῦ Θεοῦ",
+      "context": "And in its proper use, and unto its proper end, it is perfect and most sufficient. It is \"λόγος τοῦ Θεοῦ\" — \"the word of God;\" howbeit it is not \"λόγος οὐσιώδης\", the internal, essential",
+      "html_context": "And in its proper use, and unto its proper end, it is perfect and most sufficient. It is \"<span lang=\"el\" xml:lang=\"el\">λόγος τοῦ Θεοῦ</span>\" — \"the word of God;\" howbeit it is not \"<span lang=\"el\" xml:lang=\"el\">λόγος οὐσιώδης</span>\", the internal, essential"
+    },
+    {
+      "file": "EPUB/ch009.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "λόγος προφορικὸς",
+      "context": "Word of God — but \"λόγος προφορικὸς\", the external word spoken by him. It is not, therefore, nor can be, the image of God, either essential or representati",
+      "html_context": "Word of God — but \"<span lang=\"el\" xml:lang=\"el\">λόγος προφορικὸς</span>\", the external word spoken by him. It is not, therefore, nor can be, the image of God, either essential or representati"
+    },
+    {
+      "file": "EPUB/ch011.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Οὐ γὰρ δήπου ἀγγελων ἐπιλαμβάνεται",
+      "context": "th respect immediately unto the angels; and, therefore, he took not their nature on him. \"Οὐ γὰρ δήπου ἀγγελων ἐπιλαμβάνεται\" — \"He took not the nature of angels unto him;\" (Hebrews 2:16;) because he was not to be a mediator for them, a savior",
+      "html_context": "th respect immediately unto the angels; and, therefore, he took not their nature on him. \"<span lang=\"el\" xml:lang=\"el\">Οὐ γὰρ δήπου ἀγγελων ἐπιλαμβάνεται</span>\" — \"He took not the nature of angels unto him;\" (Hebrews 2:16;) because he was not to be a mediator for them, a savior"
+    },
+    {
+      "file": "EPUB/ch011.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "καρδιογνώστης",
+      "context": "> 1st, That he be \"καρδιογνώστης\" — that he have an actual inspection into all the frames, dispositions, thoughts, and internal acting, of all believers",
+      "html_context": "> <p class=\"list-item list-level-3 block-list-subpoint\"><strong>1st,</strong> That he be \"<span lang=\"el\" xml:lang=\"el\">καρδιογνώστης</span>\" — that he have an actual inspection into all the frames, dispositions, thoughts, and internal acting, of all believers"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "καθὼς",
+      "context": "Father with one kind of honor, and the Son with another. That were not to honor the Son \"καθὼς\", \"as\" we honor the Father, but in a way infinitely different from it. <p class=\"list-item list-level-3 block-list-",
+      "html_context": "Father with one kind of honor, and the Son with another. That were not to honor the Son \"<span lang=\"el\" xml:lang=\"el\">καθὼς</span>\", \"as\" we honor the Father, but in a way infinitely different from it.</p> <p class=\"list-item list-level-3 block-list-"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "הִשְׁתַחֲוָה",
+      "context": "xcellencies and the ascription of them unto him. It is expressed in the Old Testament by \"הִשְׁתַחֲוָה\"; that is, humbly to bow down ourselves or our souls unto God. The LXX render it constantly by \"<span lang=\"el\" xml:lan",
+      "html_context": "xcellencies and the ascription of them unto him. It is expressed in the Old Testament by \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">הִשְׁתַחֲוָה</span>\"; that is, humbly to bow down ourselves or our souls unto God. The LXX render it constantly by \"<span lang=\"el\" xml:lan"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι Θεοῦ",
+      "context": "ge unto the angels above. For when he brought the Firstbegotten into the world, he said, \"Προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι Θεοῦ\"; that is, \"השְׁתֲחֲווּ־לוֹ כָּל־אלֹהֲים\", \"Worship him, all ye gods,\" P",
+      "html_context": "ge unto the angels above. For when he brought the Firstbegotten into the world, he said, \"<span lang=\"el\" xml:lang=\"el\">Προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι Θεοῦ</span>\"; that is, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">השְׁתֲחֲווּ־לוֹ כָּל־אלֹהֲים</span>\", \"Worship him, all ye gods,\" P"
+    },
+    {
+      "file": "EPUB/ch013.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐπικαλούμενον",
+      "context": "ul into the hands of Jesus Christ by solemn invocation, Acts 7:59, \"They stoned Stephen, \"ἐπικαλούμενον\", solemnly invocating, and saying, Lord Jesus, receive my spirit.\" And having by faith and prayer left his own soul saf",
+      "html_context": "ul into the hands of Jesus Christ by solemn invocation, Acts 7:59, \"They stoned Stephen, \"<span lang=\"el\" xml:lang=\"el\">ἐπικαλούμενον</span>\", solemnly invocating, and saying, Lord Jesus, receive my spirit.\" And having by faith and prayer left his own soul saf"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐν ἀφθαρσίᾳ",
+      "context": "ery were in his heart. Hence the apostle prays for grace on them who love the Lord Jesus \"ἐν ἀφθαρσίᾳ\" — without dissimulation or doubling, without pretenses and aims at other ends, without a mixture of corrupt affections",
+      "html_context": "ery were in his heart. Hence the apostle prays for grace on them who love the Lord Jesus \"<span lang=\"el\" xml:lang=\"el\">ἐν ἀφθαρσίᾳ</span>\" — without dissimulation or doubling, without pretenses and aims at other ends, without a mixture of corrupt affections"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "בְּנֵי נֵכָר יְכחֲשׁו־לְי",
+      "context": "ed of him, that many who were strangers unto his grace should lie unto him, Psalm 18:44, \"בְּנֵי נֵכָר יְכחֲשׁו־לְי\" — feignedly submit, or yield feigned obedience unto him. So is it with them who profess love unto him, yet are enemies",
+      "html_context": "ed of him, that many who were strangers unto his grace should lie unto him, Psalm 18:44, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">בְּנֵי נֵכָר יְכחֲשׁו־לְי</span>\" — feignedly submit, or yield feigned obedience unto him. So is it with them who profess love unto him, yet are enemies"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "κατ",
+      "context": "m. He makes us \"accepted in the Beloved,\" Ephesians 1:6. He is the Beloved of the Father \"κατ' ἐξοχήν\"; as in all things he was to have the pre-eminence, Colossians 1:18. The l",
+      "html_context": "m. He makes us \"accepted in the Beloved,\" Ephesians 1:6. He is the Beloved of the Father \"<span lang=\"el\" xml:lang=\"el\">κατ</span>' <span lang=\"el\" xml:lang=\"el\">ἐξοχήν</span>\"; as in all things he was to have the pre-eminence, Colossians 1:18. The l"
+    },
+    {
+      "file": "EPUB/ch016.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "חֶמְדַּת כָּח־הַגּוֹים",
+      "context": "hets, were only means to excite love unto him, and desires after him. Hence is he called \"חֶמְדַּת כָּח־הַגּוֹים\", Haggai 2:7, \"The Desire of all nations\" — he alone who is desirable unto, and the only beloved of the church gathered",
+      "html_context": "hets, were only means to excite love unto him, and desires after him. Hence is he called \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">חֶמְדַּת כָּח־הַגּוֹים</span>\", Haggai 2:7, \"The Desire of all nations\" — he alone who is desirable unto, and the only beloved of the church gathered"
+    },
+    {
+      "file": "EPUB/ch017.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "שִׁיר יְדִידְֹת",
+      "context": "boldness of them who have neither the one nor the other. The title of the 45th Psalm is, \"שִׁיר יְדִידְֹת\", \"A song of loves;\" — that is, of the mutual love of Christ and the church. And unto this end — that our souls may be",
+      "html_context": "boldness of them who have neither the one nor the other. The title of the 45th Psalm is, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">שִׁיר יְדִידְֹת</span>\", \"A song of loves;\" — that is, of the mutual love of Christ and the church. And unto this end — that our souls may be"
+    },
+    {
+      "file": "EPUB/ch019.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span",
+      "span_text": "Τὴν δόξαν Κυρίου κατοπτριζόμενοι κ",
+      "context": "his mind, in the eye of faith, as it is represented unto him in the glass of the gospel: \"Τὴν δόξαν Κυρίου κατοπτριζόμενοι κ.τ. λ., 2 Corinthians 3:18. We behold his glor",
+      "html_context": "his mind, in the eye of faith, as it is represented unto him in the glass of the gospel: \"<span lang=\"el\" xml:lang=\"el\">Τὴν δόξαν Κυρίου κατοπτριζόμενοι κ</span>.<span lang=\"el\" xml:lang=\"el\">τ</span>. <span lang=\"el\" xml:lang=\"el\">λ</span>., 2 Corinthians 3:18. We behold his glor"
+    },
+    {
+      "file": "EPUB/ch020.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐξ ἑνὸς",
+      "context": "t. Thus \"he who sanctifieth and they who are sanctified are all of one,\" Hebrews 2:11, — \"ἐξ ἑνὸς\"; that is, \"φυράματος\" — of the same mass, of one nature and blood; whence he is n",
+      "html_context": "t. Thus \"he who sanctifieth and they who are sanctified are all of one,\" Hebrews 2:11, — \"<span lang=\"el\" xml:lang=\"el\">ἐξ ἑνὸς</span>\"; that is, \"<span lang=\"el\" xml:lang=\"el\">φυράματος</span>\" — of the same mass, of one nature and blood; whence he is n"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐξ οῦ",
+      "context": "by whom are all things, and we by him.\" The Father is the original fountain and spring,; \"ἐξ οῦ\", from whom — [from] whose original authority, love, goodness, and power — are all these things. That expression, \"from",
+      "html_context": "by whom are all things, and we by him.\" The Father is the original fountain and spring,; \"<span lang=\"el\" xml:lang=\"el\">ἐξ οῦ</span>\", from whom — [from] whose original authority, love, goodness, and power — are all these things. That expression, \"from"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "δι οῦ",
+      "context": "accomplished? \"There is one Lord,\" even Jesus Christ, a distinct person from the Father, \"δι οῦ\", \"by whom are all things.\" He works in the order of his subsistence, to execute, work, and accomplish all that origina",
+      "html_context": "accomplished? \"There is one Lord,\" even Jesus Christ, a distinct person from the Father, \"<span lang=\"el\" xml:lang=\"el\">δι οῦ</span>\", \"by whom are all things.\" He works in the order of his subsistence, to execute, work, and accomplish all that origina"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατοπτριζόμενοι",
+      "context": "same image, from glory to glory, even as by the Spirit of the Lord\" — we all beholding — \"κατοπτριζόμενοι\", not taking a transient glance of these things, but diligently inspecting them, as those do who, through a glass, desi",
+      "html_context": "same image, from glory to glory, even as by the Spirit of the Lord\" — we all beholding — \"<span lang=\"el\" xml:lang=\"el\">κατοπτριζόμενοι</span>\", not taking a transient glance of these things, but diligently inspecting them, as those do who, through a glass, desi"
+    },
+    {
+      "file": "EPUB/ch021.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Μεταμορφούμεθα",
+      "context": "en engaged. And what is the effect of the steady contemplation of this mystery by faith? \"Μεταμορφούμεθα\" — \"we are changed\" — made quite other creatures than we were — cast into the form, figure, and image of Jesus Christ t",
+      "html_context": "en engaged. And what is the effect of the steady contemplation of this mystery by faith? \"<span lang=\"el\" xml:lang=\"el\">Μεταμορφούμεθα</span>\" — \"we are changed\" — made quite other creatures than we were — cast into the form, figure, and image of Jesus Christ t"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ βούλησιν καὶ ἐυδοκίαν",
+      "context": "of the Son. Herein, as Damascen observes, the other persons had no concurrence, but only \"κατὰ βούλησιν καὶ ἐυδοκίαν\" — \"by counsel and approbation.\" 2. This assu",
+      "html_context": "of the Son. Herein, as Damascen observes, the other persons had no concurrence, but only \"<span lang=\"el\" xml:lang=\"el\">κατὰ βούλησιν καὶ ἐυδοκίαν</span>\" — \"by counsel and approbation.\"</p> <p class=\"list-item list-level-1 block-list-primary\"><strong>2.</strong> This assu"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀτρέπτως",
+      "context": "mans 9:5; Colossians 2:9; 1 John 3:16. This union the ancient church affirmed to be made \"ἀτρέπτως\", \"without any change\" in the person of the Son of God, which the divine nature is not subject unto; — \"<span lang=\"el\"",
+      "html_context": "mans 9:5; Colossians 2:9; 1 John 3:16. This union the ancient church affirmed to be made \"<span lang=\"el\" xml:lang=\"el\">ἀτρέπτως</span>\", \"without any change\" in the person of the Son of God, which the divine nature is not subject unto; — \"<span lang=\"el\""
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀσυγχύτως",
+      "context": "a distinction of natures, but \"without any division\" of them by separate subsistences; — \"ἀσυγχύτως\", \"without mixture\" or confusion; — \"ἀχωρίστως\", \"without separation\" or distance;",
+      "html_context": "a distinction of natures, but \"without any division\" of them by separate subsistences; — \"<span lang=\"el\" xml:lang=\"el\">ἀσυγχύτως</span>\", \"without mixture\" or confusion; — \"<span lang=\"el\" xml:lang=\"el\">ἀχωρίστως</span>\", \"without separation\" or distance;"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "οὐσιωδῶς",
+      "context": "and \"οὐσιωδῶς\", \"substantially,\" because it was of two substances or essences in the same person, in opposition unto all accidental u",
+      "html_context": "and \"<span lang=\"el\" xml:lang=\"el\">οὐσιωδῶς</span>\", \"substantially,\" because it was of two substances or essences in the same person, in opposition unto all accidental u"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐνσάρκωσις",
+      "context": "judged significant of this great mystery, or the incarnation of the Son of God. Such are \"ἐνσάρκωσις\", \"incarnation;\" \"ἐνσωμάτωσις\", \"embodying,\" \"ἐνανθρ",
+      "html_context": "judged significant of this great mystery, or the incarnation of the Son of God. Such are \"<span lang=\"el\" xml:lang=\"el\">ἐνσάρκωσις</span>\", \"incarnation;\" \"<span lang=\"el\" xml:lang=\"el\">ἐνσωμάτωσις</span>\", \"embodying,\" \"<span lang=\"el\" xml:lang=\"el\">ἐνανθρ"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_with_punctuation_after",
+      "span_text": "ἡ δεσποτικὴ ἐπιδημία",
+      "context": "ώπησις\", \"inhumanation;\" \"ἡ δεσποτικὴ ἐπιδημία, καὶ παρουσία, ἡ οἰκονομία\", to the same purp",
+      "html_context": "ώπησις</span>\", \"inhumanation;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ δεσποτικὴ ἐπιδημία</span>, <span lang=\"el\" xml:lang=\"el\">καὶ παρουσία</span>, <span lang=\"el\" xml:lang=\"el\">ἡ οἰκονομία</span>\", to the same purp"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἡ διὰ σαρκὸς ὁμιλία",
+      "context": "ose; \"ἡ διὰ σαρκὸς ὁμιλία\", \"his conversation in or by the flesh;\" \"ἡ διὰ ἀνθρωπότητος φανέρωσις\", \"his mani",
+      "html_context": "ose; \"<span lang=\"el\" xml:lang=\"el\">ἡ διὰ σαρκὸς ὁμιλία</span>\", \"his conversation in or by the flesh;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ διὰ ἀνθρωπότητος φανέρωσις</span>\", \"his mani"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἡ κένωσις",
+      "context": "festation by humanity;\" \"ἡ ἔλευσις\", \"the advent;\" \"ἡ κένωσις\", \"the exinanition\", or humiliation; \"ἡ τοῦ Χριστοῦ ἐπιφάνεια\", \"the appearance\" o",
+      "html_context": "festation by humanity;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ ἔλευσις</span>\", \"the advent;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ κένωσις</span>\", \"the exinanition\", or humiliation; \"<span lang=\"el\" xml:lang=\"el\">ἡ τοῦ Χριστοῦ ἐπιφάνεια</span>\", \"the appearance\" o"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἡ συγκατάβασις",
+      "context": "r manifestation \"of Christ;\" \"ἡ συγκατάβασις\", \"the condescension\". Most of these expressions are taken from the Scripture, and are used therein with respect unto t",
+      "html_context": "r manifestation \"of Christ;\" \"<span lang=\"el\" xml:lang=\"el\">ἡ συγκατάβασις</span>\", \"the condescension\". Most of these expressions are taken from the Scripture, and are used therein with respect unto t"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "χάρις ἑνώσεως",
+      "context": "uth. That whereby it is most usually declared in the writings of the ancients, is \"χάρις ἑνώσεως\", \"gratia unionis\", the \"grace of union;\" — which form of words some manifesting t",
+      "html_context": "uth.</p> <p>That whereby it is most usually declared in the writings of the ancients, is \"<span lang=\"el\" xml:lang=\"el\">χάρις ἑνώσεως</span>\", \"<span lang=\"la\" xml:lang=\"la\">gratia unionis</span>\", the \"grace of union;\" — which form of words some manifesting t"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κρᾶσις",
+      "context": "as turned into wine; but this union hath no resemblance unto any of them. There is not a \"κρᾶσις\", \"a mixture,\" a contemperation<a class=\"noteref noteref-glossary\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnote",
+      "html_context": "as turned into wine; but this union hath no resemblance unto any of them. There is not a \"<span lang=\"el\" xml:lang=\"el\">κρᾶσις</span>\", \"a mixture,\" a contemperation<a class=\"noteref noteref-glossary\" epub:type=\"noteref\" role=\"doc-noteref\" href=\"endnote"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ παράστασιν",
+      "context": "st-level-3 block-list-subpoint\">[1.] He said he was so present with him \"κατὰ παράστασιν\", or by inhabitation, as a man dwells in a house or a ship to rule it. He dwelt in him as his temple. So he dwells in a",
+      "html_context": "st-level-3 block-list-subpoint\"><strong>[1.]</strong> He said he was so present with him \"<span lang=\"el\" xml:lang=\"el\">κατὰ παράστασιν</span>\", or by inhabitation, as a man dwells in a house or a ship to rule it. He dwelt in him as his temple. So he dwells in a"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ σχέσιν",
+      "context": "list-level-3 block-list-subpoint\">[2.] He allowed an especial presence, \"κατὰ σχέσιν\", as some call it; that is, by such a union of affections as is between intimate friends. The soul of God rested always",
+      "html_context": "list-level-3 block-list-subpoint\"><strong>[2.]</strong> He allowed an especial presence, \"<span lang=\"el\" xml:lang=\"el\">κατὰ σχέσιν</span>\", as some call it; that is, by such a union of affections as is between intimate friends. The soul of God rested always"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατ ἀξίαν",
+      "context": "s=\"list-item list-level-3 block-list-subpoint\">[3.] He allowed it to be \"κατ ἀξίαν\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of God is als",
+      "html_context": "s=\"list-item list-level-3 block-list-subpoint\"><strong>[3.]</strong> He allowed it to be \"<span lang=\"el\" xml:lang=\"el\">κατ ἀξίαν</span>\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of God is als"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κατὰ ταυτοβουλίαν",
+      "context": "=\"list-item list-level-3 block-list-subpoint\">[4.] He asserted it to be \"κατὰ ταυτοβουλίαν\", or on the account of the consent and agreement that was between the will of God and the will of the man Christ Jesus.",
+      "html_context": "=\"list-item list-level-3 block-list-subpoint\"><strong>[4.]</strong> He asserted it to be \"<span lang=\"el\" xml:lang=\"el\">κατὰ ταυτοβουλίαν</span>\", or on the account of the consent and agreement that was between the will of God and the will of the man Christ Jesus."
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Καθ ὁμωνυμίαν",
+      "context": ":16, 17. [5.] \"Καθ ὁμωνυμίαν\", by an equivocal denomination, the name of the one person, namely, of the Son of God, being accommodated unto the othe",
+      "html_context": ":16, 17.</p> <p class=\"list-item list-level-3 block-list-subpoint\"><strong>[5.]</strong> \"<span lang=\"el\" xml:lang=\"el\">Καθ ὁμωνυμίαν</span>\", by an equivocal denomination, the name of the one person, namely, of the Son of God, being accommodated unto the othe"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνυπόστατος",
+      "context": "g>(1.) Immediate in the person of the Son. This is subsistence. In itself it is \"ἀνυπόστατος\", — that which hath not a subsistence of its own, which should give it individuation and distinction from the same natu",
+      "html_context": "g>(1.)</strong> Immediate in the person of the Son. This is subsistence. In itself it is \"<span lang=\"el\" xml:lang=\"el\">ἀνυπόστατος</span>\", — that which hath not a subsistence of its own, which should give it individuation and distinction from the same natu"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἐναλλαγή",
+      "context": "im. See Romans 9:5; Matthew 22:42. These kinds of enunciations the ancients expressed by \"ἐναλλαγή\", \"alteration;\" \"ἀλλοίωσις\", \"permutation,\" \"κοινότη",
+      "html_context": "im. See Romans 9:5; Matthew 22:42. These kinds of enunciations the ancients expressed by \"<span lang=\"el\" xml:lang=\"el\">ἐναλλαγή</span>\", \"alteration;\" \"<span lang=\"el\" xml:lang=\"el\">ἀλλοίωσις</span>\", \"permutation,\" \"<span lang=\"el\" xml:lang=\"el\">κοινότη"
+    },
+    {
+      "file": "EPUB/ch022.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "τρόπος ἀντιδόσεως",
+      "context": "ς\", \"communion;\" \"τρόπος ἀντιδόσεως\", \"the manner of mutual position;\" \"κοινωνία ἰδιωμάτων\", \"the communication of pro",
+      "html_context": "ς</span>\", \"communion;\" \"<span lang=\"el\" xml:lang=\"el\">τρόπος ἀντιδόσεως</span>\", \"the manner of mutual position;\" \"<span lang=\"el\" xml:lang=\"el\">κοινωνία ἰδιωμάτων</span>\", \"the communication of pro"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνελήφθη ἐν δόξῃ",
+      "context": "everal degrees of ascent, he carrieth it within the veil, and leaves it there in glory — \"ἀνελήφθη ἐν δόξῃ\", 1 Timothy 3:16; God was manifest in the flesh, and \"received up into glory.\" This assumption of our Lord Jesus Christ",
+      "html_context": "everal degrees of ascent, he carrieth it within the veil, and leaves it there in glory — \"<span lang=\"el\" xml:lang=\"el\">ἀνελήφθη ἐν δόξῃ</span>\", 1 Timothy 3:16; God was manifest in the flesh, and \"received up into glory.\" This assumption of our Lord Jesus Christ"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀνελήφθη ἐν δόξῃ",
+      "context": "into glory was upon his ascension, described Acts 1:9-11. \"He was taken up into heaven,\" \"ἀνελήφθη ἐν δόξῃ\", by an act of divine power; and he went into heaven, \"εἰσελθεῖν εἰς τὴν δόξαν\", i",
+      "html_context": "into glory was upon his ascension, described Acts 1:9-11. \"He was taken up into heaven,\" \"<span lang=\"el\" xml:lang=\"el\">ἀνελήφθη ἐν δόξῃ</span>\", by an act of divine power; and he went into heaven, \"<span lang=\"el\" xml:lang=\"el\">εἰσελθεῖν εἰς τὴν δόξαν</span>\", i"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "he",
+      "severity": "info",
+      "code": "foreign_term_followed_by_english_gloss_or_reference",
+      "span_text": "\"צִֹירֵי המעְלוֹת\"",
+      "context": "not triumphant. All the Psalms, from the 120th to the 134th inclusively, whose titles are \"צִֹירֵי המעְלוֹת\", Songs of Degrees, or rather ascents or risings — being generally songs of praise and exhortations to have respect unto",
+      "html_context": "not triumphant. All the Psalms, from the 120th to the 134th inclusively, whose titles are <span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">\"צִֹירֵי המעְלוֹת\"</span>, Songs of Degrees, or rather ascents or risings — being generally songs of praise and exhortations to have respect unto"
+    },
+    {
+      "file": "EPUB/ch023.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "גְדִיבֵי עַמִים",
+      "context": "came unto him the queen of Sheba, the type of the Gentile converts and the church; when \"גְדִיבֵי עַמִים\", the \"voluntaries of the people,\" (those made willing in the day of his power, Psalm 110:3,) \"gathered themselves to t",
+      "html_context": "came unto him the queen of Sheba, the type of the Gentile converts and the church; when \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">גְדִיבֵי עַמִים</span>\", the \"voluntaries of the people,\" (those made willing in the day of his power, Psalm 110:3,) \"gathered themselves to t"
+    },
+    {
+      "file": "EPUB/ch027.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἰσάγγελοι",
+      "context": "have no more alliance unto that brutish nature which perisheth forever; for we shall be \"ἰσάγγελοι\" like unto angels, or equal to them. Our bodies shall no more be capable of those acts and operations which are now com",
+      "html_context": "have no more alliance unto that brutish nature which perisheth forever; for we shall be \"<span lang=\"el\" xml:lang=\"el\">ἰσάγγελοι</span>\" like unto angels, or equal to them. Our bodies shall no more be capable of those acts and operations which are now com"
+    },
+    {
+      "file": "EPUB/ch027.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Τὴν ἐπιθυμίαν ἔχων",
+      "context": "to be with Christ, which is far better\" than to abide here, Philippians 1:23. Saith he, \"Τὴν ἐπιθυμίαν ἔχων\", — not an ordinary desire, not that which worketh in me now and then; but a constant, habitual inclination, working in",
+      "html_context": "to be with Christ, which is far better\" than to abide here, Philippians 1:23. Saith he, \"<span lang=\"el\" xml:lang=\"el\">Τὴν ἐπιθυμίαν ἔχων</span>\", — not an ordinary desire, not that which worketh in me now and then; but a constant, habitual inclination, working in"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "Τὴν δόξαν τὴν ἐμὴν",
+      "context": "e Church.The glory of Christ is the glory of the person of Christ So he calls it \"Τὴν δόξαν τὴν ἐμὴν\", John 17:24, \"That glory which is mine,\" which belongeth to me, unto my person. The person of Christ may be con",
+      "html_context": "e Church.</h3><p>The glory of Christ is the glory of the person of Christ So he calls it \"<span lang=\"el\" xml:lang=\"el\">Τὴν δόξαν τὴν ἐμὴν</span>\", John 17:24, \"That glory which is mine,\" which belongeth to me, unto my person.</p> <p>The person of Christ may be con"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "φωτισμὸν τῆς γνώσεως τῆς δόξης τοῦ Θεοῦ",
+      "context": "ist.\" Whatever obscure, imperfect notions we may have of them other ways, we cannot have \"φωτισμὸν τῆς γνώσεως τῆς δόξης τοῦ Θεοῦ\", \"the light of the\" illuminating, irradiating \"knowledge of the glory of God,\" which may enlighten our minds and sanct",
+      "html_context": "ist.\" Whatever obscure, imperfect notions we may have of them other ways, we cannot have \"<span lang=\"el\" xml:lang=\"el\">φωτισμὸν τῆς γνώσεως τῆς δόξης τοῦ Θεοῦ</span>\", \"the light of the\" illuminating, irradiating \"knowledge of the glory of God,\" which may enlighten our minds and sanct"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "εν̓ προσώπῳ",
+      "context": "ify your hearts, but only \"εν̓ προσώπῳ\", \"in the face\" or person \"of Jesus Christ:\" for he is \"the image of God,\" 2 Corinthians 4:4; \"the brightness of the Fa",
+      "html_context": "ify your hearts, but only \"<span lang=\"el\" xml:lang=\"el\">εν̓ προσώπῳ</span>\", \"in the face\" or person \"of Jesus Christ:\" for he is \"the image of God,\" 2 Corinthians 4:4; \"the brightness of the Fa"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "φάσκοντες εῖναι σοφοὶ",
+      "context": "them. Hereon they boasted themselves to be the only wise men in the world, Romans 1:22, \"φάσκοντες εῖναι σοφοὶ\", — they boasted that they were the wise. But we must abide in the judgement of the apostle concerning them in their in",
+      "html_context": "them. Hereon they boasted themselves to be the only wise men in the world, Romans 1:22, \"<span lang=\"el\" xml:lang=\"el\">φάσκοντες εῖναι σοφοὶ</span>\", — they boasted that they were the wise. But we must abide in the judgement of the apostle concerning them in their in"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "λογισμοὶ",
+      "context": "allibly into the knowledge of the divine nature. All they had of this kind was their own \"λογισμοὶ\", their reasonings or imaginations; whereby they commenced \"συζητητὰι τοῦ ἀιῶνος τούτου</",
+      "html_context": "allibly into the knowledge of the divine nature. All they had of this kind was their own \"<span lang=\"el\" xml:lang=\"el\">λογισμοὶ</span>\", their reasonings or imaginations; whereby they commenced \"<span lang=\"el\" xml:lang=\"el\">συζητητὰι τοῦ ἀιῶνος τούτου</"
+    },
+    {
+      "file": "EPUB/ch029.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ψηλαφᾷν",
+      "context": "vain, and their foolish heart was darkened,\" Romans 1:21. They did at best but endeavor \"ψηλαφᾷν\", \"to feel after God,\" as men do in the dark after what they cannot clearly discern, Acts 17:27. Among other, Cicero'<a",
+      "html_context": "vain, and their foolish heart was darkened,\" Romans 1:21. They did at best but endeavor \"<span lang=\"el\" xml:lang=\"el\">ψηλαφᾷν</span>\", \"to feel after God,\" as men do in the dark after what they cannot clearly discern, Acts 17:27. Among other, Cicero'<a"
+    },
+    {
+      "file": "EPUB/ch031.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "κένωσις",
+      "context": "o from himself and his own mind alone. And that in general which is ascribed unto him is \"κένωσις\", exinanition, or self-emptying; he emptied himself. This the ancient church called his \"<span lang=\"el\" xml:lan",
+      "html_context": "o from himself and his own mind alone. And that in general which is ascribed unto him is \"<span lang=\"el\" xml:lang=\"el\">κένωσις</span>\", exinanition, or self-emptying; he emptied himself.</p> <p>This the ancient church called his \"<span lang=\"el\" xml:lan"
+    },
+    {
+      "file": "EPUB/ch038.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "אַתָה הוּא",
+      "context": "and happiness, whereunto nothing can be added. God is always the same. That is his name, \"אַתָה הוּא\" — Psalm 102:27, \"Thou art he,\" — always the same. All things that are, make no addition unto God, no change in his sta",
+      "html_context": "and happiness, whereunto nothing can be added. God is always the same. That is his name, \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">אַתָה הוּא</span>\" — Psalm 102:27, \"Thou art he,\" — always the same. All things that are, make no addition unto God, no change in his sta"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "δἰ ἐσόπτρου ἐν αἰνίγματι",
+      "context": "xive. So the apostle declares, 1 Corinthians 13:12, \"Now we see through a glass darkly,\" \"δἰ ἐσόπτρου ἐν αἰνίγματι\"; — \"through\" or by \"a glass, in a riddle,\" a parable, a dark saying. There is a double figurative limitation put upon",
+      "html_context": "xive. So the apostle declares, 1 Corinthians 13:12, \"Now we see through a glass darkly,\" \"<span lang=\"el\" xml:lang=\"el\">δἰ ἐσόπτρου ἐν αἰνίγματι</span>\"; — \"through\" or by \"a glass, in a riddle,\" a parable, a dark saying. There is a double figurative limitation put upon"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "αἰνίγματι",
+      "context": "ion of our view of the glory of Christ by faith in this world, the apostle says it is in \"αἰνίγματι\", in \"a riddle.\" These \"αἰνίγματα\" the Psalmist calls \"<span lang=\"he\" xml:lang=\"h",
+      "html_context": "ion of our view of the glory of Christ by faith in this world, the apostle says it is in \"<span lang=\"el\" xml:lang=\"el\">αἰνίγματι</span>\", in \"a riddle.\" These \"<span lang=\"el\" xml:lang=\"el\">αἰνίγματα</span>\" the Psalmist calls \"<span lang=\"he\" xml:lang=\"h"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "מֵצִיץ",
+      "context": "itions. \"Behold, he standeth behind the wall, he looketh forth at the windows, showing\" (\"מֵצִיץ\", flourishing) \"himself through the lattice,\" Song of Solomon 2:9. There is a great interposition between him and us, a",
+      "html_context": "itions. \"Behold, he standeth behind the wall, he looketh forth at the windows, showing\" (\"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">מֵצִיץ</span>\", flourishing) \"himself through the lattice,\" Song of Solomon 2:9. There is a great interposition between him and us, a"
+    },
+    {
+      "file": "EPUB/ch039.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "ἀποκαραδοκία",
+      "context": "\"the day did break, and the shadows flee away,\" Song of Solomon 2:17; 4:6. There was an \"ἀποκαραδοκία\", as the apostle speaks, Romans 8:19, — a thrusting forth of the head with desire and expectation of the exhibition of",
+      "html_context": "\"the day did break, and the shadows flee away,\" Song of Solomon 2:17; 4:6. There was an \"<span lang=\"el\" xml:lang=\"el\">ἀποκαραδοκία</span>\", as the apostle speaks, Romans 8:19, — a thrusting forth of the head with desire and expectation of the exhibition of"
+    },
+    {
+      "file": "EPUB/ch045.xhtml",
+      "lang": "he",
+      "severity": "review",
+      "code": "quote_opens_outside_span_and_closes_after_span",
+      "span_text": "וְקַח טוֹב",
+      "context": "trong> Gracious acceptation: \"Receive us graciously.\" The words in the original are only \"וְקַח טוֹב\". And receive good;\" but both the words being used variously, the sense eminently included in them is well expressed by",
+      "html_context": "trong> Gracious acceptation: \"Receive us graciously.\" The words in the original are only \"<span lang=\"he\" xml:lang=\"he\" dir=\"rtl\">וְקַח טוֹב</span>\". And receive good;\" but both the words being used variously, the sense eminently included in them is well expressed by"
+    },
+    {
+      "file": "EPUB/contents_2.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ΧΡΙΣΤΟΛΟΓΙΑ:",
+      "context": "eface\">General Preface ΧΡΙΣΤΟΛΟΓΙΑ: OR, A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST P",
+      "html_context": "eface\"><a href=\"ch001.xhtml\">General Preface</a></p> <h2 class=\"contents-treatise-title\"><span lang=\"el\" xml:lang=\"el\">ΧΡΙΣΤΟΛΟΓΙΑ:</span> OR, A DECLARATION OF THE GLORIOUS MYSTERY OF THE PERSON OF CHRIST</h2> <p class=\"contents-item\"><a href=\"ch003.xhtml\">P"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Κατοπτρίζω",
+      "context": "5 Κατοπτρίζω does not admit of the signification here ascribed to it by Dr Owen. It denotes looking into a mirror, not through a tel",
+      "html_context": "<p class=\"footnote\" style=\"line-height: 1.30 !important;\"><span class=\"fn-link\">5</span> <span lang=\"el\" xml:lang=\"el\">Κατοπτρίζω</span> does not admit of the signification here ascribed to it by Dr Owen. It denotes looking into a mirror, not through a tel"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "κάτοπτρον",
+      "context": ". Another view is taken of the passage, by which a tacit antithesis is instituted between κάτοπτρον and ἐικών: \"Dominus nos <span lang=\"el\" xml:l",
+      "html_context": ". Another view is taken of the passage, by which a tacit antithesis is instituted between <span lang=\"el\" xml:lang=\"el\">κάτοπτρον</span> and <span lang=\"el\" xml:lang=\"el\">ἐικών</span>: \"<span lang=\"la\" xml:lang=\"la\">Dominus nos</span> <span lang=\"el\" xml:l"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ἐντετυπωμένη",
+      "context": "dorem suscipimus et referimus. Elegans antitheton ad ἐντετυπωμένη, insculpta. Nam quae insculpuntur fiunt paullatim: q",
+      "html_context": "dorem <span lang=\"la\" xml:lang=\"la\">suscipimus et referimus</span>. Elegans antitheton ad <span lang=\"el\" xml:lang=\"el\">ἐντετυπωμένη</span>, <span lang=\"la\" xml:lang=\"la\">insculpta. Nam quae insculpuntur</span> fiunt paullatim: <span lang=\"la\" xml:lang=\"la\">q"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "κατοπτρίζω",
+      "context": "ns 3:18; Edward Robinson, A Greek and English Lexicon of the New Testament, s.v. κατοπτρίζω.Translation: Κατοπτρίζω means “to behold as in a mirror” or",
+      "html_context": "ns 3:18; Edward Robinson, <em>A Greek and English Lexicon of the New Testament</em>, s.v. <span lang=\"el\" xml:lang=\"el\">κατοπτρίζω</span>.<br/><strong>Translation:</strong> <span lang=\"el\" xml:lang=\"el\">Κατοπτρίζω</span> means “to behold as in a mirror” or"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Θεοτόκος",
+      "context": "resbyter at Antioch appointed patriarch of Constantinople A.D.428 objected to the epithet Θεοτόκος, as applied to the Virgin Mary, because \"that God should be born of a human being is impossible\" charged in consequence",
+      "html_context": "resbyter at Antioch appointed patriarch of Constantinople A.D.428 objected to the epithet <span lang=\"el\" xml:lang=\"el\">Θεοτόκος</span>, as applied to the Virgin Mary, because \"that God should be born of a human being is impossible\" charged in consequence"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "συνάφεια",
+      "context": "tion of the divine and human natures of Christ, insisting on a connection between them by συνάφεια (junction), or ἐνοίκησις (indwelling), in opposition to <span lang=\"el\" xml:lang=\"",
+      "html_context": "tion of the divine and human natures of Christ, insisting on a connection between them by <span lang=\"el\" xml:lang=\"el\">συνάφεια</span> (junction), or <span lang=\"el\" xml:lang=\"el\">ἐνοίκησις</span> (indwelling), in opposition to <span lang=\"el\" xml:lang=\""
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Θεοτόκος",
+      "context": "Modern Citation: Nestorius of Constantinople, controversy over the title Θεοτόκος (“God-bearer”), condemned at the Council of Ephesus (A.D. 431); see Socrates Scholasticus, Ecclesiastical History</",
+      "html_context": "<strong>Modern Citation:</strong> Nestorius of Constantinople, controversy over the title <span lang=\"el\" xml:lang=\"el\">Θεοτόκος</span> (“God-bearer”), condemned at the Council of Ephesus (A.D. 431); see Socrates Scholasticus, <em>Ecclesiastical History</"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Θεοτόκος",
+      "context": "ng>Translation Summary: The Greek terms are technical Christological vocabulary: Θεοτόκος means “God-bearer” or “Mother of God”; συνάφεια means “conjunction” or “associatio",
+      "html_context": "ng>Translation Summary:</strong> The Greek terms are technical Christological vocabulary: <span lang=\"el\" xml:lang=\"el\">Θεοτόκος</span> means “God-bearer” or “Mother of God”; <span lang=\"el\" xml:lang=\"el\">συνάφεια</span> means “conjunction” or “associatio"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ἕνωσις",
+      "context": "n”; ἐνοίκησις means “indwelling”; and ἕνωσις means “union.” The note explains that Nestorius preferred language of conjunction or indwelling between Christ's two na",
+      "html_context": "n”; <span lang=\"el\" xml:lang=\"el\">ἐνοίκησις</span> means “indwelling”; and <span lang=\"el\" xml:lang=\"el\">ἕνωσις</span> means “union.” The note explains that Nestorius preferred language of conjunction or indwelling between Christ's two na"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "review",
+      "code": "quote_closes_after_span",
+      "span_text": "διεληλυθότα τοὺς οὐρανόυς",
+      "context": "an> The expression quoted by Dr Owen is founded upon the phrase in the original language, διεληλυθότα τοὺς οὐρανόυς \"having passed through,\" not \"into the heavens,\" as it stands in our version. ED. <p class=\"footnote-modern",
+      "html_context": "an> The expression quoted by Dr Owen is founded upon the phrase in the original language, <span lang=\"el\" xml:lang=\"el\">διεληλυθότα τοὺς οὐρανόυς</span> \"having passed through,\" not \"into the heavens,\" as it stands in our version. ED.</p> <p class=\"footnote-modern"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "διεληλυθότα τοὺς οὐρανούς",
+      "context": "-translation\" style=\"line-height: 1.30 !important;\">Hebrews 4:14. The Greek phrase διεληλυθότα τοὺς οὐρανούς transliterates as dielylythota tous ouranous, meaning “having passed through the heavens,” rather than “into t",
+      "html_context": "-translation\" style=\"line-height: 1.30 !important;\">Hebrews 4:14. The Greek phrase <span lang=\"el\" xml:lang=\"el\">διεληλυθότα τοὺς οὐρανούς</span> transliterates as <em>dielylythota tous ouranous</em>, meaning “having passed through the heavens,” rather than “into t"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "υτος εστιν ηε προς τον Πατερα αγουσα ηοσος",
+      "context": "ne-height: 1.30 !important;\">† υτος εστιν ηε προς τον Πατερα αγουσα ηοσος, ηε πετρα, ηε κλεις, <span lang=\"el\" xml:lang",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">υτος εστιν ηε προς τον Πατερα αγουσα ηοσος</span>, <span lang=\"el\" xml:lang=\"el\">ηε πετρα</span>, <span lang=\"el\" xml:lang=\"el\">ηε κλεις</span>, <span lang=\"el\" xml:lang"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "διὰ μίαν ἐκείνην",
+      "context": "ne-height: 1.30 !important;\">† διὰ μίαν ἐκείνην, ἥν αὐτὸς ἀπεφήνατο λέξιν, εἴπων, <span lang=",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">διὰ μίαν ἐκείνην</span>, <span lang=\"el\" xml:lang=\"el\">ἥν αὐτὸς ἀπεφήνατο λέξιν</span>, <span lang=\"el\" xml:lang=\"el\">εἴπων</span>, <span lang="
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "foreign_term_followed_by_english_gloss_or_reference",
+      "span_text": "καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς",
+      "context": "\"el\" xml:lang=\"el\">Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν, καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς: Translation: “Because of that one expression which He Himself declared, saying, 'Upon this roc",
+      "html_context": "\"el\" xml:lang=\"el\">Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν</span>, <span lang=\"el\" xml:lang=\"el\">καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς</span></span>: <strong>Translation:</strong> “Because of that one expression which He Himself declared, saying, 'Upon this roc"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν",
+      "context": "ne-height: 1.30 !important;\">† Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν: “Upon this rock of secure faith I will build My church” (Commonly attributed to Origen or early Greek commentat",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Επὶ τῇ πέτρᾳ ταυτῃ τῆς ἀσφαλοῦς πίστεως οἰκοδομήσω μοῦ τὴν ἐκκλεσίαν</span></span>: “Upon this rock of secure faith I will build My church” (Commonly attributed to Origen or early Greek commentat"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὁμοιούσιος",
+      "context": "ne-height: 1.30 !important;\">† ὁμοιούσιος, ἑτερούσιος, ἐξ οὐκ ὀ͂ντων: homoio",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">ὁμοιούσιος</span>, <span lang=\"el\" xml:lang=\"el\">ἑτερούσιος</span>, <span lang=\"el\" xml:lang=\"el\">ἐξ οὐκ ὀ͂ντων</span></span>: <em>homoio"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὅτι κατ",
+      "context": "ne-height: 1.30 !important;\">† ὅτι κατ' ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη: Translation:</stron",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">ὅτι κατ</span>' <span lang=\"el\" xml:lang=\"el\">ἀλήθειαν ἐστὶ μία φύσις τοῦ λόγου σεσαρκωμένη</span></span>: <strong>Translation:</stron"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων",
+      "context": "ne-height: 1.30 !important;\">† Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων, κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε τῆς καθ' ἡμᾶ",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Τὸν Θεοῦ μεσίτην καὶ ἀνθρώπων</span>, <span lang=\"el\" xml:lang=\"el\">κατὰ τὰς γραφὰς συγκεῖσθαι φάμεν ἔκ τε τῆς καθ</span>' <span lang=\"el\" xml:lang=\"el\">ἡμᾶ"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ἐκ τοῦ πεφηνότος",
+      "context": "ς ἀνθρώποτητος τελείως ἐχοῦσας κατὰ τὸν ἴδιον λόγον, καὶ ἐκ τοῦ πεφηνότος, ἐκ Θεοῦ κατὰ φύσιν υἱοῦ: Translation: “We say that the me",
+      "html_context": "ς ἀνθρώποτητος τελείως ἐχοῦσας κατὰ τὸν ἴδιον λόγον</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐκ τοῦ πεφηνότος</span>, <span lang=\"el\" xml:lang=\"el\">ἐκ Θεοῦ κατὰ φύσιν υἱοῦ</span></span>: <strong>Translation:</strong> “We say that the me"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Ο ἄσαρκος σαρκοῦται",
+      "context": "ne-height: 1.30 !important;\">† Ο ἄσαρκος σαρκοῦται, ὁ λόγος παχύνεται, ὁ ἀόρατος ὁρᾶται, <span l",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Ο ἄσαρκος σαρκοῦται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ λόγος παχύνεται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ ἀόρατος ὁρᾶται</span>, <span l"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὁ ἄχρονος ἄρχεται",
+      "context": "ang=\"el\" xml:lang=\"el\">ὁ ἀναφὴς ψηλαφᾶται, ὁ ἄχρονος ἄρχεται, ὁ υἱὸς Θεοῦ ὑιὸς ἀνθρώπου γίνεται: Translation: “The fles",
+      "html_context": "ang=\"el\" xml:lang=\"el\">ὁ ἀναφὴς ψηλαφᾶται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ ἄχρονος ἄρχεται</span>, <span lang=\"el\" xml:lang=\"el\">ὁ υἱὸς Θεοῦ ὑιὸς ἀνθρώπου γίνεται</span></span>: <strong>Translation:</strong> “The fles"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα",
+      "context": "ne-height: 1.30 !important;\">† Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα, φωτίζει δὲ ὀφθαλμοὺς, ἁφὴν δὲ θερμαίνει, <sp",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Οὕτω δὲ φωτὸς ἡλίου μία καὶ ἡ αὐτὴ προσβολὴ ὁμοῦ καὶ κατὰ τὸ αὐτὸ καταυγάζει μὲν ἀέρα</span>, <span lang=\"el\" xml:lang=\"el\">φωτίζει δὲ ὀφθαλμοὺς</span>, <span lang=\"el\" xml:lang=\"el\">ἁφὴν δὲ θερμαίνει</span>, <sp"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "αὔξει δὲ φυτὰ",
+      "context": "an lang=\"el\" xml:lang=\"el\">πιαίνει δὲ γῆν, αὔξει δὲ φυτὰ, κ.τ.λ.",
+      "html_context": "an lang=\"el\" xml:lang=\"el\">πιαίνει δὲ γῆν</span>, <span lang=\"el\" xml:lang=\"el\">αὔξει δὲ φυτὰ</span>, <span lang=\"el\" xml:lang=\"el\">κ</span>.<span lang=\"el\" xml:lang=\"el\">τ</span>.<span lang=\"el\" xml:lang=\"el\">λ</span>."
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο",
+      "context": "(cap. 6) Εἰ γοῦν ὥς ἐν ὑποθέσει λόγου, καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο, οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον, πάντων",
+      "html_context": "(cap. 6) <span lang=\"el\" xml:lang=\"el\">Εἰ γοῦν ὥς ἐν ὑποθέσει λόγου</span>, <span lang=\"el\" xml:lang=\"el\">καθεὶς οὐρανόθεν αὐτὸς ἑαυτὸν παμφαὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο</span>, <span lang=\"el\" xml:lang=\"el\">οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον</span>, <span lang=\"el\" xml:lang=\"el\">πάντων"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ιναι ἄιτιος",
+      "context": "ne-height: 1.30 !important;\">† ιναι ἄιτιος. Νῦν δὲ ἐπεφάνη ἀνθρώποις, ἀυτὸς οῦτος ὁ λόγος</span",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">ιναι ἄιτιος</span>. <span lang=\"el\" xml:lang=\"el\">Νῦν δὲ ἐπεφάνη ἀνθρώποις</span>, <span lang=\"el\" xml:lang=\"el\">ἀυτὸς οῦτος ὁ λόγος</span"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "foreign_term_followed_by_english_gloss_or_reference",
+      "span_text": "ἁπάντων ἡμῖν αἴτιος ἀγαθων",
+      "context": ">, ὁ μόνος ἄμφω Θεός τε καὶ ἄνθρωπος, ἁπάντων ἡμῖν αἴτιος ἀγαθων: Translation: “[to] be the cause. But now this same Word has appeared to men, who alone is both",
+      "html_context": ">, <span lang=\"el\" xml:lang=\"el\">ὁ μόνος ἄμφω Θεός τε καὶ ἄνθρωπος</span>, <span lang=\"el\" xml:lang=\"el\">ἁπάντων ἡμῖν αἴτιος ἀγαθων</span></span>: <strong>Translation:</strong> “[to] be the cause. But now this same Word has appeared to men, who alone is both"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ἄχραντος",
+      "context": "ne-height: 1.30 !important;\">† ἄχραντος, πατρικῷ θελήματι διάκονος, λόγος, <span lang",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">ἄχραντος</span>, <span lang=\"el\" xml:lang=\"el\">πατρικῷ θελήματι διάκονος</span>, <span lang=\"el\" xml:lang=\"el\">λόγος</span>, <span lang"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὁ ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς",
+      "context": "=\"el\" xml:lang=\"el\">Θεὸς, ὁ ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς, σὺν καὶ τῷ σχήματι Θεοῦ: Translation: “Immaculate, servan",
+      "html_context": "=\"el\" xml:lang=\"el\">Θεὸς</span>, <span lang=\"el\" xml:lang=\"el\">ὁ ἐν πατρὶ ὁ ἐκ δεξιῶν τοῦ πατρὸς</span>, <span lang=\"el\" xml:lang=\"el\">σὺν καὶ τῷ σχήματι Θεοῦ</span></span>: <strong>Translation:</strong> “Immaculate, servan"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν",
+      "context": "ne-height: 1.30 !important;\">† Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν, οὐκ ἔστιν ἐπιστημονικός. Ο δὲ υἱος σοφία τε ἐστι κα",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Ο μὲν οῦν Θεὸς ἀναπόδεικτος ὤν</span>, <span lang=\"el\" xml:lang=\"el\">οὐκ ἔστιν ἐπιστημονικός</span>. <span lang=\"el\" xml:lang=\"el\">Ο δὲ υἱος σοφία τε ἐστι κα"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ",
+      "context": "ὶ ἐπιστ́μῃ, καὶ ἀλήθεια, καὶ, ὅσα ἄλλα τούτῳ συγγενῆ: Modern Citation: Clement of Alexa",
+      "html_context": "ὶ ἐπιστ́μῃ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἀλήθεια</span>, <span lang=\"el\" xml:lang=\"el\">καὶ</span>, <span lang=\"el\" xml:lang=\"el\">ὅσα ἄλλα τούτῳ συγγενῆ</span></span>: <strong>Modern Citation:</strong> Clement of Alexa"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "ὡ τριὰς ἁγία ἀριθμουμένη",
+      "context": "ne-height: 1.30 !important;\">† ὡ τριὰς ἁγία ἀριθμουμένη, τριὰς ἐν ἑνὶ ὀνόματι ἀριθμουμένη: Translation: “The holy",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">ὡ τριὰς ἁγία ἀριθμουμένη</span>, <span lang=\"el\" xml:lang=\"el\">τριὰς ἐν ἑνὶ ὀνόματι ἀριθμουμένη</span></span>: <strong>Translation:</strong> “The holy"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ",
+      "context": "ne-height: 1.30 !important;\">† Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ, εἰ γὰρ μὴ ἄνθρωπος ἐνίκησεν τὸν ἀντίπαλον τοῦ ἀνθρώπου, <span lang=\"el\" xml:lang=",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">†</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Ηνωσεν οῦν καθὼς προέφαμεν τὸν ἄνθρωπον τῷ Θεῷ</span>, <span lang=\"el\" xml:lang=\"el\">εἰ γὰρ μὴ ἄνθρωπος ἐνίκησεν τὸν ἀντίπαλον τοῦ ἀνθρώπου</span>, <span lang=\"el\" xml:lang="
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "πάλιν τε",
+      "context": "\"el\">οὐκ ἆν δικαίως ἐνικήθη ὁ ἐχθρὸς, πάλιν τε, εἰ μὴ ὁ Θεὸς ἐδωρήσατο τὴν σωτηρίαν, οὺκ ἆν βεβαίως",
+      "html_context": "\"el\">οὐκ ἆν δικαίως ἐνικήθη ὁ ἐχθρὸς</span>, <span lang=\"el\" xml:lang=\"el\">πάλιν τε</span>, <span lang=\"el\" xml:lang=\"el\">εἰ μὴ ὁ Θεὸς ἐδωρήσατο τὴν σωτηρίαν</span>, <span lang=\"el\" xml:lang=\"el\">οὺκ ἆν βεβαίως"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ἐι μὴ συνηνώθη ὁ ἄνθρωπος τῷ Θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας",
+      "context": "ἔχοιμεν αὐτὴν, καὶ ἐι μὴ συνηνώθη ὁ ἄνθρωπος τῷ Θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας. Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων, διὰ",
+      "html_context": "ἔχοιμεν αὐτὴν</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ἐι μὴ συνηνώθη ὁ ἄνθρωπος τῷ Θεῷ οὔκ ἄν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας</span>. <span lang=\"el\" xml:lang=\"el\">Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων</span>, <span lang=\"el\" xml:lang=\"el\">διὰ"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "βρᾶβεῖον",
+      "context": "nobedientiam, replasmare et obtinere brabium (βρᾶβεῖον) victoriae; iterum autem impossibile erat ut salutem perciperet, <span lang=\"la\" x",
+      "html_context": "nobedientiam</span>, replasmare <span lang=\"la\" xml:lang=\"la\">et obtinere brabium</span> (<span lang=\"el\" xml:lang=\"el\">βρᾶβεῖον</span>) <span lang=\"la\" xml:lang=\"la\">victoriae; iterum autem</span> impossibile erat ut salutem perciperet, <span lang=\"la\" x"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "Επεὶ αὐτὸ ὅπε",
+      "context": "ne-height: 1.30 !important;\">◇ Επεὶ αὐτὸ ὅπε?ρ ἐστιν ὁ Θεὸς, οὐ μόνον προφῆται, <span lang",
+      "html_context": "ne-height: 1.30 !important;\"><span class=\"fn-link\">◇</span> <span class=\"original-phrase\"><span lang=\"el\" xml:lang=\"el\">Επεὶ αὐτὸ ὅπε</span>?<span lang=\"el\" xml:lang=\"el\">ρ ἐστιν ὁ Θεὸς</span>, <span lang=\"el\" xml:lang=\"el\">οὐ μόνον προφῆται</span>, <span lang"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "οὔτε ἀρχηάγγελοι",
+      "context": "=\"el\" xml:lang=\"el\">αλλ' οὐδὲ ἄγγελοι εῖδον, οὔτε ἀρχηάγγελοι; αλλ' ἐὰν ἐρωτήσῃς αὐτοὺς, <span lang=\"el\" xm",
+      "html_context": "=\"el\" xml:lang=\"el\">αλλ</span>' <span lang=\"el\" xml:lang=\"el\">οὐδὲ ἄγγελοι εῖδον</span>, <span lang=\"el\" xml:lang=\"el\">οὔτε ἀρχηάγγελοι</span>; <span lang=\"el\" xml:lang=\"el\">αλλ</span>' <span lang=\"el\" xml:lang=\"el\">ἐὰν ἐρωτήσῃς αὐτοὺς</span>, <span lang=\"el\" xm"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "δόξα δὲ ἐν ὑψίστοις μόνον ᾄδόντας τῳ Θεῷ",
+      "context": "l:lang=\"el\">ακουσῃ περὶ μὲν τῆς οὐσίας οὐδὲν ἀποκρινομενους; δόξα δὲ ἐν ὑψίστοις μόνον ᾄδόντας τῳ Θεῷ; κᾆν παρὰ τῶν Χερουβὶμ ἤ τῶν Σεραφὶμ ἐπιθυμήσῃς τι μαθεῖν, <span lang=\"el\" xml:lan",
+      "html_context": "l:lang=\"el\">ακουσῃ περὶ μὲν τῆς οὐσίας οὐδὲν ἀποκρινομενους</span>; <span lang=\"el\" xml:lang=\"el\">δόξα δὲ ἐν ὑψίστοις μόνον ᾄδόντας τῳ Θεῷ</span>; <span lang=\"el\" xml:lang=\"el\">κᾆν παρὰ τῶν Χερουβὶμ ἤ τῶν Σεραφὶμ ἐπιθυμήσῃς τι μαθεῖν</span>, <span lang=\"el\" xml:lan"
+    },
+    {
+      "file": "EPUB/endnotes.xhtml",
+      "lang": "el",
+      "severity": "info",
+      "code": "ordinary_foreign_span_context",
+      "span_text": "καὶ ὁ͂τι πλήρης ὁ οὐρανὸς καὶ ἡ γῆ τῆς δόξης αὐτοῦ",
+      "context": "g=\"el\">τὸ μυστικὸν τοῦ ἁγιασμοῦ μέλος ἀκουσῃ, καὶ ὁ͂τι πλήρης ὁ οὐρανὸς καὶ ἡ γῆ τῆς δόξης αὐτοῦ.: Modern Citation: John Chrysostom, Homilies on the Gospel of John (In Evangelium Joha",
+      "html_context": "g=\"el\">τὸ μυστικὸν τοῦ ἁγιασμοῦ μέλος ἀκουσῃ</span>, <span lang=\"el\" xml:lang=\"el\">καὶ ὁ͂τι πλήρης ὁ οὐρανὸς καὶ ἡ γῆ τῆς δόξης αὐτοῦ</span>.</span>: <strong>Modern Citation:</strong> John Chrysostom, <em>Homilies on the Gospel of John</em> (In Evangelium Joha"
+    }
+  ]
+}

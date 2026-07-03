@@ -65,6 +65,10 @@ def _repair_mid_sentence_blockquote_splits(text: str) -> str:
 
         next_para = paras[i+1].strip()
         if next_para.startswith('[[BLOCKQUOTE]]'):
+            if stripped.startswith('[[BLOCKQUOTE]]'):
+                out.append(para)
+                i += 1
+                continue
             clean_end = stripped.rstrip('\"\' \t\r\n')
             if clean_end and not clean_end.endswith(('.', ',', ';', ':', '?', '!', '—', '-')):
                 blockquote_content = next_para[len('[[BLOCKQUOTE]]'):].strip()
@@ -114,6 +118,19 @@ def _repair_unbalanced_bracket_splits(text):
 _DOC_STRUCTURE_TOKENS_RE = re.compile(
     r'^\[\[(?:CHAPTER|PART|SUBTITLE|DIGRESSION)\]\]'
 )
+_BLOCKQUOTE_TOKEN_RE = re.compile(r'^\[\[BLOCKQUOTE\]\]\s*')
+
+
+def _blockquote_allows_plain_continuation(text: str) -> bool:
+    """Return True when a blockquote marker appears to be genuinely unfinished."""
+    content = _BLOCKQUOTE_TOKEN_RE.sub('', text.strip()).strip()
+    if not content:
+        return False
+    if re.search(r'[.!?:;,][”"\']?\s*(?:\[[fF]\d+\])?\s*$', content):
+        return False
+    if re.search(r'[a-zA-Z]\s*(?:\[[fF]\d+\])?\s*$', content):
+        return True
+    return False
 
 
 def _repair_lowercase_continuation_splits(text: str) -> str:
@@ -143,6 +160,10 @@ def _repair_lowercase_continuation_splits(text: str) -> str:
             and stripped[0].islower()
             and not _DOC_STRUCTURE_TOKENS_RE.match(stripped)
             and not _DOC_STRUCTURE_TOKENS_RE.match(result[-1].strip())
+            and (
+                not result[-1].strip().startswith('[[BLOCKQUOTE]]')
+                or _blockquote_allows_plain_continuation(result[-1])
+            )
         ):
             result[-1] = result[-1].rstrip() + ' ' + stripped
         else:

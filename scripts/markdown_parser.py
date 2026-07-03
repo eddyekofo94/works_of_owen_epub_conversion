@@ -257,6 +257,29 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
             return roman_html
         return f'{roman_html} {_render_heading_content(rest)}'
 
+    def _append_roman_subheading_and_body(match) -> None:
+        roman_html = f'<strong>{_html_escape(match.group("roman"))}</strong>'
+        rest = (match.group('rest') or '').strip()
+        html_parts.append(f'<h4 class="roman-subheading">{roman_html}</h4>')
+        if not rest:
+            return
+
+        rest_html = _render_heading_content(rest)
+        if state.current_mode == "FRONT_MATTER":
+            if front_matter_style == "prose":
+                p_cls = "front-matter-prose first" if not state.fm_prose_started else "front-matter-prose"
+                state.fm_prose_started = True
+                html_parts.append(f'<p class="{p_cls}">{rest_html}</p>')
+            else:
+                html_parts.append(f'<p class="front-matter-body">{rest_html}</p>')
+            return
+
+        p_class = ""
+        if state.pending_drop_cap and state.current_mode == "BODY_START" and re.match(r'^[A-Z]', rest, re.I):
+            p_class = ' class="first"'
+            state.current_mode = "BODY_TEXT"
+        html_parts.append(f'<p{p_class}>{rest_html}</p>')
+
     if kind == 'BLOCKQUOTE':
         if not content.strip():
             return True
@@ -280,6 +303,37 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
         state.add_recent_plain(content)
         return True
 
+    if kind == 'ROMAN_HEAD':
+        state.summary_continuation_active = False
+        previous_text = state.recent_plain[-1] if state.recent_plain else ''
+        roman_match = _roman_head_match(content)
+        roman_number = _roman_to_int(roman_match.group('roman')) if roman_match else None
+        is_roman_list, next_roman = _is_roman_outline_entry(
+            content,
+            previous_text,
+            state.roman_list_expected,
+        )
+
+        if roman_number == 1:
+            state.roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
+        elif roman_number is not None and is_roman_list:
+            state.roman_sequence_choice = 'list-item'
+        elif state.roman_sequence_choice == 'roman-subheading':
+            is_roman_list = False
+
+        if is_roman_list:
+            html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
+            state.roman_list_expected = next_roman
+        elif roman_match:
+            _append_roman_subheading_and_body(roman_match)
+            state.roman_list_expected = None
+        else:
+            html_parts.append(f'<h4 class="roman-subheading">{_render_heading_content(content)}</h4>')
+            state.roman_list_expected = None
+        state.pending_drop_cap = False
+        state.add_recent_plain(content)
+        return True
+
     if state.current_mode == "FRONT_MATTER":
         _escaped = _render_heading_content(content)
         if front_matter_style == "prose":
@@ -291,17 +345,6 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
                     html_parts.append(f'<p class="analysis-part"><strong>{lead}.</strong> {rest}</p>')
                 else:
                     html_parts.append(f'<p class="analysis-part"><strong>{_escaped}</strong></p>')
-                state.fm_prose_started = False
-                state.pending_drop_cap = False
-                return True
-            if kind == 'ROMAN_HEAD':
-                roman_match = re.match(r'^([IVXLCDM]+\.)\s*(.*)$', content, re.I | re.S)
-                if roman_match:
-                    numeral = _html_escape(roman_match.group(1))
-                    rest = _render_heading_content(roman_match.group(2).strip())
-                    html_parts.append(f'<p class="roman-list-item"><strong>{numeral}</strong> {rest}</p>')
-                else:
-                    html_parts.append(f'<p class="roman-list-item">{_escaped}</p>')
                 state.fm_prose_started = False
                 state.pending_drop_cap = False
                 return True
@@ -341,47 +384,6 @@ def _process_structural_token(kind: str, content: str, state: ParserState, front
         html_parts.append(f'<h1 class="secondary">{_render_heading_content(content)}</h1>')
         if state.is_sermon_volume:
             state.next_blockquote_is_opening = True
-        state.add_recent_plain(content)
-        return True
-    elif kind == 'ROMAN_HEAD':
-        state.summary_continuation_active = False
-        previous_text = state.recent_plain[-1] if state.recent_plain else ''
-        roman_match = _roman_head_match(content)
-        roman_number = _roman_to_int(roman_match.group('roman')) if roman_match else None
-        
-        is_roman_list = False
-        if roman_number == 1:
-            is_roman_list, next_roman = _is_roman_outline_entry(
-                content,
-                previous_text,
-                state.roman_list_expected,
-            )
-            state.roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
-        elif roman_number is not None and roman_number > 1:
-            if state.roman_sequence_choice == 'list-item':
-                is_roman_list = True
-            elif state.roman_sequence_choice == 'roman-subheading':
-                is_roman_list = False
-            else:
-                is_roman_list, next_roman = _is_roman_outline_entry(
-                    content,
-                    previous_text,
-                    state.roman_list_expected,
-                )
-        else:
-            is_roman_list, next_roman = _is_roman_outline_entry(
-                content,
-                previous_text,
-                state.roman_list_expected,
-            )
-
-        if is_roman_list:
-            html_parts.append(f'<p class="roman-list-item">{_render_roman_heading_content(content)}</p>')
-            state.roman_list_expected = roman_number + 1 if roman_number is not None else None
-        else:
-            html_parts.append(f'<h4 class="roman-subheading">{_render_roman_heading_content(content)}</h4>')
-            state.roman_list_expected = None
-        state.pending_drop_cap = False
         state.add_recent_plain(content)
         return True
     elif kind == 'SUBTITLE':
@@ -461,13 +463,12 @@ def _clean_and_format_paragraph(para: str, state: ParserState, config: Optional[
     )
     from scripts.roman_parser import (
         _clean_heading_text,
-        _is_roman_list_item,
+        _is_roman_outline_entry,
         _render_simple_roman_heading_content,
         _roman_decimal_marker_match,
         _roman_head_match,
         _roman_to_int,
         _split_roman_section_opening,
-        _starts_roman_outline,
     )
 
     stripped = para.strip()
@@ -716,26 +717,34 @@ def _clean_and_format_paragraph(para: str, state: ParserState, config: Optional[
                 previous_text = state.recent_plain[-1] if state.recent_plain else ''
                 
                 is_roman_list = False
+                next_roman = None
                 if roman_number == 1:
-                    starts_roman_list = (
-                        re.search(r'\b(?:heads|ways|parts|sorts|things)\s*:\s*(?:[—-]\s*)?$', previous_text, re.I)
-                        or re.search(r'(?:[—-]|,)\s*$', previous_text)
+                    is_roman_list, next_roman = _is_roman_outline_entry(
+                        content_no_refs,
+                        previous_text,
+                        state.roman_list_expected,
                     )
-                    if starts_roman_list and _is_roman_list_item(rest_after_roman):
-                        is_roman_list = True
                     state.roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
                 elif roman_number > 1:
                     if state.roman_sequence_choice == 'list-item':
-                        is_roman_list = True
+                        is_roman_list, next_roman = _is_roman_outline_entry(
+                            content_no_refs,
+                            previous_text,
+                            state.roman_list_expected,
+                        )
                     elif state.roman_sequence_choice == 'roman-subheading':
                         is_roman_list = False
                     else:
-                        is_roman_list = state.roman_list_expected == roman_number
+                        is_roman_list, next_roman = _is_roman_outline_entry(
+                            content_no_refs,
+                            previous_text,
+                            state.roman_list_expected,
+                        )
                 
-                if is_roman_list or state.current_mode == "FRONT_MATTER":
+                if is_roman_list:
                     content_no_refs = f'**{roman_match.group("roman")}** {rest_after_roman}'
                     is_centered_roman_list = True
-                    state.roman_list_expected = roman_number + 1 if (is_roman_list or state.current_mode == "FRONT_MATTER") else None
+                    state.roman_list_expected = next_roman
                 else:
                     roman_heading = _render_simple_roman_heading_content(roman_match.group('roman'))
                     content_no_refs = rest_after_roman
@@ -749,22 +758,34 @@ def _clean_and_format_paragraph(para: str, state: ParserState, config: Optional[
                     previous_text = state.recent_plain[-1] if state.recent_plain else ''
                     
                     is_roman_list = False
+                    next_roman = None
                     if roman_number == 1:
-                        if _starts_roman_outline(previous_text, roman_number):
-                            is_roman_list = True
+                        is_roman_list, next_roman = _is_roman_outline_entry(
+                            content_no_refs,
+                            previous_text,
+                            state.roman_list_expected,
+                        )
                         state.roman_sequence_choice = 'list-item' if is_roman_list else 'roman-subheading'
                     elif roman_number > 1:
                         if state.roman_sequence_choice == 'list-item':
-                            is_roman_list = True
+                            is_roman_list, next_roman = _is_roman_outline_entry(
+                                content_no_refs,
+                                previous_text,
+                                state.roman_list_expected,
+                            )
                         elif state.roman_sequence_choice == 'roman-subheading':
                             is_roman_list = False
                         else:
-                            is_roman_list = state.roman_list_expected == roman_number
+                            is_roman_list, next_roman = _is_roman_outline_entry(
+                                content_no_refs,
+                                previous_text,
+                                state.roman_list_expected,
+                            )
                     
                     if is_roman_list:
                         content_no_refs = f'**{roman_head_start.group("roman")}** {rest_after_roman}'
                         is_centered_roman_list = True
-                        state.roman_list_expected = roman_number + 1
+                        state.roman_list_expected = next_roman
                     else:
                         roman_section = _split_roman_section_opening(content_no_refs)
                 if roman_section:
@@ -1147,4 +1168,3 @@ def markdown_to_html(md_text, current_mode="BODY_TEXT", pending_drop_cap=False,
     # Semantic list levels remain paragraph classes; wrapper inference used to
     # capture unrelated continuation prose and blockquotes.
     return result_html, state.current_mode, state.pending_drop_cap
-

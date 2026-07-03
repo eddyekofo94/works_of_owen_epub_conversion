@@ -1,6 +1,11 @@
 import re
 
-from scripts.owen_lists import _attach_em_dash_flat_list, classify_flat_list_run
+from scripts.owen_lists import (
+    _attach_em_dash_flat_list,
+    _merge_short_inline_lists,
+    classify_flat_list_run,
+    last_meaningful_visible_char,
+)
 from scripts.scholastic_parser import apply_scholastic_anchor_protocol, normalized_visible_text
 
 
@@ -141,6 +146,48 @@ def test_scholastic_gloss_flattening_handles_adjacent_paragraph_tags_without_new
     assert result.count('class="syllabus-anchor"') == 1
     assert result.count('<p class="list-item">') == 1
     assert '<strong>1.</strong> The glory of God is then expounded.' in result
+
+
+def test_scholastic_continuation_pair_merges_after_semicolon_despite_length_caps():
+    source = (
+        '<p class="list-item"><strong>(1.)</strong> As it was triumphant, as he was a King;</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> As it was gracious, as he was a Priest.</p>'
+    )
+    result = _merge_short_inline_lists(source)
+    assert result.count('<p class="list-item">') == 1
+    assert '<strong>(1.)</strong> As it was triumphant, as he was a King; <strong>(2.)</strong> As it was gracious, as he was a Priest.' in result
+
+
+def test_scholastic_continuation_pair_repeats_only_when_new_ending_is_open():
+    source = (
+        '<p class="list-item"><strong>(1.)</strong> The first branch continues;</p>\n'
+        '<p class="list-item"><strong>(2.)</strong> the second branch also continues,</p>\n'
+        '<p class="list-item"><strong>(3.)</strong> the third branch closes.</p>\n'
+        '<p class="list-item"><strong>(4.)</strong> A fresh exposition remains block.</p>'
+    )
+    result = _merge_short_inline_lists(source)
+    assert result.count('<p class="list-item">') == 2
+    assert '<strong>(3.)</strong> the third branch closes.</p>' in result
+    assert '<p class="list-item"><strong>(4.)</strong> A fresh exposition remains block.</p>' in result
+
+
+def test_last_meaningful_visible_char_ignores_noteref_and_closing_marks():
+    html = 'as he was a King;<a class="noteref" href="endnotes.xhtml#n1">1</a>”]'
+    assert last_meaningful_visible_char(html) == ';'
+
+
+def test_v1_ch023_ascension_continuation_merges_open_points_pairwise():
+    source = (
+        '<p class="list-item"><strong>(1.)</strong> In his ascension, as it was triumphant, three things may be considered:</p>\n'
+        '<p class="list-item"><strong>1st</strong>, The manner of it, With its representation of old;</p>\n'
+        '<p class="list-item"><strong>2ndly</strong>, The place whereinto he ascended;</p>\n'
+        '<p class="list-item"><strong>3rdly</strong>, The end of it, or what was the work which he had to do thereon.</p>\n'
+        '<p class="list-item"><strong>[1.]</strong> As unto the manner of it, it was openly triumphant and glorious.</p>'
+    )
+    result = _merge_short_inline_lists(source)
+    assert result.count('<p class="list-item">') == 3
+    assert '<strong>1st</strong>, The manner of it, With its representation of old; <strong>2ndly</strong>, The place whereinto he ascended; <strong>3rdly</strong>, The end of it' in result
+    assert '<p class="list-item"><strong>[1.]</strong> As unto the manner of it' in result
 
 
 def test_scholastic_annotation_preserves_visible_words_and_bare_continuation():

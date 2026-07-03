@@ -71,6 +71,7 @@ from shared import (
     ROMAN_HEADING_RE, ROMAN_ONLY_RE, PLAIN_CHAPTER_RE,
     CITATION_ABBREV_TRAIL_RE, CITATION_ABBREV_START_RE, CITATION_AUTHOR_TRAIL_RE,
     ROMAN_LIST_TOKEN, MARKDOWN_STRUCTURAL_START_RE,
+    _ROMAN_EXCLUSION_LOOKAHEAD, _ROMAN_NUMERAL_DOT_PATTERN,
     SCRIPTURE_BOOK_RE, SCRIPTURE_REF_RE, SCRIPTURE_CONTINUATION_TRAIL_RE,
     _normalize_spaced_caps, _normalize_i_will,
     _normalize_scholarly_citation_artifacts, _repair_owen_ocr_errors,
@@ -86,6 +87,7 @@ from scripts.owen_lists import (
     _add_owen_list_level_classes,
     _nest_owen_list_hierarchies,
     _merge_short_inline_lists,
+    last_meaningful_visible_char,
 )
 
 from scripts.markdown_parser import markdown_to_html, _repair_markdown_tables
@@ -135,8 +137,8 @@ STRUCTURAL_PREFIX_HTML_RE = re.compile(
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?|'
     r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
     r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?|'
-    r'(?!(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\.)[IVXLCDM]+\.|'
-    r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)|'
+    + _ROMAN_EXCLUSION_LOOKAHEAD + _ROMAN_NUMERAL_DOT_PATTERN + r'|'
+    + r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)|'
     r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.)|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?|'
@@ -392,6 +394,8 @@ def _split_rendered_inline_structural_html(text_html):
         before_text = re.sub(r'\s+', ' ', before_text).strip()
         before_text = re.sub(r'\s+([.,;:?!])', r'\1', before_text)
         if not before_text or len(before_text) < 35:
+            continue
+        if last_meaningful_visible_char(before_html) in {',', ';'}:
             continue
         if re.search(r'\b(?:verse|verses|chap|chapter|john|romans|corinthians|timothy|peter)\.?\s*$', before_text, re.I):
             continue
@@ -1395,10 +1399,22 @@ def render_volume(vol_num: int, overrides: dict = None,
     all_translation_notes = []
     all_glossary_notes = []
     all_biographical_notes = []
+    all_modern_notes = []
     seen_body_translations = set()
     seen_glossary_terms = set()
     seen_biographical_terms = set()
+    modern_note_counter = 0
     guide_landmarks = [] # was [('Title Page', 'title.xhtml')]
+    modern_notes_manifest = None
+    modern_notes_report_paths = None
+    if config.get('enable_modern_notes', True):
+        from scripts.modern_notes import generate_manifest, write_manifest_reports
+        modern_notes_manifest = generate_manifest(vol_num, intermediate)
+        stamp = datetime.now().strftime('%Y%m%d_%H%M%S_modern_notes')
+        report_dir = vol_dir / 'reports' / stamp
+        modern_notes_report_paths = write_manifest_reports(modern_notes_manifest, report_dir)
+        config['modern_notes_manifest'] = modern_notes_manifest
+        print(f'[render] Volume {vol_num}: modern notes manifest written to {modern_notes_report_paths[0]}')
 
     conv_mode = 'FRONT_MATTER'
     conv_drop_cap = False
@@ -1526,6 +1542,18 @@ def render_volume(vol_num: int, overrides: dict = None,
 
         # Centralized inline translations scanning and substitution
         body_html = apply_inline_translations(body_html)
+
+        if modern_notes_manifest:
+            from scripts.modern_notes import apply_modern_body_notes
+            body_html, local_modern_notes, modern_note_counter = apply_modern_body_notes(
+                body_html,
+                ch_dict.get('title', ''),
+                ch_dict['cid'],
+                modern_notes_manifest,
+                modern_note_counter,
+            )
+            if local_modern_notes:
+                all_modern_notes.extend(local_modern_notes)
 
         # Dynamic translation notes scanning and substitution
         from scripts.translation_db import BODY_TRANSLATIONS
@@ -1786,8 +1814,8 @@ def render_volume(vol_num: int, overrides: dict = None,
 
     # ── Endnotes ─────────────────────────────────────────────────
     endnotes_item = None
-    if footnote_map or all_translation_notes or all_glossary_notes or all_biographical_notes:
-        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes, glossary_notes=all_glossary_notes, config=config, biographical_notes=all_biographical_notes)
+    if footnote_map or all_translation_notes or all_modern_notes or all_glossary_notes or all_biographical_notes:
+        endnotes_html = build_endnotes_chapter(footnote_map, style_item, vol_num=vol_num, trans_notes=all_translation_notes + all_modern_notes, glossary_notes=all_glossary_notes, config=config, biographical_notes=all_biographical_notes)
         endnotes_item = epub.EpubHtml(
             title='Footnotes', file_name='endnotes.xhtml', lang='en',
         )

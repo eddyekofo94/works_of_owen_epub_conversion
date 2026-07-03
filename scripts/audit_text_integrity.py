@@ -1732,6 +1732,41 @@ def latin_translation_coverage(paragraphs: list[Paragraph]) -> dict[str, Any]:
     }
 
 
+def modern_notes_quality(volume: int, root: Path) -> dict[str, Any]:
+    """Read the latest modern-notes manifest and expose final-stage QA counts."""
+    manifest = None
+    try:
+        from scripts.modern_notes import latest_manifest
+        manifest = latest_manifest(volume)
+    except Exception:
+        manifest = None
+
+    if not manifest:
+        return {
+            "manifest_found": False,
+            "unresolved_modern_references": 0,
+            "untranslated_substantial_foreign_passages": 0,
+            "unenriched_legacy_footnotes": 0,
+            "summary": {},
+            "samples": [],
+        }
+
+    summary = manifest.get("summary", {})
+    unresolved_items = [
+        item for item in manifest.get("items", [])
+        if item.get("action") == "none"
+    ]
+    return {
+        "manifest_found": True,
+        "generated_at": manifest.get("generated_at"),
+        "unresolved_modern_references": summary.get("unresolved_modern_references", 0),
+        "untranslated_substantial_foreign_passages": summary.get("untranslated_substantial_foreign_passages", 0),
+        "unenriched_legacy_footnotes": summary.get("unenriched_legacy_footnotes", 0),
+        "summary": summary,
+        "samples": unresolved_items[:20],
+    }
+
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Blemish audits: new checks added 2026-05-20 based on visual inspection report
 # ──────────────────────────────────────────────────────────────────────────────
@@ -2039,6 +2074,7 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
     latin_word_cov = latin_word_coverage(pdf_pages, paragraphs)
     latin_clause_fid = latin_clause_fidelity(pdf_pages, epub_text)
     latin_trans_cov = latin_translation_coverage(paragraphs)
+    modern_notes = modern_notes_quality(volume, root)
 
     # Track used text_integrity whitelist items
     used_text_integrity = {
@@ -2357,6 +2393,21 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
             "code": "low_latin_translation_coverage",
             "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
         })
+    if modern_notes["unresolved_modern_references"]:
+        warnings.append({
+            "code": "unresolved_modern_references",
+            "message": "Modern notes manifest contains unresolved main-body reference candidates.",
+        })
+    if modern_notes["untranslated_substantial_foreign_passages"]:
+        warnings.append({
+            "code": "untranslated_substantial_foreign_passages",
+            "message": "Modern notes manifest contains substantial foreign passages without a high-confidence translation popup.",
+        })
+    if modern_notes["unenriched_legacy_footnotes"]:
+        warnings.append({
+            "code": "unenriched_legacy_footnotes",
+            "message": "Modern notes manifest contains existing source footnotes needing editorial enrichment.",
+        })
     # ── Blemish checks (2026-05-20) ───────────────────────────────────────────
     if ages_artifacts["ages_artifact_count"]:
         warnings.append({
@@ -2448,6 +2499,7 @@ def run_audit(volume: str, pdf_path: Path, epub_path: Path, no_whitelist: bool =
         "latin_word_coverage": latin_word_cov,
         "latin_clause_fidelity": latin_clause_fid,
         "latin_translation_coverage": latin_trans_cov,
+        "modern_notes_quality": modern_notes,
         "ages_artifact_check": ages_artifacts,
         "analysis_extraction_check": analysis_quality,
         "font_config_check": font_check,
@@ -2481,6 +2533,7 @@ def render_markdown(result: dict[str, Any]) -> str:
     lat = result.get("latin_word_coverage", {})
     latf = result.get("latin_clause_fidelity", {})
     latt = result.get("latin_translation_coverage", {})
+    modern = result.get("modern_notes_quality", {})
     lines = [
         f"# Text Integrity Audit: Volume {result['volume']}",
         "",
@@ -2554,6 +2607,13 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- Tagged Latin runs checked: {latt.get('tagged_latin_runs_count', 0)}",
         f"- Translated Latin runs: {latt.get('translated_latin_runs_count', 0)}",
         f"- Latin translation ratio: {latt.get('latin_translation_ratio', 0.0)}",
+        "",
+        "## Modern References & Translations",
+        "",
+        f"- Manifest found: {'yes' if modern.get('manifest_found') else 'no'}",
+        f"- Unresolved modern references: {modern.get('unresolved_modern_references', 0)}",
+        f"- Untranslated substantial foreign passages: {modern.get('untranslated_substantial_foreign_passages', 0)}",
+        f"- Unenriched legacy footnotes: {modern.get('unenriched_legacy_footnotes', 0)}",
         "",
     ]
 

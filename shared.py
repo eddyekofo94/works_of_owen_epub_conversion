@@ -1067,6 +1067,14 @@ FOOTNOTE_PLACEHOLDER_RE = re.compile(r'FNREFTOKEN(\d+)TOKEN')
 FT_MARKER_RE = re.compile(r'^ft(\d+)\s*', re.I)
 EMPTY_BRACKET_RE = re.compile(r'\[\s*\]')
 
+_ROMAN_EXCLUSION_LOOKAHEAD = (
+    r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV|ILL)\*{0,2}[.\s])'
+)
+_ROMAN_NUMERAL_DOT_PATTERN = (
+    r'(?=[IVXLCDM]+\.)'
+    r'(?:L|XL(?:IX|IV|V?I{0,3})?|X{0,3}(?:IX|IV|V?I{0,3}))\.'
+)
+
 STRUCTURAL_START_RE = re.compile(
     r'^(?:(?:\*\*|__)?)'
     r'(?:'
@@ -1077,8 +1085,8 @@ STRUCTURAL_START_RE = re.compile(
     r'\[\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?\]\.?\s+|'  # [1st,] There...
     r'\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
     r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?\s+|'
-    r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])[IVXLCDM]+\.\s+|'  # I. / II. (not LXX/MT/OT/NT etc.)
-    r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)\s+|'                       # Q. / Ques. / Ans. / A. 1.
+    + _ROMAN_EXCLUSION_LOOKAHEAD + _ROMAN_NUMERAL_DOT_PATTERN + r'\s+|'  # I. / II. (not LXX/MT/OT/NT etc.)
+    + r'(?:Q\.|Ques\.|Ans\.|A\.\s*\d+\.)\s+|'                       # Q. / Ques. / Ans. / A. 1.
     r'(?:Obj(?:ection)?\.?\s*\d*\.?|Ans(?:wer)?\.?\s*\d*\.?|Sol(?:ution)?\.?\s*\d*\.?|Use\.?\s*\d+\.?)\s+|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]\s+|'  # 1st, 2nd, 3rd, 4th,
     r'\d+(?:(?:st|nd|rd|th)ly|dly|ly)\b[,.]?\s+|'  # 2ndly, 3rdly
@@ -1102,9 +1110,9 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
     r'\*\*\[(?:FIRST|SECONDLY|SECOND|THIRDLY|THIRD|FOURTHLY|FOURTH|FIFTHLY|FIFTH|'
     r'SIXTHLY|SIXTH|SEVENTHLY|SEVENTH|EIGHTHLY|EIGHTH|NINTHLY|NINTH|LASTLY|LAST)\][,.;]?\*\*|'
     r'\*\*\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)\*\*\s*[,.;]?|'
-    r'\*\*(?!(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\.)[IVXLCDM]+\.\*\*|'
-    r'(?!(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\.)[IVXLCDM]+\.|'
-    r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
+    + r'\*\*' + _ROMAN_EXCLUSION_LOOKAHEAD + _ROMAN_NUMERAL_DOT_PATTERN + r'\*\*|'
+    + _ROMAN_EXCLUSION_LOOKAHEAD + _ROMAN_NUMERAL_DOT_PATTERN + r'|'
+    + r'(?<![:\d-])(?!\d{4}\.)\d+\.|'
     r'(?:Q\.|A\.|Ques\.|Ans\.)\s*(?:\d+\.)?|'
     r'(?:Obj(?:ection)?\.?|Ans(?:wer)?\.?|Sol(?:ution)?\.?|Use\.?)\s*(?:\d+\.)?|'
     r'\d+(?:st|nd|rd|th)\b\s*[,.;]|'
@@ -1120,18 +1128,15 @@ INLINE_STRUCTURAL_MARKER_RE = re.compile(
 #   DV   — Douay-Vulgate
 #   KJV / AV / NIV / ESV / NRSV — Bible translations
 # The lookahead is case-insensitive and matches with or without surrounding ** bold markers.
-_ROMAN_EXCLUSION_LOOKAHEAD = (
-    r'(?!\*{0,2}(?:LXX|MT|OT|NT|DV|KJV|AV|NIV|ESV|NRSV)\*{0,2}[.\s])'
-)
 ROMAN_HEADING_RE = re.compile(
     _ROMAN_EXCLUSION_LOOKAHEAD
-    + r'(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?\s+'
+    + r'(?:\*\*)?(?P<roman>' + _ROMAN_NUMERAL_DOT_PATTERN + r')(?:\*\*)?\s+'
     r'(?P<rest>[^a-z]{1,150}|[A-Z][a-z ]{1,45}|[A-Z][a-z ]{1,45}\.)$',
     re.I,
 )
 ROMAN_ONLY_RE = re.compile(
     _ROMAN_EXCLUSION_LOOKAHEAD
-    + r'(?:\*\*)?(?P<roman>[IVXLCDM]+\.)(?:\*\*)?$',
+    + r'(?:\*\*)?(?P<roman>' + _ROMAN_NUMERAL_DOT_PATTERN + r')(?:\*\*)?$',
     re.I,
 )
 PLAIN_CHAPTER_RE = re.compile(r'^(CHAPTER\s+\d+\.?)(?:\s+(.+))?$')
@@ -1172,7 +1177,7 @@ CITATION_AUTHOR_TRAIL_RE = re.compile(
 )
 ROMAN_LIST_TOKEN = '@@ROMAN_LIST@@'
 MARKDOWN_STRUCTURAL_START_RE = re.compile(
-    r'^\*\*(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|[IVXLCDM]+\.|'
+    r'^\*\*(?:(?!\d{4}\.)\d{1,3}\.|\((?!\d{4}\))\d+\.?\)|\[\d+\.?\]|' + _ROMAN_NUMERAL_DOT_PATTERN + r'|'
     r'\d+(?:(?:st|nd|rd|th)ly|st|nd|rd|th|dly|ly)[,.;]?)\*\*\s*[,.;]?\s+'
 )
 

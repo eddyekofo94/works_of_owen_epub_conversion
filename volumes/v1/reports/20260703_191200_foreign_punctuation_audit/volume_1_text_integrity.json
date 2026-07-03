@@ -1,0 +1,1681 @@
+{
+  "volume": "1",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/input/owen-v1.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub",
+  "generated_at": "2026-07-03T17:10:46.612363+00:00",
+  "status": "warn",
+  "warning_count": 7,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "top_of_page_text_loss",
+      "message": "Some first body lines near the top of PDF pages are not found in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "syllabus_anchor_candidates",
+      "message": "Some introduced scholastic syllabus runs appear unflattened or need triage"
+    },
+    {
+      "code": "unresolved_modern_references",
+      "message": "Modern notes manifest contains unresolved main-body reference candidates."
+    },
+    {
+      "code": "untranslated_substantial_foreign_passages",
+      "message": "Modern notes manifest contains substantial foreign passages without a high-confidence translation popup."
+    }
+  ],
+  "pdf": {
+    "page_count": 633,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      21,
+      26,
+      27,
+      34,
+      35,
+      51,
+      53,
+      56,
+      76,
+      78,
+      83,
+      90,
+      101,
+      105,
+      106,
+      117,
+      148,
+      150,
+      188,
+      194,
+      203,
+      223,
+      239,
+      269,
+      297,
+      319,
+      328,
+      332,
+      341,
+      356,
+      374,
+      375,
+      379,
+      533
+    ]
+  },
+  "epub": {
+    "spine_text_files": 83,
+    "paragraph_count": 2692
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 191893,
+    "epub_content_tokens": 205236,
+    "coverage_ratio": 0.9996,
+    "missing_word_samples": [
+      {
+        "word": "greeks",
+        "pdf": 3,
+        "epub": 0
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "preface",
+        "pdf": 7,
+        "epub": 16
+      },
+      {
+        "word": "super",
+        "pdf": 4,
+        "epub": 12
+      },
+      {
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
+      },
+      {
+        "word": "theological",
+        "pdf": 1,
+        "epub": 9
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "text",
+        "pdf": 8,
+        "epub": 15
+      },
+      {
+        "word": "modern",
+        "pdf": 3,
+        "epub": 10
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "volume",
+        "pdf": 7,
+        "epub": 13
+      },
+      {
+        "word": "dr",
+        "pdf": 7,
+        "epub": 13
+      },
+      {
+        "word": "filius",
+        "pdf": 6,
+        "epub": 12
+      },
+      {
+        "word": "theology",
+        "pdf": 3,
+        "epub": 9
+      },
+      {
+        "word": "petra",
+        "pdf": 1,
+        "epub": 7
+      },
+      {
+        "word": "supra",
+        "pdf": 0,
+        "epub": 6
+      },
+      {
+        "word": "iron",
+        "pdf": 0,
+        "epub": 6
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 581,
+    "weak_page_count": 1,
+    "weak_pages": [
+      {
+        "page": 398,
+        "hit_ratio": 0.0,
+        "sample": "so the apostle expresseth this truth where is the wise where is the scribe where is the disputer of this world has not god"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 26608,
+    "missing_dense_window_pages": 35,
+    "missing_dense_windows": [
+      {
+        "page": 146,
+        "sample": "it is christian or evangelical may be reduced the person of christ is the"
+      },
+      {
+        "page": 382,
+        "sample": "the dark after what they cannot clearly discern acts among other cicero's book de"
+      },
+      {
+        "page": 398,
+        "sample": "so the apostle expresseth this truth where is the wise where is the scribe"
+      },
+      {
+        "page": 402,
+        "sample": "known or as it may be thence earned my present business is only to"
+      },
+      {
+        "page": 406,
+        "sample": "2-6 isaiah 1-4 zechariah john 1-3 philippians 6-8 hebrews 1-3 14-16 revelation secondly by"
+      },
+      {
+        "page": 411,
+        "sample": "made her as the chariots of ammi nadib song of solomon it so fell"
+      },
+      {
+        "page": 419,
+        "sample": "in him unto any of the creatures is an act of self humiliation and"
+      },
+      {
+        "page": 433,
+        "sample": "brightness wherewith this glory shines in heaven the all satisfying sweetness which the view"
+      },
+      {
+        "page": 434,
+        "sample": "unto it sweet savor of the love of christ see song of solomon 2-4"
+      },
+      {
+        "page": 451,
+        "sample": "its holiness and the severity of the curse wherewith it was attended his fulfil1ing"
+      },
+      {
+        "page": 478,
+        "sample": "to reconcile all things unto himself in him whether they be things in earth"
+      },
+      {
+        "page": 480,
+        "sample": "bring in spiritual refreshment unto believing refreshment unto believing soul and it will do"
+      },
+      {
+        "page": 483,
+        "sample": "of sight those are the two spiritual powers of our sou1s by the one"
+      },
+      {
+        "page": 487,
+        "sample": "on the right hand that cannot see him chap which way soever we turn"
+      },
+      {
+        "page": 517,
+        "sample": "see the description of these things philippians it is not possible say that we"
+      },
+      {
+        "page": 522,
+        "sample": "of iniquity shall be stopped for ever and the voice of the self avenger"
+      },
+      {
+        "page": 534,
+        "sample": "part meditations and discourses concerning the glory of christ chapter application of the foregoing"
+      },
+      {
+        "page": 555,
+        "sample": "which are proper for the season as namely spirituality heavenly-mindedness weanedness from the world"
+      },
+      {
+        "page": 559,
+        "sample": "and almost visible growth than willows by the water courses such shall be the"
+      },
+      {
+        "page": 565,
+        "sample": "warnings of the danger of spiritually decaying state and he has made great promises"
+      },
+      {
+        "page": 570,
+        "sample": "zeal humility contriteness of heart spiritual mindedness vigor of soul and delight in the"
+      },
+      {
+        "page": 572,
+        "sample": "invited to eat after feast being self full before but this loss of spiritual"
+      },
+      {
+        "page": 596,
+        "sample": "7-9 romans 33-36 malachi james judges samuel kings ezekiel matthew acts thessalonians daniel isaiah"
+      },
+      {
+        "page": 603,
+        "sample": "of god towards his church in three things first in causing 53and things to"
+      },
+      {
+        "page": 605,
+        "sample": "doing any thing that is well pleasing unto god by all which we are"
+      },
+      {
+        "page": 607,
+        "sample": "in the likeness of sinful flesh condemning sin sinful flesh condemning sin romans who"
+      },
+      {
+        "page": 613,
+        "sample": "due to our sin isaiah 4-6 john romans corinthians15 corinthians ephesians peter what was"
+      },
+      {
+        "page": 618,
+        "sample": "what is the church of christ the whole company of god's elect called elect"
+      },
+      {
+        "page": 623,
+        "sample": "purpose of heart to cleave unto him for the to cleave unto him for"
+      },
+      {
+        "page": 624,
+        "sample": "quickening of all graces purging act of all graces purging act frequent prayers alms"
+      },
+      {
+        "page": 625,
+        "sample": "gracious reception into the family of god as his children and co heirs with"
+      },
+      {
+        "page": 626,
+        "sample": "isaiah john corinthians romans hebrews corinthians galatians ephesians galatians romans acts galatians corinthians corinthians"
+      },
+      {
+        "page": 627,
+        "sample": "him confirmeth the promises of the covenant to all believers re stipulating of them"
+      },
+      {
+        "page": 629,
+        "sample": "14-20 corinthians 23-25 luke corinthians mark 22-24 corinthians john corinthians corinthians matthew matthew mark"
+      },
+      {
+        "page": 632,
+        "sample": "chapter of particular churches what are particular churches peculiar assemblies of professors in one"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 630,
+    "top_windows_usable": 586,
+    "skipped_top_window_count": 6,
+    "skipped_top_windows": [
+      {
+        "page": 51,
+        "window": "imago id est verbum dei ad eum qui est imaginem hoc est hominem venit",
+        "sample": "\"Imago, [id est, Verbum Dei, ] ad eum qui est d imaginem, [hoc est, hominem, ] venit, et quaerit imago eum qui est ad similitudinem sui,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 67,
+        "window": "minds of men with endless imaginations some denied him to have any real human",
+        "sample": "minds of men with endless imaginations. Some denied him to have any real human nature, but [alleged him] to have been a phantasm,",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 113,
+        "window": "that manifestation which is made in christ they say of it as the israelites",
+        "sample": "that [manifestation] which is made in Christ, they say of it, as the Israelites did of manna, that came down from heaven, \"What is it?\" we",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 148,
+        "window": "with the same honor that is divine sacred religious and supreme to honor the",
+        "sample": "[1.] With the same honor; that is, divine, sacred, religious, and supreme. To honor the Father with other honor, is to dishonor him. When men design to",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 299,
+        "window": "he allowed it to be κατ αξιαν by way of dignity and honor for",
+        "sample": "[3.] He allowed it to be \"κατ ἀξίαν\", by way of dignity and honor. For this conjunction is such, as that whatever honor is given unto the Son of",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 559,
+        "window": "preserved in us by them are we made partakers of this divine nature peter",
+        "sample": "preserved in us; by them are we made partakers of this divine nature, Peter 1:4; and through them is it continued in us. Now [as to] promises of",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 2,
+    "missing_top_windows": [
+      {
+        "page": 398,
+        "window": "so the apostle expresseth this truth where is the wise where is the scribe",
+        "sample": "So the apostle expresseth this truth, \"Where is the wise? where is the scribe? where is the disputer of"
+      },
+      {
+        "page": 478,
+        "window": "to reconcile all things unto himself in him whether they be things in earth",
+        "sample": "\"To reconcile all things unto himself in him, whether they be things in earth, or things in heaven.\""
+      }
+    ]
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 575,
+    "bottom_windows_usable": 534,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2255,
+    "split_candidate_count": 13,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς \". †",
+        "next": "He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": " enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus\". †",
+        "next": "— \"He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "To the same purpose. speaks Eusebius ‡ at large: Demonstratio Evang., lib. 5 cap. 2. ◇",
+        "next": "Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.) ◇ \" Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, se"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "αὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων \". †",
+        "next": "The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "he image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. ◇",
+        "next": "Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ν ἠδυνήθη μετασχεῖν τῆς ἀφθαρσίας . Εδει γὰρ τὸν μεσίτην τοῦ Θεοῦ τε καὶ ἀνθρώπων , διὰ τῆς ἰδίας πρὸς ἑκατέρους οἰκειότητος εις φιλίαν καὶ ὁμόνοιαν τοῦς ἀμφοτέρους συναγαγεῖν \". †",
+        "next": "Words plainly divine; an illustrious testimony of the faith of the ancient church, and expressive of the principal mystery of the gospel! \"Wherefore, as we said before, he united m"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "And to the same purpose: (lib. 5 cap. 1:) \"Neque enim vere esset sanguinem et carnem habens, per quam nos redemit, nisi antiquam plasmationem Adae in seipsum recapitulasset\". †",
+        "next": "That which these passages give testimony unto, is what we have discoursed concerning the necessity of our redemption in and by the nature that sinned; and yet withal, that it shoul"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "ccato ceciderat. Utraque operatus est filius Verbum Dei existens, a Patre descendens et incarnatus, et usque ad mortem descendens, et dispensationem consummans salutis nostrae \". †",
+        "next": "— \"Being the Son of God always with the Father, and being made man, he reconciled or gathered up in himself the long-continued exposing of men,\" (unto sin and judgment,) \"bringing "
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "tantum ; at qui erat in divinitate Dei Patris Filius , ipse fieret in homine hominis matris Filius; ne Filii nomen ad alterum transiret, qui non esset eterna nativitate filius \". †",
+        "next": "— \"The Father did not assume flesh, nor the Holy Spirit, but the Son only; that he who in the Deity was the Son of the Father, should be made the Son of man, in his mother of human"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "[affirm] we know not; only we declare what we believe and adore. \"Neque sensus est ejus , neque phantsia, neque opinio, nec ratio, nec scientia\", says Dionys. De Divan. Nomine,1. ◇",
+        "next": "We have no means — no corporeal, no intellectual instrument or power — for the comprehension of him; nor has any other creature: \" Επεὶ αὐτὸ ὅπε ? ρ ἐστιν ὁ Θεὸς , οὐ μόνον προφῆτα"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "previous": "ion of this glory, will be carried above the perplexing prevailing sense of any of these evils, of a confluence of them all. \"Crus nil sentit in nervo, dum animus est in coelo .\" †",
+        "next": "It is a woeful kind of life, when men scramble for poor perishing reliefs in their distresses. This is the universal remedy and cure, — the only balsam for all our diseases. Whatev"
+      },
+      {
+        "file": "EPUB/ch036.xhtml",
+        "previous": "was a man, as they were men; and otherwise, that he was at the greatest distance from them all as it is possible for one man to be from another, Socin. de Servant. lib. 3 cap. 3. ◇",
+        "next": "The falseness of this latter assertion, and the gross ignorance of the Scripture, under a pretense of subtlety, in them that make it, will evidently appear in our ensuing Discourse"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "previous": " apostle declares in these words, \"To gather together in one all things which are in heaven, and which are on earth, even in him.\" ◇ And so he again expresseth it, Colossians 1:20,",
+        "next": "He would no longer keep them in two distinct families; but he would, in his infinite wisdom and goodness, gather them up into one common head, on whom they should have their immedi"
+      }
+    ],
+    "structural_start_exclusions": 123,
+    "short_fragment_count": 12,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "text": "Edinburgh, August 1850"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "text": "All this himself instructs us in."
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "This must be declared."
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Christian Reader,"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "For, —"
+      },
+      {
+        "file": "EPUB/ch035.xhtml",
+        "text": "The sum is,"
+      },
+      {
+        "file": "EPUB/ch037.xhtml",
+        "text": "And, —"
+      },
+      {
+        "file": "EPUB/ch041.xhtml",
+        "text": "END."
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "END OF PART 2."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch049.xhtml",
+        "text": "Glory be to God on high!"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 0,
+    "suspicious_large_number_starts": [],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch033.xhtml",
+        "text": "I. 1. What he did, what obedience he yielded unto the law of God in the discharge of his office (with respect whereunto he said, \"Lo, I come to do thy will, O God; yea, thy law is in my heart\"), it was all on his own fre"
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": [],
+    "syllabus_anchor_candidate_count": 16,
+    "syllabus_anchor_candidates": [
+      {
+        "key": "EPUB/ch006.xhtml#p298-syllabus-1-it-is-scandalously-proposed-and-answered-of-what-use-is-the",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch006.xhtml",
+        "anchor_index": 298,
+        "item_range": "p299-p301",
+        "anchor": "at did not relate thereunto. Such bold inquiries, with futilous § answers annexed unto them, sufficiently manifest what acquaintance their authors have either with Christ himself, which in others they despise, or with his Gospel, which they pretend to embrace.",
+        "items": [
+          {
+            "marker": "(2.)",
+            "text": "A mock scheme of religion is framed, to represent the folly of them who design to learn the mind and will of God in and by him."
+          },
+          {
+            "marker": "(3.)",
+            "text": "Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
+          },
+          {
+            "marker": "(4.)",
+            "text": "Professed love unto the person of Christ is traduced, as a mere fancy and vapor of distempered minds or weak imaginations"
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch006.xhtml#p298-syllabus-1-it-is-scandalously-proposed-and-answered-of-what-use-is-the"
+      },
+      {
+        "key": "EPUB/ch010.xhtml#p457-syllabus-1-there-are-two-things-wherein-the-glory-of-truth-does-consist",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch010.xhtml",
+        "anchor_index": 457,
+        "item_range": "p458-p460",
+        "anchor": "1. There are two things wherein the glory of truth does consist.",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "Its light."
+          },
+          {
+            "marker": "(2.)",
+            "text": "Its efficacy or power. And both these do all supernatural truths derive from this relation unto Christ."
+          },
+          {
+            "marker": "(1.)",
+            "text": "No truth whatever brings any spiritual light unto the mind, but by virtue thereof. \"In him is life, and the life is the light of men:\" John 1:4."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 3,
+        "announced_count": 2,
+        "positive_reasons": [
+          "count-category-formula",
+          "introductory-formula",
+          "compact-first-item"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "multiple-sentences",
+          "final-developed-continuation",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch010.xhtml#p457-syllabus-1-there-are-two-things-wherein-the-glory-of-truth-does-consist"
+      },
+      {
+        "key": "EPUB/ch014.xhtml#p614-syllabus-7-those-who-voluntarily-through-the-contempt-of-god-and-divine-grace",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch014.xhtml",
+        "anchor_index": 614,
+        "item_range": "p615-p617",
+        "anchor": "And nothing can be more derogatory unto the wisdom and holiness of God, than to imagine that he would grant other ways of salvation unto them who had rejected that only one which he had provided; which was by faith in Christ, as revealed in that first promise.",
+        "items": [
+          {
+            "marker": "8.",
+            "text": "From these considerations, which are all of them unquestionable principles of truth, two things are evident."
+          },
+          {
+            "marker": "(1.)",
+            "text": "That there was no way of the justification and salvation of sinners revealed and proposed from the foundation of the world, but only by Jesus Christ, as declared in the first promise."
+          },
+          {
+            "marker": "(2.)",
+            "text": "That there was no way for the participation of the benefits of that promise, or of his work of mediation, but by faith in him as so promised."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch014.xhtml#p614-syllabus-7-those-who-voluntarily-through-the-contempt-of-god-and-divine-grace"
+      },
+      {
+        "key": "EPUB/ch014.xhtml#p615-syllabus-8-from-these-considerations-which-are-all-of-them-unquestionable-principles-of",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch014.xhtml",
+        "anchor_index": 615,
+        "item_range": "p616-p617",
+        "anchor": "8. From these considerations, which are all of them unquestionable principles of truth, two things are evident.",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "That there was no way of the justification and salvation of sinners revealed and proposed from the foundation of the world, but only by Jesus Christ, as declared in the first promise."
+          },
+          {
+            "marker": "(2.)",
+            "text": "That there was no way for the participation of the benefits of that promise, or of his work of mediation, but by faith in him as so promised."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": 2,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "announced-count-matches-run",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "long-final-item"
+        ],
+        "whitelist_key": "EPUB/ch014.xhtml#p615-syllabus-8-from-these-considerations-which-are-all-of-them-unquestionable-principles-of"
+      },
+      {
+        "key": "EPUB/ch022.xhtml#p1053-syllabus-1-as-unto-original-efficiency-it-was-the-act-of-the-divine",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch022.xhtml",
+        "anchor_index": 1053,
+        "item_range": "p1054-p1055",
+        "anchor": "the immediate principle of all such operations. The wisdom, power, grace, and goodness exerted therein, are essential properties of the divine nature. Wherefore the acting of them originally belongs equally unto each person, equally participant of that nature.",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "As unto authoritative designation, it was the act of the Father. Hence is he said to send \"his Son in the likeness of sinful flesh,\" Romans 8:3; Galatians 4:4."
+          },
+          {
+            "marker": "(2.)",
+            "text": "As unto the formation of the human nature, it was the peculiar act of the Spirit, Luke 1:35."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "developed-item",
+          "multiple-sentences"
+        ],
+        "whitelist_key": "EPUB/ch022.xhtml#p1053-syllabus-1-as-unto-original-efficiency-it-was-the-act-of-the-divine"
+      },
+      {
+        "key": "EPUB/ch022.xhtml#p1057-syllabus-2-this-assumption-was-the-only-immediate-act-of-the-divine-nature",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch022.xhtml",
+        "anchor_index": 1057,
+        "item_range": "p1058-p1061",
+        "anchor": "2. This assumption was the only immediate act of the divine nature on the human in the person of the Son. All those that follow, in subsistence, sustentation, with all others that are communicative, do ensue thereon.",
+        "items": [
+          {
+            "marker": "3.",
+            "text": "This assumption and the hypostatical union are distinct and different in the formal reason of them."
+          },
+          {
+            "marker": "(1.)",
+            "text": "Assumption is the immediate act of the divine nature in the person of the Son on the human; union is mediate, by virtue of that assumption."
+          },
+          {
+            "marker": "(2.)",
+            "text": "Assumption is unto personality; it is that act whereby the Son of God and our nature became one person. Union is an act or relation of the natures subsisting in that one person."
+          },
+          {
+            "marker": "(3.)",
+            "text": "Assumption respects the acting of the divine and the passion of the human nature; the one assumeth, the other is assumed."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 4,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "multiple-sentences",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch022.xhtml#p1057-syllabus-2-this-assumption-was-the-only-immediate-act-of-the-divine-nature"
+      },
+      {
+        "key": "EPUB/ch022.xhtml#p1059-syllabus-1-assumption-is-the-immediate-act-of-the-divine-nature-in-the",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch022.xhtml",
+        "anchor_index": 1059,
+        "item_range": "p1060-p1061",
+        "anchor": "(1.) Assumption is the immediate act of the divine nature in the person of the Son on the human; union is mediate, by virtue of that assumption.",
+        "items": [
+          {
+            "marker": "(2.)",
+            "text": "Assumption is unto personality; it is that act whereby the Son of God and our nature became one person. Union is an act or relation of the natures subsisting in that one person."
+          },
+          {
+            "marker": "(3.)",
+            "text": "Assumption respects the acting of the divine and the passion of the human nature; the one assumeth, the other is assumed."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "multiple-sentences"
+        ],
+        "whitelist_key": "EPUB/ch022.xhtml#p1059-syllabus-1-assumption-is-the-immediate-act-of-the-divine-nature-in-the"
+      },
+      {
+        "key": "EPUB/ch023.xhtml#p1149-syllabus-his-ascension-as-unto-change-of-place-from-earth-to-heaven-and",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch023.xhtml",
+        "anchor_index": 1149,
+        "item_range": "p1150-p1152",
+        "anchor": " as unto the outward manner of it, was one and the same, and at once accomplished; but as unto the end of it, which is the exercise of all his offices, it had various respects, various prefiguration, and is distinctly proposed unto us with reference unto them.",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "In his ascension, as it was triumphant, three things may be considered:"
+          },
+          {
+            "marker": "1st",
+            "text": ", The manner of it, With its representation of old; 2ndly , The place whereinto he ascended; 3rdly , The end of it, or what was the work which he had to do thereon."
+          },
+          {
+            "marker": "[1.]",
+            "text": "As unto the manner of it, it was openly triumphant and glorious. So is it described, Ephesians 4:8,"
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "compact-first-item",
+          "continuation-punctuation",
+          "first-item-open-punctuation"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch023.xhtml#p1149-syllabus-his-ascension-as-unto-change-of-place-from-earth-to-heaven-and"
+      },
+      {
+        "key": "EPUB/ch023.xhtml#p1150-syllabus-1-in-his-ascension-as-it-was-triumphant-three-things-may-be",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch023.xhtml",
+        "anchor_index": 1150,
+        "item_range": "p1151-p1152",
+        "anchor": "(1.) In his ascension, as it was triumphant, three things may be considered:",
+        "items": [
+          {
+            "marker": "1st",
+            "text": ", The manner of it, With its representation of old; 2ndly , The place whereinto he ascended; 3rdly , The end of it, or what was the work which he had to do thereon."
+          },
+          {
+            "marker": "[1.]",
+            "text": "As unto the manner of it, it was openly triumphant and glorious. So is it described, Ephesians 4:8,"
+          }
+        ],
+        "marker_family": "ordinal",
+        "item_count": 2,
+        "announced_count": 3,
+        "positive_reasons": [
+          "count-category-formula",
+          "introductory-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch023.xhtml#p1150-syllabus-1-in-his-ascension-as-it-was-triumphant-three-things-may-be"
+      },
+      {
+        "key": "EPUB/ch028.xhtml#p1346-syllabus-but-it-is-from-our-own-sloth-and-darkness-that-we-do",
+        "action": "audit_only_weak_anchor",
+        "file": "EPUB/ch028.xhtml",
+        "anchor_index": 1346,
+        "item_range": "p1347-p1348",
+        "anchor": "But it is from our own sloth and darkness that we do not enjoy more visits of this grace, and that the dawnings of glory do not more shine on our souls. Such things as these may excite us to diligence in the duty proposed unto us. And I shall inquire, —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "What is that glory of Christ which we do or may behold by faith?"
+          },
+          {
+            "marker": "2.",
+            "text": "How do we behold it?"
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "compact-run"
+        ],
+        "hard_exclusions": [],
+        "whitelist_key": "EPUB/ch028.xhtml#p1346-syllabus-but-it-is-from-our-own-sloth-and-darkness-that-we-do"
+      },
+      {
+        "key": "EPUB/ch031.xhtml#p1528-syllabus-wherefore-the-susception-of-our-nature-for-the-discharge-of-the-office",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch031.xhtml",
+        "anchor_index": 1528,
+        "item_range": "p1529-p1530",
+        "anchor": "Wherefore, the susception of our nature for the discharge of the office of mediation therein was an infinite condescension in the Son of God, wherein he is exceedingly glorious in the eyes of believers. And I shall do these three things: —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "Show in general the greatness of his condescension;"
+          },
+          {
+            "marker": "2.",
+            "text": "Declare the especial nature of it; and, 3. Take what view we are able of the glory of Christ therein."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 3,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "compact-first-item",
+          "compact-run",
+          "continuation-punctuation",
+          "first-item-open-punctuation"
+        ],
+        "hard_exclusions": [
+          "final-developed-continuation"
+        ],
+        "whitelist_key": "EPUB/ch031.xhtml#p1528-syllabus-wherefore-the-susception-of-our-nature-for-the-discharge-of-the-office"
+      },
+      {
+        "key": "EPUB/ch040.xhtml#p1911-syllabus-two-things-we-must-here-speak-unto",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch040.xhtml",
+        "anchor_index": 1911,
+        "item_range": "p1912-p1913",
+        "anchor": "Two things we must here speak unto.",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "Why does the Lord Christ, at any time, thus hide himself in his glory from the faith of believers, that they cannot behold him?"
+          },
+          {
+            "marker": "2.",
+            "text": "How we may perceive and know that he does so withdraw himself from us, so that, however we may please ourselves, we do not indeed behold his glory."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 2,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "announced-count-matches-run"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "long-final-item"
+        ],
+        "whitelist_key": "EPUB/ch040.xhtml#p1911-syllabus-two-things-we-must-here-speak-unto"
+      },
+      {
+        "key": "EPUB/ch045.xhtml#p2150-syllabus-the-second-thing-proposed-is-that-notwithstanding-all-this-provision-for-the",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch045.xhtml",
+        "anchor_index": 2150,
+        "item_range": "p2151-p2152",
+        "anchor": "all this provision for the growth of spiritual life in us, believers, especially in a long course of profession, are subject to decays, such as may cast them into great perplexities, and endanger their eternal ruin. And these spiritual decays are of two sorts.",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "Such as are gradual and universal, in the loss of the vigor and life of grace, both in its principle and in its excellence."
+          },
+          {
+            "marker": "2.",
+            "text": "Such as are occasioned by surprisal into sin through the power of temptation; I mean such sins as do waste the spiritual powers of the soul, and deprive it of all solid peace."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 2,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "announced-count-matches-run",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "long-final-item"
+        ],
+        "whitelist_key": "EPUB/ch045.xhtml#p2150-syllabus-the-second-thing-proposed-is-that-notwithstanding-all-this-provision-for-the"
+      },
+      {
+        "key": "EPUB/ch045.xhtml#p2179-syllabus-1-many-cannot-with-any-modesty-make-use-of-this-pretense-their",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch045.xhtml",
+        "anchor_index": 2179,
+        "item_range": "p2180-p2181",
+        "anchor": "ruction of their children and servants? And has not God given severe rebukes unto many of us, in their fearful miscarriages? And as unto the public worship of God, I wish that sloth and indifference did not appear upon too many, under various pretences. But, —",
+        "items": [
+          {
+            "marker": "(2.)",
+            "text": "This is not that which I do intend. Men may be weary of God, whilst they abide in the observance of a multitude of outward duties."
+          },
+          {
+            "marker": "[1.]",
+            "text": "They may be so, with respect unto that spirituality and intention of mind unto the exercise of all grace, which are required unto such duties."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": 2,
+        "positive_reasons": [
+          "count-category-formula",
+          "introductory-formula",
+          "introductory-punctuation",
+          "announced-count-matches-run"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "multiple-sentences",
+          "proof-language",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch045.xhtml#p2179-syllabus-1-many-cannot-with-any-modesty-make-use-of-this-pretense-their"
+      },
+      {
+        "key": "EPUB/ch048.xhtml#p2265-syllabus-3-out-of-that-you-may-have-help-to-instruct-your-families",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch048.xhtml",
+        "anchor_index": 2265,
+        "item_range": "p2266-p2268",
+        "anchor": "3. Out of that you may have help to instruct your families in the Lesser, being so framed, for the most part, that a chapter of the one is spent in unfolding a question of the other.",
+        "items": [
+          {
+            "marker": "4.",
+            "text": "The texts of Scripture quoted are diligently to be sought out and pondered, that you may know indeed whether these things are so."
+          },
+          {
+            "marker": "5.",
+            "text": "In reading the Word, you may have light into the meaning of many places, by considering what they are produced to confirm."
+          },
+          {
+            "marker": "6.",
+            "text": "I have been sparing in the doctrine of the Sacraments, because I have already been so frequent in examinations about them."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "parallel-period-ended-syllabus"
+        ],
+        "hard_exclusions": [],
+        "whitelist_key": "EPUB/ch048.xhtml#p2265-syllabus-3-out-of-that-you-may-have-help-to-instruct-your-families"
+      },
+      {
+        "key": "EPUB/ch048.xhtml#p2266-syllabus-4-the-texts-of-scripture-quoted-are-diligently-to-be-sought-out",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch048.xhtml",
+        "anchor_index": 2266,
+        "item_range": "p2267-p2268",
+        "anchor": "4. The texts of Scripture quoted are diligently to be sought out and pondered, that you may know indeed whether these things are so.",
+        "items": [
+          {
+            "marker": "5.",
+            "text": "In reading the Word, you may have light into the meaning of many places, by considering what they are produced to confirm."
+          },
+          {
+            "marker": "6.",
+            "text": "I have been sparing in the doctrine of the Sacraments, because I have already been so frequent in examinations about them."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch048.xhtml#p2266-syllabus-4-the-texts-of-scripture-quoted-are-diligently-to-be-sought-out"
+      }
+    ],
+    "whitelisted_syllabus_anchor_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 295,
+    "epub_marker_count": 310,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 8,
+    "excess_markers": [
+      {
+        "marker": "(1.)",
+        "pdf": 72,
+        "epub": 75,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p252",
+            "context": "He commends and sets forth the faith of Peter — (1.) From its effect; (2.) From its cause."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p253",
+            "context": "(1.) Its effect was, that it made him blessed in whom it was. For it is not only a blessed thing to believe and know Jesus Christ, as it is called life eternal; (John 17:3;) but it is"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p268",
+            "context": "The foundation of the church is twofold: (1.) Real; (2.) Doctrinal. And in both ways, Christ alone is the foundation. The real foundation of the church he is, by virtue of the mystical union of it unto him, with all the benef"
+          }
+        ]
+      },
+      {
+        "marker": "(2.)",
+        "pdf": 72,
+        "epub": 75,
+        "examples": [
+          {
+            "location": "EPUB/ch005.xhtml#p252",
+            "context": "He commends and sets forth the faith of Peter — (1.) From its effect; (2.) From its cause."
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p254",
+            "context": "(2.) The immediate cause of this faith is divine revelation. It is not the effect or product of our own abilities, the best of which are but flesh and blood. That faith which renders t"
+          },
+          {
+            "location": "EPUB/ch005.xhtml#p268",
+            "context": "The foundation of the church is twofold: (1.) Real; (2.) Doctrinal. And in both ways, Christ alone is the foundation. The real foundation of the church he is, by virtue of the mystical union of it unto him, with all the benefits whereof"
+          }
+        ]
+      },
+      {
+        "marker": "(3.)",
+        "pdf": 33,
+        "epub": 35,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p284",
+            "context": "(3.) By some his human nature was opposed — for no stone did Satan leave unturned in the pursuit of his great design. And that which in all these things he aimed at, was the substituti"
+          },
+          {
+            "location": "EPUB/ch006.xhtml#p300",
+            "context": "(3.) Reproachful reflections are made on such as plead the necessity of acquaintance with him, or the knowledge of him, as though thereby they rejected the use of the gospel"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p525",
+            "context": "(3.) The same may be said concerning his sacerdotal office, and all the acts of it. It was in and by the human nature that he offered himself a sacrifice for us. He had somewhat of his"
+          }
+        ]
+      },
+      {
+        "marker": "(4.)",
+        "pdf": 12,
+        "epub": 13,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p301",
+            "context": "(4.) Professed love unto the person of Christ is traduced, as a mere fancy and vapor of distempered minds or weak imaginations"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p706",
+            "context": "(4.) That is so, unquestionably, which fixeth itself on undue objects, which, whatever is pretended, are neither Christ nor means of conveying our love unto him. Such is all that love"
+          },
+          {
+            "location": "EPUB/ch017.xhtml#p778",
+            "context": "(4.) This divine love is a love of friendship. The communion which we have with God therein is so intimate, and accompanied with such spiritual boldness, as gives it that denomination."
+          }
+        ]
+      },
+      {
+        "marker": "(5.)",
+        "pdf": 5,
+        "epub": 6,
+        "examples": [
+          {
+            "location": "EPUB/ch006.xhtml#p302",
+            "context": "(5.) The union of the Lord Christ and his church is asserted to be political only, with respect unto laws and rules of government. And many other things of an alike nature are asserted"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p707",
+            "context": "(5.) I acknowledge there have been great pretenses of such a love unto Christ as cannot be justified. Such is that which some of the devotionists of the Roman Church have endeavored ra"
+          },
+          {
+            "location": "EPUB/ch019.xhtml#p887",
+            "context": "y in life and death, (4.) Spiritual gifts, unto the edification of themselves and others, (5.) A blessed resurrection, (6.) Eternal glory."
+          }
+        ]
+      },
+      {
+        "marker": "[1.]",
+        "pdf": 20,
+        "epub": 21,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p494",
+            "context": "[1.] He was to be the prophet of the whole catholic church; that is, of act the elect of God, of all that shall be saved in all ages and places, from the beginning of the world unto th"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p519",
+            "context": "[1.] The extent of his power and rule gives evidence hereunto. It is over the whole creation of God. \"All power is given him in heaven and earth.\" Matthew 28:18. \"A11 things are put un"
+          },
+          {
+            "location": "EPUB/ch013.xhtml#p542",
+            "context": "[1.] With the same honor; that is, divine, sacred, religious, and supreme. To honor the Father with other honor, is to dishonor him. When men design to give glory and honor to God whic"
+          }
+        ]
+      },
+      {
+        "marker": "[2.]",
+        "pdf": 19,
+        "epub": 21,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p504",
+            "context": "[2.] The full comprehension of the mind and will of God, of the whole divine counsel concerning his glory in the sanctification and salvation of the church, could not at once reside in"
+          },
+          {
+            "location": "EPUB/ch011.xhtml#p522",
+            "context": "[2.] The rule of Christ, as king of the church, is internal and spiritual, over the minds, souls, and consciences of all that do believe. There is no one gracious acting of soul in any"
+          },
+          {
+            "location": "EPUB/ch013.xhtml#p543",
+            "context": "[2.] In the same manner, with the same faith, love, reverence, and obedience, always, in all things, in all acts and duties of religion whatever."
+          }
+        ]
+      },
+      {
+        "marker": "[3.]",
+        "pdf": 11,
+        "epub": 12,
+        "examples": [
+          {
+            "location": "EPUB/ch011.xhtml#p513",
+            "context": "[3.] The Spirit of God dwelling in him, in all the fullness of his graces and gifts, gave him an understanding peculiar unto himself; as above that of all creatures, so beneath the ess"
+          },
+          {
+            "location": "EPUB/ch016.xhtml#p710",
+            "context": "[3.] As it is described by those who applaud it, it is not suited unto the sober, sedate actings of the rational faculties of our souls. For whereas all that God requireth of us, is th"
+          },
+          {
+            "location": "EPUB/ch020.xhtml#p918",
+            "context": "[3.] The proposition of the effecting this work, being by way of consultation, represents it a signal effect of infinite wisdom. These expressions are used to lead us unto the contempl"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "the glory of god in the face of jesus christ",
+      "count": 12
+    },
+    {
+      "phrase": "unto us child is born unto us son is given",
+      "count": 6
+    },
+    {
+      "phrase": "of the glory of god in the face of jesus",
+      "count": 6
+    },
+    {
+      "phrase": "us child is born unto us son is given and",
+      "count": 5
+    },
+    {
+      "phrase": "the brightness of his glory and the express image of",
+      "count": 5
+    },
+    {
+      "phrase": "brightness of his glory and the express image of his",
+      "count": 5
+    },
+    {
+      "phrase": "of his glory and the express image of his person",
+      "count": 5
+    },
+    {
+      "phrase": "are changed into the same image from glory to glory",
+      "count": 5
+    },
+    {
+      "phrase": "both which are in heaven and which are on earth",
+      "count": 5
+    },
+    {
+      "phrase": "the only-begotten son who is in the bosom of the",
+      "count": 5
+    },
+    {
+      "phrase": "only-begotten son who is in the bosom of the father",
+      "count": 5
+    },
+    {
+      "phrase": "down at the right hand of the majesty on high",
+      "count": 5
+    },
+    {
+      "phrase": "the knowledge of the glory of god in the face",
+      "count": 5
+    },
+    {
+      "phrase": "knowledge of the glory of god in the face of",
+      "count": 5
+    },
+    {
+      "phrase": "of the only-begotten of the father full of grace and",
+      "count": 5
+    },
+    {
+      "phrase": "the only-begotten of the father full of grace and truth",
+      "count": 5
+    },
+    {
+      "phrase": "of the glory of christ in this world by faith",
+      "count": 5
+    },
+    {
+      "phrase": "differences between our beholding the glory of christ by faith",
+      "count": 4
+    },
+    {
+      "phrase": "loss for the excellency of the knowledge of christ jesus",
+      "count": 4
+    },
+    {
+      "phrase": "for the excellency of the knowledge of christ jesus my",
+      "count": 4
+    },
+    {
+      "phrase": "the excellency of the knowledge of christ jesus my lord",
+      "count": 4
+    },
+    {
+      "phrase": "thou art the christ the son of the living god",
+      "count": 4
+    },
+    {
+      "phrase": "his glory the glory as of the only-begotten of the",
+      "count": 4
+    },
+    {
+      "phrase": "glory the glory as of the only-begotten of the father",
+      "count": 4
+    },
+    {
+      "phrase": "the mighty god the everlasting father the prince of peace",
+      "count": 4
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 716,
+    "epub_greek_word_count": 811,
+    "pdf_greek_unique_words": 405,
+    "epub_greek_unique_words": 460,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 18,
+    "epub_hebrew_word_count": 20,
+    "pdf_hebrew_unique_words": 18,
+    "epub_hebrew_unique_words": 20,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 33,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 1,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 962,
+    "epub_latin_word_count": 1340,
+    "epub_tagged_latin_word_count": 974,
+    "pdf_latin_unique_words": 501,
+    "epub_latin_unique_words": 661,
+    "epub_tagged_unique_words": 489,
+    "latin_word_coverage_ratio": 0.999,
+    "latin_tagging_ratio": 0.7269,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "incarnate",
+        "epub": 35,
+        "tagged": 0
+      },
+      {
+        "word": "nestorius",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "consummate",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "invocate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "inanimate",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "indicate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "serm",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "affectionate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "folio",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "orat",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "alexandria",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "fluctuate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "possessor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "irradiate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "maranatha",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "extra",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "obdurate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "divinitate",
+        "epub": 3,
+        "tagged": 1
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 91,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 258,
+    "translated_latin_runs_count": 139,
+    "latin_translation_ratio": 0.5388,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "quarto (Amsterdam"
+      },
+      {
+        "phrase": "nobis a praelo a capite"
+      },
+      {
+        "phrase": "operis absentibus"
+      },
+      {
+        "phrase": "Salus Electorum Sanguis"
+      },
+      {
+        "phrase": "quam conspici"
+      },
+      {
+        "phrase": "Quod si super unum illum Petrum tantum"
+      },
+      {
+        "phrase": "quid dicturus"
+      },
+      {
+        "phrase": "et apostolorum"
+      },
+      {
+        "phrase": "Num audebimus dicere quod adversus Petrum unum non prevaliturae sunt portae inferorum"
+      },
+      {
+        "phrase": "Unum hoc est"
+      },
+      {
+        "phrase": "fundamentum, una haec est"
+      },
+      {
+        "phrase": "Petra, Petri"
+      },
+      {
+        "phrase": "Epiphanius, ‡  Haer"
+      },
+      {
+        "phrase": "Scrutator majestatis absorbetur a gloria"
+      },
+      {
+        "phrase": "Quomodo igitur"
+      },
+      {
+        "phrase": "sciri a quoquam"
+      },
+      {
+        "phrase": "narrari, opera divina; sed tamen sacrae literae"
+      },
+      {
+        "phrase": "Fide, ad Gratianum"
+      },
+      {
+        "phrase": "atque impudentissimus est, qui scrutari"
+      },
+      {
+        "phrase": "suum. Millia millium, et"
+      }
+    ]
+  },
+  "modern_notes_quality": {
+    "manifest_found": true,
+    "generated_at": "2026-07-03T19:09:07",
+    "unresolved_modern_references": 3,
+    "untranslated_substantial_foreign_passages": 3,
+    "unenriched_legacy_footnotes": 0,
+    "summary": {
+      "total_items": 158,
+      "body_translation_popups": 36,
+      "body_citation_popups": 115,
+      "footnote_enrichments": 4,
+      "unresolved_modern_references": 3,
+      "untranslated_substantial_foreign_passages": 3,
+      "unenriched_legacy_footnotes": 0
+    },
+    "samples": [
+      {
+        "id": "a332d6c5e36a97c4",
+        "scope": "body",
+        "chapter": "Preface",
+        "cid": "ch004",
+        "paragraph_index": 96,
+        "action": "none",
+        "confidence": "medium",
+        "source": "BODY_TRANSLATIONS",
+        "exact_text": "Vide — universum genus humanum tam justo judicio Divino in apostatica radice damnatum, ut etiam si nullus inde liberaretur, nemo recte possit Dei vituperare justitiam; et qui liberantur, sic oportuisse liberari, ut ex pluribus non liberatis, atque in damnatione justissima derelictis, ostenderetur, quod meruisset universa conspersio, et quo etiam istos debitum judicium Dei duceret, nisi ejus indebita misericordia subveniret.",
+        "owen_translated_or_paraphrased": true,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Owen appears to translate or paraphrase this passage nearby and no high-confidence modern reference was isolated.",
+        "word_count": 58
+      },
+      {
+        "id": "c77af5f8d4a272a5",
+        "scope": "body",
+        "chapter": "Preface",
+        "cid": "ch004",
+        "paragraph_index": 86,
+        "action": "none",
+        "confidence": "medium",
+        "source": "BODY_TRANSLATIONS",
+        "exact_text": "Sic igitur Christum Dei Filium, id est, unam ex Trinitate personam, Deum verum crede, ut divinitatem ejus de natura Patris natam esse non dubites; et sic eum verum hominem crede, et ejus carnem, non coelestis, non aeriae, non alterius cujusquam putes esse naturae, sed ejus coujus est omnium caro; id est, quam ipse Deus, homini primo de terra plasmavit, et caeteris hominibus plasmat.",
+        "owen_translated_or_paraphrased": true,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Owen appears to translate or paraphrase this passage nearby and no high-confidence modern reference was isolated.",
+        "word_count": 63
+      },
+      {
+        "id": "c1266ef65613a4a6",
+        "scope": "body",
+        "chapter": "Preface",
+        "cid": "ch004",
+        "paragraph_index": 88,
+        "action": "none",
+        "confidence": "medium",
+        "source": "BODY_TRANSLATIONS",
+        "exact_text": "Verbum Dei Jesus Christus, qui propter immensam suam dilectionem, factus est quod sumus nos, ut nos perficeret quod est ipse",
+        "owen_translated_or_paraphrased": true,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Owen appears to translate or paraphrase this passage nearby and no high-confidence modern reference was isolated.",
+        "word_count": 20
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {
+    "weak_pages": [
+      3,
+      4,
+      5,
+      6,
+      533
+    ],
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      21,
+      26,
+      27,
+      34,
+      35,
+      51,
+      53,
+      56,
+      76,
+      78,
+      83,
+      90,
+      101,
+      105,
+      106,
+      117,
+      148,
+      150,
+      188,
+      194,
+      203,
+      223,
+      239,
+      269,
+      297,
+      319,
+      328,
+      332,
+      341,
+      356,
+      374,
+      375,
+      379
+    ],
+    "paragraph_splits": [
+      "(1st,) That the Word ceased"
+    ],
+    "ignored_warnings": [
+      "low_latin_tagging",
+      "front_matter_toc_loss",
+      "repeated_phrases"
+    ]
+  },
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}
