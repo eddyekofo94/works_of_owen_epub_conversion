@@ -347,9 +347,9 @@ The new engine:
 | h6 | h6 | Empty | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 4 |
 | h7 | h7 | Populated | FULL | Cov 99.98 Greek 100.00 Heb 100.00 Unres 2 |
 
-## Agent-Driven Skills & Slash Commands
+## Agent-Driven Skills, Tasks & Slash Commands
 
-For agent-driven workflows, three packaged skills are available to automate testing, report generation, and volume healing.
+For agent-driven workflows, four packaged project-local skills are available under `skills/`. These packages are repository artifacts; do not install them into global Codex skill directories unless explicitly requested.
 
 ### 1. Test Executor Skill (`test-executor.skill`)
 Provides `#test` commands to execute audits, bug-regression reports, and pytest suites.
@@ -388,11 +388,27 @@ Each plan includes:
 
 Output: `volumes/vN/plans/vN_need_reduction_plan.md`
 
-### 3. Volume Healer Skill (`volume-healer.skill`)
-Provides `#heal` commands to automatically heal bugs, resolve citations, correct spelling errors, and verify the progression.
+### 3. Heal Skill (`heal.skill`)
+Provides `$heal` / `#heal` commands to heal exactly one Owen volume, scoped to volumes 1-16, toward PRISTINE Apple Books-compliant EPUB3 output.
 
-*   `#heal worst` (or `#heal` without arguments) — Scans the collection by running `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`, identifies the volume with the absolute highest (worst) Need score (even if all are already PRISTINE), checks out a new branch (`heal-v[n]`), runs pre-audit, plans the repair, executes automated fixes, verifies via tests, and reports before-and-after progression.
-*   `#heal [n]` — Runs the healing pipeline for a specific volume `n`.
+*   `$heal worst` / `#heal worst` (or no argument) — Scans the collection by running `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`, identifies the volume with the highest Need score, checks out a standard local branch such as `heal-v[n]`, runs target-scoped audits, repairs, verifies, and reports before-and-after progression.
+*   `$heal [n]` / `#heal [n]` — Runs the healing pipeline for a specific Owen volume `n`.
+
+The deprecated `volume-healer` skill has been removed to avoid trigger conflicts. Healing remains project-local and must not auto-merge to `master`.
+
+### 4. Code Reviewer Skill (`code-reviewer.skill`)
+Provides `#review` / `#code-review` commands for workflow and architecture checks against project mandates.
+
+*   `#review` — Runs the repository code review script and writes `qa/reports/code_review.md`.
+*   `#review [file_or_dir]` — Reviews a specific file or directory.
+
+### Reusable Task Definitions
+
+Project-local reusable task definitions live in `tasks/`:
+
+*   `tasks/owen-workflow-review.md` — Reviews workflow health, branch hygiene, root cleanliness, report placement, local skills, and task definitions.
+*   `tasks/weekly-scratch-cleanup.md` — Safely cleans disposable diagnostics under `scratch/` and records what was deleted or preserved.
+*   `tasks/owen-heal-worst.md` — Invokes the project-local `$heal` workflow for the current highest-Need Owen volume.
 
 
 ## What the Converter Does
@@ -439,8 +455,12 @@ Owen/
 │   ├── test_config_hardening.py
 │   ├── test_greek_extraction_hardening.py
 │   └── test_gideon_mapping.py
-├── test-executor/
-│   └── SKILL.md                # #test slash command definitions
+├── skills/                     # Project-local packaged agent skills
+│   ├── test-executor/
+│   ├── report-generator/
+│   ├── heal/
+│   └── code-reviewer/
+├── tasks/                      # Project-local reusable task definitions
 ├── qa/
 │   ├── bug_regression_baselines.json
 │   └── golden_pages.json
